@@ -1,0 +1,461 @@
+# GRANT<a name="ZH-CN_TOPIC_0242370630"></a>
+
+## 功能描述<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
+
+对角色和用户进行授权操作。
+
+使用GRANT命令进行用户授权包括以下三种场景：
+
+-   **将系统权限授权给角色或用户**
+
+    系统权限又称为用户属性，包括SYSADMIN、CREATEDB、CREATEROLE、AUDITADMIN和LOGIN。
+
+    系统权限一般通过CREATE/ALTER ROLE语法来指定。其中，SYSADMIN权限可以通过GRANT/REVOKE ALL PRIVILEGE授予或撤销。但系统权限无法通过ROLE和USER的权限被继承，也无法授予PUBLIC。
+
+-   **将数据库对象授权给角色或用户**
+
+    将数据库对象（表和视图、指定字段、数据库、函数、模式、表空间等）的相关权限授予特定角色或用户；
+
+    GRANT命令将数据库对象的特定权限授予一个或多个角色。这些权限会追加到已有的权限上。
+
+    关键字PUBLIC表示该权限要赋予所有角色，包括以后创建的用户。PUBLIC可以看做是一个隐含定义好的组，它总是包括所有角色。任何角色或用户都将拥有通过GRANT直接赋予的权限和所属的权限，再加上PUBLIC的权限。
+
+    如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC，这是openGauss特有的属性。
+
+    openGauss会将某些类型的对象上的权限授予PUBLIC。默认情况下，对表、表字段、序列、外部数据源、外部服务器、模式或表空间对象的权限不会授予PUBLIC，而以下这些对象的权限会授予PUBLIC：数据库的CONNECT权限和CREATE TEMP TABLE权限、函数的EXECUTE特权、语言和数据类型（包括域）的USAGE特权。当然，对象拥有者可以撤销默认授予PUBLIC的权限并专门授予权限给其他用户。为了更安全，建议在同一个事务中创建对象并设置权限，这样其他用户就没有时间窗口使用该对象。另外，这些初始的默认权限可以使用ALTER DEFAULT PRIVILEGES命令修改。
+
+-   **将角色或用户的权限授权给其他角色或用户**
+
+    将一个角色或用户的权限授予一个或多个其他角色或用户。在这种情况下，每个角色或用户都可视为拥有一个或多个数据库权限的集合。
+
+    当声明了WITH ADMIN OPTION，被授权的用户可以将该权限再次授予其他角色或用户，以及撤销所有由该角色或用户继承到的权限。当授权的角色或用户发生变更或被撤销时，所有继承该角色或用户权限的用户拥有的权限都会随之发生变更。
+
+    数据库系统管理员可以给任何角色或用户授予/撤销任何权限。拥有CREATEROLE权限的角色可以赋予或者撤销任何非系统管理员角色的权限。
+
+
+## 注意事项<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_section1780116145345"></a>
+
+无。
+
+## 语法格式<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
+
+-   将表或视图的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES } [, ...] 
+          | ALL [ PRIVILEGES ] }
+        ON { [ TABLE ] table_name [, ...]
+           | ALL TABLES IN SCHEMA schema_name [, ...] }
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    
+    ```
+
+-   将表中字段的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES } ( column_name [, ...] )} [, ...] 
+          | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
+        ON [ TABLE ] table_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+-   将数据库的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { { CREATE | CONNECT | TEMPORARY | TEMP } [, ...]
+          | ALL [ PRIVILEGES ] }
+        ON DATABASE database_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+-   将域的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { USAGE | ALL [ PRIVILEGES ] }
+        ON DOMAIN domain_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >本版本暂时不支持赋予域的访问权限。  
+
+-   将外部数据源的访问权限赋予给指定的用户或角色。
+
+    ```
+    GRANT { USAGE | ALL [ PRIVILEGES ] }
+        ON FOREIGN DATA WRAPPER fdw_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+-   将外部服务器的访问权限赋予给指定的用户或角色。
+
+    ```
+    GRANT { USAGE | ALL [ PRIVILEGES ] }
+        ON FOREIGN SERVER server_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+-   将函数的访问权限赋予给指定的用户或角色。
+
+    ```
+    GRANT { EXECUTE | ALL [ PRIVILEGES ] }
+        ON { FUNCTION {function_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+           | ALL FUNCTIONS IN SCHEMA schema_name [, ...] }
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+-   将过程语言的访问权限赋予给指定的用户或角色。
+
+    ```
+    GRANT { USAGE | ALL [ PRIVILEGES ] }
+        ON LANGUAGE lang_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >本版本只有C函数支持所有用户创建，而Java和Internal只支持拥有sysadmin权限的用户创建。  
+    >-   拥有sysadmin权限的用户通过grant语法来将创建C函数的权限授权给普通用户时，不支持grant usage on language c to public，只支持授权给特定用户。  
+    >-   拥有sysadmin权限的用户通过grant语法来将创建C函数的权限授权给普通用户时，不支持with grant option。  
+
+-   将大对象的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
+        ON LARGE OBJECT loid [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >本版本暂时不支持大对象。  
+
+-   将模式的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { { CREATE | USAGE } [, ...] | ALL [ PRIVILEGES ] }
+        ON SCHEMA schema_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。  
+
+-   将表空间的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { CREATE | ALL [ PRIVILEGES ] }
+        ON TABLESPACE tablespace_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+-   将类型的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { USAGE | ALL [ PRIVILEGES ] }
+        ON TYPE type_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >本版本暂时不支持赋予类型的访问权限。  
+
+-   将角色的权限赋予其他用户或角色的语法。
+
+    ```
+    GRANT role_name [, ...]
+       TO role_name [, ...]
+       [ WITH ADMIN OPTION ];
+    ```
+
+-   将sysadmin权限赋予指定的角色。
+
+    ```
+    GRANT ALL { PRIVILEGES | PRIVILEGE }
+       TO role_name;
+    ```
+
+
+-   将Data Source对象的权限赋予指定的角色。
+
+    ```
+    GRANT {USAGE | ALL [PRIVILEGES]}
+       ON DATA SOURCE src_name [, ...]
+       TO {[GROUP] role_name | PUBLIC} [, ...] [WITH GRANT OPTION];
+    ```
+
+
+-   将directory对象的权限赋予指定的角色。
+
+    ```
+    GRANT {READ|WRITE| ALL [PRIVILEGES]}
+       ON DIRECTORY directory_name [, ...]
+       TO {[GROUP] role_name | PUBLIC} [, ...] [WITH GRANT OPTION];
+    ```
+
+
+## 参数说明<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8"></a>
+
+GRANT的权限分类如下所示。
+
+-   **SELECT**
+
+    允许对指定的表、视图、序列执行SELECT语句。
+
+-   **INSERT**
+
+    允许对指定的表执行INSERT语句。
+
+-   **UPDATE**
+
+    允许对声明的表中任意字段执行UPDATE语句。SELECT… FOR UPDATE和SELECT… FOR SHARE除了需要SELECT权限外，还需要UPDATE权限。
+
+-   **DELETE**
+
+    允许执行DELETE语句删除指定表中的数据。
+
+-   **TRUNCATE**
+
+    允许执行TRUNCATE语句删除指定表中的所有记录。
+
+-   **REFERENCES**
+
+    创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
+
+-   **CREATE**
+    -   对于数据库，允许在数据库里创建新的模式。
+    -   对于模式，允许在模式中创建新的对象。如果要重命名一个对象，用户除了必须是该对象的所有者外，还必须拥有该对象所在模式的CREATE权限。
+    -   对于表空间，允许在表空间中创建表，允许在创建数据库和模式的时候把该表空间指定为缺省表空间。
+
+-   **CONNECT**
+
+    允许用户连接到指定的数据库。
+
+-   **EXECUTE**
+
+    允许使用指定的函数，以及利用这些函数实现的操作符。
+
+-   **USAGE**
+    -   对于过程语言，允许用户在创建函数的时候指定过程语言。
+    -   对于模式，USAGE允许访问包含在指定模式中的对象，若没有该权限，则只能看到这些对象的名称。
+    -   对于序列，USAGE允许使用nextval函数。
+    -   对于Data Source对象，USAGE是指访问权限，也是可赋予的所有权限，即USAGE与ALL PRIVILEGES等价。
+
+-   **ALL PRIVILEGES**
+
+    一次性给指定用户/角色赋予所有可赋予的权限。只有系统管理员有权执行GRANT ALL PRIVILEGES。
+
+
+GRANT的参数说明如下所示。
+
+-   **role\_name**
+
+    已存在用户名称。
+
+-   **table\_name**
+
+    已存在表名称。
+
+-   **column\_name**
+
+    已存在字段名称。
+
+-   **schema\_name**
+
+    已存在模式名称。
+
+-   **database\_name**
+
+    已存在数据库名称。
+
+-   **funcation\_name**
+
+    已存在函数名称。
+
+-   **sequence\_name**
+
+    已存在序列名称。
+
+-   **domain\_name**
+
+    已存在域类型名称。
+
+-   **fdw\_name**
+
+    已存在外部数据包名称。
+
+-   **lang\_name**
+
+    已存在语言名称。
+
+-   **type\_name**
+
+    已存在类型名称。
+
+-   **src\_name**
+
+    已存在的Data Source对象名称。
+
+-   **argmode**
+
+    参数模式。
+
+    取值范围：字符串，要符合标识符命名规范。
+
+-   **arg\_name**
+
+    参数名称。
+
+    取值范围：字符串，要符合标识符命名规范。
+
+-   **arg\_type**
+
+    参数类型。
+
+    取值范围：字符串，要符合标识符命名规范。
+
+-   **loid**
+
+    包含本页的大对象的标识符。
+
+    取值范围：字符串，要符合标识符命名规范。
+
+-   **tablespace\_name**
+
+    表空间名称。
+
+-   **directory\_name**
+
+    目录名称。
+
+    取值范围：字符串，要符合标识符命名规范。
+
+-   **WITH GRANT OPTION**
+
+    如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC。
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >NODE GROUP不支持WITH GRANT OPTION功能。  
+
+
+非对象所有者给其他用户授予对象权限时，命令按照以下规则执行：
+
+-   如果用户没有该对象上指定的权限，命令立即失败。
+-   如果用户有该对象上的部分权限，则GRANT命令只授予他有授权选项的权限。
+-   如果用户没有可用的授权选项，GRANT ALL PRIVILEGES形式将发出一个警告信息，其他命令形式将发出在命令中提到的且没有授权选项的相关警告信息。
+
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。  
+>不允许对表分区进行GRANT操作，对分区表进行GRANT操作会引起告警。  
+>针对NODE GROUP，普通用户不能执行GRANT/REVOKE操作。  
+
+## 示例<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
+
+**示例：将系统权限授权给用户或者角色。**
+
+创建名为joe的用户，并将sysadmin权限授权给他。
+
+```
+postgres=# CREATE USER joe PASSWORD 'Bigdata@123';
+postgres=# GRANT ALL PRIVILEGES TO joe;
+```
+
+授权成功后，用户joe会拥有sysadmin的所有权限。
+
+**示例：将对象权限授权给用户或者角色**。
+
+1.  撤销joe用户的sysadmin权限，然后将模式tpcds的使用权限和表tpcds.reason的所有权限授权给用户joe。
+
+    ```
+    postgres=# REVOKE ALL PRIVILEGES FROM joe;
+    postgres=# GRANT USAGE ON SCHEMA tpcds TO joe;
+    postgres=# GRANT ALL PRIVILEGES ON tpcds.reason TO joe;
+    ```
+
+    授权成功后，joe用户就拥有了tpcds.reason表的所有权限，包括增删改查等权限。
+
+2.  将tpcds.reason表中r\_reason\_sk、r\_reason\_id、r\_reason\_desc列的查询权限，r\_reason\_desc的更新权限授权给joe。
+
+    ```
+    postgres=# GRANT select (r_reason_sk,r_reason_id,r_reason_desc),update (r_reason_desc) ON tpcds.reason TO joe;
+    ```
+
+    授权成功后，用户joe对tpcds.reason表中r\_reason\_sk，r\_reason\_id的查询权限会立即生效。如果joe用户需要拥有将这些权限授权给其他用户的权限，可以通过以下语法对joe用户进行授权。
+
+    ```
+    postgres=# GRANT select (r_reason_sk, r_reason_id) ON tpcds.reason TO joe WITH GRANT OPTION;
+    ```
+
+    将数据库postgres的连接权限授权给用户joe，并给予其在postgres中创建schema的权限，而且允许joe将此权限授权给其他用户。
+
+    ```
+    postgres=# GRANT create,connect on database postgres TO joe WITH GRANT OPTION;
+    ```
+
+    创建角色tpcds\_manager，将模式tpcds的访问权限授权给角色tpcds\_manager，并授予该角色在tpcds下创建对象的权限，不允许该角色中的用户将权限授权给其他人。
+
+    ```
+    postgres=# CREATE ROLE tpcds_manager PASSWORD 'Bigdata@123';
+    postgres=# GRANT USAGE,CREATE ON SCHEMA tpcds TO tpcds_manager;
+    ```
+
+    将表空间tpcds\_tbspc的所有权限授权给用户joe，但用户joe无法将权限继续授予其他用户。
+
+    ```
+    postgres=# CREATE TABLESPACE tpcds_tbspc RELATIVE LOCATION 'tablespace/tablespace_1';
+    postgres=# GRANT ALL ON TABLESPACE tpcds_tbspc TO joe;
+    ```
+
+
+**示例：将用户或者角色的权限授权给其他用户或角色。**
+
+1.  创建角色manager，将joe的权限授权给manager，并允许该角色将权限授权给其他人。
+
+    ```
+    postgres=# CREATE ROLE manager PASSWORD 'Bigdata@123';
+    postgres=# GRANT joe TO manager WITH ADMIN OPTION;
+    ```
+
+2.  创建用户senior\_manager，将用户manager的权限授权给该用户。
+
+    ```
+    postgres=# CREATE ROLE senior_manager PASSWORD 'Bigdata@123';
+    postgres=# GRANT manager TO senior_manager;
+    ```
+
+3.  撤销权限，并清理用户。
+
+    ```
+    postgres=# REVOKE manager FROM joe;
+    postgres=# REVOKE senior_manager FROM manager;
+    postgres=# DROP USER manager;
+    ```
+
+
+**示例：撤销上述授予的权限，并清理角色和用户。**
+
+```
+postgres=# REVOKE ALL PRIVILEGES ON tpcds.reason FROM joe;
+postgres=# REVOKE ALL PRIVILEGES ON SCHEMA tpcds FROM joe;
+postgres=# REVOKE ALL ON TABLESPACE tpcds_tbspc FROM joe;
+postgres=# DROP TABLESPACE tpcds_tbspc;
+postgres=# REVOKE USAGE,CREATE ON SCHEMA tpcds FROM tpcds_manager;
+postgres=# DROP ROLE tpcds_manager;
+postgres=# DROP ROLE senior_manager;
+postgres=# DROP USER joe CASCADE;
+```
+
+## 相关链接<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
+
+[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)
+
