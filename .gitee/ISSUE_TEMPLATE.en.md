@@ -2,13 +2,16 @@
 
 > Uncomment only one, leave it on its own line: 
 >
-> - kind/bug
+> /kind bug
 >
-> - kind/feature
+> /kind feature
 
 
-**What kind of modification do you want to make?**:
+**What happened**:
 
-**How many files did you modify?**:
+**What you expected to happen**:
+
+**How to reproduce it (as minimally and precisely as possible)**:
 
 **Anything else we need to know?**:
+
