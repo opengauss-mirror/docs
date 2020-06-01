@@ -1,3 +1,12 @@
+<!-- Thanks for sending a pull request! -->
+** What type of PR is this? **:
+
+> Uncomment only one, leave it on its own line:
+>
+> /kind bug
+>
+> /kind feature
+
 **What this PR does / why we need it**:
 
 **Which issue this PR fixes** *(optional, in `fixes #<issue number>(, fixes #<issue_number>, ...)` format, will close that issue when PR gets merged)*: fixes #
