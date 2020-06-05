@@ -911,4 +911,4 @@ headless: true
         -   [pg\_resetxlog]({{< relref "./docs/Toolreference/pg_resetxlog.md" >}})
     -   [FAQ]({{< relref "./docs/Toolreference/FAQ.md" >}})
         -   [执行命令报错“Failed to obtain the GPHOME”]({{< relref "./docs/Toolreference/执行命令报错-Failed-to-obtain-the-GPHOME.md" >}})
--   [gs\_collector工具支持收集的系统表和视图列表]({{< relref "./docs/Toolreference/gs_collector工具支持收集的系统表和视图列表.md" >}})		 
+    -   [gs\_collector工具支持收集的系统表和视图列表]({{< relref "./docs/Toolreference/gs_collector工具支持收集的系统表和视图列表.md" >}})		 
