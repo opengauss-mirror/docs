@@ -15,11 +15,11 @@ RUN mkdir -p /usr/local/src && \
 RUN mkdir -p /src/ && \
     cd /src/ && \
     git clone -b stable https://gitee.com/opengauss/website && \
-    git clone -b 1.0 https://gitee.com/opengauss/docs && \
-    mkdir -p /src/website/content/zh/docs/1.0 && \
-    cp -rf /src/docs/content/zh/* /src/website/content/zh/docs/1.0 && \
-    mkdir -p /src/website/content/en/docs/1.0 && \
-    cp -rf /src/docs/content/en/* /src/website/content/en/docs/1.0 && \
+    git clone -b 1.0.0 https://gitee.com/opengauss/docs && \
+    mkdir -p /src/website/content/zh/docs/1.0.0 && \
+    cp -rf /src/docs/content/zh/* /src/website/content/zh/docs/1.0.0 && \
+    mkdir -p /src/website/content/en/docs/1.0.0 && \
+    cp -rf /src/docs/content/en/* /src/website/content/en/docs/1.0.0 && \
     cd /src/website && /usr/local/bin/hugo -b / && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html
