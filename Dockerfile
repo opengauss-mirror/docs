@@ -12,10 +12,11 @@ RUN mkdir -p /usr/local/src && \
     curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz | tar -xz && \
     mv hugo /usr/local/bin/
 
-RUN mkdir -p /src/ && \
-    cd /src/ && \
+RUN mkdir -p /src/
+COPY . /src/docs
+
+RUN cd /src/ && \
     git clone -b stable https://gitee.com/opengauss/website && \
-    git clone -b 1.0.0 https://gitee.com/opengauss/docs && \
     mkdir -p /src/website/content/zh/docs/1.0.0 && \
     cp -rf /src/docs/content/zh/* /src/website/content/zh/docs/1.0.0 && \
     mkdir -p /src/website/content/en/docs/1.0.0 && \
