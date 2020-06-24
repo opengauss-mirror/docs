@@ -34,12 +34,12 @@ int PQsendQueryPrepared(PGconn *conn,
 </tr>
 <tr id="zh-cn_topic_0241735630_row3316185018428"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735630_p931755034217"><a name="zh-cn_topic_0241735630_p931755034217"></a><a name="zh-cn_topic_0241735630_p931755034217"></a>stmtName</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735630_p1431715054219"><a name="zh-cn_topic_0241735630_p1431715054219"></a><a name="zh-cn_topic_0241735630_p1431715054219"></a>需要执行的prepare语句。</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735630_p1431715054219"><a name="zh-cn_topic_0241735630_p1431715054219"></a><a name="zh-cn_topic_0241735630_p1431715054219"></a>需要执行的stmt名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0241735630_row4482953194215"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735630_p19483053144212"><a name="zh-cn_topic_0241735630_p19483053144212"></a><a name="zh-cn_topic_0241735630_p19483053144212"></a>nParams</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735630_p174838537427"><a name="zh-cn_topic_0241735630_p174838537427"></a><a name="zh-cn_topic_0241735630_p174838537427"></a>参数类型。</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735630_p174838537427"><a name="zh-cn_topic_0241735630_p174838537427"></a><a name="zh-cn_topic_0241735630_p174838537427"></a>参数个数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0241735630_row831145720425"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735630_p183111857174215"><a name="zh-cn_topic_0241735630_p183111857174215"></a><a name="zh-cn_topic_0241735630_p183111857174215"></a>paramValues</p>
@@ -75,5 +75,5 @@ int：执行结果为1表示成功，0表示失败，失败原因存到conn-\>er
 
 ## 示例<a name="zh-cn_topic_0241735630_section19689722205811"></a>
 
-请参见[示例](示例-10.md)章节。
+请参见[示例](示例-3.md)章节。
 

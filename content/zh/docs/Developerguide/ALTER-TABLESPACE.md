@@ -6,7 +6,6 @@
 
 ## 注意事项<a name="zh-cn_topic_0237122078_zh-cn_topic_0059777507_s4d48c658c0a1491ea2c6727959928558"></a>
 
--   当前版本禁止使用ALTER TABLESPACE语法。
 -   只有表空间的所有者有权限执行ALTER TABLESPACE命令，系统管理员默认拥有此权限。
 -   要修改表空间的所有者A为B，则A必须是B的直接或者间接成员。
 
@@ -98,7 +97,7 @@
 
     取值范围：
 
-    -   UNLIMITED，此表空间不设置限额。
+    -   UNLIMITED，该表空间不设置限额。
     -   由space\_size来确定，其格式参考[CREATE TABLESPACE](CREATE-TABLESPACE.md)。
 
         >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -116,5 +115,5 @@
 
 ## 相关链接<a name="zh-cn_topic_0237122078_zh-cn_topic_0059777507_sac21888107614d73bf2f04cd684aed03"></a>
 
-[CREATE TABLESPACE](CREATE-TABLESPACE.md)，[DROP TABLESPACE](DROP-TABLESPACE.md#ZH-CN_TOPIC_0242370617)
+[CREATE TABLESPACE](CREATE-TABLESPACE.md)，[DROP TABLESPACE](DROP-TABLESPACE.md)
 

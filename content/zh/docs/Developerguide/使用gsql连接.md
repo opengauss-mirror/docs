@@ -37,9 +37,9 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。
 
-    “Non-SSL connection”表示未使用SSL方式连接数据库。
+    “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](用SSL进行安全的TCP-IP连接.md)。
 
-3.  首次登录需要修改密码。原始密码固定为XuanYuan@2012，需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
+3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
 
     ```
     postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
@@ -55,7 +55,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 ## 远程连接数据库<a name="zh-cn_topic_0237120292_zh-cn_topic_0062050379_section435356016419"></a>
 
 1.  完成远程连接配置，操作步骤参见[配置服务端远程连接](配置服务端远程连接.md)。
-2.  在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。
+2.  在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。此处以openEuler环境为例。
     1.  以root用户登录客户端机器。
     2.  创建“/tmp/tools”目录。
 
@@ -63,7 +63,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
         mkdir /tmp/tools
         ```
 
-    3.  获取软件安装包中的“-EULER-64bit-ClientTools.tar.gz”上传到“/tmp/tools”路径下。
+    3.  获取软件安装包中的“openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
         >![](public_sys-resources/icon-note.gif) **说明：**   
         >-   软件包相对位置为安装时所放位置，根据实际情况填写。  
@@ -73,7 +73,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
         ```
         cd /tmp/tools
-        tar -zxvf openGauss-1.0.0-EULER-64bit-ClientTools.tar.gz
+        tar -zxvf openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz
         ```
 
     5.  设置环境变量。

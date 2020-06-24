@@ -21,7 +21,7 @@ PG\_LARGEOBJECT系统表保存那些标记着“大对象”的数据。一个�
 </td>
 <td class="cellrowborder" valign="top" width="12.78%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a7c0ca0a27e234959aa88a9220f852628"><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a7c0ca0a27e234959aa88a9220f852628"></a><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a7c0ca0a27e234959aa88a9220f852628"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.45%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a75fa5515be044ae09bd68fd493724875"><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a75fa5515be044ae09bd68fd493724875"></a><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a75fa5515be044ae09bd68fd493724875"></a><a href="PG_LARGEOBJECT_METADATA.md#ZH-CN_TOPIC_0242385827">PG_LARGEOBJECT_METADATA</a>.oid</p>
+<td class="cellrowborder" valign="top" width="30.45%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a75fa5515be044ae09bd68fd493724875"><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a75fa5515be044ae09bd68fd493724875"></a><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_a75fa5515be044ae09bd68fd493724875"></a><a href="PG_LARGEOBJECT_METADATA.md">PG_LARGEOBJECT_METADATA</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.480000000000004%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122298_zh-cn_topic_0059777745_abee3b873b7514f7ca330b26326e5f5af"><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_abee3b873b7514f7ca330b26326e5f5af"></a><a name="zh-cn_topic_0237122298_zh-cn_topic_0059777745_abee3b873b7514f7ca330b26326e5f5af"></a>包含本页的大对象的标识符。</p>
 </td>

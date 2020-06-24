@@ -37,7 +37,7 @@ PG\_CONVERSION系统表描述编码转换信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.719999999999999%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122280_zh-cn_topic_0059778654_af407cf11ff7244509e7e2a3333ae7bdc"><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_af407cf11ff7244509e7e2a3333ae7bdc"></a><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_af407cf11ff7244509e7e2a3333ae7bdc"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.19%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a709b9cb4ba0441908ccee6e39396796d"><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a709b9cb4ba0441908ccee6e39396796d"></a><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a709b9cb4ba0441908ccee6e39396796d"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="25.19%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a709b9cb4ba0441908ccee6e39396796d"><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a709b9cb4ba0441908ccee6e39396796d"></a><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a709b9cb4ba0441908ccee6e39396796d"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.35%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a15f58d6f2f5441b1929fffc900171cba"><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a15f58d6f2f5441b1929fffc900171cba"></a><a name="zh-cn_topic_0237122280_zh-cn_topic_0059778654_a15f58d6f2f5441b1929fffc900171cba"></a>包含这个转换的名称空间的OID。</p>
 </td>

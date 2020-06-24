@@ -120,11 +120,6 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >本版本只有C函数支持所有用户创建，而Java和Internal只支持拥有sysadmin权限的用户创建。  
-    >-   拥有sysadmin权限的用户通过grant语法来将创建C函数的权限授权给普通用户时，不支持grant usage on language c to public，只支持授权给特定用户。  
-    >-   拥有sysadmin权限的用户通过grant语法来将创建C函数的权限授权给普通用户时，不支持with grant option。  
-
 -   将大对象的访问权限赋予指定的用户或角色。
 
     ```
@@ -210,19 +205,19 @@ GRANT的权限分类如下所示。
 
 -   **SELECT**
 
-    允许对指定的表、视图、序列执行SELECT语句。
+    允许对指定的表、视图、序列执行SELECT命令，update或delete时也需要对应字段上的select权限。
 
 -   **INSERT**
 
-    允许对指定的表执行INSERT语句。
+    允许对指定的表执行INSERT命令。
 
 -   **UPDATE**
 
-    允许对声明的表中任意字段执行UPDATE语句。SELECT… FOR UPDATE和SELECT… FOR SHARE除了需要SELECT权限外，还需要UPDATE权限。
+    允许对声明的表中任意字段执行UPDATE命令。通常，update命令也需要select权限来查询出哪些行需要更新。SELECT… FOR UPDATE和SELECT… FOR SHARE除了需要SELECT权限外，还需要UPDATE权限。
 
 -   **DELETE**
 
-    允许执行DELETE语句删除指定表中的数据。
+    允许执行DELETE命令删除指定表中的数据。通常，delete命令也需要select权限来查询出哪些行需要删除。
 
 -   **TRUNCATE**
 
@@ -230,7 +225,7 @@ GRANT的权限分类如下所示。
 
 -   **REFERENCES**
 
-    创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
+    创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。由于当前不支持外键，所以不建议使用该参数。
 
 -   **CREATE**
     -   对于数据库，允许在数据库里创建新的模式。
@@ -344,9 +339,6 @@ GRANT的参数说明如下所示。
 
     如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >NODE GROUP不支持WITH GRANT OPTION功能。  
-
 
 非对象所有者给其他用户授予对象权限时，命令按照以下规则执行：
 
@@ -357,7 +349,6 @@ GRANT的参数说明如下所示。
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。  
 >不允许对表分区进行GRANT操作，对分区表进行GRANT操作会引起告警。  
->针对NODE GROUP，普通用户不能执行GRANT/REVOKE操作。  
 
 ## 示例<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
 

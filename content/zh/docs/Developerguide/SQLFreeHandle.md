@@ -50,5 +50,5 @@ SQLRETURN SQLFreeHandle(SQLSMALLINT   HandleType,
 
 ## 示例<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s877f1d1111e8452fbea6495355622686"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

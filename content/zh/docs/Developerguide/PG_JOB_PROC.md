@@ -1,6 +1,6 @@
 # PG\_JOB\_PROC<a name="ZH-CN_TOPIC_0242385824"></a>
 
-PG\_JOB\_PROC系统表对应PG\_JOB表中每个任务的作业内容（包括：PL/SQL代码块、匿名块）。将存储过程信息独立出来，是因为A中这个字段是varchar\(4000\)的，如果放到PG\_JOB中，被加载到共享内存的时候，会占用不必要的空间，所以在使用的时候再进行查询获取。
+PG\_JOB\_PROC系统表对应PG\_JOB表中每个任务的作业内容（包括：PL/SQL代码块、匿名块）。将存储过程信息独立出来，如果放到PG\_JOB中，被加载到共享内存的时候，会占用不必要的空间，所以在使用的时候再进行查询获取。
 
 **表 1**  PG\_JOB\_PROC字段
 
@@ -24,7 +24,7 @@ PG\_JOB\_PROC系统表对应PG\_JOB表中每个任务的作业内容（包括：
 </td>
 <td class="cellrowborder" valign="top" width="17.49%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p972151025511"><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p972151025511"></a><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p972151025511"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.55%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p207217102557"><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p207217102557"></a><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p207217102557"></a>外键，关联pg_job表中的job_id。</p>
+<td class="cellrowborder" valign="top" width="62.55%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p207217102557"><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p207217102557"></a><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p207217102557"></a>关联pg_job表中的job_id。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122296_zh-cn_topic_0059778581_row1108151205317"><td class="cellrowborder" valign="top" width="19.96%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p1172171025510"><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p1172171025510"></a><a name="zh-cn_topic_0237122296_zh-cn_topic_0059778581_p1172171025510"></a>what</p>

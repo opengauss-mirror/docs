@@ -30,7 +30,7 @@ PG\_OPFAMILY系统表定义操作符族。
 </td>
 <td class="cellrowborder" valign="top" width="12.970000000000004%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_afec23dd9fbdb4d2e8b19489549372904"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_afec23dd9fbdb4d2e8b19489549372904"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_afec23dd9fbdb4d2e8b19489549372904"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.51%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a853cb94076cd4a7f87e5f15ca12956fa"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a853cb94076cd4a7f87e5f15ca12956fa"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a853cb94076cd4a7f87e5f15ca12956fa"></a><a href="PG_AM.md#ZH-CN_TOPIC_0242385794">PG_AM</a>.oid</p>
+<td class="cellrowborder" valign="top" width="29.51%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a853cb94076cd4a7f87e5f15ca12956fa"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a853cb94076cd4a7f87e5f15ca12956fa"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a853cb94076cd4a7f87e5f15ca12956fa"></a><a href="PG_AM.md">PG_AM</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.410000000000004%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a46177262616b478fa2e9bd38dffccea7"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a46177262616b478fa2e9bd38dffccea7"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a46177262616b478fa2e9bd38dffccea7"></a>操作符族使用的索引方法。</p>
 </td>
@@ -48,7 +48,7 @@ PG\_OPFAMILY系统表定义操作符族。
 </td>
 <td class="cellrowborder" valign="top" width="12.970000000000004%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_af2551a225a4f4670ab853d3aea684924"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_af2551a225a4f4670ab853d3aea684924"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_af2551a225a4f4670ab853d3aea684924"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.51%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a1503c46c598440c1a0c27651e03c3deb"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a1503c46c598440c1a0c27651e03c3deb"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a1503c46c598440c1a0c27651e03c3deb"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="29.51%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a1503c46c598440c1a0c27651e03c3deb"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a1503c46c598440c1a0c27651e03c3deb"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a1503c46c598440c1a0c27651e03c3deb"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.410000000000004%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a50400062ab4548b48392794dece28b9c"><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a50400062ab4548b48392794dece28b9c"></a><a name="zh-cn_topic_0237122305_zh-cn_topic_0059779065_a50400062ab4548b48392794dece28b9c"></a>这个操作符的名称空间。</p>
 </td>
@@ -65,5 +65,5 @@ PG\_OPFAMILY系统表定义操作符族。
 </tbody>
 </table>
 
-定义一个操作符族的大多数信息不在它的PG\_OPFAMILY行里面，而是在相关的行[PG\_AMOP](PG_AMOP.md#ZH-CN_TOPIC_0242385795)，[PG\_AMPROC](PG_AMPROC.md#ZH-CN_TOPIC_0242385796)和[PG\_OPCLASS](PG_OPCLASS.md#ZH-CN_TOPIC_0242385831)里。
+定义一个操作符族的大多数信息不在它的PG\_OPFAMILY行里面，而是在相关的行[PG\_AMOP](PG_AMOP.md)，[PG\_AMPROC](PG_AMPROC.md)和[PG\_OPCLASS](PG_OPCLASS.md)里。
 

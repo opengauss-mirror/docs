@@ -34,7 +34,6 @@ COMMENT ON
   OPERATOR FAMILY object_name USING index_method |
   [ PROCEDURAL ] LANGUAGE object_name |
   ROLE object_name |
-  RULE rule_name ON table_name |
   SCHEMA object_name |
   SERVER object_name |
   TABLE object_name |

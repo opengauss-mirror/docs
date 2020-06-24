@@ -1,12 +1,12 @@
-# gsql概述<a name="ZH-CN_TOPIC_0242223659"></a>
+# gsql概述<a name="ZH-CN_TOPIC_0249632268"></a>
 
 ## 基本功能<a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_s8ce37a15763045549311205e19f06a45"></a>
 
--   **连接数据库：**默认只支持从服务器本机连接，如果需要连接到远端的数据库，必须在服务端进行配置。  详细操作请参见《开发者指南》中“数据库使用 \> 连接数据库 \> 使用gsql连接 \> 远程连接数据库”章节。
+-   **连接数据库：**详细操作请参见《开发者指南》中“数据库使用 \> 连接数据库 \> 使用gsql连接 \> 远程连接数据库”章节。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >gsql创建连接时，会有5分钟超时时间。如果在这个时间内，数据库未正确地接受连接并对身份进行认证，gsql将超时退出。  
-    >针对此问题，可以参考[常见问题处理](常见问题处理.md#ZH-CN_TOPIC_0242223664)。  
+    >针对此问题，可以参考[常见问题处理](常见问题处理.md)。  
 
 -   **执行SQL语句：**支持交互式地键入并执行SQL语句，也可以执行一个文件中指定的SQL语句。
 -   **执行元命令：**元命令可以帮助管理员查看数据库对象的信息、查询缓存区信息、格式化SQL输出结果，以及连接到新的数据库等。元命令的详细说明请参见[元命令参考](元命令参考.md)。
@@ -163,7 +163,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
     </td>
     <td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.4.1.2 "><pre class="screen" id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_sa53e4fcd0e0b4047b128ab3c4cbf6ba0"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_sa53e4fcd0e0b4047b128ab3c4cbf6ba0"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_sa53e4fcd0e0b4047b128ab3c4cbf6ba0"></a>\set IGNOREEOF <em id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0c1fc29c7f494d46809ccb93e85005f4"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0c1fc29c7f494d46809ccb93e85005f4"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0c1fc29c7f494d46809ccb93e85005f4"></a>variable</em></pre>
     </td>
-    <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_ul29414696"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_ul29414696"></a><ul id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_ul29414696"><li>若设置此变量为数值，假设为10，则在gsql中输入的前9次EOF字符（通常是Ctrl+C组合键）都会被忽略，在第10次按Ctrl+C才能退出gsql程序。</li><li>若设置此变量为非数值，则缺省为10。</li><li>若删除此变量，则向交互的gsql会话发送一个EOF终止应用。</li></ul>
+    <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_ul29414696"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_ul29414696"></a><ul id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_ul29414696"><li>若设置此变量为数值，假设为10，则在gsql中输入的前9次EOF字符（通常是Ctrl+D组合键）都会被忽略，在第10次按Ctrl+D才能退出gsql程序。</li><li>若设置此变量为非数值，则缺省为10。</li><li>若删除此变量，则向交互的gsql会话发送一个EOF终止应用。</li></ul>
     </td>
     </tr>
     <tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_row28609302"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a08e91023634f47d7906a2efef2825441"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a08e91023634f47d7906a2efef2825441"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a08e91023634f47d7906a2efef2825441"></a>LASTOID</p>

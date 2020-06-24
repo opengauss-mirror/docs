@@ -1,0 +1,7 @@
+# Configuration<a name="ZH-CN_TOPIC_0245374835"></a>
+
+-   **[CONFIG\_SETTINGS](CONFIG_SETTINGS.md)**  
+
+-   **[GLOBAL\_CONFIG\_SETTINGS](GLOBAL_CONFIG_SETTINGS.md)**  
+
+

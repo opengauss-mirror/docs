@@ -1,4 +1,4 @@
-# gaussdb<a name="ZH-CN_TOPIC_0242223698"></a>
+# gaussdb<a name="ZH-CN_TOPIC_0249632245"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_section2761723143810"></a>
 
@@ -155,16 +155,9 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row40407089"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p45114348"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p45114348"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p45114348"></a>-p PORT</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a>指定gaussdb侦听客户端连接的TCP/IP端口或本地Unix domain socket文件的扩展。默认端口号为<span id="zh-cn_topic_0237152404_text10283141215615"><a name="zh-cn_topic_0237152404_text10283141215615"></a><a name="zh-cn_topic_0237152404_text10283141215615"></a>8000</span>。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a>指定gaussdb侦听客户端连接的TCP/IP端口或本地Unix domain socket文件的扩展。默认端口号为<span id="zh-cn_topic_0237152404_text10283141215615"><a name="zh-cn_topic_0237152404_text10283141215615"></a><a name="zh-cn_topic_0237152404_text10283141215615"></a>5432</span>。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p748137203944"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p748137203944"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p748137203944"></a>正整数，在操作系统支持的端口范围内。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152404_row5266157154513"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_p172678571454"><a name="zh-cn_topic_0237152404_p172678571454"></a><a name="zh-cn_topic_0237152404_p172678571454"></a>-R</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_p14267857124519"><a name="zh-cn_topic_0237152404_p14267857124519"></a><a name="zh-cn_topic_0237152404_p14267857124519"></a>表明以xlogreiver运行，只在-M standby模式下使用。</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_p126755718455"><a name="zh-cn_topic_0237152404_p126755718455"></a><a name="zh-cn_topic_0237152404_p126755718455"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row4407977"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p47462893"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p47462893"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p47462893"></a>-s</p>
@@ -179,20 +172,6 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"></a>声明内部排序和散列在求助于临时磁盘文件之前可以使用的内存数量。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a>单位为KB。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_r43dbb48f491642c59fb33f38ad825a69"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a230cd5982752473aa83f951f8bbbb6a0"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a230cd5982752473aa83f951f8bbbb6a0"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a230cd5982752473aa83f951f8bbbb6a0"></a>--d<span id="ph0959950766"><a name="ph0959950766"></a><a name="ph0959950766"></a>b</span>node</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a4f3c3201075244948715d44cbc5d638a"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a4f3c3201075244948715d44cbc5d638a"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a4f3c3201075244948715d44cbc5d638a"></a>以<span id="text1047520124916"><a name="text1047520124916"></a><a name="text1047520124916"></a>数据库节点</span>运行。</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a2a5dc8debf1848ffb9af0dc4611f56fa"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a2a5dc8debf1848ffb9af0dc4611f56fa"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a2a5dc8debf1848ffb9af0dc4611f56fa"></a>-</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_rf209c8bdde044939866bc166cdf2d96a"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_aeb3cc732f5444abd82238bcd5672b15a"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_aeb3cc732f5444abd82238bcd5672b15a"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_aeb3cc732f5444abd82238bcd5672b15a"></a>--restoremode</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a601636e7aede499c8f58d44033e0d41e"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a601636e7aede499c8f58d44033e0d41e"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a601636e7aede499c8f58d44033e0d41e"></a>以恢复节点运行。</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ab2204613ef404bffb2c8c19dd0ec2274"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ab2204613ef404bffb2c8c19dd0ec2274"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ab2204613ef404bffb2c8c19dd0ec2274"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152404_row145281213145513"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_p1652931385513"><a name="zh-cn_topic_0237152404_p1652931385513"></a><a name="zh-cn_topic_0237152404_p1652931385513"></a>--single_node</p>
@@ -379,7 +358,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </thead>
 <tbody><tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_r18a6a1211ff54d9cb34e127dadba1385"><td class="cellrowborder" valign="top" width="11.790000000000001%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a39974e9b41754e7bb5146cdc0c95ebfa"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a39974e9b41754e7bb5146cdc0c95ebfa"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a39974e9b41754e7bb5146cdc0c95ebfa"></a>--boot</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.95%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a30a98faac5734d92a5bd2b61a582ca27"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a30a98faac5734d92a5bd2b61a582ca27"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a30a98faac5734d92a5bd2b61a582ca27"></a>启动自启动模式。必须是命令行中的第一个选项。</p>
+<td class="cellrowborder" valign="top" width="60.95%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a30a98faac5734d92a5bd2b61a582ca27"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a30a98faac5734d92a5bd2b61a582ca27"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a30a98faac5734d92a5bd2b61a582ca27"></a>启动自启动模式。必须是命令行中的第一个选项。该参数是对数据库中的参数变量及相关配置初始化，常用在数据库安装的流程中，直接使用该参数，无明显行为感知。</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.26%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a70c27505e4d94541aa237a5d8e3911ba"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a70c27505e4d94541aa237a5d8e3911ba"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a70c27505e4d94541aa237a5d8e3911ba"></a>-</p>
 </td>

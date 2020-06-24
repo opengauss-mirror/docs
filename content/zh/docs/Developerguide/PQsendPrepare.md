@@ -32,7 +32,7 @@ int PQsendPrepare(PGconn *conn,
 </tr>
 <tr id="zh-cn_topic_0241735629_row17367126192516"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735629_p43682026202518"><a name="zh-cn_topic_0241735629_p43682026202518"></a><a name="zh-cn_topic_0241735629_p43682026202518"></a>stmtName</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735629_p10403105013320"><a name="zh-cn_topic_0241735629_p10403105013320"></a><a name="zh-cn_topic_0241735629_p10403105013320"></a>需要执行的prepare语句。</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735629_p10403105013320"><a name="zh-cn_topic_0241735629_p10403105013320"></a><a name="zh-cn_topic_0241735629_p10403105013320"></a>需要执行的<em id="i2828137155814"><a name="i2828137155814"></a><a name="i2828137155814"></a>stmt</em>名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0241735629_row12952114132818"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735629_p1995314182810"><a name="zh-cn_topic_0241735629_p1995314182810"></a><a name="zh-cn_topic_0241735629_p1995314182810"></a>query</p>
@@ -63,5 +63,5 @@ int：执行结果为1表示成功，0表示失败，失败原因存到conn-\>er
 
 ## 示例<a name="zh-cn_topic_0241735629_section1123513455619"></a>
 
-请参见[示例](示例-10.md)章节。
+请参见[示例](示例-3.md)章节。
 

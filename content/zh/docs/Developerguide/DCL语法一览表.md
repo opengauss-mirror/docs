@@ -22,12 +22,12 @@ DCL（Data Control Language数据控制语言），是用来创建用户角色�
 </tr>
 <tr id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_r6a6a1e2305bf47f8a5b8748360e46ed5"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_abcbf432a100640d693def53b0f0c4752"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_abcbf432a100640d693def53b0f0c4752"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_abcbf432a100640d693def53b0f0c4752"></a>修改角色属性</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ac5191fbbf29a4bafa3078c2e88a0853c"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ac5191fbbf29a4bafa3078c2e88a0853c"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ac5191fbbf29a4bafa3078c2e88a0853c"></a><a href="ALTER-ROLE.md#ZH-CN_TOPIC_0242370532">ALTER ROLE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ac5191fbbf29a4bafa3078c2e88a0853c"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ac5191fbbf29a4bafa3078c2e88a0853c"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ac5191fbbf29a4bafa3078c2e88a0853c"></a><a href="ALTER-ROLE.md">ALTER ROLE</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_r715692b15fa244b2ace99e632c9b37a0"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ab04d86df3f8340e6aed616e31c1ff7d2"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ab04d86df3f8340e6aed616e31c1ff7d2"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ab04d86df3f8340e6aed616e31c1ff7d2"></a>删除角色</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3abbf4fb11b14fc39097f99fe7bc59f9"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3abbf4fb11b14fc39097f99fe7bc59f9"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3abbf4fb11b14fc39097f99fe7bc59f9"></a><a href="DROP-ROLE.md#ZH-CN_TOPIC_0242370611">DROP ROLE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3abbf4fb11b14fc39097f99fe7bc59f9"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3abbf4fb11b14fc39097f99fe7bc59f9"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3abbf4fb11b14fc39097f99fe7bc59f9"></a><a href="DROP-ROLE.md">DROP ROLE</a></p>
 </td>
 </tr>
 </tbody>
@@ -48,12 +48,12 @@ DCL（Data Control Language数据控制语言），是用来创建用户角色�
 </thead>
 <tbody><tr id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_ref106bd33c714ffabe214781f13990d6"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a08b5b8294e614b44b7a2f6267b812eab"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a08b5b8294e614b44b7a2f6267b812eab"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a08b5b8294e614b44b7a2f6267b812eab"></a>创建用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_afd7d4b5b91e048ba9405cd01d202fa90"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_afd7d4b5b91e048ba9405cd01d202fa90"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_afd7d4b5b91e048ba9405cd01d202fa90"></a><a href="CREATE-USER.md#ZH-CN_TOPIC_0242370589">CREATE USER</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_afd7d4b5b91e048ba9405cd01d202fa90"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_afd7d4b5b91e048ba9405cd01d202fa90"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_afd7d4b5b91e048ba9405cd01d202fa90"></a><a href="CREATE-USER.md">CREATE USER</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_r999a8824fae14b139d941293c391ef8b"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_af16f0fb459e64e749e574bbac1d8d7f7"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_af16f0fb459e64e749e574bbac1d8d7f7"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_af16f0fb459e64e749e574bbac1d8d7f7"></a>修改用户属性</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a5b24e04ee8e146ceaf05f44d509e6577"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a5b24e04ee8e146ceaf05f44d509e6577"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a5b24e04ee8e146ceaf05f44d509e6577"></a><a href="ALTER-USER.md#ZH-CN_TOPIC_0242370547">ALTER USER</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a5b24e04ee8e146ceaf05f44d509e6577"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a5b24e04ee8e146ceaf05f44d509e6577"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a5b24e04ee8e146ceaf05f44d509e6577"></a><a href="ALTER-USER.md">ALTER USER</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_r8b8beb645e1d44b9bddce610a7530036"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a336f427eb5914009917f0466daebc374"><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a336f427eb5914009917f0466daebc374"></a><a name="zh-cn_topic_0237122051_zh-cn_topic_0059777960_a336f427eb5914009917f0466daebc374"></a>删除用户</p>
@@ -74,5 +74,5 @@ openGauss提供了收回权限的语句，请参考[REVOKE](REVOKE.md)。
 
 ## 设置默认权限<a name="zh-cn_topic_0237122051_zh-cn_topic_0059778670_s8133f68ab7684b3aaf5afb52fa8be7e7"></a>
 
-openGauss允许设置应用于将来创建的对象的权限，请参考[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md#ZH-CN_TOPIC_0242370521)。
+openGauss允许设置应用于将来创建的对象的权限，请参考[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)。
 

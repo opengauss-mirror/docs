@@ -94,7 +94,7 @@ PG\_RESOURCE\_POOL系统表提供了数据库资源池的信息。
 </td>
 <td class="cellrowborder" valign="top" width="15.35153515351535%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122310_p178551172245"><a name="zh-cn_topic_0237122310_p178551172245"></a><a name="zh-cn_topic_0237122310_p178551172245"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.95639563956396%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122310_p885521712410"><a name="zh-cn_topic_0237122310_p885521712410"></a><a name="zh-cn_topic_0237122310_p885521712410"></a>表示资源池所在的逻辑<span id="zh-cn_topic_0237122310_text1241101245"><a name="zh-cn_topic_0237122310_text1241101245"></a><a name="zh-cn_topic_0237122310_text1241101245"></a>openGauss</span>的名称。</p>
+<td class="cellrowborder" valign="top" width="63.95639563956396%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122310_p885521712410"><a name="zh-cn_topic_0237122310_p885521712410"></a><a name="zh-cn_topic_0237122310_p885521712410"></a>表示资源池所在的逻辑openGauss的名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122310_row731531942417"><td class="cellrowborder" valign="top" width="20.692069206920692%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122310_p143171619182414"><a name="zh-cn_topic_0237122310_p143171619182414"></a><a name="zh-cn_topic_0237122310_p143171619182414"></a>is_foreign</p>

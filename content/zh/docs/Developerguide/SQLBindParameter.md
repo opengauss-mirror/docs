@@ -12,11 +12,11 @@ SQLRETURN SQLBindParameter(SQLHSTMT       StatementHandle,
                            SQLSMALLINT    InputOutputType,
                            SQLSMALLINT    ValuetType,
                            SQLSMALLINT    ParameterType,
-                           SQLSMALLINT    ColumnSize,
+                           SQLULEN    ColumnSize,
                            SQLSMALLINT    DecimalDigits,
                            SQLPOINTER     ParameterValuePtr,
-                           SQLINTEGER     BufferLength,
-                           SQLINTEGER     *StrLen_or_IndPtr);
+                           SQLLEN     BufferLength,
+                           SQLLEN     *StrLen_or_IndPtr);
 ```
 
 ## 参数<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_s162b61a3e0d64b3286e3070aee689350"></a>
@@ -92,9 +92,9 @@ SQLRETURN SQLBindParameter(SQLHSTMT       StatementHandle,
 
 ## 注意事项<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_sfacc96eeb1b648f49f9dc26fd0a1366c"></a>
 
-当SQLBindCol返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当SQLBindParameter返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_sb33a1598a85f4ab581fd17d40e3db274"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

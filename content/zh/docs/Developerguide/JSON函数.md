@@ -1,6 +1,6 @@
 # JSON函数<a name="ZH-CN_TOPIC_0242370441"></a>
 
-JSON函数表示可以用于JSON类型（请参考[JSON类型](JSON类型.md#ZH-CN_TOPIC_0242370422)）数据的函数。
+JSON函数表示可以用于JSON类型（请参考[JSON类型](JSON类型.md)）数据的函数。
 
 -   array\_to\_json\(anyarray \[, pretty\_bool\]\)
 

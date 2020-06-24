@@ -1,6 +1,6 @@
 # PG\_RANGE<a name="ZH-CN_TOPIC_0242385837"></a>
 
-PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.md#ZH-CN_TOPIC_0242385855)里类型的记录。
+PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.md)里类型的记录。
 
 **表 1**  PG\_RANGE字段
 
@@ -19,7 +19,7 @@ PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.m
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2fabc5649f54467cb02289cd971ab36c"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2fabc5649f54467cb02289cd971ab36c"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2fabc5649f54467cb02289cd971ab36c"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a4e1243b60ae9461a930696864c4a3159"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a4e1243b60ae9461a930696864c4a3159"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a4e1243b60ae9461a930696864c4a3159"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a4e1243b60ae9461a930696864c4a3159"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a4e1243b60ae9461a930696864c4a3159"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a4e1243b60ae9461a930696864c4a3159"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a75dd51d670c84667b387df794c1fcccc"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a75dd51d670c84667b387df794c1fcccc"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a75dd51d670c84667b387df794c1fcccc"></a>范围类型的OID。</p>
 </td>
@@ -28,7 +28,7 @@ PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.m
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a17cb463a1a0042c38313ad6d1353ba91"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a17cb463a1a0042c38313ad6d1353ba91"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a17cb463a1a0042c38313ad6d1353ba91"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2e3d95811cb64efe97e37beb3ae5aabb"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2e3d95811cb64efe97e37beb3ae5aabb"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2e3d95811cb64efe97e37beb3ae5aabb"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2e3d95811cb64efe97e37beb3ae5aabb"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2e3d95811cb64efe97e37beb3ae5aabb"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a2e3d95811cb64efe97e37beb3ae5aabb"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a1ba9cb40ad624c5a9be2fd0ae62487a9"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a1ba9cb40ad624c5a9be2fd0ae62487a9"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a1ba9cb40ad624c5a9be2fd0ae62487a9"></a>这个范围类型的元素类型（子类型）的OID。</p>
 </td>
@@ -37,7 +37,7 @@ PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.m
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a3c3d1d1cedab439eb710b1b8e8964312"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a3c3d1d1cedab439eb710b1b8e8964312"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a3c3d1d1cedab439eb710b1b8e8964312"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"></a><a href="PG_COLLATION.md#ZH-CN_TOPIC_0242385805">PG_COLLATION</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"></a><a href="PG_COLLATION.md">PG_COLLATION</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"></a>用于范围比较的排序规则的OID，如果没有则为零。</p>
 </td>
@@ -46,7 +46,7 @@ PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.m
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_ad51c0ffc032647e7916d9e6a0c79b5ce"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_ad51c0ffc032647e7916d9e6a0c79b5ce"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_ad51c0ffc032647e7916d9e6a0c79b5ce"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_abf793fbd6e5e40099df1cd5401eae8d5"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_abf793fbd6e5e40099df1cd5401eae8d5"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_abf793fbd6e5e40099df1cd5401eae8d5"></a><a href="PG_OPCLASS.md#ZH-CN_TOPIC_0242385831">PG_OPCLASS</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_abf793fbd6e5e40099df1cd5401eae8d5"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_abf793fbd6e5e40099df1cd5401eae8d5"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_abf793fbd6e5e40099df1cd5401eae8d5"></a><a href="PG_OPCLASS.md">PG_OPCLASS</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_af4bc02a0ee3c4ab284fd5b4bbec40b21"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_af4bc02a0ee3c4ab284fd5b4bbec40b21"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_af4bc02a0ee3c4ab284fd5b4bbec40b21"></a>用于范围比较的子类型的操作符类的OID。</p>
 </td>

@@ -1,6 +1,6 @@
 # GS\_WLM\_SESSION\_QUERY\_INFO\_ALL<a name="ZH-CN_TOPIC_0242385791"></a>
 
-GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable\_resource\_record](负载管理.md#zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)为on时，系统会定时（周期为3分钟）将内核中query信息导入GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表。
+GS\_WLM\_SESSION\_INFO系统表显示当前数据库主节点执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。
 
 **表 1**  GS\_WLM\_SESSION\_QUERY\_INFO\_ALL字段
 
@@ -38,7 +38,7 @@ GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的�
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1660134133912"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1660134133912"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1660134133912"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146015473916"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146015473916"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146015473916"></a>语句执行的<span id="zh-cn_topic_0237122264_text42089314193"><a name="zh-cn_topic_0237122264_text42089314193"></a><a name="zh-cn_topic_0237122264_text42089314193"></a>数据库主节点</span>名称。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146015473916"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146015473916"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146015473916"></a>语句执行的数据库主节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row215654103910"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15601141394"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15601141394"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15601141394"></a>username</p>
@@ -164,7 +164,7 @@ GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的�
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p156413433912"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p156413433912"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p156413433912"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p7641443915"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p7641443915"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p7641443915"></a>语句在<span id="zh-cn_topic_0237122264_text11134736103910"><a name="zh-cn_topic_0237122264_text11134736103910"></a><a name="zh-cn_topic_0237122264_text11134736103910"></a>数据库节点</span>上的最大内存峰值，单位MB。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p7641443915"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p7641443915"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p7641443915"></a>语句在数据库节点上的最大内存峰值，单位MB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row1615444123919"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p18641942392"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p18641942392"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p18641942392"></a>average_peak_memory</p>
@@ -185,7 +185,7 @@ GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的�
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p4645493920"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p4645493920"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p4645493920"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166414433910"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166414433910"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166414433910"></a>语句在<span id="zh-cn_topic_0237122264_text1138213816392"><a name="zh-cn_topic_0237122264_text1138213816392"></a><a name="zh-cn_topic_0237122264_text1138213816392"></a>数据库节点</span>上的下盘信息：<a name="zh-cn_topic_0237122264_ul184242191366"></a><a name="zh-cn_topic_0237122264_ul184242191366"></a><ul id="zh-cn_topic_0237122264_ul184242191366"><li>None：<span id="zh-cn_topic_0237122264_text2092916423399"><a name="zh-cn_topic_0237122264_text2092916423399"></a><a name="zh-cn_topic_0237122264_text2092916423399"></a>数据库节点</span>均未下盘。</li><li>All: <span id="zh-cn_topic_0237122264_text9221124573911"><a name="zh-cn_topic_0237122264_text9221124573911"></a><a name="zh-cn_topic_0237122264_text9221124573911"></a>数据库节点</span>均下盘。</li><li>[a:b]: 数量为b个<span id="zh-cn_topic_0237122264_text16588143684816"><a name="zh-cn_topic_0237122264_text16588143684816"></a><a name="zh-cn_topic_0237122264_text16588143684816"></a>数据库节点</span>中有a个<span id="zh-cn_topic_0237122264_text1265317370483"><a name="zh-cn_topic_0237122264_text1265317370483"></a><a name="zh-cn_topic_0237122264_text1265317370483"></a>数据库节点</span>下盘。</li></ul>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166414433910"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166414433910"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166414433910"></a>语句在数据库节点上的下盘信息：<a name="zh-cn_topic_0237122264_ul184242191366"></a><a name="zh-cn_topic_0237122264_ul184242191366"></a><ul id="zh-cn_topic_0237122264_ul184242191366"><li>None：数据库节点均未下盘。</li><li>All: 数据库节点均下盘。</li><li>[a:b]: 数量为b个数据库节点中有a个数据库节点下盘。</li></ul>
 </div>
 </td>
 </tr>
@@ -193,112 +193,112 @@ GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的�
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1964174143914"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1964174143914"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1964174143914"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1945114475411"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1945114475411"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1945114475411"></a>若发生下盘，<span id="zh-cn_topic_0237122264_text2019477391"><a name="zh-cn_topic_0237122264_text2019477391"></a><a name="zh-cn_topic_0237122264_text2019477391"></a>数据库节点</span>上下盘的最小数据量，单位MB，默认为0。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1945114475411"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1945114475411"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1945114475411"></a>若发生下盘，数据库节点上下盘的最小数据量，单位MB，默认为0。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row181541048395"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1564541398"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1564541398"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1564541398"></a>max_spill_size</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p126412443912"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p126412443912"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p126412443912"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p645212465415"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p645212465415"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p645212465415"></a>若发生下盘，<span id="zh-cn_topic_0237122264_text72629488398"><a name="zh-cn_topic_0237122264_text72629488398"></a><a name="zh-cn_topic_0237122264_text72629488398"></a>数据库节点</span>上下盘的最大数据量，单位MB，默认为0。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p645212465415"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p645212465415"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p645212465415"></a>若发生下盘，数据库节点上下盘的最大数据量，单位MB，默认为0。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row615416413913"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15641413399"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15641413399"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15641413399"></a>average_spill_size</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p20641949398"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p20641949398"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p20641949398"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p945204125410"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p945204125410"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p945204125410"></a>若发生下盘，<span id="zh-cn_topic_0237122264_text10743124963919"><a name="zh-cn_topic_0237122264_text10743124963919"></a><a name="zh-cn_topic_0237122264_text10743124963919"></a>数据库节点</span>上下盘的平均数据量，单位MB，默认为0。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p945204125410"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p945204125410"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p945204125410"></a>若发生下盘，数据库节点上下盘的平均数据量，单位MB，默认为0。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row101541847398"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1164194173910"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1164194173910"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1164194173910"></a>spill_skew_percent</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9648493918"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9648493918"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9648493918"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p56411418394"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p56411418394"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p56411418394"></a>若发生下盘，<span id="zh-cn_topic_0237122264_text1689544374817"><a name="zh-cn_topic_0237122264_text1689544374817"></a><a name="zh-cn_topic_0237122264_text1689544374817"></a>数据库节点</span>间下盘倾斜率。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p56411418394"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p56411418394"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p56411418394"></a>若发生下盘，数据库节点间下盘倾斜率。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row1915454123919"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p186694153912"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p186694153912"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p186694153912"></a>min_dn_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p86684103910"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p86684103910"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p86684103910"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96612433918"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96612433918"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96612433918"></a>语句在<span id="zh-cn_topic_0237122264_text17474151133913"><a name="zh-cn_topic_0237122264_text17474151133913"></a><a name="zh-cn_topic_0237122264_text17474151133913"></a>数据库节点</span>上的最小执行时间，单位ms。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96612433918"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96612433918"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96612433918"></a>语句在数据库节点上的最小执行时间，单位ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row31521644398"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p16661443392"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p16661443392"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p16661443392"></a>max_dn_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p366114193918"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p366114193918"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p366114193918"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166610410391"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166610410391"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166610410391"></a>语句在<span id="zh-cn_topic_0237122264_text12852135313918"><a name="zh-cn_topic_0237122264_text12852135313918"></a><a name="zh-cn_topic_0237122264_text12852135313918"></a>数据库节点</span>上的最大执行时间，单位ms。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166610410391"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166610410391"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166610410391"></a>语句在数据库节点上的最大执行时间，单位ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row415217443910"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146612412392"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146612412392"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p146612412392"></a>average_dn_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1766949395"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1766949395"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1766949395"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p766114173911"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p766114173911"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p766114173911"></a>语句在<span id="zh-cn_topic_0237122264_text7797564399"><a name="zh-cn_topic_0237122264_text7797564399"></a><a name="zh-cn_topic_0237122264_text7797564399"></a>数据库节点</span>上的平均执行时间，单位ms。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p766114173911"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p766114173911"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p766114173911"></a>语句在数据库节点上的平均执行时间，单位ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row1715212420392"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p186619414398"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p186619414398"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p186619414398"></a>dntime_skew_percent</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166616433915"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166616433915"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p166616433915"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15661641394"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15661641394"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15661641394"></a>语句在<span id="zh-cn_topic_0237122264_text172915144214"><a name="zh-cn_topic_0237122264_text172915144214"></a><a name="zh-cn_topic_0237122264_text172915144214"></a>数据库节点</span>间的执行时间倾斜率。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15661641394"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15661641394"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p15661641394"></a>语句在数据库节点间的执行时间倾斜率。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row215214416394"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p76618419395"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p76618419395"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p76618419395"></a>min_cpu_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p5666403919"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p5666403919"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p5666403919"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p196694133917"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p196694133917"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p196694133917"></a>语句在<span id="zh-cn_topic_0237122264_text96260573392"><a name="zh-cn_topic_0237122264_text96260573392"></a><a name="zh-cn_topic_0237122264_text96260573392"></a>数据库节点</span>上的最小CPU时间，单位ms。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p196694133917"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p196694133917"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p196694133917"></a>语句在数据库节点上的最小CPU时间，单位ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row161528417392"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p20661413399"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p20661413399"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p20661413399"></a>max_cpu_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96644143916"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96644143916"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p96644143916"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p13661948399"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p13661948399"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p13661948399"></a>语句在<span id="zh-cn_topic_0237122264_text37758581398"><a name="zh-cn_topic_0237122264_text37758581398"></a><a name="zh-cn_topic_0237122264_text37758581398"></a>数据库节点</span>上的最大CPU时间，单位ms。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p13661948399"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p13661948399"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p13661948399"></a>语句在数据库节点上的最大CPU时间，单位ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row115219413394"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p176613483914"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p176613483914"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p176613483914"></a>total_cpu_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p66624193917"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p66624193917"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p66624193917"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9660419393"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9660419393"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9660419393"></a>语句在<span id="zh-cn_topic_0237122264_text1911110184019"><a name="zh-cn_topic_0237122264_text1911110184019"></a><a name="zh-cn_topic_0237122264_text1911110184019"></a>数据库节点</span>上的CPU总时间，单位ms。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9660419393"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9660419393"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p9660419393"></a>语句在数据库节点上的CPU总时间，单位ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row41525416393"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p17661453919"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p17661453919"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p17661453919"></a>cpu_skew_percent</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p2667415395"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p2667415395"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p2667415395"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p8668413919"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p8668413919"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p8668413919"></a>语句在<span id="zh-cn_topic_0237122264_text1779655274811"><a name="zh-cn_topic_0237122264_text1779655274811"></a><a name="zh-cn_topic_0237122264_text1779655274811"></a>数据库节点</span>间的CPU时间倾斜率。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p8668413919"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p8668413919"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p8668413919"></a>语句在数据库节点间的CPU时间倾斜率。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_row19498105011260"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1880915202270"><a name="zh-cn_topic_0237122264_p1880915202270"></a><a name="zh-cn_topic_0237122264_p1880915202270"></a>min_peak_iops</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p1480919206276"><a name="zh-cn_topic_0237122264_p1480919206276"></a><a name="zh-cn_topic_0237122264_p1480919206276"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1380982018278"><a name="zh-cn_topic_0237122264_p1380982018278"></a><a name="zh-cn_topic_0237122264_p1380982018278"></a>语句在<span id="zh-cn_topic_0237122264_text8671131114018"><a name="zh-cn_topic_0237122264_text8671131114018"></a><a name="zh-cn_topic_0237122264_text8671131114018"></a>数据库节点</span>上的每秒最小IO峰值（列存单位是次/s，行存单位是万次/s）。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1380982018278"><a name="zh-cn_topic_0237122264_p1380982018278"></a><a name="zh-cn_topic_0237122264_p1380982018278"></a>语句在数据库节点上的每秒最小IO峰值（列存单位是次/s，行存单位是万次/s）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_row19149101072913"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1912116233291"><a name="zh-cn_topic_0237122264_p1912116233291"></a><a name="zh-cn_topic_0237122264_p1912116233291"></a>max_peak_iops</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p9121123172913"><a name="zh-cn_topic_0237122264_p9121123172913"></a><a name="zh-cn_topic_0237122264_p9121123172913"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p191238239292"><a name="zh-cn_topic_0237122264_p191238239292"></a><a name="zh-cn_topic_0237122264_p191238239292"></a>语句在<span id="zh-cn_topic_0237122264_text16212183154011"><a name="zh-cn_topic_0237122264_text16212183154011"></a><a name="zh-cn_topic_0237122264_text16212183154011"></a>数据库节点</span>上的每秒最大IO峰值（列存单位是次/s，行存单位是万次/s）。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p191238239292"><a name="zh-cn_topic_0237122264_p191238239292"></a><a name="zh-cn_topic_0237122264_p191238239292"></a>语句在数据库节点上的每秒最大IO峰值（列存单位是次/s，行存单位是万次/s）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_row4897202782912"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p36526352291"><a name="zh-cn_topic_0237122264_p36526352291"></a><a name="zh-cn_topic_0237122264_p36526352291"></a>average_peak_iops</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p13652103519299"><a name="zh-cn_topic_0237122264_p13652103519299"></a><a name="zh-cn_topic_0237122264_p13652103519299"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1652113517293"><a name="zh-cn_topic_0237122264_p1652113517293"></a><a name="zh-cn_topic_0237122264_p1652113517293"></a>语句在<span id="zh-cn_topic_0237122264_text18461146407"><a name="zh-cn_topic_0237122264_text18461146407"></a><a name="zh-cn_topic_0237122264_text18461146407"></a>数据库节点</span>上的每秒平均IO峰值（列存单位是次/s，行存单位是万次/s）。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1652113517293"><a name="zh-cn_topic_0237122264_p1652113517293"></a><a name="zh-cn_topic_0237122264_p1652113517293"></a>语句在数据库节点上的每秒平均IO峰值（列存单位是次/s，行存单位是万次/s）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_row15463154013294"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1557874882911"><a name="zh-cn_topic_0237122264_p1557874882911"></a><a name="zh-cn_topic_0237122264_p1557874882911"></a>iops_skew_percent</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p1757874892918"><a name="zh-cn_topic_0237122264_p1757874892918"></a><a name="zh-cn_topic_0237122264_p1757874892918"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p16578184872911"><a name="zh-cn_topic_0237122264_p16578184872911"></a><a name="zh-cn_topic_0237122264_p16578184872911"></a>语句在<span id="zh-cn_topic_0237122264_text1767185713484"><a name="zh-cn_topic_0237122264_text1767185713484"></a><a name="zh-cn_topic_0237122264_text1767185713484"></a>数据库节点</span>间的IO倾斜率。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p16578184872911"><a name="zh-cn_topic_0237122264_p16578184872911"></a><a name="zh-cn_topic_0237122264_p16578184872911"></a>语句在数据库节点间的IO倾斜率。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_row131528433911"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1167134133919"><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1167134133919"></a><a name="zh-cn_topic_0237122264_zh-cn_topic_0112535431_p1167134133919"></a>warning</p>
@@ -334,7 +334,7 @@ GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的�
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p2550122184511"><a name="zh-cn_topic_0237122264_p2550122184511"></a><a name="zh-cn_topic_0237122264_p2550122184511"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p4550152115450"><a name="zh-cn_topic_0237122264_p4550152115450"></a><a name="zh-cn_topic_0237122264_p4550152115450"></a>语句所属用户对应的逻辑<span id="zh-cn_topic_0237122264_text828991392810"><a name="zh-cn_topic_0237122264_text828991392810"></a><a name="zh-cn_topic_0237122264_text828991392810"></a>openGauss</span>。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p4550152115450"><a name="zh-cn_topic_0237122264_p4550152115450"></a><a name="zh-cn_topic_0237122264_p4550152115450"></a>语句所属用户对应的逻辑openGauss。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_row1089134535015"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p2901345125016"><a name="zh-cn_topic_0237122264_p2901345125016"></a><a name="zh-cn_topic_0237122264_p2901345125016"></a>cpu_top1_node_name</p>
@@ -344,67 +344,11 @@ GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的�
 <td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p19901945115015"><a name="zh-cn_topic_0237122264_p19901945115015"></a><a name="zh-cn_topic_0237122264_p19901945115015"></a>cpu使用率第1的节点名称。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122264_row4642163215111"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1664314329515"><a name="zh-cn_topic_0237122264_p1664314329515"></a><a name="zh-cn_topic_0237122264_p1664314329515"></a>cpu_top2_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p1564383215113"><a name="zh-cn_topic_0237122264_p1564383215113"></a><a name="zh-cn_topic_0237122264_p1564383215113"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p26432323516"><a name="zh-cn_topic_0237122264_p26432323516"></a><a name="zh-cn_topic_0237122264_p26432323516"></a>cpu使用率第2的节点名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row136319518512"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p116465135111"><a name="zh-cn_topic_0237122264_p116465135111"></a><a name="zh-cn_topic_0237122264_p116465135111"></a>cpu_top3_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p126418575114"><a name="zh-cn_topic_0237122264_p126418575114"></a><a name="zh-cn_topic_0237122264_p126418575114"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p13641151515"><a name="zh-cn_topic_0237122264_p13641151515"></a><a name="zh-cn_topic_0237122264_p13641151515"></a>cpu使用率第3的节点名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row123351218195215"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p033512187522"><a name="zh-cn_topic_0237122264_p033512187522"></a><a name="zh-cn_topic_0237122264_p033512187522"></a>cpu_top4_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p633515186527"><a name="zh-cn_topic_0237122264_p633515186527"></a><a name="zh-cn_topic_0237122264_p633515186527"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p20335141895212"><a name="zh-cn_topic_0237122264_p20335141895212"></a><a name="zh-cn_topic_0237122264_p20335141895212"></a>cpu使用率第4的节点名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row839132115214"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p124072145217"><a name="zh-cn_topic_0237122264_p124072145217"></a><a name="zh-cn_topic_0237122264_p124072145217"></a>cpu_top5_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p17401621155210"><a name="zh-cn_topic_0237122264_p17401621155210"></a><a name="zh-cn_topic_0237122264_p17401621155210"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p19405214526"><a name="zh-cn_topic_0237122264_p19405214526"></a><a name="zh-cn_topic_0237122264_p19405214526"></a>cpu使用率第5的节点名称。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237122264_row209162215555"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p109171212557"><a name="zh-cn_topic_0237122264_p109171212557"></a><a name="zh-cn_topic_0237122264_p109171212557"></a>mem_top1_node_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p199181926556"><a name="zh-cn_topic_0237122264_p199181926556"></a><a name="zh-cn_topic_0237122264_p199181926556"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p199181215556"><a name="zh-cn_topic_0237122264_p199181215556"></a><a name="zh-cn_topic_0237122264_p199181215556"></a>内存使用量第1的节点名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row121491067555"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1115026165519"><a name="zh-cn_topic_0237122264_p1115026165519"></a><a name="zh-cn_topic_0237122264_p1115026165519"></a>mem_top2_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p41501615510"><a name="zh-cn_topic_0237122264_p41501615510"></a><a name="zh-cn_topic_0237122264_p41501615510"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p915014613553"><a name="zh-cn_topic_0237122264_p915014613553"></a><a name="zh-cn_topic_0237122264_p915014613553"></a>内存使用量第5的节点名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row1532378115518"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1332318845518"><a name="zh-cn_topic_0237122264_p1332318845518"></a><a name="zh-cn_topic_0237122264_p1332318845518"></a>mem_top3_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p183233825520"><a name="zh-cn_topic_0237122264_p183233825520"></a><a name="zh-cn_topic_0237122264_p183233825520"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1032478105519"><a name="zh-cn_topic_0237122264_p1032478105519"></a><a name="zh-cn_topic_0237122264_p1032478105519"></a>内存使用量第5的节点名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row621941095518"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p221916106554"><a name="zh-cn_topic_0237122264_p221916106554"></a><a name="zh-cn_topic_0237122264_p221916106554"></a>mem_top4_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p20219101095515"><a name="zh-cn_topic_0237122264_p20219101095515"></a><a name="zh-cn_topic_0237122264_p20219101095515"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p172206104551"><a name="zh-cn_topic_0237122264_p172206104551"></a><a name="zh-cn_topic_0237122264_p172206104551"></a>内存使用量第5的节点名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row512418122556"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p10124171255514"><a name="zh-cn_topic_0237122264_p10124171255514"></a><a name="zh-cn_topic_0237122264_p10124171255514"></a>mem_top5_node_name</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p7125812185510"><a name="zh-cn_topic_0237122264_p7125812185510"></a><a name="zh-cn_topic_0237122264_p7125812185510"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1712541212552"><a name="zh-cn_topic_0237122264_p1712541212552"></a><a name="zh-cn_topic_0237122264_p1712541212552"></a>内存使用量第5的节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_row9633617125611"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p4634111755618"><a name="zh-cn_topic_0237122264_p4634111755618"></a><a name="zh-cn_topic_0237122264_p4634111755618"></a>cpu_top1_value</p>
@@ -414,67 +358,11 @@ GS\_WLM\_SESSION\_INFO系统表显示数据库主节点执行作业结束后的�
 <td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p963481735614"><a name="zh-cn_topic_0237122264_p963481735614"></a><a name="zh-cn_topic_0237122264_p963481735614"></a>cpu使用率。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122264_row12833112011567"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1683342011564"><a name="zh-cn_topic_0237122264_p1683342011564"></a><a name="zh-cn_topic_0237122264_p1683342011564"></a>cpu_top2_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p1883432065613"><a name="zh-cn_topic_0237122264_p1883432065613"></a><a name="zh-cn_topic_0237122264_p1883432065613"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p6834142019561"><a name="zh-cn_topic_0237122264_p6834142019561"></a><a name="zh-cn_topic_0237122264_p6834142019561"></a>cpu使用率。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row7878237563"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p48715238566"><a name="zh-cn_topic_0237122264_p48715238566"></a><a name="zh-cn_topic_0237122264_p48715238566"></a>cpu_top3_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p18782314564"><a name="zh-cn_topic_0237122264_p18782314564"></a><a name="zh-cn_topic_0237122264_p18782314564"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1487023155614"><a name="zh-cn_topic_0237122264_p1487023155614"></a><a name="zh-cn_topic_0237122264_p1487023155614"></a>cpu使用率。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row3850162419568"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p385013244565"><a name="zh-cn_topic_0237122264_p385013244565"></a><a name="zh-cn_topic_0237122264_p385013244565"></a>cpu_top4_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p485082435611"><a name="zh-cn_topic_0237122264_p485082435611"></a><a name="zh-cn_topic_0237122264_p485082435611"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p785052416564"><a name="zh-cn_topic_0237122264_p785052416564"></a><a name="zh-cn_topic_0237122264_p785052416564"></a>cpu使用率。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row1946532635616"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1946552612561"><a name="zh-cn_topic_0237122264_p1946552612561"></a><a name="zh-cn_topic_0237122264_p1946552612561"></a>cpu_top5_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p144658262567"><a name="zh-cn_topic_0237122264_p144658262567"></a><a name="zh-cn_topic_0237122264_p144658262567"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p846662620563"><a name="zh-cn_topic_0237122264_p846662620563"></a><a name="zh-cn_topic_0237122264_p846662620563"></a>cpu使用率。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237122264_row7586101811580"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p5587111815589"><a name="zh-cn_topic_0237122264_p5587111815589"></a><a name="zh-cn_topic_0237122264_p5587111815589"></a>mem_top1_value</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p20587111865815"><a name="zh-cn_topic_0237122264_p20587111865815"></a><a name="zh-cn_topic_0237122264_p20587111865815"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p1558791865820"><a name="zh-cn_topic_0237122264_p1558791865820"></a><a name="zh-cn_topic_0237122264_p1558791865820"></a>内存使用量。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row116295226588"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p15630422195813"><a name="zh-cn_topic_0237122264_p15630422195813"></a><a name="zh-cn_topic_0237122264_p15630422195813"></a>mem_top2_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p156301722155817"><a name="zh-cn_topic_0237122264_p156301722155817"></a><a name="zh-cn_topic_0237122264_p156301722155817"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p8630162285814"><a name="zh-cn_topic_0237122264_p8630162285814"></a><a name="zh-cn_topic_0237122264_p8630162285814"></a>内存使用量。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row17121224115812"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p12712924165818"><a name="zh-cn_topic_0237122264_p12712924165818"></a><a name="zh-cn_topic_0237122264_p12712924165818"></a>mem_top3_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p37131324105816"><a name="zh-cn_topic_0237122264_p37131324105816"></a><a name="zh-cn_topic_0237122264_p37131324105816"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p67131124125819"><a name="zh-cn_topic_0237122264_p67131124125819"></a><a name="zh-cn_topic_0237122264_p67131124125819"></a>内存使用量。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row46762026175816"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p1767662610583"><a name="zh-cn_topic_0237122264_p1767662610583"></a><a name="zh-cn_topic_0237122264_p1767662610583"></a>mem_top4_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p1767613260587"><a name="zh-cn_topic_0237122264_p1767613260587"></a><a name="zh-cn_topic_0237122264_p1767613260587"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p4677726105818"><a name="zh-cn_topic_0237122264_p4677726105818"></a><a name="zh-cn_topic_0237122264_p4677726105818"></a>内存使用量。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122264_row14367182814589"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p133671428175818"><a name="zh-cn_topic_0237122264_p133671428175818"></a><a name="zh-cn_topic_0237122264_p133671428175818"></a>mem_top5_value</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122264_p10367122813587"><a name="zh-cn_topic_0237122264_p10367122813587"></a><a name="zh-cn_topic_0237122264_p10367122813587"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122264_p836812845815"><a name="zh-cn_topic_0237122264_p836812845815"></a><a name="zh-cn_topic_0237122264_p836812845815"></a>内存使用量。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122264_row845161112597"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122264_p11461811155914"><a name="zh-cn_topic_0237122264_p11461811155914"></a><a name="zh-cn_topic_0237122264_p11461811155914"></a>top_mem_dn</p>

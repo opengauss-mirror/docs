@@ -1,4 +1,4 @@
-# gsql<a name="ZH-CN_TOPIC_0242223658"></a>
+# gsql<a name="ZH-CN_TOPIC_0249632261"></a>
 
 gsql是openGauss提供在命令行下运行的数据库连接工具，可以通过此工具连接服务器并对其进行操作和维护，除了具备操作数据库的基本功能，gsql还提供了若干[高级特性](gsql概述.md#zh-cn_topic_0237152142_zh-cn_topic_0059778819_s999ec23443d04c7ab199c53189744b58)，便于用户使用。
 

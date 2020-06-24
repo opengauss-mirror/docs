@@ -37,7 +37,7 @@ PG\_TS\_TEMPLATE系统表包含定义文本搜索模板的记录。模板是文�
 </td>
 <td class="cellrowborder" valign="top" width="11.09%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a8cc92b24edca4c689b951a57c5456660"><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a8cc92b24edca4c689b951a57c5456660"></a><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a8cc92b24edca4c689b951a57c5456660"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a95dcf17152134d739b1bd9e9846e619a"><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a95dcf17152134d739b1bd9e9846e619a"></a><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a95dcf17152134d739b1bd9e9846e619a"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a95dcf17152134d739b1bd9e9846e619a"><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a95dcf17152134d739b1bd9e9846e619a"></a><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a95dcf17152134d739b1bd9e9846e619a"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.85%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a3a989c8f54a7453dac349da0a8acc094"><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a3a989c8f54a7453dac349da0a8acc094"></a><a name="zh-cn_topic_0237122326_zh-cn_topic_0059778577_a3a989c8f54a7453dac349da0a8acc094"></a>包含这个模板的名称空间的OID。</p>
 </td>

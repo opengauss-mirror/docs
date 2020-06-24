@@ -87,7 +87,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122540_p6196092338"><a name="zh-cn_topic_0237122540_p6196092338"></a><a name="zh-cn_topic_0237122540_p6196092338"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>可使用的临时空间总大小，单位KB，值为-1表示未限制。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>可使用的下盘空间总大小，单位KB，值为-1表示未限制。</p>
 </td>
 </tr>
 </tbody>

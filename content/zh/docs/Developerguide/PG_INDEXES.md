@@ -19,7 +19,7 @@ PG\_INDEXES视图提供对数据库中每个索引的有用信息的访问。
 </td>
 <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_ac81f516a24b7487bb6fb256b60047795"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_ac81f516a24b7487bb6fb256b60047795"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_ac81f516a24b7487bb6fb256b60047795"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.86%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_adfbd16f7ce72493dbd03bb18f9e94fd1"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_adfbd16f7ce72493dbd03bb18f9e94fd1"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_adfbd16f7ce72493dbd03bb18f9e94fd1"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="30.86%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_adfbd16f7ce72493dbd03bb18f9e94fd1"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_adfbd16f7ce72493dbd03bb18f9e94fd1"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_adfbd16f7ce72493dbd03bb18f9e94fd1"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.86%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_a07ce1670b9c3480d8daa24cf240796b0"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_a07ce1670b9c3480d8daa24cf240796b0"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_a07ce1670b9c3480d8daa24cf240796b0"></a>包含表和索引的模式名称。</p>
 </td>
@@ -46,7 +46,7 @@ PG\_INDEXES视图提供对数据库中每个索引的有用信息的访问。
 </td>
 <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_a9ede87426c9a4ca0b8698dc9b6e0cb21"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_a9ede87426c9a4ca0b8698dc9b6e0cb21"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_a9ede87426c9a4ca0b8698dc9b6e0cb21"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.86%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aedac7493048e4e60a80c9722eeb6f683"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aedac7493048e4e60a80c9722eeb6f683"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aedac7493048e4e60a80c9722eeb6f683"></a><a href="PG_TABLESPACE.md#ZH-CN_TOPIC_0242385848">PG_TABLESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="30.86%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aedac7493048e4e60a80c9722eeb6f683"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aedac7493048e4e60a80c9722eeb6f683"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aedac7493048e4e60a80c9722eeb6f683"></a><a href="PG_TABLESPACE.md">PG_TABLESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.86%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aa731931673514e0083291e9cc3645ee8"><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aa731931673514e0083291e9cc3645ee8"></a><a name="zh-cn_topic_0237122420_zh-cn_topic_0059778184_aa731931673514e0083291e9cc3645ee8"></a>包含索引的表空间名称。</p>
 </td>

@@ -1,4 +1,4 @@
-# pg\_controldata<a name="ZH-CN_TOPIC_0242223734"></a>
+# pg\_controldata<a name="ZH-CN_TOPIC_0249632253"></a>
 
 ## 功能介绍<a name="zh-cn_topic_0237152440_section125419154813"></a>
 

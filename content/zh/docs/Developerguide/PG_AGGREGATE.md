@@ -55,7 +55,7 @@ PG\_AGGREGATE系统表存储与聚集函数有关的信息。PG\_AGGREGATE里的
 </td>
 <td class="cellrowborder" valign="top" width="13.530000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a5683c3c1a25341f0b41858e79a791922"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a5683c3c1a25341f0b41858e79a791922"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a5683c3c1a25341f0b41858e79a791922"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.82%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a7f0248b191714edbbec6aed7f696f7f0"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a7f0248b191714edbbec6aed7f696f7f0"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a7f0248b191714edbbec6aed7f696f7f0"></a><a href="PG_OPERATOR.md#ZH-CN_TOPIC_0242385832">PG_OPERATOR</a>.oid</p>
+<td class="cellrowborder" valign="top" width="27.82%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a7f0248b191714edbbec6aed7f696f7f0"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a7f0248b191714edbbec6aed7f696f7f0"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a7f0248b191714edbbec6aed7f696f7f0"></a><a href="PG_OPERATOR.md">PG_OPERATOR</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.1%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_aa946374548ce4624aeebdb7bf55983ed"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_aa946374548ce4624aeebdb7bf55983ed"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_aa946374548ce4624aeebdb7bf55983ed"></a>关联排序操作符（如果没有则为零）。</p>
 </td>
@@ -64,7 +64,7 @@ PG\_AGGREGATE系统表存储与聚集函数有关的信息。PG\_AGGREGATE里的
 </td>
 <td class="cellrowborder" valign="top" width="13.530000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ae6cad39facca4bad8752d4f3d25cca97"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ae6cad39facca4bad8752d4f3d25cca97"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ae6cad39facca4bad8752d4f3d25cca97"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.82%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ac2065ff72197433e8ffd8eb22822b8fa"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ac2065ff72197433e8ffd8eb22822b8fa"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ac2065ff72197433e8ffd8eb22822b8fa"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="27.82%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ac2065ff72197433e8ffd8eb22822b8fa"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ac2065ff72197433e8ffd8eb22822b8fa"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_ac2065ff72197433e8ffd8eb22822b8fa"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.1%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a3eec720a4a954a93a7c009ce378b12e8"><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a3eec720a4a954a93a7c009ce378b12e8"></a><a name="zh-cn_topic_0237122266_zh-cn_topic_0059777833_a3eec720a4a954a93a7c009ce378b12e8"></a>此聚集函数的内部转换（状态）数据的数据类型。</p>
 </td>

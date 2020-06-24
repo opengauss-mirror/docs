@@ -2,7 +2,7 @@
 
 PG\_SECLABEL系统表存储数据对象上的安全标签。
 
-[PG\_SHSECLABEL](PG_SHSECLABEL.md#ZH-CN_TOPIC_0242385844)的作用类似，只是它是用于在一个openGauss内共享的数据库对象的安全标签上的。
+[PG\_SHSECLABEL](PG_SHSECLABEL.md)的作用类似，只是它是用于在一个openGauss内共享的数据库对象的安全标签上的。
 
 **表 1**  PG\_SECLABEL字段
 

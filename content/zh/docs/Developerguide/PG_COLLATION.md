@@ -37,7 +37,7 @@ PG\_COLLATION系统表描述可用的排序规则，本质上从一个SQL名称�
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a4522dd5087134dfa9e974f268a207319"><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a4522dd5087134dfa9e974f268a207319"></a><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a4522dd5087134dfa9e974f268a207319"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.439999999999998%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a3ff9352c82b64efdb02885d39d84de77"><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a3ff9352c82b64efdb02885d39d84de77"></a><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a3ff9352c82b64efdb02885d39d84de77"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="27.439999999999998%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a3ff9352c82b64efdb02885d39d84de77"><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a3ff9352c82b64efdb02885d39d84de77"></a><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a3ff9352c82b64efdb02885d39d84de77"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.72%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a146fd8df3a0e4cc68cb75c4d1bfe2df1"><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a146fd8df3a0e4cc68cb75c4d1bfe2df1"></a><a name="zh-cn_topic_0237122278_zh-cn_topic_0059779096_a146fd8df3a0e4cc68cb75c4d1bfe2df1"></a>包含这个排序规则的名称空间的OID。</p>
 </td>

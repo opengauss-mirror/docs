@@ -32,7 +32,7 @@ PGresult *PQprepare(PGconn *conn,
 </tr>
 <tr id="zh-cn_topic_0241735620_row12654138171218"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735620_p196562861213"><a name="zh-cn_topic_0241735620_p196562861213"></a><a name="zh-cn_topic_0241735620_p196562861213"></a>stmtName</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735620_p6656788128"><a name="zh-cn_topic_0241735620_p6656788128"></a><a name="zh-cn_topic_0241735620_p6656788128"></a>需要执行的prepare语句。</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735620_p6656788128"><a name="zh-cn_topic_0241735620_p6656788128"></a><a name="zh-cn_topic_0241735620_p6656788128"></a>需要执行的<em id="i2828137155814"><a name="i2828137155814"></a><a name="i2828137155814"></a>stmt</em>名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0241735620_row208051436101312"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735620_p48063363137"><a name="zh-cn_topic_0241735620_p48063363137"></a><a name="zh-cn_topic_0241735620_p48063363137"></a>query</p>
@@ -67,5 +67,5 @@ PGresult：包含查询结果的对象指针。
 
 ## 示例<a name="zh-cn_topic_0241735620_section13066285525"></a>
 
-请参见[示例](示例-10.md)章节。
+请参见[示例](示例-3.md)章节。
 

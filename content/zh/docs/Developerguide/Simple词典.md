@@ -20,7 +20,7 @@ Simple词典首先将输入标记转换为小写字母，然后检查停用词�
     );
     ```
 
-    其中，停用词表文件全名为english.stop。关于创建simple词典的语法和更多参数，请参见[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md#ZH-CN_TOPIC_0242370586)。
+    其中，停用词表文件全名为english.stop。关于创建simple词典的语法和更多参数，请参见[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)。
 
 2.  使用Simple词典。
 

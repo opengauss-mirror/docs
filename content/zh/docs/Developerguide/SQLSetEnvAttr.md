@@ -57,9 +57,9 @@ SQLRETURN SQLSetEnvAttr(SQLHENV       EnvironmentHandle
 
 ## 注意事项<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_s3f23b16e09954cc0b1f5bdb1063fee16"></a>
 
-当SQLSetEnvAttr的返回值为SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过借助SQL\_HANDLE\_ENV的HandleType和EnvironmentHandle的Handle，调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)可得到相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当SQLSetEnvAttr的返回值为SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过借助SQL\_HANDLE\_ENV的HandleType和EnvironmentHandle的Handle，调用[SQLGetDiagRec](SQLGetDiagRec.md)可得到相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_s54d045c03fcc414bab03c37ea6e4da08"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

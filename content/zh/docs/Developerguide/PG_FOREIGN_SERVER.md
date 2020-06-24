@@ -46,7 +46,7 @@ PG\_FOREIGN\_SERVER系统表存储外部服务器定义。一个外部服务器�
 </td>
 <td class="cellrowborder" valign="top" width="13.73%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122291_zh-cn_topic_0059777776_ac3b2143fa4d04a65886e8cb13f7ce7d1"><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_ac3b2143fa4d04a65886e8cb13f7ce7d1"></a><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_ac3b2143fa4d04a65886e8cb13f7ce7d1"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.259999999999998%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122291_zh-cn_topic_0059777776_a522cb29c43e3492f84eee1d59daa4ed0"><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_a522cb29c43e3492f84eee1d59daa4ed0"></a><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_a522cb29c43e3492f84eee1d59daa4ed0"></a><a href="PG_FOREIGN_DATA_WRAPPER.md#ZH-CN_TOPIC_0242385817">PG_FOREIGN_DATA_WRAPPER</a>.oid</p>
+<td class="cellrowborder" valign="top" width="30.259999999999998%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122291_zh-cn_topic_0059777776_a522cb29c43e3492f84eee1d59daa4ed0"><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_a522cb29c43e3492f84eee1d59daa4ed0"></a><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_a522cb29c43e3492f84eee1d59daa4ed0"></a><a href="PG_FOREIGN_DATA_WRAPPER.md">PG_FOREIGN_DATA_WRAPPER</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.47%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122291_zh-cn_topic_0059777776_adcae2bfa215743998cbb377ed1e93be2"><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_adcae2bfa215743998cbb377ed1e93be2"></a><a name="zh-cn_topic_0237122291_zh-cn_topic_0059777776_adcae2bfa215743998cbb377ed1e93be2"></a>这个外部服务器的外部数据封装器的OID。</p>
 </td>

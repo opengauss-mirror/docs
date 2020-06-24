@@ -70,9 +70,9 @@ SQLRETURN SQLGetData(SQLHSTMT        StatementHandle,
 
 ## 注意事项<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_s46dd381571fd497484a5e93a075e5643"></a>
 
-当调用SQLFetch函数返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)函数，并将HandleType和Handle参数分别设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当调用SQLGetData函数返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md)函数，并将HandleType和Handle参数分别设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_s69654c27e011474aa33ede59ff0961b8"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

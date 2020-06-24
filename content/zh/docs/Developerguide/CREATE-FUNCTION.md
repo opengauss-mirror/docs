@@ -9,9 +9,9 @@
 -   如果创建函数时参数或返回值带有精度，不进行精度检测。
 -   创建函数时，函数定义中对表对象的操作建议都显式指定模式，否则可能会导致函数执行异常。
 -   在创建函数时，函数内部通过SET语句设置current\_schema和search\_path无效。执行完函数search\_path和current\_schema与执行函数前的search\_path和current\_schema保持一致。
--   如果函数参数中带有出参，SELECT调用函数必须缺省出参，CALL调用函数适配A必须指定出参，对于调用重载的带有PACKAGE属性的函数，CALL调用函数可以缺省出参，具体信息参见[CALL](CALL.md)的示例。
+-   如果函数参数中带有出参，SELECT调用函数必须缺省出参，CALL调用函数必须指定出参，对于调用重载的带有PACKAGE属性的函数，CALL调用函数可以缺省出参，具体信息参见[CALL](CALL.md)的示例。
 -   兼容Postgresql风格的函数或者带有PACKAGE属性的函数支持重载。在指定REPLACE的时候，如果参数个数、类型、返回值有变化，不会替换原有函数，而是会建立新的函数。
--   SELECT调用可以指定不同参数来进行同名函数调用。由于语法CALL适配自A，因此不支持调用不带有PACKAGE属性的同名函数。
+-   SELECT调用可以指定不同参数来进行同名函数调用。由于语法不支持调用不带有PACKAGE属性的同名函数。
 -   在创建function时，不能在avg函数外面嵌套其他agg函数，或者其他系统函数。
 -   新创建的函数默认会给PUBLIC授予执行权限（详见[GRANT](GRANT.md)）。用户可以选择收回PUBLIC默认执行权限，然后根据需要将执行权限授予其他用户，为了避免出现新函数能被所有人访问的时间窗口，应在一个事务中创建函数并且设置函数执行权限。
 
@@ -40,12 +40,11 @@
          ][...]
         {
             AS 'definition'
-            | AS 'obj_file', 'link_symbol'
         }
     
     ```
 
--   A风格的创建自定义函数的语法。
+-   O风格的创建自定义函数的语法。
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name 
@@ -127,11 +126,11 @@
 
 -   **LANGUAGE lang\_name**
 
-    用以实现函数的语言的名称。可以是SQL，C，internal，或者是用户定义的过程语言名称。为了保证向下兼容，该名称可以用单引号（包围）。若采用单引号，则引号内必须为大写。
+    用以实现函数的语言的名称。可以是SQL，internal，或者是用户定义的过程语言名称。为了保证向下兼容，该名称可以用单引号（包围）。若采用单引号，则引号内必须为大写。
 
 -   **WINDOW**
 
-    表示该函数是窗口函数，通常只用于C语言编写的函数。替换函数定义时不能改变WINDOW属性。
+    表示该函数是窗口函数。替换函数定义时不能改变WINDOW属性。
 
     >![](public_sys-resources/icon-notice.gif) **须知：**   
     >自定义窗口函数只支持LANGUAGE是internal，并且引用的内部函数必须是窗口函数。  
@@ -148,9 +147,9 @@
 
     表示该函数值可以在一次表扫描内改变，因此不会做任何优化。
 
--   PACKAGE
+-   **PACKAGE**
 
-    表示该函数是否支持重载。PostgreSQL风格的函数本身就支持重载，此参数主要是针对A风格的函数。
+    表示该函数是否支持重载。PostgreSQL风格的函数本身就支持重载，此参数主要是针对其它风格的函数。
 
     -   不允许package函数和非package函数重载或者替换。
     -   package函数不支持VARIADIC类型的参数。
@@ -224,10 +223,6 @@
         取当前会话中的值设置为configuration\_parameter的值。
 
 
--   **obj\_file, link\_symbol**
-
-    适用于C语言函数，字符串_obj\_file_指定了动态库的绝对路径；_link\_symbol_指定了该函数的链接符号，也就是该函数在C代码中的函数名称。
-
 -   **plsql\_body**
 
     PL/SQL存储过程体。
@@ -298,11 +293,4 @@ postgres=# DROP FUNCTION func_add_sql;
 ## 相关链接<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
 [ALTER FUNCTION](ALTER-FUNCTION.md)，[DROP FUNCTION](DROP-FUNCTION.md)
-
-## 优化建议<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_section60380346161036"></a>
-
--   analyse | analyze
-    -   不支持在事务或匿名块中执行analyze 。
-    -   不支持在函数或存储过程中执行analyze操作。
-
 

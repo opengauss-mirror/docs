@@ -160,7 +160,7 @@ openGauss中只有一份pg\_authid，不是每个数据库有一份。需要有�
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122273_p434935811613"><a name="zh-cn_topic_0237122273_p434935811613"></a><a name="zh-cn_topic_0237122273_p434935811613"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122273_p17350258191614"><a name="zh-cn_topic_0237122273_p17350258191614"></a><a name="zh-cn_topic_0237122273_p17350258191614"></a><span id="ph2834227105818"><a name="ph2834227105818"></a><a name="ph2834227105818"></a>该字段不支持</span>。</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122273_p17350258191614"><a name="zh-cn_topic_0237122273_p17350258191614"></a><a name="zh-cn_topic_0237122273_p17350258191614"></a>该字段不支持。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122273_row1621682310719"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122273_p182174233713"><a name="zh-cn_topic_0237122273_p182174233713"></a><a name="zh-cn_topic_0237122273_p182174233713"></a>roltempspace</p>

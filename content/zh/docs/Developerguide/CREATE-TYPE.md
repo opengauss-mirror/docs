@@ -14,7 +14,7 @@
 
 -   基本类型
 
-    用户可以自定义一种新的基本类型（标量类型）。通常来说这些函数必须是用C或者另外一种低层语言所编写。
+    用户可以自定义一种新的基本类型（标量类型）。通常来说这些函数必须是底层语言所编写。
 
 -   shell类型
 
@@ -227,7 +227,7 @@ CREATE TYPE name AS ENUM
 ## 示例<a name="zh-cn_topic_0237122124_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d"></a>
 
 ```
---创建一种复合类型，建表并插入数据以及查询：
+--创建一种复合类型，建表并插入数据以及查询。
 postgres=# CREATE TYPE compfoo AS (f1 int, f2 text);
 postgres=# CREATE TABLE t1_compfoo(a int, b compfoo);
 postgres=# CREATE TABLE t2_compfoo(a int, b compfoo);
@@ -236,164 +236,39 @@ postgres=# INSERT INTO t2_compfoo select * from t1_typ5;
 postgres=# SELECT (b).f1 FROM t1_compfoo;
 postgres=# SELECT * FROM t1_compfoo t1 join t2_compfoo t2 on (t1.b).f1=(t1.b).f1;
 
---重命名数据类型：
+--重命名数据类型。
 postgres=# ALTER TYPE compfoo RENAME TO compfoo1;
 
---要改变一个用户定义类型compfoo1的所有者为usr1：
-CREATE USER usr1 PASSWORD 'Bigdata@123';
+--要改变一个用户定义类型compfoo1的所有者为usr1。
+postgres=# CREATE USER usr1 PASSWORD 'Bigdata@123';
 postgres=# ALTER TYPE compfoo1 OWNER TO usr1;
 
---把用户定义类型compfoo1的模式改变为usr1:
+--把用户定义类型compfoo1的模式改变为usr1。
 postgres=# ALTER TYPE compfoo1 SET SCHEMA usr1;
 
-给一个数据类型增加一个新的属性：
+--给一个数据类型增加一个新的属性。
 postgres=# ALTER TYPE usr1.compfoo1 ADD ATTRIBUTE f3 int;
 
-删除compfoo1类型：
+--删除compfoo1类型。
 postgres=# DROP TYPE usr1.compfoo1 cascade;
 
-删除相关表和用户:
+--删除相关表和用户。
 postgres=# DROP TABLE t1_compfoo;
 postgres=# DROP TABLE t2_compfoo;
 postgres=# DROP SCHEMA usr1;
 postgres=# DROP USER usr1;
 
---创建一个枚举类型
+--创建一个枚举类型。
 postgres=# CREATE TYPE bugstatus AS ENUM ('create', 'modify', 'closed');
 
---添加一个标签值
+--添加一个标签值。
 postgres=# ALTER TYPE bugstatus ADD VALUE IF NOT EXISTS 'regress' BEFORE 'closed';
 
---重命名一个标签值
-postgres=# ALTER TYPE bugstatus RENAME VALUE 'create' BEFORE 'new';
-
---编译.so文件，并创建shell类型：
-postgres=# CREATE TYPE complex;
---这个语句的作用是为要定义的类型创建了一个占位符，这样允许我们在定义其I/O函数时引用该类型。现在可以定义 I/O函数，需要注意的是在创建函数时function必须声明为NOT FENCED模式：
-postgres=# CREATE FUNCTION
-complex_in(cstring)
-    RETURNS complex
-    AS 'filename'
-    LANGUAGE C IMMUTABLE STRICT not fenced;
-
-postgres=# CREATE FUNCTION
-complex_out(complex)
-    RETURNS cstring
-    AS 'filename'
-    LANGUAGE C IMMUTABLE STRICT not fenced;
-
-postgres=# CREATE FUNCTION
-complex_recv(internal)
-  
-RETURNS complex
-  
-AS 'filename'
-  
-LANGUAGE C IMMUTABLE STRICT not fenced;
-
-postgres=# CREATE FUNCTION
-complex_send(complex)
-  
-RETURNS bytea
-  
-AS 'filename'
-  
-LANGUAGE C IMMUTABLE STRICT not fenced;
---最后，提供该数据类型的完整定义：
-postgres=# CREATE TYPE complex (
-  
-internallength = 16,
-  
-input = complex_in,
-  
-output = complex_out,
-  
-receive = complex_recv,
-  
-send = complex_send,
-  
-alignment = double
-);
-```
-
-input、output、receive及send函数对应的C函数定义如下：
-
-```
---定义结构体Complex如下：
-typedef struct Complex {
-    double      x;
-    double      y;
-} Complex;
-
---定义input函数：
-PG_FUNCTION_INFO_V1(complex_in);
-
-Datum
-complex_in(PG_FUNCTION_ARGS)
-{
-    char       *str = PG_GETARG_CSTRING(0);
-    double      x,
-                y;
-    Complex    *result;
-
-    if (sscanf(str, " ( %lf , %lf )", &x, &y) != 2)
-        ereport(ERROR,
-                (errcode(ERRCODE_INVALID_TEXT_REPRESENTATION),
-                 errmsg("invalid input syntax for complex: \"%s\"",
-                        str)));
-
-    result = (Complex *) palloc(sizeof(Complex));
-    result->x = x;
-    result->y = y;
-    PG_RETURN_POINTER(result);
-}
-
---定义output函数：
-PG_FUNCTION_INFO_V1(complex_out);
-
-Datum
-complex_out(PG_FUNCTION_ARGS)
-{
-        Complex    *complex = (Complex *) PG_GETARG_POINTER(0);
-        char       *result;
-
-        result = (char *) palloc(100);
-        snprintf(result, 100, "(%g,%g)", complex->x, complex->y);
-        PG_RETURN_CSTRING(result);
-}
-
---定义receive函数：
-PG_FUNCTION_INFO_V1(complex_recv);
-
-Datum
-complex_recv(PG_FUNCTION_ARGS)
-{
-    StringInfo  buf = (StringInfo) PG_GETARG_POINTER(0);
-    Complex    *result;
-
-    result = (Complex *) palloc(sizeof(Complex));
-    result->x = pq_getmsgfloat8(buf);
-    result->y = pq_getmsgfloat8(buf);
-    PG_RETURN_POINTER(result);
-}
-
---定义send函数：
-PG_FUNCTION_INFO_V1(complex_send);
-
-Datum
-complex_send(PG_FUNCTION_ARGS)
-{
-    Complex    *complex = (Complex *) PG_GETARG_POINTER(0);
-    StringInfoData buf;
-
-    pq_begintypsend(&buf);
-    pq_sendfloat8(&buf, complex->x);
-    pq_sendfloat8(&buf, complex->y);
-    PG_RETURN_BYTEA_P(pq_endtypsend(&buf));
-}
+--重命名一个标签值。
+postgres=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122124_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
 
-[ALTER TYPE](ALTER-TYPE.md#ZH-CN_TOPIC_0242370546)，[DROP TYPE](DROP-TYPE.md#ZH-CN_TOPIC_0242370621)
+[ALTER TYPE](ALTER-TYPE.md)，[DROP TYPE](DROP-TYPE.md)
 

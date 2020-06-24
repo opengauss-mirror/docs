@@ -1,4 +1,4 @@
-# gs\_checkperf<a name="ZH-CN_TOPIC_0243406125"></a>
+# gs\_checkperf<a name="ZH-CN_TOPIC_0249632246"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_section1646074516325"></a>
 
@@ -9,7 +9,7 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 -   openGauss运行状态正常且不为只读模式。
 -   运行在数据库之上的业务运行正常。
 
-## **注意事项**<a name="zh-cn_topic_0237152332_section4694838915381"></a>
+## 注意事项<a name="zh-cn_topic_0237152332_section4694838915381"></a>
 
 -   gs\_checkperf工具的监控信息依赖于pmk模式下的表的数据。如果pmk模式下的表未执行analyze操作，则可能导致gs\_checkperf工具执行失败。其报错示例信息如下:
 
@@ -355,7 +355,6 @@ Session IO statistics:
 3 dn_6001_6002-postgres-dbazt:
     Physical Reads                               :    271
     Read Time                                    :    4662
-
 ```
 
 ## 相关命令<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_s192dbb9a0f6b4bae84d65bf5bdd8a796"></a>

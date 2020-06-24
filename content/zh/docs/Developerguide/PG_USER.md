@@ -1,6 +1,6 @@
 # PG\_USER<a name="ZH-CN_TOPIC_0242385999"></a>
 
-PG\_USER视图提供了访问数据库用户的信息。
+PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用户和具有sysadmin属性的用户可以查看，其余用户需要赋权后才可以查看。
 
 **表 1**  PG\_USER字段
 
@@ -122,7 +122,7 @@ PG\_USER视图提供了访问数据库用户的信息。
 </td>
 <td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122472_p1638355314230"><a name="zh-cn_topic_0237122472_p1638355314230"></a><a name="zh-cn_topic_0237122472_p1638355314230"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122472_p23836535234"><a name="zh-cn_topic_0237122472_p23836535234"></a><a name="zh-cn_topic_0237122472_p23836535234"></a>用户关联的逻辑<span id="zh-cn_topic_0237122472_text97211119124115"><a name="zh-cn_topic_0237122472_text97211119124115"></a><a name="zh-cn_topic_0237122472_text97211119124115"></a>openGauss</span>名称，如果该用户没有管理逻辑<span id="zh-cn_topic_0237122472_text5793542184116"><a name="zh-cn_topic_0237122472_text5793542184116"></a><a name="zh-cn_topic_0237122472_text5793542184116"></a>openGauss</span>，则该字段为空。</p>
+<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122472_p23836535234"><a name="zh-cn_topic_0237122472_p23836535234"></a><a name="zh-cn_topic_0237122472_p23836535234"></a>用户关联的逻辑openGauss名称，如果该用户没有管理openGauss，则该字段为空。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122472_row7733017123420"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122472_p20734171716349"><a name="zh-cn_topic_0237122472_p20734171716349"></a><a name="zh-cn_topic_0237122472_p20734171716349"></a>usemonitoradmin</p>

@@ -41,9 +41,9 @@ SQLRETURN SQLExecute(SQLHSTMT    StatementHandle);
 
 ## 注意事项<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_sbf798ae1ab814ff5aba587d2df01ad12"></a>
 
-当SQLExecute函数返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，可通过调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当SQLExecute函数返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，可通过调用[SQLGetDiagRec](SQLGetDiagRec.md)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_s224798c3974741f3976659ed7d6de926"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

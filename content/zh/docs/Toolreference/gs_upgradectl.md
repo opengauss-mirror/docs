@@ -1,4 +1,4 @@
-# gs\_upgradectl<a name="ZH-CN_TOPIC_0244806773"></a>
+# gs\_upgradectl<a name="ZH-CN_TOPIC_0249632241"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>
 
@@ -6,7 +6,7 @@
 
 升级方式为就地小版本升级。
 
--   就地小版本升级：就地升级需要停止业务进行，会一次性升级openGauss中所有节点。
+就地小版本升级：就地升级需要停止业务进行，会一次性升级openGauss中所有节点。
 
 ## 注意事项<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
 
@@ -46,7 +46,7 @@
 -   自动升级openGauss
 
     ```
-    gs_upgradectl -t auto-upgrade -X XMLFILE [-M MOUNTDIR] [-l LOGFILE] [--product=PRODUCT_FEATURE] {-g NODENUMBER | -h HOSTNAME | --continue | --inplace}
+    gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE]  
     ```
 
 -   自动回滚升级

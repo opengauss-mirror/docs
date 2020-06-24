@@ -1,4 +1,4 @@
-# openGauss事务<a name="ZH-CN_TOPIC_0244544117"></a>
+# openGauss事务<a name="ZH-CN_TOPIC_0251900970"></a>
 
 介绍openGauss事务隔离、事务只读、最大prepared事务数、维护模式目的参数设置及取值范围等内容。
 
@@ -13,7 +13,6 @@
 -   serializable：openGauss中等价于REPEATABLE READ。
 -   read committed：只能读取已提交的事务的数据（缺省），不能读取到未提交的数据。
 -   repeatable read：仅能读取事务开始之前提交的数据，不能读取未提交的数据以及在事务执行期间由其它并发事务提交的修改。
--   read uncommitted：读未提交，可以读取任何时刻的数据。
 -   default：设置为defualt\_transaction\_isolation所设隔离级别。
 
 **默认值：**read committed
@@ -115,7 +114,9 @@
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**0\~3
+该参数是内部参数，用户不能自己去设置参数值。
+
+**取值范围：**0\~2
 
 -   1 表示使用一主多备模式。
 -   0 表示主备从模式。

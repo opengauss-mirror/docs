@@ -1,4 +1,4 @@
-# gs\_guc<a name="ZH-CN_TOPIC_0242223669"></a>
+# gs\_guc<a name="ZH-CN_TOPIC_0249632248"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152338_zh-cn_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>
 
@@ -253,7 +253,7 @@ gs\_guc工具由操作系统用户omm执行。
 示例1：修改数据库允许的最大连接数为800。修改后需要重启数据库才能生效。
 
 ```
-gs_guc set -D /gaussdb/data/coordinator -c "max_connections = 800" -N plat1
+gs_guc set -D /gaussdb/data/dbnode -c "max_connections = 800" -N plat1
 
 Total instances: 1. Failed instances: 0.
 Success to perform gs_guc!
@@ -262,7 +262,7 @@ Success to perform gs_guc!
 示例2：将已设置的数据库允许的最大连接数值修改为默认值。修改后需要重启数据库才能生效。
 
 ```
-gs_guc set -D /gaussdb/data/dbnode-c "max_connections" -N plat1
+gs_guc set -D /gaussdb/data/dbnode -c "max_connections" -N plat1
 
 Total instances: 1. Failed instances: 0.
 Success to perform gs_guc!

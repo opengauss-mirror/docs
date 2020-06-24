@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0237122136_zh-cn_topic_0059779050_s7810bb02b5b247fd92d22d7e328c870f"></a>
 
-删除指定的directory表项。
+删除指定的directory对象。
 
 ## 注意事项<a name="zh-cn_topic_0237122136_zh-cn_topic_0059779050_sd775e695334845048410c46ecc8adaea"></a>
 
@@ -29,11 +29,11 @@ DROP DIRECTORY [ IF EXISTS ] directory_name;
 --创建目录。
 postgres=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 
---删除外部表。
+--删除目录。
 postgres=# DROP DIRECTORY dir;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122136_section14134121715454"></a>
 
-[CREATE DIRECTORY](CREATE-DIRECTORY.md#ZH-CN_TOPIC_0242370565)，[ALTER DIRECTORY](ALTER-DIRECTORY.md#ZH-CN_TOPIC_0242370522)
+[CREATE DIRECTORY](CREATE-DIRECTORY.md)，[ALTER DIRECTORY](ALTER-DIRECTORY.md)
 

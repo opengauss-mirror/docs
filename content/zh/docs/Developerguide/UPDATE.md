@@ -8,7 +8,6 @@
 
 -   要修改表，用户必须对该表有UPDATE权限。
 -   对expression或condition条件里涉及到的任何表要有SELECT权限。
--   不允许对表的分布列（distribute column）进行修改。
 -   对于列存表，暂时不支持RETURNING子句。
 -   列存表不支持结果不确定的更新\(non-deterministic update\)。试图对列存表用多行数据更新一行时会报错。
 -   列存表的更新操作，旧记录空间不会回收，需要执行VACUUM FULL table\_name进行清理。

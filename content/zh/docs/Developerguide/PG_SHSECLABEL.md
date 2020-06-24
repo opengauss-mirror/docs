@@ -2,11 +2,11 @@
 
 PG\_SHSECLABEL系统表存储在共享数据库对象上的安全标签。安全标签可以用SECURITY LABEL命令操作。
 
-查看安全标签的简单点的方法，请参阅[PG\_SECLABELS](PG_SECLABELS.md#ZH-CN_TOPIC_0242385959)。
+查看安全标签的简单点的方法，请参阅[PG\_SECLABELS](PG_SECLABELS.md)。
 
-[PG\_SECLABEL](PG_SECLABEL.md#ZH-CN_TOPIC_0242385841)的作用类似，只是它是用于在单个数据库内部的对象的安全标签的。
+[PG\_SECLABEL](PG_SECLABEL.md)的作用类似，只是它是用于在单个数据库内部的对象的安全标签的。
 
-不同于大多数的系统表，PG\_SHSECLABELopenGauss中的所有数据库中共享：每个openGauss只有一个PG\_SHSECLABEL，而不是每个数据库一个。
+不同于大多数的系统表，PG\_SHSECLABEL在openGauss中的所有数据库中共享：每个openGauss只有一个PG\_SHSECLABEL，而不是每个数据库一个。
 
 **表 1**  PG\_SHSECLABEL字段
 

@@ -31,7 +31,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122396_p2740104733614"><a name="zh-cn_topic_0237122396_p2740104733614"></a><a name="zh-cn_topic_0237122396_p2740104733614"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122396_p1969411212390"><a name="zh-cn_topic_0237122396_p1969411212390"></a><a name="zh-cn_topic_0237122396_p1969411212390"></a><span id="ph88423533196"><a name="ph88423533196"></a><a name="ph88423533196"></a>该字段不支持。</span></p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122396_p1969411212390"><a name="zh-cn_topic_0237122396_p1969411212390"></a><a name="zh-cn_topic_0237122396_p1969411212390"></a>该字段不支持。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122396_row395135215814"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122396_zh-cn_topic_0111176227_p19520161411513"><a name="zh-cn_topic_0237122396_zh-cn_topic_0111176227_p19520161411513"></a><a name="zh-cn_topic_0237122396_zh-cn_topic_0111176227_p19520161411513"></a>parentid</p>

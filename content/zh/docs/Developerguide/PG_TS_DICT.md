@@ -39,7 +39,7 @@ PG\_TS\_DICT系统表包含定义文本搜索字典的记录。字典取决于�
 </td>
 <td class="cellrowborder" valign="top" width="9.590000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_aff4e74040bd643f5913032be44b53607"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_aff4e74040bd643f5913032be44b53607"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_aff4e74040bd643f5913032be44b53607"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.010000000000005%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_ae53cd323dd2a450d9f8494d2b432adb5"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_ae53cd323dd2a450d9f8494d2b432adb5"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_ae53cd323dd2a450d9f8494d2b432adb5"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="31.010000000000005%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_ae53cd323dd2a450d9f8494d2b432adb5"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_ae53cd323dd2a450d9f8494d2b432adb5"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_ae53cd323dd2a450d9f8494d2b432adb5"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.400000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a1e8e7dffef6946559fb83a81464c5cde"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a1e8e7dffef6946559fb83a81464c5cde"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a1e8e7dffef6946559fb83a81464c5cde"></a>包含这个字典的名称空间的OID。</p>
 </td>
@@ -57,7 +57,7 @@ PG\_TS\_DICT系统表包含定义文本搜索字典的记录。字典取决于�
 </td>
 <td class="cellrowborder" valign="top" width="9.590000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a52c0690d49d245fba2b7f9bf0de2eb58"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a52c0690d49d245fba2b7f9bf0de2eb58"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a52c0690d49d245fba2b7f9bf0de2eb58"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.010000000000005%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a0883ac0e6ed44d67b7efa74c3ece53c2"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a0883ac0e6ed44d67b7efa74c3ece53c2"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a0883ac0e6ed44d67b7efa74c3ece53c2"></a><a href="PG_TS_TEMPLATE.md#ZH-CN_TOPIC_0242385854">PG_TS_TEMPLATE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="31.010000000000005%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a0883ac0e6ed44d67b7efa74c3ece53c2"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a0883ac0e6ed44d67b7efa74c3ece53c2"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a0883ac0e6ed44d67b7efa74c3ece53c2"></a><a href="PG_TS_TEMPLATE.md">PG_TS_TEMPLATE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.400000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a60ad00767cdc4c31b1d7c1932db041f8"><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a60ad00767cdc4c31b1d7c1932db041f8"></a><a name="zh-cn_topic_0237122324_zh-cn_topic_0059779137_a60ad00767cdc4c31b1d7c1932db041f8"></a>这个字典的文本搜索模板的OID。</p>
 </td>

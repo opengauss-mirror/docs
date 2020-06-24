@@ -8,9 +8,8 @@
 
 -   只有数据库所有者有权限执行DROP DATABASE命令，系统管理员默认拥有此权限。
 -   不能对系统默认安装的三个数据库（POSTGRES、TEMPLATE0和TEMPLATE1）执行删除操作，系统做了保护。如果想查看当前服务中有哪几个数据库，可以用gsql的\\l命令查看。
--   如果有用户正在与要删除的数据库连接，则删除操作失败。如果要查看当前存在哪些数据库连接，可以通过视图v$session查看。
+-   如果有用户正在与要删除的数据库连接，则删除操作失败。
 -   不能在事务块中执行DROP DATABASE命令。
--   确定删除数据库前需要执行“CLEAN CONNECTION TO ALL FORCE FOR DATABASE XXXX;”命令，用于强制停止当前已有的用户连接及后台线程，防止因为有后台线程未完全退出而导致的删库失败问题。此处需要注意，强制停止后台线程可能导致当前数据库数据一致性问题，此命令仅在确定删库阶段执行。
 -   如果执行DROP DATABASE失败，事务回滚，需要再次执行一次DROP DATABASE IF EXISTS。
 
 >![](public_sys-resources/icon-notice.gif) **须知：**   

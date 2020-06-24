@@ -77,9 +77,9 @@ int：执行结果为1表示成功，0表示失败，失败原因存到conn-\>er
 
 ## 注意事项<a name="zh-cn_topic_0241735628_zh-cn_topic_0237120433_zh-cn_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
-该函数等效于PQsendQuery，只是查询参数可以和查询字串分开声明。函数的参数处理和PQexecParams一样，和PQexecParams类似，它不能在2.0版本的协议连接上工作，并且它只允许在查询字串里出现一条命令。
+该函数等效于PQsendQuery，只是查询参数可以和查询字符串分开声明。函数的参数处理和PQexecParams一样，和PQexecParams类似，它不能在2.0版本的协议连接上工作，并且它只允许在查询字符串里出现一条命令。
 
 ## 示例<a name="zh-cn_topic_0241735628_section13161655174820"></a>
 
-请参见[示例](示例-10.md)章节。
+请参见[示例](示例-3.md)章节。
 

@@ -55,8 +55,8 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
     不改变序列的值。这是缺省值。
 
 -   **CASCADE | RESTRICT**
-    -   CASCADE：级联清空所有在该表上有外键引用的表，或者由于CASCADE而被添加到组中的表。
-    -   RESTRICT（缺省值）：如果其他表在该表上有外键引用则拒绝清空。
+    -   CASCADE：级联清空所有由于CASCADE而被添加到组中的表。
+    -   RESTRICT（缺省值）：完全清空。
 
 -   **partition\_name**
 

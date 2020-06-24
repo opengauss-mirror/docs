@@ -2,7 +2,7 @@
 
 PG\_TS\_CONFIG系统表包含表示文本搜索配置的记录。一个配置指定一个特定的文本搜索解析器和一个为了每个解析器的输出类型使用的字典的列表。
 
-解析器在PG\_TS\_CONFIG记录中显示，但是字典映射的标记是由[PG\_TS\_CONFIG\_MAP](PG_TS_CONFIG_MAP.md#ZH-CN_TOPIC_0242385851)里面的辅助记录定义的。
+解析器在PG\_TS\_CONFIG记录中显示，但是字典映射的标记是由[PG\_TS\_CONFIG\_MAP](PG_TS_CONFIG_MAP.md)里面的辅助记录定义的。
 
 **表 1**  PG\_TS\_CONFIG字段
 
@@ -39,7 +39,7 @@ PG\_TS\_CONFIG系统表包含表示文本搜索配置的记录。一个配置指
 </td>
 <td class="cellrowborder" valign="top" width="8.83%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a621974a019e04c9dbd716ed2d3bc4247"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a621974a019e04c9dbd716ed2d3bc4247"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a621974a019e04c9dbd716ed2d3bc4247"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.57%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a384d18f44b84433fb2d46eb5f17d22e0"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a384d18f44b84433fb2d46eb5f17d22e0"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a384d18f44b84433fb2d46eb5f17d22e0"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.57%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a384d18f44b84433fb2d46eb5f17d22e0"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a384d18f44b84433fb2d46eb5f17d22e0"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a384d18f44b84433fb2d46eb5f17d22e0"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.8%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a990265c7f60e4081bd1388f27481d66b"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a990265c7f60e4081bd1388f27481d66b"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a990265c7f60e4081bd1388f27481d66b"></a>包含这个配置的名称空间的OID。</p>
 </td>
@@ -57,7 +57,7 @@ PG\_TS\_CONFIG系统表包含表示文本搜索配置的记录。一个配置指
 </td>
 <td class="cellrowborder" valign="top" width="8.83%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_aa081edb5582b4377a6e6253010eab639"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_aa081edb5582b4377a6e6253010eab639"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_aa081edb5582b4377a6e6253010eab639"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.57%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a9f3cd4b3cd8a409daff143acc6c88666"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a9f3cd4b3cd8a409daff143acc6c88666"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a9f3cd4b3cd8a409daff143acc6c88666"></a><a href="PG_TS_PARSER.md#ZH-CN_TOPIC_0242385853">PG_TS_PARSER</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.57%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a9f3cd4b3cd8a409daff143acc6c88666"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a9f3cd4b3cd8a409daff143acc6c88666"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a9f3cd4b3cd8a409daff143acc6c88666"></a><a href="PG_TS_PARSER.md">PG_TS_PARSER</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.8%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a6c8eea38d2e3466baab8fd18aa79a3d3"><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a6c8eea38d2e3466baab8fd18aa79a3d3"></a><a name="zh-cn_topic_0237122322_zh-cn_topic_0059777865_a6c8eea38d2e3466baab8fd18aa79a3d3"></a>这个配置的文本搜索解析器的OID。</p>
 </td>

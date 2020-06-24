@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0237122169_zh-cn_topic_0059778649_s0bf0a06c81754f8b9c758ba7660a6d5f"></a>
 
-MOVE在不检索数据的情况下重新定位一个游标。MOVE的作用类似于[FETCH](FETCH.md#ZH-CN_TOPIC_0242370629)命令，但只是重定位游标而不返回行。
+MOVE在不检索数据的情况下重新定位一个游标。MOVE的作用类似于[FETCH](FETCH.md)命令，但只是重定位游标而不返回行。
 
 ## 注意事项<a name="zh-cn_topic_0237122169_zh-cn_topic_0059778649_sb645366a8585455aaecf9f6d58feef33"></a>
 
@@ -71,5 +71,5 @@ postgres=# END;
 
 ## 相关链接<a name="zh-cn_topic_0237122169_zh-cn_topic_0059778649_s576a05d59d374a6684001f646161ee14"></a>
 
-[CLOSE](CLOSE.md#ZH-CN_TOPIC_0242370555)，[FETCH](FETCH.md#ZH-CN_TOPIC_0242370629)
+[CLOSE](CLOSE.md)，[FETCH](FETCH.md)
 

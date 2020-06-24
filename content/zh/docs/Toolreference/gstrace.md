@@ -1,4 +1,4 @@
-# gstrace<a name="ZH-CN_TOPIC_0242223720"></a>
+# gstrace<a name="ZH-CN_TOPIC_0249632236"></a>
 
 ## 功能介绍<a name="zh-cn_topic_0237152426_zh-cn_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>
 
@@ -17,7 +17,7 @@ gstrace是openGauss提供的用来跟踪内核代码执行路径，记录内核�
 ## 语法<a name="zh-cn_topic_0237152426_section681720817204"></a>
 
 ```
-gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <pid>] [-m <MASK>] [-s <BUFFER_SIZE>] [-f <DUMP_FILE>] [-o <OUTPUT_FILE>] [-t <STEP_SIZE>]
+gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <pid>][-s <BUFFER_SIZE>] [-f <DUMP_FILE>] [-o <OUTPUT_FILE>] [-t <STEP_SIZE>]
 ```
 
 ## 参数说明<a name="zh-cn_topic_0237152426_zh-cn_topic_0059778103_se0ebdb25733f42f5b4286a1fc7e54a13"></a>
@@ -86,20 +86,9 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <pid>] [-m <MASK>] [
 <td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152426_p16317134152214"><a name="zh-cn_topic_0237152426_p16317134152214"></a><a name="zh-cn_topic_0237152426_p16317134152214"></a>指定分片分析的时间跨度（秒）,可选。将生成单独的{OUTPUT_FILE}.step文件。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152426_zh-cn_topic_0059778103_rcb882095a95d4701926e29b2389d7316"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152426_p1231583482213"><a name="zh-cn_topic_0237152426_p1231583482213"></a><a name="zh-cn_topic_0237152426_p1231583482213"></a>-m MASK</p>
-</td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152426_p203221034172211"><a name="zh-cn_topic_0237152426_p203221034172211"></a><a name="zh-cn_topic_0237152426_p203221034172211"></a>指定哪些模块、函数需要追踪，如果参数为空，则追踪添加trace接口的所有模块的所有函数。</p>
-<p id="zh-cn_topic_0237152426_p176851402914"><a name="zh-cn_topic_0237152426_p176851402914"></a><a name="zh-cn_topic_0237152426_p176851402914"></a>格式:：[comp…][ALL].[func…][ALL]</p>
-<p id="zh-cn_topic_0237152426_p476815146299"><a name="zh-cn_topic_0237152426_p476815146299"></a><a name="zh-cn_topic_0237152426_p476815146299"></a>描述：</p>
-<a name="zh-cn_topic_0237152426_ol17867103818444"></a><a name="zh-cn_topic_0237152426_ol17867103818444"></a><ol id="zh-cn_topic_0237152426_ol17867103818444"><li>comp 是模块列表，使用‘,’分隔，例如：executer,<span id="text1145103312459"><a name="text1145103312459"></a><a name="text1145103312459"></a>opengauss</span>。也可以使用序号，例如：executer,2</li><li>func 是function列表，使用‘,’ 分隔。 例如：sql_execute_ddl, sql_execute_dcl。也可以使用序号指代模块中第几个function，例如：2</li><li>设置成ALL表示所有模块或所有function被trace。</li></ol>
-<p id="zh-cn_topic_0237152426_p276921442916"><a name="zh-cn_topic_0237152426_p276921442916"></a><a name="zh-cn_topic_0237152426_p276921442916"></a>示例：</p>
-<a name="zh-cn_topic_0237152426_ol2639601448"></a><a name="zh-cn_topic_0237152426_ol2639601448"></a><ol id="zh-cn_topic_0237152426_ol2639601448"><li>executer,<span id="text840843412455"><a name="text840843412455"></a><a name="text840843412455"></a>opengauss</span>.ALL ：所有定义定义在executer和<span id="text639943504519"><a name="text639943504519"></a><a name="text639943504519"></a>opengauss</span>模块下的function被trace。</li><li>executer,<span id="text203100369453"><a name="text203100369453"></a><a name="text203100369453"></a>opengauss</span>.sql_execute_ddl ：定义在executer 下的Function sql_execute_ddl被trace. <span id="text153928377459"><a name="text153928377459"></a><a name="text153928377459"></a>opengauss</span>模块被忽略，因为下面没有该function 。</li><li>executer,<span id="text1331543812453"><a name="text1331543812453"></a><a name="text1331543812453"></a>opengauss</span>.1 ：定义在模块executer和 <span id="text13551939114511"><a name="text13551939114511"></a><a name="text13551939114511"></a>opengauss</span> 下的第一个function被trace。</li></ol>
-<p id="zh-cn_topic_0237152426_p176921422917"><a name="zh-cn_topic_0237152426_p176921422917"></a><a name="zh-cn_topic_0237152426_p176921422917"></a>ALL.1,2 ：定义在所有模块下的第一，二个function被trace。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237152426_row12693367813"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152426_p43111434122216"><a name="zh-cn_topic_0237152426_p43111434122216"></a><a name="zh-cn_topic_0237152426_p43111434122216"></a>-s BUFFER_SIZE</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152426_p5310203414226"><a name="zh-cn_topic_0237152426_p5310203414226"></a><a name="zh-cn_topic_0237152426_p5310203414226"></a>指定用于trace功能的共享内存大小，默认为1G，该值需要为2的倍数，如果不是则会补齐为2的倍数。</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152426_p5310203414226"><a name="zh-cn_topic_0237152426_p5310203414226"></a><a name="zh-cn_topic_0237152426_p5310203414226"></a>指定用于trace功能的共享内存大小，默认为1G，该值需要为2的N次方，如果不是则会补齐为2的倍数。</p>
 </td>
 </tr>
 </tbody>
@@ -116,7 +105,7 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <pid>] [-m <MASK>] [
 2.  停止trace
 
     ```
-    gstarce stop -p 207787
+    gstrace stop -p 207787
     ```
 
 3.  查看trace配置

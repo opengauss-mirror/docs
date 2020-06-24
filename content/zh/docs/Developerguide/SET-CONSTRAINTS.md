@@ -12,7 +12,7 @@ IMMEDIATE约束是在每条语句后面进行检查。DEFERRED约束一直到事
 
 当SET CONSTRAINTS把一个约束从DEFERRED改成IMMEDIATE的时候，新模式反作用式地起作用：任何将在事务结束准备进行的数据修改都将在SET CONSTRAINTS的时候执行检查。如果违反了任何约束，SET CONSTRAINTS都会失败（并且不会修改约束模式）。因此，SET CONSTRAINTS可以用于强制在事务中某一点进行约束检查。
 
-目前，只有外键约束被该设置影响。检查和唯一约束总是不可推迟的。
+检查和唯一约束总是不可推迟的。
 
 ## 注意事项<a name="zh-cn_topic_0237122187_zh-cn_topic_0059779017_s321677998664492982aeded9dee52787"></a>
 

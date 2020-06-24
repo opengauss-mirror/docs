@@ -56,9 +56,9 @@ SQLRETURN SQLSetStmtAttr(SQLHSTMT      StatementHandle
 
 ## 注意事项<a name="zh-cn_topic_0238272903_zh-cn_topic_0237120433_zh-cn_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
-当SQLSetStmtAttr的返回值为SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过借助SQL\_HANDLE\_STMT的HandleType和StatementHandle的Handle，调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)可得到相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当SQLSetStmtAttr的返回值为SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过借助SQL\_HANDLE\_STMT的HandleType和StatementHandle的Handle，调用[SQLGetDiagRec](SQLGetDiagRec.md)可得到相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272903_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

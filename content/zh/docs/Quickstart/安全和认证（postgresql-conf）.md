@@ -1,4 +1,4 @@
-# 安全和认证（postgresql.conf）<a name="ZH-CN_TOPIC_0244544073"></a>
+# 安全和认证（postgresql.conf）<a name="ZH-CN_TOPIC_0251900924"></a>
 
 介绍设置客户端和服务器的安全认证方式的相关参数。
 
@@ -52,7 +52,7 @@
 >![](public_sys-resources/icon-notice.gif) **须知：**   
 >openGauss目前支持SSL的场景为客户端连接数据库主节点场景，该参数目前建议只在数据库主节点中开启，数据库节点默认值为off。开启此参数需要同时配置ssl\_cert\_file、ssl\_key\_file和ssl\_ca\_file等参数及对应文件，不正确的配置可能会导致openGauss无法正常启动。  
 
-**默认值：**on
+**默认值：**off
 
 ## require\_ssl<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_section1652594319820"></a>
 
@@ -76,7 +76,7 @@
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**字符串，如果指定多个加密算法，加密算法之间需要以分号分割。详细请参见[表4](zh-cn_topic_0242376656.md#zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb07)获取支持的加密算法。
+**取值范围：**字符串，如果指定多个加密算法，加密算法之间需要以分号分割。详细请参见[用SSL进行安全的TCP/IP连接](zh-cn_topic_0246507951.md)获取支持的加密算法。
 
 **默认值：**ALL
 
@@ -132,7 +132,7 @@
 
 ## krb\_server\_keyfile<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s640043f6a27941c1b96449530c0495c5"></a>
 
-**参数说明：**指定Kerberos服务主配置文件的位置，详细请参见[客户端接入认证](zh-cn_topic_0242376653.md#ZH-CN_TOPIC_0242376653)。
+**参数说明：**指定Kerberos服务主配置文件的位置，详细请参见[配置客户端接入认证](zh-cn_topic_0246507949.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -142,7 +142,7 @@
 
 ## krb\_srvname<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s65aefa786b4f481da22dda86c00abb52"></a>
 
-**参数说明：**设置Kerberos服务名，详细请参见[客户端接入认证](zh-cn_topic_0242376653.md#ZH-CN_TOPIC_0242376653)。
+**参数说明：**设置Kerberos服务名，详细请参见[配置客户端接入认证](zh-cn_topic_0246507949.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -178,7 +178,7 @@
 
 ## password\_policy<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626"></a>
 
-**参数说明：**在使用CREATE ROLE/USER或者ALTER ROLE/USER命令创建或者修改openGauss帐户时，该参数决定是否进行密码复杂度检查。
+**参数说明：**在使用CREATE ROLE/USER或者ALTER ROLE/USER命令创建或者修改openGauss帐户时，该参数决定是否进行密码复杂度检查。关于密码复杂度检查策略请参见[设置密码安全策略](zh-cn_topic_0246507969.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -194,7 +194,7 @@
 
 ## password\_reuse\_time<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794"></a>
 
-**参数说明：**在使用ALTER USER或者ALTER ROLE修改用户密码时，该参数指定是否对新密码进行可重用天数检查。
+**参数说明：**在使用ALTER USER或者ALTER ROLE修改用户密码时，该参数指定是否对新密码进行可重用天数检查。关于密码可重用策略请参见[设置密码安全策略](zh-cn_topic_0246507969.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -214,7 +214,7 @@
 
 ## password\_reuse\_max<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53"></a>
 
-**参数说明：**在使用ALTER USER或者ALTER ROLE修改用户密码时，该参数指定是否对新密码进行可重用次数检查。
+**参数说明：**在使用ALTER USER或者ALTER ROLE修改用户密码时，该参数指定是否对新密码进行可重用次数检查。关于密码可重用策略请参见[设置密码安全策略](zh-cn_topic_0246507969.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -234,7 +234,7 @@
 
 ## password\_lock\_time<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s5e488e82235e4bd5b470b57a44a38c27"></a>
 
-**参数说明：**该参数指定帐户被锁定后自动解锁的时间。
+**参数说明：**该参数指定帐户被锁定后自动解锁的时间。关于帐户自动锁定策略请参见[设置密码安全策略](zh-cn_topic_0246507969.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -250,7 +250,7 @@
 
 ## failed\_login\_attempts<a name="zh-cn_topic_0242371486_zh-cn_topic_0237124696_zh-cn_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959"></a>
 
-**参数说明：**在任意时候，如果输入密码错误的次数达到failed\_login\_attempts则当前帐户被锁定，password\_lock\_time秒后被自动解锁。 例如，登录时输入密码失败，ALTER USER时修改密码失败等。
+**参数说明：**在任意时候，如果输入密码错误的次数达到failed\_login\_attempts则当前帐户被锁定，password\_lock\_time秒后被自动解锁。 例如，登录时输入密码失败，ALTER USER时修改密码失败等。关于帐户自动锁定策略请参见[设置密码安全策略](zh-cn_topic_0246507969.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 

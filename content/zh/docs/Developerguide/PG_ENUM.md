@@ -28,7 +28,7 @@ PG\_ENUM系统表包含显示每个枚举类型值和标签的记录。给定枚
 </td>
 <td class="cellrowborder" valign="top" width="14.08%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122287_zh-cn_topic_0059777741_a6c8d74c04a9643e492cb78d1d140cc94"><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_a6c8d74c04a9643e492cb78d1d140cc94"></a><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_a6c8d74c04a9643e492cb78d1d140cc94"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122287_zh-cn_topic_0059777741_ab2ac6938c47b4c1eb07b2e59594d079b"><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_ab2ac6938c47b4c1eb07b2e59594d079b"></a><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_ab2ac6938c47b4c1eb07b2e59594d079b"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122287_zh-cn_topic_0059777741_ab2ac6938c47b4c1eb07b2e59594d079b"><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_ab2ac6938c47b4c1eb07b2e59594d079b"></a><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_ab2ac6938c47b4c1eb07b2e59594d079b"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.5%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122287_zh-cn_topic_0059777741_a726e6b243f5f471f9f6770674f07f61d"><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_a726e6b243f5f471f9f6770674f07f61d"></a><a name="zh-cn_topic_0237122287_zh-cn_topic_0059777741_a726e6b243f5f471f9f6770674f07f61d"></a>拥有这个枚举值的pg_type记录的OID。</p>
 </td>

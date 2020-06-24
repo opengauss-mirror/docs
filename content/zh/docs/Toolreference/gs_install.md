@@ -1,4 +1,4 @@
-# gs\_install<a name="ZH-CN_TOPIC_0242223710"></a>
+# gs\_install<a name="ZH-CN_TOPIC_0249632258"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_section551843134215"></a>
 
@@ -21,7 +21,6 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >执行gs\_install脚本时，如果输入参数--autostart=no， 则工具脚本在配置（config）步骤完成后退出，不会自动启动openGauss，需要用户通过执行gs\_om -t start命令手动启动。  
 
 -   显示帮助信息
 
@@ -56,7 +55,7 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 
     数据实例参数指定。
 
-    取值范围请参见[zh-cn\_topic\_0242223705.md](zh-cn_topic_0242223705.md)的参数说明，其中对-A、-D、-U、-C、-X参数的设置不生效。
+    取值范围请参见[gs\_initdb](gs_initdb.md)的参数说明，其中对-A、-D、-U、-C、-X参数的设置不生效。
 
 -   --dn-guc=PARAM
 
@@ -76,13 +75,6 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 
     指定告警上报组件的绝对路径。
 
--   --autostart=yes|no
-
-    用来指定openGauss配置完成后是否启动。
-
-    -   yes：启动openGauss。
-    -   no：不启动openGauss。
-
 -   -?, --help
 
     显示帮助信息。
@@ -99,45 +91,36 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 ```
 gs_install -X /opt/software/openGauss/clusterconfig.xml
 Parsing the configuration file.
+Check preinstall on every node.
+Successfully checked preinstall on every node.
 Creating the backup directory.
 Successfully created the backup directory.
+begin deploy..
 Installing the cluster.
+begin prepare Install Cluster..
 Checking the installation environment on all nodes.
+begin install Cluster..
 Installing applications on all nodes.
+Successfully installed APP.
+begin init Instance..
+encrypt cipher and rand files for database.
+Please enter password for database:
+Please repeat for database:
+begin to create CA cert files
+The sslcert will be generated in /opt/gaussdb/cluster/app/share/sslcert/om
 Cluster installation is completed.
 Configuring.
 Deleting instances from all nodes.
+Successfully deleted instances from all nodes.
 Checking node configuration on all nodes.
 Initializing instances on all nodes.
 Updating instance configuration on all nodes.
+Check consistence of memCheck and coresCheck on DN nodes.
+Successful check consistence of memCheck and coresCheck on all nodes.
 Configuring pg_hba on all nodes.
 Configuration is completed.
-Starting.
-=====================================================================Starting cluster.
-======================================================================
-Successfully started primary instance. Wait for standby instance.
-======================================================================
-.
 Successfully started cluster.
-======================================================================
-cluster_state      : Normal
-redistributing     : No
-node_count         : 3
-Coordinator State
-    normal         : 2
-    abnormal       : 0
-GTM State
-    primary        : 1
-    standby        : 1
-    abnormal       : 0
-    down           : 0
-Datanode State
-    primary        : 3
-    standby        : 3
-    secondary      : 3
-    building       : 0
-    abnormal       : 0
-    down           : 0
+Successfully installed application.
 ```
 
 ## 相关命令<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_s07c0e1fb92454ab4aba383e142e6014d"></a>

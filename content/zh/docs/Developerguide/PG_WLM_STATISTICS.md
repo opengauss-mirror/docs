@@ -59,7 +59,7 @@ PG\_WLM\_STATISTICS视图显示作业结束后或已被处理异常后的负载�
 </td>
 <td class="cellrowborder" valign="top" width="17.93%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122475_zh-cn_topic_0059779245_a113318782dcb4250960421adc71d8a7a"><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_a113318782dcb4250960421adc71d8a7a"></a><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_a113318782dcb4250960421adc71d8a7a"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.010000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122475_zh-cn_topic_0059779245_ab1edc1e6100c4ff4b5fff5d6e273f4ed"><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_ab1edc1e6100c4ff4b5fff5d6e273f4ed"></a><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_ab1edc1e6100c4ff4b5fff5d6e273f4ed"></a><span id="ph821715523517"><a name="ph821715523517"></a><a name="ph821715523517"></a>该字段不支持</span>。</p>
+<td class="cellrowborder" valign="top" width="57.010000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122475_zh-cn_topic_0059779245_ab1edc1e6100c4ff4b5fff5d6e273f4ed"><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_ab1edc1e6100c4ff4b5fff5d6e273f4ed"></a><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_ab1edc1e6100c4ff4b5fff5d6e273f4ed"></a>该字段不支持。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122475_zh-cn_topic_0059779245_r918df64590b74ce0aa105b04c3835f2b"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122475_zh-cn_topic_0059779245_a63ae752c97034b0c8262eb650508f5b7"><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_a63ae752c97034b0c8262eb650508f5b7"></a><a name="zh-cn_topic_0237122475_zh-cn_topic_0059779245_a63ae752c97034b0c8262eb650508f5b7"></a>status</p>

@@ -18,9 +18,7 @@ ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
 
 -   **session\_sid, serial**
 
-    会话的SID和SERIAL（格式请参考示例）。
-
-    取值范围：通过查看系统表V$SESSION可查看所有会话的SID和SERIAL。
+    会话的SID和SERIAL（获取方法请参考示例）。
 
 -   **IMMEDIATE**
 
@@ -31,8 +29,9 @@ ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
 
 ```
 --查询会话信息。
-postgres=# SELECT sid,serial#,username FROM V$SESSION;
-
+postgres=# 
+SELECT sa.sessionid AS sid,0::integer AS serial#,ad.rolname AS username FROM pg_stat_get_activity(NULL) AS sa
+LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)WHERE sa.application_name <> 'JobScheduler';
        sid       | serial# | username 
 -----------------+---------+----------
  140131075880720 |       0 | omm

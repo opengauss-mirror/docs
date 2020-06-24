@@ -24,7 +24,7 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a70509b5849624154b48ea56cb3fb83e9"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a70509b5849624154b48ea56cb3fb83e9"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a70509b5849624154b48ea56cb3fb83e9"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a48053be96eb04a8d9017fc2b54b40a47"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a48053be96eb04a8d9017fc2b54b40a47"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a48053be96eb04a8d9017fc2b54b40a47"></a>此表的模式名。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a48053be96eb04a8d9017fc2b54b40a47"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a48053be96eb04a8d9017fc2b54b40a47"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a48053be96eb04a8d9017fc2b54b40a47"></a>该表的模式名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_r85cf9a093ada4e2aaf0647bc1b13d775"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a18ff6e6486ad48c986b2a3bd1728136c"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a18ff6e6486ad48c986b2a3bd1728136c"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a18ff6e6486ad48c986b2a3bd1728136c"></a>relname</p>
@@ -38,7 +38,7 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_abef4ebf667bf40378e81e8d4d850ad32"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_abef4ebf667bf40378e81e8d4d850ad32"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_abef4ebf667bf40378e81e8d4d850ad32"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a583cc75961a745e6aca23d2942188f66"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a583cc75961a745e6aca23d2942188f66"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a583cc75961a745e6aca23d2942188f66"></a>此表发起的顺序扫描数。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a583cc75961a745e6aca23d2942188f66"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a583cc75961a745e6aca23d2942188f66"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a583cc75961a745e6aca23d2942188f66"></a>该表发起的顺序扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_r8349331c1dff4ddab253de0371348b26"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a285f6a5ac1094a55b0df3885e2f2c1e2"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a285f6a5ac1094a55b0df3885e2f2c1e2"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a285f6a5ac1094a55b0df3885e2f2c1e2"></a>seq_tup_read</p>
@@ -52,7 +52,7 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_acdaa533a28364779ab3fd18d7849ab2f"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_acdaa533a28364779ab3fd18d7849ab2f"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_acdaa533a28364779ab3fd18d7849ab2f"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a45397e9898ab491faf90cf82cd3e82db"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a45397e9898ab491faf90cf82cd3e82db"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a45397e9898ab491faf90cf82cd3e82db"></a>此表发起的索引扫描数。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a45397e9898ab491faf90cf82cd3e82db"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a45397e9898ab491faf90cf82cd3e82db"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a45397e9898ab491faf90cf82cd3e82db"></a>该表发起的索引扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_r7506dae307174edf8e98b3877b8ebc59"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a07f71b126a7e4ca48c89dbe3ebaafe26"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a07f71b126a7e4ca48c89dbe3ebaafe26"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a07f71b126a7e4ca48c89dbe3ebaafe26"></a>idx_tup_fetch</p>
@@ -108,28 +108,28 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a53461271760548a095434eb585da1219"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a53461271760548a095434eb585da1219"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a53461271760548a095434eb585da1219"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a>最后一次手动清理此表的时间（不计算VACUUM FULL）。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a>最后一次手动清理该表的时间（不计算VACUUM FULL）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_rc1de56b1dd60416f9a2ca2fa67fc07bf"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a6a984da962b945d389af19001c534f8d"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a6a984da962b945d389af19001c534f8d"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a6a984da962b945d389af19001c534f8d"></a>last_autovacuum</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a29cba4f9da074df387b65f6caa5e2cef"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a29cba4f9da074df387b65f6caa5e2cef"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a29cba4f9da074df387b65f6caa5e2cef"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a8fa16c691dc84c7a9b9e31cb3d8ed084"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a8fa16c691dc84c7a9b9e31cb3d8ed084"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a8fa16c691dc84c7a9b9e31cb3d8ed084"></a>上次被autovacuum守护进程清理此表的时间。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a8fa16c691dc84c7a9b9e31cb3d8ed084"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a8fa16c691dc84c7a9b9e31cb3d8ed084"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a8fa16c691dc84c7a9b9e31cb3d8ed084"></a>上次被autovacuum守护进程清理该表的时间。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_r683a6c323abd4c968b47e726578b2a56"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ae2b7609c09dc4a75b4fabc0b2b20609a"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ae2b7609c09dc4a75b4fabc0b2b20609a"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ae2b7609c09dc4a75b4fabc0b2b20609a"></a>last_analyze</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a092c4ce6395f4534b09d8303803edb3d"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a092c4ce6395f4534b09d8303803edb3d"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a092c4ce6395f4534b09d8303803edb3d"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a>上次手动分析此表的时间。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a>上次手动分析该表的时间。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_rb9d986f087594f97a420b9c2b865692a"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a1454dce85ab54b1fabf87756d7b6d98d"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a1454dce85ab54b1fabf87756d7b6d98d"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a1454dce85ab54b1fabf87756d7b6d98d"></a>last_autoanalyze</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aff80ddba2191439da19ec8b55a5ead9b"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aff80ddba2191439da19ec8b55a5ead9b"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aff80ddba2191439da19ec8b55a5ead9b"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a5ff6438815134045aee3ee394e03c8db"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a5ff6438815134045aee3ee394e03c8db"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a5ff6438815134045aee3ee394e03c8db"></a>上次被autovacuum守护进程分析此表的时间。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a5ff6438815134045aee3ee394e03c8db"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a5ff6438815134045aee3ee394e03c8db"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a5ff6438815134045aee3ee394e03c8db"></a>上次被autovacuum守护进程分析该表的时间。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_r8ac63e5bb1d34eb2a8e1680fd96cd9fd"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a75bad17d58e1426d84a3c5395967863e"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a75bad17d58e1426d84a3c5395967863e"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a75bad17d58e1426d84a3c5395967863e"></a>vacuum_count</p>

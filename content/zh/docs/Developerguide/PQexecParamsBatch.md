@@ -39,6 +39,11 @@ PGresult* PQexecParamsBatch(PGconn* conn,
 <td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p137485324135"><a name="p137485324135"></a><a name="p137485324135"></a>SQL文本串。</p>
 </td>
 </tr>
+<tr id="row278915265284"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p13789102612813"><a name="p13789102612813"></a><a name="p13789102612813"></a>nParams</p>
+</td>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p13789182611288"><a name="p13789182611288"></a><a name="p13789182611288"></a>绑定参数的个数</p>
+</td>
+</tr>
 <tr id="row1240824533515"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p4876164661315"><a name="p4876164661315"></a><a name="p4876164661315"></a>nBatch</p>
 </td>
 <td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p1875146111317"><a name="p1875146111317"></a><a name="p1875146111317"></a>批量操作数。</p>

@@ -61,5 +61,5 @@ CURSOR cursor_name
 
 ## 相关链接<a name="zh-cn_topic_0237122128_zh-cn_topic_0059778820_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
-[FETCH](FETCH.md#ZH-CN_TOPIC_0242370629)
+[FETCH](FETCH.md)
 

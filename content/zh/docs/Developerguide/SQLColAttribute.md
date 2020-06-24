@@ -13,7 +13,7 @@ SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,
                          SQLPOINTER      CharacterAtrriburePtr,
                          SQLSMALLINT     BufferLength,
                          SQLSMALLINT     *StringLengthPtr,
-                         SQLPOINTE       NumericAttributePtr);
+                         SQLLEN       *NumericAttributePtr);
 ```
 
 ## 参数<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_sa001ba56cc7645ff9545f1ea44d918ec"></a>
@@ -74,9 +74,9 @@ SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,
 
 ## 注意事项<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_s06211cd9d00f43f098b0db65a182c4f4"></a>
 
-当SQLColAttribute返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当SQLColAttribute返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_sa0124e0144e742c989a8b2f0e52adfd6"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

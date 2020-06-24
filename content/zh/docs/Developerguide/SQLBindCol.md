@@ -11,8 +11,8 @@ SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,
                      SQLUSMALLINT   ColumnNumber,     
                      SQLSMALLINT    TargetType,
                      SQLPOINTER     TargetValuePtr,
-                     SQLINTEGER     BufferLength,
-                     SQLINTEGER     *StrLen_or_IndPtr);
+                     SQLLEN     BufferLength,
+                     SQLLEN     *StrLen_or_IndPtr);
 ```
 
 ## 参数<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_s2841a8589657411785ffbc5592840769"></a>
@@ -68,9 +68,9 @@ SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,
 
 ## 注意事项<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_sf12dfc561de44c8a9e952a9b13eda981"></a>
 
-当SQLBindCol返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当SQLBindCol返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_STMT和StatementHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_sd5d16919fd6141598535fc735a91d4df"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

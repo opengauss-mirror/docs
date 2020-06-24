@@ -40,9 +40,7 @@
         | VALID BEGIN 'timestamp'
         | VALID UNTIL 'timestamp'
         | RESOURCE POOL 'respool'
-        | USER GROUP 'groupuser'
         | PERM SPACE 'spacelimit'
-        | NODE GROUP logic_cluster_name
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
@@ -116,5 +114,5 @@
 
 ## 相关链接<a name="zh-cn_topic_0237122068_zh-cn_topic_0059778744_sb24012e0cec94bc3ba5c2c0e8997d052"></a>
 
-[CREATE ROLE](CREATE-ROLE.md)，[DROP ROLE](DROP-ROLE.md#ZH-CN_TOPIC_0242370611)，[SET](SET.md)
+[CREATE ROLE](CREATE-ROLE.md)，[DROP ROLE](DROP-ROLE.md)，[SET](SET.md)
 

@@ -7,7 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
 -   列存表支持的数据类型请参考[列存表支持的数据类型](列存表支持的数据类型.md)。
--   创建列存的数量建议不超过1000个。
+-   创建列存表的数量建议不超过1000个。
 -   表中的主键约束和唯一约束必须包含分布列。
 -   如果在建表过程中数据库系统发生故障，系统恢复后可能无法自动清除之前已创建的、大小为0的磁盘文件。此种情况出现概率小，不影响数据库系统的正常运行。
 -   列存表的表级约束只支持PARTIAL CLUSTER KEY，不支持主外键等表级约束。
@@ -28,8 +28,7 @@
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
         [ COMPRESS | NOCOMPRESS ]
-        [ TABLESPACE tablespace_name ]
-        [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ];
+        [ TABLESPACE tablespace_name ];
     ```
 
     -   其中列约束column\_constraint为：
@@ -65,8 +64,7 @@
     -   其中like选项like\_option为：
 
         ```
-        { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | DISTRIBUTION | ALL }
-        
+        { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
         ```
 
 
@@ -141,8 +139,7 @@
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
-    -   如果指定了INCLUDING DISTRIBUTION，则源表的分布信息会复制到新表中，包括分布类型和分布列。默认情况下，不拷贝源表的分布信息。
-    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS和INCLUDING DISTRIBUTION的内容。
+    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
 
     >![](public_sys-resources/icon-notice.gif) **须知：**   
     >-   如果源表包含serial、bigserial、smallseriral类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。  
@@ -171,7 +168,7 @@
 
         -   ROW，表示表的数据将以行式存储。
 
-            行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
+            行存储适合于OLTP业务，适用于点查询或者增删操作较多的场景。
 
         -   COLUMN，表示表的数据将以列式存储。
 
@@ -916,11 +913,8 @@ postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
 -   LIKE INCLUDING RELOPTIONS
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
 
--   LIKE INCLUDING DISTRIBUTION
-    -   如果指定了INCLUDING DISTRIBUTION，则源表的分布信息会复制到新表中，包括分布类型和分布列。默认情况下，不拷贝源表的分布信息。
-
 -   LIKE INCLUDING ALL
-    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS和INCLUDING DISTRIBUTION的内容。
+    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
 
 -   ORIENTATION ROW
     -   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。

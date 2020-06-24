@@ -74,7 +74,7 @@ CREATE DATABASE database_name
 
     指定兼容的数据库的类型。
 
-    取值范围：A、B、C。分别表示兼容Oracle、Mysql和TD。
+    取值范围：A、B、C。分别表示兼容O、MY和TD。
 
 -   **TABLESPACE \[ = \] tablespace\_name**
 
@@ -163,8 +163,8 @@ postgres=# DROP DATABASE ora_compatible_db;
     事务中不支持创建database。
 
 
--   **ENCODING**
+-   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
-    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'）时，必须指定template \[=\] template0。
+    当新建数据库Encoding、LC-Collate 或LC\_Ctype与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'）时，必须指定template \[=\] template0。
 
 
