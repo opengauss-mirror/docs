@@ -4,7 +4,7 @@
 
 创建一个新的全文检索词典。词典是一种指定在全文检索时识别特定词并处理的方法。
 
-词典的创建依赖于预定义模板（在系统表[PG\_TS\_TEMPLATE](PG_TS_TEMPLATE.md#ZH-CN_TOPIC_0242385854)中定义），支持创建五种类型的词典，分别是Simple、Ispell、Synonym、Thesaurus、以及Snowball，每种类型的词典可以完成不同的任务。
+词典的创建依赖于预定义模板（在系统表[PG\_TS\_TEMPLATE](PG_TS_TEMPLATE.md)中定义），支持创建五种类型的词典，分别是Simple、Ispell、Synonym、Thesaurus、以及Snowball，每种类型的词典可以完成不同的任务。
 
 ## 注意事项<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
@@ -33,7 +33,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
     模板名。
 
-    取值范围：系统表[PG\_TS\_TEMPLATE](PG_TS_TEMPLATE.md#ZH-CN_TOPIC_0242385854)中定义的模板：Simple/Synonym/Thesaurus/Ispell/Snowball。
+    取值范围：系统表[PG\_TS\_TEMPLATE](PG_TS_TEMPLATE.md)中定义的模板：Simple/Synonym/Thesaurus/Ispell/Snowball。
 
 -   **option**
 
@@ -135,9 +135,9 @@ CREATE TEXT SEARCH DICTIONARY name (
 
 ## 示例<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
-请参见[配置示例](配置示例.md#ZH-CN_TOPIC_0242370505)一节的示例。
+请参见[配置示例](配置示例.md)一节的示例。
 
 ## 相关链接<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
-[ALTER TEXT SEARCH DICTIONARY](ALTER-TEXT-SEARCH-DICTIONARY.md#ZH-CN_TOPIC_0242370544)，[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md#ZH-CN_TOPIC_0242370586)
+[ALTER TEXT SEARCH DICTIONARY](ALTER-TEXT-SEARCH-DICTIONARY.md)，[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)
 

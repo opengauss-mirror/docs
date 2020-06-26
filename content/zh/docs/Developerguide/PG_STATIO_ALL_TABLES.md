@@ -45,7 +45,7 @@ PG\_STATIO\_ALL\_TABLES视图将包含当前数据库中每个表（包括TOAST�
 </td>
 <td class="cellrowborder" valign="top" width="18.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a715dfd39322b43429bbc94f7dd962367"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a715dfd39322b43429bbc94f7dd962367"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a715dfd39322b43429bbc94f7dd962367"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a2cd01e1f3da44d9b870f8c5874f7da4e"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a2cd01e1f3da44d9b870f8c5874f7da4e"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a2cd01e1f3da44d9b870f8c5874f7da4e"></a>此表缓存命中数。</p>
+<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a2cd01e1f3da44d9b870f8c5874f7da4e"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a2cd01e1f3da44d9b870f8c5874f7da4e"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a2cd01e1f3da44d9b870f8c5874f7da4e"></a>该表缓存命中数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ra34e2bff12274203bcc5900356706703"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aab95ca3f87e44b018bf0cf708830f731"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aab95ca3f87e44b018bf0cf708830f731"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aab95ca3f87e44b018bf0cf708830f731"></a>idx_blks_read</p>
@@ -66,28 +66,28 @@ PG\_STATIO\_ALL\_TABLES视图将包含当前数据库中每个表（包括TOAST�
 </td>
 <td class="cellrowborder" valign="top" width="18.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aeda6e6651fda4c2ab820f1612a9e16a7"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aeda6e6651fda4c2ab820f1612a9e16a7"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aeda6e6651fda4c2ab820f1612a9e16a7"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a7f246986bf3f46ff987aa231569dbc73"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a7f246986bf3f46ff987aa231569dbc73"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a7f246986bf3f46ff987aa231569dbc73"></a>此表的TOAST表读取的磁盘块数（如果存在）。</p>
+<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a7f246986bf3f46ff987aa231569dbc73"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a7f246986bf3f46ff987aa231569dbc73"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a7f246986bf3f46ff987aa231569dbc73"></a>该表的TOAST表读取的磁盘块数（如果存在）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_r8a162cb218af460c9c1ce57d0484a87e"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a3468ddf01d40439cbbc58fa423d9e4a6"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a3468ddf01d40439cbbc58fa423d9e4a6"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a3468ddf01d40439cbbc58fa423d9e4a6"></a>toast_blks_hit</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a40304754e8114b01a594ef0972a26138"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a40304754e8114b01a594ef0972a26138"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a40304754e8114b01a594ef0972a26138"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aa11824b6f64f4862bdc2185af37fbd68"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aa11824b6f64f4862bdc2185af37fbd68"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aa11824b6f64f4862bdc2185af37fbd68"></a>此表的TOAST表命中缓冲区数（如果存在）。</p>
+<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aa11824b6f64f4862bdc2185af37fbd68"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aa11824b6f64f4862bdc2185af37fbd68"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_aa11824b6f64f4862bdc2185af37fbd68"></a>该表的TOAST表命中缓冲区数（如果存在）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ra8169bdf3d884a0993eed1813dad5880"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a90b296e602a0479dbcc782579171e992"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a90b296e602a0479dbcc782579171e992"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a90b296e602a0479dbcc782579171e992"></a>tidx_blks_read</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_af1c8477d2f8f46778d61a7c5cd399168"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_af1c8477d2f8f46778d61a7c5cd399168"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_af1c8477d2f8f46778d61a7c5cd399168"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a636e6939b0b04fec87106da9c211cac7"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a636e6939b0b04fec87106da9c211cac7"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a636e6939b0b04fec87106da9c211cac7"></a>此表的TOAST表索引读取的磁盘块数（如果存在）。</p>
+<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a636e6939b0b04fec87106da9c211cac7"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a636e6939b0b04fec87106da9c211cac7"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a636e6939b0b04fec87106da9c211cac7"></a>该表的TOAST表索引读取的磁盘块数（如果存在）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ra165e6b5d2f24acdbb416b88bb9053a5"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a70e39525e9064018bd4ce83b5ac4736c"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a70e39525e9064018bd4ce83b5ac4736c"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_a70e39525e9064018bd4ce83b5ac4736c"></a>tidx_blks_hit</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ad48c9d7fe57645729c5ce63838a2adf2"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ad48c9d7fe57645729c5ce63838a2adf2"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ad48c9d7fe57645729c5ce63838a2adf2"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ae3623ec1063b499f8befe4b8a8e2ef0a"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ae3623ec1063b499f8befe4b8a8e2ef0a"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ae3623ec1063b499f8befe4b8a8e2ef0a"></a>此表的TOAST表索引命中缓冲区数（如果存在）。</p>
+<td class="cellrowborder" valign="top" width="55.82%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ae3623ec1063b499f8befe4b8a8e2ef0a"><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ae3623ec1063b499f8befe4b8a8e2ef0a"></a><a name="zh-cn_topic_0237122459_zh-cn_topic_0059778203_ae3623ec1063b499f8befe4b8a8e2ef0a"></a>该表的TOAST表索引命中缓冲区数（如果存在）。</p>
 </td>
 </tr>
 </tbody>

@@ -17,7 +17,7 @@ GS\_STAT\_DB\_CU视图查询openGauss各个节点，每个数据库的CU命中�
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122404_zh-cn_topic_0059778343_afe6660d76dd44405a3c556a6860f00b4"><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_afe6660d76dd44405a3c556a6860f00b4"></a><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_afe6660d76dd44405a3c556a6860f00b4"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122404_zh-cn_topic_0059778343_a682264f55000477b89182c1322e712aa"><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_a682264f55000477b89182c1322e712aa"></a><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_a682264f55000477b89182c1322e712aa"></a>节点名。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122404_zh-cn_topic_0059778343_a682264f55000477b89182c1322e712aa"><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_a682264f55000477b89182c1322e712aa"></a><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_a682264f55000477b89182c1322e712aa"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122404_zh-cn_topic_0059778343_r2f10451c69944e69ab0ee72b478117a2"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122404_zh-cn_topic_0059778343_ad4f847f9279649c6a89af55b3da56dde"><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_ad4f847f9279649c6a89af55b3da56dde"></a><a name="zh-cn_topic_0237122404_zh-cn_topic_0059778343_ad4f847f9279649c6a89af55b3da56dde"></a>db_name</p>

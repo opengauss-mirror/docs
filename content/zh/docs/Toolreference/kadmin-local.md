@@ -1,4 +1,4 @@
-# kadmin.local<a name="ZH-CN_TOPIC_0242223723"></a>
+# kadmin.local<a name="ZH-CN_TOPIC_0249632275"></a>
 
 ## 功能介绍<a name="zh-cn_topic_0237152429_section10172172474817"></a>
 

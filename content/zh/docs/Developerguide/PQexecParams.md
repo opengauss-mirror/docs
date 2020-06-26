@@ -38,6 +38,11 @@ PGresult* PQexecParams(PGconn* conn,
 <td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p1950523811611"><a name="p1950523811611"></a><a name="p1950523811611"></a>SQL文本串。</p>
 </td>
 </tr>
+<tr id="row584522582711"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p10845142519271"><a name="p10845142519271"></a><a name="p10845142519271"></a>nParams</p>
+</td>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p1984592532712"><a name="p1984592532712"></a><a name="p1984592532712"></a>绑定参数的个数</p>
+</td>
+</tr>
 <tr id="row1240824533515"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p13504738181613"><a name="p13504738181613"></a><a name="p13504738181613"></a>paramTypes</p>
 </td>
 <td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p3503238191611"><a name="p3503238191611"></a><a name="p3503238191611"></a>绑定参数类型。</p>

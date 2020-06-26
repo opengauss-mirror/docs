@@ -37,7 +37,20 @@ ALTER GROUP是ALTER ROLE的别名，非SQL标准语法，不推荐使用，建�
 
 请参考ALTER ROLE的[参数说明](ALTER-ROLE.md#zh-cn_topic_0237122068_zh-cn_topic_0059778744_s50961af6143d4aafaf8fa02febbbf331)。
 
+## 示例<a name="zh-cn_topic_0237122062_zh-cn_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
+
+```
+--向用户组中添加用户。
+postgres=# ALTER GROUP super_users ADD USER lche, jim;
+
+--从用户组中删除用户。
+postgres=# ALTER GROUP super_users DROP USER jim;
+
+--修改用户组的名称。
+postgres=# ALTER GROUP super_users RENAME TO normal_users;
+```
+
 ## 相关链接<a name="zh-cn_topic_0237122062_zh-cn_topic_0059777426_s72bcc1ca592a4b47bfaf7849e51e7e30"></a>
 
-[CREATE GROUP](CREATE-GROUP.md#ZH-CN_TOPIC_0242370569)，[DROP GROUP](DROP-GROUP.md#ZH-CN_TOPIC_0242370603)，[ALTER ROLE](ALTER-ROLE.md#ZH-CN_TOPIC_0242370532)
+[ALTER GROUP](ALTER-GROUP.md)，[DROP GROUP](DROP-GROUP.md)，[ALTER ROLE](ALTER-ROLE.md)
 

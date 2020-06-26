@@ -31,7 +31,7 @@ PG\_STAT\_USER\_INDEXES视图显示数据库中用户自定义普通表和toast�
 </td>
 <td class="cellrowborder" valign="top" width="17.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122448_zh-cn_topic_0059777687_a1367512eaf264b4c828a967afec6ef95"><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_a1367512eaf264b4c828a967afec6ef95"></a><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_a1367512eaf264b4c828a967afec6ef95"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.14%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122448_zh-cn_topic_0059777687_aed605daf3941470ba56f1acd04969865"><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_aed605daf3941470ba56f1acd04969865"></a><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_aed605daf3941470ba56f1acd04969865"></a>索引中模式名。</p>
+<td class="cellrowborder" valign="top" width="57.14%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122448_zh-cn_topic_0059777687_aed605daf3941470ba56f1acd04969865"><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_aed605daf3941470ba56f1acd04969865"></a><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_aed605daf3941470ba56f1acd04969865"></a>索引的模式名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122448_zh-cn_topic_0059777687_rda8084f8ad88400099c623415d5fc24f"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122448_zh-cn_topic_0059777687_a9a3715776fd04a14b9818150493be116"><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_a9a3715776fd04a14b9818150493be116"></a><a name="zh-cn_topic_0237122448_zh-cn_topic_0059777687_a9a3715776fd04a14b9818150493be116"></a>relname</p>

@@ -29,7 +29,7 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
     );
     ```
 
-    其中，词典定义文件全名为thesaurus\_astro.ths，所在目录为当前连接数据库主节点的/home/dicts/下 。子词典pg\_catalog.english\_stem是预定义的Snowball类型的英语词干词典，用于规范化输入词，子词典自身相关配置（例如停用词等）不在此处显示。关于创建词典的语法和更多参数，请参见[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md#ZH-CN_TOPIC_0242370586)。
+    其中，词典定义文件全名为thesaurus\_astro.ths，所在目录为当前连接数据库主节点的/home/dicts/下 。子词典pg\_catalog.english\_stem是预定义的Snowball类型的英语词干词典，用于规范化输入词，子词典自身相关配置（例如停用词等）不在此处显示。关于创建词典的语法和更多参数，请参见[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)。
 
 2.  创建词典后，将其绑定到对应文本搜索配置中需要处理的token类型上：
 

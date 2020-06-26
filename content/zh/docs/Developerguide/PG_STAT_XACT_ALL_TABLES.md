@@ -24,7 +24,7 @@ PG\_STAT\_XACT\_ALL\_TABLES视图显示命名空间中所有普通表和toast表
 </td>
 <td class="cellrowborder" valign="top" width="14.38%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a7f6f8f2f9f76445ea99ff7ae011ad78d"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a7f6f8f2f9f76445ea99ff7ae011ad78d"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a7f6f8f2f9f76445ea99ff7ae011ad78d"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a217b267370844085a7b177d53ffd85a9"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a217b267370844085a7b177d53ffd85a9"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a217b267370844085a7b177d53ffd85a9"></a>此表的模式名。</p>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a217b267370844085a7b177d53ffd85a9"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a217b267370844085a7b177d53ffd85a9"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a217b267370844085a7b177d53ffd85a9"></a>该表的模式名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_r2ea38271e5844bab8e7eba6e9c33ced0"><td class="cellrowborder" valign="top" width="23.22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a2dab0fc93160404dbd5957f1da2aa940"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a2dab0fc93160404dbd5957f1da2aa940"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a2dab0fc93160404dbd5957f1da2aa940"></a>relname</p>
@@ -38,7 +38,7 @@ PG\_STAT\_XACT\_ALL\_TABLES视图显示命名空间中所有普通表和toast表
 </td>
 <td class="cellrowborder" valign="top" width="14.38%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a8f0e4708db46478d8da9fd10323ab463"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a8f0e4708db46478d8da9fd10323ab463"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a8f0e4708db46478d8da9fd10323ab463"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a513d25d650034e37b81f4f27bb7e8d2f"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a513d25d650034e37b81f4f27bb7e8d2f"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a513d25d650034e37b81f4f27bb7e8d2f"></a>此表发起的顺序扫描数。</p>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a513d25d650034e37b81f4f27bb7e8d2f"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a513d25d650034e37b81f4f27bb7e8d2f"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a513d25d650034e37b81f4f27bb7e8d2f"></a>该表发起的顺序扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_r149b741c52684e9ca5e12e4bdbcc830f"><td class="cellrowborder" valign="top" width="23.22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a90ff7a25fc56428ebc9b2d0c33e4aa4c"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a90ff7a25fc56428ebc9b2d0c33e4aa4c"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a90ff7a25fc56428ebc9b2d0c33e4aa4c"></a>seq_tup_read</p>
@@ -52,7 +52,7 @@ PG\_STAT\_XACT\_ALL\_TABLES视图显示命名空间中所有普通表和toast表
 </td>
 <td class="cellrowborder" valign="top" width="14.38%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_aec881880ce4949b1887a26b76f8144e0"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_aec881880ce4949b1887a26b76f8144e0"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_aec881880ce4949b1887a26b76f8144e0"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a802797fbcdfd401dbd095c90f479c75e"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a802797fbcdfd401dbd095c90f479c75e"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a802797fbcdfd401dbd095c90f479c75e"></a>此表发起的索引扫描数。</p>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a802797fbcdfd401dbd095c90f479c75e"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a802797fbcdfd401dbd095c90f479c75e"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_a802797fbcdfd401dbd095c90f479c75e"></a>该表发起的索引扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_r6eb365adbf404179be1d91e472854f03"><td class="cellrowborder" valign="top" width="23.22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122453_zh-cn_topic_0059778946_af388f72f38ac4010aeaa1748982f679d"><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_af388f72f38ac4010aeaa1748982f679d"></a><a name="zh-cn_topic_0237122453_zh-cn_topic_0059778946_af388f72f38ac4010aeaa1748982f679d"></a>idx_tup_fetch</p>

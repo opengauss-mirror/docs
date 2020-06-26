@@ -56,9 +56,9 @@ SQLRETURN SQLSetConnectAttr(SQLHDBC       ConnectionHandle
 
 ## 注意事项<a name="zh-cn_topic_0238272901_zh-cn_topic_0237120431_zh-cn_topic_0059777827_s78fe87e5aec14489b395f28b33ec0876"></a>
 
-当SQLSetConnectAttr的返回值为SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过借助SQL\_HANDLE\_DBC的HandleType和ConnectionHandle的Handle，调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)可得到相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当SQLSetConnectAttr的返回值为SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过借助SQL\_HANDLE\_DBC的HandleType和ConnectionHandle的Handle，调用[SQLGetDiagRec](SQLGetDiagRec.md)可得到相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272901_zh-cn_topic_0237120431_zh-cn_topic_0059777827_s25786d32524c458786d43445baa48941"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

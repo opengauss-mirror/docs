@@ -28,7 +28,7 @@ BEGIN可以用于开始一个匿名块，也可以用于开始一个事务。本
     BEGIN [ WORK | TRANSACTION ]
       [ 
         { 
-           ISOLATION LEVEL { READ COMMITTED | READ UNCOMMITTED | SERIALIZABLE | REPEATABLE READ }
+           ISOLATION LEVEL { READ COMMITTED | SERIALIZABLE | REPEATABLE READ }
            | { READ WRITE | READ ONLY }
           } [, ...] 
       ];
@@ -47,6 +47,10 @@ BEGIN可以用于开始一个匿名块，也可以用于开始一个事务。本
 
     取值范围：已存在的函数名称。
 
+
+## 示例<a name="section41260277018"></a>
+
+无
 
 ## 相关链接<a name="zh-cn_topic_0237122087_zh-cn_topic_0059778122_section552105014012"></a>
 

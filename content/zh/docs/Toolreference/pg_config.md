@@ -1,8 +1,8 @@
-# pg\_config<a name="ZH-CN_TOPIC_0242223731"></a>
+# pg\_config<a name="ZH-CN_TOPIC_0249632265"></a>
 
 ## 功能介绍<a name="zh-cn_topic_0237152437_section88358281478"></a>
 
-通过pg\_config工具打印的当前所安装数据库的配置参数信息，可用于找到与数据库相连接的软件包所对应的头文件和库。
+通过pg\_config工具打印的当前所安装数据库的配置参数信息，可用于找到与数据库相关的软件包所对应的头文件和库。
 
 ## 语法<a name="zh-cn_topic_0237152437_section1370013416265"></a>
 

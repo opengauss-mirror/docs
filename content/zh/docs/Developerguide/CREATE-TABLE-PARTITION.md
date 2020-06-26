@@ -34,15 +34,10 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
- 
-    [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ]
-    PARTITION BY { 
-        {VALUES (partition_key)} |
+     PARTITION BY { 
         {RANGE (partition_key) ( partition_less_than_item [, ... ] )} |
         {RANGE (partition_key) ( partition_start_end_item [, ... ] )}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
-
-
 ```
 
 -   列约束column\_constraint：
@@ -72,7 +67,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 -   like选项like\_option：
 
     ```
-    { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | RELOPTIONS | DISTRIBUTION | ALL }
+    { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | RELOPTIONS| ALL }
     ```
 
 
@@ -153,8 +148,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   如果指定了INCLUDING STORAGE，则拷贝列的STORAGE设置也将被拷贝，默认情况下不包含STORAGE设置。
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释也会被拷贝过来。默认情况下，不拷贝源表的注释。
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）也将拷贝至新表。默认情况下，不拷贝源表的存储参数。
-    -   如果指定了INCLUDING DISTRIBUTION，则新表将拷贝源表的分布信息，包括分布类型和分布列。默认情况下，不拷贝源表的分布信息。
-    -   INCLUDING ALL是INCLUDING DEFAULTS INCLUDING CONSTRAINTS INCLUDING INDEXES INCLUDING STORAGE INCLUDING COMMENTS INCLUDING RELOPTIONS INCLUDING DISTRIBUTION的简写形式。
+    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
@@ -272,8 +266,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     取值范围：
 
-    -   ENABLE：行迁移开关打开。
-    -   DISABLE（缺省值）：行迁移开关关闭。
+    -   ENABLE（缺省值）：行迁移开关打开。
+    -   DISABLE：行迁移开关关闭。
 
 
 -   **NOT NULL**

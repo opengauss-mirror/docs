@@ -1,4 +1,4 @@
-# gs\_checkos<a name="ZH-CN_TOPIC_0243406124"></a>
+# gs\_checkos<a name="ZH-CN_TOPIC_0249632239"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>
 
@@ -37,11 +37,11 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 
     列表编号。格式：-i A、-i B1、-i A1 -i A2或-i A1,A2。
 
-    取值范围：A1...A14、B1...B6
+    取值范围：A1...A14、B1...B7
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >A1...A14 表示只检查操作系统参数，并不设置。  
-    >B1...B6 表示将参数系统参数设置为期望值。  
+    >B1...B7 表示将参数系统参数设置为期望值。  
     >A和B不能同时输入。  
 
     详细的检查项请参见[表1](#zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e)。
@@ -247,6 +247,13 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p130471551506"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p130471551506"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p130471551506"></a>设置THP服务（Set THP service）</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p501866071506"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p501866071506"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p501866071506"></a>THP服务设置：如果THP服务启动，将该服务关闭。</p>
+</td>
+</tr>
+<tr id="row1725332313128"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="p4254202319125"><a name="p4254202319125"></a><a name="p4254202319125"></a>B7</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="p8254132331214"><a name="p8254132331214"></a><a name="p8254132331214"></a>设置欧拉系统属性（Set RemoveIPC value）</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>欧拉系统属性检查：检查设置欧拉系统文件/usr/lib/systemd/system/systemd-logind.service，/etc/systemd/logind.conf中配置项RemoveIPC属性值是否为no，当不为no时，对其进行修改设置。</p>
 </td>
 </tr>
 </tbody>

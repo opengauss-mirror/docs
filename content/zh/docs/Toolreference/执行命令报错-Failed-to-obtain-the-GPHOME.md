@@ -1,4 +1,4 @@
-# 执行命令报错“Failed to obtain the GPHOME”<a name="ZH-CN_TOPIC_0242223746"></a>
+# 执行命令报错“Failed to obtain the GPHOME”<a name="ZH-CN_TOPIC_0249632274"></a>
 
 ## 问题现象<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
 

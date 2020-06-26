@@ -226,97 +226,17 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_rf183baced3904d95a4bdc9f975009dcf"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a5284ae7a66bb4198b923c944465a8ca8"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a5284ae7a66bb4198b923c944465a8ca8"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a5284ae7a66bb4198b923c944465a8ca8"></a>synchronize quit</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a03722ed898714814844dad8f7257f230"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a03722ed898714814844dad8f7257f230"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a03722ed898714814844dad8f7257f230"></a>steam plan结束时，等待stream线程组内的线程统一退出。</p>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a03722ed898714814844dad8f7257f230"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a03722ed898714814844dad8f7257f230"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a03722ed898714814844dad8f7257f230"></a>stream plan结束时，等待stream线程组内的线程统一退出。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_rda3a4ec458594ba1a32c045bea045b79"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_ab8c886a1cb7240ddb099e697cf5602e7"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_ab8c886a1cb7240ddb099e697cf5602e7"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_ab8c886a1cb7240ddb099e697cf5602e7"></a>nodegroup destroy</p>
+<tr id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_rda3a4ec458594ba1a32c045bea045b79"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_ab8c886a1cb7240ddb099e697cf5602e7"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_ab8c886a1cb7240ddb099e697cf5602e7"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_ab8c886a1cb7240ddb099e697cf5602e7"></a>wait stream nodegroup destroy</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a85f97a0421f949b2ab05128250165d0d"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a85f97a0421f949b2ab05128250165d0d"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a85f97a0421f949b2ab05128250165d0d"></a>steam plan结束时，等待销毁stream node group。</p>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a85f97a0421f949b2ab05128250165d0d"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a85f97a0421f949b2ab05128250165d0d"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a85f97a0421f949b2ab05128250165d0d"></a>stream plan结束时，等待销毁stream node group。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row14767655113316"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p137674550338"><a name="zh-cn_topic_0237122466_p137674550338"></a><a name="zh-cn_topic_0237122466_p137674550338"></a>wait active statement</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1176715558335"><a name="zh-cn_topic_0237122466_p1176715558335"></a><a name="zh-cn_topic_0237122466_p1176715558335"></a>等待作业执行，正在资源负载管控中。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row183383224266"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p18339152252617"><a name="zh-cn_topic_0237122466_p18339152252617"></a><a name="zh-cn_topic_0237122466_p18339152252617"></a>gtm connect</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1433952217261"><a name="zh-cn_topic_0237122466_p1433952217261"></a><a name="zh-cn_topic_0237122466_p1433952217261"></a>等待与GTM建连。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row1698142682617"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p269913262265"><a name="zh-cn_topic_0237122466_p269913262265"></a><a name="zh-cn_topic_0237122466_p269913262265"></a>gtm get gxid</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1369992614265"><a name="zh-cn_topic_0237122466_p1369992614265"></a><a name="zh-cn_topic_0237122466_p1369992614265"></a>等待从GTM获取事务xid。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row15998154710261"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1099964722615"><a name="zh-cn_topic_0237122466_p1099964722615"></a><a name="zh-cn_topic_0237122466_p1099964722615"></a>gtm get snapshot</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1999914471265"><a name="zh-cn_topic_0237122466_p1999914471265"></a><a name="zh-cn_topic_0237122466_p1999914471265"></a>等待从GTM获取事务快照snapshot。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row499954782611"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p15999747102612"><a name="zh-cn_topic_0237122466_p15999747102612"></a><a name="zh-cn_topic_0237122466_p15999747102612"></a>gtm begin trans</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p139997476264"><a name="zh-cn_topic_0237122466_p139997476264"></a><a name="zh-cn_topic_0237122466_p139997476264"></a>等待GTM开始事务。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row1751165317264"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1151115312610"><a name="zh-cn_topic_0237122466_p1151115312610"></a><a name="zh-cn_topic_0237122466_p1151115312610"></a>gtm commit trans</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p20521353112613"><a name="zh-cn_topic_0237122466_p20521353112613"></a><a name="zh-cn_topic_0237122466_p20521353112613"></a>等待GTM提交事务。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row1752135382610"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p95245392618"><a name="zh-cn_topic_0237122466_p95245392618"></a><a name="zh-cn_topic_0237122466_p95245392618"></a>gtm rollback trans</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p85285315262"><a name="zh-cn_topic_0237122466_p85285315262"></a><a name="zh-cn_topic_0237122466_p85285315262"></a>等待GTM执行事务回滚。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row2521753202610"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p20526538269"><a name="zh-cn_topic_0237122466_p20526538269"></a><a name="zh-cn_topic_0237122466_p20526538269"></a>gtm start prepare trans</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1527531260"><a name="zh-cn_topic_0237122466_p1527531260"></a><a name="zh-cn_topic_0237122466_p1527531260"></a>等待GTM开始两阶段事务的prepare阶段。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row145275311269"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p18521653182615"><a name="zh-cn_topic_0237122466_p18521653182615"></a><a name="zh-cn_topic_0237122466_p18521653182615"></a>gtm prepare trans</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p3536538265"><a name="zh-cn_topic_0237122466_p3536538265"></a><a name="zh-cn_topic_0237122466_p3536538265"></a>等待GTM完成两阶段事务的prepare阶段。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row1578813179276"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p13789191722714"><a name="zh-cn_topic_0237122466_p13789191722714"></a><a name="zh-cn_topic_0237122466_p13789191722714"></a>gtm open sequence</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p87891177278"><a name="zh-cn_topic_0237122466_p87891177278"></a><a name="zh-cn_topic_0237122466_p87891177278"></a>等待GTM打开sequence。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row57894174275"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1578941712272"><a name="zh-cn_topic_0237122466_p1578941712272"></a><a name="zh-cn_topic_0237122466_p1578941712272"></a>gtm close sequence</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1678961722713"><a name="zh-cn_topic_0237122466_p1678961722713"></a><a name="zh-cn_topic_0237122466_p1678961722713"></a>等待GTM关闭sequence。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row19789111711275"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p12790141742712"><a name="zh-cn_topic_0237122466_p12790141742712"></a><a name="zh-cn_topic_0237122466_p12790141742712"></a>gtm create sequence</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p11790417192714"><a name="zh-cn_topic_0237122466_p11790417192714"></a><a name="zh-cn_topic_0237122466_p11790417192714"></a>等待GTM创建sequence。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row279041782719"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1379041713279"><a name="zh-cn_topic_0237122466_p1379041713279"></a><a name="zh-cn_topic_0237122466_p1379041713279"></a>gtm alter sequence</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p5790917182719"><a name="zh-cn_topic_0237122466_p5790917182719"></a><a name="zh-cn_topic_0237122466_p5790917182719"></a>等待GTM修改sequence。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row879081772712"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1979171762715"><a name="zh-cn_topic_0237122466_p1979171762715"></a><a name="zh-cn_topic_0237122466_p1979171762715"></a>gtm get sequence val</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1279131720276"><a name="zh-cn_topic_0237122466_p1279131720276"></a><a name="zh-cn_topic_0237122466_p1279131720276"></a>等待从GTM获取sequence的下一个值。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row18791171711278"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1179115173276"><a name="zh-cn_topic_0237122466_p1179115173276"></a><a name="zh-cn_topic_0237122466_p1179115173276"></a>gtm set sequence val</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p9791917162712"><a name="zh-cn_topic_0237122466_p9791917162712"></a><a name="zh-cn_topic_0237122466_p9791917162712"></a>等待GTM设置sequence的值。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row9791617182718"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p37917176273"><a name="zh-cn_topic_0237122466_p37917176273"></a><a name="zh-cn_topic_0237122466_p37917176273"></a>gtm drop sequence</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p7791417202716"><a name="zh-cn_topic_0237122466_p7791417202716"></a><a name="zh-cn_topic_0237122466_p7791417202716"></a>等待GTM删除sequence。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row9791191714271"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p177921178270"><a name="zh-cn_topic_0237122466_p177921178270"></a><a name="zh-cn_topic_0237122466_p177921178270"></a>gtm rename sequece</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p18792617112712"><a name="zh-cn_topic_0237122466_p18792617112712"></a><a name="zh-cn_topic_0237122466_p18792617112712"></a>等待GTM重命名sequence。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row19650172892719"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1865082892710"><a name="zh-cn_topic_0237122466_p1865082892710"></a><a name="zh-cn_topic_0237122466_p1865082892710"></a>analyze: [relname], [phase]</p>
@@ -365,6 +285,26 @@ wait\_status列的等待状态有以下状态。
 <tr id="zh-cn_topic_0237122466_row1865242818275"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1965218287273"><a name="zh-cn_topic_0237122466_p1965218287273"></a><a name="zh-cn_topic_0237122466_p1965218287273"></a>Material | Material - write file</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p16652112842710"><a name="zh-cn_topic_0237122466_p16652112842710"></a><a name="zh-cn_topic_0237122466_p16652112842710"></a>当前是Material算子，write file表示Material算子正在将数据写入磁盘。</p>
+</td>
+</tr>
+<tr id="row191001432102112"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="p57723162117"><a name="p57723162117"></a><a name="p57723162117"></a>NestLoop</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="p577203119214"><a name="p577203119214"></a><a name="p577203119214"></a>当前是NestLoop算子。</p>
+</td>
+</tr>
+<tr id="row2069011916224"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="p2881111812229"><a name="p2881111812229"></a><a name="p2881111812229"></a>wait memory</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="p14881718152212"><a name="p14881718152212"></a><a name="p14881718152212"></a>等待内存获取。</p>
+</td>
+</tr>
+<tr id="row206072217227"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="p19682162016228"><a name="p19682162016228"></a><a name="p19682162016228"></a>wait sync consumer next step</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="p26821420112219"><a name="p26821420112219"></a><a name="p26821420112219"></a>Stream算子等待消费者执行。</p>
+</td>
+</tr>
+<tr id="row9483152492216"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="p10661823122212"><a name="p10661823122212"></a><a name="p10661823122212"></a>wait sync producer next step</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="p866113235224"><a name="p866113235224"></a><a name="p866113235224"></a>Stream算子等待生产者执行。</p>
 </td>
 </tr>
 </tbody>
@@ -505,7 +445,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0237122466_row102521225193410"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p10252102513342"><a name="zh-cn_topic_0237122466_p10252102513342"></a><a name="zh-cn_topic_0237122466_p10252102513342"></a>NodeTableLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p169831520141619"><a name="zh-cn_topic_0237122466_p169831520141619"></a><a name="zh-cn_topic_0237122466_p169831520141619"></a>用于保护存放<span id="ph1957813618456"><a name="ph1957813618456"></a><a name="ph1957813618456"></a>数据库</span>节点信息的共享结构。</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p169831520141619"><a name="zh-cn_topic_0237122466_p169831520141619"></a><a name="zh-cn_topic_0237122466_p169831520141619"></a>用于保护存放数据库节点信息的共享结构。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row202521225133412"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p7252325153414"><a name="zh-cn_topic_0237122466_p7252325153414"></a><a name="zh-cn_topic_0237122466_p7252325153414"></a>PoolerLock</p>
@@ -593,11 +533,6 @@ wait\_status列的等待状态有以下状态。
 <td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p16255192510342"><a name="zh-cn_topic_0237122466_p16255192510342"></a><a name="zh-cn_topic_0237122466_p16255192510342"></a>用于串行更新特定结构中记录的主备机的xlog flush位置点。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122466_row1525542503418"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p112551825133416"><a name="zh-cn_topic_0237122466_p112551825133416"></a><a name="zh-cn_topic_0237122466_p112551825133416"></a>GTMHostInfoLock</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p725552515344"><a name="zh-cn_topic_0237122466_p725552515344"></a><a name="zh-cn_topic_0237122466_p725552515344"></a>用于避免并发访问或者修改GTM主机信息。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237122466_row1525572513347"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p17255122514346"><a name="zh-cn_topic_0237122466_p17255122514346"></a><a name="zh-cn_topic_0237122466_p17255122514346"></a>ReplicationSlotAllocationLock</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p18255825183414"><a name="zh-cn_topic_0237122466_p18255825183414"></a><a name="zh-cn_topic_0237122466_p18255825183414"></a>用于主备复制时保护主机端的流复制槽的分配。</p>
@@ -655,7 +590,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0237122466_row16258142573415"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p19258725163411"><a name="zh-cn_topic_0237122466_p19258725163411"></a><a name="zh-cn_topic_0237122466_p19258725163411"></a>JobShmemLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p925811250349"><a name="zh-cn_topic_0237122466_p925811250349"></a><a name="zh-cn_topic_0237122466_p925811250349"></a>用于MPP兼容<span id="ph690404910463"><a name="ph690404910463"></a><a name="ph690404910463"></a>A</span>定时任务功能中保护定时读取的全局变量。</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p925811250349"><a name="zh-cn_topic_0237122466_p925811250349"></a><a name="zh-cn_topic_0237122466_p925811250349"></a>用于定时任务功能中保护定时读取的全局变量。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row1025822511342"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p12258122514343"><a name="zh-cn_topic_0237122466_p12258122514343"></a><a name="zh-cn_topic_0237122466_p12258122514343"></a>OBSRuntimeLock</p>
@@ -726,6 +661,266 @@ wait\_status列的等待状态有以下状态。
 <tr id="zh-cn_topic_0237122466_row172601125133414"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1126016250347"><a name="zh-cn_topic_0237122466_p1126016250347"></a><a name="zh-cn_topic_0237122466_p1126016250347"></a>BarrierLock</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1026016252345"><a name="zh-cn_topic_0237122466_p1026016252345"></a><a name="zh-cn_topic_0237122466_p1026016252345"></a>用于保证当前只有一个线程在创建Barrier。</p>
+</td>
+</tr>
+<tr id="row278133495114"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p57821343513"><a name="p57821343513"></a><a name="p57821343513"></a>dummyServerInfoCacheLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p57821734135115"><a name="p57821734135115"></a><a name="p57821734135115"></a>用于保护缓存加速openGauss连接信息的全局哈希表。</p>
+</td>
+</tr>
+<tr id="row1627312534524"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p4274353195211"><a name="p4274353195211"></a><a name="p4274353195211"></a>RPNumberLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p92741453175218"><a name="p92741453175218"></a><a name="p92741453175218"></a>用于加速openGauss的数据库节点对正在执行计划的任务线程的计数。</p>
+</td>
+</tr>
+<tr id="row265712294538"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p18657202914539"><a name="p18657202914539"></a><a name="p18657202914539"></a>ClusterRPLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1965732915312"><a name="p1965732915312"></a><a name="p1965732915312"></a>用于加速openGauss的CCN中维护的openGauss负载数据的并发存取控制。</p>
+</td>
+</tr>
+<tr id="row115345178541"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p135341179541"><a name="p135341179541"></a><a name="p135341179541"></a>CBMParseXlogLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p75341617115410"><a name="p75341617115410"></a><a name="p75341617115410"></a>Cbm 解析xlog时的保护锁</p>
+</td>
+</tr>
+<tr id="row1419795555416"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p019875565411"><a name="p019875565411"></a><a name="p019875565411"></a>RelfilenodeReuseLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p151989558547"><a name="p151989558547"></a><a name="p151989558547"></a>避免错误地取消已重用的列属性文件的链接。</p>
+</td>
+</tr>
+<tr id="row415513565817"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p16155155105810"><a name="p16155155105810"></a><a name="p16155155105810"></a>RcvWriteLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p19155165145816"><a name="p19155165145816"></a><a name="p19155165145816"></a>防止并发调用WalDataRcvWrite。</p>
+</td>
+</tr>
+<tr id="row75270512587"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p14528185115817"><a name="p14528185115817"></a><a name="p14528185115817"></a>PercentileLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1652817519585"><a name="p1652817519585"></a><a name="p1652817519585"></a>用于保护全局PercentileBuffer</p>
+</td>
+</tr>
+<tr id="row642581816115"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1542571810117"><a name="p1542571810117"></a><a name="p1542571810117"></a>CSNBufMappingLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p174251118119"><a name="p174251118119"></a><a name="p174251118119"></a>保护csn页面</p>
+</td>
+</tr>
+<tr id="row16334361129"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p133341162219"><a name="p133341162219"></a><a name="p133341162219"></a>UniqueSQLMappingLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p15334961128"><a name="p15334961128"></a><a name="p15334961128"></a>用于保护uniquesql hash table</p>
+</td>
+</tr>
+<tr id="row107301846161711"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p573013460178"><a name="p573013460178"></a><a name="p573013460178"></a>DelayDDLLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p273116463179"><a name="p273116463179"></a><a name="p273116463179"></a>防止并发ddl。</p>
+</td>
+</tr>
+<tr id="row0177126141920"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p15177132691912"><a name="p15177132691912"></a><a name="p15177132691912"></a>CLOG Ctl</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p9177102631917"><a name="p9177102631917"></a><a name="p9177102631917"></a>用于避免并发访问或者修改Clog控制数据结构</p>
+</td>
+</tr>
+<tr id="row13521171316206"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p2521181342020"><a name="p2521181342020"></a><a name="p2521181342020"></a>Async Ctl</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p552291322017"><a name="p552291322017"></a><a name="p552291322017"></a>保护Async buffer</p>
+</td>
+</tr>
+<tr id="row039155742010"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1439115714203"><a name="p1439115714203"></a><a name="p1439115714203"></a>MultiXactOffset Ctl</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p133935792010"><a name="p133935792010"></a><a name="p133935792010"></a>保护MultiXact offet的slru buffer</p>
+</td>
+</tr>
+<tr id="row8426111952114"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p9426111912211"><a name="p9426111912211"></a><a name="p9426111912211"></a>MultiXactMember Ctl</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p14426111922110"><a name="p14426111922110"></a><a name="p14426111922110"></a>保护MultiXact member的slrubuffer</p>
+</td>
+</tr>
+<tr id="row16796316172217"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p3796201602217"><a name="p3796201602217"></a><a name="p3796201602217"></a>OldSerXid SLRU Ctl</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1879651619229"><a name="p1879651619229"></a><a name="p1879651619229"></a>保护old xids的slru buffer</p>
+</td>
+</tr>
+<tr id="row13779172092517"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p12780122022517"><a name="p12780122022517"></a><a name="p12780122022517"></a>ReplicationSlotLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p10780192013252"><a name="p10780192013252"></a><a name="p10780192013252"></a>用于保护ReplicationSlot</p>
+</td>
+</tr>
+<tr id="row61636273260"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p201634278269"><a name="p201634278269"></a><a name="p201634278269"></a>PGPROCLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p13163132713260"><a name="p13163132713260"></a><a name="p13163132713260"></a>用于保护pgproc</p>
+</td>
+</tr>
+<tr id="row93871137270"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1838711316274"><a name="p1838711316274"></a><a name="p1838711316274"></a>MetaCacheLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p338711139273"><a name="p338711139273"></a><a name="p338711139273"></a>用于保护MetaCache</p>
+</td>
+</tr>
+<tr id="row51712311285"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p181783132811"><a name="p181783132811"></a><a name="p181783132811"></a>DataCacheLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p151763132817"><a name="p151763132817"></a><a name="p151763132817"></a>用于保护datacache</p>
+</td>
+</tr>
+<tr id="row10781736162818"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p167953692820"><a name="p167953692820"></a><a name="p167953692820"></a>InstrUserLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1879183682811"><a name="p1879183682811"></a><a name="p1879183682811"></a>用于保护InstrUserHTAB。</p>
+</td>
+</tr>
+<tr id="row17506195395619"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p202581307577"><a name="p202581307577"></a><a name="p202581307577"></a>BadBlockStatHashLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p19258133035719"><a name="p19258133035719"></a><a name="p19258133035719"></a>用于保护global_bad_block_stat hash表。</p>
+</td>
+</tr>
+<tr id="row22422561403"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p8243175620019"><a name="p8243175620019"></a><a name="p8243175620019"></a>BufFreelistLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p624314568019"><a name="p624314568019"></a><a name="p624314568019"></a>用于保证共享缓冲区空闲列表操作的原子性。</p>
+</td>
+</tr>
+<tr id="row167501558110"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p07501515114"><a name="p07501515114"></a><a name="p07501515114"></a>CUSlotListLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p775005714"><a name="p775005714"></a><a name="p775005714"></a>用于控制列存缓冲区槽位的并发操作。</p>
+</td>
+</tr>
+<tr id="row447110141712"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1847101416120"><a name="p1847101416120"></a><a name="p1847101416120"></a>AddinShmemInitLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p247118148119"><a name="p247118148119"></a><a name="p247118148119"></a>保护共享内存对象的初始化。</p>
+</td>
+</tr>
+<tr id="row1743892316210"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p10197222128"><a name="p10197222128"></a><a name="p10197222128"></a>AlterPortLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1623974016213"><a name="p1623974016213"></a><a name="p1623974016213"></a>保护协调节点更改注册端口号的操作。</p>
+</td>
+</tr>
+<tr id="row165081126823"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p166852251524"><a name="p166852251524"></a><a name="p166852251524"></a>FdwPartitionCaheLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p2068617251423"><a name="p2068617251423"></a><a name="p2068617251423"></a>HDFS分区表缓冲区的管理锁。</p>
+</td>
+</tr>
+<tr id="row1979010283212"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p4241028320"><a name="p4241028320"></a><a name="p4241028320"></a>DfsConnectorCacheLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p8241828829"><a name="p8241828829"></a><a name="p8241828829"></a>DFSConnector缓冲区的管理锁。</p>
+</td>
+</tr>
+<tr id="row11871954131913"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1812831362512"><a name="p1812831362512"></a><a name="p1812831362512"></a>DfsSpaceCacheLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p102161953151914"><a name="p102161953151914"></a><a name="p102161953151914"></a>HDFS表空间管理缓冲区的管理锁。</p>
+</td>
+</tr>
+<tr id="row1417835971910"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1447016554194"><a name="p1447016554194"></a><a name="p1447016554194"></a>FullBuildXlogCopyStartPtrLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p34701055101913"><a name="p34701055101913"></a><a name="p34701055101913"></a>用于保护全量Build中Xlog拷贝的操作。</p>
+</td>
+</tr>
+<tr id="row14834181172011"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p4806804201"><a name="p4806804201"></a><a name="p4806804201"></a>DfsUserLoginLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p15806140182012"><a name="p15806140182012"></a><a name="p15806140182012"></a>用于HDFS用户登录以及认证。</p>
+</td>
+</tr>
+<tr id="row331112542513"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p8566132482516"><a name="p8566132482516"></a><a name="p8566132482516"></a>LogicalReplicationSlotPersistentDataLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1556682402515"><a name="p1556682402515"></a><a name="p1556682402515"></a>用于保护逻辑复制过程中复制槽位的数据。</p>
+</td>
+</tr>
+<tr id="row318217273258"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p2265122682512"><a name="p2265122682512"></a><a name="p2265122682512"></a>WorkloadSessionInfoLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p2265102611254"><a name="p2265102611254"></a><a name="p2265102611254"></a>保护负载管理session info内存hash表访问。</p>
+</td>
+</tr>
+<tr id="row1719842902512"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p15370192815258"><a name="p15370192815258"></a><a name="p15370192815258"></a>InstrWorkloadLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p163701528192514"><a name="p163701528192514"></a><a name="p163701528192514"></a>保护负载管理统计信息的内存hash表访问。</p>
+</td>
+</tr>
+<tr id="row478423012254"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p48863082516"><a name="p48863082516"></a><a name="p48863082516"></a>PgfdwLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p38813018257"><a name="p38813018257"></a><a name="p38813018257"></a>用于管理实例向Foreign server建立连接。</p>
+</td>
+</tr>
+<tr id="row1518504493519"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p5253104353515"><a name="p5253104353515"></a><a name="p5253104353515"></a>InstanceTimeLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1253143103511"><a name="p1253143103511"></a><a name="p1253143103511"></a>用于获取实例中会话的时间信息。</p>
+</td>
+</tr>
+<tr id="row1381734533516"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p2014744523514"><a name="p2014744523514"></a><a name="p2014744523514"></a>XlogRemoveSegLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p314774516355"><a name="p314774516355"></a><a name="p314774516355"></a>保护Xlog段文件的回收操作。</p>
+</td>
+</tr>
+<tr id="row193931047103511"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p17981446113517"><a name="p17981446113517"></a><a name="p17981446113517"></a>DnUsedSpaceHashLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p14798194683515"><a name="p14798194683515"></a><a name="p14798194683515"></a>用于更新会话对应的空间使用信息。</p>
+</td>
+</tr>
+<tr id="row74661541355"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p13570153163510"><a name="p13570153163510"></a><a name="p13570153163510"></a>CsnMinLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p35709535358"><a name="p35709535358"></a><a name="p35709535358"></a>用于计算CSNmin。</p>
+</td>
+</tr>
+<tr id="row64996564353"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p8788125510352"><a name="p8788125510352"></a><a name="p8788125510352"></a>GPCCommitLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p18789165517356"><a name="p18789165517356"></a><a name="p18789165517356"></a>用于保护全局Plan Cache hash表的添加操作。</p>
+</td>
+</tr>
+<tr id="row4107115843518"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1962855773515"><a name="p1962855773515"></a><a name="p1962855773515"></a>GPCClearLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p56281357203511"><a name="p56281357203511"></a><a name="p56281357203511"></a>用于保护全局Plan Cache hash表的清除操作。</p>
+</td>
+</tr>
+<tr id="row164241204361"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p2795125963512"><a name="p2795125963512"></a><a name="p2795125963512"></a>GPCTimelineLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p07951159183510"><a name="p07951159183510"></a><a name="p07951159183510"></a>用于保护全局Plan Cache hash表检查Timeline的操作。</p>
+</td>
+</tr>
+<tr id="row188202193619"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p5454514364"><a name="p5454514364"></a><a name="p5454514364"></a>TsTagsCacheLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p184545183610"><a name="p184545183610"></a><a name="p184545183610"></a>用于时序tag缓存管理。</p>
+</td>
+</tr>
+<tr id="row19784435365"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p429911315368"><a name="p429911315368"></a><a name="p429911315368"></a>InstanceRealTLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p172997333617"><a name="p172997333617"></a><a name="p172997333617"></a>用于保护共享实例统计信息hash表的更新操作。</p>
+</td>
+</tr>
+<tr id="row320811653615"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p126121158365"><a name="p126121158365"></a><a name="p126121158365"></a>CLogBufMappingLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p9612758360"><a name="p9612758360"></a><a name="p9612758360"></a>用于提交日志缓存管理。</p>
+</td>
+</tr>
+<tr id="row181287815365"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p8627177193615"><a name="p8627177193615"></a><a name="p8627177193615"></a>GPCMappingLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1062715743611"><a name="p1062715743611"></a><a name="p1062715743611"></a>用于全局Plan Cache缓存管理。</p>
+</td>
+</tr>
+<tr id="row7841938193618"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p7157236203611"><a name="p7157236203611"></a><a name="p7157236203611"></a>GPCPrepareMappingLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1662161319423"><a name="p1662161319423"></a><a name="p1662161319423"></a>用于全局Plan Cache缓存管理。</p>
+</td>
+</tr>
+<tr id="row18343810363"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1715811362368"><a name="p1715811362368"></a><a name="p1715811362368"></a>BufferIOLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p2158193683612"><a name="p2158193683612"></a><a name="p2158193683612"></a>保护共享缓冲区页面的IO操作。</p>
+</td>
+</tr>
+<tr id="row126811942123618"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p139802406362"><a name="p139802406362"></a><a name="p139802406362"></a>BufferContentLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p12980164063616"><a name="p12980164063616"></a><a name="p12980164063616"></a>保护共享缓冲区页面内容的读取、修改。</p>
+</td>
+</tr>
+<tr id="row17681164212362"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1898094015362"><a name="p1898094015362"></a><a name="p1898094015362"></a>CSNLOG Ctl</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1998034043618"><a name="p1998034043618"></a><a name="p1998034043618"></a>用于CSN日志管理。</p>
+</td>
+</tr>
+<tr id="row85621945143618"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p145954433614"><a name="p145954433614"></a><a name="p145954433614"></a>DoubleWriteLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1359444113613"><a name="p1359444113613"></a><a name="p1359444113613"></a>用于双写的管理操作。</p>
+</td>
+</tr>
+<tr id="row185911412163517"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p159214125357"><a name="p159214125357"></a><a name="p159214125357"></a>RowPageReplicationLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1959201233518"><a name="p1959201233518"></a><a name="p1959201233518"></a>用于管理行存储的数据页复制。</p>
+</td>
+</tr>
+<tr id="row140882312506"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p840812237501"><a name="p840812237501"></a><a name="p840812237501"></a>extension</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1408423105015"><a name="p1408423105015"></a><a name="p1408423105015"></a>其他轻量锁。</p>
 </td>
 </tr>
 </tbody>
@@ -990,6 +1185,46 @@ wait\_status列的等待状态有以下状态。
 <tr id="zh-cn_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1053233143619"><a name="zh-cn_topic_0237122466_p1053233143619"></a><a name="zh-cn_topic_0237122466_p1053233143619"></a>WALWrite</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p95324318361"><a name="zh-cn_topic_0237122466_p95324318361"></a><a name="zh-cn_topic_0237122466_p95324318361"></a>写入WAL文件。</p>
+</td>
+</tr>
+<tr id="row5126152875614"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p98110272568"><a name="p98110272568"></a><a name="p98110272568"></a>DoubleWriteFileRead</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1981727185619"><a name="p1981727185619"></a><a name="p1981727185619"></a>双写 文件读取。</p>
+</td>
+</tr>
+<tr id="row4301173016565"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p0212202915615"><a name="p0212202915615"></a><a name="p0212202915615"></a>DoubleWriteFileSync</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p22121929165615"><a name="p22121929165615"></a><a name="p22121929165615"></a>双写 文件强制刷盘。</p>
+</td>
+</tr>
+<tr id="row63501332125615"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p47025312568"><a name="p47025312568"></a><a name="p47025312568"></a>DoubleWriteFileWrite</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p77031931195610"><a name="p77031931195610"></a><a name="p77031931195610"></a>双写 文件写入。</p>
+</td>
+</tr>
+<tr id="row2926193318562"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p63521133135615"><a name="p63521133135615"></a><a name="p63521133135615"></a>PredoProcessPending</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p9352153345615"><a name="p9352153345615"></a><a name="p9352153345615"></a>并行日志回放中当前记录回放等待其它记录回放完成。</p>
+</td>
+</tr>
+<tr id="row64341335125611"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p139101934175618"><a name="p139101934175618"></a><a name="p139101934175618"></a>PredoApply</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p10910193415617"><a name="p10910193415617"></a><a name="p10910193415617"></a>并行日志回放中等待当前工作线程等待其他线程回放至本线程LSN。</p>
+</td>
+</tr>
+<tr id="row0209143815611"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p124831136205614"><a name="p124831136205614"></a><a name="p124831136205614"></a>DisableConnectFileRead</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p94841536155615"><a name="p94841536155615"></a><a name="p94841536155615"></a>HA锁分片逻辑文件读取。</p>
+</td>
+</tr>
+<tr id="row7685103917569"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p171823397564"><a name="p171823397564"></a><a name="p171823397564"></a>DisableConnectFileSync</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p3182103915620"><a name="p3182103915620"></a><a name="p3182103915620"></a>HA锁分片逻辑文件强制刷盘。</p>
+</td>
+</tr>
+<tr id="row786114145618"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p18700124015564"><a name="p18700124015564"></a><a name="p18700124015564"></a>DisableConnectFileWrite</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p670074095617"><a name="p670074095617"></a><a name="p670074095617"></a>HA锁分片逻辑文件写入。</p>
 </td>
 </tr>
 </tbody>

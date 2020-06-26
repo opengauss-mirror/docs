@@ -24,7 +24,7 @@ PG\_STAT\_XACT\_SYS\_TABLES视图显示命名空间中系统表的事务状态�
 </td>
 <td class="cellrowborder" valign="top" width="14.19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a0cebf97edccb476c9e8f4dff2b1b52f5"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a0cebf97edccb476c9e8f4dff2b1b52f5"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a0cebf97edccb476c9e8f4dff2b1b52f5"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.46%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a9dbd1db19c634a8b8fcfeacd4b550ff7"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a9dbd1db19c634a8b8fcfeacd4b550ff7"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a9dbd1db19c634a8b8fcfeacd4b550ff7"></a>此表的模式名。</p>
+<td class="cellrowborder" valign="top" width="61.46%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a9dbd1db19c634a8b8fcfeacd4b550ff7"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a9dbd1db19c634a8b8fcfeacd4b550ff7"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a9dbd1db19c634a8b8fcfeacd4b550ff7"></a>该表的模式名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_ra5fb823835344d6d9c3361093b07ecf0"><td class="cellrowborder" valign="top" width="24.349999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a4a0b90d599554fcab036e769b161a320"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a4a0b90d599554fcab036e769b161a320"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a4a0b90d599554fcab036e769b161a320"></a>relname</p>
@@ -38,7 +38,7 @@ PG\_STAT\_XACT\_SYS\_TABLES视图显示命名空间中系统表的事务状态�
 </td>
 <td class="cellrowborder" valign="top" width="14.19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a343eb038201f4646acaab408a56ed06c"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a343eb038201f4646acaab408a56ed06c"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a343eb038201f4646acaab408a56ed06c"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.46%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a1a4a836b2522465987ff375800982255"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a1a4a836b2522465987ff375800982255"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a1a4a836b2522465987ff375800982255"></a>此表发起的顺序扫描数。</p>
+<td class="cellrowborder" valign="top" width="61.46%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a1a4a836b2522465987ff375800982255"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a1a4a836b2522465987ff375800982255"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a1a4a836b2522465987ff375800982255"></a>该表发起的顺序扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_r1a2543258fb1474996d5f4715a1a0dc0"><td class="cellrowborder" valign="top" width="24.349999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a13370c2fac01495a934a8aff7eebf3b9"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a13370c2fac01495a934a8aff7eebf3b9"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a13370c2fac01495a934a8aff7eebf3b9"></a>seq_tup_read</p>
@@ -52,7 +52,7 @@ PG\_STAT\_XACT\_SYS\_TABLES视图显示命名空间中系统表的事务状态�
 </td>
 <td class="cellrowborder" valign="top" width="14.19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a61f018f5fd124eccb03d91849401c767"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a61f018f5fd124eccb03d91849401c767"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a61f018f5fd124eccb03d91849401c767"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.46%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a467814cb047b4439b74977800bc4385f"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a467814cb047b4439b74977800bc4385f"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a467814cb047b4439b74977800bc4385f"></a>此表发起的索引扫描数。</p>
+<td class="cellrowborder" valign="top" width="61.46%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a467814cb047b4439b74977800bc4385f"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a467814cb047b4439b74977800bc4385f"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a467814cb047b4439b74977800bc4385f"></a>该表发起的索引扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_rcdfd1460bc6d4c6ea25be1992eb60187"><td class="cellrowborder" valign="top" width="24.349999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a6827f3e275034c3e801c606c4734e76d"><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a6827f3e275034c3e801c606c4734e76d"></a><a name="zh-cn_topic_0237122454_zh-cn_topic_0059777997_a6827f3e275034c3e801c606c4734e76d"></a>idx_tup_fetch</p>

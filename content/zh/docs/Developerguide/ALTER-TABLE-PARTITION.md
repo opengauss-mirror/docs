@@ -199,7 +199,7 @@
     -   ENABLE：打开行迁移开关。
     -   DISABLE：关闭行迁移开关。
 
-    默认是关闭状态。
+    默认是打开状态。
 
 -   **ordinary\_table\_name**
 
@@ -240,5 +240,5 @@
 
 ## 相关链接<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](CREATE-TABLE-PARTITION.md)，[DROP TABLE](DROP-TABLE.md#ZH-CN_TOPIC_0242370616)
+[CREATE TABLE PARTITION](CREATE-TABLE-PARTITION.md)，[DROP TABLE](DROP-TABLE.md)
 

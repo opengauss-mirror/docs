@@ -28,7 +28,7 @@ PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过�
 </td>
 <td class="cellrowborder" valign="top" width="12.030000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a8f7257a8a9c84bb29068e3b2e5a0392f"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a8f7257a8a9c84bb29068e3b2e5a0392f"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a8f7257a8a9c84bb29068e3b2e5a0392f"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a839b492aac624f8dac03b88112d0a8af"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a839b492aac624f8dac03b88112d0a8af"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a839b492aac624f8dac03b88112d0a8af"></a><a href="PG_OPFAMILY.md#ZH-CN_TOPIC_0242385833">PG_OPFAMILY</a>.oid</p>
+<td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a839b492aac624f8dac03b88112d0a8af"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a839b492aac624f8dac03b88112d0a8af"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a839b492aac624f8dac03b88112d0a8af"></a><a href="PG_OPFAMILY.md">PG_OPFAMILY</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.98%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a8abae3c9974e480e8acdfe19a04ad0a0"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a8abae3c9974e480e8acdfe19a04ad0a0"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a8abae3c9974e480e8acdfe19a04ad0a0"></a>该项的操作符族。</p>
 </td>
@@ -37,7 +37,7 @@ PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过�
 </td>
 <td class="cellrowborder" valign="top" width="12.030000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a169b75e8600f4a149972cd8dedadcb30"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a169b75e8600f4a149972cd8dedadcb30"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a169b75e8600f4a149972cd8dedadcb30"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.98%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"></a>相关操作符的左输入数据类型。</p>
 </td>
@@ -46,7 +46,7 @@ PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过�
 </td>
 <td class="cellrowborder" valign="top" width="12.030000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_af793de1bf1594cf5badd64bad8a9e4a8"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_af793de1bf1594cf5badd64bad8a9e4a8"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_af793de1bf1594cf5badd64bad8a9e4a8"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.98%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"></a><a name="zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"></a>相关操作符的右输入数据类型。</p>
 </td>

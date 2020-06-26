@@ -72,5 +72,5 @@ postgres=# DROP USER paul;
 
 ## 相关参考<a name="zh-cn_topic_0237122189_zh-cn_topic_0059778193_sc0f2308a64c2470aaac2c18b49a18e95"></a>
 
-[SET ROLE](SET-ROLE.md#ZH-CN_TOPIC_0242370652)
+[SET ROLE](SET-ROLE.md)
 

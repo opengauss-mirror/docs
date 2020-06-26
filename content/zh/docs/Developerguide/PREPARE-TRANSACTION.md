@@ -6,7 +6,7 @@
 
 在命令之后，事务就不再和当前会话关联了；它的状态完全保存在磁盘上，它被提交成功的可能性非常高，即使是在请求提交之前数据库发生了崩溃也如此。
 
-一旦准备好了，一个事务就可以在稍后用[COMMIT PREPARED](COMMIT-PREPARED.md#ZH-CN_TOPIC_0242370559)或  [ROLLBACK PREPARED](ROLLBACK-PREPARED.md#ZH-CN_TOPIC_0242370645)命令分别进行提交或者回滚。这些命令可以从任何会话中发出，而不光是最初执行事务的那个会话。
+一旦准备好了，一个事务就可以在稍后用[COMMIT PREPARED](COMMIT-PREPARED.md)或  [ROLLBACK PREPARED](ROLLBACK-PREPARED.md)命令分别进行提交或者回滚。这些命令可以从任何会话中发出，而不光是最初执行事务的那个会话。
 
 从发出命令的会话的角度来看，PREPARE TRANSACTION不同于ROLLBACK：在执行它之后，就不再有活跃的当前事务了，并且预备事务的效果无法见到 \(在事务提交的时候其效果会再次可见\)。
 
@@ -33,5 +33,5 @@ PREPARE TRANSACTION transaction_id;
 
 ## 相关链接<a name="zh-cn_topic_0237122172_zh-cn_topic_0059779173_s2562d8e8d89a4cd981f08e57f14bb219"></a>
 
-[COMMIT PREPARED](COMMIT-PREPARED.md#ZH-CN_TOPIC_0242370559)，[ROLLBACK PREPARED](ROLLBACK-PREPARED.md#ZH-CN_TOPIC_0242370645)
+[COMMIT PREPARED](COMMIT-PREPARED.md)，[ROLLBACK PREPARED](ROLLBACK-PREPARED.md)
 

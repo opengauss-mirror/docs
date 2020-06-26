@@ -19,7 +19,7 @@ PG\_VIEWS视图提供访问数据库中每个视图的有用信息。
 </td>
 <td class="cellrowborder" valign="top" width="9.84%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"></a><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.23%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="39.23%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.06%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0f0b904e963347098535b30a55046954"><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0f0b904e963347098535b30a55046954"></a><a name="zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0f0b904e963347098535b30a55046954"></a>包含视图的模式名。</p>
 </td>

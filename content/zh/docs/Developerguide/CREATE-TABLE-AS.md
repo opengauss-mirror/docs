@@ -21,7 +21,6 @@ CREATE [ UNLOGGED ] TABLE table_name
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
-    [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ]
     AS query
     [ WITH [ NO ] DATA ];
 ```
@@ -91,10 +90,6 @@ CREATE [ UNLOGGED ] TABLE table_name
 -   **TABLESPACE tablespace\_name**
 
     指定新表将要在tablespace\_name表空间内创建。如果没有声明，将使用默认表空间。
-
--   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
-
-    TO GROUP指定创建表所在的Node Group。TO NODE主要供内部扩容工具使用，一般用户不应该使用。
 
 -   **AS query**
 

@@ -75,9 +75,9 @@ SQLRETURN  SQLConnect(SQLHDBC        ConnectionHandle,
 
 ## 注意事项<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s570c6037911d4c57a42ca982c83b9c6d"></a>
 
-当调用SQLConnect函数返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md#ZH-CN_TOPIC_0242371454)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_DBC和ConnectionHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
+当调用SQLConnect函数返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO时，通过调用[SQLGetDiagRec](SQLGetDiagRec.md)函数，并将HandleType和Handle参数设置为SQL\_HANDLE\_DBC和ConnectionHandle，可得到一个相关的SQLSTATE值，通过SQLSTATE值可以查出调用此函数的具体信息。
 
 ## 示例<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s941ebfb1b130484d9e8e7225aa91a590"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

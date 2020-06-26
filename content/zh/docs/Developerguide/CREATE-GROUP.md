@@ -11,18 +11,13 @@ CREATE GROUP是CREATE ROLE的别名，非SQL标准语法，不推荐使用，建
 ## 语法格式<a name="zh-cn_topic_0237122105_zh-cn_topic_0059779249_s59b3eee4055b421fb68af217fb853082"></a>
 
 ```
-CREATE GROUP group_name [ [ WITH ] option [ ... ] ] 
-    [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
+CREATE GROUP group_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
 ```
 
-其中可选项action子句语法为：
+其中可选项option子句语法为：
 
 ```
-where option can be:
 {SYSADMIN | NOSYSADMIN}
-    | {MONADMIN | NOMONADMIN}
-    | {OPRADMIN | NOOPRADMIN}
-    | {POLADMIN | NOPOLADMIN}
     | {AUDITADMIN | NOAUDITADMIN}
     | {CREATEDB | NOCREATEDB}
     | {USEFT | NOUSEFT}
@@ -36,13 +31,13 @@ where option can be:
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
     | RESOURCE POOL 'respool'
-    | USER GROUP 'groupuser'
     | PERM SPACE 'spacelimit'
-    | NODE GROUP logic_group_name
+    | TEMP SPACE 'tmpspacelimit'
+    | SPILL SPACE 'spillspacelimit'
     | IN ROLE role_name [, ...]
     | IN GROUP role_name [, ...]
     | ROLE role_name [, ...]
-    | ADMIN role_name [, ...]
+    | ADMIN rol e_name [, ...]
     | USER role_name [, ...]
     | SYSID uid
     | DEFAULT TABLESPACE tablespace_name
@@ -57,5 +52,5 @@ where option can be:
 
 ## 相关链接<a name="zh-cn_topic_0237122105_zh-cn_topic_0059779249_s8153dd487fd84f2e924435436395a9a8"></a>
 
-[ALTER GROUP](ALTER-GROUP.md#ZH-CN_TOPIC_0242370526)，[DROP GROUP](DROP-GROUP.md#ZH-CN_TOPIC_0242370603)，[CREATE ROLE](CREATE-ROLE.md)
+[ALTER GROUP](ALTER-GROUP.md)，[DROP GROUP](DROP-GROUP.md)，[CREATE ROLE](CREATE-ROLE.md)
 

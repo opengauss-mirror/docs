@@ -38,9 +38,7 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
         | VALID BEGIN 'timestamp'
         | VALID UNTIL 'timestamp'
         | RESOURCE POOL 'respool'
-        | USER GROUP 'groupuser'
         | PERM SPACE 'spacelimit'
-        | NODE GROUP logic_cluster_name
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
@@ -101,7 +99,7 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
     当前版本不允许修改用户的PGUSER属性。
 
 
-其他参数请参见[CREATE ROLE](CREATE-ROLE.md)和[ALTER ROLE](ALTER-ROLE.md#ZH-CN_TOPIC_0242370532)的参数说明。
+其他参数请参见[CREATE ROLE](CREATE-ROLE.md)和[ALTER ROLE](ALTER-ROLE.md)的参数说明。
 
 ## 示例<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 
@@ -109,5 +107,5 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
 
 ## 相关链接<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE ROLE](CREATE-ROLE.md)，[CREATE USER](CREATE-USER.md#ZH-CN_TOPIC_0242370589)，[DROP USER](DROP-USER.md)
+[CREATE ROLE](CREATE-ROLE.md)，[CREATE USER](CREATE-USER.md)，[DROP USER](DROP-USER.md)
 

@@ -1,4 +1,4 @@
-# pg\_resetxlog<a name="ZH-CN_TOPIC_0242223736"></a>
+# pg\_resetxlog<a name="ZH-CN_TOPIC_0249632285"></a>
 
 ## 功能介绍<a name="zh-cn_topic_0237152442_section125419154813"></a>
 
@@ -24,7 +24,7 @@ OPTION取值如下所示：
 
 -   -e XIDEPOCH
 
-    设置下一个事务id的时期。
+    设置下一个事务id。
 
 -   -f
 
@@ -32,7 +32,7 @@ OPTION取值如下所示：
 
 -   -l xlogfile
 
-    强制指定新事物log对应在xlog文件中的最小点。
+    为新的事务日志指定最小的WAL起始位置。
 
 -   -m XID
 

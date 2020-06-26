@@ -1,6 +1,6 @@
-# gs\_ctl<a name="ZH-CN_TOPIC_0242225779"></a>
+# gs\_ctl<a name="ZH-CN_TOPIC_0249632282"></a>
 
-## 功能介绍<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_saed7059efc5d469189c9e53a984ba786"></a>
+## 背景信息<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_saed7059efc5d469189c9e53a984ba786"></a>
 
 gs\_ctl是openGauss提供的数据库服务控制工具，可以用来启停数据库服务和查询数据库状态。主要供openGauss管理模块调用。
 
@@ -74,12 +74,14 @@ gs\_ctl参数可分为如下几类：
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a>在主机异常时，将备机切换为主机。</p>
+    <p id="p0444145125912"><a name="p0444145125912"></a><a name="p0444145125912"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rf3ffc423f13a4943b18d24be85bcc74f"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a>switchover</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>在主备机正常时，出于维护的需要，将备机切换为主机，可保证切换过程中数据不丢失。</p>
-    <p id="p4248133043914"><a name="p4248133043914"></a><a name="p4248133043914"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息</p>
+    <p id="p4248133043914"><a name="p4248133043914"></a><a name="p4248133043914"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息。</p>
+    <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态；如果备机在standby wait状态，可以通过重复下发switchover命令消除，使集群恢复到正常状态。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r30b3aa9baf20460baf9e2b4f5fc55af3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a>query</p>
@@ -170,6 +172,8 @@ gs\_ctl参数可分为如下几类：
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rda88e0e994ae424dadad636f9e78b7e5"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"></a>-M</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a>-M后面需要跟SERVERMODE参数，表示在启动时指定数据库的启动模式。</p>
+<div class="note" id="note20655112713015"><a name="note20655112713015"></a><a name="note20655112713015"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p1865619273017"><a name="p1865619273017"></a><a name="p1865619273017"></a>当前主机处于一主零备，或单机环境时，不支持-M参数。</p>
+</div></div>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a>SERVERMODE的取值范围：</p>
 <a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
@@ -180,6 +184,13 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_p110125916399"><a name="zh-cn_topic_0237152408_p110125916399"></a><a name="zh-cn_topic_0237152408_p110125916399"></a>-T 后面跟term，升主命令时会用此term作为主机term，build时会连接大于等于此term的主机进行build</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_p2106594397"><a name="zh-cn_topic_0237152408_p2106594397"></a><a name="zh-cn_topic_0237152408_p2106594397"></a>term的取值范围，无符号整型。</p>
+</td>
+</tr>
+<tr id="row89351326193410"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="p19935152683419"><a name="p19935152683419"></a><a name="p19935152683419"></a>-d</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="p19935726153414"><a name="p19935726153414"></a><a name="p19935726153414"></a>打印更多调试信息</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="p1493592615345"><a name="p1493592615345"></a><a name="p1493592615345"></a>无参数</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r0297ef20051849eeaa6c1304ff282801"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3327025f553a4190952a4672db74812c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3327025f553a4190952a4672db74812c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3327025f553a4190952a4672db74812c"></a>-P PASSWORD</p>
@@ -196,7 +207,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a>指定连接数据库的用户。此参数只能与notify、query和querybuild参数配合使用。</p>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p107010214249"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p107010214249"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p107010214249"></a>对于域用户，使用DOMAIN\username格式。</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>取值范围：<span id="zh-cn_topic_0237152408_text390810451119"><a name="zh-cn_topic_0237152408_text390810451119"></a><a name="zh-cn_topic_0237152408_text390810451119"></a>openGauss</span>中存在的用户。</p>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>取值范围：openGauss中存在的用户。</p>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a>默认值：省略此参数则使用与当前操作系统用户同名的用户。</p>
 </td>
 </tr>
@@ -238,7 +249,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rf8dad388443e4dba914ce4e5f7a3c107"><td class="cellrowborder" valign="top" width="21.38%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8f940255687342c484301bee3304d0ec"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8f940255687342c484301bee3304d0ec"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8f940255687342c484301bee3304d0ec"></a>-o OPTIONS</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2345efd82ccf4eea9f9b79a70e62c29e"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2345efd82ccf4eea9f9b79a70e62c29e"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2345efd82ccf4eea9f9b79a70e62c29e"></a>声明要直接传递给由<span id="zh-cn_topic_0237152408_text78271661116"><a name="zh-cn_topic_0237152408_text78271661116"></a><a name="zh-cn_topic_0237152408_text78271661116"></a>openGauss</span>执行的gaussdb的命令行选项。</p>
+<td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2345efd82ccf4eea9f9b79a70e62c29e"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2345efd82ccf4eea9f9b79a70e62c29e"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2345efd82ccf4eea9f9b79a70e62c29e"></a>声明要直接传递给由openGauss执行的gaussdb的命令行选项。</p>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a488d1701ff6344a69a773fb4ab82b9b6"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a488d1701ff6344a69a773fb4ab82b9b6"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a488d1701ff6344a69a773fb4ab82b9b6"></a>参数通常都用单或者双引号包围以保证它们作为一个整体传递。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.21%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2b9dcd6d15c046b89a02df0fc7bacd93"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2b9dcd6d15c046b89a02df0fc7bacd93"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2b9dcd6d15c046b89a02df0fc7bacd93"></a><a href="gaussdb.md">gaussdb</a>支持的参数。</p>
@@ -270,7 +281,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="31.81681831816818%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a904c92157deb4efc9c8d31a00c2a2731"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a904c92157deb4efc9c8d31a00c2a2731"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a904c92157deb4efc9c8d31a00c2a2731"></a>声明关闭模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p742860814249"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p742860814249"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p742860814249"></a>mode的取值：</p>
-<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"><li>smart：等待所有客户端中断连接后才关闭。如果服务器处于紧迫等待，一旦所有的客户断开连接，恢复和复制流将会中断。</li><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被关闭。</li><li>immediate：强行关闭，在下次重新启动的时候将导致故障恢复。</li></ul>
+<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"><li>smart：单机模式下主机立即断开，同fast。</li><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被关闭。</li><li>immediate：强行关闭，在下次重新启动的时候将导致故障恢复。</li></ul>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad5673b7093f647b683169b8540d62b5c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad5673b7093f647b683169b8540d62b5c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad5673b7093f647b683169b8540d62b5c"></a>默认值：fast</p>
 </td>
 </tr>
@@ -293,7 +304,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="31.81681831816818%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a>声明双机主备实例正常时切换的切换模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a>mode的取值：</p>
-<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>smart：等待所有客户端中断连接后才切换。如果服务器处于紧迫等待，一旦所有的客户断开连接，恢复和复制流将会中断。</li><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li></ul>
+<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li><li>smart：本版本暂不支持该模式</li><li>immediate：本版本暂不支持该模式</li></ul>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a>默认值：fast</p>
 </td>
 </tr>
@@ -311,14 +322,15 @@ gs\_ctl参数可分为如下几类：
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1566219017310"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p126622017319"><a name="p126622017319"></a><a name="p126622017319"></a><span id="ph9271377320"><a name="ph9271377320"></a><a name="ph9271377320"></a>-b MODE</span></p>
+<tbody><tr id="row1566219017310"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p126622017319"><a name="p126622017319"></a><a name="p126622017319"></a>-b MODE</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p1966215010318"><a name="p1966215010318"></a><a name="p1966215010318"></a><span id="ph1778816531319"><a name="ph1778816531319"></a><a name="ph1778816531319"></a>指定重建备机的模式。</span></p>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p1966215010318"><a name="p1966215010318"></a><a name="p1966215010318"></a>指定重建备机的模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="p887411245513"><a name="p887411245513"></a><a name="p887411245513"></a>mode的取值：</p>
-<p id="p13270172819514"><a name="p13270172819514"></a><a name="p13270172819514"></a>● full：通过全量镜像的方式重新同步 DN主机的数据目录。</p>
-<p id="p466319111169"><a name="p466319111169"></a><a name="p466319111169"></a>● incremental：通过解析Xlog日志获 取主备DN差异的数据进行增量修复备DN。</p>
+<p id="p13270172819514"><a name="p13270172819514"></a><a name="p13270172819514"></a>● full：通过全量镜像的方式重新同步 主机的数据目录。</p>
+<p id="p466319111169"><a name="p466319111169"></a><a name="p466319111169"></a>● incremental：通过解析Xlog日志获 取主备机差异的数据进行增量修复备机。</p>
 <p id="p15978143115518"><a name="p15978143115518"></a><a name="p15978143115518"></a>警告 ● 增量重建适用于主备双主等因日志 造成的不一致场景。</p>
+<p id="p643515574347"><a name="p643515574347"></a><a name="p643515574347"></a>● 增量重建不适用于一主一备并且没有开启最大高可用的场景，此种场景下需要使用全量重建或者开启最大高可用后再进行增量重建。</p>
 <p id="p105751436553"><a name="p105751436553"></a><a name="p105751436553"></a>● 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</p>
 <p id="p381916183516"><a name="p381916183516"></a><a name="p381916183516"></a>● auto(不指定)：先增量，根据失败 后是否可以再增量选择继续增量或 者全量，三次增量失败后进行全 量。</p>
 <p id="p106721111857"><a name="p106721111857"></a><a name="p106721111857"></a>默认值：auto</p>
@@ -332,13 +344,13 @@ gs\_ctl参数可分为如下几类：
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a>默认值：120秒</p>
 </td>
 </tr>
-<tr id="row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p62971529151411"><a name="p62971529151411"></a><a name="p62971529151411"></a><span id="ph76075413146"><a name="ph76075413146"></a><a name="ph76075413146"></a>-q</span></p>
+<tr id="row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p62971529151411"><a name="p62971529151411"></a><a name="p62971529151411"></a>-q</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p13298629141413"><a name="p13298629141413"></a><a name="p13298629141413"></a><span id="ph3744175311516"><a name="ph3744175311516"></a><a name="ph3744175311516"></a>重建结束后，是否自动重启。</span></p>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p13298629141413"><a name="p13298629141413"></a><a name="p13298629141413"></a>重建结束后，是否自动重启。</p>
 <p id="p858016150165"><a name="p858016150165"></a><a name="p858016150165"></a>指定参数场合，不自动重启。</p>
 <p id="p1232613751612"><a name="p1232613751612"></a><a name="p1232613751612"></a>未指定场合，自动重启。</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="p729832991415"><a name="p729832991415"></a><a name="p729832991415"></a><span id="ph13467141771512"><a name="ph13467141771512"></a><a name="ph13467141771512"></a>无参数</span></p>
+<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="p729832991415"><a name="p729832991415"></a><a name="p729832991415"></a>无参数</p>
 </td>
 </tr>
 </tbody>
@@ -360,6 +372,27 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_p62831654121117"><a name="zh-cn_topic_0237152408_p62831654121117"></a><a name="zh-cn_topic_0237152408_p62831654121117"></a>指定是否删除增量备份集。</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_p16283115418114"><a name="zh-cn_topic_0237152408_p16283115418114"></a><a name="zh-cn_topic_0237152408_p16283115418114"></a>无参数</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 8**  query参数
+
+<a name="table198621411133319"></a>
+<table><thead align="left"><tr id="row2086211117339"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p2862181110338"><a name="p2862181110338"></a><a name="p2862181110338"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p88621511133318"><a name="p88621511133318"></a><a name="p88621511133318"></a>参数说明</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p1986251123315"><a name="p1986251123315"></a><a name="p1986251123315"></a>取值范围</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p68621111193318"><a name="p68621111193318"></a><a name="p68621111193318"></a>-L</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1886241133318"><a name="p1886241133318"></a><a name="p1886241133318"></a>查询lsn并展示最大长度。</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1186261112338"><a name="p1186261112338"></a><a name="p1186261112338"></a>无参数</p>
 </td>
 </tr>
 </tbody>

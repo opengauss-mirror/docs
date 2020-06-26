@@ -40,7 +40,7 @@ PG\_SESSION\_IOSTAT视图显示当前用户执行作业正在运行时的IO负�
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122434_p1955701710595"><a name="zh-cn_topic_0237122434_p1955701710595"></a><a name="zh-cn_topic_0237122434_p1955701710595"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122434_p13482355103"><a name="zh-cn_topic_0237122434_p13482355103"></a><a name="zh-cn_topic_0237122434_p13482355103"></a>在作业运行时，作业io峰值中，<span id="zh-cn_topic_0237122434_text17308846144219"><a name="zh-cn_topic_0237122434_text17308846144219"></a><a name="zh-cn_topic_0237122434_text17308846144219"></a>数据库节点</span>的最小值。</p>
+<td class="cellrowborder" valign="top" width="62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122434_p13482355103"><a name="zh-cn_topic_0237122434_p13482355103"></a><a name="zh-cn_topic_0237122434_p13482355103"></a>在作业运行时，作业io峰值中，<span id="zh-cn_topic_0237122434_text17308846144219"><a name="zh-cn_topic_0237122434_text17308846144219"></a><a name="zh-cn_topic_0237122434_text17308846144219"></a>数据库节点</span>最小值。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122434_row17425145365113"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122434_p51961544205813"><a name="zh-cn_topic_0237122434_p51961544205813"></a><a name="zh-cn_topic_0237122434_p51961544205813"></a>maxpeakiops</p>
@@ -75,7 +75,7 @@ PG\_SESSION\_IOSTAT视图显示当前用户执行作业正在运行时的IO负�
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122434_p14951134117359"><a name="zh-cn_topic_0237122434_p14951134117359"></a><a name="zh-cn_topic_0237122434_p14951134117359"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122434_p14951241113511"><a name="zh-cn_topic_0237122434_p14951241113511"></a><a name="zh-cn_topic_0237122434_p14951241113511"></a><span id="ph171183561211"><a name="ph171183561211"></a><a name="ph171183561211"></a>该字段不支持</span>。</p>
+<td class="cellrowborder" valign="top" width="62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122434_p14951241113511"><a name="zh-cn_topic_0237122434_p14951241113511"></a><a name="zh-cn_topic_0237122434_p14951241113511"></a>该字段不支持。</p>
 </td>
 </tr>
 </tbody>

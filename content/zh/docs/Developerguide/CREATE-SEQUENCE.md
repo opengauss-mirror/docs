@@ -6,7 +6,7 @@ CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Ow
 
 ## 注意事项<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section192715972011"></a>
 
--   Sequence是一个存放等差数列的特殊表，该表受DBMS控制。这个表没有实际意义，通常用于为行或者表生成唯一的标识符。
+-   Sequence是一个存放等差数列的特殊表。这个表没有实际意义，通常用于为行或者表生成唯一的标识符。
 -   如果给出一个模式名，则该序列就在给定的模式中创建，否则会在当前模式中创建。序列名必须和同一个模式中的其他序列、表、索引、视图或外表的名称不同。
 -   创建序列后，在表中使用序列的nextval\(\)函数和generate\_series\(1,N\)函数对表插入数据，请保证nextval的可调用次数大于等于N+1次，否则会因为generate\_series\(\)函数会调用N+1次而导致报错。
 
@@ -136,5 +136,5 @@ postgres=# DROP SEQUENCE serial1 cascade;
 
 ## 相关链接<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section184942174514"></a>
 
-[DROP SEQUENCE](DROP-SEQUENCE.md#ZH-CN_TOPIC_0242370613)，[ALTER SEQUENCE](ALTER-SEQUENCE.md#ZH-CN_TOPIC_0242370535)
+[DROP SEQUENCE](DROP-SEQUENCE.md)，[ALTER SEQUENCE](ALTER-SEQUENCE.md)
 

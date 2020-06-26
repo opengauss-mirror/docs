@@ -19,7 +19,7 @@ PG\_STATS视图提供对存储在pg\_statistic表里面的单列统计信息的�
 </td>
 <td class="cellrowborder" valign="top" width="14.790000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a71da762e7afb427aab48ab7244e632f8"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a71da762e7afb427aab48ab7244e632f8"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a71da762e7afb427aab48ab7244e632f8"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.84%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a8c5116971c114a559e254fc74ce60537"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a8c5116971c114a559e254fc74ce60537"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a8c5116971c114a559e254fc74ce60537"></a>包含表的模式名。</p>
 </td>
@@ -37,7 +37,7 @@ PG\_STATS视图提供对存储在pg\_statistic表里面的单列统计信息的�
 </td>
 <td class="cellrowborder" valign="top" width="14.790000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_afc84dffca06643c09d6c0e3c6acc1b67"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_afc84dffca06643c09d6c0e3c6acc1b67"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_afc84dffca06643c09d6c0e3c6acc1b67"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a3761d86de30349f5b93c2a9ba71a00ea"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a3761d86de30349f5b93c2a9ba71a00ea"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a3761d86de30349f5b93c2a9ba71a00ea"></a><a href="PG_ATTRIBUTE.md#ZH-CN_TOPIC_0242385799">PG_ATTRIBUTE</a>.attname</p>
+<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a3761d86de30349f5b93c2a9ba71a00ea"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a3761d86de30349f5b93c2a9ba71a00ea"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a3761d86de30349f5b93c2a9ba71a00ea"></a><a href="PG_ATTRIBUTE.md">PG_ATTRIBUTE</a>.attname</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.84%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a587b516e159941aea36fed18f59d36a5"><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a587b516e159941aea36fed18f59d36a5"></a><a name="zh-cn_topic_0237122438_zh-cn_topic_0059779067_a587b516e159941aea36fed18f59d36a5"></a>字段的名称。</p>
 </td>

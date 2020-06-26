@@ -55,7 +55,7 @@ PG\_PREPARED\_XACTS视图显示当前准备好进行两阶段提交的事务的�
 </td>
 <td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a55123c84a3a640c28b8f3ebd7e498c1d"><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a55123c84a3a640c28b8f3ebd7e498c1d"></a><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a55123c84a3a640c28b8f3ebd7e498c1d"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="22.18%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a5c6fa071e2c3483ca66f28e1144dc725"><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a5c6fa071e2c3483ca66f28e1144dc725"></a><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a5c6fa071e2c3483ca66f28e1144dc725"></a><a href="PG_DATABASE.md#ZH-CN_TOPIC_0242385808">PG_DATABASE</a>.datname</p>
+<td class="cellrowborder" valign="top" width="22.18%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a5c6fa071e2c3483ca66f28e1144dc725"><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a5c6fa071e2c3483ca66f28e1144dc725"></a><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_a5c6fa071e2c3483ca66f28e1144dc725"></a><a href="PG_DATABASE.md">PG_DATABASE</a>.datname</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122426_zh-cn_topic_0059777963_aa93b2f3d230a4abab4ae045a8a2fbcc0"><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_aa93b2f3d230a4abab4ae045a8a2fbcc0"></a><a name="zh-cn_topic_0237122426_zh-cn_topic_0059777963_aa93b2f3d230a4abab4ae045a8a2fbcc0"></a>执行该事务所在的数据库名。</p>
 </td>

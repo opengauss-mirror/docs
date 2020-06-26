@@ -8,7 +8,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0237122180_zh-cn_topic_0059778963_s455120172ee44e1fbbb8af4e9b74e049"></a>
 
-如果不在一个事务内部发出ROLLBACK不会有问题，但是将抛出一个警告信息。
+如果不在一个事务内部发出ROLLBACK不会有问题，但是将抛出一个NOTICE信息。
 
 ## 语法格式<a name="zh-cn_topic_0237122180_zh-cn_topic_0059778963_se0444f532b0e48bfafa13bbed139ef4a"></a>
 

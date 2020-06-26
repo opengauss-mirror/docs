@@ -1,4 +1,4 @@
-# krb5kdc<a name="ZH-CN_TOPIC_0242223726"></a>
+# krb5kdc<a name="ZH-CN_TOPIC_0249632277"></a>
 
 ## 功能介绍<a name="zh-cn_topic_0237152432_section10172172474817"></a>
 

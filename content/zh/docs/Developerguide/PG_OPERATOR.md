@@ -37,7 +37,7 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a1ce647d4b22649ae8d82e74cb26dfec2"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a1ce647d4b22649ae8d82e74cb26dfec2"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a1ce647d4b22649ae8d82e74cb26dfec2"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aaa82690bb75f40e3b424cc421779aa0b"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aaa82690bb75f40e3b424cc421779aa0b"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aaa82690bb75f40e3b424cc421779aa0b"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aaa82690bb75f40e3b424cc421779aa0b"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aaa82690bb75f40e3b424cc421779aa0b"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aaa82690bb75f40e3b424cc421779aa0b"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aadabaf74b0ff40958a187bf2e816d5ba"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aadabaf74b0ff40958a187bf2e816d5ba"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aadabaf74b0ff40958a187bf2e816d5ba"></a>包含此操作符的名称空间的OID。</p>
 </td>
@@ -82,7 +82,7 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a83123b1c18ea4a998ed35d90113bb12d"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a83123b1c18ea4a998ed35d90113bb12d"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a83123b1c18ea4a998ed35d90113bb12d"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_afbb10b6b6bd048c694678e36b4b4ba63"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_afbb10b6b6bd048c694678e36b4b4ba63"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_afbb10b6b6bd048c694678e36b4b4ba63"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_afbb10b6b6bd048c694678e36b4b4ba63"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_afbb10b6b6bd048c694678e36b4b4ba63"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_afbb10b6b6bd048c694678e36b4b4ba63"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aec850c749d604adab164323fd21764b0"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aec850c749d604adab164323fd21764b0"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aec850c749d604adab164323fd21764b0"></a>左操作数的类型。</p>
 </td>
@@ -91,7 +91,7 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa5c8199d71944200b42e446ad79c2659"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa5c8199d71944200b42e446ad79c2659"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa5c8199d71944200b42e446ad79c2659"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8a2327be4432434bb9a55fe81696da83"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8a2327be4432434bb9a55fe81696da83"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8a2327be4432434bb9a55fe81696da83"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8a2327be4432434bb9a55fe81696da83"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8a2327be4432434bb9a55fe81696da83"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8a2327be4432434bb9a55fe81696da83"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa68caae71d5540fd854320011a567c3d"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa68caae71d5540fd854320011a567c3d"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa68caae71d5540fd854320011a567c3d"></a>右操作数的类型。</p>
 </td>
@@ -100,7 +100,7 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a63cecf90647740279ed94456fc95e3d6"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a63cecf90647740279ed94456fc95e3d6"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a63cecf90647740279ed94456fc95e3d6"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a23b73da5f8c543b980d566b63aeb80a4"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a23b73da5f8c543b980d566b63aeb80a4"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a23b73da5f8c543b980d566b63aeb80a4"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a23b73da5f8c543b980d566b63aeb80a4"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a23b73da5f8c543b980d566b63aeb80a4"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a23b73da5f8c543b980d566b63aeb80a4"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8d35b6ffa66c4d90b36cf7d202260cf0"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8d35b6ffa66c4d90b36cf7d202260cf0"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8d35b6ffa66c4d90b36cf7d202260cf0"></a>结果类型。</p>
 </td>
@@ -109,7 +109,7 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a0a192dda308041398c7b50f5c558959b"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a0a192dda308041398c7b50f5c558959b"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a0a192dda308041398c7b50f5c558959b"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a89f3a885493b4c4caca805438e1bdf24"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a89f3a885493b4c4caca805438e1bdf24"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a89f3a885493b4c4caca805438e1bdf24"></a><a href="PG_OPERATOR.md#ZH-CN_TOPIC_0242385832">PG_OPERATOR</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a89f3a885493b4c4caca805438e1bdf24"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a89f3a885493b4c4caca805438e1bdf24"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a89f3a885493b4c4caca805438e1bdf24"></a><a href="PG_OPERATOR.md">PG_OPERATOR</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a3f801fd7c2134e79b474dd602854003a"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a3f801fd7c2134e79b474dd602854003a"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a3f801fd7c2134e79b474dd602854003a"></a>此操作符的交换符，如果存在的话。</p>
 </td>
@@ -118,7 +118,7 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a9311d4aabf0449f8a17943d716e2eae9"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a9311d4aabf0449f8a17943d716e2eae9"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a9311d4aabf0449f8a17943d716e2eae9"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_abb3c931902e246b8a8e8d6d654939e4c"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_abb3c931902e246b8a8e8d6d654939e4c"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_abb3c931902e246b8a8e8d6d654939e4c"></a><a href="PG_OPERATOR.md#ZH-CN_TOPIC_0242385832">PG_OPERATOR</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_abb3c931902e246b8a8e8d6d654939e4c"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_abb3c931902e246b8a8e8d6d654939e4c"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_abb3c931902e246b8a8e8d6d654939e4c"></a><a href="PG_OPERATOR.md">PG_OPERATOR</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a90da97b456ed445a88cc051ae2d8caa7"><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a90da97b456ed445a88cc051ae2d8caa7"></a><a name="zh-cn_topic_0237122304_zh-cn_topic_0059778050_a90da97b456ed445a88cc051ae2d8caa7"></a>此操作符的反转器，如果存在的话。</p>
 </td>

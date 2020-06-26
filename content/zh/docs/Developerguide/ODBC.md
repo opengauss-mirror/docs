@@ -46,6 +46,6 @@ ODBC接口是一套提供给用户的API函数，本节将对部分常用接口�
 
 -   **[SQLSetStmtAttr](SQLSetStmtAttr.md)**  
 
--   **[示例](示例.md)**  
+-   **[示例](示例-2.md)**  
 
 

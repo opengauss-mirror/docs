@@ -6,15 +6,15 @@ Schema又称作模式。通过管理Schema，允许多个用户使用同一数�
 
 相同的数据库对象名称可以应用在同一数据库的不同Schema中，而没有冲突。例如，a\_schema和b\_schema都可以包含名为mytable的表。具有所需权限的用户可以访问数据库的多个Schema中的对象。
 
-在初始数据库postgres中创建用户时，系统会自动帮助用户创建一个同名Schema。在其他数据库中，若需要同名Schema，则需要用户手动创建。
+在数据库创建用户时，系统会自动帮助用户创建一个同名Schema。
 
 数据库对象是创建在数据库搜索路径中的第一个Schema内的。有关默认情况下的第一个Schema情况及如何变更Schema顺序等更多信息，请参见[搜索路径](#zh-cn_topic_0237121104_zh-cn_topic_0156599225_section03655314403)。
 
 ## 创建、修改和删除Schema<a name="zh-cn_topic_0237121104_zh-cn_topic_0156599225_section0594124724510"></a>
 
--   要创建Schema，请使用[CREATE SCHEMA](CREATE-SCHEMA.md#ZH-CN_TOPIC_0242370577)。默认初始用户和系统管理员可以创建Schema，其他用户需要具备数据库的CREATE权限才可以在该数据库中创建Schema，赋权方式请参考[GRANT](GRANT.md)中将数据库的访问权限赋予指定的用户或角色中的语法。
--   要更改Schema名称或者所有者，请使用[ALTER SCHEMA](ALTER-SCHEMA.md#ZH-CN_TOPIC_0242370534)。Schema所有者可以更改Schema。
--   要删除Schema及其对象，请使用[DROP SCHEMA](DROP-SCHEMA.md#ZH-CN_TOPIC_0242370612)。Schema所有者可以删除Schema。
+-   要创建Schema，请使用[CREATE SCHEMA](CREATE-SCHEMA.md)。默认初始用户和系统管理员可以创建Schema，其他用户需要具备数据库的CREATE权限才可以在该数据库中创建Schema，赋权方式请参考[GRANT](GRANT.md)中将数据库的访问权限赋予指定的用户或角色中的语法。
+-   要更改Schema名称或者所有者，请使用[ALTER SCHEMA](ALTER-SCHEMA.md)。Schema所有者可以更改Schema。
+-   要删除Schema及其对象，请使用[DROP SCHEMA](DROP-SCHEMA.md)。Schema所有者可以删除Schema。
 -   要在Schema内创建表，请以schema\_name.table\_name格式创建表。不指定schema\_name时，对象默认创建到[搜索路径](#zh-cn_topic_0237121104_zh-cn_topic_0156599225_section03655314403)中的第一个Schema内。
 -   要查看Schema所有者，请对系统表PG\_NAMESPACE和PG\_USER执行如下关联查询。语句中的schema\_name请替换为实际要查找的Schema名称。
 
@@ -39,7 +39,7 @@ Schema又称作模式。通过管理Schema，允许多个用户使用同一数�
 
 搜索路径定义在[search\_path](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_s304b0a206e2e4ca782210ffb66cbc4b0)参数中，参数取值形式为采用逗号分隔的Schema名称列表。如果创建对象时未指定目标Schema，则将该对象会被添加到搜索路径中列出的第一个Schema中。当不同Schema中存在同名的对象时，查询对象未指定Schema的情况下，将从搜索路径中包含该对象的第一个Schema中返回对象。
 
--   要查看当前搜索路径，请使用[SHOW](SHOW.md#ZH-CN_TOPIC_0242370655)。
+-   要查看当前搜索路径，请使用[SHOW](SHOW.md)。
 
     ```
     postgres=# SHOW SEARCH_PATH;

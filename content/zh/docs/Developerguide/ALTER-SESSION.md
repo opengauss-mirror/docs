@@ -15,7 +15,7 @@ ALTER SESSION命令用于定义或修改那些对当前会话有影响的条件�
 
     ```
     ALTER SESSION SET [ SESSION CHARACTERISTICS AS ] TRANSACTION
-        { ISOLATION LEVEL { READ COMMITTED | READ UNCOMMITTED } | { READ ONLY  | READ WRITE } } [, ...] ;
+        { ISOLATION LEVEL { READ COMMITTED } | { READ ONLY  | READ WRITE } } [, ...] ;
     ```
 
 -   设置会话的其他运行时参数。
@@ -23,9 +23,9 @@ ALTER SESSION命令用于定义或修改那些对当前会话有影响的条件�
     ```
     ALTER SESSION SET 
         {{config_parameter { { TO  | =  }  { value | DEFAULT }
-          | FROM CURRENT }} | CURRENT_SCHEMA [ TO | = ] { schema | DEFAULT }
+          | FROM CURRENT }} 
           | TIME ZONE time_zone
-          | SCHEMA schema
+          | CURRENT_SCHEMA schema
           | NAMES encoding_name
           | ROLE role_name PASSWORD 'password'
           | SESSION AUTHORIZATION { role_name PASSWORD 'password' | DEFAULT }

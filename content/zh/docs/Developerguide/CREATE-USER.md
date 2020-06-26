@@ -36,11 +36,9 @@ CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
     | RESOURCE POOL 'respool'
-    | USER GROUP 'groupuser'
     | PERM SPACE 'spacelimit'
     | TEMP SPACE 'tmpspacelimit'
     | SPILL SPACE 'spillspacelimit'
-    | NODE GROUP logic_cluster_name
     | IN ROLE role_name [, ...]
     | IN GROUP role_name [, ...]
     | ROLE role_name [, ...]
@@ -75,7 +73,7 @@ CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     取值范围：字符串。
 
 
-CREATE USER的其他参数值请参考[CREATE ROLE参数说明](CREATE-ROLE.md)。
+CREATE USER的其他参数值请参考[CREATE ROLE](CREATE-ROLE.md)。
 
 ## 示例<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
@@ -112,5 +110,5 @@ postgres=# DROP USER dim CASCADE;
 
 ## 相关链接<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
-[ALTER USER](ALTER-USER.md#ZH-CN_TOPIC_0242370547)，[CREATE ROLE](CREATE-ROLE.md)，[DROP USER](DROP-USER.md)
+[ALTER USER](ALTER-USER.md)，[CREATE ROLE](CREATE-ROLE.md)，[DROP USER](DROP-USER.md)
 

@@ -83,6 +83,9 @@
 
     行存表支持的索引类型：btree（行存表缺省值）、gin、gist。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。
 
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >列存表对GIN索引支持仅限于对于tsvector类型的支持，即创建列存GIN索引入参需要为to\_tsvector函数（的返回值）。此方法为GIN索引比较普遍的使用方式。  
+
 -   **column\_name**
 
     表中需要创建索引的列的名称（字段名）。
@@ -279,6 +282,12 @@ postgres=# DROP TABLESPACE example1;
 postgres=# DROP TABLESPACE example2;
 postgres=# DROP TABLESPACE example3;
 postgres=# DROP TABLESPACE example4;
+
+--创建列存表以及列存表GIN索引。
+postgres=# create table cgin_create_test(a int, b text) with (orientation = column);
+CREATE TABLE
+postgres=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
+CREATE INDEX
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>

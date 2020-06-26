@@ -8,7 +8,7 @@ openGauss不提供任何预定义的Ispell类型词典或词典文件。dict文�
 
 1.  获取词典定义文件和词缀文件。
 
-    用户可以使用开源词典（OpenOffice上可以获取），直接获取的开源词典后缀名可能为.aff和.dic，此时需要将扩展名改为.affix和.dict。此外，对于某些词典文件，还需要使用下面的命令把字符转换成 UTF-8 编码，比如挪威语词典：
+    用户可以使用开源词典，直接获取的开源词典后缀名可能为.aff和.dic，此时需要将扩展名改为.affix和.dict。此外，对于某些词典文件，还需要使用下面的命令把字符转换成 UTF-8 编码，比如挪威语词典：
 
     ```
     iconv -f ISO_8859-1 -t UTF-8 -o nn_no.affix nn_NO.aff 
@@ -26,7 +26,7 @@ openGauss不提供任何预定义的Ispell类型词典或词典文件。dict文�
     );
     ```
 
-    其中，词典文件全名为nn\_no.dict和nn\_no.affix，所在目录为当前连接数据库主节点的/home/dicts/下 。关于创建词典的语法和更多参数，请参见[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md#ZH-CN_TOPIC_0242370586)。
+    其中，词典文件全名为nn\_no.dict和nn\_no.affix，所在目录为当前连接数据库主节点的/home/dicts/下 。关于创建词典的语法和更多参数，请参见[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)。
 
 3.  使用Ispell词典进行复合词拆分。
 

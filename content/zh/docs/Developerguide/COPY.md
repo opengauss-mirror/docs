@@ -235,17 +235,6 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         缺省值：TEXT
 
-    -   OIDS
-
-        为每行拷贝内部对象标识（oid）。
-
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >若COPY FROM对象为query或者对于没有oid的表，指定oids标识报错。  
-
-        取值范围：true/on，false/off。
-
-        缺省值：false
-
     -   DELIMITER
 
         指定数据文件行数据的字段分隔符。
@@ -385,7 +374,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         取值范围：合法DATE格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
 
         >![](public_sys-resources/icon-note.gif) **说明：**   
-        >对于指定为A兼容类型的数据库，则DATE类型内建为TIMESTAMP类型。在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。  
+        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。  
 
     -   TIME\_FORMAT
 
@@ -409,13 +398,6 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 -   **COPY\_OPTION \{ option\_name ' value '  \}**
 
     用于指定COPY原生的各类参数。
-
-    -   OIDS
-
-        为每行拷贝内部对象标识（oid）。
-
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >若COPY FROM对象为query或者对于没有oid的表，指定oids标识报错。  
 
     -   NULL null\_string
 
@@ -467,7 +449,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
     -   FORCE NOT NULL column\_name \[, ...\]
 
-        在CSV COPY FROM模式下，指定的字段输入不能为空。
+        在CSV COPY FROM模式下，指定的字段不为空。若输入为空，则将视为长度为0的字符串。
 
         取值范围：已存在的字段。
 
@@ -561,7 +543,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         取值范围：合法DATE格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)
 
         >![](public_sys-resources/icon-note.gif) **说明：**   
-        >对于指定为A兼容类型的数据库，则DATE类型内建为TIMESTAMP类型。在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。  
+        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。  
 
     -   TIME\_FORMAT 'time\_format\_string'
 

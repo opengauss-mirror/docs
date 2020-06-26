@@ -24,7 +24,7 @@ PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表�
 </td>
 <td class="cellrowborder" valign="top" width="32.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a1c6234c9b6da4534832752f7700793d7"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a1c6234c9b6da4534832752f7700793d7"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a1c6234c9b6da4534832752f7700793d7"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_add2997e045e147ad98be7f1b1e0ce3c2"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_add2997e045e147ad98be7f1b1e0ce3c2"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_add2997e045e147ad98be7f1b1e0ce3c2"></a>此表的模式名。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_add2997e045e147ad98be7f1b1e0ce3c2"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_add2997e045e147ad98be7f1b1e0ce3c2"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_add2997e045e147ad98be7f1b1e0ce3c2"></a>该表的模式名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_r7f6e780baba74b2a8ac2b519187c2499"><td class="cellrowborder" valign="top" width="24.16%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab28e66760fe34fd8b00b3aa9308f5534"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab28e66760fe34fd8b00b3aa9308f5534"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab28e66760fe34fd8b00b3aa9308f5534"></a>relname</p>
@@ -38,7 +38,7 @@ PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表�
 </td>
 <td class="cellrowborder" valign="top" width="32.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a517b2c44bfd04e4d93ec6bfd8c4fc09f"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a517b2c44bfd04e4d93ec6bfd8c4fc09f"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a517b2c44bfd04e4d93ec6bfd8c4fc09f"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aad038dfca7264b0aba9771e318051bbb"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aad038dfca7264b0aba9771e318051bbb"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aad038dfca7264b0aba9771e318051bbb"></a>此表发起的顺序扫描数。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aad038dfca7264b0aba9771e318051bbb"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aad038dfca7264b0aba9771e318051bbb"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aad038dfca7264b0aba9771e318051bbb"></a>该表发起的顺序扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_rd0c100dc954f4e0f97c31d2085372898"><td class="cellrowborder" valign="top" width="24.16%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a21a648a81b7a4624ad316664ba3ce0ef"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a21a648a81b7a4624ad316664ba3ce0ef"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a21a648a81b7a4624ad316664ba3ce0ef"></a>seq_tup_read</p>
@@ -52,7 +52,7 @@ PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表�
 </td>
 <td class="cellrowborder" valign="top" width="32.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a10053b142e964f25a0397deb56a3526a"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a10053b142e964f25a0397deb56a3526a"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a10053b142e964f25a0397deb56a3526a"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a53b8073f94944a4d89e2581b62c74858"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a53b8073f94944a4d89e2581b62c74858"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a53b8073f94944a4d89e2581b62c74858"></a>此表发起的索引扫描数。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a53b8073f94944a4d89e2581b62c74858"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a53b8073f94944a4d89e2581b62c74858"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a53b8073f94944a4d89e2581b62c74858"></a>该表发起的索引扫描数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_r3636ddb6986b41f9879ba0dfb715c0e1"><td class="cellrowborder" valign="top" width="24.16%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a284567705e2446ce8fc14f715f7e7679"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a284567705e2446ce8fc14f715f7e7679"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a284567705e2446ce8fc14f715f7e7679"></a>idx_tup_fetch</p>
@@ -108,7 +108,7 @@ PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表�
 </td>
 <td class="cellrowborder" valign="top" width="32.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aabc70a3f83604c0897db3cf7b4d62fa8"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aabc70a3f83604c0897db3cf7b4d62fa8"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_aabc70a3f83604c0897db3cf7b4d62fa8"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab29872e4c5c64505bc0039a33f2c4bcc"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab29872e4c5c64505bc0039a33f2c4bcc"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab29872e4c5c64505bc0039a33f2c4bcc"></a>最后一次此表是手动清理的（不计算VACUUM FULL）。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab29872e4c5c64505bc0039a33f2c4bcc"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab29872e4c5c64505bc0039a33f2c4bcc"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_ab29872e4c5c64505bc0039a33f2c4bcc"></a>最后一次该表是手动清理的（不计算VACUUM FULL）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_r3d2b1775670c47ed8aaaf8958a46077b"><td class="cellrowborder" valign="top" width="24.16%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a09a3e4c21fda4ee4bce88c06dbb72274"><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a09a3e4c21fda4ee4bce88c06dbb72274"></a><a name="zh-cn_topic_0237122449_zh-cn_topic_0059777497_a09a3e4c21fda4ee4bce88c06dbb72274"></a>last_autovacuum</p>

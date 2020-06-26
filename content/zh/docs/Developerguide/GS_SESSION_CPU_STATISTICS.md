@@ -45,21 +45,21 @@ GS\_SESSION\_CPU\_STATISTICS视图显示和当前用户执行复杂作业正在�
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a0a0c18f59f1a47bdb17413bbe1716f3a"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a0a0c18f59f1a47bdb17413bbe1716f3a"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a0a0c18f59f1a47bdb17413bbe1716f3a"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a2fe293248c694ffd9fe3f04bdf3a3f6d"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a2fe293248c694ffd9fe3f04bdf3a3f6d"></a>语句在<span id="ph137681422141516"><a name="ph137681422141516"></a><a name="ph137681422141516"></a>数据库节点</span>上的最小CPU时间，单位为ms。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a2fe293248c694ffd9fe3f04bdf3a3f6d"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a2fe293248c694ffd9fe3f04bdf3a3f6d"></a>语句在数据库节点上的最小CPU时间，单位为ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_ra831355d65f64e7b92f51f84021f4947"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a71cd5950d6ef4ea888015a515726ccf1"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a71cd5950d6ef4ea888015a515726ccf1"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a71cd5950d6ef4ea888015a515726ccf1"></a>max_cpu_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a9193af9c57084a81b157fec2c2935f90"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a9193af9c57084a81b157fec2c2935f90"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a9193af9c57084a81b157fec2c2935f90"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a8900dd32319f4d53937621db1727f5cf"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a8900dd32319f4d53937621db1727f5cf"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a8900dd32319f4d53937621db1727f5cf"></a>语句在<span id="ph249042841520"><a name="ph249042841520"></a><a name="ph249042841520"></a>数据库节点</span>上的最大CPU时间，单位为ms。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a8900dd32319f4d53937621db1727f5cf"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a8900dd32319f4d53937621db1727f5cf"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a8900dd32319f4d53937621db1727f5cf"></a>语句在数据库节点上的最大CPU时间，单位为ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_rdb4c5c3a41fb4325a8c11787c3af82b1"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_ab44539456dc4418bbfdc32a89a1f2851"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_ab44539456dc4418bbfdc32a89a1f2851"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_ab44539456dc4418bbfdc32a89a1f2851"></a>total_cpu_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a17a7c300ce604cd380d8340e5bfa63c3"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a17a7c300ce604cd380d8340e5bfa63c3"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a17a7c300ce604cd380d8340e5bfa63c3"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_aad54cacd015d4619bf9acb9cb4736cd3"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_aad54cacd015d4619bf9acb9cb4736cd3"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_aad54cacd015d4619bf9acb9cb4736cd3"></a>语句在<span id="ph980718301155"><a name="ph980718301155"></a><a name="ph980718301155"></a>数据库节点</span>上的CPU总时间，单位为ms。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_aad54cacd015d4619bf9acb9cb4736cd3"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_aad54cacd015d4619bf9acb9cb4736cd3"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_aad54cacd015d4619bf9acb9cb4736cd3"></a>语句在数据库节点上的CPU总时间，单位为ms。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_r47bd7dff24334c239af7266eeeb52c2b"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a97cfc7c8c5c8412aa7b03489d5df0b8a"><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a97cfc7c8c5c8412aa7b03489d5df0b8a"></a><a name="zh-cn_topic_0237122387_zh-cn_topic_0059778298_a97cfc7c8c5c8412aa7b03489d5df0b8a"></a>query</p>
@@ -73,7 +73,7 @@ GS\_SESSION\_CPU\_STATISTICS视图显示和当前用户执行复杂作业正在�
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122387_p173905219371"><a name="zh-cn_topic_0237122387_p173905219371"></a><a name="zh-cn_topic_0237122387_p173905219371"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_p3739175203712"><a name="zh-cn_topic_0237122387_p3739175203712"></a><a name="zh-cn_topic_0237122387_p3739175203712"></a><span id="ph12971850195818"><a name="ph12971850195818"></a><a name="ph12971850195818"></a>该字段不支持。</span></p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122387_p3739175203712"><a name="zh-cn_topic_0237122387_p3739175203712"></a><a name="zh-cn_topic_0237122387_p3739175203712"></a>该字段不支持。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122387_row162810517211"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122387_p628521318590"><a name="zh-cn_topic_0237122387_p628521318590"></a><a name="zh-cn_topic_0237122387_p628521318590"></a>top_cpu_dn</p>

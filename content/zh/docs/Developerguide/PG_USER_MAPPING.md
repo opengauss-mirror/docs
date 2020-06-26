@@ -2,7 +2,7 @@
 
 PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。
 
-需要有系统管理员权限才可以访问此系统表。普通用户可以使用视图[PG\_USER\_MAPPINGS](PG_USER_MAPPINGS.md#ZH-CN_TOPIC_0242386000)进行查询。
+需要有系统管理员权限才可以访问此系统表。普通用户可以使用视图[PG\_USER\_MAPPINGS](PG_USER_MAPPINGS.md)进行查询。
 
 **表 1**  PG\_USER\_MAPPING字段
 
@@ -39,7 +39,7 @@ PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。
 </td>
 <td class="cellrowborder" valign="top" width="10.61%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a53579e9e1542494f82efb9ab44d294b4"><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a53579e9e1542494f82efb9ab44d294b4"></a><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a53579e9e1542494f82efb9ab44d294b4"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.630000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a href="PG_FOREIGN_SERVER.md#ZH-CN_TOPIC_0242385818">PG_FOREIGN_SERVER</a>.oid</p>
+<td class="cellrowborder" valign="top" width="30.630000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a href="PG_FOREIGN_SERVER.md">PG_FOREIGN_SERVER</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.95%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122328_zh-cn_topic_0059777996_af4d215e30d2e4cbab030799a8858d6e7"><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_af4d215e30d2e4cbab030799a8858d6e7"></a><a name="zh-cn_topic_0237122328_zh-cn_topic_0059777996_af4d215e30d2e4cbab030799a8858d6e7"></a>包含这个映射的外部服务器的OID。</p>
 </td>

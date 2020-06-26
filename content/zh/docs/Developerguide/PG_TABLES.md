@@ -19,7 +19,7 @@ PG\_TABLES视图提供了对数据库中每个表访问的有用信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a32375828299b40f786eb0bab88ccc898"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a32375828299b40f786eb0bab88ccc898"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a32375828299b40f786eb0bab88ccc898"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a0dbcafed47aa407386280f5bfe3e7035"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a0dbcafed47aa407386280f5bfe3e7035"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a0dbcafed47aa407386280f5bfe3e7035"></a>包含表的模式名。</p>
 </td>
@@ -46,7 +46,7 @@ PG\_TABLES视图提供了对数据库中每个表访问的有用信息。
 </td>
 <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a535409ffea6b4a38a75fc7881660b70e"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a535409ffea6b4a38a75fc7881660b70e"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a535409ffea6b4a38a75fc7881660b70e"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a href="PG_TABLESPACE.md#ZH-CN_TOPIC_0242385848">PG_TABLESPACE</a>.spcname</p>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a href="PG_TABLESPACE.md">PG_TABLESPACE</a>.spcname</p>
 </td>
 <td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a01cce719b07c472d83f3239bc54cb4b7"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a01cce719b07c472d83f3239bc54cb4b7"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a01cce719b07c472d83f3239bc54cb4b7"></a>包含表的表空间，默认为NULL。</p>
 </td>

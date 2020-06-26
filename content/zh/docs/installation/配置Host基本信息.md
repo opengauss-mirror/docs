@@ -1,4 +1,4 @@
-# 配置Host基本信息<a name="ZH-CN_TOPIC_0242552159"></a>
+# 配置Host基本信息<a name="ZH-CN_TOPIC_0249784567"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >每台Host服务器都必须有如下信息，如下示例以node1为例。  

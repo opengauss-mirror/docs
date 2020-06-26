@@ -2,7 +2,7 @@
 
 ## 操作场景<a name="zh-cn_topic_0237121137_section17330121375310"></a>
 
-gs\_restore是openGauss提供的与gs\_dump配套的导入工具。通过该工具，可将gs\_dump导出的文件导入至数据库。gs\_restore支持导入的文件格式包含自定义归档格式、目录归档格式和tar归档格式。
+gs\_restore是openGauss数据库提供的与gs\_dump配套的导入工具。通过该工具，可将gs\_dump导出的文件导入至数据库。gs\_restore支持导入的文件格式包含自定义归档格式、目录归档格式和tar归档格式。
 
 gs\_restore具备如下两种功能。
 
@@ -93,7 +93,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     </tbody>
     </table>
 
-    其他参数说明请参见《工具参考》中“服务端工具 \> gs\_restor”章节。
+    其他参数说明请参见《工具参考》中“服务端工具 \> gs\_restore”章节。
 
 
 ## 示例<a name="zh-cn_topic_0237121137_section19717152710548"></a>
@@ -176,6 +176,7 @@ human_resource=# select * from hr.staffs;
       201 | Michael     | Hartstein   | MHARTSTE | 515.123.5555       | 1996-02-17 00:00:00 | MK_MAN        | 13000.00 |                |        100 |         20
 
 gsql -d human_resource -p 8000
+
 gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
@@ -262,6 +263,7 @@ restore operation successful
 total time: 23472  ms
 
 gsql -d backupdb -p 8000 -r
+
 gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
@@ -287,6 +289,7 @@ restore operation successful
 total time: 554  ms
 
 gsql -d backupdb -p 8000 -r 
+
 gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.

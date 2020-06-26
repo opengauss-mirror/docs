@@ -53,16 +53,17 @@ Password:
 1.  创建一个执行互信脚本所需要的输入文本，并在此文件中添加openGauss中所有主机IP。
 
     ```
-    plat1:/opt/software> vim hostfile
+    plat1:/opt/software/openGauss> vim hostfile
     192.168.0.1
     192.168.0.2
     192.168.0.3
     ```
 
-2.  以需要创建互信的用户执行以下脚本建立互信。
+2.  以需要创建互信的用户执行脚本。
+3.  执行下面脚本建立互信。
 
     ```
-    plat1:/opt/software/gaussdb/script# gs_sshexkey -f /opt/software/hostfile
+    plat1:/opt/software/openGauss/script# gs_sshexkey -f /opt/software/hostfile
     ```
 
     /opt/software/hostfile为主机列表，列出所有需要建立互信机器的主机IP。
@@ -77,7 +78,7 @@ Password:
 
 手工建立信任关系，步骤如下，plat1，plat2，plat3是主机名：
 
-1.  <a name="zh-cn_topic_0231761642_zh-cn_topic_0085434670_zh-cn_topic_0059782026_li18127395152125"></a>在其中一个主机上，生成root用户的本机授权文件。假设在主机plat1上执行。
+1.  在其中一个主机上，生成root用户的本机授权文件。假设在主机plat1上执行。
     1.  生成密钥。
 
         ```
@@ -123,7 +124,7 @@ Password:
         plat1:~ # cat .ssh/id_rsa.pub >> .ssh/authorized_keys
         ```
 
-2.  收集所有的待建互信主机的公钥，写入到本机的known\_hosts文件中。此步骤需要在[步骤1](#zh-cn_topic_0231761642_zh-cn_topic_0085434670_zh-cn_topic_0059782026_li18127395152125)执行的主机上执行。需要收集plat1、plat2、plat3三个主机的公钥。
+2.  收集所有的待建互信主机的公钥，写入到本机的known\_hosts文件中。此步骤需要在步骤1执行的主机上执行。需要收集plat1、plat2、plat3三个主机的公钥。
     1.  收集plat1的公钥，写入到本机known\_hosts文件中。
 
         ```
@@ -208,8 +209,7 @@ Password:
 
     ```
     plat1:~ # ssh plat2
-    Last login: Tue Jan  5 10:28:18 2016 from plat1
-    Huawei's internal systems must only be used for conducting Huawei's business or for purposes authorized by Huawei management.Use is subject to audit at any time by Huawei management.
+    Last login: Sat Jun 20 14:01:07 2020
     plat2:~ # exit
     logout
     Connection to plat2 closed.

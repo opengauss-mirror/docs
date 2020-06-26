@@ -55,7 +55,7 @@ PG\_SECLABELS视图提供关于安全标签的信息。
 </td>
 <td class="cellrowborder" valign="top" width="10.718928107189281%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a5391e6656642486a8f1523e1698a7d61"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a5391e6656642486a8f1523e1698a7d61"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a5391e6656642486a8f1523e1698a7d61"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.386861313868614%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a4d12ed4036514c69864f150dea058d2f"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a4d12ed4036514c69864f150dea058d2f"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a4d12ed4036514c69864f150dea058d2f"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="31.386861313868614%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a4d12ed4036514c69864f150dea058d2f"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a4d12ed4036514c69864f150dea058d2f"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a4d12ed4036514c69864f150dea058d2f"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.34616538346165%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_aa5a1f016dec34a1aa5b2d6db9c755358"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_aa5a1f016dec34a1aa5b2d6db9c755358"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_aa5a1f016dec34a1aa5b2d6db9c755358"></a>这个对象的名称空间的OID，如果适用；否则为NULL。</p>
 </td>
@@ -73,7 +73,7 @@ PG\_SECLABELS视图提供关于安全标签的信息。
 </td>
 <td class="cellrowborder" valign="top" width="10.718928107189281%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a6fe3ac6434014c4d8a2579e4d67d4cce"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a6fe3ac6434014c4d8a2579e4d67d4cce"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a6fe3ac6434014c4d8a2579e4d67d4cce"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.386861313868614%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a873e67790eba4ae38793e45924f84a57"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a873e67790eba4ae38793e45924f84a57"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a873e67790eba4ae38793e45924f84a57"></a><a href="PG_SECLABEL.md#ZH-CN_TOPIC_0242385841">PG_SECLABEL</a>.provider</p>
+<td class="cellrowborder" valign="top" width="31.386861313868614%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a873e67790eba4ae38793e45924f84a57"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a873e67790eba4ae38793e45924f84a57"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a873e67790eba4ae38793e45924f84a57"></a><a href="PG_SECLABEL.md">PG_SECLABEL</a>.provider</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.34616538346165%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a20804089f2c84ffdb3df144eaeb8c251"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a20804089f2c84ffdb3df144eaeb8c251"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a20804089f2c84ffdb3df144eaeb8c251"></a>与这个标签相关的标签提供者。</p>
 </td>
@@ -82,7 +82,7 @@ PG\_SECLABELS视图提供关于安全标签的信息。
 </td>
 <td class="cellrowborder" valign="top" width="10.718928107189281%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a3f276f23078e403d9d02b4d09064a2a7"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a3f276f23078e403d9d02b4d09064a2a7"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a3f276f23078e403d9d02b4d09064a2a7"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.386861313868614%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a548e8f0f269c4369872876ddc00efeb7"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a548e8f0f269c4369872876ddc00efeb7"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a548e8f0f269c4369872876ddc00efeb7"></a><a href="PG_SECLABEL.md#ZH-CN_TOPIC_0242385841">PG_SECLABEL</a>.label</p>
+<td class="cellrowborder" valign="top" width="31.386861313868614%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a548e8f0f269c4369872876ddc00efeb7"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a548e8f0f269c4369872876ddc00efeb7"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a548e8f0f269c4369872876ddc00efeb7"></a><a href="PG_SECLABEL.md">PG_SECLABEL</a>.label</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.34616538346165%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a920cadb3e77d4170ba5848b97df46036"><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a920cadb3e77d4170ba5848b97df46036"></a><a name="zh-cn_topic_0237122432_zh-cn_topic_0059778306_a920cadb3e77d4170ba5848b97df46036"></a>适用于这个对象的安全标签。</p>
 </td>

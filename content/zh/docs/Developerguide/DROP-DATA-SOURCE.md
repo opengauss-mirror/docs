@@ -1,20 +1,20 @@
 # DROP DATA SOURCE<a name="ZH-CN_TOPIC_0242370599"></a>
 
-## **功能描述**<a name="zh-cn_topic_0237122135_section324414515172"></a>
+## 功能描述<a name="zh-cn_topic_0237122135_section324414515172"></a>
 
 删除一个Data Source对象。
 
-## **注意事项**<a name="zh-cn_topic_0237122135_section6945185782115"></a>
+## 注意事项<a name="zh-cn_topic_0237122135_section6945185782115"></a>
 
 只有属主/系统管理员/初始用户才可以删除一个Data Source对象。
 
-## **语法格式**<a name="zh-cn_topic_0237122135_section1289212618239"></a>
+## 语法格式<a name="zh-cn_topic_0237122135_section1289212618239"></a>
 
 ```
 DROP DATA SOURCE [IF EXISTS] src_name [CASCADE | RESTRICT];
 ```
 
-## **参数说明**<a name="zh-cn_topic_0237122135_section1789010295266"></a>
+## 参数说明<a name="zh-cn_topic_0237122135_section1789010295266"></a>
 
 -   **src\_name**
 
@@ -34,7 +34,7 @@ DROP DATA SOURCE [IF EXISTS] src_name [CASCADE | RESTRICT];
 
 
 
-## **示例**<a name="zh-cn_topic_0237122135_section162746130164"></a>
+## 示例<a name="zh-cn_topic_0237122135_section162746130164"></a>
 
 ```
 --创建Data Source对象。
@@ -45,7 +45,7 @@ postgres=# DROP DATA SOURCE ds_tst1 CASCADE;
 postgres=# DROP DATA SOURCE IF EXISTS ds_tst1 RESTRICT; 
 ```
 
-## **相关链接**<a name="zh-cn_topic_0237122135_section191190297715"></a>
+## 相关链接<a name="zh-cn_topic_0237122135_section191190297715"></a>
 
-**[CREATE DATA SOURCE](CREATE-DATA-SOURCE.md#ZH-CN_TOPIC_0242370564)**，[ALTER DATA SOURCE](ALTER-DATA-SOURCE.md#ZH-CN_TOPIC_0242370520)
+[CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)，[ALTER DATA SOURCE](ALTER-DATA-SOURCE.md)
 

@@ -1,6 +1,6 @@
 # PG\_TS\_PARSER<a name="ZH-CN_TOPIC_0242385853"></a>
 
-PG\_TS\_PARSER系统表包含定义文本解析器的记录。解析器负责分裂输入文本为词位，并且为每个词位分配标记类型。因为解析器必须通过C语言级别的函数实现，所以新解析器必须由数据库系统管理员创建。
+PG\_TS\_PARSER系统表包含定义文本解析器的记录。解析器负责分裂输入文本为词位，并且为每个词位分配标记类型。新解析器必须由数据库系统管理员创建。
 
 **表 1**  PG\_TS\_PARSER字段
 
@@ -37,7 +37,7 @@ PG\_TS\_PARSER系统表包含定义文本解析器的记录。解析器负责分
 </td>
 <td class="cellrowborder" valign="top" width="11.66%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122325_zh-cn_topic_0059777552_adf043fd702ae433f8fa6244daac831ca"><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_adf043fd702ae433f8fa6244daac831ca"></a><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_adf043fd702ae433f8fa6244daac831ca"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122325_zh-cn_topic_0059777552_aeaa0f43e54e34025ae305550d8bf3742"><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_aeaa0f43e54e34025ae305550d8bf3742"></a><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_aeaa0f43e54e34025ae305550d8bf3742"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="27.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122325_zh-cn_topic_0059777552_aeaa0f43e54e34025ae305550d8bf3742"><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_aeaa0f43e54e34025ae305550d8bf3742"></a><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_aeaa0f43e54e34025ae305550d8bf3742"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.67%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122325_zh-cn_topic_0059777552_ac912bba8e8754821a4c49d69fb6774f2"><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_ac912bba8e8754821a4c49d69fb6774f2"></a><a name="zh-cn_topic_0237122325_zh-cn_topic_0059777552_ac912bba8e8754821a4c49d69fb6774f2"></a>包含这个解析器的名称空间的OID。</p>
 </td>

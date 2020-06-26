@@ -31,7 +31,7 @@ PG\_STAT\_SYS\_INDEXES视图显示pg\_catalog、information\_schema模式中所�
 </td>
 <td class="cellrowborder" valign="top" width="15.690000000000001%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a0902708823fc439186beee1aa7c12739"><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a0902708823fc439186beee1aa7c12739"></a><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a0902708823fc439186beee1aa7c12739"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.150000000000006%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a447a16eaf739444684204f52ec978343"><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a447a16eaf739444684204f52ec978343"></a><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a447a16eaf739444684204f52ec978343"></a>索引中模式名。</p>
+<td class="cellrowborder" valign="top" width="60.150000000000006%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a447a16eaf739444684204f52ec978343"><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a447a16eaf739444684204f52ec978343"></a><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a447a16eaf739444684204f52ec978343"></a>索引的模式名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122451_zh-cn_topic_0059779068_r98bec6aed7aa4d67839f2d14fe507996"><td class="cellrowborder" valign="top" width="24.16%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a2374eb811cc349188cc0477c4e8a3f72"><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a2374eb811cc349188cc0477c4e8a3f72"></a><a name="zh-cn_topic_0237122451_zh-cn_topic_0059779068_a2374eb811cc349188cc0477c4e8a3f72"></a>relname</p>

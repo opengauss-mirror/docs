@@ -29,7 +29,14 @@ COMMIT PREPARED transaction_id WITH CSN;
     待提交事务的序列号。它是一个64位递增无符号数。
 
 
+## 示例<a name="zh-cn_topic_0237122095_section2201134011213"></a>
+
+```
+--提交标识符为的trans_test的事务。
+postgres=# COMMIT PREPARED 'trans_test';
+```
+
 ## 相关链接<a name="zh-cn_topic_0237122095_zh-cn_topic_0059777686_s7c42ca786fad42b0badcb6f63e895aff"></a>
 
-[PREPARE TRANSACTION](PREPARE-TRANSACTION.md#ZH-CN_TOPIC_0242370636)，[ROLLBACK PREPARED](ROLLBACK-PREPARED.md#ZH-CN_TOPIC_0242370645)。
+[PREPARE TRANSACTION](PREPARE-TRANSACTION.md)，[ROLLBACK PREPARED](ROLLBACK-PREPARED.md)。
 

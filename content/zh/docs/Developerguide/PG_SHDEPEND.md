@@ -2,7 +2,7 @@
 
 PG\_SHDEPEND系统表记录数据库对象和共享对象（比如角色）之间的依赖性关系。这些信息允许openGauss保证在企图删除这些对象之前，这些对象是没有被引用的。
 
-[PG\_DEPEND](PG_DEPEND.md#ZH-CN_TOPIC_0242385811)的作用类似，只是它是用于在一个数据库内部的对象的依赖性关系的。
+[PG\_DEPEND](PG_DEPEND.md)的作用类似，只是它是用于在一个数据库内部的对象的依赖性关系的。
 
 和其它大多数系统表不同，PG\_SHDEPEND是在openGauss里面所有的数据库之间共享的：每个openGauss只有一个PG\_SHDEPEND，而不是每个数据库一个。
 
@@ -23,7 +23,7 @@ PG\_SHDEPEND系统表记录数据库对象和共享对象（比如角色）之�
 </td>
 <td class="cellrowborder" valign="top" width="12.590000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_ad05c04b79f634a169cd213e84195baee"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_ad05c04b79f634a169cd213e84195baee"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_ad05c04b79f634a169cd213e84195baee"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.73%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"></a><a href="PG_DATABASE.md#ZH-CN_TOPIC_0242385808">PG_DATABASE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="21.73%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"></a><a href="PG_DATABASE.md">PG_DATABASE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="50.449999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"></a>依赖对象所在的数据库的OID ，如果是共享对象，则为零。</p>
 </td>
@@ -88,7 +88,7 @@ PG\_SHDEPEND系统表记录数据库对象和共享对象（比如角色）之�
 </td>
 <td class="cellrowborder" valign="top" width="21.73%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122314_p55596181144559"><a name="zh-cn_topic_0237122314_p55596181144559"></a><a name="zh-cn_topic_0237122314_p55596181144559"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.449999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122314_p6996801144559"><a name="zh-cn_topic_0237122314_p6996801144559"></a><a name="zh-cn_topic_0237122314_p6996801144559"></a>用户定义C函数库文件路径。</p>
+<td class="cellrowborder" valign="top" width="50.449999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122314_p6996801144559"><a name="zh-cn_topic_0237122314_p6996801144559"></a><a name="zh-cn_topic_0237122314_p6996801144559"></a>用户定义函数库文件路径。</p>
 </td>
 </tr>
 </tbody>

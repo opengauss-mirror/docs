@@ -24,7 +24,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     { DEFAULT VALUES
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
-    [ ON DUPLICATE KEY UPDATE { NOTHING | column_name = { expression | DEFAULT } } [, ...] ]
+    [ ON DUPLICATE KEY UPDATE { column_name = { expression | DEFAULT } } [, ...] ]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
@@ -104,7 +104,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
 -   **ON DUPLICATE KEY UPDATE**
 
-    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新。如果UPDATE子句为NOTHING，则不做任何操作。
+    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新。
 
     对于不带唯一约束的表，则仅执行插入。
 
@@ -115,9 +115,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     -   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
 
     -   分布列、唯一索引列不允许UPDATE。
-    -   不支持列存
-        -   。
-
+    -   不支持列存。
 
 
 ## 示例<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>

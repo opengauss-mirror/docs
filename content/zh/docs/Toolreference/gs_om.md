@@ -1,4 +1,4 @@
-# gs\_om<a name="ZH-CN_TOPIC_0242223690"></a>
+# gs\_om<a name="ZH-CN_TOPIC_0249632260"></a>
 
 ## 背景信息<a name="section431817462"></a>
 
@@ -34,7 +34,7 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     gs_om -t generateconf -X XMLFILE [--distribute] [-l LOGFILE]
     ```
 
--   生成动态配置文件，备机切换成主机后，需要执行此操作
+-   生成动态配置文件，备机failover或switchover成主机后，需要执行此操作
 
     ```
     gs_om -t refreshconf
@@ -57,6 +57,12 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     ```
     gs_om -t cert --cert-file=CERTFILE [-l LOGFILE]
     gs_om -t cert --rollback
+    ```
+
+-   开启、关闭集群内kerberos认证
+
+    ```
+    gs_om -t kerberos -m [install|uninstall] -U USER [-l LOGFILE] [--krb-client|--krb-server]
     ```
 
 -   显示帮助信息
@@ -199,6 +205,29 @@ gs\_om参数可以分为如下几类：
     -   --distribute
 
         将静态配置文件发布到openGauss实例的安装目录。
+
+
+-   开启、关闭集群内kerberos认证：
+    -   -U
+
+        指定数据库集群部署用户。
+
+        取值范围：数据库集群部署用户
+
+    -   -m
+
+        指定所要进行的操作。
+
+        取值范围：
+
+        install：开启集群内kerberos认证。
+
+        uninstall：关闭集群内kerberos认证。
+
+    -   --krb-server安装kerberos服务端认证。
+    -   --krb-client安装kerberos客户端认证。
+
+        注：需要先安装--krb-server，卸载时同步卸载不需要该参数
 
 
 -   SSL证书替换：

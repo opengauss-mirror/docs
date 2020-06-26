@@ -173,14 +173,14 @@ PG\_SESSION\_WLMSTAT视图显示和当前用户执行作业正在运行时的负
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122433_p3746145014202"><a name="zh-cn_topic_0237122433_p3746145014202"></a><a name="zh-cn_topic_0237122433_p3746145014202"></a>bool</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122433_p1174618502203"><a name="zh-cn_topic_0237122433_p1174618502203"></a><a name="zh-cn_topic_0237122433_p1174618502203"></a><span id="ph89314557013"><a name="ph89314557013"></a><a name="ph89314557013"></a>该字段不支持</span>。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122433_p1174618502203"><a name="zh-cn_topic_0237122433_p1174618502203"></a><a name="zh-cn_topic_0237122433_p1174618502203"></a>该字段不支持。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122433_row416612268217"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122433_p121682268212"><a name="zh-cn_topic_0237122433_p121682268212"></a><a name="zh-cn_topic_0237122433_p121682268212"></a>node_group</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122433_p1916862612213"><a name="zh-cn_topic_0237122433_p1916862612213"></a><a name="zh-cn_topic_0237122433_p1916862612213"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122433_p181684268212"><a name="zh-cn_topic_0237122433_p181684268212"></a><a name="zh-cn_topic_0237122433_p181684268212"></a><span id="ph10718151117"><a name="ph10718151117"></a><a name="ph10718151117"></a>该字段不支持</span>。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122433_p181684268212"><a name="zh-cn_topic_0237122433_p181684268212"></a><a name="zh-cn_topic_0237122433_p181684268212"></a>该字段不支持。</p>
 </td>
 </tr>
 </tbody>

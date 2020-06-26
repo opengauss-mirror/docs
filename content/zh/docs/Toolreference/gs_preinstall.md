@@ -1,4 +1,4 @@
-# gs\_preinstall<a name="ZH-CN_TOPIC_0242223713"></a>
+# gs\_preinstall<a name="ZH-CN_TOPIC_0249632278"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_section68942744218"></a>
 
@@ -68,7 +68,8 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     1.  安装包和openGauss配置文件已提前上传到所有主机；
     2.  openGauss安装用户已提前创建好并建立好互信关系；
-    3.  用户需要自己保证各台主机上所执行命令的一致性。
+    3.  用户需要自己保证各台主机上所执行命令的一致性；
+    4.  手动将所有节点的主机名和ip映射关系写入各个主机的/etc/hosts，并在每个映射关系后边加入注释内容：\#Gauss OM IP Hosts Mapping。
 
 -   --skip-os-set
 

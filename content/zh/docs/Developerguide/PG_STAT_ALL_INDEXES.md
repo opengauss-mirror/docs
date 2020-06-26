@@ -33,7 +33,7 @@ PG\_STAT\_ALL\_INDEXES视图将包含当前数据库中的每个索引行，显�
 </td>
 <td class="cellrowborder" valign="top" width="23.78%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122441_zh-cn_topic_0059777984_a17a6f0d4fba44280810632514acd0bb2"><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_a17a6f0d4fba44280810632514acd0bb2"></a><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_a17a6f0d4fba44280810632514acd0bb2"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.370000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122441_zh-cn_topic_0059777984_ad4b8ff52bb5342eea1cdc8a12b318378"><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_ad4b8ff52bb5342eea1cdc8a12b318378"></a><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_ad4b8ff52bb5342eea1cdc8a12b318378"></a>索引中模式名。</p>
+<td class="cellrowborder" valign="top" width="50.370000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122441_zh-cn_topic_0059777984_ad4b8ff52bb5342eea1cdc8a12b318378"><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_ad4b8ff52bb5342eea1cdc8a12b318378"></a><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_ad4b8ff52bb5342eea1cdc8a12b318378"></a>索引的模式名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122441_zh-cn_topic_0059777984_r35d65a6c89764addad1b8a1b0b14b1cb"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122441_zh-cn_topic_0059777984_abf85b027a044429faf5fca039d9b627a"><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_abf85b027a044429faf5fca039d9b627a"></a><a name="zh-cn_topic_0237122441_zh-cn_topic_0059777984_abf85b027a044429faf5fca039d9b627a"></a>relname</p>

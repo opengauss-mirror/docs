@@ -2,7 +2,7 @@
 
 PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的属性。
 
-这个视图的名称来自于该视图是不可读的，因为它包含口令。[PG\_USER](PG_USER.md#ZH-CN_TOPIC_0242385999)是一个在PG\_SHADOW上公开可读的视图，只是把口令域填成了空白。
+这个视图的名称来自于该视图是不可读的，因为它包含口令。[PG\_USER](PG_USER.md)是一个在PG\_SHADOW上公开可读的视图，只是把口令域填成了空白。
 
 **表 1**  PG\_SHADOW字段
 

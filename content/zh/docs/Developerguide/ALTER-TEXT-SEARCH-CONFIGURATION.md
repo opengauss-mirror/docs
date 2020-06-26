@@ -92,7 +92,7 @@ ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
 
 -   **token\_type**
 
-    与配置的语法解析器关联的字串类型的名称。详细信息参见[解析器](解析器.md#ZH-CN_TOPIC_0242370496)。
+    与配置的语法解析器关联的字串类型的名称。详细信息参见[解析器](解析器.md)。
 
 -   **dictionary\_name**
 
@@ -120,7 +120,7 @@ ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
 
 -   **configuration\_option**
 
-    文本搜索配置项。详细信息参见[CREATE TEXT SEARCH CONFIGURATION](CREATE-TEXT-SEARCH-CONFIGURATION.md#ZH-CN_TOPIC_0242370585)。
+    文本搜索配置项。详细信息参见[CREATE TEXT SEARCH CONFIGURATION](CREATE-TEXT-SEARCH-CONFIGURATION.md)。
 
 -   **value**
 
@@ -171,5 +171,5 @@ postgres=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM 
 
 ## 相关链接<a name="zh-cn_topic_0237122079_zh-cn_topic_0059778328_sb5eacaaa1ba74a8abb0193ac98c34512"></a>
 
-[CREATE TEXT SEARCH CONFIGURATION](CREATE-TEXT-SEARCH-CONFIGURATION.md#ZH-CN_TOPIC_0242370585)，  [DROP TEXT SEARCH CONFIGURATION](DROP-TEXT-SEARCH-CONFIGURATION.md#ZH-CN_TOPIC_0242370618)
+[CREATE TEXT SEARCH CONFIGURATION](CREATE-TEXT-SEARCH-CONFIGURATION.md)，  [DROP TEXT SEARCH CONFIGURATION](DROP-TEXT-SEARCH-CONFIGURATION.md)
 

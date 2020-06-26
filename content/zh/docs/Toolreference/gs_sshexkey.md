@@ -1,4 +1,4 @@
-# gs\_sshexkey<a name="ZH-CN_TOPIC_0243406127"></a>
+# gs\_sshexkey<a name="ZH-CN_TOPIC_0249632281"></a>
 
 ## 背景信息<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_section15111432124318"></a>
 
@@ -44,7 +44,7 @@ openGauss在安装过程中，需要在openGauss中的节点间执行命令，�
 -   建立互信
 
     ```
-    gs_sshexkey -f HOSTFILE [-W PASSWORD] [...] [--skip-hostname-set] [-l LOGFILE]
+    gs_sshexkey -f HOSTFILE  [...] [--skip-hostname-set] [-l LOGFILE]
     ```
 
 -   显示帮助信息
@@ -69,13 +69,6 @@ openGauss在安装过程中，需要在openGauss中的节点间执行命令，�
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >确保hostfile文件中只配置正确的主机IP，不包含其它信息。  
 
--   -W, --password=PASSWORD
-
-    待建互信用户的密码。如果不指定该参数则在建立互信过程中需要交互式输入用户密码。如果各个主机的用户密码不一样时则使用多个-W参数，密码顺序和IP地址需要一一对应，交互式情况下则依次输入对应主机的密码。
-
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >密码不能包含";","'","$"3个特殊字符。  
-
 -   -l
 
     指定日志文件的保存路径。
@@ -97,59 +90,7 @@ openGauss在安装过程中，需要在openGauss中的节点间执行命令，�
 
 ## 示例<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_s0925c040c7eb4b0d9fb783ac5c0a8b2b"></a>
 
-如下是为root用户建立互信的示例。
-
--   用户密码相同情况下，非交互式模式使用以下命令建立互信。
-
-    Gauss@123为root用户的密码。
-
-    ```
-    ./gs_sshexkey -f /opt/software/hostfile -W Gauss@123
-    Checking network information.
-    All nodes in the network are Normal.
-    Successfully checked network information.
-    Creating SSH trust.
-    Creating the local key file.
-    Appending local ID to authorized_keys.
-    Successfully appended local ID to authorized_keys.
-    Updating the known_hosts file.
-    Successfully updated the known_hosts file.
-    Appending authorized_key on the remote node.
-    Successfully appended authorized_key on all remote node.
-    Checking common authentication file content.
-    Successfully checked common authentication content.
-    Distributing SSH trust file to all node.
-    Successfully distributed SSH trust file to all node.
-    Verifying SSH trust on all hosts.
-    Successfully verified SSH trust on all hosts.
-    Successfully created SSH trust.
-    ```
-
--   用户密码不同情况下，非交互式模式使用以下命令建立互信。
-
-    Gauss@234为主机列表中第一台主机的root密码，Gauss@345为主机列表中第二台主机的root密码。
-
-    ```
-    ./gs_sshexkey -f /opt/software/hostfile -W Gauss@123 -W Gauss@234 -W Gauss@345
-    Checking network information.
-    All nodes in the network are Normal.
-    Successfully checked network information.
-    Creating SSH trust.
-    Creating the local key file.
-    Appending local ID to authorized_keys.
-    Successfully appended local ID to authorized_keys.
-    Updating the known_hosts file.
-    Successfully updated the known_hosts file.
-    Appending authorized_key on the remote node.
-    Successfully appended authorized_key on all remote node.
-    Checking common authentication file content.
-    Successfully checked common authentication content.
-    Distributing SSH trust file to all node.
-    Successfully distributed SSH trust file to all node.
-    Verifying SSH trust on all hosts.
-    Successfully verified SSH trust on all hosts.
-    Successfully created SSH trust.
-    ```
+如下是为root用户建立互信的示例。仅支持交互式输入密码。
 
 -   用户密码相同情况下，交互式模式使用以下命令建立互信。
 

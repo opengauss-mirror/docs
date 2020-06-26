@@ -38,14 +38,14 @@ PG\_NAMESPACE系统表存储名称空间，即存储schema相关的信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a69b5b3fc97084dab89ec7a08a2d33463"><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a69b5b3fc97084dab89ec7a08a2d33463"></a><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a69b5b3fc97084dab89ec7a08a2d33463"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a584ec2520d364a358683a7d9ca113614"><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a584ec2520d364a358683a7d9ca113614"></a><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a584ec2520d364a358683a7d9ca113614"></a>在<span id="zh-cn_topic_0237122300_text173949108449"><a name="zh-cn_topic_0237122300_text173949108449"></a><a name="zh-cn_topic_0237122300_text173949108449"></a>数据库节点</span>上创建此命名空间时的时间线。此字段为内部使用，仅在<span id="zh-cn_topic_0237122300_text550811220445"><a name="zh-cn_topic_0237122300_text550811220445"></a><a name="zh-cn_topic_0237122300_text550811220445"></a>数据库节点</span>上有效。</p>
+<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a584ec2520d364a358683a7d9ca113614"><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a584ec2520d364a358683a7d9ca113614"></a><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a584ec2520d364a358683a7d9ca113614"></a>在数据库节点上创建此命名空间时的时间线。此字段为内部使用，仅在数据库节点上有效。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_r1748403f2ce14831b1d0d6cff8f70ed6"><td class="cellrowborder" valign="top" width="20.13%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_acdb41c8acaab423ca4027371604106dd"><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_acdb41c8acaab423ca4027371604106dd"></a><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_acdb41c8acaab423ca4027371604106dd"></a>nspacl</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a799c2f6543e741bfb9d220743ed3ba73"><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a799c2f6543e741bfb9d220743ed3ba73"></a><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a799c2f6543e741bfb9d220743ed3ba73"></a>aclitem[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a8f7bcce9f3984d37bfd3437739c656e0"><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a8f7bcce9f3984d37bfd3437739c656e0"></a><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a8f7bcce9f3984d37bfd3437739c656e0"></a>访问权限。具体请参见<a href="GRANT.md">GRANT</a>和<a href="REVOKE.md">REVOKE</a>。</p>
+<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a8f7bcce9f3984d37bfd3437739c656e0"><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a8f7bcce9f3984d37bfd3437739c656e0"></a><a name="zh-cn_topic_0237122300_zh-cn_topic_0059779337_a8f7bcce9f3984d37bfd3437739c656e0"></a>访问权限。</p>
 </td>
 </tr>
 </tbody>

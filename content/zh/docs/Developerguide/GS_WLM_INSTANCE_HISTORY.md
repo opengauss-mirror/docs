@@ -95,31 +95,31 @@ GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据
 <td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122262_p252414526615"><a name="zh-cn_topic_0237122262_p252414526615"></a><a name="zh-cn_topic_0237122262_p252414526615"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p497345154017"><a name="zh-cn_topic_0237122262_p497345154017"></a><a name="zh-cn_topic_0237122262_p497345154017"></a><span id="zh-cn_topic_0237122262_text101735572163"><a name="zh-cn_topic_0237122262_text101735572163"></a><a name="zh-cn_topic_0237122262_text101735572163"></a>数据库主节点</span>实例：不统计。</p>
-<p id="zh-cn_topic_0237122262_p79731451154010"><a name="zh-cn_topic_0237122262_p79731451154010"></a><a name="zh-cn_topic_0237122262_p79731451154010"></a><span id="zh-cn_topic_0237122262_text1346653014435"><a name="zh-cn_topic_0237122262_text1346653014435"></a><a name="zh-cn_topic_0237122262_text1346653014435"></a>数据库节点</span>实例：该实例在本次统计间隙（10秒）内逻辑读字节速率，单位KB/s。</p>
+<p id="zh-cn_topic_0237122262_p79731451154010"><a name="zh-cn_topic_0237122262_p79731451154010"></a><a name="zh-cn_topic_0237122262_p79731451154010"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑读字节速率，单位KB/s。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122262_row135252052966"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122262_p052511521460"><a name="zh-cn_topic_0237122262_p052511521460"></a><a name="zh-cn_topic_0237122262_p052511521460"></a>logical_write</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122262_p45251521366"><a name="zh-cn_topic_0237122262_p45251521366"></a><a name="zh-cn_topic_0237122262_p45251521366"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p10400171410419"><a name="zh-cn_topic_0237122262_p10400171410419"></a><a name="zh-cn_topic_0237122262_p10400171410419"></a><span id="zh-cn_topic_0237122262_text262185891614"><a name="zh-cn_topic_0237122262_text262185891614"></a><a name="zh-cn_topic_0237122262_text262185891614"></a>数据库主节点</span>实例：不统计。</p>
-<p id="zh-cn_topic_0237122262_p12401914134118"><a name="zh-cn_topic_0237122262_p12401914134118"></a><a name="zh-cn_topic_0237122262_p12401914134118"></a><span id="zh-cn_topic_0237122262_text7447731154312"><a name="zh-cn_topic_0237122262_text7447731154312"></a><a name="zh-cn_topic_0237122262_text7447731154312"></a>数据库节点</span>实例：该实例在本次统计间隙（10秒）内逻辑写字节速率，单位KB/s。</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p10400171410419"><a name="zh-cn_topic_0237122262_p10400171410419"></a><a name="zh-cn_topic_0237122262_p10400171410419"></a>数据库主节点实例：不统计。</p>
+<p id="zh-cn_topic_0237122262_p12401914134118"><a name="zh-cn_topic_0237122262_p12401914134118"></a><a name="zh-cn_topic_0237122262_p12401914134118"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑写字节速率，单位KB/s。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122262_row852513521069"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122262_p195252524616"><a name="zh-cn_topic_0237122262_p195252524616"></a><a name="zh-cn_topic_0237122262_p195252524616"></a>read_counts</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122262_p1525105219612"><a name="zh-cn_topic_0237122262_p1525105219612"></a><a name="zh-cn_topic_0237122262_p1525105219612"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p11861122217413"><a name="zh-cn_topic_0237122262_p11861122217413"></a><a name="zh-cn_topic_0237122262_p11861122217413"></a><span id="zh-cn_topic_0237122262_text17211659141613"><a name="zh-cn_topic_0237122262_text17211659141613"></a><a name="zh-cn_topic_0237122262_text17211659141613"></a>数据库主节点</span>实例：不统计。</p>
-<p id="zh-cn_topic_0237122262_p20861182210416"><a name="zh-cn_topic_0237122262_p20861182210416"></a><a name="zh-cn_topic_0237122262_p20861182210416"></a><span id="zh-cn_topic_0237122262_text20360332124319"><a name="zh-cn_topic_0237122262_text20360332124319"></a><a name="zh-cn_topic_0237122262_text20360332124319"></a>数据库节点</span>实例：该实例在本次统计间隙（10秒）内逻辑读操作次数之和，单位次。</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p11861122217413"><a name="zh-cn_topic_0237122262_p11861122217413"></a><a name="zh-cn_topic_0237122262_p11861122217413"></a>数据库主节点实例：不统计。</p>
+<p id="zh-cn_topic_0237122262_p20861182210416"><a name="zh-cn_topic_0237122262_p20861182210416"></a><a name="zh-cn_topic_0237122262_p20861182210416"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑读操作次数之和，单位次。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122262_row8525052867"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122262_p852519521066"><a name="zh-cn_topic_0237122262_p852519521066"></a><a name="zh-cn_topic_0237122262_p852519521066"></a>write_counts</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122262_p05256521619"><a name="zh-cn_topic_0237122262_p05256521619"></a><a name="zh-cn_topic_0237122262_p05256521619"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p65004318417"><a name="zh-cn_topic_0237122262_p65004318417"></a><a name="zh-cn_topic_0237122262_p65004318417"></a><span id="zh-cn_topic_0237122262_text83409210171"><a name="zh-cn_topic_0237122262_text83409210171"></a><a name="zh-cn_topic_0237122262_text83409210171"></a>数据库主节点</span>实例：不统计。</p>
-<p id="zh-cn_topic_0237122262_p3500931204113"><a name="zh-cn_topic_0237122262_p3500931204113"></a><a name="zh-cn_topic_0237122262_p3500931204113"></a><span id="zh-cn_topic_0237122262_text6199533104313"><a name="zh-cn_topic_0237122262_text6199533104313"></a><a name="zh-cn_topic_0237122262_text6199533104313"></a>数据库节点</span>实例：该实例在本次统计间隙（10秒）内逻辑写操作次数之和，单位次。</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p65004318417"><a name="zh-cn_topic_0237122262_p65004318417"></a><a name="zh-cn_topic_0237122262_p65004318417"></a>数据库主节点实例：不统计。</p>
+<p id="zh-cn_topic_0237122262_p3500931204113"><a name="zh-cn_topic_0237122262_p3500931204113"></a><a name="zh-cn_topic_0237122262_p3500931204113"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑写操作次数之和，单位次。</p>
 </td>
 </tr>
 </tbody>

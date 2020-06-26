@@ -28,7 +28,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="14.66%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a459e3ca8495145f6ba18219f01640383"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a459e3ca8495145f6ba18219f01640383"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a459e3ca8495145f6ba18219f01640383"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0036a04f6a10496e966a5cb01c0a9c2a"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0036a04f6a10496e966a5cb01c0a9c2a"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0036a04f6a10496e966a5cb01c0a9c2a"></a><a href="PG_OPFAMILY.md#ZH-CN_TOPIC_0242385833">PG_OPFAMILY</a>.oid</p>
+<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0036a04f6a10496e966a5cb01c0a9c2a"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0036a04f6a10496e966a5cb01c0a9c2a"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0036a04f6a10496e966a5cb01c0a9c2a"></a><a href="PG_OPFAMILY.md">PG_OPFAMILY</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9357da4617c944028cee2f7ac0a76226"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9357da4617c944028cee2f7ac0a76226"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9357da4617c944028cee2f7ac0a76226"></a>这个项的操作符族。</p>
 </td>
@@ -37,7 +37,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="14.66%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a80d21e7f5c494a008ba901e3b7761f8c"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a80d21e7f5c494a008ba901e3b7761f8c"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a80d21e7f5c494a008ba901e3b7761f8c"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a>操作符的左输入类型。</p>
 </td>
@@ -46,7 +46,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="14.66%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a31fe03226d9c431a920c90d3182d3bb4"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a31fe03226d9c431a920c90d3182d3bb4"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a31fe03226d9c431a920c90d3182d3bb4"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a>操作符的右输入类型。</p>
 </td>
@@ -73,7 +73,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="14.66%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a3a04915bcab74aea9ac3d18a0acc5f70"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a3a04915bcab74aea9ac3d18a0acc5f70"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a3a04915bcab74aea9ac3d18a0acc5f70"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a18de0ff73e9f4ba682e0143f045b616d"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a18de0ff73e9f4ba682e0143f045b616d"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a18de0ff73e9f4ba682e0143f045b616d"></a><a href="PG_OPERATOR.md#ZH-CN_TOPIC_0242385832">PG_OPERATOR</a>.oid</p>
+<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a18de0ff73e9f4ba682e0143f045b616d"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a18de0ff73e9f4ba682e0143f045b616d"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a18de0ff73e9f4ba682e0143f045b616d"></a><a href="PG_OPERATOR.md">PG_OPERATOR</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0dfb3f34e8e34e6b8e6051945777315a"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0dfb3f34e8e34e6b8e6051945777315a"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a0dfb3f34e8e34e6b8e6051945777315a"></a>该操作符的OID。</p>
 </td>
@@ -82,7 +82,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="14.66%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_aff86c3b41cb644c5ae8bebeae72f628b"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_aff86c3b41cb644c5ae8bebeae72f628b"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_aff86c3b41cb644c5ae8bebeae72f628b"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9536814dd0cd48d8b0865d5add961400"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9536814dd0cd48d8b0865d5add961400"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9536814dd0cd48d8b0865d5add961400"></a><a href="PG_AM.md#ZH-CN_TOPIC_0242385794">PG_AM</a>.oid</p>
+<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9536814dd0cd48d8b0865d5add961400"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9536814dd0cd48d8b0865d5add961400"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9536814dd0cd48d8b0865d5add961400"></a><a href="PG_AM.md">PG_AM</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a8bd1803356974da9aeb04b3b79c80651"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a8bd1803356974da9aeb04b3b79c80651"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a8bd1803356974da9aeb04b3b79c80651"></a>索引访问方式操作符族。</p>
 </td>
@@ -91,7 +91,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="14.66%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9b19d44e1e3b48f9955f796c2bad16f1"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9b19d44e1e3b48f9955f796c2bad16f1"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_a9b19d44e1e3b48f9955f796c2bad16f1"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_abcfaedeae31246d39b31cd8032b85a9b"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_abcfaedeae31246d39b31cd8032b85a9b"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_abcfaedeae31246d39b31cd8032b85a9b"></a><a href="PG_OPFAMILY.md#ZH-CN_TOPIC_0242385833">PG_OPFAMILY</a>.oid</p>
+<td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_abcfaedeae31246d39b31cd8032b85a9b"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_abcfaedeae31246d39b31cd8032b85a9b"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_abcfaedeae31246d39b31cd8032b85a9b"></a><a href="PG_OPFAMILY.md">PG_OPFAMILY</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ae46fd60e4b5d4f1186ea080d773a6e57"><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ae46fd60e4b5d4f1186ea080d773a6e57"></a><a name="zh-cn_topic_0237122268_zh-cn_topic_0059777617_ae46fd60e4b5d4f1186ea080d773a6e57"></a>如果是一个排序操作符，则为这个项排序所依据的btree操作符族；如果是一个搜索操作符，则为0。</p>
 </td>

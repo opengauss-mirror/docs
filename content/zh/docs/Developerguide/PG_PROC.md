@@ -207,7 +207,7 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ab3757371ada749eb92229073a281e2db"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ab3757371ada749eb92229073a281e2db"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ab3757371ada749eb92229073a281e2db"></a>aclitem[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a>访问权限。具体请参见<a href="GRANT.md">GRANT</a>和<a href="REVOKE.md">REVOKE</a>。</p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a>访问权限。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_r2ed4f1dc24834437847084bd08f19028"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a9bdb37d4499c4b4eb47a13e66d0ddec6"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a9bdb37d4499c4b4eb47a13e66d0ddec6"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a9bdb37d4499c4b4eb47a13e66d0ddec6"></a>prodefaultargpos</p>
@@ -228,7 +228,7 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_p17209185853314"><a name="zh-cn_topic_0237122308_p17209185853314"></a><a name="zh-cn_topic_0237122308_p17209185853314"></a><span id="zh-cn_topic_0237122308_text14295151415286"><a name="zh-cn_topic_0237122308_text14295151415286"></a><a name="zh-cn_topic_0237122308_text14295151415286"></a>Boolean</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_p1552619614416"><a name="zh-cn_topic_0237122308_p1552619614416"></a><a name="zh-cn_topic_0237122308_p1552619614416"></a>表示该函数是否支持重载，主要针对<span id="ph10494132094613"><a name="ph10494132094613"></a><a name="ph10494132094613"></a>A</span>风格的函数，默认值是false。</p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_p1552619614416"><a name="zh-cn_topic_0237122308_p1552619614416"></a><a name="zh-cn_topic_0237122308_p1552619614416"></a>表示该函数是否支持重载，默认值是false。</p>
 </td>
 </tr>
 </tbody>

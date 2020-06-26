@@ -155,5 +155,5 @@ SQLGetDiagRec不发布自己的诊断记录。它用下列返回值来报告它�
 
 ## 示例<a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_sf24dafb7ecbe4978ac9b0c0da42eaa19"></a>
 
-参见：[示例](示例.md#ZH-CN_TOPIC_0242377033)
+参见：[示例](示例-2.md)
 

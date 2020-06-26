@@ -10,7 +10,6 @@
 -   不能修改分区表的tablespace，但可以修改分区的tablespace。
 -   不支持修改存储参数ORIENTATION。
 -   SET SCHEMA操作不支持修改为系统内部模式，当前仅支持用户模式之间的修改。
--   不允许对表的分布列（distribute column）进行修改。
 -   列存表只支持PARTIAL CLUSTER KEY表级约束，不支持主外键等表级约束。
 -   列存表只支持添加字段ADD COLUMN、修改字段的数据类型ALTER TYPE、设置单个字段的收集目标SET STATISTICS、支持更改表名称、支持更改表空间，支持删除字段DROP COLUMN。对于添加的字段和修改的字段类型要求是列存支持的[数据类型](数据类型.md)。ALTER TYPE的USING选项只支持常量表达式和涉及本字段的表达式，暂不支持涉及其他字段的表达式。
 -   列存表支持的字段约束包括NULL、NOT NULL和DEFAULT常量值；对字段约束的修改当前只支持对DEFAULT值的修改（SET DEFAULT）和删除（DROP DEFAULT），暂不支持对非空约束NULL/NOT NULL的修改。
@@ -44,7 +43,6 @@
         | OWNER TO new_owner
         | SET TABLESPACE new_tablespace
         | SET {COMPRESS|NOCOMPRESS}
-    
         | TO { GROUP groupname | NODE ( nodename [, ... ] ) }
         | ADD NODE ( nodename [, ... ] )
         | DELETE NODE ( nodename [, ... ] )
@@ -64,7 +62,7 @@
     >-   **ADD table\_constraint\_using\_index**  
     >    根据已有唯一索引为表增加主键约束或唯一约束。  
     >-   **VALIDATE CONSTRAINT constraint\_name**  
-    >    验证一个外键或是一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。  
+    >    验证一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。  
     >-   **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**  
     >    删除一个表上的约束。  
     >-   **CLUSTER ON index\_name**  
@@ -110,7 +108,7 @@
 
         开启或关闭表的行访问控制开关。
 
-        当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVLEL SECURITY POLICY](CREATE-ROW-LEVLEL-SECURITY-POLICY.md)章节。
+        当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
 
     -   **| NO FORCE/FORCE ROW LEVEL SECURITY**
 
@@ -147,7 +145,7 @@
         >-   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**  
         >    修改表已存在字段的数据类型。  
         >-   **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**  
-        >    从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如外键参考、视图等。  
+        >    从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。  
         >    DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。  
         >-   **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**  
         >    改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。  

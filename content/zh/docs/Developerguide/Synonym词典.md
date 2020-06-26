@@ -1,6 +1,6 @@
 # Synonym词典<a name="ZH-CN_TOPIC_0242370501"></a>
 
-Synonym词典用于定义、识别token的同义词并转化，不支持词组（词组形式的同义词可用Thesaurus词典定义，详细请参见[Thesaurus词典](Thesaurus词典.md#ZH-CN_TOPIC_0242370502)）。
+Synonym词典用于定义、识别token的同义词并转化，不支持词组（词组形式的同义词可用Thesaurus词典定义，详细请参见[Thesaurus词典](Thesaurus词典.md)）。
 
 ## 示例<a name="zh-cn_topic_0237122037_section10442451826"></a>
 
@@ -51,9 +51,9 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
     
     ```
 
-    其中，同义词词典文件全名为my\_synonyms.syn，所在目录为当前连接数据库主节点的/home/dicts/下。关于创建词典的语法和更多参数，请参见[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md#ZH-CN_TOPIC_0242370586)。
+    其中，同义词词典文件全名为my\_synonyms.syn，所在目录为当前连接数据库主节点的/home/dicts/下。关于创建词典的语法和更多参数，请参见[ALTER TEXT SEARCH DICTIONARY](ALTER-TEXT-SEARCH-DICTIONARY.md)。
 
--   星号（\*）可用于词典文件中的同义词结尾，表示该同义词是一个前缀。在to\_tsvector\(\)中该星号将被忽略，但在to\_tsquery\(\)中会匹配该前缀并对应输出结果（参照[处理查询](处理查询.md#ZH-CN_TOPIC_0242370493)一节）。
+-   星号（\*）可用于词典文件中的同义词结尾，表示该同义词是一个前缀。在to\_tsvector\(\)中该星号将被忽略，但在to\_tsquery\(\)中会匹配该前缀并对应输出结果（参照[处理查询](处理查询.md)一节）。
 
     假设词典文件synonym\_sample.syn内容如下：
 

@@ -1,4 +1,4 @@
-# 设置root用户远程登录<a name="ZH-CN_TOPIC_0244544049"></a>
+# 设置root用户远程登录<a name="ZH-CN_TOPIC_0251900895"></a>
 
 在openGauss安装时需要root帐户远程登录访问权限，本章介绍如何设置使用root用户远程登录。
 

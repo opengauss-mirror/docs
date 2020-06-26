@@ -23,7 +23,7 @@ PGconn *PQconnectdb(const char *conninfo);
 </thead>
 <tbody><tr id="zh-cn_topic_0241735614_zh-cn_topic_0237120432_zh-cn_topic_0059778852_r89c7807f135840058d4a248137b3ca08"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735614_p144262583911"><a name="zh-cn_topic_0241735614_p144262583911"></a><a name="zh-cn_topic_0241735614_p144262583911"></a>conninfo</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735614_zh-cn_topic_0237120432_zh-cn_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"><a name="zh-cn_topic_0241735614_zh-cn_topic_0237120432_zh-cn_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a><a name="zh-cn_topic_0241735614_zh-cn_topic_0237120432_zh-cn_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a>链接字符串，字符串中的字段见<a href="链接字符.md">5.6.4.5章节描述</a>章节。</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735614_zh-cn_topic_0237120432_zh-cn_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"><a name="zh-cn_topic_0241735614_zh-cn_topic_0237120432_zh-cn_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a><a name="zh-cn_topic_0241735614_zh-cn_topic_0237120432_zh-cn_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a>链接字符串，字符串中的字段见<a href="链接字符.md">链接字符</a>章节。</p>
 </td>
 </tr>
 </tbody>
@@ -40,5 +40,5 @@ PGconn \*：指向包含链接的对象指针，内存在函数内部申请。
 
 ## 示例<a name="zh-cn_topic_0241735614_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
-请参见[示例](示例-10.md)章节。
+请参见[示例](示例-3.md)章节。
 

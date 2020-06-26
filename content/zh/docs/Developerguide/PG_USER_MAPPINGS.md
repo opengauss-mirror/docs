@@ -2,7 +2,7 @@
 
 PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。
 
-这个视图只是一个[PG\_USER\_MAPPING](PG_USER_MAPPING.md#ZH-CN_TOPIC_0242385856)的可读部分的视图化表现，如果用户无权使用它则查询此表时，有些选项字段会显示为空。普通用户需要授权才可以访问。
+这个视图只是一个[PG\_USER\_MAPPING](PG_USER_MAPPING.md)的可读部分的视图化表现，如果用户无权使用它则查询该表时，有些选项字段会显示为空。普通用户需要授权才可以访问。
 
 **表 1**  PG\_USER\_MAPPINGS字段
 
@@ -21,7 +21,7 @@ PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。
 </td>
 <td class="cellrowborder" valign="top" width="11.290000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a912059c2ffee4efeb3af5e6f124c90f6"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a912059c2ffee4efeb3af5e6f124c90f6"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a912059c2ffee4efeb3af5e6f124c90f6"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.000000000000007%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8e0a4135c50b4848adbee8c4a6f03b8f"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8e0a4135c50b4848adbee8c4a6f03b8f"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8e0a4135c50b4848adbee8c4a6f03b8f"></a><a href="PG_USER_MAPPING.md#ZH-CN_TOPIC_0242385856">PG_USER_MAPPING</a>.oid</p>
+<td class="cellrowborder" valign="top" width="31.000000000000007%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8e0a4135c50b4848adbee8c4a6f03b8f"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8e0a4135c50b4848adbee8c4a6f03b8f"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8e0a4135c50b4848adbee8c4a6f03b8f"></a><a href="PG_USER_MAPPING.md">PG_USER_MAPPING</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86000000000001%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a7e61464493c945db97781da29a03d5c4"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a7e61464493c945db97781da29a03d5c4"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a7e61464493c945db97781da29a03d5c4"></a>用户映射的OID。</p>
 </td>
@@ -30,7 +30,7 @@ PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。
 </td>
 <td class="cellrowborder" valign="top" width="11.290000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a5511ca418af04df8a82868d48d2202d3"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a5511ca418af04df8a82868d48d2202d3"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a5511ca418af04df8a82868d48d2202d3"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.000000000000007%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adafb34910f684b49b3aaa6704c447a23"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adafb34910f684b49b3aaa6704c447a23"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adafb34910f684b49b3aaa6704c447a23"></a><a href="PG_FOREIGN_SERVER.md#ZH-CN_TOPIC_0242385818">PG_FOREIGN_SERVER</a>.oid</p>
+<td class="cellrowborder" valign="top" width="31.000000000000007%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adafb34910f684b49b3aaa6704c447a23"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adafb34910f684b49b3aaa6704c447a23"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adafb34910f684b49b3aaa6704c447a23"></a><a href="PG_FOREIGN_SERVER.md">PG_FOREIGN_SERVER</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86000000000001%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a98402dfb0df34d3a8ffc2e9d191afffa"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a98402dfb0df34d3a8ffc2e9d191afffa"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a98402dfb0df34d3a8ffc2e9d191afffa"></a>包含这个映射的外部服务器的OID。</p>
 </td>
@@ -39,7 +39,7 @@ PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。
 </td>
 <td class="cellrowborder" valign="top" width="11.290000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a70015b1427aa42768e629a232bdfc6eb"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a70015b1427aa42768e629a232bdfc6eb"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a70015b1427aa42768e629a232bdfc6eb"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.000000000000007%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adb2a48782cdf4b33bee7e33d6190784d"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adb2a48782cdf4b33bee7e33d6190784d"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adb2a48782cdf4b33bee7e33d6190784d"></a><a href="PG_FOREIGN_SERVER.md#ZH-CN_TOPIC_0242385818">PG_FOREIGN_SERVER</a>.srvname</p>
+<td class="cellrowborder" valign="top" width="31.000000000000007%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adb2a48782cdf4b33bee7e33d6190784d"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adb2a48782cdf4b33bee7e33d6190784d"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_adb2a48782cdf4b33bee7e33d6190784d"></a><a href="PG_FOREIGN_SERVER.md">PG_FOREIGN_SERVER</a>.srvname</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86000000000001%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a26e4602b2d62409bbbd90712a23e9e33"><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a26e4602b2d62409bbbd90712a23e9e33"></a><a name="zh-cn_topic_0237122473_zh-cn_topic_0059777822_a26e4602b2d62409bbbd90712a23e9e33"></a>外部服务器的名称。</p>
 </td>

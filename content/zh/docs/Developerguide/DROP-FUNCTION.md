@@ -1,4 +1,4 @@
-# DROP FUNCTION<a name="ZH-CN_TOPIC_0242370602"></a>
+# DROP FUNCTION<a name="ZH-CN_TOPIC_0251134237"></a>
 
 ## 功能描述<a name="zh-cn_topic_0237122138_zh-cn_topic_0059778261_se0a88dccf4a449189e3598bd873250fe"></a>
 
@@ -39,14 +39,10 @@ DROP FUNCTION [ IF EXISTS ] function_name
 
     函数参数的类型
 
--   **CASCADE | RESTRICT**
-    -   CASCADE：级联删除依赖于函数的对象（比如操作符） 。
-    -   RESTRICT：如果有任何依赖对象存在，则拒绝删除该函数（缺省行为）。
-
 
 ## 示例<a name="zh-cn_topic_0237122138_zh-cn_topic_0059778261_s4c0a49238b6c41bdbf9c9cbd3aabcf08"></a>
 
-请参见CREATE FUNCTION的[SQL参考](SQL参考.md)。
+请参见的[示例](CREATE-FUNCTION.md#zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)。
 
 ## 相关链接<a name="zh-cn_topic_0237122138_zh-cn_topic_0059778261_sf722b7d9e13547449d559364553b790a"></a>
 

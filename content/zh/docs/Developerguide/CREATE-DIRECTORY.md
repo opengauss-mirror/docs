@@ -2,9 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0237122101_zh-cn_topic_0059778310_section50807000114421"></a>
 
-使用CREATE DIRECTORY语句创建一个目录对象，该目录对象定义了服务器文件系统上目录的别名，用于存放用户使用的数据文件，用户可以通过utl\_file高级包来读写这些文件。
-
-该目录对象对于指定用户可以赋予READ和WRITE的操作权限，用于给utl\_file提供权限控制。
+使用CREATE DIRECTORY语句创建一个目录对象，该目录对象定义了服务器文件系统上目录的别名，用于存放用户使用的数据文件。
 
 ## 注意事项<a name="zh-cn_topic_0237122101_zh-cn_topic_0059778310_section25762026103427"></a>
 
@@ -53,5 +51,5 @@ postgres=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 
 ## 相关链接<a name="zh-cn_topic_0237122101_section1767373224414"></a>
 
-[ALTER DIRECTORY](ALTER-DIRECTORY.md#ZH-CN_TOPIC_0242370522)，[DROP DIRECTORY](DROP-DIRECTORY.md#ZH-CN_TOPIC_0242370600)
+[ALTER DIRECTORY](ALTER-DIRECTORY.md)，[DROP DIRECTORY](DROP-DIRECTORY.md)
 

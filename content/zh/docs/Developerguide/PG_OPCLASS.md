@@ -30,7 +30,7 @@ PG\_OPCLASS系统表定义索引访问方法操作符类。
 </td>
 <td class="cellrowborder" valign="top" width="11.65%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a1774eb4b9211487d93e2d5343da18168"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a1774eb4b9211487d93e2d5343da18168"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a1774eb4b9211487d93e2d5343da18168"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_ab82b3b0ce56642df93be0fe1016b58d9"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_ab82b3b0ce56642df93be0fe1016b58d9"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_ab82b3b0ce56642df93be0fe1016b58d9"></a><a href="PG_AM.md#ZH-CN_TOPIC_0242385794">PG_AM</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_ab82b3b0ce56642df93be0fe1016b58d9"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_ab82b3b0ce56642df93be0fe1016b58d9"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_ab82b3b0ce56642df93be0fe1016b58d9"></a><a href="PG_AM.md">PG_AM</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a02267d13c5d041319b5a99a291ea4ff7"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a02267d13c5d041319b5a99a291ea4ff7"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a02267d13c5d041319b5a99a291ea4ff7"></a>操作符类所服务的索引访问方法。</p>
 </td>
@@ -48,7 +48,7 @@ PG\_OPCLASS系统表定义索引访问方法操作符类。
 </td>
 <td class="cellrowborder" valign="top" width="11.65%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a2853a6b86e02478c9bc2cf1ef8310e4a"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a2853a6b86e02478c9bc2cf1ef8310e4a"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a2853a6b86e02478c9bc2cf1ef8310e4a"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_af2e90e5e388e4ce7b7a7ee7175285008"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_af2e90e5e388e4ce7b7a7ee7175285008"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_af2e90e5e388e4ce7b7a7ee7175285008"></a><a href="PG_NAMESPACE.md#ZH-CN_TOPIC_0242385828">PG_NAMESPACE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_af2e90e5e388e4ce7b7a7ee7175285008"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_af2e90e5e388e4ce7b7a7ee7175285008"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_af2e90e5e388e4ce7b7a7ee7175285008"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a632390697ef5453a802241eaa109b5e9"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a632390697ef5453a802241eaa109b5e9"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a632390697ef5453a802241eaa109b5e9"></a>这个操作符类的名称空间。</p>
 </td>
@@ -66,7 +66,7 @@ PG\_OPCLASS系统表定义索引访问方法操作符类。
 </td>
 <td class="cellrowborder" valign="top" width="11.65%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a6304a6ed21aa4c78a9898335fe9d84fe"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a6304a6ed21aa4c78a9898335fe9d84fe"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a6304a6ed21aa4c78a9898335fe9d84fe"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_aad980755a0564ca1a799cfd22f66ea42"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_aad980755a0564ca1a799cfd22f66ea42"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_aad980755a0564ca1a799cfd22f66ea42"></a><a href="PG_OPFAMILY.md#ZH-CN_TOPIC_0242385833">PG_OPFAMILY</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_aad980755a0564ca1a799cfd22f66ea42"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_aad980755a0564ca1a799cfd22f66ea42"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_aad980755a0564ca1a799cfd22f66ea42"></a><a href="PG_OPFAMILY.md">PG_OPFAMILY</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a39aa0a51d99c48aeaca4668adb5a1539"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a39aa0a51d99c48aeaca4668adb5a1539"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a39aa0a51d99c48aeaca4668adb5a1539"></a>包含该操作符类的操作符族。</p>
 </td>
@@ -75,7 +75,7 @@ PG\_OPCLASS系统表定义索引访问方法操作符类。
 </td>
 <td class="cellrowborder" valign="top" width="11.65%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a2d76fc099b3840a4abc845bcc10fa77e"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a2d76fc099b3840a4abc845bcc10fa77e"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a2d76fc099b3840a4abc845bcc10fa77e"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a469deb1ef8a743aaac95a4b276d6bd0e"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a469deb1ef8a743aaac95a4b276d6bd0e"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a469deb1ef8a743aaac95a4b276d6bd0e"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a469deb1ef8a743aaac95a4b276d6bd0e"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a469deb1ef8a743aaac95a4b276d6bd0e"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a469deb1ef8a743aaac95a4b276d6bd0e"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a6d628e62870347c797459d5efdbeeafc"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a6d628e62870347c797459d5efdbeeafc"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a6d628e62870347c797459d5efdbeeafc"></a>操作符类索引的数据类型。</p>
 </td>
@@ -93,7 +93,7 @@ PG\_OPCLASS系统表定义索引访问方法操作符类。
 </td>
 <td class="cellrowborder" valign="top" width="11.65%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a0e5a8bf0e5ab45ad9d8fa8fa33a34ff1"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a0e5a8bf0e5ab45ad9d8fa8fa33a34ff1"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a0e5a8bf0e5ab45ad9d8fa8fa33a34ff1"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a4e66ba7baa81423b911ac1f48e61236a"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a4e66ba7baa81423b911ac1f48e61236a"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a4e66ba7baa81423b911ac1f48e61236a"></a><a href="PG_TYPE.md#ZH-CN_TOPIC_0242385855">PG_TYPE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a4e66ba7baa81423b911ac1f48e61236a"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a4e66ba7baa81423b911ac1f48e61236a"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a4e66ba7baa81423b911ac1f48e61236a"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a8efbd0574c0f4b36a9e444d93d1ba2b7"><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a8efbd0574c0f4b36a9e444d93d1ba2b7"></a><a name="zh-cn_topic_0237122303_zh-cn_topic_0059777477_a8efbd0574c0f4b36a9e444d93d1ba2b7"></a>索引数据的类型，如果和opcintype相同则为零。</p>
 </td>

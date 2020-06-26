@@ -86,8 +86,8 @@ NEXT
         取值范围：有符号的整数
 
         -   count为正数就抓取当前关联位置之后的第count行。
-        -   count为负数，涉及到反向扫描操作，暂不支持。
-        -   如果有数据的话，RELATIVE 0重新抓取当前行。
+        -   count为负数或0，涉及到反向扫描操作，暂不支持。
+        -   如果当前行没有数据的话，RELATIVE 0返回空。
 
     -   count
 
@@ -210,5 +210,5 @@ postgres=# CLOSE cursor1;
 
 ## 相关链接<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_scff73b2bdc594902afb6925b8a3b97ac"></a>
 
-[CLOSE](CLOSE.md#ZH-CN_TOPIC_0242370555)，[MOVE](MOVE.md#ZH-CN_TOPIC_0242370633)
+[CLOSE](CLOSE.md)，[MOVE](MOVE.md)
 

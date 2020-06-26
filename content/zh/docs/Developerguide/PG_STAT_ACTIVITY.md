@@ -137,7 +137,7 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息。
 ----------+---------+----------+--------+-----------------
  postgres | <span id="zh-cn_topic_0237122439_text321114240599"><a name="zh-cn_topic_0237122439_text321114240599"></a><a name="zh-cn_topic_0237122439_text321114240599"></a>omm</span>     |       10 |        | 139968752121616
  postgres | <span id="zh-cn_topic_0237122439_text587382495916"><a name="zh-cn_topic_0237122439_text587382495916"></a><a name="zh-cn_topic_0237122439_text587382495916"></a>omm</span>     |       10 |        | 139968903116560
- <span id="ph1985620349552"><a name="ph1985620349552"></a><a name="ph1985620349552"></a>db_tpcc</span> | judy    |    16398 | active | 139968391403280
+ db_tpcc | judy    |    16398 | active | 139968391403280
  postgres | <span id="zh-cn_topic_0237122439_text64932258597"><a name="zh-cn_topic_0237122439_text64932258597"></a><a name="zh-cn_topic_0237122439_text64932258597"></a>omm</span>     |       10 |        | 139968643069712
  postgres | <span id="zh-cn_topic_0237122439_text61051826105916"><a name="zh-cn_topic_0237122439_text61051826105916"></a><a name="zh-cn_topic_0237122439_text61051826105916"></a>omm</span>     |       10 |        | 139968680818448
  postgres | joe     |    16390 |        | 139968563377936

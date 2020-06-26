@@ -2,7 +2,7 @@
 
 PG\_DESCRIPTION系统表可以给每个数据库对象存储一个可选的描述（注释）。许多内置的系统对象的描述提供了PG\_DESCRIPTION的初始内容。
 
-这个表的功能类似[PG\_SHDESCRIPTION](PG_SHDESCRIPTION.md#ZH-CN_TOPIC_0242385843)，用于记录openGauss范围内共享对象的注释。
+这个表的功能类似[PG\_SHDESCRIPTION](PG_SHDESCRIPTION.md)，用于记录openGauss范围内共享对象的注释。
 
 **表 1**  PG\_DESCRIPTION字段
 
@@ -30,7 +30,7 @@ PG\_DESCRIPTION系统表可以给每个数据库对象存储一个可选的描�
 </td>
 <td class="cellrowborder" valign="top" width="9.31%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122285_zh-cn_topic_0059778572_a8f32271314e1439f8341a8043d7d5840"><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_a8f32271314e1439f8341a8043d7d5840"></a><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_a8f32271314e1439f8341a8043d7d5840"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.52%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aad1b7885465149dc9673bbef692a15ae"><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aad1b7885465149dc9673bbef692a15ae"></a><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aad1b7885465149dc9673bbef692a15ae"></a><a href="zh-cn_topic_0237122277.md">PG_CLASS</a>.oid</p>
+<td class="cellrowborder" valign="top" width="21.52%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aad1b7885465149dc9673bbef692a15ae"><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aad1b7885465149dc9673bbef692a15ae"></a><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aad1b7885465149dc9673bbef692a15ae"></a><a href="PG_CLASS.md">PG_CLASS</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.86%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aef1cedd21cf04fedada1bce5295a2786"><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aef1cedd21cf04fedada1bce5295a2786"></a><a name="zh-cn_topic_0237122285_zh-cn_topic_0059778572_aef1cedd21cf04fedada1bce5295a2786"></a>这个对象出现的系统表的OID。</p>
 </td>

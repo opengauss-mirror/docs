@@ -228,7 +228,8 @@ PG\_TYPE系统表存储数据类型的相关信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.35%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122327_zh-cn_topic_0059778496_a12acf77a36ca4cee8aeaac7822df1a70"><a name="zh-cn_topic_0237122327_zh-cn_topic_0059778496_a12acf77a36ca4cee8aeaac7822df1a70"></a><a name="zh-cn_topic_0237122327_zh-cn_topic_0059778496_a12acf77a36ca4cee8aeaac7822df1a70"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="66.34%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122327_zh-cn_topic_0059778496_acbd1d76df79d4cd9b9cadb212b11d03f"><a name="zh-cn_topic_0237122327_zh-cn_topic_0059778496_acbd1d76df79d4cd9b9cadb212b11d03f"></a><a name="zh-cn_topic_0237122327_zh-cn_topic_0059778496_acbd1d76df79d4cd9b9cadb212b11d03f"></a>如果某类型没有相关缺省值，则取值是NULL。如果typdefaultbin不是NULL，则typdefault必须包含一个typdefaultbin代表的缺省表达式的人类可读的版本。如果typdefaultbin为NULL但typdefault不是，typdefault则是该类型缺省值的外部表现形式，可以把它交给该类型的输入转换器生成一个常量。</p>
+<td class="cellrowborder" valign="top" width="66.34%" headers="mcps1.2.4.1.3 "><p id="p28415566415"><a name="p28415566415"></a><a name="p28415566415"></a>如果某类型没有相关缺省值，则取值是NULL。</p>
+<a name="ul55321947511"></a><a name="ul55321947511"></a><ul id="ul55321947511"><li>如果typdefaultbin为非NULL，则typdefault必须包含一个typdefaultbin代表的缺省表达式。</li><li>如果typdefaultbin为NULL但typdefault不是，typdefault则是该类型缺省值的外部表现形式，可以把它作为该类型的输入，转换器生成一个常量。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122327_zh-cn_topic_0059778496_r76a5d04f925441448781c22c3ec4d905"><td class="cellrowborder" valign="top" width="17.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122327_zh-cn_topic_0059778496_a7abbb1414a5f47e5be5304e2df074b57"><a name="zh-cn_topic_0237122327_zh-cn_topic_0059778496_a7abbb1414a5f47e5be5304e2df074b57"></a><a name="zh-cn_topic_0237122327_zh-cn_topic_0059778496_a7abbb1414a5f47e5be5304e2df074b57"></a>typacl</p>

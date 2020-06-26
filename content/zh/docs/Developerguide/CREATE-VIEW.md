@@ -70,5 +70,5 @@ postgres=# DROP VIEW myView;
 
 ## 相关链接<a name="zh-cn_topic_0237122126_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
 
-[ALTER VIEW](ALTER-VIEW.md#ZH-CN_TOPIC_0242370548)，[DROP VIEW](DROP-VIEW.md#ZH-CN_TOPIC_0242370623)
+[ALTER VIEW](ALTER-VIEW.md)，[DROP VIEW](DROP-VIEW.md)
 

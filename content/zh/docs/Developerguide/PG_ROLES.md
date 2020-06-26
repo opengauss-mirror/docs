@@ -1,6 +1,6 @@
 # PG\_ROLES<a name="ZH-CN_TOPIC_0242385956"></a>
 
-PG\_ROLES视图提供访问数据库角色的相关信息。
+PG\_ROLES视图提供访问数据库角色的相关信息，默认只有初始化用户和具有sysadmin属性的用户可以查看，其他用户需要赋权后才可以查看。
 
 **表 1**  PG\_ROLES字段
 
@@ -228,7 +228,7 @@ PG\_ROLES视图提供访问数据库角色的相关信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122429_p6309753102510"><a name="zh-cn_topic_0237122429_p6309753102510"></a><a name="zh-cn_topic_0237122429_p6309753102510"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122429_p79695291192"><a name="zh-cn_topic_0237122429_p79695291192"></a><a name="zh-cn_topic_0237122429_p79695291192"></a><span id="ph18621043104"><a name="ph18621043104"></a><a name="ph18621043104"></a>该字段不支持。</span></p>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122429_p79695291192"><a name="zh-cn_topic_0237122429_p79695291192"></a><a name="zh-cn_topic_0237122429_p79695291192"></a>该字段不支持。</p>
 </td>
 </tr>
 </tbody>
