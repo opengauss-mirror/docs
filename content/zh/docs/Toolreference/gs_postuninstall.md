@@ -15,7 +15,7 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 -   openGauss清理用户、用户组以及虚拟IP清理
 
     ```
-    gs_postuninstall -U USER -X XMLFILE [-L] [--delete-user] [--delete-group] [--delete-virtual-IP] [-l LOGFILE]
+    gs_postuninstall -U USER -X XMLFILE [-L] [--delete-user] [--delete-group] [-l LOGFILE]
     ```
 
 -   显示帮助信息
@@ -60,10 +60,6 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 -   --delete-group
 
     删除操作系统用户所在的用户组（选择此选项必须指定--delete-user参数）。
-
--   --delete-virtual-IP
-
-    删除openGauss配置文件中的虚拟IP。
 
 -   -l
 

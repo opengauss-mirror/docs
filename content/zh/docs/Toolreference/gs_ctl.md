@@ -342,6 +342,7 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a922e766e1f6e46629141bfed8e92b5f9"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a922e766e1f6e46629141bfed8e92b5f9"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a922e766e1f6e46629141bfed8e92b5f9"></a>取值范围：整型（秒）。</p>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a>默认值：120秒</p>
+<p id="p452620194414"><a name="p452620194414"></a><a name="p452620194414"></a>提示：超时时间需根据业务繁忙程度设置，业务繁忙等待主机的响应时间需加长，建议超时时间=checkpoint的执行时间+1min。</p>
 </td>
 </tr>
 <tr id="row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p62971529151411"><a name="p62971529151411"></a><a name="p62971529151411"></a>-q</p>

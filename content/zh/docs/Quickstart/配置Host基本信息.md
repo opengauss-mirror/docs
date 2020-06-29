@@ -25,17 +25,17 @@
 <a name="zh-cn_topic_0249784567_table1876635205813"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0249784567_row476775215811"><th class="cellrowborder" valign="top" width="10.87108710871087%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a>实例类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="16.8016801680168%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a>参数</p>
+<th class="cellrowborder" valign="top" width="16.761676167616763%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="72.32723272327232%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a>说明</p>
+<th class="cellrowborder" valign="top" width="72.36723672367236%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a>说明</p>
 </th>
 </tr>
 </thead>
 <tbody><tr id="zh-cn_topic_0249784567_row2076785215584"><td class="cellrowborder" rowspan="5" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.8016801680168%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p131821197365"><a name="zh-cn_topic_0249784567_p131821197365"></a><a name="zh-cn_topic_0249784567_p131821197365"></a>name</p>
+<td class="cellrowborder" valign="top" width="16.761676167616763%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p131821197365"><a name="zh-cn_topic_0249784567_p131821197365"></a><a name="zh-cn_topic_0249784567_p131821197365"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.32723272327232%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p25144333101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p25144333101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p25144333101039"></a>主机名称。</p>
+<td class="cellrowborder" valign="top" width="72.36723672367236%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p25144333101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p25144333101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p25144333101039"></a>主机名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0249784567_row1767115215813"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p1906425183611"><a name="zh-cn_topic_0249784567_p1906425183611"></a><a name="zh-cn_topic_0249784567_p1906425183611"></a>azName</p>

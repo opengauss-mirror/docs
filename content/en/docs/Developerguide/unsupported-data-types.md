@@ -1,0 +1,35 @@
+# Unsupported Data Types<a name="EN-US_TOPIC_0257867396"></a>
+
+-   UUID
+-   User-Defined Type \(UDF\)
+-   Array data type
+-   NVARCHAR2\(n\)
+-   Clob
+-   Name
+-   Blob
+-   Raw
+-   Path
+-   Circle
+-   Reltime
+-   Bit varying\(10\)
+-   Tsvector
+-   Tsquery
+-   JSON
+-   HSTORE
+-   Box
+-   Text
+-   Line
+-   Point
+-   LSEG
+-   POLYGON
+-   INET
+-   CIDR
+-   MACADDR
+-   Smalldatetime
+-   BYTEA
+-   Bit
+-   Varbit
+-   OID
+-   Money
+-   Any unlimited varchar/char
+
