@@ -110,7 +110,7 @@ gs_dumpall [OPTION]...
 
 -   --inserts
 
-    发出INSERT命令（而非COPY命令）时转储数据。这会导致恢复缓慢。注意如果重排列顺序，可能会导致恢复整个失败。--column-inserts选项更加安全，虽然可能更慢些。
+    发出INSERT命令（而非COPY命令）转储数据。这会导致恢复缓慢。注意：如果重排列顺序，可能会导致恢复整个失败。--column-inserts选项更加安全，虽然可能更慢些。
 
 -   --no-security-labels
 

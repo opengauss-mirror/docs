@@ -231,72 +231,78 @@
 ```
 gs_collector --begin-time="20180131 23:00" --end-time="20180201 20:00" -h plat1 
 Successfully parsed the configuration file.
+create Dir.
+Successfully create dir.
+do system check interval 0 : count 1
 Collecting OS information.
 Successfully collected OS information.
+do database check interval 0 : count 1
 Collecting catalog statistics.
 Successfully collected catalog statistics.
-Collecting log files.
-Successfully collected log files.
-Collecting configuration files and process stack information.
-Successfully collected configuration files and processed stack information.
+do log check interval 0 : count 1
+Collecting Log files.
+Successfully collected Log files.
+do Config check 0:1
+Collecting Config files.
+Successfully collected Config files.
 Collecting files.
 Successfully collected files.
-All results are stored in $PGHOST/collector_20180201_144951.tar.gz.
+All results are stored in $PGHOST/collector_20200624_134541.tar.gz.
 ```
 
 查看收集到的统计信息。
 
 ```
-tar -zxvf $PGHOST/collector_20180201_144951.tar.gz
-collector_20180201_144951/
-collector_20180201_144951/plat1.tar.gz
-cd collector_20180201_144951
+tar -zxvf $PGHOST/collector_20200624_134541.tar.gz
+collector_20200624_134541/
+collector_20200624_134541/plat1.tar.gz
+collector_20200624_134541/Detail.log
+collector_20200624_134541/Summary.log
+cd collector_20200624_134541
 tar -zxvf plat1.tar.gz
 plat1/
-plat1/OS_information.txt
-plat1/conffiles/
-plat1/conffiles/dn_6006/
-plat1/conffiles/dn_6006/pg_hba.conf
-plat1/conffiles/dn_6006/postgresql.conf
-plat1/conffiles/dn_6001/
-plat1/conffiles/dn_6001/pg_hba.conf
-plat1/conffiles/dn_6001/postgresql.conf
-plat1/conffiles/dn_3003/
-plat1/conffiles/dn_3003/pg_hba.conf
-plat1/conffiles/dn_3003/postgresql.conf
-plat1/Catalog_statistics.txt
+plat1/catalogfiles/
+plat1/catalogfiles/gs_clean_20200624_134548283647.txt
+plat1/catalogfiles/dn_6001_pg_locks_20200624_134547746215.csv
+plat1/catalogfiles/dn_6001_pg_thread_wait_status_20200624_134548068716.csv
+plat1/catalogfiles/dn_6001_pg_stat_activity_20200624_134547851117.csv
+plat1/configfiles/
 plat1/logfiles/
-plat1/logfiles/log_20180201_144957.tar
+plat1/logfiles/log_20200624_134548540916.tar.gz
+plat1/coreDumpfiles/
+plat1/gstackfiles/
+plat1/systemfiles/
+plat1/systemfiles/OS_information_20200624_134542218134.txt
+plat1/systemfiles/database_system_info_20200624_134546282006.txt
+plat1/planSimulatorfiles/
+plat1/xlogfiles/
 cd plat1/logfiles/
-tar -xvf log_20180201_144957.tar
+tar -zxvf log_20200624_134548540916.tar.gz
 ./
 ./om/
-./om/gs_local-2018-01-30_165832.log
-./om/gs_collector-2018-02-01_144951.log
+./om/gs_preinstall-2020-06-24_113654.log
+./om/gs_local-2020-06-24_113710.log
+./om/gs_install-2020-06-24_113911.log
+./om/gs_checkperf-2020-06-24_114311.log
+./om/gs_collector-2020-06-24_114240.log
+./om/gs_backup-2020-06-24_114101.log
+./om/gs_om-2020-06-24_114052.log
 ./bin/
-./bin/gs_clean/
-./bin/gs_clean/gs_clean-2018-01-30_170147-current.log
+./bin/gs_initdb/
+./bin/gs_initdb/gs_initdb-2020-06-24_114010-current.log
+./bin/gs_guc/
+./bin/gs_guc/gs_guc-2020-06-24_114033-current.log
+./bin/gs_ctl/
+./bin/gs_ctl/gs_ctl-2020-06-24_114041-current.log
 ./pg_log/
-./pg_log/dn_6006/
-./pg_log/dn_6006/postgresql-2018-01-31_000000.log
-./pg_log/dn_6006/postgresql-2018-02-01_000000.log
-./pg_log/cn_5001/
-./pg_log/cn_5001/postgresql-2018-01-31_000000.log
-./pg_log/cn_5001/postgresql-2018-02-01_000000.log
 ./pg_log/dn_6001/
-./pg_log/dn_6001/postgresql-2018-01-31_000000.log
-./pg_log/dn_6001/postgresql-2018-02-01_000000.log
-./pg_log/dn_3003/
-./pg_log/dn_3003/postgresql-2018-01-31_000000.log
-./pg_log/dn_3003/postgresql-2018-02-01_000000.log
+./pg_log/dn_6001/postgresql-2020-06-24_114043.log
+./pg_log/dn_6001/postgresql-2020-06-24_114330.log
+./pg_log/dn_6001/postgresql-2020-06-24_114316.log
 ./gs_profile/
 ./gs_profile/dn_6001_6002/
-./gs_profile/dn_6001_6002/postgresql-2018-02-01_000000.prf
-./gs_profile/postgresql-2018-01-31_000000.prf
-./gs_profile/dn_6003_3003/
-./gs_profile/dn_6003_3003/postgresql-2018-02-01_000000.prf
-./gs_profile/dn_6005_6006/
-./gs_profile/dn_6005_6006/postgresql-2018-02-01_000000.prf
-./gs_profile/postgresql-2018-02-01_000000.prf
+./gs_profile/dn_6001_6002/postgresql-2020-06-24_114330.prf
+./gs_profile/dn_6001_6002/postgresql-2020-06-24_114316.prf
+./gs_profile/dn_6001_6002/postgresql-2020-06-24_114043.prf
 ```
 

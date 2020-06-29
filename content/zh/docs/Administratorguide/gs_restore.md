@@ -27,7 +27,7 @@ gs_restore [OPTION]... FILE
 >-   FILE没有短选项或长选项。用来指定归档文件所处的位置。  
 >-   作为前提条件，需输入dbname或-l选项。不允许用户同时输入dbname和-l选项。  
 >-   gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议使用"-c" 参数，在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象。  
->-   日志打印无开关，若需隐藏日志，请将日志重定向到日志文件。  
+>-   日志打印无开关，若需隐藏日志，请将日志重定向到日志文件。若恢复表数据时，数据量很大，会分批恢复，因此会多次出现“表数据已完成导入”的日志。  
 
 ## 参数说明<a name="zh-cn_topic_0249632267_zh-cn_topic_0237152343_zh-cn_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
@@ -81,11 +81,11 @@ gs_restore [OPTION]... FILE
 
 -   -c, --clean
 
-    在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象
+    在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象。
 
 -   -C, --create
 
-    导入到数据库之前请创建数据库。（选择该选项后，以-d打头的数据库将被用作发布首个CREATE DATABASE命令。所有数据将被导入到出现在归档文件的数据库中。）
+    导入到数据库之前先创建数据库。（选择该选项后，-d指定的数据库将被用作发布首个CREATE DATABASE命令。所有数据将被导入到创建的数据库中。）
 
 -   -e, --exit-on-error
 
@@ -117,7 +117,7 @@ gs_restore [OPTION]... FILE
 
     只导入列举在list-file中的那些归档形式元素，导入顺序以它们在文件中的顺序为准。注意如果像-n或-t的过滤选项与-L使用，它们将会进一步限制导入的项目。
 
-    一般情况下，list-file是通过编辑前面提到的某个-l参数的输出创建的。文件行的位置可更改或直接删除行，也可使用分号（;）在行的开始注出。见下文的举例。
+    一般情况下，list-file是通过编辑前面提到的某个-l参数的输出创建的。文件行的位置可更改或直接删除，也可使用分号（;）在行的开始注出。见下文的举例。
 
 -   -n, --schema=NAME
 
@@ -150,7 +150,7 @@ gs_restore [OPTION]... FILE
     例如：
 
     ```
-    ./gs_restore -h host_name -p port_number -d postgres -n test1 -P 'Func1(integer)' -n test2 -P 'Func2(integer)' backup/MPPDB_backup.tar
+    gs_restore -h host_name -p port_number -d postgres -n test1 -P 'Func1(integer)' -n test2 -P 'Func2(integer)' backup/MPPDB_backup.tar
     ```
 
     在上面这个例子中，test1模式下的函数Func1\(i integer\)和test2模式下的函数Func2\(j integer\)会被一起导入。
@@ -237,7 +237,7 @@ gs_restore [OPTION]... FILE
     AES128密钥长度必须是16字节。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如果转储被加密，则必须在gs\_restore命令中输入--with-key <keyname\>选项。如果未输入，用户会收到错误信息。  
+    >如果转储被加密，则必须在gs\_restore命令中输入--with-key=KEY选项。如果未输入，用户会收到错误信息。  
     >应该输入转储时所输入的相同的key。  
     >转储格式为c或t时，转储内容已被处理，因此转储格式为c或t是输入不受加密限制。  
 

@@ -71,7 +71,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     </tr>
     <tr id="zh-cn_topic_0237121137_row1362511481379"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p195642019125512"><a name="zh-cn_topic_0237121137_p195642019125512"></a><a name="zh-cn_topic_0237121137_p195642019125512"></a>-e</p>
     </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p18979244175512"><a name="zh-cn_topic_0237121137_p18979244175512"></a><a name="zh-cn_topic_0237121137_p18979244175512"></a>当发送SQL语句到数据库时如果出现错误，退出当前出现错误的任务，并执行其他导入任务。即默认状态下会忽略错误任务并继续执行导入，且在导入后会显示一系列错误信息。</p>
+    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p18979244175512"><a name="zh-cn_topic_0237121137_p18979244175512"></a><a name="zh-cn_topic_0237121137_p18979244175512"></a>当发送SQL语句到数据库时如果出现错误，则退出。默认状态下会忽略错误任务并继续执行导入，且在导入后会显示一系列错误信息。</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p12782147122820"><a name="zh-cn_topic_0237121137_p12782147122820"></a><a name="zh-cn_topic_0237121137_p12782147122820"></a>-</p>
     </td>
