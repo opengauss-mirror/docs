@@ -53,15 +53,6 @@ openGauss-server/build.sh是编译过程中的重要脚本工具。其集成了�
 <td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="p13756143512476"><a name="p13756143512476"></a><a name="p13756143512476"></a>将代码编译结果压缩封装成安装包。</p>
 </td>
 </tr>
-<tr id="row16201151213311"><td class="cellrowborder" valign="top" width="14.84148414841484%" headers="mcps1.2.5.1.1 "><p id="p120115122038"><a name="p120115122038"></a><a name="p120115122038"></a>--no_om_adapt</p>
-</td>
-<td class="cellrowborder" valign="top" width="34.87348734873487%" headers="mcps1.2.5.1.2 "><p id="p1320215121030"><a name="p1320215121030"></a><a name="p1320215121030"></a>不使用此选项</p>
-</td>
-<td class="cellrowborder" valign="top" width="7.520752075207521%" headers="mcps1.2.5.1.3 "><p id="p1593610175420"><a name="p1593610175420"></a><a name="p1593610175420"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="p1720212121237"><a name="p1720212121237"></a><a name="p1720212121237"></a>安装包不去适配om，仅在添加-pkg选项时生效。</p>
-</td>
-</tr>
 </tbody>
 </table>
 
@@ -70,6 +61,6 @@ openGauss-server/build.sh是编译过程中的重要脚本工具。其集成了�
 >    -   release: 代表生成release版本的二进制程序，该版本编译时，配置GCC高级别优化选项，去除内核调试代码，通常用于生成环境或性能测试环境。  
 >    -   debug：代表生成debug版本的二进制程序，该版本编译时，增加内核代码调试功能，通常用于开发自测环境。  
 >    -   memcheck：代表生成memcheck版本的二进制程序，该版本编译时，在debug版本基础上新增ASAN功能，通常用于定位内存问题。  
->2.  -3rd \[binarylibs path\] 为binarylibs的路径。缺省情况下，当前代码文件夹下存在binarylibs。如果将binarylibs移动到openGauss-server下，或在openGauss-server下创建了指向binarylibs的软链接，可不指定此选项。但需要注意其容易被git clean等操作删除。  
+>2.  -3rd \[binarylibs path\] 为binarylibs的路径。缺省情况下，会认为当前代码文件夹下存在binarylibs。因此如果将binarylibs移动到openGauss-server下，或在openGauss-server下创建了指向binarylibs的软链接，可不指定此选项。但需要注意其容易被git clean等操作删除。  
 >3.  此脚本每个参数选项都设置了缺省值，且数量并不多，依赖关系简单，因此使用时非常方便。如果用户需求值与缺省值不同，请根据实际情况进行设置。  
 

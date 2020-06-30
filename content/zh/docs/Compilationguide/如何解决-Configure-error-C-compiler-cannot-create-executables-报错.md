@@ -8,5 +8,5 @@
 
 报错原因：binarylibs文件不完整或者被损坏。
 
-解决办法：若binarylibs是通过开源软件构建而来，请重新构建开源第三方软件。若binarylibs是代码下载而来，可以进入binarylibs文件夹内, 执行命令**git pull && git lfs pull**下载缺失的文件。重新执行当前脚本或命令。
+解决办法：若binarylibs是通过开源软件构建而来，请重新构建开源第三方软件；若binarylibs是代码下载而来，请重新下载。最后重新执行当前脚本或命令。
 
