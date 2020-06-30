@@ -315,7 +315,6 @@ headless: true
         -   [性能日志]({{< relref "./docs/Administratorguide/性能日志.md" >}})
 
 -   [开发者指南]({{< relref "./docs/Developerguide/Developerguide.md" >}})
-    -   [关于本文档]({{< relref "./docs/Developerguide/关于本文档.md" >}})
     -   [概述]({{< relref "./docs/Developerguide/概述.md" >}})
         -   [数据库逻辑结构图]({{< relref "./docs/Developerguide/数据库逻辑结构图.md" >}})
         -   [数据查询请求处理过程]({{< relref "./docs/Developerguide/数据查询请求处理过程.md" >}})
@@ -530,7 +529,7 @@ headless: true
             -   [命令参考]({{< relref "./docs/Developerguide/命令参考-14.md" >}})
             -   [常见问题处理]({{< relref "./docs/Developerguide/常见问题处理-15.md" >}})
 
-	-   [内存表特性]({{< relref "./docs/Developerguide/内存表特性.md" >}})
+    -   [内存表特性]({{< relref "./docs/Developerguide/内存表特性.md" >}})
         -   [概述]({{< relref "./docs/Developerguide/概述-16.md" >}})
         -   [内存表技术介绍]({{< relref "./docs/Developerguide/内存表技术介绍.md" >}})
         -   [内存表典型应用]({{< relref "./docs/Developerguide/内存表典型应用.md" >}})
@@ -542,8 +541,8 @@ headless: true
             -   [ARM服务器优化指导]({{< relref "./docs/Developerguide/ARM服务器优化指导.md" >}})
         -   [MOT限制]({{< relref "./docs/Developerguide/MOT限制.md" >}})
         -   [常见问题处理]({{< relref "./docs/Developerguide/常见问题处理-17.md" >}})
-	
-	-   [性能调优]({{< relref "./docs/Developerguide/性能调优.md" >}})
+
+    -   [性能调优]({{< relref "./docs/Developerguide/性能调优.md" >}})
         -   [总体调优思路]({{< relref "./docs/Developerguide/总体调优思路.md" >}})
         -   [确定性能调优范围]({{< relref "./docs/Developerguide/确定性能调优范围.md" >}})
             -   [硬件瓶颈点分析]({{< relref "./docs/Developerguide/硬件瓶颈点分析.md" >}})
