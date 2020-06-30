@@ -53,6 +53,15 @@ openGauss-server/build.sh是编译过程中的重要脚本工具。其集成了�
 <td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="p13756143512476"><a name="p13756143512476"></a><a name="p13756143512476"></a>将代码编译结果压缩封装成安装包。</p>
 </td>
 </tr>
+<tr id="row1875543594716"><td class="cellrowborder" valign="top" width="14.84148414841484%" headers="mcps1.2.5.1.1 "><p id="p475523515475"><a name="p475523515475"></a><a name="p475523515475"></a>-nopt</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.87348734873487%" headers="mcps1.2.5.1.2 "><p id="p372131325815"><a name="p372131325815"></a><a name="p372131325815"></a>不使用此功能</p>
+</td>
+<td class="cellrowborder" valign="top" width="7520752075207521%" headers="mcps1.2.5.1.3 "><p id="p693619174418"><a name="p693619174418"></a><a name="p693619174418"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="p13756143512476"><a name="p13756143512476"></a><a name="p13756143512476"></a>如果使用此功能，则对鲲鹏平台的相关CPU不进行优化。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

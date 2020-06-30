@@ -53,13 +53,13 @@ The following table describes the parameters.
 <td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="p13756143512476"><a name="p13756143512476"></a><a name="p13756143512476"></a>Compresses the code compilation result into an installation package.</p>
 </td>
 </tr>
-<tr id="row16201151213311"><td class="cellrowborder" valign="top" width="14.84148414841484%" headers="mcps1.2.5.1.1 "><p id="p120115122038"><a name="p120115122038"></a><a name="p120115122038"></a>--no_om_adapt</p>
+<tr id="row16201151213311"><td class="cellrowborder" valign="top" width="14.84148414841484%" headers="mcps1.2.5.1.1 "><p id="p120115122038"><a name="p120115122038"></a><a name="p120115122038"></a>-nopt</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.87348734873487%" headers="mcps1.2.5.1.2 "><p id="p1320215121030"><a name="p1320215121030"></a><a name="p1320215121030"></a>Do not use this option.</p>
 </td>
 <td class="cellrowborder" valign="top" width="7.520752075207521%" headers="mcps1.2.5.1.3 "><p id="p1593610175420"><a name="p1593610175420"></a><a name="p1593610175420"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="p1720212121237"><a name="p1720212121237"></a><a name="p1720212121237"></a>The installation package does not adapt to the OM and takes effect only when the <strong id="b137411752193016"><a name="b137411752193016"></a><a name="b137411752193016"></a>-pkg</strong> option is added.</p>
+<td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="p1720212121237"><a name="p1720212121237"></a><a name="p1720212121237"></a>On Kunpeng platform, like 1616 version, without LSE optimized.</p>
 </td>
 </tr>
 </tbody>
