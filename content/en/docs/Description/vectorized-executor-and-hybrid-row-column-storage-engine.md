@@ -25,8 +25,7 @@ The hybrid row-column storage engine achieves higher data compression ratio \(co
 
 **Figure  2**  Hybrid row-column storage engine<a name="en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_fbb2af39ce12a419cb437829aaf1cf4fb"></a>  
 
-
-![](figures/opengauss行列混存引擎.png)
+<img src="figures/opengauss行列混存引擎.png" style="zoom:50%;" />
 
 The restrictions of the column storage engine are as follows:
 
