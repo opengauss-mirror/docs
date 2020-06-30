@@ -7,7 +7,7 @@ Column-store is recommended if a table contains many columns \(called a wide tab
 [Figure 1](#en-us_topic_0242724708_fig4487133722819)  shows the column-store model.
 
 **Figure  1**  Column-store<a name="en-us_topic_0242724708_fig4487133722819"></a>  
-![](figures/column-store.png "column-store")
+<img src="figures/column-store.png" title="column-store" style="zoom:50%;" />
 
 In a wide table containing a huge amount of data, a query usually only includes certain columns. In this case, the query performance of the row-store engine is poor. For example, a single table containing the data of a meteorological agency has 200 to 800 columns. Among these columns, only 10 are frequently accessed. In this case, a vectorized execution and column-store engine can significantly improve performance by saving storage space.
 
