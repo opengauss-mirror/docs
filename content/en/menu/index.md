@@ -5,18 +5,15 @@ headless: true
 -   [Terms of Use]({{< relref "./docs/Releasenotes/Terms of Use.md" >}})
 
 -   [Release Notes]({{< relref "./docs/Releasenotes/Releasenotes.md" >}})
-	-   [User Notice]({{< relref "./docs/Releasenotes/user-notice.md" >}})
-	-   [Version Introduction]({{< relref "./docs/Releasenotes/version-introduction.md" >}})
-	-   [Feature Introduction]({{< relref "./docs/Releasenotes/feature-introduction.md" >}})
-		-   [New Features]({{< relref "./docs/Releasenotes/new-features.md" >}})
-		-   [Optimized Features]({{< relref "./docs/Releasenotes/optimized-features.md" >}})
-	-   [Important Notes]({{< relref "./docs/Releasenotes/important-notes.md" >}})
-	-   [Known Issues]({{< relref "./docs/Releasenotes/known-issues.md" >}})
-	-   [Common Vulnerabilities and Exposures]({{< relref "./docs/Releasenotes/common-vulnerabilities-and-exposures.md" >}})
-	-   [Resolved Issues]({{< relref "./docs/Releasenotes/resolved-issues.md" >}})
-	-   [Source Code]({{< relref "./docs/Releasenotes/source-code.md" >}})
-	-   [Contribution]({{< relref "./docs/Releasenotes/contribution.md" >}})
-	-   [Acknowledgement]({{< relref "./docs/Releasenotes/acknowledgement.md" >}})
+    -   [User Notice]({{< relref "./docs/Releasenotes/user-notice.md" >}})
+    -   [Version Introduction]({{< relref "./docs/Releasenotes/version-introduction.md" >}})
+    -   [Feature Introduction]({{< relref "./docs/Releasenotes/feature-introduction.md" >}})
+    -   [Important Notes]({{< relref "./docs/Releasenotes/important-notes.md" >}})
+    -   [Known Issues]({{< relref "./docs/Releasenotes/known-issues.md" >}})
+    -   [Common Vulnerabilities and Exposures]({{< relref "./docs/Releasenotes/common-vulnerabilities-and-exposures.md" >}})
+    -   [Source Code]({{< relref "./docs/Releasenotes/source-code.md" >}})
+    -   [Contribution]({{< relref "./docs/Releasenotes/contribution.md" >}})
+    -   [Acknowledgement]({{< relref "./docs/Releasenotes/acknowledgement.md" >}})
 
 -   [Product Description]({{< relref "./docs/Description/Description.md" >}})
 	-   [Product Positioning]({{< relref "./docs/Description/product-positioning.md" >}})
@@ -84,7 +81,6 @@ headless: true
 			-   [Network Communication Security]({{< relref "./docs/Technicalwhitepaper/network-communication-security.md" >}})
 			-   [Row-Level Access Control]({{< relref "./docs/Technicalwhitepaper/row-level-access-control.md" >}})
 	-   [Technical Specifications]({{< relref "./docs/Technicalwhitepaper/technical-specifications.md" >}})
-	-   [Glossary]({{< relref "./docs/Technicalwhitepaper/glossary.md" >}})
 	
 -   [Compilation Guide]({{< relref "./docs/Compilationguide/Compilation.md" >}})
 	-   [Introduction]({{< relref "./docs/Compilationguide/introduction.md" >}})
@@ -140,7 +136,7 @@ headless: true
 			-   [Establishing Mutual Trust Manually]({{< relref "./docs/Quickstart/establishing-mutual-trust-manually.md" >}})
 			-   [Configuring OS Parameters]({{< relref "./docs/Quickstart/configuring-os-parameters.md" >}})
 		-   [Executing Installation]({{< relref "./docs/Quickstart/executing-installation.md" >}})
-		-   [\(Optional\" >}}) Setting the Standby Node to Readable]({{< relref "./docs/Quickstart/(optional)-setting-the-standby-node-to-readable.md" >}})
+		-   [\(Optional\) Setting the Standby Node to Readable]({{< relref "./docs/Quickstart/(optional)-setting-the-standby-node-to-readable.md" >}})
 		-   [Verifying the Installation]({{< relref "./docs/Quickstart/verifying-the-installation.md" >}})
 			-   [Checking the Health Status]({{< relref "./docs/Quickstart/checking-the-health-status.md" >}})
 		-   [Initial Configuration]({{< relref "./docs/Quickstart/initial-configuration.md" >}})
@@ -266,7 +262,7 @@ headless: true
 			-   [Establishing Mutual Trust Manually]({{< relref "./docs/Installation/establishing-mutual-trust-manually.md" >}})
 			-   [Configuring OS Parameters]({{< relref "./docs/Installation/configuring-os-parameters.md" >}})
 		-   [Executing Installation]({{< relref "./docs/Installation/executing-installation.md" >}})
-		-   [\(Optional\" >}}) Setting the Standby Node to Readable]({{< relref "./docs/Installation/(optional)-setting-the-standby-node-to-readable.md" >}})
+		-   [\(Optional\) Setting the Standby Node to Readable]({{< relref "./docs/Installation/(optional)-setting-the-standby-node-to-readable.md" >}})
 	-   [Verifying the Installation]({{< relref "./docs/Installation/verifying-the-installation.md" >}})
 		-   [Checking the Health Status]({{< relref "./docs/Installation/checking-the-health-status.md" >}})
 	-   [Initial Configuration]({{< relref "./docs/Installation/initial-configuration.md" >}})
@@ -274,7 +270,7 @@ headless: true
 	-   [Uninstalling the openGauss]({{< relref "./docs/Installation/uninstalling-the-opengauss.md" >}})
 		-   [Executing Uninstallation]({{< relref "./docs/Installation/executing-uninstallation.md" >}})
 		-   [Deleting Cluster Configurations]({{< relref "./docs/Installation/deleting-cluster-configurations.md" >}})
-		
+	
 -   [Administrator Guide]({{< relref "./docs/Administratorguide/Administratorguide.md" >}})
 	-   [Starting and Stopping openGauss]({{< relref "./docs/Administratorguide/starting-and-stopping-opengauss.md" >}})
 	-   [Querying Status]({{< relref "./docs/Administratorguide/querying-status.md" >}})
@@ -315,7 +311,7 @@ headless: true
 		-   [Audit Logs]({{< relref "./docs/Administratorguide/audit-logs.md" >}})
 		-   [WALs]({{< relref "./docs/Administratorguide/wals.md" >}})
 		-   [Performance Logs]({{< relref "./docs/Administratorguide/performance-logs.md" >}})
-		
+	
 -   [Developer Guide]({{< relref "./docs/Developerguide/Developerguide.md" >}})
 	-   [Overview]({{< relref "./docs/Developerguide/overview.md" >}})
 		-   [Database Logical Architecture]({{< relref "./docs/Developerguide/database-logical-architecture.md" >}})
@@ -1323,7 +1319,7 @@ headless: true
 			-   [Core Dump Occurs Due to Incorrect Settings of GUC Parameter log\_directory]({{< relref "./docs/Developerguide/core-dump-occurs-due-to-incorrect-settings-of-guc-parameter-log_directory.md" >}})
 		-   [When the TPC-C is running and a disk to be injected is full, the TPC-C stops responding.]({{< relref "./docs/Developerguide/when-the-tpc-c-is-running-and-a-disk-to-be-injected-is-full-the-tpc-c-stops-responding.md" >}})
 		-   [Standby Node in the Need Repair \(WAL\) State]({{< relref "./docs/Developerguide/standby-node-in-the-need-repair-(wal)-state.md" >}})
-		
+	
 -   [Tool Reference]({{< relref "./docs/Toolreference/Toolreference.md" >}})
 	-   [Tool Overview]({{< relref "./docs/Toolreference/tool-overview.md" >}})
 	-   [Client Tool]({{< relref "./docs/Toolreference/client-tool.md" >}})

@@ -5,7 +5,7 @@ This section describes the openGauss installation process.
 [Figure 1](#fig18264185162412)  shows the process for installing openGauss.
 
 **Figure  1**  Installation process<a name="fig18264185162412"></a>  
-![](figures/installation-process.png "installation-process")
+<img src="figures/installation-process.png" title="installation-process" style="zoom:25%;" />
 
 **Table  1**  Installation process description
 
