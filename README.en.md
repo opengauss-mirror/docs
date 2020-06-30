@@ -2,8 +2,7 @@
 
 ### Brief Introduction
 
-docs maintains openGauss documentations which is integrated by online website. Now we are under developing.
-you are welcome to join us.
+docs maintains openGauss documentations which is integrated by online website. Welcome to join us.
 
 ### Installation
 
@@ -32,17 +31,7 @@ Other language(zh) will serving on http://your-server-ip/zh
 docker rm -f `cat docs.pid` && rm -f docs.pid
 ```
 
-
-### Contribution
-
-1. Fork the repository
-2. Create Feature_xxx branch
-3. Commit your code
-4. Create Pull Request
-
-Please refer to [CONTRIBUTING](./CONTRIBUTING.md) for more guide.
-
 ### Get Help
 
 - IRC: #opengauss-docs
-- Mail: dev@opengauss.org
+- Mailling List: [docs@opengauss.org](https://mailweb.opengauss.org/postorius/lists/docs.opengauss.org/)
