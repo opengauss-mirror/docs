@@ -2,9 +2,9 @@
 
 MOT provide users with significant benefits in performance \(query and transaction latency\), scalability \(throughput and concurrency\) and in some cases cost \(high resource utilization\) :
 
--   **Low Latency – **Provides fast query and transaction response time
--   **High Throughput **– Supports spikes and constantly high user concurrency
--   **High Resource Utilization –**  Utilizes hardware to its full extent
+-   **Low Latency** –Provides fast query and transaction response time
+-   **High Throughput**– Supports spikes and constantly high user concurrency
+-   **High Resource Utilization**–  Utilizes hardware to its full extent
 
 Using MOT, applications are able to achieve more than three times \(3x\) higher throughput. For example, in our TPC-C benchmarks \(interactive transactions and synchronous logging\) performed both on Huawei Taishan Kunpeng-based \(ARM\) servers and on Dell x86 Intel Xeon-based servers, MOT provides throughput gains that vary from 2.5x on a 2-socket server to 3.7x on a 4-socket server, reaching 4.8M \(million\) tpmC on an ARM 4-socket 256-cores server. When compared with Oracle 12c the MOT throughput was 3.6x higher, reaching 3.92M vs 1.08M tpmC \(tested on an x86 4x24 core server, tested with asynchronous logging\).
 

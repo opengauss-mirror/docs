@@ -16,12 +16,6 @@ The following commands describe how to create MOT tables and how to convert exis
 
 -   **[Converting a Disk Table into a MOT Table](converting-a-disk-table-into-a-mot-table.md)**  
 
--   **[Query Native Compilation \[Orange\]](query-native-compilation-orange.md)**  
-
--   **[Retrying a aborted transaction \[Orange\]](retrying-a-aborted-transaction-orange.md)**  
-
--   **[External Support Tools \[Orange\]](external-support-tools-orange.md)**  
-
 -   **[SQL Coverage and Limitations](sql-coverage-and-limitations.md)**  
 
 
