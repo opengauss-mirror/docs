@@ -1,5 +1,7 @@
 # docs
 
+English | [简体中文](./README.md)
+
 ### Brief Introduction
 
 docs maintains openGauss documentations which is integrated by online website. Welcome to join us.
