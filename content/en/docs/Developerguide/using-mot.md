@@ -10,8 +10,6 @@ This****  chapter describes how to deploy, use and manage openGauss MOT. Using M
 
 -   **[Usage](usage.md)**  
 
--   **[Administration](administration.md)**  
-
 -   **[Sample Workloads](sample-workloads.md)**  
 
 

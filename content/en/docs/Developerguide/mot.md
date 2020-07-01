@@ -4,6 +4,5 @@
 
 -   **[Using MOT](using-mot.md)**  
 
--   **[Mot Concepts](mot-concepts.md)**  
 
 

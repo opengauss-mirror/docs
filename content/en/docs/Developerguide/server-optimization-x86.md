@@ -11,7 +11,7 @@ Generally, databases are bounded by the following components:
 
 -   **CPU –**  A faster CPU speeds up any CPU-bound database.
 -   **Disk –**  High-speed SSD/NVME speeds up any I/O-bound database.
--   **Network **– A faster network speeds up any  **SQL\*Net**-bound database.
+-   **Network**– A faster network speeds up any  **SQL\*Net**-bound database.
 
 In addition to the above, the following general-purpose server settings are used by default and may significantly affect a database’s performance.
 
