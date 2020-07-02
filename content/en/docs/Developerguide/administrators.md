@@ -2,7 +2,7 @@
 
 ## Initial Users<a name="en-us_topic_0237121100_section41994915210"></a>
 
-The account automatically generated during openGauss installation is called an initial user. An initial user is the system, monitoring, O&M, and security policy administrator who has the highest-level permissions in the system and can perform all operations. The username is the same as the name of the OS user who installs openGauss. The initial password is  **GaussDB@2012**. After the first login, change the initial password in time.
+The account automatically generated during openGauss installation is called an initial user. An initial user is the system, monitoring, O&M, and security policy administrator who has the highest-level permissions in the system and can perform all operations. The username is the same as the name of the OS user who installs openGauss，please refer to the *Installation Guide* for detail.
 
 An initial user bypasses all permission checks. You are advised to use an initial user as a database administrator only for database management other than service running.
 
