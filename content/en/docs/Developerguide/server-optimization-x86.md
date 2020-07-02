@@ -4,7 +4,7 @@ The following are optional settings for optimizing MOT database performance runn
 
 -   [BIOS](bios.md#EN-US_TOPIC_0257867355)
 -   [OS Environment Settings](os-environment-settings.md#EN-US_TOPIC_0257867356)
--   **Disk/SSD**
+-   [Disk/SSD](disk-ssd.md#EN-US_TOPIC_0257867357)
 -   [Network](network.md#EN-US_TOPIC_0257867358)
 
 Generally, databases are bounded by the following components:
