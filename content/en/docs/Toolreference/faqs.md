@@ -119,7 +119,7 @@
         >gsql: FATAL:  database "postgres" does not exist  
         >gsql -d postgres -U user1 -W gauss@789 -p 8000  
         >gsql: FATAL:  Invalid username/password,login denied.  
-        >```  
+        >```
 
 
 -   gsql: FATAL: sorry, too many clients already, active/non-active: 197/3.
@@ -181,8 +181,7 @@
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"><a name="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"></a>Run the following command to view the number of session connections that have been used by <strong id="en-us_topic_0237152147_b842352706143443"><a name="en-us_topic_0237152147_b842352706143443"></a><a name="en-us_topic_0237152147_b842352706143443"></a>USER1</strong>. <strong id="en-us_topic_0237152147_b842352706143450"><a name="en-us_topic_0237152147_b842352706143450"></a><a name="en-us_topic_0237152147_b842352706143450"></a>1</strong> indicates the number of session connections that have been used by <strong id="en-us_topic_0237152147_b842352706143459"><a name="en-us_topic_0237152147_b842352706143459"></a><a name="en-us_topic_0237152147_b842352706143459"></a>USER1</strong>.</p>
     <pre class="screen" id="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"><a name="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"></a>SELECT COUNT(*) FROM V$SESSION WHERE USERNAME='user1';
     
-     count
-    -------
+    ######  count
          1
     (1 row)</pre>
     </td>
@@ -212,16 +211,15 @@
     </td>
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a29bbd1ba1bcb4e7a890afdb3a00879c9"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a29bbd1ba1bcb4e7a890afdb3a00879c9"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a29bbd1ba1bcb4e7a890afdb3a00879c9"></a>Run the following command to view the number of session connections that have been used by all users:</p>
     <pre class="screen" id="en-us_topic_0237152147_en-us_topic_0059779356_s23771d20eb774fbd9d04a0a852f4605f"><a name="en-us_topic_0237152147_en-us_topic_0059779356_s23771d20eb774fbd9d04a0a852f4605f"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_s23771d20eb774fbd9d04a0a852f4605f"></a>SELECT COUNT(*) FROM V$SESSION;
-     
-     count
-    -------
+    
+    ######  count
          10
     (1 row)</pre>
     </td>
     </tr>
     </tbody>
     </table>
-
+    
 -   gsql: wait xxx.xxx.xxx.xxx:xxxx timeout expired
 
     When  **gsql**  initiates a connection request to the database, a 5-minute timeout period is used. If the database cannot correctly authenticate the client request and client identity within this period,  **gsql**  will exit the connection process for the current session, and will report the above error.

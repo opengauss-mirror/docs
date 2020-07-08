@@ -42,7 +42,7 @@ During the openGauss installation, you need to perform operations such as runnin
 1.  Create the file for executing the mutual trust script, and add the IP addresses of all the hosts in the openGauss to the file.
 
     ```
-    plat1:/opt/software/openGauss> vim hostfile
+    plat1:/opt/software/hostfile> vim hostfile
     192.168.0.1
     192.168.0.2
     192.168.0.3
@@ -52,7 +52,7 @@ During the openGauss installation, you need to perform operations such as runnin
 3.  Execute the following script to establish mutual trust:
 
     ```
-    plat1:/opt/software/openGauss/script# gs_sshexkey -f /opt/software/hostfile
+    plat1:/opt/software/openGauss/script# ./gs_sshexkey -f /opt/software/hostfile
     ```
 
     The  **/opt/software/hostfile**  file contains a list of the hosts. The list provides the IP addresses of all the hosts among which mutual trust needs to be established.
@@ -104,13 +104,13 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     2.  Generate the licensed file.
 
         ```
-        cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+        cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
         ```
 
         The following is an example:
 
         ```
-        plat1:~ # cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+        plat1:~ # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
         ```
 
 2.  Obtain the public keys of all the hosts among which mutual trust needs to be established, and write the public keys into the  **known\_hosts**  file on the local host. This step needs to be performed on the host where Step 1 is performed. You need to obtain the public keys of the  **plat1**,  **plat2**, and  **plat3**  hosts.
@@ -163,13 +163,13 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     1. Send the  **known\_hosts**  file to host  **plat2**. When  **Password:**  is displayed, enter the password for logging in to host  **plat2**.
 
     ```
-    scp -r .ssh plat2:~
+    scp -r ~/.ssh plat2:~
     ```
 
     The following is an example:
 
     ```
-    plat1:~ # scp -r .ssh plat2:~
+    plat1:~ # scp -r ~/.ssh plat2:~
     Password: 
     authorized_keys                 100%  796     0.8KB/s   00:00    
     id_rsa                          100% 1675     1.6KB/s   00:00    
@@ -180,13 +180,13 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     2. Send the  **known\_hosts**  file to host  **plat3**. When  **Password:**  is displayed, enter the password for logging in to host  **plat3**.
 
     ```
-    scp -r .ssh plat3:~
+    scp -r ~/.ssh plat3:~
     ```
 
     The following is an example:
 
     ```
-    plat1:~ # scp -r .ssh plat3:~
+    plat1:~ # scp -r ~/.ssh plat3:~
     Password: 
     authorized_keys                 100%  796     0.8KB/s   00:00    
     id_rsa                          100% 1675     1.6KB/s   00:00    
