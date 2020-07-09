@@ -10,7 +10,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >-   The current synchronous standby server is on the top of the list. If the current synchronous standby server is disconnected, it will be replaced immediately with the next-highest-priority standby server. Name of the next-highest-priority standby server is added to the list.  
 >-   The standby server name can be specified by setting the environment variable  **PGAPPNAME**.  
 
-**Value range**: a string.  **\***  indicates that synchronous replication is disabled.
+**Value range**: a string.  **\***  means to match the name of any standby machine that provides synchronous replication.
 
 **Default value**:  **\***
 

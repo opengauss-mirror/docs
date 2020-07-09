@@ -16,7 +16,7 @@
 ## Syntax<a name="en-us_topic_0237122110_en-us_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
 ```
-postgres=# CREATE [ OR REPLACE ] PROCEDURE procedure_name
+CREATE [ OR REPLACE ] PROCEDURE procedure_name
     [ ( {[ argmode ] [ argname ] argtype [ { DEFAULT | := | = } expression ]}[,...]) ]
     [
        { IMMUTABLE | STABLE | VOLATILE }
