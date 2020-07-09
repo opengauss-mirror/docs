@@ -1,8 +1,7 @@
-# MOT Table Limitations<a name="EN-US_TOPIC_0257867394"></a>
+# MOT Table Limitations<a name="EN-US_TOPIC_0260488089"></a>
 
 The following lists the functionality limitations of MOT tables:
 
--   Cross-storage engine query/transactions
 -   Partition by range
 -   AES encryption
 -   Stream operations

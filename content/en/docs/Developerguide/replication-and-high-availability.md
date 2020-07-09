@@ -1,12 +1,12 @@
-# Replication and High Availability<a name="EN-US_TOPIC_0257867404"></a>
+# Replication and High Availability<a name="EN-US_TOPIC_0260488110"></a>
 
-NIR
+Since MOT is integrated into openGauss and uses/supports its replication and high availability, both synchronous and asynchronous replication are supported out of the box.
 
-Since MOT is integrated into openGauss and uses its replication and high availability, both synchronous and asynchronous replication are supported out of the box.
+The openGauss gs\_ctl tool is used for availability control and to operate the cluster. This includes gs\_ctl switchover, gs\_ctl failover, gs\_ctl build and so on.
 
-To configure the replication and HA, refer to the relevant openGauss/GaussDB documentation.
+You may refer to the openGauss Tools Reference document for more information.
 
-MOT also supports HA as part of the envelope. The GaussDB gs\_ctl tool is used for availability control and to operate the cluster. This includes gs\_ctl switchover, gs\_ctl failover, gs\_ctl build and so on.
+## Configuring Replication and High Availability<a name="section1479561424411"></a>
 
-See the openGauss Tools Reference for more information.
+To configure the replication and high availability, refer to the relevant openGauss documentation.
 

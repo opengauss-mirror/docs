@@ -1,8 +1,8 @@
-# Prerequisite Check<a name="EN-US_TOPIC_0257867382"></a>
+# Prerequisite Check<a name="EN-US_TOPIC_0260488077"></a>
 
 Check that the schema of the disk table to be converted into a MOT table contains all required columns.
 
-Check whether the schema contains any unsupported column data types. For example, ntext\), as described in the  [Unsupported Data Types](unsupported-data-types.md#EN-US_TOPIC_0257867396)__section.
+Check whether the schema contains any unsupported column data types, as described in the  [Unsupported Data Types](unsupported-data-types.md)__section.
 
 If a specific column is not supported, then it is recommended to first create a secondary disk table with an updated schema. This schema is the same as the original table, except that all the unsupported types have been converted into supported types.
 

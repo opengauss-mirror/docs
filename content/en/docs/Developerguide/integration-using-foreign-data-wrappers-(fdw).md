@@ -1,4 +1,4 @@
-# Integration using Foreign Data Wrappers \(FDW\)<a name="EN-US_TOPIC_0257867425"></a>
+# Integration using Foreign Data Wrappers \(FDW\)<a name="EN-US_TOPIC_0260488144"></a>
 
 MOT complies with and leverages openGauss’s standard extensibility mechanism – Foreign Data Wrapper \(FDW\), as shown in the following diagram.
 
@@ -6,22 +6,22 @@ The PostgreSQL Foreign Data Wrapper \(FDW\) feature enables the creation of fore
 
 openGauss relies on the PostgreSQL Foreign Data Wrappers \(FDW\) and Index support so that SQL is entirely covered, including stored procedures, user defined functions, system functions calls.
 
-**Figure  1**  MOT Architecture<a name="en-us_topic_0257713287_fig664096195112"></a>  
+**Figure  1**  MOT Architecture<a name="fig133011803284"></a>  
 ![](figures/mot-architecture.png "mot-architecture")
 
 In the diagram above, the MOT engine is represented in green, while the existing openGauss \(based on Postgres\) components are represented in the top part of this diagram in blue. As you can see, the Foreign Data Wrapper \(FDW\) mediates between the MOT engine and the openGauss components.
 
-## MOT Related FDW Customizations<a name="en-us_topic_0257713287_section1427111916520"></a>
+MOT-Related FDW Customizations
 
-Integrating MOT through FDW enabled the reuse of the most upper layer openGauss functionality and therefore significantly shorten MOT’s time-to-market without compromising SQL coverage.
+Integrating MOT through FDW enables the reuse of the most upper layer openGauss functionality and therefore significantly shortened MOT’s time-to-market without compromising SQL coverage.
 
-However, the original FDW mechanism in openGauss was not designed for storage engine extensions, as lacked the following essential functionalities:
+However, the original FDW mechanism in openGauss was not designed for storage engine extensions, and therefore lackes the following essential functionalities.
 
 -   Index awareness of foreign tables to be calculated in the query planning phase
 -   Complete DDL interfaces
 -   Complete transaction lifecycle interfaces
 -   Checkpoint interfaces
--   Redo log interface
+-   Redo Log interface
 -   Recovery interfaces
 -   Vacuum interfaces
 

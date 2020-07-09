@@ -1,4 +1,4 @@
-# Unsupported Data Types<a name="EN-US_TOPIC_0257867396"></a>
+# Unsupported Data Types<a name="EN-US_TOPIC_0260488092"></a>
 
 -   UUID
 -   User-Defined Type \(UDF\)

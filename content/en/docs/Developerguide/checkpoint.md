@@ -1,30 +1,19 @@
-# CHECKPOINT<a name="EN-US_TOPIC_0242370553"></a>
+# Checkpoint<a name="EN-US_TOPIC_0260488173"></a>
 
-## Function<a name="en-us_topic_0237122089_en-us_topic_0059778147_s45168794daa74bc2a308ea3c943e0a93"></a>
+In openGauss the Checkpoints are points in the sequence of transactions at which it is guaranteed that the heap and index data files have been updated with all information written before the checkpoint.
 
-A checkpoint is a point in the transaction log sequence at which all data files have been updated to reflect the information in the log. All data files will be flushed to a disk.
+At checkpoint time, all dirty data pages are flushed to disk and a special checkpoint record is written to the log file.
 
-**CHECKPOINT**  forces a transaction log checkpoint. By default, WALs periodically specify checkpoints in a transaction log. You may use  **gs\_guc**  to specify run-time parameters  **checkpoint\_segments**  and  **checkpoint\_timeout**  to adjust the atomized checkpoint intervals.
+The MOT does not store its data like openGauss does and there is no dirty pages concept. The data is stored directly in memory.
 
-## Precautions<a name="en-us_topic_0237122089_en-us_topic_0059778147_s86cf086bf81043cba0f2133b169b333d"></a>
+For this reason we have researched and implemented the CALC algorithm described in the paper Low-Overhead Asynchronous Checkpointing in Main-Memory Database Systems, SIGMOND 2016 from Yale University.
 
--   Only a system administrator has the permission to call  **CHECKPOINT**.
--   **CHECKPOINT**  forces an immediate checkpoint when the related command is issued, without waiting for a regular checkpoint scheduled by the system.
+Reference to CALC footnote:
 
-## Syntax<a name="en-us_topic_0237122089_en-us_topic_0059778147_s9089f4a8029c4cdaaf4f52fc3153da03"></a>
+K. Ren, T. Diamond, D. J. Abadi, and A. Thomson. Low-overhead asynchronous checkpointing in main-memory database systems. In Proceedings of the 2016 ACM SIGMOD International Conference on Management of Data, 2016.
 
-```
-CHECKPOINT;
-```
+-   **[CALC Checkpoint algorithm: low overhead in memory and compute](calc-checkpoint-algorithm-low-overhead-in-memory-and-compute.md)**  
 
-## Parameter Description<a name="en-us_topic_0237122089_en-us_topic_0059778147_sf5626489e88940cda9697ac4b596920d"></a>
+-   **[Checkpoint Activation](checkpoint-activation.md)**  
 
-None
-
-## Examples<a name="en-us_topic_0237122089_en-us_topic_0059778147_s09b9f59580a44f179986ca468bb6eb57"></a>
-
-```
--- Set a checkpoint.
-postgres=# CHECKPOINT;
-```
 

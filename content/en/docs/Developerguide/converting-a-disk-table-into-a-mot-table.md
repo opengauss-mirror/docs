@@ -1,4 +1,4 @@
-# Converting a Disk Table into a MOT Table<a name="EN-US_TOPIC_0257867381"></a>
+# Converting a Disk Table into a MOT Table<a name="EN-US_TOPIC_0260488076"></a>
 
 The direct conversion of disk tables into MOT tables is not yet possible, meaning that no ALTER TABLE statement yet exists that converts a disk-based table into a MOT table.
 
@@ -9,5 +9,7 @@ The following describes how to manually perform a few steps in order to convert 
 -   **[Converting](converting.md)**  
 
 -   **[Conversion Example](conversion-example.md)**  
+
+-   **[Query Native Compilation](query-native-compilation.md)**  
 
 

@@ -1,26 +1,27 @@
-# Monitoring<a name="EN-US_TOPIC_0257867408"></a>
+# Monitoring<a name="EN-US_TOPIC_0260488118"></a>
 
-All syntax for monitoring of PG-based FDW tables is supported. This includes Table or Index size \(see below section I\).
+All syntax for monitoring of PG-based FDW tables is supported. This includes Table or Index sizes \(as described below\). In addition, special functions exist for monitoring MOT memory consumption, including MOT Global Memory, MOT Local Memory and a single client session.
 
-In addition, special MOT options exist for MOT sessions and MOT GLOBAL memory size monitoring.
+## Table and Index Sizes<a name="section591944362412"></a>
 
-## Table and Index Sizes<a name="en-us_topic_0257713258_section18217718250"></a>
+The size of tables and indexes can be monitored by querying****pg\_relation\_size.
 
-The size of tables and indexes can be monitored by querying****pg\_relation\_size. For example
+For example
 
-Data size:
+-   **Data size**
 
-```
-select pg_relation_size('customer');
-```
+    ```
+    select pg_relation_size('customer');
+    ```
 
-Index:
+-   **Index**
 
-```
-select pg_relation_size('customer_pkey');
-```
+    ```
+     select pg_relation_size('customer_pkey');
+    ```
 
-## MOT GLOBAL Memory Details<a name="en-us_topic_0257713258_section358441310266"></a>
+
+## MOT GLOBAL Memory Details<a name="section16627152642515"></a>
 
 Check the size of MOT global memory, which includes primarily the data and indexes.
 
@@ -51,9 +52,9 @@ numa_node  | reserved_size        | used_size
 Where
 
 -   -1 is the total memory.
--   0.7 are NUMA memory nodes.
+-   0..7 are NUMA memory nodes.
 
-## MOT LOCAL Memory Details<a name="en-us_topic_0257713258_section10167145442713"></a>
+## MOT LOCAL Memory Details<a name="section984331710263"></a>
 
 Check the size of MOT local memory, which includes session memory.
 
@@ -82,7 +83,7 @@ Where
 -   -1 is the total memory.
 -   0..7 are NUMA memory nodes.
 
-## Session Memory<a name="en-us_topic_0257713258_section2016112502284"></a>
+## Session Memory<a name="section79341122491"></a>
 
 Memory for session management is taken from the MOT local memory.
 
@@ -95,15 +96,21 @@ select * from mot_session_memory_detail();
 Result
 
 ```
-   sessid                | total_size | free_size | used_size
+sessid                   | total_size | free_size | used_size
 ---------------------------------––––––-+-----------+----------+----------
 1591175063.139755603855104 | 6291456    | 1800704   | 4490752
-Legend:
-total_size – is allocated for the session, free_size = not in use, used_size = In actual use;
  
 ```
 
-The following query enables a DBA to determine the state of local memory usage by the current session
+Legend
+
+**total\_size –**  is allocated for the session
+
+**free\_size –**  not in use
+
+**used\_size –**  In actual use
+
+The following query enables a DBA to determine the state of local memory used by the current session
 
 ```
 select * from mot_session_memory_detail() 
@@ -112,5 +119,5 @@ select * from mot_session_memory_detail()
 
 Result
 
-![](figures/en-us_image_0257839664.png)
+![](figures/en-us_image_0260591116.png)
 

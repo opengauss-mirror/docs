@@ -1,74 +1,74 @@
-# Errors Written the Log File<a name="EN-US_TOPIC_0257867410"></a>
+# Errors Written the Log File<a name="EN-US_TOPIC_0260488124"></a>
 
 All errors are logged in the database server log file. The following lists the errors that are written to the database server log file and are  **not**  returned to the user. The log is located in the data folder and named  **postgresql-DATE-TIME.log**.
 
 **Table  1**  Errors Written Only to the Log File
 
-<a name="en-us_topic_0257713264_table10216818"></a>
-<table><thead align="left"><tr id="en-us_topic_0257713264_row28694013"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0257713264_p42513748"><a name="en-us_topic_0257713264_p42513748"></a><a name="en-us_topic_0257713264_p42513748"></a>Message in the Log</p>
+<a name="table10582490"></a>
+<table><thead align="left"><tr id="row23677630"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p38839882"><a name="p38839882"></a><a name="p38839882"></a>Message in the Log</p>
 </th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="en-us_topic_0257713264_p21061526"><a name="en-us_topic_0257713264_p21061526"></a><a name="en-us_topic_0257713264_p21061526"></a>Error Internal Code</p>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p59022734"><a name="p59022734"></a><a name="p59022734"></a>Error Internal Code</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0257713264_row28262061"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p7525633"><a name="en-us_topic_0257713264_p7525633"></a><a name="en-us_topic_0257713264_p7525633"></a>Error code denoting success</p>
+<tbody><tr id="row16112179"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p30018145"><a name="p30018145"></a><a name="p30018145"></a>Error code denoting success</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p5596537"><a name="en-us_topic_0257713264_p5596537"></a><a name="en-us_topic_0257713264_p5596537"></a>MOT_NO_ERROR 0</p>
-</td>
-</tr>
-<tr id="en-us_topic_0257713264_row50368838"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p53344112"><a name="en-us_topic_0257713264_p53344112"></a><a name="en-us_topic_0257713264_p53344112"></a>Out of memory</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p25905843"><a name="en-us_topic_0257713264_p25905843"></a><a name="en-us_topic_0257713264_p25905843"></a>MOT_ERROR_OOM 1</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p15550655"><a name="p15550655"></a><a name="p15550655"></a>MOT_NO_ERROR 0</p>
 </td>
 </tr>
-<tr id="en-us_topic_0257713264_row31825997"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p27768935"><a name="en-us_topic_0257713264_p27768935"></a><a name="en-us_topic_0257713264_p27768935"></a>Invalid configuration</p>
+<tr id="row5738167"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p62138401"><a name="p62138401"></a><a name="p62138401"></a>Out of memory</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p34691245"><a name="en-us_topic_0257713264_p34691245"></a><a name="en-us_topic_0257713264_p34691245"></a>MOT_ERROR_INVALID_CFG 2</p>
-</td>
-</tr>
-<tr id="en-us_topic_0257713264_row43785757"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p56985425"><a name="en-us_topic_0257713264_p56985425"></a><a name="en-us_topic_0257713264_p56985425"></a>Invalid argument passed to function</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p52416742"><a name="en-us_topic_0257713264_p52416742"></a><a name="en-us_topic_0257713264_p52416742"></a>MOT_ERROR_INVALID_ARG 3</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p45711"><a name="p45711"></a><a name="p45711"></a>MOT_ERROR_OOM 1</p>
 </td>
 </tr>
-<tr id="en-us_topic_0257713264_row1988636"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p26861861"><a name="en-us_topic_0257713264_p26861861"></a><a name="en-us_topic_0257713264_p26861861"></a>System call failed</p>
+<tr id="row411403"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p33323707"><a name="p33323707"></a><a name="p33323707"></a>Invalid configuration</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p28327138"><a name="en-us_topic_0257713264_p28327138"></a><a name="en-us_topic_0257713264_p28327138"></a>MOT_ERROR_SYSTEM_FAILURE 4</p>
-</td>
-</tr>
-<tr id="en-us_topic_0257713264_row53617656"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p48062879"><a name="en-us_topic_0257713264_p48062879"></a><a name="en-us_topic_0257713264_p48062879"></a>Resource limit reached</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p779118"><a name="en-us_topic_0257713264_p779118"></a><a name="en-us_topic_0257713264_p779118"></a>MOT_ERROR_RESOURCE_LIMIT 5</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14865764"><a name="p14865764"></a><a name="p14865764"></a>MOT_ERROR_INVALID_CFG 2</p>
 </td>
 </tr>
-<tr id="en-us_topic_0257713264_row7012069"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p31106692"><a name="en-us_topic_0257713264_p31106692"></a><a name="en-us_topic_0257713264_p31106692"></a>Internal logic error</p>
+<tr id="row66683013"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p32614933"><a name="p32614933"></a><a name="p32614933"></a>Invalid argument passed to function</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p36614112"><a name="en-us_topic_0257713264_p36614112"></a><a name="en-us_topic_0257713264_p36614112"></a>MOT_ERROR_INTERNAL 6</p>
-</td>
-</tr>
-<tr id="en-us_topic_0257713264_row61091552"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p49468641"><a name="en-us_topic_0257713264_p49468641"></a><a name="en-us_topic_0257713264_p49468641"></a>Resource unavailable</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p47536979"><a name="en-us_topic_0257713264_p47536979"></a><a name="en-us_topic_0257713264_p47536979"></a>MOT_ERROR_RESOURCE_UNAVAILABLE 7</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p24563889"><a name="p24563889"></a><a name="p24563889"></a>MOT_ERROR_INVALID_ARG 3</p>
 </td>
 </tr>
-<tr id="en-us_topic_0257713264_row25179629"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p26284107"><a name="en-us_topic_0257713264_p26284107"></a><a name="en-us_topic_0257713264_p26284107"></a>Unique violation</p>
+<tr id="row19748416"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p56117850"><a name="p56117850"></a><a name="p56117850"></a>System call failed</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p48637933"><a name="en-us_topic_0257713264_p48637933"></a><a name="en-us_topic_0257713264_p48637933"></a>MOT_ERROR_UNIQUE_VIOLATION 8</p>
-</td>
-</tr>
-<tr id="en-us_topic_0257713264_row35088220"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p23573535"><a name="en-us_topic_0257713264_p23573535"></a><a name="en-us_topic_0257713264_p23573535"></a>Invalid memory allocation size</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p30408220"><a name="en-us_topic_0257713264_p30408220"></a><a name="en-us_topic_0257713264_p30408220"></a>MOT_ERROR_INVALID_MEMORY_SIZE 9</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p49252021"><a name="p49252021"></a><a name="p49252021"></a>MOT_ERROR_SYSTEM_FAILURE 4</p>
 </td>
 </tr>
-<tr id="en-us_topic_0257713264_row5238527"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p21667523"><a name="en-us_topic_0257713264_p21667523"></a><a name="en-us_topic_0257713264_p21667523"></a>Index out of range</p>
+<tr id="row40615010"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1481537"><a name="p1481537"></a><a name="p1481537"></a>Resource limit reached</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p10238932"><a name="en-us_topic_0257713264_p10238932"></a><a name="en-us_topic_0257713264_p10238932"></a>MOT_ERROR_INDEX_OUT_OF_RANGE 10</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p52895668"><a name="p52895668"></a><a name="p52895668"></a>MOT_ERROR_RESOURCE_LIMIT 5</p>
 </td>
 </tr>
-<tr id="en-us_topic_0257713264_row25041524"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0257713264_p15097570"><a name="en-us_topic_0257713264_p15097570"></a><a name="en-us_topic_0257713264_p15097570"></a>Error code unknown</p>
+<tr id="row6298969"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p40454470"><a name="p40454470"></a><a name="p40454470"></a>Internal logic error</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0257713264_p14943697"><a name="en-us_topic_0257713264_p14943697"></a><a name="en-us_topic_0257713264_p14943697"></a>MOT_ERROR_INVALID_STATE 11</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p55586619"><a name="p55586619"></a><a name="p55586619"></a>MOT_ERROR_INTERNAL 6</p>
+</td>
+</tr>
+<tr id="row30517529"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p56000750"><a name="p56000750"></a><a name="p56000750"></a>Resource unavailable</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p39766879"><a name="p39766879"></a><a name="p39766879"></a>MOT_ERROR_RESOURCE_UNAVAILABLE 7</p>
+</td>
+</tr>
+<tr id="row22357598"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66135046"><a name="p66135046"></a><a name="p66135046"></a>Unique violation</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p55338494"><a name="p55338494"></a><a name="p55338494"></a>MOT_ERROR_UNIQUE_VIOLATION 8</p>
+</td>
+</tr>
+<tr id="row28284399"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9335011"><a name="p9335011"></a><a name="p9335011"></a>Invalid memory allocation size</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17938427"><a name="p17938427"></a><a name="p17938427"></a>MOT_ERROR_INVALID_MEMORY_SIZE 9</p>
+</td>
+</tr>
+<tr id="row27228120"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p57994146"><a name="p57994146"></a><a name="p57994146"></a>Index out of range</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p67014277"><a name="p67014277"></a><a name="p67014277"></a>MOT_ERROR_INDEX_OUT_OF_RANGE 10</p>
+</td>
+</tr>
+<tr id="row66257583"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p65263977"><a name="p65263977"></a><a name="p65263977"></a>Error code unknown</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p51890767"><a name="p51890767"></a><a name="p51890767"></a>MOT_ERROR_INVALID_STATE 11</p>
 </td>
 </tr>
 </tbody>

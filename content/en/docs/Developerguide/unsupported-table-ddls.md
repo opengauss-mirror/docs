@@ -1,4 +1,4 @@
-# Unsupported Table DDLs<a name="EN-US_TOPIC_0257867395"></a>
+# Unsupported Table DDLs<a name="EN-US_TOPIC_0260488090"></a>
 
 -   Alter table
 -   Create table, like including

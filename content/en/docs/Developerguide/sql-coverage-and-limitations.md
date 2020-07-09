@@ -1,6 +1,6 @@
-# SQL Coverage and Limitations<a name="EN-US_TOPIC_0257867392"></a>
+# SQL Coverage and Limitations<a name="EN-US_TOPIC_0260488087"></a>
 
-MOT design enables almost complete coverage of SQL and future feature sets. For example, standard Postgres SQL is mostly supported, as well as standard database features, such as stored procedures and user defined functions. IS THIS CORRECT? GGG
+MOT design enables almost complete coverage of SQL and future feature sets. For example, standard Postgres SQL is mostly supported, as well common database features, such as stored procedures and user defined functions.
 
 -   **[Unsupported Features](unsupported-features.md)**  
 
