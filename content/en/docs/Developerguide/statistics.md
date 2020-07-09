@@ -1,51 +1,10 @@
-# STATISTICS<a name="EN-US_TOPIC_0257867369"></a>
+# Statistics<a name="EN-US_TOPIC_0260488117"></a>
 
--   enable\_stats = false
+Statistics are intended for performance analysis or debugging. It is uncommon to turn them ON in a production environment \(by default, they are OFF\). Statistics are primarily used by database developers and to a lesser degree by database users.
 
-    Configures periodic statistics for printing.
+There is some impact on performance, particularly on the server. Impact on the user is negligible.
 
--   print\_stats\_period = 10 minute
+The statistics are saved in the database server log. The log is located in the data folder and named  **postgresql-DATE-TIME.log**.
 
-    Configures the time period for printing a summary statistics report.
-
--   print\_full\_stats\_period = 1 hours
-
-    Configures the time period for printing a full statistics report.
-
--   WHAT COMMAND GOES HERE? GGG
-
-    The commands below configure the various sections included in the periodic statistics report. If none of them are configured, then the statistics report is suppressed.
-
--   enable\_log\_recovery\_stats = false
-
-    Log recovery statistics contain various Redo log recovery metrics.
-
--   enable\_db\_session\_stats = false
-
-    Database session statistics contain transaction events, such commits, rollbacks and so on.
-
--   enable\_network\_stats = false
-
-    Network statistics contain connection/disconnection events.
-
--   enable\_log\_stats = false
-
-    Log statistics contain details regarding the Redo log.
-
--   enable\_memory\_stats = false
-
-    Memory statistics contain memory-layer details.
-
--   **enable\_process\_stats = false**
-
-    Process statistics contain total memory and CPU consumption for the current process.
-
--   **enable\_system\_stats = false**
-
-    System statistics contain total memory and CPU consumption for the entire system.
-
--   **enable\_jit\_stats = false**
-
-    JIT statistics contain information regarding JIT query compilation and execution.
-
+Refer to  [Configuration Settings à Statistics](#_#_statistics)  for detailed configuration options. 
 

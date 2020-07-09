@@ -1,10 +1,10 @@
-# Conversion Example<a name="EN-US_TOPIC_0257867384"></a>
+# Conversion Example<a name="EN-US_TOPIC_0260578553"></a>
 
-Let’s say that you have a database name  **benchmarksql**  and a table named  **customer**  \(which is a disk-based table\) to be migrated it into a MOT table.
+Let's say that you have a database name  **benchmarksql**  and a table named  **customer**  \(which is a disk-based table\) to be migrated it into a MOT table.
 
-To migrate the customer table into a MOT table, perform the following –
+To migrate the customer table into a MOT table, perform the following 
 
--   Check your source table column types. Verify that all types are supported by MOT, refer to section Unsupported Data Types.
+1.  Check your source table column types. Verify that all types are supported by MOT, refer to section  _Unsupported Data Types_.
 
     ```
     benchmarksql-# \d+ customer
@@ -17,7 +17,7 @@ To migrate the customer table into a MOT table, perform the following –
     Options: orientation=row, compression=no
     ```
 
--   Check your source table data.
+2.  Check your source table data.
 
     ```
     benchmarksql=# select * from customer;
@@ -28,27 +28,43 @@ To migrate the customer table into a MOT table, perform the following –
     (2 rows)
     ```
 
--   Dump table data only by using  **gs\_dump**.
+3.  Dump table data only by using  **gs\_dump**.
 
     ```
     $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: dump database benchmarksql successfully
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: total time: 332  ms
-    Rename the source table name.
+    ```
+
+4.  Rename the source table name.
+
+    ```
     benchmarksql=# alter table customer rename to customer_bk;
     ALTER TABLE
-    Create the MOT table to be exactly the same as the source table.
+    ```
+
+5.  Create the MOT table to be exactly the same as the source table.
+
+    ```
     benchmarksql=# create foreign table customer (x int, y int);
     CREATE FOREIGN TABLE
     benchmarksql=# select * from customer;
      x | y
     ---+---
     (0 rows)
-    Import the source dump data into the new MOT table.
+    ```
+
+6.  Import the source dump data into the new MOT table.
+
+    ```
     $ gs_restore -C -d benchmarksql customer.dump
     restore operation successful
     total time: 24  ms
-    Check that the data was imported successfully.
+    ```
+
+7.  Check that the data was imported successfully.
+
+    ```
     benchmarksql=# select * from customer;
      x | y
     ---+---

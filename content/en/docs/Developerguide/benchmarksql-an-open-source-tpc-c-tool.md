@@ -1,14 +1,39 @@
-# BenchmarkSQL – An Open-Source TPC-C Tool<a name="EN-US_TOPIC_0257867417"></a>
+# BenchmarkSQL – An Open-Source TPC-C Tool<a name="EN-US_TOPIC_0260488131"></a>
 
-For example, to test TPCC, the  **BenchmarkSQL**  can****be used, as follows：
+For example, to test TPCC, the  **BenchmarkSQL**  can****be used, as follows –
 
--   Download  **benchmarksql**  from the following link –[https://osdn.net/frs/g\_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip](https://osdn.net/frs/g_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip).
--   Under run/sql.common, adjust the schema creation scripts to MOT syntax and avoid unsupported DDLs.
--   The following attachment is a sql.common that has already been adjusted for MOT. Replace the contents of the sql.common folder with the contents of the following attachment and execute.
+-   Download  **benchmarksql**  from the following link –  [https://osdn.net/frs/g\_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip](https://osdn.net/frs/g_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip)
+-   Under run/sql.common, adjust the schema creation scripts to MOT syntax and avoid unsupported DDLs.  Alternatively, the adjusted scripts can be directly downloaded from the following link –  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/sql.common.opengauss.mot.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/sql.common.opengauss.mot.tar.gz)
 
-![](figures/en-us_image_0257713450.png)
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>The benchmark test is executed using a standard interactive SQL mode without stored procedures.  
 
-This folder includes all the create tables and indexes with MOT syntax. The only difference is in Tables DDL – create FOREIGN table and drop FOREIGN table, which have an additional FOREIGN****keyword that specifies it as a MOT Table. In case the reader cannot download the embedded file, the required change should added to relevant files in the sql.common folder before their execution. IS THIS CORRECT? GGG
+## Setting Up and Running BenchmarkSQL<a name="section894720508114"></a>
 
-**Note**  – The benchmark test is executed using a standard interactive SQL mode without stored procedures.
+The following describes how to set up and run a BenchmarkSQL test:
+
+-   TPCC Configuration
+
+Configure TPC-C as follows:
+
+-   Full Transactions – 5
+-   Standard Workload Distribution:
+    -   newOrderWeight=45
+    -   paymentWeight=43
+    -   orderStatusWeight=4
+    -   deliveryWeight=4
+    -   stockLevelWeight=4
+
+-   Number of Warehouses – 512 Warehouses
+
+## Running the Benchmark<a name="section226214281328"></a>
+
+Anyone can run the benchmark by starting up the server and running the  **benchmarksql**  scripts.
+
+To run the benchmark
+
+1.  Go to the client folder and link  **sql.common**  to  **sql.common.opengauss.mot**  in order to test MOT.
+2.  Start up the database server.
+3.  Configure the  **props.pg**  file in the client.
+4.  Run the benchmark**.**
 
