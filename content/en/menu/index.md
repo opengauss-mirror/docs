@@ -616,7 +616,7 @@ headless: true
             -   [Scale-up Architecture]({{< relref "./docs/Developerguide/scale-up-architecture.md" >}})
                 -   [Technical Requirements]({{< relref "./docs/Developerguide/technical-requirements.md" >}})
                 -   [Design Principles]({{< relref "./docs/Developerguide/design-principles.md" >}})
-                -   [Integration using Foreign Data Wrappers \(FDW\)]({{< relref "./docs/Developerguide/integration-using-foreign-data-wrappers-(fdw).md)
+                -   [Integration using Foreign Data Wrappers \(FDW\)]({{< relref "./docs/Developerguide/integration-using-foreign-data-wrappers-(fdw).md" >}})
                 -   [Result – Linear Scale-up]({{< relref "./docs/Developerguide/result-linear-scale-up.md" >}})
             -   [Concurrency Control Mechanism]({{< relref "./docs/Developerguide/concurrency-control-mechanism.md" >}})
                 -   [Local and Global MOT Memory]({{< relref "./docs/Developerguide/local-and-global-mot-memory.md" >}})
