@@ -105,7 +105,7 @@
     1.  Connect to the database as the system administrator  **dbadmin**.
 
         ```
-        gsql -d postgres -U dbadmin -p 8000
+        gsql -d postgres -U dbadmin -p 15400
         ```
 
     2.  Grant the user with the permission to access the database.
@@ -115,9 +115,9 @@
         >![](public_sys-resources/icon-note.gif) **NOTE:**   
         >Actually, some common misoperations may also cause a database connection failure, for example, entering an incorrect database name, username, or password. Misoperations are accompanied with an error information on the client tool.  
         >```  
-        >gsql -d postgres -p 8000  
+        >gsql -d postgres -p 15400  
         >gsql: FATAL:  database "postgres" does not exist  
-        >gsql -d postgres -U user1 -W gauss@789 -p 8000  
+        >gsql -d postgres -U user1 -W gauss@789 -p 15400  
         >gsql: FATAL:  Invalid username/password,login denied.  
         >```
 

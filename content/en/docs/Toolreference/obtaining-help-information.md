@@ -45,10 +45,10 @@
 1.  Run the following command to connect to the database:
 
     ```
-    gsql -d postgres -p 8000
+    gsql -d postgres -p 15400
     ```
 
-    **postgres**  is the name of the database, and  **8000**  is the port number of the CN.
+    **postgres**  is the name of the database, and  **15400**  is the port number of the CN.
 
     If information similar to the following is displayed, the connection succeeds:
 
