@@ -29,8 +29,13 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     cd /tmp/tools
     tar -zxvf openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz
     ```
+5.  登录数据库主节点所在的服务器，拷贝数据库安装目录下的bin目录至客户端主机的“/tmp/tools”路径下。 
+    ```
+    scp -r /opt/install/app/bin root@10.10.0.30:/tmp/tools
+    ```
+    其中，/opt/install/app为clusterconfig.xml文件中配置的{gaussdbAppPath}路径，10.10.0.30为客户端主机IP。
 
-5.  设置环境变量。
+6.  登陆客户端主机，执行如下操作设置环境变量。
 
     打开“\~/.bashrc”文件。
 
@@ -45,13 +50,13 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH
     ```
 
-6.  使环境变量配置生效。
+7.  使环境变量配置生效。
 
     ```
     source ~/.bashrc
     ```
 
-7.  连接数据库。
+8.  连接数据库。
 
     数据库安装完成后，默认生成名称为postgres的数据库。第一次连接数据库时可以连接到此数据库。
 
