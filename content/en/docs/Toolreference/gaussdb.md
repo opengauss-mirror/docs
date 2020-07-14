@@ -155,7 +155,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row40407089"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p45114348"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p45114348"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p45114348"></a>-p PORT</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a>Specifies the TCP/IP port or local Unix domain socket file extension on which gaussdb is to listen for connections from client applications. The default port ID is <span id="en-us_topic_0237152404_text10283141215615"><a name="en-us_topic_0237152404_text10283141215615"></a><a name="en-us_topic_0237152404_text10283141215615"></a>5432</span>.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a>Specifies the TCP/IP port or local Unix domain socket file extension on which gaussdb is to listen for connections from client applications. The default port ID is <span id="en-us_topic_0237152404_text10283141215615"><a name="en-us_topic_0237152404_text10283141215615"></a><a name="en-us_topic_0237152404_text10283141215615"></a>15400</span>.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p748137203944"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p748137203944"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p748137203944"></a>A positive integer within the port range supported by the OS.</p>
 </td>
@@ -211,6 +211,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 </tbody>
 </table>
+
 
 Parameters described in  [Table 2](#en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_table56695537)  are used for debugging purposes, and in some cases for assisting in recovering severely damaged databases. Do not use these parameters for debugging if databases are providing services for applications.
 

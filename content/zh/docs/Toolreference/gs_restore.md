@@ -246,7 +246,7 @@ gs_restore [OPTION]... FILE
 >-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：  
 >```  
 >CREATE DATABASE foo WITH TEMPLATE template0;  
->```  
+>```
 >-   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入，或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。  
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -296,7 +296,7 @@ gs_restore [OPTION]... FILE
 特例：执行gsql程序，使用如下选项导入由gs\_dump/gs\_dumpall生成导出文件夹（纯文本格式）的MPPDB\_backup.sql文件到postgres数据库。
 
 ```
-gsql -d postgres -p 5432 -W Bigdata@123 -f /home/omm/test/MPPDB_backup.sql
+gsql -d postgres -p 15400 -W Bigdata@123 -f /home/omm/test/MPPDB_backup.sql
 SET
 SET
 SET
@@ -324,7 +324,7 @@ gs\_restore用来导入由gs\_dump生成的导出文件。
 示例1：执行gs\_restore，将导出的MPPDB\_backup.dmp文件（自定义归档格式）导入到postgres数据库。
 
 ```
-gs_restore -W Bigdata@123 backup/MPPDB_backup.dmp -p 5432 -d postgres
+gs_restore -W Bigdata@123 backup/MPPDB_backup.dmp -p 15400 -d postgres
 gs_restore: restore operation successful
 gs_restore: total time: 13053  ms
 ```
@@ -332,7 +332,7 @@ gs_restore: total time: 13053  ms
 示例2：执行gs\_restore，将导出的MPPDB\_backup.tar文件（tar格式）导入到postgres数据库。
 
 ```
-gs_restore backup/MPPDB_backup.tar -p 5432 -d postgres 
+gs_restore backup/MPPDB_backup.tar -p 15400 -d postgres 
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21203  ms
 ```
@@ -340,7 +340,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21203  ms
 示例3：执行gs\_restore，将导出的MPPDB\_backup文件（目录格式）导入到postgres数据库。
 
 ```
-gs_restore backup/MPPDB_backup -p 5432 -d postgres
+gs_restore backup/MPPDB_backup -p 15400 -d postgres
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21003  ms
 ```
@@ -348,7 +348,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21003  ms
 示例4：执行gs\_restore，使用自定义归档格式的MPPDB\_backup.dmp文件来进行如下导入操作。 导入PUBLIC模式下所有对象的定义和数据。在导入时会先删除已经存在的对象，如果原对象存在跨模式的依赖则需手工强制干预。
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -n PUBLIC
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -n PUBLIC
 gs_restore: [archiver (db)] Error while PROCESSING TOC:
 gs_restore: [archiver (db)] Error from TOC entry 313; 1259 337399 TABLE table1 gaussdba
 gs_restore: [archiver (db)] could not execute query: ERROR:  cannot drop table table1 because other objects depend on it
@@ -360,7 +360,7 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.
 手工删除依赖，导入完成后再重新创建。
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -n PUBLIC
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -n PUBLIC
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 2203  ms
 ```
@@ -368,7 +368,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 2203  ms
 示例5：执行gs\_restore，使用自定义归档格式的MPPDB\_backup.dmp文件来进行如下导入操作。只导入PUBLIC模式下表table1的定义。
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -s -n PUBLIC -t table1
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -s -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21000  ms
 ```
@@ -376,7 +376,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21000  ms
 示例6：执行gs\_restore，使用自定义归档格式的MPPDB\_backup.dmp文件来进行如下导入操作。只导入PUBLIC模式下表table1的数据。
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -a -n PUBLIC -t table1
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -a -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 ```

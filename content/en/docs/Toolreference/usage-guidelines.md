@@ -17,28 +17,28 @@ You can use the  **gsql**  command to connect to the local database service or r
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >If the database name is not specified, the default database name generated during initialization will be used. If the database username is not specified, the current OS username will be used by default. If a variable does not belong to any parameter \(such as  **-d**  and  **-U**\), and  **-d**  is not specified, the variable will be used as the database name. If  **-d**  is specified but  **-U**  is not specified, the variable will be used as the database username.  
 
-    Example 1: Connect to the 8000 port of the local postgres database as user  **omm**.
+    Example 1: Connect to the 15400 port of the local postgres database as user  **omm**.
 
     ```
-    gsql -d postgres -p 8000
+    gsql -d postgres -p 15400
     ```
 
-    Example 2: Connect to the 8000 port of the remote postgres database as user  **jack**.
+    Example 2: Connect to the 15400 port of the remote postgres database as user  **jack**.
 
     ```
-    gsql -h 10.180.123.163 -d postgres -U jack -p 8000
+    gsql -h 10.180.123.163 -d postgres -U jack -p 15400
     ```
 
     Example 3:  _postgres_  and  _omm_  do not belong to any parameter, and they are used as the database name and the username, respectively.
 
     ```
-    gsql postgres omm -p 8000
+    gsql postgres omm -p 15400
     ```
 
     **Equals**
 
     ```
-    gsql -d postgres -U omm -p 8000
+    gsql -d postgres -U omm -p 15400
     ```
 
     For details about the  **gsql**  parameters, see  [Command Reference](en-us_topic_0237152145.md).
