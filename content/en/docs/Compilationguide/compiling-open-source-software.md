@@ -20,12 +20,12 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p10665104719506"><a name="p10665104719506"></a><a name="p10665104719506"></a>3.6</p>
 </td>
 </tr>
-<tr id="row197487916204"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p107489922013"><a name="p107489922013"></a><a name="p107489922013"></a>python3-dev</p>
+<tr id="row197487916204"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p107489922013"><a name="p107489922013"></a><a name="p107489922013"></a>python3-devel</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2748179172017"><a name="p2748179172017"></a><a name="p2748179172017"></a>3.x</p>
 </td>
 </tr>
-<tr id="row36571916172017"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18657151610204"><a name="p18657151610204"></a><a name="p18657151610204"></a>pam-devl</p>
+<tr id="row36571916172017"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18657151610204"><a name="p18657151610204"></a><a name="p18657151610204"></a>pam-devel</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16578161209"><a name="p16578161209"></a><a name="p16578161209"></a>1.1.8-1.3.1</p>
 </td>
@@ -35,7 +35,7 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0179161651913"><a name="p0179161651913"></a><a name="p0179161651913"></a>5.9-13.20130511</p>
 </td>
 </tr>
-<tr id="row8539145811555"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p154012589557"><a name="p154012589557"></a><a name="p154012589557"></a>libffi-dev</p>
+<tr id="row8539145811555"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p154012589557"><a name="p154012589557"></a><a name="p154012589557"></a>libffi-devel</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p115401158175510"><a name="p115401158175510"></a><a name="p115401158175510"></a>3.1</p>
 </td>

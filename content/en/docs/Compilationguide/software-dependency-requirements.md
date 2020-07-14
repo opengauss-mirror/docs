@@ -33,7 +33,7 @@ You are advised to use the default installation packages of the following depend
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0179161651913"><a name="p0179161651913"></a><a name="p0179161651913"></a>5.9-13.20130511</p>
 </td>
 </tr>
-<tr id="row10179416191912"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1117941618198"><a name="p1117941618198"></a><a name="p1117941618198"></a>glibc.devel</p>
+<tr id="row10179416191912"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1117941618198"><a name="p1117941618198"></a><a name="p1117941618198"></a>glibc-devel</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5179191616190"><a name="p5179191616190"></a><a name="p5179191616190"></a>2.17-111</p>
 </td>
