@@ -201,8 +201,8 @@ Before using the prediction function, you need to use OpenSSL to generate certif
 3.  Install the  **predictor/install/requirements\(-gpu\).txt**  tool.
 
     ```
-    With GPU: pip install requirements-gpu.txt
-    Without GPU: pip install requirements.txt
+    With GPU: pip install -r requirements-gpu.txt
+    Without GPU: pip install -r requirements.txt
     ```
 
 
