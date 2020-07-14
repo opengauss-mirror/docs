@@ -81,9 +81,10 @@ The information in bold is only an example. You can replace it as required. Each
 <tr id="en-us_topic_0241802596_row68397259423"><td class="cellrowborder" valign="top" width="39.910000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434665_en-us_topic_0059782055_p25356817202410"><a name="en-us_topic_0085434665_en-us_topic_0059782055_p25356817202410"></a><a name="en-us_topic_0085434665_en-us_topic_0059782055_p25356817202410"></a>Standby database node</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.089999999999996%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0085434665_en-us_topic_0059782055_p40636326202410"><a name="en-us_topic_0085434665_en-us_topic_0059782055_p40636326202410"></a><a name="en-us_topic_0085434665_en-us_topic_0059782055_p40636326202410"></a>/opt/huawei/install/data/slaveX</p>
-<p id="en-us_topic_0085434665_en-us_topic_0059782055_p3208132202410"><a name="en-us_topic_0085434665_en-us_topic_0059782055_p3208132202410"></a><a name="en-us_topic_0085434665_en-us_topic_0059782055_p3208132202410"></a><strong id="b1730145962613"><a name="b1730145962613"></a><a name="b1730145962613"></a>xxx</strong> indicates the name of the current standby database node.</p>
+<p id="en-us_topic_0085434665_en-us_topic_0059782055_p3208132202410"><a name="en-us_topic_0085434665_en-us_topic_0059782055_p3208132202410"></a><a name="en-us_topic_0085434665_en-us_topic_0059782055_p3208132202410"></a><strong id="b1730145962613"><a name="b1730145962613"></a><a name="b1730145962613"></a>slaveX</strong> indicates the name of the current standby database node.</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
