@@ -27,8 +27,8 @@ Conditional expressions include the following types:
     postgres=# INSERT INTO tpcds.case_when_t1 VALUES (1), (2), (3);
     
     postgres=# SELECT * FROM tpcds.case_when_t1;
-     a 
-    ---
+    cw_col1 
+    ------
      1
      2
      3
