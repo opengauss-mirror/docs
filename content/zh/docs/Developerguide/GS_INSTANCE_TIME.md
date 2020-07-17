@@ -2,16 +2,16 @@
 
 提供当前集节点下的各种时间消耗信息，主要分为以下类型:
 
--   DB\_TIME: 作业在多核下的有效时间花费。
--   CPU\_TIME：CPU时间的消耗。
--   EXECUTION\_TIME：执行器内花费的时间。
--   PARSE\_TIME：SQL解析的时间花费。
--   PLAN\_TIME：生成Plan的时间花费。
--   REWRITE\_TIME：SQL重写的时间消耗。
--   PL\_EXECUTION\_TIME ：plpgsql（存储过程）的执行时间.
--   PL\_COMPILATION\_TIME：plpgsql（存储过程）编译时间。
+-   DB\_TIME: 作业在多核下的有效时间花销。
+-   CPU\_TIME：CPU的时间花销。
+-   EXECUTION\_TIME：执行器内的时间花销。
+-   PARSE\_TIME：SQL解析的时间花销。
+-   PLAN\_TIME：生成Plan的时间花销。
+-   REWRITE\_TIME：SQL重写的时间花销。
+-   PL\_EXECUTION\_TIME ：plpgsql（存储过程）执行的时间花销。
+-   PL\_COMPILATION\_TIME：plpgsql（存储过程）编译的时间花销。
 -   NET\_SEND\_TIME：网络上的时间花销。
--   DATA\_IO\_TIME：IO时间上的花销。
+-   DATA\_IO\_TIME：IO上的时间花销。
 
 **表 1**  GS\_INSTANCE\_TIME字段
 
