@@ -61,7 +61,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **remote\_write**  indicates that synchronization logs of a standby server are written to disk.
 -   **remote\_receive**  indicates that the standby server receives logs.
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 ## wal\_sync\_method<a name="en-us_topic_0237124707_en-us_topic_0059778393_s9fc8bf6fcd2b474d894fc8ee7385fe86"></a>
 
