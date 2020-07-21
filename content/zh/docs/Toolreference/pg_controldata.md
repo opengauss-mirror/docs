@@ -13,7 +13,7 @@ pg\_controldata工具用来显示数据库目录下control文件的信息。
 -   查看control文件信息
 
     ```
-    pg_controldata [DATADIR]
+    pg_controldata DATADIR
     ```
 
 -   显示版本号信息
@@ -25,8 +25,7 @@ pg\_controldata工具用来显示数据库目录下control文件的信息。
 -   显示帮助信息
 
     ```
-    pg_controldata 
-    -? | --help
+    pg_controldata -? | --help
     ```
 
 

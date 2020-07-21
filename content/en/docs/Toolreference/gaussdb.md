@@ -464,7 +464,7 @@ Use  **-D**  to provide the correct path of the database directory for the serve
 2.  Run the following command to start gaussdb with a specified port, for example, 1234:
 
     ```
-    gaussdb --singlenode -p -D data_dir
+    gaussdb --single_node -p -D data_dir
     ```
 
     To connect to this server using gsql, specify this port with the -p option:
