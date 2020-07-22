@@ -173,7 +173,7 @@ headless: true
         -   [文件位置]({{< relref "./docs/Quickstart/文件位置.md" >}})
         -   [连接和认证]({{< relref "./docs/Quickstart/连接和认证.md" >}})
             -   [连接设置]({{< relref "./docs/Quickstart/连接设置.md" >}})
-            -   [安全和认证（postgresql.conf）]({{< relref "./docs/Quickstart/安全和认证（postgresql-conf）.md" >}})
+            -   [安全和认证_postgresql.conf]({{< relref "./docs/Quickstart/安全和认证_postgresql-conf.md" >}})
             -   [通信库参数]({{< relref "./docs/Quickstart/通信库参数.md" >}})
         -   [资源消耗]({{< relref "./docs/Quickstart/资源消耗.md" >}})
             -   [内存]({{< relref "./docs/Quickstart/内存.md" >}})
