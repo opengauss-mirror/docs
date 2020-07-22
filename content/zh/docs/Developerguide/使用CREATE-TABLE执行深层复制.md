@@ -11,7 +11,7 @@
 1.  使用CREATE TABLE语句创建表customer\_t的副本customer\_t\_copy。
 
     ```
-    postgres=# CREATE TABLE customer_t_copy
+    CREATE TABLE customer_t_copy
     ( c_customer_sk             integer,   
       c_customer_id             char(5),    
       c_first_name              char(6),    
@@ -22,19 +22,19 @@
 2.  使用INSERT INTO…SELECT语句向副本填充原始表中的数据。
 
     ```
-    postgres=# INSERT INTO customer_t_copy (SELECT * FROM customer_t);
+    INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
 3.  删除原始表。
 
     ```
-    postgres=# DROP TABLE customer_t;
+    DROP TABLE customer_t;
     ```
 
 4.  使用ALTER TABLE语句将副本重命名为原始表名称。
 
     ```
-    postgres=# ALTER TABLE customer_t_copy RENAME TO customer_t;
+    ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
 
 

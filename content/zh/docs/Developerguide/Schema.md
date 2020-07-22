@@ -19,19 +19,19 @@ Schema又称作模式。通过管理Schema，允许多个用户使用同一数�
 -   要查看Schema所有者，请对系统表PG\_NAMESPACE和PG\_USER执行如下关联查询。语句中的schema\_name请替换为实际要查找的Schema名称。
 
     ```
-    postgres=# SELECT s.nspname,u.usename AS nspowner FROM pg_namespace s, pg_user u WHERE nspname='schema_name' AND s.nspowner = u.usesysid;
+    SELECT s.nspname,u.usename AS nspowner FROM pg_namespace s, pg_user u WHERE nspname='schema_name' AND s.nspowner = u.usesysid;
     ```
 
 -   要查看所有Schema的列表，请查询PG\_NAMESPACE系统表。
 
     ```
-    postgres=# SELECT * FROM pg_namespace;
+    SELECT * FROM pg_namespace;
     ```
 
 -   要查看属于某Schema下的表列表，请查询系统视图PG\_TABLES。例如，以下查询会返回Schema PG\_CATALOG中的表列表。
 
     ```
-    postgres=# SELECT distinct(tablename),schemaname from pg_tables where schemaname = 'pg_catalog';
+    SELECT distinct(tablename),schemaname from pg_tables where schemaname = 'pg_catalog';
     ```
 
 

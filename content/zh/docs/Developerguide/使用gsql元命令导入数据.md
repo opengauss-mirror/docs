@@ -155,14 +155,14 @@ DWS的gsql工具提供了元命令\\copy进行数据导入。
 1.  创建目标表a。
 
     ```
-    postgres=# CREATE TABLE a(a int);
+    CREATE TABLE a(a int);
     ```
 
 2.  导入数据。
     1.  从stdin拷贝数据到目标表a。
 
         ```
-        postgres=# \copy a from stdin;
+        \copy a from stdin;
         ```
 
         出现\>\>符号提示时，输入数据，输入\\.时结束。
@@ -192,7 +192,7 @@ DWS的gsql工具提供了元命令\\copy进行数据导入。
         -   在导入过程中，若数据源文件比外表定义的列数多，则忽略行尾多出来的列。
 
         ```
-        postgres=# \copy a FROM '/home/omm/2.csv' WITH (delimiter',',IGNORE_EXTRA_DATA 'on');
+        \copy a FROM '/home/omm/2.csv' WITH (delimiter',',IGNORE_EXTRA_DATA 'on');
         ```
 
 

@@ -7,7 +7,7 @@
     以表product\_info为例，VACUUM FULL命令如下：
 
     ```
-    postgres=# VACUUM FULL product_info
+    VACUUM FULL product_info
     ```
 
     ```

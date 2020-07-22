@@ -42,13 +42,13 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》中”安装openGauss \> 执行安装”章节，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
 
     ```
-    postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
+    ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
     ```
 
 4.  退出数据库。
 
     ```
-    postgres=# \q
+    \q
     ```
 
 
@@ -110,5 +110,6 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。  
     >-   禁止使用omm用户进行远程连接数据库。  
+
 
 
