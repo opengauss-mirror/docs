@@ -1,4 +1,4 @@
-# 在docker上安装openguass
+# 在docker上安装openGuass
 Docker构建文件，方便DevOps用户的安装、配置和环境设置。. 查找更多的信息请看 [opengauss 官方文档](https://opengauss.org/zh/docs/1.0.0/docs/Quickstart/Quickstart.html).
 
 ## 怎么创建和运行
@@ -10,8 +10,8 @@ Docker构建文件，方便DevOps用户的安装、配置和环境设置。. 查
 
 `buildDockerImage.sh` 是一个方便以用的shell脚本，提供MD5的检查，对于初学者来说更容易上手.
 
-### 创建opengauss docker 镜像
-**重要:** 你要提供opengauss二进制安装包，放到 `dockerfiles/<version>` 文件夹. 不需要解压. 二进制包可以从 [opengauss.org](https://opengauss.org/en/download.html)下载,  确保有正确的yum源. 如果你手动解压安装包会导致运行失败!
+### 创建openGauss docker 镜像
+**重要:** 你要提供openGauss二进制安装包，放到 `dockerfiles/<version>` 文件夹. 不需要解压. 二进制包可以从 [opengauss.org](https://opengauss.org/en/download.html)下载,  确保有正确的yum源. 如果你手动解压安装包会导致运行失败!
 
 在创建镜像前请确保提供了正确的二进制安装包并把他们放到了正确的文件夹 进入 **dockerfiles** 文件夹  运行 **buildDockerImage.sh** 脚本:
 
@@ -52,5 +52,5 @@ $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword
   -v /opengauss:/var/lib/opengauss opengauss:1.0.0
 ```
 
-### 以后要做的事
-主备安装
+### 主备方式容器化安装
+后续更新
