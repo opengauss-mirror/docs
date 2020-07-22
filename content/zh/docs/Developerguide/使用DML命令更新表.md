@@ -7,7 +7,7 @@ openGauss支持标准的数据库操作语言（DML）命令，对表进行更�
 假设存在表customer\_t，表结构如下：
 
 ```
-postgres=# CREATE TABLE customer_t
+CREATE TABLE customer_t
 ( c_customer_sk             integer,   
   c_customer_id             char(5),    
   c_first_name              char(6),    
@@ -21,13 +21,13 @@ postgres=# CREATE TABLE customer_t
     -   向表customer\_t中插入一行。
 
         ```
-        postgres=# INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES (3769, 5, 'Grace','White');
+        INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES (3769, 5, 'Grace','White');
         ```
 
     -   向表customer\_t中插入多行数据。
 
         ```
-        postgres=# INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES    
+        INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES    
         (6885, 1, 'Joes', 'Hunter'),    
         (4321, 2, 'Lily','Carter'),    
         (9527, 3, 'James', 'Cook'),
@@ -40,7 +40,7 @@ postgres=# CREATE TABLE customer_t
 -   使用UPDATE更新表中数据。修改字段c\_customer\_id值为0。
 
     ```
-    postgres=# UPDATE customer_t SET c_customer_id = 0;
+    UPDATE customer_t SET c_customer_id = 0;
     ```
 
     更多关于UPDATE的使用方法，请参见[UPDATE](UPDATE.md)。
@@ -50,7 +50,7 @@ postgres=# CREATE TABLE customer_t
     可以使用WHERE子句指定需要删除的行，若不指定即删除表中所有的行，只保留数据结构。
 
     ```
-    postgres=# DELETE FROM customer_t WHERE c_last_name = 'Baker';
+    DELETE FROM customer_t WHERE c_last_name = 'Baker';
     ```
 
     更多关于DELETE的使用方法，请参见[DELETE](DELETE.md)。
@@ -58,7 +58,7 @@ postgres=# CREATE TABLE customer_t
 -   使用TRUNCATE命令快速从表中删除所有的行。
 
     ```
-    postgres=# TRUNCATE TABLE customer_t;
+    TRUNCATE TABLE customer_t;
     ```
 
     更多关于TRUNCATE的使用方法，请参见[TRUNCATE](TRUNCATE.md)。

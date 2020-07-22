@@ -20,7 +20,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令来创建一个schema。
 
         ```
-        postgres=# CREATE SCHEMA myschema;
+        CREATE SCHEMA myschema;
         ```
 
         当结果显示为如下信息，则表示成功创建一个名为myschema的schema。
@@ -34,7 +34,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令在创建schema时指定owner。
 
         ```
-        postgres=# CREATE SCHEMA myschema AUTHORIZATION omm;
+        CREATE SCHEMA myschema AUTHORIZATION omm;
         ```
 
         当结果显示为如下信息，则表示成功创建一个属于omm用户，名为myschema的schema。

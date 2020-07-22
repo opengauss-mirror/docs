@@ -7,25 +7,25 @@
 1.  使用CREATE TABLE LIKE语句创建表customer\_t的副本customer\_t\_copy。
 
     ```
-    postgres=# CREATE TABLE customer_t_copy (LIKE customer_t);
+    CREATE TABLE customer_t_copy (LIKE customer_t);
     ```
 
 2.  使用INSERT INTO…SELECT语句向副本填充原始表中的数据。
 
     ```
-    postgres=# INSERT INTO customer_t_copy (SELECT * FROM customer_t);
+    INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
 3.  删除原始表。
 
     ```
-    postgres=# DROP TABLE customer_t;
+    DROP TABLE customer_t;
     ```
 
 4.  使用ALTER TABLE语句将副本重命名为原始表名称。
 
     ```
-    postgres=# ALTER TABLE customer_t_copy RENAME TO customer_t;
+    ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
 
 
