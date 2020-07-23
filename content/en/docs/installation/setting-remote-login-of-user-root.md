@@ -34,7 +34,7 @@ During the openGauss installation, the user  **root**  is required for remote lo
     2.  Comment out the line where  **Banner**  is located.
 
         ```
-        #Banner /etc/ssh/welcome.msg
+        #Banner XXXX
         ```
 
     3.  Run the  **:wq**  command to save the modification and exit.
