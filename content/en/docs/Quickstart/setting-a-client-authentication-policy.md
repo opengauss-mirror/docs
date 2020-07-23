@@ -1,6 +1,6 @@
 # Setting a Client Authentication Policy<a name="EN-US_TOPIC_0241704250"></a>
 
-The current default values for parameters in the openGauss configuration file \(**pg\_hba.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**. For more configurations, see the product documentation.
+The current default values for parameters in the openGauss configuration file \(**pg\_hba.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**. For more configurations, see the Intsallation Guide.
 
 ## Syntax<a name="en-us_topic_0241234206_section19924142981011"></a>
 
@@ -43,12 +43,13 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
 
     When this parameter is set to  **ALL**, all the instances in the host are to be set.
 
--   **-D**:
+- **-D**:
 
-    Specifies the openGauss instance path of the commands to be run. When the  **encrypt**  command is used, this parameter indicates the path for storing the generated password file.
+  Specifies the openGauss instance path of the commands to be run. When the  **encrypt**  command is used, this parameter indicates the path for storing the generated password file.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   **-D**  cannot be used together with  **-I**.  
+  >![](public_sys-resources/icon-note.gif) **NOTE:**   
+  >
+  >-   **-D**  cannot be used together with  **-I**.  
 
 -   **-h **_host-auth-policy_:
 
