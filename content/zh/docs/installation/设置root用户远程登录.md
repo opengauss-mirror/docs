@@ -34,7 +34,7 @@
     2.  修改Banner配置，注释掉“Banner”所在的行。
 
         ```
-        #Banner /etc/ssh/welcome.msg
+        #Banner XXXX
         ```
 
     3.  执行**:wq**保存并退出编辑页面。
