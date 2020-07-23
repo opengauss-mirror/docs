@@ -9,7 +9,7 @@ openGauss and MOT have been tested on the following many-core systems with excel
 Our TPC-C benchmark dated June 2020 tested an openGauss MOT database on a Taishan 2480 server. A 4-socket ARM/Kunpeng server, achieved throughput of 4.8 M tpmC. The following graph shows the near-linear nature of the results, meaning that it shows a significant increase in performance correlating to the increase of the quantity of cores
 
 **Figure  1**  TPC-C on ARM \(256 Cores\)The following is an additional example that shows a test on an x86-based server also showing CPU utilization<a name="fig12858113316316"></a>  
-![](figures/tpc-c-on-arm-(256-cores)the-following-is-an-additional-example-that-shows-a-test-on-an-x86-based-ser.png "tpc-c-on-arm-(256-cores)the-following-is-an-additional-example-that-shows-a-test-on-an-x86-based-ser")
+![](figures/tpc-c-on-arm-(256-cores)the-following-is-an-additional-example-that-shows-a-test-on-an-x86-based-ser.png)
 
 **Figure  2**  tpmC vs CPU Usage<a name="fig158901264323"></a>  
 ![](figures/resource-utilization-performance-benchmarks.png "resource-utilization-performance-benchmarks")
