@@ -10,23 +10,23 @@ Read the  [General Guidelines](general-guidelines.md)section and then review and
 
 The following topics describe each section in the mot.conf file and the settings that it contains, as well as the default value of each.
 
-[REDO LOG \(MOT\)](redo-log-(mot).md)
+[REDO LOG \(MOT\)](redo-log_mot.md)
 
-[CHECKPOINT \(MOT\)](checkpoint-(mot).md)
+[CHECKPOINT \(MOT\)](checkpoint_mot.md)
 
 [RECOVERY](#_#_recovery)
 
-[STATISTICS \(MOT\)](statistics-(mot).md)
+[STATISTICS \(MOT\)](statistics_mot.md)
 
-[ERROR LOG \(MOT\)](error-log-(mot).md)
+[ERROR LOG \(MOT\)](error-log_mot.md)
 
 [MEMORY](#_#_memory)
 
-[GARBAGE COLLECTION \(MOT\)](garbage-collection-(mot).md)
+[GARBAGE COLLECTION \(MOT\)](garbage-collection_mot.md)
 
-[JIT \(MOT\)](jit-(mot).md)
+[JIT \(MOT\)](jit_mot.md)
 
-[STORAGE \(MOT\)](storage-(mot).md)
+[STORAGE \(MOT)\)](storage_mot.md)
 
 [Default MOT.conf](default-mot-conf.md)
 
