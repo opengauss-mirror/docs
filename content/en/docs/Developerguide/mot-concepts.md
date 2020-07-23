@@ -20,7 +20,7 @@ This****  chapter describes how openGauss MOT is designed and how it works. It a
 
 -   **[Recovery](recovery-23.md)**  
 
--   **[Query Native Compilation \(JIT\)](query-native-compilation-(jit).md)**  
+-   **[Query Native Compilation \(JIT\)](query-native-compilation_jit.md)**  
 
 -   **[Scale-out Distributed Database](scale-out-distributed-database.md)**  
 
