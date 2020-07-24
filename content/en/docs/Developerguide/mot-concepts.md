@@ -1,6 +1,6 @@
 # Mot Concepts<a name="EN-US_TOPIC_0257867421"></a>
 
-This****  chapter describes how openGauss MOT is designed and how it works. It also sheds light on its advanced features and capabilities and how to use them. This chapter serves to educate the reader about various technical details of how MOT operates, details of important MOT features and innovative differentiators. The content of this chapter may be useful for decision-making regarding MOT’s suitability to specific application requirements and for using and managing it most efficiently.
+This chapter describes how openGauss MOT is designed and how it works. It also sheds light on its advanced features and capabilities and how to use them. This chapter serves to educate the reader about various technical details of how MOT operates, details of important MOT features and innovative differentiators. The content of this chapter may be useful for decision-making regarding MOT’s suitability to specific application requirements and for using and managing it most efficiently.
 
 \[Orange\]
 
