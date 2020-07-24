@@ -14,13 +14,13 @@ The following topics describe each section in the mot.conf file and the settings
 
 [CHECKPOINT \(MOT\)](checkpoint_mot.md)
 
-[RECOVERY](#_#_recovery)
+[RECOVERY \(MOT\)](recovery_mot.md)
 
 [STATISTICS \(MOT\)](statistics_mot.md)
 
 [ERROR LOG \(MOT\)](error-log_mot.md)
 
-[MEMORY](#_#_memory)
+[MEMORY \(MOT\)](memory_mot.md)
 
 [GARBAGE COLLECTION \(MOT\)](garbage-collection_mot.md)
 
