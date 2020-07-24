@@ -313,7 +313,7 @@ headless: true
 		-   [Performance Logs]({{< relref "./docs/Administratorguide/performance-logs.md" >}})
 	
 -   [Developer Guide]({{< relref "./docs/Developerguide/Developerguide.md" >}})
-	-   [Overview]({{< relref "./docs/Developerguide/overview.md" >}})
+	-   [Overview]({{< relref "./docs/Developerguide/overview-60.md" >}})
 		-   [Database Logical Architecture]({{< relref "./docs/Developerguide/database-logical-architecture.md" >}})
 		-   [Query Request Handling Process]({{< relref "./docs/Developerguide/query-request-handling-process.md" >}})
 		-   [Managing Transactions]({{< relref "./docs/Developerguide/managing-transactions.md" >}})
