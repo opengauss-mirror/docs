@@ -12,7 +12,7 @@ For example – If the same table row is modified 100 times, then 100 entries ar
 
 ## Configuring Checkpoints<a name="section76216248432"></a>
 
-Checkpoint configuration is performed in the CHECKPOINT; section of the mot.conf file. You may refer to the  [CHECKPOINT \(MOT\)](checkpoint-(mot).md)section of this user manual for a description of these configuration parameters.
+Checkpoint configuration is performed in the CHECKPOINT; section of the mot.conf file. You may refer to the  [CHECKPOINT \(MOT\)](checkpoint_mot.md)section of this user manual for a description of these configuration parameters.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >In a production deployment, the value must be TRUE  \#enable\_Checkpoint = true. A FALSE value can only be used for testing.  
