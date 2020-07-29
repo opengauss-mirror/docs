@@ -40,15 +40,15 @@ postgres=#  explain (analyze on, costs off) select * from store_sales_row where 
 
 In this example, the full table scan filters much data and returns 3360 records. After an index has been created on the  **ss\_sold\_date\_sk**  column, the scanning efficiency is significantly boosted from 3.6s to 13 ms by using  **IndexScan**.
 
-2: If NestLoop is used for joining tables with a large number of rows, the join may take a long time. In the following example, NestLoop takes 181s. If  **enable\_mergejoin**  is set to  **off**  to disable merge join and  **enable\_nestloop**  is set to  **off**  to disable NestLoop so that the optimizer selects hash join, the join takes more than 200 ms.
+2. If NestLoop is used for joining tables with a large number of rows, the join may take a long time. In the following example, NestLoop takes 181s. If  **enable\_mergejoin**  is set to  **off**  to disable merge join and  **enable\_nestloop**  is set to  **off**  to disable NestLoop so that the optimizer selects hash join, the join takes more than 200 ms.
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整1）.png)
+![](figures/12-4-5-4-算子级调优_示例错乱调整1.png)
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整2）.png)
+![](figures/12-4-5-4-算子级调优_示例错乱调整2.png)
 
 3. Generally, query performance can be improved by selecting  **HashAgg**. If  **Sort**  and  **GroupAgg**  are used for a large result set, you need to set  **enable\_sort**  to  **off**.  **HashAgg**  consumes less time than  **Sort**  and  **GroupAgg**.
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整示例3）.png)
+![](figures/12-4-5-4-算子级调优_示例错乱调整示例3.png)
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整示例3-1）.png)
+![](figures/12-4-5-4-算子级调优_示例错乱调整示例3-1.png)
 
