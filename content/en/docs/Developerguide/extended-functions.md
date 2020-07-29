@@ -26,16 +26,17 @@ The following table lists the extended functions supported by openGauss. These f
 </tr>
 <tr id="en-us_topic_0237122203_en-us_topic_0075058739_row38230543183938"><td class="cellrowborder" rowspan="2" valign="top" width="13.3%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0237122203_en-us_topic_0075058739_p58170845184312"><a name="en-us_topic_0237122203_en-us_topic_0075058739_p58170845184312"></a><a name="en-us_topic_0237122203_en-us_topic_0075058739_p58170845184312"></a>Trigger function</p>
 </td>
-<td class="cellrowborder" valign="top" width="37.53%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0237122203_en-us_topic_0075058739_p25576862183938"><a name="en-us_topic_0237122203_en-us_topic_0075058739_p25576862183938"></a><a name="en-us_topic_0237122203_en-us_topic_0075058739_p25576862183938"></a>pg_get_triggerdef(trigger_oid)</p>
+<td class="cellrowborder" valign="top" width="37.53%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0237122203_en-us_topic_0075058739_p25576862183938"><a name="en-us_topic_0237122203_en-us_topic_0075058739_p25576862183938"></a><a name="en-us_topic_0237122203_en-us_topic_0075058739_p25576862183938"></a>pg_get_triggerdef(oid)</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.17%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0237122203_en-us_topic_0075058739_p58459942183938"><a name="en-us_topic_0237122203_en-us_topic_0075058739_p58459942183938"></a><a name="en-us_topic_0237122203_en-us_topic_0075058739_p58459942183938"></a>Gets <strong id="b196358237020"><a name="b196358237020"></a><a name="b196358237020"></a>CREATE</strong> [ <strong id="b66449231202"><a name="b66449231202"></a><a name="b66449231202"></a>CONSTRAINT</strong> ] <strong id="b56455231017"><a name="b56455231017"></a><a name="b56455231017"></a>TRIGGER</strong> command for triggers.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237122203_en-us_topic_0075058739_row26617459183938"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0237122203_en-us_topic_0075058739_p3169557183938"><a name="en-us_topic_0237122203_en-us_topic_0075058739_p3169557183938"></a><a name="en-us_topic_0237122203_en-us_topic_0075058739_p3169557183938"></a>pg_get_triggerdef(trigger_oid, pretty_bool)</p>
+<tr id="en-us_topic_0237122203_en-us_topic_0075058739_row26617459183938"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0237122203_en-us_topic_0075058739_p3169557183938"><a name="en-us_topic_0237122203_en-us_topic_0075058739_p3169557183938"></a><a name="en-us_topic_0237122203_en-us_topic_0075058739_p3169557183938"></a>pg_get_triggerdef(oid, boolean)</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0237122203_en-us_topic_0075058739_p55407592183938"><a name="en-us_topic_0237122203_en-us_topic_0075058739_p55407592183938"></a><a name="en-us_topic_0237122203_en-us_topic_0075058739_p55407592183938"></a>Gets <strong id="b136072390018"><a name="b136072390018"></a><a name="b136072390018"></a>CREATE</strong> [ <strong id="b46165391104"><a name="b46165391104"></a><a name="b46165391104"></a>CONSTRAINT</strong> ] <strong id="b161714394011"><a name="b161714394011"></a><a name="b161714394011"></a>TRIGGER</strong> command for triggers.</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 

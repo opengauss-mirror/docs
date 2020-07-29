@@ -251,7 +251,7 @@
     (1 row)
     ```
 
--   to\_clob\(char/nchar/varchar/nvarchar/varchar2/nvarchar2/text/raw\)
+-   to\_clob\(char/nchar/varchar/varchar2/nvarchar2/text/raw\)
 
     Description: Convert the RAW type or text character set type CHAR/NCHAR/VARCHAR/VARCHAR2/NVARCHAR2/TEXT into the CLOB type.
 

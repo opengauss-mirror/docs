@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0245374715"></a>
 
-视图包含各节点本事务内函数执行的统信息。查询视图必须具有monadmin权限。
+视图包含各节点本事务内函数执行的统计信息。查询视图必须具有monadmin权限。
 
 **表 1**  GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS字段
 
