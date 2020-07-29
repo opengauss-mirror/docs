@@ -73,7 +73,11 @@ REPLICATION\_STAT用于描述日志同步状态信息，如发起端发送日志
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122708_p7498191974118"><a name="zh-cn_topic_0237122708_p7498191974118"></a><a name="zh-cn_topic_0237122708_p7498191974118"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.64999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122708_p249861917416"><a name="zh-cn_topic_0237122708_p249861917416"></a><a name="zh-cn_topic_0237122708_p249861917416"></a>日志复制的状态（追赶状态，还是一致的流状态）。</p>
+<td class="cellrowborder" valign="top" width="50.64999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122708_p249861917416"><a name="zh-cn_topic_0237122708_p249861917416"></a><a name="zh-cn_topic_0237122708_p249861917416"></a>日志复制的状态:
+<ul>
+<li>追赶状态。</li>
+<li>一致的流状态。</li>
+</ul></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122708_row19498141915416"><td class="cellrowborder" valign="top" width="30.91%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122708_p174981919114117"><a name="zh-cn_topic_0237122708_p174981919114117"></a><a name="zh-cn_topic_0237122708_p174981919114117"></a>sender_sent_location</p>
@@ -115,9 +119,15 @@ REPLICATION\_STAT用于描述日志同步状态信息，如发起端发送日志
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122708_p850191918412"><a name="zh-cn_topic_0237122708_p850191918412"></a><a name="zh-cn_topic_0237122708_p850191918412"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.64999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122708_p11501191920414"><a name="zh-cn_topic_0237122708_p11501191920414"></a><a name="zh-cn_topic_0237122708_p11501191920414"></a>同步状态（异步复制，同步复制，还是潜在同步者）。</p>
+<td class="cellrowborder" valign="top" width="50.64999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122708_p11501191920414"><a name="zh-cn_topic_0237122708_p11501191920414"></a><a name="zh-cn_topic_0237122708_p11501191920414"></a>同步状态：
+<ul>
+<li>异步复制。</li>
+<li>同步复制。</li>
+<li>潜在同步者。</li></ul>
+</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 

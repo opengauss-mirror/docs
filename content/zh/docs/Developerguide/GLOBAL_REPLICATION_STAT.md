@@ -80,7 +80,7 @@ GLOBAL\_REPLICATION\_STAT视图用于获得各节点描述日志同步状态信�
 </td>
 <td class="cellrowborder" valign="top" width="25.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122709_p2535183018426"><a name="zh-cn_topic_0237122709_p2535183018426"></a><a name="zh-cn_topic_0237122709_p2535183018426"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.54%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122709_p1535123034210"><a name="zh-cn_topic_0237122709_p1535123034210"></a><a name="zh-cn_topic_0237122709_p1535123034210"></a>日志复制的状态（追赶状态，还是一致的流状态）。</p>
+    <td class="cellrowborder" valign="top" width="49.54%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122709_p1535123034210"><a name="zh-cn_topic_0237122709_p1535123034210"></a><a name="zh-cn_topic_0237122709_p1535123034210"></a>日志复制的状态：<ul><li>追赶状态。</li><li>一致的流状态。</li></ul></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122709_row16536153094213"><td class="cellrowborder" valign="top" width="25.319999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122709_p153612309429"><a name="zh-cn_topic_0237122709_p153612309429"></a><a name="zh-cn_topic_0237122709_p153612309429"></a>sender_sent_location</p>
@@ -128,4 +128,5 @@ GLOBAL\_REPLICATION\_STAT视图用于获得各节点描述日志同步状态信�
 </tr>
 </tbody>
 </table>
+
 
