@@ -828,6 +828,7 @@ headless: true
             -   [SET SESSION AUTHORIZATION]({{< relref "./docs/Developerguide/SET-SESSION-AUTHORIZATION.md" >}})
             -   [SET TRANSACTION]({{< relref "./docs/Developerguide/SET-TRANSACTION.md" >}})
             -   [SHOW]({{< relref "./docs/Developerguide/SHOW.md" >}})
+            -   [SHUTDOWN]({{< relref "./docs/Developerguide/SHUTDOWN.md" >}})
             -   [START TRANSACTION]({{< relref "./docs/Developerguide/START-TRANSACTION.md" >}})
             -   [TRUNCATE]({{< relref "./docs/Developerguide/TRUNCATE.md" >}})
             -   [UPDATE]({{< relref "./docs/Developerguide/UPDATE.md" >}})
@@ -1293,8 +1294,8 @@ headless: true
             -   [磁盘满故障引起的core问题]({{< relref "./docs/Developerguide/磁盘满故障引起的core问题.md" >}})
             -   [GUC参数log\_directory设置不正确引起的core问题]({{< relref "./docs/Developerguide/GUC参数log_directory设置不正确引起的core问题.md" >}})
         -   [TPCC运行时，注入磁盘满故障，TPCC卡住的问题]({{< relref "./docs/Developerguide/TPCC运行时-注入磁盘满故障-TPCC卡住的问题.md" >}})
-        -   [备机处于need repair\(WAL\)状态问题]({{< relref "./docs/Developerguide/备机处于need-repair(WAL)状态问题.md" >}})
-
+    -   [备机处于need repair\(WAL\)状态问题]({{< relref "./docs/Developerguide/备机处于need-repair(WAL)状态问题.md" >}})
+    
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/Toolreference/客户端工具.md" >}})
