@@ -163,7 +163,7 @@
     -- Create a table.
     postgres=# CREATE TABLE blob_tb(b blob,id int);
     -- Insert data.
-    postgres=# INSERT INTO date_tb VALUES (empty_blob(),1);
+    postgres=# INSERT INTO blob_tb VALUES (empty_blob(),1);
     --Delete the table.
     postgres=# DROP TABLE blob_tb;
     ```
