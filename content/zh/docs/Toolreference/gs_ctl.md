@@ -112,7 +112,6 @@ gs\_ctl参数可分为如下几类：
     </tbody>
     </table>
 
-
 **表 2**  公共参数
 
 <a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68"></a>
@@ -281,7 +280,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="31.81681831816818%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a904c92157deb4efc9c8d31a00c2a2731"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a904c92157deb4efc9c8d31a00c2a2731"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a904c92157deb4efc9c8d31a00c2a2731"></a>声明关闭模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p742860814249"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p742860814249"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p742860814249"></a>mode的取值：</p>
-<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"><li>smart：单机模式下主机立即断开，同fast。</li><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被关闭。</li><li>immediate：强行关闭，在下次重新启动的时候将导致故障恢复。</li></ul>
+<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ue13279906755488aac7fce36fb412625"</li><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被关闭。</li><li>immediate：强行关闭，在下次重新启动的时候将导致故障恢复。</li></ul>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad5673b7093f647b683169b8540d62b5c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad5673b7093f647b683169b8540d62b5c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad5673b7093f647b683169b8540d62b5c"></a>默认值：fast</p>
 </td>
 </tr>
