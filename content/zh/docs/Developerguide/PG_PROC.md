@@ -76,20 +76,12 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a3cb9a260cc4c4c2d84634028f21ad0f7"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a3cb9a260cc4c4c2d84634028f21ad0f7"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a3cb9a260cc4c4c2d84634028f21ad0f7"></a>此函数的简化调用方式。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ra49c4d289c1744408e407969bcbfc47d"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a1db3969aeb1647028ed62098435e07d3"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a1db3969aeb1647028ed62098435e07d3"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a1db3969aeb1647028ed62098435e07d3"></a>proisagg</p>
+<tr id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ra49c4d289c1744408e407969bcbfc47d"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a1db3969aeb1647028ed62098435e07d3"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a1db3969aeb1647028ed62098435e07d3"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a1db3969aeb1647028ed62098435e07d3"></a>prokind</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"></a><span id="zh-cn_topic_0237122308_text14936183112816"><a name="zh-cn_topic_0237122308_text14936183112816"></a><a name="zh-cn_topic_0237122308_text14936183112816"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"></a><span id="zh-cn_topic_0237122308_text14936183112816"><a name="zh-cn_topic_0237122308_text14936183112816"></a><a name="zh-cn_topic_0237122308_text14936183112816"></a>"char"</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"></a>函数是聚集函数。</p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"></a>函数类型，'f'代表普通函数，'p'代表存储过程，'a'代表聚集函数，'w'代表窗口函数。</p>
 </td>
-</tr>
-<tr id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_rf21ead19ce7b4e30b19c8875f62cddd6"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a19c069d3dbb74c5594ef687c31ed327c"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a19c069d3dbb74c5594ef687c31ed327c"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a19c069d3dbb74c5594ef687c31ed327c"></a>proiswindow</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a189c23ec67e4414395af97bfa913a4c6"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a189c23ec67e4414395af97bfa913a4c6"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a189c23ec67e4414395af97bfa913a4c6"></a><span id="zh-cn_topic_0237122308_text1561585132817"><a name="zh-cn_topic_0237122308_text1561585132817"></a><a name="zh-cn_topic_0237122308_text1561585132817"></a>Boolean</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_aea5822047a5a443f9bf2ebba64c37804"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_aea5822047a5a443f9bf2ebba64c37804"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_aea5822047a5a443f9bf2ebba64c37804"></a>函数是窗口函数。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_r86d27248134d4094a93856ead3ec3b11"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2887ec1245484caa9ed70fcbb251d63f"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2887ec1245484caa9ed70fcbb251d63f"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2887ec1245484caa9ed70fcbb251d63f"></a>prosecdef</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a592c679153924bd6af313f466e342b57"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a592c679153924bd6af313f466e342b57"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a592c679153924bd6af313f466e342b57"></a><span id="zh-cn_topic_0237122308_text183551964288"><a name="zh-cn_topic_0237122308_text183551964288"></a><a name="zh-cn_topic_0237122308_text183551964288"></a>Boolean</span></p>
@@ -233,4 +225,5 @@ PG\_PROC系统表存储函数或过程的信息。
 </tr>
 </tbody>
 </table>
+
 
