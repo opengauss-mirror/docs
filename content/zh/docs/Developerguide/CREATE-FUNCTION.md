@@ -108,7 +108,7 @@
 
     函数返回值的数据类型。
 
-    如果存在OUT或IN OUT参数，可以省略RETURNS子句。如果存在，该子句必须和输出参数所表示的结果类型一致：如果有多个输出参数，则为RECORD，否则与单个输出参数的类型相同。
+    如果存在OUT或INOUT参数，可以省略RETURNS子句。如果存在，该子句必须和输出参数所表示的结果类型一致：如果有多个输出参数，则为RECORD，否则与单个输出参数的类型相同。
 
     SETOF修饰词表示该函数将返回一个集合，而不是单独一项。
 
@@ -266,7 +266,7 @@ postgres=# CREATE FUNCTION func_dup_sql(in int, out f1 int, out f2 text)
 
 postgres=# SELECT * FROM func_dup_sql(42);
 
---计算两个整数的和，并返回结果。若果输入为null，则返回null。
+--计算两个整数的和，并返回结果。如果输入为null，则返回null。
 postgres=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
 AS
 BEGIN 
