@@ -1316,7 +1316,7 @@ headless: true
 		-   [File Location]({{< relref "./docs/Developerguide/file-location.md" >}})
 		-   [Connection and Authentication]({{< relref "./docs/Developerguide/connection-and-authentication.md" >}})
 			-   [Connection Settings]({{< relref "./docs/Developerguide/connection-settings.md" >}})
-			-   [Security and Authentication \(postgresql.conf\)]({{< relref "./docs/Developerguide/security-and-authentication-(postgresql-conf).md" >}})
+			-   [Security and Authentication \(postgresql.conf\)]({{< relref "./docs/Developerguide/security-and-authentication_postgresql-conf.md" >}})
 			-   [Communication Library Parameters]({{< relref "./docs/Developerguide/communication-library-parameters.md" >}})
 		-   [Resource Consumption]({{< relref "./docs/Developerguide/resource-consumption.md" >}})
 			-   [Memory]({{< relref "./docs/Developerguide/memory-26.md" >}})
