@@ -10,15 +10,15 @@
 -   添加分区的名称不能与该分区表已有分区的名称相同。
 -   添加分区的分区键值要和分区表的分区键的类型一致，且要大于分区表中最后一个范围分区的上边界。
 -   如果目标分区表中已有分区数达到了最大值（32767），则不能继续添加分区。
-
 -   当分区表只有一个分区时，不能删除该分区。
 -   选择分区使用PARTITION FOR\(\)，括号里指定值个数应该与定义分区时使用的列个数相同，并且一一对应。
 -   Value分区表不支持相应的Alter Partition操作。
 -   列存分区表不支持切割分区。
+-   间隔分区表不支持添加分区。
 
 ## 语法格式<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
 
--   修改表分区主语法。
+- 修改表分区主语法。
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name  [*] | ONLY table_name | ONLY ( table_name  )}
@@ -38,13 +38,13 @@
         drop_clause
     ```
 
-    -   move\_clause子语法用于移动分区到新的表空间。
+    - move\_clause子语法用于移动分区到新的表空间。
 
         ```
         MOVE PARTITION { partion_name | FOR ( partition_value [, ...] ) } TABLESPACE tablespacename
         ```
 
-    -   exchange\_clause子语法用于把普通表的数据迁移到指定的分区。
+    - exchange\_clause子语法用于把普通表的数据迁移到指定的分区。
 
         ```
         EXCHANGE PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } 
@@ -63,32 +63,32 @@
 
         完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
 
-    -   row\_clause子语法用于设置分区表的行迁移开关。
+    - row\_clause子语法用于设置分区表的行迁移开关。
 
         ```
         { ENABLE | DISABLE } ROW MOVEMENT
         ```
 
-    -   merge\_clause子语法用于把多个分区合并成一个分区。
+    - merge\_clause子语法用于把多个分区合并成一个分区。
 
         ```
         MERGE PARTITIONS { partition_name } [, ...] INTO PARTITION partition_name 
             [ TABLESPACE tablespacename ]
         ```
 
-    -   modify\_clause子语法用于设置分区索引是否可用。
+    - modify\_clause子语法用于设置分区索引是否可用。
 
         ```
         MODIFY PARTITION partition_name { UNUSABLE LOCAL INDEXES | REBUILD UNUSABLE LOCAL INDEXES }
         ```
 
-    -   split\_clause子语法用于把一个分区切割成多个分区。
+    - split\_clause子语法用于把一个分区切割成多个分区。
 
         ```
         SPLIT PARTITION { partition_name | FOR ( partition_value [, ...] ) } { split_point_clause | no_split_point_clause }
         ```
 
-        -   指定切割点split\_point\_clause的语法为。
+        - 指定切割点split\_point\_clause的语法为。
 
             ```
             AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
@@ -98,7 +98,7 @@
             >-   列存分区表不支持切割分区。  
             >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。  
 
-        -   不指定切割点no\_split\_point\_clause的语法为。
+        - 不指定切割点no\_split\_point\_clause的语法为。
 
             ```
             INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
@@ -110,34 +110,36 @@
             >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。  
             >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。  
 
+            - 分区项partition\_less\_than\_item的语法为。
 
-        -   分区项partition\_less\_than\_item的语法为。
+                ```
+                PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
+                    [ TABLESPACE tablespacename ]
+                ```
 
-            ```
-            PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
-                [ TABLESPACE tablespacename ]
-            ```
+            - 分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](CREATE-TABLE-PARTITION.md#zh-cn_topic_0237122119_li2094151861116)。
 
-        -   分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](CREATE-TABLE-PARTITION.md#zh-cn_topic_0237122119_li2094151861116)。
+                ```
+                PARTITION partition_name {
+                        {START(partition_value) END (partition_value) EVERY (interval_value)} |
+                        {START(partition_value) END ({partition_value | MAXVALUE})} |
+                        {START(partition_value)} |
+                        {END({partition_value | MAXVALUE})}
+                } [TABLESPACE tablespace_name]
+                
+                ```
 
-            ```
-            PARTITION partition_name {
-                    {START(partition_value) END (partition_value) EVERY (interval_value)} |
-                    {START(partition_value) END ({partition_value | MAXVALUE})} |
-                    {START(partition_value)} |
-                    {END({partition_value | MAXVALUE})}
-            } [TABLESPACE tablespace_name]
-            
-            ```
-
-
-    -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
+    - add\_clause子语法用于为指定的分区表添加一个或多个分区。
 
         ```
         ADD {partition_less_than_item | partition_start_end_item}
         ```
 
-    -   drop\_clause子语法用于删除分区表中的指定分区。
+        > ![](D:/work/db/openGauss/%E6%96%87%E6%A1%A3/opengauss-docs-master/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **须知：**   
+        >
+        > - 间隔分区表不支持添加分区。   
+
+    - drop\_clause子语法用于删除分区表中的指定分区。
 
         ```
         DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
