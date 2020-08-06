@@ -168,7 +168,7 @@
     </thead>
     <tbody><tr id="en-us_topic_0237152147_en-us_topic_0059779356_rc644c3de5cac4e4891741cccf756b131"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_aa970f952a24d4682ba8a54ea52368194"><a name="en-us_topic_0237152147_en-us_topic_0059779356_aa970f952a24d4682ba8a54ea52368194"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_aa970f952a24d4682ba8a54ea52368194"></a>View the maximum number of sessions connected to a specific user.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a4744b74e9d12423280d5ba48ad70b73c"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a4744b74e9d12423280d5ba48ad70b73c"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a4744b74e9d12423280d5ba48ad70b73c"></a>Run the following command to view the upper limit of the number of <strong id="en-us_topic_0237152147_b842352706143336"><a name="en-us_topic_0237152147_b842352706143336"></a><a name="en-us_topic_0237152147_b842352706143336"></a>USER1</strong>'s session connections. <strong id="en-us_topic_0237152147_b842352706143349"><a name="en-us_topic_0237152147_b842352706143349"></a><a name="en-us_topic_0237152147_b842352706143349"></a>-1</strong> indicates that no upper limit is set for the number of <strong id="en-us_topic_0237152147_b1930831815143422"><a name="en-us_topic_0237152147_b1930831815143422"></a><a name="en-us_topic_0237152147_b1930831815143422"></a>USER1</strong>'s session connections.</p>
+    <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a4744b74e9d12423280d5ba48ad70b73c"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a4744b74e9d12423280d5ba48ad70b73c"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a4744b74e9d12423280d5ba48ad70b73c"></a>Run the following command to view the number of session connections that have been used by <strong id="en-us_topic_0237152147_b842352706143336"><a name="en-us_topic_0237152147_b842352706143336"></a><a name="en-us_topic_0237152147_b842352706143336"></a>USER1</strong>'s session connections. <strong id="en-us_topic_0237152147_b842352706143349"><a name="en-us_topic_0237152147_b842352706143349"></a><a name="en-us_topic_0237152147_b842352706143349"></a>-1</strong> indicates that no upper limit is set for the number of <strong id="en-us_topic_0237152147_b1930831815143422"><a name="en-us_topic_0237152147_b1930831815143422"></a><a name="en-us_topic_0237152147_b1930831815143422"></a>USER1</strong>'s session connections.</p>
     <pre class="screen" id="en-us_topic_0237152147_en-us_topic_0059779356_se07756dd06cf4a2696234c47b0135aab"><a name="en-us_topic_0237152147_en-us_topic_0059779356_se07756dd06cf4a2696234c47b0135aab"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_se07756dd06cf4a2696234c47b0135aab"></a>SELECT ROLNAME,ROLCONNLIMIT FROM PG_ROLES WHERE ROLNAME='user1';
      rolname | rolconnlimit
     ---------+--------------
@@ -176,26 +176,15 @@
     (1 row)</pre>
     </td>
     </tr>
-    <tr id="en-us_topic_0237152147_en-us_topic_0059779356_rf5d9240299bd47e292727e46ad181e06"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a27ea13695c164c3e94d1e53ff6038898"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a27ea13695c164c3e94d1e53ff6038898"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a27ea13695c164c3e94d1e53ff6038898"></a>View the number of session connections that have been used by a user.</p>
+    <tr id="en-us_topic_0237152147_en-us_topic_0059779356_rf5d9240299bd47e292727e46ad181e06"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a27ea13695c164c3e94d1e53ff6038898"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a27ea13695c164c3e94d1e53ff6038898"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a27ea13695c164c3e94d1e53ff6038898"></a>View the maximum number of sessions connected to a specific database.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"><a name="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"></a>Run the following command to view the number of session connections that have been used by <strong id="en-us_topic_0237152147_b842352706143443"><a name="en-us_topic_0237152147_b842352706143443"></a><a name="en-us_topic_0237152147_b842352706143443"></a>USER1</strong>. <strong id="en-us_topic_0237152147_b842352706143450"><a name="en-us_topic_0237152147_b842352706143450"></a><a name="en-us_topic_0237152147_b842352706143450"></a>1</strong> indicates the number of session connections that have been used by <strong id="en-us_topic_0237152147_b842352706143459"><a name="en-us_topic_0237152147_b842352706143459"></a><a name="en-us_topic_0237152147_b842352706143459"></a>USER1</strong>.</p>
-    <pre class="screen" id="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"><a name="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"></a>SELECT COUNT(*) FROM V$SESSION WHERE USERNAME='user1';
-    
-    ######  count
-         1
+    <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"><a name="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_ad60bdc8421564f9185293df24f420bb1"></a>Run the following command to view the number of session connections that have been used by <strong id="en-us_topic_0237152147_b842352706143443"><a name="en-us_topic_0237152147_b842352706143443"></a><a name="en-us_topic_0237152147_b842352706143443"></a>postgres</strong>. <strong id="en-us_topic_0237152147_b842352706143450"><a name="en-us_topic_0237152147_b842352706143450"></a><a name="en-us_topic_0237152147_b842352706143450"></a>-1</strong> indicates that no upper limit is set for the number of  <strong id="en-us_topic_0237152147_b842352706143459"><a name="en-us_topic_0237152147_b842352706143459"></a><a name="en-us_topic_0237152147_b842352706143459"></a><strong id="en-us_topic_0237152147_b1411347486143553"><a name="en-us_topic_0237152147_b1411347486143553"></a><a name="en-us_topic_0237152147_b1411347486143553"></a>postgres</strong></strong>'s session connections.</p>
+    <pre class="screen" id="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"><a name="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_s271e08598652464baf8e34937f03fe76"></a>SELECT DATNAME,DATCONNLIMIT FROM PG_ROLES WHERE ROLNAME='postgres';
+     datname | datconnlimit
+    ---------+--------------
+     postgres    |       -1
     (1 row)</pre>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0237152147_en-us_topic_0059779356_r3ecf1d5dec914606a843db02e9fbd915"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_ac2d00a4d4adc4d689dd05f7168497c18"><a name="en-us_topic_0237152147_en-us_topic_0059779356_ac2d00a4d4adc4d689dd05f7168497c18"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_ac2d00a4d4adc4d689dd05f7168497c18"></a>View the maximum number of sessions connected to a specific database.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a81f247c75f274abc8270ac1b78aba4c0"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a81f247c75f274abc8270ac1b78aba4c0"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a81f247c75f274abc8270ac1b78aba4c0"></a>Run the following command to view the upper limit of the number of <strong id="en-us_topic_0237152147_b842352706143531"><a name="en-us_topic_0237152147_b842352706143531"></a><a name="en-us_topic_0237152147_b842352706143531"></a>postgres</strong>'s session connections. <strong id="en-us_topic_0237152147_b842352706143545"><a name="en-us_topic_0237152147_b842352706143545"></a><a name="en-us_topic_0237152147_b842352706143545"></a>-1</strong> indicates that no upper limit is set for the number of <strong id="en-us_topic_0237152147_b1411347486143553"><a name="en-us_topic_0237152147_b1411347486143553"></a><a name="en-us_topic_0237152147_b1411347486143553"></a>postgres</strong>'s session connections.</p>
-    <pre class="screen" id="en-us_topic_0237152147_en-us_topic_0059779356_sffa7a0b1c20a4334973a3d9cd8918cfa"><a name="en-us_topic_0237152147_en-us_topic_0059779356_sffa7a0b1c20a4334973a3d9cd8918cfa"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_sffa7a0b1c20a4334973a3d9cd8918cfa"></a>SELECT DATNAME,DATCONNLIMIT FROM PG_DATABASE WHERE DATNAME='postgres';
-    
-     datname  | datconnlimit
-    ----------+--------------
-     postgres |           -1
-    (1 row)</pre>
-    </td>
+        </td>
     </tr>
     <tr id="en-us_topic_0237152147_en-us_topic_0059779356_rdc10c65ce85d49b38dede86bc6dcd1d1"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a69e536f0fbef4de58d2c777e16352a52"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a69e536f0fbef4de58d2c777e16352a52"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a69e536f0fbef4de58d2c777e16352a52"></a>View the number of session connections that have been used by a specific database.</p>
     </td>
@@ -205,20 +194,8 @@
     -------
          1
     (1 row)</pre>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0237152147_en-us_topic_0059779356_re1756ad474794d9bacb603dfaa36638b"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a1779b3fbc7bb4ef4bce7bf520a3cf00c"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a1779b3fbc7bb4ef4bce7bf520a3cf00c"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a1779b3fbc7bb4ef4bce7bf520a3cf00c"></a>View the number of session connections that have been used by all users.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152147_en-us_topic_0059779356_a29bbd1ba1bcb4e7a890afdb3a00879c9"><a name="en-us_topic_0237152147_en-us_topic_0059779356_a29bbd1ba1bcb4e7a890afdb3a00879c9"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_a29bbd1ba1bcb4e7a890afdb3a00879c9"></a>Run the following command to view the number of session connections that have been used by all users:</p>
-    <pre class="screen" id="en-us_topic_0237152147_en-us_topic_0059779356_s23771d20eb774fbd9d04a0a852f4605f"><a name="en-us_topic_0237152147_en-us_topic_0059779356_s23771d20eb774fbd9d04a0a852f4605f"></a><a name="en-us_topic_0237152147_en-us_topic_0059779356_s23771d20eb774fbd9d04a0a852f4605f"></a>SELECT COUNT(*) FROM V$SESSION;
     
-    ######  count
-         10
-    (1 row)</pre>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+    ​    
     
 -   gsql: wait xxx.xxx.xxx.xxx:xxxx timeout expired
 
