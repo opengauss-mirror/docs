@@ -16,9 +16,10 @@ CREATE TABLE AS对源表进行一次查询，然后将数据写入新表中，�
 ## 语法格式<a name="zh-cn_topic_0237122118_zh-cn_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
 
 ```
-CREATE [ UNLOGGED ] TABLE table_name
+CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
     [ (column_name [, ...] ) ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
     AS query
@@ -34,6 +35,25 @@ CREATE [ UNLOGGED ] TABLE table_name
     -   使用场景：非日志表不能保证数据的安全性，用户应该在确保数据已经做好备份的前提下使用，例如系统升级时进行数据的备份。
     -   故障处理：当异常关机等操作导致非日志表上的索引发生数据丢失时，用户应该对发生错误的索引进行重建。
 
+- **GLOBAL | LOCAL**
+
+    创建临时表时可以在TEMP或TEMPORARY前指定GLOBAL或LOCAL关键字。如果指定GLOBAL关键字，openGauss会创建全局临时表，否则**openGauss**会创建本地临时表。
+
+- **TEMPORARY | TEMP**
+
+    如果指定TEMP或TEMPORARY关键字，则创建的表为临时表。临时表分为全局临时表和本地临时表两种类型。创建临时表时如果指定GLOBAL关键字则为全局临时表，否则为本地临时表。
+
+    全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的(ON COMMIT PRESERVE ROWS), 当会话结束时自动清空用户数据；一种是基于事务级别的(ON COMMIT DELETE ROWS), 当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg_temp_开头的schema。
+
+    本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
+
+    >  ![](public_sys-resources/icon-notice.gif)**须知：**   
+    >
+    > - 本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。  
+    > - 如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。  
+    > - ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作。
+    > - 全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
+ 
 -   **table\_name**
 
     要创建的表名。
@@ -80,6 +100,13 @@ CREATE [ UNLOGGED ] TABLE table_name
 
         取值范围：10000\~60000
 
+- **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
+
+    ON COMMIT选项决定在事务中执行创建临时表操作，当事务提交时，此临时表的后续操作。有以下三个选项，当前支持PRESERVE ROWS和DELETE ROWS选项。
+
+    - PRESERVE ROWS（缺省值）：提交时不对临时表做任何操作，临时表及其表数据保持不变。
+    - DELETE ROWS：提交时删除临时表中数据。
+    - DROP：提交时删除此临时表。（只支持本地临时表，不支持全局临时表）
 
 -   **COMPRESS / NOCOMPRESS**
 
