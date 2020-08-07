@@ -1,11 +1,10 @@
-# PG\_GTT_RELSTATS<a name="ZH-CN_TOPIC_0242385946"></a>
+# PG\_GTT\_RELSTATS<a name="ZH-CN_TOPIC_0267385595"></a>
 
-PG\_GTT_RELSTATS视图查看当前会话所有全局临时表基本信息，调用pg_get_gtt_relstats函数。
+PG\_GTT\_RELSTATS视图查看当前会话所有全局临时表基本信息，调用pg\_get\_gtt\_relstats函数。
 
-**表 1**  PG\_GTT_RELSTATS字段
+**表 1**  PG\_GTT\_RELSTATS字段
 
 <a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_t9a322933edc649349d16f5bb7c397568"></a>
-
 <table><thead align="left"><tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r479932505d8442ccb53618b9f805b142"><th class="cellrowborder" valign="top" width="25.77%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a2c0b5ec2a1fb45da835f59c750be23ec"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a2c0b5ec2a1fb45da835f59c750be23ec"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a2c0b5ec2a1fb45da835f59c750be23ec"></a>名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.73%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_aee7cb2ac3a24413aac056bb613146a76"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_aee7cb2ac3a24413aac056bb613146a76"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_aee7cb2ac3a24413aac056bb613146a76"></a>类型</p>
@@ -25,52 +24,51 @@ PG\_GTT_RELSTATS视图查看当前会话所有全局临时表基本信息，调�
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0cabf8c75a48458fab9735da5a46b220"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0cabf8c75a48458fab9735da5a46b220"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0cabf8c75a48458fab9735da5a46b220"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ac31f5ff19b584b57a1631bd878ee65f1"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ac31f5ff19b584b57a1631bd878ee65f1"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ac31f5ff19b584b57a1631bd878ee65f1"></a>全局临时表名。</p>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ac31f5ff19b584b57a1631bd878ee65f1"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ac31f5ff19b584b57a1631bd878ee65f1"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ac31f5ff19b584b57a1631bd878ee65f1"></a>全局临时表名称。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a>relfilenode</p>
+<tr id="row19383959131511"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p12384195914157"><a name="p12384195914157"></a><a name="p12384195914157"></a>relfilenode</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a>oid</p>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p16384195913153"><a name="p16384195913153"></a><a name="p16384195913153"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a>relfilenode。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a>relpages</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a>integer</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a>全局临时表的磁盘页面数。</p>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1738414594157"><a name="p1738414594157"></a><a name="p1738414594157"></a>文件对象的ID。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a>reltuples</p>
+<tr id="row185121530162"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p1951212321613"><a name="p1951212321613"></a><a name="p1951212321613"></a>relpages</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a>real</p>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p1512139162"><a name="p1512139162"></a><a name="p1512139162"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a>全局临时表的记录数。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a>relallvisible</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a>integer</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a>被标识为全可见的页面数。</p>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p551293131613"><a name="p551293131613"></a><a name="p551293131613"></a>全局临时表的磁盘页面数。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a>relfrozenxid</p>
+<tr id="row1526519522156"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p526645261517"><a name="p526645261517"></a><a name="p526645261517"></a>reltuples</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p82665522153"><a name="p82665522153"></a><a name="p82665522153"></a>real</p>
+</td>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1626675218151"><a name="p1626675218151"></a><a name="p1626675218151"></a>全局临时表的记录数。</p>
+</td>
+</tr>
+<tr id="row42084282166"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p1820815288163"><a name="p1820815288163"></a><a name="p1820815288163"></a>relallvisible</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p520842820165"><a name="p520842820165"></a><a name="p520842820165"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p178844523263"><a name="p178844523263"></a><a name="p178844523263"></a>被标识为全可见的页面数。</p>
+</td>
+</tr>
+<tr id="row1921922101617"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p8214222169"><a name="p8214222169"></a><a name="p8214222169"></a>relfrozenxid</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p15210224169"><a name="p15210224169"></a><a name="p15210224169"></a>xid</p>
+</td>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p8112956193210"><a name="p8112956193210"></a><a name="p8112956193210"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p19436184631611"><a name="p19436184631611"></a><a name="p19436184631611"></a>relminmxid</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_ae5b8cacf94c84403b6cd75d26fc174df"></a>relminmxid</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a7ee0570d26c64faa986204bcb4d30100"></a>xid</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a><a name="zh-cn_topic_0237122419_zh-cn_topic_0059777999_a0a110c88d6ee4f37ae2426b6d1b70c98"></a>暂时没用。</p>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1490835111712"><a name="p1490835111712"></a><a name="p1490835111712"></a>预留接口，暂未启用。</p>
 </td>
 </tr>
 </tbody>
 </table>
-
 
