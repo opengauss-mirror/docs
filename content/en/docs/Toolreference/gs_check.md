@@ -6,9 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0237152330_section4290135616319"></a>
 
--   Only user  **root**  is authorized to check new nodes added during cluster scale-out. In other cases, the check can be performed only by user  **omm**.
 -   Parameter  **-i**  or  **-e**  must be set.  **-i**  specifies a single item to be checked, and  **-e**  specifies an inspection scenario where multiple items will be checked.
--   In non-local mode, user  **root**  can check only new nodes.
 -   If  **-i**  is not set to a root item or no such items are contained in the check item list of the scenario specified by  **-e**, you do not need to enter the name or password of a user with the root permissions.
 -   You can run  **--skip-root-items**  to skip root items.
 -   The blacklist check item applies only to the upgrade from R5 to R6.
