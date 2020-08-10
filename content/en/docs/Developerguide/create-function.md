@@ -79,13 +79,13 @@
 
     Specifies the name of the function to create \(optionally schema-qualified\).
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the naming convention and up to 63 character strings. If there are more than 63 strings, the database will truncate the strings and reserve the first 63 strings as function_name.
 
 -   **argname**
 
     Specifies the parameter name of the function.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the naming convention and up to 63 character strings. If there are more than 63 strings, the database will truncate the strings and reserve the first 63 strings as function parameter names.
 
 -   **argmode**
 

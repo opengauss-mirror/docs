@@ -167,7 +167,8 @@ ENABLE ROW MOVEMENT;
 --- 使用ANALYZE语句更新统计信息。
 
 ```
-postgres=# ANALYZE customer;
+postgres=# ANALYZE customer_info;
+postgres=# ANALYZE customer_par;
 ```
 
 --- 使用ANALYZE VERBOSE语句更新统计信息，并输出表的相关信息。

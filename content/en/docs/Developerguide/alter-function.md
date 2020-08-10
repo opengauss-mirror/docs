@@ -67,7 +67,7 @@ Only the owner of the function or a system administrator has the permission to r
 
     Specifies whether a parameter is an input or output parameter.
 
-    Value range:  **IN**,  **OUT**, and  **IN OUT**
+    Value range:  **IN**,  **OUT**,  **IN OUT**  and **VARIDIC**
 
 -   **argname**
 
