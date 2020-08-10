@@ -45,8 +45,8 @@
     service sshd restart
     ```
 
-    >![](public_sys-resources/icon-caution.gif) **注意：**   
-    >若执行命令后返回提示信息“Redirecting to /bin/systemctl restart sshd.service”，请执行命令：/bin/systemctl restart sshd.service。  
+    >![](public_sys-resources/icon-caution.gif) **注意：** 
+    >若执行命令后返回提示信息“Redirecting to /bin/systemctl restart sshd.service”，请执行命令：/bin/systemctl restart sshd.service。
 
 4.  以root用户身份重新登录。
 
@@ -54,7 +54,7 @@
     ssh xxx.xxx.xxx.xxx
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >xxx.xxx.xxx.xxx为安装openGauss环境的ip。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >xxx.xxx.xxx.xxx为安装openGauss环境的ip。
 
 
