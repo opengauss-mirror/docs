@@ -167,7 +167,8 @@ ENABLE ROW MOVEMENT;
 -- Run  **ANALYZE**  to update statistics.
 
 ```
-postgres=# ANALYZE customer;
+postgres=# ANALYZE customer_info;
+postgres=# ANALYZE customer_par;
 ```
 
 -- Run  **ANALYZE VERBOSE**  statement to update statistics and display table information.
