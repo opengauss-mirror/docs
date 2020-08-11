@@ -27,11 +27,11 @@
 
 Valid literal values for the "true" state include:
 
-TRUE, 't', 'true', 'y', 'yes', and '1'
+TRUE, 't', 'true', 'y', 'yes', '1', 1, 'TRUE'
 
 Valid literal values for the "false" state include:
 
-FALSE, 'f', 'false', 'n', 'no', and '0'
+FALSE, 'f', 'false', 'n', 'no', '0', 'FALSE', false, 0
 
 **TRUE**  and  **FALSE**  are standard expressions, compatible with SQL statements.
 
