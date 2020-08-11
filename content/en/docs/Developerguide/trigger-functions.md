@@ -1,21 +1,23 @@
 # Trigger Functions<a name="EN-US_TOPIC_0242370463"></a>
 
--   pg\_get\_triggerdef\(oid\)
+- pg\_get\_triggerdef\(oid\)
 
-    Description: Obtains the definition information of a trigger.
+  Description: Obtains the definition information of a trigger.
 
-    Parameter: OID of the trigger to be queried
+  Parameter: OID of the trigger to be queried
 
-    Return type: text
+  Return type: text
 
-    Example:
+  Example:
 
-    ```
-    postgres=# SELECT pg_get_triggerdef(oid) FROM pg_trigger;
-                                                      pg_get_triggerdef
-    ----------------------------------------------------------------------------------------------------------------------
-    (0 rows)
-    ```
+  ```
+  postgres=# select pg_get_triggerdef(oid) from pg_trigger;
+                                                                                       pg_get_triggerdef
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
+   CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN ((new.a IS NOT NULL)) EXECUTE PROCEDURE gtest_trigger_func()
+  (2 rows)
+  ```
 
 -   pg\_get\_triggerdef\(oid, boolean\)
 
@@ -28,10 +30,19 @@
     Example:
 
     ```
-    postgres=# SELECT pg_get_triggerdef(oid, true) FROM pg_trigger;
-                                                      pg_get_triggerdef
-    ----------------------------------------------------------------------------------------------------------------------
-    (0 rows)
+    postgres=# select pg_get_triggerdef(oid,true) from pg_trigger;
+                                                                                         pg_get_triggerdef
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
+     CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN (new.a IS NOT NULL) EXECUTE PROCEDURE gtest_trigger_func()
+    (2 rows)
+    
+    postgres=# select pg_get_triggerdef(oid,false) from pg_trigger;
+                                                                                         pg_get_triggerdef
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
+     CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN ((new.a IS NOT NULL)) EXECUTE PROCEDURE gtest_trigger_func()
+    (2 rows)
     ```
 
 

@@ -2,56 +2,58 @@
 
 There are three separate approaches to pattern matching provided by the database: the traditional SQL LIKE operator, the more recent SIMILAR TO operator, and POSIX-style regular expressions. Besides these basic operators, functions can be used to extract or replace matching substrings and to split a string at matching locations.
 
--   LIKE
+- LIKE
 
-    Description: Determines whether the string matches the mode string following  **LIKE**. The LIKE expression returns true if the string matches the supplied pattern. \(As expected, the NOT LIKE expression returns false if LIKE returns true, and vice versa.\)
+  Description: Determines whether the string matches the mode string following  **LIKE**. The LIKE expression returns true if the string matches the supplied pattern. \(As expected, the NOT LIKE expression returns false if LIKE returns true, and vice versa.\)
 
-    Matching rules:
+  Matching rules:
 
-    1.  This operator can succeed only when its pattern matches the entire string. If you want to match a sequence in any position within the string, the pattern must begin and end with a percent sign.
-    2.  The underscore \(\_\) represents \(matching\) any single character. Percentage \(%\) indicates the wildcard character of any string.
-    3.  To match a literal underscore or percent sign without matching other characters, the respective character in  **pattern**  must be preceded by the escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
-    4.  To match with escape characters, enter two escape characters. For example: To write a  **pattern**  constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
+  1.  This operator can succeed only when its pattern matches the entire string. If you want to match a sequence in any position within the string, the pattern must begin and end with a percent sign.
+  2.  The underscore \(\_\) represents \(matching\) any single character. Percentage \(%\) indicates the wildcard character of any string.
+  3.  To match a literal underscore or percent sign without matching other characters, the respective character in  **pattern**  must be preceded by the escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
+  4. To match with escape characters, enter two escape characters. For example: To write a  **pattern**  constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
-        >When  **standard\_conforming\_strings**  is set to  **off**, any backslashes you write in literal string constants will need to be doubled. Therefore, writing a pattern matching a single backslash is actually going to write four backslashes in the statement. You can avoid this by selecting a different escape character by using ESCAPE, so that the backslash is no longer a special character of LIKE. But the backslash is still the special character of the character text analyzer, so you still need two backslashes.\) You can also select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscore and percent signs in the pattern.  
+     >![](public_sys-resources/icon-note.gif) **NOTE:**   
+     >When  **standard\_conforming\_strings**  is set to  **off**, any backslashes you write in literal string constants will need to be doubled. Therefore, writing a pattern matching a single backslash is actually going to write four backslashes in the statement. You can avoid this by selecting a different escape character by using ESCAPE, so that the backslash is no longer a special character of LIKE. But the backslash is still the special character of the character text analyzer, so you still need two backslashes.\) 
+     >
+     >When compatible with MYSQL database mode (sql_compatibility = C), you can also select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscore and percent signs in the pattern.  
 
-    5.  The keyword ILIKE can be used instead of LIKE to make the match case-insensitive.
-    6.  Operator \~\~ is equivalent to LIKE, and operator \~\~\* corresponds to ILIKE.
+  5.  The keyword ILIKE can be used instead of LIKE to make the match case-insensitive.
+  6.  Operator \~\~ is equivalent to LIKE, and operator \~\~\* corresponds to ILIKE.
 
-    For example:
+  For example:
 
-    ```
-    postgres=# SELECT 'abc' LIKE 'abc' AS RESULT;
-     result
-    -----------
-     t
-    (1 row)
-    ```
+  ```
+  postgres=# SELECT 'abc' LIKE 'abc' AS RESULT;
+   result
+  -----------
+   t
+  (1 row)
+  ```
 
-    ```
-    postgres=# SELECT 'abc' LIKE 'a%' AS RESULT;
-     result
-    -----------
-     t
-    (1 row)
-    ```
+  ```
+  postgres=# SELECT 'abc' LIKE 'a%' AS RESULT;
+   result
+  -----------
+   t
+  (1 row)
+  ```
 
-    ```
-    postgres=# SELECT 'abc' LIKE '_b_' AS RESULT;
-     result
-    -----------
-     t
-    (1 row)
-    ```
+  ```
+  postgres=# SELECT 'abc' LIKE '_b_' AS RESULT;
+   result
+  -----------
+   t
+  (1 row)
+  ```
 
-    ```
-    postgres=# SELECT 'abc' LIKE 'c' AS RESULT;
-     result
-    -----------
-     f
-    (1 row)
-    ```
+  ```
+  postgres=# SELECT 'abc' LIKE 'c' AS RESULT;
+   result
+  -----------
+   f
+  (1 row)
+  ```
 
 -   SIMILAR TO
 
@@ -249,7 +251,7 @@ There are three separate approaches to pattern matching provided by the database
 
 
     For example:
-
+    
     ```
     postgres=#  SELECT 'abc' ~ 'Abc' AS RESULT;
     result 
@@ -257,7 +259,7 @@ There are three separate approaches to pattern matching provided by the database
      f
     (1 row)
     ```
-
+    
     ```
     postgres=# SELECT 'abc' ~* 'Abc' AS RESULT;
      result 
@@ -265,7 +267,7 @@ There are three separate approaches to pattern matching provided by the database
      t
     (1 row)
     ```
-
+    
     ```
     postgres=# SELECT 'abc' !~ 'Abc' AS RESULT;
      result 
@@ -273,7 +275,7 @@ There are three separate approaches to pattern matching provided by the database
      t
     (1 row)
     ```
-
+    
     ```
     postgres=# SELECT 'abc'!~* 'Abc' AS RESULT;
      result 
@@ -281,7 +283,7 @@ There are three separate approaches to pattern matching provided by the database
      f
     (1 row)
     ```
-
+    
     ```
     postgres=# SELECT 'abc' ~ '^a' AS RESULT;
      result 
@@ -289,7 +291,7 @@ There are three separate approaches to pattern matching provided by the database
      t
     (1 row)
     ```
-
+    
     ```
     postgres=# SELECT 'abc' ~ '(b|d)'AS RESULT;
      result 
@@ -297,7 +299,7 @@ There are three separate approaches to pattern matching provided by the database
      t
     (1 row)
     ```
-
+    
     ```
     postgres=# SELECT 'abc' ~ '^(b|c)'AS RESULT;
      result 
@@ -305,7 +307,7 @@ There are three separate approaches to pattern matching provided by the database
      f
     (1 row)
     ```
-
+    
     Although most regular expression searches can be executed quickly, regular expressions can still be artificially made up of memory that takes a long time and any amount of memory. It is not recommended that you accept the regular expression search mode from the non-security mode source. If you must do this, you are advised to add the statement timeout limit. The search with the SIMILAR TO mode has the same security risks as the SIMILAR TO provides many capabilities that are the same as those of the POSIX- style regular expression. The LIKE search is much simpler than the other two options. Therefore, it is more secure to accept the non-secure mode source search.
 
 

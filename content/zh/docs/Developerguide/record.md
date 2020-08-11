@@ -33,7 +33,7 @@ record类型的语法参见[图1](#zh-cn_topic_0237122215_fig092918316312)。
 ## 示例<a name="zh-cn_topic_0237122215_zh-cn_topic_0059778979_s471412484c0048debf8a78d76cf1a439"></a>
 
 ```
-下面存储过程中用到的表定义如下：
+下面示例中用到的表定义如下：
 postgres=# \d emp_rec
                 Table "public.emp_rec"
   Column  |              Type              | Modifiers 
@@ -47,7 +47,7 @@ postgres=# \d emp_rec
  comm     | numeric(7,2)                   | 
  deptno   | numeric(2,0)                   | 
 
---演示在存储过程中对数组进行操作。
+--演示在函数中对数组进行操作。
 postgres=# CREATE OR REPLACE FUNCTION regress_record(p_w VARCHAR2)
 RETURNS
 VARCHAR2  AS $$
@@ -105,10 +105,10 @@ END;
 $$
 LANGUAGE plpgsql;
 
---调用该存储过程。
+--调用该函数。
 postgres=# CALL regress_record('abc');
 
---删除存储过程。
-postgres=# DROP PROCEDURE regress_record;
+--删除函数。
+postgres=# DROP FUNCTION regress_record;
 ```
 

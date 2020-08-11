@@ -33,7 +33,7 @@ The above syntax diagram is explained as follows:
 ## Example<a name="en-us_topic_0237122215_en-us_topic_0059778979_s471412484c0048debf8a78d76cf1a439"></a>
 
 ```
-The table used in the following stored procedure is defined as follows:
+The table used in the following example is defined as follows:
 postgres=# \d emp_rec
                 Table "public.emp_rec"
   Column  |              Type              | Modifiers 
@@ -47,7 +47,7 @@ postgres=# \d emp_rec
  comm     | numeric(7,2)                   | 
  deptno   | numeric(2,0)                   | 
 
--- Perform array operations in the stored procedure.
+-- Perform array operations in the function.
 postgres=# CREATE OR REPLACE FUNCTION regress_record(p_w VARCHAR2)
 RETURNS
 VARCHAR2  AS $$
@@ -105,10 +105,10 @@ END;
 $$
 LANGUAGE plpgsql;
 
--- Invoke the stored procedure.
+-- Invoke the function.
 postgres=# CALL regress_record('abc');
 
--- Delete the stored procedure.
-postgres=# DROP PROCEDURE regress_record;
+-- Delete the function.
+postgres=# DROP FUNCTION regress_record;
 ```
 

@@ -17,7 +17,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies whether to enable the ADIO function.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+The current version does not support enabling the asynchronous IO function. By default, this function is disabled. Please do not modify it yourself.
 
 **Value range**: Boolean
 
