@@ -24,6 +24,27 @@ Before you build the image make sure that you have provided the installation bin
        Choose one of: 1.0.0  SingleInstance  
     -i: ignores the MD5 checksums
 
+### self-defined parameter
+To make openGuass mirroring more flexible, you can set additional parameters.More controllable parameters will be added in the future. The following variables are supported in the current version.
+
+#### `GS_PASSWORD`
+This parameter must be set when you use the openGauss mirror.The parameter value cannot be null or undefined.This parameter sets the password for the openGauss database superuser OMM and the test user Gaussdb.OpenGauss is installed with omM superuser created by default, and this user name cannot be changed temporarily.The test user Gaussdb is a custom created user in [Docker-entrypoint.sh].
+
+The openGauss mirror is configured with a local trust mechanism, so you do not need a password to connect to the database within the container, but you must enter a password if you want to connect from outside the container (another host or another container).
+
+**The openGauss password must be more than 8 characters long, and must also contain English letters, Numbers, and special symbols**
+
+#### `GS_NODENAME`
+
+Specifies that the database node name defaults to gaussdb
+
+#### `GS_USERNAME`
+
+Specifies that the database connection user name defaults to gaussdb
+
+#### `GS_PORT`
+Specifies the database port, which defaults to 5432
+
 
 ### Architecture And Os Version
 
