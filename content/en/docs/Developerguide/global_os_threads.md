@@ -1,6 +1,6 @@
 # GLOBAL\_OS\_THREADS<a name="EN-US_TOPIC_0245374659"></a>
 
-**GLOBAL\_OS\_THREADS**  provides status information about threads on all normal nodes in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_OS\_THREADS**  provides status information about threads on all normal nodes in openGauss. 
 
 **Table  1**  GLOBAL\_OS\_THREADS columns
 

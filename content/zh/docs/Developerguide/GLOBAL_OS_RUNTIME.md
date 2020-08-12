@@ -1,6 +1,6 @@
 # GLOBAL\_OS\_RUNTIME<a name="ZH-CN_TOPIC_0245374657"></a>
 
-提供openGauss中所有正常节点下的操作系统运行状态信息。查询视图必须具有monadmin权限。
+提供openGauss中所有正常节点下的操作系统运行状态信息。
 
 **表 1**  GLOBAL\_OS\_RUNTIME字段
 

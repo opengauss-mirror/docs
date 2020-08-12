@@ -1,6 +1,6 @@
 # GLOBAL\_REPLICATION\_SLOTS<a name="EN-US_TOPIC_0245374815"></a>
 
-**GLOBAL\_REPLICATION\_SLOTS**  displays replication node information of each node in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_REPLICATION\_SLOTS**  displays replication node information of each node in openGauss. 
 
 **Table  1**  GLOBAL\_REPLICATION\_SLOTS columns
 

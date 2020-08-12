@@ -24,9 +24,6 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
         | { INHERIT | NOINHERIT }
         | { AUDITADMIN | NOAUDITADMIN }
         | { SYSADMIN | NOSYSADMIN }
-        | {MONADMIN | NOMONADMIN}
-        | {OPRADMIN | NOOPRADMIN}
-        | {POLADMIN | NOPOLADMIN}
         | { USEFT | NOUSEFT }
         | { LOGIN | NOLOGIN }
         | { REPLICATION | NOREPLICATION }
@@ -42,7 +39,7 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
-
+    
 -   修改用户名。
 
     ```

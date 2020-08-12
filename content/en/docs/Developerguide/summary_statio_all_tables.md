@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_ALL\_TABLES<a name="EN-US_TOPIC_0245374792"></a>
 
-**SUMMARY\_STATIO\_ALL\_TABLES**  contains I/O statistics about each table \(including TOAST tables\) in databases in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STATIO\_ALL\_TABLES**  contains I/O statistics about each table \(including TOAST tables\) in databases in openGauss. 
 
 **Table  1**  SUMMARY\_STATIO\_ALL\_TABLES columns
 

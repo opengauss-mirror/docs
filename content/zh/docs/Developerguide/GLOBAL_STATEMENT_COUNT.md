@@ -1,6 +1,6 @@
 # GLOBAL\_STATEMENT\_COUNT<a name="ZH-CN_TOPIC_0245374761"></a>
 
-显示数据库各节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）和\(DDL、DML、DCL\)统计信息。查询视图必须具有monadmin权限。
+显示数据库各节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）和\(DDL、DML、DCL\)统计信息。
 
 **表 1**  GLOBAL\_STATEMENT\_COUNT字段
 

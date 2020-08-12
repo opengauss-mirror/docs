@@ -1,6 +1,6 @@
 # SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS<a name="EN-US_TOPIC_0245374755"></a>
 
-**SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS**  displays information about transactions that are currently prepared for two-phase commit on the primary database node in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS**  displays information about transactions that are currently prepared for two-phase commit on the primary database node in openGauss.
 
 **Table  1**  SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS columns
 

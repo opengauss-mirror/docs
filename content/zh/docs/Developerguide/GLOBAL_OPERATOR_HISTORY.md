@@ -1,6 +1,6 @@
 # GLOBAL\_OPERATOR\_HISTORY<a name="ZH-CN_TOPIC_0245374848"></a>
 
-GLOBAL\_OPERATOR\_HISTORY系统视图显示的是当前用户在数据库主节点上执行作业结束后的算子的相关记录。查询视图必须具有monadmin权限。
+GLOBAL\_OPERATOR\_HISTORY系统视图显示的是当前用户在数据库主节点上执行作业结束后的算子的相关记录。
 
 **表 1**  GLOBAL\_OPERATOR\_HISTORY的字段
 

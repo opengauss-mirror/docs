@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_XACT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0245374709"></a>
 
-显示各节点命名空间中系统表的事务状态信息。查询视图必须具有monadmin权限。
+显示各节点命名空间中系统表的事务状态信息。
 
 **表 1**  GLOBAL\_STAT\_XACT\_SYS\_TABLES字段
 

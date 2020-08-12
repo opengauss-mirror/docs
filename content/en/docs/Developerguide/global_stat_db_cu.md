@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_DB\_CU<a name="EN-US_TOPIC_0245374800"></a>
 
-**GLOBAL\_STAT\_DB\_CU**  is used to query CU hits in each database in openGauss. You can clear it using  **gs\_stat\_reset\(\)**. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_DB\_CU**  is used to query CU hits in each database in openGauss. You can clear it using  **gs\_stat\_reset\(\)**. 
 
 **Table  1**  GLOBAL\_STAT\_DB\_CU columns
 

@@ -1,6 +1,6 @@
 # SUMMARY\_WORKLOAD\_TRANSACTION<a name="EN-US_TOPIC_0245374726"></a>
 
-**SUMMARY\_WORKLOAD\_TRANSACTION**  displays information about transactions loaded in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_WORKLOAD\_TRANSACTION**  displays information about transactions loaded in openGauss. 
 
 **Table  1**  SUMMARY\_WORKLOAD\_TRANSACTION columns
 

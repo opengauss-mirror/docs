@@ -1,6 +1,6 @@
 # GLOBAL\_OPERATOR\_HISTORY<a name="EN-US_TOPIC_0245374848"></a>
 
-**GLOBAL\_OPERATOR\_HISTORY**  displays records of operators in jobs that have been executed by the current user on the primary database node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_OPERATOR\_HISTORY**  displays records of operators in jobs that have been executed by the current user on the primary database node. 
 
 **Table  1**  GLOBAL\_OPERATOR\_HISTORY columns
 

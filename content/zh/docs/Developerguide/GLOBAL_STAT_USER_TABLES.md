@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374682"></a>
 
-得到各节点所有命名空间中用户自定义普通表的状态信息。查询视图必须具有monadmin权限。
+得到各节点所有命名空间中用户自定义普通表的状态信息。
 
 **表 1**  GLOBAL\_STAT\_USER\_TABLES字段
 

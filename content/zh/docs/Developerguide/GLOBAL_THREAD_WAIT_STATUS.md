@@ -1,6 +1,6 @@
 # GLOBAL\_THREAD\_WAIT\_STATUS<a name="ZH-CN_TOPIC_0245374744"></a>
 
-通过该视图可以检测所有节点上工作线程（backend thread）以及辅助线程（auxiliary thread）的阻塞等待情况，查询视图必须具有monadmin权限。具体事件信息请参见[15.3.67-表2 等待状态列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[15.3.67-表3 轻量级锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table38811324183420)、[15.3.67-表4 IO等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table124603113369)和[15.3.67-表5 事务锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table11826123533718)。
+通过该视图可以检测所有节点上工作线程（backend thread）以及辅助线程（auxiliary thread）的阻塞等待情况。具体事件信息请参见[15.3.67-表2 等待状态列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[15.3.67-表3 轻量级锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table38811324183420)、[15.3.67-表4 IO等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table124603113369)和[15.3.67-表5 事务锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table11826123533718)。
 
 通过GLOBAL\_THREAD\_WAIT\_STATUS视图，可以查看openGauss全局各个节点上所有SQL语句产生的线程之间的调用层次关系，以及各个线程的阻塞等待状态，从而更容易定位hang以及类似现象的原因。
 

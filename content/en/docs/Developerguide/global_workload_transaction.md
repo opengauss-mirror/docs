@@ -1,6 +1,6 @@
 # GLOBAL\_WORKLOAD\_TRANSACTION<a name="EN-US_TOPIC_0245374727"></a>
 
-**GLOBAL\_WORKLOAD\_TRANSACTION**  displays load information about workloads on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_WORKLOAD\_TRANSACTION**  displays load information about workloads on each node. 
 
 **Table  1**  GLOBAL\_WORKLOAD\_TRANSACTION columns
 

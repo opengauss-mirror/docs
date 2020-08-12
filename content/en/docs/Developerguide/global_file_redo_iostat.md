@@ -1,6 +1,6 @@
 # GLOBAL\_FILE\_REDO\_IOSTAT<a name="EN-US_TOPIC_0245374675"></a>
 
-**GLOBAL\_FILE\_REDO\_IOSTAT**  records statistics about redo logs and WALs on each node in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_FILE\_REDO\_IOSTAT**  records statistics about redo logs and WALs on each node in openGauss. 
 
 **Table  1**  GLOBALXC\_FILE\_REDO\_IOSTAT columns
 

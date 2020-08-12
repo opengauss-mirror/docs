@@ -1,6 +1,6 @@
 # GLOBAL\_BGWRITER\_STAT<a name="ZH-CN_TOPIC_0245374817"></a>
 
-GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计信息。查询视图必须具有monadmin权限。
+GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计信息。
 
 **表 1**  GLOBAL\_BGWRITER\_STAT字段
 

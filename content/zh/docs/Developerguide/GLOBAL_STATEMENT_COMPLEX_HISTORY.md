@@ -1,6 +1,6 @@
 # GLOBAL\_STATEMENT\_COMPLEX\_HISTORY<a name="ZH-CN_TOPIC_0245374763"></a>
 
-显示各个节点执行作业结束后的负载管理记录，查询该函数必须具有monadmin权限。
+显示各个节点执行作业结束后的负载管理记录。
 
 **表 1**  GLOBAL\_STATEMENT\_COMPLEX\_HISTORY的字段
 

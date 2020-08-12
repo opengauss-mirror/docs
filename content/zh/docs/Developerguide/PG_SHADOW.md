@@ -7,6 +7,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 **表 1**  PG\_SHADOW字段
 
 <a name="zh-cn_topic_0237122436_zh-cn_topic_0059778735_t0ad252bdb8024160816353f61e3bad0d"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0237122436_zh-cn_topic_0059778735_rf5d3d56d7ca540e49df0e63f3a534d81"><th class="cellrowborder" valign="top" width="17.11%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0237122436_zh-cn_topic_0059778735_abeddac62771547d3820cd7abb2121ede"><a name="zh-cn_topic_0237122436_zh-cn_topic_0059778735_abeddac62771547d3820cd7abb2121ede"></a><a name="zh-cn_topic_0237122436_zh-cn_topic_0059778735_abeddac62771547d3820cd7abb2121ede"></a>名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0237122436_zh-cn_topic_0059778735_af3e014174746494ab7eb5239b44d1416"><a name="zh-cn_topic_0237122436_zh-cn_topic_0059778735_af3e014174746494ab7eb5239b44d1416"></a><a name="zh-cn_topic_0237122436_zh-cn_topic_0059778735_af3e014174746494ab7eb5239b44d1416"></a>类型</p>
@@ -152,33 +153,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 <td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122436_zh-cn_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"><a name="zh-cn_topic_0237122436_zh-cn_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"></a><a name="zh-cn_topic_0237122436_zh-cn_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"></a>运行时配置变量的会话缺省。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122436_row1926212303714"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122436_p526312301779"><a name="zh-cn_topic_0237122436_p526312301779"></a><a name="zh-cn_topic_0237122436_p526312301779"></a>usemonitoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122436_p2263173017719"><a name="zh-cn_topic_0237122436_p2263173017719"></a><a name="zh-cn_topic_0237122436_p2263173017719"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122436_p0263730774"><a name="zh-cn_topic_0237122436_p0263730774"></a><a name="zh-cn_topic_0237122436_p0263730774"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122436_p1826310301679"><a name="zh-cn_topic_0237122436_p1826310301679"></a><a name="zh-cn_topic_0237122436_p1826310301679"></a>用户是监控管理员</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122436_row136316351712"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122436_p18637357712"><a name="zh-cn_topic_0237122436_p18637357712"></a><a name="zh-cn_topic_0237122436_p18637357712"></a>useoperatoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122436_p8631535475"><a name="zh-cn_topic_0237122436_p8631535475"></a><a name="zh-cn_topic_0237122436_p8631535475"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122436_p136317358714"><a name="zh-cn_topic_0237122436_p136317358714"></a><a name="zh-cn_topic_0237122436_p136317358714"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122436_p1632351715"><a name="zh-cn_topic_0237122436_p1632351715"></a><a name="zh-cn_topic_0237122436_p1632351715"></a>用户是运维管理员</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122436_row56999381976"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122436_p116991389717"><a name="zh-cn_topic_0237122436_p116991389717"></a><a name="zh-cn_topic_0237122436_p116991389717"></a>usepolicyadmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122436_p570093811710"><a name="zh-cn_topic_0237122436_p570093811710"></a><a name="zh-cn_topic_0237122436_p570093811710"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122436_p27001938775"><a name="zh-cn_topic_0237122436_p27001938775"></a><a name="zh-cn_topic_0237122436_p27001938775"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122436_p3700143810716"><a name="zh-cn_topic_0237122436_p3700143810716"></a><a name="zh-cn_topic_0237122436_p3700143810716"></a>用户是安全策略管理员</p>
-</td>
-</tr>
 </tbody>
 </table>
+
 

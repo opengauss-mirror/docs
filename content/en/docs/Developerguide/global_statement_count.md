@@ -1,6 +1,6 @@
 # GLOBAL\_STATEMENT\_COUNT<a name="EN-US_TOPIC_0245374761"></a>
 
-**GLOBAL\_STATEMENT\_COUNT**  displays statistics about five types of running statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**, and  **MERGE INTO**\) as well as DDL, DML, and DCL statements on each node of the database. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STATEMENT\_COUNT**  displays statistics about five types of running statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**, and  **MERGE INTO**\) as well as DDL, DML, and DCL statements on each node of the database. 
 
 **Table  1**  GLOBAL\_STATEMENT\_COUNT columns
 

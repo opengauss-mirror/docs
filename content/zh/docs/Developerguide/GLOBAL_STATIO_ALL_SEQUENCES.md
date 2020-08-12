@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_ALL\_SEQUENCES<a name="ZH-CN_TOPIC_0245374799"></a>
 
-GLOBAL\_STATIO\_ALL\_SEQUENCES包含各节点的数据库中每个序列的每一行，显示特定序列关于I/O的统计。查询视图必须具有monadmin权限。
+GLOBAL\_STATIO\_ALL\_SEQUENCES包含各节点的数据库中每个序列的每一行，显示特定序列关于I/O的统计。
 
 **表 1**  GLOBAL\_STATIO\_ALL\_SEQUENCES字段
 

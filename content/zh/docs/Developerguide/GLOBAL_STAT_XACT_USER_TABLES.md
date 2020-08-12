@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_XACT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374712"></a>
 
-显示各节点命名空间中用户表的事务状态信息。查询视图必须具有monadmin权限。
+显示各节点命名空间中用户表的事务状态信息。
 
 **表 1**  GLOBAL\_STAT\_XACT\_USER\_TABLES字段
 

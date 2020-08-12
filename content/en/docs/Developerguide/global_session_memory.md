@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_MEMORY<a name="EN-US_TOPIC_0245374738"></a>
 
-**GLOBAL\_SESSION\_MEMORY**  collects statistics about memory usage at the session level on each node in the unit of MB, including all the memory allocated to Postgres and stream threads on DNs for jobs currently executed by users. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_SESSION\_MEMORY**  collects statistics about memory usage at the session level on each node in the unit of MB, including all the memory allocated to Postgres and stream threads on DNs for jobs currently executed by users. 
 
 **Table  1**  GLOBAL\_SESSION\_MEMORY columns
 

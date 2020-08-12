@@ -1,6 +1,6 @@
 # SUMMARY\_REL\_IOSTAT<a name="ZH-CN_TOPIC_0245374678"></a>
 
-获取所有节点上的数据文件IO 统计信息，查询视图必须具有monadmin权限。
+获取所有节点上的数据文件IO 统计信息。
 
 **表 1**  SUMMARY\_REL\_IOSTAT字段
 

@@ -1,6 +1,6 @@
 # GLOBAL\_MEMORY\_NODE\_DETAIL<a name="ZH-CN_TOPIC_0245374665"></a>
 
-显示前openGauss中所有正常节点下的内存使用情况。查询视图必须具有monadmin权限。
+显示前openGauss中所有正常节点下的内存使用情况。
 
 **表 1**  GLOBAL\_MEMORY\_NODE\_DETAIL字段
 

@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_STAT<a name="ZH-CN_TOPIC_0245374734"></a>
 
-各节点上以会话线程或AutoVacuum线程为单位，统计会话状态信息。查询视图必须具有monadmin权限。
+各节点上以会话线程或AutoVacuum线程为单位，统计会话状态信息。
 
 **表 1**  GLOBAL\_SESSION\_STAT字段
 

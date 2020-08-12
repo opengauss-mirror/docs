@@ -1,6 +1,6 @@
 # GLOBAL\_CKPT\_STATUS<a name="EN-US_TOPIC_0245374819"></a>
 
-**GLOBAL\_CKPT\_STATUS**  displays the checkpoint information and log flushing information about all instances in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_CKPT\_STATUS**  displays the checkpoint information and log flushing information about all instances in openGauss. 
 
 **Table  1**  GLOBAL\_CKPT\_STATUS columns
 

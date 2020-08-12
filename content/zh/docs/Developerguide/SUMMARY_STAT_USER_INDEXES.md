@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_USER\_INDEXES<a name="ZH-CN_TOPIC_0245374684"></a>
 
-openGauss内汇聚所有数据库中用户自定义普通表的索引状态信息。查询视图必须具有monadmin权限。
+openGauss内汇聚所有数据库中用户自定义普通表的索引状态信息。
 
 **表 1**  SUMMARY\_STAT\_USER\_INDEXES字段
 

@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_XACT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374705"></a>
 
-显示openGauss内汇聚的命名空间中所有普通表和toast表的事务状态信息。查询视图必须具有monadmin权限。
+显示openGauss内汇聚的命名空间中所有普通表和toast表的事务状态信息。
 
 **表 1**  SUMMARY\_STAT\_XACT\_ALL\_TABLES字段
 

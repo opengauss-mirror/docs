@@ -1,6 +1,6 @@
 # SUMMARY\_FILE\_REDO\_IOSTAT<a name="EN-US_TOPIC_0245374674"></a>
 
-**SUMMARY\_FILE\_REDO\_IOSTAT**  records statistics about all redo logs and WALs in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_FILE\_REDO\_IOSTAT**  records statistics about all redo logs and WALs in openGauss. 
 
 **Table  1**  SUMMARY\_FILE\_REDO\_IOSTAT columns
 

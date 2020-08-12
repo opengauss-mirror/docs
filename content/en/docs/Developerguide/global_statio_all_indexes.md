@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_ALL\_INDEXES<a name="EN-US_TOPIC_0245374796"></a>
 
-**GLOBAL\_STATIO\_ALL\_INDEXES**  contains one row for each index in databases on each node, showing I/O statistics about specific indexes. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STATIO\_ALL\_INDEXES**  contains one row for each index in databases on each node, showing I/O statistics about specific indexes. 
 
 **Table  1**  GLOBAL\_STATIO\_ALL\_INDEXES columns
 

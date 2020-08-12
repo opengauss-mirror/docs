@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_ALL\_TABLES<a name="EN-US_TOPIC_0245374793"></a>
 
-**GLOBAL\_STATIO\_ALL\_TABLES**  contains I/O statistics about each table \(including TOAST tables\) in databases on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STATIO\_ALL\_TABLES**  contains I/O statistics about each table \(including TOAST tables\) in databases on each node. 
 
 **Table  1**  GLOBAL\_STATIO\_ALL\_TABLES columns
 

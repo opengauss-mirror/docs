@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_USER\_SEQUENCES<a name="EN-US_TOPIC_0245374781"></a>
 
-**GLOBAL\_STATIO\_USER\_SEQUENCES**  displays I/O status information about all user-defined sequences in namespaces on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STATIO\_USER\_SEQUENCES**  displays I/O status information about all user-defined sequences in namespaces on each node. 
 
 **Table  1**  GLOBAL\_STATIO\_USER\_SEQUENCES columns
 

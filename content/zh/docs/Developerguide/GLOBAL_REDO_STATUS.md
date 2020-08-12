@@ -1,6 +1,6 @@
 # GLOBAL\_REDO\_STATUS<a name="ZH-CN_TOPIC_0247293384"></a>
 
-GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。查询视图必须具有monadmin权限。
+GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。
 
 **表 1**  GLOBAL\_REDO\_STATUS字段
 

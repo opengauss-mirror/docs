@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0245374714"></a>
 
-**SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS**  displays statistics about function executions in transactions in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS**  displays statistics about function executions in transactions in openGauss. 
 
 **Table  1**  SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS columns
 

@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0245374721"></a>
 
-提供openGauss中各个节点的用户所创建的函数的状态的统计信息，查询视图必须具有monadmin权限。
+提供openGauss中各个节点的用户所创建的函数的状态的统计信息。
 
 **表 1**  GLOBAL\_STAT\_USER\_FUNCTIONS字段
 

@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_ALL\_TABLES<a name="EN-US_TOPIC_0245374693"></a>
 
-**SUMMARY\_STAT\_ALL\_TABLES**  displays statistics about one row for each table \(including TOAST tables\) in databases in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_ALL\_TABLES**  displays statistics about one row for each table \(including TOAST tables\) in databases in openGauss. 
 
 **Table  1**  SUMMARY\_STAT\_ALL\_TABLES columns
 

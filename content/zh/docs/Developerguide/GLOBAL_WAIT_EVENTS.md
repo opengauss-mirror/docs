@@ -1,6 +1,6 @@
 # GLOBAL\_WAIT\_EVENTS<a name="ZH-CN_TOPIC_0245374834"></a>
 
-GLOBAL\_WAIT\_EVENTS视图显示各节点的event的等待相关的统计信息。查询视图必须具有monadmin权限。
+GLOBAL\_WAIT\_EVENTS视图显示各节点的event的等待相关的统计信息。
 
 **表 1**  GLOBAL\_WAIT\_EVENTS字段
 

@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_USER\_INDEXES<a name="EN-US_TOPIC_0245374777"></a>
 
-**SUMMARY\_STATIO\_USER\_INDEXES**  displays I/O status information about all user relationship table indexes in namespaces in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STATIO\_USER\_INDEXES**  displays I/O status information about all user relationship table indexes in namespaces in openGauss. 
 
 **Table  1**  SUMMARY\_STATIO\_USER\_INDEXES columns
 

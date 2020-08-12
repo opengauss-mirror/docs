@@ -1,6 +1,6 @@
 # SUMMARY\_FILE\_IOSTAT<a name="ZH-CN_TOPIC_0245374671"></a>
 
-通过openGauss内对数据文件汇聚IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。查询视图必须具有monadmin权限。
+通过openGauss内对数据文件汇聚IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。
 
 **表 1**  SUMMARY\_FILE\_IOSTAT字段
 

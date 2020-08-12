@@ -1,6 +1,6 @@
 # GLOBAL\_FILE\_IOSTAT<a name="ZH-CN_TOPIC_0245374672"></a>
 
-得到所有节点上的数据文件IO 统计信息。查询视图必须具有monadmin权限。
+得到所有节点上的数据文件IO 统计信息。
 
 **表 1**  GLOBAL\_FILE\_IOSTAT字段
 

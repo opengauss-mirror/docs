@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374681"></a>
 
-openGauss内汇聚所有命名空间中用户自定义普通表的状态信息。查询视图必须具有monadmin权限。
+openGauss内汇聚所有命名空间中用户自定义普通表的状态信息。
 
 **表 1**  SUMMARY\_STAT\_USER\_TABLES
 

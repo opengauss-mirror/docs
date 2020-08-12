@@ -1,6 +1,6 @@
 # GLOBAL\_RECOVERY\_STATUS<a name="ZH-CN_TOPIC_0245374825"></a>
 
-GLOBAL\_RECOVERY\_STATUS视图显示关于主机和备机的日志流控信息。查询视图必须具有monadmin权限。
+GLOBAL\_RECOVERY\_STATUS视图显示关于主机和备机的日志流控信息。
 
 **表 1**  GLOBAL\_RECOVERY\_STATUS字段
 

@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_USER\_INDEXES<a name="ZH-CN_TOPIC_0245374777"></a>
 
-SUMMARY\_STATIO\_USER\_INDEXES视图显示openGauss内汇聚的命名空间中所有用户关系表索引的IO状态信息。查询视图必须具有monadmin权限。
+SUMMARY\_STATIO\_USER\_INDEXES视图显示openGauss内汇聚的命名空间中所有用户关系表索引的IO状态信息。
 
 **表 1**  SUMMARY\_STATIO\_USER\_INDEXES字段
 

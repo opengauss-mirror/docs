@@ -1,6 +1,6 @@
 # SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME<a name="ZH-CN_TOPIC_0245374729"></a>
 
-SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME用来统计数据库主节点上workload（业务）负载的SUID信息，查询视图必须具有monadmin权限。
+SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME用来统计数据库主节点上workload（业务）负载的SUID信息。
 
 **表 1**  SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIM字段
 

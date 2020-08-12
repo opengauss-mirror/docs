@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_BAD\_BLOCK<a name="ZH-CN_TOPIC_0245374718"></a>
 
-获得各节点的表、索引等文件的读取失败信息。查询视图必须具有monadmin权限。
+获得各节点的表、索引等文件的读取失败信息。
 
 **表 1**  GLOBAL\_STAT\_BAD\_BLOCK字段
 

@@ -1,6 +1,6 @@
 # GLOBAL\_MEMORY\_NODE\_DETAIL<a name="EN-US_TOPIC_0245374665"></a>
 
-The memory usage of all normal nodes in openGauss is displayed. Query the view as a user with the  **monadmin**  permission.
+The memory usage of all normal nodes in openGauss is displayed. 
 
 **Table  1**  GLOBAL\_MEMORY\_NODE\_DETAIL fields
 

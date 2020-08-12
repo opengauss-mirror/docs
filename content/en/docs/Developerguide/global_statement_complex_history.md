@@ -1,6 +1,6 @@
 # GLOBAL\_STATEMENT\_COMPLEX\_HISTORY<a name="EN-US_TOPIC_0245374763"></a>
 
-**GLOBAL\_STATEMENT\_COMPLEX\_HISTORY**  displays load management records after jobs are executed on each node. To query this function, you must have the  **monadmin**  permission.
+**GLOBAL\_STATEMENT\_COMPLEX\_HISTORY**  displays load management records after jobs are executed on each node. 
 
 **Table  1**  GLOBAL\_STATEMENT\_COMPLEX\_HISTORY columns
 

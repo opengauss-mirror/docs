@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0245374688"></a>
 
-得到各节点pg\_catalog、information\_schema模式的所有命名空间中系统表的统计信息。查询视图必须具有monadmin权限。
+得到各节点pg\_catalog、information\_schema模式的所有命名空间中系统表的统计信息。
 
 **表 1**  GLOBAL\_STAT\_SYS\_TABLES字段
 

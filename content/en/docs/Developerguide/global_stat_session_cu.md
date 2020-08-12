@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_SESSION\_CU<a name="EN-US_TOPIC_0245374801"></a>
 
-**GLOBAL\_STAT\_SESSION\_CU**  is used to query the CU hit rate of running sessions on each node in openGauss. The data about a session is cleared when you exit this session or restart openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_SESSION\_CU**  is used to query the CU hit rate of running sessions on each node in openGauss. The data about a session is cleared when you exit this session or restart openGauss. 
 
 **Table  1**  GLOBAL\_STAT\_SESSION\_CU columns
 

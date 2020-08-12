@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_ALL\_INDEXES<a name="EN-US_TOPIC_0245374696"></a>
 
-**SUMMARY\_STAT\_ALL\_INDEXES**  contains every row of each index in databases in openGauss, showing statistics about accesses to specific indexes. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_ALL\_INDEXES**  contains every row of each index in databases in openGauss, showing statistics about accesses to specific indexes. 
 
 **Table  1**  SUMMARY\_STAT\_ALL\_INDEXES columns
 

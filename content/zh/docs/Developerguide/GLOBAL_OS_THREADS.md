@@ -1,6 +1,6 @@
 # GLOBAL\_OS\_THREADS<a name="ZH-CN_TOPIC_0245374659"></a>
 
-提供openGauss中所有正常节点下的线程状态信息。查询视图必须具有monadmin权限。
+提供openGauss中所有正常节点下的线程状态信息。
 
 **表 1**  GLOBAL\_OS\_THREADS字段
 

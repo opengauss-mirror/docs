@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0245374715"></a>
 
-**GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS**  displays statistics about function executions in transactions on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS**  displays statistics about function executions in transactions on each node. 
 
 **Table  1**  GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS columns
 

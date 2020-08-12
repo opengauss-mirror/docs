@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_USER\_TABLES<a name="EN-US_TOPIC_0245374775"></a>
 
-**GLOBAL\_STATIO\_USER\_TABLES**  displays I/O status information about all user relationship tables in namespaces on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STATIO\_USER\_TABLES**  displays I/O status information about all user relationship tables in namespaces on each node. 
 
 **Table  1**  GLOBAL\_STATIO\_USER\_TABLES columns
 

@@ -1,6 +1,6 @@
 # GLOBAL\_DOUBLE\_WRITE\_STATUS<a name="EN-US_TOPIC_0245374820"></a>
 
-**GLOBAL\_DOUBLE\_WRITE\_STATUS**  displays doublewrite file status of all instances in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_DOUBLE\_WRITE\_STATUS**  displays doublewrite file status of all instances in openGauss. 
 
 **Table  1**  GLOBAL\_DOUBLEWRITE\_STATUS columns
 

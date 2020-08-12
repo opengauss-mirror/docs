@@ -1,6 +1,6 @@
 # GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME<a name="EN-US_TOPIC_0245374765"></a>
 
-**GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME**  displays load management information about jobs being executed by the current user on each node. To query this function, you must have the  **monadmin**  permission.
+**GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME**  displays load management information about jobs being executed by the current user on each node. 
 
 **Table  1**  GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME columns
 

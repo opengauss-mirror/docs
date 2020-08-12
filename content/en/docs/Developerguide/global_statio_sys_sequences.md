@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_SYS\_SEQUENCES<a name="EN-US_TOPIC_0245374790"></a>
 
-**GLOBAL\_STATIO\_SYS\_SEQUENCES**  displays I/O status information about all system sequences in namespaces on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STATIO\_SYS\_SEQUENCES**  displays I/O status information about all system sequences in namespaces on each node. 
 
 **Table  1**  GLOBAL\_STATIO\_SYS\_SEQUENCES columns
 

@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_DATABASE\_CONFLICTS<a name="ZH-CN_TOPIC_0245374702"></a>
 
-显示openGauss内汇聚的数据库冲突状态的统计信息。查询视图必须具有monadmin权限。
+显示openGauss内汇聚的数据库冲突状态的统计信息。
 
 **表 1**  SUMMARY\_STAT\_DATABASE\_CONFLICTS字段
 

@@ -1,6 +1,6 @@
 # GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS<a name="EN-US_TOPIC_0245374756"></a>
 
-**GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS**  displays information about transactions that are currently prepared for two-phase commit on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS**  displays information about transactions that are currently prepared for two-phase commit on each node. 
 
 **Table  1**  GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS columns
 

@@ -1,6 +1,6 @@
 # GLOBAL\_REPLICATION\_SLOTS<a name="ZH-CN_TOPIC_0245374815"></a>
 
-GLOBAL\_REPLICATION\_SLOTS视图用于查看openGauss各节点的复制节点的信息。查询视图必须具有monadmin权限。
+GLOBAL\_REPLICATION\_SLOTS视图用于查看openGauss各节点的复制节点的信息。
 
 **表 1**  GLOBAL\_REPLICATION\_SLOTS字段
 

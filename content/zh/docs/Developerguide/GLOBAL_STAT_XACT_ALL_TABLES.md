@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_XACT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374706"></a>
 
-显示各节点的命名空间中所有普通表和toast表的事务状态信息。查询视图必须具有monadmin权限。
+显示各节点的命名空间中所有普通表和toast表的事务状态信息。
 
 **表 1**  GLOBAL\_STAT\_XACT\_ALL\_TABLES字段
 

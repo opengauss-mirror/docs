@@ -1,6 +1,6 @@
 # GLOBAL\_RECOVERY\_STATUS<a name="EN-US_TOPIC_0245374825"></a>
 
-**GLOBAL\_RECOVERY\_STATUS**  displays log flow control information about the primary and standby nodes. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_RECOVERY\_STATUS**  displays log flow control information about the primary and standby nodes. 
 
 **Table  1**  GLOBAL\_RECOVERY\_STATUS columns
 

@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_DATABASE\_CONFLICTS<a name="EN-US_TOPIC_0245374702"></a>
 
-**SUMMARY\_STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts in openGauss. 
 
 **Table  1**  SUMMARY\_STAT\_DATABASE\_CONFLICTS columns
 

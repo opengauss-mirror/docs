@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_STAT<a name="EN-US_TOPIC_0245374734"></a>
 
-**GLOBAL\_SESSION\_STAT**  collects statistics about session status on each node based on session threads or the  **AutoVacuum**  thread. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_SESSION\_STAT**  collects statistics about session status on each node based on session threads or the  **AutoVacuum**  thread. 
 
 **Table  1**  GLOBAL\_SESSION\_STAT columns
 

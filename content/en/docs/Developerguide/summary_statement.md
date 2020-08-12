@@ -1,6 +1,6 @@
 # SUMMARY\_STATEMENT<a name="EN-US_TOPIC_0245374759"></a>
 
-**SUMMARY\_STATEMENT**  obtains all information about execution statements \(normalized SQL statements\) on the primary database node and other database nodes. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STATEMENT**  obtains all information about execution statements \(normalized SQL statements\) on the primary database node and other database nodes. 
 
 **Table  1**  SUMMARY\_STATEMENT columns
 

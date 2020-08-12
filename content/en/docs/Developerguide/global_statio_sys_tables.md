@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_SYS\_TABLES<a name="EN-US_TOPIC_0245374784"></a>
 
-**GLOBAL\_STATIO\_SYS\_TABLES**  displays I/O status information about all system catalogs in namespaces on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STATIO\_SYS\_TABLES**  displays I/O status information about all system catalogs in namespaces on each node. 
 
 **Table  1**  GLOBAL\_STATIO\_SYS\_TABLES columns
 

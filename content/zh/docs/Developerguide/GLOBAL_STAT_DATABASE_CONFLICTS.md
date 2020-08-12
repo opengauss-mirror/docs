@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_DATABASE\_CONFLICTS<a name="ZH-CN_TOPIC_0245374703"></a>
 
-显示每个节点的数据库冲突状态的统计信息。查询视图必须具有monadmin权限。
+显示每个节点的数据库冲突状态的统计信息。
 
 **表 1**  GLOBAL\_STAT\_DATABASE\_CONFLICTS字段
 

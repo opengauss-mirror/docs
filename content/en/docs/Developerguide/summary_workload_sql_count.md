@@ -1,6 +1,6 @@
 # SUMMARY\_WORKLOAD\_SQL\_COUNT<a name="EN-US_TOPIC_0245374724"></a>
 
-**SUMMARY\_WORKLOAD\_SQL\_COUNT**  displays the distribution of SQL statements in workloads on the primary database node in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_WORKLOAD\_SQL\_COUNT**  displays the distribution of SQL statements in workloads on the primary database node in openGauss. 
 
 **Table  1**  SUMMARY\_WORKLOAD\_SQL\_COUNT columns
 

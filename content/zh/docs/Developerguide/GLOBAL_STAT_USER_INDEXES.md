@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_USER\_INDEXES<a name="ZH-CN_TOPIC_0245374685"></a>
 
-得到各节点数据库中用户自定义普通表的索引状态信息。查询视图必须具有monadmin权限。
+得到各节点数据库中用户自定义普通表的索引状态信息。
 
 **表 1**  GLOBAL\_STAT\_USER\_INDEXES字段
 

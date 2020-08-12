@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_BAD\_BLOCK<a name="EN-US_TOPIC_0245374717"></a>
 
-**SUMMARY\_STAT\_BAD\_BLOCK**  displays information about table and index read failures in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_BAD\_BLOCK**  displays information about table and index read failures in openGauss. 
 
 **Table  1**  SUMMARY\_STAT\_BAD\_BLOCK columns
 

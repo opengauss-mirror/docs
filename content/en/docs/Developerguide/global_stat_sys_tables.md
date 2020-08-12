@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_SYS\_TABLES<a name="EN-US_TOPIC_0245374688"></a>
 
-**GLOBAL\_STAT\_SYS\_TABLES**  displays statistics about the system catalogs of all the namespaces in  **pg\_catalog**  and  **information\_schema**  schemas on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_SYS\_TABLES**  displays statistics about the system catalogs of all the namespaces in  **pg\_catalog**  and  **information\_schema**  schemas on each node.
 
 **Table  1**  GLOBAL\_STAT\_SYS\_TABLES columns
 
