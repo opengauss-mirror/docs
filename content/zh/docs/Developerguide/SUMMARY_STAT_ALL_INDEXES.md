@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_ALL\_INDEXES<a name="ZH-CN_TOPIC_0245374696"></a>
 
-将包含openGauss内汇聚数据库中的每个索引行，显示访问特定索引的统计。查询视图必须具有monadmin权限。
+将包含openGauss内汇聚数据库中的每个索引行，显示访问特定索引的统计。
 
 **表 1**  SUMMARY\_STAT\_ALL\_INDEXES字段
 

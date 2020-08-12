@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_BAD\_BLOCK<a name="EN-US_TOPIC_0245374718"></a>
 
-**GLOBAL\_STAT\_BAD\_BLOCK**  displays information about table and index read failures on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_BAD\_BLOCK**  displays information about table and index read failures on each node. 
 
 **Table  1**  GLOBAL\_STAT\_BAD\_BLOCK columns
 

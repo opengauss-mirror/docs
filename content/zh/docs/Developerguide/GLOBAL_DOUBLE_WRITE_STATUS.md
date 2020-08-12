@@ -1,6 +1,6 @@
 # GLOBAL\_DOUBLE\_WRITE\_STATUS<a name="ZH-CN_TOPIC_0245374820"></a>
 
-GLOBAL\_DOUBLE\_WRITE\_STATUS视图显示openGauss所有实例的双写文件的情况。查询视图必须具有monadmin权限。
+GLOBAL\_DOUBLE\_WRITE\_STATUS视图显示openGauss所有实例的双写文件的情况。
 
 **表 1**  GLOBAL\_DOUBLEWRITE\_STATUS字段
 

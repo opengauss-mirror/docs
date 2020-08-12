@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0245374690"></a>
 
-openGauss内汇聚pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。查询视图必须具有monadmin权限。
+openGauss内汇聚pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。
 
 **表 1**  SUMMARY\_STAT\_SYS\_INDEXES字段
 

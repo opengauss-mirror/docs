@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_XACT\_USER\_TABLES<a name="EN-US_TOPIC_0245374711"></a>
 
-**SUMMARY\_STAT\_XACT\_USER\_TABLES**  displays transaction status information about the user tables in namespaces in the cluster. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_XACT\_USER\_TABLES**  displays transaction status information about the user tables in namespaces in the cluster. 
 
 **Table  1**  SUMMARY\_STAT\_XACT\_USER\_TABLES columns
 

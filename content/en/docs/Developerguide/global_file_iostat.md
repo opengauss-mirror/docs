@@ -1,6 +1,6 @@
 # GLOBAL\_FILE\_IOSTAT<a name="EN-US_TOPIC_0245374672"></a>
 
-**GLOBAL\_FILE\_IOSTAT**  records statistics about data file I/Os on all nodes. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_FILE\_IOSTAT**  records statistics about data file I/Os on all nodes. 
 
 **Table  1**  GLOBAL\_FILE\_IOSTAT columns
 

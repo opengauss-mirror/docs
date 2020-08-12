@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_DATABASE\_CONFLICTS<a name="EN-US_TOPIC_0245374703"></a>
 
-**GLOBAL\_STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts on each node. 
 
 **Table  1**  GLOBAL\_STAT\_DATABASE\_CONFLICTS columns
 

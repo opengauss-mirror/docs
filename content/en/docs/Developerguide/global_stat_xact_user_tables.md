@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_XACT\_USER\_TABLES<a name="EN-US_TOPIC_0245374712"></a>
 
-**GLOBAL\_STAT\_XACT\_USER\_TABLES**  displays transaction status information about the user tables in namespaces on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_XACT\_USER\_TABLES**  displays transaction status information about the user tables in namespaces on each node. 
 
 **Table  1**  GLOBAL\_STAT\_XACT\_USER\_TABLES columns
 

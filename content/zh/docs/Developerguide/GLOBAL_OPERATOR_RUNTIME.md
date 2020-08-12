@@ -1,6 +1,6 @@
 # GLOBAL\_OPERATOR\_RUNTIME<a name="ZH-CN_TOPIC_0245374850"></a>
 
-GLOBAL\_OPERATOR\_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的算子相关信息。查询视图必须具有monadmin权限。
+GLOBAL\_OPERATOR\_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的算子相关信息。
 
 **表 1**  GLOBAL\_OPERATOR\_RUNTIME的字段
 

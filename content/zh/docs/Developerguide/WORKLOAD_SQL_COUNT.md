@@ -1,6 +1,6 @@
 # WORKLOAD\_SQL\_COUNT<a name="ZH-CN_TOPIC_0245374723"></a>
 
-显示当前节点workload上的SQL数量分布。普通用户只可以看到自己在workload上的SQL分布；monadmin可以看到总的workload的负载情况。
+显示当前节点workload上的SQL数量分布。普通用户只可以看到自己在workload上的SQL分布；初始用户可以看到总的workload的负载情况。
 
 **表 1**  WORKLOAD\_SQL\_COUNT字段
 

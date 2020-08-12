@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_ALL\_INDEXES<a name="EN-US_TOPIC_0245374795"></a>
 
-**SUMMARY\_STATIO\_ALL\_INDEXES**  contains every row of each index in databases in openGauss, showing I/O statistics about specific indexes. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STATIO\_ALL\_INDEXES**  contains every row of each index in databases in openGauss, showing I/O statistics about specific indexes. 
 
 **Table  1**  SUMMARY\_STATIO\_ALL\_INDEXES columns
 

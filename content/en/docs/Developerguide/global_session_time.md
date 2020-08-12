@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_TIME<a name="EN-US_TOPIC_0245374736"></a>
 
-**GLOBAL\_SESSION\_TIME**  collects statistics about the running time of session threads and time consumed in each execution phase on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_SESSION\_TIME**  collects statistics about the running time of session threads and time consumed in each execution phase on each node. 
 
 **Table  1**  GLOBAL\_SESSION\_TIME columns
 

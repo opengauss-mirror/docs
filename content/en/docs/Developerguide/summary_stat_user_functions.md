@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0245374720"></a>
 
-**SUMMARY\_STAT\_USER\_FUNCTIONS**  displays statistics about user-defined views on all database nodes. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_USER\_FUNCTIONS**  displays statistics about user-defined views on all database nodes. 
 
 **Table  1**  SUMMARY\_STAT\_USER\_FUNCTIONS columns
 

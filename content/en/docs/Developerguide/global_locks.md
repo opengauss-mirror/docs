@@ -1,6 +1,6 @@
 # GLOBAL\_LOCKS<a name="EN-US_TOPIC_0245374831"></a>
 
-**GLOBAL\_LOCKS**  displays information about locks held by open transactions on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_LOCKS**  displays information about locks held by open transactions on each node. 
 
 **Table  1**  GLOBAL\_LOCKS columns
 

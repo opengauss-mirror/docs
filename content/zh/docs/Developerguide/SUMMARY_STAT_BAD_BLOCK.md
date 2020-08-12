@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_BAD\_BLOCK<a name="ZH-CN_TOPIC_0245374717"></a>
 
-获得openGauss内汇聚的表、索引等文件的读取失败信息。查询视图必须具有monadmin权限。
+获得openGauss内汇聚的表、索引等文件的读取失败信息。
 
 **表 1**  SUMMARY\_STAT\_BAD\_BLOCK字段
 

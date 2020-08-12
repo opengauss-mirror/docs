@@ -1,6 +1,6 @@
 # GLOBAL\_CONFIG\_SETTINGS<a name="ZH-CN_TOPIC_0245374837"></a>
 
-GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息。查询视图必须具有monadmin权限。
+GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息。
 
 **表 1**  GLOBAL\_CONFIG\_SETTINGS的字段
 

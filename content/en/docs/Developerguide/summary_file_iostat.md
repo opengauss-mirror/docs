@@ -1,6 +1,6 @@
 # SUMMARY\_FILE\_IOSTAT<a name="EN-US_TOPIC_0245374671"></a>
 
-**SUMMARY\_FILE\_IOSTAT**  records statistics about data file I/Os in openGauss to indicate I/O performance and detect performance problems such as abnormal I/O operations. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_FILE\_IOSTAT**  records statistics about data file I/Os in openGauss to indicate I/O performance and detect performance problems such as abnormal I/O operations. 
 
 **Table  1**  SUMMARY\_FILE\_IOSTAT columns
 

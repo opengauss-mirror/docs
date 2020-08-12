@@ -1,6 +1,6 @@
 # GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS<a name="ZH-CN_TOPIC_0245374756"></a>
 
-显示各节点当前准备好进行两阶段提交的事务的信息。查询视图必须具有monadmin权限。
+显示各节点当前准备好进行两阶段提交的事务的信息。
 
 **表 1**  GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS字段
 

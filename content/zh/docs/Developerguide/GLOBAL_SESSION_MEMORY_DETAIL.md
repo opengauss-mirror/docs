@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0245374740"></a>
 
-统计各节点的线程的内存使用情况，以MemoryContext节点来统计。查询视图必须具有monadmin权限。
+统计各节点的线程的内存使用情况，以MemoryContext节点来统计。
 
 **表 1**  GLOBAL\_SESSION\_MEMORY\_DETAIL字段
 

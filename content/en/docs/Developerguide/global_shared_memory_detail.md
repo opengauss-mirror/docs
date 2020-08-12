@@ -1,6 +1,6 @@
 # GLOBAL\_SHARED\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0245374668"></a>
 
-**GLOBAL\_SHARED\_MEMORY\_DETAIL**  is used to query the usage of shared memory contexts on all normal nodes in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_SHARED\_MEMORY\_DETAIL**  is used to query the usage of shared memory contexts on all normal nodes in openGauss.
 
 **Table  1**  GLOBAL\_SHARED\_MEMORY\_DETAIL columns
 

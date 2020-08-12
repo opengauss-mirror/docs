@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_USER\_TABLES<a name="EN-US_TOPIC_0245374682"></a>
 
-**GLOBAL\_STAT\_USER\_TABLES**  displays the status information about user-defined ordinary tables in all namespaces on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_USER\_TABLES**  displays the status information about user-defined ordinary tables in all namespaces on each node. 
 
 **Table  1**  GLOBAL\_STAT\_USER\_TABLES columns
 

@@ -1,6 +1,6 @@
 # GLOBAL\_CONFIG\_SETTINGS<a name="EN-US_TOPIC_0245374837"></a>
 
-**GLOBAL\_CONFIG\_SETTINGS**  displays information about parameters of running databases on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_CONFIG\_SETTINGS**  displays information about parameters of running databases on each node. 
 
 **Table  1**  GLOBAL\_CONFIG\_SETTINGS columns
 

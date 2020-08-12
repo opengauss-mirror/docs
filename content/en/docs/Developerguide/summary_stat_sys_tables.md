@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_SYS\_TABLES<a name="EN-US_TOPIC_0245374687"></a>
 
-**SUMMARY\_STAT\_SYS\_TABLES**  displays statistics about the system catalogs of all the namespaces in  **pg\_catalog**  and  **information\_schema**  schemas in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_SYS\_TABLES**  displays statistics about the system catalogs of all the namespaces in  **pg\_catalog**  and  **information\_schema**  schemas in openGauss. 
 
 **Table  1**  SUMMARY\_STAT\_SYS\_TABLES columns
 

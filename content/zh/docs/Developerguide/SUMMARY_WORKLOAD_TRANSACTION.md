@@ -1,6 +1,6 @@
 # SUMMARY\_WORKLOAD\_TRANSACTION<a name="ZH-CN_TOPIC_0245374726"></a>
 
-显示openGauss内汇聚的负载事务信息。查询视图必须具有monadmin权限。
+显示openGauss内汇聚的负载事务信息。
 
 **表 1**  SUMMARY\_WORKLOAD\_TRANSACTION字段
 

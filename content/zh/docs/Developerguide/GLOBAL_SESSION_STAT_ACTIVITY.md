@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_STAT\_ACTIVITY<a name="ZH-CN_TOPIC_0245374742"></a>
 
-显示openGauss内各节点上正在运行的线程相关的信息。查询视图必须具有monadmin权限。
+显示openGauss内各节点上正在运行的线程相关的信息。
 
 **表 1**  GLOBAL\_SESSION\_STAT\_ACTIVITY字段
 

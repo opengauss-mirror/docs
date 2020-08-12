@@ -1,6 +1,6 @@
 # GLOBAL\_REPLICATION\_STAT<a name="EN-US_TOPIC_0245374813"></a>
 
-**GLOBAL\_REPLICATION\_STAT**  displays information about log synchronization status on each node, such as the locations where the sender sends logs and where the receiver receives logs. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_REPLICATION\_STAT**  displays information about log synchronization status on each node, such as the locations where the sender sends logs and where the receiver receives logs.
 
 **Table  1**  GLOBAL\_REPLICATION\_STAT columns
 

@@ -1,8 +1,6 @@
 # GLOBAL\_LOCKS<a name="ZH-CN_TOPIC_0245374831"></a>
 
-GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。查询视图必须具有monadmin权限。
-
-**表 1**  GLOBAL\_LOCKS字段
+GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。
 
 <a name="zh-cn_topic_0237122727_table13636812194016"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0237122727_row99071212164011"><th class="cellrowborder" valign="top" width="23.189999999999998%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122727_p49075122402"><a name="zh-cn_topic_0237122727_p49075122402"></a><a name="zh-cn_topic_0237122727_p49075122402"></a><strong id="zh-cn_topic_0237122727_b1890751216402"><a name="zh-cn_topic_0237122727_b1890751216402"></a><a name="zh-cn_topic_0237122727_b1890751216402"></a>名称</strong></p>

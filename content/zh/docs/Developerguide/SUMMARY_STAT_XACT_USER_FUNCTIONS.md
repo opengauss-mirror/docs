@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0245374714"></a>
 
-视图包含openGauss内汇聚的本事务内函数执行的统计信息。查询视图必须具有monadmin权限。
+视图包含openGauss内汇聚的本事务内函数执行的统计信息。
 
 **表 1**  SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS字段
 

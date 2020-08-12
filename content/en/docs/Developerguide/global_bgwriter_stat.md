@@ -1,6 +1,6 @@
 # GLOBAL\_BGWRITER\_STAT<a name="EN-US_TOPIC_0245374817"></a>
 
-**GLOBAL\_BGWRITER\_STAT**  displays statistics about the background writer process's activities on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_BGWRITER\_STAT**  displays statistics about the background writer process's activities on each node. 
 
 **Table  1**  GLOBAL\_BGWRITER\_STAT columns
 

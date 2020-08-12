@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_TIME<a name="ZH-CN_TOPIC_0245374736"></a>
 
-用于统计各节点会话线程的运行时间信息，及各执行阶段所消耗时间。查询视图必须具有monadmin权限。
+用于统计各节点会话线程的运行时间信息，及各执行阶段所消耗时间。
 
 **表 1**  GLOBAL\_SESSION\_TIME字段
 

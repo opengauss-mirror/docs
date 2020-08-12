@@ -1,6 +1,6 @@
 # SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME<a name="EN-US_TOPIC_0245374729"></a>
 
-**SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME**  collects statistics about SUIDs in workloads on the primary database node. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME**  collects statistics about SUIDs in workloads on the primary database node. 
 
 **Table  1**  SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIM columns
 

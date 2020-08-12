@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_SYS\_INDEXES<a name="EN-US_TOPIC_0245374691"></a>
 
-**GLOBAL\_STAT\_SYS\_INDEXES**  displays index status information about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_SYS\_INDEXES**  displays index status information about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas on each node. 
 
 **Table  1**  GLOBAL\_STAT\_SYS\_INDEXES columns
 

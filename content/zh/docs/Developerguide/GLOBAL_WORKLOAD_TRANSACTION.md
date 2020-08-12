@@ -1,6 +1,6 @@
 # GLOBAL\_WORKLOAD\_TRANSACTION<a name="ZH-CN_TOPIC_0245374727"></a>
 
-显示各节点上的workload的负载信息。查询视图必须具有monadmin权限。
+显示各节点上的workload的负载信息。
 
 **表 1**  GLOBAL\_WORKLOAD\_TRANSACTION字段
 

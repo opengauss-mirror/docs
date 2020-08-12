@@ -1,6 +1,6 @@
 # GLOBAL\_WAIT\_EVENTS<a name="EN-US_TOPIC_0245374834"></a>
 
-**GLOBAL\_WAIT\_EVENTS**  displays statistics about wait events on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_WAIT\_EVENTS**  displays statistics about wait events on each node. 
 
 **Table  1**  GLOBAL\_WAIT\_EVENTS columns
 

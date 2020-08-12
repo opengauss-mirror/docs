@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374693"></a>
 
-openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信息。查询视图必须具有monadmin权限。
+openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信息。
 
 **表 1**  SUMMARY\_STAT\_ALL\_TABLES字段
 

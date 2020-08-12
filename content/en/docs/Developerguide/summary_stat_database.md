@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_DATABASE<a name="EN-US_TOPIC_0245374699"></a>
 
-**SUMMARY\_STAT\_DATABASE**  contains every row of each database in the cluster, showing database-wide statistics. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_DATABASE**  contains every row of each database in the cluster, showing database-wide statistics. 
 
 **Table  1**  SUMMARY\_STAT\_DATABASE
 

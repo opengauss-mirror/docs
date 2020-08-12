@@ -152,33 +152,7 @@ The name stems from the fact that this view should not be readable by the public
 <td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122436_en-us_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"><a name="en-us_topic_0237122436_en-us_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"></a><a name="en-us_topic_0237122436_en-us_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"></a>Session defaults for runtime configuration variables</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237122436_row1926212303714"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122436_p526312301779"><a name="en-us_topic_0237122436_p526312301779"></a><a name="en-us_topic_0237122436_p526312301779"></a>usemonitoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122436_p2263173017719"><a name="en-us_topic_0237122436_p2263173017719"></a><a name="en-us_topic_0237122436_p2263173017719"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122436_p0263730774"><a name="en-us_topic_0237122436_p0263730774"></a><a name="en-us_topic_0237122436_p0263730774"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122436_p1826310301679"><a name="en-us_topic_0237122436_p1826310301679"></a><a name="en-us_topic_0237122436_p1826310301679"></a>User is a monitor administrator.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237122436_row136316351712"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122436_p18637357712"><a name="en-us_topic_0237122436_p18637357712"></a><a name="en-us_topic_0237122436_p18637357712"></a>useoperatoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122436_p8631535475"><a name="en-us_topic_0237122436_p8631535475"></a><a name="en-us_topic_0237122436_p8631535475"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122436_p136317358714"><a name="en-us_topic_0237122436_p136317358714"></a><a name="en-us_topic_0237122436_p136317358714"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122436_p1632351715"><a name="en-us_topic_0237122436_p1632351715"></a><a name="en-us_topic_0237122436_p1632351715"></a>User is an O&amp;M administrator.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237122436_row56999381976"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122436_p116991389717"><a name="en-us_topic_0237122436_p116991389717"></a><a name="en-us_topic_0237122436_p116991389717"></a>usepolicyadmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122436_p570093811710"><a name="en-us_topic_0237122436_p570093811710"></a><a name="en-us_topic_0237122436_p570093811710"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122436_p27001938775"><a name="en-us_topic_0237122436_p27001938775"></a><a name="en-us_topic_0237122436_p27001938775"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122436_p3700143810716"><a name="en-us_topic_0237122436_p3700143810716"></a><a name="en-us_topic_0237122436_p3700143810716"></a>User is a security policy administrator.</p>
-</td>
-</tr>
 </tbody>
 </table>
+
 

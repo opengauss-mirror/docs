@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_USER\_TABLES<a name="EN-US_TOPIC_0245374681"></a>
 
-**SUMMARY\_STAT\_USER\_TABLES**  displays the status information about user-defined ordinary tables in all namespaces in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_USER\_TABLES**  displays the status information about user-defined ordinary tables in all namespaces in openGauss. 
 
 **Table  1**  SUMMARY\_STAT\_USER\_TABLES columns
 

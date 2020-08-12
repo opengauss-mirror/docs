@@ -1,6 +1,6 @@
 # GLOBAL\_OS\_RUNTIME<a name="EN-US_TOPIC_0245374657"></a>
 
-**GLOBAL\_OS\_RUNTIME**  provides OS running status information about all normal nodes in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_OS\_RUNTIME**  provides OS running status information about all normal nodes in openGauss.
 
 **Table  1**  GLOBAL\_OS\_RUNTIME columns
 

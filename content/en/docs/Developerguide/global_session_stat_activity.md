@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_STAT\_ACTIVITY<a name="EN-US_TOPIC_0245374742"></a>
 
-**GLOBAL\_SESSION\_STAT\_ACTIVITY**  displays information about threads that are running on each node in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_SESSION\_STAT\_ACTIVITY**  displays information about threads that are running on each node in openGauss. 
 
 **Table  1**  GLOBAL\_SESSION\_STAT\_ACTIVITY columns
 

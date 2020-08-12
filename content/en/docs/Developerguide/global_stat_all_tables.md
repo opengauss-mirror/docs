@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_ALL\_TABLES<a name="EN-US_TOPIC_0245374694"></a>
 
-**GLOBAL\_STAT\_ALL\_TABLES**  displays statistics about one row for each table \(including TOAST tables\) in databases on each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_ALL\_TABLES**  displays statistics about one row for each table \(including TOAST tables\) in databases on each node. 
 
 **Table  1**  GLOBAL\_STAT\_ALL\_TABLES columns
 

@@ -20,9 +20,6 @@ The  **option**  clause is used to configure information, including permissions 
 
 ```
 {SYSADMIN | NOSYSADMIN}
-    | {MONADMIN | NOMONADMIN}
-    | {OPRADMIN | NOOPRADMIN}
-    | {POLADMIN | NOPOLADMIN}
     | {AUDITADMIN | NOAUDITADMIN}
     | {CREATEDB | NOCREATEDB}
     | {USEFT | NOUSEFT}

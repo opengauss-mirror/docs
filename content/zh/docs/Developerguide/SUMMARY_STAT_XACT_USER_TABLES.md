@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_XACT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374711"></a>
 
-显示集群内汇聚的命名空间中用户表的事务状态信息。查询视图必须具有monadmin权限。
+显示集群内汇聚的命名空间中用户表的事务状态信息。
 
 **表 1**  SUMMARY\_STAT\_XACT\_USER\_TABLES字段
 

@@ -1,6 +1,6 @@
 # GLOBAL\_REL\_IOSTAT<a name="EN-US_TOPIC_0245374677"></a>
 
-**GLOBAL\_REL\_IOSTAT**  obtains statistics about data file I/Os on all nodes. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_REL\_IOSTAT**  obtains statistics about data file I/Os on all nodes. 
 
 **Table  1**  GLOBAL\_REL\_IOSTAT columns
 

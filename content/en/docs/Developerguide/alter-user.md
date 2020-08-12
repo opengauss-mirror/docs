@@ -24,9 +24,6 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
         | { INHERIT | NOINHERIT }
         | { AUDITADMIN | NOAUDITADMIN }
         | { SYSADMIN | NOSYSADMIN }
-        | {MONADMIN | NOMONADMIN}
-        | {OPRADMIN | NOOPRADMIN}
-        | {POLADMIN | NOPOLADMIN}
         | { USEFT | NOUSEFT }
         | { LOGIN | NOLOGIN }
         | { REPLICATION | NOREPLICATION }
@@ -42,7 +39,7 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
-
+    
 -   Change the username.
 
     ```

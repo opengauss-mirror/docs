@@ -24,9 +24,6 @@ None
         | {INHERIT | NOINHERIT}
         | {AUDITADMIN | NOAUDITADMIN}
         | {SYSADMIN | NOSYSADMIN}
-        | {MONADMIN | NOMONADMIN}
-        | {OPRADMIN | NOOPRADMIN}
-        | {POLADMIN | NOPOLADMIN}
         | {USEFT | NOUSEFT}
         | {LOGIN | NOLOGIN}
         | {REPLICATION | NOREPLICATION}
@@ -44,7 +41,7 @@ None
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
-
+    
 -   Rename a role.
 
     ```

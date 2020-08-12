@@ -1,6 +1,6 @@
 # GLOBAL\_PAGEWRITER\_STATUS<a name="ZH-CN_TOPIC_0245374821"></a>
 
-GLOBAL\_PAGEWRITER\_STATUS视图显示openGauss实例的刷页信息和检查点信息。查询视图必须具有monadmin权限。
+GLOBAL\_PAGEWRITER\_STATUS视图显示openGauss实例的刷页信息和检查点信息。
 
 **表 1**  GLOBAL\_PAGEWRITER\_STATUS字段
 

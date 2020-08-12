@@ -1,6 +1,6 @@
 # GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME<a name="ZH-CN_TOPIC_0245374765"></a>
 
-显示当前用户在各个节点上正在执行的作业的负载管理记录，查询该函数必须具有monadmin权限。
+显示当前用户在各个节点上正在执行的作业的负载管理记录。
 
 **表 1**  GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME的字段
 

@@ -1,6 +1,6 @@
 # GLOBAL\_STATIO\_SYS\_TABLES<a name="ZH-CN_TOPIC_0245374784"></a>
 
-GLOBAL\_STATIO\_SYS\_TABLES视图显示各节点的命名空间中所有系统表的IO状态信息。查询视图必须具有monadmin权限。
+GLOBAL\_STATIO\_SYS\_TABLES视图显示各节点的命名空间中所有系统表的IO状态信息。
 
 **表 1**  GLOBAL\_STATIO\_SYS\_TABLES字段
 

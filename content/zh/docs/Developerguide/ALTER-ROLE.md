@@ -24,9 +24,6 @@
         | {INHERIT | NOINHERIT}
         | {AUDITADMIN | NOAUDITADMIN}
         | {SYSADMIN | NOSYSADMIN}
-        | {MONADMIN | NOMONADMIN}
-        | {OPRADMIN | NOOPRADMIN}
-        | {POLADMIN | NOPOLADMIN}
         | {USEFT | NOUSEFT}
         | {LOGIN | NOLOGIN}
         | {REPLICATION | NOREPLICATION}
@@ -44,7 +41,7 @@
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
-
+    
 -   修改角色的名称。
 
     ```

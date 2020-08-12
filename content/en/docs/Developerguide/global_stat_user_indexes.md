@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_USER\_INDEXES<a name="EN-US_TOPIC_0245374685"></a>
 
-**GLOBAL\_STAT\_USER\_INDEXES**  displays the status information about the index of user-defined ordinary tables in all databases of each node. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_USER\_INDEXES**  displays the status information about the index of user-defined ordinary tables in all databases of each node. 
 
 **Table  1**  GLOBAL\_STAT\_USER\_INDEXES columns
 

@@ -1,6 +1,6 @@
 # SUMMARY\_FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0245374674"></a>
 
-openGauss内汇聚所有的Redo\(WAL\)相关的统计信息。查询视图必须具有monadmin权限。
+openGauss内汇聚所有的Redo\(WAL\)相关的统计信息。
 
 **表 1**  SUMMARY\_FILE\_REDO\_IOSTAT字段
 

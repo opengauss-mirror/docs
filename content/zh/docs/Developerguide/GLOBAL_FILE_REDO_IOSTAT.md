@@ -1,6 +1,6 @@
 # GLOBAL\_FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0245374675"></a>
 
-得到openGauss内各节点的Redo\(WAL\)相关统计信息。查询视图必须具有monadmin权限。
+得到openGauss内各节点的Redo\(WAL\)相关统计信息。
 
 **表 1**  GLOBALXC\_FILE\_REDO\_IOSTAT字段
 

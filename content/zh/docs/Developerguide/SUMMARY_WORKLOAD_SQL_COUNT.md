@@ -1,6 +1,6 @@
 # SUMMARY\_WORKLOAD\_SQL\_COUNT<a name="ZH-CN_TOPIC_0245374724"></a>
 
-显示openGauss内各数据库主节点的workload上的SQL数量分布。查询视图必须具有monadmin权限。
+显示openGauss内各数据库主节点的workload上的SQL数量分布。
 
 **表 1**  SUMMARY\_WORKLOAD\_SQL\_COUNT字段
 

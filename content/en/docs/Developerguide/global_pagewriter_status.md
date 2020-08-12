@@ -1,6 +1,6 @@
 # GLOBAL\_PAGEWRITER\_STATUS<a name="EN-US_TOPIC_0245374821"></a>
 
-**GLOBAL\_PAGEWRITER\_STATUS**  displays the page flushing information and checkpoint information about all instances in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_PAGEWRITER\_STATUS**  displays the page flushing information and checkpoint information about all instances in openGauss. 
 
 **Table  1**  GLOBAL\_PAGEWRITER\_STATUS columns
 

@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_USER\_SEQUENCES<a name="EN-US_TOPIC_0245374780"></a>
 
-**SUMMARY\_STATIO\_USER\_SEQUENCES**  displays I/O status information about all user-defined sequences in namespaces in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STATIO\_USER\_SEQUENCES**  displays I/O status information about all user-defined sequences in namespaces in openGauss. 
 
 **Table  1**  SUMMARY\_STATIO\_USER\_SEQUENCES columns
 

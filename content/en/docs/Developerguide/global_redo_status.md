@@ -1,6 +1,6 @@
 # GLOBAL\_REDO\_STATUS<a name="EN-US_TOPIC_0247293384"></a>
 
-**GLOBAL\_REDO\_STATUS**  displays the log replay status of all instances in openGauss. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_REDO\_STATUS**  displays the log replay status of all instances in openGauss.
 
 **Table  1**  GLOBAL\_REDO\_STATUS columns
 

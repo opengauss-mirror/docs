@@ -1,6 +1,6 @@
 # GLOBAL\_STAT\_DATABASE<a name="EN-US_TOPIC_0245374700"></a>
 
-**GLOBAL\_STAT\_DATABASE**  contains every row of each database on each node in openGauss, showing database-wide statistics. To query this view, you must have the  **monadmin**  permission.
+**GLOBAL\_STAT\_DATABASE**  contains every row of each database on each node in openGauss, showing database-wide statistics. 
 
 **Table  1**  GLOBAL\_STAT\_DATABASE columns
 

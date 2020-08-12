@@ -1,6 +1,6 @@
 # GLOBAL\_INSTANCE\_TIME<a name="ZH-CN_TOPIC_0245374662"></a>
 
-提供openGauss中所有正常节点下的各种时间消耗信息\(时间类型见instance\_time视图\)。查询视图必须具有monadmin权限。
+提供openGauss中所有正常节点下的各种时间消耗信息\(时间类型见instance\_time视图\)。
 
 **表 1**  GLOBAL\_INSTANCE\_TIME字段
 

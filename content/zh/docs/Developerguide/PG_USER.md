@@ -5,6 +5,7 @@ PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用
 **表 1**  PG\_USER字段
 
 <a name="zh-cn_topic_0237122472_zh-cn_topic_0059778611_tbb0de3f5edc64a3796c5876dfe01f652"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0237122472_zh-cn_topic_0059778611_rae9e0e4d5d494362905b26356ea44457"><th class="cellrowborder" valign="top" width="24.68%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122472_zh-cn_topic_0059778611_a220949cefa3145d3b711934ffff84e08"><a name="zh-cn_topic_0237122472_zh-cn_topic_0059778611_a220949cefa3145d3b711934ffff84e08"></a><a name="zh-cn_topic_0237122472_zh-cn_topic_0059778611_a220949cefa3145d3b711934ffff84e08"></a>名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.01%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237122472_zh-cn_topic_0059778611_adb1a507cdb4d4656b875656a1d61a3a6"><a name="zh-cn_topic_0237122472_zh-cn_topic_0059778611_adb1a507cdb4d4656b875656a1d61a3a6"></a><a name="zh-cn_topic_0237122472_zh-cn_topic_0059778611_adb1a507cdb4d4656b875656a1d61a3a6"></a>类型</p>
@@ -124,28 +125,7 @@ PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用
 </td>
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122472_p23836535234"><a name="zh-cn_topic_0237122472_p23836535234"></a><a name="zh-cn_topic_0237122472_p23836535234"></a>用户关联的逻辑openGauss名称，如果该用户没有管理openGauss，则该字段为空。</p>
 </td>
-</tr>
-<tr id="zh-cn_topic_0237122472_row7733017123420"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122472_p20734171716349"><a name="zh-cn_topic_0237122472_p20734171716349"></a><a name="zh-cn_topic_0237122472_p20734171716349"></a>usemonitoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122472_p147341175341"><a name="zh-cn_topic_0237122472_p147341175341"></a><a name="zh-cn_topic_0237122472_p147341175341"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122472_p157342017173418"><a name="zh-cn_topic_0237122472_p157342017173418"></a><a name="zh-cn_topic_0237122472_p157342017173418"></a>用户是否是监控管理员</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122472_row1160516217347"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122472_p8605142113413"><a name="zh-cn_topic_0237122472_p8605142113413"></a><a name="zh-cn_topic_0237122472_p8605142113413"></a>useoperatoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122472_p56055217340"><a name="zh-cn_topic_0237122472_p56055217340"></a><a name="zh-cn_topic_0237122472_p56055217340"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122472_p3605152143417"><a name="zh-cn_topic_0237122472_p3605152143417"></a><a name="zh-cn_topic_0237122472_p3605152143417"></a>用户是否是运维管理员</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122472_row1222052510344"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122472_p82201725103415"><a name="zh-cn_topic_0237122472_p82201725103415"></a><a name="zh-cn_topic_0237122472_p82201725103415"></a>usepolicyadmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122472_p522017252344"><a name="zh-cn_topic_0237122472_p522017252344"></a><a name="zh-cn_topic_0237122472_p522017252344"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122472_p522192513342"><a name="zh-cn_topic_0237122472_p522192513342"></a><a name="zh-cn_topic_0237122472_p522192513342"></a>用户是否是安全策略管理员</p>
-</td>
-</tr>
-</tbody>
+</tr></tbody>
 </table>
+
 

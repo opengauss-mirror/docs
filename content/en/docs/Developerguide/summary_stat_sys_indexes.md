@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_SYS\_INDEXES<a name="EN-US_TOPIC_0245374690"></a>
 
-**SUMMARY\_STAT\_SYS\_INDEXES**  displays index status information about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas in openGauss. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STAT\_SYS\_INDEXES**  displays index status information about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas in openGauss.
 
 **Table  1**  SUMMARY\_STAT\_SYS\_INDEXES columns
 

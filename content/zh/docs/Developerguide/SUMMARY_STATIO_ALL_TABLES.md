@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374792"></a>
 
-SUMMARY\_STATIO\_ALL\_TABLES视图将包含openGauss内汇聚的数据库中每个表\(包括TOAST表）的I/O的统计。查询视图必须具有monadmin权限。
+SUMMARY\_STATIO\_ALL\_TABLES视图将包含openGauss内汇聚的数据库中每个表\(包括TOAST表）的I/O的统计。
 
 **表 1**  SUMMARY\_STATIO\_ALL\_TABLES字段
 

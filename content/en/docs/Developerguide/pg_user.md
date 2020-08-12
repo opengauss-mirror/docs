@@ -125,27 +125,7 @@
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122472_p23836535234"><a name="en-us_topic_0237122472_p23836535234"></a><a name="en-us_topic_0237122472_p23836535234"></a>Name of the logical openGauss associated with the user. If no logical openGauss is associated, this column is left blank.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237122472_row7733017123420"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122472_p20734171716349"><a name="en-us_topic_0237122472_p20734171716349"></a><a name="en-us_topic_0237122472_p20734171716349"></a>usemonitoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122472_p147341175341"><a name="en-us_topic_0237122472_p147341175341"></a><a name="en-us_topic_0237122472_p147341175341"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122472_p157342017173418"><a name="en-us_topic_0237122472_p157342017173418"></a><a name="en-us_topic_0237122472_p157342017173418"></a>Specifies whether the user is a monitor administrator.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237122472_row1160516217347"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122472_p8605142113413"><a name="en-us_topic_0237122472_p8605142113413"></a><a name="en-us_topic_0237122472_p8605142113413"></a>useoperatoradmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122472_p56055217340"><a name="en-us_topic_0237122472_p56055217340"></a><a name="en-us_topic_0237122472_p56055217340"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122472_p3605152143417"><a name="en-us_topic_0237122472_p3605152143417"></a><a name="en-us_topic_0237122472_p3605152143417"></a>Specifies whether the user is an O&amp;M administrator.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237122472_row1222052510344"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122472_p82201725103415"><a name="en-us_topic_0237122472_p82201725103415"></a><a name="en-us_topic_0237122472_p82201725103415"></a>usepolicyadmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122472_p522017252344"><a name="en-us_topic_0237122472_p522017252344"></a><a name="en-us_topic_0237122472_p522017252344"></a>Boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122472_p522192513342"><a name="en-us_topic_0237122472_p522192513342"></a><a name="en-us_topic_0237122472_p522192513342"></a>Specifies whether the user is a security policy administrator.</p>
-</td>
-</tr>
 </tbody>
 </table>
+
 

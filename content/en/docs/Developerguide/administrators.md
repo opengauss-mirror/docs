@@ -24,21 +24,5 @@ postgres=# ALTER USER joe SYSADMIN;
 
 To run the  **ALTER USER**  statement, the user must exist.
 
-## Monitoring Administrators<a name="en-us_topic_0237121100_section4709123485918"></a>
 
-A monitoring administrator is an account with the  **MONADMIN**  attribute and has the permissions to query views and functions in  **dbe\_perf**  mode. A monitoring administrator can also grant or revoke object permissions in  **dbe\_perf**  mode.
-
-To create a monitoring administrator, connect to the database as the initial user and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **MONADMIN**  specified.
-
-```
-postgres=# CREATE USER monadmin WITH MONADMIN password "Bigdata@123";
-```
-
-or
-
-```
-postgres=# ALTER USER joe MONADMIN;
-```
-
-To run the  **ALTER USER**  statement, the user must exist.
 

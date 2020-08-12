@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_ALL\_SEQUENCES<a name="EN-US_TOPIC_0245374798"></a>
 
-**SUMMARY\_STATIO\_ALL\_SEQUENCES**  contains one row for each sequence in databases in openGauss, showing I/O statistics about specific sequences. To query this view, you must have the  **monadmin**  permission.
+**SUMMARY\_STATIO\_ALL\_SEQUENCES**  contains one row for each sequence in databases in openGauss, showing I/O statistics about specific sequences. 
 
 **Table  1**  SUMMARY\_STATIO\_ALL\_SEQUENCES columns
 
