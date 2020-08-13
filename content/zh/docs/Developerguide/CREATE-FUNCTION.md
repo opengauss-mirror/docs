@@ -249,7 +249,7 @@ postgres=# CREATE OR REPLACE FUNCTION func_increment_plsql(i integer) RETURNS in
 $$ LANGUAGE plpgsql;
 
 --返回RECORD类型
-CREATE OR REPLACE FUNCTION compute(i int, out result_1 bigint, out result_2 bigint)
+CREATE OR REPLACE FUNCTION func_increment_sql(i int, out result_1 bigint, out result_2 bigint)
 returns SETOF RECORD
 as $$
 begin

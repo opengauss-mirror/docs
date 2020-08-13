@@ -69,10 +69,6 @@ END;
 -- Transfer a constant as an output parameter.
 postgres=# CALL func_increment_sql(1,2,1);
 
--- Call the function. 
-postgres=# call package_func_overload(1, 'test'); 
-postgres=# call package_func_overload(1, 1); 
-
 -- Delete the function.
 postgres=# DROP FUNCTION func_increment_sql;
 ```
