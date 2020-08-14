@@ -19,11 +19,13 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 
 -   **CONCURRENTLY**
 
-    以不加锁的方式删除索引。删除索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现删除过程中不做阻塞。
+    以不阻塞DML的方式删除索引（加ShareUpdateExclusiveLock锁）。删除索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现删除过程中不阻塞DML。
 
     此选项只能指定一个索引的名称， 并且CASCADE选项不支持。
 
     普通DROP INDEX命令可以在事务内执行，但是DROP INDEX CONCURRENTLY不可以在事务内执行。
+
+    列存表不支持CONCURRENTLY方式删除索引。
 
 -   **IF EXISTS**
 

@@ -26,7 +26,7 @@
 -   在表上创建索引。
 
     ```
-    CREATE [ UNIQUE ] INDEX [ [schemaname.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schemaname.]index_name ] ON table_name [ USING method ]
         ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
@@ -51,6 +51,16 @@
     创建唯一性索引，每次添加数据时检测表中是否有重复值。如果插入或更新的值会引起重复的记录时，将导致一个错误。
 
     目前只有行存表B-tree索引支持唯一索引。
+
+-   **CONCURRENTLY**
+
+    以不阻塞DML的方式创建索引（加ShareUpdateExclusiveLock锁）。创建索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现创建过程中不阻塞DML。
+
+    此选项只能指定一个索引的名称。
+
+    普通CREATE INDEX命令可以在事务内执行，但是CREATE INDEX CONCURRENTLY不可以在事务内执行。
+
+    列存表和分区表不支持CONCURRENTLY方式创建索引。
 
 -   **schema\_name**
 
