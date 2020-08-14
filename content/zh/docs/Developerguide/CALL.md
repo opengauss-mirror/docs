@@ -69,10 +69,6 @@ END;
 --出参传入常量。
 postgres=# CALL func_increment_sql(1,2,1);
 
---函数调用。
-postgres=# call package_func_overload(1, 'test'); 
-postgres=# call package_func_overload(1, 1); 
-
 --删除函数。
 postgres=# DROP FUNCTION func_increment_sql;
 ```
