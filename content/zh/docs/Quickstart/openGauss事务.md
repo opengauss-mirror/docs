@@ -41,8 +41,8 @@
 -   on表示该功能启用。
 -   off表示该功能被禁用。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->谨慎打开这个开关，避免引起openGauss数据不一致。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>谨慎打开这个开关，避免引起openGauss数据不一致。
 
 **默认值：**off
 

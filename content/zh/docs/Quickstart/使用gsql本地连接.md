@@ -4,11 +4,11 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 ## 注意事项<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
 
-缺省情况下，客户端连接数据库后处于空闲状态时会根据参数[session\_timeout](zh-cn_topic_0242371486.md#zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)的默认值自动断开连接。如果要关闭超时设置，设置参数[session\_timeout](zh-cn_topic_0242371486.md#zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)为0即可。
+缺省情况下，客户端连接数据库后处于空闲状态时会根据参数session\_timeout的默认值自动断开连接。如果要关闭超时设置，设置参数session\_timeout为0即可。
 
 ## 前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>
 
-已[确认连接信息](zh-cn_topic_0242370176.md)。
+已确认连接信息。
 
 ## 本地连接数据库<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>
 
@@ -37,9 +37,9 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。
 
-    “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](zh-cn_topic_0246507951.md)。
+    “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请使用SSL连接。
 
-3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
+3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》中“安装openGauss \> 执行安装”章节，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
 
     ```
     postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';

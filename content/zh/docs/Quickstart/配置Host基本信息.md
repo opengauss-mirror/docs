@@ -1,7 +1,7 @@
-# 配置Host基本信息<a name="ZH-CN_TOPIC_0251900900"></a>
+# 配置Host基本信息<a name="ZH-CN_TOPIC_0270171701"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->每台Host服务器都必须有如下信息，如下示例以node1为例。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>每台Host服务器都必须有如下信息，如下示例以node1为例。
 
 加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
 
@@ -9,15 +9,15 @@
 <!-- 每台服务器上的节点部署信息 -->
 <DEVICELIST>
 <!-- node1上的节点部署信息 -->
-<DEVICE sn="1000001">
+<DEVICE sn="node1_hostname">
 <!-- node1的hostname -->
-<PARAM name="name" value="node1"/>
+<PARAM name="name" value="node1_hostname"/>
 <!-- node1所在的AZ及AZ优先级 -->
 <PARAM name="azName" value="AZ1"/>
 <PARAM name="azPriority" value="1"/>
 <!-- node1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-<PARAM name="backIp1" value="192.168.0.11"/>
-<PARAM name="sshIp1" value="192.168.0.11"/>
+<PARAM name="backIp1" value="192.168.0.1"/>
+<PARAM name="sshIp1" value="192.168.0.1"/>
 ```
 
 **表 1**  参数说明
@@ -40,7 +40,7 @@
 </tr>
 <tr id="zh-cn_topic_0249784567_row1767115215813"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p1906425183611"><a name="zh-cn_topic_0249784567_p1906425183611"></a><a name="zh-cn_topic_0249784567_p1906425183611"></a>azName</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p2085417394617"><a name="zh-cn_topic_0249784567_p2085417394617"></a><a name="zh-cn_topic_0249784567_p2085417394617"></a>指定azName，字符串（不能含有特殊字符），例如AZ1、AZ2、AZ3。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p2085417394617"><a name="zh-cn_topic_0249784567_p2085417394617"></a><a name="zh-cn_topic_0249784567_p2085417394617"></a>指定azName（Available Zone Name），字符串（不能含有特殊字符），例如AZ1、AZ2、AZ3。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0249784567_row1883518127274"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p857520312368"><a name="zh-cn_topic_0249784567_p857520312368"></a><a name="zh-cn_topic_0249784567_p857520312368"></a>azPriority</p>
@@ -61,12 +61,12 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。  
->示例：xml配置文件中同时配置backIp1和backIp2参数：  
->在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。  
->```  
-><PARAM name="backIp1" value="192.168.0.11"/>  
-><PARAM name="backIp2" value="192.168.0.12"/>  
->```  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。
+>示例：xml配置文件中同时配置backIp1和backIp2参数：
+>在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。
+>```
+><PARAM name="backIp1" value="192.168.0.1"/>
+><PARAM name="backIp2" value="192.168.0.2"/>
+>```
 

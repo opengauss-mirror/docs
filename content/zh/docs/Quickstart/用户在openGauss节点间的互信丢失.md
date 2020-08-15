@@ -63,7 +63,7 @@ Password:
 3.  执行下面脚本建立互信。
 
     ```
-    plat1:/opt/software/openGauss/script# gs_sshexkey -f /opt/software/hostfile
+    plat1:/opt/software/openGauss/script# ./gs_sshexkey -f /opt/software/hostfile
     ```
 
     /opt/software/hostfile为主机列表，列出所有需要建立互信机器的主机IP。
@@ -73,8 +73,8 @@ Password:
 
 如果openGauss各主机的root密码不一致，gs\_preinstall脚本无法建立互信，可以手工建立互信。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->建立互信的过程中需要生成如下4个文件：authorized\_keys、id\_rsa、id\_rsa.pub、known\_hosts。请勿删除或破坏这些互信相关的文件。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>建立互信的过程中需要生成如下4个文件：authorized\_keys、id\_rsa、id\_rsa.pub、known\_hosts。请勿删除或破坏这些互信相关的文件。
 
 手工建立信任关系，步骤如下，plat1，plat2，plat3是主机名：
 
@@ -115,13 +115,13 @@ Password:
     2.  生成本机授权文件。
 
         ```
-        cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+        cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
         ```
 
         示例如下：
 
         ```
-        plat1:~ # cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+        plat1:~ # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
         ```
 
 2.  收集所有的待建互信主机的公钥，写入到本机的known\_hosts文件中。此步骤需要在步骤1执行的主机上执行。需要收集plat1、plat2、plat3三个主机的公钥。
@@ -164,9 +164,9 @@ Password:
         # plat3 SSH-2.0-OpenSSH_5.1 
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >-   当远程主机的公钥被接受以后，它就会被保存在文件$HOME/.ssh/known\_hosts之中。下次再连接这台主机，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分。  
-        >-   如果该主机上known\_hosts文件被删除，互信仍然可以使用，但是会有告警提示信息。如果需要规避告警提示信息，请将/etc/ssh/ssh\_config配置文件中，StrictHostKeyChecking参数设置为no。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   当远程主机的公钥被接受以后，它就会被保存在文件$HOME/.ssh/known\_hosts之中。下次再连接这台主机，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分。
+        >-   如果该主机上known\_hosts文件被删除，互信仍然可以使用，但是会有告警提示信息。如果需要规避告警提示信息，请将/etc/ssh/ssh\_config配置文件中，StrictHostKeyChecking参数设置为no。
 
 
 3.  将互信文件分发到其它所有主机上。在本例中，需要将plat1上的互信文件分发到plat2和plat3上。
@@ -174,13 +174,13 @@ Password:
     1、将互信文件分发到plat2上。Password输入拷贝目标主机的密码。
 
     ```
-    scp -r .ssh plat2:~
+    scp -r ~/.ssh plat2:~
     ```
 
     示例如下：
 
     ```
-    plat1:~ # scp -r .ssh plat2:~
+    plat1:~ # scp -r ~/.ssh plat2:~
     Password: 
     authorized_keys                 100%  796     0.8KB/s   00:00    
     id_rsa                          100% 1675     1.6KB/s   00:00    
@@ -191,13 +191,13 @@ Password:
     2、将互信文件分发到plat3上。Password输入拷贝目标主机的密码。
 
     ```
-    scp -r .ssh plat3:~
+    scp -r ~/.ssh plat3:~
     ```
 
     示例如下：
 
     ```
-    plat1:~ # scp -r .ssh plat3:~
+    plat1:~ # scp -r ~/.ssh plat3:~
     Password: 
     authorized_keys                 100%  796     0.8KB/s   00:00    
     id_rsa                          100% 1675     1.6KB/s   00:00    
@@ -216,7 +216,7 @@ Password:
     plat1:~ # 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如果三个以上节点，和上述过程类似。假设节点名为plat1、plat2、plat3、......。第一步，需要在plat1上生成root用户的本机授权文件；第二步，需要收集所有待建互信主机\(plat1、plat2、plat3、......\)的公钥并写入到本机known\_hosts文件中；第三步，需要将互信文件分发到除本机外的所有其它主机\(plat2、plat3、......\)上；第四步，检查互信是否建立成功。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果三个以上节点，和上述过程类似。假设节点名为plat1、plat2、plat3、......。第一步，需要在plat1上生成root用户的本机授权文件；第二步，需要收集所有待建互信主机\(plat1、plat2、plat3、......\)的公钥并写入到本机known\_hosts文件中；第三步，需要将互信文件分发到除本机外的所有其它主机\(plat2、plat3、......\)上；第四步，检查互信是否建立成功。
 
 
