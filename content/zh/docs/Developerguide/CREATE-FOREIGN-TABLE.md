@@ -69,6 +69,20 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
 
         MySQL侧的表名。
 
+    postgres_fdw支持的options包括：
+    
+    -   **schema_name**
+
+        远端server的schema名称。如果不指定的话，将使用外表自身的schema名称作为远端的schema名称。
+
+    -   **table_name**
+
+        远端server的表名。如果不指定的话，将使用外表自身的表名作为远端的表名。
+        
+    -   **column_name**
+
+        远端server的表的列名。如果不指定的话，将使用外表自身的列名作为远端的的表的列名。
+
 ## 相关链接
 
 [ALTER FOREIGN TABLE](ALTER-FOREIGN-TABLE.md)，[DROP FOREIGN TABLE](DROP-FOREIGN-TABLE.md)
