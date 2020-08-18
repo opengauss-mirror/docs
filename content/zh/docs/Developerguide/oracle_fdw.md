@@ -15,7 +15,7 @@ oracle_fdw是一款开源插件，github地址： https://github.com/laurenz/ora
 如果编译安装时，没有加入 **--enable-oracle-fdw** 选项，可以在openGauss安装完成后，再次编译oracle_fdw，然后手动将编译产物 **oracle_fdw.so** 放到对应的安装目录 **lib/postgresql/** ，将 **oracle_fdw--1.0--1.1.sql，oracle_fdw--1.1.sql，oracle_fdw.control** 放到对应的安装目录 **share/postgresql/extension/** 即可。
 
 ## 使用oracle_fdw
-使用oracle_fdw需要连接Oracle，Oracle server请自行安装。
+-    使用oracle_fdw需要连接Oracle，Oracle server请自行安装。
 -    加载oracle_fdw扩展：**CREATE EXTENSION oracle_fdw;**
 -    创建服务器对象：**[CREATE SEVER](CREATE-SERVER.md)**
 -    创建用户映射：**[CREATE USER MAPPING](CREATE-USER-MAPPING.md)**

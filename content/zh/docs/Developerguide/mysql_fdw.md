@@ -15,7 +15,7 @@ mysql_fdw是一款开源插件，github地址： https://github.com/EnterpriseDB
 如果编译安装时，没有加入 **--enable-mysql-fdw** 选项，可以在openGauss安装完成后，再次编译mysql_fdw，然后手动将编译产物 **mysql_fdw.so** 放到对应的安装目录 **lib/postgresql/** ，将 **mysql_fdw--1.0--1.1.sql，mysql_fdw--1.1.sql，mysql_fdw--1.0.sql，mysql_fdw.control** 放到对应的安装目录 **share/postgresql/extension/** 即可。
 
 ## 使用mysql_fdw
-使用mysql_fdw需要连接MariaDB或者MySQL Server，MariaDB或MySQL Server请自行安装。
+-    使用mysql_fdw需要连接MariaDB或者MySQL Server，MariaDB或MySQL Server请自行安装。
 -    加载mysql_fdw扩展：**CREATE EXTENSION mysql_fdw;**
 -    创建服务器对象：**[CREATE SEVER](CREATE-SERVER.md)**
 -    创建用户映射：**[CREATE USER MAPPING](CREATE-USER-MAPPING.md)**

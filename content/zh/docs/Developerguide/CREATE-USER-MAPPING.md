@@ -41,6 +41,16 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
     -   **password**
 
         MySQL Server/MariaDB用户对应的密码。
+        
+    postgres_fdw支持的options包括：
+    
+    -   **user**
+
+        远端openGauss的用户名。
+
+    -   **password**
+
+        远端openGauss用户对应的密码。
 
 相关链接
 

@@ -62,6 +62,35 @@ ALTER SERVER server_name
     -   **port** （默认值为 `3306`）
 
         MySQL Server/MariaDB监听的端口号。
+        
+    
+    postgres_fdw支持的options同libpq支持的连接参数一致，可参考 **[链接字符](链接字符.md)** 。需要注意的是，以下几个options不支持修改：
+    
+    -   **user** 和 **password**
+    
+        用户名和密码将在创建user mapping时指定
+    
+    -   **client_encoding**
+    
+        将自动获取本地server的编码方式并设置该值
+    
+    -   **application_name**
+    
+        总是设置成`postgres_fdw`
+
+    除了libpq支持的连接参数外，还额外提供3个options：
+    
+    -  **use_remote_estimate**
+    
+       控制`postgres_fdw`是否发出`EXPLAIN`命令以获取运行消耗估算。默认值为`false`。
+    
+    -  **fdw_startup_cost**
+    
+      执行一个外表扫描时的启动耗时估算。这个值通常包含建立连接、远端对请求的分析和生成计划的耗时。默认值为`100`。
+    
+    -  **fdw_typle_cost**
+
+      在远端服务器上对每一个元组进行扫描时的额外消耗。这个值通常表示数据在server间传输的额外消耗。默认值为`0.01`。
 
 
 -   **new\_name**
