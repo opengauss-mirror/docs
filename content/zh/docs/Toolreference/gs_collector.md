@@ -140,8 +140,8 @@
 
     主机名称列表文件。该文件为纯文本格式。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-f和-h参数不能同时使用。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-f和-h参数不能同时使用。
 
     取值范围：主机名称列表。
 
@@ -178,19 +178,19 @@
     }
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >默认配置文件内容如下：  
-    >\{  
-    >"Collect":  
-    >\[  
-    >\{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"\},  
-    >\{"TypeName": "Log", "Content" : "DBnode,ClusterManager", "Interval":"0", "Count":"1"\},  
-    >\{"TypeName": "Database", "Content": "pg\_locks,pg\_stat\_activity,pg\_thread\_wait\_status","Interval":"0", "Count":"1"\},  
-    >\{"TypeName": "Config", "Content": "DBnode", "Interval":"0", "Count":"1"\}  
-    >\]  
-    >\}  
-    >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。  
-    >对于Log，CoreDump，Config，XLog三种类型，Interval和Count参数不生效。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >默认配置文件内容如下：
+    >\{
+    >"Collect":
+    >\[
+    >\{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Log", "Content" : "DBnode,ClusterManager", "Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Database", "Content": "pg\_locks,pg\_stat\_activity,pg\_thread\_wait\_status","Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Config", "Content": "DBnode", "Interval":"0", "Count":"1"\}
+    >\]
+    >\}
+    >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
+    >对于Log，CoreDump，Config，XLog三种类型，Interval和Count参数不生效。
 
 -   --keyword=KEYWORD
 
@@ -198,8 +198,8 @@
 
     若关键字KEYWORD中含有空格，需要使用双引号包围。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >性能日志为二进制日志，关键字搜集功能不支持该日志的搜集。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >性能日志为二进制日志，关键字搜集功能不支持该日志的搜集。
 
 -   --begin-time
 

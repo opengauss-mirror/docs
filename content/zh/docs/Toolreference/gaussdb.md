@@ -14,8 +14,8 @@ gaussdb [OPTION]...
 
 客户端应用程序为了访问数据库，将连接（通过网络或本地）到一个正在运行的gaussdb进程。然后该进程实例会启动一个独立的线程来处理这个连接。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->通过gaussdb启动数据库时，需要再开一个窗口来连接到数据库，也可以使用&符号使程序在后台执行。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>通过gaussdb启动数据库时，需要再开一个窗口来连接到数据库，也可以使用&符号使程序在后台执行。
 
 一个gaussdb进程总是管理来自同一个数据库的数据。一个系统上可以同时运行多个gaussdb进程，只要使用不同的数据目录和不同的端口号。gaussdb启动时需要知道数据目录的位置，该位置必须通过-D指定。通常，-D直接指向由gs\_initdb创建的数据库目录。
 
@@ -155,7 +155,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row40407089"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p45114348"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p45114348"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p45114348"></a>-p PORT</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a>指定gaussdb侦听客户端连接的TCP/IP端口或本地Unix domain socket文件的扩展。默认端口号为<span id="zh-cn_topic_0237152404_text10283141215615"><a name="zh-cn_topic_0237152404_text10283141215615"></a><a name="zh-cn_topic_0237152404_text10283141215615"></a>15400</span>。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p5843465"></a>指定gaussdb侦听客户端连接的TCP/IP端口或本地Unix domain socket文件的扩展。默认端口号为15400。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p748137203944"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p748137203944"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p748137203944"></a>正整数，在操作系统支持的端口范围内。</p>
 </td>
@@ -429,12 +429,12 @@ ps -ef | grep gaussdb
 
 无法绑定端口的错误信息可能表明该端口已经被其他非openGauss进程使用。如果终止gaussdb后又马上用同一端口号运行它，也可能得到错误信息。这时，必须多等几秒，等操作系统关闭了该端口再试。最后，如果使用了一个操作系统认为是保留的端口，也可能导致这个错误信息。例如：Unix版本认为低于1024的端口号是“可信任的”，因而只有Unix系统管理员可以使用它们。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->-   如果有可能，不要使用SIGKILL杀死主进程。这样会阻止gaussdb在退出前释放它持有的系统资源（例如共享内存和信号灯）。这样可能会影响到将来启动新的进程。  
->-   可以使用SIGTERM，SIGINT，SIGQUIT信号正常结束服务器进程。第一个信号将等待所有的客户端退出后才退出。第二个将强制断开所有客户端，而第三个将不停止立刻退出，导致在重启时的恢复运行。  
->-   信号SIGHUP将会重新加载服务器配置文件。它也可能给单个服务器进程发送SIGHUP信号，但是这通常是不明显的。  
->-   要取消一个正在执行的查询，向正在运行的进程发送SIGINT信号。  
->-   主服务器进程向子进程发送SIGTERM信号让它们正常退出；发送SIGQUIT信号立即退出且不做清理工作。用户有三种信号不能用。同时，发送SIGKILL信号也是不明智的：主进程将把这个信号当作崩溃信号，然后会强制其他兄弟进程作为标准的崩溃回复过程退出。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   如果有可能，不要使用SIGKILL杀死主进程。这样会阻止gaussdb在退出前释放它持有的系统资源（例如共享内存和信号灯）。这样可能会影响到将来启动新的进程。
+>-   可以使用SIGTERM，SIGINT，SIGQUIT信号正常结束服务器进程。第一个信号将等待所有的客户端退出后才退出。第二个将强制断开所有客户端，而第三个将不停止立刻退出，导致在重启时的恢复运行。
+>-   信号SIGHUP将会重新加载服务器配置文件。它也可能给单个服务器进程发送SIGHUP信号，但是这通常是不明显的。
+>-   要取消一个正在执行的查询，向正在运行的进程发送SIGINT信号。
+>-   主服务器进程向子进程发送SIGTERM信号让它们正常退出；发送SIGQUIT信号立即退出且不做清理工作。用户有三种信号不能用。同时，发送SIGKILL信号也是不明智的：主进程将把这个信号当作崩溃信号，然后会强制其他兄弟进程作为标准的崩溃回复过程退出。
 
 ## 用法<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_s188b513ab6fb4938a75c0cd8a49cc38c"></a>
 
@@ -446,11 +446,11 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 
 用-D给服务器提供正确的数据库目录的路径。同时还要声名已存在的特定数据库名称。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->-   通常，独立运行的服务器把换行符当做命令输入完成字符；要想把一行分成多行写，必需在除最后一个换行符以外的每个换行符前面敲一个反斜杠。  
->-   如果使用了-j命令行选项，新行将不被当作命令结束符。此时服务器将从标准输入一直读取到EOF标志为止，然后把所有读到的内容当作一个完整的命令字符串看待，并且反斜杠与换行符也被当作普通字符来看待。  
->-   输入EOF（Control+D）即可退出会话。如果已经使用了-j则必须连续使用两个EOF才行。  
->-   单用户模式运行的服务器不会提供复杂的行编辑功能（比如没有命令历史）。单用户模式也不会做任何后台处理，像自动检查点。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   通常，独立运行的服务器把换行符当做命令输入完成字符；要想把一行分成多行写，必需在除最后一个换行符以外的每个换行符前面敲一个反斜杠。
+>-   如果使用了-j命令行选项，新行将不被当作命令结束符。此时服务器将从标准输入一直读取到EOF标志为止，然后把所有读到的内容当作一个完整的命令字符串看待，并且反斜杠与换行符也被当作普通字符来看待。
+>-   输入EOF（Control+D）即可退出会话。如果已经使用了-j则必须连续使用两个EOF才行。
+>-   单用户模式运行的服务器不会提供复杂的行编辑功能（比如没有命令历史）。单用户模式也不会做任何后台处理，像自动检查点。
 
 ## 示例<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_section367683"></a>
 

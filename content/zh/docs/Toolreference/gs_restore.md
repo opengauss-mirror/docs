@@ -23,11 +23,11 @@ gs\_restore工具由操作系统用户omm执行。
 gs_restore [OPTION]... FILE
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   FILE没有短选项或长选项。用来指定归档文件所处的位置。  
->-   作为前提条件，需输入dbname或-l选项。不允许用户同时输入dbname和-l选项。  
->-   gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议使用"-c" 参数，在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象。  
->-   日志打印无开关，若需隐藏日志，请将日志重定向到日志文件。若恢复表数据时，数据量很大，会分批恢复，因此会多次出现“表数据已完成导入”的日志。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   FILE没有短选项或长选项。用来指定归档文件所处的位置。
+>-   作为前提条件，需输入dbname或-l选项。不允许用户同时输入dbname和-l选项。
+>-   gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议使用"-c" 参数，在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象。
+>-   日志打印无开关，若需隐藏日志，请将日志重定向到日志文件。若恢复表数据时，数据量很大，会分批恢复，因此会多次出现“表数据已完成导入”的日志。
 
 ## 参数说明<a name="zh-cn_topic_0237152343_zh-cn_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
@@ -43,8 +43,8 @@ gs_restore [OPTION]... FILE
 
     默认是标准输出。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-f不能同-d一起使用。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-f不能同-d一起使用。
 
 -   -F, --format=c|d|t
 
@@ -75,7 +75,7 @@ gs_restore [OPTION]... FILE
 
 导入参数：
 
--   -a, -data-only
+-   -a, --data-only
 
     只导入数据，不导入模式（数据定义）。gs\_restore的导入是以追加方式进行的。
 
@@ -187,8 +187,8 @@ gs_restore [OPTION]... FILE
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-t不支持schema\_name.table\_name的输入格式。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-t不支持schema\_name.table\_name的输入格式。
 
 -   -T, --trigger=NAME
 
@@ -236,25 +236,25 @@ gs_restore [OPTION]... FILE
 
     AES128密钥长度必须是16字节。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如果转储被加密，则必须在gs\_restore命令中输入--with-key=KEY选项。如果未输入，用户会收到错误信息。  
-    >应该输入转储时所输入的相同的key。  
-    >转储格式为c或t时，转储内容已被处理，因此转储格式为c或t是输入不受加密限制。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果转储被加密，则必须在gs\_restore命令中输入--with-key=KEY选项。如果未输入，用户会收到错误信息。
+    >应该输入转储时所输入的相同的key。
+    >转储格式为c或t时，转储内容已被处理，因此转储格式为c或t是输入不受加密限制。
 
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：  
->```  
->CREATE DATABASE foo WITH TEMPLATE template0;  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
 >```
->-   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入，或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。  
+>CREATE DATABASE foo WITH TEMPLATE template0;
+>```
+>-   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入，或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->1.-d/--dbname 和 -f/--file 不能同时使用；  
->2. -s/--schema-only 和 -a/--data-only不能同时使用；  
->3. -c/--clean 和 -a/--data-only不能同时使用；  
->4. 使用--single-transaction时，-j/--jobs必须为单任务；  
->5. --role 和 --rolepassword必须一起使用。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>1.-d/--dbname 和 -f/--file 不能同时使用；
+>2. -s/--schema-only 和 -a/--data-only不能同时使用；
+>3. -c/--clean 和 -a/--data-only不能同时使用；
+>4. 使用--single-transaction时，-j/--jobs必须为单任务；
+>5. --role 和 --rolepassword必须一起使用。
 
 连接参数：
 

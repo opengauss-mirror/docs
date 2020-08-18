@@ -47,8 +47,8 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     取值范围：字符串，要符合标识符的命名规范。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >配置-U参数值时，字符串中不能包含"|",";","&","$","<","\>","\`","\\\\","'","\\","\{","\}","\(","\)","\[","\]","\~","\*","?"特殊字符。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >配置-U参数值时，字符串中不能包含"|",";","&","$","<","\>","\`","\\\\","'","\\","\{","\}","\(","\)","\[","\]","\~","\*","?"特殊字符。
 
 -   -G
 
@@ -81,15 +81,15 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     取值范围：字符串。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >不能指定openGauss默认创建的环境变量。默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >不能指定openGauss默认创建的环境变量。默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。
 
 -   --sep-env-file=ENVFILE
 
     保存环境变量的文件。如果指定该参数，表示将使用环境变量分离的版本。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >不能指定环境变量文件为openGauss相关目录或者和这些目录同名，不能和openGauss用户的目录相同。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >不能指定环境变量文件为openGauss相关目录或者和这些目录同名，不能和openGauss用户的目录相同。
 
 -   --skip-hostname-set
 
@@ -111,8 +111,8 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
     -   当不指定该参数时，则为安全交互模式，在此模式下用户需要人机交互输入密码。
     -   当指定该参数时，为非交互模式，不需要进行人机交互。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >交互式输入密码的过程中，密码不能包含";","'","$"3个特殊字符。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >交互式输入密码的过程中，密码不能包含";","'","$"3个特殊字符。
 
 -   -?, --help
 
@@ -214,8 +214,8 @@ SYSLOGD_OPTIONS="-r -m 0"
 KLOGD_OPTIONS="-x"
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->该配置需要在openGauss每台机器上都要修改。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>该配置需要在openGauss每台机器上都要修改。
 
 ## 示例<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_s63833ed33f0c49f8959d4a86ca7bb4f2"></a>
 

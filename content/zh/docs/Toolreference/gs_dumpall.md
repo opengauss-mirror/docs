@@ -165,17 +165,17 @@ gs_dumpall [OPTION]...
     指定备份进程并发数，取值范围为1\~1000。
 
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   -g/--globals-only和-r/--roles-only不能同时使用。  
->-   -g/--globals-only和-t/--tablespaces-only不能同时使用。  
->-   -r/--roles-only和-t/--tablespaces-only不能同时使用。  
->-   -s/--schema-only和-a/--data-only不能同时使用。  
->-   -r/--roles-only和-a/--data-only不能同时使用。  
->-   -t/--tablespaces-only和-a/--data-only不能同时使用。  
->-   -g/--globals-only和-a/--data-only不能同时使用。  
->-   --tablespaces-postfix和--binary-upgrade必须一起使用。  
->-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。  
->-   --parallel-jobs和-f/--file必须一起使用。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   -g/--globals-only和-r/--roles-only不能同时使用。
+>-   -g/--globals-only和-t/--tablespaces-only不能同时使用。
+>-   -r/--roles-only和-t/--tablespaces-only不能同时使用。
+>-   -s/--schema-only和-a/--data-only不能同时使用。
+>-   -r/--roles-only和-a/--data-only不能同时使用。
+>-   -t/--tablespaces-only和-a/--data-only不能同时使用。
+>-   -g/--globals-only和-a/--data-only不能同时使用。
+>-   --tablespaces-postfix和--binary-upgrade必须一起使用。
+>-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
+>-   --parallel-jobs和-f/--file必须一起使用。
 
 连接参数：
 
@@ -234,8 +234,8 @@ gs\_dumpall恢复前需要所有必要的表空间目录才能退出；否则，
 
 使用gs\_dumpall一次导出openGauss的所有数据库。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->gs\_dumpall仅支持纯文本格式导出。所以只能使用gsql恢复gs\_dumpall导出的转储内容。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>gs\_dumpall仅支持纯文本格式导出。所以只能使用gsql恢复gs\_dumpall导出的转储内容。
 
 ```
 gs_dumpall -f backup/bkp2.sql -p 37300

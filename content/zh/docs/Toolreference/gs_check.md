@@ -197,14 +197,14 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_row84171030161016"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p12417143010104"><a name="zh-cn_topic_0237152330_p12417143010104"></a><a name="zh-cn_topic_0237152330_p12417143010104"></a>CheckDirLeft(检查文件目录是否有残留)</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1684810621114"><a name="zh-cn_topic_0237152330_p1684810621114"></a><a name="zh-cn_topic_0237152330_p1684810621114"></a>检查扩容新节点文件目录（/opt/huawei/Bigdata/ ,/var/log/Bigdata/, /home/<span id="zh-cn_topic_0237152330_text203561459476"><a name="zh-cn_topic_0237152330_text203561459476"></a><a name="zh-cn_topic_0237152330_text203561459476"></a>omm</span>）是否存在，（若mount目录包含此目录则忽略）若不存在则查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1684810621114"><a name="zh-cn_topic_0237152330_p1684810621114"></a><a name="zh-cn_topic_0237152330_p1684810621114"></a>检查文件目录（/opt/huawei/Bigdata/ ,/var/log/Bigdata/, /home/<span id="zh-cn_topic_0237152330_text203561459476"><a name="zh-cn_topic_0237152330_text203561459476"></a><a name="zh-cn_topic_0237152330_text203561459476"></a>omm</span>）是否存在，（若mount目录包含此目录则忽略）若不存在则查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p3883200174819"><a name="zh-cn_topic_0237152330_p3883200174819"></a><a name="zh-cn_topic_0237152330_p3883200174819"></a>是</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152330_row16961423181114"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1597112321110"><a name="zh-cn_topic_0237152330_p1597112321110"></a><a name="zh-cn_topic_0237152330_p1597112321110"></a>CheckProcessLeft(检查进程是否有残留)</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p16971023131114"><a name="zh-cn_topic_0237152330_p16971023131114"></a><a name="zh-cn_topic_0237152330_p16971023131114"></a>检查扩容新节点上是否残留gaussdb和<span id="zh-cn_topic_0237152330_text112408111814"><a name="zh-cn_topic_0237152330_text112408111814"></a><a name="zh-cn_topic_0237152330_text112408111814"></a>omm</span>进程，若未残留则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p16971023131114"><a name="zh-cn_topic_0237152330_p16971023131114"></a><a name="zh-cn_topic_0237152330_p16971023131114"></a>检查是否残留gaussdb和<span id="zh-cn_topic_0237152330_text112408111814"><a name="zh-cn_topic_0237152330_text112408111814"></a><a name="zh-cn_topic_0237152330_text112408111814"></a>omm</span>进程，若未残留则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p1788300194819"><a name="zh-cn_topic_0237152330_p1788300194819"></a><a name="zh-cn_topic_0237152330_p1788300194819"></a>是</p>
 </td>
@@ -226,7 +226,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_row1724914911158"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p52503971517"><a name="zh-cn_topic_0237152330_p52503971517"></a><a name="zh-cn_topic_0237152330_p52503971517"></a>CheckOmmUserExist(检查<span id="zh-cn_topic_0237152330_text201853210817"><a name="zh-cn_topic_0237152330_text201853210817"></a><a name="zh-cn_topic_0237152330_text201853210817"></a>omm</span>用户是否存在)</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1425017921518"><a name="zh-cn_topic_0237152330_p1425017921518"></a><a name="zh-cn_topic_0237152330_p1425017921518"></a>检查扩容新节点上是否存在<span id="zh-cn_topic_0237152330_text124761221185"><a name="zh-cn_topic_0237152330_text124761221185"></a><a name="zh-cn_topic_0237152330_text124761221185"></a>omm</span>用户，若不存在<span id="zh-cn_topic_0237152330_text1845216231582"><a name="zh-cn_topic_0237152330_text1845216231582"></a><a name="zh-cn_topic_0237152330_text1845216231582"></a>omm</span>用户则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1425017921518"><a name="zh-cn_topic_0237152330_p1425017921518"></a><a name="zh-cn_topic_0237152330_p1425017921518"></a>检查是否存在<span id="zh-cn_topic_0237152330_text124761221185"><a name="zh-cn_topic_0237152330_text124761221185"></a><a name="zh-cn_topic_0237152330_text124761221185"></a>omm</span>用户，若不存在<span id="zh-cn_topic_0237152330_text1845216231582"><a name="zh-cn_topic_0237152330_text1845216231582"></a><a name="zh-cn_topic_0237152330_text1845216231582"></a>omm</span>用户则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p8883130164819"><a name="zh-cn_topic_0237152330_p8883130164819"></a><a name="zh-cn_topic_0237152330_p8883130164819"></a>是</p>
 </td>
@@ -402,8 +402,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_row114585213411"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p3145165264118"><a name="zh-cn_topic_0237152330_p3145165264118"></a><a name="zh-cn_topic_0237152330_p3145165264118"></a>CheckInodeUsage（检查磁盘inodes使用率）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1899751804220"><a name="zh-cn_topic_0237152330_p1899751804220"></a><a name="zh-cn_topic_0237152330_p1899751804220"></a>新节点：所有磁盘</p>
-<p id="zh-cn_topic_0237152330_p19997141884214"><a name="zh-cn_topic_0237152330_p19997141884214"></a><a name="zh-cn_topic_0237152330_p19997141884214"></a>老节点：<span id="text1449413429412"><a name="text1449413429412"></a><a name="text1449413429412"></a>openGauss</span>路径（GAUSSHOME/PGHOST/GAUSSHOME/GAUSSLOG/tmp及实例目录）</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p19997141884214"><a name="zh-cn_topic_0237152330_p19997141884214"></a><a name="zh-cn_topic_0237152330_p19997141884214"></a><span id="text1449413429412"><a name="text1449413429412"></a><a name="text1449413429412"></a>openGauss</span>路径（GAUSSHOME/PGHOST/GAUSSHOME/GAUSSLOG/tmp及实例目录）</p>
 <p id="zh-cn_topic_0237152330_p13997318164215"><a name="zh-cn_topic_0237152330_p13997318164215"></a><a name="zh-cn_topic_0237152330_p13997318164215"></a>检查以上指定目录使用率，如果使用率超过warning阈值（默认为60%） 报warning超过NG阈值（默认为80%）则检查项不通过，否则通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p16884150104812"><a name="zh-cn_topic_0237152330_p16884150104812"></a><a name="zh-cn_topic_0237152330_p16884150104812"></a>否</p>
@@ -411,8 +410,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_row0274122774712"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p6274102715479"><a name="zh-cn_topic_0237152330_p6274102715479"></a><a name="zh-cn_topic_0237152330_p6274102715479"></a>CheckSpaceUsage（检查磁盘使用率）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p614718114818"><a name="zh-cn_topic_0237152330_p614718114818"></a><a name="zh-cn_topic_0237152330_p614718114818"></a>新节点：所有磁盘</p>
-<p id="zh-cn_topic_0237152330_p121412181488"><a name="zh-cn_topic_0237152330_p121412181488"></a><a name="zh-cn_topic_0237152330_p121412181488"></a>老节点：<span id="text12388174317412"><a name="text12388174317412"></a><a name="text12388174317412"></a>openGauss</span>路径（GAUSSHOME/PGHOST/GAUSSHOME/GAUSSLOG/tmp及实例目录）</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p121412181488"><a name="zh-cn_topic_0237152330_p121412181488"></a><a name="zh-cn_topic_0237152330_p121412181488"></a><span id="text12388174317412"><a name="text12388174317412"></a><a name="text12388174317412"></a>openGauss</span>路径（GAUSSHOME/PGHOST/GAUSSHOME/GAUSSLOG/tmp及实例目录）</p>
 <p id="zh-cn_topic_0237152330_p131491813486"><a name="zh-cn_topic_0237152330_p131491813486"></a><a name="zh-cn_topic_0237152330_p131491813486"></a>检查磁盘以上指定目录（目录列表）使用率，如果使用率超过warning阈值（默认为70%） 报warning超过NG阈值（默认为90%）则检查项不通过。<span id="text175413451416"><a name="text175413451416"></a><a name="text175413451416"></a>openGauss</span>路径下检查GAUSSHOME/PGHOST/GPHOME/GAUSSLOG/tmp/data路径的剩余空间，不满足阈值则检查项不通过，否则通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p88841505486"><a name="zh-cn_topic_0237152330_p88841505486"></a><a name="zh-cn_topic_0237152330_p88841505486"></a>否</p>
@@ -439,20 +437,13 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p138842084816"><a name="zh-cn_topic_0237152330_p138842084816"></a><a name="zh-cn_topic_0237152330_p138842084816"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_r0387e269e3614e9aa7489e5e0fe863f6"><td class="cellrowborder" rowspan="18" valign="top" width="13.969999999999999%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p2298121917549"><a name="zh-cn_topic_0237152330_p2298121917549"></a><a name="zh-cn_topic_0237152330_p2298121917549"></a>cluster</p>
+<tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_r0387e269e3614e9aa7489e5e0fe863f6"><td class="cellrowborder" rowspan="17" valign="top" width="13.969999999999999%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p2298121917549"><a name="zh-cn_topic_0237152330_p2298121917549"></a><a name="zh-cn_topic_0237152330_p2298121917549"></a>cluster</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.88%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p13426143719519"><a name="zh-cn_topic_0237152330_p13426143719519"></a><a name="zh-cn_topic_0237152330_p13426143719519"></a>CheckClusterState（检查<span id="text12116135164114"><a name="text12116135164114"></a><a name="text12116135164114"></a>openGauss</span>状态）</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.35%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p17608507412"><a name="zh-cn_topic_0237152330_p17608507412"></a><a name="zh-cn_topic_0237152330_p17608507412"></a>检查fencedUDF状态，如果fencedUDF状态为down则报warning；检查<span id="text17589105224114"><a name="text17589105224114"></a><a name="text17589105224114"></a>openGauss</span>状态，如果<span id="text19202115434118"><a name="text19202115434118"></a><a name="text19202115434118"></a>openGauss</span>状态为Normal则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152330_p1088412017489"><a name="zh-cn_topic_0237152330_p1088412017489"></a><a name="zh-cn_topic_0237152330_p1088412017489"></a>否</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_r9065db8992204c89b573d9e4432f7b11"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p194284255220"><a name="zh-cn_topic_0237152330_p194284255220"></a><a name="zh-cn_topic_0237152330_p194284255220"></a>CheckConfigFileDiff（检查XML差异）</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p642993795516"><a name="zh-cn_topic_0237152330_p642993795516"></a><a name="zh-cn_topic_0237152330_p642993795516"></a>检查静态配置文件与安装xml文件是否满足扩容条件，若满足，则检查项通过，否则检查项不通过。</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p1488410144813"><a name="zh-cn_topic_0237152330_p1488410144813"></a><a name="zh-cn_topic_0237152330_p1488410144813"></a>否</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_rb4cef177795b4531a9cbad90375676c9"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_ae4f27984bda14177872cda3230ec781f"><a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_ae4f27984bda14177872cda3230ec781f"></a><a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_ae4f27984bda14177872cda3230ec781f"></a></p>
@@ -860,10 +851,10 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->CheckNetSpeed检查项：  
->-   CheckNetSpeed不支持-L本地检查模式，-L模式无法构造网络压力，检查的结果不准确。  
->-   在节点数小于6时，speed\_test构造的网络压力可能无法跑满带宽，可能会造成检查结果不准确。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>CheckNetSpeed检查项：
+>-   CheckNetSpeed不支持-L本地检查模式，-L模式无法构造网络压力，检查的结果不准确。
+>-   在节点数小于6时，speed\_test构造的网络压力可能无法跑满带宽，可能会造成检查结果不准确。
 
 ## 用户自定义场景<a name="zh-cn_topic_0237152330_section1111595434113"></a>
 
@@ -892,10 +883,10 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     scp scene_upgrade.xml SIA1000068994：home/package/script/gspylib/inspection/config/
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >home/package/script/gspylib/inspection/config就是新建的场景配置文件的绝对路径。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >home/package/script/gspylib/inspection/config就是新建的场景配置文件的绝对路径。
 
-5.  非扩容新节点切换至omm用户，执行以下命令查看检查结果。
+5.  换至omm用户，执行以下命令查看检查结果。
 
     ```
     gs_check  -e XXX
@@ -917,7 +908,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     StandardWIO=30
     </threshold>
     <suggestion>
-    <zh>如果idle不足 CPU负载过高，请扩容节点，如果iowait过高，则磁盘为瓶颈，扩容磁盘</zh>
+    <zh>如果idle不足 CPU负载过高，请扩容CPU节点，如果iowait过高，则磁盘为瓶颈，更换高性能磁盘</zh>
     </suggestion>
     <standard>
     <zh>检查主机CPU占用率，如果idle大于30%并且iowait小于30%，则检查项通过，否则检查项不通过</zh>
@@ -1007,7 +998,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     注：用户自定义的检查项名称不得与已有检查项名称相同，同时用户需保证自定义检查项脚本的规范性。
 
 3.  将此脚本分发至所有的执行节点。
-4.  以root用户登录扩容后的新节点，或以omm用户登录扩容前的老节点，执行以下命令，查看结果。
+4.  以omm用户登录，执行以下命令，查看结果。
 
     本地执行：
 

@@ -2,7 +2,7 @@
 
 ## 背景信息<a name="section431817462"></a>
 
-openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openGauss、停止openGauss、查询openGauss状态、查询静态配置、查询openGauss状态详细信息、生成静态配置文件、生成动态配置文件、SSL证书替换、显示帮助信息和显示版本号信息等功能。
+openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openGauss、停止openGauss、查询openGauss状态、查询静态配置、生成静态配置文件、查询openGauss状态详细信息、生成动态配置文件、SSL证书替换、显示帮助信息和显示版本号信息等功能。
 
 ## 前提条件<a name="section1372118241094"></a>
 
@@ -133,9 +133,10 @@ gs\_om参数可以分为如下几类：
 
         指定是否以安全模式启动数据库。
 
-        取值范围：on表示以安全模式启动， off表示不以安全模式启动。
+        取值范围：
 
-        默认不开启安全模式
+        -   on以安全模式启动。
+        -   off不以安全模式启动，默认不开启安全模式。
 
 
 -   停止openGauss参数：
@@ -155,25 +156,16 @@ gs\_om参数可以分为如下几类：
 
         -   fast方式：保证有主备关系的实例数据是一致的。
         -   immediate方式：不保证有主备关系的实例数据是一致的。
-        
 
-​               默认值：fast方式
--   --time-out=SECS
-    
-    指定超时时间，如果超时，om脚本自动退出。单位：s。
-    
-    取值范围：正整数，建议值300。
-    
-    默认值：300
-                
-    
-- --time-out=SECS
+        默认值：fast方式。
 
-  指定超时时间，如果超时，om脚本自动退出。单位：s。
+    -   --time-out=SECS
 
-  取值范围：正整数，建议值300。
+        指定超时时间，如果超时，om脚本自动退出。单位：s。
 
-  默认值：300
+        取值范围：正整数，建议值300。
+
+        默认值：300
 
 
 -   查询状态参数：
@@ -303,10 +295,11 @@ gs\_om参数可以分为如下几类：
 </td>
 </tr>
 <tr id="row11262171166"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p2271417062"><a name="p2271417062"></a><a name="p2271417062"></a>state</p>
+<p id="p14821350153410"><a name="p14821350153410"></a><a name="p14821350153410"></a></p>
 </td>
 <td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p172731718619"><a name="p172731718619"></a><a name="p172731718619"></a>实例状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li>Primary：表示实例为主实例。</li><li>Standby：表示实例为备实例。</li><li>Secondary：表示实例为从备实例。</li><li>Pending：表示该实例在仲裁阶段。</li><li>Unknown：表示实例状态未知。</li><li>Down：表示实例处于宕机状态。</li></ul>
+<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li>P: 节点的初始角色是Primary，数据库安装后就不再变动，从系统静态文件读取。</li><li>S: 节点的初始角色是Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>Primary：表示实例为主实例。</li><li>Standby：表示实例为备实例。</li><li>Secondary：表示实例为从备实例。</li><li>Pending：表示该实例在仲裁阶段。</li><li>Unknown：表示实例状态未知。</li><li>Down：表示实例处于宕机状态。</li></ul>
 </td>
 </tr>
 </tbody>
@@ -474,15 +467,17 @@ gs\_om参数可以分为如下几类：
 -   查看openGauss详细状态信息，含实例状态信息。
 
     ```
-    gs_om -t status --detail
     [   Cluster State   ]
     
     cluster_state   : Normal
     redistributing  : No
+    current_az      : AZ_ALL
     
     [  Datanode State   ]
-    node          node_ip         instance                                    state            | node          node_ip         instance                                    state            | node          node_ip         instance                                    state
-    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    node               node_ip         instance                                 state            | node               node_ip         instance                                 state
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    1  hostname1 10.10.10.1   6001 /opt/huawei/install/data/dn1 P Primary Normal | 2 hostname2 10.10.10.2    6002 /opt/huawei/install/data/dn1 S Standby Normal
     ```
 
 -   在openGauss上执行如下命令，生成配置文件。
