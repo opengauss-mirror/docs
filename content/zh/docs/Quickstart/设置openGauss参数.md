@@ -2,15 +2,14 @@
 
 <!-- TOC -->
 
-- [设置openGauss参数<a name="ZH-CN_TOPIC_0241704229"></a>](#设置opengauss参数a-namezh-cn_topic_0241704229a)
-    - [设置客户端认证策略<a name="ZH-CN_TOPIC_0241704250"></a>](#设置客户端认证策略a-namezh-cn_topic_0241704250a)
-        - [语法<a name="section18231623182312"></a>](#语法a-namesection18231623182312a)
-        - [命令参考<a name="zh-cn_topic_0241234206_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#命令参考a-namezh-cn_topic_0241234206_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
-        - [示例<a name="zh-cn_topic_0241234206_section196405363211"></a>](#示例a-namezh-cn_topic_0241234206_section196405363211a)
-    - [设置配置文件参数<a name="ZH-CN_TOPIC_0241704251"></a>](#设置配置文件参数a-namezh-cn_topic_0241704251a)
-        - [语法<a name="zh-cn_topic_0241234207_section12202966262"></a>](#语法a-namezh-cn_topic_0241234207_section12202966262a)
-        - [命令参考<a name="zh-cn_topic_0241234207_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#命令参考a-namezh-cn_topic_0241234207_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
-        - [示例<a name="zh-cn_topic_0241234207_section53021226153217"></a>](#示例a-namezh-cn_topic_0241234207_section53021226153217a)
+- [设置客户端认证策略<a name="ZH-CN_TOPIC_0241704250"></a>](#设置客户端认证策略a-namezh-cn_topic_0241704250a)
+    - [语法<a name="section18231623182312"></a>](#语法a-namesection18231623182312a)
+    - [命令参考<a name="zh-cn_topic_0241234206_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#命令参考a-namezh-cn_topic_0241234206_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
+    - [示例<a name="zh-cn_topic_0241234206_section196405363211"></a>](#示例a-namezh-cn_topic_0241234206_section196405363211a)
+- [设置配置文件参数<a name="ZH-CN_TOPIC_0241704251"></a>](#设置配置文件参数a-namezh-cn_topic_0241704251a)
+    - [语法<a name="zh-cn_topic_0241234207_section12202966262"></a>](#语法a-namezh-cn_topic_0241234207_section12202966262a)
+    - [命令参考<a name="zh-cn_topic_0241234207_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#命令参考a-namezh-cn_topic_0241234207_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
+    - [示例<a name="zh-cn_topic_0241234207_section53021226153217"></a>](#示例a-namezh-cn_topic_0241234207_section53021226153217a)
 
 <!-- /TOC -->
 

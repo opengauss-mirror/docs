@@ -2,17 +2,16 @@
 
 <!-- TOC -->
 
-- [gsql客户端连接<a name="ZH-CN_TOPIC_0241704252"></a>](#gsql客户端连接a-namezh-cn_topic_0241704252a)
-    - [确认连接信息<a name="ZH-CN_TOPIC_0254911667"></a>](#确认连接信息a-namezh-cn_topic_0254911667a)
-        - [操作步骤<a name="zh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727"></a>](#操作步骤a-namezh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727a)
-    - [使用gsql本地连接<a name="ZH-CN_TOPIC_0241704254"></a>](#使用gsql本地连接a-namezh-cn_topic_0241704254a)
-        - [注意事项<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>](#注意事项a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8aa)
-        - [前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>](#前提条件a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400a)
-        - [本地连接数据库<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>](#本地连接数据库a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0a)
-    - [使用gsql远程连接<a name="ZH-CN_TOPIC_0241704255"></a>](#使用gsql远程连接a-namezh-cn_topic_0241704255a)
-        - [前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>](#前提条件a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400a-1)
-        - [通过gs\_guc配置白名单<a name="section6704147193817"></a>](#通过gs\_guc配置白名单a-namesection6704147193817a)
-        - [安装gsql客户端并连接数据库<a name="section1535892915382"></a>](#安装gsql客户端并连接数据库a-namesection1535892915382a)
+- [确认连接信息<a name="ZH-CN_TOPIC_0254911667"></a>](#确认连接信息a-namezh-cn_topic_0254911667a)
+    - [操作步骤<a name="zh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727"></a>](#操作步骤a-namezh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727a)
+- [使用gsql本地连接<a name="ZH-CN_TOPIC_0241704254"></a>](#使用gsql本地连接a-namezh-cn_topic_0241704254a)
+    - [注意事项<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>](#注意事项a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8aa)
+    - [前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>](#前提条件a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400a)
+    - [本地连接数据库<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>](#本地连接数据库a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0a)
+- [使用gsql远程连接<a name="ZH-CN_TOPIC_0241704255"></a>](#使用gsql远程连接a-namezh-cn_topic_0241704255a)
+    - [前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>](#前提条件a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400a-1)
+    - [通过gs\_guc配置白名单<a name="section6704147193817"></a>](#通过gs\_guc配置白名单a-namesection6704147193817a)
+    - [安装gsql客户端并连接数据库<a name="section1535892915382"></a>](#安装gsql客户端并连接数据库a-namesection1535892915382a)
 
 <!-- /TOC -->
 -   **[使用gsql远程连接](使用gsql远程连接.md)**  
