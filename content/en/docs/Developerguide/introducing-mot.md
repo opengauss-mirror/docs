@@ -1,15 +1,15 @@
-# Introducing MOT<a name="EN-US_TOPIC_0260488141"></a>
+# Introducing MOT<a name="EN-US_TOPIC_0270171543"></a>
 
-This  ****chapter introduces Huawei's openGauss Memory-Optimized Tables \(MOT\), describes its features and benefits, key technologies, applicable scenarios, performance benchmarks and its competitive advantages.
+This chapter introduces openGauss Memory-Optimized Tables \(MOT\), describes its features and benefits, key technologies, applicable scenarios, performance benchmarks and its competitive advantages.
 
 -   **[MOT Introduction](mot-introduction.md)**  
 
--   **[Features and Benefits](features-and-benefits.md)**  
+-   **[MOT Features and Benefits](mot-features-and-benefits.md)**  
 
 -   **[MOT Key Technologies](mot-key-technologies.md)**  
 
--   **[Usage Scenarios](usage-scenarios.md)**  
+-   **[MOT Usage Scenarios](mot-usage-scenarios.md)**  
 
--   **[Performance Benchmarks](performance-benchmarks.md)**  
+-   **[MOT Performance Benchmarks](mot-performance-benchmarks.md)**  
 
 
