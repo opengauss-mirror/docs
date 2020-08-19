@@ -4,6 +4,9 @@
 
 pg\_resetxlog是一个重新设置数据库事务文件的工具。
 
+>![](public_sys-resources/icon-caution.gif) **注意：** 
+>通过pg\_resetxlog重新设置之前，需要先停止数据库。
+
 ## 前提条件<a name="zh-cn_topic_0237152442_section14602518109"></a>
 
 保证数据库目录存在且路径正确。

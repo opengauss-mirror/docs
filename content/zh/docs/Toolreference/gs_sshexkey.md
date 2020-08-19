@@ -4,8 +4,8 @@
 
 openGauss在安装过程中，需要在openGauss中的节点间执行命令，传送文件等操作。因此，安装前需要确保互信是连通的。openGauss提供了gs\_sshexkey工具来帮助用户建立互信。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->root用户互信可能会存在安全隐患，因此建议用户在使用完成后，立即删除各主机上root用户的互信。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>root用户互信可能会存在安全隐患，因此建议用户在使用完成后，立即删除各主机上root用户的互信。
 
 ## 前提条件<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_s3e447292529e46aabd04269511e410b2"></a>
 
@@ -66,8 +66,8 @@ openGauss在安装过程中，需要在openGauss中的节点间执行命令，�
 
     主机列表，列出所有需要建立互信主机的IP。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >确保hostfile文件中只配置正确的主机IP，不包含其它信息。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >确保hostfile文件中只配置正确的主机IP，不包含其它信息。
 
 -   -l
 
@@ -77,7 +77,7 @@ openGauss在安装过程中，需要在openGauss中的节点间执行命令，�
 
 -   --skip-hostname-set
 
-    是否将“-f”参数文件中IP与其hostname的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。
+    是否将“-f”参数文件中IP与其hostname的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。普通用户无权限编辑/etc/hosts文件，故有无指定该参数，普通用户均不生成映射关系。
 
 -   -?, --help
 

@@ -68,8 +68,8 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
     -   当既不明确指定-l，又不在XML文件中配置gaussdbLogPath时，默认值为“$GAUSSLOG/om/gs\_postuninstall-YYYY-MMDD\_hhmmss.log”。
     -   当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为“gaussdbLogPath/用户名/om/gs\_postuninstall-YYYY-MMDD\_hhmmss.log”。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >由于在执行gs\_postuninstall后，系统会自动删除openGauss相关目录（包含$GAUSSLOG目录）。因此建议用户通过该参数指定日志文件到非openGaussopenGauss相关路径。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >由于在执行gs\_postuninstall后，系统会自动删除openGauss相关目录（包含$GAUSSLOG目录）。因此建议用户通过该参数指定日志文件到非openGaussopenGauss相关路径。
 
 -   -?, --help
 
