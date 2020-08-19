@@ -6,13 +6,12 @@
 
 <!-- TOC -->
 
-- [创建XML配置文件<a name="ZH-CN_TOPIC_0270171699"></a>](#创建xml配置文件a-namezh-cn_topic_0270171699a)
-    - [配置数据库名称及各项目录<a name="ZH-CN_TOPIC_0270171700"></a>](#配置数据库名称及各项目录a-namezh-cn_topic_0270171700a)
-    - [配置Host基本信息<a name="ZH-CN_TOPIC_0270171701"></a>](#配置host基本信息a-namezh-cn_topic_0270171701a)
-    - [配置数据库主节点信息<a name="ZH-CN_TOPIC_0270171702"></a>](#配置数据库主节点信息a-namezh-cn_topic_0270171702a)
-    - [示例<a name="ZH-CN_TOPIC_0270171703"></a>](#示例a-namezh-cn_topic_0270171703a)
-        - [单节点配置文件<a name="zh-cn_topic_0249784528_section1698454873416"></a>](#单节点配置文件a-namezh-cn_topic_0249784528_section1698454873416a)
-        - [一主一备配置文件<a name="zh-cn_topic_0249784528_section946242113712"></a>](#一主一备配置文件a-namezh-cn_topic_0249784528_section946242113712a)
+- [配置数据库名称及各项目录<a name="ZH-CN_TOPIC_0270171700"></a>](#配置数据库名称及各项目录a-namezh-cn_topic_0270171700a)
+- [配置Host基本信息<a name="ZH-CN_TOPIC_0270171701"></a>](#配置host基本信息a-namezh-cn_topic_0270171701a)
+- [配置数据库主节点信息<a name="ZH-CN_TOPIC_0270171702"></a>](#配置数据库主节点信息a-namezh-cn_topic_0270171702a)
+- [示例<a name="ZH-CN_TOPIC_0270171703"></a>](#示例a-namezh-cn_topic_0270171703a)
+    - [单节点配置文件<a name="zh-cn_topic_0249784528_section1698454873416"></a>](#单节点配置文件a-namezh-cn_topic_0249784528_section1698454873416a)
+    - [一主一备配置文件<a name="zh-cn_topic_0249784528_section946242113712"></a>](#一主一备配置文件a-namezh-cn_topic_0249784528_section946242113712a)
 
 <!-- /TOC -->
 
