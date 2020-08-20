@@ -47,8 +47,8 @@
 
     Value range: a string. It must comply with the naming convention.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The value of  **-U**  cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?"  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The value of  **-U**  cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?"
 
 -   -G
 
@@ -81,15 +81,15 @@
 
     Value range: a string.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >You cannot specify the default environment variables created by openGauss. For details about the default environment variables, see  [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50).  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >You cannot specify the default environment variables created by openGauss. For details about the default environment variables, see  [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50).
 
 -   --sep-env-file=ENVFILE
 
     Saves environment variable files. If this parameter is specified, the split version of environment variable is used.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The environment variable file name cannot be specified the same as that of the corresponding openGauss directories or those directories, or the directory of the openGauss user.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The environment variable file name cannot be specified the same as that of the corresponding openGauss directories or those directories, or the directory of the openGauss user.
 
 -   --skip-hostname-set
 
@@ -111,8 +111,8 @@
     -   When this parameter is not specified, the secure interactive mode is used where you need to enter the password for man-machine interaction.
     -   If this parameter is specified, the non-interactive mode is used and man-machine interaction is not required.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >Password set in interactive mode cannot contain the following characters: ;'$  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Password set in interactive mode cannot contain the following characters: ;'$
 
 -   -?, --help
 
@@ -214,8 +214,8 @@ SYSLOGD_OPTIONS="-r -m 0"
 KLOGD_OPTIONS="-x"
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->You need to perform the operations on every host in openGauss.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>You need to perform the operations on every host in openGauss.
 
 ## Example<a name="en-us_topic_0237152419_en-us_topic_0059778992_s63833ed33f0c49f8959d4a86ca7bb4f2"></a>
 

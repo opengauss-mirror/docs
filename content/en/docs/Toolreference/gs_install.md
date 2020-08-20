@@ -20,7 +20,7 @@ Installation and deployment of openGauss require you to specify a configuration 
     gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE]  
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
 
 -   Display help information.
 

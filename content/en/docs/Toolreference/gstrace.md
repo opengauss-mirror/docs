@@ -4,15 +4,15 @@
 
 **gstrace**, provided by openGauss, is used to trace the kernel code execution path, record kernel data structure, and analyze code performance. The number of trace points and data are fixed in the version and cannot be dynamically added or deleted.
 
->![](public_sys-resources/icon-warning.gif) **WARNING:**   
->1.  The specified memory variables dumped from the kernel are used only for diagnosis and analysis. Registers or memory addresses will not be randomly and directly specified. The read memory addresses are hard-coded in the development, and no register or memory is read or modified randomly.  
->2.  Trace points may involve sensitive data. Before collecting information to be traced, you need to obtain authorization and permission from the customer.  
->3.  openGauss does not point on sensitive information or trace user-related data.  
->4.  The trace is used only for diagnosis. Enabling the trace function affects the performance, and the impact depends on the load and the modules to be traced.  
->5.  The permission of the trace tool is  **0700**, which indicates that only database users can read, write, and execute the trace tool.  
+>![](public_sys-resources/icon-warning.gif) **WARNING:** 
+>1.  The specified memory variables dumped from the kernel are used only for diagnosis and analysis. Registers or memory addresses will not be randomly and directly specified. The read memory addresses are hard-coded in the development, and no register or memory is read or modified randomly.
+>2.  Trace points may involve sensitive data. Before collecting information to be traced, you need to obtain authorization and permission from the customer.
+>3.  openGauss does not point on sensitive information or trace user-related data.
+>4.  The trace is used only for diagnosis. Enabling the trace function affects the performance, and the impact depends on the load and the modules to be traced.
+>5.  The permission of the trace tool is  **0700**, which indicates that only database users can read, write, and execute the trace tool.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->If the process is stopped abnormally, the  **gstrace\_trace\_cfg\_**_\*_  file will exist in the  **/dev/shm**  directory. You can manually delete the file.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>If the process is stopped abnormally, the  **gstrace\_trace\_cfg\_**_\*_  file will exist in the  **/dev/shm**  directory. You can manually delete the file.
 
 ## Syntax<a name="en-us_topic_0237152426_section681720817204"></a>
 

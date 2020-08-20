@@ -14,8 +14,8 @@ gaussdb [OPTION]...
 
 To access the database, the client application connects \(over a local network or the Internet\) to a running gaussdb process. Then the process starts an independent thread to handle the connection.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->When starting the database using  **gaussdb**, you also need to open another window to connect to the database or use & to enable the application to run in the background.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>When starting the database using  **gaussdb**, you also need to open another window to connect to the database or use & to enable the application to run in the background.
 
 A  **gaussdb**  process manages all data in a database. A system can operate multiple  **gaussdb**  processes using different data directories and port numbers. When  **gaussdb **is started, the data directory must be specified using the  **--data-dir**  option. Typically,  **-D**  points directly to the database directory created by  **gs\_initdb**.
 
@@ -155,7 +155,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row40407089"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p45114348"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p45114348"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p45114348"></a>-p PORT</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a>Specifies the TCP/IP port or local Unix domain socket file extension on which gaussdb is to listen for connections from client applications. The default port ID is <span id="en-us_topic_0237152404_text10283141215615"><a name="en-us_topic_0237152404_text10283141215615"></a><a name="en-us_topic_0237152404_text10283141215615"></a>15400</span>.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5843465"></a>Specifies the TCP/IP port or local Unix domain socket file extension on which gaussdb is to listen for connections from client applications. The default port ID is <span id="en-us_topic_0237152404_text10283141215615"><a name="en-us_topic_0237152404_text10283141215615"></a><a name="en-us_topic_0237152404_text10283141215615"></a>5432</span>.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p748137203944"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p748137203944"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p748137203944"></a>A positive integer within the port range supported by the OS.</p>
 </td>
@@ -211,7 +211,6 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 </tbody>
 </table>
-
 
 Parameters described in  [Table 2](#en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_table56695537)  are used for debugging purposes, and in some cases for assisting in recovering severely damaged databases. Do not use these parameters for debugging if databases are providing services for applications.
 
@@ -430,12 +429,12 @@ If you are certain that no conflicting server is running, you can remove the loc
 
 A failure message indicating inability to bind to a port might indicate that the port is already in use by a non-openGauss process. This message may also be reported if you terminate  **gaussdb **and immediately restart it using the same port. In this case, you must simply wait a few seconds until the operating system closes the port before trying again. Finally, you may get this error if you specify a port number that your operating system considers it to be reserved. For example, the Unix considers ports whose IDs are under 1024 to be "trusted" and permits only Unix administrators to access the Unix.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb **from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.  
->-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT **can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.  
->-   The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP **to an individual server process, but that is usually not sensible.  
->-   To cancel a running query, send the  **SIGINT **signal to the process running that command.  
->-   The main server process uses  **SIGTERM **to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb **from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.
+>-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT **can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.
+>-   The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP **to an individual server process, but that is usually not sensible.
+>-   To cancel a running query, send the  **SIGINT **signal to the process running that command.
+>-   The main server process uses  **SIGTERM **to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.
 
 ## **Usage**<a name="en-us_topic_0237152404_en-us_topic_0059777816_s188b513ab6fb4938a75c0cd8a49cc38c"></a>
 
@@ -447,11 +446,11 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 
 Use  **-D**  to provide the correct path of the database directory for the server. Besides, specify the name of the existing particular database.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.  
->-   If you use the -j command line option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashes and newlines are treated as common characters in this case.  
->-   To quit the session, type EOF \(Control+D\). If you have used -j, two consecutive EOFs are needed to exit.  
->-   The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.
+>-   If you use the -j command line option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashes and newlines are treated as common characters in this case.
+>-   To quit the session, type EOF \(Control+D\). If you have used -j, two consecutive EOFs are needed to exit.
+>-   The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.
 
 ## Example<a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_section367683"></a>
 
@@ -464,7 +463,7 @@ Use  **-D**  to provide the correct path of the database directory for the serve
 2.  Run the following command to start gaussdb with a specified port, for example, 1234:
 
     ```
-    gaussdb --single_node -p -D data_dir
+    gaussdb --singlenode -p -D data_dir
     ```
 
     To connect to this server using gsql, specify this port with the -p option:

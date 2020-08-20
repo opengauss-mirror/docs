@@ -39,10 +39,10 @@
 
     Value range: A1...A14 and B1...B7
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >Items from A1 to A14 indicate that OS parameters need to be checked but not to be set.  
-    >Items from B1 to B7 indicate that system parameters need to be set to expected values.  
-    >Items A and items B cannot be simultaneously set.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Items from A1 to A14 indicate that OS parameters need to be checked but not to be set.
+    >Items from B1 to B7 indicate that system parameters need to be set to expected values.
+    >Items A and items B cannot be simultaneously set.
 
     For details, see  [Table 1](#en-us_topic_0237152331_en-us_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e).
 
@@ -50,8 +50,8 @@
 
     Specifies the file of a host name list.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The  **-f**  and  **-h**  parameters cannot be used together.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The  **-f**  and  **-h**  parameters cannot be used together.
 
     Value range: a host name list
 
@@ -259,13 +259,13 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   Item A6 needs to be checked based on the  **\[/etc/sysctl.conf\]**  and  **\[SUGGEST:/etc/sysctl.conf\]**  domains in the  **check\_list.conf**  configuration file.  
->    If the parameter value in  **\[/etc/sysctl.conf\]**  differs from the actual value, an  **Abnormal**  message is displayed during the check of item A6. You can set the parameter in item B1.  
->    If the parameter value in  **\[SUGGEST:/etc/sysctl.conf\]**  differs from the actual value, a Warning message is displayed during the check of item A6. You can manually set the parameter in item B1 as needed.  
->-   Item A7 checks items specified by the  **open file**  parameter in the  **\[/etc/security/ limits.conf\]**  domain in the  **check\_list.conf**  configuration file. You can set the parameter in item B2.  
->-   The  **mtu**,  **rx**, and  **tx**  parameters of item A11 need to be checked based on the  **\[/sbin/ifconfig\]**  domain in the  **check\_list.conf**  configuration file. You can set the  **rx**  and  **tx**  parameters using item B5 and set the  **mtu**  parameter manually.  
->-   Use configured  **gs\_checkos**  kernel parameter value and file handles parameter value to restart the new session.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   Item A6 needs to be checked based on the  **\[/etc/sysctl.conf\]**  and  **\[SUGGEST:/etc/sysctl.conf\]**  domains in the  **check\_list.conf**  configuration file.
+>    If the parameter value in  **\[/etc/sysctl.conf\]**  differs from the actual value, an  **Abnormal**  message is displayed during the check of item A6. You can set the parameter in item B1.
+>    If the parameter value in  **\[SUGGEST:/etc/sysctl.conf\]**  differs from the actual value, a Warning message is displayed during the check of item A6. You can manually set the parameter in item B1 as needed.
+>-   Item A7 checks items specified by the  **open file**  parameter in the  **\[/etc/security/ limits.conf\]**  domain in the  **check\_list.conf**  configuration file. You can set the parameter in item B2.
+>-   The  **mtu**,  **rx**, and  **tx**  parameters of item A11 need to be checked based on the  **\[/sbin/ifconfig\]**  domain in the  **check\_list.conf**  configuration file. You can set the  **rx**  and  **tx**  parameters using item B5 and set the  **mtu**  parameter manually.
+>-   Use configured  **gs\_checkos**  kernel parameter value and file handles parameter value to restart the new session.
 
 ## OS Parameters<a name="en-us_topic_0237152331_section15489145820128"></a>
 
