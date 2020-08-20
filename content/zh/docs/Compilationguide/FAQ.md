@@ -3,17 +3,9 @@
 <!-- TOC -->
 
 - [如何清除编译过程中生成的临时文件<a name="ZH-CN_TOPIC_0241496977"></a>](#如何清除编译过程中生成的临时文件a-namezh-cn_topic_0241496977a)
-    - [问题<a name="section8138144317480"></a>](#问题a-namesection8138144317480a)
-    - [回答<a name="section09254965110"></a>](#回答a-namesection09254965110a)
 - [如何解决“Configure error: C compiler cannot create executables”报错<a name="ZH-CN_TOPIC_0241496984"></a>](#如何解决configure-error-c-compiler-cannot-create-executables报错a-namezh-cn_topic_0241496984a)
-    - [问题<a name="section8138144317480"></a>](#问题a-namesection8138144317480a-1)
-    - [回答<a name="section09254965110"></a>](#回答a-namesection09254965110a-1)
 - [如何解决 "g++: fatal error:  Killed signal terminated program cclplus" 报错<a name="ZH-CN_TOPIC_0250721950"></a>](#如何解决-g-fatal-error--killed-signal-terminated-program-cclplus-报错a-namezh-cn_topic_0250721950a)
-    - [问题<a name="section14676321181511"></a>](#问题a-namesection14676321181511a)
-    - [回答<a name="section1112815318159"></a>](#回答a-namesection1112815318159a)
 - [如何解决"out of memory allocating xxx bytes after a total of xxx bytes"报错<a name="ZH-CN_TOPIC_0251012682"></a>](#如何解决out-of-memory-allocating-xxx-bytes-after-a-total-of-xxx-bytes报错a-namezh-cn_topic_0251012682a)
-    - [问题<a name="section1450054211918"></a>](#问题a-namesection1450054211918a)
-    - [回答<a name="section19671565204"></a>](#回答a-namesection19671565204a)
 
 <!-- /TOC -->
 ## 如何清除编译过程中生成的临时文件<a name="ZH-CN_TOPIC_0241496977"></a>
