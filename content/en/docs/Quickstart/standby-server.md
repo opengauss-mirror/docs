@@ -6,9 +6,9 @@
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If this parameter is set to  **on**,  **[wal\_level](settings.md#en-us_topic_0242371497_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **hot\_standby**. Otherwise, the database startup fails.  
->-   In an HA system,  **hot\_standby**  cannot be set to  **off**, because this setting can affect other features of the HA system.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If this parameter is set to  **on**,  **[wal\_level](settings.md#en-us_topic_0242371497_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **hot\_standby**. Otherwise, the database startup fails.
+>-   In an HA system,  **hot\_standby**  cannot be set to  **off**, because this setting can affect other features of the HA system.
 
 **Value range**: Boolean
 
@@ -23,8 +23,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->**–1**  indicates that the standby server waits until the conflicting queries are complete.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>**–1**  indicates that the standby server waits until the conflicting queries are complete.
 
 **Value range**: an integer ranging from –1 to  _INT\_MAX_. The unit is ms.
 
@@ -36,8 +36,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->**–1**  indicates that the standby server waits until the conflicting queries are complete.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>**–1**  indicates that the standby server waits until the conflicting queries are complete.
 
 **Value range**: an integer ranging from –1 to  _INT\_MAX_. The unit is ms.
 
@@ -66,9 +66,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If this parameter is set to  **on**, VACUUM on the primary server will not clean up tuples modified in transactions later than the oldest transaction active on standby servers.  
->Therefore, the performance of the primary server will be affected.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If this parameter is set to  **on**, VACUUM on the primary server will not clean up tuples modified in transactions later than the oldest transaction active on standby servers.
+>Therefore, the performance of the primary server will be affected.
 
 ## wal\_receiver\_timeout<a name="en-us_topic_0242371504_en-us_topic_0237124714_en-us_topic_0059778071_s6afc725ed1b5426391be682f42702b77"></a>
 

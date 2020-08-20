@@ -13,12 +13,12 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **on**  indicates the resource management function is enabled.
 -   **off**  indicates the resource management function is disabled.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   If method 2 in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)  is used to change the parameter value, the new value takes effect only for the threads that are started after the change. In addition, the new value does not take effect for new jobs that are executed by backend threads and reused threads. You can make the new value take effect for these threads by using  **kill session**  or restarting the node.  
-    >-   After the value of  **use\_workload\_manager**  changes from  **off**  to  **on**, statistics about storage resources when  **use\_workload\_manager**  is  **off**  are not collected. To collect statistics about such resources, run the following statement:  
-    >    ```  
-    >    select gs_wlm_readjust_user_space(0);  
-    >    ```  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   If method 2 in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)  is used to change the parameter value, the new value takes effect only for the threads that are started after the change. In addition, the new value does not take effect for new jobs that are executed by backend threads and reused threads. You can make the new value take effect for these threads by using  **kill session**  or restarting the node.
+    >-   After the value of  **use\_workload\_manager**  changes from  **off**  to  **on**, statistics about storage resources when  **use\_workload\_manager**  is  **off**  are not collected. To collect statistics about such resources, run the following statement:
+    >    ```
+    >    select gs_wlm_readjust_user_space(0);
+    >    ```
 
 
 **Default value**:  **on**
@@ -76,8 +76,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**: empty
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->You are advised to retain the default value for this parameter.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>You are advised to retain the default value for this parameter.
 
 ## enable\_resource\_track<a name="en-us_topic_0242371519_en-us_topic_0237124729_en-us_topic_0059777791_sb8ca264785d649368247597883d52ffd"></a>
 
@@ -259,8 +259,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **8**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->When core files are generated during concurrent SQL statement execution, the number of files may be larger than the value of  **bbox\_dump\_count**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>When core files are generated during concurrent SQL statement execution, the number of files may be larger than the value of  **bbox\_dump\_count**.
 
 ## bbox\_dump\_path<a name="en-us_topic_0242371519_en-us_topic_0237124729_en-us_topic_0059777791_s4fe2520e9c914f1293e1f9314db2d519"></a>
 

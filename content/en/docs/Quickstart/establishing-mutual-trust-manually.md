@@ -1,9 +1,9 @@
-# Establishing Mutual Trust Manually<a name="EN-US_TOPIC_0251900907"></a>
+# Establishing Mutual Trust Manually<a name="EN-US_TOPIC_0270171706"></a>
 
 During the openGauss installation, you need to perform operations such as running commands and transferring files between hosts in openGauss. Establish mutual trust among the hosts before installing the cluster as a common user. During the execution of the pre-installation script, establish mutual trust between users  **root**, then create a common user account, and finally establish mutual trust between common users.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.
 
 ## Prerequisites<a name="en-us_topic_0249784564_en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s88bba380d9334b129eab3023c5399d45"></a>
 
@@ -62,8 +62,8 @@ During the openGauss installation, you need to perform operations such as runnin
 
 If the passwords of user  **root**  on the hosts in the openGauss are different, the  **gs\_preinstall**  script cannot be used to establish mutual trust. In this case, manually establish mutual trust.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.
 
 The procedure of manually establishing mutual trust is as follows \(**plat1**,  **plat2**, and  **plat3**  are host names\):
 
@@ -153,9 +153,9 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
         # plat3 SSH-2.0-OpenSSH_5.1 
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
-        >-   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.  
-        >-   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.  
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >-   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
+        >-   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
 
 
 3.  Send the  **known\_hosts**  file to all the other hosts except the local host. In this example, send the  **known\_hosts**  file on host  **plat1**  to hosts  **plat2**  and  **plat3**.
@@ -205,8 +205,8 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     plat1:~ # 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.
 
 
 ## Deleting Mutual Trust Between Users  **root** <a name="en-us_topic_0249784564_section149417461942"></a>

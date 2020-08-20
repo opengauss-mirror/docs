@@ -1,4 +1,4 @@
-# Obtaining and Verifying an Installation Package<a name="EN-US_TOPIC_0251900886"></a>
+# Obtaining and Verifying an Installation Package<a name="EN-US_TOPIC_0270171692"></a>
 
 To prevent network security threats caused by malicious tampering or damage during installation package transfer, verify the integrity of an installation package after obtaining it. Deployment can be started only after the package passes the verification.
 

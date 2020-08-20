@@ -8,13 +8,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range:**  an integer ranging from –100 to 10000
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   A larger positive number than the default value increases the time required to do  **ANALYZE**, but might improve the quality of the optimizer's estimates.  
->-   Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:  
->    1.  Restore to the default statistics.  
->    2.  Use hints to force the optimizer to use the optimal query plan.   
->-   If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.  
->-   If this parameter is set to a negative value, the auto-analyze function is disabled.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   A larger positive number than the default value increases the time required to do  **ANALYZE**, but might improve the quality of the optimizer's estimates.
+>-   Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:
+>    1.  Restore to the default statistics.
+>    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](en-us_topic_0245374566.md).
+>-   If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.
+>-   If this parameter is set to a negative value, the auto-analyze function is disabled.
 
 **Default value**:  **100**
 
@@ -30,14 +30,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off**  indicates that constraints for any table are not examined.
 -   **partition**  indicates that only constraints for inheritance child tables and  **UNION ALL**  subqueries are examined.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >When  **constraint\_exclusion**  is set to  **on**, the optimizer compares query conditions with the table's  **CHECK**  constraints, and omits scanning tables for which the conditions contradict the constraints.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >When  **constraint\_exclusion**  is set to  **on**, the optimizer compares query conditions with the table's  **CHECK**  constraints, and omits scanning tables for which the conditions contradict the constraints.
 
 
 **Default value**:  **partition**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Currently, constraint exclusion is enabled by default only for cases that are often used to implement table partitioning. Turning this feature on for all tables imposes extra planning on simple queries, and provides no benefit for simple queries. If you have no partitioned tables, set it to  **off**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Currently, constraint exclusion is enabled by default only for cases that are often used to implement table partitioning. Turning this feature on for all tables imposes extra planning on simple queries, and provides no benefit for simple queries. If you have no partitioned tables, set it to  **off**.
 
 ## cursor\_tuple\_fraction<a name="en-us_topic_0242371509_en-us_topic_0237124719_en-us_topic_0059779049_s9030e914f1684810ad4ca90ee6f8dbfe"></a>
 
@@ -47,8 +47,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range:**  a floating point number ranging from 0.0 to 1.0
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Smaller values of this setting bias the optimizer towards using  **fast start**  plans for cursors, which will retrieve the first few rows quickly while perhaps taking a long time to fetch all rows. Larger values put more emphasis on the total estimated time. At the maximum setting of  **1.0**, cursors are planned exactly like regular queries, considering only the total estimated time and how soon the first rows might be delivered.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Smaller values of this setting bias the optimizer towards using  **fast start**  plans for cursors, which will retrieve the first few rows quickly while perhaps taking a long time to fetch all rows. Larger values put more emphasis on the total estimated time. At the maximum setting of  **1.0**, cursors are planned exactly like regular queries, considering only the total estimated time and how soon the first rows might be delivered.
 
 **Default value**:  **0.1**
 
@@ -60,8 +60,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from 1 to  _INT\_MAX_
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Smaller values reduce planning time but may lead to inferior execution plans.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Smaller values reduce planning time but may lead to inferior execution plans.
 
 **Default value**:  **8**
 
@@ -73,9 +73,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from 1 to  _INT\_MAX_
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   Setting this parameter to  **1**  prevents join reordering. As a result, the join order specified in the query will be the actual order in which the relations are joined. The query optimizer does not always choose the optimal join order. Therefore, advanced users can temporarily set this variable to  **1**, and then specify the join order they desire explicitly.  
->-   Smaller values reduce planning time but may lead to inferior execution plans.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   Setting this parameter to  **1**  prevents join reordering. As a result, the join order specified in the query will be the actual order in which the relations are joined. The query optimizer does not always choose the optimal join order. Therefore, advanced users can temporarily set this variable to  **1**, and then specify the join order they desire explicitly.
+>-   Smaller values reduce planning time but may lead to inferior execution plans.
 
 **Default value**:  **8**
 
@@ -89,9 +89,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If  **plan\_mode\_seed**  is set to  **RANDOM\_PLAN**, the optimizer generates a random execution plan that may not be the optimal one. Therefore, to guarantee the query performance, the default value  **0**  is recommended during upgrade, scale-out, scale-in, and O&M.  
->-   If this parameter is not set to  **0**, the specified hint will not be used.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If  **plan\_mode\_seed**  is set to  **RANDOM\_PLAN**, the optimizer generates a random execution plan that may not be the optimal one. Therefore, to guarantee the query performance, the default value  **0**  is recommended during upgrade, scale-out, scale-in, and O&M.
+>-   If this parameter is not set to  **0**, the specified hint will not be used.
 
 ## hashagg\_table\_size<a name="en-us_topic_0242371509_en-us_topic_0237124719_en-us_topic_0059779049_sd3604978a99a48e784619997f8036b61"></a>
 
@@ -114,8 +114,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **on**  indicates that code optimization is enabled.
 -   **off**  indicates that code optimization is disabled.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >Currently, the LLVM optimization only supports the vectorized executor and SQL on Hadoop features. You are advised to set this parameter to  **off**  in other cases.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >Currently, the LLVM optimization only supports the vectorized executor and SQL on Hadoop features. You are advised to set this parameter to  **off**  in other cases.
 
 
 **Default value**:  **on**
@@ -131,8 +131,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **partial**  indicates that even if functions that are not codegen-based exist in an expression, you can still call the LLVM dynamic optimization strategy by using the entire codegen framework of the expression.
 -   **pure**  indicates that only when all functions in an expression can be codegen-based, the LLVM dynamic optimization strategy can be called.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >In the scenario where query performance reduces after the codegen function is enabled, you can set this parameter to  **pure**. In other scenarios, do not change the default value  **partial**  of this parameter.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >In the scenario where query performance reduces after the codegen function is enabled, you can set this parameter to  **pure**. In other scenarios, do not change the default value  **partial**  of this parameter.
 
 
 **Default value**:  **partial**
@@ -217,9 +217,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **on**  indicates that the hash aggregation operator designed for column-oriented hash tables is used when certain constraints are met.
 -   **off**  indicates that the hash aggregation operator designed for column-oriented hash tables is not used.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   When the hash aggregation operator designed for column-oriented hash tables is used, the memory usage of the query can be reduced. However, in scenarios when  **[enable\_codegen](#en-us_topic_0242371509_en-us_topic_0237124719_en-us_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)**  is set to  **on**  and the performance is significantly improved, the performance of the operator may deteriorate.  
->-   If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   When the hash aggregation operator designed for column-oriented hash tables is used, the memory usage of the query can be reduced. However, in scenarios when  **[enable\_codegen](#en-us_topic_0242371509_en-us_topic_0237124719_en-us_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)**  is set to  **on**  and the performance is significantly improved, the performance of the operator may deteriorate.
+>-   If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](en-us_topic_0245374546.md).
 
 **Default value**:  **on**
 
@@ -234,10 +234,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **on**  indicates that the hash join operator designed for column-oriented hash tables is used when certain constraints are met.
 -   **off**  indicates that the hash join operator designed for column-oriented hash tables is not used.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   Currently, the parameter can be used only for Inner Join.  
->-   If  **enable\_sonic\_hashjoin**  is enabled, the memory usage of query using the Hash Inner operator can be reduced. However, in scenarios where the code generation technology can significantly improve performance, the performance of the operator may deteriorate.  
->-   If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   Currently, the parameter can be used only for Inner Join.
+>-   If  **enable\_sonic\_hashjoin**  is enabled, the memory usage of query using the Hash Inner operator can be reduced. However, in scenarios where the code generation technology can significantly improve performance, the performance of the operator may deteriorate.
+>-   If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](en-us_topic_0245374546.md).
 
 **Default value**:  **on**
 
@@ -318,10 +318,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **force\_generic\_plan**  indicates that the  **generic plan**  is forcibly used.
 -   **force\_custom\_plan**  indicates that the  **custom plan**  is forcibly used.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   This parameter is valid only for the  **prepare**  statement. It is used when the parameterized field in the  **prepare**  statement has severe data skew.  
->-   **custom plan**  is a plan generated after you run the  **prepare**  statement where parameters in the  **execute**  statement is embedded. The  **custom plan**  generates a plan based on specific parameters in the  **execute**  statement. This scheme generates a preferred plan based on specific parameters each time and has good execution performance. The disadvantage is that the plan needs to be regenerated before each execution, resulting in a large amount of repeated optimizer overhead.  
->-   **generic plan**  is a plan generated after you run the  **prepare**  statement. The plan policy binds parameters to the plan when you run the  **execute**  statement and execute the plan. The advantage of this scheme is that repeated optimizer overheads can be avoided in each execution. The disadvantage is that the plan may not be optimal when data skew occurs for the bound parameters and may result in poor plan execution performance.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   This parameter is valid only for the  **prepare**  statement. It is used when the parameterized field in the  **prepare**  statement has severe data skew.
+>-   **custom plan**  is a plan generated after you run the  **prepare**  statement where parameters in the  **execute**  statement is embedded. The  **custom plan**  generates a plan based on specific parameters in the  **execute**  statement. This scheme generates a preferred plan based on specific parameters each time and has good execution performance. The disadvantage is that the plan needs to be regenerated before each execution, resulting in a large amount of repeated optimizer overhead.
+>-   **generic plan**  is a plan generated after you run the  **prepare**  statement. The plan policy binds parameters to the plan when you run the  **execute**  statement and execute the plan. The advantage of this scheme is that repeated optimizer overheads can be avoided in each execution. The disadvantage is that the plan may not be optimal when data skew occurs for the bound parameters and may result in poor plan execution performance.
 
 **Default value**:  **auto**
 

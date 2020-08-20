@@ -24,8 +24,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **on**  indicates that various assertion checks are enabled.
 -   **off**  indicates that various assertion checks are disabled.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->This parameter is set to  **on**  by default if openGauss is compiled with various assertion checks enabled.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>This parameter is set to  **on**  by default if openGauss is compiled with various assertion checks enabled.
 
 **Default value**:  **off**
 
@@ -58,8 +58,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->The value of this parameter must be an absolute path plus a file name with the extension  **.csv**.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The value of this parameter must be an absolute path plus a file name with the extension  **.csv**.
 
 **Value range**: a string
 
@@ -86,8 +86,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->This parameter is useful for recovering data from tables whose system indexes are damaged.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>This parameter is useful for recovering data from tables whose system indexes are damaged.
 
 **Value range**: Boolean
 
@@ -139,9 +139,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **log**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   **log**  indicates that recovery-related debugging information will not be logged.  
->-   Except the default value  **log**, each of the other values indicates that recovery-related debugging information at the specified level will also be logged. Common settings of  **log\_min\_messages**  will unconditionally record information into server logs.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   **log**  indicates that recovery-related debugging information will not be logged.
+>-   Except the default value  **log**, each of the other values indicates that recovery-related debugging information at the specified level will also be logged. Common settings of  **log\_min\_messages**  will unconditionally record information into server logs.
 
 ## trace\_sort<a name="en-us_topic_0242371533_en-us_topic_0237124743_en-us_topic_0059778871_sd0cba25915364b649503310146519623"></a>
 
@@ -179,8 +179,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **on**  indicates that the same calculation method is used and a redistribution is not required.
 -   **off**  indicates that different calculation methods are used and a redistribution is required.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Calculation methods differ in the length of input strings used for calculating hash values. \(For a char-type hash value, spaces following a string are not counted as the length. For a text- or varchar-type hash value, the spaces are counted.\) The hash value affects the calculation result of queries. To avoid query errors, do not modify this parameter during database running once it is set.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Calculation methods differ in the length of input strings used for calculating hash values. \(For a char-type hash value, spaces following a string are not counted as the length. For a text- or varchar-type hash value, the spaces are counted.\) The hash value affects the calculation result of queries. To avoid query errors, do not modify this parameter during database running once it is set.
 
 **Default value**:  **off**
 
@@ -211,8 +211,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Modify this parameter only when absolutely necessary because the modification will change the rule for converting internal data types and may cause unexpected results.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Modify this parameter only when absolutely necessary because the modification will change the rule for converting internal data types and may cause unexpected results.
 
 ## nls\_timestamp\_format<a name="en-us_topic_0242371533_en-us_topic_0237124743_en-us_topic_0059778871_sd50fac6da781483cae15aaa57243b88e"></a>
 
@@ -354,10 +354,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **ALL,on\(\),off\(LLVM\_COMPILE,HASH\_CONFLICT,STREAM\_DATA\_CHECK\)**, which indicates that no location function is enabled.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Use  **on\(\)**  or** off\(\)**  to enable or disable the functions. The function options that are not displayed retain the original values. Format for reference:  
->'on\(option1, option2, ...\)'  
->'off\(ALL\)'  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Use  **on\(\)**  or** off\(\)**  to enable or disable the functions. The function options that are not displayed retain the original values. Format for reference:
+>'on\(option1, option2, ...\)'
+>'off\(ALL\)'
 
 ## resource\_track\_log<a name="en-us_topic_0242371533_en-us_topic_0237124743_section11914205152413"></a>
 
@@ -420,8 +420,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 -   JDK8 JVM system attributes \(starting with  **–D**, for example,  **–Djava.ext.dirs**\). For details, see JDK  [official ](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)descriptions.
 -   User-defined parameters \(starting with  **–D**, for example,  **–Duser.defined.option**\).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If  **pljava\_vmoptions**  is set to a value beyond the value range, an error will be reported when PL/Java functions are used. For details, see  [PL/pgSQL Functions](en-us_topic_0245374598.md).  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If  **pljava\_vmoptions**  is set to a value beyond the value range, an error will be reported when PL/Java functions are used. For details, see  [PL/pgSQL Functions](en-us_topic_0245374598.md).
 
 **Default value**: empty
 

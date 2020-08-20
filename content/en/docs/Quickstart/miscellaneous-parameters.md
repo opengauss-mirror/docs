@@ -173,8 +173,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**: empty
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Do not set this parameter manually. Otherwise, the openGauss may become faulty.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Do not set this parameter manually. Otherwise, the openGauss may become faulty.
 
 ## transparent\_encrypt\_kms\_url<a name="en-us_topic_0242371544_en-us_topic_0237124754_section14139346195718"></a>
 
@@ -206,9 +206,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**: empty
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   Currently, only compatibility configuration items in  [Table 1](#en-us_topic_0242371544_en-us_topic_0237124754_table182861153114812)  are supported.  
->-   Multiple items are separated by commas \(,\), for example,  **set behavior\_compat\_options='end\_month\_calculate,display\_leading\_zero';**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   Currently, only compatibility configuration items in  [Table 1](#en-us_topic_0242371544_en-us_topic_0237124754_table182861153114812)  are supported.
+>-   Multiple items are separated by commas \(,\), for example,  **set behavior\_compat\_options='end\_month\_calculate,display\_leading\_zero';**.
 
 **Table  1**  Compatibility configuration items
 
@@ -288,6 +288,7 @@ add_months
 <a name="en-us_topic_0242371544_en-us_topic_0237124754_screen17865171482915"></a><a name="en-us_topic_0242371544_en-us_topic_0237124754_screen17865171482915"></a><pre class="screen" codetype="Sql" id="en-us_topic_0242371544_en-us_topic_0237124754_screen17865171482915"><span id="en-us_topic_0242371544_en-us_topic_0237124754_text19711022217"><a name="en-us_topic_0242371544_en-us_topic_0237124754_text19711022217"></a><a name="en-us_topic_0242371544_en-us_topic_0237124754_text19711022217"></a>postgres=# </span>select length(lpad('123',0,'*')) from dual;
 length
 --------
+
 (1 row)</pre>
 <a name="en-us_topic_0242371544_en-us_topic_0237124754_ul75590181418"></a><a name="en-us_topic_0242371544_en-us_topic_0237124754_ul75590181418"></a><ul id="en-us_topic_0242371544_en-us_topic_0237124754_ul75590181418"><li>If this item is specified, the empty string is displayed as single quotation marks ('').</li></ul>
 <a name="en-us_topic_0242371544_en-us_topic_0237124754_screen104295208294"></a><a name="en-us_topic_0242371544_en-us_topic_0237124754_screen104295208294"></a><pre class="screen" codetype="Sql" id="en-us_topic_0242371544_en-us_topic_0237124754_screen104295208294"><span id="en-us_topic_0242371544_en-us_topic_0237124754_text171811411192213"><a name="en-us_topic_0242371544_en-us_topic_0237124754_text171811411192213"></a><a name="en-us_topic_0242371544_en-us_topic_0237124754_text171811411192213"></a>postgres=# </span>select length(lpad('123',0,'*')) from dual;
@@ -311,8 +312,6 @@ length
 </tr>
 </tbody>
 </table>
-
-
 
 ## table\_skewness\_warning\_threshold<a name="en-us_topic_0242371544_en-us_topic_0237124754_section174079331456"></a>
 

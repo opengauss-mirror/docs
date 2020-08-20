@@ -34,8 +34,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **0.5**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**0.5**  indicates that each checkpoint should be complete within 50% of the interval between checkpoints.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**0.5**  indicates that each checkpoint should be complete within 50% of the interval between checkpoints.
 
 ## checkpoint\_warning<a name="en-us_topic_0242371498_en-us_topic_0237124708_en-us_topic_0059778936_sde87a0cc424e4ff9afa70fda4a02c6b5"></a>
 

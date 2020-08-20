@@ -1,17 +1,17 @@
-# Creating the Required User Account and Configuring the Installation Environment<a name="EN-US_TOPIC_0251900906"></a>
+# Creating the Required User Account and Configuring the Installation Environment<a name="EN-US_TOPIC_0270171705"></a>
 
-After the openGauss configuration file is created, you need to run the  **gs\_preinstall**  script to prepare the account and environment so that you can perform openGauss installation and management operations with the minimum permission, ensuring system security.
+After the clusteropenGauss configuration file is created, you need to run the  **gs\_preinstall**  script to prepare the account and environment so that you can perform clusteropenGauss installation and management operations with the minimum permission, ensuring system security.
 
 Executing the  **gs\_preinstall**  script enables the system to automatically complete the following installation preparations:
 
--   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](configuring-os-parameters.md#EN-US_TOPIC_0251900908).
--   Automatically copies the openGauss configuration files and installation packages to the same directory on each openGauss host.
--   If the installation user and user group of the openGauss do not exist, the system automatically creates them.
--   Reads the directory information in the openGauss configuration file, creates the directory, and grants the directory permission to the installation user.
+-   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](configuring-os-parameters.md#EN-US_TOPIC_0270171707).
+-   Automatically copies the clusteropenGauss configuration files and installation packages to the same directory on each clusteropenGauss host.
+-   If the installation user and user group of the clusteropenGauss do not exist, the system automatically creates them.
+-   Reads the directory information in the clusteropenGauss configuration file, creates the directory, and grants the directory permission to the installation user.
 
 ## Prerequisites<a name="en-us_topic_0249784578_en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>
 
--   You have completed all the tasks described in  [Preparing for Installation](preparing-for-installation.md#EN-US_TOPIC_0251900884).
+-   You have completed all the tasks described in  [Preparing for Installation](preparing-for-installation.md#EN-US_TOPIC_0270171690).
 
 ## Precautions<a name="en-us_topic_0249784578_en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>
 
@@ -21,16 +21,16 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
 
 ## Procedure<a name="en-us_topic_0249784578_en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>
 
-1.  Log in to any host where the openGauss is to be installed as user  **root**  and create a directory for storing the installation package as planned.
+1.  Log in to any host where the clusteropenGauss is to be installed as user  **root**  and create a directory for storing the installation package as planned.
 
     ```
     mkdir -p /opt/software/openGauss
     chmod 755 -R /opt/software
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
-    >-   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.
+    >-   The clusteropenGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.
 
 2.  The release package is used as an example. Upload the installation package  **openGauss\_x.x.x\_PACKAGES\_RELEASE.tar.gz**  and the configuration file  **clusterconfig.xml**  to the directory created in the previous step.
 3.  Go to the directory for storing the uploaded software package and decompress the package. 
@@ -102,10 +102,10 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
 
     After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
-    >-   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
-    >-   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   When you execute the  **gs\_preinstall**  script, plan the directory for storing the clusteropenGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.
+    >-   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the clusteropenGauss configuration file and decompressed installation package to the same directory on other servers.
+    >-   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.
 
 5.  Go to the directory for storing tool scripts.
 
@@ -127,13 +127,13 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
 
 8.  To ensure successful installation, check whether the values of  **hostname**  and  **/etc/hostname**  are the same. During preinstallation, the host name is checked.
 9.  Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
-    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
+    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between clusteropenGauss users is automatically established.
 
         ```
         ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/clusterconfig.xml
         ```
 
-        **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/clusterconfig.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the openGauss user.
+        **omm**  is the database administrator \(also the OS user running the clusteropenGauss\),  **dbgrp**  is the group name of the OS user running the clusteropenGauss, and  **/opt/software/GaussDB\_KernelopenGauss/clusterconfig.xml**  is the path of the clusteropenGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the clusteropenGauss user.
 
     -   If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
         1.  Run the following command to configure the installation environment:
@@ -143,12 +143,12 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
             ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/clusterconfig.xml
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:**   
-            >You need to run this command on each host.  
+            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >You need to run this command on each host.
 
 
     -   Execute  **gs\_preinstall**  in non-interactive mode.
-        1.  Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in  [Establishing Mutual Trust Manually](establishing-mutual-trust-manually.md#EN-US_TOPIC_0251900907).
+        1.  Manually establish mutual trust between users  **root**  and between clusteropenGauss users by following the instructions provided in  [Establishing Mutual Trust Manually](establishing-mutual-trust-manually.md#EN-US_TOPIC_0270171706).
         2.  Run the following command to configure the installation environment:
 
             ```
@@ -156,9 +156,9 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
             ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/clusterconfig.xml --non-interactive
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:**   
-            >-   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
-            >-   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
+            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >-   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between clusteropenGauss users on each node before executing  **gs\_preinstall**.
+            >-   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.
 
 
 
@@ -354,8 +354,8 @@ Preinstallation succeeded.
 
 ## Troubleshooting<a name="en-us_topic_0249784578_en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4"></a>
 
-If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing openGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running openGauss.
+If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing clusteropenGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running clusteropenGauss.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
 

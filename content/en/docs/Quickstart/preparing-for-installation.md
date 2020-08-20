@@ -1,4 +1,4 @@
-# Preparing for Installation<a name="EN-US_TOPIC_0251900884"></a>
+# Preparing for Installation<a name="EN-US_TOPIC_0270171690"></a>
 
 This chapter describes how to prepare and configure the openGauss installation environment. Read this chapter carefully before the installation. Go to chapter "Installing the openGauss" if you have completed the configuration in this chapter.
 

@@ -2,8 +2,8 @@
 
 This section describes memory parameters.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->These parameters take effect only after the database restarts.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>These parameters take effect only after the database restarts.
 
 ## memorypool\_enable<a name="en-us_topic_0242371489_en-us_topic_0237124699_en-us_topic_0059777577_s630c23ad11044fafae4ed851bc89169a"></a>
 
@@ -41,8 +41,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If the result of  **max\_process\_memory**  -  **shared\_buffer**  -  **cstore\_buffers**  is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit**  to  **off**.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If the result of  **max\_process\_memory**  -  **shared\_buffer**  -  **cstore\_buffers**  is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit**  to  **off**.
 
 ## max\_process\_memory<a name="en-us_topic_0242371489_en-us_topic_0237124699_en-us_topic_0059777577_sbebcee7acf2042dc8824982f22a2b4a8"></a>
 
@@ -149,8 +149,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **800**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Set this parameter to a value greater than or equal to that of  **max\_connections**  to avoid failures in preparation.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Set this parameter to a value greater than or equal to that of  **max\_connections**  to avoid failures in preparation.
 
 ## work\_mem<a name="en-us_topic_0242371489_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e"></a>
 
@@ -214,8 +214,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Several running sessions could be performing such operations concurrently. Therefore, the total memory used may be many times the value of  **psort\_work\_mem**.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Several running sessions could be performing such operations concurrently. Therefore, the total memory used may be many times the value of  **psort\_work\_mem**.
 
 **Value range**: an integer ranging from 64 to 2147483647. The unit is KB.
 
@@ -227,8 +227,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If  **max\_loaded\_cudesc**  is set to a large value, memory may be insufficient.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If  **max\_loaded\_cudesc**  is set to a large value, memory may be insufficient.
 
 **Value range**: 100 to 1073741823
 
@@ -250,8 +250,8 @@ When setting this parameter, comply with the following principles:
 
 **Default value**:  **2MB**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**2MB**  is a small value and will hardly cause system breakdown, but may lead to execution failures of complex functions.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**2MB**  is a small value and will hardly cause system breakdown, but may lead to execution failures of complex functions.
 
 ## cstore\_buffers<a name="en-us_topic_0242371489_en-us_topic_0237124699_en-us_topic_0059777577_s00a05d7c1a374988b114e167735a552d"></a>
 

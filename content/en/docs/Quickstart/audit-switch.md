@@ -43,8 +43,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value:** **1d**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  [audit\_resource\_policy](#en-us_topic_0242371535_en-us_topic_0237124745_section939915522551),  [audit\_space\_limit](#en-us_topic_0242371535_en-us_topic_0237124745_en-us_topic_0059777744_s167d5900250946bca199444c0617c714), and  [audit\_file\_remain\_time](#en-us_topic_0242371535_en-us_topic_0237124745_section149961828185211)  parameters.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  [audit\_resource\_policy](#en-us_topic_0242371535_en-us_topic_0237124745_section939915522551),  [audit\_space\_limit](#en-us_topic_0242371535_en-us_topic_0237124745_en-us_topic_0059777744_s167d5900250946bca199444c0617c714), and  [audit\_file\_remain\_time](#en-us_topic_0242371535_en-us_topic_0237124745_section149961828185211)  parameters.
 
 ## audit\_rotation\_size<a name="en-us_topic_0242371535_en-us_topic_0237124745_en-us_topic_0059777744_sf2c59b75a61e4e55933029c6b1e4ab96"></a>
 
@@ -56,8 +56,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **10 MB**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  **audit\_resource\_policy**,  **audit\_space\_limit**, and  **audit\_file\_remain\_time**  parameters.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  **audit\_resource\_policy**,  **audit\_space\_limit**, and  **audit\_file\_remain\_time**  parameters.
 
 ## audit\_resource\_policy<a name="en-us_topic_0242371535_en-us_topic_0237124745_section939915522551"></a>
 
@@ -102,6 +102,6 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **1048576**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Ensure that this parameter is set to  **1048576**. Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  **audit\_resource\_policy**,  **audit\_space\_limit**, and  **audit\_file\_remain\_time**  parameters.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Ensure that this parameter is set to  **1048576**. Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  **audit\_resource\_policy**,  **audit\_space\_limit**, and  **audit\_file\_remain\_time**  parameters.
 

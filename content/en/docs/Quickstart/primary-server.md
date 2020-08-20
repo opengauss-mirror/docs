@@ -6,9 +6,9 @@
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   The current synchronous standby server is on the top of the list. If the current synchronous standby server is disconnected, it will be replaced immediately with the next-highest-priority standby server. Name of the next-highest-priority standby server is added to the list.  
->-   The standby server name can be specified by setting the environment variable  **PGAPPNAME**.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   The current synchronous standby server is on the top of the list. If the current synchronous standby server is disconnected, it will be replaced immediately with the next-highest-priority standby server. Name of the next-highest-priority standby server is added to the list.
+>-   The standby server name can be specified by setting the environment variable  **PGAPPNAME**.
 
 **Value range**: a string.  **\***  indicates that synchronous replication is disabled.
 
@@ -33,9 +33,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   This parameter is used for performance testing in scenarios where data synchronization to standby server is enabled and where it is disabled. If this parameter is set to  **off**, tests on abnormal scenarios, such as switchover and faults, cannot be performed to prevent inconsistency between the primary, standby, and secondary servers.  
->-   This parameter is a restricted parameter, and you are advised not to set it to  **off**  in normal service scenarios.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   This parameter is used for performance testing in scenarios where data synchronization to standby server is enabled and where it is disabled. If this parameter is set to  **off**, tests on abnormal scenarios, such as switchover and faults, cannot be performed to prevent inconsistency between the primary, standby, and secondary servers.
+>-   This parameter is a restricted parameter, and you are advised not to set it to  **off**  in normal service scenarios.
 
 **Value range**: Boolean
 
@@ -50,8 +50,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is an INTERNAL parameter. Its default value is  **off**  and cannot be modified.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->This parameter is an INTERNAL parameter and cannot be modified in normal service scenarios. That is, the WAL file and data page mixed replication mode is disabled.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>This parameter is an INTERNAL parameter and cannot be modified in normal service scenarios. That is, the WAL file and data page mixed replication mode is disabled.
 
 **Value range**: Boolean
 
@@ -139,6 +139,6 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **300**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The unit can only be second.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The unit can only be second.
 

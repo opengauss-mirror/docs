@@ -24,9 +24,9 @@ By preloading a shared library and initializing it as required, the library star
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If a specified library is not found, the openGauss service will fail to start.  
->-   Each openGauss-supported library has a special mark that is checked to guarantee compatibility. Therefore, libraries that do not support openGauss cannot be loaded in this way.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If a specified library is not found, the openGauss service will fail to start.
+>-   Each openGauss-supported library has a special mark that is checked to guarantee compatibility. Therefore, libraries that do not support openGauss cannot be loaded in this way.
 
 **Value range**: a string
 

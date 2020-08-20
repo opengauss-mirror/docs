@@ -6,10 +6,10 @@
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   To enable WAL archiving and data streaming replication between primary and standby servers, set this parameter to  **archive**  or  **hot\_standby**.  
->-   This parameter can be set to  **minimal**  only in a single-server system. When the parameter value is  **minimal**,  **archive\_mode**  must be set to  **off**,  **hot\_standby**  must be set to  **off**, and  **max\_wal\_senders**  must be set to  **0**. Otherwise, the database startup fails.  
->-   If this parameter is set to  **archive**,  **hot\_standby**  must be set to  **off**. Otherwise, the database startup fails. However,  **hot\_standby**  cannot be set to  **off**  in a primary-standby deployment. For details, see the description of the  **hot\_standby**  parameter.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   To enable WAL archiving and data streaming replication between primary and standby servers, set this parameter to  **archive**  or  **hot\_standby**.
+>-   This parameter can be set to  **minimal**  only in a single-server system. When the parameter value is  **minimal**,  **archive\_mode**  must be set to  **off**,  **hot\_standby**  must be set to  **off**, and  **max\_wal\_senders**  must be set to  **0**. Otherwise, the database startup fails.
+>-   If this parameter is set to  **archive**,  **hot\_standby**  must be set to  **off**. Otherwise, the database startup fails. However,  **hot\_standby**  cannot be set to  **off**  in a primary-standby deployment. For details, see the description of the  **hot\_standby**  parameter.
 
 **Value range**: enumerated values
 
@@ -36,9 +36,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   Using the  **fsync\(\)**  function ensures that the data can be recovered to a known state when an OS or a hardware crashes.  
->-   Setting this parameter to  **off**  may result in unrecoverable data corruption in a system crash.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   Using the  **fsync\(\)**  function ensures that the data can be recovered to a known state when an OS or a hardware crashes.
+>-   Setting this parameter to  **off**  may result in unrecoverable data corruption in a system crash.
 
 **Value range**: Boolean
 
@@ -69,8 +69,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If  **[fsync](#en-us_topic_0242371497_en-us_topic_0237124707_en-us_topic_0059778393_sb6cc47bbe02c47a785c873b1959ad0df)**  is set to  **off**, the setting of this parameter does not take effect because WAL file updates will not be forced out to disk.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If  **[fsync](#en-us_topic_0242371497_en-us_topic_0237124707_en-us_topic_0059778393_sb6cc47bbe02c47a785c873b1959ad0df)**  is set to  **off**, the setting of this parameter does not take effect because WAL file updates will not be forced out to disk.
 
 **Value range**: enumerated values
 
@@ -78,8 +78,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **fdatasync**  indicates that  **fdatasync\(\)**  is called at each commit. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
 -   **fsync\_writethrough**  indicates that  **fsync\(\)**  is called at each commit to force data in the buffer to be written to the disk.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >**wal\_sync\_method**  can be set to  **fsync\_writethrough**  on a Windows platform, but this setting has the same effect as setting the parameter to  **fsync**.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**wal\_sync\_method**  can be set to  **fsync\_writethrough**  on a Windows platform, but this setting has the same effect as setting the parameter to  **fsync**.
 
 -   **fsync**  indicates that  **fsync\(\)**  is called at each commit. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
 -   **open\_sync**  indicates that WAL files are written with  **open\(\)**  option  **O\_SYNC**. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
@@ -92,9 +92,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   This parameter is needed because a page write that is in process during an OS crash might be only partially completed, leading to an on-disk page that contains a mix of old and new data. The row-level change data normally stored in WALs will not be enough to completely restore such a page during post-crash recovery. Storing the full page image guarantees that the page can be correctly restored, but at the price of increasing the amount of data that must be written to WALs.  
->-   Setting this parameter to  **off**  might lead to unrecoverable data corruption after a system failure. It might be safe to set this parameter to  **off**  if you have hardware \(such as a battery-backed disk controller\) or file-system software \(such as ReiserFS 4\) that reduces the risk of partial page writes to an acceptably low level.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   This parameter is needed because a page write that is in process during an OS crash might be only partially completed, leading to an on-disk page that contains a mix of old and new data. The row-level change data normally stored in WALs will not be enough to completely restore such a page during post-crash recovery. Storing the full page image guarantees that the page can be correctly restored, but at the price of increasing the amount of data that must be written to WALs.
+>-   Setting this parameter to  **off**  might lead to unrecoverable data corruption after a system failure. It might be safe to set this parameter to  **off**  if you have hardware \(such as a battery-backed disk controller\) or file-system software \(such as ReiserFS 4\) that reduces the risk of partial page writes to an acceptably low level.
 
 **Value range**: Boolean
 
@@ -137,8 +137,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->A longer delay might lead to insufficient WAL buffer and a shorter delay leads to continuously writing of the WALs, thereby increasing the load of disk I/O.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>A longer delay might lead to insufficient WAL buffer and a shorter delay leads to continuously writing of the WALs, thereby increasing the load of disk I/O.
 
 **Value range**: an integer ranging from 1 to 10000. The unit is millisecond.
 
@@ -150,9 +150,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   When this parameter is set to a non-zero value, the committed transaction is stored in the WAL buffer instead of being written to the WAL immediately. Then the WAL writer process flushes the buffer out to disk periodically.  
->-   If system load is high, other transactions are probably ready to be committed within the delay. If no other transactions are ready to be committed, the delay is a waste of time.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   When this parameter is set to a non-zero value, the committed transaction is stored in the WAL buffer instead of being written to the WAL immediately. Then the WAL writer process flushes the buffer out to disk periodically.
+>-   If system load is high, other transactions are probably ready to be committed within the delay. If no other transactions are ready to be committed, the delay is a waste of time.
 
 **Value range**: an integer ranging from 0 to 100000. The unit is μs.  **0**  indicates no delay.
 

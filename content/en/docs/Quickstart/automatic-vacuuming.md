@@ -8,16 +8,16 @@ The autovacuum process automatically runs the  **VACUUM**  and  **ANALYZE**  sta
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   Set the  **autovacuum**  parameter to  **on**  if you want to enable the automatic cleanup of abnormal two-phase transactions when the system recovers from faults.  
->-   If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0242371520_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to  **0**, the autovacuum process is enabled only when the system recovers from faults to clean up abnormal two-phase transactions.  
->-   If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0242371520_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to a value greater than  **0**, the autovacuum process is enabled to clean up bloated tables during daily operations and abnormal two-phase transactions when the system recovers from faults.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   Set the  **autovacuum**  parameter to  **on**  if you want to enable the automatic cleanup of abnormal two-phase transactions when the system recovers from faults.
+>-   If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0242371520_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to  **0**, the autovacuum process is enabled only when the system recovers from faults to clean up abnormal two-phase transactions.
+>-   If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0242371520_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to a value greater than  **0**, the autovacuum process is enabled to clean up bloated tables during daily operations and abnormal two-phase transactions when the system recovers from faults.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Even if the  **autovacuum**  parameter is set to  **off**, the autovacuum process will be enabled automatically when a transaction ID wraparound is about to occur. When a CREATE DATABASE or DROP DATABASE operation fails, it is possible that the transaction has been committed or rolled back on some nodes whereas some nodes are still in the prepared status. In this case, manual operation as follows is required to restore the nodes:  
->1.  Use the gs\_clean tool \(setting the  **option**  parameter to -N\) to query the xid of the abnormal two-phase transaction and nodes in the prepared status.  
->2.  Log in to the nodes in the prepared status. Administrators connect to an available database such as  **postgres**  and run the  **set xc\_maintenance\_mode = on**  statement.  
->3.  Commit or roll back the two-phase transaction based on the global transaction status.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Even if the  **autovacuum**  parameter is set to  **off**, the autovacuum process will be enabled automatically when a transaction ID wraparound is about to occur. When a CREATE DATABASE or DROP DATABASE operation fails, it is possible that the transaction has been committed or rolled back on some nodes whereas some nodes are still in the prepared status. In this case, manual operation as follows is required to restore the nodes:
+>1.  Use the gs\_clean tool \(setting the  **option**  parameter to -N\) to query the xid of the abnormal two-phase transaction and nodes in the prepared status.
+>2.  Log in to the nodes in the prepared status. Administrators connect to an available database such as  **postgres**  and run the  **set xc\_maintenance\_mode = on**  statement.
+>3.  Commit or roll back the two-phase transaction based on the global transaction status.
 
 **Value range**: Boolean
 

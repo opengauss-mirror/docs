@@ -5,3 +5,705 @@
 -   **[Resetting Parameters](resetting-parameters.md)**  
 
 
+## Viewing Parameter Values<a name="EN-US_TOPIC_0251900917"></a>
+
+openGauss uses a set of default running parameters after it is installed. You can modify the parameters to better fit the current service scenarios and data volume.
+
+### Procedure<a name="en-us_topic_0242370405_en-us_topic_0237121561_en-us_topic_0059778552_s188c1b9187954573b5701cc6013c78e8"></a>
+
+1.  Log in as the OS user  **omm**  to the primary node of the database.
+2.  Run the following command to connect to the database:
+
+    ```
+    gsql -d postgres -p 8000
+    ```
+
+    **postgres**  is the name of the database to be connected, and  **8000**  is the port number of the database primary node.
+
+    If information similar to the following is displayed, the connection succeeds:
+
+    ```
+    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    Non-SSL connection (SSL connection is recommended when requiring high-security)
+    Type "help" for help.
+    
+    postgres=# 
+    ```
+
+3.  View the parameter values in the database.
+    -   Method 1: Run the  **SHOW**  command.
+        -   Run the following command to view the value of a certain parameter:
+
+            ```
+            postgres=# SHOW server_version;
+            ```
+
+            _server\_version_  indicates the database version.
+
+        -   Run the following command to view values of all parameters:
+
+            ```
+            postgres=#  SHOW ALL;
+            ```
+
+
+    -   Method 2: Query the  **pg\_settings**  view.
+        -   Run the following command to view the value of a certain parameter:
+    
+            ```
+            postgres=# SELECT * FROM pg_settings WHERE NAME='server_version';
+            ```
+    
+        -   Run the following command to view values of all parameters:
+    
+            ```
+            postgres=# SELECT * FROM pg_settings;
+            ```
+
+
+
+
+### Example<a name="en-us_topic_0242370405_en-us_topic_0237121561_en-us_topic_0059778552_se13d2a46521a4500881363a56a68d6cf"></a>
+
+View the server version.
+
+```
+postgres=# SHOW server_version;
+ server_version 
+----------------
+ 9.2.4
+(1 row)
+```
+
+## Resetting Parameters<a name="EN-US_TOPIC_0251900918"></a>
+
+### Background<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s75c9285916664351b9c3e31f0735ea98"></a>
+
+openGauss provides multiple methods to set the GUC parameters of databases, users, or sessions.
+
+-   Parameter names are case-insensitive.
+-   A parameter value can be an integer, floating point value, string, Boolean value, or enumerated value.
+    -   The Boolean values can be  **on**/**off**,  **true**/**false**,  **yes**/**no**, or  **1**/**0**, and are case-insensitive.
+    -   The enumerated value range is specified in the  **enumvals**  column of the  **pg\_settings**  system catalog.
+
+-   For parameters using units, specify their units during the setting. Otherwise, default units are used.
+    -   The default units are specified in the  **unit**  column of  **pg\_settings**.
+    -   The unit of memory can be KB, MB, or GB.
+    -   The unit of time can be ms, s, min, h, or d.
+
+
+For details about parameters in the hosts configuration template, see  [GUC Parameters](guc-parameters.md#EN-US_TOPIC_0251900919).
+
+### Setting GUC Parameters<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sb2763fa0003e4ff1815379339bffe994"></a>
+
+openGauss provides six types of GUC parameters. For details about parameter types and their setting methods, see  [Table 1](#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Table  1**  GUC parameters
+
+<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846"></a>
+<table><thead align="left"><tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_rae575d3ff60b407598220d90f6c4ae5a"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.4.1.1"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a565dea9ce2ca48e382eabebd159db37c"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a565dea9ce2ca48e382eabebd159db37c"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a565dea9ce2ca48e382eabebd159db37c"></a>Parameter type.</p>
+</th>
+<th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.2"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a365ac414051d47a2840b55cd29318e65"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a365ac414051d47a2840b55cd29318e65"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a365ac414051d47a2840b55cd29318e65"></a>Remarks</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.4.1.3"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p503081162112"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p503081162112"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p503081162112"></a>How to Set</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_re5f6b00de3b144a7a1a7530013a4b50e"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ae084a76af0d7491ebaee700964f24b5d"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ae084a76af0d7491ebaee700964f24b5d"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ae084a76af0d7491ebaee700964f24b5d"></a>INTERNAL</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a93d8a625ffe5428a87f9c19f549e31e2"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a93d8a625ffe5428a87f9c19f549e31e2"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a93d8a625ffe5428a87f9c19f549e31e2"></a>Fixed parameter. It is set during database creation and cannot be modified. Users can only view the parameter by running the <strong id="en-us_topic_0242370406_b15621110181112"><a name="en-us_topic_0242370406_b15621110181112"></a><a name="en-us_topic_0242370406_b15621110181112"></a>SHOW</strong> command or in the <strong id="en-us_topic_0242370406_b146268108119"><a name="en-us_topic_0242370406_b146268108119"></a><a name="en-us_topic_0242370406_b146268108119"></a>pg_settings</strong> view.</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a780149c37e6e4388951dae1a6367ee15"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a780149c37e6e4388951dae1a6367ee15"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a780149c37e6e4388951dae1a6367ee15"></a>None</p>
+</td>
+</tr>
+<tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_r985eaa99e53c429f93c88aa44c2c947e"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a266639ca72ef468f843ce78339772b89"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a266639ca72ef468f843ce78339772b89"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a266639ca72ef468f843ce78339772b89"></a>POSTMASTER</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aab34575a3f7f4f85b347778b8ecf1c8e"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aab34575a3f7f4f85b347778b8ecf1c8e"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aab34575a3f7f4f85b347778b8ecf1c8e"></a>Database server parameter. It can be set when the database is started or in the configuration file.</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aaec6ea74431b46e3a70851519a3cac25"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aaec6ea74431b46e3a70851519a3cac25"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aaec6ea74431b46e3a70851519a3cac25"></a>Method 1 in <a href="#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d">Table 2</a>.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_r276cbf29781049ccbcde361ba70847dc"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afd60248c975349e0b2592f5d06f8c873"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afd60248c975349e0b2592f5d06f8c873"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afd60248c975349e0b2592f5d06f8c873"></a>SIGHUP</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a04b338e0eee1469594337b9c4a412769"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a04b338e0eee1469594337b9c4a412769"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a04b338e0eee1469594337b9c4a412769"></a>Global database parameter. It can be set when the database is started or be modified later.</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a6b219f3f7d5048bf81262aedae906b37"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a6b219f3f7d5048bf81262aedae906b37"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a6b219f3f7d5048bf81262aedae906b37"></a>Method 1 or 2 in <a href="#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d">Table 2</a>.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_r57fbf12f01b646ec85a54efb4b8863f6"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a91c2db6d403f431c9130e42c5c10c2ae"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a91c2db6d403f431c9130e42c5c10c2ae"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a91c2db6d403f431c9130e42c5c10c2ae"></a>BACKEND</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_p1056143385719"><a name="en-us_topic_0242370406_en-us_topic_0237121562_p1056143385719"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_p1056143385719"></a>Session connection parameter. It is specified during session connection creation and cannot be modified after that. The parameter setting becomes invalid when the session is disconnected. This is an internal parameter and not recommended for users to set it.</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac03326bb1ab94db3b7ee68aca3c4794d"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac03326bb1ab94db3b7ee68aca3c4794d"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac03326bb1ab94db3b7ee68aca3c4794d"></a>Method 1 or 2 in <a href="#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d">Table 2</a>.</p>
+<div class="note" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ne868e43e3a8a481ba58d7eed6974d888"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ne868e43e3a8a481ba58d7eed6974d888"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ne868e43e3a8a481ba58d7eed6974d888"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af1a3c552951f4930b64dbf14be54a33b"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af1a3c552951f4930b64dbf14be54a33b"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af1a3c552951f4930b64dbf14be54a33b"></a>The parameter setting takes effect when the next session is created.</p>
+</div></div>
+</td>
+</tr>
+<tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_rf4e77970e4774b3a9c60e4c67dd08183"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a6ed01fb56241493e85efb71d1f51f888"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a6ed01fb56241493e85efb71d1f51f888"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a6ed01fb56241493e85efb71d1f51f888"></a>SUSET</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afea554b5226a4e6b860ba259b82ebe51"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afea554b5226a4e6b860ba259b82ebe51"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afea554b5226a4e6b860ba259b82ebe51"></a>Database administrator parameter. It can be set by common users when or after the database is started. It can also be set by database administrators using SQL statements.</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a3dd0131e4d3940a781ba7c6fdfb09827"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a3dd0131e4d3940a781ba7c6fdfb09827"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a3dd0131e4d3940a781ba7c6fdfb09827"></a>Method 1 or 2 by a common user, or method 3 by a database administrator in <a href="#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d">Table 2</a>.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_rf87c73c9faa44ccb956b16b0191d3e92"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8d7ddfb83a8a4bb4b206ebfe14eb52a2"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8d7ddfb83a8a4bb4b206ebfe14eb52a2"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8d7ddfb83a8a4bb4b206ebfe14eb52a2"></a>USERSET</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a85853b683e474d85a49c71b815887464"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a85853b683e474d85a49c71b815887464"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a85853b683e474d85a49c71b815887464"></a>Common user parameter. It can be set by any user at any time.</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac83063c5be174b14a717b7b4adeb6e01"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac83063c5be174b14a717b7b4adeb6e01"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac83063c5be174b14a717b7b4adeb6e01"></a>Method 1, 2, or 3 in <a href="#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d">Table 2</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+You can set GUC parameters in openGauss using the methods listed in  [Table 2](#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+
+**Table  2**  Methods for setting GUC parameters
+
+<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d"></a>
+<table><thead align="left"><tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_rc5ee36741afd4727ac928c5055842f62"><th class="cellrowborder" valign="top" width="16.06%" id="mcps1.2.3.1.1"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p519167381778"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p519167381778"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p519167381778"></a>No.</p>
+</th>
+<th class="cellrowborder" valign="top" width="83.94%" id="mcps1.2.3.1.2"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aef170b7c444f4dd8859f597acc53a873"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aef170b7c444f4dd8859f597acc53a873"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aef170b7c444f4dd8859f597acc53a873"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ra7e245b633e74275bbc1109c9e36b66a"><td class="cellrowborder" valign="top" width="16.06%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad82cb328909940dca1f9bda8fb87a21c"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad82cb328909940dca1f9bda8fb87a21c"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad82cb328909940dca1f9bda8fb87a21c"></a>Method 1</p>
+</td>
+<td class="cellrowborder" valign="top" width="83.94%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_oa34f7863e774487f97db689a601ebe06"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_oa34f7863e774487f97db689a601ebe06"></a><ol id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_oa34f7863e774487f97db689a601ebe06"><li>Run the following command to set a parameter:<pre class="screen" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sb83221905a9f4fb29fffd4eb5341ce4a"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sb83221905a9f4fb29fffd4eb5341ce4a"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sb83221905a9f4fb29fffd4eb5341ce4a"></a><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afd214821ee5443f49cc26ad7bc24a914"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afd214821ee5443f49cc26ad7bc24a914"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_afd214821ee5443f49cc26ad7bc24a914"></a>gs_guc set -D</strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a1f3d354dd4d04c83a9c19b0db95fded5"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a1f3d354dd4d04c83a9c19b0db95fded5"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a1f3d354dd4d04c83a9c19b0db95fded5"></a> datadir</em> <strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ade5c50b88a384bbf8dac5a38b4959521"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ade5c50b88a384bbf8dac5a38b4959521"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ade5c50b88a384bbf8dac5a38b4959521"></a>-c</strong> "<em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af3bc1318096d4ee1b9fd1136e386196c"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af3bc1318096d4ee1b9fd1136e386196c"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af3bc1318096d4ee1b9fd1136e386196c"></a>paraname=value</em>"</pre>
+<div class="note" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_n73d93055cc89448e883f7ae3d2438598"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_n73d93055cc89448e883f7ae3d2438598"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_n73d93055cc89448e883f7ae3d2438598"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a73c1fbaa4d4e43c08d3cc14d6566d748"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a73c1fbaa4d4e43c08d3cc14d6566d748"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a73c1fbaa4d4e43c08d3cc14d6566d748"></a>If the parameter is a string variable, use <strong id="en-us_topic_0242370406_b20608151917129"><a name="en-us_topic_0242370406_b20608151917129"></a><a name="en-us_topic_0242370406_b20608151917129"></a>-c </strong><em id="en-us_topic_0242370406_i156099192120"><a name="en-us_topic_0242370406_i156099192120"></a><a name="en-us_topic_0242370406_i156099192120"></a>parameter</em><strong id="en-us_topic_0242370406_b196099193123"><a name="en-us_topic_0242370406_b196099193123"></a><a name="en-us_topic_0242370406_b196099193123"></a>="'</strong><em id="en-us_topic_0242370406_i18610161910126"><a name="en-us_topic_0242370406_i18610161910126"></a><a name="en-us_topic_0242370406_i18610161910126"></a>value</em><strong id="en-us_topic_0242370406_b19610161912125"><a name="en-us_topic_0242370406_b19610161912125"></a><a name="en-us_topic_0242370406_b19610161912125"></a>'"</strong> or <strong id="en-us_topic_0242370406_b206121119161215"><a name="en-us_topic_0242370406_b206121119161215"></a><a name="en-us_topic_0242370406_b206121119161215"></a>-c "</strong><em id="en-us_topic_0242370406_i18613161917123"><a name="en-us_topic_0242370406_i18613161917123"></a><a name="en-us_topic_0242370406_i18613161917123"></a>parameter</em><strong id="en-us_topic_0242370406_b7613161915129"><a name="en-us_topic_0242370406_b7613161915129"></a><a name="en-us_topic_0242370406_b7613161915129"></a> = '</strong><em id="en-us_topic_0242370406_i0614171991219"><a name="en-us_topic_0242370406_i0614171991219"></a><a name="en-us_topic_0242370406_i0614171991219"></a>value</em><strong id="en-us_topic_0242370406_b4619141931212"><a name="en-us_topic_0242370406_b4619141931212"></a><a name="en-us_topic_0242370406_b4619141931212"></a>'"</strong>.</p>
+<p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_p5315152881"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_p5315152881"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_p5315152881"></a>Run the following command to set a parameter for database nodes at the same time:</p>
+<pre class="screen" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_screen13116539497"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_screen13116539497"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_screen13116539497"></a><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b1611616391298"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b1611616391298"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b1611616391298"></a>gs_guc set <strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b2738131881015"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b2738131881015"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b2738131881015"></a>-N </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i117381218141013"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i117381218141013"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i117381218141013"></a>all</em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b973810182104"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b973810182104"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b973810182104"></a> -I </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i107386187100"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i107386187100"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i107386187100"></a>all</em> <strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b5738191891011"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b5738191891011"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b5738191891011"></a>-c</strong> "<em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i187380180104"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i187380180104"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i187380180104"></a>paraname=value</em>"</strong></pre>
+</div></div>
+</li><li>Restart the database to make the setting take effect.<div class="note" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ncefc2d14fd634ee1aba7f10a8fc1b24a"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ncefc2d14fd634ee1aba7f10a8fc1b24a"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ncefc2d14fd634ee1aba7f10a8fc1b24a"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aa384408456c448958ab4ad86052ec7bc"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aa384408456c448958ab4ad86052ec7bc"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aa384408456c448958ab4ad86052ec7bc"></a>Restarting <span id="en-us_topic_0242370406_text1456612241512"><a name="en-us_topic_0242370406_text1456612241512"></a><a name="en-us_topic_0242370406_text1456612241512"></a>openGauss</span> results in operation interruption. Properly plan the restart to avoid affecting users.</p>
+</div></div>
+<pre class="screen" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s4488d178cbce4516966e617b44556413"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s4488d178cbce4516966e617b44556413"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s4488d178cbce4516966e617b44556413"></a><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a7c342490ebc646aba7500ab3be3dbf33"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a7c342490ebc646aba7500ab3be3dbf33"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a7c342490ebc646aba7500ab3be3dbf33"></a>gs_om -t stop</strong> &amp;&amp; <strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac404983197be4c6eac127115d9db5717"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac404983197be4c6eac127115d9db5717"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac404983197be4c6eac127115d9db5717"></a>gs_om -t start</strong></pre>
+</li></ol>
+</td>
+</tr>
+<tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_r4a4c4f02def241319aebcdf0158dec7a"><td class="cellrowborder" valign="top" width="16.06%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8065f5646afd484397cf60af2f86fda7"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8065f5646afd484397cf60af2f86fda7"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8065f5646afd484397cf60af2f86fda7"></a>Method 2</p>
+</td>
+<td class="cellrowborder" valign="top" width="83.94%" headers="mcps1.2.3.1.2 "><pre class="screen" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s582b494b239346128a472162c2c80f3f"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s582b494b239346128a472162c2c80f3f"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s582b494b239346128a472162c2c80f3f"></a><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ae0ce5807a22a4710925c9d20f68c5dcb"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ae0ce5807a22a4710925c9d20f68c5dcb"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ae0ce5807a22a4710925c9d20f68c5dcb"></a>gs_guc reload -D</strong> <em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a9064f8f5498c4776a42d61d5d951d6c2"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a9064f8f5498c4776a42d61d5d951d6c2"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a9064f8f5498c4776a42d61d5d951d6c2"></a>datadir</em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a63b876c4b690402bb5f109851bcfc4f4"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a63b876c4b690402bb5f109851bcfc4f4"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a63b876c4b690402bb5f109851bcfc4f4"></a> -c </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad72779a5d2a9476a83ae0d70173e77e2"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad72779a5d2a9476a83ae0d70173e77e2"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad72779a5d2a9476a83ae0d70173e77e2"></a>"paraname=value</em>"</pre>
+<div class="note" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_note1039584812101"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_note1039584812101"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_note1039584812101"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_p15395148121015"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_p15395148121015"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_p15395148121015"></a>Run the following command to set a parameter for database nodes at the same time:</p>
+<pre class="screen" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_screen1539594861014"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_screen1539594861014"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_screen1539594861014"></a><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b1639594891010"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b1639594891010"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b1639594891010"></a>gs_guc <strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b366512013119"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b366512013119"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b366512013119"></a>reload -N </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i17395194818104"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i17395194818104"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i17395194818104"></a>all</em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b16395948201016"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b16395948201016"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b16395948201016"></a> -I </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i639554851014"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i639554851014"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i639554851014"></a>all</em> <strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b10395104811102"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b10395104811102"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_b10395104811102"></a>-c</strong> "<em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i2395104817104"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i2395104817104"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_i2395104817104"></a>paraname=value</em>"</strong></pre>
+</div></div>
+</td>
+</tr>
+<tr id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_r1e3295b979654de3af72bc9ba63cc128"><td class="cellrowborder" valign="top" width="16.06%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a916d18cb80824fa185129fd545672db2"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a916d18cb80824fa185129fd545672db2"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a916d18cb80824fa185129fd545672db2"></a>Method 3:</p>
+</td>
+<td class="cellrowborder" valign="top" width="83.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a72c49c3f3d6148518c31b39d969022ed"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a72c49c3f3d6148518c31b39d969022ed"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a72c49c3f3d6148518c31b39d969022ed"></a>Set parameters at database, user, or session levels.</p>
+<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_u12c53a6b00424da0bc7fff98c249db37"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_u12c53a6b00424da0bc7fff98c249db37"></a><ul id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_u12c53a6b00424da0bc7fff98c249db37"><li>Set a database-level parameter.<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s01e44d50122d4fc19888a3470fcb3d6e"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s01e44d50122d4fc19888a3470fcb3d6e"></a><pre class="screen" codetype="Sql" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s01e44d50122d4fc19888a3470fcb3d6e"><span id="en-us_topic_0242370406_en-us_topic_0237121562_text289912255356"><a name="en-us_topic_0242370406_en-us_topic_0237121562_text289912255356"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_text289912255356"></a>postgres=# </span><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aeeca9e9a68fd413b9fe9d299e7bfac9a"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aeeca9e9a68fd413b9fe9d299e7bfac9a"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aeeca9e9a68fd413b9fe9d299e7bfac9a"></a>ALTER DATABASE </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac61c40d4d210427188ca8f6aaf443a10"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac61c40d4d210427188ca8f6aaf443a10"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ac61c40d4d210427188ca8f6aaf443a10"></a>dbname </em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a68bf0f9b369545b1a199ed8165ee22b9"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a68bf0f9b369545b1a199ed8165ee22b9"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a68bf0f9b369545b1a199ed8165ee22b9"></a>SET </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a9363560924844e128adadceddfb1a159"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a9363560924844e128adadceddfb1a159"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a9363560924844e128adadceddfb1a159"></a>paraname </em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8699136d00794ee989ad3f142400e875"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8699136d00794ee989ad3f142400e875"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8699136d00794ee989ad3f142400e875"></a>TO </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aee95a478735f42e3b6fd110de402c9b3"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aee95a478735f42e3b6fd110de402c9b3"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_aee95a478735f42e3b6fd110de402c9b3"></a>value;</em></pre>
+<p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8afbfbba10a343f6b1643904efc45a9a"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8afbfbba10a343f6b1643904efc45a9a"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8afbfbba10a343f6b1643904efc45a9a"></a>The setting takes effect in the next session.</p>
+</li><li>Set a user-level parameter.<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_scc4cc44331524d9aaedbccd158a59d83"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_scc4cc44331524d9aaedbccd158a59d83"></a><pre class="screen" codetype="Sql" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_scc4cc44331524d9aaedbccd158a59d83"><span id="en-us_topic_0242370406_en-us_topic_0237121562_text85396212353"><a name="en-us_topic_0242370406_en-us_topic_0237121562_text85396212353"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_text85396212353"></a>postgres=# </span><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad90797af565b4aa4a91370c1967d8227"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad90797af565b4aa4a91370c1967d8227"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ad90797af565b4aa4a91370c1967d8227"></a>ALTER USER </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8e3e4b86978c4db7be11b304c66fa373"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8e3e4b86978c4db7be11b304c66fa373"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a8e3e4b86978c4db7be11b304c66fa373"></a>username </em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a33c040f0d17f465bb47da8cf1f5745dd"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a33c040f0d17f465bb47da8cf1f5745dd"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a33c040f0d17f465bb47da8cf1f5745dd"></a>SET </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a946f24bd375240638166df1724c790ec"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a946f24bd375240638166df1724c790ec"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a946f24bd375240638166df1724c790ec"></a>paraname </em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a979c6715c9a842a1a2c5627330d31903"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a979c6715c9a842a1a2c5627330d31903"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a979c6715c9a842a1a2c5627330d31903"></a>TO </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ada78baf9e2b94075b6427e6e8e508f25"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ada78baf9e2b94075b6427e6e8e508f25"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_ada78baf9e2b94075b6427e6e8e508f25"></a>value;</em></pre>
+<p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a901bc61ee57540739297bb9fa5c1f78b"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a901bc61ee57540739297bb9fa5c1f78b"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a901bc61ee57540739297bb9fa5c1f78b"></a>The setting takes effect in the next session.</p>
+</li><li>Set a session-level parameter.<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sd1edd9f762e84ee9a3a2371531cdcc21"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sd1edd9f762e84ee9a3a2371531cdcc21"></a><pre class="screen" codetype="Sql" id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sd1edd9f762e84ee9a3a2371531cdcc21"><span id="en-us_topic_0242370406_en-us_topic_0237121562_text1841292273511"><a name="en-us_topic_0242370406_en-us_topic_0237121562_text1841292273511"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_text1841292273511"></a>postgres=# </span><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a27bc12624ffa4b9185f11479e9f0d666"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a27bc12624ffa4b9185f11479e9f0d666"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a27bc12624ffa4b9185f11479e9f0d666"></a>SET </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a0386a250d602457a8e3953cc5bca4f08"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a0386a250d602457a8e3953cc5bca4f08"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a0386a250d602457a8e3953cc5bca4f08"></a>paraname </em><strong id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a4d2ab29d36e14953b355bc8d27d83f76"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a4d2ab29d36e14953b355bc8d27d83f76"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a4d2ab29d36e14953b355bc8d27d83f76"></a>TO </strong><em id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a845205e5a57344d0839a4f38e4fd8263"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a845205e5a57344d0839a4f38e4fd8263"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_a845205e5a57344d0839a4f38e4fd8263"></a>value;</em></pre>
+<p id="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af3f362f94d094913929d928fec04dc22"><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af3f362f94d094913929d928fec04dc22"></a><a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_af3f362f94d094913929d928fec04dc22"></a>Parameter value in the current session is changed. After you exit the session, the setting becomes invalid.</p>
+</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+### Procedure<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s049438204a0941efb4b85981fb594e7c"></a>
+
+The following example shows how to set  **archive\_mode**  on the primary node of the database using method 1.
+
+1.  Log in as the OS user  **omm**  to the primary node of the database.
+2.  View the value of  **archive\_mode**.
+
+    ```
+    cat /gaussdb/data/dbnode/postgresql.conf | grep archive_mode
+    ```
+
+    ```
+    archive_mode = on
+    ```
+
+    **on**  indicates logs are archived.
+
+3.  Set  **archive\_mode**  to  **off**  to disable log archiving.
+
+    ```
+    gs_guc set -D /gaussdb/data/dbnode -c "archive_mode=off"
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >You can run the following command to set  **archive\_mode**  to  **off**  for the database nodes:
+    >```
+    >gs_guc set -N all -I all -c "archive_mode=off"
+    >```
+
+4.  Restart the database to make the setting take effect.
+
+    ```
+    gs_om -t stop && gs_om -t start
+    ```
+
+5.  Run the following command to connect to the database:
+
+    ```
+    gsql -d postgres -p 8000
+    ```
+
+    **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+    If information similar to the following is displayed, the connection succeeds:
+
+    ```
+    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    Non-SSL connection (SSL connection is recommended when requiring high-security)
+    Type "help" for help.
+    
+    postgres=#
+    ```
+
+6.  Check whether the parameter is correctly set.
+
+    ```
+    postgres=# SHOW archive_mode;
+     archive_mode
+    --------------
+     off
+    (1 row)
+    ```
+
+
+The following example shows how to set  **authentication\_timeout**  on the primary node of the database using method 2.
+
+1.  Log in as the OS user  **omm**  to the primary node of the database.
+2.  View the value of  **authentication\_timeout**.
+
+    ```
+    cat /gaussdb/data/dbnode/postgresql.conf | grep authentication_timeout
+    ```
+
+    ```
+    authentication_timeout = 1min
+    ```
+
+3.  Set  **authentication\_timeout**  to  **59s**.
+
+    ```
+    gs_guc reload -N all -I all -c "authentication_timeout = 59s"
+    
+    Total instances: 2. Failed instances: 0.
+    Success to perform gs_guc!
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >You can run the following command to set  **authentication\_timeout**  to  **59s**  for the database nodes:
+    >```
+    >gs_guc reload -N all -I all -c "authentication_timeout = 59s"
+    >```
+
+4.  Run the following command to connect to the database:
+
+    ```
+    gsql -d postgres -p 8000
+    ```
+
+    **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+    If information similar to the following is displayed, the connection succeeds:
+
+    ```
+    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    Non-SSL connection (SSL connection is recommended when requiring high-security)
+    Type "help" for help.
+    
+    postgres=# 
+    ```
+
+5.  Check whether the parameter is correctly set.
+
+    ```
+    postgres=# SHOW authentication_timeout;
+     authentication_timeout 
+    ------------------------
+     59s
+    (1 row)
+    ```
+
+
+The following example shows how to set  **explain\_perf\_mode**  using method 3.
+
+1.  Log in as the OS user  **omm**  to the primary node of the database.
+2.  Run the following command to connect to the database:
+
+    ```
+    gsql -d postgres -p 8000
+    ```
+
+    **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+    If information similar to the following is displayed, the connection succeeds:
+
+    ```
+    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    Non-SSL connection (SSL connection is recommended when requiring high-security)
+    Type "help" for help.
+    
+    postgres=#
+    ```
+
+3.  View the value of  **explain\_perf\_mode**.
+
+    ```
+    postgres=# SHOW explain_perf_mode;
+     explain_perf_mode 
+    -------------------
+     normal
+    (1 row)
+    ```
+
+4.  Set  **explain\_perf\_mode**.
+
+    Perform one of the following operations:
+
+    -   Set a database-level parameter.
+
+        ```
+        postgres=# ALTER DATABASE postgres SET explain_perf_mode TO pretty;
+        ```
+
+        If the following information is displayed, the setting succeeds:
+
+        ```
+        ALTER DATABASE
+        ```
+
+        The setting takes effect in the next session.
+
+    -   Set a user-level parameter.
+
+        ```
+        postgres=# ALTER USER omm SET explain_perf_mode TO pretty;
+        ```
+
+        If the following information is displayed, the setting succeeds:
+
+        ```
+        ALTER ROLE
+        ```
+
+        The setting takes effect in the next session.
+
+    -   Set a session-level parameter.
+
+        ```
+        postgres=# SET explain_perf_mode TO pretty;
+        ```
+
+        If the following information is displayed, the setting succeeds:
+
+        ```
+        SET
+        ```
+
+5.  Check whether the parameter is correctly set.
+
+    ```
+    postgres=# SHOW explain_perf_mode;
+     explain_perf_mode
+    --------------
+     pretty
+    (1 row)
+    ```
+
+
+### Examples<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s5b8255d8025640aba238bfb86b20807a"></a>
+
+-   Example 1: modifying the maximum connections for the primary database node in openGauss using method 1
+    1.  Log in as the OS user  **omm**  to the primary node of the database.
+    2.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    3.  View the allowed maximum connections.
+
+        ```
+        postgres=# SHOW max_connections;
+         max_connections 
+        -----------------
+         200
+        (1 row)
+        ```
+
+    4.  Run the following command to exit the database:
+
+        ```
+        postgres=# \q
+        ```
+
+    5.  Change the maximum connections for the primary database node in openGauss.
+
+        ```
+        gs_guc set -N all -I all -c "max_connections = 800"
+        ```
+
+    6.  Restart openGauss.
+
+        ```
+        gs_om -t stop && gs_om -t start
+        ```
+
+    7.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    8.  View the allowed maximum connections.
+
+        ```
+        postgres=# SHOW max_connections;
+         max_connections 
+        -----------------
+         800
+        (1 row)
+        ```
+
+
+-   Example 2: setting  **authentication\_timeout**  \(the allowed longest client authentication duration\) for the primary database node using method 2
+    1.  Log in as the OS user  **omm**  to the primary node of the database.
+    2.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    3.  View the value of  **authentication\_timeout**.
+
+        ```
+        postgres=# SHOW authentication_timeout;
+         authentication_timeout 
+        ------------------------
+         1min
+        (1 row)
+        ```
+
+    4.  Run the following command to exit the database:
+
+        ```
+        postgres=# \q
+        ```
+
+    5.  Change the allowed longest client authentication duration of the primary database node in openGauss.
+
+        ```
+        gs_guc reload -N all -I all -c "authentication_timeout = 59s"
+        ```
+
+    6.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    7.  View the value of  **authentication\_timeout**.
+
+        ```
+        postgres=# SHOW authentication_timeout;
+         authentication_timeout 
+        ------------------------
+         59s
+        (1 row)
+        ```
+
+
+-   Example 3: Change the maximum number of connections between openGauss database nodes.
+    1.  Log in as the OS user  **omm**  to the primary node of the database.
+    2.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    3.  View the allowed maximum connections.
+
+        ```
+        postgres=# SHOW max_connections;
+         max_connections 
+        -----------------
+         200
+        (1 row)
+        ```
+
+    4.  Run the following command to exit the database:
+
+        ```
+        postgres=# \q
+        ```
+
+    5.  Change the maximum number of connections between openGauss database nodes.
+
+        ```
+        gs_guc set -N all -I all -c "max_connections = 500"
+        ```
+
+    6.  Restart openGauss.
+
+        ```
+        gs_om -t stop
+        gs_om -t start
+        ```
+
+    7.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    8.  View the allowed maximum connections.
+
+        ```
+        postgres=# SHOW max_connections;
+         max_connections 
+        -----------------
+         500
+        (1 row)
+        ```
+
+
+-   Example 4: setting authentication\_timeout \(the allowed longest client authentication duration\) for database nodes
+    1.  Log in as the OS user  **omm**  to the primary node of the database.
+    2.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    3.  View the value of  **authentication\_timeout**.
+
+        ```
+        postgres=# SHOW authentication_timeout;
+         authentication_timeout 
+        ------------------------
+         1min
+        (1 row)
+        ```
+
+    4.  Run the following command to exit the database:
+
+        ```
+        postgres=# \q
+        ```
+
+    5.  Change the allowed longest client authentication duration of openGauss database nodes.
+
+        ```
+        gs_guc reload -N all -I all -c "authentication_timeout = 30s"
+        ```
+
+    6.  Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres**  is the name of the database, and 8000 is the port number of the primary node of the database.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        postgres=#
+        ```
+
+    7.  View the value of  **authentication\_timeout**.
+
+        ```
+        postgres=# SHOW authentication_timeout;
+         authentication_timeout 
+        ------------------------
+         30s
+        (1 row)
+        ```

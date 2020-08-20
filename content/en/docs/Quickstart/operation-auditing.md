@@ -245,8 +245,8 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Default value**:  **A**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
 
 ## enableSeparationOfDuty<a name="en-us_topic_0242371537_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6"></a>
 
@@ -287,8 +287,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->The copy from/to file function can be used only by users with system administrator permissions or initial users. However, when  **enableSeparationOfDuty**  is set to  **on**, system administrators and initial users have different permissions. You can use  **enable\_copy\_server\_file**  to control the copy permission of the system administrator. By default, the system administrators are not allowed to copy files. They can perform this operation only after this parameter is set to  **on**.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The copy from/to file function can be used only by users with system administrator permissions or initial users. However, when  **enableSeparationOfDuty**  is set to  **on**, system administrators and initial users have different permissions. You can use  **enable\_copy\_server\_file**  to control the copy permission of the system administrator. By default, the system administrators are not allowed to copy files. They can perform this operation only after this parameter is set to  **on**.
 
 ## enable\_access\_server\_directory<a name="en-us_topic_0242371537_en-us_topic_0237124747_section4279164545515"></a>
 
@@ -303,7 +303,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   For security purposes, only initial users can create and delete DIRECTORY objects by default.  
->-   If  **enable\_access\_server\_directory**  is set to  **on**, system administrators \(including initial users\) can create and delete DIRECTORY objects when  **enableSeparationOfDuty**  is set to  **off**. When  **enableSeparationOfDuty**  is set to  **on**, only the initial users can create and delete DIRECTORY objects.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   For security purposes, only initial users can create and delete DIRECTORY objects by default.
+>-   If  **enable\_access\_server\_directory**  is set to  **on**, system administrators \(including initial users\) can create and delete DIRECTORY objects when  **enableSeparationOfDuty**  is set to  **off**. When  **enableSeparationOfDuty**  is set to  **on**, only the initial users can create and delete DIRECTORY objects.
 

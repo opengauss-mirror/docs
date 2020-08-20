@@ -18,16 +18,16 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Although the server allows you to set  **random\_page\_cost**  to a value less than that of  **seq\_page\_cost**, it is not physically sensitive to do so. However, setting them equal makes sense if the database is entirely cached in RAM, because in that case there is no penalty for fetching pages out of sequence. Also, in a heavily-cached database you should lower both values relative to the CPU parameters, since the cost of fetching a page already in RAM is much smaller than it would normally be.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Although the server allows you to set  **random\_page\_cost**  to a value less than that of  **seq\_page\_cost**, it is not physically sensitive to do so. However, setting them equal makes sense if the database is entirely cached in RAM, because in that case there is no penalty for fetching pages out of sequence. Also, in a heavily-cached database you should lower both values relative to the CPU parameters, since the cost of fetching a page already in RAM is much smaller than it would normally be.
 
 **Value range**: a floating point number ranging from 0 to  _DBL\_MAX_
 
 **Default value**:  **4**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   This value can be overwritten for tables and indexes in a particular tablespace by setting the tablespace parameter of the same name.  
->-   Reducing this value relative to  **seq\_page\_cost**  will cause the system to prefer index scans and raising it will make index scans relatively more expensive. You can increase or decrease both values together to change the disk I/O costs relative to CPU costs.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   This value can be overwritten for tables and indexes in a particular tablespace by setting the tablespace parameter of the same name.
+>-   Reducing this value relative to  **seq\_page\_cost**  will cause the system to prefer index scans and raising it will make index scans relatively more expensive. You can increase or decrease both values together to change the disk I/O costs relative to CPU costs.
 
 ## cpu\_tuple\_cost<a name="en-us_topic_0242371507_en-us_topic_0237124717_en-us_topic_0059779130_sf7a911047cc34242a80839fe99405821"></a>
 

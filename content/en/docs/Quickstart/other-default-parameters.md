@@ -16,8 +16,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: a string
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->If the value of this parameter is set to an empty character string, the automatic path search is turned off.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>If the value of this parameter is set to an empty character string, the automatic path search is turned off.
 
 **Default value**:  **$libdir**
 

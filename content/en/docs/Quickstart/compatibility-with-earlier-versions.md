@@ -21,8 +21,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->When the string text meets the SQL standards, \\ has no other meanings. This parameter only affects the handling of non-standard-conforming string texts, including escape string syntax \(E'...'\).  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>When the string text meets the SQL standards, \\ has no other meanings. This parameter only affects the handling of non-standard-conforming string texts, including escape string syntax \(E'...'\).
 
 **Value range**: enumerated values
 
