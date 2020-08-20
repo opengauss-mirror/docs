@@ -40,8 +40,8 @@ In-place minor version upgrade: Services are stopped during the local upgrade, a
     gs_upgradectl -t chose-strategy [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >Currently, in-place minor version upgrade is supported.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Currently, in-place minor version upgrade is supported.
 
 -   Automatically upgrade openGauss
 
@@ -61,9 +61,9 @@ In-place minor version upgrade: Services are stopped during the local upgrade, a
     gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   Upgrade submission is suitable only for in-place minor version upgrade of openGauss.  
-    >-   Once the operation is complete, the rollback operation cannot be performed.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   Upgrade submission is suitable only for in-place minor version upgrade of openGauss.
+    >-   Once the operation is complete, the rollback operation cannot be performed.
 
 
 ## Parameter Description<a name="en-us_topic_0237152425_en-us_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>

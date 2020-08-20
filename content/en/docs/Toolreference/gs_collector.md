@@ -140,8 +140,8 @@ An OS tool \(such as  **gstack**\) that  **gs\_collector**  requires has been in
 
     Specifies the file of a host name list. The file is a plain text file.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The  **-f**  and  **-h**  parameters cannot be used together.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The  **-f**  and  **-h**  parameters cannot be used together.
 
     Value range: a host name list
 
@@ -178,19 +178,19 @@ An OS tool \(such as  **gstack**\) that  **gs\_collector**  requires has been in
     }
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The content of the default configuration file is as follows:  
-    >\{  
-    >"Collect":  
-    >\[  
-    >\{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"\},  
-    >\{"TypeName": "Log", "Content" : "DBnode,ClusterManager", "Interval":"0", "Count":"1"\},  
-    >\{"TypeName": "Database", "Content": "pg\_locks,pg\_stat\_activity,pg\_thread\_wait\_status","Interval":"0", "Count":"1"\},  
-    >\{"TypeName": "Config", "Content": "DBnode", "Interval":"0", "Count":"1"\}  
-    >\]  
-    >\}  
-    >For details about the value ranges of  **TypeName**  and corresponding  **Content**, see Table 1 Information to be collected by gs\_collector.  
-    >The  **Interval**  and  **Count**  parameters do not take effect when  **TypeName**  is  **Log**,  **CoreDump**,  **Config**, or  **XLog**.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The content of the default configuration file is as follows:
+    >\{
+    >"Collect":
+    >\[
+    >\{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Log", "Content" : "DBnode,ClusterManager", "Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Database", "Content": "pg\_locks,pg\_stat\_activity,pg\_thread\_wait\_status","Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Config", "Content": "DBnode", "Interval":"0", "Count":"1"\}
+    >\]
+    >\}
+    >For details about the value ranges of  **TypeName**  and corresponding  **Content**, see Table 1 Information to be collected by gs\_collector.
+    >The  **Interval**  and  **Count**  parameters do not take effect when  **TypeName**  is  **Log**,  **CoreDump**,  **Config**, or  **XLog**.
 
 -   --keyword=KEYWORD
 
@@ -198,8 +198,8 @@ An OS tool \(such as  **gstack**\) that  **gs\_collector**  requires has been in
 
     If the keyword contains spaces, quote the keyword with double quotations marks \(""\).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >Logs about the performance are binary logs. The keyword collection function does not support performance log collection.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Logs about the performance are binary logs. The keyword collection function does not support performance log collection.
 
 -   --begin-time
 

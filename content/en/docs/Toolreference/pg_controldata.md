@@ -13,7 +13,7 @@ Ensure that the data directory is correct and the  **pg\_control**  file exists 
 -   Check the control file information.
 
     ```
-    pg_controldata DATADIR
+    pg_controldata [DATADIR]
     ```
 
 -   Display the version number.
@@ -25,7 +25,8 @@ Ensure that the data directory is correct and the  **pg\_control**  file exists 
 -   Display help information.
 
     ```
-    pg_controldata -? | --help
+    pg_controldata 
+    -? | --help
     ```
 
 

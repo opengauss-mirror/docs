@@ -6,7 +6,9 @@
 
 ## Precautions<a name="en-us_topic_0237152330_section4290135616319"></a>
 
+-   Only user  **root**  is authorized to check new nodes added during cluster scale-out. In other cases, the check can be performed only by user  **omm**.
 -   Parameter  **-i**  or  **-e**  must be set.  **-i**  specifies a single item to be checked, and  **-e**  specifies an inspection scenario where multiple items will be checked.
+-   In non-local mode, user  **root**  can check only new nodes.
 -   If  **-i**  is not set to a root item or no such items are contained in the check item list of the scenario specified by  **-e**, you do not need to enter the name or password of a user with the root permissions.
 -   You can run  **--skip-root-items**  to skip root items.
 -   The blacklist check item applies only to the upgrade from R5 to R6.
@@ -860,10 +862,10 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Constraints on the CheckNetSpeed check item are as follows:  
->-   Do not use  **-L**  to check CheckNetSpeed, because doing so cannot produce enough network load and the check result will be inaccurate.  
->-   If the number of nodes is less than six, the network load produced by  **speed\_test**  may not fully occupy the bandwidth, and the check result will be inaccurate.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Constraints on the CheckNetSpeed check item are as follows:
+>-   Do not use  **-L**  to check CheckNetSpeed, because doing so cannot produce enough network load and the check result will be inaccurate.
+>-   If the number of nodes is less than six, the network load produced by  **speed\_test**  may not fully occupy the bandwidth, and the check result will be inaccurate.
 
 ## Defining a Scenario<a name="en-us_topic_0237152330_section1111595434113"></a>
 
@@ -892,8 +894,8 @@
     scp scene_upgrade.xml SIA1000068994: home/package/script/gspylib/inspection/config/
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >**home/package/script/gspylib/inspection/config**  is the absolute path of the new scenario configuration file.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**home/package/script/gspylib/inspection/config**  is the absolute path of the new scenario configuration file.
 
 5.  Switch to user  **omm**  and run the following command on an old node to view the check result:
 

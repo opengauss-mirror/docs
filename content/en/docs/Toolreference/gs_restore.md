@@ -23,11 +23,11 @@ It has the following functions:
 gs_restore [OPTION]... FILE
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files.   
->-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.  
->-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.  
->-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files. 
+>-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.
+>-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.
+>-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.
 
 ## Parameter Description<a name="en-us_topic_0237152343_en-us_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
@@ -43,8 +43,8 @@ Common parameters
 
     The default is the standard output.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >**-f**  cannot be used in conjunction with  **-d**.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**-f**  cannot be used in conjunction with  **-d**.
 
 -   -F, --format=c|d|t
 
@@ -187,8 +187,8 @@ Parameters for importing data
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >**-t**  does not support the  **schema\_name.table\_name**  input format.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >**-t**  does not support the  **schema\_name.table\_name**  input format.
 
 -   -T, --trigger=NAME
 
@@ -236,25 +236,25 @@ Parameters for importing data
 
     Specifies that the key length of AES128 must be 16 bytes.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >If the dump is encrypted, enter the  **--with-key=KEY**  parameter in the  **gs\_restore**  command. If it is not entered, you will receive an error message.  
-    >Enter the same key while entering the dump.  
-    >When the dump format is  **c**  or  **t**, the dumped content has been processed, and therefore the input is not restricted by the encryption.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >If the dump is encrypted, enter the  **--with-key=KEY**  parameter in the  **gs\_restore**  command. If it is not entered, you will receive an error message.
+    >Enter the same key while entering the dump.
+    >When the dump format is  **c**  or  **t**, the dumped content has been processed, and therefore the input is not restricted by the encryption.
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:  
->```  
->CREATE DATABASE foo WITH TEMPLATE template0;  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
 >```
->-   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.  
+>CREATE DATABASE foo WITH TEMPLATE template0;
+>```
+>-   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.  
->2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
->3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
->4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.  
->5.  **--role**  must be used in conjunction with  **--rolepassword**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.
+>2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
+>3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
+>4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.
+>5.  **--role**  must be used in conjunction with  **--rolepassword**.
 
 Connection parameters:
 
@@ -324,7 +324,7 @@ total time: 30476  ms
 Example 1: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup.dmp**  file \(custom format\) to the  **postgres**  database.
 
 ```
-gs_restore -W Bigdata@123 backup/MPPDB_backup.dmp -p 15400 -d postgres
+gs_restore -W Bigdata@123 backup/MPPDB_backup.dmp -p 5432 -d postgres
 gs_restore: restore operation successful
 gs_restore: total time: 13053  ms
 ```
@@ -332,7 +332,7 @@ gs_restore: total time: 13053  ms
 Example 2: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup.tar**  file \(.tar format\) to the  **postgres**  database.
 
 ```
-gs_restore backup/MPPDB_backup.tar -p 15400 -d postgres 
+gs_restore backup/MPPDB_backup.tar -p 5432 -d postgres 
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21203  ms
 ```
@@ -340,7 +340,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21203  ms
 Example 3: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup**  file \(directory format\) to the  **postgres**  database.
 
 ```
-gs_restore backup/MPPDB_backup -p 15400 -d postgres
+gs_restore backup/MPPDB_backup -p 5432 -d postgres
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21003  ms
 ```
@@ -348,7 +348,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21003  ms
 Example 4: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import all the object definitions and data in the  **PUBLIC**  schema. Existing objects are deleted from the target database before the import. If an existing object references to an object in another schema, you need to manually delete the referenced object first.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -n PUBLIC
+gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -n PUBLIC
 gs_restore: [archiver (db)] Error while PROCESSING TOC:
 gs_restore: [archiver (db)] Error from TOC entry 313; 1259 337399 TABLE table1 gaussdba
 gs_restore: [archiver (db)] could not execute query: ERROR:  cannot drop table table1 because other objects depend on it
@@ -360,7 +360,7 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.
 Manually delete the referenced object and create it again after the import is complete.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -n PUBLIC
+gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -n PUBLIC
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 2203  ms
 ```
@@ -368,7 +368,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 2203  ms
 Example 5: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import only the definition of  **table1**  in the  **PUBLIC**  schema.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -s -n PUBLIC -t table1
+gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -s -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21000  ms
 ```
@@ -376,7 +376,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21000  ms
 Example 6: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import only the data of  **table1**  in the  **PUBLIC**  schema.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -a -n PUBLIC -t table1
+gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -a -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 ```
