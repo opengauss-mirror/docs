@@ -184,8 +184,8 @@ Run the following command to import a log file to this table:
 COPY postgres_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The log name \(**logfile.csv**\) here needs to be replaced with the name of a log generated.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The log name \(**logfile.csv**\) here needs to be replaced with the name of a log generated.
 
 ## Simplifying Input<a name="en-us_topic_0242371514_en-us_topic_0237124724_en-us_topic_0059779007_s7025be501c46413a9d63291fc8a2f130"></a>
 

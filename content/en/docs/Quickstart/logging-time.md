@@ -6,8 +6,8 @@
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->A same value for  **client\_min\_messages**  and  **[log\_min\_messages](#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**  does not indicate the same level.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>A same value for  **client\_min\_messages**  and  **[log\_min\_messages](#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**  does not indicate the same level.
 
 **Value range**: enumerated values. Valid values are  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**,  **info**,  **log**,  **notice**,  **warning**,  **error**,  **fatal**, and  **panic**. For details about the parameter, see  [Table 1](#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_en-us_topic_0058967791_table55180162). If the configured level is higher than  **error**, for example,  **fatal**  or  **panic**, the system changes the level to  **error**  by default.
 
@@ -19,8 +19,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->A same value for  **[client\_min\_messages](#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **log\_min\_messages**  does not indicate the same level.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>A same value for  **[client\_min\_messages](#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **log\_min\_messages**  does not indicate the same level.
 
 **Value range**: enumerated values. Valid values are  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**,  **info**,  **log**,  **notice**,  **warning**,  **error**,  **fatal**, and  **panic**. For details about the parameter, see  [Table 1](#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_en-us_topic_0058967791_table55180162).
 
@@ -34,9 +34,9 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: enumerated values. Valid values are  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**,  **info**,  **log**,  **notice**,  **warning**,  **error**,  **fatal**, and  **panic**. For details about the parameter, see  [Table 1](#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_en-us_topic_0058967791_table55180162).
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   The default is  **error**, indicating that statements causing errors, log messages, fatal errors, or panics will be logged.  
->-   **panic**  indicates that SQL statements that cause an error condition will not be logged.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   The default is  **error**, indicating that statements causing errors, log messages, fatal errors, or panics will be logged.
+>-   **panic**  indicates that SQL statements that cause an error condition will not be logged.
 
 **Default value**:  **error**
 
@@ -48,8 +48,8 @@ Setting this parameter can be helpful in tracking down unoptimized queries. For 
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->When using this option together with  **[log\_statement](logging-content.md#en-us_topic_0242371513_en-us_topic_0237124723_en-us_topic_0059778400_s77b3e2e16a3e4705a139bef98688be8a)**, the text of statements that are logged because of  **log\_statement**  will not be repeated in the duration log message. If you are not using  **syslog**, it is recommended that you log the process ID \(PID\) or session ID using  **[log\_line\_prefix](logging-content.md#en-us_topic_0242371513_en-us_topic_0237124723_en-us_topic_0059778400_sd57ce2167a8149239e10ab0cef12b949)**  so that you can link the statement message to the later duration message.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>When using this option together with  **[log\_statement](logging-content.md#en-us_topic_0242371513_en-us_topic_0237124723_en-us_topic_0059778400_s77b3e2e16a3e4705a139bef98688be8a)**, the text of statements that are logged because of  **log\_statement**  will not be repeated in the duration log message. If you are not using  **syslog**, it is recommended that you log the process ID \(PID\) or session ID using  **[log\_line\_prefix](logging-content.md#en-us_topic_0242371513_en-us_topic_0237124723_en-us_topic_0059778400_sd57ce2167a8149239e10ab0cef12b949)**  so that you can link the statement message to the later duration message.
 
 **Value range**: an integer ranging from –1 to  _INT\_MAX_. The unit is ms.
 
@@ -65,8 +65,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->This parameter is used to locate problems on-site. Frequent stack printing will affect the system's overhead and stability. Therefore, set the value of this parameter to a rank other than  **fatal**  or  **panic**  during problem location.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>This parameter is used to locate problems on-site. Frequent stack printing will affect the system's overhead and stability. Therefore, set the value of this parameter to a rank other than  **fatal**  or  **panic**  during problem location.
 
 **Value range**: enumerated values
 
@@ -170,8 +170,8 @@ Valid values are  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug2**,
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->The parameter value is in milliseconds. You are advised to set it to a multiple of 1000. That is, the value is in seconds. The performance log files controlled by this parameter are stored in the  **$GAUSSLOG/gs\_profile/**<_node\_name_\> directory in .prf format.  _node\_name_  is the value of  **pgxc\_node\_name**  in the  **postgres.conf**  file.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The parameter value is in milliseconds. You are advised to set it to a multiple of 1000. That is, the value is in seconds. The performance log files controlled by this parameter are stored in the  **$GAUSSLOG/gs\_profile/**<_node\_name_\> directory in .prf format.  _node\_name_  is the value of  **pgxc\_node\_name**  in the  **postgres.conf**  file.
 
 **Value range**: an integer ranging from 0 to 2147483647. The unit is ms.
 

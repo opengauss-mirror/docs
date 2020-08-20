@@ -41,8 +41,8 @@ This parameter is a SUSET parameter. Set it based on method 3 in  [Table 1](rese
 -   **on**  indicates that concurrent update is allowed.
 -   **off**  indicates that concurrent update is disallowed.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Enable the maintenance mode with caution to avoid openGauss data inconsistencies.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Enable the maintenance mode with caution to avoid openGauss data inconsistencies.
 
 **Default value**:  **off**
 

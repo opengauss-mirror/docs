@@ -1,12 +1,12 @@
-# Executing Installation<a name="EN-US_TOPIC_0251900909"></a>
+# Executing Installation<a name="EN-US_TOPIC_0270171708"></a>
 
 After the openGauss installation environment is prepared by executing the pre-installation script, deploy openGauss based on the installation process.
 
 ## Prerequisites<a name="en-us_topic_0249784555_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_s2035de58d7ef4acc937b8f94c0ed368b"></a>
 
--   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [Creating the Required User Account and Configuring the Installation Environment](creating-the-required-user-account-and-configuring-the-installation-environment.md#EN-US_TOPIC_0251900906).
+-   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [Creating the Required User Account and Configuring the Installation Environment](creating-the-required-user-account-and-configuring-the-installation-environment.md#EN-US_TOPIC_0270171705).
 -   All the server OSs and networks are functioning properly.
--   You have checked that the  **locale**  parameter for each server is set to the same value. For detailed operations, see  [Configuring the Locale and Character Set](configuring-the-locale-and-character-set.md#EN-US_TOPIC_0251900915).
+-   You have checked that the  **locale**  parameter for each server is set to the same value. For detailed operations, see  [Configuring the Locale and Character Set](en-us_topic_0249784576.md).
 
 ## Procedure<a name="en-us_topic_0249784555_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_se06775d062f144a5a491267c284e67dd"></a>
 
@@ -17,9 +17,9 @@ After the openGauss installation environment is prepared by executing the pre-in
     su - omm
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.  
-    >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.
+    >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.
 
 3.  Use  **gs\_install**  to install the openGauss. If the cluster is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
 
@@ -39,8 +39,8 @@ After the openGauss installation environment is prepared by executing the pre-in
 
     Two files are generated under the log file path:  **gs\_install-YYYY-MMDD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >When you manually execute the  **gs\_install**  script, the script does not automatically start the openGauss after the configuration completes if  **--autostart**  is  **no**. You can run the  **gs\_om -t start**  command to manually start it.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >When you manually execute the  **gs\_install**  script, the script does not automatically start the openGauss after the configuration completes if  **--autostart**  is  **no**. You can run the  **gs\_om -t start**  command to manually start it.
 
 4.  After the installation is successful, manually delete the trust between users  **root**  on the host, that is, delete the mutual trust file on each openGauss database node.
 

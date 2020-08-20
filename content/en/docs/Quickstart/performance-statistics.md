@@ -15,9 +15,9 @@ All these parameters can only provide assistant analysis for administrators, whi
 
 These parameters are SUSET parameters. Set them based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   The  **log\_statement\_stats**  records the total statement statistics whereas other parameters record statistics only about their corresponding modules.  
->-   The  **log\_statement\_stats**  parameter cannot be enabled together with any parameter recording statistics about a module.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   The  **log\_statement\_stats**  records the total statement statistics whereas other parameters record statistics only about their corresponding modules.
+>-   The  **log\_statement\_stats**  parameter cannot be enabled together with any parameter recording statistics about a module.
 
 **Value range**: Boolean
 

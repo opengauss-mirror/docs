@@ -14,8 +14,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **ISO, MDY**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**gs\_initdb**  will initialize this parameter so that its value is the same as that of  [lc\_time](#en-us_topic_0242371523_en-us_topic_0237124733_en-us_topic_0059778109_scbb410b3c5c94682a3eec218c7ff0220).  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**gs\_initdb**  will initialize this parameter so that its value is the same as that of  [lc\_time](#en-us_topic_0242371523_en-us_topic_0237124733_en-us_topic_0059778109_scbb410b3c5c94682a3eec218c7ff0220).
 
 **Suggestion**: The ISO format is recommended. Postgres, SQL, and German use abbreviations for time zones, such as  **EST**,  **WST**, and  **CST**. These abbreviations can be ambiguous. For example,  **CST**  can represent Central Standard Time \(USA\) UT-6:00, Central Standard Time \(Australia\) UT+9:30, China Standard Time UT+8:00, and Cuba Standard Time UT-4:00. This may lead to incorrect time zone conversion and cause errors.
 
@@ -33,8 +33,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **iso\_8601**  indicates that output matching the time interval "format with designators" defined in ISO 8601 will be generated.
 -   **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](en-us_topic_0242370436.md#en-us_topic_0237121972_en-us_topic_0059779084_lf9dae2de082b41c094177f70cf798433).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->The IntervalStyle parameter also affects the interpretation of ambiguous interval input.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The IntervalStyle parameter also affects the interpretation of ambiguous interval input.
 
 **Default value**:  **postgres**
 
@@ -48,8 +48,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **PRC**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**gs\_initdb**  will set a time zone value that is consistent with the system environment.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**gs\_initdb**  will set a time zone value that is consistent with the system environment.
 
 ## timezone\_abbreviations<a name="en-us_topic_0242371523_en-us_topic_0237124733_en-us_topic_0059778109_sfe98cbd0139a47a6af08665f2ef22d45"></a>
 
@@ -61,8 +61,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **Default**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**Default**  indicates an abbreviation that works in most of the world, which is applicable to most cases. There are also other abbreviations, such as  **Australia**  and  **India**  that can be defined for a particular installation. For other time zone abbreviations, you need to set them in the corresponding configuration files before creating the database.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**Default**  indicates an abbreviation that works in most of the world, which is applicable to most cases. There are also other abbreviations, such as  **Australia**  and  **India**  that can be defined for a particular installation. For other time zone abbreviations, you need to set them in the corresponding configuration files before creating the database.
 
 ## extra\_float\_digits<a name="en-us_topic_0242371523_en-us_topic_0237124733_en-us_topic_0059778109_saf497a16490b45439e96d11918794fe5"></a>
 
@@ -72,9 +72,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from –15 to 3
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   This parameter can be set to  **3**  to include partially-significant digits. It is especially useful for dumping float data that needs to be restored exactly.  
->-   This parameter can also be set to a negative value to suppress unwanted digits.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   This parameter can be set to  **3**  to include partially-significant digits. It is especially useful for dumping float data that needs to be restored exactly.
+>-   This parameter can also be set to a negative value to suppress unwanted digits.
 
 **Default value**:  **0**
 
@@ -88,10 +88,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: encoding compatible with PostgreSQL.  **UTF8**  indicates that the database encoding is used.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.  
->-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.  
->-   To use consistent encoding for communication within the openGauss, you are advised to retain the default value of  **client\_encoding**. Modification to this parameter in the  **postgresql.conf**  file \(by using the  **gs\_guc**  tool, for example\) does not take effect.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.
+>-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
+>-   To use consistent encoding for communication within the openGauss, you are advised to retain the default value of  **client\_encoding**. Modification to this parameter in the  **postgresql.conf**  file \(by using the  **gs\_guc**  tool, for example\) does not take effect.
 
 **Default value**:  **UTF8**
 
@@ -109,9 +109,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.  
->-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.
+>-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -123,9 +123,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.  
->-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.
+>-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -137,9 +137,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.  
->-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.
+>-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -151,9 +151,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.  
->-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   You can run the  **locale -a**  command to check and set the system-supported zone and the corresponding encoding format.
+>-   By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -171,8 +171,8 @@ If the specified text search configuration does not exist, an error will be repo
 
 **Value range**: a string
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->openGauss supports the following two configurations: pg\_catalog.english and pg\_catalog.simple.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>openGauss supports the following two configurations: pg\_catalog.english and pg\_catalog.simple.
 
 **Default value**:  **pg\_catalog.english**
 

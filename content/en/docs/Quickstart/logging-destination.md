@@ -29,8 +29,8 @@ This method is more effective than recording logs to syslog because some types o
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->It is possible to log to  **stderr**  without using the logging collector and the log messages will go to where the server's  **stderr**  is directed. However, this method is only suitable for low log volumes due to difficulties in rotating log files.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>It is possible to log to  **stderr**  without using the logging collector and the log messages will go to where the server's  **stderr**  is directed. However, this method is only suitable for low log volumes due to difficulties in rotating log files.
 
 **Value range**: Boolean
 
@@ -45,13 +45,13 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If this parameter is set to an invalid path, openGauss cannot be started.  
->-   If you modify the  **log\_directory**  parameter using the  **gs\_guc reload**  command, and the specified path is valid, the log files are output to this new path. If the specified path is invalid, the log files are output to the valid path set last time and the database operation is not affected. The invalid value is still written into the configuration file.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If this parameter is set to an invalid path, openGauss cannot be started.
+>-   If you modify the  **log\_directory**  parameter using the  **gs\_guc reload**  command, and the specified path is valid, the log files are output to this new path. If the specified path is invalid, the log files are output to the valid path set last time and the database operation is not affected. The invalid value is still written into the configuration file.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Valid path: You have read and write permissions on the path.  
->Invalid path: You do not have read or write permission on the path.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Valid path: You have read and write permissions on the path.
+>Invalid path: You do not have read or write permission on the path.
 
 **Value range**: a string
 
@@ -63,9 +63,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   You are advised to use %-escapes to specify the log file names for efficient management of log files.  
->-   If  **log\_destination**  is set to  **csvlog**, log files are output in CSV format with timestamped names, for example,  **server\_log.1093827753.csv**.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   You are advised to use %-escapes to specify the log file names for efficient management of log files.
+>-   If  **log\_destination**  is set to  **csvlog**, log files are output in CSV format with timestamped names, for example,  **server\_log.1093827753.csv**.
 
 **Value range**: a string
 
@@ -77,15 +77,15 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   Before setting this parameter, set  **log\_directory**  to store the logs to a directory other than the data directory.  
->-   Do not make the log files world-readable because they might contain sensitive data.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   Before setting this parameter, set  **log\_directory**  to store the logs to a directory other than the data directory.
+>-   Do not make the log files world-readable because they might contain sensitive data.
 
 **Value range**: an octal integer ranging from 0000 to 0777 \(that is, 0 to 511 in the decimal format\)
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   **0600**  indicates that log files are readable and writable only to the server administrator.  
->-   **0640**  indicates that log files are readable and writable to members of the administrator's group.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   **0600**  indicates that log files are readable and writable only to the server administrator.
+>-   **0640**  indicates that log files are readable and writable to members of the administrator's group.
 
 **Default value:** **0600**
 

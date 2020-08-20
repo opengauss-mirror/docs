@@ -39,9 +39,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   Debugging information about  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**  are printed only when the log level is set to  **log**  or higher. When these parameters are set to  **on**, their debugging information will be recorded in server logs and will not be sent to client logs. You can change the log level by setting  **[client\_min\_messages](logging-time.md#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **[log\_min\_messages](logging-time.md#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**.  
->-   Do not invoke the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions when  **debug\_print\_plan**  is set to  **on**, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions in the log files generated when  **debug\_print\_plan**  is set to  **on**  before providing the log files to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   Debugging information about  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**  are printed only when the log level is set to  **log**  or higher. When these parameters are set to  **on**, their debugging information will be recorded in server logs and will not be sent to client logs. You can change the log level by setting  **[client\_min\_messages](logging-time.md#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **[log\_min\_messages](logging-time.md#en-us_topic_0242371512_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**.
+>-   Do not invoke the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions when  **debug\_print\_plan**  is set to  **on**, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions in the log files generated when  **debug\_print\_plan**  is set to  **on**  before providing the log files to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.
 
 ## debug\_pretty\_print<a name="en-us_topic_0242371513_en-us_topic_0237124723_en-us_topic_0059778400_s5bc0c94946f647878268bca243d4a828"></a>
 
@@ -75,8 +75,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Some client programs, such as gsql, attempt to connect twice while determining if a password is required. In this case, duplicate "connection receive" messages do not necessarily indicate a problem.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Some client programs, such as gsql, attempt to connect twice while determining if a password is required. In this case, duplicate "connection receive" messages do not necessarily indicate a problem.
 
 **Value range**: Boolean
 
@@ -246,22 +246,22 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The %c escape character prints a unique session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:  
->```  
->SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||  
->       to_hex(pid)  
->FROM pg_stat_activity;  
->```  
->-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.  
->-   Syslog generates its own time stamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The %c escape character prints a unique session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:
+>```
+>SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||
+>       to_hex(pid)
+>FROM pg_stat_activity;
+>```
+>-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.
+>-   Syslog generates its own time stamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.
 
 **Value range**: a string
 
 **Default value**:  **%m %c %d %p %a %x %n %e**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**%m %c %d %p %a %x %n %e**  indicates that session timestamps, session IDs, database names, thread IDs, application names, transaction IDs, error reporting nodes, and SQLSTATE error codes will be added to the beginning of log lines.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**%m %c %d %p %a %x %n %e**  indicates that session timestamps, session IDs, database names, thread IDs, application names, transaction IDs, error reporting nodes, and SQLSTATE error codes will be added to the beginning of log lines.
 
 ## log\_lock\_waits<a name="en-us_topic_0242371513_en-us_topic_0237124723_en-us_topic_0059778400_s0e43c2815b8a4f369d5b150535d1703f"></a>
 
@@ -282,8 +282,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Statements that contain simple syntax errors are not logged even if  **log\_statement**  is set to  **all**, because the log message is emitted only after basic parsing has been completed to determine the statement type. If an extended query protocol is used, statements that fail before the execution phase \(during parse analysis or planning\) are not logged, either. Set  **log\_min\_error\_statement**  to  **ERROR**  or lower to log such statements.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>Statements that contain simple syntax errors are not logged even if  **log\_statement**  is set to  **all**, because the log message is emitted only after basic parsing has been completed to determine the statement type. If an extended query protocol is used, statements that fail before the execution phase \(during parse analysis or planning\) are not logged, either. Set  **log\_min\_error\_statement**  to  **ERROR**  or lower to log such statements.
 
 **Value range**: enumerated values
 
@@ -318,8 +318,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **PRC**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The default value will be changed when  **gs\_initdb**  is used to set system environments.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The default value will be changed when  **gs\_initdb**  is used to set system environments.
 
 ## logging\_module<a name="en-us_topic_0242371513_en-us_topic_0237124723_en-us_topic_0059778400_section4455896615058"></a>
 
@@ -382,8 +382,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off**  indicates that reasons why queries are not optimized are not included.
 -   **log**  indicates that reasons why queries are not optimized are included in the execution plans of database nodes.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->To view the reasons why queries are not optimized in the log, set  **opfusion\_debug\_mode**  to  **log**,  **log\_min\_messages**  to  **debug4**, and  **logging\_module**  to  **on\(OPFUSION\)**. Note that a large amount of log messages may be generated. Therefore, execute only a small number of jobs during debugging.   
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>To view the reasons why queries are not optimized in the log, set  **opfusion\_debug\_mode**  to  **log**,  **log\_min\_messages**  to  **debug4**, and  **logging\_module**  to  **on\(OPFUSION\)**. Note that a large amount of log messages may be generated. Therefore, execute only a small number of jobs during debugging. 
 
 **Default value**:  **off**
 

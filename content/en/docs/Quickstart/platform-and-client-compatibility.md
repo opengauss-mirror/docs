@@ -18,8 +18,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->New users are always confused about the semantics of expressions involving  **NULL**  values. Therefore,  **off**  is used as the default value.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>New users are always confused about the semantics of expressions involving  **NULL**  values. Therefore,  **off**  is used as the default value.
 
 ## support\_extended\_features<a name="en-us_topic_0242371528_en-us_topic_0237124738_en-us_topic_0059779195_s1b60ec6dbc79490bbadf5dd62ba2538c"></a>
 
@@ -38,9 +38,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description:**  Specifies whether to enable features compatible with a Teradata database. You can set this parameter to  **on**  when connecting to a database compatible with the TD database, so that when you perform the INSERT operation, overlong strings are truncated based on the allowed maximum length before being inserted into char- and varchar-type columns in the target table. This ensures all data is inserted into the target table without errors reported.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The string truncation function cannot be used if the INSERT statement includes a foreign table.  
->If inserting multi-byte character data \(such as Chinese characters\) to database with the character set byte encoding \(SQL\_ASCII, LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The string truncation function cannot be used if the INSERT statement includes a foreign table.
+>If inserting multi-byte character data \(such as Chinese characters\) to database with the character set byte encoding \(SQL\_ASCII, LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 

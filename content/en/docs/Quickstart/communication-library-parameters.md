@@ -8,9 +8,9 @@ This section describes parameter settings and value ranges for communication lib
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If the OS does not support  **TCP\_KEEPIDLE**, set this parameter to  **0**.  
->-   The parameter is ignored on an OS where connections are established using the Unix domain socket.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If the OS does not support  **TCP\_KEEPIDLE**, set this parameter to  **0**.
+>-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
 
 **Value range:**  0 to 3600. The unit is s.
 
@@ -26,9 +26,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **30**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If the OS does not support  **TCP\_KEEPINTVL**, set this parameter to  **0**.  
->-   The parameter is ignored on an OS where connections are established using the Unix domain socket.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If the OS does not support  **TCP\_KEEPINTVL**, set this parameter to  **0**.
+>-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
 
 ## tcp\_keepalives\_count<a name="en-us_topic_0242371487_en-us_topic_0237124697_en-us_topic_0059778583_scb812ad2f34f47dcabeac73c6e1a163c"></a>
 
@@ -36,9 +36,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If the OS does not support  **TCP\_KEEPCNT**, set this parameter to  **0**.  
->-   The parameter is ignored on an OS where connections are established using the Unix domain socket.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If the OS does not support  **TCP\_KEEPCNT**, set this parameter to  **0**.
+>-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
 
 **Value range**: 0 to 100.  **0**  indicates that the connection is immediately broken if openGauss does not receive a keepalived signal from the client.
 
@@ -50,8 +50,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->SCTP is no longer supported. This parameter is provided for compatibility, but its value is fixed at  **on**.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>SCTP is no longer supported. This parameter is provided for compatibility, but its value is fixed at  **on**.
 
 **Value range**: Boolean. If this parameter is set to  **on**, TCP is used to connect to database nodes.
 
@@ -63,8 +63,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->This port number is automatically allocated during openGauss deployment. Do not change the parameter value. If the port number is incorrectly configured, the database communication fails.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>This port number is automatically allocated during openGauss deployment. Do not change the parameter value. If the port number is incorrectly configured, the database communication fails.
 
 **Value range**: an integer ranging from 0 to 65535
 
@@ -76,8 +76,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a fixed INTERNAL parameter and cannot be modified.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->This port number is automatically allocated during openGauss deployment. Do not change the parameter value. If the port number is incorrectly configured, the database communication fails.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>This port number is automatically allocated during openGauss deployment. Do not change the parameter value. If the port number is incorrectly configured, the database communication fails.
 
 **Value range**: an integer ranging from 0 to 65535
 
@@ -107,8 +107,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the maximum memory available for buffering on the TCP proxy communication library or SCTP communication library on a database node.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->This parameter must be set based on environment memory and the deployment method. If it is too large, an out-of-memory \(OOM\) exception may occur. If it is too small, the performance of the TCP proxy communication library or SCTP communication library may deteriorate.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>This parameter must be set based on environment memory and the deployment method. If it is too large, an out-of-memory \(OOM\) exception may occur. If it is too small, the performance of the TCP proxy communication library or SCTP communication library may deteriorate.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -120,8 +120,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the size of the memory pool resources that can be used by the TCP proxy communication library or SCTP communication library on a database node.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If the memory used by the communication library is small, set this parameter to a small value. Otherwise, set it to a large value.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If the memory used by the communication library is small, set this parameter to a small value. Otherwise, set it to a large value.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -133,8 +133,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the percentage of the memory pool resources that can be used by the TCP proxy communication library or SCTP communication library on a database node. This parameter is used to adaptively reserve memory used by the communication library.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If the memory used by the communication library is small, set this parameter to a small value. Otherwise, set it to a large value.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If the memory used by the communication library is small, set this parameter to a small value. Otherwise, set it to a large value.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -150,8 +150,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If packet loss occurs in openGauss because a large number of packets are received per second, set this parameter to  **off**  so that small packets are combined into large packets for transmission to reduce the total number of packets.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If packet loss occurs in openGauss because a large number of packets are received per second, set this parameter to  **off**  so that small packets are combined into large packets for transmission to reduce the total number of packets.
 
 **Default value**:  **off**
 
@@ -159,8 +159,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies whether to enable the debug mode of the TCP proxy communication library or SCTP communication library, that is, whether to print logs about the communication layer.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -185,8 +185,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to enable the timer mode of the TCP proxy communication library or SCTP communication library, that is, whether to print timer logs in each phase of the communication layer.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -201,8 +201,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to enable the statistics mode of the TCP proxy communication library or SCTP communication library, that is, whether to print statistics about the communication layer.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

@@ -16,8 +16,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **localhost**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**localhost**  indicates that only local loopback is allowed.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**localhost**  indicates that only local loopback is allowed.
 
 ## local\_bind\_address<a name="en-us_topic_0242371485_en-us_topic_0237124695_en-us_topic_0059777636_s5339247211624017a06e634c85c519d5"></a>
 
@@ -99,19 +99,19 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **0700**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->In the Linux OS, a document has one document attribute and nine permission attributes, which consists of the read \(r\), write \(w\), and execute \(x\) permissions of the Owner, Group, and Others groups.  
->The r, w, and x permissions are represented by the following numbers:  
->r: 4  
->w: 2  
->x: 1  
->-: 0  
->The three attributes in a group are accumulative.  
->For example,  **-rwxrwx---**  indicates the following permissions:  
->owner = rwx = 4+2+1 = 7  
->group = rwx = 4+2+1 = 7  
->others = --- = 0+0+0 = 0  
->The permission of the file is 0770.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>In the Linux OS, a document has one document attribute and nine permission attributes, which consists of the read \(r\), write \(w\), and execute \(x\) permissions of the Owner, Group, and Others groups.
+>The r, w, and x permissions are represented by the following numbers:
+>r: 4
+>w: 2
+>x: 1
+>-: 0
+>The three attributes in a group are accumulative.
+>For example,  **-rwxrwx---**  indicates the following permissions:
+>owner = rwx = 4+2+1 = 7
+>group = rwx = 4+2+1 = 7
+>others = --- = 0+0+0 = 0
+>The permission of the file is 0770.
 
 ## application\_name<a name="en-us_topic_0242371485_en-us_topic_0237124695_en-us_topic_0059777636_s4314f82316124e848ce16741dead9ae8"></a>
 
@@ -133,11 +133,11 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 
 **Default value**: empty
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   An empty string indicates that the driver connected to the database does not support automatic setting of the  **connection\_info**  parameter or the parameter is not set by users in applications.  
->-   The following is an example of the concatenated value of  **connection\_info**:  
->    ```  
->    {"driver_name":"ODBC","driver_version": "(GaussDB Kernel V500R001C00 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 debug","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}  
->    ```  
->    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](connecting-to-a-database.md#EN-US_TOPIC_0254904958)  and  [Configuring a Data Source in the Linux OS](en-us_topic_0244721235.md).  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   An empty string indicates that the driver connected to the database does not support automatic setting of the  **connection\_info**  parameter or the parameter is not set by users in applications.
+>-   The following is an example of the concatenated value of  **connection\_info**:
+>    ```
+>    {"driver_name":"ODBC","driver_version": "(GaussDB Kernel V500R001C00 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 debug","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}
+>    ```
+>    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](en-us_topic_0244720262.md)  and  [Configuring a Data Source in the Linux OS](en-us_topic_0244721235.md).
 
