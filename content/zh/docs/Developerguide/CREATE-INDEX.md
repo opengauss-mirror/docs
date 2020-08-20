@@ -26,7 +26,7 @@
 -   在表上创建索引。
 
     ```
-    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schemaname.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
         ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
@@ -36,7 +36,7 @@
 -   在分区表上创建索引。
 
     ```
-    CREATE [ UNIQUE ] INDEX [ [schemaname.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
         LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
@@ -70,7 +70,7 @@
 
 -   **index\_name**
 
-    要创建的索引名，不能包含模式名，索引的模式与表相同。
+    要创建的索引名，索引的模式与表相同。
 
     取值范围：字符串，要符合标识符的命名规范。
 
