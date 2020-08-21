@@ -6,7 +6,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
 -   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [Creating the Required User Account and Configuring the Installation Environment](creating-the-required-user-account-and-configuring-the-installation-environment.md).
 -   All the server OSs and networks are functioning properly.
--   You have checked that the  **locale**  parameter for each server is set to the same value. For detailed operations, see  [Configuring the Locale and Character Set](configuring-the-locale-and-character-set.md).
+-   You have checked that the  **locale**  parameter for each server is set to the same value. For detailed operations, see  [Configuring the Locale and Character Set](en-us_topic_0249784576.md).
 
 ## Procedure<a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_se06775d062f144a5a491267c284e67dd"></a>
 
@@ -17,9 +17,9 @@ After the openGauss installation environment is prepared by executing the pre-in
     su - omm
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.  
-    >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.
+    >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.
 
 3.  Use  **gs\_install**  to install the openGauss. If the cluster is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
 
@@ -39,8 +39,8 @@ After the openGauss installation environment is prepared by executing the pre-in
 
     Two files are generated under the log file path:  **gs\_install-YYYY-MMDD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >When you manually execute the  **gs\_install**  script, the script does not automatically start the openGauss after the configuration completes if  **--autostart**  is  **no**. You can run the  **gs\_om -t start**  command to manually start it.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >When you manually execute the  **gs\_install**  script, the script does not automatically start the openGauss after the configuration completes if  **--autostart**  is  **no**. You can run the  **gs\_om -t start**  command to manually start it.
 
 4.  After the installation is successful, manually delete the trust between users  **root**  on the host, that is, delete the mutual trust file on each openGauss database node.
 
@@ -149,9 +149,14 @@ After the openGauss installation environment is prepared by executing the pre-in
 </td>
 <td class="cellrowborder" rowspan="3" valign="top" width="14.688531146885312%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a053677d57a674ee5a8f4ef8f9206c314"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a053677d57a674ee5a8f4ef8f9206c314"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a053677d57a674ee5a8f4ef8f9206c314"></a>/opt/opengauss/tool</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.43715628437156%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"></a>script</p>
+<td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"></a>script</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.996900309969007%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0085434626_p10623103104815"><a name="en-us_topic_0085434626_p10623103104815"></a><a name="en-us_topic_0085434626_p10623103104815"></a>Stores script files for <span id="text5680182218447"><a name="text5680182218447"></a><a name="text5680182218447"></a>openGauss</span> users to manage <span id="text1363212384418"><a name="text1363212384418"></a><a name="text1363212384418"></a>openGauss</span>.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0241805806_en-us_topic_0085434626_row4150139114718"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_p10153103914715"><a name="en-us_topic_0241805806_en-us_topic_0085434626_p10153103914715"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_p10153103914715"></a>sudo</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0085434626_p51538395471"><a name="en-us_topic_0085434626_p51538395471"></a><a name="en-us_topic_0085434626_p51538395471"></a>Stores script files for user <strong id="b2053383575220"><a name="b2053383575220"></a><a name="b2053383575220"></a>root</strong> to manage <span id="text44091424144411"><a name="text44091424144411"></a><a name="text44091424144411"></a>openGauss</span>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_r4205559738cf4031b8629c705dcefc05"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6ea59478d96d481db0c19182c48364f0"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6ea59478d96d481db0c19182c48364f0"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6ea59478d96d481db0c19182c48364f0"></a>lib</p>
@@ -161,7 +166,6 @@ After the openGauss installation environment is prepared by executing the pre-in
 </tr>
 </tbody>
 </table>
-
 
 ## Examples<a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_section37587843144447"></a>
 
