@@ -102,7 +102,7 @@ postgres=# CREATE TABLE student1
 (
    stuno     int,
    classno   int 
-)
+);
 
 --插入数据。
 postgres=# INSERT INTO student1 VALUES(1,1);
