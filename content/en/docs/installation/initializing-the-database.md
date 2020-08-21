@@ -1,4 +1,4 @@
-# Initializing the Database<a name="EN-US_TOPIC_0270171709"></a>
+# Initializing the Database<a name="EN-US_TOPIC_0270160634"></a>
 
 Use SQL to create a database.
 

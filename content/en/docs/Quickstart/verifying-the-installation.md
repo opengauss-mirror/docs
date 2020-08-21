@@ -1,14 +1,14 @@
-# Verifying the Installation<a name="EN-US_TOPIC_0271120382"></a>
+# Verifying the Installation<a name="EN-US_TOPIC_0249784575"></a>
 
 Use the  **gs\_checkos**  tool provided by openGauss to check the OS status.
 
-## Prerequisites<a name="en-us_topic_0249784575_en-us_topic_0085434669_section574475764117"></a>
+## Prerequisites<a name="en-us_topic_0085434669_section574475764117"></a>
 
 -   The hardware and network are working properly.
 -   The trust relationship of user  **root**  among the hosts is normal.
 -   Only user  **root**  is authorized to run the  **gs\_checkos**  command.
 
-## Procedure<a name="en-us_topic_0249784575_section54111653133815"></a>
+## Procedure<a name="section54111653133815"></a>
 
 1.  Log in to a server as user  **root**.
 2.  Run the following command to check OS parameters of servers where the openGauss nodes are deployed:
@@ -20,7 +20,7 @@ Use the  **gs\_checkos**  tool provided by openGauss to check the OS status.
     Check the OS parameters to ensure that the openGauss has passed the pre-installation check and can efficiently operate after it is installed. For details about the check items, see "gs\_checkos" in the  _Tool Reference_.
 
 
-## Examples<a name="en-us_topic_0249784575_en-us_topic_0085434669_en-us_topic_0069042386_en-us_topic_0059777853_sb6d3ac772495414da1fb16238a23ceb5"></a>
+## Examples<a name="en-us_topic_0085434669_en-us_topic_0069042386_en-us_topic_0059777853_sb6d3ac772495414da1fb16238a23ceb5"></a>
 
 Before running the  **gs\_checkos**  command, execute the  **gs\_preinstall**  script to prepare the environment. The following uses parameter  **A**  as an example:
 

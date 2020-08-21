@@ -5,7 +5,7 @@ This section describes the openGauss installation process.
 [Figure 1](#fig18264185162412)  shows the process for installing openGauss.
 
 **Figure  1**  Installation process<a name="fig18264185162412"></a>  
-<img src="figures/installation-process.png" title="installation-process" style="zoom:25%;" />
+![](figures/installation-process.png "installation-process")
 
 **Table  1**  Installation process description
 
@@ -31,7 +31,7 @@ This section describes the openGauss installation process.
 <tr id="en-us_topic_0241802562_row163283014916"><td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802562_p2500145511012"><a name="en-us_topic_0241802562_p2500145511012"></a><a name="en-us_topic_0241802562_p2500145511012"></a>Configure an XML file.</p>
 </td>
 <td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p id="p137904334"><a name="p137904334"></a><a name="p137904334"></a>Before installing the openGauss, you need to create a configuration file. The configuration file in the XML format contains the information about the server where the openGauss is deployed, installation path, IP address, and port number. This file is used to guide how to deploy the openGauss. You need to configure the configuration file according to the actual deployment requirements.</p>
-<p id="en-us_topic_0241802562_p12584185173313"><a name="en-us_topic_0241802562_p12584185173313"></a><a name="en-us_topic_0241802562_p12584185173313"></a>For details, see <a href="creating-a-configuration-file.md">Creating a Configuration File</a>.</p>
+<p id="en-us_topic_0241802562_p12584185173313"><a name="en-us_topic_0241802562_p12584185173313"></a><a name="en-us_topic_0241802562_p12584185173313"></a>For details, see <a href="creating-an-xml-configuration-file.md">Creating an XML Configuration File</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0241802562_row670315277496"><td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802562_p11500125541018"><a name="en-us_topic_0241802562_p11500125541018"></a><a name="en-us_topic_0241802562_p11500125541018"></a>Initialize the installation environment.</p>
