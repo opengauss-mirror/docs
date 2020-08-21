@@ -6,7 +6,7 @@ Only the database system administrator or users granted with database creation p
 
 ## Background<a name="en-us_topic_0237120295_en-us_topic_0059779126_s4b8e4eb214404dc8a2dfd174a7245290"></a>
 
--   openGauss has two default template databases  **template0**  and  **template1**  and a default user database  **postgres**.
+-   openGauss has two default template databases  **template0**  and  **template1**  and a default user database  **postgres**. The default database compatibility type of **postgres** is O (that is, DBCOMPATIBILITY = A), and the string is treated as NULL under this compatibility type.
 -   **CREATE DATABASE**  creates a database by copying a template database \(**template1**  by default\). Do not use a client or any other tools to connect to or to perform operations on the template databases.
 -   A maximum of 128 databases can be created in openGauss.
 -   A database system consists of multiple databases. A client can connect to only one database at a time. Users cannot query data across databases. If an openGauss cluster contains multiple databases, set the  **-d**  parameter to specify the database to connect to.

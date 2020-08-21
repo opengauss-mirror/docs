@@ -70,11 +70,17 @@ CREATE DATABASE database_name
 
     取值范围：有效的字符分类。
 
--   **DBCOMPATIBILITY \[ = \] compatibilty\_type**
+- **DBCOMPATIBILITY \[ = \] compatibilty\_type**
 
-    指定兼容的数据库的类型。
+  指定兼容的数据库的类型。
 
-    取值范围：A、B、C。分别表示兼容O、MY和TD。
+  取值范围：A、B、C。分别表示兼容O、MY和TD。
+
+  ![](public_sys-resources/icon-notice.gif) **须知：**   
+
+   当DBCOMPATIBILITY = A时，数据库会将空字符串作为NULL处理。
+
+  
 
 -   **TABLESPACE \[ = \] tablespace\_name**
 

@@ -157,7 +157,7 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_aa6af6cdced774a85ba1eb6d158c3ba37"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_aa6af6cdced774a85ba1eb6d158c3ba37"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_aa6af6cdced774a85ba1eb6d158c3ba37"></a>"char"[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e02e7317af8467c83badbd4746c7eb7"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e02e7317af8467c83badbd4746c7eb7"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e02e7317af8467c83badbd4746c7eb7"></a>一个保存函数参数模式的数组，编码如下：i表示IN参数，o表示OUT参数，b表示INOUT参数。如果所有参数都是IN参数，则这个字段为空。请注意，下标对应的是proallargtypes的位置，而不是proargtypes。</p>
+    <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e02e7317af8467c83badbd4746c7eb7"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e02e7317af8467c83badbd4746c7eb7"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e02e7317af8467c83badbd4746c7eb7"></a>一个保存函数参数模式的数组，编码如下：<ul><li>i表示IN参数。</li><li>o表示OUT参数。</li><li>b表示INOUT参数。</li><li>v表示VARIADIC参数。</li></ul>如果所有参数都是IN参数，则这个字段为空。请注意，下标对应的是proallargtypes的位置，而不是proargtypes。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_r8bc4757566cf4b7488b23b888803cfd2"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ad325b7bd253c49d0ad1c4e8588dc9bd5"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ad325b7bd253c49d0ad1c4e8588dc9bd5"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_ad325b7bd253c49d0ad1c4e8588dc9bd5"></a>proargnames</p>
@@ -225,5 +225,6 @@ PG\_PROC系统表存储函数或过程的信息。
 </tr>
 </tbody>
 </table>
+
 
 
