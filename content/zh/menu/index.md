@@ -1089,6 +1089,7 @@ headless: true
    -   [Foreign Data Wrapper]({{< relref "./docs/Developerguide/Foreign-Data-Wrapper.md" >}})
         -   [oracle_fdw]({{< relref "./docs/Developerguide/oracle_fdw.md" >}})
         -   [mysql_fdw]({{< relref "./docs/Developerguide/mysql_fdw.md" >}})
+        -   [postgres_fdw]({{< relref "./docs/Developerguide/postgres_fdw.md" >}})
     -   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})
         -   [GUC使用说明]({{< relref "./docs/Developerguide/GUC使用说明.md" >}})
         -   [文件位置]({{< relref "./docs/Developerguide/文件位置.md" >}})
