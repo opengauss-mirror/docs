@@ -1,23 +1,23 @@
 # Configuring openGauss Parameters<a name="EN-US_TOPIC_0241704229"></a>
 <!-- TOC -->
 
-- [Setting a Client Authentication Policy<a name="EN-US_TOPIC_0241704250"></a>](#setting-a-client-authentication-policya-nameen-us_topic_0241704250a)
-    - [Syntax<a name="en-us_topic_0241234206_section19924142981011"></a>](#syntaxa-nameen-us_topic_0241234206_section19924142981011a)
-    - [Command Reference<a name="en-us_topic_0241234206_en-us_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#command-referencea-nameen-us_topic_0241234206_en-us_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
-    - [Examples<a name="en-us_topic_0241234206_section196405363211"></a>](#examplesa-nameen-us_topic_0241234206_section196405363211a)
-- [Configuring Parameters in Configuration Files<a name="EN-US_TOPIC_0241704251"></a>](#configuring-parameters-in-configuration-filesa-nameen-us_topic_0241704251a)
-    - [Syntax<a name="en-us_topic_0241234207_section12202966262"></a>](#syntaxa-nameen-us_topic_0241234207_section12202966262a)
-    - [Command Reference<a name="en-us_topic_0241234207_en-us_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#command-referencea-nameen-us_topic_0241234207_en-us_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
-    - [Examples<a name="en-us_topic_0241234207_section53021226153217"></a>](#examplesa-nameen-us_topic_0241234207_section53021226153217a)
+- [Setting a Client Authentication Policy](#setting-a-client-authentication-policy)
+    - [Syntax](#syntax)
+    - [Command Reference](#command-reference)
+    - [Examples](#examples)
+- [Configuring Parameters in Configuration Files](#configuring-parameters-in-configuration-files)
+    - [Syntax](#syntax-1)
+    - [Command Reference](#command-reference-1)
+    - [Examples](#examples-1)
 
 <!-- /TOC -->
 
 
-## Setting a Client Authentication Policy<a name="EN-US_TOPIC_0241704250"></a>
+## Setting a Client Authentication Policy
 
 The current default values for parameters in the openGauss configuration file \(**pg\_hba.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**. For more configurations, see the product documentation.
 
-### Syntax<a name="en-us_topic_0241234206_section19924142981011"></a>
+### Syntax
 
 Set a client authentication policy and send semaphores to the database process.
 
@@ -32,7 +32,7 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
 >**md5**,  **sha256**, and  **cert**: client certificate authentication.
 >**gss**: kerberos authentication.
 
-### Command Reference<a name="en-us_topic_0241234206_en-us_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
+### Command Reference
 
 -   **set**:
 
@@ -97,7 +97,7 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
     For details about the parameters, see their description in the  **pg\_hba.conf**  configuration file.
 
 
-### Examples<a name="en-us_topic_0241234206_section196405363211"></a>
+### Examples
 
 Set a client authentication policy.
 
@@ -108,11 +108,11 @@ Total instances: 2. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-## Configuring Parameters in Configuration Files<a name="EN-US_TOPIC_0241704251"></a>
+## Configuring Parameters in Configuration Files
 
 The current default values for parameters in the openGauss configuration file \(**postgresql.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**.
 
-### Syntax<a name="en-us_topic_0241234207_section12202966262"></a>
+### Syntax
 
 -   Modify parameters in the configuration file \(**postgresql.conf**\).
 
@@ -127,7 +127,7 @@ The current default values for parameters in the openGauss configuration file \(
     ```
 
 
-### Command Reference<a name="en-us_topic_0241234207_en-us_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
+### Command Reference
 
 -   **set**:
 
@@ -173,7 +173,7 @@ The current default values for parameters in the openGauss configuration file \(
 
 -   **-U, --keyuser=**_USER_
 
-### Examples<a name="en-us_topic_0241234207_section53021226153217"></a>
+### Examples
 
 Modify database node parameters. For example, modify the maximum number of connections allowed by a database to  **800**. The database must be restarted to make the change take effect.
 
