@@ -12,7 +12,7 @@ postgres=# set default_text_search_config='ts_conf_1';
 postgres=# create index idx1 on table1 using gin(to_tsvector(c_text));
 
 postgres=# set default_text_search_config='ts_conf_2';
-postgres=# create index idx2 on tscp_u_m_005_tbl using gin(to_tsvector(c_text));
+postgres=# create index idx2 on table1 using gin(to_tsvector(c_text));
 
 postgres=# select c_varchar,to_tsvector(c_varchar) from table1 where to_tsvector(c_text) @@ plainto_tsquery('¥#@...&**')  and to_tsvector(c_text) @@ postgres=# plainto_tsquery('Company ')  and c_varchar is not null order by 1 desc limit 3;
 ```

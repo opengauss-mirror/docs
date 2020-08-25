@@ -107,7 +107,7 @@
 postgres=# SET search_path TO tpcds, public;
 
 --把日期时间风格设置为传统的 POSTGRES 风格(日在月前)。
-postgres=# SET datestyle TO postgres;
+postgres=# SET datestyle TO postgres，dym;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122186_zh-cn_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
