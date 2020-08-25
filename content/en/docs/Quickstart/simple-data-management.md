@@ -2,28 +2,28 @@
 
 <!-- TOC -->
 
-- [Creating a Database<a name="EN-US_TOPIC_0241704259"></a>](#creating-a-databasea-nameen-us_topic_0241704259a)
-    - [Precautions<a name="en-us_topic_0241234235_en-us_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>](#precautionsa-nameen-us_topic_0241234235_en-us_topic_0059778277_s818d4df5d095482f86d8e7258a75df1ba)
-    - [Syntax<a name="en-us_topic_0241234235_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>](#syntaxa-nameen-us_topic_0241234235_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858a)
-    - [Examples<a name="en-us_topic_0241234235_section5221233281"></a>](#examplesa-nameen-us_topic_0241234235_section5221233281a)
-- [Creating a Table<a name="EN-US_TOPIC_0241704260"></a>](#creating-a-tablea-nameen-us_topic_0241704260a)
-    - [Syntax<a name="en-us_topic_0241234236_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>](#syntaxa-nameen-us_topic_0241234236_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eba)
-    - [Example<a name="en-us_topic_0241234236_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>](#examplea-nameen-us_topic_0241234236_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8a)
-- [Viewing Objects<a name="EN-US_TOPIC_0241704261"></a>](#viewing-objectsa-nameen-us_topic_0241704261a)
+- [Creating a Database](#creating-a-database)
+    - [Precautions](#precautions)
+    - [Syntax](#syntax)
+    - [Examples](#examples)
+- [Creating a Table](#creating-a-table)
+    - [Syntax](#syntax-1)
+    - [Example](#example)
+- [Viewing Objects](#viewing-objects)
 
 <!-- /TOC -->
 
-## Creating a Database<a name="EN-US_TOPIC_0241704259"></a>
+## Creating a Database
 
 Create a database. By default, a new database is created by copying the standard system database template0. Only template0 can be used to create a new database.
 
-### Precautions<a name="en-us_topic_0241234235_en-us_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>
+### Precautions
 
 -   A user that has the  **CREATEDB**  permission or a system administrator can create a database.
 -   **CREATE DATABASE**  cannot be executed inside a transaction block.
 -   Errors along the line of "could not initialize database directory" are most likely related to insufficient permissions on the data directory, a full disk, or other file system problems.
 
-### Syntax<a name="en-us_topic_0241234235_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
+### Syntax
 
 ```
 CREATE DATABASE database_name
@@ -37,7 +37,7 @@ CREATE DATABASE database_name
                [ CONNECTION LIMIT [=] connlimit ]}[...] ];
 ```
 
-### Examples<a name="en-us_topic_0241234235_section5221233281"></a>
+### Examples
 
 ```
 -- Create users jim and tom:
@@ -91,13 +91,13 @@ postgres=# DROP DATABASE td_compatible_db;
 postgres=# DROP DATABASE ora_compatible_db;
 ```
 
-## Creating a Table<a name="EN-US_TOPIC_0241704260"></a>
+## Creating a Table
 
 **CREATE TABLE**  is used to create an initially empty table in the current database. The table will be owned by the creator.
 
 During table creation, if no storage method is specified, a row-store table is created by default. If no distribution column is specified, the primary key \(if any\) of the table or the first column that can be used is selected as the distribution column.
 
-### Syntax<a name="en-us_topic_0241234236_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
+### Syntax
 
 -   Create a table.
 
@@ -158,7 +158,7 @@ During table creation, if no storage method is specified, a row-store table is c
 [ USING INDEX TABLESPACE tablespace_name ]
 ```
 
-### Example<a name="en-us_topic_0241234236_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
+### Example
 
 ```
 -- Create a simple table.

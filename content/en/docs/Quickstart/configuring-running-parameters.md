@@ -1,15 +1,24 @@
 # Configuring Running Parameters<a name="EN-US_TOPIC_0251900916"></a>
 
--   **[Viewing Parameter Values](viewing-parameter-values.md)**  
 
--   **[Resetting Parameters](resetting-parameters.md)**  
+<!-- TOC -->
 
+- [Viewing Parameter Values](#viewing-parameter-values)
+    - [Procedure](#procedure)
+    - [Example](#example)
+- [Resetting Parameters](#resetting-parameters)
+    - [Background](#background)
+    - [Setting GUC Parameters](#setting-guc-parameters)
+    - [Procedure](#procedure-1)
+    - [Examples](#examples)
 
-## Viewing Parameter Values<a name="EN-US_TOPIC_0251900917"></a>
+<!-- /TOC -->
+
+## Viewing Parameter Values
 
 openGauss uses a set of default running parameters after it is installed. You can modify the parameters to better fit the current service scenarios and data volume.
 
-### Procedure<a name="en-us_topic_0242370405_en-us_topic_0237121561_en-us_topic_0059778552_s188c1b9187954573b5701cc6013c78e8"></a>
+### Procedure
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Run the following command to connect to the database:
@@ -63,7 +72,7 @@ openGauss uses a set of default running parameters after it is installed. You ca
 
 
 
-### Example<a name="en-us_topic_0242370405_en-us_topic_0237121561_en-us_topic_0059778552_se13d2a46521a4500881363a56a68d6cf"></a>
+### Example
 
 View the server version.
 
@@ -75,9 +84,9 @@ postgres=# SHOW server_version;
 (1 row)
 ```
 
-## Resetting Parameters<a name="EN-US_TOPIC_0251900918"></a>
+## Resetting Parameters
 
-### Background<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s75c9285916664351b9c3e31f0735ea98"></a>
+### Background
 
 openGauss provides multiple methods to set the GUC parameters of databases, users, or sessions.
 
@@ -94,7 +103,7 @@ openGauss provides multiple methods to set the GUC parameters of databases, user
 
 For details about parameters in the hosts configuration template, see  [GUC Parameters](guc-parameters.md#EN-US_TOPIC_0251900919).
 
-### Setting GUC Parameters<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_sb2763fa0003e4ff1815379339bffe994"></a>
+### Setting GUC Parameters
 
 openGauss provides six types of GUC parameters. For details about parameter types and their setting methods, see  [Table 1](#en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -203,7 +212,7 @@ You can set GUC parameters in openGauss using the methods listed in  [Table 2](#
 </tbody>
 </table>
 
-### Procedure<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s049438204a0941efb4b85981fb594e7c"></a>
+### Procedure
 
 The following example shows how to set  **archive\_mode**  on the primary node of the database using method 1.
 
@@ -410,7 +419,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     ```
 
 
-### Examples<a name="en-us_topic_0242370406_en-us_topic_0237121562_en-us_topic_0059777490_s5b8255d8025640aba238bfb86b20807a"></a>
+### Examples
 
 -   Example 1: modifying the maximum connections for the primary database node in openGauss using method 1
     1.  Log in as the OS user  **omm**  to the primary node of the database.

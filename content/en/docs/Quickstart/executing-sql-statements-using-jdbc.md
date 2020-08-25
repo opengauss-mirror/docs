@@ -2,14 +2,14 @@
 
 <!-- TOC -->
 
-- [JDBC Package and Driver Class<a name="section117214161211"></a>](#jdbc-package-and-driver-classa-namesection117214161211a)
-- [Loading the Driver<a name="section1125673532217"></a>](#loading-the-drivera-namesection1125673532217a)
-- [Connecting to a Database<a name="section77501356132218"></a>](#connecting-to-a-databasea-namesection77501356132218a)
-- [Examples<a name="en-us_topic_0244720262_en-us_topic_0237120381_en-us_topic_0213179126_en-us_topic_0189251768_en-us_topic_0059779354_sa87cf707a76c493997989289921f9202"></a>](#examplesa-nameen-us_topic_0244720262_en-us_topic_0237120381_en-us_topic_0213179126_en-us_topic_0189251768_en-us_topic_0059779354_sa87cf707a76c493997989289921f9202a)
+- [JDBC Package and Driver Class](#jdbc-package-and-driver-class)
+- [Loading the Driver](#loading-the-driver)
+- [Connecting to a Database](#connecting-to-a-database)
+- [Examples](#examples)
 
 <!-- /TOC -->
 
-## JDBC Package and Driver Class<a name="section117214161211"></a>
+## JDBC Package and Driver Class
 
 -   JDBC Package
 
@@ -25,7 +25,7 @@
     >openGauss is compatible with PostgreSQL in the use of JDBC. Therefore, when two JDBC drivers are used in the same process, class names may conflict.
 
 
-## Loading the Driver<a name="section1125673532217"></a>
+## Loading the Driver
 
 Load the database driver before creating a database connection.
 
@@ -38,7 +38,7 @@ You can load the driver in the following ways:
     >**jdbctest**  is the name of a test application.
 
 
-## Connecting to a Database<a name="section77501356132218"></a>
+## Connecting to a Database
 
 **Function Prototype**
 
@@ -100,7 +100,7 @@ JDBC provides the following three database connection methods:
 </tbody>
 </table>
 
-## Examples<a name="en-us_topic_0244720262_en-us_topic_0237120381_en-us_topic_0213179126_en-us_topic_0189251768_en-us_topic_0059779354_sa87cf707a76c493997989289921f9202"></a>
+## Examples
 
 -   The following illustrates how to connect database based on openGauss JDBC interfaces.
 

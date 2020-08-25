@@ -17,11 +17,9 @@ You can use a client tool to connect to a database through the primary node of t
     node        node_ip         instance                                  state
     -----------------------------------------------------------------------------
     1  plat1 192.168.0.11  5001 /srv/BigData/gaussdb/data1/dbnode Normal
-    2  plat2 192.168.0.12  5002 /srv/BigData/gaussdb/data1/dbnode Normal
-    3  plat3 192.168.0.13  5003 /srv/BigData/gaussdb/data1/dbnode Normal
     ```
-
-    For example, the server IP addresses where the primary node of the database is deployed are 192.168.10.11, 192.168.10.12, and 192.168.0.13. The data path of the primary node of the database is  **/srv/BigData/gaussdb/data1/dbnode**.
+    
+    For example, the server IP addresses where the primary node of the database is deployed are 192.168.10.11. The data path of the primary node of the database is  **/srv/BigData/gaussdb/data1/dbnode**.
 
 3.  Confirm the port number of the primary node of the database.
 

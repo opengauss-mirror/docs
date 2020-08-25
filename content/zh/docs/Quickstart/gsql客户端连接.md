@@ -2,26 +2,26 @@
 
 <!-- TOC -->
 
-- [确认连接信息<a name="ZH-CN_TOPIC_0254911667"></a>](#确认连接信息a-namezh-cn_topic_0254911667a)
-    - [操作步骤<a name="zh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727"></a>](#操作步骤a-namezh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727a)
-- [使用gsql本地连接<a name="ZH-CN_TOPIC_0241704254"></a>](#使用gsql本地连接a-namezh-cn_topic_0241704254a)
-    - [注意事项<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>](#注意事项a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8aa)
-    - [前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>](#前提条件a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400a)
-    - [本地连接数据库<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>](#本地连接数据库a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0a)
-- [使用gsql远程连接<a name="ZH-CN_TOPIC_0241704255"></a>](#使用gsql远程连接a-namezh-cn_topic_0241704255a)
-    - [前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>](#前提条件a-namezh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400a-1)
-    - [通过gs\_guc配置白名单<a name="section6704147193817"></a>](#通过gs\_guc配置白名单a-namesection6704147193817a)
-    - [安装gsql客户端并连接数据库<a name="section1535892915382"></a>](#安装gsql客户端并连接数据库a-namesection1535892915382a)
+- [确认连接信息](#确认连接信息)
+    - [操作步骤](#操作步骤)
+- [使用gsql本地连接](#使用gsql本地连接)
+    - [注意事项](#注意事项)
+    - [前提条件](#前提条件)
+    - [本地连接数据库](#本地连接数据库)
+- [使用gsql远程连接](#使用gsql远程连接)
+    - [前提条件](#前提条件-1)
+    - [通过gs\_guc配置白名单](#通过gs\_guc配置白名单)
+    - [安装gsql客户端并连接数据库](#安装gsql客户端并连接数据库)
 
 <!-- /TOC -->
 -   **[使用gsql远程连接](使用gsql远程连接.md)**  
 
 
-## 确认连接信息<a name="ZH-CN_TOPIC_0254911667"></a>
+## 确认连接信息
 
 客户端工具通过数据库主节点连接数据库。因此连接前，需获取数据库主节点所在服务器的IP地址及数据库主节点的端口号信息。
 
-### 操作步骤<a name="zh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727"></a>
+### 操作步骤
 
 1.  以操作系统用户omm登录数据库主节点。
 2.  <a name="zh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_li736435692628"></a>使用“gs\_om -t status --detail”命令查询openGauss各实例情况。
@@ -63,19 +63,19 @@
     8000为数据库主节点的端口号。
 
 
-## 使用gsql本地连接<a name="ZH-CN_TOPIC_0241704254"></a>
+## 使用gsql本地连接
 
 gsql是openGauss提供的在命令行下运行的数据库连接工具。此工具除了具备操作数据库的基本功能，还提供了若干高级特性，便于用户使用。本节只介绍如何使用gsql连接数据库，关于gsql使用方法的更多信息请参考gsql。
 
-### 注意事项<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
+### 注意事项
 
 缺省情况下，客户端连接数据库后处于空闲状态时会根据参数session\_timeout的默认值自动断开连接。如果要关闭超时设置，设置参数session\_timeout为0即可。
 
-### 前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>
+### 前提条件
 
 已确认连接信息。
 
-### 本地连接数据库<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>
+### 本地连接数据库
 
 1.  以操作系统用户omm登录数据库主节点。
 2.  连接数据库。
@@ -117,15 +117,15 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     ```
 
 
-## 使用gsql远程连接<a name="ZH-CN_TOPIC_0241704255"></a>
+## 使用gsql远程连接
 
 gsql是openGauss提供的在命令行下运行的数据库连接工具。此工具除了具备操作数据库的基本功能，还提供了若干高级特性，便于用户使用。本节只介绍如何安装gsql客户端，使用gsql客户端连接数据库，更多配置请参见openGauss产品文档。
 
-### 前提条件<a name="zh-cn_topic_0241234230_zh-cn_topic_0085434651_zh-cn_topic_0059781996_zh-cn_topic_0062050379_section2863008216400"></a>
+### 前提条件
 
 已确认连接信息。
 
-### 通过gs\_guc配置白名单<a name="section6704147193817"></a>
+### 通过gs\_guc配置白名单
 
 1.  以操作系统用户omm登录数据库主节点。
 2.  配置客户端认证方式，允许客户端以“jack”用户连接到本机，此处远程连接禁止使用“omm”用户（即数据库初始化用户）。
@@ -175,7 +175,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     >-   对应openGauss外部客户端连接，trust为不安全的认证方式，请将认证方式设置为sha256。
 
 
-### 安装gsql客户端并连接数据库<a name="section1535892915382"></a>
+### 安装gsql客户端并连接数据库
 
 在客户端机器上，上传客户端工具包并配置gsql的执行环境变量。
 
@@ -242,5 +242,3 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。
     >-   禁止使用omm用户进行远程连接数据库。
 
-
-

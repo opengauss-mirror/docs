@@ -2,32 +2,32 @@
 
 <!-- TOC -->
 
-- [Creating a Role<a name="EN-US_TOPIC_0241704263"></a>](#creating-a-rolea-nameen-us_topic_0241704263a)
-    - [Precautions<a name="en-us_topic_0241234239_en-us_topic_0059778189_sca46ba0a91d7470c94ec4197a5befe87"></a>](#precautionsa-nameen-us_topic_0241234239_en-us_topic_0059778189_sca46ba0a91d7470c94ec4197a5befe87a)
-    - [Syntax<a name="en-us_topic_0241234239_en-us_topic_0059778189_se8fd2944bc8f42e2be5e7bd140f801fc"></a>](#syntaxa-nameen-us_topic_0241234239_en-us_topic_0059778189_se8fd2944bc8f42e2be5e7bd140f801fca)
-    - [Example<a name="en-us_topic_0241234239_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>](#examplea-nameen-us_topic_0241234239_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611ea)
-- [Creating a User<a name="EN-US_TOPIC_0241704264"></a>](#creating-a-usera-nameen-us_topic_0241704264a)
-    - [Precautions<a name="en-us_topic_0241234240_en-us_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>](#precautionsa-nameen-us_topic_0241234240_en-us_topic_0059778166_sd48f2980b9464b1abca65a4747930552a)
-    - [Syntax<a name="en-us_topic_0241234240_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>](#syntaxa-nameen-us_topic_0241234240_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035fa)
-    - [Example<a name="en-us_topic_0241234240_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>](#examplea-nameen-us_topic_0241234240_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074faa)
-- [Granting Permissions<a name="EN-US_TOPIC_0241704265"></a>](#granting-permissionsa-nameen-us_topic_0241704265a)
-    - [Syntax<a name="en-us_topic_0241234241_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>](#syntaxa-nameen-us_topic_0241234241_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01a)
-    - [Examples<a name="en-us_topic_0241234241_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>](#examplesa-nameen-us_topic_0241234241_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447a)
+- [Creating a Role](#creating-a-role)
+    - [Precautions](#precautions)
+    - [Syntax](#syntax)
+    - [Example](#example)
+- [Creating a User](#creating-a-user)
+    - [Precautions](#precautions-1)
+    - [Syntax](#syntax-1)
+    - [Example](#example-1)
+- [Granting Permissions](#granting-permissions)
+    - [Syntax](#syntax-2)
+    - [Examples](#examples)
 
 <!-- /TOC -->
 
-## Creating a Role<a name="EN-US_TOPIC_0241704263"></a>
+## Creating a Role
 
 **CREATE ROLE**  is used to create a role.
 
 A role is an entity that owns database objects and permissions. In different environments, a role can be considered a user, a group, or both.
 
-### Precautions<a name="en-us_topic_0241234239_en-us_topic_0059778189_sca46ba0a91d7470c94ec4197a5befe87"></a>
+### Precautions
 
 -   **CREATE ROLE**  adds a role to a database. The role does not have the  **LOGIN**  permission.
 -   Only the user who has the  **CREATE ROLE**  permission or a system administrator is allowed to create roles.
 
-### Syntax<a name="en-us_topic_0241234239_en-us_topic_0059778189_se8fd2944bc8f42e2be5e7bd140f801fc"></a>
+### Syntax
 
 ```
 CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
@@ -65,7 +65,7 @@ The syntax of role information configuration clause  **option**  is as follows:
     | PGUSER
 ```
 
-### Example<a name="en-us_topic_0241234239_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
+### Example
 
 ```
 -- Create role manager whose password is Bigdata123@.
@@ -87,17 +87,17 @@ postgres=# DROP ROLE manager;
 postgres=# DROP ROLE miriam;
 ```
 
-## Creating a User<a name="EN-US_TOPIC_0241704264"></a>
+## Creating a User
 
 **CREATE USER**  creates a user.
 
-### Precautions<a name="en-us_topic_0241234240_en-us_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
+### Precautions
 
 -   A user created using the  **CREATE USER**  statement has the  **LOGIN**  permission by default.
 -   A schema named after the user is automatically created in the database where the statement is executed, but not in other databases. You can run the  **CREATE SCHEMA**  statement to create such a schema for the user in other databases.
 -   The owner of an object created by a system administrator in a schema with the same name as a common user is the common user, not the system administrator.
 
-### Syntax<a name="en-us_topic_0241234240_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
+### Syntax
 
 ```
 CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
@@ -138,7 +138,7 @@ The  **option**  clause is used to configure information, including permissions 
     | PGUSER
 ```
 
-### Example<a name="en-us_topic_0241234240_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
+### Example
 
 ```
 -- Create user jim whose login password is Bigdata@123:
@@ -171,7 +171,7 @@ postgres=# DROP USER jim CASCADE;
 postgres=# DROP USER dim CASCADE;
 ```
 
-## Granting Permissions<a name="EN-US_TOPIC_0241704265"></a>
+## Granting Permissions
 
 **GRANT**  is used to grant permissions to roles and users.
 
@@ -190,7 +190,7 @@ postgres=# DROP USER dim CASCADE;
     Grant the permissions of one role or user to others. In this case, every role or user can be regarded as a set of one or more database permissions.
 
 
-### Syntax<a name="en-us_topic_0241234241_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
+### Syntax
 
 -   Grant the table or view access permission to a specified user or role.
 
@@ -334,7 +334,7 @@ postgres=# DROP USER dim CASCADE;
     ```
 
 
-### Examples<a name="en-us_topic_0241234241_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
+### Examples
 
 **Example 1: Granting system permissions to a user or role**
 
