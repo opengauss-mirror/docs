@@ -1184,6 +1184,7 @@ headless: true
         -   [gs\_sshexkey]({{< relref "./docs/Toolreference/gs_sshexkey.md" >}})
         -   [gs\_uninstall]({{< relref "./docs/Toolreference/gs_uninstall.md" >}})
         -   [gs\_upgradectl]({{< relref "./docs/Toolreference/gs_upgradectl.md" >}})
+        -   [gs\_expansion]({{< relref "./docs/Toolreference/gs_expansion.md" >}})
         -   [gstrace]({{< relref "./docs/Toolreference/gstrace.md" >}})
         -   [kdb5\_util]({{< relref "./docs/Toolreference/kdb5_util.md" >}})
         -   [kadmin.local]({{< relref "./docs/Toolreference/kadmin-local.md" >}})
