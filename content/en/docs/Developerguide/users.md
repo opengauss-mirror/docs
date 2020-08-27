@@ -23,13 +23,13 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
 -   To view a user list, query the  **[PG\_USER](pg_user.md)**  view.
 
     ```
-    postgres=# SELECT * FROM pg_user; 
+    SELECT * FROM pg_user; 
     ```
 
 -   To view user attributes, query the system catalog  **[PG\_AUTHID](pg_authid.md)**.
 
     ```
-    postgres=# SELECT * FROM pg_authid; 
+    SELECT * FROM pg_authid; 
     ```
 
 
@@ -40,7 +40,7 @@ If multiple service departments use different database user accounts to perform 
 In  [separation-of-duties](separation-of-duties.md)  mode, a database administrator does not have permissions for the tables in schemas of other users. In this case, database administrators have neither management permissions nor access permissions, which does not meet the requirements of the service departments mentioned above. Therefore, openGauss provides private users to solve the problem. That is, create private users with the  **INDEPENDENT**  attribute in non-separation-of-duties mode.
 
 ```
-postgres=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "1234@abc";
+CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "1234@abc";
 ```
 
 System administrators and security administrators with the  **CREATEROLE**  attribute can manage \(**DROP**,  **ALTER**, and  **TRUNCATE**\) objects of private users but cannot access \(**INSERT**,  **DELETE**,  **SELECT**,  **UPDATE**,  **COPY**,  **GRANT**,  **REVOKE**, and  **ALTER OWNER**\) the objects before being authorized.

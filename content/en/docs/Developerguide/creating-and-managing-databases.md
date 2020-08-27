@@ -51,13 +51,13 @@ To resolve this problem, you need to:
     -   Run the  **\\l**  meta-command to view the database list of the database system.
 
         ```
-        postgres=# \l
+        \l
         ```
 
     -   Run the following command to query the database list in the  **pg\_database**  system catalog:
 
         ```
-        postgres=# SELECT datname FROM pg_database;
+        SELECT datname FROM pg_database;
         ```
 
 3.  Modify the database.

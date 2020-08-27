@@ -11,7 +11,7 @@ Perform the following operations to carry out a deep copy for the  **customer\_t
 1.  Run the  **CREATE TABLE**  statement to create the copy  **customer\_t\_copy**  of the  **customer\_t**  table.
 
     ```
-    postgres=# CREATE TABLE customer_t_copy
+    CREATE TABLE customer_t_copy
     ( c_customer_sk             integer,   
       c_customer_id             char(5),    
       c_first_name              char(6),    
@@ -22,19 +22,19 @@ Perform the following operations to carry out a deep copy for the  **customer\_t
 2.  Run the  **INSERT INTO...SELECT**  statement to batch insert data of the original table into the copy.
 
     ```
-    postgres=# INSERT INTO customer_t_copy (SELECT * FROM customer_t);
+    INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
 3.  Delete the original table.
 
     ```
-    postgres=# DROP TABLE customer_t;
+    DROP TABLE customer_t;
     ```
 
 4.  Run the  **ALTER TABLE**  statement to rename the copy to the name of the original table.
 
     ```
-    postgres=# ALTER TABLE customer_t_copy RENAME TO customer_t;
+    ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
 
 

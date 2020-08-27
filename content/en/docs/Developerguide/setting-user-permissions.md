@@ -17,7 +17,7 @@
         Create a role  **lily**  and grant the system permission  **CREATEDB**  to the role.
 
         ```
-        postgres=# CREATE ROLE lily WITH CREATEDB PASSWORD "Bigdata@123";
+        CREATE ROLE lily WITH CREATEDB PASSWORD "Bigdata@123";
         ```
 
     2.  Grant object permissions to the role by using  **[GRANT](grant.md)**.
@@ -32,7 +32,7 @@
     3.  Grant the role permissions to a user.
 
         ```
-        postgres=# GRANT lily to joe;
+        GRANT lily to joe;
         ```
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**   

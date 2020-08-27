@@ -7,7 +7,7 @@ If a large number of rows were updated or deleted during import, run  **VACUUM F
     Do  **VACUUM FULL**  to the  **product\_info**  table.
 
     ```
-    postgres=# VACUUM FULL product_info
+    VACUUM FULL product_info
     ```
 
     ```

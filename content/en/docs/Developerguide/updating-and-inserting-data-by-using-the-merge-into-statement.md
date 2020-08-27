@@ -46,7 +46,7 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
 3.  Run the  **MERGE INTO**  statement to merge data in the source table  **products**  into the target table  **newproducts**.
 
     ```
-    postgres=# MERGE INTO newproducts np    
+    MERGE INTO newproducts np    
     USING products p    
     ON (np.product_id = p.product_id )    
     WHEN MATCHED THEN     
@@ -123,7 +123,7 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
 4.  Query the target table  **newproducts**  after the merge.
 
     ```
-    postgres=# SELECT * FROM newproducts;
+    SELECT * FROM newproducts;
     ```
 
     The command output is as follows:

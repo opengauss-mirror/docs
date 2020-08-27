@@ -40,7 +40,7 @@ openGauss is running properly.
     Only administrators that are created during openGauss installation can access the initial database by default. You can also create other database users.
 
     ```
-    postgres=# CREATE USER joe WITH PASSWORD "Bigdata@123";
+    CREATE USER joe WITH PASSWORD "Bigdata@123";
     ```
 
     If the following information is displayed, the user has been created:
@@ -56,7 +56,7 @@ openGauss is running properly.
 4.  Create a database.
 
     ```
-    postgres=#  CREATE DATABASE db_tpcc OWNER joe;
+    CREATE DATABASE db_tpcc OWNER joe;
     ```
 
     If the following information is displayed, the database has been created:

@@ -11,7 +11,7 @@ The execution plan generator needs to use table statistics to generate the most 
     Do  **ANALYZE**  to the  **product\_info**  table.
 
     ```
-    postgres=# ANALYZE product_info;
+    ANALYZE product_info;
     ```
 
     ```
