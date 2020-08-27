@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0237122157_zh-cn_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>
 
-删除一个用户定义的数据类型。只有类型所有者才有删除权限。
+删除一个用户定义的数据类型。superuser、sysadmin及类型所有者才有删除权限。
 
 ## 语法格式<a name="zh-cn_topic_0237122157_zh-cn_topic_0059778403_s5d2a1a9a8c0848c5b671e837e381ef36"></a>
 
