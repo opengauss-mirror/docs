@@ -13,7 +13,7 @@ Only the database system administrator or users granted with database creation p
 
 ## Precautions<a name="en-us_topic_0237120295_en-us_topic_0059779126_section19939134010190"></a>
 
-Assume that the database encoding is SQL\_ASCII. \(You can run the  **show server\_encoding**  command to query the encoding used for storing data in the current database.\) If the database object name contains multi-byte characters \(such as Chinese\) or if the object name length exceeds the allowed maximum \(63 bytes\), the database truncates the last byte \(not the last character\) of the object name. In this case, half characters may appear.
+Assume that the database encoding is SQL\_ASCII. \(You can run the  **show server\_encoding;**  command to query the encoding used for storing data in the current database.\) If the database object name contains multi-byte characters \(such as Chinese\) or if the object name length exceeds the allowed maximum \(63 bytes\), the database truncates the last byte \(not the last character\) of the object name. In this case, half characters may appear.
 
 To resolve this problem, you need to:
 

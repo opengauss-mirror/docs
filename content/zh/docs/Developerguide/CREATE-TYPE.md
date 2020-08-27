@@ -232,7 +232,7 @@ postgres=# CREATE TYPE compfoo AS (f1 int, f2 text);
 postgres=# CREATE TABLE t1_compfoo(a int, b compfoo);
 postgres=# CREATE TABLE t2_compfoo(a int, b compfoo);
 postgres=# INSERT INTO t1_compfoo values(1,(1,'demo'));
-postgres=# INSERT INTO t2_compfoo select * from t1_typ5;
+postgres=# INSERT INTO t2_compfoo select * from t1_compfoo;
 postgres=# SELECT (b).f1 FROM t1_compfoo;
 postgres=# SELECT * FROM t1_compfoo t1 join t2_compfoo t2 on (t1.b).f1=(t1.b).f1;
 
