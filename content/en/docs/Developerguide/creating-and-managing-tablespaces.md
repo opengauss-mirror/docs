@@ -27,7 +27,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     1.  Run the following command to create user  **jack**:
 
         ```
-        postgres=# CREATE USER jack IDENTIFIED BY 'Bigdata@123';
+        CREATE USER jack IDENTIFIED BY 'Bigdata@123';
         ```
 
         If the following information is displayed, the user has been created:
@@ -39,7 +39,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     2.  Run the following command to create a tablespace:
 
         ```
-        postgres=# CREATE TABLESPACE fastspace RELATIVE LOCATION 'tablespace/tablespace_1';
+        CREATE TABLESPACE fastspace RELATIVE LOCATION 'tablespace/tablespace_1';
         ```
 
         If the following information is displayed, the tablespace has been created:
@@ -53,7 +53,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     3.  A database system administrator can run the following command to grant the permission of accessing the  **fastspace**  tablespace to user  **jack**:
 
         ```
-        postgres=# GRANT CREATE ON TABLESPACE fastspace TO jack;
+        GRANT CREATE ON TABLESPACE fastspace TO jack;
         ```
 
         If the following information is displayed, the permission has been assigned:
@@ -73,7 +73,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     -   Method 1: Run the following command to create a table in a specified tablespace:
 
         ```
-        postgres=# CREATE TABLE foo(i int) TABLESPACE fastspace;
+        CREATE TABLE foo(i int) TABLESPACE fastspace;
         ```
 
         If the following information is displayed, the table has been created:
@@ -98,13 +98,13 @@ The administrator can use tablespaces to control the layout of disks where a dat
     -   Method 1: Check the  **pg\_tablespace**  system catalog. Run the following command to view all the tablespaces defined by the system and users:
 
         ```
-        postgres=# SELECT spcname FROM pg_tablespace;
+        SELECT spcname FROM pg_tablespace;
         ```
 
     -   Method 2: Run the following meta-command of the  **gsql**  program to query the tablespaces:
 
         ```
-        postgres=# \db
+        \db
         ```
 
 
@@ -112,7 +112,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     1.  Query the current usage of the tablespace.
 
         ```
-        postgres=#  SELECT PG_TABLESPACE_SIZE('example');
+        SELECT PG_TABLESPACE_SIZE('example');
         ```
 
         Information similar to the following is displayed:

@@ -25,7 +25,7 @@ A view is different from a base table. It is only a virtual object rather than a
     Run the following command to query  **MyView**:
 
     ```
-    postgres=# SELECT * FROM MyView;
+    SELECT * FROM MyView;
     ```
 
 -   Viewing details about a specified view

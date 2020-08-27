@@ -9,7 +9,7 @@ When creating the temporary table, retain the primary key attributes of the orig
 1.  Run the  **CREATE TABLE AS**  statement to create a temporary table  **customer\_t\_temp**  for the  **customer\_t**  table.
 
     ```
-    postgres=# CREATE TABLE customer_t_temp AS SELECT * FROM customer_t;
+    CREATE TABLE customer_t_temp AS SELECT * FROM customer_t;
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -18,19 +18,19 @@ When creating the temporary table, retain the primary key attributes of the orig
 2.  Truncate the original table  **customer\_t**.
 
     ```
-    postgres=# TRUNCATE customer_t;
+    TRUNCATE customer_t;
     ```
 
 3.  Run the  **INSERT INTO...SELECT**  statement to batch insert data of the temporary table into the original table.
 
     ```
-    postgres=# INSERT INTO customer_t (SELECT * FROM customer_t_temp);
+    INSERT INTO customer_t (SELECT * FROM customer_t_temp);
     ```
 
 4.  Delete the temporary table  **customer\_t\_temp**.
 
     ```
-    postgres=# DROP TABLE customer_t_temp;
+    DROP TABLE customer_t_temp;
     ```
 
 

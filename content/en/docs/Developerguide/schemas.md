@@ -25,13 +25,13 @@ Database objects are generally created in the first schema in a database search 
 -   To view a list of all schemas, query the system catalog  **PG\_NAMESPACE**.
 
     ```
-    postgres=# SELECT * FROM pg_namespace;
+    SELECT * FROM pg_namespace;
     ```
 
 -   To view a list of tables in a schema, query the system catalog  **PG\_TABLES**. For example, the following query will return a table list from  **PG\_CATALOG**  in the schema.
 
     ```
-    postgres=# SELECT distinct(tablename),schemaname from pg_tables where schemaname = 'pg_catalog';
+    SELECT distinct(tablename),schemaname from pg_tables where schemaname = 'pg_catalog';
     ```
 
 

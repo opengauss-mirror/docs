@@ -42,7 +42,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 3.  Change the password after your first login. The initial password is set manually during openGauss database installation. For details, see "**Installing the openGauss** > **Executing Installation**" in the **Installation Guide**. You need to change the initial password. Suppose you want to change the initial password to  **Mypwd123**. You can use the following command:
 
     ```
-    postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
+    ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
     ```
 
 4.  Exit the database.

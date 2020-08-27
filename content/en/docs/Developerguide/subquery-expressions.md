@@ -125,7 +125,7 @@ Subquery expressions include the following types:
     For example:
 
     ```
-    postgres=# SELECT sr_reason_sk,sr_customer_sk  FROM tpcds.store_returns WHERE sr_customer_sk < all(SELECT d_dom FROMOM tpcds.date_dim WHERE d_dom < 10);
+    postgres=# SELECT sr_reason_sk,sr_customer_sk  FROM tpcds.store_returns WHERE sr_customer_sk < all(SELECT d_dom FROM tpcds.date_dim WHERE d_dom < 10);
      sr_reason_sk | sr_customer_sk 
     --------------+----------------
     (0 rows)

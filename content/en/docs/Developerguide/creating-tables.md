@@ -9,7 +9,7 @@ A table is created in a database and can be saved in different databases. Tables
 Run the following statement to create a table:
 
 ```
-postgres=# CREATE TABLE customer_t1
+CREATE TABLE customer_t1
 (
     c_customer_sk             integer,
     c_customer_id             char(5),

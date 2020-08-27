@@ -14,7 +14,7 @@ You can create a sequence for a column in either of the following methods:
 Method 1: Set the data type of a column to a sequence integer. For example:
 
 ```
-postgres=# CREATE TABLE T1
+CREATE TABLE T1
 (
     id    serial,
     name  text
@@ -32,7 +32,7 @@ Method 2: Create a sequence and set the initial value of the  **nextval**\('_seq
 1.  Create a sequence.
 
     ```
-    postgres=# CREATE SEQUENCE seq1 cache 100;
+    CREATE SEQUENCE seq1 cache 100;
     ```
 
     If the following information is displayed, the sequence has been created:
@@ -44,7 +44,7 @@ Method 2: Create a sequence and set the initial value of the  **nextval**\('_seq
 2.  Set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
 
     ```
-    postgres=# CREATE TABLE T2 
+    CREATE TABLE T2 
     ( 
         id   int not null default nextval('seq1'),
         name text
@@ -62,7 +62,7 @@ Method 2: Create a sequence and set the initial value of the  **nextval**\('_seq
     Associates a sequence with a specified column included in a table. In this way, the sequence will be deleted when you delete its associated column or the table where the column belongs to.
 
     ```
-    postgres=# ALTER SEQUENCE seq1 OWNED BY T2.id;
+    ALTER SEQUENCE seq1 OWNED BY T2.id;
     ```
 
     If the following information is displayed, the column has been specified:
