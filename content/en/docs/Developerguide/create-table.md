@@ -7,6 +7,7 @@
 ## Precautions<a name="en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
 -   For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](data-types-supported-by-column-store-tables.md).
+-   column-store tables do not support arrays.
 -   It is recommended that the number of column-store tables do not exceed 1000.
 -   The primary key constraint and unique constraint in the table must contain distribution keys.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.

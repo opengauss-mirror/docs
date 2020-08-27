@@ -2,22 +2,22 @@
 
 <!-- TOC -->
 
-- [设置客户端认证策略<a name="ZH-CN_TOPIC_0241704250"></a>](#设置客户端认证策略a-namezh-cn_topic_0241704250a)
-    - [语法<a name="section18231623182312"></a>](#语法a-namesection18231623182312a)
-    - [命令参考<a name="zh-cn_topic_0241234206_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#命令参考a-namezh-cn_topic_0241234206_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
-    - [示例<a name="zh-cn_topic_0241234206_section196405363211"></a>](#示例a-namezh-cn_topic_0241234206_section196405363211a)
-- [设置配置文件参数<a name="ZH-CN_TOPIC_0241704251"></a>](#设置配置文件参数a-namezh-cn_topic_0241704251a)
-    - [语法<a name="zh-cn_topic_0241234207_section12202966262"></a>](#语法a-namezh-cn_topic_0241234207_section12202966262a)
-    - [命令参考<a name="zh-cn_topic_0241234207_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>](#命令参考a-namezh-cn_topic_0241234207_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5fa)
-    - [示例<a name="zh-cn_topic_0241234207_section53021226153217"></a>](#示例a-namezh-cn_topic_0241234207_section53021226153217a)
+- [设置客户端认证策略](#设置客户端认证策略)
+    - [语法](#语法)
+    - [命令参考](#命令参考)
+    - [示例](#示例)
+- [设置配置文件参数](#设置配置文件参数)
+    - [语法](#语法-1)
+    - [命令参考](#命令参考-1)
+    - [示例](#示例-1)
 
 <!-- /TOC -->
 
-## 设置客户端认证策略<a name="ZH-CN_TOPIC_0241704250"></a>
+## 设置客户端认证策略
 
 目前openGauss配置文件“pg\_hba.conf”中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。更多配置请参见《开发者指南》。
 
-### 语法<a name="section18231623182312"></a>
+### 语法
 
 设置客户端认证策略，同时发送信号量到数据库进程。
 
@@ -32,7 +32,7 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
 >-   md5、sha256、cert：客户端证书认证
 >-   gss：kerberos认证
 
-### 命令参考<a name="zh-cn_topic_0241234206_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
+### 命令参考
 
 -   set
 
@@ -97,7 +97,7 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
     详细的参数说明请参见“pg\_hba.conf”配置文件中的描述。
 
 
-### 示例<a name="zh-cn_topic_0241234206_section196405363211"></a>
+### 示例
 
 设置客户端认证策略
 
@@ -108,11 +108,11 @@ Total instances: 2. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-## 设置配置文件参数<a name="ZH-CN_TOPIC_0241704251"></a>
+## 设置配置文件参数
 
 目前openGauss配置文件“postgresql.conf”中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。
 
-### 语法<a name="zh-cn_topic_0241234207_section12202966262"></a>
+### 语法
 
 -   同时修改配置文件中参数（postgresql.conf）
 
@@ -127,7 +127,7 @@ Success to perform gs_guc!
     ```
 
 
-### 命令参考<a name="zh-cn_topic_0241234207_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
+### 命令参考
 
 -   set
 
@@ -173,7 +173,7 @@ Success to perform gs_guc!
 
 -   -U, --keyuser=USER
 
-### 示例<a name="zh-cn_topic_0241234207_section53021226153217"></a>
+### 示例
 
 示例1：同时修改数据库节点的参数，例如修改数据库允许的最大连接数为800。修改后需要重启数据库才能生效。
 
@@ -183,5 +183,3 @@ gs_guc set -N all -I all -c "max_connections = 800"
 Total instances: 21. Failed instances: 0.
 Success to perform gs_guc!
 ```
-
-

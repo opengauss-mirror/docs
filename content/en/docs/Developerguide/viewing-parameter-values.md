@@ -28,7 +28,7 @@ openGauss uses a set of default running parameters after it is installed. You ca
         -   Run the following command to view the value of a certain parameter:
 
             ```
-            postgres=# SHOW server_version;
+            SHOW server_version;
             ```
 
             _server\_version_  indicates the database version.
@@ -36,21 +36,21 @@ openGauss uses a set of default running parameters after it is installed. You ca
         -   Run the following command to view values of all parameters:
 
             ```
-            postgres=#  SHOW ALL;
+            SHOW ALL;
             ```
 
 
     -   Method 2: Query the  **pg\_settings**  view.
         -   Run the following command to view the value of a certain parameter:
-
+    
             ```
-            postgres=# SELECT * FROM pg_settings WHERE NAME='server_version';
+            SELECT * FROM pg_settings WHERE NAME='server_version';
             ```
-
+    
         -   Run the following command to view values of all parameters:
-
+    
             ```
-            postgres=# SELECT * FROM pg_settings;
+            SELECT * FROM pg_settings;
             ```
 
 

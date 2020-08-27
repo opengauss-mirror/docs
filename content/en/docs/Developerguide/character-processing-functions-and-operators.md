@@ -164,9 +164,9 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   position\(substring in string\)
 
-    Description: Specifies the position of a substring.
+    Description: Specifies the position of a substring. The string is case sensitive.
 
-    Return type: int
+    Return type: int, 0 is returned when the string does not exist.
 
     Example:
 
@@ -1311,7 +1311,7 @@ String functions and operators provided by openGauss are for concatenating strin
     >----------------------  
     > \x736f6d652074657874  
     >(1 row)  
-    >```  
+    >```
 
 -   convert\_from\(string bytea, src\_encoding name\)
 
@@ -1417,15 +1417,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT regexp_like('ABC', '[A-Z]','i');
-     regexp_like
-    -------------
-     t
-    (1 row)
-    ```
-
-    ```
-    postgres=# SELECT regexp_like('ABC', '[A-Z]');
+    postgres=# SELECT regexp_like('ABC', '[a-z]','i');
      regexp_like
     -------------
      t

@@ -2,25 +2,25 @@
 
 <!-- TOC -->
 
-- [Confirming Connection Information<a name="EN-US_TOPIC_0254911667"></a>](#confirming-connection-informationa-nameen-us_topic_0254911667a)
-    - [Procedure<a name="en-us_topic_0242370176_en-us_topic_0237120290_en-us_topic_0062129725_section3641787792727"></a>](#procedurea-nameen-us_topic_0242370176_en-us_topic_0237120290_en-us_topic_0062129725_section3641787792727a)
-- [Connecting to a Database Locally<a name="EN-US_TOPIC_0241704254"></a>](#connecting-to-a-database-locallya-nameen-us_topic_0241704254a)
-    - [Precautions<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>](#precautionsa-nameen-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8aa)
-    - [Prerequisites<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_section2863008216400"></a>](#prerequisitesa-nameen-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_section2863008216400a)
-    - [Procedure<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>](#procedurea-nameen-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0a)
-- [Connecting to a Database Remotely<a name="EN-US_TOPIC_0241704255"></a>](#connecting-to-a-database-remotelya-nameen-us_topic_0241704255a)
-    - [Prerequisites<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_section2863008216400"></a>](#prerequisitesa-nameen-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_section2863008216400a-1)
-    - [Configuring a Whitelist Using gs\_guc<a name="section1787514475525"></a>](#configuring-a-whitelist-using-gs\_guca-namesection1787514475525a)
-    - [Installing the gsql Client and Connecting to a Database<a name="section5543131220532"></a>](#installing-the-gsql-client-and-connecting-to-a-databasea-namesection5543131220532a)
+- [Confirming Connection Information](#confirming-connection-information)
+    - [Procedure](#procedure)
+- [Connecting to a Database Locally](#connecting-to-a-database-locally)
+    - [Precautions](#precautions)
+    - [Prerequisites](#prerequisites)
+    - [Procedure](#procedure-1)
+- [Connecting to a Database Remotely](#connecting-to-a-database-remotely)
+    - [Prerequisites](#prerequisites-1)
+    - [Configuring a Whitelist Using gs\_guc](#configuring-a-whitelist-using-gs\_guc)
+    - [Installing the gsql Client and Connecting to a Database](#installing-the-gsql-client-and-connecting-to-a-database)
 
 <!-- /TOC -->
 
 
-## Confirming Connection Information<a name="EN-US_TOPIC_0254911667"></a>
+## Confirming Connection Information
 
 You can use a client tool to connect to a database through the primary node of the database. Before the connection, obtain the IP address of the primary node of the database and the port number of the server where the primary node of the database is deployed.
 
-### Procedure<a name="en-us_topic_0242370176_en-us_topic_0237120290_en-us_topic_0062129725_section3641787792727"></a>
+### Procedure
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  <a name="en-us_topic_0242370176_en-us_topic_0237120290_en-us_topic_0062129725_li736435692628"></a>Run the  **gs\_om-t status--detail**  command to query instances in the openGauss cluster.
@@ -64,19 +64,19 @@ You can use a client tool to connect to a database through the primary node of t
     **8000**  is the port number of the database primary node.
 
 
-## Connecting to a Database Locally<a name="EN-US_TOPIC_0241704254"></a>
+## Connecting to a Database Locally
 
 **gsql**  is an openGauss-provided database connection tool running in the CLI.  **gsql**  provides basic and advanced functions of databases to facilitate user operations. This section describes how to use  **gsql**  to connect to a database. For details about its usage, see the related chapter in the  _Tool Reference_.
 
-### Precautions<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
+### Precautions
 
 By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **[session\_timeout](en-us_topic_0242371486.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**. To disable the timeout setting, set  **[session\_timeout](en-us_topic_0242371486.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**  to  **0**.
 
-### Prerequisites<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_section2863008216400"></a>
+### Prerequisites
 
 Connection information has been confirmed. For details, see  [Confirming Connection Information](en-us_topic_0242370176.md).
 
-### Procedure<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>
+### Procedure
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Connect to a database.
@@ -118,15 +118,15 @@ Connection information has been confirmed. For details, see  [Confirming Connect
     ```
 
 
-## Connecting to a Database Remotely<a name="EN-US_TOPIC_0241704255"></a>
+## Connecting to a Database Remotely
 
 **gsql**  is an openGauss-provided database connection tool running in the CLI.  **gsql**  provides basic and advanced functions of databases to facilitate user operations. This section describes how to install the  **gsql**  client and use it to connect to a database. For more configurations, see the openGauss product documentation.
 
-### Prerequisites<a name="en-us_topic_0241234230_en-us_topic_0085434651_en-us_topic_0059781996_en-us_topic_0062050379_section2863008216400"></a>
+### Prerequisites
 
 Connection information has been confirmed. For details, see  [Confirming Connection Information](en-us_topic_0242370176.md).
 
-### Configuring a Whitelist Using gs\_guc<a name="section1787514475525"></a>
+### Configuring a Whitelist Using gs\_guc
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Configure the client authentication mode and enable the client to connect to the host as user  **jack**. User  **omm**  cannot be used for remote connection.
@@ -176,7 +176,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
     >-   The  **trust**  authentication mode is insecure for a connection between the openGauss and a client outside the cluster. In this case, set the authentication mode to  **sha256**.
 
 
-### Installing the gsql Client and Connecting to a Database<a name="section5543131220532"></a>
+### Installing the gsql Client and Connecting to a Database
 
 On the host, upload the client tool package and configure environment variables for the  **gsql**  client.
 

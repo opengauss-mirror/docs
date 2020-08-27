@@ -154,35 +154,35 @@ You need to create a table before inserting data to it. For details about how to
     Data values are arranged in the same order as the columns in the table and are separated by commas \(,\). Generally, column values are text values \(constants\). But column values can also be scalar expressions.
 
     ```
-    postgres=# INSERT INTO customer_t1(c_customer_sk, c_customer_id, c_first_name) VALUES (3769, 'hello', 'Grace');
+    INSERT INTO customer_t1(c_customer_sk, c_customer_id, c_first_name) VALUES (3769, 'hello', 'Grace');
     ```
 
     If you know the sequence of the columns in the table, you can obtain the same result without listing these columns. For example, the following command generates the same result as the preceding command:
 
     ```
-    postgres=# INSERT INTO customer_t1 VALUES (3769, 'hello', 'Grace');
+    INSERT INTO customer_t1 VALUES (3769, 'hello', 'Grace');
     ```
 
     If you do not know some of the column values, you can omit them. If no value is specified for a column, the column is set to the default value. For example:
 
     ```
-    postgres=# INSERT INTO customer_t1 (c_customer_sk, c_first_name) VALUES (3769, 'Grace');
+    INSERT INTO customer_t1 (c_customer_sk, c_first_name) VALUES (3769, 'Grace');
     
-    postgres=# INSERT INTO customer_t1 VALUES (3769, 'hello');
+    INSERT INTO customer_t1 VALUES (3769, 'hello');
     ```
 
     You can also specify the default value of a column or row:
 
     ```
-    postgres=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES (3769, 'hello', DEFAULT);
+    INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES (3769, 'hello', DEFAULT);
     
-    postgres=# INSERT INTO customer_t1 DEFAULT VALUES;
+    INSERT INTO customer_t1 DEFAULT VALUES;
     ```
 
 -   To insert multiple rows to a table, run the following command:
 
     ```
-    postgres=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES 
+    INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES 
         (6885, 'maps', 'Joes'),
         (4321, 'tpcds', 'Lily'),
         (9527, 'world', 'James');
@@ -193,7 +193,7 @@ You need to create a table before inserting data to it. For details about how to
 -   Assume that you have created a backup table  **customer\_t2**  for table  **customer\_t1**. To insert data from  **customer\_t1**  to  **customer\_t2**, run the following statements:
 
     ```
-    postgres=# CREATE TABLE customer_t2
+    CREATE TABLE customer_t2
     (
         c_customer_sk             integer,
         c_customer_id             char(5),
@@ -201,7 +201,7 @@ You need to create a table before inserting data to it. For details about how to
         c_last_name               char(8)
     );
     
-    postgres=# INSERT INTO customer_t2 SELECT * FROM customer_t1;
+    INSERT INTO customer_t2 SELECT * FROM customer_t1;
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -210,7 +210,7 @@ You need to create a table before inserting data to it. For details about how to
 -   To delete a backup file, run the following command:
 
     ```
-    postgres=# DROP TABLE customer_t2 CASCADE;
+    DROP TABLE customer_t2 CASCADE;
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   

@@ -4,7 +4,7 @@
 
 ## Precautions<a name="en-us_topic_0237120292_en-us_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
 
-By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **[session\_timeout](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**. To disable the timeout setting, set  **[session\_timeout](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**  to  **0**.
+By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **[session\_timeout](security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**. To disable the timeout setting, set  **[session\_timeout](security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**  to  **0**.
 
 ## Prerequisites<a name="en-us_topic_0237120292_en-us_topic_0062050379_section2863008216400"></a>
 
@@ -39,10 +39,10 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
     **Non-SSL connection**  indicates that the database is not connected in SSL mode. If high security is required,  [connect to the database in SSL mode](establishing-secure-tcp-ip-connections-in-ssl-mode.md).
 
-3.  Change the password after your first login. The initial password is set manually during openGauss database installation. For details, see the  _Installation Guide_. You need to change the initial password. Suppose you want to change the initial password to  **Mypwd123**. You can use the following command:
+3.  Change the password after your first login. The initial password is set manually during openGauss database installation. For details, see "**Installing the openGauss** > **Executing Installation**" in the **Installation Guide**. You need to change the initial password. Suppose you want to change the initial password to  **Mypwd123**. You can use the following command:
 
     ```
-    postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
+    ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
     ```
 
 4.  Exit the database.

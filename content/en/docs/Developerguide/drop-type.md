@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0237122157_en-us_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>
 
-**DROP TYPE**  deletes a user-defined data type. Only the owner of a type has the  **DROP TYPE**  permission.
+**DROP TYPE**  deletes a user-defined data type. Superuser, sysadmin and the owner of a type has the  **DROP TYPE**  permission.
 
 ## Syntax<a name="en-us_topic_0237122157_en-us_topic_0059778403_s5d2a1a9a8c0848c5b671e837e381ef36"></a>
 

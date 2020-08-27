@@ -133,7 +133,7 @@ Permissions of a role include the permissions directly granted to the role, perm
 
 If  **GRANT OPTION FOR**  is specified, the permission cannot be granted to others, but permission itself is not revoked.
 
-If user A holds the  **UPDATE**  permissions on a table and the  **WITH GRANT OPTION**  and has granted them to user B, the permissions that user B holds are called dependent permissions. If the permissions or the grant option held by user A is revoked, the dependent permissions still exist. Those dependent permissions are also revoked if  **CASCADE**  is specified.
+If user A holds the **UPDATE** permissions on a table and the **WITH GRANT OPTION** and has granted them to user B, the permissions that user B holds are called dependent permissions. When user A's permission or grant option is revoked, **CASCADE** must be specified to revoke all dependent permissions.
 
 A user can only revoke permissions that were granted directly by that user. For example, if user A has granted permission with grant option \(**WITH ADMIN OPTION**\) to user B, and user B has in turn granted it to user C, then user A cannot revoke the permission directly from C. However, user A can revoke the grant option held by user B and use  **CASCADE**. In this way, the permission of user C is automatically revoked. For another example, if both user A and user B have granted the same permission to C, A can revoke his own grant but not B's grant, so C will still effectively have the permission.
 

@@ -70,11 +70,15 @@ CREATE DATABASE database_name
 
     Value range: a valid character type
 
--   **DBCOMPATIBILITY \[ = \] compatibilty\_type**
+- **DBCOMPATIBILITY \[ = \] compatibilty\_type**
 
-    Specifies the type of the compatible database.
+  Specifies the type of the compatible database.
 
-    **Value range**: A, B, and C , indicating  **O**,  **MY**, and  **TD**  databases, respectively.
+  **Value range**: A, B, and C , indicating  **O**,  **MY**, and  **TD**  databases, respectively.
+
+  ![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+
+  When  DBCOMPATIBILITY is set to A, an empty string is considered as NULL.
 
 -   **TABLESPACE \[ = \] tablespace\_name**
 

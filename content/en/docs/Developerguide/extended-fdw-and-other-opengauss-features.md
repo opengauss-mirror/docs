@@ -9,7 +9,7 @@ We refer to all the components that are in use or are accessing the MOT storage 
 The following figure shows how the MOT storage engine is embedded inside openGauss and its bi‑directional access to database functionality.
 
 **Figure  1**  MOT Storage Engine Embedded inside openGauss – FDW Access to External Databases<a name="fig391615571359"></a>  
-![](figures/mot-architecture.png "mot-architecture")
+<img src="figures/mot-architecture.png" title="mot-architecture" style="zoom:50%;" />
 
 We have extended the capabilities of FDW by extending and modifying the FdwRoutine structure in order to introduce features and calls that were not required before the introduction of MOT. For example, support for The following new features was added – Add Index, Drop Index/Table, Truncate, Vacuum and Table/Index Memory Statistics. A significant emphasis was put on integration with openGauss logging, replication and checkpointing mechanisms in order to provide consistency for cross-table transactions through failures. In this case, the MOT itself sometimes initiates calls to openGauss functionality through the FDW layer.
 

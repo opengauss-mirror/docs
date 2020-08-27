@@ -45,7 +45,7 @@ PG\_ATTRDEF系统表存储列的默认值。
 </td>
 <td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>人类可读的缺省值的内部表现形式。</p>
+<td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>可读的缺省值的内部表现形式。</p>
 </td>
 </tr>
 </tbody>

@@ -7,18 +7,18 @@ SQL statements can only access and delete an independent row by declaring condit
 For example, to delete all the rows whose  **c\_customer\_sk**  column is  **3869**  from the table  **customer\_t1**, run the following command:
 
 ```
-postgres=# DELETE FROM customer_t1 WHERE c_customer_sk = 3869;
+DELETE FROM customer_t1 WHERE c_customer_sk = 3869;
 ```
 
 To delete all rows from the table, run either of the following commands:
 
 ```
-postgres=# DELETE FROM customer_t1;
+DELETE FROM customer_t1;
 ```
 
 ```
 or,
-postgres=# TRUNCATE TABLE customer_t1;
+TRUNCATE TABLE customer_t1;
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -27,6 +27,6 @@ postgres=# TRUNCATE TABLE customer_t1;
 To delete a table, run the following command:
 
 ```
-postgres=# DROP TABLE customer_t1;
+DROP TABLE customer_t1;
 ```
 

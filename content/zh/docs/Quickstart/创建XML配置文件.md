@@ -6,17 +6,17 @@
 
 <!-- TOC -->
 
-- [配置数据库名称及各项目录<a name="ZH-CN_TOPIC_0270171700"></a>](#配置数据库名称及各项目录a-namezh-cn_topic_0270171700a)
-- [配置Host基本信息<a name="ZH-CN_TOPIC_0270171701"></a>](#配置host基本信息a-namezh-cn_topic_0270171701a)
-- [配置数据库主节点信息<a name="ZH-CN_TOPIC_0270171702"></a>](#配置数据库主节点信息a-namezh-cn_topic_0270171702a)
-- [示例<a name="ZH-CN_TOPIC_0270171703"></a>](#示例a-namezh-cn_topic_0270171703a)
-    - [单节点配置文件<a name="zh-cn_topic_0249784528_section1698454873416"></a>](#单节点配置文件a-namezh-cn_topic_0249784528_section1698454873416a)
-    - [一主一备配置文件<a name="zh-cn_topic_0249784528_section946242113712"></a>](#一主一备配置文件a-namezh-cn_topic_0249784528_section946242113712a)
+- [配置数据库名称及各项目录](#配置数据库名称及各项目录)
+- [配置Host基本信息](#配置host基本信息)
+- [配置数据库主节点信息](#配置数据库主节点信息)
+- [示例](#示例)
+    - [单节点配置文件](#单节点配置文件)
+    - [一主一备配置文件](#一主一备配置文件)
 
 <!-- /TOC -->
 
 
-## 配置数据库名称及各项目录<a name="ZH-CN_TOPIC_0270171700"></a>
+## 配置数据库名称及各项目录
 
 在script/gspylib/etc/conf/cluster\_config\_template.xml获取XML文件模板。加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
 
@@ -115,7 +115,7 @@
 </tbody>
 </table>
 
-## 配置Host基本信息<a name="ZH-CN_TOPIC_0270171701"></a>
+## 配置Host基本信息
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >每台Host服务器都必须有如下信息，如下示例以node1为例。
@@ -178,16 +178,16 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。
->示例：xml配置文件中同时配置backIp1和backIp2参数：
->在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。
->```
-><PARAM name="backIp1" value="192.168.0.1"/>
-><PARAM name="backIp2" value="192.168.0.2"/>
->```
+![](public_sys-resources/icon-note.gif) **说明：** 
+配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。
+示例：xml配置文件中同时配置backIp1和backIp2参数：
+在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。
+```
+<PARAM name="backIp1" value="192.168.0.1"/>
+<PARAM name="backIp2" value="192.168.0.2"/>
+```
 
-## 配置数据库主节点信息<a name="ZH-CN_TOPIC_0270171702"></a>
+## 配置数据库主节点信息
 
 加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
 
@@ -264,9 +264,9 @@
 </tbody>
 </table>
 
-## 示例<a name="ZH-CN_TOPIC_0270171703"></a>
+## 示例
 
-### 单节点配置文件<a name="zh-cn_topic_0249784528_section1698454873416"></a>
+### 单节点配置文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -305,7 +305,7 @@
 </ROOT>
 ```
 
-### 一主一备配置文件<a name="zh-cn_topic_0249784528_section946242113712"></a>
+### 一主一备配置文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

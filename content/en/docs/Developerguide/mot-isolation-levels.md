@@ -13,37 +13,38 @@ Even though MOT is fully ACID-compliant \(as described in the section\), not all
 </thead>
 <tbody><tr id="row35425694"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p50908955"><a name="p50908955"></a><a name="p50908955"></a>READ UNCOMMITTED</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p29984672"><a name="p29984672"></a><a name="p29984672"></a><strong id="b1426598"><a name="b1426598"></a><a name="b1426598"></a>Not supported by MOT.</strong></p>
+<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p29984672"><a name="p29984672"></a><a name="p29984672"></a><a name="b1426598"></a><a name="b1426598"></a>Not supported by MOT.</p>
 </td>
 </tr>
 <tr id="row12839382"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p33357028"><a name="p33357028"></a><a name="p33357028"></a>READ COMMITTED</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p17564787"><a name="p17564787"></a><a name="p17564787"></a><strong id="b23865363"><a name="b23865363"></a><a name="b23865363"></a>Supported by MOT.</strong></p>
+<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p17564787"><a name="p17564787"></a><a name="p17564787"></a><a name="b23865363"></a><a name="b23865363"></a>Supported by MOT.</p>
 <p id="p13461675"><a name="p13461675"></a><a name="p13461675"></a>The READ COMMITTED isolation level that guarantees that any data that is read was already <em id="i54046213"><a name="i54046213"></a><a name="i54046213"></a>committed</em> when it was read. It simply restricts the reader from seeing any intermediate, uncommitted or <em id="i16653875"><a name="i16653875"></a><a name="i16653875"></a>dirty </em>reads. Data is free to be changed after it has been read so that READ COMMITTED does not guarantee that if the transaction re-issues the read, that the s<em id="i15667148"><a name="i15667148"></a><a name="i15667148"></a>ame</em> data will be found.</p>
 </td>
 </tr>
 <tr id="row6786611"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p12844628"><a name="p12844628"></a><a name="p12844628"></a>SNAPSHOT</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p33781949"><a name="p33781949"></a><a name="p33781949"></a><strong id="b35602093"><a name="b35602093"></a><a name="b35602093"></a>Not supported by MOT.</strong></p>
+<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p33781949"><a name="p33781949"></a><a name="p33781949"></a><a name="b35602093"></a><a name="b35602093"></a>Not supported by MOT.</p>
 <p id="p51983383"><a name="p51983383"></a><a name="p51983383"></a>The SNAPSHOT isolation level makes the same guarantees as SERIALIZABLE, except that concurrent transactions can modify the data. Instead, it forces every reader to see its own version of the world (its own <em id="i65197270"><a name="i65197270"></a><a name="i65197270"></a>snapshot</em>). This makes it very easy to program, plus it is very scalable, because it does not block concurrent updates. However, in many implementations this isolation level requires higher server resources.</p>
 </td>
 </tr>
 <tr id="row49904522"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p15734461"><a name="p15734461"></a><a name="p15734461"></a>REPEATABLE READ</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p66531800"><a name="p66531800"></a><a name="p66531800"></a><strong id="b61915292"><a name="b61915292"></a><a name="b61915292"></a>Supported by MOT.</strong></p>
+<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p66531800"><a name="p66531800"></a><a name="p66531800"></a><a name="b61915292"></a><a name="b61915292"></a>Supported by MOT.</p>
 <p id="p20366724"><a name="p20366724"></a><a name="p20366724"></a>REPEATABLE READ is a higher isolation level that (in addition to the guarantees of the READ COMMITTED isolation level) guarantees that any data that is read <em id="i49082792"><a name="i49082792"></a><a name="i49082792"></a>cannot change</em>. If a transaction reads the same data again, it will find the same previously read data in place, unchanged and available to be read.</p>
 <p id="p39091944"><a name="p39091944"></a><a name="p39091944"></a>Because of the optimistic model, concurrent transactions are not prevented from updating rows read by this transaction. Instead, at commit time this transaction validates that the REPEATABLE READ isolation level has not been violated. If it has, this transaction is rolled back and must be retried.</p>
 </td>
 </tr>
 <tr id="row16283183"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p43869467"><a name="p43869467"></a><a name="p43869467"></a>SERIALIZABLE</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p63765972"><a name="p63765972"></a><a name="p63765972"></a><strong id="b37022841"><a name="b37022841"></a><a name="b37022841"></a>Not supported by MOT</strong>.</p>
+<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p63765972"><a name="p63765972"></a><a name="p63765972"></a><a name="b37022841"></a><a name="b37022841"></a>Not supported by MOT.</p>
 <p id="p64770113"><a name="p64770113"></a><a name="p64770113"></a>Serializable isolation makes an even stronger guarantee. In addition to everything that the REPEATABLE READ isolation level guarantees, it also guarantees that no new data can be seen by a subsequent read.</p>
 <p id="p46060111"><a name="p46060111"></a><a name="p46060111"></a>It is named <em id="i11887819"><a name="i11887819"></a><a name="i11887819"></a>SERIALIZABLE</em> because the isolation is so strict that it is almost a bit like having the transactions run in series rather than concurrently.</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 The following table shows the concurrency side effects enabled by the different isolation levels.
 

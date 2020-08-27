@@ -107,7 +107,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 postgres=# SET search_path TO tpcds, public;
 
 -- Set the date style to the traditional POSTGRES style (date placed before month).
-postgres=# SET datestyle TO postgres;
+postgres=# SET datestyle TO postgres,dmy;
 ```
 
 ## Helpful Links<a name="en-us_topic_0237122186_en-us_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>

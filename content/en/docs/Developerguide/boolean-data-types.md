@@ -27,7 +27,7 @@
 
 Valid literal values for the "true" state include:
 
-TRUE, 't', 'true', 'y', 'yes', '1', 1, 'TRUE'
+TRUE, 't', 'true', 'y', 'yes', '1', 1, 'TRUE',true
 
 Valid literal values for the "false" state include:
 

@@ -37,11 +37,11 @@ The PostgreSQL Foreign Data Wrapper \(FDW\) feature enables the creation of fore
 openGauss relies on the PostgreSQL Foreign Data Wrappers \(FDW\) and Index support so that SQL is entirely covered, including stored procedures, user defined functions, system functions calls.
 
 **Figure  1**  MOT Architecture<a name="fig14123135803713"></a>  
-![](figures/mot-architecture.png "mot-architecture")
+<img src="figures/mot-architecture.png" title="mot-architecture" style="zoom:50%;" />
 
 In the diagram above, the MOT engine is represented in green, while the existing openGauss \(based on Postgres\) components are represented in the top part of this diagram in blue. As you can see, the Foreign Data Wrapper \(FDW\) mediates between the MOT engine and the openGauss components.
 
-**MOT-Related FDW Customizations**
+### MOT-Related FDW Customizations
 
 Integrating MOT through FDW enables the reuse of the most upper layer openGauss functionality and therefore significantly shortened MOT's time-to-market without compromising SQL coverage.
 
