@@ -36,16 +36,20 @@ Memory Units are represented as follows –
 -   GB – Gigabytes
 -   TB – Terabytes
 
+If no memory units are specified, then bytes are assumed.
+
 Some memory units are represented as a percentage of the  **max\_process\_memory**  setting that is configured in  **postgresql.conf**. For example –  **20%**.
 
 Time units are represented as follows –
 
--   us – Microseconds \(or micros\)
+-   us – microseconds \(or micros\)
 -   ms – milliseconds \(or millis\)
--   s – Seconds \(or secs\)
--   min – Minutes \(or mins\)
--   h – Hours
--   d – Days
+-   s – seconds \(or secs\)
+-   min – minutes \(or mins\)
+-   h – hours
+-   d – days
+
+If no time units are specified, then microseconds are assumed.
 
 ## REDO LOG \(MOT\)<a name="section361563811235"></a>
 
@@ -64,7 +68,7 @@ Time units are represented as follows –
 -   **group\_commit\_size = 16**
 -   **group\_commit\_timeout = 10 ms**
 
-    This option is only relevant when the MOT engine has been configured to  **Synchronous Group Commit**  logging. This means that the synchronous\_commit setting in postgresql.conf is configured to True and theenable\_group\_commit parameter in the mot.conf configuration file is configured to True.
+    This option is only relevant when the MOT engine has been configured to  **Synchronous Group Commit**  logging. This means that the synchronous\_commit setting in postgresql.conf is configured to True and the enable\_group\_commit parameter in the mot.conf configuration file is configured to True.
 
     Defines which of the following determines when a group of transactions is recorded in the WAL Redo Log –
 
@@ -98,7 +102,7 @@ Time units are represented as follows –
 
     Specifies the number of workers to use during checkpoint.
 
-    Checkpoint is performed in parallel by several MOT engine workers. The quantity of workers may substantially affect the overall performance of the entire checkpoint operation, as well as the operation of other running transactions. To achieve a shorter checkpoint duration, a larger number of workers should be used, up to the optimal number \(which varies based on the hardware and workload\). However, be aware that if this number is too large, it may negatively impact the execution time of other running transactions. Keep this number as low as possible to minimize the effect on the runtime of other running transactions. When this number is too high, longer checkpoint durations occur.
+    Checkpoint is performed in parallel by several MOT engine workers. The quantity of workers may substantially affect the overall performance of the entire checkpoint operation, as well as the operation of other running transactions. To achieve a shorter checkpoint duration, a larger number of workers should be used, up to the optimal number \(which varies based on the hardware and workload\). However, be aware that if this number is too large, it may negatively impact the execution time of other running transactions. Keep this number as low as possible to minimize the effect on the runtime of other running transactions, but at the cost of longer checkpoint duration.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >You may refer to the  [MOT Checkpoints](mot-durability.md#section182761535131617)section for more information about configuration settings.
@@ -108,7 +112,7 @@ Time units are represented as follows –
 
 -   **checkpoint\_recovery\_workers = 3**
 
-    Specifies the number of workers \(threads\) to use during checkpoint data recovery. Each MOT engine worker runs on its own core and can process a different table in parallel by reading it into memory. For example, while the default is three-course, you might prefer to set this parameter to them number of cores that are available for processing. After recovery these threads are stopped and killed.
+    Specifies the number of workers \(threads\) to use during checkpoint data recovery. Each MOT engine worker runs on its own core and can process a different table in parallel by reading it into memory. For example, while the default is three-course, you might prefer to set this parameter to the number of cores that are available for processing. After recovery these threads are stopped and killed.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >You may refer to the  [MOT Recovery](mot-recovery.md)  section for more information about configuration settings.
@@ -203,6 +207,12 @@ Time units are represented as follows –
 
 
 ## MEMORY \(MOT\)<a name="section1223551495"></a>
+
+-   **enable\_numa = true**
+
+    Specifies whether to use NUMA-aware memory allocation.
+
+    When disabled, all affinity configurations are disabled as well.
 
 -   **max\_threads = 1024**
 
@@ -309,28 +319,22 @@ Time units are represented as follows –
 
     Configures the maximum memory limit for a single session in the MOT engine.
 
-    Specifying a percentage value relates to the total defined by the  **max\_process\_memory**  configured in  **postgresql.conf**.
-
     Typically, sessions in the MOT engine can allocate as much local memory as needed, so long as the local memory limit is not exceeded. To prevent a single session from taking too much memory, and thereby denying memory from other sessions, this configuration item is used to restrict small session-local memory allocations \(up to 1,022 KB\).
 
     Make sure that this configuration item does not affect large or huge session-local memory allocations.
 
     A value of zero denotes no restriction on any session-local small allocations per session, except for the restriction arising from the local memory allocation limit configured by  **max\_mot\_local\_memory**.
 
+    Note: Percentage values cannot be set for this configuration item.
+
+
 -   **min\_mot\_session\_memory = 0 MB**
 
     Configures the minimum memory reservation for a single session in the MOT engine.
 
-    Specifying a percentage value relates to the total defined by the  **max\_process\_memory**  configured in  **postgresql.conf**.
-
     This value is used to preallocate memory during session creation, as well as to ensure that a minimum amount of memory is available for the session to perform its normal operation.
 
-
--   **high\_red\_mark\_percent = 90**
-
-    Configures the high red mark for memory allocations.
-
-    This is calculated as a percentage of the maximum for the MOT engine, as configured by  **max\_mot\_memory**. The default is 90, meaning 90%. When total memory usage by MOT reaches this level, only destructive operations are permitted. All other operations report an error to the user.
+    Note: Percentage values cannot be set for this configuration item.
 
 
 -   **session\_large\_buffer\_store\_size = 0 MB**
@@ -338,6 +342,8 @@ Time units are represented as follows –
     Configures the large buffer store for sessions.
 
     When a user session executes a query that requires a lot of memory \(for example, when using many rows\), the large buffer store is used to increase the certainty level that such memory is available and to serve this memory request more quickly. Any memory allocation for a session exceeding 1,022 KB is considered as a large memory allocation. If the large buffer store is not used or is depleted, such allocations are treated as huge allocations that are served directly from the kernel.
+
+    Note: Percentage values cannot be set for this configuration item.
 
 
 -   **session\_large\_buffer\_store\_max\_object\_size = 0 MB**
@@ -348,6 +354,8 @@ Time units are represented as follows –
 
     This size cannot exceed 1/8 of the  **session\_large\_buffer\_store\_size**. If it does, it is adjusted to the maximum possible.
 
+    Note: Percentage values cannot be set for this configuration item.
+
 
 -   **session\_max\_huge\_object\_size = 1 GB**
 
@@ -356,6 +364,8 @@ Time units are represented as follows –
     Huge allocations are served directly from the kernel and therefore are not guaranteed to succeed.
 
     This value also pertains to global \(meaning not session-related\) memory allocations.
+
+    Note: Percentage values cannot be set for this configuration item.
 
 
 ## GARBAGE COLLECTION \(MOT\)<a name="section82711330317"></a>
@@ -411,22 +421,16 @@ Time units are represented as follows –
     Limits the number of JIT queries allowed per user session.
 
 
-## STORAGE \(MOT\)<a name="section16572933681"></a>
+## Default mot.conf<a name="section1973591616715"></a>
 
-**allow\_index\_on\_nullable\_column = true**
-
-Specifies whether it is permitted to define an index over a nullable column.
-
-## Default MOT.conf<a name="section1973591616715"></a>
-
-The minimum settings and configuration specify to point the  **Postgresql.conf**  file to the location of the  **MOT.conf**  file –
+The minimum settings and configuration specify to point the  **postgresql.conf**  file to the location of the  **mot.conf**  file –
 
 ```
-Postgresql.conf 
-mot_config_file = '/tmp/gauss/ MOT.conf'
+postgresql.conf 
+mot_config_file = '/tmp/gauss/mot.conf'
 ```
 
 Ensure that the value of the max\_process\_memory setting is sufficient to include the global \(data and index\) and local \(sessions\) memory of MOT tables.
 
-The default content of  **MOT.conf**  is sufficient to get started. The settings can be optimized later.
+The default content of  **mot.conf**  is sufficient to get started. The settings can be optimized later.
 
