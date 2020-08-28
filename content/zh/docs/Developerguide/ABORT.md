@@ -8,7 +8,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_sa23945b94808484d82b947d70ee28dc6"></a>
 
-在事务外部执行ABORT语句不会影响事务的执行，但是会产生一个警告信息。
+在事务外部执行ABORT语句不会影响事务的执行，但是会抛出一个NOTICE信息。
 
 ## 语法格式<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_s36354f226d754e5bb76ed954add5eea3"></a>
 

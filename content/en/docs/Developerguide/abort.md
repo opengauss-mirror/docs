@@ -8,7 +8,7 @@ This command is equivalent to  [ROLLBACK](rollback.md), and is present only for 
 
 ## Precautions<a name="en-us_topic_0237122053_en-us_topic_0059778271_sa23945b94808484d82b947d70ee28dc6"></a>
 
-**ABORT**  has no impact outside a transaction, but will provoke a warning.
+**ABORT**  has no impact outside a transaction, but will provoke a notice.
 
 ## Syntax<a name="en-us_topic_0237122053_en-us_topic_0059778271_s36354f226d754e5bb76ed954add5eea3"></a>
 
