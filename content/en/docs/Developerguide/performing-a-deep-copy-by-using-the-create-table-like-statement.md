@@ -7,25 +7,25 @@ Run the  **CREATE TABLE LIKE**  statement to create a copy of the original table
 1.  Run the  **CREATE TABLE LIKE**  statement to create the copy  **customer\_t\_copy**  of the  **customer\_t**  table.
 
     ```
-    postgres=# CREATE TABLE customer_t_copy (LIKE customer_t);
+    CREATE TABLE customer_t_copy (LIKE customer_t);
     ```
 
 2.  Run the  **INSERT INTO...SELECT**  statement to batch insert data of the original table into the copy.
 
     ```
-    postgres=# INSERT INTO customer_t_copy (SELECT * FROM customer_t);
+    INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
 3.  Delete the original table.
 
     ```
-    postgres=# DROP TABLE customer_t;
+    DROP TABLE customer_t;
     ```
 
 4.  Run the  **ALTER TABLE**  statement to rename the copy to the name of the original table.
 
     ```
-    postgres=# ALTER TABLE customer_t_copy RENAME TO customer_t;
+    ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
 
 

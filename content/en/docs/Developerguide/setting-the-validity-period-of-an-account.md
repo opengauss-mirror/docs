@@ -30,7 +30,7 @@ To enable a user not within the validity period to use its account, set a new va
 3.  Run the following command to create a user and specify the start time and end time:
 
     ```
-    postgres=# CREATE USER joe WITH PASSWORD 'Bigdata@123' VALID BEGIN '2015-10-10 08:00:00' VALID UNTIL '2016-10-10 08:00:00';
+    CREATE USER joe WITH PASSWORD 'Bigdata@123' VALID BEGIN '2015-10-10 08:00:00' VALID UNTIL '2016-10-10 08:00:00';
     ```
 
     The user is created if the following information is displayed:
@@ -42,7 +42,7 @@ To enable a user not within the validity period to use its account, set a new va
 4.  If the user is not within the specified validity period, run the following command to set the start time and end time of a new validity period.
 
     ```
-    postgres=# ALTER USER joe WITH VALID BEGIN '2016-11-10 08:00:00' VALID UNTIL '2017-11-10 08:00:00';
+    ALTER USER joe WITH VALID BEGIN '2016-11-10 08:00:00' VALID UNTIL '2017-11-10 08:00:00';
     ```
 
     The start time and end time of the new validity period is set successfully if the following information is displayed:

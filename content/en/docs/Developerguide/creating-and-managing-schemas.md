@@ -20,7 +20,7 @@ Schemas function as models. Schema management allows multiple users to use the s
     -   Run the following command to create a schema:
 
         ```
-        postgres=# CREATE SCHEMA myschema;
+        CREATE SCHEMA myschema;
         ```
 
         If the following information is displayed, the schema named  **myschema**  is successfully created:
@@ -34,7 +34,7 @@ Schemas function as models. Schema management allows multiple users to use the s
     -   Run the following command to create a schema and specify the owner:
 
         ```
-        postgres=# CREATE SCHEMA myschema AUTHORIZATION omm;
+        CREATE SCHEMA myschema AUTHORIZATION omm;
         ```
 
         If the following information is displayed, the  **myschema**  schema that belongs to  **omm**  is created successfully:

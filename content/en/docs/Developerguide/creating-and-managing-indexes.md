@@ -26,7 +26,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
     -   Create the partitioned table index  **tpcds\_web\_returns\_p2\_index1**  without specifying the partition name.
 
         ```
-        postgres=# CREATE INDEX tpcds_web_returns_p2_index1 ON tpcds.web_returns_p2 (ca_address_id) LOCAL;
+        CREATE INDEX tpcds_web_returns_p2_index1 ON tpcds.web_returns_p2 (ca_address_id) LOCAL;
         ```
 
         If the following information is displayed, the table has been created:
@@ -38,7 +38,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
     -   Create the partitioned table index  **tpcds\_web\_returns\_p2\_index2**  with the partition name specified.
 
         ```
-        postgres=# CREATE INDEX tpcds_web_returns_p2_index2 ON tpcds.web_returns_p2 (ca_address_sk) LOCAL
+        CREATE INDEX tpcds_web_returns_p2_index2 ON tpcds.web_returns_p2 (ca_address_sk) LOCAL
         (
             PARTITION web_returns_p2_P1_index,
             PARTITION web_returns_p2_P2_index TABLESPACE example3,
@@ -62,7 +62,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
     -   Change the tablespace of index partition  **web\_returns\_p2\_P2\_index**  to  **example1**.
 
         ```
-        postgres=# ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P2_index TABLESPACE example1;
+        ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P2_index TABLESPACE example1;
         ```
 
         If the following information is displayed, the tablespace of the index partition has been modified:
@@ -74,7 +74,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
     -   Change the tablespace of index partition  **web\_returns\_p2\_P3\_index**  to  **example2**.
 
         ```
-        postgres=# ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P3_index TABLESPACE example2;
+        ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P3_index TABLESPACE example2;
         ```
 
         If the following information is displayed, the tablespace of the index partition has been modified:
@@ -89,7 +89,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
     Rename the name of index partition  **web\_returns\_p2\_P8\_index**  to  **web\_returns\_p2\_P8\_index\_new**.
 
     ```
-    postgres=# ALTER INDEX tpcds.tpcds_web_returns_p2_index2 RENAME PARTITION web_returns_p2_P8_index TO web_returns_p2_P8_index_new;
+    ALTER INDEX tpcds.tpcds_web_returns_p2_index2 RENAME PARTITION web_returns_p2_P8_index TO web_returns_p2_P8_index_new;
     ```
 
     If the following information is displayed, the index partition has been renamed:
@@ -102,13 +102,13 @@ For details about how to create a partitioned table, see  [Creating and Managing
     -   Run the following command to query all indexes defined by the system and users:
 
         ```
-        postgres=# SELECT RELNAME FROM PG_CLASS WHERE RELKIND='i';
+        SELECT RELNAME FROM PG_CLASS WHERE RELKIND='i';
         ```
 
     -   Run the following command to query information about a specified index:
 
         ```
-        postgres=# \di+ tpcds.tpcds_web_returns_p2_index2 
+        \di+ tpcds.tpcds_web_returns_p2_index2 
         ```
 
 
@@ -177,7 +177,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
     For the  **tpcds.customer\_address\_bak**  table, you need to perform the following operations frequently:
 
     ```
-    postgres=# SELECT ca_address_sk FROM tpcds.customer_address_bak WHERE ca_address_sk=14888;
+    SELECT ca_address_sk FROM tpcds.customer_address_bak WHERE ca_address_sk=14888;
     ```
 
     Generally, the database system needs to scan the  **tpcds.customer\_address\_bak**  table row by row to find all matched tuples. If the size of the  **tpcds.customer\_address\_bak**  table is large but only a few \(possibly zero or one\) of the  **WHERE**  conditions are met, the performance of this sequential scan is low. If the database system uses an index to maintain the  **ca\_address\_sk**  attribute, the database system only needs to search a few tree layers for the matched tuples. This greatly improves data query performance. Furthermore, indexes can improve the update and deletion operation performance in the database.
@@ -194,7 +194,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
     Assume you need to frequently query records with  **ca\_address\_sk**  being  **5050**  and  **ca\_street\_number**  smaller than  **1000**  in the  **tpcds.customer\_address\_bak**  table. Run the following commands:
 
     ```
-    postgres=# SELECT ca_address_sk,ca_address_id FROM tpcds.customer_address_bak WHERE ca_address_sk = 5050 AND ca_street_number < 1000;
+    SELECT ca_address_sk,ca_address_id FROM tpcds.customer_address_bak WHERE ca_address_sk = 5050 AND ca_street_number < 1000;
     ```
 
     Run the following command to define a composite index on  **ca\_address\_sk**  and  **ca\_street\_number**  columns:
@@ -218,7 +218,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
     Assume that you need to frequently query records with  **ca\_street\_number**  smaller than  **1000**, run the following command:
 
     ```
-    postgres=# SELECT * FROM tpcds.customer_address_bak WHERE trunc(ca_street_number) < 1000;
+    SELECT * FROM tpcds.customer_address_bak WHERE trunc(ca_street_number) < 1000;
     ```
 
     The following expression index can be created for this query task:

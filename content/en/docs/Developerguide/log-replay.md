@@ -54,7 +54,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 1 to 2147483647
 
-**Default value**:  **1**
+**Default value**:  **4**
 
 ## enable\_page\_lsn\_check<a name="en-us_topic_0237124709_section172708441584"></a>
 

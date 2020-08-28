@@ -13,13 +13,13 @@ A system administrator is an account with the  **SYSADMIN**  attribute. By defau
 To create a system administrator, connect to the database as the initial user or a system administrator and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **SYSADMIN**  specified.
 
 ```
-postgres=# CREATE USER sysadmin WITH SYSADMIN password "Bigdata@123";
+CREATE USER sysadmin WITH SYSADMIN password "Bigdata@123";
 ```
 
 or
 
 ```
-postgres=# ALTER USER joe SYSADMIN;
+ALTER USER joe SYSADMIN;
 ```
 
 To run the  **ALTER USER**  statement, the user must exist.

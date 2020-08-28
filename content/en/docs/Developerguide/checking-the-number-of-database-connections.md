@@ -10,7 +10,8 @@ If the number of connections reaches its upper limit, new connections cannot be 
 
 ## Procedure<a name="en-us_topic_0237121094_en-us_topic_0059779140_sde106f089f2c443e869945d573576c09"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+
 2.  Run the following command to connect to the database:
 
     ```
@@ -63,7 +64,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
     <a name="en-us_topic_0237121094_en-us_topic_0059779140_s6ef5ec790c7642d7809c2b134f4f64c9"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_s6ef5ec790c7642d7809c2b134f4f64c9"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_s6ef5ec790c7642d7809c2b134f4f64c9"><span id="en-us_topic_0237121094_text1943212533496"><a name="en-us_topic_0237121094_text1943212533496"></a><a name="en-us_topic_0237121094_text1943212533496"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a47c7c52eace94312a5ec6bea1371dfd6"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a47c7c52eace94312a5ec6bea1371dfd6"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a47c7c52eace94312a5ec6bea1371dfd6"></a>SELECT ROLNAME,ROLCONNLIMIT FROM PG_ROLES WHERE ROLNAME='</strong><span id="en-us_topic_0237121094_text62961221155016"><a name="en-us_topic_0237121094_text62961221155016"></a><a name="en-us_topic_0237121094_text62961221155016"></a>omm</span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a44debaef80d74b9ca411688bacdda8a4"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a44debaef80d74b9ca411688bacdda8a4"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a44debaef80d74b9ca411688bacdda8a4"></a>';</strong>
      rolname  | rolconnlimit
     ----------+--------------
-     <span id="en-us_topic_0237121094_text16246192217504"><a name="en-us_topic_0237121094_text16246192217504"></a><a name="en-us_topic_0237121094_text16246192217504"></a>omm</span> |           -1
+     <span id="en-us_topic_0237121094_text16246192217504"><a name="en-us_topic_0237121094_text16246192217504"></a><a name="en-us_topic_0237121094_text16246192217504"></a>omm</span> |          -1
     (1 row)</pre>
     </td>
     </tr>
@@ -79,20 +80,18 @@ If the number of connections reaches its upper limit, new connections cannot be 
     	        FROM pg_stat_get_activity(NULL) AS sa
     	        LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
     	        WHERE sa.application_name &lt;&gt; 'JobScheduler';
-    <span id="en-us_topic_0237121094_text644219223528"><a name="en-us_topic_0237121094_text644219223528"></a><a name="en-us_topic_0237121094_text644219223528"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a>SELECT COUNT(*) FROM DV_SESSIONS WHERE USERNAME='</strong><span id="en-us_topic_0237121094_text9326192718507"><a name="en-us_topic_0237121094_text9326192718507"></a><a name="en-us_topic_0237121094_text9326192718507"></a>omm</span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a>';</strong>
-    
-     count
+    <span id="en-us_topic_0237121094_text644219223528"><a name="en-us_topic_0237121094_text644219223528"></a><a name="en-us_topic_0237121094_text644219223528"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a>SELECT COUNT(*) FROM DV_SESSIONS WHERE USERNAME='</strong><span id="en-us_topic_0237121094_text9326192718507"><a name="en-us_topic_0237121094_text9326192718507"></a><a name="en-us_topic_0237121094_text9326192718507"></a>omm</span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a>';</strong> 
+    count
     -------
-         1
+    1
     (1 row)</pre>
     </td>
     </tr>
     <tr id="en-us_topic_0237121094_en-us_topic_0059779140_r104cdfb6ed214094a0590e585e5b2e85"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237121094_en-us_topic_0059779140_a8409874270f64e5daffdcdec25803217"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a8409874270f64e5daffdcdec25803217"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a8409874270f64e5daffdcdec25803217"></a>View the maximum number of sessions connected to a specific database.</p>
     </td>
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121094_en-us_topic_0059779140_aba7c110edf6241cbafeb5ca894c89607"><a name="en-us_topic_0237121094_en-us_topic_0059779140_aba7c110edf6241cbafeb5ca894c89607"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_aba7c110edf6241cbafeb5ca894c89607"></a>Run the following commands to view the upper limit of the number of <strong id="b1944419234258"><a name="b1944419234258"></a><a name="b1944419234258"></a>postgres</strong>'s session connections. <strong id="b194229262256"><a name="b194229262256"></a><a name="b194229262256"></a>-1</strong> indicates that no upper limit is set for the number of <strong id="b4422152632512"><a name="b4422152632512"></a><a name="b4422152632512"></a>postgres</strong>'s session connections.</p>
-    <a name="en-us_topic_0237121094_en-us_topic_0059779140_s43be919558d045a689ac74d52a7560e4"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_s43be919558d045a689ac74d52a7560e4"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_s43be919558d045a689ac74d52a7560e4"><span id="en-us_topic_0237121094_text8370423125212"><a name="en-us_topic_0237121094_text8370423125212"></a><a name="en-us_topic_0237121094_text8370423125212"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a38e8bac171574ad39baf6a9df3563633"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a38e8bac171574ad39baf6a9df3563633"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a38e8bac171574ad39baf6a9df3563633"></a>SELECT DATNAME,DATCONNLIMIT FROM PG_DATABASE WHERE DATNAME='postgres';</strong>
-    
-     datname  | datconnlimit
+    <a name="en-us_topic_0237121094_en-us_topic_0059779140_s43be919558d045a689ac74d52a7560e4"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_s43be919558d045a689ac74d52a7560e4"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_s43be919558d045a689ac74d52a7560e4"><span id="en-us_topic_0237121094_text8370423125212"><a name="en-us_topic_0237121094_text8370423125212"></a><a name="en-us_topic_0237121094_text8370423125212"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a38e8bac171574ad39baf6a9df3563633"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a38e8bac171574ad39baf6a9df3563633"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a38e8bac171574ad39baf6a9df3563633"></a>SELECT DATNAME,DATCONNLIMIT FROM PG_DATABASE WHERE DATNAME='postgres';</strong> 
+    datname  | datconnlimit
     ----------+--------------
      postgres |           -1
     (1 row)</pre>
@@ -101,10 +100,10 @@ If the number of connections reaches its upper limit, new connections cannot be 
     <tr id="en-us_topic_0237121094_en-us_topic_0059779140_rcb1ea716375e46b8bd4da4deea8c96bf"><td class="cellrowborder" valign="top" width="31.41%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237121094_en-us_topic_0059779140_af26907151de64eaeb8caa1eec6bdbd87"><a name="en-us_topic_0237121094_en-us_topic_0059779140_af26907151de64eaeb8caa1eec6bdbd87"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_af26907151de64eaeb8caa1eec6bdbd87"></a>View the number of session connections that have been used by a specific database.</p>
     </td>
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121094_en-us_topic_0059779140_aeab8618dcc114d1ea2f1ed255f200bf7"><a name="en-us_topic_0237121094_en-us_topic_0059779140_aeab8618dcc114d1ea2f1ed255f200bf7"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_aeab8618dcc114d1ea2f1ed255f200bf7"></a>Run the following commands to view the number of session connections that have been used by <strong id="b14336830182515"><a name="b14336830182515"></a><a name="b14336830182515"></a>postgres</strong>. <strong id="b683012316251"><a name="b683012316251"></a><a name="b683012316251"></a>1</strong> indicates the number of session connections that have been used by <strong id="b283153192517"><a name="b283153192517"></a><a name="b283153192517"></a>postgres</strong>.</p>
-    <a name="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"><span id="en-us_topic_0237121094_text11748243525"><a name="en-us_topic_0237121094_text11748243525"></a><a name="en-us_topic_0237121094_text11748243525"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"></a>SELECT COUNT(*) FROM PG_STAT_ACTIVITY WHERE DATNAME='postgres';</strong>
-     count 
-    -------
-         1
+    <a name="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"><span id="en-us_topic_0237121094_text11748243525"><a name="en-us_topic_0237121094_text11748243525"></a><a name="en-us_topic_0237121094_text11748243525"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"></a>SELECT COUNT(*) FROM PG_STAT_ACTIVITY WHERE DATNAME='postgres';</strong> 
+    count
+    --------
+    1
     (1 row)</pre>
     </td>
     </tr>
@@ -120,14 +119,17 @@ If the number of connections reaches its upper limit, new connections cannot be 
     	        FROM pg_stat_get_activity(NULL) AS sa
     	        LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
     	        WHERE sa.application_name &lt;&gt; 'JobScheduler';
-    <span id="en-us_topic_0237121094_text971592455219"><a name="en-us_topic_0237121094_text971592455219"></a><a name="en-us_topic_0237121094_text971592455219"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a>SELECT COUNT(*) FROM DV_SESSIONS;</strong>
-     count
+    <span id="en-us_topic_0237121094_text971592455219"><a name="en-us_topic_0237121094_text971592455219"></a><a name="en-us_topic_0237121094_text971592455219"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a>SELECT COUNT(*) FROM DV_SESSIONS;</strong> 
+    count
     -------
-         10
-    (1 row)</pre>
-    </td>
-    </tr>
-    </tbody>
+    10
+    (1 row)
+    </pre>
+        </td>
+        </tr>
+        </tbody>
     </table>
+    
+        
 
 

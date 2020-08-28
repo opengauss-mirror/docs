@@ -153,7 +153,7 @@ The following example shows how to set  **archive\_mode**  on the primary node o
     >You can run the following command to set  **archive\_mode**  to  **off**  for the database nodes:  
     >```  
     >gs_guc set -N all -I all -c "archive_mode=off"  
-    >```  
+    >```
 
 4.  Restart the database to make the setting take effect.
 
@@ -216,7 +216,7 @@ The following example shows how to set  **authentication\_timeout**  on the prim
     >You can run the following command to set  **authentication\_timeout**  to  **59s**  for the database nodes:  
     >```  
     >gs_guc reload -N all -I all -c "authentication_timeout = 59s"  
-    >```  
+    >```
 
 4.  Run the following command to connect to the database:
 
@@ -285,7 +285,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     -   Set a database-level parameter.
 
         ```
-        postgres=# ALTER DATABASE postgres SET explain_perf_mode TO pretty;
+        ALTER DATABASE postgres SET explain_perf_mode TO pretty;
         ```
 
         If the following information is displayed, the setting succeeds:
@@ -299,7 +299,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     -   Set a user-level parameter.
 
         ```
-        postgres=# ALTER USER omm SET explain_perf_mode TO pretty;
+        ALTER USER omm SET explain_perf_mode TO pretty;
         ```
 
         If the following information is displayed, the setting succeeds:
@@ -313,7 +313,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     -   Set a session-level parameter.
 
         ```
-        postgres=# SET explain_perf_mode TO pretty;
+        SET explain_perf_mode TO pretty;
         ```
 
         If the following information is displayed, the setting succeeds:
@@ -368,7 +368,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     4.  Run the following command to exit the database:
 
         ```
-        postgres=# \q
+        \q
         ```
 
     5.  Change the maximum connections for the primary database node in openGauss.
@@ -445,7 +445,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     4.  Run the following command to exit the database:
 
         ```
-        postgres=# \q
+        \q
         ```
 
     5.  Change the allowed longest client authentication duration of the primary database node in openGauss.
@@ -516,7 +516,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     4.  Run the following command to exit the database:
 
         ```
-        postgres=# \q
+        \q
         ```
 
     5.  Change the maximum number of connections between openGauss database nodes.
@@ -594,7 +594,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     4.  Run the following command to exit the database:
 
         ```
-        postgres=# \q
+        \q
         ```
 
     5.  Change the allowed longest client authentication duration of openGauss database nodes.

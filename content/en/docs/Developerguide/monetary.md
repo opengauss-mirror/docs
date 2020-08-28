@@ -32,7 +32,7 @@ The range shown in  [Table 1](#en-us_topic_0237121928_en-us_topic_0059778615_t7c
 Values of the numeric, int, and bigint data types can be cast to money. Conversion from the real and double precision data types can be done by casting to numeric first, for example:
 
 ```
-postgres=# SELECT '12.34'::float8::numeric::money;
+SELECT '12.34'::float8::numeric::money;
 ```
 
 However, this is not recommended. Floating point numbers should not be used to handle money due to the potential for rounding errors.
@@ -40,7 +40,7 @@ However, this is not recommended. Floating point numbers should not be used to h
 A money value can be cast to numeric without loss of precision. Conversion to other types could potentially lose precision, and must also be done in two stages:
 
 ```
-postgres=# SELECT '52093.89'::money::numeric::float8;
+SELECT '52093.89'::money::numeric::float8;
 ```
 
 When a money value is divided by another money value, the result is double precision \(that is, a pure number, not money\); the currency units cancel each other out in the division.
