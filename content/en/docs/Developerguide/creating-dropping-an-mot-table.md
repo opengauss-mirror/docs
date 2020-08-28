@@ -11,6 +11,7 @@ Creating a Memory Optimized Table \(MOT\) is very simple. Only the create and dr
 -   Always use the FOREIGN keyword to refer to MOT tables.
 -   The \[server mot\_server\] part is optional when creating an MOT table because MOT is an integrated engine, not a separate server.
 -   The above is an extremely simple example creating a table named  **test**  with a single integer column named  **x**. In the next section \(**Creating an Index**\) a more realistic example is provided.
+-   MOT tables cannot be created if incremental checkpoint is enabled in postgresql.conf.
 -   To drop an MOT table named test –
 
     ```
