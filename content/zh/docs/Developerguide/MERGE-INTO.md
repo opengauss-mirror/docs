@@ -32,7 +32,7 @@ ON ( condition )
 
 -   **INTO子句**
 
-    指定正在更新或插入的目标表。目标表为复制表时，暂不支持目标表中某列默认值为volatile函数（如自增列），enable\_stream\_operator=off时目标表需要包含主键或带有unique not null。
+    指定正在更新或插入的目标表。
 
     -   **talbe\_name**
 
@@ -47,7 +47,7 @@ ON ( condition )
 
 -   **USING子句**
 
-    指定源表，源表可以为表、视图或子查询。目标表为复制表时，暂不支持USING子句中包含非复制表。
+    指定源表，源表可以为表、视图或子查询。
 
 -   **ON子句**
 
