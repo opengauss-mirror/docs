@@ -340,6 +340,6 @@ CREATE INDEX
         - 不支持列存表
         - 仅支持B-tree索引
     -   在相同属性列上，分区LOCAL索引与GLOBAL索引不能共存。
-    -   如果在一个分区表上创建了GLOBAL索引，当执行ALTER TABLE对分区进行DROP、TRUNCATE、SPLIT、MERGE、EXCHANGE中的任何一种操作，此时会导致GLOBAL索引失效，需要用户手动重新创建索引。
+    -   如果在一个分区表上创建了GLOBAL索引，当执行ALTER TABLE对分区进行DROP、TRUNCATE、SPLIT、MERGE、EXCHANGE中的任何一种操作，此时会导致GLOBAL索引失效，需要用户手动重建索引。
 
 
