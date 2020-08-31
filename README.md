@@ -1,6 +1,6 @@
-# openGauss文档
+# docs
 
-![openGauss Logo](themes\project\images\openGauss-logo.png "openGauss logo")
+
 
 ### 介绍
 

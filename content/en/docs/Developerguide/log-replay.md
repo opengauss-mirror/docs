@@ -64,5 +64,5 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
-**Default value**:  **true**
+**Default value**:  **on**
 
