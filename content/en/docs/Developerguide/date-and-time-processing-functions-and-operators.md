@@ -7,7 +7,7 @@
 >For example, abnormal mistakes will occur in the following example without an explicit data type.  
 >```  
 >SELECT date '2001-10-01' - '7' AS RESULT;  
->```  
+>```
 
 **Table  1**  Time and date operators
 
@@ -255,27 +255,23 @@
 
 -   date\_part\(text, timestamp\)
 
-    Description:
-
-    Obtains the hour.
-
-    Equivalent to  **extract\(field from timestamp\)**.
+    Description: Obtains the value of a subdomain in date or time, for example, the year or hour. Equivalent to  **extract\(field from timestamp\)**.
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT date_part('hour', timestamp '2001-02-16 20:38:40');
+postgres=# SELECT date_part('hour', timestamp '2001-02-16 20:38:40');
      date_part 
-    -----------
+-----------
             20
     (1 row)
     ```
-
+    
 -   date\_part\(text, interval\)
 
-    Description: Obtains the month. If the value is greater than 12, obtain the remainder after it is divided by 12. Equivalent to  **extract\(field from timestamp\)**.
+    Description: Obtains the subdomain value of the date/time value. When obtaining the month value, if the value is greater than 12, obtain the remainder after it is divided by 12. Equivalent to  **extract\(field from timestamp\)**.
 
     Return type: double precision
 

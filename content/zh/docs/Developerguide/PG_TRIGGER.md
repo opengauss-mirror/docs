@@ -128,6 +128,14 @@ PG\_TRIGGER系统表存储触发器信息。
 <td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122321_p241231154412"><a name="zh-cn_topic_0237122321_p241231154412"></a><a name="zh-cn_topic_0237122321_p241231154412"></a>表示触发器的WHEN条件，如果没有则为null。</p>
 </td>
 </tr>
+    <tr id="zh-cn_topic_0237122321_row1317317441"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122321_p041831154418"><a name="zh-cn_topic_0237122321_p041831154418"></a><a name="zh-cn_topic_0237122321_p041831154418"></a>tgowner</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122321_p184531154417"><a name="zh-cn_topic_0237122321_p184531154417"></a><a name="zh-cn_topic_0237122321_p184531154417"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122321_p241231154412"><a name="zh-cn_topic_0237122321_p241231154412"></a><a name="zh-cn_topic_0237122321_p241231154412"></a>触发器的所有者。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 

@@ -128,6 +128,14 @@
 <td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122321_p241231154412"><a name="en-us_topic_0237122321_p241231154412"></a><a name="en-us_topic_0237122321_p241231154412"></a>WHEN condition of the trigger (<strong id="en-us_topic_0237122321_b124285511497"><a name="en-us_topic_0237122321_b124285511497"></a><a name="en-us_topic_0237122321_b124285511497"></a>NULL</strong> if the WHEN condition does not exist)</p>
 </td>
 </tr>
+    <tr id="en-us_topic_0237122321_row1317317441"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122321_p041831154418"><a name="en-us_topic_0237122321_p041831154418"></a><a name="en-us_topic_0237122321_p041831154418"></a>tgowner</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122321_p184531154417"><a name="en-us_topic_0237122321_p184531154417"></a><a name="en-us_topic_0237122321_p184531154417"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122321_p241231154412"><a name="en-us_topic_0237122321_p241231154412"></a><a name="en-us_topic_0237122321_p241231154412"></a>trigger owner</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 

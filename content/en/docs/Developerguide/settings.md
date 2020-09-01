@@ -74,15 +74,21 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: enumerated values
 
--   **open\_datasync**  indicates that WAL files are opened with the  **O\_DSYNC**  option.
--   **fdatasync**  indicates that  **fdatasync\(\)**  is called at each commit. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
+- **open\_datasync**  indicates that WAL files are opened with the  **O\_DSYNC**  option.
+
+- **fdatasync**  indicates that  **fdatasync\(\)**  is called at each commit. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
+
 -   **fsync\_writethrough**  indicates that  **fsync\(\)**  is called at each commit to force data in the buffer to be written to the disk.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >**wal\_sync\_method**  can be set to  **fsync\_writethrough**  on a Windows platform, but this setting has the same effect as setting the parameter to  **fsync**.  
 
--   **fsync**  indicates that  **fsync\(\)**  is called at each commit. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
--   **open\_sync**  indicates that WAL files are written with  **open\(\)**  option  **O\_SYNC**. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
+- **fsync**  indicates that  **fsync\(\)**  is called at each commit. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
+
+- **open\_sync**  indicates that WAL files are written with  **open\(\)**  option  **O\_SYNC**. \(SUSE Linux 10 and SUSE Linux 11 are supported.\)
+
+  ![](public_sys-resources/icon-note.gif) **NOTE:**   
+  Not all platforms support the above parameters.
 
 **Default value:** **fdatasync**
 
