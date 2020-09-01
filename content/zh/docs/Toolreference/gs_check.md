@@ -62,7 +62,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 -   -l
 
-    指定日志文件路径。
+    指定日志文件路径，指定路径时需添加.log后缀。
 
 -   -o
 
@@ -95,10 +95,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 -   --disk-threshold="PERCENT"
 
     检查磁盘占用时可选指定告警阈值，可指定1-99之间的整数，不输入则默认为90。检查其他项时不需要该参数。
-
--   --ShrinkNodes
-
-    指定缩容磁盘空间检查时缩容节点名称，仅在-i CheckSpaceForShrink时有效。
 
 -   -?, --help
 
@@ -467,7 +463,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_ra3af193edd5b4e4aaa5f7aa7d731aa7e"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p3416198587"><a name="zh-cn_topic_0237152330_p3416198587"></a><a name="zh-cn_topic_0237152330_p3416198587"></a>CheckUpVer（检查升级版本是否一致）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p174281451125812"><a name="zh-cn_topic_0237152330_p174281451125812"></a><a name="zh-cn_topic_0237152330_p174281451125812"></a>检查<span id="text1934210565416"><a name="text1934210565416"></a><a name="text1934210565416"></a>openGauss</span>各个节点上升级包的版本，如果一致则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p174281451125812"><a name="zh-cn_topic_0237152330_p174281451125812"></a><a name="zh-cn_topic_0237152330_p174281451125812"></a>检查<span id="text1934210565416"><a name="text1934210565416"></a><a name="text1934210565416"></a>openGauss</span>各个节点上升级包的版本，如果一致则检查项通过，否则检查项不通过。使用时，需指定升级软件包路径。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p18884150114818"><a name="zh-cn_topic_0237152330_p18884150114818"></a><a name="zh-cn_topic_0237152330_p18884150114818"></a>否</p>
 </td>
@@ -851,8 +847,10 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tbody>
 </table>
 
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >CheckNetSpeed检查项：
+>
 >-   CheckNetSpeed不支持-L本地检查模式，-L模式无法构造网络压力，检查的结果不准确。
 >-   在节点数小于6时，speed\_test构造的网络压力可能无法跑满带宽，可能会造成检查结果不准确。
 
