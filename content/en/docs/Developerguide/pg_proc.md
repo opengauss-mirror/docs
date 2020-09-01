@@ -217,6 +217,15 @@
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122308_p6861342165114"><a name="en-us_topic_0237122308_p6861342165114"></a><a name="en-us_topic_0237122308_p6861342165114"></a>Execution mode of a function, indicating whether the function is executed in fence or not fence mode. If the execution mode is <strong id="b157251344910"><a name="b157251344910"></a><a name="b157251344910"></a>fence,</strong> the function is executed in the fork process that is reworked. The default value is <strong id="b165111511498"><a name="b165111511498"></a><a name="b165111511498"></a>fence</strong>.</p>
 </td>
 </tr>
+ <tr id="en-us_topic_0237122308_row1152415694116"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122308_p18524661417"><a name="en-us_topic_0237122308_p18524661417"></a><a name="en-us_topic_0237122308_p18524661417"></a>proshippable</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122308_p17209185853314"><a name="en-us_topic_0237122308_p17209185853314"></a><a name="en-us_topic_0237122308_p17209185853314"></a><span id="en-us_topic_0237122308_text14295151415286"><a name="en-us_topic_0237122308_text14295151415286"></a><a name="en-us_topic_0237122308_text14295151415286"></a>Boolean</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122308_p1552619614416"><a name="en-us_topic_0237122308_p1552619614416"></a><a name="en-us_topic_0237122308_p1552619614416"></a>Whether the function can be pushed down to database nodes. The default value is
+    <strong id="b168691446919"><a name="b168691446919"></a><a name="b168691446919"></a>false</strong>.<ul><li>Functions of the IMMUTABLE type can always be pushed down to the database nodes.</li><li>
+    A STABLE or VOLATILE function can be pushed down to the database nodes only if SHIPPABLE is specified for it.</li></ul></p>
+</td>
+</tr>
 <tr id="en-us_topic_0237122308_row1152415694116"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122308_p18524661417"><a name="en-us_topic_0237122308_p18524661417"></a><a name="en-us_topic_0237122308_p18524661417"></a>propackage</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122308_p17209185853314"><a name="en-us_topic_0237122308_p17209185853314"></a><a name="en-us_topic_0237122308_p17209185853314"></a><span id="en-us_topic_0237122308_text14295151415286"><a name="en-us_topic_0237122308_text14295151415286"></a><a name="en-us_topic_0237122308_text14295151415286"></a>Boolean</span></p>
@@ -226,6 +235,7 @@
 </tr>
 </tbody>
 </table>
+
 
 
 

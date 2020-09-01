@@ -47,6 +47,4 @@ All comparison operators are binary operators. Only data types that are the same
 </tr>
 </tbody>
 </table>
-
-Comparison operators are available for all relevant data types. All comparison operators are binary operators that returned values of Boolean type. Expressions like  **1 < 2 < 3**  are invalid. \(Because there is no comparison operator to compare a Boolean value with  **3**.\)
-
+Comparison operators are available for all relevant data types. All comparison operators are binary operators that returned values of Boolean type. The calculation priority of the inequality sign is higher than that of the equality sign. If the entered data is different and cannot be implicitly converted, the comparison fails. For example, an expression such as 1<2<3 is invalid because the less than sign (<) cannot be used to compare Boolean values and 3.

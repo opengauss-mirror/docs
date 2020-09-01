@@ -91,21 +91,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## enable\_xlog\_prune<a name="en-us_topic_0237124708_section162792473463"></a>
 
-**Parameter description**: Specifies whether the primary server reclaims logs when the size of an .xlog file exceeds the value of  **max\_size\_for\_xlog\_prune**  when any standby server is disconnected.
+**Parameter description**: Specifies whether the primary server reclaims logs  when any standby server is disconnected.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
++ When set to on, the host will not reclaim logs when any of the standby machines is disconnected.
++ When set to off, the host will reclaim the log when any of the standby machines is disconnected.
+
 **Default value**:  **on**
 
-## max\_size\_for\_xlog\_prune<a name="en-us_topic_0237124708_section6785753141714"></a>
 
-**Parameter description**: This parameter is valid only when  **enable\_xlog\_prune**  is enabled. If a standby node is disconnected and the size of an .xlog file is greater than the threshold, the .xlog file is reclaimed.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: an integer from 0 to 576460752303423487. The unit is MB.
-
-**Default value**:  **100000**. Unit: MB
 

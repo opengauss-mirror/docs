@@ -26,7 +26,6 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
        | { CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT }
        | {[ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER | AUTHID DEFINER | AUTHID CURRENT_USER}
        | COST execution_cost
-       | ROWS result_rows
        | SET configuration_parameter { [ TO | = ] value | FROM CURRENT }
     ][ ... ]
  { IS | AS } 

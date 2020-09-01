@@ -216,6 +216,15 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_p6861342165114"><a name="zh-cn_topic_0237122308_p6861342165114"></a><a name="zh-cn_topic_0237122308_p6861342165114"></a>函数的执行模式，表示函数是在fence还是not fence模式下执行。如果是fence执行模式，函数的执行会在重新fork的进程中执行。默认值是fence。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237122308_row1152415694116"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_p18524661417"><a name="zh-cn_topic_0237122308_p18524661417"></a><a name="zh-cn_topic_0237122308_p18524661417"></a>proshippable</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_p17209185853314"><a name="zh-cn_topic_0237122308_p17209185853314"></a><a name="zh-cn_topic_0237122308_p17209185853314"></a><span id="zh-cn_topic_0237122308_text14295151415286"><a name="zh-cn_topic_0237122308_text14295151415286"></a><a name="zh-cn_topic_0237122308_text14295151415286"></a>Boolean</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_p1552619614416"><a name="zh-cn_topic_0237122308_p1552619614416"></a><a name="zh-cn_topic_0237122308_p1552619614416"></a>表示该函数是否可以下推到数据库节点上执行，默认值是false。<ul>
+    <li>对于IMMUTABLE类型的函数，函数始终可以下推到数据库节点上执行。</li>
+    <li>对于STABLE/VOLATILE类型的函数，仅当函数的属性是SHIPPABLE的时候，函数可以下推到数据库节点执行。</li></ul></p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0237122308_row1152415694116"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_p18524661417"><a name="zh-cn_topic_0237122308_p18524661417"></a><a name="zh-cn_topic_0237122308_p18524661417"></a>propackage</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_p17209185853314"><a name="zh-cn_topic_0237122308_p17209185853314"></a><a name="zh-cn_topic_0237122308_p17209185853314"></a><span id="zh-cn_topic_0237122308_text14295151415286"><a name="zh-cn_topic_0237122308_text14295151415286"></a><a name="zh-cn_topic_0237122308_text14295151415286"></a>Boolean</span></p>
@@ -225,6 +234,7 @@ PG\_PROC系统表存储函数或过程的信息。
 </tr>
 </tbody>
 </table>
+
 
 
 
