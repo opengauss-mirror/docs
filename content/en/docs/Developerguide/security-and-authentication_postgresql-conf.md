@@ -174,7 +174,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **on**  indicates that the password of the initial account needs to be modified upon the first login.
 -   **off**  indicates that the password of the initial account does not need to be modified.
 
-**Default value**:  **off**
+**Default value**:  **on**
 
 ## password\_policy<a name="en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626"></a>
 
