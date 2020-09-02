@@ -25,8 +25,7 @@ Ensure that the data directory is correct and the  **pg\_control**  file exists 
 -   Display help information.
 
     ```
-    pg_controldata 
-    -? | --help
+    pg_controldata -? | --help
     ```
 
 

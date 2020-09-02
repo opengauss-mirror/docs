@@ -3,17 +3,17 @@
 A  **build.sh**  script is provided for compiling openGauss and generating the installation package. You can compile openGauss by using the script. You can also configure environment variables and run commands to compile openGauss.
 <!-- TOC -->
 
-- [Preparation Before Compiling<a name="EN-US_TOPIC_0241496975"></a>](#preparation-before-compilinga-nameen-us_topic_0241496975a)
-    - [Downloading Code<a name="section233903211619"></a>](#downloading-codea-namesection233903211619a)
-    - [Compiling Open-source Software<a name="section38901725122017"></a>](#compiling-open-source-softwarea-namesection38901725122017a)
-    - [Introduction to build.sh<a name="section6993103732114"></a>](#introduction-to-buildsha-namesection6993103732114a)
-- [Software Compilation and Installation<a name="EN-US_TOPIC_0241496976"></a>](#software-compilation-and-installationa-nameen-us_topic_0241496976a)
-    - [Prerequisites<a name="section383084619310"></a>](#prerequisitesa-namesection383084619310a)
-    - [Compilation Using the One-click Script<a name="section1549373123218"></a>](#compilation-using-the-one-click-scripta-namesection1549373123218a)
-    - [Manual Compilation<a name="section1896812274122"></a>](#manual-compilationa-namesection1896812274122a)
-- [Compiling the Installation Package<a name="EN-US_TOPIC_0241496988"></a>](#compiling-the-installation-packagea-nameen-us_topic_0241496988a)
-    - [Prerequisites<a name="section383084619310"></a>](#prerequisitesa-namesection383084619310a-1)
-    - [Procedure<a name="section164893273386"></a>](#procedurea-namesection164893273386a)
+- [Preparation Before Compiling](#preparation-before-compiling)
+    - [Downloading Code](#downloading-code)
+    - [Compiling Open-source Software](#compiling-open-source-software)
+    - [Introduction to build.sh](#introduction-to-buildsh)
+- [Software Compilation and Installation](#software-compilation-and-installation)
+    - [Prerequisites](#prerequisites)
+    - [Compilation Using the One-click Script](#compilation-using-the-one-click-script)
+    - [Manual Compilation](#manual-compilation)
+- [Compiling the Installation Package](#compiling-the-installation-package)
+    - [Prerequisites](#prerequisites-1)
+    - [Procedure](#procedure)
 
 <!-- /TOC -->
 
@@ -22,9 +22,9 @@ This section describes the prerequisites and procedure for openGauss compilation
 ![](figures/绘图1.png)  
 
 
-## Preparation Before Compiling<a name="EN-US_TOPIC_0241496975"></a>
+## Preparation Before Compiling
 
-### Downloading Code<a name="section233903211619"></a>
+### Downloading Code
 
 **Prerequisites**
 
@@ -49,7 +49,7 @@ The git and git-lfs have been installed and configured on the local host.
 
 2.  When the progress of each download reaches 100%, the download is successful.
 
-### Compiling Open-source Software<a name="section38901725122017"></a>
+### Compiling Open-source Software
 
 **Compiling Open-source Software**
 
@@ -133,7 +133,7 @@ In addition, you need to download the  [gcc-8.2.0.zip](https://github.com/gcc-mi
 
 After the preceding script is executed, the final compilation and build result is stored in the  **binarylibs**  directory at the same level as  **openGauss-third\_party**. These files will be used during the compilation of  **openGauss-server**.
 
-### Introduction to build.sh<a name="section6993103732114"></a>
+### Introduction to build.sh
 
 **openGauss-server/build.sh**  is an important script tool during compilation. It integrates software installation and compilation and product installation package compilation functions to quickly compile and package code.
 
@@ -208,18 +208,18 @@ The following table describes the parameters.
 >2.  **-3rd \[binarylibs path\]**  is the path of  **binarylibs**. By default,  **binarylibs**  exists in the current code folder. If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.
 >3.  Each option in this script has a default value. The number of options is small and the dependency is simple. Therefore, this script is easy to use. If the required value is different from the default value, set this parameter based on the actual requirements.
 
-## Software Compilation and Installation<a name="EN-US_TOPIC_0241496976"></a>
+## Software Compilation and Installation
 
 Software compilation and installation are to compile code to generate software and install the software on a computer. The one-click compilation script  **build.sh**  is provided. You can also manually configure environment variables. The two methods are described below in this section.
 
-### Prerequisites<a name="section383084619310"></a>
+### Prerequisites
 
 -   The software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](preparation-before-compiling.md#section233903211619).
 -   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](preparation-before-compiling.md#section38901725122017).
 -   You are familiar with the parameter options and functions of the  [build.sh](preparation-before-compiling.md#section6993103732114)  script.
 -   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ 4.1](how-do-i-delete-temporary-files-generated-during-compilation.md).
 
-### Compilation Using the One-click Script<a name="section1549373123218"></a>
+### Compilation Using the One-click Script
 
 1.  Run the following command to go to the directory where the software code compilation script is stored:
 
@@ -251,7 +251,7 @@ Software compilation and installation are to compile code to generate software a
     -   Compilation log: make\_compile.log
 
 
-### Manual Compilation<a name="section1896812274122"></a>
+### Manual Compilation
 
 1.  Run the following command to go to the software code directory:
 
@@ -328,18 +328,18 @@ Software compilation and installation are to compile code to generate software a
     -   The compiled binary files are stored in  _$GAUSSHOME_**/bin**.
 
 
-## Compiling the Installation Package<a name="EN-US_TOPIC_0241496988"></a>
+## Compiling the Installation Package
 
 To compile the installation package is to compile the code and generate the software installation package. The compilation and packaging process of the installation package is also integrated in  **build.sh**.
 
-### Prerequisites<a name="section383084619310"></a>
+### Prerequisites
 
 -   The software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](preparation-before-compiling.md#section233903211619).
 -   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](preparation-before-compiling.md#section38901725122017).
 -   You are familiar with the parameter options and functions of the  [build.sh](preparation-before-compiling.md#section6993103732114)  script.
 -   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ 4.1](how-do-i-delete-temporary-files-generated-during-compilation.md).
 
-### Procedure<a name="section164893273386"></a>
+### Procedure
 
 1.  Run the following command to go to the code directory:
 

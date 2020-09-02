@@ -37,6 +37,9 @@ The following lists the functionality limitations of MOT tables –
 -   Partition by range
 -   Create table with no-logging clause
 -   DEFERRABLE primary key
+-   Reindex
+-   Tablespace
+-   Create schema with subcommands
 
 ## Unsupported Data Types<a name="section3158172423814"></a>
 
@@ -168,6 +171,8 @@ The following lists the functionality limitations of MOT tables –
 -   Select into
 -   Update on conflict
 -   Update from
+-   Lock table
+-   Copy from table
 
 ## Unsupported Queries for Native Compilation and Lite Execution<a name="section4815162910417"></a>
 
