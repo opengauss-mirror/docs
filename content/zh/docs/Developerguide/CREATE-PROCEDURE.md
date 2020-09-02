@@ -26,7 +26,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
        | { CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT }
        | {[ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER | AUTHID DEFINER | AUTHID CURRENT_USER}
        | COST execution_cost
-       | SET configuration_parameter { [ TO | = ] value | FROM CURRENT }
+       | SET configuration_parameter { TO value| = value | FROM CURRENT }
     ][ ... ]
  { IS | AS } 
 plsql_body 
