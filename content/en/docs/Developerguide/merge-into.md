@@ -32,7 +32,7 @@ ON ( condition )
 
 -   **INTO**  clause
 
-    Specifies the target table that is being updated or has data being inserted. If the target table is a replication table, the default value of a column \(such as auto-increment column\) in the target table cannot be the  **volatile**  function. If  **enable\_stream\_operator**  is set to  **off**, the target table must contain a primary key or  **UNIQUE**  and  **NOT NULL**  constraints.
+    Specifies the target table that is being updated or has data being inserted. 
 
     -   **talbe\_name**
 

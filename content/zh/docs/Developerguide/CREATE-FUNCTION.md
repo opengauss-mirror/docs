@@ -120,9 +120,13 @@
 
     字段类型。
 
--   **definition**
+- **definition**
 
-    一个定义函数的字符串常量，含义取决于语言。它可以是一个内部函数名称、一个指向某个目标文件的路径、一个SQL查询、一个过程语言文本。
+  一个定义函数的字符串常量，含义取决于语言。它可以是一个内部函数名称、一个指向某个目标文件的路径、一个SQL查询、一个过程语言文本。
+
+-   **DETERMINISTIC**
+
+    SQL语法兼容接口，未实现功能，不推荐使用。
 
 -   **LANGUAGE lang\_name**
 
@@ -143,9 +147,13 @@
 
     表示该函数不能修改数据库，对相同参数值，在同一次表扫描里，该函数的返回值不变，但是返回值可能在不同SQL语句之间变化。
 
--   **VOLATILE**
+- **VOLATILE**
 
-    表示该函数值可以在一次表扫描内改变，因此不会做任何优化。
+  表示该函数值可以在一次表扫描内改变，因此不会做任何优化。
+
+-   SHIPPABLE | NOT SHIPPABLE
+
+-   FENCED | NOT FENCED
 
 -   **PACKAGE**
 
@@ -273,13 +281,13 @@ BEGIN
 RETURN num1 + num2;
 END;
 /
---修改函数add的执行规则为IMMUTABLE，即参数不变时返回相同结果。
+--修改函数func_add_sql2的执行规则为IMMUTABLE，即参数不变时返回相同结果。
 postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
 
---将函数add的名称修改为add_two_number。
+--将函数func_add_sql2的名称修改为add_two_number。
 postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
 
---将函数add的属者改为omm。
+--将函数add_two_number的属者改为omm。
 postgres=# ALTER FUNCTION add_two_number(INTEGER, INTEGER) OWNER TO omm;
 
 --删除函数。

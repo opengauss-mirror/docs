@@ -83,7 +83,7 @@
 
     用于设置客户端的字符编码。等价于set client\_encoding to encoding\_name。
 
-    取值范围：有效的字符编码。该选项对应的运行时参数名称为client\_encoding，默认编码为SQL\_ASCII。
+    取值范围：有效的字符编码。该选项对应的运行时参数名称为client\_encoding，默认编码为UTF8。
 
 -   **XML OPTION option**
 
