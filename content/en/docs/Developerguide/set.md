@@ -83,7 +83,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
     Specifies the client character encoding. This statement is equivalent to  **set client\_encoding to encoding\_name**.
 
-    Value range: a valid character encoding name. The run-time parameter corresponding to this option is  **client\_encoding**. The default encoding is  **SQL\_ASCII**.
+    Value range: a valid character encoding name. The run-time parameter corresponding to this option is  **client\_encoding**. The default encoding is  **UTF8**.
 
 -   **XML OPTION option**
 
