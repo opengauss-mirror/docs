@@ -2,18 +2,21 @@
 
 ## 背景信息<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_section48401199395"></a>
 
-openGauss部署成功后，在数据库运行的过程中，会遇到各种问题及异常状态。openGauss提供了gs\_basebackup工具做基础的物理备份。gs\_basebackup的实现目标是对服务器数据库文件的二进制进行拷贝，其实现原理使用了复制协议。远程执行gs\_basebackup时，需要使用系统管理员账户。gs\_basebackup当前仅支持热备份模式，不支持压缩格式备份。
+openGauss部署成功后，在数据库运行的过程中，会遇到各种问题及异常状态。openGauss提供了gs\_basebackup工具做基础的物理备份。gs\_basebackup的实现目标是对服务器数据库文件的二进制进行拷贝，其实现原理使用了复制协议。远程执行gs\_basebackup时，需要使用系统管理员账户。gs\_basebackup当前支持热备份模式和压缩格式备份模式。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   gs\_basebackup仅支持全量备份，不支持增量。
->-   gs\_basebackup当前仅支持热备份模式，不支持压缩格式备份。
+>-   gs\_basebackup当前支持热备份模式和压缩格式备份模式。
 >-   gs\_basebackup在备份包含绝对路径的表空间时，不能在同一台机器上进行备份。对于同一台机器，绝对路径是唯一的，因此会产生冲突。可以在不同的机器上备份含绝对路径的表空间。
 >-   若打开增量检测点功能且打开双写, gs\_basebackup也会备份双写文件。
 >-   若pg\_xlog目录为软链接，备份时将不会建立软链接，会直接将数据备份到目的路径的pg\_xlog目录下。
 
 ## 前提条件<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
--   可以正常连接openGauss数据库，pg\_hba.conf中需要配置允许复制链接, 需要配置max\_wal\_senders的数量, 至少有一个可用。
+-   可以正常连接openGauss数据库。
+-   pg\_hba.conf中需要配置允许复制链接，且该连接必须由一个系统管理员建立。
+-   如果xlog传输模式为stream模式，需要配置max\_wal\_senders的数量, 至少有一个可用。
+-   如果xlog传输模式为fetch模式，有必要把wal_keep_segments参数设置得足够高，这样在备份末尾之前日志不会被移除。
 -   在进行还原时，需要保证各节点备份目录中存在备份文件，若备份文件丢失，则需要从其他节点进行拷贝。
 
 ## 语法<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
