@@ -52,7 +52,7 @@ plsql_body
     >![](public_sys-resources/icon-notice.gif) **须知：**   
     >VARIADIC用于声明数组类型的参数。  
 
-    取值范围： IN，OUT，INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。并且OUT和INOUT模式的参数不能用在RETURNS TABLE的过程定义中。
+    取值范围： IN，OUT，INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。
 
 -   **argname**
 

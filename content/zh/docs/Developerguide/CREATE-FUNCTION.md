@@ -151,9 +151,13 @@
 
   表示该函数值可以在一次表扫描内改变，因此不会做任何优化。
 
--   SHIPPABLE | NOT SHIPPABLE
+- **SHIPPABLE | NOT SHIPPABLE**
 
--   FENCED | NOT FENCED
+  表示该函数是否可以下推执行。预留接口，不推荐使用。
+
+- **FENCED | NOT FENCED**
+
+  声明用户定义的C函数是在保护模式还是非保护模式下执行。预留接口，不推荐使用。
 
 -   **PACKAGE**
 

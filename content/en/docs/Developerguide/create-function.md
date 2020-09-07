@@ -120,9 +120,13 @@
 
     Specifies the column type.
 
--   **definition**
+- **definition**
 
-    Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
+  Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
+
+-   **DETERMINISTIC**
+
+    Specifies an interface compatible with the SQL syntax. You are not advised to use it.
 
 -   **LANGUAGE lang\_name**
 
@@ -146,6 +150,14 @@
 -   **VOLATILE**
 
     Specifies that the function value can change in a single table scan and no optimization is performed.
+
+- **SHIPPABLE | NOT SHIPPABLE**
+
+  Specifies whether the function can be pushed down for execution. This interface is reserved and is not recommended.
+
+- **FENCED | NOT FENCED**
+
+  Specifies whether the user-defined C function is executed in fenced or not-fenced mode. This interface is reserved and is not recommended.
 
 -   **PACKAGE**
 
