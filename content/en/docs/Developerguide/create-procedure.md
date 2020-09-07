@@ -52,7 +52,7 @@ plsql_body
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
     >**VARIADIC**  specifies parameters of the array type.  
 
-    Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**. The default value is  **IN**. Only the parameter of the  **OUT**  mode can follow  **VARIADIC**. The parameters of  **OUT**  and  **INOUT**  cannot be used in procedure definition of  **RETURNS TABLE**.
+    Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**. The default value is  **IN**. Only the parameter of the  **OUT**  mode can follow  **VARIADIC**. 
 
 -   **argname**
 

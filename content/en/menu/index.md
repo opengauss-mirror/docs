@@ -676,7 +676,7 @@ headless: true
 			-   [FETCH]({{< relref "./docs/Developerguide/fetch.md" >}})
 			-   [GRANT]({{< relref "./docs/Developerguide/grant.md" >}})
 			-   [INSERT]({{< relref "./docs/Developerguide/insert.md" >}})
-			-   [LOCK]({{< relref "./docs/Developerguide/lock.md" >}})
+			-   [LOCK]({{< relref "./docs/Developerguide/lock-1.md" >}})
 			-   [MOVE]({{< relref "./docs/Developerguide/move.md" >}})
 			-   [MERGE INTO]({{< relref "./docs/Developerguide/merge-into.md" >}})
 			-   [PREPARE]({{< relref "./docs/Developerguide/prepare.md" >}})
