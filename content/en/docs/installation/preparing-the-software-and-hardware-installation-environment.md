@@ -4,25 +4,25 @@ This chapter describes the preparations for the installation.
 
 <!-- TOC -->
 
-- [Software and Hardware Requirements<a name="EN-US_TOPIC_0249784577"></a>](#software-and-hardware-requirementsa-nameen-us_topic_0249784577a)
-    - [Hardware Requirements<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_sdd36768784254b8ba03c77c86b831cae"></a>](#hardware-requirementsa-nameen-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_sdd36768784254b8ba03c77c86b831caea)
-    - [Software Requirements<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_s3124e90db74142ddaf11e2e8fd69cadb"></a>](#software-requirementsa-nameen-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_s3124e90db74142ddaf11e2e8fd69cadba)
-    - [Software Dependency Requirements<a name="section5459315183816"></a>](#software-dependency-requirementsa-namesection5459315183816a)
-- [Modifying OS Configuration<a name="EN-US_TOPIC_0249784574"></a>](#modifying-os-configurationa-nameen-us_topic_0249784574a)
-    - [Disabling the OS Firewall<a name="section392211235453"></a>](#disabling-the-os-firewalla-namesection392211235453a)
-    - [Setting Character Set Parameters<a name="section13321183394714"></a>](#setting-character-set-parametersa-namesection13321183394714a)
-    - [Setting the Time Zone and Time<a name="section399102113483"></a>](#setting-the-time-zone-and-timea-namesection399102113483a)
-    - [Disabling the Swap Memory<a name="section108571059134820"></a>](#disabling-the-swap-memorya-namesection108571059134820a)
-    - [Setting the NIC MTU<a name="section111222032174911"></a>](#setting-the-nic-mtua-namesection111222032174911a)
-- [Setting Remote Login of User root<a name="EN-US_TOPIC_0249784566"></a>](#setting-remote-login-of-user-roota-nameen-us_topic_0249784566a)
+- [Software and Hardware Requirements](#software-and-hardware-requirements)
+    - [Hardware Requirements](#hardware-requirements)
+    - [Software Requirements](#software-requirements)
+    - [Software Dependency Requirements](#software-dependency-requirements)
+- [Modifying OS Configuration](#modifying-os-configuration)
+    - [Disabling the OS Firewall](#disabling-the-os-firewall)
+    - [Setting Character Set Parameters](#setting-character-set-parameters)
+    - [Setting the Time Zone and Time](#setting-the-time-zone-and-time)
+    - [Disabling the Swap Memory](#disabling-the-swap-memory)
+    - [Setting the NIC MTU](#setting-the-nic-mtu)
+- [Setting Remote Login of User root](#setting-remote-login-of-user-root)
 
 <!-- /TOC -->
 
-## Software and Hardware Requirements<a name="EN-US_TOPIC_0249784577"></a>
+## Software and Hardware Requirements
 
 This section describes hardware and software requirements of openGauss. It is recommended that servers to be deployed on openGauss have the same software and hardware configurations.
 
-### Hardware Requirements<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_sdd36768784254b8ba03c77c86b831cae"></a>
+### Hardware Requirements
 
 [Table 1](#en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_t62cd0eed17004265b1b8ad98f302a4bc)  describes the minimum hardware requirements of openGauss. When planning the hardware configuration of a product, consider the data scale and expected database response speed. Plan hardware as required.
 
@@ -67,7 +67,7 @@ This section describes hardware and software requirements of openGauss. It is re
 </tbody>
 </table>
 
-### Software Requirements<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_s3124e90db74142ddaf11e2e8fd69cadb"></a>
+### Software Requirements
 
 **Table  2**  Software requirements
 
@@ -101,15 +101,15 @@ This section describes hardware and software requirements of openGauss. It is re
 </tbody>
 </table>
 
-### Software Dependency Requirements<a name="section5459315183816"></a>
+### Software Dependency Requirements
 
 [\#EN-US\_TOPIC\_0249784577/table11459151513383](#table11459151513383)  lists the software dependency requirements for the openGauss.
 
 You are advised to use the default installation packages of the following dependent software in the listed OS installation CD-ROMs or sources. If the following software does not exist, refer to the recommended versions of the software.
 
-## Modifying OS Configuration<a name="EN-US_TOPIC_0249784574"></a>
+## Modifying OS Configuration
 
-### Disabling the OS Firewall<a name="section392211235453"></a>
+### Disabling the OS Firewall
 
 To ensure that the openGauss can work properly when the firewall is enabled, related services, protocols, IP addresses, and ports need to be added to the firewall whitelist of each host in the openGauss.
 
@@ -206,7 +206,7 @@ Currently, EulerOS can be installed only when the firewall is disabled.
 
 5.  Repeat steps 1 to 3 on other hosts.
 
-### Setting Character Set Parameters<a name="section13321183394714"></a>
+### Setting Character Set Parameters
 
 Set the same character set for all database nodes. You can add  **export LANG=**_Unicode_  in the  **/etc/profile**  file.
 
@@ -214,7 +214,7 @@ Set the same character set for all database nodes. You can add  **export LANG=**
 vim /etc/profile
 ```
 
-### Setting the Time Zone and Time<a name="section399102113483"></a>
+### Setting the Time Zone and Time
 
 Set the same time zone for all database nodes by copying the  **/etc/localtime**  time zone file to the  **/usr/share/zoneinfo/**  directory.
 
@@ -234,7 +234,7 @@ date -s Mon May 11 16:42:11 CST 2020
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >You can run the  **date**  command to query the time zone of the host.
 
-### Disabling the Swap Memory<a name="section108571059134820"></a>
+### Disabling the Swap Memory
 
 Run the  **swapoff -a**  command on each database node to disable the swap memory.
 
@@ -242,7 +242,7 @@ Run the  **swapoff -a**  command on each database node to disable the swap memor
 swapoff -a
 ```
 
-### Setting the NIC MTU<a name="section111222032174911"></a>
+### Setting the NIC MTU
 
 Set the NIC MTU value on each database node to the same value. For X86, the recommended MTU value is 1500. For ARM, the recommended MTU value is 8192.
 
@@ -250,7 +250,7 @@ Set the NIC MTU value on each database node to the same value. For X86, the reco
 ifconfig NIC ID mtu Value
 ```
 
-## Setting Remote Login of User root<a name="EN-US_TOPIC_0249784566"></a>
+## Setting Remote Login of User root
 
 During the openGauss installation, the user  **root**  is required for remote login. This section describes how to set the user  **root**  for remote login.
 

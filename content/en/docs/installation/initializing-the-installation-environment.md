@@ -4,29 +4,29 @@ To ensure the correct installation of the openGauss, you need to configure the h
 
 <!-- TOC -->
 
-- [Creating the Required User Account and Configuring the Installation Environment<a name="EN-US_TOPIC_0249784578"></a>](#creating-the-required-user-account-and-configuring-the-installation-environmenta-nameen-us_topic_0249784578a)
-    - [Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>](#prerequisitesa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8a)
-    - [Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>](#precautionsa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420a)
-    - [Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>](#procedurea-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9da)
-    - [Examples<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620"></a>](#examplesa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620a)
-    - [Troubleshooting<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4"></a>](#troubleshootinga-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4a)
-- [Establishing Mutual Trust Manually<a name="EN-US_TOPIC_0249784564"></a>](#establishing-mutual-trust-manuallya-nameen-us_topic_0249784564a)
-    - [Prerequisites<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s88bba380d9334b129eab3023c5399d45"></a>](#prerequisitesa-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s88bba380d9334b129eab3023c5399d45a)
-    - [Establishing Mutual Trust Using a Script<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s8028dd8189914444b059c07d8c8c82de"></a>](#establishing-mutual-trust-using-a-scripta-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s8028dd8189914444b059c07d8c8c82dea)
-    - [Establishing Mutual Trust Manually<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_section63620881152125"></a>](#establishing-mutual-trust-manuallya-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_section63620881152125a)
-    - [Deleting Mutual Trust Between Users  **root** <a name="section149417461942"></a>](#deleting-mutual-trust-between-users--root-a-namesection149417461942a)
-    - [Examples<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s9928a16b5b7347edbdb587133575483e"></a>](#examplesa-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s9928a16b5b7347edbdb587133575483ea)
-- [Configuring OS Parameters<a name="EN-US_TOPIC_0249784554"></a>](#configuring-os-parametersa-nameen-us_topic_0249784554a)
-    - [OS Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540"></a>](#os-parametersa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540a)
-    - [File System Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section4118580316369"></a>](#file-system-parametersa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section4118580316369a)
-    - [Setting the transparent\_hugepage Service<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section38366550113020"></a>](#setting-the-transparent\_hugepage-servicea-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section38366550113020a)
-    - [Setting File Handles<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section49556455195442"></a>](#setting-file-handlesa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section49556455195442a)
-    - [Setting the Maximum Number of Allowed Processes<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section65253147151525"></a>](#setting-the-maximum-number-of-allowed-processesa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section65253147151525a)
-    - [Setting NIC Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section6007556195457"></a>](#setting-nic-parametersa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section6007556195457a)
+- [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment)
+    - [Prerequisites](#prerequisites)
+    - [Precautions](#precautions)
+    - [Procedure](#procedure)
+    - [Examples](#examples)
+    - [Troubleshooting](#troubleshooting)
+- [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually)
+    - [Prerequisites](#prerequisites-1)
+    - [Establishing Mutual Trust Using a Script](#establishing-mutual-trust-using-a-script)
+    - [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually-1)
+    - [Deleting Mutual Trust Between Users  **root**](#deleting-mutual-trust-between-users--root)
+    - [Examples](#examples-1)
+- [Configuring OS Parameters](#configuring-os-parameters)
+    - [OS Parameters](#os-parameters)
+    - [File System Parameters](#file-system-parameters)
+    - [Setting the transparent\_hugepage Service](#setting-the-transparent\_hugepage-service)
+    - [Setting File Handles](#setting-file-handles)
+    - [Setting the Maximum Number of Allowed Processes](#setting-the-maximum-number-of-allowed-processes)
+    - [Setting NIC Parameters](#setting-nic-parameters)
 
 <!-- /TOC -->
 
-## Creating the Required User Account and Configuring the Installation Environment<a name="EN-US_TOPIC_0249784578"></a>
+## Creating the Required User Account and Configuring the Installation Environment
 
 After the clusteropenGauss configuration file is created, you need to run the  **gs\_preinstall**  script to prepare the account and environment so that you can perform clusteropenGauss installation and management operations with the minimum permission, ensuring system security.
 
@@ -37,17 +37,17 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
 -   If the installation user and user group of the clusteropenGauss do not exist, the system automatically creates them.
 -   Reads the directory information in the clusteropenGauss configuration file, creates the directory, and grants the directory permission to the installation user.
 
-### Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>
+### Prerequisites
 
 -   You have completed all the tasks described in  [Preparing for Installation](preparing-for-installation.md).
 
-### Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>
+### Precautions
 
 -   You must check the upper-layer directory permissions to ensure that the user has the read, write, and execution permissions on the installation package and configuration file directory.
 -   The mapping between each host name and IP address in the XML configuration file must be correct.
 -   Only user  **root**  is authorized to run the  **gs\_preinstall**  command.
 
-### Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>
+### Procedure
 
 1.  Log in to any host where the clusteropenGauss is to be installed as user  **root**  and create a directory for storing the installation package as planned.
 
@@ -191,7 +191,7 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
 
 
 
-### Examples<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620"></a>
+### Examples
 
 Execute the  **gs\_preinstall**  script.
 
@@ -380,21 +380,21 @@ Successfully set finish flag.
 Preinstallation succeeded.
 ```
 
-### Troubleshooting<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4"></a>
+### Troubleshooting
 
 If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing clusteropenGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running clusteropenGauss.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
 
-## Establishing Mutual Trust Manually<a name="EN-US_TOPIC_0249784564"></a>
+## Establishing Mutual Trust Manually
 
 During the openGauss installation, you need to perform operations such as running commands and transferring files between hosts in openGauss. Establish mutual trust among the hosts before installing the cluster as a common user. During the execution of the pre-installation script, establish mutual trust between users  **root**, then create a common user account, and finally establish mutual trust between common users.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.
 
-### Prerequisites<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s88bba380d9334b129eab3023c5399d45"></a>
+### Prerequisites
 
 -   The SSH service has been enabled.
 -   You have verified that SSH ports will not be disabled by firewalls.
@@ -426,7 +426,7 @@ During the openGauss installation, you need to perform operations such as runnin
     ```
 
 
-### Establishing Mutual Trust Using a Script<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s8028dd8189914444b059c07d8c8c82de"></a>
+### Establishing Mutual Trust Using a Script
 
 1.  Create the file for executing the mutual trust script, and add the IP addresses of all the hosts in the openGauss to the file.
 
@@ -447,7 +447,7 @@ During the openGauss installation, you need to perform operations such as runnin
     The  **/opt/software/hostfile**  file contains a list of the hosts. The list provides the IP addresses of all the hosts among which mutual trust needs to be established.
 
 
-### Establishing Mutual Trust Manually<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_section63620881152125"></a>
+### Establishing Mutual Trust Manually
 
 If the passwords of user  **root**  on the hosts in the openGauss are different, the  **gs\_preinstall**  script cannot be used to establish mutual trust. In this case, manually establish mutual trust.
 
@@ -598,7 +598,7 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.
 
 
-### Deleting Mutual Trust Between Users  **root** <a name="section149417461942"></a>
+### Deleting Mutual Trust Between Users  **root** 
 
 The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.
 
@@ -619,7 +619,7 @@ The mutual trust established between users  **root**  may incur security risks. 
     Are you sure you want to continue connecting \(yes/no\)?
 
 
-### Examples<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s9928a16b5b7347edbdb587133575483e"></a>
+### Examples
 
 The following is an example describing how to establish mutual trust between users  **root**:
 
@@ -697,7 +697,7 @@ Successfully verified SSH trust on all hosts.
 Successfully created SSH trust.
 ```
 
-## Configuring OS Parameters<a name="EN-US_TOPIC_0249784554"></a>
+## Configuring OS Parameters
 
 openGauss requires that the OS parameters on every host be set to specified values to ensure system running performance.
 
@@ -715,7 +715,7 @@ Some of these parameters are set during the openGauss installation environment p
     ```
 
 
-### OS Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540"></a>
+### OS Parameters
 
 **Table  1**  OS parameters
 
@@ -1043,7 +1043,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tbody>
 </table>
 
-### File System Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section4118580316369"></a>
+### File System Parameters
 
 -   soft nofile
 
@@ -1064,11 +1064,11 @@ Some of these parameters are set during the openGauss installation environment p
     Recommended value:  **3072**
 
 
-### Setting the transparent\_hugepage Service<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section38366550113020"></a>
+### Setting the transparent\_hugepage Service
 
 By default, openGauss disables the transparent\_hugepage service and this setting is written into the OS startup file.
 
-### Setting File Handles<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section49556455195442"></a>
+### Setting File Handles
 
 To manually set the number of file handles, run the following commands to modify the involved parameters as user  **root**:
 
@@ -1113,7 +1113,7 @@ After the modification is complete, restart the OS to make the setting take effe
 </tbody>
 </table>
 
-### Setting the Maximum Number of Allowed Processes<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section65253147151525"></a>
+### Setting the Maximum Number of Allowed Processes
 
 To manually set the maximum number of allowed processes, run the following command to open the configuration file:
 
@@ -1150,7 +1150,7 @@ After the modification is complete, restart the OS to make the setting take effe
 </tbody>
 </table>
 
-### Setting NIC Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section6007556195457"></a>
+### Setting NIC Parameters
 
 **Table  4**  Setting NIC parameters
 

@@ -36,30 +36,31 @@ If a host needs to connect to a database remotely, you need to add information a
     >-   _10.10.0.30_/_32_  indicates that only the client whose IP address is  **10.10.0.30**  can connect to the host. The specified IP address must be different from those used in openGauss.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.  
     >-   **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.  
 
-    This command adds a rule to the  **pg\_hba.conf**  file corresponds to the primary node of the database. The rule is used to authenticate clients that access primary node.
 
-    Each record in the  **pg\_hba.conf**  file can be in one of the following four formats. For parameter description of the four formats, see  [Configuration File Reference](configuration-file-reference.md).
+This command adds a rule to the  **pg\_hba.conf**  file corresponds to the primary node of the database. The rule is used to authenticate clients that access primary node.
 
-    ```
-    local     DATABASE USER METHOD [OPTIONS]
-    host      DATABASE USER ADDRESS METHOD [OPTIONS]
-    hostssl   DATABASE USER ADDRESS METHOD [OPTIONS]
-    hostnossl DATABASE USER ADDRESS METHOD [OPTIONS]
-    ```
+Each record in the  **pg\_hba.conf**  file can be in one of the following four formats. For parameter description of the four formats, see  [Configuration File Reference](configuration-file-reference.md).
 
-    During authentication, the system checks records in the  **pg\_hba.conf**  file in sequence for connection requests, so the record sequence is vital.
+```
+local     DATABASE USER METHOD [OPTIONS]
+host      DATABASE USER ADDRESS METHOD [OPTIONS]
+hostssl   DATABASE USER ADDRESS METHOD [OPTIONS]
+hostnossl DATABASE USER ADDRESS METHOD [OPTIONS]
+```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >Configure records in the  **pg\_hba.conf**  file from top to bottom based on communication and format requirements in the descending order of priorities. The IP addresses of the openGauss cluster and added hosts are of the highest priority and should be configured prior to those manually configured by users. If the IP addresses manually configured by users and those of added hosts are in the same network segment, delete the manually configured IP addresses before the scale-out and configure them after the scale-out.  
+During authentication, the system checks records in the  **pg\_hba.conf**  file in sequence for connection requests, so the record sequence is vital.
 
-    The suggestions on configuring authentication rules are as follows:
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>Configure records in the  **pg\_hba.conf**  file from top to bottom based on communication and format requirements in the descending order of priorities. The IP addresses of the openGauss cluster and added hosts are of the highest priority and should be configured prior to those manually configured by users. If the IP addresses manually configured by users and those of added hosts are in the same network segment, delete the manually configured IP addresses before the scale-out and configure them after the scale-out.  
 
-    -   Records placed at the front have strict connection parameters but weak authentication methods.
-    -   Records placed at the end have weak connection parameters but strict authentication methods.
+The suggestions on configuring authentication rules are as follows:
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   If a user wants to connect to a specified database, the user must be authenticated by the rules in the  **pg\_hba.conf**  file and have the  **CONNECT**  permission for the database. If you want to restrict a user from connecting to certain databases, you can grant or revoke the user's  **CONNECT**  permission, which is easier than setting rules in the  **pg\_hba.conf**  file.  
-    >-   The  **trust**  authentication mode is insecure for a connection between the openGauss and a client outside the cluster. In this case, set the authentication mode to  **sha256**.  
+-   Records placed at the front have strict connection parameters but weak authentication methods.
+-   Records placed at the end have weak connection parameters but strict authentication methods.
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>-   If a user wants to connect to a specified database, the user must be authenticated by the rules in the  **pg\_hba.conf**  file and have the  **CONNECT**  permission for the database. If you want to restrict a user from connecting to certain databases, you can grant or revoke the user's  **CONNECT**  permission, which is easier than setting rules in the  **pg\_hba.conf**  file.  
+>-   The  **trust**  authentication mode is insecure for a connection between the openGauss and a client outside the cluster. In this case, set the authentication mode to  **sha256**.  
 
 
 ## Exception Handling<a name="en-us_topic_0237121090_en-us_topic_0059778856_s8e3246e8f8a749679fddc812719380b9"></a>
