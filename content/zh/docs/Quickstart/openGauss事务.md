@@ -19,7 +19,7 @@
 
 ## transaction\_read\_only<a name="zh-cn_topic_0242371531_zh-cn_topic_0237124741_zh-cn_topic_0059778361_safc2c3f7a6b445aca6ccaee3d9e86366"></a>
 
-**参数说明：**设置当前事务是只读事务。
+**参数说明：**设置当前事务是只读事务。该参数在数据库恢复过程中或者在备机里，固定为true；否则，固定为default_transaction_read_only的值。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0242370406_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
