@@ -98,7 +98,7 @@
 
 ```
 -- Create an index in the tpcds.reason tabletable:
-CREATE UNIQUE INDEX ds_reason_index1 ON tpcds.reason(r_reason_sk);
+postgres=# CREATE UNIQUE INDEX ds_reason_index1 ON tpcds.reason(r_reason_sk);
 
 -- Vacuum the tpcds.reason table that has indexes:
 postgres=# VACUUM (VERBOSE, ANALYZE) tpcds.reason;

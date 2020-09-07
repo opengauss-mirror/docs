@@ -122,7 +122,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to_ INT\_MAX_/1024. The unit is KB.
+**Value range**: an integer ranging from 0 to_ INT\_MAX_/1024. The unit is kB.
 
 **0**  indicates that the capacity-based creation of new log files is disabled.
 

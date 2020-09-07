@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0237122190_en-us_topic_0059778135_s91c8bf3e55a0490299ef9c0cd59f44f6"></a>
 
-None
+This command needs to be executed in a transaction (that is, START TRANSACTION or BEGIN needs to be executed before SET TRANSACTION), otherwise the setting will not take effect.
 
 ## Syntax<a name="en-us_topic_0237122190_en-us_topic_0059778135_sce3e49e1f5894684861d1df6677d12c8"></a>
 

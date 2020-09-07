@@ -98,7 +98,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
 ```
 --在表tpcds.reason上创建索引
-CREATE UNIQUE INDEX ds_reason_index1 ON tpcds.reason(r_reason_sk);
+postgres=# CREATE UNIQUE INDEX ds_reason_index1 ON tpcds.reason(r_reason_sk);
 
 --对带索引的表tpcds.reason执行VACUUM操作。
 postgres=# VACUUM (VERBOSE, ANALYZE) tpcds.reason;

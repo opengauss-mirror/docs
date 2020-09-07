@@ -43,7 +43,8 @@ COMMENT ON
   TEXT SEARCH PARSER object_name |
   TEXT SEARCH TEMPLATE object_name |
   TYPE object_name |
-  VIEW object_name
+  VIEW object_name |
+  TRIGGER trigger_name ON table_name
 }
    IS 'text';
 ```
