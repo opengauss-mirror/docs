@@ -2,7 +2,7 @@
 
 ## Background<a name="section431817462"></a>
 
-**gs\_om**, provided by openGauss, is used to maintain openGauss. You can use it to start and stop openGauss, query the openGauss status, query static configurations, query openGauss status, generate static configuration file and dynamic configuration file, replace SSL certificates, query help information, and query the version number.
+**gs\_om**, provided by openGauss, is used to maintain openGauss. You can use it to start and stop openGauss, query the openGauss status, query static configurations, query openGauss status details, generate static configuration file and dynamic configuration file, replace SSL certificates, query help information, and query the version number.
 
 ## Prerequisites<a name="section1372118241094"></a>
 
@@ -46,7 +46,7 @@ Log in to the OS as the OS user  **omm**  to run the  **gs\_om**  command.
     gs_om -t view [-o OUTPUT]
     ```
 
--   Query the openGauss status.
+-   Query the openGauss status details.
 
     ```
     gs_om -t query [-o OUTPUT]
