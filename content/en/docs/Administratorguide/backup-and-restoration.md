@@ -2,18 +2,16 @@
 
 <!-- TOC -->
 
-- [Overview<a name="EN-US_TOPIC_0242215084"></a>](#overviewa-nameen-us_topic_0242215084a)
-- [Physical Backup and Restoration<a name="EN-US_TOPIC_0242218789"></a>](#physical-backup-and-restorationa-nameen-us_topic_0242218789a)
-    - [gs\_basebackup<a name="EN-US_TOPIC_0250273516"></a>](#gs\_basebackupa-nameen-us_topic_0250273516a)
-- [Logical Backup and Restoration<a name="EN-US_TOPIC_0242218810"></a>](#logical-backup-and-restorationa-nameen-us_topic_0242218810a)
-    - [gs\_dump<a name="EN-US_TOPIC_0250273517"></a>](#gs\_dumpa-nameen-us_topic_0250273517a)
-    - [gs\_dumpall<a name="EN-US_TOPIC_0250273518"></a>](#gs\_dumpalla-nameen-us_topic_0250273518a)
-    - [gs\_restore<a name="EN-US_TOPIC_0250273519"></a>](#gs\_restorea-nameen-us_topic_0250273519a)
-
-<!-- /TOC -->
+- [Overview](#overview)
+- [Physical Backup and Restoration](#physical-backup-and-restoration)
+    - [gs\_basebackup](#gs\_basebackup)
+- [Logical Backup and Restoration](#logical-backup-and-restoration)
+    - [gs\_dump](#gs\_dump)
+    - [gs\_dumpall](#gs\_dumpall)
+    - [gs\_restore](#gs\_restore)
 
 
-## Overview<a name="EN-US_TOPIC_0242215084"></a>
+## Overview
 
 For database security purposes, openGauss provides two backup types, multiple backup and restoration solutions, and data reliability assurance mechanisms.
 
@@ -116,10 +114,10 @@ Backup and restoration can be logically or physically performed.
     </table>
 
 
-## Physical Backup and Restoration<a name="EN-US_TOPIC_0242218789"></a>
+## Physical Backup and Restoration
 
 
-### gs\_basebackup<a name="EN-US_TOPIC_0250273516"></a>
+### gs\_basebackup
 
 #### Background<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>
 
@@ -244,10 +242,10 @@ To restore the original database, perform the following steps:
 >-   Incremental restoration from backup files is not supported.
 >-   After the restoration, check that the link file in the database is linked to the correct file.
 
-## Logical Backup and Restoration<a name="EN-US_TOPIC_0242218810"></a>
+## Logical Backup and Restoration
 
 
-### gs\_dump<a name="EN-US_TOPIC_0250273517"></a>
+### gs\_dump
 
 #### Background<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_section1271019596335"></a>
 
@@ -809,7 +807,7 @@ Example 6: Use  **gs\_dump**  to export only the information about the views tha
 
 [gs\_dumpall](gs_dumpall.md#EN-US_TOPIC_0250273518)  and  [gs\_restore](gs_restore.md#EN-US_TOPIC_0250273519)
 
-### gs\_dumpall<a name="EN-US_TOPIC_0250273518"></a>
+### gs\_dumpall
 
 #### Background<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_section31221112348"></a>
 
@@ -1062,7 +1060,7 @@ gs_dumpall[port='37300'][2018-06-27 09:55:46]: total time: 56088  ms
 
 [gs\_dump](gs_dump.md#EN-US_TOPIC_0250273517),  [gs\_restore](gs_restore.md#EN-US_TOPIC_0250273519)
 
-### gs\_restore<a name="EN-US_TOPIC_0250273519"></a>
+### gs\_restore
 
 #### Background<a name="en-us_topic_0249632267_en-us_topic_0237152343_en-us_topic_0059777561_section182531928123515"></a>
 

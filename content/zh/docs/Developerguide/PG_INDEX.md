@@ -33,8 +33,14 @@ PG\_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG
 </td>
 <td class="cellrowborder" valign="top" width="66.32000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2d6fd8d03f0d4cd5b2a48c6ce501ed96"><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2d6fd8d03f0d4cd5b2a48c6ce501ed96"></a><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2d6fd8d03f0d4cd5b2a48c6ce501ed96"></a>索引中的字段数目。</p>
 </td>
-</tr>
-<tr id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_r34e3244c232740d09d19a1de04094568"><td class="cellrowborder" valign="top" width="16.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_ad215b838acea44a7826083d333c18bfd"><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_ad215b838acea44a7826083d333c18bfd"></a><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_ad215b838acea44a7826083d333c18bfd"></a>indisunique</p>
+</tr><tr id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_r2dfe0cbf429a4350a2fe62e9bab624a4"><td class="cellrowborder" valign="top" width="16.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a1a5f47b7c444448b88e60d6d5f5dc121"><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a1a5f47b7c444448b88e60d6d5f5dc121"></a><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a1a5f47b7c444448b88e60d6d5f5dc121"></a>indnkeyatts</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.04%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a1f04d6c82aa64d05b44d205b6c14b959"><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a1f04d6c82aa64d05b44d205b6c14b959"></a><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a1f04d6c82aa64d05b44d205b6c14b959"></a>smallint</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.32000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2d6fd8d03f0d4cd5b2a48c6ce501ed96"><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2d6fd8d03f0d4cd5b2a48c6ce501ed96"></a><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2d6fd8d03f0d4cd5b2a48c6ce501ed96"></a>索引中作为KEY字段的数目。</p>
+</td>
+</tr><tr id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_r34e3244c232740d09d19a1de04094568"><td class="cellrowborder" valign="top" width="16.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_ad215b838acea44a7826083d333c18bfd"><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_ad215b838acea44a7826083d333c18bfd"></a><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_ad215b838acea44a7826083d333c18bfd"></a>indisunique</p>
+
 </td>
 <td class="cellrowborder" valign="top" width="17.04%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a6821b1e839444d568f721ba2d8f8458e"><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a6821b1e839444d568f721ba2d8f8458e"></a><a name="zh-cn_topic_0237122293_zh-cn_topic_0059777688_a6821b1e839444d568f721ba2d8f8458e"></a><span id="zh-cn_topic_0237122293_text362112872711"><a name="zh-cn_topic_0237122293_text362112872711"></a><a name="zh-cn_topic_0237122293_text362112872711"></a>Boolean</span></p>
 </td>

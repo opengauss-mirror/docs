@@ -1,27 +1,23 @@
 # Routine Maintenance<a name="EN-US_TOPIC_0242215052"></a>
+<!-- TOC -->
 
--   **[Routine Maintenance Check Items](routine-maintenance-check-items.md)**  
+- [Routine Maintenance Check Items](#routine-maintenance-check-items)
+- [Checking OS Parameters](#checking-os-parameters)
+- [Checking openGauss Health Status](#checking-opengauss-health-status)
+- [Checking Database Performance](#checking-database-performance)
+- [Checking and Deleting Logs](#checking-and-deleting-logs)
+- [Checking Time Consistency](#checking-time-consistency)
+- [Checking the Number of Application Connections](#checking-the-number-of-application-connections)
+- [Routinely Maintaining Tables](#routinely-maintaining-tables)
+- [Routinely Recreating an Index](#routinely-recreating-an-index)
+- [Data Security Maintenance Suggestions](#data-security-maintenance-suggestions)
 
--   **[Checking OS Parameters](checking-os-parameters.md)**  
+<!-- /TOC -->
 
--   **[Checking openGauss Health Status](checking-opengauss-health-status.md)**  
 
--   **[Checking Database Performance](checking-database-performance.md)**  
-
--   **[Checking and Deleting Logs](checking-and-deleting-logs.md)**  
-
--   **[Checking Time Consistency](checking-time-consistency.md)**  
-
--   **[Checking the Number of Application Connections](checking-the-number-of-application-connections.md)**  
-
--   **[Routinely Maintaining Tables](routinely-maintaining-tables.md)**  
-
--   **[Routinely Recreating an Index](routinely-recreating-an-index.md)**  
-
--   **[Data Security Maintenance Suggestions](data-security-maintenance-suggestions.md)**  
 To ensure data security in GaussDB Kernel and prevent accidents, such as data loss and illegal data access, read this section carefully.
 
-## Routine Maintenance Check Items<a name="EN-US_TOPIC_0242215053"></a>
+## Routine Maintenance Check Items
 
 ### Checking openGauss Status<a name="en-us_topic_0237088794_en-us_topic_0059778434_sec4d5eda2fa542ba9fa77a1f284812ed"></a>
 
@@ -191,7 +187,7 @@ Basic information includes versions, components, and patches. Periodic database 
     ```
 
 
-## Checking OS Parameters<a name="EN-US_TOPIC_0242215054"></a>
+## Checking OS Parameters
 
 ### Check Method<a name="section6317196192210"></a>
 
@@ -359,7 +355,7 @@ The  **Abnormal**  state cannot be ignored because the OS in this state affects 
     ```
 
 
-## Checking openGauss Health Status<a name="EN-US_TOPIC_0254813818"></a>
+## Checking openGauss Health Status
 
 ### Check Method<a name="section1481271716105"></a>
 
@@ -1082,7 +1078,7 @@ ClientAliveInterval=10800/ClientAliveInterval=0</pre>
 </tbody>
 </table>
 
-## Checking Database Performance<a name="EN-US_TOPIC_0242215060"></a>
+## Checking Database Performance
 
 ### Check Method<a name="section61381340192910"></a>
 
@@ -1248,7 +1244,7 @@ After you use the  **gs\_checkperf**  tool to check the cluster performance, if 
 </tbody>
 </table>
 
-## Checking and Deleting Logs<a name="EN-US_TOPIC_0242215063"></a>
+## Checking and Deleting Logs
 
 You are advised to check OS logs and database run logs monthly for monitoring system status and troubleshooting, and to delete database run logs monthly for saving disk space.
 
@@ -1402,7 +1398,7 @@ A large number of run logs will be generated during database running and occupy 
 
 
 
-## Checking Time Consistency<a name="EN-US_TOPIC_0242215067"></a>
+## Checking Time Consistency
 
 Database transaction consistency is guaranteed by a logical clock and is not affected by OS time. However, OS time inconsistency will lead to problems, such as abnormal backend O&M and monitoring functions. Therefore, you are advised to monthly check time consistency among nodes.
 
@@ -1448,7 +1444,7 @@ Database transaction consistency is guaranteed by a logical clock and is not aff
     ```
 
 
-## Checking the Number of Application Connections<a name="EN-US_TOPIC_0242215068"></a>
+## Checking the Number of Application Connections
 
 If the number of connections between applications and the database exceeds the maximum value, new connections cannot be established. You are advised to daily check the number of connections, release idle connections in time, or increase the allowed maximum number of connections.
 
@@ -1574,7 +1570,7 @@ If the number of connections in the command output is close to the value of  **m
     ```
 
 
-## Routinely Maintaining Tables<a name="EN-US_TOPIC_0242215069"></a>
+## Routinely Maintaining Tables
 
 To ensure proper database running, after insert and delete operations, you need to routinely run  **VACUUM FULL**  and  **ANALYZE**  as appropriate for customer scenarios and update statistics to obtain better performance.
 
@@ -1680,7 +1676,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
 -   Routinely run  **VACUUM FULL**  on system catalogs, especially  **PG\_ATTRIBUTE**.
 -   Enable automatic vacuum processes \(**AUTOVACUUM**\) in the system. The processes automatically run the  **VACUUM**  and  **ANALYZE**  statements to reclaim the record space marked as the deleted state and update statistics in the table.
 
-## Routinely Recreating an Index<a name="EN-US_TOPIC_0242215070"></a>
+## Routinely Recreating an Index
 
 ### Background<a name="en-us_topic_0237088811_en-us_topic_0059779198_sb20e9236c2ee4359bd71385a42b73ce8"></a>
 
@@ -1744,7 +1740,7 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Before you recreate an index, you can increase the values of  **maintenance\_work\_mem**  and  **psort\_work\_mem**  to accelerate the index recreation.
 
-## Data Security Maintenance Suggestions<a name="EN-US_TOPIC_0242215071"></a>
+## Data Security Maintenance Suggestions
 
 To ensure data security in GaussDB Kernel and prevent accidents, such as data loss and illegal data access, read this section carefully.
 

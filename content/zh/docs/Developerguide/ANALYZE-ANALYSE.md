@@ -70,7 +70,6 @@ ANALYZE VERIFY 操作处理的大多为异常场景检测需要使用RELEASE版�
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   支持对普通表的操作和索引表的操作，但不支持对索引表index使用CASCADE操作。原因是由于CASCADE模式用于处理主表的所有索引表，当单独对索引表进行检测时，无需使用CASCADE模式。  
-    >-   不支持临时表和unlog表。  
     >-   对于主表的检测会同步检测主表的内部表，例如toast表、cudesc表等。  
     >-   当提示索引表损坏时，建议使用reindex命令进行重建索引操作。  
 
@@ -82,9 +81,7 @@ ANALYZE VERIFY 操作处理的大多为异常场景检测需要使用RELEASE版�
 
   ![](public_sys-resources/icon-note.gif) **说明：**   
 
-  >-   支持对表的单独分区进行检测操作，但不支持对索引表index使用CASCADE操作。  
-  >-   不支持临时表和unlog表。
-
+  支持对表的单独分区进行检测操作，但不支持对索引表index使用CASCADE操作。  
 
 
 ## 参数说明<a name="zh-cn_topic_0237122086_zh-cn_topic_0059779340_s4a744c72f8c44fa4899ddd31887cb4ee"></a>
