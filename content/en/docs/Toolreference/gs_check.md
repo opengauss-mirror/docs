@@ -9,7 +9,6 @@
 -   Parameter  **-i**  or  **-e**  must be set.  **-i**  specifies a single item to be checked, and  **-e**  specifies an inspection scenario where multiple items will be checked.
 -   If  **-i**  is not set to a root item or no such items are contained in the check item list of the scenario specified by  **-e**, you do not need to enter the name or password of a user with the root permissions.
 -   You can run  **--skip-root-items**  to skip root items.
--   The blacklist check item applies only to the upgrade from R5 to R6.
 -   If the MTU values are inconsistent, the check may be slow or the check process may fail to respond. When the inspection tool displays a message, change the MTU values of the nodes to be the same and then perform the inspection.
 -   If the switch does not support the configured MTU value, process response failures may be caused due to communication problems even if the MTU values are the same. In this case, you need to adjust the MTU based on the switch.
 
@@ -472,7 +471,7 @@
 </tr>
 <tr id="en-us_topic_0237152330_en-us_topic_0059777799_ra3af193edd5b4e4aaa5f7aa7d731aa7e"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152330_p3416198587"><a name="en-us_topic_0237152330_p3416198587"></a><a name="en-us_topic_0237152330_p3416198587"></a>CheckUpVer</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152330_p174281451125812"><a name="en-us_topic_0237152330_p174281451125812"></a><a name="en-us_topic_0237152330_p174281451125812"></a>Checks the version of the upgrade package on each node in <span id="text1934210565416"><a name="text1934210565416"></a><a name="text1934210565416"></a>openGauss</span>. If the versions are consistent, this item passes the check. Otherwise, this item fails the check.</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152330_p174281451125812"><a name="en-us_topic_0237152330_p174281451125812"></a><a name="en-us_topic_0237152330_p174281451125812"></a>Checks the version of the upgrade package on each node in <span id="text1934210565416"><a name="text1934210565416"></a><a name="text1934210565416"></a>openGauss</span>. If the versions are consistent, this item passes the check. Otherwise, this item fails the check. you need to specify the path of the upgrade software package.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152330_p18884150114818"><a name="en-us_topic_0237152330_p18884150114818"></a><a name="en-us_topic_0237152330_p18884150114818"></a>No</p>
 </td>
@@ -856,8 +855,10 @@
 </tbody>
 </table>
 
+
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Constraints on the CheckNetSpeed check item are as follows:
+>
 >-   Do not use  **-L**  to check CheckNetSpeed, because doing so cannot produce enough network load and the check result will be inaccurate.
 >-   If the number of nodes is less than six, the network load produced by  **speed\_test**  may not fully occupy the bandwidth, and the check result will be inaccurate.
 

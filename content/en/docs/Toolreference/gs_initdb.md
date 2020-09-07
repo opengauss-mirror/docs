@@ -137,7 +137,7 @@ During installation, you are advised to use the  **-D**  parameter to invoke  **
 </td>
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"><a name="en-us_topic_0237152414_en-us_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a>Specifies the name of an initialized node.</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p15632068264"><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p15632068264"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p15632068264"></a>-</p>
+<td class="cellrowborder" valign="top" width="43.6%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p15632068264"><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p15632068264"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p15632068264"></a>The naming rules for nodes are as follows:</p>
 </td>
 </tr>
 <tr id="row9199165395018"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"><a name="en-us_topic_0237152414_en-us_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a>-E, --encoding=ENCODING</p>
@@ -204,6 +204,7 @@ zh_SG.gbk
 </table>
 
 <a name="table5354113817513"></a>
+
 <table><tbody><tr id="en-us_topic_0237152414_en-us_topic_0059778168_rdc19c92d7a554a0d921f52aea18b7f68"><td class="cellrowborder" valign="top" width="23.76%"><p id="en-us_topic_0237152414_en-us_topic_0059778168_a3764e4e4a8a9461f8573f7cf4537514d"><a name="en-us_topic_0237152414_en-us_topic_0059778168_a3764e4e4a8a9461f8573f7cf4537514d"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_a3764e4e4a8a9461f8573f7cf4537514d"></a>-T, --text-search-config=CFG</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.6%"><p id="en-us_topic_0237152414_en-us_topic_0059778168_ade5a330c60df4410a111730ce871e9e5"><a name="en-us_topic_0237152414_en-us_topic_0059778168_ade5a330c60df4410a111730ce871e9e5"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_ade5a330c60df4410a111730ce871e9e5"></a>Specifies the default text search mode. The value of this parameter is not verified. After the configuration is successful, a log is recorded to notify you of the value of this parameter.</p>
