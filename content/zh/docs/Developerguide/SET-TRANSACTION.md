@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0237122190_zh-cn_topic_0059778135_s91c8bf3e55a0490299ef9c0cd59f44f6"></a>
 
-无。
+此命令需要在事务中执行（即执行SET TRANSACTION之前需要执行START TRANSACTION或者BEGIN），否则设置不生效。
 
 ## 语法格式<a name="zh-cn_topic_0237122190_zh-cn_topic_0059778135_sce3e49e1f5894684861d1df6677d12c8"></a>
 
