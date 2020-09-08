@@ -1,4 +1,4 @@
-﻿---
+---
 headless: true
 ---
 -   [法律声明]({{< relref "./docs/Releasenotes/法律声明.md" >}})
@@ -1087,11 +1087,12 @@ headless: true
         -   [Workload Manager]({{< relref "./docs/Developerguide/Workload-Manager.md" >}})
             -   [WLM\_USER\_RESOURCE\_CONFIG]({{< relref "./docs/Developerguide/WLM_USER_RESOURCE_CONFIG.md" >}})
             -   [WLM\_USER\_RESOURCE\_RUNTIME]({{< relref "./docs/Developerguide/WLM_USER_RESOURCE_RUNTIME.md" >}})
-   -   [WDR Snapshot Schema]({{< relref "./docs/Developerguide/WDR-Snapshot-Schema.md" >}})
-       -   [WDR Snapshot 原信息表]({{< relref "./docs/Developerguide/WDR-Snapshot-原信息表.md" >}})
-           -   [SNAPSHOT.SNAPSHOT]({{< relref "./docs/Developerguide/SNAPSHOT-SNAPSHOT.md" >}})
-           -   [SNAPSHOT.TABLES\_SNAP\_TIMESTAMP]({{< relref "./docs/Developerguide/SNAPSHOT-TABLES_SNAP_TIMESTAMP.md" >}})
-       -   [WDR Snapshot 数据表]({{< relref "./docs/Developerguide/WDR-Snapshot-数据表.md" >}})
+    -   [WDR Snapshot Schema]({{< relref "./docs/Developerguide/WDR-Snapshot-Schema.md" >}})
+        -   [WDR Snapshot 原信息表]({{< relref "./docs/Developerguide/WDR-Snapshot-原信息表.md" >}})
+            -   [SNAPSHOT.SNAPSHOT]({{< relref "./docs/Developerguide/SNAPSHOT-SNAPSHOT.md" >}})
+            -   [SNAPSHOT.TABLES\_SNAP\_TIMESTAMP]({{< relref "./docs/Developerguide/SNAPSHOT-TABLES_SNAP_TIMESTAMP.md" >}})
+        -   [WDR Snapshot 数据表]({{< relref "./docs/Developerguide/WDR-Snapshot-数据表.md" >}})
+		-   [WDR Snapshot 生成性能报告]({{< relref "./docs/Developerguide/WDR-Snapshot生成性能报告.md" >}})
    -   [逻辑复制]({{< relref "./docs/Developerguide/逻辑复制.md" >}})
         -   [逻辑解码]({{< relref "./docs/Developerguide/逻辑解码.md" >}})
             -   [逻辑解码概述]({{< relref "./docs/Developerguide/逻辑解码概述.md" >}})
