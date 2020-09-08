@@ -6,17 +6,17 @@
 
 <!-- TOC -->
 
-- [配置数据库名称及各项目录<a name="ZH-CN_TOPIC_0249784584"></a>](#配置数据库名称及各项目录a-namezh-cn_topic_0249784584a)
-- [配置Host基本信息<a name="ZH-CN_TOPIC_0249784567"></a>](#配置host基本信息a-namezh-cn_topic_0249784567a)
-- [配置数据库主节点信息<a name="ZH-CN_TOPIC_0249784583"></a>](#配置数据库主节点信息a-namezh-cn_topic_0249784583a)
-- [示例<a name="ZH-CN_TOPIC_0249784528"></a>](#示例a-namezh-cn_topic_0249784528a)
-    - [单节点配置文件<a name="section1698454873416"></a>](#单节点配置文件a-namesection1698454873416a)
-    - [一主一备配置文件<a name="section946242113712"></a>](#一主一备配置文件a-namesection946242113712a)
+- [配置数据库名称及各项目录](#配置数据库名称及各项目录)
+- [配置Host基本信息](#配置host基本信息)
+- [配置数据库主节点信息](#配置数据库主节点信息)
+- [示例](#示例)
+    - [单节点配置文件](#单节点配置文件)
+    - [一主一备配置文件](#一主一备配置文件)
 
 <!-- /TOC -->
 
 
-## 配置数据库名称及各项目录<a name="ZH-CN_TOPIC_0249784584"></a>
+## 配置数据库名称及各项目录
 
 在script/gspylib/etc/conf/cluster\_config\_template.xml获取XML文件模板。加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
 
@@ -115,7 +115,7 @@
 </tbody>
 </table>
 
-## 配置Host基本信息<a name="ZH-CN_TOPIC_0249784567"></a>
+## 配置Host基本信息
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >每台Host服务器都必须有如下信息，如下示例以node1为例。
@@ -187,7 +187,7 @@
 ><PARAM name="backIp2" value="192.168.0.2"/>
 >```
 
-## 配置数据库主节点信息<a name="ZH-CN_TOPIC_0249784583"></a>
+## 配置数据库主节点信息
 
 加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
 
@@ -240,9 +240,9 @@
 </tbody>
 </table>
 
-## 示例<a name="ZH-CN_TOPIC_0249784528"></a>
+## 示例
 
-### 单节点配置文件<a name="section1698454873416"></a>
+### 单节点配置文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -281,7 +281,7 @@
 </ROOT>
 ```
 
-### 一主一备配置文件<a name="section946242113712"></a>
+### 一主一备配置文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

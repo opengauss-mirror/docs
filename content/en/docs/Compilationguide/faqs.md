@@ -1,14 +1,5 @@
 # FAQs<a name="EN-US_TOPIC_0241496990"></a>
 
-<!-- TOC -->
-
-- [How Do I Delete Temporary Files Generated During Compilation?<a name="EN-US_TOPIC_0241496977"></a>](#how-do-i-delete-temporary-files-generated-during-compilationa-nameen-us_topic_0241496977a)
-- [How Do I Resolve the "Configure error: C compiler cannot create executables" Error?<a name="EN-US_TOPIC_0241496984"></a>](#how-do-i-resolve-the-configure-error-c-compiler-cannot-create-executables-errora-nameen-us_topic_0241496984a)
-- [How Do I Handle the "g++: fatal error: Killed signal terminated program cclplus" Error?<a name="EN-US_TOPIC_0250721950"></a>](#how-do-i-handle-the-g-fatal-error-killed-signal-terminated-program-cclplus-errora-nameen-us_topic_0250721950a)
-- [How Do I Handle the "out of memory allocating xxx bytes after a total of xxx bytes" Error?<a name="EN-US_TOPIC_0251012682"></a>](#how-do-i-handle-the-out-of-memory-allocating-xxx-bytes-after-a-total-of-xxx-bytes-errora-nameen-us_topic_0251012682a)
-
-<!-- /TOC -->
-
 ## How Do I Delete Temporary Files Generated During Compilation?<a name="EN-US_TOPIC_0241496977"></a>
 
 ### Question<a name="section8138144317480"></a>

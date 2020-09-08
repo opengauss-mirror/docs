@@ -146,7 +146,7 @@ Common parameters
     -   **1**  indicates that the compression ratio is the lowest and processing speed the fastest.
     -   **9**  indicates that the compression ratio is the highest and processing speed the slowest.
 
-    For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The plain-text and .tar archive formats do not support compression currently.
+    For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The .tar archive formats do not support compression currently.
 
 -   --lock-wait-timeout=TIMEOUT
 

@@ -9,7 +9,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 -   必须指定-i或-e参数，-i会检查指定的单项，-e会检查对应场景配置中的多项。
 -   如果-i参数中不包含root类检查项或-e场景配置列表中没有root类检查项，则不需要交互输入root权限的用户及其密码。
 -   可使用--skip-root-items跳过检查项中包含的root类检查，以免需要输入root权限用户及密码。
--   黑名单检查项仅适用于R5升级到R6。
 -   MTU值不一致时可能导致检查缓慢或进程停止响应，当巡检工具出现提示时请修改各节点MTU值一致后再进行巡检。
 -   交换机不支持当前设置的MTU值时，即使MTU值一致也会出现通信问题引起进程停止响应，需要根据交换机调整MTU大小。
 
@@ -62,7 +61,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 -   -l
 
-    指定日志文件路径。
+    指定日志文件路径，指定路径时需添加.log后缀。
 
 -   -o
 
@@ -95,10 +94,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 -   --disk-threshold="PERCENT"
 
     检查磁盘占用时可选指定告警阈值，可指定1-99之间的整数，不输入则默认为90。检查其他项时不需要该参数。
-
--   --ShrinkNodes
-
-    指定缩容磁盘空间检查时缩容节点名称，仅在-i CheckSpaceForShrink时有效。
 
 -   -?, --help
 
@@ -467,7 +462,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_ra3af193edd5b4e4aaa5f7aa7d731aa7e"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p3416198587"><a name="zh-cn_topic_0237152330_p3416198587"></a><a name="zh-cn_topic_0237152330_p3416198587"></a>CheckUpVer（检查升级版本是否一致）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p174281451125812"><a name="zh-cn_topic_0237152330_p174281451125812"></a><a name="zh-cn_topic_0237152330_p174281451125812"></a>检查<span id="text1934210565416"><a name="text1934210565416"></a><a name="text1934210565416"></a>openGauss</span>各个节点上升级包的版本，如果一致则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p174281451125812"><a name="zh-cn_topic_0237152330_p174281451125812"></a><a name="zh-cn_topic_0237152330_p174281451125812"></a>检查<span id="text1934210565416"><a name="text1934210565416"></a><a name="text1934210565416"></a>openGauss</span>各个节点上升级包的版本，如果一致则检查项通过，否则检查项不通过。使用时，需指定升级软件包路径。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p18884150114818"><a name="zh-cn_topic_0237152330_p18884150114818"></a><a name="zh-cn_topic_0237152330_p18884150114818"></a>否</p>
 </td>
@@ -851,8 +846,10 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tbody>
 </table>
 
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >CheckNetSpeed检查项：
+>
 >-   CheckNetSpeed不支持-L本地检查模式，-L模式无法构造网络压力，检查的结果不准确。
 >-   在节点数小于6时，speed\_test构造的网络压力可能无法跑满带宽，可能会造成检查结果不准确。
 
