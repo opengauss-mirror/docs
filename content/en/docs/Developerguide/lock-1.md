@@ -260,7 +260,7 @@ LOCK [ TABLE ] {[ ONLY ] name [, ...]| {name [ * ]} [, ...]}
 
     Guarantees that the holder is the only transaction accessing the table in any way.
 
-    Acquired by the  **ALTER TABLE**,  **DROP TABLE**,  **TRUNCATE**,  **REINDEX**,  **CLUSTER**, and  **VACUUM FULL**  statements.
+    Acquired by the  **ALTER TABLE**,  **DROP TABLE**,  **TRUNCATE**,  **REINDEX**  statements.
 
     This is also the default lock mode for  **LOCK TABLE**  statements that do not specify a mode explicitly.
 

@@ -45,7 +45,7 @@ None
 
     Specifies the statement to be executed in an anonymous block.
 
-    Value range: an existing function name
+    Value range: DML operations (such as select, insert, delete, update) or registered functions  in the system catalog.
 
 
 ## Examples<a name="section41260277018"></a>
