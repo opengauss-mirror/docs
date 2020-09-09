@@ -30,7 +30,7 @@ oracle_fdw是一款开源插件，github地址： https://github.com/laurenz/ora
 -   执行**CREATE USER MAPPING**时使用的Oracle用户需要有远程连接Oracle及对表相关操作的权限。使用外表前，可以在openGauss server所在的机器上，使用Oracle的客户端，使用对应的用户名密码确认能否成功连接Oracle并进行操作。
 -   执行 **CREATE EXTENSION oracle_fdw;** 时，出现 **libclntsh.so: cannot open shared object file: No such file or directory** 。原因是Oracle的开发库libclntsh.so不在系统的相关路径中，可以先找到libclntsh.so的具体路径，然后将该so文件所在的文件夹加到 **/etc/ld.so.conf** 中。比如libclntsh.so的路径为  **/usr/lib/oracle/11.2/client64/lib/libclntsh.so.11.1** ，那么就将该文件的路径 **/usr/lib/oracle/11.2/client64/lib/** 加到 **/etc/ld.so.conf** 文件末尾。然后执行 **ldconfig** 使修改生效即可。注意此操作需要 **root** 权限。
 
-## 已知问题
+## 注意事项
 -   两个oracle外表间的**SELECT JOIN**不支持下推到Oracle server执行，会被分成两条SQL语句传递到Oracle执行，然后在openGauss处汇总处理结果。
 -   不支持**IMPORT FOREIGN SCHEMA**语法。
 -   不支持对外表进行**CREATE TRIGGER**操作。
