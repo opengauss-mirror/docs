@@ -90,6 +90,49 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 <td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>可使用的下盘空间总大小，单位KB，值为-1表示未限制。</p>
 </td>
 </tr>
+    <tr id="zh-cn_topic_0237122540_row18196199153319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122540_p619679173318"><a name="zh-cn_topic_0237122540_p619679173318"></a><a name="zh-cn_topic_0237122540_p619679173318"></a>read_kbytes</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122540_p6196092338"><a name="zh-cn_topic_0237122540_p6196092338"></a><a name="zh-cn_topic_0237122540_p6196092338"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>监视间隔期间读取字节数，单位kilobytes/s。</p>
+</td>
+</tr>
+     <tr id="zh-cn_topic_0237122540_row18196199153319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122540_p619679173318"><a name="zh-cn_topic_0237122540_p619679173318"></a><a name="zh-cn_topic_0237122540_p619679173318"></a>write_kbytes</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122540_p6196092338"><a name="zh-cn_topic_0237122540_p6196092338"></a><a name="zh-cn_topic_0237122540_p6196092338"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>监视间隔期间写入字节数，单位kilobytes/s。</p>
+</td>
+</tr>
+     <tr id="zh-cn_topic_0237122540_row18196199153319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122540_p619679173318"><a name="zh-cn_topic_0237122540_p619679173318"></a><a name="zh-cn_topic_0237122540_p619679173318"></a>read_counts</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122540_p6196092338"><a name="zh-cn_topic_0237122540_p6196092338"></a><a name="zh-cn_topic_0237122540_p6196092338"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>监视间隔期间读取的次数。</p>
+</td>
+</tr>
+    <tr id="zh-cn_topic_0237122540_row18196199153319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122540_p619679173318"><a name="zh-cn_topic_0237122540_p619679173318"></a><a name="zh-cn_topic_0237122540_p619679173318"></a>write_counts</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122540_p6196092338"><a name="zh-cn_topic_0237122540_p6196092338"></a><a name="zh-cn_topic_0237122540_p6196092338"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>监视间隔期间写入的次数。</p>
+</td>
+</tr>
+    <tr id="zh-cn_topic_0237122540_row18196199153319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122540_p619679173318"><a name="zh-cn_topic_0237122540_p619679173318"></a><a name="zh-cn_topic_0237122540_p619679173318"></a>read_speed</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122540_p6196092338"><a name="zh-cn_topic_0237122540_p6196092338"></a><a name="zh-cn_topic_0237122540_p6196092338"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>读取速度，单位bytes/s。</p>
+</td>
+</tr>
+     <tr id="zh-cn_topic_0237122540_row18196199153319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122540_p619679173318"><a name="zh-cn_topic_0237122540_p619679173318"></a><a name="zh-cn_topic_0237122540_p619679173318"></a>write_speed</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122540_p6196092338"><a name="zh-cn_topic_0237122540_p6196092338"></a><a name="zh-cn_topic_0237122540_p6196092338"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122540_p719718919330"><a name="zh-cn_topic_0237122540_p719718919330"></a><a name="zh-cn_topic_0237122540_p719718919330"></a>写入速度，单位bytes/s。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
