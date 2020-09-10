@@ -78,6 +78,34 @@ PG\_TABLES视图提供了对数据库中每个表访问的有用信息。
 <td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a>如果表上有触发器，则为TRUE，否则为FALSE。</p>
 </td>
 </tr>
+    
+    <tr id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_r91fbffbc841f49718ea51aa073c15af1"><td class="cellrowborder" valign="top" width="19.24%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"></a>tablecreator</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"></a><span id="zh-cn_topic_0237122467_text1332015617318"><a name="zh-cn_topic_0237122467_text1332015617318"></a><a name="zh-cn_topic_0237122467_text1332015617318"></a>name</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a>pg_get_userbyid(po.creator)</p>
+</td>
+<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a>创建表的名称。</p>
+</td>
+</tr>
+     <tr id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_r91fbffbc841f49718ea51aa073c15af1"><td class="cellrowborder" valign="top" width="19.24%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"></a>created</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"></a><span id="zh-cn_topic_0237122467_text1332015617318"><a name="zh-cn_topic_0237122467_text1332015617318"></a><a name="zh-cn_topic_0237122467_text1332015617318"></a>timestamp with time zone</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a>pg_object.ctime</p>
+</td>
+<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a>对象的创建时间。</p>
+</td>
+</tr>
+         <tr id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_r91fbffbc841f49718ea51aa073c15af1"><td class="cellrowborder" valign="top" width="19.24%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a2d59ce7066b64b639aee50aae2732610"></a>last_ddl_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7da65276aa724b37bf5634ca24556ca0"></a><span id="zh-cn_topic_0237122467_text1332015617318"><a name="zh-cn_topic_0237122467_text1332015617318"></a><a name="zh-cn_topic_0237122467_text1332015617318"></a>timestamp with time zone</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a>pg_object.mtime</p>
+</td>
+<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a><a name="zh-cn_topic_0237122467_zh-cn_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a>对象的最后修改时间。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

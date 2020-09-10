@@ -69,13 +69,6 @@
 <td class="cellrowborder" valign="top" width="68.11%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122466_p6467102111413"><a name="zh-cn_topic_0237122466_p6467102111413"></a><a name="zh-cn_topic_0237122466_p6467102111413"></a>父会话ID。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_r56837126154d40bb811a32f1313dd911"><td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a4d23799430a94dfc9c694a67d2db7776"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a4d23799430a94dfc9c694a67d2db7776"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a4d23799430a94dfc9c694a67d2db7776"></a>ptid</p>
-</td>
-<td class="cellrowborder" valign="top" width="12.85%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a3c441e71fc4b415d8d25d9bb2f2822de"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a3c441e71fc4b415d8d25d9bb2f2822de"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a3c441e71fc4b415d8d25d9bb2f2822de"></a>integer</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.11%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a46d38b3add8046adab53a794dcb4049c"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a46d38b3add8046adab53a794dcb4049c"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a46d38b3add8046adab53a794dcb4049c"></a>streaming线程的父线程。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_rd1948fc45b9646ecbbcdee8e782ecf1c"><td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_aa893addf11be41088c8b656c18400d5c"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_aa893addf11be41088c8b656c18400d5c"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_aa893addf11be41088c8b656c18400d5c"></a>tlevel</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.85%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a5e01efdc30d242b9b3492cf49bf9e207"><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a5e01efdc30d242b9b3492cf49bf9e207"></a><a name="zh-cn_topic_0237122466_zh-cn_topic_0059777957_a5e01efdc30d242b9b3492cf49bf9e207"></a>integer</p>
