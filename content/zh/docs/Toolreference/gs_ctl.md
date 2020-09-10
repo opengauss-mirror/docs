@@ -74,7 +74,7 @@ gs\_ctl参数可分为如下几类：
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rf3ffc423f13a4943b18d24be85bcc74f"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a>switchover</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>在主备机正常时，出于维护的需要，将备机切换为主机，可保证切换过程中数据不丢失。</p>
-    <p id="p12188127154613"><a name="p12188127154613"></a><a name="p12188127154613"></a>必须在要切换为主机的备机上，执行switchover命令。</p>
+    <p id="p12188127154613"><a name="p12188127154613"></a><a name="p12188127154613"></a>必须在要切换为主机的备机上，执行switchover命令才会生效。在主机上执行switchover命令，仅做查询使用。</p>
     <p id="p1977111500144"><a name="p1977111500144"></a><a name="p1977111500144"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响集群状态。</p>
     <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态。</p>
     </td>
