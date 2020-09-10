@@ -10,8 +10,9 @@ When a transaction change is required, SILO handles the copying of all that tran
 
 The basic interactive transactional flow with our SILO-enhanced concurrency control is shown in the figure below –
 
-**Figure  1**  Private \(Local\) Memory \(for each transaction\) and a Global Memory \(for all the transactions of all the cores\)<a name="fig1836255424919"></a>  
-![](figures/private-(local)-memory-(for-each-transaction)-and-a-global-memory-(for-all-the-transactions-of-all-t.png "private-(local)-memory-(for-each-transaction)-and-a-global-memory-(for-all-the-transactions-of-all-t")
+**Figure  1**  Private \(Local\) Memory \(for each transaction\) and a Global Memory \(for all the transactions of all the cores\)
+
+![](figures/private-(local)-memory-(for-each-transaction)-and-a-global-memory.png)
 
 For more details, refer to the Industrial-Strength OLTP Using Main Memory and Many-cores document<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>.
 
