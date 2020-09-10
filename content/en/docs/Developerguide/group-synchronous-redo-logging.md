@@ -20,13 +20,13 @@ When a transaction commits, a group of entries are recorded in the WAL Redo Log,
 3.  After the configured criteria are fulfilled for a specific group of transactions \(quantity of committed transactions or timeout period as describes in the  [REDO LOG \(MOT\)](mot-configuration-settings.md#section361563811235)section\), the transactions in this group are written to the WAL on the disk. This means that while these log entries are being written to the log, the client applications that issued the commit are waiting for a response.
 4.  As soon as all the transaction buffers in the NUMA-aware group have been written to the log, all the transactions in the group are performing the necessary changes to the memory store and the clients are notified that these transactions are complete.
 
-**Technical Description**
+## **Technical Description**
 
 The four colors represent 4 NUMA nodes. Thus each NUMA node has its own memory log enabling a group commit of multiple connections.
 
 **Figure  1**  Group Commit – with NUMA-awareness![](figures/group-commit-with-numa-awareness.png)
 
-**Summary**
+## **Summary**
 
 The  **Group Synchronous Redo Logging**  option is a an extremely safe and strict logging option because it ensures total synchronization of the client application and the WAL Redo log entries; thus ensuring total durability and consistency with absolutely no data loss. This logging option prevents the situation where a client application might mark a transaction as successful, when it has not yet been persisted to disk.
 

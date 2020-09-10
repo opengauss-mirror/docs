@@ -33,16 +33,5 @@ According to your configuration, one of the following types of logging is implem
 -   [Per-transaction Logging](per-transaction-logging.md)
 -   [Exception Handling](exception-handling.md)
 
--   **[Synchronous Redo Logging](synchronous-redo-logging.md)**  
-
--   **[Group Synchronous Redo Logging](group-synchronous-redo-logging.md)**  
-
--   **[Asynchronous Redo Logging](asynchronous-redo-logging.md)**  
-
--   **[Logging Design Overview](logging-design-overview.md)**  
-
--   **[Per-transaction Logging](per-transaction-logging.md)**  
-
--   **[Exception Handling](exception-handling.md)**  
 
 

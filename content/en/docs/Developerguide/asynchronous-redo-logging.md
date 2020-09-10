@@ -8,13 +8,13 @@ When a transaction is committed by a client application, the transaction redo en
 2.  After a transaction finishes and the client application sends a Commit command, the transaction redo entries are written to internal buffers, but are not yet written to disk. Then changes to the MOT data memory take place and the client application is notified that the transaction is committed.
 3.  At a preconfigured interval, a redo log thread running in the background collects all the buffered redo log entries and writes them to disk.
 
-**Technical Description**
+## **Technical Description**
 
 Upon transaction commit, the transaction buffer is moved \(pointer assignment – not a data copy\) to a centralized buffer and a new transaction buffer is allocated for the transaction. The transaction is released as soon as its buffer is moved to the centralized buffer and the transaction thread is not blocked. The actual write to the log uses the Postgres walwriter thread. When the walwriter timer elapses, it first calls the AsynchronousRedoLogHandler \(via registered callback\) to write its buffers and then continues with its logic and flushes the data to the XLOG.
 
 **Figure  1**  Asynchronous Logging![](figures/asynchronous-logging.png)
 
-**Summary**
+## **Summary**
 
 The Asynchronous Redo Logging option is the fastest logging option because it does not require the client application to wait for data being written to disk. In addition, it groups many transactions redo entries and writes them together, thus reducing the amount of disk I/Os that slow down the MOT engine.
 
