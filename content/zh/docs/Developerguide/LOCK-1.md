@@ -222,7 +222,7 @@ LOCK的参数说明如下所示：
 
 -   **ROW SHARE**
 
-    ROW SHARE锁允许对表进行并发读取，禁止对表进行其他操作。
+    与EXCLUSIVE和ACCESS EXCLUSIVE锁模式冲突。
 
     SELECT FOR UPDATE和SELECT FOR SHARE命令会自动在目标表上请求ROW SHARE锁（且所有被引用但不是FOR SHARE/FOR UPDATE的其他表上，还会自动加上ACCESS SHARE锁）。
 
