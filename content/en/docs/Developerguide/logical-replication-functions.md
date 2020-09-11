@@ -16,7 +16,7 @@
 
         Indicates the name of the plugin.
 
-        Value range: a string, supporting only  **gaussdb\_decoding**
+        Value range: a string, supporting  **mppdb\_decoding** and **test\_decoding**.
 
     Return type: name, text
 
@@ -93,7 +93,7 @@
 
 
     Return type: text, uint, text
-
+    
     Note: The function returns the decoding result. Each decoding result contains three columns, corresponding to the above return types and indicating the LSN position, XID, and decoded content, respectively.
 
 -   pg\_logical\_slot\_get\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)

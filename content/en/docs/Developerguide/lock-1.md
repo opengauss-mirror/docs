@@ -222,7 +222,7 @@ LOCK [ TABLE ] {[ ONLY ] name [, ...]| {name [ * ]} [, ...]}
 
 -   **ROW SHARE**
 
-    Allows concurrent read of a table but does not allow any other operations on the table.
+    Conflicts with EXCLUSIVE and ACCESS EXCLUSIVE lock modes.
 
     **SELECT FOR UPDATE**  and  **SELECT FOR SHARE**  automatically acquire the  **ROW SHARE**  lock on the target table and add the  **ACCESS SHARE**  lock to other referenced tables except  **FOR SHARE**  and  **FOR UPDATE**.
 
