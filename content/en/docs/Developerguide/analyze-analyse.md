@@ -58,11 +58,10 @@ The  **ANALYZE VERIFY**  operation is used to detect abnormal scenarios. The  **
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >-   In fast mode, DML operations need to be performed on the tables to be verified concurrently. As a result, an error is reported during the verification. In the current fast mode, data is directly read from the disk. When other threads modify files concurrently, the obtained data is incorrect. Therefore, you are advised to perform the verification offline.  
     >-   You can perform operations on the entire database. Because a large number of tables are involved, you are advised to save the result  **gsql -d database -p port -f "verify.sql"\> verify\_warning.txt 2\>&1**  in redirection mode.  
-    >-   Temporary tables and unlogged tables are not supported.  
     >-   NOTICE is used to check only tables that are visible to external systems. The detection of internal tables is included in the external tables on which NOTICE depends and is not displayed externally.  
     >-   This statement can be executed with error tolerance. The  **Assert**  of the debug version may cause the core to fail to execute commands. Therefore, you are advised to perform the operations in release mode.  
     >-   If a key system table is damaged during a full database operation, an error is reported and the operation stops.  
-
+    
 -   Check data files of tables and indexes.
 
     ```
@@ -75,15 +74,16 @@ The  **ANALYZE VERIFY**  operation is used to detect abnormal scenarios. The  **
     >-   When the primary table is checked, the internal tables of the primary table, such as the toast table and cudesc table, are also checked.  
     >-   When the system displays a message indicating that the index table is damaged, you are advised to run the  **reindex**  command to recreate the index.  
 
--   Check the data files of the table partition.
+- Check the data files of the table partition.
 
-```
-{ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(patrition_name)}[CASCADE];
-```
+  ```
+  {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(patrition_name)}[CASCADE];
+  ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   You can check a single partition of a table, but cannot perform the  **CASCADE**  operation on the indexes of an index table.  
->-   Temporary tables and unlogged tables are not supported.  
+  ![](public_sys-resources/icon-note.gif) **NOTE:**   
+
+  >-   You can check a single partition of a table, but cannot perform the  **CASCADE**  operation on the indexes of an index table.  
+  >-   Temporary tables and unlogged tables are not supported.  
 
 ## Parameter Description<a name="en-us_topic_0237122086_en-us_topic_0059779340_s4a744c72f8c44fa4899ddd31887cb4ee"></a>
 
@@ -187,7 +187,7 @@ ANALYZE
 -- Delete the table.
 
 ```
-postgres=# DROP TABLE customer;
+postgres=# DROP TABLE customer_info;
 postgres=# DROP TABLE customer_par;
 ```
 

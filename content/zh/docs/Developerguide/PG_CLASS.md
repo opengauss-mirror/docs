@@ -168,7 +168,7 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122277_zh-cn_topic_0059778035_afd2aceb031e140acbdea98d221de7c2b"><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_afd2aceb031e140acbdea98d221de7c2b"></a><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_afd2aceb031e140acbdea98d221de7c2b"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_ubd947dfd9fef47789142d23914e20261"></a><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_ubd947dfd9fef47789142d23914e20261"></a><ul id="zh-cn_topic_0237122277_zh-cn_topic_0059778035_ubd947dfd9fef47789142d23914e20261"><li>r：表示普通表。</li><li>i：表示索引。</li><li>S：表示序列。</li><li>v：表示视图。</li><li>c：表示复合类型。</li><li>t：表示TOAST表。</li><li>f：表示外表。</li></ul>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_ubd947dfd9fef47789142d23914e20261"></a><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_ubd947dfd9fef47789142d23914e20261"></a><ul id="zh-cn_topic_0237122277_zh-cn_topic_0059778035_ubd947dfd9fef47789142d23914e20261"><li>r：表示普通表。</li><li>i：表示索引。</li><li>I：表示分区表GLOBAL索引。</li><li>S：表示序列。</li><li>v：表示视图。</li><li>c：表示复合类型。</li><li>t：表示TOAST表。</li><li>f：表示外表。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122277_zh-cn_topic_0059778035_rac756c89935145afa26f9c6bc2b0c2f1"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122277_zh-cn_topic_0059778035_a187de524578e436080f731084a8f4e73"><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_a187de524578e436080f731084a8f4e73"></a><a name="zh-cn_topic_0237122277_zh-cn_topic_0059778035_a187de524578e436080f731084a8f4e73"></a>relnatts</p>
@@ -290,6 +290,20 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122277_p18185509339"><a name="zh-cn_topic_0237122277_p18185509339"></a><a name="zh-cn_topic_0237122277_p18185509339"></a>xid</p>
 </td>
 <td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122277_p171281349143316"><a name="zh-cn_topic_0237122277_p171281349143316"></a><a name="zh-cn_topic_0237122277_p171281349143316"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。该字段用于跟踪此表是否需要为了防止事务ID重叠（或者允许收缩pg_clog）而进行清理。如果该关系不是表则为零（InvalidTransactionId）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122277_row11845015339"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122277_p1918516011336"><a name="zh-cn_topic_0237122277_p1918516011336"></a><a name="zh-cn_topic_0237122277_p1918516011336"></a>relbucket</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122277_p18185509339"><a name="zh-cn_topic_0237122277_p18185509339"></a><a name="zh-cn_topic_0237122277_p18185509339"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122277_p171281349143316"><a name="zh-cn_topic_0237122277_p171281349143316"></a><a name="zh-cn_topic_0237122277_p171281349143316"></a>pg_hashbucket中的桶信息。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122277_row11845015339"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122277_p1918516011336"><a name="zh-cn_topic_0237122277_p1918516011336"></a><a name="zh-cn_topic_0237122277_p1918516011336"></a>relbucketkey</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122277_p18185509339"><a name="zh-cn_topic_0237122277_p18185509339"></a><a name="zh-cn_topic_0237122277_p18185509339"></a>int2vector</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122277_p171281349143316"><a name="zh-cn_topic_0237122277_p171281349143316"></a><a name="zh-cn_topic_0237122277_p171281349143316"></a>哈希分区列号。</p>
 </td>
 </tr>
 </tbody>

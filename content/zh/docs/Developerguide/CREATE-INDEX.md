@@ -17,7 +17,7 @@
 
 -   索引自身也占用存储空间、消耗计算资源，创建过多的索引将对数据库性能造成负面影响（尤其影响数据导入的性能，建议在数据导入后再建索引）。因此，仅在必要时创建索引。
 -   索引定义里的所有函数和操作符都必须是immutable类型的，即它们的结果必须只能依赖于它们的输入参数，而不受任何外部的影响（如另外一个表的内容或者当前时间）。这个限制可以确保该索引的行为是定义良好的。要在一个索引上或WHERE中使用用户定义函数，请把它标记为immutable类型函数。
--   在分区表上创建唯一索引时，索引项中必须包含分布列和所有分区键。
+-   分区表索引分为LOCAL索引与GLOBAL索引，LOCAL索引与某个具体分区绑定，而GLOBAL索引则对应整个分区表。
 -   列存表支持的PSORT和B-tree索引都不支持创建表达式索引、部分索引和唯一索引。
 -   列存表支持的GIN索引支持创建表达式索引，但表达式不能包含空分词、空列和多列，不支持创建部分索引和唯一索引。
 
@@ -38,7 +38,7 @@
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
-        LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ]
+        [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ];
     ```
@@ -46,13 +46,13 @@
 
 ## 参数说明<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
 
--   **UNIQUE**
+- **UNIQUE**
 
     创建唯一性索引，每次添加数据时检测表中是否有重复值。如果插入或更新的值会引起重复的记录时，将导致一个错误。
 
     目前只有行存表B-tree索引支持唯一索引。
 
--   **CONCURRENTLY**
+- **CONCURRENTLY**
 
     以不阻塞DML的方式创建索引（加ShareUpdateExclusiveLock锁）。创建索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现创建过程中不阻塞DML。
 
@@ -62,25 +62,25 @@
 
     列存表和分区表不支持CONCURRENTLY方式创建索引。
 
--   **schema\_name**
+- **schema\_name**
 
     模式的名称。
 
     取值范围：已存在模式名。
 
--   **index\_name**
+- **index\_name**
 
     要创建的索引名，索引的模式与表相同。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   **table\_name**
+- **table\_name**
 
     需要为其创建索引的表的名称，可以用模式修饰。
 
     取值范围：已存在的表名。
 
--   **USING method**
+- **USING method**
 
     指定创建索引的方法。
 
@@ -96,13 +96,13 @@
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >列存表对GIN索引支持仅限于对于tsvector类型的支持，即创建列存GIN索引入参需要为to\_tsvector函数（的返回值）。此方法为GIN索引比较普遍的使用方式。  
 
--   **column\_name**
+- **column\_name**
 
     表中需要创建索引的列的名称（字段名）。
 
     如果索引方式支持多字段索引，可以声明多个字段。最多可以声明32个字段。
 
--   **expression**
+- **expression**
 
     创建一个基于该表的一个或多个字段的表达式索引，通常必须写在圆括弧中。如果表达式有函数调用的形式，圆括弧可以省略。
 
@@ -110,31 +110,39 @@
 
     在创建表达式索引时，如果表达式中包含IS NULL子句，则这种索引是无效的。此时，建议用户尝试创建一个部分索引。
 
--   **COLLATE collation**
+- **COLLATE collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。
 
--   **opclass**
+- **opclass**
 
     操作符类的名称。对于索引的每一列可以指定一个操作符类，操作符类标识了索引那一列的使用的操作符。例如一个B-tree索引在一个四字节整数上可以使用int4\_ops；这个操作符类包括四字节整数的比较函数。实际上对于列上的数据类型默认的操作符类是足够用的。操作符类主要用于一些有多种排序的数据。例如，用户想按照绝对值或者实数部分排序一个复数。能通过定义两个操作符类然后当建立索引时选择合适的类。
 
--   **ASC**
+- **ASC**
 
     指定按升序排序 （默认）。
 
--   **DESC**
+- **DESC**
 
     指定按降序排序。
 
--   **NULLS FIRST**
+- **NULLS FIRST**
 
     指定空值在排序中排在非空值之前，当指定DESC排序时，本选项为默认的。
 
--   **NULLS LAST**
+- **NULLS LAST**
 
     指定空值在排序中排在非空值之后，未指定DESC排序时，本选项为默认的。
 
--   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
+- **LOCAL**
+
+    指定创建的分区索引为LOCAL索引。
+    
+- **GLOBAL**
+
+    指定创建的分区索引为GLOBAL索引，当不指定LOCAL、GLOBAL关键字时，默认创建GLOBAL索引。
+
+- **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
     指定索引方法的存储参数。
 
@@ -165,29 +173,31 @@
         默认值：gin\_pending\_list\_limit的默认取决于GUC中gin\_pending\_list\_limit的值（默认为4MB）
 
 
--   **TABLESPACE tablespace\_name**
+- **TABLESPACE tablespace\_name**
 
     指定索引的表空间，如果没有声明则使用默认的表空间。
 
     取值范围：已存在的表空间名。
 
--   **WHERE predicate**
+- **WHERE predicate**
 
     创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
 
     取值范围：predicate表达式只能引用表的字段，它可以使用所有字段，而不仅是被索引的字段。目前，子查询和聚集表达式不能出现在WHERE子句里。
 
--   **PARTITION index\_partition\_name**
+- **PARTITION index\_partition\_name**
 
     索引分区的名称。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   **TABLESPACE index\_partition\_tablespace**
+- **TABLESPACE index\_partition\_tablespace**
 
     索引分区的表空间。
 
     取值范围：如果没有声明，将使用分区表索引的表空间index\_tablespace。
+
+    
 
 
 ## 示例<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
@@ -274,6 +284,12 @@ postgres=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_
 ) 
 TABLESPACE example2;
 
+--创建GLOBAL分区索引
+postgres=CREATE INDEX ds_customer_address_p1_index3 ON tpcds.customer_address_p1(CA_ADDRESS_ID) GLOBAL;
+
+--不指定关键字，默认创建GLOBAL分区索引
+postgres=CREATE INDEX ds_customer_address_p1_index4 ON tpcds.customer_address_p1(CA_ADDRESS_ID);
+
 --修改分区表索引CA_ADDRESS_SK_index2的表空间为example1。
 postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index2 TABLESPACE example1;
 
@@ -306,7 +322,7 @@ CREATE INDEX
 
 ## 优化建议<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_section3814797010859"></a>
 
--   create index
+- create index
 
     建议仅在匹配如下条件之一时创建索引：
 
@@ -318,7 +334,13 @@ CREATE INDEX
     约束限制：
 
     -   分区表上不支持创建部分索引、不支持NULL FIRST特性。
-
-    -   在分区表上创建唯一索引时，索引项中必须包含分布列和所有分区键。
+    -   在使用LOCAL索引创建唯一索引时，索引项中必须包含分布列和所有分区键。GLOBAL索引无此约束。
+    -   分区表创建GLOBAL索引时，存在以下约束条件：
+        - 不支持表达式索引、部分索引
+        - 不支持列存表
+        - 仅支持B-tree索引
+    -   在相同属性列上，分区LOCAL索引与GLOBAL索引不能共存。
+    -   GLOBAL索引最大只支持31列。
+    -   如果在一个分区表上创建了GLOBAL索引，当执行ALTER TABLE对分区进行DROP、TRUNCATE、SPLIT、MERGE、EXCHANGE中的任何一种操作，此时会导致GLOBAL索引失效，需要用户手动重建索引。
 
 

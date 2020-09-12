@@ -95,6 +95,7 @@ You need to know the following about the audit function:
 **Table  2**  Security-related parameters and their default values
 
 <a name="en-us_topic_0237121112_en-us_topic_0059778562_t62477343f6ff4b3592c6ae8d040bc607"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0237121112_en-us_topic_0059778562_r0da70ccd7633483daca2cd35818b4832"><th class="cellrowborder" valign="top" width="30.84%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237121112_en-us_topic_0059778562_ab5376be6ed9245cb9e022c2ec8b81361"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab5376be6ed9245cb9e022c2ec8b81361"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab5376be6ed9245cb9e022c2ec8b81361"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.49%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237121112_en-us_topic_0059778562_a6326d0f81f5b4ec09c5aa6e777282cb9"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6326d0f81f5b4ec09c5aa6e777282cb9"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6326d0f81f5b4ec09c5aa6e777282cb9"></a>Default Value</p>
@@ -103,126 +104,126 @@ You need to know the following about the audit function:
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237121112_en-us_topic_0059778562_r6f7fb0ad4b5146c59f1509d3e2cf0082"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p973318015281"><a name="en-us_topic_0237121112_p973318015281"></a><a name="en-us_topic_0237121112_p973318015281"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa">ssl</a></p>
+<tbody><tr id="en-us_topic_0237121112_en-us_topic_0059778562_r6f7fb0ad4b5146c59f1509d3e2cf0082"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p973318015281"><a name="en-us_topic_0237121112_p973318015281"></a><a name="en-us_topic_0237121112_p973318015281"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa">ssl</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a2b81d308ed164247a0a23ffd76212439"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a2b81d308ed164247a0a23ffd76212439"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a2b81d308ed164247a0a23ffd76212439"></a>on</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_aa3849ea0e43445e4af62e1afd467a68a"><a name="en-us_topic_0237121112_en-us_topic_0059778562_aa3849ea0e43445e4af62e1afd467a68a"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_aa3849ea0e43445e4af62e1afd467a68a"></a>Specifies whether the SSL connection is enabled.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_row109626571752"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1773110102820"><a name="en-us_topic_0237121112_p1773110102820"></a><a name="en-us_topic_0237121112_p1773110102820"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_section1652594319820">require_ssl</a></p>
+<tr id="en-us_topic_0237121112_row109626571752"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1773110102820"><a name="en-us_topic_0237121112_p1773110102820"></a><a name="en-us_topic_0237121112_p1773110102820"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_section1652594319820">require_ssl</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_p0963157956"><a name="en-us_topic_0237121112_p0963157956"></a><a name="en-us_topic_0237121112_p0963157956"></a>off</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_p896311571759"><a name="en-us_topic_0237121112_p896311571759"></a><a name="en-us_topic_0237121112_p896311571759"></a>Specifies whether the server requires the SSL connection.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r462bf5a7ca25448d9d8c5c7f6c235a81"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1672814042810"><a name="en-us_topic_0237121112_p1672814042810"></a><a name="en-us_topic_0237121112_p1672814042810"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s83e68216730542489adc97d0ba080289">ssl_ciphers</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r462bf5a7ca25448d9d8c5c7f6c235a81"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1672814042810"><a name="en-us_topic_0237121112_p1672814042810"></a><a name="en-us_topic_0237121112_p1672814042810"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s83e68216730542489adc97d0ba080289">ssl_ciphers</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ae6216ab5b7be4b0699010d7a38ef3263"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ae6216ab5b7be4b0699010d7a38ef3263"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ae6216ab5b7be4b0699010d7a38ef3263"></a>ALL</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ac9b0b3cd446646d1b2e1d1cd15634228"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ac9b0b3cd446646d1b2e1d1cd15634228"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ac9b0b3cd446646d1b2e1d1cd15634228"></a>Encryption algorithm list supported by the SSL</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r956f973389bf48fabaabe831fc89caf7"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p972611082819"><a name="en-us_topic_0237121112_p972611082819"></a><a name="en-us_topic_0237121112_p972611082819"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s68c117bf68b5461091ef26231ceb314d">ssl_cert_file</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r956f973389bf48fabaabe831fc89caf7"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p972611082819"><a name="en-us_topic_0237121112_p972611082819"></a><a name="en-us_topic_0237121112_p972611082819"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s68c117bf68b5461091ef26231ceb314d">ssl_cert_file</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a1204c96b0db34be5b69e1ac50206f16b"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a1204c96b0db34be5b69e1ac50206f16b"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a1204c96b0db34be5b69e1ac50206f16b"></a>server.crt</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a1ad64a9e618b45ccb7c7873e04ec5156"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a1ad64a9e618b45ccb7c7873e04ec5156"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a1ad64a9e618b45ccb7c7873e04ec5156"></a>File containing the SSL server certificate</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r631e731380f544ffb698a58384c6f560"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p10723100202815"><a name="en-us_topic_0237121112_p10723100202815"></a><a name="en-us_topic_0237121112_p10723100202815"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s102e03361bf949d88525e779b5284404">ssl_key_file</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r631e731380f544ffb698a58384c6f560"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p10723100202815"><a name="en-us_topic_0237121112_p10723100202815"></a><a name="en-us_topic_0237121112_p10723100202815"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s102e03361bf949d88525e779b5284404">ssl_key_file</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a6cd85f13798d4530b74f5ec478e92dec"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6cd85f13798d4530b74f5ec478e92dec"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6cd85f13798d4530b74f5ec478e92dec"></a>server.key</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ab0f78e64c55a435d968075080ac79c94"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab0f78e64c55a435d968075080ac79c94"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab0f78e64c55a435d968075080ac79c94"></a>File containing the SSL private key</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rbd65d91181694adda3363cd4a4732911"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p14720170162816"><a name="en-us_topic_0237121112_p14720170162816"></a><a name="en-us_topic_0237121112_p14720170162816"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_saaa8bf78f4314b5db5a3b6e9f06a96f9">ssl_ca_file</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rbd65d91181694adda3363cd4a4732911"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p14720170162816"><a name="en-us_topic_0237121112_p14720170162816"></a><a name="en-us_topic_0237121112_p14720170162816"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_saaa8bf78f4314b5db5a3b6e9f06a96f9">ssl_ca_file</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ad836bf9cba054f998f1d3f4a7e1e1ecc"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ad836bf9cba054f998f1d3f4a7e1e1ecc"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ad836bf9cba054f998f1d3f4a7e1e1ecc"></a>cacert.pem</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ab87d8e1921154d41b44e7ce667b5fb94"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab87d8e1921154d41b44e7ce667b5fb94"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab87d8e1921154d41b44e7ce667b5fb94"></a>File containing CA information</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r204da97ece50411fa9b5e3a9d13a2c59"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p371817014282"><a name="en-us_topic_0237121112_p371817014282"></a><a name="en-us_topic_0237121112_p371817014282"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s87be5a616bf444a6925c058dbc82291d">ssl_crl_file</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r204da97ece50411fa9b5e3a9d13a2c59"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p371817014282"><a name="en-us_topic_0237121112_p371817014282"></a><a name="en-us_topic_0237121112_p371817014282"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s87be5a616bf444a6925c058dbc82291d">ssl_crl_file</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a3f11d2276b614bc0a21013f56a7953ce"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a3f11d2276b614bc0a21013f56a7953ce"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a3f11d2276b614bc0a21013f56a7953ce"></a>NULL</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_af9bc01ea918f4d82b48069efa13cce09"><a name="en-us_topic_0237121112_en-us_topic_0059778562_af9bc01ea918f4d82b48069efa13cce09"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_af9bc01ea918f4d82b48069efa13cce09"></a>File containing CRL information</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r20021aa820764a64ab922bffa950182b"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p7716808283"><a name="en-us_topic_0237121112_p7716808283"></a><a name="en-us_topic_0237121112_p7716808283"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626">password_policy</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r20021aa820764a64ab922bffa950182b"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p7716808283"><a name="en-us_topic_0237121112_p7716808283"></a><a name="en-us_topic_0237121112_p7716808283"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626">password_policy</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a5464ec2fa7ad4bd8bc8a9fabc9433a94"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a5464ec2fa7ad4bd8bc8a9fabc9433a94"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a5464ec2fa7ad4bd8bc8a9fabc9433a94"></a>1</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ab65fb49368e4413e987d4f502f820620"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab65fb49368e4413e987d4f502f820620"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab65fb49368e4413e987d4f502f820620"></a>Specifies whether to check the password complexity.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r62adbfc193c34d5db17a29b6de8f2976"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p57131208284"><a name="en-us_topic_0237121112_p57131208284"></a><a name="en-us_topic_0237121112_p57131208284"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794">password_reuse_time</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r62adbfc193c34d5db17a29b6de8f2976"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p57131208284"><a name="en-us_topic_0237121112_p57131208284"></a><a name="en-us_topic_0237121112_p57131208284"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794">password_reuse_time</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_acbfdb0aafa1943189aa3bd8d3f44d1c3"><a name="en-us_topic_0237121112_en-us_topic_0059778562_acbfdb0aafa1943189aa3bd8d3f44d1c3"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_acbfdb0aafa1943189aa3bd8d3f44d1c3"></a>60</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a256293ad4599430f9083114f229001dc"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a256293ad4599430f9083114f229001dc"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a256293ad4599430f9083114f229001dc"></a>Specifies whether to check the reuse days of a new password.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r93720990d4b84b6e8d038989929a1f7f"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p207107062810"><a name="en-us_topic_0237121112_p207107062810"></a><a name="en-us_topic_0237121112_p207107062810"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53">password_reuse_max</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r93720990d4b84b6e8d038989929a1f7f"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p207107062810"><a name="en-us_topic_0237121112_p207107062810"></a><a name="en-us_topic_0237121112_p207107062810"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53">password_reuse_max</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_afd637f3bb6414682a3303cb621939776"><a name="en-us_topic_0237121112_en-us_topic_0059778562_afd637f3bb6414682a3303cb621939776"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_afd637f3bb6414682a3303cb621939776"></a>0</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a6bfc415149564940869775fb88de133c"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6bfc415149564940869775fb88de133c"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6bfc415149564940869775fb88de133c"></a>Specifies whether to check the reuse times of a new password.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r8e82a4277e91491ca6b02056957f1150"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1870750112819"><a name="en-us_topic_0237121112_p1870750112819"></a><a name="en-us_topic_0237121112_p1870750112819"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s5e488e82235e4bd5b470b57a44a38c27">password_lock_time</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r8e82a4277e91491ca6b02056957f1150"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1870750112819"><a name="en-us_topic_0237121112_p1870750112819"></a><a name="en-us_topic_0237121112_p1870750112819"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s5e488e82235e4bd5b470b57a44a38c27">password_lock_time</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a3c759475d3674b1b8af12c194dc0a01b"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a3c759475d3674b1b8af12c194dc0a01b"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a3c759475d3674b1b8af12c194dc0a01b"></a>1</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a620293911aae4157ae89ae96522eab3f"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a620293911aae4157ae89ae96522eab3f"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a620293911aae4157ae89ae96522eab3f"></a>Duration before a locked account is automatically unlocked</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r5862a0f9aed3412a8b1bc7fe08a87313"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p9705130122811"><a name="en-us_topic_0237121112_p9705130122811"></a><a name="en-us_topic_0237121112_p9705130122811"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959">failed_login_attempts</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r5862a0f9aed3412a8b1bc7fe08a87313"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p9705130122811"><a name="en-us_topic_0237121112_p9705130122811"></a><a name="en-us_topic_0237121112_p9705130122811"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959">failed_login_attempts</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_aa5335d1e016f4c9198e75ff615246bba"><a name="en-us_topic_0237121112_en-us_topic_0059778562_aa5335d1e016f4c9198e75ff615246bba"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_aa5335d1e016f4c9198e75ff615246bba"></a>10</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a962928831f6949bca24ff2c57fc380e1"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a962928831f6949bca24ff2c57fc380e1"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a962928831f6949bca24ff2c57fc380e1"></a>If the number of consecutive login attempts with incorrect passwords reaches this value, the account is locked.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r2323b07618114e7b916d5982e6f5a470"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p207021506284"><a name="en-us_topic_0237121112_p207021506284"></a><a name="en-us_topic_0237121112_p207021506284"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_se6b55c35b44945099d33b403a5a43bce">password_encryption_type</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r2323b07618114e7b916d5982e6f5a470"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p207021506284"><a name="en-us_topic_0237121112_p207021506284"></a><a name="en-us_topic_0237121112_p207021506284"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_se6b55c35b44945099d33b403a5a43bce">password_encryption_type</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a6f5acc48196a45c48c3a703406923dd4"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6f5acc48196a45c48c3a703406923dd4"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6f5acc48196a45c48c3a703406923dd4"></a>2</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_aea60f27799334059b688340396d361c2"><a name="en-us_topic_0237121112_en-us_topic_0059778562_aea60f27799334059b688340396d361c2"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_aea60f27799334059b688340396d361c2"></a>Password storage encryption mode</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r44b887b99dd6459f8d5e56d7fb1a994d"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1070080202820"><a name="en-us_topic_0237121112_p1070080202820"></a><a name="en-us_topic_0237121112_p1070080202820"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s17e52632df154eba8c8e622b520b2c34">password_min_uppercase</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r44b887b99dd6459f8d5e56d7fb1a994d"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1070080202820"><a name="en-us_topic_0237121112_p1070080202820"></a><a name="en-us_topic_0237121112_p1070080202820"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s17e52632df154eba8c8e622b520b2c34">password_min_uppercase</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a4d6411ee864741c6b15f7011c3a3b22d"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a4d6411ee864741c6b15f7011c3a3b22d"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a4d6411ee864741c6b15f7011c3a3b22d"></a>0</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_aecb01733786e46a48f54919b4baac158"><a name="en-us_topic_0237121112_en-us_topic_0059778562_aecb01733786e46a48f54919b4baac158"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_aecb01733786e46a48f54919b4baac158"></a>Minimum number of uppercase letters in a password</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_re81bfe612c7c4abaa977a351a782b81c"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p13697140152813"><a name="en-us_topic_0237121112_p13697140152813"></a><a name="en-us_topic_0237121112_p13697140152813"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s2e5497c6fbe84f14bab2ff2af8ce651c">password_min_lowercase</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_re81bfe612c7c4abaa977a351a782b81c"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p13697140152813"><a name="en-us_topic_0237121112_p13697140152813"></a><a name="en-us_topic_0237121112_p13697140152813"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s2e5497c6fbe84f14bab2ff2af8ce651c">password_min_lowercase</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a8674ed3165e14066a063eb86cf37a2be"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a8674ed3165e14066a063eb86cf37a2be"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a8674ed3165e14066a063eb86cf37a2be"></a>0</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a27e23b147e10406e9b9c5b3e043fe54a"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a27e23b147e10406e9b9c5b3e043fe54a"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a27e23b147e10406e9b9c5b3e043fe54a"></a>Minimum number of lowercase letters in a password</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r85f78596cfe048209c2e0915364141de"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p16951101281"><a name="en-us_topic_0237121112_p16951101281"></a><a name="en-us_topic_0237121112_p16951101281"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s3a14167dd99e4dfd8710bd9b03f5cec9">password_min_digital</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_r85f78596cfe048209c2e0915364141de"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p16951101281"><a name="en-us_topic_0237121112_p16951101281"></a><a name="en-us_topic_0237121112_p16951101281"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s3a14167dd99e4dfd8710bd9b03f5cec9">password_min_digital</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ab5dbe40ae0c84a6bbe5e8e024eb67266"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab5dbe40ae0c84a6bbe5e8e024eb67266"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab5dbe40ae0c84a6bbe5e8e024eb67266"></a>0</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a6ad5f560744d4db98da40c4c6580dd95"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6ad5f560744d4db98da40c4c6580dd95"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a6ad5f560744d4db98da40c4c6580dd95"></a>Minimum number of digits in a password</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rcb9c44603b2f4fc3899b4b14e30690db"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p369118012289"><a name="en-us_topic_0237121112_p369118012289"></a><a name="en-us_topic_0237121112_p369118012289"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_sac086283deba4af790d8d97bc5469d1a">password_min_special</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rcb9c44603b2f4fc3899b4b14e30690db"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p369118012289"><a name="en-us_topic_0237121112_p369118012289"></a><a name="en-us_topic_0237121112_p369118012289"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_sac086283deba4af790d8d97bc5469d1a">password_min_special</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ace1bb21e4a064443a505833c9453dd10"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ace1bb21e4a064443a505833c9453dd10"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ace1bb21e4a064443a505833c9453dd10"></a>0</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a3260aa3f5d9f42a8a867790ecc4ef940"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a3260aa3f5d9f42a8a867790ecc4ef940"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a3260aa3f5d9f42a8a867790ecc4ef940"></a>Minimum number of special characters in a password</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rf1d589e94b2849cab0dd19f08fcd7584"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1468613062812"><a name="en-us_topic_0237121112_p1468613062812"></a><a name="en-us_topic_0237121112_p1468613062812"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s80e5b9ae60584d44ac53f5ab2998b26f">password_min_length</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rf1d589e94b2849cab0dd19f08fcd7584"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p1468613062812"><a name="en-us_topic_0237121112_p1468613062812"></a><a name="en-us_topic_0237121112_p1468613062812"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s80e5b9ae60584d44ac53f5ab2998b26f">password_min_length</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ab17118550cde4534938d215e680ff7d8"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab17118550cde4534938d215e680ff7d8"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ab17118550cde4534938d215e680ff7d8"></a>8</p>
 </td>
@@ -231,7 +232,7 @@ You need to know the following about the audit function:
 </div></div>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rcddfb11294c0415aabb95508cca779cd"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p7835159182815"><a name="en-us_topic_0237121112_p7835159182815"></a><a name="en-us_topic_0237121112_p7835159182815"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_sf837d511c2de48069eb14ebb3afc0c20">password_max_length</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rcddfb11294c0415aabb95508cca779cd"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p7835159182815"><a name="en-us_topic_0237121112_p7835159182815"></a><a name="en-us_topic_0237121112_p7835159182815"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_sf837d511c2de48069eb14ebb3afc0c20">password_max_length</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_aa9c50d2c62a8466cb6ffde62fe99590e"><a name="en-us_topic_0237121112_en-us_topic_0059778562_aa9c50d2c62a8466cb6ffde62fe99590e"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_aa9c50d2c62a8466cb6ffde62fe99590e"></a>32</p>
 </td>
@@ -240,14 +241,14 @@ You need to know the following about the audit function:
 </div></div>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rfdc18dfec061472bad69928a07bc8c93"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p118321892286"><a name="en-us_topic_0237121112_p118321892286"></a><a name="en-us_topic_0237121112_p118321892286"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4">password_effect_time</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rfdc18dfec061472bad69928a07bc8c93"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p118321892286"><a name="en-us_topic_0237121112_p118321892286"></a><a name="en-us_topic_0237121112_p118321892286"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4">password_effect_time</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_aabe0d785f7ae48f8841ffff3c48edd5b"><a name="en-us_topic_0237121112_en-us_topic_0059778562_aabe0d785f7ae48f8841ffff3c48edd5b"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_aabe0d785f7ae48f8841ffff3c48edd5b"></a>90</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a02af42f02f294df28acda49e9c1ce336"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a02af42f02f294df28acda49e9c1ce336"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a02af42f02f294df28acda49e9c1ce336"></a>Password validity period</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rcb815c0410b646b294a55d6561dd6a76"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p10829592284"><a name="en-us_topic_0237121112_p10829592284"></a><a name="en-us_topic_0237121112_p10829592284"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7">password_notify_time</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rcb815c0410b646b294a55d6561dd6a76"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p10829592284"><a name="en-us_topic_0237121112_p10829592284"></a><a name="en-us_topic_0237121112_p10829592284"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7">password_notify_time</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_ae9179f71e5b74b07b4306b20fca7536b"><a name="en-us_topic_0237121112_en-us_topic_0059778562_ae9179f71e5b74b07b4306b20fca7536b"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_ae9179f71e5b74b07b4306b20fca7536b"></a>7</p>
 </td>
@@ -401,14 +402,14 @@ You need to know the following about the audit function:
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_af56b801046b64d2ab98e7b40b5c550c5"><a name="en-us_topic_0237121112_en-us_topic_0059778562_af56b801046b64d2ab98e7b40b5c550c5"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_af56b801046b64d2ab98e7b40b5c550c5"></a>Specifies whether the separation of duties is enabled.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rf57777c1365242a19aa90645f44c98b3"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p19916228112811"><a name="en-us_topic_0237121112_p19916228112811"></a><a name="en-us_topic_0237121112_p19916228112811"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a">session_timeout</a></p>
+<tr id="en-us_topic_0237121112_en-us_topic_0059778562_rf57777c1365242a19aa90645f44c98b3"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p19916228112811"><a name="en-us_topic_0237121112_p19916228112811"></a><a name="en-us_topic_0237121112_p19916228112811"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a">session_timeout</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a87369413a4174944b75193f024d21a36"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a87369413a4174944b75193f024d21a36"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a87369413a4174944b75193f024d21a36"></a>10min</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.669999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121112_en-us_topic_0059778562_a0b754b02341745898121b38afa501360"><a name="en-us_topic_0237121112_en-us_topic_0059778562_a0b754b02341745898121b38afa501360"></a><a name="en-us_topic_0237121112_en-us_topic_0059778562_a0b754b02341745898121b38afa501360"></a>If the duration of a connection session exceeds the parameter value, the session is automatically disconnected.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121112_row106417436124"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p139131328102812"><a name="en-us_topic_0237121112_p139131328102812"></a><a name="en-us_topic_0237121112_p139131328102812"></a><a href="security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_section2612143317514">auth_iteration_count</a></p>
+<tr id="en-us_topic_0237121112_row106417436124"><td class="cellrowborder" valign="top" width="30.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121112_p139131328102812"><a name="en-us_topic_0237121112_p139131328102812"></a><a name="en-us_topic_0237121112_p139131328102812"></a><a href="security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_section2612143317514">auth_iteration_count</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="14.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121112_p106524381219"><a name="en-us_topic_0237121112_p106524381219"></a><a name="en-us_topic_0237121112_p106524381219"></a>10000</p>
 </td>
@@ -417,6 +418,7 @@ You need to know the following about the audit function:
 </tr>
 </tbody>
 </table>
+
 
 ## Procedure<a name="en-us_topic_0237121112_en-us_topic_0059778562_sac0609c817814cceb8e0f0a4a29f623a"></a>
 

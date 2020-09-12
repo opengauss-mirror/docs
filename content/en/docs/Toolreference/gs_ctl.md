@@ -30,12 +30,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a>Description</p>
     </th>
     </tr>
-    </thead>
-    <tbody><tr id="en-us_topic_0237152408_en-us_topic_0059777628_rae613ca56bd74177bf4cda2a394a21c3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a910cc4c0298545049dacae33fae20638"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a910cc4c0298545049dacae33fae20638"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a910cc4c0298545049dacae33fae20638"></a>init[db]</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a>Initializes the database.</p>
-    </td>
-    </tr>
     <tr id="en-us_topic_0237152408_en-us_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>Starts the database.</p>
@@ -81,7 +75,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>When the primary/standby server relationship is normal, switches the standby server is to primary for maintenance purposes. Data will not be lost during the switchover.</p>
     <p id="p4248133043914"><a name="p4248133043914"></a><a name="p4248133043914"></a>After the switchover is successful, you need to run the <strong id="b4417814597"><a name="b4417814597"></a><a name="b4417814597"></a>gs_om -t refreshconf</strong> command to record information about the current primary and standby servers.</p>
-    <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>After the <strong id="b670212411551"><a name="b670212411551"></a><a name="b670212411551"></a>switchover</strong> command is executed, if a timeout message is returned, the execution status of the background process may be uncertain. If the standby server is in the <strong id="b17442856261"><a name="b17442856261"></a><a name="b17442856261"></a>standby wait</strong> state, you can run the <strong id="b84167673"><a name="b84167673"></a><a name="b84167673"></a>switchover</strong> command again to restore the cluster to the normal state.</p>
+    <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>After the <strong id="b670212411551"><a name="b670212411551"></a><a name="b670212411551"></a>switchover</strong> command is executed, if a timeout message is returned, the execution status of the background process may be uncertain. </p>
     </td>
     </tr>
     <tr id="en-us_topic_0237152408_en-us_topic_0059777628_r30b3aa9baf20460baf9e2b4f5fc55af3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a>query</p>
@@ -111,7 +105,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
 
 **Table  2**  Common parameters
 
@@ -154,18 +147,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a>-</p>
 </td>
-</tr>
-<tr id="en-us_topic_0237152408_en-us_topic_0059777628_rf51479394e58468185408a05b4aba57e"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_ad2bee8ff41d6457598286bad003d9a3e"><a name="en-us_topic_0237152408_en-us_topic_0059777628_ad2bee8ff41d6457598286bad003d9a3e"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_ad2bee8ff41d6457598286bad003d9a3e"></a>-w</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_ab629fa09d4b64148b6442c0e3f571ba3"><a name="en-us_topic_0237152408_en-us_topic_0059777628_ab629fa09d4b64148b6442c0e3f571ba3"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_ab629fa09d4b64148b6442c0e3f571ba3"></a>Waits for the transaction to complete and then executes the database startup or shutdown operation.</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a94fff9791017488bbac434e11fa08bd0"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a94fff9791017488bbac434e11fa08bd0"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a94fff9791017488bbac434e11fa08bd0"></a>Default value: If this parameter is not specified, the operation is executed until the transaction is complete.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152408_en-us_topic_0059777628_r1d9964cfbe7345d3b51ceb4031200de9"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_aed14dcf24bd54d45a95cac4f56efa8e9"><a name="en-us_topic_0237152408_en-us_topic_0059777628_aed14dcf24bd54d45a95cac4f56efa8e9"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_aed14dcf24bd54d45a95cac4f56efa8e9"></a>-W</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a2fc80be3548e48cd92300e2a10b9e872"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a2fc80be3548e48cd92300e2a10b9e872"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a2fc80be3548e48cd92300e2a10b9e872"></a>Does not wait for the transaction to complete and executes the database startup or shutdown operation forcibly.</p>
-</td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a2de66de81c874b44a21973a3aa3ff73e"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a2de66de81c874b44a21973a3aa3ff73e"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a2de66de81c874b44a21973a3aa3ff73e"></a>-</p>
 </td>
 </tr>
@@ -204,7 +185,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 <tr id="en-us_topic_0237152408_en-us_topic_0059777628_r3f82716aafe84968a563d032cd248c85"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_ab6aad2f1529840f1b2a6762e779f24cd"><a name="en-us_topic_0237152408_en-us_topic_0059777628_ab6aad2f1529840f1b2a6762e779f24cd"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_ab6aad2f1529840f1b2a6762e779f24cd"></a>-U USERNAME</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a>Specifies the user that connects to the database. This parameter can be used only in conjunction with the parameter <strong>notify</strong>, <strong>query</strong>, or <strong>querybuild</strong>.</p>
+<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a>Specifies the user that connects to the database. This parameter can be used only in conjunction with the parameter <strong>notify</strong>, <strong>query</strong>, <strong>failover</strong>, <strong>switchover</strong> or <strong>querybuild</strong>.</p>
 <p id="en-us_topic_0237152408_en-us_topic_0059777628_en-us_topic_0058968123_p107010214249"><a name="en-us_topic_0237152408_en-us_topic_0059777628_en-us_topic_0058968123_p107010214249"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_en-us_topic_0058968123_p107010214249"></a>For domain users, use the DOMAIN\username format.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>Value range: users existing in openGauss.</p>

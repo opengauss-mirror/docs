@@ -119,7 +119,7 @@
 
     表明该函数将以调用它的用户的权限执行。缺省时与指定此参数的作用相同。
 
-    SECURITY INVOKER和AUTHID CURREN\_USER的功能相同。
+    SECURITY INVOKER和AUTHID CURRENT\_USER的功能相同。
 
 -   **SECURITY DEFINER**
 

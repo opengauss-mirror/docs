@@ -6,7 +6,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
 -   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [Creating the Required User Account and Configuring the Installation Environment](creating-the-required-user-account-and-configuring-the-installation-environment.md).
 -   All the server OSs and networks are functioning properly.
--   You have checked that the  **locale**  parameter for each server is set to the same value. For detailed operations, see  [Configuring the Locale and Character Set](en-us_topic_0249784576.md).
+-   You have checked that the  **locale**  parameter for each server is set to the same value.
 
 ## Procedure<a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_se06775d062f144a5a491267c284e67dd"></a>
 
@@ -24,10 +24,10 @@ After the openGauss installation environment is prepared by executing the pre-in
 3.  Use  **gs\_install**  to install the openGauss. If the cluster is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
 
     ```
-    gs_install -X /opt/software/openGauss/script/clusterconfig.xml
+    gs_install -X /opt/software/openGauss/cluster_config.xml
     ```
 
-    /opt/software/openGauss/script/clusterconfig.xml is the path of the openGauss configuration file. During the execution, you need to enter the database password as prompted. The password must meet complexity requirements. To ensure that you can use the database properly, remember the entered database password.
+    /opt/software/openGauss/cluster\_config.xml is the path of the openGauss configuration file. During the execution, you need to enter the database password as prompted. The password must meet complexity requirements. To ensure that you can use the database properly, remember the entered database password.
 
     The password must meet the following complexity requirements:
 
@@ -40,7 +40,24 @@ After the openGauss installation environment is prepared by executing the pre-in
     Two files are generated under the log file path:  **gs\_install-YYYY-MMDD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >When you manually execute the  **gs\_install**  script, the script does not automatically start the openGauss after the configuration completes if  **--autostart**  is  **no**. You can run the  **gs\_om -t start**  command to manually start it.
+    >-   Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **uft8**, and  **utf-8**; and  **Latine1**  and  **latine1**.
+    >-   If no character set is specified during installation, the default character set SQL\_ASCII is used. To simplify and unify the locale, the default locale is  **C**. If you want to specify another character set and locale, use the  **--gsinit-parameter="--locale=LOCALE"**  parameter during installation. The  **LOCALE**  parameter specifies the default locale for the new database.
+    >    For example, to set the database encoding format to UTF-8, perform the following steps:
+    >    Run the  **locale -a |grep utf8**  command to check the locale that supports UTF-8 encoding:
+    >    ```
+    >    omm@linux:~>  locale -a|grep utf8
+    >    ```
+    >    Information similar to the following is displayed, where  **en\_US.utf8**  indicates that the en\_US locale supports the UTF-8 encoding format.
+    >    ```
+    >    ...... 
+    >    en_SG.utf8 
+    >    en_US.utf8 
+    >    ......
+    >    ```
+    >    Select a locale as required, for example,  **en\_US.utf8**. Add the  **--locale=en\_US.utf8**  option when initializing the database for installation. The following is an example:
+    >    ```
+    >    gs_install -X /opt/software/openGauss/cluster_config.xml --gsinit-parameter="--locale=en_US.utf8"
+    >    ```
 
 4.  After the installation is successful, manually delete the trust between users  **root**  on the host, that is, delete the mutual trust file on each openGauss database node.
 
@@ -58,9 +75,9 @@ After the openGauss installation environment is prepared by executing the pre-in
 <a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_tdcb4fb0f38a6419099ee2c47d4d0b37f"></a>
 <table><thead align="left"><tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_r22afe3483c624427844f6a9c59b5289d"><th class="cellrowborder" valign="top" width="7.64923507649235%" id="mcps1.2.6.1.1"><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p543728993912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p543728993912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p543728993912"></a>No.</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.228177182281772%" id="mcps1.2.6.1.2"><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3e768c105e844b5d9f8347dfd611d21b"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3e768c105e844b5d9f8347dfd611d21b"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3e768c105e844b5d9f8347dfd611d21b"></a>Directory Description</p>
+<th class="cellrowborder" valign="top" width="18.268173182681732%" id="mcps1.2.6.1.2"><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3e768c105e844b5d9f8347dfd611d21b"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3e768c105e844b5d9f8347dfd611d21b"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3e768c105e844b5d9f8347dfd611d21b"></a>Directory Description</p>
 </th>
-<th class="cellrowborder" valign="top" width="14.688531146885312%" id="mcps1.2.6.1.3"><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a50599f111eb94f5fa5568659de1e2a38"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a50599f111eb94f5fa5568659de1e2a38"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a50599f111eb94f5fa5568659de1e2a38"></a>Directory</p>
+<th class="cellrowborder" valign="top" width="14.64853514648535%" id="mcps1.2.6.1.3"><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a50599f111eb94f5fa5568659de1e2a38"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a50599f111eb94f5fa5568659de1e2a38"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a50599f111eb94f5fa5568659de1e2a38"></a>Directory</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.43715628437156%" id="mcps1.2.6.1.4"><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a754cef21c28947c5abee7839e7cec169"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a754cef21c28947c5abee7839e7cec169"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a754cef21c28947c5abee7839e7cec169"></a>Subdirectory</p>
 </th>
@@ -70,9 +87,9 @@ After the openGauss installation environment is prepared by executing the pre-in
 </thead>
 <tbody><tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_r939c46eb1ef94be692a98d2bfbba5005"><td class="cellrowborder" rowspan="5" valign="top" width="7.64923507649235%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7f369fac1f33409881d746bdf598bad9"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7f369fac1f33409881d746bdf598bad9"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7f369fac1f33409881d746bdf598bad9"></a>1</p>
 </td>
-<td class="cellrowborder" rowspan="5" valign="top" width="18.228177182281772%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p563993912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p563993912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p563993912"></a>openGauss installation directory</p>
+<td class="cellrowborder" rowspan="5" valign="top" width="18.268173182681732%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p563993912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p563993912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p563993912"></a>openGauss installation directory</p>
 </td>
-<td class="cellrowborder" rowspan="5" valign="top" width="14.688531146885312%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p45680593912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p45680593912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p45680593912"></a>/opt/opengauss/app</p>
+<td class="cellrowborder" rowspan="5" valign="top" width="14.64853514648535%" headers="mcps1.2.6.1.3 "><p id="p1952318117233"><a name="p1952318117233"></a><a name="p1952318117233"></a>/opt/huawei/install/app</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_ac2cf97f82c894dd0b10dc1b9b86570e4"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_ac2cf97f82c894dd0b10dc1b9b86570e4"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_ac2cf97f82c894dd0b10dc1b9b86570e4"></a>bin</p>
 </td>
@@ -101,9 +118,9 @@ After the openGauss installation environment is prepared by executing the pre-in
 </tr>
 <tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_r974bfa7f98ae4a2bab008e6a1afbd37b"><td class="cellrowborder" valign="top" width="7.64923507649235%" headers="mcps1.2.6.1.1 "><p id="p161291522163218"><a name="p161291522163218"></a><a name="p161291522163218"></a>2</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.228177182281772%" headers="mcps1.2.6.1.2 "><p id="p20129422193215"><a name="p20129422193215"></a><a name="p20129422193215"></a>openGauss data directory</p>
+<td class="cellrowborder" valign="top" width="18.268173182681732%" headers="mcps1.2.6.1.2 "><p id="p20129422193215"><a name="p20129422193215"></a><a name="p20129422193215"></a>openGauss data directory</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.688531146885312%" headers="mcps1.2.6.1.3 "><p id="p11130422173216"><a name="p11130422173216"></a><a name="p11130422173216"></a>/opt/gaussdb/data</p>
+<td class="cellrowborder" valign="top" width="14.64853514648535%" headers="mcps1.2.6.1.3 "><p id="p11130422173216"><a name="p11130422173216"></a><a name="p11130422173216"></a>/opt/huawei/install/data/dn</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"></a>data_dnxxx</p>
 </td>
@@ -113,9 +130,9 @@ After the openGauss installation environment is prepared by executing the pre-in
 </tr>
 <tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_r5d87b119ba4d4711a9bfe614e39d2f8e"><td class="cellrowborder" rowspan="5" valign="top" width="7.64923507649235%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p880929793912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p880929793912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p880929793912"></a>3</p>
 </td>
-<td class="cellrowborder" rowspan="5" valign="top" width="18.228177182281772%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6163c81ab6374cf4aa0ba05e10936a55"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6163c81ab6374cf4aa0ba05e10936a55"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6163c81ab6374cf4aa0ba05e10936a55"></a>openGauss log directory</p>
+<td class="cellrowborder" rowspan="5" valign="top" width="18.268173182681732%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6163c81ab6374cf4aa0ba05e10936a55"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6163c81ab6374cf4aa0ba05e10936a55"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6163c81ab6374cf4aa0ba05e10936a55"></a>openGauss log directory</p>
 </td>
-<td class="cellrowborder" rowspan="5" valign="top" width="14.688531146885312%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_af6b10e5948404a888d4e4322a4f3c7ec"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_af6b10e5948404a888d4e4322a4f3c7ec"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_af6b10e5948404a888d4e4322a4f3c7ec"></a>/opt/opengauss/gaussdb_log/<em id="i27065507913"><a name="i27065507913"></a><a name="i27065507913"></a>Username</em></p>
+<td class="cellrowborder" rowspan="5" valign="top" width="14.64853514648535%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_af6b10e5948404a888d4e4322a4f3c7ec"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_af6b10e5948404a888d4e4322a4f3c7ec"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_af6b10e5948404a888d4e4322a4f3c7ec"></a><strong id="b842352706174314"><a name="b842352706174314"></a><a name="b842352706174314"></a>/var/log/omm/</strong><em id="i842352697174319"><a name="i842352697174319"></a><a name="i842352697174319"></a>username</em></p>
 </td>
 <td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p978087393912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p978087393912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p978087393912"></a>bin</p>
 </td>
@@ -143,25 +160,30 @@ After the openGauss installation environment is prepared by executing the pre-in
 <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0085434626_en-us_topic_0059782015_a4e3ebba7c7064815979dab71d4f0a6e0"><a name="en-us_topic_0085434626_en-us_topic_0059782015_a4e3ebba7c7064815979dab71d4f0a6e0"></a><a name="en-us_topic_0085434626_en-us_topic_0059782015_a4e3ebba7c7064815979dab71d4f0a6e0"></a>Directory for storing run logs of database node instances.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_ra419abe4c87c44f8929827f4fcf5f86f"><td class="cellrowborder" rowspan="3" valign="top" width="7.64923507649235%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_aecbd970380ad4164837bc5eb8efb6bda"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_aecbd970380ad4164837bc5eb8efb6bda"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_aecbd970380ad4164837bc5eb8efb6bda"></a>4</p>
+<tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_ra419abe4c87c44f8929827f4fcf5f86f"><td class="cellrowborder" rowspan="2" valign="top" width="7.64923507649235%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_aecbd970380ad4164837bc5eb8efb6bda"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_aecbd970380ad4164837bc5eb8efb6bda"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_aecbd970380ad4164837bc5eb8efb6bda"></a>4</p>
 </td>
-<td class="cellrowborder" rowspan="3" valign="top" width="18.228177182281772%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7975b11e0bc8472086770f6b4937acd8"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7975b11e0bc8472086770f6b4937acd8"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7975b11e0bc8472086770f6b4937acd8"></a><span id="text71101857183610"><a name="text71101857183610"></a><a name="text71101857183610"></a>openGauss</span> system tool directory</p>
+<td class="cellrowborder" rowspan="2" valign="top" width="18.268173182681732%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7975b11e0bc8472086770f6b4937acd8"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7975b11e0bc8472086770f6b4937acd8"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a7975b11e0bc8472086770f6b4937acd8"></a><span id="text71101857183610"><a name="text71101857183610"></a><a name="text71101857183610"></a>openGauss</span> system tool directory</p>
 </td>
-<td class="cellrowborder" rowspan="3" valign="top" width="14.688531146885312%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a053677d57a674ee5a8f4ef8f9206c314"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a053677d57a674ee5a8f4ef8f9206c314"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a053677d57a674ee5a8f4ef8f9206c314"></a>/opt/opengauss/tool</p>
+<td class="cellrowborder" rowspan="2" valign="top" width="14.64853514648535%" headers="mcps1.2.6.1.3 "><p id="p133031792276"><a name="p133031792276"></a><a name="p133031792276"></a>/opt/huawei/install/om</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p167627293912"></a>script</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.996900309969007%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0085434626_p10623103104815"><a name="en-us_topic_0085434626_p10623103104815"></a><a name="en-us_topic_0085434626_p10623103104815"></a>Stores script files for <span id="text5680182218447"><a name="text5680182218447"></a><a name="text5680182218447"></a>openGauss</span> users to manage <span id="text1363212384418"><a name="text1363212384418"></a><a name="text1363212384418"></a>openGauss</span>.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0241805806_en-us_topic_0085434626_row4150139114718"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_p10153103914715"><a name="en-us_topic_0241805806_en-us_topic_0085434626_p10153103914715"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_p10153103914715"></a>sudo</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0085434626_p51538395471"><a name="en-us_topic_0085434626_p51538395471"></a><a name="en-us_topic_0085434626_p51538395471"></a>Stores script files for user <strong id="b2053383575220"><a name="b2053383575220"></a><a name="b2053383575220"></a>root</strong> to manage <span id="text44091424144411"><a name="text44091424144411"></a><a name="text44091424144411"></a>openGauss</span>.</p>
-</td>
-</tr>
 <tr id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_r4205559738cf4031b8629c705dcefc05"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6ea59478d96d481db0c19182c48364f0"><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6ea59478d96d481db0c19182c48364f0"></a><a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a6ea59478d96d481db0c19182c48364f0"></a>lib</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0085434626_en-us_topic_0059782015_a71543112e71c427ea44f0eb47259370e"><a name="en-us_topic_0085434626_en-us_topic_0059782015_a71543112e71c427ea44f0eb47259370e"></a><a name="en-us_topic_0085434626_en-us_topic_0059782015_a71543112e71c427ea44f0eb47259370e"></a>Stores the library files that the binaries in the <strong id="b156911478526"><a name="b156911478526"></a><a name="b156911478526"></a>bin</strong> directory depend on.</p>
+</td>
+</tr>
+<tr id="row472134612272"><td class="cellrowborder" valign="top" width="7.64923507649235%" headers="mcps1.2.6.1.1 "><p id="p37211146152711"><a name="p37211146152711"></a><a name="p37211146152711"></a>5</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.268173182681732%" headers="mcps1.2.6.1.2 "><p id="p572112463273"><a name="p572112463273"></a><a name="p572112463273"></a><span id="text4507132132810"><a name="text4507132132810"></a><a name="text4507132132810"></a>openGauss</span> temporary file directory</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.64853514648535%" headers="mcps1.2.6.1.3 "><p id="p2072174602715"><a name="p2072174602715"></a><a name="p2072174602715"></a>/opt/huawei/tmp</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.996900309969007%" headers="mcps1.2.6.1.5 "><p id="p197227465274"><a name="p197227465274"></a><a name="p197227465274"></a>Stores temporary files.</p>
 </td>
 </tr>
 </tbody>
@@ -172,7 +194,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 Execute the installation.
 
 ```
-omm@plat1:~> gs_install -X /opt/software/openGauss/script/clusterconfig.xml
+omm@plat1:~> gs_install -X /opt/software/openGauss/cluster_config.xml
 Parsing the configuration file.
 Check preinstall on every node.
 Successfully checked preinstall on every node.

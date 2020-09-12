@@ -16,6 +16,8 @@
 
 -   **[Control Statements](control-statements.md)**  
 
+-   **[Transaction Management](Transaction Management.md)**  
+
 -   **[Other Statements](other-statements.md)**  
 
 -   **[Cursors](cursors.md)**  
@@ -23,5 +25,4 @@
 -   **[Retry Management](retry-management.md)**  
 
 -   **[Debugging](debugging.md)**  
-
 

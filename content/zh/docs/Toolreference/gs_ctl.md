@@ -30,12 +30,6 @@ gs\_ctl参数可分为如下几类：
     <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a>参数说明</p>
     </th>
     </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rae613ca56bd74177bf4cda2a394a21c3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a910cc4c0298545049dacae33fae20638"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a910cc4c0298545049dacae33fae20638"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a910cc4c0298545049dacae33fae20638"></a>init[db]</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a>初始化数据库。</p>
-    </td>
-    </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>启动数据库。</p>
@@ -80,9 +74,9 @@ gs\_ctl参数可分为如下几类：
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rf3ffc423f13a4943b18d24be85bcc74f"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a>switchover</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>在主备机正常时，出于维护的需要，将备机切换为主机，可保证切换过程中数据不丢失。</p>
-    <p id="p12188127154613"><a name="p12188127154613"></a><a name="p12188127154613"></a>必须在要切换为主机的备机上，执行switchover命令。</p>
+    <p id="p12188127154613"><a name="p12188127154613"></a><a name="p12188127154613"></a>必须在要切换为主机的备机上，执行switchover命令才会生效。在主机上执行switchover命令，仅做查询使用。</p>
     <p id="p1977111500144"><a name="p1977111500144"></a><a name="p1977111500144"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响集群状态。</p>
-    <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态；如果备机在standby wait状态，可以通过重复下发switchover命令消除，使集群恢复到正常状态。</p>
+    <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r30b3aa9baf20460baf9e2b4f5fc55af3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a>query</p>
@@ -112,7 +106,6 @@ gs\_ctl参数可分为如下几类：
     </tr>
     </tbody>
     </table>
-
 
 **表 2**  公共参数
 
@@ -156,20 +149,6 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a>-</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rf51479394e58468185408a05b4aba57e"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad2bee8ff41d6457598286bad003d9a3e"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad2bee8ff41d6457598286bad003d9a3e"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ad2bee8ff41d6457598286bad003d9a3e"></a>-w</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab629fa09d4b64148b6442c0e3f571ba3"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab629fa09d4b64148b6442c0e3f571ba3"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab629fa09d4b64148b6442c0e3f571ba3"></a>用户执行启动或者关闭数据库的操作后，会等待事务操作的完成后再执行。</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94fff9791017488bbac434e11fa08bd0"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94fff9791017488bbac434e11fa08bd0"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94fff9791017488bbac434e11fa08bd0"></a>默认值：省略此参数时，默认会等待事务操作完成。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r1d9964cfbe7345d3b51ceb4031200de9"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aed14dcf24bd54d45a95cac4f56efa8e9"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aed14dcf24bd54d45a95cac4f56efa8e9"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aed14dcf24bd54d45a95cac4f56efa8e9"></a>-W</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2fc80be3548e48cd92300e2a10b9e872"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2fc80be3548e48cd92300e2a10b9e872"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2fc80be3548e48cd92300e2a10b9e872"></a>用户执行启动或者关闭数据库的操作后，会强制完成启动或者关闭，不等待事务操作完成。</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2de66de81c874b44a21973a3aa3ff73e"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2de66de81c874b44a21973a3aa3ff73e"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2de66de81c874b44a21973a3aa3ff73e"></a>-</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rda88e0e994ae424dadad636f9e78b7e5"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"></a>-M</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a>-M后面需要跟SERVERMODE参数，表示在启动时指定数据库的启动模式。</p>
@@ -205,7 +184,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3f82716aafe84968a563d032cd248c85"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab6aad2f1529840f1b2a6762e779f24cd"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab6aad2f1529840f1b2a6762e779f24cd"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab6aad2f1529840f1b2a6762e779f24cd"></a>-U USERNAME</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a>指定连接数据库的用户。此参数只能与notify、query和querybuild参数配合使用。</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a01b2184f49e74df6bb9bb71308bc6332"></a>指定连接数据库的用户。此参数只能与notify、query、failover、switchover和querybuild参数配合使用。</p>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p107010214249"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p107010214249"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_zh-cn_topic_0058968123_p107010214249"></a>对于域用户，使用DOMAIN\username格式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>取值范围：openGauss中存在的用户。</p>

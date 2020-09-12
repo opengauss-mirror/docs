@@ -20,13 +20,13 @@ MOT has been designed to achieve the following –
 
 To achieve the requirements described above \(especially in an environment with many-cores\), our storage engine's architecture implements the following techniques and strategies –
 
--   Data and indexes only reside in memory.
--   Data and indexes are  **not**  laid out with physical partitions \(because these might achieve lower performance for certain types of applications\).
--   Transaction concurrency control is based on Optimistic Concurrency Control \(OCC\) without any centralized contention points. See the  [MOT Concurrency Control Mechanism](mot-concurrency-control-mechanism.md)  section for more information about OCC.
--   Parallel Redo Logs \(ultimately per core\) are used to efficiently avoid a central locking point.
--   Indexes are lock-free. See the  [MOT Indexes](mot-indexes.md)  section for more information about lock-free indexes.
--   NUMA-awareness memory allocation is used to avoid cross-socket access, especially for session lifecycle objects. See the  [NUMA Awareness Allocation and Affinity](numa-awareness-allocation-and-affinity.md)  section for more information about NUMA‑awareness.
--   A customized MOT memory management allocator with pre-cached object pools is used to avoid expensive runtime allocation and extra points of contention. This dedicated MOT memory allocator makes memory allocation more efficient by pre‑accessing relatively large chunks of memory from the operation system as needed and then divvying it out to the MOT as needed.
+-   **Data and indexes only reside in memory**.
+-   **Data and indexes are  not  laid out with physical partitions** \(because these might achieve lower performance for certain types of applications\).
+-   Transaction concurrency control is based on **Optimistic Concurrency Control \(OCC\)** without any centralized contention points. See the  [MOT Concurrency Control Mechanism](mot-concurrency-control-mechanism.md)  section for more information about OCC.
+-   **Parallel Redo Logs \(ultimately per core\)** are used to efficiently avoid a central locking point.
+-   **Indexes are lock-free**. See the  [MOT Indexes](mot-indexes.md)  section for more information about lock-free indexes.
+-   **NUMA-awareness memory allocation** is used to avoid cross-socket access, especially for session lifecycle objects. See the  [NUMA Awareness Allocation and Affinity](numa-awareness-allocation-and-affinity.md)  section for more information about NUMA‑awareness.
+-   **A customized MOT memory management allocator** with pre-cached object pools is used to avoid expensive runtime allocation and extra points of contention. This dedicated MOT memory allocator makes memory allocation more efficient by pre‑accessing relatively large chunks of memory from the operation system as needed and then divvying it out to the MOT as needed.
 
 ## Integration using Foreign Data Wrappers \(FDW\)<a name="section4967325123715"></a>
 
@@ -57,7 +57,7 @@ However, the original FDW mechanism in openGauss was not designed for storage en
 
 In order to support all the missing functionalities, the SQL layer and FDW interface layer were extended to provide the necessary infrastructure in order to enable the plugging in of the MOT transactional storage engine.
 
-## Result – Linear Scale-up<a name="section1621105484317"></a>
+## Result – Linear Scale-up
 
 The following shows the results achieved by the MOT design principles and implementation described above.
 
@@ -68,12 +68,16 @@ openGauss and MOT have been tested on the following many-core systems with excel
 Our TPC-C benchmark dated June 2020 tested an openGauss MOT database on a Taishan 2480 server. A 4-socket ARM/Kunpeng server, achieved throughput of 4.8 M tpmC. The following graph shows the near-linear nature of the results, meaning that it shows a significant increase in performance correlating to the increase of the quantity of cores –
 
 **Figure  2**  TPC-C on ARM \(256 Cores\)<a name="fig162469187458"></a>  
-![](figures/tpc-c-on-arm-(256-cores).png "tpc-c-on-arm-(256-cores)")
+![](figures/tpc-c-on-arm-(256-cores).png)
+
+
 
 The following is an additional example that shows a test on an x86-based server also showing CPU utilization.
 
 **Figure  3**  tpmC vs CPU Usage<a name="fig866014914512"></a>  
-![](figures/tpmc-vs-cpu-usage.png "tpmc-vs-cpu-usage")
+![](figures/tpmc-vs-cpu-usage.png)
+
+
 
 The chart shows that MOT demonstrates a significant performance increase correlation with an increase of the quantity of cores. MOT consumes more and more of the CPU correlating to the increase of the quantity of cores. Other industry solutions do not increase and sometimes show slightly degraded performance, which is a well-known problem in the database industry that affects customers’ CAPEX and OPEX expenses and operational efficiency.
 

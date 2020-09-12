@@ -120,9 +120,13 @@
 
     Specifies the column type.
 
--   **definition**
+- **definition**
 
-    Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
+  Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
+
+-   **DETERMINISTIC**
+
+    Specifies an interface compatible with the SQL syntax. You are not advised to use it.
 
 -   **LANGUAGE lang\_name**
 
@@ -146,6 +150,14 @@
 -   **VOLATILE**
 
     Specifies that the function value can change in a single table scan and no optimization is performed.
+
+- **SHIPPABLE | NOT SHIPPABLE**
+
+  Specifies whether the function can be pushed down for execution. This interface is reserved and is not recommended.
+
+- **FENCED | NOT FENCED**
+
+  Specifies whether the user-defined C function is executed in fenced or not-fenced mode. This interface is reserved and is not recommended.
 
 -   **PACKAGE**
 
@@ -273,13 +285,13 @@ BEGIN
 RETURN num1 + num2;
 END;
 /
--- Alter the execution rule of function add to IMMUTABLE (that is, the same result is returned if the parameter remains unchanged).
+-- Alter the execution rule of function func_add_sql2 to IMMUTABLE (that is, the same result is returned if the parameter remains unchanged).
 postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
 
--- Alter the name of function add to add_two_number.
+-- Alter the name of function func_add_sql2 to add_two_number.
 postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
 
--- Change the owner of function add to omm.
+-- Change the owner of function add_two_number to omm.
 postgres=# ALTER FUNCTION add_two_number(INTEGER, INTEGER) OWNER TO omm;
 
 -- Delete the function.
