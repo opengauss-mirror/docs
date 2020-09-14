@@ -37,10 +37,9 @@ headless: true
 	-   [Glossary]({{< relref "./docs/Technicalwhitepaper/glossary.md" >}})
 	
 -   [Compilation Guide]({{< relref "./docs/Compilationguide/Compilation.md" >}})
-	-   [Introduction]({{< relref "./docs/Compilationguide/introduction.md" >}})
-	-   [Setting up the Compilation Environment]({{< relref "./docs/Compilationguide/setting-up-the-compilation-environment.md" >}})
-	-   [Compiling the Version]({{< relref "./docs/Compilationguide/compiling-the-version.md" >}})
-	-   [FAQs]({{< relref "./docs/Compilationguide/faqs.md" >}})
+    -   [Setting up the Compilation Environment]({{< relref "./docs/Compilationguide/setting-up-the-compilation-environment.md" >}})
+    -   [Compiling the Version]({{< relref "./docs/Compilationguide/compiling-the-version.md" >}})
+    -   [FAQs]({{< relref "./docs/Compilationguide/faqs.md" >}})
 
 - [Quick Start]({{< relref "./docs/Quickstart/Quickstart.md" >}})
 	-   [Learning Product Knowledge]({{< relref "./docs/Quickstart/learning-product-knowledge.md" >}})
