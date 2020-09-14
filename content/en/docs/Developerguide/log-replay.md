@@ -20,7 +20,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 0 to 20
 
-**Default value**:  **1**
+**Default value**:  **1** (it will be set to 4 by installation tool in default for better performance)
 
 ## recovery\_parse\_workers<a name="section2094717549015"></a>
 
@@ -54,7 +54,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 1 to 2147483647
 
-**Default value**:  **4**
+This parameter is affected by the parameter: recovery_max_workers and parameter: recovery_parse_workers. When any of the above parameters is greater than 0, the parameter value will be recalculated.
+
+**Default value**:  **1**
 
 ## enable\_page\_lsn\_check<a name="en-us_topic_0237124709_section172708441584"></a>
 
