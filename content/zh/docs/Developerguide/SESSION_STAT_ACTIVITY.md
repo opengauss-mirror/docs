@@ -115,8 +115,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="25.929999999999996%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122637_p1833083392610"><a name="zh-cn_topic_0237122637_p1833083392610"></a><a name="zh-cn_topic_0237122637_p1833083392610"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.02%" headers="mcps1.2.4.1.3 "><p id="p1846712271212"><a name="p1846712271212"></a><a name="p1846712271212"></a>该字段不支持</p>
-<p id="zh-cn_topic_0237122637_p153301633152616"><a name="zh-cn_topic_0237122637_p153301633152616"></a><a name="zh-cn_topic_0237122637_p153301633152616"></a>。</p>
+<td class="cellrowborder" valign="top" width="55.02%" headers="mcps1.2.4.1.3 "><p id="p1846712271212"><a name="p1846712271212"></a><a name="p1846712271212"></a>该字段不支持。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122637_row1733163315267"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122637_p14331833132613"><a name="zh-cn_topic_0237122637_p14331833132613"></a><a name="zh-cn_topic_0237122637_p14331833132613"></a>state</p>

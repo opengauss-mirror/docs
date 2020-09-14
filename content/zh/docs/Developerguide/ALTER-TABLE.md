@@ -87,39 +87,38 @@
     >    此语法主要供内部缩容工具使用，一般用户不建议使用。  
     >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
     >    禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。  
-        >![](public_sys-resources/icon-note.gif) **说明：**   
         >应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。  
-
-    -   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-
-        启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
-
-    -   **| ENABLE REPLICA TRIGGER trigger\_name**
-
-        触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
-
-        配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
-
-    -   **| ENABLE ALWAYS TRIGGER trigger\_name**
-
-        无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
-
-    -   **| DISABLE/ENABLE ROW LEVEL SECURITY**
-
-        开启或关闭表的行访问控制开关。
-
-        当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
-
-    -   **| NO FORCE/FORCE ROW LEVEL SECURITY**
-
-        强制开启或关闭表的行访问控制开关。
-
-        默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
+    
+-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+    
+    启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
+    
+-   **| ENABLE REPLICA TRIGGER trigger\_name**
+    
+    触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+    
+    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
+    
+-   **| ENABLE ALWAYS TRIGGER trigger\_name**
+    
+    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
+    
+-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
+    
+    开启或关闭表的行访问控制开关。
+    
+    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
+    
+-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
+    
+    强制开启或关闭表的行访问控制开关。
+    
+    默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
 
 
 
     -   其中列相关的操作column\_clause可以是以下子句之一：
-
+    
         ```
         ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
         | MODIFY column_name data_type    
@@ -136,7 +135,7 @@
         | ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
         | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
         ```
-
+    
         >![](public_sys-resources/icon-note.gif) **说明：**   
         >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**  
         >    向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。  
@@ -168,9 +167,9 @@
         >    目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。  
         >-   **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**  
         >    为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。  
-
+    
         -   其中列约束column\_constraint为：
-
+    
             ```
             [ CONSTRAINT constraint_name ]
                 { NOT NULL |
@@ -181,24 +180,24 @@
                   PRIMARY KEY index_parameters }
                 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
             ```
-
+    
         -   其中列的压缩可选项compress\_mode为：
-
+    
             ```
             [ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
             ```
 
 
     -   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
-
+    
         ```
         [ CONSTRAINT constraint_name ]
             { UNIQUE | PRIMARY KEY } USING INDEX index_name
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-
+    
     -   其中表约束table\_constraint为：
-
+    
         ```
         [ CONSTRAINT constraint_name ]
             { CHECK ( expression ) |
@@ -207,9 +206,9 @@
               PARTIAL CLUSTER KEY ( column_name [, ... ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-
+    
         其中索引参数index\_parameters为：
-
+    
         ```
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
             [ USING INDEX TABLESPACE tablespace_name ]

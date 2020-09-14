@@ -122,8 +122,8 @@
 </td>
 <td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122638_p10410143413278"><a name="zh-cn_topic_0237122638_p10410143413278"></a><a name="zh-cn_topic_0237122638_p10410143413278"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122637_p153301633152616"><a name="zh-cn_topic_0237122637_p153301633152616"></a><a name="zh-cn_topic_0237122637_p153301633152616"></a>该字段不支持</p>
-<p id="zh-cn_topic_0237122638_p13410143417278"><a name="zh-cn_topic_0237122638_p13410143417278"></a><a name="zh-cn_topic_0237122638_p13410143417278"></a>。</p>
+<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122637_p153301633152616"><a name="zh-cn_topic_0237122637_p153301633152616"></a><a name="zh-cn_topic_0237122637_p153301633152616"></a>该字段不支持。</p>
+
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122638_row1441093419275"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122638_p164111534192717"><a name="zh-cn_topic_0237122638_p164111534192717"></a><a name="zh-cn_topic_0237122638_p164111534192717"></a>state</p>
