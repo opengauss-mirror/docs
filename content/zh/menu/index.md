@@ -35,7 +35,6 @@ headless: true
 	-   [术语表]({{< relref "./docs/Technicalwhitepaper/术语表.md" >}})
 
 -   [编译指导书]({{< relref "./docs/Compilationguide/Compilation.md" >}})
-    -   [简介]({{< relref "./docs/Compilationguide/简介.md" >}})
     -   [搭建编译环境]({{< relref "./docs/Compilationguide/搭建编译环境.md" >}})
     -   [版本编译]({{< relref "./docs/Compilationguide/版本编译.md" >}})
     -   [FAQ]({{< relref "./docs/Compilationguide/FAQ.md" >}})

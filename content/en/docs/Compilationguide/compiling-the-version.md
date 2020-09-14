@@ -4,16 +4,8 @@ A  **build.sh**  script is provided for compiling openGauss and generating the i
 <!-- TOC -->
 
 - [Preparation Before Compiling](#preparation-before-compiling)
-    - [Downloading Code](#downloading-code)
-    - [Compiling Open-source Software](#compiling-open-source-software)
-    - [Introduction to build.sh](#introduction-to-buildsh)
 - [Software Compilation and Installation](#software-compilation-and-installation)
-    - [Prerequisites](#prerequisites)
-    - [Compilation Using the One-click Script](#compilation-using-the-one-click-script)
-    - [Manual Compilation](#manual-compilation)
 - [Compiling the Installation Package](#compiling-the-installation-package)
-    - [Prerequisites](#prerequisites-1)
-    - [Procedure](#procedure)
 
 <!-- /TOC -->
 
