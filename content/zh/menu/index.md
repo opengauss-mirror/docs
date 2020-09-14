@@ -52,7 +52,7 @@ headless: true
 		-   [执行安装]({{< relref "./docs/Quickstart/执行安装.md" >}})
 		-   [初始化数据库]({{< relref "./docs/Quickstart/初始化数据库.md" >}})
 		-   [（可选）设置备机可读]({{< relref "./docs/Quickstart/（可选）设置备机可读.md" >}})
-		-   [安装验证]({{< relref "./docs/Quickstart/安装验证.md" >}})
+		[安装验证]({{< relref "./docs/Quickstart/安装验证.md" >}})
 			-   [检查健康状态]({{< relref "./docs/Quickstart/检查健康状态.md" >}})
 	-   [开始使用产品]({{< relref "./docs/Quickstart/开始使用产品.md" >}})
 		-   [设置openGauss参数]({{< relref "./docs/Quickstart/设置openGauss参数.md" >}})			
