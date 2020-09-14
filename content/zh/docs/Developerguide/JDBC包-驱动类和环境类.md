@@ -17,49 +17,54 @@
 
 客户端需配置JDK1.8，配置方法如下：
 
-1.  DOS窗口输入“java -version”，查看JDK版本，确认为JDK1.8版本。如果未安装JDK，请从官方网站下载安装包并安装。
-2.  根据如下步骤配置系统环境变量。
-    1.  右键单击“我的电脑“，选择“属性“。
-    2.  在“系统“页面左侧导航栏单击“高级系统设置“。
-    3.  在“系统属性“页面，“高级“页签上单击“环境变量“。
-    4.  在“环境变量“页面上，“系统变量“区域单击“新建“或“编辑“配置系统变量。变量说明请参见[表1](#zh-cn_topic_0237120378_zh-cn_topic_0213179123_table1625616152473)。
+1. DOS窗口输入“java -version”，查看JDK版本，确认为JDK1.8版本。如果未安装JDK，请从官方网站下载安装包并安装。
 
-        **表 1**  变量说明
+2. 根据如下步骤配置系统环境变量。
 
-        <a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_table1625616152473"></a>
-        <table><thead align="left"><tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row1525719152472"><th class="cellrowborder" valign="top" width="15.701570157015702%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"></a>变量名</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"></a>操作</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="51.54515451545154%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p8257141544718"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p8257141544718"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p8257141544718"></a>变量值</p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row925712153479"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p182575153474"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p182575153474"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p182575153474"></a>JAVA_HOME</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul16913207507"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul16913207507"></a><ul id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul16913207507"><li>若存在，则单击“编辑”。</li><li>若不存在，则单击“新建”。</li></ul>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.54515451545154%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p0217595132"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p0217595132"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p0217595132"></a>JAVA的安装目录。</p>
-        <p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1981211652"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1981211652"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1981211652"></a>例如：C:\Program Files\Java\jdk1.8.0_131</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row5257111564711"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325721584719"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325721584719"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325721584719"></a>Path</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p7257191511477"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p7257191511477"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p7257191511477"></a>编辑</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.54515451545154%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul108931343135117"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul108931343135117"></a><ul id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul108931343135117"><li>若配置了JAVA_HOME，则在变量值的最前面加上： %JAVA_HOME%\bin;</li><li>若未配置JAVA_HOME，则在变量值的最前面加上 JAVA安装的全路径：<p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p54286393517"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p54286393517"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p54286393517"></a>C:\Program Files\Java\jdk1.8.0_131\bin;</p>
-        </li></ul>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row325881510471"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1625812150476"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1625812150476"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1625812150476"></a>CLASSPATH</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p13527826155219"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p13527826155219"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p13527826155219"></a>新建</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.54515451545154%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325841534712"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325841534712"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325841534712"></a>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
+   a. 右键单击“我的电脑“，选择“属性“。
+
+   b. 在“系统“页面左侧导航栏单击“高级系统设置“。
+
+   c. 在“系统属性“页面，“高级“页签上单击“环境变量“。
+
+   d. 在“环境变量“页面上，“系统变量“区域单击“新建“或“编辑“配置系统变量。变量说明请参见[表1](#zh-cn_topic_0237120378_zh-cn_topic_0213179123_table1625616152473)。
+
+   **表 1**  变量说明
+
+   <a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_table1625616152473"></a>
+   <table><thead align="left"><tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row1525719152472"><th class="cellrowborder" valign="top" width="15.701570157015702%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"></a>变量名</p>
+   </th>
+   <th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"></a>操作</p>
+   </th>
+   <th class="cellrowborder" valign="top" width="51.54515451545154%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p8257141544718"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p8257141544718"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p8257141544718"></a>变量值</p>
+   </th>
+   </tr>
+   </thead>
+   <tbody><tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row925712153479"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p182575153474"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p182575153474"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p182575153474"></a>JAVA_HOME</p>
+   </td>
+   <td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul16913207507"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul16913207507"></a><ul id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul16913207507"><li>若存在，则单击“编辑”。</li><li>若不存在，则单击“新建”。</li></ul>
+   </td>
+   <td class="cellrowborder" valign="top" width="51.54515451545154%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p0217595132"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p0217595132"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p0217595132"></a>JAVA的安装目录。</p>
+   <p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1981211652"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1981211652"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1981211652"></a>例如：C:\Program Files\Java\jdk1.8.0_131</p>
+   </td>
+   </tr>
+   <tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row5257111564711"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325721584719"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325721584719"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325721584719"></a>Path</p>
+   </td>
+   <td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p7257191511477"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p7257191511477"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p7257191511477"></a>编辑</p>
+   </td>
+   <td class="cellrowborder" valign="top" width="51.54515451545154%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul108931343135117"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul108931343135117"></a><ul id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_ul108931343135117"><li>若配置了JAVA_HOME，则在变量值的最前面加上： %JAVA_HOME%\bin;</li><li>若未配置JAVA_HOME，则在变量值的最前面加上 JAVA安装的全路径：<p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p54286393517"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p54286393517"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p54286393517"></a>C:\Program Files\Java\jdk1.8.0_131\bin;</p>
+   </li></ul>
+   </td>
+   </tr>
+   <tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row325881510471"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1625812150476"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1625812150476"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1625812150476"></a>CLASSPATH</p>
+   </td>
+   <td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p13527826155219"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p13527826155219"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p13527826155219"></a>新建</p>
+   </td>
+   <td class="cellrowborder" valign="top" width="51.54515451545154%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325841534712"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325841534712"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p1325841534712"></a>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;</p>
+   </td>
+   </tr>
+   </tbody>
+   </table>
 
 
 
