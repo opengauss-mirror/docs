@@ -151,6 +151,21 @@ openGauss lists common implicit data type conversions in  [Table 1](#en-us_topic
 <td class="cellrowborder" valign="top" width="35.68643135686431%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"><a name="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"></a><a name="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"></a>-</p>
 </td>
 </tr>
+    <tr id="en-us_topic_0237122212_en-us_topic_0059778807_rb403e6c819fe4902baf2745ebe70fee9"><td class="cellrowborder" valign="top" width="32.15678432156784%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122212_en-us_topic_0059778807_a962b560b2be443eda913331961210419"><a name="en-us_topic_0237122212_en-us_topic_0059778807_a962b560b2be443eda913331961210419"></a><a name="en-us_topic_0237122212_en-us_topic_0059778807_a962b560b2be443eda913331961210419"></a>INT4</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.15678432156784%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122212_en-us_topic_0059778807_a3c9b8606898f4749a76caf6b28084426"><a name="en-us_topic_0237122212_en-us_topic_0059778807_a3c9b8606898f4749a76caf6b28084426"></a><a name="en-us_topic_0237122212_en-us_topic_0059778807_a3c9b8606898f4749a76caf6b28084426"></a>BOOLEAN</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.68643135686431%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"><a name="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"></a><a name="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"></a>-</p>
+</td>
+</tr>
+    <tr id="en-us_topic_0237122212_en-us_topic_0059778807_rb403e6c819fe4902baf2745ebe70fee9"><td class="cellrowborder" valign="top" width="32.15678432156784%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122212_en-us_topic_0059778807_a962b560b2be443eda913331961210419"><a name="en-us_topic_0237122212_en-us_topic_0059778807_a962b560b2be443eda913331961210419"></a><a name="en-us_topic_0237122212_en-us_topic_0059778807_a962b560b2be443eda913331961210419"></a>BOOLEAN</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.15678432156784%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122212_en-us_topic_0059778807_a3c9b8606898f4749a76caf6b28084426"><a name="en-us_topic_0237122212_en-us_topic_0059778807_a3c9b8606898f4749a76caf6b28084426"></a><a name="en-us_topic_0237122212_en-us_topic_0059778807_a3c9b8606898f4749a76caf6b28084426"></a>INT4</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.68643135686431%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"><a name="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"></a><a name="en-us_topic_0237122212_en-us_topic_0059778807_ac3adeec499244758a00f6daffbfcc6df"></a>-</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 

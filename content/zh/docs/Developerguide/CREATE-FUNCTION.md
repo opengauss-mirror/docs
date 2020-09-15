@@ -91,7 +91,7 @@
 
     函数参数的模式。
 
-    取值范围：IN，OUT，INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数后面能跟VARIADIC。并且OUT和INOUT模式的参数不能用在RETURNS TABLE的函数定义中。
+    取值范围：IN，OUT，INOUT或VARIADIC。缺省值是IN。并且OUT和INOUT模式的参数不能用在RETURNS TABLE的函数定义中。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >VARIADIC用于声明数组类型的参数。  

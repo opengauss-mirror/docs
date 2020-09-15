@@ -315,21 +315,24 @@
     (1 row)
     ```
 
--   to\_date\(text\)
+- to\_date\(text\)
 
-    Description: Converts values of the text type into the timestamp in the specified format.
+  Description: Converts values of the text type into the timestamp in the specified format.Currently only two types of formats are supported:
 
-    Return type: timestamp
+  + Format 1: Date without separators, such as 20150814, including the complete year, month, and day.
+  + Format 2: Date with separator, such as 2014-08-14, the separator can be any single non-digit character.
 
-    For example:
+  Return type: timestamp
 
-    ```
-    postgres=# SELECT to_date('2015-08-14');
-           to_date
-    ---------------------
-     2015-08-14 00:00:00
-    (1 row)
-    ```
+  For example:
+
+  ```
+  postgres=# SELECT to_date('2015-08-14');
+         to_date
+  ---------------------
+   2015-08-14 00:00:00
+  (1 row)
+  ```
 
 -   to\_date\(text, text\)
 

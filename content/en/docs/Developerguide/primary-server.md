@@ -51,7 +51,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 This parameter is an INTERNAL parameter. Its default value is  **off**  and cannot be modified.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->This parameter is an INTERNAL parameter and cannot be modified in normal service scenarios. That is, the WAL file and data page mixed replication mode is disabled.  
+>This parameter cannot be modified in normal service scenarios. That is, the WAL file and data page mixed replication mode is disabled.  
 
 **Value range**: Boolean
 

@@ -11,7 +11,6 @@
 -   Database objects that can be accessed using synonyms include tables, views, functions, and stored procedures.
 -   To use synonyms, you must have the required permissions on associated objects.
 -   The following DML statements support synonyms:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **EXPLAIN**, and  **CALL**.
--   The  **CREATE SYNONYM**  statement of an associated function or stored procedure cannot be used in a stored procedure. You are advised to use synonyms existing in the  **pg\_synonym**  system catalog in the stored procedure.
 
 ## Syntax<a name="en-us_topic_0237122116_en-us_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
