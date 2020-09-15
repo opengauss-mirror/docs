@@ -111,8 +111,7 @@ The PG code \(described below\) is returned internally by MOT to the database en
 <tbody><tr id="row28514703"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p27989608"><a name="p27989608"></a><a name="p27989608"></a>Success.</p>
 <p id="p50579888"><a name="p50579888"></a><a name="p50579888"></a>Denotes success</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p3330249"><a name="p3330249"></a><a name="p3330249"></a>ERRCODE_SUCCESSFUL_</p>
-<p id="p29972245"><a name="p29972245"></a><a name="p29972245"></a>COMPLETION</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p3330249"><a name="p3330249"></a><a name="p3330249"></a>ERRCODE_SUCCESSFUL_COMPLETIONCOMPLETION</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p11832760"><a name="p11832760"></a><a name="p11832760"></a>RC_OK = 0</p>
 </td>
@@ -176,18 +175,15 @@ The PG code \(described below\) is returned internally by MOT to the database en
 <tr id="row39626584"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p55636749"><a name="p55636749"></a><a name="p55636749"></a>Cannot create table.</p>
 <p id="p30968695"><a name="p30968695"></a><a name="p30968695"></a>Cannot add column %s; as the number of declared columns exceeds the maximum declared columns.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p25436394"><a name="p25436394"></a><a name="p25436394"></a>ERRCODE_FEATURE_NOT_</p>
-<p id="p27600956"><a name="p27600956"></a><a name="p27600956"></a>SUPPORTED</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p25436394"><a name="p25436394"></a><a name="p25436394"></a>ERRCODE_FEATURE_NOT_SUPPORTED</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p21084934"><a name="p21084934"></a><a name="p21084934"></a>RC_TABLE_EXCEEDS_MAX_</p>
-<p id="p55546680"><a name="p55546680"></a><a name="p55546680"></a>DECLARED_COLS</p>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p21084934"><a name="p21084934"></a><a name="p21084934"></a>RC_TABLE_EXCEEDS_MAX_DECLARED_COLS</p>
 </td>
 </tr>
 <tr id="row30158076"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p26885128"><a name="p26885128"></a><a name="p26885128"></a>Cannot create index.</p>
 <p id="p40639560"><a name="p40639560"></a><a name="p40639560"></a>Total column size is greater than maximum index size %u.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p3470093"><a name="p3470093"></a><a name="p3470093"></a>ERRCODE_FDW_KEY_SIZE_</p>
-<p id="p31230843"><a name="p31230843"></a><a name="p31230843"></a>EXCEEDS_MAX_ALLOWED</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p3470093"><a name="p3470093"></a><a name="p3470093"></a>ERRCODE_FDW_KEY_SIZE_EXCEEDS_MAX_ALLOWED</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p46670388"><a name="p46670388"></a><a name="p46670388"></a>RC_INDEX_EXCEEDS_MAX_SIZE</p>
 </td>
@@ -195,8 +191,7 @@ The PG code \(described below\) is returned internally by MOT to the database en
 <tr id="row17380313"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p65628079"><a name="p65628079"></a><a name="p65628079"></a>Cannot create index.</p>
 <p id="p53781803"><a name="p53781803"></a><a name="p53781803"></a>Total number of indexes for table %s is greater than the maximum number of indexes allowed %u.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p61358777"><a name="p61358777"></a><a name="p61358777"></a>ERRCODE_FDW_TOO_MANY_</p>
-<p id="p15358085"><a name="p15358085"></a><a name="p15358085"></a>INDEXES</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p61358777"><a name="p61358777"></a><a name="p61358777"></a>ERRCODE_FDW_TOO_MANY_INDEXES</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p36045397"><a name="p36045397"></a><a name="p36045397"></a>RC_TABLE_EXCEEDS_MAX_INDEXES</p>
 </td>
@@ -204,10 +199,7 @@ The PG code \(described below\) is returned internally by MOT to the database en
 <tr id="row55973123"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p37529103"><a name="p37529103"></a><a name="p37529103"></a>Cannot execute statement.</p>
 <p id="p2217607"><a name="p2217607"></a><a name="p2217607"></a>Maximum number of DDLs per transaction reached the maximum %u.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p45408440"><a name="p45408440"></a><a name="p45408440"></a>ERRCODE_FDW_TOO_MANY_</p>
-<p id="p6022779"><a name="p6022779"></a><a name="p6022779"></a>DDL_CHANGES_IN_</p>
-<p id="p54205018"><a name="p54205018"></a><a name="p54205018"></a>TRANSACTION_NOT_</p>
-<p id="p18083116"><a name="p18083116"></a><a name="p18083116"></a>ALLOWED</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p45408440"><a name="p45408440"></a><a name="p45408440"></a>ERRCODE_FDW_TOO_MANY_DDL_CHANGES_IN_TRANSACTION_NOT_ALLOWED</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p55446330"><a name="p55446330"></a><a name="p55446330"></a>RC_TXN_EXCEEDS_MAX_DDLS</p>
 </td>
@@ -216,8 +208,7 @@ The PG code \(described below\) is returned internally by MOT to the database en
 <p id="p53332363"><a name="p53332363"></a><a name="p53332363"></a>Duplicate key value violates unique constraint \"%s\"".</p>
 <p id="p10229222"><a name="p10229222"></a><a name="p10229222"></a>Key %s already exists.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p23260691"><a name="p23260691"></a><a name="p23260691"></a>ERRCODE_UNIQUE_</p>
-<p id="p8019630"><a name="p8019630"></a><a name="p8019630"></a>VIOLATION</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p23260691"><a name="p23260691"></a><a name="p23260691"></a>ERRCODE_UNIQUE_VIOLATION</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p45610274"><a name="p45610274"></a><a name="p45610274"></a>RC_UNIQUE_VIOLATION</p>
 </td>
@@ -331,85 +322,88 @@ The PG code \(described below\) is returned internally by MOT to the database en
 </tr>
 <tr id="row48848221"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p64391817"><a name="p64391817"></a><a name="p64391817"></a>&lt;recovery message&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p48354649"><a name="p48354649"></a><a name="p48354649"></a>-</p>
+</td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p24412469"><a name="p24412469"></a><a name="p24412469"></a>ERRCODE_CONFIG_FILE_ERROR</p>
 </td>
 </tr>
 <tr id="row18385636"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p12841534"><a name="p12841534"></a><a name="p12841534"></a>&lt;recovery message&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p31685085"><a name="p31685085"></a><a name="p31685085"></a>ERRCODE_INVALID_TABLE_</p>
-<p id="p16730309"><a name="p16730309"></a><a name="p16730309"></a>DEFINITION</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p33531353"><a name="p33531353"></a><a name="p33531353"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p31685085"><a name="p31685085"></a><a name="p31685085"></a>ERRCODE_INVALID_TABLE_DEFINITION</p>
 </td>
 </tr>
 <tr id="row16355056"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p49691197"><a name="p49691197"></a><a name="p49691197"></a>Memory engine – Failed to perform commit prepared.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p9084575"><a name="p9084575"></a><a name="p9084575"></a>ERRCODE_INVALID_TRANSACTION_</p>
-<p id="p14652317"><a name="p14652317"></a><a name="p14652317"></a>STATE</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p65564010"><a name="p65564010"></a><a name="p65564010"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p9084575"><a name="p9084575"></a><a name="p9084575"></a>ERRCODE_INVALID_TRANSACTION_STATE</p>
 </td>
 </tr>
 <tr id="row64761989"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p11229763"><a name="p11229763"></a><a name="p11229763"></a>Invalid option &lt;option name&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p60057706"><a name="p60057706"></a><a name="p60057706"></a>ERRCODE_FDW_INVALID_OPTION_</p>
-<p id="p3648444"><a name="p3648444"></a><a name="p3648444"></a>NAME</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p37195650"><a name="p37195650"></a><a name="p37195650"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p60057706"><a name="p60057706"></a><a name="p60057706"></a>ERRCODE_FDW_INVALID_OPTION_NAME</p>
 </td>
 </tr>
 <tr id="row32836002"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p42470482"><a name="p42470482"></a><a name="p42470482"></a>Invalid memory allocation request size.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p12833084"><a name="p12833084"></a><a name="p12833084"></a>ERRCODE_INVALID_PARAMETER_</p>
-<p id="p48388900"><a name="p48388900"></a><a name="p48388900"></a>VALUE</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p17557027"><a name="p17557027"></a><a name="p17557027"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p12833084"><a name="p12833084"></a><a name="p12833084"></a>ERRCODE_INVALID_PARAMETER_VALUE</p>
 </td>
 </tr>
 <tr id="row32846918"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p43354729"><a name="p43354729"></a><a name="p43354729"></a>Memory is temporarily unavailable.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p43012887"><a name="p43012887"></a><a name="p43012887"></a>ERRCODE_OUT_OF_LOGICAL_</p>
-<p id="p51571667"><a name="p51571667"></a><a name="p51571667"></a>MEMORY</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p22072140"><a name="p22072140"></a><a name="p22072140"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p43012887"><a name="p43012887"></a><a name="p43012887"></a>ERRCODE_OUT_OF_LOGICAL_MEMORY</p>
 </td>
 </tr>
 <tr id="row61491827"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p14782087"><a name="p14782087"></a><a name="p14782087"></a>Could not serialize access due to concurrent update.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p12969978"><a name="p12969978"></a><a name="p12969978"></a>ERRCODE_T_R_SERIALIZATION_</p>
-<p id="p49620939"><a name="p49620939"></a><a name="p49620939"></a>FAILURE</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p56498428"><a name="p56498428"></a><a name="p56498428"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p12969978"><a name="p12969978"></a><a name="p12969978"></a>ERRCODE_T_R_SERIALIZATION_FAILURE</p>
 </td>
 </tr>
 <tr id="row43935272"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p1987246"><a name="p1987246"></a><a name="p1987246"></a>Alter table operation is not supported for memory table.</p>
 <p id="p17885218"><a name="p17885218"></a><a name="p17885218"></a>Cannot create MOT tables while incremental checkpoint is enabled.</p>
 <p id="p26749237"><a name="p26749237"></a><a name="p26749237"></a>Re-index is not supported for memory tables.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p12067172"><a name="p12067172"></a><a name="p12067172"></a>ERRCODE_FDW_OPERATION_NOT_</p>
-<p id="p41495690"><a name="p41495690"></a><a name="p41495690"></a>SUPPORTED</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p19204580"><a name="p19204580"></a><a name="p19204580"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p12067172"><a name="p12067172"></a><a name="p12067172"></a>ERRCODE_FDW_OPERATION_NOT_SUPPORTED</p>
 </td>
 </tr>
 <tr id="row37916893"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p51369462"><a name="p51369462"></a><a name="p51369462"></a>Allocation of table metadata failed.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p176855"><a name="p176855"></a><a name="p176855"></a>-</p>
+</td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p14325289"><a name="p14325289"></a><a name="p14325289"></a>ERRCODE_OUT_OF_MEMORY</p>
 </td>
 </tr>
 <tr id="row61818739"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p41262001"><a name="p41262001"></a><a name="p41262001"></a>Database with OID %u does not exist.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p53887795"><a name="p53887795"></a><a name="p53887795"></a>-</p>
+</td>
 <td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p2835298"><a name="p2835298"></a><a name="p2835298"></a>ERRCODE_UNDEFINED_DATABASE</p>
 </td>
 </tr>
 <tr id="row25517685"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p53666642"><a name="p53666642"></a><a name="p53666642"></a>Value exceeds maximum precision: %d.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p53739988"><a name="p53739988"></a><a name="p53739988"></a>ERRCODE_NUMERIC_VALUE_OUT_</p>
-<p id="p13897850"><a name="p13897850"></a><a name="p13897850"></a>OF_RANGE</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p52030735"><a name="p52030735"></a><a name="p52030735"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p53739988"><a name="p53739988"></a><a name="p53739988"></a>ERRCODE_NUMERIC_VALUE_OUT_OF_RANGE</p>
 </td>
 </tr>
 <tr id="row57971786"><td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.1 "><p id="p65203096"><a name="p65203096"></a><a name="p65203096"></a>You have reached a maximum logical capacity %lu of allowed %lu.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p45620191"><a name="p45620191"></a><a name="p45620191"></a>ERRCODE_OUT_OF_LOGICAL_</p>
-<p id="p7928537"><a name="p7928537"></a><a name="p7928537"></a>MEMORY</p>
+<td class="cellrowborder" valign="top" width="30.61306130613061%" headers="mcps1.2.4.1.2 "><p id="p46959463"><a name="p46959463"></a><a name="p46959463"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.69346934693469%" headers="mcps1.2.4.1.3 "><p id="p45620191"><a name="p45620191"></a><a name="p45620191"></a>ERRCODE_OUT_OF_LOGICAL_MEMORY</p>
 </td>
 </tr>
 </tbody>

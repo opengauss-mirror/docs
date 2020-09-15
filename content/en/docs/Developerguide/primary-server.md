@@ -48,7 +48,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies how WAL files and data are replicated between primary and standby servers, and between primary and secondary servers.
 
-This parameter is an INTERNAL parameter. Its default value is  **off**  and cannot be modified.
+The default value of this parameter is  **off**  and cannot be modified.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >This parameter cannot be modified in normal service scenarios. That is, the WAL file and data page mixed replication mode is disabled.  

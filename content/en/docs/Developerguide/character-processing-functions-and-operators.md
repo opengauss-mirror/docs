@@ -1493,6 +1493,19 @@ String functions and operators provided by openGauss are for concatenating strin
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.  
->-   In openGauss,  _n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than n.  
+>- For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.  
+>
+>- In openGauss,  _n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than n.  
+>
+>- OpenGauss supports several types of databases. There are currently four types: A type, B type, C type, and PG type. When we do not specify the database type, our database defaults to Atype. Unlike the other three, A type lexical analyzer strings are treated as NULL. So, when using an A type database, if the character manipulation function above has an empty string as a parameter, there will be no output. For example:
+>
+>  ```
+>    postgres=# SELECT translate('12345','123','');
+>     translate  
+>    -----------
+>    
+>    (1 row)
+>  ```
+>
+>  This is because the kernel will determine whether the input parameter contains NULL before calling the corresponding function for processing. If so, the corresponding function will not be called, so there will be no output.In PG type, strings are handled in the same way as PostgresQL, so you won't have this problem。
 

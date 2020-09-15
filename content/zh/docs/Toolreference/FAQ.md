@@ -1,14 +1,6 @@
 # FAQ<a name="ZH-CN_TOPIC_0249632272"></a>
 
 
-<!-- TOC -->
-
-- [执行命令报错“Failed to obtain the GPHOME”<a name="ZH-CN_TOPIC_0249632274"></a>](#执行命令报错failed-to-obtain-the-gphomea-namezh-cn_topic_0249632274a)
-- [gs\_ctl 重建备实例过程被中断导致秘钥文件不完整恢复方法<a name="ZH-CN_TOPIC_0255515980"></a>](#gs\_ctl-重建备实例过程被中断导致秘钥文件不完整恢复方法a-namezh-cn_topic_0255515980a)
-
-<!-- /TOC -->
-
-
 ## 执行命令报错“Failed to obtain the GPHOME”<a name="ZH-CN_TOPIC_0249632274"></a>
 
 ### 问题现象<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
@@ -85,3 +77,42 @@ read cipher file or random parameter file failed.
 >若备机数据库已停止，需要重新生成证书文件或者复制证书文件（$GAUSSHOME/share下的证书文件）到数据目录，启动备机并重建备实例。生成证书文件的相关操作请参见《开发者指南》
 
 
+
+## 使用gs\_om -t status --all查询集群状态，长时间没有响应<a name="ZH-CN_TOPIC_0275124283"></a>
+
+### 问题现象<a name="section434872073818"></a>
+
+使用gs\_om -t status --all命令后长时间无响应。
+
+### 原因分析<a name="section14354141874411"></a>
+
+可能是gaussdb进程hang住，查询动作会调用gsql或者gs\_ctl工具查询数据库状态，进程hang住后不会给响应，直到超时后退出。
+
+### 操作步骤<a name="section10173163494516"></a>
+
+1. 查看gsql能否访问数据库，出现下面提示说明gaussdb进程hang住，数据库异常。
+
+   ```
+   gsql -d postgres -p 29776        
+   gsql: wait (null):29776 timeout expired, errno: Success
+   ```
+
+2. 查看postgresql-\*.log是否有错误提示，根据提示解决问题。
+
+   ```
+   cd $GAUSSLOG/pg_log/dn_6001;grep "ERROR\|FATAL" postgresql-*.log   
+   ```
+
+3. 数据库已经hang住，gs\_om命令不起作用，可以直接到每个节点上查找进程pid后kill。
+
+   ```
+   ps -ef|grep $GAUSSHOME/bin/gaussdb|grep -v grep       
+   kill -9 $pid
+   ```
+
+4. 所有节点进程kill完毕后在某一节点执行启动命令。测试环境下可以直接重启数据库，生产商用环境请联系技术支持工程师。
+
+   ```
+   gs_om -t start
+   ```
+
