@@ -2,5 +2,11 @@
 
 Write-Ahead Logging \(WAL\) is a standard method for ensuring data durability. WAL's central concept is that changes to data files \(where tables and indexes reside\) are only written after those changes have been logged, meaning after the log records that describe these changes have been flushed to permanent storage.
 
-In the In-Memory Engine we use the existing openGauss logging facilities and have not develop a low level logging API from scratch in order to reduce development time and to enable it to be used for replication purposes as well.
+The MOT Engine uses the existing openGauss logging facilities, enabling it also to participate in the replication process.
+
+
+
+
+
+The RedoLog component is used by both by backend threads that use the MOT Engine and by the WAL writer in order to persist their data. Checkpoints are performed using the Checkpoint Manager, which is triggered by the Postgres checkpointer.
 

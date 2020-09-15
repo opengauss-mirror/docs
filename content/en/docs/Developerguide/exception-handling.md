@@ -46,8 +46,7 @@ The following exceptions are reported by this module –
 </tr>
 <tr id="row13208031"><td class="cellrowborder" valign="top" width="29.292929292929294%" headers="mcps1.2.5.1.1 "><p id="p63217557"><a name="p63217557"></a><a name="p63217557"></a>Logic, DB errors</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.26262626262626%" headers="mcps1.2.5.1.2 "><p id="p20348492"><a name="p20348492"></a><a name="p20348492"></a>ERRCODE_INTERNAL_</p>
-<p id="p48918703"><a name="p48918703"></a><a name="p48918703"></a>ERROR</p>
+<td class="cellrowborder" valign="top" width="26.26262626262626%" headers="mcps1.2.5.1.2 "><p id="p20348492"><a name="p20348492"></a><a name="p20348492"></a>ERRCODE_INTERNAL_ERROR</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.21212121212121%" headers="mcps1.2.5.1.3 "><p id="p2992010"><a name="p2992010"></a><a name="p2992010"></a>Checkpoint: algorithm fails or failure to retrieve table data or indexes.</p>
 </td>
@@ -56,4 +55,5 @@ The following exceptions are reported by this module –
 </tr>
 </tbody>
 </table>
+
 

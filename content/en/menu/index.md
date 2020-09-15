@@ -411,6 +411,7 @@ headless: true
 				-   [MOT Monitoring]({{< relref "./docs/Developerguide/mot-monitoring.md" >}})
 				-   [MOT Error Messages]({{< relref "./docs/Developerguide/mot-error-messages.md" >}})
 			-   [MOT Sample TPC-C Benchmark]({{< relref "./docs/Developerguide/mot-sample-tpc-c-benchmark.md" >}})
+			-   [MOT Sample PGBench Benchmark]({{< relref "./docs/Developerguide/MOT-Sample-PGBench-benchmark.md" >}})
 		-   [Concepts of MOT]({{< relref "./docs/Developerguide/concepts-of-mot.md" >}})
 			-   [MOT Scale-up Architecture]({{< relref "./docs/Developerguide/mot-scale-up-architecture.md" >}})
 			-   [MOT Concurrency Control Mechanism]({{< relref "./docs/Developerguide/mot-concurrency-control-mechanism.md" >}})
