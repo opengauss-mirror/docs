@@ -71,7 +71,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
     Specifies the current schema.
 
-    Value range: an existing schema name
+    Value range: an existing schema name. If the schema name does not exist, it will cause the CURRENT_SCHEMA value to be empty.
 
 -   **SCHEMA schema**
 

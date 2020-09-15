@@ -91,7 +91,7 @@
 
     Specifies the parameter mode of the function.
 
-    Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**. The default value is  **IN**. Only the parameter of the  **OUT**  mode can be followed by  **VARIADIC**. The parameters of  **OUT**  and  **INOUT**  cannot be used in the function definition of  **RETURNS TABLE**.
+    Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**. The default value is  **IN**. The parameters of  **OUT**  and  **INOUT**  cannot be used in the function definition of  **RETURNS TABLE**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >**VARIADIC**  specifies parameters of the array type.  

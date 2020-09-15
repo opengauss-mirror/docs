@@ -77,7 +77,7 @@ NEXT
         Value range: a possibly-signed integer
 
         -   If  _count_  is positive, the  _count_'th row of the query will be fetched. If  _count_  is less than the current cursor position, rewind is required, which is currently not supported.
-        -   If  _count_  is negative or 0, backward scanning is required, which is currently not supported.
+        -   If  _count_  is negative, Just grab the abs(count) row from the end of the query result.
 
     -   RELATIVE count
 
@@ -103,7 +103,7 @@ NEXT
 
     -   FORWARD count
 
-        Fetches the next or prior  _count_  rows \(same as  **RELATIVE** _count_\).
+        Starting from the current associated position, grab the following or previous count lines.
 
     -   FORWARD ALL
 

@@ -1,6 +1,6 @@
 # Comparison Operators<a name="EN-US_TOPIC_0242370430"></a>
 
-Comparison operators are available for all data types and return Boolean values.
+Comparison operators are available for most data types and return Boolean values.
 
 All comparison operators are binary operators. Only data types that are the same or can be implicitly converted can be compared using comparison operators.
 

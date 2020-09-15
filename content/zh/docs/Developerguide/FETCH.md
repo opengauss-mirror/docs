@@ -76,8 +76,8 @@ NEXT
 
         count取值范围：有符号的整数
 
-        -   count为正数，就从查询结果的第一行开始，抓取第count行。当count小于当前游标位置时，涉及到rewind操作，暂不支持。
-        -   count为负数或0，涉及到反向扫描操作，暂不支持。
+        -   count为正数，就从查询结果的第一行开始，抓取第count行。
+        -   count为负数，就从查询结果末尾抓取第abs(count)行。
 
     -   RELATIVE count
 
@@ -103,7 +103,7 @@ NEXT
 
     -   FORWARD count
 
-        与RELATIVE count的效果相同，从当前关联位置开始，抓取随后或前面的第count行。
+        从当前关联位置开始，抓取随后或前面的count行。
 
     -   FORWARD ALL
 

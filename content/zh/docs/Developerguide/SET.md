@@ -71,7 +71,7 @@
 
     CURRENT\_SCHEMA用于指定当前的模式。
 
-    取值范围：已存在模式名称。
+    取值范围：已存在模式名称。如果模式名不存在，会导致CURRENT_SCHEMA值为空。
 
 -   **SCHEMA schema**
 

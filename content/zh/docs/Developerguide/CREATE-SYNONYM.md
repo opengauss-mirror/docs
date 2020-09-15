@@ -11,7 +11,6 @@
 -   支持通过同义词访问的数据库对象包括：表、视图、函数和存储过程。
 -   使用同义词时，用户需要具有对关联对象的相应权限。
 -   支持使用同义词的DML语句包括：SELECT、INSERT、UPDATE、DELETE、EXPLAIN、CALL。
--   不支持关联函数或存储过程的CREATE SYNONYM语句出现在存储过程中，建议存储过程中使用系统表pg\_synonym中已存在的同义词对象。
 
 ## 语法格式<a name="zh-cn_topic_0237122116_zh-cn_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
