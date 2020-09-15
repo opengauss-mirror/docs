@@ -25,7 +25,7 @@ mysql_fdw是一款开源插件，github地址： https://github.com/EnterpriseDB
 -    删除用户映射：**[DROP USER MAPPING](DROP-USER-MAPPING.md)**
 -    删除服务器对象：**[DROP SERVER](DROP-SERVER.md)**
 -    删除扩展：**DROP EXTENSION mysql_fdw;**
-## 常见问题
+## 注意事项
 -    在openGauss上建立外表时，不会同步在MariaDB/MySQL Server上建表，需要自己利用MariaDB/MySQL Server的客户端连接MariaDB/MySQL Server建表。
 -    创建USER MAPPING时使用的MariaDB/MySQL Server用户需要有远程连接MariaDB/MySQL Server及对表相关操作的权限。使用外表前，可以在openGauss server所在的机器上，使用MariaDB/MySQL Server的客户端，使用对应的用户名密码确认能否成功连接MariaDB/MySQL Server并进行操作。
 -    对外表执行DML操作时，出现 **Can't initialize character set SQL_ASCII (path: compiled_in)** 错误。由于MariaDB不支持**SQL_ASCII**编码格式，目前只能通过修改openGauss database的编码格式解决该问题。修改database编码格式的方式为 **update pg_database set encoding = pg_char_to_encoding('UTF-8') where datname = 'postgres';** datname根据实际情况填写。注意修改完编码格式后，需要重新开启一个gsql会话，才能使mysql_fdw使用更新后的参数。也可以通过在执行 **gs_initdb** 时，使用 **--locale=LOCALE** ，指定默认的编码格式为 **非SQL_ASCII** 编码。

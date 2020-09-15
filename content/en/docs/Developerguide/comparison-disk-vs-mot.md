@@ -108,9 +108,9 @@ The following table briefly compares the various features of the openGauss disk-
 -   RC = Read Committed
 -   SI = Snapshot Isolation
 
-Appendices
+# Appendices
 
-References
+## References
 
 \[1\] Y. Mao, E. Kohler, and R. T. Morris. Cache craftiness for fast multicore key-value storage. In Proc. 7th ACM European Conference on Computer Systems \(EuroSys\), Apr. 2012.
 
@@ -144,11 +144,10 @@ pp. 237–246.
 
 \[13\] S. K. Cha, S. Hwang, K. Kim, and K. Kwon. Cache-conscious concurrency control of main-memory indexes on shared-memory multiprocessor systems. In P. M. G. Apers, P. Atzeni, S. Ceri, S. Paraboschi, K. Ramamohanarao, and R. T. Snodgrass, editors, VLDB 2001, Proceedings of 27th International Conference on Very Large Data Bases, September 11-14, 2001, Roma, Italy, pages 181–190. Morga Kaufmann, 2001.
 
-Glossary
+## Glossary
 
-Table 11 – Glossary
+**Table 2**  Glossary
 
-<a name="table38686068"></a>
 <table><thead align="left"><tr id="row35886203"><th class="cellrowborder" valign="top" width="23.23%" id="mcps1.1.3.1.1"><p id="p21101319"><a name="p21101319"></a><a name="p21101319"></a>Acronym</p>
 </th>
 <th class="cellrowborder" valign="top" width="76.77000000000001%" id="mcps1.1.3.1.2"><p id="p31485239"><a name="p31485239"></a><a name="p31485239"></a>Definition/Description</p>

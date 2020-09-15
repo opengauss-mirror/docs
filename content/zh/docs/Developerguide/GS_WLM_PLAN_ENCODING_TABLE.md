@@ -27,6 +27,13 @@ GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，�
 <td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p3519101415516"><a name="zh-cn_topic_0111176227_p3519101415516"></a><a name="zh-cn_topic_0111176227_p3519101415516"></a>查询对应的执行计划的plan node id。</p>
 </td>
 </tr>
+ <tr id="zh-cn_topic_0111176227_row551921411518"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p85191414155117"><a name="zh-cn_topic_0111176227_p85191414155117"></a><a name="zh-cn_topic_0111176227_p85191414155117"></a>parent_node_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p1951991455112"><a name="zh-cn_topic_0111176227_p1951991455112"></a><a name="zh-cn_topic_0111176227_p1951991455112"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p3519101415516"><a name="zh-cn_topic_0111176227_p3519101415516"></a><a name="zh-cn_topic_0111176227_p3519101415516"></a>当前算子的父节点node id。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0111176227_row251961411512"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p10519171455119"><a name="zh-cn_topic_0111176227_p10519171455119"></a><a name="zh-cn_topic_0111176227_p10519171455119"></a>startup_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p10519314105112"><a name="zh-cn_topic_0111176227_p10519314105112"></a><a name="zh-cn_topic_0111176227_p10519314105112"></a>bignit</p>

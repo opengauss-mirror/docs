@@ -53,64 +53,65 @@ Swap:  4192924k total,     4920k used,  4188004k free,  4742904k cached
          1 root      20   0 13592  944  792 S    0  0.0   0:08.54 init          
     ```
 
-2.  根据查询结果中“Cpu\(s\)”分析是系统CPU（sy）还是用户CPU（us）占用过高。
-    -   如果是系统CPU占用过高，需要查找异常系统进程进行处理。
-    -   如果是“USER”为omm的openGauss进程CPU占用过高，请根据目前运行的业务查询内容，对业务SQL进行优化。请根据以下步骤，并结合当前正在运行的业务特征进行分析，是否该程序处于死循环逻辑。
-        1.  使用“top -H  -p pid”查找进程内占用的CPU百分比较高的线程，进行分析。
+2. 根据查询结果中“Cpu\(s\)”分析是系统CPU（sy）还是用户CPU（us）占用过高。
+   -   如果是系统CPU占用过高，需要查找异常系统进程进行处理。
+   - 如果是“USER”为omm的openGauss进程CPU占用过高，请根据目前运行的业务查询内容，对业务SQL进行优化。请根据以下步骤，并结合当前正在运行的业务特征进行分析，是否该程序处于死循环逻辑。
 
-            ```
-            top -H -p 54952
-            ```
+     a. 使用“top -H  -p pid”查找进程内占用的CPU百分比较高的线程，进行分析。
 
-            查询结果如下所示，top中可以看到占用CPU很高的线程，下面以线程54775为主，分析其为何占用CPU过高。
+     ```
+     top -H -p 54952
+     ```
 
-            ```
-            top - 14:23:27 up 5 days, 21:52,  2 users,  load average: 0.04, 0.07, 0.05
-            Tasks:  13 total,   0 running,  13 sleeping,   0 stopped,   0 zombie
-            Cpu(s):  0.9%us,  0.4%sy,  0.0%ni, 97.3%id,  1.1%wa,  0.2%hi,  0.1%si,  0.0%st
-            Mem:   8038844k total,  5322180k used,  2716664k free,   180316k buffers
-            Swap:  4192924k total,        0k used,  4192924k free,  2889860k cached
-            
-               PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                  
-             54775 omm  20   0  684m 424m 131m S    0  5.4   0:00.32 gaussdb                   
-             54951 omm  20   0  684m 424m 131m S    0  5.4   0:00.84 gaussdb                   
-             54732 omm  20   0  684m 424m 131m S    0  5.4   0:00.24 gaussdb                   
-             54758 omm  20   0  684m 424m 131m S    0  5.4   0:00.00 gaussdb                   
-             54759 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb                   
-             54773 omm  20   0  684m 424m 131m S    0  5.4   0:02.79 gaussdb                   
-             54780 omm  20   0  684m 424m 131m S    0  5.4   0:00.04 gaussdb                   
-             54781 omm  20   0  684m 424m 131m S    0  5.4   0:00.21 gaussdb                   
-             54782 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb                   
-             54798 omm  20   0  684m 424m 131m S    0  5.4   0:16.70 gaussdb                   
-             54952 omm  20   0  684m 424m 131m S    0  5.4   0:07.51 gaussdb                   
-             54953 omm  20   0  684m 424m 131m S    0  5.4   0:00.81 gaussdb                   
-             54954 omm  20   0  684m 424m 131m S    0  5.4   0:06.54 gaussdb                   
-            ```
+      查询结果如下所示，top中可以看到占用CPU很高的线程，下面以线程54775为主，分析其为何占用CPU过高。
 
-        2.  使用“gstack ”查看进程内各线程的函数调用栈。查找上一步骤中占用CPU较高的线程ID对应的线程号。
+     ```
+     top - 14:23:27 up 5 days, 21:52,  2 users,  load average: 0.04, 0.07, 0.05
+     Tasks:  13 total,   0 running,  13 sleeping,   0 stopped,   0 zombie
+     Cpu(s):  0.9%us,  0.4%sy,  0.0%ni, 97.3%id,  1.1%wa,  0.2%hi,  0.1%si,  0.0%st
+     Mem:   8038844k total,  5322180k used,  2716664k free,   180316k buffers
+     Swap:  4192924k total,        0k used,  4192924k free,  2889860k cached
+     
+        PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                  
+      54775 omm  20   0  684m 424m 131m S    0  5.4   0:00.32 gaussdb                   
+      54951 omm  20   0  684m 424m 131m S    0  5.4   0:00.84 gaussdb                   
+      54732 omm  20   0  684m 424m 131m S    0  5.4   0:00.24 gaussdb                   
+      54758 omm  20   0  684m 424m 131m S    0  5.4   0:00.00 gaussdb                   
+      54759 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb                   
+      54773 omm  20   0  684m 424m 131m S    0  5.4   0:02.79 gaussdb                   
+      54780 omm  20   0  684m 424m 131m S    0  5.4   0:00.04 gaussdb                   
+      54781 omm  20   0  684m 424m 131m S    0  5.4   0:00.21 gaussdb                   
+      54782 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb                   
+      54798 omm  20   0  684m 424m 131m S    0  5.4   0:16.70 gaussdb                   
+      54952 omm  20   0  684m 424m 131m S    0  5.4   0:07.51 gaussdb                   
+      54953 omm  20   0  684m 424m 131m S    0  5.4   0:00.81 gaussdb                   
+      54954 omm  20   0  684m 424m 131m S    0  5.4   0:06.54 gaussdb                   
+     ```
 
-            ```
-            gstack  54954
-            ```
+     b. 使用“gstack ”查看进程内各线程的函数调用栈。查找上一步骤中占用CPU较高的线程ID对应的线程号。
 
-            查询结果如下所示，其中线程ID54775对应线程号是10。
+     ```
+     gstack  54954
+     ```
 
-            ```
-            192.168.0.11:~ # gstack 54954
-            Thread 10 (Thread 0x7f95a5fff710 (LWP 54775)):
-            #0  0x00007f95c41d63c6 in poll () from /lib64/libc.so.6
-            #1  0x0000000000d3d2d3 in WaitLatchOrSocket(Latch volatile*, int, int, long) ()
-            #2  0x000000000095ed25 in XLogPageRead(XLogRecPtr*, int, bool, bool) ()
-            #3  0x000000000095f6dd in ReadRecord(XLogRecPtr*, int, bool) ()
-            #4  0x000000000096aef0 in StartupXLOG() ()
-            #5  0x0000000000d5607a in StartupProcessMain() ()
-            #6  0x00000000009e19f9 in AuxiliaryProcessMain(int, char**) ()
-            #7  0x0000000000d50135 in SubPostmasterMain(int, char**) ()
-            #8  0x0000000000d504ec in MainStarterThreadFunc(void*) ()
-            #9  0x00007f95c79b85f0 in start_thread () from /lib64/libpthread.so.0
-            #10 0x00007f95c41df84d in clone () from /lib64/libc.so.6
-            #11 0x0000000000000000 in ?? ()
-            ```
+     查询结果如下所示，其中线程ID54775对应线程号是10。
+
+     ```
+     192.168.0.11:~ # gstack 54954
+     Thread 10 (Thread 0x7f95a5fff710 (LWP 54775)):
+     #0  0x00007f95c41d63c6 in poll () from /lib64/libc.so.6
+     #1  0x0000000000d3d2d3 in WaitLatchOrSocket(Latch volatile*, int, int, long) ()
+     #2  0x000000000095ed25 in XLogPageRead(XLogRecPtr*, int, bool, bool) ()
+     #3  0x000000000095f6dd in ReadRecord(XLogRecPtr*, int, bool) ()
+     #4  0x000000000096aef0 in StartupXLOG() ()
+     #5  0x0000000000d5607a in StartupProcessMain() ()
+     #6  0x00000000009e19f9 in AuxiliaryProcessMain(int, char**) ()
+     #7  0x0000000000d50135 in SubPostmasterMain(int, char**) ()
+     #8  0x0000000000d504ec in MainStarterThreadFunc(void*) ()
+     #9  0x00007f95c79b85f0 in start_thread () from /lib64/libpthread.so.0
+     #10 0x00007f95c41df84d in clone () from /lib64/libc.so.6
+     #11 0x0000000000000000 in ?? ()
+     ```
 
 
 

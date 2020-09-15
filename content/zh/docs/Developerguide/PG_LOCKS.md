@@ -61,6 +61,15 @@ PG\_LOCKS视图存储各打开事务所持有的锁信息。
 <td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"></a>页面里边的行编号，如果对象不是行，则为NULL。</p>
 </td>
 </tr>
+    <tr id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_r6abbee0948e64eedaf5ec2b44053d695"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a280d21d498a04d019fb8128ada213fa6"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a280d21d498a04d019fb8128ada213fa6"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a280d21d498a04d019fb8128ada213fa6"></a>bucket</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbccca638ea2453dbb381f49d8f8dae8"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbccca638ea2453dbb381f49d8f8dae8"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbccca638ea2453dbb381f49d8f8dae8"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a131559fbfcac4a4ebcbef9a41b081729"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a131559fbfcac4a4ebcbef9a41b081729"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a131559fbfcac4a4ebcbef9a41b081729"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"></a>子表对应的bucket number。如果目标不是表的话，则为NULL。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_rb23a225a004a44e5be57348ce895b5b2"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a9b6bd33aae7444cb91ccd7cac9dc30b2"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a9b6bd33aae7444cb91ccd7cac9dc30b2"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a9b6bd33aae7444cb91ccd7cac9dc30b2"></a>virtualxid</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a8c40db004e6e40f9826ea03bbc986d3a"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a8c40db004e6e40f9826ea03bbc986d3a"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a8c40db004e6e40f9826ea03bbc986d3a"></a>text</p>

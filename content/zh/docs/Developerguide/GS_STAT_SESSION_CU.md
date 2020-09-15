@@ -13,13 +13,7 @@ GS\_STAT\_SESSION\_CU视图查询openGauss各个节点，当前运行session的C
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0237122405_zh-cn_topic_0059777991_r7f5d459d039446d8b8ea34496d5aa308"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a1adb86c149c0421ba630b4699b54609b"><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a1adb86c149c0421ba630b4699b54609b"></a><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a1adb86c149c0421ba630b4699b54609b"></a>node_name1</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a28b03e8c2fdd452baa7fbc33337bb9bc"><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a28b03e8c2fdd452baa7fbc33337bb9bc"></a><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a28b03e8c2fdd452baa7fbc33337bb9bc"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a9179581b3f764fcf97a312a8a6281f2e"><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a9179581b3f764fcf97a312a8a6281f2e"></a><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a9179581b3f764fcf97a312a8a6281f2e"></a>节点名称。</p>
-</td>
-</tr>
+<tbody>
 <tr id="zh-cn_topic_0237122405_zh-cn_topic_0059777991_r86bb048365994ceaa0f9bb1ad581c446"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a41334e4fec9b489a8933d648df8725da"><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a41334e4fec9b489a8933d648df8725da"></a><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a41334e4fec9b489a8933d648df8725da"></a>mem_hit</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a579cb1db376847b5902263ab13fe0bdd"><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a579cb1db376847b5902263ab13fe0bdd"></a><a name="zh-cn_topic_0237122405_zh-cn_topic_0059777991_a579cb1db376847b5902263ab13fe0bdd"></a>integer</p>
@@ -43,4 +37,5 @@ GS\_STAT\_SESSION\_CU视图查询openGauss各个节点，当前运行session的C
 </tr>
 </tbody>
 </table>
+
 

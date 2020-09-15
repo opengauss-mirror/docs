@@ -158,42 +158,43 @@ DWS的gsql工具提供了元命令\\copy进行数据导入。
     CREATE TABLE a(a int);
     ```
 
-2.  导入数据。
-    1.  从stdin拷贝数据到目标表a。
+2. 导入数据。
 
-        ```
-        \copy a from stdin;
-        ```
+   从stdin拷贝数据到目标表a。
 
-        出现\>\>符号提示时，输入数据，输入\\.时结束。
+   ```
+   \copy a from stdin;
+   ```
 
-        ```
-        Enter data to be copied followed by a newline.
-        End with a backslash and a period on a line by itself.
-        >> 1
-        >> 2
-        >> \.
-        ```
+   出现\>\>符号提示时，输入数据，输入\\.时结束。
 
-        查询导入目标表a的数据。
+   ```
+   Enter data to be copied followed by a newline.
+   End with a backslash and a period on a line by itself.
+   >> 1
+   >> 2
+   >> \.
+   ```
 
-        ```
-        postgres=# SELECT * FROM a;
-         a 
-        ---
-         1
-         2
-        (2 rows)
-        ```
+   查询导入目标表a的数据。
 
-    2.  从本地文件拷贝数据到目标表a。假设存在本地文件/home/omm/2.csv。
+   ```
+   postgres=# SELECT * FROM a;
+    a 
+   ---
+    1
+    2
+   (2 rows)
+   ```
 
-        -   分隔符为‘，’。
-        -   在导入过程中，若数据源文件比外表定义的列数多，则忽略行尾多出来的列。
+   从本地文件拷贝数据到目标表a。假设存在本地文件/home/omm/2.csv。
 
-        ```
-        \copy a FROM '/home/omm/2.csv' WITH (delimiter',',IGNORE_EXTRA_DATA 'on');
-        ```
+   -   分隔符为‘，’。
+   -   在导入过程中，若数据源文件比外表定义的列数多，则忽略行尾多出来的列。
+
+   ```
+   \copy a FROM '/home/omm/2.csv' WITH (delimiter',',IGNORE_EXTRA_DATA 'on');
+   ```
 
 
 

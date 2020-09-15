@@ -22,7 +22,7 @@ postgres_fdw插件默认参与编译，使用安装包安装好openGauss后，�
 -   在openGauss上建立外表时，不会同步在远端的openGauss上建表，需要自己利用客户端连接远端openGauss建表。
 -   执行**CREATE USER MAPPING**时使用的openGauss用户需要有远程连接openGauss及对表相关操作的权限。使用外表前，可以在本地机器上，使用gsql的客户端，使用对应的用户名密码确认能否成功连接远端openGauss并进行操作。
 
-## 已知问题
+## 注意事项
 -   两个postgres_fdw外表间的**SELECT JOIN**不支持下推到远端openGauss执行，会被分成两条SQL语句传递到远端openGauss执行，然后在本地汇总处理结果。
 -   不支持**IMPORT FOREIGN SCHEMA**语法。
 -   不支持对外表进行**CREATE TRIGGER**操作。
