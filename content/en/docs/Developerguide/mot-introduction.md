@@ -20,3 +20,6 @@ Memory-Optimized Tables are fully ACID compliant, as follows:
 -   **Isolation –**  Transactions cannot interfere with each other. MOT supports repeatable‑reads and read-committed isolation levels. In the next release, MOT will also support serializable isolation. See the  [MOT Isolation Levels](mot-isolation-levels.md)  section for more information.
 -   **Durability –**  The effects of successfully completed \(committed\) transactions must persist despite crashes and failures. MOT is fully integrated with the WAL-based logging of openGauss. Both synchronous and asynchronous logging options are supported. MOT also uniquely supports synchronous + group commit with NUMA-awareness optimization. See the  [MOT Durability Concepts](mot-durability-concepts.md)  section for more information.
 
+The MOT Engine was published in the VLDB 2020 (an International Conference on ‘Very Large Data Bases” or VLDB):
+
+**Industrial-Strength OLTP Using Main Memory and Many Cores**,  VLDB 2020 vol. 13 – [Paper](http://www.vldb.org/pvldb/vol13/p3099-avni.pdf), [Video on youtube](https://www.youtube.com/watch?v=xcAbww6x8wo), [Video on bilibili](https://www.bilibili.com/video/BV1MA411n7ef?p=97).
