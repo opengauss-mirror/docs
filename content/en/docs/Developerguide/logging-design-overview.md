@@ -4,7 +4,8 @@ Write-Ahead Logging \(WAL\) is a standard method for ensuring data durability. W
 
 The MOT Engine uses the existing openGauss logging facilities, enabling it also to participate in the replication process.
 
-
+**Figure  1**  Three Logging Options
+![](figures/图片1)
 
 
 

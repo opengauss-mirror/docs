@@ -206,14 +206,14 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e92d276989f4197a65f49d485220ee8"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e92d276989f4197a65f49d485220ee8"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a8e92d276989f4197a65f49d485220ee8"></a>int2vector</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a01e9520273ab44eaa14dbfc8c29f0de0"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a01e9520273ab44eaa14dbfc8c29f0de0"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a01e9520273ab44eaa14dbfc8c29f0de0"></a>函数默认值的位置，不局限于能最后几个参数才可有默认值。</p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a01e9520273ab44eaa14dbfc8c29f0de0"><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a01e9520273ab44eaa14dbfc8c29f0de0"></a><a name="zh-cn_topic_0237122308_zh-cn_topic_0059777772_a01e9520273ab44eaa14dbfc8c29f0de0"></a>函数具有默认值的入参的位置。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122308_row686174217515"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_p28674210510"><a name="zh-cn_topic_0237122308_p28674210510"></a><a name="zh-cn_topic_0237122308_p28674210510"></a>fencedmode</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122308_p8863421512"><a name="zh-cn_topic_0237122308_p8863421512"></a><a name="zh-cn_topic_0237122308_p8863421512"></a><span id="zh-cn_topic_0237122308_text27301912122810"><a name="zh-cn_topic_0237122308_text27301912122810"></a><a name="zh-cn_topic_0237122308_text27301912122810"></a>Boolean</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_p6861342165114"><a name="zh-cn_topic_0237122308_p6861342165114"></a><a name="zh-cn_topic_0237122308_p6861342165114"></a>函数的执行模式，表示函数是在fence还是not fence模式下执行。如果是fence执行模式，函数的执行会在重新fork的进程中执行。默认值是fence。</p>
+    <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122308_p6861342165114"><a name="zh-cn_topic_0237122308_p6861342165114"></a><a name="zh-cn_topic_0237122308_p6861342165114"></a>函数的执行模式，表示函数是在fence还是not fence模式下执行。如果是fence执行模式，函数的执行会在重新fork的进程中执行。</p><p>用户创建的C函数，fencedmode字段默认值均为true，即fence模式；系统内建函数，fencemode字段均为false，即not fence模式。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122308_row1152415694116"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122308_p18524661417"><a name="zh-cn_topic_0237122308_p18524661417"></a><a name="zh-cn_topic_0237122308_p18524661417"></a>proshippable</p>
