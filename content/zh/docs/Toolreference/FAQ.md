@@ -1,14 +1,6 @@
 # FAQ<a name="ZH-CN_TOPIC_0249632272"></a>
 
 
-<!-- TOC -->
-
-- [执行命令报错“Failed to obtain the GPHOME”<a name="ZH-CN_TOPIC_0249632274"></a>](#执行命令报错failed-to-obtain-the-gphomea-namezh-cn_topic_0249632274a)
-- [gs\_ctl 重建备实例过程被中断导致秘钥文件不完整恢复方法<a name="ZH-CN_TOPIC_0255515980"></a>](#gs\_ctl-重建备实例过程被中断导致秘钥文件不完整恢复方法a-namezh-cn_topic_0255515980a)
-
-<!-- /TOC -->
-
-
 ## 执行命令报错“Failed to obtain the GPHOME”<a name="ZH-CN_TOPIC_0249632274"></a>
 
 ### 问题现象<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
