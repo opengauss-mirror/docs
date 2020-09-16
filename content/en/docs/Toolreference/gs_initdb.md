@@ -82,6 +82,7 @@ For details about common parameters and uncommon parameters supported by  **gs\_
 **Table  1**  Common parameters
 
 <a name="en-us_topic_0237152414_en-us_topic_0059778168_t7527cd2e8e304b64bec55dcd38b701bb"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0237152414_en-us_topic_0059778168_rb04ed4dbb2024e91814fe29c62058a1e"><th class="cellrowborder" valign="top" width="23.76%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152414_en-us_topic_0059778168_abb1d0e137f344644873d231722922745"><a name="en-us_topic_0237152414_en-us_topic_0059778168_abb1d0e137f344644873d231722922745"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_abb1d0e137f344644873d231722922745"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" width="32.6%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237152414_en-us_topic_0059778168_a2a756e3c53094c5ea62729be1496108e"><a name="en-us_topic_0237152414_en-us_topic_0059778168_a2a756e3c53094c5ea62729be1496108e"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_a2a756e3c53094c5ea62729be1496108e"></a>Description</p>
@@ -136,7 +137,7 @@ For details about common parameters and uncommon parameters supported by  **gs\_
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"><a name="en-us_topic_0237152414_en-us_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a>Specifies the name of an initialized node.</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p39322419302"><a name="p39322419302"></a><a name="p39322419302"></a>The naming rules for nodes are as follows:</p>
-<a name="ul0976124733118"></a><a name="ul0976124733118"></a><ul id="ul0976124733118"><li>The node name can only be lowercase letters (a-z), underscores (_), ASCII code (\u200-\u377), number signs (#), digits (0-9), and dollar signs ($).</li><li>The node name must start with a lowercase letter (a-z), ASCII code (\u200-\u377), or underscore (_).</li></ul>
+<a name="ul0976124733118"></a><a name="ul0976124733118"></a><ul id="ul0976124733118"><li>The node name can only be lowercase letters (a-z), underscores (_), number signs (#), digits (0-9), and dollar signs ($).</li><li>The node name must start with a lowercase letter (a-z), or underscore (_).</li><li>The nodename cannot be an empty string, and cannot exceed 64 characters.</li></ul>
 </td>
 </tr>
 <tr id="row1020519334218"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"><a name="en-us_topic_0237152414_en-us_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a>-E, --encoding=ENCODING</p>
@@ -257,6 +258,7 @@ zh_SG.gbk
 </tr>
 </tbody>
 </table>
+
 
 **Table  2**  Uncommon parameters
 
