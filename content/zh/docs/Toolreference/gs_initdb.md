@@ -32,14 +32,14 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 **操作步骤**
 
 1.  以操作系统用户omm登录数据库主节点。
-2.  规划数据库目录。
-    1.  切换到root用户。
+2. 规划数据库目录。
+   - 切换到root用户。
 
-        ```
-        su - root
-        ```
+     ```
+     su - root
+     ```
 
-    2.  根据提示输入用户名和密码。
+   - 根据提示输入用户名和密码。
 
 3.  进入“/opt/gaussdb”目录，并创建“data1”目录。
 
@@ -48,17 +48,17 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
     mkdir data1
     ```
 
-    1.  将data1目录的所有权分配给数据库用户omm，dbgrp是omm所属的用户组。
+    - 将data1目录的所有权分配给数据库用户omm，dbgrp是omm所属的用户组。
 
-        ```
-        chown omm:dbgrp data1
-        ```
+      ```
+      chown omm:dbgrp data1
+      ```
 
-    2.  退出root用户。
+    - 退出root用户。
 
-        ```
-        exit
-        ```
+      ```
+      exit
+      ```
 
 4.  执行gs\_initdb命令初始化数据库。
 
