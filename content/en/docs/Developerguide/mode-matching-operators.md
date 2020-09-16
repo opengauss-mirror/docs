@@ -16,7 +16,7 @@ There are three separate approaches to pattern matching provided by the database
      >![](public_sys-resources/icon-note.gif) **NOTE:**   
      >When  **standard\_conforming\_strings**  is set to  **off**, any backslashes you write in literal string constants will need to be doubled. Therefore, writing a pattern matching a single backslash is actually going to write four backslashes in the statement. You can avoid this by selecting a different escape character by using ESCAPE, so that the backslash is no longer a special character of LIKE. But the backslash is still the special character of the character text analyzer, so you still need two backslashes.\) 
      >
-     >When compatible with MYSQL database mode (sql_compatibility = C), you can also select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscore and percent signs in the pattern.  
+     >When compatible with MYSQL database mode, you can also select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscore and percent signs in the pattern.  
 
   5.  The keyword ILIKE can be used instead of LIKE to make the match case-insensitive.
   6.  Operator \~\~ is equivalent to LIKE, and operator \~\~\* corresponds to ILIKE.

@@ -115,7 +115,7 @@
 
 -   **SECURITY INVOKER**
 
-    **AUTHID CURREN\_USER**
+    **AUTHID CURRENT\_USER**
 
     表明该函数将以调用它的用户的权限执行。缺省时与指定此参数的作用相同。
 
