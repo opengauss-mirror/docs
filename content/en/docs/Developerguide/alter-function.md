@@ -115,7 +115,7 @@ Only the owner of the function or a system administrator has the permission to r
 
 -   **SECURITY INVOKER**
 
-    **AUTHID CURREN\_USER**
+    **AUTHID CURRENT\_USER**
 
     Specifies that the function will be executed with the permissions of the user who invokes it. Omitting this parameter is the same as specifying it. 
 
