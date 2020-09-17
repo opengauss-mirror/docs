@@ -6,7 +6,7 @@ These configuration parameters provide a crude method of influencing the query p
 
 **Parameter description**: Controls the query optimizer's use of bitmap-scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -19,7 +19,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of BitmapAnd plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -32,7 +32,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of Hash aggregation plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -45,7 +45,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of Hash-join plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -58,7 +58,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of index-scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -71,7 +71,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of index-only-scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -84,7 +84,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of materialization. It is impossible to suppress materialization entirely, but setting this variable to  **off**  prevents the optimizer from inserting materialized nodes.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -97,7 +97,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of merge-join plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -110,7 +110,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of nested-loop join plan types to fully scan internal tables. It is impossible to suppress nested-loop joins entirely, but setting this variable to  **off**  encourages the optimizer to choose other methods if available.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -123,7 +123,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of the nested-loop join plan types to scan the parameterized indexes of internal tables.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -136,7 +136,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of sequential scan plan types. It is impossible to suppress sequential scans entirely, but setting this variable to  **off**  encourages the optimizer to choose other methods if available.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -149,7 +149,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of sort methods. It is impossible to suppress explicit sorts entirely, but setting this variable to  **off**  encourages the optimizer to choose other methods if available.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -162,7 +162,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of Tuple ID \(TID\) scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -175,7 +175,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: In CASCADE mode, when a user is deleted, all the objects belonging to the user are deleted. This parameter specifies whether the queries of the objects belonging to the user can be unlocked when the user is deleted.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -188,7 +188,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Controls the rule matching modes of regular expressions.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -201,7 +201,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the maximum number of  **WITH RECURSIVE**  iterations.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_
 
@@ -211,7 +211,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of vectorized executor.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -224,7 +224,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of broadcast distribution method when it evaluates the cost of stream.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -237,7 +237,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the optimizer excludes internal table running costs when selecting the Hash Join cost path. If it is set to  **on**, tables with a few records and high running costs are more possible to be selected.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -250,7 +250,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Controls whether the tablespace can use an absolute path.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -263,7 +263,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the DFS partitioned table is dynamically or statically optimized.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -278,7 +278,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 During join or aggregation operations, a Node Group can be selected in four modes. In each mode, the specified candidate computing Node Groups are listed for the optimizer to select the most appropriate one for the current operator.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -295,7 +295,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter takes effect only when  **[expected\_computing\_nodegroup](#en-us_topic_0237124716_section746841514523)**  is set to a specific Node Group.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -308,7 +308,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to enable inlist-to-join \(inlist2join\) query rewriting.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -323,7 +323,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether an optimization policy is used.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -332,4 +332,17 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **lazy**  indicates that a conservative policy is used. Uncertain skews are ignored.
 
 **Default value**:  **normal**
+
+## enable\_upsert\_to\_merge<a name="section198182452312"></a>
+
+**Parameter description**: Specifies whether to convert  **INSERT ON DUPLICATE KEY UPDATE**  statement to an equivalent  **MERGE INTO**  statement.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **off**: Conversion is not performed.
+-   **on**: Conversion is performed.
+
+**Default value**:  **off**
 
