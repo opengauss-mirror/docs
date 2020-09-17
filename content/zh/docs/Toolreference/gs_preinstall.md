@@ -9,6 +9,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 -   用户需要检查上层目录权限，保证安装用户对安装包和配置文件目录读写执行的权限。
 -   xml文件中各主机的名称与IP映射配置正确。
 -   只能使用root用户执行gs\_preinstall命令。
+-   执行gs\_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署集群连接丢失风险，可以在安装结束后手动添加其它集群映射至/etc/hosts文件中。
 -   本产品支持同一操作系统大版本下的小版本混合部署，其支持列表如下：
 
     ```
