@@ -225,7 +225,7 @@ The possible permissions are:
 
 -   **REFERENCES**
 
-    Allows creation of a foreign key constraint referencing a table. This permission is required on both referencing and referenced tables. Because foreign keys are not supported currently, this option is not recommended for general use.
+    Allows creation of a foreign key constraint referencing a table. This permission is required on both referencing and referenced tables. 
 
 -   **CREATE**
     -   For databases, allows new schemas to be created within the database.

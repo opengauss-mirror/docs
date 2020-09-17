@@ -75,7 +75,7 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
 
 -   **referenced\_table\_name**
 
-    约束引用的另一个表的名称。 只能为约束触发器指定，常见于外键约束。由于当前不支持外键，因此不建议使用。
+    约束引用的另一个表的名称。 只能为约束触发器指定，常见于外键约束。
 
     取值范围：数据库中已经存在的表名称。
 
