@@ -12,13 +12,29 @@
 
 ## 注意事项<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
 
-在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT，UPDATE，DELETE，CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用这种方法：
+- 在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT，UPDATE，DELETE，CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用这种方法：
+
 
 ```
 START TRANSACTION;
 EXPLAIN ANALYZE ...;
 ROLLBACK;
 ```
+
+- 在指定ANALYZE选项时，由于参数DETAIL，NODES，NUM_NODES是属于分布式模式的功能，因此在单机模式中是被禁止使用的。假如在单机模式中使用，会产生如下所示的错误：
+
+  ```
+  postgres=# create table student(id int, name char(20));
+  CREATE TABLE
+  postgres=# explain (analyze,detail true)insert into student values(5,'a'),(6,'b');
+  ERROR:  unrecognized EXPLAIN option "detail"
+  postgres=# explain (analyze,node true)insert into student values(5,'a'),(6,'b');
+  ERROR:  unrecognized EXPLAIN option "nodes"
+  postgres=# explain (analyze,num_nodes true)insert into student values(5,'a'),(6,'b');
+  ERROR:  unrecognized EXPLAIN option "num_nodes"
+  ```
+
+  
 
 ## 语法格式<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
 

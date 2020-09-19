@@ -12,13 +12,28 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
 
 ## Precautions<a name="en-us_topic_0237122163_en-us_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
 
-The statement is actually executed when the  **ANALYZE**  option is used. If you wish to use  **EXPLAIN ANALYZE**  on an  **INSERT**,  **UPDATE**,  **DELETE**,  **CREATE TABLE AS**, or  **EXECUTE**  statement without letting the statement affect your data, use this approach:
+- The statement is actually executed when the  **ANALYZE**  option is used. If you wish to use  **EXPLAIN ANALYZE**  on an  **INSERT**,  **UPDATE**,  **DELETE**,  **CREATE TABLE AS**, or  **EXECUTE**  statement without letting the statement affect your data, use this approach:
+
 
 ```
 START TRANSACTION;
 EXPLAIN ANALYZE ...;
 ROLLBACK;
 ```
+
+- The statement is actually executed when the  **ANALYZE**  option is used.The **DETAIL**, **NODES** and **NUM_NODES** are the parameters which can be used only in distributed mode. Therefore,they are forbidden in the single node mode. If you use these parameters in the single node mode, the error is as follows:
+
+  ```
+  postgres=# create table student(id int, name char(20));
+  CREATE TABLEpostgres=# explain (analyze,detail true)insert into student values(5,'a'),(6,'b');
+  ERROR:  unrecognized EXPLAIN option "detail"
+  postgres=# explain (analyze,node true)insert into student values(5,'a'),(6,'b');
+  ERROR:  unrecognized EXPLAIN option "nodes"
+  postgres=# explain (analyze,num_nodes true)insert into student values(5,'a'),(6,'b');
+  ERROR:  unrecognized EXPLAIN option "num_nodes"
+  ```
+
+  
 
 ## Syntax<a name="en-us_topic_0237122163_en-us_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
 
