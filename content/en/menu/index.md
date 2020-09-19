@@ -1129,6 +1129,7 @@ headless: true
 			-   [SNAPSHOT.SNAPSHOT]({{< relref "./docs/Developerguide/snapshot-snapshot.md" >}})
 			-   [SNAPSHOT.TABLES\_SNAP\_TIMESTAMP]({{< relref "./docs/Developerguide/snapshot-tables_snap_timestamp.md" >}})
 		-   [WDR Snapshot Data Table]({{< relref "./docs/Developerguide/wdr-snapshot-data-table.md" >}})
+		-   [Performance Report Generated Based on WDR Snapshot]({{< relref "./docs/Developerguide/performance-report-generated-based-on-wdr-snapshot.md" >}})	
 	-   [Logical Replication]({{< relref "./docs/Developerguide/logical-replication.md" >}})
 		-   [Logical Decoding]({{< relref "./docs/Developerguide/logical-decoding.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview.md" >}})
