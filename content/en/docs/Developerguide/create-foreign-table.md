@@ -4,6 +4,10 @@
 
 **CREATE FOREIGN TABLE**  creates a foreign table.
 
+## Precautions<a name="en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
+
+The foreign table does not support the use of system columns (such as tableoid, ctid, etc.).
+
 ## Syntax<a name="section0692184823016"></a>
 
 ```

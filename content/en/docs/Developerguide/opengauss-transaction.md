@@ -21,6 +21,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description:**  Specifies that the current transaction is a read-only transaction.
 
+This parameter is fixed to on during the database recovery process or in the standby machine; otherwise, it is fixed to the value of default_transaction_read_only.
+
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
