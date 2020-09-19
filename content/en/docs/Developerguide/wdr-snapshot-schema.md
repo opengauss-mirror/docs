@@ -5,7 +5,7 @@ After the WDR snapshot function is enabled \([enable\_wdr\_snapshot](system-perf
 You can set the parameter  [wdr\_snapshot\_retention\_days](system-performance-snapshot.md#en-us_topic_0237124757_section1658494717518)  to automatically manage the snapshot lifecycle.
 
 -   **[Original Information Table of WDR Snapshots](original-information-table-of-wdr-snapshots.md)**  
-
 -   **[WDR Snapshot Data Table](wdr-snapshot-data-table.md)**  
+-   **[Performance Report Generated Based on WDR Snapshot](performance-report-generated-based-on-wdr-snapshot.md)**  
 
 
