@@ -5,6 +5,7 @@
 **Table  1**  PG\_TRIGGER columns
 
 <a name="en-us_topic_0237122321_en-us_topic_0059778876_t0e636f727ee940ce9c4fe3d08607d732"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0237122321_en-us_topic_0059778876_rb8f54813b5b34fb7b4eec74a3f8ac216"><th class="cellrowborder" valign="top" width="20.84%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237122321_en-us_topic_0059778876_ac6c318856cec4e67967734cdbe84e08c"><a name="en-us_topic_0237122321_en-us_topic_0059778876_ac6c318856cec4e67967734cdbe84e08c"></a><a name="en-us_topic_0237122321_en-us_topic_0059778876_ac6c318856cec4e67967734cdbe84e08c"></a>Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="19.03%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237122321_en-us_topic_0059778876_a6dc7600276264a3f8b273d69415ee20c"><a name="en-us_topic_0237122321_en-us_topic_0059778876_a6dc7600276264a3f8b273d69415ee20c"></a><a name="en-us_topic_0237122321_en-us_topic_0059778876_a6dc7600276264a3f8b273d69415ee20c"></a>Type</p>
@@ -38,7 +39,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122321_p5614159174418"><a name="en-us_topic_0237122321_p5614159174418"></a><a name="en-us_topic_0237122321_p5614159174418"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122321_p298831204318"><a name="en-us_topic_0237122321_p298831204318"></a><a name="en-us_topic_0237122321_p298831204318"></a>Trigger OID</p>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122321_p298831204318"><a name="en-us_topic_0237122321_p298831204318"></a><a name="en-us_topic_0237122321_p298831204318"></a>The function to be called by the trigger.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122321_en-us_topic_0059778876_r0329e4dc5ba94fdc812df5362d493cef"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122321_en-us_topic_0059778876_aba0d8655714943cbbb8a6439bca6af91"><a name="en-us_topic_0237122321_en-us_topic_0059778876_aba0d8655714943cbbb8a6439bca6af91"></a><a name="en-us_topic_0237122321_en-us_topic_0059778876_aba0d8655714943cbbb8a6439bca6af91"></a>tgtype</p>

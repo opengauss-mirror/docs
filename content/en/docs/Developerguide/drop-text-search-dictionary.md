@@ -43,7 +43,7 @@ DROP TEXT SEARCH DICTIONARY [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 ```
 -- Delete the english dictionary.
-DROP TEXT SEARCH DICTIONARY english;
+postgres=# DROP TEXT SEARCH DICTIONARY english;
 ```
 
 ## Helpful Links<a name="en-us_topic_0237122155_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
