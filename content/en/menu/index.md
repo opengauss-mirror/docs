@@ -648,7 +648,7 @@ headless: true
 			-   [CREATE ROLE]({{< relref "./docs/Developerguide/create-role.md" >}})
 			-   [CREATE SCHEMA]({{< relref "./docs/Developerguide/create-schema.md" >}})
 			-   [CREATE SEQUENCE]({{< relref "./docs/Developerguide/create-sequence.md" >}})
-			-   [CREATE SERVER}]({{< relref "./docs/Developerguide/CREATE-SERVER.md" >}})
+			-   [CREATE SERVER]({{< relref "./docs/Developerguide/CREATE-SERVER.md" >}})
 			-   [CREATE SYNONYM]({{< relref "./docs/Developerguide/create-synonym.md" >}})
 			-   [CREATE TABLE]({{< relref "./docs/Developerguide/create-table.md" >}})
 			-   [CREATE TABLE AS]({{< relref "./docs/Developerguide/create-table-as.md" >}})
