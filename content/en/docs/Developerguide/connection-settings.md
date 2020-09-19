@@ -4,7 +4,7 @@ This section describes parameters related to client-server connection modes.
 
 ## listen\_addresses<a name="en-us_topic_0237124695_en-us_topic_0059777636_sed0adde99a3f47669f5d4ab557b36b35"></a>
 
-**Parameter description**: Specifies the TCP/IP addresses that a server listens to for connections from the client.
+**Parameter description**: Specifies the TCP/IP addresses that a server listens to for connections from the client. This parameter specifies the IP address used by the openGauss server to listen on, such as IPv4 address or IPv6 address(if supported). A server may have multiple NICs, and each NIC can be bound with multiple IP address. This parameter specifies the IP addresses which the openGauss server is bound. And the client can use the IP address specified in this parameter to connect to openGauss or send requests to openGauss.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -138,6 +138,6 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 >-   The following is an example of the concatenated value of  **connection\_info**:  
 >    ```  
 >    {"driver_name":"ODBC","driver_version": "(GaussDB Kernel V500R001C00 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 debug","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}  
->    ```  
+>    ```
 >    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](connecting-to-a-database-0.md)  and  [Configuring a Data Source in the Linux OS](configuring-a-data-source-in-the-linux-os.md).  
 
