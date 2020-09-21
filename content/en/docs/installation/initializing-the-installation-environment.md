@@ -401,7 +401,7 @@ During the openGauss installation, you need to perform operations such as runnin
 -   Each host name and IP address have been correctly configured in the XML file.
 -   Communication among all the hosts is normal.
 -   If the mutual trust is to be established for common users, the same user needs to be created and password set on each host.
--   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/root**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**  and that of the  **/home**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
+-   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/home**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**  and that of the  **/root**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
 
     To check the SELinux status, run the  **getenforce**  command. If the command output is  **Enforcing**, SELinux is installed and has been enabled.
 
