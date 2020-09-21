@@ -27,6 +27,13 @@
 <td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0111176227_p3519101415516"><a name="en-us_topic_0111176227_p3519101415516"></a><a name="en-us_topic_0111176227_p3519101415516"></a>Plan node ID of the execution plan</p>
 </td>
 </tr>
+<tr id="row172665311524"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p326718311523"><a name="p326718311523"></a><a name="p326718311523"></a>parent_node_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p11268173195216"><a name="p11268173195216"></a><a name="p11268173195216"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p62685325216"><a name="p62685325216"></a><a name="p62685325216"></a>Parent node ID of the operator</p>
+</td>
+</tr>
 <tr id="en-us_topic_0111176227_row251961411512"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0111176227_p10519171455119"><a name="en-us_topic_0111176227_p10519171455119"></a><a name="en-us_topic_0111176227_p10519171455119"></a>startup_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0111176227_p10519314105112"><a name="en-us_topic_0111176227_p10519314105112"></a><a name="en-us_topic_0111176227_p10519314105112"></a>bignit</p>

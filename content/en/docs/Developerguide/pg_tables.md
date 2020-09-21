@@ -19,7 +19,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_a32375828299b40f786eb0bab88ccc898"><a name="en-us_topic_0237122467_en-us_topic_0059777576_a32375828299b40f786eb0bab88ccc898"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_a32375828299b40f786eb0bab88ccc898"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"><a name="en-us_topic_0237122467_en-us_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a href="pg_namespace.md">PG_NAMESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"><a name="en-us_topic_0237122467_en-us_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_a37b2fd2860594e1d8434840a9d680e5b"></a><a href="en-us_topic_0242385828.md">PG_NAMESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_a0dbcafed47aa407386280f5bfe3e7035"><a name="en-us_topic_0237122467_en-us_topic_0059777576_a0dbcafed47aa407386280f5bfe3e7035"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_a0dbcafed47aa407386280f5bfe3e7035"></a>Name of the schema that contains a table</p>
 </td>
@@ -46,7 +46,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_a535409ffea6b4a38a75fc7881660b70e"><a name="en-us_topic_0237122467_en-us_topic_0059777576_a535409ffea6b4a38a75fc7881660b70e"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_a535409ffea6b4a38a75fc7881660b70e"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"><a name="en-us_topic_0237122467_en-us_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a href="pg_tablespace.md">PG_TABLESPACE</a>.spcname</p>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"><a name="en-us_topic_0237122467_en-us_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_aeb54109ff23542e3842a88abb88dc69f"></a><a href="en-us_topic_0242385848.md">PG_TABLESPACE</a>.spcname</p>
 </td>
 <td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_a01cce719b07c472d83f3239bc54cb4b7"><a name="en-us_topic_0237122467_en-us_topic_0059777576_a01cce719b07c472d83f3239bc54cb4b7"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_a01cce719b07c472d83f3239bc54cb4b7"></a>Tablespace that contains the table (default value: <strong id="en-us_topic_0237122467_b1475491965414"><a name="en-us_topic_0237122467_b1475491965414"></a><a name="en-us_topic_0237122467_b1475491965414"></a>null</strong>)</p>
 </td>
@@ -75,7 +75,34 @@
 </td>
 <td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"><a name="en-us_topic_0237122467_en-us_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_a7ccee0d99b614c0291855f12a116a436"></a><a href="pg_class.md">PG_CLASS</a>.RELHASTRIGGERS</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"><a name="en-us_topic_0237122467_en-us_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a>The value is <strong id="en-us_topic_0237122467_b1422805485312"><a name="en-us_topic_0237122467_b1422805485312"></a><a name="en-us_topic_0237122467_b1422805485312"></a>true</strong> if the table has triggers; otherwise, the value is <strong id="en-us_topic_0237122467_b447225217540"><a name="en-us_topic_0237122467_b447225217540"></a><a name="en-us_topic_0237122467_b447225217540"></a>false</strong>.</p>
+<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122467_en-us_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"><a name="en-us_topic_0237122467_en-us_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a><a name="en-us_topic_0237122467_en-us_topic_0059777576_ae8c59b5687374d52bd5da054cee166c0"></a>The value is <strong id="en-us_topic_0237122467_b1422805485312"><a name="en-us_topic_0237122467_b1422805485312"></a><a name="en-us_topic_0237122467_b1422805485312"></a>TRUE</strong> if the table has triggers; otherwise, the value is <strong id="en-us_topic_0237122467_b447225217540"><a name="en-us_topic_0237122467_b447225217540"></a><a name="en-us_topic_0237122467_b447225217540"></a>FALSE</strong>.</p>
+</td>
+</tr>
+<tr id="row574733891"><td class="cellrowborder" valign="top" width="19.24%" headers="mcps1.2.5.1.1 "><p id="p775433799"><a name="p775433799"></a><a name="p775433799"></a>tablecreator</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p87518332091"><a name="p87518332091"></a><a name="p87518332091"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="p197510333912"><a name="p197510333912"></a><a name="p197510333912"></a>pg_get_userbyid(po.creator)</p>
+</td>
+<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="p147515331293"><a name="p147515331293"></a><a name="p147515331293"></a>Table creator.</p>
+</td>
+</tr>
+<tr id="row114011362094"><td class="cellrowborder" valign="top" width="19.24%" headers="mcps1.2.5.1.1 "><p id="p34015361893"><a name="p34015361893"></a><a name="p34015361893"></a>created</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p1940193610910"><a name="p1940193610910"></a><a name="p1940193610910"></a>timestamp with time zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="p1140233610910"><a name="p1140233610910"></a><a name="p1140233610910"></a>pg_object.ctime</p>
+</td>
+<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="p1040233610912"><a name="p1040233610912"></a><a name="p1040233610912"></a>Creation time of the object</p>
+</td>
+</tr>
+<tr id="row115031401692"><td class="cellrowborder" valign="top" width="19.24%" headers="mcps1.2.5.1.1 "><p id="p125032405912"><a name="p125032405912"></a><a name="p125032405912"></a>last_ddl_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p19503164018915"><a name="p19503164018915"></a><a name="p19503164018915"></a>timestamp with time zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.11%" headers="mcps1.2.5.1.3 "><p id="p1050316402915"><a name="p1050316402915"></a><a name="p1050316402915"></a>pg_object.mtime</p>
+</td>
+<td class="cellrowborder" valign="top" width="36.309999999999995%" headers="mcps1.2.5.1.4 "><p id="p12503194011915"><a name="p12503194011915"></a><a name="p12503194011915"></a>Last modification time of the object</p>
 </td>
 </tr>
 </tbody>

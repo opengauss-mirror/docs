@@ -13,14 +13,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237122405_en-us_topic_0059777991_r7f5d459d039446d8b8ea34496d5aa308"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122405_en-us_topic_0059777991_a1adb86c149c0421ba630b4699b54609b"><a name="en-us_topic_0237122405_en-us_topic_0059777991_a1adb86c149c0421ba630b4699b54609b"></a><a name="en-us_topic_0237122405_en-us_topic_0059777991_a1adb86c149c0421ba630b4699b54609b"></a>node_name1</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122405_en-us_topic_0059777991_a28b03e8c2fdd452baa7fbc33337bb9bc"><a name="en-us_topic_0237122405_en-us_topic_0059777991_a28b03e8c2fdd452baa7fbc33337bb9bc"></a><a name="en-us_topic_0237122405_en-us_topic_0059777991_a28b03e8c2fdd452baa7fbc33337bb9bc"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122405_en-us_topic_0059777991_a9179581b3f764fcf97a312a8a6281f2e"><a name="en-us_topic_0237122405_en-us_topic_0059777991_a9179581b3f764fcf97a312a8a6281f2e"></a><a name="en-us_topic_0237122405_en-us_topic_0059777991_a9179581b3f764fcf97a312a8a6281f2e"></a>Node name</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237122405_en-us_topic_0059777991_r86bb048365994ceaa0f9bb1ad581c446"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122405_en-us_topic_0059777991_a41334e4fec9b489a8933d648df8725da"><a name="en-us_topic_0237122405_en-us_topic_0059777991_a41334e4fec9b489a8933d648df8725da"></a><a name="en-us_topic_0237122405_en-us_topic_0059777991_a41334e4fec9b489a8933d648df8725da"></a>mem_hit</p>
+<tbody><tr id="en-us_topic_0237122405_en-us_topic_0059777991_r86bb048365994ceaa0f9bb1ad581c446"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122405_en-us_topic_0059777991_a41334e4fec9b489a8933d648df8725da"><a name="en-us_topic_0237122405_en-us_topic_0059777991_a41334e4fec9b489a8933d648df8725da"></a><a name="en-us_topic_0237122405_en-us_topic_0059777991_a41334e4fec9b489a8933d648df8725da"></a>mem_hit</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122405_en-us_topic_0059777991_a579cb1db376847b5902263ab13fe0bdd"><a name="en-us_topic_0237122405_en-us_topic_0059777991_a579cb1db376847b5902263ab13fe0bdd"></a><a name="en-us_topic_0237122405_en-us_topic_0059777991_a579cb1db376847b5902263ab13fe0bdd"></a>integer</p>
 </td>
