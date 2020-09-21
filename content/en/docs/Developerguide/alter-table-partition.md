@@ -15,6 +15,7 @@
 -   Use  **PARTITION FOR\(\)**  to choose partitions. The number of specified values in the brackets should be the same as the column number in customized partition, and they must be consistent.
 -   The  **Value**  partition table does not support the  **Alter Partition**  operation.
 -   Column-store tables and row-store tables cannot be partitioned.
+-   Partitions cannot be added to an interval partitioned table.
 
 ## Syntax<a name="en-us_topic_0237122077_en-us_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
 
@@ -94,9 +95,9 @@
             AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
             ```
 
-            >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-            >-   Column-store tables and row-store tables cannot be partitioned.  
-            >-   The size of the split point should be in the range of partition keys of the partition to be split. The split point can only split one partition into two new partitions.  
+            >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+            >-   Column-store tables and row-store tables cannot be partitioned.
+            >-   The size of the split point should be in the range of partition keys of the partition to be split. The split point can only split one partition into two new partitions.
 
         -   The  **no\_split\_point\_clause**  syntax does not specify a split point.
 
@@ -104,11 +105,11 @@
             INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
             ```
 
-            >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-            >-   The first new partition key specified by  **partition\_less\_than\_item**  should be greater than that of the previously split partition \(if any\), and the last partition key specified by  **partition\_item\_clause**  should equal that of the partition being split.  
-            >-   The first new partition key specified by  **partition\_start\_end\_item**  should equal that of the former partition \(if any\), and the last partition key specified by  **partition\_start\_end\_item**  should equal that of the partition being split.  
-            >-   **partition\_less\_than\_item**  supports a maximum of 4 partition keys, while  **partition\_start\_end\_item**  supports only one partition key. For details about the supported data types, see  [PARTITION BY RANGE\(parti...](create-table-partition.md#en-us_topic_0237122119_en-us_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455).  
-            >-   **partition\_less\_than\_item**  and  **partition\_start\_end\_item**  cannot be used in the same statement.  
+            >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+            >-   The first new partition key specified by  **partition\_less\_than\_item**  should be greater than that of the previously split partition \(if any\), and the last partition key specified by  **partition\_item\_clause**  should equal that of the partition being split.
+            >-   The first new partition key specified by  **partition\_start\_end\_item**  should equal that of the former partition \(if any\), and the last partition key specified by  **partition\_start\_end\_item**  should equal that of the partition being split.
+            >-   **partition\_less\_than\_item**  supports a maximum of 4 partition keys, while  **partition\_start\_end\_item**  supports only one partition key. For details about the supported data types, see  [PARTITION BY RANGE\(parti...](create-table-partition.md#en-us_topic_0237122119_en-us_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455).
+            >-   **partition\_less\_than\_item**  and  **partition\_start\_end\_item**  cannot be used in the same statement.
 
 
         -   The syntax of  **partition\_less\_than\_item**  is as follows:
@@ -136,6 +137,9 @@
         ```
         ADD {partition_less_than_item | partition_start_end_item}
         ```
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   Partitions cannot be added to an interval partitioned table.
 
     -   The  **drop\_clause**  syntax is used to remove a partition from a specified partitioned table.
 
@@ -224,8 +228,8 @@
 
     When  **VALIDATION**  is  **WITH**, if the ordinary table contains data that is out of the partition key range, insert the data to the correct partition. If there is no correct partition where the data can be inserted to, an error is reported.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >Only when  **VALIDATION**  is  **WITH**,  **VERBOSE**  can be specified.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >Only when  **VALIDATION**  is  **WITH**,  **VERBOSE**  can be specified.
 
 -   **partition\_new\_name**
 
@@ -240,5 +244,5 @@ See  [Examples](create-table-partition.md#en-us_topic_0237122119_en-us_topic_005
 
 ## Helpful Links<a name="en-us_topic_0237122077_en-us_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](create-table-partition.md), and  [DROP TABLE](drop-table.md)
+[CREATE TABLE PARTITION](create-table-partition.md), and  [DROP TABLE](en-us_topic_0242370616.md)
 

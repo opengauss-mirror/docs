@@ -28,7 +28,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122421_en-us_topic_0059779012_a7ccd90f9a4ff4d9fa523adc40f6b1c98"><a name="en-us_topic_0237122421_en-us_topic_0059779012_a7ccd90f9a4ff4d9fa523adc40f6b1c98"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_a7ccd90f9a4ff4d9fa523adc40f6b1c98"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122421_en-us_topic_0059779012_a57ccdd3af5a549f3948301efac549199"><a name="en-us_topic_0237122421_en-us_topic_0059779012_a57ccdd3af5a549f3948301efac549199"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_a57ccdd3af5a549f3948301efac549199"></a><a href="pg_database.md">PG_DATABASE</a>.oid</p>
+<td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122421_en-us_topic_0059779012_a57ccdd3af5a549f3948301efac549199"><a name="en-us_topic_0237122421_en-us_topic_0059779012_a57ccdd3af5a549f3948301efac549199"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_a57ccdd3af5a549f3948301efac549199"></a><a href="en-us_topic_0242385808.md">PG_DATABASE</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122421_en-us_topic_0059779012_ab0b40024a84c4ec988a03a8dc0c87aea"><a name="en-us_topic_0237122421_en-us_topic_0059779012_ab0b40024a84c4ec988a03a8dc0c87aea"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_ab0b40024a84c4ec988a03a8dc0c87aea"></a>OID of the database in which the locked object exists.</p>
 <a name="en-us_topic_0237122421_en-us_topic_0059779012_u9a5bc7591fec43e5bdbcbce109b21f8f"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_u9a5bc7591fec43e5bdbcbce109b21f8f"></a><ul id="en-us_topic_0237122421_en-us_topic_0059779012_u9a5bc7591fec43e5bdbcbce109b21f8f"><li>The OID is <strong id="b133716185711"><a name="b133716185711"></a><a name="b133716185711"></a>0</strong> if the object is a shared object.</li><li>The OID is <strong id="b18153122314573"><a name="b18153122314573"></a><a name="b18153122314573"></a>NULL</strong> if the object is a transaction ID.</li></ul>
@@ -59,6 +59,15 @@
 <td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122421_en-us_topic_0059779012_a131559fbfcac4a4ebcbef9a41b081729"><a name="en-us_topic_0237122421_en-us_topic_0059779012_a131559fbfcac4a4ebcbef9a41b081729"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_a131559fbfcac4a4ebcbef9a41b081729"></a>-</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122421_en-us_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"><a name="en-us_topic_0237122421_en-us_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_a308eae26f3a04b8eb5197667f700c073"></a>Row number targeted by the lock within the page (<strong id="en-us_topic_0237122421_b118947919237"><a name="en-us_topic_0237122421_b118947919237"></a><a name="en-us_topic_0237122421_b118947919237"></a>NULL</strong> if the object is not a row)</p>
+</td>
+</tr>
+<tr id="row1885912485569"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p10860248105616"><a name="p10860248105616"></a><a name="p10860248105616"></a>bucket</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.2 "><p id="p1686115486567"><a name="p1686115486567"></a><a name="p1686115486567"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="p68641048185616"><a name="p68641048185616"></a><a name="p68641048185616"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="p10864164812563"><a name="p10864164812563"></a><a name="p10864164812563"></a>Bucket number corresponding to the child table. The value is <strong id="b16821346155418"><a name="b16821346155418"></a><a name="b16821346155418"></a>NULL</strong> if the target is not a table.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122421_en-us_topic_0059779012_rb23a225a004a44e5be57348ce895b5b2"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122421_en-us_topic_0059779012_a9b6bd33aae7444cb91ccd7cac9dc30b2"><a name="en-us_topic_0237122421_en-us_topic_0059779012_a9b6bd33aae7444cb91ccd7cac9dc30b2"></a><a name="en-us_topic_0237122421_en-us_topic_0059779012_a9b6bd33aae7444cb91ccd7cac9dc30b2"></a>virtualxid</p>
