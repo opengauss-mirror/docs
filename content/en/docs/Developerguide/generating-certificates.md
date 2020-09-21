@@ -52,7 +52,7 @@ The OpenSSL component has been installed in the Linux environment.
 3.  Generate a root certificate request file.
 
     ```
-    --Generate a CA root certificate application file named server.req.
+    --Generate a CA root certificate application file named careq.pem.
     openssl req -config openssl.cnf -new -key demoCA/private/cakey.pem -out demoCA/careq.pem
     Enter pass phrase for demoCA/private/cakey.pem:
     --Enter the root private key password Test@123.
