@@ -66,6 +66,23 @@ plsql_body
 
     Value range: a valid data type
 
+-   **configuration\_parameter**
+
+    - **value**
+
+      Sets a specified database session parameter to a specified value. If the value is  **DEFAULT**, the default setting is used in the new session.  **OFF**  closes the setting.
+
+      Value range: a string
+
+      -   DEFAULT
+      -   OFF
+
+      Specifies the default value.
+
+    - **from current**
+
+      Uses the value of  **configuration\_parameter**  of the current session.
+
 -   **IMMUTABLE, STABLE,**...
 
     Specifies a constraint. The function of each parameter is similar to that of  **CREATE FUNCTION**. For details, see  [CREATE FUNCTION](create-function.md).
