@@ -15,7 +15,7 @@ The tuning program is a tool independent of the database kernel. The usernames a
 
 ## Procedure<a name="section275518529540"></a>
 
-1. To prepare the environment, use the following command to install the xtuner/requirements.txt module.
+1. To prepare the environment, use the following command to install the $GAUSSHOME/bin/dbmind/xtuner/requirements.txt module.
 
    ```
    pip install -r requirements.txt
