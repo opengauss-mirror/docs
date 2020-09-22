@@ -1098,7 +1098,7 @@ headless: true
             -   [使用SQL函数接口进行逻辑解码]({{< relref "./docs/Developerguide/使用SQL函数接口进行逻辑解码.md" >}})
         -   [使用逻辑复制工具复制数据]({{< relref "./docs/Developerguide/使用逻辑复制工具复制数据.md" >}})				
    -   [Foreign Data Wrapper]({{< relref "./docs/Developerguide/Foreign-Data-Wrapper.md" >}})
-        -   [oracle_fdw]({{< relref "./docs/Developerguide/oracle_fdw.md" >}})
+        -   [用于Oracle的外部数据包装器]({{< relref "./docs/Developerguide/用于Oracle的外部数据包装器.md" >}})
         -   [mysql_fdw]({{< relref "./docs/Developerguide/mysql_fdw.md" >}})
         -   [postgres_fdw]({{< relref "./docs/Developerguide/postgres_fdw.md" >}})
     -   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})

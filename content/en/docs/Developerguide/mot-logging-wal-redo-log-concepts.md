@@ -30,7 +30,7 @@ According to your configuration, one of the following types of logging is implem
 -   [Group Synchronous Redo Logging](group-synchronous-redo-logging.md)
 -   [Asynchronous Redo Logging](asynchronous-redo-logging.md)
 
-### Additional inforamtion:
+### Additional information:
 
 -   [Logging Design Overview](logging-design-overview.md)
 -   [Per-transaction Logging](per-transaction-logging.md)
