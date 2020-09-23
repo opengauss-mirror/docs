@@ -243,29 +243,6 @@
 </tbody>
 </table>
 
-**表 2**  数据库实例数据目录
-
-<a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_table15838192510429"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_row14838152510421"><th class="cellrowborder" valign="top" width="39.910000000000004%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p20433411202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p20433411202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p20433411202410"></a>实例名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="60.089999999999996%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p44493607202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p44493607202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p44493607202410"></a>实例数据目录</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_row8839162524215"><td class="cellrowborder" valign="top" width="39.910000000000004%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p55748877202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p55748877202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p55748877202410"></a>主DBnode</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.089999999999996%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p19365159202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p19365159202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p19365159202410"></a>/opt/huawei/install/data/xxx</p>
-<p id="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25074029202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25074029202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25074029202410"></a>其中，xxx为当前主DBnode的名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_row68397259423"><td class="cellrowborder" valign="top" width="39.910000000000004%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25356817202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25356817202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25356817202410"></a>备DBnode</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.089999999999996%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p40636326202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p40636326202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p40636326202410"></a>/opt/huawei/install/data/slaveX</p>
-<p id="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p3208132202410"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p3208132202410"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434665_zh-cn_topic_0059782055_p3208132202410"></a>其中，slaveX为当前备DBnode的名称。</p>
-</td>
-</tr>
-</tbody>
-</table>
 
 ## 示例
 
