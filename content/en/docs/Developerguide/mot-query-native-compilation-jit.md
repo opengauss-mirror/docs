@@ -10,7 +10,7 @@ The following is an example of a  **PREPARE**  syntax in SQL –
 PREPARE name [ ( data_type [, ...] ) ] AS statement 
 ```
 
-The following is an example of how to invoke a PREPARE and then an EXECUTE statement in a Java application – ///VVV: consider to frame in a nice bounding box with some light background color. Also run java language in Notepad++ to be color-highlighted. After the content is complete, I’ll do this \(not today\) GGG   ++
+The following is an example of how to invoke a PREPARE and then an EXECUTE statement in a Java application – 
 
 ```
 conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);
