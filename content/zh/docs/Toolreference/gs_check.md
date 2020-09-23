@@ -23,7 +23,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 -   场景检查：
 
     ```
-    gs_check -e SCENE_NAME [-U USER] [-L] [-l LOGFILE] [-o OUTPUTDIR] [--hosts] [--skip-root-items] [--time-out=SECS][--set][--routing][--skip-items]
+    gs_check -e SCENE_NAME [-U USER] [-L] [-l LOGFILE] [-o OUTPUTDIR] [--skip-root-items] [--time-out=SECS][--set][--routing][--skip-items]
     ```
 
 -   显示帮助信息

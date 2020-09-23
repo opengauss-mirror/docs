@@ -8,7 +8,7 @@ As an openGauss user, you can contribute to the openGauss community in multiple 
 
 openGauss brings together people of common interest to form different SIGs. For details about existing SIGs, see the  [SIG list](https://opengauss.org/en/contribution.html).
 
-You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see  [Special Interest Group \(SIG\)](https://gitee.com/opengauss/tc/blob/master/sigs/README.en.md).
+You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see  [Special Interest Group \(SIG\)]((https://opengauss.org/en/contribution.html)).
 
 **Mail List and Issues**
 
@@ -20,5 +20,4 @@ You can contribute to the community by submitting code. We also welcome your fee
 
 **Internet Relay Chat \(IRC\)**
 
-openGauss has also opened an IRC channel as an additional channel to provide community support and interaction. For details, see openGauss IRC.
-
+openGauss has also opened an IRC channel as an additional channel to provide community support and interaction. For details, see [openGauss IRC]((https://opengauss.org/en/contribution.html)).
