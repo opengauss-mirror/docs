@@ -143,6 +143,7 @@ headless: true
 		-   [Initializing the Installation Environment]({{< relref "./docs/Installation/initializing-the-installation-environment.md" >}})
 		-   [Executing Installation]({{< relref "./docs/Installation/executing-installation.md" >}})
 		-   [\(Optional\) Setting the Standby Node to Readable]({{< relref "./docs/Installation/(optional)-setting-the-standby-node-to-readable.md" >}})
+	-   [container-based-installation]({{< relref "./docs/Installation/container-based-installation.md" >}})
 	-   [Verifying the Installation]({{< relref "./docs/Installation/verifying-the-installation.md" >}})
 	-   [Uninstalling the openGauss]({{< relref "./docs/Installation/uninstalling-the-opengauss.md" >}})
 	

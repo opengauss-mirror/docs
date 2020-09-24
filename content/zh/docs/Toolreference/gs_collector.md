@@ -39,10 +39,10 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row101318382316"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p6133313233"><a name="zh-cn_topic_0237152334_p6133313233"></a><a name="zh-cn_topic_0237152334_p6133313233"></a>Log</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p8657174819262"><a name="zh-cn_topic_0237152334_p8657174819262"></a><a name="zh-cn_topic_0237152334_p8657174819262"></a>DBnode</p>
+<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p8657174819262"><a name="zh-cn_topic_0237152334_p8657174819262"></a><a name="zh-cn_topic_0237152334_p8657174819262"></a>Datanode</p>
 <p id="zh-cn_topic_0237152334_p46574483267"><a name="zh-cn_topic_0237152334_p46574483267"></a><a name="zh-cn_topic_0237152334_p46574483267"></a>ClusterManager</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul122531334158"></a><a name="zh-cn_topic_0237152334_ul122531334158"></a><ul id="zh-cn_topic_0237152334_ul122531334158"><li>收集DBnode的pg_log和gs_profile</li><li>收集ClusterManager的日志信息包括：<a name="zh-cn_topic_0237152334_ul19311954111513"></a><a name="zh-cn_topic_0237152334_ul19311954111513"></a><ul id="zh-cn_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
+<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul122531334158"></a><a name="zh-cn_topic_0237152334_ul122531334158"></a><ul id="zh-cn_topic_0237152334_ul122531334158"><li>收集Datanode的pg_log和gs_profile</li><li>收集ClusterManager的日志信息包括：<a name="zh-cn_topic_0237152334_ul19311954111513"></a><a name="zh-cn_topic_0237152334_ul19311954111513"></a><ul id="zh-cn_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p1014133162314"><a name="zh-cn_topic_0237152334_p1014133162314"></a><a name="zh-cn_topic_0237152334_p1014133162314"></a>是</p>
@@ -50,9 +50,9 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row71412352318"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p1514135239"><a name="zh-cn_topic_0237152334_p1514135239"></a><a name="zh-cn_topic_0237152334_p1514135239"></a>Config</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p20995135132817"><a name="zh-cn_topic_0237152334_p20995135132817"></a><a name="zh-cn_topic_0237152334_p20995135132817"></a>DBnode</p>
+<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p20995135132817"><a name="zh-cn_topic_0237152334_p20995135132817"></a><a name="zh-cn_topic_0237152334_p20995135132817"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul498532372610"></a><a name="zh-cn_topic_0237152334_ul498532372610"></a><ul id="zh-cn_topic_0237152334_ul498532372610"><li>收集DBnode的配置信息:<a name="zh-cn_topic_0237152334_ul1741811415273"></a><a name="zh-cn_topic_0237152334_ul1741811415273"></a><ul id="zh-cn_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
+<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul498532372610"></a><a name="zh-cn_topic_0237152334_ul498532372610"></a><ul id="zh-cn_topic_0237152334_ul498532372610"><li>收集Datanode的配置信息:<a name="zh-cn_topic_0237152334_ul1741811415273"></a><a name="zh-cn_topic_0237152334_ul1741811415273"></a><ul id="zh-cn_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p515933239"><a name="zh-cn_topic_0237152334_p515933239"></a><a name="zh-cn_topic_0237152334_p515933239"></a>是</p>
@@ -60,9 +60,9 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row181513312235"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p81518317232"><a name="zh-cn_topic_0237152334_p81518317232"></a><a name="zh-cn_topic_0237152334_p81518317232"></a>Gstack</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p979113464295"><a name="zh-cn_topic_0237152334_p979113464295"></a><a name="zh-cn_topic_0237152334_p979113464295"></a>DBnode</p>
+<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p979113464295"><a name="zh-cn_topic_0237152334_p979113464295"></a><a name="zh-cn_topic_0237152334_p979113464295"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p41510310234"><a name="zh-cn_topic_0237152334_p41510310234"></a><a name="zh-cn_topic_0237152334_p41510310234"></a>利用gstack命令得到DBnode的当前堆栈信息。</p>
+<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p41510310234"><a name="zh-cn_topic_0237152334_p41510310234"></a><a name="zh-cn_topic_0237152334_p41510310234"></a>利用gstack命令得到Datanode的当前堆栈信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p12151316239"><a name="zh-cn_topic_0237152334_p12151316239"></a><a name="zh-cn_topic_0237152334_p12151316239"></a>否</p>
 </td>
@@ -81,7 +81,7 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row41613192315"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p71613318234"><a name="zh-cn_topic_0237152334_p71613318234"></a><a name="zh-cn_topic_0237152334_p71613318234"></a>XLog</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p566195453213"><a name="zh-cn_topic_0237152334_p566195453213"></a><a name="zh-cn_topic_0237152334_p566195453213"></a>DBnode</p>
+<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p566195453213"><a name="zh-cn_topic_0237152334_p566195453213"></a><a name="zh-cn_topic_0237152334_p566195453213"></a>Datanode</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p0174312313"><a name="zh-cn_topic_0237152334_p0174312313"></a><a name="zh-cn_topic_0237152334_p0174312313"></a>通过时间筛选收集xlog。</p>
 </td>
@@ -132,9 +132,7 @@
 
     收集信息的主机名称。
 
-    取值范围：主机名称，只能指定一个主机名称。
-
-    如果不指定则默认收集所有主机的信息。
+    取值范围：主机名称，如果不指定则默认收集所有主机的信息。
 
 -   -f
 
@@ -184,13 +182,13 @@
     >"Collect":
     >\[
     >\{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"\},
-    >\{"TypeName": "Log", "Content" : "DBnode,ClusterManager", "Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Log", "Content" : "Datanode,ClusterManager", "Interval":"0", "Count":"1"\},
     >\{"TypeName": "Database", "Content": "pg\_locks,pg\_stat\_activity,pg\_thread\_wait\_status","Interval":"0", "Count":"1"\},
-    >\{"TypeName": "Config", "Content": "DBnode", "Interval":"0", "Count":"1"\}
+    >\{"TypeName": "Config", "Content": "Datanode", "Interval":"0", "Count":"1"\}
     >\]
     >\}
     >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
-    >对于Log，CoreDump，Config，XLog三种类型，Interval和Count参数不生效。
+    >对于Log，CoreDump，Config，XLog四种类型，Interval和Count参数不生效。
 
 -   --keyword=KEYWORD
 
