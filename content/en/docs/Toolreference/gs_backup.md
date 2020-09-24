@@ -58,11 +58,11 @@ The  **gs\_backup**  tool can use the following types of parameters:
 
     -   --binary
 
-        Backs up binary files.
+        Backs up the binary files in the **app** directory.
 
     -   --all
 
-        Backs up binary files and parameter files.
+        Backs up binary files in the **app** directory, **pg_hba.conf**, and **postgsql.conf**.
 
     -   -l
 
