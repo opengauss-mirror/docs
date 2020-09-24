@@ -2,20 +2,14 @@
 <!-- TOC -->
 
 - [Setting a Client Authentication Policy](#setting-a-client-authentication-policy)
-    - [Syntax](#syntax)
-    - [Command Reference](#command-reference)
-    - [Examples](#examples)
 - [Configuring Parameters in Configuration Files](#configuring-parameters-in-configuration-files)
-    - [Syntax](#syntax-1)
-    - [Command Reference](#command-reference-1)
-    - [Examples](#examples-1)
 
 <!-- /TOC -->
 
 
 ## Setting a Client Authentication Policy
 
-The current default values for parameters in the openGauss configuration file \(**pg\_hba.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**. For more configurations, see the Developerguide.
+The current default values for parameters in the openGauss configuration file \(**pg\_hba.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**. For more configurations, see the *[Developer Guide](https://opengauss.org/en/docs/1.0.0/docs/Developerguide/Developerguide.html)*.
 
 ### Syntax
 
