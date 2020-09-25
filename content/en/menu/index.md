@@ -1233,6 +1233,7 @@ headless: true
 		-   [gs\_postuninstall]({{< relref "./docs/Toolreference/gs_postuninstall.md" >}})
 		-   [gs\_preinstall]({{< relref "./docs/Toolreference/gs_preinstall.md" >}})
 		-   [gs\_sshexkey]({{< relref "./docs/Toolreference/gs_sshexkey.md" >}})
+		-   [gs\_tar]({{< relref "./docs/Toolreference/gs_tar.md" >}})
 		-   [gs\_uninstall]({{< relref "./docs/Toolreference/gs_uninstall.md" >}})
 		-   [gs\_upgradectl]({{< relref "./docs/Toolreference/gs_upgradectl.md" >}})
 		-   [gstrace]({{< relref "./docs/Toolreference/gstrace.md" >}})
