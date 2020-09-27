@@ -1,4 +1,4 @@
-# 开启RemoveIPC引发数据库宕机问题<a name="ZH-CN_TOPIC_0278461122"></a>
+# 开启RemoveIPC引起的core问题<a name="ZH-CN_TOPIC_0278461122"></a>
 
 ## 问题现象<a name="section54529241124"></a>
 
