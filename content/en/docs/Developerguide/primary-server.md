@@ -12,6 +12,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: a string.  **\***  means to match the name of any standby machine that provides synchronous replication.
 
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+ANY N (node1, node2,...) means that N host names can be selected in the brackets as a list of standby machine names for synchronous replication. For example, ANY 1 (node1, node2) means that you can choose one of node1 and node2 as the name of the standby machine for synchronous replication.
+
 **Default value**:  **\***
 
 ## most\_available\_sync<a name="en-us_topic_0237124713_en-us_topic_0059777578_se53a9bce83414d17b84a9beb44dd0dda"></a>
