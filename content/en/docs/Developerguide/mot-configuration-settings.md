@@ -53,14 +53,6 @@ If no time units are specified, then microseconds are assumed.
 
 ## REDO LOG \(MOT\)<a name="section361563811235"></a>
 
--   **enable\_redo\_log = true**
-
-    Specifies whether to use the Redo Log for durability.
-
-    When Checkpoint is disabled, Redo Log is also forcibly disabled. Enabling and disabling this configuration alternatively on subsequent restarts of the server will leave the database in an inconsistent state in the disk, which will lead to startup failure. So, once enabled, it is recommended that this configuration never be disabled on subsequent restarts during the lifetime of the database.
-
-    You may refer to  [MOT Logging – WAL Redo Log](mot-durability.md#section129831140121218)  section for more information about the WAL Redo Log.
-
 -   **enable\_group\_commit = false**
 
     Specifies whether to use group commit.
@@ -80,17 +72,10 @@ If no time units are specified, then microseconds are assumed.
 
     A commit group is closed after either the configured number of transactions has arrived or after the configured timeout period since the group was opened. After the group is closed, all the transactions in the group wait for a group flush to complete execution and then notify the client that each transaction has ended.
 
-    You may refer to the  [MOT Logging Types](mot-durability.md#section125771537134)  section for more information about synchronous group commit logging.
+    You may refer to  [MOT Logging – WAL Redo Log](mot-durability.md#section129831140121218)  section for more information about the WAL Redo Log and synchronous group commit logging.
 
 
 ## CHECKPOINT \(MOT\)<a name="section8719101152712"></a>
-
--   **enable\_checkpoint = true**
-
-    Specifies whether to use periodic checkpoint.
-
-    When disabled, Redo Log is also forcibly disabled. Enabling and disabling this configuration alternatively on subsequent restarts of the server will leave the database in an inconsistent state in the disk, which will lead to startup failure. So, once enabled, it is recommended that this configuration never be disabled on subsequent restarts during the lifetime of the database.
-
 
 -   **checkpoint\_dir =**
 
