@@ -11,11 +11,6 @@ The following describes how to create an XML configuration file based on the dep
     - [Configuring the Basic Host Information](#configuring-the-basic-host-information)
     - [Configuring Primary Database Node Information](#configuring-primary-database-node-information)
     - [Examples](#examples)
-        - [Configuration File for Single-Instance Deployment<a name="section1698454873416"></a>](#configuration-file-for-single-instance-deploymenta-namesection1698454873416a)
-        - [Configuration File for Primary/Standby Deployment<a name="section946242113712"></a>](#configuration-file-for-primarystandby-deploymenta-namesection946242113712a)
-        - [Configuration File for One Primary and Two Standbys<a name="section5994144164010"></a>](#configuration-file-for-one-primary-and-two-standbysa-namesection5994144164010a)
-        - [Configuration File for One Primary and Three Standbys<a name="section165518595406"></a>](#configuration-file-for-one-primary-and-three-standbysa-namesection165518595406a)
-    - [Configuration File for One Primary and Four Standbys<a name="section56037824118"></a>](#configuration-file-for-one-primary-and-four-standbysa-namesection56037824118a)
 
 <!-- /TOC -->
 
@@ -470,7 +465,7 @@ The information in bold is only an example. You can replace it as required. Each
 </ROOT>
 ```
 
-## Configuration File for One Primary and Four Standbys<a name="section56037824118"></a>
+### Configuration File for One Primary and Four Standbys<a name="section56037824118"></a>
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
