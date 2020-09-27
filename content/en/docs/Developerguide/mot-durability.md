@@ -104,7 +104,6 @@ Two synchronous transaction logging options and one asynchronous transaction log
 To configure logging –
 
 1.  The determination of whether synchronous or asynchronous transaction logging is performed is configured in the synchronous\_commit  **\(On = Synchronous\)**  parameters in the postgres.conf configuration file.
-2.  Set the enable\_redo\_log parameter to  **True**  in the REDO LOG section of the mot.conf configuration file.
 
 If a synchronous mode of transaction logging has been selected \(synchronous\_commit =  **On**, as described above\), then the enable\_group\_commit parameter in the mot.conf configuration file determines whether the  **Group Synchronous Redo Logging**  option or the  **Synchronous Redo Logging**  option is used. For  **Group Synchronous Redo Logging**, you must also define in the mot.conf file which of the following thresholds determine when a group of transactions is recorded in the WAL
 
@@ -126,11 +125,4 @@ If there were no Checkpoints, then in order to recover a database, all the WAL r
 Checkpoints are essential during recovery scenarios \(especially for a cold start\). First, the data is loaded from the last known or a specific Checkpoint; and then the WAL is used to complete the data changes that occurred since then.
 
 For example – If the same table row is modified 100 times, then 100 entries are recorded in the log. When Checkpoints are used, then even if a specific table row was modified 100 times, it is recorded in the Checkpoint a single time. After the recording of a Checkpoint, recovery can be performed on the basis of that Checkpoint and only the WAL Redo Log entries that occurred since the Checkpoint need be played.
-
-**To configure Checkpoints**
-
-Checkpoint configuration is performed in the CHECKPOINT; section of the mot.conf file. You may refer to the  [MOT Checkpoints](#section182761535131617)  section of this user manual for a description of these configuration parameters.
-
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
->In a production deployment, the value must be TRUE \#enable\_Checkpoint = true. A FALSE value can only be used for testing.
 
