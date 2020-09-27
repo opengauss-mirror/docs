@@ -2,9 +2,17 @@
 
 <!-- TOC -->
 
-- [确认连接信息](#确认连接信息)
-- [使用gsql本地连接](#使用gsql本地连接)
-- [使用gsql远程连接](#使用gsql远程连接)
+- [gsql客户端连接<a name="ZH-CN_TOPIC_0241704252"></a>](#gsql客户端连接a-namezh-cn_topic_0241704252a)
+    - [确认连接信息](#确认连接信息)
+        - [操作步骤](#操作步骤)
+    - [使用gsql本地连接](#使用gsql本地连接)
+        - [注意事项](#注意事项)
+        - [前提条件](#前提条件)
+        - [本地连接数据库](#本地连接数据库)
+    - [使用gsql远程连接](#使用gsql远程连接)
+        - [前提条件](#前提条件-1)
+        - [通过gs\_guc配置白名单](#通过gs\_guc配置白名单)
+        - [安装gsql客户端并连接数据库](#安装gsql客户端并连接数据库)
 
 <!-- /TOC -->
 
@@ -128,18 +136,25 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     gs_guc set -N all -I all -h "host all jack 10.10.0.30/32 sha256"
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   使用“jack”用户前，需先本地连接数据库，并在数据库中使用如下语句建立“jack”用户：
-    >    ```
-    >    postgres=# CREATE USER jack PASSWORD 'Test@123';
-    >    ```
-    >-   -N all表示openGauss的所有主机。
-    >-   -I all表示主机的所有实例。
-    >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
-    >-   all表示允许客户端连接到任意的数据库。
-    >-   jack表示连接数据库的用户。
-    >-   10.10.0.30/32表示只允许IP地址为10.10.0.30的主机连接。此处的IP地址不能为openGauss内的IP，在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
-    >-   sha256表示连接时jack用户的密码使用sha256算法加密。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    -   使用“jack”用户前，需先本地连接数据库，并在数据库中使用如下语句建立“jack”用户：
+        ```
+        postgres=# CREATE USER jack PASSWORD 'Test@123';
+        ```
+
+    -   -N all表示openGauss的所有主机。
+
+    -   -I all表示主机的所有实例。
+
+    -   -h表示指定需要在“pg\_hba.conf”增加的语句。
+
+    -   all表示允许客户端连接到任意的数据库。
+
+    -   jack表示连接数据库的用户。
+
+    -   10.10.0.30/32表示只允许IP地址为10.10.0.30的主机连接。此处的IP地址不能为openGauss内的IP，在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255。
+
+    -   sha256表示连接时jack用户的密码使用sha256算法加密。
 
     这条命令在数据库主节点实例对应的“pg\_hba.conf”文件中添加了一条规则，用于对连接数据库主节点的客户端进行鉴定。
 
@@ -154,17 +169,18 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     因为认证时系统是为每个连接请求顺序检查“pg\_hba.conf”里的记录的，所以这些记录的顺序是非常关键的。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >在配置“pg\_hba.conf”文件时，请依据通讯需求按照格式内容从上至下配置记录，优先级高的需求需要配置在前面。openGauss和扩容配置的IP优先级最高，用户手动配置的IP请放在这二者之后，如果已经进行的客户配置和扩容节点的IP在同一网段，请在扩容前删除，扩容成功后再进行配置。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    在配置“pg\_hba.conf”文件时，请依据通讯需求按照格式内容从上至下配置记录，优先级高的需求需要配置在前面。openGauss和扩容配置的IP优先级最高，用户手动配置的IP请放在这二者之后，如果已经进行的客户配置和扩容节点的IP在同一网段，请在扩容前删除，扩容成功后再进行配置。
 
     因此对于认证规则的配置建议如下：
 
     -   靠前的记录有比较严格的连接参数和比较弱的认证方法。
     -   靠后的记录有比较宽松的连接参数和比较强的认证方法。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   一个用户要想成功连接到特定的数据库，不仅需要通过pg\_hba.conf中的规则检查，还必须要有该数据库上的CONNECT权限。如果希望控制某些用户只能连接到指定数据库，赋予/撤销CONNECT权限通常比在pg\_hba.conf中设置规则更为简单。
-    >-   对应openGauss外部客户端连接，trust为不安全的认证方式，请将认证方式设置为sha256。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    -   一个用户要想成功连接到特定的数据库，不仅需要通过pg\_hba.conf中的规则检查，还必须要有该数据库上的CONNECT权限。如果希望控制某些用户只能连接到指定数据库，赋予/撤销CONNECT权限通常比在pg\_hba.conf中设置规则更为简单。
+
+    -   对应openGauss外部客户端连接，trust为不安全的认证方式，请将认证方式设置为sha256。
 
 
 ### 安装gsql客户端并连接数据库
@@ -180,9 +196,10 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 3.  获取软件安装包中的“openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   软件包相对位置为安装时所放位置，根据实际情况填写。
-    >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    -   软件包相对位置为安装时所放位置，根据实际情况填写。
+
+    -   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
 4.  解压文件。
 
@@ -230,7 +247,8 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     postgres为需要连接的数据库名称，10.10.0.11为数据库主节点所在的服务器IP地址，jack为连接数据库的用户，8000为数据库主节点的端口号，Test@123为连接数据库用户jack的密码。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。
-    >-   禁止使用omm用户进行远程连接数据库。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    -   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。
+    
+    -   禁止使用omm用户进行远程连接数据库。
 
