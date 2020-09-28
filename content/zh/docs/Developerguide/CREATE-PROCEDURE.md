@@ -77,7 +77,7 @@ plsql_body
       -   DEFAULT
       -   OFF
 
-      指定默认值。
+      + 指定默认值。
 
     - **from current**
 
