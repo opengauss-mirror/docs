@@ -247,14 +247,14 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 </table>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->The %c escape character prints a unique session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:  
->```  
->SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||  
->       to_hex(pid)  
->FROM pg_stat_activity;  
->```
->-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.  
->-   Syslog generates its own time stamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.  
+The %c escape character prints a unique session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:  
+```  
+SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||  
+       to_hex(pid)  
+FROM pg_stat_activity;  
+```
+-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.  
+-   Syslog generates its own time stamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.  
 
 **Value range**: a string
 
