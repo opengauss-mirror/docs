@@ -177,7 +177,7 @@ human_resource=# select * from hr.staffs;
 
 gsql -d human_resource -p 8000
 
-gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+gsql ((openGauss 1.0.1 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 
@@ -264,7 +264,7 @@ total time: 23472  ms
 
 gsql -d backupdb -p 8000 -r
 
-gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+gsql ((openGauss 1.0.1 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 
@@ -290,7 +290,7 @@ total time: 554  ms
 
 gsql -d backupdb -p 8000 -r 
 
-gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+gsql ((openGauss 1.0.1 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 

@@ -28,7 +28,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     连接成功后，系统显示类似如下信息：
 
     ```
-    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    gsql ((openGauss 1.0.1 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
@@ -63,7 +63,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
    
    mkdir /tmp/tools
    ```
-   获取软件安装包中的“openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
+   获取软件安装包中的“openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
    ​    
 
@@ -74,7 +74,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
    ```
    cd /tmp/tools
-   tar -zxvf openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz
+   tar -zxvf openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz
    ```
    登录数据库主节点所在的服务器，拷贝数据库安装目录下的bin目录到客户端主机的“/tmp/tools”路径下。其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的{gaussdbAppPath}路径，10.10.0.30为客户端主机ip。
 
