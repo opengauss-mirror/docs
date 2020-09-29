@@ -35,7 +35,7 @@ The git and git-lfs have been installed and configured on the local host.
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   **openGauss-server**: openGauss code repository.
     >-   **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.
-    >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#section38901725122017)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.
+    >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#Compiling Open-source Software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.
     >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/openGauss-third\_party\_binarylibs.tar.gz**.
     >    After the download is complete, decompress the package and rename the folder to  **binarylibs**.
 
@@ -47,7 +47,7 @@ The git and git-lfs have been installed and configured on the local host.
 
 Before compiling the openGauss, compile and build the open-source and third-party software on which the openGauss depends. These open-source and third-party software is stored in the  **openGauss-third\_party**  code repository. After downloading the software, you can use  **git lfs pull**  to obtain large files from the code repository. Generally, you only need to build the software once. If the open-source software is updated, rebuild the software.
 
-Since this step takes a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**. You can download the package by referring to  [Downloading Code](#section233903211619).
+Since this step takes a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**. You can download the package by referring to  [Downloading Code](#Downloading Code).
 
 **Table  1**  Requirements for the openGauss open-source and third-party software before compilation
 
@@ -206,10 +206,10 @@ Software compilation and installation are to compile code to generate software a
 
 ### Prerequisites
 
--   The software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](preparation-before-compiling.md#section233903211619).
--   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](preparation-before-compiling.md#section38901725122017).
--   You are familiar with the parameter options and functions of the  [build.sh](preparation-before-compiling.md#section6993103732114)  script.
--   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ 4.1](how-do-i-delete-temporary-files-generated-during-compilation.md).
+-   The software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading Code).
+-   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software).
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
+-   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Compilation Using the One-click Script
 
@@ -326,10 +326,10 @@ To compile the installation package is to compile the code and generate the soft
 
 ### Prerequisites
 
--   The software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](preparation-before-compiling.md#section233903211619).
--   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](preparation-before-compiling.md#section38901725122017).
--   You are familiar with the parameter options and functions of the  [build.sh](preparation-before-compiling.md#section6993103732114)  script.
--   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ 4.1](how-do-i-delete-temporary-files-generated-during-compilation.md).
+-   TThe software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading Code).
+-   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software).
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
+-   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Procedure
 
@@ -352,9 +352,7 @@ To compile the installation package is to compile the code and generate the soft
     sh build.sh -m debug -3rd /sdc/binarylibs -pkg            # Generate the openGauss installation package of the debug version.
     ```
 
-    Compared with  [Software Compilation and Installation](software-compilation-and-installation.md), this operation involves the process of generating software by one-click compilation and the process of encapsulating the software into an installation package. Compared with the  **build.sh**  command in  [Software Compilation and Installation](software-compilation-and-installation.md), only the  **-pkg**  option is added.
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    Compared with  [Software Compilation and Installation](#software-compilation-and-installation), this operation involves the process of generating software by one-click compilation and the process of encapsulating the software into an installation package. Compared with the  **build.sh**  command in  [Software Compilation and Installation](#software-compilation-and-installation), only the  **-pkg**  option is added.
 
 3.  If the following information is displayed, the installation package compilation is successful:
 

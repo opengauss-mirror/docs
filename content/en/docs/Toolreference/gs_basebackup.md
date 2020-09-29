@@ -17,7 +17,7 @@ After openGauss is deployed, problems and exceptions may occur during database r
 
 -   If the backup permission is revoked during the backup, the backup may fail or the backup data may be unavailable.
 
--   Currently, openGauss does not support version upgrade.
+-   openGauss does not support version upgrade.
 
 ## Prerequisites<a name="en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
