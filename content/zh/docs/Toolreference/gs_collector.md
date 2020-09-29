@@ -9,9 +9,9 @@
 <a name="zh-cn_topic_0237152334_table18101312318"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0237152334_row21012382317"><th class="cellrowborder" valign="top" width="15.6%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0237152334_p171112382318"><a name="zh-cn_topic_0237152334_p171112382318"></a><a name="zh-cn_topic_0237152334_p171112382318"></a>TypeName</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.849999999999998%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0237152334_p21183192318"><a name="zh-cn_topic_0237152334_p21183192318"></a><a name="zh-cn_topic_0237152334_p21183192318"></a>Content</p>
+<th class="cellrowborder" valign="top" width="29.470000000000002%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0237152334_p21183192318"><a name="zh-cn_topic_0237152334_p21183192318"></a><a name="zh-cn_topic_0237152334_p21183192318"></a>Content</p>
 </th>
-<th class="cellrowborder" valign="top" width="38.550000000000004%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0237152334_p21116316232"><a name="zh-cn_topic_0237152334_p21116316232"></a><a name="zh-cn_topic_0237152334_p21116316232"></a>描述</p>
+<th class="cellrowborder" valign="top" width="29.93%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0237152334_p21116316232"><a name="zh-cn_topic_0237152334_p21116316232"></a><a name="zh-cn_topic_0237152334_p21116316232"></a>描述</p>
 </th>
 <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0237152334_p12111832231"><a name="zh-cn_topic_0237152334_p12111832231"></a><a name="zh-cn_topic_0237152334_p12111832231"></a>是否默认收集</p>
 </th>
@@ -19,10 +19,10 @@
 </thead>
 <tbody><tr id="zh-cn_topic_0237152334_row17118322316"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p121114320238"><a name="zh-cn_topic_0237152334_p121114320238"></a><a name="zh-cn_topic_0237152334_p121114320238"></a>System</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p9173483258"><a name="zh-cn_topic_0237152334_p9173483258"></a><a name="zh-cn_topic_0237152334_p9173483258"></a>HardWareInfo</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p9173483258"><a name="zh-cn_topic_0237152334_p9173483258"></a><a name="zh-cn_topic_0237152334_p9173483258"></a>HardWareInfo</p>
 <p id="zh-cn_topic_0237152334_p6181348172513"><a name="zh-cn_topic_0237152334_p6181348172513"></a><a name="zh-cn_topic_0237152334_p6181348172513"></a>RunTimeInfo</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p698955702519"><a name="zh-cn_topic_0237152334_p698955702519"></a><a name="zh-cn_topic_0237152334_p698955702519"></a>收集现在操作系统的状态信息：<a name="zh-cn_topic_0237152334_ul9921101417234"></a><a name="zh-cn_topic_0237152334_ul9921101417234"></a><ul id="zh-cn_topic_0237152334_ul9921101417234"><li>HardWareInfo</li><li>Cpu（cat /proc/cpuinfo）</li><li>内存（cat /proc/meminfo）</li><li>磁盘（df -h）</li><li>RunTimeInfo：</li><li>topStatus（ps ux）</li><li>ioStat（iostat -xm 2 3）</li><li>网络状态（cat /proc/net/dev）</li><li>内存使用情况（free -m）</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p698955702519"><a name="zh-cn_topic_0237152334_p698955702519"></a><a name="zh-cn_topic_0237152334_p698955702519"></a>收集现在操作系统的状态信息：<a name="zh-cn_topic_0237152334_ul9921101417234"></a><a name="zh-cn_topic_0237152334_ul9921101417234"></a><ul id="zh-cn_topic_0237152334_ul9921101417234"><li>HardWareInfo</li><li>Cpu（cat /proc/cpuinfo）</li><li>内存（cat /proc/meminfo）</li><li>磁盘（df -h）</li><li>RunTimeInfo：</li><li>topStatus（ps ux）</li><li>ioStat（iostat -xm 2 3）</li><li>网络状态（cat /proc/net/dev）</li><li>内存使用情况（free -m）</li></ul>
 </div>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p11283122310"><a name="zh-cn_topic_0237152334_p11283122310"></a><a name="zh-cn_topic_0237152334_p11283122310"></a>是</p>
@@ -30,19 +30,19 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row61219372311"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p111263102314"><a name="zh-cn_topic_0237152334_p111263102314"></a><a name="zh-cn_topic_0237152334_p111263102314"></a>Database</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p103186476250"><a name="zh-cn_topic_0237152334_p103186476250"></a><a name="zh-cn_topic_0237152334_p103186476250"></a>具体列表见<a href="gs_collector工具支持收集的系统表和视图列表.md#zh-cn_topic_0237637502_table15624104912196">表1</a>。</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p103186476250"><a name="zh-cn_topic_0237152334_p103186476250"></a><a name="zh-cn_topic_0237152334_p103186476250"></a>具体列表见<a href="zh-cn_topic_0249632269.md#zh-cn_topic_0237637502_table15624104912196">表1</a>。</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p127501419122615"><a name="zh-cn_topic_0237152334_p127501419122615"></a><a name="zh-cn_topic_0237152334_p127501419122615"></a>收集系统视图或者系统表的内容。</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p127501419122615"><a name="zh-cn_topic_0237152334_p127501419122615"></a><a name="zh-cn_topic_0237152334_p127501419122615"></a>收集系统视图或者系统表的内容。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p022210297269"><a name="zh-cn_topic_0237152334_p022210297269"></a><a name="zh-cn_topic_0237152334_p022210297269"></a>是，默认收集pg_locks，pg_stat_activity和 pg_thread_wait_status三个视图的信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152334_row101318382316"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p6133313233"><a name="zh-cn_topic_0237152334_p6133313233"></a><a name="zh-cn_topic_0237152334_p6133313233"></a>Log</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p8657174819262"><a name="zh-cn_topic_0237152334_p8657174819262"></a><a name="zh-cn_topic_0237152334_p8657174819262"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p8657174819262"><a name="zh-cn_topic_0237152334_p8657174819262"></a><a name="zh-cn_topic_0237152334_p8657174819262"></a>Datanode</p>
 <p id="zh-cn_topic_0237152334_p46574483267"><a name="zh-cn_topic_0237152334_p46574483267"></a><a name="zh-cn_topic_0237152334_p46574483267"></a>ClusterManager</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul122531334158"></a><a name="zh-cn_topic_0237152334_ul122531334158"></a><ul id="zh-cn_topic_0237152334_ul122531334158"><li>收集Datanode的pg_log和gs_profile</li><li>收集ClusterManager的日志信息包括：<a name="zh-cn_topic_0237152334_ul19311954111513"></a><a name="zh-cn_topic_0237152334_ul19311954111513"></a><ul id="zh-cn_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul122531334158"></a><a name="zh-cn_topic_0237152334_ul122531334158"></a><ul id="zh-cn_topic_0237152334_ul122531334158"><li>收集Datanode的pg_log和gs_profile</li><li>收集ClusterManager的日志信息包括：<a name="zh-cn_topic_0237152334_ul19311954111513"></a><a name="zh-cn_topic_0237152334_ul19311954111513"></a><ul id="zh-cn_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p1014133162314"><a name="zh-cn_topic_0237152334_p1014133162314"></a><a name="zh-cn_topic_0237152334_p1014133162314"></a>是</p>
@@ -50,9 +50,9 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row71412352318"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p1514135239"><a name="zh-cn_topic_0237152334_p1514135239"></a><a name="zh-cn_topic_0237152334_p1514135239"></a>Config</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p20995135132817"><a name="zh-cn_topic_0237152334_p20995135132817"></a><a name="zh-cn_topic_0237152334_p20995135132817"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p20995135132817"><a name="zh-cn_topic_0237152334_p20995135132817"></a><a name="zh-cn_topic_0237152334_p20995135132817"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul498532372610"></a><a name="zh-cn_topic_0237152334_ul498532372610"></a><ul id="zh-cn_topic_0237152334_ul498532372610"><li>收集Datanode的配置信息:<a name="zh-cn_topic_0237152334_ul1741811415273"></a><a name="zh-cn_topic_0237152334_ul1741811415273"></a><ul id="zh-cn_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul498532372610"></a><a name="zh-cn_topic_0237152334_ul498532372610"></a><ul id="zh-cn_topic_0237152334_ul498532372610"><li>收集Datanode的配置信息:<a name="zh-cn_topic_0237152334_ul1741811415273"></a><a name="zh-cn_topic_0237152334_ul1741811415273"></a><ul id="zh-cn_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p515933239"><a name="zh-cn_topic_0237152334_p515933239"></a><a name="zh-cn_topic_0237152334_p515933239"></a>是</p>
@@ -60,19 +60,19 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row181513312235"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p81518317232"><a name="zh-cn_topic_0237152334_p81518317232"></a><a name="zh-cn_topic_0237152334_p81518317232"></a>Gstack</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p979113464295"><a name="zh-cn_topic_0237152334_p979113464295"></a><a name="zh-cn_topic_0237152334_p979113464295"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p979113464295"><a name="zh-cn_topic_0237152334_p979113464295"></a><a name="zh-cn_topic_0237152334_p979113464295"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p41510310234"><a name="zh-cn_topic_0237152334_p41510310234"></a><a name="zh-cn_topic_0237152334_p41510310234"></a>利用gstack命令得到Datanode的当前堆栈信息。</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p41510310234"><a name="zh-cn_topic_0237152334_p41510310234"></a><a name="zh-cn_topic_0237152334_p41510310234"></a>利用gstack命令得到Datanode的当前堆栈信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p12151316239"><a name="zh-cn_topic_0237152334_p12151316239"></a><a name="zh-cn_topic_0237152334_p12151316239"></a>否</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152334_row1715638237"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p2151038237"><a name="zh-cn_topic_0237152334_p2151038237"></a><a name="zh-cn_topic_0237152334_p2151038237"></a>CoreDump</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p86827507318"><a name="zh-cn_topic_0237152334_p86827507318"></a><a name="zh-cn_topic_0237152334_p86827507318"></a>gaussdb</p>
-<p id="zh-cn_topic_0237152334_p16196104803113"><a name="zh-cn_topic_0237152334_p16196104803113"></a><a name="zh-cn_topic_0237152334_p16196104803113"></a>gs_ctl</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p86827507318"><a name="zh-cn_topic_0237152334_p86827507318"></a><a name="zh-cn_topic_0237152334_p86827507318"></a>gs_ctl、gaussdb、GaussMaster、AioWorker、AlarmChecker、Archiver、Auditor、AutoVacLauncher、AutoVacWorker、AuxMain、BackendMode、BgWriter、BootStrap、Catchup、CBMWriter、Checkpointer、CommAuxStream、CommPoolCleane、CommRcvStream、CommRcvWorker、CommSendStream、CpMonitor、DataRcvWriter、DataReceiver、DataSender、ExtremeRTO、FencedUDFMaster、Heartbeater、JobExecutor、JobScheduler</p>
+<p id="p14874154519471"><a name="p14874154519471"></a><a name="p14874154519471"></a>LWLockMonitor、PageWriter、ParallelRecov、PercentileJob、Reaper、RemoteSrv、StartupProcess、StatCollector、Stream、SysLogger、ThdPoolListener、TwoPhaseCleaner、WalRcvWriter、WalReceiver、WalSender、WalWriter、WDRSnapshot、WlmArbiter、WlmCollector、WlmMonitor</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p5229047123010"><a name="zh-cn_topic_0237152334_p5229047123010"></a><a name="zh-cn_topic_0237152334_p5229047123010"></a>通过时间筛选gaussdb进程的core文件。</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p5229047123010"><a name="zh-cn_topic_0237152334_p5229047123010"></a><a name="zh-cn_topic_0237152334_p5229047123010"></a>通过时间筛选gaussdb进程的core文件。</p>
 <div class="caution" id="zh-cn_topic_0237152334_note1316119421297"><a name="zh-cn_topic_0237152334_note1316119421297"></a><a name="zh-cn_topic_0237152334_note1316119421297"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><p id="zh-cn_topic_0237152334_p016104214295"><a name="zh-cn_topic_0237152334_p016104214295"></a><a name="zh-cn_topic_0237152334_p016104214295"></a>关于Core的配置和方式请按照如下要求：在/proc/sys/opengauss/core_pattern文件中添加core文件的格式：core-%e-%p-%t。</p>
 </div></div>
 </td>
@@ -81,18 +81,18 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row41613192315"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p71613318234"><a name="zh-cn_topic_0237152334_p71613318234"></a><a name="zh-cn_topic_0237152334_p71613318234"></a>XLog</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p566195453213"><a name="zh-cn_topic_0237152334_p566195453213"></a><a name="zh-cn_topic_0237152334_p566195453213"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p566195453213"><a name="zh-cn_topic_0237152334_p566195453213"></a><a name="zh-cn_topic_0237152334_p566195453213"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p0174312313"><a name="zh-cn_topic_0237152334_p0174312313"></a><a name="zh-cn_topic_0237152334_p0174312313"></a>通过时间筛选收集xlog。</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p0174312313"><a name="zh-cn_topic_0237152334_p0174312313"></a><a name="zh-cn_topic_0237152334_p0174312313"></a>通过时间筛选收集xlog。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p16174392310"><a name="zh-cn_topic_0237152334_p16174392310"></a><a name="zh-cn_topic_0237152334_p16174392310"></a>否</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152334_row6136229183317"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p9138429193316"><a name="zh-cn_topic_0237152334_p9138429193316"></a><a name="zh-cn_topic_0237152334_p9138429193316"></a>Plan</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p713892916335"><a name="zh-cn_topic_0237152334_p713892916335"></a><a name="zh-cn_topic_0237152334_p713892916335"></a>*</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p713892916335"><a name="zh-cn_topic_0237152334_p713892916335"></a><a name="zh-cn_topic_0237152334_p713892916335"></a>*</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集计划复现信息：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>用户输入*表示收集所有数据库上的计划复现信息。</li><li>用户输入具体的数据库名称表示收集指定数据库上的计划复现信息。</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集计划复现信息：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>用户输入*表示收集所有数据库上的计划复现信息。</li><li>用户输入具体的数据库名称表示收集指定数据库上的计划复现信息。</li></ul>
 </div>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>否</p>
@@ -100,6 +100,7 @@
 </tr>
 </tbody>
 </table>
+
 
 ## 前提条件<a name="zh-cn_topic_0237152334_zh-cn_topic_0059778085_s7bffe8e9bdec4735885781573a71fb91"></a>
 
