@@ -76,9 +76,8 @@ plsql_body
 
       -   DEFAULT
       -   OFF
-
-      + 指定默认值。
-
+      -   指定默认值
+      
     - **from current**
 
       取当前会话中的值设置为configuration\_parameter的值。
