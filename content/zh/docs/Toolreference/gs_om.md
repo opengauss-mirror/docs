@@ -453,32 +453,33 @@ gs\_om参数可以分为如下几类：
     Successfully started .
     ```
 
--   停止openGauss。
+- 停止openGauss。
 
-    ```
-    gs_om -t stop
-    Stopping cluster.
-    =========================================
-    Successfully stopped cluster.
-    =========================================
-    End stop cluster.
-    ```
+  ```
+  gs_om -t status --detail
+  Stopping cluster.
+  =========================================
+  Successfully stopped cluster.
+  =========================================
+  End stop cluster.
+  ```
 
--   查看openGauss详细状态信息，含实例状态信息。
+- 查看openGauss详细状态信息，含实例状态信息。
 
-    ```
-    [   Cluster State   ]
-    
-    cluster_state   : Normal
-    redistributing  : No
-    current_az      : AZ_ALL
-    
-    [  Datanode State   ]
-    
-    node               node_ip         instance                                 state            | node               node_ip         instance                                 state
-    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    1  hostname1 10.10.10.1   6001 /opt/huawei/install/data/dn1 P Primary Normal | 2 hostname2 10.10.10.2    6002 /opt/huawei/install/data/dn1 S Standby Normal
-    ```
+  ```
+  gs_om -t det
+  [   Cluster State   ]
+  
+  cluster_state   : Normal
+  redistributing  : No
+  current_az      : AZ_ALL
+  
+  [  Datanode State   ]
+  
+  node               node_ip         instance                                 state            | node               node_ip         instance                                 state
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1  hostname1 10.10.10.1   6001 /opt/huawei/install/data/dn1 P Primary Normal | 2 hostname2 10.10.10.2    6002 /opt/huawei/install/data/dn1 S Standby Normal
+  ```
 
 -   在openGauss上执行如下命令，生成配置文件。
 

@@ -72,7 +72,6 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
     gs_initdb [OPTION]... [DATADIR]
     ```
 
-    OPTION参数请参见[zh-cn\_topic\_0249632266.md](zh-cn_topic_0249632266.md)。
 
 
 ## 命令参考<a name="section01341136122018"></a>
