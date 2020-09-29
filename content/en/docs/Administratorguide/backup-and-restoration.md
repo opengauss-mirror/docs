@@ -4,12 +4,7 @@
 
 - [Overview](#overview)
 - [Physical Backup and Restoration](#physical-backup-and-restoration)
-    - [gs\_basebackup](#gs\_basebackup)
-    - [PITR Recovery](#PITR Recovery)
 - [Logical Backup and Restoration](#logical-backup-and-restoration)
-    - [gs\_dump](#gs\_dump)
-    - [gs\_dumpall](#gs\_dumpall)
-    - [gs\_restore](#gs\_restore)
 
 
 ## Overview
@@ -122,11 +117,11 @@ Backup and restoration can be logically or physically performed.
 
 #### Background<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>
 
-After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports only hot backup and does not support compressed backup.
+After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports  hot backup and  compressed backup.
 
 ![](public_sys-resources/icon-note.gif) **NOTE:** 
 -   **gs\_basebackup**  supports only full backup.
--   **gs\_basebackup**  supports only hot backup and does not support compressed backup.
+-   **gs\_basebackup**  supports hot backup and compressed backup.
 -   **gs\_basebackup**  cannot back up tablespaces containing absolute paths on the same server. This is because the absolute path is unique on the same machine, and brings about conflicts. However, it can back up tablespaces containing absolute paths on different machines.
 -   If the functions of incremental checkpoint and dual-write are enabled,  **gs\_basebackup**  also backs up dual-write files.
 -   If the  **pg\_xlog**  directory is a soft link, no soft link is created during backup. Data is directly backed up to the  **pg\_xlog**  directory in the destination path.
@@ -376,7 +371,7 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 **gs\_dump**  can export database information to a plain-text SQL script file or archive file.
 
 -   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use   **gsql ** to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
--   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  [**gs\_restore**](gs_restore.md#EN-US_TOPIC_0250273519)  to restore the database. The system allows users to select or even to sort the content to be imported.
+-   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  **gs\_restore**to restore the database. The system allows users to select or even to sort the content to be imported.
 
 #### Functions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
@@ -918,11 +913,6 @@ Example 6: Use  **gs\_dump**  to export only the information about the views tha
     gsql -p 37300 postgres -r -f backup/MPPDB_backup.sql
     ```
 
-
-#### Helpful Links<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s04aec05b522242268c264d0964818765"></a>
-
-[gs\_dumpall](gs_dumpall.md#EN-US_TOPIC_0250273518)  and  [gs\_restore](gs_restore.md#EN-US_TOPIC_0250273519)
-
 ### gs\_dumpall
 
 #### Background<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_section31221112348"></a>
@@ -940,7 +930,7 @@ When  **gs\_dumpall**  is used to export data, other users can still access \(re
 -   **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
 -   **gs\_dumpall**  invokes  **gs\_dump**  to export SQL scripts from each openGauss database, which contain all the SQL statements required to restore databases.
 
-The exported files are both plain-text SQL scripts. Use  [gsql](en-us_topic_0085031848.md)  to execute them to restore openGauss databases.
+The exported files are both plain-text SQL scripts. Use  gsql to execute them to restore openGauss databases.
 
 #### Precautions<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
@@ -1149,7 +1139,7 @@ Connection parameters:
 
 #### Notice<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_sc99dfbcba3eb44e59598baa7edd2d140"></a>
 
-**gs\_dumpall**  internally invokes  **gs\_dump**. For details about the diagnosis information, see  [gs\_dump](gs_dump.md#EN-US_TOPIC_0250273517).
+**gs\_dumpall**  internally invokes  **gs\_dump**. For details about the diagnosis information, see  gs\_dump.
 
 Once  **gs\_dumpall**  is restored, run ANALYZE on each database so that the optimizer can provide useful statistics.
 
@@ -1171,10 +1161,6 @@ gs_dump[port='37300'][dbname='postgres'][2018-06-27 09:55:46]: total time: 55567
 gs_dumpall[port='37300'][2018-06-27 09:55:46]: dumpall operation successful
 gs_dumpall[port='37300'][2018-06-27 09:55:46]: total time: 56088  ms
 ```
-
-#### Helpful Links<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_s9ed79eb3e2564786a6823616c460fc00"></a>
-
-[gs\_dump](gs_dump.md#EN-US_TOPIC_0250273517),  [gs\_restore](gs_restore.md#EN-US_TOPIC_0250273519)
 
 ### gs\_restore
 
@@ -1230,7 +1216,7 @@ Common parameters
 
     Value range:
 
-    -   **c/custom**: The archive form is the customized format in  [gs\_dump](gs_dump.md#EN-US_TOPIC_0250273517).
+    -   **c/custom**: The archive form is the customized format in  gs\_dump.
     -   **d/directory**: The archive form is a directory archive format.
     -   **t/tar**: The archive form is a .tar archive format.
 
@@ -1558,8 +1544,3 @@ gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -a -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 ```
-
-#### Helpful Links<a name="en-us_topic_0249632267_en-us_topic_0237152343_en-us_topic_0059777561_sd2827da1c60248c0b0bfffc406b9f668"></a>
-
-[gs\_dump](gs_dump.md#EN-US_TOPIC_0250273517)  and  [gs\_dumpall](gs_dumpall.md#EN-US_TOPIC_0250273518)
-
