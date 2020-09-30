@@ -14,7 +14,7 @@ For database security purposes, openGauss provides two backup types, multiple ba
 Backup and restoration can be logically or physically performed.
 
 -   Logical backup and restoration: backs up data by logically exporting data. This method can dump data that is backed up at a certain time point, and restore data only to this backup point. A logical backup does not back up data processed between failure occurrence and the last backup. It applies to scenarios where data rarely changes. Such data damaged due to misoperation can be quickly restored using a logical backup. To restore all the data in a database through logical backup, rebuild a database and import the backup data. Logical backup is not recommended for databases requiring high data availability because it takes a long time for data restoration. Logical backup is a major approach to migrate and transfer data because it can be performed on any platform.
--   Physical backup and restoration: copies physical files in the unit of disk blocks from the primary node to the standby node to back up a database. A database can be restored using backup files, such as data files and archive log files. Physical backup is usually used for full backup, quickly backing up and restoring data with low costs if properly planned.
+-   Physical backup and restoration: copies physical files in the unit of disk blocks to back up a database. A database can be restored using backup files, such as data files and archive log files. Physical backup is usually used for full backup, quickly backing up and restoring data with low costs if properly planned.
 
     The two data backup and restoration solutions supported by openGauss are as follows. Methods for restoring data in case of an exception differ for different backup and restoration solutions.
 
@@ -115,100 +115,143 @@ Backup and restoration can be logically or physically performed.
 
 ### gs\_basebackup
 
-#### Background<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>
+#### Background
 
-After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports  hot backup and  compressed backup.
+After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports hot backup and compressed backup.
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
+![](C:/Users/lijun/Desktop/opengauss/docs/content/en/docs/Toolreference/public_sys-resources/icon-note.gif) **NOTE:** 
+
 -   **gs\_basebackup**  supports only full backup.
+
 -   **gs\_basebackup**  supports hot backup and compressed backup.
+
 -   **gs\_basebackup**  cannot back up tablespaces containing absolute paths on the same server. This is because the absolute path is unique on the same machine, and brings about conflicts. However, it can back up tablespaces containing absolute paths on different machines.
+
 -   If the functions of incremental checkpoint and dual-write are enabled,  **gs\_basebackup**  also backs up dual-write files.
+
 -   If the  **pg\_xlog**  directory is a soft link, no soft link is created during backup. Data is directly backed up to the  **pg\_xlog**  directory in the destination path.
 
-#### Prerequisites<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
+-   If the backup permission is revoked during the backup, the backup may fail or the backup data may be unavailable.
 
--   The openGauss database can be connected. Link replication is enabled in  **pg\_hba.conf**, and at least one  **max\_wal\_senders**  is configured and available.
+-   openGauss does not support version upgrade.
+
+#### Prerequisites<a name="en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
+
+-   The openGauss database can be connected.
+
+-   User permissions are not revoked during the backup.
+
+-   In the  **pg\_hba.conf**  file, the replication connection is allowed and the connection is established by a system administrator.
+
+-   If the Xlog transmission mode is  **stream**, the number of  **max\_wal\_senders**  must be configured to at least one.
+
+-   If the Xlog transmission mode is  **fetch**, the  **wal\_keep\_segments**  parameter must be set to a large value so that logs are not removed before the backup ends.
+
 -   During the restoration, backup files exist in the backup directory on all the nodes. If backup files are lost on any node, copy them to it from another node.
 
-#### Syntax<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
 
--   Display help information.
+#### Syntax<a name="en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
 
-    ```
-    gs_basebackup -? | --help
-    ```
+- Display help information.
 
--   Display version information.
+  ```
+  gs_basebackup -? | --help
+  ```
 
-    ```
-    gs_basebackup -V | --version
-    ```
+- Display version information.
+
+  ```
+  gs_basebackup -V | --version
+  ```
 
 
-#### Parameter Description<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_s2fa71feeaad041f293de868e52bb5907"></a>
+#### Parameter Description<a name="en-us_topic_0237152406_en-us_topic_0059777806_s2fa71feeaad041f293de868e52bb5907"></a>
 
 The  **gs\_basebackup**  tool can use the following types of parameters:
 
--   -D directory
+- -D directory
 
-    Directory for storing backup files. This parameter is mandatory.
-
-
--   Common parameters
-    -   -c, --checkpoint=fast|spread
-
-        Sets the checkpoint mode to  **fast**  or  **spread**  \(default\).
-
-    -   -l, --label=LABEL
-
-        Adds tags for the backup.
-
-    -   -P, --progress
-
-        Enables the progress report.
-
-    -   -v, --verbose
-
-        Enables the verbose mode.
-
-    -   -V, --version
-
-        Prints the version and exits.
-
-    -   -?, --help
-
-        Displays  **gs\_basebackup**  command parameters.
+  Directory for storing backup files. This parameter is mandatory.
 
 
--   Connection parameters
-    -   -h, --host=HOSTNAME
+- Common parameters
 
-        Specifies the host name of the machine on which the server is running or the directory for the Unix-domain socket.
+  - -c, --checkpoint=fast|spread
 
-    -   -p, --port=PORT
+    Sets the checkpoint mode to  **fast**  or  **spread**  \(default\).
 
-        Specifies the port number of the database server.
+  - -l, --label=LABEL
 
-        You can modify the default port number using this parameter.
+    Adds tags for the backup.
 
-    -   -U, --username=USERNAME
+  - -P, --progress
 
-        Specifies the user that connects to the database.
+    Enables the progress report.
 
-    -   -s, --status-interval=INTERVAL
+  - -v, --verbose
 
-        Specifies the time for sending status packets to the server, in seconds.
+    Enables the verbose mode.
 
-    -   -w,--no-password
+  - -V, --version
 
-        Never issues a password prompt.
+    Prints the version and exits.
 
-    -   -W, --password
+  - -?, --help
 
-        Issues a password prompt when the  **-U**  parameter is used to connect to a local or remote database.
+    Displays  **gs\_basebackup**  command parameters.
+
+  - -T, –tablespace-mapping=olddir=newdir
+
+    During the backup, the tablespace in the  **olddir**  directory is relocated to the  **newdir**  directory. For this to take effect,  **olddir**  must exactly match the path where the tablespace is located \(but it is not an error if the backup does not contain the tablespaces in  **olddir**\).  **olddir**  and  **newdir**  must be absolute paths. If a path happens to contain an equal sign \(=\), you can escape it with a backslash \(\\\). This option can be used multiple times for multiple tablespaces.
+
+  - -F, –format=plain|tar
+
+    Sets the output format to  **plain**  \(default\) or  **tar**. If this parameter is not set, the default value  **–format=plain**  is used. The plain format writes the output as a flat file, using the same layout as the current data directory and tablespace. When the cluster has no extra tablespace, the entire database is placed in the target directory. If the cluster contains additional tablespaces, the primary data directory will be placed in the target directory, but all other tablespaces will be placed in the same absolute path on the server. The tar mode writes the output as a tar file in the target directory. The primary data directory is written to a file named  **base.tar**, and other tablespaces are named after their OIDs. The generated .tar package must be decompressed using the  **gs\_tar**  command.
+
+  - -X, –xlog-method=fetch|stream
+
+    Sets the Xlog transmission mode. If this parameter is not set, the default value  **–xlog-method=stream**  is used. The required write-ahead log files \(WALs\) are included in the backup. This includes all WALs generated during the backup. In fetch mode, WAL files are collected at the end of the backup. Therefore, the  **wal\_keep\_segments**  parameter must be set to a large value so that logs are not removed before the backup ends. If it has been rotated when the log is to be transmitted, the backup fails and is unavailable. In stream mode, WALs are streamed when a backup is created. This will open a second connection to the server and start streaming WALs while the backup is running. Therefore, it will use up to two connections configured by the  **max\_wal\_senders**  parameter. As long as the client can receive WALs, no additional WALs need to be stored on the host.
+
+  - -x, –xlog
+
+    Equivalent to using  **-X**  with the fetch method.
+
+  - -Z –compress=level
+
+    Enables gzip compression for the output of the tar file and sets the compression level \(0 to 9, where 0 indicates no compression and 9 indicates the best compression\). The compression is available only when the tar format is used. The suffix .gz is automatically added to the end of all .tar file names.
+
+  - -z
+
+    Enables gzip compression for tar file output and uses the default compression level. The compression is available only when the tar format is used. The suffix .gz is automatically added to the end of all .tar file names.
 
 
+- Connection parameters
+
+  - -h, --host=HOSTNAME
+
+    Specifies the host name of the machine on which the server is running or the directory for the Unix-domain socket.
+
+  - -p, --port=PORT
+
+    Specifies the port number of the database server.
+
+    You can modify the default port number using this parameter.
+
+  - -U, --username=USERNAME
+
+    Specifies the user that connects to the database.
+
+  - -s, --status-interval=INTERVAL
+
+    Specifies the time for sending status packets to the server, in seconds.
+
+  - -w,--no-password
+
+    Never issues a password prompt.
+
+  - -W, --password
+
+    Issues a password prompt when the  **-U**  parameter is used to connect to a local or remote database.
 
 #### Example<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
 
@@ -370,7 +413,7 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 
 **gs\_dump**  can export database information to a plain-text SQL script file or archive file.
 
--   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use   **gsql ** to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
+-   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use **gsql **to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
 -   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  **gs\_restore**to restore the database. The system allows users to select or even to sort the content to be imported.
 
 #### Functions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
