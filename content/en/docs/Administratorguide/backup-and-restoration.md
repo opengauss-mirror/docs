@@ -413,7 +413,7 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 
 **gs\_dump**  can export database information to a plain-text SQL script file or archive file.
 
--   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use **gsql **to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
+-   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use gsql to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
 -   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  **gs\_restore**to restore the database. The system allows users to select or even to sort the content to be imported.
 
 #### Functions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
