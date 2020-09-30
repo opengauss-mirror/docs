@@ -15,7 +15,7 @@ When  **gs\_dumpall**  is used to export data, other users can still access \(re
 -   **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
 -   **gs\_dumpall**  invokes  **gs\_dump**  to export SQL scripts from each openGauss database, which contain all the SQL statements required to restore databases.
 
-The exported files are both plain-text SQL scripts. Use  [gsql](en-us_topic_0085031848.md)  to execute them to restore openGauss databases.
+The exported files are both plain-text SQL scripts. Use  gsql to execute them to restore openGauss databases.
 
 ## Precautions<a name="en-us_topic_0237152336_en-us_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 

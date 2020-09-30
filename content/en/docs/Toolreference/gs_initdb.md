@@ -32,33 +32,34 @@ During installation, you are advised to use the  **-D**  parameter to call  **gs
 **Procedure**
 
 1.  Log in as the OS user  **omm**  to the primary database node.
-2.  Plan the database directory.
-    1.  Switch to user  **root**.
+2. Plan the database directory.
 
-        ```
-        su - root
-        ```
+   a. Switch to user  **root**.
 
-    2.  Enter the username and password as prompted.
+   ```
+   su - root
+   ```
 
-3.  Go to the  **/opt/gaussdb**  directory and create the  **data1**  directory.
+   b. Enter the username and password as prompted.
 
-    ```
-    cd /opt/gaussdb
-    mkdir data1
-    ```
+3. Go to the  **/opt/gaussdb**  directory and create the  **data1**  directory.
 
-    1.  Allocate the ownership of the  **data1**  directory to the database user omm. dbgrp is the user group that the omm belongs to.
+   ```
+   cd /opt/gaussdb
+   mkdir data1
+   ```
 
-        ```
-        chown omm:dbgrp data1
-        ```
+   a. Allocate the ownership of the  **data1**  directory to the database user omm. dbgrp is the user group that the omm belongs to.
 
-    2.  Exit user  **root**.
+   ```
+   chown omm:dbgrp data1
+   ```
 
-        ```
-        exit
-        ```
+   b. Exit user  **root**.
+
+   ```
+   exit
+   ```
 
 4.  Run the  **gs\_initdb**  command to initialize the database.
 

@@ -18,7 +18,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
     >-   After the value of  **use\_workload\_manager**  changes from  **off**  to  **on**, statistics about storage resources when  **use\_workload\_manager**  is  **off**  are not collected. To collect statistics about such resources, run the following statement:  
     >    ```  
     >    select gs_wlm_readjust_user_space(0);  
-    >    ```  
+    >    ```
 
 
 **Default value**:  **on**
@@ -202,7 +202,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## resource\_track\_duration<a name="en-us_topic_0237124729_section347574425112"></a>
 
-**Parameter description**: Specifies the minimum statement execution time that determines whether information about jobs of a statement recorded in the real-time view will be dumped to a historical view after the statement is executed. Job information will be dumped from the real-time view \(with the suffix  **statistics**\) to a historical view \(with the suffix  **history**\) if the statement execution time is no less than this value. This parameter is valid only when  [enable\_resource\_track](#en-us_topic_0237124729_en-us_topic_0059777791_sb8ca264785d649368247597883d52ffd)  is set to  **on**.
+**Parameter description**: Specifies the minimum statement execution time that determines whether information about jobs of a statement recorded in the real-time view will be dumped to a historical view after the statement is executed. Job information will be dumped from the real-time view \(with the suffix  **statistics**\) to a historical view \(with the suffix  **history**\) if the statement execution time is no less than this value. This parameter is valid only when  **enable\_resource\_track** is set to  **on**.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

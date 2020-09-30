@@ -61,7 +61,7 @@ headless: true
 		-   [通过客户端工具执行SQL]({{< relref "./docs/Quickstart/通过客户端工具执行SQL.md" >}})
 		-   [通过JDBC执行SQL]({{< relref "./docs/Quickstart/通过JDBC执行SQL.md" >}})
 	-   [配置运行参数]({{< relref "./docs/Quickstart/配置运行参数.md" >}})
-	    -   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})
+	-   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})
         -   [GUC使用说明]({{< relref "./docs/Developerguide/GUC使用说明.md" >}})
         -   [文件位置]({{< relref "./docs/Developerguide/文件位置.md" >}})
         -   [连接和认证]({{< relref "./docs/Developerguide/连接和认证.md" >}})
@@ -123,7 +123,6 @@ headless: true
         -   [Query]({{< relref "./docs/Developerguide/Query-22.md" >}})
         -   [系统性能快照]({{< relref "./docs/Developerguide/系统性能快照.md" >}})
 	-   [FAQ]({{< relref "./docs/Quickstart/FAQ.md" >}})
-		-   [用户在openGauss节点间的互信丢失]({{< relref "./docs/Quickstart/用户在openGauss节点间的互信丢失.md" >}})
 
 -   [安装指南]({{< relref "./docs/Installation/Installation.md" >}})
    -   [安装概述]({{< relref "./docs/Installation/安装概述.md" >}})
