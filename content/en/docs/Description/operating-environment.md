@@ -10,10 +10,12 @@ openGauss supports:
 
 ## Supported OSs<a name="en-us_topic_0237080615_en-us_topic_0231763749_en-us_topic_0059777704_sa3cc6a5214094aa9b46a22b25ba77c20"></a>
 
--   ARM
-  -   openEuler 20.03 LTS \(Recommended\) 
-  -   Kirin v10
--   X86
-  -   openEuler 20.03 LTS
-  -   CentOS 7.6
+-   Arm:
+    -   openEuler 20.3LTS \(recommended\)
+    -   Kirin V10
+
+-   x86:
+    -   openEuler 20.3LTS
+    -   CentOS 7.6
+
 

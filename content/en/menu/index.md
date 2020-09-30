@@ -10,7 +10,7 @@ headless: true
     -   [Feature Introduction]({{< relref "./docs/Releasenotes/feature-introduction.md" >}})
     -   [Important Notes]({{< relref "./docs/Releasenotes/important-notes.md" >}})
     -   [Known Issues]({{< relref "./docs/Releasenotes/known-issues.md" >}})
-    -   [Common Vulnerabilities and Exposures]({{< relref "./docs/Releasenotes/common-vulnerabilities-and-exposures.md" >}})
+    -   [Common Vulnerabilities and Exposures]({{< relref "./docs/Releasenotes/common-vulnerabilities-and-exposures-(cves).md" >}})
     -   [Source Code]({{< relref "./docs/Releasenotes/source-code.md" >}})
     -   [Contribution]({{< relref "./docs/Releasenotes/contribution.md" >}})
     -   [Acknowledgement]({{< relref "./docs/Releasenotes/acknowledgement.md" >}})

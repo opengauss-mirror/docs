@@ -6,3 +6,5 @@ Currently, a maximum of four standby nodes are supported. If one primary node an
 
 You are advised to deploy one primary node and two standby nodes to ensure reliability and availability.
 
+This is the second release, and the version number is 1.0.1. The ODBC is not modified, and the 1.0.0 version is still used.
+
