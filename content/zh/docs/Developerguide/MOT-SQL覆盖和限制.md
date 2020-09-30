@@ -74,12 +74,16 @@ MOT功能限制：
 -   Varbit
 -   OID
 -   Money
--   无限制的varchar/char
+-   无限制的varchar/character varying
 
 ## 不支持的索引DDL和索引<a name="section39185923"></a>
 
--   在小数和数值类型上创建索引
--   单表创建索引总数\>9
+- 在小数和数值类型上创建索引
+
+- 在可空列上创建索引
+
+- 单表创建索引总数\>9
+
 -   在键大小\>256的表上创建索引
 
     键大小包括以字节为单位的列大小+列附加大小，这是维护索引所需的开销。下表列出了不同列类型的列附加大小。
@@ -108,49 +112,49 @@ MOT功能限制：
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row29602101"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p48960014"><a name="p48960014"></a><a name="p48960014"></a>Varchar</p>
+    <tbody><tr id="row29602101"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p48960014"><a name="p48960014"></a><a name="p48960014"></a>varchar</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.2 "><p id="p6338203"><a name="p6338203"></a><a name="p6338203"></a>N</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.6530612244898%" headers="mcps1.1.4.1.3 "><p id="p43632453"><a name="p43632453"></a><a name="p43632453"></a>4</p>
     </td>
     </tr>
-    <tr id="row57147760"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p65565839"><a name="p65565839"></a><a name="p65565839"></a>Tiny</p>
+    <tr id="row57147760"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p65565839"><a name="p65565839"></a><a name="p65565839"></a>tinyint</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.2 "><p id="p9232767"><a name="p9232767"></a><a name="p9232767"></a>1</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.6530612244898%" headers="mcps1.1.4.1.3 "><p id="p9656680"><a name="p9656680"></a><a name="p9656680"></a>1</p>
     </td>
     </tr>
-    <tr id="row19801257"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p60397945"><a name="p60397945"></a><a name="p60397945"></a>Short</p>
+    <tr id="row19801257"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p60397945"><a name="p60397945"></a><a name="p60397945"></a>smallint</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.2 "><p id="p60395349"><a name="p60395349"></a><a name="p60395349"></a>2</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.6530612244898%" headers="mcps1.1.4.1.3 "><p id="p60185126"><a name="p60185126"></a><a name="p60185126"></a>1</p>
     </td>
     </tr>
-    <tr id="row4795230"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p52869369"><a name="p52869369"></a><a name="p52869369"></a>Int</p>
+    <tr id="row4795230"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p52869369"><a name="p52869369"></a><a name="p52869369"></a>int</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.2 "><p id="p54560509"><a name="p54560509"></a><a name="p54560509"></a>4</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.6530612244898%" headers="mcps1.1.4.1.3 "><p id="p57325072"><a name="p57325072"></a><a name="p57325072"></a>1</p>
     </td>
     </tr>
-    <tr id="row46163608"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p48264776"><a name="p48264776"></a><a name="p48264776"></a>Long</p>
+    <tr id="row46163608"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p48264776"><a name="p48264776"></a><a name="p48264776"></a>longint</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.2 "><p id="p17132764"><a name="p17132764"></a><a name="p17132764"></a>8</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.6530612244898%" headers="mcps1.1.4.1.3 "><p id="p45576637"><a name="p45576637"></a><a name="p45576637"></a>1</p>
     </td>
     </tr>
-    <tr id="row7536549"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p6480739"><a name="p6480739"></a><a name="p6480739"></a>Float</p>
+    <tr id="row7536549"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p6480739"><a name="p6480739"></a><a name="p6480739"></a>float</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.2 "><p id="p55177890"><a name="p55177890"></a><a name="p55177890"></a>4</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.6530612244898%" headers="mcps1.1.4.1.3 "><p id="p40224138"><a name="p40224138"></a><a name="p40224138"></a>2</p>
     </td>
     </tr>
-    <tr id="row26472924"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p63932115"><a name="p63932115"></a><a name="p63932115"></a>Double</p>
+    <tr id="row26472924"><td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.1 "><p id="p63932115"><a name="p63932115"></a><a name="p63932115"></a>double</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.6734693877551%" headers="mcps1.1.4.1.2 "><p id="p11118855"><a name="p11118855"></a><a name="p11118855"></a>8</p>
     </td>
