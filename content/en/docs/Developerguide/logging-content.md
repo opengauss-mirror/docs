@@ -252,7 +252,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||  
 >       to_hex(pid)  
 >FROM pg_stat_activity;  
->```  
+>```
 >-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.  
 >-   Syslog generates its own time stamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.  
 

@@ -129,7 +129,6 @@ headless: true
 		-   [Query]({{< relref "./docs/Developerguide/query-28.md" >}})
 		-   [System Performance Snapshot]({{< relref "./docs/Developerguide/system-performance-snapshot.md" >}})
 	-   [FAQs]({{< relref "./docs/Quickstart/faqs.md" >}})
-		-   [What Should I Do If Mutual Trust Between Nodes in openGauss Is Lost?]({{< relref "./docs/Quickstart/what-should-i-do-if-mutual-trust-between-nodes-in-opengauss-is-lost.md" >}})
 
 -   [Installation Guide]({{< relref "./docs/Installation/Installation.md" >}})
 	-   [Installation Overview]({{< relref "./docs/Installation/installation-overview.md" >}})

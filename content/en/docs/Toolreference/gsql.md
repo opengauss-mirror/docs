@@ -9,7 +9,7 @@
 -   **Connect to the database**: For details, see "Database Usage \> Connecting to a Database \> Using gsql to Connect to a Database \> Remotely Connecting to a Database" in the  _Developer Guide_.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If the  **gsql**  client is used to connect to a database, the connection timeout period will be 5 minutes. If the database has not correctly set up a connection and authenticated the identity of the client within this period,  **gsql**  will time out and exit.
+    >If the  **gsql**  client is used to connect to a database, the connection timeout period will be 5 minutes by default. If the database has not correctly set up a connection and authenticated the identity of the client within this period,  **gsql**  will time out and exit.
     >To resolve this problem, see  [FAQs](#section1780814211263).
 
 -   **Run SQL statements**: Interactively entered SQL statements and specified SQL statements in a file can be run.
@@ -486,11 +486,10 @@ Use the  **gsql**  command to connect to the remote database service. When conne
 
     ```
     CREATE DATABASE human_staff;
-    CREATE DATABASE
     ```
-
-    Ordinarily, input lines end when a command-terminating semicolon is reached. If the command is sent and executed without any error, the command output is displayed on the screen.
-
+    
+Ordinarily, input lines end when a command-terminating semicolon is reached. If the command is sent and executed without any error, the command output is displayed on the screen.
+    
 3.  Execute gsql meta-commands.
 
     The following takes the listing of all openGauss databases and description information as an example.
@@ -2253,7 +2252,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
         >```
 
 
--   gsql: FATAL: sorry, too many clients already, active/non-active: 197/3.
+-   gsql: FATAL: sorry, too many clients already, active/non-active: 2/10/3.
 
     This problem occurs because the number of system connections exceeds the upper limit. Contact the database administrator to release unnecessary sessions.
 

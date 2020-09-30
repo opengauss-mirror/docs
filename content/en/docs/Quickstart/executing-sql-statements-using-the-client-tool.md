@@ -4,7 +4,7 @@ Use the client tool to connect to openGauss and execute an SQL statement.
 
 ## Prerequisites<a name="en-us_topic_0241234243_en-us_topic_0085434673_en-us_topic_0059782025_section47789530115226"></a>
 
-You have connected to openGauss using the client tool. For details about the connection method, see  [Connecting to a Database Locally](connecting-to-a-database-locally.md).
+You have connected to openGauss using the client tool. For details about the connection method, see Connecting to a Database Locally.
 
 ## Executing an SQL Statement<a name="section1755104115165"></a>
 
