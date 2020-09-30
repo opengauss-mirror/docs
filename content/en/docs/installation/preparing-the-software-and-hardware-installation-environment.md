@@ -307,6 +307,3 @@ During the openGauss installation, the user  **root**  is required for remote lo
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >_xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.
-
-
-

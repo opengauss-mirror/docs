@@ -9,9 +9,9 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 <a name="en-us_topic_0237152334_table18101312318"></a>
 <table><thead align="left"><tr id="en-us_topic_0237152334_row21012382317"><th class="cellrowborder" valign="top" width="15.6%" id="mcps1.2.5.1.1"><p id="en-us_topic_0237152334_p171112382318"><a name="en-us_topic_0237152334_p171112382318"></a><a name="en-us_topic_0237152334_p171112382318"></a>TypeName</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.849999999999998%" id="mcps1.2.5.1.2"><p id="en-us_topic_0237152334_p21183192318"><a name="en-us_topic_0237152334_p21183192318"></a><a name="en-us_topic_0237152334_p21183192318"></a>Content</p>
+<th class="cellrowborder" valign="top" width="29.470000000000002%" id="mcps1.2.5.1.2"><p id="en-us_topic_0237152334_p21183192318"><a name="en-us_topic_0237152334_p21183192318"></a><a name="en-us_topic_0237152334_p21183192318"></a>Content</p>
 </th>
-<th class="cellrowborder" valign="top" width="38.550000000000004%" id="mcps1.2.5.1.3"><p id="en-us_topic_0237152334_p21116316232"><a name="en-us_topic_0237152334_p21116316232"></a><a name="en-us_topic_0237152334_p21116316232"></a>Description</p>
+<th class="cellrowborder" valign="top" width="29.93%" id="mcps1.2.5.1.3"><p id="en-us_topic_0237152334_p21116316232"><a name="en-us_topic_0237152334_p21116316232"></a><a name="en-us_topic_0237152334_p21116316232"></a>Description</p>
 </th>
 <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="en-us_topic_0237152334_p12111832231"><a name="en-us_topic_0237152334_p12111832231"></a><a name="en-us_topic_0237152334_p12111832231"></a>Default Collection</p>
 </th>
@@ -19,10 +19,10 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </thead>
 <tbody><tr id="en-us_topic_0237152334_row17118322316"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p121114320238"><a name="en-us_topic_0237152334_p121114320238"></a><a name="en-us_topic_0237152334_p121114320238"></a>System</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p9173483258"><a name="en-us_topic_0237152334_p9173483258"></a><a name="en-us_topic_0237152334_p9173483258"></a>HardWareInfo</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p9173483258"><a name="en-us_topic_0237152334_p9173483258"></a><a name="en-us_topic_0237152334_p9173483258"></a>HardWareInfo</p>
 <p id="en-us_topic_0237152334_p6181348172513"><a name="en-us_topic_0237152334_p6181348172513"></a><a name="en-us_topic_0237152334_p6181348172513"></a>RunTimeInfo</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><div class="p" id="en-us_topic_0237152334_p698955702519"><a name="en-us_topic_0237152334_p698955702519"></a><a name="en-us_topic_0237152334_p698955702519"></a>Collect the status information about the current OS.<a name="en-us_topic_0237152334_ul9921101417234"></a><a name="en-us_topic_0237152334_ul9921101417234"></a><ul id="en-us_topic_0237152334_ul9921101417234"><li>HardWareInfo</li><li>CPU (cat /proc/cpuinfo)</li><li>Memory (cat /proc/meminfo)</li><li>Disk (df -h)</li><li>RunTimeInfo:</li><li>topStatus (ps ux)</li><li>ioStat (iostat -xm 2 3)</li><li>Network status (cat /proc/net/dev)</li><li>Memory usage (free -m)</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="en-us_topic_0237152334_p698955702519"><a name="en-us_topic_0237152334_p698955702519"></a><a name="en-us_topic_0237152334_p698955702519"></a>Collect the status information about the current OS.<a name="en-us_topic_0237152334_ul9921101417234"></a><a name="en-us_topic_0237152334_ul9921101417234"></a><ul id="en-us_topic_0237152334_ul9921101417234"><li>HardWareInfo</li><li>CPU (cat /proc/cpuinfo)</li><li>Memory (cat /proc/meminfo)</li><li>Disk (df -h)</li><li>RunTimeInfo:</li><li>topStatus (ps ux)</li><li>ioStat (iostat -xm 2 3)</li><li>Network status (cat /proc/net/dev)</li><li>Memory usage (free -m)</li></ul>
 </div>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237152334_p11283122310"><a name="en-us_topic_0237152334_p11283122310"></a><a name="en-us_topic_0237152334_p11283122310"></a>Yes</p>
@@ -30,19 +30,19 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row61219372311"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p111263102314"><a name="en-us_topic_0237152334_p111263102314"></a><a name="en-us_topic_0237152334_p111263102314"></a>Database</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p103186476250"><a name="en-us_topic_0237152334_p103186476250"></a><a name="en-us_topic_0237152334_p103186476250"></a>For details, see <a href="system-catalogs-and-views-supported-by-gs_collector.md#en-us_topic_0237637502_table15624104912196">Table 1</a>.</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p103186476250"><a name="en-us_topic_0237152334_p103186476250"></a><a name="en-us_topic_0237152334_p103186476250"></a>For details, see <a href="system-catalogs-and-views-supported-by-gs_collector.md#en-us_topic_0237637502_table15624104912196">Table 1</a>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p127501419122615"><a name="en-us_topic_0237152334_p127501419122615"></a><a name="en-us_topic_0237152334_p127501419122615"></a>Collect system views or system catalogs.</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p127501419122615"><a name="en-us_topic_0237152334_p127501419122615"></a><a name="en-us_topic_0237152334_p127501419122615"></a>Collect system views or system catalogs.</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237152334_p022210297269"><a name="en-us_topic_0237152334_p022210297269"></a><a name="en-us_topic_0237152334_p022210297269"></a>Yes. Information about the <strong id="b5611938111714"><a name="b5611938111714"></a><a name="b5611938111714"></a>pg_locks</strong>, <strong id="b10769144211175"><a name="b10769144211175"></a><a name="b10769144211175"></a>pg_stat_activity</strong>, and <strong id="b5760104615171"><a name="b5760104615171"></a><a name="b5760104615171"></a>pg_thread_wait_status</strong> views is collected by default.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152334_row101318382316"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p6133313233"><a name="en-us_topic_0237152334_p6133313233"></a><a name="en-us_topic_0237152334_p6133313233"></a>Log</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p8657174819262"><a name="en-us_topic_0237152334_p8657174819262"></a><a name="en-us_topic_0237152334_p8657174819262"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p8657174819262"><a name="en-us_topic_0237152334_p8657174819262"></a><a name="en-us_topic_0237152334_p8657174819262"></a>Datanode</p>
 <p id="en-us_topic_0237152334_p46574483267"><a name="en-us_topic_0237152334_p46574483267"></a><a name="en-us_topic_0237152334_p46574483267"></a>ClusterManager</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="en-us_topic_0237152334_ul122531334158"></a><a name="en-us_topic_0237152334_ul122531334158"></a><ul id="en-us_topic_0237152334_ul122531334158"><li>Collect <strong id="b5836133941911"><a name="b5836133941911"></a><a name="b5836133941911"></a>pg_log</strong> and <strong id="b2307134341915"><a name="b2307134341915"></a><a name="b2307134341915"></a>gs_profile</strong> of the Datanode.</li><li>The ClusterManager log information to be collected:<a name="en-us_topic_0237152334_ul19311954111513"></a><a name="en-us_topic_0237152334_ul19311954111513"></a><ul id="en-us_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="en-us_topic_0237152334_ul122531334158"></a><a name="en-us_topic_0237152334_ul122531334158"></a><ul id="en-us_topic_0237152334_ul122531334158"><li>Collect <strong id="b5836133941911"><a name="b5836133941911"></a><a name="b5836133941911"></a>pg_log</strong> and <strong id="b2307134341915"><a name="b2307134341915"></a><a name="b2307134341915"></a>gs_profile</strong> of the data node.</li><li>The ClusterManager log information to be collected:<a name="en-us_topic_0237152334_ul19311954111513"></a><a name="en-us_topic_0237152334_ul19311954111513"></a><ul id="en-us_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237152334_p1014133162314"><a name="en-us_topic_0237152334_p1014133162314"></a><a name="en-us_topic_0237152334_p1014133162314"></a>Yes</p>
@@ -50,9 +50,9 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row71412352318"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p1514135239"><a name="en-us_topic_0237152334_p1514135239"></a><a name="en-us_topic_0237152334_p1514135239"></a>Config</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p20995135132817"><a name="en-us_topic_0237152334_p20995135132817"></a><a name="en-us_topic_0237152334_p20995135132817"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p20995135132817"><a name="en-us_topic_0237152334_p20995135132817"></a><a name="en-us_topic_0237152334_p20995135132817"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><a name="en-us_topic_0237152334_ul498532372610"></a><a name="en-us_topic_0237152334_ul498532372610"></a><ul id="en-us_topic_0237152334_ul498532372610"><li>Collect the Datanode configuration information:<a name="en-us_topic_0237152334_ul1741811415273"></a><a name="en-us_topic_0237152334_ul1741811415273"></a><ul id="en-us_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="en-us_topic_0237152334_ul498532372610"></a><a name="en-us_topic_0237152334_ul498532372610"></a><ul id="en-us_topic_0237152334_ul498532372610"><li>Collect the data node configuration information:<a name="en-us_topic_0237152334_ul1741811415273"></a><a name="en-us_topic_0237152334_ul1741811415273"></a><ul id="en-us_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237152334_p515933239"><a name="en-us_topic_0237152334_p515933239"></a><a name="en-us_topic_0237152334_p515933239"></a>Yes</p>
@@ -60,19 +60,19 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row181513312235"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p81518317232"><a name="en-us_topic_0237152334_p81518317232"></a><a name="en-us_topic_0237152334_p81518317232"></a>Gstack</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p979113464295"><a name="en-us_topic_0237152334_p979113464295"></a><a name="en-us_topic_0237152334_p979113464295"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p979113464295"><a name="en-us_topic_0237152334_p979113464295"></a><a name="en-us_topic_0237152334_p979113464295"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p41510310234"><a name="en-us_topic_0237152334_p41510310234"></a><a name="en-us_topic_0237152334_p41510310234"></a>Run the <strong id="b1544112812259"><a name="b1544112812259"></a><a name="b1544112812259"></a>gstack</strong> command to obtain the current stack information of the Datanode.</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p41510310234"><a name="en-us_topic_0237152334_p41510310234"></a><a name="en-us_topic_0237152334_p41510310234"></a>Run the <strong id="b1544112812259"><a name="b1544112812259"></a><a name="b1544112812259"></a>gstack</strong> command to obtain the current stack information of the data node.</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237152334_p12151316239"><a name="en-us_topic_0237152334_p12151316239"></a><a name="en-us_topic_0237152334_p12151316239"></a>No</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152334_row1715638237"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p2151038237"><a name="en-us_topic_0237152334_p2151038237"></a><a name="en-us_topic_0237152334_p2151038237"></a>CoreDump</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p86827507318"><a name="en-us_topic_0237152334_p86827507318"></a><a name="en-us_topic_0237152334_p86827507318"></a>gaussdb</p>
-<p id="en-us_topic_0237152334_p16196104803113"><a name="en-us_topic_0237152334_p16196104803113"></a><a name="en-us_topic_0237152334_p16196104803113"></a>gs_ctl</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p86827507318"><a name="en-us_topic_0237152334_p86827507318"></a><a name="en-us_topic_0237152334_p86827507318"></a>gs_ctl, gaussdb, GaussMaster, AioWorker, AlarmChecker, Archiver, Auditor, AutoVacLauncher, AutoVacWorker, AuxMain, BackendMode, BgWriter, BootStrap, Catchup, CBMWriter, Checkpointer, CommAuxStream, CommPoolCleane, CommRcvStream, CommRcvWorker, CommSendStream, CpMonitor, DataRcvWriter, DataReceiver, DataSender, ExtremeRTO, FencedUDFMaster, Heartbeater, JobExecutor, JobScheduler</p>
+<p id="p14874154519471"><a name="p14874154519471"></a><a name="p14874154519471"></a>LWLockMonitor, PageWriter, ParallelRecov, PercentileJob, Reaper, RemoteSrv, StartupProcess, StatCollector, Stream, SysLogger, ThdPoolListener, TwoPhaseCleaner, WalRcvWriter, WalReceiver, WalSender, WalWriter, WDRSnapshot, WlmArbiter, WlmCollector, WlmMonitor</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p5229047123010"><a name="en-us_topic_0237152334_p5229047123010"></a><a name="en-us_topic_0237152334_p5229047123010"></a>Filter the core files of the gaussdb process by time.</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p5229047123010"><a name="en-us_topic_0237152334_p5229047123010"></a><a name="en-us_topic_0237152334_p5229047123010"></a>Filter the core files of the gaussdb process by time.</p>
 <div class="caution" id="en-us_topic_0237152334_note1316119421297"><a name="en-us_topic_0237152334_note1316119421297"></a><a name="en-us_topic_0237152334_note1316119421297"></a><span class="cautiontitle"> CAUTION: </span><div class="cautionbody"><p id="en-us_topic_0237152334_p016104214295"><a name="en-us_topic_0237152334_p016104214295"></a><a name="en-us_topic_0237152334_p016104214295"></a>Configure the core as follows: Add the core file format <strong id="b1889275014372"><a name="b1889275014372"></a><a name="b1889275014372"></a>core-%e-%p-%t</strong> to the <strong id="b98415012397"><a name="b98415012397"></a><a name="b98415012397"></a>/proc/sys/opengauss/core_pattern</strong> file.</p>
 </div></div>
 </td>
@@ -81,18 +81,18 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row41613192315"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p71613318234"><a name="en-us_topic_0237152334_p71613318234"></a><a name="en-us_topic_0237152334_p71613318234"></a>XLog</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p566195453213"><a name="en-us_topic_0237152334_p566195453213"></a><a name="en-us_topic_0237152334_p566195453213"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p566195453213"><a name="en-us_topic_0237152334_p566195453213"></a><a name="en-us_topic_0237152334_p566195453213"></a>Datanode</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p0174312313"><a name="en-us_topic_0237152334_p0174312313"></a><a name="en-us_topic_0237152334_p0174312313"></a>Collect Xlogs that are filtered by time.</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p0174312313"><a name="en-us_topic_0237152334_p0174312313"></a><a name="en-us_topic_0237152334_p0174312313"></a>Collect Xlogs that are filtered by time.</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237152334_p16174392310"><a name="en-us_topic_0237152334_p16174392310"></a><a name="en-us_topic_0237152334_p16174392310"></a>No</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152334_row6136229183317"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p9138429193316"><a name="en-us_topic_0237152334_p9138429193316"></a><a name="en-us_topic_0237152334_p9138429193316"></a>Plan</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.849999999999998%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p713892916335"><a name="en-us_topic_0237152334_p713892916335"></a><a name="en-us_topic_0237152334_p713892916335"></a>*</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p713892916335"><a name="en-us_topic_0237152334_p713892916335"></a><a name="en-us_topic_0237152334_p713892916335"></a>*</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.550000000000004%" headers="mcps1.2.5.1.3 "><div class="p" id="en-us_topic_0237152334_p45021115203417"><a name="en-us_topic_0237152334_p45021115203417"></a><a name="en-us_topic_0237152334_p45021115203417"></a>Collect planned reproduction information:<a name="en-us_topic_0237152334_ul16465440162515"></a><a name="en-us_topic_0237152334_ul16465440162515"></a><ul id="en-us_topic_0237152334_ul16465440162515"><li>If you enter an asterisk (*), the planned reproduction information of all databases is collected.</li><li>If you enter a specific database name, the planned reproduction information of the specified database is collected.</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="en-us_topic_0237152334_p45021115203417"><a name="en-us_topic_0237152334_p45021115203417"></a><a name="en-us_topic_0237152334_p45021115203417"></a>Collect planned reproduction information:<a name="en-us_topic_0237152334_ul16465440162515"></a><a name="en-us_topic_0237152334_ul16465440162515"></a><ul id="en-us_topic_0237152334_ul16465440162515"><li>If you enter an asterisk (*), the planned reproduction information of all databases is collected.</li><li>If you enter a specific database name, the planned reproduction information of the specified database is collected.</li></ul>
 </div>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237152334_p8138132953313"><a name="en-us_topic_0237152334_p8138132953313"></a><a name="en-us_topic_0237152334_p8138132953313"></a>No</p>
@@ -100,6 +100,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 </tbody>
 </table>
+
 
 ## Prerequisites<a name="en-us_topic_0237152334_en-us_topic_0059778085_s7bffe8e9bdec4735885781573a71fb91"></a>
 
