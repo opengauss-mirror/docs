@@ -137,7 +137,7 @@ The following lists the functionality limitations of MOT tables –
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p45208498392"><a name="p45208498392"></a><a name="p45208498392"></a>1</p>
     </td>
     </tr>
-    <tr id="row9520164918395"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p18521124912397"><a name="p18521124912397"></a><a name="p18521124912397"></a>longint</p>
+    <tr id="row9520164918395"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p18521124912397"><a name="p18521124912397"></a><a name="p18521124912397"></a>bigint</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p1652114973920"><a name="p1652114973920"></a><a name="p1652114973920"></a>8</p>
     </td>
@@ -151,7 +151,7 @@ The following lists the functionality limitations of MOT tables –
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p95221249163919"><a name="p95221249163919"></a><a name="p95221249163919"></a>2</p>
     </td>
     </tr>
-    <tr id="row20522549163913"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p75224492396"><a name="p75224492396"></a><a name="p75224492396"></a>double</p>
+    <tr id="row20522549163913"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p75224492396"><a name="p75224492396"></a><a name="p75224492396"></a>float8</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p1152244910393"><a name="p1152244910393"></a><a name="p1152244910393"></a>8</p>
     </td>
