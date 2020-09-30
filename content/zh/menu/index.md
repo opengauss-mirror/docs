@@ -1113,6 +1113,7 @@ headless: true
             -   [CLASS\_VITAL\_INFO]({{< relref "./docs/Developerguide/CLASS_VITAL_INFO.md" >}})
             -   [USER\_LOGIN]({{< relref "./docs/Developerguide/USER_LOGIN.md" >}})
             -   [SUMMARY\_USER\_LOGIN]({{< relref "./docs/Developerguide/SUMMARY_USER_LOGIN.md" >}})
+			-	[GLOBAL\_GET\_BGWRITER\_STATUS]({{< relref "./docs/Developerguide/GLOBAL_GET_BGWRITER_STATUS.md" >}})
         -   [Lock]({{< relref "./docs/Developerguide/Lock.md" >}})
             -   [LOCKS]({{< relref "./docs/Developerguide/LOCKS.md" >}})
             -   [GLOBAL\_LOCKS]({{< relref "./docs/Developerguide/GLOBAL_LOCKS.md" >}})

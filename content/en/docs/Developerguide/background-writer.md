@@ -14,7 +14,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 10 to 10000. The unit is millisecond.
 
-**Default value**:  **10s**
+**Default value**:  **2s**
 
 **Setting suggestion:**  Reduce this value in slow data writing scenarios to reduce the checkpoint load.
 
