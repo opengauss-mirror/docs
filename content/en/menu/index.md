@@ -1134,7 +1134,6 @@ headless: true
 		-   [Logical Decoding]({{< relref "./docs/Developerguide/logical-decoding.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview.md" >}})
 			-   [Logical Decoding by SQL Function Interfaces]({{< relref "./docs/Developerguide/logical-decoding-by-sql-function-interfaces.md" >}})
-		-   [Replicating Data Using the Logical Replication Tool]({{< relref "./docs/Developerguide/replicating-data-using-the-logical-replication-tool.md" >}})
     -   [Foregin Data Wrapper]({{< relref "./docs/Developerguide/foregin-data-wrapper.md" >}})
         -   [oracle\_fdw]({{< relref "./docs/Developerguide/oracle_fdw.md" >}})
 		-   [mysql\_fdw]({{< relref "./docs/Developerguide/mysql_fdw.md" >}})

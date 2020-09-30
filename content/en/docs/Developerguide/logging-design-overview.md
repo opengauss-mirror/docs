@@ -5,6 +5,9 @@ Write-Ahead Logging \(WAL\) is a standard method for ensuring data durability. W
 The MOT Engine uses the existing openGauss logging facilities, enabling it also to participate in the replication process. 
 
 **Figure  1**  Three Logging Options
+
+
+
 ![](figures/figure1.jpg)
 
 The RedoLog component is used by both by backend threads that use the MOT Engine and by the WAL writer in order to persist their data. Checkpoints are performed using the Checkpoint Manager, which is triggered by the Postgres checkpointer.
