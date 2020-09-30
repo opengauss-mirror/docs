@@ -29,7 +29,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
     
 - logical
 
-  This parameter indicates that the WAL log supports logical replication.
+   This parameter indicates that the WAL log supports logical replication.
 
 
 **Default value**:  **hot\_standby**
@@ -68,8 +68,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **false**  indicates that asynchronous submission.
 -   **yes**  indicates that flush the synchronization log of the standby machine to disk.
 -   **no** indicates that asynchronous submission.
--   **-1**  indicates that flush the synchronization log of the standby machine to disk.
--   **-0**  indicates that asynchronous submission.
+-   **1**  indicates that flush the synchronization log of the standby machine to disk.
+-   **0**  indicates that asynchronous submission.
 
 **Default value**:  **off**
 
