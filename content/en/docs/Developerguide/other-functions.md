@@ -248,3 +248,8 @@
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >**pgxc\_lock\_for\_backup**  locks openGauss before  **gs\_dump**  or  **gs\_dumpall**  is used to back up openGauss. After openGauss is locked, operations changing the system structure are not allowed. This function does not affect DML statements.  
 
++ local_bgwriter_stat()
+
+  Description: Displays the information about pages flushed by the bgwriter thread of this instance, number of pages in the candidate buffer chain, and buffer elimination information.
+
+  Return type: record

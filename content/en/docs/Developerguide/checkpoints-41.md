@@ -104,3 +104,13 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 
 
+## max_redo_log_size<a name="en-us_topic_0237124708_section162792473463"></a>
+
+**Parameter description**: Specifies the size of logs before the recovery point and the current log location. You are advised not to set this parameter to a large value if the RTO is concerned.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 163840 to 2147483647. The unit is KB.
+
+**Default value**:  **1GB**
+
