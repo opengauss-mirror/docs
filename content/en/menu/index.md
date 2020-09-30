@@ -1105,7 +1105,7 @@ headless: true
 			-   [CLASS\_VITAL\_INFO]({{< relref "./docs/Developerguide/class_vital_info.md" >}})
 			-   [USER\_LOGIN]({{< relref "./docs/Developerguide/user_login.md" >}})
 			-   [SUMMARY\_USER\_LOGIN]({{< relref "./docs/Developerguide/summary_user_login.md" >}})
-			-   [GLOBAL\_GET\_BGWRITER\_STATUS]({{< relref "./docs/Developerguide/global_get_bgwriter_status.md)" >}})
+			-   [GLOBAL\_GET\_BGWRITER\_STATUS]({{< relref "./docs/Developerguide/global_get_bgwriter_status.md" >}})
 		-   [Lock]({{< relref "./docs/Developerguide/lock-25.md" >}})
 			-   [LOCKS]({{< relref "./docs/Developerguide/locks.md" >}})
 			-   [GLOBAL\_LOCKS]({{< relref "./docs/Developerguide/global_locks.md" >}})
