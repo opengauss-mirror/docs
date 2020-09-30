@@ -5,35 +5,41 @@
 **Table  1**  Software requirements
 
 <a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_tfb195a8129b24c709d238b091e57405a"></a>
-<table><thead align="left"><tr id="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_rbb0bb8c17c0c49fc9666f58bdd5487bb"><th class="cellrowborder" valign="top" width="25.2%" id="mcps1.2.3.1.1"><p id="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a>Software</p>
+<table><thead align="left"><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rbb0bb8c17c0c49fc9666f58bdd5487bb"><th class="cellrowborder" valign="top" width="25.230000000000004%" id="mcps1.2.3.1.1"><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a>Software</p>
 </th>
-<th class="cellrowborder" valign="top" width="74.8%" id="mcps1.2.3.1.2"><p id="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a>Description</p>
+<th class="cellrowborder" valign="top" width="74.77000000000001%" id="mcps1.2.3.1.2"><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a>Description</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
+<tbody><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0249784577_p4796111023815"><a name="en-us_topic_0249784577_p4796111023815"></a><a name="en-us_topic_0249784577_p4796111023815"></a>openEuler 20.3 LTS and CentOS 7.6</p>
-</td>
-</tr>
-<tr id="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_r1f5aefa904854b5bbf1f82931d9fc9b5"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"></a><a name="en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"></a>Linux file system</p>
-</td>
-<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0238164429_p58701820272"><a name="en-us_concept_0238164429_p58701820272"></a><a name="en-us_concept_0238164429_p58701820272"></a>The ext4 file system is recommended for EulerOS.</p>
-<p id="en-us_concept_0238164429_p143519215717"><a name="en-us_concept_0238164429_p143519215717"></a><a name="en-us_concept_0238164429_p143519215717"></a>It is recommended that the number of remaining inodes be greater than 1.5 billion.</p>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul2800840102316"></a><a name="ul2800840102316"></a><ul id="ul2800840102316"><li>Arm:<a name="ul177759349286"></a><a name="ul177759349286"></a><ul id="ul177759349286"><li>openEuler 20.3LTS (recommended)</li><li>Kirin V10</li></ul>
+</li><li>x86:<a name="ul851564911283"></a><a name="ul851564911283"></a><ul id="ul851564911283"><li>openEuler 20.3LTS</li><li>CentOS 7.6<div class="note" id="note222515135376"><a name="note222515135376"></a><a name="note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p1225613103712"><a name="p1225613103712"></a><a name="p1225613103712"></a>You are advised to use the English OS. The current installation package can be installed and used only on the English version.</p>
+</div></div>
+</li></ul>
+</li></ul>
 </td>
 </tr>
-<tr id="en-us_concept_0238164429_row10752719155612"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0238164429_p67521519115615"><a name="en-us_concept_0238164429_p67521519115615"></a><a name="en-us_concept_0238164429_p67521519115615"></a>Tools</p>
+<tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rf52ebb45df8e4f57882a97bef3b36ca6"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a>Linux file system</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0238164429_p1475231919563"><a name="en-us_concept_0238164429_p1475231919563"></a><a name="en-us_concept_0238164429_p1475231919563"></a>Huawei JDK 1.8.0, psmisc, and bzip2</p>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><p id="p537517310381"><a name="p537517310381"></a><a name="p537517310381"></a>It is recommended that the number of remaining inodes be greater than 1.5 billion.</p>
 </td>
 </tr>
-<tr id="row1948773814310"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="p164876388436"><a name="p164876388436"></a><a name="p164876388436"></a>Python</p>
+<tr id="row128032214310"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="p682172212430"><a name="p682172212430"></a><a name="p682172212430"></a>Tool</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0249784577_p1275716227325"><a name="en-us_topic_0249784577_p1275716227325"></a><a name="en-us_topic_0249784577_p1275716227325"></a>Python 3.6.X-3.7.X</p>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><p id="p582112294311"><a name="p582112294311"></a><a name="p582112294311"></a>bzip2</p>
+</td>
+</tr>
+<tr id="row109998493614"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="p075762219324"><a name="p075762219324"></a><a name="p075762219324"></a>Python</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul1537120034117"></a><a name="ul1537120034117"></a><ul id="ul1537120034117"><li>openEuler: Python 3.7.X is supported.</li><li>CentOS: Python 3.6.X is supported.</li><li>Kirin: Python 3.7.X is supported.<div class="note" id="note4799182210208"><a name="note4799182210208"></a><a name="note4799182210208"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p19799112232010"><a name="p19799112232010"></a><a name="p19799112232010"></a>Python needs to be compiled in --enable-shared mode.</p>
+</div></div>
+</li></ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 ## Hardware Requirements<a name="section16324185464516"></a>
 

@@ -17,7 +17,7 @@ None
     gs_om -t generateconf -X /opt/software/openGauss/clusterconfig.xml --distribute
     ```
 
-    **/opt/software/openGauss/clusterconfig.xml**  is the directory for saving XML configuration files during the openGauss installation.
+    **/opt/software/openGauss/clusterconfig.xml**  is the  XML configuration files during the openGauss installation.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >1.  After the command is executed, the new configuration file storage directory is displayed in the log information. Take a one-primary dual-standby environment as an example. This directory contains three configuration files named by host names. You need to replace the configuration files of corresponding hosts with the three files respectively.

@@ -2,19 +2,37 @@
 
 ## Background<a name="en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>
 
-After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports only hot backup and does not support compressed backup.
+After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports hot backup and compressed backup.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   **gs\_basebackup**  supports only full backup.
->-   **gs\_basebackup**  supports only hot backup and does not support compressed backup.
->-   **gs\_basebackup**  cannot back up tablespaces containing absolute paths on the same server. This is because the absolute path is unique on the same machine, and brings about conflicts. However, it can back up tablespaces containing absolute paths on different machines.
->-   If the functions of incremental checkpoint and dual-write are enabled,  **gs\_basebackup**  also backs up dual-write files.
->-   If the  **pg\_xlog**  directory is a soft link, no soft link is created during backup. Data is directly backed up to the  **pg\_xlog**  directory in the destination path.
+![](public_sys-resources/icon-note.gif) **NOTE:** 
+-   **gs\_basebackup**  supports only full backup.
+
+-   **gs\_basebackup**  supports hot backup and compressed backup.
+
+-   **gs\_basebackup**  cannot back up tablespaces containing absolute paths on the same server. This is because the absolute path is unique on the same machine, and brings about conflicts. However, it can back up tablespaces containing absolute paths on different machines.
+
+-   If the functions of incremental checkpoint and dual-write are enabled,  **gs\_basebackup**  also backs up dual-write files.
+
+-   If the  **pg\_xlog**  directory is a soft link, no soft link is created during backup. Data is directly backed up to the  **pg\_xlog**  directory in the destination path.
+
+-   If the backup permission is revoked during the backup, the backup may fail or the backup data may be unavailable.
+
+-   openGauss does not support version upgrade.
 
 ## Prerequisites<a name="en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
--   The openGauss database can be connected. Link replication is enabled in  **pg\_hba.conf**, and at least one  **max\_wal\_senders**  is configured and available.
+-   The openGauss database can be connected.
+
+-   User permissions are not revoked during the backup.
+
+-   In the  **pg\_hba.conf**  file, the replication connection is allowed and the connection is established by a system administrator.
+
+-   If the Xlog transmission mode is  **stream**, the number of  **max\_wal\_senders**  must be configured to at least one.
+
+-   If the Xlog transmission mode is  **fetch**, the  **wal\_keep\_segments**  parameter must be set to a large value so that logs are not removed before the backup ends.
+
 -   During the restoration, backup files exist in the backup directory on all the nodes. If backup files are lost on any node, copy them to it from another node.
+
 
 ## Syntax<a name="en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
 
@@ -65,6 +83,30 @@ The  **gs\_basebackup**  tool can use the following types of parameters:
 
         Displays  **gs\_basebackup**  command parameters.
 
+    -   -T, –tablespace-mapping=olddir=newdir
+
+        During the backup, the tablespace in the  **olddir**  directory is relocated to the  **newdir**  directory. For this to take effect,  **olddir**  must exactly match the path where the tablespace is located \(but it is not an error if the backup does not contain the tablespaces in  **olddir**\).  **olddir**  and  **newdir**  must be absolute paths. If a path happens to contain an equal sign \(=\), you can escape it with a backslash \(\\\). This option can be used multiple times for multiple tablespaces.
+
+    -   -F, –format=plain|tar
+
+        Sets the output format to  **plain**  \(default\) or  **tar**. If this parameter is not set, the default value  **–format=plain**  is used. The plain format writes the output as a flat file, using the same layout as the current data directory and tablespace. When the cluster has no extra tablespace, the entire database is placed in the target directory. If the cluster contains additional tablespaces, the primary data directory will be placed in the target directory, but all other tablespaces will be placed in the same absolute path on the server. The tar mode writes the output as a tar file in the target directory. The primary data directory is written to a file named  **base.tar**, and other tablespaces are named after their OIDs. The generated .tar package must be decompressed using the  **gs\_tar**  command.
+
+    -   -X, –xlog-method=fetch|stream
+
+        Sets the Xlog transmission mode. If this parameter is not set, the default value  **–xlog-method=stream**  is used. The required write-ahead log files \(WALs\) are included in the backup. This includes all WALs generated during the backup. In fetch mode, WAL files are collected at the end of the backup. Therefore, the  **wal\_keep\_segments**  parameter must be set to a large value so that logs are not removed before the backup ends. If it has been rotated when the log is to be transmitted, the backup fails and is unavailable. In stream mode, WALs are streamed when a backup is created. This will open a second connection to the server and start streaming WALs while the backup is running. Therefore, it will use up to two connections configured by the  **max\_wal\_senders**  parameter. As long as the client can receive WALs, no additional WALs need to be stored on the host.
+
+    -   -x, –xlog
+
+        Equivalent to using  **-X**  with the fetch method.
+
+    -   -Z –compress=level
+
+        Enables gzip compression for the output of the tar file and sets the compression level \(0 to 9, where 0 indicates no compression and 9 indicates the best compression\). The compression is available only when the tar format is used. The suffix .gz is automatically added to the end of all .tar file names.
+
+    -   -z
+
+        Enables gzip compression for tar file output and uses the default compression level. The compression is available only when the tar format is used. The suffix .gz is automatically added to the end of all .tar file names.
+
 
 -   Connection parameters
     -   -h, --host=HOSTNAME
@@ -106,9 +148,10 @@ INFO:  The starting position of the xlog copy of the full build is: 0/1B800000. 
 
 If a database is faulty, restore it from backup files.  **gs\_basebackup**  backs up the database in binary mode. Therefore, you can directly copy and replace the original files or start the database on the backup database.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   If the current database instance is running, a port conflict may occur when you start the database from the backup file. In this case, you need to modify the port parameter in the configuration file or specify a port when starting the database.
->-   If the current backup file is a primary/standby database, you may need to modify the replication connections between the master and slave databases. That is,  **replconninfo1**  and  **replconninfo2**  in the  **postgre.conf**  file.
+![](public_sys-resources/icon-note.gif) **NOTE:** 
+-   If the current database instance is running, a port conflict may occur when you start the database from the backup file. In this case, you need to modify the port parameter in the configuration file or specify a port when starting the database.
+
+-   If the current backup file is a primary/standby database, you may need to modify the replication connections between the primary and standby databases. That is,  **replconninfo1**  and  **replconninfo2**  in the  **postgre.conf**  file.
 
 To restore the original database, perform the following steps:
 
@@ -119,7 +162,8 @@ To restore the original database, perform the following steps:
 5.  If a link file exists in the database, modify the link file so that it can be linked to the correct file.
 6.  Restart the database server and check the database content to ensure that the database is restored to the required status.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   Incremental restoration from backup files is not supported.
->-   After the restoration, check that the link file in the database is linked to the correct file.
+![](public_sys-resources/icon-note.gif) **NOTE:** 
+-   Incremental restoration from backup files is not supported.
+
+-   After the restoration, check that the link file in the database is linked to the correct file.
 

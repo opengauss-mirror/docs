@@ -6,9 +6,11 @@ The following describes how to create an XML configuration file based on the dep
 
 <!-- TOC -->
 
-- [Configuring the Database Name and Directories](#configuring-the-database-name-and-directories)
-- [Configuring the Basic Host Information](#configuring-the-basic-host-information)
-- [Configuring Primary Database Node Information](#configuring-primary-database-node-information)
+- [Creating an XML Configuration File<a name="EN-US_TOPIC_0249784581"></a>](#creating-an-xml-configuration-filea-nameen-us_topic_0249784581a)
+    - [Configuring the Database Name and Directories](#configuring-the-database-name-and-directories)
+    - [Configuring the Basic Host Information](#configuring-the-basic-host-information)
+    - [Configuring Primary Database Node Information](#configuring-primary-database-node-information)
+    - [Examples](#examples)
 
 <!-- /TOC -->
 
@@ -43,13 +45,13 @@ The information in bold is only an example. You can replace it as required. Each
   </CLUSTER>
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   The  **/opt/huawei/install/om**  directory is used to store tools for mutual trust. To avoid permission problems, do not store instance data in the directory.
->-   The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.
->-   When configuring database instances, ensure that the configured directories are not coupled with each other. This means that the configured directories must not be associated with each other. If any directory is deleted, the other directories will not be deleted accordingly. For example,  **gaussdbAppPath**  is  **/opt/huawei/install/app**  and  **gaussdbLogPath**  is  **/opt/huawei/install/app/omm**. If the directory specified by  **gaussdbAppPath**  is deleted, that specified by  **gaussdbLogPath**  will also be deleted, causing unexpected problems.
->-   If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.
->-   The openGauss and instance paths cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?
->-   When configuring the database node name, run the  **hostname**  command to obtain the host name of the database node and replace  **node1**  and  **node2**  in the example with the obtained host name.
+![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+-   The  **/opt/huawei/install/om**  directory is used to store tools for mutual trust. To avoid permission problems, do not store instance data in the directory.
+-   The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.
+-   When configuring database instances, ensure that the configured directories are not coupled with each other. This means that the configured directories must not be associated with each other. If any directory is deleted, the other directories will not be deleted accordingly. For example,  **gaussdbAppPath**  is  **/opt/huawei/install/app**  and  **gaussdbLogPath**  is  **/opt/huawei/install/app/omm**. If the directory specified by  **gaussdbAppPath**  is deleted, that specified by  **gaussdbLogPath**  will also be deleted, causing unexpected problems.
+-   If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.
+-   The openGauss and instance paths cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?
+-   When configuring the database node name, run the  **hostname**  command to obtain the host name of the database node and replace  **node1**  and  **node2**  in the example with the obtained host name.
 
 **Table  1**  Parameter description
 
@@ -121,8 +123,8 @@ The information in bold is only an example. You can replace it as required. Each
 
 ## Configuring the Basic Host Information
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->Each server must contain the following information. The following uses  **node1**  as an example.
+![](public_sys-resources/icon-note.gif) **NOTE:** 
+Each server must contain the following information. The following uses  **node1**  as an example.
 
 The information in bold is only an example. You can replace it as required. Each line of information is commented out.
 
@@ -182,14 +184,14 @@ The information in bold is only an example. You can replace it as required. Each
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->Only one IP address can be configured for all IP parameters \(including  **backIp**,  **sshIp**, and  **listenIp**\) in the configuration file. Excessive IP addresses are ignored.
->For example, you can configure  **backIp1**  and  **backIp2**  in the XML configuration file as follows:
->When the file is parsed, only  **backIp1**  takes effect.
->```
-><PARAM name="backIp1" value="192.168.0.11"/>
-><PARAM name="backIp2" value="192.168.0.12"/>
->```
+![](public_sys-resources/icon-note.gif) **NOTE:** 
+Only one IP address can be configured for all IP parameters \(including  **backIp**,  **sshIp**, and  **listenIp**\) in the configuration file. Excessive IP addresses are ignored.
+For example, you can configure  **backIp1**  and  **backIp2**  in the XML configuration file as follows:
+When the file is parsed, only  **backIp1**  takes effect.
+```
+<PARAM name="backIp1" value="192.168.0.11"/>
+<PARAM name="backIp2" value="192.168.0.12"/>
+```
 
 ## Configuring Primary Database Node Information
 
@@ -243,4 +245,302 @@ The information in bold is only an example. You can replace it as required. Each
 </tr>
 </tbody>
 </table>
+
+
+## Examples
+
+### Configuration File for Single-Instance Deployment<a name="section1698454873416"></a>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <!-- Overall information about openGauss -->
+    <CLUSTER>
+        <PARAM name="clusterName" value="dbCluster" />
+        <PARAM name="nodeNames" value="node1_hostname" />
+       
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp" />
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <PARAM name="corePath" value="/opt/huawei/corefile" />
+        <PARAM name="backIp1s" value="192.168.0.1"/>
+       
+    </CLUSTER>
+    <!-- Information about the node deployment on each server -->
+    <DEVICELIST>
+        <!-- Information about node deployment on node1 -->
+        <DEVICE sn="node1_hostname">
+            <PARAM name="name" value="node1_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.1"/>
+            <PARAM name="sshIp1" value="192.168.0.1"/>
+            
+	    <!--dbnode-->
+	    <PARAM name="dataNum" value="1"/>
+	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn"/>
+            <PARAM name="dataNode1_syncNum" value="0"/>
+        </DEVICE>
+    </DEVICELIST>
+</ROOT>
+```
+
+### Configuration File for Primary/Standby Deployment<a name="section946242113712"></a>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <!-- Overall information about openGauss -->
+    <CLUSTER>
+        <PARAM name="clusterName" value="Cluster_template" />
+        <PARAM name="nodeNames" value="node1_hostname,node2_hostname" />
+        
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/>
+        
+    </CLUSTER>
+    <!-- Information about the node deployment on each server -->
+    <DEVICELIST>
+        <!-- Information about node deployment on node1 -->
+        <DEVICE sn="node1_hostname">
+            <PARAM name="name" value="node1_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.1"/>
+            <PARAM name="sshIp1" value="192.168.0.1"/>
+            
+	    <!--dn-->
+            <PARAM name="dataNum" value="1"/>
+	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn"/>
+            <PARAM name="dataNode1_syncNum" value="0"/>
+        </DEVICE>
+
+        <!-- Node deployment information on node2. The value of name is the host name. -->
+        <DEVICE sn="node2_hostname">
+            <PARAM name="name" value="node2_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.2"/>
+            <PARAM name="sshIp1" value="192.168.0.2"/>
+	</DEVICE>
+    </DEVICELIST>
+</ROOT>
+```
+
+### Configuration File for One Primary and Two Standbys<a name="section5994144164010"></a>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <!-- Overall information about openGauss -->
+    <CLUSTER>
+        <PARAM name="clusterName" value="Cluster_template" />
+        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname" />
+   
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
+    
+    </CLUSTER>
+    <!-- Information about the node deployment on each server -->
+    <DEVICELIST>
+        <!-- Information about node deployment on node1 -->
+        <DEVICE sn="node1_hostname">
+            <PARAM name="name" value="node1_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.1"/>
+            <PARAM name="sshIp1" value="192.168.0.1"/>
+            
+	    <!--dn-->
+            <PARAM name="dataNum" value="1"/>
+	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
+            <PARAM name="dataNode1_syncNum" value="0"/>
+        </DEVICE>
+
+        <!-- Node deployment information on node2. The value of name is the host name. -->
+        <DEVICE sn="node2_hostname">
+            <PARAM name="name" value="node2_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.2"/>
+            <PARAM name="sshIp1" value="192.168.0.2"/>
+	</DEVICE>
+
+        <!-- Node deployment information on node3. The value of name is the host name. -->
+        <DEVICE sn="node3_hostname">
+            <PARAM name="name" value="node3_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.3"/>
+            <PARAM name="sshIp1" value="192.168.0.3"/>
+	</DEVICE>
+    </DEVICELIST>
+</ROOT>
+```
+
+### Configuration File for One Primary and Three Standbys<a name="section165518595406"></a>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <!-- Overall information about openGauss -->
+    <CLUSTER>
+        <PARAM name="clusterName" value="Cluster_template" />
+        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname" />
+   
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/>
+        
+    </CLUSTER>
+    <!-- Information about the node deployment on each server -->
+    <DEVICELIST>
+        <!-- Information about node deployment on node1 -->
+        <DEVICE sn="node1_hostname">
+            <PARAM name="name" value="node1_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.1"/>
+            <PARAM name="sshIp1" value="192.168.0.1"/>
+            
+	    <!--dn-->
+            <PARAM name="dataNum" value="1"/>
+	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/>
+            <PARAM name="dataNode1_syncNum" value="0"/>
+        </DEVICE>
+
+        <!-- Node deployment information on node2. The value of name is the host name. -->
+        <DEVICE sn="node2_hostname">
+            <PARAM name="name" value="node2_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.2"/>
+            <PARAM name="sshIp1" value="192.168.0.2"/>
+	</DEVICE>
+
+        <!-- Node deployment information on node3. The value of name is the host name. -->
+        <DEVICE sn="node3_hostname">
+            <PARAM name="name" value="node3_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.3"/>
+            <PARAM name="sshIp1" value="192.168.0.3"/>
+	</DEVICE>
+
+        <!-- Node deployment information on node4. The value of name is the host name. -->
+        <DEVICE sn="node4_hostname">
+            <PARAM name="name" value="node4_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.4"/>
+            <PARAM name="sshIp1" value="192.168.0.4"/>
+	</DEVICE>
+    </DEVICELIST>
+</ROOT>
+```
+
+### Configuration File for One Primary and Four Standbys<a name="section56037824118"></a>
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <!-- Overall information about openGauss -->
+    <CLUSTER>
+        <PARAM name="clusterName" value="Cluster_template" />
+        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname" />
+   
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/>
+        
+    </CLUSTER>
+    <!-- Information about the node deployment on each server -->
+    <DEVICELIST>
+        <!-- Information about node deployment on node1 -->
+        <DEVICE sn="node1_hostname">
+            <PARAM name="name" value="node1_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.1"/>
+            <PARAM name="sshIp1" value="192.168.0.1"/>
+            
+	    <!--dn-->
+            <PARAM name="dataNum" value="1"/>
+	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/>
+            <PARAM name="dataNode1_syncNum" value="0"/>
+        </DEVICE>
+
+        <!-- Node deployment information on node2. The value of name is the host name. -->
+        <DEVICE sn="node2_hostname">
+            <PARAM name="name" value="node2_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.2"/>
+            <PARAM name="sshIp1" value="192.168.0.2"/>
+	</DEVICE>
+
+        <!-- Node deployment information on node3. The value of name is the host name. -->
+        <DEVICE sn="node3_hostname">
+            <PARAM name="name" value="node3_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.3"/>
+            <PARAM name="sshIp1" value="192.168.0.3"/>
+	</DEVICE>
+
+        <!-- Node deployment information on node4. The value of name is the host name. -->
+        <DEVICE sn="node4_hostname">
+            <PARAM name="name" value="node4_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.4"/>
+            <PARAM name="sshIp1" value="192.168.0.4"/>
+	</DEVICE>
+
+        <!-- Node deployment information on node5. The value of name is the host name. -->
+        <DEVICE sn="node5_hostname">
+            <PARAM name="name" value="node5_hostname"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
+            <PARAM name="backIp1" value="192.168.0.5"/>
+            <PARAM name="sshIp1" value="192.168.0.5"/>
+	</DEVICE>
+    </DEVICELIST>
+</ROOT>
+```
 

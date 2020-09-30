@@ -11,15 +11,16 @@ After the openGauss installation environment is prepared by executing the pre-in
 ## Procedure<a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_se06775d062f144a5a491267c284e67dd"></a>
 
 1.  Check whether the installation package and openGauss configuration file exist in the planned path. If they do not exist, perform the preinstallation again to ensure that the preinstallation is successful, and then perform the following steps.
-2.  Log in to any host of the openGauss and switch to the  **omm**  user.
+2. Log in to any host of the openGauss and switch to the  **omm**  user.
 
-    ```
-    su - omm
-    ```
+   ```
+   su - omm
+   ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.
-    >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.
+   >![](public_sys-resources/icon-note.gif) **NOTE:** 
+   >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.
+   >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.
+   >-   openGauss compiled on the HiSilicon chip of a later version cannot run on the server with the HiSilicon chip of an earlier version. For example, the openGauss compiled on the Hi1620 cannot run on the Hi1616 environment.
 
 3.  Use  **gs\_install**  to install the openGauss. If the cluster is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
 

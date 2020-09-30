@@ -9,5 +9,5 @@ To prevent network security threats caused by malicious tampering or damage duri
 -   **[Preparing the Software and Hardware Installation Environment](preparing-the-software-and-hardware-installation-environment.md)**  
 This chapter describes the preparations for the installation.
 -   **[Installation User and User Group](installation-user-and-user-group.md)**  
-To minimize the installation account permissions during the installation and ensure system running security of openGauss after the installation, the installation scripts automatically create a user-specified installation user and this user will be used as the administrator for subsequent running and maintenance of the openGauss.
+To minimize the installation account permissions during the installation and ensure system running security of openGauss after the installation, the installation scripts  create a user-specified installation user and this user will be used as the administrator for subsequent running and maintenance of the openGauss.
 

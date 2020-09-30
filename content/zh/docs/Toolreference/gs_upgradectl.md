@@ -103,7 +103,7 @@
 
 ## 示例<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
 
-**示例一：升级前使用新包进行前置操作。**
+**示例一**：升级前使用新包进行前置操作。
 
 ```
 ./gs_preinstall -U roach -G users -X /data/xml/3node_3c3d_1m2s_etcd.xml 

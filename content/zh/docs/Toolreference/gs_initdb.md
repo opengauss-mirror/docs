@@ -72,7 +72,6 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
     gs_initdb [OPTION]... [DATADIR]
     ```
 
-    OPTION参数请参见[zh-cn\_topic\_0249632266.md](zh-cn_topic_0249632266.md)。
 
 
 ## 命令参考<a name="section01341136122018"></a>
@@ -136,7 +135,7 @@ gs\_initdb支持的常用参数和不常用参数请分别参见[表 常用参�
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a>初始化的节点名称。</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p39322419302"><a name="p39322419302"></a><a name="p39322419302"></a>节点的命名需要遵守如下规范：</p>
-<a name="ul0976124733118"></a><a name="ul0976124733118"></a><ul id="ul0976124733118"><li>节点名称必须为小写字母（a-z）、下划线（_）、ASCII码（\u200-\u377）、特殊符号#、数字（0-9）或美元符号（$）。</li><li>节点名称必须以小写字母（a-z）、ASCII码（\u200-\u377）或下划线（_）开头。</li><li>节点名称不能为空，且最大的长度为64个字符。</li></ul>
+<a name="ul0976124733118"></a><a name="ul0976124733118"></a><ul id="ul0976124733118"><li>节点名称必须为小写字母（a-z）、下划线（_）、ASCII码（\u200-\u377）、特殊符号#、数字（0-9）或美元符号（$）。</li><li>节点名称必须以小写字母（a-z）、ASCII码（\u200-\u377）或下划线（_）开头。</li><li>节点名称不能为空，且最大的长度为64个字符。</li><li>主、备节点间的nodename不能相同。</li></ul>
 </td>
 </tr>
 <tr id="row1020519334218"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a>-E, --encoding=ENCODING</p>

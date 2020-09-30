@@ -2,8 +2,6 @@
 
 -   **[Connection Settings](connection-settings.md)**  
 
--   **[Security and Authentication \(postgresql.conf\)](security-and-authentication-(postgresql-conf).md)**  
+-   **[Security and Authentication \(postgresql.conf\)](security-and-authentication_postgresql-conf.md)**  
 
 -   **[Communication Library Parameters](communication-library-parameters.md)**  
-
-

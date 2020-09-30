@@ -129,7 +129,6 @@ headless: true
 		-   [Query]({{< relref "./docs/Developerguide/query-28.md" >}})
 		-   [System Performance Snapshot]({{< relref "./docs/Developerguide/system-performance-snapshot.md" >}})
 	-   [FAQs]({{< relref "./docs/Quickstart/faqs.md" >}})
-		-   [What Should I Do If Mutual Trust Between Nodes in openGauss Is Lost?]({{< relref "./docs/Quickstart/what-should-i-do-if-mutual-trust-between-nodes-in-opengauss-is-lost.md" >}})
 
 -   [Installation Guide]({{< relref "./docs/Installation/Installation.md" >}})
 	-   [Installation Overview]({{< relref "./docs/Installation/installation-overview.md" >}})
@@ -143,6 +142,7 @@ headless: true
 		-   [Initializing the Installation Environment]({{< relref "./docs/Installation/initializing-the-installation-environment.md" >}})
 		-   [Executing Installation]({{< relref "./docs/Installation/executing-installation.md" >}})
 		-   [\(Optional\) Setting the Standby Node to Readable]({{< relref "./docs/Installation/(optional)-setting-the-standby-node-to-readable.md" >}})
+	-   [container-based-installation]({{< relref "./docs/Installation/container-based-installation.md" >}})
 	-   [Verifying the Installation]({{< relref "./docs/Installation/verifying-the-installation.md" >}})
 	-   [Uninstalling the openGauss]({{< relref "./docs/Installation/uninstalling-the-opengauss.md" >}})
 	
@@ -1231,6 +1231,7 @@ headless: true
 		-   [gs\_postuninstall]({{< relref "./docs/Toolreference/gs_postuninstall.md" >}})
 		-   [gs\_preinstall]({{< relref "./docs/Toolreference/gs_preinstall.md" >}})
 		-   [gs\_sshexkey]({{< relref "./docs/Toolreference/gs_sshexkey.md" >}})
+		-   [gs\_tar]({{< relref "./docs/Toolreference/gs_tar.md" >}})
 		-   [gs\_uninstall]({{< relref "./docs/Toolreference/gs_uninstall.md" >}})
 		-   [gs\_upgradectl]({{< relref "./docs/Toolreference/gs_upgradectl.md" >}})
 		-   [gstrace]({{< relref "./docs/Toolreference/gstrace.md" >}})

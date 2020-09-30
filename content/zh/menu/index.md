@@ -61,7 +61,7 @@ headless: true
 		-   [通过客户端工具执行SQL]({{< relref "./docs/Quickstart/通过客户端工具执行SQL.md" >}})
 		-   [通过JDBC执行SQL]({{< relref "./docs/Quickstart/通过JDBC执行SQL.md" >}})
 	-   [配置运行参数]({{< relref "./docs/Quickstart/配置运行参数.md" >}})
-	    -   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})
+	-   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})
         -   [GUC使用说明]({{< relref "./docs/Developerguide/GUC使用说明.md" >}})
         -   [文件位置]({{< relref "./docs/Developerguide/文件位置.md" >}})
         -   [连接和认证]({{< relref "./docs/Developerguide/连接和认证.md" >}})
@@ -123,7 +123,6 @@ headless: true
         -   [Query]({{< relref "./docs/Developerguide/Query-22.md" >}})
         -   [系统性能快照]({{< relref "./docs/Developerguide/系统性能快照.md" >}})
 	-   [FAQ]({{< relref "./docs/Quickstart/FAQ.md" >}})
-		-   [用户在openGauss节点间的互信丢失]({{< relref "./docs/Quickstart/用户在openGauss节点间的互信丢失.md" >}})
 
 -   [安装指南]({{< relref "./docs/Installation/Installation.md" >}})
    -   [安装概述]({{< relref "./docs/Installation/安装概述.md" >}})
@@ -1212,10 +1211,10 @@ headless: true
         -   [core问题定位]({{< relref "./docs/Developerguide/core问题定位.md" >}})
             -   [磁盘满故障引起的core问题]({{< relref "./docs/Developerguide/磁盘满故障引起的core问题.md" >}})
             -   [GUC参数log\_directory设置不正确引起的core问题]({{< relref "./docs/Developerguide/GUC参数log_directory设置不正确引起的core问题.md" >}})
+            -   [开启RemoveIPC引起的core问题]({{< relref "./docs/Developerguide/开启RemoveIPC引起的core问题.md" >}})
         -   [TPCC运行时，注入磁盘满故障，TPCC卡住的问题]({{< relref "./docs/Developerguide/TPCC运行时-注入磁盘满故障-TPCC卡住的问题.md" >}})
         -   [备机处于need repair\(WAL\)状态问题]({{< relref "./docs/Developerguide/备机处于need-repair(WAL)状态问题.md" >}})
         -   [内存不足问题]({{< relref "./docs/Developerguide/内存不足问题.md" >}})
-        -   [开启RemoveIPC引发数据库宕机问题]({{< relref "./docs/Developerguide/开启RemoveIPC引发数据库宕机问题.md" >}})
    
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})

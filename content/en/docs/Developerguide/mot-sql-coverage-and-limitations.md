@@ -74,11 +74,12 @@ The following lists the functionality limitations of MOT tables –
 -   Varbit
 -   OID
 -   Money
--   Any unlimited varchar/char
+-   Any unlimited varchar/character varying
 
 ## UnsupportedIndex DDLs and Index<a name="section143421450173815"></a>
 
 -   Create index on decimal/numeric
+-   Create index on nullable columns
 -   Create index, index per table \> 9
 -   Create index on key size \> 256
 
@@ -108,49 +109,49 @@ The following lists the functionality limitations of MOT tables –
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row1351819494398"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p251844953911"><a name="p251844953911"></a><a name="p251844953911"></a>Varchar</p>
+    <tbody><tr id="row1351819494398"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p251844953911"><a name="p251844953911"></a><a name="p251844953911"></a>varchar</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p3519349123919"><a name="p3519349123919"></a><a name="p3519349123919"></a>N</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p1519174983919"><a name="p1519174983919"></a><a name="p1519174983919"></a>4</p>
     </td>
     </tr>
-    <tr id="row7519194910392"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p135197497395"><a name="p135197497395"></a><a name="p135197497395"></a>Tiny</p>
+    <tr id="row7519194910392"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p135197497395"><a name="p135197497395"></a><a name="p135197497395"></a>tinyint</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p17519104953916"><a name="p17519104953916"></a><a name="p17519104953916"></a>1</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p12519114963915"><a name="p12519114963915"></a><a name="p12519114963915"></a>1</p>
     </td>
     </tr>
-    <tr id="row145191491395"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p12519154983915"><a name="p12519154983915"></a><a name="p12519154983915"></a>Short</p>
+    <tr id="row145191491395"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p12519154983915"><a name="p12519154983915"></a><a name="p12519154983915"></a>smallint</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p7520194912396"><a name="p7520194912396"></a><a name="p7520194912396"></a>2</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p105200496393"><a name="p105200496393"></a><a name="p105200496393"></a>1</p>
     </td>
     </tr>
-    <tr id="row9520124916396"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p14520194914396"><a name="p14520194914396"></a><a name="p14520194914396"></a>Int</p>
+    <tr id="row9520124916396"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p14520194914396"><a name="p14520194914396"></a><a name="p14520194914396"></a>int</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p4520114933914"><a name="p4520114933914"></a><a name="p4520114933914"></a>4</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p45208498392"><a name="p45208498392"></a><a name="p45208498392"></a>1</p>
     </td>
     </tr>
-    <tr id="row9520164918395"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p18521124912397"><a name="p18521124912397"></a><a name="p18521124912397"></a>Long</p>
+    <tr id="row9520164918395"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p18521124912397"><a name="p18521124912397"></a><a name="p18521124912397"></a>bigint</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p1652114973920"><a name="p1652114973920"></a><a name="p1652114973920"></a>8</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p125211549133910"><a name="p125211549133910"></a><a name="p125211549133910"></a>1</p>
     </td>
     </tr>
-    <tr id="row13521449103912"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p652174911399"><a name="p652174911399"></a><a name="p652174911399"></a>Float</p>
+    <tr id="row13521449103912"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p652174911399"><a name="p652174911399"></a><a name="p652174911399"></a>float</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p1522124915392"><a name="p1522124915392"></a><a name="p1522124915392"></a>4</p>
     </td>
     <td class="cellrowborder" valign="top" width="32.853285328532856%" headers="mcps1.1.4.1.3 "><p id="p95221249163919"><a name="p95221249163919"></a><a name="p95221249163919"></a>2</p>
     </td>
     </tr>
-    <tr id="row20522549163913"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p75224492396"><a name="p75224492396"></a><a name="p75224492396"></a>Double</p>
+    <tr id="row20522549163913"><td class="cellrowborder" valign="top" width="33.753375337533754%" headers="mcps1.1.4.1.1 "><p id="p75224492396"><a name="p75224492396"></a><a name="p75224492396"></a>float8</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.1.4.1.2 "><p id="p1152244910393"><a name="p1152244910393"></a><a name="p1152244910393"></a>8</p>
     </td>
