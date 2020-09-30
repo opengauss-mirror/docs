@@ -5,15 +5,7 @@ This chapter describes the preparations for the installation.
 <!-- TOC -->
 
 - [Software and Hardware Requirements](#software-and-hardware-requirements)
-    - [Hardware Requirements](#hardware-requirements)
-    - [Software Requirements](#software-requirements)
-    - [Software Dependency Requirements](#software-dependency-requirements)
 - [Modifying OS Configuration](#modifying-os-configuration)
-    - [Disabling the OS Firewall](#disabling-the-os-firewall)
-    - [Setting Character Set Parameters](#setting-character-set-parameters)
-    - [Setting the Time Zone and Time](#setting-the-time-zone-and-time)
-    - [Disabling the Swap Memory](#disabling-the-swap-memory)
-    - [Setting the NIC MTU](#setting-the-nic-mtu)
 - [Setting Remote Login of User root](#setting-remote-login-of-user-root)
 
 <!-- /TOC -->
@@ -52,7 +44,7 @@ This section describes hardware and software requirements of openGauss. It is re
 <tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rc2f89a29186544e79e7995d19878a617"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a>Hard disk</p>
 </td>
 <td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"></a>Hard disks used for installing the <span id="text434316502057"><a name="text434316502057"></a><a name="text434316502057"></a>openGauss</span> must meet the following requirements:</p>
-<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><ul id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"><li>At least 1 GB is used to install the <span id="text119716545518"><a name="text119716545518"></a><a name="text119716545518"></a>openGauss</span> application package.</li><li>About 300 MB is used for each host to store metadata.</li><li>More than 70% of available disk space is reserved to store data.</li></ul>
+<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><ul id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"><li>At least 1 GB is used to install the <span id="text119716545518"><a name="text119716545518"></a><a name="text119716545518"></a>openGauss</span> application.</li><li>About 300 MB is used for each host to store metadata.</li><li>More than 70% of available disk space is reserved to store data.</li></ul>
 <p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"></a>You are advised to configure the system disk to RAID 1 and data disk to RAID 5 and plan four groups of RAID 5 data disks for installing <span id="text977517418"><a name="text977517418"></a><a name="text977517418"></a>openGauss</span>. RAID configuration is not described in this document. You can configure RAID by following instructions in the hardware vendors' manuals or using common methods found on the Internet. Set <strong id="b1171114154153"><a name="b1171114154153"></a><a name="b1171114154153"></a>Disk Cache Policy</strong> to <strong id="b15716111561518"><a name="b15716111561518"></a><a name="b15716111561518"></a>Disabled</strong> to avoid data loss in an unexpected power-off.</p>
 <p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"></a><span id="text283517517410"><a name="text283517517410"></a><a name="text283517517410"></a>openGauss</span> supports using an SSD with the SAS interface and NVMe protocol deployed in RAID mode as the primary storage device of the database.</p>
 </td>

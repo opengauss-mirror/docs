@@ -18,7 +18,7 @@ This section describes the openGauss installation process.
 </thead>
 <tbody><tr id="en-us_topic_0241802562_row1528811611512"><td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802562_p192890621511"><a name="en-us_topic_0241802562_p192890621511"></a><a name="en-us_topic_0241802562_p192890621511"></a>Prepare for installation.</p>
 </td>
-<td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241802562_p18521261776"><a name="en-us_topic_0241802562_p18521261776"></a><a name="en-us_topic_0241802562_p18521261776"></a>Before the <span id="text9621733114011"><a name="text9621733114011"></a><a name="text9621733114011"></a>openGauss</span> installation, you need to prepare the software and hardware environment and related configurations.</p>
+<td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241802562_p18521261776"><a name="en-us_topic_0241802562_p18521261776"></a><a name="en-us_topic_0241802562_p18521261776"></a>Before the <span id="text9621733114011"><a name="text9621733114011"></a><a name="text9621733114011"></a>openGauss</span> installation, you need to prepare the software and hardware environment and complete the related configurations.</p>
 <p id="en-us_topic_0241802562_p81361743175813"><a name="en-us_topic_0241802562_p81361743175813"></a><a name="en-us_topic_0241802562_p81361743175813"></a>This document provides the minimum requirements for the <span id="text1618917121917"><a name="text1618917121917"></a><a name="text1618917121917"></a>openGauss</span> installation. In the actual installation, plan the installation based on the site requirements.</p>
 <p id="p1855332310214"><a name="p1855332310214"></a><a name="p1855332310214"></a>For details, see <a href="preparing-for-installation.md">Preparing for Installation</a>.</p>
 </td>
@@ -53,4 +53,5 @@ This section describes the openGauss installation process.
 </tr>
 </tbody>
 </table>
+
 
