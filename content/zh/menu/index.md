@@ -368,7 +368,7 @@ headless: true
             -   [常见问题处理]({{< relref "./docs/Developerguide/常见问题处理-15.md" >}})
     -   [内存表特性]({{< relref "./docs/Developerguide/内存表特性.md" >}})
         -   [MOT介绍]({{< relref "./docs/Developerguide/MOT介绍.md" >}})
-			-   [MOT简介](MOT简介.md" >}})
+			-   [MOT简介]({{< relref "./docs/Developerguide/MOT简介.md" >}})
 			-   [MOT特性及价值]({{< relref "./docs/Developerguide/MOT特性及价值.md" >}})
 			-   [MOT关键技术]({{< relref "./docs/Developerguide/MOT关键技术.md" >}})
 			-   [MOT应用场景]({{< relref "./docs/Developerguide/MOT应用场景.md" >}})

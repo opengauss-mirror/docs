@@ -12,7 +12,7 @@
     -   始终使用FOREIGN关键字引用MOT。
     -   在创建MOT表时，\[server mot\_server\]部分是可选的，因为MOT是一个集成的引擎，而不是一个独立的服务器。
     -   上文以创建一个名为test的内存表（表中有一个名为x的整数列）为例。在下一节（创建索引）中将提供一个更现实的例子。
-    -   如果postgresql.conf中开启了增量检查点，则无法创建MOT。因此请在创建MOT前将enable_incremental_checkpoint置为off。
+    -   如果postgresql.conf中开启了增量检查点，则无法创建MOT。因此请在创建MOT前将enable_incremental_checkpoint设置为off。
 
 -   删除名为test的MOT：
 
