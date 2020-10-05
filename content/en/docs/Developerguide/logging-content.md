@@ -369,7 +369,7 @@ postgres=# show logging_module;                                                 
 (1 row)
 ```
 
-**Dependency**: The value of this parameter depends on the settings of  **log\_min\_level**.
+**Dependency**: The value of this parameter depends on the settings of  **log\_min\_messages**.
 
 ## opfusion\_debug\_mode<a name="en-us_topic_0237124723_section81513383462"></a>
 

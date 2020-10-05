@@ -9,7 +9,7 @@ The mot.conf file is located in the same folder as the postgres.conf configurati
 Read the  [General Guidelines](#section14452102715206)  section and then review and configure the following sections of the mot.conf file, as needed.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->The topics listed above describe each of the setting sections in the mot.conf file. In addition to the above topics, for an overview of all the aspects of a specific MOT feature \(such as Recovery\), you may refer to the relevant topic of this user manual. For example, the mot.conf file has a Recovery section that contains settings that affect MOT recovery and this is described in the  [MOT Recovery](mot-recovery.md)  section that is listed above. In addition, for a full description of all aspects of Recovery, you may refer to the  [MOT Recovery](mot-recovery.md)section of the Administration chapter of this user manual. Reference links are also provided in each relevant section of the descriptions below.
+>The topics listed above describe each of the setting sections in the mot.conf file. In addition to the above topics, for an overview of all the aspects of a specific MOT feature \(such as Recovery\), you may refer to the relevant topic of this user manual. For example, the mot.conf file has a Recovery section that contains settings that affect MOT recovery and this is described in the  [MOT Recovery](mot-recovery.md)  section that is listed above. In addition, for a full description of all aspects of Recovery, you may refer to the  [MOT Recovery](mot-recovery.md)  section of the Administration chapter of this user manual. Reference links are also provided in each relevant section of the descriptions below.
 
 The following topics describe each section in the mot.conf file and the settings that it contains, as well as the default value of each.
 
@@ -53,17 +53,11 @@ If no time units are specified, then microseconds are assumed.
 
 ## REDO LOG \(MOT\)<a name="section361563811235"></a>
 
--   **enable\_redo\_log = true**
-
-    Specifies whether to use the Redo Log for durability. See the  [MOT Logging – WAL Redo Log](mot-durability.md#section129831140121218)section for more information about redo logs.
-
 -   **enable\_group\_commit = false**
 
     Specifies whether to use group commit.
 
     This option is only relevant when openGauss is configured to use synchronous commit, meaning only when the synchronous\_commit setting in postgresql.conf is configured to any value other than off.
-
-    You may refer to  [MOT Logging – WAL Redo Log](mot-durability.md#section129831140121218)  for more information about the WAL Redo Log.
 
 -   **group\_commit\_size = 16**
 -   **group\_commit\_timeout = 10 ms**
@@ -72,21 +66,16 @@ If no time units are specified, then microseconds are assumed.
 
     Defines which of the following determines when a group of transactions is recorded in the WAL Redo Log –
 
-    group\_commit\_size  **–**  The quantity of committed transactions in a group. For example,  **16**  means that when 16 transactions in the same group have been committed by their client application, then an entry is written to disk in the WAL Redo Log for each of the 16 transactions.
+    **group\_commit\_size**  –  The quantity of committed transactions in a group. For example,  **16**  means that when 16 transactions in the same group have been committed by their client application, then an entry is written to disk in the WAL Redo Log for each of the 16 transactions.
 
-    group\_commit\_timeout** –**  A timeout period in ms. For example,  **10**  means that after 10 ms, an entry is written to disk in the WAL Redo Log for each of the transactions in the same group that have been committed by their client application in the lats 10 ms.
+    **group\_commit\_timeout**  –  A timeout period in ms. For example,  **10**  means that after 10 ms, an entry is written to disk in the WAL Redo Log for each of the transactions in the same group that have been committed by their client application in the lats 10 ms.
 
     A commit group is closed after either the configured number of transactions has arrived or after the configured timeout period since the group was opened. After the group is closed, all the transactions in the group wait for a group flush to complete execution and then notify the client that each transaction has ended.
 
-    You may refer to the  [MOT Logging Types](mot-durability.md#section125771537134)  section for more information about synchronous group commit logging.
+    You may refer to  [MOT Logging – WAL Redo Log](mot-durability.md#section129831140121218)  section for more information about the WAL Redo Log and synchronous group commit logging.
 
 
 ## CHECKPOINT \(MOT\)<a name="section8719101152712"></a>
-
--   **enable\_checkpoint = true**
-
-    Specifies whether to use periodic checkpoint.
-
 
 -   **checkpoint\_dir =**
 
@@ -105,7 +94,7 @@ If no time units are specified, then microseconds are assumed.
     Checkpoint is performed in parallel by several MOT engine workers. The quantity of workers may substantially affect the overall performance of the entire checkpoint operation, as well as the operation of other running transactions. To achieve a shorter checkpoint duration, a larger number of workers should be used, up to the optimal number \(which varies based on the hardware and workload\). However, be aware that if this number is too large, it may negatively impact the execution time of other running transactions. Keep this number as low as possible to minimize the effect on the runtime of other running transactions, but at the cost of longer checkpoint duration.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >You may refer to the  [MOT Checkpoints](mot-durability.md#section182761535131617)section for more information about configuration settings.
+    >You may refer to the  [MOT Checkpoints](mot-durability.md#section182761535131617)  section for more information about configuration settings.
 
 
 ## RECOVERY \(MOT\)<a name="section7442447103115"></a>
@@ -213,6 +202,8 @@ If no time units are specified, then microseconds are assumed.
     Specifies whether to use NUMA-aware memory allocation.
 
     When disabled, all affinity configurations are disabled as well.
+
+    MOT engine assumes that all the available NUMA nodes have memory. If the machine has some special configuration in which some of the NUMA nodes have no memory, then the MOT engine initialization and hence the database server startup will fail. In such machines, it is recommended that this configuration value be set to false, in order to prevent startup failures and let the MOT engine to function normally without using NUMA-aware memory allocation.
 
 -   **max\_threads = 1024**
 

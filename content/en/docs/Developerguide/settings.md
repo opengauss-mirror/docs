@@ -26,6 +26,10 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   hot\_standby
     -   Further adds information required to run SQL queries on a standby server and takes effect after a server restart.
     -   To enable read-only queries on a standby server, the  **wal\_level**  parameter must be set to  **hot\_standby**  on the primary server and the  **hot\_standby**  parameter must be set to  **on**  on the standby server. There are few measurable differences in performance between using  **hot\_standby**  and  **archive**  levels. However, feedback is welcome if any differences in their impacts on product performance are noticeable.
+    
+- logical
+
+   This parameter indicates that the WAL log supports logical replication.
 
 
 **Default value**:  **hot\_standby**
@@ -60,6 +64,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **local**  indicates local commit.
 -   **remote\_write**  indicates that synchronization logs of a standby server are written to disk.
 -   **remote\_receive**  indicates that the standby server receives logs.
+-   **true**  indicates that flush the synchronization log of the standby machine to disk.
+-   **false**  indicates that asynchronous submission.
+-   **yes**  indicates that flush the synchronization log of the standby machine to disk.
+-   **no** indicates that asynchronous submission.
+-   **1**  indicates that flush the synchronization log of the standby machine to disk.
+-   **0**  indicates that asynchronous submission.
 
 **Default value**:  **off**
 

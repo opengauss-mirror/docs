@@ -27,7 +27,7 @@
 
 Valid literal values for the "true" state include:
 
-TRUE, 't', 'true', 'y', 'yes', '1', 1, 'TRUE',true
+TRUE, 't', 'true', 'y', 'yes', '1', 'TRUE',true, and an integer ranging from 1 to 2^63-1 or from -1 to -2^63.
 
 Valid literal values for the "false" state include:
 
