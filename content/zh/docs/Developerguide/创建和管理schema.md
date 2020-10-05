@@ -102,7 +102,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
         REVOKE
         ```
 
-    -   使用以下命令查看现有的schema：
+    -   使用以下命令查看现有的schema。
 
         ```
         postgres=# SELECT current_schema();
