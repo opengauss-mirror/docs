@@ -4,7 +4,8 @@ Sample Docker build files to facilitate installation, configuration, and environ
 ## How to build and run
 This project offers sample Dockerfiles for:
 
- * opengauss_1.0.0
+ * opengauss:1.0.0
+ * opengauss:1.0.1
 
 To assist in building the images, you can use the [buildDockerImage.sh](dockerfiles/buildDockerImage.sh) script. See below for instructions and usage.
 
@@ -21,7 +22,7 @@ Before you build the image make sure that you have provided the installation bin
   
     Parameters:
     -v: version to build
-       Choose one of: 1.0.0  SingleInstance  
+       Choose one of: 1.0.0 1.0.1
     -i: ignores the MD5 checksums
 
 ### self-defined parameter
@@ -55,24 +56,65 @@ ARM64 openEuler 20.03 LTS
 ### Start Instance
 
 ```console
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 opengauss:1.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 opengauss:1.0.1
 ```
 
 ### Connect To The Container Database From Os
 
 ```console
-$ docker run −−name opengauss −−privileged=true −d −e GSPASSWORD=secretpassword@123 \
-  −p8888:5432 opengauss:1.0.0 gsql -d postgres -U gaussdb -W'secretpassword@123' \
+$ docker run −−name opengauss −−privileged=true −d −e GSPASSWORD=Enmo@123 \
+  −p8888:5432 opengauss:1.0.1 gsql -d postgres -U gaussdb -W'Enmo@123' \
   -h your-host-ip -p8888
 ```
 
 ### Persist Data
 
 ```console
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 \
-  -v /opengauss:/var/lib/opengauss opengauss:1.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 \
+  -v /opengauss:/var/lib/opengauss opengauss:1.0.1
 ```
 
-### Todo
-primary standby install
+### Primary/Standby install
 
+Create container mirror after executing scripts [create_master_slave.sh](https://gitee.com/opengauss/openGauss-server/blob/master/docker/dockerfiles/create_master_slave.sh)automatically create openGauss master-slave architecture.
+The script has multiple custom parameters and sets default values.
+
+**OG\_SUBNET**
+
+The network segment where the container is located [172.11.0.0/24]
+
+**GS\_PASSWORD**
+
+Define database password [Enmo@123]
+
+**\_MASTER_IP**
+
+Master IP [172.11.0.101]
+
+**\_SLAVE_1_IP**
+
+Slave IP [172.11.0.102]
+
+**\_MASTER_HOST_PORT**
+
+Master database service port [5432]
+
+**\_MASTER_LOCAL_PORT**
+
+Master database communication port [5434]
+
+**\_SLAVE_1_HOST_PORT**
+
+Slave database service port [6432]
+
+**\_SLAVE_1_LOCAL_PORT**
+
+Slave database communication port [6434]
+
+**\_MASTER_NODENAME**
+
+Master node name [opengauss_master]
+
+**\_SLAVE_NODENAME**
+
+Slave node name [opengauss_slave1]
