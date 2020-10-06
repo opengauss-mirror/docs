@@ -1,5 +1,15 @@
 # 基于ODBC开发<a name="ZH-CN_TOPIC_0244721233"></a>
 
+-   **[ODBC包及依赖的库和头文件](ODBC包及依赖的库和头文件.md)**  
+
+-   **[Linux下配置数据源](Linux下配置数据源.md)**  
+
+-   **[开发流程](开发流程-1.md)**  
+
+-   **[示例](示例.md)**  
+
+-   **[ODBC接口参考](ODBC接口参考.md)**  
+
 ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公司基于X/OPEN CLI提出的用于访问数据库的应用程序编程接口。应用程序通过ODBC提供的API与数据库进行交互，增强了应用程序的可移植性、扩展性和可维护性。
 
 ODBC的系统结构参见[图1](#fig1255101034110)。
@@ -47,15 +57,5 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >当前数据库ODBC驱动基于开源版本，对于tinyint、smalldatetime、nvarchar2类型，在获取数据类型的时候，可能会出现不兼容。  
-
--   **[ODBC包及依赖的库和头文件](ODBC包及依赖的库和头文件.md)**  
-
--   **[Linux下配置数据源](Linux下配置数据源.md)**  
-
--   **[开发流程](开发流程-1.md)**  
-
--   **[示例](示例.md)**  
-
--   **[ODBC接口参考](ODBC接口参考.md)**  
 
 
