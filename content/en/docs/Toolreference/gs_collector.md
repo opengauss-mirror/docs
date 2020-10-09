@@ -69,8 +69,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row1715638237"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p2151038237"><a name="en-us_topic_0237152334_p2151038237"></a><a name="en-us_topic_0237152334_p2151038237"></a>CoreDump</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p86827507318"><a name="en-us_topic_0237152334_p86827507318"></a><a name="en-us_topic_0237152334_p86827507318"></a>gs_ctl, gaussdb, GaussMaster, AioWorker, AlarmChecker, Archiver, Auditor, AutoVacLauncher, AutoVacWorker, AuxMain, BackendMode, BgWriter, BootStrap, Catchup, CBMWriter, Checkpointer, CommAuxStream, CommPoolCleane, CommRcvStream, CommRcvWorker, CommSendStream, CpMonitor, DataRcvWriter, DataReceiver, DataSender, ExtremeRTO, FencedUDFMaster, Heartbeater, JobExecutor, JobScheduler</p>
-<p id="p14874154519471"><a name="p14874154519471"></a><a name="p14874154519471"></a>LWLockMonitor, PageWriter, ParallelRecov, PercentileJob, Reaper, RemoteSrv, StartupProcess, StatCollector, Stream, SysLogger, ThdPoolListener, TwoPhaseCleaner, WalRcvWriter, WalReceiver, WalSender, WalWriter, WDRSnapshot, WlmArbiter, WlmCollector, WlmMonitor</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p86827507318"><a name="en-us_topic_0237152334_p86827507318"></a><a name="en-us_topic_0237152334_p86827507318"></a>gs_ctl, gaussdb, GaussMaster, AioWorker, AlarmChecker, Archiver, Auditor, AutoVacLauncher, AutoVacWorker, AuxMain, BackendMode, BgWriter, BootStrap, Catchup, CBMWriter, Checkpointer, CommAuxStream, CommPoolCleane, CommRcvStream, CommRcvWorker, CommSendStream, CpMonitor, DataRcvWriter, DataReceiver, DataSender, ExtremeRTO, FencedUDFMaster, Heartbeater, JobExecutor, JobScheduler, LWLockMonitor, PageWriter, ParallelRecov, PercentileJob, Reaper, RemoteSrv, StartupProcess, StatCollector, Stream, SysLogger, ThdPoolListener, TwoPhaseCleaner, WalRcvWriter, WalReceiver, WalSender, WalWriter, WDRSnapshot, WlmArbiter, WlmCollector, WlmMonitor</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p5229047123010"><a name="en-us_topic_0237152334_p5229047123010"></a><a name="en-us_topic_0237152334_p5229047123010"></a>Filter the core files of the gaussdb process by time.</p>
 <div class="caution" id="en-us_topic_0237152334_note1316119421297"><a name="en-us_topic_0237152334_note1316119421297"></a><a name="en-us_topic_0237152334_note1316119421297"></a><span class="cautiontitle"> CAUTION: </span><div class="cautionbody"><p id="en-us_topic_0237152334_p016104214295"><a name="en-us_topic_0237152334_p016104214295"></a><a name="en-us_topic_0237152334_p016104214295"></a>Configure the core as follows: Add the core file format <strong id="b1889275014372"><a name="b1889275014372"></a><a name="b1889275014372"></a>core-%e-%p-%t</strong> to the <strong id="b98415012397"><a name="b98415012397"></a><a name="b98415012397"></a>/proc/sys/opengauss/core_pattern</strong> file.</p>
@@ -100,6 +99,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 </tbody>
 </table>
+
 
 
 ## Prerequisites<a name="en-us_topic_0237152334_en-us_topic_0059778085_s7bffe8e9bdec4735885781573a71fb91"></a>
