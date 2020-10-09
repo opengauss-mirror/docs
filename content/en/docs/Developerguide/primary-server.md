@@ -145,3 +145,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >The unit can only be second.  
 
+## catchup2normal\_wait\_time<a name="en-us_topic_0237124713_section710318493419"></a>
+
+**Parameter description**: Control the data catchup method between master and slave. In the case of a single synchronous standby machine, control the maximum time that the standby machine data catchup blocks the host.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Integer, range -1~10000, in milliseconds.
+
+-   **-1** means the host is blocked until the data catch-up of the standby machine is completed.
+-   **0** means that the host will never be blocked when the standby data is chasing.
+-   The remaining value represents the longest time that the host will be blocked when the backup data catches up. For example, a value of 5000 means that when the backup data catch-up time is 5 seconds left, the host is blocked and waits for it to complete.
+
+**Default value**:  **-1**
