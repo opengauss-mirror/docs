@@ -58,7 +58,6 @@ The following lists the functionality limitations of MOT tables –
 -   Tsvector
 -   Tsquery
 -   JSON
--   HSTORE
 -   Box
 -   Text
 -   Line
