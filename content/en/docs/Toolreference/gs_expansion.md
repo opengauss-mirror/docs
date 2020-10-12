@@ -20,7 +20,7 @@ When a standalone mode is scaled to the primary/standby mode, the standalone dat
 
 -   Only user  **root**  is authorized to run the  **gs\_expansion**  command.
 
--   The environment variables of the primary database node have been imported before the scale-out command is run.
+-   The environment variables of the primary database node have been imported before the scale-out command is run. If the current database cluster is installed in a separate environment variable mode, source imports the separated environment variable. If the separation is not done, you need to source the sub-user's .bashrc configuration file. Generally, the file path is: /home/[user]/.bashrc
 
 -   The operating system of the new standby node is the same as that of the primary node.
 
