@@ -136,8 +136,8 @@ This is the second version of openGauss. Features and functions of this version 
     Generates a performance report between two different time points based on the system performance snapshot data at these time points. The report is used to diagnose database kernel performance faults.
 
 -   Supports transaction-level synchronization of heterogeneous databases \(only DML\).
+-   Container-based deployment \(alpha\)
 
-## Optimized Features<a name="section147262552548"></a>
+    Provides the container-based deployment capability for single-node databases. A script is used to build the Docker image of the database. After the image is started, you can deploy and run the single-node database in container mode.
 
-This is the second release of openGauss. The current version does not optimize features of the first release.
 
