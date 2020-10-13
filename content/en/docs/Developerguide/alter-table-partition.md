@@ -15,7 +15,6 @@
 -   Use  **PARTITION FOR\(\)**  to choose partitions. The number of specified values in the brackets should be the same as the column number in customized partition, and they must be consistent.
 -   The  **Value**  partition table does not support the  **Alter Partition**  operation.
 -   Column-store tables and row-store tables cannot be partitioned.
--   Partitions cannot be added to an interval partitioned table.
 
 ## Syntax<a name="en-us_topic_0237122077_en-us_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
 
@@ -113,14 +112,14 @@
 
 
         -   The syntax of  **partition\_less\_than\_item**  is as follows:
-
+    
             ```
             PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
                 [ TABLESPACE tablespacename ]
             ```
-
+    
         -   The syntax of  **partition\_start\_end\_item**  is as follows. For details about the constraints, see  [partition\_start\_end\_item syntax](create-table-partition.md#en-us_topic_0237122119_li2094151861116).
-
+    
             ```
             PARTITION partition_name {
                     {START(partition_value) END (partition_value) EVERY (interval_value)} |
@@ -133,16 +132,13 @@
 
 
     -   The  **add\_clause**  syntax is used to add one or more partitions to a specified partitioned table.
-
+    
         ```
         ADD {partition_less_than_item | partition_start_end_item}
         ```
-
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   Partitions cannot be added to an interval partitioned table.
-
+    
     -   The  **drop\_clause**  syntax is used to remove a partition from a specified partitioned table.
-
+    
         ```
         DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
         ```

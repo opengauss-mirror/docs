@@ -31,19 +31,6 @@ In addition to comparative operators, you can also use the following sentence st
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >Do not write  **expression=NULL**  or  **expression<\>\(!=\)NULL**, because  **NULL**  represents an unknown value, and these expressions cannot determine whether two unknown values are equal.
 
-
-## Pseudocolumn<a name="section104921036122717"></a>
-
-ROWNUM
-
-**ROWNUM**  is a pseudocolumn that returns a number indicating the row number of the result obtained from the query. The value of  **ROWNUM**  in the first row is  **1**, the value of  **ROWNUM**  in the second row is  **2**, and so on.
-
-The return type of  **ROWNUM**  is BIGINT.  **ROWNUM**  can be used to limit the total number of rows returned by a query. For example, the following statement limits the maximum number of records returned from the table  **Students**  to 10.
-
-```
-select * from Students where rownum <= 10;
-```
-
 ## Examples<a name="en-us_topic_0237122001_en-us_topic_0059778068_sa45abd926c8248c3b0b03e0173b11821"></a>
 
 ```

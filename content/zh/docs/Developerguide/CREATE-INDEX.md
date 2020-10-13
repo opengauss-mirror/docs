@@ -17,7 +17,7 @@
 
 -   索引自身也占用存储空间、消耗计算资源，创建过多的索引将对数据库性能造成负面影响（尤其影响数据导入的性能，建议在数据导入后再建索引）。因此，仅在必要时创建索引。
 -   索引定义里的所有函数和操作符都必须是immutable类型的，即它们的结果必须只能依赖于它们的输入参数，而不受任何外部的影响（如另外一个表的内容或者当前时间）。这个限制可以确保该索引的行为是定义良好的。要在一个索引上或WHERE中使用用户定义函数，请把它标记为immutable类型函数。
--   分区表索引分为LOCAL索引与GLOBAL索引，LOCAL索引与某个具体分区绑定，而GLOBAL索引则对应整个分区表。
+-   在分区表上创建唯一索引时，索引项中必须包含分布列和所有分区键。
 -   列存表支持的PSORT和B-tree索引都不支持创建表达式索引、部分索引和唯一索引。
 -   列存表支持的GIN索引支持创建表达式索引，但表达式不能包含空分词、空列和多列，不支持创建部分索引和唯一索引。
 
@@ -38,7 +38,7 @@
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
-        [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] 
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ];
     ```
@@ -133,14 +133,6 @@
 - **NULLS LAST**
 
     指定空值在排序中排在非空值之后，未指定DESC排序时，本选项为默认的。
-
-- **LOCAL**
-
-    指定创建的分区索引为LOCAL索引。
-    
-- **GLOBAL**
-
-    指定创建的分区索引为GLOBAL索引，当不指定LOCAL、GLOBAL关键字时，默认创建GLOBAL索引。
 
 - **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 

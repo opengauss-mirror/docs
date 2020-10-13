@@ -76,9 +76,7 @@ openGauss提供了收回权限的语句，请参考[REVOKE](REVOKE.md)。
 
 openGauss允许设置应用于将来创建的对象的权限，请参考[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)。
 
-## 关闭当前节点
 
-openGauss支持使用shutdown命令关闭当前数据库节点，请参考[SHUTDOWN](SHUTDOWN.md)。
 
 
 

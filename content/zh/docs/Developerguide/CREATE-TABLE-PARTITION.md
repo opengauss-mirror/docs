@@ -4,19 +4,13 @@
 
 创建分区表。分区表是把逻辑上的一张表根据某种方案分成几张物理块进行存储，这张逻辑上的表称之为分区表，物理块称之为分区。分区表是一张逻辑表，不存储数据，数据实际是存储在分区上的。
 
-常见的分区方案有范围分区（Range Partitioning）、间隔分区（Interval Partitioning）、 哈希分区（Hash Partitioning）、列表分区（List Partitioning）、数值分区（Value Partition）等。目前行存表仅支持范围分区、间隔分区，列存表仅支持范围分区。
+常见的分区方案有范围分区（Range Partitioning）、 哈希分区（Hash Partitioning）、列表分区（List Partitioning）、数值分区（Value Partition）等。目前行存表、列存表仅支持范围分区。
 
 范围分区是根据表的一列或者多列，将要插入表的记录分为若干个范围，这些范围在不同的分区里没有重叠。为每个范围创建一个分区，用来存储相应的数据。
 
 范围分区的分区策略是指记录插入分区的方式。目前范围分区仅支持范围分区策略。
 
 范围分区策略：根据分区键值将记录映射到已创建的某个分区上，如果可以映射到已创建的某一分区上，则把记录插入到对应的分区上，否则给出报错和提示信息。这是最常用的分区策略。
-
-间隔分区是一种特殊的范围分区，相比范围分区，新增间隔值定义，当插入记录找不到匹配的分区时，可以根据间隔值自动创建分区。
-
-间隔分区只支持基于表的一列分区，并且该列只支持TIMESTAMP[(p)][WITHOUT TIME ZONE]、TIMESTAMP[(p)][WITH TIME ZONE]、DATE数据类型。
-
-间隔分区策略：根据分区键值将记录映射到已创建的某个分区上，如果可以映射到已创建的某一分区上，则把记录插入到对应的分区上，否则根据分区键值和表定义信息自动创建一个分区，然后将记录插入新分区中，新创建的分区数据范围等于间隔值。
 
 分区可以提供若干好处：
 
@@ -41,8 +35,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
      PARTITION BY { 
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )}
+        {RANGE (partition_key) ( partition_less_than_item [, ... ] )} |
+        {RANGE (partition_key) ( partition_start_end_item [, ... ] )}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -230,13 +224,6 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
-    （3）对于指定了interval子句的语法格式：
-
-    > ![](D:/work/db/openGauss/%E6%96%87%E6%A1%A3/opengauss-docs-master/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **须知：**   
-    > 对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。  
-
-    该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
-
 - **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
 
     指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
@@ -270,17 +257,6 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（32767）；  
     >3.  在创建分区表时START END与LESS THAN语法不可混合使用。  
     >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。  
-
-- **INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ]**
-
-    间隔分区定义信息。
-
-    - interval_expr：自动创建分区的间隔，例如：1 day、1 month。
-
-    - STORE IN (tablespace_name [, ... ] )：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
-
-      > ![](D:/work/db/openGauss/%E6%96%87%E6%A1%A3/opengauss-docs-master/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **须知：**   
-      > 列存表不支持间隔分区。    
 
 - **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 

@@ -16,7 +16,7 @@ Different from  **SELECT**, data found by  **SELECT INTO**  is not returned to t
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     { * | {expression [ [ AS ] output_name ]} [, ...] }
-    INTO [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] [ TABLE ] new_table
+    INTO [UNLOGGED ] [ TABLE ] new_table
     [ FROM from_item [, ...] ]
     [ WHERE condition ]
     [ GROUP BY expression [, ...] ]
@@ -43,25 +43,6 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     -   Usage scenario: Unlogged tables do not ensure data security. Users can back up data before using unlogged tables; for example, users should back up the data before a system upgrade.
     -   Troubleshooting: If data is missing in the indexes of unlogged tables due to some unexpected operations such as an unclean shutdown, users should re-create the indexes with errors.
-
-
--   **GLOBAL | LOCAL**
-
-    When creating a temporary table, you can specify the  **GLOBAL**  or  **LOCAL**  keyword before  **TEMP**  or  **TEMPORARY**. If the keyword  **GLOBAL**  is specified, openGauss creates a global temporary table. Otherwise, openGauss creates a local temporary table.
-
--   **TEMPORARY | TEMP**
-
-    If  **TEMP**  or  **TEMPORARY**  is specified, the created table is a temporary table. Temporary tables are classified into global temporary tables and local temporary tables. If the keyword  **GLOBAL**  is specified when a temporary table is created, the table is a global temporary table. Otherwise, the table is a local temporary table.
-
-    The metadata of the global temporary table is visible to all sessions. After the sessions end, the metadata still exists. The user data, indexes, and statistics of a session are isolated from those of another session. Each session can only view and modify the data submitted by itself. Global temporary tables have two schemas:  **ON COMMIT PRESERVE ROWS**  and  **ON COMMIT PRESERVE ROWS**. In session-based  **ON COMMIT PRESERVE ROWS**  schema, user data is automatically cleared when a session ends. In transaction-based  **ON COMMIT DELETE ROWS**  schema, user data is automatically cleared when the commit or rollback operation is performed. If the  **ON COMMIT**  option is not specified during table creation, the session level is used by default. Different from local temporary tables, you can specify a schema that does not start with  **pg\_temp\_**  when creating a global temporary table.
-
-    A local temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
-
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
-    >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
-    >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**.
-    >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

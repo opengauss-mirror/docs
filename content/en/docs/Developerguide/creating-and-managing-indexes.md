@@ -16,7 +16,6 @@ Indexes are created based on columns in database tables. Therefore, you must cor
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.
     >-   After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.
-    >-   Partitioned table indexes are classified into LOCAL indexes and GLOBAL indexes. A LOCAL index corresponds to a specific partition, and a GLOBAL index corresponds to the entire partitioned table.
 
 
 ## Procedure<a name="en-us_topic_0237120308_en-us_topic_0059777978_scba43baf1cd54d06a22160699ec2c658"></a>
@@ -24,7 +23,7 @@ Indexes are created based on columns in database tables. Therefore, you must cor
 For details about how to create a partitioned table, see  [Creating and Managing Partitioned Tables](en-us_topic_0242370193.md).
 
 -   Creating an index
-    -   Create the LOCAL index  **tpcds\_web\_returns\_p2\_index1**  without specifying the partition name for a partitioned table.
+    -   Create the index  **tpcds\_web\_returns\_p2\_index1**  without specifying the partition name for a partitioned table.
 
         ```
         postgres=# CREATE INDEX tpcds_web_returns_p2_index1 ON tpcds.web_returns_p2 (ca_address_id) LOCAL;
@@ -36,7 +35,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
         CREATE INDEX
         ```
 
-    -   Create the LOCAL index  **tpcds\_web\_returns\_p2\_index2**  with the partition name specified for a partitioned table.
+    -   Create the index  **tpcds\_web\_returns\_p2\_index2**  with the partition name specified for a partitioned table.
 
         ```
         postgres=# CREATE INDEX tpcds_web_returns_p2_index2 ON tpcds.web_returns_p2 (ca_address_sk) LOCAL
@@ -58,11 +57,6 @@ For details about how to create a partitioned table, see  [Creating and Managing
         CREATE INDEX
         ```
 
-    -   Create the GLOBAL index  **tpcds\_web\_returns\_p2\_global\_index**  for a partitioned table.
-
-        ```
-        CREATE INDEX tpcds_web_returns_p2_global_index ON tpcds.web_returns_p2 (ca_street_number) GLOBAL;
-        ```
 
 
 -   Modifying the tablespace of an index partition

@@ -14,7 +14,6 @@
 -   选择分区使用PARTITION FOR\(\)，括号里指定值个数应该与定义分区时使用的列个数相同，并且一一对应。
 -   Value分区表不支持相应的Alter Partition操作。
 -   列存分区表不支持切割分区。
--   间隔分区表不支持添加分区。
 
 ## 语法格式<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
 
@@ -135,14 +134,10 @@
         ADD {partition_less_than_item | partition_start_end_item}
         ```
 
-        > ![](D:/work/db/openGauss/%E6%96%87%E6%A1%A3/opengauss-docs-master/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **须知：**   
-        >
-        > - 间隔分区表不支持添加分区。   
-
     - drop\_clause子语法用于删除分区表中的指定分区。
-
+    
         ```
-        DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
+    DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
         ```
 
 

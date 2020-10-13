@@ -159,13 +159,6 @@
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122279_en-us_topic_0059778647_a348129b6108848ddaabd19cd40e1e7fa"><a name="en-us_topic_0237122279_en-us_topic_0059778647_a348129b6108848ddaabd19cd40e1e7fa"></a><a name="en-us_topic_0237122279_en-us_topic_0059778647_a348129b6108848ddaabd19cd40e1e7fa"></a>Column list of the constrained control if this column is a table constraint</p>
 </td>
 </tr>
-<tr id="row131201332177"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p512023314174"><a name="p512023314174"></a><a name="p512023314174"></a>conincluding</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p512053315176"><a name="p512053315176"></a><a name="p512053315176"></a>smallint[]</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p12120203310171"><a name="p12120203310171"></a><a name="p12120203310171"></a>Not for constraint, but will be included in the attribute column of <strong id="b20684129919"><a name="b20684129919"></a><a name="b20684129919"></a>INDEX</strong>.</p>
-</td>
-</tr>
 <tr id="en-us_topic_0237122279_en-us_topic_0059778647_r6aad5a80a8844022bf8c574587175ee3"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122279_en-us_topic_0059778647_a4cef367148cd46f1b49008f641e844eb"><a name="en-us_topic_0237122279_en-us_topic_0059778647_a4cef367148cd46f1b49008f641e844eb"></a><a name="en-us_topic_0237122279_en-us_topic_0059778647_a4cef367148cd46f1b49008f641e844eb"></a>confkey</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122279_en-us_topic_0059778647_a414924b497a24a1bb5a1449202fbaf42"><a name="en-us_topic_0237122279_en-us_topic_0059778647_a414924b497a24a1bb5a1449202fbaf42"></a><a name="en-us_topic_0237122279_en-us_topic_0059778647_a414924b497a24a1bb5a1449202fbaf42"></a>smallint[]</p>
