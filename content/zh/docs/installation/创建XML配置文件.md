@@ -37,7 +37,7 @@
     <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
   <!--数据库core文件目录-->
     <PARAM name="corePath" value="/opt/huawei/corefile"/>
-  <!-- 节点IP，与nodeNames一一对应 -->
+  <!-- 节点IP，与数据库节点名称列表一一对应 -->
     <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/>
   
   </CLUSTER>
@@ -123,14 +123,14 @@
 ```
 <!-- 每台服务器上的节点部署信息 -->
 <DEVICELIST>
-<!-- node1上的节点部署信息 -->
+<!-- 节点1上的部署信息 -->
 <DEVICE sn="node1_hostname">
-<!-- node1的hostname -->
+<!-- 节点1的主机名称 -->
 <PARAM name="name" value="node1_hostname"/>
-<!-- node1所在的AZ及AZ优先级 -->
+<!-- 节点1所在的AZ及AZ优先级 -->
 <PARAM name="azName" value="AZ1"/>
 <PARAM name="azPriority" value="1"/>
-<!-- node1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+<!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
 <PARAM name="backIp1" value="192.168.0.1"/>
 <PARAM name="sshIp1" value="192.168.0.1"/>
 ```
@@ -194,11 +194,11 @@
 ```
 <!--DBnode-->
 <PARAM name="dataNum" value="1"/>
-<!--DBnode端口号-->
+<!--数据库端口号-->
 <PARAM name="dataPortBase" value="15400"/>
-<!--DBnode主节点上数据目录，及备机数据目录-->
+<!--数据库主节点上的数据目录，及备机数据目录-->
 <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn"/>
-<!--DBnode节点上设定同步模式的节点数-->
+<!--数据库节点上设定同步模式的节点数-->
 <PARAM name="dataNode1_syncNum" value="0"/>
 ```
 
@@ -248,26 +248,36 @@
 <ROOT>
     <!-- openGauss整体信息 -->
     <CLUSTER>
+        <!-- 数据库名称 -->
         <PARAM name="clusterName" value="dbCluster" />
+        <!-- 数据库节点名称(hostname) -->
         <PARAM name="nodeNames" value="node1_hostname" />
+        <!-- 数据库安装目录-->
         <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <!-- 日志目录-->
         <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <!-- 临时文件目录-->
         <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp" />
+        <!-- 数据库工具目录-->
         <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <!-- 数据库core文件目录-->
         <PARAM name="corePath" value="/opt/huawei/corefile" />
+        <!-- 节点IP，与数据库节点名称列表一一对应 -->
         <PARAM name="backIp1s" value="192.168.0.1"/> 
     </CLUSTER>
     <!-- 每台服务器上的节点部署信息 -->
     <DEVICELIST>
-        <!-- node1上的节点部署信息 -->
+        <!-- 节点1上的部署信息 -->
         <DEVICE sn="node1_hostname">
+            <!-- 节点1的主机名称 -->
             <PARAM name="name" value="node1_hostname"/>
+            <!-- 节点1所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
-            
+               
 	    <!--dbnode-->
 	    <PARAM name="dataNum" value="1"/>
 	    <PARAM name="dataPortBase" value="15400"/>
@@ -285,23 +295,33 @@
 <ROOT>
     <!-- openGauss整体信息 -->
     <CLUSTER>
+        <!-- 数据库名称 -->
         <PARAM name="clusterName" value="Cluster_template" />
+        <!-- 数据库节点名称(hostname) -->
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname" />
+        <!-- 数据库安装目录-->
         <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <!-- 日志目录-->
         <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <!-- 临时文件目录-->
         <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <!-- 数据库工具目录-->
         <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <!-- 数据库core文件目录-->
         <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <!-- 节点IP，与数据库节点名称列表一一对应 -->
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/> 
     </CLUSTER>
     <!-- 每台服务器上的节点部署信息 -->
     <DEVICELIST>
-        <!-- node1上的节点部署信息 -->
+        <!-- 节点1上的部署信息 -->
         <DEVICE sn="node1_hostname">
+            <!-- 节点1的主机名称 -->
             <PARAM name="name" value="node1_hostname"/>
+            <!-- 节点1所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
             
@@ -312,12 +332,14 @@
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
 
-        <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点2上的节点部署信息，其中“name”的值配置为主机名称 -->
         <DEVICE sn="node2_hostname">
+            <!-- 节点2的主机名称 -->
             <PARAM name="name" value="node2_hostname"/>
+            <!-- 节点2所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点2的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
 	</DEVICE>
@@ -332,23 +354,33 @@
 <ROOT>
     <!-- openGauss整体信息 -->
     <CLUSTER>
+        <!-- 数据库名称 -->
         <PARAM name="clusterName" value="Cluster_template" />
+        <!-- 数据库节点名称(hostname) -->
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname" />
+        <!-- 数据库安装目录-->
         <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <!-- 日志目录-->
         <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <!-- 临时文件目录-->
         <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <!-- 数据库工具目录-->
         <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <!-- 数据库core文件目录-->
         <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <!-- 节点IP，与数据库节点名称列表一一对应 -->
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
     </CLUSTER>
     <!-- 每台服务器上的节点部署信息 -->
     <DEVICELIST>
-        <!-- node1上的节点部署信息 -->
+        <!-- 节点1上的部署信息 -->
         <DEVICE sn="node1_hostname">
+            <!-- 节点1的主机名称 -->
             <PARAM name="name" value="node1_hostname"/>
+            <!-- 节点1所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
             
@@ -359,22 +391,26 @@
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
 
-        <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点2上的部署信息 -->
         <DEVICE sn="node2_hostname">
+            <!-- 节点2的主机名称 -->
             <PARAM name="name" value="node2_hostname"/>
+            <!-- 节点2所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点2的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
 	</DEVICE>
 
-        <!-- node3上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点3上的部署信息 -->
         <DEVICE sn="node3_hostname">
+            <!-- 节点3的主机名称 -->
             <PARAM name="name" value="node3_hostname"/>
+            <!-- 节点3所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点3的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
 	</DEVICE>
@@ -389,23 +425,33 @@
 <ROOT>
     <!-- openGauss整体信息 -->
     <CLUSTER>
+        <!-- 数据库名称 -->
         <PARAM name="clusterName" value="Cluster_template" />
+        <!-- 数据库节点名称(hostname) -->
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname" />
+        <!-- 数据库安装目录-->
         <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <!-- 日志目录-->
         <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <!-- 临时文件目录-->
         <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <!-- 数据库工具目录-->
         <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <!-- 数据库core文件目录-->
         <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <!-- 节点IP，与数据库节点名称列表一一对应 -->
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/>    
     </CLUSTER>
     <!-- 每台服务器上的节点部署信息 -->
     <DEVICELIST>
-        <!-- node1上的节点部署信息 -->
+        <!-- 节点1上的节点部署信息 -->
         <DEVICE sn="node1_hostname">
+            <!-- 节点1的主机名称 -->
             <PARAM name="name" value="node1_hostname"/>
+            <!-- 节点1所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
             
@@ -416,32 +462,38 @@
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
 
-        <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点2上的部署信息 -->
         <DEVICE sn="node2_hostname">
+            <!-- 节点2的主机名称 -->
             <PARAM name="name" value="node2_hostname"/>
+            <!-- 节点2所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点2的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
 	</DEVICE>
 
-        <!-- node3上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点3上的部署信息 -->
         <DEVICE sn="node3_hostname">
+            <!-- 节点3的主机名称 -->
             <PARAM name="name" value="node3_hostname"/>
+            <!-- 节点3所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点3的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
 	</DEVICE>
 
-        <!-- node4上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点4上的部署信息 -->
         <DEVICE sn="node4_hostname">
+            <!-- 节点4的主机名称 -->
             <PARAM name="name" value="node4_hostname"/>
+            <!-- 节点4所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点4的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.4"/>
             <PARAM name="sshIp1" value="192.168.0.4"/>
 	</DEVICE>
@@ -456,23 +508,33 @@
 <ROOT>
     <!-- openGauss整体信息 -->
     <CLUSTER>
+        <!-- 数据库名称 -->
         <PARAM name="clusterName" value="Cluster_template" />
+        <!-- 数据库节点名称(hostname) -->
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname" />
+        <!-- 数据库安装目录-->
         <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
+        <!-- 日志目录-->
         <PARAM name="gaussdbLogPath" value="/var/log/omm" />
+        <!-- 临时文件目录-->
         <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
+        <!-- 数据库工具目录-->
         <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
+        <!-- 数据库core文件目录-->
         <PARAM name="corePath" value="/opt/huawei/corefile"/>
+        <!-- 节点IP，与数据库节点名称列表一一对应 -->
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/>      
     </CLUSTER>
     <!-- 每台服务器上的节点部署信息 -->
     <DEVICELIST>
-        <!-- node1上的节点部署信息 -->
+        <!-- 节点1上的节点部署信息 -->
         <DEVICE sn="node1_hostname">
+            <!-- 节点1的主机名称 -->
             <PARAM name="name" value="node1_hostname"/>
+            <!-- 节点1所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
             
@@ -483,42 +545,50 @@
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
 
-        <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点2上的部署信息 -->
         <DEVICE sn="node2_hostname">
+            <!-- 节点2的主机名称 -->
             <PARAM name="name" value="node2_hostname"/>
+            <!-- 节点2所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点2的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
 	</DEVICE>
 
-        <!-- node3上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点3上的部署信息 -->
         <DEVICE sn="node3_hostname">
+            <!-- 节点3的主机名称 -->
             <PARAM name="name" value="node3_hostname"/>
+            <!-- 节点3所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点3的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
 	</DEVICE>
 
-        <!-- node4上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点4上的部署信息 -->
         <DEVICE sn="node4_hostname">
+            <!-- 节点4的主机名称 -->
             <PARAM name="name" value="node4_hostname"/>
+            <!-- 节点4所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点4的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.4"/>
             <PARAM name="sshIp1" value="192.168.0.4"/>
 	</DEVICE>
 
-        <!-- node5上的节点部署信息，其中“name”的值配置为主机名称 -->
+        <!-- 节点5上的部署信息 -->
         <DEVICE sn="node5_hostname">
+            <!-- 节点5的主机名称 -->
             <PARAM name="name" value="node5_hostname"/>
+            <!-- 节点5所在的AZ及AZ优先级 -->
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
-            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 节点5的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.5"/>
             <PARAM name="sshIp1" value="192.168.0.5"/>
 	</DEVICE>
