@@ -91,44 +91,44 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
    ```
    vi gspylib/common/CheckPythonVersion.py
    ```
->
->6. If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\ /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
->
+
+6. If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\ /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
+
    ```
    vi /etc/profile.d/performance.sh
    ```
->
->7. To ensure that the OpenSSL version is correct, load the  **lib**  library in the installation package before preinstallation. Run the following command.  **\{packagePath\}**  indicates the path where the installation package is stored. In this example, the path is  **/opt/software/openGauss**.
->
+
+7. To ensure that the OpenSSL version is correct, load the  **lib**  library in the installation package before preinstallation. Run the following command.  **\{packagePath\}**  indicates the path where the installation package is stored. In this example, the path is  **/opt/software/openGauss**.
+
    ```
    export LD_LIBRARY_PATH={packagePath}/script/gspylib/clib:$LD_LIBRARY_PATH
    ```
->
->8. To ensure successful installation, check whether the values of  **hostname**  and  **/etc/hostname**  are the same. During preinstallation, the host name is checked.
->
->9. Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
->
+
+8. To ensure successful installation, check whether the values of  **hostname**  and  **/etc/hostname**  are the same. During preinstallation, the host name is checked.
+
+9. Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **\-\-sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
+
    - Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
->
+
      ```
      ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
      ```
->
+
      **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the openGauss user.
->
+
    - If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
->
-     1. Run the following command to configure the installation environment:
->
-        ```
-        cd /opt/software/openGauss/script
-        ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
-        ```
->
-        >![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
-        >You need to run this command on each host.
->
->
+
+     Run the following command to configure the installation environment:
+
+     ```
+     cd /opt/software/openGauss/script
+     ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
+     ```
+
+     ![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+     You need to run this command on each host.
+
+
     -   Execute  **gs\_preinstall**  in non-interactive mode.
         1.  Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in  [Establishing Mutual Trust Manually](establishing-mutual-trust-manually.md).
         2.  Run the following command to configure the installation environment:
@@ -141,204 +141,205 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
             >![](public_sys-resources/icon-note.gif) **NOTE:** 
             >-   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.
             >-   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.
->
->
->
->
->## Examples<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620"></a>
->
->Execute the  **gs\_preinstall**  script.
->
->```
->plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
->Parsing the configuration file.
->Successfully parsed the configuration file.
->Installing the tools on the local node.
->Successfully installed the tools on the local node.
->Are you sure you want to create trust for root (yes/no)? yes
->Please enter password for root.
->Password:
->Creating SSH trust for the root permission user.
->Checking network information.
->All nodes in the network are Normal.
->Successfully checked network information.
->Creating SSH trust.
->Creating the local key file.
->Successfully created the local key files.
->Appending local ID to authorized_keys.
->Successfully appended local ID to authorized_keys.
->Updating the known_hosts file.
->Successfully updated the known_hosts file.
->Appending authorized_key on the remote node.
->Successfully appended authorized_key on all remote node.
->Checking common authentication file content.
->Successfully checked common authentication content.
->Distributing SSH trust file to all node.
->Successfully distributed SSH trust file to all node.
->Verifying SSH trust on all hosts.
->Successfully verified SSH trust on all hosts.
->Successfully created SSH trust.
->Successfully created SSH trust for the root permission user.
->Setting pssh path
->Successfully set core path.
->Distributing package.
->Begin to distribute package to tool path.
->Successfully distribute package to tool path.
->Begin to distribute package to package path.
->Successfully distribute package to package path.
->Successfully distributed package.
->Are you sure you want to create the user[omm] and create trust for it (yes/no)? yes
->Please enter password for cluster user.
->Password:
->Please enter password for cluster user again.
->Password:
->Successfully created [omm] user on all nodes.
->Preparing SSH service.
->Successfully prepared SSH service.
->Installing the tools in the cluster.
->Successfully installed the tools in the cluster.
->Checking hostname mapping.
->Successfully checked hostname mapping.
->Creating SSH trust for [omm] user.
->Checking network information.
->All nodes in the network are Normal.
->Successfully checked network information.
->Creating SSH trust.
->Creating the local key file.
->Successfully created the local key files.
->Appending local ID to authorized_keys.
->Successfully appended local ID to authorized_keys.
->Updating the known_hosts file.
->Successfully updated the known_hosts file.
->Appending authorized_key on the remote node.
->Successfully appended authorized_key on all remote node.
->Checking common authentication file content.
->Successfully checked common authentication content.
->Distributing SSH trust file to all node.
->Successfully distributed SSH trust file to all node.
->Verifying SSH trust on all hosts.
->Successfully verified SSH trust on all hosts.
->Successfully created SSH trust.
->Successfully created SSH trust for [omm] user.
->Checking OS software.
->Successfully check os software.
->Checking OS version.
->Successfully checked OS version.
->Creating cluster's path.
->Successfully created cluster's path.
->Setting SCTP service.
->Successfully set SCTP service.
->Set and check OS parameter.
->Setting OS parameters.
->Successfully set OS parameters.
->Preparing CRON service.
->Successfully prepared CRON service.
->Setting user environmental variables.
->Successfully set user environmental variables.
->Setting the dynamic link library.
->Successfully set the dynamic link library.
->Setting Core file
->Successfully set core path.
->Setting pssh path
->Successfully set pssh path.
->Set ARM Optimization.
->No need to set ARM Optimization.
->Fixing server package owner.
->Setting finish flag.
->Successfully set finish flag.
->Preinstallation succeeded.
->```
->
->If the passwords of the user  **root**  on the primary and standby nodes are different and cannot be changed to the same value, run the  **gs\_preinstall**  script in local installation mode.
->
->```
->plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml 
->Parsing the configuration file.
->Successfully parsed the configuration file.
->Installing the tools on the local node.
->Successfully installed the tools on the local node.
->Checking OS version.
->Successfully checked OS version.
->Creating cluster's path.
->Successfully created cluster's path.
->Setting SCTP service.
->Successfully set SCTP service.
->Set and check OS parameter.
->Setting OS parameters.
->Successfully set OS parameters.
->Warning: Installation environment contains some warning messages.
->Please get more details by "/home/package/r8c00/script/gs_checkos -i A -h SIA1000068990".
->Set and check OS parameter completed.
->Preparing CRON service.
->Successfully prepared CRON service.
->Preparing SSH service.
->Successfully prepared SSH service.
->Setting user environmental variables.
->Successfully set user environmental variables.
->Configuring alarms on the cluster nodes.
->Successfully configured alarms on the cluster nodes.
->Setting the dynamic link library.
->Successfully set the dynamic link library.
->Setting Cgroup.
->Successfully set Cgroup.
->Setting finish flag.
->Successfully set finish flag.
->Preinstallation succeeded.
->```
->
->Execute  **gs\_preinstall**  in non-interactive mode.
->
->```
->plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
->Parsing the configuration file.
->Successfully parsed the configuration file.
->Installing the tools on the local node.
->Successfully installed the tools on the local node.
->Distributing package.
->Begin to distribute package to tool path.
->Successfully distribute package to tool path.
->Begin to distribute package to package path.
->Successfully distribute package to package path.
->Successfully distributed package.
->Installing the tools in the cluster.
->Successfully installed the tools in the cluster.
->Checking hostname mapping.
->Successfully checked hostname mapping.
->Checking OS version.
->Successfully checked OS version.
->Creating cluster's path.
->Successfully created cluster's path.
->Setting SCTP service.
->Successfully set SCTP service.
->Set and check OS parameter.
->Setting OS parameters.
->Successfully set OS parameters.
->Set and check OS parameter completed.
->Preparing CRON service.
->Successfully prepared CRON service.
->Preparing SSH service.
->Successfully prepared SSH service.
->Setting user environmental variables.
->Successfully set user environmental variables.
->Configuring alarms on the cluster nodes.
->Successfully configured alarms on the cluster nodes.
->Setting the dynamic link library.
->Successfully set the dynamic link library.
->Setting Cgroup.
->Successfully set Cgroup.
->Set ARM Optimization.
->Successfully set ARM Optimization.
->Setting finish flag.
->Successfully set finish flag.
->Preinstallation succeeded.
->```
->
->## Troubleshooting<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4"></a>
->
->If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing openGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running openGauss.
->
->>![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-notice.gif) **NOTICE:** 
->>While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
+
+
+
+
+## Examples<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620"></a>
+
+Execute the  **gs\_preinstall**  script.
+
+```
+plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
+Parsing the configuration file.
+Successfully parsed the configuration file.
+Installing the tools on the local node.
+Successfully installed the tools on the local node.
+Are you sure you want to create trust for root (yes/no)? yes
+Please enter password for root.
+Password:
+Creating SSH trust for the root permission user.
+Checking network information.
+All nodes in the network are Normal.
+Successfully checked network information.
+Creating SSH trust.
+Creating the local key file.
+Successfully created the local key files.
+Appending local ID to authorized_keys.
+Successfully appended local ID to authorized_keys.
+Updating the known_hosts file.
+Successfully updated the known_hosts file.
+Appending authorized_key on the remote node.
+Successfully appended authorized_key on all remote node.
+Checking common authentication file content.
+Successfully checked common authentication content.
+Distributing SSH trust file to all node.
+Successfully distributed SSH trust file to all node.
+Verifying SSH trust on all hosts.
+Successfully verified SSH trust on all hosts.
+Successfully created SSH trust.
+Successfully created SSH trust for the root permission user.
+Setting pssh path
+Successfully set core path.
+Distributing package.
+Begin to distribute package to tool path.
+Successfully distribute package to tool path.
+Begin to distribute package to package path.
+Successfully distribute package to package path.
+Successfully distributed package.
+Are you sure you want to create the user[omm] and create trust for it (yes/no)? yes
+Please enter password for cluster user.
+Password:
+Please enter password for cluster user again.
+Password:
+Successfully created [omm] user on all nodes.
+Preparing SSH service.
+Successfully prepared SSH service.
+Installing the tools in the cluster.
+Successfully installed the tools in the cluster.
+Checking hostname mapping.
+Successfully checked hostname mapping.
+Creating SSH trust for [omm] user.
+Checking network information.
+All nodes in the network are Normal.
+Successfully checked network information.
+Creating SSH trust.
+Creating the local key file.
+Successfully created the local key files.
+Appending local ID to authorized_keys.
+Successfully appended local ID to authorized_keys.
+Updating the known_hosts file.
+Successfully updated the known_hosts file.
+Appending authorized_key on the remote node.
+Successfully appended authorized_key on all remote node.
+Checking common authentication file content.
+Successfully checked common authentication content.
+Distributing SSH trust file to all node.
+Successfully distributed SSH trust file to all node.
+Verifying SSH trust on all hosts.
+Successfully verified SSH trust on all hosts.
+Successfully created SSH trust.
+Successfully created SSH trust for [omm] user.
+Checking OS software.
+Successfully check os software.
+Checking OS version.
+Successfully checked OS version.
+Creating cluster's path.
+Successfully created cluster's path.
+Setting SCTP service.
+Successfully set SCTP service.
+Set and check OS parameter.
+Setting OS parameters.
+Successfully set OS parameters.
+Preparing CRON service.
+Successfully prepared CRON service.
+Setting user environmental variables.
+Successfully set user environmental variables.
+Setting the dynamic link library.
+Successfully set the dynamic link library.
+Setting Core file
+Successfully set core path.
+Setting pssh path
+Successfully set pssh path.
+Set ARM Optimization.
+No need to set ARM Optimization.
+Fixing server package owner.
+Setting finish flag.
+Successfully set finish flag.
+Preinstallation succeeded.
+```
+
+If the passwords of the user  **root**  on the primary and standby nodes are different and cannot be changed to the same value, run the  **gs\_preinstall**  script in local installation mode.
+
+```
+plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml 
+Parsing the configuration file.
+Successfully parsed the configuration file.
+Installing the tools on the local node.
+Successfully installed the tools on the local node.
+Checking OS version.
+Successfully checked OS version.
+Creating cluster's path.
+Successfully created cluster's path.
+Setting SCTP service.
+Successfully set SCTP service.
+Set and check OS parameter.
+Setting OS parameters.
+Successfully set OS parameters.
+Warning: Installation environment contains some warning messages.
+Please get more details by "/home/package/r8c00/script/gs_checkos -i A -h SIA1000068990".
+Set and check OS parameter completed.
+Preparing CRON service.
+Successfully prepared CRON service.
+Preparing SSH service.
+Successfully prepared SSH service.
+Setting user environmental variables.
+Successfully set user environmental variables.
+Configuring alarms on the cluster nodes.
+Successfully configured alarms on the cluster nodes.
+Setting the dynamic link library.
+Successfully set the dynamic link library.
+Setting Cgroup.
+Successfully set Cgroup.
+Setting finish flag.
+Successfully set finish flag.
+Preinstallation succeeded.
+```
+
+Execute  **gs\_preinstall**  in non-interactive mode.
+
+```
+plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
+Parsing the configuration file.
+Successfully parsed the configuration file.
+Installing the tools on the local node.
+Successfully installed the tools on the local node.
+Distributing package.
+Begin to distribute package to tool path.
+Successfully distribute package to tool path.
+Begin to distribute package to package path.
+Successfully distribute package to package path.
+Successfully distributed package.
+Installing the tools in the cluster.
+Successfully installed the tools in the cluster.
+Checking hostname mapping.
+Successfully checked hostname mapping.
+Checking OS version.
+Successfully checked OS version.
+Creating cluster's path.
+Successfully created cluster's path.
+Setting SCTP service.
+Successfully set SCTP service.
+Set and check OS parameter.
+Setting OS parameters.
+Successfully set OS parameters.
+Set and check OS parameter completed.
+Preparing CRON service.
+Successfully prepared CRON service.
+Preparing SSH service.
+Successfully prepared SSH service.
+Setting user environmental variables.
+Successfully set user environmental variables.
+Configuring alarms on the cluster nodes.
+Successfully configured alarms on the cluster nodes.
+Setting the dynamic link library.
+Successfully set the dynamic link library.
+Setting Cgroup.
+Successfully set Cgroup.
+Set ARM Optimization.
+Successfully set ARM Optimization.
+Setting finish flag.
+Successfully set finish flag.
+Preinstallation succeeded.
+```
+
+## Troubleshooting<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4"></a>
+
+If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing openGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running openGauss.
+
+![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-notice.gif) **NOTICE:** 
+
+While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
 
 
 
