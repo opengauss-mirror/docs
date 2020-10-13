@@ -74,7 +74,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
     **Figure  2**  Hybrid row-column storage engine<a name="en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_fbb2af39ce12a419cb437829aaf1cf4fb"></a>  
     
 
-<img src="figures/opengauss行列混存引擎.png" style="zoom: 33%;" />
+<img src="figures/opengauss行列混存引擎.png" style="zoom: 67%;" />
     
 The restrictions of the column store engine are as follows:
     
@@ -200,7 +200,7 @@ The WDR module consists of the following two components:
 -   Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
 -   WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time points, and generates summarized and detailed performance data.
 
-## Incremental Backup and Recovery<a name="section13561174061810"></a>
+## Incremental Backup and Recovery (beta)<a name="section13561174061810"></a>
 
 Supports full backup and incremental backup of the database, manages backup data, and views the backup status. Supports combination of incremental backups and deletion of expired backups. The database server dynamically tracks page changes, and when a relational page is updated, the page is marked for backup. The incremental backup function requires that the GUC parameter enable\_cbm\_tracking be enabled to allow the server to track the modification page.
 
