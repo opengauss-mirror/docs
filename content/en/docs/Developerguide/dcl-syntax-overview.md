@@ -76,7 +76,5 @@ openGauss provides a statement for revoking rights. For details, see  [REVOKE](e
 
 openGauss allows users to set rights for objects that will be created. For details, see  [ALTER DEFAULT PRIVILEGES](en-us_topic_0252797127.md).
 
-## Shutting Down The Current Node<a name="section153781731062"></a>
 
-openGauss allows users to run the  **shutdown**  command to shut down the current database node. For details, see  [SHUTDOWN](shutdown.md).
 

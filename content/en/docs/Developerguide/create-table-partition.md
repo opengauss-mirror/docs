@@ -4,19 +4,13 @@
 
 **CREATE TABLE PARTITION**  creates a partitioned table. A partitioned table is a logical table that is divided into several physical partitions for storage based on a specific plan. Data is stored in physical partitions not the logical table.
 
-The common forms of partitioning include range partitioning, interval partitioning, hash partitioning, list partitioning, and value partitioning. Currently, row-store tables support only range partitioning and interval partitioning, and column-store tables support only range partitioning.
+The common forms of partitioning include range partitioning, hash partitioning, list partitioning, and value partitioning. Currently, row-store tables and column-store tables support only range partitioning.
 
 In range partitioning, a table is partitioned based on ranges defined by values in one or more columns, with no overlap between the ranges of values assigned to different partitions. Each range has a dedicated partition for data storage.
 
 The range partitioning policy refers to how data is inserted into partitions. Currently, range partitioning only allows the use of the range partitioning policy.
 
 In range partitioning, a table is partitioned based on partition key values. If a record can be mapped to a partition, it is inserted into the partition; if it cannot, an error message is returned. Range partitioning is the most commonly used partitioning policy.
-
-Interval partitioning is a special type of range partitioning. Compared with range partitioning, interval value definition is added. When no matching partition can be found for an inserted record, a partition can be automatically created based on the interval value.
-
-Interval partitioning supports only table-based partitioning of a column where the data type can be TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE.
-
-Interval partitioning policy: A record is mapped to a created partition based on the partition key value. If the record can be mapped to a created partition, the record is inserted into the corresponding partition. Otherwise, a partition is automatically created based on the partition key value and table definition information, and then the record is inserted into the new partition. The data range of the new partition is equal to the interval value.
 
 Partitioning can provide several benefits:
 
@@ -41,8 +35,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
      PARTITION BY { 
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )}
+        {RANGE (partition_key) ( partition_less_than_item [, ... ] )} |
+        {RANGE (partition_key) ( partition_start_end_item [, ... ] )}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -182,23 +176,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   COMPRESSION
         -   Valid values for column-store tables are  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**, and the compression level increases accordingly. The default is  **LOW**.
         -   Valid values for row-store tables are  **YES**  and  **NO**, and the default value is  **NO**.
-
+    
     -   MAX\_BATCHROW
-
+    
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: 10000 to 60000
-
+    
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: a number greater than or equal to 100000 The value is a multiple of  _MAX\_BATCHROW_.
-
+    
     -   DELTAROW\_THRESHOLD
-
+    
         A reserved parameter. The parameter is only valid for column-store tables.
-
+    
         Value range: 0 to 9999
 
 
@@ -229,13 +223,6 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >In this case, only one partition key is supported.
 
     Data types supported by the partition key are as follows:  **SMALLINT**,  **INTEGER**,  **BIGINT**,  **DECIMAL**,  **NUMERIC**,  **REAL**,  **DOUBLE PRECISION**,  **TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]**, and  **DATE**.
-
-    \(3\) Assume that the  **INTERVAL**  syntax is used.
-
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >In this case, only one partition key is supported.
-
-    In this case, the data types supported by the partition key are TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE.
 
 -   **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
 
@@ -270,17 +257,6 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >    -   When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value \(32767\).
     >3.  In statements for creating partitioned tables,  **START END**  and  **LESS THAN**  cannot be used together.
     >4.  The  **START END**  syntax in a partitioned table creation SQL statement will be replaced by the  **VALUES LESS THAN**  syntax when  **gs\_dump**  is executed.
-
--   **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**
-
-    Defines interval partitioning.
-
-    -   **interval\_expr**: interval for automatically creating partitions, for example, 1 day or 1 month.
-
-    -   **STORE IN \(tablespace\_name \[, ... \] \)**: Specifies the list of tablespaces for storing automatically created partitions. If this parameter is specified, the automatically created partitions are cyclically selected from the tablespace list. Otherwise, the default tablespace of the partition table is used.
-
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >Column-store tables do not support interval partitioning.
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 

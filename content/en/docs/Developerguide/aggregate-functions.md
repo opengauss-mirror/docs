@@ -110,22 +110,6 @@
     (1 row)
     ```
 
--   median\(expression\) \[over \(query partition clause\)\]
-
-    Description: Returns the median of an expression.  **NULL**  will be ignored by the median function during calculation. The  **DISTINCT**  keyword can be used to exclude duplicate records in an expression. The data type of the input expression can be numeric \(including integer, double, and bigint\) or interval. For other data types, the median cannot be calculated.
-
-    Return type: double or interval
-
-    Example:
-
-    ```
-    select median(id) from (values(1), (2), (3), (4), (null)) test(id);
-     median
-    --------
-         2.5
-    (1 row)
-    ```
-
 -   array\_agg\(expression\)
 
     Description: input values, including nulls, concatenated into an array

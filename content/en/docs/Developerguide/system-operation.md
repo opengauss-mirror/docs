@@ -25,8 +25,3 @@ For details about how to collect statistics on tables in databases, See  [ANALYZ
 ## Setting the Constraint Check Mode for the Current Transaction<a name="en-us_topic_0237122047_en-us_topic_0059778982_s894e1a6eba424cba9ac24a5f19b5d511"></a>
 
 For details about how to set the constraint check mode for the current transaction, See  [SET CONSTRAINTS](en-us_topic_0242370651.md).
-
-## Shutting Down The Current Database Node<a name="section1661915568326"></a>
-
-For details about shutting down the current database node, see  [SHUTDOWN](shutdown.md).
-
