@@ -102,32 +102,18 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
     Value range: a string. It must comply with the naming convention rule.
 
--   **ON DUPLICATE KEY UPDATE**
+- **ON DUPLICATE KEY UPDATE**
 
-    For a table with a unique constraint \(**UNIQUE INDEX**  or  **PRIMARY KEY**\), if the inserted data violates the unique constraint, the  **UPDATE**  clause is executed on the conflicting row to complete the update. For a table without a unique constraint, only the insert operation is performed. When  **UPDATE**  is used, if  **NOTHING**  is specified, this insertion is ignored. You can use  **EXCLUDE.**  or  **VALUES\(\)**  to select the column corresponding to the source data.
+  For a table with a unique constraint \(**UNIQUE INDEX**  or  **PRIMARY KEY**\), if the inserted data violates the unique constraint, the  **UPDATE**  clause is executed on the conflicting row to complete the update.
 
-    -   Triggers are supported. The triggering sequence is the same as the actual execution sequence.
-        -   Run the  **insert**  command to trigger the  **before insert**  and  **after insert**  triggers.
-        -   Run the  **update**  command to trigger the  **before insert**,  **before update**, and  **after update**  triggers.
-        -   Run the  **update nothing**  command to trigger the  **before insert**  trigger.
+  -   Triggers are not supported.
 
-    -   Deferrable unique constraints or primary keys are not supported.
+  -   Deferrable unique constraints or primary keys are not supported.
 
-    -   For a table with multiple unique constraints, if the inserted data violates multiple unique constraints, the  **UPDATE**  clause is executed to update only the first conflicting row. \(The check sequence is closely related to index maintenance. Generally, the conflict check is preferentially performed on the index that is created first.\)
-    -   If multiple rows are inserted and these rows conflict with the same row in the table, the system inserts or updates the first row and then updates other rows in sequence.
+  -   For a table with multiple unique constraints, if the inserted data violates multiple unique constraints, the  **UPDATE**  clause is executed to update only the first conflicting row. \(The check sequence is closely related to index maintenance. Generally, the conflict check is preferentially performed on the index that is created first.\)
+  -   Column-store tables and unique index columns cannot be updated.
+  -   Column-store tables is not supported.
 
-    -   Primary keys and unique index columns cannot be updated.
-    -   Column-store tables, foreign tables, and memory tables are not supported.
-
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >When  [enable\_upsert\_to\_merge](optimizer-method-configuration.md#section198182452312)  is set to  **on**, this statement will be converted to a  **MERGE INTO**  statement with the same semantics for execution. The behavior is the same as that of  **MERGE INTO**. The following behavior is different from that of  **UPSERT**:
-        >-   **UPDATE**  cannot update the values of user-defined elements or elements in an array.
-        >-   If  **INSERT**  specifies a target column, only the target column or columns with default values are checked for the unique constraint or primary key constraint conflicts.
-        >-   If a table has multiple unique constraints and the inserted data violates unique constraints of multiple rows in the table, the  **UPDATE**  clause is executed for all conflicting rows to complete the update.
-        >-   If multiple rows are inserted and the rows conflict with the unique constraint of the same row in the table, the execution fails. Set the GUC parameter  [behavior\_compat\_options](en-us_topic_0242371544.md#en-us_topic_0237124754_section1980124735516)  to  **'merge\_update\_multi'**, allowing conflict rows to be updated multiple times.
-        >-   If multiple rows are inserted and the rows do not conflict with the existing data in the table but violate the unique constraint, the  **INSERT**  statement fails to be executed.
-        >-   In the multi-row insertion scenario, the execution performance is poor.  **MERGE INTO**  does not support concurrent update. When multiple rows are inserted, an error may be reported, causing transaction rollback.
-        >-   The plan displayed by  **EXPLAIN**  is the execution plan converted into the  **MERGE INTO**  statement.
 
 
 

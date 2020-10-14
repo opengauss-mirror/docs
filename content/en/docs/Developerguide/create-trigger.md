@@ -75,7 +75,7 @@ Events include:
 
 -   **referenced\_table\_name**
 
-    Specifies the name of another table referenced by the constraint. This option is used for foreign-key constraints. It can only be specified for constraint triggers. 
+    Specifies the name of another table referenced by the constraint. This option is used for foreign-key constraints. It can only be specified for constraint triggers. Since foreign keys are not currently supported, this parameter is not recommended.
 
     Value range: name of an existing table in the database
 
