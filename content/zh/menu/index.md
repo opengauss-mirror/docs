@@ -424,7 +424,7 @@ headless: true
 			-   [MOT恢复概念]({{< relref "./docs/Developerguide/MOT恢复概念.md" >}})
 			-   [MOT查询原生编译（JIT）]({{< relref "./docs/Developerguide/MOT查询原生编译（JIT）.md" >}})
 			-   [对比：磁盘与MOT]({{< relref "./docs/Developerguide/对比-磁盘与MOT.md" >}})
-		-   [附录]({{< relref "./docs/Developerguide/附录.md" >}})
+		-   [附录]({{< relref "./docs/Developerguide/附录-2.md" >}})
 			-   [参考文献]({{< relref "./docs/Developerguide/参考文献.md" >}})
 			-   [术语表]({{< relref "./docs/Developerguide/术语表.md" >}})
     -   [性能调优]({{< relref "./docs/Developerguide/性能调优.md" >}})

@@ -87,34 +87,33 @@
     >    此语法主要供内部缩容工具使用，一般用户不建议使用。  
     >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
     >    禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。  
-        >应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。  
+        >应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
+    >  -   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+     
+    >    启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
+     
+    >-   **| ENABLE REPLICA TRIGGER trigger\_name**
+     
+    >    触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+     
+    >    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
+     
+    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
+     
+    >    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
+     
+    >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
+     
+    >    开启或关闭表的行访问控制开关。
+     
+    >    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
+     
+     >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
+     
+    >    强制开启或关闭表的行访问控制开关。
+     
+    >    默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
     
--   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-    
-    启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
-    
--   **| ENABLE REPLICA TRIGGER trigger\_name**
-    
-    触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
-    
-    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
-    
--   **| ENABLE ALWAYS TRIGGER trigger\_name**
-    
-    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
-    
--   **| DISABLE/ENABLE ROW LEVEL SECURITY**
-    
-    开启或关闭表的行访问控制开关。
-    
-    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
-    
--   **| NO FORCE/FORCE ROW LEVEL SECURITY**
-    
-    强制开启或关闭表的行访问控制开关。
-    
-    默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
-
 
 
     -   其中列相关的操作column\_clause可以是以下子句之一：
