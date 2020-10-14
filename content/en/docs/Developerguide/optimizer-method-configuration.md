@@ -333,16 +333,5 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **normal**
 
-## enable\_upsert\_to\_merge<a name="section198182452312"></a>
 
-**Parameter description**: Specifies whether to convert  **INSERT ON DUPLICATE KEY UPDATE**  statement to an equivalent  **MERGE INTO**  statement.
-
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: Boolean
-
--   **off**: Conversion is not performed.
--   **on**: Conversion is performed.
-
-**Default value**:  **off**
 
