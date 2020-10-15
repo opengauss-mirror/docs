@@ -108,14 +108,14 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
     -   支持触发器，触发器执行顺序由实际执行流程决定：
     -   执行insert：触发before insert、after insert触发器
-        -   执行update：触发before insert、before update、after update触发器
+    -   执行update：触发before insert、before update、after update触发器
     -   执行update nothing：触发before insert触发器。
     -   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
--   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
+    -   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
     
-    -   如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
--   主键、唯一索引列不允许UPDATE。
-    -   不支持列存，不支持外表、内存表。
+    + 如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
+    + 主键、唯一索引列不允许UPDATE。
+    + 不支持列存，不支持外表、内存表。
     
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >当GUC参数 [enable_upsert_to_merge](优化器方法配置.md#zh-cn_topic_0237124716_section1211182712177) 为 on 时，此条INSERT ON DUPLICATE KEY UPDATE语句(UPSERT语句)会被转换成一条具有同等语义的MERGE INTO语句，之后的行为与MERGE INTO相同，在如下行为中与UPSERT将会不同：

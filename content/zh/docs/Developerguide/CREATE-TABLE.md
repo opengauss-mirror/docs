@@ -18,64 +18,64 @@
 
 ## 语法格式<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
--   创建表。
-
-    ```
-    CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
-        ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
-            | table_constraint
-            | LIKE source_table [ like_option [...] ] }
-            [, ... ])
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-        [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
-        [ COMPRESS | NOCOMPRESS ]
-        [ TABLESPACE tablespace_name ];
-    ```
-
-    -   其中列约束column\_constraint为：
-
-        ```
-        [ CONSTRAINT constraint_name ]
-        { NOT NULL |
-          NULL |
-          CHECK ( expression ) |
-          DEFAULT default_expr |
-          UNIQUE index_parameters |
-          PRIMARY KEY index_parameters }
-        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-
-    -   其中列的压缩可选项compress\_mode为：
-
-        ```
-        { DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS }
-        ```
-
-    -   其中表约束table\_constraint为：
-
-        ```
-        [ CONSTRAINT constraint_name ]
-        { CHECK ( expression ) |
-          UNIQUE ( column_name [, ... ] ) index_parameters |
-          PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-          PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
-        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-
-    -   其中like选项like\_option为：
-
-        ```
-        { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
-        ```
-
-
-
-其中索引参数index\_parameters为：
+创建表。
 
 ```
-[ WITH ( {storage_parameter = value} [, ... ] ) ]
-[ USING INDEX TABLESPACE tablespace_name ]
+CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
+    ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+        | table_constraint
+        | LIKE source_table [ like_option [...] ] }
+        [, ... ])
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
+    [ COMPRESS | NOCOMPRESS ]
+    [ TABLESPACE tablespace_name ];
 ```
+
+-   其中列约束column\_constraint为：
+
+    ```
+    [ CONSTRAINT constraint_name ]
+    { NOT NULL |
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_expr |
+      UNIQUE index_parameters |
+      PRIMARY KEY index_parameters }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    ```
+
+-   其中列的压缩可选项compress\_mode为：
+
+    ```
+    { DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS }
+    ```
+
+-   其中表约束table\_constraint为：
+
+    ```
+    [ CONSTRAINT constraint_name ]
+    { CHECK ( expression ) |
+      UNIQUE ( column_name [, ... ] ) index_parameters |
+      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
+      PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    ```
+
+-   其中like选项like\_option为：
+
+    ```
+    { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
+    ```
+
+
+
++ 其中索引参数index\_parameters为：
+
+  ```
+  [ WITH ( {storage_parameter = value} [, ... ] ) ]
+  [ USING INDEX TABLESPACE tablespace_name ]
+  ```
 
 ## 参数说明<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
