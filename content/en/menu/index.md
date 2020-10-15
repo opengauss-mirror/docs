@@ -1231,6 +1231,7 @@ headless: true
 		-   [gs\_install]({{< relref "./docs/Toolreference/gs_install.md" >}})
 		-   [gs\_postuninstall]({{< relref "./docs/Toolreference/gs_postuninstall.md" >}})
 		-   [gs\_preinstall]({{< relref "./docs/Toolreference/gs_preinstall.md" >}})
+		-   [gs\_probackup]({{< relref "./docs/Toolreference/gs_probackup.md" >}})
 		-   [gs\_sshexkey]({{< relref "./docs/Toolreference/gs_sshexkey.md" >}})
 		-   [gs\_tar]({{< relref "./docs/Toolreference/gs_tar.md" >}})
 		-   [gs\_uninstall]({{< relref "./docs/Toolreference/gs_uninstall.md" >}})
