@@ -411,7 +411,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     指定创建日志文件的目录。必须是绝对路径。此目录会在写入第一条日志时创建。
 
-    默认值：Default: $BACKUP\_PATH/log/
+    默认值：$BACKUP\_PATH/log/
 
 -   --log-rotation-size=log\_rotation\_size
 
@@ -487,12 +487,12 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   --compress-level=compression\_level
 
-    指定压缩级别。取值范围：
+    指定压缩级别。取值范围：0~9
 
-    -   表示无压缩。
-    -   表示压缩比最小，处理速度最快。
-    -   表示压缩比最大，处理速度最慢。
-    -   可与选项一起使用。
+    -   0表示无压缩。
+    -   1表示压缩比最小，处理速度最快。
+    -   9表示压缩比最大，处理速度最慢。
+    -   可与--compress-algorithm选项一起使用。
 
     默认值：1
 
