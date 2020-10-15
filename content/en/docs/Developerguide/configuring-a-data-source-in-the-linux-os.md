@@ -323,7 +323,7 @@ The ODBC driver \(psqlodbcw.so\) provided by openGauss can be used after it has 
 
 ## Verifying the Data Source Configuration<a name="en-us_topic_0237120407_en-us_topic_0059778464_scfaeeaa70a9448889e6fdd7e37d172c5"></a>
 
-Run the  **isql-v** _GaussODBC_  command \(**_GaussODBC_**  is the data source name\).
+Run the  **isql-v** _MPPODBC_  command \(**_MPPODBC_**  is the data source name\).
 
 -   If the following information is displayed, the configuration is correct and the connection succeeds.
 
