@@ -5,15 +5,7 @@ This chapter describes the preparations for the installation.
 <!-- TOC -->
 
 - [Software and Hardware Requirements](#software-and-hardware-requirements)
-    - [Hardware Requirements](#hardware-requirements)
-    - [Software Requirements](#software-requirements)
-    - [Software Dependency Requirements](#software-dependency-requirements)
 - [Modifying OS Configuration](#modifying-os-configuration)
-    - [Disabling the OS Firewall](#disabling-the-os-firewall)
-    - [Setting Character Set Parameters](#setting-character-set-parameters)
-    - [Setting the Time Zone and Time](#setting-the-time-zone-and-time)
-    - [Disabling the Swap Memory](#disabling-the-swap-memory)
-    - [Setting the NIC MTU](#setting-the-nic-mtu)
 - [Setting Remote Login of User root](#setting-remote-login-of-user-root)
 
 <!-- /TOC -->
@@ -80,7 +72,7 @@ This section describes hardware and software requirements of openGauss. It is re
 </thead>
 <tbody><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul2800840102316"></a><a name="ul2800840102316"></a><ul id="ul2800840102316"><li>Arm:<a name="ul177759349286"></a><a name="ul177759349286"></a><ul id="ul177759349286"><li>openEuler 20.3LTS (recommended)</li><li>Kirin V10</li></ul>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul2800840102316"></a><a name="ul2800840102316"></a><ul id="ul2800840102316"><li>Arm:<a name="ul177759349286"></a><a name="ul177759349286"></a><ul id="ul177759349286"><li>openEuler 20.3LTS (recommended)</li></ul>
 </li><li>x86:<a name="ul851564911283"></a><a name="ul851564911283"></a><ul id="ul851564911283"><li>openEuler 20.3LTS</li><li>CentOS 7.6<div class="note" id="note222515135376"><a name="note222515135376"></a><a name="note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p1225613103712"><a name="p1225613103712"></a><a name="p1225613103712"></a>You are advised to use the English OS. The current installation package can be installed and used only on the English version.</p>
 </div></div>
 </li></ul>
@@ -99,13 +91,14 @@ This section describes hardware and software requirements of openGauss. It is re
 </tr>
 <tr id="row109998493614"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="p075762219324"><a name="p075762219324"></a><a name="p075762219324"></a>Python</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul1537120034117"></a><a name="ul1537120034117"></a><ul id="ul1537120034117"><li>openEuler: Python 3.7.X is supported.</li><li>CentOS: Python 3.6.X is supported.</li><li>Kirin: Python 3.7.X is supported.<div class="note" id="note4799182210208"><a name="note4799182210208"></a><a name="note4799182210208"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p19799112232010"><a name="p19799112232010"></a><a name="p19799112232010"></a>Python needs to be compiled in --enable-shared mode.</p>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul1537120034117"></a><a name="ul1537120034117"></a><ul id="ul1537120034117"><li>openEuler: Python 3.7.X is supported.</li><li>CentOS: Python 3.6.X is supported.<div class="note" id="note4799182210208"><a name="note4799182210208"></a><a name="note4799182210208"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p19799112232010"><a name="p19799112232010"></a><a name="p19799112232010"></a>Python needs to be compiled in --enable-shared mode.</p>
 </div></div>
 </li></ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 ### Software Dependency Requirements

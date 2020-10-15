@@ -43,59 +43,6 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **6s**
 
-## max\_replication\_slots<a name="section7322161612568"></a>
-
-**Parameter description**: Specifies the number of log replication slots in the primary server.
-
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: an integer ranging from 8 to 100
-
-**Default value**:  **8**
-
-**Setting suggestions**:
-
-When using logical replication, you are advised to set this parameter to: Number of current physical replication slots + Number of required logical replication slots.
-
--   Physical replication slots provide an automatic method to ensure that Xlogs are not removed from a primary node before they are received by all the standby nodes and secondary nodes. That is, physical replication slots are used to support HA clusters. The number of physical replication slots required by a cluster is equal to the ratio of standby and secondary nodes to the primary node. For example, if an HA cluster has 1 primary node, 1 standby node, and 1 secondary node, the number of required physical replication slots will be 2. If an HA cluster has 1 primary node and 3 standby nodes, the number of required physical replication slots will be 3.
--   Plan the number of logical replication slots as follows:
-    -   A logical replication slot can carry changes of only one database for decoding. If multiple databases are involved, create multiple logical replication slots.
-    -   If logical replication is needed by multiple target databases, create multiple logical replication slots in the source database. Each logical replication slot corresponds to one logical replication link.
-
-
-## enable\_slot\_log<a name="en-us_topic_0059778871_s541fa3115bdb432d8ff8649e25925fe1"></a>
-
-**Parameter description**: Specifies whether to enable primary/standby synchronization for logical replication slots.
-
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: Boolean
-
--   **on**  indicates that primary/standby synchronization is enabled for logical replication slots.
--   **off**  indicates that primary/standby synchronization is disabled for logical replication slots.
-
-**Default value**:  **off**
-
-## max\_changes\_in\_memory<a name="section16366164213497"></a>
-
-**Parameter description**: Specifies the maximum size \(bytes\) of a single transaction buffered in the memory during logical decoding.
-
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: an integer ranging from 1 to 2147483647
-
-**Default value**:  **4096**
-
-## max\_cached\_tuplebufs<a name="section134501848125220"></a>
-
-**Parameter description**: Specifies the maximum size \(bytes\) of the total tuple information buffered in the memory during logic decoding. You are advised to set this parameter to a value greater than or equal to twice of  [max\_changes\_in\_memory](#section16366164213497).
-
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0242370406.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: an integer ranging from 1 to 2147483647
-
-**Default value**:  **8192**
-
 ## replconninfo1<a name="en-us_topic_0237124712_en-us_topic_0059777860_se4d237ddf6e7410182aa0936da9d54ed"></a>
 
 **Parameter description**: Specifies the information about the first node to be listened to and authenticated by the current server.
