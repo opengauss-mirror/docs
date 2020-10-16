@@ -72,7 +72,7 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Value range: a string
 
--   DISABLE
+-   **DISABLE**
 
     By default, you can change your password unless it is disabled. To disable the password of a user, use this parameter. After the password of a user is disabled, the password will be deleted from the system. The user can connect to the database only through external authentication, for example, Kerberos authentication. Only administrators can enable or disable a password. Common users cannot disable the password of an initial user. To enable a password, run  **ALTER USER**  and specify the password.
 

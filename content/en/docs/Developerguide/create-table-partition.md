@@ -160,13 +160,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     Specifies an optional storage parameter for a table or an index. Optional parameters are as follows:
 
-    -   FILLFACTOR
+    -   **FILLFACTOR**
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
 
         Value range: 10–100
 
-    -   ORIENTATION
+    -   **ORIENTATION**
 
         Determines the storage mode of the data in the table.
 
@@ -179,23 +179,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             >**orientation**  cannot be modified.
 
 
-    -   COMPRESSION
+    -   **COMPRESSION**
         -   Valid values for column-store tables are  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**, and the compression level increases accordingly. The default is  **LOW**.
         -   Valid values for row-store tables are  **YES**  and  **NO**, and the default value is  **NO**.
 
-    -   MAX\_BATCHROW
+    -   **MAX\_BATCHROW**
 
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
 
         Value range: 10000 to 60000
 
-    -   PARTIAL\_CLUSTER\_ROWS
+    -   **PARTIAL\_CLUSTER\_ROWS**
 
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
 
         Value range: a number greater than or equal to 100000 The value is a multiple of  _MAX\_BATCHROW_.
 
-    -   DELTAROW\_THRESHOLD
+    -   **DELTAROW\_THRESHOLD**
 
         A reserved parameter. The parameter is only valid for column-store tables.
 
@@ -246,7 +246,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >-   The data type of the upper limit must be the same as that of the partition key.
     >-   In a partition list, partitions are arranged in ascending order of upper limits. A partition with a smaller upper limit value is placed before another partition with a larger one.
 
--   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
+-   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} |\{END \(partition\_value | MAXVALUE\)**\}
 
     Specifies the information of partitions.
 
@@ -258,17 +258,28 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   **interval\_value**: width of each partition for dividing the \[**START**,  **END**\) range. It cannot be  _MAXVALUE_. If the value of \(**END**  –  **START**\) divided by  **EVERY**  has a remainder, the width of only the last partition is less than the value of  **EVERY**.
     -   _MAXVALUE_: upper limit of the last range partition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    > 
     >1.  If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition.
+    >
     >2.  The  **START END**  syntax must comply with the following rules:
+    >
     >    -   The value of  **START**  \(if any, same for the following situations\) in each  **partition\_start\_end\_item**  must be smaller than that of  **END**.
+    >
     >    -   In two adjacent  **partition\_start\_end\_item**  statements, the value of the first  **END**  must be equal to that of the second  **START**.
+    >
     >    -   The value of  **EVERY**  in each  **partition\_start\_end\_item**  must be a positive number \(in ascending order\) and must be smaller than  **END**  minus  **START**.
+    >
     >    -   Each partition includes the start value \(unless it is  _MINVALUE_\) and excludes the end value. The format is as follows: \[**START**,  **END**\).
+    >
     >    -   Partitions created by the same  **partition\_start\_end\_item**  belong to the same tablespace.
+    >
     >    -   If  **partition\_name**  is a name prefix of a partition, the length must not exceed 57 bytes. If there are more than 57 bytes, the prefix will be automatically truncated.
+    >
     >    -   When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value \(32767\).
+    > 
     >3.  In statements for creating partitioned tables,  **START END**  and  **LESS THAN**  cannot be used together.
+    > 
     >4.  The  **START END**  syntax in a partitioned table creation SQL statement will be replaced by the  **VALUES LESS THAN**  syntax when  **gs\_dump**  is executed.
 
 -   **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**

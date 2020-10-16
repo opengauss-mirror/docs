@@ -789,7 +789,6 @@ headless: true
 			-   [GS\_WLM\_OPERATOR\_INFO]({{< relref "./docs/Developerguide/gs_wlm_operator_info.md" >}})
 			-   [GS\_WLM\_PLAN\_ENCODING\_TABLE]({{< relref "./docs/Developerguide/gs_wlm_plan_encoding_table.md" >}})
 			-   [GS\_WLM\_PLAN\_OPERATOR\_INFO]({{< relref "./docs/Developerguide/gs_wlm_plan_operator_info.md" >}})
-			-   [GS\_WLM\_SESSION\_QUERY\_INFO\_ALL]({{< relref "./docs/Developerguide/gs_wlm_session_query_info_all.md" >}})
 			-   [GS\_WLM\_USER\_RESOURCE\_HISTORY]({{< relref "./docs/Developerguide/gs_wlm_user_resource_history.md" >}})
 			-   [PG\_AGGREGATE]({{< relref "./docs/Developerguide/pg_aggregate.md" >}})
 			-   [PG\_AM]({{< relref "./docs/Developerguide/pg_am.md" >}})

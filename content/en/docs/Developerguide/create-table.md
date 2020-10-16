@@ -155,13 +155,13 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
     The description of parameters is as follows:
 
-    -   FILLFACTOR
+    -   **FILLFACTOR**
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
 
         Value range: 10–100
 
-    -   ORIENTATION
+    -   **ORIENTATION**
 
         Specifies the storage mode \(row-store, column-store, or ORC\) of table data. This parameter cannot be modified once it is set.
 
@@ -179,7 +179,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
         If an ordinary tablespace is specified, the default is  **ROW**.
 
-    -   COMPRESSION
+    -   **COMPRESSION**
 
         Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded.
 
@@ -187,31 +187,31 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
         The valid values for column-store tables are  **YES**,  **NO**,  **LOW**,  **MIDDLE**, and  **HIGH**, and the default value is  **LOW**.
 
-    -   COMPRESSLEVEL
+    -   **COMPRESSLEVEL**
 
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
 
         Value range: 0 to 3. The default value is  **0**.
 
-    -   MAX\_BATCHROW
+    -   **MAX\_BATCHROW**
 
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
 
         Value range: 10000 to 60000
 
-    -   PARTIAL\_CLUSTER\_ROWS
+    -   **PARTIAL\_CLUSTER\_ROWS**
 
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
 
         Value range: 600000 to 2147483647
 
-    -   DELTAROW\_THRESHOLD
+    -   **DELTAROW\_THRESHOLD**
 
         Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  [enable\_delta\_store](parallel-data-import.md#en-us_topic_0237124705_section1035224982816)  is set to  **on**. The parameter is only valid for column-store tables.
 
         Value range: from 0 to 9999. The default value is  **100**.
 
-    -   VERSION
+    -   **VERSION**
 
         Specifies the version of ORC storage format.
 
