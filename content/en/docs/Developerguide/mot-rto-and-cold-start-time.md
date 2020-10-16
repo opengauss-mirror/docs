@@ -24,7 +24,7 @@ The following figure demonstrates cold-start process and how long it takes to lo
 **Figure  1**  Cold-Start Time – Performance Benchmarks<a name="fig89536207425"></a>  
 ![](figures/cold-start-time-performance-benchmarks.png "cold-start-time-performance-benchmarks")
 
--   **Database Size –**  The total amount of time to load the entire database \(per database GB\) is represented by the blue line and the  **TIME \(sec\)**  Y axis on the left.
+-   **Database Size –**  The total amount of time to load the entire database \(in GB\) is represented by the blue line and the  **TIME \(sec\)**  Y axis on the left.
 -   **Throughput –**  The quantity of database GB throughput per second is represented by the orange line and the  **Throughput GB/sec**  Y axis on the right.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
