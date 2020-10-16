@@ -139,7 +139,6 @@ headless: true
 		-   [初始化数据库]({{< relref "./docs/Installation/初始化数据库.md" >}})
 		-   [（可选）设置备机可读]({{< relref "./docs/Installation/（可选）设置备机可读.md" >}})
 	-   [安装验证]({{< relref "./docs/Installation/安装验证.md" >}})
-	-   [容器安装]({{< relref "./docs/Installation/容器安装.md" >}})
 	-   [卸载openGauss]({{< relref "./docs/Installation/卸载openGauss.md" >}})
 
 -   [管理员指南]({{< relref "./docs/Administratorguide/Administratorguide.md" >}})
