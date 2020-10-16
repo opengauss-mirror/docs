@@ -85,10 +85,9 @@ Composite type
 
     Specifies the name of an existing collation rule to be associated with a column of the composite type.
 
+    Base type
 
-Base type
-
-When creating a base type, you can place parameters in any order. The  **input\_function**  and  **output\_function**  parameters are mandatory, and other parameters are optional.
+    When creating a base type, you can place parameters in any order. The  **input\_function**  and  **output\_function**  parameters are mandatory, and other parameters are optional.
 
 -   **input\_function**
 
@@ -103,7 +102,7 @@ When creating a base type, you can place parameters in any order. The  **input\_
     The input function must return a value of the data type itself. Usually, an input function should be declared  **STRICT**; if it is not, it will be called with a  **NULL**  first parameter when reading a  **NULL**  input value. The function must still return  **NULL**  in this case, unless it raises an error. \(This case is mainly meant to support domain input functions, which might need to reject  **NULL**  inputs.\)
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The input and output functions can be declared to have results or parameters of the new type, when they have to be created before the new type can be created. The type should first be defined as a shell type, which is a placeholder type that has no attributes except a name and an owner. This is done by issuing the  **CREATE TYPE **_name_  statement, with no additional parameters. Then the I/O functions can be defined referencing the shell type. Finally,  **CREATE TYPE**  with a full definition replaces the shell entry with a complete, valid type definition, after which the new type can be used normally.  
+    >The input and output functions can be declared to have results or parameters of the new type, when they have to be created before the new type can be created. The type should first be defined as a shell type, which is a placeholder type that has no attributes except a name and an owner. This is done by issuing the  **CREATE TYPE** _name_  statement, with no additional parameters. Then the I/O functions can be defined referencing the shell type. Finally,  **CREATE TYPE**  with a full definition replaces the shell entry with a complete, valid type definition, after which the new type can be used normally.  
 
 -   **output\_function**
 
