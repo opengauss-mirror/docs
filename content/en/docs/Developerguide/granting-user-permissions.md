@@ -13,7 +13,5 @@ Run the following statement only once –
 GRANT USAGE ON FOREIGN SERVER mot_server TO <user>;
 ```
 
-The red in this statement represents the special MOT part.
-
 All keywords are not case sensitive.
 
