@@ -234,13 +234,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 <a name="en-us_topic_0237124754_ul69601452123815"></a><a name="en-us_topic_0237124754_ul69601452123815"></a><ul id="en-us_topic_0237124754_ul69601452123815"><li>If this item is not specified, and the <strong id="b1370892191520"><a name="b1370892191520"></a><a name="b1370892191520"></a>Day</strong> of <strong id="b070810231512"><a name="b070810231512"></a><a name="b070810231512"></a>param1</strong> indicates the last day of a month shorter than <strong id="b1470992141511"><a name="b1470992141511"></a><a name="b1470992141511"></a>result</strong>, the <strong id="b147090291515"><a name="b147090291515"></a><a name="b147090291515"></a>Day</strong> in the calculation result will equal that in <strong id="b16709226159"><a name="b16709226159"></a><a name="b16709226159"></a>param1</strong>. For example:</li></ul>
 <a name="en-us_topic_0237124754_screen568916248386"></a><a name="en-us_topic_0237124754_screen568916248386"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237124754_screen568916248386"><span id="en-us_topic_0237124754_text5945107132215"><a name="en-us_topic_0237124754_text5945107132215"></a><a name="en-us_topic_0237124754_text5945107132215"></a>postgres=# </span>select add_months('2018-02-28',3) from dual;
 add_months
----------------------
+\---------------------
 2018-05-28 00:00:00
 (1 row)</pre>
 <a name="en-us_topic_0237124754_ul165115579383"></a><a name="en-us_topic_0237124754_ul165115579383"></a><ul id="en-us_topic_0237124754_ul165115579383"><li>If this item is specified, and the <strong id="b16280208101511"><a name="b16280208101511"></a><a name="b16280208101511"></a>Day</strong> of <strong id="b142803871518"><a name="b142803871518"></a><a name="b142803871518"></a>param1</strong> indicates the last day of a month shorter than <strong id="b72811687155"><a name="b72811687155"></a><a name="b72811687155"></a>result</strong>, the <strong id="b1228115810152"><a name="b1228115810152"></a><a name="b1228115810152"></a>Day</strong> in the calculation result will equal that in <strong id="b72821981156"><a name="b72821981156"></a><a name="b72821981156"></a>result</strong>. For example:</li></ul>
 <a name="en-us_topic_0237124754_screen45031931103816"></a><a name="en-us_topic_0237124754_screen45031931103816"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237124754_screen45031931103816"><span id="en-us_topic_0237124754_text161501793223"><a name="en-us_topic_0237124754_text161501793223"></a><a name="en-us_topic_0237124754_text161501793223"></a>postgres=# </span>select add_months('2018-02-28',3) from dual;
 add_months
----------------------
+\---------------------
 2018-05-31 00:00:00
 (1 row)</pre>
 </td>
@@ -289,13 +289,13 @@ add_months
 <a name="en-us_topic_0237124754_ul828544001313"></a><a name="en-us_topic_0237124754_ul828544001313"></a><ul id="en-us_topic_0237124754_ul828544001313"><li>If this item is not specified, the empty string is displayed as <strong id="b1353120716179"><a name="b1353120716179"></a><a name="b1353120716179"></a>NULL</strong>.</li></ul>
 <a name="en-us_topic_0237124754_screen17865171482915"></a><a name="en-us_topic_0237124754_screen17865171482915"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237124754_screen17865171482915"><span id="en-us_topic_0237124754_text19711022217"><a name="en-us_topic_0237124754_text19711022217"></a><a name="en-us_topic_0237124754_text19711022217"></a>postgres=# </span>select length(lpad('123',0,'*')) from dual;
 length
---------
+\--------
 
 (1 row)</pre>
 <a name="en-us_topic_0237124754_ul75590181418"></a><a name="en-us_topic_0237124754_ul75590181418"></a><ul id="en-us_topic_0237124754_ul75590181418"><li>If this item is specified, the empty string is displayed as single quotation marks ('').</li></ul>
 <a name="en-us_topic_0237124754_screen104295208294"></a><a name="en-us_topic_0237124754_screen104295208294"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237124754_screen104295208294"><span id="en-us_topic_0237124754_text171811411192213"><a name="en-us_topic_0237124754_text171811411192213"></a><a name="en-us_topic_0237124754_text171811411192213"></a>postgres=# </span>select length(lpad('123',0,'*')) from dual;
 length
---------
+\--------
 0
 (1 row)</pre>
 </td>
