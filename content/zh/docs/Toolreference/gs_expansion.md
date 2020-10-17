@@ -73,8 +73,8 @@ openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持�
     如果要扩容的节点已经安装了单机版的数据库，扩容时候添加 –L 参数可以跳过在新扩容备机上安装数据库的步骤，直接建立主备关系。
 
     需要注意：
-    1. 主备机器安装的数据库需要使用相同的用户和用户组，分离环境变量路径也需要保持一样
-    2. 主备机器安装时候xml配置里面的gaussdbAppPath、gaussdbLogPath、gaussdbToolPath、corePath地址需要保持一致
+    1. 主备机器安装的数据库需要使用相同的用户和用户组，分离环境变量路径也需要保持一样。
+    2. 主备机器安装时候xml配置里面的gaussdbAppPath、gaussdbLogPath、gaussdbToolPath、corePath地址需要保持一致。
     3. 扩容备机上的数据必须使用om方式安装，使用编译方式启动的数据库不支持与主机扩容。
 
 -   -?, --help
@@ -88,7 +88,7 @@ openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持�
 
 ## 示例
 
-使用gs\_expansion扩容步骤
+使用gs\_expansion扩容步骤。
 
 ```
 # ./gs_expansion -U zxb -G zxb -X /opt/zxb/instance4.xml -h 90.90.44.165

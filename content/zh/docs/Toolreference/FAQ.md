@@ -5,7 +5,7 @@
 
 ### 问题现象<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
 
-如果在root用户下执行工具命令时，出现如下信息，
+如果在root用户下执行工具命令时，出现如下信息。
 
 ```
 Failed to obtain the GPHOME.
@@ -33,7 +33,7 @@ vim /etc/profile
 
 ### 问题现象<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
 
-用户在重建备实例的过程中被中断，再次重建备实例失败，出现以下报错信息
+用户在重建备实例的过程中被中断，再次重建备实例失败，出现以下报错信息。
 
 ```
 CRC checksum does not match value stored in file, maybe the cipher file is corrupt
@@ -49,7 +49,7 @@ read cipher file or random parameter file failed.
 
 ### 操作步骤<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s14e2709c0b7440f1a11c5c0d58d05885"></a>
 
-1.  在数据目录下查看证书文件大小
+1.  在数据目录下查看证书文件大小。
 
     ```
     ll
@@ -60,13 +60,13 @@ read cipher file or random parameter file failed.
     -rw------- 1 omm omm       0 Jun 18 20:58 server.key.rand
     ```
 
-2.  若证书文件大小为0，删除证书文件
+2.  若证书文件大小为0，删除证书文件。
 
     ```
     rm -rf server.crt server.key server.key.cipher server.key.rand
     ```
 
-3.  重建备实例
+3.  重建备实例。
 
     ```
     gs_ctl build -D data_dir
@@ -76,7 +76,7 @@ read cipher file or random parameter file failed.
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >若备机数据库已停止，需要重新生成证书文件或者复制证书文件（$GAUSSHOME/share下的证书文件）到数据目录，启动备机并重建备实例。生成证书文件的相关操作请参见《开发者指南》
 
-
+
 
 ## 使用gs\_om -t status --all查询集群状态，长时间没有响应<a name="ZH-CN_TOPIC_0275124283"></a>
 

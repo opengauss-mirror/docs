@@ -32,7 +32,7 @@ headless: true
 	-   [软硬件配置要求]({{< relref "./docs/Technicalwhitepaper/软硬件配置要求.md" >}})
 	-   [数据库核心技术]({{< relref "./docs/Technicalwhitepaper/数据库核心技术.md" >}})
 	-   [技术指标]({{< relref "./docs/Technicalwhitepaper/技术指标.md" >}})
-	-   [术语表]({{< relref "./docs/Technicalwhitepaper/术语表.md" >}})
+	-   [术语表]({{< relref "./docs/Glossary/Glossary.md" >}})
 
 -   [编译指导书]({{< relref "./docs/Compilationguide/Compilation.md" >}})
     -   [搭建编译环境]({{< relref "./docs/Compilationguide/搭建编译环境.md" >}})
