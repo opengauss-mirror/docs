@@ -7,6 +7,7 @@
 **表 1**  gs\_collector内容收集对照表
 
 <a name="zh-cn_topic_0237152334_table18101312318"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0237152334_row21012382317"><th class="cellrowborder" valign="top" width="15.6%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0237152334_p171112382318"><a name="zh-cn_topic_0237152334_p171112382318"></a><a name="zh-cn_topic_0237152334_p171112382318"></a>TypeName</p>
 </th>
 <th class="cellrowborder" valign="top" width="29.470000000000002%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0237152334_p21183192318"><a name="zh-cn_topic_0237152334_p21183192318"></a><a name="zh-cn_topic_0237152334_p21183192318"></a>Content</p>
@@ -30,7 +31,7 @@
 </tr>
 <tr id="zh-cn_topic_0237152334_row61219372311"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p111263102314"><a name="zh-cn_topic_0237152334_p111263102314"></a><a name="zh-cn_topic_0237152334_p111263102314"></a>Database</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p103186476250"><a name="zh-cn_topic_0237152334_p103186476250"></a><a name="zh-cn_topic_0237152334_p103186476250"></a>具体列表见<a href="zh-cn_topic_0249632269.md#zh-cn_topic_0237637502_table15624104912196">表1</a>。</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p103186476250"><a name="zh-cn_topic_0237152334_p103186476250"></a><a name="zh-cn_topic_0237152334_p103186476250"></a>具体列表见<a href="gs_collector工具支持收集的系统表和视图列表.md#zh-cn_topic_0237637502_table15624104912196">表1</a>。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p127501419122615"><a name="zh-cn_topic_0237152334_p127501419122615"></a><a name="zh-cn_topic_0237152334_p127501419122615"></a>收集系统视图或者系统表的内容。</p>
 </td>
@@ -99,6 +100,7 @@
 </tr>
 </tbody>
 </table>
+
 
 
 ## 前提条件<a name="zh-cn_topic_0237152334_zh-cn_topic_0059778085_s7bffe8e9bdec4735885781573a71fb91"></a>

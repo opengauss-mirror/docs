@@ -456,7 +456,7 @@ gs\_om参数可以分为如下几类：
 - 停止openGauss。
 
   ```
-  gs_om -t status --detail
+  gs_om -t stop
   Stopping cluster.
   =========================================
   Successfully stopped cluster.
@@ -467,7 +467,7 @@ gs\_om参数可以分为如下几类：
 - 查看openGauss详细状态信息，含实例状态信息。
 
   ```
-  gs_om -t det
+  gs_om -t status --detail
   [   Cluster State   ]
   
   cluster_state   : Normal
