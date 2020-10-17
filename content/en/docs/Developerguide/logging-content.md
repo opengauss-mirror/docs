@@ -339,7 +339,7 @@ ALL,on(),off(DFS,GUC,ORC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR
 (1 row)
 ```
 
-Controllable modules are identified by uppercase letters, and the special ID  **ALL**  is used for setting all module logs. You can control the output of module logs by setting** logging\_module**  to  **on**  or  **off**. Enable log output for SSL:
+Controllable modules are identified by uppercase letters, and the special ID  **ALL**  is used for setting all module logs. You can control the output of module logs by setting **logging\_module**  to  **on**  or  **off**. Enable log output for SSL:
 
 ```
 postgres=# set logging_module='on(SSL)';
