@@ -194,7 +194,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         >使用**“LOG ERRORS DATA”**时，若错误内容过于复杂可能存在写入容错表失败的风险，导致任务失败。  
 
 
--   **REJECT LIMIT  **'**limit'**
+-   **REJECT LIMIT** '**limit'**
 
     与LOG ERROR选项共同使用，对COPY FROM的容错机制设置数值上限，一旦此COPY FROM语句错误数据超过选项指定条数，则会按照原有机制报错。
 
