@@ -8,16 +8,16 @@
 
 修改BIOS相关设置：
 
-1.  选择**BIOS **\>  **Advanced**  \>  **MISC Config**。设置**Support Smmu**为**Disabled**。
-2.  选择**BIOS **\>  **Advanced**  \>  **MISC Config**。设置**CPU Prefetching Configuration**为**Disabled**。
+1.  选择**BIOS**\>  **Advanced**  \>  **MISC Config**。设置**Support Smmu**为**Disabled**。
+2.  选择**BIOS**\>  **Advanced**  \>  **MISC Config**。设置**CPU Prefetching Configuration**为**Disabled**。
 
     ![](figures/zh-cn_image_0280525203.png)
 
-3.  选择**BIOS **\>  **Advanced**  \>  **Memory Config**。设置**Die Interleaving**为**Disabled**。
+3.  选择**BIOS**\>  **Advanced**  \>  **Memory Config**。设置**Die Interleaving**为**Disabled**。
 
     ![](figures/zh-cn_image_0280525205.png)
 
-4.  选择**BIOS **\>  **Advanced**  \>  **Performance Config**。设置**Power Policy**为**Performance**。
+4.  选择**BIOS**\>  **Advanced**  \>  **Performance Config**。设置**Power Policy**为**Performance**。
 
     ![](figures/zh-cn_image_0280525207.png)
 
