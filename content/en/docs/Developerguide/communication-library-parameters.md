@@ -74,7 +74,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the TCP listening port used by the TCP proxy communication library or SCTP communication library.
 
-This parameter is a fixed INTERNAL parameter and cannot be modified.
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >This port number is automatically allocated during openGauss deployment. Do not change the parameter value. If the port number is incorrectly configured, the database communication fails.  
