@@ -252,8 +252,8 @@ The ODBC driver \(psqlodbcw.so\) provided by openGauss can be used after it has 
         </tbody>
         </table>
 
-5.  Generate an SSL certificate. For details, see  [Generating Certificates](generating-certificates.md).
-6.  Replace an SSL certificate. For details, see  [Replacing Certificates](replacing-certificates.md).
+5.  (Optional)Generate an SSL certificate. For details, see  [Generating Certificates](generating-certificates.md).This step and step 6 need to be performed when the server and the client are connected via ssl. It can be skipped in case of non-ssl connection.
+6.  (Optional)Replace an SSL certificate. For details, see  [Replacing Certificates](replacing-certificates.md).
 7.  <a name="en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>Configure the database server.
     1.  Log in as the OS user  **omm**  to the primary node of the database.
     2.  Run the following command to add NIC IP addresses or host names, with values separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  _NodeName_  specifies the name of the current node.
@@ -284,7 +284,7 @@ The ODBC driver \(psqlodbcw.so\) provided by openGauss can be used after it has 
         If the ODBC client and the primary database node to connect are deployed on the same machine, you can use the local trust authentication mode. Run the following command:
 
         ```
-        local all all xxx.xxx.xxx.xxx/32 trust
+        local all all trust
         ```
 
         If the ODBC client and the primary database node to connect are deployed on different machines, use the SHA-256 authentication mode. Run the following command:
