@@ -300,7 +300,7 @@ The ODBC driver \(psqlodbcw.so\) provided by openGauss can be used after it has 
         gs_om -t start
         ```
 
-8.  Configure environment variables.
+8.  Configure environment variables on the client.
 
     ```
     vim ~/.bashrc
