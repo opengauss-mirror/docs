@@ -43,13 +43,19 @@
   </CLUSTER>
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   “/opt/huawei/install/om”存放互信等工具，避免权限问题，不要把实例数据目录放在此目录下。
->-   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
->-   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为"/opt/huawei/install/app"，gaussdbLogPath为"/opt/huawei/install/app/omm"。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
->-   若需要安装脚本自动创建安装用户时各配置的目录需保证不与系统创建的默认用户目录耦合关联。
->-   配置openGauss路径和实例路径时，路径中不能包含"|",";","&","$","<","\>","\`","\\\\","'","\\"","\{","\}","\(","\)","\[","\]","\~","\*","?"特殊字符。
->-   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的**node1\_hostname**,**node2\_hostname**。
+![](public_sys-resources/icon-notice.gif) **须知：** 
+
+-   “/opt/huawei/install/om”存放互信等工具，避免权限问题，不要把实例数据目录放在此目录下。
+
+-   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
+
+-   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为"/opt/huawei/install/app"，gaussdbLogPath为"/opt/huawei/install/app/omm"。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
+
+-   若需要安装脚本自动创建安装用户时各配置的目录需保证不与系统创建的默认用户目录耦合关联。
+
+-   配置openGauss路径和实例路径时，路径中不能包含"|",";","&","$","<","\>","\`","\\\\","'","\\"","\{","\}","\(","\)","\[","\]","\~","\*","?"特殊字符。
+
+-   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的**node1\_hostname**,**node2\_hostname**。
 
 **表 1**  参数说明
 
@@ -115,8 +121,9 @@
 
 ## 配置Host基本信息
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->每台Host服务器都必须有如下信息，如下示例以node1为例。
+![](public_sys-resources/icon-note.gif) **说明：** 
+
+每台Host服务器都必须有如下信息，如下示例以node1为例。
 
 加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
 
