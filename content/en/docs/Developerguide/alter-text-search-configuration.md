@@ -8,7 +8,7 @@ The  **ADD MAPPING FOR**  form installs a list of dictionaries to be consulted f
 
 The  **ALTER MAPPING FOR**  form removes existing mapping for those token types and then adds specified mappings. 
 
-**ALTER MAPPING REPLACE ... ** **WITH ... **  and  **ALTER MAPPING FOR...** **REPLACE ... ** **WITH ...**  options replace  **old\_dictionary**  with  **new\_dictionary**. Note that only when  **pg\_ts\_config\_map**  has tuples corresponding to  **maptokentype**  and  **old\_dictionary**, the update will succeed. If the update fails, no messages are returned.
+**ALTER MAPPING REPLACE ...** **WITH ...**  and  **ALTER MAPPING FOR...** **REPLACE ...** **WITH ...**  options replace  **old\_dictionary**  with  **new\_dictionary**. Note that only when  **pg\_ts\_config\_map**  has tuples corresponding to  **maptokentype**  and  **old\_dictionary**, the update will succeed. If the update fails, no messages are returned.
 
 The  **DROP MAPPING FOR**  form deletes all dictionaries for the specified token types in the text search configuration. If  **IF EXISTS**  is not specified and the string type mapping specified by  **DROP MAPPING FOR**  does not exist in text search configuration, an error will occur in the database.
 

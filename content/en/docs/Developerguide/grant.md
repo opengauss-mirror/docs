@@ -339,8 +339,7 @@ The possible permissions are:
 
     If  **WITH GRANT OPTION**  is specified, the recipient of the permission can in turn grant it to others. Without a grant option, the recipient cannot do that. Grant options cannot be granted to  **PUBLIC**.
 
-
-    When a non-owner of an object attempts to GRANT permissions on the object:
+     When a non-owner of an object attempts to GRANT permissions on the object:
 
     -   The statement will fail outright if the user has no permissions whatsoever on the object.
     -   As long as some permission is available, the statement will proceed, but it will grant only those permissions for which the user has grant options.

@@ -13,6 +13,7 @@
 -   When you connect to a database compatible to Teradata and  **td\_compatible\_truncation**  is  **on**, a long string will be automatically truncated. If later  **INSERT**  statements \(not involving foreign tables\) insert long strings to columns of char- and varchar-typed columns in the target table, the system will truncate the long strings to ensure no strings exceed the maximum length defined in the target table.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >If inserting multi-byte character data \(such as Chinese characters\) to database with the character set byte encoding \(SQL\_ASCII, LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.
 
 
@@ -49,6 +50,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     – Each subquery can be a  **SELECT**,  **VALUES**,  **INSERT**,  **UPDATE**  or  **DELETE**  statement.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >The  **INSERT ON DUPLICATE KEY UPDATE**  statement does not support the  **WITH**  and  **WITH RECURSIVE**  clauses.
 
 -   **table\_name**
@@ -120,13 +122,21 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     -   Column-store tables, foreign tables, and memory tables are not supported.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >When  [enable\_upsert\_to\_merge](optimizer-method-configuration.md#section198182452312)  is set to  **on**, this statement will be converted to a  **MERGE INTO**  statement with the same semantics for execution. The behavior is the same as that of  **MERGE INTO**. The following behavior is different from that of  **UPSERT**:
+        >
         >-   **UPDATE**  cannot update the values of user-defined elements or elements in an array.
+        >
         >-   If  **INSERT**  specifies a target column, only the target column or columns with default values are checked for the unique constraint or primary key constraint conflicts.
+        >
         >-   If a table has multiple unique constraints and the inserted data violates unique constraints of multiple rows in the table, the  **UPDATE**  clause is executed for all conflicting rows to complete the update.
+        >
         >-   If multiple rows are inserted and the rows conflict with the unique constraint of the same row in the table, the execution fails. Set the GUC parameter  [behavior\_compat\_options](en-us_topic_0242371544.md#en-us_topic_0237124754_section1980124735516)  to  **'merge\_update\_multi'**, allowing conflict rows to be updated multiple times.
+        >
         >-   If multiple rows are inserted and the rows do not conflict with the existing data in the table but violate the unique constraint, the  **INSERT**  statement fails to be executed.
+        >
         >-   In the multi-row insertion scenario, the execution performance is poor.  **MERGE INTO**  does not support concurrent update. When multiple rows are inserted, an error may be reported, causing transaction rollback.
+        >
         >-   The plan displayed by  **EXPLAIN**  is the execution plan converted into the  **MERGE INTO**  statement.
 
 

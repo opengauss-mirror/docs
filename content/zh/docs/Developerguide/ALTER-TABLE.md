@@ -57,61 +57,62 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   **ADD table\_constraint \[ NOT VALID \]**  
+    > -   **ADD table\_constraint \[ NOT VALID \]**  
     >    给表增加一个新的约束。  
-    >-   **ADD table\_constraint\_using\_index**  
+    > -   **ADD table\_constraint\_using\_index**  
     >    根据已有唯一索引为表增加主键约束或唯一约束。  
-    >-   **VALIDATE CONSTRAINT constraint\_name**  
+    > -   **VALIDATE CONSTRAINT constraint\_name**  
     >    验证一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。  
-    >-   **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**  
+    > -   **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**  
     >    删除一个表上的约束。  
-    >-   **CLUSTER ON index\_name**  
+    > -   **CLUSTER ON index\_name**  
     >    为将来的CLUSTER（聚簇）操作选择默认索引。实际上并没有重新盘簇化处理该表。  
-    >-   **SET WITHOUT CLUSTER**  
+    > -   **SET WITHOUT CLUSTER**  
     >    从表中删除最新使用的CLUSTER索引。这样会影响将来那些没有声明索引的CLUSTER（聚簇）操作。  
-    >-   **SET \( \{storage\_parameter = value\} \[, ... \] \)**  
+    > -   **SET \( \{storage\_parameter = value\} \[, ... \] \)**  
     >    修改表的一个或多个存储参数。  
-    >-   **RESET \( storage\_parameter \[, ... \] \)**  
+    > -   **RESET \( storage\_parameter \[, ... \] \)**  
     >    重置表的一个或多个存储参数。与SET一样，根据参数的不同可能需要重写表才能获得想要的效果。  
-    >-   **OWNER TO new\_owner**  
+    > -   **OWNER TO new\_owner**  
     >    将表、序列、视图的属主改变成指定的用户。  
-    >-   **SET TABLESPACE new\_tablespace**  
+    > -   **SET TABLESPACE new\_tablespace**  
     >    这种形式将表空间修改为指定的表空间并将相关的数据文件移动到新的表空间。但是表上的所有索引都不会被移动，索引可以通过ALTER INDEX语法的SET TABLESPACE选项来修改索引的表空间。  
-    >-   **SET \{COMPRESS|NOCOMPRESS\}**  
+    > -   **SET \{COMPRESS|NOCOMPRESS\}**  
     >    修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。  
-    >-   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**  
+    > -   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**  
     >    此语法仅在扩展模式（GUC参数support\_extended\_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。  
-    >-   **ADD NODE \( nodename \[, ... \] \)**  
+    > -   **ADD NODE \( nodename \[, ... \] \)**  
     >    此语法主要供内部扩容工具使用，一般用户不建议使用。  
-    >-   **DELETE NODE \( nodename \[, ... \] \)**  
+    > -   **DELETE NODE \( nodename \[, ... \] \)**  
     >    此语法主要供内部缩容工具使用，一般用户不建议使用。  
-    >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
+    > -   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
     >    禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。  
-        >应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
+    >    应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
+    
     >  -   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-     
+    >
     >    启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
-     
-    >-   **| ENABLE REPLICA TRIGGER trigger\_name**
-     
+    > 
+    >-   **ENABLE REPLICA TRIGGER trigger\_name**
+    > 
     >    触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
-     
+    > 
     >    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
-     
-    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
-     
+    > 
+    >-   **ENABLE ALWAYS TRIGGER trigger\_name**
+    > 
     >    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
-     
-    >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
-     
+    > 
+    >-   **DISABLE/ENABLE ROW LEVEL SECURITY**
+    > 
     >    开启或关闭表的行访问控制开关。
-     
+    > 
     >    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
-     
-     >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
-     
+    > 
+    >-   **NO FORCE/FORCE ROW LEVEL SECURITY**
+    > 
     >    强制开启或关闭表的行访问控制开关。
-     
+    >
     >    默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
     
 

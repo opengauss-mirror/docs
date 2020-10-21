@@ -246,22 +246,20 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->The %c escape character prints a unique session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:  
->```  
->SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||  
->       to_hex(pid)  
->FROM pg_stat_activity;  
->```
->-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.  
->-   Syslog generates its own time stamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.  
+The %c escape character prints a unique session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:  
+```
+SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||  
+       to_hex(pid)  
+FROM pg_stat_activity; 
+```
+-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.  
+-   Syslog generates its own time stamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.  
 
 **Value range**: a string
 
 **Default value**:  **%m %c %d %p %a %x %n %e**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**%m %c %d %p %a %x %n %e**  indicates that session timestamps, session IDs, database names, thread IDs, application names, transaction IDs, error reporting nodes, and SQLSTATE error codes will be added to the beginning of log lines.  
+**%m %c %d %p %a %x %n %e**  indicates that session timestamps, session IDs, database names, thread IDs, application names, transaction IDs, error reporting nodes, and SQLSTATE error codes will be added to the beginning of log lines.  
 
 ## log\_lock\_waits<a name="en-us_topic_0237124723_en-us_topic_0059778400_s0e43c2815b8a4f369d5b150535d1703f"></a>
 
@@ -341,7 +339,7 @@ ALL,on(),off(DFS,GUC,ORC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR
 (1 row)
 ```
 
-Controllable modules are identified by uppercase letters, and the special ID  **ALL**  is used for setting all module logs. You can control the output of module logs by setting** logging\_module**  to  **on**  or  **off**. Enable log output for SSL:
+Controllable modules are identified by uppercase letters, and the special ID  **ALL**  is used for setting all module logs. You can control the output of module logs by setting **logging\_module**  to  **on**  or  **off**. Enable log output for SSL:
 
 ```
 postgres=# set logging_module='on(SSL)';

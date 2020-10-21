@@ -1,6 +1,7 @@
 # XML类型
 openGauss支持XML类型，使用示例如下：
 
+```
 CREATE TABLE xmltest (
     id int,
     data xml
@@ -16,15 +17,16 @@ SELECT * FROM xmltest ORDER BY 1;
 
 SELECT xmlconcat('<foo/>', NULL, '<?xml version="1.1" standalone="no"?><bar/>');
   xmlconcat
---------------
+\--------------
  <foo/><bar/>
 (1 row)
 
 SELECT xmlconcat('<?xml version="1.1"?><foo/>', NULL, '<?xml version="1.1" standalone="no"?><bar/>');
              xmlconcat
------------------------------------
- <?xml version="1.1"?><foo/><bar/>
+\-----------------------------------
+ <?xml version="1.1"?><foo/><bar/
 (1 row)
+```
 
 该功能默认未开启，如需使用，需要重新使用build.sh脚本编译数据库，修改./configure配置参数，在其中加入 --with-libxml 参数。
 
