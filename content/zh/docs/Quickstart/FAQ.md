@@ -76,140 +76,142 @@ Password:
 
 如果openGauss各主机的root密码不一致，gs\_preinstall脚本无法建立互信，可以手工建立互信。
 
->![](C:/Users/lijun/Desktop/opengauss/docs/content/zh/docs/Quickstart/public_sys-resources/icon-note.gif) **说明：** 
->建立互信的过程中需要生成如下4个文件：authorized\_keys、id\_rsa、id\_rsa.pub、known\_hosts。请勿删除或破坏这些互信相关的文件。
+![](C:/Users/lijun/Desktop/opengauss/docs/content/zh/docs/Quickstart/public_sys-resources/icon-note.gif) **说明：** 
+
+建立互信的过程中需要生成如下4个文件：authorized\_keys、id\_rsa、id\_rsa.pub、known\_hosts。请勿删除或破坏这些互信相关的文件。
 
 手工建立信任关系，步骤如下，plat1，plat2，plat3是主机名：
 
 1. 在其中一个主机上，生成root用户的本机授权文件。假设在主机plat1上执行。
 
-   a. 生成密钥。
+      a. 生成密钥。
 
-   ```
-   ssh-keygen -t rsa
-   ```
+      ```
+      ssh-keygen -t rsa
+      ```
 
-   示例如下：
+      示例如下：
 
-   ```
-   plat1:~ # ssh-keygen -t rsa 
-   Generating public/private rsa key pair.
-   Enter file in which to save the key (/root/.ssh/id_rsa): 
-   Created directory '/root/.ssh'.
-   Enter passphrase (empty for no passphrase): 
-   Enter same passphrase again: 
-   Your identification has been saved in /root/.ssh/id_rsa.
-   Your public key has been saved in /root/.ssh/id_rsa.pub.
-   The key fingerprint is:
-   d5:35:46:33:27:22:09:f0:1e:12:a7:87:fa:33:3f:ab root@plat1
-   The key's randomart image is:
-   +--[ RSA 2048]----+
-   |      o.o.....O .|
-   |       *  .o + * |
-   |      + + . .    |
-   |     . + o       |
-   |    .   S        |
-   |     .           |
-   |      +          |
-   |       +.        |
-   |      E.oo       |
-   +-----------------+
-   ```
+      ```
+      plat1:~ # ssh-keygen -t rsa 
+      Generating public/private rsa key pair.
+      Enter file in which to save the key (/root/.ssh/id_rsa): 
+      Created directory '/root/.ssh'.
+      Enter passphrase (empty for no passphrase): 
+      Enter same passphrase again: 
+      Your identification has been saved in /root/.ssh/id_rsa.
+      Your public key has been saved in /root/.ssh/id_rsa.pub.
+      The key fingerprint is:
+      d5:35:46:33:27:22:09:f0:1e:12:a7:87:fa:33:3f:ab root@plat1
+      The key's randomart image is:
+      +--[ RSA 2048]----+
+      |      o.o.....O .|
+      |       *  .o + * |
+      |      + + . .    |
+      |     . + o       |
+      |    .   S        |
+      |     .           |
+      |      +          |
+      |       +.        |
+      |      E.oo       |
+      +-----------------+
+      ```
 
-   b. 生成本机授权文件。
+      b. 生成本机授权文件。
 
-   ```
-   cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-   ```
+      ```
+      cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+      ```
 
-   示例如下：
+      示例如下：
 
-   ```
-   plat1:~ # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-   ```
+      ```
+      plat1:~ # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+      ```
 
 2. 收集所有的待建互信主机的公钥，写入到本机的known\_hosts文件中。此步骤需要在步骤1执行的主机上执行。需要收集plat1、plat2、plat3三个主机的公钥。
 
-   a. 收集plat1的公钥，写入到本机known\_hosts文件中。
+      a. 收集plat1的公钥，写入到本机known\_hosts文件中。
 
-   ```
-   ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts
-   ```
+      ```
+      ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts
+      ```
 
-   示例如下：
+      示例如下：
 
-   ```
-   plat1:~ # ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts 
-   # plat1 SSH-2.0-OpenSSH_5.1 
-   ```
+      ```
+      plat1:~ # ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts 
+      # plat1 SSH-2.0-OpenSSH_5.1 
+      ```
 
-   b. 收集plat2的公钥，写入到本机known\_hosts文件中。
+      b. 收集plat2的公钥，写入到本机known\_hosts文件中。
 
-   ```
-   ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts
-   ```
+      ```
+      ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts
+      ```
 
-   示例如下：
+      示例如下：
 
-   ```
-   plat1:~ # ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts 
-   # plat2 SSH-2.0-OpenSSH_5.1 
-   ```
+      ```
+      plat1:~ # ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts 
+      # plat2 SSH-2.0-OpenSSH_5.1 
+      ```
 
-   c. 收集plat3的公钥，写入到本机known\_hosts文件中。
+      c. 收集plat3的公钥，写入到本机known\_hosts文件中。
 
-   ```
-   ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts
-   ```
+      ```
+      ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts
+      ```
 
-   示例如下：
+      示例如下：
 
-   ```
-   plat1:~ # ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts 
-   # plat3 SSH-2.0-OpenSSH_5.1 
-   ```
+      ```
+      plat1:~ # ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts 
+      # plat3 SSH-2.0-OpenSSH_5.1 
+      ```
 
-   >![](C:/Users/lijun/Desktop/opengauss/docs/content/zh/docs/Quickstart/public_sys-resources/icon-note.gif) **说明：** 
-   >
-   >-   当远程主机的公钥被接受以后，它就会被保存在文件$HOME/.ssh/known\_hosts之中。下次再连接这台主机，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分。
-   >-   如果该主机上known\_hosts文件被删除，互信仍然可以使用，但是会有告警提示信息。如果需要规避告警提示信息，请将/etc/ssh/ssh\_config配置文件中，StrictHostKeyChecking参数设置为no。
+      ![](C:/Users/lijun/Desktop/opengauss/docs/content/zh/docs/Quickstart/public_sys-resources/icon-note.gif) **说明：** 
+      
+      -   当远程主机的公钥被接受以后，它就会被保存在文件$HOME/.ssh/known\_hosts之中。下次再连接这台主机，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分。
+
+      -   如果该主机上known\_hosts文件被删除，互信仍然可以使用，但是会有告警提示信息。如果需要规避告警提示信息，请将/etc/ssh/ssh\_config配置文件中，StrictHostKeyChecking参数设置为no。
 
 
 3. 将互信文件分发到其它所有主机上。在本例中，需要将plat1上的互信文件分发到plat2和plat3上。
 
-   a. 将互信文件分发到plat2上。Password输入拷贝目标主机的密码。
+      a. 将互信文件分发到plat2上。Password输入拷贝目标主机的密码。
 
-   ```
-   scp -r ~/.ssh plat2:~
-   ```
+      ```
+      scp -r ~/.ssh plat2:~
+      ```
 
-   示例如下：
+      示例如下：
 
-   ```
-   plat1:~ # scp -r ~/.ssh plat2:~
-   Password: 
-   authorized_keys                 100%  796     0.8KB/s   00:00    
-   id_rsa                          100% 1675     1.6KB/s   00:00    
-   id_rsa.pub                      100%  398     0.4KB/s   00:00    
-   known_hosts                     100% 1089     1.1KB/s   00:00    
-   ```
+      ```
+      plat1:~ # scp -r ~/.ssh plat2:~
+      Password: 
+      authorized_keys                 100%  796     0.8KB/s   00:00    
+      id_rsa                          100% 1675     1.6KB/s   00:00    
+      id_rsa.pub                      100%  398     0.4KB/s   00:00    
+      known_hosts                     100% 1089     1.1KB/s   00:00    
+      ```
 
-   b. 将互信文件分发到plat3上。Password输入拷贝目标主机的密码。
+      b. 将互信文件分发到plat3上。Password输入拷贝目标主机的密码。
 
-   ```
-   scp -r ~/.ssh plat3:~
-   ```
+      ```
+      scp -r ~/.ssh plat3:~
+      ```
 
-   示例如下：
+      示例如下：
 
-   ```
-   plat1:~ # scp -r ~/.ssh plat3:~
-   Password: 
-   authorized_keys                 100%  796     0.8KB/s   00:00    
-   id_rsa                          100% 1675     1.6KB/s   00:00    
-   id_rsa.pub                      100%  398     0.4KB/s   00:00    
-   known_hosts                     100% 1089     1.1KB/s   00:00    
-   ```
+      ```
+      plat1:~ # scp -r ~/.ssh plat3:~
+      Password: 
+      authorized_keys                 100%  796     0.8KB/s   00:00    
+      id_rsa                          100% 1675     1.6KB/s   00:00    
+      id_rsa.pub                      100%  398     0.4KB/s   00:00    
+      known_hosts                     100% 1089     1.1KB/s   00:00    
+      ```
 
 4. 查看互信是否建成功，可以互相ssh主机名。输入exit退出。
 
