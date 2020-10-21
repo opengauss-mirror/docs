@@ -32,8 +32,9 @@ gs\_guc工具由操作系统用户omm执行。
 
     使用gs\_guc encrypt命令加密用户密码时，如果指定的-M的值为source，则会生成这两个文件。其中“datasource.key.cipher”存储用户密码的密文，“datasource.key.rand”存储的是加密因子。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >“datasource.key.cipher”和“datasource.key.rand”是创建Data Source对象时调用的密钥文件。gs\_guc生成时即有读权限。使用前需将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。
+    ![](public_sys-resources/icon-note.gif) **说明：**
+
+    “datasource.key.cipher”和“datasource.key.rand”是创建Data Source对象时调用的密钥文件。gs\_guc生成时即有读权限。使用前需将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。
 
 
 ## 语法<a name="zh-cn_topic_0237152338_zh-cn_topic_0059778019_se02e295596714317bc63dc8508898bdd"></a>
@@ -68,14 +69,21 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc [ set | reload ]  [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options option" 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >authmehod-options支持以下选项：
-    >-   trust：不验密，禁止远程主机使用trust方式访问openGauss
-    >-   reject：拒绝访问
-    >-   md5：md5认证，默认不支持
-    >-   sha256：sha256认证（推荐使用）
-    >-   cert：客户端证书认证
-    >-   gss：kerberos认证
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    authmehod-options支持以下选项：
+
+    -   trust：不验密，禁止远程主机使用trust方式访问openGauss
+
+    -   reject：拒绝访问
+
+    -   md5：md5认证，默认不支持
+
+    -   sha256：sha256认证（推荐使用）
+
+    -   cert：客户端证书认证
+
+    -   gss：kerberos认证
 
 -   注释已经设置的客户端认证策略， 同时发送信号量到pg\_hba.conf
 
@@ -83,8 +91,9 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD" 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >如果需要注释已经设置的认证策略，请使用-h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD"，不需要指定authmehod-options。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    如果需要注释已经设置的认证策略，请使用-h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD"，不需要指定authmehod-options。
 
 -   显示帮助信息
 
@@ -104,21 +113,32 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc encrypt [-M keymode] -K password [-U username] -D DATADIR
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<=16）和密码复杂度要求，如果不满足，将会报错。
-    >-M是加密类型，当前仅支持server、client和source。默认值为server。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<=16）和密码复杂度要求，如果不满足，将会报错。
+
+    -M是加密类型，当前仅支持server、client和source。默认值为server。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   gs\_guc工具不支持参数值中包含'\#'的设置。可以使用vi工具通过手工修改配置文件来设置。
->-   如果已经在环境变量中设置PGDATA，则可以省略-D参数。否则提示设置参数失败。
->-   环境变量PGDATA设置方法：先将参数PGDATA设置为_/gaussdb/data_，然后在执行“export PGDATA”使设置生效。
->-   authpolicy包含一串认证参数：HOSTTYPE DATABASE USERNAME IPADDR IPMASK，或者HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK，或者HOSTTYPE DATABASE USERNAME HOSTNAME。
->-   如果设置GUC参数时使用-c "parameter"，则会将已设置的GUC参数值设置成该参数的内核默认值（注意log\_directory和audit\_directory不会被设置为内核参数默认值，而是设为$GAUSSLOG/pg\_audit/instance\_name）。因GUC参数间存在依赖关系，因此请慎用该功能。
->-   设置-c参数时，参数都可以省略双引号。
->-   如果value中含有特殊字符（如$），请转义后使用。
->-   如果同一个配置参数在配置文件里面出现多行，且有两行或多于两行同时生效（即没有用"\#"注释掉），那么只有最后一个配置参数会被设置，而前面的都会被忽略。
->-   通过reload模式设置或修改openGauss节点配置文件（postgresql.conf）的参数，生效存在短暂延迟，有可能导致配置后openGauss各实例参数极短时间不一致。
+![](public_sys-resources/icon-note.gif) **说明：**
+
+-   gs\_guc工具不支持参数值中包含'\#'的设置。可以使用vi工具通过手工修改配置文件来设置。
+
+-   如果已经在环境变量中设置PGDATA，则可以省略-D参数。否则提示设置参数失败。
+
+-   环境变量PGDATA设置方法：先将参数PGDATA设置为_/gaussdb/data_，然后在执行“export PGDATA”使设置生效。
+
+-   authpolicy包含一串认证参数：HOSTTYPE DATABASE USERNAME IPADDR IPMASK，或者HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK，或者HOSTTYPE DATABASE USERNAME HOSTNAME。
+
+-   如果设置GUC参数时使用-c "parameter"，则会将已设置的GUC参数值设置成该参数的内核默认值（注意log\_directory和audit\_directory不会被设置为内核参数默认值，而是设为$GAUSSLOG/pg\_audit/instance\_name）。因GUC参数间存在依赖关系，因此请慎用该功能。
+
+-   设置-c参数时，参数都可以省略双引号。
+
+-   如果value中含有特殊字符（如$），请转义后使用。
+
+-   如果同一个配置参数在配置文件里面出现多行，且有两行或多于两行同时生效（即没有用"\#"注释掉），那么只有最后一个配置参数会被设置，而前面的都会被忽略。
+
+-   通过reload模式设置或修改openGauss节点配置文件（postgresql.conf）的参数，生效存在短暂延迟，有可能导致配置后openGauss各实例参数极短时间不一致。
 
 ## 命令参考<a name="zh-cn_topic_0237152338_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
 
@@ -158,18 +178,22 @@ gs\_guc工具由操作系统用户omm执行。
 
     需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   与"-I" 不能一块使用
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    -   -D 与"-I" 不能一块使用
 
 -   -c parameter=value
 
     要设定的openGauss配置参数的名称和参数值。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。
-    >-   当使用gs\_guc set/reload为"log\_directory" 恢复默认值时，其默认值会被置为具体的data目录。
-    >-   当使用gs\_guc reload进行参数设定，并指定-N参数时，当指定的节点为主节点时，主备节点的参数值都会被修改；当指定节点为备节点时，只会修改备节点的参数值，不会修改主节点的参数值。
-    >-   当使用gs\_guc reload进行参数设定，未指定-N参数时，当在主节点上执行时，主备节点的参数值都会被修改；当在备节点上执行时，只会修改备节点的参数值，不会修改主节点的参数值。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    -   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。
+
+    -   当使用gs\_guc set/reload为"log\_directory" 恢复默认值时，其默认值会被置为具体的data目录。
+
+    -   当使用gs\_guc reload进行参数设定，并指定-N参数时，当指定的节点为主节点时，主备节点的参数值都会被修改；当指定节点为备节点时，只会修改备节点的参数值，不会修改主节点的参数值。
+    
+    -   当使用gs\_guc reload进行参数设定，未指定-N参数时，当在主节点上执行时，主备节点的参数值都会被修改；当在备节点上执行时，只会修改备节点的参数值，不会修改主节点的参数值。
 
     取值范围：postgresql.conf中的所有参数。
 

@@ -138,6 +138,7 @@ INFO:  The starting position of the xlog copy of the full build is: 0/1B800000. 
 当数据库发生故障时需要从备份文件进行恢复。因为gs\_basebackup是对数据库按二进制进行备份，因此恢复时可以直接拷贝替换原有的文件，或者直接在备份的库上启动数据库。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+
 >-   若当前数据库实例正在运行，直接从备份文件启动数据库可能会存在端口冲突，这时需要修改配置文件的port参数，或者在启动数据库时指定一下端口。
 >-   若当前备份文件为主备数据库，可能需要修改一下主备之间的复制连接。即配置文件中的postgresql.conf中的replconninfo1，replconninfo2等。
 
@@ -151,6 +152,7 @@ INFO:  The starting position of the xlog copy of the full build is: 0/1B800000. 
 6.  重启数据库服务器，并检查数据库内容，确保数据库已经恢复到所需的状态。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+
 >-   暂不支持备份文件增量恢复。
 >-   恢复后需要检查数据库中的链接文件是否链接到正确的文件。
 
