@@ -355,7 +355,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **ALL,on\(\),off\(LLVM\_COMPILE,HASH\_CONFLICT,STREAM\_DATA\_CHECK\)**, which indicates that no location function is enabled.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->Use  **on\(\)**  or** off\(\)**  to enable or disable the functions. The function options that are not displayed retain the original values. Format for reference:  
+>Use  **on\(\)**  or **off\(\)**  to enable or disable the functions. The function options that are not displayed retain the original values. Format for reference:  
 >'on\(option1, option2, ...\)'  
 >'off\(ALL\)'  
 
