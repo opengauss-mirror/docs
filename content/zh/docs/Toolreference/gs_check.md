@@ -214,7 +214,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <tr id="zh-cn_topic_0237152330_row393310505129"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p199341150131220"><a name="zh-cn_topic_0237152330_p199341150131220"></a><a name="zh-cn_topic_0237152330_p199341150131220"></a>CheckNoCheckSum(检查nochecksum值是否为预期值且一致)</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p119845811414"><a name="zh-cn_topic_0237152330_p119845811414"></a><a name="zh-cn_topic_0237152330_p119845811414"></a>检查nochecksum值，</p>
-<a name="zh-cn_topic_0237152330_ul940219189148"></a><a name="zh-cn_topic_0237152330_ul940219189148"></a><ul id="zh-cn_topic_0237152330_ul940219189148"><li>Redhat 6.4/6.5且使用bond网卡时，各个节点都为Y则检查项通过，否则检查项不通过。</li><li>其他系统：若各个节点都为N则检查项通过，否则检查项不通过。</li></ul>
+<a name="zh-cn_topic_0237152330_ul940219189148"></a><a name="zh-cn_topic_0237152330_ul940219189148"></a><ul id="zh-cn_topic_0237152330_ul940219189148"><li>Redhat 6.4<span><span>/<span>6.5且使用bond网卡时，各个节点都为Y则检查项通过，否则检查项不通过。</li><li>其他系统：若各个节点都为N则检查项通过，否则检查项不通过。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p8883100124820"><a name="zh-cn_topic_0237152330_p8883100124820"></a><a name="zh-cn_topic_0237152330_p8883100124820"></a>否</p>
 </td>
@@ -278,10 +278,10 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <tr id="zh-cn_topic_0237152330_row94708478269"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1747154718267"><a name="zh-cn_topic_0237152330_p1747154718267"></a><a name="zh-cn_topic_0237152330_p1747154718267"></a>CheckSshdConfig（检查sshd服务配置是否正确）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p7638357718"><a name="zh-cn_topic_0237152330_p7638357718"></a><a name="zh-cn_topic_0237152330_p7638357718"></a>检查/etc/ssh/sshd_config文件，</p>
-<p id="zh-cn_topic_0237152330_p4634757919"><a name="zh-cn_topic_0237152330_p4634757919"></a><a name="zh-cn_topic_0237152330_p4634757919"></a>(a)PasswordAuthentication=yes;</p>
-<p id="zh-cn_topic_0237152330_p1263420571317"><a name="zh-cn_topic_0237152330_p1263420571317"></a><a name="zh-cn_topic_0237152330_p1263420571317"></a>(b)MaxStartups=1000;</p>
-<p id="zh-cn_topic_0237152330_p19635457214"><a name="zh-cn_topic_0237152330_p19635457214"></a><a name="zh-cn_topic_0237152330_p19635457214"></a>(c)UseDNS=no;</p>
-<p id="zh-cn_topic_0237152330_p136350573120"><a name="zh-cn_topic_0237152330_p136350573120"></a><a name="zh-cn_topic_0237152330_p136350573120"></a>(d)ClientAliveInterval大于10800或者等于0</p>
+<p id="zh-cn_topic_0237152330_p4634757919"><a name="zh-cn_topic_0237152330_p4634757919"></a><a name="zh-cn_topic_0237152330_p4634757919"></a>a.PasswordAuthentication=yes;</p>
+<p id="zh-cn_topic_0237152330_p1263420571317"><a name="zh-cn_topic_0237152330_p1263420571317"></a><a name="zh-cn_topic_0237152330_p1263420571317"></a>b.MaxStartups=1000;</p>
+<p id="zh-cn_topic_0237152330_p19635457214"><a name="zh-cn_topic_0237152330_p19635457214"></a><a name="zh-cn_topic_0237152330_p19635457214"></a>c.UseDNS=no;</p>
+<p id="zh-cn_topic_0237152330_p136350573120"><a name="zh-cn_topic_0237152330_p136350573120"></a><a name="zh-cn_topic_0237152330_p136350573120"></a>d.ClientAliveInterval大于10800或者等于0</p>
 <p id="zh-cn_topic_0237152330_p19635135717115"><a name="zh-cn_topic_0237152330_p19635135717115"></a><a name="zh-cn_topic_0237152330_p19635135717115"></a>配置如上所示则检查项通过，若a、c配置不正确则报warning，b、d配置不正确则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p5883180144817"><a name="zh-cn_topic_0237152330_p5883180144817"></a><a name="zh-cn_topic_0237152330_p5883180144817"></a>是</p>
@@ -845,6 +845,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 </tbody>
 </table>
+
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
