@@ -24,6 +24,7 @@ gs_restore [OPTION]... FILE
 ```
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
+
 -   FILE没有短选项或长选项。用来指定归档文件所处的位置。
 
 -   作为前提条件，需输入dbname或-l选项。不允许用户同时输入dbname和-l选项。
