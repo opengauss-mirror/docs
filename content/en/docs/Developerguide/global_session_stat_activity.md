@@ -137,9 +137,8 @@
 <p id="en-us_topic_0237122638_p1141220342271"><a name="en-us_topic_0237122638_p1141220342271"></a><a name="en-us_topic_0237122638_p1141220342271"></a>db_tpcds  | judy      | 16398    | active |139968391403280</p>
 <p id="en-us_topic_0237122638_p8412034102716"><a name="en-us_topic_0237122638_p8412034102716"></a><a name="en-us_topic_0237122638_p8412034102716"></a>postgres  | omm       | 10       |        |139968643069712</p>
 <p id="en-us_topic_0237122638_p154128347270"><a name="en-us_topic_0237122638_p154128347270"></a><a name="en-us_topic_0237122638_p154128347270"></a>postgres  | omm       | 10       |        |139968680818448</p>
-<p id="en-us_topic_0237122638_p74121034172711"><a name="en-us_topic_0237122638_p74121034172711"></a><a name="en-us_topic_0237122638_p74121034172711"></a>postgres  | joe       | 16390    |        |139968563377936</p>
+<p id="en-us_topic_0237122638_p74121034172711"><a name="en-us_topic_0237122638_p74121034172711"></a><a name="en-us_topic_0237122638_p74121034172711"></a>postgres  | joe       | 16390    |        |139968563377936</p></div>
 <p id="en-us_topic_0237122638_p1741203414279"><a name="en-us_topic_0237122638_p1741203414279"></a><a name="en-us_topic_0237122638_p1741203414279"></a>(6 rows)</p>
-</div></div>
 </li></ul>
 </div>
 </td>
