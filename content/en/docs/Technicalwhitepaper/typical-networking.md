@@ -41,5 +41,5 @@ Network exclusiveness and 1:1 bandwidth convergence ratio are the basic requirem
 For the test system, the preceding requirements can be lowered.
 
 **Figure  2**  Database management and storage network<a name="en-us_concept_0238166305_en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542"></a>  
-![](figures/database-management-and-storage-network.png "database-management-and-storage-network")
+<img src="figures/database-management-and-storage-network.png" title="database-management-and-storage-network" style="zoom:67%;" />
 

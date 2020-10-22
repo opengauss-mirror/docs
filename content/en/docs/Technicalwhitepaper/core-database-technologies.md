@@ -1,15 +1,4 @@
 # Core Database Technologies<a name="EN-US_CONCEPT_0252569318"></a>
-<!-- TOC -->
-
-- [Basic Functions Oriented to Application Development](#Basic Functions Oriented to Application Development)
-- [High Performance](#High Performance)
-- [High Scalability](#High Scalability)
-- [HA](#HA)
-- [Maintainability](#Maintainability)
-- [Database Security](#Database Security)
-
-<!-- /TOC -->
-
 ## Basic Functions Oriented to Application Development
 
 -   Standard SQL
@@ -22,15 +11,15 @@
 
 - Standard Development Interfaces
 
-  Standard ODBC and JDBC interfaces are provided to ensure quick migration of user services to openGauss.
+    Standard ODBC and JDBC interfaces are provided to ensure quick migration of user services to openGauss.
 
-  Currently, the standard ODBC 3.5 and JDBC 4.0 interfaces are supported. The ODBC interface supports SUSE Linux, Windows 32-bit, and Windows 64-bit platforms. The JDBC interface supports all platforms.
+    Currently, the standard ODBC 3.5 and JDBC 4.0 interfaces are supported. The ODBC interface supports SUSE Linux, Windows 32-bit, and Windows 64-bit platforms. The JDBC interface supports all platforms.
 
 - Transaction Support
 
-  Transaction support refers to the system capability to ensure the atomicity, consistency, isolation, and durability \(ACID\) features of global transactions.
+    Transaction support refers to the system capability to ensure the atomicity, consistency, isolation, and durability \(ACID\) features of global transactions.
 
-  Transaction support and data consistency assurance are the basic functions of most databases and the prerequisites for a database to satisfy transaction-based application requirements.
+    Transaction support and data consistency assurance are the basic functions of most databases and the prerequisites for a database to satisfy transaction-based application requirements.
 
   - Atomicity
 
@@ -74,17 +63,17 @@
 
 - PG Interface Compatibility
 
-  Compatible with PostgreSQL clients and interfaces.
+    Compatible with PostgreSQL clients and interfaces.
 
 - SQL Hints
 
-  SQL hints are supported, which can override any execution plan and thus improve SQL query performance.
+    SQL hints are supported, which can override any execution plan and thus improve SQL query performance.
 
-  In plan hints, you can specify a join order; join, stream, and scan operations; and the number of rows in a result to tune an execution plan, improving query performance.
+    In plan hints, you can specify a join order; join, stream, and scan operations; and the number of rows in a result to tune an execution plan, improving query performance.
 
 - Copy Interface for Error Tolerance
 
-  openGauss provides the encapsulated copy error tables for creating functions and allows users to specify error tolerance options when using the  **Copy From**  statement. In this way, errors related to parsing, data format, and character set during the execution of the  **Copy From**  statement are recorded in the error table instead of being reported and interrupted. Even if a small amount of data in the target file of  **Copy From**  is incorrect, the data can be imported to the database. You can locate and rectify the fault in the error table later.
+    openGauss provides the encapsulated copy error tables for creating functions and allows users to specify error tolerance options when using the  **Copy From**  statement. In this way, errors related to parsing, data format, and character set during the execution of the  **Copy From**  statement are recorded in the error table instead of being reported and interrupted. Even if a small amount of data in the target file of  **Copy From**  is incorrect, the data can be imported to the database. You can locate and rectify the fault in the error table later.
 
 
 ## High Performance
@@ -104,7 +93,7 @@ Column-store is recommended if a table contains many columns \(called a wide tab
 [Figure 1](#en-us_topic_0242724708_fig4487133722819)  shows the column-store model.
 
 **Figure  1**  Column-store<a name="en-us_topic_0242724708_fig4487133722819"></a>  
-![](figures/column-store.png "column-store")
+<img src="figures/column-store.png" title="column-store" style="zoom:67%;" />
 
 In a wide table containing a huge amount of data, a query usually only includes certain columns. In this case, the query performance of the row-store engine is poor. For example, a single table containing the data of a meteorological agency has 200 to 800 columns. Among these columns, only 10 are frequently accessed. In this case, a vectorized execution and column-store engine can significantly improve performance by saving storage space.
 
@@ -285,13 +274,13 @@ openGauss provides the physical backup capability to back up data of the entire 
 
 Physical backup is classified into full backup and incremental backup. The difference is as follows: Full backup includes the full data of the database at the backup time point. The time required for full backup is long \(in direct proportion to the total data volume of the database\), and a complete database can be restored. An incremental backup involves only incremental data modified after a specified time point. It takes a short period of time \(in direct proportion to the incremental data volume and irrelevant to the total data volume\). However, a complete database can be restored only after the incremental backup and full backup are performed. openGauss supports both full and incremental backup modes.
 
-### Point-In-Time Recovery \(PITR\)<a name="section977361551612"></a>
+### Point-In-Time Recovery \(PITR\)
 
 PITR uses basic hot backup, write-ahead logs \(WALs\), and archived WALs for backup and recovery. When replay a WAL record, you can stop at any point in time, so that there is a snapshot of the consistent database at any point in time. That is, you can restore the database to the state at any time since the backup starts. During recovery, openGauss supports specifying the recovery stop point as TID, time, and LSN.
 
 ## Maintainability
 
-### Workload Diagnosis Report<a name="section16308432469"></a>
+### Workload Diagnosis Report
 
 The workload diagnosis report \(WDR\) generates a performance report between two different time points based on the system performance snapshot data at two different time points. The report is used to diagnose database kernel performance faults.
 
@@ -452,7 +441,7 @@ The one-click collection tool obtains different information from the production 
 
 ## Database Security
 
-### Access Control<a name="section1518355319485"></a>
+### Access Control
 
 Access control is to manage users' database access control permissions, including database system permissions and object permissions.
 
@@ -470,7 +459,7 @@ This feature applies to the following scenarios: An enterprise has multiple busi
 
 The system administrators can specify the  **INDEPENDENT**  attribute when creating a user, indicating that the user is a private user. Database administrators \(including initial users and other administrators\) can control \(**DROP**,  **ALTER**, and  **TRUNCATE**\) objects of private users but cannot access \(**INSERT**,  **DELETE**,  **UPDATE**,  **SELECT**,  **COPY**,  **GRANT**,  **REVOKE**, and  **ALTER OWNER**\) the objects without authorization.
 
-### Database Encryption Authentication<a name="section5666740124910"></a>
+### Database Encryption Authentication
 
 The password encryption method based on the RFC5802 mechanism is used for authentication.
 
@@ -490,7 +479,7 @@ Audit logs record the event time, type, execution result, username, database, co
 
 Database security administrators can use the audit logs to reproduce a series of events that cause faults in the database and identify unauthorized users, unauthorized operations, and the time when these operations are performed.
 
-### Network Communication Security<a name="section12318192310500"></a>
+### Network Communication Security
 
 SSL can be used to encrypt communication data between the client and server, ensuring communication security between the client and server.
 
@@ -580,7 +569,7 @@ The TLS 1.2 protocol and a highly secure encryption algorithm suite are adopted.
 </table>
 
 
-### Row-Level Access Control<a name="section135874520509"></a>
+### Row-Level Access Control
 
 The row-level access control feature enables database access control to be accurate to each row of data tables. When different users perform the same SQL query operation, the read results may be different according to the row-level access control policy.
 

@@ -264,9 +264,9 @@ INFO:  The starting position of the xlog copy of the full build is: 0/1B800000. 
 
 If a database is faulty, restore it from backup files.  **gs\_basebackup**  backs up the database in binary mode. Therefore, you can directly copy and replace the original files or start the database on the backup database.
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
--   If the current database instance is running, a port conflict may occur when you start the database from the backup file. In this case, you need to modify the port parameter in the configuration file or specify a port when starting the database.
--   If the current backup file is a primary/standby database, you may need to modify the replication connections between the master and slave databases. That is,  **replconninfo1**  and  **replconninfo2**  in the  **postgre.conf**  file.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+-   If the current database instance is running, a port conflict may occur when you start the database from the backup file. In this case, you need to modify the port parameter in the configuration file or specify a port when starting the database.  
+-   If the current backup file is a primary/standby database, you may need to modify the replication connections between the master and slave databases. That is,  **replconninfo1**  and  **replconninfo2**  in the  **postgre.conf**  file.  
 
 To restore the original database, perform the following steps:
 
@@ -277,9 +277,9 @@ To restore the original database, perform the following steps:
 5.  If a link file exists in the database, modify the link file so that it can be linked to the correct file.
 6.  Restart the database server and check the database content to ensure that the database is restored to the required status.
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
--   Incremental restoration from backup files is not supported.
--   After the restoration, check that the link file in the database is linked to the correct file.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+-   Incremental restoration from backup files is not supported.   
+-   After the restoration, check that the link file in the database is linked to the correct file.  
 
 ### PITR Recovery
 
@@ -287,10 +287,9 @@ To restore the original database, perform the following steps:
 
 When a database breaks down or needs to be rolled back to a previous state, the point-in-time recovery \(PITR\) function of openGauss can be used to restore the database to any point in time after the backup and archive data is generated.
 
-![](C:/Users/lijun/AppData/Local/Temp/6/Rar$DIa160952.43946/public_sys-resources/icon-note.gif) **NOTE:** 
-
--   PITR can only be restored to a point in time after the physical backup data is generated.
--   Only the primary node can be restored using PITR. The standby node needs to be fully built to synchronize data with the primary node.
+![](C:/Users/lijun/AppData/Local/Temp/6/Rar$DIa160952.43946/public_sys-resources/icon-note.gif) **NOTE:**   
+-   PITR can only be restored to a point in time after the physical backup data is generated.  
+-   Only the primary node can be restored using PITR. The standby node needs to be fully built to synchronize data with the primary node.  
 
 #### Prerequisites<a name="section5133181313201"></a>
 
@@ -389,10 +388,9 @@ For example:
 recovery_target_inclusive = true
 ```
 
-![](C:/Users/lijun/AppData/Local/Temp/6/Rar$DIa160952.43946/public_sys-resources/icon-note.gif) **NOTE:** 
-
--   Only one of the four configuration items  **recovery\_target\_name**,  **recovery\_target\_time**,  **recovery\_target\_xid**, and  **recovery\_target\_lsn**  can be used at a time.
--   If no recovery targets are configured or the configured target does not exist, data is recovered to the latest WAL log point by default.
+![](C:/Users/lijun/AppData/Local/Temp/6/Rar$DIa160952.43946/public_sys-resources/icon-note.gif) **NOTE:**   
+-   Only one of the four configuration items  **recovery\_target\_name**,  **recovery\_target\_time**,  **recovery\_target\_xid**, and  **recovery\_target\_lsn**  can be used at a time.  
+-   If no recovery targets are configured or the configured target does not exist, data is recovered to the latest WAL log point by default.  
 
 
 
@@ -479,8 +477,8 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->To reduce the size of an exported file, you can use  **gs\_dump**  to compress it to a plain-text file or custom-format file. By default, a plain-text file is not compressed when generated. When a custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**. When a plain-text file is exported in compressed mode,  **gsql**  fails to import data objects.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+To reduce the size of an exported file, you can use  **gs\_dump**  to compress it to a plain-text file or custom-format file. By default, a plain-text file is not compressed when generated. When a custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**. When a plain-text file is exported in compressed mode,  **gsql**  fails to import data objects.
 
 #### Precautions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
@@ -494,9 +492,9 @@ To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lo
 gs_dump [OPTION]... [DBNAME]
 ```
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-_DBNAME_  does not follow a short or long option. It specifies the database to be connected.
-For example:
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+_DBNAME_  does not follow a short or long option. It specifies the database to be connected.  
+For example:  
 Specify  _DBNAME_  without a  **-d**  option preceding it.
 ```
 gs_dump -p port_number  postgres -f dump1.sql
@@ -589,9 +587,9 @@ Dump parameters:
 
     Dumps only schemas matching the schema names. This option contains the schema and all its contained objects. If this option is not specified, all non-system schemas in the target database will be dumped. Multiple schemas can be selected by specifying multiple  **-n**  options. The schema parameter is interpreted as a pattern according to the same rules used by the  **\\d**  command of  **gsql**. Therefore, multiple schemas can also be selected by writing wildcard characters in the pattern. When you use wildcard characters, quote the pattern to prevent the shell from expanding the wildcard characters.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.
-    -   If  **-n**  is specified, the non-schema objects are not dumped.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**     
+    -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
+    -   If  **-n**  is specified, the non-schema objects are not dumped.  
 
     Multiple schemas can be dumped. Entering  **-n **_schemaname_  multiple times dumps multiple schemas.
 
@@ -647,12 +645,12 @@ Dump parameters:
 
     The  **-n**  and  **-N**  options have no effect when  **-t**  is used, because tables selected by using  **-t**  will be dumped regardless of those options.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    -   The number of  **-t**  parameters must be less than or equal to 100.
-    -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.
-    -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
-    -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.
-    -   **-t tablename**  does not export trigger information from a table.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    -   The number of  **-t**  parameters must be less than or equal to 100.  
+    -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
+    -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
+    -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
+    -   **-t tablename**  does not export trigger information from a table.  
 
     For example:
 
@@ -684,8 +682,8 @@ Dump parameters:
 
     Specifies the table files that do not need to be dumped.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    Same as  **--include-table-file**, the content format of this parameter is as follows:
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    Same as  **--include-table-file**, the content format of this parameter is as follows:  
     schema1.table1
     schema2.table2
     ......
@@ -801,14 +799,14 @@ Dump parameters:
     ```
 
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
--   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
--   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
--   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.
--   **--role**  must be used in conjunction with  **--rolepassword**.
--   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.
--   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.
--   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+-   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
+-   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.  
+-   **--role**  must be used in conjunction with  **--rolepassword**.  
+-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+-   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
+-   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
 
 Connection parameters:
 
@@ -1123,17 +1121,17 @@ Dump parameters:
     Specifies the number of concurrent backup processes. The value range is 1-1000.
 
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
--   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.
--   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
--   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
--   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
--   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.
--   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.
--   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.
--   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.
--   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.
--   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.  
+-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+-   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.  
+-   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.  
+-   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.  
+-   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.  
+-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+-   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.  
 
 Connection parameters:
 
@@ -1230,11 +1228,11 @@ It has the following functions:
 gs_restore [OPTION]... FILE
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files. 
->-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.
->-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.
->-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.
+>![](public_sys-resources/icon-note.gif) **NOTE:**    
+>-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files.   
+>-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.  
+>-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.  
+>-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.  
 
 #### Parameter Description<a name="en-us_topic_0249632267_en-us_topic_0237152343_en-us_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
@@ -1250,8 +1248,8 @@ Common parameters
 
     The default is the standard output.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**-f**  cannot be used in conjunction with  **-d**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >**-f**  cannot be used in conjunction with  **-d**.  
 
 -   -F, --format=c|d|t
 
@@ -1456,12 +1454,12 @@ CREATE DATABASE foo WITH TEMPLATE template0;
 ```
 -   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.
-2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
-3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
-4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.
-5.  **--role**  must be used in conjunction with  **--rolepassword**.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.  
+2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
+4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.  
+5.  **--role**  must be used in conjunction with  **--rolepassword**.  
 
 Connection parameters:
 

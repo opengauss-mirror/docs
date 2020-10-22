@@ -24,16 +24,16 @@ Currently, the default values of parameters in openGauss configuration files \(*
 
     When you encrypt a user password using the  **gs\_guc encrypt**  command and the  **-M**  option is set to  **client**, the  **client.key.cipher**  and  **client.key.rand**  files are generated.  **client.key.cipher**  stores the encrypted password.  **client.key.rand**  stores the encryption factor.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**client.key.cipher**  and  **client.key.rand**  indicate the ciphertext file and encryption factor files generated when the  **-U**  option is not specified. When you specify the user name using the  **-U**  option, a file whose name starts with the user name is generated. Take  **-U test**  as an example, the names of the files generated are  **test.key.cipher**  and  **test.key.rand**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >**client.key.cipher**  and  **client.key.rand**  indicate the ciphertext file and encryption factor files generated when the  **-U**  option is not specified. When you specify the user name using the  **-U**  option, a file whose name starts with the user name is generated. Take  **-U test**  as an example, the names of the files generated are  **test.key.cipher**  and  **test.key.rand**.  
 
 
 -   datasource.key.cipher, datasource.key.rand
 
     When you encrypt a user password using the  **gs\_guc encrypt**  command and the  **-M**  option is set to  **source**, the  **datasource.key.cipher**  and  **datasource.key.rand**  files are generated.  **datasource.key.cipher**  stores the encrypted password.  **datasource.key.rand**  stores the encryption factor.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**datasource.key.cipher**  and  **datasource.key.rand**  are key files invoked during data source creation. gs\_guc has the read permission when it is generated. Before using the two files, place them in the  _$GAUSSHOME_**/bin**  directory on each node and ensure that they are readable.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >**datasource.key.cipher**  and  **datasource.key.rand**  are key files invoked during data source creation. gs\_guc has the read permission when it is generated. Before using the two files, place them in the  _$GAUSSHOME_**/bin**  directory on each node and ensure that they are readable.  
 
 
 ## Syntax<a name="en-us_topic_0237152338_en-us_topic_0059778019_se02e295596714317bc63dc8508898bdd"></a>
@@ -68,14 +68,14 @@ Currently, the default values of parameters in openGauss configuration files \(*
     gs_guc [ set | reload ]  [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options option" 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**authmehod-options**  supports the following options:
-    >-   **trust**: no authentication. Remote hosts are not allowed to access cluster in trust mode.
-    >-   **reject**: access denied.
-    >-   **md5**: MD5 authentication, which is not supported by default.
-    >-   **sha256**: SHA256 authentication \(recommended\).
-    >-   **cert**: client certificate authentication.
-    >-   **gss**: kerberos authentication.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >**authmehod-options**  supports the following options:  
+    >-   **trust**: no authentication. Remote hosts are not allowed to access cluster in trust mode.  
+    >-   **reject**: access denied.  
+    >-   **md5**: MD5 authentication, which is not supported by default.  
+    >-   **sha256**: SHA256 authentication \(recommended\).  
+    >-   **cert**: client certificate authentication.  
+    >-   **gss**: kerberos authentication.  
 
 -   Comment out a configured client authentication policy and send semaphore to  **pg\_hba.conf**.
 
@@ -83,8 +83,8 @@ Currently, the default values of parameters in openGauss configuration files \(*
     gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD" 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If you need to comment out a configured authentication policy, use  **-h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD"**, without specifying  **authmehod-options**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**  
+    >If you need to comment out a configured authentication policy, use  **-h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD"**, without specifying  **authmehod-options**.  
 
 -   Display help information.
 
@@ -104,21 +104,21 @@ Currently, the default values of parameters in openGauss configuration files \(*
     gs_guc encrypt [-M keymode] -K password [-U username] -D DATADIR
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**-K**  indicates a user-specified password.  **gs\_guc**  specifies the requirements of the password length \(ranging from 8 to 16\) and complexity. If the requirements are not meet, an error is reported.
-    >**-M **indicates the encryption type. Its value can be  **server**,  **client**  or  **source**. The default value is  **server**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >**-K**  indicates a user-specified password.  **gs\_guc**  specifies the requirements of the password length \(ranging from 8 to 16\) and complexity. If the requirements are not meet, an error is reported.  
+    >**-M **indicates the encryption type. Its value can be  **server**,  **client**  or  **source**. The default value is  **server**.  
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   **gs\_guc**  does not support parameter value containing the number sign \(\#\). You can use the vi tool to manually modify the configuration file.
->-   If the environment variable  **PGDATA**  has been set, the  **-D**  parameter can be omitted. Otherwise, a parameter setting failure will be reported.
->-   Setting the environment variable  **PGDATA**  as follows: Set  **PGDATA**  to  _/gaussdb/data_, and then execute  **export PGDATA**  to make the setting effective.
->-   **authpolicy**  contains a series of authentication parameters:  **HOSTTYPE DATABASE USERNAME IPADDR IPMASK**,  **HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK**, or  **HOSTTYPE DATABASE USERNAME HOSTNAME**.
->-   If you use  **-c "**_Parameter_**"**  to set a GUC parameter, this parameter will be reset to its default value. Note that the  **log\_directory**  and  **audit\_directory**  parameters will be reset to  **$GAUSSLOG/pg\_audit/instance\_name**, instead of their default values. GUC parameters are dependent on each other. Therefore, exercise caution when using  **-c "** _Parameter_**"**.
->-   When setting the  **-c**  parameter, the double quotation marks can be omitted.
->-   If the value contains special characters, such as $, escape the character first.
->-   If a configuration parameter occurs in multiple rows of a configuration file and two or more rows take effect at the same time \(which means that the configuration parameter is not commented out using "\#"\), only the latest configuration parameter is set and the others are ignored.
->-   If modification validation is delayed after the parameters in the openGauss node configuration file  **postgresql.conf**  are set or modified in reload mode, the parameter settings for instances in openGauss may be inconsistent for a short period of time.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+-   **gs\_guc**  does not support parameter value containing the number sign \(\#\). You can use the vi tool to manually modify the configuration file.  
+-   If the environment variable  **PGDATA**  has been set, the  **-D**  parameter can be omitted. Otherwise, a parameter setting failure will be reported.  
+-   Setting the environment variable  **PGDATA**  as follows: Set  **PGDATA**  to  _/gaussdb/data_, and then execute  **export PGDATA**  to make the setting effective.  
+-   **authpolicy**  contains a series of authentication parameters:  **HOSTTYPE DATABASE USERNAME IPADDR IPMASK**,  **HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK**, or  **HOSTTYPE DATABASE USERNAME HOSTNAME**.  
+-   If you use  **-c "**_Parameter_**"**  to set a GUC parameter, this parameter will be reset to its default value. Note that the  **log\_directory**  and  **audit\_directory**  parameters will be reset to  **$GAUSSLOG/pg\_audit/instance\_name**, instead of their default values. GUC parameters are dependent on each other. Therefore, exercise caution when using  **-c "** _Parameter_**"**.  
+-   When setting the  **-c**  parameter, the double quotation marks can be omitted.  
+-   If the value contains special characters, such as $, escape the character first.  
+-   If a configuration parameter occurs in multiple rows of a configuration file and two or more rows take effect at the same time \(which means that the configuration parameter is not commented out using "\#"\), only the latest configuration parameter is set and the others are ignored.  
+-   If modification validation is delayed after the parameters in the openGauss node configuration file  **postgresql.conf**  are set or modified in reload mode, the parameter settings for instances in openGauss may be inconsistent for a short period of time.  
 
 ## Command Reference<a name="en-us_topic_0237152338_en-us_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
 
@@ -165,11 +165,11 @@ Currently, the default values of parameters in openGauss configuration files \(*
 
     Specifies the name and value of the openGauss configuration parameter to be set.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If the parameter is a string variable, use  **-c **_parameter_**="'**_value_**'"**  or  **-c "**_parameter_** = '**_value_**'"**.
-    >-   When  **gs\_guc set**  or  **reload**  is set to  **log\_directory**, the default value is restored and set to a specific data directory.
-    >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is set to the primary node, the parameter values of both the primary and standby nodes will be modified. If the  **-N**  parameter is set to the standby node, the parameter values of only the standby node will be modified.
-    >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is not set, the parameter values of both the primary and standby nodes will be modified if you run the command on the primary node. If the  **-N**  parameter is not set and you run the command on the standby node, the parameter values of only the standby node will be modified.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   If the parameter is a string variable, use  **-c **_parameter_**="'**_value_**'"**  or  **-c "**_parameter_** = '**_value_**'"**.  
+    >-   When  **gs\_guc set**  or  **reload**  is set to  **log\_directory**, the default value is restored and set to a specific data directory.  
+    >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is set to the primary node, the parameter values of both the primary and standby nodes will be modified. If the  **-N**  parameter is set to the standby node, the parameter values of only the standby node will be modified.  
+    >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is not set, the parameter values of both the primary and standby nodes will be modified if you run the command on the primary node. If the  **-N**  parameter is not set and you run the command on the standby node, the parameter values of only the standby node will be modified.  
 
     Value range: all the parameters in the  **postgresql.conf**  file.
 
@@ -238,8 +238,8 @@ Currently, the default values of parameters in openGauss configuration files \(*
 
     Specifies the user to be encrypted. The user belongs to the OS user.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >For example, openGauss can configure different SSL licenses and private files for each user. When this option is specified, user-specific password files can be generated.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >For example, openGauss can configure different SSL licenses and private files for each user. When this option is specified, user-specific password files can be generated.  
 
 -   -S CIPHERKEY
 

@@ -77,8 +77,8 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->To reduce the size of an exported file, you can use  **gs\_dump**  to compress it to a plain-text file or custom-format file. By default, a plain-text file is not compressed when generated. When a custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**. When a plain-text file is exported in compressed mode,  **gsql**  fails to import data objects.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>To reduce the size of an exported file, you can use  **gs\_dump**  to compress it to a plain-text file or custom-format file. By default, a plain-text file is not compressed when generated. When a custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**. When a plain-text file is exported in compressed mode,  **gsql**  fails to import data objects.  
 
 ## Precautions<a name="en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
@@ -187,9 +187,9 @@ Dump parameters:
 
     Dumps only schemas matching the schema names. This option contains the schema and all its contained objects. If this option is not specified, all non-system schemas in the target database will be dumped. Multiple schemas can be selected by specifying multiple  **-n**  options. The schema parameter is interpreted as a pattern according to the same rules used by the  **\\d**  command of  **gsql**. Therefore, multiple schemas can also be selected by writing wildcard characters in the pattern. When you use wildcard characters, quote the pattern to prevent the shell from expanding the wildcard characters.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.
-    -   If  **-n**  is specified, the non-schema objects are not dumped.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
+    -   If  **-n**  is specified, the non-schema objects are not dumped.  
 
     Multiple schemas can be dumped. Entering  **-n **_schemaname_  multiple times dumps multiple schemas.
 
@@ -245,12 +245,12 @@ Dump parameters:
 
     The  **-n**  and  **-N**  options have no effect when  **-t**  is used, because tables selected by using  **-t**  will be dumped regardless of those options.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    -   The number of  **-t**  parameters must be less than or equal to 100.
-    -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.
-    -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
-    -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.
-    -   **-t tablename**  does not export trigger information from a table.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    -   The number of  **-t**  parameters must be less than or equal to 100.  
+    -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
+    -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
+    -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
+    -   **-t tablename**  does not export trigger information from a table.  
 
     For example:
 
@@ -282,11 +282,11 @@ Dump parameters:
 
     Specifies the table files that do not need to be dumped.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    Same as  **--include-table-file**, the content format of this parameter is as follows:
-    schema1.table1
-    schema2.table2
-    ......
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    Same as  **--include-table-file**, the content format of this parameter is as follows:  
+    schema1.table1  
+    schema2.table2  
+    ......  
 
 -   -x, --no-privileges|--no-acl
 
@@ -399,14 +399,14 @@ Dump parameters:
     ```
 
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
--   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
--   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
--   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.
--   **--role**  must be used in conjunction with  **--rolepassword**.
--   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.
--   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.
--   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+-   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
+-   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.  
+-   **--role**  must be used in conjunction with  **--rolepassword**.  
+-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+-   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
+-   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
 
 Connection parameters:
 

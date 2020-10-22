@@ -252,12 +252,12 @@ Parameters for importing data
     When the dump format is  **c**  or  **t**, the dumped content has been processed, and therefore the input is not restricted by the encryption.
 
 
-![](public_sys-resources/icon-notice.gif) **NOTICE:** 
--   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
-```
-CREATE DATABASE foo WITH TEMPLATE template0;
-```
--   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
+    ![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+    -   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:  
+    ```  
+    CREATE DATABASE foo WITH TEMPLATE template0;  
+    ```  
+    -   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.  
 
 ![](public_sys-resources/icon-note.gif) **NOTE:** 
 

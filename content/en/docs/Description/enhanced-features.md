@@ -74,7 +74,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
     **Figure  2**  Hybrid row-column storage engine<a name="en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_fbb2af39ce12a419cb437829aaf1cf4fb"></a>  
     
 
-<img src="figures/opengauss行列混存引擎.png" style="zoom: 67%;" />
+<img src="figures/opengauss行列混存引擎.png" style="zoom: 33%;" />
     
 The restrictions of the column store engine are as follows:
     

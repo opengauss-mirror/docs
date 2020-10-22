@@ -165,17 +165,17 @@ Dump parameters:
     Specifies the number of concurrent backup processes. The value range is 1-1000.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.
->-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
->-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
->-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
->-   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.
->-   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.
->-   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.
->-   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.
->-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.
->-   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.  
+>-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+>-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+>-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.  
+>-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+>-   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.  
 
 Connection parameters:
 
@@ -234,8 +234,8 @@ Once  **gs\_dumpall**  is restored, run ANALYZE on each database so that the opt
 
 Use  **gs\_dumpall**  to export all openGauss databases at a time.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.  
 
 ```
 gs_dumpall -f backup/bkp2.sql -p 37300
