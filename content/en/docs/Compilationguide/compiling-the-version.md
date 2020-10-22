@@ -32,12 +32,12 @@ The git and git-lfs have been installed and configured on the local host.
     [user@linux sda]$ # mkdir binarylibs        For details about this comment, see the following note.
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   **openGauss-server**: openGauss code repository.
-    >-   **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.
-    >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#Compiling Open-source Software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.
-    >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/openGauss-third\_party\_binarylibs.tar.gz**.
-    >    After the download is complete, decompress the package and rename the folder to  **binarylibs**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   **openGauss-server**: openGauss code repository.  
+    >-   **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.  
+    >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#Compiling Open-source Software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.  
+    >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/openGauss-third\_party\_binarylibs.tar.gz**.  
+    >    After the download is complete, decompress the package and rename the folder to  **binarylibs**.  
 
 2.  When the progress of each download reaches 100%, the download is successful.
 
@@ -114,11 +114,11 @@ In addition, you need to download the  [gcc-8.2.0.zip](https://github.com/gcc-mi
 
     The OpenSSL is generated.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >For error logs, you can view the corresponding log in the build directory and the log in the corresponding module. For example, you can view the OpenSSL compilation and installation logs in the  **dependency**  module.
-    >-   /sda/openGauss-third\_party/build/dependency\_build.log
-    >-   /sda/openGauss-third\_party/dependency/build/openssl\_build.log
-    >-   /sda/openGauss-third\_party/dependency/openssl/build\_openssl.log
+    >![](public_sys-resources/icon-note.gif) **NOTE:**  
+    >For error logs, you can view the corresponding log in the build directory and the log in the corresponding module. For example, you can view the OpenSSL compilation and installation logs in the  **dependency**  module.  
+    >-   /sda/openGauss-third\_party/build/dependency\_build.log  
+    >-   /sda/openGauss-third\_party/dependency/build/openssl\_build.log  
+    >-   /sda/openGauss-third\_party/dependency/openssl/build\_openssl.log  
 
 
 **Compilation and Build Result**
@@ -192,13 +192,13 @@ The following table describes the parameters.
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->1.  **-m \[debug | release | memcheck\]**  indicates that three target versions can be selected:
->    -   **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the generation environment or performance test environment.
->    -   **debug**: indicates that a binary program of the debug version is generated. During compilation of this version, the kernel code debugging function is added, which is usually used in the development self-test environment.
->    -   **memcheck**: indicates that a binary program of the memcheck version is generated. During compilation of this version, the ASAN function is added based on the debug version to locate memory problems.
->2.  **-3rd \[binarylibs path\]**  is the path of  **binarylibs**. By default,  **binarylibs**  exists in the current code folder. If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.
->3.  Each option in this script has a default value. The number of options is small and the dependency is simple. Therefore, this script is easy to use. If the required value is different from the default value, set this parameter based on the actual requirements.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>1.  **-m \[debug | release | memcheck\]**  indicates that three target versions can be selected:  
+>    -   **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the generation environment or performance test environment.  
+>    -   **debug**: indicates that a binary program of the debug version is generated. During compilation of this version, the kernel code debugging function is added, which is usually used in the development self-test environment.  
+>    -   **memcheck**: indicates that a binary program of the memcheck version is generated. During compilation of this version, the ASAN function is added based on the debug version to locate memory problems.  
+>2.  **-3rd \[binarylibs path\]**  is the path of  **binarylibs**. By default,  **binarylibs**  exists in the current code folder. If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.  
+>3.  Each option in this script has a default value. The number of options is small and the dependency is simple. Therefore, this script is easy to use. If the required value is different from the default value, set this parameter based on the actual requirements.  
 
 ## Software Compilation and Installation
 
@@ -206,9 +206,9 @@ Software compilation and installation are to compile code to generate software a
 
 ### Prerequisites
 
--   The software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading Code).
--   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software).
--   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
+-   The software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading-Code).
+-   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling-Open-source-Software).
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build-sh)  script.
 -   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Compilation Using the One-click Script
@@ -257,9 +257,9 @@ Software compilation and installation are to compile code to generate software a
     [user@linux openGauss-server]$ sh src/get_PlatForm_str.sh
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   The command output indicates the OSs supported by the openGauss. The OSs supported by the openGauss are centos7.6\_x86\_64 and openeuler\_aarch64.
-    >-   If  **Failed**  or another version is displayed, the openGauss does not support the current operating system.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   The command output indicates the OSs supported by the openGauss. The OSs supported by the openGauss are centos7.6\_x86\_64 and openeuler\_aarch64.  
+    >-   If  **Failed**  or another version is displayed, the openGauss does not support the current operating system.  
 
 3.  Configure environment variables, add  **\_\_\_\_**  based on the code download location, and replace  **\*\*\***  with the result obtained in  [Step 2](#li1666842982511).
 
@@ -294,14 +294,14 @@ Software compilation and installation are to compile code to generate software a
     ./configure --gcc-version=8.2.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --without-readline --without-zlib --enable-memory-check
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >1.  _\[debug | release | memcheck\]_  indicates that three target versions are available. The three target versions are as follows:
-    >    -   **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the generation environment or performance test environment.
-    >    -   **debug**: indicates that a binary program of the debug version is generated. During compilation of this version, the kernel code debugging function is added, which is usually used in the development self-test environment.
-    >    -   **memcheck**: indicates that a binary program of the memcheck version is generated. During compilation of this version, the ASAN function is added based on the debug version to locate memory problems.
-    >2.  On the ARM-based platform,  **-D\_\_USE\_NUMA**  needs to be added to  **CFLAGS**.
-    >3.  On the  **ARMv8.1**  platform or a later version \(for example, Kunpeng 920\),  **-D\_\_ARM\_LSE**  needs to be added to  **CFLAGS**.
-    >4.  If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the  **--3rd**  parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >1.  _\[debug | release | memcheck\]_  indicates that three target versions are available. The three target versions are as follows:  
+    >    -   **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the generation environment or performance test environment.  
+    >    -   **debug**: indicates that a binary program of the debug version is generated. During compilation of this version, the kernel code debugging function is added, which is usually used in the development self-test environment.  
+    >    -   **memcheck**: indicates that a binary program of the memcheck version is generated. During compilation of this version, the ASAN function is added based on the debug version to locate memory problems.  
+    >2.  On the ARM-based platform,  **-D\_\_USE\_NUMA**  needs to be added to  **CFLAGS**.  
+    >3.  On the  **ARMv8.1**  platform or a later version \(for example, Kunpeng 920\),  **-D\_\_ARM\_LSE**  needs to be added to  **CFLAGS**.  
+    >4.  If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the  **--3rd**  parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.  
 
 5.  Run the following commands to compile openGauss:
 
@@ -319,16 +319,15 @@ Software compilation and installation are to compile code to generate software a
     -   The software installation path after compilation is  _$GAUSSHOME_.
     -   The compiled binary files are stored in  _$GAUSSHOME_**/bin**.
 
-
 ## Compiling the Installation Package
 
 To compile the installation package is to compile the code and generate the software installation package. The compilation and packaging process of the installation package is also integrated in  **build.sh**.
 
 ### Prerequisites
 
--   TThe software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading Code).
+-   TThe software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading-Code).
 -   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software).
--   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build-sh)  script.
 -   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Procedure
@@ -363,6 +362,3 @@ To compile the installation package is to compile the code and generate the soft
     -   The generated installation package is stored in the  **./package**  directory.
     -   Compilation log: make\_compile.log
     -   Installation package packaging log: ./package/make\_package.log
-
-
-
