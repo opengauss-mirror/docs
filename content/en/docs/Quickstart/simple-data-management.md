@@ -1,18 +1,5 @@
 # Simple Data Management<a name="EN-US_TOPIC_0241704258"></a>
 
-<!-- TOC -->
-
-- [Creating a Database](#creating-a-database)
-    - [Precautions](#precautions)
-    - [Syntax](#syntax)
-    - [Examples](#examples)
-- [Creating a Table](#creating-a-table)
-    - [Syntax](#syntax-1)
-    - [Example](#example)
-- [Viewing Objects](#viewing-objects)
-
-<!-- /TOC -->
-
 ## Creating a Database
 
 Create a database. By default, a new database is created by copying the standard system database template0. Only template0 can be used to create a new database.

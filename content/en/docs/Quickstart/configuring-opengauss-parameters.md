@@ -1,11 +1,4 @@
 # Configuring openGauss Parameters<a name="EN-US_TOPIC_0241704229"></a>
-<!-- TOC -->
-
-- [Setting a Client Authentication Policy](#setting-a-client-authentication-policy)
-- [Configuring Parameters in Configuration Files](#configuring-parameters-in-configuration-files)
-
-<!-- /TOC -->
-
 
 ## Setting a Client Authentication Policy
 
@@ -149,19 +142,19 @@ The current default values for parameters in the openGauss configuration file \(
 
 - **-D**:
 
-  Specifies the openGauss instance path of the commands to be run. When the  **encrypt**  command is used, this parameter indicates the path for storing the generated password file.
+    Specifies the openGauss instance path of the commands to be run. When the  **encrypt**  command is used, this parameter indicates the path for storing the generated password file.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
-  >
-  >-   **-D**  cannot be used together with  **-I**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
+    >-   **-D**  cannot be used together with  **-I**.
 
--   **-c **_parameter_**=**_value_
+-   **-c _parameter_=_value_**
 
     Specifies the name and value of the openGauss configuration parameter to be set.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If the parameter is a string variable, use  **-c **_parameter_**="'**_value_**'"**  or  **-c "**_parameter_** = '**_value_**'"**.
-    >-   When  **gs\_guc set**  or  **reload**  is set to  **log\_directory**, the default value is restored and set to a specific data directory.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   If the parameter is a string variable, use  **-c **_parameter_**="'**_value_**'"**  or  **-c "**_parameter_** = '**_value_**'"**.  
+    >-   When  **gs\_guc set**  or  **reload**  is set to  **log\_directory**, the default value is restored and set to a specific data directory.  
 
     Value range: all the parameters in the  **postgresql.conf**  file
 

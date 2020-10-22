@@ -25,14 +25,14 @@ Compared with other open-source databases, openGauss has the following features:
 
 openGauss includes the openGauss servers, client driver, and OM modules. This chapter describes the relationship between these modules.
 
-[en-us\_topic\_0040044488.md\#f078d2fc7ab574c8aa05c4a988e0df1b3](en-us_topic_0040044488.md#f078d2fc7ab574c8aa05c4a988e0df1b3)  shows the openGauss software architecture. In the documentation of openGauss, each openGauss server is called an instance.
+[Figure 1](#f078d2fc7ab574c8aa05c4a988e0df1b3)  shows the openGauss software architecture. In the documentation of openGauss, each openGauss server is called an instance.
 
 **Figure  1**  Software architecture<a name="f078d2fc7ab574c8aa05c4a988e0df1b3"></a>  
 
 
 ![](figures/opengauss逻辑架构图1.png)
 
-For details about the meaning of each module in the figure, see  [en-us\_topic\_0040044488.md\#t17e13a118cb14f5facbde93d2db56660](en-us_topic_0040044488.md#t17e13a118cb14f5facbde93d2db56660).
+For details about the meaning of each module in the figure, see  [Table  1](#t17e13a118cb14f5facbde93d2db56660).
 
 **Table  1**  Module description
 
@@ -85,7 +85,7 @@ To ensure the security of application data, you are advised to divide an openGau
 **Figure  2**  Typical networking<a name="en-us_topic_0085434654_en-us_topic_0059782024_fa885dc600f6a4c38860244454d95c7e4"></a>  
 ![](figures/typical-networking.png "typical-networking")
 
-[en-us\_topic\_0040044502.md\#en-us\_topic\_0085434654\_en-us\_topic\_0059782024\_tb80dc4a120b64f6093f63535ce9998ef](en-us_topic_0040044502.md#en-us_topic_0085434654_en-us_topic_0059782024_tb80dc4a120b64f6093f63535ce9998ef)  describes the network division.
+[Table  2](#en-us_topic_0085434654_en-us_topic_0059782024_tb80dc4a120b64f6093f63535ce9998ef)  describes the network division.
 
 **Table  2**  Network division
 
@@ -114,12 +114,11 @@ The typical networking has the following advantages:
 -   The service network is isolated from the database management and storage network, effectively protecting the security of back-end storage data.
 -   The isolation between the service network and database management and storage network prevents attackers from managing database servers through the Internet, improving system security.
 
-Network exclusiveness and 1:1 bandwidth convergence ratio are the basic requirements for openGauss database network performance. Therefore, in the production system, the back-end storage network shown in  [en-us\_topic\_0040044502.md\#en-us\_topic\_0085434654\_en-us\_topic\_0059782024\_fa885dc600f6a4c38860244454d95c7e4](en-us_topic_0040044502.md#en-us_topic_0085434654_en-us_topic_0059782024_fa885dc600f6a4c38860244454d95c7e4)  must meet the requirements of exclusiveness and 1:1 bandwidth convergence ratio. For example, in  [en-us\_topic\_0189276253.md\#en-us\_topic\_0085434654\_en-us\_topic\_0059782024\_fig397545395542](en-us_topic_0189276253.md#en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542), the Fat-tree networking is used. To achieve a convergence ratio of 1:1, the bandwidth doubles each time the switching network layer is increased by one layer. In the figure, each bold line indicates the 80GE bandwidth, that is, the sum of the bandwidth upper limits of eight physical machines. At the access layer, each switch provides 160GE downlink bandwidth and 160GE uplink bandwidth. The convergence ratio is 1:1. The access bandwidth of each switch at the aggregation layer is 320GE.
+Network exclusiveness and 1:1 bandwidth convergence ratio are the basic requirements for openGauss database network performance. Therefore, in the production system, the back-end storage network shown in  [Figure 2](#en-us_topic_0085434654_en-us_topic_0059782024_fa885dc600f6a4c38860244454d95c7e4)  must meet the requirements of exclusiveness and 1:1 bandwidth convergence ratio. For example, in  [Figure  3](#en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542), the Fat-tree networking is used. To achieve a convergence ratio of 1:1, the bandwidth doubles each time the switching network layer is increased by one layer. In the figure, each bold line indicates the 80GE bandwidth, that is, the sum of the bandwidth upper limits of eight physical machines. At the access layer, each switch provides 160GE downlink bandwidth and 160GE uplink bandwidth. The convergence ratio is 1:1. The access bandwidth of each switch at the aggregation layer is 320GE.
 
 For the test system, the preceding requirements can be lowered.
 
 **Figure  3**  Database management and storage network<a name="en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542"></a>  
 
-
-![](figures/opengauss网络组网示例.png)
+<img src="figures/opengauss网络组网示例.png" style="zoom: 80%;" />
 

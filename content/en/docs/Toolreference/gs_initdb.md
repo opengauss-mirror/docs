@@ -10,8 +10,8 @@ When a database is initialized using  **gs\_initdb**, a database directory is cr
 
 A large number of system catalogs and views are generated when a database is initialized, many of which allow access from any database user.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->Permissions on  **pg\_user\_status**  and  **pg\_auth\_history**  system catalogs are granted only to initialized users and  **sysadmin**  users.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>Permissions on  **pg\_user\_status**  and  **pg\_auth\_history**  system catalogs are granted only to initialized users and  **sysadmin**  users.  
 
 **Generated database**
 
@@ -32,15 +32,15 @@ During installation, you are advised to use the  **-D**  parameter to call  **gs
 **Procedure**
 
 1.  Log in as the OS user  **omm**  to the primary database node.
-2. Plan the database directory.
+2.  Plan the database directory.
 
-   a. Switch to user  **root**.
+    a. Switch to user  **root**.
 
-   ```
-   su - root
-   ```
+      ```
+      su - root
+      ```
 
-   b. Enter the username and password as prompted.
+    b. Enter the username and password as prompted.
 
 3. Go to the  **/opt/gaussdb**  directory and create the  **data1**  directory.
 

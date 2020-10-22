@@ -72,5 +72,4 @@ Uninstallation succeeded.
 
 ## Related Commands<a name="en-us_topic_0237152424_en-us_topic_0059778700_s81551f14e776431db12f55306b1d2250"></a>
 
-[gs\_install](en-us_topic_0237152416.md)  and  [gs\_postuninstall](en-us_topic_0237152418.md)
-
+[gs\_install](gs_install.md)  and  [gs\_postuninstall](gs_postuninstall.md)
