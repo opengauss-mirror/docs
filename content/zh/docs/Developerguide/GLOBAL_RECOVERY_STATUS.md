@@ -17,7 +17,7 @@ GLOBAL\_RECOVERY\_STATUS视图显示关于主机和备机的日志流控信息�
 </td>
 <td class="cellrowborder" valign="top" width="30.833083308330835%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122721_p18409164063512"><a name="zh-cn_topic_0237122721_p18409164063512"></a><a name="zh-cn_topic_0237122721_p18409164063512"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.16511651165116%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122721_p145153413368"><a name="zh-cn_topic_0237122721_p145153413368"></a><a name="zh-cn_topic_0237122721_p145153413368"></a>主机进程名称，包含主机和备机。</p>
+<td class="cellrowborder" valign="top" width="51.16511651165116%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122721_p145153413368"><a name="zh-cn_topic_0237122721_p145153413368"></a><a name="zh-cn_topic_0237122721_p145153413368"></a>节点名称，包含主机和备机。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122721_row11409154013514"><td class="cellrowborder" valign="top" width="18.001800180018%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122721_p1140964013354"><a name="zh-cn_topic_0237122721_p1140964013354"></a><a name="zh-cn_topic_0237122721_p1140964013354"></a>standby_node_name</p>

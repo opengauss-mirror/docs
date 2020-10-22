@@ -26,11 +26,6 @@ The above syntax diagram is explained as follows:
     >-   _bind\_argument_  can only be a value, variable, or expression. It cannot be a database object such as a table name, column name, and data type. That is,  _bind\_argument_  cannot be used to transfer schema objects for dynamic SQL statements. If a stored procedure needs to transfer database objects through  _bind\_argument_  to construct dynamic SQL statements \(generally, DDL statements\), you are advised to use double vertical bars \(||\) to concatenate  _dynamic\_select\_clause_  with a database object.  
     >-   A dynamic PL/SQL block allows duplicate placeholders. That is, a placeholder can correspond to only one  _bind\_argument_  in the  **USING**  clause.  
 
-
-```
-
-```
-
 ## OPEN FOR<a name="en-us_topic_0237122225_en-us_topic_0059778916_s597e59e4f39f4c5396fe9a6d1e6c6c09"></a>
 
 Dynamic query statements can be executed by using  **OPEN FOR**  to open dynamic cursors.

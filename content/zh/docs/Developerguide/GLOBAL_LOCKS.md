@@ -15,7 +15,7 @@ GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122727_p790831212405"><a name="zh-cn_topic_0237122727_p790831212405"></a><a name="zh-cn_topic_0237122727_p790831212405"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122727_p9908912134010"><a name="zh-cn_topic_0237122727_p9908912134010"></a><a name="zh-cn_topic_0237122727_p9908912134010"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122727_p9908912134010"><a name="zh-cn_topic_0237122727_p9908912134010"></a><a name="zh-cn_topic_0237122727_p9908912134010"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122727_row14909212144012"><td class="cellrowborder" valign="top" width="23.189999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122727_p1590941264016"><a name="zh-cn_topic_0237122727_p1590941264016"></a><a name="zh-cn_topic_0237122727_p1590941264016"></a>locktype</p>

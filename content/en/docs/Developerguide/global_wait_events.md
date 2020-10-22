@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.761676167616763%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122730_p162615226216"><a name="en-us_topic_0237122730_p162615226216"></a><a name="en-us_topic_0237122730_p162615226216"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122730_p1226522182117"><a name="en-us_topic_0237122730_p1226522182117"></a><a name="en-us_topic_0237122730_p1226522182117"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122730_p1226522182117"><a name="en-us_topic_0237122730_p1226522182117"></a><a name="en-us_topic_0237122730_p1226522182117"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122730_row826142219219"><td class="cellrowborder" valign="top" width="21.33213321332133%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122730_p172618226210"><a name="en-us_topic_0237122730_p172618226210"></a><a name="en-us_topic_0237122730_p172618226210"></a>type</p>

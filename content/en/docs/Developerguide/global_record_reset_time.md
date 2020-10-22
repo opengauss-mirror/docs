@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122719_p141019430282"><a name="en-us_topic_0237122719_p141019430282"></a><a name="en-us_topic_0237122719_p141019430282"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122719_p310254322812"><a name="en-us_topic_0237122719_p310254322812"></a><a name="en-us_topic_0237122719_p310254322812"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122719_p310254322812"><a name="en-us_topic_0237122719_p310254322812"></a><a name="en-us_topic_0237122719_p310254322812"></a>node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122719_row11102134352816"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122719_p910294352812"><a name="en-us_topic_0237122719_p910294352812"></a><a name="en-us_topic_0237122719_p910294352812"></a>reset_time</p>

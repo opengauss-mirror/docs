@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122727_p790831212405"><a name="en-us_topic_0237122727_p790831212405"></a><a name="en-us_topic_0237122727_p790831212405"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122727_p9908912134010"><a name="en-us_topic_0237122727_p9908912134010"></a><a name="en-us_topic_0237122727_p9908912134010"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122727_p9908912134010"><a name="en-us_topic_0237122727_p9908912134010"></a><a name="en-us_topic_0237122727_p9908912134010"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122727_row14909212144012"><td class="cellrowborder" valign="top" width="23.189999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122727_p1590941264016"><a name="en-us_topic_0237122727_p1590941264016"></a><a name="en-us_topic_0237122727_p1590941264016"></a>locktype</p>

@@ -8,7 +8,9 @@ The naming rules for identifiers are as follows:
 -   An identifier name must start with a letter \(a to z\) or an underscore \(\_\).
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+
     >-   The naming rules are recommended but not mandatory.
+    
     >-   In special cases, double quotation marks can be used to avoid special character errors.
 
 

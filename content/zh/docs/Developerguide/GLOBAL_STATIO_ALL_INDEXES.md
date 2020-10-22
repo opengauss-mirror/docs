@@ -17,7 +17,7 @@ GLOBAL\_STATIO\_ALL\_INDEXES视图包含各节点的数据库中的每个索引�
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122692_p69923618268"><a name="zh-cn_topic_0237122692_p69923618268"></a><a name="zh-cn_topic_0237122692_p69923618268"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122692_p1299219662615"><a name="zh-cn_topic_0237122692_p1299219662615"></a><a name="zh-cn_topic_0237122692_p1299219662615"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122692_p1299219662615"><a name="zh-cn_topic_0237122692_p1299219662615"></a><a name="zh-cn_topic_0237122692_p1299219662615"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122692_row189928616263"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122692_p18992146142613"><a name="zh-cn_topic_0237122692_p18992146142613"></a><a name="zh-cn_topic_0237122692_p18992146142613"></a>relid</p>

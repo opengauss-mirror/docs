@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122638_p134021343277"><a name="en-us_topic_0237122638_p134021343277"></a><a name="en-us_topic_0237122638_p134021343277"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122638_p14021334192715"><a name="en-us_topic_0237122638_p14021334192715"></a><a name="en-us_topic_0237122638_p14021334192715"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122638_p14021334192715"><a name="en-us_topic_0237122638_p14021334192715"></a><a name="en-us_topic_0237122638_p14021334192715"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122638_row14402133452711"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122638_p134021344272"><a name="en-us_topic_0237122638_p134021344272"></a><a name="en-us_topic_0237122638_p134021344272"></a>datid</p>
@@ -166,4 +166,3 @@
 </tr>
 </tbody>
 </table>
-

@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.71832816718328%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122680_p1737893311510"><a name="en-us_topic_0237122680_p1737893311510"></a><a name="en-us_topic_0237122680_p1737893311510"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.62343765623437%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122680_p1337819333158"><a name="en-us_topic_0237122680_p1337819333158"></a><a name="en-us_topic_0237122680_p1337819333158"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="65.62343765623437%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122680_p1337819333158"><a name="en-us_topic_0237122680_p1337819333158"></a><a name="en-us_topic_0237122680_p1337819333158"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122680_row18378163320152"><td class="cellrowborder" valign="top" width="17.658234176582344%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122680_p13378833111512"><a name="en-us_topic_0237122680_p13378833111512"></a><a name="en-us_topic_0237122680_p13378833111512"></a>relid</p>

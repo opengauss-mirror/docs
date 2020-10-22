@@ -17,7 +17,7 @@ GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。
 </td>
 <td class="cellrowborder" valign="top" width="20.66%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122720_p1457191694314"><a name="zh-cn_topic_0237122720_p1457191694314"></a><a name="zh-cn_topic_0237122720_p1457191694314"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.79%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122720_p14572111616430"><a name="zh-cn_topic_0237122720_p14572111616430"></a><a name="zh-cn_topic_0237122720_p14572111616430"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="56.79%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122720_p14572111616430"><a name="zh-cn_topic_0237122720_p14572111616430"></a><a name="zh-cn_topic_0237122720_p14572111616430"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122720_row4331121184412"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122720_p42652367477"><a name="zh-cn_topic_0237122720_p42652367477"></a><a name="zh-cn_topic_0237122720_p42652367477"></a>redo_start_ptr</p>

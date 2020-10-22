@@ -19,7 +19,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_s3de71ea5d96a4d62b0c4ad4d822eb193"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_s3de71ea5d96a4d62b0c4ad4d822eb193"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_s3de71ea5d96a4d62b0c4ad4d822eb193"><span id="en-us_topic_0237121963_text209472515618"><a name="en-us_topic_0237121963_text209472515618"></a><a name="en-us_topic_0237121963_text209472515618"></a>postgres=# </span>SELECT CURRENT_CATALOG;
 current_database
-------------------
+\------------------
 postgres
 (1 row)</pre>
 </td>
@@ -30,7 +30,7 @@ postgres
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_s35337e4b94984d5c990c636b55c2992f"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_s35337e4b94984d5c990c636b55c2992f"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_s35337e4b94984d5c990c636b55c2992f"><span id="en-us_topic_0237121963_text149671469614"><a name="en-us_topic_0237121963_text149671469614"></a><a name="en-us_topic_0237121963_text149671469614"></a>postgres=# </span>SELECT CURRENT_ROLE;
 current_user
---------------
+\--------------
 <span id="en-us_topic_0237121963_text10496154310541"><a name="en-us_topic_0237121963_text10496154310541"></a><a name="en-us_topic_0237121963_text10496154310541"></a>omm</span>
 (1 row)</pre>
 </td>
@@ -41,7 +41,7 @@ current_user
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_s9c214a5a6f054ff483b6f230f0b0af9b"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_s9c214a5a6f054ff483b6f230f0b0af9b"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_s9c214a5a6f054ff483b6f230f0b0af9b"><span id="en-us_topic_0237121963_text582311718613"><a name="en-us_topic_0237121963_text582311718613"></a><a name="en-us_topic_0237121963_text582311718613"></a>postgres=# </span>SELECT CURRENT_SCHEMA;
 current_schema
-----------------
+\----------------
 public
 (1 row)</pre>
 </td>
@@ -52,7 +52,7 @@ public
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_s9e0b0b725af64eeba0c28ccac3f934d9"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_s9e0b0b725af64eeba0c28ccac3f934d9"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_s9e0b0b725af64eeba0c28ccac3f934d9"><span id="en-us_topic_0237121963_text15595381766"><a name="en-us_topic_0237121963_text15595381766"></a><a name="en-us_topic_0237121963_text15595381766"></a>postgres=# </span>SELECT CURRENT_USER;
 current_user
---------------
+\--------------
 <span id="en-us_topic_0237121963_text8713464542"><a name="en-us_topic_0237121963_text8713464542"></a><a name="en-us_topic_0237121963_text8713464542"></a>omm</span>
 (1 row)</pre>
 </td>
@@ -63,7 +63,7 @@ current_user
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_sf268b12d175242b5b23ac9298da0a345"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_sf268b12d175242b5b23ac9298da0a345"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_sf268b12d175242b5b23ac9298da0a345"><span id="en-us_topic_0237121963_text132142010165"><a name="en-us_topic_0237121963_text132142010165"></a><a name="en-us_topic_0237121963_text132142010165"></a>postgres=# </span>SELECT LOCALTIMESTAMP;
          timestamp
-----------------------------
+\----------------------------
 2015-10-10 15:37:30.968538
 (1 row)</pre>
 </td>
@@ -81,7 +81,7 @@ current_user
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_s34bf5f16d65540148090d5dc686e0135"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_s34bf5f16d65540148090d5dc686e0135"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_s34bf5f16d65540148090d5dc686e0135"><span id="en-us_topic_0237121963_text199513123616"><a name="en-us_topic_0237121963_text199513123616"></a><a name="en-us_topic_0237121963_text199513123616"></a>postgres=# </span>SELECT SESSION_USER;
 session_user
---------------
+\--------------
 <span id="en-us_topic_0237121963_text1835181816175"><a name="en-us_topic_0237121963_text1835181816175"></a><a name="en-us_topic_0237121963_text1835181816175"></a>omm</span>
 (1 row)</pre>
 </td>
@@ -92,7 +92,7 @@ session_user
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_s18d721cf96cc4c369783137d3d4d9515"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_s18d721cf96cc4c369783137d3d4d9515"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_s18d721cf96cc4c369783137d3d4d9515"><span id="en-us_topic_0237121963_text14213416160"><a name="en-us_topic_0237121963_text14213416160"></a><a name="en-us_topic_0237121963_text14213416160"></a>postgres=# </span>SELECT SYSDATE;
 sysdate
----------------------
+\---------------------
 2015-10-10 15:48:53
 (1 row)</pre>
 </td>
@@ -103,7 +103,7 @@ sysdate
 </td>
 <td class="cellrowborder" valign="top" width="46.64%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0237121963_en-us_topic_0059778360_sef943034d166420a8fad492a854ffcfd"></a><a name="en-us_topic_0237121963_en-us_topic_0059778360_sef943034d166420a8fad492a854ffcfd"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121963_en-us_topic_0059778360_sef943034d166420a8fad492a854ffcfd"><span id="en-us_topic_0237121963_text78841715616"><a name="en-us_topic_0237121963_text78841715616"></a><a name="en-us_topic_0237121963_text78841715616"></a>postgres=# </span>SELECT USER;
 current_user
---------------
+\--------------
 <span id="en-us_topic_0237121963_text19934330132219"><a name="en-us_topic_0237121963_text19934330132219"></a><a name="en-us_topic_0237121963_text19934330132219"></a>omm</span>
 (1 row)</pre>
 </td>

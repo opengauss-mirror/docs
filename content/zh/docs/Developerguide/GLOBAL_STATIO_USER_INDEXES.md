@@ -17,7 +17,7 @@ GLOBAL\_STATIO\_USER\_INDEXES视图显示各节点的命名空间中所有用户
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122674_p9974442791"><a name="zh-cn_topic_0237122674_p9974442791"></a><a name="zh-cn_topic_0237122674_p9974442791"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122674_p497414217917"><a name="zh-cn_topic_0237122674_p497414217917"></a><a name="zh-cn_topic_0237122674_p497414217917"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122674_p497414217917"><a name="zh-cn_topic_0237122674_p497414217917"></a><a name="zh-cn_topic_0237122674_p497414217917"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122674_row189752421090"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122674_p10975154212917"><a name="zh-cn_topic_0237122674_p10975154212917"></a><a name="zh-cn_topic_0237122674_p10975154212917"></a>relid</p>
