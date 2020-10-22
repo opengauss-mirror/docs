@@ -66,7 +66,7 @@ CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     If  **CYCLE**  is specified, the sequence uniqueness cannot be ensured.
 
--   **OWNED BY**-
+-   **OWNED BY**
 
     Associates a sequence with a specified column included in a table. In this way, the sequence will be deleted when you delete its associated column or the table where the column belongs to. The associated table and sequence must be owned by the same user and in the same schema.  **OWNED BY**  only establishes the association between a table column and the sequence. Sequences on the column do not increase automatically when data is inserted. 
 

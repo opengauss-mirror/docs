@@ -88,22 +88,23 @@
     >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
     >    Disables a single trigger specified by  **trigger\_name**, disables all triggers, or disables only user triggers \(excluding internally generated constraint triggers, for example, deferrable unique constraint triggers and exclusion constraint triggers\).  
     >   Exercise caution when using this function because data integrity cannot be ensured as expected if the triggers are not executed.  
-    >   -   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+    >-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
     >   Enables a single trigger specified by  **trigger\_name**, enables all triggers, or enables only user triggers.
-    >   -   **| ENABLE REPLICA TRIGGER trigger\_name**
+    >-   **| ENABLE REPLICA TRIGGER trigger\_name**
         Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](statement-behavior.md#en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216).
     >   When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
     >   When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
-    >   -   **| ENABLE ALWAYS TRIGGER trigger\_name**
+
+    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
     >
     >       Determines that all triggers are fired regardless of the current replication mode.
-    >   -   **| DISABLE/ENABLE ROW LEVEL SECURITY**
+    >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
     >
     >       Enables or disables row-level access control for a table.
     >
     >       If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not >  >   affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW >   LEVEL SECURITY POLICY](create-row-level-security-policy.md).
     >
-    >   -   **| NO FORCE/FORCE ROW LEVEL SECURITY**
+    >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
     >
     >       Forcibly enables or disables row-level access control for a table.
     >

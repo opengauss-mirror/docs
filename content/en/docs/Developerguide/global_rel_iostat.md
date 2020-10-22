@@ -1,6 +1,6 @@
 # GLOBAL\_REL\_IOSTAT<a name="EN-US_TOPIC_0245374677"></a>
 
-**GLOBAL\_REL\_IOSTAT**  obtains statistics about data file I/Os on all nodes. 
+**GLOBAL\_REL\_IOSTAT** is the aggregate statistics of openGauss on the cumulative value of the data file IO status, reflecting the IO performance of the data file access.
 
 **Table  1**  GLOBAL\_REL\_IOSTAT columns
 
@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122573_p20187144417413"><a name="en-us_topic_0237122573_p20187144417413"></a><a name="en-us_topic_0237122573_p20187144417413"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122573_p51874441144"><a name="en-us_topic_0237122573_p51874441144"></a><a name="en-us_topic_0237122573_p51874441144"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122573_p51874441144"><a name="en-us_topic_0237122573_p51874441144"></a><a name="en-us_topic_0237122573_p51874441144"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122573_row19190744943"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122573_p171901444240"><a name="en-us_topic_0237122573_p171901444240"></a><a name="en-us_topic_0237122573_p171901444240"></a>phyrds</p>

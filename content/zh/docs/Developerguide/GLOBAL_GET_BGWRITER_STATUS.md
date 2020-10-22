@@ -17,7 +17,7 @@ GLOBAL\_GET\_BGWRITER\_STATUS视图显示整个集群所有实例bgwriter线程�
 </td>
 <td class="cellrowborder" valign="top" width="20.69%" headers="mcps1.2.4.1.2 "><p id="p1457191694314"><a name="p1457191694314"></a><a name="p1457191694314"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="p14572111616430"><a name="p14572111616430"></a><a name="p14572111616430"></a>实例名称。</p>
+<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="p14572111616430"><a name="p14572111616430"></a><a name="p14572111616430"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="row4331121184412"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="p42652367477"><a name="p42652367477"></a><a name="p42652367477"></a>bgwr_actual_flush_total_num</p>

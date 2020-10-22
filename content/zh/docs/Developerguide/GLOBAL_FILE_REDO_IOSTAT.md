@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122571_p1175534212138"><a name="zh-cn_topic_0237122571_p1175534212138"></a><a name="zh-cn_topic_0237122571_p1175534212138"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122571_p875584231315"><a name="zh-cn_topic_0237122571_p875584231315"></a><a name="zh-cn_topic_0237122571_p875584231315"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122571_p875584231315"><a name="zh-cn_topic_0237122571_p875584231315"></a><a name="zh-cn_topic_0237122571_p875584231315"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122571_row775664271313"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122571_p1375664220131"><a name="zh-cn_topic_0237122571_p1375664220131"></a><a name="zh-cn_topic_0237122571_p1375664220131"></a>phywrts</p>

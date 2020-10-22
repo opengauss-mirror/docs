@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122568_p20187144417413"><a name="en-us_topic_0237122568_p20187144417413"></a><a name="en-us_topic_0237122568_p20187144417413"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122568_p51874441144"><a name="en-us_topic_0237122568_p51874441144"></a><a name="en-us_topic_0237122568_p51874441144"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122568_p51874441144"><a name="en-us_topic_0237122568_p51874441144"></a><a name="en-us_topic_0237122568_p51874441144"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122568_row1918834418418"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122568_p141886442411"><a name="en-us_topic_0237122568_p141886442411"></a><a name="en-us_topic_0237122568_p141886442411"></a>filenum</p>

@@ -301,7 +301,7 @@
 
         Specifies the newline character style of the imported or exported data file.
 
-        Value range: multi-character newline characters within 10 bytes Common newline characters include  **\\r**  \(0x0D\),  **\\n**  \(0x0A\), and  **\\r\\n**\(0x0D0A\). Special newline characters include  **$**  and  **\#**.
+        Value range: multi-character newline characters within 10 bytes Common newline characters include  **\\r**  \(0x0D\),  **\\n**  \(0x0A\), and \\r\\n\(0x0D0A\). Special newline characters include  **$**  and  **\#**.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**   
         >-   The EOL parameter supports only the TEXT format for data import and export and does not support the CSV or FIXED format for data import. For forward compatibility, the EOL parameter can be set to  **0x0D**  or  **0x0D0A**  for data export in the CSV or FIXED format.  

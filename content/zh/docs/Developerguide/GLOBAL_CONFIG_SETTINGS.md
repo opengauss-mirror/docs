@@ -17,7 +17,7 @@ GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息�
 </td>
 <td class="cellrowborder" valign="top" width="17.331733173317332%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122733_p23456163712"><a name="zh-cn_topic_0237122733_p23456163712"></a><a name="zh-cn_topic_0237122733_p23456163712"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p93465161379"><a name="zh-cn_topic_0237122733_p93465161379"></a><a name="zh-cn_topic_0237122733_p93465161379"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p93465161379"><a name="zh-cn_topic_0237122733_p93465161379"></a><a name="zh-cn_topic_0237122733_p93465161379"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122733_row1534617161079"><td class="cellrowborder" valign="top" width="17.711771177117715%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122733_p434616164715"><a name="zh-cn_topic_0237122733_p434616164715"></a><a name="zh-cn_topic_0237122733_p434616164715"></a>name</p>

@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.950000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122711_p96568475456"><a name="en-us_topic_0237122711_p96568475456"></a><a name="en-us_topic_0237122711_p96568475456"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122711_p16561847144511"><a name="en-us_topic_0237122711_p16561847144511"></a><a name="en-us_topic_0237122711_p16561847144511"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122711_p16561847144511"><a name="en-us_topic_0237122711_p16561847144511"></a><a name="en-us_topic_0237122711_p16561847144511"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122711_row116569477456"><td class="cellrowborder" valign="top" width="25.14%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122711_p11657947154510"><a name="en-us_topic_0237122711_p11657947154510"></a><a name="en-us_topic_0237122711_p11657947154510"></a>slot_name</p>

@@ -17,7 +17,7 @@ GLOBAL\_CKPT\_STATUS视图用于显示openGauss所有实例的检查点信息和
 </td>
 <td class="cellrowborder" valign="top" width="22.7022702270227%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122715_p1321792214146"><a name="zh-cn_topic_0237122715_p1321792214146"></a><a name="zh-cn_topic_0237122715_p1321792214146"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.86458645864587%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122715_p7217192271410"><a name="zh-cn_topic_0237122715_p7217192271410"></a><a name="zh-cn_topic_0237122715_p7217192271410"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="45.86458645864587%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122715_p7217192271410"><a name="zh-cn_topic_0237122715_p7217192271410"></a><a name="zh-cn_topic_0237122715_p7217192271410"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122715_row1121711228149"><td class="cellrowborder" valign="top" width="31.433143314331435%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122715_p82171322161420"><a name="zh-cn_topic_0237122715_p82171322161420"></a><a name="zh-cn_topic_0237122715_p82171322161420"></a>ckpt_redo_point</p>

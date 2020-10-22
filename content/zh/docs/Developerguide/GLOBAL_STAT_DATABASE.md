@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="28.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122596_p688520468546"><a name="zh-cn_topic_0237122596_p688520468546"></a><a name="zh-cn_topic_0237122596_p688520468546"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122596_p198861465548"><a name="zh-cn_topic_0237122596_p198861465548"></a><a name="zh-cn_topic_0237122596_p198861465548"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="54%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122596_p198861465548"><a name="zh-cn_topic_0237122596_p198861465548"></a><a name="zh-cn_topic_0237122596_p198861465548"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122596_row148866462545"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122596_p588644675416"><a name="zh-cn_topic_0237122596_p588644675416"></a><a name="zh-cn_topic_0237122596_p588644675416"></a>datid</p>

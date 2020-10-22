@@ -5,6 +5,7 @@
 **Table  1**  GLOBAL\_WORKLOAD\_TRANSACTION columns
 
 <a name="en-us_topic_0237122623_table12200827141814"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0237122623_row193680274189"><th class="cellrowborder" valign="top" width="24.22%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237122623_p13681627111813"><a name="en-us_topic_0237122623_p13681627111813"></a><a name="en-us_topic_0237122623_p13681627111813"></a><strong id="b127117291765"><a name="b127117291765"></a><a name="b127117291765"></a>Name</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="16.61%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237122623_p12369162710181"><a name="en-us_topic_0237122623_p12369162710181"></a><a name="en-us_topic_0237122623_p12369162710181"></a><strong id="b8989829469"><a name="b8989829469"></a><a name="b8989829469"></a>Type</strong></p>
@@ -17,7 +18,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.61%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122623_p1837012713187"><a name="en-us_topic_0237122623_p1837012713187"></a><a name="en-us_topic_0237122623_p1837012713187"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.17%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122623_p113701527191810"><a name="en-us_topic_0237122623_p113701527191810"></a><a name="en-us_topic_0237122623_p113701527191810"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="59.17%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122623_p113701527191810"><a name="en-us_topic_0237122623_p113701527191810"></a><a name="en-us_topic_0237122623_p113701527191810"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122623_row8370112701816"><td class="cellrowborder" valign="top" width="24.22%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122623_p173707270186"><a name="en-us_topic_0237122623_p173707270186"></a><a name="en-us_topic_0237122623_p173707270186"></a>workload</p>

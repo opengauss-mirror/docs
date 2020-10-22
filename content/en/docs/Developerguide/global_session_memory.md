@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122634_p20586318122411"><a name="en-us_topic_0237122634_p20586318122411"></a><a name="en-us_topic_0237122634_p20586318122411"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122634_p35861818162410"><a name="en-us_topic_0237122634_p35861818162410"></a><a name="en-us_topic_0237122634_p35861818162410"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122634_p35861818162410"><a name="en-us_topic_0237122634_p35861818162410"></a><a name="en-us_topic_0237122634_p35861818162410"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122634_row3586141811244"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122634_p1158610180245"><a name="en-us_topic_0237122634_p1158610180245"></a><a name="en-us_topic_0237122634_p1158610180245"></a>sessid</p>

@@ -17,7 +17,7 @@ GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计�
 </td>
 <td class="cellrowborder" valign="top" width="25.900000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122713_p1818881717480"><a name="zh-cn_topic_0237122713_p1818881717480"></a><a name="zh-cn_topic_0237122713_p1818881717480"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122713_p318881717485"><a name="zh-cn_topic_0237122713_p318881717485"></a><a name="zh-cn_topic_0237122713_p318881717485"></a>数据库进程名称。</p>
+<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122713_p318881717485"><a name="zh-cn_topic_0237122713_p318881717485"></a><a name="zh-cn_topic_0237122713_p318881717485"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122713_row8188131784816"><td class="cellrowborder" valign="top" width="30.29%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122713_p1618961716481"><a name="zh-cn_topic_0237122713_p1618961716481"></a><a name="zh-cn_topic_0237122713_p1618961716481"></a>checkpoints_timed</p>
