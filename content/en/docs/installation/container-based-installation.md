@@ -14,14 +14,11 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 
 ## Creating an openGauss Docker Image<a name="section159607494319"></a>
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
--   Before the installation, provide the openGauss binary installation package and place it in the  **dockerfiles/<version\>**  folder. You do not need to decompress the package. You can download the binary package from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html)  and ensure that the correct yum source is available. If you manually decompress the installation package, the execution will fail.
-
--   If the container is in the CentOS environment, download the  **gosu-amd64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64](https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64)  and save it to the  **dockerfiles/<version\>**  folder.
-
--   If the container is in the openEuler environment, download the  **gosu-arm64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64](https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64)  and save it to the  **dockerfiles/<version\>**  folder.
-
--   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/SingleInstance/dockerfiles/1.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+-   Before the installation, provide the openGauss binary installation package and place it in the  **dockerfiles/<version\>**  folder. You do not need to decompress the package. You can download the binary package from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html)  and ensure that the correct yum source is available. If you manually decompress the installation package, the execution will fail.  
+-   If the container is in the CentOS environment, download the  **gosu-amd64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64](https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64)  and save it to the  **dockerfiles/<version\>**  folder.  
+-   If the container is in the openEuler environment, download the  **gosu-arm64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64](https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64)  and save it to the  **dockerfiles/<version\>**  folder.  
+-   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/SingleInstance/dockerfiles/1.0.1**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.  
     ```
     wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
     ```
@@ -34,7 +31,7 @@ Usage: buildDockerImage.sh -v [version]  [-i]  [Docker build option]
 Builds a Docker Image for openGauss.
 Parameters:
 -v: version to build
-Choose one of: 1.0.0  SingleInstance  
+Choose one of: 1.0.1  SingleInstance  
 -i: ignores the MD5 checksums
 ```
 
@@ -67,19 +64,19 @@ Specifies the database port. The default value is  **5432**.
 ## Starting an Instance<a name="section148176206211"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 opengauss:1.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 opengauss:1.0.1
 ```
 
 ## Connecting to the Database from the OS Layer<a name="section53753141964"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 -p8888:5432 opengauss:1.0.0 
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 -p8888:5432 opengauss:1.0.1 
 $ gsql -d postgres -U gaussdb -W'secretpassword@123' -h your-host-ip -p8888
 ```
 
 ## Data Persistence<a name="section973016196416"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 -v /opengauss:/var/lib/opengauss opengauss:1.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=secretpassword@123 -v /opengauss:/var/lib/opengauss opengauss:1.0.1
 ```
 

@@ -1,18 +1,17 @@
 # Creating an XML Configuration File<a name="EN-US_TOPIC_0249784581"></a>
 
+<!-- TOC -->
+
+- [Configuring the Database Name and Directories](#configuring-the-database-name-and-directories)
+- [Configuring the Basic Host Information](#configuring-the-basic-host-information)
+- [Configuring Primary Database Node Information](#configuring-primary-database-node-information)
+- [Examples](#examples)
+
+<!-- /TOC -->
+
 Before installing the openGauss, you need to create the  **clusterconfig.xml**  file. The  **clusterconfig.xml**  file contains the information about the server where the openGauss is deployed, installation path, IP address, and port number. This file is used to guide how to deploy the openGauss. You need to configure the XML configuration file according to the actual deployment requirements.
 
 The following describes how to create an XML configuration file based on the deployment solution of one primary node and one standby node.
-
-<!-- TOC -->
-
-- [Creating an XML Configuration File<a name="EN-US_TOPIC_0249784581"></a>](#creating-an-xml-configuration-filea-nameen-us_topic_0249784581a)
-    - [Configuring the Database Name and Directories](#configuring-the-database-name-and-directories)
-    - [Configuring the Basic Host Information](#configuring-the-basic-host-information)
-    - [Configuring Primary Database Node Information](#configuring-primary-database-node-information)
-    - [Examples](#examples)
-
-<!-- /TOC -->
 
 
 ## Configuring the Database Name and Directories
@@ -45,13 +44,13 @@ The information in bold is only an example. You can replace it as required. Each
   </CLUSTER>
 ```
 
-![](public_sys-resources/icon-notice.gif) **NOTICE:** 
--   The  **/opt/huawei/install/om**  directory is used to store tools for mutual trust. To avoid permission problems, do not store instance data in the directory.
--   The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.
--   When configuring database instances, ensure that the configured directories are not coupled with each other. This means that the configured directories must not be associated with each other. If any directory is deleted, the other directories will not be deleted accordingly. For example,  **gaussdbAppPath**  is  **/opt/huawei/install/app**  and  **gaussdbLogPath**  is  **/opt/huawei/install/app/omm**. If the directory specified by  **gaussdbAppPath**  is deleted, that specified by  **gaussdbLogPath**  will also be deleted, causing unexpected problems.
--   If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.
--   The openGauss and instance paths cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?
--   When configuring the database node name, run the  **hostname**  command to obtain the host name of the database node and replace  **node1**  and  **node2**  in the example with the obtained host name.
+![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+-   The  **/opt/huawei/install/om**  directory is used to store tools for mutual trust. To avoid permission problems, do not store instance data in the directory.  
+-   The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.  
+-   When configuring database instances, ensure that the configured directories are not coupled with each other. This means that the configured directories must not be associated with each other. If any directory is deleted, the other directories will not be deleted accordingly. For example,  **gaussdbAppPath**  is  **/opt/huawei/install/app**  and  **gaussdbLogPath**  is  **/opt/huawei/install/app/omm**. If the directory specified by  **gaussdbAppPath**  is deleted, that specified by  **gaussdbLogPath**  will also be deleted, causing unexpected problems.  
+-   If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.  
+-   The openGauss and instance paths cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?  
+-   When configuring the database node name, run the  **hostname**  command to obtain the host name of the database node and replace  **node1**  and  **node2**  in the example with the obtained host name.  
 
 **Table  1**  Parameter description
 
@@ -184,13 +183,13 @@ The information in bold is only an example. You can replace it as required. Each
 </tbody>
 </table>
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-Only one IP address can be configured for all IP parameters \(including  **backIp**,  **sshIp**, and  **listenIp**\) in the configuration file. Excessive IP addresses are ignored.
-For example, you can configure  **backIp1**  and  **backIp2**  in the XML configuration file as follows:
-When the file is parsed, only  **backIp1**  takes effect.
-```
-<PARAM name="backIp1" value="192.168.0.11"/>
-<PARAM name="backIp2" value="192.168.0.12"/>
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+Only one IP address can be configured for all IP parameters \(including  **backIp**,  **sshIp**, and  **listenIp**\) in the configuration file. Excessive IP addresses are ignored.  
+For example, you can configure  **backIp1**  and  **backIp2**  in the XML configuration file as follows:  
+When the file is parsed, only  **backIp1**  takes effect.  
+```  
+<PARAM name="backIp1" value="192.168.0.11"/>  
+<PARAM name="backIp2" value="192.168.0.12"/>  
 ```
 
 ## Configuring Primary Database Node Information

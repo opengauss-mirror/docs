@@ -1,55 +1,69 @@
-# Obtaining and Verifying an Installation Package<a name="EN-US_TOPIC_0249784569"></a>
+# Obtaining and Verifying an Installation Package<a name="EN-US_TOPIC_0283136484"></a>
 
-To prevent network security threats caused by malicious tampering or damage during installation package transfer, verify the integrity of an installation package after obtaining it. Deployment can be started only after the package passes the verification.
-
-## Prerequisites<a name="en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section53511076163549"></a>
-
-You have obtained the openGauss installation package and the signature file. The two must be saved in the same directory, and each package corresponds to a verification file. The signature file is released together with the corresponding software package in .sha256 format. Generally, the file name is the same as the package name. If the name of the installation package is  **openGauss-_x.x.x_.x-openEuler-64bit.tar.gz**, the name of the verification file corresponding to this package is  **openGauss-_x.x.x_.x-openEuler-64bit.tar.gz.sha256**.
+You can obtain the installation package from the openGauss open-source community.
 
 ## Procedure<a name="en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section62223956163549"></a>
 
 1.  Download the installation package of the corresponding platform from the openGauss community.
-    1.  Log in to the openGauss community.
+    1.  Click  [https://opengauss.org/en/download.html](https://opengauss.org/zh/download.html)  to go to download page of openGauss open-source community. You can download the installation packages listed in  [Table 1](#en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_te4a9d557337c400c85acff184476a722)  as required.
+
+        **Figure 1**  openGauss Server
+
+        ![](figures/en-us_image_0283136470.png)
+
+        **Figure 2**  openGauss Connectors
+
+        ![](figures/en-us_image_0283136486.png)
+
+        **Table  1**  openGauss Connectors installation packages
+
+        <a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_te4a9d557337c400c85acff184476a722"></a>
+        <table><thead align="left"><tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_r6e873539a9a948579dd18ac7252c2f16"><th class="cellrowborder" valign="top" width="37.09%" id="mcps1.2.3.1.1"><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_aeb07fb644a9c44c9b5867059f6978c73"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_aeb07fb644a9c44c9b5867059f6978c73"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_aeb07fb644a9c44c9b5867059f6978c73"></a>Installation Package</p>
+        </th>
+        <th class="cellrowborder" valign="top" width="62.91%" id="mcps1.2.3.1.2"><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a6e02d21de44f441f9802f741ccfffa0c"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a6e02d21de44f441f9802f741ccfffa0c"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a6e02d21de44f441f9802f741ccfffa0c"></a>Description</p>
+        </th>
+        </tr>
+        </thead>
+        <tbody><tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_r175ab443930247f1a14e55b0a76ef425"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a382ad5075b02419a99cc5c5894ee3dc8"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a382ad5075b02419a99cc5c5894ee3dc8"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a382ad5075b02419a99cc5c5894ee3dc8"></a>JDBC</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a30fe42f57dff4354a4ccdccb34e33005"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a30fe42f57dff4354a4ccdccb34e33005"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a30fe42f57dff4354a4ccdccb34e33005"></a>Used to install the JDBC driver in the SUSE Linux OS.</p>
+        </td>
+        </tr>
+        <tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_rc4332348c8c64404896b4c01435fb5bd"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a95ee6d367d614b419e6a2f47dd8c9cc3"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a95ee6d367d614b419e6a2f47dd8c9cc3"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a95ee6d367d614b419e6a2f47dd8c9cc3"></a>ODBC</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac74876654f444229b42953321aedd13c"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac74876654f444229b42953321aedd13c"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac74876654f444229b42953321aedd13c"></a>Used to install the ODBC driver in the SUSE Linux OS.</p>
+        </td>
+        </tr>
+        <tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_rfcb5e881573c494593bc04c1bca8a09d"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="p947205712514"><a name="p947205712514"></a><a name="p947205712514"></a>libpq</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a1ad6388e500942829101ee341d2ad99e"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a1ad6388e500942829101ee341d2ad99e"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a1ad6388e500942829101ee341d2ad99e"></a>Used to install the libpq library in the SUSE Linux OS.</p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+
     2.  Click  **Download**.
     3.  Decompress the downloaded package.
 
 2.  Verify the installation package.
-    1.  Decompress the installation package and check whether the installation directory and files are complete. Run the following commands in the directory where the installation package is stored:
 
-        ```
-        tar -zxvf openGauss-x.x.x-openEuler-64bit.tar.gz
-        ls -1
-        ```
+    Decompress the installation package and check whether the installation directory and files are complete. Run the following commands in the directory where the installation package is stored:
 
-        Run the  **ls**  command and information similar to the following is displayed.  **openGauss-_x.x.x_-openEuler-64bit.tar.gz**  in the  **packages**  directory indicates the database installation package. During the  **openGauss-_x.x.x_**  installation process, SHA256 authentication is automatically performed for the database installation program.
+    ```
+    tar -zxvf openGauss-1.0.1-openEuler-64bit.tar.gz
+    ls -1
+    ```
 
-        ```
-        total 577M
-        -rw-r--r--  1 root root   36 Jun 15 11:46 bepkit_env.conf
-        drwxr-xr-x 14 root root 4.0K Jun 15 11:46 lib
-        -rw-r--r--  1 root root   65 Jun 15 11:46 openGauss-x.x.x-openEuler-64bit.sha256
-        -rwxr-xr-x  1 root root 214M Jun 15 11:46 openGauss-x.x.x-openEuler-64bit-symbol.tar.gz
-        -rw-r--r--  1 root root  47M Jun 15 11:46 openGauss-x.x.x-openEuler-64bit.tar.bz2
-        -rw-r--r--  1 root root  53M Jun 15 11:46 openGauss-x.x.x-openEuler-64bit.tar.gz
-        -rw-------  1 root root 265M Jun 18 15:50 openGauss-x.x.x_PACKAGES_RELEASE.tar.gz
-        drwxr-xr-x  5 root root 4.0K Jun 15 11:46 script
-        -rw-r--r--  1 root root   32 Jun 15 11:46 version.cfg
-        
-        ```
+    Run the  **ls**  command and information similar to the following is displayed. 
 
-    2.  Go to the scripts directory, start the openGauss installation, and observe whether the installation is successful.
-
-        During the installation, the installation package automatically uses the SHA256 file to verify the integrity of the installation program.
-
-        If information similar to the following is displayed, verification of the database installation package fails, causing the openGauss installation failure.
-
-        ```
-        Error: The sha256 value is different!
-        Bin file a4ebce0b6052723b1f386928e4d820fa2
-        sha256 file 4ebce0b6052723b1f386928e4d820fa2
-        ```
-
-        If no error is displayed, the installation program is correct and has not been illegally modified.
-
+    ```
+    total 50M
+    drwxr-xr-x 14 root root 4.0K Jul  6 11:03 lib
+    -rw-r--r--  1 root root   65 Jul  6 11:03 openGauss-x.x.x-openEuler-64bit.sha256
+    -rw-r--r--  1 root root  50M Jul  6 11:03 openGauss-x.x.x-openEuler-64bit.tar.bz2
+    drwxr-xr-x  5 root root 4.0K Jul  6 11:03 script
+    -rw-r--r--  1 root root   32 Jul  6 11:03 version.cfg
+    
+    ```
 
 

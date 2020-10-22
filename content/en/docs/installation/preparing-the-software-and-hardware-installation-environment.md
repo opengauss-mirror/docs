@@ -102,9 +102,64 @@ This section describes hardware and software requirements of openGauss. It is re
 
 ### Software Dependency Requirements
 
-[\#EN-US\_TOPIC\_0249784577/table11459151513383](#table11459151513383)  lists the software dependency requirements for the openGauss.
+[Table 3](#table1212531681911)  describes the openGauss software dependency requirements.
 
 You are advised to use the default installation packages of the following dependent software in the listed OS installation CD-ROMs or sources. If the following software does not exist, refer to the recommended versions of the software.
+
+**Table  3**  Software dependency requirements
+
+<a name="table1212531681911"></a>
+
+<table><thead align="left"><tr id="row317811661910"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p14178216101910"><a name="p14178216101910"></a><a name="p14178216101910"></a>Software</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1117815167195"><a name="p1117815167195"></a><a name="p1117815167195"></a>Recommended Version</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row17179141619198"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p111791816141910"><a name="p111791816141910"></a><a name="p111791816141910"></a>libaio-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p101791116151915"><a name="p101791116151915"></a><a name="p101791116151915"></a>0.3.109-13</p>
+</td>
+</tr>
+<tr id="row1617981631914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p171794161195"><a name="p171794161195"></a><a name="p171794161195"></a>flex</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1317921651912"><a name="p1317921651912"></a><a name="p1317921651912"></a>2.5.31 or later</p>
+</td>
+</tr>
+<tr id="row1017911165191"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1617931661912"><a name="p1617931661912"></a><a name="p1617931661912"></a>bison</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p917919167196"><a name="p917919167196"></a><a name="p917919167196"></a>2.7-4</p>
+</td>
+</tr>
+<tr id="row8179181610191"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p101791416191912"><a name="p101791416191912"></a><a name="p101791416191912"></a>ncurses-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0179161651913"><a name="p0179161651913"></a><a name="p0179161651913"></a>5.9-13.20130511</p>
+</td>
+</tr>
+<tr id="row10179416191912"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1117941618198"><a name="p1117941618198"></a><a name="p1117941618198"></a>glibc-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5179191616190"><a name="p5179191616190"></a><a name="p5179191616190"></a>2.17-111</p>
+</td>
+</tr>
+<tr id="row317914169193"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p201791916201910"><a name="p201791916201910"></a><a name="p201791916201910"></a>patch</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1018051610198"><a name="p1018051610198"></a><a name="p1018051610198"></a>2.7.1-10</p>
+</td>
+</tr>
+<tr id="row136701325154914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76711825134912"><a name="p76711825134912"></a><a name="p76711825134912"></a>lsb_release</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1567262515496"><a name="p1567262515496"></a><a name="p1567262515496"></a>4.1</p>
+</td>
+</tr>
+<tr id="row136701325154914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76711825134912"><a name="p76711825134912"></a><a name="p76711825134912"></a>readline_devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1567262515496"><a name="p1567262515496"></a><a name="p1567262515496"></a>7.0-13</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ## Modifying OS Configuration
 
@@ -112,9 +167,9 @@ You are advised to use the default installation packages of the following depend
 
 To ensure that the openGauss can work properly when the firewall is enabled, related services, protocols, IP addresses, and ports need to be added to the firewall whitelist of each host in the openGauss.
 
-Take openEuler OS as an example. Assume that the openGauss information is listed in  [Table 1](#en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_table4312170510523).
+Take openEuler OS as an example. Assume that the openGauss information is listed in  [Table 4](#en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_table4312170510523).
 
-**Table  1**  Information of openGauss
+**Table  4**  Information of openGauss
 
 <a name="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_table4312170510523"></a>
 <table><thead align="left"><tr id="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_row3906252510523"><th class="cellrowborder" valign="top" width="19.36%" id="mcps1.2.4.1.1"><p id="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_p2242248110523"><a name="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_p2242248110523"></a><a name="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_p2242248110523"></a>Host Name</p>
@@ -185,17 +240,18 @@ Currently, EulerOS can be installed only when the firewall is disabled.
     ```
 
 3.  Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
-    1.  Run the  **vim**  command to open the  **config**  file.
 
-        ```
-        vim /etc/selinux/config
-        ```
+    a.Run the  **vim**  command to open the  **config**  file.
 
-    2.  Set the value of  **SELINUX**  to  **disabled**.
+    ```
+    vim /etc/selinux/config
+    ```
 
-        ```
-        SELINUX=disabled
-        ```
+    b.Set the value of  **SELINUX**  to  **disabled**.
+
+    ```
+    SELINUX=disabled
+    ```
 
 4.  Restart the OS.
 
@@ -221,8 +277,8 @@ Set the same time zone for all database nodes by copying the  **/etc/localtime**
 cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.  
 
 Run the  **date -s**  command to set the time of each host to the same time. For example:
 
@@ -230,8 +286,8 @@ Run the  **date -s**  command to set the time of each host to the same time. For
 date -s Mon May 11 16:42:11 CST 2020
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->You can run the  **date**  command to query the time zone of the host.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+You can run the  **date**  command to query the time zone of the host.  
 
 ### Disabling the Swap Memory
 
@@ -254,41 +310,41 @@ ifconfig NIC ID mtu Value
 During the openGauss installation, the user  **root**  is required for remote login. This section describes how to set the user  **root**  for remote login.
 
 1.  Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**.
-    1.  Open the  **sshd\_config**  file.
+    a.  Open the  **sshd\_config**  file.
 
         ```
         vim /etc/ssh/sshd_config
         ```
 
-    2.  Modify permissions of user  **root**  using either of the following methods:
+    b.  Modify permissions of user  **root**  using either of the following methods:
         -   Comment out  **PermitRootLogin no**.
 
             ```
             #PermitRootLogin no
             ```
-
+    
         -   Set the value of  **PermitRootLogin**  to  **yes**.
-
+    
             ```
             PermitRootLogin yes
             ```
 
-    3.  Run the  **:wq**  command to save the modification and exit.
+    c.  Run the  **:wq**  command to save the modification and exit.
 
 2.  Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
-    1.  Open the  **sshd\_config**  file.
+    a.  Open the  **sshd\_config**  file.
 
         ```
         vim /etc/ssh/sshd_config
         ```
 
-    2.  Comment out the line where  **Banner**  is located.
+    b.  Comment out the line where  **Banner**  is located.
 
         ```
         #Banner XXXX
         ```
 
-    3.  Run the  **:wq**  command to save the modification and exit.
+    c.  Run the  **:wq**  command to save the modification and exit.
 
 3.  Run the following command to validate the settings:
 
@@ -296,8 +352,8 @@ During the openGauss installation, the user  **root**  is required for remote lo
     service sshd restart
     ```
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
-    >If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.
+    ![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+    If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.  
 
 4.  Re-log in to the system as user  **root**.
 
@@ -305,5 +361,5 @@ During the openGauss installation, the user  **root**  is required for remote lo
     ssh xxx.xxx.xxx.xxx
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >_xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    _xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.  

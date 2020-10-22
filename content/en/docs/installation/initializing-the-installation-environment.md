@@ -1,136 +1,115 @@
-# Initializing the Installation Environment<a name="EN-US_TOPIC_0249784559"></a>
+# Initializing the Installation Environment<a name="EN-US_TOPIC_0283136473"></a>
 
-To ensure the correct installation of the openGauss, you need to configure the host environment first.
+-   [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment) 
+-   [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) 
+-   [Configuring OS Parameters](#configuring-os-parameters)  
 
-<!-- TOC -->
-
-- [Initializing the Installation Environment<a name="EN-US_TOPIC_0249784559"></a>](#initializing-the-installation-environmenta-nameen-us_topic_0249784559a)
-- [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment)
-    - [Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>](#prerequisitesa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8a)
-    - [Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>](#precautionsa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420a)
-    - [Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>](#procedurea-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9da)
-    - [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually)
-        - [Prerequisites](#prerequisites)
-        - [Establishing Mutual Trust Using a Script](#establishing-mutual-trust-using-a-script)
-        - [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually-1)
-        - [Deleting Mutual Trust Between Users  **root**](#deleting-mutual-trust-between-users--root)
-        - [Examples](#examples)
-    - [Configuring OS Parameters](#configuring-os-parameters)
-        - [OS Parameters](#os-parameters)
-        - [·	·File System Parameters](#·	·file-system-parameters)
-        - [Setting the transparent\_hugepage Service](#setting-the-transparent\_hugepage-service)
-        - [Setting File Handles](#setting-file-handles)
-        - [Setting the Maximum Number of Allowed Processes](#setting-the-maximum-number-of-allowed-processes)
-        - [Setting NIC Parameters](#setting-nic-parameters)
-
-<!-- /TOC -->
-
-# Creating the Required User Account and Configuring the Installation Environment
+## Creating the Required User Account and Configuring the Installation Environment
 
 After the openGauss configuration file is created, you need to run the  **gs\_preinstall**  script to prepare the account and environment so that you can perform openGauss installation and management operations with the minimum permission, ensuring system security.
 
 Executing the  **gs\_preinstall**  script enables the system to automatically complete the following installation preparations:
 
--   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](configuring-os-parameters.md).
-
+-   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](#configuring-os-parameters).
 -   Automatically copies the openGauss configuration files and installation packages to the same directory on each openGauss host.
-
 -   If the installation user and user group of the openGauss do not exist, the system automatically creates them.
-
 -   Reads the directory information in the openGauss configuration file, creates the directory, and grants the directory permission to the installation user.
 
-## Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>
+### Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>
 
 -   You have completed all the tasks described in  [Preparing for Installation](preparing-for-installation.md).
 
-## Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>
+### Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>
 
 -   You must check the upper-layer directory permissions to ensure that the user has the read, write, and execution permissions on the installation package and configuration file directory.
-
 -   The mapping between each host name and IP address in the XML configuration file must be correct.
-
 -   Only user  **root**  is authorized to run the  **gs\_preinstall**  command.
 
-## Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>
+### Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>
 
-1. Log in to any host where the openGauss is to be installed as user  **root**  and create a directory for storing the installation package as planned.
+1.  Log in to any host where the openGauss is to be installed as user  **root**  and create a directory for storing the installation package as planned.
 
-   ```
-   mkdir -p /opt/software/openGauss
-   chmod 755 -R /opt/software
-   ```
+    ```
+    mkdir -p /opt/software/openGauss
+    chmod 755 -R /opt/software
+    ```
 
-   >![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
-   >
-   >-   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.
-   >-   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    -   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
+    -   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
 
-2. Upload the software package  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
+2.  Upload the software package  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
+3.  Go to the directory for storing the uploaded software package and decompress  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**. After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
 
-3. Go to the directory for storing the uploaded software package and decompress  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**. After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
+    ```
+    cd /opt/software/openGauss
+    tar -zxvf openGauss-x.x.x-openEULER-64bit.tar.gz
+    ```
 
-   ```
-   cd /opt/software/openGauss
-   tar -zxvf openGauss-x.x.x-openEULER-64bit.tar.gz
-   ```
+    ![](public_sys-resources/icon-note.gif) **NOTE:**  
+    -   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
+    -   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
+    -   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
 
-   >![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
-   >
-   >-   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.
-   >-   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.
-   >-   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.
+4.  Go to the directory for storing tool scripts.
 
-4. Go to the directory for storing tool scripts.
+    ```
+    cd /opt/software/openGauss/script
+    ```
 
-   ```
-   cd /opt/software/openGauss/script
-   ```
+5.  For openEuler, run the following command to open the  **gspylib/common/CheckPythonVersion.py**  file and change  **if not pythonVersion == \(3, 6\):**  to  **if not pythonVersion \>= \(3, 6\):**. Press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
 
-5. For openEuler, run the following command to open the  **gspylib/common/CheckPythonVersion.py**  file and change  **if not pythonVersion == \(3, 6\):**  to  **if not pythonVersion \>= \(3, 6\):**. Press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
+    ```
+    vi gspylib/common/CheckPythonVersion.py
+    ```
 
-   ```
-   vi gspylib/common/CheckPythonVersion.py
-   ```
+6.  If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\> /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
 
-6. If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\ /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
+    ```
+    vi /etc/profile.d/performance.sh
+    ```
 
-   ```
-   vi /etc/profile.d/performance.sh
-   ```
+7.  To ensure that the OpenSSL version is correct, load the  **lib**  library in the installation package before preinstallation. Run the following command.  **\{packagePath\}**  indicates the path where the installation package is stored. In this example, the path is  **/opt/software/openGauss**.
 
-7. To ensure that the OpenSSL version is correct, load the  **lib**  library in the installation package before preinstallation. Run the following command.  **\{packagePath\}**  indicates the path where the installation package is stored. In this example, the path is  **/opt/software/openGauss**.
+    ```
+    export LD_LIBRARY_PATH={packagePath}/script/gspylib/clib:$LD_LIBRARY_PATH
+    ```
 
-   ```
-   export LD_LIBRARY_PATH={packagePath}/script/gspylib/clib:$LD_LIBRARY_PATH
-   ```
+8.  To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.
 
-8. To ensure successful installation, check whether the values of  **hostname**  and  **/etc/hostname**  are the same. During preinstallation, the host name is checked.
+    ```
+    hostname
+    cat /etc/hostname 
+    ```
 
-9. Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **\-\-sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
+    If the value of  **hostname**  is different from the host name in the  **/etc/hostname**  file, run the following command to open the  **/etc/hostname**  file and change the host name. Press  **Esc**  to enter the command mode, and then run the  **:wq**  command to save the change and exit.
 
-   - Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
+    ```
+    vi /etc/hostname 
+    ```
 
-     ```
-     ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
-     ```
+9.  Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
+    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
 
-     **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the openGauss user.
+        ```
+        ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
+        ```
 
-   - If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
+        **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the openGauss user.
 
-     Run the following command to configure the installation environment:
+    -   If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
+        1.  Run the following command to configure the installation environment:
 
-     ```
-     cd /opt/software/openGauss/script
-     ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
-     ```
+            ```
+            cd /opt/software/openGauss/script
+            ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
+            ```
 
-     ![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
-     You need to run this command on each host.
-
+            ![](public_sys-resources/icon-note.gif) **NOTE:**   
+            You need to run this command on each host.  
 
     -   Execute  **gs\_preinstall**  in non-interactive mode.
-        1.  Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in  [Establishing Mutual Trust Manually](establishing-mutual-trust-manually.md).
+        1.  Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in[Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
         2.  Run the following command to configure the installation environment:
     
             ```
@@ -138,14 +117,14 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
             ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
             ```
     
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
-            >-   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.
-            >-   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.
+        ![](public_sys-resources/icon-note.gif) **NOTE:**   
+        -   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
+        -   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
 
 
 
 
-## Examples<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620"></a>
+### Examples
 
 Execute the  **gs\_preinstall**  script.
 
@@ -333,22 +312,19 @@ Successfully set finish flag.
 Preinstallation succeeded.
 ```
 
-## Troubleshooting<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4"></a>
+### Troubleshooting
 
 If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing openGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running openGauss.
 
-![](C:/Users/lijun/Desktop/05-openGauss Installation Guide/public_sys-resources/icon-notice.gif) **NOTICE:** 
-
+![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
-
-
 
 ## Establishing Mutual Trust Manually
 
 During the openGauss installation, you need to perform operations such as running commands and transferring files between hosts in openGauss. Establish mutual trust among the hosts before installing the cluster as a common user. During the execution of the pre-installation script, establish mutual trust between users  **root**, then create a common user account, and finally establish mutual trust between common users.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.
+![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.  
 
 ### Prerequisites
 
@@ -357,7 +333,7 @@ During the openGauss installation, you need to perform operations such as runnin
 -   Each host name and IP address have been correctly configured in the XML file.
 -   Communication among all the hosts is normal.
 -   If the mutual trust is to be established for common users, the same user needs to be created and password set on each host.
--   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/home**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**  and that of the  **/root**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
+-   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/root**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**  and that of the  **/home**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**, or disable the SELinux service.
 
     To check the SELinux status, run the  **getenforce**  command. If the command output is  **Enforcing**, SELinux is installed and has been enabled.
 
@@ -384,43 +360,47 @@ During the openGauss installation, you need to perform operations such as runnin
 
 ### Establishing Mutual Trust Using a Script
 
+Establishing a mutual trust relationship using a script has the following impacts:
+
+-   The  **/etc/hosts**  file may be modified. Back up the  **/etc/hosts**  file before using the script to establish mutual trust.
+-   The script deletes the existing .ssh file directory. If you want to retain the mutual trust relationship established between nodes, use the method described in [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
+
 1.  Create the file for executing the mutual trust script, and add the IP addresses of all the hosts in the openGauss to the file.
 
     ```
-    plat1:/opt/software/openGauss vim hostfile
+    plat1:/opt/software/openGauss> vim hostfile
     192.168.0.1
     192.168.0.2
     192.168.0.3
     ```
 
 2.  Execute the script as the user who needs to establish mutual trust with the hosts.
-3.  Execute the following script to establish mutual trust:
 
     ```
-    plat1:/opt/software/openGauss/script# gs_sshexkey -f /opt/software/hostfile
+    plat1:/opt/software/openGauss/script# ./gs_sshexkey -f /opt/software/hostfile
     ```
 
     The  **/opt/software/hostfile**  file contains a list of the hosts. The list provides the IP addresses of all the hosts among which mutual trust needs to be established.
 
 
-### Establishing Mutual Trust Manually
+## Establishing Mutual Trust Manually
 
 If the passwords of user  **root**  on the hosts in the openGauss are different, the  **gs\_preinstall**  script cannot be used to establish mutual trust. In this case, manually establish mutual trust.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.  
 
 The procedure of manually establishing mutual trust is as follows \(**plat1**,  **plat2**, and  **plat3**  are host names\):
 
 1.  Generate a licensed file for user  **root**  on any host \(referred to as the local host\). Host  **plat1**  is used as an example.
-    1.  Generate a key.
+    a.  Generate a key.
 
         ```
         ssh-keygen -t rsa
         ```
-
+        
         The following is an example:
-
+        
         ```
         plat1:~ # ssh-keygen -t rsa 
         Generating public/private rsa key pair.
@@ -446,58 +426,58 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
         +-----------------+
         ```
 
-    2.  Generate the licensed file.
+    b.  Generate the licensed file.
 
         ```
-        cat .ssh/id_rsa.pub > .ssh/authorized_keys
+        cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
         ```
-
+        
         The following is an example:
-
+        
         ```
-        plat1:~ # cat .ssh/id_rsa.pub > .ssh/authorized_keys
+        plat1:~ # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
         ```
 
 2.  Obtain the public keys of all the hosts among which mutual trust needs to be established, and write the public keys into the  **known\_hosts**  file on the local host. This step needs to be performed on the host where Step 1 is performed. You need to obtain the public keys of the  **plat1**,  **plat2**, and  **plat3**  hosts.
-    1.  Obtain the public key of host  **plat1**, and write the public key into the  **known\_hosts**  file on the local host.
+    a.  Obtain the public key of host  **plat1**, and write the public key into the  **known\_hosts**  file on the local host.
 
         ```
-        ssh-keyscan -t rsa plat1 > ~/.ssh/known_hosts
+        ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts
         ```
-
+        
         The following is an example:
-
+        
         ```
-        plat1:~ # ssh-keyscan -t rsa plat1 > ~/.ssh/known_hosts 
+        plat1:~ # ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts 
         # plat1 SSH-2.0-OpenSSH_5.1 
         ```
 
-    2.  Obtain the public key of host  **plat2**, and write the public key into the  **known\_hosts**  file on the local host.
+    b.  Obtain the public key of host  **plat2**, and write the public key into the  **known\_hosts**  file on the local host.
 
         ```
-        ssh-keyscan -t rsa plat2 > ~/.ssh/known_hosts
+        ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts
         ```
-
+        
         The following is an example:
-
+        
         ```
-        plat1:~ # ssh-keyscan -t rsa plat2 > ~/.ssh/known_hosts 
+        plat1:~ # ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts 
         # plat2 SSH-2.0-OpenSSH_5.1 
         ```
 
-    3.  Obtain the public key of host  **plat3**, and write the public key into the  **known\_hosts**  file on the local host.
+    c.  Obtain the public key of host  **plat3**, and write the public key into the  **known\_hosts**  file on the local host.
 
         ```
-        ssh-keyscan -t rsa plat3 > ~/.ssh/known_hosts
+        ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts
         ```
-
+        
         The following is an example:
-
+        
         ```
-        plat1:~ # ssh-keyscan -t rsa plat3 > ~/.ssh/known_hosts 
+        plat1:~ # ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts 
         # plat3 SSH-2.0-OpenSSH_5.1 
         ```
-
+        
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
         >-   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
         >-   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
@@ -505,39 +485,39 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
 
 3.  Send the  **known\_hosts**  file to all the other hosts except the local host. In this example, send the  **known\_hosts**  file on host  **plat1**  to hosts  **plat2**  and  **plat3**.
 
-    1. Send the  **known\_hosts**  file to host  **plat2**. When  **Password:**  is displayed, enter the password for logging in to host  **plat2**.
-
-    ```
-    scp -r .ssh plat2:~
-    ```
-
-    The following is an example:
-
-    ```
-    plat1:~ # scp -r .ssh plat2:~
-    Password: 
-    authorized_keys                 100%  796     0.8KB/s   00:00    
-    id_rsa                          100% 1675     1.6KB/s   00:00    
-    id_rsa.pub                      100%  398     0.4KB/s   00:00    
-    known_hosts                     100% 1089     1.1KB/s   00:00    
-    ```
-
-    2. Send the  **known\_hosts**  file to host  **plat3**. When  **Password:**  is displayed, enter the password for logging in to host  **plat3**.
-
-    ```
-    scp -r .ssh plat3:~
-    ```
-
-    The following is an example:
-
-    ```
-    plat1:~ # scp -r .ssh plat3:~
-    Password: 
-    authorized_keys                 100%  796     0.8KB/s   00:00    
-    id_rsa                          100% 1675     1.6KB/s   00:00    
-    id_rsa.pub                      100%  398     0.4KB/s   00:00    
-    known_hosts                     100% 1089     1.1KB/s   00:00    
-    ```
+        a. Send the  **known\_hosts**  file to host  **plat2**. When  **Password:**  is displayed, enter the password for logging in to host  **plat2**.
+        
+        ```
+        scp -r ~/.ssh plat2:~
+        ```
+        
+        The following is an example:
+        
+        ```
+        plat1:~ # scp -r ~/.ssh plat2:~
+        Password: 
+        authorized_keys                 100%  796     0.8KB/s   00:00    
+        id_rsa                          100% 1675     1.6KB/s   00:00    
+        id_rsa.pub                      100%  398     0.4KB/s   00:00    
+        known_hosts                     100% 1089     1.1KB/s   00:00    
+        ```
+        
+        b. Send the  **known\_hosts**  file to host  **plat3**. When  **Password:**  is displayed, enter the password for logging in to host  **plat3**.
+        
+        ```
+        scp -r ~/.ssh plat3:~
+        ```
+        
+        The following is an example:
+        
+        ```
+        plat1:~ # scp -r ~/.ssh plat3:~
+        Password: 
+        authorized_keys                 100%  796     0.8KB/s   00:00    
+        id_rsa                          100% 1675     1.6KB/s   00:00    
+        id_rsa.pub                      100%  398     0.4KB/s   00:00    
+        known_hosts                     100% 1089     1.1KB/s   00:00    
+        ```
 
 4.  Run the  **ssh **_Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
 
@@ -550,8 +530,8 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     plat1:~ # 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.  
 
 
 ### Deleting Mutual Trust Between Users  **root** 
@@ -580,7 +560,7 @@ The mutual trust established between users  **root**  may incur security risks. 
 The following is an example describing how to establish mutual trust between users  **root**:
 
 ```
-plat1:~ # gs_sshexkey -f /opt/software/hostfile -W Gauss_234
+plat1:~ # gs_sshexkey -f /opt/software/hostfile -W Gauss_123
 Checking network information.
 All nodes in the network are Normal.
 Successfully checked network information.
@@ -605,7 +585,7 @@ Successfully created SSH trust.
 The following is an example describing how to establish mutual trust between common users:
 
 ```
-gaussdb@plat1:~  gs_sshexkey -f /opt/software/hostfile -W Gauss_234
+gaussdb@plat1:~ > gs_sshexkey -f /opt/software/hostfile -W Gauss_123
 Checking network information.
 All nodes in the network are Normal.
 Successfully checked network information.
@@ -662,7 +642,7 @@ Some of these parameters are set during the openGauss installation environment p
 1.  Log in to a server as user  **root**.
 2.  Modify the  **/etc/sysctl.conf**  file.
 
-    For details about how to modify parameters, see  [OS Parameters](#en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540).
+    For details about how to modify parameters, see  [OS Parameters](#OS Parameters).
 
 3.  Run the following command to make the modifications take effect:
 
@@ -671,7 +651,7 @@ Some of these parameters are set during the openGauss installation environment p
     ```
 
 
-### OS Parameters
+## OS Parameters
 
 **Table  1**  OS parameters
 
@@ -688,7 +668,7 @@ Some of these parameters are set during the openGauss installation environment p
 </thead>
 <tbody><tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row647214625611"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1125722695711"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1125722695711"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1125722695711"></a>net.ipv4.tcp_max_tw_buckets</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p182571426125710"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p182571426125710"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p182571426125710"></a>Specifies the maximum number of TCP/IP connections concurrently remaining in the <strong id="b20454121619520"><a name="b20454121619520"></a><a name="b20454121619520"></a>TIME_WAIT</strong state. If the number of TCP/IP connections concurrently remaining in the <strong id="b565720239528"><a name="b565720239528"></a><a name="b565720239528"></a>TIME_WAIT</strong state exceeds the value of this parameter, the TCP/IP connections in the <strong id="b186651623135210"><a name="b186651623135210"></a><a name="b186651623135210"></a>TIME_WAIT</strong state will be released immediately, and alarm information will be printed.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p182571426125710"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p182571426125710"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p182571426125710"></a>Specifies the maximum number of TCP/IP connections concurrently remaining in the <strong id="b20454121619520"><a name="b20454121619520"></a><a name="b20454121619520"></a>TIME_WAIT</strong> state. If the number of TCP/IP connections concurrently remaining in the <strong id="b565720239528"><a name="b565720239528"></a><a name="b565720239528"></a>TIME_WAIT</strong> state exceeds the value of this parameter, the TCP/IP connections in the <strong id="b186651623135210"><a name="b186651623135210"></a><a name="b186651623135210"></a>TIME_WAIT</strong> state will be released immediately, and alarm information will be printed.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p119011915422"><a name="p119011915422"></a><a name="p119011915422"></a>Yes</p>
 </td>
@@ -697,7 +677,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tr>
 <tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row4472364569"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p59261713115813"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p59261713115813"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p59261713115813"></a>net.ipv4.tcp_tw_reuse</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p169261713135818"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p169261713135818"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p169261713135818"></a>Reuses sockets whose status is <strong id="b9668733125216"><a name="b9668733125216"></a><a name="b9668733125216"></a>TIME-WAIT</strong for new TCP connections.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p169261713135818"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p169261713135818"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p169261713135818"></a>Reuses sockets whose status is <strong id="b9668733125216"><a name="b9668733125216"></a><a name="b9668733125216"></a>TIME-WAIT</strong> for new TCP connections.</p>
 <a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_ul99261213185819"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_ul99261213185819"></a><ul id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_ul99261213185819"><li><strong id="b1922443965212"><a name="b1922443965212"></a><a name="b1922443965212"></a>0</strong>: This function is disabled.</li><li><strong id="b13542174055211"><a name="b13542174055211"></a><a name="b13542174055211"></a>1</strong>: This function is enabled.</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p209015151214"><a name="p209015151214"></a><a name="p209015151214"></a>Yes</p>
@@ -707,7 +687,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tr>
 <tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row94736616569"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p292717139588"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p292717139588"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p292717139588"></a>net.ipv4.tcp_tw_recycle</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1992811310580"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1992811310580"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1992811310580"></a>Rapidly reclaims sockets whose status is <strong id="b12266104255218"><a name="b12266104255218"></a><a name="b12266104255218"></a>TIME-WAIT</strong in TCP connections.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1992811310580"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1992811310580"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1992811310580"></a>Rapidly reclaims sockets whose status is <strong id="b12266104255218"><a name="b12266104255218"></a><a name="b12266104255218"></a>TIME-WAIT</strong> in TCP connections.</p>
 <a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_ul17928101395817"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_ul17928101395817"></a><ul id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_ul17928101395817"><li><strong id="b1416194710527"><a name="b1416194710527"></a><a name="b1416194710527"></a>0</strong>: This function is disabled.</li><li><strong id="b047948165213"><a name="b047948165213"></a><a name="b047948165213"></a>1</strong>: This function is enabled.</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p1590112151228"><a name="p1590112151228"></a><a name="p1590112151228"></a>Yes</p>
@@ -726,7 +706,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tr>
 <tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row17677191218575"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1492941395814"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1492941395814"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1492941395814"></a>net.ipv4.tcp_keepalive_probes</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p49291138584"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p49291138584"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p49291138584"></a>Specifies the number of keep-alive detection packets sent through a TCP connection before the connection is regarded invalid. The product of the parameter value multiplied by the value of the <strong id="b860162215539"><a name="b860162215539"></a><a name="b860162215539"></a>tcp_keepalive_intvl</strong parameter determines the response timeout after a keep-alive message is sent through a connection.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p49291138584"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p49291138584"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p49291138584"></a>Specifies the number of keep-alive detection packets sent through a TCP connection before the connection is regarded invalid. The product of the parameter value multiplied by the value of the <strong id="b860162215539"><a name="b860162215539"></a><a name="b860162215539"></a>tcp_keepalive_intvl</strong> parameter determines the response timeout after a keep-alive message is sent through a connection.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p159017154213"><a name="p159017154213"></a><a name="p159017154213"></a>Yes</p>
 </td>
@@ -1050,7 +1030,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tr>
 <tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row3940154515911"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p02308185016"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p02308185016"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p02308185016"></a>vm.extfrag_threshold</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p62301518909"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p62301518909"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p62301518909"></a>When system memory is insufficient, Linux will score the current system memory fragments. If the score is higher than the value of <strong>vm.extfrag_threshold</strong>, <strong>kswapd</strong triggers memory compaction. When the value of this parameter is close to <strong>1000</strong>, the system tends to swap out old pages when processing memory fragments to meet the application requirements. When the value of this parameter is close to <strong>0</strong>, the system tends to do memory compaction when processing memory fragments.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p62301518909"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p62301518909"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p62301518909"></a>When system memory is insufficient, Linux will score the current system memory fragments. If the score is higher than the value of <strong>vm.extfrag_threshold</strong>, <strong>kswapd</strong> triggers memory compaction. When the value of this parameter is close to <strong>1000</strong>, the system tends to swap out old pages when processing memory fragments to meet the application requirements. When the value of this parameter is close to <strong>0</strong>, the system tends to do memory compaction when processing memory fragments.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p49065155212"><a name="p49065155212"></a><a name="p49065155212"></a>No</p>
 </td>
@@ -1059,7 +1039,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tr>
 <tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row14114125155912"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p8231218904"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p8231218904"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p8231218904"></a>vm.overcommit_ratio</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1823117183015"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1823117183015"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1823117183015"></a>When the system uses the algorithms where memory usage never exceeds the thresholds, the total memory address space of the system cannot exceed the value of <strong>swap+RAM</strong multiplied by the percentage specified by this parameter. When the value of <strong>vm.overcommit_memory</strong is set to <strong>2</strong>, this parameter takes effect.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1823117183015"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1823117183015"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p1823117183015"></a>When the system uses the algorithms where memory usage never exceeds the thresholds, the total memory address space of the system cannot exceed the value of <strong>swap+RAM</strong> multiplied by the percentage specified by this parameter. When the value of <strong>vm.overcommit_memory</strong> is set to <strong>2</strong>, this parameter takes effect.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p2090613159212"><a name="p2090613159212"></a><a name="p2090613159212"></a>No</p>
 </td>
@@ -1068,7 +1048,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tr>
 <tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row711514515597"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p523211182017"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p523211182017"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p523211182017"></a>/sys/module/sctp/parameters/no_checksums</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p122324181200"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p122324181200"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p122324181200"></a>Specifies whether <strong>checksum</strong is disabled in SCTP.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p122324181200"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p122324181200"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p122324181200"></a>Specifies whether <strong>checksum</strong> is disabled in SCTP.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p1390618151926"><a name="p1390618151926"></a><a name="p1390618151926"></a>No</p>
 </td>
@@ -1077,7 +1057,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tr>
 <tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_row151152051125910"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p2233161813015"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p2233161813015"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p2233161813015"></a>MTU</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p32330181404"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p32330181404"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p32330181404"></a>Specifies the maximum transmission unit (MTU) for a node NIC. The default value is <strong>1500</strong in the OS. You can set it to <strong>8192</strong to improve the performance of sending and receiving data using SCTP.</p>
+<td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p32330181404"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p32330181404"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0085031791_p32330181404"></a>Specifies the maximum transmission unit (MTU) for a node NIC. The default value is <strong>1500</strong> in the OS. You can set it to <strong>8192</strong> to improve the performance of sending and receiving data using SCTP.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p19906171511217"><a name="p19906171511217"></a><a name="p19906171511217"></a>No</p>
 </td>
@@ -1087,7 +1067,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tbody>
 </table>
 
-### ·	·File System Parameters
+### File System Parameters
 
 -   soft nofile
 
@@ -1138,7 +1118,7 @@ After the modification is complete, restart the OS to make the setting take effe
 </thead>
 <tbody><tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_row36414898154930"><td class="cellrowborder" valign="top" width="17.47%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p53634223135851"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p53634223135851"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p53634223135851"></a>* soft nofile</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.07000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a>Specifies the soft limit on the number of file handles. For example, if this parameter is set to <span class="parmvalue" id="parmvalue205762215320"><a name="parmvalue205762215320"></a><a name="parmvalue205762215320"></a><b>1000000</b></span>, any user can open a maximum of 1,000,000 files regardless of how many shells are enabled.</p>
+<td class="cellrowborder" valign="top" width="52.07000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a>Specifies the soft limit on the number of file handles. For example, if this parameter is set to <span class="parmvalue"><b>1000000</b></span>, any user can open a maximum of 1,000,000 files regardless of how many shells are enabled.</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p42366546135851"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p42366546135851"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p42366546135851"></a>Yes</p>
 </td>
@@ -1186,9 +1166,9 @@ After the modification is complete, restart the OS to make the setting take effe
 </td>
 <td class="cellrowborder" valign="top" width="52.07000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p22374700151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p22374700151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p22374700151525"></a>Specifies the maximum number of processes allowed per user.</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a>No</p>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="9.4%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a>60000</p>
+<td class="cellrowborder" valign="top" width="9.4%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a>unlimited</p>
 </td>
 </tr>
 </tbody>
@@ -1230,8 +1210,7 @@ After the modification is complete, restart the OS to make the setting take effe
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   NIC parameters can be configured only for 10GE and larger service NICs, that is, the NIC bound to  **backIp1**.
->-   The commands for setting NIC parameters are written into the OS startup file only after the parameters are successfully set. Information about command execution failures is recorded in logs on the server.
+![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+-   NIC parameters can be configured only for 10GE and larger service NICs, that is, the NIC bound to  **backIp1**.  
+-   The commands for setting NIC parameters are written into the OS startup file only after the parameters are successfully set. Information about command execution failures is recorded in logs on the server.  
 
-
