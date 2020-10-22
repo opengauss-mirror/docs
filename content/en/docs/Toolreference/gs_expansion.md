@@ -76,10 +76,10 @@ When a standalone mode is scaled to the primary/standby mode, the standalone dat
 
     If the standalone database has been installed on the node to be scaled, skip the step of installing the database on the new standby node and directly establish the primary/standby relationship by adding the  **–L**  parameter during scaling.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   The databases installed on the primary and standby nodes must use the same user and user group, and the paths for separating environment variables must be the same.
-    >-   When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.
-    >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**  
+    >-   The databases installed on the primary and standby nodes must use the same user and user group, and the paths for separating environment variables must be the same.  
+    >-   When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.  
+    >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  
 
 -   -?, –help
 
@@ -144,5 +144,5 @@ Success to expansion standby nodes.
 
 ## Helpful Links<a name="section81692446111"></a>
 
-[gs\_preinstall](en-us_topic_0249632278.md),  [gs\_install](en-us_topic_0249632258.md), and  [gs\_ctl](en-us_topic_0249632282.md)
+[gs\_preinstall](gs_preinstall.md),  [gs\_install](gs_install.md), and  [gs\_ctl](gs_ctl.md)
 
