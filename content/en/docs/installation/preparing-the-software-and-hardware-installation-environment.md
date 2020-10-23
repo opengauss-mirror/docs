@@ -312,40 +312,32 @@ During the openGauss installation, the user  **root**  is required for remote lo
 1.  Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**.
     a.  Open the  **sshd\_config**  file.
 
-        ```
         vim /etc/ssh/sshd_config
-        ```
-
+    
     b.  Modify permissions of user  **root**  using either of the following methods:
-        -   Comment out  **PermitRootLogin no**.
-
-            ```
-            #PermitRootLogin no
-            ```
+    -   Comment out  **PermitRootLogin no**.
     
-        -   Set the value of  **PermitRootLogin**  to  **yes**.
+        #PermitRootLogin no
     
-            ```
-            PermitRootLogin yes
-            ```
-
+    -   Set the value of  **PermitRootLogin**  to  **yes**.
+        
+    
+        PermitRootLogin yes
+        
+    
     c.  Run the  **:wq**  command to save the modification and exit.
-
+    
 2.  Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
     a.  Open the  **sshd\_config**  file.
 
-        ```
         vim /etc/ssh/sshd_config
-        ```
-
+    
     b.  Comment out the line where  **Banner**  is located.
 
-        ```
         #Banner XXXX
-        ```
 
     c.  Run the  **:wq**  command to save the modification and exit.
-
+    
 3.  Run the following command to validate the settings:
 
     ```
