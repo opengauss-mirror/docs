@@ -2,12 +2,12 @@
 
 ## Date and Time Operators<a name="en-us_topic_0237121972_en-us_topic_0059779084_s0cc044f2acb04adb928696f1f6cfd13d"></a>
 
->![](public_sys-resources/icon-warning.gif) **WARNING:**   
->When the user uses date/time operators, explicit type prefixes are modified for corresponding operands to ensure that the operands parsed by the database are consistent with what the user expects, and no unexpected results occur.  
->For example, abnormal mistakes will occur in the following example without an explicit data type.  
->```  
->SELECT date '2001-10-01' - '7' AS RESULT;  
->```
+![](public_sys-resources/icon-warning.gif) **WARNING:**    
+When the user uses date/time operators, explicit type prefixes are modified for corresponding operands to ensure that the operands parsed by the database are consistent with what the user expects, and no unexpected results occur.    
+For example, abnormal mistakes will occur in the following example without an explicit data type.    
+```    
+SELECT date '2001-10-01' - '7' AS RESULT;    
+```  
 
 **Table  1**  Time and date operators
 
@@ -650,8 +650,8 @@ postgres=# SELECT date_part('hour', timestamp '2001-02-16 20:38:40');
 
 The timestampdiff function returns the result of  **timestamp\_expr2**  -  **timestamp\_expr1**  in the specified unit.  **timestamp\_expr1**  and  **timestamp\_expr2**  must be value expressions of the  **timestamp**,  **timestamptz**, or  **date**  type.  **unit**  indicates the unit of the difference between two dates.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->This function is valid only when openGauss is compatible with the MY type \(that is, dbcompatibility = 'B'\).  
+![](public_sys-resources/icon-note.gif) **NOTE:**     
+This function is valid only when openGauss is compatible with the MY type \(that is, dbcompatibility = 'B'\).    
 
 -   year
 
@@ -1321,12 +1321,12 @@ postgres=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->In the table, the rules for RR to calculate years are as follows:  
->-   If the range of the input two-digit year is between 00 and 49:  
->    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are the same as the first two digits of the current year.  
->    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year equal to the first two digits of the current year plus 1.  
->-   If the range of the input two-digit year is between 50 and 99:  
->    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year equal to the first two digits of the current year minus 1.  
->    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**     
+>In the table, the rules for RR to calculate years are as follows:    
+>-   If the range of the input two-digit year is between 00 and 49:    
+>    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are the same as the first two digits of the current year.    
+>    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year equal to the first two digits of the current year plus 1.    
+>-   If the range of the input two-digit year is between 50 and 99:    
+>    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year equal to the first two digits of the current year minus 1.    
+>    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.    
 

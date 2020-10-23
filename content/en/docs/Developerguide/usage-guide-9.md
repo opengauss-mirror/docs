@@ -10,8 +10,8 @@
 
 The tuning program is a tool independent of the database kernel. The usernames and passwords for the database and instances are required to control the benchmark performance test of the database. Before starting the tuning program, ensure that the interaction in the test environment is normal, the benchmark test script can be run properly, and the database can be connected properly.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->If the parameters to be tuned include the parameters that take effect only after the database is restarted, the database will be restarted multiple times during the tuning. Exercise caution when using this function if the database is running jobs.  
+![](public_sys-resources/icon-note.gif) **NOTE:**     
+If the parameters to be tuned include the parameters that take effect only after the database is restarted, the database will be restarted multiple times during the tuning. Exercise caution when using this function if the database is running jobs.    
 
 ## Procedure<a name="section275518529540"></a>
 
@@ -29,13 +29,13 @@ The tuning program is a tool independent of the database kernel. The usernames a
 
 5. Enter the database connection information, set the current tuning mode to  **train**  or  **tune**, and start the parameter tuning program. For example, enter the information in the X-Tuner root directory.
 
-   python main.py -m train --db-name postgres\\
+      python main.py -m train --db-name postgres\\
 
-   --db-user dba --port 1234 \\
+      --db-user dba --port 1234 \\
 
-   --host 192.168.1.2 --host-user opengauss\\
+      --host 192.168.1.2 --host-user opengauss\\
 
-   --benchmark tpcc --model-path mymodel
+      --benchmark tpcc --model-path mymodel
 
 6. If the training mode is used, the trained model is output and the program exits. If the tuning mode is used, the tuned optimal parameter list is output and the program exits. You can determine whether to modify the parameters based on the tuning result and manually set them to the recommended values or reset them to the values before the tuning.
 

@@ -18,7 +18,7 @@ openGauss supports ODBC 3.5 in the following environments.
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237120405_en-us_topic_0059778944_row246633982912"><td class="cellrowborder" valign="top" width="78.64%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237120405_en-us_topic_0059778944_p55601140183018"><a name="en-us_topic_0237120405_en-us_topic_0059778944_p55601140183018"></a><a name="en-us_topic_0237120405_en-us_topic_0059778944_p55601140183018"></a>CentOS 6.4/6.5/6.6/6.7/6.8/6.9/7.0/7.1/7.2/7.3/7.4</p>
+<tbody><tr id="en-us_topic_0237120405_en-us_topic_0059778944_row246633982912"><td class="cellrowborder" valign="top" width="78.64%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237120405_en-us_topic_0059778944_p55601140183018"><a name="en-us_topic_0237120405_en-us_topic_0059778944_p55601140183018"></a><a name="en-us_topic_0237120405_en-us_topic_0059778944_p55601140183018"></a>CentOS 6.4<span>/<span><span>6.5<span>/<span>6.6<span>/<span>6.7<span>/<span>6.8<span>/<span>6.9<span>/<span>7.0<span>/<span>7.1<span>/<span>7.2<span>/<span>7.3<span>/<span>7.4</p>
 </td>
 <td class="cellrowborder" align="left" valign="top" width="21.36%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237120405_en-us_topic_0059778944_p37001047123019"><a name="en-us_topic_0237120405_en-us_topic_0059778944_p37001047123019"></a><a name="en-us_topic_0237120405_en-us_topic_0059778944_p37001047123019"></a>x86_64</p>
 </td>
@@ -40,6 +40,7 @@ openGauss supports ODBC 3.5 in the following environments.
 </tr>
 </tbody>
 </table>
+
 
 The ODBC Driver Manager running on UNIX or Linux can be unixODBC or iODBC. unixODBC-2.3.0 is used as the component for connecting the database.
 
