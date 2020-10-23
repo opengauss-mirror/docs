@@ -56,7 +56,7 @@
 
 -   **[CALL](call.md)**  
 
--   **[CHECKPOINT](checkpoint.md)**  
+-   **[CHECKPOINT](checkpoint-32.md)**  
 
 -   **[CLOSE](close.md)**  
 
@@ -228,7 +228,7 @@
 
 -   **[UPDATE](update.md)**  
 
--   **[VACUUM](vacuum.md)**  
+-   **[VACUUM](vacuum-33.md)**  
 
 -   **[VALUES](values.md)**  
 
