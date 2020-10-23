@@ -186,7 +186,7 @@ headless: true
 			-   [Development Process]({{< relref "./docs/Developerguide/development-process.md" >}})
 			-   [Loading the Driver]({{< relref "./docs/Developerguide/loading-the-driver.md" >}})
 			-   [Connecting to a Database]({{< relref "./docs/Developerguide/connecting-to-a-database-0.md" >}})
-			-   [Connecting to the Database \(Using SSL\)]({{< relref "./docs/Developerguide/connecting-to-the-database-(using-ssl).md" >}})
+			-   [Connecting to the Database \(Using SSL\)]({{< relref "./docs/Developerguide/connecting-to-the-database-using-ssl.md" >}})
 			-   [Running SQL Statements]({{< relref "./docs/Developerguide/running-sql-statements.md" >}})
 			-   [Processing Data in a Result Set]({{< relref "./docs/Developerguide/processing-data-in-a-result-set.md" >}})
 			-   [Closing a Connection]({{< relref "./docs/Developerguide/closing-a-connection.md" >}})
