@@ -77,9 +77,7 @@ Only the owner of the function or a system administrator has the permission to r
 
 -   **argtype**
 
-    Parameter type.
-
-    Value range: a valid type. For details, see  [Data Types](data-types.md).
+    Specifies the data type of a function parameter.
 
 -   **CALLED ON NULL INPUT**
 
