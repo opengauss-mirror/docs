@@ -82,7 +82,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
     	        WHERE sa.application_name &lt;&gt; 'JobScheduler';
     <span id="en-us_topic_0237121094_text644219223528"><a name="en-us_topic_0237121094_text644219223528"></a><a name="en-us_topic_0237121094_text644219223528"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a>SELECT COUNT(*) FROM DV_SESSIONS WHERE USERNAME='</strong><span id="en-us_topic_0237121094_text9326192718507"><a name="en-us_topic_0237121094_text9326192718507"></a><a name="en-us_topic_0237121094_text9326192718507"></a>omm</span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a>';</strong> 
     count
-    -------
+    \--------
     1
     (1 row)</pre>
     </td>
@@ -102,7 +102,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121094_en-us_topic_0059779140_aeab8618dcc114d1ea2f1ed255f200bf7"><a name="en-us_topic_0237121094_en-us_topic_0059779140_aeab8618dcc114d1ea2f1ed255f200bf7"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_aeab8618dcc114d1ea2f1ed255f200bf7"></a>Run the following commands to view the number of session connections that have been used by <strong id="b14336830182515"><a name="b14336830182515"></a><a name="b14336830182515"></a>postgres</strong>. <strong id="b683012316251"><a name="b683012316251"></a><a name="b683012316251"></a>1</strong> indicates the number of session connections that have been used by <strong id="b283153192517"><a name="b283153192517"></a><a name="b283153192517"></a>postgres</strong>.</p>
     <a name="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_s98d199bf39a949ad9e38a71d0b20488f"><span id="en-us_topic_0237121094_text11748243525"><a name="en-us_topic_0237121094_text11748243525"></a><a name="en-us_topic_0237121094_text11748243525"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a285d8f0b239c436d800f7f81f3c0b5b8"></a>SELECT COUNT(*) FROM PG_STAT_ACTIVITY WHERE DATNAME='postgres';</strong> 
     count
-    --------
+    \---------
     1
     (1 row)</pre>
     </td>
@@ -121,7 +121,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
     	        WHERE sa.application_name &lt;&gt; 'JobScheduler';
     <span id="en-us_topic_0237121094_text971592455219"><a name="en-us_topic_0237121094_text971592455219"></a><a name="en-us_topic_0237121094_text971592455219"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a>SELECT COUNT(*) FROM DV_SESSIONS;</strong> 
     count
-    -------
+    \--------
     10
     (1 row)
     </pre>
@@ -130,6 +130,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
         </tbody>
     </table>
     
-        
+    
+    ​    
 
 

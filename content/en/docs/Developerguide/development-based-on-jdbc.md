@@ -10,7 +10,7 @@ Java Database Connectivity \(JDBC\) is a Java API for running SQL statements. It
 
 -   **[Connecting to a Database](connecting-to-a-database-0.md)**  
 
--   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-(using-ssl).md)**  
+-   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-using-ssl.md)**  
 
 -   **[Running SQL Statements](running-sql-statements.md)**  
 

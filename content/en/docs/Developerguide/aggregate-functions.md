@@ -641,14 +641,13 @@
 
     Description: Returns the CHECKSUM value of all input values. This function can be used to check whether the data in the tables is the same before and after the backup, restoration, or migration of the openGauss database \(databases other than openGauss are not supported\). Before and after database backup, database restoration, or data migration, you need to manually run SQL commands to obtain the execution results. Compare the obtained execution results to check whether the data in the tables before and after the backup or migration is the same.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   For large tables, the execution of CHECKSUM function may take a long time.
-    >-   If the CHECKSUM values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the CHECKSUM function may incur conflicts. There is low possibility that two tables with different contents may have the same CHECKSUM value. The same problem may occur when CHECKSUM is used for columns.
-    >-   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the CHECKSUM value.
-
-    -   If the CHECKSUM value of a column is calculated and the column type can be changed to TEXT by default, set  _expression_  to the column name.
-    -   If the CHECKSUM value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.
-    -   If the CHECKSUM value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**  
+    -   For large tables, the execution of CHECKSUM function may take a long time.  
+    -   If the CHECKSUM values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the CHECKSUM function may incur conflicts. There is low possibility that two tables with different contents may have the same CHECKSUM value. The same problem may occur when CHECKSUM is used for columns.  
+    -   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the CHECKSUM value.  
+    -   If the CHECKSUM value of a column is calculated and the column type can be changed to TEXT by default, set  _expression_  to the column name.  
+    -   If the CHECKSUM value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.  
+    -   If the CHECKSUM value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.  
 
     The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
 

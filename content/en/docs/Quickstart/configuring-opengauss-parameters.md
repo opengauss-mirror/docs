@@ -45,13 +45,13 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
 
     When this parameter is set to  **ALL**, all the instances in the host are to be set.
 
-- **-D**:
+-   **-D**:
 
-  Specifies the openGauss instance path of the commands to be run. When the  **encrypt**  command is used, this parameter indicates the path for storing the generated password file.
+    Specifies the openGauss instance path of the commands to be run. When the  **encrypt**  command is used, this parameter indicates the path for storing the generated password file.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
-  >
-  >-   **-D**  cannot be used together with  **-I**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
+    >-   **-D**  cannot be used together with  **-I**.
 
 -   **-h **_host-auth-policy_:
 
@@ -140,7 +140,7 @@ The current default values for parameters in the openGauss configuration file \(
 
     When this parameter is set to  **ALL**, all the instances in the host are to be set.
 
-- **-D**:
+-   **-D**:
 
     Specifies the openGauss instance path of the commands to be run. When the  **encrypt**  command is used, this parameter indicates the path for storing the generated password file.
 

@@ -46,12 +46,12 @@ The tool directory provides sample datasets and demo code. For details about dep
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->If you want to train and predict at the same time, the tool provides the following quick startup command:  
->```  
->python src/main.py all [--train LOG_FILE] [--model MODEL_DIR] [--predict WORKLOAD_FILE] [--ratio RETRAIN_RATIO]   
->```  
->The meaning of each parameter is the same as that during execution.  
+![](public_sys-resources/icon-note.gif) **NOTE:**     
+If you want to train and predict at the same time, the tool provides the following quick startup command:    
+```    
+python src/main.py all [--train LOG_FILE] [--model MODEL_DIR] [--predict WORKLOAD_FILE] [--ratio RETRAIN_RATIO]     
+```    
+The meaning of each parameter is the same as that during execution.    
 
 ## Example<a name="section1835821733910"></a>
 
