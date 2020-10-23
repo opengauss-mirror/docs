@@ -491,6 +491,7 @@ headless: true
 					-   [网卡固件确认与更新]({{< relref "./docs/Developerguide/网卡固件确认与更新.md" >}})
 				-   [数据库服务端及客户端绑核]({{< relref "./docs/Developerguide/数据库服务端及客户端绑核.md" >}})
 			-   [测试TPCC性能]({{< relref "./docs/Developerguide/测试TPCC性能.md" >}})
+		-   [性能日志]({{< relref "./docs/Developerguide/性能日志.md" >}})
     -   [配置运行参数]({{< relref "./docs/Developerguide/配置运行参数.md" >}})
         -   [查看参数当前取值]({{< relref "./docs/Developerguide/查看参数当前取值.md" >}})
         -   [重设参数]({{< relref "./docs/Developerguide/重设参数.md" >}})
