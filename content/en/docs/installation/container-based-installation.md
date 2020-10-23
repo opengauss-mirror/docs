@@ -14,14 +14,14 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 
 ## Creating an openGauss Docker Image<a name="section159607494319"></a>
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
--   Before the installation, provide the openGauss binary installation package and place it in the  **dockerfiles/<version\>**  folder. You do not need to decompress the package. You can download the binary package from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html)  and ensure that the correct yum source is available. If you manually decompress the installation package, the execution will fail.  
--   If the container is in the CentOS environment, download the  **gosu-amd64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64](https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64)  and save it to the  **dockerfiles/<version\>**  folder.  
--   If the container is in the openEuler environment, download the  **gosu-arm64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64](https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64)  and save it to the  **dockerfiles/<version\>**  folder.  
--   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/SingleInstance/dockerfiles/1.0.1**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.  
-    ```
-    wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
-    ```
+![](public_sys-resources/icon-note.gif) **NOTE:**     
+-   Before the installation, provide the openGauss binary installation package and place it in the  **dockerfiles/<version\>**  folder. You do not need to decompress the package. You can download the binary package from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html)  and ensure that the correct yum source is available. If you manually decompress the installation package, the execution will fail.    
+-   If the container is in the CentOS environment, download the  **gosu-amd64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64](https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64)  and save it to the  **dockerfiles/<version\>**  folder.    
+-   If the container is in the openEuler environment, download the  **gosu-arm64**  file from  [https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64](https://github.com/tianon/gosu/releases/download/1.12/gosu-arm64)  and save it to the  **dockerfiles/<version\>**  folder.    
+-   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/SingleInstance/dockerfiles/1.0.1**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.    
+    ```  
+    wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo  
+    ```  
 
  Run the  **buildDockerImage.sh**  script in the  **dockerfiles**  folder.
 
