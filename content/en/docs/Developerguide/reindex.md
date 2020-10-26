@@ -9,8 +9,7 @@ There are several scenarios in which  **REINDEX**  can be used:
 -   An index has become corrupted, and no longer contains valid data.
 -   An index has become "bloated", that is, it contains many empty or nearly-empty pages.
 -   You have altered a storage parameter \(such as a fill factor\) for an index, and wish that the change takes full effect.
-
-    An index build with the  **CONCURRENTLY**  option failed, leaving an "invalid" index.
+-   An index build with the  **CONCURRENTLY**  option failed, leaving an "invalid" index.
 
 
 ## Precautions<a name="en-us_topic_0237122174_en-us_topic_0059777511_s871de483556241f0a3180925ed04ded3"></a>
@@ -130,10 +129,10 @@ postgres=# DROP TABLE tpcds.customer_t1;
 
 -   DATABASE
 
-    You are not advised to reindex a database in a transaction.
+    You can not  reindex a database in a transaction.
 
 -   SYSTEM
 
-    You are not advised to reindex system catalogs in transactions.
+    You can not reindex system catalogs in transactions.
 
 

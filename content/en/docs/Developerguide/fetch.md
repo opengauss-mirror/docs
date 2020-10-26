@@ -17,7 +17,7 @@ A cursor has an associated position, which is used by  **FETCH**. The cursor pos
 -   The forms  **NEXT**,  **PRIOR**,  **FIRST**,  **LAST**,  **ABSOLUTE**, and  **RELATIVE**  fetch a single row after moving the cursor appropriately. If there is no such row, an empty result is returned, and the cursor is left positioned before the first row \(backward fetch\) or after the last row \(forward fetch\) as appropriate.
 -   The forms using  **FORWARD**  and  **BACKWARD**  retrieve the indicated number of rows moving in the forward or backward direction, leaving the cursor positioned on the last-returned row or after \(backward fetch\)/before \(forward fetch\) all rows if the  **count**  exceeds the number of rows available.
 -   **RELATIVE 0**,  **FORWARD 0**, and  **BACKWARD 0**  all request fetching the current row without moving the cursor, that is, re-fetching the most recently fetched row. This will succeed unless the cursor is positioned before the first row or after the last row; in which case, no row is returned.
--   If the cursor of  **FETCH**  involves a column-store table, backward fetches like  **BACKWARD**,  **PRIOR**, and  **FIRST**  are not allowed.
+-   If the cursor of  **FETCH**  involves a column-store table, backward fetches like  **BACKWARD**,  **PRIOR** are not allowed.
 
 ## Syntax<a name="en-us_topic_0237122165_en-us_topic_0059778422_sccece13e07c346e8b7e89d726533f687"></a>
 
@@ -119,8 +119,8 @@ NEXT
 
         Value range: a possibly-signed integer
 
-        -   If  _count_  is positive,  _count_  prior rows will be fetched.
-        -   If  _count_  is a negative,  _count_  succeeding rows will be fetched.
+        -   If  _count_  is positive,  _count_  prior rows before the current associated position will be fetched.
+        -   If  _count_  is a negative,  _count_  succeeding rows before the current associated position will be fetched.
         -   **BACKWARD 0**  re-fetches the current row, if any.
 
     -   BACKWARD ALL

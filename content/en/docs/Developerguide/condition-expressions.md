@@ -196,7 +196,7 @@ Conditional expressions include the following types:
 
     ```
     postgres=# SELECT nvl(null,1);
-    NVL 
+    nvl 
     -----
      1
     (1 row)
