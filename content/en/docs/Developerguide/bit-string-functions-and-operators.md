@@ -19,7 +19,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >A column can have a maximum of 180 consecutive internal joins. A column with excessive joins will be split into joined consecutive strings.  
+    >A column do not suggest to have a more than 180 consecutive internal joins. A column with excessive joins will be split into joined consecutive strings.  
     >Example:  **str1||str2||str3||str4**  is split into  **\(str1||str2\)||\(str3||str4\)**.  
 
 -   &
