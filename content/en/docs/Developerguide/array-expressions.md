@@ -16,8 +16,7 @@ postgres=# SELECT 8000+500 IN (10000, 9000) AS RESULT;
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->If the expression result is null or the expression list does not meet the expression conditions and at least one empty value is returned for the expression list on the right, the result of  **IN**  is  **null**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return empty values.  
+If the expression result is null or the expression list does not meet the expression conditions and at least one empty value is returned for the expression list on the right, the result of  **IN**  is  **null**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return empty values.  
 
 ## NOT IN<a name="en-us_topic_0237122004_en-us_topic_0059778101_s29761a0d450d418989b3d9d3e4be3689"></a>
 
@@ -34,11 +33,11 @@ postgres=# SELECT 8000+500 NOT IN (10000, 9000) AS RESULT;
  t
 (1 row)
 ```
+If the query statement result is null or the expression list does not meet the expression conditions and at least one empty value is returned for the expression list on the right, the result of  **NOT IN**  is  **null**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return empty values. 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->If the query statement result is null or the expression list does not meet the expression conditions and at least one empty value is returned for the expression list on the right, the result of  **NOT IN**  is  **null**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return empty values.  
+>In all situations,  **X NOT IN Y**  equals to  **NOT\(X IN Y\)**.
 
-In all situations,  **X NOT IN Y**  equals to  **NOT\(X IN Y\)**.
 
 ## ANY/SOME \(array\)<a name="en-us_topic_0237122004_en-us_topic_0059778101_s676c00f7f73940bc93d996f3af4ed06e"></a>
 
@@ -67,11 +66,12 @@ The right-hand side is a parenthesized expression, which must yield an array val
 
 -   If at least one comparison result is true, the result of  **ANY**  is  **true**.
 -   If no comparison result is true, the result of ANY is false.
+-   If no comparison result is true and the array expression generates at least one null value, the value of ANY is NULL, rather than false. This method is consistent with the Boolean rules used when SQL statements return empty values.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->If no comparison result is true and the array expression generates at least one null value, the value of ANY is NULL, rather than false. This method is consistent with the Boolean rules used when SQL statements return empty values.  
+>  **SOME**  is a synonym of  **ANY**.
 
-**SOME**  is a synonym of  **ANY**.
+
 
 ## ALL \(array\)<a name="en-us_topic_0237122004_en-us_topic_0059778101_s5701e71e17c443b28c5f0c328acaf318"></a>
 
