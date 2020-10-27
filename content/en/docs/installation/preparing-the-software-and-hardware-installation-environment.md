@@ -310,9 +310,12 @@ ifconfig NIC ID mtu Value
 During the openGauss installation, the user  **root**  is required for remote login. This section describes how to set the user  **root**  for remote login.
 
 1.  Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**.
-    a.  Open the  **sshd\_config**  file.
-
-        vim /etc/ssh/sshd_config
+    
+a.  Open the  **sshd\_config**  file.
+    
+    ```
+    vim /etc/ssh/sshd_config
+    ```
     
     b.  Modify permissions of user  **root**  using either of the following methods:
     -   Comment out  **PermitRootLogin no**.
@@ -327,31 +330,36 @@ During the openGauss installation, the user  **root**  is required for remote lo
     
     c.  Run the  **:wq**  command to save the modification and exit.
     
-2.  Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
-    a.  Open the  **sshd\_config**  file.
+2. Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
 
-        vim /etc/ssh/sshd_config
-    
-    b.  Comment out the line where  **Banner**  is located.
+   a.  Open the  **sshd\_config**  file.
 
-        #Banner XXXX
+   ```
+   vim /etc/ssh/sshd_config
+   ```
 
-    c.  Run the  **:wq**  command to save the modification and exit.
-    
-3.  Run the following command to validate the settings:
+   b.  Comment out the line where  **Banner**  is located.
 
-    ```
-    service sshd restart
-    ```
+   ```
+   #Banner XXXX
+   ```
 
-    ![](public_sys-resources/icon-caution.gif) **CAUTION:**   
-    If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.  
+   c.  Run the  **:wq**  command to save the modification and exit.
 
-4.  Re-log in to the system as user  **root**.
+3. Run the following command to validate the settings:
 
-    ```
-    ssh xxx.xxx.xxx.xxx
-    ```
+   ```
+   service sshd restart
+   ```
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:**   
-    _xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.  
+   ![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+   If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.  
+
+4. Re-log in to the system as user  **root**.
+
+   ```
+   ssh xxx.xxx.xxx.xxx
+   ```
+
+   ![](public_sys-resources/icon-note.gif) **NOTE:**   
+   _xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.  
