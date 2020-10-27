@@ -111,9 +111,6 @@
     -   When this parameter is not specified, the secure interactive mode is used where you need to enter the password for man-machine interaction.
     -   If this parameter is specified, the non-interactive mode is used and man-machine interaction is not required.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >Password set in interactive mode cannot contain the following characters: ;'$
-
 -   -?, --help
 
     Displays help information.
