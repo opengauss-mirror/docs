@@ -83,7 +83,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
     取值范围：字符串。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >不能指定openGauss默认创建的环境变量。默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。
+    >本参数不能指定为openGauss默认创建的环境变量。否则，openGauss的环境变量将被覆盖。openGauss默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。
 
 -   --sep-env-file=ENVFILE
 
