@@ -2,6 +2,5 @@
 
 -   **[Logical Decoding](logical-decoding.md)**  
 
--   **[Replicating Data Using the Logical Replication Tool](replicating-data-using-the-logical-replication-tool.md)**  
 
 

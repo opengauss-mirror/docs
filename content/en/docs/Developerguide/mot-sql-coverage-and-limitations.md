@@ -166,10 +166,7 @@ The following lists the functionality limitations of MOT tables –
 ## Unsupported DMLs<a name="section2069095112407"></a>
 
 -   Merge into
--   Delete on conflict
--   Insert on conflict
 -   Select into
--   Update on conflict
 -   Update from
 -   Lock table
 -   Copy from table

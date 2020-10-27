@@ -30,9 +30,7 @@
 
     Specifies that the statement takes effect only for the current session. This parameter is used by default.
 
-    Value range: a string. It must comply with the naming convention rule.
-
--   **LOCALE**
+-   **LOCAL**
 
     Specifies that the specified statement takes effect only for the current transaction.
 

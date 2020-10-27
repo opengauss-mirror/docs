@@ -31,7 +31,7 @@ postgres=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 -- Change the owner of the directory.
 postgres=# ALTER DIRECTORY dir OWNER TO system;
 
--- Delete the foreign table.
+-- Delete the directory.
 postgres=# DROP DIRECTORY dir;
 ```
 
