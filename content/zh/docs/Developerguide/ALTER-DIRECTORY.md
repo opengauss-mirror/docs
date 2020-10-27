@@ -31,7 +31,7 @@ postgres=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 --修改目录的owner。
 postgres=# ALTER DIRECTORY dir OWNER TO system;
 
---删除外部表。
+--删除目录。
 postgres=# DROP DIRECTORY dir;
 ```
 
