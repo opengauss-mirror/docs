@@ -171,7 +171,6 @@ MOT功能限制：
 
 -   Merge into
 -   Select into
--   Update from
 -   Lock table
 -   Copy from table
 
