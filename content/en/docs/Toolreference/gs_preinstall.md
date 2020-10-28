@@ -82,7 +82,7 @@
     Value range: a string.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >You cannot specify the default environment variables created by openGauss. For details about the default environment variables, see  [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50).
+    >This parameter cannot be set to the environment variable created by openGauss by default. Otherwise, the environment variables of the openGauss will be overwritten. [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50) lists the environment variables created by openGauss by default. 
 
 -   --sep-env-file=ENVFILE
 

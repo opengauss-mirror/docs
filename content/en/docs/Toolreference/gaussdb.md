@@ -38,11 +38,6 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row1549762"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p29992205"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p29992205"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p29992205"></a>-A 1|0</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p3474972"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p3474972"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p3474972"></a>Enables run-time assertion checks, which is a debugging aid to detect programming mistakes.</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"><a name="en-us_topic_0237152404_en-us_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"></a>-</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row21908749"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p56666625"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p56666625"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p56666625"></a>-B NBUFFERS</p>
@@ -61,7 +56,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row43068867"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p60700683"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p60700683"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p60700683"></a>-c  NAME=VALUE</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a>Names a running parameter. <strong id="b11510113318202"><a name="b11510113318202"></a><a name="b11510113318202"></a>-c</strong> can appear multiple times to set multiple parameters.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a>Assigns a value to a running parameter. <strong id="b11510113318202"><a name="b11510113318202"></a><a name="b11510113318202"></a>-c</strong> can appear multiple times to set multiple parameters.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"><a name="en-us_topic_0237152404_en-us_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"></a>-</p>
 </td>
@@ -169,7 +164,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row34653585"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p55376440"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p55376440"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p55376440"></a>-S WORK-MEM</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a>Specifies the amount of memory to be used by internal sorts and hashes before resorting to temporary disk files.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a>Specifies the size of memory to be used by internal sorts and hashes before resorting to temporary disk files.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"><a name="en-us_topic_0237152404_en-us_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a>The unit is KB.</p>
 </td>
@@ -190,7 +185,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row9900497"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p14556567"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p14556567"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p14556567"></a>--NAME=VALUE</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a>Names a running parameter.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a>Assigns a value to a running parameter.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"><a name="en-us_topic_0237152404_en-us_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"></a>-</p>
 </td>
@@ -211,6 +206,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 </tbody>
 </table>
+
 
 Parameters described in  [Table 2](#en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_table56695537)  are used for debugging purposes, and in some cases for assisting in recovering severely damaged databases. Do not use these parameters for debugging if databases are providing services for applications.
 
@@ -309,7 +305,7 @@ Options listed in  [Table 3](#en-us_topic_0237152404_en-us_topic_0059777816_en-u
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row57770046"><td class="cellrowborder" valign="top" width="11.790000000000001%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p22600384"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p22600384"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p22600384"></a>DBNAME</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a>Specifies the name of the database to be accessed.</p>
+<td class="cellrowborder" valign="top" width="61.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a>Specifies the name of the database to be accessed.This must be the last argument on the command line.</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p551540668439"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p551540668439"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p551540668439"></a>A character string. The default value is the user name.</p>
 </td>
