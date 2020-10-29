@@ -66,7 +66,7 @@ Statistics information functions are divided into the following two categories: 
 
     Description: Total wall clock time \(in microseconds\) spent in the function in the current transaction, including the time spent on the function call.
 
-    Return type:
+    Return type:bigint
 
 -   pg\_stat\_get\_wal\_senders\(\)
 
