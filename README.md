@@ -1,6 +1,6 @@
 # docs
 
-
+简体中文 | [English](./README.md)
 
 ### 介绍
 
@@ -8,7 +8,7 @@
 
 ### 贡献
 
-我们非常欢迎您贡献文档！如果想要参与，请阅读[社区资料开发指导]([https://gitee.com/opengauss/docs/wikis/%E6%8B%89%E5%8F%96%E4%B8%AA%E4%BA%BA%E5%88%86%E6%94%AF?sort_id=2783599](https://gitee.com/opengauss/docs/wikis/拉取个人分支?sort_id=2783599))，务必遵守文档写作规范，并按照流程规则提交。审核通过后，修改会在文档工程和官网中呈现。
+我们非常欢迎您贡献文档！如果想要参与，请阅读[社区资料开发指导](https://gitee.com/opengauss/docs/wikis/%E6%8B%89%E5%8F%96%E4%B8%AA%E4%BA%BA%E5%88%86%E6%94%AF?sort_id=2783599)，务必遵守文档写作规范，并按照流程规则提交。审核通过后，修改会在文档工程和官网中呈现。
 
 同时，如果您对文档有任何意见或建议，请在Issues中提交。
 
