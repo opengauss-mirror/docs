@@ -30,9 +30,7 @@ The session identifier can be changed only when the initial session user has the
 
     Specifies that the specified parameters take effect for the current session.
 
-    Value range: a string. It must comply with the naming convention rule.
-
--   **LOCALE**
+-   **LOCAL**
 
     Specifies that the specified statement takes effect only for the current transaction.
 

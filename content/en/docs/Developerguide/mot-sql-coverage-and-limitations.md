@@ -167,7 +167,6 @@ The following lists the functionality limitations of MOT tables –
 
 -   Merge into
 -   Select into
--   Update from
 -   Lock table
 -   Copy from table
 

@@ -1146,12 +1146,6 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
--   pg\_stat\_get\_function\_time\(oid\)
-
-    Description: Total wall clock time spent in the function, in microseconds. Includes the time spent in functions called by this one.
-
-    Return type: bigint
-
 -   pg\_stat\_get\_function\_self\_time\(oid\)
 
     Description: Time spent in only this function. Time spent in called functions is excluded.

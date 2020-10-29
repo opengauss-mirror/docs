@@ -16,7 +16,7 @@ Row-level access control policies can be applied to a specified user \(role\) or
 
 ## Precautions<a name="en-us_topic_0237122109_section12765201893310"></a>
 
--   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, replication tables, unlogged tables, and hash tables.
+-   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, unlogged tables, and hash tables.
 -   Row-level access control policies cannot be defined for foreign tables and local temporary tables.
 -   Row-level access control policies cannot be defined for views.
 -   A maximum of 100 row-level access control policies can be defined for a table.

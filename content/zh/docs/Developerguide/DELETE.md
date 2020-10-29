@@ -7,7 +7,6 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 ## 注意事项<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
 
 -   要删除表中的数据，用户必须对它有DELETE权限。同样也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
--   对于行存复制表，仅支持有主键约束场景下的delete操作。
 -   对于列存表，暂时不支持RETURNING子句。
 
 ## 语法格式<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
