@@ -7,7 +7,6 @@
 ## Precautions<a name="en-us_topic_0237122131_en-us_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
 
 -   You must have the  **DELETE**  permission on the table to delete from it, as well as the  **SELECT**  permission for any table in the  **USING**  clause or whose values are read in the  **condition**.
--   For row-store tables, the  **DELETE**  operation can be used only when they have primary key constraints.
 -   For column-store tables, the  **RETURNING**  clause is currently not supported.
 
 ## Syntax<a name="en-us_topic_0237122131_en-us_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
