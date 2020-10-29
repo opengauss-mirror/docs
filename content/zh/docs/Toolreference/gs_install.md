@@ -48,8 +48,6 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 
     指定安装日志文件及日志文件存放的路径。
 
-    当既不明确指定-l，又不在XML文件中配置gaussdbLogPath时，默认值为“$GAUSSLOG/om/gs\_install-YYYY-MM-DD\_hhmmss.log”；
-
     当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为“gaussdbLogPath的值、用户名和om/gs\_install-YYYY-MM-DD\_hhmmss.log”的组合。
 
 -   --gsinit-parameter=PARAM

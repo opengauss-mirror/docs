@@ -96,14 +96,13 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     是否将xml配置文件中主机名与IP的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。
 
--   -l
+- -l
 
-    指定日志文件名及路径。在内部会自动给日志名添加一个时间戳。
+  指定日志文件名及路径。在内部会自动给日志名添加一个时间戳。
 
-    默认值：/var/log/gaussdb/用户名/om/gs\_preinstall.log
+  默认值：/var/log/gaussdb/用户名/om/gs\_preinstall.log
 
-    -   当既不明确指定-l，又不在XML文件中配置gaussdbLogPath时，默认值为“/var/log/gaussdb/用户名/om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log”。
-    -   当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为gaussdbLogPath的值、用户名和om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log的组合。
+  当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为gaussdbLogPath的值、用户名和om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log的组合。
 
 -   --non-interactive
 

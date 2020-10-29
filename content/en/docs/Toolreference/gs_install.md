@@ -47,8 +47,6 @@ Installation and deployment of openGauss require you to specify a configuration 
 
     Specifies a log file and its path.
 
-    When  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, the default value of the  **-l**  parameter is  **$GAUSSLOG/om/gs\_install-YYYY-MM-DD\_hhmmss.log**.
-
     When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is the combination value of  **gaussdbLogPath/**_User name_**/om/gs\_install-YYYY-MM-DD\_hhmmss.log**.
 
 -   --gsinit-parameter=PARAM

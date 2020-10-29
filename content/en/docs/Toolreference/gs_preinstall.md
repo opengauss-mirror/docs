@@ -95,14 +95,13 @@
 
     Specifies whether to write the mapping relationship between the host name and IP address of the XML configuration file to the  **/etc/hosts**  file. By default, the relationship is written to the file. If this parameter is specified, the relationship is not written to the file.
 
--   -l
+- -l
 
-    Specifies a log file name and its path. A timestamp will be added automatically to the log file name.
+  Specifies a log file name and its path. A timestamp will be added automatically to the log file name.
 
-    Default value:  **/var/log/gaussdb****/**_user name_**/om/gs\_preinstall.log**
+  Default value:  **/var/log/gaussdb/_user name_/om/gs\_preinstall.log**
 
-    -   If  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, use the default value, which is  **/var/log/gaussdb**_user name_**/om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log**.
-    -   When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is a combination of  **gaussdbLogPath**  value, the user name, and  **om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log**.
+  When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is a combination of  **gaussdbLogPath**  value, the user name, and  **om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log**.
 
 -   --non-interactive
 

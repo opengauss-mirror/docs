@@ -35,16 +35,6 @@ gs\_uninstall, provided by , can be used to uninstall a cluster.
 
     Uninstalls the local host only. If a host in the cluster is uninstalled, the cluster cannot undergo full uninstallation.
 
--   -l
-
-    Specifies a log file name and an accessible absolute path. A timestamp will be added automatically to the log file name.
-
-    -   When -l is not specified, and gaussdbLogPath is not set in the XML file, the default value of the -l parameter is $GAUSSLOG/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log.
-    -   If -l is not specified and gaussdbLogPath is set in the XML file, the default value of the -l parameter is gaussdbLogPath/Username/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log.
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >When executing gs\_uninstall, the system will automatically delete the directories related to the cluster. You are advised to set the log file path to a path outside the  database cluster.
-
 -   -?, --help
 
     Displays help information.
