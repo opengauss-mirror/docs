@@ -1,4 +1,4 @@
-# Database Object Functions<a name="EN-US_TOPIC_0242370458"></a>
+# Database Object Functions<a name="EN-US_TOPIC_0283137585"></a>
 
 ## Database Object Size Functions<a name="en-us_topic_0237121994_en-us_topic_0059778344_s68d3a043cae24a8ab0446b5c58c024f6"></a>
 
@@ -34,7 +34,7 @@ Database object size functions calculate the actual disk space used by database 
 
     Note:  **pg\_database\_size**  receives the OID or name of a database and returns the disk space used by the corresponding object.
 
-    For example:
+    Example:
 
     ```
     postgres=# SELECT pg_database_size('postgres');
@@ -58,7 +58,7 @@ Database object size functions calculate the actual disk space used by database 
 
     Note: \(1\)  **ANALYZE**  must be performed before this function is called. \(2\) Calculate the total size of non-compressed data by estimating the compression rate of column-store tables.
 
-    For example:
+    Example:
 
     ```
     postgres=# analyze;
@@ -184,7 +184,7 @@ Database object size functions calculate the actual disk space used by database 
 
     Note:  **datalength**  is used to calculate the space of an independent data value.
 
-    For example:
+    Example:
 
     ```
     postgres=# SELECT datalength(1);
@@ -450,5 +450,23 @@ Database object size functions calculate the actual disk space used by database 
     Return type: text
 
     Description:  **pg\_relation\_filepath**  is similar to  **pg\_relation\_filenode**, except that  **pg\_relation\_filepath**  returns the whole file path name for the relationship \(relative to the data directory  **PGDATA**  of openGauss\).
+
+-   pg\_filenode\_relation\(tablespace oid, filenode oid\)
+
+    Description: Obtains the table names corresponding to the tablespace and relfilenode.
+
+    Return type: regclass
+
+-   pg\_partition\_filenode\(partition\_oid\)
+
+    Description: Obtains the filenode corresponding to the OID lock of a specified partitioned table.
+
+    Return type: oid
+
+-   pg\_partition\_filepath\(partition\_oid\)
+
+    Description: Specifies the file path name of a partition.
+
+    Return type: text
 
 

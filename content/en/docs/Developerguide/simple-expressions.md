@@ -1,12 +1,12 @@
-# Simple Expressions<a name="EN-US_TOPIC_0242370465"></a>
+# Simple Expressions<a name="EN-US_TOPIC_0283137643"></a>
 
 ## Logical Expressions<a name="en-us_topic_0237122001_en-us_topic_0059778068_s3998c0a95e73437db8ea894c6eecb3f2"></a>
 
-[Logical Operators](en-us_topic_0242370429.md)  lists the operators and calculation rules of logical expressions.
+[Logical Operators](en-us_topic_0283137740.md)  lists the operators and calculation rules of logical expressions.
 
 ## Comparative Expressions<a name="en-us_topic_0237122001_en-us_topic_0059778068_s1b8089e350ba466f9baafc8c95e678ce"></a>
 
-[Operators](en-us_topic_0242370472.md)  lists the common comparative operators.
+[Operators](en-us_topic_0283137550.md)  lists the common comparative operators.
 
 In addition to comparative operators, you can also use the following sentence structure:
 
@@ -30,6 +30,25 @@ In addition to comparative operators, you can also use the following sentence st
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >Do not write  **expression=NULL**  or  **expression<\>\(!=\)NULL**, because  **NULL**  represents an unknown value, and these expressions cannot determine whether two unknown values are equal.
+
+
+-   is distinct from/is not distinct from
+    -   is distinct from
+
+        If the data types and values of A and B are different, the value is  **true**.
+
+        If the data types and values of A and B are the same, the value is  **false**.
+
+        Empty values are considered the same.
+
+    -   is not distinct from
+
+        If the data types and values of A and B are different, the value is  **false**.
+
+        If the data types and values of A and B are the same, the value is  **true**.
+
+        Empty values are considered the same.
+
 
 
 ## Pseudocolumn<a name="section104921036122717"></a>
