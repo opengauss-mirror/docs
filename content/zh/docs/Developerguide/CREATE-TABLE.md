@@ -203,13 +203,13 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
 
-        取值范围：10000\~60000
+        取值范围：10000\~60000，默认60000。
 
     -   PARTIAL\_CLUSTER\_ROWS
 
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
 
-        取值范围：600000\~2147483647
+        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
 
     -   DELTAROW\_THRESHOLD
 
