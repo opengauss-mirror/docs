@@ -137,7 +137,7 @@ STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME视图显示和当前用户执行作业正�
 </td>
 <td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a85e90919e2c14bfda686b399a410a8ef"><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a85e90919e2c14bfda686b399a410a8ef"></a><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a85e90919e2c14bfda686b399a410a8ef"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><p id="p1425462718390"><a name="p1425462718390"></a><a name="p1425462718390"></a>该字段不支持</p>
+<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><p id="p1425462718390"><a name="p1425462718390"></a><a name="p1425462718390"></a>该字段不支持。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_r470f6d37daaf4961822cf6bdd6af2f00"><td class="cellrowborder" valign="top" width="29.84%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_ab30701e5eb7b48f694ebe8d9b1a9a620"><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_ab30701e5eb7b48f694ebe8d9b1a9a620"></a><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_ab30701e5eb7b48f694ebe8d9b1a9a620"></a>enqueue</p>

@@ -1,6 +1,6 @@
 # User-defined Function Supporting Autonomous Transaction<a name="EN-US_TOPIC_0274616605"></a>
 
-An autonomous transaction can be defined in a function. The identifier is  **PRAGMA AUTONOMOUS\_TRANSACTION**. The function block to be executed uses SQL statements that contain  **START TRANSACTION**  and  **COMMIT**/**ROLLBACK**. Other syntax is similar to that of  [CREATE FUNCTION](en-us_topic_0242370568.md). A simple example is as follows:
+An autonomous transaction can be defined in a function. The identifier is  **PRAGMA AUTONOMOUS\_TRANSACTION**. The function block to be executed uses SQL statements that contain  **START TRANSACTION**  and  **COMMIT**/**ROLLBACK**. Other syntax is similar to that of  [CREATE FUNCTION](create-function.md). A simple example is as follows:
 
 ```
 -- Create a table.

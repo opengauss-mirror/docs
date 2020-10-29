@@ -59,14 +59,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p88271415966"><a name="en-us_topic_0237122664_p88271415966"></a><a name="en-us_topic_0237122664_p88271415966"></a>inet</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p10827121511613"><a name="en-us_topic_0237122664_p10827121511613"></a><a name="en-us_topic_0237122664_p10827121511613"></a>IP address of the client connected to the backend. If this column is null, it indicates either the client is connected via a Unix socket on the server or this is an internal process, such as autovacuum.</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p10827121511613"><a name="en-us_topic_0237122664_p10827121511613"></a><a name="en-us_topic_0237122664_p10827121511613"></a>IP address of the client connected to the backend. If this column is null, it indicates either the client is connected via a Unix socket on the server or this is an internal process, such as autovacuum</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122664_row17561419164719"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122664_p28277151166"><a name="en-us_topic_0237122664_p28277151166"></a><a name="en-us_topic_0237122664_p28277151166"></a>client_hostname</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p18271615169"><a name="en-us_topic_0237122664_p18271615169"></a><a name="en-us_topic_0237122664_p18271615169"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p19827101512614"><a name="en-us_topic_0237122664_p19827101512614"></a><a name="en-us_topic_0237122664_p19827101512614"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b9679525131813"><a name="b9679525131813"></a><a name="b9679525131813"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b57212265188"><a name="b57212265188"></a><a name="b57212265188"></a>log_hostname</strong> is enabled.</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p19827101512614"><a name="en-us_topic_0237122664_p19827101512614"></a><a name="en-us_topic_0237122664_p19827101512614"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b9679525131813"><a name="b9679525131813"></a><a name="b9679525131813"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b57212265188"><a name="b57212265188"></a><a name="b57212265188"></a>log_hostname</strong> is enabled</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122664_row256119114713"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122664_p158288150611"><a name="en-us_topic_0237122664_p158288150611"></a><a name="en-us_topic_0237122664_p158288150611"></a>client_port</p>
@@ -80,7 +80,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p982811156614"><a name="en-us_topic_0237122664_p982811156614"></a><a name="en-us_topic_0237122664_p982811156614"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p58281815765"><a name="en-us_topic_0237122664_p58281815765"></a><a name="en-us_topic_0237122664_p58281815765"></a>Job type, which is specified by the GUC parameter <strong id="b137173219184"><a name="b137173219184"></a><a name="b137173219184"></a>query_band</strong>. The default value is a null string.</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p58281815765"><a name="en-us_topic_0237122664_p58281815765"></a><a name="en-us_topic_0237122664_p58281815765"></a>Job type, which is specified by the GUC parameter <strong id="b137173219184"><a name="b137173219184"></a><a name="b137173219184"></a>query_band</strong>. The default value is a null string</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122664_row854151911475"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122664_p882811158619"><a name="en-us_topic_0237122664_p882811158619"></a><a name="en-us_topic_0237122664_p882811158619"></a>pid</p>
@@ -150,7 +150,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p1437124414481"><a name="en-us_topic_0237122664_p1437124414481"></a><a name="en-us_topic_0237122664_p1437124414481"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p2038719505436"><a name="en-us_topic_0237122664_p2038719505436"></a><a name="en-us_topic_0237122664_p2038719505436"></a>Estimated memory used by the statement (unit: MB).</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p2038719505436"><a name="en-us_topic_0237122664_p2038719505436"></a><a name="en-us_topic_0237122664_p2038719505436"></a>Estimated memory used by the statement (unit: MB)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122664_row95091994717"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122664_p58301015569"><a name="en-us_topic_0237122664_p58301015569"></a><a name="en-us_topic_0237122664_p58301015569"></a>min_peak_memory</p>
@@ -185,7 +185,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p16831215669"><a name="en-us_topic_0237122664_p16831215669"></a><a name="en-us_topic_0237122664_p16831215669"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><div class="p" id="en-us_topic_0237122664_p8831191516616"><a name="en-us_topic_0237122664_p8831191516616"></a><a name="en-us_topic_0237122664_p8831191516616"></a>Information about statement spill to the database nodes<a name="en-us_topic_0237122664_ul434112427577"></a><a name="en-us_topic_0237122664_ul434112427577"></a><ul id="en-us_topic_0237122664_ul434112427577"><li><strong id="b6711554769"><a name="b6711554769"></a><a name="b6711554769"></a>None</strong>: The statement has not been spilled to disks on the database nodes.</li><li><strong id="b162386581960"><a name="b162386581960"></a><a name="b162386581960"></a>All</strong>: The statement has been spilled to disks on the database nodes.</li><li><em id="i16242011712"><a name="i16242011712"></a><a name="i16242011712"></a>[a:b]</em>: The statement has been spilled to disks on <em id="i1862418118710"><a name="i1862418118710"></a><a name="i1862418118710"></a>a</em> of <em id="i17625101973"><a name="i17625101973"></a><a name="i17625101973"></a>b</em> database nodes.</li></ul>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><div class="p" id="en-us_topic_0237122664_p8831191516616"><a name="en-us_topic_0237122664_p8831191516616"></a><a name="en-us_topic_0237122664_p8831191516616"></a>Information about statement spill to the database nodes<a name="en-us_topic_0237122664_ul434112427577"></a><a name="en-us_topic_0237122664_ul434112427577"></a><ul id="en-us_topic_0237122664_ul434112427577"><li><strong id="b6711554769"><a name="b6711554769"></a><a name="b6711554769"></a>None</strong>: The statement has not been spilled to disks on the database nodes.</li><li><strong id="b162386581960"><a name="b162386581960"></a><a name="b162386581960"></a>All</strong>: The statement has been spilled to disks on the database nodes.</li><li><em id="i16242011712"><a name="i16242011712"></a><a name="i16242011712"></a>[a:b]</em>: The statement has been spilled to disks on <em id="i1862418118710"><a name="i1862418118710"></a><a name="i1862418118710"></a>a</em> of <em id="i17625101973"><a name="i17625101973"></a><a name="i17625101973"></a>b</em> database nodes</li></ul>
 </div>
 </td>
 </tr>
@@ -277,21 +277,21 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p1062113812524"><a name="en-us_topic_0237122664_p1062113812524"></a><a name="en-us_topic_0237122664_p1062113812524"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p96211389521"><a name="en-us_topic_0237122664_p96211389521"></a><a name="en-us_topic_0237122664_p96211389521"></a>Minimum IOPS peak of the statement across the database nodes. It is counted by ones in a column-store table and by ten thousands in a row-store table.</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p96211389521"><a name="en-us_topic_0237122664_p96211389521"></a><a name="en-us_topic_0237122664_p96211389521"></a>Minimum IOPS peak of the statement across the database nodes. It is counted by ones in a column-store table and by ten thousands in a row-store table</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122664_row518319212523"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122664_p66343810522"><a name="en-us_topic_0237122664_p66343810522"></a><a name="en-us_topic_0237122664_p66343810522"></a>max_peak_iops</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p196353816526"><a name="en-us_topic_0237122664_p196353816526"></a><a name="en-us_topic_0237122664_p196353816526"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p1963153845212"><a name="en-us_topic_0237122664_p1963153845212"></a><a name="en-us_topic_0237122664_p1963153845212"></a>Maximum IOPS peak of the statement across the database nodes. It is counted by ones in a column-store table and by ten thousands in a row-store table.</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p1963153845212"><a name="en-us_topic_0237122664_p1963153845212"></a><a name="en-us_topic_0237122664_p1963153845212"></a>Maximum IOPS peak of the statement across the database nodes. It is counted by ones in a column-store table and by ten thousands in a row-store table</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122664_row19456325165215"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122664_p1763838175213"><a name="en-us_topic_0237122664_p1763838175213"></a><a name="en-us_topic_0237122664_p1763838175213"></a>average_peak_iops</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122664_p26319381526"><a name="en-us_topic_0237122664_p26319381526"></a><a name="en-us_topic_0237122664_p26319381526"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p106316389520"><a name="en-us_topic_0237122664_p106316389520"></a><a name="en-us_topic_0237122664_p106316389520"></a>Average IOPS peak of the statement across the database nodes. It is counted by ones in a column-store table and by ten thousands in a row-store table.</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122664_p106316389520"><a name="en-us_topic_0237122664_p106316389520"></a><a name="en-us_topic_0237122664_p106316389520"></a>Average IOPS peak of the statement across the database nodes. It is counted by ones in a column-store table and by ten thousands in a row-store table</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122664_row221630165216"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122664_p1063143815214"><a name="en-us_topic_0237122664_p1063143815214"></a><a name="en-us_topic_0237122664_p1063143815214"></a>iops_skew_percent</p>
@@ -353,4 +353,5 @@
 </tr>
 </tbody>
 </table>
+
 
