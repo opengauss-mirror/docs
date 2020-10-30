@@ -30,9 +30,9 @@ DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     其中with\_query的详细格式为：
     ```
 
-    with\_query\_name \[ \( column\_name \[, ...\] \) \] AS
+    with_query_name [ ( column_name [, ...] ) ] AS
 
-    \( \{select | values | insert | update | delete\} \)
+    ( {select | values | insert | update | delete} )
 
     ```
 
