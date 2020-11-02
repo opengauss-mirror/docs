@@ -12,7 +12,6 @@ headless: true
     -   [源代码]({{< relref "./docs/Releasenotes/源代码.md" >}})
     -   [参与贡献]({{< relref "./docs/Releasenotes/参与贡献.md" >}})
     -   [致谢]({{< relref "./docs/Releasenotes/致谢.md" >}})
-    
 -   [产品描述]({{< relref "./docs/Description/Description.md" >}})
     -   [产品定位]({{< relref "./docs/Description/产品定位.md" >}})
 	-   [系统架构]({{< relref "./docs/Description/系统架构.md" >}})
@@ -21,7 +20,6 @@ headless: true
 	-   [技术指标]({{< relref "./docs/Description/技术指标.md" >}})
 	-   [基本功能和特性]({{< relref "./docs/Description/基本功能和特性.md" >}})
 	-   [企业级增强特性]({{< relref "./docs/Description/企业级增强特性.md" >}})	
-
 -   [技术白皮书]({{< relref "./docs/Technicalwhitepaper/Technicalwhitepaper.md" >}})
 	-   [产品定位]({{< relref "./docs/Technicalwhitepaper/产品定位.md" >}})
 	-   [应用场景]({{< relref "./docs/Technicalwhitepaper/应用场景.md" >}})
@@ -33,12 +31,10 @@ headless: true
 	-   [数据库核心技术]({{< relref "./docs/Technicalwhitepaper/数据库核心技术.md" >}})
 	-   [技术指标]({{< relref "./docs/Technicalwhitepaper/技术指标.md" >}})
 	-   [术语表]({{< relref "./docs/Glossary/Glossary.md" >}})
-
 -   [编译指导书]({{< relref "./docs/Compilationguide/Compilation.md" >}})
     -   [搭建编译环境]({{< relref "./docs/Compilationguide/搭建编译环境.md" >}})
     -   [版本编译]({{< relref "./docs/Compilationguide/版本编译.md" >}})
     -   [FAQ]({{< relref "./docs/Compilationguide/FAQ.md" >}})
-
 - [快速入门]({{< relref "./docs/Quickstart/Quickstart.md" >}})
     -   [了解产品]({{< relref "./docs/Quickstart/了解产品.md" >}})
 	-   [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
@@ -123,7 +119,6 @@ headless: true
         -   [Query]({{< relref "./docs/Developerguide/Query-22.md" >}})
         -   [系统性能快照]({{< relref "./docs/Developerguide/系统性能快照.md" >}})
 	-   [FAQ]({{< relref "./docs/Quickstart/FAQ.md" >}})
-
 -   [安装指南]({{< relref "./docs/Installation/Installation.md" >}})
    -   [安装概述]({{< relref "./docs/Installation/安装概述.md" >}})
 	-   [安装准备]({{< relref "./docs/Installation/安装准备.md" >}})
@@ -140,7 +135,6 @@ headless: true
 	-   [安装验证]({{< relref "./docs/Installation/安装验证.md" >}})
 	-   [容器安装]({{< relref "./docs/Installation/容器安装.md" >}})
 	-   [卸载openGauss]({{< relref "./docs/Installation/卸载openGauss.md" >}})
-
 -   [管理员指南]({{< relref "./docs/Administratorguide/Administratorguide.md" >}})
     -   [启停openGauss]({{< relref "./docs/Administratorguide/启停openGauss.md" >}})
     -   [状态查询]({{< relref "./docs/Administratorguide/状态查询.md" >}})
@@ -150,7 +144,6 @@ headless: true
     -   [备份与恢复]({{< relref "./docs/Administratorguide/备份与恢复.md" >}})
     -   [高危操作一览表]({{< relref "./docs/Administratorguide/高危操作一览表.md" >}})
     -   [日志参考]({{< relref "./docs/Administratorguide/日志参考.md" >}})
-
 -   [开发者指南]({{< relref "./docs/Developerguide/Developerguide.md" >}})
     -   [概述]({{< relref "./docs/Developerguide/概述.md" >}})
         -   [数据库逻辑结构图]({{< relref "./docs/Developerguide/数据库逻辑结构图.md" >}})
@@ -1217,7 +1210,6 @@ headless: true
         -   [TPCC运行时，注入磁盘满故障，TPCC卡住的问题]({{< relref "./docs/Developerguide/TPCC运行时-注入磁盘满故障-TPCC卡住的问题.md" >}})
         -   [备机处于need repair\(WAL\)状态问题]({{< relref "./docs/Developerguide/备机处于need-repair(WAL)状态问题.md" >}})
         -   [内存不足问题]({{< relref "./docs/Developerguide/内存不足问题.md" >}})
-   
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/Toolreference/客户端工具.md" >}})
@@ -1259,5 +1251,5 @@ headless: true
         -   [pg\_resetxlog]({{< relref "./docs/Toolreference/pg_resetxlog.md" >}})
     -   [FAQ]({{< relref "./docs/Toolreference/FAQ.md" >}})
     -   [gs\_collector工具支持收集的系统表和视图列表]({{< relref "./docs/Toolreference/gs_collector工具支持收集的系统表和视图列表.md" >}})
-
+-   [FAQ]({{< relref "./docs/FAQ/FAQ.md" >}})
 -   [术语表]({{< relref "./docs/Glossary/Glossary.md" >}})
