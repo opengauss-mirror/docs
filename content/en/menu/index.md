@@ -1217,7 +1217,7 @@ headless: true
 			-   [Core Dump Occurs due to Full Disk Space]({{< relref "./docs/Developerguide/core-dump-occurs-due-to-full-disk-space.md" >}})
 			-   [Core Dump Occurs Due to Incorrect Settings of GUC Parameter log\_directory]({{< relref "./docs/Developerguide/core-dump-occurs-due-to-incorrect-settings-of-guc-parameter-log_directory.md" >}})
 		-   [When the TPC-C is running and a disk to be injected is full, the TPC-C stops responding.]({{< relref "./docs/Developerguide/when-the-tpc-c-is-running-and-a-disk-to-be-injected-is-full-the-tpc-c-stops-responding.md" >}})
-		-   [Standby Node in the Need Repair \(WAL\) State]({{< relref "./docs/Developerguide/standby-node-in-the-need-repair-(wal)-state.md" >}})
+		-   [Standby Node in the Need Repair \(WAL\) State]({{< relref "./docs/Developerguide/standby-node-in-the-need-repair-wal-state.md" >}})
 	
 -   [Tool Reference]({{< relref "./docs/Toolreference/Toolreference.md" >}})
 	-   [Tool Overview]({{< relref "./docs/Toolreference/tool-overview.md" >}})
