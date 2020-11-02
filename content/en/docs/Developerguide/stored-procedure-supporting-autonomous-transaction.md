@@ -1,6 +1,6 @@
 # Stored Procedure Supporting Autonomous Transaction<a name="EN-US_TOPIC_0274616606"></a>
 
-The stored procedure supports an autonomous transaction. The identifier is  **PRAGMA AUTONOMOUS\_TRANSACTION**. The function block to be executed uses SQL statements that contain  **START TRANSACTION**  and  **COMMIT**/**ROLLBACK**. Other syntax is similar to that of  [CREATE PROCEDURE](create-procedure.md). A simple example is as follows:
+The stored procedure supports an autonomous transaction. The identifier is  **PRAGMA AUTONOMOUS\_TRANSACTION**. The function block to be executed uses SQL statements that contain  **START TRANSACTION**  and  **COMMIT**/**ROLLBACK**. Other syntax is similar to that of  [CREATE PROCEDURE](CREATE-PROCEDURE.md). A simple example is as follows:
 
 ```
 -- Create a table.

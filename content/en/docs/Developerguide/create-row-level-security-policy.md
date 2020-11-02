@@ -216,5 +216,5 @@ postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
 
 ## Helpful Links<a name="en-us_topic_0237122109_section1426016489355"></a>
 
-[DROP ROW LEVEL SECURITY POLICY](en-us_topic_0283136715.md),  [ALTER ROW LEVEL SECURITY POLICY](en-us_topic_0283137062.md)
+[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md),  [ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)
 

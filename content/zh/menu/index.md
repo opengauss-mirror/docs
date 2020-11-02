@@ -1208,7 +1208,7 @@ headless: true
             -   [GUC参数log\_directory设置不正确引起的core问题]({{< relref "./docs/Developerguide/GUC参数log_directory设置不正确引起的core问题.md" >}})
             -   [开启RemoveIPC引起的core问题]({{< relref "./docs/Developerguide/开启RemoveIPC引起的core问题.md" >}})
         -   [TPCC运行时，注入磁盘满故障，TPCC卡住的问题]({{< relref "./docs/Developerguide/TPCC运行时-注入磁盘满故障-TPCC卡住的问题.md" >}})
-        -   [备机处于need repair\(WAL\)状态问题]({{< relref "./docs/Developerguide/备机处于need-repair(WAL)状态问题.md" >}})
+        -   [备机处于need repair\(WAL\)状态问题]({{< relref "./docs/Developerguide/备机处于need-repair_WAL_状态问题.md" >}})
         -   [内存不足问题]({{< relref "./docs/Developerguide/内存不足问题.md" >}})
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
