@@ -488,6 +488,7 @@ Use the  **gsql**  command to connect to the remote database service. When conne
     CREATE DATABASE human_staff;
     ```
     
+
 Ordinarily, input lines end when a command-terminating semicolon is reached. If the command is sent and executed without any error, the command output is displayed on the screen.
     
 3.  Execute gsql meta-commands.
@@ -1635,8 +1636,6 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 <p id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p3741605"><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p3741605"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p3741605"></a>\dv[S+]   [PATTERN]</p>
 </td>
 <td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p52895139"><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p52895139"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p52895139"></a>In this group of commands, the letters E, i, s, t, and v stand for a foreign table, index, sequence, table, or view, respectively. You can specify any or a combination of these letters sequenced in any order to obtain an object list. For example, <strong id="b52803505283"><a name="b52803505283"></a><a name="b52803505283"></a>\dit</strong> lists all indexes and tables. If a command is suffixed with a plus sign (+), physical dimensions and related descriptions of each object will be displayed.</p>
-<div class="note" id="en-us_topic_0237152146_en-us_topic_0059778645_n19db772cde60433580ee61321eeb55ef"><a name="en-us_topic_0237152146_en-us_topic_0059778645_n19db772cde60433580ee61321eeb55ef"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_n19db772cde60433580ee61321eeb55ef"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0237152146_en-us_topic_0059778645_a15c5aa7792a142ea824b62e3b9a1f57a"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a15c5aa7792a142ea824b62e3b9a1f57a"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a15c5aa7792a142ea824b62e3b9a1f57a"></a>This version does not support sequences.</p>
-</div></div>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_acd8b42e04867433eab54a00aa5b15adc"><a name="en-us_topic_0237152146_en-us_topic_0059778645_acd8b42e04867433eab54a00aa5b15adc"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_acd8b42e04867433eab54a00aa5b15adc"></a>If <strong id="b257617258292"><a name="b257617258292"></a><a name="b257617258292"></a>PATTERN</strong> is specified, only objects whose names match <strong id="b1357616257292"><a name="b1357616257292"></a><a name="b1357616257292"></a>PATTERN</strong> are displayed. By default, only objects you created are displayed. You can specify <strong id="b3815842102917"><a name="b3815842102917"></a><a name="b3815842102917"></a>PATTERN</strong> or <strong id="b138155428295"><a name="b138155428295"></a><a name="b138155428295"></a>S</strong> to view other system objects.</p>
 </td>
