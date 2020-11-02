@@ -192,10 +192,6 @@ gs_restore [OPTION]... FILE
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
 
-    ![](public_sys-resources/icon-notice.gif) **须知：** 
-
-    -t不支持schema\_name.table\_name的输入格式。
-
 -   -T, --trigger=NAME
 
     该参数为扩展预留接口。
@@ -247,7 +243,7 @@ gs_restore [OPTION]... FILE
 
     应该输入转储时所输入的相同的key。
 
-    转储格式为c或t时，转储内容已被处理，因此转储格式为c或t是输入不受加密限制。
+    转储格式为c或t时，转储内容已被处理，因此转储格式为c或t时输入不受加密限制。
 
 
 ![](public_sys-resources/icon-notice.gif) **须知：** 

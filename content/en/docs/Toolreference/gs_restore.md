@@ -194,10 +194,6 @@ Parameters for importing data
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
 
-    ![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-
-    **-t**  does not support the  **schema\_name.table\_name**  input format.
-
 -   -T, --trigger=NAME
 
     This parameter is reserved for extension.
