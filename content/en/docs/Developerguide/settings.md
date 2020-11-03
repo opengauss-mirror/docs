@@ -64,12 +64,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **local**  indicates local commit.
 -   **remote\_write**  indicates that synchronization logs of a standby server are written to disk.
 -   **remote\_receive**  indicates that the standby server receives logs.
+-   **remote\_apply** indicates that the synchronization log playback of the standby server is complete.
 -   **true**  indicates that flush the synchronization log of the standby machine to disk.
 -   **false**  indicates that asynchronous submission.
 -   **yes**  indicates that flush the synchronization log of the standby machine to disk.
 -   **no** indicates that asynchronous submission.
 -   **1**  indicates that flush the synchronization log of the standby machine to disk.
 -   **0**  indicates that asynchronous submission.
+-   **2** means that the synchronization log playback of the standby machine is complete.
 
 **Default value**:  **off**
 
