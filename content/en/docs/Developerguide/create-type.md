@@ -22,7 +22,7 @@ The following data types can be created: composite type, base type, shell type, 
 
 -   Enumerated type
 
-    An enumerated type is a list of one or more quoted labels, each of which must be 1 to 64 bytes long.
+    An enumerated type is a list of one or more quoted labels, each of which must be 1 to 63 bytes long.
 
 
 ## Precautions<a name="en-us_topic_0237122124_en-us_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
