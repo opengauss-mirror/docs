@@ -172,16 +172,6 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **–1**
 
-## twophase\_clean\_workers<a name="en-us_topic_0237124730_section2227161819301"></a>
-
-**Parameter description**: Specifies the maximum number of concurrent cleanup operations that can be performed by the gs\_clean tool.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
-
-**Value range**: an integer ranging from 1 to 10
-
-**Default value**:  **3**
-
 ## defer\_csn\_cleanup\_time<a name="en-us_topic_0237124730_section355033134211"></a>
 
 **Parameter description**: Specifies the interval of recycling transaction IDs.
