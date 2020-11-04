@@ -306,7 +306,7 @@ headless: true
 				-   [PQgetCancel]({{< relref "./docs/Developerguide/pqgetcancel.md" >}})
 				-   [PQfreeCancel]({{< relref "./docs/Developerguide/pqfreecancel.md" >}})
 				-   [PQcancel]({{< relref "./docs/Developerguide/pqcancel.md" >}})
-			-   [Example]({{< relref "./docs/Developerguide/example-3.md" >}})
+			-   [Example]({{< relref "./docs/Developerguide/example-20.md" >}})
 			-   [Connection Characters]({{< relref "./docs/Developerguide/connection-characters.md" >}})
 	-   [Importing Data]({{< relref "./docs/Developerguide/importing-data.md" >}})
 		-   [Running the INSERT Statement to Insert Data]({{< relref "./docs/Developerguide/running-the-insert-statement-to-insert-data.md" >}})
