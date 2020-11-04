@@ -300,7 +300,7 @@ headless: true
                 -   [PQgetCancel]({{< relref "./docs/Developerguide/PQgetCancel.md" >}})
                 -   [PQfreeCancel]({{< relref "./docs/Developerguide/PQfreeCancel.md" >}})
                 -   [PQcancel]({{< relref "./docs/Developerguide/PQcancel.md" >}})
-            -   [示例]({{< relref "./docs/Developerguide/示例-3.md" >}})
+            -   [示例]({{< relref "./docs/Developerguide/示例-20.md" >}})
             -   [链接字符]({{< relref "./docs/Developerguide/链接字符.md" >}})
     -   [导入数据]({{< relref "./docs/Developerguide/导入数据.md" >}})
         -   [通过INSERT语句直接写入数据]({{< relref "./docs/Developerguide/通过INSERT语句直接写入数据.md" >}})
