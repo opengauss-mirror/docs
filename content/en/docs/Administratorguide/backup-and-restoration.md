@@ -1322,7 +1322,7 @@ Parameters for importing data
 
     Imports only archive elements that are listed in  **list-file**  and imports them in the order that they appear in the file. If filtering parameters, such as  **-n**  or  **-t**, are used in conjunction with  **-L**, they will further limit the items to be imported.
 
-    **list-file**  is normally created by editing the output of a previous  **-l**  parameter. File lines can be moved or removed, and can also be commented out by placing a semicolon \(;\) at the beginning of the row. An example is provided in this document.
+    **list-file**  is normally created by editing the output of a previous  **-l**  parameter. File lines can be moved or removed, and can also be commented out by placing a semicolon \(;\) at the beginning of the row. 
 
 -   -n, --schema=NAME
 
@@ -1391,9 +1391,6 @@ Parameters for importing data
     ```
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
-
-    ![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    **-t**  does not support the  **schema\_name.table\_name**  input format.
 
 -   -T, --trigger=NAME
 
