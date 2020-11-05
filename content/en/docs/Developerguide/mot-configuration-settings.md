@@ -205,21 +205,6 @@ If no time units are specified, then microseconds are assumed.
 
     MOT engine assumes that all the available NUMA nodes have memory. If the machine has some special configuration in which some of the NUMA nodes have no memory, then the MOT engine initialization and hence the database server startup will fail. In such machines, it is recommended that this configuration value be set to false, in order to prevent startup failures and let the MOT engine to function normally without using NUMA-aware memory allocation.
 
--   **max\_threads = 1024**
-
-    Configures the maximum number of threads allowed to run in the MOT engine.
-
-    When not using a thread pool, this value restricts the number of sessions that can interact concurrently with MOT tables. This value does not restrict non-MOT sessions.
-
-    When using a thread pool, this value restricts the number of worker threads that can interact concurrently with MOT tables.
-
-
--   **max\_connections = 1024**
-
-    Configures the maximum number of connections allowed to run in the MOT engine.
-
-    This value restricts the number of sessions that can interact concurrently with MOT tables, regardless of the thread-pool configuration. This value does not restrict non-MOT sessions.
-
 
 -   **affinity\_mode = fill-physical-first**
 
