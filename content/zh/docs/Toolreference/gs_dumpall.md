@@ -165,17 +165,27 @@ gs_dumpall [OPTION]...
     指定备份进程并发数，取值范围为1\~1000。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   -g/--globals-only和-r/--roles-only不能同时使用。
->-   -g/--globals-only和-t/--tablespaces-only不能同时使用。
->-   -r/--roles-only和-t/--tablespaces-only不能同时使用。
->-   -s/--schema-only和-a/--data-only不能同时使用。
->-   -r/--roles-only和-a/--data-only不能同时使用。
->-   -t/--tablespaces-only和-a/--data-only不能同时使用。
->-   -g/--globals-only和-a/--data-only不能同时使用。
->-   --tablespaces-postfix和--binary-upgrade必须一起使用。
->-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
->-   --parallel-jobs和-f/--file必须一起使用。
+![](public_sys-resources/icon-note.gif) **说明：**
+
+-   -g/--globals-only和-r/--roles-only不能同时使用。
+
+-   -g/--globals-only和-t/--tablespaces-only不能同时使用。
+
+-   -r/--roles-only和-t/--tablespaces-only不能同时使用。
+
+-   -s/--schema-only和-a/--data-only不能同时使用。
+
+-   -r/--roles-only和-a/--data-only不能同时使用。
+
+-   -t/--tablespaces-only和-a/--data-only不能同时使用。
+
+-   -g/--globals-only和-a/--data-only不能同时使用。
+
+-   --tablespaces-postfix和--binary-upgrade必须一起使用。
+
+-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
+
+-   --parallel-jobs和-f/--file必须一起使用。
 
 连接参数：
 

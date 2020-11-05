@@ -189,9 +189,11 @@ export PGDATABASE=postgres
 
     只转储与模式名称匹配的模式，此选项包括模式本身和所有它包含的对象。如果该选项没有指定，所有在目标数据库中的非系统模式将会被转储。写入多个-n选项来选择多个模式。此外，根据gsql的\\d命令所使用的相同规则，模式参数可被理解成一个pattern，所以多个模式也可以通过在该pattern中写入通配符来选择。使用通配符时，注意给pattern打引号，防止shell扩展通配符。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
-    >-   当-n指定时，非模式对象不会被转储。
+    ![](public_sys-resources/icon-note.gif) **说明：**
+
+    -   当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
+
+    -   当-n指定时，非模式对象不会被转储。
 
     转储支持多个模式的转储。多次输入-n schemaname转储多个模式。
 
@@ -247,12 +249,16 @@ export PGDATABASE=postgres
 
     当使用-t时，-n和-N没有任何效应，这是因为由-t选择的表的转储不受那些选项的影响。
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
+    ![](public_sys-resources/icon-note.gif) **说明：**  
     -   -t参数选项个数必须小于等于100。
+
     -   如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
-    -   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。
-    -   -t tablename只转储在默认搜索路径中可见的表。-t '\*.tablename'转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。
-    -   -t tablename不会导出表上的触发器信息。
+
+    -   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。 
+
+    -   -t tablename只转储在默认搜索路径中可见的表。-t '\*.tablename'转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。 
+
+    -   -t tablename不会导出表上的触发器信息。  
 
     例如：
 
@@ -401,14 +407,21 @@ export PGDATABASE=postgres
     ```
 
 
-![](public_sys-resources/icon-note.gif) **说明：** 
--   -s/--schema-only和-a/--data-only不能同时使用。
--   -c/--clean和-a/--data-only不能同时使用。
--   --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。
--   --role和--rolepassword必须一起使用。
--   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
--   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效
--   --exclude-self必须同--include-depend-objs一起使用。
+![](public_sys-resources/icon-note.gif) **说明：**  
+
+-   -s/--schema-only和-a/--data-only不能同时使用。  
+
+-   -c/--clean和-a/--data-only不能同时使用。  
+
+-   --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。  
+
+-   --role和--rolepassword必须一起使用。  
+
+-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。  
+
+-   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。  
+
+-   --exclude-self必须同--include-depend-objs一起使用。  
 
 连接参数：
 
