@@ -153,7 +153,7 @@ If a database is faulty, restore it from backup files.  **gs\_basebackup**  back
 
 -   If the current database instance is running, a port conflict may occur when you start the database from the backup file. In this case, you need to modify the port parameter in the configuration file or specify a port when starting the database.
 
--   If the current backup file is a primary/standby database, you may need to modify the replication connections between the primary and standby databases. That is,  **replconninfo1**  and  **replconninfo2**  in the  **postgre.conf**  file.
+-   If the current backup file is a primary/standby database, you may need to modify the replication connections between the primary and standby databases. That is,  **replconninfo1**  and  **replconninfo2**  in the  **postgresql.conf**  file.
 
 To restore the original database, perform the following steps:
 
