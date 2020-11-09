@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.61%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122623_p1837012713187"><a name="zh-cn_topic_0237122623_p1837012713187"></a><a name="zh-cn_topic_0237122623_p1837012713187"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.17%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122623_p113701527191810"><a name="zh-cn_topic_0237122623_p113701527191810"></a><a name="zh-cn_topic_0237122623_p113701527191810"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="59.17%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122623_p113701527191810"><a name="zh-cn_topic_0237122623_p113701527191810"></a><a name="zh-cn_topic_0237122623_p113701527191810"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122623_row8370112701816"><td class="cellrowborder" valign="top" width="24.22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122623_p173707270186"><a name="zh-cn_topic_0237122623_p173707270186"></a><a name="zh-cn_topic_0237122623_p173707270186"></a>workload</p>

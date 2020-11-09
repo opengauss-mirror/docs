@@ -136,7 +136,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.35%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122658_p9858102465713"><a name="zh-cn_topic_0237122658_p9858102465713"></a><a name="zh-cn_topic_0237122658_p9858102465713"></a>numeric</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.080000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122658_p285862475711"><a name="zh-cn_topic_0237122658_p285862475711"></a><a name="zh-cn_topic_0237122658_p285862475711"></a>insert的时间花费（单位：微秒）。</p>
+<td class="cellrowborder" valign="top" width="53.080000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122658_p285862475711"><a name="zh-cn_topic_0237122658_p285862475711"></a><a name="zh-cn_topic_0237122658_p285862475711"></a>总insert的时间花费(单位：微秒)。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122658_row885818240578"><td class="cellrowborder" valign="top" width="28.57%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122658_p1285802445717"><a name="zh-cn_topic_0237122658_p1285802445717"></a><a name="zh-cn_topic_0237122658_p1285802445717"></a>avg_insert_elapse</p>

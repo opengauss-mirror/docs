@@ -1180,16 +1180,6 @@ wait\_status列的等待状态有以下状态。
 <td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p95324318361"><a name="zh-cn_topic_0237122466_p95324318361"></a><a name="zh-cn_topic_0237122466_p95324318361"></a>写入WAL文件。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1053233143619"><a name="zh-cn_topic_0237122466_p1053233143619"></a><a name="zh-cn_topic_0237122466_p1053233143619"></a>WALBufferAccess</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p95324318361"><a name="zh-cn_topic_0237122466_p95324318361"></a><a name="zh-cn_topic_0237122466_p95324318361"></a>WAL Buffer访问（出于性能考虑，内核代码里只统计访问次数，未统计其访问耗时）。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1053233143619"><a name="zh-cn_topic_0237122466_p1053233143619"></a><a name="zh-cn_topic_0237122466_p1053233143619"></a>WALBufferFull</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p95324318361"><a name="zh-cn_topic_0237122466_p95324318361"></a><a name="zh-cn_topic_0237122466_p95324318361"></a>WAL Buffer满时，写wal文件相关的处理。</p>
-</td>
-</tr>
 <tr id="row5126152875614"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p98110272568"><a name="p98110272568"></a><a name="p98110272568"></a>DoubleWriteFileRead</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1981727185619"><a name="p1981727185619"></a><a name="p1981727185619"></a>双写 文件读取。</p>

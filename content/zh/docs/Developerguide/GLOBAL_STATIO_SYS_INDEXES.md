@@ -17,7 +17,7 @@ GLOBAL\_STATIO\_SYS\_INDEXES视图显示各节点的命名空间中所有系统�
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122683_p92145213196"><a name="zh-cn_topic_0237122683_p92145213196"></a><a name="zh-cn_topic_0237122683_p92145213196"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122683_p33155218196"><a name="zh-cn_topic_0237122683_p33155218196"></a><a name="zh-cn_topic_0237122683_p33155218196"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122683_p33155218196"><a name="zh-cn_topic_0237122683_p33155218196"></a><a name="zh-cn_topic_0237122683_p33155218196"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122683_row2031852151919"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122683_p133175215191"><a name="zh-cn_topic_0237122683_p133175215191"></a><a name="zh-cn_topic_0237122683_p133175215191"></a>relid</p>

@@ -9,7 +9,8 @@
 -   索引崩溃，并且不再包含有效的数据。
 -   索引变得“臃肿”，包含大量的空页或接近空页。
 -   为索引更改了存储参数（例如填充因子），并且希望这个更改完全生效。
--   使用CONCURRENTLY选项创建索引失败，留下了一个“非法”索引。
+
+    使用CONCURRENTLY选项创建索引失败，留下了一个“非法”索引。
 
 
 ## 注意事项<a name="zh-cn_topic_0237122174_zh-cn_topic_0059777511_s871de483556241f0a3180925ed04ded3"></a>
@@ -105,7 +106,7 @@ postgres=# CREATE TABLE tpcds.customer_t1
     c_email_address           char(50)                      ,
     c_last_review_date        char(10)
 )
-WITH (orientation = row)
+WITH (orientation = row);
 
 postgres=# CREATE INDEX tpcds_customer_index1 ON tpcds.customer_t1 (c_customer_sk);
 
@@ -129,10 +130,10 @@ postgres=# DROP TABLE tpcds.customer_t1;
 
 -   DATABASE
 
-    不能在事务中reindex database。
+    不建议在事务中reindex database。
 
 -   SYSTEM
 
-    不能在事务中reindex系统表。
+    不建议在事务中reindex系统表。
 
 

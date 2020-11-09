@@ -17,7 +17,7 @@ GLOBAL\_REPLICATION\_SLOTS视图用于查看openGauss各节点的复制节点的
 </td>
 <td class="cellrowborder" valign="top" width="16.950000000000003%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122711_p96568475456"><a name="zh-cn_topic_0237122711_p96568475456"></a><a name="zh-cn_topic_0237122711_p96568475456"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122711_p16561847144511"><a name="zh-cn_topic_0237122711_p16561847144511"></a><a name="zh-cn_topic_0237122711_p16561847144511"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122711_p16561847144511"><a name="zh-cn_topic_0237122711_p16561847144511"></a><a name="zh-cn_topic_0237122711_p16561847144511"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122711_row116569477456"><td class="cellrowborder" valign="top" width="25.14%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122711_p11657947154510"><a name="zh-cn_topic_0237122711_p11657947154510"></a><a name="zh-cn_topic_0237122711_p11657947154510"></a>slot_name</p>

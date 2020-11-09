@@ -170,7 +170,11 @@ MOT功能限制：
 ## 不支持的DML<a name="section17128987"></a>
 
 -   Merge into
+-   Delete on conflict
+-   Insert on conflict
 -   Select into
+-   Update on conflict
+-   Update from
 -   Lock table
 -   Copy from table
 

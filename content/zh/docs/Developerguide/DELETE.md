@@ -7,6 +7,7 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 ## 注意事项<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
 
 -   要删除表中的数据，用户必须对它有DELETE权限。同样也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
+-   对于行存复制表，仅支持有主键约束场景下的delete操作。
 -   对于列存表，暂时不支持RETURNING子句。
 
 ## 语法格式<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
@@ -28,21 +29,18 @@ DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
 
     其中with\_query的详细格式为：
-    ```
 
-    with_query_name [ ( column_name [, ...] ) ] AS
+    with\_query\_name \[ \( column\_name \[, ...\] \) \] AS
 
-    ( {select | values | insert | update | delete} )
+    \( \{select | values | insert | update | delete\} \)
 
-    ```
-
-    + with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问
+    – with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问
 
     子查询的结果集。
 
-    + column\_name指定子查询结果集中显示的列名。
+    – column\_name指定子查询结果集中显示的列名。
 
-    + 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+    – 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
 
 -   **ONLY**
 

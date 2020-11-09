@@ -17,7 +17,7 @@ GLOBAL\_PAGEWRITER\_STATUS视图显示openGauss实例的刷页信息和检查点
 </td>
 <td class="cellrowborder" valign="top" width="20.69%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122717_p1457191694314"><a name="zh-cn_topic_0237122717_p1457191694314"></a><a name="zh-cn_topic_0237122717_p1457191694314"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122717_p14572111616430"><a name="zh-cn_topic_0237122717_p14572111616430"></a><a name="zh-cn_topic_0237122717_p14572111616430"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122717_p14572111616430"><a name="zh-cn_topic_0237122717_p14572111616430"></a><a name="zh-cn_topic_0237122717_p14572111616430"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122717_row4331121184412"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122717_p42652367477"><a name="zh-cn_topic_0237122717_p42652367477"></a><a name="zh-cn_topic_0237122717_p42652367477"></a>pgwr_actual_flush_total_num</p>
