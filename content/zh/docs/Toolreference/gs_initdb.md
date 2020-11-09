@@ -167,7 +167,7 @@ zh_SG.gbk
 </td>
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="p1642510590523"><a name="p1642510590523"></a><a name="p1642510590523"></a>指定兼容的数据库的类型。</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>取值范围：A、B、C。分别表示兼容O、MY和TD。</p>
+<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。</p>
 </td>
 </tr>
 <tr id="row142041433132110"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p296280814042"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p296280814042"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p296280814042"></a>--lc-collate=LOCALE</p>
