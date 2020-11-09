@@ -17,7 +17,7 @@ GLOBAL\_RECORD\_RESET\_TIME用于重置（重启，主备倒换，数据库删�
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122719_p141019430282"><a name="zh-cn_topic_0237122719_p141019430282"></a><a name="zh-cn_topic_0237122719_p141019430282"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122719_p310254322812"><a name="zh-cn_topic_0237122719_p310254322812"></a><a name="zh-cn_topic_0237122719_p310254322812"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122719_p310254322812"><a name="zh-cn_topic_0237122719_p310254322812"></a><a name="zh-cn_topic_0237122719_p310254322812"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122719_row11102134352816"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122719_p910294352812"><a name="zh-cn_topic_0237122719_p910294352812"></a><a name="zh-cn_topic_0237122719_p910294352812"></a>reset_time</p>

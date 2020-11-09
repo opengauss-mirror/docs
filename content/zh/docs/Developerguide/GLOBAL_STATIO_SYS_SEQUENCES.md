@@ -17,7 +17,7 @@ GLOBAL\_STATIO\_SYS\_SEQUENCES视图显示各节点的命名空间中所有系�
 </td>
 <td class="cellrowborder" valign="top" width="17.391739173917394%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122686_p17241048162117"><a name="zh-cn_topic_0237122686_p17241048162117"></a><a name="zh-cn_topic_0237122686_p17241048162117"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.17641764176419%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122686_p19724144842119"><a name="zh-cn_topic_0237122686_p19724144842119"></a><a name="zh-cn_topic_0237122686_p19724144842119"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="64.17641764176419%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122686_p19724144842119"><a name="zh-cn_topic_0237122686_p19724144842119"></a><a name="zh-cn_topic_0237122686_p19724144842119"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122686_row1836473302514"><td class="cellrowborder" valign="top" width="18.43184318431843%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122686_p53657332255"><a name="zh-cn_topic_0237122686_p53657332255"></a><a name="zh-cn_topic_0237122686_p53657332255"></a>relid</p>

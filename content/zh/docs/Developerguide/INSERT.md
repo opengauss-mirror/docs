@@ -36,21 +36,17 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
     如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
 
-    其中with\_query的详细格式为：
-    ```
-    
-    with\_query\_name \[ \( column\_name \[, ...\] \) \] AS
+    其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS
 
     \( \{select | values | insert | update | delete\} \)
-    ```
 
-    + with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问
+    – with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问
 
     子查询的结果集。
 
-    + column\_name指定子查询结果集中显示的列名。
+    – column\_name指定子查询结果集中显示的列名。
 
-    + 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+    – 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >INSERT ON DUPLICATE KEY UPDATE不支持WITH及WITH RECURSIVE子句。  
@@ -111,15 +107,15 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新。对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDE." 或者 "VALUES()" 来选择源数据相应的列。
 
     -   支持触发器，触发器执行顺序由实际执行流程决定：
-    -   执行insert：触发before insert、after insert触发器
-    -   执行update：触发before insert、before update、after update触发器
+    -   执行insert：触发before insert、after insert触发器。
+    -   执行update：触发before insert、before update、after update触发器。
     -   执行update nothing：触发before insert触发器。
     -   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
-    -   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
+-   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
     
-    + 如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
-    + 主键、唯一索引列不允许UPDATE。
-    + 不支持列存，不支持外表、内存表。
+    -   如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
+-   主键、唯一索引列不允许UPDATE。
+    -   不支持列存，不支持外表、内存表。
     
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >当GUC参数 [enable_upsert_to_merge](优化器方法配置.md#zh-cn_topic_0237124716_section1211182712177) 为 on 时，此条INSERT ON DUPLICATE KEY UPDATE语句(UPSERT语句)会被转换成一条具有同等语义的MERGE INTO语句，之后的行为与MERGE INTO相同，在如下行为中与UPSERT将会不同：

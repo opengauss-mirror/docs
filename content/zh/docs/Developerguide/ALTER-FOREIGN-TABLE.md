@@ -6,8 +6,10 @@
 
 ## 语法格式
 
+    ```
     ALTER FOREIGN TABLE [ IF EXISTS ]  table_name
         OPTIONS ( {[ ADD | SET | DROP ] option ['value']}[, ... ]);
+    ```
 
 ## 参数说明
 

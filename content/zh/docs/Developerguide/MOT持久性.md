@@ -129,7 +129,7 @@ WAL重做日志将保留所有表行修改，直到执行检查点（如上所�
 
 **配置检查点**
 
-检查点在mot.conf文件中的CHECKPOINT;配置。有关这些配置参数的说明，请参阅[MOT检查点](MOT配置.md#section8719101152712)。
+检查点在mot.conf文件中的CHECKPOINT;配置。有关这些配置参数的说明，请参阅[MOT检查点](#section182761535131617)。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
 >生产部署时，该值必须为TRUE \#enable\_Checkpoint = true。FALSE值只能用于测试。

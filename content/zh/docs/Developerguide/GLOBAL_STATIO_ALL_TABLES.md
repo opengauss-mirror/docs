@@ -17,7 +17,7 @@ GLOBAL\_STATIO\_ALL\_TABLES视图将包含各节点的数据库中每个表（�
 </td>
 <td class="cellrowborder" valign="top" width="16.71832816718328%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122689_p317855113236"><a name="zh-cn_topic_0237122689_p317855113236"></a><a name="zh-cn_topic_0237122689_p317855113236"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.62343765623437%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122689_p15178451202312"><a name="zh-cn_topic_0237122689_p15178451202312"></a><a name="zh-cn_topic_0237122689_p15178451202312"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="65.62343765623437%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122689_p15178451202312"><a name="zh-cn_topic_0237122689_p15178451202312"></a><a name="zh-cn_topic_0237122689_p15178451202312"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122689_row13178115112316"><td class="cellrowborder" valign="top" width="17.658234176582344%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122689_p517855112315"><a name="zh-cn_topic_0237122689_p517855112315"></a><a name="zh-cn_topic_0237122689_p517855112315"></a>relid</p>

@@ -17,7 +17,7 @@ FETCH通过已创建的游标来检索数据。
 -   NEXT，PRIOR，FIRST，LAST，ABSOLUTE，RELATIVE形式在恰当地移动游标之后抓取一条记录。如果后面没有数据行，就返回一个空的结果，此时游标就会停在查询结果的最后一行之后（向后查询时）或者第一行之前（向前查询时）。
 -   FORWARD和BACKWARD形式在向前或者向后移动的过程中抓取指定的行数，然后把游标定位在最后返回的行上；或者是，如果count大于可用的行数，则在所有行之后（向后查询时）或者之前（向前查询时）。
 -   RELATIVE 0，FORWARD 0，BACKWARD 0都要求在不移动游标的前提下抓取当前行，也就是重新抓取最近刚抓取过的行。除非游标定位在第一行之前或者最后一行之后，这个动作都应该成功，而在那两种情况下，不返回任何行。
--   当FETCH的游标上涉及列存表时，不支持BACKWARD、PRIOR等涉及反向获取操作。
+-   当FETCH的游标上涉及列存表时，不支持BACKWARD、PRIOR、FIRST等涉及反向获取操作。
 
 ## 语法格式<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_sccece13e07c346e8b7e89d726533f687"></a>
 
@@ -119,8 +119,8 @@ NEXT
 
         取值范围：有符号的整数
 
-        -   count为正数就抓取当前关联位置之前的count行。
-        -   count为负数就抓取当前关联位置之后的abs（count）行。
+        -   count为正数就抓取当前关联位置之前的第count行。
+        -   count为负数就抓取当前关联位置之后的第abs（count）行。
         -   如果有数据的话，BACKWARD 0重新抓取当前行。
 
     -   BACKWARD ALL

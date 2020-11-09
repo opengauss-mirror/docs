@@ -17,7 +17,7 @@ GLOBAL\_STAT\_DB\_CU视图用于查询openGauss，每个数据库的CU命中情�
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122696_p5830193832818"><a name="zh-cn_topic_0237122696_p5830193832818"></a><a name="zh-cn_topic_0237122696_p5830193832818"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122696_p1283020386282"><a name="zh-cn_topic_0237122696_p1283020386282"></a><a name="zh-cn_topic_0237122696_p1283020386282"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122696_p1283020386282"><a name="zh-cn_topic_0237122696_p1283020386282"></a><a name="zh-cn_topic_0237122696_p1283020386282"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122696_row883163813281"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122696_p14831838182812"><a name="zh-cn_topic_0237122696_p14831838182812"></a><a name="zh-cn_topic_0237122696_p14831838182812"></a>db_name</p>

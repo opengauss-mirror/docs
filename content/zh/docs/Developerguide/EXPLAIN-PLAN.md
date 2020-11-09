@@ -31,49 +31,49 @@ FOR statement ;
 
 使用EXPLAIN  PLAN收集SQL语句的执行计划，通常包括以下步骤：
 
-1.执行EXPLAN PLAN。
+1.  执行EXPLAN PLAN。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->执行EXPLAIN PLAN 后会将计划信息自动存储于PLAN\_TABLE中，不支持对PLAN\_TABLE进行INSERT、UPDATE、ANALYZE等操作。  
->PLAN\_TABLE详细介绍见[PLAN\_TABLE](PLAN_TABLE.md)。  
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >执行EXPLAIN PLAN 后会将计划信息自动存储于PLAN\_TABLE中，不支持对PLAN\_TABLE进行INSERT、UPDATE、ANALYZE等操作。  
+    >PLAN\_TABLE详细介绍见[PLAN\_TABLE](PLAN_TABLE.md)。  
 
-```
-explain plan set statement_id='TPCH-Q4' for
-select
-o_orderpriority,
-count(*) as order_count
-from
-orders
-where
-o_orderdate >= '1993-07-01'::date
-and o_orderdate < '1993-07-01'::date + interval '3 month'
-and exists (
-select
-*
-from
-lineitem
-where
-l_orderkey = o_orderkey
-and l_commitdate < l_receiptdate
-)
-group by
-o_orderpriority
-order by
-o_orderpriority;
-```
+    ```
+    explain plan set statement_id='TPCH-Q4' for
+    select
+    o_orderpriority,
+    count(*) as order_count
+    from
+    orders
+    where
+    o_orderdate >= '1993-07-01'::date
+    and o_orderdate < '1993-07-01'::date + interval '3 month'
+    and exists (
+    select
+    *
+    from
+    lineitem
+    where
+    l_orderkey = o_orderkey
+    and l_commitdate < l_receiptdate
+    )
+    group by
+    o_orderpriority
+    order by
+    o_orderpriority;
+    ```
 
-2.查询PLAN\_TABLE。
+2.  查询PLAN\_TABLE。
 
-```
-SELECT * FROM PLAN_TABLE;
-```
+    ```
+    SELECT * FROM PLAN_TABLE;
+    ```
 
-![](figures/文档.png)
+    ![](figures/文档.png)
 
-3.清理PLAN\_TABLE表中的数据。
+3.  清理PLAN\_TABLE表中的数据。
 
-```
-DELETE FROM PLAN_TABLE WHERE xxx;
-```
+    ```
+    DELETE FROM PLAN_TABLE WHERE xxx;
+    ```
 
 
