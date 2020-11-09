@@ -10,17 +10,17 @@ When a standalone mode is scaled to the primary/standby mode, the standalone dat
 
 ## Prerequisites<a name="section18105194594714"></a>
 
--   The openGauss software package exists on the primary database node.
+-   The openGauss image package exists on the  database host and is decompressed. The capacity is scaled out by running the **./gs\_expansion**  command in the **script/**  directory.
 
 -   The same users and user groups as those on the primary node have been created on the new standby node.
 
--   The trustworthiness of user  **root**  and the database management user has been established between the existing database nodes and the new nodes.
+-   The mutual trust of user  **root**  and the database management user **omm** has been established between the existing database nodes and the new nodes.
 
 -   The XML file has been created and information about the standby node to be scaled has been added to the installed database configuration file.
 
 -   Only user  **root**  is authorized to run the  **gs\_expansion**  command.
 
--   The environment variables of the primary database node have been imported before the scale-out command is run. If the current database cluster is installed in a separate environment variable mode, source imports the separated environment variable. If the separation is not done, you need to source the sub-user's .bashrc configuration file. Generally, the file path is: /home/[user]/.bashrc
+-   The environment variables of the primary database node have been imported before the scale-out command is run. If the current database cluster is installed in a separate environment variable mode, run the **source** command to imports the spilt environment variable. If they are not spilt, run the  **source** command to import the **.bashrc** configuration file of the sub-user. Generally, the file path is: **/home/[user]/.bashrc**.
 
 -   The operating system of the new standby node is the same as that of the primary node.
 
@@ -30,19 +30,19 @@ When a standalone mode is scaled to the primary/standby mode, the standalone dat
 -   Scale out the standby node.
 
     ```
-    gs_expansion –U USER –G GROUP –X XMLFILE –h hostlist [-L]
+    ./gs_expansion –U USER –G GROUP –X XMLFILE –h hostlist [-L]
     ```
 
 -   Show help information.
 
     ```
-    gs_expansion -? | --help 
+    ./gs_expansion -? | --help 
     ```
 
 -   Show version information.
 
     ```
-    gs_expansion -V | --version 
+    ./gs_expansion -V | --version 
     ```
 
 

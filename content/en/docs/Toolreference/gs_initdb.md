@@ -170,7 +170,7 @@ zh_SG.gbk
 </td>
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="p1642510590523"><a name="p1642510590523"></a><a name="p1642510590523"></a>Specifies the type of the compatible database.</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>Value range: A, B, and C , indicating <strong id="b235119335593"><a name="b235119335593"></a><a name="b235119335593"></a>O</strong>, <strong id="b6357433175912"><a name="b6357433175912"></a><a name="b6357433175912"></a>MY</strong>, and <strong id="b535763385914"><a name="b535763385914"></a><a name="b535763385914"></a>TD</strong> databases, respectively.</p>
+<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>Value range: A, B, C, and PG, indicating <strong id="b235119335593"><a name="b235119335593"></a><a name="b235119335593"></a>O</strong>, <strong id="b6357433175912"><a name="b6357433175912"></a><a name="b6357433175912"></a>MY</strong>, <strong id="b6357433175912"><a name="b6357433175912"></a><a name="b6357433175912"></a>TD</strong>, and <strong id="b535763385914"><a name="b535763385914"></a><a name="b535763385914"></a>POSTGRES</strong> databases, respectively.</p>
 </td>
 </tr>
 <tr id="row142041433132110"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p296280814042"><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p296280814042"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p296280814042"></a>--lc-collate=LOCALE</p>
@@ -259,6 +259,7 @@ zh_SG.gbk
 </tr>
 </tbody>
 </table>
+
 
 
 **Table  2**  Uncommon parameters
