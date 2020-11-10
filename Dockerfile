@@ -20,7 +20,12 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/zh/docs/0.0.0 && \
     cp -rf /src/docs/content/zh/* /src/website/content/zh/docs/0.0.0 && \
     mkdir -p /src/website/content/en/docs/0.0.0 && \
-    cp -rf /src//docs/content/en/* /src/website/content/en/docs/0.0.0 && \
+    cp -rf /src/docs/content/en/* /src/website/content/en/docs/0.0.0 && \
+    mkdir -p /src/website/content/zh/docs/latest && \
+    git clone https://gitee.com/opengauss/docs latest/docs && \
+    cp -rf /src/latest/docs/content/zh/* /src/website/content/zh/docs/latest && \
+    mkdir -p /src/website/content/en/docs/latest && \
+    cp -rf /src/latest/docs/content/en/* /src/website/content/en/docs/latest && \
     mkdir -p /src/website/content/zh/docs/1.0.0 && \
     git clone -b 1.0.0 https://gitee.com/opengauss/docs 1.0.0/docs && \
     cp -rf /src/1.0.0/docs/content/zh/* /src/website/content/zh/docs/1.0.0 && \
