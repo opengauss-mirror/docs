@@ -4,7 +4,7 @@
 
 **ALTER MATERIALIZED VIEW**  changes multiple auxiliary attributes of an existing materialized view.
 
-Statements and actions that can be used for ALTER MATERIALIZED VIEW are a subset of ALTER TABLE and have the same meaning when used for materialized views. For details, see  [ALTER TABLE](en-us_topic_0242370540.md).
+Statements and actions that can be used for ALTER MATERIALIZED VIEW are a subset of ALTER TABLE and have the same meaning when used for materialized views. For details, see  [ALTER TABLE](alter-table.md).
 
 ## Precautions<a name="en-us_topic_0237122084_en-us_topic_0059778428_s5a554e8d15974449b7ffffee772b46f2"></a>
 
@@ -111,5 +111,5 @@ postgres=# ALTER MATERIALIZED VIEW foo RENAME TO bar;
 
 ## Helpful Links<a name="en-us_topic_0237122084_en-us_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
-[CREATE VIEW](en-us_topic_0242370590.md),  [DROP VIEW](en-us_topic_0242370623.md),  [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md),  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md), and  [ALTER TABLE](en-us_topic_0242370540.md)
+ [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md),  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md), and  [ALTER TABLE](alter-table.md)
 

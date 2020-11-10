@@ -112,14 +112,16 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## replication\_type<a name="en-us_topic_0237124741_section94292665717"></a>
 
-**Parameter description**: Specifies what nodes are deployed for the HA mode. The nodes can consist of a primary, a standby, and a secondary node; or consist of a primary and multiple standby nodes.
+**Parameter description**: Specifies what nodes are deployed for the HA mode. The nodes can consist of a primary, a standby, and a secondary node; or consist of a primary and multiple standby nodes; or consist of a primary node.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 You are advised not to modify this parameter.
 
-**Value range**: 0 to 2
+**Value range**: 0 to 3
 
+-   **3** is an invalid value, indicating the number of patterns.
+-   **2**  indicates that single host mode.
 -   **1**  indicates that the HA nodes consist of a primary and multiple standby nodes.
 -   **0**: indicates that the HA nodes consist of a primary, a standby, and a secondary node.
 
