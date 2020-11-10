@@ -135,7 +135,7 @@ A session allocates temporary buffers based on the value of  **temp\_buffers**. 
 
 **Value range**: an integer ranging from 100 to 1073741823. The unit is 8 KB.
 
-**Default value**:  **8MB**
+**Default value**:  **1MB**
 
 ## max\_prepared\_transactions<a name="en-us_topic_0237124699_en-us_topic_0059777577_s0baf9251722144d492151b31104dd73c"></a>
 
@@ -261,7 +261,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 16384 to 1073741823. The unit is KB.
 
-**Default value**:  **32768KB**
+**Default value**:  **1GB**
 
 **Setting suggestions**:
 

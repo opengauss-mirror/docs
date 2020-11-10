@@ -105,7 +105,7 @@ postgres=# CREATE TABLE tpcds.customer_t1
     c_email_address           char(50)                      ,
     c_last_review_date        char(10)
 )
-WITH (orientation = row)
+WITH (orientation = row);
 
 postgres=# CREATE INDEX tpcds_customer_index1 ON tpcds.customer_t1 (c_customer_sk);
 
