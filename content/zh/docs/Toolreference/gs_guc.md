@@ -1,6 +1,6 @@
-# gs\_guc<a name="ZH-CN_TOPIC_0249632248"></a>
+# gs\_guc<a name="ZH-CN_TOPIC_0289899223"></a>
 
-## 背景信息<a name="zh-cn_topic_0237152338_zh-cn_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>
+## 背景信息<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>
 
 目前openGauss配置文件（“postgresql.conf”、“pg\_hba.conf”）中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。
 
@@ -24,20 +24,21 @@ gs\_guc工具由操作系统用户omm执行。
 
     使用gs\_guc encrypt命令加密用户密码时，如果指定的-M的值为client，则会生成这两个文件。其中“client.key.cipher”存储用户密码的密文，“client.key.rand”存储的是加密因子。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >“client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为:“test.key.cipher、test.key.rand”。
+    ![](public_sys-resources/icon-note.gif) **说明：**
+
+    “client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为:“test.key.cipher、test.key.rand”。
 
 
 -   “datasource.key.cipher”，“datasource.key.rand”
 
     使用gs\_guc encrypt命令加密用户密码时，如果指定的-M的值为source，则会生成这两个文件。其中“datasource.key.cipher”存储用户密码的密文，“datasource.key.rand”存储的是加密因子。
 
-    ![](public_sys-resources/icon-note.gif) **说明：**
+    ![](public_sys-resources/icon-note.gif) **说明：** 
 
     “datasource.key.cipher”和“datasource.key.rand”是创建Data Source对象时调用的密钥文件。gs\_guc生成时即有读权限。使用前需将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。
 
 
-## 语法<a name="zh-cn_topic_0237152338_zh-cn_topic_0059778019_se02e295596714317bc63dc8508898bdd"></a>
+## 语法<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_se02e295596714317bc63dc8508898bdd"></a>
 
 -   检查配置文件中参数
 
@@ -66,12 +67,12 @@ gs\_guc工具由操作系统用户omm执行。
 -   修改客户端认证策略，同时发送信号量到pg\_hba.conf
 
     ```
-    gs_guc [ set | reload ]  [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options option" 
+    gs_guc [ set | reload ]  [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options" 
     ```
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
+    ![](public_sys-resources/icon-note.gif) **说明：**
 
-    authmehod-options支持以下选项：
+    authentication-options支持以下选项：
 
     -   trust：不验密，禁止远程主机使用trust方式访问openGauss
 
@@ -91,9 +92,9 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD" 
     ```
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
+    ![](public_sys-resources/icon-note.gif) **说明：**  
 
-    如果需要注释已经设置的认证策略，请使用-h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD"，不需要指定authmehod-options。
+    如果需要注释已经设置的认证策略，请使用-h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD"，不需要指定authentication-options。
 
 -   显示帮助信息
 
@@ -115,12 +116,24 @@ gs\_guc工具由操作系统用户omm执行。
 
     ![](public_sys-resources/icon-note.gif) **说明：** 
 
-    -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<=16）和密码复杂度要求，如果不满足，将会报错。
+    -   -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<=16）和密码复杂度要求，如果不满足，将会报错。
 
-    -M是加密类型，当前仅支持server、client和source。默认值为server。
+    -   -M是加密类型，当前仅支持server、client和source。默认值为server。
+
+-   生成OBS加密密码文件
+
+    ```
+    gs_guc generate [-o prefix] [-S cipherkey] -D DATADIR
+    ```
+
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    -   -o是输出的OBS类型的cipher和rand文件前缀名称，默认输出文件名前缀为obsserver。其内容仅支持数字、字母和下划线。
+
+    -   -S是用户指定的密码，密码需要满足长度要求（8<=len<=16）和复杂度要求，如不满足将会报错。当其值为default时，会随机生成一段字符串作为密码，该密码长度为13。如果不带-S参数则会提示交互式输入密码。为了系统安全，推荐使用交互式输入密码方式。
 
 
-![](public_sys-resources/icon-note.gif) **说明：**
+![](public_sys-resources/icon-note.gif) **说明：** 
 
 -   gs\_guc工具不支持参数值中包含'\#'的设置。可以使用vi工具通过手工修改配置文件来设置。
 
@@ -140,7 +153,7 @@ gs\_guc工具由操作系统用户omm执行。
 
 -   通过reload模式设置或修改openGauss节点配置文件（postgresql.conf）的参数，生效存在短暂延迟，有可能导致配置后openGauss各实例参数极短时间不一致。
 
-## 命令参考<a name="zh-cn_topic_0237152338_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
+## 命令参考<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
 
 -   set
 
@@ -179,7 +192,7 @@ gs\_guc工具由操作系统用户omm执行。
     需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
 
     ![](public_sys-resources/icon-note.gif) **说明：** 
-    -   -D 与"-I" 不能一块使用
+    -   与"-I" 不能一块使用
 
 -   -c parameter=value
 
@@ -192,7 +205,7 @@ gs\_guc工具由操作系统用户omm执行。
     -   当使用gs\_guc set/reload为"log\_directory" 恢复默认值时，其默认值会被置为具体的data目录。
 
     -   当使用gs\_guc reload进行参数设定，并指定-N参数时，当指定的节点为主节点时，主备节点的参数值都会被修改；当指定节点为备节点时，只会修改备节点的参数值，不会修改主节点的参数值。
-    
+
     -   当使用gs\_guc reload进行参数设定，未指定-N参数时，当在主节点上执行时，主备节点的参数值都会被修改；当在备节点上执行时，只会修改备节点的参数值，不会修改主节点的参数值。
 
     取值范围：postgresql.conf中的所有参数。
@@ -211,7 +224,7 @@ gs\_guc工具由操作系统用户omm执行。
     -   HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK \[authmehod-options \]
     -   HOSTTYPE DATABASE USERNAME HOSTNAME \[authmehod-options \]
 
-    HOSTTYPE是必输参数，取值：
+    HOSTTYPE是必选参数，取值：
 
     -   local
     -   host
@@ -243,8 +256,9 @@ gs\_guc工具由操作系统用户omm执行。
 
     设定该密码在数据库运行过程中，用于服务端\(server\)、客户端\(client\)还是创建Data Source对象时调用。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >在使用ssl功能时，会涉及到服务端证书和私钥文件的加密密码和客户端证书和私钥文件的加密密码，在加密存储加密密码时，需要指定模式，否则默认是生成服务端的密码文件。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    在使用ssl功能时，会涉及到服务端证书和私钥文件的加密密码和客户端证书和私钥文件的加密密码，在加密存储加密密码时，需要指定模式，否则默认是生成服务端的密码文件。
 
     取值范围：
 
@@ -262,8 +276,9 @@ gs\_guc工具由操作系统用户omm执行。
 
     指定要加密的用户，隶属于OS用户。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >比如，openGauss可以为每个用户配置不同的ssl证书和私钥文件，指定该选项，可以生成按用户名区分的密码文件。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    openGauss可以为每个用户配置不同的ssl证书和私钥文件，指定该选项，可以生成按用户名区分的密码文件。
 
 -   -S CIPHERKEY
 
@@ -271,8 +286,14 @@ gs\_guc工具由操作系统用户omm执行。
 
     取值范围：字符串。
 
+-   -o PREFIX
 
-## 示例<a name="zh-cn_topic_0237152338_zh-cn_topic_0059778019_s4c5ae191cfdd47a0af220bf67849535e"></a>
+    指定需要输出的OBS类型的cipher和rand文件前缀名称字符串，默认输出文件名前缀为obsserver。
+
+    取值范围：仅支持数字、字母和下划线。
+
+
+## 示例<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s4c5ae191cfdd47a0af220bf67849535e"></a>
 
 示例1：修改数据库允许的最大连接数为800。修改后需要重启数据库才能生效。
 
