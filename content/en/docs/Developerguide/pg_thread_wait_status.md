@@ -1180,6 +1180,16 @@ The following table describes the corresponding wait events when  **wait\_status
 <td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237122466_p95324318361"><a name="en-us_topic_0237122466_p95324318361"></a><a name="en-us_topic_0237122466_p95324318361"></a>Writes a WAL file.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237122466_p1053233143619"><a name="en-us_topic_0237122466_p1053233143619"></a><a name="en-us_topic_0237122466_p1053233143619"></a>WALBufferAccess</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237122466_p95324318361"><a name="en-us_topic_0237122466_p95324318361"></a><a name="en-us_topic_0237122466_p95324318361"></a>WAL Buffer access (for performance reasons, only the number of accesses are counted in the kernel code, and the access time is not counted).</p>
+</td>
+</tr>
+ <tr id="en-us_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237122466_p1053233143619"><a name="en-us_topic_0237122466_p1053233143619"></a><a name="en-us_topic_0237122466_p1053233143619"></a>WALBufferFull</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237122466_p95324318361"><a name="en-us_topic_0237122466_p95324318361"></a><a name="en-us_topic_0237122466_p95324318361"></a>When the WAL Buffer is full, write wal file related processing.</p>
+</td>
+</tr>
 <tr id="row5126152875614"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p98110272568"><a name="p98110272568"></a><a name="p98110272568"></a>DoubleWriteFileRead</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1981727185619"><a name="p1981727185619"></a><a name="p1981727185619"></a>Doublewrites and reads a file.</p>
