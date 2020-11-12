@@ -1210,6 +1210,8 @@ headless: true
         -   [TPCC运行时，注入磁盘满故障，TPCC卡住的问题]({{< relref "./docs/Developerguide/TPCC运行时-注入磁盘满故障-TPCC卡住的问题.md" >}})
         -   [备机处于need repair\(WAL\)状态问题]({{< relref "./docs/Developerguide/备机处于need-repair_WAL_状态问题.md" >}})
         -   [内存不足问题]({{< relref "./docs/Developerguide/内存不足问题.md" >}})
+        -   [故障定位]({{< relref "./docs/Developerguide/故障定位.md" >}})
+        -   [故障案例]({{< relref "./docs/Developerguide/故障案例.md" >}})
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/Toolreference/客户端工具.md" >}})
