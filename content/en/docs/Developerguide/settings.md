@@ -106,7 +106,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## full\_page\_writes<a name="en-us_topic_0237124707_en-us_topic_0059778393_scf91a0abd76640efb76b172daf9a5f38"></a>
 
-**Parameter description**: Specifies whether the openGauss server writes the entire content of each disk page to WALs during the first modification of that page after a checkpoint.
+**Parameter description**: Specifies whether the openGauss server writes the entire content of each disk page to WALs during the first modification of that page after a checkpoint. When the  **enable\_incremental\_checkpoint**  and  **enable\_double\_write**  are enabled at the same time, full_page_writes is not used.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
