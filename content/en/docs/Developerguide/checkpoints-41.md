@@ -71,7 +71,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## enable\_double\_write<a name="en-us_topic_0237124708_section1127841614298"></a>
 
-**Parameter description**: Specifies whether to enable the doublewrite buffer. When the incremental checkpointing is enabled, the doublewrite buffer instead of  **full\_page\_writes**  is used to prevent partial page writes.
+**Parameter description**: Specifies whether to enable the doublewrite buffer. When the incremental checkpointing is enabled,  **enable\_double\_write**  is enabled at the same time and the doublewrite buffer instead of  **full\_page\_writes**  is used to prevent partial page writes.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
