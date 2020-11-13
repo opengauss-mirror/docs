@@ -1,6 +1,6 @@
-# CREATE INDEX<a name="ZH-CN_TOPIC_0242370570"></a>
+# CREATE INDEX<a name="ZH-CN_TOPIC_0289900160"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_s10bd477b6f0a4b4687123335b61aa981"></a>
+## 功能描述<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s10bd477b6f0a4b4687123335b61aa981"></a>
 
 在指定的表上创建索引。
 
@@ -13,7 +13,7 @@
 
 在分区表上创建索引与在普通表上创建索引的语法不太一样，使用时请注意，如分区表上不支持并行创建索引、不支持创建部分索引、不支持NULL FIRST特性。
 
-## 注意事项<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
+## 注意事项<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
 -   索引自身也占用存储空间、消耗计算资源，创建过多的索引将对数据库性能造成负面影响（尤其影响数据导入的性能，建议在数据导入后再建索引）。因此，仅在必要时创建索引。
 -   索引定义里的所有函数和操作符都必须是immutable类型的，即它们的结果必须只能依赖于它们的输入参数，而不受任何外部的影响（如另外一个表的内容或者当前时间）。这个限制可以确保该索引的行为是定义良好的。要在一个索引上或WHERE中使用用户定义函数，请把它标记为immutable类型函数。
@@ -21,7 +21,7 @@
 -   列存表支持的PSORT和B-tree索引都不支持创建表达式索引、部分索引和唯一索引。
 -   列存表支持的GIN索引支持创建表达式索引，但表达式不能包含空分词、空列和多列，不支持创建部分索引和唯一索引。
 
-## 语法格式<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
+## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
 -   在表上创建索引。
 
@@ -44,61 +44,51 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
+## 参数说明<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
 
-- **UNIQUE**
+-   **UNIQUE**
 
     创建唯一性索引，每次添加数据时检测表中是否有重复值。如果插入或更新的值会引起重复的记录时，将导致一个错误。
 
     目前只有行存表B-tree索引支持唯一索引。
 
-- **CONCURRENTLY**
+-   **CONCURRENTLY**
 
-    以不阻塞DML的方式创建索引（加ShareUpdateExclusiveLock锁）。创建索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现创建过程中不阻塞DML。
+    以不阻塞DML的方式创建索引（加ShareUpdateExclusiveLock锁）。创建索引时，一般会阻塞其他语句对该索引所依赖表的访问。指定此关键字，可以实现创建过程中不阻塞DML。
 
-    此选项只能指定一个索引的名称。
+    -   此选项只能指定一个索引的名称。
+    -   普通CREATE INDEX命令可以在事务内执行，但是CREATE INDEX CONCURRENTLY不可以在事务内执行。
+    -   列存表和分区表不支持CONCURRENTLY方式创建索引。
 
-    普通CREATE INDEX命令可以在事务内执行，但是CREATE INDEX CONCURRENTLY不可以在事务内执行。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   创建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
+    >-   由于需要执行两次对表的扫描和build，而且必须等待现有的所有可能对该表执行修改的事务结束。这意味着该索引的创建比正常耗时更长，同时因此带来的CPU和I/O消耗对其他业务也会造成影响。
+    >-   如果在索引构建时发生失败，那会留下一个“不可用”的索引。这个索引会被查询忽略，但它仍消耗更新开销。这种情况推荐的恢复方法是删除该索引并尝试再次CONCURRENTLY建索引。
+    >-   由于在第二次扫描之后，索引构建必须等待任何持有早于第二次扫描拿的快照的事务终止，而且建索引时加的ShareUpdateExclusiveLock锁（4级）会和大于等于4级的锁冲突，在创建这类索引时，容易引发卡住（hang）或者死锁问题。例如：
+    >    -   两个会话对同一个表创建CONCURRENTLY索引，会引起死锁问题；
+    >    -   两个会话，一个对表创建CONCURRENTLY索引，一个drop table，会引起死锁问题；
+    >    -   三个会话，会话1先对表a加锁，不提交，会话2接着对表b创建CONCURRENTLY索引，会话3接着对表a执行写入操作，在会话1事务未提交之前，会话2会一直被阻塞；
+    >    -   将事务隔离级别设置成可重复读（默认为读已提交），起两个会话，会话1起事务对表a执行写入操作，不提交，会话2对表b创建CONCURRENTLY索引，在会话1事务未提交之前，会话2会一直被阻塞。
 
-    列存表和分区表不支持CONCURRENTLY方式创建索引。
-
-    **注意事项：**
-
-    1、当使用concurrently创建索引时，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
-
-    2、由于需要执行两次对表的扫描和build，而且必须等待现有的所有可能对该表执行修改的事务结束。这意味着该索引的创建比正常耗时更长，同时因此带来的CPU和I/O消耗对其他业务也会造成影响。
-
-    3、如果在索引构建时发生失败，那会留下一个“不可用”的索引。这个索引会被查询忽略，但它仍消耗更新开销。这种情况推荐的恢复方法是删除该索引并尝试再次concurrently建索引。
-
-    4、由于在第二次扫描之后，索引构建必须等待任何持有早于第二次扫描拿的快照的事务终止，而且建索引时加的ShareUpdateExclusiveLock锁（4级）会和大于等于4级的锁冲突，在创建这类索引时，容易引发hang住或者死锁问题。比如：
-
-    （1）起两个会话对同一个表创建concurrently索引，会引起死锁问题；
-
-    （2）起两个会话，一个对表创建concurrently索引，一个drop table，会引起死锁问题；
-
-    （3）起三个会话，会话1先对表a加锁，不提交，会话2接着对表b创建concurrently索引，会话3接着对表a做写入操作，在会话1事务未提交之前，会话2会一直被阻塞；
-
-    （4）将事务隔离级别设置成可重复读（默认为读已提交），起两个会话，会话1起事务对表a做写入操作，不提交，会话2对表b创建concurrently索引，在会话1事务未提交之前，会话2会一直被阻塞。
-
-- **schema\_name**
+-   **schema\_name**
 
     模式的名称。
 
     取值范围：已存在模式名。
 
-- **index\_name**
+-   **index\_name**
 
     要创建的索引名，索引的模式与表相同。
 
     取值范围：字符串，要符合标识符的命名规范。
 
-- **table\_name**
+-   **table\_name**
 
     需要为其创建索引的表的名称，可以用模式修饰。
 
     取值范围：已存在的表名。
 
-- **USING method**
+-   **USING method**
 
     指定创建索引的方法。
 
@@ -111,16 +101,16 @@
 
     行存表支持的索引类型：btree（行存表缺省值）、gin、gist。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >列存表对GIN索引支持仅限于对于tsvector类型的支持，即创建列存GIN索引入参需要为to\_tsvector函数（的返回值）。此方法为GIN索引比较普遍的使用方式。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >列存表对GIN索引支持仅限于对于tsvector类型的支持，即创建列存GIN索引入参需要为to\_tsvector函数（的返回值）。此方法为GIN索引比较普遍的使用方式。
 
-- **column\_name**
+-   **column\_name**
 
     表中需要创建索引的列的名称（字段名）。
 
     如果索引方式支持多字段索引，可以声明多个字段。最多可以声明32个字段。
 
-- **expression**
+-   **expression**
 
     创建一个基于该表的一个或多个字段的表达式索引，通常必须写在圆括弧中。如果表达式有函数调用的形式，圆括弧可以省略。
 
@@ -128,39 +118,39 @@
 
     在创建表达式索引时，如果表达式中包含IS NULL子句，则这种索引是无效的。此时，建议用户尝试创建一个部分索引。
 
-- **COLLATE collation**
+-   **COLLATE collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。
 
-- **opclass**
+-   **opclass**
 
     操作符类的名称。对于索引的每一列可以指定一个操作符类，操作符类标识了索引那一列的使用的操作符。例如一个B-tree索引在一个四字节整数上可以使用int4\_ops；这个操作符类包括四字节整数的比较函数。实际上对于列上的数据类型默认的操作符类是足够用的。操作符类主要用于一些有多种排序的数据。例如，用户想按照绝对值或者实数部分排序一个复数。能通过定义两个操作符类然后当建立索引时选择合适的类。
 
-- **ASC**
+-   **ASC**
 
     指定按升序排序 （默认）。
 
-- **DESC**
+-   **DESC**
 
     指定按降序排序。
 
-- **NULLS FIRST**
+-   **NULLS FIRST**
 
     指定空值在排序中排在非空值之前，当指定DESC排序时，本选项为默认的。
 
-- **NULLS LAST**
+-   **NULLS LAST**
 
     指定空值在排序中排在非空值之后，未指定DESC排序时，本选项为默认的。
 
-- **LOCAL**
+-   **LOCAL**
 
     指定创建的分区索引为LOCAL索引。
-    
-- **GLOBAL**
+
+-   **GLOBAL**
 
     指定创建的分区索引为GLOBAL索引，当不指定LOCAL、GLOBAL关键字时，默认创建GLOBAL索引。
 
-- **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
+-   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
     指定索引方法的存储参数。
 
@@ -191,34 +181,32 @@
         默认值：gin\_pending\_list\_limit的默认取决于GUC中gin\_pending\_list\_limit的值（默认为4MB）
 
 
-- **TABLESPACE tablespace\_name**
+-   **TABLESPACE tablespace\_name**
 
     指定索引的表空间，如果没有声明则使用默认的表空间。
 
     取值范围：已存在的表空间名。
 
-- **WHERE predicate**
+-   **WHERE predicate**
 
     创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
 
     取值范围：predicate表达式只能引用表的字段，它可以使用所有字段，而不仅是被索引的字段。目前，子查询和聚集表达式不能出现在WHERE子句里。
 
-- **PARTITION index\_partition\_name**
+-   **PARTITION index\_partition\_name**
 
     索引分区的名称。
 
     取值范围：字符串，要符合标识符的命名规范。
 
-- **TABLESPACE index\_partition\_tablespace**
+-   **TABLESPACE index\_partition\_tablespace**
 
     索引分区的表空间。
 
     取值范围：如果没有声明，将使用分区表索引的表空间index\_tablespace。
 
-    
 
-
-## 示例<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```
 --创建表tpcds.ship_mode_t1。
@@ -334,13 +322,13 @@ postgres=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngr
 CREATE INDEX
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>
+## 相关链接<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>
 
-[ALTER INDEX](ALTER-INDEX.md)，[DROP INDEX](DROP-INDEX.md)
+[ALTER INDEX](zh-cn_topic_0289900645.md)，[DROP INDEX](zh-cn_topic_0289899909.md)
 
-## 优化建议<a name="zh-cn_topic_0237122106_zh-cn_topic_0059777455_section3814797010859"></a>
+## 优化建议<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_section3814797010859"></a>
 
-- create index
+-   create index
 
     建议仅在匹配如下条件之一时创建索引：
 
@@ -352,13 +340,15 @@ CREATE INDEX
     约束限制：
 
     -   分区表上不支持创建部分索引、不支持NULL FIRST特性。
+
     -   在使用LOCAL索引创建唯一索引时，索引项中必须包含分布列和所有分区键。GLOBAL索引无此约束。
     -   分区表创建GLOBAL索引时，存在以下约束条件：
-        - 不支持表达式索引、部分索引
-        - 不支持列存表
-        - 仅支持B-tree索引
+        -   不支持表达式索引、部分索引
+        -   不支持列存表
+        -   仅支持B-tree索引
+
     -   在相同属性列上，分区LOCAL索引与GLOBAL索引不能共存。
-    -   GLOBAL索引最大只支持31列。
+    -   GLOBAL索引，最大支持31列。
     -   如果在一个分区表上创建了GLOBAL索引，当执行ALTER TABLE对分区进行DROP、TRUNCATE、SPLIT、MERGE、EXCHANGE中的任何一种操作，此时会导致GLOBAL索引失效，需要用户手动重建索引。
 
 
