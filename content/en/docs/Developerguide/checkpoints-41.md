@@ -71,7 +71,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## enable\_double\_write<a name="en-us_topic_0237124708_section1127841614298"></a>
 
-**Parameter description**: Specifies whether to enable the doublewrite buffer. When the incremental checkpointing is enabled, the doublewrite buffer instead of  **full\_page\_writes**  is used to prevent partial page writes.
+**Parameter description**: Specifies whether to enable the doublewrite buffer. When the incremental checkpointing is enabled,  **enable\_double\_write**  is enabled at the same time and the doublewrite buffer instead of  **full\_page\_writes**  is used to prevent partial page writes.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -103,4 +103,14 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Default value**:  **on**
 
 
+
+## max_redo_log_size<a name="en-us_topic_0237124708_section162792473463"></a>
+
+**Parameter description**: Specifies the size of logs before the recovery point and the current log location. You are advised not to set this parameter to a large value if the RTO is concerned.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 163840 to 2147483647. The unit is KB.
+
+**Default value**:  **1GB**
 

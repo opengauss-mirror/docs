@@ -12,7 +12,7 @@ gs\_dump工具支持导出完整一致的数据。例如，T1时刻启动gs\_dum
 
 gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其他归档文件中。
 
--   纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过[gsql](gsql.md)运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
+-   纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过gsql运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
 -   归档格式文件：包含将数据库恢复为其保存时的状态所需的数据，可以是tar格式、目录归档格式或自定义归档格式，详见[表1](#zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)。该导出结果必须与[gs\_restore](gs_restore.md)配合使用来恢复数据库，gs\_restore工具在导入时，系统允许用户选择需要导入的内容，甚至可以在导入之前对等待导入的内容进行排序。
 
 ## 主要功能<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
@@ -42,7 +42,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 </td>
 <td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0237152335_p130319266504"><a name="zh-cn_topic_0237152335_p130319266504"></a><a name="zh-cn_topic_0237152335_p130319266504"></a>小型数据库，一般推荐纯文本格式。</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0237152335_p18632714386"><a name="zh-cn_topic_0237152335_p18632714386"></a><a name="zh-cn_topic_0237152335_p18632714386"></a>使用<a href="gsql.md">gsql</a>工具恢复数据库对象前，可根据需要使用文本编辑器编辑纯文本导出文件。</p>
+<td class="cellrowborder" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0237152335_p18632714386"><a name="zh-cn_topic_0237152335_p18632714386"></a><a name="zh-cn_topic_0237152335_p18632714386"></a>使用gsql工具恢复数据库对象前，可根据需要使用文本编辑器编辑纯文本导出文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152335_row14339208493"><td class="cellrowborder" valign="top" width="12.78%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0237152335_zh-cn_topic_0058967678_af130ab9de506445ca1707d7e363597d0"><a name="zh-cn_topic_0237152335_zh-cn_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a><a name="zh-cn_topic_0237152335_zh-cn_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a>自定义归档格式</p>
@@ -77,8 +77,8 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->可以使用gs\_dump程序将文件压缩为纯文本或自定义归档导出文件，减少导出文件的大小。生成纯文本导出文件时，默认不压缩。生成自定义归档导出文件时，默认进行中等级别的压缩。gs\_dump程序无法压缩已归档导出文件。通过压缩方式导出纯文本格式文件，gsql无法成功导入数据对象。
+![](public_sys-resources/icon-note.gif) **说明：** 
+可以使用gs\_dump程序将文件压缩为纯文本或自定义归档导出文件，减少导出文件的大小。生成纯文本导出文件时，默认不压缩。生成自定义归档导出文件时，默认进行中等级别的压缩。gs\_dump程序无法压缩已归档导出文件。通过压缩方式导出纯文本格式文件，gsql无法成功导入数据对象。
 
 ## 注意事项<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
@@ -92,21 +92,23 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 gs_dump [OPTION]... [DBNAME]
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->“dbname”前面不需要加短或长选项。“dbname”指定要连接的数据库。
->例如：
->不需要-d，直接指定“dbname”。
->```
->gs_dump -p port_number  postgres -f dump1.sql
->```
->或者
->```
->export PGDATABASE=postgres 
->```
->```
-> gs_dump -p port_number -f dump1.sql
->```
->环境变量： PGDATABASE
+![](public_sys-resources/icon-note.gif) **说明：** 
+“dbname”前面不需要加短或长选项。“dbname”指定要连接的数据库。
+例如：
+不需要-d，直接指定“dbname”。
+```
+gs_dump -p port_number  postgres -f dump1.sql
+```
+或者
+```
+export PGDATABASE=postgres 
+```
+```
+ gs_dump -p port_number -f dump1.sql
+```
+环境变量： PGDATABASE
+
+
 
 ## 参数说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
@@ -187,9 +189,11 @@ gs_dump [OPTION]... [DBNAME]
 
     只转储与模式名称匹配的模式，此选项包括模式本身和所有它包含的对象。如果该选项没有指定，所有在目标数据库中的非系统模式将会被转储。写入多个-n选项来选择多个模式。此外，根据gsql的\\d命令所使用的相同规则，模式参数可被理解成一个pattern，所以多个模式也可以通过在该pattern中写入通配符来选择。使用通配符时，注意给pattern打引号，防止shell扩展通配符。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
-    >-   当-n指定时，非模式对象不会被转储。
+    ![](public_sys-resources/icon-note.gif) **说明：**
+
+    -   当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
+
+    -   当-n指定时，非模式对象不会被转储。
 
     转储支持多个模式的转储。多次输入-n schemaname转储多个模式。
 
@@ -245,12 +249,16 @@ gs_dump [OPTION]... [DBNAME]
 
     当使用-t时，-n和-N没有任何效应，这是因为由-t选择的表的转储不受那些选项的影响。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   -t参数选项个数必须小于等于100。
-    >-   如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
-    >-   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。
-    >-   -t tablename只转储在默认搜索路径中可见的表。-t '\*.tablename'转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。
-    >-   -t tablename不会导出表上的触发器信息。
+    ![](public_sys-resources/icon-note.gif) **说明：**  
+    -   -t参数选项个数必须小于等于100。
+
+    -   如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
+
+    -   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。 
+
+    -   -t tablename只转储在默认搜索路径中可见的表。-t '\*.tablename'转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。 
+
+    -   -t tablename不会导出表上的触发器信息。  
 
     例如：
 
@@ -282,11 +290,11 @@ gs_dump [OPTION]... [DBNAME]
 
     指定不需要dump的表文件。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >同--include-table-file，其内容格式如下：
-    >schema1.table1
-    >schema2.table2
-    >......
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    同--include-table-file，其内容格式如下：
+    schema1.table1
+    schema2.table2
+    ......
 
 -   -x, --no-privileges|--no-acl
 
@@ -399,14 +407,21 @@ gs_dump [OPTION]... [DBNAME]
     ```
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   -s/--schema-only和-a/--data-only不能同时使用。
->-   -c/--clean和-a/--data-only不能同时使用。
->-   --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。
->-   --role和--rolepassword必须一起使用。
->-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
->-   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效
->-   --exclude-self必须同--include-depend-objs一起使用。
+![](public_sys-resources/icon-note.gif) **说明：**  
+
+-   -s/--schema-only和-a/--data-only不能同时使用。  
+
+-   -c/--clean和-a/--data-only不能同时使用。  
+
+-   --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。  
+
+-   --role和--rolepassword必须一起使用。  
+
+-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。  
+
+-   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。  
+
+-   --exclude-self必须同--include-depend-objs一起使用。  
 
 连接参数：
 
@@ -469,8 +484,8 @@ tar归档形式的文件大小不得超过8GB（tar文件格式的固有限制�
 
 示例中“Bigdata@123”表示数据库用户密码；“backup/MPPDB\_backup.sql”表示导出的文件，其中backup表示相对于当前目录的相对目录；“37300”表示数据库服务器端口；“postgres”表示要访问的数据库名。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->导出操作时，请确保该目录存在并且当前的操作系统用户对其具有读写权限。
+![](public_sys-resources/icon-note.gif) **说明：** 
+导出操作时，请确保该目录存在并且当前的操作系统用户对其具有读写权限。
 
 示例1：执行gs\_dump，导出postgres数据库全量信息，导出的MPPDB\_backup.sql文件格式为纯文本格式。
 
@@ -558,4 +573,3 @@ gs_dump[port='37300'][postgres][2018-06-27 10:37:22]: total time: 37017  ms
 ## 相关命令<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s04aec05b522242268c264d0964818765"></a>
 
 [gs\_dumpall](gs_dumpall.md)，[gs\_restore](gs_restore.md)
-

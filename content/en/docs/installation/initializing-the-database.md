@@ -17,4 +17,3 @@ Information similar to the following is displayed:
 ```
 CREATE DATABASE
 ```
-

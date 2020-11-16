@@ -1,20 +1,5 @@
 # Using the gsql Client for Connection<a name="EN-US_TOPIC_0241704252"></a>
 
-<!-- TOC -->
-
-- [Confirming Connection Information](#confirming-connection-information)
-    - [Procedure](#procedure)
-- [Connecting to a Database Locally](#connecting-to-a-database-locally)
-    - [Precautions](#precautions)
-    - [Prerequisites](#prerequisites)
-    - [Procedure](#procedure-1)
-- [Connecting to a Database Remotely](#connecting-to-a-database-remotely)
-    - [Prerequisites](#prerequisites-1)
-    - [Configuring a Whitelist Using gs\_guc](#configuring-a-whitelist-using-gs\_guc)
-    - [Installing the gsql Client and Connecting to a Database](#installing-the-gsql-client-and-connecting-to-a-database)
-
-<!-- /TOC -->
-
 
 ## Confirming Connection Information
 
@@ -70,11 +55,11 @@ You can use a client tool to connect to a database through the primary node of t
 
 ### Precautions
 
-By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **[session\_timeout](en-us_topic_0242371486.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**. To disable the timeout setting, set  **[session\_timeout](en-us_topic_0242371486.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**  to  **0**.
+By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **session\_timeout**. To disable the timeout setting, set  **session\_timeout **to  **0**.
 
 ### Prerequisites
 
-Connection information has been confirmed. For details, see  [Confirming Connection Information](en-us_topic_0242370176.md).
+Connection information has been confirmed. For details, see  Confirming Connection Information.
 
 ### Procedure
 
@@ -103,7 +88,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
     User  **omm**  is the administrator, and  **DBNAME=\#**  is displayed. If you log in to and connect to the database as a common user,  **DBNAME=\>**  is displayed.
 
-    **Non-SSL connection**  indicates that the database is not connected in SSL mode. If high security is required,  [connect to the database in SSL mode](en-us_topic_0246507951.md).
+    **Non-SSL connection**  indicates that the database is not connected in SSL mode. If high security is required,  connect to the database in SSL mode.
 
 3.  Change the password after your first login. The initial password is set manually during openGauss database installation. For details, see the  _Installation Guide_. You need to change the initial password. Suppose you want to change the initial password to  **Mypwd123**. You can use the following command:
 
@@ -124,7 +109,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
 ### Prerequisites
 
-Connection information has been confirmed. For details, see  [Confirming Connection Information](en-us_topic_0242370176.md).
+Connection information has been confirmed. For details, see  Confirming Connection Information.
 
 ### Configuring a Whitelist Using gs\_guc
 
@@ -137,22 +122,28 @@ Connection information has been confirmed. For details, see  [Confirming Connect
     gs_guc set -N all -I all -h "host all jack 10.10.0.30/32 sha256"
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   Before using user  **jack**, connect to the database locally and run the following command in the database to create user  **jack**:
-    >    ```
-    >    postgres=# CREATE USER jack PASSWORD 'Test@123';
-    >    ```
-    >-   **-N all**  indicates all hosts in openGauss.
-    >-   **-I all**  indicates all instances on the host.
-    >-   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
-    >-   **all**  indicates that a client can connect to any database.
-    >-   **jack**  indicates the user that accesses the database.
-    >-   _10.10.0.30_/_32_  indicates that only the client whose IP address is  **10.10.0.30**  can connect to the host. The specified IP address must be different from those used in openGauss.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
-    >-   **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.
+    ![](public_sys-resources/icon-note.gif) **NOTE:** 
+    -   Before using user  **jack**, connect to the database locally and run the following command in the database to create user  **jack**:
+        ```
+        postgres=# CREATE USER jack PASSWORD 'Test@123';
+        ```
+    -   **-N all**  indicates all hosts in openGauss.
+
+    -   **-I all**  indicates all instances on the host.
+
+    -   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
+
+    -   **all**  indicates that a client can connect to any database.
+
+    -   **jack**  indicates the user that accesses the database.
+
+    -   _10.10.0.30_/_32_  indicates that only the client whose IP address is  **10.10.0.30**  can connect to the host. The specified IP address must be different from those used in openGauss.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
+
+    -   **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.
 
     This command adds a rule to the  **pg\_hba.conf**  file corresponds to the primary node of the database. The rule is used to authenticate clients that access primary node.
 
-    Each record in the  **pg\_hba.conf**  file can be in one of the following four formats. For parameter description of the four formats, see  [Configuration File Reference](en-us_topic_0246507950.md).
+    Each record in the  **pg\_hba.conf**  file can be in one of the following four formats. For parameter description of the four formats, see  Configuration File Reference.
 
     ```
     local     DATABASE USER METHOD [OPTIONS]
@@ -163,17 +154,18 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
     During authentication, the system checks records in the  **pg\_hba.conf**  file in sequence for connection requests, so the record sequence is vital.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >Configure records in the  **pg\_hba.conf**  file from top to bottom based on communication and format requirements in the descending order of priorities. The IP addresses of the openGauss cluster and added hosts are of the highest priority and should be configured prior to those manually configured by users. If the IP addresses manually configured by users and those of added hosts are in the same network segment, delete the manually configured IP addresses before the scale-out and configure them after the scale-out.
+    ![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+    Configure records in the  **pg\_hba.conf**  file from top to bottom based on communication and format requirements in the descending order of priorities. The IP addresses of the openGauss cluster and added hosts are of the highest priority and should be configured prior to those manually configured by users. If the IP addresses manually configured by users and those of added hosts are in the same network segment, delete the manually configured IP addresses before the scale-out and configure them after the scale-out.
 
     The suggestions on configuring authentication rules are as follows:
 
     -   Records placed at the front have strict connection parameters but weak authentication methods.
     -   Records placed at the end have weak connection parameters but strict authentication methods.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If a user wants to connect to a specified database, the user must be authenticated by the rules in the  **pg\_hba.conf**  file and have the  **CONNECT**  permission for the database. If you want to restrict a user from connecting to certain databases, you can grant or revoke the user's  **CONNECT**  permission, which is easier than setting rules in the  **pg\_hba.conf**  file.
-    >-   The  **trust**  authentication mode is insecure for a connection between the openGauss and a client outside the cluster. In this case, set the authentication mode to  **sha256**.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    -   If a user wants to connect to a specified database, the user must be authenticated by the rules in the  **pg\_hba.conf**  file and have the  **CONNECT**  permission for the database. If you want to restrict a user from connecting to certain databases, you can grant or revoke the user's  **CONNECT**  permission, which is easier than setting rules in the  **pg\_hba.conf**  file.  
+    -   The  **trust**  authentication mode is insecure for a connection between the openGauss and a client outside the cluster. In this case, set the authentication mode to  **sha256**.  
 
 
 ### Installing the gsql Client and Connecting to a Database
@@ -189,9 +181,11 @@ On the host, upload the client tool package and configure environment variables 
 
 3.  Obtain the file  **openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz**  from the  software installation package  and upload it to the  **/tmp/tools**  directory.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   The software package is located where you put it before installation. Set it based on site requirements.
-    >-   The tool package name may vary in different OSs. Select the tool package suitable for your OS.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**
+
+    -   The software package is located where you put it before installation. Set it based on site requirements.
+
+    -   The tool package name may vary in different OSs. Select the tool package suitable for your OS.
 
 4.  Run the following commands to decompress the package:
 
@@ -231,6 +225,8 @@ On the host, upload the client tool package and configure environment variables 
 
     **postgres**  is the name of the database,  **10.10.0.11**  is the IP address of the server where the primary node of the database resides,  **jack**  is the user of the database,  **8000**  is the port number of the CN, and  **Test@123**  is the password of user  **jack**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If a machine connected to openGauss is not in the same network segment as openGauss, the IP address specified by  **-h**  should be the value of  **coo.cooListenIp2**  \(application access IP address\) set in Manager.
-    >-   Do not remotely connect to the database as user  **omm**.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**
+
+    -   If a machine connected to openGauss is not in the same network segment as openGauss, the IP address specified by  **-h**  should be the value of  **coo.cooListenIp2**  \(application access IP address\) set in Manager.
+    
+    -   Do not remotely connect to the database as user  **omm**.

@@ -1,144 +1,66 @@
-# Initializing the Installation Environment<a name="EN-US_TOPIC_0249784559"></a>
+# Initializing the Installation Environment<a name="EN-US_TOPIC_0283136473"></a>
 
-To ensure the correct installation of the openGauss, you need to configure the host environment first.
-
-<!-- TOC -->
-
-- [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment)
-    - [Prerequisites](#prerequisites)
-    - [Precautions](#precautions)
-    - [Procedure](#procedure)
-    - [Examples](#examples)
-    - [Troubleshooting](#troubleshooting)
-- [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually)
-    - [Prerequisites](#prerequisites-1)
-    - [Establishing Mutual Trust Using a Script](#establishing-mutual-trust-using-a-script)
-    - [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually-1)
-    - [Deleting Mutual Trust Between Users  **root**](#deleting-mutual-trust-between-users--root)
-    - [Examples](#examples-1)
-- [Configuring OS Parameters](#configuring-os-parameters)
-    - [OS Parameters](#os-parameters)
-    - [File System Parameters](#file-system-parameters)
-    - [Setting the transparent\_hugepage Service](#setting-the-transparent\_hugepage-service)
-    - [Setting File Handles](#setting-file-handles)
-    - [Setting the Maximum Number of Allowed Processes](#setting-the-maximum-number-of-allowed-processes)
-    - [Setting NIC Parameters](#setting-nic-parameters)
-
-<!-- /TOC -->
+-   [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment) 
+-   [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) 
+-   [Configuring OS Parameters](#configuring-os-parameters)  
 
 ## Creating the Required User Account and Configuring the Installation Environment
 
-After the clusteropenGauss configuration file is created, you need to run the  **gs\_preinstall**  script to prepare the account and environment so that you can perform clusteropenGauss installation and management operations with the minimum permission, ensuring system security.
+After the openGauss configuration file is created, you need to run the  **gs\_preinstall**  script to prepare the account and environment so that you can perform openGauss installation and management operations with the minimum permission, ensuring system security.
 
 Executing the  **gs\_preinstall**  script enables the system to automatically complete the following installation preparations:
 
--   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](configuring-os-parameters.md).
--   Automatically copies the clusteropenGauss configuration files and installation packages to the same directory on each clusteropenGauss host.
--   If the installation user and user group of the clusteropenGauss do not exist, the system automatically creates them.
--   Reads the directory information in the clusteropenGauss configuration file, creates the directory, and grants the directory permission to the installation user.
+-   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](#configuring-os-parameters).
+-   Automatically copies the openGauss configuration files and installation packages to the same directory on each openGauss host.
+-   If the installation user and user group of the openGauss do not exist, the system automatically creates them.
+-   Reads the directory information in the openGauss configuration file, creates the directory, and grants the directory permission to the installation user.
 
-### Prerequisites
+### Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>
 
 -   You have completed all the tasks described in  [Preparing for Installation](preparing-for-installation.md).
 
-### Precautions
+### Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>
 
 -   You must check the upper-layer directory permissions to ensure that the user has the read, write, and execution permissions on the installation package and configuration file directory.
 -   The mapping between each host name and IP address in the XML configuration file must be correct.
 -   Only user  **root**  is authorized to run the  **gs\_preinstall**  command.
 
-### Procedure
+### Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>
 
-1.  Log in to any host where the clusteropenGauss is to be installed as user  **root**  and create a directory for storing the installation package as planned.
+1.  Log in to any host where the openGauss is to be installed as user  **root**  and create a directory for storing the installation package as planned.
 
     ```
     mkdir -p /opt/software/openGauss
     chmod 755 -R /opt/software
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.
-    >-   The clusteropenGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    -   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
+    -   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
 
-2.  The release package is used as an example. Upload the installation package  **openGauss\_x.x.x\_PACKAGES\_RELEASE.tar.gz**  and the configuration file  **clusterconfig.xml**  to the directory created in the previous step.
-3.  Go to the directory for storing the uploaded software package and decompress the package. 
+2.  Upload the software package  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
+3.  Go to the directory for storing the uploaded software package and decompress  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**. After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
 
     ```
     cd /opt/software/openGauss
-    tar -zxvf openGauss_x.x.x_PACKAGES_RELEASE.tar.gz
-    ```
-
-    [Table 1](#en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_te4a9d557337c400c85acff184476a722)  describes the contents of the decompressed software package.
-
-    **Table  1**  Description about the installation package
-
-    <a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_te4a9d557337c400c85acff184476a722"></a>
-    <table><thead align="left"><tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_r6e873539a9a948579dd18ac7252c2f16"><th class="cellrowborder" valign="top" width="37.09%" id="mcps1.2.3.1.1"><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_aeb07fb644a9c44c9b5867059f6978c73"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_aeb07fb644a9c44c9b5867059f6978c73"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_aeb07fb644a9c44c9b5867059f6978c73"></a>Package Name</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="62.91%" id="mcps1.2.3.1.2"><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a6e02d21de44f441f9802f741ccfffa0c"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a6e02d21de44f441f9802f741ccfffa0c"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a6e02d21de44f441f9802f741ccfffa0c"></a>Description</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_rd2f98318592144069cc579944ef03765"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p169784217411"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p169784217411"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p169784217411"></a><span id="text9914841165213"><a name="text9914841165213"></a><a name="text9914841165213"></a>openGauss-<em>x.x.x</em></span>-openEULER-64bit-ClientTools.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p330749117411"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p330749117411"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p330749117411"></a>Used to install the client in the SUSE Linux OS. This software package contains the gsql, dump restore tool, ODBC driver, JDBC driver, and Libpq library.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_r175ab443930247f1a14e55b0a76ef425"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a382ad5075b02419a99cc5c5894ee3dc8"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a382ad5075b02419a99cc5c5894ee3dc8"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a382ad5075b02419a99cc5c5894ee3dc8"></a><span id="text127819456523"><a name="text127819456523"></a><a name="text127819456523"></a>openGauss-<em>x.x.x</em></span>-openEULER-64bit-Jdbc.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a30fe42f57dff4354a4ccdccb34e33005"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a30fe42f57dff4354a4ccdccb34e33005"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a30fe42f57dff4354a4ccdccb34e33005"></a>Used to install the JDBC driver in the SUSE Linux OS.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_rc4332348c8c64404896b4c01435fb5bd"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a95ee6d367d614b419e6a2f47dd8c9cc3"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a95ee6d367d614b419e6a2f47dd8c9cc3"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a95ee6d367d614b419e6a2f47dd8c9cc3"></a><span id="text16926124511524"><a name="text16926124511524"></a><a name="text16926124511524"></a>openGauss-<em>x.x.x</em></span>-openEULER-64bit-Libpq.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac74876654f444229b42953321aedd13c"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac74876654f444229b42953321aedd13c"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac74876654f444229b42953321aedd13c"></a>Used to install the libpq library in the SUSE Linux OS.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_rfcb5e881573c494593bc04c1bca8a09d"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a441838f8f2c24013be87cbf21cd2481d"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a441838f8f2c24013be87cbf21cd2481d"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a441838f8f2c24013be87cbf21cd2481d"></a><span id="text14441246125210"><a name="text14441246125210"></a><a name="text14441246125210"></a>openGauss-<em>x.x.x</em></span>-openEULER-64bit-Odbc.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a1ad6388e500942829101ee341d2ad99e"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a1ad6388e500942829101ee341d2ad99e"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a1ad6388e500942829101ee341d2ad99e"></a>Used to install the ODBC driver in the SUSE Linux OS.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_r47a88d77ed4a4db69c80398dc8ede3ed"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a059da55b14b245b4bc1f4b96fdb437d8"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a059da55b14b245b4bc1f4b96fdb437d8"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_a059da55b14b245b4bc1f4b96fdb437d8"></a><span id="text1395564605215"><a name="text1395564605215"></a><a name="text1395564605215"></a>openGauss-<em>x.x.x</em></span>-openEULER-64bit-symbol.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_af6ff46e672d64cd4a7b2343754f27241"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_af6ff46e672d64cd4a7b2343754f27241"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_af6ff46e672d64cd4a7b2343754f27241"></a>Provides the support file for debugging and locating database problems.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_r3640d79bce024730adf7da69354e9805"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac6717a0a4d1e4920885a30efa60e4441"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac6717a0a4d1e4920885a30efa60e4441"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_ac6717a0a4d1e4920885a30efa60e4441"></a><span id="text1547711471524"><a name="text1547711471524"></a><a name="text1547711471524"></a>openGauss-<em>x.x.x</em></span>-openEULER-64bit.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p995340417411"><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p995340417411"></a><a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_en-us_topic_0012121120_p995340417411"></a>Used to install the database management system. This software package is the one used for database installation in this document.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0241805803_row119861222143717"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_p10587153914392"><a name="en-us_topic_0241805803_p10587153914392"></a><a name="en-us_topic_0241805803_p10587153914392"></a><span id="text1495315497526"><a name="text1495315497526"></a><a name="text1495315497526"></a>openGauss-<em>x.x.x</em></span>-Sslcert.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_p3587623639"><a name="en-us_topic_0241805803_p3587623639"></a><a name="en-us_topic_0241805803_p3587623639"></a>Certificate used for client-side server authentication.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0241805803_row14819101919379"><td class="cellrowborder" valign="top" width="37.09%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241805803_p799504063917"><a name="en-us_topic_0241805803_p799504063917"></a><a name="en-us_topic_0241805803_p799504063917"></a><span id="text95661503528"><a name="text95661503528"></a><a name="text95661503528"></a>openGauss-<em>x.x.x</em></span>-Inspection.tar.gz</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.91%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241805803_p881911993712"><a name="en-us_topic_0241805803_p881911993712"></a><a name="en-us_topic_0241805803_p881911993712"></a>Used to check the health status of the database.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-4.  Decompress the  **openGauss-_x.x.x_-openEULER-64bit.tar.gz**  package.
-
-    ```
     tar -zxvf openGauss-x.x.x-openEULER-64bit.tar.gz
     ```
 
-    After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**  
+    -   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
+    -   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
+    -   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   When you execute the  **gs\_preinstall**  script, plan the directory for storing the clusteropenGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.
-    >-   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the clusteropenGauss configuration file and decompressed installation package to the same directory on other servers.
-    >-   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.
-
-5.  Go to the directory for storing tool scripts.
+4.  Go to the directory for storing tool scripts.
 
     ```
     cd /opt/software/openGauss/script
+    ```
+
+5.  For openEuler, run the following command to open the  **gspylib/common/CheckPythonVersion.py**  file and change  **if not pythonVersion == \(3, 6\):**  to  **if not pythonVersion \>= \(3, 6\):**. Press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
+
+    ```
+    vi gspylib/common/CheckPythonVersion.py
     ```
 
 6.  If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\> /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
@@ -153,40 +75,51 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
     export LD_LIBRARY_PATH={packagePath}/script/gspylib/clib:$LD_LIBRARY_PATH
     ```
 
-8.  To ensure successful installation, check whether the values of  **hostname**  and  **/etc/hostname**  are the same. During preinstallation, the host name is checked.
+8.  To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.
+
+    ```
+    hostname
+    cat /etc/hostname 
+    ```
+
+    If the value of  **hostname**  is different from the host name in the  **/etc/hostname**  file, run the following command to open the  **/etc/hostname**  file and change the host name. Press  **Esc**  to enter the command mode, and then run the  **:wq**  command to save the change and exit.
+
+    ```
+    vi /etc/hostname 
+    ```
+
 9.  Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
-    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between clusteropenGauss users is automatically established.
+    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
 
         ```
-        ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/clusterconfig.xml
+        ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
         ```
 
-        **omm**  is the database administrator \(also the OS user running the clusteropenGauss\),  **dbgrp**  is the group name of the OS user running the clusteropenGauss, and  **/opt/software/GaussDB\_KernelopenGauss/clusterconfig.xml**  is the path of the clusteropenGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the clusteropenGauss user.
+        **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the openGauss user.
 
     -   If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
         1.  Run the following command to configure the installation environment:
 
             ```
             cd /opt/software/openGauss/script
-            ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/clusterconfig.xml
+            ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
-            >You need to run this command on each host.
-
+            ![](public_sys-resources/icon-note.gif) **NOTE:**   
+            You need to run this command on each host.  
 
     -   Execute  **gs\_preinstall**  in non-interactive mode.
-        1.  Manually establish mutual trust between users  **root**  and between clusteropenGauss users by following the instructions provided in  [Establishing Mutual Trust Manually](establishing-mutual-trust-manually.md).
+        1.  Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in[Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
         2.  Run the following command to configure the installation environment:
     
             ```
             cd /opt/software/openGauss/script
-            ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/clusterconfig.xml --non-interactive
+            ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
             ```
     
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
-            >-   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between clusteropenGauss users on each node before executing  **gs\_preinstall**.
-            >-   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.
+        ![](public_sys-resources/icon-note.gif) **NOTE:**   
+        -   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
+        -   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
 
 
 
@@ -196,7 +129,7 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
 Execute the  **gs\_preinstall**  script.
 
 ```
-plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/clusterconfig.xml
+plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
 Parsing the configuration file.
 Successfully parsed the configuration file.
 Installing the tools on the local node.
@@ -293,13 +226,12 @@ Fixing server package owner.
 Setting finish flag.
 Successfully set finish flag.
 Preinstallation succeeded.
-S
 ```
 
-If the passwords of user  **root**  on the hosts in the cluster are different and cannot be changed to the same one, execute the  **gs\_preinstall**  script in local installation mode.
+If the passwords of the user  **root**  on the primary and standby nodes are different and cannot be changed to the same value, run the  **gs\_preinstall**  script in local installation mode.
 
 ```
-plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/clusterconfig.xml 
+plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml 
 Parsing the configuration file.
 Successfully parsed the configuration file.
 Installing the tools on the local node.
@@ -336,7 +268,7 @@ Preinstallation succeeded.
 Execute  **gs\_preinstall**  in non-interactive mode.
 
 ```
-plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/clusterconfig.xml --non-interactive
+plat1:/opt/software/openGauss/script # ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
 Parsing the configuration file.
 Successfully parsed the configuration file.
 Installing the tools on the local node.
@@ -382,17 +314,17 @@ Preinstallation succeeded.
 
 ### Troubleshooting
 
-If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing clusteropenGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running clusteropenGauss.
+If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing openGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running openGauss.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
+![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
 
 ## Establishing Mutual Trust Manually
 
 During the openGauss installation, you need to perform operations such as running commands and transferring files between hosts in openGauss. Establish mutual trust among the hosts before installing the cluster as a common user. During the execution of the pre-installation script, establish mutual trust between users  **root**, then create a common user account, and finally establish mutual trust between common users.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.
+![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.  
 
 ### Prerequisites
 
@@ -401,7 +333,7 @@ During the openGauss installation, you need to perform operations such as runnin
 -   Each host name and IP address have been correctly configured in the XML file.
 -   Communication among all the hosts is normal.
 -   If the mutual trust is to be established for common users, the same user needs to be created and password set on each host.
--   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/root**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**  and that of the  **/home**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
+-   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/root**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**  and that of the  **/home**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**, or disable the SELinux service.
 
     To check the SELinux status, run the  **getenforce**  command. If the command output is  **Enforcing**, SELinux is installed and has been enabled.
 
@@ -428,6 +360,11 @@ During the openGauss installation, you need to perform operations such as runnin
 
 ### Establishing Mutual Trust Using a Script
 
+Establishing a mutual trust relationship using a script has the following impacts:
+
+-   The  **/etc/hosts**  file may be modified. Back up the  **/etc/hosts**  file before using the script to establish mutual trust.
+-   The script deletes the existing .ssh file directory. If you want to retain the mutual trust relationship established between nodes, use the method described in [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
+
 1.  Create the file for executing the mutual trust script, and add the IP addresses of all the hosts in the openGauss to the file.
 
     ```
@@ -438,151 +375,121 @@ During the openGauss installation, you need to perform operations such as runnin
     ```
 
 2.  Execute the script as the user who needs to establish mutual trust with the hosts.
-3.  Execute the following script to establish mutual trust:
 
     ```
-    plat1:/opt/software/openGauss/script# gs_sshexkey -f /opt/software/hostfile
+    plat1:/opt/software/openGauss/script# ./gs_sshexkey -f /opt/software/hostfile
     ```
 
     The  **/opt/software/hostfile**  file contains a list of the hosts. The list provides the IP addresses of all the hosts among which mutual trust needs to be established.
 
 
-### Establishing Mutual Trust Manually
+## Establishing Mutual Trust Manually
 
 If the passwords of user  **root**  on the hosts in the openGauss are different, the  **gs\_preinstall**  script cannot be used to establish mutual trust. In this case, manually establish mutual trust.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.  
 
 The procedure of manually establishing mutual trust is as follows \(**plat1**,  **plat2**, and  **plat3**  are host names\):
 
 1.  Generate a licensed file for user  **root**  on any host \(referred to as the local host\). Host  **plat1**  is used as an example.
-    1.  Generate a key.
+    a.  Generate a key.
 
-        ```
-        ssh-keygen -t rsa
-        ```
+           ssh-keygen -t rsa
+    
+    The following is an example:
+        
+            plat1:~ # ssh-keygen -t rsa 
+            Generating public/private rsa key pair.
+            Enter file in which to save the key (/root/.ssh/id_rsa): 
+            Created directory '/root/.ssh'.
+            Enter passphrase (empty for no passphrase): 
+            Enter same passphrase again: 
+            Your identification has been saved in /root/.ssh/id_rsa.
+            Your public key has been saved in /root/.ssh/id_rsa.pub.
+            The key fingerprint is:
+            d5:35:46:33:27:22:09:f0:1e:12:a7:87:fa:33:3f:ab root@plat1
+            The key's randomart image is:
+            +--[ RSA 2048]----+
+            |      o.o.....O .|
+            |       *  .o + * |
+            |      + + . .    |
+            |     . + o       |
+            |    .   S        |
+            |     .           |
+            |      +          |
+            |       +.        |
+            |      E.oo       |
+            +-----------------+
+    
+    b.  Generate the licensed file.
+    
+            cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
-        The following is an example:
-
-        ```
-        plat1:~ # ssh-keygen -t rsa 
-        Generating public/private rsa key pair.
-        Enter file in which to save the key (/root/.ssh/id_rsa): 
-        Created directory '/root/.ssh'.
-        Enter passphrase (empty for no passphrase): 
-        Enter same passphrase again: 
-        Your identification has been saved in /root/.ssh/id_rsa.
-        Your public key has been saved in /root/.ssh/id_rsa.pub.
-        The key fingerprint is:
-        d5:35:46:33:27:22:09:f0:1e:12:a7:87:fa:33:3f:ab root@plat1
-        The key's randomart image is:
-        +--[ RSA 2048]----+
-        |      o.o.....O .|
-        |       *  .o + * |
-        |      + + . .    |
-        |     . + o       |
-        |    .   S        |
-        |     .           |
-        |      +          |
-        |       +.        |
-        |      E.oo       |
-        +-----------------+
-        ```
-
-    2.  Generate the licensed file.
-
-        ```
-        cat .ssh/id_rsa.pub >> .ssh/authorized_keys
-        ```
-
-        The following is an example:
-
-        ```
-        plat1:~ # cat .ssh/id_rsa.pub >> .ssh/authorized_keys
-        ```
-
+    The following is an example:
+        
+    
+            plat1:~ # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    
 2.  Obtain the public keys of all the hosts among which mutual trust needs to be established, and write the public keys into the  **known\_hosts**  file on the local host. This step needs to be performed on the host where Step 1 is performed. You need to obtain the public keys of the  **plat1**,  **plat2**, and  **plat3**  hosts.
-    1.  Obtain the public key of host  **plat1**, and write the public key into the  **known\_hosts**  file on the local host.
+    a.  Obtain the public key of host  **plat1**, and write the public key into the  **known\_hosts**  file on the local host.
 
-        ```
-        ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts
-        ```
+            ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts
+    
+     The following is an example:
+        
+            plat1:~ # ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts 
+            # plat1 SSH-2.0-OpenSSH_5.1 
+    
+    b.  Obtain the public key of host  **plat2**, and write the public key into the  **known\_hosts**  file on the local host.
+    
+            ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts
 
-        The following is an example:
-
-        ```
-        plat1:~ # ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts 
-        # plat1 SSH-2.0-OpenSSH_5.1 
-        ```
-
-    2.  Obtain the public key of host  **plat2**, and write the public key into the  **known\_hosts**  file on the local host.
-
-        ```
-        ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts
-        ```
-
-        The following is an example:
-
-        ```
-        plat1:~ # ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts 
-        # plat2 SSH-2.0-OpenSSH_5.1 
-        ```
-
-    3.  Obtain the public key of host  **plat3**, and write the public key into the  **known\_hosts**  file on the local host.
-
-        ```
-        ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts
-        ```
-
-        The following is an example:
-
-        ```
-        plat1:~ # ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts 
-        # plat3 SSH-2.0-OpenSSH_5.1 
-        ```
-
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >-   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
-        >-   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
+    The following is an example:
+        
+            plat1:~ # ssh-keyscan -t rsa plat2 >> ~/.ssh/known_hosts 
+            # plat2 SSH-2.0-OpenSSH_5.1 
+    
+    c.  Obtain the public key of host  **plat3**, and write the public key into the  **known\_hosts**  file on the local host.
+    
+            ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts
+    
+    The following is an example:
+    
+            plat1:~ # ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts 
+            # plat3 SSH-2.0-OpenSSH_5.1 
+    
+    ![](public_sys-resources/icon-note.gif) **NOTE:** 
+    -   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
+    -   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
 
 
 3.  Send the  **known\_hosts**  file to all the other hosts except the local host. In this example, send the  **known\_hosts**  file on host  **plat1**  to hosts  **plat2**  and  **plat3**.
 
-    1. Send the  **known\_hosts**  file to host  **plat2**. When  **Password:**  is displayed, enter the password for logging in to host  **plat2**.
-
-    ```
-    scp -r .ssh plat2:~
-    ```
-
+    a. Send the  **known\_hosts**  file to host  **plat2**. When  **Password:**  is displayed, enter the password for logging in to host  **plat2**.    
+            scp -r ~/.ssh plat2:~
+    
+    
     The following is an example:
-
-    ```
-    plat1:~ # scp -r .ssh plat2:~
-    Password: 
-    authorized_keys                 100%  796     0.8KB/s   00:00    
-    id_rsa                          100% 1675     1.6KB/s   00:00    
-    id_rsa.pub                      100%  398     0.4KB/s   00:00    
-    known_hosts                     100% 1089     1.1KB/s   00:00    
-    ```
-
-    2. Send the  **known\_hosts**  file to host  **plat3**. When  **Password:**  is displayed, enter the password for logging in to host  **plat3**.
-
-    ```
-    scp -r .ssh plat3:~
-    ```
-
+            plat1:~ # scp -r ~/.ssh plat2:~
+            Password: 
+            authorized_keys                 100%  796     0.8KB/s   00:00    
+            id_rsa                          100% 1675     1.6KB/s   00:00    
+            id_rsa.pub                      100%  398     0.4KB/s   00:00    
+            known_hosts                     100% 1089     1.1KB/s   00:00    
+    
+    b. Send the  **known\_hosts**  file to host  **plat3**. When  **Password:**  is displayed, enter the password for logging in to host  **plat3**.
+        
+            scp -r ~/.ssh plat3:~
     The following is an example:
-
-    ```
-    plat1:~ # scp -r .ssh plat3:~
-    Password: 
-    authorized_keys                 100%  796     0.8KB/s   00:00    
-    id_rsa                          100% 1675     1.6KB/s   00:00    
-    id_rsa.pub                      100%  398     0.4KB/s   00:00    
-    known_hosts                     100% 1089     1.1KB/s   00:00    
-    ```
-
+        
+            plat1:~ # scp -r ~/.ssh plat3:~
+            Password: 
+            authorized_keys                 100%  796     0.8KB/s   00:00    
+            id_rsa                          100% 1675     1.6KB/s   00:00    
+            id_rsa.pub                      100%  398     0.4KB/s   00:00    
+            known_hosts                     100% 1089     1.1KB/s   00:00    
+    
 4.  Run the  **ssh **_Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
 
     ```
@@ -594,8 +501,8 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     plat1:~ # 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.  
 
 
 ### Deleting Mutual Trust Between Users  **root** 
@@ -624,7 +531,7 @@ The mutual trust established between users  **root**  may incur security risks. 
 The following is an example describing how to establish mutual trust between users  **root**:
 
 ```
-plat1:~ # gs_sshexkey -f /opt/software/hostfile -W Gauss_234
+plat1:~ # gs_sshexkey -f /opt/software/hostfile -W Gauss_123
 Checking network information.
 All nodes in the network are Normal.
 Successfully checked network information.
@@ -649,7 +556,7 @@ Successfully created SSH trust.
 The following is an example describing how to establish mutual trust between common users:
 
 ```
-gaussdb@plat1:~ > gs_sshexkey -f /opt/software/hostfile -W Gauss_234
+gaussdb@plat1:~ > gs_sshexkey -f /opt/software/hostfile -W Gauss_123
 Checking network information.
 All nodes in the network are Normal.
 Successfully checked network information.
@@ -706,7 +613,7 @@ Some of these parameters are set during the openGauss installation environment p
 1.  Log in to a server as user  **root**.
 2.  Modify the  **/etc/sysctl.conf**  file.
 
-    For details about how to modify parameters, see  [OS Parameters](#en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540).
+    For details about how to modify parameters, see  [OS Parameters](#OS Parameters).
 
 3.  Run the following command to make the modifications take effect:
 
@@ -715,7 +622,7 @@ Some of these parameters are set during the openGauss installation environment p
     ```
 
 
-### OS Parameters
+## OS Parameters
 
 **Table  1**  OS parameters
 
@@ -1131,7 +1038,7 @@ Some of these parameters are set during the openGauss installation environment p
 </tbody>
 </table>
 
-### ·	·File System Parameters
+### File System Parameters
 
 -   soft nofile
 
@@ -1182,7 +1089,7 @@ After the modification is complete, restart the OS to make the setting take effe
 </thead>
 <tbody><tr id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_row36414898154930"><td class="cellrowborder" valign="top" width="17.47%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p53634223135851"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p53634223135851"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p53634223135851"></a>* soft nofile</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.07000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a>Specifies the soft limit on the number of file handles. For example, if this parameter is set to <span class="parmvalue" id="parmvalue205762215320"><a name="parmvalue205762215320"></a><a name="parmvalue205762215320"></a><b>1000000</b></span>, any user can open a maximum of 1,000,000 files regardless of how many shells are enabled.</p>
+<td class="cellrowborder" valign="top" width="52.07000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p1184561135943"></a>Specifies the soft limit on the number of file handles. For example, if this parameter is set to <span class="parmvalue"><b>1000000</b></span>, any user can open a maximum of 1,000,000 files regardless of how many shells are enabled.</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p42366546135851"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p42366546135851"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p42366546135851"></a>Yes</p>
 </td>
@@ -1230,9 +1137,9 @@ After the modification is complete, restart the OS to make the setting take effe
 </td>
 <td class="cellrowborder" valign="top" width="52.07000000000001%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p22374700151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p22374700151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p22374700151525"></a>Specifies the maximum number of processes allowed per user.</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a>No</p>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p411403151525"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="9.4%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a>60000</p>
+<td class="cellrowborder" valign="top" width="9.4%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a><a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_p33323707151525"></a>unlimited</p>
 </td>
 </tr>
 </tbody>
@@ -1274,8 +1181,7 @@ After the modification is complete, restart the OS to make the setting take effe
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   NIC parameters can be configured only for 10GE and larger service NICs, that is, the NIC bound to  **backIp1**.
->-   The commands for setting NIC parameters are written into the OS startup file only after the parameters are successfully set. Information about command execution failures is recorded in logs on the server.
+![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+-   NIC parameters can be configured only for 10GE and larger service NICs, that is, the NIC bound to  **backIp1**.  
+-   The commands for setting NIC parameters are written into the OS startup file only after the parameters are successfully set. Information about command execution failures is recorded in logs on the server.  
 
-

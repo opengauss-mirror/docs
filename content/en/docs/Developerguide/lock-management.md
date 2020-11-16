@@ -62,19 +62,6 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **64**
 
-## gs\_clean\_timeout<a name="en-us_topic_0237124735_en-us_topic_0059778102_s3be3f5098fe846f88a95afb16b0528f6"></a>
-
-**Parameter description**: Controls the average interval between  **gs\_clean**  invocations by the DBnode.
-
--   Transactions in openGauss are committed in two phases. An unfinished two-phase transaction may hold a table-level lock, keeping tables from being locked by other connections. In this case, the database needs to invoke the  **gs\_clean**  tool to clean unfinished two-phase transactions in openGauss.  **gs\_clean\_timeout**  is used to control the interval for the DBnode to invoke the  **gs\_clean**  tool.
--   A larger value of this parameter indicates a low frequency of  **gs\_clean**  invocation to clean unfinished two-phase transactions.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
-
-**Value range**: an integer ranging from 0 to  _INT\_MAX_/1000. The unit is s.
-
-**Default value**:  **5min**
-
 ## partition\_lock\_upgrade\_timeout<a name="en-us_topic_0237124735_en-us_topic_0059778102_sbe63348a5e5d487fa275eeef89c92ad9"></a>
 
 **Parameter description**: Specifies the timeout for attempts to upgrade an exclusive lock \(read allowed\) to an access exclusive lock \(read/write blocked\) on a partitioned table during the execution of some query statements. If there are concurrent read transactions running, the lock upgrade will need to wait. This parameter sets the waiting timeout for lock upgrade attempts.

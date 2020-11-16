@@ -159,14 +159,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122667_en-us_topic_0059777813_p1735341313558"><a name="en-us_topic_0237122667_en-us_topic_0059777813_p1735341313558"></a><a name="en-us_topic_0237122667_en-us_topic_0059777813_p1735341313558"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122667_en-us_topic_0059777813_p16353121355516"><a name="en-us_topic_0237122667_en-us_topic_0059777813_p16353121355516"></a><a name="en-us_topic_0237122667_en-us_topic_0059777813_p16353121355516"></a>Latest query at the backend. If <strong id="b12203138145119"><a name="b12203138145119"></a><a name="b12203138145119"></a>state</strong> is <strong id="b182093815117"><a name="b182093815117"></a><a name="b182093815117"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
+<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122667_en-us_topic_0059777813_p16353121355516"><a name="en-us_topic_0237122667_en-us_topic_0059777813_p16353121355516"></a><a name="en-us_topic_0237122667_en-us_topic_0059777813_p16353121355516"></a>Latest query at the backend. If <strong id="b12203138145119"><a name="b12203138145119"></a><a name="b12203138145119"></a>state</strong> is <strong id="b182093815117"><a name="b182093815117"></a><a name="b182093815117"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122667_row17746185011204"><td class="cellrowborder" valign="top" width="29.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122667_p1674665012010"><a name="en-us_topic_0237122667_p1674665012010"></a><a name="en-us_topic_0237122667_p1674665012010"></a>is_plana</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122667_p3746145014202"><a name="en-us_topic_0237122667_p3746145014202"></a><a name="en-us_topic_0237122667_p3746145014202"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122667_p1174618502203"><a name="en-us_topic_0237122667_p1174618502203"></a><a name="en-us_topic_0237122667_p1174618502203"></a>Whether a statement occupies the resources of other logical openGauss in logical openGauss mode. The default value is <strong id="b1159019124547"><a name="b1159019124547"></a><a name="b1159019124547"></a>f</strong> (does not occupy resources).</p>
+<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122667_p1174618502203"><a name="en-us_topic_0237122667_p1174618502203"></a><a name="en-us_topic_0237122667_p1174618502203"></a>Whether a statement occupies the resources of other logical openGauss in logical openGauss mode. The default value is <strong id="b1159019124547"><a name="b1159019124547"></a><a name="b1159019124547"></a>f</strong> (does not occupy resources)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122667_row416612268217"><td class="cellrowborder" valign="top" width="29.84%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122667_p121682268212"><a name="en-us_topic_0237122667_p121682268212"></a><a name="en-us_topic_0237122667_p121682268212"></a>node_group</p>
@@ -178,4 +178,5 @@
 </tr>
 </tbody>
 </table>
+
 

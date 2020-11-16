@@ -1,4 +1,4 @@
-# CREATE ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0242370573"></a>
+# CREATE ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0283137345"></a>
 
 ## Function<a name="en-us_topic_0237122109_section196521854173211"></a>
 
@@ -16,8 +16,8 @@ Row-level access control policies can be applied to a specified user \(role\) or
 
 ## Precautions<a name="en-us_topic_0237122109_section12765201893310"></a>
 
--   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, replication tables, unlogged tables, and hash tables.
--   Row-level access control policies cannot be defined for foreign tables and temporary tables.
+-   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, unlogged tables, and hash tables.
+-   Row-level access control policies cannot be defined for foreign tables and local temporary tables.
 -   Row-level access control policies cannot be defined for views.
 -   A maximum of 100 row-level access control policies can be defined for a table.
 -   System administrators are not affected by row-level access control policies and can view all data in a table.
@@ -131,8 +131,8 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     If this parameter is not specified, the default value  **PUBLIC**  will be used, indicating that all database users will be affected. You can specify multiple affected database users.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >System administrators are not affected by row access control.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >System administrators are not affected by row access control.
 
 
 -   **using\_expression**
@@ -146,10 +146,10 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
 ```
 -- Create user alice.
-postgres=# CREATE ROLE alice PASSWORD 'Gauss@123';
+postgres=# CREATE USER alice PASSWORD 'Gauss@123';
 
 -- Create user bob.
-postgres=# CREATE ROLE bob PASSWORD 'Gauss@123';
+postgres=# CREATE USER bob PASSWORD 'Gauss@123';
 
 -- Create the data table all_data.
 postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
@@ -180,7 +180,6 @@ Row Level Security Policies:
     POLICY "all_data_rls"
       USING (((role)::name = "current_user"()))
 Has OIDs: no
-Location Nodes: ALL DATANODES
 Options: orientation=row, compression=no, enable_rowsecurity=true
 
 -- Run SELECT.
@@ -193,12 +192,10 @@ postgres=# SELECT * FROM all_data;
 (3 rows)
 
 postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
-         QUERY PLAN
-----------------------------
- Streaming (type: GATHER)
-   Node/s: All dbnodes
-   ->  Seq Scan on all_data
-(3 rows)
+      QUERY PLAN
+----------------------
+ Seq Scan on all_data
+(1 row)
 
 -- Switch to user alice and run SELECT.
 postgres=# SELECT * FROM all_data;
@@ -208,17 +205,16 @@ postgres=# SELECT * FROM all_data;
 (1 row)
 
 postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
-                           QUERY PLAN
+ QUERY PLAN
 ----------------------------------------------------------------
- Streaming (type: GATHER)
-   Node/s: All dbnodes
-   ->  Seq Scan on all_data
-         Filter: ((role)::name = 'alice'::name)
+ Seq Scan on all_data
+   Filter: ((role)::name = 'alice'::name)
  Notice: This query is influenced by row level security feature
-(5 rows)
+(3 rows)
+ 
 ```
 
 ## Helpful Links<a name="en-us_topic_0237122109_section1426016489355"></a>
 
-[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md)
+[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md),  [ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)
 

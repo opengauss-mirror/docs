@@ -23,11 +23,15 @@ It has the following functions:
 gs_restore [OPTION]... FILE
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files. 
->-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.
->-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.
->-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.
+![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files. 
+
+-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.
+
+-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.
+
+-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.
 
 ## Parameter Description<a name="en-us_topic_0237152343_en-us_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
@@ -43,8 +47,9 @@ Common parameters
 
     The default is the standard output.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**-f**  cannot be used in conjunction with  **-d**.
+    ![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+    **-f**  cannot be used in conjunction with  **-d**.
 
 -   -F, --format=c|d|t
 
@@ -53,7 +58,9 @@ Common parameters
     Value range:
 
     -   **c/custom**: The archive form is the customized format in  [gs\_dump](gs_dump.md).
+
     -   **d/directory**: The archive form is a directory archive format.
+
     -   **t/tar**: The archive form is a .tar archive format.
 
 -   -l, --list
@@ -117,7 +124,7 @@ Parameters for importing data
 
     Imports only archive elements that are listed in  **list-file**  and imports them in the order that they appear in the file. If filtering parameters, such as  **-n**  or  **-t**, are used in conjunction with  **-L**, they will further limit the items to be imported.
 
-    **list-file**  is normally created by editing the output of a previous  **-l**  parameter. File lines can be moved or removed, and can also be commented out by placing a semicolon \(;\) at the beginning of the row. An example is provided in this document.
+    **list-file**  is normally created by editing the output of a previous  **-l**  parameter. File lines can be moved or removed, and can also be commented out by placing a semicolon \(;\) at the beginning of the row. 
 
 -   -n, --schema=NAME
 
@@ -187,9 +194,6 @@ Parameters for importing data
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >**-t**  does not support the  **schema\_name.table\_name**  input format.
-
 -   -T, --trigger=NAME
 
     This parameter is reserved for extension.
@@ -236,25 +240,32 @@ Parameters for importing data
 
     Specifies that the key length of AES128 must be 16 bytes.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If the dump is encrypted, enter the  **--with-key=KEY**  parameter in the  **gs\_restore**  command. If it is not entered, you will receive an error message.
-    >Enter the same key while entering the dump.
-    >When the dump format is  **c**  or  **t**, the dumped content has been processed, and therefore the input is not restricted by the encryption.
+    ![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+    If the dump is encrypted, enter the  **--with-key=KEY**  parameter in the  **gs\_restore**  command. If it is not entered, you will receive an error message.
+    Enter the same key while entering the dump.
+
+    When the dump format is  **c**  or  **t**, the dumped content has been processed, and therefore the input is not restricted by the encryption.
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
->```
->CREATE DATABASE foo WITH TEMPLATE template0;
->```
->-   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
+    ![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+    -   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:  
+    ```  
+    CREATE DATABASE foo WITH TEMPLATE template0;  
+    ```  
+    -   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.  
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.
->2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
->3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
->4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.
->5.  **--role**  must be used in conjunction with  **--rolepassword**.
+![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.
+
+2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
+
+3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
+
+4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.
+
+5.  **--role**  must be used in conjunction with  **--rolepassword**.
 
 Connection parameters:
 

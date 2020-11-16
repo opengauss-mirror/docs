@@ -151,21 +151,20 @@ The  **gs\_om**  tool can use the following types of parameters:
 
         Sets the stop mode.
 
-        Value range: the following three stop modes are supported:
+        Value range: the following two stop modes are supported:
 
         -   **fast**: The data of the primary and standby instance relationship is ensured to be consistent.
         -   **immediate**: The data of the primary and standby instance relationship is not ensured to be consistent.
-        -   **smart**: The data of the primary and standby instance is consistent, and all the local logs on the standby server are re-executed.
-
-        Default value:  **fast**
-
-    -   --time-out=SECS
-
-        Specifies the timeout threshold.  **gs\_om**  exits when times out. Unit: s
-
-        Value range: a positive integer. The recommended value is  **300**.
-
-        Default value:  **300**
+        
+Default value:  **fast**
+        
+-   --time-out=SECS
+    
+    Specifies the timeout threshold.  **gs\_om**  exits when times out. Unit: s
+    
+    Value range: a positive integer. The recommended value is  **300**.
+    
+    Default value:  **300**
 
 
 -   Parameters for checking status

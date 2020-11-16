@@ -89,9 +89,9 @@ During the query, the title meaning string "MemoryContext white list:" is added 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 16 to 1073741823. The unit is 8 KB.
+**Value range**: an integer ranging from 16 to 1073741823. The unit is KB.
 
-The minimum value changes according to  **BLCKSZ**.
+Shared_buffers needs to be set to an integer multiple of BLCKSZ. BLCKSZ is currently set to 8KB. Shared_buffers needs to be set to an integer multiple of 8KB. The minimum value changes according to  **BLCKSZ**.
 
 **Default value**: 1 GB on a database node. If the maximum value allowed by the OS is smaller than 32 MB, this parameter will be automatically changed to the maximum value allowed by the OS during the initialization of a data storage area.
 
@@ -135,7 +135,7 @@ A session allocates temporary buffers based on the value of  **temp\_buffers**. 
 
 **Value range**: an integer ranging from 100 to 1073741823. The unit is 8 KB.
 
-**Default value**:  **8MB**
+**Default value**:  **1MB**
 
 ## max\_prepared\_transactions<a name="en-us_topic_0237124699_en-us_topic_0059777577_s0baf9251722144d492151b31104dd73c"></a>
 
@@ -261,7 +261,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 16384 to 1073741823. The unit is KB.
 
-**Default value**:  **32768KB**
+**Default value**:  **1GB**
 
 **Setting suggestions**:
 

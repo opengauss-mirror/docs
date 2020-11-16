@@ -17,7 +17,7 @@ The memory usage of all normal nodes in openGauss is displayed.
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122561_p683119506363"><a name="en-us_topic_0237122561_p683119506363"></a><a name="en-us_topic_0237122561_p683119506363"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122561_p28312505366"><a name="en-us_topic_0237122561_p28312505366"></a><a name="en-us_topic_0237122561_p28312505366"></a>Database process name.</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122561_p28312505366"><a name="en-us_topic_0237122561_p28312505366"></a><a name="en-us_topic_0237122561_p28312505366"></a>Node name.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122561_row18831145033612"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122561_p14831205073620"><a name="en-us_topic_0237122561_p14831205073620"></a><a name="en-us_topic_0237122561_p14831205073620"></a>memorytype</p>

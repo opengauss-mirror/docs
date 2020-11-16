@@ -32,14 +32,14 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 **操作步骤**
 
 1.  以操作系统用户omm登录数据库主节点。
-2.  规划数据库目录。
-    1.  切换到root用户。
+2. 规划数据库目录。
+   - 切换到root用户。
 
-        ```
-        su - root
-        ```
+     ```
+     su - root
+     ```
 
-    2.  根据提示输入用户名和密码。
+   - 根据提示输入用户名和密码。
 
 3.  进入“/opt/gaussdb”目录，并创建“data1”目录。
 
@@ -48,17 +48,17 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
     mkdir data1
     ```
 
-    1.  将data1目录的所有权分配给数据库用户omm，dbgrp是omm所属的用户组。
+    - 将data1目录的所有权分配给数据库用户omm，dbgrp是omm所属的用户组。
 
-        ```
-        chown omm:dbgrp data1
-        ```
+      ```
+      chown omm:dbgrp data1
+      ```
 
-    2.  退出root用户。
+    - 退出root用户。
 
-        ```
-        exit
-        ```
+      ```
+      exit
+      ```
 
 4.  执行gs\_initdb命令初始化数据库。
 
@@ -72,7 +72,6 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
     gs_initdb [OPTION]... [DATADIR]
     ```
 
-    OPTION参数请参见[zh-cn\_topic\_0249632266.md](zh-cn_topic_0249632266.md)。
 
 
 ## 命令参考<a name="section01341136122018"></a>
@@ -168,7 +167,7 @@ zh_SG.gbk
 </td>
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="p1642510590523"><a name="p1642510590523"></a><a name="p1642510590523"></a>指定兼容的数据库的类型。</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>取值范围：A、B、C。分别表示兼容O、MY和TD。</p>
+<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。</p>
 </td>
 </tr>
 <tr id="row142041433132110"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p296280814042"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p296280814042"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p296280814042"></a>--lc-collate=LOCALE</p>

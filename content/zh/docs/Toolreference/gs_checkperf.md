@@ -11,14 +11,14 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
 ## 注意事项<a name="zh-cn_topic_0237152332_section4694838915381"></a>
 
--   gs\_checkperf工具的监控信息依赖于pmk模式下的表的数据。如果pmk模式下的表未执行analyze操作，则可能导致gs\_checkperf工具执行失败。其报错示例信息如下:
+-   gs\_checkperf工具的监控信息依赖于pmk模式下的表的数据。如果pmk模式下的表未执行analyze操作，则可能导致gs\_checkperf工具执行失败。其报错示例信息如下。
 
     ```
     LOG:  Statistics in some tables or columns(pmk.pmk_snapshot.snapshot_id) are not collected.
     HINT:  Do analyze for them in order to generate optimized plan.
     ```
 
-    此时需要登录任一数据库主节点，连接postgres数据库执行如下SQL：
+    此时需要登录任一数据库主节点，连接postgres数据库执行如下SQL。
 
     ```
     analyze pmk.pmk_configuration; 

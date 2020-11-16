@@ -4,13 +4,13 @@ In openGauss, you can call SQL functions to create, delete, and push logical rep
 
 ## Prerequisites<a name="en-us_topic_0237121453_section1288315272236"></a>
 
--   Currently, logical logs are extracted from host nodes. Since SSL connections are disabled by default, to perform logical replication, set the GUC parameter  **[ssl](en-us_topic_0242371486.md#en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  to  **on**  on host nodes.
+-   Currently, logical logs are extracted from host nodes. Since SSL connections are disabled by default, to perform logical replication, set the GUC parameter  **ssl**  to  **on**  on host nodes.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >For security purposes, ensure that SSL connections are enabled.
 
 
--   The GUC parameter  **[wal\_level](en-us_topic_0242371497.md#en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **logical**.
+-   The GUC parameter  **[wal\_level](settings.md#en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **logical**.
 -   The GUC parameter  **[max\_replication\_slots](sending-server.md#section7322161612568)**  is set to a value greater than the number of physical replication slots and logical replication slots required by each node.
 
     Physical replication slots provide an automatic method to ensure that Xlogs are not removed from a primary node before they are received by all the standby nodes and secondary nodes. That is, physical replication slots are used to support HA clusters. The number of physical replication slots required by a cluster is equal to the ratio of standby and secondary nodes to the primary node. For example, if an HA cluster has 1 primary node, 1 standby node, and 1 secondary node, the number of required physical replication slots will be 2. If an HA cluster has 1 primary node and 3 standby nodes, the number of required physical replication slots will be 3.

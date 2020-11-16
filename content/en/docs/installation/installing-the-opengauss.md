@@ -8,6 +8,6 @@ To ensure the correct installation of the openGauss, you need to configure the h
 After the openGauss installation environment is prepared by executing the pre-installation script, deploy openGauss based on the installation process.
 -   **[Initializing the Database](initializing-the-database.md)**  
 
--   **[\(Optional\) Setting the Standby Node to Readable]((optional)-setting-the-standby-node-to-readable.md)**  
+-   **[\(Optional\) Setting the Standby Node to Readable](optional-setting-the-standby-node-to-readable.md)**  
 Readable standby node is an optional feature. You need to modify the configuration parameters and restart the primary and standby nodes before using this feature. After the readable standby node function is enabled, the standby node is readable, meeting data consistency requirements.
 

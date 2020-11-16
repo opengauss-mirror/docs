@@ -36,7 +36,7 @@ CREATE MATERIALIZED VIEW mv_name
 
 - **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
-  这个子句为表或索引指定一个可选的存储参数。所有CREATE TABLE支持的参数CREATE MATERIALIZED VIEW也支持，不过OIDS除外。详见[CREATE TABLE](CREATE-TABLE.md)。
+    这个子句为表或索引指定一个可选的存储参数。所有CREATE TABLE支持的参数CREATE MATERIALIZED VIEW也支持，不过OIDS除外。详见[CREATE TABLE](CREATE-TABLE.md)。
 
 -   **TABLESPACE tablespace\_name**
 

@@ -83,7 +83,7 @@ Uninstallation succeeded.
     plat1:~ # 
     ```
 
-3.  进入script路径下
+3.  进入script路径下。
 
     ```
     cd /opt/software/openGauss/script
@@ -111,7 +111,7 @@ Uninstallation succeeded.
 
 **示例**
 
-清理主机的环境
+清理主机的环境。
 
 ```
 gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user

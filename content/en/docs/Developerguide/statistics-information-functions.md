@@ -66,7 +66,7 @@ Statistics information functions are divided into the following two categories: 
 
     Description: Total wall clock time \(in microseconds\) spent in the function in the current transaction, including the time spent on the function call.
 
-    Return type:
+    Return type:bigint
 
 -   pg\_stat\_get\_wal\_senders\(\)
 
@@ -1146,12 +1146,6 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
--   pg\_stat\_get\_function\_time\(oid\)
-
-    Description: Total wall clock time spent in the function, in microseconds. Includes the time spent in functions called by this one.
-
-    Return type: bigint
-
 -   pg\_stat\_get\_function\_self\_time\(oid\)
 
     Description: Time spent in only this function. Time spent in called functions is excluded.
@@ -1813,7 +1807,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   create\_wlm\_session\_info\(int flag\)
 
-    Description: Clears top SQL query statement-level statistics recorded in the current memory. If the input parameter is greater than 0, the information is archived to  **gs\_wlm\_session\_query\_info\_all**. Otherwise, the information is not archived. Only the administrator can execute this function.
+    Description: Clears top SQL query statement-level statistics recorded in the current memory. Only the administrator can execute this function.
 
     Return type: int
 
@@ -2427,13 +2421,75 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
+-   remote\_bgwriter\_stat\(\)
+
+    Description: Displays the information about pages flushed by the bgwriter threads of all instances in the cluster, number of pages in the candidate buffer chain, and buffer elimination information \(except for the local node and not available on the DN\).
+
+    Return type: record
+
+    **Table  7**  remote\_bgwriter\_stat parameter description
+
+    <a name="table1515973963410"></a>
+    <table><thead align="left"><tr id="row1215910396342"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p5159439103418"><a name="p5159439103418"></a><a name="p5159439103418"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p1815933943414"><a name="p1815933943414"></a><a name="p1815933943414"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p7159193912344"><a name="p7159193912344"></a><a name="p7159193912344"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row316019391341"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p161601239113416"><a name="p161601239113416"></a><a name="p161601239113416"></a>node_name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1116012397346"><a name="p1116012397346"></a><a name="p1116012397346"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1816033913417"><a name="p1816033913417"></a><a name="p1816033913417"></a>Instance name</p>
+    </td>
+    </tr>
+    <tr id="row1016019391349"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p14160173914342"><a name="p14160173914342"></a><a name="p14160173914342"></a>bgwr_actual_flush_total_num</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1413232114314"><a name="p1413232114314"></a><a name="p1413232114314"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p12160163973419"><a name="p12160163973419"></a><a name="p12160163973419"></a>Total number of dirty pages flushed by the bgwriter thread from the startup time to the current time</p>
+    </td>
+    </tr>
+    <tr id="row11601639133416"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p532112852018"><a name="p532112852018"></a><a name="p532112852018"></a>bgwr_last_flush_num</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p31323121333"><a name="p31323121333"></a><a name="p31323121333"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p7160539103415"><a name="p7160539103415"></a><a name="p7160539103415"></a>Number of dirty pages flushed by the bgwriter thread in the previous batch</p>
+    </td>
+    </tr>
+    <tr id="row3160183973416"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p10145113312012"><a name="p10145113312012"></a><a name="p10145113312012"></a>candidate_slots</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p216123993412"><a name="p216123993412"></a><a name="p216123993412"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p10161939173415"><a name="p10161939173415"></a><a name="p10161939173415"></a>Number of pages in the current candidate buffer chain.</p>
+    </td>
+    </tr>
+    <tr id="row516163923419"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p5161339113420"><a name="p5161339113420"></a><a name="p5161339113420"></a>get_buffer_from_list</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p91611439203415"><a name="p91611439203415"></a><a name="p91611439203415"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p84674551836"><a name="p84674551836"></a><a name="p84674551836"></a>Number of times that pages are obtained from the candidate buffer chain during buffer elimination.</p>
+    </td>
+    </tr>
+    <tr id="row416110393349"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p151616398345"><a name="p151616398345"></a><a name="p151616398345"></a>get_buf_clock_sweep</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1716133914348"><a name="p1716133914348"></a><a name="p1716133914348"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p2149401546"><a name="p2149401546"></a><a name="p2149401546"></a>Number of times that pages are obtained from the original elimination solution during buffer elimination.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 -   remote\_ckpt\_stat\(\)
 
     Description: Displays the checkpoint information and log flushing information about all instances in the cluster \(except the current node\).
 
     Return type: record
 
-    **Table  7**  remote\_ckpt\_stat parameter description
+    **Table  8**  remote\_ckpt\_stat parameter description
 
     <a name="table134111430229"></a>
     <table><thead align="left"><tr id="row1540674332212"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p134056430228"><a name="p134056430228"></a><a name="p134056430228"></a>Parameter</p>
@@ -2502,7 +2558,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    **Table  8**  remote\_double\_write\_stat parameter description
+    **Table  9**  remote\_double\_write\_stat parameter description
 
     <a name="table1419184342213"></a>
     <table><thead align="left"><tr id="row0412124342213"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p1941204372215"><a name="p1941204372215"></a><a name="p1941204372215"></a>Parameter</p>
@@ -2599,7 +2655,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    **Table  9**  remote\_pagewriter\_stat parameter description
+    **Table  10**  remote\_pagewriter\_stat parameter description
 
     <a name="table11427543172218"></a>
     <table><thead align="left"><tr id="row0421174315229"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p5420154314225"><a name="p5420154314225"></a><a name="p5420154314225"></a>Parameter</p>
@@ -2675,7 +2731,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    **Table  10**  remote\_recovery\_status parameter description
+    **Table  11**  remote\_recovery\_status parameter description
 
     <a name="table1443614319224"></a>
     <table><thead align="left"><tr id="row742864316223"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p1842734372216"><a name="p1842734372216"></a><a name="p1842734372216"></a>Parameter</p>
@@ -2758,7 +2814,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    **Table  11**  remote\_redo\_stat parameter description
+    **Table  12**  remote\_redo\_stat parameter description
 
     <a name="table174521443132210"></a>
     <table><thead align="left"><tr id="row843714317224"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p3437843172211"><a name="p3437843172211"></a><a name="p3437843172211"></a>Parameter</p>

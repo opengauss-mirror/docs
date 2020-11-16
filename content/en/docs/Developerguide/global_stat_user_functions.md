@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122617_p95316442156"><a name="en-us_topic_0237122617_p95316442156"></a><a name="en-us_topic_0237122617_p95316442156"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122617_p987545685719"><a name="en-us_topic_0237122617_p987545685719"></a><a name="en-us_topic_0237122617_p987545685719"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122617_p987545685719"><a name="en-us_topic_0237122617_p987545685719"></a><a name="en-us_topic_0237122617_p987545685719"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122617_row205484431511"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122617_p1954204491516"><a name="en-us_topic_0237122617_p1954204491516"></a><a name="en-us_topic_0237122617_p1954204491516"></a>funcid</p>

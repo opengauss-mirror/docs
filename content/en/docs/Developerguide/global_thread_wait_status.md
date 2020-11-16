@@ -21,7 +21,7 @@ The definitions of  **GLOBAL\_THREAD\_WAIT\_STATUS**  and  **THREAD\_WAIT\_STATU
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122640_p1222314339298"><a name="en-us_topic_0237122640_p1222314339298"></a><a name="en-us_topic_0237122640_p1222314339298"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122640_p16224153352916"><a name="en-us_topic_0237122640_p16224153352916"></a><a name="en-us_topic_0237122640_p16224153352916"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122640_p16224153352916"><a name="en-us_topic_0237122640_p16224153352916"></a><a name="en-us_topic_0237122640_p16224153352916"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122640_row182241433152910"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122640_p1722417336293"><a name="en-us_topic_0237122640_p1722417336293"></a><a name="en-us_topic_0237122640_p1722417336293"></a>db_name</p>

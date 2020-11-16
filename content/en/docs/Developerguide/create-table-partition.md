@@ -4,13 +4,19 @@
 
 **CREATE TABLE PARTITION**  creates a partitioned table. A partitioned table is a logical table that is divided into several physical partitions for storage based on a specific plan. Data is stored in physical partitions not the logical table.
 
-The common forms of partitioning include range partitioning, hash partitioning, list partitioning, and value partitioning. Currently, the system supports only range partitioning for row-store and column-store tables.
+The common forms of partitioning include range partitioning, interval partitioning, hash partitioning, list partitioning, and value partitioning. Currently, row-store tables support only range partitioning and interval partitioning, and column-store tables support only range partitioning.
 
 In range partitioning, a table is partitioned based on ranges defined by values in one or more columns, with no overlap between the ranges of values assigned to different partitions. Each range has a dedicated partition for data storage.
 
 The range partitioning policy refers to how data is inserted into partitions. Currently, range partitioning only allows the use of the range partitioning policy.
 
 In range partitioning, a table is partitioned based on partition key values. If a record can be mapped to a partition, it is inserted into the partition; if it cannot, an error message is returned. Range partitioning is the most commonly used partitioning policy.
+
+Interval partitioning is a special type of range partitioning. Compared with range partitioning, interval value definition is added. When no matching partition can be found for an inserted record, a partition can be automatically created based on the interval value.
+
+Interval partitioning supports only table-based partitioning of a column where the data type can be TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE.
+
+Interval partitioning policy: A record is mapped to a created partition based on the partition key value. If the record can be mapped to a created partition, the record is inserted into the corresponding partition. Otherwise, a partition is automatically created based on the partition key value and table definition information, and then the record is inserted into the new partition. The data range of the new partition is equal to the interval value.
 
 Partitioning can provide several benefits:
 
@@ -35,8 +41,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
      PARTITION BY { 
-        {RANGE (partition_key) ( partition_less_than_item [, ... ] )} |
-        {RANGE (partition_key) ( partition_start_end_item [, ... ] )}
+        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
+        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -154,13 +160,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     Specifies an optional storage parameter for a table or an index. Optional parameters are as follows:
 
-    -   FILLFACTOR
+    -   **FILLFACTOR**
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
 
         Value range: 10–100
 
-    -   ORIENTATION
+    -   **ORIENTATION**
 
         Determines the storage mode of the data in the table.
 
@@ -169,27 +175,27 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         -   **COLUMN**: The data will be stored in columns.
         -   **ROW**  \(default value\): The data will be stored in rows.
 
-            >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-            >**orientation**  cannot be modified.  
+            >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+            >**orientation**  cannot be modified.
 
 
-    -   COMPRESSION
+    -   **COMPRESSION**
         -   Valid values for column-store tables are  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**, and the compression level increases accordingly. The default is  **LOW**.
         -   Valid values for row-store tables are  **YES**  and  **NO**, and the default value is  **NO**.
 
-    -   MAX\_BATCHROW
+    -   **MAX\_BATCHROW**
 
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
 
         Value range: 10000 to 60000
 
-    -   PARTIAL\_CLUSTER\_ROWS
+    -   **PARTIAL\_CLUSTER\_ROWS**
 
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
 
         Value range: a number greater than or equal to 100000 The value is a multiple of  _MAX\_BATCHROW_.
 
-    -   DELTAROW\_THRESHOLD
+    -   **DELTAROW\_THRESHOLD**
 
         A reserved parameter. The parameter is only valid for column-store tables.
 
@@ -212,28 +218,35 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     \(1\) Assume that the  **VALUES LESS THAN**  syntax is used.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >In this case, a maximum of four partition keys are supported.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >In this case, a maximum of four partition keys are supported.
 
     Data types supported by the partition keys are as follows:  **SMALLINT**,  **INTEGER**,  **BIGINT**,  **DECIMAL**,  **NUMERIC**,  **REAL**,  **DOUBLE PRECISION**,  **CHARACTER VARYING**\(_n_\),  **VARCHAR**\(_n_\),  **CHARACTER**\(_n_\),  **CHAR**\(_n_\),  **CHARACTER**,  **CHAR**,  **TEXT**,  **NVARCHAR2**,  **NAME**,  **TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]**, and  **DATE**.
 
     \(2\) Assume that the  **START END**  syntax is used.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >In this case, only one partition key is supported.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >In this case, only one partition key is supported.
 
     Data types supported by the partition key are as follows:  **SMALLINT**,  **INTEGER**,  **BIGINT**,  **DECIMAL**,  **NUMERIC**,  **REAL**,  **DOUBLE PRECISION**,  **TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]**, and  **DATE**.
+
+    \(3\) Assume that the  **INTERVAL**  syntax is used.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >In this case, only one partition key is supported.
+
+    In this case, the data types supported by the partition key are TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE.
 
 -   **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
 
     Specifies the information of partitions.  **partition\_name**  is the name of a range partition.  **partition\_value**  is the upper limit of a range partition, and the value depends on the type of  **partition\_key**.  _MAXVALUE_  usually specifies the upper limit of the last range partition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >-   Each partition requires an upper limit.  
-    >-   The data type of the upper limit must be the same as that of the partition key.  
-    >-   In a partition list, partitions are arranged in ascending order of upper limits. A partition with a smaller upper limit value is placed before another partition with a larger one.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   Each partition requires an upper limit.
+    >-   The data type of the upper limit must be the same as that of the partition key.
+    >-   In a partition list, partitions are arranged in ascending order of upper limits. A partition with a smaller upper limit value is placed before another partition with a larger one.
 
--   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
+-   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} |\{END \(partition\_value | MAXVALUE\)**\}
 
     Specifies the information of partitions.
 
@@ -245,18 +258,40 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   **interval\_value**: width of each partition for dividing the \[**START**,  **END**\) range. It cannot be  _MAXVALUE_. If the value of \(**END**  –  **START**\) divided by  **EVERY**  has a remainder, the width of only the last partition is less than the value of  **EVERY**.
     -   _MAXVALUE_: upper limit of the last range partition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >1.  If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition.  
-    >2.  The  **START END**  syntax must comply with the following rules:  
-    >    -   The value of  **START**  \(if any, same for the following situations\) in each  **partition\_start\_end\_item**  must be smaller than that of  **END**.  
-    >    -   In two adjacent  **partition\_start\_end\_item**  statements, the value of the first  **END**  must be equal to that of the second  **START**.  
-    >    -   The value of  **EVERY**  in each  **partition\_start\_end\_item**  must be a positive number \(in ascending order\) and must be smaller than  **END**  minus  **START**.  
-    >    -   Each partition includes the start value \(unless it is  _MINVALUE_\) and excludes the end value. The format is as follows: \[**START**,  **END**\).  
-    >    -   Partitions created by the same  **partition\_start\_end\_item**  belong to the same tablespace.  
-    >    -   If  **partition\_name**  is a name prefix of a partition, the length must not exceed 57 bytes. If there are more than 57 bytes, the prefix will be automatically truncated.  
-    >    -   When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value \(32767\).  
-    >3.  In statements for creating partitioned tables,  **START END**  and  **LESS THAN**  cannot be used together.  
-    >4.  The  **START END**  syntax in a partitioned table creation SQL statement will be replaced by the  **VALUES LESS THAN**  syntax when  **gs\_dump**  is executed.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    > 
+    >1.  If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition.
+    >
+    >2.  The  **START END**  syntax must comply with the following rules:
+    >
+    >    -   The value of  **START**  \(if any, same for the following situations\) in each  **partition\_start\_end\_item**  must be smaller than that of  **END**.
+    >
+    >    -   In two adjacent  **partition\_start\_end\_item**  statements, the value of the first  **END**  must be equal to that of the second  **START**.
+    >
+    >    -   The value of  **EVERY**  in each  **partition\_start\_end\_item**  must be a positive number \(in ascending order\) and must be smaller than  **END**  minus  **START**.
+    >
+    >    -   Each partition includes the start value \(unless it is  _MINVALUE_\) and excludes the end value. The format is as follows: \[**START**,  **END**\).
+    >
+    >    -   Partitions created by the same  **partition\_start\_end\_item**  belong to the same tablespace.
+    >
+    >    -   If  **partition\_name**  is a name prefix of a partition, the length must not exceed 57 bytes. If there are more than 57 bytes, the prefix will be automatically truncated.
+    >
+    >    -   When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value \(32767\).
+    > 
+    >3.  In statements for creating partitioned tables,  **START END**  and  **LESS THAN**  cannot be used together.
+    > 
+    >4.  The  **START END**  syntax in a partitioned table creation SQL statement will be replaced by the  **VALUES LESS THAN**  syntax when  **gs\_dump**  is executed.
+
+-   **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**
+
+    Defines interval partitioning.
+
+    -   **interval\_expr**: interval for automatically creating partitions, for example, 1 day or 1 month.
+
+    -   **STORE IN \(tablespace\_name \[, ... \] \)**: Specifies the list of tablespaces for storing automatically created partitions. If this parameter is specified, the automatically created partitions are cyclically selected from the tablespace list. Otherwise, the default tablespace of the partition table is used.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >Column-store tables do not support interval partitioning.
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
@@ -397,7 +432,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -- Import data from the example data table.
     postgres=# INSERT INTO tpcds.web_returns_p1 SELECT * FROM tpcds.web_returns;
     
-    -- Delete the P8 partition.
+    -- Drop the P8 partition.
     postgres=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION P8;
     
     -- Add a partition WR_RETURNED_DATE_SK with values ranging from 2453005 to 2453105.
@@ -406,7 +441,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -- Add a partition WR_RETURNED_DATE_SK with values ranging from 2453105 to MAXVALUE.
     postgres=# ALTER TABLE tpcds.web_returns_p1 ADD PARTITION P9 VALUES LESS THAN (MAXVALUE);
     
-    -- Delete the P8 partition.
+    -- Drop the P8 partition.
     postgres=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION FOR (2453005);
     
     -- Rename the P7 partition to P10.
@@ -506,7 +541,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     
     -- Modify the migration attribute of the partitioned table.
     postgres=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
-    -- Delete tables and tablespaces.
+    -- Drop tables and tablespaces.
     postgres=# DROP TABLE tpcds.web_returns_p1;
     postgres=# DROP TABLE tpcds.web_returns_p2;
     postgres=# DROP TABLE tpcds.web_returns_p3;
@@ -585,7 +620,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -- Rename the partition p7 to p8.
     postgres=# ALTER TABLE tpcds.startend_pt RENAME PARTITION p7 TO p8;
     
-    -- Delete the partition p8.
+    -- Drop the partition p8.
     postgres=# ALTER TABLE tpcds.startend_pt DROP PARTITION p8;
     
     -- Rename the partition where 5950 is located to p71.
@@ -622,7 +657,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      startend_pt |            | startend_tbs1
     (19 rows)
     
-    -- Delete tables and tablespaces.
+    -- Drop tables and tablespaces.
     postgres=# DROP SCHEMA tpcds CASCADE;
     postgres=# DROP TABLESPACE startend_tbs1;
     postgres=# DROP TABLESPACE startend_tbs2;
@@ -631,7 +666,63 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
+-   Example 4: Create an interval-partitioned table  **sales**. The table initially contains two partitions and the partition key is of the DATE type.
+
+    Ranges of the two partitions are as follows: time\_id < '2019-02-01 00:00:00' and '2019-02-01 00:00:00' ≤ time\_id < '2019-02-02 00:00:00'.
+
+    ```
+    -- Create table sales:
+    postgres=# CREATE TABLE sales
+    (prod_id NUMBER(6),
+     cust_id NUMBER,
+     time_id DATE,
+     channel_id CHAR(1),
+     promo_id NUMBER(6),
+     quantity_sold NUMBER(3),
+     amount_sold NUMBER(10,2)
+    )
+    PARTITION BY RANGE (time_id)
+    INTERVAL('1 day')
+    ( PARTITION p1 VALUES LESS THAN ('2019-02-01 00:00:00'),
+      PARTITION p2 VALUES LESS THAN ('2019-02-02 00:00:00')
+    );
+    
+    -- Insert data into partition p1.
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-01-10 00:00:00', 'a', 1, 1, 1);
+    
+    -- Insert data into partition p2.
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-01 00:00:00', 'a', 1, 1, 1);
+    
+    -- View the partition information.
+    postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
+     relname | partstrategy |       boundaries
+    ---------+--------------+-------------------------
+     p1      | r            | {"2019-02-01 00:00:00"}
+     p2      | r            | {"2019-02-02 00:00:00"}
+    (2 rows)
+    
+    -- If the data to be inserted does not match any partition, create a partition and insert the data into the new partition.
+    -- The range of the new partition is '2019-02-05 00:00:00' ≤ time_id < '2019-02-06 00:00:00'.
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-05 00:00:00', 'a', 1, 1, 1);
+    
+    -- If the data to be inserted does not match any partition, create a partition and insert the data into the new partition.
+    -- The range of the new partition is '2019-02-03 00:00:00' ≤ time_id < '2019-02-04 00:00:00'.
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-03 00:00:00', 'a', 1, 1, 1);
+    
+    -- View the partition information.
+    postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
+     relname | partstrategy |       boundaries
+    ---------+--------------+-------------------------
+     sys_p1  | i            | {"2019-02-06 00:00:00"}
+     sys_p2  | i            | {"2019-02-04 00:00:00"}
+     p1      | r            | {"2019-02-01 00:00:00"}
+     p2      | r            | {"2019-02-02 00:00:00"}
+    (4 rows)
+    
+    ```
+
+
 ## Helpful Links<a name="en-us_topic_0237122119_en-us_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
-[ALTER TABLE PARTITION](alter-table-partition.md)  and  [DROP TABLE](drop-table.md)
+[ALTER TABLE PARTITION](alter-table-partition.md)  and  [DROP TABLE](en-us_topic_0242370616.md)
 

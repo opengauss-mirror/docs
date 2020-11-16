@@ -5,15 +5,7 @@ This chapter describes the preparations for the installation.
 <!-- TOC -->
 
 - [Software and Hardware Requirements](#software-and-hardware-requirements)
-    - [Hardware Requirements](#hardware-requirements)
-    - [Software Requirements](#software-requirements)
-    - [Software Dependency Requirements](#software-dependency-requirements)
 - [Modifying OS Configuration](#modifying-os-configuration)
-    - [Disabling the OS Firewall](#disabling-the-os-firewall)
-    - [Setting Character Set Parameters](#setting-character-set-parameters)
-    - [Setting the Time Zone and Time](#setting-the-time-zone-and-time)
-    - [Disabling the Swap Memory](#disabling-the-swap-memory)
-    - [Setting the NIC MTU](#setting-the-nic-mtu)
 - [Setting Remote Login of User root](#setting-remote-login-of-user-root)
 
 <!-- /TOC -->
@@ -52,7 +44,7 @@ This section describes hardware and software requirements of openGauss. It is re
 <tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rc2f89a29186544e79e7995d19878a617"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a>Hard disk</p>
 </td>
 <td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"></a>Hard disks used for installing the <span id="text434316502057"><a name="text434316502057"></a><a name="text434316502057"></a>openGauss</span> must meet the following requirements:</p>
-<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><ul id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"><li>At least 1 GB is used to install the <span id="text119716545518"><a name="text119716545518"></a><a name="text119716545518"></a>openGauss</span> application package.</li><li>About 300 MB is used for each host to store metadata.</li><li>More than 70% of available disk space is reserved to store data.</li></ul>
+<a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><ul id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"><li>At least 1 GB is used to install the <span id="text119716545518"><a name="text119716545518"></a><a name="text119716545518"></a>openGauss</span> application.</li><li>About 300 MB is used for each host to store metadata.</li><li>More than 70% of available disk space is reserved to store data.</li></ul>
 <p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"></a>You are advised to configure the system disk to RAID 1 and data disk to RAID 5 and plan four groups of RAID 5 data disks for installing <span id="text977517418"><a name="text977517418"></a><a name="text977517418"></a>openGauss</span>. RAID configuration is not described in this document. You can configure RAID by following instructions in the hardware vendors' manuals or using common methods found on the Internet. Set <strong id="b1171114154153"><a name="b1171114154153"></a><a name="b1171114154153"></a>Disk Cache Policy</strong> to <strong id="b15716111561518"><a name="b15716111561518"></a><a name="b15716111561518"></a>Disabled</strong> to avoid data loss in an unexpected power-off.</p>
 <p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"></a><span id="text283517517410"><a name="text283517517410"></a><a name="text283517517410"></a>openGauss</span> supports using an SSD with the SAS interface and NVMe protocol deployed in RAID mode as the primary storage device of the database.</p>
 </td>
@@ -72,40 +64,102 @@ This section describes hardware and software requirements of openGauss. It is re
 **Table  2**  Software requirements
 
 <a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_tfb195a8129b24c709d238b091e57405a"></a>
-<table><thead align="left"><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rbb0bb8c17c0c49fc9666f58bdd5487bb"><th class="cellrowborder" valign="top" width="25.240000000000002%" id="mcps1.2.3.1.1"><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a>Software</p>
+<table><thead align="left"><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rbb0bb8c17c0c49fc9666f58bdd5487bb"><th class="cellrowborder" valign="top" width="25.230000000000004%" id="mcps1.2.3.1.1"><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a>Software</p>
 </th>
-<th class="cellrowborder" valign="top" width="74.76%" id="mcps1.2.3.1.2"><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a>Description</p>
+<th class="cellrowborder" valign="top" width="74.77000000000001%" id="mcps1.2.3.1.2"><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a>Description</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.240000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
+<tbody><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.76%" headers="mcps1.2.3.1.2 "><p id="p4796111023815"><a name="p4796111023815"></a><a name="p4796111023815"></a>openEuler 20.3LTS and CentOS 7.6</p>
-</td>
-</tr>
-<tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rf52ebb45df8e4f57882a97bef3b36ca6"><td class="cellrowborder" valign="top" width="25.240000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a>Linux file system</p>
-</td>
-<td class="cellrowborder" valign="top" width="74.76%" headers="mcps1.2.3.1.2 "><p id="p537517310381"><a name="p537517310381"></a><a name="p537517310381"></a>It is recommended that the number of remaining inodes be greater than 1.5 billion.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_r1f5aefa904854b5bbf1f82931d9fc9b5"><td class="cellrowborder" valign="top" width="25.240000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"></a>Tools</p>
-</td>
-<td class="cellrowborder" valign="top" width="74.76%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_p61224722154556"><a name="en-us_topic_0085434629_en-us_topic_0059782022_p61224722154556"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_p61224722154556"></a>Huawei JDK 1.8.0 and bzip2</p>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul2800840102316"></a><a name="ul2800840102316"></a><ul id="ul2800840102316"><li>Arm:<a name="ul177759349286"></a><a name="ul177759349286"></a><ul id="ul177759349286"><li>openEuler 20.3LTS (recommended)</li><li>Kirin V10</li></ul>
+</li><li>x86:<a name="ul851564911283"></a><a name="ul851564911283"></a><ul id="ul851564911283"><li>openEuler 20.3LTS</li><li>CentOS 7.6<div class="note" id="note222515135376"><a name="note222515135376"></a><a name="note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p1225613103712"><a name="p1225613103712"></a><a name="p1225613103712"></a>You are advised to use the English OS. The current installation package can be installed and used only on the English version.</p>
+</div></div>
+</li></ul>
+</li></ul>
 </td>
 </tr>
-<tr id="row109998493614"><td class="cellrowborder" valign="top" width="25.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p075762219324"><a name="p075762219324"></a><a name="p075762219324"></a>Python</p>
+<tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rf52ebb45df8e4f57882a97bef3b36ca6"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a>Linux file system</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.76%" headers="mcps1.2.3.1.2 "><a name="ul1537120034117"></a><a name="ul1537120034117"></a><ul id="ul1537120034117"><li>openEuler: Python 3.7.X is supported.</li><li>CentOS: Python 3.6.X is supported.</li></ul>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><p id="p537517310381"><a name="p537517310381"></a><a name="p537517310381"></a>It is recommended that the number of remaining inodes be greater than 1.5 billion.</p>
+</td>
+</tr>
+<tr id="row128032214310"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="p682172212430"><a name="p682172212430"></a><a name="p682172212430"></a>Tool</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><p id="p582112294311"><a name="p582112294311"></a><a name="p582112294311"></a>bzip2</p>
+</td>
+</tr>
+<tr id="row109998493614"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="p075762219324"><a name="p075762219324"></a><a name="p075762219324"></a>Python</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul1537120034117"></a><a name="ul1537120034117"></a><ul id="ul1537120034117"><li>openEuler: Python 3.7.X is supported.</li><li>CentOS: Python 3.6.X is supported.</li><li>Kirin: Python 3.7.X is supported.<div class="note" id="note4799182210208"><a name="note4799182210208"></a><a name="note4799182210208"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p19799112232010"><a name="p19799112232010"></a><a name="p19799112232010"></a>Python needs to be compiled in --enable-shared mode.</p>
+</div></div>
+</li></ul>
 </td>
 </tr>
 </tbody>
 </table>
 
+
 ### Software Dependency Requirements
 
-[\#EN-US\_TOPIC\_0249784577/table11459151513383](#table11459151513383)  lists the software dependency requirements for the openGauss.
+[Table 3](#table1212531681911)  describes the openGauss software dependency requirements.
 
 You are advised to use the default installation packages of the following dependent software in the listed OS installation CD-ROMs or sources. If the following software does not exist, refer to the recommended versions of the software.
+
+**Table  3**  Software dependency requirements
+
+<a name="table1212531681911"></a>
+
+<table><thead align="left"><tr id="row317811661910"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p14178216101910"><a name="p14178216101910"></a><a name="p14178216101910"></a>Software</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1117815167195"><a name="p1117815167195"></a><a name="p1117815167195"></a>Recommended Version</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row17179141619198"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p111791816141910"><a name="p111791816141910"></a><a name="p111791816141910"></a>libaio-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p101791116151915"><a name="p101791116151915"></a><a name="p101791116151915"></a>0.3.109-13</p>
+</td>
+</tr>
+<tr id="row1617981631914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p171794161195"><a name="p171794161195"></a><a name="p171794161195"></a>flex</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1317921651912"><a name="p1317921651912"></a><a name="p1317921651912"></a>2.5.31 or later</p>
+</td>
+</tr>
+<tr id="row1017911165191"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1617931661912"><a name="p1617931661912"></a><a name="p1617931661912"></a>bison</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p917919167196"><a name="p917919167196"></a><a name="p917919167196"></a>2.7-4</p>
+</td>
+</tr>
+<tr id="row8179181610191"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p101791416191912"><a name="p101791416191912"></a><a name="p101791416191912"></a>ncurses-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0179161651913"><a name="p0179161651913"></a><a name="p0179161651913"></a>5.9-13.20130511</p>
+</td>
+</tr>
+<tr id="row10179416191912"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1117941618198"><a name="p1117941618198"></a><a name="p1117941618198"></a>glibc-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5179191616190"><a name="p5179191616190"></a><a name="p5179191616190"></a>2.17-111</p>
+</td>
+</tr>
+<tr id="row317914169193"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p201791916201910"><a name="p201791916201910"></a><a name="p201791916201910"></a>patch</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1018051610198"><a name="p1018051610198"></a><a name="p1018051610198"></a>2.7.1-10</p>
+</td>
+</tr>
+<tr id="row136701325154914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76711825134912"><a name="p76711825134912"></a><a name="p76711825134912"></a>lsb_release</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1567262515496"><a name="p1567262515496"></a><a name="p1567262515496"></a>4.1</p>
+</td>
+</tr>
+<tr id="row136701325154914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76711825134912"><a name="p76711825134912"></a><a name="p76711825134912"></a>readline_devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1567262515496"><a name="p1567262515496"></a><a name="p1567262515496"></a>7.0-13</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ## Modifying OS Configuration
 
@@ -113,9 +167,9 @@ You are advised to use the default installation packages of the following depend
 
 To ensure that the openGauss can work properly when the firewall is enabled, related services, protocols, IP addresses, and ports need to be added to the firewall whitelist of each host in the openGauss.
 
-Take openEuler OS as an example. Assume that the openGauss information is listed in  [Table 1](#en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_table4312170510523).
+Take openEuler OS as an example. Assume that the openGauss information is listed in  [Table 4](#en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_table4312170510523).
 
-**Table  1**  Information of openGauss
+**Table  4**  Information of openGauss
 
 <a name="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_table4312170510523"></a>
 <table><thead align="left"><tr id="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_row3906252510523"><th class="cellrowborder" valign="top" width="19.36%" id="mcps1.2.4.1.1"><p id="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_p2242248110523"><a name="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_p2242248110523"></a><a name="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_p2242248110523"></a>Host Name</p>
@@ -186,17 +240,18 @@ Currently, EulerOS can be installed only when the firewall is disabled.
     ```
 
 3.  Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
-    1.  Run the  **vim**  command to open the  **config**  file.
 
-        ```
-        vim /etc/selinux/config
-        ```
+    a.Run the  **vim**  command to open the  **config**  file.
 
-    2.  Set the value of  **SELINUX**  to  **disabled**.
+    ```
+    vim /etc/selinux/config
+    ```
 
-        ```
-        SELINUX=disabled
-        ```
+    b.Set the value of  **SELINUX**  to  **disabled**.
+
+    ```
+    SELINUX=disabled
+    ```
 
 4.  Restart the OS.
 
@@ -222,8 +277,8 @@ Set the same time zone for all database nodes by copying the  **/etc/localtime**
 cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.  
 
 Run the  **date -s**  command to set the time of each host to the same time. For example:
 
@@ -231,8 +286,8 @@ Run the  **date -s**  command to set the time of each host to the same time. For
 date -s Mon May 11 16:42:11 CST 2020
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->You can run the  **date**  command to query the time zone of the host.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+You can run the  **date**  command to query the time zone of the host.  
 
 ### Disabling the Swap Memory
 
@@ -255,59 +310,56 @@ ifconfig NIC ID mtu Value
 During the openGauss installation, the user  **root**  is required for remote login. This section describes how to set the user  **root**  for remote login.
 
 1.  Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**.
-    1.  Open the  **sshd\_config**  file.
-
-        ```
-        vim /etc/ssh/sshd_config
-        ```
-
-    2.  Modify permissions of user  **root**  using either of the following methods:
-        -   Comment out  **PermitRootLogin no**.
-
-            ```
-            #PermitRootLogin no
-            ```
-
-        -   Set the value of  **PermitRootLogin**  to  **yes**.
-
-            ```
-            PermitRootLogin yes
-            ```
-
-    3.  Run the  **:wq**  command to save the modification and exit.
-
-2.  Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
-    1.  Open the  **sshd\_config**  file.
-
-        ```
-        vim /etc/ssh/sshd_config
-        ```
-
-    2.  Comment out the line where  **Banner**  is located.
-
-        ```
-        #Banner XXXX
-        ```
-
-    3.  Run the  **:wq**  command to save the modification and exit.
-
-3.  Run the following command to validate the settings:
-
+    
+a.  Open the  **sshd\_config**  file.
+    
     ```
-    service sshd restart
+    vim /etc/ssh/sshd_config
     ```
+    
+    b.  Modify permissions of user  **root**  using either of the following methods:
+    -   Comment out  **PermitRootLogin no**.
+    
+        #PermitRootLogin no
+    
+    -   Set the value of  **PermitRootLogin**  to  **yes**.
+        
+    
+        PermitRootLogin yes
+        
+    
+    c.  Run the  **:wq**  command to save the modification and exit.
+    
+2. Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
-    >If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.
+   a.  Open the  **sshd\_config**  file.
 
-4.  Re-log in to the system as user  **root**.
+   ```
+   vim /etc/ssh/sshd_config
+   ```
 
-    ```
-    ssh xxx.xxx.xxx.xxx
-    ```
+   b.  Comment out the line where  **Banner**  is located.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >_xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.
+   ```
+   #Banner XXXX
+   ```
 
+   c.  Run the  **:wq**  command to save the modification and exit.
 
-
+3. Run the following command to validate the settings:
+
+   ```
+   service sshd restart
+   ```
+
+   ![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+   If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.  
+
+4. Re-log in to the system as user  **root**.
+
+   ```
+   ssh xxx.xxx.xxx.xxx
+   ```
+
+   ![](public_sys-resources/icon-note.gif) **NOTE:**   
+   _xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.  

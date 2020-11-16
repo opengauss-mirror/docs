@@ -1,12 +1,5 @@
 # FAQs<a name="EN-US_TOPIC_0249632272"></a>
 
-<!-- TOC -->
-
-- [An Error Is Reported Displaying "Failed to obtain the GPHOME" When a Command Is Executed<a name="EN-US_TOPIC_0249632274"></a>](#an-error-is-reported-displaying-failed-to-obtain-the-gphome-when-a-command-is-executeda-nameen-us_topic_0249632274a)
-- [Restoration Method for Incomplete Key Files Caused by Interruption During Standby Instance Rebuilding Using gs\_ctl<a name="EN-US_TOPIC_0255515980"></a>](#restoration-method-for-incomplete-key-files-caused-by-interruption-during-standby-instance-rebuilding-using-gs\_ctla-nameen-us_topic_0255515980a)
-
-<!-- /TOC -->
-
 ## An Error Is Reported Displaying "Failed to obtain the GPHOME" When a Command Is Executed<a name="EN-US_TOPIC_0249632274"></a>
 
 ### Symptom<a name="en-us_topic_0237152452_en-us_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
@@ -79,6 +72,5 @@ The certificate file is incomplete when the rebuilding is interrupted. The rebui
    ```
 
 
->![](C:/Users/lijun/Desktop/007/public_sys-resources/icon-note.gif) **NOTE:** 
->If the database on the standby node is stopped, you need to regenerate a certificate file or copy the certificate file \(in  _$GAUSSHOME_**/share**\) to the data directory, start the standby node, and rebuild the standby instance. For details about how to generate a certificate file, see the  _Developer Guide_.
-
+   >![](C:/Users/lijun/Desktop/007/public_sys-resources/icon-note.gif) **NOTE:**   
+   >If the database on the standby node is stopped, you need to regenerate a certificate file or copy the certificate file \(in  _$GAUSSHOME_**/share**\) to the data directory, start the standby node, and rebuild the standby instance. For details about how to generate a certificate file, see the  _Developer Guide_.  

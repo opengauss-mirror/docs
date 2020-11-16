@@ -9,6 +9,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 -   用户需要检查上层目录权限，保证安装用户对安装包和配置文件目录读写执行的权限。
 -   xml文件中各主机的名称与IP映射配置正确。
 -   只能使用root用户执行gs\_preinstall命令。
+-   执行gs\_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署集群连接丢失风险，可以在安装结束后手动添加其它集群映射至/etc/hosts文件中。
 -   本产品支持同一操作系统大版本下的小版本混合部署，其支持列表如下：
 
     ```
@@ -82,7 +83,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
     取值范围：字符串。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >不能指定openGauss默认创建的环境变量。默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。
+    >本参数不能指定为openGauss默认创建的环境变量。否则，openGauss的环境变量将被覆盖。openGauss默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。
 
 -   --sep-env-file=ENVFILE
 
@@ -95,14 +96,13 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     是否将xml配置文件中主机名与IP的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。
 
--   -l
+- -l
 
-    指定日志文件名及路径。在内部会自动给日志名添加一个时间戳。
+  指定日志文件名及路径。在内部会自动给日志名添加一个时间戳。
 
-    默认值：/var/log/gaussdb/用户名/om/gs\_preinstall.log
+  默认值：/var/log/gaussdb/用户名/om/gs\_preinstall.log
 
-    -   当既不明确指定-l，又不在XML文件中配置gaussdbLogPath时，默认值为“/var/log/gaussdb/用户名/om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log”。
-    -   当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为gaussdbLogPath的值、用户名和om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log的组合。
+  当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为gaussdbLogPath的值、用户名和om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log的组合。
 
 -   --non-interactive
 
@@ -110,9 +110,6 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     -   当不指定该参数时，则为安全交互模式，在此模式下用户需要人机交互输入密码。
     -   当指定该参数时，为非交互模式，不需要进行人机交互。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >交互式输入密码的过程中，密码不能包含";","'","$"3个特殊字符。
 
 -   -?, --help
 

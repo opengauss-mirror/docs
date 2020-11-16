@@ -4,7 +4,7 @@
 
 ## 前提条件<a name="zh-cn_topic_0241234244_zh-cn_topic_0085434673_zh-cn_topic_0059782025_section47789530115226"></a>
 
-已通过客户端工具连接到openGauss，连接方法请参见[使用gsql远程连接](使用gsql远程连接.md)。
+已通过客户端工具连接到openGauss，连接方法请参见[gsql客户端连接](gsql客户端连接.md)。
 
 ## 执行单条SQL<a name="section0345111273314"></a>
 
@@ -28,10 +28,9 @@
 
     ```
     CREATE DATABASE human_staff;
-    CREATE DATABASE
     ```
-
-    通常，输入的命令行在遇到分号的时候结束。如果输入的命令行没有错误，结果就会输出到屏幕上。
+    
+通常，输入的命令行在遇到分号的时候结束。如果输入的命令行没有错误，结果就会输出到屏幕上。
 
 
 方法二：

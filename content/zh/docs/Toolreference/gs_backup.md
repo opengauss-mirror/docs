@@ -58,11 +58,11 @@ gs\_backup参数可以分为如下几类：
 
     -   --binary
 
-        备份二进制文件。
+        备份app目录下的二进制文件。
 
     -   --all
 
-        备份二进制和参数文件。
+        备份app目录下的二进制文件、pg_hba.conf和postgsql.conf文件。
 
     -   -l
 

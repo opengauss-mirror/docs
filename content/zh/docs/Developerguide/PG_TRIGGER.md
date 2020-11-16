@@ -38,7 +38,7 @@ PG\_TRIGGER系统表存储触发器信息。
 </td>
 <td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122321_p5614159174418"><a name="zh-cn_topic_0237122321_p5614159174418"></a><a name="zh-cn_topic_0237122321_p5614159174418"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122321_p298831204318"><a name="zh-cn_topic_0237122321_p298831204318"></a><a name="zh-cn_topic_0237122321_p298831204318"></a>触发器OID。</p>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122321_p298831204318"><a name="zh-cn_topic_0237122321_p298831204318"></a><a name="zh-cn_topic_0237122321_p298831204318"></a>要被触发器调用的函数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122321_zh-cn_topic_0059778876_r0329e4dc5ba94fdc812df5362d493cef"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122321_zh-cn_topic_0059778876_aba0d8655714943cbbb8a6439bca6af91"><a name="zh-cn_topic_0237122321_zh-cn_topic_0059778876_aba0d8655714943cbbb8a6439bca6af91"></a><a name="zh-cn_topic_0237122321_zh-cn_topic_0059778876_aba0d8655714943cbbb8a6439bca6af91"></a>tgtype</p>

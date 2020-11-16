@@ -69,13 +69,6 @@
 <td class="cellrowborder" valign="top" width="68.11%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122466_p6467102111413"><a name="en-us_topic_0237122466_p6467102111413"></a><a name="en-us_topic_0237122466_p6467102111413"></a>Parent session ID</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237122466_en-us_topic_0059777957_r56837126154d40bb811a32f1313dd911"><td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122466_en-us_topic_0059777957_a4d23799430a94dfc9c694a67d2db7776"><a name="en-us_topic_0237122466_en-us_topic_0059777957_a4d23799430a94dfc9c694a67d2db7776"></a><a name="en-us_topic_0237122466_en-us_topic_0059777957_a4d23799430a94dfc9c694a67d2db7776"></a>ptid</p>
-</td>
-<td class="cellrowborder" valign="top" width="12.85%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122466_en-us_topic_0059777957_a3c441e71fc4b415d8d25d9bb2f2822de"><a name="en-us_topic_0237122466_en-us_topic_0059777957_a3c441e71fc4b415d8d25d9bb2f2822de"></a><a name="en-us_topic_0237122466_en-us_topic_0059777957_a3c441e71fc4b415d8d25d9bb2f2822de"></a>integer</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.11%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122466_en-us_topic_0059777957_a46d38b3add8046adab53a794dcb4049c"><a name="en-us_topic_0237122466_en-us_topic_0059777957_a46d38b3add8046adab53a794dcb4049c"></a><a name="en-us_topic_0237122466_en-us_topic_0059777957_a46d38b3add8046adab53a794dcb4049c"></a>Parent thread of the streaming thread</p>
-</td>
-</tr>
 <tr id="en-us_topic_0237122466_en-us_topic_0059777957_rd1948fc45b9646ecbbcdee8e782ecf1c"><td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122466_en-us_topic_0059777957_aa893addf11be41088c8b656c18400d5c"><a name="en-us_topic_0237122466_en-us_topic_0059777957_aa893addf11be41088c8b656c18400d5c"></a><a name="en-us_topic_0237122466_en-us_topic_0059777957_aa893addf11be41088c8b656c18400d5c"></a>tlevel</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.85%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122466_en-us_topic_0059777957_a5e01efdc30d242b9b3492cf49bf9e207"><a name="en-us_topic_0237122466_en-us_topic_0059777957_a5e01efdc30d242b9b3492cf49bf9e207"></a><a name="en-us_topic_0237122466_en-us_topic_0059777957_a5e01efdc30d242b9b3492cf49bf9e207"></a>integer</p>
@@ -1185,6 +1178,16 @@ The following table describes the corresponding wait events when  **wait\_status
 <tr id="en-us_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237122466_p1053233143619"><a name="en-us_topic_0237122466_p1053233143619"></a><a name="en-us_topic_0237122466_p1053233143619"></a>WALWrite</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237122466_p95324318361"><a name="en-us_topic_0237122466_p95324318361"></a><a name="en-us_topic_0237122466_p95324318361"></a>Writes a WAL file.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237122466_p1053233143619"><a name="en-us_topic_0237122466_p1053233143619"></a><a name="en-us_topic_0237122466_p1053233143619"></a>WALBufferAccess</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237122466_p95324318361"><a name="en-us_topic_0237122466_p95324318361"></a><a name="en-us_topic_0237122466_p95324318361"></a>WAL Buffer access (for performance reasons, only the number of accesses are counted in the kernel code, and the access time is not counted).</p>
+</td>
+</tr>
+ <tr id="en-us_topic_0237122466_row8532631173612"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237122466_p1053233143619"><a name="en-us_topic_0237122466_p1053233143619"></a><a name="en-us_topic_0237122466_p1053233143619"></a>WALBufferFull</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237122466_p95324318361"><a name="en-us_topic_0237122466_p95324318361"></a><a name="en-us_topic_0237122466_p95324318361"></a>When the WAL Buffer is full, write wal file related processing.</p>
 </td>
 </tr>
 <tr id="row5126152875614"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="p98110272568"><a name="p98110272568"></a><a name="p98110272568"></a>DoubleWriteFileRead</p>

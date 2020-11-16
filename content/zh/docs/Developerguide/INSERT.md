@@ -107,8 +107,8 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新。对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDE." 或者 "VALUES()" 来选择源数据相应的列。
 
     -   支持触发器，触发器执行顺序由实际执行流程决定：
-    -   执行insert：触发before insert、after insert触发器
-        -   执行update：触发before insert、before update、after update触发器
+    -   执行insert：触发before insert、after insert触发器。
+    -   执行update：触发before insert、before update、after update触发器。
     -   执行update nothing：触发before insert触发器。
     -   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
 -   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。

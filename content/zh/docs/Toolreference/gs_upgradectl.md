@@ -61,9 +61,11 @@
     gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   升级提交操作只适用于openGauss的就地小版本升级。
-    >-   一旦提交操作完成，则不能再执行回滚操作。
+    ![](public_sys-resources/icon-note.gif) **说明：**  
+
+    -   升级提交操作只适用于openGauss的就地小版本升级。  
+
+    -   一旦提交操作完成，则不能再执行回滚操作。  
 
 
 ## 参数说明<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
@@ -103,7 +105,7 @@
 
 ## 示例<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
 
-**示例一：升级前使用新包进行前置操作。**
+**示例一**：升级前使用新包进行前置操作。
 
 ```
 ./gs_preinstall -U roach -G users -X /data/xml/3node_3c3d_1m2s_etcd.xml 

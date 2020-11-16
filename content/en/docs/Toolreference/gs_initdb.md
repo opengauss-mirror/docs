@@ -10,8 +10,8 @@ When a database is initialized using  **gs\_initdb**, a database directory is cr
 
 A large number of system catalogs and views are generated when a database is initialized, many of which allow access from any database user.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->Permissions on  **pg\_user\_status**  and  **pg\_auth\_history**  system catalogs are granted only to initialized users and  **sysadmin**  users.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>Permissions on  **pg\_user\_status**  and  **pg\_auth\_history**  system catalogs are granted only to initialized users and  **sysadmin**  users.  
 
 **Generated database**
 
@@ -33,13 +33,14 @@ During installation, you are advised to use the  **-D**  parameter to call  **gs
 
 1.  Log in as the OS user  **omm**  to the primary database node.
 2.  Plan the database directory.
-    1.  Switch to user  **root**.
 
-        ```
-        su - root
-        ```
+    a. Switch to user  **root**.
 
-    2.  Enter the username and password as prompted.
+      ```
+      su - root
+      ```
+
+    b. Enter the username and password as prompted.
 
 3.  Go to the  **/opt/gaussdb**  directory and create the  **data1**  directory.
 
@@ -48,17 +49,17 @@ During installation, you are advised to use the  **-D**  parameter to call  **gs
     mkdir data1
     ```
 
-    1.  Allocate the ownership of the  **data1**  directory to the database user omm. dbgrp is the user group that the omm belongs to.
+    a. Allocate the ownership of the  **data1**  directory to the database user omm. dbgrp is the user group that the omm belongs to.
 
-        ```
-        chown omm:dbgrp data1
-        ```
+    ```
+    chown omm:dbgrp data1
+    ```
 
-    2.  Exit user  **root**.
+    b. Exit user  **root**.
 
-        ```
-        exit
-        ```
+    ```
+    exit
+    ```
 
 4.  Run the  **gs\_initdb**  command to initialize the database.
 
@@ -169,7 +170,7 @@ zh_SG.gbk
 </td>
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="p1642510590523"><a name="p1642510590523"></a><a name="p1642510590523"></a>Specifies the type of the compatible database.</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>Value range: A, B, and C , indicating <strong id="b235119335593"><a name="b235119335593"></a><a name="b235119335593"></a>O</strong>, <strong id="b6357433175912"><a name="b6357433175912"></a><a name="b6357433175912"></a>MY</strong>, and <strong id="b535763385914"><a name="b535763385914"></a><a name="b535763385914"></a>TD</strong> databases, respectively.</p>
+<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p83741414135318"><a name="p83741414135318"></a><a name="p83741414135318"></a>Value range: A, B, C, and PG, indicating <strong id="b235119335593"><a name="b235119335593"></a><a name="b235119335593"></a>O</strong>, <strong id="b6357433175912"><a name="b6357433175912"></a><a name="b6357433175912"></a>MY</strong>, <strong id="b6357433175912"><a name="b6357433175912"></a><a name="b6357433175912"></a>TD</strong>, and <strong id="b535763385914"><a name="b535763385914"></a><a name="b535763385914"></a>POSTGRES</strong> databases, respectively.</p>
 </td>
 </tr>
 <tr id="row142041433132110"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p296280814042"><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p296280814042"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p296280814042"></a>--lc-collate=LOCALE</p>
@@ -258,6 +259,7 @@ zh_SG.gbk
 </tr>
 </tbody>
 </table>
+
 
 
 **Table  2**  Uncommon parameters

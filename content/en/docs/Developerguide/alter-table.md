@@ -87,34 +87,21 @@
     >    It is only available for internal scale-in tools. Common users should not use the syntax.  
     >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
     >    Disables a single trigger specified by  **trigger\_name**, disables all triggers, or disables only user triggers \(excluding internally generated constraint triggers, for example, deferrable unique constraint triggers and exclusion constraint triggers\).  
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
-        >Exercise caution when using this function because data integrity cannot be ensured as expected if the triggers are not executed.  
-
-    -   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-
-        Enables a single trigger specified by  **trigger\_name**, enables all triggers, or enables only user triggers.
-
-    -   **| ENABLE REPLICA TRIGGER trigger\_name**
-
-        Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](statement-behavior.md#en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216). When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
-
-        When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
-
-    -   **| ENABLE ALWAYS TRIGGER trigger\_name**
-
-        Determines that all triggers are fired regardless of the current replication mode.
-
-    -   **| DISABLE/ENABLE ROW LEVEL SECURITY**
-
-        Enables or disables row-level access control for a table.
-
-        If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md).
-
-    -   **| NO FORCE/FORCE ROW LEVEL SECURITY**
-
-        Forcibly enables or disables row-level access control for a table.
-
-        By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) wil be affected. System administrators are not affected by any row-level access control policies.
+    >   Exercise caution when using this function because data integrity cannot be ensured as expected if the triggers are not executed.  
+    >-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
+    >   Enables a single trigger specified by  **trigger\_name**, enables all triggers, or enables only user triggers.
+    >-   **| ENABLE REPLICA TRIGGER trigger\_name**  
+        Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](statement-behavior.md#en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216).
+    >   When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
+    >   When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
+    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**  
+    >       Determines that all triggers are fired regardless of the current replication mode.
+    >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**  
+    >       Enables or disables row-level access control for a table.
+    >       If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not >  >   affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW >   LEVEL SECURITY POLICY](create-row-level-security-policy.md).
+    >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**   
+    >       Forcibly enables or disables row-level access control for a table.
+    >       By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) wil be affected. System administrators are not affected by any row-level access control policies.
 
 
 
@@ -150,10 +137,10 @@
         >-   **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**  
         >    Modifies the type of a column in a table. Indexes and simple table constraints on the column will automatically use the new data type by reparsing the originally supplied expression.  
         >    **ALTER TYPE**  requires an entire table be rewritten. This is an advantage sometimes, because it frees up unnecessary space from a table. For example, to reclaim the space occupied by a deleted column, the fastest method is to use the following statement.  
-        >    ```  
-        >    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;  
-        >    ```  
-        >    In this statement,  **anycol**  indicates any column existing in the table and  **anytype**  indicates the type of the prototype of the column.  **ALTER TYPE**  does not change the table except that the table is forcibly rewritten. In this way, the data that is no longer used is deleted.  
+        >     ```  
+        >       ALTER TABLE table ALTER COLUMN anycol TYPE anytype;  
+        >       ```  
+        >       In this statement,  **anycol**  indicates any column existing in the table and  **anytype**  indicates the type of the prototype of the column.  **ALTER TYPE**  does not change the table except that the table is forcibly rewritten. In this way, the data that is no longer used is deleted.  
         >-   **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**  
         >    Sets or removes the default value for a column. The default values only apply to subsequent  **INSERT**  operations; they do not cause rows already in the table to change. Defaults can also be created for views, in which case they are inserted into  **INSERT**  statements on the view before the view's  **ON INSERT**  rule is applied.  
         >-   **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**  

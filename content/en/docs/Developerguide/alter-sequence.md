@@ -65,7 +65,7 @@ postgres=# CREATE TABLE T1(C1 bigint default nextval('serial'));
 -- Change the owning column of serial to T1.C1.
 postgres=# ALTER SEQUENCE serial OWNED BY T1.C1;
 
--- Delete the sequence.
+-- Delete the sequence and table.
 postgres=# DROP SEQUENCE serial cascade;
 postgres=# DROP TABLE T1;
 ```

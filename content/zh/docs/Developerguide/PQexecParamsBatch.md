@@ -20,7 +20,7 @@ PGresult* PQexecParamsBatch(PGconn* conn,
 
 ## 参数<a name="zh-cn_topic_0059778058_s3488a4902c544a86ae94d239d63e21a9"></a>
 
-**表 1** 
+**表 1** PQexecParamsBatch参数
 
 <a name="zh-cn_topic_0059778058_t753453111a55495490879cf0a4b36cf6"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0059778058_r91a64b4bccf441acbcb74615b079d506"><th class="cellrowborder" valign="top" width="23.27%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0059778058_a1cfb85f5e73d458d816d5f5b5e9538cd"><a name="zh-cn_topic_0059778058_a1cfb85f5e73d458d816d5f5b5e9538cd"></a><a name="zh-cn_topic_0059778058_a1cfb85f5e73d458d816d5f5b5e9538cd"></a><strong id="zh-cn_topic_0059778058_a471452b4ce36463d9fbbad2b44ea3b2d"><a name="zh-cn_topic_0059778058_a471452b4ce36463d9fbbad2b44ea3b2d"></a><a name="zh-cn_topic_0059778058_a471452b4ce36463d9fbbad2b44ea3b2d"></a>关键字</strong></p>
@@ -41,7 +41,7 @@ PGresult* PQexecParamsBatch(PGconn* conn,
 </tr>
 <tr id="row278915265284"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p13789102612813"><a name="p13789102612813"></a><a name="p13789102612813"></a>nParams</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p13789182611288"><a name="p13789182611288"></a><a name="p13789182611288"></a>绑定参数的个数</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p13789182611288"><a name="p13789182611288"></a><a name="p13789182611288"></a>绑定参数的个数。</p>
 </td>
 </tr>
 <tr id="row1240824533515"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p4876164661315"><a name="p4876164661315"></a><a name="p4876164661315"></a>nBatch</p>

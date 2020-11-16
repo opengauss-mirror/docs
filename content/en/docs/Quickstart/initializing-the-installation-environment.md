@@ -4,35 +4,19 @@ To ensure the correct installation of the openGauss, you need to configure the h
 
 <!-- TOC -->
 
-- [Creating the Required User Account and Configuring the Installation Environment<a name="EN-US_TOPIC_0249784578"></a>](#creating-the-required-user-account-and-configuring-the-installation-environmenta-nameen-us_topic_0249784578a)
-    - [Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>](#prerequisitesa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8a)
-    - [Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>](#precautionsa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420a)
-    - [Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>](#procedurea-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9da)
-    - [Examples<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620"></a>](#examplesa-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section412490911620a)
-    - [Troubleshooting<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4"></a>](#troubleshootinga-nameen-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s51853c2b09e54b12a90e4f8c512a61e4a)
-- [Establishing Mutual Trust Manually<a name="EN-US_TOPIC_0249784564"></a>](#establishing-mutual-trust-manuallya-nameen-us_topic_0249784564a)
-    - [Prerequisites<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s88bba380d9334b129eab3023c5399d45"></a>](#prerequisitesa-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s88bba380d9334b129eab3023c5399d45a)
-    - [Establishing Mutual Trust Using a Script<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s8028dd8189914444b059c07d8c8c82de"></a>](#establishing-mutual-trust-using-a-scripta-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s8028dd8189914444b059c07d8c8c82dea)
-    - [Establishing Mutual Trust Manually<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_section63620881152125"></a>](#establishing-mutual-trust-manuallya-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_section63620881152125a)
-    - [Deleting Mutual Trust Between Users  **root** <a name="section149417461942"></a>](#deleting-mutual-trust-between-users--root-a-namesection149417461942a)
-    - [Examples<a name="en-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s9928a16b5b7347edbdb587133575483e"></a>](#examplesa-nameen-us_topic_0241805804_en-us_topic_0085434625_en-us_topic_0059782039_s9928a16b5b7347edbdb587133575483ea)
-- [Configuring OS Parameters<a name="EN-US_TOPIC_0249784554"></a>](#configuring-os-parametersa-nameen-us_topic_0249784554a)
-    - [OS Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540"></a>](#os-parametersa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540a)
-    - [File System Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section4118580316369"></a>](#file-system-parametersa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section4118580316369a)
-    - [Setting the transparent\_hugepage Service<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section38366550113020"></a>](#setting-the-transparent\_hugepage-servicea-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section38366550113020a)
-    - [Setting File Handles<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section49556455195442"></a>](#setting-file-handlesa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section49556455195442a)
-    - [Setting the Maximum Number of Allowed Processes<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section65253147151525"></a>](#setting-the-maximum-number-of-allowed-processesa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section65253147151525a)
-    - [Setting NIC Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section6007556195457"></a>](#setting-nic-parametersa-nameen-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section6007556195457a)
+- [Creating the Required User Account and Configuring the Installation Environment](#Creating the Required User Account and Configuring the Installation Environment)
+- [Establishing Mutual Trust Manually](#Establishing Mutual Trust Manually)
+- [Configuring OS Parameters](#Configuring OS Parameters)
 
 <!-- /TOC -->
 
-## Creating the Required User Account and Configuring the Installation Environment<a name="EN-US_TOPIC_0249784578"></a>
+## Creating the Required User Account and Configuring the Installation Environment
 
 After the clusteropenGauss configuration file is created, you need to run the  **gs\_preinstall**  script to prepare the account and environment so that you can perform clusteropenGauss installation and management operations with the minimum permission, ensuring system security.
 
 Executing the  **gs\_preinstall**  script enables the system to automatically complete the following installation preparations:
 
--   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](configuring-os-parameters.md).
+-   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](#configuring-os-parameters).
 -   Automatically copies the clusteropenGauss configuration files and installation packages to the same directory on each clusteropenGauss host.
 -   If the installation user and user group of the clusteropenGauss do not exist, the system automatically creates them.
 -   Reads the directory information in the clusteropenGauss configuration file, creates the directory, and grants the directory permission to the installation user.
@@ -387,7 +371,7 @@ If configuring the installation environment fails, obtain the  **gs\_preinstall-
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
 
-## Establishing Mutual Trust Manually<a name="EN-US_TOPIC_0249784564"></a>
+## Establishing Mutual Trust Manually
 
 During the openGauss installation, you need to perform operations such as running commands and transferring files between hosts in openGauss. Establish mutual trust among the hosts before installing the cluster as a common user. During the execution of the pre-installation script, establish mutual trust between users  **root**, then create a common user account, and finally establish mutual trust between common users.
 
@@ -401,7 +385,7 @@ During the openGauss installation, you need to perform operations such as runnin
 -   Each host name and IP address have been correctly configured in the XML file.
 -   Communication among all the hosts is normal.
 -   If the mutual trust is to be established for common users, the same user needs to be created and password set on each host.
--   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/root**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**  and that of the  **/home**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
+-   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/home**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**  and that of the  **/root**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
 
     To check the SELinux status, run the  **getenforce**  command. If the command output is  **Enforcing**, SELinux is installed and has been enabled.
 
@@ -697,7 +681,7 @@ Successfully verified SSH trust on all hosts.
 Successfully created SSH trust.
 ```
 
-## Configuring OS Parameters<a name="EN-US_TOPIC_0249784554"></a>
+## Configuring OS Parameters
 
 openGauss requires that the OS parameters on every host be set to specified values to ensure system running performance.
 
@@ -706,7 +690,7 @@ Some of these parameters are set during the openGauss installation environment p
 1.  Log in to a server as user  **root**.
 2.  Modify the  **/etc/sysctl.conf**  file.
 
-    For details about how to modify parameters, see  [OS Parameters](#en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540).
+    For details about how to modify parameters, see  [OS Parameters](#OS Parameters).
 
 3.  Run the following command to make the modifications take effect:
 
@@ -715,7 +699,7 @@ Some of these parameters are set during the openGauss installation environment p
     ```
 
 
-### OS Parameters<a name="en-us_topic_0241805805_en-us_topic_0085434661_en-us_topic_0059782062_section3705271819540"></a>
+### OS Parameters
 
 **Table  1**  OS parameters
 

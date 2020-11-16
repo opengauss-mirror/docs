@@ -768,7 +768,6 @@ Troubleshoot exceptions detected in the inspection by following instructions in 
 <strong id="en-us_topic_0237088800_b18729929104417"><a name="en-us_topic_0237088800_b18729929104417"></a><a name="en-us_topic_0237088800_b18729929104417"></a>ps ux</strong></pre>
 <p id="en-us_topic_0237088800_p09991650174014"><a name="en-us_topic_0237088800_p09991650174014"></a><a name="en-us_topic_0237088800_p09991650174014"></a>Use the <strong id="b17713115312"><a name="b17713115312"></a><a name="b17713115312"></a>gs_guc</strong> tool to disable the read-only mode of <span id="en-us_topic_0237088800_text781373721912"><a name="en-us_topic_0237088800_text781373721912"></a><a name="en-us_topic_0237088800_text781373721912"></a>openGauss</span>.</p>
 <pre class="screen" id="en-us_topic_0237088800_screen6249173144516"><a name="en-us_topic_0237088800_screen6249173144516"></a><a name="en-us_topic_0237088800_screen6249173144516"></a><strong id="en-us_topic_0237088800_b153715124518"><a name="en-us_topic_0237088800_b153715124518"></a><a name="en-us_topic_0237088800_b153715124518"></a>gs_guc reload -N all -I all -c 'default_transaction_read_only = off' </strong>
-<strong id="en-us_topic_0237088800_b1245113044618"><a name="en-us_topic_0237088800_b1245113044618"></a><a name="en-us_topic_0237088800_b1245113044618"></a>gs_guc reload -N all -I all -c 'default_transaction_read_only = off' </strong></pre>
 </td>
 </tr>
 <tr id="en-us_topic_0237088800_row599175395319"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p510012536530"><a name="en-us_topic_0237088800_p510012536530"></a><a name="en-us_topic_0237088800_p510012536530"></a>CheckEnvProfile (Checks environment variables.)</p>
@@ -925,7 +924,7 @@ Troubleshoot exceptions detected in the inspection by following instructions in 
 <td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p17304812106"><a name="en-us_topic_0237088800_p17304812106"></a><a name="en-us_topic_0237088800_p17304812106"></a>The firewall is enabled.</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p0309814102"><a name="en-us_topic_0237088800_p0309814102"></a><a name="en-us_topic_0237088800_p0309814102"></a>Disable the firewall.</p>
-<pre class="screen" id="en-us_topic_0237088800_screen168681239101015"><a name="en-us_topic_0237088800_screen168681239101015"></a><a name="en-us_topic_0237088800_screen168681239101015"></a><strong id="en-us_topic_0237088800_b13971145173814"><a name="en-us_topic_0237088800_b13971145173814"></a><a name="en-us_topic_0237088800_b13971145173814"></a>redHat(CentOS)7.x: systemctl status firewalld.service</strong>
+<pre class="screen" id="en-us_topic_0237088800_screen168681239101015"><a name="en-us_topic_0237088800_screen168681239101015"></a><a name="en-us_topic_0237088800_screen168681239101015"></a><strong id="en-us_topic_0237088800_b13971145173814"><a name="en-us_topic_0237088800_b13971145173814"></a><a name="en-us_topic_0237088800_b13971145173814"></a>redHat(CentOS)7.x: systemctl disable firewalld.service</strong>
 <strong id="en-us_topic_0237088800_b797285113388"><a name="en-us_topic_0237088800_b797285113388"></a><a name="en-us_topic_0237088800_b797285113388"></a>redHat(CentOS)6.x: service iptables down</strong>
 <strong id="en-us_topic_0237088800_b1597355114383"><a name="en-us_topic_0237088800_b1597355114383"></a><a name="en-us_topic_0237088800_b1597355114383"></a>SuSE: SuSEfirewall2 down</strong></pre>
 </td>
@@ -933,9 +932,6 @@ Troubleshoot exceptions detected in the inspection by following instructions in 
 <tr id="en-us_topic_0237088800_row139635453144"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p1896424513148"><a name="en-us_topic_0237088800_p1896424513148"></a><a name="en-us_topic_0237088800_p1896424513148"></a>CheckKernelVer (Checks kernel versions.)</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p17965445171411"><a name="en-us_topic_0237088800_p17965445171411"></a><a name="en-us_topic_0237088800_p17965445171411"></a>Kernel versions are inconsistent between nodes.</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p188823517155"><a name="en-us_topic_0237088800_p188823517155"></a><a name="en-us_topic_0237088800_p188823517155"></a>Use the <strong id="b841203415513"><a name="b841203415513"></a><a name="b841203415513"></a>gs_replace</strong> tool to replace the nodes whose kernel version is inconsistent with that of others.</p>
-<pre class="screen" id="en-us_topic_0237088800_screen7869785161"><a name="en-us_topic_0237088800_screen7869785161"></a><a name="en-us_topic_0237088800_screen7869785161"></a><strong id="en-us_topic_0237088800_b5859164816381"><a name="en-us_topic_0237088800_b5859164816381"></a><a name="en-us_topic_0237088800_b5859164816381"></a>gs_replace</strong></pre>
 </td>
 </tr>
 <tr id="en-us_topic_0237088800_row91332514163"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p171362517162"><a name="en-us_topic_0237088800_p171362517162"></a><a name="en-us_topic_0237088800_p171362517162"></a>CheckMaxHandle (Checks the maximum number of file handles.)</p>
@@ -951,14 +947,6 @@ Troubleshoot exceptions detected in the inspection by following instructions in 
 <td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p8101756122319"><a name="en-us_topic_0237088800_p8101756122319"></a><a name="en-us_topic_0237088800_p8101756122319"></a>The NTPD service is disabled or the time difference is greater than 1 minute.</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p17101856122313"><a name="en-us_topic_0237088800_p17101856122313"></a><a name="en-us_topic_0237088800_p17101856122313"></a>Enable the NTPD service and set the time to be consistent.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237088800_row685815112315"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p16859411133113"><a name="en-us_topic_0237088800_p16859411133113"></a><a name="en-us_topic_0237088800_p16859411133113"></a>CheckOSVer (Checks OS versions.)</p>
-</td>
-<td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p1686018119318"><a name="en-us_topic_0237088800_p1686018119318"></a><a name="en-us_topic_0237088800_p1686018119318"></a>Certain OSs are not supported or the OSs are not in the same hybrid list.</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p2023921573812"><a name="en-us_topic_0237088800_p2023921573812"></a><a name="en-us_topic_0237088800_p2023921573812"></a>Use <strong id="b20417143485115"><a name="b20417143485115"></a><a name="b20417143485115"></a>gs_replace</strong> to replace abnormal nodes with those supported by OSs or those in the same hybrid list.</p>
-<pre class="screen" id="en-us_topic_0237088800_screen108301419143517"><a name="en-us_topic_0237088800_screen108301419143517"></a><a name="en-us_topic_0237088800_screen108301419143517"></a><strong id="en-us_topic_0237088800_b83631943203811"><a name="en-us_topic_0237088800_b83631943203811"></a><a name="en-us_topic_0237088800_b83631943203811"></a>gs_replace</strong></pre>
 </td>
 </tr>
 <tr id="en-us_topic_0237088800_row11180112703514"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p31811427183514"><a name="en-us_topic_0237088800_p31811427183514"></a><a name="en-us_topic_0237088800_p31811427183514"></a>CheckSysParams (Checks OS parameters.)</p>
@@ -998,7 +986,7 @@ Troubleshoot exceptions detected in the inspection by following instructions in 
 <td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p1048649184612"><a name="en-us_topic_0237088800_p1048649184612"></a><a name="en-us_topic_0237088800_p1048649184612"></a>The SSHD service is disabled.</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p24814914615"><a name="en-us_topic_0237088800_p24814914615"></a><a name="en-us_topic_0237088800_p24814914615"></a>Enable the SSHD service and write the setting into the auto-startup file.</p>
-<pre class="screen" id="en-us_topic_0237088800_screen10798193611615"><a name="en-us_topic_0237088800_screen10798193611615"></a><a name="en-us_topic_0237088800_screen10798193611615"></a><strong id="en-us_topic_0237088800_b3683174182517"><a name="en-us_topic_0237088800_b3683174182517"></a><a name="en-us_topic_0237088800_b3683174182517"></a>server sshd start</strong>
+<pre class="screen" id="en-us_topic_0237088800_screen10798193611615"><a name="en-us_topic_0237088800_screen10798193611615"></a><a name="en-us_topic_0237088800_screen10798193611615"></a><strong id="en-us_topic_0237088800_b3683174182517"><a name="en-us_topic_0237088800_b3683174182517"></a><a name="en-us_topic_0237088800_b3683174182517"></a>service sshd start</strong>
 <strong id="en-us_topic_0237088800_b768434192519"><a name="en-us_topic_0237088800_b768434192519"></a><a name="en-us_topic_0237088800_b768434192519"></a>echo "server sshd start" &gt;&gt; initFile</strong></pre>
 </td>
 </tr>
@@ -1077,6 +1065,7 @@ ClientAliveInterval=10800/ClientAliveInterval=0</pre>
 </tr>
 </tbody>
 </table>
+
 
 ## Checking Database Performance
 
@@ -1381,20 +1370,22 @@ A large number of run logs will be generated during database running and occupy 
 
 1.  Log in as the OS user  **omm**  to any host in the GaussDB Kernel cluster.
 2.  Clean logs.
-    1.  Back up logs generated over one month ago to other disks.
-    2.  Access the directory where logs are stored.
 
-        ```
-        cd $GAUSSLOG
-        ```
+    a. Back up logs generated over one month ago to other disks.
 
-    3.  Access the corresponding sub-directory and run the following command to delete logs generated one month ago:
+    b. Access the directory where logs are stored.
 
-        ```
-        rm log name
-        ```
+    ```
+    cd $GAUSSLOG
+    ```
 
-        The naming convention of a log file is  **postgresql-**_year_-_month_-_day_**\_HHMMSS**.
+    c. Access the corresponding sub-directory and run the following command to delete logs generated one month ago:
+
+    ```
+    rm log name
+    ```
+
+    The naming convention of a log file is  **postgresql-**_year_-_month_-_day_**\_HHMMSS**.
 
 
 
@@ -1763,4 +1754,3 @@ You are advised to plan routine physical backup and store backup files in a reli
 -   Delete personal data before sending system logs to others for analysis. If the execution of a SQL statement fails, the error SQL statement will be recorded in a system log by default. SQL statements may contain personal data.
 -   Set  **log\_min\_error\_statement**  to  **PANIC**  to prevent error SQL statements from being recorded in system logs. However, once the function is disabled, it is difficult to locate fault causes if faults occur.
 
-

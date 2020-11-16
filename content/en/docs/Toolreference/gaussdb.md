@@ -14,8 +14,8 @@ gaussdb [OPTION]...
 
 To access the database, the client application connects \(over a local network or the Internet\) to a running gaussdb process. Then the process starts an independent thread to handle the connection.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->When starting the database using  **gaussdb**, you also need to open another window to connect to the database or use & to enable the application to run in the background.
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>When starting the database using  **gaussdb**, you also need to open another window to connect to the database or use & to enable the application to run in the background.  
 
 A  **gaussdb**  process manages all data in a database. A system can operate multiple  **gaussdb**  processes using different data directories and port numbers. When  **gaussdb **is started, the data directory must be specified using the  **--data-dir**  option. Typically,  **-D**  points directly to the database directory created by  **gs\_initdb**.
 
@@ -38,11 +38,6 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row1549762"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p29992205"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p29992205"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p29992205"></a>-A 1|0</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p3474972"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p3474972"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p3474972"></a>Enables run-time assertion checks, which is a debugging aid to detect programming mistakes.</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"><a name="en-us_topic_0237152404_en-us_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"></a>-</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row21908749"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p56666625"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p56666625"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p56666625"></a>-B NBUFFERS</p>
@@ -61,7 +56,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row43068867"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p60700683"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p60700683"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p60700683"></a>-c  NAME=VALUE</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a>Names a running parameter. <strong id="b11510113318202"><a name="b11510113318202"></a><a name="b11510113318202"></a>-c</strong> can appear multiple times to set multiple parameters.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p48997190"></a>Assigns a value to a running parameter. <strong id="b11510113318202"><a name="b11510113318202"></a><a name="b11510113318202"></a>-c</strong> can appear multiple times to set multiple parameters.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"><a name="en-us_topic_0237152404_en-us_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"></a>-</p>
 </td>
@@ -169,7 +164,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row34653585"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p55376440"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p55376440"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p55376440"></a>-S WORK-MEM</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a>Specifies the amount of memory to be used by internal sorts and hashes before resorting to temporary disk files.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p16173682"></a>Specifies the size of memory to be used by internal sorts and hashes before resorting to temporary disk files.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"><a name="en-us_topic_0237152404_en-us_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a>The unit is KB.</p>
 </td>
@@ -190,7 +185,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row9900497"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p14556567"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p14556567"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p14556567"></a>--NAME=VALUE</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a>Names a running parameter.</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p53708688"></a>Assigns a value to a running parameter.</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"><a name="en-us_topic_0237152404_en-us_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"></a>-</p>
 </td>
@@ -211,6 +206,7 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tr>
 </tbody>
 </table>
+
 
 Parameters described in  [Table 2](#en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_table56695537)  are used for debugging purposes, and in some cases for assisting in recovering severely damaged databases. Do not use these parameters for debugging if databases are providing services for applications.
 
@@ -309,7 +305,7 @@ Options listed in  [Table 3](#en-us_topic_0237152404_en-us_topic_0059777816_en-u
 </tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row57770046"><td class="cellrowborder" valign="top" width="11.790000000000001%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p22600384"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p22600384"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p22600384"></a>DBNAME</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a>Specifies the name of the database to be accessed.</p>
+<td class="cellrowborder" valign="top" width="61.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p57480283"></a>Specifies the name of the database to be accessed.This must be the last argument on the command line.</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p551540668439"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p551540668439"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p551540668439"></a>A character string. The default value is the user name.</p>
 </td>
@@ -429,12 +425,12 @@ If you are certain that no conflicting server is running, you can remove the loc
 
 A failure message indicating inability to bind to a port might indicate that the port is already in use by a non-openGauss process. This message may also be reported if you terminate  **gaussdb **and immediately restart it using the same port. In this case, you must simply wait a few seconds until the operating system closes the port before trying again. Finally, you may get this error if you specify a port number that your operating system considers it to be reserved. For example, the Unix considers ports whose IDs are under 1024 to be "trusted" and permits only Unix administrators to access the Unix.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb **from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.
->-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT **can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.
->-   The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP **to an individual server process, but that is usually not sensible.
->-   To cancel a running query, send the  **SIGINT **signal to the process running that command.
->-   The main server process uses  **SIGTERM **to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>-   If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb **from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.  
+>-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT **can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.  
+>-   The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP **to an individual server process, but that is usually not sensible.  
+>-   To cancel a running query, send the  **SIGINT **signal to the process running that command.  
+>-   The main server process uses  **SIGTERM **to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.  
 
 ## **Usage**<a name="en-us_topic_0237152404_en-us_topic_0059777816_s188b513ab6fb4938a75c0cd8a49cc38c"></a>
 
@@ -446,11 +442,11 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 
 Use  **-D**  to provide the correct path of the database directory for the server. Besides, specify the name of the existing particular database.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.
->-   If you use the -j command line option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashes and newlines are treated as common characters in this case.
->-   To quit the session, type EOF \(Control+D\). If you have used -j, two consecutive EOFs are needed to exit.
->-   The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>-   In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.  
+>-   If you use the -j command line option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashes and newlines are treated as common characters in this case.  
+>-   To quit the session, type EOF \(Control+D\). If you have used -j, two consecutive EOFs are needed to exit.  
+>-   The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.  
 
 ## Example<a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_section367683"></a>
 

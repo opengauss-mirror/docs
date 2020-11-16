@@ -38,13 +38,6 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row1549762"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p29992205"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p29992205"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p29992205"></a>-A 1|0</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p3474972"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p3474972"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p3474972"></a>运行时断言检查，是检测编程错误的调试帮助。</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3e149cf77db04561895d52b3eccaf393"></a>-</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row21908749"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p56666625"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p56666625"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p56666625"></a>-B NBUFFERS</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p26900760"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p26900760"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p26900760"></a>设置服务器进程使用的共享内存缓冲区的数量。</p>
@@ -61,7 +54,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row43068867"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p60700683"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p60700683"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p60700683"></a>-c  NAME=VALUE</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48997190"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48997190"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48997190"></a>给一个正在运行的参数命名。-c可以出现多次从而设置多个参数。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48997190"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48997190"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48997190"></a>给一个正在运行的参数赋值。-c可以出现多次从而设置多个参数。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ab12f30d93c014606a8e9b6a89f15ca8b"></a>-</p>
 </td>
@@ -169,7 +162,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row34653585"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p55376440"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p55376440"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p55376440"></a>-S WORK-MEM</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"></a>声明内部排序和散列在求助于临时磁盘文件之前可以使用的内存数量。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p16173682"></a>声明内部排序和散列在求助于临时磁盘文件之前可以使用的内存大小。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a853d9c21b7954bf492783f20c45425c2"></a>单位为KB。</p>
 </td>
@@ -190,7 +183,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row9900497"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p14556567"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p14556567"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p14556567"></a>--NAME=VALUE</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p53708688"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p53708688"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p53708688"></a>给一个正在运行的参数命名。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p53708688"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p53708688"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p53708688"></a>给一个正在运行的参数赋值。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a60944fd37dae43eea7f454a568a3d180"></a>-</p>
 </td>
@@ -309,7 +302,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row57770046"><td class="cellrowborder" valign="top" width="11.790000000000001%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p22600384"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p22600384"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p22600384"></a>DBNAME</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p57480283"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p57480283"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p57480283"></a>要访问的数据库的名称。</p>
+<td class="cellrowborder" valign="top" width="61.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p57480283"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p57480283"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p57480283"></a>要访问的数据库的名称。必须是命令行中的最后一个选项。</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p551540668439"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p551540668439"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p551540668439"></a>字符串。默认为用户名。</p>
 </td>
@@ -430,6 +423,7 @@ ps -ef | grep gaussdb
 无法绑定端口的错误信息可能表明该端口已经被其他非openGauss进程使用。如果终止gaussdb后又马上用同一端口号运行它，也可能得到错误信息。这时，必须多等几秒，等操作系统关闭了该端口再试。最后，如果使用了一个操作系统认为是保留的端口，也可能导致这个错误信息。例如：Unix版本认为低于1024的端口号是“可信任的”，因而只有Unix系统管理员可以使用它们。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+
 >-   如果有可能，不要使用SIGKILL杀死主进程。这样会阻止gaussdb在退出前释放它持有的系统资源（例如共享内存和信号灯）。这样可能会影响到将来启动新的进程。
 >-   可以使用SIGTERM，SIGINT，SIGQUIT信号正常结束服务器进程。第一个信号将等待所有的客户端退出后才退出。第二个将强制断开所有客户端，而第三个将不停止立刻退出，导致在重启时的恢复运行。
 >-   信号SIGHUP将会重新加载服务器配置文件。它也可能给单个服务器进程发送SIGHUP信号，但是这通常是不明显的。
@@ -447,6 +441,7 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 用-D给服务器提供正确的数据库目录的路径。同时还要声名已存在的特定数据库名称。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+
 >-   通常，独立运行的服务器把换行符当做命令输入完成字符；要想把一行分成多行写，必需在除最后一个换行符以外的每个换行符前面敲一个反斜杠。
 >-   如果使用了-j命令行选项，新行将不被当作命令结束符。此时服务器将从标准输入一直读取到EOF标志为止，然后把所有读到的内容当作一个完整的命令字符串看待，并且反斜杠与换行符也被当作普通字符来看待。
 >-   输入EOF（Control+D）即可退出会话。如果已经使用了-j则必须连续使用两个EOF才行。

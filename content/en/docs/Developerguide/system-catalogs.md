@@ -10,8 +10,6 @@
 
 -   **[GS\_WLM\_PLAN\_OPERATOR\_INFO](gs_wlm_plan_operator_info.md)**  
 
--   **[GS\_WLM\_SESSION\_QUERY\_INFO\_ALL](gs_wlm_session_query_info_all.md)**  
-
 -   **[GS\_WLM\_USER\_RESOURCE\_HISTORY](gs_wlm_user_resource_history.md)**  
 
 -   **[PG\_AGGREGATE](pg_aggregate.md)**  

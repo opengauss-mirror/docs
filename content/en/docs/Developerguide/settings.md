@@ -26,6 +26,10 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   hot\_standby
     -   Further adds information required to run SQL queries on a standby server and takes effect after a server restart.
     -   To enable read-only queries on a standby server, the  **wal\_level**  parameter must be set to  **hot\_standby**  on the primary server and the  **hot\_standby**  parameter must be set to  **on**  on the standby server. There are few measurable differences in performance between using  **hot\_standby**  and  **archive**  levels. However, feedback is welcome if any differences in their impacts on product performance are noticeable.
+    
+- logical
+
+   This parameter indicates that the WAL log supports logical replication.
 
 
 **Default value**:  **hot\_standby**
@@ -60,6 +64,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **local**  indicates local commit.
 -   **remote\_write**  indicates that synchronization logs of a standby server are written to disk.
 -   **remote\_receive**  indicates that the standby server receives logs.
+-   **remote\_apply** indicates that the synchronization log playback of the standby server is complete.
+-   **true**  indicates that flush the synchronization log of the standby machine to disk.
+-   **false**  indicates that asynchronous submission.
+-   **yes**  indicates that flush the synchronization log of the standby machine to disk.
+-   **no** indicates that asynchronous submission.
+-   **1**  indicates that flush the synchronization log of the standby machine to disk.
+-   **0**  indicates that asynchronous submission.
+-   **2** means that the synchronization log playback of the standby machine is complete.
 
 **Default value**:  **off**
 
@@ -94,7 +106,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## full\_page\_writes<a name="en-us_topic_0237124707_en-us_topic_0059778393_scf91a0abd76640efb76b172daf9a5f38"></a>
 
-**Parameter description**: Specifies whether the openGauss server writes the entire content of each disk page to WALs during the first modification of that page after a checkpoint.
+**Parameter description**: Specifies whether the openGauss server writes the entire content of each disk page to WALs during the first modification of that page after a checkpoint. When the  **enable\_incremental\_checkpoint**  and  **enable\_double\_write**  are enabled at the same time, full_page_writes is not used.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

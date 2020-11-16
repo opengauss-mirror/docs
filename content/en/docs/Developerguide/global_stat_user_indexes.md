@@ -5,6 +5,7 @@
 **Table  1**  GLOBAL\_STAT\_USER\_INDEXES columns
 
 <a name="en-us_topic_0237122581_table1614475173815"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0237122581_row82332513381"><th class="cellrowborder" valign="top" width="17.27%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237122581_p1723317511388"><a name="en-us_topic_0237122581_p1723317511388"></a><a name="en-us_topic_0237122581_p1723317511388"></a><strong id="b1069174618720"><a name="b1069174618720"></a><a name="b1069174618720"></a>Name</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="16.8%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237122581_p13234651143810"><a name="en-us_topic_0237122581_p13234651143810"></a><a name="en-us_topic_0237122581_p13234651143810"></a><strong id="b3956347477"><a name="b3956347477"></a><a name="b3956347477"></a>Type</strong></p>
@@ -17,7 +18,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122581_p16234251183814"><a name="en-us_topic_0237122581_p16234251183814"></a><a name="en-us_topic_0237122581_p16234251183814"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122581_p4234135193817"><a name="en-us_topic_0237122581_p4234135193817"></a><a name="en-us_topic_0237122581_p4234135193817"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122581_p4234135193817"><a name="en-us_topic_0237122581_p4234135193817"></a><a name="en-us_topic_0237122581_p4234135193817"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122581_row1123415103819"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122581_p17235551113817"><a name="en-us_topic_0237122581_p17235551113817"></a><a name="en-us_topic_0237122581_p17235551113817"></a>relid</p>

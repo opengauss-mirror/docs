@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="20.66%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122720_p1457191694314"><a name="en-us_topic_0237122720_p1457191694314"></a><a name="en-us_topic_0237122720_p1457191694314"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.79%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122720_p14572111616430"><a name="en-us_topic_0237122720_p14572111616430"></a><a name="en-us_topic_0237122720_p14572111616430"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="56.79%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122720_p14572111616430"><a name="en-us_topic_0237122720_p14572111616430"></a><a name="en-us_topic_0237122720_p14572111616430"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122720_row4331121184412"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122720_p42652367477"><a name="en-us_topic_0237122720_p42652367477"></a><a name="en-us_topic_0237122720_p42652367477"></a>redo_start_ptr</p>

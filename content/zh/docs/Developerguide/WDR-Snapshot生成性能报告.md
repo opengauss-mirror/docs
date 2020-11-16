@@ -85,9 +85,9 @@ WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](zh-cn_topic_02423715
    <tr id="row1841064716537"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p11410194725316"><a name="p11410194725316"></a><a name="p11410194725316"></a>node_name</p>
    </td>
    <td class="cellrowborder" valign="top" width="33.24242424242424%" headers="mcps1.2.4.1.2 "><p id="p9831125295619"><a name="p9831125295619"></a><a name="p9831125295619"></a>在report_scope指定为node时，需要把该参数指定为对应节点的名称。(节点名称可以执行select * from pgxc_node;查询)。</p>
-   <p id="p941074755313"><a name="p941074755313"></a><a name="p941074755313"></a>在report_scope为cluster时，该值可以指定为省略或者为NULL。</p>
+   <p id="p941074755313"><a name="p941074755313"></a><a name="p941074755313"></a>在report_scope为cluster时，该值可以指定为省略、空或者为NULL。</p>
    </td>
-   <td class="cellrowborder" valign="top" width="33.42424242424243%" headers="mcps1.2.4.1.3 "><a name="ul481800164318"></a><a name="ul481800164318"></a><ul id="ul481800164318"><li>node：openGauss中的节点名称。</li><li>cluster：省略或者NULL。</li></ul>
+   <td class="cellrowborder" valign="top" width="33.42424242424243%" headers="mcps1.2.4.1.3 "><a name="ul481800164318"></a><a name="ul481800164318"></a><ul id="ul481800164318"><li>node：openGauss中的节点名称。</li><li>cluster：省略、空或者NULL。</li></ul>
    </td>
    </tr>
    </tbody>

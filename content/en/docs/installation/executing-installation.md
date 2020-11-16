@@ -4,7 +4,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
 ## Prerequisites<a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_s2035de58d7ef4acc937b8f94c0ed368b"></a>
 
--   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [Creating the Required User Account and Configuring the Installation Environment](creating-the-required-user-account-and-configuring-the-installation-environment.md).
+-   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [Creating the Required User Account and Configuring the Installation Environment](initializing-the-installation-environment.md).
 -   All the server OSs and networks are functioning properly.
 -   You have checked that the  **locale**  parameter for each server is set to the same value.
 
@@ -13,13 +13,14 @@ After the openGauss installation environment is prepared by executing the pre-in
 1.  Check whether the installation package and openGauss configuration file exist in the planned path. If they do not exist, perform the preinstallation again to ensure that the preinstallation is successful, and then perform the following steps.
 2.  Log in to any host of the openGauss and switch to the  **omm**  user.
 
-    ```
-    su - omm
-    ```
+   ```
+   su - omm
+   ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.
-    >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    -   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.  
+    -   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.  
+    -   openGauss compiled on the HiSilicon chip of a later version cannot run on the server with the HiSilicon chip of an earlier version. For example, the openGauss compiled on the Hi1620 cannot run on the Hi1616 environment.  
 
 3.  Use  **gs\_install**  to install the openGauss. If the cluster is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
 
@@ -39,26 +40,24 @@ After the openGauss installation environment is prepared by executing the pre-in
 
     Two files are generated under the log file path:  **gs\_install-YYYY-MMDD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **uft8**, and  **utf-8**; and  **Latine1**  and  **latine1**.
-    >-   If no character set is specified during installation, the default character set SQL\_ASCII is used. To simplify and unify the locale, the default locale is  **C**. If you want to specify another character set and locale, use the  **--gsinit-parameter="--locale=LOCALE"**  parameter during installation. The  **LOCALE**  parameter specifies the default locale for the new database.
-    >    For example, to set the database encoding format to UTF-8, perform the following steps:
-    >    Run the  **locale -a |grep utf8**  command to check the locale that supports UTF-8 encoding:
-    >    ```
-    >    omm@linux:~>  locale -a|grep utf8
-    >    ```
-    >    Information similar to the following is displayed, where  **en\_US.utf8**  indicates that the en\_US locale supports the UTF-8 encoding format.
-    >    ```
-    >    ...... 
-    >    en_SG.utf8 
-    >    en_US.utf8 
-    >    ......
-    >    ```
-    >    Select a locale as required, for example,  **en\_US.utf8**. Add the  **--locale=en\_US.utf8**  option when initializing the database for installation. The following is an example:
-    >    ```
-    >    gs_install -X /opt/software/openGauss/cluster_config.xml --gsinit-parameter="--locale=en_US.utf8"
-    >    ```
-
+    ![](public_sys-resources/icon-note.gif) **NOTE:**     
+    -   Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **uft8**, and  **utf-8**; and  **Latine1**  and  **latine1**.    
+    -   If no character set is specified during installation, the default character set SQL\_ASCII is used. To simplify and unify the locale, the default locale is  **C**. If you want to specify another character set and locale, use the  **--gsinit-parameter="--locale=LOCALE"**  parameter during installation. The  **LOCALE**  parameter specifies the default locale for the new database.  
+        For example, to set the database encoding format to UTF-8, perform the following steps:  
+        Run the  **locale -a |grep utf8**  command to check the locale that supports UTF-8 encoding:  
+        ```  
+        omm@linux:~>  locale -a|grep utf8  
+        ```
+        Information similar to the following is displayed, where  **en\_US.utf8**  indicates that the en\_US locale supports the UTF-8 encoding format.  
+        ```  
+        en_SG.utf8   
+        en_US.utf8     
+        ```
+        Select a locale as required, for example,  **en\_US.utf8**. Add the  **--locale=en\_US.utf8**  option when initializing the database for installation. The following is an example:  
+        ```  
+        gs_install -X /opt/software/openGauss/cluster_config.xml --gsinit-parameter="--locale=en_US.utf8"  
+        ```
+    
 4.  After the installation is successful, manually delete the trust between users  **root**  on the host, that is, delete the mutual trust file on each openGauss database node.
 
     ```

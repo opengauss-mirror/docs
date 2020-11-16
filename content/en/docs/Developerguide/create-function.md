@@ -122,7 +122,7 @@
 
 - **definition**
 
-  Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
+    Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
 
 -   **DETERMINISTIC**
 
@@ -153,11 +153,11 @@
 
 - **SHIPPABLE | NOT SHIPPABLE**
 
-  Specifies whether the function can be pushed down for execution. This interface is reserved and is not recommended.
+    Specifies whether the function can be pushed down for execution. This interface is reserved and is not recommended.
 
 - **FENCED | NOT FENCED**
 
-  Specifies whether the user-defined C function is executed in fenced or not-fenced mode. This interface is reserved and is not recommended.
+    Specifies whether the user-defined C function is executed in fenced or not-fenced mode. This interface is reserved and is not recommended.
 
 -   **PACKAGE**
 

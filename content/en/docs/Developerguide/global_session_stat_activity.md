@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122638_p134021343277"><a name="en-us_topic_0237122638_p134021343277"></a><a name="en-us_topic_0237122638_p134021343277"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122638_p14021334192715"><a name="en-us_topic_0237122638_p14021334192715"></a><a name="en-us_topic_0237122638_p14021334192715"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122638_p14021334192715"><a name="en-us_topic_0237122638_p14021334192715"></a><a name="en-us_topic_0237122638_p14021334192715"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122638_row14402133452711"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122638_p134021344272"><a name="en-us_topic_0237122638_p134021344272"></a><a name="en-us_topic_0237122638_p134021344272"></a>datid</p>
@@ -137,9 +137,8 @@
 <p id="en-us_topic_0237122638_p1141220342271"><a name="en-us_topic_0237122638_p1141220342271"></a><a name="en-us_topic_0237122638_p1141220342271"></a>db_tpcds  | judy      | 16398    | active |139968391403280</p>
 <p id="en-us_topic_0237122638_p8412034102716"><a name="en-us_topic_0237122638_p8412034102716"></a><a name="en-us_topic_0237122638_p8412034102716"></a>postgres  | omm       | 10       |        |139968643069712</p>
 <p id="en-us_topic_0237122638_p154128347270"><a name="en-us_topic_0237122638_p154128347270"></a><a name="en-us_topic_0237122638_p154128347270"></a>postgres  | omm       | 10       |        |139968680818448</p>
-<p id="en-us_topic_0237122638_p74121034172711"><a name="en-us_topic_0237122638_p74121034172711"></a><a name="en-us_topic_0237122638_p74121034172711"></a>postgres  | joe       | 16390    |        |139968563377936</p>
+<p id="en-us_topic_0237122638_p74121034172711"><a name="en-us_topic_0237122638_p74121034172711"></a><a name="en-us_topic_0237122638_p74121034172711"></a>postgres  | joe       | 16390    |        |139968563377936</p></div>
 <p id="en-us_topic_0237122638_p1741203414279"><a name="en-us_topic_0237122638_p1741203414279"></a><a name="en-us_topic_0237122638_p1741203414279"></a>(6 rows)</p>
-</div></div>
 </li></ul>
 </div>
 </td>
@@ -167,4 +166,3 @@
 </tr>
 </tbody>
 </table>
-

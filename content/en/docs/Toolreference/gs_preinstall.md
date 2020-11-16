@@ -82,7 +82,7 @@
     Value range: a string.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >You cannot specify the default environment variables created by openGauss. For details about the default environment variables, see  [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50).
+    >This parameter cannot be set to the environment variable created by openGauss by default. Otherwise, the environment variables of the openGauss will be overwritten. [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50) lists the environment variables created by openGauss by default. 
 
 -   --sep-env-file=ENVFILE
 
@@ -95,14 +95,13 @@
 
     Specifies whether to write the mapping relationship between the host name and IP address of the XML configuration file to the  **/etc/hosts**  file. By default, the relationship is written to the file. If this parameter is specified, the relationship is not written to the file.
 
--   -l
+- -l
 
-    Specifies a log file name and its path. A timestamp will be added automatically to the log file name.
+  Specifies a log file name and its path. A timestamp will be added automatically to the log file name.
 
-    Default value:  **/var/log/gaussdb****/**_user name_**/om/gs\_preinstall.log**
+  Default value:  **/var/log/gaussdb/_user name_/om/gs\_preinstall.log**
 
-    -   If  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, use the default value, which is  **/var/log/gaussdb**_user name_**/om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log**.
-    -   When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is a combination of  **gaussdbLogPath**  value, the user name, and  **om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log**.
+  When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is a combination of  **gaussdbLogPath**  value, the user name, and  **om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log**.
 
 -   --non-interactive
 
@@ -110,9 +109,6 @@
 
     -   When this parameter is not specified, the secure interactive mode is used where you need to enter the password for man-machine interaction.
     -   If this parameter is specified, the non-interactive mode is used and man-machine interaction is not required.
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >Password set in interactive mode cannot contain the following characters: ;'$
 
 -   -?, --help
 

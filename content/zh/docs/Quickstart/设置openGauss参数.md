@@ -9,7 +9,7 @@
 
 ## 设置客户端认证策略
 
-目前openGauss配置文件“pg\_hba.conf”中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。更多配置请参见《开发者指南》。
+目前openGauss配置文件“pg\_hba.conf”中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。更多配置请参见[《开发者指南》](https://opengauss.org/zh/docs/1.0.1/docs/Developerguide/Developerguide.html)。
 
 ### 语法
 
@@ -19,12 +19,17 @@
 gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options" 
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->authentication-options支持以下选项：
->-   trust：不验密，禁止远程主机使用trust方式访问openGauss
->-   reject：拒绝访问
->-   md5、sha256、cert：客户端证书认证
->-   gss：kerberos认证
+![](public_sys-resources/icon-note.gif) **说明：** 
+
+authentication-options支持以下选项：
+
+-   trust：不验密，禁止远程主机使用trust方式访问openGauss
+
+-   reject：拒绝访问
+
+-   md5、sha256、cert：客户端证书认证
+
+-   gss：kerberos认证
 
 ### 命令参考
 
@@ -54,11 +59,11 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
 
 - -D
 
-  需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
+    需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
-  >
-  >-   与"-I" 不能一块使用
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    
+    -   -D 与"-I" 不能一块使用
 
 -   -h host-auth-policy
 
@@ -149,11 +154,11 @@ Success to perform gs_guc!
 
 - -D
 
-  需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
+    需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
-  >
-  >-   与"-I" 不能一块使用
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
+    >-   -D 与"-I" 不能一块使用
 
 -   -c parameter=value
 

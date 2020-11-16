@@ -107,6 +107,6 @@ SELECT merge_db(1, 'dennis');
 
 --Delete FUNCTION and TABLE:
 DROP FUNCTION merge_db;
-DROP TABLE db ;
+DROP TABLE db;
 ```
 

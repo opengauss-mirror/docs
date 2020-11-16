@@ -6,17 +6,17 @@ The execution plan generator needs to use table statistics to generate the most 
 
 **ANALYZE**  supports row-store and column-store tables.  **ANALYZE**  can also collect statistics about specified columns of a local table. For details on  **ANALYZE**, see  [ANALYZE | ANALYSE](analyze-analyse.md).
 
-1.  Update table statistics.
+Update table statistics.
 
-    Do  **ANALYZE**  to the  **product\_info**  table.
+Do  **ANALYZE**  to the  **product\_info**  table.
 
-    ```
-    ANALYZE product_info;
-    ```
+```
+ANALYZE product_info;
+```
 
-    ```
-    ANALYZE
-    ```
+```
+ANALYZE
+```
 
 
 ## autoanalyze<a name="en-us_topic_0237121146_en-us_topic_0165786590_section1274813345166"></a>

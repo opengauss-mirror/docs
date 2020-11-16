@@ -38,7 +38,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.386138613861387%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122659_en-us_topic_0112535431_p1660134133912"><a name="en-us_topic_0237122659_en-us_topic_0112535431_p1660134133912"></a><a name="en-us_topic_0237122659_en-us_topic_0112535431_p1660134133912"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.57425742574257%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122659_en-us_topic_0112535431_p146015473916"><a name="en-us_topic_0237122659_en-us_topic_0112535431_p146015473916"></a><a name="en-us_topic_0237122659_en-us_topic_0112535431_p146015473916"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="51.57425742574257%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122659_en-us_topic_0112535431_p146015473916"><a name="en-us_topic_0237122659_en-us_topic_0112535431_p146015473916"></a><a name="en-us_topic_0237122659_en-us_topic_0112535431_p146015473916"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122659_en-us_topic_0112535431_row215654103910"><td class="cellrowborder" valign="top" width="27.039603960396043%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122659_en-us_topic_0112535431_p15601141394"><a name="en-us_topic_0237122659_en-us_topic_0112535431_p15601141394"></a><a name="en-us_topic_0237122659_en-us_topic_0112535431_p15601141394"></a>username</p>

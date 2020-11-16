@@ -1,14 +1,5 @@
 # Executing Sql Statements Using  JDBC
 
-<!-- TOC -->
-
-- [JDBC Package and Driver Class](#jdbc-package-and-driver-class)
-- [Loading the Driver](#loading-the-driver)
-- [Connecting to a Database](#connecting-to-a-database)
-- [Examples](#examples)
-
-<!-- /TOC -->
-
 ## JDBC Package and Driver Class
 
 -   JDBC Package

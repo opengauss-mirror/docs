@@ -36,7 +36,7 @@ ALTER INDEX用于修改现有索引的定义。
 
 -   RENAME PARTITION
 
-    用于重命名索引分区
+    用于重命名索引分区。
 
 -   MOVE PARTITION
 

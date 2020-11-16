@@ -33,6 +33,7 @@ A role is used to manage permissions. For database security, management and oper
 </tbody>
 </table>
 
+
 ## Defining a User<a name="en-us_topic_0237122051_en-us_topic_0059777960_sc5e6a9242cb7408d8195ab3614dfc2fd"></a>
 
 A user is used to log in to a database. Different permissions can be granted to users for managing data accesses and operations of the users. For details about related SQL statements, see  [Table 2](#en-us_topic_0237122051_en-us_topic_0059777960_t52a128d57b274569b95a3b35f6871348).
@@ -64,6 +65,7 @@ A user is used to log in to a database. Different permissions can be granted to 
 </tbody>
 </table>
 
+
 ## Granting Rights<a name="en-us_topic_0237122051_en-us_topic_0059778670_s372f95d7fc554f2181b8ce8f2095e8f8"></a>
 
 openGauss provides a statement for granting rights to data objects and roles. For details, see  [GRANT](grant.md).
@@ -75,4 +77,8 @@ openGauss provides a statement for revoking rights. For details, see  [REVOKE](r
 ## Setting Default Rights<a name="en-us_topic_0237122051_en-us_topic_0059778670_s8133f68ab7684b3aaf5afb52fa8be7e7"></a>
 
 openGauss allows users to set rights for objects that will be created. For details, see  [ALTER DEFAULT PRIVILEGES](alter-default-privileges.md).
+
+## Shutting Down The Current Node<a name="section153781731062"></a>
+
+openGauss allows users to run the  **shutdown**  command to shut down the current database node. For details, see  [SHUTDOWN](shutdown.md).
 

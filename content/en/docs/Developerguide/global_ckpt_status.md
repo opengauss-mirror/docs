@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="22.7022702270227%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122715_p1321792214146"><a name="en-us_topic_0237122715_p1321792214146"></a><a name="en-us_topic_0237122715_p1321792214146"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.86458645864587%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122715_p7217192271410"><a name="en-us_topic_0237122715_p7217192271410"></a><a name="en-us_topic_0237122715_p7217192271410"></a>Database process name</p>
+<td class="cellrowborder" valign="top" width="45.86458645864587%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122715_p7217192271410"><a name="en-us_topic_0237122715_p7217192271410"></a><a name="en-us_topic_0237122715_p7217192271410"></a>Node name</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122715_row1121711228149"><td class="cellrowborder" valign="top" width="31.433143314331435%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122715_p82171322161420"><a name="en-us_topic_0237122715_p82171322161420"></a><a name="en-us_topic_0237122715_p82171322161420"></a>ckpt_redo_point</p>

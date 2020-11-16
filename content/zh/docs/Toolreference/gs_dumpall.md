@@ -15,7 +15,7 @@ gs\_dumpall在导出openGauss所有数据库时分为两部分：
 -   gs\_dumpall自身对所有数据库公共的全局对象进行导出，包括有关数据库用户和组，表空间以及属性（例如，适用于数据库整体的访问权限）信息。
 -   gs\_dumpall通过调用gs\_dump来完成openGauss中各数据库的SQL脚本文件导出，该脚本文件包含将数据库恢复为其保存时的状态所需要的全部SQL语句。
 
-以上两部分导出的结果为纯文本格式的SQL脚本文件，使用[gsql](gsql.md)运行该脚本文件可以恢复openGauss数据库。
+以上两部分导出的结果为纯文本格式的SQL脚本文件，使用gsql运行该脚本文件可以恢复openGauss数据库。
 
 ## 注意事项<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
@@ -165,17 +165,27 @@ gs_dumpall [OPTION]...
     指定备份进程并发数，取值范围为1\~1000。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   -g/--globals-only和-r/--roles-only不能同时使用。
->-   -g/--globals-only和-t/--tablespaces-only不能同时使用。
->-   -r/--roles-only和-t/--tablespaces-only不能同时使用。
->-   -s/--schema-only和-a/--data-only不能同时使用。
->-   -r/--roles-only和-a/--data-only不能同时使用。
->-   -t/--tablespaces-only和-a/--data-only不能同时使用。
->-   -g/--globals-only和-a/--data-only不能同时使用。
->-   --tablespaces-postfix和--binary-upgrade必须一起使用。
->-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
->-   --parallel-jobs和-f/--file必须一起使用。
+![](public_sys-resources/icon-note.gif) **说明：**
+
+-   -g/--globals-only和-r/--roles-only不能同时使用。
+
+-   -g/--globals-only和-t/--tablespaces-only不能同时使用。
+
+-   -r/--roles-only和-t/--tablespaces-only不能同时使用。
+
+-   -s/--schema-only和-a/--data-only不能同时使用。
+
+-   -r/--roles-only和-a/--data-only不能同时使用。
+
+-   -t/--tablespaces-only和-a/--data-only不能同时使用。
+
+-   -g/--globals-only和-a/--data-only不能同时使用。
+
+-   --tablespaces-postfix和--binary-upgrade必须一起使用。
+
+-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
+
+-   --parallel-jobs和-f/--file必须一起使用。
 
 连接参数：
 

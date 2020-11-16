@@ -1,21 +1,5 @@
 # Simple Permission Management<a name="EN-US_TOPIC_0241704262"></a>
 
-<!-- TOC -->
-
-- [Creating a Role](#creating-a-role)
-    - [Precautions](#precautions)
-    - [Syntax](#syntax)
-    - [Example](#example)
-- [Creating a User](#creating-a-user)
-    - [Precautions](#precautions-1)
-    - [Syntax](#syntax-1)
-    - [Example](#example-1)
-- [Granting Permissions](#granting-permissions)
-    - [Syntax](#syntax-2)
-    - [Examples](#examples)
-
-<!-- /TOC -->
-
 ## Creating a Role
 
 **CREATE ROLE**  is used to create a role.

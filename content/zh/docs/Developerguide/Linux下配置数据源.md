@@ -4,9 +4,7 @@
 
 ## 操作步骤<a name="zh-cn_topic_0237120407_zh-cn_topic_0059778464_s0b78a5ac02d949ada15c29b00b5c734d"></a>
 
-1.  获取unixODBC源码包。
-
-    获取参考地址：http://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.0/unixODBC-2.3.0.tar.gz/download
+1.  获取[unixODBC源码包](http://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.0/unixODBC-2.3.0.tar.gz/download)。
 
 2.  安装unixODBC。如果机器上已经安装了其他版本的unixODBC，可以直接覆盖安装。
 
@@ -27,9 +25,9 @@
 
 3. 替换客户端openGauss驱动程序。
 
-   a.将openGauss-1.0.0-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
+   a.将openGauss-1.0.1-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
 
-   b.将openGauss-1.0.0-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
+   b.将openGauss-1.0.1-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
 
 4. 配置数据源。
 
