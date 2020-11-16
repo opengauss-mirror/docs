@@ -1216,7 +1216,6 @@ headless: true
 			-   [出现“Error:No space left on device”提示]({{< relref "./docs/Developerguide/出现-Error-No-space-left-on-device-提示.md" >}})
 			-   [在XFS文件系统中，使用du命令查询数据文件大小大于文件实际大小]({{< relref "./docs/Developerguide/在XFS文件系统中-使用du命令查询数据文件大小大于文件实际大小.md" >}})
 			-   [在XFS文件系统中，出现文件损坏]({{< relref "./docs/Developerguide/在XFS文件系统中-出现文件损坏.md" >}})
-			-   [数据节点重建过程中重启集群，导致集群启动状态异常]({{< relref "./docs/Developerguide/数据节点重建过程中重启集群-导致集群启动状态异常.md" >}})
 			-   [switchover操作时，主机降备卡住]({{< relref "./docs/Developerguide/switchover操作时-主机降备卡住.md" >}})
 			-   [磁盘空间达到阈值，数据库只读]({{< relref "./docs/Developerguide/磁盘空间达到阈值-数据库只读.md" >}})
 			-   [分析查询语句长时间运行的问题]({{< relref "./docs/Developerguide/分析查询语句长时间运行的问题.md" >}})
