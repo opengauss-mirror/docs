@@ -42,7 +42,7 @@ The following demonstrates MOT's excellent concurrency control performance by sh
 **Figure  3**  ARM/Kunpeng 4-Socket 256 Cores – Performance Benchmarks<a name="fig11792916124118"></a>  
 ![](figures/arm-kunpeng-4-socket-256-cores-performance-benchmarks.png "arm-kunpeng-4-socket-256-cores-performance-benchmarks")
 
-The results show that performance increases significantly even when there are many cores and that peak performance of 4.8M tpmC is achieved at 768 cores.
+The results show that performance increases significantly even when there are many cores and that peak performance of 4.8M tpmC is achieved at 768 connections.
 
 ## x86-based Servers<a name="section18708933184717"></a>
 

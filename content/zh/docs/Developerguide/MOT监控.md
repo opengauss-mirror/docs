@@ -25,7 +25,7 @@ select pg_relation_size('customer_pkey');
 检查MOT全局内存大小，主要是数据和索引。
 
 ```
-select * frommot_global_memory_detail();
+select * from mot_global_memory_detail();
 ```
 
 结果如下。

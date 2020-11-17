@@ -32,7 +32,7 @@ To achieve the requirements described above \(especially in an environment with 
 
 MOT complies with and leverages openGauss's standard extensibility mechanism – Foreign Data Wrapper \(FDW\), as shown in the following diagram.
 
-The PostgreSQL Foreign Data Wrapper \(FDW\) feature enables the creation of foreign tables in an MOT database that are proxies for some other data source, such as MySQL, Redis, X3 and so on. When a query is made on a foreign table, the FDW queries the external data source and returns the results, as if they were coming from a table in your database.
+The PostgreSQL Foreign Data Wrapper \(FDW\) feature enables the creation of foreign tables in an MOT database that are proxies for some other data source, such as Oracle, MySQL, PostgreSQL and so on. When a query is made on a foreign table, the FDW queries the external data source and returns the results, as if they were coming from a table in your database.
 
 openGauss relies on the PostgreSQL Foreign Data Wrappers \(FDW\) and Index support so that SQL is entirely covered, including stored procedures, user defined functions, system functions calls.
 
