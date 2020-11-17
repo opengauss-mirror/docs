@@ -8,16 +8,16 @@ Unless indicated otherwise, the following settings are for both client and serve
 
 Modify related BIOS settings, as follows –
 
-1.  Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **Support Smmu**  to  **Disabled**.
-2.  Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **CPU Prefetching Configuration**  to  **Disabled**.
+1.  Select  **BIOS**  -- **Advanced**  -- **MISC Config**. Set  **Support Smmu**  to  **Disabled**.
+2.  Select  **BIOS**  --  **Advanced**  --  **MISC Config**. Set  **CPU Prefetching Configuration**  to  **Disabled**.
 
     ![](figures/en-us_image_0270362942.png)
 
-3.  Select  **BIOS**  è  **Advanced**  è  **Memory Config**. Set  **Die Interleaving**  to  **Disabled**.
+3.  Select  **BIOS**  -- **Advanced**  --  **Memory Config**. Set  **Die Interleaving**  to  **Disabled**.
 
     ![](figures/en-us_image_0270362943.png)
 
-4.  Select  **BIOS**  è  **Advanced**  è  **Performance Config**. Set  **Power Policy**  to  **Performance**.
+4.  Select  **BIOS**  --  **Advanced**  -- **Performance Config**. Set  **Power Policy**  to  **Performance**.
 
     ![](figures/en-us_image_0270362944.png)
 

@@ -55,7 +55,7 @@ Where –
 Check the size of MOT local memory, which includes session memory.
 
 ```
-select * frommot_local_memory_detail();
+select * from mot_local_memory_detail();
 ```
 
 Result –
