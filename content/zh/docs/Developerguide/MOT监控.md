@@ -54,7 +54,7 @@ numa_node  | reserved_size        | used_size
 检查MOT本地内存大小，包括会话内存。
 
 ```
-select * frommot_local_memory_detail();
+select * from mot_local_memory_detail();
 ```
 
 结果如下。
@@ -85,7 +85,7 @@ numa_node  | reserved_size      | used_size
 所有活动会话（连接）的内存使用量可以通过以下查询。
 
 ```
-select * frommot_session_memory_detail();
+select * from mot_session_memory_detail();
 ```
 
 结果如下。

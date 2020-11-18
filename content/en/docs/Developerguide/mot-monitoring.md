@@ -25,7 +25,7 @@ select pg_relation_size('customer_pkey');
 Check the size of MOT global memory, which includes primarily the data and indexes.
 
 ```
-select * frommot_global_memory_detail();
+select * from mot_global_memory_detail();
 ```
 
 Result –
@@ -86,7 +86,7 @@ Memory for session management is taken from the MOT local memory.
 Memory usage by all active sessions \(connections\) is possible using the following query –
 
 ```
-select * frommot_session_memory_detail();
+select * from mot_session_memory_detail();
 ```
 
 Result –
