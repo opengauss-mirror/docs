@@ -217,7 +217,7 @@ Composite type
 
 -   **lable**
 
-    \(Optional\) Represents the textual label associated with one value of an enumerated type. It is a string of 1 to 64 characters.
+    \(Optional\) Represents the textual label associated with one value of an enumerated type. It is a string of 1 to 63 characters.
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
