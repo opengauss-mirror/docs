@@ -118,7 +118,7 @@
 
 -   **new\_enum\_value**
 
-    Specifies a new enumerated value. It is a non-null string with a maximum length of 64 bytes.
+    Specifies a new enumerated value. It is a non-null string with a maximum length of 63 bytes.
 
 -   **neighbor\_enum\_value**
 
@@ -126,7 +126,7 @@
 
 -   **existing\_enum\_value**
 
-    Specifies an enumerated value to be changed. It is a non-null string with a maximum length of 64 bytes.
+    Specifies an enumerated value to be changed. It is a non-null string with a maximum length of 63 bytes.
 
 
 -   **CASCADE**
