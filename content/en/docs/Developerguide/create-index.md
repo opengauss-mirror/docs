@@ -78,7 +78,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
     -   **btree**: B-tree indexes store key values of data in a B+ tree structure. This structure helps users to quickly search for indexes. B-tree supports comparison queries with a scope specified.
     -   **gin**: GIN indexes are reverse indexes and can process values that contain multiple keys \(for example, arrays\).
-    -   **gist**: GiST indexes are suitable for the set data type and multidimensional data types, such as geometric and geographic data types.
+    -   **gist**: GiST indexes are suitable for the set data type and multidimensional data types, such as geometric and geographic data types.The currently supported data types are box, point, poly, circle, tsvector, tsquery, range.
     -   **Psort**: psort index. It is used to perform partial sort on column-store tables.
 
     Row-store tables support the following index types:  **btree**  \(default\),  **gin**, and  **gist**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**.
