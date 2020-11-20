@@ -21,7 +21,7 @@
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name 
-        ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] )
+        ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] ) 
         [ RETURNS rettype [ DETERMINISTIC  ]  | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
         LANGUAGE lang_name 
         [ 
