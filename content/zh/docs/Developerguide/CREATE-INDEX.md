@@ -58,7 +58,7 @@
 
     -   此选项只能指定一个索引的名称。
     -   普通CREATE INDEX命令可以在事务内执行，但是CREATE INDEX CONCURRENTLY不可以在事务内执行。
-    -   列存表和分区表不支持CONCURRENTLY方式创建索引。
+    -   列存表、分区表和临时表不支持CONCURRENTLY方式创建索引。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   创建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
@@ -96,7 +96,7 @@
 
     -   btree：B-tree索引使用一种类似于B+树的结构来存储数据的键值，通过这种结构能够快速的查找索引。btree适合支持比较查询以及查询范围。
     -   gin：GIN索引是倒排索引，可以处理包含多个键的值（比如数组）。
-    -   gist：Gist索引适用于几何和地理等多维数据类型和集合数据类型。
+    -   gist：Gist索引适用于几何和地理等多维数据类型和集合数据类型。目前支持的数据类型有box、point、poly、circle、tsvector、tsquery、range。
     -   Psort：Psort索引。针对列存表进行局部排序索引。
 
     行存表支持的索引类型：btree（行存表缺省值）、gin、gist。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。
