@@ -1260,7 +1260,7 @@ headless: true
         -   [gs\_uninstall]({{< relref "./docs/Toolreference/gs_uninstall.md" >}})
         -   [gs\_upgradectl]({{< relref "./docs/Toolreference/gs_upgradectl.md" >}})
         -   [gs\_expansion]({{< relref "./docs/Toolreference/gs_expansion.md" >}})
-        -   [gs\_shrink]({{< relref "./docs/Toolreference/gs_shrink.md" >}})
+        -   [gs\_dropnode]({{< relref "./docs/Toolreference/gs_dropnode.md" >}})
 		-   [gs\_probackup]({{< relref "./docs/Toolreference/gs_probackup.md" >}})
         -   [gstrace]({{< relref "./docs/Toolreference/gstrace.md" >}})
         -   [kdb5\_util]({{< relref "./docs/Toolreference/kdb5_util.md" >}})
