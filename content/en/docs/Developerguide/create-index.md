@@ -60,15 +60,15 @@ Partitioned tables do not support concurrent index creation, partial index creat
     -   The  **CREATE INDEX**  statement can be run within a transaction, but  **CREATE INDEX CONCURRENTLY**  cannot.
     -   Column-store tables，temporary tables and partitioned tables do not support  **CREATE INDEX CONCURRENTLY**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   This keyword is specified when an index is created. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
-    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the creation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
-    >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **CREATE INDEX CONCURRENTLY**  again.
-    >-   After the second scan, index creation must wait for any transaction that holds a snapshot earlier than the snapshot taken by the second scan to terminate. In addition, the ShareUpdateExclusiveLock \(level 4\) added during index creation conflicts with a lock whose level is greater than or equal to 4. Therefore, when such an index is created, the system is prone to hang or deadlock. For example:
-    >    -   If two sessions create an index concurrently for the same table, a deadlock occurs.
-    >    -   If a session creates an index concurrently for a table and another session drops a table, a deadlock occurs.
-    >    -   There are three sessions. Session 1 locks table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Session 3 writes data to table  **a**. Before the transaction of session 1 is committed, session 2 is blocked.
-    >    -   The transaction isolation level is set to repeatable read \(read committed by default\). Two sessions are started. Session 1 writes data to table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Before the transaction of session 1 is committed, session 2 is blocked.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   This keyword is specified when an index is created. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.  
+    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the creation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.  
+    >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **CREATE INDEX CONCURRENTLY**  again.  
+    >-   After the second scan, index creation must wait for any transaction that holds a snapshot earlier than the snapshot taken by the second scan to terminate. In addition, the ShareUpdateExclusiveLock \(level 4\) added during index creation conflicts with a lock whose level is greater than or equal to 4. Therefore, when such an index is created, the system is prone to hang or deadlock. For example:  
+    >    -   If two sessions create an index concurrently for the same table, a deadlock occurs.  
+    >    -   If a session creates an index concurrently for a table and another session drops a table, a deadlock occurs.  
+    >    -   There are three sessions. Session 1 locks table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Session 3 writes data to table  **a**. Before the transaction of session 1 is committed, session 2 is blocked.  
+    >    -   The transaction isolation level is set to repeatable read \(read committed by default\). Two sessions are started. Session 1 writes data to table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Before the transaction of session 1 is committed, session 2 is blocked.  
 
 -   **schema\_name**
 
