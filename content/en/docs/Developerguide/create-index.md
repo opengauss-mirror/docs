@@ -1,6 +1,6 @@
-# CREATE INDEX<a name="EN-US_TOPIC_0242370570"></a>
+# CREATE INDEX<a name="EN-US_TOPIC_0289900160"></a>
 
-## Function<a name="en-us_topic_0237122106_en-us_topic_0059777455_s10bd477b6f0a4b4687123335b61aa981"></a>
+## Function<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s10bd477b6f0a4b4687123335b61aa981"></a>
 
 **CREATE INDEX**  creates an index in a specified table.
 
@@ -13,20 +13,20 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
 Partitioned tables do not support concurrent index creation, partial index creation, and  **NULL FIRST**.
 
-## Precautions<a name="en-us_topic_0237122106_en-us_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
+## Precautions<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
 -   Indexes consume storage and computing resources. Creating too many indexes has negative impact on database performance \(especially the performance of data import. Therefore, you are advised to import the data before creating indexes\). Therefore, create indexes only when they are necessary.
 -   All functions and operators used in an index definition must be immutable, that is, their results must depend only on their parameters and never on any outside influence \(such as the contents of another table or the current time\). This restriction ensures that the behavior of the index is well-defined. To use a customized function in an index expression or  **WHERE**  clause, remember to mark the function  **immutable**  when you create it.
--   A unique index created on a partitioned table must include a partitioned column and all the partition keys.
--   Column-store tables support B-tree and psort indexes. If the two indexes are used, you cannot create expression, partial, and unique indexes.
+-   Partitioned table indexes are classified into LOCAL indexes and GLOBAL indexes. A LOCAL index binds to a specific partition, and a GLOBAL index corresponds to the entire partitioned table.
+-   Column-store tables support B-tree and PSORT indexes. If the two indexes are used, you cannot create expression, partial, and unique indexes.
 -   Column-store tables support GIN indexes, rather than partial indexes and unique indexes. If GIN indexes are used, you can create expression indexes. However, an expression in this situation cannot contain empty splitters, empty columns, or multiple columns.
 
-## Syntax<a name="en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
+## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
 -   Create an index on a table.
 
     ```
-    CREATE [ UNIQUE ] INDEX [ [schemaname.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
         ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
@@ -36,21 +36,39 @@ Partitioned tables do not support concurrent index creation, partial index creat
 -   Create an index on a partitioned table.
 
     ```
-    CREATE [ UNIQUE ] INDEX [ [schemaname.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
-        LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ]
+        [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ];
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122106_en-us_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
+## Parameter Description<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
 
 -   **UNIQUE**
 
     Creates a unique index. In this way, the system checks whether new values are unique in the index column. Attempts to insert or update data which would result in duplicate entries will generate an error.
 
     Currently, only B-tree supports  **UNIQUE**  indexes.
+
+-   **CONCURRENTLY**
+
+    Create an index \(with ShareUpdateExclusiveLock\) in non-blocking DML mode. A normal  **CREATE INDEX**  acquires exclusive lock on the table on which the index depends, blocking other accesses until the index drop can be completed. If this keyword is specified, DML is not blocked during the creation.
+
+    -   This option can only specify a name of one index.
+    -   The  **CREATE INDEX**  statement can be run within a transaction, but  **CREATE INDEX CONCURRENTLY**  cannot.
+    -   Column-store tables，temporary tables and partitioned tables do not support  **CREATE INDEX CONCURRENTLY**.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   This keyword is specified when an index is created. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
+    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the creation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
+    >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **CREATE INDEX CONCURRENTLY**  again.
+    >-   After the second scan, index creation must wait for any transaction that holds a snapshot earlier than the snapshot taken by the second scan to terminate. In addition, the ShareUpdateExclusiveLock \(level 4\) added during index creation conflicts with a lock whose level is greater than or equal to 4. Therefore, when such an index is created, the system is prone to hang or deadlock. For example:
+    >    -   If two sessions create an index concurrently for the same table, a deadlock occurs.
+    >    -   If a session creates an index concurrently for a table and another session drops a table, a deadlock occurs.
+    >    -   There are three sessions. Session 1 locks table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Session 3 writes data to table  **a**. Before the transaction of session 1 is committed, session 2 is blocked.
+    >    -   The transaction isolation level is set to repeatable read \(read committed by default\). Two sessions are started. Session 1 writes data to table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Before the transaction of session 1 is committed, session 2 is blocked.
 
 -   **schema\_name**
 
@@ -60,7 +78,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
 -   **index\_name**
 
-    Specifies the name of the index to create. No schema name can be included here; the index is always created in the same schema as its parent table.
+    Specifies the name of the index to be created. The schema of the index is the same as that of the table.
 
     Value range: a string. It must comply with the naming convention.
 
@@ -83,8 +101,8 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
     Row-store tables support the following index types:  **btree**  \(default\),  **gin**, and  **gist**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >Column-store tables support GIN indexes only for the tsvector type. That is, the input parameter for creating a column-store GIN index must be the return value of the  **to\_tsvector**  function. This method is commonly used for GIN indexes.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Column-store tables support GIN indexes only for the tsvector type. That is, the input parameter for creating a column-store GIN index must be the return value of the  **to\_tsvector**  function. This method is commonly used for GIN indexes.
 
 -   **column\_name**
 
@@ -124,6 +142,14 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
     Specifies that null values appear after non-null values in the sort ordering. This is the default when  **DESC**  is not specified.
 
+-   **LOCAL**
+
+    Specifies that the partitioned index to be created is a LOCAL index.
+
+-   **GLOBAL**
+
+    Specifies the partitioned index to be created as a GLOBAL index. If no keyword is specified, a GLOBAL index is created by default.
+
 -   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
     Specifies the storage parameter used for an index.
@@ -152,7 +178,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
         Value range: 64–_INT\_MAX_. The unit is KB.
 
-        Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is  **4**.
+        Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is 4 MB.
 
 
 -   **TABLESPACE tablespace\_name**
@@ -180,7 +206,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
     Value range: If this parameter is not specified, the value of  **index\_tablespace**  is used.
 
 
-## Examples<a name="en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## Examples<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```
 -- Create the tpcds.ship_mode_t1 table.
@@ -264,6 +290,12 @@ postgres=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_
 ) 
 TABLESPACE example2;
 
+-- Create a GLOBAL partitioned index.
+postgres=CREATE INDEX ds_customer_address_p1_index3 ON tpcds.customer_address_p1(CA_ADDRESS_ID) GLOBAL;
+
+-- If no keyword is specified, a GLOBAL partitioned index is created by default.
+postgres=CREATE INDEX ds_customer_address_p1_index4 ON tpcds.customer_address_p1(CA_ADDRESS_ID);
+
 -- Change the tablespace of the partitioned table index CA_ADDRESS_SK_index2 to example1.
 postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index2 TABLESPACE example1;
 
@@ -290,11 +322,11 @@ postgres=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngr
 CREATE INDEX
 ```
 
-## Helpful Links<a name="en-us_topic_0237122106_en-us_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>
+## Helpful Links<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>
 
-[ALTER INDEX](alter-index.md)  and  [DROP INDEX](drop-index.md)
+[ALTER INDEX](en-us_topic_0283137124.md)  and  [DROP INDEX](en-us_topic_0283136794.md)
 
-## Suggestions<a name="en-us_topic_0237122106_en-us_topic_0059777455_section3814797010859"></a>
+## Suggestions<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_section3814797010859"></a>
 
 -   create index
 
@@ -309,6 +341,14 @@ CREATE INDEX
 
     -   Partitioned tables do not support partial indexes or the  **NULL FIRST**  feature.
 
-    -   A unique index created on a partitioned table must include a partitioned column and all the partition keys.
+    -   A unique LOCAL index to be created must include a partitioned column and all the partition keys. This constraint does not apply to GLOBAL indexes.
+    -   When a GLOBAL index is created on a partitioned table, the following constraints apply:
+        -   Expression indexes and partial indexes are not supported.
+        -   Row-store tables are not supported.
+        -   Only B-tree indexes are supported.
+
+    -   In the same attribute column, the LOCAL index and GLOBAL index of a partition cannot coexist.
+    -   GLOBAL index supports a maximum of 31 columns.
+    -   If a GLOBAL index is created on a partitioned table, the GLOBAL index becomes invalid when you run the  **ALTER TABLE**  statement to perform any of the DROP, TRUNCATE, SPLIT, MERGE and EXCHANGE operations on the partition. In this case, you need to manually recreate the index.
 
 
