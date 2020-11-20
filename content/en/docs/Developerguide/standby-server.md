@@ -120,3 +120,15 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**: empty
 
+## config\_sync\_interval
+
+**Parameter description**: Specifies the time interval for synchronizing the configuration file between host and standby.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is ms.
+
+**Default value**:  **3600000**  \(1 hour\)
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>0 means no synchronization, and if you want to be out of sync on the first boot, you need to set it to 0 using Method 1 in  [Table 2](resetting-parameters.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d) before starting the host and standby.
