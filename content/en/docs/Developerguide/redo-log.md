@@ -2,7 +2,7 @@
 
 -   enable\_redo\_log = true
 
-    Specifies whether to use the redo log for durability. See the ++ section for more information about redo logs.
+    Specifies whether to use the redo log for durability. See the  section for more information about redo logs.
 
 -   enable\_group\_commit = false
 

@@ -1,6 +1,6 @@
 # MOT Server Optimization – ARM Huawei Taishan 2P/4P<a name="EN-US_TOPIC_0270171568"></a>
 
-The following are optional settings for optimizing MOT database performance running on an ARM/Kunpeng-based Huawei Taishan 2280 v2 server powered by 2-sockets with a total of 256 Cores<sup>\[</sup><sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)</sup><sup>\]</sup>  and Taishan 2480 v2 server powered by 4-sockets with a total of 256 Cores<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>.
+The following are optional settings for optimizing MOT database performance running on an ARM/Kunpeng-based Huawei Taishan 2280 v2 server powered by 2-sockets with a total of 256 Cores and Taishan 2480 v2 server powered by 4-sockets with a total of 256 Cores.
 
 Unless indicated otherwise, the following settings are for both client and server machines –
 
