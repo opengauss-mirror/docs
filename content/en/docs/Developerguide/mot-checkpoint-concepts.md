@@ -8,7 +8,7 @@ The data is stored directly in memory. The MOT does not store its data it the sa
 
 For this reason, we have researched and implemented the CALC algorithm, which is described in the paper named Low-Overhead Asynchronous Checkpointing in Main-Memory Database Systems, SIGMOND 2016 from Yale University.
 
-Low-overhead asynchronous checkpointing in main-memory database systems<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>.
+Low-overhead asynchronous checkpointing in main-memory database systems.
 
 ## CALC Checkpoint Algorithm – Low Overhead in Memory and Compute<a name="section173125984216"></a>
 

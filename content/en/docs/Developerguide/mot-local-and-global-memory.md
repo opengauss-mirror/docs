@@ -1,6 +1,6 @@
 # MOT Local and Global Memory<a name="EN-US_TOPIC_0270171516"></a>
 
-SILO<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>  manages both a local memory and a global memory, as shown in.
+SILO manages both a local memory and a global memory, as shown in.
 
 -   **Global**  memory is long-term shared memory is shared by all cores and is used primarily to store all the table data and indexes
 

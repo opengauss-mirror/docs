@@ -26,22 +26,22 @@ The functional differences between optimistic and pessimistic approaches is larg
 
 The  **Pessimistic Concurrency Control**  \(2PL or 2-Phase Locking\) approach uses locks to block potential conflicts before they occur. A lock is applied when a statement is executed and released when the transaction is committed. Disk-based row‑stores use this approach \(with the addition of Multi-version Concurrency Control \[MVCC\]\).
 
-In 2PL algorithms, while a transaction is writing a row, no other transaction can access it; and while a row is being read, no other transaction can overwrite it. Each row is locked at access time for both reading and writing; and the lock is released at commit time. These algorithms require a scheme for handling and avoiding deadlock. Deadlock can be detected by calculating cycles in a wait-for graph. Deadlock can be avoided by keeping time ordering using TSO<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>  or by some kind of back-off scheme.
+In 2PL algorithms, while a transaction is writing a row, no other transaction can access it; and while a row is being read, no other transaction can overwrite it. Each row is locked at access time for both reading and writing; and the lock is released at commit time. These algorithms require a scheme for handling and avoiding deadlock. Deadlock can be detected by calculating cycles in a wait-for graph. Deadlock can be avoided by keeping time ordering using TSO or by some kind of back-off scheme.
 
 **Encounter Time Locking \(ETL\)**
 
-Another approach is Encounter Time Locking \(ETL\), where reads are handled in an optimistic manner, but writes lock the data that they access. As a result, writes from different ETL transactions are aware of each other and can decide to abort. It has been empirically verified<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>  that ETL improves the performance of OCC in two ways –
+Another approach is Encounter Time Locking \(ETL\), where reads are handled in an optimistic manner, but writes lock the data that they access. As a result, writes from different ETL transactions are aware of each other and can decide to abort. It has been empirically verified that ETL improves the performance of OCC in two ways –
 
 -   First, ETL detects conflicts early on and often increases transaction throughput. This is because transactions do not perform useless operations, because conflicts discovered at commit time \(in general\) cannot be solved without aborting at least one transaction.
 -   Second, encounter-time locking Reads-After-Writes \(RAW\) are handled efficiently without requiring expensive or complex mechanisms.
 
 **Conclusion**
 
-OCC is the fastest option for most workloads<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>. This finding has also been observed in our preliminary research phase.
+OCC is the fastest option for most workloads. This finding has also been observed in our preliminary research phase.
 
 One of the reasons is that when every core executes multiple threads, a lock is likely to be held by a swapped thread, especially in interactive mode. Another reason is that pessimistic algorithms involve deadlock detection \(which introduces overhead\) and usually uses read-write locks \(which are less efficient than standard spin-locks\).
 
-We have chosen Silo<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\] </sup>because it was simpler than other existing options, such as TicToc<sup>\[</sup>[Comparison – Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>, while maintaining the same performance for most workloads. ETL is sometimes faster than OCC, but it introduces spurious aborts which may confuse a user, in contrast to OCC which aborts only at commit.
+We have chosen Silo because it was simpler than other existing options, such as TicToc, while maintaining the same performance for most workloads. ETL is sometimes faster than OCC, but it introduces spurious aborts which may confuse a user, in contrast to OCC which aborts only at commit.
 
 ## OCC vs 2PL Differences by Example<a name="section9676996592"></a>
 

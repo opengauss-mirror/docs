@@ -8,7 +8,7 @@
 
 为此，我们研究并实现了CALC算法，该算法在耶鲁大学发布的Low-Overhead Asynchronous Checkpointing in Main-Memory Database Systems, SIGMOND 2016中得到了描述。
 
-主内存数据库系统中的低开销异步检查点<sup>\[</sup>[对比：磁盘与MOT](对比-磁盘与MOT.md)<sup>\]</sup>。
+主内存数据库系统中的低开销异步检查点。
 
 ## CALC检查点算法：内存和计算开销低<a name="section5525712"></a>
 
