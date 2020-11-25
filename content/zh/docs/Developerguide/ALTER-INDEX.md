@@ -1,6 +1,6 @@
-# ALTER INDEX<a name="ZH-CN_TOPIC_0242370527"></a>
+# ALTER INDEX<a name="ZH-CN_TOPIC_0289900645"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122063_zh-cn_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>
+## 功能描述<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>
 
 ALTER INDEX用于修改现有索引的定义。
 
@@ -43,11 +43,11 @@ ALTER INDEX用于修改现有索引的定义。
     用于修改索引分区的所属表空间。
 
 
-## 注意事项<a name="zh-cn_topic_0237122063_zh-cn_topic_0059778960_s503281b2c63545749248dae8614077e7"></a>
+## 注意事项<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_s503281b2c63545749248dae8614077e7"></a>
 
-只有索引的所有者有权限执行此命令，系统管理员默认拥有此权限。
+只有索引的所有者或者拥有索引所在表的INDEX权限的用户有权限执行此命令，系统管理员默认拥有此权限。
 
-## 语法格式<a name="zh-cn_topic_0237122063_zh-cn_topic_0059778960_sf28f1b42c78e4ae79c9097da9057c429"></a>
+## 语法格式<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sf28f1b42c78e4ae79c9097da9057c429"></a>
 
 -   重命名表索引的名称。
 
@@ -88,8 +88,8 @@ ALTER INDEX用于修改现有索引的定义。
         [ MODIFY PARTITION index_partition_name ] UNUSABLE;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >列存表不支持该语法。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >列存表不支持该语法。
 
 
 -   重建表索引或索引分区。
@@ -116,7 +116,7 @@ ALTER INDEX用于修改现有索引的定义。
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122063_zh-cn_topic_0059778960_sbb551b3820484c06ac91aa80e311e48e"></a>
+## 参数说明<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sbb551b3820484c06ac91aa80e311e48e"></a>
 
 -   **index\_name**
 
@@ -155,11 +155,11 @@ ALTER INDEX用于修改现有索引的定义。
     新表空间。
 
 
-## 示例<a name="zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc18e85a8e57649469b874f56ded3847b"></a>
+## 示例<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc18e85a8e57649469b874f56ded3847b"></a>
 
-请参见CREATE INDEX的[示例](CREATE-INDEX.md#zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362)。
+请参见CREATE INDEX的[示例](zh-cn_topic_0289900160.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362)。
 
-## 相关链接<a name="zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
+## 相关链接<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 
-[CREATE INDEX](CREATE-INDEX.md)，[DROP INDEX](DROP-INDEX.md)，[REINDEX](REINDEX.md)
+[CREATE INDEX](zh-cn_topic_0289900160.md)，[DROP INDEX](DROP-INDEX.md)，[REINDEX](zh-cn_topic_0289899863.md)
 

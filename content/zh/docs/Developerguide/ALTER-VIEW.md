@@ -1,17 +1,17 @@
-# ALTER VIEW<a name="ZH-CN_TOPIC_0242370548"></a>
+# ALTER VIEW<a name="ZH-CN_TOPIC_0289900061"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122084_zh-cn_topic_0059778428_section1274412112511"></a>
+## 功能描述<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_section1274412112511"></a>
 
 ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的查询定义，要使用CREATE OR REPLACE VIEW。）
 
-## 注意事项<a name="zh-cn_topic_0237122084_zh-cn_topic_0059778428_s5a554e8d15974449b7ffffee772b46f2"></a>
+## 注意事项<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s5a554e8d15974449b7ffffee772b46f2"></a>
 
--   用户必须是视图的所有者才可以使用ALTER VIEW。
--   要改变视图的模式，用户必须要有新模式的CREATE权限。
--   要改变视图的所有者，用户必须是新所属角色的直接或者间接的成员，并且此角色必须有视图模式的CREATE权限。
--   管理员用户可以更改任何视图的所属关系。
+只有视图的所有者或者被授予了视图ALTER权限的用户才可以执行ALTER VIEW命令，系统管理员默认拥有该权限。针对所要修改属性的不同，对其还有以下权限约束：
 
-## 语法格式<a name="zh-cn_topic_0237122084_zh-cn_topic_0059778428_s7a58ab6578844d1d826f43cf0be946f9"></a>
+-   修改视图的模式，当前用户必须是视图的所有者或者系统管理员，且要有新模式的CREATE权限。
+-   修改视图的所有者，当前用户必须是视图的所有者或者系统管理员，且该用户必须是新所有者角色的成员，并且此角色必须有视图所在模式的CREATE权限。
+
+## 语法格式<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s7a58ab6578844d1d826f43cf0be946f9"></a>
 
 -   设置视图列的默认值。
 
@@ -63,7 +63,7 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122084_zh-cn_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
+## 参数说明<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
 
 -   **IF EXISTS**
 
@@ -106,7 +106,7 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
     取值范围：Boolean类型，TRUE、FALSE。
 
 
-## 示例<a name="zh-cn_topic_0237122084_zh-cn_topic_0059778428_s3d5088f2366242cf9ef14a91c2081248"></a>
+## 示例<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s3d5088f2366242cf9ef14a91c2081248"></a>
 
 ```
 --创建一个由c_customer_sk小于150的内容组成的视图。
@@ -124,7 +124,7 @@ postgres=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
 postgres=# DROP VIEW public.customer_details_view_v2;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122084_zh-cn_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
+## 相关链接<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
-[CREATE VIEW](CREATE-VIEW.md)，[DROP VIEW](DROP-VIEW.md)
+[CREATE VIEW](zh-cn_topic_0289900307.md)，[DROP VIEW](DROP-VIEW.md)
 

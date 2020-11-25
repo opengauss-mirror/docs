@@ -1,10 +1,10 @@
-# REVOKE<a name="ZH-CN_TOPIC_0242370643"></a>
+# REVOKE<a name="ZH-CN_TOPIC_0289900263"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122179_zh-cn_topic_0059779274_sda1d739a0a8c460c93bc099fb8208944"></a>
+## 功能描述<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_sda1d739a0a8c460c93bc099fb8208944"></a>
 
 REVOKE用于撤销一个或多个角色的权限。
 
-## 注意事项<a name="zh-cn_topic_0237122179_zh-cn_topic_0059779274_sf1580b93b5664a7db2c08cf69806faa5"></a>
+## 注意事项<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_sf1580b93b5664a7db2c08cf69806faa5"></a>
 
 非对象所有者试图在对象上REVOKE权限，命令按照以下规则执行：
 
@@ -13,13 +13,25 @@ REVOKE用于撤销一个或多个角色的权限。
 -   如果授权用户没有授权选项，REVOKE ALL PRIVILEGES形式将发出一个错误信息，而对于其他形式的命令而言，如果是命令中指定名称的权限没有相应的授权选项，该命令将发出一个警告。
 -   不允许对表分区进行REVOKE操作，对分区表进行REVOKE操作会引起告警。
 
-## 语法格式<a name="zh-cn_topic_0237122179_zh-cn_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
+## 语法格式<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
 
--   回收指定表和视图上权限。
+-   回收指定表上权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES }[, ...] 
+        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM }[, ...] 
+        | ALL [ PRIVILEGES ] }
+        ON { [ TABLE ] table_name [, ...]
+           | ALL TABLES IN SCHEMA schema_name [, ...] }
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定视图上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM }[, ...] 
         | ALL [ PRIVILEGES ] }
         ON { [ TABLE ] table_name [, ...]
            | ALL TABLES IN SCHEMA schema_name [, ...] }
@@ -31,9 +43,21 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { {{ SELECT | INSERT | UPDATE | REFERENCES } ( column_name [, ...] )}[, ...] 
+        { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )}[, ...] 
         | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
         ON [ TABLE ] table_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定序列上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
+        | ALL [ PRIVILEGES ] }
+        ON { [ SEQUENCE ] sequence_name [, ...]
+           | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
     ```
@@ -42,7 +66,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { CREATE | CONNECT | TEMPORARY | TEMP } [, ...] 
+        { { CREATE | CONNECT | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...] 
         | ALL [ PRIVILEGES ] }
         ON DATABASE database_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -53,7 +77,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { EXECUTE | ALL [ PRIVILEGES ] }
+        { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON { FUNCTION {function_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
            | ALL FUNCTIONS IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -74,7 +98,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { CREATE | USAGE } [, ...] | ALL [ PRIVILEGES ] }
+        { { CREATE | USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON SCHEMA schema_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -84,7 +108,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { CREATE | ALL [ PRIVILEGES ] }
+        { { CREATE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TABLESPACE tablespace_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -123,11 +147,11 @@ REVOKE用于撤销一个或多个角色的权限。
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122179_zh-cn_topic_0059779274_s54fe58f3f55f4965a6b9370f9edebfdf"></a>
+## 参数说明<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s54fe58f3f55f4965a6b9370f9edebfdf"></a>
 
 关键字PUBLIC表示一个隐式定义的拥有所有角色的组。
 
-权限类别和参数说明，请参见GRANT的[参数说明](GRANT.md#zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8)。
+权限类别和参数说明，请参见GRANT的[参数说明](GRANT.md#zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8)。
 
 任何特定角色拥有的特权包括直接授予该角色的特权、从该角色作为其成员的角色中得到的权限以及授予给PUBLIC的权限。因此，从PUBLIC收回SELECT特权并不一定会意味着所有角色都会失去在该对象上的SELECT特权，那些直接被授予的或者通过另一个角色被授予的角色仍然会拥有它。类似地，从一个用户收回SELECT后，如果PUBLIC仍有SELECT权限，该用户还是可以使用SELECT。
 
@@ -139,11 +163,11 @@ REVOKE用于撤销一个或多个角色的权限。
 
 如果执行REVOKE的角色持有的权限是通过多层成员关系获得的，则具体是哪个包含的角色执行的该命令是不确定的。在这种场合下，最好的方法是使用SET ROLE成为特定角色，然后执行REVOKE，否则可能导致删除了不想删除的权限，或者是任何权限都没有删除。
 
-## 示例<a name="zh-cn_topic_0237122179_zh-cn_topic_0059779274_s82ec0652acdd4e6091abc851b909926d"></a>
+## 示例<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s82ec0652acdd4e6091abc851b909926d"></a>
 
-请参考GRANT的[示例](GRANT.md#zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447)。
+请参考GRANT的[示例](GRANT.md#zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447)。
 
-## 相关链接<a name="zh-cn_topic_0237122179_zh-cn_topic_0059779274_s865f60db543c4043bd5fa9b678295c5a"></a>
+## 相关链接<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s865f60db543c4043bd5fa9b678295c5a"></a>
 
 [GRANT](GRANT.md)
 

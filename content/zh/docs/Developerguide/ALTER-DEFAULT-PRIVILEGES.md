@@ -1,14 +1,14 @@
-# ALTER DEFAULT PRIVILEGES<a name="ZH-CN_TOPIC_0252797127"></a>
+# ALTER DEFAULT PRIVILEGES<a name="ZH-CN_TOPIC_0289900961"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>
+## 功能描述<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>
 
 设置应用于将来创建的对象的权限（这不会影响分配到已有对象中的权限）。
 
-## 注意事项<a name="zh-cn_topic_0237122057_zh-cn_topic_0059778935_s4737e0edf6af464282c48f14a9d9c0f4"></a>
+## 注意事项<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s4737e0edf6af464282c48f14a9d9c0f4"></a>
 
-目前只支持表（包括视图）、 函数和类型（包括域）的权限更改。
+目前只支持表（包括视图）、 函数和类型的权限更改。
 
-## 语法格式<a name="zh-cn_topic_0237122057_zh-cn_topic_0059778935_s760a84be01534119a13af50d2ff535aa"></a>
+## 语法格式<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s760a84be01534119a13af50d2ff535aa"></a>
 
 ```
 ALTER DEFAULT PRIVILEGES
@@ -32,7 +32,7 @@ ALTER DEFAULT PRIVILEGES
 -   其中grant\_on\_tables\_clause子句用于对表授权。
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES } 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
         [, ...] | ALL [ PRIVILEGES ] }
         ON TABLES 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -42,7 +42,7 @@ ALTER DEFAULT PRIVILEGES
 -   其中grant\_on\_functions\_clause子句用于对函数授权。
 
     ```
-    GRANT { EXECUTE | ALL [ PRIVILEGES ] }
+    GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON FUNCTIONS 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
@@ -51,7 +51,7 @@ ALTER DEFAULT PRIVILEGES
 -   其中grant\_on\_types\_clause子句用于对类型授权。
 
     ```
-    GRANT { USAGE | ALL [ PRIVILEGES ] }
+    GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPES 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
@@ -61,7 +61,7 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES } 
+        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
         [, ...] | ALL [ PRIVILEGES ] }
         ON TABLES 
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -72,7 +72,7 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { EXECUTE | ALL [ PRIVILEGES ] }
+        { {EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON FUNCTIONS 
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
@@ -82,14 +82,14 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { USAGE | ALL [ PRIVILEGES ] }
+        { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPES 
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb713f37e7b9a40ad936d0bbba0449eb1"></a>
+## 参数说明<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb713f37e7b9a40ad936d0bbba0449eb1"></a>
 
 -   **target\_role**
 
@@ -112,10 +112,10 @@ ALTER DEFAULT PRIVILEGES
     取值范围：已存在的角色名称。
 
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->如果想删除一个被赋予了默认权限的角色，有必要恢复改变的缺省权限或者使用DROP OWNED BY来为角色脱离缺省的权限记录。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>如果想删除一个被赋予了默认权限的角色，有必要恢复改变的缺省权限或者使用DROP OWNED BY来为角色脱离缺省的权限记录。
 
-## 示例<a name="zh-cn_topic_0237122057_zh-cn_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>
+## 示例<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>
 
 ```
 --将创建在模式tpcds里的所有表（和视图）的SELECT权限授予每一个用户。
@@ -135,7 +135,7 @@ postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE INSERT ON TABLES FROM
 postgres=# DROP USER jack;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122057_zh-cn_topic_0059778935_s802a1dc228084944b989677194792353"></a>
+## 相关链接<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
 [GRANT](GRANT.md)，[REVOKE](REVOKE.md)
 

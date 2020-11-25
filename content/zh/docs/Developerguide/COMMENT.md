@@ -1,16 +1,17 @@
-# COMMENT<a name="ZH-CN_TOPIC_0242370557"></a>
+# COMMENT<a name="ZH-CN_TOPIC_0289900191"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122093_zh-cn_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>
+## 功能描述<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>
 
 定义或修改一个对象的注释。
 
-## 注意事项<a name="zh-cn_topic_0237122093_zh-cn_topic_0059778518_s1a808d6187aa43c5bda33df14effd78f"></a>
+## 注意事项<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_s1a808d6187aa43c5bda33df14effd78f"></a>
 
 -   每个对象只存储一条注释，因此要修改一个注释，对同一个对象发出一条新的COMMENT命令即可。要删除注释，在文本字符串的位置写上NULL即可。当删除对象时，注释自动被删除掉。
 -   目前注释浏览没有安全机制：任何连接到某数据库上的用户都可以看到所有该数据库对象的注释。共享对象（比如数据库、角色、表空间）的注释是全局存储的，连接到任何数据库的任何用户都可以看到它们。因此，不要在注释里存放与安全有关的敏感信息。
--   对大多数对象，只有对象的所有者可以设置注释。角色没有所有者，所以COMMENT ON ROLE命令仅可以由系统管理员对系统管理员角色执行，有CREATEROLE权限的角色也可以为非系统管理员角色设置注释。系统管理员可以对所有对象进行注释。
+-   对大多数对象，只有对象的所有者或者被授予了对象COMMENT权限的用户可以设置注释，系统管理员默认拥有该权限。
+-   角色没有所有者，所以COMMENT ON ROLE命令仅可以由系统管理员对系统管理员角色执行，有CREATEROLE权限的角色也可以为非系统管理员角色设置注释。系统管理员可以对所有对象进行注释。
 
-## 语法格式<a name="zh-cn_topic_0237122093_zh-cn_topic_0059778518_sc17f26ffc35449b285334777c0405013"></a>
+## 语法格式<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_sc17f26ffc35449b285334777c0405013"></a>
 
 ```
 COMMENT ON
@@ -49,7 +50,7 @@ COMMENT ON
    IS 'text';
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122093_zh-cn_topic_0059778518_s56dde1ab6b0149328413f05ffc3c73b8"></a>
+## 参数说明<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_s56dde1ab6b0149328413f05ffc3c73b8"></a>
 
 -   **agg\_name**
 
@@ -105,12 +106,16 @@ COMMENT ON
 
     操作参数的数据类型（可以用模式修饰）。当前置或者后置操作符不存在时，可以增加NONE选项。
 
+-   **trigger\_name**
+
+    触发器名称。
+
 -   **text**
 
     注释。
 
 
-## 示例<a name="zh-cn_topic_0237122093_zh-cn_topic_0059778518_s57de72dc01404015a1a8a938238ad917"></a>
+## 示例<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_s57de72dc01404015a1a8a938238ad917"></a>
 
 ```
 postgres=# CREATE TABLE tpcds.customer_demographics_t2

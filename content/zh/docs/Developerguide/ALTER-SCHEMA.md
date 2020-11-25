@@ -1,14 +1,14 @@
-# ALTER SCHEMA<a name="ZH-CN_TOPIC_0242370534"></a>
+# ALTER SCHEMA<a name="ZH-CN_TOPIC_0289900025"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122070_zh-cn_topic_0059779037_s806d414edb004fa89cd50a1166d1136e"></a>
+## 功能描述<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_s806d414edb004fa89cd50a1166d1136e"></a>
 
 修改模式属性。
 
-## 注意事项<a name="zh-cn_topic_0237122070_zh-cn_topic_0059779037_sfccb497f01564edb804ecee58fe2698c"></a>
+## 注意事项<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_sfccb497f01564edb804ecee58fe2698c"></a>
 
-只有模式的所有者有权限执行ALTER SCHEMA命令，系统管理员默认拥有此权限。
+只有模式的所有者或者被授予了模式ALTER权限的用户有权限执行ALTER SCHEMA命令，系统管理员默认拥有此权限。但要修改模式的所有者，当前用户必须是该模式的所有者或者系统管理员，且该用户是新所有者角色的成员。
 
-## 语法格式<a name="zh-cn_topic_0237122070_zh-cn_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
+## 语法格式<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
 -   修改模式的名称。
 
@@ -25,7 +25,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122070_zh-cn_topic_0059779037_s8277cc73aecc4f20845d2ddf456a20e7"></a>
+## 参数说明<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_s8277cc73aecc4f20845d2ddf456a20e7"></a>
 
 -   **schema\_name**
 
@@ -50,7 +50,7 @@
     取值范围：已存在的用户名/角色名。
 
 
-## 示例<a name="zh-cn_topic_0237122070_zh-cn_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
+## 示例<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
 ```
 --创建模式ds。
@@ -70,7 +70,7 @@ postgres=# DROP SCHEMA ds_new;
 postgres=# DROP USER jack;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122070_zh-cn_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
+## 相关链接<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
-[CREATE SCHEMA](CREATE-SCHEMA.md)，[DROP SCHEMA](DROP-SCHEMA.md)
+[CREATE SCHEMA](zh-cn_topic_0289901000.md)，[DROP SCHEMA](DROP-SCHEMA.md)
 

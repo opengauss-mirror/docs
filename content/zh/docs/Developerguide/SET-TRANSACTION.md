@@ -1,14 +1,14 @@
-# SET TRANSACTION<a name="ZH-CN_TOPIC_0242370654"></a>
+# SET TRANSACTION<a name="ZH-CN_TOPIC_0289900810"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122190_zh-cn_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>
+## 功能描述<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>
 
-为当前事务设置特性。它对后面的事务没有影响。事务特性包括事务隔离级别、事务访问模式\(读/写或者只读\)。
+为事务设置特性。事务特性包括事务隔离级别、事务访问模式\(读/写或者只读\)。可以设置当前事务的特性（LOCAL\)，也可以设置会话的默认事务特性\(SESSION\)。
 
-## 注意事项<a name="zh-cn_topic_0237122190_zh-cn_topic_0059778135_s91c8bf3e55a0490299ef9c0cd59f44f6"></a>
+## 注意事项<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_s91c8bf3e55a0490299ef9c0cd59f44f6"></a>
 
-此命令需要在事务中执行（即执行SET TRANSACTION之前需要执行START TRANSACTION或者BEGIN），否则设置不生效。
+设置当前事务特性需要在事务中执行（即执行SET TRANSACTION之前需要执行START TRANSACTION或者BEGIN），否则设置不生效。
 
-## 语法格式<a name="zh-cn_topic_0237122190_zh-cn_topic_0059778135_sce3e49e1f5894684861d1df6677d12c8"></a>
+## 语法格式<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_sce3e49e1f5894684861d1df6677d12c8"></a>
 
 设置事务的隔离级别、读写模式。
 
@@ -18,7 +18,7 @@
   | { READ WRITE | READ ONLY } } [, ...]
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122190_zh-cn_topic_0059778135_sedb5d46e1cef47ad953116db260be4ad"></a>
+## 参数说明<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_sedb5d46e1cef47ad953116db260be4ad"></a>
 
 -   **LOCAL**
 
@@ -34,8 +34,8 @@
 
     指定事务隔离级别，该参数决定当一个事务中存在其他并发运行事务时能够看到什么数据。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >在事务中第一个数据修改语句（SELECT，INSERT，DELETE，UPDATE，FETCH，COPY）执行之后，事务隔离级别就不能再次设置。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >在事务中第一个数据修改语句（SELECT，INSERT，DELETE，UPDATE，FETCH，COPY）执行之后，当前事务的隔离级别就不能再次设置。
 
     取值范围：
 
@@ -48,7 +48,7 @@
     指定事务访问模式（读/写或者只读）。
 
 
-## 示例<a name="zh-cn_topic_0237122190_zh-cn_topic_0059778135_sf3622c31002245c482e236cade222456"></a>
+## 示例<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_sf3622c31002245c482e236cade222456"></a>
 
 ```
 --开启一个事务，设置事务的隔离级别为READ COMMITTED，访问模式为READ ONLY。
