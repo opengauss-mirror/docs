@@ -1,6 +1,6 @@
-# GRANT<a name="ZH-CN_TOPIC_0242370630"></a>
+# GRANT<a name="ZH-CN_TOPIC_0289900312"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
+## 功能描述<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
 
 对角色和用户进行授权操作。
 
@@ -14,7 +14,7 @@
 
 -   **将数据库对象授权给角色或用户**
 
-    将数据库对象（表和视图、指定字段、数据库、函数、模式、表空间等）的相关权限授予特定角色或用户。
+    将数据库对象（表和视图、指定字段、数据库、函数、模式、表空间等）的相关权限授予特定角色或用户；
 
     GRANT命令将数据库对象的特定权限授予一个或多个角色。这些权限会追加到已有的权限上。
 
@@ -23,6 +23,8 @@
     如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC，这是openGauss特有的属性。
 
     openGauss会将某些类型的对象上的权限授予PUBLIC。默认情况下，对表、表字段、序列、外部数据源、外部服务器、模式或表空间对象的权限不会授予PUBLIC，而以下这些对象的权限会授予PUBLIC：数据库的CONNECT权限和CREATE TEMP TABLE权限、函数的EXECUTE特权、语言和数据类型（包括域）的USAGE特权。当然，对象拥有者可以撤销默认授予PUBLIC的权限并专门授予权限给其他用户。为了更安全，建议在同一个事务中创建对象并设置权限，这样其他用户就没有时间窗口使用该对象。另外，这些初始的默认权限可以使用ALTER DEFAULT PRIVILEGES命令修改。
+
+    对象的所有者缺省具有该对象上的所有权限，出于安全考虑所有者可以舍弃部分权限，但ALTER、DROP、COMMENT、INDEX、VACUUM以及对象的可再授予权限属于所有者固有的权限，隐式拥有。
 
 -   **将角色或用户的权限授权给其他角色或用户**
 
@@ -33,16 +35,16 @@
     数据库系统管理员可以给任何角色或用户授予/撤销任何权限。拥有CREATEROLE权限的角色可以赋予或者撤销任何非系统管理员角色的权限。
 
 
-## 注意事项<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_section1780116145345"></a>
+## 注意事项<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_section1780116145345"></a>
 
 无。
 
-## 语法格式<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
+## 语法格式<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
--   将表或视图的访问权限赋予指定的用户或角色。
+-   将表的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES } [, ...] 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
           | ALL [ PRIVILEGES ] }
         ON { [ TABLE ] table_name [, ...]
            | ALL TABLES IN SCHEMA schema_name [, ...] }
@@ -51,20 +53,42 @@
     
     ```
 
+-   将视图的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | ALTER | DROP | COMMENT } [, ...] 
+          | ALL [ PRIVILEGES ] }
+        ON { [ TABLE ] table_name [, ...]
+           | ALL TABLES IN SCHEMA schema_name [, ...] }
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    ```
+
 -   将表中字段的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES } ( column_name [, ...] )} [, ...] 
+    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
           | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
         ON [ TABLE ] table_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
+-   将序列的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } [, ...] 
+          | ALL [ PRIVILEGES ] }
+        ON { [ SEQUENCE ] sequence_name [, ...]
+           | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    ```
+
 -   将数据库的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { { CREATE | CONNECT | TEMPORARY | TEMP } [, ...]
+    GRANT { { CREATE | CONNECT | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...]
           | ALL [ PRIVILEGES ] }
         ON DATABASE database_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -80,8 +104,8 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >本版本暂时不支持赋予域的访问权限。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >本版本暂时不支持赋予域的访问权限。
 
 -   将外部数据源的访问权限赋予给指定的用户或角色。
 
@@ -95,7 +119,7 @@
 -   将外部服务器的访问权限赋予给指定的用户或角色。
 
     ```
-    GRANT { USAGE | ALL [ PRIVILEGES ] }
+    GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON FOREIGN SERVER server_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
@@ -104,7 +128,7 @@
 -   将函数的访问权限赋予给指定的用户或角色。
 
     ```
-    GRANT { EXECUTE | ALL [ PRIVILEGES ] }
+    GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON { FUNCTION {function_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
            | ALL FUNCTIONS IN SCHEMA schema_name [, ...] }
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -129,25 +153,25 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >本版本暂时不支持大对象。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >本版本暂时不支持大对象。
 
 -   将模式的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { { CREATE | USAGE } [, ...] | ALL [ PRIVILEGES ] }
+    GRANT { { CREATE | USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON SCHEMA schema_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。
 
 -   将表空间的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { CREATE | ALL [ PRIVILEGES ] }
+    GRANT { { CREATE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TABLESPACE tablespace_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
@@ -156,14 +180,14 @@
 -   将类型的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { USAGE | ALL [ PRIVILEGES ] }
+    GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPE type_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >本版本暂时不支持赋予类型的访问权限。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >本版本暂时不支持赋予类型的访问权限。
 
 -   将角色的权限赋予其他用户或角色的语法。
 
@@ -199,7 +223,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8"></a>
+## 参数说明<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8"></a>
 
 GRANT的权限分类如下所示。
 
@@ -245,6 +269,26 @@ GRANT的权限分类如下所示。
     -   对于模式，USAGE允许访问包含在指定模式中的对象，若没有该权限，则只能看到这些对象的名称。
     -   对于序列，USAGE允许使用nextval函数。
     -   对于Data Source对象，USAGE是指访问权限，也是可赋予的所有权限，即USAGE与ALL PRIVILEGES等价。
+
+-   **ALTER**
+
+    允许用户修改指定对象的属性，但不包括修改对象的所有者和修改对象所在的模式。
+
+-   **DROP**
+
+    允许用户删除指定的对象。
+
+-   **COMMENT**
+
+    允许用户定义或修改指定对象的注释。
+
+-   **INDEX**
+
+    允许用户在指定表上创建索引，并管理指定表上的索引，还允许用户对指定表执行REINDEX和CLUSTER操作。
+
+-   **VACUUM**
+
+    允许用户对指定的表执行ANALYZE和VACUUM操作。
 
 -   **ALL PRIVILEGES**
 
@@ -346,11 +390,11 @@ GRANT的参数说明如下所示。
 -   如果用户有该对象上的部分权限，则GRANT命令只授予他有授权选项的权限。
 -   如果用户没有可用的授权选项，GRANT ALL PRIVILEGES形式将发出一个警告信息，其他命令形式将发出在命令中提到的且没有授权选项的相关警告信息。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。  
->不允许对表分区进行GRANT操作，对分区表进行GRANT操作会引起告警。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。
+>不允许对表分区进行GRANT操作，对分区表进行GRANT操作会引起告警。
 
-## 示例<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
+## 示例<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
 
 **示例：将系统权限授权给用户或者角色。**
 
@@ -446,7 +490,7 @@ postgres=# DROP ROLE senior_manager;
 postgres=# DROP USER joe CASCADE;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
+## 相关链接<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
 [REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)
 

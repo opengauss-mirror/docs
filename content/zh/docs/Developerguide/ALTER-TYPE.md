@@ -1,10 +1,14 @@
-# ALTER TYPE<a name="ZH-CN_TOPIC_0242370546"></a>
+# ALTER TYPE<a name="ZH-CN_TOPIC_0289899831"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122082_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
+## 功能描述<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
 
 修改一个类型的定义。
 
-## 语法格式<a name="zh-cn_topic_0237122082_zh-cn_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
+## 注意事项<a name="zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
+
+只有类型的所有者或者被授予了类型ALTER权限的用户可以执行ALTER TYPE命令，系统管理员默认拥有此权限。但要修改类型的所有者或者修改类型的模式，当前用户必须是该类型的所有者或者系统管理员，且该用户是新所有者角色的成员。
+
+## 语法格式<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
 
 -   修改类型
 
@@ -80,7 +84,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122082_zh-cn_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
+## 参数说明<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
 
 -   **name**
 
@@ -137,16 +141,16 @@
 
     如果需联动更新类型是已更新类型的关联记录，则拒绝更新。这是缺省选项。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-   ADD ATTRIBUTE、DROP ATTRIBUTE和ALTER ATTRIBUTE选项可以组合成一个列表同时处理。 例如，在一条命令中同时增加几个属性或是更改几个属性的类型是可以实现的。  
-    >-   要使用ALTER TYPE，必须是该类型的所有者。 要修改一个类型的模式，还必须在新模式上拥有CREATE权限。 要修改所有者，必须是新的所有角色的直接或间接成员， 并且该成员必须在此类型的模式上有CREATE权限。 （这些限制强制了修改所有者不会做任何通过删除和重建类型不能做的事情。 不过，系统管理员可以以任何方式修改任意类型的所有权。） 要增加一个属性或是修改一个属性的类型，也必须有该类型的USAGE权限。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   ADD ATTRIBUTE、DROP ATTRIBUTE和ALTER ATTRIBUTE选项可以组合成一个列表同时处理。 例如，在一条命令中同时增加几个属性或是更改几个属性的类型是可以实现的。
+    >-   要使用ALTER TYPE，必须是该类型的所有者。 要修改一个类型的模式，还必须在新模式上拥有CREATE权限。 要修改所有者，必须是新的所有角色的直接或间接成员， 并且该成员必须在此类型的模式上有CREATE权限。 （这些限制强制了修改所有者不会做任何通过删除和重建类型不能做的事情。 不过，系统管理员可以以任何方式修改任意类型的所有权。） 要增加一个属性或是修改一个属性的类型，也必须有该类型的USAGE权限。
 
 
-## 示例<a name="zh-cn_topic_0237122082_zh-cn_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
+## 示例<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 
-请参考CREATE TYPE的[示例](CREATE-TYPE.md#zh-cn_topic_0237122124_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
+请参考CREATE TYPE的[示例](zh-cn_topic_0289900603.md#zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
 
-## 相关链接<a name="zh-cn_topic_0237122082_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
+## 相关链接<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE TYPE](CREATE-TYPE.md)，[DROP TYPE](DROP-TYPE.md)
+[CREATE TYPE](zh-cn_topic_0289900603.md)，[DROP TYPE](DROP-TYPE.md)
 

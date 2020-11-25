@@ -1,14 +1,14 @@
-# ALTER USER<a name="ZH-CN_TOPIC_0242370547"></a>
+# ALTER USER<a name="ZH-CN_TOPIC_0289900744"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
+## 功能描述<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
 
 修改数据库用户的属性。
 
-## 注意事项<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_sfefe5f38da29449aba061ba83566257d"></a>
+## 注意事项<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_sfefe5f38da29449aba061ba83566257d"></a>
 
 ALTER USER中修改的会话参数只针对指定的用户，且在下一次会话中有效。
 
-## 语法格式<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
+## 语法格式<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
 
 -   修改用户的权限等信息。
 
@@ -30,8 +30,8 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
         | {INDEPENDENT | NOINDEPENDENT}
         | {VCADMIN | NOVCADMIN}
         | CONNECTION LIMIT connlimit
-        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' | DISABLE }
-        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' ] | DISABLE }
+        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' [EXPIRED] | DISABLE | EXPIRED }
+        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' | EXPIRED ] | DISABLE }
         | VALID BEGIN 'timestamp'
         | VALID UNTIL 'timestamp'
         | RESOURCE POOL 'respool'
@@ -39,7 +39,7 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
-    
+
 -   修改用户名。
 
     ```
@@ -62,7 +62,7 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
+## 参数说明<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
 
 -   **user\_name**
 
@@ -98,11 +98,11 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
 
 其他参数请参见[CREATE ROLE](CREATE-ROLE.md)和[ALTER ROLE](ALTER-ROLE.md)的参数说明。
 
-## 示例<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
+## 示例<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 
-请参考CREATE USER的[示例](CREATE-USER.md#zh-cn_topic_0237122125_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa)。
+请参考CREATE USER的[示例](CREATE-USER.md#zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa)。
 
-## 相关链接<a name="zh-cn_topic_0237122083_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
+## 相关链接<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE ROLE](CREATE-ROLE.md)，[CREATE USER](CREATE-USER.md)，[DROP USER](DROP-USER.md)
+[CREATE ROLE](CREATE-ROLE.md)，[CREATE USER](CREATE-USER.md)，[DROP USER](zh-cn_topic_0289900387.md)
 

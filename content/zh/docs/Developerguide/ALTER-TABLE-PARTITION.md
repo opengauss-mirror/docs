@@ -1,24 +1,26 @@
-# ALTER TABLE PARTITION<a name="ZH-CN_TOPIC_0242370541"></a>
+# ALTER TABLE PARTITION<a name="ZH-CN_TOPIC_0289900688"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
+## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
 
 修改表分区，包括增删分区、切割分区、合成分区，以及修改分区属性等。
 
-## 注意事项<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s5b88399280d4435fbb63e27378589a97"></a>
+## 注意事项<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s5b88399280d4435fbb63e27378589a97"></a>
 
 -   添加分区的表空间不能是PG\_GLOBAL。
 -   添加分区的名称不能与该分区表已有分区的名称相同。
 -   添加分区的分区键值要和分区表的分区键的类型一致，且要大于分区表中最后一个范围分区的上边界。
 -   如果目标分区表中已有分区数达到了最大值（32767），则不能继续添加分区。
+
 -   当分区表只有一个分区时，不能删除该分区。
 -   选择分区使用PARTITION FOR\(\)，括号里指定值个数应该与定义分区时使用的列个数相同，并且一一对应。
 -   Value分区表不支持相应的Alter Partition操作。
 -   列存分区表不支持切割分区。
 -   间隔分区表不支持添加分区。
+-   只有分区表的所有者或者被授予了分区表ALTER权限的用户有权限执行ALTER TABLE PARTITION命令，系统管理员默认拥有此权限。
 
-## 语法格式<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
+## 语法格式<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
 
-- 修改表分区主语法。
+-   修改表分区主语法。
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name  [*] | ONLY table_name | ONLY ( table_name  )}
@@ -38,13 +40,13 @@
         drop_clause
     ```
 
-    - move\_clause子语法用于移动分区到新的表空间。
+    -   move\_clause子语法用于移动分区到新的表空间。
 
         ```
         MOVE PARTITION { partion_name | FOR ( partition_value [, ...] ) } TABLESPACE tablespacename
         ```
 
-    - exchange\_clause子语法用于把普通表的数据迁移到指定的分区。
+    -   exchange\_clause子语法用于把普通表的数据迁移到指定的分区。
 
         ```
         EXCHANGE PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } 
@@ -63,83 +65,84 @@
 
         完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
 
-    - row\_clause子语法用于设置分区表的行迁移开关。
+    -   row\_clause子语法用于设置分区表的行迁移开关。
 
         ```
         { ENABLE | DISABLE } ROW MOVEMENT
         ```
 
-    - merge\_clause子语法用于把多个分区合并成一个分区。
+    -   merge\_clause子语法用于把多个分区合并成一个分区。
 
         ```
         MERGE PARTITIONS { partition_name } [, ...] INTO PARTITION partition_name 
             [ TABLESPACE tablespacename ]
         ```
 
-    - modify\_clause子语法用于设置分区索引是否可用。
+    -   modify\_clause子语法用于设置分区索引是否可用。
 
         ```
         MODIFY PARTITION partition_name { UNUSABLE LOCAL INDEXES | REBUILD UNUSABLE LOCAL INDEXES }
         ```
 
-    - split\_clause子语法用于把一个分区切割成多个分区。
+    -   split\_clause子语法用于把一个分区切割成多个分区。
 
         ```
         SPLIT PARTITION { partition_name | FOR ( partition_value [, ...] ) } { split_point_clause | no_split_point_clause }
         ```
 
-        - 指定切割点split\_point\_clause的语法为。
+        -   指定切割点split\_point\_clause的语法为。
 
             ```
             AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
             ```
 
-            >![](public_sys-resources/icon-notice.gif) **须知：**   
-            >-   列存分区表不支持切割分区。  
-            >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。  
+            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >-   列存分区表不支持切割分区。
+            >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
 
-        - 不指定切割点no\_split\_point\_clause的语法为。
+        -   不指定切割点no\_split\_point\_clause的语法为。
 
             ```
             INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
             ```
 
-            >![](public_sys-resources/icon-notice.gif) **须知：**   
-            >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。  
-            >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。  
-            >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。  
-            >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。  
+            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
+            >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
+            >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](zh-cn_topic_0289900346.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
+            >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。
 
-            - 分区项partition\_less\_than\_item的语法为。
 
-                ```
-                PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
-                    [ TABLESPACE tablespacename ]
-                ```
+        -   分区项partition\_less\_than\_item的语法为。
 
-            - 分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](CREATE-TABLE-PARTITION.md#zh-cn_topic_0237122119_li2094151861116)。
+            ```
+            PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
+                [ TABLESPACE tablespacename ]
+            ```
 
-                ```
-                PARTITION partition_name {
-                        {START(partition_value) END (partition_value) EVERY (interval_value)} |
-                        {START(partition_value) END ({partition_value | MAXVALUE})} |
-                        {START(partition_value)} |
-                        {END({partition_value | MAXVALUE})}
-                } [TABLESPACE tablespace_name]
-                
-                ```
+        -   分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](zh-cn_topic_0289900346.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_li2094151861116)。
 
-    - add\_clause子语法用于为指定的分区表添加一个或多个分区。
+            ```
+            PARTITION partition_name {
+                    {START(partition_value) END (partition_value) EVERY (interval_value)} |
+                    {START(partition_value) END ({partition_value | MAXVALUE})} |
+                    {START(partition_value)} |
+                    {END({partition_value | MAXVALUE})}
+            } [TABLESPACE tablespace_name]
+            
+            ```
+
+
+    -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
 
         ```
         ADD {partition_less_than_item | partition_start_end_item}
         ```
 
-        > ![](D:/work/db/openGauss/%E6%96%87%E6%A1%A3/opengauss-docs-master/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **须知：**   
-        >
-        > - 间隔分区表不支持添加分区。   
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   间隔分区表不支持添加分区。
 
-    - drop\_clause子语法用于删除分区表中的指定分区。
+    -   drop\_clause子语法用于删除分区表中的指定分区。
 
         ```
         DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
@@ -154,7 +157,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_sff7a5cc103ab41709c6f7249e8d47808"></a>
+## 参数说明<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_sff7a5cc103ab41709c6f7249e8d47808"></a>
 
 -   **table\_name**
 
@@ -226,8 +229,8 @@
 
     在VALIDATION是WITH状态时，如果检查出普通表有不满足要交换分区的分区键范围的数据，那么把这些数据插入到正确的分区，如果路由不到任何分区，再报错。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >只有在VALIDATION是WITH状态时，才可以指定VERBOSE。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >只有在VALIDATION是WITH状态时，才可以指定VERBOSE。
 
 -   **partition\_new\_name**
 
@@ -236,11 +239,11 @@
     取值范围：字符串，要符合标识符的命名规范。
 
 
-## 示例<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s50d0d11ee3074db6911f91d1d9e31fbd"></a>
+## 示例<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s50d0d11ee3074db6911f91d1d9e31fbd"></a>
 
-请参考CREATE TABLE PARTITION的[示例](CREATE-TABLE-PARTITION.md#zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842)。
+请参考CREATE TABLE PARTITION的[示例](zh-cn_topic_0289900346.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842)。
 
-## 相关链接<a name="zh-cn_topic_0237122077_zh-cn_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
+## 相关链接<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](CREATE-TABLE-PARTITION.md)，[DROP TABLE](DROP-TABLE.md)
+[CREATE TABLE PARTITION](zh-cn_topic_0289900346.md)，[DROP TABLE](DROP-TABLE.md)
 

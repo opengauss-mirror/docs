@@ -1,14 +1,14 @@
-# ALTER ROLE<a name="ZH-CN_TOPIC_0242370532"></a>
+# ALTER ROLE<a name="ZH-CN_TOPIC_0289900826"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122068_zh-cn_topic_0059778744_sa4ec5e4feca4419193486c30e3c50708"></a>
+## 功能描述<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sa4ec5e4feca4419193486c30e3c50708"></a>
 
 修改角色属性。
 
-## 注意事项<a name="zh-cn_topic_0237122068_zh-cn_topic_0059778744_sa559bf9874634b91a97ecb349a5b4c5b"></a>
+## 注意事项<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sa559bf9874634b91a97ecb349a5b4c5b"></a>
 
 无。
 
-## 语法格式<a name="zh-cn_topic_0237122068_zh-cn_topic_0059778744_sad868fc15480446b8c29a37a152b5fc5"></a>
+## 语法格式<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sad868fc15480446b8c29a37a152b5fc5"></a>
 
 -   修改角色的权限。
 
@@ -30,9 +30,9 @@
         | {INDEPENDENT | NOINDEPENDENT}
         | {VCADMIN | NOVCADMIN}
         | CONNECTION LIMIT connlimit
-        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD 'password'
-        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY 'password' [ REPLACE 'old_password' ]
-        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' | DISABLE }
+        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD 'password' [EXPIRED]
+        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY 'password' [ REPLACE 'old_password' | EXPIRED ]
+        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' | DISABLE | EXPIRED }
         | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' ] | DISABLE }
         | VALID BEGIN 'timestamp'
         | VALID UNTIL 'timestamp'
@@ -41,7 +41,7 @@
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
-    
+
 -   修改角色的名称。
 
     ```
@@ -64,7 +64,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122068_zh-cn_topic_0059778744_s50961af6143d4aafaf8fa02febbbf331"></a>
+## 参数说明<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_s50961af6143d4aafaf8fa02febbbf331"></a>
 
 -   **role\_name**
 
@@ -82,7 +82,7 @@
 
     取值范围：
 
-    configuration\_parameter和value的取值请参见[SET](SET.md)。
+    configuration\_parameter和value的取值请参见[SET](zh-cn_topic_0289899950.md)。
 
     DEFAULT：表示清除configuration\_parameter参数的值，configuration\_parameter参数的值将继承本角色新产生的SESSION的默认值。
 
@@ -103,13 +103,13 @@
     当前版本不允许修改角色的PGUSER属性
 
 
-其他参数请参见CREATE ROLE的[参数说明](CREATE-ROLE.md#zh-cn_topic_0237122112_zh-cn_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4)。
+其他参数请参见CREATE ROLE的[参数说明](CREATE-ROLE.md#zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4)。
 
-## 示例<a name="zh-cn_topic_0237122068_zh-cn_topic_0059778744_s961f01774f174a5aa4e6f59dea50381a"></a>
+## 示例<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_s961f01774f174a5aa4e6f59dea50381a"></a>
 
-请参见CREATE ROLE的[示例](CREATE-ROLE.md#zh-cn_topic_0237122112_zh-cn_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e)。
+请参见CREATE ROLE的[示例](CREATE-ROLE.md#zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e)。
 
-## 相关链接<a name="zh-cn_topic_0237122068_zh-cn_topic_0059778744_sb24012e0cec94bc3ba5c2c0e8997d052"></a>
+## 相关链接<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sb24012e0cec94bc3ba5c2c0e8997d052"></a>
 
-[CREATE ROLE](CREATE-ROLE.md)，[DROP ROLE](DROP-ROLE.md)，[SET](SET.md)
+[CREATE ROLE](CREATE-ROLE.md)，[DROP ROLE](zh-cn_topic_0289900731.md)，[SET](zh-cn_topic_0289899950.md)
 

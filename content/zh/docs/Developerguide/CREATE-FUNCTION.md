@@ -1,27 +1,28 @@
-# CREATE FUNCTION<a name="ZH-CN_TOPIC_0242370568"></a>
+# CREATE FUNCTION<a name="ZH-CN_TOPIC_0289900779"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>
+## 功能描述<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>
 
 创建一个函数。
 
-## 注意事项<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_s4e29e167452e4cfda9adebadc939e3fd"></a>
+## 注意事项<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s4e29e167452e4cfda9adebadc939e3fd"></a>
 
 -   如果创建函数时参数或返回值带有精度，不进行精度检测。
 -   创建函数时，函数定义中对表对象的操作建议都显式指定模式，否则可能会导致函数执行异常。
 -   在创建函数时，函数内部通过SET语句设置current\_schema和search\_path无效。执行完函数search\_path和current\_schema与执行函数前的search\_path和current\_schema保持一致。
--   如果函数参数中带有出参，SELECT调用函数必须缺省出参，CALL调用函数必须指定出参，对于调用重载的带有PACKAGE属性的函数，CALL调用函数可以缺省出参，具体信息参见[CALL](CALL.md)的示例。
+-   如果函数参数中带有出参，SELECT调用函数必须缺省出参，CALL调用函数必须指定出参，对于调用重载的带有PACKAGE属性的函数，CALL调用函数可以缺省出参，具体信息参见[CALL](zh-cn_topic_0289900888.md)的示例。
 -   兼容Postgresql风格的函数或者带有PACKAGE属性的函数支持重载。在指定REPLACE的时候，如果参数个数、类型、返回值有变化，不会替换原有函数，而是会建立新的函数。
 -   SELECT调用可以指定不同参数来进行同名函数调用。由于语法不支持调用不带有PACKAGE属性的同名函数。
 -   在创建function时，不能在avg函数外面嵌套其他agg函数，或者其他系统函数。
 -   新创建的函数默认会给PUBLIC授予执行权限（详见[GRANT](GRANT.md)）。用户可以选择收回PUBLIC默认执行权限，然后根据需要将执行权限授予其他用户，为了避免出现新函数能被所有人访问的时间窗口，应在一个事务中创建函数并且设置函数执行权限。
+-   在函数内部调用其它无参数的函数时，可以省略括号，直接使用函数名进行调用。
 
-## 语法格式<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
+## 语法格式<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
 -   兼容PostgreSQL风格的创建自定义函数语法。
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name 
-        ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] ) 
+        [ ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] ) ]
         [ RETURNS rettype [ DETERMINISTIC  ]  | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
         LANGUAGE lang_name 
         [ 
@@ -33,7 +34,6 @@
             | {[ EXTERNAL  ] SECURITY INVOKER | [ EXTERNAL  ] SECURITY DEFINER | AUTHID DEFINER  | AUTHID CURRENT_USER} 
             | {fenced | not fenced}
             | {PACKAGE}
-    
             | COST execution_cost
             | ROWS result_rows
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }}
@@ -73,19 +73,19 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
+## 参数说明<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
 
 -   **function\_name**
 
     要创建的函数名称（可以用模式修饰）。
 
-    取值范围：字符串，要符合标识符的命名规范。且最多为63个字符串。若超过63个字符串，数据库会截断字符串并保留前63个字符串作为函数名称。
+    取值范围：字符串，要符合标识符的命名规范。且最多为63个字符。若超过63个字符，数据库会截断并保留前63个字符当做函数名称。
 
 -   **argname**
 
     函数参数的名称。
 
-    取值范围：字符串，要符合标识符的命名规范。且最多为63个字符串。若超过63个字符串，数据库会截断字符串并保留前63个字符串作为函数参数名称。
+    取值范围：字符串，要符合标识符的命名规范。且最多为63个字符。若超过63个字符，数据库会截断并保留前63个字符当做函数参数名称。
 
 -   **argmode**
 
@@ -93,8 +93,8 @@
 
     取值范围：IN，OUT，INOUT或VARIADIC。缺省值是IN。并且OUT和INOUT模式的参数不能用在RETURNS TABLE的函数定义中。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >VARIADIC用于声明数组类型的参数。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >VARIADIC用于声明数组类型的参数。
 
 -   **argtype**
 
@@ -120,7 +120,7 @@
 
     字段类型。
 
-- **definition**
+-   **definition**
 
     一个定义函数的字符串常量，含义取决于语言。它可以是一个内部函数名称、一个指向某个目标文件的路径、一个SQL查询、一个过程语言文本。
 
@@ -136,8 +136,8 @@
 
     表示该函数是窗口函数。替换函数定义时不能改变WINDOW属性。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >自定义窗口函数只支持LANGUAGE是internal，并且引用的内部函数必须是窗口函数。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >自定义窗口函数只支持LANGUAGE是internal，并且引用的内部函数必须是窗口函数。
 
 -   **IMMUTABLE**
 
@@ -151,11 +151,11 @@
 
     表示该函数值可以在一次表扫描内改变，因此不会做任何优化。
 
--   **SHIPPABLE | NOT SHIPPABLE**
+-   **SHIPPABLE**|**NOT SHIPPABLE**
 
     表示该函数是否可以下推执行。预留接口，不推荐使用。
 
--   **FENCED | NOT FENCED**
+-   **FENCED**|**NOT FENCED**
 
     声明用户定义的C函数是在保护模式还是非保护模式下执行。预留接口，不推荐使用。
 
@@ -239,11 +239,11 @@
 
     PL/SQL存储过程体。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >当在函数体中创建用户时，日志中会记录密码的明文。因此不建议用户在函数体中创建用户。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >当在函数体中创建用户时，日志中会记录密码的明文。因此不建议用户在函数体中创建用户。
 
 
-## 示例<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
+## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 
 ```
 --定义函数为SQL查询。
@@ -302,7 +302,7 @@ postgres=# DROP FUNCTION func_increment_plsql;
 postgres=# DROP FUNCTION func_add_sql;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
+## 相关链接<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
 [ALTER FUNCTION](ALTER-FUNCTION.md)，[DROP FUNCTION](DROP-FUNCTION.md)
 

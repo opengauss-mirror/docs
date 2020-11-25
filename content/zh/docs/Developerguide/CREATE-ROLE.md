@@ -1,20 +1,20 @@
-# CREATE ROLE<a name="ZH-CN_TOPIC_0242370576"></a>
+# CREATE ROLE<a name="ZH-CN_TOPIC_0289900481"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122112_zh-cn_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>
+## 功能描述<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>
 
 创建角色。
 
 角色是拥有数据库对象和权限的实体。在不同的环境中角色可以认为是一个用户，一个组或者兼顾两者。
 
-## 注意事项<a name="zh-cn_topic_0237122112_zh-cn_topic_0059778189_sca46ba0a91d7470c94ec4197a5befe87"></a>
+## 注意事项<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_sca46ba0a91d7470c94ec4197a5befe87"></a>
 
 -   在数据库中添加一个新角色，角色无登录权限。
 -   创建角色的用户必须具备CREATE ROLE的权限或者是系统管理员。
 
-## 语法格式<a name="zh-cn_topic_0237122112_zh-cn_topic_0059778189_se8fd2944bc8f42e2be5e7bd140f801fc"></a>
+## 语法格式<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_se8fd2944bc8f42e2be5e7bd140f801fc"></a>
 
 ```
-CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
+CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
 ```
 
 其中角色信息设置子句option语法为：
@@ -49,7 +49,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     | PGUSER
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122112_zh-cn_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4"></a>
+## 参数说明<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4"></a>
 
 -   **role\_name**
 
@@ -57,8 +57,8 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     取值范围：字符串，要符合标识符的命名规范，且最多为63个字符。若超过63个字符，数据库会截断并保留前63个字符当做角色名称。在创建角色时，数据库的时候会给出提示信息。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >标识符需要为字母、下划线、数字（0-9）或美元符号（$），且必须以字母（a-z）或下划线（\_）开头。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >标识符需要为字母、下划线、数字（0-9）或美元符号（$），且必须以字母（a-z）或下划线（\_）开头。
 
 -   **password**
 
@@ -71,6 +71,10 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     -   至少包含大写字母（A-Z），小写字母（a-z），数字（0-9），非字母数字字符（限定为\~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?）四类字符中的三类字符。
 
     取值范围：字符串。
+
+-   **EXPIRED**
+
+    在创建用户时可指定EXPIRED参数，即创建密码失效用户，该用户不允许执行简单查询和扩展查询。只有在修改自身密码后才可正常执行语句。
 
 -   DISABLE
 
@@ -141,9 +145,9 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     声明该角色可以使用的并发连接数量。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-   系统管理员不受此参数的限制。  
-    >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   系统管理员不受此参数的限制。
+    >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
 
     取值范围：整数，\>=-1，缺省值为-1，表示没有限制。
 
@@ -208,7 +212,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     当前版本该属性没有实际意义，仅为了语法的前向兼容而保留。
 
 
-## 示例<a name="zh-cn_topic_0237122112_zh-cn_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
+## 示例<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
 
 ```
 --创建一个角色，名为manager，密码为Bigdata@123。
@@ -230,7 +234,7 @@ postgres=# DROP ROLE manager;
 postgres=# DROP ROLE miriam;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122112_zh-cn_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
+## 相关链接<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
-[SET ROLE](SET-ROLE.md)，[ALTER ROLE](ALTER-ROLE.md)，[DROP ROLE](DROP-ROLE.md)，[GRANT](GRANT.md)
+[SET ROLE](zh-cn_topic_0289900009.md)，[ALTER ROLE](ALTER-ROLE.md)，[DROP ROLE](zh-cn_topic_0289900731.md)，[GRANT](GRANT.md)
 

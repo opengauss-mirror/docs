@@ -1,20 +1,20 @@
-# DROP VIEW<a name="ZH-CN_TOPIC_0242370623"></a>
+# DROP VIEW<a name="ZH-CN_TOPIC_0289900219"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122159_zh-cn_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>
+## 功能描述<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>
 
 数据库中强制删除已有的视图。
 
-## 注意事项<a name="zh-cn_topic_0237122159_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
+## 注意事项<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-只有视图的所有者有权限执行DROP VIEW的命令，系统管理员默认拥有此权限。
+只有视图的所有者或者被授予了视图DROP权限的用户才有权限执行DROP VIEW的命令，系统管理员默认拥有此权限。
 
-## 语法格式<a name="zh-cn_topic_0237122159_zh-cn_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
+## 语法格式<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 
 ```
 DROP VIEW [ IF EXISTS ] view_name [, ...] [ CASCADE | RESTRICT ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122159_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
+## 参数说明<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
 -   **IF EXISTS**
 
@@ -31,11 +31,11 @@ DROP VIEW [ IF EXISTS ] view_name [, ...] [ CASCADE | RESTRICT ];
     -   RESTRICT：如果有依赖对象存在，则拒绝删除此视图。此选项为缺省值。
 
 
-## 示例<a name="zh-cn_topic_0237122159_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
+## 示例<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
-请参见CREATE VIEW的[示例](CREATE-VIEW.md#zh-cn_topic_0237122126_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
+请参见CREATE VIEW的[示例](zh-cn_topic_0289900307.md#zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
 
-## 相关链接<a name="zh-cn_topic_0237122159_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
+## 相关链接<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
-[ALTER VIEW](ALTER-VIEW.md)，[CREATE VIEW](CREATE-VIEW.md)
+[ALTER VIEW](ALTER-VIEW.md)，[CREATE VIEW](zh-cn_topic_0289900307.md)
 

@@ -1,14 +1,17 @@
-# ALTER FUNCTION<a name="ZH-CN_TOPIC_0242370525"></a>
+# ALTER FUNCTION<a name="ZH-CN_TOPIC_0289900507"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>
+## 功能描述<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>
 
 修改自定义函数的属性。
 
-## 注意事项<a name="zh-cn_topic_0237122061_zh-cn_topic_0059778614_sf701318086b54f2fad9457e8e0b38f19"></a>
+## 注意事项<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sf701318086b54f2fad9457e8e0b38f19"></a>
 
-只有该函数的所有者，才有权限执行该命令，系统管理员默认拥有该权限。如果函数中涉及对临时表相关的操作，则无法使用ALTER FUNCTION。
+只有函数的所有者或者被授予了函数ALTER权限的用户才能执行ALTER FUNCTION命令，系统管理员默认拥有该权限。针对所要修改属性的不同，还有以下权限约束：
 
-## 语法格式<a name="zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
+-   如果函数中涉及对临时表相关的操作，则无法使用ALTER FUNCTION。
+-   修改函数的所有者或修改函数的模式，当前用户必须是该函数的所有者或者系统管理员，且该用户是新所有者角色的成员。
+
+## 语法格式<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
 -   修改自定义函数的附加参数。
 
@@ -55,7 +58,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
+## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 
 -   **function\_name**
 
@@ -77,9 +80,7 @@
 
 -   **argtype**
 
-    参数类型。
-
-    取值范围：有效的类型，请参考[数据类型](数据类型.md)。
+    函数参数的类型。
 
 -   **CALLED ON NULL INPUT**
 
@@ -180,11 +181,11 @@
     取值范围：已存在的模式。
 
 
-## 示例<a name="zh-cn_topic_0237122061_zh-cn_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
+## 示例<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
 
-请参见CREATE FUNCTION的[示例](CREATE-FUNCTION.md#zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)。
+请参见CREATE FUNCTION的[示例](CREATE-FUNCTION.md#zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)。
 
-## 相关链接<a name="zh-cn_topic_0237122061_zh-cn_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
+## 相关链接<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
 
 [CREATE FUNCTION](CREATE-FUNCTION.md)，[DROP FUNCTION](DROP-FUNCTION.md)
 

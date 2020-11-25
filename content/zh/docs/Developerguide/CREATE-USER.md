@@ -1,19 +1,19 @@
-# CREATE USER<a name="ZH-CN_TOPIC_0242370589"></a>
+# CREATE USER<a name="ZH-CN_TOPIC_0289899951"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
+## 功能描述<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
 
 创建一个用户。
 
-## 注意事项<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
+## 注意事项<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
 
 -   通过CREATE USER创建的用户，默认具有LOGIN权限；
 -   通过CREATE USER创建用户的同时系统会在执行该命令的数据库中，为该用户创建一个同名的SCHEMA；其他数据库中，则不自动创建同名的SCHEMA；用户可使用CREATE SCHEMA命令，分别在其他数据库中，为该用户创建同名SCHEMA。
 -   系统管理员在普通用户同名schema下创建的对象，所有者为schema的同名用户（非系统管理员）。
 
-## 语法格式<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
+## 语法格式<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
 ```
-CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
+CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
 ```
 
 其中option子句用于设置权限及属性等信息。
@@ -48,7 +48,7 @@ CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     | PGUSER
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
+## 参数说明<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
 -   **user\_name**
 
@@ -72,7 +72,7 @@ CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
 CREATE USER的其他参数值请参考[CREATE ROLE](CREATE-ROLE.md)。
 
-## 示例<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
+## 示例<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
 ```
 --创建用户jim，登录密码为Bigdata@123。
@@ -105,7 +105,7 @@ postgres=# DROP USER jim CASCADE;
 postgres=# DROP USER dim CASCADE;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122125_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
+## 相关链接<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
-[ALTER USER](ALTER-USER.md)，[CREATE ROLE](CREATE-ROLE.md)，[DROP USER](DROP-USER.md)
+[ALTER USER](ALTER-USER.md)，[CREATE ROLE](CREATE-ROLE.md)，[DROP USER](zh-cn_topic_0289900387.md)
 

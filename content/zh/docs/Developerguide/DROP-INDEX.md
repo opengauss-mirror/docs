@@ -1,31 +1,29 @@
-# DROP INDEX<a name="ZH-CN_TOPIC_0242370604"></a>
+# DROP INDEX<a name="ZH-CN_TOPIC_0289899909"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122140_zh-cn_topic_0059779018_s6e7bed7d44604f749e4ea7043f81b07b"></a>
+## 功能描述<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s6e7bed7d44604f749e4ea7043f81b07b"></a>
 
 删除索引。
 
-## 注意事项<a name="zh-cn_topic_0237122140_zh-cn_topic_0059779018_saafc32e8c71d4cb7b7d30678c9e4658d"></a>
+## 注意事项<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_saafc32e8c71d4cb7b7d30678c9e4658d"></a>
 
-只有索引的所有者有权限执行DROP INDEX命令，系统管理员默认拥有此权限。
+只有索引的所有者或者拥有索引所在表的INDEX权限的用户有权限执行DROP INDEX命令，系统管理员默认拥有此权限。
 
-## 语法格式<a name="zh-cn_topic_0237122140_zh-cn_topic_0059779018_s79208f25fe214e06b6c7f661c030f3d1"></a>
+## 语法格式<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s79208f25fe214e06b6c7f661c030f3d1"></a>
 
 ```
 DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ] 
     index_name [, ...] [ CASCADE | RESTRICT ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122140_zh-cn_topic_0059779018_s99e6f6efb9f3448f9de8894607958cd3"></a>
+## 参数说明<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s99e6f6efb9f3448f9de8894607958cd3"></a>
 
 -   **CONCURRENTLY**
 
-    以不阻塞DML的方式删除索引（加ShareUpdateExclusiveLock锁）。删除索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现删除过程中不阻塞DML。
+    以不加锁的方式删除索引。删除索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现删除过程中不做阻塞。
 
     此选项只能指定一个索引的名称， 并且CASCADE选项不支持。
 
     普通DROP INDEX命令可以在事务内执行，但是DROP INDEX CONCURRENTLY不可以在事务内执行。
-
-    列存表不支持CONCURRENTLY方式删除索引。
 
 -   **IF EXISTS**
 
@@ -42,11 +40,11 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
     -   RESTRICT（缺省值）：表示有依赖与此索引的对象存在，则该索引无法被删除。
 
 
-## 示例<a name="zh-cn_topic_0237122140_zh-cn_topic_0059779018_s95dd4a9a45334e81be4841d86d7a47f1"></a>
+## 示例<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s95dd4a9a45334e81be4841d86d7a47f1"></a>
 
-请参见CREATE INDEX的[示例](CREATE-INDEX.md#zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362)。
+请参见CREATE INDEX的[示例](zh-cn_topic_0289900160.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362)。
 
-## 相关链接<a name="zh-cn_topic_0237122140_zh-cn_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
+## 相关链接<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
 
-[ALTER INDEX](ALTER-INDEX.md)，[CREATE INDEX](CREATE-INDEX.md)
+[ALTER INDEX](ALTER-INDEX.md)，[CREATE INDEX](zh-cn_topic_0289900160.md)
 

@@ -1,21 +1,20 @@
-# ALTER DATABASE<a name="ZH-CN_TOPIC_0242370519"></a>
+# ALTER DATABASE<a name="ZH-CN_TOPIC_0289900461"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122055_zh-cn_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>
+## 功能描述<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>
 
 修改数据库的属性，包括它的名称、所有者、连接数限制、对象隔离属性等。
 
-## 注意事项<a name="zh-cn_topic_0237122055_zh-cn_topic_0059779247_sb8bbb55d049b42e688a2e152d2f6c737"></a>
+## 注意事项<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_sb8bbb55d049b42e688a2e152d2f6c737"></a>
 
--   只有拥有数据库所有者权限的用户才能执行ALTER DATABASE命令，系统管理员默认拥有此权限。如果是非系统管理员，针对所要修改属性的不同，对其还有以下权限约束：
+-   只有数据库的所有者或者被授予了数据库ALTER权限的用户才能执行ALTER DATABASE命令，系统管理员默认拥有此权限。针对所要修改属性的不同，还有以下权限约束：
     -   修改数据库名称，必须拥有CREATEDB权限。
-    -   修改数据库所有者，当前用户必须是该database的所有者，必须拥有CREATEDB权限，且该用户是新所有者角色的成员。
-    -   修改数据库默认表空间，该用户必须是该database的所有者或系统管理员，必须拥有新表空间的CREATE权限。这个语句会从物理上将一个数据库原来缺省表空间上的表和索引移至新的表空间。注意不在缺省表空间的表和索引不受此影响。
-    -   修改某个按数据库设置的相关参数，只有数据库所有者或者系统管理员可以改变这些设置。
+    -   修改数据库所有者，当前用户必须是该database的所有者或者系统管理员，必须拥有CREATEDB权限，且该用户是新所有者角色的成员。
+    -   修改数据库默认表空间，必须拥有新表空间的CREATE权限。这个语句会从物理上将一个数据库原来缺省表空间上的表和索引移至新的表空间。注意不在缺省表空间的表和索引不受此影响。
     -   修改某个数据库对象隔离属性，只有数据库所有者或者系统管理员可以执行此操作。
 
 -   不能重命名当前使用的数据库，如果需要重新命名，须连接至其他数据库上。
 
-## 语法格式<a name="zh-cn_topic_0237122055_zh-cn_topic_0059779247_s2eca2e2a5fc04ac798bbdf1dce3e7303"></a>
+## 语法格式<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_s2eca2e2a5fc04ac798bbdf1dce3e7303"></a>
 
 -   修改数据库的最大连接数。
 
@@ -66,12 +65,12 @@
     ALTER DATABASE database_name [ WITH ] { ENABLE | DISABLE } PRIVATE OBJECT;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   修改数据库的对象隔离属性时须连接至该数据库，否则无法更改。  
-    >-   新创建的数据库，对象隔离属性默认是关闭的。当开启数据库对象隔离属性后，普通用户只能查看有权访问的对象（表、函数、视图、字段等）。对象隔离特性对管理员用户不生效，当开启对象隔离特性后，管理员也可以查看到全量的数据库对象。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   修改数据库的对象隔离属性时须连接至该数据库，否则无法更改。
+    >-   新创建的数据库，对象隔离属性默认是关闭的。当开启数据库对象隔离属性后，普通用户只能查看有权访问的对象（表、函数、视图、字段等）。对象隔离特性对管理员用户不生效，当开启对象隔离特性后，管理员也可以查看到全量的数据库对象。
 
 
-## 参数说明<a name="zh-cn_topic_0237122055_zh-cn_topic_0059779247_s4d6b72484e3b43969af25757fda7ad81"></a>
+## 参数说明<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_s4d6b72484e3b43969af25757fda7ad81"></a>
 
 -   **database\_name**
 
@@ -128,15 +127,15 @@
     重置全部的数据库会话参数值。
 
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   修改数据库默认表空间，会将旧表空间中的所有表和索引转移到新表空间中，该操作不会影响其他非默认表空间中的表和索引。  
->-   修改的数据库会话参数值，将在下一次会话中生效。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   修改数据库默认表空间，会将旧表空间中的所有表和索引转移到新表空间中，该操作不会影响其他非默认表空间中的表和索引。
+>-   修改的数据库会话参数值，将在下一次会话中生效。
 
-## 示例<a name="zh-cn_topic_0237122055_zh-cn_topic_0059779247_sb089bcdb51bd4932a2967c246217d29e"></a>
+## 示例<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_sb089bcdb51bd4932a2967c246217d29e"></a>
 
-请参考CREATE DATABASE的[示例](CREATE-DATABASE.md#zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)。
+请参考CREATE DATABASE的[示例](zh-cn_topic_0289900066.md#zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)。
 
-## 相关链接<a name="zh-cn_topic_0237122055_zh-cn_topic_0059779247_saa1e5193215b4927989f304541d2ecbd"></a>
+## 相关链接<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_saa1e5193215b4927989f304541d2ecbd"></a>
 
-[CREATE DATABASE](CREATE-DATABASE.md)，[DROP DATABASE](DROP-DATABASE.md)
+[CREATE DATABASE](zh-cn_topic_0289900066.md)，[DROP DATABASE](DROP-DATABASE.md)
 
