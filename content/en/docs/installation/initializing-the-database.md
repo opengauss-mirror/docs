@@ -2,6 +2,9 @@
 
 Use SQL to create a database.
 
+>![](C:/Users/gongsiyi/Desktop/test/05-openGauss Installation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+>To ensure security, change the initial password of user  **omm**  after the first login.
+
 When using an SQL statement to create a database, set the character set to  **GBK**.
 
 ```
