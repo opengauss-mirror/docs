@@ -222,44 +222,45 @@ Take openEuler OS as an example. Assume that the openGauss information is listed
 
 Currently, EulerOS can be installed only when the firewall is disabled.
 
-1.  Check whether the firewall is disabled.
+1. <a name="en-us_topic_0241802566_li17785744465"></a>Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
 
-    ```
-    systemctl status firewalld
-    ```
+   1. Run the  **vim**  command to open the  **config**  file.
 
-    If the firewall is not disabled, go to  [2](#en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_li11887129193617).
+      ```
+      vim /etc/selinux/config
+      ```
 
-    If the firewall is disabled, skip  [2](#en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_li11887129193617).
+   2. Change the value of  **SELINUX**  to  **disabled**  and run the  **:wq**  command to save the change and exit.
 
-2.  <a name="en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_li11887129193617"></a>Disable the firewall.
+      ```
+      SELINUX=disabled
+      ```
 
-    ```
-    systemctl disable firewalld.service
-    systemctl stop firewalld.service
-    ```
 
-3.  Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
+2. Restart the OS.
 
-    a.Run the  **vim**  command to open the  **config**  file.
+   ```
+   reboot
+   ```
 
-    ```
-    vim /etc/selinux/config
-    ```
+3. Check whether the firewall is disabled.
 
-    b.Set the value of  **SELINUX**  to  **disabled**.
+   ```
+   systemctl status firewalld
+   ```
 
-    ```
-    SELINUX=disabled
-    ```
+   If the firewall status is  **active \(running\)**, the firewall is not disabled. Go to  [4](#li17330102819394).
 
-4.  Restart the OS.
+   If the firewall status is  **inactive \(dead\)**, you do not need to disable the firewall.
 
-    ```
-    reboot
-    ```
+4. <a name="li17330102819394"></a>Disable the firewall.
 
-5.  Repeat steps 1 to 3 on other hosts.
+   ```
+   systemctl disable firewalld.service
+   systemctl stop firewalld.service
+   ```
+
+5. Repeat steps 1 to 4 on other hosts.
 
 ### Setting Character Set Parameters
 
@@ -283,7 +284,7 @@ _$Locale/$Time zone_  indicates the locale and time zone to be set, for example,
 Run the  **date -s**  command to set the time of each host to the same time. For example:
 
 ```
-date -s Mon May 11 16:42:11 CST 2020
+date -s "Sat Sep 27 16:00:07 CST 2020"
 ```
 
 ![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -309,27 +310,30 @@ ifconfig NIC ID mtu Value
 
 During the openGauss installation, the user  **root**  is required for remote login. This section describes how to set the user  **root**  for remote login.
 
-1.  Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**.
-    
-a.  Open the  **sshd\_config**  file.
-    
-    ```
-    vim /etc/ssh/sshd_config
-    ```
-    
-    b.  Modify permissions of user  **root**  using either of the following methods:
-    -   Comment out  **PermitRootLogin no**.
-    
-        #PermitRootLogin no
-    
-    -   Set the value of  **PermitRootLogin**  to  **yes**.
-        
-    
-        PermitRootLogin yes
-        
-    
-    c.  Run the  **:wq**  command to save the modification and exit.
-    
+1. Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**a..
+
+   a. Open the  **sshd\_config**  file.
+
+   ```
+   vim /etc/ssh/sshd_config
+   ```
+
+   b. Modify permissions of user  **root**  using either of the following methods:
+
+   - Comment out  **PermitRootLogin no**.
+
+     ```
+     #PermitRootLogin no
+     ```
+
+   - Set the value of  **PermitRootLogin**  to  **yes**.
+
+     ```
+     PermitRootLogin yes
+     ```
+
+   c. Run the  **:wq**  command to save the modification and exit.
+
 2. Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
 
    a.  Open the  **sshd\_config**  file.
