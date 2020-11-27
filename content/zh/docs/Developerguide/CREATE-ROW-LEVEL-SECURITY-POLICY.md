@@ -43,6 +43,18 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     行访问控制策略的表名。
 
+-   **PERMISSIVE | RESTRICTIVE**
+
+    PERMISSIVE指定行访问控制策略为宽容性策略。宽容性策略的条件用OR表达式拼接。
+
+    RESTRICTIVE指定行访问控制策略为限制性策略。限制性策略的条件用AND表达式拼接。拼接方式如下：
+
+    ```
+(using_expression_permissive_1 OR using_expression_permissive_2 ...) AND (using_expression_restrictive_1 AND using_expression_restrictive_2 ...)
+    ```
+
+    缺省值为PERMISSIVE。
+
 -   **command**
 
     当前行访问控制影响的SQL操作，可指定操作包括：ALL、SELECT、UPDATE、DELETE。当未指定时，ALL为默认值，涵盖SELECT、UPDATE、DELETE操作。

@@ -43,6 +43,18 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     Specifies the name of a table to which a row-level access control policy is applied.
 
+-   **PERMISSIVE | RESTRICTIVE**
+
+    PERMISSIVE specifies the row access control strategy as a permissive strategy. The conditions of the tolerance strategy are spliced by OR expressions.
+
+    RESTRICTIVE specifies the row access control strategy as a restrictive strategy. The conditions of the restrictive strategy are spliced with AND expressions. The splicing method is as follows:
+
+    ```
+(using_expression_permissive_1 OR using_expression_permissive_2 ...) AND (using_expression_restrictive_1 AND using_expression_restrictive_2 ...)
+    ```
+
+    The default value is PERMISSIVE.
+
 -   **command**
 
     Specifies the SQL operations affected by a row-level access control policy, including  **ALL**,  **SELECT**,  **UPDATE**, and  **DELETE**. If this parameter is not specified, the default value  **ALL**  will be used, covering  **SELECT**,  **UPDATE**, and  **DELETE**.
