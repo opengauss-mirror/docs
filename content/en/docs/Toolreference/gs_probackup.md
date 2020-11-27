@@ -1,6 +1,6 @@
-# gs\_probackup<a name="EN-US_TOPIC_0283839027"></a>
+# gs\_probackup<a name="EN-US_TOPIC_0289899221"></a>
 
-## Background<a name="section779474172017"></a>
+## Background<a name="en-us_topic_0287276008_section779474172017"></a>
 
 **gs\_probackup**  is a tool used to manage openGauss database backup and restoration. It periodically backs up the openGauss instances so that the server can be restored when the database is faulty.
 
@@ -9,19 +9,20 @@
 -   It supports incremental backup, periodic backup, and remote backup.
 -   It supports settings on the backup retention policy.
 
-## Prerequisites<a name="section95951827112520"></a>
+## Prerequisites<a name="en-us_topic_0287276008_section95951827112520"></a>
 
 -   The openGauss database can be connected.
--   The parameter  **enable\_cbm\_tracking = on**  is manually added to the  **postgresql.conf**  file.
+-   To use PTRACK incremental backup, manually add  **enable\_cbm\_tracking = on**  to  **postgresql.conf**.
 
-## Important Notes<a name="section6439171332614"></a>
+## Important Notes<a name="en-us_topic_0287276008_section6439171332614"></a>
 
--   The backup must be performed by the user who runs the database server. For example, if the database server is run by user  **postgres**, the backup must be performed by user  **postgres**. If the backup is performed in remote mode through SSH, the value of  **--remote-user**  must be  **postgres**.
+-   The backup must be performed by the user who runs the database server.
 -   The major version number of the database server to be backed up must be the same as that of the database server to be restored.
 -   To back up a database in remote mode using SSH, install the database of the same major version on the local and remote hosts, and run the  **ssh-copy-id remote\_user@remote\_host**  command to set an SSH connection without a password between the local host backup user and the remote host database user.
 -   In remote mode, only the subcommands  **add-instance**,  **backup**, and  **restore**  can be executed.
+-   Before running the  **restore**  subcommand, stop the gaussdb process.
 
-## Command Description<a name="section86861610172816"></a>
+## Command Description<a name="en-us_topic_0287276008_section86861610172816"></a>
 
 -   Print the  **gs\_probackup**  version.
 
@@ -37,111 +38,126 @@
     gs_probackup help [command]
     ```
 
--   Initialize the backup directory in the  **backup\_dir**  backup path. The backup directory stores the contents that have been backed up. If the  **backup\_dir**  backup path exists, it must be empty.
+-   Initialize the backup directory in  **backup-path**. The backup directory stores the contents that have been backed up. If the  **backup-path**  backup path exists, it must be empty.
 
     ```
-    gs_probackup init -B backup_dir [--help]
+    gs_probackup init -B backup-path [--help]
     ```
 
--   Initialize a new backup instance in the backup directory of  **backup\_dir**  and generate the  **pg\_probackup.conf**  configuration file, which saves the gs\_probackup settings of the specified data directory  **data\_dir**.
+-   Initialize a new backup instance in the backup directory of  **backup-path**  and generate the  **pg\_probackup.conf**  configuration file, which saves the  **gs\_probackup **settings of the specified data directory  **pgdata-path**.
 
     ```
-    gs_probackup add-instance -B backup_dir -D data_dir --instance=instance_name
-    [--help] [-E external-directory-path]
+    gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
+    [-E external-directories-paths]
     [remote_options]
-    ```
-
--   Delete the backup content related to the specified instance from the  **backup\_dir**  directory.
-
-    ```
-    gs_probackup del-instance -B backup_dir --instance=instance_name
     [--help]
     ```
 
--   Add the specified connection, compression, redundancy, log-related settings, and external directory settings to the  **pg\_probackup.conf**  configuration file or modify the existing settings. You are not advised to manually edit the  **pg\_probackup.conf**  configuration file.
+-   Delete the backup content related to the specified instance from the  **backup-path**  directory.
 
     ```
-    gs_probackup set-config -B backup_dir --instance=instance_name
-    [--help] [--pgdata=pgdata-path]
-    [--retention-redundancy=redundancy] [--retention-window=window]
-    [--compress-algorithm=compression_algorithm] [--compress-level=compression_level]
-    [-d dbname] [-h host] [-p port] [-U username]
-    [--external-dirs=external_directory_path]
-    [--restore-command=cmdline]
-    [remote_options] [logging_options]
+    gs_probackup del-instance -B backup-path --instance=instance_name
+    [--help]
+    ```
+
+-   Add the specified connection, compression, and log-related settings to the  **pg\_probackup.conf**  configuration file or modify the existing settings. You are not advised to manually edit the  **pg\_probackup.conf**  configuration file.
+
+    ```
+    gs_probackup set-config -B backup-path --instance=instance_name
+    [-D pgdata-path] [-E external-directories-paths] [--restore-command=cmdline] [--archive-timeout=timeout]
+    [--retention-redundancy=retention-redundancy] [--retention-window=retention-window] [--wal-depth=wal-depth]
+    [--compress-algorithm=compress-algorithm] [--compress-level=compress-level]
+    [-d dbname] [-h hostname] [-p port] [-U username]
+    [logging_options] [remote_options]
+    [--help]
     ```
 
 -   Add the backup-related settings to the  **backup.control**  configuration file or modify the settings.
 
     ```
-    gs_probackup set-backup -B backup_dir --instance instance_name -i backup_id
-    {--ttl=ttl | --expire-time=time} [--help]
+    gs_probackup set-backup -B backup-path --instance=instance_name -i backup-id
+    [--note=text] [pinning_options]
+    [--help]
     ```
 
--   Display the content of the  **pg\_probackup.conf**  configuration file in the  **backup\_dir/backups/instance\_name**  directory. You can specify  **--format=json**  to display the information in JSON format. By default, the plain text format is used.
+-   Display the content of the  **pg\_probackup.conf**  configuration file in the backup directory. You can specify  **--format=json**  to display the information in JSON format. By default, the plain text format is used.
 
     ```
-    gs_probackup show-config -B backup_dir –instance=instance_name
-    [--format =plain|json]
+    gs_probackup show-config -B backup-path --instance=instance_name
+    [--format=plain|json]
+    [--help]
     ```
 
 -   Display the contents of the backup directory. If  **instance\_name**  and  **backup\_id**  are specified, detailed information about the backup is displayed. You can specify  **--format=json**  to display the information in JSON format. By default, the plain text format is used.
 
     ```
-    gs_probackup show -B backup_dir
-    [--help] [--instance=instance_name] [-i backup_id] [--format=plain|json]
+    gs_probackup show -B backup-path
+    [--instance=instance_name [-i backup-id]] [--archive] [--format=plain|json]
+    [--help]
     ```
 
--   Create a backup for a specified database instance. The  **backup\_mode**  option specifies the backup mode to be used.
+-   Create a backup for a specified database instance.
 
     ```
-    gs_probackup backup -B backup_dir -b backup_mode --instance=instance_name
-    [--help] [-D pgdata-path] [-C] [--stream [-S slot_name] [--temp-slot]]
-    [--backup-pg-log] [-j num_threads] [--progress]
-    [--no-validate] [--skip-block-validation]
-    [-E external_directory_path] [--no-sync] [--note=text]
-    [connection_options] [compression_options] [remote_options]
-    [retention_options] [pinning_options] [logging_options]
+    gs_probackup backup -B backup-path --instance=instance_name -b backup-mode
+    [-D pgdata-path] [-C] [-S slot-name] [--temp-slot] [--backup-pg-log] [-j threads_num] [--progress]
+    [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
+    [--archive-timeout=timeout]
+    [logging_options] [retention_options] [compression_options]
+    [connection_options] [remote_options] [pinning_options]
+    [--help]
     ```
 
--   Restore a specified instance from the backup copy in the  **backup\_dir**  directory. If an instance to be restored is specified,  **pg\_probackup**  will look for its latest backup and restore it to the specified recovery target. Otherwise, the latest backup of any instance is used.
+-   Restore a specified instance from the backup copy in the  **backup-path**  directory. If an instance to be restored is specified,  **gs\_probackup**  will look for its latest backup and restore it to the specified recovery target. Otherwise, the latest backup of any instance is used.
 
     ```
-    gs_probackup restore -B backup_dir --instance instance_name
-    [--help] [-D data_dir] [-i backup_id] [-j num_threads] [--progress]
-    [-T OLDDIR=NEWDIR] [--external-mapping=OLDDIR=NEWDIR] [--skip-external-dirs] [-I incremental_mode]
-    [-R | --restore-as-replica] [--no-validate] [--skip-block-validation] [--force]
-    [--restore-command=cmdline]
-    [recovery_options] [logging_options] [remote_options]
+    gs_probackup restore -B backup-path --instance=instance_name
+    [-D pgdata-path] [-i backup_id] [-j threads_num] [--progress] [--force] [--no-sync] [--no-validate] [--skip-block-validation]
+    [--external-mapping=OLDDIR=NEWDIR] [-T OLDDIR=NEWDIR] [--skip-external-dirs] [-I incremental_mode]
+    [recovery_options] [remote_options] [logging_options]
+    [--help]
     ```
 
 -   Merge all incremental backups between the specified incremental backup and its parent full backup into the parent full backup. The parent full backup will receive all merged data, while the merged incremental backup will be deleted as redundancy.
 
     ```
-    gs_probackup merge -B backup_dir --instance instance_name -i backup_id
-    [--help] [-j num_threads] [--progress]
-    [logging_options]
+    gs_probackup merge -B backup-path --instance=instance_name -i backup_id
+    [-j threads_num] [--progress] [logging_options]
+    [--help]
     ```
 
--   Delete a backup with a specified  **backup\_id**  or delete backups and archived WALs that do not meet the current retention policy.
+-   Delete a specified backup or delete backups that do not meet the current retention policy.
 
     ```
-    gs_probackup delete -B backup_dir --instance instance_name
-    [--help] [-j num_threads] [--progress]
-    [--retention-redundancy=redundancy][--retention-window=window]
+    gs_probackup delete -B backup-path --instance=instance_name
     [-i backup-id | --delete-expired | --merge-expired | --status=backup_status]
-    [--delete-wal] [--dry-run]
+    [--delete-wal] [-j threads_num] [--progress]
+    [--retention-redundancy=retention-redundancy] [--retention-window=retention-window]
+    [--wal-depth=wal-depth] [--dry-run]
     [logging_options]
+    [--help]
+    ```
+
+-   Verify that all files required for restoring the database exist and are not damaged. If  **instance\_name **is not specified,  **gs\_probackup **verifies all available backups in the backup directory. If  **instance\_name **is specified and no additional options are specified,  **gs\_probackup **verifies all available backups for this backup instance. If both  **instance\_name **and  **backup-id **or recovery objective-related options are specified,  **gs\_probackup **checks whether these options can be used to restore the database.
+
+    ```
+    gs_probackup validate -B backup-path
+    [--instance=instance_name] [-i backup-id]
+    [-j threads_num] [--progress] [--skip-block-validation]
+    [--recovery-target-time=time | --recovery-target-xid=xid | --recovery-target-lsn=lsn | --recovery-target-name=target-name]
+    [--recovery-target-inclusive=boolean]
+    [logging_options]
+    [--help] 
     ```
 
 
-## Parameter Description<a name="section520716591338"></a>
+## Parameter Description<a name="en-us_topic_0287276008_section520716591338"></a>
 
 **Common parameters**
 
 -   command
 
-    Specifies subcommands except  **version**  and  **help**:  **init**,  **add-instance**,  **del-instance**,  **set-config**,  **set-backup**,  **show-config**,  **show**,  **backup**,  **restore**,  **merge**  and  **delete**.
+    Specifies subcommands except  **version**  and  **help**:  **init**,  **add-instance**,  **del-instance**,  **set-config**,  **set-backup**,  **show-config**,  **show**,  **backup**,  **restore**,  **merge**,  **delete**, and  **validate**.
 
 -   -?, --help
 
@@ -153,42 +169,56 @@
 
     Prints the  **gs\_probackup**  version and exits.
 
--   -B backup\_dir, --backup-path=backup\_dir
+-   -B  _backup-path_, --backup-path=_backup-path_
 
     Backup path.
 
     System environment variable:  _$BACKUP\_PATH_
 
--   -D data\_dir, --pgdata=data\_dir
+-   -D  _pgdata-path_, --pgdata=_pgdata-path_
 
     Path of the data directory.
 
     System environment variable:  _$PGDATA_
 
--   --instance=instance\_name
+-   --instance=_instance\_name_
 
     Instance name.
 
--   -i id, --backup-id=id
+-   -i  _backup-id_, --backup-id=_backup-id_
 
     Unique identifier of a backup.
 
--   -j num\_threads, --threads=num\_threads
+-   --format=_format_
+
+    Specifies format of the backup information to be displayed. The plain and JSON formats are supported.
+
+    Default value:  **plain**
+
+-   --status=_backup\_status_
+
+    Deletes all backups in a specified status.
+
+-   -j  _threads\_num_, --threads=_threads\_num_
 
     Sets the number of concurrent threads for the backup, restoration, and combination processes.
+
+-   --archive
+
+    Displays WAL archiving information.
 
 -   --progress
 
     Displays progress.
 
--   --note=text
+-   --note=_text_
 
     Adds a note to the backup.
 
 
-**Parameters for backup**
+**Backup-related parameters**
 
--   -b mode, --backup-mode=mode
+-   -b  _backup-mode_, --backup-mode=_backup-mode_
 
     Specifies the backup mode. The value can be  **FULL**  or  **PTRACK**.
 
@@ -200,25 +230,25 @@
 
     Expands checkpoints within a period of time. By default,  **gs\_probackup**  attempts to complete checkpoints as soon as possible.
 
--   --stream
+-   -S  _slot-name_, --slot=_slot-name_
 
-    Transfers files from the database server in the form of stream. A stream backup containing all necessary WAL files is generated.
+    Specifies the replication slot for WAL stream processing.
 
 -   --temp-slot
 
-    Creates a temporary physical replication slot for WAL stream processing in the backup instance to ensure that all required WAL segments are still available during the backup. This parameter can be used only with the  **--stream**  parameter. The default slot name is  **pg\_probackup\_slot**, which can be changed using the  **--slot/-S**  option.
+    Creates a temporary physical replication slot for WAL stream processing in the backup instance to ensure that all required WAL segments are still available during the backup.
 
--   -S slot\_name, --slot=slot\_name
-
-    Specifies the replication slot for WAL stream processing. This parameter can be used only with the  **--stream**  parameter.
+    The default slot name is  **pg\_probackup\_slot**, which can be changed using the  **--slot/-S**  option.
 
 -   --backup-pg-log
 
     Includes the log directory in the backup. This directory typically contains log messages. By default, the log directory is not included.
 
--   -E external\_directory\_path, --external-dirs=external\_directory\_path
+-   -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
 
     Includes the specified directory in the backup. This option is useful for backing up scripts in external data directories, sql dumps, and configuration files. To back up multiple external directories, use colons \(:\) to separate their paths in Unix.
+
+    Example: -E /tmp/dir1:/tmp/dir2
 
 -   --skip-block-validation
 
@@ -232,18 +262,28 @@
 
     Disables backup file synchronization to the disk.
 
+-   --archive-timeout=_timeout_
 
-**Parameters for restore**
+    Specifies timeout interval for streaming processing, in seconds.
 
--   -I, --incremental-mode=none|lsn
+    Default value:  **300**
+
+
+**Restoration-related parameters**
+
+-   -I, --incremental-mode=none|checksum|lsn
 
     Reuses the valid pages available in PGDATA if they are not modified.
 
     Default value:  **none**
 
--   -T OLDDIR=NEWDIR, --tablespace-mapping=OLDDIR=NEWDIR
+-   --external-mapping=_OLDDIR=NEWDIR_
 
-    Relocates the tablespace from the  **OLDDIR**  directory to the  **NEWDIR**  directory during the restoration.  **OLDDIR**  and  **NEWDIR**  must be absolute paths. If the path contains an equal sign \(=\), use a backslash \(\\\) to escape. This parameter can be specified multiple times for multiple tablespaces.
+    During restoration, the external directory contained in the backup is moved from  **OLDDIR **to  **NEWDIR**.  **OLDDIR**  and  **NEWDIR**  must be absolute paths. If the path contains an equal sign \(=\), use a backslash \(\\\) to escape. This option can be specified for multiple directories.
+
+-   -T  _OLDDIR=NEWDIR_, --tablespace-mapping=_OLDDIR=NEWDIR_
+
+    Relocates the tablespace from the  **OLDDIR**  directory to the  **NEWDIR**  directory during the restoration.  **OLDDIR**  and  **NEWDIR**  must be absolute paths. If the path contains an equal sign \(=\), use a backslash \(\\\) to escape. This parameter can be specified multiple times for multiple tablespaces. This parameter must be used together with  **--external-mapping**.
 
 -   --skip-external-dirs
 
@@ -257,51 +297,33 @@
 
     Skips the backup verification.
 
--   --restore-command=cmdline
-
-    Specifies restoration-related commands, for example,  **--restore-command='cp /mnt/server/archivedir/%f "%p"'**.
-
 -   --force
 
     Specifies the invalid state that allows ignoring backup. This flag can be used if data needs to be restored from a damaged or invalid backup. Exercise caution when using it.
 
 
-**Parameters for recovery target**
+**Recovery objective-related parameters \(recovery\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->If continuous WAL archiving is configured, the following parameters can be used together with the  **restore**  command.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+Currently, continuous WAL archiving PITR cannot be configured. Therefore, parameter usage is restricted as follows:
 
--   --recovery-target=immediate|latest
+-   --recovery-target-lsn=_lsn_
 
-    Defines when to stop the recovery.
+    Specifies LSN to be restored. Currently, only the backup stop LSN can be specified.
 
-    **immediate**: When the consistency status of the specified backup is reached, the restoration stops. If the  **-i/--backup\_id**  parameter is omitted, the restoration stops after the latest available backup is restored.
+-   --recovery-target-name=_target-name_
 
-    **latest**: Data is continuously restored until all available WAL segments in all archives are applied.
+    Specifies named savepoint to which data is restored. You can obtain the savepoint by viewing the recovery-name column in the backup.
 
-    The default value of  **--recovery-target**  depends on the WAL transmission mode of the backup to be restored. Set the backup mode of the streaming backup to  **immediate**  and the archive mode to  **latest**.
+-   --recovery-target-time=_time_
 
--   --recovery-target-timeline=timeline
+    Specifies time to which data is restored. Currently, only recovery-time can be specified.
 
-    Specifies the timeline to which the data is to be restored. By default, the timeline of the specified backup is used.
+-   --recovery-target-xid=_xid_
 
--   --recovery-target-lsn=lsn
+    Specifies transaction ID to which data is restored. Currently, only recovery-xid can be specified.
 
-    Specifies the LSN to be restored.
-
--   --recovery-target-name=recovery\_target\_name
-
-    Specifies the named savepoint to which the data is to be restored.
-
--   --recovery-target-time=time
-
-    Specify the time to which the data is to be restored.
-
--   --recovery-target-xid=xid
-
-    Specifies the transaction ID to be restored.
-
--   --recovery-target-inclusive=boolean
+-   --recovery-target-inclusive=_boolean_
 
     When this parameter is set to  **true**, the recovery target will include the specified content.
 
@@ -309,29 +331,25 @@
 
     This parameter must be used together with  **--recovery-target-name**,  **--recovery-target-time**,  **--recovery-target-lsn**, or  **--recovery-target-xid**.
 
--   --recovery-target-action=pause|promote|shutdown
 
-    Specifies the operations to be executed by the server when the target is restored.
+**Retention-related parameters \(retention\_options\)**
 
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+The following parameters can be used together with the  **backup**  and  **delete**  commands.   
 
-**Parameters for retention**
-
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->The following parameters can be used together with the  **backup**  and  **delete**  commands.
-
--   --retention-redundancy=redundancy
+-   --retention-redundancy=_retention-redundancy_
 
     Number of full backups retained in the data directory. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
     Default value:  **0**
 
--   --retention-window=window
+-   --retention-window=_retention-window_
 
     Specifies the retention period. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
     Default value:  **0**
 
--   --wal-depth=wal\_depth
+-   --wal-depth=_wal-depth_
 
     Latest number of valid backups that must be retained on each timeline to perform the PITR capability The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
@@ -354,12 +372,12 @@
     Displays the current status of all available backups. Expired backups will not be deleted or merged.
 
 
-**Parameters for fixed backup**
+**Fixed backup-related parameters \(pinning\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->To exclude certain backups from the established retention policy, you can use the following parameters with the  **backup**  and  **set-backup**  commands.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+To exclude certain backups from the established retention policy, you can use the following parameters with the  **backup**  and  **set-backup**  commands.  
 
--   --ttl=ttl
+-   --ttl=_interval_
 
     Specifies a fixed amount of time to back up data from the restoration time. The value must be a positive integer. The value  **0**  indicates that the backup is canceled.
 
@@ -367,28 +385,30 @@
 
     For example,  **--ttl=30d**.
 
--   --expire-time=time
+-   --expire-time=_time_
 
     Specifies the timestamp when the backup is invalid. The time stamp must comply with the ISO-8601 standard.
 
     For example,  **--expire-time='2020-01-01 00:00:00+03'**.
 
 
-**Parameters for log**
+**Log-related parameters \(logging\_options\)**
 
 Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **off**.
 
--   --log-level-console=log\_level
+-   --log-level-console=_log-level-console_
 
     Sets the level of logs to be sent to the console. Each level contains all the levels following it. A higher level indicates fewer messages sent. If this parameter is set to  **off**, the log recording function of the console is disabled.
 
     Default value:  **info**
 
--   --log-level-file=log\_level
+-   --log-level-file=_log-level-file_
 
     Sets the level of logs to be sent to the log file. Each level contains all the levels following it. A higher level indicates fewer messages sent. If this parameter is set to  **off**, the log file recording function is disabled.
 
--   --log-filename=log\_filename
+    Default value:  **off**
+
+-   --log-filename=_log-filename_
 
     Specifies the name of the log file to be created. The file name can use the strftime mode. Therefore,  **%-escapes**  can be used to specify the file name that changes with time.
 
@@ -396,21 +416,21 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     This parameter is valid if the  **--log-level-file**  parameter is specified to enable log file recording.
 
-    Default value:  **pg\_probackup.log**
+    Default value:  **"pg\_probackup.log"**
 
--   --error-log-filename=error\_log\_filename
+-   --error-log-filename=_error-log-filename_
 
     Specifies the name of the log file that is used only for error logs. The specifying method is the same as that of the  **--log-filename**  parameter.
 
     It is used for troubleshooting and monitoring.
 
--   --log-directory=log\_directory
+-   --log-directory=_log-directory_
 
     Specifies the directory where log files are created. The value must be an absolute path. This directory is created when the first log is written.
 
-    Default value:  **$BACKUP\_PATH/log/**
+    Default value:  **$BACKUP\_PATH/log**
 
--   --log-rotation-size=log\_rotation\_size
+-   --log-rotation-size=_log-rotation-size_
 
     Specifies the maximum size of a log file. If the maximum size is reached, the log file will be circulated after the  **gs\_probackup**  command is executed. The  **help**  and  **version**  commands will not lead to a log file circulation. The value  **0**  indicates that the file size-based loop is disabled.
 
@@ -418,7 +438,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value:  **0**
 
--   --log-rotation-age=log\_rotation\_age
+-   --log-rotation-age=_log-rotation-age_
 
     Maximum life cycle of a log file. If the maximum size is reached, the log file will be circulated after the  **gs\_probackup**  command is executed. The  **help**  and  **version**  commands will not lead to a log file circulation. The  **$BACKUP\_PATH/log/log\_rotation**  directory saves the time of the last created log file. The value  **0**  indicates that the time-based loop is disabled.
 
@@ -427,18 +447,18 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
     Default value:  **0**
 
 
-**Parameters for connection**
+**Connection-related parameters \(connection\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->The following parameters can be used together with the  **backup**  command.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+The following parameters can be used together with the  **backup**  command.  
 
--   -d dbname, --pgdatabase=dbname
+-   -d  _dbname_, --pgdatabase=_dbname_
 
     Specifies the name of the database to connect to. This connection is only used to manage the backup process. Therefore, you can connect to any existing database. If this parameter is not specified in the command line, the  _PGDATABASE_  environment variable, or the  **pg\_probackup.conf**  configuration file, gs\_probackup attempts to obtain the value from the  _PGUSER_  environment variable. If the  _PGUSER_  variable is not set, the value is obtained from the current user name.
 
     System environment variable:  _$PGDATABASE_
 
--   -h host, --pghost=host
+-   -h  _hostname_, --pghost=_hostname_
 
     Specifies the host name of the system on which the server is running. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket.
 
@@ -446,7 +466,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value:  **local socket**
 
--   -p port, --pgport=port
+-   -p  _port_, --pgport=_p__ort_
 
     Specifies the TCP port or local Unix domain socket file name extension on which the server is listening for connections.
 
@@ -454,7 +474,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value:  **5432**
 
--   -U username, --pguser=username
+-   -U  _username_, --pguser=_username_
 
     Specifies the username of the host to be connected.
 
@@ -464,29 +484,31 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Never issues a password prompt. The connection attempt fails if the host requires password verification and the password is not provided in other ways. This parameter is useful in batch jobs and the scripts that require no user password.
 
--   -W, --password
+-   -W  _password_, --password=_password_
 
-    Forcibly issues a password prompt.
+    User password for database connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  parameter. If the  **-W**  parameter is not provided and you are not a system administrator, the system will ask you to enter a password.
 
 
-**Parameters for compression**
+**Compression-related parameters \(compression\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->The following parameters can be used together with the  **backup**  command.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+The following parameters can be used together with the  **backup**  command.  
 
--   --compress-algorithm=compression\_algorithm
+-   --compress-algorithm=_compress-algorithm_
 
-    Specifies the algorithm used to compress data file. The value can be  **zlib**,  **pglz**, or  **none**. If  **zlib**  or  **pglz**  is set, compression is enabled. By default, the compression function is disabled.
+    Specifies the algorithm used to compress data file.
+
+    The value can be  **zlib**,  **pglz**, or  **none**. If  **zlib**  or  **pglz**  is set, compression is enabled. By default, the compression function is disabled.
 
     Default value:  **none**
 
--   --compress-level=compression\_level
+-   --compress-level=_compress-level_
 
-    Specifies the compression level. Value range:
+    Specifies the compression level. Value range: 0-9
 
     -   **0**  indicates no compression.
-    -   **1**  indicates the compression ratio is the lowest and processing speed the fastest.
-    -   **9**  indicates the compression ratio is the highest and processing speed the slowest.
+    -   **1**  indicates that the compression ratio is the lowest and processing speed the fastest.
+    -   **9**  indicates that the compression ratio is the highest and processing speed the slowest.
     -   This parameter can be used together with  **--compress-algorithm**.
 
     Default value:  **1**
@@ -496,12 +518,12 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
     Compresses with  **--compress-algorithm=zlib**  and  **--compress-level=1**.
 
 
-**Parameters for remote mode**
+**Remote mode-related parameters \(remote\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->The following are parameters that remotely run gs\_probackup through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.
+![](public_sys-resources/icon-note.gif) **NOTE:**   
+The following are parameters that remotely run gs\_probackup through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.  
 
--   --remote-proto=proto
+-   --remote-proto=_protocol_
 
     Specifies the protocol used for remote operations. Currently, only the SSH protocol is supported. Valid value:
 
@@ -511,32 +533,36 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     If  **--remote-host**  is specified, this parameter can be omitted.
 
--   --remote-host=destination
+-   --remote-host=_destination_
 
     Specifies the IP address or host name of the remote host to be connected.
 
--   --remote-port=port
+-   --remote-port=_port_
 
     Specifies the port number of the remote host to be connected.
 
     Default value:  **22**
 
--   --remote-user=username
+-   --remote-user=_username_
 
     Specifies the remote host user for SSH connection. If this parameter is not specified, the user who initiates the SSH connection is used.
 
     Default value:  **the current user**.
 
--   --remote-path=path
+-   --remote-path=_path_
 
     Specifies the installation directory of gs\_probackup in the remote system.
 
--   --ssh-options=ssh\_options
+    Default value: current path
+
+-   --ssh-options=_ssh\_options_
 
     Specifies the character string of the SSH command line parameter.
 
+    Example: --ssh-options='-c cipher\_spec -F configfile'
 
-## Backup Process<a name="section1735727125216"></a>
+
+## Backup Process<a name="en-us_topic_0287276008_section1735727125216"></a>
 
 1.  Initialize the backup directory. Create the  **backups/**  and  **wal/**  subdirectories in the specified directory to store backup files and WAL files respectively.
 
@@ -547,7 +573,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 2.  Add a new backup instance. gs\_probackup can store backups of multiple database instances in the same backup directory.
 
     ```
-    gs_probackup add-instance -B backup_dir -D data_dir --instance instance_name [remote_options]
+    gs_probackup add-instance -B backup_dir -D data_dir --instance instance_name
     ```
 
 3.  Create a backup for a specified database instance. Before performing an incremental backup, you must create at least one full backup.
@@ -559,7 +585,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 4.  Restore data from the backup of a specified DB instance.
 
     ```
-    gs_probackup restore -B backup_dir --instance instance_name -i backup_id
+    gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
     ```
 
 

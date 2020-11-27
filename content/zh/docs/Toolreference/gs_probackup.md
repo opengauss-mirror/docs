@@ -1,6 +1,6 @@
-# gs\_probackup<a name="ZH-CN_TOPIC_0282080143"></a>
+# gs\_probackup<a name="ZH-CN_TOPIC_0289899221"></a>
 
-## 背景信息<a name="section779474172017"></a>
+## 背景信息<a name="zh-cn_topic_0287276008_section779474172017"></a>
 
 gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。它对openGauss实例进行定期备份，以便在数据库出现故障时能够恢复服务器。
 
@@ -9,19 +9,20 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   支持增量备份、定期备份和远程备份。
 -   可设置备份的留存策略。
 
-## 前提条件<a name="section95951827112520"></a>
+## 前提条件<a name="zh-cn_topic_0287276008_section95951827112520"></a>
 
 -   可以正常连接openGauss数据库。
--   在postgresql.conf中手动添加参数“enable\_cbm\_tracking = on”。
+-   若要使用PTRACK增量备份，需在postgresql.conf中手动添加参数“enable\_cbm\_tracking = on”。
 
-## 限制说明<a name="section6439171332614"></a>
+## 限制说明<a name="zh-cn_topic_0287276008_section6439171332614"></a>
 
--   备份必须由运行数据库服务器的用户执行。例如，数据库服务器由用户postgres运行，则备份必须由用户postgres执行。如果是通过ssh在远程模式下执行备份，--remote-user参数的值应为postgres。
+-   备份必须由运行数据库服务器的用户执行。
 -   备份和恢复的数据库服务器的主版本号必须相同。
 -   如果要通过ssh在远程模式下备份数据库，需要在本地和远程主机安装相同主版本的数据库，并通过ssh-copy-id remote\_user@remote\_host命令设置本地主机备份用户和远程主机数据库用户的无密码ssh连接。
 -   远程模式下只能执行add-instance、backup、restore子命令。
+-   使用restore子命令前，应先停止gaussdb进程。
 
-## 命令说明<a name="section86861610172816"></a>
+## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>
 
 -   打印gs\_probackup版本。
 
@@ -37,111 +38,126 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     gs_probackup help [command]
     ```
 
--   初始化备份路径backup\_dir中的备份目录，该目录将存储已备份的内容。如果备份路径backup\_dir已存在，则backup\_dir必须为空目录。
+-   初始化备份路径_backup-path_中的备份目录，该目录将存储已备份的内容。如果备份路径_backup-path_已存在，则_backup-path_必须为空目录。
 
     ```
-    gs_probackup init -B backup_dir [--help]
+    gs_probackup init -B backup-path [--help]
     ```
 
--   在备份路径backup\_dir内初始化一个新的备份实例，并生成pg\_probackup.conf配置文件，该文件保存了指定数据目录data\_dir的gs\_probackup设置。
+-   在备份路径_backup-path_内初始化一个新的备份实例，并生成pg\_probackup.conf配置文件，该文件保存了指定数据目录_pgdata-path_的gs\_probackup设置。
 
     ```
-    gs_probackup add-instance -B backup_dir -D data_dir --instance=instance_name
-    [--help] [-E external-directory-path]
+    gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
+    [-E external-directories-paths]
     [remote_options]
-    ```
-
--   在备份路径backup\_dir内删除指定实例相关的备份内容。
-
-    ```
-    gs_probackup del-instance -B backup_dir --instance=instance_name
     [--help]
     ```
 
--   将指定的连接、压缩、冗余、日志相关设置和外部目录设置添加到pg\_probackup.conf配置文件中，或修改已设置的值。不推荐手动编辑pg\_probackup.conf配置文件。
+-   在备份路径_backup-path_内删除指定实例相关的备份内容。
 
     ```
-    gs_probackup set-config -B backup_dir --instance=instance_name
-    [--help] [--pgdata=pgdata-path]
-    [--retention-redundancy=redundancy] [--retention-window=window]
-    [--compress-algorithm=compression_algorithm] [--compress-level=compression_level]
-    [-d dbname] [-h host] [-p port] [-U username]
-    [--external-dirs=external_directory_path]
-    [--restore-command=cmdline]
-    [remote_options] [logging_options]
+    gs_probackup del-instance -B backup-path --instance=instance_name
+    [--help]
+    ```
+
+-   将指定的连接、压缩、日志等相关设置添加到pg\_probackup.conf配置文件中，或修改已设置的值。不推荐手动编辑pg\_probackup.conf配置文件。
+
+    ```
+    gs_probackup set-config -B backup-path --instance=instance_name
+    [-D pgdata-path] [-E external-directories-paths] [--restore-command=cmdline] [--archive-timeout=timeout]
+    [--retention-redundancy=retention-redundancy] [--retention-window=retention-window] [--wal-depth=wal-depth]
+    [--compress-algorithm=compress-algorithm] [--compress-level=compress-level]
+    [-d dbname] [-h hostname] [-p port] [-U username]
+    [logging_options] [remote_options]
+    [--help]
     ```
 
 -   将备份相关设置添加到backup.control配置文件中，或修改已设置的值。
 
     ```
-    gs_probackup set-backup -B backup_dir --instance instance_name -i backup_id
-    {--ttl=ttl | --expire-time=time} [--help]
+    gs_probackup set-backup -B backup-path --instance=instance_name -i backup-id
+    [--note=text] [pinning_options]
+    [--help]
     ```
 
--   显示位于“backup\_dir/backups/instance\_name”目录中的pg\_probackup.conf配置文件的内容。可以通过指定--format=json选项，以json格式显示。默认情况下，显示为纯文本格式。
+-   显示位于备份目录中的pg\_probackup.conf配置文件的内容。可以通过指定--format=json选项，以json格式显示。默认情况下，显示为纯文本格式。
 
     ```
-    gs_probackup show-config -B backup_dir –instance=instance_name
-    [--format =plain|json]
+    gs_probackup show-config -B backup-path --instance=instance_name
+    [--format=plain|json]
+    [--help]
     ```
 
 -   显示备份目录的内容。如果指定了instance\_name和backup\_id，则显示该备份的详细信息。可以通过指定--format=json选项，以json格式显示。默认情况下，备份目录的内容显示为纯文本格式。
 
     ```
-    gs_probackup show -B backup_dir
-    [--help] [--instance=instance_name] [-i backup_id] [--format=plain|json]
+    gs_probackup show -B backup-path
+    [--instance=instance_name [-i backup-id]] [--archive] [--format=plain|json]
+    [--help]
     ```
 
--   创建指定实例的备份。backup\_mode选项指定要使用的备份模式。
+-   创建指定实例的备份。
 
     ```
-    gs_probackup backup -B backup_dir -b backup_mode --instance=instance_name
-    [--help] [-D pgdata-path] [-C] [--stream [-S slot_name] [--temp-slot]]
-    [--backup-pg-log] [-j num_threads] [--progress]
-    [--no-validate] [--skip-block-validation]
-    [-E external_directory_path] [--no-sync] [--note=text]
-    [connection_options] [compression_options] [remote_options]
-    [retention_options] [pinning_options] [logging_options]
+    gs_probackup backup -B backup-path --instance=instance_name -b backup-mode
+    [-D pgdata-path] [-C] [-S slot-name] [--temp-slot] [--backup-pg-log] [-j threads_num] [--progress]
+    [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
+    [--archive-timeout=timeout]
+    [logging_options] [retention_options] [compression_options]
+    [connection_options] [remote_options] [pinning_options]
+    [--help]
     ```
 
--   从备份目录backup\_dir中的备份副本恢复指定实例。如果指定了恢复目标选项， pg\_probackup将查找最近的备份并将其还原到指定的恢复目标。否则，使用最近一次备份。
+-   从备份目录_backup-path_中的备份副本恢复指定实例。如果指定了恢复目标选项，gs\_probackup将查找最近的备份并将其还原到指定的恢复目标。否则，使用最近一次备份。
 
     ```
-    gs_probackup restore -B backup_dir --instance instance_name
-    [--help] [-D data_dir] [-i backup_id] [-j num_threads] [--progress]
-    [-T OLDDIR=NEWDIR] [--external-mapping=OLDDIR=NEWDIR] [--skip-external-dirs] [-I incremental_mode]
-    [-R | --restore-as-replica] [--no-validate] [--skip-block-validation] [--force]
-    [--restore-command=cmdline]
-    [recovery_options] [logging_options] [remote_options]
+    gs_probackup restore -B backup-path --instance=instance_name
+    [-D pgdata-path] [-i backup_id] [-j threads_num] [--progress] [--force] [--no-sync] [--no-validate] [--skip-block-validation]
+    [--external-mapping=OLDDIR=NEWDIR] [-T OLDDIR=NEWDIR] [--skip-external-dirs] [-I incremental_mode]
+    [recovery_options] [remote_options] [logging_options]
+    [--help]
     ```
 
 -   将指定的增量备份与其父完全备份之间的所有增量备份合并到父完全备份。父完全备份将接收所有合并的数据，而已合并的增量备份将作为冗余被删除。
 
     ```
-    gs_probackup merge -B backup_dir --instance instance_name -i backup_id
-    [--help] [-j num_threads] [--progress]
-    [logging_options]
+    gs_probackup merge -B backup-path --instance=instance_name -i backup_id
+    [-j threads_num] [--progress] [logging_options]
+    [--help]
     ```
 
--   删除指定backup\_id的备份，或删除不满足当前保留策略的备份和归档WAL。
+-   删除指定备份，或删除不满足当前保留策略的备份。
 
     ```
-    gs_probackup delete -B backup_dir --instance instance_name
-    [--help] [-j num_threads] [--progress]
-    [--retention-redundancy=redundancy][--retention-window=window]
+    gs_probackup delete -B backup-path --instance=instance_name
     [-i backup-id | --delete-expired | --merge-expired | --status=backup_status]
-    [--delete-wal] [--dry-run]
+    [--delete-wal] [-j threads_num] [--progress]
+    [--retention-redundancy=retention-redundancy] [--retention-window=retention-window]
+    [--wal-depth=wal-depth] [--dry-run]
     [logging_options]
+    [--help]
+    ```
+
+-   验证恢复数据库所需的所有文件是否存在且未损坏。如果未指定_instance\_name_，gs\_probackup将验证备份目录中的所有可用备份。如果指定_instance\_name_而不指定任何附加选项，gs\_probackup将验证此备份实例的所有可用备份。如果指定了_instance\_name_并且指定_backup-id_或恢复目标相关选项，gs\_probackup将检查是否可以使用这些选项恢复数据库。
+
+    ```
+    gs_probackup validate -B backup-path
+    [--instance=instance_name] [-i backup-id]
+    [-j threads_num] [--progress] [--skip-block-validation]
+    [--recovery-target-time=time | --recovery-target-xid=xid | --recovery-target-lsn=lsn | --recovery-target-name=target-name]
+    [--recovery-target-inclusive=boolean]
+    [logging_options]
+    [--help] 
     ```
 
 
-## 参数说明<a name="section520716591338"></a>
+## 参数说明<a name="zh-cn_topic_0287276008_section520716591338"></a>
 
 **通用参数**
 
 -   command
 
-    gs\_probackup除version和help以外的子命令：init、add-instance、del-instance、set-config、set-backup、show-config、show、backup、restore、merge、delete。
+    gs\_probackup除version和help以外的子命令：init、add-instance、del-instance、set-config、set-backup、show-config、show、backup、restore、merge、delete、validate。
 
 -   -?, --help
 
@@ -153,42 +169,56 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     打印gs\_probackup版本，然后退出。
 
--   -B backup\_dir, --backup-path=backup\_dir
+-   -B  _backup-path_, --backup-path=_backup-path_
 
     备份的路径。
 
     系统环境变量：$BACKUP\_PATH
 
--   -D data\_dir, --pgdata=data\_dir
+-   -D  _pgdata-path_, --pgdata=_pgdata-path_
 
     数据目录的路径。
 
     系统环境变量：$PGDATA
 
--   --instance=instance\_name
+-   --instance=_instance\_name_
 
     实例名。
 
--   -i id, --backup-id=id
+-   -i  _backup-id_, --backup-id=_backup-id_
 
     备份的唯一标识。
 
--   -j num\_threads, --threads=num\_threads
+-   --format=_format_
+
+    指定显示备份信息的格式，支持plain和json格式。
+
+    默认值：plain
+
+-   --status=_backup\_status_
+
+    删除指定状态的所有备份。
+
+-   -j  _threads\_num_, --threads=_threads\_num_
 
     设置备份、还原、合并进程的并行线程数。
+
+-   --archive
+
+    显示WAL归档信息。
 
 -   --progress
 
     显示进度。
 
--   --note=text
+-   --note=_text_
 
     给备份添加note。
 
 
-**backup参数**
+**备份相关参数**
 
--   -b mode, --backup-mode=mode
+-   -b  _backup-mode_, --backup-mode=_backup-mode_
 
     指定备份模式，支持FULL和PTRACK。
 
@@ -200,25 +230,25 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     将检查点在一段时间内展开。默认情况下，gs\_probackup会尝试尽快完成检查点。
 
--   --stream
+-   -S  _slot-name_, --slot=_slot-name_
 
-    从数据库服务器通过stream流处理形式传输文件，生成包括所有必需的WAL文件的STREAM备份。
+    指定WAL流处理的复制slot。
 
 -   --temp-slot
 
-    在备份的实例中为WAL流处理创建一个临时物理复制slot，它确保在备份过程中，所有所需的WAL段仍然是可用的。此参数只能与--stream参数一起使用。默认的slot名为pg\_probackup\_slot，可通过选项--slot/-S更改。
+    在备份的实例中为WAL流处理创建一个临时物理复制slot，它确保在备份过程中，所有所需的WAL段仍然是可用的。
 
--   -S slot\_name, --slot=slot\_name
-
-    指定WAL流处理的复制slot。此参数只能与--stream参数一起使用。
+    默认的slot名为pg\_probackup\_slot，可通过选项--slot/-S更改。
 
 -   --backup-pg-log
 
     将日志目录包含到备份中。此目录通常包含日志消息。默认情况下不包含日志目录。
 
--   -E external\_directory\_path, --external-dirs=external\_directory\_path
+-   -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
 
     将指定的目录包含到备份中。此选项对于备份位于数据目录外部的脚本、sql转储和配置文件很有用。如果要备份多个外部目录，请在Unix上用冒号分隔它们的路径。
+
+    例如：-E /tmp/dir1:/tmp/dir2
 
 -   --skip-block-validation
 
@@ -232,18 +262,28 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     不将备份文件同步到磁盘。
 
+-   --archive-timeout=_timeout_
 
-**restore参数**
+    以秒为单位设置流式处理的超时时间。
 
--   -I, --incremental-mode=none|lsn
+    默认值：300
+
+
+**恢复相关参数**
+
+-   -I, --incremental-mode=none|checksum|lsn
 
     若PGDATA中可用的有效页没有修改，则重新使用它们。
 
     默认值：none
 
--   -T OLDDIR=NEWDIR, --tablespace-mapping=OLDDIR=NEWDIR
+-   --external-mapping=_OLDDIR=NEWDIR_
 
-    在恢复时，将表空间从OLDDIR重新定位到NEWDIR目录。OLDDIR和NEWDIR必须都是绝对路径。如果路径中包含“=”，则使用反斜杠转义。多个表空间可以多次指定此选项。
+    在恢复时，将包含在备份中的外部目录从_OLDDIR_重新定位到_NEWDIR_目录。_OLDDIR_和_NEWDIR_都必须是绝对路径。如果路径中包含“=”，则使用反斜杠转义。此选项可为多个目录多次指定。
+
+-   -T  _OLDDIR=NEWDIR_, --tablespace-mapping=_OLDDIR=NEWDIR_
+
+    在恢复时，将表空间从_OLDDIR_重新定位到_NEWDIR_目录。_OLDDIR_和_NEWDIR_必须都是绝对路径。如果路径中包含“=”，则使用反斜杠转义。多个表空间可以多次指定此选项。此选项必须和--external-mapping一起使用。
 
 -   --skip-external-dirs
 
@@ -257,52 +297,34 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     跳过备份验证。
 
--   --restore-command=cmdline
-
-    指定恢复相关的命令。例如：--restore-command='cp /mnt/server/archivedir/%f "%p"'
-
 -   --force
 
     允许忽略备份的无效状态。如果出于某种原因需要从损坏的或无效的备份中恢复数据，可以使用此标志。请谨慎使用。
 
 
-**恢复目标参数**
+**恢复目标相关参数\(recovery\_options\)**
 
- ![](public_sys-resources/icon-note.gif) **说明：**
+![](public_sys-resources/icon-note.gif) **说明：** 
 
- 如果配置了连续的WAL归档，则可以和restore命令一起使用这些参数。
+当前不支持配置连续的WAL归档的PITR，因而使用这些参数会有一定限制，具体如下描述。
 
--   --recovery-target=immediate|latest
+-   --recovery-target-lsn=_lsn_
 
-    定义何时停止恢复。
+    指定要恢复到的lsn，当前只能指定备份的stop lsn。
 
-    immediate：当达到指定备份的一致性状态后，停止恢复；如果省略-i/--backup\_id参数，则恢复到最新的可用的备份之后，停止恢复。
+-   --recovery-target-name=_target-name_
 
-    latest：持续进行恢复，直到应用了所有存档中的所有可用的WAL段。
+    指定要将数据恢复到的已命名的保存点，保存点可以通过查看备份中recovery-name字段得到。
 
-    --recovery-target的默认值取决于要恢复的备份的WAL传输方式，STREAM流备份为immediate，归档模式为latest。
+-   --recovery-target-time=_time_
 
--   --recovery-target-timeline=timeline
+    指定要恢复到的时间，当前只能指定备份中的recovery-time。
 
-    指定要恢复到的timeline。缺省情况下，使用指定备份的timeline。
+-   --recovery-target-xid=_xid_
 
--   --recovery-target-lsn=lsn
+    指定要恢复到的事务ID，当前只能指定备份中的recovery-xid。
 
-    指定要恢复到的lsn。
-
--   --recovery-target-name=recovery\_target\_name
-
-    指定要将数据恢复到的已命名的保存点。
-
--   --recovery-target-time=time
-
-    指定要恢复到的时间
-
--   --recovery-target-xid=xid
-
-    指定要恢复到的事务ID
-
--   --recovery-target-inclusive=boolean
+-   --recovery-target-inclusive=_boolean_
 
     当该参数指定为true时，恢复目标将包括指定的内容。
 
@@ -310,30 +332,26 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     该参数必须和--recovery-target-name、--recovery-target-time、--recovery-target-lsn或--recovery-target-xid一起使用。
 
--   --recovery-target-action=pause|promote|shutdown
 
-    指定恢复至目标时，服务器应执行的操作。
+**留存相关参数\(retention\_options\)**
 
+![](public_sys-resources/icon-note.gif) **说明：** 
 
-**留存参数**
+可以和backup和delete命令一起使用这些参数。
 
- ![](public_sys-resources/icon-note.gif) **说明：** 
-
- 可以和backup和delete命令一起使用这些参数。
-
--   --retention-redundancy=redundancy
+-   --retention-redundancy=_retention-redundancy_
 
     指定在数据目录中留存的完整备份数。必须为正整数。0表示禁用此设置。
 
     默认值：0
 
--   --retention-window=window
+-   --retention-window=_retention-window_
 
     指定留存的天数。必须为正整数。0表示禁用此设置。
 
     默认值：0
 
--   --wal-depth=wal\_depth
+-   --wal-depth=_wal-depth_
 
     每个时间轴上必须留存的执行PITR能力的最新有效备份数。必须为正整数。0表示禁用此设置。
 
@@ -356,13 +374,13 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     显示所有可用备份的当前状态，不删除或合并过期备份。
 
 
-**固定备份参数**
+**固定备份相关参数\(pinning\_options\)**
 
- ![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.gif) **说明：**
 
- 如果要将某些备份从已建立的留存策略中排除，可以和backup和set-backup命令一起使用这些参数。
+如果要将某些备份从已建立的留存策略中排除，可以和backup和set-backup命令一起使用这些参数。
 
--   --ttl=ttl
+-   --ttl=_interval_
 
     指定从恢复时间开始计算，备份要固定的时间量。必须为正整数。0表示取消备份固定。
 
@@ -370,28 +388,30 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     例如：--ttl=30d。
 
--   --expire-time=time
+-   --expire-time=_time_
 
     指定备份固定失效的时间戳。必须是ISO-8601标准的时间戳。
 
     例如：--expire-time='2020-01-01 00:00:00+03'
 
 
-**日志参数**
+**日志相关参数\(logging\_options\)**
 
 日志级别：verbose、log、info、warning、error和off。
 
--   --log-level-console=log\_level
+-   --log-level-console=_log-level-console_
 
     设置要发送到控制台的日志级别。每个级别都包含其后的所有级别。级别越高，发送的消息越少。指定off级别表示禁用控制台日志记录。
 
     默认值：info
 
--   --log-level-file=log\_level
+-   --log-level-file=_log-level-file_
 
     设置要发送到日志文件的日志级别。每个级别都包含其后的所有级别。级别越高，发送的消息越少。指定off级别表示禁用日志文件记录。
 
--   --log-filename=log\_filename
+    默认值：off
+
+-   --log-filename=_log-filename_
 
     指定要创建的日志文件的文件名。文件名可以使用strftime模式，因此可以使用%-escapes指定随时间变化的文件名。
 
@@ -399,21 +419,21 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     如果指定了--log-level-file参数启用日志文件记录，则该参数有效。
 
-    默认值：pg\_probackup.log
+    默认值："pg\_probackup.log"
 
--   --error-log-filename=error\_log\_filename
+-   --error-log-filename=_error-log-filename_
 
     指定仅用于error日志的日志文件名。指定方式与--log-filename参数相同。
 
     此参数用于故障排除和监视。
 
--   --log-directory=log\_directory
+-   --log-directory=_log-directory_
 
     指定创建日志文件的目录。必须是绝对路径。此目录会在写入第一条日志时创建。
 
-    默认值：$BACKUP\_PATH/log/
+    默认值：$BACKUP\_PATH/log
 
--   --log-rotation-size=log\_rotation\_size
+-   --log-rotation-size=_log-rotation-size_
 
     指定单个日志文件的最大大小。如果达到此值，则启动gs\_probackup命令后，日志文件将循环，但help和version命令除外。0表示禁用基于文件大小的循环。
 
@@ -421,7 +441,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：0
 
--   --log-rotation-age=log\_rotation\_age
+-   --log-rotation-age=_log-rotation-age_
 
     单个日志文件的最大生命周期。如果达到此值，则启动gs\_probackup命令后，日志文件将循环，但help和version命令除外。$BACKUP\_PATH/log/log\_rotation目录下保存最后一次创建日志文件的时间。0表示禁用基于时间的循环。
 
@@ -430,19 +450,19 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     默认值：0
 
 
-**连接参数**
+**连接相关参数\(connection\_options\)**
 
- ![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.gif) **说明：** 
 
- 可以和backup命令一起使用这些参数。
+可以和backup命令一起使用这些参数。
 
--   -d dbname, --pgdatabase=dbname
+-   -d  _dbname_, --pgdatabase=_dbname_
 
     指定要连接的数据库名称。该连接仅用于管理备份进程，因此您可以连接到任何现有的数据库。如果命令行、PGDATABASE环境变量或pg\_probackup.conf配置文件中没有指定此参数，则gs\_probackup会尝试从PGUSER环境变量中获取该值。如果未设置PGUSER变量，则从当前用户名获取。
 
     系统环境变量：$PGDATABASE
 
--   -h host, --pghost=host
+-   -h  _hostname_, --pghost=_hostname_
 
     指定运行服务器的系统的主机名。如果该值以斜杠开头，则被用作到Unix域套接字的路径。
 
@@ -450,7 +470,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：local socket
 
--   -p port, --pgport=port
+-   -p  _port_, --pgport=_p__ort_
 
     指定服务器正在侦听连接的TCP端口或本地Unix域套接字文件扩展名。
 
@@ -458,7 +478,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：5432
 
--   -U username, --pguser=username
+-   -U  _username_, --pguser=_username_
 
     指定所连接主机的用户名。
 
@@ -468,26 +488,28 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     不出现输入密码提示。如果主机要求密码认证并且密码没有通过其它形式给出，则连接尝试将会失败。 该选项在批量工作和不存在用户输入密码的脚本中很有帮助。
 
--   -W, --password
+-   -W  _password_, --password=_password_
 
-    强制出现输入密码提示。
+    指定用户连接的密码。如果主机的认证策略是trust，则不会对系统管理员进行密码验证，即无需输入-W选项；如果没有-W选项，并且不是系统管理员，则会提示用户输入密码。
 
 
-**压缩参数**
+**压缩相关参数\(compression\_options\)**
 
- ![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.gif) **说明：** 
 
- 可以和backup命令一起使用这些参数。
+可以和backup命令一起使用这些参数。
 
--   --compress-algorithm=compression\_algorithm
+-   --compress-algorithm=_compress-algorithm_
 
-    指定用于压缩数据文件的算法。取值包括zlib、pglz和none。如果设置为zlib或pglz，此选项将启用压缩。默认情况下，压缩功能处于关闭状态。
+    指定用于压缩数据文件的算法。
+
+    取值包括zlib、pglz和none。如果设置为zlib或pglz，此选项将启用压缩。默认情况下，压缩功能处于关闭状态。
 
     默认值：none
 
--   --compress-level=compression\_level
+-   --compress-level=_compress-level_
 
-    指定压缩级别。取值范围：0~9
+    指定压缩级别。取值范围：0\~9
 
     -   0表示无压缩。
     -   1表示压缩比最小，处理速度最快。
@@ -501,13 +523,13 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     以--compress-algorithm=zlib和--compress-level=1进行压缩。
 
 
-**远程模式参数**
+**远程模式相关参数\(remote\_options\)**
 
- ![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.gif) **说明：**
+ 
+通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
 
- 通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
-
--   --remote-proto=proto
+-   --remote-proto=_protocol_
 
     指定用于远程操作的协议。目前只支持SSH协议。取值包括：
 
@@ -517,48 +539,59 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     如果指定了--remote-host参数，可以省略此参数。
 
--   --remote-host=destination
+-   --remote-host=_destination_
 
     指定要连接的远程主机的IP地址或主机名。
 
--   --remote-port=port
+-   --remote-port=_port_
 
     指定要连接的远程主机的端口号。
 
     默认值：22
 
--   --remote-user=username
+-   --remote-user=_username_
 
     指定SSH连接的远程主机用户。如果省略此参数，则使用当前发起SSH连接的用户。
 
     默认值：当前用户
 
--   --remote-path=path
+-   --remote-path=_path_
 
     指定gs\_probackup在远程系统的安装目录。
 
--   --ssh-options=ssh\_options
+    默认值：当前路径
+
+-   --ssh-options=_ssh\_options_
 
     指定SSH命令行参数的字符串。
 
+    例如：--ssh-options='-c cipher\_spec -F configfile'
 
-## 备份流程<a name="section1735727125216"></a>
 
-1.初始化备份目录。在指定的目录下创建backups/和wal/子目录，分别用于存放备份文件和WAL文件。
+## 备份流程<a name="zh-cn_topic_0287276008_section1735727125216"></a>
 
+1.  初始化备份目录。在指定的目录下创建backups/和wal/子目录，分别用于存放备份文件和WAL文件。
+
+    ```
     gs_probackup init -B backup_dir
+    ```
 
-2.添加一个新的备份实例。gs\_probackup可以在同一个备份目录下存放多个数据库实例的备份。
+2.  添加一个新的备份实例。gs\_probackup可以在同一个备份目录下存放多个数据库实例的备份。
 
-    gs_probackup add-instance -B backup_dir -D data_dir --instance instance_name [remote_options]
+    ```
+    gs_probackup add-instance -B backup_dir -D data_dir --instance instance_name
+    ```
 
-3.创建指定实例的备份。在进行增量备份之前，必须至少创建一次全量备份。
+3.  创建指定实例的备份。在进行增量备份之前，必须至少创建一次全量备份。
 
+    ```
     gs_probackup backup -B backup_dir --instance instance_name -b backup_mode
+    ```
 
-4.从指定实例的备份中恢复数据。
+4.  从指定实例的备份中恢复数据。
 
-    gs_probackup restore -B backup_dir --instance instance_name -i backup_id
-
+    ```
+    gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
+    ```
 
 

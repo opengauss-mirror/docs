@@ -66,7 +66,7 @@ openGauss提供了gs\_dropnode工具从一主多备的集群中移除不需要�
 
 ## 示例
 
-使用gs\_dropnode扩容步骤。
+使用gs\_dropnode移除步骤。
 
 ```
 # ./gs_dropnode -U omm -G dbgrp -h 10.11.12.13
