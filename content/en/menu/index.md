@@ -1263,6 +1263,7 @@ headless: true
 		-   [gs\_backup]({{< relref "./docs/Toolreference/gs_backup.md" >}})
 		-   [gs\_basebackup]({{< relref "./docs/Toolreference/gs_basebackup.md" >}})
 		-   [gs\_ctl]({{< relref "./docs/Toolreference/gs_ctl.md" >}})
+		-   [gs\_dropnode]({{< relref "./docs/Toolreference/gs_dropnode.md" >}})
 		-   [gs\_expansion]({{< relref "./docs/Toolreference/gs_expansion.md" >}})
 		-   [gs\_initdb]({{< relref "./docs/Toolreference/gs_initdb.md" >}})
 		-   [gs\_install]({{< relref "./docs/Toolreference/gs_install.md" >}})

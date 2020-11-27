@@ -5,7 +5,8 @@ This chapter describes tools used in the openGauss process or invoked among modu
 -   **[gaussdb](gaussdb.md)**  
 -   **[gs\_backup](gs_backup.md)**  
 -   **[gs\_basebackup](gs_basebackup.md)**  
--   **[gs\_ctl](gs_ctl.md)**  
+-   **[gs\_ctl](gs_ctl.md)** 
+-   **[gs\_dropnode](gs_dropnode.md)**  
 -   **[gs\_expansion](gs_expansion.md)**
 -   **[gs\_initdb](gs_initdb.md)**  
 -   **[gs\_install](gs_install.md)**  
