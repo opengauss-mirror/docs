@@ -203,6 +203,8 @@
 <PARAM name="dataNum" value="1"/>
 <!--数据库端口号-->
 <PARAM name="dataPortBase" value="15400"/>
+<!--DBnode监听IP-->
+<PARAM name="dataListenIp1" value="172.31.13.124,172.31.6.198"/>
 <!--数据库主节点上的数据目录，及备机数据目录-->
 <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn"/>
 <!--数据库节点上设定同步模式的节点数-->
@@ -212,34 +214,40 @@
 **表 1**  参数说明
 
 <a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_table642932620115"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_row1543052614113"><th class="cellrowborder" valign="top" width="14.321432143214322%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a>实例类型</p>
+<table><thead align="left"><tr id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_row1543052614113"><th class="cellrowborder" valign="top" width="14.321432143214322%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a>实例类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="25.73257325732573%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a>参数</p>
+<th class="cellrowborder" valign="top" width="25.73257325732573%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="59.94599459945995%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a>说明</p>
+<th class="cellrowborder" valign="top" width="59.94599459945995%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a>说明</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0249784583_row178502422283"><td class="cellrowborder" rowspan="4" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
+<tbody><tr id="zh-cn_topic_0283136469_row178502422283"><td class="cellrowborder" rowspan="5" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.73257325732573%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a>dataNum</p>
+<td class="cellrowborder" valign="top" width="25.73257325732573%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a>dataNum</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.94599459945995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p5691720101039"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p5691720101039"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p5691720101039"></a>当前主机上需要部署的数据库节点个数。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_row1343016261112"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0241802596_p119281928007"><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_p119281928007"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_p119281928007"></a>dataPortBase</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a>数据库节点的基础端口号，默认值40000。</p>
+<td class="cellrowborder" valign="top" width="59.94599459945995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p5691720101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p5691720101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p5691720101039"></a>当前主机上需要部署的数据库节点个数。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0249784583_row1440738182918"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31391807101039"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31391807101039"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31391807101039"></a>dataNode1</p>
+<tr id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_row1343016261112"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_p119281928007"><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_p119281928007"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_p119281928007"></a>dataPortBase</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59708452101039"><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59708452101039"></a><a name="zh-cn_topic_0249784583_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59708452101039"></a>用于指定当前主机上的数据库节点的数据存储目录。此目录为数据库的数据存储目录。应规划到数据盘上。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a>数据库节点的基础端口号，默认值40000。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0249784583_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784583_p1725855510222"><a name="zh-cn_topic_0249784583_p1725855510222"></a><a name="zh-cn_topic_0249784583_p1725855510222"></a>dataNode1_syncNum</p>
+<tr id="row196421844162013"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p69281428009"><a name="p69281428009"></a><a name="p69281428009"></a>dataListenIp1</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784583_p18258155510227"><a name="zh-cn_topic_0249784583_p18258155510227"></a><a name="zh-cn_topic_0249784583_p18258155510227"></a>可选参数，用于指定当前集群中同步模式的节点数目。取值范围为0~数据库备机节点数。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p19929152819012"><a name="p19929152819012"></a><a name="p19929152819012"></a>监听的IP地址。未设置时，使用对应主机上的backIp1生成。</p>
+<p id="p14929182812017"><a name="p14929182812017"></a><a name="p14929182812017"></a>第一个IP是主节点所在主机IP，第二个IP是备节点所在主机IP。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136469_row1440738182918"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31391807101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31391807101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31391807101039"></a>dataNode1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59708452101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59708452101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59708452101039"></a>用于指定当前主机上的数据库节点的数据存储目录。此目录为数据库的数据存储目录。应规划到数据盘上。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dataNode1_syncNum</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，用于指定当前集群中同步模式的节点数目。取值范围为0~数据库备机节点数。</p>
 </td>
 </tr>
 </tbody>
