@@ -127,7 +127,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **COLLATE  collation**
 
-    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。
+    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“SELECT * FROM pg_collation;”命令从pg_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
 -   **CONSTRAINT constraint\_name**
 

@@ -83,7 +83,7 @@ CREATE TYPE name AS ENUM
 
 -   **collation**
 
-    要关联到复合类型的一列的现有排序规则的名称。
+    要关联到复合类型的一列的现有排序规则的名称。排序规则可以使用“SELECT * FROM pg_collation;”命令从pg_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
 
 基本类型

@@ -15,19 +15,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
 
--   回收指定表上权限。
-
-    ```
-    REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM }[, ...] 
-        | ALL [ PRIVILEGES ] }
-        ON { [ TABLE ] table_name [, ...]
-           | ALL TABLES IN SCHEMA schema_name [, ...] }
-        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
-        [ CASCADE | RESTRICT ];
-    ```
-
--   回收指定视图上权限。
+-   回收指定表或视图上权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
