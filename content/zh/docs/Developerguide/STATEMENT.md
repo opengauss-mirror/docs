@@ -5,6 +5,7 @@
 **表 1**  STATEMENT字段
 
 <a name="zh-cn_topic_0237122654_table1097962175514"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0237122654_row15149337559"><th class="cellrowborder" valign="top" width="26.58%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122654_p1114916305510"><a name="zh-cn_topic_0237122654_p1114916305510"></a><a name="zh-cn_topic_0237122654_p1114916305510"></a><strong id="zh-cn_topic_0237122654_b21491139558"><a name="zh-cn_topic_0237122654_b21491139558"></a><a name="zh-cn_topic_0237122654_b21491139558"></a>名称</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="16.81%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237122654_p201493317555"><a name="zh-cn_topic_0237122654_p201493317555"></a><a name="zh-cn_topic_0237122654_p201493317555"></a><strong id="zh-cn_topic_0237122654_b121490325513"><a name="zh-cn_topic_0237122654_b121490325513"></a><a name="zh-cn_topic_0237122654_b121490325513"></a>类型</strong></p>
@@ -223,6 +224,79 @@
 <td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>IO上的时间花费（单位：微秒）。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>sort_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>排序执行的次数。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>sort_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>排序执行的时间（单位：微秒）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>sort_mem_used</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>排序过程中使用的work memory大小（单位：kB）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>sort_spill_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>排序过程中，若发生落盘，写文件的次数。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>sort_spill_size</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>排序过程中，若发生落盘，使用的文件大小（单位：kB）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>hash_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>hash执行的次数。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>hash_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>hash执行的时间（单位：微秒）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>hash_mem_used</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>hash过程中使用的work memory大小（单位：kB）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>hash_spill_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>hash过程中，若发生落盘，写文件的次数。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122654_p7155113115519"><a name="zh-cn_topic_0237122654_p7155113115519"></a><a name="zh-cn_topic_0237122654_p7155113115519"></a>hash_spill_size</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122654_p161551037552"><a name="zh-cn_topic_0237122654_p161551037552"></a><a name="zh-cn_topic_0237122654_p161551037552"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122654_p1115543145517"><a name="zh-cn_topic_0237122654_p1115543145517"></a><a name="zh-cn_topic_0237122654_p1115543145517"></a>hash过程中，若发生落盘，使用的文件大小（单位：kB）。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
+
+
 
