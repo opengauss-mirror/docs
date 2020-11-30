@@ -1,4 +1,0 @@
-# Data Types<a name="EN-US_TOPIC_0257854620"></a>
-
-A data type refers to a value set and an operation set defined on the value set. The openGauss database consists of tables, each of which is defined by its own columns. Each column corresponds to a data type. The openGauss uses corresponding functions to perform operations on data based on data types. For example, the openGauss can perform addition, subtraction, multiplication, and division operations on data of numeric values.
-

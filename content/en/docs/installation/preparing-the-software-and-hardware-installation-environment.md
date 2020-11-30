@@ -4,9 +4,18 @@ This chapter describes the preparations for the installation.
 
 <!-- TOC -->
 
-- [Software and Hardware Requirements](#software-and-hardware-requirements)
-- [Modifying OS Configuration](#modifying-os-configuration)
-- [Setting Remote Login of User root](#setting-remote-login-of-user-root)
+- [Preparing the Software and Hardware Installation Environment<a name="EN-US_TOPIC_0249784586"></a>](#preparing-the-software-and-hardware-installation-environmenta-nameen-us_topic_0249784586a)
+    - [Software and Hardware Requirements](#software-and-hardware-requirements)
+        - [Hardware Requirements](#hardware-requirements)
+        - [Software Requirements](#software-requirements)
+        - [Software Dependency Requirements](#software-dependency-requirements)
+    - [Modifying OS Configuration](#modifying-os-configuration)
+        - [Disabling the OS Firewall](#disabling-the-os-firewall)
+        - [Setting Character Set Parameters](#setting-character-set-parameters)
+        - [Setting the Time Zone and Time](#setting-the-time-zone-and-time)
+        - [Disabling the Swap Memory](#disabling-the-swap-memory)
+        - [Setting the NIC MTU](#setting-the-nic-mtu)
+    - [Setting Remote Login of User root](#setting-remote-login-of-user-root)
 
 <!-- /TOC -->
 
@@ -222,19 +231,17 @@ Take openEuler OS as an example. Assume that the openGauss information is listed
 
 Currently, EulerOS can be installed only when the firewall is disabled.
 
-1. <a name="en-us_topic_0241802566_li17785744465"></a>Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
+1. <a name="en-us_topic_0241802566_li17785744465"></a>Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.    
+  a. Run the  **vim**  command to open the  **config**  file.
 
-   1. Run the  **vim**  command to open the  **config**  file.
+   ```
+   vim /etc/selinux/config
+   ```
+     b. Change the value of  **SELINUX**  to  **disabled**  and run the  **:wq**  command to save the change and exit.
 
-      ```
-      vim /etc/selinux/config
-      ```
-
-   2. Change the value of  **SELINUX**  to  **disabled**  and run the  **:wq**  command to save the change and exit.
-
-      ```
-      SELINUX=disabled
-      ```
+   ```
+   SELINUX=disabled
+   ```
 
 
 2. Restart the OS.
@@ -249,9 +256,9 @@ Currently, EulerOS can be installed only when the firewall is disabled.
    systemctl status firewalld
    ```
 
-   If the firewall status is  **active \(running\)**, the firewall is not disabled. Go to  [4](#li17330102819394).
+    If the firewall status is  **active \(running\)**, the firewall is not disabled. Go to  [4](#li17330102819394).
 
-   If the firewall status is  **inactive \(dead\)**, you do not need to disable the firewall.
+    If the firewall status is  **inactive \(dead\)**, you do not need to disable the firewall.
 
 4. <a name="li17330102819394"></a>Disable the firewall.
 
@@ -310,60 +317,60 @@ ifconfig NIC ID mtu Value
 
 During the openGauss installation, the user  **root**  is required for remote login. This section describes how to set the user  **root**  for remote login.
 
-1. Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**a..
+1. Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**.  
 
-   a. Open the  **sshd\_config**  file.
+    a. Open the  **sshd\_config**  file.
 
-   ```
-   vim /etc/ssh/sshd_config
-   ```
+    ```
+    vim /etc/ssh/sshd_config
+    ```
 
-   b. Modify permissions of user  **root**  using either of the following methods:
+    b. Modify permissions of user  **root**  using either of the following methods:
 
-   - Comment out  **PermitRootLogin no**.
+       - Comment out  **PermitRootLogin no**.
 
-     ```
-     #PermitRootLogin no
-     ```
+       ```
+       #PermitRootLogin no
+       ```
 
-   - Set the value of  **PermitRootLogin**  to  **yes**.
+       - Set the value of  **PermitRootLogin**  to  **yes**.
+ 
+       ```
+       PermitRootLogin yes
+       ```
 
-     ```
-     PermitRootLogin yes
-     ```
-
-   c. Run the  **:wq**  command to save the modification and exit.
+    c. Run the  **:wq**  command to save the modification and exit.
 
 2. Modify the  **Banner**  configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
 
-   a.  Open the  **sshd\_config**  file.
+     a.  Open the  **sshd\_config**  file.
+  
+    ```
+    vim /etc/ssh/sshd_config
+    ```
+   
+     b.  Comment out the line where  **Banner**  is located.
 
-   ```
-   vim /etc/ssh/sshd_config
-   ```
+    ```
+    #Banner XXXX
+    ```
 
-   b.  Comment out the line where  **Banner**  is located.
-
-   ```
-   #Banner XXXX
-   ```
-
-   c.  Run the  **:wq**  command to save the modification and exit.
+    c.  Run the  **:wq**  command to save the modification and exit.
 
 3. Run the following command to validate the settings:
 
-   ```
-   service sshd restart
-   ```
+    ```
+    service sshd restart
+    ```
 
-   ![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+    ![](public_sys-resources/icon-caution.gif) **CAUTION:**   
    If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.  
 
 4. Re-log in to the system as user  **root**.
 
-   ```
-   ssh xxx.xxx.xxx.xxx
-   ```
+    ```
+    ssh xxx.xxx.xxx.xxx
+    ```
 
-   ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    ![](public_sys-resources/icon-note.gif) **NOTE:**   
    _xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.  
