@@ -95,7 +95,7 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
         ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
         ```
 
-        **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of user  **root**  or the openGauss user.
+        **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of the OS user  **root**  or the user omm.
 
     -   If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
         1.  Run the following command to configure the installation environment:

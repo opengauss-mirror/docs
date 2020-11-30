@@ -202,9 +202,11 @@ The information in bold is only an example. You can replace it as required. Each
 <!--DBnode-->
 <PARAM name="dataNum" value="1"/>
 <!-- Database node port number -->
-<PARAM name="dataPortBase" value="26000"/>
+<PARAM name="dataPortBase" value="15400"/>
+<!-- Listening IP address of the database node -->
+<PARAM name="dataListenIp1" value="172.31.13.124,172.31.6.198"/>
 <!-- Data directory on the primary database node and data directories of standby nodes -->
-<PARAM name="dataNode1" value="/opt/huawei/install/data/db1,node2,/opt/huawei/install/data/db1"/>
+<PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn"/>
 <!-- Number of nodes for which the synchronization mode is set on the database node -->
 <PARAM name="dataNode1_syncNum" value="0"/>
 ```
@@ -230,6 +232,12 @@ The information in bold is only an example. You can replace it as required. Each
 <tr id="en-us_topic_0241802596_row1343016261112"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0241802596_p119281928007"><a name="en-us_topic_0241802596_p119281928007"></a><a name="en-us_topic_0241802596_p119281928007"></a>dataPortBase</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0085434621_en-us_topic_0059782004_p6187782101039"><a name="en-us_topic_0085434621_en-us_topic_0059782004_p6187782101039"></a><a name="en-us_topic_0085434621_en-us_topic_0059782004_p6187782101039"></a>Basic port number of the database node. The default value is <strong id="b7321183910213"><a name="b7321183910213"></a><a name="b7321183910213"></a>40000</strong>.</p>
+</td>
+</tr>
+<tr id="row196421844162013"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p69281428009"><a name="p69281428009"></a><a name="p69281428009"></a>dataListenIp1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p19929152819012"><a name="p19929152819012"></a><a name="p19929152819012"></a>Listening IP address. If this parameter is not set, the value is determined based on <strong id="b15441914105216"><a name="b15441914105216"></a><a name="b15441914105216"></a>backIp1</strong> of the corresponding host.</p>
+<p id="p14929182812017"><a name="p14929182812017"></a><a name="p14929182812017"></a>The first and second IP addresses are the IP addresses of the hosts where the primary and standby nodes reside, respectively.</p>
 </td>
 </tr>
 <tr id="row1440738182918"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0085434621_en-us_topic_0059782004_p31391807101039"><a name="en-us_topic_0085434621_en-us_topic_0059782004_p31391807101039"></a><a name="en-us_topic_0085434621_en-us_topic_0059782004_p31391807101039"></a>dataNode1</p>

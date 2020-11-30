@@ -4,8 +4,8 @@ You can obtain the installation package from the openGauss open-source community
 
 ## Procedure<a name="en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section62223956163549"></a>
 
-1.  Download the installation package of the corresponding platform from the openGauss community.
-a.  Click  [https://opengauss.org/en/download.html](https://opengauss.org/zh/download.html)  to go to download page of openGauss open-source community. You can download the installation packages listed in  [Table 1](#en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_te4a9d557337c400c85acff184476a722)  as required.
+1.  Download the installation package of the corresponding platform from the openGauss community.  
+a.  Log in to the openGauss open-source community at  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html)  and download the corresponding installation package.
 
     **Figure 1**  openGauss Server
 
@@ -50,7 +50,7 @@ a.  Click  [https://opengauss.org/en/download.html](https://opengauss.org/zh/dow
 
    ```
    tar -zxvf openGauss-1.0.1-openEuler-64bit.tar.gz
-   ls -1
+   ls -1b
    ```
 
    Run the  **ls**  command and information similar to the following is displayed. 
