@@ -50,8 +50,6 @@ This parameter must be used together with  **recovery\_parse\_workers**, and it 
 
 **Parameter description**: Specifies the actual number of replay threads. This parameter is read-only.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
 **Value range**: an integer ranging from 1 to 2147483647
 
 This parameter is affected by the parameter: recovery_max_workers and parameter: recovery_parse_workers. When any of the above parameters is greater than 0, the parameter value will be recalculated.
