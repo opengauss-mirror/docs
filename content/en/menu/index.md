@@ -76,7 +76,6 @@ headless: true
 			-   [Cost-based Vacuum Delay]({{< relref "./docs/Developerguide/cost-based-vacuum-delay.md" >}})
 			-   [Background Writer]({{< relref "./docs/Developerguide/background-writer.md" >}})
 			-   [Asynchronous I/O Operations]({{< relref "./docs/Developerguide/asynchronous-i-o-operations.md" >}})
-		-   [Parallel Data Import]({{< relref "./docs/Developerguide/parallel-data-import.md" >}})
 		-   [Write Ahead Log]({{< relref "./docs/Developerguide/write-ahead-log.md" >}})
 			-   [Settings]({{< relref "./docs/Developerguide/settings.md" >}})
 			-   [Checkpoints]({{< relref "./docs/Developerguide/checkpoints-41.md" >}})
@@ -124,7 +123,7 @@ headless: true
 		-   [Query]({{< relref "./docs/Developerguide/query-28.md" >}})
 		-   [System Performance Snapshot]({{< relref "./docs/Developerguide/system-performance-snapshot.md" >}})
 	-   [FAQs]({{< relref "./docs/Quickstart/faqs.md" >}})
-
+	
 -   [Installation Guide]({{< relref "./docs/Installation/Installation.md" >}})
 	-   [Installation Overview]({{< relref "./docs/Installation/installation-overview.md" >}})
 	-   [Preparing for Installation]({{< relref "./docs/Installation/preparing-for-installation.md" >}})
@@ -1165,7 +1164,6 @@ headless: true
 			-   [Cost-based Vacuum Delay]({{< relref "./docs/Developerguide/cost-based-vacuum-delay.md" >}})
 			-   [Background Writer]({{< relref "./docs/Developerguide/background-writer.md" >}})
 			-   [Asynchronous I/O Operations]({{< relref "./docs/Developerguide/asynchronous-i-o-operations.md" >}})
-		-   [Parallel Data Import]({{< relref "./docs/Developerguide/parallel-data-import.md" >}})
 		-   [Write Ahead Log]({{< relref "./docs/Developerguide/write-ahead-log.md" >}})
 			-   [Settings]({{< relref "./docs/Developerguide/settings.md" >}})
 			-   [Checkpoints]({{< relref "./docs/Developerguide/checkpoints-41.md" >}})
@@ -1242,7 +1240,7 @@ headless: true
 			-   [An Error Occurs During Integer Conversion]({{< relref "./docs/Developerguide/an-error-occurs-during-integer-conversion.md" >}})
 			-   ["too many clients already" Is Reported or Threads Failed To Be Created in High Concurrency Scenarios]({{< relref "./docs/Developerguide/too-many-clients-already-is-reported-or-threads-failed-to-be-created-in-high-concurrency-scenarios.md" >}})
 			-   [B-tree Index Faults]({{< relref "./docs/Developerguide/b-tree-index-faults.md" >}})
-		
+	
 -   [Tool Reference]({{< relref "./docs/Toolreference/Toolreference.md" >}})
 	-   [Tool Overview]({{< relref "./docs/Toolreference/tool-overview.md" >}})
 	-   [Client Tool]({{< relref "./docs/Toolreference/client-tool.md" >}})
