@@ -1154,7 +1154,6 @@ headless: true
             -   [基于开销的清理延迟]({{< relref "./docs/Developerguide/基于开销的清理延迟.md" >}})
             -   [后端写进程]({{< relref "./docs/Developerguide/后端写进程.md" >}})
             -   [异步IO]({{< relref "./docs/Developerguide/异步IO.md" >}})
-        -   [并行导入]({{< relref "./docs/Developerguide/并行导入.md" >}})
         -   [预写式日志]({{< relref "./docs/Developerguide/预写式日志.md" >}})
             -   [设置]({{< relref "./docs/Developerguide/设置.md" >}})
             -   [检查点]({{< relref "./docs/Developerguide/检查点.md" >}})
