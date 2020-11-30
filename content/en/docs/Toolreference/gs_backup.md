@@ -46,7 +46,7 @@ The  **gs\_backup**  tool can use the following types of parameters:
 
         Specifies the host name for storing the backup files
 
-        Value range: a host name If the host name is not specified, the backup files will be distributed to openGauss.
+        Value range: a host name If the host name is not specified, the current cluster will be backed up.
 
     -   --backup-dir=BACKUPDIR
 
@@ -76,7 +76,7 @@ The  **gs\_backup**  tool can use the following types of parameters:
 
         Specifies the name of the host to restore.
 
-        Value range: a host name If the host is not specified, the backup files will be distributed to openGauss.
+        Value range: a host name If the host is not specified, the corresponding backup node is restored.
 
     -   --backup-dir=BACKUPDIR
 
