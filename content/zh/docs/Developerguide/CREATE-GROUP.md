@@ -11,7 +11,7 @@ CREATE GROUP是CREATE ROLE的别名，非SQL标准语法，不推荐使用，建
 ## 语法格式<a name="zh-cn_topic_0237122105_zh-cn_topic_0059779249_s59b3eee4055b421fb68af217fb853082"></a>
 
 ```
-CREATE GROUP group_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
+CREATE GROUP group_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
 ```
 
 其中可选项option子句语法为：

@@ -4,9 +4,9 @@ A user who creates an object is the owner of this object. By default,  [Separati
 
 To enable another user to use the object, grant required permissions to the user or the role that contains the user.
 
-openGauss supports the following permissions:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **TRUNCATE**,  **REFERENCES**,  **CREATE**,  **CONNECT**,  **EXECUTE**, and  **USAGE**. Permission types are associated with object types. For permission details, see  [GRANT](grant.md).
+openGauss supports the following permissions:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **TRUNCATE**,  **REFERENCES**,  **CREATE**,  **CONNECT**,  **EXECUTE**, **ALTER**, **DROP**, **COMMENT**, **INDEX**, **VACUUM** and  **USAGE**. Permission types are associated with object types. For permission details, see  [GRANT](grant.md).
 
-To remove permissions, run  **[REVOKE](revoke.md)**. Object owner permissions such as  **ALTER**,  **DROP**,  **GRANT**, and  **REVOKE**  are implicit and cannot be granted or revoked. That is, you have the implicit permissions for an object if you are the owner of the object. Object owners can remove their own common permissions, for example, making tables read-only to themselves or others，Except system administrators.
+To remove permissions, run  **[REVOKE](revoke.md)**. Object owner permissions such as  **ALTER**,  **DROP**,  **COMMENT**, **INDEX**, **VACUUM**, **GRANT**, and  **REVOKE**  are implicit and cannot be granted or revoked. That is, you have the implicit permissions for an object if you are the owner of the object. Object owners can remove their own common permissions, for example, making tables read-only to themselves or others，Except system administrators.
 
 System catalogs and views are visible to either system administrators or all users. System catalogs and views that require system administrator permissions can be queried only by system administrators. For details, see  [System Catalogs and System Views](system-catalogs-and-system-views.md).
 

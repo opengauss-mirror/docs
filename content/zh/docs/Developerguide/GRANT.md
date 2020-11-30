@@ -41,7 +41,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
--   将表的访问权限赋予指定的用户或角色。
+-   将或试视图的访问权限赋予指定的用户或角色。
 
     ```
     GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
@@ -51,17 +51,6 @@
         TO { [ GROUP ] role_name | PUBLIC } [, ...] 
         [ WITH GRANT OPTION ];
     
-    ```
-
--   将视图的访问权限赋予指定的用户或角色。
-
-    ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | ALTER | DROP | COMMENT } [, ...] 
-          | ALL [ PRIVILEGES ] }
-        ON { [ TABLE ] table_name [, ...]
-           | ALL TABLES IN SCHEMA schema_name [, ...] }
-        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
-        [ WITH GRANT OPTION ];
     ```
 
 -   将表中字段的访问权限赋予指定的用户或角色。
