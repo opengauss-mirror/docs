@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s4737e0edf6af464282c48f14a9d9c0f4"></a>
 
-目前只支持表（包括视图）、序列、函数和类型的权限更改。
+目前只支持表（包括视图）、 序列、函数和类型的权限更改。
 
 ## 语法格式<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s760a84be01534119a13af50d2ff535aa"></a>
 
@@ -24,8 +24,8 @@ ALTER DEFAULT PRIVILEGES
       | grant_on_sequences_clause
       | grant_on_functions_clause
       | grant_on_types_clause
-      | revoke_on_sequences_clause
       | revoke_on_tables_clause
+      | revoke_on_sequences_clause
       | revoke_on_functions_clause
       | revoke_on_types_clause
     ```
@@ -37,6 +37,16 @@ ALTER DEFAULT PRIVILEGES
     GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
         [, ...] | ALL [ PRIVILEGES ] }
         ON TABLES 
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ]
+    ```
+
+-   其中grant\_on\_sequences\_clause子句用于对序列授权。
+
+    ```
+    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } 
+        [, ...] | ALL [ PRIVILEGES ] }
+        ON SEQUENCES 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -66,6 +76,17 @@ ALTER DEFAULT PRIVILEGES
         { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
         [, ...] | ALL [ PRIVILEGES ] }
         ON TABLES 
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
+    ```
+
+-   其中revoke\_on\_sequences\_clause子句用于回收序列的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } 
+        [, ...] | ALL [ PRIVILEGES ] }
+        ON SEQUENCES
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
@@ -139,5 +160,5 @@ postgres=# DROP USER jack;
 
 ## 相关链接<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
-[GRANT](GRANT.md)，[REVOKE](REVOKE.md)
+[GRANT](zh-cn_topic_0289900312.md)，[REVOKE](zh-cn_topic_0289900263.md)
 
