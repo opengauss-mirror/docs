@@ -104,7 +104,10 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
 
-    其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \( \{select | values | insert | update | delete\} \)
+    其中with\_query的详细格式为：
+    ```
+    with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \( \{select | values | insert | update | delete\} \)
+    ```
 
     -   with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
     -   column\_name指定子查询结果集中显示的列名。
@@ -245,16 +248,16 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     WHERE子句中可以通过指定"\(+\)"操作符的方法将表的连接关系转换为外连接。但是不建议用户使用这种用法，因为这并不是SQL的标准语法，在做平台迁移的时候可能面临语法兼容性的问题。同时，使用"\(+\)"有很多限制：
 
-    1.  "\(+\)"只能出现在where子句中。
-    2.  如果from子句中已经有指定表连接关系，那么不能再在where子句中使用"\(+\)"。
-    3.  "\(+\)"只能作用在表或者视图的列上，不能作用在表达式上。
-    4.  如果表A和表B有多个连接条件，那么必须在所有的连接条件中指定"\(+\)"，否则"\(+\)"将不会生效，表连接会转化成内连接，并且不给出任何提示信息。
-    5.  "\(+\)"作用的连接条件中的表不能跨查询或者子查询。如果"\(+\)"作用的表，不在当前查询或者子查询的from子句中，则会报错。如果"\(+\)"作用的对端的表不存在，则不报错，同时连接关系会转化为内连接。
-    6.  "\(+\)"作用的表达式不能直接通过"OR"连接。
-    7.  如果"\(+\)"作用的列是和一个常量的比较关系， 那么这个表达式会成为join条件的一部分。
-    8.  同一个表不能对应多个外表。
-    9.  "\(+\)"只能出现"比较表达式"，"NOT表达式"，“ANY表达式”，“ALL表达式”，“IN表达式”，“NULLIF表达式”，“IS DISTINCT FROM表达式”，“IS OF”表达式。"\(+\)"不能出现在其他类型表达式中，并且这些表达式中不允许出现通过“AND”和“OR”连接的表达式。
-    10. "\(+\)"只能转化为左外连接或者右外连接，不能转化为全连接，即不能在一个表达式的两个表上同时指定"\(+\)"
+    1.  "\(+\)"只能出现在where子句中。  
+    2.  如果from子句中已经有指定表连接关系，那么不能再在where子句中使用"\(+\)"。  
+    3.  "\(+\)"只能作用在表或者视图的列上，不能作用在表达式上。  
+    4.  如果表A和表B有多个连接条件，那么必须在所有的连接条件中指定"\(+\)"，否则"\(+\)"将不会生效，表连接会转化成内连接，并且不给出任何提示信息。  
+    5.  "\(+\)"作用的连接条件中的表不能跨查询或者子查询。如果"\(+\)"作用的表，不在当前查询或者子查询的from子句中，则会报错。如果"\(+\)"作用的对端的表不存在，则不报错，同时连接关系会转化为内连接。  
+    6.  "\(+\)"作用的表达式不能直接通过"OR"连接。  
+    7.  如果"\(+\)"作用的列是和一个常量的比较关系， 那么这个表达式会成为join条件的一部分。  
+    8.  同一个表不能对应多个外表。  
+    9.  "\(+\)"只能出现"比较表达式"，"NOT表达式"，“ANY表达式”，“ALL表达式”，“IN表达式”，“NULLIF表达式”，“IS DISTINCT FROM表达式”，“IS OF”表达式。"\(+\)"不能出现在其他类型表达式中，并且这些表达式中不允许出现通过“AND”和“OR”连接的表达式。  
+    10. "\(+\)"只能转化为左外连接或者右外连接，不能转化为全连接，即不能在一个表达式的两个表上同时指定"\(+\)"。  
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >对于WHERE子句的LIKE操作符，当LIKE中要查询特殊字符“%”、“\_”、“\\”的时候需要使用反斜杠“\\”来进行转义。
@@ -281,6 +284,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **WINDOW子句**
 
     一般形式为WINDOW window\_name AS \( window\_definition \) \[， ...\]，window\_name是可以被随后的窗口定义所引用的名称，window\_definition可以是以下的形式：
+    ```
 
     \[ existing\_window\_name \]
 
@@ -289,8 +293,10 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     \[ ORDER BY expression \[ ASC | DESC | USING operator \] \[ NULLS \{ FIRST | LAST \} \] \[, ...\] \]
 
     \[ frame\_clause \]
+    ```
 
     frame\_clause为窗函数定义一个窗口框架window frame，窗函数（并非所有）依赖于框架，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
+    ```
 
     \[ RANGE | ROWS \] frame\_start
 
@@ -307,6 +313,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     value FOLLOWING
 
     UNBOUNDED FOLLOWING
+    ```
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
@@ -346,8 +353,10 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **EXCEPT子句**
 
     EXCEPT子句有如下的通用形式：
+    ```
 
     select\_statement EXCEPT \[ ALL \] select\_statement
+    ```
 
     select\_statement是任何没有FOR UPDATE子句的SELECT表达式。
 
@@ -373,7 +382,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >如果要支持中文拼音排序和不区分大小写排序，需要在初始化数据库时指定编码格式为UTF-8或GBK。 命令如下:
+    >```
     >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8或initdb –E GBK –D ../data –locale=zh\_CN.GBK。
+    >```
 
 -   **LIMIT子句**
 

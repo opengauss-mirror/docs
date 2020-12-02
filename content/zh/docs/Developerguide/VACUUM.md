@@ -88,9 +88,9 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
     只针对列存表，将列存表的delta table中的数据转移到主表存储上。对列存表而言，此操作受[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)和[参数说明](zh-cn_topic_0289900279.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428)中的deltarow\_threshold控制。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >为了检查列存delta表中的信息，提供下述DFX函数，用于获取某个列存表的delta表中数据存储情况：
-    >-   pgxc\_get\_delta\_info\(TEXT\)，传入参数为列存表名，搜集并显示各个节点上的对应delta表信息，包括当前存活tuple数量、表大小、使用的最大block ID。
+    >![](public_sys-resources/icon-note.gif) **说明：**  
+    >为了检查列存delta表中的信息，提供下述DFX函数，用于获取某个列存表的delta表中数据存储情况：  
+    >-   pgxc\_get\_delta\_info\(TEXT\)，传入参数为列存表名，搜集并显示各个节点上的对应delta表信息，包括当前存活tuple数量、表大小、使用的最大block ID。  
     >-   get\_delta\_info\(TEXT\)，传入参数为列存表名，汇总pgxc\_get\_delta\_info得到的结果，返回其delta表整体的当前存活tuple数量、表大小、使用的最大block ID。
 
 
