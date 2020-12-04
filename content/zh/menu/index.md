@@ -617,6 +617,7 @@ headless: true
             -   [ALTER SESSION]({{< relref "./docs/Developerguide/ALTER-SESSION.md" >}})
             -   [ALTER SYNONYM]({{< relref "./docs/Developerguide/ALTER-SYNONYM.md" >}})
             -   [ALTER SYSTEM KILL SESSION]({{< relref "./docs/Developerguide/ALTER-SYSTEM-KILL-SESSION.md" >}})
+            -   [ALTER SYSTEM SET]({{< relref "./docs/Developerguide/ALTER-SYSTEM-SET.md" >}})
             -   [ALTER TABLE]({{< relref "./docs/Developerguide/ALTER-TABLE.md" >}})
             -   [ALTER TABLE PARTITION]({{< relref "./docs/Developerguide/ALTER-TABLE-PARTITION.md" >}})
             -   [ALTER TABLESPACE]({{< relref "./docs/Developerguide/ALTER-TABLESPACE.md" >}})
