@@ -177,6 +177,7 @@ MOT功能限制：
 -   Update from
 -   Lock table
 -   Copy from table
+-   Upsert
 
 ## 原生编译和轻量执行不支持的查询<a name="section19943160"></a>
 
