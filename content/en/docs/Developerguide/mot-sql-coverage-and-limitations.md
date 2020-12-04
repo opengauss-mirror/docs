@@ -169,6 +169,7 @@ The following lists the functionality limitations of MOT tables –
 -   Select into
 -   Lock table
 -   Copy from table
+-   Upsert
 
 ## Unsupported Queries for Native Compilation and Lite Execution<a name="section4815162910417"></a>
 
