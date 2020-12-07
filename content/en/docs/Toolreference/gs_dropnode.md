@@ -17,6 +17,7 @@
 -   Perform standby node deletion only on the primary node.
 -   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
 -   Before deletion, ensure that the database management user  **omm**  trust relationship has been established between the primary and standby nodes.
+-   Log in to the OS as the OS user  **omm**  to run the  **gs\_dropnode**  command.
 -   Before running commands, run the  **source**  command to import environment variables of a database on the primary node. If the database cluster is installed in separate environment variable mode, run the  **source**  command to import the separate environment variables. If they are not separated, run the  **source**  command to import the .bashrc configuration file of the sub-user. Generally, the file path is  **/home/\[user\]/.bashrc**.
 
 ## Syntax<a name="section4295914175012"></a>
@@ -24,19 +25,19 @@
 -   Drop a standby node.
 
 ```
-./gs_dropnode -U USER -G GROUP -h hostlist  
+gs_dropnode -U USER -G GROUP -h hostlist  
 ```
 
 -   Display help information.
 
 ```
-./gs_dropnode -? | --help
+gs_dropnode -? | --help
 ```
 
 -   Display version information.
 
 ```
-./gs_dropnode -V | --version
+gs_dropnode -V | --version
 ```
 
 ## Parameter Description<a name="section1473361065420"></a>
@@ -71,7 +72,7 @@
 Use  **gs\\\_dropnode**  to drop nodes.
 
 ```
-# ./gs_dropnode -U omm -G dbgrp -h 10.11.12.13
+$ gs_dropnode -U omm -G dbgrp -h 10.11.12.13
 [gs_dropnode]Start to drop nodes of the cluster.
 [gs_dropnode]Start to stop the target node StandbyNode3.
 [gs_dropnode]End of stop the target node StandbyNode3.

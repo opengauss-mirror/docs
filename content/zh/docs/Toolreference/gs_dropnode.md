@@ -17,6 +17,7 @@ openGauss提供了gs\_dropnode工具从一主多备的集群中移除不需要�
 -   删除备节点的操作只能在主节点上执行。
 -   操作过程中不允许同时在其他备节点上执行主备倒换或者故障倒换的操作。
 -   执行删除操作前，需要确保主节点和备节点之间建立好omm用户(数据库管理用户)的互信。
+-   需要使用数据库管理用户(比如omm)执行该命令
 -   执行命令前需要通过source命令导入主机数据库的环境变量。如果当前数据库集群是分离环境变量方式安装，则source导入分离的环境变量。如果未进行分离，则需要source导入子用户的.bashrc配置文件。一般该文件路径为：/home/[user]/.bashrc
 
 
@@ -25,19 +26,19 @@ openGauss提供了gs\_dropnode工具从一主多备的集群中移除不需要�
 -   移除备机
 
     ```
-    ./gs_dropnode -U USER -G GROUP -h hostlist  
+    gs_dropnode -U USER -G GROUP -h hostlist  
     ```
 
 -   显示帮助信息
 
     ```
-    ./gs_dropnode -? | --help
+    gs_dropnode -? | --help
     ```
 
 -   显示版本号信息
 
     ```
-    ./gs_dropnode -V | --version
+    gs_dropnode -V | --version
     ```
 
 
@@ -69,7 +70,7 @@ openGauss提供了gs\_dropnode工具从一主多备的集群中移除不需要�
 使用gs\_dropnode移除步骤。
 
 ```
-# ./gs_dropnode -U omm -G dbgrp -h 10.11.12.13
+$ gs_dropnode -U omm -G dbgrp -h 10.11.12.13
 [gs_dropnode]Start to drop nodes of the cluster.
 [gs_dropnode]Start to stop the target node StandbyNode3.
 [gs_dropnode]End of stop the target node StandbyNode3.
