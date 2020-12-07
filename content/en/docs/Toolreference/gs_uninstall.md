@@ -31,9 +31,13 @@ gs\_uninstall, provided by , can be used to uninstall a cluster.
 
     Deletes the data file.
 
--   -L
+- -L
 
-    Uninstalls the local host only. If a host in the cluster is uninstalled, the cluster cannot undergo full uninstallation.
+  Uninstalls the local host only. If a host in the cluster is uninstalled, the cluster cannot undergo full uninstallation.
+
+  ![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+  After executing gs\_postuninstall, the system will automatically delete the directories related to openGauss \(including $GAUSSLOG\). You are advised to set the log file path to a path outside the openGauss database.
 
 -   -?, --help
 
