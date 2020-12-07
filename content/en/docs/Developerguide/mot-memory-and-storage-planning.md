@@ -50,7 +50,7 @@ Even so, you can get started with whatever amount of memory you have and perform
 
     This is the only place that shows the new memory limits.
 
-    Additionally, MOT does not allow the insertion of additional data when the total memory usage approaches the chosen memory limits. The threshold for determining when additional data insertions are no longer allowed, is defined as a percentage of MOT max memory \(which is a calculated value, as described above\). The percentage of MOT max memory is configured in the high\_red\_mark\_percent setting of the mot.conf file. The default is 90, meaning 90%. Attempting to add additional data over this threshold returns an error to the user and is also registered in the database log file.
+    Additionally, MOT does not allow the insertion of additional data when the total memory usage approaches the chosen memory limits. The threshold for determining when additional data insertions are no longer allowed, is defined as a percentage of MOT max memory \(which is a calculated value, as described above\). The default is 90, meaning 90%. Attempting to add additional data over this threshold returns an error to the user and is also registered in the database log file.
 
 -   **Minimum and Maximum**
 
