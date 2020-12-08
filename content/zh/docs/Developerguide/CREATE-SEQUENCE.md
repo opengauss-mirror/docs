@@ -66,7 +66,7 @@ CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     若定义序列为CYCLE，则不能保证序列的唯一性。
 
--   **OWNED BY**-
+-   **OWNED BY**
 
     将序列和一个表的指定字段进行关联。这样，在删除那个字段或其所在表的时候会自动删除已关联的序列。关联的表和序列的所有者必须是同一个用户，并且在同一个模式中。需要注意的是，通过指定OWNED BY，仅仅是建立了表的对应列和sequence之间关联关系，并不会在插入数据时在该列上产生自增序列。
 
@@ -128,7 +128,7 @@ postgres=# CREATE SEQUENCE serial1
  START 101
  CACHE 20
 OWNED BY customer_address.ca_address_sk;
---删除序列
+--删除表和序列。
 postgres=# DROP TABLE customer_address;
 postgres=# DROP SEQUENCE serial cascade;
 postgres=# DROP SEQUENCE serial1 cascade;
