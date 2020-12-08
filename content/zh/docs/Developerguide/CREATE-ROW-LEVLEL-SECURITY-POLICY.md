@@ -16,8 +16,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0237122109_section12765201893310"></a>
 
--   支持对行存表、行存分区表、列存表、列存分区表、复制表、unlogged表、hash表定义行访问控制策略。
--   不支持外表、临时表定义行访问控制策略。
+-   支持对行存表、行存分区表、列存表、列存分区表、unlogged表、hash表定义行访问控制策略。
+-   不支持外表、本地临时表定义行访问控制策略。
 -   不支持对视图定义行访问控制策略。
 -   同一张表上可以创建多个行访问控制策略，一张表最多创建100个行访问控制策略。
 -   系统管理员不受行访问控制影响，可以查看表的全量数据。
@@ -146,10 +146,10 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
 ```
 --创建用户alice
-postgres=# CREATE ROLE alice PASSWORD 'Gauss@123';
+postgres=# CREATE USER alice PASSWORD 'Gauss@123';
 
 --创建用户bob
-postgres=# CREATE ROLE bob PASSWORD 'Gauss@123';
+postgres=# CREATE USER bob PASSWORD 'Gauss@123';
 
 --创建数据表all_data
 postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
@@ -180,7 +180,6 @@ Row Level Security Policies:
     POLICY "all_data_rls"
       USING (((role)::name = "current_user"()))
 Has OIDs: no
-Location Nodes: ALL DATANODES
 Options: orientation=row, compression=no, enable_rowsecurity=true
 
 --当前用户执行SELECT操作
@@ -195,10 +194,8 @@ postgres=# SELECT * FROM all_data;
 postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
          QUERY PLAN
 ----------------------------
- Streaming (type: GATHER)
-   Node/s: All dbnodes
-   ->  Seq Scan on all_data
-(3 rows)
+ Seq Scan on all_data
+(1 rows)
 
 --切换至alice用户执行SELECT操作
 postgres=# SELECT * FROM all_data;
@@ -208,17 +205,15 @@ postgres=# SELECT * FROM all_data;
 (1 row)
 
 postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
-                           QUERY PLAN
+ QUERY PLAN
 ----------------------------------------------------------------
- Streaming (type: GATHER)
-   Node/s: All dbnodes
-   ->  Seq Scan on all_data
-         Filter: ((role)::name = 'alice'::name)
+ Seq Scan on all_data
+   Filter: ((role)::name = 'alice'::name)
  Notice: This query is influenced by row level security feature
-(5 rows)
+(3 rows)
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122109_section1426016489355"></a>
 
-[DROP ROW LEVEL SECURITY POLICY](DROP-ROW-LEVEL-SECURITY-POLICY.md)
+[DROP ROW LEVEL SECURITY POLICY](DROP-ROW-LEVEL-SECURITY-POLICY.md)，[ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)
 

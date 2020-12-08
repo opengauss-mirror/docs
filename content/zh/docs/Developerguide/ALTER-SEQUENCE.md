@@ -65,7 +65,7 @@ postgres=# CREATE TABLE T1(C1 bigint default nextval('serial'));
 --将序列serial的归属列变为T1.C1。
 postgres=# ALTER SEQUENCE serial OWNED BY T1.C1;
 
---删除序列
+--删除序列和表。
 postgres=# DROP SEQUENCE serial cascade;
 postgres=# DROP TABLE T1;
 ```

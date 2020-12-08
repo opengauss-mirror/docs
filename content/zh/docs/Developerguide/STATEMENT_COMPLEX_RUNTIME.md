@@ -38,7 +38,7 @@ STATEMENT\_COMPLEX\_RUNTIME视图显示当前用户在数据库主节点上正�
 </td>
 <td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122664_p108264151361"><a name="zh-cn_topic_0237122664_p108264151361"></a><a name="zh-cn_topic_0237122664_p108264151361"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="p1718885316271"><a name="p1718885316271"></a><a name="p1718885316271"></a>数据库进程名称</p>
+<td class="cellrowborder" valign="top" width="51.300000000000004%" headers="mcps1.2.4.1.3 "><p id="p1718885316271"><a name="p1718885316271"></a><a name="p1718885316271"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122664_row1456161919474"><td class="cellrowborder" valign="top" width="29.659999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122664_p138263151561"><a name="zh-cn_topic_0237122664_p138263151561"></a><a name="zh-cn_topic_0237122664_p138263151561"></a>username</p>
