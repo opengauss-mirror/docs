@@ -4,7 +4,7 @@
 
 ## 前提条件<a name="section128252205291"></a>
 
-WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](zh-cn_topic_0242371547.md#zh-cn_topic_0237124757_section983311682019)为on时）， 且快照数量大于等于2时可以生成报告。
+WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-cn_topic_0237124757_section983311682019)为on时）， 且快照数量大于等于2时可以生成报告。
 
 ## 操作步骤<a name="section49941629132915"></a>
 
