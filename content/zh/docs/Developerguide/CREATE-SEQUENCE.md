@@ -128,7 +128,7 @@ postgres=# CREATE SEQUENCE serial1
  START 101
  CACHE 20
 OWNED BY customer_address.ca_address_sk;
---删除序列
+--删除表和序列
 postgres=# DROP TABLE customer_address;
 postgres=# DROP SEQUENCE serial cascade;
 postgres=# DROP SEQUENCE serial1 cascade;

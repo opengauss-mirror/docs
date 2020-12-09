@@ -52,7 +52,23 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   substring\(string, from int \[,for int\]\)
+-   substring\(string from int \[for int\]\)
+
+    Description: Truncates substring.
+
+    Return type: bytea
+
+    For example:
+
+    ```
+    postgres=# SELECT substring(E'Th\\000omas'::bytea from 2 for 3) AS RESULT; 
+      result  
+    ----------
+     \x68006f
+    (1 row)
+    ```
+
+-   substr\(string, from int \[,for int\]\)
 
     Description: Truncates substring.
 
