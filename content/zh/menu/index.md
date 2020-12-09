@@ -645,7 +645,7 @@ headless: true
             -   [CREATE GROUP]({{< relref "./docs/Developerguide/CREATE-GROUP.md" >}})
             -   [CREATE INDEX]({{< relref "./docs/Developerguide/CREATE-INDEX.md" >}})
             -   [CREATE MATERIALIZED VIEW]({{< relref "./docs/Developerguide/CREATE-MATERIALIZED-VIEW.md" >}})
-            -   [CREATE ROW LEVEL SECURITY POLICY]({{< relref "./docs/Developerguide/CREATE-ROW-LEVEL-SECURITY-POLICY.md" >}})
+            -   [CREATE ROW LEVEL SECURITY POLICY]({{< relref "./docs/Developerguide/CREATE-ROW-LEVLEL-SECURITY-POLICY.md" >}})
             -   [CREATE PROCEDURE]({{< relref "./docs/Developerguide/CREATE-PROCEDURE.md" >}})
             -   [CREATE ROLE]({{< relref "./docs/Developerguide/CREATE-ROLE.md" >}})
             -   [CREATE SCHEMA]({{< relref "./docs/Developerguide/CREATE-SCHEMA.md" >}})
