@@ -52,7 +52,7 @@
 >![](public_sys-resources/icon-notice.gif) **须知：**   
 >openGauss目前支持SSL的场景为客户端连接数据库主节点场景，该参数目前建议只在数据库主节点中开启，数据库节点默认值为off。开启此参数需要同时配置ssl\_cert\_file、ssl\_key\_file和ssl\_ca\_file等参数及对应文件，不正确的配置可能会导致openGauss无法正常启动。  
 
-**默认值：**off
+**默认值：**on
 
 ## require\_ssl<a name="zh-cn_topic_0237124696_section1652594319820"></a>
 

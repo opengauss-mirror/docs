@@ -52,7 +52,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >openGauss supports SSL when a client connects to the primary node of the database. You are advised to enable SSL connections only on the primary node of the database. On database node, the default value is  **off**. To enable SSL connections, you also need to configure parameters such as  **ssl\_cert\_file**,  **ssl\_key\_file**, and  **ssl\_ca\_file**  and the corresponding files. Incorrect configurations may cause startup failure of openGauss.  
 
-**Default value**:  **off**
+**Default value**:  **on**
 
 ## require\_ssl<a name="en-us_topic_0237124696_section1652594319820"></a>
 
