@@ -179,5 +179,5 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 A small value indicates that much data is logged, which seriously affects performance.
 
-**Default value**:  **3s**
+**Default value**:  **0**
 
