@@ -52,7 +52,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   substring\(string from int \[for int\]\)
+-   substring\(string [from int]  \[for int\]\)
 
     Description: Truncates substring.
 
