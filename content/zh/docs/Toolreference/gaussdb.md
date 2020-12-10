@@ -235,7 +235,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row65279152"><td class="cellrowborder" valign="top" width="11.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p36047263"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p36047263"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p36047263"></a>-O</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p46152992"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p46152992"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p46152992"></a>允许修改系统表的内部。</p>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p46152992"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p46152992"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p46152992"></a>允许修改系统表的内部。此选项仅用于gs_initdb。</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.26%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ac7c10e2c40fc48ef84e2cc2caa4bf9e7"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ac7c10e2c40fc48ef84e2cc2caa4bf9e7"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ac7c10e2c40fc48ef84e2cc2caa4bf9e7"></a>-</p>
 </td>
