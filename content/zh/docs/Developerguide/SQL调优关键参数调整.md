@@ -69,6 +69,11 @@
 <td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237121530_p3125411124017"><a name="zh-cn_topic_0237121530_p3125411124017"></a><a name="zh-cn_topic_0237121530_p3125411124017"></a>控制优化器是否启用LAZY_AGG和MAGIC_SET重写规则。</p>
 </td>
 </tr>
+ <tr id="zh-cn_topic_0237121530_row91254119407"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237121530_p5125511194014"><a name="zh-cn_topic_0237121530_p5125511194014"></a><a name="zh-cn_topic_0237121530_p5125511194014"></a>sql_beta_feature</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237121530_p3125411124017"><a name="zh-cn_topic_0237121530_p3125411124017"></a><a name="zh-cn_topic_0237121530_p3125411124017"></a>控制优化器是否启用。SEL_SEMI_POISSON/SEL_EXPR_INSTR/PARAM_PATH_GEN/RAND_COST_OPT/PARAM_PATH_OPT/PAGE_EST_OPT测试功能。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

@@ -24,7 +24,7 @@ openGauss可以通过调用SQL函数，进行创建、删除、推进逻辑复�
 
 ## 操作步骤<a name="zh-cn_topic_0237121453_section14821441121619"></a>
 
-1.  以集群安装用户登录openGauss集群主节点。
+1.  以数据库安装用户登录openGauss数据库主节点。
 2.  使用如下命令通过连接默认数据库postgres。
 
     ```

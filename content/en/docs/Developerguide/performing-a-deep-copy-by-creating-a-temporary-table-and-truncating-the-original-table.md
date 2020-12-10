@@ -9,7 +9,7 @@ When creating the temporary table, retain the primary key attributes of the orig
 1.  Run the  **CREATE TABLE AS**  statement to create a temporary table  **customer\_t\_temp**  for the  **customer\_t**  table.
 
     ```
-    CREATE TABLE customer_t_temp AS SELECT * FROM customer_t;
+    CREATE TEMP TABLE customer_t_temp AS SELECT * FROM customer_t;
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
