@@ -11,11 +11,14 @@
 -   If only one primary node is left in the cluster after the deletion, the system prompts you to restart the current node. In this case, you are advised to restart the node based on the service running environment.
 -   If the target standby node is disconnected before the operation, manually stop or delete the database service on the target standby server after the target standby server is restored.
 -   The standby node can be dropped only from the primary/standby cluster installed in OM mode. The cluster installed in compilation mode is not supported.
+-   If the target standby node is in the synchronous replication mode and there are transactions waiting committed during the **gs\_dropnode** operation, the transactions will be stucked shortly and recover until the target standby node deleted.
 
 ## Prerequisite<a name="section171227231492"></a>
 
 -   Perform standby node deletion only on the primary node.
 -   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
+-   Do not run **gs\_expansion** command on the primary node at the same time.
+-   Do not run **gs\_dropnode** command with same parameters at the same time.
 -   Before deletion, ensure that the database management user  **omm**  trust relationship has been established between the primary and standby nodes.
 -   Log in to the OS as the OS user  **omm**  to run the  **gs\_dropnode**  command.
 -   Before running commands, run the  **source**  command to import environment variables of a database on the primary node. If the database cluster is installed in separate environment variable mode, run the  **source**  command to import the separate environment variables. If they are not separated, run the  **source**  command to import the .bashrc configuration file of the sub-user. Generally, the file path is  **/home/\[user\]/.bashrc**.
