@@ -8,7 +8,7 @@
 
 -   **将系统权限授权给角色或用户**
 
-    系统权限又称为用户属性，包括SYSADMIN、CREATEDB、CREATEROLE、AUDITADMIN和LOGIN。
+    系统权限又称为用户属性，包括SYSADMIN、CREATEDB、CREATEROLE、AUDITADMIN、MONADMIN、OPRADMIN、POLADMIN和LOGIN。
 
     系统权限一般通过CREATE/ALTER ROLE语法来指定。其中，SYSADMIN权限可以通过GRANT/REVOKE ALL PRIVILEGE授予或撤销。但系统权限无法通过ROLE和USER的权限被继承，也无法授予PUBLIC。
 
@@ -41,7 +41,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
--   将或试视图的访问权限赋予指定的用户或角色。
+-   将表或视图的访问权限赋予指定的用户或角色。
 
     ```
     GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
@@ -95,6 +95,24 @@
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >本版本暂时不支持赋予域的访问权限。
+
+-   将客户端加密主密钥CMK的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { USAGE | DROP | ALL [ PRIVILEGES ] }
+        ON { CLIENT_MASTER_KEY client_master_key [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    ```
+
+-   将列加密密钥CEK的访问权限赋予指定的用户或角色。
+
+    ```
+    GRANT { USAGE | DROP| ALL [ PRIVILEGES ] }
+        ON { COLUMN_ENCRYPTION_KEY column_encryption_key [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    ```
 
 -   将外部数据源的访问权限赋予给指定的用户或角色。
 
@@ -362,6 +380,18 @@ GRANT的参数说明如下所示。
 
     表空间名称。
 
+-   client\_master\_key
+
+    客户端加密主密钥的名称。
+
+    取值范围：字符串，要符合标识符命名规范。
+
+-   column\_encryption\_key
+
+    列加密密钥的名称。
+
+    取值范围：字符串，要符合标识符命名规范。
+
 -   **directory\_name**
 
     目录名称。
@@ -466,6 +496,62 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
     ```
 
 
+**示例：将CMK或者CEK的权限授权给其他用户或角色。**
+
+1.  连接密态数据库
+
+    ```
+    gsql -p 57101 postgres -r -C
+    postgres=# \! gs_ktool -g
+    GENERATE
+    1
+    postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = gs_ktool , KEY_PATH = "gs_ktool/1" , ALGORITHM = AES_256_CBC);
+    CREATE CLIENT MASTER KEY
+    postgres=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
+    CREATE COLUMN ENCRYPTION KEY
+    ```
+
+2.  创建角色newuser，将密钥的权限授权给newuser。
+
+    ```
+    postgres=# CREATE USER newuser PASSWORD 'gauss@123';
+    CREATE ROLE
+    postgres=# GRANT ALL ON SCHEMA public TO newuser;
+    GRANT
+    postgres=# GRANT USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 to newuser;
+    GRANT
+    postgres=# GRANT USAGE ON CLIENT_MASTER_KEY MyCMK1 to newuser;
+    GRANT
+    ```
+
+3.  设置该用户连接数据库,使用该CEK创建加密表。
+
+    ```
+    postgres=# SET SESSION AUTHORIZATION newuser PASSWORD 'gauss@123';
+    postgres=>  CREATE TABLE acltest1 (x int, x2 varchar(50) ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = MyCEK1, ENCRYPTION_TYPE = DETERMINISTIC));
+    NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'x' as the distribution column by default.
+    HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
+    CREATE TABLE
+    postgres=> SELECT has_cek_privilege('newuser', 'MyCEK1', 'USAGE');
+     has_cek_privilege
+    -------------------
+     t
+    (1 row)
+    ```
+
+4.  撤销权限，并清理用户。
+
+    ```
+    postgres=# REVOKE USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 FROM newuser;
+    postgres=# REVOKE USAGE ON CLIENT_MASTER_KEY MyCMK1 FROM newuser;
+    postgres=# DROP TABLE acltest1;
+    postgres=# DROP COLUMN ENCRYPTION KEY MyCEK1;
+    postgres=# DROP CLIENT MASTER KEY MyCMK1;
+    postgres=# DROP SCHEMA IF EXISTS newuser CASCADE;
+    postgres=# DROP ROLE IF EXISTS newuser;
+    ```
+
+
 **示例：撤销上述授予的权限，并清理角色和用户。**
 
 ```
@@ -481,5 +567,5 @@ postgres=# DROP USER joe CASCADE;
 
 ## 相关链接<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
-[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)
+[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](zh-cn_topic_0289900961.md)
 

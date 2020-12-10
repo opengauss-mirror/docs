@@ -632,7 +632,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **on**  indicates that the performance logs are output.
 -   **off**  indicates that the performance logs are not output.
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 ## advance\_xlog\_file\_num<a name="en-us_topic_0237124743_section82551249132115"></a>
 

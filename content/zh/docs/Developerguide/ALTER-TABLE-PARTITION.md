@@ -9,13 +9,15 @@
 -   添加分区的表空间不能是PG\_GLOBAL。
 -   添加分区的名称不能与该分区表已有分区的名称相同。
 -   添加分区的分区键值要和分区表的分区键的类型一致，且要大于分区表中最后一个范围分区的上边界。
--   如果目标分区表中已有分区数达到了最大值（32767），则不能继续添加分区。
+-   如果目标分区表中已有分区数达到了最大值，则不能继续添加分区（范围分区表的分区数最大值是32767，哈希/列表分区表最大值是64）。
 
 -   当分区表只有一个分区时，不能删除该分区。
 -   选择分区使用PARTITION FOR\(\)，括号里指定值个数应该与定义分区时使用的列个数相同，并且一一对应。
 -   Value分区表不支持相应的Alter Partition操作。
 -   列存分区表不支持切割分区。
 -   间隔分区表不支持添加分区。
+-   哈希分区表不支持修改表分区操作。
+-   列表分区表仅支持添加/删除分区。
 -   只有分区表的所有者或者被授予了分区表ALTER权限的用户有权限执行ALTER TABLE PARTITION命令，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
@@ -109,7 +111,7 @@
             >![](public_sys-resources/icon-notice.gif) **须知：** 
             >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
             >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
-            >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](zh-cn_topic_0289900346.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
+            >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
             >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。
 
 
@@ -120,7 +122,7 @@
                 [ TABLESPACE tablespacename ]
             ```
 
-        -   分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](zh-cn_topic_0289900346.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_li2094151861116)。
+        -   分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_li2094151861116)。
 
             ```
             PARTITION partition_name {
@@ -136,17 +138,30 @@
     -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
 
         ```
-        ADD {partition_less_than_item | partition_start_end_item}
+        ADD {partition_less_than_item | partition_start_end_item| partition_list_item }
         ```
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   间隔分区表不支持添加分区。
+        分区项partition\_list\_item的语法如下。
+
+        ```
+        PARTITION partition_name VALUES (list_values_clause) 
+            [ TABLESPACE tablespacename ]
+        ```
+
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
+        >-   间隔/哈希分区表不支持添加分区。
+
 
     -   drop\_clause子语法用于删除分区表中的指定分区。
 
         ```
         DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
         ```
+
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >-   哈希分区表不支持删除分区。
+        >-   列表分区表仅支持通过子分区名称删除子分区。
 
 
 -   修改表分区名称的语法。
@@ -241,9 +256,9 @@
 
 ## 示例<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s50d0d11ee3074db6911f91d1d9e31fbd"></a>
 
-请参考CREATE TABLE PARTITION的[示例](zh-cn_topic_0289900346.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842)。
+请参考CREATE TABLE PARTITION的[示例](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842)。
 
 ## 相关链接<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](zh-cn_topic_0289900346.md)，[DROP TABLE](DROP-TABLE.md)
+[CREATE TABLE PARTITION](CREATE-TABLE-PARTITION.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
 
