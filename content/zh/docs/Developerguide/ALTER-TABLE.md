@@ -78,7 +78,7 @@
     >-   **SET TABLESPACE new\_tablespace**
     >    这种形式将表空间修改为指定的表空间并将相关的数据文件移动到新的表空间。但是表上的所有索引都不会被移动，索引可以通过ALTER INDEX语法的SET TABLESPACE选项来修改索引的表空间。
     >-   **SET \{COMPRESS|NOCOMPRESS\}**
-    >    修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。
+    >    修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。行存表不支持压缩。
     >-   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
     >    此语法仅在扩展模式（GUC参数support\_extended\_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。
     >-   **ADD NODE \( nodename \[, ... \] \)**
@@ -162,7 +162,7 @@
                   CHECK ( expression ) |
                   DEFAULT default_expr  |
                   UNIQUE index_parameters |
-                  PRIMARY KEY index_parameters }
+                  PRIMARY KEY index_parameters |      ENCRYPTEDWITH(COLUMN_ENCRYPTION_KEY=column_encryption_key,ENCRYPTION_TYPE=encryption_type_value)}
                 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
             ```
 
@@ -293,11 +293,11 @@
 
 -   **compress\_mode**
 
-    表字段的压缩可选项，当前仅对行存表有效。该子句指定该字段优先使用的压缩算法。
+    表字段的压缩可选项。该子句指定该字段优先使用的压缩算法。行存表不支持压缩。
 
 -   **collation**
 
-    字段排序规则名称。可选字段COLLATE指定了新字段的排序规则，如果省略，排序规则为新字段的默认类型。排序规则可以使用“select \* from pg\_collation”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
+    字段排序规则名称。可选字段COLLATE指定了新字段的排序规则，如果省略，排序规则为新字段的默认类型。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
 -   **USING expression**
 
@@ -374,7 +374,7 @@
 
 -   **COMPRESS|NOCOMPRESS**
     -   NOCOMPRESS：如果指定关键字NOCOMPRESS则不会修改表的现有压缩特性。
-    -   COMPRESS：如果指定COMPRESS关键字，则对该表进行批量插入元组时触发该特性。
+    -   COMPRESS：如果指定COMPRESS关键字，则对该表进行批量插入元组时触发该特性。行存表不支持压缩。
 
 -   **new\_table\_name**
 
@@ -407,9 +407,9 @@
 
 ## 示例<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
 
-请参考CREATE TABLE的[示例](zh-cn_topic_0289900279.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)。
+请参考CREATE TABLE的[示例](CREATE-TABLE.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)。
 
 ## 相关链接<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
 
-[CREATE TABLE](zh-cn_topic_0289900279.md)，[DROP TABLE](DROP-TABLE.md)
+[CREATE TABLE](CREATE-TABLE.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
 

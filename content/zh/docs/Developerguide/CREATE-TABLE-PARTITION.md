@@ -1,10 +1,10 @@
-# CREATE TABLE PARTITION<a name="ZH-CN_TOPIC_0242370583"></a>
+# CREATE TABLE PARTITION<a name="ZH-CN_TOPIC_0289900346"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122119_section1163224811518"></a>
+## 功能描述<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518"></a>
 
 创建分区表。分区表是把逻辑上的一张表根据某种方案分成几张物理块进行存储，这张逻辑上的表称之为分区表，物理块称之为分区。分区表是一张逻辑表，不存储数据，数据实际是存储在分区上的。
 
-常见的分区方案有范围分区（Range Partitioning）、间隔分区（Interval Partitioning）、 哈希分区（Hash Partitioning）、列表分区（List Partitioning）、数值分区（Value Partition）等。目前行存表仅支持范围分区、间隔分区，列存表仅支持范围分区。
+常见的分区方案有范围分区（Range Partitioning）、间隔分区（Interval Partitioning）、哈希分区（Hash Partitioning）、列表分区（List Partitioning）、数值分区（Value Partition）等。目前行存表支持范围分区、间隔分区、哈希分区、列表分区，列存表仅支持范围分区。
 
 范围分区是根据表的一列或者多列，将要插入表的记录分为若干个范围，这些范围在不同的分区里没有重叠。为每个范围创建一个分区，用来存储相应的数据。
 
@@ -14,9 +14,17 @@
 
 间隔分区是一种特殊的范围分区，相比范围分区，新增间隔值定义，当插入记录找不到匹配的分区时，可以根据间隔值自动创建分区。
 
-间隔分区只支持基于表的一列分区，并且该列只支持TIMESTAMP[(p)][WITHOUT TIME ZONE]、TIMESTAMP[(p)][WITH TIME ZONE]、DATE数据类型。
+间隔分区只支持基于表的一列分区，并且该列只支持TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE数据类型。
 
 间隔分区策略：根据分区键值将记录映射到已创建的某个分区上，如果可以映射到已创建的某一分区上，则把记录插入到对应的分区上，否则根据分区键值和表定义信息自动创建一个分区，然后将记录插入新分区中，新创建的分区数据范围等于间隔值。
+
+哈希分区是根据表的一列或者多列，为每个分区指定模数和余数，将要插入表的记录划分到对应的分区中，每个分区所持有的行都需要满足条件：分区键的值除以为其指定的模数将产生为其指定的余数。
+
+哈希分区策：根据分区键值将记录映射到已创建的某个分区上，如果可以映射到已创建的某一分区上，则把记录插入到对应的分区上，否则返回报错和提示信息。
+
+列表分区是根据表的一列或者多列，将要插入表的记录通过每一个分区中出现的键值划分到对应的分区中，这些键值在不同的分区里没有重叠。为每组键值创建一个分区，用来存储相应的数据。
+
+列表分区策略：根据分区键值将记录映射到已创建的某个分区上，如果可以映射到已创建的某一分区上，则把记录插入到对应的分区上，否则给出报错和提示信息。
 
 分区可以提供若干好处：
 
@@ -24,11 +32,12 @@
 -   当查询或更新一个分区的大部分记录时，连续扫描那个分区而不是访问整个表可以获得巨大的性能提升。
 -   如果需要大量加载或者删除的记录位于单独的分区上，则可以通过直接读取或删除那个分区以获得巨大的性能提升，同时还可以避免由于大量DELETE导致的VACUUM超载（仅范围分区）。
 
-## 注意事项<a name="zh-cn_topic_0237122119_zh-cn_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
+## 注意事项<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
-有限地支持唯一约束和主键约束，即唯一约束和主键约束的约束键必须包含所有分区键。
+-   有限地支持唯一约束和主键约束，即唯一约束和主键约束的约束键必须包含所有分区键。
+-   目前哈希分区和列表分区仅支持单列构建分区键，暂不支持多列构建分区键。
 
-## 语法格式<a name="zh-cn_topic_0237122119_zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
+## 语法格式<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
 ```
 CREATE TABLE [ IF NOT EXISTS ] partition_table_name
@@ -42,7 +51,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ TABLESPACE tablespace_name ]
      PARTITION BY { 
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )}
+        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
+        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES (list_values_clause)] opt_table_space )}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -103,7 +113,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122119_zh-cn_topic_0059777586_sd2701df1d7364084a7791592def4e9eb"></a>
+## 参数说明<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sd2701df1d7364084a7791592def4e9eb"></a>
 
 -   **IF NOT EXISTS**
 
@@ -127,7 +137,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **COLLATE  collation**
 
-    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“SELECT * FROM pg_collation;”命令从pg_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
+    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
 -   **CONSTRAINT constraint\_name**
 
@@ -175,78 +185,78 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         -   COLUMN：表的数据将以列式存储。
         -   ROW（缺省值）：表的数据将以行式存储。
 
-            >![](public_sys-resources/icon-notice.gif) **须知：**   
-            >orientation不支持修改。  
+            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >orientation不支持修改。
 
 
     -   COMPRESSION
         -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
-        -   行存表的有效值为YES/NO，默认值为NO。
-    
+        -   行存表不支持压缩。
+
     -   MAX\_BATCHROW
-    
+
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-    
-        取值范围：10000\~60000
-    
+
+        取值范围：10000\~60000，默认60000。
+
     -   PARTIAL\_CLUSTER\_ROWS
-    
+
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-    
-        取值范围：其有效值为大于等于10万。此值是MAX\_BATCHROW的倍数。
-    
+
+        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
+
     -   DELTAROW\_THRESHOLD
-    
+
         预留参数。该参数只对列存表有效。
-    
+
         取值范围：0～9999
 
 
-- **COMPRESS / NOCOMPRESS**
+-   **COMPRESS / NOCOMPRESS**
 
-    创建一个新表时，需要在创建表语句中指定关键字COMPRESS，这样，当对该表进行批量插入时就会触发压缩特性。该特性会在页范围内扫描所有元组数据，生成字典、压缩元组数据并进行存储。指定关键字NOCOMPRESS则不对表进行压缩。
+    创建一个新表时，需要在创建表语句中指定关键字COMPRESS，这样，当对该表进行批量插入时就会触发压缩特性。该特性会在页范围内扫描所有元组数据，生成字典、压缩元组数据并进行存储。指定关键字NOCOMPRESS则不对表进行压缩。行存表不支持压缩。
 
     缺省值为NOCOMPRESS，即不对元组数据进行压缩。
 
-- **TABLESPACE tablespace\_name**
+-   **TABLESPACE tablespace\_name**
 
     指定新表将要在tablespace\_name表空间内创建。如果没有声明，将使用默认表空间。
 
-- **PARTITION BY RANGE\(partition\_key\)**
+-   **PARTITION BY RANGE\(partition\_key\)**
 
     创建范围分区。partition\_key为分区键的名称。
 
     （1）对于从句是VALUES LESS THAN的语法格式：
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
 
     该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、CHARACTER VARYING\(n\)、VARCHAR\(n\)、CHARACTER\(n\)、CHAR\(n\)、CHARACTER、CHAR、TEXT、NVARCHAR2、NAME、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
     （2）对于从句是START END的语法格式：
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。
 
     该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
-    （3）对于指定了interval子句的语法格式：
+    （3）对于指定了INTERVAL子句的语法格式：
 
-    > ![](D:/work/db/openGauss/%E6%96%87%E6%A1%A3/opengauss-docs-master/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **须知：**   
-    > 对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。
 
     该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
-- **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
+-   **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
 
     指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-   每个分区都需要指定一个上边界。  
-    >-   分区上边界的类型应当和分区键的类型一致。  
-    >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   每个分区都需要指定一个上边界。
+    >-   分区上边界的类型应当和分区键的类型一致。
+    >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
-- **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
+-   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
 
     指定各分区的信息，各参数意义如下：
 
@@ -258,31 +268,48 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
     -   MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。  
-    >2.  START END语法需要遵循以下限制：  
-    >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值；  
-    >    -   相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；  
-    >    -   每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；  
-    >    -   每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；  
-    >    -   一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；  
-    >    -   partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；  
-    >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（32767）；  
-    >3.  在创建分区表时START END与LESS THAN语法不可混合使用。  
-    >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
+    >2.  START END语法需要遵循以下限制：
+    >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值；
+    >    -   相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
+    >    -   每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
+    >    -   每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
+    >    -   一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
+    >    -   partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
+    >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（32767）；
+    >3.  在创建分区表时START END与LESS THAN语法不可混合使用。
+    >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
 
-- **INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ]**
+-   **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**
 
     间隔分区定义信息。
 
-    - interval_expr：自动创建分区的间隔，例如：1 day、1 month。
+    -   interval\_expr：自动创建分区的间隔，例如：1 day、1 month。
 
-    - STORE IN (tablespace_name [, ... ] )：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
+    -   STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
 
-      > ![](D:/work/db/openGauss/%E6%96%87%E6%A1%A3/opengauss-docs-master/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **须知：**   
-      > 列存表不支持间隔分区。    
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >列存表不支持间隔分区。
 
-- **\{ ENABLE | DISABLE \} ROW MOVEMENT**
+-   **PARTITION BY LIST\(partition\_key\)**
+
+    创建列表分区。partition\_key为分区键的名称。
+
+    -   对于partition\_key，列表分区策略的分区键仅支持1列。
+    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过256个。
+
+    分区键支持的数据类型为：INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
+
+-   **PARTITION BY HASH\(partition\_key\)**
+
+    创建哈希分区。partition\_key为分区键的名称。
+
+    对于partition\_key，哈希分区策略的分区键仅支持1列。
+
+    分区键支持的数据类型为：INT1、INT2、INT4、NUMERIC、VARCHAR\(n\)、TEXT、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
+
+-   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
     行迁移开关。
 
@@ -292,6 +319,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     -   ENABLE（缺省值）：行迁移开关打开。
     -   DISABLE：行迁移开关关闭。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >列表/哈希分区表暂不支持ROW MOVEMENT。
 
 
 -   **NOT NULL**
@@ -354,7 +384,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     为UNIQUE或PRIMARY KEY约束相关的索引声明一个表空间。如果没有提供这个子句，这个索引将在default\_tablespace中创建，如果default\_tablespace为空，将使用数据库的缺省表空间。
 
 
-## 示例<a name="zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842"></a>
+## 示例<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842"></a>
 
 -   示例1：创建范围分区表tpcds.web\_returns\_p1，含有8个分区，分区键为integer类型。  分区的范围分别为：wr\_returned\_date\_sk< 2450815，2450815<= wr\_returned\_date\_sk< 2451179，2451179<=wr\_returned\_date\_sk< 2451544，2451544 <= wr\_returned\_date\_sk< 2451910，2451910 <= wr\_returned\_date\_sk< 2452275，2452275 <= wr\_returned\_date\_sk< 2452640，2452640 <= wr\_returned\_date\_sk< 2453005，wr\_returned\_date\_sk\>=2453005。
 
@@ -654,60 +684,64 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     postgres=# DROP TABLESPACE startend_tbs4;
     ```
 
-- 示例4：创建间隔分区表sales，初始包含2个分区，分区键为DATE类型。  分区的范围分别为：time_id  <  '2019-02-01 00:00:00'，
 
-  ```
-  --创建表sales
-  postgres=# CREATE TABLE sales
-  (prod_id NUMBER(6),
-   cust_id NUMBER,
-   time_id DATE,
-   channel_id CHAR(1),
-   promo_id NUMBER(6),
-   quantity_sold NUMBER(3),
-   amount_sold NUMBER(10,2)
-  )
-  PARTITION BY RANGE (time_id)
-  INTERVAL('1 day')
-  ( PARTITION p1 VALUES LESS THAN ('2019-02-01 00:00:00'),
-    PARTITION p2 VALUES LESS THAN ('2019-02-02 00:00:00')
-  );
-  
-  -- 数据插入分区p1
-  postgres=# INSERT INTO sales VALUES(1, 12, '2019-01-10 00:00:00', 'a', 1, 1, 1);
-  
-  -- 数据插入分区p2
-  postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-01 00:00:00', 'a', 1, 1, 1);
-  
-  -- 查看分区信息
-  postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
-   relname | partstrategy |       boundaries
-  ---------+--------------+-------------------------
-   p1      | r            | {"2019-02-01 00:00:00"}
-   p2      | r            | {"2019-02-02 00:00:00"}
-  (2 rows)
-  
-  -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
-  -- 新分区的范围为 '2019-02-05 00:00:00' <= time_id < '2019-02-06 00:00:00'
-  postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-05 00:00:00', 'a', 1, 1, 1);
-  
-  -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
-  -- 新分区的范围为 '2019-02-03 00:00:00' <= time_id < '2019-02-04 00:00:00'
-  postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-03 00:00:00', 'a', 1, 1, 1);
-  
-  -- 查看分区信息
-  postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
-   relname | partstrategy |       boundaries
-  ---------+--------------+-------------------------
-   sys_p1  | i            | {"2019-02-06 00:00:00"}
-   sys_p2  | i            | {"2019-02-04 00:00:00"}
-   p1      | r            | {"2019-02-01 00:00:00"}
-   p2      | r            | {"2019-02-02 00:00:00"}
-  (4 rows)
-  
-  ```
+-   示例4：创建间隔分区表sales，初始包含2个分区，分区键为DATE类型。  分区的范围分别为：time\_id  <  '2019-02-01 00:00:00'，
 
-## 相关链接<a name="zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
+    '2019-02-01 00:00:00' <= time\_id < '2019-02-02 00:00:00' 。
 
-[ALTER TABLE PARTITION](ALTER-TABLE-PARTITION.md)，[DROP TABLE](DROP-TABLE.md)
+    ```
+    --创建表sales
+    postgres=# CREATE TABLE sales
+    (prod_id NUMBER(6),
+     cust_id NUMBER,
+     time_id DATE,
+     channel_id CHAR(1),
+     promo_id NUMBER(6),
+     quantity_sold NUMBER(3),
+     amount_sold NUMBER(10,2)
+    )
+    PARTITION BY RANGE (time_id)
+    INTERVAL('1 day')
+    ( PARTITION p1 VALUES LESS THAN ('2019-02-01 00:00:00'),
+      PARTITION p2 VALUES LESS THAN ('2019-02-02 00:00:00')
+    );
+    
+    -- 数据插入分区p1
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-01-10 00:00:00', 'a', 1, 1, 1);
+    
+    -- 数据插入分区p2
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-01 00:00:00', 'a', 1, 1, 1);
+    
+    -- 查看分区信息
+    postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
+     relname | partstrategy |       boundaries
+    ---------+--------------+-------------------------
+     p1      | r            | {"2019-02-01 00:00:00"}
+     p2      | r            | {"2019-02-02 00:00:00"}
+    (2 rows)
+    
+    -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
+    -- 新分区的范围为 '2019-02-05 00:00:00' <= time_id < '2019-02-06 00:00:00'
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-05 00:00:00', 'a', 1, 1, 1);
+    
+    -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
+    -- 新分区的范围为 '2019-02-03 00:00:00' <= time_id < '2019-02-04 00:00:00'
+    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-03 00:00:00', 'a', 1, 1, 1);
+    
+    -- 查看分区信息
+    postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
+     relname | partstrategy |       boundaries
+    ---------+--------------+-------------------------
+     sys_p1  | i            | {"2019-02-06 00:00:00"}
+     sys_p2  | i            | {"2019-02-04 00:00:00"}
+     p1      | r            | {"2019-02-01 00:00:00"}
+     p2      | r            | {"2019-02-02 00:00:00"}
+    (4 rows)
+    
+    ```
+
+
+## 相关链接<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
+
+[ALTER TABLE PARTITION](ALTER-TABLE-PARTITION.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
 

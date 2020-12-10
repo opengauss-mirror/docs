@@ -1,83 +1,85 @@
-# CREATE TABLE<a name="ZH-CN_TOPIC_0242370581"></a>
+# CREATE TABLE<a name="ZH-CN_TOPIC_0289900279"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
+## 功能描述<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
 
 在当前数据库中创建一个新的空白表，该表由命令执行者所有。
 
-## 注意事项<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
+## 注意事项<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
--   列存表支持的数据类型请参考[列存表支持的数据类型](列存表支持的数据类型.md)。
+-   列存表支持的数据类型请参考[列存表支持的数据类型](zh-cn_topic_0289900452.md)。
 -   列存表不支持数组。
 -   创建列存表的数量建议不超过1000个。
 -   表中的主键约束和唯一约束必须包含分布列。
 -   如果在建表过程中数据库系统发生故障，系统恢复后可能无法自动清除之前已创建的、大小为0的磁盘文件。此种情况出现概率小，不影响数据库系统的正常运行。
 -   列存表的表级约束只支持PARTIAL CLUSTER KEY，不支持主外键等表级约束。
 -   列存表的字段约束只支持NULL、NOT NULL和DEFAULT常量值。
--   列存表支持delta表，受参数[enable\_delta\_store](并行导入.md#zh-cn_topic_0237124705_section1035224982816)  控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
+-   列存表支持delta表，受参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)  控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
 -   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
 
-## 语法格式<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
+## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
--   创建表。
-
-    ```
-    CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
-        ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
-            | table_constraint
-            | LIKE source_table [ like_option [...] ] }
-            [, ... ])
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-        [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
-        [ COMPRESS | NOCOMPRESS ]
-        [ TABLESPACE tablespace_name ];
-    ```
-
-    -   其中列约束column\_constraint为：
-
-        ```
-        [ CONSTRAINT constraint_name ]
-        { NOT NULL |
-          NULL |
-          CHECK ( expression ) |
-          DEFAULT default_expr |
-          UNIQUE index_parameters |
-          PRIMARY KEY index_parameters }
-        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-
-    -   其中列的压缩可选项compress\_mode为：
-
-        ```
-        { DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS }
-        ```
-
-    -   其中表约束table\_constraint为：
-
-        ```
-        [ CONSTRAINT constraint_name ]
-        { CHECK ( expression ) |
-          UNIQUE ( column_name [, ... ] ) index_parameters |
-          PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-          PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
-        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-
-    -   其中like选项like\_option为：
-
-        ```
-        { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
-        ```
-
-
-
-其中索引参数index\_parameters为：
+创建表。
 
 ```
-[ WITH ( {storage_parameter = value} [, ... ] ) ]
-[ USING INDEX TABLESPACE tablespace_name ]
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
+    ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+        | table_constraint
+        | LIKE source_table [ like_option [...] ] }
+        [, ... ])
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
+    [ COMPRESS | NOCOMPRESS ]
+    [ TABLESPACE tablespace_name ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
+-   其中列约束column\_constraint为：
+
+    ```
+    [ CONSTRAINT constraint_name ]
+    { NOT NULL |
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_expr |
+      UNIQUE index_parameters |
+      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value) |
+      PRIMARY KEY index_parameters }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    ```
+
+
+-   其中列的压缩可选项compress\_mode为：
+
+    ```
+    { DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS }
+    ```
+
+-   其中表约束table\_constraint为：
+
+    ```
+    [ CONSTRAINT constraint_name ]
+    { CHECK ( expression ) |
+      UNIQUE ( column_name [, ... ] ) index_parameters |
+      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
+      PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    ```
+
+
+-   其中like选项like\_option为：
+
+    ```
+    { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
+    ```
+
+-   其中索引参数index\_parameters为：
+
+    ```
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ USING INDEX TABLESPACE tablespace_name ]
+    ```
+
+
+## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
 -   **UNLOGGED**
 
@@ -95,13 +97,13 @@
 
     如果指定TEMP或TEMPORARY关键字，则创建的表为临时表。临时表分为全局临时表和本地临时表两种类型。创建临时表时如果指定GLOBAL关键字则为全局临时表，否则为本地临时表。
 
-    全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的(ON COMMIT PRESERVE ROWS), 当会话结束时自动清空用户数据；一种是基于事务级别的(ON COMMIT DELETE ROWS), 当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg_temp_开头的schema。
+    全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的\(ON COMMIT PRESERVE ROWS\), 当会话结束时自动清空用户数据；一种是基于事务级别的\(ON COMMIT DELETE ROWS\), 当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg\_temp\_开头的schema。
 
     本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。  
-    >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。
+    >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
     >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作。
     >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
 
@@ -123,13 +125,13 @@
 
 -   **compress\_mode**
 
-    表字段的压缩选项，当前仅对行存表有效。该选项指定表字段优先使用的压缩算法。
+    表字段的压缩选项。该选项指定表字段优先使用的压缩算法。行存表不支持压缩。
 
     取值范围：DELTA、PREFIX、DICTIONARY、NUMSTR、NOCOMPRESS
 
 -   **COLLATE collation**
 
-    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“SELECT * FROM pg_collation;”命令从pg_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
+    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
 -   **LIKE source\_table \[ like\_option ... \]**
 
@@ -148,16 +150,16 @@
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-   如果源表包含serial、bigserial、smallserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。  
-    >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   如果源表包含serial、bigserial、smallserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
+    >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。
 
 -   **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。
 
     参数的详细描述如下所示。
 
@@ -187,7 +189,7 @@
 
     -   COMPRESSION
 
-        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。
+        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
 
         取值范围：
 
@@ -203,17 +205,17 @@
 
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
 
-        取值范围：10000\~60000
+        取值范围：10000\~60000，默认60000。
 
     -   PARTIAL\_CLUSTER\_ROWS
 
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
 
-        取值范围：600000\~2147483647
+        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
 
     -   DELTAROW\_THRESHOLD
 
-        指定列存表导入时小于多少行的数据进入delta表，只在GUC参数[enable\_delta\_store](并行导入.md#zh-cn_topic_0237124705_section1035224982816)开启时生效。该参数只对列存表有效。
+        指定列存表导入时小于多少行的数据进入delta表，只在GUC参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)开启时生效。该参数只对列存表有效。
 
         取值范围：0～9999，默认值为100
 
@@ -232,11 +234,11 @@
 
     -   PRESERVE ROWS（缺省值）：提交时不对临时表做任何操作，临时表及其表数据保持不变。
     -   DELETE ROWS：提交时删除临时表中数据。
-    -   DROP：提交时删除此临时表。（只支持本地临时表，不支持全局临时表）
+    -   DROP：提交时删除此临时表。只支持本地临时表，不支持全局临时表。
 
 -   **COMPRESS | NOCOMPRESS**
 
-    创建新表时，需要在CREATE TABLE语句中指定关键字COMPRESS，这样，当对该表进行批量插入时就会触发压缩特性。该特性会在页范围内扫描所有元组数据，生成字典、压缩元组数据并进行存储。指定关键字NOCOMPRESS则不对表进行压缩。
+    创建新表时，需要在CREATE TABLE语句中指定关键字COMPRESS，这样，当对该表进行批量插入时就会触发压缩特性。该特性会在页范围内扫描所有元组数据，生成字典、压缩元组数据并进行存储。指定关键字NOCOMPRESS则不对表进行压缩。行存表不支持压缩。
 
     缺省值：NOCOMPRESS，即不对元组数据进行压缩。
 
@@ -269,8 +271,8 @@
 
     声明为字段约束的检查约束应该只引用该字段的数值，而在表约束里出现的表达式可以引用多个字段。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >expression表达式中，如果存在“<\>NULL”或“！=NULL”，这种写法是无效的，需要写成“is NOT NULL”。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >expression表达式中，如果存在“<\>NULL”或“！=NULL”，这种写法是无效的，需要写成“is NOT NULL”。
 
 -   **DEFAULT default\_expr**
 
@@ -316,7 +318,7 @@
     为UNIQUE或PRIMARY KEY约束相关的索引声明一个表空间。如果没有提供这个子句，这个索引将在default\_tablespace中创建，如果default\_tablespace为空，将使用数据库的缺省表空间。
 
 
-## 示例<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
+## 示例<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 
 ```
 --创建简单的表。
@@ -892,11 +894,11 @@ postgres=# DROP TABLESPACE DS_TABLESPACE1;
 postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
+## 相关链接<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
 
-[ALTER TABLE](ALTER-TABLE.md)，[DROP TABLE](DROP-TABLE.md)，[CREATE TABLESPACE](CREATE-TABLESPACE.md)
+[ALTER TABLE](ALTER-TABLE.md)，[DROP TABLE](zh-cn_topic_0289900931.md)，[CREATE TABLESPACE](zh-cn_topic_0289900078.md)
 
-## 优化建议<a name="zh-cn_topic_0237122117_zh-cn_topic_0059778169_section29320865113651"></a>
+## 优化建议<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_section29320865113651"></a>
 
 -   UNLOGGED
     -   UNLOGGED表和表上的索引因为数据写入时不通过WAL日志机制，写入速度远高于普通表。因此，可以用于缓冲存储复杂查询的中间结果集，增强复杂查询的性能。

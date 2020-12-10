@@ -126,6 +126,26 @@ REVOKE用于撤销一个或多个角色的权限。
     ```
 
 
+-   回收指定客户端加密主密钥上的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        {USAGE | DROP | ALL [PRIVILEGES]}
+        ON {  CLIENT_MASTER_KEYS  client_master_keys_name [, ...]
+              FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定列加密密钥上的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        {USAGE | DROP | ALL [PRIVILEGES]}
+        ON {  COLUMN_ENCRYPTION_KEYS column_encryption_keys_name [, ...]
+              FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
 -   回收directory对象的权限。
 
     ```
