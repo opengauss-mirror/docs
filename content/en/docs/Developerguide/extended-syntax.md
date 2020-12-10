@@ -1,8 +1,6 @@
 # Extended Syntax<a name="EN-US_TOPIC_0242370668"></a>
 
-openGauss provides extended syntax, which is in the beta phase and is for internal use only.
-
-The following table lists the extended syntax supported by openGauss.
+openGauss provides extended syntax .
 
 **Table  1**  Extended SQL syntax
 

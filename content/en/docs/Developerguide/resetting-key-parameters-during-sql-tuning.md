@@ -49,7 +49,7 @@ This section introduces key parameters of the primary database node that affect 
 <td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p52574139145225"><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p52574139145225"></a><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p52574139145225"></a>Specifies whether to enable the optimizer's use of index-scan plan types.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_row25784757145225"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p4524365214542"><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p4524365214542"></a><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p4524365214542"></a>enable_indexonlyscan=on</p>
+<tr id="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_row25784757145225"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p4524365214542"><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p4524365214542"></a><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p4524365214542"></a>sql_beta_feature</p>
 </td>
 <td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p6606196145225"><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p6606196145225"></a><a name="en-us_topic_0237121530_en-us_topic_0073253807_en-us_topic_0062520027_p6606196145225"></a>Specifies whether to enable the optimizer's use of index-only-scan plan types.</p>
 </td>
@@ -69,6 +69,12 @@ This section introduces key parameters of the primary database node that affect 
 <td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121530_p3125411124017"><a name="en-us_topic_0237121530_p3125411124017"></a><a name="en-us_topic_0237121530_p3125411124017"></a>Specifies whether the optimizer enables the <strong id="b11177335152"><a name="b11177335152"></a><a name="b11177335152"></a>LAZY_AGG</strong> and <strong id="b1118763171517"><a name="b1118763171517"></a><a name="b1118763171517"></a>MAGIC_SET</strong> rewriting rules.</p>
 </td>
 </tr>
+    <tr id="en-us_topic_0237121530_row91254119407"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237121530_p5125511194014"><a name="en-us_topic_0237121530_p5125511194014"></a><a name="en-us_topic_0237121530_p5125511194014"></a>sql_beta_feature</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121530_p3125411124017"><a name="en-us_topic_0237121530_p3125411124017"></a><a name="en-us_topic_0237121530_p3125411124017"></a>Controls whether the optimizer is enabled. SEL_ SEMI_ POISSON/SEL_ EXPR_ INSTR/PARAM_ PATH_ GEN/RAND_ COST_ OPT/PARAM_ PATH_ OPT/PAGE_ EST_ Opt test function.</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 

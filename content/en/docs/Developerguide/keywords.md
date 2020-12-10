@@ -126,6 +126,15 @@ The naming rules for identifiers are as follows:
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p22088927"><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p22088927"></a><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p22088927"></a>-</p>
 </td>
 </tr>
+<tr id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_row46680697"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p752527"><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p752527"></a><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p752527"></a>ALGORITHM</p>
+</td>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p52225808"><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p52225808"></a><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p52225808"></a>Non-reserved</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p6893762"><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p6893762"></a><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p6893762"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p23421307"><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p23421307"></a><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p23421307"></a>-</p>
+</td>
+</tr> 
 <tr id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_row46680697"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p752527"><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p752527"></a><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p752527"></a>ALIAS</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p52225808"><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p52225808"></a><a name="en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p52225808"></a>-</p>
@@ -6543,4 +6552,5 @@ The naming rules for identifiers are as follows:
 </tr>
 </tbody>
 </table>
+
 
