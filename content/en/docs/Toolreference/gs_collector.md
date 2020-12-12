@@ -39,7 +39,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row101318382316"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p6133313233"><a name="en-us_topic_0237152334_p6133313233"></a><a name="en-us_topic_0237152334_p6133313233"></a>Log</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p8657174819262"><a name="en-us_topic_0237152334_p8657174819262"></a><a name="en-us_topic_0237152334_p8657174819262"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p8657174819262"><a name="en-us_topic_0237152334_p8657174819262"></a><a name="en-us_topic_0237152334_p8657174819262"></a>DataNode</p>
 <p id="en-us_topic_0237152334_p46574483267"><a name="en-us_topic_0237152334_p46574483267"></a><a name="en-us_topic_0237152334_p46574483267"></a>ClusterManager</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="en-us_topic_0237152334_ul122531334158"></a><a name="en-us_topic_0237152334_ul122531334158"></a><ul id="en-us_topic_0237152334_ul122531334158"><li>Collect <strong id="b5836133941911"><a name="b5836133941911"></a><a name="b5836133941911"></a>pg_log</strong> and <strong id="b2307134341915"><a name="b2307134341915"></a><a name="b2307134341915"></a>gs_profile</strong> of the data node.</li><li>The ClusterManager log information to be collected:<a name="en-us_topic_0237152334_ul19311954111513"></a><a name="en-us_topic_0237152334_ul19311954111513"></a><ul id="en-us_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
@@ -50,7 +50,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row71412352318"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p1514135239"><a name="en-us_topic_0237152334_p1514135239"></a><a name="en-us_topic_0237152334_p1514135239"></a>Config</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p20995135132817"><a name="en-us_topic_0237152334_p20995135132817"></a><a name="en-us_topic_0237152334_p20995135132817"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p20995135132817"><a name="en-us_topic_0237152334_p20995135132817"></a><a name="en-us_topic_0237152334_p20995135132817"></a>DataNode</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="en-us_topic_0237152334_ul498532372610"></a><a name="en-us_topic_0237152334_ul498532372610"></a><ul id="en-us_topic_0237152334_ul498532372610"><li>Collect the data node configuration information:<a name="en-us_topic_0237152334_ul1741811415273"></a><a name="en-us_topic_0237152334_ul1741811415273"></a><ul id="en-us_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
 </li></ul>
@@ -60,7 +60,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row181513312235"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p81518317232"><a name="en-us_topic_0237152334_p81518317232"></a><a name="en-us_topic_0237152334_p81518317232"></a>Gstack</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p979113464295"><a name="en-us_topic_0237152334_p979113464295"></a><a name="en-us_topic_0237152334_p979113464295"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p979113464295"><a name="en-us_topic_0237152334_p979113464295"></a><a name="en-us_topic_0237152334_p979113464295"></a>DataNode</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p41510310234"><a name="en-us_topic_0237152334_p41510310234"></a><a name="en-us_topic_0237152334_p41510310234"></a>Run the <strong id="b1544112812259"><a name="b1544112812259"></a><a name="b1544112812259"></a>gstack</strong> command to obtain the current stack information of the data node.</p>
 </td>
@@ -80,7 +80,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 <tr id="en-us_topic_0237152334_row41613192315"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152334_p71613318234"><a name="en-us_topic_0237152334_p71613318234"></a><a name="en-us_topic_0237152334_p71613318234"></a>XLog</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p566195453213"><a name="en-us_topic_0237152334_p566195453213"></a><a name="en-us_topic_0237152334_p566195453213"></a>Datanode</p>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152334_p566195453213"><a name="en-us_topic_0237152334_p566195453213"></a><a name="en-us_topic_0237152334_p566195453213"></a>DataNode</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152334_p0174312313"><a name="en-us_topic_0237152334_p0174312313"></a><a name="en-us_topic_0237152334_p0174312313"></a>Collect Xlogs that are filtered by time.</p>
 </td>
@@ -99,6 +99,7 @@ When openGauss is faulty,  **gs\_collector**  can be used to collect information
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -185,9 +186,9 @@ An OS tool \(such as  **gstack**\) that  **gs\_collector**  requires has been in
     >"Collect":
     >\[
     >\{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"\},
-    >\{"TypeName": "Log", "Content" : "Datanode,ClusterManager", "Interval":"0", "Count":"1"\},
+    >\{"TypeName": "Log", "Content" : "DataNode,ClusterManager", "Interval":"0", "Count":"1"\},
     >\{"TypeName": "Database", "Content": "pg\_locks,pg\_stat\_activity,pg\_thread\_wait\_status","Interval":"0", "Count":"1"\},
-    >\{"TypeName": "Config", "Content": "Datanode", "Interval":"0", "Count":"1"\}
+    >\{"TypeName": "Config", "Content": "DataNode", "Interval":"0", "Count":"1"\}
     >\]
     >\}
     >For details about the value ranges of  **TypeName**  and corresponding  **Content**, see Table 1 Information to be collected by gs\_collector.
