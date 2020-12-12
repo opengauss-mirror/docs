@@ -8,8 +8,6 @@
 
 -   **[Resource Consumption](resource-consumption.md)**  
 
--   **[Parallel Data Import](parallel-data-import.md)**  
-
 -   **[Write Ahead Log](write-ahead-log.md)**  
 
 -   **[HA Replication](ha-replication.md)**  
