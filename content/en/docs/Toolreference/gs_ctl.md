@@ -134,12 +134,10 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     <tr id="en-us_topic_0237152408_en-us_topic_0059777628_r5d93022a354a4f6f863cdc9623106c56"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_ab7908eb6834847459104aac6fa8283da"><a name="en-us_topic_0237152408_en-us_topic_0059777628_ab7908eb6834847459104aac6fa8283da"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_ab7908eb6834847459104aac6fa8283da"></a>-t, --timeout=SECS</p>
     </td>
-    <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a>This parameter controls the following functions:</p>
-    <a name="en-us_topic_0237152408_en-us_topic_0059777628_uee72e2dec17948c5bf1eeac232aee766"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_uee72e2dec17948c5bf1eeac232aee766"></a><ul id="en-us_topic_0237152408_en-us_topic_0059777628_uee72e2dec17948c5bf1eeac232aee766"><li>Maximum seconds for waiting the completion of database startup or shutdown.</li></ul>
+    <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a>Maximum seconds for waiting the completion of database startup， shutdown or switchover.</p>
     </td>
     <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a980dac01704a4f59863b07666f3dd4cc"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a980dac01704a4f59863b07666f3dd4cc"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a980dac01704a4f59863b07666f3dd4cc"></a>Value range: an integer (second).</p>
-    <p id="en-us_topic_0237152408_en-us_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"></a>Default</p>
-    <a name="en-us_topic_0237152408_en-us_topic_0059777628_u0dd711a9df8d498eb043e749fb4f2bd6"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_u0dd711a9df8d498eb043e749fb4f2bd6"></a><ul id="en-us_topic_0237152408_en-us_topic_0059777628_u0dd711a9df8d498eb043e749fb4f2bd6"><li>Maximum seconds for waiting the completion of database startup or shutdown: 60s.</li></ul>
+    <p id="en-us_topic_0237152408_en-us_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"></a>Default: Maximum seconds for waiting the completion of database startup, shutdown or switchover: 60s.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0237152408_en-us_topic_0059777628_ref8aa84c54b14adcb701e33c5c907ed5"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152408_en-us_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"></a>-V , --version</p>
@@ -202,11 +200,11 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
+    
     **Table  3**  Common parameters for  **start**  and  **restart**
 
     <a name="en-us_topic_0237152408_en-us_topic_0059777628_t6d75b31bab9540b284e45222396ae38b"></a>
-    <table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_ra5163707ec6f459aa581508ce3a64fa7"><th class="cellrowborder" valign="top" width="21.38%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_ac0ee49977caa40c7945710295fab97bf"><a name="en-us_topic_0237152408_en-us_topic_0059777628_ac0ee49977caa40c7945710295fab97bf"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_ac0ee49977caa40c7945710295fab97bf"></a>Parameter</p>
+<table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_ra5163707ec6f459aa581508ce3a64fa7"><th class="cellrowborder" valign="top" width="21.38%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_ac0ee49977caa40c7945710295fab97bf"><a name="en-us_topic_0237152408_en-us_topic_0059777628_ac0ee49977caa40c7945710295fab97bf"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_ac0ee49977caa40c7945710295fab97bf"></a>Parameter</p>
     </th>
     <th class="cellrowborder" valign="top" width="31.41%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237152408_en-us_topic_0059777628_ad3fc3779415b4b9c8a584fee18eb648b"><a name="en-us_topic_0237152408_en-us_topic_0059777628_ad3fc3779415b4b9c8a584fee18eb648b"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_ad3fc3779415b4b9c8a584fee18eb648b"></a>Description</p>
     </th>
@@ -246,11 +244,11 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
+    
     **Table  4**  Common parameters for  **stop**  and  **restart**
 
     <a name="en-us_topic_0237152408_en-us_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a"></a>
-    <table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_re62fdea480ab4246aa49656499aec578"><th class="cellrowborder" valign="top" width="21.14788521147885%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a3c47cee9186f46aa990412a8d288537c"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3c47cee9186f46aa990412a8d288537c"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3c47cee9186f46aa990412a8d288537c"></a>Parameter</p>
+<table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_re62fdea480ab4246aa49656499aec578"><th class="cellrowborder" valign="top" width="21.14788521147885%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a3c47cee9186f46aa990412a8d288537c"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3c47cee9186f46aa990412a8d288537c"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3c47cee9186f46aa990412a8d288537c"></a>Parameter</p>
     </th>
     <th class="cellrowborder" valign="top" width="31.81681831816818%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a3314d30c5a73417d9ab25ea01e533b61"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3314d30c5a73417d9ab25ea01e533b61"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3314d30c5a73417d9ab25ea01e533b61"></a>Description</p>
     </th>
@@ -269,11 +267,11 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
+    
     **Table  5** **switchover**  parameters
 
     <a name="en-us_topic_0237152408_en-us_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31"></a>
-    <table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_re3e64b56d74d42f4914d7bb1d03aa970"><th class="cellrowborder" valign="top" width="21.14788521147885%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a6981c07ab61443f79893635fc5612a3a"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a6981c07ab61443f79893635fc5612a3a"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a6981c07ab61443f79893635fc5612a3a"></a>Parameter</p>
+<table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_re3e64b56d74d42f4914d7bb1d03aa970"><th class="cellrowborder" valign="top" width="21.14788521147885%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a6981c07ab61443f79893635fc5612a3a"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a6981c07ab61443f79893635fc5612a3a"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a6981c07ab61443f79893635fc5612a3a"></a>Parameter</p>
     </th>
     <th class="cellrowborder" valign="top" width="31.81681831816818%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237152408_en-us_topic_0059777628_en-us_topic_0058968123_p797816293442"><a name="en-us_topic_0237152408_en-us_topic_0059777628_en-us_topic_0058968123_p797816293442"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_en-us_topic_0058968123_p797816293442"></a>Description</p>
     </th>
@@ -292,11 +290,11 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
+    
     **Table  6** **build**  parameters
 
     <a name="en-us_topic_0237152408_en-us_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b"></a>
-    <table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_r991543695e1942e391e7bb42b7c235fe"><th class="cellrowborder" valign="top" width="21.12%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a98babff2b333444a8845163c25408eac"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a98babff2b333444a8845163c25408eac"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a98babff2b333444a8845163c25408eac"></a>Parameter</p>
+<table><thead align="left"><tr id="en-us_topic_0237152408_en-us_topic_0059777628_r991543695e1942e391e7bb42b7c235fe"><th class="cellrowborder" valign="top" width="21.12%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a98babff2b333444a8845163c25408eac"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a98babff2b333444a8845163c25408eac"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a98babff2b333444a8845163c25408eac"></a>Parameter</p>
     </th>
     <th class="cellrowborder" valign="top" width="31.45%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237152408_en-us_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"></a><a name="en-us_topic_0237152408_en-us_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"></a>Description</p>
     </th>
@@ -337,11 +335,11 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
+    
     **Table  7** **restore**  parameters
 
     <a name="en-us_topic_0237152408_table19356432161112"></a>
-    <table><thead align="left"><tr id="en-us_topic_0237152408_row7357193212113"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_p1828211549118"><a name="en-us_topic_0237152408_p1828211549118"></a><a name="en-us_topic_0237152408_p1828211549118"></a>Parameter</p>
+<table><thead align="left"><tr id="en-us_topic_0237152408_row7357193212113"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152408_p1828211549118"><a name="en-us_topic_0237152408_p1828211549118"></a><a name="en-us_topic_0237152408_p1828211549118"></a>Parameter</p>
     </th>
     <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237152408_p1928210546117"><a name="en-us_topic_0237152408_p1928210546117"></a><a name="en-us_topic_0237152408_p1928210546117"></a>Description</p>
     </th>
@@ -358,11 +356,11 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
+    
     **Table  8** **query**  parameters
 
     <a name="table198621411133319"></a>
-    <table><thead align="left"><tr id="row2086211117339"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p2862181110338"><a name="p2862181110338"></a><a name="p2862181110338"></a>Parameter</p>
+<table><thead align="left"><tr id="row2086211117339"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p2862181110338"><a name="p2862181110338"></a><a name="p2862181110338"></a>Parameter</p>
     </th>
     <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p88621511133318"><a name="p88621511133318"></a><a name="p88621511133318"></a>Description</p>
     </th>

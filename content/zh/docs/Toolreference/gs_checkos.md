@@ -37,11 +37,11 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 
     列表编号。格式：-i A、-i B1、-i A1 -i A2或-i A1,A2。
 
-    取值范围：A1...A14、B1...B7
+    取值范围：A1...A14、B1...B8
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >A1...A14 表示只检查操作系统参数，并不设置。
-    >B1...B7 表示将参数系统参数设置为期望值。
+    >B1...B8 表示将参数系统参数设置为期望值。
     >A和B不能同时输入。
 
     详细的检查项请参见[表1](#zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e)。
@@ -256,8 +256,16 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 <td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>欧拉系统属性检查：检查设置欧拉系统文件/usr/lib/systemd/system/systemd-logind.service，/etc/systemd/logind.conf中配置项RemoveIPC属性值是否为no，当不为no时，对其进行修改设置。</p>
 </td>
 </tr>
+<tr id="row1725332313128"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="p4254202319125"><a name="p4254202319125"></a><a name="p4254202319125"></a>B8</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="p8254132331214"><a name="p8254132331214"></a><a name="p8254132331214"></a>设置sshd服务应用pam模块（Set Session Process）</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>远程设备继承系统默认资源：修改/etc/pam.d/sshd服务文件，添加配置项session required pam_limits.so，来控制用户使用的资源。</p>
+</td>
+</tr>       
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
