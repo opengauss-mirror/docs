@@ -223,7 +223,7 @@
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row265201679138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p6498799138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p6498799138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p6498799138"></a>HBA</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"></a>host-based authentication，主机认证。主机鉴权允许主机鉴权部分或全部系统用户。适用于系统所有用户或者使用Match指令的子集。该类型鉴权对于管理计算集群以及其它完全同质设备非常有用。总之，服务器上的三个文件以及客户端上的一个文件必须修改，为主机鉴权做准备。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"></a>host-based authentication，主机认证。主机鉴权允许主机鉴权部分或全部系统用户。适用于系统所有用户或者使用Match指令的子集。该类型鉴权对于管理计算实例以及其它完全同质设备非常有用。总之，服务器上的三个文件以及客户端上的一个文件必须修改，为主机鉴权做准备。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row315421169138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p47746279138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p47746279138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p47746279138"></a>服务器</p>
@@ -268,7 +268,7 @@
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row552052769138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p424423719138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p424423719138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p424423719138"></a>节点</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p152800189138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p152800189138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p152800189138"></a>将构成openGauss集群环境的各台服务器（物理机或虚拟机）称为集群节点，简称节点。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p152800189138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p152800189138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p152800189138"></a>将构成openGauss实例环境的各台服务器（物理机或虚拟机）称为实例节点，简称节点。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row33024419138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p661711449138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p661711449138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p661711449138"></a>纠错</p>
@@ -296,7 +296,7 @@
 </tr>
 <tr id="row964115292217"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p46418222210"><a name="p46418222210"></a><a name="p46418222210"></a>逻辑复制</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p19203617182217"><a name="p19203617182217"></a><a name="p19203617182217"></a>数据库主备或两个集群间的数据同步方式。区别于通过物理日志回放方式的物理复制，逻辑复制在两个集群间传输逻辑日志或通过逻辑日志对应的SQL语句实现数据同步。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p19203617182217"><a name="p19203617182217"></a><a name="p19203617182217"></a>数据库主备或两个实例间的数据同步方式。区别于通过物理日志回放方式的物理复制，逻辑复制在两个实例间传输逻辑日志或通过逻辑日志对应的SQL语句实现数据同步。</p>
 </td>
 </tr>
 <tr id="row192835919218"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p629259202115"><a name="p629259202115"></a><a name="p629259202115"></a>逻辑日志</p>
@@ -326,7 +326,7 @@
 </tr>
 <tr id="row13039022172831"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p50242341172831"><a name="p50242341172831"></a><a name="p50242341172831"></a>OM</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p43097830172831"><a name="p43097830172831"></a><a name="p43097830172831"></a>Operations Management，运维管理模块。提供集群日常运维、配置管理的管理接口、工具。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p43097830172831"><a name="p43097830172831"></a><a name="p43097830172831"></a>Operations Management，运维管理模块。提供实例日常运维、配置管理的管理接口、工具。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row525747499138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p306962729138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p306962729138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p306962729138"></a>客户端</p>
@@ -356,7 +356,7 @@
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row396969909138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613396499138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613396499138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613396499138"></a>模式</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p24556529138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p24556529138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p24556529138"></a>数据库对象集，包括逻辑结构，例如表、视图、序、存储过程、同义名、索引、集群及数据库链接。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p24556529138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p24556529138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p24556529138"></a>数据库对象集，包括逻辑结构，例如表、视图、序、存储过程、同义名、索引、实例及数据库链接。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row221008699138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p453399479138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p453399479138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p453399479138"></a>模式文件</p>
@@ -379,7 +379,7 @@
 </tr>
 <tr id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_row292755189138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a>Postmaster</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a>数据库服务启动时启动的一个线程。用于监听来自集群其它节点或客户端的连接请求。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a>数据库服务启动时启动的一个线程。用于监听来自实例其它节点或客户端的连接请求。</p>
 <p id="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a><a name="zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a>主机上监听到备机连接请求，并接受后，就会创建一个WAL Sender线程，用于处理与备机的交互。</p>
 </td>
 </tr>
@@ -638,4 +638,5 @@
 </tr>
 </tbody>
 </table>
+
 
