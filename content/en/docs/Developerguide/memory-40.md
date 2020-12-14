@@ -42,7 +42,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**:  **on**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->If the result of  **max\_process\_memory**  -  **shared\_buffer**  -  **cstore\_buffers**  is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit**  to  **off**.  
+>If the result of  **max\_process\_memory**  -  **shared\_buffers**  -  **cstore\_buffers**  is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit**  to  **off**.  
 
 ## max\_process\_memory<a name="en-us_topic_0237124699_en-us_topic_0059777577_sbebcee7acf2042dc8824982f22a2b4a8"></a>
 
