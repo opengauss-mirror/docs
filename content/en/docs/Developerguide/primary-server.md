@@ -19,14 +19,14 @@ ANY N (node1, node2,...) means that N host names can be selected in the brackets
 
 ## most\_available\_sync<a name="en-us_topic_0237124713_en-us_topic_0059777578_se53a9bce83414d17b84a9beb44dd0dda"></a>
 
-**Parameter description**: Specifies whether to block the primary server when the primary-standby synchronization fails.
+**Parameter description**: When all synchronization backup machines fail, whether the host waits for the backup machine to recover and synchronize logs before submitting. When a synchronized standby machine is restored, the host submits and needs to wait for the standby machine to synchronize.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the primary server is not blocked when the synchronization fails.
--   **off**  indicates that the primary server is blocked when the synchronization fails.
+-   **on**  indicates that the host will not be blocked when all synchronous standby machines fail.
+-   **off**  indicates that the host is blocked when all synchronous standby machines fail.
 
 **Default value**:  **off**
 
