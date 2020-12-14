@@ -60,6 +60,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     { CHECK ( expression ) |
       UNIQUE ( column_name [, ... ] ) index_parameters |
       PRIMARY KEY ( column_name [, ... ] ) index_parameters |
+      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) |
+          [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
@@ -295,6 +297,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     主键约束声明表中的一个或者多个字段只能包含唯一的非NULL值。
 
     一个表只能声明一个主键。
+
+-   **REFERENCES reftable \[ \( refcolum \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(column constraint\)**
+
+    **FOREIGN KEY \( column\_name \[, ... \] \) REFERENCES reftable \[ \( refcolumn \[, ... \] \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(table constraint\)**
+
+    外键约束要求新表中一列或多列构成的组应该只包含、匹配被参考表中被参考字段值。若省略refcolum，则将使用reftable的主键。被参考列应该是被参考表中的唯一字段或主键。外键约束不能被定义在临时表和永久表之间。
+
+    参考字段与被参考字段之间存在三种类型匹配，分别是：
+
+    -   MATCH FULL：不允许一个多字段外键的字段为NULL，除非全部外键字段都是NULL。
+    -   MATCH SIMPLE（缺省）：允许任意外键字段为NULL。
+    -   MATCH PARTIAL：目前暂不支持。
+
+    另外，当被参考表中的数据发生改变时，某些操作也会在新表对应字段的数据上执行。ON DELETE子句声明当被参考表中的被参考行被删除时要执行的操作。ON UPDATE子句声明当被参考表中的被参考字段数据更新时要执行的操作。对于ON DELETE子句、ON UPDATE子句的可能动作：
+
+    -   NO ACTION（缺省）：删除或更新时，创建一个表明违反外键约束的错误。若约束可推迟，且若仍存在任何引用行，那这个错误将会在检查约束的时候产生。
+    -   RESTRICT：删除或更新时，创建一个表明违反外键约束的错误。与NO ACTION相同，只是动作不可推迟。
+    -   CASCADE：删除新表中任何引用了被删除行的行，或更新新表中引用行的字段值为被参考字段的新值。
+    -   SET NULL：设置引用字段为NULL。
+    -   SET DEFAULT：设置引用字段为它们的缺省值。
 
 -   **DEFERRABLE | NOT DEFERRABLE**
 
@@ -644,7 +666,6 @@ postgres=# CREATE TABLE tpcds.warehouse_t14
     W_GMT_OFFSET              DECIMAL(5,2),
     CONSTRAINT W_CSTR_KEY2 PRIMARY KEY(W_WAREHOUSE_SK, W_WAREHOUSE_ID)
 );
-
 --创建列存表。
 postgres=# CREATE TABLE tpcds.warehouse_t15
 (
@@ -799,6 +820,70 @@ postgres=# CREATE TABLE tpcds.warehouse_t22
     CONSTRAINT W_CONSTR_KEY3 UNIQUE(W_WAREHOUSE_SK)
 );
 
+--创建一个有外键约束的表。
+postgres=# CREATE TABLE tpcds.city_t23
+(
+    W_CITY            VARCHAR(60)                PRIMARY KEY,
+    W_ADDRESS	      TEXT                     
+);
+postgres=# CREATE TABLE tpcds.warehouse_t23
+(
+    W_WAREHOUSE_SK            INTEGER               NOT NULL,
+    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
+    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
+    W_WAREHOUSE_SQ_FT         INTEGER                       ,
+    W_STREET_NUMBER           CHAR(10)                      ,
+    W_STREET_NAME             VARCHAR(60)                   ,
+    W_STREET_TYPE             CHAR(15)                      ,
+    W_SUITE_NUMBER            CHAR(10)                      ,
+    W_CITY                    VARCHAR(60)           REFERENCES city_t23(W_CITY),
+    W_COUNTY                  VARCHAR(30)                   ,
+    W_STATE                   CHAR(2)                       ,
+    W_ZIP                     CHAR(10)                      ,
+    W_COUNTRY                 VARCHAR(20)                   ,
+    W_GMT_OFFSET              DECIMAL(5,2)
+);
+
+--或是用下面的语法，效果完全一样。
+postgres=# CREATE TABLE tpcds.warehouse_t23
+(
+    W_WAREHOUSE_SK            INTEGER               NOT NULL,
+    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
+    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
+    W_WAREHOUSE_SQ_FT         INTEGER                       ,
+    W_STREET_NUMBER           CHAR(10)                      ,
+    W_STREET_NAME             VARCHAR(60)                   ,
+    W_STREET_TYPE             CHAR(15)                      ,
+    W_SUITE_NUMBER            CHAR(10)                      ,
+    W_CITY                    VARCHAR(60)                   ,
+    W_COUNTY                  VARCHAR(30)                   ,
+    W_STATE                   CHAR(2)                       ,
+    W_ZIP                     CHAR(10)                      ,
+    W_COUNTRY                 VARCHAR(20)                   ,
+    W_GMT_OFFSET              DECIMAL(5,2)                  ,
+    FOREIGN KEY(W_CITY) REFERENCES city_t23(W_CITY)
+);
+
+--或是用下面的语法，指定约束的名称。
+postgres=# CREATE TABLE tpcds.warehouse_t23
+(
+    W_WAREHOUSE_SK            INTEGER               NOT NULL,
+    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
+    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
+    W_WAREHOUSE_SQ_FT         INTEGER                       ,
+    W_STREET_NUMBER           CHAR(10)                      ,
+    W_STREET_NAME             VARCHAR(60)                   ,
+    W_STREET_TYPE             CHAR(15)                      ,
+    W_SUITE_NUMBER            CHAR(10)                      ,
+    W_CITY                    VARCHAR(60)                   ,
+    W_COUNTY                  VARCHAR(30)                   ,
+    W_STATE                   CHAR(2)                       ,
+    W_ZIP                     CHAR(10)                      ,
+    W_COUNTRY                 VARCHAR(20)                   ,
+    W_GMT_OFFSET              DECIMAL(5,2)                  ,
+    CONSTRAINT W_FORE_KEY1 FOREIGN KEY(W_CITY) REFERENCES city_t23(W_CITY)
+);
+
 --向tpcds.warehouse_t19表中增加一个varchar列。
 ```
 
@@ -896,7 +981,7 @@ postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
 
 ## 相关链接<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
 
-[ALTER TABLE](ALTER-TABLE.md)，[DROP TABLE](zh-cn_topic_0289900931.md)，[CREATE TABLESPACE](zh-cn_topic_0289900078.md)
+[ALTER TABLE](zh-cn_topic_0289899912.md)，[DROP TABLE](zh-cn_topic_0289900931.md)，[CREATE TABLESPACE](zh-cn_topic_0289900078.md)
 
 ## 优化建议<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_section29320865113651"></a>
 
