@@ -12,6 +12,8 @@
 -   If the target standby node is disconnected before the operation, manually stop or delete the database service on the target standby server after the target standby server is restored.
 -   The standby node can be dropped only from the primary/standby cluster installed in OM mode. The cluster installed in compilation mode is not supported.
 -   If the target standby node is in the synchronous replication mode and there are transactions waiting committed during the **gs\_dropnode** operation, the transactions will be stucked shortly and recover until the target standby node deleted.
+-   If the target standby node is left as standalone after it is deleted from the cluster, please add the record of the target standby to the file /etc/hosts.deny on the other nodes (e.g: sshd:10.11.12.13:deny) as root to reject the SSH connection from the target standby, which can avoid misoperation on the target standby.
+-   If the target standby node is not needed any more after it is deleted from the cluster, please uninstall the openGauss with **gs\_uninstall --delete-data -L** on the target standby. Note that '-L' must be added.
 
 ## Prerequisite<a name="section171227231492"></a>
 
