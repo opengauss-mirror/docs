@@ -74,7 +74,7 @@ gs_dropnode -V | --version
 
 ## Example<a name="section11522956105012"></a>
 
-Use  **gs\\\_dropnode**  to drop nodes.
+Use  **gs\_dropnode**  to drop nodes.
 
 ```
 $ gs_dropnode -U omm -G dbgrp -h 10.11.12.13
