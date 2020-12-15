@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_DATABASE<a name="ZH-CN_TOPIC_0245374699"></a>
 
-视图将包含集群内汇聚的每个数据库的每一行，显示数据库统计。
+视图将包含数据库内汇聚的每个数据库的每一行，显示数据库统计。
 
 **表 1**  SUMMARY\_STAT\_DATABASE
 
