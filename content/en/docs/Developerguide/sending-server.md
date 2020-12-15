@@ -11,7 +11,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 0 to 262143
 
-**Default value**:  **4**  for a single-server system and  **8**  for a primary/standby environment
+**Default value**:  **16**
 
 ## wal\_keep\_segments<a name="en-us_topic_0237124712_en-us_topic_0059777860_sf1f97e9d2e034746932686e8578c975e"></a>
 
