@@ -48,7 +48,7 @@
 <td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.1.4.1.3 "><p id="p63345214"><a name="p63345214"></a><a name="p63345214"></a>极低</p>
 </td>
 </tr>
-<tr id="row33236019"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.1.4.1.1 "><p id="p7762985"><a name="p7762985"></a><a name="p7762985"></a>分布式（集群模式）</p>
+<tr id="row33236019"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.1.4.1.1 "><p id="p7762985"><a name="p7762985"></a><a name="p7762985"></a>分布式</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.1.4.1.2 "><p id="p24822048"><a name="p24822048"></a><a name="p24822048"></a>是</p>
 </td>

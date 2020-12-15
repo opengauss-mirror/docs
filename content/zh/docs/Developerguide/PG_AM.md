@@ -1,4 +1,4 @@
-# PG\_AM<a name="ZH-CN_TOPIC_0242385794"></a>
+
 
 PG\_AM系统表存储有关索引访问方法的信息。系统支持的每种索引访问方法都有一行。
 
@@ -129,7 +129,7 @@ PG\_AM系统表存储有关索引访问方法的信息。系统支持的每种�
 </td>
 <td class="cellrowborder" valign="top" width="23.830000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a87bc9f1d659d4d8bb3610024afb5991b"><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a87bc9f1d659d4d8bb3610024afb5991b"></a><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a87bc9f1d659d4d8bb3610024afb5991b"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5fcf354d3e704acba03b009e48977ef8"><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5fcf354d3e704acba03b009e48977ef8"></a><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5fcf354d3e704acba03b009e48977ef8"></a>是否允许在一个这种类型的索引上集群。</p>
+<td class="cellrowborder" valign="top" width="46.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5fcf354d3e704acba03b009e48977ef8"><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5fcf354d3e704acba03b009e48977ef8"></a><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5fcf354d3e704acba03b009e48977ef8"></a>是否允许在一个这种类型的索引上数据库。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122267_zh-cn_topic_0059779011_r77ad0aca2d8a4fe69dd6ba13455fbbea"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122267_zh-cn_topic_0059779011_aa9c930eef3a94425bdb9452866150f7b"><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_aa9c930eef3a94425bdb9452866150f7b"></a><a name="zh-cn_topic_0237122267_zh-cn_topic_0059779011_aa9c930eef3a94425bdb9452866150f7b"></a>ampredlocks</p>
