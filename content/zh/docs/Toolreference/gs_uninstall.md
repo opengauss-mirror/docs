@@ -50,7 +50,7 @@ openGauss提供了gs\_uninstall工具来帮助完成openGauss的卸载。
 
 ## 示例<a name="zh-cn_topic_0237152424_zh-cn_topic_0059778700_se3158b665fdf47dd929b96da689819df"></a>
 
-使用集群用户执行gs\_uninstall脚本进行卸载openGauss。
+使用数据库用户执行gs\_uninstall脚本进行卸载openGauss。
 
 ```
 gs_uninstall --delete-data

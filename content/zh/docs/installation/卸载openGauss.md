@@ -89,7 +89,7 @@ Uninstallation succeeded.
     cd /opt/software/openGauss/script
     ```
 
-4.  使用gs\_postuninstall进行清理。若为环境变量分离的模式安装的集群需要source环境变量分离文件ENVFILE。
+4.  使用gs\_postuninstall进行清理。若为环境变量分离的模式安装的数据库需要source环境变量分离文件ENVFILE。
 
     ```
     ./gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user --delete-group
@@ -103,7 +103,7 @@ Uninstallation succeeded.
 
     omm为运行openGauss的操作系统用户名，/opt/software/openGauss/cluster\_config.xml为openGauss配置文件路径。
 
-    若为环境变量分离的模式安装的集群需删除之前source的环境变量分离的env参数
+    若为环境变量分离的模式安装的数据库需删除之前source的环境变量分离的env参数
 
     unset MPPDB\_ENV\_SEPARATE\_PATH
 
