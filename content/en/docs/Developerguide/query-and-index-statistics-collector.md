@@ -71,21 +71,6 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value:** **1024**
 
-## update\_process\_title<a name="en-us_topic_0237124727_en-us_topic_0059779313_en-us_topic_0058967616_section535508"></a>
-
-**Parameter description:**  Collects statistics updated with a process name each time the server receives a new SQL statement.
-
-The process name can be viewed by running the  **ps**  command.
-
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: Boolean
-
--   **on**  indicates that the statistics collection function is enabled.
--   **off**  indicates that the statistics collection function is disabled.
-
-**Default value**:  **off**
-
 ## stats\_temp\_directory<a name="en-us_topic_0237124727_en-us_topic_0059779313_sdeb1e45821844e389d3045f40f8ac427"></a>
 
 **Parameter description**: Specifies the directory for saving temporary statistics.
