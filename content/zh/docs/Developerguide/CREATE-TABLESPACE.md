@@ -16,7 +16,7 @@
 
 ```
 CREATE TABLESPACE tablespace_name
-    [ OWNER user_name ] RELATIVE LOCATION 'directory' [ MAXSIZE 'space_size' ]
+    [ OWNER user_name ] [RELATIVE] LOCATION 'directory' [ MAXSIZE 'space_size' ]
     [with_option_clause];
 ```
 
