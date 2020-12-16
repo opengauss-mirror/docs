@@ -59,7 +59,7 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     gs_om -t cert --rollback
     ```
 
--   开启、关闭集群内kerberos认证
+-   开启、关闭数据库内kerberos认证
 
     ```
     gs_om -t kerberos -m [install|uninstall] -U USER [-l LOGFILE] [--krb-client|--krb-server]
@@ -190,9 +190,15 @@ gs\_om参数可以分为如下几类：
 
         显示详细信息。如果不指定，只提示该服务器是否正常。
 
+        ![](public_sys-resources/icon-note.gif) **说明：** 
+本参数通过在每个数据库节点执行gs_ctl query命令进行查询并汇总结果，来获取openGauss的详细信息。
+        
         --all
-
-        显示openGauss所有节点信息
+        
+        显示openGauss所有节点信息。
+        
+        ![](public_sys-resources/icon-note.gif) **说明：** 
+        本参数通过在每个数据库节点执行gsql查询系统表并汇总结果，来获取openGauss所有节点的信息。为保证显示信息的正确性，在使用本参数前请确认gsql可以查询。
 
 
 -   生成配置文件参数：
@@ -207,12 +213,12 @@ gs\_om参数可以分为如下几类：
         将静态配置文件发布到openGauss实例的安装目录。
 
 
--   开启、关闭集群内kerberos认证：
+-   开启、关闭数据库内kerberos认证：
     -   -U
 
-        指定数据库集群部署用户。
+        指定数据库部署用户。
 
-        取值范围：数据库集群部署用户
+        取值范围：数据库部署用户
 
     -   -m
 
@@ -220,9 +226,9 @@ gs\_om参数可以分为如下几类：
 
         取值范围：
 
-        install：开启集群内kerberos认证。
+        install：开启数据库内kerberos认证。
 
-        uninstall：关闭集群内kerberos认证。
+        uninstall：关闭数据库内kerberos认证。
 
     -   --krb-server安装kerberos服务端认证。
     -   --krb-client安装kerberos客户端认证。
