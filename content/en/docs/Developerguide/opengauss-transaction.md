@@ -118,12 +118,11 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 You are advised not to modify this parameter.
 
-**Value range**: 0 to 3
+**Value range**: 0 to 2
 
 -   **0** indicates that the HA nodes consist of a primary, a standby, and a secondary node,  This mode is not currently supported.
 -   **1** indicates that the HA nodes consist of a primary and multiple standby nodes. Full scene coverage, this value is recommended.
 -   **2** indicates that single host mode. This mode cannot expand the standby nodes.
--   **3** is an invalid value, indicating the number of patterns.
 
 **Default value**:  **1**
 
