@@ -228,7 +228,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the remote connection type.
 
-This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter does not support modification.
 
 **Value range**: enumerated values. Valid values are  **application**,  **datanode**, and  **internaltool**.
 
