@@ -33,6 +33,12 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
+After the port parameter is modified, you need to execute the following command to refresh the static configuration file.
+
+```
+gs_om -t generateconf -X XMLFILE [--distribute] [-l LOGFILE]
+```
+
 **Value range**: an integer ranging from 1 to 65535
 
 **Default value**:  **5432**  \(The actual value is specified in the configuration file during installation.\)
