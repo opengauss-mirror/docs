@@ -136,11 +136,11 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## wal\_buffers<a name="en-us_topic_0237124707_en-us_topic_0059778393_sce544e842a94430abad77f1ae64406af"></a>
 
-**Parameter description**: Specifies the number of  **XLOG\_BLCKSZ**s used for storing WAL data. The size of each  **XLOG\_BLCKSZ**  is 8 KB.
+**Parameter description**: Specifies the number of  **XLOG\_BLCKSZ**s used for storing WAL data. The size of each  **XLOG\_BLCKSZ**  is 8 KB.The actual setting result is the size of the shared memory space.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: –1 to 2<sup>18</sup>
+**Value range**: –1 to 2<sup>18</sup>，（–1- 2<sup>18</sup>）* 8KB
 
 -   If this parameter is set to  **–1**, the value of  **wal\_buffers**  is automatically changed to 1/32 of  **shared\_buffers**. The minimum value is 8 x  **XLOG\_BLCKSZ**, and the maximum value is 2048 x  **XLOG\_BLCKSZ**. That means if the 1/32 of  **shared\_buffers**  is smaller than 8 x  **XLOG\_BLCKSZ**  or larger than 2048 x  **XLOG\_BLCKSZ**, the minimum value or the maximum value is taken.
 -   If this parameter is set to a value other than  **-1**  and smaller than  **4**, the value  **4**  is used.
