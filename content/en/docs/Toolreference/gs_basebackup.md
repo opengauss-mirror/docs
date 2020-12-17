@@ -10,15 +10,12 @@ After openGauss is deployed, problems and exceptions may occur during database r
 
 -   **gs\_basebackup**  supports hot backup and compressed backup.
 
--   **gs\_basebackup**  cannot back up tablespaces containing absolute paths on the same server. This is because the absolute path is unique on the same machine, and brings about conflicts. However, it can back up tablespaces containing absolute paths on different machines.
-
 -   If the functions of incremental checkpoint and dual-write are enabled,  **gs\_basebackup**  also backs up dual-write files.
 
 -   If the  **pg\_xlog**  directory is a soft link, no soft link is created during backup. Data is directly backed up to the  **pg\_xlog**  directory in the destination path.
 
 -   If the backup permission is revoked during the backup, the backup may fail or the backup data may be unavailable.
 
--   openGauss does not support version upgrade.
 
 ## Prerequisites<a name="en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
