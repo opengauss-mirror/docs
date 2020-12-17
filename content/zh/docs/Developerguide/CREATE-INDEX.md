@@ -349,6 +349,4 @@ CREATE INDEX
 
     -   在相同属性列上，分区LOCAL索引与GLOBAL索引不能共存。
     -   GLOBAL索引，最大支持31列。
-    -   如果在一个分区表上创建了GLOBAL索引，当执行ALTER TABLE对分区进行DROP、TRUNCATE、SPLIT、MERGE、EXCHANGE中的任何一种操作，此时会导致GLOBAL索引失效，需要用户手动重建索引。
-
-
+    -   如果alter语句不带有UPDATE GLOBAL INDEX，那么原有的GLOBAL索引将失效，查询时将使用其他索引进行查询；如果alter语句带有UPDATE GLOBAL INDEX，那么原有的GLOBAL索引仍然有效，并且索引功能正确。

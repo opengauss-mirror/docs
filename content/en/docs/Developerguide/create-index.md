@@ -349,6 +349,6 @@ CREATE INDEX
 
     -   In the same attribute column, the LOCAL index and GLOBAL index of a partition cannot coexist.
     -   GLOBAL index supports a maximum of 31 columns.
-    -   If a GLOBAL index is created on a partitioned table, the GLOBAL index becomes invalid when you run the  **ALTER TABLE**  statement to perform any of the DROP, TRUNCATE, SPLIT, MERGE and EXCHANGE operations on the partition. In this case, you need to manually recreate the index.
+    -   If the alter statement does not have UPDATE GLOBAL INDEX, then the original GLOBAL index will be invalid, and other indexes will be used for query; if the alter statement has UPDATE GLOBAL INDEX, then the original GLOBAL index is still valid and the index function is correct.
 
 
