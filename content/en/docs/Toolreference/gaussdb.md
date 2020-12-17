@@ -236,13 +236,6 @@ Parameters described in  [Table 2](#en-us_topic_0237152404_en-us_topic_005977781
 <td class="cellrowborder" valign="top" width="27.26%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_aa0e429d7c28741e6a35f443371d29a59"><a name="en-us_topic_0237152404_en-us_topic_0059777816_aa0e429d7c28741e6a35f443371d29a59"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_aa0e429d7c28741e6a35f443371d29a59"></a>-</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row65279152"><td class="cellrowborder" valign="top" width="11.85%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p36047263"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p36047263"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p36047263"></a>-O</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p46152992"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p46152992"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p46152992"></a>Allows the structure of system tables to be modified. This option is used only for gs_initdb.</p>
-</td>
-<td class="cellrowborder" valign="top" width="27.26%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_ac7c10e2c40fc48ef84e2cc2caa4bf9e7"><a name="en-us_topic_0237152404_en-us_topic_0059777816_ac7c10e2c40fc48ef84e2cc2caa4bf9e7"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_ac7c10e2c40fc48ef84e2cc2caa4bf9e7"></a>-</p>
-</td>
-</tr>
 <tr id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_row46904138"><td class="cellrowborder" valign="top" width="11.85%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p8163685"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p8163685"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p8163685"></a>-P</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5219810"><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5219810"></a><a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_p5219810"></a>Ignores system indexes when reading system tables, but still updates the indexes when modifying the tables.</p>
