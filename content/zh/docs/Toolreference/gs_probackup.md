@@ -64,7 +64,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     ```
     gs_probackup set-config -B backup-path --instance=instance_name
-    [-D pgdata-path] [-E external-directories-paths] [--restore-command=cmdline] [--archive-timeout=timeout]
+    [-D pgdata-path] [-E external-directories-paths] [--archive-timeout=timeout]
     [--retention-redundancy=retention-redundancy] [--retention-window=retention-window] [--wal-depth=wal-depth]
     [--compress-algorithm=compress-algorithm] [--compress-level=compress-level]
     [-d dbname] [-h hostname] [-p port] [-U username]
@@ -195,9 +195,18 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：plain
 
--   --status=_backup\_status_
+- --status=_backup\_status_
 
-    删除指定状态的所有备份。
+  删除指定状态的所有备份。
+
+  - OK ：备份已完成且有效。
+  - DONE：备份已完成但未经过验证。
+  - RUNNING：备份正在进行中。
+  - MERGING：备份正在合并中。
+  - DELTING：备份正在删除中。
+  - CORRUPT：部分备份文件已损坏。
+  - ERROR：由于意外错误，备份失败。
+  - ORPHAN：由于其父备份之一已损坏或丢失，备份无效。
 
 -   -j  _threads\_num_, --threads=_threads\_num_
 
@@ -526,7 +535,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 **远程模式相关参数\(remote\_options\)**
 
 ![](public_sys-resources/icon-note.gif) **说明：**
- 
+
 通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
 
 -   --remote-proto=_protocol_

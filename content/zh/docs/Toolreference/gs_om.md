@@ -305,7 +305,7 @@ gs\_om参数可以分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p172731718619"><a name="p172731718619"></a><a name="p172731718619"></a>实例状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li>P: 节点的初始角色是Primary，数据库安装后就不再变动，从系统静态文件读取。</li><li>S: 节点的初始角色是Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>Primary：表示实例为主实例。</li><li>Standby：表示实例为备实例。</li><li>Secondary：表示实例为从备实例。</li><li>Pending：表示该实例在仲裁阶段。</li><li>Unknown：表示实例状态未知。</li><li>Down：表示实例处于宕机状态。</li></ul>
+<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li>P: 节点的初始角色是Primary，数据库安装后就不再变动，从系统静态文件读取。</li><li>S: 节点的初始角色是Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>C: 节点的初始角色是Cascade Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>Primary：表示实例为主实例。</li><li>Standby：表示实例为备实例。</li><li>Cascade Standby：表示实例为级联备实例。</li><li>Secondary：表示实例为从备实例。</li><li>Pending：表示该实例在仲裁阶段。</li><li>Unknown：表示实例状态未知。</li><li>Down：表示实例处于宕机状态。</li></ul>
 </td>
 </tr>
 </tbody>
