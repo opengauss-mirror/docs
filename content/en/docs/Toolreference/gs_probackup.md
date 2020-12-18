@@ -64,7 +64,7 @@
 
     ```
     gs_probackup set-config -B backup-path --instance=instance_name
-    [-D pgdata-path] [-E external-directories-paths] [--restore-command=cmdline] [--archive-timeout=timeout]
+    [-D pgdata-path] [-E external-directories-paths] [--archive-timeout=timeout]
     [--retention-redundancy=retention-redundancy] [--retention-window=retention-window] [--wal-depth=wal-depth]
     [--compress-algorithm=compress-algorithm] [--compress-level=compress-level]
     [-d dbname] [-h hostname] [-p port] [-U username]

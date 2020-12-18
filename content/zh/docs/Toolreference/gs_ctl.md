@@ -30,6 +30,11 @@ gs\_ctl参数可分为如下几类：
     <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a>参数说明</p>
     </th>
     </tr>
+    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>init</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>创建数据库。</p>
+    </td>
+    </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>启动数据库。</p>
@@ -42,7 +47,7 @@ gs\_ctl参数可分为如下几类：
     </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r515fd2102d1d4bd3bd5bfded3a737b80"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a>build</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a>在主机上重建备实例。</p>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a>在主机上重建备实例或级联备实例。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r0cd18abaee9141439b20f10f5909a508"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a>stop</p>
@@ -63,6 +68,9 @@ gs\_ctl参数可分为如下几类：
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>在指定的数据目录运行的备用服务器被命令退出故障恢复，并开始进行读写操作。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>finishredo</p></td><td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>主机故障时，备机停止回放，强制升主。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
@@ -127,7 +135,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r01437712745143c7b52a1c5f2b9f7b52"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a>-s,  --silent</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>仅打印错误，没有参考消息。</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>对于promote，reload，restart，stop命令仅打印部分提示信息，对其他命令不生效。打印信息如：server promoting，server shuting down。不打印如”waiting for server to shut down, server stopped"等提示信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a>-</p>
 </td>
@@ -154,7 +162,7 @@ gs\_ctl参数可分为如下几类：
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a>SERVERMODE的取值范围：</p>
-<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
+<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>cascade_standby：本端以级联备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152408_row79165943917"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_p16108598396"><a name="zh-cn_topic_0237152408_p16108598396"></a><a name="zh-cn_topic_0237152408_p16108598396"></a>-T</p>
@@ -307,11 +315,13 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="p887411245513"><a name="p887411245513"></a><a name="p887411245513"></a>mode的取值：</p>
 <p id="p13270172819514"><a name="p13270172819514"></a><a name="p13270172819514"></a>● full：通过全量镜像的方式重新同步 主机的数据目录。</p>
 <p id="p466319111169"><a name="p466319111169"></a><a name="p466319111169"></a>● incremental：通过解析Xlog日志获 取主备机差异的数据进行增量修复备机。</p>
+<p id="p106721111857"><a name="p106721111857"></a><a name="p106721111857"></a>说明：增量重建适用于主备双主等因日志造成的不一致的场景。</p>
 <p id="p15978143115518"><a name="p15978143115518"></a><a name="p15978143115518"></a>警告 ● 增量重建适用于主备双主等因日志 造成的不一致场景。</p>
 <p id="p643515574347"><a name="p643515574347"></a><a name="p643515574347"></a>● 增量重建不适用于一主一备并且没有开启最大高可用的场景，此种场景下需要使用全量重建或者开启最大高可用后再进行增量重建。</p>
 <p id="p105751436553"><a name="p105751436553"></a><a name="p105751436553"></a>● 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</p>
 <p id="p381916183516"><a name="p381916183516"></a><a name="p381916183516"></a>● auto(不指定)：先增量，增量失败后进行会自动进行一次全量重建。</p>
 <p id="p106721111857"><a name="p106721111857"></a><a name="p106721111857"></a>默认值：auto</p>
+<p id="p106721111857"><a name="p106721111857"></a><a name="p106721111857"></a>说明：重建级联备机需要加上-M cascade_standy参数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ra22c49a9c167449bb1a36edb91560c19"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9da0d3e3b65b47ee96a180628738bba0"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9da0d3e3b65b47ee96a180628738bba0"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9da0d3e3b65b47ee96a180628738bba0"></a>-r, --recvtimeout=INTERVAL</p>

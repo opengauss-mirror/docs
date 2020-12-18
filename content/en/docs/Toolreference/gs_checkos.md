@@ -37,11 +37,11 @@
 
     Specifies the number of a check item. The format is -i A, -i B1, -i A1 -i A2, or - i A1,A2.
 
-    Value range: A1...A14 and B1...B7
+    Value range: A1...A14 and B1...B8
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >Items from A1 to A14 indicate that OS parameters need to be checked but not to be set.  
-    >Items from B1 to B7 indicate that system parameters need to be set to expected values.  
+    >Items from B1 to B8 indicate that system parameters need to be set to expected values.  
     >Items A and items B cannot be simultaneously set.  
 
     For details, see  [Table 1](#en-us_topic_0237152331_en-us_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e).
@@ -256,8 +256,16 @@
 <td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>Check EulerOS attributes. Set the value of RemoveIPC in files <strong id="b47466215212"><a name="b47466215212"></a><a name="b47466215212"></a>/usr/lib/systemd/system/systemd-logind.service</strong> and <strong id="b647313181323"><a name="b647313181323"></a><a name="b647313181323"></a>/etc/systemd/logind.conf</strong> to <strong id="b12441322322"><a name="b12441322322"></a><a name="b12441322322"></a>no</strong>.</p>
 </td>
 </tr>
+<tr id="row1725332313128"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="p4254202319125"><a name="p4254202319125"></a><a name="p4254202319125"></a>B8</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="p8254132331214"><a name="p8254132331214"></a><a name="p8254132331214"></a>Set Session Process</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>Set a remote device to inherit default system resources. Modify the <strong id="b47466215212"><a name="b47466215212"></a><a name="b47466215212"></a>/etc/pam.d/sshd</strong> service file and add the <strong id="b647313181323"><a name="b647313181323"></a><a name="b647313181323"></a>session required pam_limits.so</strong> configuration item to control resources used by users.</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >-   Item A6 needs to be checked based on the  **\[/etc/sysctl.conf\]**  and  **\[SUGGEST:/etc/sysctl.conf\]**  domains in the  **check\_list.conf**  configuration file.  
