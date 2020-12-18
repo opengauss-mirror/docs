@@ -28,5 +28,5 @@ A logical replication slot means a stream of changes that can be replayed in oth
 -   The size of a single tuple cannot exceed 1 GB, and decoding results may be larger than inserted data. Therefore, it is recommended that the size of a single tuple be less than or equal to 500 MB.
 -   openGauss supports the following data types for decoding:  **INTEGER**,  **BIGINT**,  **SMALLILNT**,  **TINYINT**,  **SERIAL**,  **SMALLSERIAL**,  **BIGSERIAL**,  **FLOAT**,  **DOUBLE PRECISION**,  **DATE**,  **TIME\[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[WITHOUT TIME ZONE\]**,  **CHAR\(**_n_**\)**,  **VARCHAR\(**_n_**\)**, and  **TEXT**.
 -   Currently, SSL connections are not supported by default. If SSL connections are required, set the GUC parameter  **ssl**  to  **on**.
--   If JDBC is used to create a logical replication slot, the slot name must contain less than 64 characters, start with a letter or underscore \(\_\), and contain only one or more types of the following characters: letters \(a to z\), digits \(0-9\), and underscores \(\_\).
+-   If JDBC is used to create a logical replication slot, the slot name must contain less than 64 characters, and contain only one or more types of the following characters: letters \(a to z\), digits \(0-9\), and underscores \(\_\).
 
