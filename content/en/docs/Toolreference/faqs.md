@@ -74,3 +74,42 @@ The certificate file is incomplete when the rebuilding is interrupted. The rebui
 
    >![](C:/Users/lijun/Desktop/007/public_sys-resources/icon-note.gif) **NOTE:**   
    >If the database on the standby node is stopped, you need to regenerate a certificate file or copy the certificate file \(in  _$GAUSSHOME_**/share**\) to the data directory, start the standby node, and rebuild the standby instance. For details about how to generate a certificate file, see the  _Developer Guide_.  
+
+## No Response Is Returned for a Long Time When gs\_om -t status -\-all Is Used to Query Database Status<a name="EN-US_TOPIC_0289899236"></a>
+
+### Symptom<a name="en-us_topic_0287275985_section434872073818"></a>
+
+The system does not respond for a long time after the  **gs\_om -t status -\-all**  command is executed.
+
+### Cause Analysis<a name="en-us_topic_0287275985_section14354141874411"></a>
+
+The possible cause is that the GaussDB process is hung. The query operation calls the  **gsql**  or  **gs\_ctl**  tool to query the database status. After the process is hung, no response is returned until the query times out.
+
+### Procedure<a name="en-us_topic_0287275985_section10173163494516"></a>
+
+1. Check whether  **gsql**  can access the database. If the following information is displayed, the GaussDB process is hung and the database is abnormal.
+
+   ```
+   gsql -d postgres -p 29776        
+   gsql: wait (null):29776 timeout expired, errno: Success
+   ```
+
+2. Check whether the  **postgresql-\*.log**  file contains error information. If yes, rectify the fault based on the error information.
+
+   ```
+   cd $GAUSSLOG/pg_log/dn_6001;grep "ERROR\|FATAL" postgresql-*.log   
+   ```
+
+3. If the database has been hung, and the  **gs\_om**  command does not take effect, search for the process ID on each node and kill the process.
+
+   ```
+   ps -ef|grep $GAUSSHOME/bin/gaussdb|grep -v grep       
+   kill -9 $pid
+   ```
+
+4. After the processes on all nodes are killed, run the following command on a node to start the processes: In the test environment, directly restart the database. In the manufacturer environment, contact Huawei technical support.
+
+   ```
+   gs_om -t start
+   ```
+
