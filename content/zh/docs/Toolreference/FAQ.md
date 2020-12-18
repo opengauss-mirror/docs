@@ -78,11 +78,11 @@ read cipher file or random parameter file failed.
 
 
 
-## 使用gs\_om -t status --all查询集群状态，长时间没有响应<a name="ZH-CN_TOPIC_0275124283"></a>
+## 使用gs\_om -t status -\-all查询集群状态，长时间没有响应<a name="ZH-CN_TOPIC_0275124283"></a>
 
 ### 问题现象<a name="section434872073818"></a>
 
-使用gs\_om -t status --all命令后长时间无响应。
+使用gs\_om -t status -\-all命令后长时间无响应。
 
 ### 原因分析<a name="section14354141874411"></a>
 
