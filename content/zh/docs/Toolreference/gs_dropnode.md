@@ -75,6 +75,8 @@ openGauss提供了gs\_dropnode工具从一主多备的数据库中移除不需�
 
 ```
 $ gs_dropnode -U omm -G dbgrp -h 10.11.12.13
+The target node to be dropped is (['StandbyNode1'])
+Do you want to continue to drop the target node (yes/no)? yes
 [gs_dropnode]Start to drop nodes of the cluster.
 [gs_dropnode]Start to stop the target node StandbyNode3.
 [gs_dropnode]End of stop the target node StandbyNode3.
