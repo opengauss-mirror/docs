@@ -4,6 +4,11 @@
 
 **gs\_ssh**, provided by openGauss, helps users run the same command on multiple nodes in openGauss.
 
+## Precautions
+
+- **gs_ssh** can only run the command which the OS user **omm** has permission
+- The command to be run will not affect the current session where **gs_ssh** is executed. For example, the command such as **cd** or **source** will not affect the current session as it will only be run in the environment within the process of **gs_ssh** itself
+
 ## Prerequisites<a name="en-us_topic_0237152344_en-us_topic_0059777951_sa146d07733084d8292706efa87117d57"></a>
 
 -   The trust relationship among the hosts is normal.
