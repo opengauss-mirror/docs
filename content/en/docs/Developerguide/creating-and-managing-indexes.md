@@ -155,7 +155,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
 </tr>
 <tr id="en-us_topic_0237120308_en-us_topic_0059777978_rd743d13fd78842ceb10ba8ba7f5f5997"><td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237120308_en-us_topic_0059777978_a64b26ba61c8a45c888258ae1637aa08e"><a name="en-us_topic_0237120308_en-us_topic_0059777978_a64b26ba61c8a45c888258ae1637aa08e"></a><a name="en-us_topic_0237120308_en-us_topic_0059777978_a64b26ba61c8a45c888258ae1637aa08e"></a>Composite index</p>
 </td>
-<td class="cellrowborder" valign="top" width="80.47999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237120308_en-us_topic_0059777978_a13dc1c1c87a441bf88365417a4852776"><a name="en-us_topic_0237120308_en-us_topic_0059777978_a13dc1c1c87a441bf88365417a4852776"></a><a name="en-us_topic_0237120308_en-us_topic_0059777978_a13dc1c1c87a441bf88365417a4852776"></a>An index that can be defined for multiple attributes of a table. Currently, composite indexes can be created only for B-tree in openGauss and up to 31 columns can share a composite index.</p>
+<td class="cellrowborder" valign="top" width="80.47999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237120308_en-us_topic_0059777978_a13dc1c1c87a441bf88365417a4852776"><a name="en-us_topic_0237120308_en-us_topic_0059777978_a13dc1c1c87a441bf88365417a4852776"></a><a name="en-us_topic_0237120308_en-us_topic_0059777978_a13dc1c1c87a441bf88365417a4852776"></a>An index that can be defined for multiple attributes of a table. Currently, composite indexes can be created only for B-tree in openGauss and up to 32 columns (Global partition index supports up to 31 columns) can share a composite index.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237120308_en-us_topic_0059777978_r4c1723383e374739becba4b96da7300c"><td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237120308_en-us_topic_0059777978_en-us_topic_0058967637_p233802017719"><a name="en-us_topic_0237120308_en-us_topic_0059777978_en-us_topic_0058967637_p233802017719"></a><a name="en-us_topic_0237120308_en-us_topic_0059777978_en-us_topic_0058967637_p233802017719"></a>Partial index</p>
@@ -170,6 +170,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
 </tr>
 </tbody>
 </table>
+
 
 -   Create an ordinary table.
 
