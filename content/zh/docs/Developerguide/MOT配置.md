@@ -191,20 +191,6 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 
 ## 内存（MOT）<a name="section1223551495"></a>
 
--   **max\_threads = 1024**
-
-    设置MOT引擎允许运行的最大线程数。
-
-    当不使用线程池时，该值将限制可以同时与MOT交互的会话数。此值不限制非MOT会话。
-
-    当使用线程池时，该值将限制可以同时与MOT交互的工作线程数。
-
--   **max\_connections = 1024**
-
-    设置MOT引擎允许运行的最大连接数。
-
-    不管如何配置线程池，该值将限制可以同时与MOT交互的会话数。此值不限制非MOT会话。
-
 -   **affinity\_mode = fill-physical-first**
 
     设置用户会话和内部MOT任务的线程亲和模式。
