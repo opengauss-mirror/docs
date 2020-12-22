@@ -246,6 +246,8 @@ Setting items:
     B4. [ Set IO scheduler value ]                              : Normal
     B5. [ Set network card configuration value ]                : Normal
     B6. [ Set THP service ]                                     : Normal
+    B7. [ Set RemoveIPC value ]                                 : Normal
+    B8. [ Set Session Process ]                                 : Normal
 Total numbers:6. Abnormal numbers:0. Warning number:0.
 ```
 
@@ -396,21 +398,7 @@ Method 2:
 
     In the command,  **-e**  indicates the inspection scenario and is case-sensitive. The format is  **-e inspect**  or  **-e upgrade**.
 
-    The inspection scenarios include  **inspect**  \(routine inspection\),  **upgrade**  \(inspection before upgrade\),  **expand**  \(inspection before cluster scale-out\),  **binary\_upgrade**  \(inspection before in-place upgrade\), and  **health**  \(health inspection\). You can create an inspection scenario as needed.
-
-
-Method 3:
-
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Copy the inspection tool  **gs\_check**  and the  **inspection**  directory to all new hosts.
-3.  Write the IP addresses of the new hosts into the  **ipListFile**  file and separate the IP addresses with line feeds.
-4.  Run the following command to check the new nodes before cluster scale-out:
-
-    ```
-    gs_check -e expand_new_node --hosts ipListFile
-    ```
-
-    **-e**  must be set to  **expand\_new\_node**, indicating inspection before cluster scale-out.
+    The inspection scenarios include  **inspect**  \(routine inspection\),  **upgrade**  \(inspection before upgrade\),  **Install**  \(install inspection ),  **binary\_upgrade**  \(inspection before in-place upgrade\), **slow_node**  \(node inspection\), **longtime**  \(time-consuming inspection\) and  **health**  \(health inspection\). You can create an inspection scenario as needed.
 
 
 The openGauss inspection is performed to check openGauss status during openGauss running or to check the environment and conditions before critical operations, such as upgrade or scale-out. For details about the inspection items and scenarios, see "Server Tools \> gs\_check \> openGauss status checks" in the  _openGauss Tool Reference_.

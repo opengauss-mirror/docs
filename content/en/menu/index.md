@@ -1146,7 +1146,7 @@ headless: true
 		-   [Logical Decoding]({{< relref "./docs/Developerguide/logical-decoding.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview.md" >}})
 			-   [Logical Decoding by SQL Function Interfaces]({{< relref "./docs/Developerguide/logical-decoding-by-sql-function-interfaces.md" >}})
-    -   [Foregin Data Wrapper]({{< relref "./docs/Developerguide/foregin-data-wrapper.md" >}})
+    -   [Foreign Data Wrapper]({{< relref "./docs/Developerguide/foreign-data-wrapper.md" >}})
         -   [oracle\_fdw]({{< relref "./docs/Developerguide/oracle_fdw.md" >}})
 		-   [mysql\_fdw]({{< relref "./docs/Developerguide/mysql_fdw.md" >}})
 		-   [postgres\_fdw]({{< relref "./docs/Developerguide/postgres_fdw.md" >}})

@@ -38,12 +38,12 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
     -   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
     -   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
 
-2.  Upload the software package  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
-3.  Go to the directory for storing the uploaded software package and decompress  **openGauss-**_x.x.x_**-openEULER-64bit.tar.gz**. After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
+2.  Upload the software package  **openGauss-**_x.x.x_**-openEuler-64bit.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
+3.  Go to the directory for storing the uploaded software package and decompress  **openGauss-**_x.x.x_**-openEuler-64bit.tar.gz**. After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
 
     ```
     cd /opt/software/openGauss
-    tar -zxvf openGauss-x.x.x-openEULER-64bit.tar.gz
+    tar -zxvf openGauss-x.x.x-openEuler-64bit.tar.gz
     ```
 
     ![](public_sys-resources/icon-note.gif) **NOTE:**  

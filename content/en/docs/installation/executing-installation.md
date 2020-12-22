@@ -41,7 +41,7 @@ After the openGauss installation environment is prepared by executing the pre-in
     Two files are generated under the log file path:  **gs\_install-YYYY-MMDD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
     ![](public_sys-resources/icon-note.gif) **NOTE:**     
-    -   Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **uft8**, and  **utf-8**; and  **Latine1**  and  **latine1**.    
+    -   Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **utf8**, and  **utf-8**; and  **Latine1**  and  **latine1**.    
     -   If no character set is specified during installation, the default character set SQL\_ASCII is used. To simplify and unify the locale, the default locale is  **C**. If you want to specify another character set and locale, use the  **--gsinit-parameter="--locale=LOCALE"**  parameter during installation. The  **LOCALE**  parameter specifies the default locale for the new database.  
         For example, to set the database encoding format to UTF-8, perform the following steps:  
         Run the  **locale -a |grep utf8**  command to check the locale that supports UTF-8 encoding:  
