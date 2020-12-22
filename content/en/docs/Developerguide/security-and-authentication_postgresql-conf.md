@@ -246,7 +246,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **0**  indicates that an account is not automatically locked if the password verification fails.
 -   A positive number indicates the duration after which a locked account is automatically unlocked.
 
-**Default value**:  **1**
+**Default value**:  **1d**
 
 ## failed\_login\_attempts<a name="en-us_topic_0237124696_en-us_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959"></a>
 
