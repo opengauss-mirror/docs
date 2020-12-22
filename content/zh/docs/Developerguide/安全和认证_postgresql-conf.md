@@ -246,7 +246,7 @@
 -   0表示密码验证失败时，自动锁定功能不生效。
 -   正数表示帐户被锁定后，当锁定时间超过password\_lock\_time设定的值时，帐户将会被自行解锁。
 
-**默认值：**1
+**默认值：**1d
 
 ## failed\_login\_attempts<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959"></a>
 
