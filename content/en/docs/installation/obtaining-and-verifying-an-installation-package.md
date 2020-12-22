@@ -61,6 +61,7 @@ a.  Log in to the openGauss open-source community at  [https://opengauss.org/en/
    -rw-r--r--  1 root root   65 Jul  6 11:03 openGauss-x.x.x-openEuler-64bit.sha256
    -rw-r--r--  1 root root  50M Jul  6 11:03 openGauss-x.x.x-openEuler-64bit.tar.bz2
    drwxr-xr-x  5 root root 4.0K Jul  6 11:03 script
+   drwxr-xr-x  2 root root 4.0K Jul  6 11:03 simpleInstall
    -rw-r--r--  1 root root   32 Jul  6 11:03 version.cfg
    
    ```
