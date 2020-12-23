@@ -158,3 +158,20 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   The remaining value represents the longest time that the host will be blocked when the backup data catches up. For example, a value of 5000 means that when the backup data catch-up time is 5 seconds left, the host is blocked and waits for it to complete.
 
 **Default value**:  **-1**
+
+## sync\_config\_strategy
+
+**Parameter description**：Synchronization strategy for configuration files between host and standby, standby and cascade standby。
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**：**enum**
+
+-   all\_node: When the host is configured as all\_node, it allows the host to actively synchronize the configuration files to all standby nodes. When the standby node is configured as all\_node, it allows the current standby to send synchronization request to its host, and allows the current standby to actively synchronize configuration files to all its cascade standby; When a cascade standby is configured as all\_node, it allows the current cascade standby to send synchronization request to its standby.
+-   only\_sync\_node: When the host is configured as only\_sync\_node, it means that only the host is allowed to actively synchronize the configuration files to all the synchronous standby nodes; When the standby machine is configured as only\_sync\_node, it allows the current standby machine to send synchronization request to its host, and does not allow the current standby to actively send synchronization configuration files to all its cascade; When the cascade standby is configured as only\_sync\_node, it allows the current cascade standby to send synchronization requests to its standby.
+-   none\_node: When the host is configured as none\_node, it means that the host is not allowed to actively synchronize the configuration files to any standby;When the standby machine is configured as none\_node, it means that the current standby machine is not allowed to send synchronization request to its host, and does not allowe to actively synchronize configuration files to all its cascade standby nodes. When the cascade standby is configured as none\_node, it means that the current cascade standby is not allowed to send synchronous requests to its standby machine.
+
+**Default value**：**all\_node**
+
+>![](public_sys-resources/icon-notice.gif) **NOTE:**
+>The sending side actively synchronizes the configuration file with the receiving side, and the receiving side requests the sending side synchronizes the configuration file, which are two separate events that cause the configuration file to synchronize.If you do not want configuration file synchronization, you must configure it to none\_node on the receiving end;The sender can only be configured as none\_node if it is a standby machine;If the sending end is a host, the host is not synchronized with all the standby machines when configured as none\_node; if configured as only\_sync\_node, it is only synchronized with the synchronous standby, not with the asynchronous standby.
