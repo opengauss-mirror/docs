@@ -627,6 +627,59 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
+Simple query restrictions are as follows:
+
+- Only indexscan and indexonlyscan are supported, and the filter conditions of all WHERE statements are on the index.
+
+
+- Only support single table addition, deletion, modification, and check, not join and using.
+
+
+- Only row storage tables are supported, partition tables are not supported, and tables do not support triggers.
+
+
+- Does not support information statistics features such as active sql and QPS.
+
+
+- Tables that are being expanded or reduced are not supported.
+
+
+- Does not support querying or modifying system columns.
+
+
+- Only supports simple SELECT statements, for example:
+
+    ```
+  SELECT c3 FROM t1 WHERE c1 =? And c2 =10;
+    ```
+
+  Only the columns of the target table can be queried. The c1 and c2 columns are index columns, and the following can be constants or parameters, and for update can be used.
+
+
+- Only simple INSERT statements are supported, for example:
+
+    ```
+  INSERT INTO t1 VALUES (?,10,?);
+    ```
+
+     Only one VALUES is supported. The types in VALUES can be constants and parameters, and return is not supported.
+
+- Only support simple DELETE statements, for example:
+
+    ```
+    DELETE FROM t1 WHERE c1 =? And c2 = 10;
+    ```
+
+  The c1 and c2 columns are index columns, and the following can be constants or parameters.
+
+- Only simple UPDATE statements are supported, for example:
+
+    ```
+    UPDATE t1 SET c3 = c3+? WHERE c1 =? And c2 = 10;
+    ```
+
+   The modified value of column c3 can be a constant and a parameter, or a simple expression. The columns c1 and c2 are index columns, and the following can be constants or parameters.
+
 **Value range**: Boolean
 
 -   **on**  indicates that the performance logs are output.
