@@ -74,6 +74,7 @@ The following lists the functionality limitations of MOT tables –
 -   OID
 -   Money
 -   Any unlimited varchar/character varying
+-   HSTORE
 
 ## UnsupportedIndex DDLs and Index<a name="section143421450173815"></a>
 
