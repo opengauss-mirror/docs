@@ -103,7 +103,7 @@
     (1 row)
     ```
 
-    Parameters  **expr1**  and  **expr2**  can be of any data type. If  **expr1**  and  **expr2**  are of different data types, NVL checks whether  **expr2**  can be implicitly converted to  **expr1**. If it can, the  **expr1**  data type is returned. If  **epr2**  cannot be implicitly converted to  **expr1**  but  **epr1**  can be implicitly converted to  **expr2**, the  **expr2**  data type is returned. If no implicit type conversion exists between the two parameters and the parameters are different data types, an error is reported.
+    Parameters  **expr1**  and  **expr2**  can be of any data type. If  **expr1**  and  **expr2**  are of different data types, NVL checks whether  **expr2**  can be implicitly converted to  **expr1**. If it can, the  **expr1**  data type is returned. otherwise return an error.
 
 -   greatest\(expr1 \[, ...\]\)
 
