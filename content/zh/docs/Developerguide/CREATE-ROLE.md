@@ -130,16 +130,17 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     缺省为NOREPLICATION。
 
--   **INDEPENDENT | NOINDEPENDENT**
+- **INDEPENDENT | NOINDEPENDENT**
 
-    定义私有、独立的角色。具有INDEPENDENT属性的角色，管理员对其进行的控制、访问的权限被分离，具体规则如下：
+  定义私有、独立的角色。具有INDEPENDENT属性的角色，管理员对其进行的控制、访问的权限被分离，具体规则如下：
 
-    -   未经INDEPENDENT角色授权，系统管理员无权对其表对象进行增、删、查、改、拷贝、授权操作。
-    -   未经INDEPENDENT角色授权，系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的继承关系。
-    -   系统管理员无权修改INDEPENDENT角色的表对象的属主。
-    -   系统管理员和拥有CREATEROLE属性的安全管理员无权去除INDEPENDENT角色的INDEPENDENT属性。
-    -   系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的数据库口令，INDEPENDENT角色需管理好自身口令，口令丢失无法重置。
-    -   管理员属性用户不允许定义修改为INDEPENDENT属性。
+  -   未经INDEPENDENT角色授权，系统管理员无权对其表对象进行增、删、查、改、拷贝、授权操作。
+  -   若将私有用户表的相关权限授予其他非私有用户，系统管理员也会获得同样的权限。
+  -   未经INDEPENDENT角色授权，系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的继承关系。
+  -   系统管理员无权修改INDEPENDENT角色的表对象的属主。
+  -   系统管理员和拥有CREATEROLE属性的安全管理员无权去除INDEPENDENT角色的INDEPENDENT属性。
+  -   系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的数据库口令，INDEPENDENT角色需管理好自身口令，口令丢失无法重置。
+  -   管理员属性用户不允许定义修改为INDEPENDENT属性。
 
 -   **CONNECTION LIMIT**
 

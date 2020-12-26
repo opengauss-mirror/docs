@@ -36,6 +36,7 @@
 
 -   有限地支持唯一约束和主键约束，即唯一约束和主键约束的约束键必须包含所有分区键。
 -   目前哈希分区和列表分区仅支持单列构建分区键，暂不支持多列构建分区键。
+-   只需要有间隔分区表的INSERT权限，往该表INSERT数据时就可以自动创建分区。
 
 ## 语法格式<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -297,9 +298,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     创建列表分区。partition\_key为分区键的名称。
 
     -   对于partition\_key，列表分区策略的分区键仅支持1列。
-    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过256个。
+    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
 
-    分区键支持的数据类型为：INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
+    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
 -   **PARTITION BY HASH\(partition\_key\)**
 
@@ -307,7 +308,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     对于partition\_key，哈希分区策略的分区键仅支持1列。
 
-    分区键支持的数据类型为：INT1、INT2、INT4、NUMERIC、VARCHAR\(n\)、TEXT、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
+    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
@@ -743,5 +744,5 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 ## 相关链接<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
-[ALTER TABLE PARTITION](ALTER-TABLE-PARTITION.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
+[ALTER TABLE PARTITION](zh-cn_topic_0289900688.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
 
