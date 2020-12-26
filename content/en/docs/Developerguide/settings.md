@@ -73,7 +73,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **0**  indicates that asynchronous submission.
 -   **2** means that the synchronization log playback of the standby machine is complete.
 
-**Default value**:  **off**
+**Default value**:  **off** for single server;  **on** for one primary with multiple standby servers
 
 ## wal\_sync\_method<a name="en-us_topic_0237124707_en-us_topic_0059778393_s9fc8bf6fcd2b474d894fc8ee7385fe86"></a>
 
