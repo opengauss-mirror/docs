@@ -50,10 +50,15 @@
         | ENABLE TRIGGER [ trigger_name | ALL | USER ]
         | ENABLE REPLICA TRIGGER trigger_name
         | ENABLE ALWAYS TRIGGER trigger_name
+        | DISABLE RULE rewrite_rule_name
+        | ENABLE RULE rewrite_rule_name
+        | ENABLE REPLICA RULE rewrite_rule_name
+        | ENABLE ALWAYS RULE rewrite_rule_name
         | DISABLE ROW LEVEL SECURITY
         | ENABLE ROW LEVEL SECURITY
         | FORCE ROW LEVEL SECURITY
         | NO FORCE ROW LEVEL SECURITY
+        | REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -96,12 +101,16 @@
     >   When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
     >-   **| ENABLE ALWAYS TRIGGER trigger\_name**  
     >       Determines that all triggers are fired regardless of the current replication mode.
+    >-   **| DISABLE/ENABLE [ REPLICA | ALWAYS ] RULE**
+    >    These forms configure the firing of rewrite rules belonging to the table. A disabled rule is still known to the system, but is not applied during query rewriting. The semantics are as for disabled/enabled triggers. This configuration is ignored for ON SELECT rules, which are always applied in order to keep views working even if the current session is in a non-default replication role.The rule firing mechanism is also affected by the configuration variable  [session\_replication\_role](statement-behavior.md#en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216) analogous to triggers as described above.
     >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**  
     >       Enables or disables row-level access control for a table.
     >       If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not >  >   affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW >   LEVEL SECURITY POLICY](create-row-level-security-policy.md).
     >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**   
     >       Forcibly enables or disables row-level access control for a table.
     >       By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) wil be affected. System administrators are not affected by any row-level access control policies.
+    >-   **| REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}**   
+    >       This form changes the information which is written to the write-ahead log to identify rows which are updated or deleted. This option has no effect except when logical replication is in use. DEFAULT (the default for non-system tables) records the old values of the columns of the primary key, if any. USING INDEX records the old values of the columns covered by the named index, which must be unique, not partial, not deferrable, and include only columns marked NOT NULL. FULL records the old values of all columns in the row. NOTHING records no information about the old row. (This is the default for system tables.) In all cases, no old values are logged unless at least one of the columns that would be logged differs between the old and new versions of the row.
 
 
 
