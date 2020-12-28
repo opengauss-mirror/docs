@@ -34,11 +34,11 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         [ REJECT LIMIT 'limit' ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >语法中的FIXED FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及 \[ \( option \[, ...\] \) | copy\_option \[ ...\] \] 可以任意排列组合。  
+    >语法中的FIXED、FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及copy\_option \[ ...\]可以任意排列组合，但FIXED和FORMATTER必须配合使用。
 
 -   把一个表的数据拷贝到一个文件。
 
@@ -49,14 +49,14 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         [ WITHOUT ESCAPING ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
     
     COPY query
         TO { 'filename' | STDOUT }
         [ WITHOUT ESCAPING ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -64,7 +64,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     >    \(query\)与\[USING\] DELIMITER不兼容，即若COPY TO的数据来自于一个query的查询结果，那么COPY TO语法不能再指定\[USING\] DELIMITERS语法子句。  
     >2.  对于FIXED FORMATTTER语法后面跟随的copy\_option是以空格进行分隔的。  
     >3.  copy\_option是指COPY原生的参数形式，而option是兼容外表导入的参数形式。  
-    >4.  语法中的FIXED FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及 \[ \( option \[, ...\] \) | copy\_option \[ ...\] \] 可以任意排列组合。  
+    >4.  语法中的FIXED、FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及 copy\_option \[ ...\] \] 可以任意排列组合，但FIXED和FORMATTER必须配合使用。
 
     其中可选参数option子句语法为：
 
@@ -148,7 +148,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 -   **FIXED**
 
-    打开字段固定长度模式。在字段固定长度模式下，不能声明DELIMITER，NULL，CSV选项。指定FIXED类型后，不能再通过option或copy\_option指定BINARY、CSV、TEXT等类型。
+    打开字段固定长度模式。在字段固定长度模式下，不能声明DELIMITER，NULL，CSV选项。指定FIXED类型后，不能再通过copy\_option指定BINARY、CSV、TEXT等类型。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >定长格式定义如下：  
