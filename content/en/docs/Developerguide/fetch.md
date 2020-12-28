@@ -86,7 +86,7 @@ NEXT
         Value range: a possibly-signed integer
 
         -   If  _count_  is positive, the  _count_'th succeeding row will be fetched.
-        -   If  _count_  is negative or 0, backward scanning is required, which is currently not supported.
+        -   If  _count_  is negative ， grab the abs(count) row before the current associated position.
         -   If the current row contains no data,  **RELATIVE 0**  returns null.
 
     -   count
