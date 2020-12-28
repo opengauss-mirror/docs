@@ -50,10 +50,15 @@
         | ENABLE TRIGGER [ trigger_name | ALL | USER ]
         | ENABLE REPLICA TRIGGER trigger_name
         | ENABLE ALWAYS TRIGGER trigger_name
+        | DISABLE RULE rewrite_rule_name
+        | ENABLE RULE rewrite_rule_name
+        | ENABLE REPLICA RULE rewrite_rule_name
+        | ENABLE ALWAYS RULE rewrite_rule_name
         | DISABLE ROW LEVEL SECURITY
         | ENABLE ROW LEVEL SECURITY
         | FORCE ROW LEVEL SECURITY
         | NO FORCE ROW LEVEL SECURITY
+        | REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -95,12 +100,17 @@
     >    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
     >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
     >    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
+    >-   **| DISABLE/ENABLE [ REPLICA | ALWAYS ] RULE**
+    >    配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
     >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
     >    开启或关闭表的行访问控制开关。
     >    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](zh-cn_topic_0289901001.md)章节。
     >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
     >    强制开启或关闭表的行访问控制开关。
     >    默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
+    >-   **| REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}**
+    >   调整逻辑复制时写入WAL日志中的信息量，该选项仅在wal_level配置为logical时才有效。
+    >   当原数据表发生更新时，默认的逻辑复制流只包含主键的历史记录，如果需要输出所需字段更新或删除的历史记录，可修改本参数。“DEFAULT”（非系统表的默认值）会记录主键字段的旧值。“USING INDEX”会记录名为index_name索引包含的字段的旧值，索引的所有列必须NOT NULL。“FULL”记录了所有列的旧值。“NOTHING”（系统表默认值）不记录旧值的信息。
 
     -   其中列相关的操作column\_clause可以是以下子句之一：
 
