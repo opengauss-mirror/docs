@@ -10,7 +10,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 已[确认连接信息](zh-cn_topic_0289899830.md)。
 
-## 本地连接数据库<a name="zh-cn_topic_0283137029_zh-cn_topic_0237120292_zh-cn_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>
+## 本地连接数据库
 
 1.  以操作系统用户omm登录数据库主节点。
 2.  连接数据库。
@@ -51,8 +51,39 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     postgres=# \q
     ```
 
+## 密态数据库连接操作
 
-## 远程连接数据库<a name="zh-cn_topic_0283137029_zh-cn_topic_0237120292_zh-cn_topic_0062050379_section435356016419"></a>
+1. 以操作系统用户omm登录数据库主节点。
+
+2. 连接数据库。
+
+   数据库安装完成后，默认生成名称为postgres的数据库。第一次连接数据库时可以连接到此数据库。
+
+   执行如下命令连接数据库。
+
+   ```
+   gsql -d postgres -p 8000 -C
+   ```
+
+   -C表示密态数据库开启，可以创建密钥和加密表。其它参数请参见[本地连接数据库](#本地连接数据库)。
+
+   连接成功后，系统显示类似如下信息：
+
+   ```
+   gsql ((GaussDB Kernel VxxxRxxxCxxopenGauss x.x.x build 50dc16a6) compiled at 2020-11-24 20:03:57 commit 1093 last mr 1793 debug)
+   Non-SSL connection (SSL connection is recommended when requiring high-security)
+   Type "help" for help.
+   
+   postgres=#
+   ```
+
+3. 退出数据库。
+
+   ```
+   postgres=# \q
+   ```
+
+## 远程连接数据库
 
 1.  完成远程连接配置，操作步骤参见[配置服务端远程连接](zh-cn_topic_0289899869.md)。
 2.  在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。此处以openEuler环境为例。
