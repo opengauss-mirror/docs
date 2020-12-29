@@ -68,7 +68,8 @@ Uninstallation succeeded.
 
 **操作步骤**
 
-1.  以root用户登录openGauss服务器。
+1. 以root用户登录openGauss服务器。
+
 2.  查看root用户互信是否建立，如果root用户没有建立互信，需要手工建立root用户互信，操作参考3.2.2手工建立互信。
 
     查看互信是否建成功，可以互相ssh主机名。输入exit退出。
@@ -89,23 +90,25 @@ Uninstallation succeeded.
     cd /opt/software/openGauss/script
     ```
 
-4.  使用gs\_postuninstall进行清理。若为环境变量分离的模式安装的数据库需要source环境变量分离文件ENVFILE。
+4. 使用gs\_postuninstall进行清理。若为环境变量分离的模式安装的数据库需要source环境变量分离文件ENVFILE。
 
-    ```
-    ./gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user --delete-group
-    ```
+   ```
+   ./gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user --delete-group
+   ```
 
-    或者在openGauss中每个节点执行本地后置清理。
+   或者在openGauss中每个节点执行本地后置清理。
 
-    ```
-    ./gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user --delete-group -L
-    ```
+   ```
+   ./gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user --delete-group -L
+   ```
 
-    omm为运行openGauss的操作系统用户名，/opt/software/openGauss/cluster\_config.xml为openGauss配置文件路径。
+   omm为运行openGauss的操作系统用户名，/opt/software/openGauss/cluster\_config.xml为openGauss配置文件路径。
 
-    若为环境变量分离的模式安装的数据库需删除之前source的环境变量分离的env参数
+   若为环境变量分离的模式安装的数据库需删除之前source的环境变量分离的env参数。
 
-    unset MPPDB\_ENV\_SEPARATE\_PATH
+   ```
+   unset MPPDB\_ENV\_SEPARATE\_PATH
+   ```
 
 5.  删除openGauss数据库各节点root用户的互信，操作参考3.2.2手工建立互信的删除root用户互信部分内容。
 

@@ -7,7 +7,7 @@ openGauss部署成功后，在数据库运行的过程中，会遇到各种问�
 ## 前提条件<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
 -   可以正常连接openGauss数据库。
--   在进行还原时，需要保证各节点备份目录中存在备份文件，若备份文件丢失，则需要从其他节点进行拷贝（二进制文件需修改文件名中的节点名）。
+-   在进行还原时，需要保证各节点备份目录中存在备份文件。
 -   需以操作系统用户omm执行gs\_backup命令。
 
 ## 语法<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
@@ -21,7 +21,7 @@ openGauss部署成功后，在数据库运行的过程中，会遇到各种问�
 -   恢复数据库主机
 
     ```
-    gs_backup -t restore --backup-dir=BACKUPDIR [-h HOSTNAME] [--parameter] [--binary] [--all] [-l LOGFILE]
+    gs_backup -t restore --backup-dir=BACKUPDIR [-h HOSTNAME] [--parameter] [--binary] [--all] [-l LOGFILE] [--force]
     ```
 
 -   显示帮助信息
@@ -99,6 +99,11 @@ gs\_backup参数可以分为如下几类：
         指定日志文件及存放路径。
 
         默认值：$GAUSSLOG/om/gs\_backup-YYYY-MM-DD\_hhmmss.log
+        
+    -   --force
+    
+        节点的静态文件丢失之后强行restore，仅限--all或者--binary参数使用时才生效。
+    
 
 
 -   其他参数：

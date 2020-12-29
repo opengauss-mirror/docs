@@ -6,11 +6,12 @@ openGauss部署成功后，在数据库运行的过程中，会遇到各种问�
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 
->-   gs\_basebackup仅支持全量备份，不支持增量。
+>-   gs\_basebackup仅支持主机和备机的全量备份，不支持增量。
 >-   gs\_basebackup当前支持热备份模式和压缩格式备份模式。
 >-   若打开增量检测点功能且打开双写, gs\_basebackup也会备份双写文件。
 >-   若pg\_xlog目录为软链接，备份时将不会建立软链接，会直接将数据备份到目的路径的pg\_xlog目录下。
 >-   备份过程中收回用户备份权限，可能导致备份失败，或者备份数据不可用。
+>-   如果因为网络临时故障等原因导致Server端无法应答，gs\_basebackup将在最长等待120秒后退出。
 
 ## 前提条件<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 

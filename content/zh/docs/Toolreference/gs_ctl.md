@@ -155,6 +155,20 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a>-</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ref8aa84c54b14adcb701e33c5c907ed5"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"></a>-w</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa081bb56d1854020bb02b2e359cebdb1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa081bb56d1854020bb02b2e359cebdb1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa081bb56d1854020bb02b2e359cebdb1"></a>需要等待操作完成。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a>默认值：数据库启动、停止或者重新启动时，需要等待操作完成。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ref8aa84c54b14adcb701e33c5c907ed5"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7a7b146805574b938f4a23672e78d8cb"></a>-W</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa081bb56d1854020bb02b2e359cebdb1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa081bb56d1854020bb02b2e359cebdb1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa081bb56d1854020bb02b2e359cebdb1"></a>不用等待操作完成。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a33149e11a4c94a1bbf09be44fbf9b102"></a>-</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rda88e0e994ae424dadad636f9e78b7e5"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7e919b02ae9c496b905b10d49d68288b"></a>-M</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a>-M后面需要跟SERVERMODE参数，表示在启动时指定数据库的启动模式。</p>
