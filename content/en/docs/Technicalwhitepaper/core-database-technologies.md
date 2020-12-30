@@ -221,9 +221,22 @@ In common scenarios, a partitioned table has the following advantages over a com
 -   Easy maintenance: If a partition in a partitioned table is faulty, only this partition needs to be repaired.
 -   Balanced I/O: Partitions can be mapped to different disks to balance I/O and improve the overall system performance.
 
-Currently, the openGauss database supports range partitioning. Data is mapped to each partition based on the range. The range is determined by the partition key specified when the partitioned table is created. This partitioning mode is most commonly used.
+Currently, openGauss supports range partitioned tables, list partitioned tables, and hash partitioned tables.
 
-With the range partitioning function, the database divides a record, which is to be inserted into a table, into multiple ranges using one or multiple columns and creates a partition for each range to store data. Partition ranges do no overlap. If you specify the  **PARTITION**  parameter in the  **CREATE TABLE**  statement, data in the table will be partitioned.
+- In a range partitioned table, data within a certain range is mapped to each partition. The range is determined by the partition key specified when the partitioned table is created. This partitioning mode is most commonly used.
+
+  With the range partitioning function, the database divides a record, which is to be inserted into a table, into multiple ranges using one or multiple columns and creates a partition for each range to store data. Partition ranges do no overlap.
+
+- In a list partitioned table, data is mapped to each partition based on the key values contained in each partition. The key values contained in a partition are specified when the partition is created.
+
+  The list partitioning function divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data.
+
+- In a hash partitioned table, data is mapped to each partition using the hash algorithm, and each partition stores records with the same hash value.
+
+  The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table.
+
+
+If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned.
 
 Users can modify partition keys as needed during table creation to make the query result stored in the same or least partitions \(called partition pruning\), so as to obtain consecutive I/O to improve the query performance.
 
@@ -411,17 +424,13 @@ Benefits:
 
 ### Slow SQL Diagnosis<a name="section11920121884711"></a>
 
-Slow SQL diagnosis can be classified into real-time slow SQL and historical slow SQL.
+Slow SQL records information about all jobs whose execution time exceeds the threshold.
 
--   Real-time slow SQL can output information about jobs that are being executed in the current system and whose execution time exceeds the threshold based on the execution time threshold provided by users.
--   Historical slow SQL records information about all jobs whose execution time exceeds the threshold.
-
-Slow SQL provides table-based and file-based query interfaces. You can query the execution plan, start time, end time, query statement, row activity, kernel time, CPU time, execution time, parsing time, compilation time, query rewriting time, plan generation time, network time, and I/O time. All information is anonymized.
+Historical slow SQL provides table-based and function-based query interfaces. You can query the execution plan, start time, end time, query statement, row activity, kernel time, CPU time, execution time, parsing time, compilation time, query rewriting time, plan generation time, network time, I/O time, network overhead, and lock overhead. All information is anonymized.
 
 Benefits:
 
--   Real-time slow SQL provides an interface for users to manage unfinished jobs. Users can manually stop abnormal jobs that consume too many resources.
--   Historical slow SQL provides detailed information required for slow SQL diagnosis. You can diagnose performance problems of specific slow SQL statements offline without reproducing the problem. The table-based and file-based interfaces help users collect statistics on slow SQL indicators and connect to third-party platforms.
+Slow SQL provides detailed information required for slow SQL diagnosis. You can diagnose performance problems of specific slow SQL statements offline without reproducing the problem. The table-based and function-based interfaces help users collect statistics on slow SQL indicators and connect to third-party platforms.
 
 ### One-Click Diagnosis Information Collection<a name="section38495113486"></a>
 
@@ -478,6 +487,14 @@ You can set parameters to specify the statements or operations for which audit l
 Audit logs record the event time, type, execution result, username, database, connection information, database object, database instance name, port number, and details. You can query audit logs by start time and end time and filter audit logs by recorded field.
 
 Database security administrators can use the audit logs to reproduce a series of events that cause faults in the database and identify unauthorized users, unauthorized operations, and the time when these operations are performed.
+
+### Equal-value Query in a Fully-encrypted Database
+
+A fully-encrypted database is the same as the streaming database and graph database that we understand. It is a database system dedicated to processing ciphertext data. Data is encrypted and stored in the database server. The database supports retrieval and calculation of ciphertext data and inherits the original database capabilities related to query tasks, including the lexical parsing, syntax parsing, execution plan generation, transaction consistency assurance, and storage.
+
+To fully encrypt the database on the client, you need to perform a large number of operations on the client, including managing data keys, encrypting sensitive data, parsing and modifying the actually executed SQL statements, and identifying the encrypted data returned to the client. GaussDB Kernel automatically encapsulates these complex operations in front-end parsing and encrypts and replaces sensitive information in SQL queries. In this way, the query tasks sent to the database services do not disclose users' query intentions, reducing the complexity of security management and operations on the client and making user be unaware of the application development.
+
+The fully-encrypted databases use technical means to implement database ciphertext query and calculation, resolving the privacy leakage problem on the cloud and third-party trust problems. It provides full lifecycle protection for data on the cloud and decouples the read capabilities of data owners and data administrators.
 
 ### Network Communication Security
 
@@ -576,3 +593,11 @@ The row-level access control feature enables database access control to be accur
 You can create a row-level access control policy for a data table. The policy defines an expression that takes effect only for specific database users and SQL operations. When a database user accesses the data table, if a SQL statement meets the specified row-level access control policy of the data table, the expressions that meet the specified condition will be combined by using  **AND**  or  **OR**  based on the attribute type \(**PERMISSIVE**  |  **RESTRICTIVE**\) and applied to the execution plan in the query optimization phase.
 
 Row-level access control is used to control the visibility of row-level data in tables. By predefining filters for data tables, the expressions that meet the specified condition can be applied to execution plans in the query optimization phase, which will affect the final execution result. Currently, row-level access control supports the following SQL statements: SELECT, UPDATE, and DELETE.
+
+### Unified Auditing
+
+Unified auditing allows administrators to configure audit policies for database resources or resource labels to simplify management, generate audit logs, reduce redundant audit logs, and improve management efficiency.
+
+Administrators can customize audit policies for configuring operation behaviors or database resources. The policies are used to audit specific user scenarios, user behaviors, or database resources. After the unified auditing function is enabled, when a user accesses the database, the system matches the corresponding unified audit policy based on the user identity information, such as the access IP address, client tool, and username. Then, the system classifies the user behaviors based on the access resource label and user operation type \(DML or DDL\) in the policy to perform unified auditing.
+
+The purpose of unified auditing is to change the existing traditional audit behavior into specific tracking audit behavior and exclude other behaviors from the audit, thereby simplifying management and improving the security of audit data generated by the database.

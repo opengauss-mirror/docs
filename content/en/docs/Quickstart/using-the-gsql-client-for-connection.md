@@ -79,7 +79,7 @@ Connection information has been confirmed. For details, see  Confirming Connecti
     If information similar to the following is displayed, the connection succeeds:
 
     ```
-    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    gsql ((openGauss 1.1.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
@@ -179,7 +179,7 @@ On the host, upload the client tool package and configure environment variables 
     mkdir /tmp/tools
     ```
 
-3.  Obtain the file  **openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz**  from the  software installation package  and upload it to the  **/tmp/tools**  directory.
+3.  Obtain the file  **openGauss-1.1.0-openEuler-64bit-Libpq.tar.gz**  from the  software installation package  and upload it to the  **/tmp/tools**  directory.
 
     ![](public_sys-resources/icon-note.gif) **NOTE:**
 
@@ -191,7 +191,7 @@ On the host, upload the client tool package and configure environment variables 
 
     ```
     cd /tmp/tools
-    tar -zxvf openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz
+    tar -zxvf openGauss-1.1.0-openEuler-64bit-Libpq.tar.gz
     ```
 
 5.  Set environment variables.

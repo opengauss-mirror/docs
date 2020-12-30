@@ -1,4 +1,4 @@
-# Feature Introduction<a name="EN-US_TOPIC_0244801137"></a>
+# Feature Introduction<a name="EN-US_TOPIC_0289899195"></a>
 
 -   Standard SQLs
 
@@ -25,119 +25,88 @@
     Supports SSL network connections, user permission management, password management, security auditing, and other functions, to ensure data security at the management, application, system, and network layers.
 
 
-## New Features<a name="section383172195410"></a>
+## New Features<a name="en-us_topic_0283136327_section383172195410"></a>
 
-This is the second version of openGauss. Features and functions of this version are compatible with those of the previous version. The new features are as follows:
+openGauss 1.1.0 is an updated version of openGauss 1.0.0. Features and functions of this version are compatible with those of the previous version. The new features are as follows:
 
--   XML Type
+-   Supports LIST partition and HASH partition.
+    -   The list partitioning function divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data.
+    -   The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned.
 
-    Stores XML data. The advantage of storing XML data in a text type is that it can check the input value for structural goodness, and it also supports type safety checks on functions. To use this data type, you must use  **configure --with-libxml**  during compilation.
+-   Supports equal-value query in a fully-encrypted database.
 
--   Pseudo-column ROWNUM
+    A fully-encrypted database is a database system dedicated to processing ciphertext data. Data is encrypted and stored in the database server. The database supports retrieval and calculation of ciphertext data and inherits the original database capabilities related to query tasks, including the lexical parsing, syntax parsing, execution plan generation, transaction consistency assurance, and storage. The performance deterioration does not exceed 10% compared with that of non-encrypted computing.
 
-    Generates a sequence number for each row in the query result. The sequence numbers must be unique. When using the ROWNUM function, you must use the OVER clause to sort a column to generate sequence numbers.
+-   Enhances primary/standby HA.
+    -   Supports the cascaded standby node which replicates logs from the standby node to reduce the service processing pressure of the primary node.
+    -   Scales the number of standby nodes to 8 nodes.
+    -   Supports the  **catchup2normal\_wait\_time **parameter configuration. After the standby node starts and establishes a connection with the primary node, it is in log catchup mode. If the difference between logs that are caught up is less than the value of  **catchup2normal\_wait\_time**, the standby node is changed to synchronous mode.
+    -   Supports non-synchronization of configuration files. The configuration parameters of primary and standby nodes vary according to the specifications of hardware where nodes are deployed. Therefore, the original synchronization function is modified and you do not have to synchronize parameter configuration files between the primary and standby nodes.
 
--   MEDIAN Aggregate Function
+-   Expands the data type compatibility.
 
-    Returns the median value of a given value. The median value is in the middle of a group of values. If the parameter set contains an even number of numbers, MEDIAN returns the average value of the two numbers in the middle.
+    Both char and varchar are compatible with PostgreSQL mode. When the length is calculated, the length of the character instead of the length of the byte is returned.
 
--   Global Temporary Table
+-   Adds monitoring dimensions.
 
-    Temporary tables need to be created only once for each database. Global temporary table objects are stored in the data dictionary. A temporary table is used to store intermediate result sets of transactions or sessions. The data stored in a temporary table is visible only to the current session. Even if the current session has committed data, other sessions cannot see the data. A temporary table can be used for sessions. Data can still exist in a temporary table even after the data is committed. However, the data is lost after the temporary table is disconnected and then reconnected. A temporary table can also be used for transactions. After the transaction is submitted, the data disappears.
+    Monitors the  **sort&hash**  information about  **work\_mem **in the view returned by  **get\_instr\_unique\_sql\(\)**.
 
--   Foreign Table
+    Adds the  **WAIT\_EVENT\_WAL\_BUFFER\_ACCESS **and  **WAIT\_EVENT\_WAL\_BUFFER\_FULL **wait events to the  **get\_instr\_wait\_event **view to monitor  **wal\_buffer**.  **WAIT\_EVENT\_WAL\_BUFFER\_ACCESS **counts the number of times that the WAL buffer is accessed. \(In consideration of performance, the access duration is not measured.\)  **WAIT\_EVENT\_WAL\_BUFFER\_FULL **collects statistics on the number of access times and access duration when the WAL buffer is full.
 
-    The data of foreign tables does not exist in the database. By providing the database with metadata that describes foreign tables, you can treat an operating system file or foreign data source as a database table and access it as if it were stored in a common database table. A foreign table is an extension of a database table. The foreign data wrapper \(FDW\) plug-in allows users to access tables of other heterogeneous databases in openGauss. openGauss supports FDW for Oracle \(oracle\_fdw\), FDW for MySQL \(mysql\_fdw\), and FDW for PostgreSQL \(Postgres\_fdw\), allowing users to access other heterogeneous databases in openGauss. To use these plug-ins, you need to install the client package of the corresponding database, recompile openGauss, and configure  **enable\_mysql\_fdw**  and  **enable\_oracle\_fdw**. After the database is started, run the  **create extension**  command to create an extension component, run the  **create server**  command to configure heterogeneous database connection parameters, run the  **create user mapping**  command to create a heterogeneous user mapping, and run the  **CREATE FOREIGN TABLE**  command to create a foreign table of a specified database.
+-   Enhances AI.
 
--   Materialized View
+    Automatically recommends proper indexes for simple queries based on the access conditions of SQL statements.
 
-    A local copy of the database query result data, which stores data based on data tables. It can also be called a snapshot. In a relational database, a common view is a virtual table that stores only SQL statements. A materialized view caches the query result of the view to a concrete or materialized table to store the actual data. Materialized views are used to pre-compute and save the results of time-consuming operations such as table join or aggregation. In this way, these time-consuming operations can be avoided during query execution, and results can be quickly obtained. The materialized view uses the query rewrite mechanism and does not require the modification of original query statements. The engine automatically selects a proper materialized view to rewrite the query, which is transparent to applications.
+-   Supports PL/Python.
 
--   Foreign Key
+    Supports the Python language as the SQL programming language.
 
-    Represents a correlation between two relationships. A table that uses the foreign key of another relationship as the primary keyword is called the primary table. A table that has the foreign key is called the secondary table of the primary table. The foreign key establishes a referential integrity constraint between the primary table and the secondary table.
+-   **gs\_basebackup **supports standby node backup.
 
--   UPSERT \(INSERT ON CONFLICT DO\)
+    **gs\_basebackup **can back up data from the standby node to reduce the service processing pressure of the primary node.
 
-    When a constraint error occurs during data insertion, the system directly returns the error or executes the UPDATE statement.
+-   Refines permission management models.
 
--   Commit in a Stored Procedure, Independent Debugging, and Parentheses Omission
+    Supports DDL permission granting and revoking.
 
-    You camn commit data in batches to ensure data reliability in a stored procedure. You can set breakpoints and perform independent debugging. Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the process executed by the stored procedure step by step and find the error cause or program bug based on the variable value to improve the fault locating efficiency.
+-   Rebuilds autonomous transactions.
 
--   Autonomous Transaction
+    Rebuilds the inter-process communication method used by the original autonomous transaction implementation to the inter-thread communication method, which is simpler.
 
-    Allows you to create a "transaction in a transaction" that can be committed or rolled back independently of its parent transaction. With autonomous transactions, you can start a new transaction, complete some work, and then commit or roll back, all of which do not affect the state of the currently executed transaction. For details about autonomous transaction constraints, see the description of autonomous transactions in the specification constraints.
+-   Rebuilds parallel queries.
 
--   Keyword Alias
+    Rebuilds a unified parallel framework to replace the original parallel query framework and the distributed cross-node parallel query framework.
 
-    Keywords such as name, value, and type are used as the aliases of query result columns.
+-   Supports interval partition.
 
--   Logical Replication
+    Automatically creates partitions at a specified interval when the data inserted into a table in the database exceeds the existing range partition.
 
-    In logical replication, the primary database is called the source database, and the standby database is called the objective database. The source database parses the WAL file based on the specified logical parsing rule and parses the DML operation into certain logical change information \(standard SQL statements\). The source database sends standard SQL statements to the objective database. After receiving the SQL statements, the objective database applies them to implement data synchronization. Logical replication involves only DML operations. Logical replication can implement cross-version replication, heterogeneous database replication, dual-write database replication, and table-level replication.
+-   Supports the sysdate data type.
 
--   Incremental Backup and Restoration \(beta\)
+    Sysdate returns the current date and time, which are the time zone and time of the Linux OS on a host machine where the database is located.
 
-    Supports full backup and incremental backup of the database, manages backup data, and views the backup status. Supports combination of incremental backups and deletion of expired backups.
+-   Supports standby node adding or deleting.
 
-    The database server dynamically tracks page modifications, and when a relational page is updated, the page is marked for backup. To use the incremental backup function, you need to enable the GUC parameter  **enable\_cbm\_tracking**  and allow the server to track the page modifications.
+    Provides the OM tool to support online scale-out and scale-in of standby nodes which can be dynamically added or deleted without affecting services.
 
--   Point-in-time Recovery \(PITR\)
+-   Supports multiple Python versions.
 
-    Uses basic hot backup, write-ahead logs \(WALs\), and archived WALs for backup and recovery. When replay a WAL record, you can stop at any point in time, so that there is a snapshot of the consistent database at any point in time. That is, you can restore the database to the state at any time since the backup starts. During recovery, you can specify the recovery stop point as TID, time, and LSN.
+    On CentOS, the database installation depends on Python 3.6. The released 1.1.0 version can be installed in Python 3.7. You can also build third-party libraries based on the specified Python 3._\* _version to adapt to more Python versions.
 
--   Standby Node in Replay Mode
+-   Supports adding an index online.
 
-    The primary and standby nodes support the remote\_apply mode. In remote\_apply mode, the primary node returns to the application only after the redo logs of the standby node are restored.
+    Uses the  **create index concurrently**  syntax to create indexes online without blocking DML.
 
--   Global Partitioned Indexes
+-   Provides the upgrade tool.
 
-    A global index is an independent index created on the entire table. If the query references a non-partition column, the performance can be improved.
+    Supports the upgrade from 1.0.1 to 1.1.0.
 
--   Automatic Extended Partition Based on Range Partitions
+-   Decouples installation from the OM tool.
 
-    The INTERVAL partition is a function extension of the range partitions. For range partitions of continuous data types, if the new data value inserted does not match the current partition, the Interval-Partition feature can be used to automatically create partitions. The partition column must be of the integer or time type.
+    The OM tool is decoupled from the database kernel in the 1.1.0 version:
 
--   Parallel Query \(beta\)
+    1.  The OM tool is stored in the openGauss-OM repository which will be used to manage the OM tool code.
 
-    Supports the parallel scanning operator, and optimizes the execution mode of SQL statements. The single-thread mode that uses a single CPU at most is improved to the multi-thread mode that completes the work collaboratively. Parallel query consumes more hardware resources, but greatly improves the task execution efficiency.
-
--   OS Platform
-
-    Supports openEuler 20.3LTS on x86-64 and Kirin V10 on Arm. It can run on openEuler and CentOS containers.
-
--   **ALTER SYSTEM SET**  Syntax
-
-    Modifies values of database instance parameters in a session. After the database is reconnected or restarted, the parameters can be successfully modified and written into the  **postgresql.conf**  and  **postgresql.conf.bak**  configuration files.
-
--   IPv6 Protocol
-
-    The database can be connected using the IPv6 protocol.
-
--   PostGIS Plug-in
-
-    PostGIS is a spatial database that supports geographic objects, uses the point, line, and plane data types, and allows spatial relationship location query in SQL. Before using this function, you need to install the PostGIS plug-in.
-
--   GIN Index
-
-    A common inverted index, which is a data structure for storing a set. GIN indexes are suitable for multivalued element searches, such as array and full-text searches.
-
--   Stored Procedure Debugging
-
-    By installing the pldebuger plug-in, you can debug the SQL statements of functions and stored procedures.
-
--   Standby Node Scale-out
-
-    Supports the standby node scale-out in the database cluster using tools. A standalone or primary/standby database can be scaled to a maximum of one primary and four standbys.
-
--   Automatic Workload Diagnosis Report \(WDR\)
-
-    Generates a performance report between two different time points based on the system performance snapshot data at these time points. The report is used to diagnose database kernel performance faults.
-
--   Supports transaction-level synchronization of heterogeneous databases \(only DML\).
--   Container-based deployment \(alpha\)
-
-    Provides the container-based deployment capability for single-node databases. A script is used to build the Docker image of the database. After the image is started, you can deploy and run the single-node database in container mode.
+    2.  The OM tool and kernel are packaged separately. You can place the images of the OM tool and kernel in the same directory and use the OM tool to install them. The installation method remains unchanged. If only the kernel is concerned, you can decompress the kernel image and run it separately.
 
 
