@@ -9,11 +9,10 @@
 -   列存表支持的数据类型请参考[列存表支持的数据类型](zh-cn_topic_0289900452.md)。
 -   列存表不支持数组。
 -   创建列存表的数量建议不超过1000个。
--   表中的主键约束和唯一约束必须包含分布列。
 -   如果在建表过程中数据库系统发生故障，系统恢复后可能无法自动清除之前已创建的、大小为0的磁盘文件。此种情况出现概率小，不影响数据库系统的正常运行。
 -   列存表的表级约束只支持PARTIAL CLUSTER KEY，不支持主外键等表级约束。
 -   列存表的字段约束只支持NULL、NOT NULL和DEFAULT常量值。
--   列存表支持delta表，受参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)  控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
+-   列存表支持delta表，受参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
 -   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
@@ -106,8 +105,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。
     >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
-    >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作。
+    >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
     >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
+    >-   全局临时表功能可以通过设置GUC参数max\_active\_global\_temporary\_table控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
 
 -   **IF NOT EXISTS**
 
@@ -369,7 +369,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t2
     W_WAREHOUSE_NAME          VARCHAR(20)                   ,
     W_WAREHOUSE_SQ_FT         INTEGER                       ,
     W_STREET_NUMBER           CHAR(10)                      ,
-    W_STREET_NAME             VARCHAR(60)         DICTIONARY,
+    W_STREET_NAME             VARCHAR(60),
     W_STREET_TYPE             CHAR(15)                      ,
     W_SUITE_NUMBER            CHAR(10)                      ,
     W_CITY                    VARCHAR(60)                   ,
@@ -824,7 +824,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t22
 postgres=# CREATE TABLE tpcds.city_t23
 (
     W_CITY            VARCHAR(60)                PRIMARY KEY,
-    W_ADDRESS	      TEXT                     
+    W_ADDRESS       TEXT                     
 );
 postgres=# CREATE TABLE tpcds.warehouse_t23
 (
@@ -836,7 +836,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t23
     W_STREET_NAME             VARCHAR(60)                   ,
     W_STREET_TYPE             CHAR(15)                      ,
     W_SUITE_NUMBER            CHAR(10)                      ,
-    W_CITY                    VARCHAR(60)           REFERENCES city_t23(W_CITY),
+    W_CITY                    VARCHAR(60)           REFERENCES tpcds.city_t23(W_CITY),
     W_COUNTY                  VARCHAR(30)                   ,
     W_STATE                   CHAR(2)                       ,
     W_ZIP                     CHAR(10)                      ,
@@ -861,7 +861,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t23
     W_ZIP                     CHAR(10)                      ,
     W_COUNTRY                 VARCHAR(20)                   ,
     W_GMT_OFFSET              DECIMAL(5,2)                  ,
-    FOREIGN KEY(W_CITY) REFERENCES city_t23(W_CITY)
+    FOREIGN KEY(W_CITY) REFERENCES tpcds.city_t23(W_CITY)
 );
 
 --或是用下面的语法，指定约束的名称。
@@ -881,7 +881,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t23
     W_ZIP                     CHAR(10)                      ,
     W_COUNTRY                 VARCHAR(20)                   ,
     W_GMT_OFFSET              DECIMAL(5,2)                  ,
-    CONSTRAINT W_FORE_KEY1 FOREIGN KEY(W_CITY) REFERENCES city_t23(W_CITY)
+    CONSTRAINT W_FORE_KEY1 FOREIGN KEY(W_CITY) REFERENCES tpcds.city_t23(W_CITY)
 );
 
 --向tpcds.warehouse_t19表中增加一个varchar列。
@@ -1011,7 +1011,11 @@ postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
 
 -   LIKE INCLUDING PARTITION
+
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
 
 -   LIKE INCLUDING RELOPTIONS
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
