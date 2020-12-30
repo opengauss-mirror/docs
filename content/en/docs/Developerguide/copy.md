@@ -34,11 +34,11 @@
         [ REJECT LIMIT 'limit' ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >In the syntax,  **FIXED FORMATTER \(\{column\_name\(offset, length\)\} \[, ...\]\)**  and  **\[\(option \[, ...\]\) | copy\_option \[...\]\]**  can be in any sequence.  
+    >In the syntax,  **FIXED, FORMATTER \(\{column\_name\(offset, length\)\} \[, ...\]\)**  and  **\[ copy\_option \[...\] \]**  can be in any sequence, but FIXED and FORMATTER must be used together.
 
 -   Copy data from a table to a file.
 
@@ -49,14 +49,14 @@
         [ WITHOUT ESCAPING ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
     
     COPY query
         TO { 'filename' | STDOUT }
         [ WITHOUT ESCAPING ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
@@ -64,7 +64,7 @@
     >    **\(query\)**  is incompatible with  **\[USING\] DELIMITER**. If the data comes from a query result,  **COPY TO**  cannot specify  **\[USING\] DELIMITERS**.  
     >2.  Use spaces to separate  **copy\_option**  following  **FIXED FORMATTTER**.  
     >3.  **copy\_option**  is the native parameter, while  **option**  is the parameter imported by a compatible foreign table.  
-    >4.  In the syntax,  **FIXED FORMATTER \(\{column\_name\(offset, length\)\} \[, ...\]\)**  and  **\[\(option \[, ...\]\) | copy\_option \[...\]\]**  can be in any sequence.  
+    >4.  In the syntax,  **FIXED, FORMATTER \(\{column\_name\(offset, length\)\} \[, ...\]\)**  and  **\[ copy\_option \[...\] \]**  can be in any sequence, but FIXED and FORMATTER must be used together.
 
     The syntax of the optional parameter  **option**  is as follows:
 
@@ -148,7 +148,7 @@
 
 -   **FIXED**
 
-    Fixes column length. When the column length is fixed,  **DELIMITER**,  **NULL**, and  **CSV**  cannot be specified. When  **FIXED**  is specified,  **BINARY**,  **CSV**, and  **TEXT**  cannot be specified by  **option**  or  **copy\_option**.
+    Fixes column length. When the column length is fixed,  **DELIMITER**,  **NULL**, and  **CSV**  cannot be specified. When  **FIXED**  is specified,  **BINARY**,  **CSV**, and  **TEXT**  cannot be specified by  **copy\_option**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >The definition of fixed length is as follows:  
