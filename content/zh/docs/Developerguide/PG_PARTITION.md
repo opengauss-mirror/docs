@@ -61,7 +61,7 @@ PG\_PARTITION系统表存储数据库内所有分区表\(partitioned table\)、�
 </td>
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ac2cdaa1306d64418bd975efe070cfd70"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ac2cdaa1306d64418bd975efe070cfd70"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ac2cdaa1306d64418bd975efe070cfd70"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ab59a5a0126ff4dc5a660144496392db3"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ab59a5a0126ff4dc5a660144496392db3"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ab59a5a0126ff4dc5a660144496392db3"></a>分区表分区策略，现在仅支持：<a name="zh-cn_topic_0237122306_ul156455338321"></a><a name="zh-cn_topic_0237122306_ul156455338321"></a><ul id="zh-cn_topic_0237122306_ul156455338321"><li>'r'：范围分区。</li><li>'v'：数值分区。</li></ul>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ab59a5a0126ff4dc5a660144496392db3"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ab59a5a0126ff4dc5a660144496392db3"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_ab59a5a0126ff4dc5a660144496392db3"></a>分区表分区策略，现在仅支持：<a name="zh-cn_topic_0237122306_ul156455338321"></a><a name="zh-cn_topic_0237122306_ul156455338321"></a><ul id="zh-cn_topic_0237122306_ul156455338321"><li>'r'：范围分区。</li><li>'v'：数值分区。</li><li>'i'：间隔分区。</li></ul>
 </div>
 </td>
 </tr>
@@ -222,4 +222,5 @@ PG\_PARTITION系统表存储数据库内所有分区表\(partitioned table\)、�
 </tr>
 </tbody>
 </table>
+
 

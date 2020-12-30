@@ -108,7 +108,7 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a53461271760548a095434eb585da1219"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a53461271760548a095434eb585da1219"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a53461271760548a095434eb585da1219"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a>最后一次手动清理该表的时间（不计算VACUUM FULL）。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aaf7dbd9f779b46f69b42cf8b6465bdd0"></a>最后一次清理该表的时间。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_rc1de56b1dd60416f9a2ca2fa67fc07bf"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a6a984da962b945d389af19001c534f8d"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a6a984da962b945d389af19001c534f8d"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a6a984da962b945d389af19001c534f8d"></a>last_autovacuum</p>
@@ -122,7 +122,7 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a092c4ce6395f4534b09d8303803edb3d"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a092c4ce6395f4534b09d8303803edb3d"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a092c4ce6395f4534b09d8303803edb3d"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a>上次手动分析该表的时间。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a33cde7e481664863a6b2e8330092843a"></a>上次分析该表的时间。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_rb9d986f087594f97a420b9c2b865692a"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a1454dce85ab54b1fabf87756d7b6d98d"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a1454dce85ab54b1fabf87756d7b6d98d"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a1454dce85ab54b1fabf87756d7b6d98d"></a>last_autoanalyze</p>
@@ -136,7 +136,7 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aad56c6d9f54b44cfb2837556c9a1e9e3"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aad56c6d9f54b44cfb2837556c9a1e9e3"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aad56c6d9f54b44cfb2837556c9a1e9e3"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_afdc1ed18bd13475186c3b5c4b5692931"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_afdc1ed18bd13475186c3b5c4b5692931"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_afdc1ed18bd13475186c3b5c4b5692931"></a>这个表被手动清理的次数（不计算VACUUM FULL）。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_afdc1ed18bd13475186c3b5c4b5692931"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_afdc1ed18bd13475186c3b5c4b5692931"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_afdc1ed18bd13475186c3b5c4b5692931"></a>这个表被清理的次数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_rff3cebf3899141acb325803c4244a639"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a429f266d8fe246d89b8d2acc057564bb"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a429f266d8fe246d89b8d2acc057564bb"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a429f266d8fe246d89b8d2acc057564bb"></a>autovacuum_count</p>
@@ -150,7 +150,7 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a22dff7dd26974899baa275b28d314ab8"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a22dff7dd26974899baa275b28d314ab8"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_a22dff7dd26974899baa275b28d314ab8"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ad4334f8d43774181be787ca2d8b422a1"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ad4334f8d43774181be787ca2d8b422a1"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ad4334f8d43774181be787ca2d8b422a1"></a>这个表被手动分析的次数。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ad4334f8d43774181be787ca2d8b422a1"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ad4334f8d43774181be787ca2d8b422a1"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_ad4334f8d43774181be787ca2d8b422a1"></a>这个表被分析的次数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_raf9ce5e9a6e34c758e472c0b2ac9b602"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aad1a866f0979452a8eb78a8f3e50d417"><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aad1a866f0979452a8eb78a8f3e50d417"></a><a name="zh-cn_topic_0237122442_zh-cn_topic_0059779176_aad1a866f0979452a8eb78a8f3e50d417"></a>autoanalyze_count</p>
@@ -169,4 +169,5 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </tr>
 </tbody>
 </table>
+
 

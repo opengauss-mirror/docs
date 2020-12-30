@@ -11,9 +11,10 @@ ALTER SYSTEM SET命令用于设置POSTMASTER、SIGHUP、BACKEND级别的GUC参�
     -   POSTMASTER级别的GUC参数需要重启后才生效。
     -   BACKEND级别的GUC参数需要会话重新连接后才生效。
     -   SIGHUP级别的GUC参数立即生效（需要等待线程重新加载参数，实际略微有延迟）。
-
 -   通过配置  [audit\_set\_parameter](zh-cn_topic_0242371537.md#zh-cn_topic_0237124747_zh-cn_topic_0059777487_sc59738d0efe94f909306fde1f3d04f1e)  参数，可以配置此操作是否被审计。
 -   操作可被备机同步。
+-   同gs\_guc一致，并不关注数据库是主或备节点、是否只读。
+-   不可在事务中执行，因为此操作无法被回滚。
 
 ## 语法格式<a name="zh-cn_topic_0237122075_zh-cn_topic_0059778605_s3b7743fa7cab42718575f7194d1112ba"></a>
 

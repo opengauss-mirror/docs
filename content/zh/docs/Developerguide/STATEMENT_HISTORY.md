@@ -1,6 +1,6 @@
-# STATEMENT\_HISTORY<a name="ZH-CN_TOPIC_0301807366"></a>
+# STATEMENT\_HISTORY<a name="ZH-CN_TOPIC_0301824804"></a>
 
-获得当前节点的执行语句的信息。查询视图必须具有sysadmin权限或者monitor admin权限。
+获得当前节点的执行语句的信息。查询系统表必须具有sysadmin权限。
 
 **表 1**  STATEMENT\_HISTORY字段
 
@@ -76,11 +76,11 @@
 <td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p9524359162416"><a name="p9524359162416"></a><a name="p9524359162416"></a>唯一SQL ID。</p>
 </td>
 </tr>
-<tr id="row84341250185420"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p8434205005415"><a name="p8434205005415"></a><a name="p8434205005415"></a>query</p>
+<tr id="row1024411583535"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p124416583539"><a name="p124416583539"></a><a name="p124416583539"></a>query</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p3434155065416"><a name="p3434155065416"></a><a name="p3434155065416"></a>text</p>
+<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p024495835312"><a name="p024495835312"></a><a name="p024495835312"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p143412505544"><a name="p143412505544"></a><a name="p143412505544"></a>归一化SQL。</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p192447585532"><a name="p192447585532"></a><a name="p192447585532"></a>归一化SQL。</p>
 </td>
 </tr>
 <tr id="row3114174743016"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p10523459142411"><a name="p10523459142411"></a><a name="p10523459142411"></a>start_time</p>
@@ -311,7 +311,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p1743816482294"><a name="p1743816482294"></a><a name="p1743816482294"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p11438144832911"><a name="p11438144832911"></a><a name="p11438144832911"></a>加锁等待次数。</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p11438144832911"><a name="p11438144832911"></a><a name="p11438144832911"></a>加锁等待次数.</p>
 </td>
 </tr>
 <tr id="row12165137203010"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p01662710309"><a name="p01662710309"></a><a name="p01662710309"></a>lock_wait_time</p>
@@ -353,7 +353,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p8519145615307"><a name="p8519145615307"></a><a name="p8519145615307"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p195190563305"><a name="p195190563305"></a><a name="p195190563305"></a>轻量级加锁时间。</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p195190563305"><a name="p195190563305"></a><a name="p195190563305"></a>轻量级等锁时间。</p>
 </td>
 </tr>
 <tr id="row1139711323112"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p73972034315"><a name="p73972034315"></a><a name="p73972034315"></a>details</p>
@@ -362,14 +362,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>语句锁事件的列表，该列表按时间书序记录事件，记录的数量受参数track_stmt_details_size的影响。</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>事件包括：</p>
-<a name="ul452445214189"></a><a name="ul452445214189"></a><ul id="ul452445214189"><li>加锁开始</li><li>加锁结束</li><li>等锁开始</li><li>等锁结束</li><li>放锁开始</li><li>放锁结束</li><li>轻量级等锁开始</li><li>轻量级等锁结束</li></ul>
+<a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>加锁开始</li><li>加锁结束</li><li>等锁开始</li><li>等锁结束</li><li>放锁开始</li><li>放锁结束</li><li>轻量级等锁开始</li><li>轻量级等锁结束</li></ul>
 </td>
 </tr>
-<tr id="row19936171305317"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p14936191313534"><a name="p14936191313534"></a><a name="p14936191313534"></a>is_slow_sql</p>
+<tr id="row1146417610552"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p174641163550"><a name="p174641163550"></a><a name="p174641163550"></a>is_slow_sql</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p179367131531"><a name="p179367131531"></a><a name="p179367131531"></a>boolean</p>
+<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p44649617558"><a name="p44649617558"></a><a name="p44649617558"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p159361013155319"><a name="p159361013155319"></a><a name="p159361013155319"></a>该SQL是否为slow SQL</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p13464660559"><a name="p13464660559"></a><a name="p13464660559"></a>该SQL是否为slow SQL。</p>
 </td>
 </tr>
 </tbody>

@@ -28,7 +28,7 @@
 ```
 CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
      [ AS { PERMISSIVE | RESTRICTIVE } ]
-     [ FOR { ALL | SELECT | INSERT | UPDATE | DELETE } ]
+     [ FOR { ALL | SELECT | UPDATE | DELETE } ]
      [ TO { role_name | PUBLIC | CURRENT_USER | SESSION_USER } [, ...] ]
      USING ( using_expression )
 ```
