@@ -14,7 +14,7 @@ The openGauss can be deployed in standalone mode or with one primary node and mu
 
 -   One primary and multiple standbys
 
-    One primary and multiple standbys refer to the system that has one primary node and multiple standby nodes. A maximum of four standby nodes are supported.
+    One primary and multiple standbys refer to the system that has one primary node and multiple standby nodes. A maximum of eight standby nodes are supported.
 
 -   Hot/Cold backup
 
