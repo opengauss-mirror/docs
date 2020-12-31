@@ -14,7 +14,7 @@ openGauss 1.1.0 is positioned as an updated version and is compatible with the f
 
 -   New features:
 
-    LIST partition, HASH partition, fully-encrypted database, DDL permission granting and revoking, cascaded standby node, character data type length compatible with PostgreSQL, automatic index recommendation, PL/Python, standby node backup, autonomous transaction rebuilding, parallel query rebuilding, and support for the Kirin OS.
+    LIST partition, HASH partition, fully-encrypted database, DDL permission granting and reclaiming, cascaded standby node, PostgreSQL-compatible character data type, automatic index recommendation, PL/Python, standby server backup, autonomous transaction rebuilding, parallel query rebuilding, sysdate data type, and adding or deleting standby server nodes, multiple Python versions, online index adding, upgrade tool, and installation and OM tool decoupling.
 
 
 The MOT, parallel query, and container-based deployment are in the beta test phase. You are welcome to give your comments or participate in the community contribution to improve these functions.
