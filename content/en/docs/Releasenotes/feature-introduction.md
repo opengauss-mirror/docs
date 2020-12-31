@@ -33,7 +33,7 @@ openGauss 1.1.0 is an updated version of openGauss 1.0.0. Features and functions
     -   The list partitioning function divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data.
     -   The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned.
 
--   Supports equal-value query in a fully-encrypted database.
+-   Supports equality query in a fully-encrypted database.
 
     A fully-encrypted database is a database system dedicated to processing ciphertext data. Data is encrypted and stored in the database server. The database supports retrieval and calculation of ciphertext data and inherits the original database capabilities related to query tasks, including the lexical parsing, syntax parsing, execution plan generation, transaction consistency assurance, and storage. The performance deterioration does not exceed 10% compared with that of non-encrypted computing.
 
@@ -77,10 +77,6 @@ openGauss 1.1.0 is an updated version of openGauss 1.0.0. Features and functions
 
     Rebuilds a unified parallel framework to replace the original parallel query framework and the distributed cross-node parallel query framework.
 
--   Supports interval partition.
-
-    Automatically creates partitions at a specified interval when the data inserted into a table in the database exceeds the existing range partition.
-
 -   Supports the sysdate data type.
 
     Sysdate returns the current date and time, which are the time zone and time of the Linux OS on a host machine where the database is located.
@@ -100,6 +96,57 @@ openGauss 1.1.0 is an updated version of openGauss 1.0.0. Features and functions
 -   Provides the upgrade tool.
 
     Supports the upgrade from 1.0.1 to 1.1.0.
+
+    Note:
+
+    The following parameters in the 1.0.1 version are automatically deleted from the 1.1.0 version during the upgrade. Evaluate the impact before the upgrade.
+
+    <a name="simpletable48271566197"></a>
+    <table id="simpletable48271566197"><tr id="strow58279610199"><td valign="top" id="stentry48271968198"><p id="p9827136151917"><a name="p9827136151917"></a><a name="p9827136151917"></a>enable_beta_nestloop_fusion</p>
+    </td>
+    <td valign="top" id="stentry20827568198"><p id="p16827186111911"><a name="p16827186111911"></a><a name="p16827186111911"></a>enable_upsert_to_merge</p>
+    </td>
+    <td valign="top" id="stentry5827468191"><p id="p10827206121916"><a name="p10827206121916"></a><a name="p10827206121916"></a>force_parallel_mode</p>
+    </td>
+    <td valign="top" id="stentry882766181916"><p id="p16827156161914"><a name="p16827156161914"></a><a name="p16827156161914"></a>gs_clean_timeout</p>
+    </td>
+    <td valign="top" id="stentry882706191918"><p id="p78279611910"><a name="p78279611910"></a><a name="p78279611910"></a>max_background_workers</p>
+    </td>
+    </tr>
+    <tr id="strow882712611192"><td valign="top" id="stentry6827126181918"><p id="p17827869190"><a name="p17827869190"></a><a name="p17827869190"></a>max_parallel_workers_per_gather</p>
+    </td>
+    <td valign="top" id="stentry1082712619190"><p id="p482786121913"><a name="p482786121913"></a><a name="p482786121913"></a>min_parallel_table_scan_size</p>
+    </td>
+    <td valign="top" id="stentry19827463196"><p id="p10827967190"><a name="p10827967190"></a><a name="p10827967190"></a>pagewriter_threshold</p>
+    </td>
+    <td valign="top" id="stentry582756191913"><p id="p158277615196"><a name="p158277615196"></a><a name="p158277615196"></a>parallel_leader_participation</p>
+    </td>
+    <td valign="top" id="stentry178273615191"><p id="p78274610191"><a name="p78274610191"></a><a name="p78274610191"></a>parallel_setup_cost</p>
+    </td>
+    </tr>
+    <tr id="strow1082719691916"><td valign="top" id="stentry1827567192"><p id="p282718614195"><a name="p282718614195"></a><a name="p282718614195"></a>parallel_tuple_cost</p>
+    </td>
+    <td valign="top" id="stentry082719610196"><p id="p78271068197"><a name="p78271068197"></a><a name="p78271068197"></a>parctl_min_cost</p>
+    </td>
+    <td valign="top" id="stentry11827156121918"><p id="p282726121915"><a name="p282726121915"></a><a name="p282726121915"></a>tcp_recv_timeout</p>
+    </td>
+    <td valign="top" id="stentry10827964197"><p id="p13827369193"><a name="p13827369193"></a><a name="p13827369193"></a>transaction_sync_naptime</p>
+    </td>
+    <td valign="top" id="stentry1082711621914"><p id="p18827186161912"><a name="p18827186161912"></a><a name="p18827186161912"></a>transaction_sync_timeout</p>
+    </td>
+    </tr>
+    <tr id="strow47191418243"><td valign="top" id="stentry9719184162417"><p id="p10719542243"><a name="p10719542243"></a><a name="p10719542243"></a>twophase_clean_workers</p>
+    </td>
+    <td valign="top" id="stentry1671913492413"><p id="p17192410245"><a name="p17192410245"></a><a name="p17192410245"></a>wal_compression</p>
+    </td>
+    <td valign="top" id="stentry10719164202416"><p id="p971984122419"><a name="p971984122419"></a><a name="p971984122419"></a>-</p>
+    </td>
+    <td valign="top" id="stentry571974142416"><p id="p16719174132419"><a name="p16719174132419"></a><a name="p16719174132419"></a>-</p>
+    </td>
+    <td valign="top" id="stentry1371984162413"><p id="p1771919413245"><a name="p1771919413245"></a><a name="p1771919413245"></a>-</p>
+    </td>
+    </tr>
+    </table>
 
 -   Decouples installation from the OM tool.
 
