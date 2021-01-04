@@ -1,4 +1,15 @@
 # Core Database Technologies<a name="EN-US_CONCEPT_0252569318"></a>
+<!-- TOC -->
+
+- [Basic Functions Oriented to Application Development](#basic-functions-oriented-to-application-development)
+- [High Performance](#high-performance)
+- [High Scalability](#high-scalability)
+- [HA](#ha)
+- [Maintainability](#maintainability)
+- [Database Security](#database-security)
+
+<!-- /TOC -->
+
 ## Basic Functions Oriented to Application Development
 
 -   Standard SQL
