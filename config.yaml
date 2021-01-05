@@ -8,7 +8,7 @@ disableKinds: ['taxonomy', 'taxonomyTerm']
 
 # Book configuration
 disablePathToLower: true
-enableGitInfo: true
+enableGitInfo: false
 
 # Code highlight
 # pygmentsStyle: monokailight
