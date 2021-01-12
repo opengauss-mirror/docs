@@ -2,9 +2,9 @@
 
 ## Data Partitioning<a name="en-us_topic_0283136537_section829318456016"></a>
 
-Data partitioning is a general function for most database products. In the openGauss, data is partitioned horizontally with a user-specified policy. This operation splits a table into multiple partitions that are not overlapped.
+Data partitioning is a general function for most database products. In the GaussDB KernelopenGauss, data is partitioned horizontally with a user-specified policy. This operation splits a table into multiple partitions that are not overlapped.
 
-openGauss supports: 1. The range partitioning function divides a record, which is to be inserted into a table, into multiple ranges using one or more columns and create a partition for each range to store data. Partition ranges do not overlap. 2. The list partitioning function divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data. 3. The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter in the  **CREATE TABLE**  statement, data in the table will be partitioned.
+GaussDB KernelopenGauss supports: 1. The range partitioning function divides a record, which is to be inserted into a table, into multiple ranges using one or more columns and create a partition for each range to store data. Partition ranges do not overlap. 2. The list partitioning function divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data. 3. The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter in the  **CREATE TABLE**  statement, data in the table will be partitioned.
 
 For example,  [Table 1](#en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_t77b9e09809f742f1aaadea05d041bc23)  uses an xDR scenario to describe the benefits provided after data is partitioned based on time fragments.
 
@@ -44,7 +44,7 @@ Data partitioning provides the following benefits:
 
 -   **Improve query performance:**  Restrict the volume of data to be checked or operated to facilitate query.
 
-    With partition pruning, also known as partition elimination, openGauss filters out unexpected partitions and scans only the remaining partitions. Partition pruning greatly improves query performance.
+    With partition pruning, also known as partition elimination, GaussDB KernelopenGauss filters out unexpected partitions and scans only the remaining partitions. Partition pruning greatly improves query performance.
 
 -   **Partition-wise Join**: Partitioning can also improve the performance of multi-table joins by using a technique known as partition-wise join. Partition-wise joins can be applied when two tables are joined and at least one of these tables is partitioned using a join key. Partition-wise joins break a large join into smaller joins of "identical" datasets. "Identical" here is defined as covering the same set of partitioning key values on both sides of the join, ensuring that only a join of these 'identical' datasets will produce a result without considering other datasets. List partitions and hash partitions are not supported currently.
 
@@ -65,7 +65,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
 -   Hybrid Row-Column Storage Engine
 
-    openGauss supports both the row-store and column-store models. Users can choose a row-store or column-store table based on their needs.
+    GaussDB KernelopenGauss supports both the row-store and column-store models. Users can choose a row-store or column-store table based on their needs.
 
     Column store is recommended if a table contains many columns \(called a wide table\) but its query involves only a few columns. Row store is recommended if a table contains only a few columns and a query involves most of the columns.
 
@@ -96,18 +96,18 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     Inactive and earlier data can be compressed to free up space, reducing procurement and O&M costs.
 
-    In openGauss, data can be compressed using delta encoding, dictionary coder, RLE, LZ4, and ZLIB algorithms. The system automatically selects a compression algorithm based on data characteristics. The average compression ratio is 7:1. Compressed data can be directly accessed and is transparent to services. This greatly reduces the preparation time before accessing historical data.
+    In GaussDB KernelopenGauss, data can be compressed using delta encoding, dictionary coder, RLE, LZ4, and ZLIB algorithms. The system automatically selects a compression algorithm based on data characteristics. The average compression ratio is 7:1. Compressed data can be directly accessed and is transparent to services. This greatly reduces the preparation time before accessing historical data.
 
 
 ## High Availability \(HA\) Transaction Processing<a name="en-us_topic_0283136537_section975313598411"></a>
 
-openGauss manages transactions and guarantees the ACID properties.
+GaussDB KernelopenGauss manages transactions and guarantees the ACID properties.
 
-openGauss provides a primary/standby HA mechanism to reduce the service interruption time when the primary node is faulty. It protects key user programs and continuously provides external services, minimizing the impact of hardware, software, and human faults on services to ensure service continuity.
+GaussDB KernelopenGauss provides a primary/standby HA mechanism to reduce the service interruption time when the primary node is faulty. It protects key user programs and continuously provides external services, minimizing the impact of hardware, software, and human faults on services to ensure service continuity.
 
 **Fault recovery**
 
-Node faults can be recovered and the ACID properties still exist after the recovery. openGauss ensures zero data loss after a node is recovered from a fault or restarted.
+Node faults can be recovered and the ACID properties still exist after the recovery. GaussDB KernelopenGauss ensures zero data loss after a node is recovered from a fault or restarted.
 
 **Transaction management**
 
@@ -116,7 +116,7 @@ Node faults can be recovered and the ACID properties still exist after the recov
 
 ## High Concurrency and High Performance<a name="en-us_topic_0283136537_section137793812513"></a>
 
-openGauss supports 10,000 concurrent connections through server thread pools. It supports thread nucleophilicity and millions of tpmC using the NUMA-based kernel data structure, manages TB-level large memory buffers through efficient hot and cold data elimination, achieves multi-version access without read/write blocks using CSN-based snapshots, and avoids performance fluctuation caused by full-page writes using incremental checkpoints.
+GaussDB KernelopenGauss supports 10,000 concurrent connections through server thread pools. It supports thread nucleophilicity and millions of tpmC using the NUMA-based kernel data structure, manages TB-level large memory buffers through efficient hot and cold data elimination, achieves multi-version access without read/write blocks using CSN-based snapshots, and avoids performance fluctuation caused by full-page writes using incremental checkpoints.
 
 ## SQL Self-Diagnosis<a name="en-us_topic_0283136537_section10413176262"></a>
 
@@ -125,6 +125,18 @@ To locate performance issues of a query, you can use  **EXPLAIN PERFORMANCE**  t
 Before running a job, set the GUC parameters  **resource\_track\_level**  and  **resource\_track\_cost**, and obtain the possible performance issues after job execution by checking the related system view. The system view describes the possible causes of performance issues. To optimize low-performance jobs, see "**Performance Tuning **\>  **SQL Tuning**  \>  **Typical SQL Optimization Methods**  \>  **Optimizing SQL Self-Diagnosis**" in the  _Developer Guide_.
 
 SQL self-diagnosis helps users locate and optimize performance issues without affecting operations or modifying service logic.
+
+## Transparent Encryption<a name="en-us_topic_0231763737_section625842217615"></a>
+
+Generally, threat mitigation measures are taken to secure data. For example, design a secure system, encrypt confidential assets, or build a firewall around database servers. However, in scenarios where physical media \(for example, disks\) are stolen by attackers or internal personnel, the malicious party can restore or attach the database to browse data. One solution is to encrypt the sensitive data in a database and protect the keys that are used to encrypt the data. This prevents anyone without the keys from using the data. However, this kind of protection must be planned. GaussDB KernelopenGauss provides a complete solution, that is, transparent data encryption \(TDE\).
+
+TDE performs real-time I/O encryption and decryption of data. Users are unaware of the encryption and decryption. The encryption uses a data encryption key \(DEK\), which is not stored in the cluster. The DEK is a symmetric key secured by using the cluster encryption key \(CEK\) stored in the KMS server. Database servers store only DEK ciphertext. During database startup, each DN uses identity authentication \(for example, Kerberos\) to connect to the KMS server, decrypts the DEK ciphertext to obtain the key plaintext, and caches it in memory. Once the host is powered off or the database is shut down, keys are deleted. Therefore, do not lose key files in the database because they are irrecoverable.
+
+To prevent malicious users from reading data files without authentication, you can use the transparent data encryption function to encrypt data files in the database. This ensures that users can read decrypted data only after starting and connecting to the database properly.
+
+Transparent data encryption needs to be configured during database installation to determine whether to enable this feature. Currently, only database-level transparent data encryption is supported. That is, a working key is used for data encryption and decryption in the database, and the key management service is provided by the external KMS.
+
+In database-level transparent data encryption, each database has a CEK and is configured with a DEK. DEKs are encrypted using the CEK and their ciphertext is stored in GaussDB KernelopenGauss. Keys are applied for, encrypted, and decrypted through the KMS service. The encryption algorithm is configured using configuration items. Currently, the AES and SM4 algorithms are supported. The SM4 algorithm supports hardware acceleration in chips of Kunpeng 920 and later versions. This feature depends on the key management service provided by the external KMS.
 
 ## Equality Query in a Fully-encrypted Database<a name="section182549561910"></a>
 
@@ -180,7 +192,7 @@ With memory tables, all data access is lock-free and concurrent, optimizing data
 
 ## Primary/Standby Deployment<a name="en-us_topic_0283136537_section238711473613"></a>
 
-The primary/standby deployment mode supports synchronous and asynchronous replication. Applications are deployed based on service scenarios. For synchronous replication, one primary node and two standby nodes are deployed. This ensures reliability but affects performance. For asynchronous replication, one primary node and one standby node are deployed. This has little impact on performance, but data may be lost when exceptions occur. openGauss supports automatic recovery of damaged pages. When a page on the primary node is damaged, the damaged page can be automatically recovered on the standby node. Besides, openGauss supports concurrent log recovery on the standby node to minimize the service unavailability time when the primary node is down.
+The primary/standby deployment mode supports synchronous and asynchronous replication. Applications are deployed based on service scenarios. For synchronous replication, one primary node and two standby nodes are deployed. This ensures reliability but affects performance. For asynchronous replication, one primary node and one standby node are deployed. This has little impact on performance, but data may be lost when exceptions occur. GaussDB KernelopenGauss supports automatic recovery of damaged pages. When a page on the primary node is damaged, the damaged page can be automatically recovered on the standby node. Besides, GaussDB KernelopenGauss supports concurrent log recovery on the standby node to minimize the service unavailability time when the primary node is down.
 
 In addition, in primary/standby deployment mode, if the read function of the standby node is enabled, the standby node supports read operations instead of write operations \(such as table creation, data insertion, and data deletion\), reducing the pressure on the primary node.
 
@@ -246,6 +258,10 @@ The WDR module consists of the following two components:
 
 -   Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
 -   WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time points, and generates summarized and detailed performance data.
+
+## Full and Incremental Backup and Restoration<a name="section19756813209"></a>
+
+Supports full backup and incremental backup of the database, manages backup data, and views the backup status. The database server dynamically tracks page modifications, and when a relational page is updated, the page is marked for backup. The incremental backup function requires that the GUC parameter enable\_cbm\_tracking be enabled to allow the server to track the modification page.
 
 ## Incremental Backup and Restoration \(beta\)<a name="en-us_topic_0283136537_section13561174061810"></a>
 
