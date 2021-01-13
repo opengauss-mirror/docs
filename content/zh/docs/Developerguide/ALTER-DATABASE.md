@@ -101,17 +101,13 @@
 
     取值范围：字符串，有效的表空间名。
 
--   **configuration\_parameter**
+- **configuration\_parameter**
 
-    **value**
+  **value**
 
-    把指定的数据库会话参数值设置为给定的值。如果value是DEFAULT或者RESET，则在新的会话中使用系统的缺省设置。OFF关闭设置。
+  把指定的数据库会话参数值设置为给定的值。如果value是DEFAULT，则在新的会话中使用系统的缺省设置。
 
-    取值范围：字符串，
-
-    -   DEFAULT
-    -   OFF
-    -   RESET
+  取值范围：字符串，DEFAULT。
 
 -   **FROM CURRENT**
 
