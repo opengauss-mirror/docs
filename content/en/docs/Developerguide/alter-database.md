@@ -103,17 +103,13 @@
 
     Value range: a string. It must be a valid tablespace name.
 
--   **configuration\_parameter**
+- **configuration\_parameter**
 
-    **value**
+  **value**
 
-    Sets a specified database session parameter to a specified value. If the value is  **DEFAULT**  or  **RESET**, the default setting is used in the new session.  **OFF**  closes the setting.
+  Sets a specified database session parameter to a specified value. If the value is  **DEFAULT**  , the default setting is used in the new session.  
 
-    Value range: a string
-
-    -   DEFAULT
-    -   OFF
-    -   RESET
+  Value range: a string, DEFAULT.
 
 -   **FROM CURRENT**
 
