@@ -20,6 +20,9 @@ The  **option**  clause is used to configure information, including permissions 
 
 ```
 {SYSADMIN | NOSYSADMIN}
+    | {MONADMIN | NOMONADMIN}
+    | {OPRADMIN | OPRADMIN}
+    | {POLADMIN | NOPOLADMIN}
     | {AUDITADMIN | NOAUDITADMIN}
     | {CREATEDB | NOCREATEDB}
     | {USEFT | NOUSEFT}
@@ -65,8 +68,9 @@ The  **option**  clause is used to configure information, including permissions 
     -   Contain at least eight characters. This is the default length.
     -   Differ from the username or the username spelled backward.
     -   Contain at least three types of the following four types of characters: uppercase characters \(A to Z\), lowercase characters \(a to z\), digits \(0 to 9\), and special characters, including: \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?
-    -   Be enclosed by single or double quotation marks.
-
+    -   The password can also be a cipher text string that meets the format requirements. This situation is mainly used in user data import scenarios, and it is not recommended for users to use it directly. If the cipher text password is used directly, the user needs to know the plain text corresponding to the cipher text password and ensure the complexity of the plain text password. The database will not verify the complexity of the cipher text password. The security of the cipher text password directly used is guaranteed by the user.
+-   Be enclosed by single or double quotation marks.
+    
     Value range: a string
 
 

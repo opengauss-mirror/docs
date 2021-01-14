@@ -8,7 +8,7 @@ Create a database. By default, a new database is created by copying the standard
 
 -   A user that has the  **CREATEDB**  permission or a system administrator can create a database.
 -   **CREATE DATABASE**  cannot be executed inside a transaction block.
--   Errors along the line of "could not initialize database directory" are most likely related to insufficient permissions on the data directory, a full disk, or other file system problems.
+-   During the process of creating the database, an error message similar to "Permission denied" appears, which may be due to insufficient permissions of the data directory on the file system. An error message similar to "No space left on device" appears, which may be caused by a full disk.
 
 ## Syntax<a name="en-us_topic_0237122099_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
 

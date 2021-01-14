@@ -1,16 +1,16 @@
-# CREATE DATABASE<a name="ZH-CN_TOPIC_0242370563"></a>
+# CREATE DATABASE<a name="ZH-CN_TOPIC_0289900066"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122099_zh-cn_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
+## 功能描述<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
 
 创建一个新的数据库。缺省情况下新数据库将通过复制标准系统数据库template0来创建，且仅支持使用template0来创建。
 
-## 注意事项<a name="zh-cn_topic_0237122099_zh-cn_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>
+## 注意事项<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>
 
 -   只有拥有CREATEDB权限的用户才可以创建新数据库，系统管理员默认拥有此权限。
 -   不能在事务块中执行创建数据库语句。
--   在创建数据库过程中，若出现类似“could not initialize database directory”的错误提示，可能是由于文件系统上数据目录的权限不足或磁盘满等原因引起。
+-   在创建数据库过程中，出现类似“Permission denied”的错误提示，可能是由于文件系统上数据目录的权限不足。出现类似“No space left on device”的错误提示，可能是由于磁盘满引起的。
 
-## 语法格式<a name="zh-cn_topic_0237122099_zh-cn_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
+## 语法格式<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
 
 ```
 CREATE DATABASE database_name
@@ -24,7 +24,7 @@ CREATE DATABASE database_name
                [ CONNECTION LIMIT [=] connlimit ]}[...] ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122099_zh-cn_topic_0059778277_s1d6127a393bf4f6d8fdac63105932d16"></a>
+## 参数说明<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s1d6127a393bf4f6d8fdac63105932d16"></a>
 
 -   **database\_name**
 
@@ -52,9 +52,9 @@ CREATE DATABASE database_name
 
     常用取值：GBK、UTF8、Latin1。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。  
-    >-   当指定的字符编码集为GBK时，部分中文生僻字无法直接作为对象名。这是因为GBK第二个字节的编码范围在0x40-0x7E之间时，字节编码与ASCII字符@A-Z\[\\\]^\_\`a-z\{|\}重叠。其中@\[\\\]^\_'\{|\}是数据库中的操作符，直接作为对象名时，会语法报错。例如“侤”字，GBK16进制编码为0x8240，第二个字节为0x40，与ASCII“@”符号编码相同，因此无法直接作为对象名使用。如果确实要使用，可以在创建和访问对象时，通过增加双引号来规避这个问题。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。
+    >-   当指定的字符编码集为GBK时，部分中文生僻字无法直接作为对象名。这是因为GBK第二个字节的编码范围在0x40-0x7E之间时，字节编码与ASCII字符@A-Z\[\\\]^\_\`a-z\{|\}重叠。其中@\[\\\]^\_'\{|\}是数据库中的操作符，直接作为对象名时，会语法报错。例如“侤”字，GBK16进制编码为0x8240，第二个字节为0x40，与ASCII“@”符号编码相同，因此无法直接作为对象名使用。如果确实要使用，可以在创建和访问对象时，通过增加双引号来规避这个问题。
 
 -   **LC\_COLLATE \[ = \] lc\_collate**
 
@@ -70,15 +70,16 @@ CREATE DATABASE database_name
 
     取值范围：有效的字符分类。
 
-- **DBCOMPATIBILITY \[ = \] compatibilty\_type**
+-   **DBCOMPATIBILITY \[ = \] compatibilty\_type**
 
     指定兼容的数据库的类型。
 
     取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**  当DBCOMPATIBILITY = A时，数据库会将空字符串作为NULL处理。
-
-  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   A兼容性下，数据库将空字符串作为NULL处理，数据类型DATE会被替换为TIMESTAMP\(0\) WITHOUT TIME ZONE。
+    >-   将字符串转换成整数类型时，如果输入不合法，B兼容性会将输入转换为0，而其它兼容性则会报错。
+    >-   PG兼容性下，CHAR和VARCHAR以字符为计数单位，其它兼容性以字节为计数单位。例如，对于UTF-8字符集，CHAR\(3\)在PG兼容性下能存放3个中文字符，而在其它兼容性下只能存放1个中文字符。
 
 -   **TABLESPACE \[ = \] tablespace\_name**
 
@@ -90,9 +91,9 @@ CREATE DATABASE database_name
 
     数据库可以接受的并发连接数。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >-   系统管理员不受此参数的限制。  
-    >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   系统管理员不受此参数的限制。
+    >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
 
     取值范围：\>=-1的整数。默认值为-1，表示没有限制。
 
@@ -102,7 +103,7 @@ CREATE DATABASE database_name
 -   若区域设置为C（或POSIX），则允许所有的编码类型，但是对于其他的区域设置，字符编码必须和区域设置相同。
 -   编码和区域设置必须匹配模板数据库，除了将template0当作模板。 因为其他数据库可能会包含不匹配指定编码的数据，或者可能包含排序顺序受LC\_COLLATE和LC\_CTYPE影响的索引。复制这些数据会导致在新数据库中的索引失效。template0是不包含任何会受到影响的数据或者索引。
 
-## 示例<a name="zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
+## 示例<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 
 ```
 --创建jim和tom用户。
@@ -148,19 +149,19 @@ postgres=# DROP USER tom;
 --创建兼容TD格式的数据库。
 postgres=# CREATE DATABASE td_compatible_db DBCOMPATIBILITY 'C';
 
---创建兼容ORA格式的数据库。
+--创建兼容A格式的数据库。
 postgres=# CREATE DATABASE ora_compatible_db DBCOMPATIBILITY 'A';
 
---删除兼容TD、ORA格式的数据库。
+--删除兼容TD、A格式的数据库。
 postgres=# DROP DATABASE td_compatible_db;
 postgres=# DROP DATABASE ora_compatible_db;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122099_zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
+## 相关链接<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
-[ALTER DATABASE](ALTER-DATABASE.md)，[DROP DATABASE](DROP-DATABASE.md)
+[ALTER DATABASE](zh-cn_topic_0289900461.md)，[DROP DATABASE](zh-cn_topic_0289900003.md)
 
-## 优化建议<a name="zh-cn_topic_0237122099_zh-cn_topic_0059778277_section8189694144220"></a>
+## 优化建议<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_section8189694144220"></a>
 
 -   **create database**
 
