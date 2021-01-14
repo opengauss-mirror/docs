@@ -49,7 +49,7 @@ gs_om -t generateconf -X XMLFILE [--distribute] [-l LOGFILE]
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to 262143
+**Value range**: an integer ranging from 10 to 262143
 
 **Default value**:  **5000**  for each database node If the default value is greater than the maximum number supported by the kernel \(determined when the  **gs\_initdb**  command is executed\), an error message is displayed.
 
