@@ -1,6 +1,6 @@
 # PG\_ROLES<a name="EN-US_TOPIC_0242385956"></a>
 
-**PG\_ROLES**  provides information about database roles. By default, only the initial user and users with the sysadmin attribute can view the information. Other users can view the information only after being granted permissions.
+**PG\_ROLES**  provides information about database roles. 
 
 **Table  1**  PG\_ROLES columns
 
