@@ -117,18 +117,6 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 -   主键、唯一索引列不允许UPDATE。
     -   不支持列存，不支持外表、内存表。
     
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >当GUC参数 [enable_upsert_to_merge](优化器方法配置.md#zh-cn_topic_0237124716_section1211182712177) 为 on 时，此条INSERT ON DUPLICATE KEY UPDATE语句(UPSERT语句)会被转换成一条具有同等语义的MERGE INTO语句，之后的行为与MERGE INTO相同，在如下行为中与UPSERT将会不同：
-    >
-    >- 不支持UPDATE更新自定义类型或者数组类型的元素的值
-    >- 如果INSERT指定了目标列，那么仅检查只包含目标列或设有DEFAULT值的列的唯一约束或主键约束冲突。
-    >- 当表中存在多个唯一约束，如果所插入数据与表中多个行都存在唯一约束冲突，所有冲突行都会执行UPDATE子句完成更新。
-    >- 如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，执行会失败。需设置GUC参数[behavior_compat_options](其它选项.md#zh-cn_topic_0237124754_section1980124735516)='merge_update_multi'，允许该对冲突行会执行多次UPDATE。
-    >- 如果插入多行，这些行与表中已有数据不存在唯一约束冲突，但是相互违反唯一约束时，INSERT执行失败。
-    >- 在多行插入场景，执行性能较差。由于MERGE INTO不支持并发更新，在多行插入情况下，容易出现报错导致事务回滚。
-    >- 通过EXPLAIN 显示的计划为转换为MERGE INTO语句的执行计划。
-    >
-    >
 
 
 ## 示例<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
