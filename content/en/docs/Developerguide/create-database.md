@@ -100,6 +100,7 @@ CREATE DATABASE database_name
 The restrictions on character encoding are as follows:
 
 -   If the locale is set to  **C**  \(or  **POSIX**\), all encoding types are allowed. For other locale settings, the character encoding must be the same as that of the locale.
+-   If the encoding method is SQL\_ASCII and the modifier is an administrator user, the character encoding can be different from the locale setting.
 -   The encoding and region settings must match the template database, except that  **template0**  is used as a template. This is because other databases may contain data that does not match the specified encoding, or may contain indexes whose sorting order is affected by  **LC\_COLLATE**  and  **LC\_CTYPE**. Copying this data will invalidate the indexes in the new database.  **template0**  does not contain any data or indexes that may be affected.
 
 ## Examples<a name="en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
