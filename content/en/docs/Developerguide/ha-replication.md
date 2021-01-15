@@ -1,4 +1,4 @@
-# HA Replication<a name="EN-US_TOPIC_0242371501"></a>
+# HA Replication<a name="EN-US_TOPIC_0289900638"></a>
 
 -   **[Sending Server](sending-server.md)**  
 
