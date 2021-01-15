@@ -1174,7 +1174,7 @@ headless: true
 	-   [Materialized View]({{< relref "./docs/Developerguide/materialized-view.md" >}})  
 		-   [Full Materialized View]({{< relref "./docs/Developerguide/full-materialized-view.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview-50.md" >}})
-			-   [Usage]({{< relref "./docs/Developerguide/usage.md" >}})
+			-   [Usage]({{< relref "./docs/Developerguide/usage-50.md" >}})
 			-   [Support and Constraints]({{< relref "./docs/Developerguide/support-and-constraints.md" >}})
 		-   [Incremental Materialized View]({{< relref "./docs/Developerguide/incremental-materialized-view.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview-51.md" >}})
