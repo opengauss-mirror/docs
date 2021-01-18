@@ -1,6 +1,6 @@
-# CREATE TABLE PARTITION<a name="EN-US_TOPIC_0242370583"></a>
+# CREATE TABLE PARTITION<a name="EN-US_TOPIC_0289900346"></a>
 
-## Function<a name="en-us_topic_0237122119_section1163224811518"></a>
+## Function<a name="en-us_topic_0283136653_en-us_topic_0237122119_section1163224811518"></a>
 
 **CREATE TABLE PARTITION**  creates a partitioned table. A partitioned table is a logical table that is divided into several physical partitions for storage based on a specific plan. Data is stored in physical partitions not the logical table.
 
@@ -24,11 +24,11 @@ Partitioning can provide several benefits:
 -   In the case of an insert or update operation on most portions of a single partition, performance can be improved by taking advantage of continuous scan of that partition instead of partitions scattered across the whole table.
 -   Frequent loading or deletion operations on records in a separate partition can be accomplished by reading or removing that partition. It also entirely avoids the  **VACUUM**  overload caused by bulk  **DELETE**  operations \(only for range partitioning\).
 
-## Precautions<a name="en-us_topic_0237122119_en-us_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
+## Precautions<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
 A partitioned table supports unique and primary key constraints. The constraint keys of these constraints must contain all partition keys.
 
-## Syntax<a name="en-us_topic_0237122119_en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
+## Syntax<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
 ```
 CREATE TABLE [ IF NOT EXISTS ] partition_table_name
@@ -103,7 +103,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122119_en-us_topic_0059777586_sd2701df1d7364084a7791592def4e9eb"></a>
+## Parameter Description<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_sd2701df1d7364084a7791592def4e9eb"></a>
 
 -   **IF NOT EXISTS**
 
@@ -127,7 +127,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **COLLATE  collation**
 
-    Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used.
+    Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used. You can run the  **select \* from pg\_collation;**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
 -   **CONSTRAINT constraint\_name**
 
@@ -160,13 +160,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     Specifies an optional storage parameter for a table or an index. Optional parameters are as follows:
 
-    -   **FILLFACTOR**
+    -   FILLFACTOR
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
 
         Value range: 10–100
 
-    -   **ORIENTATION**
+    -   ORIENTATION
 
         Determines the storage mode of the data in the table.
 
@@ -179,23 +179,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             >**orientation**  cannot be modified.
 
 
-    -   **COMPRESSION**
+    -   COMPRESSION
         -   Valid values for column-store tables are  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**, and the compression level increases accordingly. The default is  **LOW**.
         -   Valid values for row-store tables are  **YES**  and  **NO**, and the default value is  **NO**.
 
-    -   **MAX\_BATCHROW**
+    -   MAX\_BATCHROW
 
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
 
-        Value range: 10000 to 60000
+        Value range: 10000 to 60000. The default value is  **60000**.
 
-    -   **PARTIAL\_CLUSTER\_ROWS**
+    -   PARTIAL\_CLUSTER\_ROWS
 
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
 
-        Value range: a number greater than or equal to 100000 The value is a multiple of  _MAX\_BATCHROW_.
+        Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
 
-    -   **DELTAROW\_THRESHOLD**
+    -   DELTAROW\_THRESHOLD
 
         A reserved parameter. The parameter is only valid for column-store tables.
 
@@ -246,7 +246,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >-   The data type of the upper limit must be the same as that of the partition key.
     >-   In a partition list, partitions are arranged in ascending order of upper limits. A partition with a smaller upper limit value is placed before another partition with a larger one.
 
--   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} |\{END \(partition\_value | MAXVALUE\)**\}
+-   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
 
     Specifies the information of partitions.
 
@@ -258,28 +258,17 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   **interval\_value**: width of each partition for dividing the \[**START**,  **END**\) range. It cannot be  _MAXVALUE_. If the value of \(**END**  –  **START**\) divided by  **EVERY**  has a remainder, the width of only the last partition is less than the value of  **EVERY**.
     -   _MAXVALUE_: upper limit of the last range partition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
-    > 
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >1.  If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition.
-    >
     >2.  The  **START END**  syntax must comply with the following rules:
-    >
     >    -   The value of  **START**  \(if any, same for the following situations\) in each  **partition\_start\_end\_item**  must be smaller than that of  **END**.
-    >
     >    -   In two adjacent  **partition\_start\_end\_item**  statements, the value of the first  **END**  must be equal to that of the second  **START**.
-    >
     >    -   The value of  **EVERY**  in each  **partition\_start\_end\_item**  must be a positive number \(in ascending order\) and must be smaller than  **END**  minus  **START**.
-    >
     >    -   Each partition includes the start value \(unless it is  _MINVALUE_\) and excludes the end value. The format is as follows: \[**START**,  **END**\).
-    >
     >    -   Partitions created by the same  **partition\_start\_end\_item**  belong to the same tablespace.
-    >
     >    -   If  **partition\_name**  is a name prefix of a partition, the length must not exceed 57 bytes. If there are more than 57 bytes, the prefix will be automatically truncated.
-    >
     >    -   When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value \(32767\).
-    > 
     >3.  In statements for creating partitioned tables,  **START END**  and  **LESS THAN**  cannot be used together.
-    > 
     >4.  The  **START END**  syntax in a partitioned table creation SQL statement will be replaced by the  **VALUES LESS THAN**  syntax when  **gs\_dump**  is executed.
 
 -   **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**
@@ -365,7 +354,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     Allows selection of the tablespace in which the index associated with a  **UNIQUE**  or  **PRIMARY KEY**  constraint will be created. If not specified,  **default\_tablespace**  is consulted, or the default tablespace in the database if  **default\_tablespace**  is empty.
 
 
-## Examples<a name="en-us_topic_0237122119_en-us_topic_0059777586_s43dd49de892344bf89e6f56f17404842"></a>
+## Examples<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s43dd49de892344bf89e6f56f17404842"></a>
 
 -   Example 1: Create a range-partitioned table  **tpcds.web\_returns\_p1**. The table has eight partitions and their partition keys are of the integer type. The ranges of the partitions are: wr\_returned\_date\_sk < 2450815, 2450815 ≤ wr\_returned\_date\_sk < 2451179, 2451179 ≤ wr\_returned\_date\_sk < 2451544, 2451544 ≤ wr\_returned\_date\_sk < 2451910, 2451910 ≤ wr\_returned\_date\_sk < 2452275, 2452275 ≤ wr\_returned\_date\_sk < 2452640, 2452640 ≤ wr\_returned\_date\_sk < 2453005, and wr\_returned\_date\_sk ≥ 2453005.
 
@@ -722,7 +711,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
-## Helpful Links<a name="en-us_topic_0237122119_en-us_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
+## Helpful Links<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
-[ALTER TABLE PARTITION](alter-table-partition.md)  and  [DROP TABLE](en-us_topic_0242370616.md)
+[ALTER TABLE PARTITION](en-us_topic_0283137443.md)  and  [DROP TABLE](en-us_topic_0283136462.md)
 

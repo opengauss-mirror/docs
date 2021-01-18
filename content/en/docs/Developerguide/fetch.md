@@ -1,6 +1,6 @@
-# FETCH<a name="EN-US_TOPIC_0242370629"></a>
+# FETCH<a name="EN-US_TOPIC_0289900300"></a>
 
-## Function<a name="en-us_topic_0237122165_en-us_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>
+## Function<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>
 
 **FETCH**  retrieves rows using a previously created cursor.
 
@@ -11,15 +11,15 @@ A cursor has an associated position, which is used by  **FETCH**. The cursor pos
 -   If  **FETCH**  runs off the end of the available rows then the cursor is left positioned after the last row, or before the first row if fetching backward.
 -   **FETCH ALL**  or  **FETCH BACKWARD ALL**  will always leave the cursor positioned after the last row or before the first row.
 
-## Precautions<a name="en-us_topic_0237122165_en-us_topic_0059778422_s000e3e857e5349aa8560855805267e6f"></a>
+## Precautions<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_s000e3e857e5349aa8560855805267e6f"></a>
 
 -   If the cursor is declared with  **NO SCROLL**, backward fetches like  **FETCH BACKWARD**  are not allowed.
 -   The forms  **NEXT**,  **PRIOR**,  **FIRST**,  **LAST**,  **ABSOLUTE**, and  **RELATIVE**  fetch a single row after moving the cursor appropriately. If there is no such row, an empty result is returned, and the cursor is left positioned before the first row \(backward fetch\) or after the last row \(forward fetch\) as appropriate.
 -   The forms using  **FORWARD**  and  **BACKWARD**  retrieve the indicated number of rows moving in the forward or backward direction, leaving the cursor positioned on the last-returned row or after \(backward fetch\)/before \(forward fetch\) all rows if the  **count**  exceeds the number of rows available.
 -   **RELATIVE 0**,  **FORWARD 0**, and  **BACKWARD 0**  all request fetching the current row without moving the cursor, that is, re-fetching the most recently fetched row. This will succeed unless the cursor is positioned before the first row or after the last row; in which case, no row is returned.
--   If the cursor of  **FETCH**  involves a column-store table, backward fetches like  **BACKWARD**,  **PRIOR** are not allowed.
+-   If the cursor of  **FETCH**  involves a column-store table, backward fetches like  **BACKWARD**  and  **PRIOR**  are not allowed.
 
-## Syntax<a name="en-us_topic_0237122165_en-us_topic_0059778422_sccece13e07c346e8b7e89d726533f687"></a>
+## Syntax<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_sccece13e07c346e8b7e89d726533f687"></a>
 
 ```
 FETCH [ direction { FROM | IN } ] cursor_name;
@@ -44,7 +44,7 @@ NEXT
    | BACKWARD ALL
 ```
 
-## Parameter Description<a name="en-us_topic_0237122165_en-us_topic_0059778422_sceb763c430654064b8f61e9aa0792af9"></a>
+## Parameter Description<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_sceb763c430654064b8f61e9aa0792af9"></a>
 
 -   **direction\_clause**
 
@@ -76,8 +76,9 @@ NEXT
 
         Value range: a possibly-signed integer
 
-        -   If  _count_  is positive, the  _count_'th row of the query will be fetched. If  _count_  is less than the current cursor position, rewind is required, which is currently not supported.
-        -   If  _count_  is negative, Just grab the abs(count) row from the end of the query result.
+        -   If  _count_  is positive, the  _count_'th row of the query will be fetched.
+        -   If  _count_  is negative, the  **abs\(**_count_**\)**th row from the end of the query result will be fetched.
+        -   If  _count_  is set to  **0**, the cursor is positioned before the first row.
 
     -   RELATIVE count
 
@@ -85,8 +86,8 @@ NEXT
 
         Value range: a possibly-signed integer
 
-        -   If  _count_  is positive, the  _count_'th succeeding row will be fetched.
-        -   If  _count_  is negative ， grab the abs(count) row before the current associated position.
+        -   If  _count_  is positive, the  _count_th succeeding row will be fetched.
+        -   If  **count**  is a negative integer, fetches the abs\(count\)'th prior row.
         -   If the current row contains no data,  **RELATIVE 0**  returns null.
 
     -   count
@@ -103,7 +104,7 @@ NEXT
 
     -   FORWARD count
 
-        Starting from the current associated position, grab the following or previous count lines.
+        Fetches the  _count_  succeeding rows or  _count_  prior rows if  _count_  is negative.
 
     -   FORWARD ALL
 
@@ -119,8 +120,8 @@ NEXT
 
         Value range: a possibly-signed integer
 
-        -   If  _count_  is positive,  _count_  prior rows before the current associated position will be fetched.
-        -   If  _count_  is a negative,  _count_  succeeding rows before the current associated position will be fetched.
+        -   If  _count_  is positive, the prior  _count_  rows will be fetched.
+        -   If  _count_  is a negative, the succeeding  _abs \(count\)_  rows will be fetched.
         -   **BACKWARD 0**  re-fetches the current row, if any.
 
     -   BACKWARD ALL
@@ -135,7 +136,7 @@ NEXT
     Value range: an existing cursor name
 
 
-## Examples<a name="en-us_topic_0237122165_en-us_topic_0059778422_s1ee72832a27547e4949061a010e24578"></a>
+## Examples<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_s1ee72832a27547e4949061a010e24578"></a>
 
 ```
 -- (For the SELECT statement, traverse a table using a cursor.) Start a transaction.
@@ -208,7 +209,7 @@ postgres=# CLOSE cursor1;
 
 ```
 
-## Helpful Links<a name="en-us_topic_0237122165_en-us_topic_0059778422_scff73b2bdc594902afb6925b8a3b97ac"></a>
+## Helpful Links<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_scff73b2bdc594902afb6925b8a3b97ac"></a>
 
-[CLOSE](close.md)  and  [MOVE](move.md)
+[CLOSE](en-us_topic_0283137397.md)  and  [MOVE](en-us_topic_0283137573.md)
 

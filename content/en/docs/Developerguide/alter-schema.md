@@ -1,14 +1,14 @@
-# ALTER SCHEMA<a name="EN-US_TOPIC_0242370534"></a>
+# ALTER SCHEMA<a name="EN-US_TOPIC_0289900025"></a>
 
-## Function<a name="en-us_topic_0237122070_en-us_topic_0059779037_s806d414edb004fa89cd50a1166d1136e"></a>
+## Function<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s806d414edb004fa89cd50a1166d1136e"></a>
 
 **ALTER SCHEMA**  modifies schema properties.
 
-## Precautions<a name="en-us_topic_0237122070_en-us_topic_0059779037_sfccb497f01564edb804ecee58fe2698c"></a>
+## Precautions<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sfccb497f01564edb804ecee58fe2698c"></a>
 
-Only the owner of a schema or a system administrator has the permission to run the  **ALTER SCHEMA**  statement. 
+Only the schema owner or a user granted with the ALTER permission can run the  **ALTER SCHEMA**  command. The system administrator has this permission by default. To modify a schema owner, you must be the schema owner or system administrator and a member of the new owner role.
 
-## Syntax<a name="en-us_topic_0237122070_en-us_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
+## Syntax<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
 -   Rename a schema.
 
@@ -25,7 +25,7 @@ Only the owner of a schema or a system administrator has the permission to run t
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122070_en-us_topic_0059779037_s8277cc73aecc4f20845d2ddf456a20e7"></a>
+## Parameter Description<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s8277cc73aecc4f20845d2ddf456a20e7"></a>
 
 -   **schema\_name**
 
@@ -50,7 +50,7 @@ Only the owner of a schema or a system administrator has the permission to run t
     Value range: an existing username or role name
 
 
-## Examples<a name="en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
+## Examples<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
 ```
 -- Create the ds schema.
@@ -70,7 +70,7 @@ postgres=# DROP SCHEMA ds_new;
 postgres=# DROP USER jack;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122070_en-us_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
+## Helpful Links<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
-[CREATE SCHEMA](create-schema.md)  and  [DROP SCHEMA](drop-schema.md)
+[CREATE SCHEMA](en-us_topic_0283137491.md)  and  [DROP SCHEMA](en-us_topic_0283137271.md)
 

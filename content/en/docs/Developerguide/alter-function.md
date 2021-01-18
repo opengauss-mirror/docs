@@ -1,14 +1,17 @@
-# ALTER FUNCTION<a name="EN-US_TOPIC_0242370525"></a>
+# ALTER FUNCTION<a name="EN-US_TOPIC_0289900507"></a>
 
-## Function<a name="en-us_topic_0237122061_en-us_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>
+## Function<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>
 
 **ALTER FUNCTION**  modifies the attributes of a customized function.
 
-## Precautions<a name="en-us_topic_0237122061_en-us_topic_0059778614_sf701318086b54f2fad9457e8e0b38f19"></a>
+## Precautions<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sf701318086b54f2fad9457e8e0b38f19"></a>
 
-Only the owner of the function or a system administrator has the permission to run this statement. If a function involves operations on temporary tables,  **ALTER FUNCTION**  cannot be used.
+Only the function owner or a user granted with the ALTER permission can run the  **ALTER FUNCTION**  command. The system administrator has this permission by default. The following is permission constraints depending on attributes to be modified:
 
-## Syntax<a name="en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
+-   If a function involves operations on temporary tables,  **ALTER FUNCTION**  cannot be used.
+-   To modify the owner or schema of a function, you must be a function owner or system administrator and a member of the new owner role.
+
+## Syntax<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
 -   Modify the additional parameters of the customized function.
 
@@ -55,7 +58,7 @@ Only the owner of the function or a system administrator has the permission to r
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
+## Parameter Description<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 
 -   **function\_name**
 
@@ -67,7 +70,7 @@ Only the owner of the function or a system administrator has the permission to r
 
     Specifies whether a parameter is an input or output parameter.
 
-    Value range:  **IN**,  **OUT**,  **INOUT**  and **VARIDIC**
+    Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**
 
 -   **argname**
 
@@ -105,7 +108,7 @@ Only the owner of the function or a system administrator has the permission to r
 
 -   **LEAKPROOF**
 
-    Specifies that the function has no side effect and the parameter contains only the return value.  **LEAKROOF**  can be set only by a system administrator.
+    Specifies that the function has no side effect and the parameter contains only the return value.  **LEAKPROOF**  can be set only by the system administrator.
 
 -   **EXTERNAL**
 
@@ -178,11 +181,11 @@ Only the owner of the function or a system administrator has the permission to r
     Value range: an existing schema
 
 
-## Examples<a name="en-us_topic_0237122061_en-us_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
+## Examples<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
 
-See  [Examples](create-function.md#en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)  in  **CREATE FUNCTION**.
+See  [Examples](en-us_topic_0283136560.md#en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)  in  **CREATE FUNCTION**.
 
-## Helpful Links<a name="en-us_topic_0237122061_en-us_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
+## Helpful Links<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
 
-[CREATE FUNCTION](create-function.md)  and  [DROP FUNCTION](drop-function.md)
+[CREATE FUNCTION](en-us_topic_0283136560.md)  and  [DROP FUNCTION](en-us_topic_0283137306.md)
 

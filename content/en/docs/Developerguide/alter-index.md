@@ -1,6 +1,6 @@
-# ALTER INDEX<a name="EN-US_TOPIC_0242370527"></a>
+# ALTER INDEX<a name="EN-US_TOPIC_0289900645"></a>
 
-## Function<a name="en-us_topic_0237122063_en-us_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>
+## Function<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>
 
 **ALTER INDEX**  modifies the definition of an existing index.
 
@@ -43,11 +43,11 @@ It has the following forms:
     Modifies the tablespace to which an index partition belongs.
 
 
-## Precautions<a name="en-us_topic_0237122063_en-us_topic_0059778960_s503281b2c63545749248dae8614077e7"></a>
+## Precautions<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_s503281b2c63545749248dae8614077e7"></a>
 
-Only the index owner or a system administrator can run this statement. 
+Only the index owner or a user who has the INDEX permission on the table where the index resides can run the  **ALTER INDEX**  command. The system administrator has this permission by default.
 
-## Syntax<a name="en-us_topic_0237122063_en-us_topic_0059778960_sf28f1b42c78e4ae79c9097da9057c429"></a>
+## Syntax<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sf28f1b42c78e4ae79c9097da9057c429"></a>
 
 -   Rename a table index.
 
@@ -88,8 +88,8 @@ Only the index owner or a system administrator can run this statement.
         [ MODIFY PARTITION index_partition_name ] UNUSABLE;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The syntax cannot be used for column-store tables.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The syntax cannot be used for column-store tables.
 
 
 -   Rebuild a table index or index partition.
@@ -116,7 +116,7 @@ Only the index owner or a system administrator can run this statement.
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122063_en-us_topic_0059778960_sbb551b3820484c06ac91aa80e311e48e"></a>
+## Parameter Description<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sbb551b3820484c06ac91aa80e311e48e"></a>
 
 -   **index\_name**
 
@@ -155,11 +155,11 @@ Only the index owner or a system administrator can run this statement.
     Specifies a new tablespace.
 
 
-## Examples<a name="en-us_topic_0237122063_en-us_topic_0059778960_sc18e85a8e57649469b874f56ded3847b"></a>
+## Examples<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sc18e85a8e57649469b874f56ded3847b"></a>
 
-See  [Examples](create-index.md#en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
+See  [Examples](en-us_topic_0283136578.md#en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
 
-## Helpful Links<a name="en-us_topic_0237122063_en-us_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
+## Helpful Links<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 
-[CREATE INDEX](create-index.md),  [DROP INDEX](drop-index.md), and  [REINDEX](reindex.md)
+[CREATE INDEX](en-us_topic_0283136578.md),  [DROP INDEX](en-us_topic_0283136794.md), and  [REINDEX](en-us_topic_0283137442.md)
 

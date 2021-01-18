@@ -1,4 +1,4 @@
-# Logical Replication Functions<a name="EN-US_TOPIC_0242370460"></a>
+# Logical Replication Functions<a name="EN-US_TOPIC_0289900082"></a>
 
 -   pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name'\)
 
@@ -16,11 +16,32 @@
 
         Indicates the name of the plugin.
 
-        Value range: a string, supporting  **mppdb\_decoding** and **test\_decoding**.
+        Value range: a string, supporting  **mppdb\_decoding**
 
     Return type: name, text
 
     Note: The first return value is the slot name, and the second is the start LSN position for decoding in the logical replication slot.
+
+-   pg\_create\_physical\_replication\_slot\('slot\_name', 'isDummyStandby'\)
+
+    Description: Creates a physical replication slot.
+
+    Parameter description:
+
+    -   slot\_name
+
+        Indicates the name of the streaming replication slot.
+
+        Value range: a string, supporting only letters, digits, and the following special characters: \_?-.
+
+    -   isDummyStandby
+
+        Specifies whether the replication slot is created by connecting the secondary server to the primary server.
+
+        Type: bool
+
+        Return type: name, text
+
 
 -   pg\_drop\_replication\_slot\('slot\_name'\)
 
@@ -36,7 +57,7 @@
 
     Return type: void
 
--   <a name="en-us_topic_0237121996_li11712645125"></a>pg\_logical\_slot\_peek\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+-   <a name="en-us_topic_0283137128_en-us_topic_0237121996_li11712645125"></a>pg\_logical\_slot\_peek\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     Description: Performs decoding but does not go to the next streaming replication slot. \(The decoding result will be returned again on future calls.\)
 
@@ -60,8 +81,8 @@
 
         Value range: a non-negative integer
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
-        >If any of the  **LSN**  and  **upto\_nchanges**  values are reached, decoding ends.  
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >If any of the  **LSN**  and  **upto\_nchanges**  values are reached, decoding ends.
 
     -   options \(optional\)
         -   include-xids
@@ -93,14 +114,14 @@
 
 
     Return type: text, uint, text
-    
+
     Note: The function returns the decoding result. Each decoding result contains three columns, corresponding to the above return types and indicating the LSN position, XID, and decoded content, respectively.
 
 -   pg\_logical\_slot\_get\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     Description: Performs decoding and goes to the next streaming replication slot.
 
-    Parameter: This function has the same parameters as  **pg\_logical\_slot\_peek\_changes**. For details, see  [pg\_logical\_slot\_peek\_ch...](#en-us_topic_0237121996_li11712645125).
+    Parameter: This function has the same parameters as  **pg\_logical\_slot\_peek\_changes**. For details, see  [pg\_logical\_slot\_peek\_ch...](#en-us_topic_0283137128_en-us_topic_0237121996_li11712645125).
 
 -   pg\_replication\_slot\_advance \('slot\_name', 'LSN'\)
 
@@ -123,5 +144,25 @@
     Return type: name, text
 
     Note: A return result contains the slot name and LSN that is actually used for decoding.
+
+-   pg\_get\_replication\_slots
+
+    Description: Obtains the replication slot list.
+
+    Return type: text, text, text, oid, boolean, xid, xid, text, boolean
+
+    Example:
+
+    ```
+    postgres=# select * from pg_get_replication_slots();
+     slot_name |     plugin     | slot_type | datoid | active | xmin | catalog_xmin | restart_lsn | dummy_standby
+    -----------+----------------+-----------+--------+--------+------+--------------+-------------+---------------
+     wkl001    | mppdb_decoding | logical   |  15914 | f      |      |      2079556 | 4/1B81D920  | f
+     dn_6002   |                | physical  |      0 | t      |      |              | 8/7CB63BD8  | f
+     dn_6004   |                | physical  |      0 | t      |      |              | 8/7CB63BD8  | f
+     dn_6003   |                | physical  |      0 | t      |      |              | 8/7CB63BD8  | f
+     gfslot001 | mppdb_decoding | logical   |  15914 | f      |      |      2412553 | 4/A54B2428  | f
+    (5 rows)
+    ```
 
 

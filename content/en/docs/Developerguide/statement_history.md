@@ -1,6 +1,6 @@
-# STATEMENT\_HISTORY<a name="EN-US_TOPIC_0301807366"></a>
+# STATEMENT\_HISTORY<a name="EN-US_TOPIC_0301824804"></a>
 
-**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query a view, you must have the  **sysadmin **or  **monitor admin**  permission.
+**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query system catalogs, you must have the  **sysadmin **permission.
 
 **Table  1**  STATEMENT\_HISTORY columns
 
@@ -76,11 +76,11 @@
 <td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p9524359162416"><a name="p9524359162416"></a><a name="p9524359162416"></a>ID of the unique SQL statement.</p>
 </td>
 </tr>
-<tr id="row84341250185420"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p8434205005415"><a name="p8434205005415"></a><a name="p8434205005415"></a>query</p>
+<tr id="row1024411583535"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p124416583539"><a name="p124416583539"></a><a name="p124416583539"></a>query</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p3434155065416"><a name="p3434155065416"></a><a name="p3434155065416"></a>text</p>
+<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p024495835312"><a name="p024495835312"></a><a name="p024495835312"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p143412505544"><a name="p143412505544"></a><a name="p143412505544"></a>Normalized SQL statement.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p192447585532"><a name="p192447585532"></a><a name="p192447585532"></a>Normalized SQL statement.</p>
 </td>
 </tr>
 <tr id="row3114174743016"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p10523459142411"><a name="p10523459142411"></a><a name="p10523459142411"></a>start_time</p>
@@ -129,14 +129,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p105113599242"><a name="p105113599242"></a><a name="p105113599242"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p172795294391"><a name="p172795294391"></a><a name="p172795294391"></a>Number of soft parsing times. The value of <strong id="b207411632751"><a name="b207411632751"></a><a name="b207411632751"></a>n_soft_parse</strong> plus the value of <strong id="b17746732556"><a name="b17746732556"></a><a name="b17746732556"></a>n_hard_parse</strong> may be greater than the value of <strong id="b1574610321852"><a name="b1574610321852"></a><a name="b1574610321852"></a>n_calls</strong> because the number of subqueries is not counted in the value of <strong id="b15747113216516"><a name="b15747113216516"></a><a name="b15747113216516"></a>n_calls</strong>.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p172795294391"><a name="p172795294391"></a><a name="p172795294391"></a>Number of soft parsing times. The value of <strong id="b66268154764928"><a name="b66268154764928"></a><a name="b66268154764928"></a>n_soft_parse</strong> plus the value of <strong id="b127293174064928"><a name="b127293174064928"></a><a name="b127293174064928"></a>n_hard_parse</strong> may be greater than the value of <strong id="b200453595164928"><a name="b200453595164928"></a><a name="b200453595164928"></a>n_calls</strong> because the number of subqueries is not counted in the value of <strong id="b204759808964928"><a name="b204759808964928"></a><a name="b204759808964928"></a>n_calls</strong>.</p>
 </td>
 </tr>
 <tr id="row13775115215319"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p135106596249"><a name="p135106596249"></a><a name="p135106596249"></a>n_hard_parse</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p951015915249"><a name="p951015915249"></a><a name="p951015915249"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p18230133983919"><a name="p18230133983919"></a><a name="p18230133983919"></a>Number of hard parsing times. The value of <strong id="b1358717331256"><a name="b1358717331256"></a><a name="b1358717331256"></a>n_soft_parse</strong> plus the value of <strong id="b55881633952"><a name="b55881633952"></a><a name="b55881633952"></a>n_hard_parse</strong> may be greater than the value of <strong id="b18588103316510"><a name="b18588103316510"></a><a name="b18588103316510"></a>n_calls</strong> because the number of subqueries is not counted in the value of <strong id="b2058813331056"><a name="b2058813331056"></a><a name="b2058813331056"></a>n_calls</strong>.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p18230133983919"><a name="p18230133983919"></a><a name="p18230133983919"></a>Number of hard parsing times. The value of <strong id="b125824156064928"><a name="b125824156064928"></a><a name="b125824156064928"></a>n_soft_parse</strong> plus the value of <strong id="b47274720064928"><a name="b47274720064928"></a><a name="b47274720064928"></a>n_hard_parse</strong> may be greater than the value of <strong id="b48720138464928"><a name="b48720138464928"></a><a name="b48720138464928"></a>n_calls</strong> because the number of subqueries is not counted in the value of <strong id="b195845435964928"><a name="b195845435964928"></a><a name="b195845435964928"></a>n_calls</strong>.</p>
 </td>
 </tr>
 <tr id="row877515216319"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p135081059162412"><a name="p135081059162412"></a><a name="p135081059162412"></a>query_plan</p>
@@ -150,7 +150,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p1150610599240"><a name="p1150610599240"></a><a name="p1150610599240"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p19505155942415"><a name="p19505155942415"></a><a name="p19505155942415"></a>Number of rows in the result set returned by the <strong id="b1756133516518"><a name="b1756133516518"></a><a name="b1756133516518"></a>SELECT</strong> statement.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p19505155942415"><a name="p19505155942415"></a><a name="p19505155942415"></a>Number of rows in the result set returned by the <strong id="b194137955564928"><a name="b194137955564928"></a><a name="b194137955564928"></a>SELECT</strong> statement.</p>
 </td>
 </tr>
 <tr id="row1977515273114"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p45042059132410"><a name="p45042059132410"></a><a name="p45042059132410"></a>n_tuples_fetched</p>
@@ -269,7 +269,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p19022242917"><a name="p19022242917"></a><a name="p19022242917"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p166675265421"><a name="p166675265421"></a><a name="p166675265421"></a>Network status of messages sent through a physical connection, including the time (unit: μs), number of calls, and throughput (unit: byte). This field can be used to analyze the network overhead of SQL in a distributed system. This field is not supported in a standalone mode. Example: {"time":xxx, "n_calls":xxx, "size":xxx}.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p166675265421"><a name="p166675265421"></a><a name="p166675265421"></a>Network status of messages sent through a physical connection, including the time (unit: μs), number of calls, and throughput (unit: byte). This can be used to analyze the network overhead of SQL statements in a distributed system and is not supported in standalone system. Example: {"time":xxx, "n_calls":xxx, "size":xxx}.</p>
 </td>
 </tr>
 <tr id="row1597621252919"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p129761512172910"><a name="p129761512172910"></a><a name="p129761512172910"></a>net_recv_info</p>
@@ -353,23 +353,23 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p8519145615307"><a name="p8519145615307"></a><a name="p8519145615307"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p195190563305"><a name="p195190563305"></a><a name="p195190563305"></a>Time required for lightweight locking.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p195190563305"><a name="p195190563305"></a><a name="p195190563305"></a>Time required for lightweight lock waiting.</p>
 </td>
 </tr>
 <tr id="row1139711323112"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p73972034315"><a name="p73972034315"></a><a name="p73972034315"></a>details</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p339717319319"><a name="p339717319319"></a><a name="p339717319319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of statement lock events, which are recorded in time sequence. The number of records is affected by the <strong id="b914110141568"><a name="b914110141568"></a><a name="b914110141568"></a>track_stmt_details_size </strong>parameter.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of statement lock events, which are recorded in time sequence. The number of records is affected by the <strong id="b15117850175510"><a name="b15117850175510"></a><a name="b15117850175510"></a>track_stmt_details_size </strong>parameter.</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>Events include:</p>
-<a name="ul452445214189"></a><a name="ul452445214189"></a><ul id="ul452445214189"><li>Start locking.</li><li>Complete locking.</li><li>Start lock waiting.</li><li>Complete lock waiting.</li><li>Start unlocking.</li><li>Complete unlocking.</li><li>Start lightweight lock waiting.</li><li>Complete lightweight lock waiting.</li></ul>
+<a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>Start locking.</li><li>Complete locking.</li><li>Start lock waiting.</li><li>Complete lock waiting.</li><li>Start unlocking.</li><li>Complete unlocking.</li><li>Start lightweight lock waiting.</li><li>Complete lightweight lock waiting.</li></ul>
 </td>
 </tr>
-<tr id="row19936171305317"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p14936191313534"><a name="p14936191313534"></a><a name="p14936191313534"></a>is_slow_sql</p>
+<tr id="row1146417610552"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p174641163550"><a name="p174641163550"></a><a name="p174641163550"></a>is_slow_sql</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p179367131531"><a name="p179367131531"></a><a name="p179367131531"></a>boolean</p>
+<td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p44649617558"><a name="p44649617558"></a><a name="p44649617558"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p159361013155319"><a name="p159361013155319"></a><a name="p159361013155319"></a>Whether the SQL statement is a slow SQL statement.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p13464660559"><a name="p13464660559"></a><a name="p13464660559"></a>Whether the SQL statement is a slow SQL statement.</p>
 </td>
 </tr>
 </tbody>

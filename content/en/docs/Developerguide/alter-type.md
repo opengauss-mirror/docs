@@ -1,10 +1,14 @@
-# ALTER TYPE<a name="EN-US_TOPIC_0242370546"></a>
+# ALTER TYPE<a name="EN-US_TOPIC_0289899831"></a>
 
-## Function<a name="en-us_topic_0237122082_en-us_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
+## Function<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
 
 **ALTER TYPE**  modifies the definition of a type.
 
-## Syntax<a name="en-us_topic_0237122082_en-us_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
+## Precautions<a name="en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
+
+Only the type owner or a user granted with the ALTER permission can run the  **ALTER TYPE**  command. The system administrator has this permission by default. To modify the owner or schema of a type, you must be a type owner or system administrator and a member of the new owner role.
+
+## Syntax<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
 
 -   Modify a type.
 
@@ -80,7 +84,7 @@
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122082_en-us_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
+## Parameter Description<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
 
 -   **name**
 
@@ -137,16 +141,16 @@
 
     Refuses to update the associated records of the modified type. This is the default action.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >-   **ADD ATTRIBUTE**,  **DROP ATTRIBUTE**, and  **ALTER ATTRIBUTE**  can be combined for processing. For example, it is possible to add several attributes or change the types of several attributes at the same time in one command.  
-    >-   To use  **ALTER TYPE**, you must be the owner of the type. To modify a schema of a type, you must also have the  **CREATE**  permission on the new schema. To change the owner, you must be a direct or indirect member of the new owning role, and the member must have the  **CREATE**  permission on the schema of this type. \(These restrictions enforce that the user can only recreate and delete the type. However, the system administrator can change ownership of any type in any way.\) To add an attribute or modify the type of an attribute, you must also have the  **USAGE**  permission of this type.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   **ADD ATTRIBUTE**,  **DROP ATTRIBUTE**, and  **ALTER ATTRIBUTE**  can be combined for processing. For example, it is possible to add several attributes or change the types of several attributes at the same time in one command.
+    >-   To modify a schema of a type, you must have the  **CREATE**  permission on the new schema. To change the owner, you must be a direct or indirect member of the new owning role, and the member must have the  **CREATE**  permission on the schema of this type. \(These restrictions enforce that the user can only recreate and delete the type. However, the system administrator can change ownership of any type in any way.\) To add an attribute or modify the type of an attribute, you must also have the  **USAGE**  permission of this type.
 
 
-## Example<a name="en-us_topic_0237122082_en-us_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
+## Example<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 
-See  [Examples](create-type.md#en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE TYPE**.
+See  [Examples](en-us_topic_0283136568.md#en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE TYPE**.
 
-## Helpful Links<a name="en-us_topic_0237122082_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
+## Helpful Links<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE TYPE](create-type.md)  and  [DROP TYPE](drop-type.md)
+[CREATE TYPE](en-us_topic_0283136568.md)  and  [DROP TYPE](en-us_topic_0283137107.md)
 
