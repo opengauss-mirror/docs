@@ -156,6 +156,7 @@ The  **gs\_om**  tool can use the following types of parameters:
         -   **fast**: The data of the primary and standby instance relationship is ensured to be consistent.
         -   **immediate**: The data of the primary and standby instance relationship is not ensured to be consistent.
         
+
 Default value:  **fast**
         
 -   --time-out=SECS
@@ -297,7 +298,7 @@ Default value:  **fast**
 </td>
 <td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p172731718619"><a name="p172731718619"></a><a name="p172731718619"></a>Instance status.</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li><strong>Primary</strong>: The instance is a primary instance.</li><li><strong>Standby</strong>: The instance is a standby instance.</li><li><strong>Secondary</strong>: The instance is a secondary instance.</li><li><strong>Pending</strong>: The instance is in arbitration.</li><li><strong>Unknown</strong>: The instance status is unknown.</li><li><strong>Down</strong>: The instance is down.</li></ul>
+<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0287275995_ul14274171168"></a><a name="en-us_topic_0287275995_ul14274171168"></a><ul id="en-us_topic_0287275995_ul14274171168"><li><strong id="b2088384219325"><a name="b2088384219325"></a><a name="b2088384219325"></a>P</strong>: The initial role of the node is <strong id="b1267973918818"><a name="b1267973918818"></a><a name="b1267973918818"></a>Primary</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong id="b3491755484"><a name="b3491755484"></a><a name="b3491755484"></a>S</strong>: The initial role of the node is <strong id="b9273611591"><a name="b9273611591"></a><a name="b9273611591"></a>Standby</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong id="b6377113118565"><a name="b6377113118565"></a><a name="b6377113118565"></a>C</strong>: The initial role of the node is <strong id="b5378431145610"><a name="b5378431145610"></a><a name="b5378431145610"></a>Cascade Standby</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong>Primary</strong>: The instance is a primary instance.</li><li><strong>Standby</strong>: The instance is a standby instance.</li><li><strong id="b527016655719"><a name="b527016655719"></a><a name="b527016655719"></a>Cascade Standby</strong>: The instance is a cascaded standby instance.</li><li><strong>Secondary</strong>: The instance is a secondary instance.</li><li><strong>Pending</strong>: The instance is in arbitration.</li><li><strong>Unknown</strong>: The instance status is unknown.</li><li><strong>Down</strong>: The instance is down.</li></ul>
 </td>
 </tr>
 </tbody>
