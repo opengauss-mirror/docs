@@ -125,24 +125,6 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     -   Primary keys and unique index columns cannot be updated.
     -   Column-store tables, foreign tables, and memory tables are not supported.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >
-        >When  [enable\_upsert\_to\_merge](optimizer-method-configuration.md#section198182452312)  is set to  **on**, this statement will be converted to a  **MERGE INTO**  statement with the same semantics for execution. The behavior is the same as that of  **MERGE INTO**. The following behavior is different from that of  **UPSERT**:
-        >
-        >-   **UPDATE**  cannot update the values of user-defined elements or elements in an array.
-        >
-        >-   If  **INSERT**  specifies a target column, only the target column or columns with default values are checked for the unique constraint or primary key constraint conflicts.
-        >
-        >-   If a table has multiple unique constraints and the inserted data violates unique constraints of multiple rows in the table, the  **UPDATE**  clause is executed for all conflicting rows to complete the update.
-        >
-        >-   If multiple rows are inserted and the rows conflict with the unique constraint of the same row in the table, the execution fails. Set the GUC parameter  [behavior\_compat\_options](en-us_topic_0242371544.md#en-us_topic_0237124754_section1980124735516)  to  **'merge\_update\_multi'**, allowing conflict rows to be updated multiple times.
-        >
-        >-   If multiple rows are inserted and the rows do not conflict with the existing data in the table but violate the unique constraint, the  **INSERT**  statement fails to be executed.
-        >
-        >-   In the multi-row insertion scenario, the execution performance is poor.  **MERGE INTO**  does not support concurrent update. When multiple rows are inserted, an error may be reported, causing transaction rollback.
-        >
-        >-   The plan displayed by  **EXPLAIN**  is the execution plan converted into the  **MERGE INTO**  statement.
-
 
 
 ## Examples<a name="en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
