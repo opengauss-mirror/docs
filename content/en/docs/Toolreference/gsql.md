@@ -888,6 +888,13 @@ For details about gsql parameters, see  [Table Common parameters](#en-us_topic_0
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p640908799712"><a name="en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p640908799712"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p640908799712"></a>-</p>
 </td>
 </tr>
+<tr id="row4171544175216"><td class="cellrowborder" valign="top" width="22.24%" headers="mcps1.2.4.1.1 "><p id="p6184442522"><a name="p6184442522"></a><a name="p6184442522"></a>-C, --enable-client-encryption</p>
+</td>
+<td class="cellrowborder" valign="top" width="53.7%" headers="mcps1.2.4.1.2 "><p id="p3181244145220"><a name="p3181244145220"></a><a name="p3181244145220"></a>When <strong id="b8154345121020"><a name="b8154345121020"></a><a name="b8154345121020"></a>-C</strong> is used to connect to a local or remote database, you can use this option to enable the encrypted database function.</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="p201894413526"><a name="p201894413526"></a><a name="p201894413526"></a>-</p>
+</td>
+</tr>
 </tbody>
 </table>
 

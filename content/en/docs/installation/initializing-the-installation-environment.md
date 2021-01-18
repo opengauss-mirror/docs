@@ -38,88 +38,90 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
     -   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
     -   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
 
-2.  Upload the software package  **openGauss-**_x.x.x_**-openEuler-64bit.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
-3.  Go to the directory for storing the uploaded software package and decompress  **openGauss-**_x.x.x_**-openEuler-64bit.tar.gz**. After the installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
+2. Upload the software package  **openGauss-**_x.x.x_**-openEuler-64bit-all.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
 
-    ```
-    cd /opt/software/openGauss
-    tar -zxvf openGauss-x.x.x-openEuler-64bit.tar.gz
-    ```
+3. Go to the directory for storing the uploaded software package and decompress  **openGauss-**_x.x.x_**-openEuler-64bit-all.tar.gz**. After the installation package is decompressed, the OM and Server installation packages are generated. After the OM installation package is decompressed, the  **script**  subdirectory is automatically generated in  **/opt/software/openGauss**. OM tool scripts such as  **gs\_preinstall**  are generated in the  **script**  subdirectory.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:**  
-    -   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
-    -   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
-    -   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
+   ```
+   cd /opt/software/openGauss
+   tar -zxvf openGauss-1.1.0-openEuler-64bit-all.tar.gz
+   tar -zxvf openGauss-1.1.0-openEuler-64bit-om.tar.gz
+   ```
 
-4.  Go to the directory for storing tool scripts.
+   ![](public_sys-resources/icon-note.gif) **NOTE:**  
+   -   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
+   -   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
+   -   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
 
-    ```
-    cd /opt/software/openGauss/script
-    ```
+4. Go to the directory for storing tool scripts.
 
-5.  For openEuler, run the following command to open the  **gspylib/common/CheckPythonVersion.py**  file and change  **if not pythonVersion == \(3, 6\):**  to  **if not pythonVersion \>= \(3, 6\):**. Press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
+   ```
+   cd /opt/software/openGauss/script
+   ```
 
-    ```
-    vi gspylib/common/CheckPythonVersion.py
-    ```
+5. For openEuler, run the following command to open the  **gspylib/common/CheckPythonVersion.py**  file and change  **if not pythonVersion == \(3, 6\):**  to  **if not pythonVersion \>= \(3, 6\):**. Press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
 
-6.  If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\> /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
+   ```
+   vi gspylib/common/CheckPythonVersion.py
+   ```
 
-    ```
-    vi /etc/profile.d/performance.sh
-    ```
+6. If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\> /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
 
-7.  To ensure that the OpenSSL version is correct, load the  **lib**  library in the installation package before preinstallation. Run the following command.  **\{packagePath\}**  indicates the path where the installation package is stored. In this example, the path is  **/opt/software/openGauss**.
+   ```
+   vi /etc/profile.d/performance.sh
+   ```
 
-    ```
-    export LD_LIBRARY_PATH={packagePath}/script/gspylib/clib:$LD_LIBRARY_PATH
-    ```
+7. To ensure that the OpenSSL version is correct, load the  **lib**  library in the installation package before preinstallation. Run the following command.  **\{packagePath\}**  indicates the path where the installation package is stored. In this example, the path is  **/opt/software/openGauss**.
 
-8.  To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.
+   ```
+   export LD_LIBRARY_PATH={packagePath}/script/gspylib/clib:$LD_LIBRARY_PATH
+   ```
 
-    ```
-    hostname
-    cat /etc/hostname 
-    ```
+8. To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.
 
-    If the value of  **hostname**  is different from the host name in the  **/etc/hostname**  file, run the following command to open the  **/etc/hostname**  file and change the host name. Press  **Esc**  to enter the command mode, and then run the  **:wq**  command to save the change and exit.
+   ```
+   hostname
+   cat /etc/hostname 
+   ```
 
-    ```
-    vi /etc/hostname 
-    ```
+   If the value of  **hostname**  is different from the host name in the  **/etc/hostname**  file, run the following command to open the  **/etc/hostname**  file and change the host name. Press  **Esc**  to enter the command mode, and then run the  **:wq**  command to save the change and exit.
 
-9.  Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
-    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
+   ```
+   vi /etc/hostname 
+   ```
 
-        ```
-        ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
-        ```
+9. Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
+   -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
 
-        **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of the OS user  **root**  or the user omm.
+       ```
+       ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
+       ```
 
-    -   If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
-        1.  Run the following command to configure the installation environment:
+       **omm**  is the database administrator \(also the OS user running the openGauss\),  **dbgrp**  is the group name of the OS user running the openGauss, and  **/opt/software/openGauss/cluster\_config.xml**  is the path of the openGauss configuration file. During the execution, you need to determine whether to establish mutual trust as prompted and enter the password of the OS user  **root**  or the user omm.
 
-            ```
-            cd /opt/software/openGauss/script
-            ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
-            ```
+   -   If the mutual trust between users  **root**  cannot be created, create the  **omm**  user, perform local preinstallation on each host, and manually create the mutual trust between openGauss users. If the  **-L**  parameter is specified during preinstallation, manually write the mapping between the host names and IP addresses of all nodes to the  **/etc/hosts**  file of each host before preinstallation, add  **\#Gauss OM IP Hosts Mapping**  to the end of each mapping.
+       1.  Run the following command to configure the installation environment:
 
-            ![](public_sys-resources/icon-note.gif) **NOTE:**   
-            You need to run this command on each host.  
+           ```
+           cd /opt/software/openGauss/script
+           ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
+           ```
 
-    -   Execute  **gs\_preinstall**  in non-interactive mode.
-        1.  Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in[Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
-        2.  Run the following command to configure the installation environment:
-    
-            ```
-            cd /opt/software/openGauss/script
-            ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
-            ```
-    
-        ![](public_sys-resources/icon-note.gif) **NOTE:**   
-        -   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
-        -   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
+           ![](public_sys-resources/icon-note.gif) **NOTE:**   
+           You need to run this command on each host.  
+
+   -   Execute  **gs\_preinstall**  in non-interactive mode.
+       1.  Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in[Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
+       2.  Run the following command to configure the installation environment:
+
+           ```
+           cd /opt/software/openGauss/script
+           ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
+           ```
+
+       ![](public_sys-resources/icon-note.gif) **NOTE:**   
+       -   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
+       -   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
 
 
 

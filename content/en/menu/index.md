@@ -143,6 +143,7 @@ headless: true
 -   [Administrator Guide]({{< relref "./docs/Administratorguide/Administratorguide.md" >}})
 	-   [Starting and Stopping openGauss]({{< relref "./docs/Administratorguide/starting-and-stopping-opengauss.md" >}})
 	-   [Querying Status]({{< relref "./docs/Administratorguide/querying-status.md" >}})
+	-   [performing a primary standby switchover]({{< relref "./docs/Administratorguide/performing-a-primary-standby-switchover.md" >}})
 	-   [Generating Configuration Files]({{< relref "./docs/Administratorguide/generating-configuration-files.md" >}})
 	-   [Routine Maintenance]({{< relref "./docs/Administratorguide/routine-maintenance.md" >}})
 	-   [Backup and Restoration]({{< relref "./docs/Administratorguide/backup-and-restoration.md" >}})
