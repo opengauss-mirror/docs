@@ -1,13 +1,13 @@
-# Window Functions<a name="EN-US_TOPIC_0242370447"></a>
+# Window Functions<a name="EN-US_TOPIC_0289900123"></a>
 
-## Window Functions<a name="en-us_topic_0237121983_en-us_topic_0059778391_s454ef5048f3142508bc4f06cb3454ebe"></a>
+## Window Functions<a name="en-us_topic_0283137174_en-us_topic_0237121983_en-us_topic_0059778391_s454ef5048f3142508bc4f06cb3454ebe"></a>
 
 Currently, column-store tables only support  **rank\(expression\)**  and  **row\_number\(expression\)**  functions.
 
 This statement is used together with the window function. The  **OVER**  clause is used for grouping data and sorting the elements in a group. Window functions are used for generating sequence numbers for the values in the group.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**order by**  in a window function must be followed by a column name. If it is followed by a number, the number is processed as a constant value and the target column is not ranked.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**order by**  in a window function must be followed by a column name. If it is followed by a number, the number is processed as a constant value and the target column is not ranked.
 
 -   RANK\(\)
 
@@ -414,10 +414,11 @@ This statement is used together with the window function. The  **OVER**  clause 
 
     Return type: same as the parameter type
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, lead(d_fy_week_seq,2) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM  tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;                 d_moy | d_fy_week_seq | lead 
+    postgres=# SELECT d_moy, d_fy_week_seq, lead(d_fy_week_seq,2) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM  tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    d_moy | d_fy_week_seq | lead
     -------+---------------+------
          1 |             1 |    1
          1 |             1 |    1

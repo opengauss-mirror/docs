@@ -1,4 +1,4 @@
-# Global Temporary Table Functions<a name="EN-US_TOPIC_0267354430"></a>
+# Global Temporary Table Functions<a name="EN-US_TOPIC_0289900393"></a>
 
 -   pg\_get\_gtt\_relstats\(relOid\)
 
@@ -66,6 +66,114 @@
     (2 rows)
     ```
 
+
+-   dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
+
+    Description: Obtains full SQL information at the instance level.
+
+    Return type: record
+
+    **Table  1**  dbe\_perf.get\_global\_full\_sql\_by\_timestamp parameter description
+
+    <a name="table173628271511"></a>
+    <table><thead align="left"><tr id="row2036210271054"><th class="cellrowborder" valign="top" width="20.242024202420243%" id="mcps1.2.4.1.1"><p id="p63621027457"><a name="p63621027457"></a><a name="p63621027457"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="22.06220622062206%" id="mcps1.2.4.1.2"><p id="p3362327156"><a name="p3362327156"></a><a name="p3362327156"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="57.69576957695769%" id="mcps1.2.4.1.3"><p id="p13362627452"><a name="p13362627452"></a><a name="p13362627452"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row173625271356"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p638719511858"><a name="p638719511858"></a><a name="p638719511858"></a>start_timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p152934101864"><a name="p152934101864"></a><a name="p152934101864"></a>timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p1376712315612"><a name="p1376712315612"></a><a name="p1376712315612"></a>Start point of the SQL start time range.</p>
+    </td>
+    </tr>
+    <tr id="row17363142719512"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p129832059655"><a name="p129832059655"></a><a name="p129832059655"></a>end_timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p14382011366"><a name="p14382011366"></a><a name="p14382011366"></a>timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p1736312720519"><a name="p1736312720519"></a><a name="p1736312720519"></a>End point of the SQL start time range.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
+
+    Description: Obtains slow SQL information at the instance level.
+
+    Return type: record
+
+    **Table  2**  dbe\_perf.get\_global\_slow\_sql\_by\_timestamp parameter description
+
+    <a name="table152133591871"></a>
+    <table><thead align="left"><tr id="row72147595714"><th class="cellrowborder" valign="top" width="20.242024202420243%" id="mcps1.2.4.1.1"><p id="p1921419591570"><a name="p1921419591570"></a><a name="p1921419591570"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="22.06220622062206%" id="mcps1.2.4.1.2"><p id="p221415916720"><a name="p221415916720"></a><a name="p221415916720"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="57.69576957695769%" id="mcps1.2.4.1.3"><p id="p32140592071"><a name="p32140592071"></a><a name="p32140592071"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row3214185916710"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p1721455912713"><a name="p1721455912713"></a><a name="p1721455912713"></a>start_timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p12143595711"><a name="p12143595711"></a><a name="p12143595711"></a>timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p1721455914713"><a name="p1721455914713"></a><a name="p1721455914713"></a>Start point of the SQL start time range.</p>
+    </td>
+    </tr>
+    <tr id="row321413592710"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p162141759672"><a name="p162141759672"></a><a name="p162141759672"></a>end_timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p202141559372"><a name="p202141559372"></a><a name="p202141559372"></a>timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p1421455917712"><a name="p1421455917712"></a><a name="p1421455917712"></a>End point of the SQL start time range.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   statement\_detail\_decode\(detail text, format text, pretty bool\)
+
+    Parses the details column in a full or slow SQL statement.
+
+    **Table  3**  statement\_detail\_decode parameter description
+
+    <a name="table9745177191215"></a>
+    <table><thead align="left"><tr id="row127451717124"><th class="cellrowborder" valign="top" width="20.242024202420243%" id="mcps1.2.4.1.1"><p id="p1974687151213"><a name="p1974687151213"></a><a name="p1974687151213"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="22.06220622062206%" id="mcps1.2.4.1.2"><p id="p147461271125"><a name="p147461271125"></a><a name="p147461271125"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="57.69576957695769%" id="mcps1.2.4.1.3"><p id="p197461975128"><a name="p197461975128"></a><a name="p197461975128"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row167467711212"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p197461379124"><a name="p197461379124"></a><a name="p197461379124"></a>detail</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p137462712123"><a name="p137462712123"></a><a name="p137462712123"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p138588178133"><a name="p138588178133"></a><a name="p138588178133"></a>A set of events generated by the SQL statement (unreadable).</p>
+    </td>
+    </tr>
+    <tr id="row187462714127"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p1674617710129"><a name="p1674617710129"></a><a name="p1674617710129"></a>format</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p17746137131219"><a name="p17746137131219"></a><a name="p17746137131219"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p246504413137"><a name="p246504413137"></a><a name="p246504413137"></a>Parsing output format. The value is <strong id="b15123151115"><a name="b15123151115"></a><a name="b15123151115"></a>plaintext</strong> or <strong id="b279961781114"><a name="b279961781114"></a><a name="b279961781114"></a>json</strong>.</p>
+    </td>
+    </tr>
+    <tr id="row17254145010126"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p225445020123"><a name="p225445020123"></a><a name="p225445020123"></a>pretty</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p1025485020129"><a name="p1025485020129"></a><a name="p1025485020129"></a>bool</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><div class="p" id="p7905125312149"><a name="p7905125312149"></a><a name="p7905125312149"></a>Whether to display the text in pretty format when <strong id="b4723918191118"><a name="b4723918191118"></a><a name="b4723918191118"></a>format</strong> is set to <strong id="b772312186118"><a name="b772312186118"></a><a name="b772312186118"></a>plaintext</strong>. The options are as follows:<a name="ul5736124153213"></a><a name="ul5736124153213"></a><ul id="ul5736124153213"><li>The value <strong id="b58714213111"><a name="b58714213111"></a><a name="b58714213111"></a>true </strong>indicates that events are separated by <strong id="b1187122151116"><a name="b1187122151116"></a><a name="b1187122151116"></a>\n</strong>.</li><li>The value <strong id="b4271143317114"><a name="b4271143317114"></a><a name="b4271143317114"></a>false </strong>indicates that events are separated by commas (,).</li></ul>
+    </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 -   pg\_list\_gtt\_relfrozenxids\(\)
 

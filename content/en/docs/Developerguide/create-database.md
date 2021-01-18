@@ -1,16 +1,16 @@
-# CREATE DATABASE<a name="EN-US_TOPIC_0242370563"></a>
+# CREATE DATABASE<a name="EN-US_TOPIC_0289900066"></a>
 
-## Function<a name="en-us_topic_0237122099_en-us_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
+## Function<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
 
 Create a database. By default, a new database is created by copying the standard system database template0. Only template0 can be used to create a new database.
 
-## Precautions<a name="en-us_topic_0237122099_en-us_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>
+## Precautions<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>
 
 -   A user that has the  **CREATEDB**  permission or a system administrator can create a database.
 -   **CREATE DATABASE**  cannot be executed inside a transaction block.
--   During the process of creating the database, an error message similar to "Permission denied" appears, which may be due to insufficient permissions of the data directory on the file system. An error message similar to "No space left on device" appears, which may be caused by a full disk.
+-   Errors along the line of "could not initialize database directory" are most likely related to insufficient permissions on the data directory, a full disk, or other file system problems.
 
-## Syntax<a name="en-us_topic_0237122099_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
+## Syntax<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
 
 ```
 CREATE DATABASE database_name
@@ -24,7 +24,7 @@ CREATE DATABASE database_name
                [ CONNECTION LIMIT [=] connlimit ]}[...] ];
 ```
 
-## Parameter Description<a name="en-us_topic_0237122099_en-us_topic_0059778277_s1d6127a393bf4f6d8fdac63105932d16"></a>
+## Parameter Description<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s1d6127a393bf4f6d8fdac63105932d16"></a>
 
 -   **database\_name**
 
@@ -52,9 +52,9 @@ CREATE DATABASE database_name
 
     Common values :  **GBK**,  **UTF8**, and  **Latin1**
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >-   The character set encoding of the new database must be compatible with the local settings \(**LC\_COLLATE**  and  **LC\_CTYPE**\).  
-    >-   When the specified character encoding set is  **GBK**, some uncommon Chinese characters cannot be directly used as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E.  **@\[\\\]^\_'\{|\}**  is an operator in the database. If it is directly used as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is  **0x8240**, and the second byte is  **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use this function, you can add double quotation marks \(""\) to avoid this problem when creating and accessing objects.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   The character set encoding of the new database must be compatible with the local settings \(**LC\_COLLATE**  and  **LC\_CTYPE**\).
+    >-   When the specified character encoding set is  **GBK**, some uncommon Chinese characters cannot be directly used as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E.  **@\[\\\]^\_'\{|\}**  is an operator in the database. If it is directly used as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is  **0x8240**, and the second byte is  **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use this function, you can add double quotation marks \(""\) to avoid this problem when creating and accessing objects.
 
 -   **LC\_COLLATE \[ = \] lc\_collate**
 
@@ -70,15 +70,14 @@ CREATE DATABASE database_name
 
     Value range: a valid character type
 
-- **DBCOMPATIBILITY \[ = \] compatibilty\_type**
+-   **DBCOMPATIBILITY \[ = \] compatibilty\_type**
 
     Specifies the type of the compatible database.
 
-    **Value range**: A, B, and C , indicating  **O**,  **MY**, and  **TD**  databases, respectively.
+    Value range: A, B, C, and PG, indicating  **O**,  **MY**,  **TD**  and  **POSTGRES**  databases, respectively.
 
-    ![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-
-    When  DBCOMPATIBILITY is set to A, an empty string is considered as NULL.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >When  **DBCOMPATIBILITY**  is set to  **A**, an empty string is considered as  **NULL**.
 
 -   **TABLESPACE \[ = \] tablespace\_name**
 
@@ -90,9 +89,9 @@ CREATE DATABASE database_name
 
     Specifies the maximum number of concurrent connections that can be made to the new database.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >-   The system administrator is not restricted by this parameter.  
-    >-   connlimit is calculated separately for each master database node. Number of connections of the openGauss = connlimit x Number of normal CN master database nodes.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   The system administrator is not restricted by this parameter.
+    >-   connlimit is calculated separately for each primary database node. Number of connections of openGauss = connlimit x Number of normal CN primary database nodes.
 
     Value range: an integer greater than or equal to -1 The default value is  **-1**, indicating that there is no limit.
 
@@ -100,10 +99,9 @@ CREATE DATABASE database_name
 The restrictions on character encoding are as follows:
 
 -   If the locale is set to  **C**  \(or  **POSIX**\), all encoding types are allowed. For other locale settings, the character encoding must be the same as that of the locale.
--   If the encoding method is SQL\_ASCII and the modifier is an administrator user, the character encoding can be different from the locale setting.
 -   The encoding and region settings must match the template database, except that  **template0**  is used as a template. This is because other databases may contain data that does not match the specified encoding, or may contain indexes whose sorting order is affected by  **LC\_COLLATE**  and  **LC\_CTYPE**. Copying this data will invalidate the indexes in the new database.  **template0**  does not contain any data or indexes that may be affected.
 
-## Examples<a name="en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
+## Examples<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 
 ```
 -- Create users jim and tom:
@@ -157,11 +155,11 @@ postgres=# DROP DATABASE td_compatible_db;
 postgres=# DROP DATABASE ora_compatible_db;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122099_en-us_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
+## Helpful Links<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
-[ALTER DATABASE](alter-database.md)  and  [DROP DATABASE](drop-database.md)
+[ALTER DATABASE](en-us_topic_0283136981.md)  and  [DROP DATABASE](en-us_topic_0283137424.md)
 
-## Suggestions<a name="en-us_topic_0237122099_en-us_topic_0059778277_section8189694144220"></a>
+## Suggestions<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_section8189694144220"></a>
 
 -   **create database**
 

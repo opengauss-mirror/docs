@@ -1,14 +1,14 @@
-# ALTER USER<a name="EN-US_TOPIC_0242370547"></a>
+# ALTER USER<a name="EN-US_TOPIC_0289900744"></a>
 
-## Function<a name="en-us_topic_0237122083_en-us_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
+## Function<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
 
 **ALTER USER**  modifies the attributes of a database user.
 
-## Precautions<a name="en-us_topic_0237122083_en-us_topic_0059777461_sfefe5f38da29449aba061ba83566257d"></a>
+## Precautions<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_sfefe5f38da29449aba061ba83566257d"></a>
 
 Session parameters modified by  **ALTER USER**  apply to a specified user and take effect in the next session.
 
-## Syntax<a name="en-us_topic_0237122083_en-us_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
+## Syntax<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
 
 -   Modify user permissions or other information.
 
@@ -30,8 +30,8 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
         | {INDEPENDENT | NOINDEPENDENT}
         | {VCADMIN | NOVCADMIN}
         | CONNECTION LIMIT connlimit
-        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' | DISABLE }
-        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' ] | DISABLE }
+        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' [EXPIRED] | DISABLE | EXPIRED }
+        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' | EXPIRED ] | DISABLE }
         | VALID BEGIN 'timestamp'
         | VALID UNTIL 'timestamp'
         | RESOURCE POOL 'respool'
@@ -39,7 +39,7 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
         | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
-    
+
 -   Change the username.
 
     ```
@@ -62,7 +62,7 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122083_en-us_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
+## Parameter Description<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
 
 -   **user\_name**
 
@@ -96,13 +96,13 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
     In the current version, the  **PGUSER**  attribute of a user cannot be modified.
 
 
-For details about other parameters, see "Parameter Description" in  [CREATE ROLE](create-role.md)  and  [ALTER ROLE](alter-role.md).
+For details about other parameters, see "Parameter Description" in  [CREATE ROLE](en-us_topic_0283136858.md)  and  [ALTER ROLE](en-us_topic_0283137195.md).
 
-## Example<a name="en-us_topic_0237122083_en-us_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
+## Example<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 
-See  [Example](create-user.md#en-us_topic_0237122125_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa)  in  **CREATE USER**.
+See  [Example](en-us_topic_0283136891.md#en-us_topic_0237122125_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa)  in  **CREATE USER**.
 
-## Helpful Links<a name="en-us_topic_0237122083_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
+## Helpful Links<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE ROLE](create-role.md),  [CREATE USER](create-user.md), and  [DROP USER](drop-user.md)
+[CREATE ROLE](en-us_topic_0283136858.md),  [CREATE USER](en-us_topic_0283136891.md), and  [DROP USER](en-us_topic_0283137192.md)
 

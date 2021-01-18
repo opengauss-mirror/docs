@@ -1,16 +1,17 @@
-# COMMENT<a name="EN-US_TOPIC_0242370557"></a>
+# COMMENT<a name="EN-US_TOPIC_0289900191"></a>
 
-## Function<a name="en-us_topic_0237122093_en-us_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>
+## Function<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>
 
 **COMMENT**  defines or changes the comment of an object.
 
-## Precautions<a name="en-us_topic_0237122093_en-us_topic_0059778518_s1a808d6187aa43c5bda33df14effd78f"></a>
+## Precautions<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_s1a808d6187aa43c5bda33df14effd78f"></a>
 
 -   Each object stores only one comment. Therefore, you need to modify a comment and issue a new  **COMMENT**  command to the same object. To delete the comment, write  **NULL**  at the position of the text string. When an object is deleted, the comment is automatically deleted.
 -   Currently, there is no security protection for viewing comments. Any user connected to a database can view all the comments for objects in the database. For shared objects such as databases, roles, and tablespaces, comments are stored globally so any user connected to any database in the cluster can see all the comments for shared objects. Therefore, do not put security-critical information in comments.
--   For most objects, only the owner of the object can set comments. Roles do not have owners, so the rule for  **COMMENT ON ROLE**  is that you must be an administrator to comment on an administrator role, or have the  **CREATEROLE**  permission to comment on non-administrator roles. A system administrator can comment on all objects.
+-   To comment objects, you must be an object owner or user granted the COMMENT permission. The system administrator has this permission by default.
+-   Roles do not have owners, so the rule for  **COMMENT ON ROLE**  is that you must be an administrator to comment on an administrator role, or have the  **CREATEROLE**  permission to comment on non-administrator roles. A system administrator can comment on all objects.
 
-## Syntax<a name="en-us_topic_0237122093_en-us_topic_0059778518_sc17f26ffc35449b285334777c0405013"></a>
+## Syntax<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_sc17f26ffc35449b285334777c0405013"></a>
 
 ```
 COMMENT ON
@@ -49,7 +50,7 @@ COMMENT ON
    IS 'text';
 ```
 
-## Parameter Description<a name="en-us_topic_0237122093_en-us_topic_0059778518_s56dde1ab6b0149328413f05ffc3c73b8"></a>
+## Parameter Description<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_s56dde1ab6b0149328413f05ffc3c73b8"></a>
 
 -   **agg\_name**
 
@@ -105,12 +106,16 @@ COMMENT ON
 
     Specifies the data type of the operator parameters \(optionally schema-qualified\). If the prefix or suffix operator does not exist, the  **NONE**  option can be added.
 
+-   **trigger\_name**
+
+    Specifies the trigger name.
+
 -   **text**
 
     Specifies the comment content.
 
 
-## Examples<a name="en-us_topic_0237122093_en-us_topic_0059778518_s57de72dc01404015a1a8a938238ad917"></a>
+## Examples<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_s57de72dc01404015a1a8a938238ad917"></a>
 
 ```
 postgres=# CREATE TABLE tpcds.customer_demographics_t2

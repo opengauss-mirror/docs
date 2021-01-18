@@ -1,14 +1,14 @@
-# ALTER DEFAULT PRIVILEGES<a name="EN-US_TOPIC_0252797127"></a>
+# ALTER DEFAULT PRIVILEGES<a name="EN-US_TOPIC_0289900961"></a>
 
-## Function<a name="en-us_topic_0237122057_en-us_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>
+## Function<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>
 
 **ALTER DEFAULT PRIVILEGES**  allows you to set the permissions that will be applied to objects created in the future. \(It does not affect permissions granted to existing objects.\)
 
-## Precautions<a name="en-us_topic_0237122057_en-us_topic_0059778935_s4737e0edf6af464282c48f14a9d9c0f4"></a>
+## Precautions<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s4737e0edf6af464282c48f14a9d9c0f4"></a>
 
-Only the permissions for tables \(including views\), functions, and types \(including domains\) can be altered.
+Only the permissions for tables \(including views\), sequences, functions, and types can be changed.
 
-## Syntax<a name="en-us_topic_0237122057_en-us_topic_0059778935_s760a84be01534119a13af50d2ff535aa"></a>
+## Syntax<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s760a84be01534119a13af50d2ff535aa"></a>
 
 ```
 ALTER DEFAULT PRIVILEGES
@@ -21,9 +21,11 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     grant_on_tables_clause
+      | grant_on_sequences_clause
       | grant_on_functions_clause
       | grant_on_types_clause
       | revoke_on_tables_clause
+      | revoke_on_sequences_clause
       | revoke_on_functions_clause
       | revoke_on_types_clause
     ```
@@ -32,9 +34,19 @@ ALTER DEFAULT PRIVILEGES
 -   **grant\_on\_tables\_clause**  grants permissions on tables.
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES } 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
         [, ...] | ALL [ PRIVILEGES ] }
         ON TABLES 
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ]
+    ```
+
+-   **grant\_on\_sequences\_clause**  grants permissions on sequences.
+
+    ```
+    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } 
+        [, ...] | ALL [ PRIVILEGES ] }
+        ON SEQUENCES 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -42,7 +54,7 @@ ALTER DEFAULT PRIVILEGES
 -   **grant\_on\_functions\_clause**  grants permissions on functions.
 
     ```
-    GRANT { EXECUTE | ALL [ PRIVILEGES ] }
+    GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON FUNCTIONS 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
@@ -51,7 +63,7 @@ ALTER DEFAULT PRIVILEGES
 -   **grant\_on\_types\_clause**  grants permissions on types.
 
     ```
-    GRANT { USAGE | ALL [ PRIVILEGES ] }
+    GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPES 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
@@ -61,9 +73,20 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES } 
+        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
         [, ...] | ALL [ PRIVILEGES ] }
         ON TABLES 
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
+    ```
+
+-   **revoke\_on\_sequences\_clause**  revokes permissions on sequences.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } 
+        [, ...] | ALL [ PRIVILEGES ] }
+        ON SEQUENCES
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
@@ -72,7 +95,7 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { EXECUTE | ALL [ PRIVILEGES ] }
+        { {EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON FUNCTIONS 
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
@@ -82,14 +105,14 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { USAGE | ALL [ PRIVILEGES ] }
+        { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPES 
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122057_en-us_topic_0059778935_sb713f37e7b9a40ad936d0bbba0449eb1"></a>
+## Parameter Description<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_sb713f37e7b9a40ad936d0bbba0449eb1"></a>
 
 -   **target\_role**
 
@@ -112,10 +135,10 @@ ALTER DEFAULT PRIVILEGES
     Value range: an existing role name
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->To drop a role for which the default permissions have been granted, reverse the changes in its default permissions or use  **DROP OWNED BY**  to get rid of the default permission entry for the role.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>To drop a role for which the default permissions have been granted, reverse the changes in its default permissions or use  **DROP OWNED BY**  to get rid of the default permission entry for the role.
 
-## Example<a name="en-us_topic_0237122057_en-us_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>
+## Example<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>
 
 ```
 -- Grant the SELECT permission on all the tables (and views) in tpcds to every user.
@@ -135,7 +158,7 @@ postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE INSERT ON TABLES FROM
 postgres=# DROP USER jack;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122057_en-us_topic_0059778935_s802a1dc228084944b989677194792353"></a>
+## Helpful Links<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
-[GRANT](grant.md)  and  [REVOKE](revoke.md)
+[GRANT](en-us_topic_0283137177.md)  and  [REVOKE](en-us_topic_0283137669.md)
 

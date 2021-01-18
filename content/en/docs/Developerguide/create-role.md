@@ -1,20 +1,20 @@
-# CREATE ROLE<a name="EN-US_TOPIC_0242370576"></a>
+# CREATE ROLE<a name="EN-US_TOPIC_0289900481"></a>
 
-## Function<a name="en-us_topic_0237122112_en-us_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>
+## Function<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>
 
 **CREATE ROLE**  is used to create a role.
 
 A role is an entity that owns database objects and permissions. In different environments, a role can be considered a user, a group, or both.
 
-## Precautions<a name="en-us_topic_0237122112_en-us_topic_0059778189_sca46ba0a91d7470c94ec4197a5befe87"></a>
+## Precautions<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_sca46ba0a91d7470c94ec4197a5befe87"></a>
 
 -   **CREATE ROLE**  adds a role to a database. The role does not have the  **LOGIN**  permission.
 -   Only the user who has the  **CREATE ROLE**  permission or a system administrator is allowed to create roles.
 
-## Syntax<a name="en-us_topic_0237122112_en-us_topic_0059778189_se8fd2944bc8f42e2be5e7bd140f801fc"></a>
+## Syntax<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_se8fd2944bc8f42e2be5e7bd140f801fc"></a>
 
 ```
-CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' | DISABLE };
+CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
 ```
 
 The syntax of role information configuration clause  **option**  is as follows:
@@ -49,7 +49,7 @@ The syntax of role information configuration clause  **option**  is as follows:
     | PGUSER
 ```
 
-## Parameter Description<a name="en-us_topic_0237122112_en-us_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4"></a>
+## Parameter Description<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4"></a>
 
 -   **role\_name**
 
@@ -57,8 +57,8 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Value range: a string. It must comply with the naming convention rule, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the role name. When a role is created, the database will display a message.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The identifier must be letters, underscores \(\_\), digits \(0-9\), or dollar signs \($\) and must start with a letter \(a-z\) or underscore \(\_\).  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The identifier must be letters, underscores \(\_\), digits \(0-9\), or dollar signs \($\) and must start with a letter \(a-z\) or underscore \(\_\).
 
 -   **password**
 
@@ -72,7 +72,11 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Value range: a string
 
--   **DISABLE**
+-   **EXPIRED**
+
+    When creating a user, you can specify the  **EXPIRED**  parameter to create a user whose password is invalid. The user cannot perform simple or extended queries. The statement can be executed only after the password is changed.
+
+-   DISABLE
 
     By default, you can change your password unless it is disabled. To disable the password of a user, use this parameter. After the password of a user is disabled, the password will be deleted from the system. The user can connect to the database only through external authentication, for example, Kerberos authentication. Only administrators can enable or disable a password. Common users cannot disable the password of an initial user. To enable a password, run  **ALTER USER**  and specify the password.
 
@@ -141,9 +145,9 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Specifies how many concurrent connections the role can make.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >-   The system administrator is not restricted by this parameter.  
-    >-   The number of concurrent connections of each primary database node is calculated separately \(which is the value of  **connlimit**\). The number of all connections of openGauss = Value of  **connlimit**  x Number of normal primary database nodes.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   The system administrator is not restricted by this parameter.
+    >-   The number of concurrent connections of each primary database node is calculated separately \(which is the value of  **connlimit**\). The number of all connections of openGauss = Value of  **connlimit**  x Number of normal primary database nodes.
 
     Value range: an integer greater than or equal to -1. The default value is  **-1**, which means unlimited.
 
@@ -208,7 +212,7 @@ The syntax of role information configuration clause  **option**  is as follows:
     In the current version, this attribute is reserved only for forward compatibility.
 
 
-## Example:<a name="en-us_topic_0237122112_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
+## Example:<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
 
 ```
 -- Create role manager whose password is Bigdata123@.
@@ -230,7 +234,7 @@ postgres=# DROP ROLE manager;
 postgres=# DROP ROLE miriam;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122112_en-us_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
+## Helpful Links<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
-[SET ROLE](set-role.md),  [ALTER ROLE](alter-role.md),  [DROP ROLE](drop-role.md), and  [GRANT](grant.md)
+[SET ROLE](en-us_topic_0283137642.md),  [ALTER ROLE](en-us_topic_0283137195.md),  [DROP ROLE](en-us_topic_0283136937.md), and  [GRANT](en-us_topic_0283137177.md)
 

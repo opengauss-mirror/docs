@@ -1,21 +1,21 @@
-# DROP INDEX<a name="EN-US_TOPIC_0242370604"></a>
+# DROP INDEX<a name="EN-US_TOPIC_0289899909"></a>
 
-## Function<a name="en-us_topic_0237122140_en-us_topic_0059779018_s6e7bed7d44604f749e4ea7043f81b07b"></a>
+## Function<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s6e7bed7d44604f749e4ea7043f81b07b"></a>
 
 **DROP INDEX**  deletes an index.
 
-## Precautions<a name="en-us_topic_0237122140_en-us_topic_0059779018_saafc32e8c71d4cb7b7d30678c9e4658d"></a>
+## Precautions<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_saafc32e8c71d4cb7b7d30678c9e4658d"></a>
 
-Only the owner of an index or a system administrator has the  **DROP INDEX**  permission.
+Only the index owner or a user who has the INDEX permission on the table where the index resides can run the  **DROP INDEX**  command. The system administrator has this permission by default.
 
-## Syntax<a name="en-us_topic_0237122140_en-us_topic_0059779018_s79208f25fe214e06b6c7f661c030f3d1"></a>
+## Syntax<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s79208f25fe214e06b6c7f661c030f3d1"></a>
 
 ```
 DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ] 
     index_name [, ...] [ CASCADE | RESTRICT ];
 ```
 
-## Parameter Description<a name="en-us_topic_0237122140_en-us_topic_0059779018_s99e6f6efb9f3448f9de8894607958cd3"></a>
+## Parameter Description<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s99e6f6efb9f3448f9de8894607958cd3"></a>
 
 -   **CONCURRENTLY**
 
@@ -40,11 +40,11 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
     -   **RESTRICT**: refuses to delete the index if any objects depend on it. This is the default action.
 
 
-## Examples<a name="en-us_topic_0237122140_en-us_topic_0059779018_s95dd4a9a45334e81be4841d86d7a47f1"></a>
+## Examples<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s95dd4a9a45334e81be4841d86d7a47f1"></a>
 
-See  [Examples](create-index.md#en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
+See  [Examples](en-us_topic_0283136578.md#en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
 
-## Helpful Links<a name="en-us_topic_0237122140_en-us_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
+## Helpful Links<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
 
-[ALTER INDEX](alter-index.md)  and  [CREATE INDEX](create-index.md)
+[ALTER INDEX](en-us_topic_0283137124.md)  and  [CREATE INDEX](en-us_topic_0283136578.md)
 

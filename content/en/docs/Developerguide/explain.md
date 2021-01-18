@@ -1,6 +1,6 @@
-# EXPLAIN<a name="EN-US_TOPIC_0242370627"></a>
+# EXPLAIN<a name="EN-US_TOPIC_0289900742"></a>
 
-## Function<a name="en-us_topic_0237122163_en-us_topic_0059777774_sd22ce4e4c8c14244afb6492e84f92d80"></a>
+## Function<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_sd22ce4e4c8c14244afb6492e84f92d80"></a>
 
 **EXPLAIN**  shows the execution plan of an SQL statement.
 
@@ -10,32 +10,29 @@ The most critical part of the display is the estimated statement execution cost,
 
 The  **ANALYZE**  option causes the statement to be actually executed, not only planned. The total elapsed time expended within each plan node \(in milliseconds\) and total number of rows it actually returned are added to the display. This is useful for seeing whether the planner's estimates are close to reality.
 
-## Precautions<a name="en-us_topic_0237122163_en-us_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
+## Precautions<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
 
-- The statement is actually executed when the  **ANALYZE**  option is used. If you wish to use  **EXPLAIN ANALYZE**  on an  **INSERT**,  **UPDATE**,  **DELETE**,  **CREATE TABLE AS**, or  **EXECUTE**  statement without letting the statement affect your data, use this approach:
+-   The statement is actually executed when the  **ANALYZE**  option is used. If you want to use  **EXPLAIN**  to analyze  **INSERT**,  **UPDATE**,  **DELETE**,  **CREATE TABLE AS**, or  **EXECUTE**  statement without letting the statement affect your data, use this approach:
+
+    ```
+    START TRANSACTION;
+    EXPLAIN ANALYZE ...;
+    ROLLBACK;
+    ```
+
+-   The  **NODES **and  **NUM\_NODES **parameters are disabled in standalone mode because they are available only in distributed mode. If parameters are used, the following error is reported:
+
+    ```
+    postgres=# create table student(id int, name char(20));
+    CREATE TABLE
+    postgres=# explain (nodes true) insert into student values(5,'a'),(6,'b');
+    ERROR:  unrecognized EXPLAIN option "nodes"
+    postgres=# explain (num_nodes true) insert into student values(5,'a'),(6,'b');
+    ERROR:  unrecognized EXPLAIN option "num_nodes"
+    ```
 
 
-```
-START TRANSACTION;
-EXPLAIN ANALYZE ...;
-ROLLBACK;
-```
-
-- The statement is actually executed when the  **ANALYZE**  option is used.The **DETAIL**, **NODES** and **NUM_NODES** are the parameters which can be used only in distributed mode. Therefore,they are forbidden in the single node mode. If you use these parameters in the single node mode, the error is as follows:
-
-  ```
-  postgres=# create table student(id int, name char(20));
-  CREATE TABLEpostgres=# explain (analyze,detail true)insert into student values(5,'a'),(6,'b');
-  ERROR:  unrecognized EXPLAIN option "detail"
-  postgres=# explain (analyze,node true)insert into student values(5,'a'),(6,'b');
-  ERROR:  unrecognized EXPLAIN option "nodes"
-  postgres=# explain (analyze,num_nodes true)insert into student values(5,'a'),(6,'b');
-  ERROR:  unrecognized EXPLAIN option "num_nodes"
-  ```
-
-  
-
-## Syntax<a name="en-us_topic_0237122163_en-us_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
+## Syntax<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
 
 -   Display the execution plan of an SQL statement, which supports multiple options and has no requirements for the order of options.
 
@@ -67,7 +64,7 @@ ROLLBACK;
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122163_en-us_topic_0059777774_se66550d2d643408ebe3189e751499cd5"></a>
+## Parameter Description<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_se66550d2d643408ebe3189e751499cd5"></a>
 
 -   **statement**
 
@@ -176,7 +173,7 @@ ROLLBACK;
     Prints all relevant information in execution.
 
 
-## Examples<a name="en-us_topic_0237122163_en-us_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
+## Examples<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 
 ```
 -- Create the tpcds.customer_address_p1 table.
@@ -256,7 +253,7 @@ postgres=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHER
 postgres=# DROP TABLE tpcds.customer_address_p1;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122163_en-us_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
+## Helpful Links<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
 [ANALYZE | ANALYSE](analyze-analyse.md)
 

@@ -1,23 +1,26 @@
-# ALTER TABLE PARTITION<a name="EN-US_TOPIC_0242370541"></a>
+# ALTER TABLE PARTITION<a name="EN-US_TOPIC_0289900688"></a>
 
-## Function<a name="en-us_topic_0237122077_en-us_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
+## Function<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
 
 **ALTER TABLE PARTITION**  modifies table partition, including adding, deleting, splitting, merging partitions, and modifying partition attributes.
 
-## Precautions<a name="en-us_topic_0237122077_en-us_topic_0059778761_s5b88399280d4435fbb63e27378589a97"></a>
+## Precautions<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s5b88399280d4435fbb63e27378589a97"></a>
 
 -   The tablespace for the added partition cannot be  **PG\_GLOBAL**.
 -   The name of the added partition must be different from names of existing partitions in the partition table.
 -   The partition key of the added partition must be the same type as that of the partition table. The key value of the added partition must exceed the upper limit of the last partition range.
--   If the number of partitions in the target partition table has reached the maximum \(32767\), partitions cannot be added.
+-   If the number of partitions in the target partitioned table has reached the maximum value, no more partitions can be added. \(The maximum number of partitions in a range partitioned table is 32767, and that in a hash or list partitioned table is 64.\)
 
 -   If a partition table has only one partition, the partition cannot be deleted.
 -   Use  **PARTITION FOR\(\)**  to choose partitions. The number of specified values in the brackets should be the same as the column number in customized partition, and they must be consistent.
 -   The  **Value**  partition table does not support the  **Alter Partition**  operation.
--   Column-store tables and row-store tables cannot be partitioned.
+-   Column-store tables and row-store tables do not support partition splitting.
 -   Partitions cannot be added to an interval partitioned table.
+-   Hash partitioned tables do not support table partition modification.
+-   List partitioned table supports only partition addition or deletion.
+-   Only the partitioned table owner or a user granted with the ALTER permission can run the  **ALTER TABLE PARTITION**  command. The system administrator has this permission by default.
 
-## Syntax<a name="en-us_topic_0237122077_en-us_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
+## Syntax<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
 
 -   Modify the syntax of the table partition.
 
@@ -108,7 +111,7 @@
             >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
             >-   The first new partition key specified by  **partition\_less\_than\_item**  should be greater than that of the previously split partition \(if any\), and the last partition key specified by  **partition\_item\_clause**  should equal that of the partition being split.
             >-   The first new partition key specified by  **partition\_start\_end\_item**  should equal that of the former partition \(if any\), and the last partition key specified by  **partition\_start\_end\_item**  should equal that of the partition being split.
-            >-   **partition\_less\_than\_item**  supports a maximum of 4 partition keys, while  **partition\_start\_end\_item**  supports only one partition key. For details about the supported data types, see  [PARTITION BY RANGE\(parti...](create-table-partition.md#en-us_topic_0237122119_en-us_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455).
+            >-   **partition\_less\_than\_item**  supports a maximum of 4 partition keys, while  **partition\_start\_end\_item**  supports only one partition key. For details about the supported data types, see  [PARTITION BY RANGE\(parti...](en-us_topic_0283136653.md#en-us_topic_0237122119_en-us_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455).
             >-   **partition\_less\_than\_item**  and  **partition\_start\_end\_item**  cannot be used in the same statement.
 
 
@@ -119,7 +122,7 @@
                 [ TABLESPACE tablespacename ]
             ```
 
-        -   The syntax of  **partition\_start\_end\_item**  is as follows. For details about the constraints, see  [partition\_start\_end\_item syntax](create-table-partition.md#en-us_topic_0237122119_li2094151861116).
+        -   The syntax of  **partition\_start\_end\_item**  is as follows. For details about the constraints, see  [partition\_start\_end\_item syntax](en-us_topic_0283136653.md#en-us_topic_0237122119_li2094151861116).
 
             ```
             PARTITION partition_name {
@@ -135,17 +138,30 @@
     -   The  **add\_clause**  syntax is used to add one or more partitions to a specified partitioned table.
 
         ```
-        ADD {partition_less_than_item | partition_start_end_item}
+        ADD {partition_less_than_item | partition_start_end_item| partition_list_item }
         ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   Partitions cannot be added to an interval partitioned table.
+        The syntax of  **partition\_list\_item**  is as follows:
+
+        ```
+        PARTITION partition_name VALUES (list_values_clause) 
+            [ TABLESPACE tablespacename ]
+        ```
+
+        >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >-   **partition\_list\_item**  supports only one partition key. For details about the data types supported by  **partition\_list\_item**, see  [PARTITION BY LIST\(partit...](create-table-partition.md#li78182216171).
+        >-   Interval and hash partitioned tables do not support partition addition.
+
 
     -   The  **drop\_clause**  syntax is used to remove a partition from a specified partitioned table.
 
         ```
         DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
         ```
+
+        >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >-   Hash partitioned table does not support partition deletion.
+        >-   List partitioned table supports sub-partition deletion only by sub-partition name.
 
 
 -   The syntax for modifying the name of a partition is as follows:
@@ -156,7 +172,7 @@
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122077_en-us_topic_0059778761_sff7a5cc103ab41709c6f7249e8d47808"></a>
+## Parameter Description<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_sff7a5cc103ab41709c6f7249e8d47808"></a>
 
 -   **table\_name**
 
@@ -238,11 +254,11 @@
     Value range: a string. It must comply with the naming convention.
 
 
-## Example<a name="en-us_topic_0237122077_en-us_topic_0059778761_s50d0d11ee3074db6911f91d1d9e31fbd"></a>
+## Example<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s50d0d11ee3074db6911f91d1d9e31fbd"></a>
 
-See  [Examples](create-table-partition.md#en-us_topic_0237122119_en-us_topic_0059777586_s43dd49de892344bf89e6f56f17404842)  in  **CREATE TABLE PARTITION**.
+See  [Examples](en-us_topic_0283136653.md#en-us_topic_0237122119_en-us_topic_0059777586_s43dd49de892344bf89e6f56f17404842)  in  **CREATE TABLE PARTITION**.
 
-## Helpful Links<a name="en-us_topic_0237122077_en-us_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
+## Helpful Links<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](create-table-partition.md), and  [DROP TABLE](en-us_topic_0242370616.md)
+[CREATE TABLE PARTITION](en-us_topic_0283136653.md), and  [DROP TABLE](en-us_topic_0283136462.md)
 
