@@ -1,16 +1,16 @@
-# Using gsql to Connect to a Database<a name="EN-US_TOPIC_0242370178"></a>
+# Using gsql to Connect to a Database<a name="EN-US_TOPIC_0289900019"></a>
 
 **gsql**  is a database connection tool running in the CLI provided by openGauss.  **gsql**  provides basic and advanced functions of databases to facilitate user operations. This section describes how to use  **gsql**  to connect to a database. For details about how to use  **gsql**, see "Client Tools \> gsql" in the  _Tool Reference_.
 
-## Precautions<a name="en-us_topic_0237120292_en-us_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
+## Precautions<a name="en-us_topic_0283137029_en-us_topic_0237120292_en-us_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
 
-By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **[session\_timeout](security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**. To disable the timeout setting, set  **[session\_timeout](security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**  to  **0**.
+By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **[session\_timeout](en-us_topic_0283137371.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**. To disable the timeout setting, set  **[session\_timeout](en-us_topic_0283137371.md#en-us_topic_0237124696_en-us_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)**  to  **0**.
 
-## Prerequisites<a name="en-us_topic_0237120292_en-us_topic_0062050379_section2863008216400"></a>
+## Prerequisites<a name="en-us_topic_0283137029_en-us_topic_0237120292_en-us_topic_0062050379_section2863008216400"></a>
 
-Connection information has been confirmed. For details, see  [Confirming Connection Information](confirming-connection-information.md).
+Connection information has been confirmed. For details, see  [Confirming Connection Information](en-us_topic_0283137330.md).
 
-## Procedure<a name="en-us_topic_0237120292_en-us_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>
+## Procedure<a name="en-us_topic_0283137029_en-us_topic_0237120292_en-us_topic_0062050379_sedb32189b5a4410a9a8ac8586f1766a0"></a>
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Connect to a database.
@@ -28,7 +28,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
     If information similar to the following is displayed, the connection succeeds:
 
     ```
-    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
@@ -37,12 +37,12 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
     User  **omm**  is the administrator, and  **DBNAME=\#**  is displayed. If you log in to and connect to the database as a common user,  **DBNAME=\>**  is displayed.
 
-    **Non-SSL connection**  indicates that the database is not connected in SSL mode. If high security is required,  [connect to the database in SSL mode](establishing-secure-tcp-ip-connections-in-ssl-mode.md).
+    **Non-SSL connection**  indicates that the database is not connected in SSL mode. If high security is required,  [connect to the database in SSL mode](en-us_topic_0283137035.md).
 
-3.  Change the password after your first login. The initial password is set manually during openGauss database installation. For details, see "**Installing the openGauss** > **Executing Installation**" in the **Installation Guide**. You need to change the initial password. Suppose you want to change the initial password to  **Mypwd123**. You can use the following command:
+3.  Change the password after your first login. The initial password was set manually during openGauss database installation. For details, see  **Installing openGauss**  \>  **Executing Installation**  in the  _Installation Guide_. Here you need to change the initial password to a new one, for example,  **Mypwd123**, by running the following command:
 
     ```
-    ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
+    postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
     ```
 
 4.  Exit the database.
@@ -52,9 +52,9 @@ Connection information has been confirmed. For details, see  [Confirming Connect
     ```
 
 
-## Remotely Connecting to a Database<a name="en-us_topic_0237120292_en-us_topic_0062050379_section435356016419"></a>
+## Remotely Connecting to a Database<a name="en-us_topic_0283137029_en-us_topic_0237120292_en-us_topic_0062050379_section435356016419"></a>
 
-1.  Configure the remote connection. For details, see  [Configuring a Remote Connection](configuring-a-remote-connection.md).
+1.  Configure the remote connection. For details, see  [Configuring a Remote Connection](en-us_topic_0283137450.md).
 2.  On the client whose IP address is 10.10.0.30, upload the client tool package and configure environment variables for the  **gsql**  client. The openEuler environment is used as an example.
     1.  Log in to the host where the client resides as user  **root**.
     2.  Run the following command to create the  **/tmp/tools**  directory:
@@ -63,20 +63,28 @@ Connection information has been confirmed. For details, see  [Confirming Connect
         mkdir /tmp/tools
         ```
 
-    3.  Obtain the file  **openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz**  from the  software installation package  and upload it to the  **/tmp/tools**  directory.
+    3.  Obtain the file  **openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz**  from the  software installation package  and upload it to the  **/tmp/tools**  directory.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
-        >-   The software package is located where you put it before installation. Set it based on site requirements.  
-        >-   The tool package name may vary in different OSs. Select the tool package suitable for your OS.  
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >-   The software package is located where you put it before installation. Set it based on site requirements.
+        >-   The tool package name may vary in different OSs. Select the tool package suitable for your OS.
 
     4.  Run the following commands to decompress the package:
 
         ```
         cd /tmp/tools
-        tar -zxvf openGauss-1.0.0-openEuler-64bit-Libpq.tar.gz
+        tar -zxvf openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz
         ```
 
-    5.  Set environment variables.
+    5.  Log in to the server where the primary database node is located, and copy the  **bin**  directory in the database installation directory to  **/tmp/tools**  on the client host.
+
+        ```
+        scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
+        ```
+
+        In the preceding command,  **/opt/huawei/install/app**  indicates the  _\{gaussdbAppPath\}_  path configured in the  **clusterconfig.xml**  file, and  **10.10.0.30**  indicates the IP address of the client host.
+
+    6.  Log in to the host where the client is installed and set environment variables.
 
         Run the following command to open the  **\~/.bashrc**  file:
 
@@ -91,7 +99,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
         export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH
         ```
 
-    6.  Run the following command to make the environment variables take effect:
+    7.  Run the following command to make the environment variables take effect:
 
         ```
         source ~/.bashrc
@@ -107,8 +115,8 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
     **postgres**  is the name of the database,  **10.10.0.11**  is the IP address of the server where the primary node of the database resides,  **jack**  is the user of the database,  **8000**  is the port number of the CN, and  **Test@123**  is the password of user  **jack**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   If a machine connected to openGauss is not in the same network segment as openGauss, the IP address specified by  **-h**  should be the value of  **coo.cooListenIp2**  \(application access IP address\) set in Manager.  
-    >-   Do not remotely connect to the database as user  **omm**.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   If a machine connected to openGauss is not in the same network segment as openGauss, the IP address specified by  **-h**  should be the value of  **coo.cooListenIp2**  \(application access IP address\) set in Manager.
+    >-   Do not remotely connect to the database as user  **omm**.
 
 

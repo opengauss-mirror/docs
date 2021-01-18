@@ -1,6 +1,6 @@
-# Creating and Managing Partitioned Tables<a name="EN-US_TOPIC_0242370193"></a>
+# Creating and Managing Partitioned Tables<a name="EN-US_TOPIC_0289899817"></a>
 
-## Background<a name="en-us_topic_0237120307_en-us_topic_0059777517_s028115c5360a4b5794e150c3a648560e"></a>
+## Background<a name="en-us_topic_0283136996_en-us_topic_0237120307_en-us_topic_0059777517_s028115c5360a4b5794e150c3a648560e"></a>
 
 openGauss supports range partitioned tables.
 
@@ -15,7 +15,7 @@ A partitioned table has the following advantages over an ordinary table:
 
 To convert an ordinary table to a partitioned table, you need to create a partitioned table and import data to it from the ordinary table. When you design tables, plan whether to use partitioned tables based on service requirements.
 
-## Procedure<a name="en-us_topic_0237120307_en-us_topic_0059777517_s4be38594665b41d58e8aa02b1aa1f4e2"></a>
+## Procedure<a name="en-us_topic_0283136996_en-us_topic_0237120307_en-us_topic_0059777517_s4be38594665b41d58e8aa02b1aa1f4e2"></a>
 
 Perform the following operations on range partitioned tables.
 
@@ -75,8 +75,8 @@ Perform the following operations on range partitioned tables.
     CREATE TABLE
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >You are advised to create a maximum of 1000 column-store partitioned tables.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >You are advised to create a maximum of 1000 column-store partitioned tables.
 
 -   Inserting data
 
