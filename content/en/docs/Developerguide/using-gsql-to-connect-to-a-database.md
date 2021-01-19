@@ -63,7 +63,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
         mkdir /tmp/tools
         ```
 
-    3.  Obtain the file  **openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz**  from the  software installation package  and upload it to the  **/tmp/tools**  directory.
+    3.  Obtain the file  **openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz**  from the  software installation package  and upload it to the  **/tmp/tools**  directory.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
         >-   The software package is located where you put it before installation. Set it based on site requirements.
@@ -73,7 +73,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
         ```
         cd /tmp/tools
-        tar -zxvf openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz
+        tar -zxvf openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz
         ```
 
     5.  Log in to the server where the primary database node is located, and copy the  **bin**  directory in the database installation directory to  **/tmp/tools**  on the client host.

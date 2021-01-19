@@ -92,7 +92,7 @@
     >The search path can be altered at run time by running the following command:  
     >```  
     >SET search_path TO schema [, schema, ...]  
-    >```  
+    >```
 
 -   current\_user
 
@@ -383,7 +383,7 @@
     postgres=# SELECT version();
                                                                     version                                                                
     ---------------------------------------------------------------------------------------------------------------------------------------
-     PostgreSQL 9.2.4 (openGauss-1.0.0 build 66e54e4d) compiled at 2020-01-02 13:02:26 commit 7218 last mr 10175  on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 8.2.0, 64-bit
+     PostgreSQL 9.2.4 (openGauss-x.x.x build 66e54e4d) compiled at 2020-12-02 13:02:26 commit 7218 last mr 10175  on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 8.2.0, 64-bit
     
     (1 row)
     ```

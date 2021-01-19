@@ -21,7 +21,7 @@ openGauss is running properly.
     If the following information is displayed, the connection has been established:
 
     ```
-    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
+    gsql ((openGauss x.x.x build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
@@ -70,7 +70,7 @@ openGauss is running properly.
     ```
     postgres=#  \q
     gsql -d db_tpcc -p 8000 -U joe -W Bigdata@123
-    gsql ((openGauss 1.0.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
+    gsql ((openGauss x.x.x build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
      
