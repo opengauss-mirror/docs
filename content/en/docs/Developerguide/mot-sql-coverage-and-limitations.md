@@ -14,6 +14,7 @@ The following features are not supported by MOT –
 -   LOCAL memory is limited to 1 GB. A transaction can only change data of less than 1 GB.
 -   Capacity \(Data+Index\) is limited to available memory. Anti-caching + Data Tiering will be available in the future.
 -   No full-text search index.
+-   Do not support MOT.
 
 In addition, the following are detailed lists of various general limitations of MOT tables, MOT indexes, Query and DML syntax and the features and limitations of Query Native Compilation.
 
