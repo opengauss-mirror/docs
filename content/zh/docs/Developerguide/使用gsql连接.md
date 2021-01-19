@@ -94,7 +94,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
         mkdir /tmp/tools
         ```
 
-    3.  获取软件安装包中的“openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
+    3.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   软件包相对位置为安装时所放位置，根据实际情况填写。
@@ -104,7 +104,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
         ```
         cd /tmp/tools
-        tar -zxvf openGauss-1.0.1-openEuler-64bit-Libpq.tar.gz
+        tar -zxvf openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz
         ```
 
     5.  登录数据库主节点所在的服务器，拷贝数据库安装目录下的bin目录到客户端主机的“/tmp/tools”路径下。

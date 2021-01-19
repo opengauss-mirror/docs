@@ -346,7 +346,7 @@ headless: true
 				-   [Exporting All Databases]({{< relref "./docs/Developerguide/exporting-all-databases-6.md" >}})
 				-   [Exporting Global Objects]({{< relref "./docs/Developerguide/exporting-global-objects.md" >}})
 			-   [Data Export By a User Without Required Permissions]({{< relref "./docs/Developerguide/data-export-by-a-user-without-required-permissions.md" >}})
-	-   [AI Features]({{< relref "./docs/Developerguide/ai-features.md" >}})
+	-   [AI Features]({{< relref "./docs/Developerguide/ai-features-1.md" >}})
 		-   [Predictor: AI Query Time Forecasting]({{< relref "./docs/Developerguide/predictor-ai-query-time-forecasting.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview-40.md" >}})
 			-   [Environment Deployment ]({{< relref "./docs/Developerguide/environment-deployment-20.md" >}})
