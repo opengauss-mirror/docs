@@ -1,6 +1,6 @@
-# CREATE ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0283137345"></a>
+# CREATE ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0289901001"></a>
 
-## Function<a name="en-us_topic_0237122109_section196521854173211"></a>
+## Function<a name="en-us_topic_0283137345_en-us_topic_0237122109_section196521854173211"></a>
 
 **CREATE ROW LEVEL SECURITY POLICY**  creates a row-level access control policy for a table.
 
@@ -14,7 +14,7 @@ Row-level access control policies can be applied to specified operations \(**SEL
 
 Row-level access control policies can be applied to a specified user \(role\) or to all users \(**PUBLIC**\). For a new row-level access control policy, the default value  **PUBLIC**  will be used if you do not specify the user that will be affected.
 
-## Precautions<a name="en-us_topic_0237122109_section12765201893310"></a>
+## Precautions<a name="en-us_topic_0283137345_en-us_topic_0237122109_section12765201893310"></a>
 
 -   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, unlogged tables, and hash tables.
 -   Row-level access control policies cannot be defined for foreign tables and local temporary tables.
@@ -23,7 +23,7 @@ Row-level access control policies can be applied to a specified user \(role\) or
 -   System administrators are not affected by row-level access control policies and can view all data in a table.
 -   Tables queried by using SQL statements, views, functions, and stored procedures are affected by row-level access control policies.
 
-## Syntax<a name="en-us_topic_0237122109_section16798192723415"></a>
+## Syntax<a name="en-us_topic_0283137345_en-us_topic_0237122109_section16798192723415"></a>
 
 ```
 CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
@@ -33,7 +33,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
      USING ( using_expression )
 ```
 
-## Parameter Description<a name="en-us_topic_0237122109_section11851526346"></a>
+## Parameter Description<a name="en-us_topic_0283137345_en-us_topic_0237122109_section11851526346"></a>
 
 -   **policy\_name**
 
@@ -45,15 +45,15 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
 -   **PERMISSIVE | RESTRICTIVE**
 
-    PERMISSIVE specifies the row access control strategy as a permissive strategy. The conditions of the tolerance strategy are spliced by OR expressions.
+    **PERMISSIVE**  enables the permissive policy for row-level access control. The conditions of the permissive policy are joined through the OR expression.
 
-    RESTRICTIVE specifies the row access control strategy as a restrictive strategy. The conditions of the restrictive strategy are spliced with AND expressions. The splicing method is as follows:
+    **RESTRICTIVE**  enables the restrictive policy for row-level access control. The conditions of the restrictive policy are joined through the AND expression. The join methods are as follows:
 
     ```
-(using_expression_permissive_1 OR using_expression_permissive_2 ...) AND (using_expression_restrictive_1 AND using_expression_restrictive_2 ...)
+    (using_expression_permissive_1 OR using_expression_permissive_2 ...) AND (using_expression_restrictive_1 AND using_expression_restrictive_2 ...)
     ```
 
-    The default value is PERMISSIVE.
+    The default value is  **PERMISSIVE**.
 
 -   **command**
 
@@ -69,69 +69,69 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     **Table  1**  Relationship between row-level access control policies and SQL statements
 
-    <a name="en-us_topic_0237122109_table198047342176"></a>
-    <table><thead align="left"><tr id="en-us_topic_0237122109_row14804134141720"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="en-us_topic_0237122109_p15480134519170"><a name="en-us_topic_0237122109_p15480134519170"></a><a name="en-us_topic_0237122109_p15480134519170"></a><strong id="en-us_topic_0237122109_b8481194541719"><a name="en-us_topic_0237122109_b8481194541719"></a><a name="en-us_topic_0237122109_b8481194541719"></a>Command</strong></p>
+    <a name="en-us_topic_0283137345_en-us_topic_0237122109_table198047342176"></a>
+    <table><thead align="left"><tr id="en-us_topic_0283137345_en-us_topic_0237122109_row14804134141720"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="en-us_topic_0283137345_en-us_topic_0237122109_p15480134519170"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p15480134519170"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p15480134519170"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b8481194541719"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b8481194541719"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b8481194541719"></a>Command</strong></p>
     </th>
-    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.2"><p id="en-us_topic_0237122109_p68052034131718"><a name="en-us_topic_0237122109_p68052034131718"></a><a name="en-us_topic_0237122109_p68052034131718"></a><strong id="en-us_topic_0237122109_b3812145191717"><a name="en-us_topic_0237122109_b3812145191717"></a><a name="en-us_topic_0237122109_b3812145191717"></a>SELECT/ALL policy</strong></p>
+    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.2"><p id="en-us_topic_0283137345_en-us_topic_0237122109_p68052034131718"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p68052034131718"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p68052034131718"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b3812145191717"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b3812145191717"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b3812145191717"></a>SELECT/ALL policy</strong></p>
     </th>
-    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.3"><p id="en-us_topic_0237122109_p1780563415176"><a name="en-us_topic_0237122109_p1780563415176"></a><a name="en-us_topic_0237122109_p1780563415176"></a><strong id="en-us_topic_0237122109_b17590205616174"><a name="en-us_topic_0237122109_b17590205616174"></a><a name="en-us_topic_0237122109_b17590205616174"></a>UPDATE/ALL policy</strong></p>
+    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.3"><p id="en-us_topic_0283137345_en-us_topic_0237122109_p1780563415176"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1780563415176"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1780563415176"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b17590205616174"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b17590205616174"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b17590205616174"></a>UPDATE/ALL policy</strong></p>
     </th>
-    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="en-us_topic_0237122109_p999710011189"><a name="en-us_topic_0237122109_p999710011189"></a><a name="en-us_topic_0237122109_p999710011189"></a><strong id="en-us_topic_0237122109_b2099717014181"><a name="en-us_topic_0237122109_b2099717014181"></a><a name="en-us_topic_0237122109_b2099717014181"></a>DELETE/ALL policy</strong></p>
+    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="en-us_topic_0283137345_en-us_topic_0237122109_p999710011189"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p999710011189"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p999710011189"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b2099717014181"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b2099717014181"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b2099717014181"></a>DELETE/ALL policy</strong></p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="en-us_topic_0237122109_row8805153420177"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122109_p198427121816"><a name="en-us_topic_0237122109_p198427121816"></a><a name="en-us_topic_0237122109_p198427121816"></a><strong id="en-us_topic_0237122109_b39847712186"><a name="en-us_topic_0237122109_b39847712186"></a><a name="en-us_topic_0237122109_b39847712186"></a>SELECT</strong></p>
+    <tbody><tr id="en-us_topic_0283137345_en-us_topic_0237122109_row8805153420177"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p198427121816"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p198427121816"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p198427121816"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b39847712186"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b39847712186"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b39847712186"></a>SELECT</strong></p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122109_p11691414151820"><a name="en-us_topic_0237122109_p11691414151820"></a><a name="en-us_topic_0237122109_p11691414151820"></a>Existing row</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p11691414151820"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p11691414151820"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p11691414151820"></a>Existing row</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122109_p2069141491810"><a name="en-us_topic_0237122109_p2069141491810"></a><a name="en-us_topic_0237122109_p2069141491810"></a>No</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p2069141491810"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p2069141491810"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p2069141491810"></a>No</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122109_p96911141181"><a name="en-us_topic_0237122109_p96911141181"></a><a name="en-us_topic_0237122109_p96911141181"></a>No</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0237122109_row88060345170"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122109_p119842715181"><a name="en-us_topic_0237122109_p119842715181"></a><a name="en-us_topic_0237122109_p119842715181"></a><strong id="en-us_topic_0237122109_b179841175185"><a name="en-us_topic_0237122109_b179841175185"></a><a name="en-us_topic_0237122109_b179841175185"></a>SELECT FOR UPDATE/SHARE</strong></p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122109_p18691161415188"><a name="en-us_topic_0237122109_p18691161415188"></a><a name="en-us_topic_0237122109_p18691161415188"></a>Existing row</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122109_p96921114181819"><a name="en-us_topic_0237122109_p96921114181819"></a><a name="en-us_topic_0237122109_p96921114181819"></a>Existing row</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122109_p9692814151819"><a name="en-us_topic_0237122109_p9692814151819"></a><a name="en-us_topic_0237122109_p9692814151819"></a>No</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p96911141181"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p96911141181"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p96911141181"></a>No</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0237122109_row28066347171"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122109_p99841079188"><a name="en-us_topic_0237122109_p99841079188"></a><a name="en-us_topic_0237122109_p99841079188"></a><strong id="en-us_topic_0237122109_b119841971185"><a name="en-us_topic_0237122109_b119841971185"></a><a name="en-us_topic_0237122109_b119841971185"></a>UPDATE</strong></p>
+    <tr id="en-us_topic_0283137345_en-us_topic_0237122109_row88060345170"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p119842715181"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p119842715181"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p119842715181"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b179841175185"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b179841175185"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b179841175185"></a>SELECT FOR UPDATE/SHARE</strong></p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122109_p1769241415186"><a name="en-us_topic_0237122109_p1769241415186"></a><a name="en-us_topic_0237122109_p1769241415186"></a>No</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p18691161415188"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p18691161415188"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p18691161415188"></a>Existing row</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122109_p46921714201817"><a name="en-us_topic_0237122109_p46921714201817"></a><a name="en-us_topic_0237122109_p46921714201817"></a>Existing row</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p96921114181819"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p96921114181819"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p96921114181819"></a>Existing row</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122109_p126921514111820"><a name="en-us_topic_0237122109_p126921514111820"></a><a name="en-us_topic_0237122109_p126921514111820"></a>No</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0237122109_row7807434141711"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122109_p098513761813"><a name="en-us_topic_0237122109_p098513761813"></a><a name="en-us_topic_0237122109_p098513761813"></a><strong id="en-us_topic_0237122109_b189853718182"><a name="en-us_topic_0237122109_b189853718182"></a><a name="en-us_topic_0237122109_b189853718182"></a>UPDATE RETURNING</strong></p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122109_p8693191411810"><a name="en-us_topic_0237122109_p8693191411810"></a><a name="en-us_topic_0237122109_p8693191411810"></a>Existing row</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122109_p11693114171815"><a name="en-us_topic_0237122109_p11693114171815"></a><a name="en-us_topic_0237122109_p11693114171815"></a>Existing row</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122109_p1869315142184"><a name="en-us_topic_0237122109_p1869315142184"></a><a name="en-us_topic_0237122109_p1869315142184"></a>No</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p9692814151819"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p9692814151819"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p9692814151819"></a>No</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0237122109_row980723420178"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122109_p59855771815"><a name="en-us_topic_0237122109_p59855771815"></a><a name="en-us_topic_0237122109_p59855771815"></a><strong id="en-us_topic_0237122109_b1298517171813"><a name="en-us_topic_0237122109_b1298517171813"></a><a name="en-us_topic_0237122109_b1298517171813"></a>DELETE</strong></p>
+    <tr id="en-us_topic_0283137345_en-us_topic_0237122109_row28066347171"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p99841079188"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p99841079188"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p99841079188"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b119841971185"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b119841971185"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b119841971185"></a>UPDATE</strong></p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122109_p869361491810"><a name="en-us_topic_0237122109_p869361491810"></a><a name="en-us_topic_0237122109_p869361491810"></a>No</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p1769241415186"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1769241415186"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1769241415186"></a>No</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122109_p1369451421818"><a name="en-us_topic_0237122109_p1369451421818"></a><a name="en-us_topic_0237122109_p1369451421818"></a>No</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p46921714201817"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p46921714201817"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p46921714201817"></a>Existing row</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122109_p1269413146181"><a name="en-us_topic_0237122109_p1269413146181"></a><a name="en-us_topic_0237122109_p1269413146181"></a>Existing row</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p126921514111820"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p126921514111820"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p126921514111820"></a>No</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0237122109_row5809133491710"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237122109_p1698557101810"><a name="en-us_topic_0237122109_p1698557101810"></a><a name="en-us_topic_0237122109_p1698557101810"></a><strong id="en-us_topic_0237122109_b119851970188"><a name="en-us_topic_0237122109_b119851970188"></a><a name="en-us_topic_0237122109_b119851970188"></a>DELETE RETURNING</strong></p>
+    <tr id="en-us_topic_0283137345_en-us_topic_0237122109_row7807434141711"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p098513761813"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p098513761813"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p098513761813"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b189853718182"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b189853718182"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b189853718182"></a>UPDATE RETURNING</strong></p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237122109_p2694171421811"><a name="en-us_topic_0237122109_p2694171421811"></a><a name="en-us_topic_0237122109_p2694171421811"></a>Existing row</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p8693191411810"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p8693191411810"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p8693191411810"></a>Existing row</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237122109_p1269401481815"><a name="en-us_topic_0237122109_p1269401481815"></a><a name="en-us_topic_0237122109_p1269401481815"></a>No</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p11693114171815"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p11693114171815"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p11693114171815"></a>Existing row</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237122109_p19694121417189"><a name="en-us_topic_0237122109_p19694121417189"></a><a name="en-us_topic_0237122109_p19694121417189"></a>Existing row</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p1869315142184"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1869315142184"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1869315142184"></a>No</p>
+    </td>
+    </tr>
+    <tr id="en-us_topic_0283137345_en-us_topic_0237122109_row980723420178"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p59855771815"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p59855771815"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p59855771815"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b1298517171813"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b1298517171813"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b1298517171813"></a>DELETE</strong></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p869361491810"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p869361491810"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p869361491810"></a>No</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p1369451421818"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1369451421818"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1369451421818"></a>No</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p1269413146181"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1269413146181"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1269413146181"></a>Existing row</p>
+    </td>
+    </tr>
+    <tr id="en-us_topic_0283137345_en-us_topic_0237122109_row5809133491710"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p1698557101810"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1698557101810"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1698557101810"></a><strong id="en-us_topic_0283137345_en-us_topic_0237122109_b119851970188"><a name="en-us_topic_0283137345_en-us_topic_0237122109_b119851970188"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_b119851970188"></a>DELETE RETURNING</strong></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p2694171421811"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p2694171421811"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p2694171421811"></a>Existing row</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p1269401481815"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1269401481815"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p1269401481815"></a>No</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137345_en-us_topic_0237122109_p19694121417189"><a name="en-us_topic_0283137345_en-us_topic_0237122109_p19694121417189"></a><a name="en-us_topic_0283137345_en-us_topic_0237122109_p19694121417189"></a>Existing row</p>
     </td>
     </tr>
     </tbody>
@@ -154,7 +154,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
     The expression cannot contain aggregate functions or window functions. In the statement rewriting phase of a query, if row-level access control for a data table is enabled, the expressions that meet the specified conditions will be added to the plan tree. The expression is calculated for each tuple in the data table. For  **SELECT**,  **UPDATE**, and  **DELETE**, row data is visible to the current user only when the return value of the expression is  **TRUE**. If the expression returns  **FALSE**, the tuple is invisible to the current user. In this case, the user cannot view the tuple through the  **SELECT**  statement, update the tuple through the  **UPDATE**  statement, or delete the tuple through the  **DELETE**  statement.
 
 
-## Example:<a name="en-us_topic_0237122109_section17979101023515"></a>
+## Example:<a name="en-us_topic_0283137345_en-us_topic_0237122109_section17979101023515"></a>
 
 ```
 -- Create user alice.
@@ -226,7 +226,7 @@ postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
  
 ```
 
-## Helpful Links<a name="en-us_topic_0237122109_section1426016489355"></a>
+## Helpful Links<a name="en-us_topic_0283137345_en-us_topic_0237122109_section1426016489355"></a>
 
-[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md),  [ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)
+[DROP ROW LEVEL SECURITY POLICY](en-us_topic_0283136715.md),  [ALTER ROW LEVEL SECURITY POLICY](en-us_topic_0283137062.md)
 

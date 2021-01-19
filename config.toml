@@ -8,7 +8,7 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
 
 # Book configuration
 disablePathToLower = true
-enableGitInfo = true
+enableGitInfo = false
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 

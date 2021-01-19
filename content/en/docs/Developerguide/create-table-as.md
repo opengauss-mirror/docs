@@ -1,6 +1,6 @@
-# CREATE TABLE AS<a name="EN-US_TOPIC_0242370582"></a>
+# CREATE TABLE AS<a name="EN-US_TOPIC_0289900336"></a>
 
-## Function<a name="en-us_topic_0237122118_en-us_topic_0059777601_sf40d8ce0a2af4856a44d883e623632b9"></a>
+## Function<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sf40d8ce0a2af4856a44d883e623632b9"></a>
 
 **CREATE TABLE AS**  creates a table from the results of a query.
 
@@ -8,12 +8,12 @@ It creates a table and fills it with data obtained using  **SELECT**. The table 
 
 **CREATE TABLE AS**  queries a source table once and writes the data in a new table. The result in the query view changes with the source table. In contrast, the view re-computes and defines its  **SELECT**  statement at each query.
 
-## Precautions<a name="en-us_topic_0237122118_en-us_topic_0059777601_s0379750211b249b5a2831f6cdf27d110"></a>
+## Precautions<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_s0379750211b249b5a2831f6cdf27d110"></a>
 
 -   This statement cannot be used to create a partitioned table.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the disk files that are created before the last automatic clearance and whose size is not 0. This problem seldom occurs and does not affect system running of the database.
 
-## Syntax<a name="en-us_topic_0237122118_en-us_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
+## Syntax<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
 
 ```
 CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
@@ -26,7 +26,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
     [ WITH [ NO ] DATA ];
 ```
 
-## Parameter Description<a name="en-us_topic_0237122118_en-us_topic_0059777601_sb8ea2c52307445c9934740862f4ecc85"></a>
+## Parameter Description<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sb8ea2c52307445c9934740862f4ecc85"></a>
 
 -   **UNLOGGED**
 
@@ -48,13 +48,9 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
     A local temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >
     >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
-    >
     >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
-    >
     >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**.
-    >
     >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
 
 -   **table\_name**
@@ -73,13 +69,13 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
 
     Specifies an optional storage parameter for a table or an index. See details of parameters below.
 
-    -   **FILLFACTOR**
+    -   FILLFACTOR
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter is only valid for row–store tables.
 
         Value range: 10–100
 
-    -   **ORIENTATION**
+    -   ORIENTATION
 
         Value range:
 
@@ -87,7 +83,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
 
         **ROW**  \(default value\): The data will be stored in rows.
 
-    -   **COMPRESSION**
+    -   COMPRESSION
 
         Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded.
 
@@ -131,7 +127,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
     Specifies whether the data produced by the query should be copied to the new table. By default, the data will be copied. If the value  **NO**  is used, only the table structure will be copied.
 
 
-## Example:<a name="en-us_topic_0237122118_en-us_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
+## Example:<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
 
 ```
 -- Create the tpcds.store_returns table.
@@ -154,7 +150,7 @@ postgres=# DROP TABLE tpcds.store_returns_t2 ;
 postgres=# DROP TABLE tpcds.store_returns;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122118_en-us_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
+## Helpful Links<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
 
-[CREATE TABLE](en-us_topic_0242370581.md)  and  [SELECT](en-us_topic_0242370648.md)
+[CREATE TABLE](en-us_topic_0283137629.md)  and  [SELECT](en-us_topic_0283136463.md)
 

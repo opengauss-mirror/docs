@@ -4,7 +4,7 @@
 
 **gs\_probackup**  is a tool used to manage openGauss database backup and restoration. It periodically backs up the openGauss instances so that the server can be restored when the database is faulty.
 
--   It supports the physical backup of a standalone database or a primary database node in a cluster.
+-   It supports the physical backup of a standalone database or a primary node in a database.
 -   It supports the backup of contents in external directories, such as script files, configuration files, log files, and dump files.
 -   It supports incremental backup, periodic backup, and remote backup.
 -   It supports settings on the backup retention policy.
@@ -197,7 +197,16 @@
 
 -   --status=_backup\_status_
 
-    Deletes all backups in a specified status.
+    Deletes all backups in a specified state. The states are as follows:
+
+    -   **OK**: Backup is complete and valid.
+    -   **DONE**: Backup has been completed but not verified.
+    -   **RUNNING**: Backup is in progress.
+    -   **MERGING**: Backups are being merged.
+    -   **DELETING**: Backup is being deleted.
+    -   **CORRUPT**: Some backup files are damaged.
+    -   **ERROR**: Backup fails due to an unexpected error.
+    -   **ORPHAN**: Backup is invalid because one of its parent backups is corrupted or lost.
 
 -   -j  _threads\_num_, --threads=_threads\_num_
 
@@ -304,8 +313,8 @@
 
 **Recovery objective-related parameters \(recovery\_options\)**
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-Currently, continuous WAL archiving PITR cannot be configured. Therefore, parameter usage is restricted as follows:
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Currently, continuous WAL archiving PITR cannot be configured. Therefore, parameter usage is restricted as follows:
 
 -   --recovery-target-lsn=_lsn_
 
@@ -334,8 +343,8 @@ Currently, continuous WAL archiving PITR cannot be configured. Therefore, parame
 
 **Retention-related parameters \(retention\_options\)**
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-The following parameters can be used together with the  **backup**  and  **delete**  commands.   
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The following parameters can be used together with the  **backup**  and  **delete**  commands.
 
 -   --retention-redundancy=_retention-redundancy_
 
@@ -374,8 +383,8 @@ The following parameters can be used together with the  **backup**  and  **delet
 
 **Fixed backup-related parameters \(pinning\_options\)**
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-To exclude certain backups from the established retention policy, you can use the following parameters with the  **backup**  and  **set-backup**  commands.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>To exclude certain backups from the established retention policy, you can use the following parameters with the  **backup**  and  **set-backup**  commands.
 
 -   --ttl=_interval_
 
@@ -449,8 +458,8 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
 **Connection-related parameters \(connection\_options\)**
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-The following parameters can be used together with the  **backup**  command.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The following parameters can be used together with the  **backup**  command.
 
 -   -d  _dbname_, --pgdatabase=_dbname_
 
@@ -491,8 +500,8 @@ The following parameters can be used together with the  **backup**  command.
 
 **Compression-related parameters \(compression\_options\)**
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-The following parameters can be used together with the  **backup**  command.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The following parameters can be used together with the  **backup**  command.
 
 -   --compress-algorithm=_compress-algorithm_
 
@@ -520,8 +529,8 @@ The following parameters can be used together with the  **backup**  command.
 
 **Remote mode-related parameters \(remote\_options\)**
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-The following are parameters that remotely run gs\_probackup through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The following are parameters that remotely run gs\_probackup through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.
 
 -   --remote-proto=_protocol_
 
@@ -560,6 +569,19 @@ The following are parameters that remotely run gs\_probackup through SSH, and ca
     Specifies the character string of the SSH command line parameter.
 
     Example: --ssh-options='-c cipher\_spec -F configfile'
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  _archive-timeout_  seconds \(300 seconds is set by default\).
+    >-   If the LSN of the standby server is different from that of the primary server, the database continuously updates the following log information. In this case, you need to rebuild the standby server.
+    >```
+    >LOG: walsender thread shut down
+    >LOG: walsender thread started
+    >LOG: received wal replication command: IDENTIFY_VERSION
+    >LOG: received wal replication command: IDENTIFY_MODE
+    >LOG: received wal replication command: IDENTIFY_SYSTEM
+    >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
+    >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
+    >```
 
 
 ## Backup Process<a name="en-us_topic_0287276008_section1735727125216"></a>

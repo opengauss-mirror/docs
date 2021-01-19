@@ -1,18 +1,18 @@
-# SELECT<a name="EN-US_TOPIC_0242370648"></a>
+# SELECT<a name="EN-US_TOPIC_0289900232"></a>
 
-## Function<a name="en-us_topic_0237122184_en-us_topic_0059777449_s65596fb5f1d44a428e41dd508d2044a7"></a>
+## Function<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_s65596fb5f1d44a428e41dd508d2044a7"></a>
 
 **SELECT**  retrieves data from a table or view.
 
 Serving as an overlaid filter for a database table,  **SELECT**  filters required data from the table using SQL keywords.
 
-## Precautions<a name="en-us_topic_0237122184_en-us_topic_0059777449_s42c37979749545719ac9114594f45d93"></a>
+## Precautions<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_s42c37979749545719ac9114594f45d93"></a>
 
 -   You must have the  **SELECT**  permission on each field used in the SELECT statement.
 
 -   **UPDATE**  permission is required when  **FOR UPDATE**  or  **FOR SHARE**  is used.
 
-## Syntax<a name="en-us_topic_0237122184_en-us_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
+## Syntax<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
 -   Query data.
 
@@ -33,15 +33,15 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ {FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->In condition and expression, you can use the aliases of expressions in  **targetlist**  in compliance with the following rules:  
->-   Reference only within the same level.  
->-   Only reference aliases in  **targetlist**.  
->-   Reference a prior expression in a subsequent expression.  
->-   The  **volatile**  function cannot be used.  
->-   The  **Window**  function cannot be used.  
->-   Aliases cannot be referenced in the  **join on**  condition.  
->-   An error is reported if  **targetlist**  contains multiple referenced aliases.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>In condition and expression, you can use the aliases of expressions in  **targetlist**  in compliance with the following rules:
+>-   Reference only within the same level.
+>-   Only reference aliases in  **targetlist**.
+>-   Reference a prior expression in a subsequent expression.
+>-   The  **volatile**  function cannot be used.
+>-   The  **Window**  function cannot be used.
+>-   Aliases cannot be referenced in the  **join on**  condition.
+>-   An error is reported if  **targetlist**  contains multiple referenced aliases.
 
 -   The subquery  **with\_query**  is as follows:
 
@@ -80,8 +80,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
             FOR (  partition_value [, ...] ) }
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The specified partition applies only to ordinary tables.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The specified partition applies only to ordinary tables.
 
 -   The sorting order  **nlssort\_expression\_clause**  is as follows:
 
@@ -96,7 +96,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
+## Parameter Description<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
 -   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
@@ -112,7 +112,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **plan\_hint**  clause
 
-    Follows the  **SELECT**  keyword in the /\*+<_Plan hint_\> \*/ format. It is used to optimize the plan of a  **SELECT**  statement block. 
+    Follows the  **SELECT**  keyword in the /\*+<_Plan hint_\> \*/ format. It is used to optimize the plan of a  **SELECT**  statement block. For details, see  [Hint-based Tuning](en-us_topic_0283136804.md).
 
 -   **ALL**
 
@@ -124,14 +124,14 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Retains only the first row in the set of rows that have the same result calculated on the given expression.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >**DISTINCT ON**  expression is explained with the same rule of  **ORDER BY**. Unless you use  **ORDER BY**  to guarantee that the required row appears first, you cannot know what the first row is.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >**DISTINCT ON**  expression is explained with the same rule of  **ORDER BY**. Unless you use  **ORDER BY**  to guarantee that the required row appears first, you cannot know what the first row is.
 
 -   **SELECT list**
 
     Specifies the name of a column in the table to be queried. The value can be a part of the column name or all of the column names. The wildcard \(\*\) is used to represent the column name.
 
-    You may use the  **AS output\_name**  clause to give an alias for an output column. The alias is used for the displaying of the output column.
+    You may use the  **AS output\_name**  clause to give an alias for an output column. The alias is used for the displaying of the output column. The name, value, and type keywords can be used as column aliases.
 
     Column names can be expressed in the following formats:
 
@@ -216,8 +216,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
             Is equivalent to  **INNER JOIN ON \(TRUE\)**, which means no rows are removed by qualification. These join types are just a notational convenience, since they do nothing you could not do with plain  **FROM**  and  **WHERE**.
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:**   
-            >For the  **INNER**  and  **OUTER**  join types, a join condition must be specified, namely exactly one of  **NATURAL ON**,  **join\_condition**, or  **USING \(join\_column \[, ...\]\)**. For  **CROSS JOIN**, none of these clauses can appear.  
+            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >For the  **INNER**  and  **OUTER**  join types, a join condition must be specified, namely exactly one of  **NATURAL ON**,  **join\_condition**, or  **USING \(join\_column \[, ...\]\)**. For  **CROSS JOIN**, none of these clauses can appear.
 
 
         **CROSS JOIN**  and  **INNER JOIN**  produce a simple Cartesian product, the same result as you get from listing the two items at the top level of  **FROM**.
@@ -256,8 +256,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     9.  The operator \(+\) can appear only in the following expressions: comparison, NOT, ANY, ALL, IN, NULLIF, IS DISTINCT FROM, and IS OF. It is not allowed in other types of expressions. In addition, these expressions cannot be connected through  **AND**  or  **OR**.
     10. The operator \(+\) can be used to convert a table join only to a left or right outer join, instead of a full join. That is, the operator \(+\) cannot be specified on both tables of an expression.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >For the  **WHERE**  clause, if special character  **%**,  **\_**, or  **\\**  is queried in  **LIKE**, add the slash  **\\**  before each character.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >For the  **WHERE**  clause, if special character  **%**,  **\_**, or  **\\**  is queried in  **LIKE**, add the slash  **\\**  before each character.
 
 -   **GROUP BY clause**
 
@@ -271,8 +271,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
         Another extension to the  **GROUP BY**  clause. It allows users to specify multiple  **GROUP BY**  clauses. This improves efficiency by trimming away unnecessary data. After you specify the set of groups that you want to create using a  **GROUPING SETS**  expression within a  **GROUP BY**  clause, the database does not need to compute a whole  **ROLLUP**  or  **CUBE**.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >If the  **SELECT**  list expression quotes some ungrouped fields and no aggregate function is used, an error is displayed. This is because multiple values may be returned for ungrouped fields.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >If the  **SELECT**  list expression quotes some ungrouped fields and no aggregate function is used, an error is displayed. This is because multiple values may be returned for ungrouped fields.
 
 -   **HAVING clause**
 
@@ -308,8 +308,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     UNBOUNDED FOLLOWING
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >For the query of column storage table, only  **row\_number**  window function is supported, and  **frame\_clause**  is not supported.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >For the query of column storage table, only  **row\_number**  window function is supported, and  **frame\_clause**  is not supported.
 
 -   **UNION clause**
 
@@ -371,9 +371,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   If they are equal according to all specified expressions, they are returned in an implementation-dependent order.
     -   Columns sorted by  **ORDER BY**  must be contained in the result retrieved by  **SELECT**.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >To support Chinese pinyin order or case-insensitive order, specify the  **UTF-8**  or  **GBK**  encoding mode during database initiation. The statements are as follows:  
-    >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8 or initdb –E GBK –D ../data –locale=zh\_CN.GBK  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >To support Chinese pinyin order or case-insensitive order, specify the  **UTF-8**  or  **GBK**  encoding mode during database initiation. The statements are as follows:
+    >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8 or initdb –E GBK –D ../data –locale=zh\_CN.GBK
 
 -   **LIMIT clause**
 
@@ -411,8 +411,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     If the same table is mentioned \(or implicitly affected\) by both  **FOR UPDATE**  and  **FOR SHARE**  clauses, it is processed as  **FOR UPDATE**. Similarly, a table is processed as  **NOWAIT**  if that is specified in any of the clauses affecting it.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >The query of column-store tables does not support  **for update/share**.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >The query of column-store tables does not support  **for update/share**.
 
 -   **NLS\_SORT**
 
@@ -428,7 +428,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     Queries data in the specified partition in a partitioned table.
 
 
-## Examples<a name="en-us_topic_0237122184_en-us_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>
+## Examples<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>
 
 ```
 -- Obtain the temp_t temporary table by a subquery and query all records in this table.

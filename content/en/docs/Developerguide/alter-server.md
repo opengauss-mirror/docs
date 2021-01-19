@@ -1,14 +1,14 @@
-# ALTER SERVER<a name="EN-US_TOPIC_0272283417"></a>
+# ALTER SERVER<a name="EN-US_TOPIC_0289900400"></a>
 
-## Function<a name="section7100616165720"></a>
+## Function<a name="en-us_topic_0283136932_section7100616165720"></a>
 
 **ALTER SERVER**  adds, modifies, or deletes the parameters of an existing server. You can query existing servers from the  **pg\_foreign\_server**  system catalog.
 
-## Precautions<a name="section1175222145715"></a>
+## Precautions<a name="en-us_topic_0283136932_section1175222145715"></a>
 
-Only the owner of a server or a system administrator can run this statement.
+Only the server owner or a user granted with the ALTER permission can run the  **ALTER SERVER**  command. The system administrator has this permission by default. To modify a server owner, you must be the server owner or system administrator and a member of the new owner role.
 
-## Syntax<a name="section19393201035713"></a>
+## Syntax<a name="en-us_topic_0283136932_section19393201035713"></a>
 
 -   Change the parameters for a foreign server.
 
@@ -28,7 +28,7 @@ Only the owner of a server or a system administrator can run this statement.
     ```
 
 
-## Parameter Description<a name="section284720213578"></a>
+## Parameter Description<a name="en-us_topic_0283136932_section284720213578"></a>
 
 -   **server\_name**
 
@@ -62,7 +62,7 @@ Only the owner of a server or a system administrator can run this statement.
 
             Listening port number of the MySQL server or MariaDB.
 
-    -   The options supported by postgres\_fdw are the same as those supported by libpq. For details, see  [Connection Characters](en-us_topic_0242848655.md). Note that the following options cannot be modified:
+    -   The options supported by postgres\_fdw are the same as those supported by libpq. For details, see  [Connection Characters](en-us_topic_0283137650.md). Note that the following options cannot be modified:
         -   **user**  and  **password**
 
             The user name and password are specified when the user mapping is created.
@@ -97,7 +97,7 @@ Only the owner of a server or a system administrator can run this statement.
     Specifies the new name of the server.
 
 
-## Helpful Links<a name="section13898752175613"></a>
+## Helpful Links<a name="en-us_topic_0283136932_section13898752175613"></a>
 
-[CREATE SERVER ](create-server.md)  and  [CREATE SERVER](drop-server.md)
+[CREATE SERVER ](en-us_topic_0283137586.md)  and  [CREATE SERVER](en-us_topic_0283136745.md)
 

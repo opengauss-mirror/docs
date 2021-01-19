@@ -1,6 +1,6 @@
-# Aggregate Functions<a name="EN-US_TOPIC_0242370446"></a>
+# Aggregate Functions<a name="EN-US_TOPIC_0289900330"></a>
 
-## Aggregate Functions<a name="en-us_topic_0237121982_en-us_topic_0059778466_s6494488eb2824afa801304697cb740e4"></a>
+## Aggregate Functions<a name="en-us_topic_0283136894_en-us_topic_0237121982_en-us_topic_0059778466_s6494488eb2824afa801304697cb740e4"></a>
 
 -   sum\(expression\)
 
@@ -641,13 +641,14 @@
 
     Description: Returns the CHECKSUM value of all input values. This function can be used to check whether the data in the tables is the same before and after the backup, restoration, or migration of the openGauss database \(databases other than openGauss are not supported\). Before and after database backup, database restoration, or data migration, you need to manually run SQL commands to obtain the execution results. Compare the obtained execution results to check whether the data in the tables before and after the backup or migration is the same.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:**  
-    -   For large tables, the execution of CHECKSUM function may take a long time.  
-    -   If the CHECKSUM values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the CHECKSUM function may incur conflicts. There is low possibility that two tables with different contents may have the same CHECKSUM value. The same problem may occur when CHECKSUM is used for columns.  
-    -   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the CHECKSUM value.  
-    -   If the CHECKSUM value of a column is calculated and the column type can be changed to TEXT by default, set  _expression_  to the column name.  
-    -   If the CHECKSUM value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.  
-    -   If the CHECKSUM value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   For large tables, the execution of CHECKSUM function may take a long time.
+    >-   If the CHECKSUM values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the CHECKSUM function may incur conflicts. There is low possibility that two tables with different contents may have the same CHECKSUM value. The same problem may occur when CHECKSUM is used for columns.
+    >-   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the CHECKSUM value.
+
+    -   If the CHECKSUM value of a column is calculated and the column type can be changed to TEXT by default, set  _expression_  to the column name.
+    -   If the CHECKSUM value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.
+    -   If the CHECKSUM value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.
 
     The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
 
@@ -682,6 +683,27 @@
          checksum      
     -------------------
      25223696246875800
+    (1 row)
+    ```
+
+-   mode\(\) within group \(order by value anyelement\)
+
+    Description: value with the highest occurrence frequency in a column. If multiple values have the same frequency, the smallest value is returned. The sorting mode is the same as the default sorting mode of the column type.  **value**  is an input parameter and can be of any type.
+
+    Return type: same as the input parameter type
+
+    Example:
+
+    ```
+    postgres=# select mode() within group (order by value) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
+     mode
+    ------
+        2
+    (1 row)
+    postgres=# select mode() within group (order by tag) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
+     mode
+    ------
+     a
     (1 row)
     ```
 

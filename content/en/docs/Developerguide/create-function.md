@@ -1,27 +1,28 @@
-# CREATE FUNCTION<a name="EN-US_TOPIC_0242370568"></a>
+# CREATE FUNCTION<a name="EN-US_TOPIC_0289900779"></a>
 
-## Function<a name="en-us_topic_0237122104_en-us_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>
+## Function<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>
 
 **CREATE FUNCTION**  creates a function.
 
-## Precautions<a name="en-us_topic_0237122104_en-us_topic_0059778837_s4e29e167452e4cfda9adebadc939e3fd"></a>
+## Precautions<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_s4e29e167452e4cfda9adebadc939e3fd"></a>
 
 -   If the parameters or return values of a function have precision, the precision is not checked.
 -   When creating a function, you are advised to explicitly specify the schemas of tables in the function definition. Otherwise, the function may fail to be executed.
 -   **current\_schema**  and  **search\_path**  specified by  **SET**  during function creation are invalid.  **search\_path**  and  **current\_schema**  before and after function execution should be the same.
--   If a function has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the function. When the  **CALL**  statement calls the function, it requires that the output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](call.md).
+-   If a function has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the function. When the  **CALL**  statement calls the function, it requires that the output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](en-us_topic_0283137636.md).
 -   Only the functions compatible with PostgreSQL or those with the  **PACKAGE**  attribute can be overloaded. After  **REPLACE**  is specified, a new function is created instead of replacing a function if the number of parameters, parameter type, or return value is different.
 -   You can use the  **SELECT**  statement to specify different parameters using identical functions, but cannot use the  **CALL**  statement to call identical functions without the  **PACKAGE**  attribute.
 -   When you create a function, you cannot insert other agg functions out of the avg function or other functions.
--   By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](grant.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
+-   By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](en-us_topic_0283137177.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
+-   When calling functions without parameters inside another function, you can omit brackets and call functions using their names directly.
 
-## Syntax<a name="en-us_topic_0237122104_en-us_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
+## Syntax<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
 -   Syntax \(compatible with PostgreSQL\) for creating a customized function:
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name 
-        ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] ) 
+        [ ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] ) ]
         [ RETURNS rettype [ DETERMINISTIC  ]  | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
         LANGUAGE lang_name 
         [ 
@@ -33,7 +34,6 @@
             | {[ EXTERNAL  ] SECURITY INVOKER | [ EXTERNAL  ] SECURITY DEFINER | AUTHID DEFINER  | AUTHID CURRENT_USER} 
             | {fenced | not fenced}
             | {PACKAGE}
-    
             | COST execution_cost
             | ROWS result_rows
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }}
@@ -73,19 +73,19 @@
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122104_en-us_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
+## Parameter Description<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
 
 -   **function\_name**
 
     Specifies the name of the function to create \(optionally schema-qualified\).
 
-    Value range: a string. It must comply with the naming convention and up to 63 character strings. If there are more than 63 strings, the database will truncate the strings and reserve the first 63 strings as function_name.
+    Value range: a string. It must comply with the naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function name.
 
 -   **argname**
 
     Specifies the parameter name of the function.
 
-    Value range: a string. It must comply with the naming convention and up to 63 character strings. If there are more than 63 strings, the database will truncate the strings and reserve the first 63 strings as function parameter names.
+    Value range: a string. It must comply with the naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function parameter name.
 
 -   **argmode**
 
@@ -93,8 +93,8 @@
 
     Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**. The default value is  **IN**. The parameters of  **OUT**  and  **INOUT**  cannot be used in the function definition of  **RETURNS TABLE**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >**VARIADIC**  specifies parameters of the array type.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**VARIADIC**  specifies parameters of the array type.
 
 -   **argtype**
 
@@ -120,7 +120,7 @@
 
     Specifies the column type.
 
-- **definition**
+-   **definition**
 
     Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
 
@@ -136,8 +136,8 @@
 
     Indicates that this function is a window function. The  **WINDOW**  attribute cannot be changed when replacing an existing function definition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >For a customized window function, the value of  **LANGUAGE**  can only be  **internal**, and the referenced internal function must be a window function.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >For a customized window function, the value of  **LANGUAGE**  can only be  **internal**, and the referenced internal function must be a window function.
 
 -   **IMMUTABLE**
 
@@ -151,13 +151,13 @@
 
     Specifies that the function value can change in a single table scan and no optimization is performed.
 
-- **SHIPPABLE | NOT SHIPPABLE**
+-   **SHIPPABLE**|**NOT SHIPPABLE**
 
-    Specifies whether the function can be pushed down for execution. This interface is reserved and is not recommended.
+    Specifies whether the function can be pushed down for execution. This port is reserved and is not recommended.
 
-- **FENCED | NOT FENCED**
+-   **FENCED**|**NOT FENCED**
 
-    Specifies whether the user-defined C function is executed in fenced or not-fenced mode. This interface is reserved and is not recommended.
+    Specifies whether the user-defined C function is executed in fenced or not-fenced mode. This port is reserved and is not recommended.
 
 -   **PACKAGE**
 
@@ -239,11 +239,11 @@
 
     Specifies the PL/SQL stored procedure body.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >When a user is created in the function body, the plaintext password is recorded in the log. You are not advised to do it.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >When a user is created in the function body, the plaintext password is recorded in the log. You are not advised to do it.
 
 
-## Examples<a name="en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
+## Examples<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 
 ```
 -- Define a function as SQL query.
@@ -278,7 +278,7 @@ postgres=# CREATE FUNCTION func_dup_sql(in int, out f1 int, out f2 text)
 
 postgres=# SELECT * FROM func_dup_sql(42);
 
--- Compute the sum of two integers and return the result (if the input is null, the returned result is null).
+-- Compute the sum of two integers and returning the result (if the input is null, the returned result is null):
 postgres=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
 AS
 BEGIN 
@@ -288,7 +288,7 @@ END;
 -- Alter the execution rule of function func_add_sql2 to IMMUTABLE (that is, the same result is returned if the parameter remains unchanged).
 postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
 
--- Alter the name of function func_add_sql2 to add_two_number.
+-- Rename the func_add_sql2 function as add_two_number:
 postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
 
 -- Change the owner of function add_two_number to omm.
@@ -302,7 +302,7 @@ postgres=# DROP FUNCTION func_increment_plsql;
 postgres=# DROP FUNCTION func_add_sql;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122104_en-us_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
+## Helpful Links<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
-[ALTER FUNCTION](alter-function.md)  and  [DROP FUNCTION](drop-function.md)
+[ALTER FUNCTION](en-us_topic_0283136989.md)  and  [DROP FUNCTION](en-us_topic_0283137306.md)
 

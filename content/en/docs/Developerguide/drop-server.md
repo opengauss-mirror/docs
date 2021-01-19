@@ -1,20 +1,20 @@
-# DROP SERVER<a name="EN-US_TOPIC_0272283423"></a>
+# DROP SERVER<a name="EN-US_TOPIC_0289900384"></a>
 
-## Function<a name="section18987145713527"></a>
+## Function<a name="en-us_topic_0283136745_section18987145713527"></a>
 
 **DROP SERVER**  drops a data server.
 
-## Precautions<a name="section1195003135320"></a>
+## Precautions<a name="en-us_topic_0283136745_section1195003135320"></a>
 
-Only the owner of the server can execute this statement.
+Only the server owner or a user granted with the DROP permission can run the  **DROP SERVER**  command. The system administrator has this permission by default.
 
-## Syntax<a name="section51061559145316"></a>
+## Syntax<a name="en-us_topic_0283136745_section51061559145316"></a>
 
 ```
 DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 ```
 
-## Parameter Description<a name="section08321910175316"></a>
+## Parameter Description<a name="en-us_topic_0283136745_section08321910175316"></a>
 
 -   **IF EXISTS**
 
@@ -32,7 +32,7 @@ DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 
 
 
-## Helpful Links<a name="section620331805317"></a>
+## Helpful Links<a name="en-us_topic_0283136745_section620331805317"></a>
 
-[ALTER SERVER](alter-server.md)  and  [CREATE SERVER](create-server.md)
+[ALTER SERVER](en-us_topic_0283136932.md)  and  [CREATE SERVER](en-us_topic_0283137586.md)
 

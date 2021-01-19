@@ -1,22 +1,22 @@
-# CREATE TABLE<a name="EN-US_TOPIC_0242370581"></a>
+# CREATE TABLE<a name="EN-US_TOPIC_0289900279"></a>
 
-## Function<a name="en-us_topic_0237122117_en-us_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
+## Function<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
 
 **CREATE TABLE**  is used to create an initially empty table in the current database. The table will be owned by the creator.
 
-## Precautions<a name="en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
+## Precautions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
--   For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](data-types-supported-by-column-store-tables.md).
--   column-store tables do not support arrays.
+-   For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](en-us_topic_0283136748.md).
+-   Column-store tables do not support the array.
 -   It is recommended that the number of column-store tables do not exceed 1000.
 -   The primary key constraint and unique constraint in the table must contain distribution keys.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
 -   Column-store tables support only  **PARTIAL CLUSTER KEY**  table-level constraints, but do not support primary and foreign key table-level constraints.
 -   Only the  **NULL**,  **NOT NULL**, and  **DEFAULT**  constant values can be used as column-store table constraints.
--   Whether column-store tables support a delta table is specified by the  [enable\_delta\_store](parallel-data-import.md#en-us_topic_0237124705_section1035224982816)  parameter. The threshold for storing data into a delta table is specified by the  **deltarow\_threshold**  parameter.
+-   Whether column-store tables support a delta table is specified by the  [enable\_delta\_store](en-us_topic_0283136577.md#en-us_topic_0237124705_section1035224982816)  parameter. The threshold for storing data into a delta table is specified by the  **deltarow\_threshold**  parameter.
 -   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
 
-## Syntax<a name="en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
+## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
 Create a table.
 
@@ -45,6 +45,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
+
 -   **compress\_mode**  of a column is as follows:
 
     ```
@@ -62,22 +63,22 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
+
 -   **like\_option**  is as follows:
 
     ```
     { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
     ```
 
+-   **index\_parameters**  is as follows:
+
+    ```
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ USING INDEX TABLESPACE tablespace_name ]
+    ```
 
 
-+ **index\_parameters**  is as follows:
-
-  ```
-  [ WITH ( {storage_parameter = value} [, ... ] ) ]
-  [ USING INDEX TABLESPACE tablespace_name ]
-  ```
-
-## Parameter Description<a name="en-us_topic_0237122117_en-us_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
+## Parameter Description<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
 -   **UNLOGGED**
 
@@ -89,15 +90,21 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
 -   **GLOBAL | LOCAL**
 
-    When creating a temporary table, you can specify the  **GLOBAL**  or  **LOCAL**  keyword before  **TEMP**  or  **TEMPORARY**. Currently, the two keywords are used to be compatible with the SQL standard. In fact, a local temporary table will be created by openGauss regardless of whether  **GLOBAL**  or  **LOCAL**  is specified.
+    When creating a temporary table, you can specify the  **GLOBAL**  or  **LOCAL**  keyword before  **TEMP**  or  **TEMPORARY**. If the keyword  **GLOBAL**  is specified, openGauss creates a global temporary table. Otherwise, openGauss creates a local temporary table.
 
 -   **TEMPORARY | TEMP**
 
-    If  **TEMP**  or  **TEMPORARY**  is specified, the created table is a temporary table. A temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
+    If  **TEMP**  or  **TEMPORARY**  is specified, the created table is a temporary table. Temporary tables are classified into global temporary tables and local temporary tables. If the keyword  **GLOBAL**  is specified when a temporary table is created, the table is a global temporary table. Otherwise, the table is a local temporary table.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >-   Temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.  
-    >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.  
+    The metadata of the global temporary table is visible to all sessions. After the sessions end, the metadata still exists. The user data, indexes, and statistics of a session are isolated from those of another session. Each session can only view and modify the data submitted by itself. Global temporary tables have two schemas:  **ON COMMIT PRESERVE ROWS**  and  **ON COMMIT PRESERVE ROWS**. In session-based  **ON COMMIT PRESERVE ROWS**  schema, user data is automatically cleared when a session ends. In transaction-based  **ON COMMIT DELETE ROWS**  schema, user data is automatically cleared when the commit or rollback operation is performed. If the  **ON COMMIT**  option is not specified during table creation, the session level is used by default. Different from local temporary tables, you can specify a schema that does not start with  **pg\_temp\_**  when creating a global temporary table.
+
+    A local temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
+    >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
+    >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**.
+    >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
 
 -   **IF NOT EXISTS**
 
@@ -123,7 +130,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
 -   **COLLATE collation**
 
-    Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used.
+    Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used. You can run the  **select \* from pg\_collation;**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
 -   **LIKE source\_table \[ like\_option ... \]**
 
@@ -142,26 +149,26 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
     -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
     -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,  **INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**, or  **SMALLSERIRAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.  
-    >-   You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**, or  **SMALLSERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
+    >-   You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.
 
 -   **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     Specifies an optional storage parameter for a table or an index.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >When using  **Numeric**  of any precision to define a column, specifies precision  **p**  and scale  **s**. When precision and scale are not specified, the input will be displayed.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >When using  **Numeric**  of any precision to define a column, specifies precision  **p**  and scale  **s**. When precision and scale are not specified, the input will be displayed.
 
     The description of parameters is as follows:
 
-    -   **FILLFACTOR**
+    -   FILLFACTOR
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
 
         Value range: 10–100
 
-    -   **ORIENTATION**
+    -   ORIENTATION
 
         Specifies the storage mode \(row-store, column-store, or ORC\) of table data. This parameter cannot be modified once it is set.
 
@@ -179,7 +186,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
         If an ordinary tablespace is specified, the default is  **ROW**.
 
-    -   **COMPRESSION**
+    -   COMPRESSION
 
         Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded.
 
@@ -187,31 +194,31 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
         The valid values for column-store tables are  **YES**,  **NO**,  **LOW**,  **MIDDLE**, and  **HIGH**, and the default value is  **LOW**.
 
-    -   **COMPRESSLEVEL**
+    -   COMPRESSLEVEL
 
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
 
         Value range: 0 to 3. The default value is  **0**.
 
-    -   **MAX\_BATCHROW**
+    -   MAX\_BATCHROW
 
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
 
-        Value range: 10000 to 60000
+        Value range: 10000 to 60000. The default value is  **60000**.
 
-    -   **PARTIAL\_CLUSTER\_ROWS**
+    -   PARTIAL\_CLUSTER\_ROWS
 
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
 
-        Value range: 600000 to 2147483647
+        Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
 
-    -   **DELTAROW\_THRESHOLD**
+    -   DELTAROW\_THRESHOLD
 
-        Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  [enable\_delta\_store](parallel-data-import.md#en-us_topic_0237124705_section1035224982816)  is set to  **on**. The parameter is only valid for column-store tables.
+        Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  [enable\_delta\_store](en-us_topic_0283136577.md#en-us_topic_0237124705_section1035224982816)  is set to  **on**. The parameter is only valid for column-store tables.
 
         Value range: from 0 to 9999. The default value is  **100**.
 
-    -   **VERSION**
+    -   VERSION
 
         Specifies the version of ORC storage format.
 
@@ -226,7 +233,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   **PRESERVE ROWS**  \(default\): No special action is taken at the ends of transactions. The temporary table and its table data are unchanged.
     -   **DELETE ROWS**: All rows in the temporary table will be deleted at the end of each transaction block.
-    -   **DROP**: The temporary table will be dropped at the end of the current transaction block.
+    -   **DROP**: The temporary table will be dropped at the end of the current transaction block. Only local temporary tables can be dropped. Global temporary tables cannot be dropped.
 
 -   **COMPRESS | NOCOMPRESS**
 
@@ -263,8 +270,8 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
     A check constraint specified as a column constraint should reference only the column's values, while an expression appearing in a table constraint can reference multiple columns.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >**<\>NULL**  and  **!=NULL**  are invalid in an expression. Change them to  **IS NOT NULL**.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**<\>NULL**  and  **!=NULL**  are invalid in an expression. Change them to  **IS NOT NULL**.
 
 -   **DEFAULT default\_expr**
 
@@ -310,7 +317,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
     Allows selection of the tablespace in which the index associated with a  **UNIQUE**  or  **PRIMARY KEY**  constraint will be created. If not specified,  **default\_tablespace**  is consulted, or the default tablespace in the database if  **default\_tablespace**  is empty.
 
 
-## Example:<a name="en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
+## Example:<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 
 ```
 -- Create a simple table.
@@ -469,7 +476,7 @@ postgres=# CREATE TEMPORARY TABLE warehouse_t24
     W_GMT_OFFSET              DECIMAL(5,2)
 );
 
--- Create a temporary table in a transaction and specify that this table is deleted when the transaction is committed.
+-- Create a local temporary table and specify that this table is dropped when the transaction is committed.
 postgres=# CREATE TEMPORARY TABLE warehouse_t25
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
@@ -487,6 +494,15 @@ postgres=# CREATE TEMPORARY TABLE warehouse_t25
     W_COUNTRY                 VARCHAR(20)                   ,
     W_GMT_OFFSET              DECIMAL(5,2)
 ) ON COMMIT DELETE ROWS;
+
+-- Create a global temporary table and specify that this table data is deleted when the session ends.
+postgres=# CREATE GLOBAL TEMPORARY TABLE gtt1
+(
+    ID                        INTEGER               NOT NULL,
+    NAME                      CHAR(16)              NOT NULL,
+    ADDRESS                   VARCHAR(50)                   ,
+    POSTCODE                  CHAR(6)
+) ON COMMIT PRESERVE ROWS;
 
 -- Create a table and specify that no error is reported for duplicate tables (if any).
 postgres=# CREATE TABLE IF NOT EXISTS tpcds.warehouse_t8
@@ -802,13 +818,13 @@ postgres=# ALTER TABLE tpcds.warehouse_t19 MODIFY (W_GOODS_CATEGORY varchar(30),
 -- Add a not-null constraint to an existing column.
 postgres=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY SET NOT NULL;
 
--- Remove not-null constraints from an existing column.
+-- Drop not-null constraints from an existing column.
 postgres=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY DROP NOT NULL;
 
 -- If no partial cluster is specified in a column-store table, add a partial cluster to the table.
 postgres=# ALTER TABLE tpcds.warehouse_t17 ADD PARTIAL CLUSTER KEY(W_WAREHOUSE_SK);
 
--- View the constraint name and delete the partial cluster column of a column-store table.
+-- View the constraint name and drop the partial cluster column of a column-store table.
 postgres=# \d+ tpcds.warehouse_t17
                               Table "tpcds.warehouse_t17"
       Column       |         Type          | Modifiers | Storage  | Stats target | Description 
@@ -845,10 +861,10 @@ postgres=# ALTER TABLE tpcds.warehouse_t19 SET SCHEMA joe;
 -- Rename an existing table.
 postgres=# ALTER TABLE joe.warehouse_t19 RENAME TO warehouse_t23;
 
--- Delete a column from the warehouse_t23 table.
+-- Drop a column from the warehouse_t23 table.
 postgres=# ALTER TABLE joe.warehouse_t23 DROP COLUMN W_STREET_NAME;
 
--- Delete the tablespace, schema joe, and schema tables warehouse.
+-- Drop the tablespace, schema joe, and schema tables warehouse.
 postgres=# DROP TABLE tpcds.warehouse_t1;
 postgres=# DROP TABLE tpcds.warehouse_t2;
 postgres=# DROP TABLE tpcds.warehouse_t3;
@@ -877,11 +893,11 @@ postgres=# DROP TABLESPACE DS_TABLESPACE1;
 postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122117_en-us_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
+## Helpful Links<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
 
-[ALTER TABLE](alter-table.md),  [DROP TABLE](drop-table.md), and  [CREATE TABLESPACE](create-tablespace.md)
+[ALTER TABLE](en-us_topic_0283137126.md),  [DROP TABLE](en-us_topic_0283136462.md), and  [CREATE TABLESPACE](en-us_topic_0283137328.md)
 
-## Suggestions<a name="en-us_topic_0237122117_en-us_topic_0059778169_section29320865113651"></a>
+## Suggestions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_section29320865113651"></a>
 
 -   UNLOGGED
     -   The unlogged table and its indexes do not use the WAL log mechanism during data writing. Their write speed is much higher than that of ordinary tables. Therefore, they can be used for storing intermediate result sets of complex queries to improve query performance.

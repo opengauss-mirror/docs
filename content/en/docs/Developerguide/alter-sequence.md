@@ -1,34 +1,36 @@
-# ALTER SEQUENCE<a name="EN-US_TOPIC_0242370535"></a>
+# ALTER SEQUENCE<a name="EN-US_TOPIC_0289900494"></a>
 
-## Function<a name="en-us_topic_0237122071_en-us_topic_0062358310_s806d414edb004fa89cd50a1166d1136e"></a>
+## Function<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s806d414edb004fa89cd50a1166d1136e"></a>
 
 **ALTER SEQUENCE**  modifies the parameters of an existing sequence.
 
-## Precautions<a name="en-us_topic_0237122071_en-us_topic_0062358310_sfccb497f01564edb804ecee58fe2698c"></a>
+## Precautions<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_sfccb497f01564edb804ecee58fe2698c"></a>
 
--   You must be the owner of the sequence to use  **ALTER SEQUENCE**.
+-   Only the sequence owner or a user granted with the ALTER permission can run the  **ALTER SEQUENCE**  command. The system administrator has this permission by default. To modify a sequence owner, you must be the sequence owner or system administrator and a member of the new owner role.
 -   In the current version, you can modify only the owner, owning column, and maximum value. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
 -   **ALTER SEQUENCE MAXVALUE**  cannot be used in transactions, functions, and stored procedures.
 -   After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
 -   The  **ALTER SEQUENCE**  statement blocks the invoking of  **nextval**,  **setval**,  **currval**, and  **lastval**.
 
-## Syntax<a name="en-us_topic_0237122071_en-us_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
+## Syntax<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
-Change the owning column of a sequence.
+-   Change the owning column of a sequence.
 
-```
-ALTER SEQUENCE [ IF EXISTS ] name 
-    [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
-    [ OWNED BY { table_name.column_name | NONE } ] ;
-```
+    ```
+    ALTER SEQUENCE [ IF EXISTS ] name 
+        [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
+        [ OWNED BY { table_name.column_name | NONE } ] ;
+    ```
 
-Change the owner of a sequence.
 
-```
-ALTER SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
-```
+-   Change the owner of a sequence.
 
-## Parameter Description<a name="en-us_topic_0237122071_en-us_topic_0062358310_s8277cc73aecc4f20845d2ddf456a20e7"></a>
+    ```
+    ALTER SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
+    ```
+
+
+## Parameter Description<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s8277cc73aecc4f20845d2ddf456a20e7"></a>
 
 -   name
 
@@ -53,7 +55,7 @@ ALTER SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
     Specifies the username of the new owner of the sequence. To change the owner, you must also be a direct or indirect member of the new role, and this role must have  **CREATE**  permission on the sequence's schema.
 
 
-## Examples<a name="en-us_topic_0237122071_en-us_topic_0062358310_sd7a0dca78f6844d79a0ec70fb4213769"></a>
+## Examples<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
 ```
 -- Create an ascending sequence named serial, which starts from 101.
@@ -65,12 +67,12 @@ postgres=# CREATE TABLE T1(C1 bigint default nextval('serial'));
 -- Change the owning column of serial to T1.C1.
 postgres=# ALTER SEQUENCE serial OWNED BY T1.C1;
 
--- Delete the sequence and table.
+-- Delete a sequence and a table.
 postgres=# DROP SEQUENCE serial cascade;
 postgres=# DROP TABLE T1;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122071_en-us_topic_0062358310_seadab16e00ee41c383d8cba1759ed7c8"></a>
+## Helpful Links<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
-[CREATE SEQUENCE](create-sequence.md)  and  [DROP SEQUENCE](drop-sequence.md)
+[CREATE SEQUENCE](en-us_topic_0283137208.md)  and  [DROP SEQUENCE](en-us_topic_0283137072.md)
 

@@ -1,14 +1,14 @@
-# SET TRANSACTION<a name="EN-US_TOPIC_0242370654"></a>
+# SET TRANSACTION<a name="EN-US_TOPIC_0289900810"></a>
 
-## Function<a name="en-us_topic_0237122190_en-us_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>
+## Function<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>
 
-**SET TRANSACTION**  sets the characteristics of the current transaction. It has no effect on any subsequent transactions. Available transaction characteristics include the transaction isolation level and transaction access mode \(read/write or read only\).
+**SET TRANSACTION**  sets characteristics of a transaction. Available transaction characteristics include the transaction isolation level and transaction access mode \(read/write or read only\). You can set the current transaction characteristics using  **LOCAL**  or the default transaction characteristics of a session using  **SESSION**.
 
-## Precautions<a name="en-us_topic_0237122190_en-us_topic_0059778135_s91c8bf3e55a0490299ef9c0cd59f44f6"></a>
+## Precautions<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_s91c8bf3e55a0490299ef9c0cd59f44f6"></a>
 
-This command needs to be executed in a transaction (that is, START TRANSACTION or BEGIN needs to be executed before SET TRANSACTION), otherwise the setting will not take effect.
+The current transaction characteristics must be set in a transaction, that is,  **START TRANSACTION**  or  **BEGIN**  must be executed before  **SET TRANSACTION**  is executed. Otherwise, the setting does not take effect.
 
-## Syntax<a name="en-us_topic_0237122190_en-us_topic_0059778135_sce3e49e1f5894684861d1df6677d12c8"></a>
+## Syntax<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_sce3e49e1f5894684861d1df6677d12c8"></a>
 
 Set the isolation level and access mode of the transaction.
 
@@ -18,7 +18,7 @@ Set the isolation level and access mode of the transaction.
   | { READ WRITE | READ ONLY } } [, ...]
 ```
 
-## Parameter Description<a name="en-us_topic_0237122190_en-us_topic_0059778135_sedb5d46e1cef47ad953116db260be4ad"></a>
+## Parameter Description<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_sedb5d46e1cef47ad953116db260be4ad"></a>
 
 -   **LOCAL**
 
@@ -34,8 +34,8 @@ Set the isolation level and access mode of the transaction.
 
     Specifies the transaction isolation level that determines the data that a transaction can view if other concurrent transactions exist.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The isolation level cannot be changed after data is modified using  **SELECT**,  **INSERT**,  **DELETE**,  **UPDATE**,  **FETCH**, or  **COPY**  in the transaction.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The isolation level cannot be changed after data is modified using  **SELECT**,  **INSERT**,  **DELETE**,  **UPDATE**,  **FETCH**, or  **COPY**  in the current transaction.
 
     Value range:
 
@@ -48,7 +48,7 @@ Set the isolation level and access mode of the transaction.
     Specifies the transaction access mode \(read/write or read only\).
 
 
-## Examples<a name="en-us_topic_0237122190_en-us_topic_0059778135_sf3622c31002245c482e236cade222456"></a>
+## Examples<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_sf3622c31002245c482e236cade222456"></a>
 
 ```
 -- Start a transaction and set its isolation level to READ COMMITTED and access mode to READ ONLY.

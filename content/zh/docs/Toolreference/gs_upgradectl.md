@@ -222,7 +222,7 @@ Rollback succeeded.
 **示例四：**使用gs\_upgradectl脚本执行就地升级后提交（升级提交）。
 
 ```
-gs_upgradectl -t auto-commit -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t commit-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Old cluster app path is /data/gauss/app_e67b8bcd
 Successfully Cleaned old install path.
 Commit binary upgrade succeeded.

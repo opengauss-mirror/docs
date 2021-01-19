@@ -1,17 +1,17 @@
-# ALTER TABLE<a name="EN-US_TOPIC_0242370540"></a>
+# ALTER TABLE<a name="EN-US_TOPIC_0289899912"></a>
 
-## Function<a name="en-us_topic_0237122076_en-us_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>
+## Function<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>
 
 **ALTER TABLE**  modifies tables, including modifying table definitions, renaming tables, renaming specified columns in tables, renaming table constraints, setting table schemas, enabling or disabling row-level access control, and adding or updating multiple columns.
 
-## Precautions<a name="en-us_topic_0237122076_en-us_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
+## Precautions<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
--   Only the table owner or a system administrator has the permission to run the  **ALTER TABLE**  statement. 
+-   Only the table owner or a user granted with the ALTER permission can run the  **ALTER TABLE**  command. The system administrator has this permission by default. To modify the owner or schema of a table, you must be a table owner or system administrator and a member of the new owner role.
 -   The tablespace of a partitioned table cannot be modified, but the tablespace of the partition can be modified.
 -   The storage parameter  **ORIENTATION**  cannot be modified.
 -   Currently,  **SET SCHEMA**  can only set schemas to user schemas. It cannot set a schema to a system internal schema.
 -   Column-store tables support only  **PARTIAL CLUSTER KEY**  table-level constraints, but do not support primary and foreign key table-level constraints.
--   In a column-store table, you can perform  **ADD COLUMN**,  **ALTER TYPE**,  **SET STATISTICS**,  **DROP COLUMN**  operations, and change table name and space. The types of new and modified columns should be the  [Data Types](data-types.md)  supported by column-store. The  **USING**  option of  **ALTER TYPE**  only supports constant expression and expression involved in the column.
+-   In a column-store table, you can perform  **ADD COLUMN**,  **ALTER TYPE**,  **SET STATISTICS**,  **DROP COLUMN**  operations, and change table name and space. The types of new and modified columns should be the  [Data Types](en-us_topic_0283136848.md)  supported by column-store. The  **USING**  option of  **ALTER TYPE**  only supports constant expression and expression involved in the column.
 -   The column constraints supported by column-store tables include  **NULL**,  **NOT NULL**, and  **DEFAULT**  constant values. Only the  **DEFAULT**  value can be modified \(by using  **SET DEFAULT**  and  **DROP DEFAULT**\). Currently,  **NULL**  and  **NOT NULL**  constraints cannot be modified.
 
 -   Auto-increment columns cannot be added, or a column whose  **DEFAULT**  value contains the  **nextval\(\)**  expression cannot be added.
@@ -19,7 +19,7 @@
 -   When you delete a  **PRIMARY KEY**  constraint by constraint name, the  **NOT NULL**  constraint is not deleted. If necessary, manually delete the  **NOT NULL**  constraint.
 -   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
 
-## Syntax<a name="en-us_topic_0237122076_en-us_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
+## Syntax<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
 -   Modify the definition of a table.
 
@@ -50,69 +50,57 @@
         | ENABLE TRIGGER [ trigger_name | ALL | USER ]
         | ENABLE REPLICA TRIGGER trigger_name
         | ENABLE ALWAYS TRIGGER trigger_name
-        | DISABLE RULE rewrite_rule_name
-        | ENABLE RULE rewrite_rule_name
-        | ENABLE REPLICA RULE rewrite_rule_name
-        | ENABLE ALWAYS RULE rewrite_rule_name
         | DISABLE ROW LEVEL SECURITY
         | ENABLE ROW LEVEL SECURITY
         | FORCE ROW LEVEL SECURITY
         | NO FORCE ROW LEVEL SECURITY
-        | REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   **ADD table\_constraint \[ NOT VALID \]**  
-    >    Adds a table constraint.  
-    >-   **ADD table\_constraint\_using\_index**  
-    >    Adds a primary key constraint or unique constraint to a table based on the existing unique index.  
-    >-   **VALIDATE CONSTRAINT constraint\_name**  
-    >    Validates a check-class constraint created with the  **NOT VALID**  option, and scans the entire table to ensure that all rows meet the constraint. Nothing happens if the constraint is already marked valid.  
-    >-   **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**  
-    >    Drops a table constraint.  
-    >-   **CLUSTER ON index\_name**  
-    >    Selects the default index for future CLUSTER operations. Actually, the table is not re-clustered.  
-    >-   **SET WITHOUT CLUSTER**  
-    >    Deletes the most recently used  **CLUSTER**  index from the table. This affects future  **CLUSTER**  operations that do not specify an index.  
-    >-   **SET \( \{storage\_parameter = value\} \[, ... \] \)**  
-    >    Changes one or more storage parameters for the table.  
-    >-   **RESET \( storage\_parameter \[, ... \] \)**  
-    >    Resets one or more storage parameters to their defaults. As with  **SET**, a table rewrite might be needed to update the table entirely.  
-    >-   **OWNER TO new\_owner**  
-    >    Changes the owner of a table, sequence, or view to the specified user.  
-    >-   **SET TABLESPACE new\_tablespace**  
-    >    Changes the table's tablespace to the specified tablespace and moves the data files associated with the table to the new tablespace. Indexes on the table, if any, are not moved; but they can be moved separately with additional  **SET TABLESPACE**  option in  **ALTER INDEX**.  
-    >-   **SET \{COMPRESS|NOCOMPRESS\}**  
-    >    Sets the compression feature of a table. The table compression feature affects only the storage mode of data inserted in a batch subsequently and does not affect storage of existing data. Setting the table compression feature will result in the fact that there are both compressed and uncompressed data in the table.  
-    >-   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**  
-    >    The syntax is only available in extended mode \(when GUC parameter  **support\_extended\_features**  is  **on**\). Exercise caution when enabling the mode. It is mainly used for tools like internal scale-out tools. Common users should not use the mode.  
-    >-   **ADD NODE \( nodename \[, ... \] \)**  
-    >    It is only available for internal scale-out tools. Common users should not use the syntax.  
-    >-   **DELETE NODE \( nodename \[, ... \] \)**  
-    >    It is only available for internal scale-in tools. Common users should not use the syntax.  
-    >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
-    >    Disables a single trigger specified by  **trigger\_name**, disables all triggers, or disables only user triggers \(excluding internally generated constraint triggers, for example, deferrable unique constraint triggers and exclusion constraint triggers\).  
-    >   Exercise caution when using this function because data integrity cannot be ensured as expected if the triggers are not executed.  
-    >-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**  
-    >   Enables a single trigger specified by  **trigger\_name**, enables all triggers, or enables only user triggers.
-    >-   **| ENABLE REPLICA TRIGGER trigger\_name**  
-        Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](statement-behavior.md#en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216).
-    >   When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
-    >   When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
-    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**  
-    >       Determines that all triggers are fired regardless of the current replication mode.
-    >-   **| DISABLE/ENABLE [ REPLICA | ALWAYS ] RULE**
-    >    These forms configure the firing of rewrite rules belonging to the table. A disabled rule is still known to the system, but is not applied during query rewriting. The semantics are as for disabled/enabled triggers. This configuration is ignored for ON SELECT rules, which are always applied in order to keep views working even if the current session is in a non-default replication role.The rule firing mechanism is also affected by the configuration variable  [session\_replication\_role](statement-behavior.md#en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216) analogous to triggers as described above.
-    >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**  
-    >       Enables or disables row-level access control for a table.
-    >       If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not >  >   affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW >   LEVEL SECURITY POLICY](create-row-level-security-policy.md).
-    >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**   
-    >       Forcibly enables or disables row-level access control for a table.
-    >       By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) wil be affected. System administrators are not affected by any row-level access control policies.
-    >-   **| REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}**   
-    >       This form changes the information which is written to the write-ahead log to identify rows which are updated or deleted. This option has no effect except when logical replication is in use. DEFAULT (the default for non-system tables) records the old values of the columns of the primary key, if any. USING INDEX records the old values of the columns covered by the named index, which must be unique, not partial, not deferrable, and include only columns marked NOT NULL. FULL records the old values of all columns in the row. NOTHING records no information about the old row. (This is the default for system tables.) In all cases, no old values are logged unless at least one of the columns that would be logged differs between the old and new versions of the row.
-
-
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   **ADD table\_constraint \[ NOT VALID \]**
+    >    Adds a table constraint.
+    >-   **ADD table\_constraint\_using\_index**
+    >    Adds a primary key constraint or unique constraint to a table based on the existing unique index.
+    >-   **VALIDATE CONSTRAINT constraint\_name**
+    >    Validates a check-class constraint created with the  **NOT VALID**  option, and scans the entire table to ensure that all rows meet the constraint. Nothing happens if the constraint is already marked valid.
+    >-   **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**
+    >    Drops a table constraint.
+    >-   **CLUSTER ON index\_name**
+    >    Selects the default index for future CLUSTER operations. Actually, the table is not re-clustered.
+    >-   **SET WITHOUT CLUSTER**
+    >    Deletes the most recently used  **CLUSTER**  index from the table. This affects future  **CLUSTER**  operations that do not specify an index.
+    >-   **SET \( \{storage\_parameter = value\} \[, ... \] \)**
+    >    Changes one or more storage parameters for the table.
+    >-   **RESET \( storage\_parameter \[, ... \] \)**
+    >    Resets one or more storage parameters to their defaults. As with  **SET**, a table rewrite might be needed to update the table entirely.
+    >-   **OWNER TO new\_owner**
+    >    Changes the owner of a table, sequence, or view to the specified user.
+    >-   **SET TABLESPACE new\_tablespace**
+    >    Changes the table's tablespace to the specified tablespace and moves the data files associated with the table to the new tablespace. Indexes on the table, if any, are not moved; but they can be moved separately with additional  **SET TABLESPACE**  option in  **ALTER INDEX**.
+    >-   **SET \{COMPRESS|NOCOMPRESS\}**
+    >    Sets the compression feature of a table. The table compression feature affects only the storage mode of data inserted in a batch subsequently and does not affect storage of existing data. Setting the table compression feature will result in the fact that there are both compressed and uncompressed data in the table. Row-store tables do not support compression.
+    >-   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
+    >    The syntax is only available in extended mode \(when GUC parameter  **support\_extended\_features**  is  **on**\). Exercise caution when enabling the mode. It is mainly used for tools like internal scale-out tools. Common users should not use the mode.
+    >-   **ADD NODE \( nodename \[, ... \] \)**
+    >    It is only available for internal scale-out tools. Common users should not use the syntax.
+    >-   **DELETE NODE \( nodename \[, ... \] \)**
+    >    It is only available for internal scale-in tools. Common users should not use the syntax.
+    >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+    >    Disables a single trigger specified by  **trigger\_name**, disables all triggers, or disables only user triggers \(excluding internally generated constraint triggers, for example, deferrable unique constraint triggers and exclusion constraint triggers\).
+    >    Exercise caution when using this function because data integrity cannot be ensured as expected if the triggers are not executed.
+    >-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+    >    Enables a single trigger specified by  **trigger\_name**, enables all triggers, or enables only user triggers.
+    >-   **| ENABLE REPLICA TRIGGER trigger\_name**
+    >    Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](en-us_topic_0283136752.md#en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216). When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
+    >    When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
+    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
+    >    Determines that all triggers are fired regardless of the current replication mode.
+    >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
+    >    Enables or disables row-level access control for a table.
+    >    If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW LEVEL SECURITY POLICY](en-us_topic_0283137345.md).
+    >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
+    >    Forcibly enables or disables row-level access control for a table.
+    >    By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) wil be affected. System administrators are not affected by any row-level access control policies.
 
     -   There are several clauses of  **column\_clause**:
 
@@ -133,37 +121,37 @@
         | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
-        >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**  
-        >    Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).  
-        >-   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**  
-        >    Adds columns in the table.  
-        >-   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**  
-        >    Modifies the data type of an existing column in the table.  
-        >-   **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**  
-        >    Drops a column from a table. Indexes and constraints related to the column are automatically dropped. If an object not belonging to the table depends on the column,  **CASCADE**  must be specified, such as a view.  
-        >    The  **DROP COLUMN**  statement does not physically remove the column, but simply makes it invisible to SQL operations. Subsequent  **INSERT**  and  **UPDATE**  operations in the table will store a  **NULL**  value for the column. Therefore, column deletion takes a short period of time but does not immediately release the tablespace on the disks, because the space occupied by the deleted column is not reclaimed. The space will be reclaimed when  **VACUUM**  is executed.  
-        >-   **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**  
-        >    Modifies the type of a column in a table. Indexes and simple table constraints on the column will automatically use the new data type by reparsing the originally supplied expression.  
-        >    **ALTER TYPE**  requires an entire table be rewritten. This is an advantage sometimes, because it frees up unnecessary space from a table. For example, to reclaim the space occupied by a deleted column, the fastest method is to use the following statement.  
-        >     ```  
-        >       ALTER TABLE table ALTER COLUMN anycol TYPE anytype;  
-        >       ```  
-        >       In this statement,  **anycol**  indicates any column existing in the table and  **anytype**  indicates the type of the prototype of the column.  **ALTER TYPE**  does not change the table except that the table is forcibly rewritten. In this way, the data that is no longer used is deleted.  
-        >-   **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**  
-        >    Sets or removes the default value for a column. The default values only apply to subsequent  **INSERT**  operations; they do not cause rows already in the table to change. Defaults can also be created for views, in which case they are inserted into  **INSERT**  statements on the view before the view's  **ON INSERT**  rule is applied.  
-        >-   **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**  
-        >    Changes whether a column is marked to allow null values or to reject null values. You can only use  **SET NOT NULL**  when the column contains no null values.  
-        >-   **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**  
-        >    Specifies the per-column statistics-gathering target for subsequent  **ANALYZE**  operations. The target can be set in the range from 0 to 10000. Set it to  **-1**  to revert to using the default system statistics target.  
-        >-   **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**  
-        >    Adds or deletes the declaration of collecting multi-column statistics to collect multi-column statistics as needed when  **ANALYZE**  is performed for a table or a database. The statistics about a maximum of 32 columns can be collected at a time. You are not allowed to add or delete such declaration for system catalogs or foreign tables.  
-        >-   **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**  
-        >    **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**  
-        >    Sets or resets per-attribute options.  
-        >    Currently, the only defined per-attribute options are  **n\_distinct**  and  **n\_distinct\_inherited**.  **n\_distinct**  affects statistics of a table, while  **n\_distinct\_inherited**  affects the statistics of the table and its subtables. Currently, only  **SET/RESET n\_distinct**  is supported, and  **SET/RESET n\_distinct\_inherited**  is forbidden.  
-        >-   **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**  
-        >    Sets the storage mode for a column. This clause specifies whether this column is held inline or in a secondary TOAST table, and whether the data should be compressed. It is set only for row-store tables and is invalid for column-store tables. If it is set for column-store tables, an error will be displayed when the statement is executed.  **SET STORAGE**  itself does not change anything in the table. It sets the strategy to be pursued during future table updates.  
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+        >    Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).
+        >-   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
+        >    Adds columns in the table.
+        >-   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+        >    Modifies the data type of an existing column in the table.
+        >-   **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
+        >    Drops a column from a table. Indexes and constraints related to the column are automatically dropped. If an object not belonging to the table depends on the column,  **CASCADE**  must be specified, such as a view.
+        >    The  **DROP COLUMN**  statement does not physically remove the column, but simply makes it invisible to SQL operations. Subsequent  **INSERT**  and  **UPDATE**  operations in the table will store a  **NULL**  value for the column. Therefore, column deletion takes a short period of time but does not immediately release the tablespace on the disks, because the space occupied by the deleted column is not reclaimed. The space will be reclaimed when  **VACUUM**  is executed.
+        >-   **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
+        >    Modifies the type of a column in a table. Indexes and simple table constraints on the column will automatically use the new data type by reparsing the originally supplied expression.
+        >    **ALTER TYPE**  requires an entire table be rewritten. This is an advantage sometimes, because it frees up unnecessary space from a table. For example, to reclaim the space occupied by a deleted column, the fastest method is to use the following statement.
+        >    ```
+        >    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
+        >    ```
+        >    In this statement,  **anycol**  indicates any column existing in the table and  **anytype**  indicates the type of the prototype of the column.  **ALTER TYPE**  does not change the table except that the table is forcibly rewritten. In this way, the data that is no longer used is deleted.
+        >-   **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
+        >    Sets or removes the default value for a column. The default values only apply to subsequent  **INSERT**  operations; they do not cause rows already in the table to change. Defaults can also be created for views, in which case they are inserted into  **INSERT**  statements on the view before the view's  **ON INSERT**  rule is applied.
+        >-   **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
+        >    Changes whether a column is marked to allow null values or to reject null values. You can only use  **SET NOT NULL**  when the column contains no null values.
+        >-   **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
+        >    Specifies the per-column statistics-gathering target for subsequent  **ANALYZE**  operations. The target can be set in the range from 0 to 10000. Set it to  **-1**  to revert to using the default system statistics target.
+        >-   **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
+        >    Adds or deletes the declaration of collecting multi-column statistics to collect multi-column statistics as needed when  **ANALYZE**  is performed for a table or a database. The statistics about a maximum of 32 columns can be collected at a time. You are not allowed to add or delete such declaration for system catalogs or foreign tables.
+        >-   **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
+        >    **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
+        >    Sets or resets per-attribute options.
+        >    Currently, the only defined per-attribute options are  **n\_distinct**  and  **n\_distinct\_inherited**.  **n\_distinct**  affects statistics of a table, while  **n\_distinct\_inherited**  affects the statistics of the table and its subtables. Currently, only  **SET/RESET n\_distinct**  is supported, and  **SET/RESET n\_distinct\_inherited**  is forbidden.
+        >-   **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
+        >    Sets the storage mode for a column. This clause specifies whether this column is held inline or in a secondary TOAST table, and whether the data should be compressed. It is set only for row-store tables and is invalid for column-store tables. If it is set for column-store tables, an error will be displayed when the statement is executed.  **SET STORAGE**  itself does not change anything in the table. It sets the strategy to be pursued during future table updates.
 
         -   **column\_constraint**  is as follows:
 
@@ -174,7 +162,7 @@
                   CHECK ( expression ) |
                   DEFAULT default_expr  |
                   UNIQUE index_parameters |
-                  PRIMARY KEY index_parameters }
+                  PRIMARY KEY index_parameters |      ENCRYPTEDWITH(COLUMN_ENCRYPTION_KEY=column_encryption_key,ENCRYPTION_TYPE=encryption_type_value)}
                 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
             ```
 
@@ -241,12 +229,12 @@
         SET SCHEMA new_schema;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   The schema setting moves the table into another schema. Associated indexes and constraints owned by table columns are migrated as well. Currently, the schema for sequences cannot be changed. If the table has sequences, delete the sequences, and create them again or delete the ownership between the table and sequences. In this way, the table schema can be changed.  
-    >-   To change the schema of a table, you must also have the  **CREATE**  permission on the new schema. To add the table as a new child of a parent table, you must own the parent table as well. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have the  **CREATE**  permission on the table's schema. These restrictions enforce that the user can only recreate and delete the table. However, a system administrator can alter the ownership of any table anyway.  
-    >-   All the actions except for  **RENAME**  and  **SET SCHEMA**  can be combined into a list of multiple alterations to apply in parallel. For example, it is possible to add several columns or alter the type of several columns in a single statement. This is useful with large tables, since only one pass over the tables needs to be made.  
-    >-   Adding a  **CHECK**  or  **NOT NULL**  constraint will scan the table to validate that existing rows meet the constraint.  
-    >-   Adding a column with a non-**NULL**  default or changing the type of an existing column will rewrite the entire table. Rewriting a large table may take much time and temporarily needs doubled disk space.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   The schema setting moves the table into another schema. Associated indexes and constraints owned by table columns are migrated as well. Currently, the schema for sequences cannot be changed. If the table has sequences, delete the sequences, and create them again or delete the ownership between the table and sequences. In this way, the table schema can be changed.
+    >-   To change the schema of a table, you must also have the  **CREATE**  permission on the new schema. To add the table as a new child of a parent table, you must own the parent table as well. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have the  **CREATE**  permission on the table's schema. These restrictions enforce that the user can only recreate and delete the table. However, a system administrator can alter the ownership of any table anyway.
+    >-   All the actions except for  **RENAME**  and  **SET SCHEMA**  can be combined into a list of multiple alterations to apply in parallel. For example, it is possible to add several columns or alter the type of several columns in a single statement. This is useful with large tables, since only one pass over the tables needs to be made.
+    >-   Adding a  **CHECK**  or  **NOT NULL**  constraint will scan the table to validate that existing rows meet the constraint.
+    >-   Adding a column with a non-**NULL**  default or changing the type of an existing column will rewrite the entire table. Rewriting a large table may take much time and temporarily needs doubled disk space.
 
 -   Add columns.
 
@@ -263,7 +251,7 @@
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122076_en-us_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
+## Parameter Description<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
 -   **IF EXISTS**
 
@@ -305,18 +293,18 @@
 
 -   **compress\_mode**
 
-    Specifies the compression option of the table, which is only available for row-store tables. The clause specifies the compression algorithm preferentially used by the column.
+    Compression option of a table field. The clause specifies the compression algorithm preferentially used by the column. Row-store tables do not support compression.
 
 -   **collation**
 
-    Specifies the collation rule name of a column. The optional  **COLLATE**  clause specifies a collation for the new column; if omitted, the collation is the default for the new column.
+    Specifies the collation rule name of a column. The optional  **COLLATE**  clause specifies a collation for the new column; if omitted, the collation is the default for the new column. You can run the  **select \* from pg\_collation;**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
 -   **USING expression**
 
     Specifies how to compute the new column value from the old; if omitted, the default conversion is an assignment cast from old data type to new. A  **USING**  clause must be provided if there is no implicit or assignment cast from the old to new type.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >**USING**  in  **ALTER TYPE**  can specify any expression involving the old values of the row; that is, it can refer to any columns other than the one being cast. This allows general casting to be done with the  **ALTER TYPE**  syntax. Because of this flexibility, the  **USING**  expression is not applied to the column's default value \(if any\); the result might not be a constant expression as required for a default. This means that when there is no implicit or assignment cast from old to new type,  **ALTER TYPE**  might fail to convert the default even though a  **USING**  clause is supplied. In such cases, drop the default with  **DROP DEFAULT**, perform the  **ALTER TYPE**, and then use  **SET DEFAULT**  to add a suitable new default. Similar considerations apply to indexes and constraints involving the column.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**USING**  in  **ALTER TYPE**  can specify any expression involving the old values of the row; that is, it can refer to any columns other than the one being cast. This allows general casting to be done with the  **ALTER TYPE**  syntax. Because of this flexibility, the  **USING**  expression is not applied to the column's default value \(if any\); the result might not be a constant expression as required for a default. This means that when there is no implicit or assignment cast from old to new type,  **ALTER TYPE**  might fail to convert the default even though a  **USING**  clause is supplied. In such cases, drop the default with  **DROP DEFAULT**, perform the  **ALTER TYPE**, and then use  **SET DEFAULT**  to add a suitable new default. Similar considerations apply to indexes and constraints involving the column.
 
 -   **NOT NULL | NULL**
 
@@ -386,7 +374,7 @@
 
 -   **COMPRESS|NOCOMPRESS**
     -   **NOCOMPRESS**: If the  **NOCOMPRESS**  keyword is specified, the existing compression feature of the table will not be changed.
-    -   **COMPRESS**: If the  **COMPRESS**  keyword is specified, the table compression feature will be triggered by batch tuple insertion.
+    -   **COMPRESS**: If the  **COMPRESS**  keyword is specified, the table compression feature will be triggered by batch tuple insertion. Row-store tables do not support compression.
 
 -   **new\_table\_name**
 
@@ -417,11 +405,11 @@
     Specifies the schema name of a table.
 
 
-## Examples<a name="en-us_topic_0237122076_en-us_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
+## Examples<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
 
-See  [Example:](create-table.md#en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)  in  **CREATE TABLE**.
+See  [Example:](en-us_topic_0283137629.md#en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)  in  **CREATE TABLE**.
 
-## Helpful Links<a name="en-us_topic_0237122076_en-us_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
+## Helpful Links<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
 
-[CREATE TABLE](create-table.md)  and  [DROP TABLE](drop-table.md)
+[CREATE TABLE](en-us_topic_0283137629.md)  and  [DROP TABLE](en-us_topic_0283136462.md)
 

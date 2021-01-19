@@ -1,21 +1,19 @@
-# ALTER DATABASE<a name="EN-US_TOPIC_0242370519"></a>
+# ALTER DATABASE<a name="EN-US_TOPIC_0289900461"></a>
 
-## Function<a name="en-us_topic_0237122055_en-us_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>
+## Function<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>
 
 **ALTER DATABASE**  modifies a database, including its name, owner, connection limitation, and  object isolation.
 
-## Precautions<a name="en-us_topic_0237122055_en-us_topic_0059779247_sb8bbb55d049b42e688a2e152d2f6c737"></a>
+## Precautions<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_sb8bbb55d049b42e688a2e152d2f6c737"></a>
 
--   Only the owner of a database or a system administrator has the permission to run the  **ALTER DATABASE**  statement. Users other than system administrators may have the following permission constraints depending on the attributes to be modified:
+-   Only the database owner or a user granted with the ALTER permission can run the  **ALTER DATABASE**  command. The system administrator has this permission by default. The following is permission constraints depending on attributes to be modified:
     -   To modify the database name, you must have the  **CREATEDB**  permission.
-    -   To modify a database owner, you must be a database owner and a member of the new owner, and have the  **CREATEDB**  permission.
-    -   To change the default tablespace, you must be a database owner or a system administrator, and must have the  **CREATE**  permission on the new tablespace. This statement physically migrates tables and indexes in a default tablespace to a new tablespace. Note that tables and indexes outside the default tablespace are not affected.
-    -   Only a database owner or a system administrator can modify GUC parameters for the database.
-    -   Only database owners and system administrators can modify the object isolation attribute of a database.
+    -   To modify a database owner, you must be a database owner or system administrator and a member of the new owner role, with the  **CREATEDB**  permission.
+    -   To modify the default tablespace of a database, a user must have the permission to create a tablespace. This statement physically migrates tables and indexes in a default tablespace to a new tablespace. Note that tables and indexes outside the default tablespace are not affected.
 
 -   You are not allowed to rename a database in use. To rename it, connect to another database.
 
-## Syntax<a name="en-us_topic_0237122055_en-us_topic_0059779247_s2eca2e2a5fc04ac798bbdf1dce3e7303"></a>
+## Syntax<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_s2eca2e2a5fc04ac798bbdf1dce3e7303"></a>
 
 -   Modify the maximum number of connections to the database.
 
@@ -66,12 +64,12 @@
     ALTER DATABASE database_name [ WITH ] { ENABLE | DISABLE } PRIVATE OBJECT;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   To modify the object isolation attribute of a database, the database must be connected. Otherwise, the modification will fail.  
-    >-   For a new database, the object isolation attribute is disabled by default. After this attribute is enabled, common users can view only the objects \(such as tables, functions, views, and columns\) that they have the permission to access. This attribute does not take effect for administrators. After this attribute is enabled, administrators can still view all database objects.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   To modify the object isolation attribute of a database, the database must be connected. Otherwise, the modification will fail.
+    >-   For a new database, the object isolation attribute is disabled by default. After this attribute is enabled, common users can view only the objects \(such as tables, functions, views, and columns\) that they have the permission to access. This attribute does not take effect for administrators. After this attribute is enabled, administrators can still view all database objects.
 
 
-## Parameter Description<a name="en-us_topic_0237122055_en-us_topic_0059779247_s4d6b72484e3b43969af25757fda7ad81"></a>
+## Parameter Description<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_s4d6b72484e3b43969af25757fda7ad81"></a>
 
 -   **database\_name**
 
@@ -128,15 +126,15 @@
     Resets all database session parameters.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   Modify the default tablespace of a database by moving the table or index in the old tablespace into the new tablespace. This operation does not affect the tables or indexes in other non-default tablespaces.  
->-   The modified database session parameter values will take effect in the next session.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   Modify the default tablespace of a database by moving the table or index in the old tablespace into the new tablespace. This operation does not affect the tables or indexes in other non-default tablespaces.
+>-   The modified database session parameter values will take effect in the next session.
 
-## Examples<a name="en-us_topic_0237122055_en-us_topic_0059779247_sb089bcdb51bd4932a2967c246217d29e"></a>
+## Examples<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_sb089bcdb51bd4932a2967c246217d29e"></a>
 
-See  [Examples](create-database.md#en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)  in  **CREATE DATABASE**.
+See  [Examples](en-us_topic_0283137050.md#en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)  in  **CREATE DATABASE**.
 
-## Helpful Links<a name="en-us_topic_0237122055_en-us_topic_0059779247_saa1e5193215b4927989f304541d2ecbd"></a>
+## Helpful Links<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_saa1e5193215b4927989f304541d2ecbd"></a>
 
-[CREATE DATABASE](create-database.md)  and  [DROP DATABASE](drop-database.md)
+[CREATE DATABASE](en-us_topic_0283137050.md)  and  [DROP DATABASE](en-us_topic_0283137424.md)
 

@@ -1,6 +1,6 @@
-# GRANT<a name="EN-US_TOPIC_0242370630"></a>
+# GRANT<a name="EN-US_TOPIC_0289900312"></a>
 
-## Function<a name="en-us_topic_0237122166_en-us_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
+## Function<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
 
 **GRANT**  is used to grant permissions to roles and users.
 
@@ -8,7 +8,7 @@
 
 -   **Granting system permissions to roles or users**
 
-    System permissions are also called user properties, including  **SYSADMIN**,  **CREATEDB**,  **CREATEROLE**,  **AUDITADMIN**, and  **LOGIN**.
+    System permissions are also called user properties, including  **SYSADMIN**,  **CREATEDB**,  **CREATEROLE**,  **AUDITADMIN**,  **MONADMIN**,  **OPRADMIN**,  **POLADMIN**, and  **LOGIN**.
 
     They can be specified only by the  **CREATE ROLE**  or  **ALTER ROLE**  statement. The  **SYSADMIN**  permissions can be granted and revoked using  **GRANT ALL PRIVILEGE**  and  **REVOKE ALL PRIVILEGE**, respectively. System permissions cannot be inherited by a user from a role, and cannot be granted using  **PUBLIC**.
 
@@ -24,6 +24,8 @@
 
     openGauss grants the permissions for objects of certain types to  **PUBLIC**. By default, permissions on tables, columns, sequences, foreign data sources, foreign servers, schemas, and tablespaces are not granted to  **PUBLIC**, but the following permissions are granted to  **PUBLIC**:  **CONNECT**  and  **CREATE TEMP TABLE**  permissions on databases,  **EXECUTE**  permission on functions, and  **USAGE**  permission on languages and data types \(including domains\). An object owner can revoke the default permissions granted to  **PUBLIC**  and grant permissions to other users as needed. For security purposes, you are advised to create an object and set its permissions in the same transaction so that other users do not have time windows to use the object. In addition, you can run the  **ALTER DEFAULT PRIVILEGES**  statement to modify the default permissions.
 
+    By default, an object owner has all permissions on the object. For security purposes, the owner can discard some permissions. However, the ALTER, DROP, COMMENT, INDEX, VACUUM, and re-grantable permissions of the object are inherent permissions implicitly owned by the owner.
+
 -   **Granting a role's or user's permissions to other roles or users**
 
     Grant a role's or user's permissions to one or more roles or users. In this case, every role or user can be regarded as a set of one or more database permissions.
@@ -33,16 +35,16 @@
     Database administrators can grant or revoke permissions for any roles or users. Roles with the  **CREATEROLE**  permission can grant or revoke permissions for non-admin roles.
 
 
-## Precautions<a name="en-us_topic_0237122166_en-us_topic_0059778755_section1780116145345"></a>
+## Precautions<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_section1780116145345"></a>
 
 None
 
-## Syntax<a name="en-us_topic_0237122166_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
+## Syntax<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
--   Grant the table or view access permission to a specified user or role.
+-   Grant the table access permission to a specified user or role.
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES } [, ...] 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
           | ALL [ PRIVILEGES ] }
         ON { [ TABLE ] table_name [, ...]
            | ALL TABLES IN SCHEMA schema_name [, ...] }
@@ -54,17 +56,28 @@ None
 -   Grant the column access permission to a specified user or role.
 
     ```
-    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES } ( column_name [, ...] )} [, ...] 
+    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
           | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
         ON [ TABLE ] table_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
+-   Grant the sequence access permission to a specified user or role.
+
+    ```
+    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } [, ...] 
+          | ALL [ PRIVILEGES ] }
+        ON { [ SEQUENCE ] sequence_name [, ...]
+           | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    ```
+
 -   Grant the database access permission to a specified user or role.
 
     ```
-    GRANT { { CREATE | CONNECT | TEMPORARY | TEMP } [, ...]
+    GRANT { { CREATE | CONNECT | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...]
           | ALL [ PRIVILEGES ] }
         ON DATABASE database_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -80,8 +93,26 @@ None
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The current version does not support granting the domain access permission.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The current version does not support granting the domain access permission.
+
+-   Grant the client master key \(CMK\) access permission to a specified user or role.
+
+    ```
+    GRANT { USAGE | DROP | ALL [ PRIVILEGES ] }
+        ON { CLIENT_MASTER_KEY client_master_key [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    ```
+
+-   Grant the column encryption key \(CEK\) access permission to a specified user or role.
+
+    ```
+    GRANT { USAGE | DROP| ALL [ PRIVILEGES ] }
+        ON { COLUMN_ENCRYPTION_KEY column_encryption_key [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        [ WITH GRANT OPTION ];
+    ```
 
 -   Grant the external data source access permission to a specified user or role.
 
@@ -95,7 +126,7 @@ None
 -   Grant the external server access permission to a specified user or role.
 
     ```
-    GRANT { USAGE | ALL [ PRIVILEGES ] }
+    GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON FOREIGN SERVER server_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
@@ -104,7 +135,7 @@ None
 -   Grant the function access permission to a specified user or role.
 
     ```
-    GRANT { EXECUTE | ALL [ PRIVILEGES ] }
+    GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON { FUNCTION {function_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
            | ALL FUNCTIONS IN SCHEMA schema_name [, ...] }
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -129,25 +160,25 @@ None
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The current version does not support granting the large object access permission.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The current version does not support granting the large object access permission.
 
 -   Grant the schema access permission to a specified user or role.
 
     ```
-    GRANT { { CREATE | USAGE } [, ...] | ALL [ PRIVILEGES ] }
+    GRANT { { CREATE | USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON SCHEMA schema_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >When granting table or view permissions to other users, you also need to grant the  **USAGE**  permission on the containing schema. Without the  **USAGE**  permission, the recipients can only see the object names, but cannot access them.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >When granting table or view permissions to other users, you also need to grant the  **USAGE**  permission on the containing schema. Without the  **USAGE**  permission, the recipients can only see the object names, but cannot access them.
 
 -   Grant the tablespace access permission to a specified user or role.
 
     ```
-    GRANT { CREATE | ALL [ PRIVILEGES ] }
+    GRANT { { CREATE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TABLESPACE tablespace_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
@@ -156,14 +187,14 @@ None
 -   Grant the type access permission to a specified user or role.
 
     ```
-    GRANT { USAGE | ALL [ PRIVILEGES ] }
+    GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPE type_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The current version does not support granting the type access permission.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The current version does not support granting the type access permission.
 
 -   Grant a role's permissions to other users or roles.
 
@@ -199,7 +230,7 @@ None
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122166_en-us_topic_0059778755_s3557d45c54124d86bc3f619358d806f8"></a>
+## Parameter Description<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s3557d45c54124d86bc3f619358d806f8"></a>
 
 The possible permissions are:
 
@@ -225,7 +256,7 @@ The possible permissions are:
 
 -   **REFERENCES**
 
-    Allows creation of a foreign key constraint referencing a table. This permission is required on both referencing and referenced tables. 
+    Allows creation of a foreign key constraint referencing a table. This permission is required on both referencing and referenced tables.
 
 -   **CREATE**
     -   For databases, allows new schemas to be created within the database.
@@ -245,6 +276,26 @@ The possible permissions are:
     -   For schemas, allows access to objects contained in the schema. Without this permission, it is still possible to see the object names.
     -   For sequences, allows use of the  **nextval**  function.
     -   For data sources, specifies access permissions or is used as  **ALL PRIVILEGES**.
+
+-   **ALTER**
+
+    Allows users to modify properties of a specified object, excluding the owner and schema of the object.
+
+-   **DROP**
+
+    Allows users to delete specified objects.
+
+-   **COMMENT**
+
+    Allows users to define or modify comments of a specified object.
+
+-   **INDEX**
+
+    Allows users to create indexes on specified tables, manage indexes on the tables, and perform REINDEX and CLUSTER operations on the tables.
+
+-   **VACUUM**
+
+    Allows users to perform ANALYZE and VACUUM operations on specified tables.
 
 -   **ALL PRIVILEGES**
 
@@ -329,6 +380,18 @@ The possible permissions are:
 
     Specifies the tablespace name.
 
+-   client\_master\_key
+
+    Name of the client master key.
+
+    Value range: a string. It must comply with the naming convention.
+
+-   column\_encryption\_key
+
+    Name of the column encryption key.
+
+    Value range: a string. It must comply with the naming convention.
+
 -   **directory\_name**
 
     Specifies the name of the directory to be deleted.
@@ -339,17 +402,18 @@ The possible permissions are:
 
     If  **WITH GRANT OPTION**  is specified, the recipient of the permission can in turn grant it to others. Without a grant option, the recipient cannot do that. Grant options cannot be granted to  **PUBLIC**.
 
-     When a non-owner of an object attempts to GRANT permissions on the object:
 
-    -   The statement will fail outright if the user has no permissions whatsoever on the object.
-    -   As long as some permission is available, the statement will proceed, but it will grant only those permissions for which the user has grant options.
-    -   The  **GRANT ALL PRIVILEGES**  forms will issue a warning message if no grant options are held, while the other forms will issue a warning if grant options for any of the permissions specifically named in the statement are not held.
+When a non-owner of an object attempts to GRANT permissions on the object:
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Database administrators can access all objects, regardless of object permission settings. This is comparable to the permissions of  **root**  in a Unix system. As with  **root**, it is unwise to operate as a system administrator except when necessary.  
->**GRANT**  to a table partition will cause alarms.  
+-   The statement will fail outright if the user has no permissions whatsoever on the object.
+-   As long as some permission is available, the statement will proceed, but it will grant only those permissions for which the user has grant options.
+-   The  **GRANT ALL PRIVILEGES**  forms will issue a warning message if no grant options are held, while the other forms will issue a warning if grant options for any of the permissions specifically named in the statement are not held.
 
-## Examples<a name="en-us_topic_0237122166_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Database administrators can access all objects, regardless of object permission settings. This is comparable to the permissions of  **root**  in a Unix system. As with  **root**, it is unwise to operate as a system administrator except when necessary.
+>**GRANT**  to a table partition will cause alarms.
+
+## Examples<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
 
 **Example 1: Granting system permissions to a user or role**
 
@@ -432,6 +496,62 @@ Afterward, user  **joe**  has the sysadmin permissions.
     ```
 
 
+**Example: Granting the CMK or CEK permission to other user or role**
+
+1.  Connect to an encrypted database.
+
+    ```
+    gsql -p 57101 postgres -r -C
+    postgres=# \! gs_ktool -g
+    GENERATE
+    1
+    postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = gs_ktool , KEY_PATH = "gs_ktool/1" , ALGORITHM = AES_256_CBC);
+    CREATE CLIENT MASTER KEY
+    postgres=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
+    CREATE COLUMN ENCRYPTION KEY
+    ```
+
+2.  Create a role  **newuser **and grant the key permission to  **newuser**.
+
+    ```
+    postgres=# CREATE USER newuser PASSWORD 'gauss@123';
+    CREATE ROLE
+    postgres=# GRANT ALL ON SCHEMA public TO newuser;
+    GRANT
+    postgres=# GRANT USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 to newuser;
+    GRANT
+    postgres=# GRANT USAGE ON CLIENT_MASTER_KEY MyCMK1 to newuser;
+    GRANT
+    ```
+
+3.  Set the user to connect to a database and use a CEK to create an encrypted table.
+
+    ```
+    postgres=# SET SESSION AUTHORIZATION newuser PASSWORD 'gauss@123';
+    postgres=>  CREATE TABLE acltest1 (x int, x2 varchar(50) ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = MyCEK1, ENCRYPTION_TYPE = DETERMINISTIC));
+    NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'x' as the distribution column by default.
+    HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
+    CREATE TABLE
+    postgres=> SELECT has_cek_privilege('newuser', 'MyCEK1', 'USAGE');
+     has_cek_privilege
+    -------------------
+     t
+    (1 row)
+    ```
+
+4.  Revoke permissions and delete users.
+
+    ```
+    postgres=# REVOKE USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 FROM newuser;
+    postgres=# REVOKE USAGE ON CLIENT_MASTER_KEY MyCMK1 FROM newuser;
+    postgres=# DROP TABLE acltest1;
+    postgres=# DROP COLUMN ENCRYPTION KEY MyCEK1;
+    postgres=# DROP CLIENT MASTER KEY MyCMK1;
+    postgres=# DROP SCHEMA IF EXISTS newuser CASCADE;
+    postgres=# DROP ROLE IF EXISTS newuser;
+    ```
+
+
 **Example 4: Revoking permissions and deleting roles and users**
 
 ```
@@ -445,7 +565,7 @@ postgres=# DROP ROLE senior_manager;
 postgres=# DROP USER joe CASCADE;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122166_en-us_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
+## Helpful Links<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
-[REVOKE](revoke.md)  and  [ALTER DEFAULT PRIVILEGES](alter-default-privileges.md)
+[REVOKE](en-us_topic_0283137669.md)  and  [ALTER DEFAULT PRIVILEGES](en-us_topic_0283136687.md)
 
