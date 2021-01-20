@@ -49,7 +49,7 @@ Optionally,  **CREATE SCHEMA**  can include sub-commands to create objects withi
 
 -   **schema\_element**
 
-    Specifies an SQL statement defining an object to be created within the schema. Currently, only  **CREATE TABLE**,  **CREATE VIEW**,  **CREATE INDEX**,  **CREATE PARTITION**, and  **GRANT**  are accepted as clauses within  **CREATE SCHEMA**.
+    Specifies an SQL statement defining an object to be created within the schema. Currently, only  **CREATE TABLE**,  **CREATE VIEW**,  **CREATE INDEX**,  **CREATE PARTITION**, **CREATE SEQUENCE**, **CREATE TRIGGER**, and  **GRANT**  are accepted as clauses within  **CREATE SCHEMA**.
 
     Objects created by sub-commands are owned by the user specified by  **AUTHORIZATION**.
 
