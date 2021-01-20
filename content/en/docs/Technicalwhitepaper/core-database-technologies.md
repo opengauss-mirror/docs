@@ -7,6 +7,7 @@
 - [HA](#ha)
 - [Maintainability](#maintainability)
 - [Database Security](#database-security)
+- [AI Capabilities](#ai-capabilities)
 
 <!-- /TOC -->
 
@@ -16,7 +17,7 @@
 
     openGauss supports standard SQL statements. The SQL standard is an international standard and is updated periodically. SQL standards are classified into core features and optional features. Most databases do not fully support SQL standards. SQL features are built by database vendors to maintain customers and push up application migration costs. New SQL features are increasingly different among vendors. Currently, there is no authoritative SQL standard test.
 
-    openGauss database supports most of the core features of SQL:2011 and some optional features. For details about the features, see the  _openGauss Product Description_.
+    openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  _Developer Guide_.
 
     The introduction of standard SQL provides a unified SQL interface for all database vendors, reducing the learning costs of users and openGauss application migration costs.
 
@@ -91,13 +92,13 @@
 
 ### CBO Optimizer<a name="section1056021019542"></a>
 
-The openGauss optimizer is a typical optimizer developed from Cost-based Optimization \(CBO\). By using CBO, the database calculates the number of tuples and the execution cost for each step under each execution plan based on the number of table tuples, column width, null record ratio, and characteristic values, such as distinct, MCV, and HB values, and certain cost calculation methods. The database then selects the execution plan that takes the lowest cost for the overall execution or for the return of the first tuple.
+The openGauss optimizer is a typical Cost-based Optimization \(CBO\). By using CBO, the database calculates the number of tuples and the execution cost for each execution step under each execution plan based on the number of table tuples, column width, null record ratio, and characteristic values, such as distinct, MCV, and HB values, and certain cost calculation methods. The database then selects the execution plan that takes the lowest cost for the overall execution or for the return of the first tuple.
 
 The CBO optimizer can select the most efficient execution plan among multiple plans based on the cost to meet customer service requirements to the maximum extent.
 
 ### Hybrid Row-Column Storage<a name="section489210341544"></a>
 
-openGauss supports both row-store and column-store models. Choose a row-store or column-store table as needed.
+openGauss supports both row-store and column-store models. Users can choose a row-store or column-store table based on their needs.
 
 Column-store is recommended if a table contains many columns \(called a wide table\) but its query involves only a few columns. Row-store is recommended if a table contains only a few columns and a query involves most of the columns.
 
@@ -221,7 +222,7 @@ Currently, the database has implemented various compression algorithms, includin
 
 For example, large integer compression of mobile number-like character strings, large integer compression of the numeric type, and adjustment of the compression algorithm compression level are supported.
 
-### Partitioning<a name="section768241520552"></a>
+### Partition
 
 In the openGauss system, data is partitioned horizontally on an instance using a specified policy. This operation splits a table into multiple partitions that are not overlapped.
 
@@ -449,7 +450,7 @@ Multiple suites are provided to capture, collect, and analyze diagnosis data, en
 
 The one-click collection tool obtains different information from the production environment depending on the actual faults, improving the fault locating and demarcation efficiency. You can modify the configuration file to collect the required information:
 
--   OS information by running Linux commands
+-   OS information by running OS commands
 -   Database information by querying system catalogs or views
 -   Run logs of the database system and logs related to cluster management
 -   Database system configuration information
@@ -605,6 +606,22 @@ You can create a row-level access control policy for a data table. The policy de
 
 Row-level access control is used to control the visibility of row-level data in tables. By predefining filters for data tables, the expressions that meet the specified condition can be applied to execution plans in the query optimization phase, which will affect the final execution result. Currently, row-level access control supports the following SQL statements: SELECT, UPDATE, and DELETE.
 
+### Resource Labels
+
+The resource label feature classifies database resources based on user-defined rules to implement resource classification and management. Administrators can configure resource labels to configure security policies, such as auditing or data masking, for a group of database resources.
+
+Resource labels can be used to group database resources based on features and application scenarios. You can manage all database resources with specified labels, which greatly reduces policy configuration complexity and information redundancy and improves management efficiency.
+
+Currently, resource labels support the following database resource types: schema, table, column, view, and function.
+
+### Dynamic Data Masking
+
+To prevent unauthorized users from sniffing privacy data, the dynamic data masking feature can be used to protect user privacy data. When an unauthorized user accesses the data for which a dynamic data masking policy is configured, the database returns the anonymized data to protect privacy data.
+
+Administrators can create dynamic data masking policies on data columns. The policies specify the data masking methods for specific user scenarios. After the dynamic data masking function is enabled, the system matches user identity information \(such as the access IP address, client tool, and username\) with the masking policy when a user accesses data in the sensitive column. After the matching is successful, the system masks the sensitive data in the query result of the column based on the masking policy.
+
+The purpose of dynamic data masking is to flexibly protect privacy data by configuring the filter, and specifying sensitive column labels and corresponding masking functions in the masking policy without changing the source data.
+
 ### Unified Auditing
 
 Unified auditing allows administrators to configure audit policies for database resources or resource labels to simplify management, generate audit logs, reduce redundant audit logs, and improve management efficiency.
@@ -612,3 +629,23 @@ Unified auditing allows administrators to configure audit policies for database 
 Administrators can customize audit policies for configuring operation behaviors or database resources. The policies are used to audit specific user scenarios, user behaviors, or database resources. After the unified auditing function is enabled, when a user accesses the database, the system matches the corresponding unified audit policy based on the user identity information, such as the access IP address, client tool, and username. Then, the system classifies the user behaviors based on the access resource label and user operation type \(DML or DDL\) in the policy to perform unified auditing.
 
 The purpose of unified auditing is to change the existing traditional audit behavior into specific tracking audit behavior and exclude other behaviors from the audit, thereby simplifying management and improving the security of audit data generated by the database.
+
+### Password Strength Verification
+
+To harden the security of customer accounts and data, do not set weak passwords. You need to specify a password when initializing the database, creating a user, or modifying a user. The password must meet the strength requirements. Otherwise, the system prompts you to enter the password again.
+
+The account password complexity policy restricts the minimum number of uppercase letters, lowercase letters, digits, and special characters in a password, the maximum and minimum length of a password, the password cannot be the same as the username or the reverse of the username, and the password cannot be a weak password. This policy enhances user account security.
+
+Weak passwords are easy to crack. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
+
+The  **password\_policy**  parameter specifies whether to enable the password strength verification mechanism. The default value is  **1**, indicating that the password strength verification mechanism is enabled.
+
+## AI Capabilities
+
+### AI4DB
+
+AI4DB includes intelligent parameter tuning and diagnosis, slow SQL discovery, index recommendation, time sequence prediction, and exception detection. It provides users with more convenient O&M operations and performance improvement, and implements functions such as self-tuning, self-monitoring, and self-diagnosis.
+
+### DB4AI
+
+DB4AI is compatible with the MADlib ecosystem, supports more than 70 algorithms, and delivers performance several times higher than that of MADlib on PostgreSQL. Advanced and common algorithm suites such as XGBoost, prophet, and GBDT are added to supplement the shortcomings of the MADlib ecosystem. The technology stack from SQL to machine learning is unified to implement one-click driving of SQL statements from data management to model training.

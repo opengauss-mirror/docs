@@ -6,21 +6,21 @@ The openGauss can be deployed in standalone mode or with one primary node and mu
 
 -   Standalone
 
-    Standalone deployment indicates that there is only one database instance.
+    There is only one database instance.
 
--   HA
+- Primary/Standby
 
-    In an HA cluster, primary and standby DB instances exist in the system. The primary DB instance supports read and write, and the standby DB instance supports read-only.
+  There are primary and standby database instances in the system. The primary instance supports read and write, and the standby instance supports read-only.
 
--   One primary and multiple standbys
+- One primary and multiple standbys
 
-    One primary and multiple standbys refer to the system that has one primary node and multiple standby nodes. A maximum of eight standby nodes are supported.
+  The system has one primary node and multiple standby nodes. Up to  8  standby nodes are supported.
 
--   Hot/Cold backup
+- Hot/Cold backup
 
-    Cold backup: There is only a simple backup set that cannot provide services.
+  Cold backup: There is only a simple backup set that cannot provide services.
 
-    Hot backup: Backup clusters can provide services for external systems.
+  Hot backup: Backup databases can provide services for external systems.
 
 
 ## Deployment Modes<a name="section189157457406"></a>
@@ -80,19 +80,20 @@ For details about the standalone and HA cluster deployment modes, see  [Table 1]
 </td>
 <td class="cellrowborder" valign="top" width="11.561156115611562%" headers="mcps1.2.8.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"></a>Primary node + Multiple standby nodes +Quorum</p>
 </td>
-<td class="cellrowborder" valign="top" width="10.051005100510052%" headers="mcps1.2.8.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"></a>Instance faults can be withstood.</p>
+<td class="cellrowborder" valign="top" width="10.051005100510052%" headers="mcps1.2.8.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"></a>Instance faults in the database can be withstood.</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.671067106710671%" headers="mcps1.2.8.1.4 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1098791801920"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1098791801920"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1098791801920"></a>Single equipment room</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.41104110411041%" headers="mcps1.2.8.1.5 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p8591412192012"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p8591412192012"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p8591412192012"></a>PM</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.99209920992099%" headers="mcps1.2.8.1.6 "><a name="en-us_topic_0243295239_en-us_topic_0240782908_ul1473717417212"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_ul1473717417212"></a><ul id="en-us_topic_0243295239_en-us_topic_0240782908_ul1473717417212"><li>No network latency between nodes.</li><li>Instance faults in the cluster can be withstood.</li></ul>
+<td class="cellrowborder" valign="top" width="20.99209920992099%" headers="mcps1.2.8.1.6 "><a name="en-us_topic_0243295239_en-us_topic_0240782908_ul1473717417212"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_ul1473717417212"></a><ul id="en-us_topic_0243295239_en-us_topic_0240782908_ul1473717417212"><li>No network latency between nodes.</li><li>Instance faults in the database can be withstood.</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="28.48284828482848%" headers="mcps1.2.8.1.7 "><a name="en-us_topic_0243295239_en-us_topic_0240782908_ul13758194392316"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_ul13758194392316"></a><ul id="en-us_topic_0243295239_en-us_topic_0240782908_ul13758194392316"><li>RPO=0</li><li>Instance fault RTO &lt; 10s</li><li>AZ-level DR is not supported.</li><li>Primary/Standby synchronization is recommended.</li><li>At least two copies and at most four copies are supported.</li></ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 ## Hardware and Software Specifications<a name="en-us_topic_0243295239_en-us_topic_0240782908_section9327172719508"></a>
 
@@ -113,12 +114,12 @@ openGauss supports the following CPUs and OSs:
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a>X86</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a>CentOS 7.6</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a>CentOS 7.6 or openEuler 20.3 LTS</p>
 </td>
 </tr>
 <tr id="en-us_topic_0243295239_en-us_topic_0240782908_row221414883410"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p11214164893414"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p11214164893414"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p11214164893414"></a>Kunpeng</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a>openEuler 20.03 LTS</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a>openEuler 20.03 LTS or Kirin V10</p>
 </td>
 </tr>
 </tbody>
