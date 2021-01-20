@@ -17,6 +17,16 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p503313199138"><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p503313199138"></a><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p503313199138"></a>Atomicity, consistency, isolation, and durability (ACID) is a set of properties that guarantee that transactions are processed reliably in a database management system (DBMS).</p>
 </td>
 </tr>
+<tr id="row950717152276"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p165088158271"><a name="p165088158271"></a><a name="p165088158271"></a>AI4DB</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1461064211258"><a name="p1461064211258"></a><a name="p1461064211258"></a>AI4DB uses AI to implement database autonomy.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0283139005_en-us_topic_0283139955_row1218415515589"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139005_en-us_topic_0283139955_p19185165595811"><a name="en-us_topic_0283139005_en-us_topic_0283139955_p19185165595811"></a><a name="en-us_topic_0283139005_en-us_topic_0283139955_p19185165595811"></a>AZ</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139005_en-us_topic_0283139955_p71861455205814"><a name="en-us_topic_0283139005_en-us_topic_0283139955_p71861455205814"></a><a name="en-us_topic_0283139005_en-us_topic_0283139955_p71861455205814"></a>Acronym for available zone which usually refers to an equipment room.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_row503286879138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p500918429138"><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p500918429138"></a><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p500918429138"></a>bgwriter</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p309074109138"><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p309074109138"></a><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p309074109138"></a>A background write thread created when the database starts. The thread is used to flush dirty pages out of the database to a permanent device (such as a disk).</p>
@@ -175,6 +185,11 @@
 <tr id="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_row630582639138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p74456989138"><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p74456989138"></a><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p74456989138"></a>failover</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p662306789138"><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p662306789138"></a><a name="en-us_topic_0241499484_en-us_topic_0085413843_en-us_topic_0059777370_p662306789138"></a>Automatic switchover from a faulty primary node to its standby node. Reversely, automatic switchback from the standby node to the primary node is called failback.</p>
+</td>
+</tr>
+<tr id="row1527615181285"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p10276131811288"><a name="p10276131811288"></a><a name="p10276131811288"></a>DB4AI</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1627611812816"><a name="p1627611812816"></a><a name="p1627611812816"></a>DB4AI uses databases to complete AI tasks.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0241499484_row57925184172335"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241499484_p51564615172335"><a name="en-us_topic_0241499484_p51564615172335"></a><a name="en-us_topic_0241499484_p51564615172335"></a>FDW</p>

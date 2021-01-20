@@ -9,4 +9,3 @@ There are five openGauss code repositories: open-source software patch code repo
 -   ODBC driver code repository:  [https://gitee.com/opengauss/openGauss-connector-odbc](https://gitee.com/opengauss/openGauss-connector-odbc)
 -   Database server code repository:  [https://gitee.com/opengauss/openGauss-server](https://gitee.com/opengauss/openGauss-server)
 -   Database OM tool code repository:  [https://gitee.com/opengauss/openGauss-OM](https://gitee.com/opengauss/openGauss-OM)
-

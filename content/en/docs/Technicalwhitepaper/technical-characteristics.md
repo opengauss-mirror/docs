@@ -17,4 +17,7 @@ Compared with other open-source databases, openGauss provides multiple storage m
     -   Data page CRC check is supported. Damaged data pages are automatically restored by the standby node.
     -   The standby node recovers in parallel and can be promoted to primary to provide services within 10 seconds.
 
+-   AI capabilities
+    -   AI4DB, including intelligent parameter tuning and diagnosis, slow SQL discovery, index recommendation, time series forecasting, and exception detection.
+    -   DB4AI, which is compatible with the MADlib ecosystem, supports 70+ algorithms, has performance several times higher than that of the native MADlib, and supports advanced algorithms such as XGBoost and GBDT.
 
