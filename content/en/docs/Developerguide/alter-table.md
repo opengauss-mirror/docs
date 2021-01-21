@@ -162,7 +162,10 @@
                   CHECK ( expression ) |
                   DEFAULT default_expr  |
                   UNIQUE index_parameters |
-                  PRIMARY KEY index_parameters |      ENCRYPTEDWITH(COLUMN_ENCRYPTION_KEY=column_encryption_key,ENCRYPTION_TYPE=encryption_type_value)}
+                  PRIMARY KEY index_parameters |
+                  ENCRYPTEDWITH(COLUMN_ENCRYPTION_KEY=column_encryption_key,ENCRYPTION_TYPE=encryption_type_value) |
+                  REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+                      [ ON DELETE action ] [ ON UPDATE action ] }}
                 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
             ```
 
@@ -188,7 +191,9 @@
             { CHECK ( expression ) |
               UNIQUE ( column_name [, ... ] ) index_parameters |
               PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-              PARTIAL CLUSTER KEY ( column_name [, ... ] }
+              PARTIAL CLUSTER KEY ( column_name [, ... ] |
+              FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] )
+                  [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
 
