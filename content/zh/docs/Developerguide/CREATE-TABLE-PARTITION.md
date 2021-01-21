@@ -66,7 +66,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       CHECK ( expression ) | 
       DEFAULT default_expr | 
       UNIQUE index_parameters | 
-      PRIMARY KEY index_parameters }
+      PRIMARY KEY index_parameters |
+      REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+          [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
