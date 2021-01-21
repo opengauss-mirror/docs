@@ -204,7 +204,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 -   **on**  indicates that the tables will be checked.
 -   **off**  indicates that the tables will not be checked.
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 ## enable\_sonic\_hashagg<a name="en-us_topic_0283137690_en-us_topic_0237124719_section93071140163618"></a>
 
