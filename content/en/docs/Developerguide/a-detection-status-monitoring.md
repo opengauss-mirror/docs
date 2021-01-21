@@ -1,8 +1,8 @@
 # A-Detection: Status Monitoring<a name="EN-US_TOPIC_0296549224"></a>
 
--   **[Overview](overview-8.md)**  
+-   **[Overview](overview-43.md)**  
 
--   **[Preparations](preparations.md)**  
+-   **[Preparations](preparations-8.md)**  
 
 -   **[Adding Monitoring Parameters](adding-monitoring-parameters.md)**  
 

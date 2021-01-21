@@ -1,13 +1,13 @@
 # Predictor: AI Query Time Forecasting<a name="EN-US_TOPIC_0289900436"></a>
 
--   **[Overview](overview-0.md)**  
+-   **[Overview](overview-40.md)**  
 
--   **[Environment Deployment](environment-deployment.md)**  
+-   **[Environment Deployment](environment-deployment-20.md)**  
 
--   **[Usage Guide](usage-guide.md)**  
+-   **[Usage Guide](usage-guide-20.md)**  
 
--   **[Best Practices](best-practices.md)**  
+-   **[Best Practices](best-practices-20.md)**  
 
--   **[FAQs](faqs.md)**  
+-   **[FAQs](faqs-20.md)**  
 
 
