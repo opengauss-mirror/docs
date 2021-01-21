@@ -6,7 +6,7 @@ SQLdiag is a framework for predicting the execution duration of SQL statements i
 2.  The framework is widely used, unlike many other well-targeted algorithms in the industry, for example, they may applicable only to OLTP or OLAP.
 3.  The framework is robust and easy to understand. Users can design their own prediction models by simply modifying the framework.
 
--   **[Overview](overview-3.md)**  
+-   **[Overview](overview-42.md)**  
 
 -   **[Usage Guide](usage-guide-4.md)**  
 
@@ -14,6 +14,6 @@ SQLdiag is a framework for predicting the execution duration of SQL statements i
 
 -   **[Command Reference](command-reference-6.md)**  
 
--   **[Troubleshooting](troubleshooting-7.md)**  
+-   **[Troubleshooting](troubleshooting-22.md)**  
 
 
