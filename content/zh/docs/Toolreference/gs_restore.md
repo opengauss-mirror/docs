@@ -243,7 +243,7 @@ gs_restore [OPTION]... FILE
 -   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
 ```  
 CREATE DATABASE foo WITH TEMPLATE template0;  
-```  
+```
 -   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入，或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。  
 
 ![](public_sys-resources/icon-note.gif) **说明：**   
@@ -265,9 +265,9 @@ CREATE DATABASE foo WITH TEMPLATE template0;
 
 -   -p, --port=PORT
 
-    指定服务器所监听的TCP端口或本地Unix域套接字后缀，以确保连接。默认值设置为PGPORT环境变量。
+    指定服务器所侦听的TCP端口或本地Unix域套接字后缀，以确保连接。默认值设置为PGPORT环境变量。
 
-    在开启线程池情况下，建议使用 pooler port，即监听端口+1。
+    在开启线程池情况下，建议使用 pooler port，即侦听端口+1。
 
 -   -U, --username=NAME
 

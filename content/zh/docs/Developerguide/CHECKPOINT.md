@@ -9,7 +9,7 @@
 ## 注意事项<a name="zh-cn_topic_0237122089_zh-cn_topic_0059778147_s86cf086bf81043cba0f2133b169b333d"></a>
 
 -   只有系统管理员可以调用CHECKPOINT。
--   CHECKPOINT强迫立即进行检查，而不是等到下一次调度时的检查点。
+-   CHECKPOINT强制立即进行检查，而不是等到下一次调度时的检查点。
 
 ## 语法格式<a name="zh-cn_topic_0237122089_zh-cn_topic_0059778147_s9089f4a8029c4cdaaf4f52fc3153da03"></a>
 
