@@ -238,7 +238,7 @@
 </tr>
 <tr id="row196421844162013"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p69281428009"><a name="p69281428009"></a><a name="p69281428009"></a>dataListenIp1</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p19929152819012"><a name="p19929152819012"></a><a name="p19929152819012"></a>监听的IP地址。未设置时，使用对应主机上的backIp1生成。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p19929152819012"><a name="p19929152819012"></a><a name="p19929152819012"></a>侦听的IP地址。未设置时，使用对应主机上的backIp1生成。</p>
 <p id="p14929182812017"><a name="p14929182812017"></a><a name="p14929182812017"></a>第一个IP是主节点所在主机IP，第二个IP是备节点所在主机IP。</p>
 </td>
 </tr>
