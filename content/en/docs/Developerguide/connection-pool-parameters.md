@@ -8,9 +8,9 @@ When a connection pool is used to access the database, database connections are 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_. The smallest unit is m.
+**Value range**: an integer ranging from 0 to  _INT\_MAX_. The smallest unit is s.
 
-**Default value**:  **1h**  \(60 minutes\)
+**Default value**:  **10min**  
 
 ## minimum\_pool\_size<a name="en-us_topic_0237124740_section16829755181011"></a>
 
@@ -20,7 +20,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from 1 to 65535
 
-**Default value**:  **200**
+**Default value**:  **50**
 
 ## cache\_connection<a name="en-us_topic_0237124740_en-us_topic_0059778940_s450db879c7f442bba4c36ebf022f7e09"></a>
 

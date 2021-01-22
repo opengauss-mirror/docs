@@ -11,7 +11,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 0 to 262143
 
-**Default value:** **16**
+**Default value:** **4**
 
 ## wal\_keep\_segments<a name="en-us_topic_0283137693_en-us_topic_0237124712_en-us_topic_0059777860_sf1f97e9d2e034746932686e8578c975e"></a>
 
@@ -21,7 +21,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 2 to  _INT\_MAX_
 
-**Default value**:  **65**
+**Default value**:  **16**
 
 **Setting suggestions**:
 
@@ -49,7 +49,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 8 to 100
+**Value range**: an integer ranging from 0 to 262143.
 
 **Default value**:  **8**
 

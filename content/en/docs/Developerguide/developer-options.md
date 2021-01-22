@@ -6,6 +6,8 @@
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
+It is not recommended to modify the default value of this parameter. If it is set to on, the system tables may be damaged and the database may not start.
+
 **Value range**: Boolean
 
 -   **on**  indicates that the structures of system tables can be modified.
@@ -49,6 +51,10 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
+
++ on means that vectorized operators are forced to generate vectorization.
+
++ off means that the vector operator optimizer decides whether to vectorize.
 
 **Default value**:  **off**
 
@@ -482,7 +488,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 256.  **0**  indicates that the asynchronous flush function is disabled. The size of a single page is 8 KB. For example, if the value is  **64**, the background writer thread continuously writes 64 disk pages \(that is, 64 x 8 = 512 KB\) before asynchronous flush.
 
-**Default value**:  **256KB**  \(32 pages\)
+**Default value**:  **512KB**  \(64 pages\)
 
 ## backend\_flush\_after<a name="en-us_topic_0283137548_en-us_topic_0237124743_section9929104982217"></a>
 
@@ -647,14 +653,6 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 ## enable\_beta\_opfusion<a name="en-us_topic_0283137548_section19786104412547"></a>
 
 **Parameter description**: Specifies whether to accelerate the execution of SQL statements, such as aggregate functions, sorting, and nestloop join, in TPC-C when  **enable\_opfusion**  is set to  **on**. For the nestloop join SQL statements,  **enable\_beta\_nestloop\_fusion**  must be also set to  **on**.
-
-**Value range**: Boolean
-
-**Default value**:  **off**
-
-## enable\_beta\_nestloop\_fusion<a name="en-us_topic_0283137548_section19131501541"></a>
-
-**Parameter description**: Specifies whether to accelerate the execution of nestloop join SQL statements in TPC-C when both  **enable\_opfusion**  and  **enable\_beta\_opfusion**  are set to  **on**.
 
 **Value range**: Boolean
 
