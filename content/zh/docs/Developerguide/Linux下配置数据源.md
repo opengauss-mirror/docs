@@ -89,7 +89,7 @@
    Database=postgres  （数据库名）
    Username=omm  （数据库用户名）
    Password=  （数据库用户密码）
-   Port=8000 （数据库监听端口）
+   Port=8000 （数据库侦听端口）
    Sslmode=allow
    ```
 

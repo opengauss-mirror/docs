@@ -46,7 +46,7 @@ CREATE SERVER server_name
 
     -   **port** （默认值为 `3306`）
 
-        MySQL Server/MariaDB监听的端口号。
+        MySQL Server/MariaDB侦听的端口号。
         
     
     postgres_fdw支持的options同libpq支持的连接参数一致，可参考 **[链接字符](链接字符.md)** 。需要注意的是，以下几个options不支持设置：
