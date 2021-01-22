@@ -147,7 +147,7 @@
         >    ```
         >    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
         >    ```
-        >    这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强迫重写，这样就删除了不再使用的数据。
+        >    这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
         >-   **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
         >    为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
         >-   **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
@@ -184,15 +184,15 @@
 
 
     -   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
-
+    
         ```
         [ CONSTRAINT constraint_name ]
             { UNIQUE | PRIMARY KEY } USING INDEX index_name
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-
+    
     -   其中表约束table\_constraint为：
-
+    
         ```
         [ CONSTRAINT constraint_name ]
             { CHECK ( expression ) |
@@ -201,9 +201,9 @@
               PARTIAL CLUSTER KEY ( column_name [, ... ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-
+    
         其中索引参数index\_parameters为：
-
+    
         ```
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
             [ USING INDEX TABLESPACE tablespace_name ]
