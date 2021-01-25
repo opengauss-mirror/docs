@@ -502,15 +502,12 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 
     ```
     gsql -p 57101 postgres -r -C
-    postgres=# \! gs_ktool -g
-    GENERATE
-    1
-    postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = gs_ktool , KEY_PATH = "gs_ktool/1" , ALGORITHM = AES_256_CBC);
+    postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = localkms , KEY_PATH = "key_path_value" , ALGORITHM = RSA_2048);
     CREATE CLIENT MASTER KEY
     postgres=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
     CREATE COLUMN ENCRYPTION KEY
     ```
-
+    
 2.  创建角色newuser，将密钥的权限授权给newuser。
 
     ```
@@ -544,10 +541,11 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
     ```
     postgres=# REVOKE USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 FROM newuser;
     postgres=# REVOKE USAGE ON CLIENT_MASTER_KEY MyCMK1 FROM newuser;
-    postgres=# DROP TABLE acltest1;
+    postgres=# DROP TABLE newuser.acltest1;
     postgres=# DROP COLUMN ENCRYPTION KEY MyCEK1;
     postgres=# DROP CLIENT MASTER KEY MyCMK1;
     postgres=# DROP SCHEMA IF EXISTS newuser CASCADE;
+    postgres=# REVOKE ALL ON SCHEMA public FROM newuser;
     postgres=# DROP ROLE IF EXISTS newuser;
     ```
 
