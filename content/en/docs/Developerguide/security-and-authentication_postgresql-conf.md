@@ -52,7 +52,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >openGauss supports SSL when a client connects to the primary node of the database. You are advised to enable SSL connections only on the primary node of the database. On database node, the default value is  **off**. To enable SSL connections, you also need to configure parameters such as  **ssl\_cert\_file**,  **ssl\_key\_file**, and  **ssl\_ca\_file**  and the corresponding files. Incorrect configurations may cause startup failure of openGauss.  
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 ## require\_ssl<a name="en-us_topic_0237124696_section1652594319820"></a>
 
@@ -169,12 +169,14 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
+If the initial user password is not specified during the installation process, the initial user password will be blank by default after installation. You need to set the initial user password through the gsql client before performing other operations. This parameter function no longer takes effect, and this parameter is reserved only for compatible upgrade scenarios.
+
 **Value range**: Boolean
 
 -   **on**  indicates that the password of the initial account needs to be modified upon the first login.
 -   **off**  indicates that the password of the initial account does not need to be modified.
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 ## password\_policy<a name="en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626"></a>
 
@@ -277,7 +279,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **2**  indicates that passwords are encrypted with SHA-256.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->MD5 is not recommended because it is not a secure encryption algorithm.  
+> The md5 encryption algorithm has low security and security risks, so it is not recommended for users.
 
 **Default value:** **2**
 
