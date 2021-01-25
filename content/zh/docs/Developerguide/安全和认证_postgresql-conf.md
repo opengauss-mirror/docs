@@ -52,7 +52,7 @@
 >![](public_sys-resources/icon-notice.gif) **须知：**   
 >openGauss目前支持SSL的场景为客户端连接数据库主节点场景，该参数目前建议只在数据库主节点中开启，数据库节点默认值为off。开启此参数需要同时配置ssl\_cert\_file、ssl\_key\_file和ssl\_ca\_file等参数及对应文件，不正确的配置可能会导致openGauss无法正常启动。  
 
-**默认值：**on
+**默认值：**off
 
 ## require\_ssl<a name="zh-cn_topic_0237124696_section1652594319820"></a>
 
@@ -169,12 +169,14 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
+如果安装过程中未指定初始用户密码，则安装后初始用户密码默认为空，执行其他操作前需要先通过gsql客户端设置初始用户的密码。此参数功能不再生效，保留此参数仅为兼容升级场景。
+
 **取值范围：**布尔型
 
 -   on表示openGauss安装成功后初始用户首次登录操作前需要修改初始密码。
 -   off表示openGauss安装成功后初始用户无需修改初始密码即可进行操作。
 
-**默认值：**on
+**默认值：**off
 
 ## password\_policy<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626"></a>
 
@@ -277,7 +279,7 @@
 -   2表示采用sha256方式对密码加密。
 
 >![](public_sys-resources/icon-notice.gif) **须知：**   
->md5为不安全的加密算法，不建议用户使用。  
+>md5加密算法安全性低，存在安全风险，不建议用户使用。  
 
 **默认值：**2
 
