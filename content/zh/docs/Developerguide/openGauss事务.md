@@ -13,7 +13,7 @@
 -   serializable：openGauss中等价于REPEATABLE READ。
 -   read committed：只能读取已提交的事务的数据（缺省），不能读取到未提交的数据。
 -   repeatable read：仅能读取事务开始之前提交的数据，不能读取未提交的数据以及在事务执行期间由其它并发事务提交的修改。
--   default：设置为defualt\_transaction\_isolation所设隔离级别。
+-   default：设置为default\_transaction\_isolation所设隔离级别。
 
 **默认值：**read committed
 
