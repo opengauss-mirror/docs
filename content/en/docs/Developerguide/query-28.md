@@ -47,7 +47,7 @@ This parameter is an INTERNAL parameter. Set it based on instructions provided i
 
 **Value range**: a string
 
-**Default value**:  **"80,95"**
+**Default value**:  **80,95**
 
 ## instr\_rt\_percentile\_interval<a name="en-us_topic_0283137149_en-us_topic_0237124756_section1658494717518"></a>
 
