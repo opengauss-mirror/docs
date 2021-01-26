@@ -52,11 +52,13 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 2 x 1024 x 1024 to  _INT\_MAX_. The unit is KB.
 
-**Default value**: On the primary database node, the value is automatically calculated using the following formula: \(Physical memory\) x 0.6/\(1 + Number of primary nodes\). If the result is less than 2 GB, the value of 2 GB is used. On a standby or secondary database node, the value is 12 GB by default.
+**Default value**:12GB
 
 **Setting suggestions**:
-
-On database nodes, the value of this parameter is determined based on the physical system memory and the number of primary database nodes. Parameter value = Physical memory size x Coefficient/Number of primary nodes. The recommended coefficient is  **0.8**. This coefficient is used to reserve memory for the OS kernel. It prevents node OOM caused by memory usage bloat, ensuring system reliability. Set a smaller coefficient when the amount of physical memory of a node is smaller. For example, set the coefficient to  **0.9**  for a node with 128 GB physical memory, and  **0.7**  for a node with 32 GB physical memory.
+The value on the database node needs to be determined based on the physical memory of the system and the number of primary database nodes deployed on a single node. 
+The recommended calculation formula is as follows: (physical memory size-vm.min_free_kbytes) * 0.7 / (1 + the number of master nodes). 
+The purpose of this coefficient is to ensure the reliability of the system as much as possible, and will not cause node OOM due to the expansion of database memory. 
+This formula mentions vm.min_free_kbytes, which means that operating system memory is reserved for kernel use. It is usually used for communication transceiver memory allocation in operating system kernel, at least 5% of memory. That is, max_process_memory = physical memory * 0.665 / (1 + the number of master nodes).
 
 ## enable\_memory\_context\_control<a name="en-us_topic_0237124699_section83355314353"></a>
 
