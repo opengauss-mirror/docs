@@ -47,7 +47,7 @@
 
 **取值范围：**字符串。
 
-**默认值**："80，95"
+**默认值**：80,95
 
 ## instr\_rt\_percentile\_interval<a name="zh-cn_topic_0237124756_section1658494717518"></a>
 
