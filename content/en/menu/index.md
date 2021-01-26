@@ -910,7 +910,6 @@ headless: true
 			-   [GS\_WLM\_SESSION\_INFO\_ALL]({{< relref "./docs/Developerguide/gs_wlm_session_info_all.md" >}})
 			-   [GS\_WLM\_USER\_INFO]({{< relref "./docs/Developerguide/gs_wlm_user_info.md" >}})
 			-   [GS\_WLM\_SESSION\_STATISTICS]({{< relref "./docs/Developerguide/gs_wlm_session_statistics.md" >}})
-			-   [GS\_STAT\_DB\_CU]({{< relref "./docs/Developerguide/gs_stat_db_cu.md" >}})
 			-   [GS\_STAT\_SESSION\_CU]({{< relref "./docs/Developerguide/gs_stat_session_cu.md" >}})
 			-   [MPP\_TABLES]({{< relref "./docs/Developerguide/mpp_tables.md" >}})
 			-   [PG\_AVAILABLE\_EXTENSION\_VERSIONS]({{< relref "./docs/Developerguide/pg_available_extension_versions.md" >}})

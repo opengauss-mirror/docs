@@ -169,6 +169,16 @@ PG\_LOCKS视图存储各打开事务所持有的锁信息。
 <td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a15cc395f520d49348ba668381f91345d"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a15cc395f520d49348ba668381f91345d"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a15cc395f520d49348ba668381f91345d"></a>如果通过fast-path获得锁，则为TRUE；如果通过主要的锁表获得，则为FALSE。</p>
 </td>
 </tr>
+<tr id="row018262010129"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="p1778485184420"><a name="p1778485184420"></a><a name="p1778485184420"></a>locktag</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.2 "><p id="p578445104412"><a name="p578445104412"></a><a name="p578445104412"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="p4784257442"><a name="p4784257442"></a><a name="p4784257442"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="p6784250443"><a name="p6784250443"></a><a name="p6784250443"></a>会话等待锁信息，可通过locktag_decode()函数解析。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 

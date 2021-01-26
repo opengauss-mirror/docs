@@ -231,6 +231,34 @@ PG\_ROLES视图提供访问数据库角色的相关信息。
 <td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122429_p79695291192"><a name="zh-cn_topic_0237122429_p79695291192"></a><a name="zh-cn_topic_0237122429_p79695291192"></a>该字段不支持。</p>
 </td>
 </tr>
+<tr id="row782172861310"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="p435512501936"><a name="p435512501936"></a><a name="p435512501936"></a>rolmonitoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.380000000000003%" headers="mcps1.2.5.1.2 "><p id="p1935514501936"><a name="p1935514501936"></a><a name="p1935514501936"></a>Boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="p1535519501315"><a name="p1535519501315"></a><a name="p1535519501315"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="p1355205017313"><a name="p1355205017313"></a><a name="p1355205017313"></a>该角色是否为监控管理员。</p>
+</td>
+</tr>
+<tr id="row1082213280131"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="p278111541137"><a name="p278111541137"></a><a name="p278111541137"></a>roloperatoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.380000000000003%" headers="mcps1.2.5.1.2 "><p id="p5781154138"><a name="p5781154138"></a><a name="p5781154138"></a>Boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="p1678115410317"><a name="p1678115410317"></a><a name="p1678115410317"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="p13781125418315"><a name="p13781125418315"></a><a name="p13781125418315"></a>该角色是否为运维管理员。</p>
+</td>
+</tr>
+<tr id="row11823628161319"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="p383065911310"><a name="p383065911310"></a><a name="p383065911310"></a>rolpolicyadmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.380000000000003%" headers="mcps1.2.5.1.2 "><p id="p08311359536"><a name="p08311359536"></a><a name="p08311359536"></a>Boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="p158316592035"><a name="p158316592035"></a><a name="p158316592035"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="p58310598317"><a name="p58310598317"></a><a name="p58310598317"></a>该角色是否为安全策略管理员。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
