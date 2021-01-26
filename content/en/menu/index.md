@@ -350,7 +350,7 @@ headless: true
 		-   [Predictor: AI Query Time Forecasting]({{< relref "./docs/Developerguide/predictor-ai-query-time-forecasting.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview-40.md" >}})
 			-   [Environment Deployment ]({{< relref "./docs/Developerguide/environment-deployment-20.md" >}})
-			-   [Usage Guide]({{< relref "./docs/Developerguide/usage-guide-20.md" >}})
+			-   [Usage Guide]({{< relref "./docs/Developerguide/usage-guide.md" >}})
 			-   [Best Practices]({{< relref "./docs/Developerguide/best-practices-20.md" >}})
 			-   [FAQs]({{< relref "./docs/Developerguide/faqs-20.md" >}})
 		-   [X-Tuner: Parameter Optimization and Diagnosis]({{< relref "./docs/Developerguide/x-tuner-parameter-optimization-and-diagnosis.md" >}})
