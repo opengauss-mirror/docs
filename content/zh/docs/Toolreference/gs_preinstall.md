@@ -24,7 +24,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 -   准备openGauss环境
 
     ```
-    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=ENVFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive]
+    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=MPPRCFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive]
     ```
 
 -   显示帮助信息
@@ -85,7 +85,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >本参数不能指定为openGauss默认创建的环境变量。否则，openGauss的环境变量将被覆盖。openGauss默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。
 
--   --sep-env-file=ENVFILE
+-   --sep-env-file=MPPRCFILE
 
     保存环境变量的文件。如果指定该参数，表示将使用环境变量分离的版本。
 
