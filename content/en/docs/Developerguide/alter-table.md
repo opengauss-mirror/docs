@@ -192,7 +192,7 @@
               UNIQUE ( column_name [, ... ] ) index_parameters |
               PRIMARY KEY ( column_name [, ... ] ) index_parameters |
               PARTIAL CLUSTER KEY ( column_name [, ... ] |
-              FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] )
+              FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
                   [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
