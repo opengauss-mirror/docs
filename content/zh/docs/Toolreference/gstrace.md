@@ -94,11 +94,12 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <pid>][-s <BUFFER_SI
 </tr>
 <tr id="zh-cn_topic_0237152426_row12693367813"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152426_p43111434122216"><a name="zh-cn_topic_0237152426_p43111434122216"></a><a name="zh-cn_topic_0237152426_p43111434122216"></a>-s BUFFER_SIZE</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152426_p5310203414226"><a name="zh-cn_topic_0237152426_p5310203414226"></a><a name="zh-cn_topic_0237152426_p5310203414226"></a>指定用于trace功能的共享内存大小，默认为1G，该值需要为2的N次方，如果不是则会补齐为2的倍数。</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152426_p5310203414226"><a name="zh-cn_topic_0237152426_p5310203414226"></a><a name="zh-cn_topic_0237152426_p5310203414226"></a>指定用于trace功能的共享内存大小，默认为1G。如果指定的BUFFER_SIZE小于最小值2048，系统将自动调整为最小值。如果指定的BUFFER_SIZE不是2^N（二的N次方），则向下对齐2^N；例如：指定BUFFER_SIZE=3072，由于2^11<3072<2^12，系统将调整为2048。</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 ## 示例<a name="zh-cn_topic_0237152426_section2838131051812"></a>
 
