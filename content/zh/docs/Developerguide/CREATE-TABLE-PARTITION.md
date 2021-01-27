@@ -78,7 +78,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ CONSTRAINT constraint_name ]
     { CHECK ( expression ) | 
       UNIQUE ( column_name [, ... ] ) index_parameters | 
-      PRIMARY KEY ( column_name [, ... ] ) index_parameters}
+      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
+      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+          [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
