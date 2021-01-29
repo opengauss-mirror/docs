@@ -54,7 +54,7 @@
     ```
               time          |     type      | result | username |    database    | client_conninfo |  object_name   |                          detail_info                | node_name |            thread_id            | local_port | remote_port
     ------------------------+---------------+--------+----------+----------------+-----------------+----------------+---------------------------------------------------------------+-----------+---------------------------------+------------+-------------
-     2015-07-15 08:03:55+08 | login_success | ok     | omm | postgres       | gs_clean@::1    | postgres       | login db(postgres) success,the current user is:omm       | cn_5003   | 139808902997776@490233835920483 | 9000       | 55805
+     2015-07-15 08:03:55+08 | login_success | ok     | omm | postgres       | gsql@::1    | postgres       | login db(postgres) success,the current user is:omm       | dn_5003   | 139808902997776@490233835920483 | 9000       | 55805
     ```
 
     This audit record indicates that user  **omm**  logged in to the  **postgres**  database at 08:03:55+08 on July 15, 2015. After the host specified by  **log\_hostname**  is started and a client is connected to its IP address, the host name found by reverse DNS resolution is displayed following the at sign \(@\) in the value of  **client\_conninfo**.

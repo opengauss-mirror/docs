@@ -21,6 +21,9 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
 ```
 {SYSADMIN | NOSYSADMIN}
+    | {MONADMIN | NOMONADMIN}
+    | {OPRADMIN | NOOPRADMIN}
+    | {POLADMIN | NOPOLADMIN}
     | {AUDITADMIN | NOAUDITADMIN}
     | {CREATEDB | NOCREATEDB}
     | {USEFT | NOUSEFT}
@@ -69,6 +72,8 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     -   密码默认不少于8个字符。
     -   不能与用户名及用户名倒序相同。
     -   至少包含大写字母（A-Z），小写字母（a-z），数字（0-9），非字母数字字符（限定为\~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?）四类字符中的三类字符。
+    -   密码也可以是符合格式要求的密文字符串，这种情况主要用于用户数据导入场景，不推荐用户直接使用。如果直接使用密文密码，用户需要知道密文密码对应的明文，并且保证明文密码复杂度，数据库不会校验密文密码复杂度，直接使用密文密码的安全性由用户保证。
+    -   创建角色时，应当使用双引号或单引号将用户密码括起来。
 
     取值范围：字符串。
 
@@ -130,17 +135,17 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     缺省为NOREPLICATION。
 
-- **INDEPENDENT | NOINDEPENDENT**
+-   **INDEPENDENT | NOINDEPENDENT**
 
-  定义私有、独立的角色。具有INDEPENDENT属性的角色，管理员对其进行的控制、访问的权限被分离，具体规则如下：
+    定义私有、独立的角色。具有INDEPENDENT属性的角色，管理员对其进行的控制、访问的权限被分离，具体规则如下：
 
-  -   未经INDEPENDENT角色授权，系统管理员无权对其表对象进行增、删、查、改、拷贝、授权操作。
-  -   若将私有用户表的相关权限授予其他非私有用户，系统管理员也会获得同样的权限。
-  -   未经INDEPENDENT角色授权，系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的继承关系。
-  -   系统管理员无权修改INDEPENDENT角色的表对象的属主。
-  -   系统管理员和拥有CREATEROLE属性的安全管理员无权去除INDEPENDENT角色的INDEPENDENT属性。
-  -   系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的数据库口令，INDEPENDENT角色需管理好自身口令，口令丢失无法重置。
-  -   管理员属性用户不允许定义修改为INDEPENDENT属性。
+    -   未经INDEPENDENT角色授权，系统管理员无权对其表对象进行增、删、查、改、拷贝、授权操作。
+    -   若将私有用户表的相关权限授予其他非私有用户，系统管理员也会获得同样的权限。
+    -   未经INDEPENDENT角色授权，系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的继承关系。
+    -   系统管理员无权修改INDEPENDENT角色的表对象的属主。
+    -   系统管理员和拥有CREATEROLE属性的安全管理员无权去除INDEPENDENT角色的INDEPENDENT属性。
+    -   系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的数据库口令，INDEPENDENT角色需管理好自身口令，口令丢失无法重置。
+    -   管理员属性用户不允许定义修改为INDEPENDENT属性。
 
 -   **CONNECTION LIMIT**
 
@@ -216,14 +221,14 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 ## 示例<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
 
 ```
---创建一个角色，名为manager，密码为Bigdata@123。
-postgres=# CREATE ROLE manager IDENTIFIED BY 'Bigdata@123';
+--创建一个角色，名为manager，密码为xxxxxxxxx。
+postgres=# CREATE ROLE manager IDENTIFIED BY 'xxxxxxxxx';
 
 --创建一个角色，从2015年1月1日开始生效，到2026年1月1日失效。
-postgres=# CREATE ROLE miriam WITH LOGIN PASSWORD 'Bigdata@123' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
+postgres=# CREATE ROLE miriam WITH LOGIN PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
 
 --修改角色manager的密码为abcd@123。
-postgres=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'Bigdata@123';
+postgres=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'xxxxxxxxx';
 
 --修改角色manager为系统管理员。
 postgres=# ALTER ROLE manager SYSADMIN;
@@ -237,5 +242,5 @@ postgres=# DROP ROLE miriam;
 
 ## 相关链接<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
-[SET ROLE](zh-cn_topic_0289900009.md)，[ALTER ROLE](ALTER-ROLE.md)，[DROP ROLE](zh-cn_topic_0289900731.md)，[GRANT](GRANT.md)
+[SET ROLE](zh-cn_topic_0289900009.md)，[ALTER ROLE](zh-cn_topic_0289900826.md)，[DROP ROLE](zh-cn_topic_0289900731.md)，[GRANT](zh-cn_topic_0289900312.md)
 
