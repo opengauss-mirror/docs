@@ -21,6 +21,9 @@ The syntax of role information configuration clause  **option**  is as follows:
 
 ```
 {SYSADMIN | NOSYSADMIN}
+    | {MONADMIN | NOMONADMIN}
+    | {OPRADMIN | NOOPRADMIN}
+    | {POLADMIN | NOPOLADMIN}
     | {AUDITADMIN | NOAUDITADMIN}
     | {CREATEDB | NOCREATEDB}
     | {USEFT | NOUSEFT}
