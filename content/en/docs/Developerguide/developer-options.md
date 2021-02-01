@@ -84,7 +84,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **summary**  indicates that the analysis result on this information is printed in addition to the printed information in the format specified by  **pretty**.
 -   **run**  indicates that in addition to the printed information specified by  **summary**, the database exports the information as a CSV file.
 
-**Default value**:  **pretty**
+**Default value**:  **normal**
 
 ## ignore\_system\_indexes<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sdd9b50c633a14efdbad02bbf9cb139d3"></a>
 
