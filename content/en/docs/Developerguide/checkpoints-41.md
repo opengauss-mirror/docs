@@ -102,7 +102,18 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **on**
 
+## enable_xlog_prune<a name="en-us_topic_0237124708_section162792473463"></a>
 
+**Parameter description**: Set whether the host will reclaim the log according to the size of the xlog log exceeding the value of the parameter max_size_for_xlog_prune when any backup machine is disconnected.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
++ When set to on, if any backup machine is disconnected, the host will not reclaim the log.
++ When set to off, if any backup machine is disconnected, the host will reclaim the log.
+
+**Default value**:  **on**
 
 ## max_redo_log_size<a name="en-us_topic_0237124708_section162792473463"></a>
 
@@ -113,4 +124,14 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range**: an integer ranging from 163840 to 2147483647. The unit is KB.
 
 **Default value**:  **1GB**
+
+## max_size_for_xlog_prune<a name="en-us_topic_0237124708_section162792473463"></a>
+
+**Parameter description**: It takes effect when enable_xlog_prune is turned on. If the backup machine is disconnected and the xlog log size is greater than this threshold, the log will be recycled.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: integer, 0～2147483647, the unit is KB
+
+**Default value**:  **2147483647,in KB**
 
