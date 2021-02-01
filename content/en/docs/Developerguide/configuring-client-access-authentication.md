@@ -27,7 +27,7 @@ If a host needs to connect to a database remotely, you need to add information a
     >-   Before using user  **jack**, connect to the database locally and run the following command in the database to create user  **jack**:  
     >    ```  
     >    postgres=# CREATE USER jack PASSWORD 'Test@123';  
-    >    ```  
+    >    ```
     >-   **-N all**  indicates all hosts in openGauss.  
     >-   **-I all**  indicates all instances on the host.  
     >-   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.  
@@ -106,8 +106,8 @@ TYPE  DATABASE        USER            ADDRESS                 METHOD
 #Allow only the user specified by the -U parameter during installation to establish a connection from the local server.
 local   all             all                                     trust
 IPv4 local connections:
-#User omm is allowed to connect to any database from the 10.10.0.50 host. The SHA-256 algorithm is used to encrypt the password.
-host    all           omm             10.10.0.50/32            sha256
+#User  jack  is allowed to connect to any database from the 10.10.0.50 host. The SHA-256 algorithm is used to encrypt the password.
+host    all           jack             10.10.0.50/32            sha256
 #Any user is allowed to connect to any database from a host on the 10.10.0.0/24 network segment. The SHA-256 algorithm is used to encrypt the password and SSL transmission is used.
 hostssl    all             all             10.10.0.0/24            sha256
 #Any user is allowed to connect to any database from a host on the 10.10.0.0/24 network segment. The Kerberos authentication is used. In the current version, Kerberos authentication cannot be used to connect to external clients.
