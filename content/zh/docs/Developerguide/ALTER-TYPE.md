@@ -152,5 +152,5 @@
 
 ## 相关链接<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE TYPE](zh-cn_topic_0289900603.md)，[DROP TYPE](DROP-TYPE.md)
+[CREATE TYPE](CREATE-TYPE.md)，[DROP TYPE](DROP-TYPE.md)
 

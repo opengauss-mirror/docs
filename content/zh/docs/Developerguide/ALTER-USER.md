@@ -104,5 +104,5 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
 
 ## 相关链接<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE ROLE](CREATE-ROLE.md)，[CREATE USER](CREATE-USER.md)，[DROP USER](zh-cn_topic_0289900387.md)
+[CREATE ROLE](CREATE-ROLE.md)，[CREATE USER](CREATE-USER.md)，[DROP USER](DROP-USER.md)
 

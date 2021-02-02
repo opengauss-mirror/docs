@@ -72,5 +72,5 @@ postgres=# DROP USER jack;
 
 ## 相关链接<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
-[CREATE SCHEMA](zh-cn_topic_0289901000.md)，[DROP SCHEMA](DROP-SCHEMA.md)
+[CREATE SCHEMA](CREATE-SCHEMA.md)，[DROP SCHEMA](DROP-SCHEMA.md)
 

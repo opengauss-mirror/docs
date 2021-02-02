@@ -116,14 +116,14 @@
 
 
         -   分区项partition\_less\_than\_item的语法为。
-
+    
             ```
             PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
                 [ TABLESPACE tablespacename ]
             ```
-
+    
         -   分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_li2094151861116)。
-
+    
             ```
             PARTITION partition_name {
                     {START(partition_value) END (partition_value) EVERY (interval_value)} |
@@ -136,29 +136,29 @@
 
 
     -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
-
+    
         ```
         ADD {partition_less_than_item | partition_start_end_item| partition_list_item }
         ```
-
+    
         分区项partition\_list\_item的语法如下。
-
+    
         ```
         PARTITION partition_name VALUES (list_values_clause) 
             [ TABLESPACE tablespacename ]
         ```
-
+    
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
         >-   间隔/哈希分区表不支持添加分区。
 
 
     -   drop\_clause子语法用于删除分区表中的指定分区。
-
+    
         ```
         DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } 
         ```
-
+    
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >-   哈希分区表不支持删除分区。
         >-   列表分区表仅支持通过子分区名称删除子分区。
@@ -260,5 +260,5 @@
 
 ## 相关链接<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](CREATE-TABLE-PARTITION.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
+[CREATE TABLE PARTITION](CREATE-TABLE-PARTITION.md)，[DROP TABLE](DROP-TABLE.md)
 

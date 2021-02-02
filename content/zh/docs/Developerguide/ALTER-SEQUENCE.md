@@ -74,5 +74,5 @@ postgres=# DROP TABLE T1;
 
 ## 相关链接<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
-[CREATE SEQUENCE](zh-cn_topic_0289899862.md)，[DROP SEQUENCE](DROP-SEQUENCE.md)
+[CREATE SEQUENCE](CREATE-SEQUENCE.md)，[DROP SEQUENCE](DROP-SEQUENCE.md)
 

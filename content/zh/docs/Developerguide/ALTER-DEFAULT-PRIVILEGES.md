@@ -160,5 +160,5 @@ postgres=# DROP USER jack;
 
 ## 相关链接<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
-[GRANT](zh-cn_topic_0289900312.md)，[REVOKE](zh-cn_topic_0289900263.md)
+[GRANT](GRANT.md)，[REVOKE](REVOKE.md)
 

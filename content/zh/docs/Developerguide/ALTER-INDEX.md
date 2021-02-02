@@ -161,5 +161,5 @@ ALTER INDEX用于修改现有索引的定义。
 
 ## 相关链接<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 
-[CREATE INDEX](zh-cn_topic_0289900160.md)，[DROP INDEX](DROP-INDEX.md)，[REINDEX](zh-cn_topic_0289899863.md)
+[CREATE INDEX](CREATE-INDEX.md)，[DROP INDEX](DROP-INDEX.md)，[REINDEX](REINDEX.md)
 

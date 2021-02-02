@@ -61,56 +61,56 @@
         | REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   **ADD table\_constraint \[ NOT VALID \]**
-    >    给表增加一个新的约束。
-    >-   **ADD table\_constraint\_using\_index**
-    >    根据已有唯一索引为表增加主键约束或唯一约束。
-    >-   **VALIDATE CONSTRAINT constraint\_name**
-    >    验证一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。
-    >-   **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**
-    >    删除一个表上的约束。
-    >-   **CLUSTER ON index\_name**
-    >    为将来的CLUSTER（聚簇）操作选择默认索引。实际上并没有重新盘簇化处理该表。
-    >-   **SET WITHOUT CLUSTER**
-    >    从表中删除最新使用的CLUSTER索引。这样会影响将来那些没有声明索引的CLUSTER（聚簇）操作。
-    >-   **SET \( \{storage\_parameter = value\} \[, ... \] \)**
-    >    修改表的一个或多个存储参数。
-    >-   **RESET \( storage\_parameter \[, ... \] \)**
-    >    重置表的一个或多个存储参数。与SET一样，根据参数的不同可能需要重写表才能获得想要的效果。
-    >-   **OWNER TO new\_owner**
-    >    将表、序列、视图的属主改变成指定的用户。
-    >-   **SET TABLESPACE new\_tablespace**
-    >    这种形式将表空间修改为指定的表空间并将相关的数据文件移动到新的表空间。但是表上的所有索引都不会被移动，索引可以通过ALTER INDEX语法的SET TABLESPACE选项来修改索引的表空间。
-    >-   **SET \{COMPRESS|NOCOMPRESS\}**
-    >    修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。行存表不支持压缩。
-    >-   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
-    >    此语法仅在扩展模式（GUC参数support\_extended\_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。
-    >-   **ADD NODE \( nodename \[, ... \] \)**
-    >    此语法主要供内部扩容工具使用，一般用户不建议使用。
-    >-   **DELETE NODE \( nodename \[, ... \] \)**
-    >    此语法主要供内部缩容工具使用，一般用户不建议使用。
-    >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-    >    禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。
-    >    应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
-    >-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-    >    启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
-    >-   **| ENABLE REPLICA TRIGGER trigger\_name**
-    >    触发器触发机制受配置变量[session\_replication\_role](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
-    >    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
-    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
-    >    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
-    >-   **| DISABLE/ENABLE [ REPLICA | ALWAYS ] RULE**
-    >    配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
-    >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
-    >    开启或关闭表的行访问控制开关。
-    >    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](zh-cn_topic_0289901001.md)章节。
-    >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
-    >    强制开启或关闭表的行访问控制开关。
-    >    默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
-    >-   **| REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}**
-    >   调整逻辑复制时写入WAL日志中的信息量，该选项仅在wal_level配置为logical时才有效。
-    >   当原数据表发生更新时，默认的逻辑复制流只包含主键的历史记录，如果需要输出所需字段更新或删除的历史记录，可修改本参数。“DEFAULT”（非系统表的默认值）会记录主键字段的旧值。“USING INDEX”会记录名为index_name索引包含的字段的旧值，索引的所有列必须NOT NULL。“FULL”记录了所有列的旧值。“NOTHING”（系统表默认值）不记录旧值的信息。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    -   **ADD table\_constraint \[ NOT VALID \]**
+        给表增加一个新的约束。
+    -   **ADD table\_constraint\_using\_index**
+        根据已有唯一索引为表增加主键约束或唯一约束。
+    -   **VALIDATE CONSTRAINT constraint\_name**
+        验证一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。
+    -   **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**
+        删除一个表上的约束。
+    -   **CLUSTER ON index\_name**
+        为将来的CLUSTER（聚簇）操作选择默认索引。实际上并没有重新盘簇化处理该表。
+    -   **SET WITHOUT CLUSTER**
+        从表中删除最新使用的CLUSTER索引。这样会影响将来那些没有声明索引的CLUSTER（聚簇）操作。
+    -   **SET \( \{storage\_parameter = value\} \[, ... \] \)**
+        修改表的一个或多个存储参数。
+    -   **RESET \( storage\_parameter \[, ... \] \)**
+        重置表的一个或多个存储参数。与SET一样，根据参数的不同可能需要重写表才能获得想要的效果。
+    -   **OWNER TO new\_owner**
+        将表、序列、视图的属主改变成指定的用户。
+    -   **SET TABLESPACE new\_tablespace**
+        这种形式将表空间修改为指定的表空间并将相关的数据文件移动到新的表空间。但是表上的所有索引都不会被移动，索引可以通过ALTER INDEX语法的SET TABLESPACE选项来修改索引的表空间。
+    -   **SET \{COMPRESS|NOCOMPRESS\}**
+        修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。行存表不支持压缩。
+    -   **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
+        此语法仅在扩展模式（GUC参数support\_extended\_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。
+    -   **ADD NODE \( nodename \[, ... \] \)**
+        此语法主要供内部扩容工具使用，一般用户不建议使用。
+    -   **DELETE NODE \( nodename \[, ... \] \)**
+        此语法主要供内部缩容工具使用，一般用户不建议使用。
+    -   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+        禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。
+        应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
+    -   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+        启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
+    -   **| ENABLE REPLICA TRIGGER trigger\_name**
+        触发器触发机制受配置变量[session\_replication\_role](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+        配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
+    -   **| ENABLE ALWAYS TRIGGER trigger\_name**
+        无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
+    -   **| DISABLE/ENABLE [ REPLICA | ALWAYS ] RULE**
+        配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
+    -   **| DISABLE/ENABLE ROW LEVEL SECURITY**
+        开启或关闭表的行访问控制开关。
+        当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](zh-cn_topic_0289901001.md)章节。
+    -   **| NO FORCE/FORCE ROW LEVEL SECURITY**
+        强制开启或关闭表的行访问控制开关。
+        默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
+    -   **| REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}**
+       调整逻辑复制时写入WAL日志中的信息量，该选项仅在wal_level配置为logical时才有效。
+       当原数据表发生更新时，默认的逻辑复制流只包含主键的历史记录，如果需要输出所需字段更新或删除的历史记录，可修改本参数。“DEFAULT”（非系统表的默认值）会记录主键字段的旧值。“USING INDEX”会记录名为index_name索引包含的字段的旧值，索引的所有列必须NOT NULL。“FULL”记录了所有列的旧值。“NOTHING”（系统表默认值）不记录旧值的信息。
 
     -   其中列相关的操作column\_clause可以是以下子句之一：
 
@@ -131,37 +131,37 @@
         | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
-        >    向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
-        >-   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
-        >    向表中增加多列。
-        >-   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
-        >    修改表已存在字段的数据类型。
-        >-   **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
-        >    从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
-        >    DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
-        >-   **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
-        >    改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
-        >    ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
-        >    ```
-        >    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
-        >    ```
-        >    这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
-        >-   **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
-        >    为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
-        >-   **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
-        >    修改一个字段是否允许NULL值或者拒绝NULL值。如果表在字段中包含非NULL，则只能使用SET NOT NULL。
-        >-   **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
-        >    为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
-        >-   **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
-        >    用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。每组多列统计信息最多支持32列。不支持添加/删除多列统计信息声明的表：系统表、外表。
-        >-   **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
-        >    **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
-        >    设置/重置属性选项。
-        >    目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
-        >-   **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
-        >    为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
+        ![](public_sys-resources/icon-note.gif) **说明：** 
+        -   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+            向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
+        -   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
+            向表中增加多列。
+        -   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+            修改表已存在字段的数据类型。
+        -   **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
+            从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
+            DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
+        -   **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
+            改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
+            ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
+            ```
+            ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
+            ```
+            这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
+        -   **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
+            为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
+        -   **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
+            修改一个字段是否允许NULL值或者拒绝NULL值。如果表在字段中包含非NULL，则只能使用SET NOT NULL。
+        -   **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
+            为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
+        -   **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
+            用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。每组多列统计信息最多支持32列。不支持添加/删除多列统计信息声明的表：系统表、外表。
+        -   **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
+            **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
+            设置/重置属性选项。
+            目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
+        -   **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
+            为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
 
         -   其中列约束column\_constraint为：
 
@@ -244,12 +244,12 @@
         SET SCHEMA new_schema;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   这种形式把表移动到另外一个模式。相关的索引、约束都跟着移动。目前序列不支持改变schema。 若该表拥有序列，需要将序列删除，重建，或者取消拥有关系， 才能将表schema更改成功。
-    >-   要修改一个表的模式，用户必须在新模式上拥有CREATE权限。要把该表添加为一个父表的新子表，用户必须同时又是父表的所有者。要修改所有者，用户还必须是新的所有角色的直接或间接成员，并且该成员必须在此表的模式上有CREATE权限。这些限制规定了该用户不能做出了重建和删除表之外的事情。不过，系统管理员可以以任何方式修改任意表的所有权限。
-    >-   除了RENAME和SET SCHEMA之外所有动作都可以捆绑在一个经过多次修改的列表中并行使用。比如，可以在一个命令里增加几个字段或修改几个字段的类型。对于大表，此种操作带来的效率提升更明显，原因在于只需要对该大表做一次处理。
-    >-   增加一个CHECK或NOT NULL约束将会扫描该表，以保证现有的行符合约束要求。
-    >-   用一个非空缺省值增加一个字段或者改变一个字段的现有类型会重写整个表。对于大表来说，这个操作可能会花很长时间，并且它还临时需要两倍的磁盘空间。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    -   这种形式把表移动到另外一个模式。相关的索引、约束都跟着移动。目前序列不支持改变schema。 若该表拥有序列，需要将序列删除，重建，或者取消拥有关系， 才能将表schema更改成功。  
+    -   要修改一个表的模式，用户必须在新模式上拥有CREATE权限。要把该表添加为一个父表的新子表，用户必须同时又是父表的所有者。要修改所有者，用户还必须是新的所有角色的直接或间接成员，并且该成员必须在此表的模式上有CREATE权限。这些限制规定了该用户不能做出了重建和删除表之外的事情。不过，系统管理员可以以任何方式修改任意表的所有权限。  
+    -   除了RENAME和SET SCHEMA之外所有动作都可以捆绑在一个经过多次修改的列表中并行使用。比如，可以在一个命令里增加几个字段或修改几个字段的类型。对于大表，此种操作带来的效率提升更明显，原因在于只需要对该大表做一次处理。  
+    -   增加一个CHECK或NOT NULL约束将会扫描该表，以保证现有的行符合约束要求。  
+    -   用一个非空缺省值增加一个字段或者改变一个字段的现有类型会重写整个表。对于大表来说，这个操作可能会花很长时间，并且它还临时需要两倍的磁盘空间。  
 
 -   添加多个列。
 
@@ -318,8 +318,8 @@
 
     USING子句声明如何从旧的字段值里计算新的字段值；如果省略，缺省从旧类型向新类型的赋值转换。如果从旧数据类型到新类型没有隐含或者赋值的转换，则必须提供一个USING子句。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >ALTER TYPE的USING选项实际上可以声明涉及该行旧值的任何表达式，即它可以引用除了正在被转换的字段之外其他的字段。这样，就可以用ALTER TYPE语法做非常普遍性的转换。因为这个灵活性，USING表达式并没有作用于该字段的缺省值（如果有的话），结果可能不是缺省表达式要求的常量表达式。这就意味着如果从旧类型到新类型没有隐含或者赋值转换的话，即使存在USING子句，ALTER TYPE也可能无法把缺省值转换成新的类型。在这种情况下，应该用DROP DEFAULT先删除缺省，执行ALTER TYPE，然后使用SET DEFAULT增加一个合适的新缺省值。类似的考虑也适用于涉及该字段的索引和约束。
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    ALTER TYPE的USING选项实际上可以声明涉及该行旧值的任何表达式，即它可以引用除了正在被转换的字段之外其他的字段。这样，就可以用ALTER TYPE语法做非常普遍性的转换。因为这个灵活性，USING表达式并没有作用于该字段的缺省值（如果有的话），结果可能不是缺省表达式要求的常量表达式。这就意味着如果从旧类型到新类型没有隐含或者赋值转换的话，即使存在USING子句，ALTER TYPE也可能无法把缺省值转换成新的类型。在这种情况下，应该用DROP DEFAULT先删除缺省，执行ALTER TYPE，然后使用SET DEFAULT增加一个合适的新缺省值。类似的考虑也适用于涉及该字段的索引和约束。
 
 -   **NOT NULL | NULL**
 
@@ -426,5 +426,5 @@
 
 ## 相关链接<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
 
-[CREATE TABLE](CREATE-TABLE.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
+[CREATE TABLE](CREATE-TABLE.md)，[DROP TABLE](DROP-TABLE.md)
 

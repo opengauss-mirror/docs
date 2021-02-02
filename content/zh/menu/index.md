@@ -648,7 +648,6 @@ headless: true
             -   [ALTER USER]({{< relref "./docs/Developerguide/ALTER-USER.md" >}})
             -   [ALTER USER MAPPING]({{< relref "./docs/Developerguide/ALTER-USER-MAPPING.md" >}})
             -   [ALTER VIEW]({{< relref "./docs/Developerguide/ALTER-VIEW.md" >}})
-            -   [ALTER RULE]({{< relref "./docs/Developerguide/ALTER-RULE.md" >}})
             -   [ANALYZE | ANALYSE]({{< relref "./docs/Developerguide/ANALYZE-ANALYSE.md" >}})
             -   [BEGIN]({{< relref "./docs/Developerguide/BEGIN.md" >}})
             -   [CALL]({{< relref "./docs/Developerguide/CALL.md" >}})
