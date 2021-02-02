@@ -242,5 +242,5 @@ postgres=# DROP ROLE miriam;
 
 ## 相关链接<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
-[SET ROLE](zh-cn_topic_0289900009.md)，[ALTER ROLE](zh-cn_topic_0289900826.md)，[DROP ROLE](zh-cn_topic_0289900731.md)，[GRANT](zh-cn_topic_0289900312.md)
+[SET ROLE](SET-ROLE.md)，[ALTER ROLE](ALTER-ROLE.md)，[DROP ROLE](DROP-ROLE.md)，[GRANT](GRANT.md)
 

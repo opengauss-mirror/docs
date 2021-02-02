@@ -43,5 +43,5 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
 
 ## 相关链接<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s344eb8c77efa4c209c358dd81f79034f"></a>
 
-[ALTER SCHEMA](ALTER-SCHEMA.md)，[CREATE SCHEMA](zh-cn_topic_0289901000.md)。
+[ALTER SCHEMA](ALTER-SCHEMA.md)，[CREATE SCHEMA](CREATE-SCHEMA.md)。
 

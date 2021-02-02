@@ -324,7 +324,7 @@ CREATE INDEX
 
 ## 相关链接<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>
 
-[ALTER INDEX](zh-cn_topic_0289900645.md)，[DROP INDEX](zh-cn_topic_0289899909.md)
+[ALTER INDEX](ALTER-INDEX.md)，[DROP INDEX](DROP-INDEX.md)
 
 ## 优化建议<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_section3814797010859"></a>
 

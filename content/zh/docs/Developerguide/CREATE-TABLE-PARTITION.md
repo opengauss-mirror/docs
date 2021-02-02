@@ -197,23 +197,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   COMPRESSION
         -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
         -   行存表不支持压缩。
-
+    
     -   MAX\_BATCHROW
-
+    
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-
+    
         取值范围：10000\~60000，默认60000。
-
+    
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-
+    
         取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
-
+    
     -   DELTAROW\_THRESHOLD
-
+    
         预留参数。该参数只对列存表有效。
-
+    
         取值范围：0～9999
 
 
@@ -748,5 +748,5 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 ## 相关链接<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
-[ALTER TABLE PARTITION](zh-cn_topic_0289900688.md)，[DROP TABLE](zh-cn_topic_0289900931.md)
+[ALTER TABLE PARTITION](ALTER-TABLE-PARTITION.md)，[DROP TABLE](DROP-TABLE.md)
 

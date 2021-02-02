@@ -816,7 +816,7 @@ postgres=# DROP DATABASE ora_compatible_db;
 
 ## 相关链接<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
-[ALTER DATABASE](zh-cn_topic_0289900461.md)，[DROP DATABASE](zh-cn_topic_0289900003.md)
+[ALTER DATABASE](ALTER-DATABASE.md)，[DROP DATABASE](DROP-DATABASE.md)
 
 ## 优化建议<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_section8189694144220"></a>
 
