@@ -100,7 +100,7 @@ plsql_body
 
 ## 相关链接<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>
 
-[DROP PROCEDURE](zh-cn_topic_0289900018.md)
+[DROP PROCEDURE](DROP-PROCEDURE.md)
 
 ## 优化建议<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_section60380346161036"></a>
 

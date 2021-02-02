@@ -111,5 +111,5 @@ postgres=# DROP USER dim CASCADE;
 
 ## 相关链接<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
-[ALTER USER](ALTER-USER.md)，[CREATE ROLE](CREATE-ROLE.md)，[DROP USER](zh-cn_topic_0289900387.md)
+[ALTER USER](ALTER-USER.md)，[CREATE ROLE](CREATE-ROLE.md)，[DROP USER](DROP-USER.md)
 

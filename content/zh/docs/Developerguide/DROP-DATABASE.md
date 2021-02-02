@@ -40,7 +40,7 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 
 ## 相关链接<a name="zh-cn_topic_0283137424_zh-cn_topic_0237122133_zh-cn_topic_0059778607_s5f331542a3f84ab58b896c25bfff41db"></a>
 
-[CREATE DATABASE](zh-cn_topic_0289900066.md)
+[CREATE DATABASE](CREATE-DATABASE.md)
 
 ## 优化建议<a name="zh-cn_topic_0283137424_zh-cn_topic_0237122133_zh-cn_topic_0059778607_section29255108114255"></a>
 
