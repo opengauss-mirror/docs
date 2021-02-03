@@ -185,7 +185,7 @@ Currently, the default values of parameters in openGauss configuration files \(*
 
 -   -c parameter
 
-    When the  **check**  operation is performed, "parameter" indicates the name of the parameter to be checked. When the  **set**  or  **reload**  operation is performed, "parameter" indicates the name of the parameter whose value needs to be restored to the default value in the database.
+    When the  **check**  operation is performed, "parameter" indicates the name of the parameter to be checked. When the  **set**  or  **reload**  operation is performed, parameter value is not allowed to be empty. If it is empty, the value of "parameter" will not be restored to the default value in the database.
 
 -   -h host-auth-policy
 

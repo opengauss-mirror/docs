@@ -23,7 +23,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is ms.
 
-**Default value**:  **3s**
+**Default value**:  **20min**
 
 ## update\_lockwait\_timeout<a name="en-us_topic_0237124735_section14495103214523"></a>
 
