@@ -69,6 +69,10 @@ openGauss在安装过程中，需要在openGauss中的节点间执行命令，�
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >确保hostfile文件中只配置正确的主机IP，不包含其它信息。
 
+-   -h
+
+    主机IP列表，多个节点之间用英文逗号隔开。
+
 -   -l
 
     指定日志文件的保存路径。
