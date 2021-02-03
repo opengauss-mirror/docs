@@ -69,6 +69,10 @@ During the openGauss installation, you need to perform operations such as runnin
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >You need to ensure that only correct IP addresses are configured in the  **hostfile**  file without containing other information.
 
+-   -h
+
+    Host IP list, separated by commas between multiple nodes.
+
 -   -l
 
     Specifies the path for saving log files.
