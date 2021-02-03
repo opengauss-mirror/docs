@@ -212,7 +212,7 @@ gs\_guc工具由操作系统用户omm执行。
 
 -   -c parameter
 
-    当进行check操作时，表示需要检查的参数名称；当进行set/reload操作时，表示需要恢复为数据库默认值的参数名称。
+    当进行check操作时，表示需要检查的参数名称；当进行set/reload操作时，参数值不允许为空，为空时不会恢复为数据库参数的默认值。
 
 -   -h host-auth-policy
 
