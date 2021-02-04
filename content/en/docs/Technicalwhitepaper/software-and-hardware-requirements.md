@@ -63,7 +63,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="80.08%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"></a><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"></a>Minimum one 8-core 2.0 GHz CPU is required for function debugging.</p>
 <p id="en-us_topic_0238164450_p655107143013"><a name="en-us_topic_0238164450_p655107143013"></a><a name="en-us_topic_0238164450_p655107143013"></a>In performance tests and commercial deployment, the single-instance deployment is performed. It is recommended that one 16-core 2.0 GHz CPU be used.</p>
-<p id="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode, but ensure the setting is consistent across all the nodes in the cluster.</p>
+<p id="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode, but ensure the setting is consistent across all the nodes in the cluster.</p><p>NOTE:</p><p>Currently, openGauss only supports CPUs of Kunpeng servers and CPUs based on X86_64 general-purpose PC servers.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_rc2f89a29186544e79e7995d19878a617"><td class="cellrowborder" valign="top" width="19.919999999999998%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a><a name="en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a>Hard disk</p>
@@ -83,4 +83,5 @@
 </tr>
 </tbody>
 </table>
+
 
