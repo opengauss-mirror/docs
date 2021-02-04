@@ -6,6 +6,8 @@
 
 This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
+After enable\_full\_encryption is set to on, you need to enter the "-C" parameter or "--enable-client-encryption" when using gsql to connect to the database, otherwise the connection will not succeed.
+
 **Value range**: Boolean
 
 -   **on**: The fully-encrypted database is enabled.
