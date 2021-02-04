@@ -47,7 +47,7 @@ This section describes hardware and software requirements of openGauss. It is re
 </td>
 <td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"></a>Minimum one 8-core 2.0 GHz CPU is required for function debugging.</p>
 <p id="en-us_topic_0241802565_p655107143013"><a name="en-us_topic_0241802565_p655107143013"></a><a name="en-us_topic_0241802565_p655107143013"></a>In performance tests and commercial deployment, the single-instance deployment is performed. It is recommended that one 16-core 2.0 GHz CPU be used.</p>
-<p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode, but ensure the setting is consistent across all the <span id="text115011549754"><a name="text115011549754"></a><a name="text115011549754"></a>openGauss</span> nodes.</p>
+<p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode, but ensure the setting is consistent across all the <span id="text115011549754"><a name="text115011549754"></a><a name="text115011549754"></a>openGauss</span> nodes.</p><p>NOTE:</p><p>Currently, openGauss only supports CPUs of Kunpeng servers and CPUs based on X86_64 general-purpose PC servers.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rc2f89a29186544e79e7995d19878a617"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a>Hard disk</p>
@@ -67,6 +67,7 @@ This section describes hardware and software requirements of openGauss. It is re
 </tr>
 </tbody>
 </table>
+
 
 ### Software Requirements
 
@@ -232,7 +233,7 @@ Take openEuler OS as an example. Assume that the openGauss information is listed
 Currently, EulerOS can be installed only when the firewall is disabled.
 
 1. <a name="en-us_topic_0241802566_li17785744465"></a>Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.    
-  a. Run the  **vim**  command to open the  **config**  file.
+    a. Run the  **vim**  command to open the  **config**  file.
 
    ```
    vim /etc/selinux/config
@@ -334,7 +335,7 @@ During the openGauss installation, the user  **root**  is required for remote lo
        ```
 
        - Set the value of  **PermitRootLogin**  to  **yes**.
- 
+
        ```
        PermitRootLogin yes
        ```
