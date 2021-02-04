@@ -380,9 +380,13 @@ export PGDATABASE=postgres
 
     指定转储数据需用AES128进行加密。
 
--   --with-key=KEY
+- --with-key=KEY
 
-    AES128密钥长度必须是16字节。
+  AES128密钥长度必须是16字节。
+
+  ![](public_sys-resources/icon-note.gif) **说明：**  
+
+  使用gs_dump工具进行加密导出时，仅支持plain格式导出。通过-F plain导出的数据，需要通过gsql工具进行导入，且如果以加密方式导入，在通过gsql导入时，需要指定--with-key参数。
 
 -   --include-depend-objs
 

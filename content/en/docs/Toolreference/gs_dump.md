@@ -372,9 +372,13 @@ Dump parameters:
 
     Specifies that dumping data needs to be encrypted using AES128.
 
--   --with-key=KEY
+- --with-key=KEY
 
-    Specifies that the key length of AES128 must be 16 bytes.
+  Specifies that the key length of AES128 must be 16 bytes.
+
+   **NOTE:**   
+
+  When using the gs_dump tool for encrypted export, only plain format export is supported. The data exported through -F plain needs to be imported through the gsql tool, and if it is imported through encryption, the --with-key parameter must be specified when importing through gsql.
 
 -   --include-depend-objs
 

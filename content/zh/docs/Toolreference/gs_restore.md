@@ -234,16 +234,6 @@ gs_restore [OPTION]... FILE
 
     输出SET SESSION AUTHORIZATION命令，而非ALTER OWNER命令，用以决定对象归属。该选项使转储更加兼容标准，但通过参考转储中对象的记录，导入过程可能会有问题。使用SET SESSION AUTHORIZATION的转储要求必须是系统管理员，同时在导入前还需参考"SET SESSION AUTHORIZATION"，手工对导出文件的密码进行修改验证，只有这样才能进行正确的导入操作，相比之下，ALTER OWNER对权限要求较低。
 
--   --with-key=KEY
-
-    AES128密钥长度必须是16字节。
-
-    ![](public_sys-resources/icon-note.gif) **说明：** 
-    如果转储被加密，则必须在gs\_restore命令中输入--with-key=KEY选项。如果未输入，用户会收到错误信息。
-
-    应该输入转储时所输入的相同的key。
-
-    转储格式为c或t时，转储内容已被处理，因此转储格式为c或t时输入不受加密限制。
 
 
 ![](public_sys-resources/icon-notice.gif) **须知：** 
