@@ -71,13 +71,7 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
    vi /etc/profile.d/performance.sh
    ```
 
-7. To ensure that the OpenSSL version is correct, load the  **lib**  library in the installation package before preinstallation. Run the following command.  **\{packagePath\}**  indicates the path where the installation package is stored. In this example, the path is  **/opt/software/openGauss**.
-
-   ```
-   export LD_LIBRARY_PATH={packagePath}/script/gspylib/clib:$LD_LIBRARY_PATH
-   ```
-
-8. To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.
+7. To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.
 
    ```
    hostname
@@ -90,7 +84,7 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
    vi /etc/hostname 
    ```
 
-9. Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
+8. Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
 
        ```
