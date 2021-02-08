@@ -200,7 +200,7 @@ When  **cost\_param & 2**  is set to a value other than  **0**, the selection ra
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range:**  an integer ranging from 1 to  _INT\_MAX_
+**Value range:**  an integer ranging from 0 to  _INT\_MAX_
 
 **Default value**:  **0**
 
