@@ -168,29 +168,33 @@ gs_restore [OPTION]... FILE
 
     该参数为扩展预留接口，不建议使用。
 
--   -t, --table=NAME
+- -t, --table=NAME
 
-    只导入已列举的表定义、数据或定义和数据。该选项与-n选项同时使用时，用来指定某个模式下的表对象。-n参数不输入时，默认为PUBLIC模式。多次输入-n <schemaname\> -t <tablename\>可以导入指定模式下的多个表。
+  只导入已列举的表定义、数据或定义和数据。该选项与-n选项同时使用时，用来指定某个模式下的表对象。-n参数不输入时，默认为PUBLIC模式。多次输入-n <schemaname\> -t <tablename\>可以导入指定模式下的多个表。
 
-    例如：
+  例如：
 
-    导入PUBLIC模式下的table1
+  导入PUBLIC模式下的table1
 
-    ```
-    gs_restore -h host_name -p port_number -d postgres -t table1 backup/MPPDB_backup.tar
-    ```
+  ```
+  gs_restore -h host_name -p port_number -d postgres -t table1 backup/MPPDB_backup.tar
+  ```
 
-    导入test1模式下的test1和test2模式下test2
+  导入test1模式下的test1和test2模式下test2
 
-    ```
-    gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
-    ```
+  ```
+  gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
+  ```
 
-    导入PUBLIC模式下的table1和test1 模式下test1
+  导入PUBLIC模式下的table1和test1 模式下test1
 
-    ```
-    gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
-    ```
+  ```
+  gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
+  ```
+
+  ![](public_sys-resources/icon-note.gif) **说明：** 
+
+  -t参数不支持schema_name.table_name的输入格式。
 
 -   -T, --trigger=NAME
 
