@@ -170,29 +170,33 @@ Parameters for importing data
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
 
--   -t, --table=NAME
+- -t, --table=NAME
 
-    Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n **_schemaname_** -t **_tablename_  multiple times can import multiple tables in a specified schema.
+  Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n **_schemaname_** -t **_tablename_  multiple times can import multiple tables in a specified schema.
 
-    For example:
+  For example:
 
-    Import  **table1**  in the  **PUBLIC**  schema.
+  Import  **table1**  in the  **PUBLIC**  schema.
 
-    ```
-    gs_restore -h host_name -p port_number -d postgres -t table1 backup/MPPDB_backup.tar
-    ```
+  ```
+  gs_restore -h host_name -p port_number -d postgres -t table1 backup/MPPDB_backup.tar
+  ```
 
-    Import  **test1**  in the  **test1**  schema and  **test2**  in the  **test2**  schema.
+  Import  **test1**  in the  **test1**  schema and  **test2**  in the  **test2**  schema.
 
-    ```
-    gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
-    ```
+  ```
+  gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
+  ```
 
-    Import  **table1**  in the  **PUBLIC**  schema and  **test1**  in the  **test1**  schema.
+  Import  **table1**  in the  **PUBLIC**  schema and  **test1**  in the  **test1**  schema.
 
-    ```
-    gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
-    ```
+  ```
+  gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
+  ```
+
+  ![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+  The -t parameter does not support the input format of schema_name.table_name.
 
 -   -T, --trigger=NAME
 
