@@ -150,18 +150,18 @@ gs_restore[2017-07-21 19:52:26]: restore operation successful
 gs_restore[2017-07-21 19:52:26]: total time: 2203  ms
 ```
 
-示例六：执行gs\_restore，导入MPPDB\_backup.dmp文件中PUBLIC模式下表hr.staffs的定义。在导入之前，hr.staffs表不存在。
+示例六：执行gs\_restore，导入MPPDB\_backup.dmp文件中hr模式下表hr.staffs的定义。在导入之前，hr.staffs表不存在。
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -c -s -n PUBLIC -t hr.staffs
+gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -c -s -n hr -t hr.staffs
 gs_restore[2017-07-21 19:56:29]: restore operation successful
 gs_restore[2017-07-21 19:56:29]: total time: 21000  ms
 ```
 
-示例七：执行gs\_restore，导入MPPDB\_backup.dmp文件中PUBLIC模式下表hr.staffs的数据。在导入之前，hr.staffs表不存在数据。
+示例七：执行gs\_restore，导入MPPDB\_backup.dmp文件中hr模式下表hr.staffs的数据。在导入之前，hr.staffs表不存在数据。
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -a -n PUBLIC -t hr.staffs
+gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -a -n hr -t hr.staffs
 gs_restore[2017-07-21 20:12:32]: restore operation successful
 gs_restore[2017-07-21 20:12:32]: total time: 20203  ms
 ```

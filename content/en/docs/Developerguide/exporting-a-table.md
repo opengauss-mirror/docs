@@ -12,7 +12,7 @@ You can use  **gs\_dump**  to export data and definition of a table-level object
 2.  Run  **gs\_dump**  to export the  **hr.staffs**  and  **hr.employments**  tables.
 
     ```
-    gs_dump -W Bigdata@123 -U jack -f /home/omm/backup/MPPDB_table_backup -p    8000 human_resource -t hr.staffs -F d
+    gs_dump -W Bigdata@123 -U jack -f /home/omm/backup/MPPDB_table_backup -p 8000 human_resource -t hr.staffs -t hr.employments -F d
     ```
 
     **Table  1**  Common parameters
