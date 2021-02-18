@@ -150,18 +150,18 @@ gs_restore[2017-07-21 19:52:26]: restore operation successful
 gs_restore[2017-07-21 19:52:26]: total time: 2203  ms
 ```
 
-Example 6: Run  **gs\_restore**  to import the definition of the  **hr.staffs**  table in the  **PUBLIC**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table does not exist.
+Example 6: Run  **gs\_restore**  to import the definition of the  **hr.staffs**  table in the  **hr**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table does not exist.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -c -s -n PUBLIC -t hr.staffs
+gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -c -s -n hr -t hr.staffs
 gs_restore[2017-07-21 19:56:29]: restore operation successful
 gs_restore[2017-07-21 19:56:29]: total time: 21000  ms
 ```
 
-Example 7: Run  **gs\_restore**  to import data of the  **hr.staffs**  table in  **PUBLIC**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table is empty.
+Example 7: Run  **gs\_restore**  to import data of the  **hr.staffs**  table in  **hr**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table is empty.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -a -n PUBLIC -t hr.staffs
+gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -a -n hr -t hr.staffs
 gs_restore[2017-07-21 20:12:32]: restore operation successful
 gs_restore[2017-07-21 20:12:32]: total time: 20203  ms
 ```

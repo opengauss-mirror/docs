@@ -12,7 +12,7 @@ You can use  **gs\_dump**  to export data and all object definitions of a schema
 2.  Run  **gs\_dump**  to export the  **hr**  and  **public**  schemas.
 
     ```
-    gs_dump -W Bigdata@123 -U jack -f /home/omm/backup/MPPDB_schema_backup -p 8000 human_resource -n hr -F d 
+    gs_dump -W Bigdata@123 -U jack -f /home/omm/backup/MPPDB_schema_backup -p 8000 human_resource -n hr -n public -F d 
     ```
 
     **Table  1**  Common parameters
