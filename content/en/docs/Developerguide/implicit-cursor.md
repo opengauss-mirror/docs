@@ -23,10 +23,7 @@ An implicit cursor has the following attributes:
 ## Examples<a name="en-us_topic_0237122245_en-us_topic_0059778352_s56d5099e16904d0bb9800bc6a8acf21c"></a>
 
 ```
--- Delete all employees in a department from the EMP table. If the department has no employees, delete the department from the DEPT table.
-CREATE TABLE hr.staffs_t1 AS TABLE hr.staffs;
-CREATE TABLE hr.sections_t1 AS TABLE hr.sections;
-
+-- Delete all employees in a department from the hr.staffs table. If the department has no employees, delete the department from the hr.sections table.
 CREATE OR REPLACE PROCEDURE proc_cursor3() 
 AS 
     DECLARE
@@ -35,7 +32,7 @@ AS
         DELETE FROM hr.staffs WHERE section_ID = V_DEPTNO;
         -- Proceed based on cursor status.
         IF SQL%NOTFOUND THEN
-        DELETE FROM hr.sections_t1 WHERE section_ID = V_DEPTNO;
+        DELETE FROM hr.sections WHERE section_ID = V_DEPTNO;
         END IF;
     END;
 /
@@ -44,7 +41,5 @@ CALL proc_cursor3();
 
 -- Delete the stored procedure and the temporary table.
 DROP PROCEDURE proc_cursor3;
-DROP TABLE hr.staffs_t1;
-DROP TABLE hr.sections_t1;
 ```
 
