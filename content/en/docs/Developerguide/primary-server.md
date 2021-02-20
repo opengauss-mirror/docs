@@ -81,7 +81,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 4096 to 1072693248. The unit is KB.
 
-**Default value**:  **16MB**  \(16448 KB\)
+**Default value**:  **16MB**  \(16384 KB\)
 
 ## walsender\_max\_send\_size<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_sbef7a545706e4995b7028b980cdcb35a"></a>
 
