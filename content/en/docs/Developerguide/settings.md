@@ -73,7 +73,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **0**  indicates asynchronous commit.
 -   **2**  indicates that the synchronization logs of the standby server are replayed.
 
-**Default value**:  **off**
+**Default value**:  **on**
 
 ## wal\_sync\_method<a name="en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s9fc8bf6fcd2b474d894fc8ee7385fe86"></a>
 
