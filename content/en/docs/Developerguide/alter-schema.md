@@ -37,7 +37,7 @@ Only the schema owner or a user granted with the ALTER permission can run the  *
 
     Renames a schema.
 
-    **new\_name**: new name of the schema. To do this as a non-administrator, you must be a direct or indirect member of the new owning role, and that role must have  **CREATE**  permission in the database.
+    **new\_name**: new name of the schema. To do this as a non-administrator, you must  have  **CREATE**  permission in the database.
 
     Value range: a string. It must comply with the naming convention rule.
 
