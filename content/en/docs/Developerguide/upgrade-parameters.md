@@ -25,7 +25,9 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 ## upgrade\_mode<a name="en-us_topic_0237124753_section108622315308"></a>
 
-**Parameter description**: Specifies the upgrade mode. You are advised not to modify this parameter.
+**Parameter description**: Specifies the upgrade mode. 
+
+This parameter belongs to the INTERNAL type parameter and is a fixed parameter. Users cannot modify this parameter but can only view it.
 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_
 
