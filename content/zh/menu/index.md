@@ -80,6 +80,7 @@ headless: true
             -   [发送端服务器]({{< relref "./docs/Developerguide/发送端服务器.md" >}})
             -   [主服务器]({{< relref "./docs/Developerguide/主服务器.md" >}})
             -   [备服务器]({{< relref "./docs/Developerguide/备服务器.md" >}})
+		-   [内存表]({{< relref "./docs/Developerguide/内存表.md" >}})
         -   [查询规划]({{< relref "./docs/Developerguide/查询规划.md" >}})
             -   [优化器方法配置]({{< relref "./docs/Developerguide/优化器方法配置.md" >}})
             -   [优化器开销常量]({{< relref "./docs/Developerguide/优化器开销常量.md" >}})

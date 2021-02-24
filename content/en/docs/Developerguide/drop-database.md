@@ -40,7 +40,7 @@ See  [Examples](en-us_topic_0283137050.md#en-us_topic_0237122099_en-us_topic_005
 
 ## Helpful Links<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_s5f331542a3f84ab58b896c25bfff41db"></a>
 
-[CREATE DATABASE](create-database.md)
+[CREATE DATABASE](create-database.md)，[ALTER DATABASE](alter-database.md)
 
 ## Suggestions<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_section29255108114255"></a>
 
