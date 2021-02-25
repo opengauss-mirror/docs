@@ -47,7 +47,7 @@ The git and git-lfs have been installed and configured on the local host.
 
 Before compiling the openGauss, compile and build the open-source and third-party software on which the openGauss depends. These open-source and third-party software is stored in the  **openGauss-third\_party**  code repository. After downloading the software, you can use  **git lfs pull**  to obtain large files from the code repository. Generally, you only need to build the software once. If the open-source software is updated, rebuild the software.
 
-Since this step takes a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**. You can download the package by referring to  [Downloading Code](#en-us_topic_0283136302_section188203481850).
+Since this step takes a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**. You can download the package by referring to  [Downloading Code](#Downloading Code).
 
 **Table  1**  Requirements for the openGauss open-source and third-party software before compilation
 
@@ -229,10 +229,10 @@ Software compilation and installation are to compile code to generate software a
 
 ### Prerequisites
 
--   The software and hardware have been prepared based on the requirements in  [Setting up the Compilation Environment](setting-up-the-compilation-environment.md), and the code has been downloaded by referring to  [Downloading Code](preparation-before-compiling.md#en-us_topic_0283136302_section188203481850).
--   Open-source software has been compiled and built. For details, see  [Compiling Open-source Software](preparation-before-compiling.md#en-us_topic_0283136302_section13890105116714). GCC 7.3 has been placed in the  **output**  directory based on the directory structure of the released and compiled third-party library.
--   You are familiar with the parameter options and functions of the  **[build.sh](preparation-before-compiling.md#en-us_topic_0283136302_section926810175121)**  script.
--   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ 4.1](how-do-i-delete-temporary-files-generated-during-compilation.md).
+-   The software and hardware have been prepared based on the requirements in  [Setting up the Compilation Environment](setting-up-the-compilation-environment.md), and the code has been downloaded by referring to  [Downloading Code](#Downloading Code).
+-   Open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software). GCC 7.3 has been placed in the  **output**  directory based on the directory structure of the released and compiled third-party library.
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
+-   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Compilation Using the One-click Script
 
@@ -350,7 +350,7 @@ To compile the installation package is to compile the code and generate the soft
 
 -   TThe software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading-Code).
 -   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software).
--   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build-sh)  script.
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
 -   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Procedure
