@@ -39,6 +39,15 @@ gs\_uninstall, provided by , can be used to uninstall a cluster.
 
   After executing gs\_postuninstall, the system will automatically delete the directories related to openGauss \(including $GAUSSLOG\). You are advised to set the log file path to a path outside the openGauss database.
 
+- -l
+
+  Specifies a log file name and its path. A timestamp will be added automatically to the log file name.
+
+  When  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, the default value of the  **-l**  parameter is  **/var/log/gaussdb/om/gs_local-YYYY-MMDD_hhmmss.log**.
+
+  >![](C:/Users/lijun/Desktop/opengauss/docs/content/en/docs/Toolreference/public_sys-resources/icon-note.gif) **NOTE:** 
+  >After executing gs\_uninstall, the system will automatically delete the directories related to openGauss \(including $GAUSSLOG\). You are advised to set the log file path to a path outside the openGauss database.
+
 -   -?, --help
 
     Displays help information.
