@@ -29,6 +29,12 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 -   gs\_initdb决定template1数据库的设置，而该设置将会成为其他数据库的默认设置。
 -   gs\_initdb初始化数据库的缺省区域和字符集编码。字符集编码、字符编码排序（LC\_COLLATE）和字符集类（LC\_CTYPE，如大写、小写数字等）可以在创建数据库时独立设置。
 
+**语法**
+
+```
+gs_initdb [OPTION]... [DATADIR]
+```
+
 **操作步骤**
 
 1.  以操作系统用户omm登录数据库主节点。
@@ -63,14 +69,9 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 4.  执行gs\_initdb命令初始化数据库。
 
     ```
-    gs_initdb /opt/gaussdb/data1 -w "Gauss@123"
+    gs_initdb -D /opt/gaussdb/data1 -w "Gauss@123" --nodename='data1'
     ```
 
-    gs\_initdb的语法：
-
-    ```
-    gs_initdb [OPTION]... [DATADIR]
-    ```
 
 
 
@@ -81,6 +82,7 @@ gs\_initdb支持的常用参数和不常用参数请分别参见[表 常用参�
 **表 1**  常用参数说明
 
 <a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_t7527cd2e8e304b64bec55dcd38b701bb"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_rb04ed4dbb2024e91814fe29c62058a1e"><th class="cellrowborder" valign="top" width="23.76%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abb1d0e137f344644873d231722922745"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abb1d0e137f344644873d231722922745"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abb1d0e137f344644873d231722922745"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="32.6%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a2a756e3c53094c5ea62729be1496108e"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a2a756e3c53094c5ea62729be1496108e"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a2a756e3c53094c5ea62729be1496108e"></a>参数说明</p>

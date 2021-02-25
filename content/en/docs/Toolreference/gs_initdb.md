@@ -29,6 +29,12 @@ During installation, you are advised to use the  **-D**  parameter to call  **gs
 -   **gs\_initdb**  is used to set the template1 database and the setting becomes the default setting of other databases.
 -   **gs\_initdb**  initializes the default locale and character set encoding of a database. The character set encoding, character encoding sequence \(LC\_COLLATE\), and character set class \(LC\_CTYPE, such as uppercase letters, lowercase letters, and digits\) can be separately set for databases when you create them.
 
+**syntax**
+
+```
+gs_initdb [OPTION]... [DATADIR]
+```
+
 **Procedure**
 
 1.  Log in as the OS user  **omm**  to the primary database node.
@@ -64,16 +70,9 @@ During installation, you are advised to use the  **-D**  parameter to call  **gs
 4.  Run the  **gs\_initdb**  command to initialize the database.
 
     ```
-    gs_initdb /opt/gaussdb/data1 -w "Gauss@123"
+    gs_initdb -D /opt/gaussdb/data1 -w "Gauss@123" --nodename='data1'
     ```
 
-    **gs\_initdb**  syntax:
-
-    ```
-    gs_initdb [OPTION]... [DATADIR]
-    ```
-
-    For parameters about OPTION, see  [Command Reference](#section01341136122018).
 
 
 ## Command Reference<a name="section01341136122018"></a>
