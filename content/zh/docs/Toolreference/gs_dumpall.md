@@ -144,6 +144,14 @@ gs_dumpall [OPTION]...
 
     AES128密钥长度必须是16字节。
 
+-   --include-alter-table
+
+    转储后的表删除列。
+
+-   --include-extension
+
+    如果--include-extension参数被设置，将备份所有的CREATE EXTENSION语句。
+
 -   --include-templatedb
 
     转储过程中包含模板库。
@@ -155,6 +163,10 @@ gs_dumpall [OPTION]...
 -   --binary-upgrade-usermap="USER1=USER2"
 
     该参数为扩展预留接口，不建议使用。
+
+-   --non-lock-table
+
+    该参数仅供OM工具使用。
 
 -   --tablespaces-postfix
 

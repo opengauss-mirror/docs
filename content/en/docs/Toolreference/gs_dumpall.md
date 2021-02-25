@@ -144,6 +144,14 @@ Dump parameters:
 
     Specifies that the key length of AES128 must be 16 bytes.
 
+-   --include-alter-table
+
+    Delete the column in the dumped table.
+
+- --include-extension
+
+  If the --include-extension parameter is set, all CREATE EXTENSION statements will be backed up.
+
 -   --include-templatedb
 
     Includes template databases during the dump.
@@ -155,6 +163,10 @@ Dump parameters:
 -   --binary-upgrade-usermap="USER1=USER2"
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
+
+-   --non-lock-table
+
+    This parameter is only used by the OM tool.
 
 -   --tablespaces-postfix
 
