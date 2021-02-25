@@ -380,6 +380,10 @@ Dump parameters:
 
   When using the gs_dump tool for encrypted export, only plain format export is supported. The data exported through -F plain needs to be imported through the gsql tool, and if it is imported through encryption, the --with-key parameter must be specified when importing through gsql.
 
+-   --include-extension
+
+    Include extensions in the dump.
+
 -   --include-depend-objs
 
     Includes information about the objects that depend on the specified object in the backup result. This parameter takes effect only if the  **-t**  or  **--include-table-file**  parameter is specified.

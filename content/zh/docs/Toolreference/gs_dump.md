@@ -388,6 +388,10 @@ export PGDATABASE=postgres
 
   使用gs_dump工具进行加密导出时，仅支持plain格式导出。通过-F plain导出的数据，需要通过gsql工具进行导入，且如果以加密方式导入，在通过gsql导入时，需要指定--with-key参数。
 
+-   --include-extension
+
+    在转储中包含扩展。
+
 -   --include-depend-objs
 
     备份结果包含依赖于指定对象的对象信息。该参数需要同-t/--include-table-file参数关联使用才会生效。
