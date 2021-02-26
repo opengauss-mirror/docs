@@ -145,7 +145,7 @@ After installing the software listed in  [Table 1](#en-us_topic_0283136302_table
 
 After the preceding script is executed, the final compilation and build result is stored in the  **output **directory under the  **openGauss-third\_party**  directory These files will be used during the compilation of  **openGauss-server**.
 
-### Introduction to build.sh
+### Introduction to compile script
 
 **openGauss-server/build.sh**  is an important script tool during compilation. It integrates software installation and compilation and product installation package compilation functions to quickly compile and package code.
 
@@ -231,7 +231,7 @@ Software compilation and installation are to compile code to generate software a
 
 -   The software and hardware have been prepared based on the requirements in  [Setting up the Compilation Environment](setting-up-the-compilation-environment.md), and the code has been downloaded by referring to  [Downloading Code](#Downloading Code).
 -   Open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software). GCC 7.3 has been placed in the  **output**  directory based on the directory structure of the released and compiled third-party library.
--   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to compile script)  script.
 -   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Compilation Using the One-click Script
@@ -350,7 +350,7 @@ To compile the installation package is to compile the code and generate the soft
 
 -   TThe software and hardware have been prepared based on the requirements for setting up the compilation environment, and the code has been downloaded by referring to  [Downloading Code](#Downloading-Code).
 -   The open-source software has been compiled and built. For details, see   [Compiling Open-source Software](#Compiling Open-source Software).
--   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to build.sh)  script.
+-   You are familiar with the parameter options and functions of the  [Introduction to build.sh](#Introduction to compile script)  script.
 -   The code environment is clean, and no file is generated before the current compilation. For details, see  [FAQ](faqs.md).
 
 ### Procedure
