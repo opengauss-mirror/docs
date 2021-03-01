@@ -802,26 +802,6 @@ postgres=# CREATE TABLE tpcds.warehouse_t21
     W_GMT_OFFSET              DECIMAL(5,2)
 );
 
---定义一个表，使用HASH分布。
-postgres=# CREATE TABLE tpcds.warehouse_t22
-(
-    W_WAREHOUSE_SK            INTEGER               NOT NULL,
-    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
-    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
-    W_WAREHOUSE_SQ_FT         INTEGER                       ,
-    W_STREET_NUMBER           CHAR(10)                      ,
-    W_STREET_NAME             VARCHAR(60)                   ,
-    W_STREET_TYPE             CHAR(15)                      ,
-    W_SUITE_NUMBER            CHAR(10)                      ,
-    W_CITY                    VARCHAR(60)                   ,
-    W_COUNTY                  VARCHAR(30)                   ,
-    W_STATE                   CHAR(2)                       ,
-    W_ZIP                     CHAR(10)                      ,
-    W_COUNTRY                 VARCHAR(20)                   ,
-    W_GMT_OFFSET              DECIMAL(5,2),
-    CONSTRAINT W_CONSTR_KEY3 UNIQUE(W_WAREHOUSE_SK)
-);
-
 --创建一个有外键约束的表。
 postgres=# CREATE TABLE tpcds.city_t23
 (
