@@ -772,9 +772,13 @@ Dump parameters:
 
     Specifies that dumping data needs to be encrypted using AES128.
 
--   --with-key=KEY
+- --with-key=KEY
 
-    Specifies that the key length of AES128 must be 16 bytes.
+  Specifies that the key length of AES128 must be 16 bytes.
+
+   **NOTE:**   
+
+  When using the gs_dump tool for encrypted export, only plain format export is supported. The data exported through -F plain needs to be imported through the gsql tool, and if it is imported through encryption, the --with-key parameter must be specified when importing through gsql.
 
 -   --include-depend-objs
 
@@ -1434,14 +1438,6 @@ Parameters for importing data
 
     Outputs the  **SET SESSION AUTHORIZATION**  statement instead of the  **ALTER OWNER**  statement to determine object ownership. This parameter makes dump more standards-compatible. If the records of objects in exported files are referenced, import may fail. Only administrators can use the  **SET SESSION AUTHORIZATION**  statement to dump data, and the administrators must manually change and verify the passwords of exported files by referencing the  **SET SESSION AUTHORIZATION**  statement before import. The  **ALTER OWNER**  statement requires lower permissions.
 
--   --with-key=KEY
-
-    Specifies that the key length of AES128 must be 16 bytes.
-
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    If the dump is encrypted, enter the  **--with-key=KEY**  parameter in the  **gs\_restore**  command. If it is not entered, you will receive an error message.
-    Enter the same key while entering the dump.
-    When the dump format is  **c**  or  **t**, the dumped content has been processed, and therefore the input is not restricted by the encryption.
 
 
 ![](public_sys-resources/icon-notice.gif) **NOTICE:** 
