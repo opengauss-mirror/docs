@@ -983,7 +983,7 @@ headless: true
 			-   [GS\_SESSION\_STAT]({{< relref "./docs/Developerguide/gs_session_stat.md" >}})
 			-   [GS\_SESSION\_TIME]({{< relref "./docs/Developerguide/gs_session_time.md" >}})
 			-   [GS\_THREAD\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/gs_thread_memory_detail.md" >}})
-			-   [GS\_TOTAL\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/gs_total_memory_detail.md" >}})
+			-   [GS\_THREAD\_MEMORY\_CONTEXT]({{< relref "./docs/Developerguide/gs_thread_memory_context.md" >}})
 			-   [PG\_TIMEZONE\_ABBREVS]({{< relref "./docs/Developerguide/pg_timezone_abbrevs.md" >}})
 			-   [PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID]({{< relref "./docs/Developerguide/pg_total_user_resource_info_oid.md" >}})
 			-   [PG\_VARIABLE\_INFO]({{< relref "./docs/Developerguide/pg_variable_info.md" >}})

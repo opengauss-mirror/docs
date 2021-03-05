@@ -1,8 +1,8 @@
-# GS\_TOTAL\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0242386039"></a>
+# GS\_THREAD\_MEMORY\_CONTEXT<a name="EN-US_TOPIC_0242386039"></a>
 
-**GS\_TOTAL\_MEMORY\_DETAIL**  collects statistics about memory usage of the current database node.
+**GS\_THREAD\_MEMORY\_CONTEXT**  collects statistics about memory usage of the current database node.
 
-**Table  1**  GS\_TOTAL\_MEMORY\_DETAIL columns
+**Table  1**  GS\_THREAD\_MEMORY\_CONTEXT columns
 
 <a name="en-us_topic_0237122512_en-us_topic_0059777855_ta451d5c762a348078f6f4862f1517267"></a>
 <table><thead align="left"><tr id="en-us_topic_0237122512_en-us_topic_0059777855_r07b299704b9940f687e6d79c1f322a65"><th class="cellrowborder" valign="top" width="20.14%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237122512_en-us_topic_0059777855_a0a859e2167dc46a39030a857642dc245"><a name="en-us_topic_0237122512_en-us_topic_0059777855_a0a859e2167dc46a39030a857642dc245"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_a0a859e2167dc46a39030a857642dc245"></a>Name</p>
