@@ -133,20 +133,6 @@
     </div></div>
     </td>
     </tr>
-    <tr id="row37130024416"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152142_en-us_topic_0059778819_a26f37e27d08f4f0f9e9c94e3d831d00b"><a name="en-us_topic_0237152142_en-us_topic_0059778819_a26f37e27d08f4f0f9e9c94e3d831d00b"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_a26f37e27d08f4f0f9e9c94e3d831d00b"></a>HISTFILE</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.4.1.2 "><pre class="screen" id="en-us_topic_0237152142_en-us_topic_0059778819_s76a758ea6afd486cacc51814a32a8a97"><a name="en-us_topic_0237152142_en-us_topic_0059778819_s76a758ea6afd486cacc51814a32a8a97"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_s76a758ea6afd486cacc51814a32a8a97"></a>\set HISTFILE <em id="en-us_topic_0237152142_en-us_topic_0059778819_a1e6a47f33aca4b6fb62e85f3d721a05e"><a name="en-us_topic_0237152142_en-us_topic_0059778819_a1e6a47f33aca4b6fb62e85f3d721a05e"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_a1e6a47f33aca4b6fb62e85f3d721a05e"></a>filename</em></pre>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_p53936234"><a name="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_p53936234"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_p53936234"></a>Specifies the file for storing historical records. The default value is <strong id="b9510630172615"><a name="b9510630172615"></a><a name="b9510630172615"></a>~/.bash_history</strong>.</p>
-    </td>
-    </tr>
-    <tr id="row10713100124413"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152142_en-us_topic_0059778819_afbf6dc254bee469db307b94b03867e95"><a name="en-us_topic_0237152142_en-us_topic_0059778819_afbf6dc254bee469db307b94b03867e95"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_afbf6dc254bee469db307b94b03867e95"></a>HISTSIZE</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.4.1.2 "><pre class="screen" id="en-us_topic_0237152142_en-us_topic_0059778819_s2b5a5e5700cf4ccf9b4be35079275fb0"><a name="en-us_topic_0237152142_en-us_topic_0059778819_s2b5a5e5700cf4ccf9b4be35079275fb0"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_s2b5a5e5700cf4ccf9b4be35079275fb0"></a>\set HISTSIZE <em id="en-us_topic_0237152142_en-us_topic_0059778819_aa9df1fd03d94447b81ccff946c4b9af4"><a name="en-us_topic_0237152142_en-us_topic_0059778819_aa9df1fd03d94447b81ccff946c4b9af4"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_aa9df1fd03d94447b81ccff946c4b9af4"></a>size</em></pre>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_p18680913"><a name="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_p18680913"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_p18680913"></a>Specifies the number of commands to store in the command history. The default value is <strong id="b9128949152615"><a name="b9128949152615"></a><a name="b9128949152615"></a>500</strong>.</p>
-    </td>
-    </tr>
     <tr id="row13713400449"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152142_en-us_topic_0059778819_a767d6bdc7cc14fa8a096db4dd7bbbde0"><a name="en-us_topic_0237152142_en-us_topic_0059778819_a767d6bdc7cc14fa8a096db4dd7bbbde0"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_a767d6bdc7cc14fa8a096db4dd7bbbde0"></a>HOST</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.4.1.2 "><pre class="screen" id="en-us_topic_0237152142_en-us_topic_0059778819_s85eace3643834a0d97e7562c5bcbc4fc"><a name="en-us_topic_0237152142_en-us_topic_0059778819_s85eace3643834a0d97e7562c5bcbc4fc"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_s85eace3643834a0d97e7562c5bcbc4fc"></a>\set HOST <em id="en-us_topic_0237152142_en-us_topic_0059778819_a2374e7879abc4a31a84b5f15a9d551d7"><a name="en-us_topic_0237152142_en-us_topic_0059778819_a2374e7879abc4a31a84b5f15a9d551d7"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_a2374e7879abc4a31a84b5f15a9d551d7"></a>hostname</em></pre>
@@ -206,7 +192,7 @@
     </tr>
     </tbody>
     </table>
-
+    
 -   <a name="li194391754476"></a>SQL substitution
 
     **gsql**, like a parameter of a meta-command, provides a key feature that enables you to substitute a standard SQL statement for a  **gsql**  variable.  **gsql**  also provides a new alias or identifier for the variable. To replace the value of a variable using the SQL substitution method, add a colon \(:\) before the variable. For example:
