@@ -19,6 +19,8 @@ The following OSs are supported:
 
 -   CentOS 7.6 \(x86 architecture\)
 -   openEuler-20.03-LTS \(aarch64 architecture\)
+-   openEuler-20.03-LTS  \(x86 architecture\)
+-   Kylin-V10 \(aarch64 architecture\)
 
 **Software Dependency Requirements**
 
