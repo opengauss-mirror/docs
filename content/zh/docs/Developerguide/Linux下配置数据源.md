@@ -4,24 +4,25 @@
 
 ## 操作步骤<a name="zh-cn_topic_0237120407_zh-cn_topic_0059778464_s0b78a5ac02d949ada15c29b00b5c734d"></a>
 
-1.  获取[unixODBC源码包](http://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.0/unixODBC-2.3.0.tar.gz/download)。
+1. 获取[unixODBC源码包](http://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.0/unixODBC-2.3.0.tar.gz/download)。获取参考地址：https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.7/unixODBC-2.3.7pre.tar.gz/download
+   下载后请先按照社区提供的完整性校验算法进行完整性校验。
 
-2.  安装unixODBC。如果机器上已经安装了其他版本的unixODBC，可以直接覆盖安装。
+2. 安装unixODBC。如果机器上已经安装了其他版本的unixODBC，可以直接覆盖安装。
 
-    目前不支持unixODBC-2.2.1版本。以unixODBC-2.3.0版本为例，在客户端执行如下命令安装unixODBC。默认安装到“/usr/local”目录下，生成数据源文件到 “/usr/local/etc”目录下，库文件生成在“/usr/local/lib”目录。
+   目前不支持unixODBC-2.2.1版本。以unixODBC-2.3.0版本为例，在客户端执行如下命令安装unixODBC。默认安装到“/usr/local”目录下，生成数据源文件到 “/usr/local/etc”目录下，库文件生成在“/usr/local/lib”目录。
 
-    ```
-    tar zxvf unixODBC-2.3.0.tar.gz
-    cd unixODBC-2.3.0
-    #修改configure文件(如果不存在，那么请修改configure.ac)，找到LIB_VERSION
-    #将它的值修改为"1:0:0"，这样将编译出*.so.1的动态库，与psqlodbcw.so的依赖关系相同。
-    vim configure
-    
-    ./configure --enable-gui=no #如果要在鲲鹏服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu 
-    make
-    #安装可能需要root权限
-    make install
-    ```
+   ```
+   tar zxvf unixODBC-2.3.0.tar.gz
+   cd unixODBC-2.3.0
+   #修改configure文件(如果不存在，那么请修改configure.ac)，找到LIB_VERSION
+   #将它的值修改为"1:0:0"，这样将编译出*.so.1的动态库，与psqlodbcw.so的依赖关系相同。
+   vim configure
+   
+   ./configure --enable-gui=no #如果要在鲲鹏服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu 
+   make
+   #安装可能需要root权限
+   make install
+   ```
 
 3. 替换客户端openGauss驱动程序。
 
@@ -305,25 +306,25 @@
    gs_om -t start
    ```
 
-8.  配置环境变量。
+8. 配置环境变量。
 
-    ```
-    vim ~/.bashrc
-    ```
+   ```
+   vim ~/.bashrc
+   ```
 
-    在配置文件中追加以下内容。
+   在配置文件中追加以下内容。
 
-    ```
-    export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
-    export ODBCSYSINI=/usr/local/etc
-    export ODBCINI=/usr/local/etc/odbc.ini
-    ```
+   ```
+   export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
+   export ODBCSYSINI=/usr/local/etc
+   export ODBCINI=/usr/local/etc/odbc.ini
+   ```
 
-9.  执行如下命令使设置生效。
+9. 执行如下命令使设置生效。
 
-    ```
-    source ~/.bashrc
-    ```
+   ```
+   source ~/.bashrc
+   ```
 
 
 ## 测试数据源配置<a name="zh-cn_topic_0237120407_zh-cn_topic_0059778464_scfaeeaa70a9448889e6fdd7e37d172c5"></a>
