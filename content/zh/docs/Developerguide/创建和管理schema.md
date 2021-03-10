@@ -115,7 +115,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令创建用户jack，并将myschema的usage权限赋给用户jack。
 
         ```
-        postgres=# CREATE USER jack IDENTIFIED BY 'Bigdata@123';
+        postgres=# CREATE USER jack IDENTIFIED BY 'xxxxxxxxxx';
         CREATE ROLE
         postgres=# GRANT USAGE ON schema myschema TO jack;
         GRANT
