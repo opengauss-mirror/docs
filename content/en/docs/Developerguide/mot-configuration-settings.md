@@ -6,6 +6,8 @@ This file is read-only upon server startup. If you edit this file while the syst
 
 The mot.conf file is located in the same folder as the postgres.conf configuration file.
 
+In primary/standby deployment mode, mot.conf file should be exactly same in both primary and standby nodes. Otherwise, the system behavior is undefined.
+
 Read the  [General Guidelines](#section14452102715206)  section and then review and configure the following sections of the mot.conf file, as needed.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
