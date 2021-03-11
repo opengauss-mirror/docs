@@ -143,7 +143,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   If this parameter is set to  **–1**, the value of  **wal\_buffers**  is automatically changed to 1/32 of  **shared\_buffers**. The minimum value is 8 x  **XLOG\_BLCKSZ**, and the maximum value is 2048 x  **XLOG\_BLCKSZ**. That means if the 1/32 of  **shared\_buffers**  is smaller than 8 x  **XLOG\_BLCKSZ**  or larger than 2048 x  **XLOG\_BLCKSZ**, the minimum value or the maximum value is taken.
 -   If this parameter is set to a value other than  **-1**  and smaller than  **4**, the value  **4**  is used.
 
-**Default value**:  **16MB**
+**Default value**:  **2048, that is 16MB**
 
 **Setting suggestions**: The content of the WAL buffers is written to disk at every transaction commit, so extremely large values are unlikely to provide a significant increase in system performance. However, setting this parameter to hundreds of megabytes can improve the disk write performance on a server to which a large number of transactions are committed at the same time. The auto-tuning selected by the value  **–1**  should give reasonable results in most cases.
 
