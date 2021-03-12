@@ -26,11 +26,12 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
 2.  使用gs\_restore命令，从postgres整个数据库内容的导出文件中，将数据库的所有对象的定义导入到backupdb。
 
     ```
-    gs_restore -W Bigdata@123 -U jack /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c
-    ```
-
-    **表 1**  常用参数说明
-
+    gs_restore -U jack /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c
+    Password:
+```
+    
+**表 1**  常用参数说明
+    
     <a name="zh-cn_topic_0237121137_table1781122816253"></a>
     <table><thead align="left"><tr id="zh-cn_topic_0237121137_row10837281257"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237121137_p48382816258"><a name="zh-cn_topic_0237121137_p48382816258"></a><a name="zh-cn_topic_0237121137_p48382816258"></a>参数</p>
     </th>
@@ -52,7 +53,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p69431335210"><a name="zh-cn_topic_0237121137_p69431335210"></a><a name="zh-cn_topic_0237121137_p69431335210"></a>指定用户连接的密码。</p>
     <a name="zh-cn_topic_0237121137_ul194074341627"></a><a name="zh-cn_topic_0237121137_ul194074341627"></a><ul id="zh-cn_topic_0237121137_ul194074341627"><li>如果主机的认证策略是trust，则不会对数据库管理员进行密码验证，即无需输入-W选项；</li><li>如果没有-W选项，并且不是数据库管理员，会提示用户输入密码。</li></ul>
     </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1898043113581"><a name="zh-cn_topic_0237121137_p1898043113581"></a><a name="zh-cn_topic_0237121137_p1898043113581"></a>-W Bigdata@123</p>
+    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1898043113581"><a name="zh-cn_topic_0237121137_p1898043113581"></a><a name="zh-cn_topic_0237121137_p1898043113581"></a>-W abcd@123</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0237121137_row4650191445011"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p9650161425019"><a name="zh-cn_topic_0237121137_p9650161425019"></a><a name="zh-cn_topic_0237121137_p9650161425019"></a>-d</p>
@@ -64,7 +65,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     </tr>
     <tr id="zh-cn_topic_0237121137_row9411195215519"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p84119521250"><a name="zh-cn_topic_0237121137_p84119521250"></a><a name="zh-cn_topic_0237121137_p84119521250"></a>-p</p>
     </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p14838631464"><a name="zh-cn_topic_0237121137_p14838631464"></a><a name="zh-cn_topic_0237121137_p14838631464"></a>指定服务器所监听的TCP端口或本地Unix域套接字后缀，以确保连接。</p>
+    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p14838631464"><a name="zh-cn_topic_0237121137_p14838631464"></a><a name="zh-cn_topic_0237121137_p14838631464"></a>指定服务器所侦听的TCP端口或本地Unix域套接字后缀，以确保连接。</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p341117521853"><a name="zh-cn_topic_0237121137_p341117521853"></a><a name="zh-cn_topic_0237121137_p341117521853"></a>-p <span id="zh-cn_topic_0237121137_text986814282459"><a name="zh-cn_topic_0237121137_text986814282459"></a><a name="zh-cn_topic_0237121137_text986814282459"></a>8000</span></p>
     </td>
@@ -91,8 +92,9 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     </td>
     </tr>
     </tbody>
-    </table>
-
+</table>
+    
+    
     其他参数说明请参见《工具参考》中“服务端工具 \> gs\_restore”章节。
 
 
@@ -101,7 +103,8 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
 示例一：执行gs\_restore，导入指定MPPDB\_backup.dmp文件（自定义归档格式）中postgres数据库的数据和对象定义。
 
 ```
-gs_restore -W Bigdata@123 backup/MPPDB_backup.dmp -p 8000 -d backupdb
+gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb
+Password:
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore: total time: 13053  ms
 ```
@@ -125,7 +128,8 @@ gs_restore[2017-07-21 19:26:46]: total time: 21003  ms
 示例四：执行gs\_restore，将postgres数据库的所有对象的定义导入至backupdb数据库。导入前，postgres存在完整的定义和数据，导入后，backupdb数据库只存在所有对象定义，表没有数据。
 
 ```
-gs_restore -W Bigdata@123 /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c 
+gs_restore  /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c 
+Password:
 gs_restore[2017-07-21 19:46:27]: restore operation successful
 gs_restore[2017-07-21 19:46:27]: total time: 32993  ms
 ```
