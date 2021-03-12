@@ -122,7 +122,7 @@ WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.m
     </tr>
     <tr id="row18576141511115"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p13524917629"><a name="p13524917629"></a><a name="p13524917629"></a>Instance Efficiency Percentages（数据库/节点范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p0576615218"><a name="p0576615218"></a><a name="p0576615218"></a>数据库级或者节点Buffer Hit（缓冲命中率），Effective CPU（CPU使用率），Redo NoWait（获取Wal Buffer成功率），Soft Parse（软解析率），Non-parse CPU（CPU非解析时间比例）。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p0576615218"><a name="p0576615218"></a><a name="p0576615218"></a>数据库级或者节点Buffer Hit（缓冲命中率），Effective CPU（CPU使用率），WalWrite NoWait（获取Wal Buffer成功率），Soft Parse（软解析率），Non-parse CPU（CPU非解析时间比例）。</p>
     </td>
     </tr>
     <tr id="row115764151812"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p177481629821"><a name="p177481629821"></a><a name="p177481629821"></a>Top 10 Events by Total Wait Time（节点范围）</p>
