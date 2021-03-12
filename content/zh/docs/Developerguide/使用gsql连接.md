@@ -4,11 +4,11 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 ## 注意事项<a name="zh-cn_topic_0283137029_zh-cn_topic_0237120292_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
 
-缺省情况下，客户端连接数据库后处于空闲状态时会根据参数[session\_timeout](zh-cn_topic_0289899967.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)的默认值自动断开连接。如果要关闭超时设置，设置参数[session\_timeout](zh-cn_topic_0289899967.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)为0即可。
+缺省情况下，客户端连接数据库后处于空闲状态时会根据参数[session\_timeout](安全和认证_postgresql-conf.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)的默认值自动断开连接。如果要关闭超时设置，设置参数[session\_timeout](安全和认证_postgresql-conf.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)为0即可。
 
 ## 前提条件<a name="zh-cn_topic_0283137029_zh-cn_topic_0237120292_zh-cn_topic_0062050379_section2863008216400"></a>
 
-已[确认连接信息](zh-cn_topic_0289899830.md)。
+已[确认连接信息](确认连接信息.md)。
 
 ## 本地连接数据库
 
@@ -37,7 +37,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。
 
-    “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](zh-cn_topic_0289900924.md)。
+    “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](连接数据库_以SSL方式.md)。
 
 3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》中“安装openGauss \> 执行安装”章节，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
 
@@ -85,7 +85,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 ## 远程连接数据库
 
-1.  完成远程连接配置，操作步骤参见[配置服务端远程连接](zh-cn_topic_0289899869.md)。
+1.  完成远程连接配置，操作步骤参见[配置服务端远程连接](配置服务端远程连接.md)。
 2.  在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。此处以openEuler环境为例。
     1.  以root用户登录客户端机器。
     2.  创建“/tmp/tools”目录。

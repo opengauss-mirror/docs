@@ -13,7 +13,8 @@
 通过“ulimit -u”命令查看操作系统max user processes的值。
 
 ```
-[root@openGauss36 mnt]# ulimit -uunlimited
+[root@openGauss36 mnt]# ulimit -u
+unlimited
 ```
 
 按如下简易公式计算需要设置的小值。
