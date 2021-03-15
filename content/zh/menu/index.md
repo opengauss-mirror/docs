@@ -1253,7 +1253,6 @@ headless: true
         -   [等待事件]({{< relref "./docs/Developerguide/等待事件.md" >}})
         -   [Query]({{< relref "./docs/Developerguide/Query-22.md" >}})
         -   [系统性能快照]({{< relref "./docs/Developerguide/系统性能快照.md" >}})
-		-   [全密态数据库支持等值查询]({{< relref "./docs/Developerguide/全密态数据库支持等值查询.md" >}})
 		-   [全局临时表]({{< relref "./docs/Developerguide/全局临时表.md" >}})
 		-   [定时任务]({{< relref "./docs/Developerguide/定时任务.md" >}})
 		-   [线程池]({{< relref "./docs/Developerguide/线程池.md" >}})
