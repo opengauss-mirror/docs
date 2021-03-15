@@ -8,7 +8,7 @@
 
     返回值类型：record
 
-    示例请参见[单query索引推荐](zh-cn_topic_0296549246.md)。
+    示例请参见[单query索引推荐](单query索引推荐.md)。
 
 -   hypopg\_create\_index\(text\)
 
@@ -18,7 +18,7 @@
 
     返回值类型：record
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_display\_index\(\)
 
@@ -28,7 +28,7 @@
 
     返回值类型：record
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_drop\_index\(oid\)
 
@@ -38,7 +38,7 @@
 
     返回值类型：bool
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_reset\_index\(\)
 
@@ -48,7 +48,7 @@
 
     返回值类型：无
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_estimate\_size\(oid\)
 
@@ -58,6 +58,6 @@
 
     返回值类型：int8
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 

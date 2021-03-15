@@ -28,11 +28,12 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     ```
     gs_restore -U jack /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c
     Password:
-```
-    
+    ```
+
 **表 1**  常用参数说明
     
     <a name="zh-cn_topic_0237121137_table1781122816253"></a>
+
     <table><thead align="left"><tr id="zh-cn_topic_0237121137_row10837281257"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237121137_p48382816258"><a name="zh-cn_topic_0237121137_p48382816258"></a><a name="zh-cn_topic_0237121137_p48382816258"></a>参数</p>
     </th>
     <th class="cellrowborder" valign="top" width="43.33%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237121137_p18332812257"><a name="zh-cn_topic_0237121137_p18332812257"></a><a name="zh-cn_topic_0237121137_p18332812257"></a>参数说明</p>
@@ -93,10 +94,8 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     </tr>
     </tbody>
 </table>
-    
-    
-    其他参数说明请参见《工具参考》中“服务端工具 \> gs\_restore”章节。
 
+ 其他参数说明请参见《工具参考》中“服务端工具 \> gs\_restore”章节。
 
 ## 示例<a name="zh-cn_topic_0237121137_section19717152710548"></a>
 
@@ -256,33 +255,7 @@ restore operation successful
 total time: 665  ms
 ```
 
-示例十二：执行gs\_restore，将human\_resource数据库导出文件进行解密并导入至backupdb数据库中。
-
-```
-postgres=# create database backupdb;
-CREATE DATABASE
-
-gs_restore /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb --with-key=1234567812345678
-restore operation successful
-total time: 23472  ms
-
-gsql -d backupdb -p 8000 -r
-
-gsql ((openGauss x.x.x build 290d125f) compiled at 2020-12-08 02:59:43 commit 2143 last mr 131
-Non-SSL connection (SSL connection is recommended when requiring high-security)
-Type "help" for help.
-
-backupdb=# select * from hr.areas;
- area_id |       area_name        
----------+------------------------
-       4 | Middle East and Africa
-       1 | Europe
-       2 | Americas
-       3 | Asia
-(4 rows)
-```
-
-示例十三：用户user1不具备将导出文件中数据导入至数据库backupdb的权限，而角色role1具备该权限，要实现将文件数据导入数据库backupdb，可以在导出命令中设置--role角色为role1，使用role1的权限，完成导出目的。
+示例十二：用户user1不具备将导出文件中数据导入至数据库backupdb的权限，而角色role1具备该权限，要实现将文件数据导入数据库backupdb，可以在导出命令中设置--role角色为role1，使用role1的权限，完成导出目的。
 
 ```
 human_resource=# CREATE USER user1 IDENTIFIED BY "1234@abc";
@@ -308,3 +281,9 @@ backupdb=# select * from hr.areas;
 (4 rows)
 ```
 
+
+
+```
+
+
+```
