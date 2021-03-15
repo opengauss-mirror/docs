@@ -122,7 +122,7 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 可以使用BenchmarkSQL测试TPCC，如下所示：
 
 -   下载benchmarksql：[https://osdn.net/frs/g\_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip](https://osdn.net/frs/g_redir.php?m=kent&f=benchmarksql/benchmarksql-5.0.zip)
--   benchmarksql工具中的模式创建脚本需要调整为MOT语法，避免使用不支持的DDL。下载调整后的脚本：[https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/MOT-TPCC-Benchmark.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/MOT-TPCC-Benchmark.tar.gz)。该tar文件的内容包括sql.common.opengauss.mot文件夹和jTPCCTData.java文件，以及一个示例配置文件postgresql.conf和TPCC属性文件props.mot供参考。
+-   benchmarksql工具中的模式创建脚本需要调整为MOT语法，避免使用不支持的DDL。下载调整后的脚本：[https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz)。该tar文件的内容包括sql.common.opengauss.mot文件夹和jTPCCTData.java文件，以及一个示例配置文件postgresql.conf和TPCC属性文件props.mot供参考。
 -   将sql.common.opengauss.mot文件夹放在run文件夹下与sql.common同级的文件夹，用下载的Java文件替换src/client/jTPCCTData.java文件。
 -   编辑run文件夹下的runDatabaseBuild.sh文件，将extraHistID从AFTER\_LOAD列表中删除，以避免不支持的ALTER表DDL。
 -   将lib/postgres文件夹下的JDBC驱动替换为openGauss JDBC。驱动下载链接：[https://opengauss.org/en/download.html](https://opengauss.org/en/download.html)。

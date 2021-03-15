@@ -1256,6 +1256,7 @@ headless: true
 		-   [全密态数据库支持等值查询]({{< relref "./docs/Developerguide/全密态数据库支持等值查询.md" >}})
 		-   [全局临时表]({{< relref "./docs/Developerguide/全局临时表.md" >}})
 		-   [定时任务]({{< relref "./docs/Developerguide/定时任务.md" >}})
+		-   [线程池]({{< relref "./docs/Developerguide/线程池.md" >}})
 	-   [错误码参考]({{< relref "./docs/Developerguide/错误码参考.md">}})
 		-   [SQL标准错误码说明]({{< relref "./docs/Developerguide/SQL标准错误码说明.md" >}})
 		-   [第三方库错误码说明]({{< relref "./docs/Developerguide/第三方库错误码说明.md" >}})
