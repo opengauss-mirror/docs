@@ -104,6 +104,11 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a>Acronym for data manipulation language.</p>
 </td>
 </tr>
+    <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row51747249138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a>DQL</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a>Acronym for data query language.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row82781239138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"></a>backup</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p216949629138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p216949629138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p216949629138"></a>A backup copy or an act of creating a backup refers to copying and archiving computer data for purposes of recovery in case the original copy of data is lost.</p>
@@ -673,4 +678,5 @@
 </tr>
 </tbody>
 </table>
+
 
