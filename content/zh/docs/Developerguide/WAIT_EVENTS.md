@@ -1,10 +1,11 @@
 # WAIT\_EVENTS<a name="ZH-CN_TOPIC_0289900696"></a>
 
-WAIT\_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见[15.3.67-表2 等待状态列表](zh-cn_topic_0289900410.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[15.3.67-表3 轻量级锁等待事件列表](zh-cn_topic_0289900410.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table38811324183420)、[15.3.67-表4 IO等待事件列表](zh-cn_topic_0289900410.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table124603113369)和[15.3.67-表5 事务锁等待事件列表](zh-cn_topic_0289900410.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718)。
+WAIT\_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见[等待状态列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[轻量级锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table38811324183420)、[IO等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table124603113369)和[事务锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718)。
 
 **表 1**  WAIT\_EVENTS字段
 
 <a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_table176431267125"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283137083_zh-cn_topic_0237122729_row677920671219"><th class="cellrowborder" valign="top" width="21.33213321332133%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p977936151220"><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p977936151220"></a><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p977936151220"></a><strong id="zh-cn_topic_0283137083_zh-cn_topic_0237122729_b877916681218"><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_b877916681218"></a><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_b877916681218"></a>名称</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="16.761676167616763%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p577976191213"><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p577976191213"></a><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p577976191213"></a><strong id="zh-cn_topic_0283137083_zh-cn_topic_0237122729_b3779186161212"><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_b3779186161212"></a><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_b3779186161212"></a>类型</strong></p>

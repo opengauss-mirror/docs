@@ -82,7 +82,7 @@
 
     取值范围：
 
-    configuration\_parameter和value的取值请参见[SET](zh-cn_topic_0289899950.md)。
+    configuration\_parameter和value的取值请参见[SET](SET.md)。
 
     DEFAULT：表示清除configuration\_parameter参数的值，configuration\_parameter参数的值将继承本角色新产生的SESSION的默认值。
 

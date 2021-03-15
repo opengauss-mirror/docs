@@ -39,7 +39,7 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
 
 ## 示例<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s3390f031a430477da6a945b09b36b73d"></a>
 
-请参见CREATE SCHEMA的[示例](zh-cn_topic_0289901000.md#zh-cn_topic_0283137491_zh-cn_topic_0237122113_zh-cn_topic_0059777945_s05e72232af5e4507aad1511c025d7617)。
+请参见CREATE SCHEMA的[示例](CREATE-SCHEMA.md#zh-cn_topic_0283137491_zh-cn_topic_0237122113_zh-cn_topic_0059777945_s05e72232af5e4507aad1511c025d7617)。
 
 ## 相关链接<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s344eb8c77efa4c209c358dd81f79034f"></a>
 

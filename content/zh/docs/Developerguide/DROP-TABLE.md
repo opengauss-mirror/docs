@@ -31,13 +31,14 @@ DROP TABLE [ IF EXISTS ]
     表名称。
 
 -   **CASCADE | RESTRICT**
+    
     -   CASCADE：级联删除依赖于表的对象（比如视图）。
     -   RESTRICT（缺省项）：如果存在依赖对象，则拒绝删除该表。这个是缺省。
 
 
 ## 示例<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s1af12a7c6e4e456f9fc72da9c90358ff"></a>
 
-请参考CREATE TABLE的[示例](zh-cn_topic_0289900279.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)。
+请参考CREATE TABLE的[示例](CREATE-SCHEMA.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)。
 
 ## 相关链接<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s08580f38742d47efa6a955c9385d6ae2"></a>
 

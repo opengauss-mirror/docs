@@ -33,7 +33,7 @@ DROP VIEW [ IF EXISTS ] view_name [, ...] [ CASCADE | RESTRICT ];
 
 ## 示例<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
-请参见CREATE VIEW的[示例](zh-cn_topic_0289900307.md#zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
+请参见CREATE VIEW的[示例](CREATE-VIEW.md#zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
 
 ## 相关链接<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 

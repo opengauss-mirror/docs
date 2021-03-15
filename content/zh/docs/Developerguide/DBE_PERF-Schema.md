@@ -19,7 +19,7 @@ DBE\_PERF Schema内视图如下：
 -   **[Query](Query.md)**  
 -   **[Cache/IO](Cache-IO.md)**  
 -   **[Utility](Utility.md)**  
--   **[Lock](Lock.md)**  
+-   **[Lock](LOCK.md)**  
 -   **[Wait Events](Wait-Events.md)**  
 -   **[Configuration](Configuration.md)**  
 -   **[Operator](Operator.md)**  
