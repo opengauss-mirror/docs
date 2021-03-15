@@ -116,3 +116,16 @@ read cipher file or random parameter file failed.
    gs_om -t start
    ```
 
+## gs\_sshexkey 相同用户不同密码报错<a name="ZH-CN_TOPIC_0309176033"></a>
+
+### 问题现象<a name="section147641250161616"></a>
+
+openeuler环境下，gs\_sshexkey支持相同用户不同密码做互信，但是输入了正确的密码还是报鉴权失败。
+
+### 原因分析<a name="section232313361171"></a>
+
+打开系统日志/var/log/secure,查看到有\*\*pam\_faillock\(sshd:auth\): Consecutive login failures for user\*\*日志，说明当前用户密码试错次数太多被暂时锁定。
+
+### 操作步骤<a name="section952412551818"></a>
+
+在/etc/pam.d目录下修改相关配置文件system-auth，password-auth，password-auth-crond，将文件中deny=3的地方适当放大，待互信全部建立完成后再恢复。
