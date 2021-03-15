@@ -94,6 +94,10 @@ gs\_basebackup参数可以分为如下几类：
     -   -z
 
         启用对 tar 文件输出的 gzip 压缩，使用默认的压缩级别。只有使用 tar 格式时压缩才可用，并且会在所有tar文件名后面自动加上后缀.gz。
+        
+    -   -t，–rw-timeout
+    
+        设置备份期间checkpoint的时间限制，默认限制时间为120s。当数据库全量checkpoint耗时较长时，可以适当增大rw-timeout限制时间。
 
 
 

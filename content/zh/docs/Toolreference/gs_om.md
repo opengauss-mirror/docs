@@ -484,7 +484,7 @@ gs\_om参数可以分为如下几类：
   
   node               node_ip         instance                                 state            | node               node_ip         instance                                 state
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1  hostname1 10.10.10.1   6001 /opt/huawei/install/data/dn1 P Primary Normal | 2 hostname2 10.10.10.2    6002 /opt/huawei/install/data/dn1 S Standby Normal
+  1  hostname1 10.10.10.1   6001 /opt/opengauss/install/data/dn1 P Primary Normal | 2 hostname2 10.10.10.2    6002 /opt/opengauss/install/data/dn1 S Standby Normal
   ```
 
 -   在openGauss上执行如下命令，生成配置文件。
@@ -496,7 +496,7 @@ gs\_om参数可以分为如下几类：
     Successfully created the temp directory.
     Generating static configuration files.
     Successfully generated static configuration files.
-    Static configuration files for all nodes are saved in /opt/huawei/Bigdata/gaussdb/wisequery/script/static_config_files.
+    Static configuration files for all nodes are saved in /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files.
     Distributing static configuration files to all nodes.
     Successfully distributed static configuration files.
     ```
@@ -504,7 +504,7 @@ gs\_om参数可以分为如下几类：
     然后打开生成的配置文件目录，会看到新生成的3个文件。
 
     ```
-    cd /opt/huawei/Bigdata/gaussdb/wisequery/script/static_config_files
+    cd /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files
     ll
     total 456
     -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat1

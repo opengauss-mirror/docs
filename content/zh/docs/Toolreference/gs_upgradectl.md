@@ -1,26 +1,41 @@
-# gs\_upgradectl<a name="ZH-CN_TOPIC_0249632241"></a>
+# gs\_upgradectl<a name="ZH-CN_TOPIC_0289899212"></a>
 
-## 背景信息<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>
+## 背景信息<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>
 
-用户会根据openGauss提供的新特性，确定是否对现有系统进行升级。
+用户根据openGauss提供的新特性和数据库现状，确定是否对现有系统进行升级。
 
-升级方式为就地小版本升级。
+当前支持的升级模式为就地升级和灰度升级。升级方式的策略又分为大版本升级和小版本升级。
 
-就地小版本升级：就地升级需要停止业务进行，会一次性升级openGauss中所有节点。
+用户挑选升级方式后，系统会自动判断并选择合适的升级策略。
 
-## 注意事项<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
+就地升级：升级期间需停止业务进行，一次性升级所有节点。
 
--   升级需要停止业务。
--   openGauss运行正常且数据库节点的数据完全同步。
+灰度升级：灰度升级支持全业务操作，也是一次性升级所有节点。\(openguass1.1.0版本之后的版本支持该功能\)
+
+## 注意事项<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
+
+-   升级操作不能和扩容、缩容同时执行。
+-   不支持虚拟IP。
+-   升级过程中，不允许对wal\_level，max\_connections，max\_prepared\_transactions，max\_locks\_per\_transaction这四个GUC参数的值进行修改。如果修改，会导致回滚后实例启动异常。
+-   建议在数据库系统空闲情况下进行升级，尽量避开业务繁忙的时间段（可按照经验判断，如节假日等）。
+-   升级前尽可能保证数据库正常。可以通过gs\_om -t status查询，查询结果的cluster\_state为Normal代表数据库正常。
+-   升级前保证数据库互信正常，可以在任意节点上，通过ssh hostname命令，连接另外一个节点进行验证。如果各机器间互连不用输入密码，说明互信正常（通常数据库状态正常时，互信一般都是正常的）。
+-   升级前后，数据库的部署方式（配置文件）不能发生变化。升级前会对部署方式进行校验，如果改变，会报错。
+-   升级前要保证操作系统处于健康状态，通过gs\_checkos工具可以完成操作系统状态检查。
+-   就地升级需要停止业务，灰度升级支持全业务操作。
+-   数据库运行正常且主DN的数据完全同步到备DN。
 -   升级过程中不允许打开kerberos开关。
 -   请不要修改安装包中解压出来的version.cfg文件。
--   升级成功后，原归档日志文件将失效。
--   升级成功后，原来的二进制目录将会被删除，请不要在二进制目录中存放个人数据文件。
--   如果升级过程中出现异常导致升级失败，并且自动回滚失败时，需要用户自动执行回滚命令进行手动回滚。升级回滚成功后，升级过程中设置的GUC参数将失效。
--   升级过程中，不允许对wal\_level，max\_connections，max\_prepared\_transactions，max\_locks\_per\_transaction这四个GUC参数的值进行修改。
--   数据库节点磁盘使用率低于50%时才可以执行升级操作。
+-   如果升级过程中出现异常导致升级失败，需用户手动回滚，并且必须回滚成功后才能进行下一次升级。
+-   如果升级回滚成功后，再次升级成功，未提交阶段设置的GUC参数将失效。
+-   执行升级的过程中请不要手动设置GUC参数。
+-   灰度升级中，升级的时候都会产生不超过10s的业务中断
+-   升级过程中，必须保持内核版本与om版本一致才可执行om操作。这里的一致是指，内核代码和om代码都来自同一个软件包。如果执行了升级包的前置脚本却没有升级，或者升级回滚后没有执行基线包的前置脚本，就会造成内核代码和om代码的不一致。
+-   升级过程中如果系统表新增了字段，升级后通过**\\d**命令将查看不到这些新增的字段。此时通过**select**命令可以查到这些新增的字段。
+-   升级需要guc参数enable\_stream\_replication=on，该参数为off时不允许升级
+-   灰度升级中， 业务并发要小于200并发读加200并发写的情况
 
-## 语法<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
+## 语法<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
 
 -   显示帮助信息
 
@@ -40,13 +55,10 @@
     gs_upgradectl -t chose-strategy [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >当前支持就地小版本升级。
-
 -   自动升级openGauss
 
     ```
-    gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE]  
+    gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
     ```
 
 -   自动回滚升级
@@ -61,14 +73,11 @@
     gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
     ```
 
-    ![](public_sys-resources/icon-note.gif) **说明：**  
-
-    -   升级提交操作只适用于openGauss的就地小版本升级。  
-
-    -   一旦提交操作完成，则不能再执行回滚操作。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   一旦提交操作完成，则不能再执行回滚操作。
 
 
-## 参数说明<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
+## 参数说明<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
 
 -   -t
 
@@ -98,14 +107,18 @@
 
     取值范围：xml文件的存储路径。
 
+-   --grey
+
+    使用灰度升级方式来进行升级操作。
+
 -   --force
 
     当openGauss状态不正常，无法支持正常回滚回滚时，用此参数进行强制回滚操作。
 
 
-## 示例<a name="zh-cn_topic_0237152425_zh-cn_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
+## 示例<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
 
-**示例一**：升级前使用新包进行前置操作。
+**示例一：升级前使用新包进行前置操作。**
 
 ```
 ./gs_preinstall -U roach -G users -X /data/xml/3node_3c3d_1m2s_etcd.xml 
@@ -158,10 +171,10 @@ Successfully set finish flag.
 Preinstallation succeeded.
 ```
 
-**示例二：**使用gs\_upgradectl脚本执行升级。
+**示例二：**使用gs\_upgradectl脚本执行就地升级。
 
 ```
-gs_upgradectl -t auto-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
+gs_upgradectl -t upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Rollback succeeded.
@@ -197,7 +210,7 @@ Once the check done, please execute following command to commit upgrade:
 **示例三：**使用gs\_upgradectl脚本执行自动回滚，撤销已经成功/失败的升级操作（升级回滚）。
 
 ```
-gs_upgradectl -t auto-rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Checking static configuration files.
@@ -219,10 +232,10 @@ Successfully cleaned new install path.
 Rollback succeeded.
 ```
 
-**示例四：**使用gs\_upgradectl脚本执行就地升级后提交（升级提交）。
+**示例四：**使用gs\_upgradectl脚本执行升级后提交（升级提交）。
 
 ```
-gs_upgradectl -t commit-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t commit -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Old cluster app path is /data/gauss/app_e67b8bcd
 Successfully Cleaned old install path.
 Commit binary upgrade succeeded.

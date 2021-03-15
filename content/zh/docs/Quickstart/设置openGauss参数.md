@@ -179,6 +179,6 @@ Success to perform gs_guc!
 ```
 gs_guc set -N all -I all -c "max_connections = 800"
 
-Total instances: 21. Failed instances: 0.
+Total instances: 2. Failed instances: 0.
 Success to perform gs_guc!
 ```

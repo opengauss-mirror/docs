@@ -610,4 +610,28 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
     ```
 
+## 故障处理<a name="section1494010372368"></a>
+
+<a name="table580714103714"></a>
+
+<table><thead align="left"><tr id="row1881191415371"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p88111145376"><a name="p88111145376"></a><a name="p88111145376"></a>问题描述</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3811314113715"><a name="p3811314113715"></a><a name="p3811314113715"></a>原因和解决方案</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row128119141370"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1137341385614"><a name="p1137341385614"></a><a name="p1137341385614"></a>ERROR: query failed: ERROR: canceling statement due to conflict with recovery</p>
+<p id="p3250176192018"><a name="p3250176192018"></a><a name="p3250176192018"></a>（错误：查询失败：由于与恢复操作冲突，正在取消语句命令）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1177019484135"><a name="p1177019484135"></a><a name="p1177019484135"></a>原因：在备机上执行的操作正在访问存储行，主机上更改或者删除了对应的行，并将xlog在备机上重放，迫使备机上操作取消。</p>
+<p id="p1694692172319"><a name="p1694692172319"></a><a name="p1694692172319"></a>解决方案：</p>
+<p id="p237491316569"><a name="p237491316569"></a><a name="p237491316569"></a>1. 适当增加如下配置参数的值</p>
+<p id="p3696105218208"><a name="p3696105218208"></a><a name="p3696105218208"></a>max_standby_archive_delay</p>
+<p id="p9696105215208"><a name="p9696105215208"></a><a name="p9696105215208"></a>max_standby_streaming_delay</p>
+<p id="p317036192310"><a name="p317036192310"></a><a name="p317036192310"></a>2. 增加如下配置</p>
+<p id="p1286010362416"><a name="p1286010362416"></a><a name="p1286010362416"></a>hot_standby_feedback = on</p>
+</td>
+</tr>
+</tbody>
+</table>
 
