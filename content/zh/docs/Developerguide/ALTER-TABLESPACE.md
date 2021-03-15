@@ -98,20 +98,23 @@
     取值范围：
 
     -   UNLIMITED，该表空间不设置限额。
-    -   由space\_size来确定，其格式参考[CREATE TABLESPACE](zh-cn_topic_0289900078.md)。
+    -   由space\_size来确定，其格式参考[CREATE TABLESPACE](CREATE-TABLESPACE.md)。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
-        >修改参数MAXSIZE时也可使用：
+        >
+        >- 若调整后的限额值比当前表空间实际使用的值小，调整操作可以执行成功。后续用户需要将该表空间的使用值降低至新限额值之下，才能继续往该表空间中写入数据。
+        >- 修改参数MAXSIZE时也可使用：
+        >
         >```
         >ALTER TABLESPACE tablespace_name RESIZE MAXSIZE
-        > { 'UNLIMITED' | 'space_size'};
+        >{ 'UNLIMITED' | 'space_size'};
         >```
 
 
 
 ## 示例<a name="zh-cn_topic_0283137270_zh-cn_topic_0237122078_zh-cn_topic_0059777507_sf0e218df4bb44fd0afce8f50d6654d19"></a>
 
-请参考CREATE TABLESPACE的[示例](zh-cn_topic_0289900078.md#zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)。
+请参考CREATE TABLESPACE的[示例](CREATE-TABLESPACE.md#zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)。
 
 ## 相关链接<a name="zh-cn_topic_0283137270_zh-cn_topic_0237122078_zh-cn_topic_0059777507_sac21888107614d73bf2f04cd684aed03"></a>
 

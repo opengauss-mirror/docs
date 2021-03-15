@@ -157,7 +157,7 @@ ALTER INDEX用于修改现有索引的定义。
 
 ## 示例<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc18e85a8e57649469b874f56ded3847b"></a>
 
-请参见CREATE INDEX的[示例](zh-cn_topic_0289900160.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362)。
+请参见CREATE INDEX的[示例](CREATE-INDEX.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362)。
 
 ## 相关链接<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 

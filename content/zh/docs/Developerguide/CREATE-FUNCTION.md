@@ -9,7 +9,7 @@
 -   如果创建函数时参数或返回值带有精度，不进行精度检测。
 -   创建函数时，函数定义中对表对象的操作建议都显式指定模式，否则可能会导致函数执行异常。
 -   在创建函数时，函数内部通过SET语句设置current\_schema和search\_path无效。执行完函数search\_path和current\_schema与执行函数前的search\_path和current\_schema保持一致。
--   如果函数参数中带有出参，SELECT调用函数必须缺省出参，CALL调用函数必须指定出参，对于调用重载的带有PACKAGE属性的函数，CALL调用函数可以缺省出参，具体信息参见[CALL](zh-cn_topic_0289900888.md)的示例。
+-   如果函数参数中带有出参，SELECT调用函数必须缺省出参，CALL调用函数必须指定出参，对于调用重载的带有PACKAGE属性的函数，CALL调用函数可以缺省出参，具体信息参见[CALL](CALL.md)的示例。
 -   兼容Postgresql风格的函数或者带有PACKAGE属性的函数支持重载。在指定REPLACE的时候，如果参数个数、类型、返回值有变化，不会替换原有函数，而是会建立新的函数。
 -   SELECT调用可以指定不同参数来进行同名函数调用。由于语法不支持调用不带有PACKAGE属性的同名函数。
 -   在创建function时，不能在avg函数外面嵌套其他agg函数，或者其他系统函数。

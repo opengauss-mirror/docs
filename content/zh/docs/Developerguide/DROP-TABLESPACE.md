@@ -33,7 +33,7 @@ DROP TABLESPACE [ IF EXISTS ] tablespace_name;
 
 ## 示例<a name="zh-cn_topic_0283137549_zh-cn_topic_0237122153_zh-cn_topic_0059779073_sbcb08a6a5edc433b951080b230808c35"></a>
 
-请参见CREATE TABLESPACE的[示例](zh-cn_topic_0289900078.md#zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)。
+请参见CREATE TABLESPACE的[示例](CREATE-TABLESPACE.md#zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)。
 
 ## 相关链接<a name="zh-cn_topic_0283137549_zh-cn_topic_0237122153_zh-cn_topic_0059779073_s5f1d0e75c90d465fadd639b26f10ab64"></a>
 

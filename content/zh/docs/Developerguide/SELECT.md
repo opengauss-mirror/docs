@@ -115,7 +115,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **plan\_hint子句**
 
-    以/\*+ \*/的形式在SELECT关键字后，用于对SELECT对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](zh-cn_topic_0289900289.md)。
+    以/\*+ \*/的形式在SELECT关键字后，用于对SELECT对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](使用Plan-Hint进行调优.md)。
 
 -   **ALL**
 
@@ -224,21 +224,21 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 
         其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
-
+    
     -   ON join\_condition
-
+    
         连接条件，用于限定连接中的哪些行是匹配的。如：ON left\_table.a = right\_table.a。
-
+    
     -   USING\(join\_column\[，...\]\)
-
+    
         ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ... 的简写。要求对应的列必须同名。
-
+    
     -   NATURAL
-
+    
         NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
-
+    
     -   from item
-
+    
         用于连接的查询源对象的名称。
 
 

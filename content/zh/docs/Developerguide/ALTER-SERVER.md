@@ -62,7 +62,7 @@
 
             MySQL Server/MariaDB侦听的端口号。
 
-    -   postgres\_fdw支持的options同libpq支持的连接参数一致，可参考[链接字符](zh-cn_topic_0289900649.md)。需要注意的是，以下几个options不支持修改：
+    -   postgres\_fdw支持的options同libpq支持的连接参数一致，可参考[链接字符](链接字符.md)。需要注意的是，以下几个options不支持修改：
         -   **user**和**password**
 
             用户名和密码将在创建user mapping时指定

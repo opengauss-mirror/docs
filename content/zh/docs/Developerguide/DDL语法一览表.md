@@ -324,4 +324,183 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 </tbody>
 </table>
+## 定义聚合函数<a name="section1549704621914"></a>
+
+**表 13**  聚合函数定义相关SQL
+
+<a name="table119221839112015"></a>
+
+<table><thead align="left"><tr id="row16923173911203"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1792343912209"><a name="p1792343912209"></a><a name="p1792343912209"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p129234396201"><a name="p129234396201"></a><a name="p129234396201"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row2923143922014"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1092320395206"><a name="p1092320395206"></a><a name="p1092320395206"></a>创建一个新的聚合函数</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1792353902011"><a name="p1792353902011"></a><a name="p1792353902011"></a><a href="CREATE-AGGREGATE.md">CREATE AGGREGATE</a></p>
+</td>
+</tr>
+<tr id="row16923939162016"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p139234397209"><a name="p139234397209"></a><a name="p139234397209"></a>修改聚合函数</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p492363912206"><a name="p492363912206"></a><a name="p492363912206"></a><a href="ALTER-AGGREGATE.md">ALTER AGGREGATE</a></p>
+</td>
+</tr>
+<tr id="row17923153922010"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p169237393201"><a name="p169237393201"></a><a name="p169237393201"></a>删除聚合函数</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13923339102016"><a name="p13923339102016"></a><a name="p13923339102016"></a><a href="DROP-AGGREGATE.md">DROP AGGREGATE</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+## 定义数据类型转换<a name="section539185001914"></a>
+
+**表 14**  数据类型定义相关SQL
+
+<a name="table1482412519216"></a>
+
+<table><thead align="left"><tr id="row7824251217"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p48242532117"><a name="p48242532117"></a><a name="p48242532117"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p882412510216"><a name="p882412510216"></a><a name="p882412510216"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row28242517214"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18824175152113"><a name="p18824175152113"></a><a name="p18824175152113"></a>创建一个新的用户自定义数据类型转换</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19109257453"><a name="p19109257453"></a><a name="p19109257453"></a><a href="CREATE-CAST.md">CREATE CAST</a></p>
+</td>
+</tr>
+<tr id="row782495162119"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1182485102113"><a name="p1182485102113"></a><a name="p1182485102113"></a>删除用户自定义数据类型转换</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p998552414457"><a name="p998552414457"></a><a name="p998552414457"></a><a href="DROP-CAST.md">DROP CAST</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+## 定义插件扩展<a name="section5770115241915"></a>
+
+**表 15**  插件扩展定义相关SQL
+
+<a name="table14794538112111"></a>
+
+<table><thead align="left"><tr id="row11794203892119"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p27951138202113"><a name="p27951138202113"></a><a name="p27951138202113"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p279523892112"><a name="p279523892112"></a><a name="p279523892112"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1179553872111"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2795143815211"><a name="p2795143815211"></a><a name="p2795143815211"></a>创建一个新的插件扩展</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p979553862118"><a name="p979553862118"></a><a name="p979553862118"></a><a href="CREATE-EXTENSION.md">CREATE EXTENSION</a></p>
+</td>
+</tr>
+<tr id="row147951638182114"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p107951338122110"><a name="p107951338122110"></a><a name="p107951338122110"></a>修改插件扩展</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4795163811210"><a name="p4795163811210"></a><a name="p4795163811210"></a><a href="ALTER-EXTENSION.md">ALTER EXTENSION</a></p>
+</td>
+</tr>
+<tr id="row2079513802114"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p27951384218"><a name="p27951384218"></a><a name="p27951384218"></a>删除插件扩展</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p137959389213"><a name="p137959389213"></a><a name="p137959389213"></a><a href="DROP-EXTENSION.md">DROP EXTENSION</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+## 定义操作符<a name="section10275056141918"></a>
+
+**表 16**  操作符定义相关SQL
+
+<a name="table1673375910218"></a>
+
+<table><thead align="left"><tr id="row97331259122110"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1073365919214"><a name="p1073365919214"></a><a name="p1073365919214"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1773385962114"><a name="p1773385962114"></a><a name="p1773385962114"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row9733195942110"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p0733175917217"><a name="p0733175917217"></a><a name="p0733175917217"></a>创建一个新的操作符</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p673365915210"><a name="p673365915210"></a><a name="p673365915210"></a><a href="CREATE-OPERATOR.md">CREATE OPERATOR</a></p>
+</td>
+</tr>
+<tr id="row9733159102119"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p97331159192115"><a name="p97331159192115"></a><a name="p97331159192115"></a>修改操作符</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17331559192112"><a name="p17331559192112"></a><a name="p17331559192112"></a><a href="ALTER-OPERATOR.md">ALTER OPERATOR</a></p>
+</td>
+</tr>
+<tr id="row127339590217"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8733359102115"><a name="p8733359102115"></a><a name="p8733359102115"></a>删除操作符</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p107331359172118"><a name="p107331359172118"></a><a name="p107331359172118"></a><a href="DROP-OPERATOR.md">DROP OPERATOR</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+## 定义过程语言<a name="section36251059111916"></a>
+
+**表 17**  过程语言定义相关SQL
+
+<a name="table17164814221"></a>
+
+<table><thead align="left"><tr id="row111618812214"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p201613818227"><a name="p201613818227"></a><a name="p201613818227"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p111618852217"><a name="p111618852217"></a><a name="p111618852217"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row18161582229"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8161681229"><a name="p8161681229"></a><a name="p8161681229"></a>创建一个新的过程语言</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p91668182217"><a name="p91668182217"></a><a name="p91668182217"></a><a href="CREATE-LANGUAGE.md">CREATE LANGUAGE</a></p>
+</td>
+</tr>
+<tr id="row117108102212"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14174892211"><a name="p14174892211"></a><a name="p14174892211"></a>修改过程语言</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p111715811225"><a name="p111715811225"></a><a name="p111715811225"></a><a href="ALTER-LANGUAGE.md">ALTER LANGUAGE</a></p>
+</td>
+</tr>
+<tr id="row71715812212"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p151711852210"><a name="p151711852210"></a><a name="p151711852210"></a>删除过程语言</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4173872215"><a name="p4173872215"></a><a name="p4173872215"></a><a href="DROP-LANGUAGE.md">DROP LANGUAGE</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+## 定义数据类型<a name="section256114132018"></a>
+
+**表 18**  数据类型定义相关SQL
+
+<a name="table351719132218"></a>
+
+<table><thead align="left"><tr id="row10511919172210"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p115131972213"><a name="p115131972213"></a><a name="p115131972213"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p3511819192210"><a name="p3511819192210"></a><a name="p3511819192210"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row15151962218"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p16511419162212"><a name="p16511419162212"></a><a name="p16511419162212"></a>创建一个新的数据类型</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p482414522117"><a name="p482414522117"></a><a name="p482414522117"></a><a href="zh-cn_topic_0289900603.md">CREATE TYPE</a></p>
+</td>
+</tr>
+<tr id="row95151910227"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p75113195221"><a name="p75113195221"></a><a name="p75113195221"></a>修改数据类型</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p128243502119"><a name="p128243502119"></a><a name="p128243502119"></a><a href="zh-cn_topic_0289899831.md">ALTER TYPE</a></p>
+</td>
+</tr>
+<tr id="row1251619192217"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p452111962212"><a name="p452111962212"></a><a name="p452111962212"></a>删除数据类型</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p178251754212"><a name="p178251754212"></a><a name="p178251754212"></a><a href="zh-cn_topic_0289900925.md">DROP TYPE</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 

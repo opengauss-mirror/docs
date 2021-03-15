@@ -145,7 +145,7 @@ ALTER DEFAULT PRIVILEGES
 postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT SELECT ON TABLES TO PUBLIC;
 
 --创建用户普通用户jack。
-postgres=# CREATE USER jack PASSWORD 'Bigdata@123';
+postgres=# CREATE USER jack PASSWORD 'xxxxxxx';
 
 --将tpcds下的所有表的插入权限授予用户jack。
 postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT INSERT ON TABLES TO jack;

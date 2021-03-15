@@ -35,7 +35,7 @@ DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 ## 示例<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_sd583a49fc83b42fd8e73efee55f98ace"></a>
 
-请参考CREATE TYPE的[示例](zh-cn_topic_0289900603.md#zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
+请参考CREATE TYPE的[示例](CREATE-TYPE.md#zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)。
 
 ## 相关链接<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_s428358f9df2f458a8d50d103683f7ee0"></a>
 
