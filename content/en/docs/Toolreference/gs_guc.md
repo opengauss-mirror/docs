@@ -263,6 +263,15 @@ Currently, the default values of parameters in openGauss configuration files \(*
 
     Value range: a string containing only digits, letters, and underscores \(\_\).
 
+-   -Z NODE-TYPE
+
+    Specifies the node type of the database instance. The default value is  **datanode**. NODE-TYPE is used to identify configuration files.
+
+    Value range: datanode.
+    
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Database instance node types include coordinator, datanode, cmserver, cmagent, and gtm. OpenGauss can only be set to datanode. When NODE-TYPE is set to datanode, the corresponding configuration file is postgresql.conf in the database data directory.
+
 
 ## Example<a name="en-us_topic_0287276018_en-us_topic_0237152338_en-us_topic_0059778019_s4c5ae191cfdd47a0af220bf67849535e"></a>
 

@@ -292,6 +292,16 @@ gs\_guc工具由操作系统用户omm执行。
 
     取值范围：仅支持数字、字母和下划线。
 
+-   -Z NODE-TYPE
+
+    指定数据库实例节点类型，参数默认值为datanode。NODE-TYPE用于识别配置文件。
+
+    取值范围：datanode。
+
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+
+    数据库实例节点类型有coordinator、datanode、cmserver、cmagent和gtm。openGauss只能取值为datanode，当NODE-TYPE为datanode时，对应数据库的数据目录中的配置文件postgresql.conf。
+
 
 ## 示例<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s4c5ae191cfdd47a0af220bf67849535e"></a>
 
