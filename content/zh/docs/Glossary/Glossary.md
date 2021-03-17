@@ -448,11 +448,6 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p306138799138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p306138799138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p306138799138"></a>数据库系统在接收到应用程序的连接请求时，为该连接创建的一个任务。它被Session Manager管理，完成一些初始化任务，执行用户的所有操作。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row2519539138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p204082489138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p204082489138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p204082489138"></a>SLES</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p424554209138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p424554209138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p424554209138"></a>SUSE Linux Enterprise Server，由SUSE提供的企业级Linux操作系统。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row465544649138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p128152419138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p128152419138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p128152419138"></a>SMP</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p314016359138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p314016359138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p314016359138"></a>Symmetric Multi-Processing，对称多处理技术，是指在一台计算机上汇集了一组处理器（多CPU），各CPU之间共享内存子系统以及总线结构。操作系统必须支持多任务和多线程处理，以使得SMP系统发挥高效的性能。数据库领域的SMP并行技术，一般指利用多线程技术实现查询的并行执行，以充分利用CPU资源，从而提升查询性能。</p>
@@ -678,4 +673,5 @@
 </tr>
 </tbody>
 </table>
+
 
