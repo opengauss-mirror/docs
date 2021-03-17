@@ -26,7 +26,7 @@ DWS的gsql工具提供了元命令\\copy进行数据导入。
 <p id="zh-cn_topic_0237121136_zh-cn_topic_0117407672_p5084012203715"><a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_p5084012203715"></a><a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_p5084012203715"></a>not null column_list ] ]</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237121136_zh-cn_topic_0117407672_p4223544411233"><a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_p4223544411233"></a><a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_p4223544411233"></a>在任何gsql客户端登录数据库成功后，可以使用该命令进行数据的导入/导出。但是与SQL的COPY命令不同，该命令读取/写入的文件是本地文件，而非数据库服务器端文件；所以，要操作的文件的可访问性、权限等，都是受限于本地用户的权限。</p>
-<div class="note" id="zh-cn_topic_0237121136_note1924115273417"><a name="zh-cn_topic_0237121136_note1924115273417"></a><a name="zh-cn_topic_0237121136_note1924115273417"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0237121136_p1925145210348"><a name="zh-cn_topic_0237121136_p1925145210348"></a><a name="zh-cn_topic_0237121136_p1925145210348"></a>\COPY只适合小批量、格式良好的数据导入，不会对非法字符做预处理，也无容错能力，无法适用于含有异常数据的场景。导入数据应优先选择GDS或COPY。</p>
+<div class="note" id="zh-cn_topic_0237121136_note1924115273417"><a name="zh-cn_topic_0237121136_note1924115273417"></a><a name="zh-cn_topic_0237121136_note1924115273417"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0237121136_p1925145210348"><a name="zh-cn_topic_0237121136_p1925145210348"></a><a name="zh-cn_topic_0237121136_p1925145210348"></a>\COPY只适合小批量、格式良好的数据导入，不会对非法字符做预处理，也无容错能力，无法适用于含有异常数据的场景。导入数据应优先选择COPY。</p>
 </div></div>
 </td>
 </tr>
