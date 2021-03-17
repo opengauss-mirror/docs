@@ -1,38 +1,81 @@
-# GS\_THREAD\_MEMORY\_CONTEXT<a name="EN-US_TOPIC_0242386039"></a>
+# GS\_THREAD\_MEMORY\_CONTEXT<a name="EN-US_TOPIC_0242386038"></a>
 
-**GS\_THREAD\_MEMORY\_CONTEXT**  collects statistics about memory usage of the current database node.
+**GS\_THREAD\_MEMORY\_CONTEXT**  displays statistics about memory usage of all threads based on MemoryContext nodes. This view is equivalent to the  **GS\_SESSION\_MEMORY\_CONTEXT**  view when  **enable\_thread\_pool**  is set to  **off**.
+
+The memory context  **TempSmallContextGroup**  collects information about all memory contexts whose value in the  **totalsize**  column is less than 8192 bytes in the current thread, and the number of the collected memory contexts is recorded in the  **usedsize**  column. Therefore, the  **totalsize**  and  **freesize**  columns for  **TempSmallContextGroup**  in the view display the corresponding information about all the memory contexts whose value in the  **totalsize**  column is less than 8192 bytes in the current thread, and the  **usedsize**  column displays the number of these memory contexts.
 
 **Table  1**  GS\_THREAD\_MEMORY\_CONTEXT columns
 
-<a name="en-us_topic_0237122512_en-us_topic_0059777855_ta451d5c762a348078f6f4862f1517267"></a>
-<table><thead align="left"><tr id="en-us_topic_0237122512_en-us_topic_0059777855_r07b299704b9940f687e6d79c1f322a65"><th class="cellrowborder" valign="top" width="20.14%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237122512_en-us_topic_0059777855_a0a859e2167dc46a39030a857642dc245"><a name="en-us_topic_0237122512_en-us_topic_0059777855_a0a859e2167dc46a39030a857642dc245"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_a0a859e2167dc46a39030a857642dc245"></a>Name</p>
+<a name="en-us_topic_0237122511_en-us_topic_0059778760_td16c4d9490d3429bb7924dc70121414a"></a>
+<table><thead align="left"><tr id="en-us_topic_0237122511_en-us_topic_0059778760_rc61f4f57499841bb9a68d858b72c8c54"><th class="cellrowborder" valign="top" width="22.8%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237122511_en-us_topic_0059778760_a220d97f0527149ce80b68e31b779b847"><a name="en-us_topic_0237122511_en-us_topic_0059778760_a220d97f0527149ce80b68e31b779b847"></a><a name="en-us_topic_0237122511_en-us_topic_0059778760_a220d97f0527149ce80b68e31b779b847"></a>Name</p>
 </th>
-<th class="cellrowborder" valign="top" width="16.900000000000002%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237122512_en-us_topic_0059777855_aba2f22c06fdd4420953f349559016449"><a name="en-us_topic_0237122512_en-us_topic_0059777855_aba2f22c06fdd4420953f349559016449"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_aba2f22c06fdd4420953f349559016449"></a>Type</p>
+<th class="cellrowborder" valign="top" width="18.86%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237122511_en-us_topic_0059778760_a346303cc8f9d439197ef0f38f89488ab"><a name="en-us_topic_0237122511_en-us_topic_0059778760_a346303cc8f9d439197ef0f38f89488ab"></a><a name="en-us_topic_0237122511_en-us_topic_0059778760_a346303cc8f9d439197ef0f38f89488ab"></a>Type</p>
 </th>
-<th class="cellrowborder" valign="top" width="62.96000000000001%" id="mcps1.2.4.1.3"><p id="en-us_topic_0237122512_en-us_topic_0059777855_a01dae793686e46869a63740f70db8669"><a name="en-us_topic_0237122512_en-us_topic_0059777855_a01dae793686e46869a63740f70db8669"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_a01dae793686e46869a63740f70db8669"></a>Description</p>
+<th class="cellrowborder" valign="top" width="58.34%" id="mcps1.2.4.1.3"><p id="en-us_topic_0237122511_en-us_topic_0059778760_a0a84722b14484b05b1df15bf5dd61177"><a name="en-us_topic_0237122511_en-us_topic_0059778760_a0a84722b14484b05b1df15bf5dd61177"></a><a name="en-us_topic_0237122511_en-us_topic_0059778760_a0a84722b14484b05b1df15bf5dd61177"></a>Description</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237122512_en-us_topic_0059777855_rd3156898c56c494abef783f03c9cfe27"><td class="cellrowborder" valign="top" width="20.14%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_ab2df39707d9d4fe08bfe08c7f14159fb"><a name="en-us_topic_0237122512_en-us_topic_0059777855_ab2df39707d9d4fe08bfe08c7f14159fb"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_ab2df39707d9d4fe08bfe08c7f14159fb"></a>nodename</p>
+<tbody><tr id="en-us_topic_0237122511_en-us_topic_0059778760_r914d559fd7df49649c793cbd9e8cf04b"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p84771312518"><a name="en-us_topic_0237122511_p84771312518"></a><a name="en-us_topic_0237122511_p84771312518"></a>threadid</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.900000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_a9ea47633bddd4d8698857c6ecdbd808b"><a name="en-us_topic_0237122512_en-us_topic_0059777855_a9ea47633bddd4d8698857c6ecdbd808b"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_a9ea47633bddd4d8698857c6ecdbd808b"></a>text</p>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p194701375112"><a name="en-us_topic_0237122511_p194701375112"></a><a name="en-us_topic_0237122511_p194701375112"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.96000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_a9ceb93a18fda46c08b15aa14a2f03724"><a name="en-us_topic_0237122512_en-us_topic_0059777855_a9ceb93a18fda46c08b15aa14a2f03724"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_a9ceb93a18fda46c08b15aa14a2f03724"></a>Node name</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237122512_en-us_topic_0059777855_r517a2b6081524615a7d2be38f3ff862b"><td class="cellrowborder" valign="top" width="20.14%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_ae9e697cb81fa4262b8d2e274faf7a86a"><a name="en-us_topic_0237122512_en-us_topic_0059777855_ae9e697cb81fa4262b8d2e274faf7a86a"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_ae9e697cb81fa4262b8d2e274faf7a86a"></a>memorytype</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.900000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_a77d91c3c7e564e7aaed8149b4695c400"><a name="en-us_topic_0237122512_en-us_topic_0059777855_a77d91c3c7e564e7aaed8149b4695c400"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_a77d91c3c7e564e7aaed8149b4695c400"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="62.96000000000001%" headers="mcps1.2.4.1.3 "><div class="p" id="en-us_topic_0237122512_en-us_topic_0059777855_ac7bb6fef6dad4d129bebb02087e11ef1"><a name="en-us_topic_0237122512_en-us_topic_0059777855_ac7bb6fef6dad4d129bebb02087e11ef1"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_ac7bb6fef6dad4d129bebb02087e11ef1"></a>Memory type. The value must be one of the following:<a name="en-us_topic_0237122512_en-us_topic_0059777855_u88c482574ea344e0b300ae5aea3150b1"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_u88c482574ea344e0b300ae5aea3150b1"></a><ul id="en-us_topic_0237122512_en-us_topic_0059777855_u88c482574ea344e0b300ae5aea3150b1"><li><strong id="b176052723519"><a name="b176052723519"></a><a name="b176052723519"></a>max_process_memory</strong>: memory occupied by a <span id="en-us_topic_0237122512_text3418111820496"><a name="en-us_topic_0237122512_text3418111820496"></a><a name="en-us_topic_0237122512_text3418111820496"></a><span id="text881812492217"><a name="text881812492217"></a><a name="text881812492217"></a>openGauss</span></span> instance</li><li><strong id="b15317942183516"><a name="b15317942183516"></a><a name="b15317942183516"></a>process_used_memory</strong>: memory occupied by a <span id="en-us_topic_0237122512_text173161016145011"><a name="en-us_topic_0237122512_text173161016145011"></a><a name="en-us_topic_0237122512_text173161016145011"></a><span id="text851122742212"><a name="text851122742212"></a><a name="text851122742212"></a>openGauss</span></span> process</li><li><strong id="b113304497358"><a name="b113304497358"></a><a name="b113304497358"></a>max_dynamic_memory</strong>: maximum dynamic memory</li><li><strong id="b19713050193511"><a name="b19713050193511"></a><a name="b19713050193511"></a>dynamic_used_memory</strong>: used dynamic memory</li><li><strong id="b754745163516"><a name="b754745163516"></a><a name="b754745163516"></a>dynamic_peak_memory</strong>: dynamic peak value of the memory</li><li><strong id="b6738115253512"><a name="b6738115253512"></a><a name="b6738115253512"></a>dynamic_used_shrctx</strong>: maximum dynamic shared memory context</li><li><strong id="b9279105323515"><a name="b9279105323515"></a><a name="b9279105323515"></a>dynamic_peak_shrctx</strong>: dynamic peak value of the shared memory context</li><li><strong id="b92465510352"><a name="b92465510352"></a><a name="b92465510352"></a>max_shared_memory</strong>: maximum shared memory</li><li><strong id="b2708175593517"><a name="b2708175593517"></a><a name="b2708175593517"></a>shared_used_memory</strong>: used shared memory</li><li><strong id="b16194145611353"><a name="b16194145611353"></a><a name="b16194145611353"></a>max_cstore_memory</strong>: maximum memory allowed by the column</li><li><strong id="b77305561354"><a name="b77305561354"></a><a name="b77305561354"></a>cstore_used_memory</strong>: memory used in column storage</li><li><strong id="b039715773516"><a name="b039715773516"></a><a name="b039715773516"></a>max_sctpcomm_memory</strong>: maximum memory allowed for the communication library</li><li><strong id="b52417581353"><a name="b52417581353"></a><a name="b52417581353"></a>sctpcomm_used_memory</strong>: memory used by the communication library</li><li><strong id="b106281559163512"><a name="b106281559163512"></a><a name="b106281559163512"></a>sctpcomm_peak_memory</strong>: memory peak of the communication library</li><li><strong id="b1152102365"><a name="b1152102365"></a><a name="b1152102365"></a>other_used_memory</strong>: other used memory</li></ul>
-</div>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p44751317515"><a name="en-us_topic_0237122511_p44751317515"></a><a name="en-us_topic_0237122511_p44751317515"></a>Thread start time + thread ID (string: <em id="i109827553512"><a name="i109827553512"></a><a name="i109827553512"></a>timestamp</em>.<em id="i12988753351"><a name="i12988753351"></a><a name="i12988753351"></a>tsessionid</em>)</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237122512_en-us_topic_0059777855_r7748f97fe30847679befb97eb5b4a50c"><td class="cellrowborder" valign="top" width="20.14%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_abf2fdb1838cb4e23874be81970b776c9"><a name="en-us_topic_0237122512_en-us_topic_0059777855_abf2fdb1838cb4e23874be81970b776c9"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_abf2fdb1838cb4e23874be81970b776c9"></a>memorymbytes</p>
+<tr id="en-us_topic_0237122511_en-us_topic_0059778760_rdee21293e92d4399b0afa410cb2fe613"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p1847141395111"><a name="en-us_topic_0237122511_p1847141395111"></a><a name="en-us_topic_0237122511_p1847141395111"></a>tid</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.900000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_a70ba137cb8b14925826bfd7a1a2674f4"><a name="en-us_topic_0237122512_en-us_topic_0059777855_a70ba137cb8b14925826bfd7a1a2674f4"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_a70ba137cb8b14925826bfd7a1a2674f4"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p184711385114"><a name="en-us_topic_0237122511_p184711385114"></a><a name="en-us_topic_0237122511_p184711385114"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.96000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122512_en-us_topic_0059777855_ad67d7ecf2dab4d449c49e5af770e9600"><a name="en-us_topic_0237122512_en-us_topic_0059777855_ad67d7ecf2dab4d449c49e5af770e9600"></a><a name="en-us_topic_0237122512_en-us_topic_0059777855_ad67d7ecf2dab4d449c49e5af770e9600"></a>Size of allocated memory-typed memory</p>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p74811315119"><a name="en-us_topic_0237122511_p74811315119"></a><a name="en-us_topic_0237122511_p74811315119"></a>Thread ID</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122511_row178481518113815"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p184901811384"><a name="en-us_topic_0237122511_p184901811384"></a><a name="en-us_topic_0237122511_p184901811384"></a>thrdtype</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p1885015189387"><a name="en-us_topic_0237122511_p1885015189387"></a><a name="en-us_topic_0237122511_p1885015189387"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p1485061843819"><a name="en-us_topic_0237122511_p1485061843819"></a><a name="en-us_topic_0237122511_p1485061843819"></a>Thread type</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122511_en-us_topic_0059778760_rc637dd0eab0f4790a4b045b6f8978a1c"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p1248113125118"><a name="en-us_topic_0237122511_p1248113125118"></a><a name="en-us_topic_0237122511_p1248113125118"></a>contextname</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p54819131513"><a name="en-us_topic_0237122511_p54819131513"></a><a name="en-us_topic_0237122511_p54819131513"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p348171318516"><a name="en-us_topic_0237122511_p348171318516"></a><a name="en-us_topic_0237122511_p348171318516"></a>Name of the memory context</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122511_en-us_topic_0059778760_r4f0632f87a264574a0576d6439b066e3"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p9481813145116"><a name="en-us_topic_0237122511_p9481813145116"></a><a name="en-us_topic_0237122511_p9481813145116"></a>level</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p648101325112"><a name="en-us_topic_0237122511_p648101325112"></a><a name="en-us_topic_0237122511_p648101325112"></a>smallint</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p194912139513"><a name="en-us_topic_0237122511_p194912139513"></a><a name="en-us_topic_0237122511_p194912139513"></a>Hierarchy of the memory context</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122511_en-us_topic_0059778760_rac270e0e2b944107b6ff3b9692410a02"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p949113125119"><a name="en-us_topic_0237122511_p949113125119"></a><a name="en-us_topic_0237122511_p949113125119"></a>parent</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p94931365116"><a name="en-us_topic_0237122511_p94931365116"></a><a name="en-us_topic_0237122511_p94931365116"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p144951395114"><a name="en-us_topic_0237122511_p144951395114"></a><a name="en-us_topic_0237122511_p144951395114"></a>Name of the parent memory context</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122511_en-us_topic_0059778760_r096ceb75d6da44f98c1c147169ffd8da"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p549171315113"><a name="en-us_topic_0237122511_p549171315113"></a><a name="en-us_topic_0237122511_p549171315113"></a>totalsize</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p64911317519"><a name="en-us_topic_0237122511_p64911317519"></a><a name="en-us_topic_0237122511_p64911317519"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p14501013135114"><a name="en-us_topic_0237122511_p14501013135114"></a><a name="en-us_topic_0237122511_p14501013135114"></a>Total size of the memory context, in bytes</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122511_en-us_topic_0059778760_r69986e8b1c794167afd0d4231a8624a7"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p3509139519"><a name="en-us_topic_0237122511_p3509139519"></a><a name="en-us_topic_0237122511_p3509139519"></a>freesize</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p8501913115118"><a name="en-us_topic_0237122511_p8501913115118"></a><a name="en-us_topic_0237122511_p8501913115118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p2050131355118"><a name="en-us_topic_0237122511_p2050131355118"></a><a name="en-us_topic_0237122511_p2050131355118"></a>Total size of released memory in the current memory context, in bytes</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122511_en-us_topic_0059778760_rd71ceda6ede4450ab167628eea017721"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122511_p1450121317516"><a name="en-us_topic_0237122511_p1450121317516"></a><a name="en-us_topic_0237122511_p1450121317516"></a>usedsize</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122511_p15501513165117"><a name="en-us_topic_0237122511_p15501513165117"></a><a name="en-us_topic_0237122511_p15501513165117"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122511_p251813135118"><a name="en-us_topic_0237122511_p251813135118"></a><a name="en-us_topic_0237122511_p251813135118"></a>Size of used memory in the memory context, in bytes. For <strong id="b18669161203513"><a name="b18669161203513"></a><a name="b18669161203513"></a>TempSmallContextGroup</strong>, this parameter specifies the number of collected memory contexts.</p>
 </td>
 </tr>
 </tbody>

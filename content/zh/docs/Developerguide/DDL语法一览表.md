@@ -343,7 +343,7 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 <tr id="row16923939162016"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p139234397209"><a name="p139234397209"></a><a name="p139234397209"></a>修改聚合函数</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p492363912206"><a name="p492363912206"></a><a name="p492363912206"></a><a href="ALTER-AGGREGATE.md">ALTER AGGREGATE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="ALTER-AGGREGATE.md"><a name="ALTER-AGGREGATE.md"></a><a name="ALTER-AGGREGATE.md"></a><a href="ALTER-AGGREGATE.md">ALTER AGGREGATE</a></p>
 </td>
 </tr>
 <tr id="row17923153922010"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p169237393201"><a name="p169237393201"></a><a name="p169237393201"></a>删除聚合函数</p>
@@ -353,6 +353,7 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 </tbody>
 </table>
+
 
 
 ## 定义数据类型转换<a name="section539185001914"></a>
@@ -488,19 +489,20 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </thead>
 <tbody><tr id="row15151962218"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p16511419162212"><a name="p16511419162212"></a><a name="p16511419162212"></a>创建一个新的数据类型</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p482414522117"><a name="p482414522117"></a><a name="p482414522117"></a><a href="zh-cn_topic_0289900603.md">CREATE TYPE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p482414522117"><a name="p482414522117"></a><a name="p482414522117"></a><a href="CREATE-TYPE.md">CREATE TYPE</a></p>
 </td>
 </tr>
 <tr id="row95151910227"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p75113195221"><a name="p75113195221"></a><a name="p75113195221"></a>修改数据类型</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p128243502119"><a name="p128243502119"></a><a name="p128243502119"></a><a href="zh-cn_topic_0289899831.md">ALTER TYPE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p128243502119"><a name="p128243502119"></a><a name="p128243502119"></a><a href="ALTER-TYPE.md">ALTER TYPE</a></p>
 </td>
 </tr>
 <tr id="row1251619192217"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p452111962212"><a name="p452111962212"></a><a name="p452111962212"></a>删除数据类型</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p178251754212"><a name="p178251754212"></a><a name="p178251754212"></a><a href="zh-cn_topic_0289900925.md">DROP TYPE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p178251754212"><a name="p178251754212"></a><a name="p178251754212"></a><a href="DROP-TYPE.md">DROP TYPE</a></p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
