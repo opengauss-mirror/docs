@@ -240,7 +240,7 @@ postgres=# SELECT * FROM t1_compfoo t1 join t2_compfoo t2 on (t1.b).f1=(t1.b).f1
 postgres=# ALTER TYPE compfoo RENAME TO compfoo1;
 
 --要改变一个用户定义类型compfoo1的所有者为usr1。
-postgres=# CREATE USER usr1 PASSWORD 'Bigdata@123';
+postgres=# CREATE USER usr1 PASSWORD 'xxxxxxxx';
 postgres=# ALTER TYPE compfoo1 OWNER TO usr1;
 
 --把用户定义类型compfoo1的模式改变为usr1。

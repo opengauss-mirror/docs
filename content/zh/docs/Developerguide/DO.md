@@ -32,7 +32,7 @@ DO [ LANGUAGE lang_name ] code;
 
 ```
 --创建用户webuser。
-postgres=# CREATE USER webuser PASSWORD 'Bigdata@123';
+postgres=# CREATE USER webuser PASSWORD 'xxxxxx';
 
 --授予用户webuser对模式tpcds下视图的所有操作权限。
 postgres=# DO $$DECLARE r record;

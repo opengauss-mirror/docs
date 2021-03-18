@@ -61,7 +61,7 @@
 
 ```
 --创建一个角色role1。
-postgres=# CREATE ROLE role1 IDENTIFIED BY 'Bigdata@123';
+postgres=# CREATE ROLE role1 IDENTIFIED BY 'xxxxxxxx';
 
 -- 为用户role1创建一个同名schema，子命令创建的表films和winners的拥有者为role1。
 postgres=# CREATE SCHEMA AUTHORIZATION role1

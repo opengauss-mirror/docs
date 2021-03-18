@@ -94,7 +94,7 @@ postgres=# CREATE TEXT SEARCH CONFIGURATION ngram3 (copy=ngram2) WITH (gram_size
 postgres=# ALTER TEXT SEARCH CONFIGURATION ngram2 ADD MAPPING FOR multisymbol WITH simple;
 
 --创建用户joe。
-postgres=# CREATE USER joe IDENTIFIED BY 'Bigdata@123';
+postgres=# CREATE USER joe IDENTIFIED BY 'xxxxxxxx';
 
 --修改文本搜索配置的所有者。
 postgres=# ALTER TEXT SEARCH CONFIGURATION ngram2 OWNER TO joe;

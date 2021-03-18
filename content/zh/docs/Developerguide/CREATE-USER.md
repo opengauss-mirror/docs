@@ -79,17 +79,17 @@ CREATE USER的其他参数值请参考[CREATE ROLE](CREATE-ROLE.md)。
 ## 示例<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
 ```
---创建用户jim，登录密码为Bigdata@123。
-postgres=# CREATE USER jim PASSWORD 'Bigdata@123';
+--创建用户jim，登录密码为xxxxxxxx。
+postgres=# CREATE USER jim PASSWORD 'xxxxxxxx';
 
 --下面语句与上面的等价。
-postgres=# CREATE USER kim IDENTIFIED BY 'Bigdata@123';
+postgres=# CREATE USER kim IDENTIFIED BY 'xxxxxxxx';
 
 --如果创建有“创建数据库”权限的用户，则需要加CREATEDB关键字。
-postgres=# CREATE USER dim CREATEDB PASSWORD 'Bigdata@123';
+postgres=# CREATE USER dim CREATEDB PASSWORD 'xxxxxxxx';
 
---将用户jim的登录密码由Bigdata@123修改为Abcd@123。
-postgres=# ALTER USER jim IDENTIFIED BY 'Abcd@123' REPLACE 'Bigdata@123';
+--将用户jim的登录密码由xxxxxxxx修改为Abcd@123。
+postgres=# ALTER USER jim IDENTIFIED BY 'Abcd@123' REPLACE 'xxxxxxxx';
 
 --为用户jim追加CREATEROLE权限。
 postgres=# ALTER USER jim CREATEROLE;
