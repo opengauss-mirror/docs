@@ -66,8 +66,8 @@ postgres=# ALTER SESSION SET CURRENT_SCHEMA TO tpcds;
 postgres=# ALTER SESSION SET XML OPTION DOCUMENT;
 
 --创建角色joe，并设置会话的角色为joe。
-postgres=# CREATE ROLE joe WITH PASSWORD 'Bigdata@123';
-postgres=# ALTER SESSION SET SESSION AUTHORIZATION joe PASSWORD 'Bigdata@123';
+postgres=# CREATE ROLE joe WITH PASSWORD 'xxxxxx';
+postgres=# ALTER SESSION SET SESSION AUTHORIZATION joe PASSWORD 'xxxxxx';
 
 --切换到默认用户。
 postgres=> ALTER SESSION SET SESSION AUTHORIZATION default;

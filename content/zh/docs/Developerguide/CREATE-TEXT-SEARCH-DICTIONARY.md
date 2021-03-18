@@ -52,7 +52,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            词典文件所在目录。目录可以指定为本地目录和OBS目录。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
+            词典文件所在目录。目录可以指定为本地目录和OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
 
     -   Synonym词典对应的option
         -   **SYNONYM**
@@ -67,7 +67,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            同义词词典文件所在目录。目录可以指定为本地目录和OBS目录两种形式。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
+            同义词词典文件所在目录。目录可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
 
     -   Thesaurus词典对应的option
         -   **DICTFILE**
@@ -92,7 +92,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            词典定义文件所在目录。目录可以指定为本地目录和OBS目录两种形式。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
+            词典定义文件所在目录。目录可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
 
     -   Ispell词典
         -   **DICTFILE**
@@ -109,7 +109,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            词典文件所在目录。可以指定为本地目录和OBS目录两种形式。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
+            词典文件所在目录。可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
 
     -   Snowball词典
         -   **LANGUAGE**
@@ -122,7 +122,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            词典定义文件所在目录。可以指定为本地目录或者OBS目录。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
+            词典定义文件所在目录。可以指定为本地目录或者OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
 
 
     >![](public_sys-resources/icon-note.gif) **说明：**   

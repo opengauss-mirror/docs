@@ -60,7 +60,7 @@ postgres=# CREATE SCHEMA ds;
 postgres=# ALTER SCHEMA ds RENAME TO ds_new;
 
 --创建用户jack。
-postgres=# CREATE USER jack PASSWORD 'Bigdata@123';
+postgres=# CREATE USER jack PASSWORD 'xxxxxx';
 
 --将DS_NEW的所有者修改为jack。
 postgres=# ALTER SCHEMA ds_new OWNER TO jack;

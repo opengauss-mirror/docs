@@ -34,7 +34,7 @@ column\_key\_params：
 
     -   CLIENT\_MASTER\_KEY，值为客户端加密主密钥\(cmk\)名称。
     -   ALGORITHM为加密列加密密钥使用的算法，目前支持AEAD\_AES\_256\_CBC\_HMAC\_SHA256和AEAD\_AES\_128\_CBC\_HMAC\_SHA256。
-    -   ENCRYPTED\_VALUE为可选项，该值为用户指定的密钥，密钥长度范围为28 \~ 256位，如果不指定，则会自动生成。
+    -   ENCRYPTED\_VALUE为可选项，该值为用户指定的密钥，密钥长度范围为28 \~ 256位，28位密钥派生出来的密钥安全轻度满足AES128，如果用户需要使用AES256，密钥口令的长度需要39位，如果不指定，则会自动生成256比特的密钥。
 
 
 ## 示例<a name="section7854941155112"></a>

@@ -95,10 +95,10 @@ WITH ( {filesystem= { 'general'| "general" | general} |
 postgres=# CREATE TABLESPACE ds_location1 RELATIVE LOCATION 'tablespace/tablespace_1';
 
 --创建用户joe。
-postgres=# CREATE ROLE joe IDENTIFIED BY 'Bigdata@123';
+postgres=# CREATE ROLE joe IDENTIFIED BY 'xxxxxxxx';
 
 --创建用户jay。
-postgres=# CREATE ROLE jay IDENTIFIED BY 'Bigdata@123';
+postgres=# CREATE ROLE jay IDENTIFIED BY 'xxxxxxxx';
 
 --创建表空间，且所有者指定为用户joe。
 postgres=# CREATE TABLESPACE ds_location2 OWNER joe RELATIVE LOCATION 'tablespace/tablespace_1';
