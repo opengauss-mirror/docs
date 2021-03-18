@@ -13,6 +13,7 @@ openGauss在为一个引用了表的命令自动请求锁时，尽可能选择�
 -   LOCK TABLE ... IN ACCESS SHARE MODE需要在目标表上有SELECT权限。所有其他形式的LOCK需要UPDATE和/或DELETE权限。
 -   没有UNLOCK TABLE命令，锁总是在事务结束时释放。
 -   LOCK TABLE只处理表级的锁，因此那些带“ROW”字样的锁模式都是有歧义的。这些模式名称通常可理解为用户试图在一个被锁定的表中获取行级的锁。同样，ROW EXCLUSIVE模式也是一个可共享的表级锁。注意，只要是涉及到LOCK TABLE ，所有锁模式都有相同的语意，区别仅在于规则中锁与锁之间是否冲突，规则请参见[表1](#zh-cn_topic_0237122168_zh-cn_topic_0059778442_ta3d4fbc3c92c4f2994f7a9f5583a6ba5)。
+-   如果没有打开xc\_maintenance\_mode参数，那么对系统表申请ACCESS EXCLUSIVE级别锁将报错。
 
 ## 语法格式<a name="zh-cn_topic_0237122168_zh-cn_topic_0059778442_s178af862f5994d318f9e6603d8196260"></a>
 

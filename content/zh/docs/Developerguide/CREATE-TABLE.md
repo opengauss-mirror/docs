@@ -96,20 +96,22 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     创建临时表时可以在TEMP或TEMPORARY前指定GLOBAL或LOCAL关键字。如果指定GLOBAL关键字，openGauss会创建全局临时表，否则openGauss会创建本地临时表。
 
--   **TEMPORARY | TEMP**
+- **TEMPORARY | TEMP**
 
-    如果指定TEMP或TEMPORARY关键字，则创建的表为临时表。临时表分为全局临时表和本地临时表两种类型。创建临时表时如果指定GLOBAL关键字则为全局临时表，否则为本地临时表。
+  如果指定TEMP或TEMPORARY关键字，则创建的表为临时表。临时表分为全局临时表和本地临时表两种类型。创建临时表时如果指定GLOBAL关键字则为全局临时表，否则为本地临时表。
 
-    全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的\(ON COMMIT PRESERVE ROWS\), 当会话结束时自动清空用户数据；一种是基于事务级别的\(ON COMMIT DELETE ROWS\), 当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg\_temp\_开头的schema。
+  全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的\(ON COMMIT PRESERVE ROWS\), 当会话结束时自动清空用户数据；一种是基于事务级别的\(ON COMMIT DELETE ROWS\), 当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg\_temp\_开头的schema。
 
-    本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
+  本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。
-    >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
-    >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
-    >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
-    >-   全局临时表功能可以通过设置GUC参数max\_active\_global\_temporary\_table控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。
+  >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
+  >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
+  >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
+  >-   全局临时表功能可以通过设置GUC参数max\_active\_global\_temporary\_table控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
+  >-   临时表只对当前会话可见，因此不支持与\\parallel on并行执行一起使用。
+  >-   临时表不支持主备切换。
 
 -   **IF NOT EXISTS**
 
@@ -726,25 +728,6 @@ postgres=# CREATE TABLE tpcds.warehouse_t17
     W_GMT_OFFSET              DECIMAL(5,2)
 ) WITH (ORIENTATION = COLUMN, COMPRESSION=HIGH);
 
---定义一个带压缩的表。
-postgres=# CREATE TABLE tpcds.warehouse_t18
-(
-    W_WAREHOUSE_SK            INTEGER               NOT NULL,
-    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
-    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
-    W_WAREHOUSE_SQ_FT         INTEGER                       ,
-    W_STREET_NUMBER           CHAR(10)                      ,
-    W_STREET_NAME             VARCHAR(60)                   ,
-    W_STREET_TYPE             CHAR(15)                      ,
-    W_SUITE_NUMBER            CHAR(10)                      ,
-    W_CITY                    VARCHAR(60)                   ,
-    W_COUNTY                  VARCHAR(30)                   ,
-    W_STATE                   CHAR(2)                       ,
-    W_ZIP                     CHAR(10)                      ,
-    W_COUNTRY                 VARCHAR(20)                   ,
-    W_GMT_OFFSET              DECIMAL(5,2)
-) COMPRESS;
-
 --定义一个检查列约束。
 postgres=# CREATE TABLE tpcds.warehouse_t19
 (
@@ -781,25 +764,6 @@ postgres=# CREATE TABLE tpcds.warehouse_t20
     W_COUNTRY                 VARCHAR(20)                   ,
     W_GMT_OFFSET              DECIMAL(5,2),
     CONSTRAINT W_CONSTR_KEY2 CHECK(W_WAREHOUSE_SK > 0 AND W_WAREHOUSE_NAME IS NOT NULL) 
-);
-
---定义一个表，表中每一个行存在数据库节点中。
-postgres=# CREATE TABLE tpcds.warehouse_t21
-(
-    W_WAREHOUSE_SK            INTEGER               NOT NULL,
-    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
-    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
-    W_WAREHOUSE_SQ_FT         INTEGER                       ,
-    W_STREET_NUMBER           CHAR(10)                      ,
-    W_STREET_NAME             VARCHAR(60)                   ,
-    W_STREET_TYPE             CHAR(15)                      ,
-    W_SUITE_NUMBER            CHAR(10)                      ,
-    W_CITY                    VARCHAR(60)                   ,
-    W_COUNTY                  VARCHAR(30)                   ,
-    W_STATE                   CHAR(2)                       ,
-    W_ZIP                     CHAR(10)                      ,
-    W_COUNTRY                 VARCHAR(20)                   ,
-    W_GMT_OFFSET              DECIMAL(5,2)
 );
 
 --创建一个有外键约束的表。

@@ -20,9 +20,9 @@
 
     关键字PUBLIC表示该权限要赋予所有角色，包括以后创建的用户。PUBLIC可以看做是一个隐含定义好的组，它总是包括所有角色。任何角色或用户都将拥有通过GRANT直接赋予的权限和所属的权限，再加上PUBLIC的权限。
 
-    如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC，这是openGauss特有的属性。
+    如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC，这是GaussDB KernelopenGauss特有的属性。
 
-    openGauss会将某些类型的对象上的权限授予PUBLIC。默认情况下，对表、表字段、序列、外部数据源、外部服务器、模式或表空间对象的权限不会授予PUBLIC，而以下这些对象的权限会授予PUBLIC：数据库的CONNECT权限和CREATE TEMP TABLE权限、函数的EXECUTE特权、语言和数据类型（包括域）的USAGE特权。当然，对象拥有者可以撤销默认授予PUBLIC的权限并专门授予权限给其他用户。为了更安全，建议在同一个事务中创建对象并设置权限，这样其他用户就没有时间窗口使用该对象。另外，这些初始的默认权限可以使用ALTER DEFAULT PRIVILEGES命令修改。
+    GaussDB KernelopenGauss会将某些类型的对象上的权限授予PUBLIC。默认情况下，对表、表字段、序列、外部数据源、外部服务器、模式或表空间对象的权限不会授予PUBLIC，而以下这些对象的权限会授予PUBLIC：数据库的CONNECT权限和CREATE TEMP TABLE权限、函数的EXECUTE特权、语言和数据类型（包括域）的USAGE特权。当然，对象拥有者可以撤销默认授予PUBLIC的权限并专门授予权限给其他用户。为了更安全，建议在同一个事务中创建对象并设置权限，这样其他用户就没有时间窗口使用该对象。另外可参考安全加固指南的权限控制章节，对PUBLIC用户组的权限进行限制。这些初始的默认权限可以使用ALTER DEFAULT PRIVILEGES命令修改。
 
     对象的所有者缺省具有该对象上的所有权限，出于安全考虑所有者可以舍弃部分权限，但ALTER、DROP、COMMENT、INDEX、VACUUM以及对象的可再授予权限属于所有者固有的权限，隐式拥有。
 
@@ -420,7 +420,7 @@ GRANT的参数说明如下所示。
 创建名为joe的用户，并将sysadmin权限授权给他。
 
 ```
-postgres=# CREATE USER joe PASSWORD 'Bigdata@123';
+postgres=# CREATE USER joe PASSWORD 'xxxxxxxxx';
 postgres=# GRANT ALL PRIVILEGES TO joe;
 ```
 
@@ -459,7 +459,7 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
     创建角色tpcds\_manager，将模式tpcds的访问权限授权给角色tpcds\_manager，并授予该角色在tpcds下创建对象的权限，不允许该角色中的用户将权限授权给其他人。
 
     ```
-    postgres=# CREATE ROLE tpcds_manager PASSWORD 'Bigdata@123';
+    postgres=# CREATE ROLE tpcds_manager PASSWORD 'xxxxxxxxx';
     postgres=# GRANT USAGE,CREATE ON SCHEMA tpcds TO tpcds_manager;
     ```
 
@@ -476,14 +476,14 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 1.  创建角色manager，将joe的权限授权给manager，并允许该角色将权限授权给其他人。
 
     ```
-    postgres=# CREATE ROLE manager PASSWORD 'Bigdata@123';
+    postgres=# CREATE ROLE manager PASSWORD 'xxxxxxxxx';
     postgres=# GRANT joe TO manager WITH ADMIN OPTION;
     ```
 
 2.  创建用户senior\_manager，将用户manager的权限授权给该用户。
 
     ```
-    postgres=# CREATE ROLE senior_manager PASSWORD 'Bigdata@123';
+    postgres=# CREATE ROLE senior_manager PASSWORD 'xxxxxxxxx';
     postgres=# GRANT manager TO senior_manager;
     ```
 
@@ -502,16 +502,17 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 
     ```
     gsql -p 57101 postgres -r -C
+    postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = gs_ktool, KEY_PATH = "gs_ktool/1" , ALGORITHM = AES_256_CBC);
     postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = localkms , KEY_PATH = "key_path_value" , ALGORITHM = RSA_2048);
     CREATE CLIENT MASTER KEY
     postgres=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
     CREATE COLUMN ENCRYPTION KEY
     ```
-    
+
 2.  创建角色newuser，将密钥的权限授权给newuser。
 
     ```
-    postgres=# CREATE USER newuser PASSWORD 'gauss@123';
+    postgres=# CREATE USER newuser PASSWORD 'xxxxxxxxx';
     CREATE ROLE
     postgres=# GRANT ALL ON SCHEMA public TO newuser;
     GRANT
@@ -524,10 +525,8 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 3.  设置该用户连接数据库,使用该CEK创建加密表。
 
     ```
-    postgres=# SET SESSION AUTHORIZATION newuser PASSWORD 'gauss@123';
+    postgres=# SET SESSION AUTHORIZATION newuser PASSWORD 'xxxxxxxxx';
     postgres=>  CREATE TABLE acltest1 (x int, x2 varchar(50) ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = MyCEK1, ENCRYPTION_TYPE = DETERMINISTIC));
-    NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'x' as the distribution column by default.
-    HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
     CREATE TABLE
     postgres=> SELECT has_cek_privilege('newuser', 'MyCEK1', 'USAGE');
      has_cek_privilege
@@ -565,5 +564,5 @@ postgres=# DROP USER joe CASCADE;
 
 ## 相关链接<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
-[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)
+[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER DEFAULT PRIVILEGES.md)
 
