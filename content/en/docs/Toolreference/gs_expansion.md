@@ -6,9 +6,9 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 ## Precautions<a name="section17961256134615"></a>
 
--   When a standalone mode is scaled to the primary/standby mode, the standalone database needs to be started as primary. Therefore, the database process needs to be restarted. When scaling out a standalone node, plan the running services first.
-
 -   The parameter **synchronous\_standby\_names** will not automatically be updated after expansion. If you add a standby node for this parameter, please update manually after expansion.
+
+-   Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
 
 ## Prerequisites<a name="section18105194594714"></a>
 
