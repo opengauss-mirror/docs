@@ -53,10 +53,10 @@
 
 ```
 --创建角色paul。
-postgres=# CREATE ROLE paul IDENTIFIED BY 'Bigdata@123';
+postgres=# CREATE ROLE paul IDENTIFIED BY 'xxxxxxxx';
 
 --设置当前用户为paul。
-postgres=# SET SESSION AUTHORIZATION paul password 'Bigdata@123';
+postgres=# SET SESSION AUTHORIZATION paul password 'xxxxxxxx';
 
 --查看当前会话用户，当前用户。
 postgres=# SELECT SESSION_USER, CURRENT_USER;

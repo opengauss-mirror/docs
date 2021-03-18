@@ -1,6 +1,6 @@
 # STAT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0245374686"></a>
 
-显示pg\_catalog、information\_schema模式的所有命名空间中系统表的统计信息。
+显示单节点内pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。
 
 **表 1**  STAT\_SYS\_TABLES字段
 
