@@ -37,7 +37,7 @@ WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.m
     2.  执行如下命令将查询到的信息写入性能报告中。
 
         ```
-        select generate_wdr_report(begin_snap_id Oid, end_snap_id Oid, varchar report_type, varchar report_scope, int node_name );
+        select generate_wdr_report(begin_snap_id bigint, end_snap_id bigint, report_type cstring, report_scope cstring, node_name cstring);
         ```
 
         命令中涉及的参数说明如下。
@@ -122,7 +122,7 @@ WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.m
     </tr>
     <tr id="row18576141511115"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p13524917629"><a name="p13524917629"></a><a name="p13524917629"></a>Instance Efficiency Percentages（数据库/节点范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p0576615218"><a name="p0576615218"></a><a name="p0576615218"></a>数据库级或者节点Buffer Hit（缓冲命中率），Effective CPU（CPU使用率），Redo NoWait（获取Wal Buffer成功率），Soft Parse（软解析率），Non-parse CPU（CPU非解析时间比例）。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p0576615218"><a name="p0576615218"></a><a name="p0576615218"></a>数据库级或者节点Buffer Hit（缓冲命中率），Effective CPU（CPU使用率），WalWrite NoWait（获取Wal Buffer成功率），Soft Parse（软解析率），Non-parse CPU（CPU非解析时间比例）。</p>
     </td>
     </tr>
     <tr id="row115764151812"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p177481629821"><a name="p177481629821"></a><a name="p177481629821"></a>Top 10 Events by Total Wait Time（节点范围）</p>
@@ -195,7 +195,7 @@ postgres=# \o
 postgres=# \o /home/om/wdrTestCluster.html
 
 --向格式化性能报告wdrTestCluster.html中写入数据。
-postgres=# select generate_wdr_report(1, 2, 'all', 'cluster', '');
+postgres=# select generate_wdr_report(1, 2, 'all', 'cluster');
 
 --关闭性能报告wdrTestCluster.html。
 postgres=# \o \a \t
