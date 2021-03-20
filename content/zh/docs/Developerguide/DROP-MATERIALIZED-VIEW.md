@@ -1,20 +1,20 @@
-# DROP MATERIALIZED VIEW <a name="ZH-CN_TOPIC_0242370616"></a>
+# DROP MATERIALIZED VIEW<a name="ZH-CN_TOPIC_0289899894"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122152_zh-cn_topic_0059778107_s74e2e8764aa64af1b093f8f68069bce6"></a>
+## 功能描述<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>
 
-数据库中强制删除已有的物化视图。
+强制删除数据库中已有的物化视图。
 
-## 注意事项<a name="zh-cn_topic_0237122152_zh-cn_topic_0059778107_sdcf8f26a27a64e52b7099ca3ce0256b6"></a>
+## 注意事项<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-只有物化视图的所有者有权限执行DROP MATERIALIZED VIEW的命令，系统管理员默认拥有此权限。
+只有物化视图的所有者有权限执行DROP MATERIALIZED VIEW命令，系统管理员默认拥有此权限。
 
-## 语法格式<a name="zh-cn_topic_0237122152_zh-cn_topic_0059778107_s6fa866d73d5c4158836c9fdd0ad5b3ac"></a>
+## 语法格式<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 
 ```
 DROP MATERIALIZED VIEW [ IF EXISTS ] mv_name [, ...] [ CASCADE | RESTRICT ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122152_zh-cn_topic_0059778107_sa6ea557919e84c0db8ed5cbb227fa983"></a>
+## 参数说明<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
 -   **IF EXISTS**
 
@@ -25,18 +25,18 @@ DROP MATERIALIZED VIEW [ IF EXISTS ] mv_name [, ...] [ CASCADE | RESTRICT ];
     要删除的物化视图名称。
 
 -   **CASCADE | RESTRICT**
-    
     -   CASCADE：级联删除依赖此物化视图的对象。
-    -   RESTRICT：如果依赖对象存在，则拒绝删除此物化视图。此选项为缺省值。
+    -   RESTRICT：如果有依赖对象存在，则拒绝删除此物化视图。此选项为缺省值。
 
 
-## 示例<a name="zh-cn_topic_0237122152_zh-cn_topic_0059778107_s1af12a7c6e4e456f9fc72da9c90358ff"></a>
+## 示例<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
 ```
---这个命令将移除名为order_summary的物化视图：
-postgres=# DROP MATERIALIZED VIEW order_summary;
+--删除名为my_mv的物化视图。
+postgres=# DROP MATERIALIZED VIEW my_mv;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122152_zh-cn_topic_0059778107_s08580f38742d47efa6a955c9385d6ae2"></a>
+## 相关链接<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
-[CREATE MATERIALIZED VIEW](CREATE-MATERIALIZED-VIEW.md)，[ALTER MATERIALIZED VIEW](ALTER-MATERIALIZED-VIEW.md)，[REFRESH MATERIALIZED VIEW](REFRESH-MATERIALIZED-VIEW.md)
+[ALTER MATERIALIZED VIEW](ALTER-MATERIALIZED-VIEW.md)，[CREATE INCREMENTAL MATERIALIZED VIEW](CREATE-INCREMENTAL-MATERIALIZED-VIEW.md)，  [CREATE MATERIALIZED VIEW](CREATE-MATERIALIZED-VIEW.md)，[CREATE TABLE](CREATE-TABLE.md)，[REFRESH INCREMENTAL MATERIALIZED VIEW](REFRESH-INCREMENTAL-MATERIALIZED-VIEW.md)，[REFRESH MATERIALIZED VIEW](REFRESH-MATERIALIZED-VIEW.md)
+
