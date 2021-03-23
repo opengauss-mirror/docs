@@ -642,7 +642,7 @@ headless: true
 			-   [ALTER ROLE]({{< relref "./docs/Developerguide/alter-role.md" >}})
 			-   [ALTER ROW LEVEL SECURITY POLICY]({{< relref "./docs/Developerguide/alter-row-level-security-policy.md" >}})
 			-   [ALTER SCHEMA]({{< relref "./docs/Developerguide/alter-schema.md" >}})
-			-   [ALTER SEQUENCE]({{< relref "./docs/Developerguide/alter-sequence.md" >}}
+			-   [ALTER SEQUENCE]({{< relref "./docs/Developerguide/alter-sequence.md" >}})
 			-   [ALTER SERVER]({{< relref "./docs/Developerguide/ALTER-SERVER.md" >}})
 			-   [ALTER SESSION]({{< relref "./docs/Developerguide/alter-session.md" >}})
 			-   [ALTER SYNONYM]({{< relref "./docs/Developerguide/alter-synonym.md" >}})
