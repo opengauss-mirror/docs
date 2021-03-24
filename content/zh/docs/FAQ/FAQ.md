@@ -1,17 +1,17 @@
 # FAQ
 
-### Q1：“极致RTO”、“并行恢复”与“备机可读”的关系说明与完整参数说明设置是什么呢？
+### Q1：“极致RTO”、“并行恢复”与“备机可读”的关系？
 
 ###### 回答：
 
 - 极致RTO配置
   recovery_parse_workers 并行恢复时解析XLOG线程的个数
   recovery_parallelism 并行恢复线程的实际个数
-  recovery_parse_workers大于1时是极致RTO恢复，同时需要配置recovery_parallelism大于1，才会实际并行。
+  recovery_parse_workers大于1时是极致RTO恢复，同时需要配置recovery_parallelism大于1，才会实际并行恢复。
 - 并行恢复配置
   recovery_max_workers 并行恢复的最大线程个数
   recovery_parallelism 并行恢复线程的实际个数
-  recovery_max_workers大于1时是并行恢复，同时需要配置recovery_parallelism大于1，才会实际并行。
+  recovery_max_workers大于1时是并行恢复，同时需要配置recovery_parallelism大于1，才会实际并行恢复。
 - 备机可读配置
   hot_standby 备机热备，在恢复时支持读操作。
   hot_standby为true时是备机可读。
