@@ -2239,6 +2239,7 @@ headless: true
         -   [kdestroy]({{< relref "./docs/Toolreference/kdestroy.md" >}})
         -   [pg\_config]({{< relref "./docs/Toolreference/pg_config.md" >}})
         -   [pg\_controldata]({{< relref "./docs/Toolreference/pg_controldata.md" >}})
+		-   [pg\_recvlogical]({{< relref "./docs/Toolreference/pg_recvlogical.md" >}})
         -   [pg\_resetxlog]({{< relref "./docs/Toolreference/pg_resetxlog.md" >}})
     -   [FAQ]({{< relref "./docs/Toolreference/FAQ.md" >}})
     -   [gs\_collector工具支持收集的系统表和视图列表]({{< relref "./docs/Toolreference/gs_collector工具支持收集的系统表和视图列表.md" >}})

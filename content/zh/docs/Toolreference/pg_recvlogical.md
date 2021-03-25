@@ -1,0 +1,150 @@
+# pg\_recvlogical<a name="ZH-CN_TOPIC_0000001092048360"></a>
+
+## 功能介绍<a name="section143231619112111"></a>
+
+pg\_recvlogical工具通过连接指定的DN，创建或删除逻辑复制槽，以及持续、实时的从该DN获取逻辑解码中间结果，输出到文件或标准输出。
+
+## 语法<a name="section1763981272214"></a>
+
+```
+pg_recvlogical [OPTION]...
+```
+
+其中，逻辑复制槽行为参数为必选参数，必须指定一个。其余参数为可选参数，如不指定，将会读取默认值。
+
+## 参数说明<a name="section927885412229"></a>
+
+-   逻辑复制槽行为参数：必选参数。
+    -   --create
+
+        创建一个新的逻辑复制槽。
+
+    -   --start
+
+        启动该逻辑复制槽的流复制。
+
+    -   --drop
+
+        删除一个逻辑复制槽。
+
+
+
+-   连接参数：
+    -   -d, --dbname=DBNAME
+
+        连接的目标数据库名。
+
+    -   -h, --host=HOSTNAME
+
+        连接的目标主机名或socket。
+
+    -   -p, --port=PORT
+
+        连接的目标DN的HA端口号。
+
+    -   -U, --username=NAME
+
+        连接目标库所使用的用户名。
+
+    -   -w, --no-password
+
+        不使用密码进行连接。
+
+    -   -W, --password
+
+        使用指定密码进行连接。
+
+
+-   复制参数：
+    -   -F  --fsync-interval=INTERVAL
+
+        同步到目标输出文件的间隔时间。
+
+        单位为秒，默认值10。
+
+    -   -o, --option=NAME\[=VALUE\]
+
+        指定向逻辑复制槽的输出插件添加参数。
+
+        参数的取值为：include-xids、skip-empty-xacts、include-timestamp。
+
+        详细请参见《开发者指南》中“SQL参考 \> 函数和操作符 \> 系统管理函数 \> 逻辑复制函数 \> options”章节。
+
+    -   -P, --plugin=PLUGIN
+
+        指定使用的逻辑复制槽输出插件。
+
+        默认值为mppdb\_decoding。
+
+    -   -s, --status-interval=INTERVAL
+
+        发送的心跳包间隔时间。
+
+        单位为秒，默认值10。
+
+    -   -S, --slot=SLOT
+
+        指定逻辑复制槽的名称。
+
+    -   -I, --startpos=PTR
+
+        当使用已有逻辑复制槽时，指定初始复制的LSN位置。
+
+
+-   其它参数:
+    -   -f, --file=FILE
+
+        设置输出到指定文件。
+
+        直接使用"-"表示输出到stdout。
+
+    -   -n, --no-loop
+
+        指定此参数，连接失败后不重试。
+
+    -   -v, --verbose
+
+        输出详细信息。
+
+    -   -V, --version
+
+        输出版本信息，随后立即退出。
+
+    -   -?, --help
+
+        输出帮助信息，随后立即退出。
+
+
+
+## 示例<a name="section655133344514"></a>
+
+1.  创建名为test\_slot的逻辑复制槽。
+
+    ```
+    pg_recvlogical -d postgres -S test_slot -p 26000 --create
+    ```
+
+2.  开启流式解码，结果输出到stdout。
+
+    ```
+    pg_recvlogical -d postgres -S test_slot -p 26000 --start -v -f -
+    pg_recvlogical: starting log streaming at 0/0 (slot test_slot)
+    pg_recvlogical: initiated streaming
+    pg_recvlogical: confirming write up to 0/0, flush to 0/0 (slot test_slot)
+    pg_recvlogical: confirming write up to 0/2A342E8, flush to 0/2A342E8 (slot test_slot)
+    pg_recvlogical: confirming write up to 0/2A34320, flush to 0/2A34320 (slot test_slot)
+    pg_recvlogical: confirming write up to 0/2A34320, flush to 0/2A34320 (slot test_slot)
+    BEGIN 16039
+    table public.t: INSERT: a[integer]:4 b[integer]:4
+    COMMIT 16039
+    pg_recvlogical: confirming write up to 0/2A34450, flush to 0/2A34450 (slot test_slot)
+    pg_recvlogical: confirming write up to 0/2A34450, flush to 0/2A34450 (slot test_slot)
+    ```
+
+3.  删除逻辑复制槽。
+
+    ```
+    pg_recvlogical -d postgres -S test_slot -p 26000 --drop
+    ```
+
+
