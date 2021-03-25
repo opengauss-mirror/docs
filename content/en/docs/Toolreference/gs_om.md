@@ -22,6 +22,12 @@ Log in to the OS as the OS user  **omm**  to run the  **gs\_om**  command.
     gs_om -t stop [-h HOSTNAME] [-D dataDir]  [--time-out=SECS] [-m MODE] [-l LOGFILE] 
     ```
 
+-   Restart openGauss.
+
+    ```
+    gs_om -t restart [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [-l LOGFILE] [-m MODE]
+    ```
+
 -   Query the openGauss status.
 
     ```
