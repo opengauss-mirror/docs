@@ -106,14 +106,18 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 Use  **gs\_expansion**  for scaling:
 
 ```
-# ./gs_expansion -U zxb -G zxb -X /opt/zxb/instance4.xml -h 90.90.44.165
-Start to preinstall database on the new standby nodes.
-Successfully preinstall database on the new standby nodes.
+[root@openGauss173 script]# ./gs_expansion -U gsexpa -G xuemn -X /home/gsexpa/cas.xml -h 90.90.44.171
+Start to preinstall database on new nodes.
+Start to send soft to each standby nodes.
+End to send soft to each standby nodes.
+Start to preinstall database step.
+Preinstall 90.90.44.171 success
+End to preinstall database step.
+End to preinstall database on new nodes.
 
-Start to install database on the new standby nodes.
-
-installing database on node 90.90.44.165:
-Please enter the password of user [zxb] on node [90.90.44.165]:
+Start to install database on new nodes.
+Installing database on node 90.90.44.171:
+Please enter the password of user [gsexpa] on node [90.90.44.171]:
 Parsing the configuration file.
 Check preinstall on every node.
 Successfully checked preinstall on every node.
@@ -131,7 +135,7 @@ encrypt cipher and rand files for database.
 Please enter password for database:
 Please repeat for database:
 begin to create CA cert files
-The sslcert will be generated in /usr1/zxb/opengauss/gaussdb/app/share/sslcert/om
+The sslcert will be generated in /data/gsexpa/openGauss/cluster/app/share/sslcert/om
 Cluster installation is completed.
 Configuring.
 Deleting instances from all nodes.
@@ -145,12 +149,22 @@ Configuration is completed.
 Successfully started cluster.
 Successfully installed application.
 end deploy..
+90.90.44.171 install success.
+Finish to install database on all nodes.
+Database on standby nodes installed finished.
 
-Successfully install database on node ['90.90.44.165']
+Checking gaussdb and gs_om version.
+End to check gaussdb and gs_om version.
 
-Database on standby nodes installed finished. Start to establish the primary-standby relationship.
+Start to establish the relationship.
+Start to build standby 90.90.44.171.
+Build standby 90.90.44.171 success.
+Start to generate and send cluster static file.
+End to generate and send cluster static file.
 
-Success to expansion standby nodes.
+Expansion results:
+90.90.44.171:   Success
+Expansion Finish.
 ```
 
 ## Helpful Links<a name="section81692446111"></a>
