@@ -103,7 +103,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: 0000 to 0777
 
-**Default value**:  **0700**
+**Default value**:  **0777**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >In the Linux OS, a document has one document attribute and nine permission attributes, which consists of the read \(r\), write \(w\), and execute \(x\) permissions of the Owner, Group, and Others groups.  
