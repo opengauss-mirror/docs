@@ -8,7 +8,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 -   The parameter **synchronous\_standby\_names** will not automatically be updated after expansion. If you add a standby node for this parameter, please update manually after expansion.
 
--   Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
+-   Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ(Available Zone) as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
 
 ## Prerequisites<a name="section18105194594714"></a>
 
@@ -18,7 +18,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 -   The mutual trust of user  **root**  and the database management user **omm** has been established between the existing database nodes and the new nodes.
 
--   The XML file has been created and information about the standby node to be scaled has been added to the installed database configuration file.
+-   The XML file has been created correctly and information about the standby node to be scaled has been added to the installed database configuration file.
 
 -   Only user  **root**  is authorized to run the  **gs\_expansion**  command.
 
@@ -27,6 +27,12 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 -   The environment variables of the primary database node have been imported before the scale-out command is run. If the current database cluster is installed in a separate environment variable mode, run the **source** command to imports the spilt environment variable. If they are not spilt, run the  **source** command to import the **.bashrc** configuration file of the sub-user. Generally, the file path is: **/home/[user]/.bashrc**.
 
 -   The operating system of the new standby node is the same as that of the primary node.
+
+-   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
+
+-   Do not run **gs\_expansion** command with same parameters at the same time.
+
+-   Perform standby node expansion only on the primary node.
 
 
 ## Syntax<a name="section10648255135011"></a>
@@ -84,6 +90,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
     >-   The databases installed on the primary and standby nodes must use the same user and user group, and the paths for separating environment variables must be the same.  
     >-   When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.  
     >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  
+    >-   The database version of new instance need to be same as the primary instance.
 
 -   -?, –help
 
