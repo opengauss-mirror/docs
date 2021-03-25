@@ -8,6 +8,7 @@
 
 -   For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](en-us_topic_0283136748.md).
 -   Column-store tables do not support the array.
+-   Column-store tables do not support the global temporary tables.
 -   It is recommended that the number of column-store tables do not exceed 1000.
 -   The primary key constraint and unique constraint in the table must contain distribution keys.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
