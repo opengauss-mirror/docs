@@ -22,6 +22,12 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     gs_om -t stop [-h HOSTNAME] [-D dataDir]  [--time-out=SECS] [-m MODE] [-l LOGFILE] 
     ```
 
+-   重启openGauss
+
+    ```
+    gs_om -t restart [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [-l LOGFILE] [-m MODE]
+    ```
+
 -   查询openGauss状态
 
     ```
