@@ -2194,6 +2194,6 @@ headless: true
 		-   [pg\_controldata]({{< relref "./docs/Toolreference/pg_controldata.md" >}})
 		-   [pg\_resetxlog]({{< relref "./docs/Toolreference/pg_resetxlog.md" >}})
 	-   [FAQs]({{< relref "./docs/Toolreference/faqs.md" >}})
-	-   [System Catalogs and Views Supported by gs\_collector]({{< relref "./docs/Toolreference/system-catalogs-and-views-supported-by-gs_collector.md" >}})
-	
+	-   [System Catalogs and Views Supported by gs\_collector]({{< relref "./docs/Toolreference/system-catalogs-and-views-supported-by-gs_collector.md" >}})	
+-   [FAQ]({{< relref "./docs/FAQ/faqs.md" >}})
 -   [Glossary]({{< relref "./docs/Glossary/Glossary.md" >}})
