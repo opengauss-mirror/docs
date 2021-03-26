@@ -8,7 +8,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 -   The parameter **synchronous\_standby\_names** will not automatically be updated after expansion. If you add a standby node for this parameter, please update manually after expansion.
 
--   Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
+-   Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ(Available Zone) as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
 
 ## Prerequisites<a name="section18105194594714"></a>
 
@@ -18,7 +18,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 -   The mutual trust of user  **root**  and the database management user **omm** has been established between the existing database nodes and the new nodes.
 
--   The XML file has been created and information about the standby node to be scaled has been added to the installed database configuration file.
+-   The XML file has been created correctly and information about the standby node to be scaled has been added to the installed database configuration file.
 
 -   Only user  **root**  is authorized to run the  **gs\_expansion**  command.
 
@@ -27,6 +27,12 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 -   The environment variables of the primary database node have been imported before the scale-out command is run. If the current database cluster is installed in a separate environment variable mode, run the **source** command to imports the spilt environment variable. If they are not spilt, run the  **source** command to import the **.bashrc** configuration file of the sub-user. Generally, the file path is: **/home/[user]/.bashrc**.
 
 -   The operating system of the new standby node is the same as that of the primary node.
+
+-   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
+
+-   Do not run **gs\_expansion** command with same parameters at the same time.
+
+-   Perform standby node expansion only on the primary node.
 
 
 ## Syntax<a name="section10648255135011"></a>
@@ -84,6 +90,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
     >-   The databases installed on the primary and standby nodes must use the same user and user group, and the paths for separating environment variables must be the same.  
     >-   When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.  
     >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  
+    >-   The database version of new instance need to be same as the primary instance.
 
 -   -?, –help
 
@@ -99,14 +106,18 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 Use  **gs\_expansion**  for scaling:
 
 ```
-# ./gs_expansion -U zxb -G zxb -X /opt/zxb/instance4.xml -h 90.90.44.165
-Start to preinstall database on the new standby nodes.
-Successfully preinstall database on the new standby nodes.
+[root@openGauss173 script]# ./gs_expansion -U gsexpa -G xuemn -X /home/gsexpa/cas.xml -h 90.90.44.171
+Start to preinstall database on new nodes.
+Start to send soft to each standby nodes.
+End to send soft to each standby nodes.
+Start to preinstall database step.
+Preinstall 90.90.44.171 success
+End to preinstall database step.
+End to preinstall database on new nodes.
 
-Start to install database on the new standby nodes.
-
-installing database on node 90.90.44.165:
-Please enter the password of user [zxb] on node [90.90.44.165]:
+Start to install database on new nodes.
+Installing database on node 90.90.44.171:
+Please enter the password of user [gsexpa] on node [90.90.44.171]:
 Parsing the configuration file.
 Check preinstall on every node.
 Successfully checked preinstall on every node.
@@ -124,7 +135,7 @@ encrypt cipher and rand files for database.
 Please enter password for database:
 Please repeat for database:
 begin to create CA cert files
-The sslcert will be generated in /usr1/zxb/opengauss/gaussdb/app/share/sslcert/om
+The sslcert will be generated in /data/gsexpa/openGauss/cluster/app/share/sslcert/om
 Cluster installation is completed.
 Configuring.
 Deleting instances from all nodes.
@@ -138,12 +149,22 @@ Configuration is completed.
 Successfully started cluster.
 Successfully installed application.
 end deploy..
+90.90.44.171 install success.
+Finish to install database on all nodes.
+Database on standby nodes installed finished.
 
-Successfully install database on node ['90.90.44.165']
+Checking gaussdb and gs_om version.
+End to check gaussdb and gs_om version.
 
-Database on standby nodes installed finished. Start to establish the primary-standby relationship.
+Start to establish the relationship.
+Start to build standby 90.90.44.171.
+Build standby 90.90.44.171 success.
+Start to generate and send cluster static file.
+End to generate and send cluster static file.
 
-Success to expansion standby nodes.
+Expansion results:
+90.90.44.171:   Success
+Expansion Finish.
 ```
 
 ## Helpful Links<a name="section81692446111"></a>

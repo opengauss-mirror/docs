@@ -7,18 +7,21 @@ openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持�
 ## 注意事项
 
 -   扩容后不会自动更新synchronous_standby_names参数。如果需要为该参数增加扩容的机器，请在扩容完成后手动更新。
--   扩容级联备之前要确保原集群中有处于同一az且状态正常的备机，或扩容级联备的同时也扩容了处于同az的备机
+-   扩容级联备之前要确保原集群中有处于同一AZ（Available Zone）且状态正常的备机，或扩容级联备的同时也扩容了处于同AZ的备机。
 
 ## 前提条件
 
 -   数据库主机上存在openGauss镜像包，解压镜像包后，在script/目录下执行./gs_expansion命令进行扩容。
 -   在新增的扩容备机上创建好与主机上相同的用户和用户组。
--   已存在的数据库节点和新增的扩容节点之间需要建立好root用户互信以及omm用户(数据库管理用户)的互信。
--   配置xml文件，在已安装数据库配置文件的基础上，添加需要扩容的备机信息。
+-   已存在的数据库节点和新增的扩容节点之间需要建立好root用户互信以及数据库管理用户（如omm）的互信。
+-   正确配置xml文件，在已安装数据库配置文件的基础上，添加需要扩容的备机信息。
 -   只能使用root用户执行gs_expansion命令。
 -   不允许同时在主节点上执行gs_dropnode命令删除其他备机。
 -   执行扩容命令前需要通过source命令导入主机数据库的环境变量。如果当前数据库是分离环境变量方式安装，则source导入分离的环境变量。如果未进行分离，则需要source导入子用户的.bashrc配置文件。一般该文件路径为：/home/[user]/.bashrc
 -   扩容备机的操作系统与主机保持一致。
+-   操作过程中不允许同时在其他备节点上执行主备倒换或者故障倒换的操作。
+-   不允许同时执行2次相同的gs_expansion命令。
+-   扩容备节点的操作只能在主节点上执行。
 
 
 ## 语法
@@ -77,6 +80,7 @@ openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持�
     1. 主备机器安装的数据库需要使用相同的用户和用户组，分离环境变量路径也需要保持一样。
     2. 主备机器安装时候xml配置里面的gaussdbAppPath、gaussdbLogPath、gaussdbToolPath、corePath地址需要保持一致。
     3. 扩容备机上的数据必须使用om方式安装，使用编译方式启动的数据库不支持与主机扩容。
+    4. 新增扩容节点的数据库版本需要与主库保持一致。
 
 -   -?, --help
 
@@ -92,14 +96,18 @@ openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持�
 使用gs\_expansion扩容步骤。
 
 ```
-# ./gs_expansion -U zxb -G zxb -X /opt/zxb/instance4.xml -h 90.90.44.165
-Start to preinstall database on the new standby nodes.
-Successfully preinstall database on the new standby nodes.
+[root@openGauss173 script]# ./gs_expansion -U gsexpa -G xuemn -X /home/gsexpa/cas.xml -h 90.90.44.171
+Start to preinstall database on new nodes.
+Start to send soft to each standby nodes.
+End to send soft to each standby nodes.
+Start to preinstall database step.
+Preinstall 90.90.44.171 success
+End to preinstall database step.
+End to preinstall database on new nodes.
 
-Start to install database on the new standby nodes.
-
-installing database on node 90.90.44.165:
-Please enter the password of user [zxb] on node [90.90.44.165]:
+Start to install database on new nodes.
+Installing database on node 90.90.44.171:
+Please enter the password of user [gsexpa] on node [90.90.44.171]:
 Parsing the configuration file.
 Check preinstall on every node.
 Successfully checked preinstall on every node.
@@ -117,7 +125,7 @@ encrypt cipher and rand files for database.
 Please enter password for database:
 Please repeat for database:
 begin to create CA cert files
-The sslcert will be generated in /usr1/zxb/opengauss/gaussdb/app/share/sslcert/om
+The sslcert will be generated in /data/gsexpa/openGauss/cluster/app/share/sslcert/om
 Cluster installation is completed.
 Configuring.
 Deleting instances from all nodes.
@@ -131,12 +139,22 @@ Configuration is completed.
 Successfully started cluster.
 Successfully installed application.
 end deploy..
+90.90.44.171 install success.
+Finish to install database on all nodes.
+Database on standby nodes installed finished.
 
-Successfully install database on node ['90.90.44.165']
+Checking gaussdb and gs_om version.
+End to check gaussdb and gs_om version.
 
-Database on standby nodes installed finished. Start to establish the primary-standby relationship.
+Start to establish the relationship.
+Start to build standby 90.90.44.171.
+Build standby 90.90.44.171 success.
+Start to generate and send cluster static file.
+End to generate and send cluster static file.
 
-Success to expansion standby nodes.
+Expansion results:
+90.90.44.171:   Success
+Expansion Finish.
 ```
 
 ## 相关命令
