@@ -52,9 +52,9 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a>Acronym for command-line interface. A means of communication between a program and its user, based solely on textual input and output. Commands are input with the help of a keyboard or similar device and are interpreted and executed by the program. Results are output as text or graphics to the terminal.</p>
 </td>
 </tr>
-  <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row512353139138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"></a>CMK</p>
+<tr id="row12703164422712"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p54125431608"><a name="p54125431608"></a><a name="p54125431608"></a>CMK</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p65924179138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p65924179138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p65924179138"></a>Client Master Key.</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>Acronym for client master key.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row512353139138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"></a>CU</p>
@@ -102,11 +102,6 @@
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row51747249138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a>DML</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a>Acronym for data manipulation language.</p>
-</td>
-</tr>
-    <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row51747249138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a>DQL</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a>Acronym for data query language.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row82781239138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"></a>backup</p>
@@ -448,11 +443,6 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p306138799138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p306138799138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p306138799138"></a>If a database receives a connection request from an application, a task is created for the connection. Sessions are managed by the session manager. They execute initial tasks and perform all user operations.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row2519539138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p204082489138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p204082489138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p204082489138"></a>SLES</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p424554209138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p424554209138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p424554209138"></a>Acronym for SUSE Linux enterprise server, an enterprise Linux OS provided by SUSE.</p>
-</td>
-</tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row465544649138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p128152419138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p128152419138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p128152419138"></a>SMP</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p314016359138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p314016359138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p314016359138"></a>Acronym for symmetric multiprocessing. A group of processors (multiple CPUs) is integrated on a computer. These CPUs share the memory subsystem and bus structure. The OS must support multitasking and multithreading to ensure an SMP system achieves high performance. In databases, SMP means to concurrently execute queries using the multi-thread technology, efficiently using all CPU resources and improving query performance.</p>
@@ -678,5 +668,4 @@
 </tr>
 </tbody>
 </table>
-
 

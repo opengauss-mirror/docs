@@ -1,23 +1,33 @@
-# Technical Characteristics<a name="EN-US_CONCEPT_0251307660"></a>
+# Technical Characteristics<a name="EN-US_CONCEPT_0289895596"></a>
 
-Compared with other open-source databases, openGauss provides multiple storage modes, NUMA-based kernel structure, and high availability.
+Compared with other open-source databases, openGauss has the following characteristics:
 
--   Multi-storage mode
-    -   Row-store, supporting frequent service data updates
-    -   Column-store, supporting service data appending and analysis
-    -   Memory table, supporting high throughput, low latency, and ultra-high performance
+-   High performance
+    -   Provides the multi-core architecture-oriented concurrency control technology and Kunpeng hardware optimization, and achieves that the TPC-C benchmark performance reaches 1,500,000 tpmC in Kunpeng 2-socket servers.
+    -   Uses NUMA-Aware data structures as the key kernel structures to adapt to the trend of using multi-core NUMA architecture on hardware.
+    -   Provides the SQL bypass intelligent fast engine technology.
 
--   NUMA-based kernel structure
-    -   Partitions key data structures to reduce data access conflicts.
-    -   NUMA-based key data structure, reducing the data structure access latency.
-    -   Cores are bound to key service threads to prevent inter-core thread drift.
 
 -   High availability \(HA\)
-    -   Replication between the primary and standby nodes can be deployed in synchronous or asynchronous mode.
-    -   Data page CRC check is supported. Damaged data pages are automatically restored by the standby node.
-    -   The standby node recovers in parallel and can be promoted to primary to provide services within 10 seconds.
+    -   Supports multiple deployment modes, such as primary/standby synchronization, primary/standby asynchronization, and cascaded standby server deployment.
+    -   Supports data page cyclic redundancy check \(CRC\), and automatically restores damaged data pages through the standby node.
+    -   Recovers the standby node in parallel and promots it to primary to provide services within 10 seconds.
 
--   AI capabilities
-    -   AI4DB, including intelligent parameter tuning and diagnosis, slow SQL discovery, index recommendation, time series forecasting, and exception detection.
-    -   DB4AI, which is compatible with the MADlib ecosystem, supports 70+ algorithms, has performance several times higher than that of the native MADlib, and supports advanced algorithms such as XGBoost and GBDT.
+
+-   High security
+
+    Supports security features such as fully-encrypted computing, access control, encryption authentication, database audit, and dynamic data masking to provide comprehensive end-to-end data security protection.
+
+
+-   Easy O&M
+    -   Provides AI-based intelligent parameter tuning and index recommendation to automatically recommend AI parameters.
+    -   Provides slow SQL diagnosis and multi-dimensional self-monitoring views to help you understand system performance in real time.
+    -   Provides SQL time forecasting that supports online auto-learning.
+
+
+-   Fully open
+    -   Adopts the Mulan Permissive Software License, allowing code to be freely modified, used, and referenced.
+    -   Fully opens database kernel capabilities.
+    -   Provides excessive partner certifications, training systems, and university courses.
+
 

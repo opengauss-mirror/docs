@@ -1,20 +1,19 @@
-# System Architecture<a name="EN-US_TOPIC_0241663016"></a>
+# System Architecture<a name="EN-US_TOPIC_0289896518"></a>
 
 openGauss is a standalone database where data is stored on a single physical node and data access tasks are pushed to service nodes. In this way, high concurrency of servers enables quick data processing. In addition, data can be copied to the standby server through log replication, ensuring high reliability and scalability.
 
-## Software Architecture<a name="en-us_topic_0237080634_en-us_topic_0231764167_section1940043819751"></a>
+## Software Architecture<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_section1940043819751"></a>
 
 openGauss is a standalone database and can be deployed in primary/standby mode.
 
 openGauss shows the logical components of  [Figure 1](#en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411).
 
-**Figure  1**  openGauss logical components<a name="en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411"></a>  
+**Figure  1**  openGauss logical components<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411"></a>  
 ![](figures/opengauss-logical-components.png "opengauss-logical-components")
 
 **Table  1**  Architecture description
 
 <a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_table5479978919151"></a>
-
 <table><thead align="left"><tr id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_row4411284819151"><th class="cellrowborder" valign="top" width="14.469999999999999%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p404366191511"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p404366191511"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p404366191511"></a>Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="85.53%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p7387596191511"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p7387596191511"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p7387596191511"></a>Description</p>

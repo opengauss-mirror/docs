@@ -2,11 +2,10 @@
 
 [Table 1](#en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_t24ab71cac351418d8d5b1b8bd1d942c7)  lists the technical specifications of openGauss.
 
-**Table  1**  Technical specifications
+**Table  1**  Technical Specifications
 
 <a name="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_t24ab71cac351418d8d5b1b8bd1d942c7"></a>
-
-<table><thead align="left"><tr id="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_rbc71085589354d7f8cb4258ff44a48eb"><th class="cellrowborder" valign="top" width="31.180000000000003%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_ae8a48d1f972b4807a0a1f28e4f33a0ab"><a name="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_ae8a48d1f972b4807a0a1f28e4f33a0ab"></a><a name="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_ae8a48d1f972b4807a0a1f28e4f33a0ab"></a>Item</p>
+<table><thead align="left"><tr id="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_rbc71085589354d7f8cb4258ff44a48eb"><th class="cellrowborder" valign="top" width="31.180000000000003%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_ae8a48d1f972b4807a0a1f28e4f33a0ab"><a name="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_ae8a48d1f972b4807a0a1f28e4f33a0ab"></a><a name="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_ae8a48d1f972b4807a0a1f28e4f33a0ab"></a>Technical Specifications</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.82000000000001%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_acdfdd92252a3450d832a727f1fb029e8"><a name="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_acdfdd92252a3450d832a727f1fb029e8"></a><a name="en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_acdfdd92252a3450d832a727f1fb029e8"></a>Maximum Value</p>
 </th>

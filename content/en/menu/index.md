@@ -19,11 +19,12 @@ headless: true
 	-   [Product Positioning]({{< relref "./docs/Description/product-positioning.md" >}})
 	-   [System Architecture]({{< relref "./docs/Description/system-architecture.md" >}})
 	-   [Application Scenarios]({{< relref "./docs/Description/application-scenarios.md" >}})
+	-   [Product Features]({{< relref "./docs/Description/product-features.md" >}})
 	-   [Operating Environment]({{< relref "./docs/Description/operating-environment.md" >}})
 	-   [Technical Specifications]({{< relref "./docs/Description/technical-specifications.md" >}})
 	-   [Basic Features]({{< relref "./docs/Description/basic-features.md" >}})
-	-   [Enhanced Features]({{< relref "./docs/Description/enhanced-features.md" >}})
-
+-   [Enhanced Features]({{< relref "./docs/Description/enhanced-features.md" >}})
+	
 -   [Technical White Paper]({{< relref "./docs/Technicalwhitepaper/Technicalwhitepaper.md" >}})
 	-   [Product Positioning]({{< relref "./docs/Technicalwhitepaper/product-positioning.md" >}})
 	-   [Application Scenario]({{< relref "./docs/Technicalwhitepaper/application-scenario.md" >}})
