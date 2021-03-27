@@ -113,3 +113,17 @@ The possible cause is that the GaussDB process is hung. The query operation call
    gs_om -t start
    ```
 
+## gs\_sshexkey Reports an Error When the Same User Has Different Passwords<a name="EN-US_TOPIC_0309176033"></a>
+
+### Symptom<a name="section147641250161616"></a>
+
+In the openEuler environment, gs\_sshexkey supports mutual trust between different passwords of the same user. However, the authentication fails after the correct password is entered.
+
+### Cause Analysis<a name="section232313361171"></a>
+
+Open the system log file  **/var/log/secure**  and check whether the \*\*pam\_faillock\(sshd:auth\): Consecutive login failures for user\*\* log exists. If yes, the user account is locked because the number of incorrect password attempts exceeds the upper limit.
+
+### Procedure<a name="section952412551818"></a>
+
+In the  **/etc/pam.d**  directory, modify the  **system-auth**,  **password-auth**, and  **password-auth-crond**  configuration files, increase the value of deny=3 in the files, and restore the value after the mutual trust relationships are established.
+

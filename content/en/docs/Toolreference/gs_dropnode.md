@@ -2,41 +2,38 @@
 
 ## Background<a name="section1015619218480"></a>
 
-**gs\_dropnode**, provided by openGauss, is used to drop unnecessary standby nodes from a cluster with one primary node and multiple standby nodes. You can delete unnecessary standby nodes until only the primary node is left.
+**gs\_dropnode**, provided by openGauss, is used to drop unnecessary standby nodes from a database with one primary node and multiple standby nodes. You can delete unnecessary standby nodes until only the primary node is left.
 
 ## Precautions<a name="section1779345110485"></a>
 
-- If a connecting standby node is dropped from a primary/standby cluster, the database services running on the target standby node are automatically stopped, but the applications on the standby node are not deleted.
+-   When a standby database instance that can be connected is removed, the database service running on this standby database instance is automatically stopped, and the GRPC certificate \(stored in  _$GAUSSHOME_**/share/sslcert/grpc/**\) on the standby database instance is automatically deleted. However, the applications on the standby database instance are not deleted.
 
-- If only one primary node is left in the cluster after the deletion, the system prompts you to restart the current node. In this case, you are advised to restart the node based on the service running environment.
+-   If only one primary node is left in the database after the deletion, the system prompts you to restart the current node. In this case, you are advised to restart the node based on the service operating environment.
+-   If the target standby database instance cannot be connected before the operation, you need to manually stop or delete the database service on the database instance after it is restored, and delete the GRPC certificate \(stored in  _$GAUSSHOME_**/share/sslcert/grpc/**\) from the standby database instance.
+-   The standby node can be dropped only from the primary/standby database installed in OM mode. The database installed in compilation mode is not supported.
+-   If the standby node to be removed is in synchronous replication mode and a transaction is being performed on the primary node when the deletion command is executed, the transaction submission will be suspended for a short period of time. After the deletion is complete, the transaction processing can continue.
+-   After the target standby node is removed, if you are not sure whether the target standby node is required anymore, use the following method to reject the remote connection through SSH from the target standby node to avoid misoperations:
+    -   On the current primary node, modify the  **/etc/ssh/sshd\_config**  file as user  **root **and add the following record. If a DenyUsers record exists, append the following record after the existing one.
 
-- If the target standby node is disconnected before the operation, manually stop or delete the database service on the target standby server after the target standby server is restored.
+        ```
+        `DenyUsers omm@10.11.12.13`
+        ```
 
-- The standby node can be dropped only from the primary/standby cluster installed in OM mode. The cluster installed in compilation mode is not supported.
+        After the modification, you need to restart the SSH service for the modification to take effect. After the modification, user  **omm **cannot remotely log in to the primary node from the target standby node.
 
-- If the target standby node is in the synchronous replication mode and there are transactions waiting committed during the **gs\_dropnode** operation, the transactions will be stucked shortly and recover until the target standby node deleted.
+    -   On the current primary node, add the target standby node to the  **/etc/hosts.deny**  file \(for example,  **sshd:10.11.12.13:deny**\) to reject the remote connection through SSH from the target standby node \(valid for all users\). This method requires that the sshd service be bound to the libwrap library.
 
-- If the target standby node is left as standalone after it is deleted from the cluster, please configure on the other hosts to reject the SSH connection from the target standby, which can avoid misoperation on the target standby. It can be implemented by the following ways:
-
-  - Method one: Add the record of **DenyUsers** to the file /etc/ssh/sshd_config as root. Append the record of target host if it already exits in the file.
-
-    `DenyUsers omm@10.11.12.13`
-
-    Restart ssh service after the modification to make it work. This will reject the connection from the target standby as **omm** 
-
-  - Method two: Add the record of the target standby to the file /etc/hosts.deny on the other nodes (e.g: sshd:10.11.12.13:deny) as root. This will reject the connection from the target standby as any user. This method requires the libwrap.so file is bounded to the sshd service.
-
--   If the target standby node is not needed any more after it is deleted from the cluster, please uninstall the openGauss with **gs\_uninstall --delete-data -L** on the target standby. Note that '-L' must be added.
+-   After the target standby node is removed and is no longer required, run the  **gs\\\_uninstall --delete-data -L**  command on the target standby node to uninstall openGauss. Note that the  **-L **option must be added.
 
 ## Prerequisite<a name="section171227231492"></a>
 
 -   Perform standby node deletion only on the primary node.
 -   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
--   Do not run **gs\_expansion** command on the primary node at the same time.
--   Do not run **gs\_dropnode** command with same parameters at the same time.
+-   Do not run the  **gs\_expansion **command on the primary node for scale-out at the same time.
+-   Do not run the  **gs\_dropnode **command twice at the same time.
 -   Before deletion, ensure that the database management user  **omm**  trust relationship has been established between the primary and standby nodes.
--   Log in to the OS as the OS user  **omm**  to run the  **gs\_dropnode**  command.
--   Before running commands, run the  **source**  command to import environment variables of a database on the primary node. If the database cluster is installed in separate environment variable mode, run the  **source**  command to import the separate environment variables. If they are not separated, run the  **source**  command to import the .bashrc configuration file of the sub-user. Generally, the file path is  **/home/\[user\]/.bashrc**.
+-   Run this command as a database administrator, for example,  **omm**.
+-   Before running commands, run the  **source**  command to import environment variables of a database on the primary node. If the database is installed in separate environment variable mode, run the  **source**  command to import the separate environment variables. If they are not separated, run the  **source**  command to import the .bashrc configuration file of the sub-user. Generally, the file path is  **/home/\[user\]/.bashrc**.
 
 ## Syntax<a name="section4295914175012"></a>
 
@@ -90,7 +87,7 @@ gs_dropnode -V | --version
 Use  **gs\_dropnode**  to drop nodes.
 
 ```
-$ gs_dropnode -U omm -G dbgrp -h 10.11.12.13
+gs_dropnode -U omm -G dbgrp -h 10.11.12.13
 The target node to be dropped is (['StandbyNode1'])
 Do you want to continue to drop the target node (yes/no)? yes
 [gs_dropnode]Start to drop nodes of the cluster.
