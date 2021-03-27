@@ -22,7 +22,7 @@ For example,  [Table 1](#en-us_topic_0283136537_en-us_topic_0237080621_en-us_top
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_en-us_topic_0058967181_p879553720320"><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_en-us_topic_0058967181_p879553720320"></a><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_en-us_topic_0058967181_p879553720320"></a>Improve access performance by significantly reducing search space.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_r7ddefafe50e44ec0bddd409e82ecafa5"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a049e1cf48ef14aab929bae5a6eb6f5b5"><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a049e1cf48ef14aab929bae5a6eb6f5b5"></a><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a049e1cf48ef14aab929bae5a6eb6f5b5"></a>Most partition records need to be queried or updated in one separate partition.</p>
+<tr id="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_r7ddefafe50e44ec0bddd409e82ecafa5"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a049e1cf48ef14aab929bae5a6eb6f5b5"><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a049e1cf48ef14aab929bae5a6eb6f5b5"></a><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a049e1cf48ef14aab929bae5a6eb6f5b5"></a>Most partition records need to be queried or updated.</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a7c16696dbe2e458f99e643fb98adc6d1"><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a7c16696dbe2e458f99e643fb98adc6d1"></a><a name="en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_a7c16696dbe2e458f99e643fb98adc6d1"></a>Improve performance because only one partition rather than the whole table needs to be consecutively scanned</p>
 </td>
@@ -35,7 +35,6 @@ For example,  [Table 1](#en-us_topic_0283136537_en-us_topic_0237080621_en-us_top
 </tbody>
 </table>
 
-
 Data partitioning provides the following benefits:
 
 -   **Improve manageability:**  Tables and indexes are divided into smaller and more manageable units. In this way, data management can be performed by partitions. Database administrators will perform maintenance in the designated area of the table.
@@ -45,7 +44,7 @@ Data partitioning provides the following benefits:
 
 -   **Improve query performance:**  Restrict the volume of data to be checked or operated to facilitate query.
 
-    With partition pruning, also known as partition elimination, GaussDB KernelopenGauss filters out unexpected partitions and scans only the remaining partitions. Partition pruning greatly improves query performance.
+    With partition pruning, also known as partition elimination, openGauss filters out unexpected partitions and scans only the remaining partitions. Partition pruning greatly improves query performance.
 
 -   **Partition-wise Join**: Partitioning can also improve the performance of multi-table joins by using a technique known as partition-wise join. Partition-wise joins can be applied when two tables are joined and at least one of these tables is partitioned using a join key. Partition-wise joins break a large join into smaller joins of "identical" datasets. "Identical" here is defined as covering the same set of partitioning key values on both sides of the join, ensuring that only a join of these 'identical' datasets will produce a result without considering other datasets. List partitions and hash partitions are not supported currently.
 
@@ -68,7 +67,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     openGauss supports both the row-store and column-store models. Users can choose a row-store or column-store table based on their needs.
 
-    Column store is recommended if a table contains many columns \(called a wide table\) but its query involves only a few columns. Row store is recommended if a table contains only a few columns and a query involves most of the columns.
+    Generally, column store is applicable to OLAP service scenarios \(The range statistics query and batch import operations are frequent. The update, deletion, point query, and point insertion operations are infrequent. The table contains many columns, that is, a wide table. Only a few columns are involved in the query.\) The row store is applicable to OLTP service scenarios \(The query, insert, delete, and update operations are frequent. The range statistics query and batch import operations are infrequent. The number of table columns is small. Most columns are queried.\)
 
     The hybrid row-column storage engine achieves higher data compression ratio \(column store\), index performance \(column store\), and point update and point query \(row store\) performance, as shown in  [Figure 2](#en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_fbb2af39ce12a419cb437829aaf1cf4fb).
 
@@ -147,7 +146,7 @@ With the rapid growth and maturity of cloud infrastructure, cloud database servi
 
     ![](figures/向量化执行引擎(png)-1.png)
 
-    In the overall process, data is encrypted on the client and sent to the GaussDB Kernel server in ciphertext. That is, an encryption and decryption module needs to be constructed on the client. The encryption and decryption module depends on the key management module which generates the root key \(RK\) and client master key \(CMK\). With the CMK, a column encryption key \(CEK\) can be defined through the SQL syntax. A CMK is encrypted by an RK and then saved in the key store file \(KSF\). Both CMK and RK are managed by the KeyTool. The CMK uses the symmetric encryption algorithm AES256 to encrypt a CEK and then stores it on the server.
+    In the overall process, data is encrypted on the client and sent to the openGauss server in ciphertext. That is, an encryption and decryption module needs to be constructed on the client. The encryption and decryption module depends on the key management module which generates the root key \(RK\) and client master key \(CMK\). With the CMK, a column encryption key \(CEK\) can be defined through the SQL syntax. A CMK is encrypted by an RK and then saved in the key store file \(KSF\). Both CMK and RK are managed by the KeyTool. The CMK uses the symmetric encryption algorithm AES256 to encrypt a CEK and then stores it on the server.
 
     The client uses the symmetric encryption algorithms AES \(including AES128 and AES256\) to encrypt data based on the generated CEK. The encrypted data is stored on the database server. After the ciphertext calculation, the server returns the ciphertext result set, and the client decrypts the data to obtain the final result.
 
@@ -181,24 +180,26 @@ With memory tables, all data access is lock-free and concurrent, optimizing data
 
 ## Primary/Standby Deployment<a name="en-us_topic_0283136537_section238711473613"></a>
 
-The primary/standby deployment mode supports synchronous and asynchronous replication. Applications are deployed based on service scenarios. For synchronous replication, one primary node and two standby nodes are deployed. This ensures reliability but affects performance. For asynchronous replication, one primary node and one standby node are deployed. This has little impact on performance, but data may be lost when exceptions occur. GaussDB KernelopenGauss supports automatic recovery of damaged pages. When a page on the primary node is damaged, the damaged page can be automatically recovered on the standby node. Besides, GaussDB KernelopenGauss supports concurrent log recovery on the standby node to minimize the service unavailability time when the primary node is down.
+The primary/standby deployment mode supports synchronous and asynchronous replication. Applications are deployed based on service scenarios. For synchronous replication, one primary node and two standby nodes are deployed. This ensures reliability but affects performance. For asynchronous replication, one primary node and one standby node are deployed. This has little impact on performance, but data may be lost when exceptions occur. openGauss supports automatic recovery of damaged pages. When a page on the primary node is damaged, the damaged page can be automatically recovered on the standby node. Besides, openGauss supports concurrent log recovery on the standby node to minimize the service unavailability time when the primary node is down.
 
 In addition, in primary/standby deployment mode, if the read function of the standby node is enabled, the standby node supports read operations instead of write operations \(such as table creation, data insertion, and data deletion\), reducing the pressure on the primary node.
 
-## AI-based O&M Optimization<a name="en-us_topic_0283136537_section958214271813"></a>
+## AI Capabilities<a name="en-us_topic_0283136537_section958214271813"></a>
 
 -   Automatic parameter optimization
 
     In database scenarios, the optimal parameter value combinations of different types of jobs are different from each other. To achieve better running performance, users want to quickly optimize database parameters. People learning to adjust parameters is not cost-effective, real-time or widely available. Automatic adjustment of database parameters through machine learning helps improve the parameter adjustment efficiency and reduce the cost of parameter adjustment.
 
-    Automatic parameter optimization: The parameter optimization service is an offline service and consists of two phases: training and testing.
+    Automatic parameter optimization can be performed in online or offline mode, and supports multiple algorithms, including reinforcement learning and global search.
 
     When the model is in the training phase, a new parameter value combination is obtained by using the reinforcement learning and heuristic algorithm based on an input database parameter value \(including a current parameter value and a current performance parameter value of the database\). The parameter adjustment of the database is obtained by mixing output results of two parts: reinforcement learning and heuristic algorithm. The output of the model is de-normalized to obtain a new parameter value. The new value is inserted into the database and the testing job is run to obtain the database performance under the current value combination, such as the execution duration and throughput. Finally, the performance is fed back to the learning model and iterated.
 
     When the model is in the testing phase, the parameter values of the current database are used as the input, including the current parameter value and current performance parameter value of the database. The optimal parameter adjustment solution in the current situation is obtained through the model.
 
+    When the model is in recommendation mode, second-level parameter recommendation is directly performed based on the current workload characteristics of the user.
 
--   Slow SQL diagnosis
+
+-   Slow SQL discovery
 
     In the actual production environment, users usually hope that jobs can be successfully executed in the fastest way. However, because the complexity of statements varies, execution times are different. Users want to identify the statements that may take a long time before execution, and execute them separately to prevent long-time locks from affecting the execution of other statements. In addition, users hope that the advance identification function does not occupy the original resources of the user database or affect the original response time.
 
@@ -206,9 +207,21 @@ In addition, in primary/standby deployment mode, if the read function of the sta
 
     Slow SQL diagnosis has two main phases: training and prediction.
 
-    -   Training phase: Prepare the historical SQL records of typical services. The input format is as follows: \(SQL execution duration, SQL statement, SQL lock waiting duration\). Ensure that at least one of the lock waiting duration and SQL execution duration is not 0. Press  **Tab**  to separate lines. Import historical SQL data based on the log address entered by the user, and train the self-encoded model, clustering model, and execution time sequence model.
-    -   Prediction phase: A user enters a to-be-predicted load. The system encodes the load based on the self-encoded model generated in the training phase, classifies the load based on the clustering model generated in the training phase, and then predicts the execution time based on the historical information of each type.
+    -   Training phase: Prepare the historical SQL records of your typical services, import the historical SQL data based on the entered log address, and train the intelligent model.
+    -   Prediction phase: After you enter the load to be predicted, the model predicts the execution time based on the historical information of each type to detect potential slow SQL statements.
 
+
+-   Index recommendation
+
+    Single-query index recommendation and workload-level index recommendation are supported. During workload-level index recommendation, typical SQL statements are filtered based on the AI algorithm. For typical SQL statements, the optimal index is recommended and generated based on the semantic information of the statements and the statistics information of the database. Use the recommended indexes of all statements as the candidate index set, calculate the workload benefit of each candidate index, and recommend the index combination with the maximum benefit.
+
+-   Time series prediction and exception detection
+
+    Time series characteristics information on the host where the database is deployed can be collected and stored. This data can be used for time series prediction, for example, storage space prediction. In addition, exceptions can be detected based on the preceding data. In this way, potential problems can be detected in advance so as to take countermeasures.
+
+-   DB4AI function
+
+    DB4AI, which is compatible with the MADlib ecosystem, supports more than 70 algorithms, has performance several times higher than that of the native MADlib, and supports advanced algorithms such as XGBoost and GBDT. It implements AI tasks driven by SQL statements based on the database.
 
 -   SQL execution time prediction
 
@@ -227,17 +240,13 @@ In addition, in primary/standby deployment mode, if the read function of the sta
     2.  The workload SQL summary information includes the distribution of DDL, DCL, and DML in a workload and the number of SELECT, UPDATE, INSERT, and DELETE in DML. The SQL type distribution is the accumulated value since the last restart.
     3.  The workload SUID time summary information includes the total, average, maximum, and minimum time consumptions of SELECT, UPDATE, INSERT, and DELETE operations in a workload.
     4.  The SQL response time percentile information includes 80% and 95% of the SQL response time in the system in a past period of time.
-    5.  The Waitevents summary information contains only the event waiting information on a single node and does not contain the global aggregation information. It includes the waiting status \(STATUS\), I/O event \(IO\_EVENT\), lock event \(LOCK\_EVENT\), Lwlock event \(LWLOCK\_EVENT\), as well as the successful waiting times, failed waiting times, total event waiting time on the node, minimum event waiting time, maximum event waiting time, and average event waiting time of Lwlock event (LWLOCK_EVENT).
-    6.  For the SQL statements that are sent to the Parser, the Parser generates the normalized Unique SQL ID and the corresponding SQL text strings, collects statistics on the time consumed by unique SQL statements in each execution phase to analyze, optimizes SQL performance based on the time distribution, and collects statistics on the time consumed by instances and sessions in each phase to help optimize the overall system performance. It also queries the number of SQL execution times, SQL kernel response times, I/O times, CPU times, network transmission times, numbers of physical and logical reads, result sets returned by Select, scanned tuples, updated rows, deleted rows, inserted rows, and newly generated \(hard\) reuse \(soft\) plans.
+    5.  The Waitevents summary information contains only the event waiting information on a single node and does not contain the global aggregation information. It includes the waiting status \(STATUS\), I/O event \(IO\_EVENT\), lock event \(LOCK\_EVENT\), Lwlock event \(LWLOCK\_EVENT\), successful waiting times, failed waiting times, total event waiting time on the node, minimum event waiting time, maximum event waiting time, and average event waiting time.
+    6.  For the SQL statements that are sent to the Parser, the Parser generates the normalized Unique SQL ID and the corresponding SQL text strings, collects statistics on the time consumed by unique SQL statements in each execution phase to analyze, optimizes SQL performance based on the time distribution, and collects statistics on the time consumed by instances and sessions in each phase to help optimize the overall system performance. It also queries the number of SQL execution times, SQL kernel response time, I/O time, CPU time, network transmission time, numbers of physical and logical reads, result sets returned by Select, scanned tuples, updated rows, deleted rows, inserted rows, and newly generated \(hard\) reuse \(soft\) plans.
 
 
 ## Logical Log Replication<a name="en-us_topic_0283136537_section711182311180"></a>
 
 In logical replication, the primary database is called the source database, and the standby database is called the target database. The source database parses the WAL file based on the specified logical parsing rules and parses the DML operations into certain logical change information \(standard SQL statements\). The source database sends standard SQL statements to the target database. After receiving the SQL statements, the target database applies them to implement data synchronization. Logical replication involves only DML operations. Logical replication can implement cross-version replication, heterogeneous database replication, dual-write database replication, and table-level replication.
-
-## Stored Procedure Debugging<a name="en-us_topic_0283136537_section15847172971820"></a>
-
-Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the execution process of a stored procedure step by step and find the error causes or program bugs based on the variable values to improve the fault locating efficiency. It supports breakpoint settings and step-by-step debugging.
 
 ## Automatic WDR Performance Analysis Report<a name="en-us_topic_0283136537_section05841134181815"></a>
 

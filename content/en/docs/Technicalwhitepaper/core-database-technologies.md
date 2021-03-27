@@ -267,6 +267,24 @@ In a typical OLTP scenario, simple queries account for a large proportion. This 
 2.  Based on the ARMv8.1 architecture used by the Kunpeng chip, openGauss uses the LSE instruction set to implement efficient atomic operations, effectively improving the CPU usage, multi-thread synchronization performance, and XLog write performance.
 3.  Based on the wider L3 cacheline provided by the Kunpeng chip, openGauss optimizes hotspot data access, effectively improving the cache access hit ratio, reducing the cache consistency maintenance overhead, and greatly improving the overall data access performance of the system.
 
+### High Concurrency of the Thread Pool<a name="en-us_concept_0283138983_section166741219583"></a>
+
+In the OLTP field, a database needs to process a large quantity of client connections. Therefore, the processing capability in high-concurrency scenarios is one of the important capabilities of the database.
+
+The simplest processing mode for external connections is the per-thread-per-connection mode, in which a user connection generates a thread. This mode features simple processing thanks to its architecture. However, in high-concurrency scenarios, there are too many threads, causing heavy workload in thread switchover and large conflict between the lightweight lock areas of the database. As a result, the performance \(throughput\) deteriorates sharply and the SLA of user performance cannot be met.
+
+Therefore, a thread resource pooling and reuse technology needs to be used to resolve this problem. The overall design idea of the thread pool technology is to pool thread resources and reuse them among different connections. After the system is started, a fixed number of working threads are started based on the current number of cores or user configuration. A working thread serves one or more connection sessions. In this way, the session and thread are decoupled. The number of worker threads is fixed. Therefore, frequent thread switchover does not occur in case of high concurrency. The database layer schedules and manages sessions.
+
+### Parallel Query<a name="section660434916519"></a>
+
+The Symmetric Multi-Processing \(SMP\) parallel technology of openGauss uses the multi-core CPU architecture of a computer to implement multi-thread parallel computing, fully using CPU resources to improve query performance. In complex query scenarios, a single query execution takes long time and the system concurrency is low. Therefore, the SMP parallel execution technology is used to implement operator-level parallel execution, which effectively reduces the query execution time and improves the query performance and resource utilization. The overall implementation of the SMP parallel technology is as follows: For query operators that can be executed in parallel, data is sliced, multiple working threads are started for computation, and then the results are summarized and returned to the frontend. The data interaction operator  **Stream**  is added to SMP parallel execution to implement data interaction between multiple working threads, ensuring the correctness of the query and completing the overall query.
+
+### Dynamic Build and Execution<a name="section1335965318515"></a>
+
+Based on the query execution plan tree, with the library functions provided by the LLVM, openGauss moves the process of determining the actual execution path from the executor phase to the execution initialization phase. In this way, problems such as function calling, logic condition branch determination, and a large amount of data reading that are related to the original query execution are avoided, to improve the query performance.
+
+
+
 ## High Scalability
 
 ### High Concurrency of the Thread Pool<a name="section9726165155614"></a>
@@ -298,6 +316,16 @@ openGauss provides the logical backup capability to back up data in user tables 
 openGauss provides the physical backup capability to back up data of the entire instance to local disk files in the internal database format, and restore data of the entire instance in a homogeneous database.
 
 Physical backup is classified into full backup and incremental backup. The difference is as follows: Full backup includes the full data of the database at the backup time point. The time required for full backup is long \(in direct proportion to the total data volume of the database\), and a complete database can be restored. An incremental backup involves only incremental data modified after a specified time point. It takes a short period of time \(in direct proportion to the incremental data volume and irrelevant to the total data volume\). However, a complete database can be restored only after the incremental backup and full backup are performed. openGauss supports both full and incremental backup modes.
+
+### Ultimate RTO<a name="section277463514817"></a>
+
+After the ultimate RTO function is enabled, multi-level pipelines are established for Xlog log playback to improve the concurrency and log playback speed.
+
+When the service load is heavy, the playback speed of the standby node cannot catch up with that of the primary node. After the system runs for a long time, logs are accumulated on the standby node. If a host is faulty, data restoration takes a long time and the database is unavailable, which severely affects system availability. The ultimate recovery time object \(RTO\) is enabled to reduce the data recovery time after a host fault occurs and improve availability.
+
+### Logical Replication<a name="section43277417109"></a>
+
+openGauss provides the logical decoding function to reversely parse physical logs into logical logs. Logical replication tools such as DRS convert logical logs to SQL statements and replay the SQL statements in the peer database. In this way, data can be synchronized between heterogeneous databases. Currently, unidirectional and bidirectional logical replication between the openGauss database and the MySQL or Oracle database is supported. DNs reversely parse physical logs to logical logs. Logical replication tools such as DRS extract logical logs from DNs, convert the logs to SQL statements, and replay the SQL statements in MySQL. Logical replication tools also extract logical logs from a MySQL database, reversely parse the logs to SQL statements, and replay the SQL statements in openGauss. In this way, data can be synchronized between heterogeneous databases.
 
 ### Point-In-Time Recovery \(PITR\)
 
@@ -639,6 +667,20 @@ The account password complexity policy restricts the minimum number of uppercase
 Weak passwords are easy to crack. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
 
 The  **password\_policy**  parameter specifies whether to enable the password strength verification mechanism. The default value is  **1**, indicating that the password strength verification mechanism is enabled.
+
+### Data Encryption and Storage<a name="section13800339194113"></a>
+
+Imported data is encrypted before stored.
+
+This feature provides data encryption and decryption APIs for users and uses encryption functions to encrypt sensitive information columns identified by users, so that data can be stored in tables after being encrypted.
+
+If you need to encrypt the entire table, you need to write an encryption function for each column. Different attribute columns can use different input parameters.
+
+If a user with the required permission wants to view specific data, the user can decrypt required columns using the decryption function API.
+
+### Full Encryption<a name="section472583517127"></a>
+
+An encrypted database aims to protect privacy throughout the data lifecycle. In this way, data is always in ciphertext during transmission, computing, and storage regardless of the service scenario and environment. After the data owner encrypts data on the client and sends the encrypted data to the server, an attacker cannot obtain valuable information even if the attacker steals user data by exploiting system vulnerabilities. In this way, data privacy is protected.
 
 ## AI Capabilities
 

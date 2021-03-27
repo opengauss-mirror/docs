@@ -1,10 +1,10 @@
-# Basic Features<a name="EN-US_TOPIC_0241663020"></a>
+# Basic Features<a name="EN-US_TOPIC_0289896511"></a>
 
-## Background<a name="en-us_topic_0239777185_en-us_topic_0231764142_en-us_topic_0059779329_section107976496546"></a>
+## Context<a name="en-us_topic_0283136538_en-us_topic_0239777185_en-us_topic_0231764142_en-us_topic_0059779329_section107976496546"></a>
 
-openGauss is a standalone database. It has the basic features of relational databases as well as enhanced features.
+openGauss is a standalone database. It has the basic features of relational databases as well as enhanced features. 
 
-## Features<a name="en-us_topic_0239777185_en-us_topic_0231764142_en-us_topic_0059779329_s49fd96bd393743cd881eb12b902f1207"></a>
+## Features<a name="en-us_topic_0283136538_en-us_topic_0239777185_en-us_topic_0231764142_en-us_topic_0059779329_s49fd96bd393743cd881eb12b902f1207"></a>
 
 -   Standard SQLs
 
