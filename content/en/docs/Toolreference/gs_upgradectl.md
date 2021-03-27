@@ -1,26 +1,43 @@
-# gs\_upgradectl<a name="EN-US_TOPIC_0249632241"></a>
+# gs\_upgradectl<a name="EN-US_TOPIC_0289899212"></a>
 
-## Context<a name="en-us_topic_0237152425_en-us_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>
+## Context<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>
 
-This tool helps you upgrade the current system based on new features provided by openGauss.
+You can determine whether to upgrade the existing system based on the new features provided by the openGauss and the current database status.
 
-The upgrade mode is in-place minor version upgrade.
+Currently, in-place upgrade and gray upgrade are supported. The upgrade modes are classified into major version upgrade and minor version upgrade.
 
-In-place minor version upgrade: Services are stopped during the local upgrade, and all nodes in openGauss are upgraded at a time.
+After you select an upgrade mode, the system automatically determines and selects a proper upgrade policy.
 
-## Precautions<a name="en-us_topic_0237152425_en-us_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
+In-place upgrade: During the upgrade, services must be stopped and all nodes must be upgraded at a time.
 
--   Services must be stopped during the upgrade.
--   The openGauss is running properly and data on the database nodes is synchronized.
+Gray upgrade: supports operations on all service during the upgrade and upgrades all nodes at a time. \(This function is supported in versions later than openGauss 1.1.0.\)
+
+## Precautions<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
+
+-   Do not perform the upgrade, scale-out, and scale-in at the same time.
+-   Virtual IP addresses are not supported.
+-   During the upgrade, do not change the values of the  **wal\_level**,  **max\_connections**,  **max\_prepared\_transactions**, and  **max\_locks\_per\_transaction**  GUC parameters. If the value is changed, the instance fails to be started after the rollback.
+-   You are advised to perform upgrade when the database system is idle. You can determine the upgrade time \(for example, holidays\) based on experience.
+-   Before the upgrade, ensure that the database is normal. You can run the  **gs\_om -t status**  command to query the database status. If the value of  **cluster\_state**  in the query result is  **Normal**, the database is normal.
+-   Ensure that the database mutual trust is normal before the upgrade. You can run the  **ssh hostname**  command on any node to connect to another node for verification. If no password is required for the interconnection between hosts, the mutual trust relationship is normal. \(Generally, the mutual trust relationship is normal when the database is running properly.\)
+-   Before and after the upgrade, the database deployment mode \(configuration file\) cannot be changed. Before the upgrade, the deployment mode is verified. If the deployment mode is changed, an error is reported.
+-   Ensure that the OS is healthy before the upgrade. You can use the  **gs\_checkos**  tool to check the OS status.
+-   Services need to be stopped during in-place upgrade. Online upgrade supports all service operations.
+-   The database is running properly and data on the primary DN has been fully synchronized to standby DNs.
 -   Do not enable Kerberos during the upgrade.
 -   Do not modify the  **version.cfg**  file decompressed from the installation package.
--   Original archive log files will become invalid after the upgrade.
--   After the upgrade, the original binary directory will be deleted. Do not store personal data files in the binary directory.
--   If an exception occurs so that the upgrade fails and the automatic rollback fails as well during the upgrade process, you need to manually perform the rollback commands. After the rollback, the GUC parameters set during the upgrade become invalid.
--   During the upgrade, do not change the values of  **wal\_level**,  **max\_connections**,  **max\_prepared\_transactions**, and  **max\_locks\_per\_transaction**.
--   The upgrade can be performed only when the disk usage of the database node is lower than 50%.
+-   If the upgrade fails due to an exception, you need to manually roll back the upgrade. The next upgrade can be performed only after the rollback is successful.
+-   If the second upgrade is successful after the rollback, the GUC parameters that are set at the uncommitted stage become invalid.
+-   Do not manually set GUC parameters during the upgrade.
+-   In gray upgrade, services are interrupted for less than 10s during the upgrade.
+-   During the upgrade, ensure that the kernel version is the same as the OM version before OM operations. That is, the kernel code and OM code are from the same software package. If the preinstallation script of an upgrade package is executed but the upgrade fails or the preinstallation script of a baseline package is not executed after the upgrade rollback, the kernel code is inconsistent with the OM code.
+-   If new columns are added to the system catalog during the upgrade, you cannot view these new columns by running the  **\\d**  command after the upgrade. However, you can run the  **SELECT**  command to query the new columns.
+-   The GUC parameter  **enable\_stream\_replication**  must be set to  **on**  for the upgrade. If this parameter is set to  **off**, the upgrade is not allowed.
+-   In gray upgrade, ensure that there are less than 200 concurrent reads and 200 concurrent writes.
+-   In a cluster with one primary node and multiple standby nodes, after the cluster is upgraded to a version later than openGauss 1.1.0, if  **listen\_addresses**  in the configuration file is changed to  **'\*'**, you need to change values of  **localport**  in  **replconninfo1, ......replconninfo\***  to the original values plus 5. For example, if the original value is  **16000**, you need to change it to  **16005**. Otherwise, the cluster fails to be restarted.
+-   You are advised to perform the upgrade when the disk usage of the database node is less than 80%.
 
-## Syntax<a name="en-us_topic_0237152425_en-us_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
+## Syntax<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
 
 -   Display help information.
 
@@ -40,13 +57,10 @@ In-place minor version upgrade: Services are stopped during the local upgrade, a
     gs_upgradectl -t chose-strategy [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >Currently, in-place minor version upgrade is supported.  
-
 -   Automatically upgrade openGauss
 
     ```
-    gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE]  
+    gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
     ```
 
 -   Automatically roll back the upgrade.
@@ -61,12 +75,11 @@ In-place minor version upgrade: Services are stopped during the local upgrade, a
     gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   Upgrade submission is suitable only for in-place minor version upgrade of openGauss.  
-    >-   Once the operation is complete, the rollback operation cannot be performed.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   Once the operation is complete, the rollback operation cannot be performed.
 
 
-## Parameter Description<a name="en-us_topic_0237152425_en-us_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
+## Parameter Description<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
 
 -   -t
 
@@ -80,7 +93,7 @@ In-place minor version upgrade: Services are stopped during the local upgrade, a
 
     Value range: any existing absolute path that can be accessed
 
-    Default value:  **/var/log/gaussdb**_User name_**/om/gs\_upgradectl-YYYY-MM-DD\_hhmmss.log**
+    Default value:  **/var/log/gaussdb/**_User name_**/om/gs\_upgradectl-YYYY-MM-DD\_hhmmss.log**
 
 -   -?, --help
 
@@ -96,12 +109,16 @@ In-place minor version upgrade: Services are stopped during the local upgrade, a
 
     Value range: storage paths of XML files
 
+-   --grey
+
+    Perform gray upgrade.
+
 -   --force
 
     If openGauss is abnormal and does not support normal rollback, use this parameter to perform a forcible rollback.
 
 
-## Examples<a name="en-us_topic_0237152425_en-us_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
+## Examples<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
 
 Example 1: Use the new package to perform pre-upgrade operations.
 
@@ -159,7 +176,7 @@ Preinstallation succeeded.
 Example 2: Execute the  **gs\_upgradectl**  script to perform the upgrade.
 
 ```
-gs_upgradectl -t auto-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
+gs_upgradectl -t upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Rollback succeeded.
@@ -195,7 +212,7 @@ Once the check done, please execute following command to commit upgrade:
 Example 3: Execute the  **gs\_upgradectl**  script to perform automatic rollback on the upgrade.
 
 ```
-gs_upgradectl -t auto-rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Checking static configuration files.
@@ -220,7 +237,7 @@ Rollback succeeded.
 Example 4: Execute the  **gs\_upgradectl**  script to submit the upgrade in in-place mode.
 
 ```
-gs_upgradectl -t commit-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t commit -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Old cluster app path is /data/gauss/app_e67b8bcd
 Successfully Cleaned old install path.
 Commit binary upgrade succeeded.
