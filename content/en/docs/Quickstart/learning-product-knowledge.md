@@ -4,21 +4,36 @@ openGauss is a relational database. It uses the client/server, single-process mu
 
 ## Product Features<a name="section292105889"></a>
 
-Compared with other open-source databases, openGauss has the following features: composite application scenarios, high performance, and high availability.
-
--   Composite application scenarios
-    -   Row-store, supporting frequent service data updates
-    -   Column-store, supporting service data appending and analysis
-    -   Memory table, supporting high throughput, low latency, and ultra-high performance
+Compared with other open-source databases, openGauss has the following characteristics:
 
 -   High performance
-    -   The multi-core data structure, incremental checkpoints, and large memory buffer management are used to implement 1 million transactions per minute \(tpmC\).
-    -   The server connection pool supports tens of thousands of concurrent connections.
+    -   Provides the multi-core architecture-oriented concurrency control technology and Kunpeng hardware optimization, and achieves that the TPC-C benchmark performance reaches 1,500,000 tpmC in Kunpeng 2-socket servers.
+    -   Uses NUMA-Aware data structures as the key kernel structures to adapt to the trend of using multi-core NUMA architecture on hardware.
+    -   Provides the SQL bypass intelligent fast engine technology.
+
 
 -   High availability \(HA\)
-    -   Replication between the primary and standby nodes can be deployed in synchronous or asynchronous mode.
+    -   Supports multiple deployment modes, such as primary/standby synchronization, primary/standby asynchronization, and cascaded standby server deployment.
     -   Data page CRC check is supported. Damaged data pages are automatically restored by the standby node.
     -   The standby node recovers in parallel and can be promoted to primary to provide services within 10 seconds.
+
+
+- High security
+
+  Supports security features such as fully-encrypted computing, access control, encryption authentication, database audit, and dynamic data masking to provide comprehensive end-to-end data security protection.
+
+
+-   Easy O&M
+    -   Provides AI-based intelligent parameter tuning and index recommendation to automatically recommend AI parameters.
+    -   Provides slow SQL diagnosis and multi-dimensional self-monitoring views to help you understand system performance in real time.
+    -   Provides SQL time forecasting that supports online auto-learning.
+
+
+-   Fully open
+    -   Adopts the Mulan Permissive Software License, allowing code to be freely modified, used, and referenced.
+    -   Fully opens database kernel capabilities.
+    -   Provides excessive partner certifications, training systems, and university courses.
+    -   Compared with other open-source databases, openGauss provides multiple storage modes, NUMA-based kernel structure, and high availability.
 
 
 ## Software Architecture<a name="section14990164016812"></a>

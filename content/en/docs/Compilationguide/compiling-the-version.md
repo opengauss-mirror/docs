@@ -74,14 +74,29 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14635728598"><a name="p14635728598"></a><a name="p14635728598"></a>36.6.1</p>
 </td>
 </tr>
+<tr id="row07201041201615"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18720144111617"><a name="p18720144111617"></a><a name="p18720144111617"></a>libaio-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2720144110166"><a name="p2720144110166"></a><a name="p2720144110166"></a>0.3.109-13</p>
+</td>
+</tr>
+<tr id="row56941338161617"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p126948386168"><a name="p126948386168"></a><a name="p126948386168"></a>flex</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p56954385169"><a name="p56954385169"></a><a name="p56954385169"></a>2.5.31 or later</p>
+</td>
+</tr>
+<tr id="row18537134151611"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p135391734101615"><a name="p135391734101615"></a><a name="p135391734101615"></a>ncurses-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p553973412160"><a name="p553973412160"></a><a name="p553973412160"></a>5.9-13.20130511</p>
+</td>
+</tr>
+<tr id="row10128237131716"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1912963771719"><a name="p1912963771719"></a><a name="p1912963771719"></a>lsb_release</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14129143711712"><a name="p14129143711712"></a><a name="p14129143711712"></a>4.1</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283136302_row36571916172017"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136302_p18657151610204"><a name="en-us_topic_0283136302_p18657151610204"></a><a name="en-us_topic_0283136302_p18657151610204"></a>pam-devel</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136302_p16578161209"><a name="en-us_topic_0283136302_p16578161209"></a><a name="en-us_topic_0283136302_p16578161209"></a>1.1.8-1.3.1</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136302_row8179181610191"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136302_p101791416191912"><a name="en-us_topic_0283136302_p101791416191912"></a><a name="en-us_topic_0283136302_p101791416191912"></a>ncurses-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136302_p0179161651913"><a name="en-us_topic_0283136302_p0179161651913"></a><a name="en-us_topic_0283136302_p0179161651913"></a>5.9-13.20130511</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136302_row8539145811555"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136302_p154012589557"><a name="en-us_topic_0283136302_p154012589557"></a><a name="en-us_topic_0283136302_p154012589557"></a>libffi-devel</p>
@@ -99,6 +114,36 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18586192014810"><a name="p18586192014810"></a><a name="p18586192014810"></a>1.13.3 or later</p>
 </td>
 </tr>
+<tr id="row1128152932212"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17291829182210"><a name="p17291829182210"></a><a name="p17291829182210"></a>autoconf</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p53092915223"><a name="p53092915223"></a><a name="p53092915223"></a>2.69</p>
+</td>
+</tr>
+<tr id="row1172523915224"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1725143902212"><a name="p1725143902212"></a><a name="p1725143902212"></a>automake</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p07251739142211"><a name="p07251739142211"></a><a name="p07251739142211"></a>1.13.4</p>
+</td>
+</tr>
+<tr id="row1614183517222"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1714103562214"><a name="p1714103562214"></a><a name="p1714103562214"></a>byacc</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13141735182220"><a name="p13141735182220"></a><a name="p13141735182220"></a>1.9</p>
+</td>
+</tr>
+<tr id="row8361101702315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13361117192311"><a name="p13361117192311"></a><a name="p13361117192311"></a>cmake</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p63616179237"><a name="p63616179237"></a><a name="p63616179237"></a>3.19.2</p>
+</td>
+</tr>
+<tr id="row6332136277"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p83339361373"><a name="p83339361373"></a><a name="p83339361373"></a>diffutils</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1133414367715"><a name="p1133414367715"></a><a name="p1133414367715"></a>3.7</p>
+</td>
+</tr>
+<tr id="row142086918107"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p62105941014"><a name="p62105941014"></a><a name="p62105941014"></a>openssl-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1421039181011"><a name="p1421039181011"></a><a name="p1421039181011"></a>1.1.1</p>
+</td>
+</tr>
 <tr id="row116164361033"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76176361630"><a name="p76176361630"></a><a name="p76176361630"></a>libtool</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p161720364313"><a name="p161720364313"></a><a name="p161720364313"></a>2.4.2 or later</p>
@@ -112,8 +157,7 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 </tbody>
 </table>
 
-
-Before compiling third-party libraries, prepare GCC 7.3 and CMake 3.19.2. You are advised to use the released and compiled third-party library GCC and configure environment variables.
+Prepare GCC 7.3 before building the third-party libraries. You are advised to use the released and built third-party library GCC and configure environment variables.
 
 After installing the software listed in  [Table 1](#en-us_topic_0283136302_table1212531681911), point the default Python version to  **python3.x**  and perform the following operations:
 
@@ -261,9 +305,9 @@ Software compilation and installation are to compile code to generate software a
     make compile sucessfully!
     ```
 
-    -   The software installation path after compilation is  **/sda/openGauss-server/dest**.
-    -   The compiled binary files are stored in  **/sda/openGauss-server/dest/bin**.
-    -   Compilation log: make\_compile.log
+    -   The software installation path after compilation is  **/sda/openGauss-server/mppdb_temp_install**.
+    -   The compiled binary files are stored in  **/sda/openGauss-server/mppdb_temp_install/bin**.
+    -   Compilation log: **./build/script/makemppdb_pkg.log**
 
 
 ### Manual Compilation
@@ -382,6 +426,6 @@ To compile the installation package is to compile the code and generate the soft
     success!
     ```
 
-    -   The generated installation package is stored in the  **./package**  directory.
-    -   Compilation log: make\_compile.log
-    -   Installation package packaging log: ./package/make\_package.log
+    -   The generated installation package is stored in the  **./output**  directory.
+    -   Compilation log:**./build/script/makemppdb_pkg.log**
+    -   Installation package packaging log: **./build/script/make_package.log**
