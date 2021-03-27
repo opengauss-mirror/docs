@@ -6,12 +6,12 @@ These configuration parameters provide a crude method of influencing the query p
 
 **Parameter description**: Controls the query optimizer's use of bitmap-scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of bitmap-scan plan types is enabled.
--   **off**  indicates that the query optimizer's use of bitmap-scan plan types is disabled.
+-   **on**  indicates the query optimizer's use of bitmap-scan plan types is enabled.
+-   **off**  indicates the query optimizer's use of bitmap-scan plan types is disabled.
 
 **Default value**:  **on**
 
@@ -19,12 +19,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of BitmapAnd plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of BitmapAnd plan types is enabled.
--   **off**  indicates that the query optimizer's use of BitmapAnd plan types is disabled.
+-   **on**  indicates the query optimizer's use of BitmapAnd plan types is enabled.
+-   **off**  indicates the query optimizer's use of BitmapAnd plan types is disabled.
 
 **Default value**:  **off**
 
@@ -32,12 +32,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of Hash aggregation plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of Hash aggregation plan types is enabled.
--   **off**  indicates that the query optimizer's use of Hash aggregation plan types is disabled.
+-   **on**  indicates the query optimizer's use of Hash aggregation plan types is enabled.
+-   **off**  indicates the query optimizer's use of Hash aggregation plan types is disabled.
 
 **Default value**:  **on**
 
@@ -45,12 +45,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of Hash-join plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of Hash-join plan types is enabled.
--   **off**  indicates that the query optimizer's use of Hash-join plan types is disabled.
+-   **on**  indicates the query optimizer's use of Hash-join plan types is enabled.
+-   **off**  indicates the query optimizer's use of Hash-join plan types is disabled.
 
 **Default value**:  **on**
 
@@ -58,12 +58,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of index-scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of index-scan plan types is enabled.
--   **off**  indicates that the query optimizer's use of index-scan plan types is disabled.
+-   **on**  indicates the query optimizer's use of index-scan plan types is enabled.
+-   **off**  indicates the query optimizer's use of index-scan plan types is disabled.
 
 **Default value**:  **on**
 
@@ -71,12 +71,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of index-only-scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of index-only-scan plan types is enabled.
--   **off**  indicates that the query optimizer's use of index-only-scan plan types is disabled.
+-   **on**  indicates the query optimizer's use of index-only-scan plan types is enabled.
+-   **off**  indicates the query optimizer's use of index-only-scan plan types is disabled.
 
 **Default value**:  **on**
 
@@ -84,12 +84,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of materialization. It is impossible to suppress materialization entirely, but setting this variable to  **off**  prevents the optimizer from inserting materialized nodes.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of materialization is enabled.
--   **off**  indicates that the query optimizer's use of materialization is disabled.
+-   **on**  indicates the query optimizer's use of materialization is enabled.
+-   **off**  indicates the query optimizer's use of materialization is disabled.
 
 **Default value**:  **on**
 
@@ -97,12 +97,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of merge-join plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of merge-join plan types is enabled.
--   **off**  indicates that the query optimizer's use of merge-join plan types is disabled.
+-   **on**  indicates the query optimizer's use of merge-join plan types is enabled.
+-   **off**  indicates the query optimizer's use of merge-join plan types is disabled.
 
 **Default value**:  **off**
 
@@ -110,25 +110,25 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of nested-loop join plan types to fully scan internal tables. It is impossible to suppress nested-loop joins entirely, but setting this variable to  **off**  encourages the optimizer to choose other methods if available.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of nested-loop join plan types is enabled.
--   **off**  indicates that the query optimizer's use of nested-loop join plan types is disabled.
+-   **on**  indicates the query optimizer's use of nested-loop join plan types is enabled.
+-   **off**  indicates the query optimizer's use of nested-loop join plan types is disabled.
 
 **Default value**:  **off**
 
 ## enable\_index\_nestloop<a name="en-us_topic_0283136675_en-us_topic_0237124716_section1584803291014"></a>
 
-**Parameter description**: Controls the query optimizer's use of the nested-loop join plan types to scan the parameterized indexes of internal tables.
+**Parameter description**: Controls the query optimizer's use of the index nested-loop join plan types to scan the parameterized indexes of internal tables.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of nested-loop join plan types is enabled.
--   **off**  indicates that the query optimizer's use of nested-loop join plan types is disabled.
+-   **on**  indicates the query optimizer's use of index nested-loop join plan types is enabled.
+-   **off**  indicates the query optimizer's use of index nested-loop join plan types is disabled.
 
 **Default value**:  **on**
 
@@ -136,12 +136,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of sequential scan plan types. It is impossible to suppress sequential scans entirely, but setting this variable to  **off**  encourages the optimizer to choose other methods if available.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of sequential scan plan types is enabled.
--   **off**  indicates that the query optimizer's use of sequential scan plan types is disabled.
+-   **on**  indicates the query optimizer's use of sequential scan plan types is enabled.
+-   **off**  indicates the query optimizer's use of sequential scan plan types is disabled.
 
 **Default value**:  **on**
 
@@ -149,12 +149,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of sort methods. It is impossible to suppress explicit sorts entirely, but setting this variable to  **off**  encourages the optimizer to choose other methods if available.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of sort methods is enabled.
--   **off**  indicates that the query optimizer's use of sort methods is disabled.
+-   **on**  indicates the query optimizer's use of sort methods is enabled.
+-   **off**  indicates the query optimizer's use of sort methods is disabled.
 
 **Default value**:  **on**
 
@@ -162,12 +162,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of Tuple ID \(TID\) scan plan types.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the query optimizer's use of TID scan plan types is enabled.
--   **off**  indicates that the query optimizer's use of TID scan plan types is disabled.
+-   **on**  indicates the query optimizer's use of Tuple ID \(TID\) scan plan types is enabled.
+-   **off**  indicates the query optimizer's use of Tuple ID \(TID\) scan plan types is disabled.
 
 **Default value**:  **on**
 
@@ -175,7 +175,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: In CASCADE mode, when a user is deleted, all the objects belonging to the user are deleted. This parameter specifies whether the queries of the objects belonging to the user can be unlocked when the user is deleted.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -188,7 +188,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Controls the rule matching modes of regular expressions.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -201,7 +201,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the maximum number of  **WITH RECURSIVE**  iterations.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_
 
@@ -211,7 +211,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of vectorized executor.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -224,12 +224,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the optimizer excludes internal table running costs when selecting the Hash Join cost path. If it is set to  **on**, tables with a few records and high running costs are more possible to be selected.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the internal table running costs will be excluded.
--   **off**  indicates that the internal table running costs will not be excluded.
+-   **on**  indicates the optimizer excludes internal table running costs.
+-   **off**  indicates the optimizer does not exclude internal table running costs.
 
 **Default value**:  **off**
 
@@ -237,7 +237,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Controls whether the tablespace can use an absolute path.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -250,7 +250,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the DFS partitioned table is dynamically or statically optimized.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -265,7 +265,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 During join or aggregation operations, a Node Group can be selected in four modes. In each mode, the specified candidate computing Node Groups are listed for the optimizer to select the most appropriate one for the current operator.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -282,7 +282,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter takes effect only when  **[expected\_computing\_nodegroup](#en-us_topic_0283136675_en-us_topic_0237124716_section746841514523)**  is set to a specific Node Group.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -295,7 +295,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to enable inlist-to-join \(inlist2join\) query rewriting.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -310,7 +310,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether an optimization policy is used.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -324,9 +324,22 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the default estimated number of limit rows for generating genericplan. If this parameter is set to a positive value, the positive value is used as the estimated number of limit rows. If this parameter is set to a negative value, the negative value is converted to a percentage and used as default estimated value, that is, -5 indicates 5%.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a floating point number ranging from –100 to DBL\_MAX
 
 **Default value**:  **–10**
+
+## check\_implicit\_conversions<a name="en-us_topic_0283137548_en-us_topic_0237124743_section214364810316"></a>
+
+**Parameter description**: Specifies whether to check candidate index paths generated for index columns that have implicit type conversions in a query.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that a check will be performed for candidate index paths generated for index columns that have implicit type conversion in a query.
+-   **off**  indicates that a check will not be performed.
+
+**Default value**:  **off**
 
