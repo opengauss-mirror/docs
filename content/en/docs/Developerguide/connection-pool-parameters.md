@@ -9,7 +9,7 @@ When a connection pool is used to access the database, database connections are 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >This parameter does not take effect in this version.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_. The smallest unit is m.
 
@@ -22,7 +22,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >This parameter does not take effect in this version.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to 65535
 
@@ -32,7 +32,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to reclaim the connections of a connection pool.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 

@@ -6,7 +6,7 @@ Many platforms use the database system. External compatibility of the database s
 
 **Parameter description:**  Specifies the implicit conversion priority, which determines whether to preferentially convert strings into numbers.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -22,7 +22,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description:**  Specifies the default timestamp format.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -45,7 +45,7 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 -   The correct SQL-standard-compliant behavior of expr = NULL is to always return null \(unknown\).
 -   Filtered forms in Microsoft Access generate queries that appear to use expr = NULL to test for null values. If you turn this option on, you can use this interface to access the database.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -61,7 +61,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether extended database features are supported.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -84,14 +84,14 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**:  **A**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   This parameter can be set only when you run the  [CREATE DATABASE](en-us_topic_0289900066.md)  command to create a database.
+>-   This parameter can be set only when you run the  [CREATE DATABASE](create-database.md)  command to create a database.
 >-   In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
 
 ## behavior\_compat\_options<a name="en-us_topic_0283137574_en-us_topic_0237124754_section1980124735516"></a>
 
 **Parameter description**: Specifies database compatibility behavior. Multiple items are separated by commas \(,\).
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -123,13 +123,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_ul69601452123815"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_ul69601452123815"></a><ul id="en-us_topic_0283137574_en-us_topic_0237124754_ul69601452123815"><li>If this item is not specified, and the <strong id="b17177133120110"><a name="b17177133120110"></a><a name="b17177133120110"></a>Day</strong> of <strong id="b5183931121112"><a name="b5183931121112"></a><a name="b5183931121112"></a>param1</strong> indicates the last day of a month shorter than <strong id="b1118333151118"><a name="b1118333151118"></a><a name="b1118333151118"></a>result</strong>, the <strong id="b18183731161110"><a name="b18183731161110"></a><a name="b18183731161110"></a>Day</strong> in the calculation result will equal that in <strong id="b2184123111116"><a name="b2184123111116"></a><a name="b2184123111116"></a>param1</strong>. For example:</li></ul>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_screen568916248386"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_screen568916248386"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283137574_en-us_topic_0237124754_screen568916248386"><span id="en-us_topic_0283137574_en-us_topic_0237124754_text5945107132215"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text5945107132215"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text5945107132215"></a>postgres=# </span>select add_months('2018-02-28',3) from dual;
 add_months
----------------------
+\---------------------
 2018-05-28 00:00:00
 (1 row)</pre>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_ul165115579383"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_ul165115579383"></a><ul id="en-us_topic_0283137574_en-us_topic_0237124754_ul165115579383"><li>If this item is specified, and the <strong id="b1677511391112"><a name="b1677511391112"></a><a name="b1677511391112"></a>Day</strong> of <strong id="b47811339141119"><a name="b47811339141119"></a><a name="b47811339141119"></a>param1</strong> indicates the last day of a month shorter than <strong id="b27826399117"><a name="b27826399117"></a><a name="b27826399117"></a>result</strong>, the <strong id="b16782143917112"><a name="b16782143917112"></a><a name="b16782143917112"></a>Day</strong> in the calculation result will equal that in <strong id="b13782039121111"><a name="b13782039121111"></a><a name="b13782039121111"></a>result</strong>. For example:</li></ul>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_screen45031931103816"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_screen45031931103816"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283137574_en-us_topic_0237124754_screen45031931103816"><span id="en-us_topic_0283137574_en-us_topic_0237124754_text161501793223"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text161501793223"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text161501793223"></a>postgres=# </span>select add_months('2018-02-28',3) from dual;
 add_months
----------------------
+\---------------------
 2018-05-31 00:00:00
 (1 row)</pre>
 </td>
@@ -178,13 +178,13 @@ add_months
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_ul828544001313"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_ul828544001313"></a><ul id="en-us_topic_0283137574_en-us_topic_0237124754_ul828544001313"><li>If this item is not specified, the empty string is displayed as <strong id="b23653426014"><a name="b23653426014"></a><a name="b23653426014"></a>NULL</strong>.</li></ul>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"><span id="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"></a>postgres=# </span>select length(lpad('123',0,'*')) from dual;
 length
---------
+\--------
 
 (1 row)</pre>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_ul75590181418"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_ul75590181418"></a><ul id="en-us_topic_0283137574_en-us_topic_0237124754_ul75590181418"><li>If this item is specified, the empty string is displayed as single quotation marks ('').</li></ul>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_screen104295208294"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_screen104295208294"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283137574_en-us_topic_0237124754_screen104295208294"><span id="en-us_topic_0283137574_en-us_topic_0237124754_text171811411192213"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text171811411192213"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text171811411192213"></a>postgres=# </span>select length(lpad('123',0,'*')) from dual;
 length
---------
+\--------
 0
 (1 row)</pre>
 </td>
@@ -212,7 +212,7 @@ length
 >The string truncation function cannot be used if the INSERT statement includes a foreign table.
 >If inserting multi-byte character data \(such as Chinese characters\) to database with the character set byte encoding \(such as SQL\_ASCII or LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
