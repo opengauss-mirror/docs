@@ -4,26 +4,26 @@ This section describes the settings and value ranges of openGauss transaction pa
 
 ## transaction\_isolation<a name="en-us_topic_0283136901_en-us_topic_0237124741_en-us_topic_0059778361_s2207a1ba0779485aacfd099464414c39"></a>
 
-**Parameter description**: Specifies the isolation level of the current transaction.
+**Parameter description:**  specifies the isolation level of the current transaction.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string of case-sensitive characters. The values include:
 
--   **serializable**: This value is equivalent to REPEATABLE READ in openGauss.
--   **read committed**: Only the data in committed transactions will be read.
--   **repeatable read**: Only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
+-   **serializable**: This value is equivalent to REPEATABLE READ in GaussDB Kernel.
+-   **read committed**  indicates that only the data in committed transactions will be read.
+-   **repeatable read**  indicates that only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
 -   **default**: The value is the same as that of  **default\_transaction\_isolation**.
 
 **Default value:** **read committed**
 
 ## transaction\_read\_only<a name="en-us_topic_0283136901_en-us_topic_0237124741_en-us_topic_0059778361_safc2c3f7a6b445aca6ccaee3d9e86366"></a>
 
-**Parameter description:**  Specifies that the current transaction is a read-only transaction.
+**Parameter description**: Specifies whether the current transaction is a read-only transaction.
 
 This parameter has a fixed value  **on**  during database restoration or on the standby node. Otherwise, set this parameter to the value of  **default\_transaction\_read\_only**.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -34,14 +34,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## xc\_maintenance\_mode<a name="en-us_topic_0283136901_en-us_topic_0237124741_en-us_topic_0059778361_sb28e6b95d9d643c98ea45af34d3db730"></a>
 
-**Parameter description:**  Specifies whether the system is in maintenance mode.
+**Parameter description**: Specifies whether the system is in maintenance mode.
 
-This parameter is a SUSET parameter. Set it based on method 3 in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on method 3 in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that concurrent update is allowed.
--   **off**  indicates that concurrent update is disallowed.
+-   **on**  indicates that the system is in maintenance mode.
+-   **off**  indicates that the system is not in maintenance mode.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >Enable the maintenance mode with caution to avoid openGauss data inconsistencies.
@@ -52,35 +52,25 @@ This parameter is a SUSET parameter. Set it based on method 3 in  [Table 1](en-u
 
 **Parameter description**: Specifies whether to allow concurrent update.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that concurrent update is allowed.
--   **off**  indicates that concurrent update is disallowed.
+-   **on**  indicates that the concurrent update is allowed.
+-   **off**  indicates that the system is not in maintenance mode.
 
 **Default value**:  **on**
 
-## pgxc\_node\_name<a name="en-us_topic_0283136901_en-us_topic_0237124741_en-us_topic_0059778361_s933a523479e54c769ac6b28762cc5956"></a>
-
-**Parameter description**: Specifies the name of a node.
-
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string
-
-**Default value**: current node name
-
 ## transaction\_deferrable<a name="en-us_topic_0283136901_en-us_topic_0237124741_en-us_topic_0059778361_s0f3a7cc4a78f476390a39c0df72ec257"></a>
 
-**Parameter description:**  specifies whether to delay the execution of a read-only serial transaction without incurring an execution failure. Assume this parameter is set to  **on**. When the server detects that the tuples read by a read-only transaction are being modified by other transactions, it delays the execution of the read-only transaction until the other transactions finish modifying the tuples. Currently, this parameter is not used in openGauss. Similar to this parameter, the  [default\_transaction\_deferrable](en-us_topic_0283136752.md#en-us_topic_0237124732_en-us_topic_0059779117_s031e2bbea2cf42a5a1c24e6dbaa70365)  parameter is used to specify whether to allow delayed execution of a transaction.
+**Parameter description**: Specifies whether to delay the execution of a read-only serial transaction without incurring an execution failure. Assume this parameter is set to  **on**. When the server detects that the tuples read by a read-only transaction are being modified by other transactions, it delays the execution of the read-only transaction until the other transactions finish modifying the tuples. This parameter is reserved and does not take effect in this version. Similar to this parameter, the  **[default\_transaction\_deferrable](statement-behavior.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_s031e2bbea2cf42a5a1c24e6dbaa70365)**  parameter is used to specify whether to allow delayed execution of a transaction.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the execution of a transaction can be delayed.
--   **off**  indicates that the execution of a transaction cannot be delayed.
+-   **on**  indicates that the execution of a read-only serial transaction can be delayed.
+-   **off**  indicates that the execution of a read-only serial transaction cannot be delayed.
 
 **Default value**:  **off**
 
@@ -88,7 +78,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to forcibly use two-phase commit. This parameter is reserved for compatibility with earlier versions and is invalid in the current version.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -99,14 +89,14 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 ## enable\_show\_any\_tuples<a name="en-us_topic_0283136901_en-us_topic_0237124741_en-us_topic_0059778361_s00599c10d3824fa6a76dcf22f22f0394"></a>
 
-**Parameter description:**  This parameter is available only in a read-only transaction and is used for analysis. When this parameter is set to  **on**/**true**, all versions of tuples in the table are displayed.
+**Parameter description:**  This parameter is available only in a read-only transaction and is used for analysis. When this parameter is set to  **on**  or  **true**, all versions of tuples in the table are displayed.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on/true**  indicates that all versions of tuples in the table are displayed.
--   **off/false**  indicates that no versions of tuples in the table are displayed.
+-   **on**  or  **true**  indicates that all versions of tuples in the table are displayed.
+-   **off**  or  **false**  indicates that no versions of tuples in the table are displayed.
 
 **Default value**:  **off**
 
@@ -114,16 +104,28 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the current HA mode is standalone, primary/standby/secondary, or one primary multiple standbys.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 This parameter is an internal parameter. Do not set it.
 
-**Value range**: 0 to 3
+**Value range**: 0 to 2
 
--   **3**  is an invalid value, indicating the number of modes.
--   **2**  indicates the standalone mode.
--   **1**  indicates the one primary multiple standbys mode.
--   **0**: indicates the primary/standby/secondary mode.
+-   **2**  Indicates the single primary mode. In this mode, the standby node cannot be expanded.
+-   **1**  Indicates that the one-primary-multiple-standby mode is used, covering all scenarios. This mode is recommended.
+-   **0**  Indicates the primary/standby mode. Currently, this mode is not supported.
 
 **Default value**:  **1**
+
+## pgxc\_node\_name<a name="section145114033015"></a>
+
+**Parameter description**: Specifies the name of a node.
+
+This parameter is a POSTMASTER parameter. Set it based on  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+
+>![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>After this parameter is modified, the database instance will fail to be connected. You are advised not to modify this parameter.
+
+**Value range**: a string
+
+**Default value**: current node name
 

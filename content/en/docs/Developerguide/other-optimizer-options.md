@@ -1,10 +1,301 @@
 # Other Optimizer Options<a name="EN-US_TOPIC_0289900235"></a>
 
+## explain\_dna\_file<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s1304d3e4a6f74ad188b804c55313fb69"></a>
+
+**Parameter description:**  Sets  [explain\_perf\_mode](#en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s05e1286701bc4b8d9e1c0c9aecae3a0e)  to  **run**  to export object files in CSV format.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The value of this parameter must be an absolute path plus a file name with the extension  **.csv**.
+
+**Value range**: a string
+
+**Default value**: empty
+
+## explain\_perf\_mode<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s05e1286701bc4b8d9e1c0c9aecae3a0e"></a>
+
+**Parameter description:**  Specifies the display format of the  **explain**  command.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range:** **normal**,  **pretty**,  **summary**, and  **run**
+
+-   **normal**  indicates that the default printing format is used.
+-   **pretty**  indicates a new format improved by using openGauss. The new format contains a plan node ID, directly and effectively analyzing performance.
+-   **summary**  indicates that the analysis result on this information is printed in addition to the printed information specified by  **pretty**.
+-   **run**  indicates that the system exports the printed information specified by  **summary**  as a CSV file for further analysis.
+
+**Default value**:  **normal**
+
+## analysis\_options<a name="section1555946111017"></a>
+
+**Parameter description**: Specifies whether to enable function options in the corresponding options to use the corresponding location functions, including data verification and performance statistics. For details, see the options in the value range.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846). Use 'on\(\)' or 'off\(\)' to enable or disable a function. If a function is not specified, its value remains unchanged. The reference format is 'on\(option1, option2, ...\)'.
+
+**Value range**: a string
+
+-   **LLVM\_COMPILE**  indicates that the codegen compilation time of each thread is displayed on the explain performance page.
+-   **HASH\_CONFLICT**  indicates that the log file in the  **pg\_log**  directory of the database node process displays the hash table statistics, including the hash table size, hash chain length, and hash conflict information.
+-   **STREAM\_DATA\_CHECK**  indicates that a CRC check is performed on data before and after network data transmission.
+
+**Default value**:  **ALL,on\(\),off\(LLVM\_COMPILE,HASH\_CONFLICT,STREAM\_DATA\_CHECK\)**, which indicates that no location function is enabled.
+
+## cost\_param<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s482bb0549b2b45358aed45404d3f33cb"></a>
+
+**Parameter description:**  Controls use of different estimation methods in specific customer scenarios, allowing estimated values approximating to onsite values. This parameter can control various methods simultaneously by performing AND \(&\) on the bit of each method. A method is selected if the result value is not  **0**.
+
+When  **cost\_param & 1**  is set to a value other than 0, an improved mechanism is used for connecting the selection rate of non-equi-joins. This method is more accurate for estimating the selection rate of joins between two identical tables. At present,  **cost\_param & 1=0**  is not used. That is, a better formula is selected for calculation.
+
+When  **cost\_param & 2**  is set to a value other than  **0**, the selection rate is estimated based on multiple filter criteria. The lowest selection rate among all filter criteria, but not the product of the selection rates for two tables under a specific filter criterion, is used as the total selection rate. This method is more accurate when a close correlation exists between the columns to be filtered.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 0 to  _INT\_MAX_
+
+**Default value**:  **0**
+
+## enable\_partitionwise<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sebd2b4ea24614d058e0b9d8e8764e875"></a>
+
+**Parameter description:**  Specifies whether to select an intelligent algorithm for joining partition tables.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that an intelligent algorithm is selected.
+-   **off**  indicates that an intelligent algorithm is not selected.
+
+**Default value**:  **off**
+
+## rewrite\_rule<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_section48834236194958"></a>
+
+**Parameter description**: Specifies the rewriting rule for enabled optional queries. Some query rewrite rules are optional. Enabling them cannot always improve the query efficiency. In a specific customer scenario, you can set the query rewriting rules through this GUC parameter to achieve optimal query efficiency.
+
+This parameter can control the combination of query rewriting rules, for example, there are over one override rules: rule1, rule2, rule3, and rule4. You can perform the following settings:
+
+```
+set rewrite_rule=rule1;          -- Enable query rewriting rule rule1
+set rewrite_rule=rule2, rule3;     -- Enable the query rewriting rules rule2 and rule3
+set rewrite_rule=none;         -- Disable all optional query rewriting rules
+```
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: a string
+
+-   none: Does not use any optional query rewriting rules
+-   Lazyagg: Uses the Lazy Agg query rewriting rules for eliminating aggregation operations in subqueries
+-   magicset: Uses the Magic Set query rewriting rules delivered from the main query to the subquery.
+-   **partialpush**: Use Partial Push to query rewriting rules.
+-   **uniquecheck**: Uses the Unique Check query rewriting rules. Optimize the subquery statements in target columns without agg and check whether the number of returned rows is 1.
+-   **disablerep**: Use Disable Replicate to query the rewriting rule.
+-   **intargetlist**: Uses the In Target List query rewriting rules \(subquery optimization in the target column\).
+-   **predpushnormal**: Use the Predicate Push query rewriting rule \(push the predicate condition to the subquery\).
+-   **predpushforce**: Uses the Predicate Push query rewriting rules. Push down predicate conditions to subqueries and use indexes as much as possible for acceleration.
+-   **predpush**: Selects the optimal plan based on the cost in  **predpushnormal**  and  **predpushforce**.
+
+**Default value**:  **magicset**
+
+## enable\_pbe\_optimization<a name="en-us_topic_0283137548_en-us_topic_0237124743_section4605202011486"></a>
+
+**Parameter description**: Specifies whether the optimizer optimizes the query plan for statements executed in Parse Bind Execute \(PBE\) mode.
+
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that the optimizer optimizes the query plan.
+-   **off**  indicates that the optimizer does not optimize the execution.
+
+**Default value**:  **on**
+
+## enable\_light\_proxy<a name="en-us_topic_0283137548_en-us_topic_0237124743_section46891552174813"></a>
+
+**Parameter description**: Specifies whether the optimizer optimizes the execution of simple queries on the primary node of the databases. This parameter does not take effect if the character set of the application side does not match that of the kernel side. You are advised to set the character set to UTF8 when creating a database.
+
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that the optimizer optimizes the execution of simple queries on the primary node of the databases.
+-   **off**  indicates that the optimizer does not optimize the execution.
+
+**Default value**:  **on**
+
+## enable\_global\_plancache<a name="en-us_topic_0283137548_section1062361853620"></a>
+
+**Parameter description**: Specifies whether to share the cache of the PBE query execution plan. Enabling this function can reduce the memory usage of database nodes in high concurrency scenarios.
+
+When  **enable\_global\_plancache**  is enabled, the default value of  **local\_syscache\_threshold**  is greater than or equal to 16 MB to ensure that GPC takes effect. If the value of  **local\_syscache\_threshold**  is less than 16 MB, set it to 16 MB. If the value is greater than 16 MB, do not change it.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that the execution plan of the PBE query is shared in the cache.
+-   **off**  indicates that the execution plan of the PBE query is not shared in the cache.
+
+**Default value**:  **off**
+
+## enable\_global\_stats<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s9161437c044d473eb0de85acd35ecdb7"></a>
+
+**Parameter description**: Specifies the current statistics collection mode, which can be global statistics collection or single-node statistics collection. By default, the global statistics collection mode is used. If this parameter is set to  **off**, the statistics of the first node in openGauss are collected by default. In this case, the quality of the generated query plan may be affected. However, the information collection performance is optimal. Therefore, exercise caution when disabling this parameter.
+
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  or  **true**  indicates the global statistics mode.
+-   **off**  or  **false**  indicates the database node statistics.
+
+**Default value**:  **on**
+
+## enable\_opfusion<a name="en-us_topic_0283137548_en-us_topic_0237124743_section1473317329116"></a>
+
+**Parameter description:**  Specifies whether to optimize simple addition, deletion, modification, and query operations.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+The restrictions on simple query are as follows:
+
+-   Only indexscan and indexonlyscan are supported, and the filter criteria of all WHERE statements are on indexes.
+-   Only single tables can be added, deleted, modified, and queried. Join and using are not supported.
+-   Only row-store tables are supported. Partitioned tables and tables with triggers are not supported.
+-   Information statistics features such as active sql and QPS are not supported.
+-   Tables that are being scaled out or in are not supported.
+-   The system column cannot be queried or modified.
+-   Only simple SELECT statements are supported. For example:
+
+    ```
+    SELECT c3 FROM t1 WHERE c1 = ? and c2 =10; 
+    ```
+
+    Only columns in the target table can be queried. Columns c1 and c2 are index columns, which can be followed by constants or parameters. You can use for update.
+
+
+-   Only simple INSERT statements are supported. For example:
+
+    ```
+    INSERT INTO t1 VALUES (?,10,?); 
+    ```
+
+    Only one VALUES is supported. The type in the VALUES can be a constant or a parameter. Returning is not supported.
+
+
+-   Only simple DELETE statements are supported. For example:
+
+    ```
+    DELETE FROM t1 WHERE c1 = ? and c2 = 10;  
+    ```
+
+    Columns c1 and c2 are index columns, which can be followed by constants or parameters.
+
+
+-   Only simple UPDATE statements are supported. For example:
+
+    ```
+    UPDATE t1 SET c3 = c3+? WHERE c1 = ? and c2 = 10; 
+    ```
+
+    The values modified in column c3 can be constants, parameters, or a simple expression. Columns c1 and c2 are index columns, followed by constants or parameters.
+
+
+**Value range**: Boolean
+
+-   **on**  indicates that the performance logs are output.
+-   **off**  indicates that the performance logs are not output.
+
+**Default value**:  **off**
+
+## enable\_partition\_opfusion<a name="section336053915313"></a>
+
+**Parameter description:**  If this parameter is enabled when the enable\_opfusion parameter is enabled, the simple query of the partitioned table can be optimized to improve the SQL execution performance.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that the performance logs are output.
+-   **off**  indicates that the performance logs are not output.
+
+**Default value**:  **off**
+
+## sql\_beta\_feature<a name="section29331229203010"></a>
+
+**Parameter description**: Specifies the SQL engine's optional beta features to be enabled, including optimization of row count estimation and query equivalence estimation.
+
+These optional features provide optimization for specific scenarios, but performance deterioration may occur in some scenarios for which testing is not performed. In a specific customer scenario, you can set the query rewriting rules through this GUC parameter to achieve optimal query efficiency.
+
+This parameter determines the combination of the SQL engine's beta features, for example, feature1, feature2, feature3, and feature4. You can perform the following settings:
+
+```
+-- Enable beta feature feature1 of the SQL engine.
+set sql_beta_feature=feature1;
+-- Enable beta features feature2 and feature3 of the SQL engine.
+set sql_beta_feature=feature2,feature3;
+-- Disable all optional beta features of the SQL engine.
+set sql_beta_feature=none;           
+```
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: a string
+
+-   **none**: None of the beta optimizer features is used.
+-   **sel\_semi\_poisson**: Uses poisson distribution to calibrate the equivalent semi-join and anti-join selection rates.
+-   **sel\_expr\_instr**: Uses the matching row count estimation method to provide more accurate estimation for  **instr\(col, 'const'\) \> 0, = 0, = 1**.
+-   **param\_path\_gen**: Generates more possible parameterized paths.
+-   **rand\_cost\_opt**: Optimizes the random read cost of tables that have a small amount of data.
+-   **param\_path\_opt**: Uses the bloat ratio of the table to optimize the analyze information of indexes.
+-   **page\_est\_opt**: Optimizes the relpages estimation for the analyze information of non-column-store table indexes.
+-   no\_unique\_index\_first: Disables optimization of the primary key index scanning path first.
+-   join\_sel\_with\_cast\_func: Type conversion functions are supported when the number of join rows is estimated.
+
+**Default value**:  **none**
+
+## ngram\_gram\_size<a name="en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section27776351165838"></a>
+
+**Parameter description**: Specifies the length of the ngram parser segmentation.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 1 to 4
+
+**Default value**:  **2**
+
+## ngram\_grapsymbol\_ignore<a name="en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section58839880164334"></a>
+
+**Parameter description**: Specifies whether the ngram parser ignores graphical characters.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**: The ngram parser ignores graphical characters.
+-   **off**: The ngram parser does not ignore graphical characters.
+
+**Default value**:  **off**
+
+## ngram\_punctuation\_ignore<a name="en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section45880732164140"></a>
+
+**Parameter description**: Specifies whether the ngram parser ignores punctuations.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**: The ngram parser ignores punctuations.
+-   **off**: The ngram parser does not ignore punctuations.
+
+**Default value**:  **on**
+
 ## default\_statistics\_target<a name="en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_se18c86fcdf5e4a22870f71187436d815"></a>
 
 **Parameter description**: Specifies the default statistics target for table columns without a column-specific target set via  **ALTER TABLE SET STATISTICS**. If this parameter is set to a positive number, it indicates the number of samples of statistics information. If this parameter is set to a negative number, percentage is used to set the statistic target. The negative number converts to its corresponding percentage, for example, -5 means 5%.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:**  an integer ranging from –100 to 10000
 
@@ -22,7 +313,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls the query optimizer's use of table constraints to optimize queries.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: enumerated values
 
@@ -43,7 +334,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the optimizer's estimated fraction of a cursor's rows that are retrieved.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:**  a floating point number ranging from 0.0 to 1.0
 
@@ -56,7 +347,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the optimizer merges sub-queries into upper queries based on the resulting FROM list. The optimizer merges sub-queries into upper queries if the resulting FROM list would have no more than this many items.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to  _INT\_MAX_
 
@@ -69,13 +360,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the optimizer rewrites  **JOIN**  constructs \(except  **FULL JOIN**\) into lists of  **FROM**  items based on the number of the items in the result list.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to  _INT\_MAX_
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   Setting this parameter to  **1**  prevents join reordering. As a result, the join order specified in the query will be the actual order in which the relations are joined. The query optimizer does not always choose the optimal join order. Therefore, advanced users can temporarily set this variable to  **1**, and then specify the join order they desire explicitly.
->-   Smaller values reduce planning time but may lead to inferior execution plans.
+>-   Smaller values reduce planning time but lead to inferior execution plans.
 
 **Default value**:  **8**
 
@@ -83,7 +374,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: This is a commissioning parameter. Currently, it supports only  **OPTIMIZE\_PLAN**  and  **RANDOM\_PLAN**. The value  **0**  \(for  **OPTIMIZE\_PLAN**\) indicates the optimized plan using the dynamic planning algorithm. Other values are for  **RANDOM\_PLAN**, which indicates that the plan is randomly generated.  **–1**  indicates that users do not specify the value of the seed identifier. In this case, the optimizer generates a random integer from  **1**  to  **2147483647**  and a random execution plan based on the generated integer. A value from  **1**  to  **2147483647**  is regarded as the seed identifier, based on which the optimizer generates a random execution plan.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from –1 to 2147483647
 
@@ -97,7 +388,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the hash table size during the execution of the HASH JOIN operation.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_/2
 
@@ -107,7 +398,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether code optimization is enabled. Currently, the code optimization uses the LLVM optimization.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -124,9 +415,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the codegen optimization strategy that is used when an expression is converted to be codegen-based.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: enumerated values
+**Value range:**  enumerated values
 
 -   **partial**  indicates that even if functions that are not codegen-based exist in an expression, you can still call the LLVM dynamic optimization strategy by using the entire codegen framework of the expression.
 -   **pure**  indicates that only when all functions in an expression can be codegen-based, the LLVM dynamic optimization strategy can be called.
@@ -141,7 +432,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the LLVM IR function can be printed in logs.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -154,7 +445,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: The LLVM compilation takes some time to generate executable machine code. Therefore, LLVM compilation is beneficial only when the actual execution cost is more than the sum of the code required for generating machine code and the optimized execution cost. This parameter specifies a threshold. If the estimated execution cost exceeds the threshold, LLVM optimization is performed.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 2147483647
 
@@ -162,7 +453,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## enable\_bloom\_filter<a name="en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_s450b8159407e41fe96dc18ca298e1d16"></a>
 
-**Parameter description**: Specifies whether the BloomFilter optimization can be used. This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Parameter description**: Specifies whether the BloomFilter optimization can be used. This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -173,7 +464,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## enable\_extrapolation\_stats<a name="en-us_topic_0283137690_en-us_topic_0237124719_section251911538557"></a>
 
-**Parameter description**: Specifies whether the extrapolation logic is used for data of DATE type based on historical statistics. The logic can increase the accuracy of estimation for tables whose statistics are not collected in time, but will possibly provide an overlarge estimation due to incorrect extrapolation. Enable the logic only in scenarios where the data of DATE type is periodically inserted. This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Parameter description**: Specifies whether the extrapolation logic is used for data of DATE type based on historical statistics. The logic can increase the accuracy of estimation for tables whose statistics are not collected in time, but will possibly provide an overlarge estimation due to incorrect extrapolation. Enable the logic only in scenarios where the data of DATE type is periodically inserted. This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -184,7 +475,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## autoanalyze<a name="en-us_topic_0283137690_en-us_topic_0237124719_section114241119217"></a>
 
-**Parameter description**: Specifies whether to automatically collect statistics on tables that have no statistics when a plan is generated.  **autoanalyze**  cannot be used for foreign or temporary tables. To collect statistics, manually perform the ANALYZE operation. If an exception occurs in the database during the execution of autoanalyze on a table, after the database is recovered, the system may still prompt you to collect the statistics of the table when you run the statement again. In this case, manually perform the ANALYZE operation on the table to synchronize statistics. This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Parameter description**: Specifies whether to automatically collect statistics on tables that have no statistics when a plan is generated.  **autoanalyze**  cannot be used for foreign or temporary tables. To collect statistics, manually perform the ANALYZE operation. If an exception occurs in the database during the execution of autoanalyze on a table, after the database is recovered, the system may still prompt you to collect the statistics of the table when you run the statement again. In this case, manually perform the ANALYZE operation on the table to synchronize statistics. This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -197,7 +488,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Checks whether statistics were collected about tables whose  **reltuples**  and  **relpages**  are displayed as  **0**  in  **pg\_class**  during plan generation.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -210,7 +501,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies whether to use the hash aggregation operator designed for column-oriented hash tables when certain constraints are met.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -227,7 +518,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to use the hash join operator designed for column-oriented hash tables when certain constraints are met.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -243,9 +534,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## enable\_sonic\_optspill<a name="en-us_topic_0283137690_en-us_topic_0237124719_section8441164814169"></a>
 
-**Parameter description**: Specifies whether to optimize the number of files to be written to disks for the Hash Join operator designed for column-oriented hash tables. If this parameter is set to  **on**, the number of files written to disk does not increase significantly when the Hash Join operator writes a large number of files to disk.
+**Parameter description**: Specifies whether to optimize the number of files to be written to disks for the Hash Join operator designed for column-oriented hash tables. If this parameter is set to  **on**, the number of files written to disks does not increase significantly when the Hash Join operator writes a large number of files to disks.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -258,7 +549,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether the optimizer outputs the performance logs of the parser module.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -271,7 +562,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies whether the optimizer outputs the performance logs of the planner module.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -284,7 +575,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies whether the optimizer outputs the performance logs of the executor module.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -297,7 +588,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies whether the optimizer outputs the performance logs of a statement.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -310,7 +601,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies the policy for generating an execution plan in the  **prepare**  statement.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: enumerated values
 
@@ -337,4 +628,37 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off**  indicates that the performance logs are not output.
 
 **Default value**:  **off**
+
+## enable\_force\_vector\_engine<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_se9975818d0e24d84907a2e092ce7347f"></a>
+
+**Parameter description:**  Specifies whether to forcibly generate vectorized execution plans for a vectorized execution operator if the operator's child node is a non-vectorized operator. When this parameter is set to  **on**, vectorized execution plans are forcibly generated.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that vectorized operators are forcibly generated.
+-   **off**  indicates that the vectorized operator optimizer determines whether to perform vectorization.
+
+**Default value**:  **off**
+
+## enable\_auto\_explain<a name="section9971149594"></a>
+
+**Parameter description**: Specifies whether to enable the function of automatically printing execution plans. This parameter is used to locate slow stored procedures or slow queries and is valid only for the currently connected primary database node.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean. The value  **on**  indicates that the function is enabled, and the value  **off**  indicates that the function is disabled.
+
+**Default value**:  **off**
+
+## auto\_explain\_level<a name="section24947149514"></a>
+
+**Parameter description**: Specifies the log level for automatically printing execution plans.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Enumeration type. The value can be  **log**  or  **notice**.  **log**  indicates that the execution plan is printed in logs.  **notice**  indicates that the execution plan is printed in notification mode.
+
+**Default value**:  **log**
 
