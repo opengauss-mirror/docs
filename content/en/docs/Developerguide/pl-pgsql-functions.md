@@ -1,4 +1,4 @@
-# PL/pgSQL Functions<a name="EN-US_TOPIC_0245374598"></a>
+# PL/pgSQL Functions<a name="EN-US_TOPIC_0289901009"></a>
 
 PL/pgSQL is a loadable procedural language.
 

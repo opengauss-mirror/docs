@@ -13,7 +13,7 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
     For example, create a user  **joe**  and set the  **CREATEDB**  attribute for the user.
 
     ```
-    postgres=# CREATE USER joe WITH CREATEDB PASSWORD "Bigdata@123";
+    postgres=# CREATE USER joe WITH CREATEDB PASSWORD "xxxxxxxx";
     CREATE ROLE
     ```
 

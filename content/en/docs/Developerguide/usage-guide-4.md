@@ -1,4 +1,4 @@
-# Usage Guide<a name="EN-US_TOPIC_0289900703"></a>
+# User Guide<a name="EN-US_TOPIC_0289900703"></a>
 
 ## Prerequisites<a name="en-us_topic_0283137132_en-us_topic_0059779027_s7c2e433674384463a42b1e562a499257"></a>
 
@@ -87,7 +87,7 @@ status: prediction status
 data: 
     time: SQL statement execution time
     point: spatial point coordinate of an SQL statement
-    clister: SQL type ID
+    cluster: SQL type ID
     background: template-based model summary
         stmts: SQL statement sample of the corresponding type
         center: central point coordinate of the SQL statement of the corresponding type

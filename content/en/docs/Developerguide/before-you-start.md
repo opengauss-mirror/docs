@@ -21,7 +21,7 @@ openGauss is running properly.
     If the following information is displayed, the connection has been established:
 
     ```
-    gsql ((openGauss x.x.x build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
+    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
@@ -40,7 +40,7 @@ openGauss is running properly.
     Only administrators that are created during openGauss installation can access the initial database by default. You can also create other database users.
 
     ```
-    CREATE USER joe WITH PASSWORD "Bigdata@123";
+    CREATE USER joe WITH PASSWORD "xxxxxxxxx";
     ```
 
     If the following information is displayed, the user has been created:
@@ -49,7 +49,7 @@ openGauss is running properly.
     CREATE ROLE
     ```
 
-    In this case, you have created a user named  **joe**, and the user password is  **Bigdata@123**.
+    In this case, you have created a user named  **joe**, and the user password is **xxxxxxxxx**.
 
     **Note**: For details about how to create users, see  [Managing Users and Their Permissions](managing-users-and-their-permissions.md).
 
@@ -70,7 +70,7 @@ openGauss is running properly.
     ```
     postgres=#  \q
     gsql -d db_tpcc -p 8000 -U joe -W Bigdata@123
-    gsql ((openGauss x.x.x build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
+    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
      
