@@ -2,9 +2,9 @@
 
 ## Function<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
 
-**GRANT**  is used to grant permissions to roles and users.
+**GRANT**  grants permissions to roles and users.
 
-**GRANT**  is used in the following scenarios:
+The  **GRANT**  statement has the following variants:
 
 -   **Granting system permissions to roles or users**
 
@@ -14,7 +14,7 @@
 
 -   **Granting database object permissions to roles or users**
 
-    Grant permissions related to database objects \(tables, views, specified columns, databases, functions, schemas, and tablespaces\) to specified roles or users.
+    Grant permissions on a database object \(table, view, column, database, function, schema, or tablespace\) to a role or user.
 
     **GRANT**  gives specific permissions on a database object to one or more roles. These permissions are added to those already granted, if any.
 
@@ -22,13 +22,13 @@
 
     If  **WITH GRANT OPTION**  is specified, the recipient of the permission can in turn grant it to others. Without a grant option, the recipient cannot do that.  **GRANT**  options cannot be granted to  **PUBLIC**. Only openGauss supports this operation.
 
-    openGauss grants the permissions for objects of certain types to  **PUBLIC**. By default, permissions on tables, columns, sequences, foreign data sources, foreign servers, schemas, and tablespaces are not granted to  **PUBLIC**, but the following permissions are granted to  **PUBLIC**:  **CONNECT**  and  **CREATE TEMP TABLE**  permissions on databases,  **EXECUTE**  permission on functions, and  **USAGE**  permission on languages and data types \(including domains\). An object owner can revoke the default permissions granted to  **PUBLIC**  and grant permissions to other users as needed. For security purposes, you are advised to create an object and set its permissions in the same transaction so that other users do not have time windows to use the object. In addition, you can run the  **ALTER DEFAULT PRIVILEGES**  statement to modify the default permissions.
+    openGauss grants the permissions for objects of certain types to  **PUBLIC**. By default, permissions on tables, columns, sequences, foreign data sources, foreign servers, schemas, and tablespaces are not granted to  **PUBLIC**, but the following permissions are granted to  **PUBLIC**:  **CONNECT**  and  **CREATE TEMP TABLE**  permissions on databases,  **EXECUTE**  permission on functions, and  **USAGE**  permission on languages and data types \(including domains\). An object owner can revoke the default permissions granted to  **PUBLIC**  and grant permissions to other users as needed. For security purposes, you are advised to create an object and set its permissions in the same transaction so that other users do not have time windows to use the object. In addition, you can restrict the permissions of the  **PUBLIC**  user group by referring to t"Permission Management" in  _Security Hardening Guide_. These default permissions can be modified using the  **ALTER DEFAULT PRIVILEGES**  command.
 
     By default, an object owner has all permissions on the object. For security purposes, the owner can discard some permissions. However, the ALTER, DROP, COMMENT, INDEX, VACUUM, and re-grantable permissions of the object are inherent permissions implicitly owned by the owner.
 
--   **Granting a role's or user's permissions to other roles or users**
+-   **Granting the permissions of one role or user to others**
 
-    Grant a role's or user's permissions to one or more roles or users. In this case, every role or user can be regarded as a set of one or more database permissions.
+    Grant the permissions of one role or user to others. In this case, every role or user can be regarded as a set of one or more database permissions.
 
     If  **WITH ADMIN OPTION**  is specified, the recipients can in turn grant the permissions to other roles or users or revoke the permissions they have granted to other roles or users. If recipients' permissions are changed or revoked later, the grantees' permissions will also change.
 
@@ -41,7 +41,7 @@ None
 
 ## Syntax<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
--   Grant the table access permission to a specified user or role.
+-   Grant the table or view access permission to a user or role.
 
     ```
     GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
@@ -53,7 +53,7 @@ None
     
     ```
 
--   Grant the column access permission to a specified user or role.
+-   Grant the column access permission to a user or role.
 
     ```
     GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
@@ -74,7 +74,7 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the database access permission to a specified user or role.
+-   Grant the database access permission to a user or role.
 
     ```
     GRANT { { CREATE | CONNECT | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...]
@@ -84,7 +84,7 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the domain access permission to a specified user or role.
+-   Grant the domain access permission to a user or role.
 
     ```
     GRANT { USAGE | ALL [ PRIVILEGES ] }
@@ -94,7 +94,7 @@ None
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >The current version does not support granting the domain access permission.
+    >In the current version, the domain access permission cannot be granted.
 
 -   Grant the client master key \(CMK\) access permission to a specified user or role.
 
@@ -114,7 +114,7 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the external data source access permission to a specified user or role.
+-   Grant the foreign data source access permission to a user or role.
 
     ```
     GRANT { USAGE | ALL [ PRIVILEGES ] }
@@ -123,7 +123,7 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the external server access permission to a specified user or role.
+-   Grant the foreign server access permission to a user or role.
 
     ```
     GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -132,7 +132,7 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the function access permission to a specified user or role.
+-   Grant the function access permission to a user or role.
 
     ```
     GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -142,7 +142,7 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the procedural language access permission to a specified user or role.
+-   Grant the procedural language access permission to a user or role.
 
     ```
     GRANT { USAGE | ALL [ PRIVILEGES ] }
@@ -163,7 +163,7 @@ None
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The current version does not support granting the large object access permission.
 
--   Grant the schema access permission to a specified user or role.
+-   Grant the schema access permission to a user or role.
 
     ```
     GRANT { { CREATE | USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -175,7 +175,7 @@ None
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >When granting table or view permissions to other users, you also need to grant the  **USAGE**  permission on the containing schema. Without the  **USAGE**  permission, the recipients can only see the object names, but cannot access them.
 
--   Grant the tablespace access permission to a specified user or role.
+-   Grant the tablespace access permission to a user or role.
 
     ```
     GRANT { { CREATE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -184,7 +184,7 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the type access permission to a specified user or role.
+-   Grant the type access permission to a user or role.
 
     ```
     GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -194,9 +194,9 @@ None
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >The current version does not support granting the type access permission.
+    >In the current version, the type access permission cannot be granted.
 
--   Grant a role's permissions to other users or roles.
+-   Grant a role's permissions to another user or role.
 
     ```
     GRANT role_name [, ...]
@@ -204,7 +204,7 @@ None
        [ WITH ADMIN OPTION ];
     ```
 
--   Grant the sysadmin permissions to a specified role.
+-   Grant the  **sysadmin**  permission to a role.
 
     ```
     GRANT ALL { PRIVILEGES | PRIVILEGE }
@@ -212,7 +212,7 @@ None
     ```
 
 
--   Grant the data source permissions to a specified role.
+-   Grant the data source permission to a role.
 
     ```
     GRANT {USAGE | ALL [PRIVILEGES]}
@@ -221,7 +221,7 @@ None
     ```
 
 
--   Grant the directory permissions to a specified role.
+-   Grant the directory permission to a role.
 
     ```
     GRANT {READ|WRITE| ALL [PRIVILEGES]}
@@ -360,13 +360,13 @@ The possible permissions are:
 
 -   **arg\_name**
 
-    Parameter name.
+    Specifies the parameter name.
 
     Value range: a string. It must comply with the naming convention.
 
 -   **arg\_type**
 
-    Parameter type.
+    Specifies the parameter type.
 
     Value range: a string. It must comply with the naming convention.
 
@@ -394,7 +394,7 @@ The possible permissions are:
 
 -   **directory\_name**
 
-    Specifies the name of the directory to be deleted.
+    Specifies the directory name.
 
     Value range: a string. It must comply with the naming convention.
 
@@ -417,14 +417,14 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 
 **Example 1: Granting system permissions to a user or role**
 
-Create user  **joe**  and grant the sysadmin permissions to the user.
+Create the  **joe**  user and grant the  **sysadmin**  permissions to it.
 
 ```
-postgres=# CREATE USER joe PASSWORD 'Bigdata@123';
+postgres=# CREATE USER joe PASSWORD 'xxxxxxxxx';
 postgres=# GRANT ALL PRIVILEGES TO joe;
 ```
 
-Afterward, user  **joe**  has the sysadmin permissions.
+Then  **joe**  has the  **sysadmin**  permission.
 
 **Example 2: Granting object permissions to a user or role**
 
@@ -444,26 +444,26 @@ Afterward, user  **joe**  has the sysadmin permissions.
     postgres=# GRANT select (r_reason_sk,r_reason_id,r_reason_desc),update (r_reason_desc) ON tpcds.reason TO joe;
     ```
 
-    Then  **joe**  has the retrieve permission of  **r\_reason\_sk**  and  **r\_reason\_id**  columns in the  **tpcds.reason**  table. To enable user  **joe**  to grant these permissions to other users, execute the following statement:
+    Then  **joe**  has the retrieve permission of  **r\_reason\_sk**  and  **r\_reason\_id**  columns in the  **tpcds.reason**  table. To enable  **joe**  to grant these permissions to other users, execute the following statement:
 
     ```
     postgres=# GRANT select (r_reason_sk, r_reason_id) ON tpcds.reason TO joe WITH GRANT OPTION;
     ```
 
-    Grant the  **postgres**  database connection permission and schema creation permission to user  **joe**, and enable this user to grant these permissions to other users.
+    Grant the connection and schema creation permissions of the  **postgres**  database to  **joe**, and allow  **joe**  to grant these permissions to other users.
 
     ```
     postgres=# GRANT create,connect on database postgres TO joe WITH GRANT OPTION;
     ```
 
-    Create role  **tpcds\_manager**, grant the  **tpcds**  schema access permission and object creation permission to this role, but do not enable this role to grant these permissions to others.
+    Create the  **tpcds\_manager**  role, grant the access and object creation permissions of the  **tpcds**  schema to  **tpcds\_manager**, but do not allow  **tpcds\_manager**  to grant these permissions to others.
 
     ```
-    postgres=# CREATE ROLE tpcds_manager PASSWORD 'Bigdata@123';
+    postgres=# CREATE ROLE tpcds_manager PASSWORD 'xxxxxxxxx';
     postgres=# GRANT USAGE,CREATE ON SCHEMA tpcds TO tpcds_manager;
     ```
 
-    Grant all the permissions on the  **tpcds\_tbspc**  tablespace to user  **joe**  but do not enable this user to grant these permissions to others.
+    Grant all permissions on the  **tpcds\_tbspc**  tablespace to  **joe**, but do not allow  **joe**  to grant these permissions to others.
 
     ```
     postgres=# CREATE TABLESPACE tpcds_tbspc RELATIVE LOCATION 'tablespace/tablespace_1';
@@ -473,21 +473,21 @@ Afterward, user  **joe**  has the sysadmin permissions.
 
 **Example 3: Granting the permissions of one user or role to others**
 
-1.  Create role  **manager**, grant user  **joe**'s permissions to the created role, and enable this role to grant its permissions to others.
+1.  Create the  **manager**  role, grant  **joe**'s permissions to  **manager**, and allow  **manager**  to grant these permissions to others.
 
     ```
-    postgres=# CREATE ROLE manager PASSWORD 'Bigdata@123';
+    postgres=# CREATE ROLE manager PASSWORD 'xxxxxxxxx';
     postgres=# GRANT joe TO manager WITH ADMIN OPTION;
     ```
 
-2.  Create role  **senior\_manager**  and grant  **manager**'s permissions to  **senior\_manager**.
+2.  Create the  **senior\_manager**  user and grant  **manager**'s permissions to it.
 
     ```
-    postgres=# CREATE ROLE senior_manager PASSWORD 'Bigdata@123';
+    postgres=# CREATE ROLE senior_manager PASSWORD 'xxxxxxxxx';
     postgres=# GRANT manager TO senior_manager;
     ```
 
-3.  Revoke permissions granted to  **senior\_manager**  and  **manager**  and delete  **manager**.
+3.  Revoke permissions and delete users.
 
     ```
     postgres=# REVOKE manager FROM joe;
@@ -507,11 +507,11 @@ Afterward, user  **joe**  has the sysadmin permissions.
     postgres=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
     CREATE COLUMN ENCRYPTION KEY
     ```
-    
+
 2.  Create a role  **newuser **and grant the key permission to  **newuser**.
 
     ```
-    postgres=# CREATE USER newuser PASSWORD 'gauss@123';
+    postgres=# CREATE USER newuser PASSWORD 'xxxxxxxxx';
     CREATE ROLE
     postgres=# GRANT ALL ON SCHEMA public TO newuser;
     GRANT
@@ -524,10 +524,8 @@ Afterward, user  **joe**  has the sysadmin permissions.
 3.  Set the user to connect to a database and use a CEK to create an encrypted table.
 
     ```
-    postgres=# SET SESSION AUTHORIZATION newuser PASSWORD 'gauss@123';
+    postgres=# SET SESSION AUTHORIZATION newuser PASSWORD 'xxxxxxxxx';
     postgres=>  CREATE TABLE acltest1 (x int, x2 varchar(50) ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = MyCEK1, ENCRYPTION_TYPE = DETERMINISTIC));
-    NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'x' as the distribution column by default.
-    HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
     CREATE TABLE
     postgres=> SELECT has_cek_privilege('newuser', 'MyCEK1', 'USAGE');
      has_cek_privilege
@@ -545,7 +543,7 @@ Afterward, user  **joe**  has the sysadmin permissions.
     postgres=# DROP COLUMN ENCRYPTION KEY MyCEK1;
     postgres=# DROP CLIENT MASTER KEY MyCMK1;
     postgres=# DROP SCHEMA IF EXISTS newuser CASCADE;
-    postgres=# REVOKE ALL ON SCHEMA public FROM newuser ;
+    postgres=# REVOKE ALL ON SCHEMA public FROM newuser;
     postgres=# DROP ROLE IF EXISTS newuser;
     ```
 
@@ -565,5 +563,5 @@ postgres=# DROP USER joe CASCADE;
 
 ## Helpful Links<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
-[REVOKE](en-us_topic_0283137669.md)  and  [ALTER DEFAULT PRIVILEGES](en-us_topic_0283136687.md)
+[REVOKE](REVOKE.md)  and  [ALTER DEFAULT PRIVILEGES](alter-default-privileges.md)
 

@@ -2,19 +2,17 @@
 
 ## Function<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
 
-**CREATE TABLE**  is used to create an initially empty table in the current database. The table will be owned by the creator.
+**CREATE TABLE**  creates an initially empty table in the current database. The table will be owned by the creator.
 
 ## Precautions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
--   For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](en-us_topic_0283136748.md).
+-   For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](data-types-supported-by-column-store-tables.md).
 -   Column-store tables do not support the array.
--   Column-store tables do not support the global temporary tables.
+-   Column-store tables cannot be created as global temporary tables.
 -   It is recommended that the number of column-store tables do not exceed 1000.
--   The primary key constraint and unique constraint in the table must contain distribution keys.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
 -   Column-store tables support only  **PARTIAL CLUSTER KEY**  table-level constraints, but do not support primary and foreign key table-level constraints.
 -   Only the  **NULL**,  **NOT NULL**, and  **DEFAULT**  constant values can be used as column-store table constraints.
--   Whether column-store tables support a delta table is specified by the  [enable\_delta\_store](en-us_topic_0283136577.md#en-us_topic_0237124705_section1035224982816)  parameter. The threshold for storing data into a delta table is specified by the  **deltarow\_threshold**  parameter.
 -   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
 
 ## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
@@ -22,7 +20,7 @@
 Create a table.
 
 ```
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
     ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
         | table_constraint
         | LIKE source_table [ like_option [...] ] }
@@ -42,6 +40,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
       CHECK ( expression ) |
       DEFAULT default_expr |
       UNIQUE index_parameters |
+      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value) |
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
@@ -62,7 +61,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
     { CHECK ( expression ) |
       UNIQUE ( column_name [, ... ] ) index_parameters |
       PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] )
+      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
@@ -108,8 +107,11 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
     >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
-    >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**.
+    >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**  \(except the  **ALTER INDEX index\_name REBUILD**  command\).
     >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
+    >-   You can set the GUC parameter  **max\_active\_global\_temporary\_table**  to control whether to enable the global temporary table function. If  **max\_active\_global\_temporary\_table**  is set to  **0**, the global temporary table function is disabled.
+    >-   A temporary table is visible only to the current session. Therefore, it cannot be used together with  **\\parallel on**.
+    >-   **\\parallel on**: The temporary table does not support primary/standby switchover.
 
 -   **IF NOT EXISTS**
 
@@ -129,7 +131,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
 -   **compress\_mode**
 
-    Specifies the compression option of the table, which is only available for row-store tables. The option specifies the algorithm preferentially used by table columns.
+    Specifies whether to compress a table column. The option specifies the algorithm preferentially used by table columns. Row-store tables do not support compression.
 
     Value range:  **DELTA**,  **PREFIX**,  **DICTIONARY**,  **NUMSTR**, and  **NOCOMPRESS**
 
@@ -171,7 +173,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
 
-        Value range: 10–100
+        Value range: 10 to 100
 
     -   ORIENTATION
 
@@ -187,48 +189,49 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
             **COLUMN**  applies to the data warehouse service, which has a large amount of aggregation computing, and involves a few column operations.
 
+
         Default value:
-
+    
         If an ordinary tablespace is specified, the default is  **ROW**.
-
+    
     -   COMPRESSION
-
-        Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded.
-
+    
+        Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded. Row-store tables do not support compression.
+    
         Value range:
-
+    
         The valid values for column-store tables are  **YES**,  **NO**,  **LOW**,  **MIDDLE**, and  **HIGH**, and the default value is  **LOW**.
-
+    
     -   COMPRESSLEVEL
-
+    
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
-
+    
         Value range: 0 to 3. The default value is  **0**.
-
+    
     -   MAX\_BATCHROW
-
+    
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: 10000 to 60000. The default value is  **60000**.
-
+    
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
-
+    
     -   DELTAROW\_THRESHOLD
-
-        Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  [enable\_delta\_store](en-us_topic_0283136577.md#en-us_topic_0237124705_section1035224982816)  is set to  **on**. The parameter is only valid for column-store tables.
-
-        Value range: from 0 to 9999. The default value is  **100**.
-
+    
+        Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  **[enable\_delta\_store](en-us_topic_0289900911.md#en-us_topic_0283136577_en-us_topic_0237124705_section1035224982816)**  is set to  **on**. The parameter is only valid for column-store tables.
+    
+        Value range: 0 to 9999. The default value is  **100**.
+    
     -   VERSION
-
+    
         Specifies the version of ORC storage format.
-
+    
         Value range: 0.12. ORC 0.12 format is supported currently. More formats will be supported as the development of ORC format.
-
+    
         Default value:  **0.12**
 
 
@@ -242,7 +245,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
 -   **COMPRESS | NOCOMPRESS**
 
-    If you specify  **COMPRESS**  in the  **CREATE TABLE**  statement, the compression feature is triggered in case of a bulk  **INSERT**  operation. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed.
+    If you specify  **COMPRESS**  in the  **CREATE TABLE**  statement, the compression feature is triggered in case of a bulk  **INSERT**  operation. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed. Row-store tables do not support compression.
 
     Default value:  **NOCOMPRESS**, that is, tuple data is not compressed before storage.
 
@@ -300,9 +303,29 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 
     Only one primary key can be specified for a table.
 
+-   **REFERENCES reftable \[ \( refcolum \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(column constraint\)**
+
+    **FOREIGN KEY \( column\_name \[, ... \] \) REFERENCES reftable \[ \( refcolumn \[, ... \] \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(table constraint\)**
+
+    The foreign key constraint requires that the group consisting of one or more columns in the new table should contain and match only the referenced column values in the referenced table. If  **refcolum**  is omitted, the primary key of  **reftable**  is used. The referenced column should be the only column or primary key in the referenced table. A foreign key constraint cannot be defined between a temporary table and a permanent table.
+
+    There are three types of matching between a reference column and a referenced column:
+
+    -   **MATCH FULL**: A column with multiple foreign keys cannot be  **NULL**  unless all foreign key columns are  **NULL**.
+    -   **MATCH SIMPLE**  \(default\): Any unexpected foreign key column can be  **NULL**.
+    -   **MATCH PARTIAL**: This option is not supported currently.
+
+    In addition, when certain operations are performed on the data in the referenced table, the operations are performed on the corresponding columns in the new table.  **ON DELETE**: specifies the operations to be executed after a referenced row in the referenced table is deleted.  **ON UPDATE**: specifies the operation to be performed when the referenced column data in the referenced table is updated. Possible responses to the  **ON DELETE**  and  **ON UPDATE**  clauses are as follows:
+
+    -   **NO ACTION**  \(default\): An error indicating that the foreign key constraint is violated is reported. If the constraint is deferrable and there are still any referenced columns, this error will occur when the constraint is checked.
+    -   **RESTRICT**: An error indicating that the foreign key constraint is violated is created. It is the same as  **NO ACTION**  except that the constraint is not deferrable.
+    -   **CASCADE**: deletes any rows referencing the deleted row, or update the value of the referencing column to the new value of the referenced column, respectively.
+    -   **SET NULL**: sets the referencing column\(s\) to  **NULL**.
+    -   **SET DEFAULT**: sets the referencing column\(s\) to their default values.
+
 -   **DEFERRABLE | NOT DEFERRABLE**
 
-    They determine whether the constraint is deferrable. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction using the  **SET CONSTRAINTS**  command.  **NOT DEFERRABLE**  is the default value. Currently, only  **UNIQUE**  and  **PRIMARY KEY**  constraints accept this clause. All the other constraints are not deferrable.
+    Controls whether the constraint can be deferred. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction using the  **SET CONSTRAINTS**  command.  **NOT DEFERRABLE**  is the default value. Currently, only  **UNIQUE**  and  **PRIMARY KEY**  constraints accept this clause. All the other constraints are not deferrable.
 
 -   **PARTIAL CLUSTER KEY**
 
@@ -322,7 +345,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
     Allows selection of the tablespace in which the index associated with a  **UNIQUE**  or  **PRIMARY KEY**  constraint will be created. If not specified,  **default\_tablespace**  is consulted, or the default tablespace in the database if  **default\_tablespace**  is empty.
 
 
-## Example:<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
+## Examples<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 
 ```
 -- Create a simple table.
@@ -351,7 +374,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t2
     W_WAREHOUSE_NAME          VARCHAR(20)                   ,
     W_WAREHOUSE_SQ_FT         INTEGER                       ,
     W_STREET_NUMBER           CHAR(10)                      ,
-    W_STREET_NAME             VARCHAR(60)         DICTIONARY,
+    W_STREET_NAME             VARCHAR(60),
     W_STREET_TYPE             CHAR(15)                      ,
     W_SUITE_NUMBER            CHAR(10)                      ,
     W_CITY                    VARCHAR(60)                   ,
@@ -648,7 +671,6 @@ postgres=# CREATE TABLE tpcds.warehouse_t14
     W_GMT_OFFSET              DECIMAL(5,2),
     CONSTRAINT W_CSTR_KEY2 PRIMARY KEY(W_WAREHOUSE_SK, W_WAREHOUSE_ID)
 );
-
 -- Create a column-store table.
 postgres=# CREATE TABLE tpcds.warehouse_t15
 (
@@ -707,24 +729,6 @@ postgres=# CREATE TABLE tpcds.warehouse_t17
     W_GMT_OFFSET              DECIMAL(5,2)
 ) WITH (ORIENTATION = COLUMN, COMPRESSION=HIGH);
 
--- Define a table with compression enabled.
-postgres=# CREATE TABLE tpcds.warehouse_t18
-(
-    W_WAREHOUSE_SK            INTEGER               NOT NULL,
-    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
-    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
-    W_WAREHOUSE_SQ_FT         INTEGER                       ,
-    W_STREET_NUMBER           CHAR(10)                      ,
-    W_STREET_NAME             VARCHAR(60)                   ,
-    W_STREET_TYPE             CHAR(15)                      ,
-    W_SUITE_NUMBER            CHAR(10)                      ,
-    W_CITY                    VARCHAR(60)                   ,
-    W_COUNTY                  VARCHAR(30)                   ,
-    W_STATE                   CHAR(2)                       ,
-    W_ZIP                     CHAR(10)                      ,
-    W_COUNTRY                 VARCHAR(20)                   ,
-    W_GMT_OFFSET              DECIMAL(5,2)
-) COMPRESS;
 
 -- Define a column check constraint.
 postgres=# CREATE TABLE tpcds.warehouse_t19
@@ -764,8 +768,13 @@ postgres=# CREATE TABLE tpcds.warehouse_t20
     CONSTRAINT W_CONSTR_KEY2 CHECK(W_WAREHOUSE_SK > 0 AND W_WAREHOUSE_NAME IS NOT NULL) 
 );
 
--- Define a table. Each row in the table is stored on the database node.
-postgres=# CREATE TABLE tpcds.warehouse_t21
+-- Create a table with a foreign key constraint.
+postgres=# CREATE TABLE tpcds.city_t23
+(
+    W_CITY            VARCHAR(60)                PRIMARY KEY,
+    W_ADDRESS       TEXT                     
+);
+postgres=# CREATE TABLE tpcds.warehouse_t23
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -775,7 +784,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t21
     W_STREET_NAME             VARCHAR(60)                   ,
     W_STREET_TYPE             CHAR(15)                      ,
     W_SUITE_NUMBER            CHAR(10)                      ,
-    W_CITY                    VARCHAR(60)                   ,
+    W_CITY                    VARCHAR(60)           REFERENCES tpcds.city_t23(W_CITY),
     W_COUNTY                  VARCHAR(30)                   ,
     W_STATE                   CHAR(2)                       ,
     W_ZIP                     CHAR(10)                      ,
@@ -783,8 +792,8 @@ postgres=# CREATE TABLE tpcds.warehouse_t21
     W_GMT_OFFSET              DECIMAL(5,2)
 );
 
--- Define a hash table.
-postgres=# CREATE TABLE tpcds.warehouse_t22
+-- An alternative for the preceding syntax is as follows:
+postgres=# CREATE TABLE tpcds.warehouse_t23
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -799,8 +808,28 @@ postgres=# CREATE TABLE tpcds.warehouse_t22
     W_STATE                   CHAR(2)                       ,
     W_ZIP                     CHAR(10)                      ,
     W_COUNTRY                 VARCHAR(20)                   ,
-    W_GMT_OFFSET              DECIMAL(5,2),
-    CONSTRAINT W_CONSTR_KEY3 UNIQUE(W_WAREHOUSE_SK)
+    W_GMT_OFFSET              DECIMAL(5,2)                  ,
+    FOREIGN KEY(W_CITY) REFERENCES tpcds.city_t23(W_CITY)
+);
+
+-- Or use the following statement to specify the name of the constraint:
+postgres=# CREATE TABLE tpcds.warehouse_t23
+(
+    W_WAREHOUSE_SK            INTEGER               NOT NULL,
+    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
+    W_WAREHOUSE_NAME          VARCHAR(20)                   ,
+    W_WAREHOUSE_SQ_FT         INTEGER                       ,
+    W_STREET_NUMBER           CHAR(10)                      ,
+    W_STREET_NAME             VARCHAR(60)                   ,
+    W_STREET_TYPE             CHAR(15)                      ,
+    W_SUITE_NUMBER            CHAR(10)                      ,
+    W_CITY                    VARCHAR(60)                   ,
+    W_COUNTY                  VARCHAR(30)                   ,
+    W_STATE                   CHAR(2)                       ,
+    W_ZIP                     CHAR(10)                      ,
+    W_COUNTRY                 VARCHAR(20)                   ,
+    W_GMT_OFFSET              DECIMAL(5,2)                  ,
+    CONSTRAINT W_FORE_KEY1 FOREIGN KEY(W_CITY) REFERENCES tpcds.city_t23(W_CITY)
 );
 
 -- Add a varchar column to the tpcds.warehouse_t19 table.
@@ -823,13 +852,13 @@ postgres=# ALTER TABLE tpcds.warehouse_t19 MODIFY (W_GOODS_CATEGORY varchar(30),
 -- Add a not-null constraint to an existing column.
 postgres=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY SET NOT NULL;
 
--- Drop not-null constraints from an existing column.
+-- Remove not-null constraints from an existing column.
 postgres=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY DROP NOT NULL;
 
 -- If no partial cluster is specified in a column-store table, add a partial cluster to the table.
 postgres=# ALTER TABLE tpcds.warehouse_t17 ADD PARTIAL CLUSTER KEY(W_WAREHOUSE_SK);
 
--- View the constraint name and drop the partial cluster column of a column-store table.
+-- View the constraint name and delete the partial cluster column of a column-store table.
 postgres=# \d+ tpcds.warehouse_t17
                               Table "tpcds.warehouse_t17"
       Column       |         Type          | Modifiers | Storage  | Stats target | Description 
@@ -866,10 +895,10 @@ postgres=# ALTER TABLE tpcds.warehouse_t19 SET SCHEMA joe;
 -- Rename an existing table.
 postgres=# ALTER TABLE joe.warehouse_t19 RENAME TO warehouse_t23;
 
--- Drop a column from the warehouse_t23 table.
+-- Delete a column from the warehouse_t23 table.
 postgres=# ALTER TABLE joe.warehouse_t23 DROP COLUMN W_STREET_NAME;
 
--- Drop the tablespace, schema joe, and schema tables warehouse.
+-- Delete the tablespace, schema joe, and schema tables warehouse.
 postgres=# DROP TABLE tpcds.warehouse_t1;
 postgres=# DROP TABLE tpcds.warehouse_t2;
 postgres=# DROP TABLE tpcds.warehouse_t3;
@@ -900,7 +929,7 @@ postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
 
 ## Helpful Links<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
 
-[ALTER TABLE](en-us_topic_0283137126.md),  [DROP TABLE](en-us_topic_0283136462.md), and  [CREATE TABLESPACE](en-us_topic_0283137328.md)
+[ALTER TABLE](alter-table.md),  [DROP TABLE](drop-table.md), and  [CREATE TABLESPACE](create-table.md)
 
 ## Suggestions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_section29320865113651"></a>
 
@@ -909,39 +938,54 @@ postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   The unlogged table has no primary/standby mechanism. In case of system faults or abnormal breakpoints, data loss may occur. Therefore, the unlogged table cannot be used to store basic data.
 
 -   TEMPORARY | TEMP
-    -   A temporary table is automatically dropped at the end of a session.
-
+    
+-   A temporary table is automatically dropped at the end of a session.
+    
 -   LIKE
-    -   The new table automatically inherits all column names, data types, and not-null constraints from this table. The new table is irrelevant to the original table after the creation.
-
+    
+-   The new table automatically inherits all column names, data types, and not-null constraints from this table. The new table is irrelevant to the original table after the creation.
+    
 -   LIKE INCLUDING DEFAULTS
-    -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values null.
-
+    
+-   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values null.
+    
 -   LIKE INCLUDING CONSTRAINTS
-    -   The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
-
+    
+-   The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
+    
 -   LIKE INCLUDING INDEXES
-    -   Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
-
+    
+-   Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
+    
 -   LIKE INCLUDING STORAGE
-    -   **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
-
+    
+-   **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
+    
 -   LIKE INCLUDING COMMENTS
-    -   If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
-
+    
+-   If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
+    
 -   LIKE INCLUDING PARTITION
+
     -   If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table.
 
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >List and hash partitioned tables do not support  **LIKE INCLUDING PARTITION**.
+
 -   LIKE INCLUDING RELOPTIONS
-    -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
-
+    
+-   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
+    
 -   LIKE INCLUDING ALL
-    -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,  **INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
-
+    
+-   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,  **INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
+    
 -   ORIENTATION ROW
-    -   Creates a row-store table. Row-store applies to the OLTP service, which has many interactive transactions. An interaction involves many columns in the table. Using row-store can improve the efficiency.
-
+    
+-   Creates a row-store table. Row-store applies to the OLTP service, which has many interactive transactions. An interaction involves many columns in the table. Using row-store can improve the efficiency.
+    
 -   ORIENTATION COLUMN
+    
     -   Creates a column-store table. Column-store applies to the DWS, which has a large amount of aggregation computing, and involves a few column operations.
 
 
