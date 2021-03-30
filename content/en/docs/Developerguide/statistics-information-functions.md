@@ -383,7 +383,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_tuples\_returned\(oid\)
 
-    Description: Number of sequential row scans done if parameters are in a table or number of index entries returned if parameters are in an index
+    Description: Number of sequential row scans done if parameters are in a table or number of index scans done if parameters are in an index
 
     Return type: bigint
 
@@ -483,6 +483,12 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
+-   pg\_stat\_get\_xact\_tuples\_fetched\(oid\)
+
+    Description: Number of tuple rows scanned in a transaction.
+
+    Return type: bigint
+
 -   pg\_stat\_get\_xact\_tuples\_inserted\(oid\)
 
     Description: Number of tuple inserted into the active subtransactions related to the table.
@@ -545,7 +551,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_vacuum\_count\(oid\)
 
-    Description: Number of times a table is manually cleared
+    Description: Number of times a table is manually cleared.
 
     Return type: bigint
 
@@ -569,7 +575,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_analyze\_count\(oid\)
 
-    Description: Number of times a table is manually analyzed
+    Description: Number of times a table is manually analyzed.
 
     Return type: bigint
 
@@ -741,15 +747,9 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
--   pg\_autovac\_dbnode\(oid\)
-
-    Description: Returns the name of the dbnode performing the autovac operation on a table. If the table information is invalid or the node information is abnormal,  **NULL**  will be returned.
-
-    Return type: text
-
 -   pg\_stat\_get\_last\_data\_changed\_time\(oid\)
 
-    Description: Returns the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was performed last time on a table. The data in the  **last\_data\_changed**  column of the  [PG\_STAT\_ALL\_TABLES](en-us_topic_0283136723.md)  view is calculated by using this function. The performance of obtaining the last modification time by using the view is poor when the table has a large amount of data. In this case, you are advised to use the function.
+    Description: Returns the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was performed last time on a table. The data in the  **last\_data\_changed**  column of the  [PG\_STAT\_ALL\_TABLES](en-us_topic_0289900450.md)  view is calculated by using this function. The performance of obtaining the last modification time by using the view is poor when the table has a large amount of data. In this case, you are advised to use the function.
 
     Return type: timestamptz
 
@@ -767,7 +767,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_activity\(integer\)
 
-    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those \(excluding the  **connection\_info**  column\) in the  [PG\_STAT\_ACTIVITY](en-us_topic_0283136816.md)  view.
+    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those \(excluding the  **connection\_info**  column\) in the  [PG\_STAT\_ACTIVITY](PG_STAT_ACTIVITY)  view.
 
     Example:
 
@@ -811,7 +811,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p137484011610"><a name="en-us_topic_0283136951_p137484011610"></a><a name="en-us_topic_0283136951_p137484011610"></a>bigint</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1576062313290"><a name="en-us_topic_0283136951_p1576062313290"></a><a name="en-us_topic_0283136951_p1576062313290"></a>Thread ID of the backend</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1576062313290"><a name="en-us_topic_0283136951_p1576062313290"></a><a name="en-us_topic_0283136951_p1576062313290"></a>Backend thread ID</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row67494011161"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p107434051611"><a name="en-us_topic_0283136951_p107434051611"></a><a name="en-us_topic_0283136951_p107434051611"></a>sessionid</p>
@@ -846,14 +846,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p04341915121912"><a name="en-us_topic_0283136951_p04341915121912"></a><a name="en-us_topic_0283136951_p04341915121912"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18434101541910"><a name="en-us_topic_0283136951_p18434101541910"></a><a name="en-us_topic_0283136951_p18434101541910"></a>Text of this backend's most recent query. If <strong id="b102411640184815"><a name="b102411640184815"></a><a name="b102411640184815"></a>state</strong> is <strong id="b1524644015481"><a name="b1524644015481"></a><a name="b1524644015481"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18434101541910"><a name="en-us_topic_0283136951_p18434101541910"></a><a name="en-us_topic_0283136951_p18434101541910"></a>Text of this backend's most recent query. If <strong id="b183586738145811"><a name="b183586738145811"></a><a name="b183586738145811"></a>state</strong> is <strong id="b203765162745811"><a name="b203765162745811"></a><a name="b203765162745811"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row18561719141914"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p17857181918193"><a name="en-us_topic_0283136951_p17857181918193"></a><a name="en-us_topic_0283136951_p17857181918193"></a>waiting</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p16857121917196"><a name="en-us_topic_0283136951_p16857121917196"></a><a name="en-us_topic_0283136951_p16857121917196"></a>Boolean</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p19857121951918"><a name="en-us_topic_0283136951_p19857121951918"></a><a name="en-us_topic_0283136951_p19857121951918"></a>Whether the backend is currently waiting on a lock. If yes, the value is <strong id="b338854814488"><a name="b338854814488"></a><a name="b338854814488"></a>true</strong>.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p19857121951918"><a name="en-us_topic_0283136951_p19857121951918"></a><a name="en-us_topic_0283136951_p19857121951918"></a>Whether the backend is currently waiting on a lock. If yes, the value is <strong id="b135211609245811"><a name="b135211609245811"></a><a name="b135211609245811"></a>true</strong>.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row10811236121917"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p38111636131910"><a name="en-us_topic_0283136951_p38111636131910"></a><a name="en-us_topic_0283136951_p38111636131910"></a>xact_start</p>
@@ -861,14 +861,14 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p15811936181913"><a name="en-us_topic_0283136951_p15811936181913"></a><a name="en-us_topic_0283136951_p15811936181913"></a>timestamp with time zone</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p10812636191920"><a name="en-us_topic_0283136951_p10812636191920"></a><a name="en-us_topic_0283136951_p10812636191920"></a>Time when current transaction was started (null if no transaction is active).</p>
-    <p id="en-us_topic_0283136951_p4616541132518"><a name="en-us_topic_0283136951_p4616541132518"></a><a name="en-us_topic_0283136951_p4616541132518"></a>If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b14150101214497"><a name="b14150101214497"></a><a name="b14150101214497"></a>query_start</strong> column.</p>
+    <p id="en-us_topic_0283136951_p4616541132518"><a name="en-us_topic_0283136951_p4616541132518"></a><a name="en-us_topic_0283136951_p4616541132518"></a>If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b6602405145811"><a name="b6602405145811"></a><a name="b6602405145811"></a>query_start</strong> column.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1922445271914"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p72255527193"><a name="en-us_topic_0283136951_p72255527193"></a><a name="en-us_topic_0283136951_p72255527193"></a>query_start</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p32254522193"><a name="en-us_topic_0283136951_p32254522193"></a><a name="en-us_topic_0283136951_p32254522193"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p156675918251"><a name="en-us_topic_0283136951_p156675918251"></a><a name="en-us_topic_0283136951_p156675918251"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b719917280495"><a name="b719917280495"></a><a name="b719917280495"></a>state</strong> is not <strong id="b41995288492"><a name="b41995288492"></a><a name="b41995288492"></a>active</strong></p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p156675918251"><a name="en-us_topic_0283136951_p156675918251"></a><a name="en-us_topic_0283136951_p156675918251"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b166455651424442"><a name="b166455651424442"></a><a name="b166455651424442"></a>state</strong> is not <strong id="b166979284724442"><a name="b166979284724442"></a><a name="b166979284724442"></a>active</strong></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row165075621919"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p4651156171920"><a name="en-us_topic_0283136951_p4651156171920"></a><a name="en-us_topic_0283136951_p4651156171920"></a>backend_start</p>
@@ -882,28 +882,28 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p4451121692014"><a name="en-us_topic_0283136951_p4451121692014"></a><a name="en-us_topic_0283136951_p4451121692014"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p2982153210243"><a name="en-us_topic_0283136951_p2982153210243"></a><a name="en-us_topic_0283136951_p2982153210243"></a>Time when the <strong id="b17963459499"><a name="b17963459499"></a><a name="b17963459499"></a>state</strong> was last changed</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p2982153210243"><a name="en-us_topic_0283136951_p2982153210243"></a><a name="en-us_topic_0283136951_p2982153210243"></a>Time when the <strong id="b77158886845811"><a name="b77158886845811"></a><a name="b77158886845811"></a>state</strong> was last changed</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row167765339204"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p177683342016"><a name="en-us_topic_0283136951_p177683342016"></a><a name="en-us_topic_0283136951_p177683342016"></a>client_addr</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1277653372017"><a name="en-us_topic_0283136951_p1277653372017"></a><a name="en-us_topic_0283136951_p1277653372017"></a>inet</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p19776113312012"><a name="en-us_topic_0283136951_p19776113312012"></a><a name="en-us_topic_0283136951_p19776113312012"></a>IP address of the client connected to the backend. If this column is <strong id="b12555135011499"><a name="b12555135011499"></a><a name="b12555135011499"></a>NULL</strong>, it indicates either the client is connected via a Unix socket on the server or this is an internal process, such as <strong id="b1956085014910"><a name="b1956085014910"></a><a name="b1956085014910"></a>AUTOVACUUM</strong>.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p19776113312012"><a name="en-us_topic_0283136951_p19776113312012"></a><a name="en-us_topic_0283136951_p19776113312012"></a>IP address of the client connected to the backend. If this column is <strong id="b67211695445811"><a name="b67211695445811"></a><a name="b67211695445811"></a>NULL</strong>, it indicates either the client is connected via a Unix socket on the server or this is an internal process, such as <strong id="b135884647845811"><a name="b135884647845811"></a><a name="b135884647845811"></a>AUTOVACUUM</strong>.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1411374615201"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p4113846102013"><a name="en-us_topic_0283136951_p4113846102013"></a><a name="en-us_topic_0283136951_p4113846102013"></a>client_hostname</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p8113134610200"><a name="en-us_topic_0283136951_p8113134610200"></a><a name="en-us_topic_0283136951_p8113134610200"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p14113204692011"><a name="en-us_topic_0283136951_p14113204692011"></a><a name="en-us_topic_0283136951_p14113204692011"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b20165105310499"><a name="b20165105310499"></a><a name="b20165105310499"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b1332219558496"><a name="b1332219558496"></a><a name="b1332219558496"></a>log_hostname</strong> is enabled.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p14113204692011"><a name="en-us_topic_0283136951_p14113204692011"></a><a name="en-us_topic_0283136951_p14113204692011"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b120152363245811"><a name="b120152363245811"></a><a name="b120152363245811"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b109382145445811"><a name="b109382145445811"></a><a name="b109382145445811"></a>log_hostname</strong> is enabled.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row28681792219"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p986869102116"><a name="en-us_topic_0283136951_p986869102116"></a><a name="en-us_topic_0283136951_p986869102116"></a>client_port</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p3868691216"><a name="en-us_topic_0283136951_p3868691216"></a><a name="en-us_topic_0283136951_p3868691216"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18331162415238"><a name="en-us_topic_0283136951_p18331162415238"></a><a name="en-us_topic_0283136951_p18331162415238"></a>TCP port number that the client uses for communication with this backend (<strong id="b108301957134919"><a name="b108301957134919"></a><a name="b108301957134919"></a>-1</strong> if a Unix socket is used)</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18331162415238"><a name="en-us_topic_0283136951_p18331162415238"></a><a name="en-us_topic_0283136951_p18331162415238"></a>TCP port number that the client uses for communication with this backend (<strong id="b137159610645811"><a name="b137159610645811"></a><a name="b137159610645811"></a>-1</strong> if a Unix socket is used)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1660362882120"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p960322812212"><a name="en-us_topic_0283136951_p960322812212"></a><a name="en-us_topic_0283136951_p960322812212"></a>enqueue</p>
@@ -925,7 +925,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_activity\_with\_conninfo\(integer\)
 
-    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those in the  [PG\_STAT\_ACTIVITY](en-us_topic_0283136816.md)  view.
+    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those in the  [PG\_STAT\_ACTIVITY](PG_STAT_ACTIVITY.md)  view.
 
     Return type: setofrecord
 
@@ -938,7 +938,7 @@ Statistics information functions are divided into the following two categories: 
     </th>
     <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136951_p107253241511"><a name="en-us_topic_0283136951_p107253241511"></a><a name="en-us_topic_0283136951_p107253241511"></a>Return Type</p>
     </th>
-    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136951_p1873153219152"><a name="en-us_topic_0283136951_p1873153219152"></a><a name="en-us_topic_0283136951_p1873153219152"></a>Description</p>
+    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136951_p1873153219152"><a name="en-us_topic_0283136951_p1873153219152"></a><a name="en-us_topic_0283136951_p1873153219152"></a>Return value description</p>
     </th>
     </tr>
     </thead>
@@ -953,7 +953,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p111241997383"><a name="en-us_topic_0283136951_p111241997383"></a><a name="en-us_topic_0283136951_p111241997383"></a>bigint</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p19124691389"><a name="en-us_topic_0283136951_p19124691389"></a><a name="en-us_topic_0283136951_p19124691389"></a>Thread ID of the backend</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p19124691389"><a name="en-us_topic_0283136951_p19124691389"></a><a name="en-us_topic_0283136951_p19124691389"></a>Backend thread ID</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row474113291510"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p474173213157"><a name="en-us_topic_0283136951_p474173213157"></a><a name="en-us_topic_0283136951_p474173213157"></a>sessionid</p>
@@ -988,7 +988,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p2065914714188"><a name="en-us_topic_0283136951_p2065914714188"></a><a name="en-us_topic_0283136951_p2065914714188"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p826110558358"><a name="en-us_topic_0283136951_p826110558358"></a><a name="en-us_topic_0283136951_p826110558358"></a>Text of this backend's most recent query. If <strong id="b227484615510"><a name="b227484615510"></a><a name="b227484615510"></a>state</strong> is <strong id="b1027984610510"><a name="b1027984610510"></a><a name="b1027984610510"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p826110558358"><a name="en-us_topic_0283136951_p826110558358"></a><a name="en-us_topic_0283136951_p826110558358"></a>Text of this backend's most recent query. If <strong id="b288476535"><a name="b288476535"></a><a name="b288476535"></a>state</strong> is <strong id="b747386137"><a name="b747386137"></a><a name="b747386137"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1112454181810"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1812654141816"><a name="en-us_topic_0283136951_p1812654141816"></a><a name="en-us_topic_0283136951_p1812654141816"></a>waiting</p>
@@ -1002,14 +1002,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p3601175851814"><a name="en-us_topic_0283136951_p3601175851814"></a><a name="en-us_topic_0283136951_p3601175851814"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p791672733514"><a name="en-us_topic_0283136951_p791672733514"></a><a name="en-us_topic_0283136951_p791672733514"></a>Time when current transaction was started (null if no transaction is active). If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b067416635210"><a name="b067416635210"></a><a name="b067416635210"></a>query_start</strong> column.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p791672733514"><a name="en-us_topic_0283136951_p791672733514"></a><a name="en-us_topic_0283136951_p791672733514"></a>Time when current transaction was started (null if no transaction is active). If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b919055665"><a name="b919055665"></a><a name="b919055665"></a>query_start</strong> column.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row371718291910"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1871719261916"><a name="en-us_topic_0283136951_p1871719261916"></a><a name="en-us_topic_0283136951_p1871719261916"></a>query_start</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p17171826194"><a name="en-us_topic_0283136951_p17171826194"></a><a name="en-us_topic_0283136951_p17171826194"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p193581715153516"><a name="en-us_topic_0283136951_p193581715153516"></a><a name="en-us_topic_0283136951_p193581715153516"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b98561011175214"><a name="b98561011175214"></a><a name="b98561011175214"></a>state</strong> is not <strong id="b10861611185214"><a name="b10861611185214"></a><a name="b10861611185214"></a>active</strong></p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p193581715153516"><a name="en-us_topic_0283136951_p193581715153516"></a><a name="en-us_topic_0283136951_p193581715153516"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b352678312"><a name="b352678312"></a><a name="b352678312"></a>state</strong> is not <strong id="b1009762811"><a name="b1009762811"></a><a name="b1009762811"></a>active</strong></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row342571181911"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1942501101911"><a name="en-us_topic_0283136951_p1942501101911"></a><a name="en-us_topic_0283136951_p1942501101911"></a>backend_start</p>
@@ -1023,7 +1023,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p7818125115208"><a name="en-us_topic_0283136951_p7818125115208"></a><a name="en-us_topic_0283136951_p7818125115208"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p158185514208"><a name="en-us_topic_0283136951_p158185514208"></a><a name="en-us_topic_0283136951_p158185514208"></a>Time when the <strong id="b6212151815213"><a name="b6212151815213"></a><a name="b6212151815213"></a>state</strong> was last changed</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p158185514208"><a name="en-us_topic_0283136951_p158185514208"></a><a name="en-us_topic_0283136951_p158185514208"></a>Time when the <strong id="b915631470"><a name="b915631470"></a><a name="b915631470"></a>state</strong> was last changed</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1956611310248"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p105678312411"><a name="en-us_topic_0283136951_p105678312411"></a><a name="en-us_topic_0283136951_p105678312411"></a>client_addr</p>
@@ -1037,14 +1037,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p7402125717322"><a name="en-us_topic_0283136951_p7402125717322"></a><a name="en-us_topic_0283136951_p7402125717322"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p114021557193219"><a name="en-us_topic_0283136951_p114021557193219"></a><a name="en-us_topic_0283136951_p114021557193219"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b9135182814528"><a name="b9135182814528"></a><a name="b9135182814528"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b17868528135217"><a name="b17868528135217"></a><a name="b17868528135217"></a>log_hostname</strong> is enabled.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p114021557193219"><a name="en-us_topic_0283136951_p114021557193219"></a><a name="en-us_topic_0283136951_p114021557193219"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b1871992520"><a name="b1871992520"></a><a name="b1871992520"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b1397491959"><a name="b1397491959"></a><a name="b1397491959"></a>log_hostname</strong> is enabled.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1119736182610"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p51977652616"><a name="en-us_topic_0283136951_p51977652616"></a><a name="en-us_topic_0283136951_p51977652616"></a>client_port</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p21973672616"><a name="en-us_topic_0283136951_p21973672616"></a><a name="en-us_topic_0283136951_p21973672616"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p191971667265"><a name="en-us_topic_0283136951_p191971667265"></a><a name="en-us_topic_0283136951_p191971667265"></a>TCP port number that the client uses for communication with this backend (<strong id="b1614013294521"><a name="b1614013294521"></a><a name="b1614013294521"></a>-1</strong> if a Unix socket is used)</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p191971667265"><a name="en-us_topic_0283136951_p191971667265"></a><a name="en-us_topic_0283136951_p191971667265"></a>TCP port number that the client uses for communication with this backend (<strong id="b231139243"><a name="b231139243"></a><a name="b231139243"></a>-1</strong> if a Unix socket is used)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row428083319266"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p5281103322619"><a name="en-us_topic_0283136951_p5281103322619"></a><a name="en-us_topic_0283136951_p5281103322619"></a>enqueue</p>
@@ -1092,7 +1092,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1742611310413"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742611310413"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742611310413"></a>oid</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a>User ID. </p>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a>User ID.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row7426039410"><td class="cellrowborder" valign="top" width="14.6%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p10426203540"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p10426203540"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p10426203540"></a>min_curr_iops</p>
@@ -1106,35 +1106,35 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p20426831246"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p20426831246"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p20426831246"></a>int4</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1742603448"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742603448"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742603448"></a>Maximum I/O of the current user across database nodes. The IOPS is counted by ones for column storage and by thousands for row storage.</p>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1742603448"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742603448"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742603448"></a>Maximum I/O of the current user across database nodes. The IOPS is counted by ones for column storage and by ten thousands for row storage.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row542653546"><td class="cellrowborder" valign="top" width="14.6%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p19426637419"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p19426637419"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p19426637419"></a>min_peak_iops</p>
     </td>
     <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p44261318416"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p44261318416"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p44261318416"></a>int4</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p154268319410"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p154268319410"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p154268319410"></a>Minimum peak I/O of the current user across database nodes. The IOPS is counted by ones for column storage and by thousands for row storage.</p>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p154268319410"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p154268319410"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p154268319410"></a>Minimum peak I/O of the current user across database nodes. The IOPS is counted by ones for column storage and by ten thousands for row storage.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row3426933419"><td class="cellrowborder" valign="top" width="14.6%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1942620314416"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1942620314416"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1942620314416"></a>max_peak_iops</p>
     </td>
     <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p34263312418"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p34263312418"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p34263312418"></a>int4</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p242615310414"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p242615310414"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p242615310414"></a>Maximum peak I/O of the current user across database nodes. The IOPS is counted by ones for column storage and by thousands for row storage.</p>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p242615310414"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p242615310414"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p242615310414"></a>Maximum peak I/O of the current user across database nodes. The IOPS is counted by ones for column storage and by ten thousands for row storage.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row4426834414"><td class="cellrowborder" valign="top" width="14.6%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p14427731047"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p14427731047"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p14427731047"></a>io_limits</p>
     </td>
     <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p104271831643"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p104271831643"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p104271831643"></a>int4</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p3427331643"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p3427331643"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p3427331643"></a><strong id="b6606103201514"><a name="b6606103201514"></a><a name="b6606103201514"></a>io_limits</strong> set for the resource pool specified by the user. The IOPS is counted by ones for column storage and by thousands for row storage.</p>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p3427331643"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p3427331643"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p3427331643"></a><strong id="b19248111618181"><a name="b19248111618181"></a><a name="b19248111618181"></a>io_limits</strong> set for the resource pool specified by the user. The IOPS is counted by ones for column storage and by ten thousands for row storage.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row942753841"><td class="cellrowborder" valign="top" width="14.6%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p84272316419"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p84272316419"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p84272316419"></a>io_priority</p>
     </td>
     <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p74271935417"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p74271935417"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p74271935417"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"></a><strong id="b10606932191517"><a name="b10606932191517"></a><a name="b10606932191517"></a>io_priority</strong> set for the user. The IOPS is counted by ones for column storage and by thousands for row storage.</p>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"></a><strong id="b14427181911811"><a name="b14427181911811"></a><a name="b14427181911811"></a>io_priority</strong> set for the user. The IOPS is counted by ones for column storage and by ten thousands for row storage.</p>
     </td>
     </tr>
     </tbody>
@@ -1214,7 +1214,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_backend\_client\_port\(integer\)
 
-    Description: TCP port number of the client connected to the given server process If the connection is over a Unix domain socket,  **–1**  will be returned. If the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
+    Description: TCP port number of the client connected to the given server process. If the connection is over a Unix domain socket,  **-1**  will be returned. If the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
 
     Return type: integer
 
@@ -1272,12 +1272,6 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: void
 
--   gs\_stat\_reset\(\)
-
-    Description: Resets all statistics counters for the current database on each node to zero \(requires system administrator permissions\).
-
-    Return type: void
-
 -   pg\_stat\_reset\_shared\(text\)
 
     Description: Resets all statistics counters for the current database in each node in a shared cluster to zero \(requires system administrator permissions\).
@@ -1299,18 +1293,6 @@ Statistics information functions are divided into the following two categories: 
 -   pg\_stat\_session\_cu\(int, int, int\)
 
     Description: Obtains the compression unit \(CU\) hit statistics of sessions running on the current node.
-
-    Return type: record
-
--   gs\_get\_stat\_session\_cu\(text, int, int, int\)
-
-    Description: Obtains the CU hit statistics of all running sessions in openGauss.
-
-    Return type: record
-
--   gs\_get\_stat\_db\_cu\(text, text, int, int, int\)
-
-    Description: Obtains the CU hit statistics of a database in openGauss.
 
     Return type: record
 
@@ -1343,18 +1325,6 @@ Statistics information functions are divided into the following two categories: 
     Description: Obtains the times CU is synchronously read from a disk by a database of the current node.
 
     Return type: bigint
-
--   pgxc\_get\_wlm\_current\_instance\_info\(text, int default null\)
-
-    Description: Queries the current resource usage on the primary database node and reads the data that is not stored in section "5.19.2.3 GS\_WLM\_INSTANCE\_HISTORY" system catalog in the memory. The input parameters are the node name \(**ALL**,  **C**,  **D**, or  _instance name_\) and the maximum number of records returned by each node. The returned value is  **GS\_WLM\_INSTANCE\_HISTORY**.
-
-    Return type: setofrecord
-
--   pgxc\_get\_wlm\_history\_instance\_info\(text, TIMESTAMP, TIMESTAMP, int default null\)
-
-    Description: Queries the historical resource usage on the primary database node and reads the data in section "GS\_WLM\_INSTANCE\_HISTORY" system catalog in the memory. The input parameters are as follows: node name \(**ALL**,  **C**,  **D**, or  _instance name_\), start time, end time, and maximum number of records returned for each instance. The returned value is  **GS\_WLM\_INSTANCE\_HISTORY**.
-
-    Return type: setofrecord
 
 -   fenced\_udf\_process\(\)
 
@@ -1408,12 +1378,12 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    The following table describes return fields.
+    The command output is as follows:
 
     <a name="en-us_topic_0283136951_en-us_topic_0237121998_table1560939125613"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_en-us_topic_0237121998_row260919925618"><th class="cellrowborder" valign="top" width="26.37736226377362%" id="mcps1.1.4.1.1"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p17610179175619"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17610179175619"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17610179175619"></a>Attribute</p>
     </th>
-    <th class="cellrowborder" valign="top" width="28.44715528447155%" id="mcps1.1.4.1.2"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p361013935612"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p361013935612"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p361013935612"></a>Attribute Value</p>
+    <th class="cellrowborder" valign="top" width="28.44715528447155%" id="mcps1.1.4.1.2"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p361013935612"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p361013935612"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p361013935612"></a>Value</p>
     </th>
     <th class="cellrowborder" valign="top" width="45.175482451754824%" id="mcps1.1.4.1.3"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p461011975616"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p461011975616"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p461011975616"></a>Description</p>
     </th>
@@ -1423,7 +1393,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="28.44715528447155%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p161020985611"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p161020985611"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p161020985611"></a>class_a:workload_a1</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p196108914566"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p196108914566"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p196108914566"></a>Name of class and workload</p>
+    <td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p196108914566"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p196108914566"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p196108914566"></a>Class name and workload name</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row06106985619"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p7610149125612"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7610149125612"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7610149125612"></a>class</p>
@@ -1479,7 +1449,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="28.44715528447155%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p37074160581"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p37074160581"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p37074160581"></a>0-3</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p17078161586"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17078161586"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17078161586"></a>CPU cores</p>
+    <td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p17078161586"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17078161586"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17078161586"></a>Number of CPU cores</p>
     </td>
     </tr>
     </tbody>
@@ -1506,7 +1476,7 @@ Statistics information functions are divided into the following two categories: 
     <a name="en-us_topic_0283136951_en-us_topic_0237121998_table11596620133817"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_en-us_topic_0237121998_row2596020173814"><th class="cellrowborder" valign="top" width="26.37736226377362%" id="mcps1.1.4.1.1"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p859672013382"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p859672013382"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p859672013382"></a>Attribute</p>
     </th>
-    <th class="cellrowborder" valign="top" width="28.357164283571645%" id="mcps1.1.4.1.2"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p65961920183815"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65961920183815"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65961920183815"></a>Attribute Value</p>
+    <th class="cellrowborder" valign="top" width="28.357164283571645%" id="mcps1.1.4.1.2"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p65961920183815"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65961920183815"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65961920183815"></a>Value</p>
     </th>
     <th class="cellrowborder" valign="top" width="45.26547345265474%" id="mcps1.1.4.1.3"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p0597320123812"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p0597320123812"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p0597320123812"></a>Description</p>
     </th>
@@ -1523,42 +1493,42 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p16597420133810"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p16597420133810"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p16597420133810"></a>4</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p182501441478"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p182501441478"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p182501441478"></a>Number of front-end transactions that were committed</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p182501441478"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p182501441478"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p182501441478"></a>Number of frontend transactions that were committed</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row1259720206381"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1559722013812"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1559722013812"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1559722013812"></a>rollback_counter</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p155971720163818"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p155971720163818"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p155971720163818"></a>1</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1924994424720"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1924994424720"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1924994424720"></a>Number of front-end transactions that were rolled back</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1924994424720"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1924994424720"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1924994424720"></a>Number of frontend transactions that were rolled back</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row12597820153817"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p17597520103816"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17597520103816"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17597520103816"></a>resp_min</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p4597420193815"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p4597420193815"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p4597420193815"></a>949</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p824864494710"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p824864494710"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p824864494710"></a>Minimum response time of front-end transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p824864494710"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p824864494710"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p824864494710"></a>Minimum response time of frontend transactions (unit: μs)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row95971020153817"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1259719206384"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1259719206384"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1259719206384"></a>resp_max</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p205984208383"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p205984208383"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p205984208383"></a>201891</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p224704444712"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p224704444712"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p224704444712"></a>Maximum response time of front-end transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p224704444712"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p224704444712"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p224704444712"></a>Maximum response time of frontend transactions (unit: μs)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row95981320153810"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p10598192063818"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p10598192063818"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p10598192063818"></a>resp_avg</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1059832019385"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1059832019385"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1059832019385"></a>43564</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p7246174414712"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7246174414712"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7246174414712"></a>Average response time of front-end transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p7246174414712"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7246174414712"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7246174414712"></a>Average response time of frontend transactions (unit: μs)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row1059822014389"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p18598420103816"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p18598420103816"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p18598420103816"></a>resp_total</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p65985207388"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65985207388"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65985207388"></a>217822</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1224584413477"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1224584413477"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1224584413477"></a>Total response time of front-end transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1224584413477"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1224584413477"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1224584413477"></a>Total response time of frontend transactions (unit: μs)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row159852013380"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p135981420193810"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p135981420193810"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p135981420193810"></a>bg_commit_counter</p>
@@ -1615,7 +1585,7 @@ Statistics information functions are divided into the following two categories: 
     <a name="en-us_topic_0283136951_en-us_topic_0237121998_table1149417513587"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_en-us_topic_0237121998_row17494175195812"><th class="cellrowborder" valign="top" width="26.37736226377363%" id="mcps1.1.4.1.1"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p5494751165810"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p5494751165810"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p5494751165810"></a>Stat_name Attribute</p>
     </th>
-    <th class="cellrowborder" valign="top" width="25.317468253174685%" id="mcps1.1.4.1.2"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1049411514586"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1049411514586"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1049411514586"></a>Attribute Value</p>
+    <th class="cellrowborder" valign="top" width="25.317468253174685%" id="mcps1.1.4.1.2"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1049411514586"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1049411514586"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1049411514586"></a>Value</p>
     </th>
     <th class="cellrowborder" valign="top" width="48.3051694830517%" id="mcps1.1.4.1.3"><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1349455114584"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1349455114584"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1349455114584"></a>Description</p>
     </th>
@@ -1708,7 +1678,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   reset\_unique\_sql\(text, text, bigint\)
 
-    Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be** global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
+    Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be **global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
 
     Return type: Boolean
 
@@ -1724,9 +1694,9 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   get\_instr\_rt\_percentile\(\)
+-   get\_instr\_rt\_percentile\(integer\)
 
-    Description: Obtains the response time distribution for 80% and 95% SQL statements in the CCN node. This information of openGauss is stored on the CCN node. The query result from other nodes is  **0**.
+    Description: Obtains the SQL response time P80 and P95 distribution information of the database.
 
     Return type: record
 
@@ -1793,18 +1763,6 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   gs\_session\_memory\_detail\_tp\(\)
-
-    Description: Collects statistics about thread memory usage by MemoryContext node. When  **enable\_thread\_pool**  is set to  **on**, this view contains memory usage of all threads and sessions.
-
-    Return type: record
-
--   reate\_wlm\_operator\_info\(int flag\)
-
-    Description: Clears top SQL operator-level statistics recorded in the current memory. If the input parameter is greater than 0, the information is archived to  **gs\_wlm\_operator\_info**  and  **gs\_wlm\_ec\_operator\_info**. Otherwise, the information is not archived. Only the administrator can execute this function.
-
-    Return type: int
-
 -   create\_wlm\_session\_info\(int flag\)
 
     Description: Clears top SQL query statement-level statistics recorded in the current memory. Only the administrator can execute this function.
@@ -1841,12 +1799,6 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   gs\_wlm\_persisitent\_user\_resource\_info\(\)
-
-    Description: Archives all user resource usage statistics to the  **gs\_wlm\_user\_resource\_history**  system catalog.
-
-    Return type: record
-
 -   gs\_wlm\_readjust\_user\_space\(\)
 
     Description: Corrects the storage space usage of all users. Only the administrator can execute this function.
@@ -1879,103 +1831,6 @@ Statistics information functions are divided into the following two categories: 
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_total\_nodegroup\_memory\_detail
-
-    Description: Returns information about the memory used by the current logical cluster in the database, in MB.
-
-    Return type: SETOF record
-
--   global\_comm\_client\_info\(\)
-
-    Description: Queries information about active client connections of global nodes. For details about the columns returned by the function, see the  **COMM\_CLIENT\_INFO**  column.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_ec\_operator\_history\(\)
-
-    Description: Displays the operator information when the execution of ExtensionConnector \(EC\) jobs cached on all primary nodes is complete. The information is cleared every 3 minutes. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_ec\_operator\_info\(\)
-
-    Description: Displays the operator information when the execution of ExtensionConnector \(EC\) jobs on all primary nodes is complete. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_ec\_operator\_statistics\(\)
-
-    Description: Displays the operator information when ExtensionConnector \(EC\) jobs on all primary nodes are being executed. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_operator\_history\(\)
-
-    Description: Displays the operator information when the execution of jobs cached on all primary nodes is complete. The information is cleared every 3 minutes. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_operator\_info\(\)
-
-    Description: Displays the operator information when the execution of jobs on all primary nodes is complete. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_operator\_statistics\(\)
-
-    Description: Displays the operator information when jobs on all primary nodes are being executed. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_session\_history\(\)
-
-    Description: Displays the load management information when the execution of jobs cached on all primary nodes is complete. The information is cleared every 3 minutes. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_session\_info\(\)
-
-    Description: Displays the load management information when the execution of jobs cached on all primary nodes is complete. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_get\_wlm\_session\_info\_bytime\(tag text, begin timestamp, end timestamp, limit int\)
-
-    Description: Displays load management records of jobs whose start or end time is within a time range on all primary nodes. Only the system administrator can execute this function.
-
-    Parameter description:
-
-    -   **tag**: The value can only be  **'start\_time'**  or  **'finish\_time'**, indicating that the query is restricted by the start time or end time of the job.
-    -   **begin**: start time of a time range.
-    -   **end**: end time of a time range.
-    -   **limit**: number of returned records.
-
-    Return type: record
-
-
--   pgxc\_get\_wlm\_session\_statistics\(\)
-
-    Description: Displays load management records when jobs on all primary nodes are being executed. Only the system administrator can execute this function.
-
-    Return type: record
-
--   pgxc\_stat\_activity\_with\_conninfo\(\)
-
-    Description:  **PGXC\_STAT\_ACTIVITY**  shows query information about the current user on all the CNs in the current cluster. Only the system administrator has the permission to query this view.
-
-    Return type: SETOF record
-
--   pgxc\_wlm\_get\_workload\_records\(\)
-
-    Description: Displays the status information when jobs on all primary nodes are being executed. Only the system administrator can execute this function.
-
-    Return type: record
-
--   DBE\_PERF.get\_global\_active\_session\(\)
-
-    Description: Displays a summary of samples in the  **ACTIVE SESSION PROFILE**  memory on all nodes.
-
-    Return type: record
 
 -   DBE\_PERF.get\_global\_session\_stat\_activity\(\)
 
@@ -1986,12 +1841,6 @@ Statistics information functions are divided into the following two categories: 
 -   DBE\_PERF.get\_global\_thread\_wait\_status\(\)
 
     Description: Displays the block waiting status of backend threads and auxiliary threads on all nodes. To query this function, you must have the  **sysadmin**  permission.
-
-    Return type: record
-
--   DBE\_PERF.get\_wlm\_user\_resource\_runtime\(\)
-
-    Description: Displays the resource usage of all users. This parameter is valid only when  **use\_workload\_manager**  is set to  **on**. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -2043,9 +1892,21 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_all\_indexes
+-   DBE\_PERF.get\_global\_statio\_all\_indexes\(\)
 
     Description: Displays statistics about each index displayed in a row in the current database, showing I/O statistics about accesses to that specific index. To query this function, you must have the  **sysadmin**  permission.
+
+    Return type: record
+
+-   DBE\_PERF.get\_summary\_stat\_all\_tables\(\)
+
+    Description: Displays statistics about a row in each table \(including the TOAST table\) on each node.
+
+    Return type: record
+
+-   DBE\_PERF.get\_global\_stat\_all\_tables\(\)
+
+    Description: Displays statistics about a row in each table \(including the TOAST table\) on each node.
 
     Return type: record
 
@@ -2339,7 +2200,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_summary\_statement\(\)
 
-    Description: Displays the status information of the historically-executed statements on each node. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the status information of the historically-executed statements on each node. To query this function, you must have the  **sysadmin**  or  **monitor admin**  permission.
 
     Return type: record
 
@@ -2379,6 +2240,26 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
+-   DBE\_PERF.track\_memory\_context\(context\_list text\)
+
+    Description: Sets the memory context whose memory application details need to be collected. The input parameter is the memory context names, which are separated by commas \(,\), for example,  **ThreadTopMemoryContext, SessionCacheMemoryContext**. Note that the memory context names are context-sensitive. In addition, the length of a single memory context is 63, and the excess part is truncated. The maximum number of memory contexts that can be collected at a time is 16. If the number of memory contexts exceeds 16, the setting fails. Each time this function is called, the previous statistics result is cleared. When the input parameter is set to  **""**, the statistics function is disabled. Only the initial user \(super user\) or a user with the  **monadmin **permission can execute this function.
+
+    Return type: Boolean
+
+-   DBE\_PERF.track\_memory\_context\_detail\(\)
+
+    Description: Obtains the memory application details of the memory context specified by the  **DBE\_PERF.track\_memory\_context**  function. For details, see the  **DBE\_PERF.track\_memory\_context\_detail**  view. Only the initial user \(super user\) or a user with the  **monadmin **permission can execute this function.
+
+    Return type: record
+
+-   pg\_stat\_get\_mem\_mbytes\_reserved\(tid\)
+
+    Description: Collects statistics on variables related to resource management, which is used only for fault locating.
+
+    Parameter: thread ID
+
+    Return type: text
+
 -   gs\_wlm\_user\_resource\_info\(name text\)
 
     Description: Queries for a user's resource quota and resource usage.
@@ -2417,79 +2298,63 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.global\_threadpool\_status\(\)
 
-    Description: Displays the status of worker threads and sessions in thread pools on all nodes. For details about the columns returned by the function, see  [GLOBAL\_THREADPOOL\_STATUS](en-us_topic_0283136737.md).
+    Description: Displays the status of worker threads and sessions in thread pools on all nodes. For details about the columns returned by the function, see  [GLOBAL\_THREADPOOL\_STATUS](GLOBAL_THREADPOOL_STATUS.md).
 
     Return type: record
 
 -   remote\_bgwriter\_stat\(\)
 
-    Description: Displays the information about pages flushed by the bgwriter threads of all instances in the cluster, number of pages in the candidate buffer chain, and buffer elimination information \(except for the local node and not available on the DN\).
+    Description: Displays the information about pages flushed by the bgwriter threads of all instances in the database, number of pages in the candidate buffer chain, and buffer elimination information \(except for the local node and not available on the DN\).
 
     Return type: record
 
-    **Table  7**  remote\_bgwriter\_stat parameter description
+-   pv\_os\_run\_info
 
-    <a name="en-us_topic_0283136951_table1515973963410"></a>
-    <table><thead align="left"><tr id="en-us_topic_0283136951_row1215910396342"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p5159439103418"><a name="en-us_topic_0283136951_p5159439103418"></a><a name="en-us_topic_0283136951_p5159439103418"></a>Parameter</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136951_p1815933943414"><a name="en-us_topic_0283136951_p1815933943414"></a><a name="en-us_topic_0283136951_p1815933943414"></a>Type</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136951_p7159193912344"><a name="en-us_topic_0283136951_p7159193912344"></a><a name="en-us_topic_0283136951_p7159193912344"></a>Description</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="en-us_topic_0283136951_row316019391341"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p161601239113416"><a name="en-us_topic_0283136951_p161601239113416"></a><a name="en-us_topic_0283136951_p161601239113416"></a>node_name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1116012397346"><a name="en-us_topic_0283136951_p1116012397346"></a><a name="en-us_topic_0283136951_p1116012397346"></a>text</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1816033913417"><a name="en-us_topic_0283136951_p1816033913417"></a><a name="en-us_topic_0283136951_p1816033913417"></a>Instance name</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136951_row1016019391349"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p14160173914342"><a name="en-us_topic_0283136951_p14160173914342"></a><a name="en-us_topic_0283136951_p14160173914342"></a>bgwr_actual_flush_total_num</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1413232114314"><a name="en-us_topic_0283136951_p1413232114314"></a><a name="en-us_topic_0283136951_p1413232114314"></a>bigint</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p12160163973419"><a name="en-us_topic_0283136951_p12160163973419"></a><a name="en-us_topic_0283136951_p12160163973419"></a>Total number of dirty pages flushed by the bgwriter thread from the startup time to the current time</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136951_row11601639133416"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p532112852018"><a name="en-us_topic_0283136951_p532112852018"></a><a name="en-us_topic_0283136951_p532112852018"></a>bgwr_last_flush_num</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p31323121333"><a name="en-us_topic_0283136951_p31323121333"></a><a name="en-us_topic_0283136951_p31323121333"></a>integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p7160539103415"><a name="en-us_topic_0283136951_p7160539103415"></a><a name="en-us_topic_0283136951_p7160539103415"></a>Number of dirty pages flushed by the bgwriter thread in the previous batch</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136951_row3160183973416"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p10145113312012"><a name="en-us_topic_0283136951_p10145113312012"></a><a name="en-us_topic_0283136951_p10145113312012"></a>candidate_slots</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p216123993412"><a name="en-us_topic_0283136951_p216123993412"></a><a name="en-us_topic_0283136951_p216123993412"></a>integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p10161939173415"><a name="en-us_topic_0283136951_p10161939173415"></a><a name="en-us_topic_0283136951_p10161939173415"></a>Number of pages in the current candidate buffer chain.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136951_row516163923419"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p5161339113420"><a name="en-us_topic_0283136951_p5161339113420"></a><a name="en-us_topic_0283136951_p5161339113420"></a>get_buffer_from_list</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p91611439203415"><a name="en-us_topic_0283136951_p91611439203415"></a><a name="en-us_topic_0283136951_p91611439203415"></a>bigint</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p84674551836"><a name="en-us_topic_0283136951_p84674551836"></a><a name="en-us_topic_0283136951_p84674551836"></a>Number of times that pages are obtained from the candidate buffer chain during buffer elimination.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136951_row416110393349"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p151616398345"><a name="en-us_topic_0283136951_p151616398345"></a><a name="en-us_topic_0283136951_p151616398345"></a>get_buf_clock_sweep</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1716133914348"><a name="en-us_topic_0283136951_p1716133914348"></a><a name="en-us_topic_0283136951_p1716133914348"></a>bigint</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p2149401546"><a name="en-us_topic_0283136951_p2149401546"></a><a name="en-us_topic_0283136951_p2149401546"></a>Number of times that pages are obtained from the original elimination solution during buffer elimination.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+    Description: Displays the running status of the current OS. For details about the fields, see  [GS\_OS\_RUN\_INFO](GS_OS_RUN_INFO.md).
+
+    Parameter: nan
+
+    Return type: SETOF record
+
+-   pv\_session\_stat
+
+    Description: Collects session status information by session thread or AutoVacuum thread. For details about the fields, see  [GS\_SESSION\_STAT](GS_SESSION_STAT.md).
+
+    Parameter: nan
+
+    Return type: SETOF record
+
+-   pv\_session\_time
+
+    Description: Collects statistics on the running time of session threads and the time consumed in each execution phase. For details about the fields, see  [GS\_SESSION\_TIME](GS_SESSION_TIME.md).
+
+    Parameter: nan
+
+    Return type: SETOF record
+
+-   pg\_stat\_get\_db\_temp\_bytes
+
+    Description: Collects statistics on the total amount of data written to temporary files through database query. All temporary files are counted, regardless of why the temporary file was created, and regardless of the  **log\_temp\_files**  setting.
+
+    Parameter: oid
+
+    Return type: bigint
+
+-   pg\_stat\_get\_db\_temp\_files
+
+    Description: Queries the number of temporary files created in the database. All temporary files are counted, regardless of why the temporary file was created \(for example, sorting or hashing\), and regardless of the  **log\_temp\_files**  setting.
+
+    Parameter: oid
+
+    Return type: bigint
 
 -   remote\_ckpt\_stat\(\)
 
-    Description: Displays the checkpoint information and log flushing information about all instances in the cluster \(except the current node\).
+    Description: Displays the checkpoint information and log flushing information about all instances in the database \(except the current node\).
 
     Return type: record
 
-    **Table  8**  remote\_ckpt\_stat parameter description
+    **Table  7**  remote\_ckpt\_stat parameter description
 
     <a name="en-us_topic_0283136951_table134111430229"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row1540674332212"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p134056430228"><a name="en-us_topic_0283136951_p134056430228"></a><a name="en-us_topic_0283136951_p134056430228"></a>Parameter</p>
@@ -2554,11 +2419,11 @@ Statistics information functions are divided into the following two categories: 
 
 -   remote\_double\_write\_stat\(\)
 
-    Description: Displays doublewrite file status of all instances in the cluster \(except the current node\).
+    Description: Displays doublewrite file status of all instances in the database \(except the current node\).
 
     Return type: record
 
-    **Table  9**  remote\_double\_write\_stat parameter description
+    **Table  8**  remote\_double\_write\_stat parameter description
 
     <a name="en-us_topic_0283136951_table1419184342213"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row0412124342213"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p1941204372215"><a name="en-us_topic_0283136951_p1941204372215"></a><a name="en-us_topic_0283136951_p1941204372215"></a>Parameter</p>
@@ -2651,11 +2516,11 @@ Statistics information functions are divided into the following two categories: 
 
 -   remote\_pagewriter\_stat\(\)
 
-    Description: Displays the page flushing information and checkpoint information about all instances in the cluster \(except the current node\).
+    Description: Displays the page flushing information and checkpoint information about all instances in the database \(except the current node\).
 
     Return type: record
 
-    **Table  10**  remote\_pagewriter\_stat parameter description
+    **Table  9**  remote\_pagewriter\_stat parameter description
 
     <a name="en-us_topic_0283136951_table11427543172218"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row0421174315229"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p5420154314225"><a name="en-us_topic_0283136951_p5420154314225"></a><a name="en-us_topic_0283136951_p5420154314225"></a>Parameter</p>
@@ -2698,14 +2563,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1942419430229"><a name="en-us_topic_0283136951_p1942419430229"></a><a name="en-us_topic_0283136951_p1942419430229"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p184241243142212"><a name="en-us_topic_0283136951_p184241243142212"></a><a name="en-us_topic_0283136951_p184241243142212"></a><strong id="b84373476376"><a name="b84373476376"></a><a name="b84373476376"></a>recovery_lsn</strong> of the first dirty page in the dirty page queue of the current instance</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p184241243142212"><a name="en-us_topic_0283136951_p184241243142212"></a><a name="en-us_topic_0283136951_p184241243142212"></a><strong id="b347219319329"><a name="b347219319329"></a><a name="b347219319329"></a>recovery_lsn</strong> of the first dirty page in the dirty page queue of the current instance</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row18425943132213"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p18424184315227"><a name="en-us_topic_0283136951_p18424184315227"></a><a name="en-us_topic_0283136951_p18424184315227"></a>queue_rec_lsn</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p15424134362213"><a name="en-us_topic_0283136951_p15424134362213"></a><a name="en-us_topic_0283136951_p15424134362213"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1042414342216"><a name="en-us_topic_0283136951_p1042414342216"></a><a name="en-us_topic_0283136951_p1042414342216"></a><strong id="b914216529374"><a name="b914216529374"></a><a name="b914216529374"></a>recovery_lsn</strong> of the dirty page queue of the current instance</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1042414342216"><a name="en-us_topic_0283136951_p1042414342216"></a><a name="en-us_topic_0283136951_p1042414342216"></a><strong id="b939917325329"><a name="b939917325329"></a><a name="b939917325329"></a>recovery_lsn</strong> of the dirty page queue of the current instance</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row4426134362210"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p4425443202216"><a name="en-us_topic_0283136951_p4425443202216"></a><a name="en-us_topic_0283136951_p4425443202216"></a>current_xlog_insert_lsn</p>
@@ -2731,7 +2596,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    **Table  11**  remote\_recovery\_status parameter description
+    **Table  10**  remote\_recovery\_status parameter description
 
     <a name="en-us_topic_0283136951_table1443614319224"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row742864316223"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p1842734372216"><a name="en-us_topic_0283136951_p1842734372216"></a><a name="en-us_topic_0283136951_p1842734372216"></a>Parameter</p>
@@ -2810,11 +2675,11 @@ Statistics information functions are divided into the following two categories: 
 
 -   remote\_redo\_stat\(\)
 
-    Description: Displays the log replay status of all instances in the cluster \(except the current node\).
+    Description: Displays the log replay status of all instances in the database \(except the current node\).
 
     Return type: record
 
-    **Table  12**  remote\_redo\_stat parameter description
+    **Table  11**  remote\_redo\_stat parameter description
 
     <a name="en-us_topic_0283136951_table174521443132210"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row843714317224"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p3437843172211"><a name="en-us_topic_0283136951_p3437843172211"></a><a name="en-us_topic_0283136951_p3437843172211"></a>Parameter</p>
@@ -2983,32 +2848,203 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1645224316226"><a name="en-us_topic_0283136951_p1645224316226"></a><a name="en-us_topic_0283136951_p1645224316226"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1345274312221"><a name="en-us_topic_0283136951_p1345274312221"></a><a name="en-us_topic_0283136951_p1345274312221"></a>Replay thread information of the instance. If concurrent replay is not enabled, the value is <strong id="b9671633105314"><a name="b9671633105314"></a><a name="b9671633105314"></a>NULL</strong>.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1345274312221"><a name="en-us_topic_0283136951_p1345274312221"></a><a name="en-us_topic_0283136951_p1345274312221"></a>Replay thread information of the instance. If concurrent replay is not enabled, the value is <strong id="b1189772813312"><a name="b1189772813312"></a><a name="b1189772813312"></a>NULL</strong>.</p>
     </td>
     </tr>
     </tbody>
     </table>
 
+    Example:
 
-Example:
+    The function  **pg\_backend\_pid**  shows the ID of the current server thread.
 
-The function  **pg\_backend\_pid**  shows the ID of the current server thread.
+    ```
+    postgres=# SELECT pg_backend_pid();
+     pg_backend_pid  
+    -----------------
+     139706243217168
+    (1 row)
+    ```
 
-```
-postgres=# SELECT pg_backend_pid();
- pg_backend_pid  
------------------
- 139706243217168
-(1 row)
-```
+    The function  **pg\_stat\_get\_backend\_pid**  shows the ID of a given server thread.
 
-The function  **pg\_stat\_get\_backend\_pid**  shows the ID of a given server thread.
+    ```
+    postgres=# SELECT pg_stat_get_backend_pid(1);
+     pg_stat_get_backend_pid 
+    -------------------------
+             139706243217168
+    (1 row)
+    ```
 
-```
-postgres=# SELECT pg_stat_get_backend_pid(1);
- pg_stat_get_backend_pid 
--------------------------
-         139706243217168
-(1 row)
-```
+
+-   dbe\_perf.gs\_stat\_activity\_timeout\(int\)
+
+    Description: Obtains information about query jobs whose execution time exceeds the timeout threshold on the current node. The correct result can be returned only when the GUC parameter  **track\_activities**  is set to  **on**. The timeout threshold ranges from 0 to 2147483.
+
+    Return type: SETOF record
+
+    <a name="table975614311360"></a>
+    <table><thead align="left"><tr id="row175723117360"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p4757231113617"><a name="p4757231113617"></a><a name="p4757231113617"></a>Name</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.4.1.2"><p id="p1675713193611"><a name="p1675713193611"></a><a name="p1675713193611"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.3"><p id="p4757193118368"><a name="p4757193118368"></a><a name="p4757193118368"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1757193163615"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p2757631103613"><a name="p2757631103613"></a><a name="p2757631103613"></a>database</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p10757123103619"><a name="p10757123103619"></a><a name="p10757123103619"></a>name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p127571931193619"><a name="p127571931193619"></a><a name="p127571931193619"></a>Name of the database to which a user session is connected.</p>
+    </td>
+    </tr>
+    <tr id="row1475716311369"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p10757183143616"><a name="p10757183143616"></a><a name="p10757183143616"></a>pid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p675712312361"><a name="p675712312361"></a><a name="p675712312361"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p47571331183613"><a name="p47571331183613"></a><a name="p47571331183613"></a>Backend thread ID</p>
+    </td>
+    </tr>
+    <tr id="row127571731173616"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p875763123616"><a name="p875763123616"></a><a name="p875763123616"></a>sessionid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p27571931123613"><a name="p27571931123613"></a><a name="p27571931123613"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p187571431153613"><a name="p187571431153613"></a><a name="p187571431153613"></a>Session ID</p>
+    </td>
+    </tr>
+    <tr id="row1675819312369"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p375803112361"><a name="p375803112361"></a><a name="p375803112361"></a>usesysid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p27581831153612"><a name="p27581831153612"></a><a name="p27581831153612"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p575818311366"><a name="p575818311366"></a><a name="p575818311366"></a>OID of the user logged in to the backend</p>
+    </td>
+    </tr>
+    <tr id="row157587319365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p1075893117368"><a name="p1075893117368"></a><a name="p1075893117368"></a>application_name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p5758113114362"><a name="p5758113114362"></a><a name="p5758113114362"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p0758183113614"><a name="p0758183113614"></a><a name="p0758183113614"></a>Name of the application connected to the backend</p>
+    </td>
+    </tr>
+    <tr id="row675815319366"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p11758183111365"><a name="p11758183111365"></a><a name="p11758183111365"></a>query</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p187582314366"><a name="p187582314366"></a><a name="p187582314366"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p9958411164014"><a name="p9958411164014"></a><a name="p9958411164014"></a>Query that is being executed on the background.</p>
+    </td>
+    </tr>
+    <tr id="row1775813313364"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p8758193119369"><a name="p8758193119369"></a><a name="p8758193119369"></a>xact_start</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p8758331143619"><a name="p8758331143619"></a><a name="p8758331143619"></a>timestamptz</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p4758133153614"><a name="p4758133153614"></a><a name="p4758133153614"></a>Time when the current transaction is started.</p>
+    </td>
+    </tr>
+    <tr id="row1675818318362"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p57581331123617"><a name="p57581331123617"></a><a name="p57581331123617"></a>query_start</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p8394162712488"><a name="p8394162712488"></a><a name="p8394162712488"></a>timestamptz</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p890615614815"><a name="p890615614815"></a><a name="p890615614815"></a>Time when the current query starts.</p>
+    </td>
+    </tr>
+    <tr id="row207586318365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p7758331163615"><a name="p7758331163615"></a><a name="p7758331163615"></a>query_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p1539104464813"><a name="p1539104464813"></a><a name="p1539104464813"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p121591542134811"><a name="p121591542134811"></a><a name="p121591542134811"></a>Query statement ID.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   DBE\_PERF.get\_wlm\_controlgroup\_ng\_config\(\)
+
+    Description: Collects information about all Cgroups in the database. After a cluster is created, by default, you must have the  **monadmin**  permission to query this function.
+
+    Return type: record
+
+-   DBE\_PERF.get\_wlm\_user\_resource\_runtime\(\)
+
+    Description: Displays the resource usage of all users. This parameter is valid only when  **use\_workload\_manager**  is set to  **on**. After a cluster is created, by default, you must have the  **monadmin**  permission to query this function.
+
+    Return type: record
+
+-   gs\_wlm\_user\_resource\_info\(name text\)
+
+    Description: Queries for a user's resource quota and resource usage. Common users can query only their own information. Administrators can query information about all users.
+
+    Return type: record
+
+-   create\_wlm\_instance\_statistics\_info
+
+    Description: Saves the historical monitoring data of the current instance persistently.
+
+    Parameter: nan
+
+    Return type: integer
+
+-   gs\_session\_memory
+
+    Description: Collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to Postgres and Stream threads on DNs for tasks currently executed by users.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >If  **enable\_memory\_limit=off**, this function cannot be used.
+
+    Return type: record
+
+    **Table  12**  Return value description
+
+    <a name="en-us_topic_0059778767_t953e37afd21641229bbccf7b10f8ae94"></a>
+    <table><thead align="left"><tr id="en-us_topic_0059778767_rad825274bf5e49cebafef1d184ef1c6c"><th class="cellrowborder" valign="top" width="19.23%" id="mcps1.2.4.1.1"><p id="en-us_topic_0059778767_ae6a72d70e64d4cc986cdaa013c32cdb7"><a name="en-us_topic_0059778767_ae6a72d70e64d4cc986cdaa013c32cdb7"></a><a name="en-us_topic_0059778767_ae6a72d70e64d4cc986cdaa013c32cdb7"></a>Name</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="12.1%" id="mcps1.2.4.1.2"><p id="en-us_topic_0059778767_ac7d91c874038453b92277f263009bb69"><a name="en-us_topic_0059778767_ac7d91c874038453b92277f263009bb69"></a><a name="en-us_topic_0059778767_ac7d91c874038453b92277f263009bb69"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="68.67%" id="mcps1.2.4.1.3"><p id="en-us_topic_0059778767_a9b73ab5d2d2945b68b3a1a5357e1ecee"><a name="en-us_topic_0059778767_a9b73ab5d2d2945b68b3a1a5357e1ecee"></a><a name="en-us_topic_0059778767_a9b73ab5d2d2945b68b3a1a5357e1ecee"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="en-us_topic_0059778767_ra3f41aa6c9b14ef2a0542e658a67fe01"><td class="cellrowborder" valign="top" width="19.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778767_acb0d72afd1134a91a1740e7f827e44a5"><a name="en-us_topic_0059778767_acb0d72afd1134a91a1740e7f827e44a5"></a><a name="en-us_topic_0059778767_acb0d72afd1134a91a1740e7f827e44a5"></a>sessid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.1%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778767_a1fda091ce53140a8b8a20ef9a53c2204"><a name="en-us_topic_0059778767_a1fda091ce53140a8b8a20ef9a53c2204"></a><a name="en-us_topic_0059778767_a1fda091ce53140a8b8a20ef9a53c2204"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.67%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778767_a6e3e3ca87b764c4e91581aa131a58bad"><a name="en-us_topic_0059778767_a6e3e3ca87b764c4e91581aa131a58bad"></a><a name="en-us_topic_0059778767_a6e3e3ca87b764c4e91581aa131a58bad"></a>Thread start time and ID</p>
+    </td>
+    </tr>
+    <tr id="en-us_topic_0059778767_r96a8c34acda241da9f2215d05a90993c"><td class="cellrowborder" valign="top" width="19.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778767_a878d685a07034ffbb27389d056436465"><a name="en-us_topic_0059778767_a878d685a07034ffbb27389d056436465"></a><a name="en-us_topic_0059778767_a878d685a07034ffbb27389d056436465"></a>init_mem</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.1%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778767_a6cabe1ae4912424eb877060615cb7f9f"><a name="en-us_topic_0059778767_a6cabe1ae4912424eb877060615cb7f9f"></a><a name="en-us_topic_0059778767_a6cabe1ae4912424eb877060615cb7f9f"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.67%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778767_acb7c29cd039b41d8a5d8216fc02e8123"><a name="en-us_topic_0059778767_acb7c29cd039b41d8a5d8216fc02e8123"></a><a name="en-us_topic_0059778767_acb7c29cd039b41d8a5d8216fc02e8123"></a>Memory allocated to the currently executed jobs before they enter the executor, in MB</p>
+    </td>
+    </tr>
+    <tr id="en-us_topic_0059778767_r91694bd189574d56810e69097bbf834c"><td class="cellrowborder" valign="top" width="19.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778767_a75e18b6fc61b4edd8282dcea9e346a2d"><a name="en-us_topic_0059778767_a75e18b6fc61b4edd8282dcea9e346a2d"></a><a name="en-us_topic_0059778767_a75e18b6fc61b4edd8282dcea9e346a2d"></a>used_mem</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.1%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778767_a1eaf7263ec7546fdb2ac141403f30768"><a name="en-us_topic_0059778767_a1eaf7263ec7546fdb2ac141403f30768"></a><a name="en-us_topic_0059778767_a1eaf7263ec7546fdb2ac141403f30768"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.67%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778767_aa7cc81c4c67c493ca6b36fa4b6447c6f"><a name="en-us_topic_0059778767_aa7cc81c4c67c493ca6b36fa4b6447c6f"></a><a name="en-us_topic_0059778767_aa7cc81c4c67c493ca6b36fa4b6447c6f"></a>Memory allocated to the currently executed jobs, in MB</p>
+    </td>
+    </tr>
+    <tr id="en-us_topic_0059778767_r70b48f0daa984fcaa1403cd602025909"><td class="cellrowborder" valign="top" width="19.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778767_afe664db10a30490e9098541b3833f317"><a name="en-us_topic_0059778767_afe664db10a30490e9098541b3833f317"></a><a name="en-us_topic_0059778767_afe664db10a30490e9098541b3833f317"></a>peak_mem</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.1%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778767_a72345cd720cc4d07b1eeea114cf91f3e"><a name="en-us_topic_0059778767_a72345cd720cc4d07b1eeea114cf91f3e"></a><a name="en-us_topic_0059778767_a72345cd720cc4d07b1eeea114cf91f3e"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="68.67%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778767_af966680339924b15a8a037f81355b40d"><a name="en-us_topic_0059778767_af966680339924b15a8a037f81355b40d"></a><a name="en-us_topic_0059778767_af966680339924b15a8a037f81355b40d"></a>Peak memory allocated to the currently executed jobs, in MB</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   gs\_wlm\_persistent\_user\_resource\_info\(\)
+
+    Description: Archives all user resource usage statistics to the  **gs\_wlm\_user\_resource\_history**  system catalog.
+
+    Return type: record
+
+-   create\_wlm\_operator\_info\(int flag\)
+
+    Description: Clears top SQL operator-level statistics recorded in the current memory. If the input parameter is greater than 0, the information is archived to  **gs\_wlm\_operator\_info**  and  **gs\_wlm\_ec\_operator\_info**. Otherwise, the information is not archived. Only users with the  **sysadmin**  permission can execute this function.
+
+    Return type: int
+
 

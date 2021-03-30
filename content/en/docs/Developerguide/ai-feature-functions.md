@@ -8,7 +8,7 @@
 
     Return type: record
 
-    [Single-query Index Recommendation](en-us_topic_0296549246.md)  describes the examples.
+    [Single-query Index Recommendation](single-query-index-recommendation.md)  describes the examples.
 
 -   hypopg\_create\_index\(text\)
 
@@ -18,7 +18,7 @@
 
     Return type: record
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](virtual-index.md)  describes the examples.
 
 -   hypopg\_display\_index\(\)
 
@@ -28,7 +28,7 @@
 
     Return type: record
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](virtual-index.md)  describes the examples.
 
 -   hypopg\_drop\_index\(oid\)
 
@@ -38,7 +38,7 @@
 
     Return type: Boolean
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](virtual-index.md)  describes the examples.
 
 -   hypopg\_reset\_index\(\)
 
@@ -48,7 +48,7 @@
 
     Return type: none
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](virtual-index.md)  describes the examples.
 
 -   hypopg\_estimate\_size\(oid\)
 
@@ -58,6 +58,67 @@
 
     Return type: int8
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](virtual-index.md)  describes the examples.
+
+-   check\_engine\_status\(ip text, port text\)
+
+    Description: Tests whether a predictor engine provides services on a specified IP address and port.
+
+    Parameter: IP address and port number of the predictor engine.
+
+    Return type: text
+
+    [User Guide](usage-guide.md)  describes the examples.
+
+-   encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
+
+    Description: Encodes the plan operator information in the input parameters.
+
+    Parameter: plan operator information.
+
+    Return type: text.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >This function is an internal function. You are not advised to use it directly.
+
+-   model\_train\_opt\(template text, model text\)
+
+    Description: Trains a given query performance prediction model.
+
+    Parameters: template name and model name of the performance prediction model.
+
+    Return type: tartup\_time\_accuracy FLOAT8, total\_time\_accuracy FLOAT8, rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
+
+    [User Guide](usage-guide.md)  describes the examples.
+
+-   track\_model\_train\_opt\(ip text, port text\)
+
+    Description: Returns the training log address of the specified IP address and port predictor engine.
+
+    Parameter: IP address and port number of the predictor engine.
+
+    Return type: text
+
+    [User Guide](usage-guide.md)  describes the examples.
+
+-   encode\_feature\_perf\_hist\(datname text\)
+
+    Description: Encodes historical plan operators collected in the target database.
+
+    Parameter: database name
+
+    Return type: queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, peak\_memory int
+
+    [User Guide](usage-guide.md)  describes the examples.
+
+-   gather\_encoding\_info\(datname text\)
+
+    Description: Invokes encode\_feature\_perf\_hist to save the encoded data persistently.
+
+    Parameter: database name
+
+    Return type: int
+
+    [User Guide](usage-guide.md)  describes the examples.
 
 

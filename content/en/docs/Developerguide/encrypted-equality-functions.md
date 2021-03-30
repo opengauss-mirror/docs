@@ -162,7 +162,7 @@
 
     Return type: hll\_hashval
 
-    The implementation of byteawithoutorderwithequalcolin searches for CEK and determines whether it is a normal encrypted data type. Therefore, an error is reported when the user directly uses the function.
+    The implementation of byteawithoutorderwithequalcolin searches for CEK and determines whether it is a normal encrypted data type. Therefore, if the format of the data entered by the user is not the encrypted data format and the corresponding CEK does not exist on the local host, an error is returned.
 
     ```
     postgres=# SELECT * FROM byteawithoutorderwithequalcolsend('\x907219912381298461289346129'::byteawithoutorderwithequalcol);

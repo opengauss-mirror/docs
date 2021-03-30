@@ -1,12 +1,10 @@
-# GS\_SESSION\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0289900281"></a>
+# GS\_SESSION\_MEMORY\_CONTEXT<a name="EN-US_TOPIC_0289900285"></a>
 
-**GS\_SESSION\_MEMORY\_DETAIL**  collects statistics about thread memory usage by the memory context. When  **enable\_thread\_pool**  is set to  **on**, this view contains memory usage of all threads and sessions.
+**GS\_SESSION\_MEMORY\_CONTEXT**  displays statistics on memory usage of all sessions based on the MemoryContext node. This view is valid only when  **enable\_thread\_pool**  is set to  **on**.
 
 The memory context  **TempSmallContextGroup**  collects information about all memory contexts whose value in the  **totalsize**  column is less than 8192 bytes in the current thread, and the number of the collected memory contexts is recorded in the  **usedsize**  column. Therefore, the  **totalsize**  and  **freesize**  columns for  **TempSmallContextGroup**  in the view display the corresponding information about all the memory contexts whose value in the  **totalsize**  column is less than 8192 bytes in the current thread, and the  **usedsize**  column displays the number of these memory contexts.
 
-You can run the  **SELECT \* FROM gs\_session\_memctx\_detail \(**_threadid_**,''\);**  statement to record information about all memory contexts of a thread into the  _threadid_\__timestamp_**.log**  file in the  _$GAUSSLOG_/pg\_log/$\{node\_name\}/dumpmem directory.  _threadid_  can be obtained from  **sessid**  in the following table.
-
-**Table  1**  GS\_SESSION\_MEMORY\_DETAIL columns
+**Table  1**  GS\_SESSION\_MEMORY\_CONTEXT columns
 
 <a name="en-us_topic_0059778760_td16c4d9490d3429bb7924dc70121414a"></a>
 <table><thead align="left"><tr id="en-us_topic_0059778760_rc61f4f57499841bb9a68d858b72c8c54"><th class="cellrowborder" valign="top" width="22.8%" id="mcps1.2.4.1.1"><p id="en-us_topic_0059778760_a220d97f0527149ce80b68e31b779b847"><a name="en-us_topic_0059778760_a220d97f0527149ce80b68e31b779b847"></a><a name="en-us_topic_0059778760_a220d97f0527149ce80b68e31b779b847"></a>Name</p>
@@ -21,14 +19,14 @@ You can run the  **SELECT \* FROM gs\_session\_memctx\_detail \(**_threadid_**,'
 </td>
 <td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="p194701375112"><a name="p194701375112"></a><a name="p194701375112"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="p44751317515"><a name="p44751317515"></a><a name="p44751317515"></a>Thread start time + thread ID (string: <em id="i961162222105835"><a name="i961162222105835"></a><a name="i961162222105835"></a>timestamp</em>.<em id="i199783415105835"><a name="i199783415105835"></a><a name="i199783415105835"></a>threadid</em>)</p>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="p44751317515"><a name="p44751317515"></a><a name="p44751317515"></a>Session start time + session ID (character string: <em id="i123890218141158"><a name="i123890218141158"></a><a name="i123890218141158"></a>timestamp.sessionid</em>)</p>
 </td>
 </tr>
-<tr id="en-us_topic_0059778760_rdee21293e92d4399b0afa410cb2fe613"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="p1847141395111"><a name="p1847141395111"></a><a name="p1847141395111"></a>sesstype</p>
+<tr id="en-us_topic_0059778760_rdee21293e92d4399b0afa410cb2fe613"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="p1847141395111"><a name="p1847141395111"></a><a name="p1847141395111"></a>threadid</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="p184711385114"><a name="p184711385114"></a><a name="p184711385114"></a>text</p>
+<td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="p184711385114"><a name="p184711385114"></a><a name="p184711385114"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="p74811315119"><a name="p74811315119"></a><a name="p74811315119"></a>Thread name</p>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="p74811315119"><a name="p74811315119"></a><a name="p74811315119"></a>ID of the thread bound to a session (<strong id="b60811719741158"><a name="b60811719741158"></a><a name="b60811719741158"></a>-1</strong> if no thread is bound)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0059778760_rc637dd0eab0f4790a4b045b6f8978a1c"><td class="cellrowborder" valign="top" width="22.8%" headers="mcps1.2.4.1.1 "><p id="p1248113125118"><a name="p1248113125118"></a><a name="p1248113125118"></a>contextname</p>
@@ -70,7 +68,7 @@ You can run the  **SELECT \* FROM gs\_session\_memctx\_detail \(**_threadid_**,'
 </td>
 <td class="cellrowborder" valign="top" width="18.86%" headers="mcps1.2.4.1.2 "><p id="p15501513165117"><a name="p15501513165117"></a><a name="p15501513165117"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="p251813135118"><a name="p251813135118"></a><a name="p251813135118"></a>Size of used memory in the memory context, in bytes. For <strong id="b602252407105835"><a name="b602252407105835"></a><a name="b602252407105835"></a>TempSmallContextGroup</strong>, this parameter specifies the number of collected memory contexts.</p>
+<td class="cellrowborder" valign="top" width="58.34%" headers="mcps1.2.4.1.3 "><p id="p251813135118"><a name="p251813135118"></a><a name="p251813135118"></a>Size of used memory in the memory context, in bytes. For <strong id="b205056424941158"><a name="b205056424941158"></a><a name="b205056424941158"></a>TempSmallContextGroup</strong>, this parameter specifies the number of collected memory contexts.</p>
 </td>
 </tr>
 </tbody>

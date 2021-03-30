@@ -1,17 +1,18 @@
-# CREATE MATERIALIZED VIEW<a name="EN-US_TOPIC_0273480004"></a>
+# CREATE MATERIALIZED VIEW<a name="EN-US_TOPIC_0289899973"></a>
 
-## Function<a name="en-us_topic_0237122118_en-us_topic_0059777601_sf40d8ce0a2af4856a44d883e623632b9"></a>
-
-**CREATE MATERIALIZED VIEW**  defines a materialized view for query. When this command is delivered, the query is executed and used to fill the view \(unless WITH NO DATA is used\), and the  **REFRESH MATERIALIZED VIEW**  command can be used to refresh data.
+CREATE MATERIALIZED VIEW creates a full materialized view, and you can use REFRESH MATERIALIZED VIEW \(full refresh\) to refresh the data in the materialized view.
 
 CREATE MATERIALIZED VIEW is similar to CREATE TABLE AS, but it remembers the query used to initialize the view, so it can refresh data later. A materialized view has many attributes that are the same as those of a table, but does not support temporary materialized views.
 
-## Precautions<a name="en-us_topic_0237122118_en-us_topic_0059777601_s0379750211b249b5a2831f6cdf27d110"></a>
+## Precautions<a name="en-us_topic_0283136593_en-us_topic_0237122118_en-us_topic_0059777601_s0379750211b249b5a2831f6cdf27d110"></a>
 
--   Materialized views cannot be created on temporary tables or global temporary tables.
--   After a materialized view is created, you need to run the  **REFRESH**  command to synchronize the materialized view with the base table when the data in the base table changes.
+-   Full materialized views cannot be created in temporary tables or global temporary tables.
+-   Full materialized views do not support NodeGroups.
+-   After an full materialized view is created, most DDL operations in the base table are no longer supported.
+-   The IUD operation cannot be performed on full materialized views.
+-   After a full materialized view is created, if the base table data changes, you need to run the refresh command to synchronize the materialized view with the base table.
 
-## Syntax<a name="en-us_topic_0237122118_en-us_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
+## Syntax<a name="en-us_topic_0283136593_en-us_topic_0237122118_en-us_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
 
 ```
 CREATE MATERIALIZED VIEW mv_name
@@ -22,11 +23,11 @@ CREATE MATERIALIZED VIEW mv_name
     [ WITH [ NO ] DATA ];
 ```
 
-## Parameter Description<a name="en-us_topic_0237122118_en-us_topic_0059777601_sb8ea2c52307445c9934740862f4ecc85"></a>
+## Parameter Description<a name="en-us_topic_0283136593_en-us_topic_0237122118_en-us_topic_0059777601_sb8ea2c52307445c9934740862f4ecc85"></a>
 
 -   **mv\_name**
 
-    Specifies the name \(optionally schema-qualified\) of the materialized view to be created.
+    Name \(optionally schema-qualified\) of the materialized view to be created.
 
     Value range: a string. It must comply with the naming convention.
 
@@ -38,7 +39,7 @@ CREATE MATERIALIZED VIEW mv_name
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
-    Specifies an optional storage parameter for a table or an index. CREATE MATERIALIZED VIEW supports all parameters supported by CREATE TABLE ,except  **OIDS**. For details, see  [CREATE TABLE](en-us_topic_0242370581.md).
+    Specifies an optional storage parameter for a table or an index. For details, see  [CREATE TABLE](create-table.md).
 
 -   **TABLESPACE tablespace\_name**
 
@@ -48,32 +49,21 @@ CREATE MATERIALIZED VIEW mv_name
 
     Specifies the  **SELECT**,  **TABLE**, or  **VALUES**  command. This query will be run in a security-constrained operation.
 
--   **\[ WITH \[ NO \] DATA \]**
 
-    Specifies whether the data produced by the query should be copied to the new materialized view. By default, the data will be copied. If the value  **NO**  is used, no data is copied.
-
-
-## Examples<a name="en-us_topic_0237122118_en-us_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
+## Example<a name="en-us_topic_0283136593_en-us_topic_0237122118_en-us_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
 
 ```
--- Create the tpcds.store_returns table.
-postgres=# CREATE TABLE tpcds.store_returns
-(
-    W_WAREHOUSE_SK            INTEGER               NOT NULL,
-    W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
-    sr_item_sk                VARCHAR(20)                   ,
-    W_WAREHOUSE_SQ_FT         INTEGER                       
-);
--- Create the materialized view tpcds.store_returns_mv based on the tpcds.store_returns base table.
-postgres=# CREATE MATERIALIZED VIEW tpcds.store_returns_mv AS SELECT * FROM tpcds.store_returns';
-
--- Use tpcds.store_returns to copy a new table tpcds.store_returns_mv2 as a materialized view.
-postgres=# CREATE MATERIALIZED VIEW tpcds.store_returns_mv2 AS table tpcds.store_returns;
--- Delete the table.
-postgres=# DROP MATERIALIZED VIEW tpcds.store_returns_mv cascade;
+-- Create an ordinary table.
+postgres=# CREATE TABLE my_table (c1 int, c2 int);
+-- Create a full materialized view.
+postgres=# CREATE MATERIALIZED VIEW my_mv AS SELECT * FROM my_table;
+-- Write data to the base table.
+postgres=# INSERT INTO my_table VALUES(1,1),(2,2);
+-- Refresh the full materialized view my_mv.
+postgres=# REFRESH INCREMENTAL MATERIALIZED VIEW my_mv;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122118_en-us_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
+## Link<a name="en-us_topic_0283136593_en-us_topic_0237122118_en-us_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
 
-[CREATE TABLE](en-us_topic_0242370581.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md),  [ALTER MATERIALIZED VIEW](alter-materialized-view.md), and  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)
+[ALTER MATERIALIZED VIEW](alter-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [CREATE TABLE](create-table.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md),  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md),  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)
 

@@ -26,11 +26,11 @@
 
     Description: Clears the global plan cache that is not used on nodes.
 
-    Return type: bool
+    Return type: Boolean
 
 -   pg\_catalog.plancache\_status\(\)
 
-    Description: Displays information about the global plan cache on nodes. The information returned by the function is the same as that in  [GLOBAL\_PLANCACHE\_STATUS](en-us_topic_0297927201.md).
+    Description: Displays information about the global plan cache on nodes. The information returned by the function is the same as that in  [GLOBAL\_PLANCACHE\_STATUS](GLOBAL_PLANCACHE_STATUS.md).
 
     Return type: record
 
@@ -52,30 +52,6 @@
 
     Return type: record
 
--   get\_global\_active\_session\(\)
-
-    Description: Provides sampling records of the historical active session status stored in the memory of all nodes.
-
-    Return type: record
-
--   get\_global\_gs\_asp\(\)
-
-    Description: Provides sampling records of the historical active session status stored in the  **gs\_asp**  system catalog of all nodes.
-
-    Return type: record
-
--   get\_datanode\_active\_session\(\)
-
-    Description: Provides sampling records of historical active session status stored in the memory of other nodes in the database of the primary node.
-
-    Return type: record
-
--   get\_datanode\_active\_session\_hist\(\)
-
-    Description: Provides sampling records of historical active session status stored in the  **gs\_asp**  system catalog of other nodes in the database of the primary node.
-
-    Return type: record
-
 -   pg\_stat\_get\_thread\(\)
 
     Description: Provides information about the status of all threads under the current node.
@@ -94,9 +70,9 @@
 
     Return type: record
 
--   generate\_wdr\_report\(begin\_snap\_id Oid, end\_snap\_id Oid, int report\_type, int report\_scope, int node\_name\)
+-   generate\_wdr\_report\(begin\_snap\_id bigint, end\_snap\_id bigint, report\_type cstring, report\_scope cstring, node\_name cstring\)
 
-    Description: Generates system diagnosis reports based on two snapshots.
+    Description: Generates system diagnosis reports based on two snapshots. You need to run the command in the postgres database. By default, the initial user or the monadmin user can access the database. In V500R001C20SPC002 and earlier versions, the initial user or the sysadmin user can access the database.
 
     Return type: record
 
@@ -105,83 +81,64 @@
     <a name="en-us_topic_0283137465_en-us_topic_0237121997_table1757513581634"></a>
     <table><tbody><tr id="en-us_topic_0283137465_en-us_topic_0237121997_row1280114581437"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p11801115814318"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p11801115814318"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p11801115814318"></a>Parameter</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.83%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"></a>Description</p>
+    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"></a>Description</p>
     </td>
-    <td class="cellrowborder" valign="top" width="27.93%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a>Value Range</p>
+    <td class="cellrowborder" valign="top" width="34.47%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a>Value Range</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row680211581937"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p380217581314"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p380217581314"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p380217581314"></a>begin_snap_id</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.83%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p128028581331"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p128028581331"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p128028581331"></a>Snapshot ID that starts the diagnosis report period.</p>
+    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p128028581331"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p128028581331"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p128028581331"></a>Snapshot ID that starts the diagnosis report period.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="27.93%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p78026587313"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p78026587313"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p78026587313"></a>-</p>
+    <td class="cellrowborder" valign="top" width="34.47%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p78026587313"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p78026587313"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p78026587313"></a>-</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row7802105817316"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p198029587313"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p198029587313"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p198029587313"></a>end_snap_id</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.83%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1080215589316"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1080215589316"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1080215589316"></a>Snapshot ID that ends the diagnosis report period. By default, the value of <strong id="b34228626052114"><a name="b34228626052114"></a><a name="b34228626052114"></a>end_snap_id</strong> is greater than that of <strong id="b88441262152114"><a name="b88441262152114"></a><a name="b88441262152114"></a>begin_snap_id</strong>.</p>
+    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1080215589316"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1080215589316"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1080215589316"></a>Snapshot ID that ends the diagnosis report period. By default, the value of <strong id="b1037832010428"><a name="b1037832010428"></a><a name="b1037832010428"></a>end_snap_id</strong> is greater than that of <strong id="b91311123144216"><a name="b91311123144216"></a><a name="b91311123144216"></a>begin_snap_id</strong>.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="27.93%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p5802158436"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p5802158436"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p5802158436"></a>-</p>
+    <td class="cellrowborder" valign="top" width="34.47%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p5802158436"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p5802158436"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p5802158436"></a>-</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row1280225810310"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p580217585317"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p580217585317"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p580217585317"></a>report_type</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.83%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p19803858132"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p19803858132"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p19803858132"></a>Specifies the type of the generated report.</p>
+    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p19803858132"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p19803858132"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p19803858132"></a>Specifies the type of the generated report.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="27.93%"><a name="en-us_topic_0283137465_en-us_topic_0237121997_ul9103640142011"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_ul9103640142011"></a><ul id="en-us_topic_0283137465_en-us_topic_0237121997_ul9103640142011"><li><strong id="b97701018193212"><a name="b97701018193212"></a><a name="b97701018193212"></a>summary</strong></li><li><strong id="b4248191533212"><a name="b4248191533212"></a><a name="b4248191533212"></a>detail</strong></li><li><strong id="b214295871552114"><a name="b214295871552114"></a><a name="b214295871552114"></a>all</strong>: Both <strong id="b107151920452114"><a name="b107151920452114"></a><a name="b107151920452114"></a>summary </strong>and <strong id="b113010238352114"><a name="b113010238352114"></a><a name="b113010238352114"></a>detail</strong> types are included.</li></ul>
+    <td class="cellrowborder" valign="top" width="34.47%"><a name="en-us_topic_0283137465_en-us_topic_0237121997_ul9103640142011"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_ul9103640142011"></a><ul id="en-us_topic_0283137465_en-us_topic_0237121997_ul9103640142011"><li><strong id="b75191529124515"><a name="b75191529124515"></a><a name="b75191529124515"></a>summary</strong></li><li><strong id="b1470510362456"><a name="b1470510362456"></a><a name="b1470510362456"></a>detail</strong></li><li><strong id="b18337195913443"><a name="b18337195913443"></a><a name="b18337195913443"></a>all</strong>: Both <strong id="b743112817459"><a name="b743112817459"></a><a name="b743112817459"></a>summary </strong>and <strong id="b1023181119455"><a name="b1023181119455"></a><a name="b1023181119455"></a>detail</strong> types are included.</li></ul>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row148031458936"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p28038584317"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p28038584317"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p28038584317"></a>report_scope</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.83%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"></a>Specifies the scope for a report to be generated.</p>
+    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"></a>Specifies the scope for a report to be generated.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="27.93%"><p id="en-us_topic_0283137465_p1121534790"><a name="en-us_topic_0283137465_p1121534790"></a><a name="en-us_topic_0283137465_p1121534790"></a><strong id="b1716563052213"><a name="b1716563052213"></a><a name="b1716563052213"></a>node</strong>: a node in openGauss</p>
+    <td class="cellrowborder" valign="top" width="34.47%"><a name="ul10102152712184"></a><a name="ul10102152712184"></a><ul id="ul10102152712184"><li>cluster: database-level information</li><li>node: node-level information</li></ul>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row188031958732"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1280316588318"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1280316588318"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1280316588318"></a>node_name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.83%"><p id="en-us_topic_0283137465_p10320111217913"><a name="en-us_topic_0283137465_p10320111217913"></a><a name="en-us_topic_0283137465_p10320111217913"></a>When <span class="parmname" id="parmname94685915245"><a name="parmname94685915245"></a><a name="parmname94685915245"></a><b>report_scope</b></span> is set to <span class="parmvalue" id="parmvalue0659181392416"><a name="parmvalue0659181392416"></a><a name="parmvalue0659181392416"></a><b>node</b></span>, set this parameter to the name of the corresponding node.</p>
+    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137259_p9831125295619"><a name="en-us_topic_0283137259_p9831125295619"></a><a name="en-us_topic_0283137259_p9831125295619"></a>When <strong id="b51081142164115"><a name="b51081142164115"></a><a name="b51081142164115"></a>report_scope</strong> is set to <strong id="b81764554114"><a name="b81764554114"></a><a name="b81764554114"></a>node</strong>, set this parameter to the name of the corresponding node. (You can run the select * from pg_node_env; command to query the node name.)</p>
+    <p id="en-us_topic_0283137259_p941074755313"><a name="en-us_topic_0283137259_p941074755313"></a><a name="en-us_topic_0283137259_p941074755313"></a>If <strong id="b87314582410"><a name="b87314582410"></a><a name="b87314582410"></a>report_scope</strong> is set to <strong id="b83581212424"><a name="b83581212424"></a><a name="b83581212424"></a>cluster</strong>, this parameter can be omitted, left blank, or set to <strong id="b3186694426"><a name="b3186694426"></a><a name="b3186694426"></a>NULL</strong>.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="27.93%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"></a>-</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
--   create\_wdr\_snapshot\(stat text, dbid Oid\)
-
-    Description: Manually generates system diagnosis snapshots.
-
-    Return type: record
-
-    **Table  2**  create\_wdr\_snapshot parameter description
-
-    <a name="en-us_topic_0283137465_en-us_topic_0237121997_table1668210471952"></a>
-    <table><tbody><tr id="en-us_topic_0283137465_en-us_topic_0237121997_row1373111475519"><td class="cellrowborder" valign="top" width="28.970000000000002%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p147317473510"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p147317473510"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p147317473510"></a>Parameter</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="71.03%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p14731847951"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p14731847951"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p14731847951"></a>Description</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row137319471355"><td class="cellrowborder" valign="top" width="28.970000000000002%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p137315473511"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p137315473511"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p137315473511"></a>stat</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="71.03%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1732947950"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1732947950"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1732947950"></a>Specifies the name of the node for each snapshot. By default, the status information of all nodes is collected.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row1173234712514"><td class="cellrowborder" valign="top" width="28.970000000000002%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p10732164715519"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p10732164715519"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p10732164715519"></a>dbid</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="71.03%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p16732154710517"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p16732154710517"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p16732154710517"></a>ID of the database whose status information is to be collected.</p>
+    <td class="cellrowborder" valign="top" width="34.47%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"></a></p>
+    <a name="ul8919134451817"></a><a name="ul8919134451817"></a><ul id="ul8919134451817"><li>cluster: omitted/null/NULL</li><li>node: indicates the node name in openGauss.</li></ul>
     </td>
     </tr>
     </tbody>
     </table>
+
+-   create\_wdr\_snapshot\(\)
+
+    Description: Manually generates system diagnosis snapshots. This function requires the sysadmin permission.
+
+    Return type: text
 
 -   reset\_unique\_sql
 
     Description: Clears the Unique SQL statements in the memory of the database node. \(The sysadmin permission is required.\)
 
-    Return type: bool
+    Return type: Boolean
 
-    **Table  3**  reset\_unique\_sql parameter description
+    **Table  2**  reset\_unique\_sql parameter description
 
     <a name="en-us_topic_0283137465_table143441146077"></a>
     <table><thead align="left"><tr id="en-us_topic_0283137465_row934420464720"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283137465_p7344646272"><a name="en-us_topic_0283137465_p7344646272"></a><a name="en-us_topic_0283137465_p7344646272"></a>Parameter</p>
@@ -219,7 +176,7 @@
 
 -   wdr\_xdb\_query\(db\_name\_str text, query text\)
 
-    Description: Provides the capability of executing cross-database queries at local. For example, when connecting to the Postgres database, access tables in the  **test**  database.
+    Description: Provides the capability of executing local cross-database queries. For example, when connecting to the Postgres database, access tables in the  **test**  database.
 
     ```
     select col1 from wdr_xdb_query('dbname=test','select col1 from t1') as dd(col1 int);
@@ -229,7 +186,7 @@
 
 -   pg\_wlm\_jump\_queue\(pid int\)
 
-    Description: Moves a task to the top of the primary database node queue.
+    Description: Moves a task to the top of the CN queue.
 
     Return type: Boolean
 
@@ -307,12 +264,6 @@
 
     Return type: record
 
--   local\_rto\_status\(\)
-
-    Description: Displays log flow control information about the primary and standby instances.
-
-    Return type: record
-
 -   gs\_wlm\_node\_recover\(boolean isForce\)
 
     Description: Obtains top SQL query statement-level statistics recorded in the current memory. If the input parameter is not 0, the information is cleared from the memory.
@@ -327,7 +278,7 @@
 
 -   gs\_wlm\_switch\_cgroup\(sess\_id int8, cgroup name\)
 
-    Description: Switches the control group of a specified session.
+    Description: Switches the cgroup of a specified session.
 
     Return type: record
 
@@ -361,6 +312,18 @@
 
     Return type: bigint
 
+-   pg\_get\_flush\_lsn\(\)
+
+    Description: Returns the location of the Xlog flushed from the current node.
+
+    Return type: text
+
+-   pg\_get\_sync\_flush\_lsn\(\)
+
+    Description: Returns the location of the Xlog flushed by the majority on the current node.
+
+    Return type: text
+
 -   gs\_create\_log\_tables\(\)
 
     Description: Creates foreign tables and views for run logs and performance logs.
@@ -383,7 +346,7 @@
 
     Return type: record
 
-    **Table  4**  dbe\_perf.get\_global\_full\_sql\_by\_timestamp parameter description
+    **Table  3**  dbe\_perf.get\_global\_full\_sql\_by\_timestamp parameter description
 
     <a name="table173628271511"></a>
     <table><thead align="left"><tr id="row2036210271054"><th class="cellrowborder" valign="top" width="20.242024202420243%" id="mcps1.2.4.1.1"><p id="p63621027457"><a name="p63621027457"></a><a name="p63621027457"></a>Parameter</p>
@@ -417,7 +380,7 @@
 
     Return type: record
 
-    **Table  5**  dbe\_perf.get\_global\_slow\_sql\_by\_timestamp parameter description
+    **Table  4**  dbe\_perf.get\_global\_slow\_sql\_by\_timestamp parameter description
 
     <a name="table152133591871"></a>
     <table><thead align="left"><tr id="row72147595714"><th class="cellrowborder" valign="top" width="20.242024202420243%" id="mcps1.2.4.1.1"><p id="p1921419591570"><a name="p1921419591570"></a><a name="p1921419591570"></a>Parameter</p>
@@ -451,7 +414,7 @@
 
     Return type: text
 
-    **Table  6**  statement\_detail\_decode parameter description
+    **Table  5**  statement\_detail\_decode parameter description
 
     <a name="table9745177191215"></a>
     <table><thead align="left"><tr id="row127451717124"><th class="cellrowborder" valign="top" width="20.242024202420243%" id="mcps1.2.4.1.1"><p id="p1974687151213"><a name="p1974687151213"></a><a name="p1974687151213"></a>Parameter</p>
@@ -462,7 +425,7 @@
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row167467711212"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p197461379124"><a name="p197461379124"></a><a name="p197461379124"></a><strong id="b300688818"><a name="b300688818"></a><a name="b300688818"></a>detail</strong></p>
+    <tbody><tr id="row167467711212"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p197461379124"><a name="p197461379124"></a><a name="p197461379124"></a><strong id="b4248191533212"><a name="b4248191533212"></a><a name="b4248191533212"></a>detail</strong></p>
     </td>
     <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p137462712123"><a name="p137462712123"></a><a name="p137462712123"></a>text</p>
     </td>
@@ -482,6 +445,105 @@
     </td>
     <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><div class="p" id="p7905125312149"><a name="p7905125312149"></a><a name="p7905125312149"></a>Whether to display the text in pretty format when <strong id="b106594338279"><a name="b106594338279"></a><a name="b106594338279"></a>format</strong> is set to <strong id="b1170019238252"><a name="b1170019238252"></a><a name="b1170019238252"></a>plaintext</strong>. The options are as follows:<a name="ul6896165111497"></a><a name="ul6896165111497"></a><ul id="ul6896165111497"><li>The value <strong id="b1197654722714"><a name="b1197654722714"></a><a name="b1197654722714"></a>true </strong>indicates that events are separated by <strong id="b13431135542718"><a name="b13431135542718"></a><a name="b13431135542718"></a>\n</strong>.</li><li>The value <strong id="b1484645742711"><a name="b1484645742711"></a><a name="b1484645742711"></a>false </strong>indicates that events are separated by commas (,).</li></ul>
     </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   get\_global\_user\_transaction\(\)
+
+    Description: Returns transaction information about each user on all nodes.
+
+    Return type: node\_name name, usename name, commit\_counter bigint, rollback\_counter bigint, resp\_min bigint, resp\_max bigint, resp\_avg bigint, resp\_total bigint, bg\_commit\_counter bigint, bg\_rollback\_counter bigint, bg\_resp\_min bigint, bg\_resp\_max bigint, bg\_resp\_avg bigint, bg\_resp\_total bigint
+
+-   pg\_collation\_for
+
+    Description: Returns the sorting rule corresponding to the input parameter string.
+
+    Parameter: any \(Explicit type conversion is required for constants.\)
+
+    Return type: text
+
+-   pgxc\_unlock\_for\_sp\_database\(name Name\)
+
+    Description: Releases a specified database lock.
+
+    Parameter: database name
+
+    Return type: Boolean
+
+-   pgxc\_lock\_for\_sp\_database\(name Name\)
+
+    Description: Locks a specified database.
+
+    Parameter: database name
+
+    Return type: Boolean
+
+-   copy\_error\_log\_create\(\)
+
+    Description: Creates the error table \(**public.pgxc\_copy\_error\_log**\) required for creating the  **COPY FROM**  error tolerance mechanism.
+
+    Return type: Boolean
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   This function attempts to create the  **public.pgxc\_copy\_error\_log**  table. For details about the table, see  [Table 6](#table138318280213).
+    >-   Create the B-tree index on the  **relname**  column and execute  **REVOKE ALL on public.pgxc\_copy\_error\_log FROM public**  to manage permissions for the error table \(the permissions are the same as those of the  **COPY**  statement\).
+    >-   **public.pgxc\_copy\_error\_log**  is a row-store table. Therefore, this function can be executed and  **COPY**  error tolerance is available only when row-store tables can be created in the database instance. Note that after the GUC parameter  **enable\_hadoop\_env**  is enabled, row-store tables cannot be created in the database instance \(the default value of GaussDB Kernel is off\).
+    >-   Same as the error table and the  **COPY**  statement, the function requires  **sysadmin**  or higher permissions.
+    >-   If the  **public.pgxc\_copy\_error\_log**  table or the  **copy\_error\_log\_relname\_idx**  index exists before the function creates it, the function will report an error and roll back.
+
+    **Table  6**  Error table public.pgxc\_copy\_error\_log
+
+    <a name="table138318280213"></a>
+    <table><thead align="left"><tr id="row48415282214"><th class="cellrowborder" valign="top" width="22.31223122312231%" id="mcps1.2.4.1.1"><p id="p084142817211"><a name="p084142817211"></a><a name="p084142817211"></a>Column</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="28.992899289928992%" id="mcps1.2.4.1.2"><p id="p198410281525"><a name="p198410281525"></a><a name="p198410281525"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="48.6948694869487%" id="mcps1.2.4.1.3"><p id="p08411281214"><a name="p08411281214"></a><a name="p08411281214"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row65469159815"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p195466152819"><a name="p195466152819"></a><a name="p195466152819"></a>relname</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="28.992899289928992%" headers="mcps1.2.4.1.2 "><p id="p165477151182"><a name="p165477151182"></a><a name="p165477151182"></a>character varying</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.6948694869487%" headers="mcps1.2.4.1.3 "><p id="p3547141514816"><a name="p3547141514816"></a><a name="p3547141514816"></a>Table name in the form of <em id="i053011189332"><a name="i053011189332"></a><a name="i053011189332"></a>Schema name</em><strong id="b1453381816339"><a name="b1453381816339"></a><a name="b1453381816339"></a>.</strong><em id="i1153561843315"><a name="i1153561843315"></a><a name="i1153561843315"></a>Table name</em></p>
+    </td>
+    </tr>
+    <tr id="row984112817210"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p1882414211083"><a name="p1882414211083"></a><a name="p1882414211083"></a>begintime</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="28.992899289928992%" headers="mcps1.2.4.1.2 "><p id="p1082562116817"><a name="p1082562116817"></a><a name="p1082562116817"></a>timestamp with time zone</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.6948694869487%" headers="mcps1.2.4.1.3 "><p id="p17825921686"><a name="p17825921686"></a><a name="p17825921686"></a>Time when a data format error was reported</p>
+    </td>
+    </tr>
+    <tr id="row148502818216"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p1935720521277"><a name="p1935720521277"></a><a name="p1935720521277"></a>filename</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="28.992899289928992%" headers="mcps1.2.4.1.2 "><p id="p1535785215711"><a name="p1535785215711"></a><a name="p1535785215711"></a>character varying</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.6948694869487%" headers="mcps1.2.4.1.3 "><p id="p10357155215713"><a name="p10357155215713"></a><a name="p10357155215713"></a>Name of the source data file where a data format error occurs</p>
+    </td>
+    </tr>
+    <tr id="row1418810441476"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p2035812521178"><a name="p2035812521178"></a><a name="p2035812521178"></a>lineno</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="28.992899289928992%" headers="mcps1.2.4.1.2 "><p id="p12358205220716"><a name="p12358205220716"></a><a name="p12358205220716"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.6948694869487%" headers="mcps1.2.4.1.3 "><p id="p2358105218712"><a name="p2358105218712"></a><a name="p2358105218712"></a>Number of the row where a data format error occurs in a source data file</p>
+    </td>
+    </tr>
+    <tr id="row181905441873"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p6358185215718"><a name="p6358185215718"></a><a name="p6358185215718"></a>rawrecord</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="28.992899289928992%" headers="mcps1.2.4.1.2 "><p id="p153583521175"><a name="p153583521175"></a><a name="p153583521175"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.6948694869487%" headers="mcps1.2.4.1.3 "><p id="p1135810527714"><a name="p1135810527714"></a><a name="p1135810527714"></a>Raw record of a data format error in the source data file</p>
+    </td>
+    </tr>
+    <tr id="row1487854919720"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p9359145212719"><a name="p9359145212719"></a><a name="p9359145212719"></a><strong id="b824691720"><a name="b824691720"></a><a name="b824691720"></a>detail</strong></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="28.992899289928992%" headers="mcps1.2.4.1.2 "><p id="p83592521276"><a name="p83592521276"></a><a name="p83592521276"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.6948694869487%" headers="mcps1.2.4.1.3 "><p id="p20359105219717"><a name="p20359105219717"></a><a name="p20359105219717"></a>Error details</p>
     </td>
     </tr>
     </tbody>
