@@ -775,7 +775,7 @@ headless: true
 			-   [PREPARE TRANSACTION]({{< relref "./docs/Developerguide/prepare-transaction.md" >}})
 			-   [REASSIGN OWNED]({{< relref "./docs/Developerguide/reassign-owned.md" >}})
 			-   [REFRESH INCREMENTAL MATERIALIZED VIEW]({{< relref "./docs/Developerguide/refresh-incremental-materialized-view.md" >}})
-			-   [REFRESH MATERIALIZED VIEW]({{< relref "./docs/Developerguide/refresh-materilized-view.md" >}})
+			-   [REFRESH MATERIALIZED VIEW]({{< relref "./docs/Developerguide/refresh-materialized-view.md" >}})
 			-   [REINDEX]({{< relref "./docs/Developerguide/reindex.md" >}})
 			-   [RELEASE SAVEPOINT]({{< relref "./docs/Developerguide/release-savepoint.md" >}})
 			-   [RESET]({{< relref "./docs/Developerguide/reset.md" >}})
