@@ -2,7 +2,7 @@
 
 ## 背景信息
 
-openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持从单机或者一主多备最多扩容到一主八备。
+openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持从单机或者一主多备最多扩容到一主八备。
 
 ## 注意事项
 
@@ -11,7 +11,7 @@ openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持�
 
 ## 前提条件
 
--   数据库主机上存在openGauss镜像包，解压镜像包后，在script/目录下执行./gs_expansion命令进行扩容。
+-   数据库主机上存在openGauss镜像包，解压镜像包后，在script目录下执行./gs_expansion命令进行扩容。
 -   在新增的扩容备机上创建好与主机上相同的用户和用户组。
 -   已存在的数据库节点和新增的扩容节点之间需要建立好root用户互信以及数据库管理用户（如omm）的互信。
 -   正确配置xml文件，在已安装数据库配置文件的基础上，添加需要扩容的备机信息。
@@ -93,21 +93,21 @@ openGauss提供了gs\_expansion工具对数据库的备机进行扩容。支持�
 
 ## 示例
 
-使用gs\_expansion扩容步骤。
+使用gs_expansion扩容步骤。
 
 ```
-[root@openGauss173 script]# ./gs_expansion -U gsexpa -G xuemn -X /home/gsexpa/cas.xml -h 90.90.44.171
+plat1:/opt/software/openGauss/script # ./gs_expansion -U omm -G dbgrp -X /home/omm/cluster_config.xml -h 192.168.0.1
 Start to preinstall database on new nodes.
 Start to send soft to each standby nodes.
 End to send soft to each standby nodes.
 Start to preinstall database step.
-Preinstall 90.90.44.171 success
+Preinstall 192.168.0.1 success
 End to preinstall database step.
 End to preinstall database on new nodes.
 
 Start to install database on new nodes.
-Installing database on node 90.90.44.171:
-Please enter the password of user [gsexpa] on node [90.90.44.171]:
+Installing database on node 192.168.0.1:
+Please enter the password of user [omm] on node [192.168.0.1]:
 Parsing the configuration file.
 Check preinstall on every node.
 Successfully checked preinstall on every node.
@@ -125,7 +125,7 @@ encrypt cipher and rand files for database.
 Please enter password for database:
 Please repeat for database:
 begin to create CA cert files
-The sslcert will be generated in /data/gsexpa/openGauss/cluster/app/share/sslcert/om
+The sslcert will be generated in /opt/gaussdb/cluster/app/share/sslcert/om
 Cluster installation is completed.
 Configuring.
 Deleting instances from all nodes.
@@ -139,7 +139,7 @@ Configuration is completed.
 Successfully started cluster.
 Successfully installed application.
 end deploy..
-90.90.44.171 install success.
+192.168.0.1 install success.
 Finish to install database on all nodes.
 Database on standby nodes installed finished.
 
@@ -147,17 +147,21 @@ Checking gaussdb and gs_om version.
 End to check gaussdb and gs_om version.
 
 Start to establish the relationship.
-Start to build standby 90.90.44.171.
-Build standby 90.90.44.171 success.
+Start to build standby 192.168.0.1.
+Build standby 192.168.0.1 success.
 Start to generate and send cluster static file.
 End to generate and send cluster static file.
 
 Expansion results:
-90.90.44.171:   Success
+192.168.0.1:   Success
 Expansion Finish.
 ```
 
+>![](public_sys-resources/icon-notice.gif) **须知：**
+>-   对数据库集群进行扩容前，需要关注主机及新扩容节点cpu、io、网络等情况，不建议在硬件压力较大时执行扩容，否则可能导致扩容耗时较长甚至扩容失败。
+>-   当原集群数据量较大时，在进行扩容操作前应当在主机上先执行checkpoint，否则可能导致扩容耗时较长甚至扩容失败。
+
 ## 相关命令
 
-[gs\_preinstall](gs_preinstall.md)，[gs\_install](gs_install.md)，[gs\_ctl](gs_ctl.md)
+[gs_preinstall](gs_preinstall.md)，[gs_dropnode](gs_dropnode.md)，[gs_install](gs_install.md)，[gs_ctl](gs_ctl.md)
 
