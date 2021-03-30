@@ -110,7 +110,7 @@
     (1 row)
     ```
 
-    Note:  **current\_user**  is the user identifier that is applicable for permission checking. Normally it is equal to the session user, but it can be changed with  [SET ROLE](en-us_topic_0283137642.md). It also changes during the execution of functions with the attribute  **SECURITY DEFINER**.
+    Note:  **current\_user**  is the user identifier that is applicable for permission checking. Normally it is equal to the session user, but it can be changed with  [SET ROLE](SET-ROLE.md). It also changes during the execution of functions with the attribute  **SECURITY DEFINER**.
 
 -   definer\_current\_user
 
@@ -369,16 +369,32 @@
     (1 row)
     ```
 
+-   pg\_get\_ruledef\(rule\_oid\)
+
+    Description: Obtains CREATE RULE command for rule.
+
+    Return type: text
+
+    Example:
+
+    ```
+    postgres=# select * from pg_get_ruledef(24828);
+                                    pg_get_ruledef
+    -------------------------------------------------------------------
+     CREATE RULE t1_ins AS ON INSERT TO t1 DO INSTEAD INSERT INTO t2 (id) VALUES (new.id);
+    (1 row)
+    ```
+
 -   sessionid2pid\(\)
 
-    Description: Obtains PID information from a session ID \(for example, the  **sessid**  column in  **pv\_session\_stat**\).
+    Description: Obtains PID information from a session ID \(for example, the  **sessid**  column in  **gs\_session\_stat**\).
 
     Return type: int8
 
     Example:
 
     ```
-    postgres=# select sessionid2pid(sessid::cstring) from pv_session_stat limit 2;
+    postgres=# select sessionid2pid(sessid::cstring) from gs_session_stat limit 2;
       sessionid2pid
     -----------------
      139973107902208
@@ -402,22 +418,6 @@
     (1 row)
     ```
 
--   pgxc\_version\(\)
-
-    Description: Postgres-XC version information
-
-    Return type: text
-
-    Example:
-
-    ```
-    postgres=# SELECT pgxc_version();
-                                                    pgxc_version                                                 
-    -------------------------------------------------------------------------------------------------------------
-     Postgres-XC 1.1 on x86_64-unknown-linux-gnu, based on PostgreSQL 9.2.4, compiled by g++ (GCC) 5.4.0, 64-bit
-    (1 row)
-    ```
-
 -   session\_user
 
     Description: Session user name
@@ -434,7 +434,7 @@
     (1 row)
     ```
 
-    Note:  **session\_user**  is usually the user who initiated the current database connection, but administrators can change this setting with  [SET SESSION AUTHORIZATION](en-us_topic_0283137463.md).
+    Note:  **session\_user**  is usually the user who initiated the current database connection, but administrators can change this setting with  [SET SESSION AUTHORIZATION](SET-SESSION-AUTHORIZATION.md).
 
 -   user
 
@@ -449,22 +449,6 @@
      current_user
     --------------
      omm
-    (1 row)
-    ```
-
--   get\_shard\_oids\_byname
-
-    Description: Returns the OID of the node when the node name is entered.
-
-    Return type: oid
-
-    Example:
-
-    ```
-    postgres=# select get_shard_oids_byname('datanode1');
-     get_shard_oids_byname
-    -----------------------
-     {16385}
     (1 row)
     ```
 
@@ -512,7 +496,7 @@
     postgres=# SELECT version();
                                                                     version                                                                
     ---------------------------------------------------------------------------------------------------------------------------------------
-     PostgreSQL 9.2.4 (openGauss-1.0.0 build 66e54e4d) compiled at 2020-01-02 13:02:26 commit 7218 last mr 10175  on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 8.2.0, 64-bit
+     PostgreSQL 9.2.4 (openGauss-1.1.0 build 66e54e4d) compiled at 2020-01-02 13:02:26 commit 7218 last mr 10175  on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 8.2.0, 64-bit
     
     (1 row)
     ```
@@ -547,7 +531,7 @@
     postgres=# SELECT get_nodename();
      get_nodename
     --------------
-     coordinator1
+     datanode1
     (1 row)
     ```
 
@@ -566,81 +550,6 @@
     ----------------
                2200
     (1 row)
-    ```
-
-
--   pgxc\_parse\_clog\(OUT xid int8, OUT nodename text, OUT status text\)
-
-    Description: Returns the status of all transactions in the current cluster.
-
-    Return type: SETOF record
-
-    Example:
-
-    ```
-    postgres=# SELECT pgxc_parse_clog();
-     pgxc_parse_clog
-    ----------------
-    (0,dn_6004_6005_6006,INPROGRESS)
-    (1,dn_6004_6005_6006,COMMITTED)
-    (2,dn_6004_6005_6006,INPROGRESS)
-    (3 row)
-    ```
-
-
--   pgxc\_prepared\_xact\(\)
-
-    Description: Returns the list of transaction GIDs at the prepared stage in the cluster.
-
-    Return type: SETOF text
-
-    Example:
-
-    ```
-    postgres=# SELECT pgxc_prepared_xact();
-     pgxc_prepared_xact
-    --------------------          
-    (0 row)
-    ```
-
-
--   pgxc\_xacts\_iscommitted\(\)
-
-    Description: Returns the status of the transaction with the specified XID in the cluster.  **t**  indicates committed,  **f**  indicates aborted, and  **null**  indicates others.
-
-    Return type: SETOF record
-
-    Example:
-
-    ```
-    postgres=# SELECT pgxc_xacts_iscommitted(1);
-     pgxc_xacts_iscommitted
-    --------------------    
-    (dn_6004_6005_6006,t)
-    (cn_5001,t)
-    (cn_5002,t)
-    (dn_6001_6002_6003,t)      
-    (4 row)
-    ```
-
-
--   pgxc\_total\_memory\_detail\(\)
-
-    Description: Displays the memory usage in the cluster.
-
-    Return type: set of pv\_total\_memory\_detail
-
-    Example:
-
-    ```
-    postgres=# SELECT pgxc_total_memory_detail();
-    pgxc_total_memory_detail
-    --------------------    
-    (dn_6004_6005_6006,max_process_memory,81920)
-    (dn_6004_6005_6006,process_used_memory,72747)
-    (dn_6004_6005_6006,max_dynamic_memory,12096)
-    (dn_6004_6005_6006,dynamic_used_memory,1530)      
-    (4 row)
     ```
 
 
@@ -685,7 +594,7 @@
 
     Return type: Boolean
 
-    **has\_any\_column\_privilege**  checks whether a user can access any column of a table in a particular way. Its parameter possibilities are analogous to  **has\_table\_privilege**, except that the desired access permission type must be some combination of SELECT, INSERT, UPDATE, or REFERENCES.
+    **has\_any\_column\_privilege**  checks whether a user can access any column of a table in a particular way. Its parameter possibilities are analogous to  **has\_table\_privilege**, except that the desired access permission type must be some combination of SELECT, INSERT, UPDATE, COMMENT or REFERENCES.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Note that having any of these permissions at the table level implicitly grants it for each column of the table, so  **has\_any\_column\_privilege**  will always return  **true**  if  **has\_table\_privilege**  does for the same parameters. But  **has\_any\_column\_privilege**  also succeeds if there is a column-level grant of the permission for at least one column.
@@ -734,16 +643,114 @@
 
     Return type: Boolean
 
-    **has\_column\_privilege**  checks whether a user can access a column in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**, with the addition that the column can be specified either by name or attribute number. The desired access permission type must evaluate to some combination of  **SELECT**,  **INSERT**,  **UPDATE**, or  **REFERENCES**.
+    **has\_column\_privilege**  checks whether a user can access a column in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**, with the addition that the column can be specified either by name or attribute number. The desired access permission type must evaluate to some combination of  **SELECT**,  **INSERT**,  **UPDATE**,  **COMMENT**  or  **REFERENCES**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Note that having any of these permissions at the table level implicitly grants it for each column of the table.
 
--   has\_database\_privilege\(user, database, privilege\)
+-   has\_cek\_privilege\(user, cek, privilege\)
 
-    Description: Queries whether a specified user has permission for database.
+    Description: Queries whether a specified user has permission for column encryption key \(CEK\). The parameters are described as follows:
 
     **Table  3**  Parameter type description
+
+    <a name="table643515160315"></a>
+    <table><thead align="left"><tr id="row0435131613319"><th class="cellrowborder" valign="top" width="15.33153315331533%" id="mcps1.2.5.1.1"><p id="p134352161319"><a name="p134352161319"></a><a name="p134352161319"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="16.96169616961696%" id="mcps1.2.5.1.2"><p id="p1943581683113"><a name="p1943581683113"></a><a name="p1943581683113"></a>Valid Input Parameter Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="14.4014401440144%" id="mcps1.2.5.1.3"><p id="p1443514164319"><a name="p1443514164319"></a><a name="p1443514164319"></a>Description</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="53.30533053305331%" id="mcps1.2.5.1.4"><p id="p19436116133115"><a name="p19436116133115"></a><a name="p19436116133115"></a>Range</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1743611613112"><td class="cellrowborder" valign="top" width="15.33153315331533%" headers="mcps1.2.5.1.1 "><p id="p1343631615318"><a name="p1343631615318"></a><a name="p1343631615318"></a>user</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.96169616961696%" headers="mcps1.2.5.1.2 "><p id="p3436151693110"><a name="p3436151693110"></a><a name="p3436151693110"></a>name, oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.4014401440144%" headers="mcps1.2.5.1.3 "><p id="p174361616103119"><a name="p174361616103119"></a><a name="p174361616103119"></a>User</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="53.30533053305331%" headers="mcps1.2.5.1.4 "><p id="p6436141613313"><a name="p6436141613313"></a><a name="p6436141613313"></a>User name or ID</p>
+    </td>
+    </tr>
+    <tr id="row104361916193120"><td class="cellrowborder" valign="top" width="15.33153315331533%" headers="mcps1.2.5.1.1 "><p id="p134361016143112"><a name="p134361016143112"></a><a name="p134361016143112"></a>cek</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.96169616961696%" headers="mcps1.2.5.1.2 "><p id="p174361716133114"><a name="p174361716133114"></a><a name="p174361716133114"></a>text, oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.4014401440144%" headers="mcps1.2.5.1.3 "><p id="p51971937343"><a name="p51971937343"></a><a name="p51971937343"></a>Column encryption key</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="53.30533053305331%" headers="mcps1.2.5.1.4 "><p id="p1743641612316"><a name="p1743641612316"></a><a name="p1743641612316"></a>Name or ID of a CEK.</p>
+    </td>
+    </tr>
+    <tr id="row174361416183113"><td class="cellrowborder" valign="top" width="15.33153315331533%" headers="mcps1.2.5.1.1 "><p id="p134367167315"><a name="p134367167315"></a><a name="p134367167315"></a>privilege</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.96169616961696%" headers="mcps1.2.5.1.2 "><p id="p44361516173113"><a name="p44361516173113"></a><a name="p44361516173113"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.4014401440144%" headers="mcps1.2.5.1.3 "><p id="p134361716123116"><a name="p134361716123116"></a><a name="p134361716123116"></a>Permission</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="53.30533053305331%" headers="mcps1.2.5.1.4 "><a name="ul11436191603113"></a><a name="ul11436191603113"></a><ul id="ul11436191603113"><li><strong id="b46781998151"><a name="b46781998151"></a><a name="b46781998151"></a>USAGE</strong>: allows users to use the specified CEK.</li><li><strong id="b726231421512"><a name="b726231421512"></a><a name="b726231421512"></a>DROP</strong>: allows users to delete the specified CEK.</li></ul>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    Return type: Boolean
+
+-   has\_cmk\_privilege\(user, cmk, privilege\)
+
+    Description: Queries whether a specified user has permission for client master key \(CMK\). The parameters are described as follows:
+
+    **Table  4**  Parameter type description
+
+    <a name="table1415603034112"></a>
+    <table><thead align="left"><tr id="row1915716309411"><th class="cellrowborder" valign="top" width="15.33153315331533%" id="mcps1.2.5.1.1"><p id="p16157530174118"><a name="p16157530174118"></a><a name="p16157530174118"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="16.96169616961696%" id="mcps1.2.5.1.2"><p id="p515718303415"><a name="p515718303415"></a><a name="p515718303415"></a>Valid Input Parameter Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="21.442144214421443%" id="mcps1.2.5.1.3"><p id="p81575303418"><a name="p81575303418"></a><a name="p81575303418"></a>Description</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="46.26462646264626%" id="mcps1.2.5.1.4"><p id="p8157173019410"><a name="p8157173019410"></a><a name="p8157173019410"></a>Range</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row2157163094119"><td class="cellrowborder" valign="top" width="15.33153315331533%" headers="mcps1.2.5.1.1 "><p id="p71571530134116"><a name="p71571530134116"></a><a name="p71571530134116"></a>user</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.96169616961696%" headers="mcps1.2.5.1.2 "><p id="p2157183004110"><a name="p2157183004110"></a><a name="p2157183004110"></a>name, oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.442144214421443%" headers="mcps1.2.5.1.3 "><p id="p15157230134117"><a name="p15157230134117"></a><a name="p15157230134117"></a>User</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="46.26462646264626%" headers="mcps1.2.5.1.4 "><p id="p1515723017418"><a name="p1515723017418"></a><a name="p1515723017418"></a>User name or ID</p>
+    </td>
+    </tr>
+    <tr id="row14157630154113"><td class="cellrowborder" valign="top" width="15.33153315331533%" headers="mcps1.2.5.1.1 "><p id="p191578306412"><a name="p191578306412"></a><a name="p191578306412"></a>cmk</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.96169616961696%" headers="mcps1.2.5.1.2 "><p id="p915712304416"><a name="p915712304416"></a><a name="p915712304416"></a>text, oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.442144214421443%" headers="mcps1.2.5.1.3 "><p id="p01571730184112"><a name="p01571730184112"></a><a name="p01571730184112"></a>Client master key</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="46.26462646264626%" headers="mcps1.2.5.1.4 "><p id="p101586303416"><a name="p101586303416"></a><a name="p101586303416"></a>Name or ID of the CMK</p>
+    </td>
+    </tr>
+    <tr id="row1315815303417"><td class="cellrowborder" valign="top" width="15.33153315331533%" headers="mcps1.2.5.1.1 "><p id="p1215873004114"><a name="p1215873004114"></a><a name="p1215873004114"></a>privilege</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.96169616961696%" headers="mcps1.2.5.1.2 "><p id="p1415810306415"><a name="p1415810306415"></a><a name="p1415810306415"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.442144214421443%" headers="mcps1.2.5.1.3 "><p id="p1315833020412"><a name="p1315833020412"></a><a name="p1315833020412"></a>Permission</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="46.26462646264626%" headers="mcps1.2.5.1.4 "><a name="ul51586309417"></a><a name="ul51586309417"></a><ul id="ul51586309417"><li><strong id="b9655173251712"><a name="b9655173251712"></a><a name="b9655173251712"></a>USAGE</strong>: allows users to use the specified CMK.</li><li><strong id="b631174441713"><a name="b631174441713"></a><a name="b631174441713"></a>DROP</strong>: allows users to delete the specified CMK.</li></ul>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    Return type: Boolean
+
+-   has\_database\_privilege\(user, database, privilege\)
+
+    Description: Queries whether a specified user has permission for database. The parameters are described as follows:
+
+    **Table  5**  Parameter type description
 
     <a name="en-us_topic_0283136950_table111152337017"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136950_row9116173319014"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_p101166338014"><a name="en-us_topic_0283136950_p101166338014"></a><a name="en-us_topic_0283136950_p101166338014"></a>Parameter</p>
@@ -774,17 +781,17 @@
 
 -   has\_database\_privilege\(database, privilege\)
 
-    Description: Queries whether the current user has permission to access a database. For details about the valid parameter types, see  [Table 3](#en-us_topic_0283136950_table111152337017).
+    Description: Queries whether the current user has permission to access a database. For details about the valid parameter types, see  [Table 5](#en-us_topic_0283136950_table111152337017).
 
     Return type: Boolean
 
-    Note:  **has\_database\_privilege**  checks whether a user can access a database in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must evaluate to some combination of  **CREATE**,  **CONNECT**,  **TEMPORARY**, or  **TEMP**  \(which is equivalent to  **TEMPORARY**\).
+    Note:  **has\_database\_privilege**  checks whether a user can access a database in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must be some combination of  **CREATE**,  **CONNECT**,  **TEMPORARY**,  **ALTER**,  **DROP**,  **COMMENT**  or  **TEMP**  \(which is equivalent to  **TEMPORARY**\).
 
 -   has\_directory\_privilege\(user, database, privilege\)
 
     Description: Queries whether a specified user has permission for directory.
 
-    **Table  4**  Parameter type description
+    **Table  6**  Parameter type description
 
     <a name="en-us_topic_0283136950_table111483362025"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136950_row1814813361023"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_p11493369214"><a name="en-us_topic_0283136950_p11493369214"></a><a name="en-us_topic_0283136950_p11493369214"></a>Parameter</p>
@@ -815,7 +822,7 @@
 
 -   has\_directory\_privilege\(database, privilege\)
 
-    Description: Queries whether the current user has permission to access a directory. For details about the valid parameter types, see  [Table 4](#en-us_topic_0283136950_table111483362025).
+    Description: Queries whether the current user has permission to access a directory. For details about the valid parameter types, see  [Table 6](#en-us_topic_0283136950_table111483362025).
 
     Return type: Boolean
 
@@ -823,7 +830,7 @@
 
     Description: Queries whether a specified user has permission for foreign-data wrapper.
 
-    **Table  5**  Parameter type description
+    **Table  7**  Parameter type description
 
     <a name="en-us_topic_0283136950_table3176631131"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136950_row617614310319"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_p117717314310"><a name="en-us_topic_0283136950_p117717314310"></a><a name="en-us_topic_0283136950_p117717314310"></a>Parameter</p>
@@ -854,7 +861,7 @@
 
 -   has\_foreign\_data\_wrapper\_privilege\(fdw, privilege\)
 
-    Description: Queries whether the current user has permission for foreign-data wrapper. For details about valid parameter types, see  [Table 5](#en-us_topic_0283136950_table3176631131).
+    Description: Queries whether the current user has permission for foreign-data wrapper. For details about valid parameter types, see  [Table 7](#en-us_topic_0283136950_table3176631131).
 
     Return type: Boolean
 
@@ -864,7 +871,7 @@
 
     Description: Queries whether a specified user has permission for function.
 
-    **Table  6**  Parameter type description
+    **Table  8**  Parameter type description
 
     <a name="en-us_topic_0283136950_table169651367619"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136950_row139663361263"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_p996613361562"><a name="en-us_topic_0283136950_p996613361562"></a><a name="en-us_topic_0283136950_p996613361562"></a>Parameter</p>
@@ -895,17 +902,17 @@
 
 -   has\_function\_privilege\(function, privilege\)
 
-    Description: Queries whether the current user has permission for function. For details about valid parameter types, see  [Table 6](#en-us_topic_0283136950_table169651367619).
+    Description: Queries whether the current user has permission for function. For details about valid parameter types, see  [Table 8](#en-us_topic_0283136950_table169651367619).
 
     Return type: Boolean
 
-    Note:  **has\_function\_privilege**  checks whether a user can access a function in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. When a function is specified by a text string rather than by OID, the allowed input is the same as that for the  **regprocedure**  data type \(see  [Object Identifier Types](en-us_topic_0283136600.md)\). The desired access permission type must evaluate to  **EXECUTE**.
+    Note:  **has\_function\_privilege**  checks whether a user can access a function in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. When a function is specified by a text string rather than by OID, the allowed input is the same as that for the  **regprocedure**  data type \(see  [Object Identifier Types](Object-Identifier-Types.md)\). The access permission type must be  **EXECUTE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
 -   has\_language\_privilege\(user, language, privilege\)
 
     Description: Queries whether a specified user has permission for language.
 
-    **Table  7**  Parameter type description
+    **Table  9**  Parameter type description
 
     <a name="en-us_topic_0283136950_table7622265910"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136950_row2622661694"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_p116221062095"><a name="en-us_topic_0283136950_p116221062095"></a><a name="en-us_topic_0283136950_p116221062095"></a>Parameter</p>
@@ -936,19 +943,19 @@
 
 -   has\_language\_privilege\(language, privilege\)
 
-    Description: Queries whether the current user has permission for language. For details about valid parameter types, see  [Table 7](#en-us_topic_0283136950_table7622265910).
+    Description: Queries whether the current user has permission for language. For details about valid parameter types, see  [Table 9](#en-us_topic_0283136950_table7622265910).
 
     Return type: Boolean
 
     Note:  **has\_language\_privilege**  checks whether a user can access a procedural language in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must evaluate to  **USAGE**.
 
--   has\_nodegroup\_privilege \(user, nodegroup, privilege\)
+-   has\_nodegroup\_privilege\(user, nodegroup, privilege\)
 
-    Description: Checks whether a user has permission to access a cluster node.
+    Description: Checks whether a user has permission to access a database node.
 
     Return type: Boolean
 
-    **Table  8**  Parameter type description
+    **Table  10**  Parameter type description
 
     <a name="en-us_topic_0283136950_table027552114349"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136950_row18276321113412"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_p1927692120344"><a name="en-us_topic_0283136950_p1927692120344"></a><a name="en-us_topic_0283136950_p1927692120344"></a>Parameter</p>
@@ -975,9 +982,9 @@
     </tbody>
     </table>
 
--   has\_nodegroup\_privilege \(nodegroup, privilege\)
+-   has\_nodegroup\_privilege\(nodegroup, privilege\)
 
-    Description: Checks whether a user has permission to access a cluster node.
+    Description: Checks whether a user has permission to access a database node. The parameter is similar to has\_table\_privilege. The access permission type must be  **USAGE**,  **CREATE**,  **COMPUTE**,  **ALTER**, or  **CROP**.
 
     Return type: Boolean
 
@@ -993,7 +1000,7 @@
 
     Return type: Boolean
 
-    Note:  **has\_schema\_privilege**  checks whether a user can access a schema in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must evaluate to some combination of  **CREATE**  or  **USAGE**.
+    Note:  **has\_schema\_privilege**  checks whether a user can access a schema in a particular way. Its parameter possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must be some combination of  **CREATE**,  **USAGE**,  **ALTER**,  **DROP**  or  **COMMENT**.
 
 -   has\_server\_privilege\(user, server, privilege\)
 
@@ -1007,7 +1014,7 @@
 
     Return type: Boolean
 
-    Note:  **has\_server\_privilege**  checks whether a user can access a foreign server in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must evaluate to  **USAGE**.
+    Note:  **has\_server\_privilege**  checks whether a user can access a foreign server in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The access permission type must be  **USAGE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
 -   has\_table\_privilege\(user, table, privilege\)
 
@@ -1021,7 +1028,7 @@
 
     Return type: Boolean
 
-    **has\_table\_privilege**  checks whether a user can access a table in a particular way. The user can be specified by name, by OID \(**pg\_authid.oid**\),  **public**  to indicate the PUBLIC pseudo-role, or if the argument is omitted  **current\_user**  is assumed. The table can be specified by name or by OID. When specifying by name, the name can be schema-qualified if necessary. The desired access permission type is specified by a text string, which must be one of the values  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **TRUNCATE**,  **REFERENCES**, or  **TRIGGER**. Optionally,  **WITH GRANT OPTION**  can be added to a permission type to test whether the permission is held with grant option. Also, multiple permission types can be listed separated by commas, in which case the result will be  **true**  if any of the listed permissions is held.
+    **has\_table\_privilege**  checks whether a user can access a table in a particular way. The user can be specified by name, by OID \(**pg\_authid.oid**\),  **public**  to indicate the PUBLIC pseudo-role, or if the argument is omitted  **current\_user**  is assumed. The table can be specified by name or by OID. When specifying by name, the name can be schema-qualified if necessary. The desired access permission type is specified by a text string, which must be one of the values  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **TRUNCATE**,  **REFERENCES**,  **TRIGGER**,  **ALTER**,  **DROP**,  **COMMENT**,  **INDEX**  or  **VACUUM**. Optionally,  **WITH GRANT OPTION**  can be added to a permission type to test whether the permission is held with grant option. Also, multiple permission types can be listed separated by commas, in which case the result will be  **true**  if any of the listed permissions is held.
 
     Example:
 
@@ -1051,7 +1058,7 @@
 
     Return type: Boolean
 
-    Note:  **has\_tablespace\_privilege**  checks whether a user can access a tablespace in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must evaluate to  **CREATE**.
+    Note:  **has\_tablespace\_privilege**  checks whether a user can access a tablespace in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The access permission type must be  **CREATE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
 -   pg\_has\_role\(user, role, privilege\)
 
@@ -1386,7 +1393,6 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
              c1 bigint DEFAULT nextval('serial'::regclass)+
      )                                                    +
      WITH (orientation=row, compression=no)               +
-     DISTRIBUTE BY HASH(c1)                               +
      TO GROUP group1;
     (1 row)
     ```
@@ -1408,7 +1414,6 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
              c1 bigint DEFAULT nextval('serial'::regclass)+
      )                                                    +
      WITH (orientation=row, compression=no)               +
-     DISTRIBUTE BY HASH(c1)                               +
      TO GROUP group1;
     (1 row)
     ```
@@ -1445,7 +1450,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Return type: regtype
 
-    Note:  **pg\_typeof**  returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries. The function is declared as returning  **regtype**, which is an OID alias type \(see  [Object Identifier Types](en-us_topic_0283136600.md)\). This means that it is the same as an OID for comparison purposes but displays as a type name.
+    Note:  **pg\_typeof**  returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries. The function is declared as returning  **regtype**, which is an OID alias type \(see  [Object Identifier Types](Object-Identifier-Types.md)\). This means that it is the same as an OID for comparison purposes but displays as a type name.
 
     Example:
 
@@ -1483,22 +1488,6 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     The value might be quoted and schema-qualified. If no collation is derived for the argument expression, then a null value is returned. If the parameter is not of a collectable data type, then an error is thrown.
 
--   getdistributekey\(table\_name\)
-
-    Description: Obtains a distribution key for a hash table.
-
-    Return type: text
-
-    Example:
-
-    ```
-    postgres=# SELECT getdistributekey('item');
-     getdistributekey 
-    ------------------
-     i_item_sk
-    (1 row)
-    ```
-
 -   pg\_extension\_update\_paths\(name\)
 
     Description: Returns the version update path of the specified extension.
@@ -1534,22 +1523,6 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
      start_value | minimum_value |    maximum_value    | increment | cycle_option 
     -------------+---------------+---------------------+-----------+--------------
              101 |             1 | 9223372036854775807 |         1 | f
-    (1 row)
-    ```
-
--   pgxc\_get\_variable\_info\(\)
-
-    Description: Obtains variable values on the node, including  **nodeName**,  **nextOid**,  **nextXid**,  **oldestXid**,  **xidVacLimit**,  **oldestXidDB**,  **lastExtendCSNLogpage**,  **startExtendCSNLogpage**,  **nextCommitSeqNo**,  **latestCompleteXid**, and  **startupMaxXid**.
-
-    Return type: set of pg\_variable\_info
-
-    Example:
-
-    ```
-    postgres=# select pgxc_get_variable_info( );
-                          pgxc_get_variable_info
-    -------------------------------------------------------------------------
-    (dn_6004_6005_6006,25617,141396349,2073,20000002073,15808,138111,0,127154152,141396348,104433004)
     (1 row)
     ```
 
@@ -1593,12 +1566,6 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 The following functions provide server transaction information in an exportable form. The main use of these functions is to determine which transactions were committed between two snapshots.
 
--   pgxc\_is\_committed\(transaction\_id\)
-
-    Description: Determines whether the given XID is committed or ignored. NULL indicates the unknown status \(such as running, preparing, and freezing\).
-
-    Return type: bool
-
 -   txid\_current\(\)
 
     Description: Gets current transaction ID.
@@ -1615,7 +1582,7 @@ The following functions provide server transaction information in an exportable 
 
     Description: Gets in-progress transaction IDs in snapshot.
 
-    Return type: setof bigint
+    Return type: SETOF bigint
 
 -   txid\_snapshot\_xmax\(txid\_snapshot\)
 
@@ -1637,7 +1604,7 @@ The following functions provide server transaction information in an exportable 
 
 -   get\_local\_prepared\_xact\(\)
 
-    Description: Obtains the two-phase residual transaction information of the current node, including the transaction ID, GID the two-phase transaction, prepared time, owner OID, database OID, and name of the current node.
+    Description: Obtains the two-phase residual transaction information of the current node, including the transaction ID, GID the two-phase transaction, prepared time, owner OID, database OID, and node name of the current node.
 
     Return type: xid, text, timestamptz, oid, oid, text
 
@@ -1653,142 +1620,39 @@ The following functions provide server transaction information in an exportable 
 
     Return type: Boolean
 
--   pgxc\_stat\_get\_wal\_senders\_status\(\)
+    The internal transaction ID type \(**xid**\) is 32 bits wide and wraps around every 4 billion transactions.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment in time.  [Table 11](#en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
 
-    Description: Returns the reception status of the standby node for node transaction logs.
+    **Table  11**  Snapshot components
 
-    After the command is executed, the following result is output:
-
-    **Table  9**  pgxc\_stat\_get\_wal\_senders\_status output parameters
-
-    <a name="en-us_topic_0283136950_en-us_topic_0237121987_table1142941263918"></a>
-    <table><thead align="left"><tr id="en-us_topic_0283136950_en-us_topic_0237121987_row4429181263917"><th class="cellrowborder" valign="top" width="38.42%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_en-us_topic_0237121987_p142931233911"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p142931233911"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p142931233911"></a>Column</p>
+    <a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d"></a>
+    <table><thead align="left"><tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_rff0daa55919a489da9225a223f21b3fd"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a>Name</p>
     </th>
-    <th class="cellrowborder" valign="top" width="61.58%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283136950_en-us_topic_0237121987_p443081253910"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p443081253910"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p443081253910"></a>Description</p>
+    <th class="cellrowborder" valign="top" width="87.58%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a>Description</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="en-us_topic_0283136950_en-us_topic_0237121987_row144301712113911"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p44301512103915"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p44301512103915"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p44301512103915"></a>nodename</p>
+    <tbody><tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_r5e9bee6140e5494e801e951823e54da9"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a>xmin</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p143021218391"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p143021218391"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p143021218391"></a>Name of the primary node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row04301312163918"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p15430912113911"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p15430912113911"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p15430912113911"></a>source_ip</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1943061223913"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1943061223913"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1943061223913"></a>IP address of the primary node</p>
+    <td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a>Earliest transaction ID (txid) that is still active. All earlier transactions will either be committed and visible, or rolled back.</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row7430171212397"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p84309129399"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p84309129399"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p84309129399"></a>source_port</p>
+    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_rb57b3b18232b440681b3a1f991fa2a3a"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a>xmax</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p12430612183919"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p12430612183919"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p12430612183919"></a>Port of the primary node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row13430712163915"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p34301412173917"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p34301412173917"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p34301412173917"></a>dest_ip</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p10430612163919"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p10430612163919"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p10430612163919"></a>IP address of the standby node</p>
+    <td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a>First as-yet-unassigned txid. All txids greater than or equal to this are not yet started as of the time of the snapshot, so they are invisible.</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row12430191253911"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p11430101213910"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p11430101213910"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p11430101213910"></a>dest_port</p>
+    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_r2def97a3e61c4109adfd6ae3e61474c6"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a>xip_list</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p194301112193913"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p194301112193913"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p194301112193913"></a>Port of the standby node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row117041722411"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1970416217411"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1970416217411"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1970416217411"></a>sender_pid</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p37040215413"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p37040215413"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p37040215413"></a>PID of the sending thread</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row8782159204112"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p778215917413"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p778215917413"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p778215917413"></a>local_role</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1278219114110"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1278219114110"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1278219114110"></a>Type of the primary node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row17990131711413"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p3990191711417"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p3990191711417"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p3990191711417"></a>peer_role</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1499061718411"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1499061718411"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1499061718411"></a>Type of the standby node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row122101336194111"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p521043664116"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p521043664116"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p521043664116"></a>peer_state</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1821010361416"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1821010361416"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1821010361416"></a>Status of the standby node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row3692114817416"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p106921948184113"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p106921948184113"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p106921948184113"></a>state</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p116921048114110"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p116921048114110"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p116921048114110"></a>WAL sender status</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row2632165424110"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p156321854184119"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p156321854184119"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p156321854184119"></a>sender_sent_location</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p18632125464119"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p18632125464119"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p18632125464119"></a>Sending position of the primary node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row679812620423"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p679842624214"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p679842624214"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p679842624214"></a>sender_write_location</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p73147242443"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p73147242443"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p73147242443"></a>Writing position of the primary node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row114841429134216"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p124841729184217"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p124841729184217"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p124841729184217"></a>sender_replay_location</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p47843242441"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p47843242441"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p47843242441"></a>Redo position of the primary node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row980313214212"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p3803632174216"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p3803632174216"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p3803632174216"></a>receiver_received_location</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p48031632164215"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p48031632164215"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p48031632164215"></a>Receiving position of the standby node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row1320173610429"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p9320163634216"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p9320163634216"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p9320163634216"></a>receiver_write_location</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1523144811441"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1523144811441"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1523144811441"></a>Writing position of the standby node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row192831349104213"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1283949174211"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1283949174211"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1283949174211"></a>receiver_flush_location</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p1257511486441"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1257511486441"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p1257511486441"></a>Flushing location of the standby node</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_row143313420450"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p23334204511"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p23334204511"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p23334204511"></a>receiver_replay_location</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_p83311484514"><a name="en-us_topic_0283136950_en-us_topic_0237121987_p83311484514"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_p83311484514"></a>Redo location of the standby node</p>
+    <td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a>Active txids at the time of the snapshot. The list includes only those active txids between <strong id="b84235270615284"><a name="b84235270615284"></a><a name="b84235270615284"></a>xmin</strong> and <strong id="b84235270615287"><a name="b84235270615287"></a><a name="b84235270615287"></a>xmax</strong>; there might be active txids higher than <strong id="b842352706152813"><a name="b842352706152813"></a><a name="b842352706152813"></a>xmax</strong>. A txid that is <strong id="en-us_topic_0058965770_b84235270615399"><a name="en-us_topic_0058965770_b84235270615399"></a><a name="en-us_topic_0058965770_b84235270615399"></a>xmin &lt;= txid &lt; xmax</strong> and not in this list was already completed at the time of the snapshot, and is either visible or dead according to its commit status. The list does not include txids of subtransactions.</p>
     </td>
     </tr>
     </tbody>
     </table>
 
+    **txid\_snapshot**'s textual representation is  **xmin:xmax:xip\_list**.
 
-The internal transaction ID type \(**xid**\) is 32 bits wide and wraps around every 4 billion transactions.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment in time.  [Table 10](#en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
+    For example,  **10:20:10,14,15**  means  **xmin=10, xmax=20, xip\_list=10, 14, 15**.
 
-**Table  10**  Snapshot components
-
-<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d"></a>
-<table><thead align="left"><tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_rff0daa55919a489da9225a223f21b3fd"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a>Name</p>
-</th>
-<th class="cellrowborder" valign="top" width="87.58%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_r5e9bee6140e5494e801e951823e54da9"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a>xmin</p>
-</td>
-<td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a>Earliest transaction ID (txid) that is still active. All earlier transactions will either be committed and visible, or rolled back.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_rb57b3b18232b440681b3a1f991fa2a3a"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a>xmax</p>
-</td>
-<td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a>First as-yet-unassigned txid. All txids greater than or equal to this are not yet started as of the time of the snapshot, so they are invisible.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_r2def97a3e61c4109adfd6ae3e61474c6"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a>xip_list</p>
-</td>
-<td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a>Active txids at the time of the snapshot. The list includes only those active txids between <strong>xmin</strong> and <strong>xmax</strong>; there might be active txids higher than <strong>xmax</strong>. A txid that is <strong>xmin &lt;= txid &lt; xmax</strong> and not in this list was already completed at the time of the snapshot, and is either visible or dead according to its commit status. The list does not include txids of subtransactions.</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-**txid\_snapshot**'s textual representation is  **xmin:xmax:xip\_list**.
-
-For example,  **10:20:10,14,15**  means  **xmin=10, xmax=20, xip\_list=10, 14, 15**.
 
 -   slice\(hstore, text\[\]\)
 
@@ -1839,16 +1703,105 @@ For example,  **10:20:10,14,15**  means  **xmin=10, xmax=20, xip\_list=10, 14, 1
     (2 rows)
     ```
 
--   simsearch\_lib\_load\_status\(\)
 
-    Description: Queries the dynamic library loading status \(success or failure\).
+-   pg\_control\_system\(\)
+
+    Description: Returns the status of the system control file.
+
+    Return type: SETOF record
+
+-   pg\_control\_checkpoint\(\)
+
+    Description: Returns the system checkpoint status.
 
     Return type: SETOF record
 
--   simsearch\_gpu\_vector\_status\(\)
+-   pv\_builtin\_functions
 
-    Description: Queries whether there is a vector in the status of searchlet.
+    Description: Displays information about all built-in system functions.
 
-    Return type: SETOF record
+    Parameter: nan
+
+    Return type: proname name, pronamespace oid, proowner oid, prolang oid, procost real, prorows real, provariadic oid, protransform regproc, proisagg boolean, proiswindow boolean, prosecdef boolean, proleakproof boolean, proisstrict boolean, proretset boolean, provolatile "char", pronargs smallint, pronargdefaults smallint, prorettype oid, proargtypes oidvector, proallargtypes integer\[\], proargmodes "char"\[\], proargnames text\[\], proargdefaults pg\_node\_tree, prosrc text, probin text, proconfig text\[\], proacl aclitem\[\], prodefaultargpos int2vector, fencedmode boolean, proshippable boolean, propackage boolean, oid oid
+
+-   pv\_thread\_memory\_detail
+
+    Description: Returns the memory information of each thread.
+
+    Parameter: nan
+
+    Return type: threadid text, tid bigint, thrdtype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
+
+-   pg\_shared\_memory\_detail
+
+    Description: Returns usage information about all generated shared memory contexts. For details about each column, see  [SHARED\_MEMORY\_DETAIL](SHARED_MEMORY_DETAIL.md).
+
+    Parameter: nan
+
+    Return type: contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
+
+-   gs\_stat\_get\_wlm\_plan\_operator\_info
+
+    Description: Obtains operator plan information from the internal hash table.
+
+    Parameter: oid
+
+    Return type: datname text, queryid int8, plan\_node\_id int4, startup\_time int8, total\_time int8, actual\_rows int8, max\_peak\_memory int4, query\_dop int4, parent\_node\_id int4, left\_child\_id int4, right\_child\_id int4, operation text, orientation text, strategy text, options text, condition text, projection text
+
+-   pg\_stat\_get\_partition\_tuples\_hot\_updated
+
+    Description: Returns statistics on the number of hot-updated tuples in a partition with a specified partition ID.
+
+    Parameter: oid
+
+    Return type: bigint
+
+-   gs\_session\_memory\_detail\_tp
+
+    Description: Returns the memory usage of the session. For details, see  **gs\_session\_memory\_detail**.
+
+    Parameter: nan
+
+    Return type: sessid text, sesstype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
+
+-   gs\_thread\_memory\_detail
+
+    Description: Returns the memory information of each thread.
+
+    Parameter: nan
+
+    Return type: threadid text, tid bigint, thrdtype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
+
+-   pg\_stat\_get\_wlm\_realtime\_operator\_info
+
+    Description: Obtains the operator information of the real-time execution plan from the internal hash table.
+
+    Parameter: nan
+
+    Return type: queryid bigint, pid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, status text, query\_dop integer, estimated\_rows bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, warning text
+
+-   pg\_stat\_get\_wlm\_realtime\_ec\_operator\_info
+
+    Description: Obtains the operator information of the EC execution plan from the internal hash table.
+
+    Parameter: nan
+
+    Return type: queryid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, ec\_operator integer, ec\_status text, ec\_execute\_datanode text, ec\_dsn text, ec\_username text, ec\_query text, ec\_libodbc\_type text, ec\_fetch\_count bigint
+
+-   pg\_stat\_get\_wlm\_operator\_info
+
+    Description: Obtains the operator information of the execution plan from the internal hash table.
+
+    Parameter: nan
+
+    Return type: queryid bigint, pid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, query\_dop integer, estimated\_rows bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, warning text
+
+-   pg\_stat\_get\_wlm\_node\_resource\_info
+
+    Description: Obtains the resource information of the current node.
+
+    Parameter: nan
+
+    Return type: min\_mem\_util integer, max\_mem\_util integer, min\_cpu\_util integer, max\_cpu\_util integer, min\_io\_util integer, max\_io\_util integer, used\_mem\_rate integer
 
 
