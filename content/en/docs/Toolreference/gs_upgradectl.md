@@ -34,7 +34,6 @@ Gray upgrade: supports operations on all service during the upgrade and upgrades
 -   If new columns are added to the system catalog during the upgrade, you cannot view these new columns by running the  **\\d**  command after the upgrade. However, you can run the  **SELECT**  command to query the new columns.
 -   The GUC parameter  **enable\_stream\_replication**  must be set to  **on**  for the upgrade. If this parameter is set to  **off**, the upgrade is not allowed.
 -   In gray upgrade, ensure that there are less than 200 concurrent reads and 200 concurrent writes.
--   In a cluster with one primary node and multiple standby nodes, after the cluster is upgraded to a version later than openGauss 1.1.0, if  **listen\_addresses**  in the configuration file is changed to  **'\*'**, you need to change values of  **localport**  in  **replconninfo1, ......replconninfo\***  to the original values plus 5. For example, if the original value is  **16000**, you need to change it to  **16005**. Otherwise, the cluster fails to be restarted.
 -   You are advised to perform the upgrade when the disk usage of the database node is less than 80%.
 
 ## Syntax<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
@@ -76,6 +75,7 @@ Gray upgrade: supports operations on all service during the upgrade and upgrades
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >-   Once the operation is complete, the rollback operation cannot be performed.
 
 
