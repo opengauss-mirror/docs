@@ -31,7 +31,7 @@
 
 ## New Features<a name="en-us_topic_0283136327_section383172195410"></a>
 
-This version is openGauss 2.0.0 LTS. Compared with 1.1.0, this version has the following new features:
+This version is openGauss 2.0.0 Release. Compared with 1.1.0, this version has the following new features:
 
 -   Delayed standby databases
 

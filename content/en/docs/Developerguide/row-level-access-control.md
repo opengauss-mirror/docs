@@ -10,9 +10,9 @@ Scenario 1: A table summarizes the data of different users. Users can view only 
 
 ```
 --Create users alice, bob, and peter.
-postgres=# CREATE ROLE alice PASSWORD 'Gauss@123';
-postgres=# CREATE ROLE bob PASSWORD 'Gauss@123';
-postgres=# CREATE ROLE peter PASSWORD 'Gauss@123';
+postgres=# CREATE ROLE alice PASSWORD 'xxxxxxxxx';
+postgres=# CREATE ROLE bob PASSWORD 'xxxxxxxxxx';
+postgres=# CREATE ROLE peter PASSWORD 'xxxxxxxxx';
 
 --Create the all_data table that contains user information.
 postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));

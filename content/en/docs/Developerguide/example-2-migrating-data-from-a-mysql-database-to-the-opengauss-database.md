@@ -1,6 +1,6 @@
-# Example 2: Migrating Data from a MySQL Database to the openGauss Database<a name="EN-US_TOPIC_0242370285"></a>
+# Example: Migrating Data from a MY Database to openGauss<a name="EN-US_TOPIC_0289900689"></a>
 
-The following example shows how to use CopyManager to migrate data from MySQL to the openGauss database.
+The following example shows how to use CopyManager to migrate data from MY to openGauss.
 
 ```
 import java.io.StringReader;
@@ -16,10 +16,10 @@ import org.postgresql.core.BaseConnection;
 public class Migration{
 
     public static void main(String[] args) {
-        String url = new String("jdbc:postgresql://localhost:8000/postgres"); // URL of the database
-        String user = new String("username");            // openGauss database user name
-        String pass = new String("passwd");             // openGauss database password
-        String tablename = new String("migration_table_1"); // Table information
+        String url = new String("jdbc:postgresql://10.180.155.74:8000/postgres"); // Database URL
+        String user = new String("jack");            // openGauss username
+        String pass = new String("xxxxxxxxx");             //openGauss password
+        String tablename = new String("migration_table"); // Table information
         String delimiter = new String("|");              // Delimiter
         String encoding = new String("UTF8");            // Character set
         String driver = "org.postgresql.Driver";
@@ -49,7 +49,7 @@ public class Migration{
                 baseConn.setAutoCommit(false);
 
                 // Initialize the table.
-                String sql = "Copy " + tablename + " from STDIN with (DELIMITER " + "'" + delimiter + "'" +","+ " ENCODING " + "'" + encoding + "'");
+                String sql = "Copy " + tablename + " from STDIN DELIMITER " + "'" + delimiter + "'" + " ENCODING " + "'" + encoding + "'";
 
                 // Commit data in the buffer.
                 CopyManager cp = new CopyManager(baseConn);
@@ -76,7 +76,7 @@ public class Migration{
         ResultSet rs = null;
         try {
             Class.forName("com.MY.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:MY://10.119.179.227:3306/jack?useSSL=false&allowPublicKeyRetrieval=true", "jack", "Gauss@123");
+            Connection conn = DriverManager.getConnection("jdbc:MY://10.119.179.227:3306/jack?useSSL=false&allowPublicKeyRetrieval=true", "jack", "xxxxxxxxx");
             Statement stmt = conn.createStatement();
             rs = stmt.executeQuery("select * from migration_table");
         } catch (SQLException e) {
