@@ -138,14 +138,14 @@ ALTER DEFAULT PRIVILEGES
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >To drop a role for which the default permissions have been granted, reverse the changes in its default permissions or use  **DROP OWNED BY**  to get rid of the default permission entry for the role.
 
-## Example<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>
+## Examples<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>
 
 ```
 -- Grant the SELECT permission on all the tables (and views) in tpcds to every user.
 postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT SELECT ON TABLES TO PUBLIC;
 
 -- Create a common user jack.
-postgres=# CREATE USER jack PASSWORD 'Bigdata@123';
+postgres=# CREATE USER jack PASSWORD 'xxxxxxxxx';
 
 -- Grant the INSERT permission on all the tables in tpcds to the user jack.
 postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT INSERT ON TABLES TO jack;
@@ -160,5 +160,5 @@ postgres=# DROP USER jack;
 
 ## Helpful Links<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
-[GRANT](en-us_topic_0283137177.md)  and  [REVOKE](en-us_topic_0283137669.md)
+[GRANT](grant.md)  and  [REVOKE](REVOKE.md)
 
