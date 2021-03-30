@@ -1,12 +1,12 @@
-# Setting the Validity Period of an Account<a name="EN-US_TOPIC_0246507968"></a>
+# Setting the Validity Period of an Account<a name="EN-US_TOPIC_0289900433"></a>
 
-## Precautions<a name="en-us_topic_0237121109_en-us_topic_0151096201_en-us_topic_0085032332_en-us_topic_0059779299_s4ed40b90fef642e1960afb00e661e34d"></a>
+## Precautions<a name="en-us_topic_0283137215_en-us_topic_0237121109_en-us_topic_0151096201_en-us_topic_0085032332_en-us_topic_0059779299_s4ed40b90fef642e1960afb00e661e34d"></a>
 
 When creating a user, you need to specify the validity period of the user, including the start time and end time.
 
 To enable a user not within the validity period to use its account, set a new validity period.
 
-## Procedure<a name="en-us_topic_0237121109_en-us_topic_0151096201_en-us_topic_0085032332_en-us_topic_0059779299_sfc98603fadc44ac497654d979bc32291"></a>
+## Procedure<a name="en-us_topic_0283137215_en-us_topic_0237121109_en-us_topic_0151096201_en-us_topic_0085032332_en-us_topic_0059779299_sfc98603fadc44ac497654d979bc32291"></a>
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Run the following command to connect to the database:
@@ -20,7 +20,7 @@ To enable a user not within the validity period to use its account, set a new va
     If information similar to the following is displayed, the connection succeeds:
 
     ```
-    gsql ((openGauss 1.0 build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131
+    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
@@ -30,7 +30,7 @@ To enable a user not within the validity period to use its account, set a new va
 3.  Run the following command to create a user and specify the start time and end time:
 
     ```
-    CREATE USER joe WITH PASSWORD 'Bigdata@123' VALID BEGIN '2015-10-10 08:00:00' VALID UNTIL '2016-10-10 08:00:00';
+    postgres=# CREATE USER joe WITH PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-10-10 08:00:00' VALID UNTIL '2016-10-10 08:00:00';
     ```
 
     The user is created if the following information is displayed:
@@ -42,7 +42,7 @@ To enable a user not within the validity period to use its account, set a new va
 4.  If the user is not within the specified validity period, run the following command to set the start time and end time of a new validity period.
 
     ```
-    ALTER USER joe WITH VALID BEGIN '2016-11-10 08:00:00' VALID UNTIL '2017-11-10 08:00:00';
+    postgres=# ALTER USER joe WITH VALID BEGIN '2016-11-10 08:00:00' VALID UNTIL '2017-11-10 08:00:00';
     ```
 
     The start time and end time of the new validity period is set successfully if the following information is displayed:
@@ -52,6 +52,7 @@ To enable a user not within the validity period to use its account, set a new va
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->If  **VALID BEGIN**  is not specified in the  **CREATE ROLE**  or  **ALTER ROLE**  statement, the start time of the validity period is not limited. If  **VALID UNTIL**  is not specified, the end time of the validity period is not limited. If both of the parameters are not specified, the user is always valid.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **CREATE ROLE**  syntax, the start time and end time of a user's operation are not limited.
+>-   If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **ALTER ROLE**  syntax, the start time and end time of a user's operation are not modified and the original settings are used.
 

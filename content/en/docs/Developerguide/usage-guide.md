@@ -153,19 +153,12 @@
     SELECT model_train_opt('rlstm', 'default');
     ```
 
-3.  View the model training status.
+3.  Run the following command to obtain the relative path of the model training log on the AI Engine side.
 
     ```
     SELECT * FROM track_model_train_opt('rlstm', 'default');
     ```
 
-    The URL used by TensorBoard is returned.
-
-    ![](figures/url.png)
-
-    Access the URL to view the model training status.
-
-    ![](figures/en-us_image_0243595915.png)
 
 
 ## Model Prediction<a name="section206481548113611"></a>

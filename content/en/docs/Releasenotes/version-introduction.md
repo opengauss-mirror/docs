@@ -1,6 +1,6 @@
 # Version Introduction<a name="EN-US_TOPIC_0289899200"></a>
 
-openGauss 2.0.0 is the first ong-term support \(LTS\) version released by openGauss. The lifecycle of this version is three years. The 2.0.0 version is compatible with the earlier versions. Main functions are as follows:
+openGauss 2.0.0 is the first Release version released by openGauss. The lifecycle of this version is three years. The 2.0.0 version is compatible with the earlier versions. Main functions are as follows:
 
 -   Inherited functions:
     -   SQL standard syntax, UPSERT, data type, XML type, table, temporary table, global temporary table, foreign table, view, materialized view, index, foreign key, Generalized Inverted Index \(GIN\), sequence, function, trigger, ROWNUM, and MEDIAN aggregate function.
@@ -22,5 +22,5 @@ The MOT, parallel query, and container-based deployment are in the beta test pha
 
 openGauss is a single database kernel. To use openGauss in formal commercial projects, you need to build complete tool chain capabilities such as database monitoring and primary/standby switchover.
 
-This version is maintained every six months.
+This version is maintained every three months.
 

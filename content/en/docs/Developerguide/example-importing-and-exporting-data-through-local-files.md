@@ -1,4 +1,4 @@
-# Example: Importing and Exporting Data Through Local Files<a name="EN-US_TOPIC_0244720269"></a>
+# Example: Importing and Exporting Data Through Local Files<a name="EN-US_TOPIC_0289900308"></a>
 
 When Java is used for secondary development based on openGauss, you can use the CopyManager interface to export data from the database to a local file or import a local file to the database by streaming. The file can be in CSV or TEXT format.
 
@@ -20,7 +20,7 @@ public class Copy{
      { 
       String urls = new String("jdbc:postgresql://10.180.155.74:8000/postgres"); // Database URL
       String username = new String("jack");            // Username
-      String password = new String("Gauss@123");             // Password
+      String password = new String("xxxxxxxxx");             // Password
       String tablename = new String("migration_table"); // Table information
       String tablename1 = new String("migration_table_1"); // Table information
       String driver = "org.postgresql.Driver"; 

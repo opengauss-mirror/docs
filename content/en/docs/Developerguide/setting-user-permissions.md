@@ -17,7 +17,7 @@
         Create a role  **lily**  and grant the system permission  **CREATEDB**  to the role.
 
         ```
-        CREATE ROLE lily WITH CREATEDB PASSWORD "Bigdata@123";
+        CREATE ROLE lily WITH CREATEDB PASSWORD "xxxxxxxx";
         ```
 
     2.  Grant object permissions to the role by using  **[GRANT](grant.md)**.

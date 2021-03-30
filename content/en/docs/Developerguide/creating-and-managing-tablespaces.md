@@ -27,7 +27,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     1.  Run the following command to create user  **jack**:
 
         ```
-        CREATE USER jack IDENTIFIED BY 'Bigdata@123';
+        CREATE USER jack IDENTIFIED BY 'xxxxxxxxx';
         ```
 
         If the following information is displayed, the user has been created:

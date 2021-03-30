@@ -13,7 +13,7 @@ A system administrator is an account with the  **SYSADMIN**  attribute. By defau
 To create a system administrator, connect to the database as the initial user or a system administrator and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **SYSADMIN**  specified.
 
 ```
-CREATE USER sysadmin WITH SYSADMIN password "Bigdata@123";
+CREATE USER sysadmin WITH SYSADMIN password "xxxxxxxxx";
 ```
 
 or
@@ -26,3 +26,56 @@ To run the  **ALTER USER**  statement, the user must exist.
 
 
 
+## Monitor Administrator<a name="section4709123485918"></a>
+
+A monitor administrator is an account with the  **MONADMIN**  attribute and has the permission to view views and functions in the  **dbe\_perf**  schema. The monitor administrator can also grant or revoke object permissions in the  **dbe\_perf**  schema.
+
+To create a monitor administrator, connect to the database as a system administrator and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **MONADMIN**  specified.
+
+```
+postgres=# CREATE USER monadmin WITH MONADMIN password "xxxxxxxxx";
+```
+
+or
+
+```
+postgres=# ALTER USER joe MONADMIN;
+```
+
+To run the  **ALTER USER**  statement, the user must exist.
+
+## O&M Administrator<a name="section716203810597"></a>
+
+An O&M administrator is an account with the  **OPRADMIN**  attribute and has the permission to use Roach to perform backup and restoration.
+
+To create an O&M administrator, connect to the database as an initial user and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **OPRADMIN**  specified.
+
+```
+postgres=# CREATE USER opradmin WITH OPRADMIN password "xxxxxxxxx";
+```
+
+or
+
+```
+postgres=# ALTER USER joe OPRADMIN;
+```
+
+To run the  **ALTER USER**  statement, the user must exist.
+
+## Security Policy Administrator<a name="section319844011593"></a>
+
+A security policy administrator is an account with the  **POLADMIN**  attribute and has the permission to create resource tags, anonymization policies, and unified audit policies.
+
+To create a security policy administrator, connect to the database as an administrator and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **POLADMIN**  specified.
+
+```
+postgres=# CREATE USER poladmin WITH POLADMIN password "xxxxxxxxx";
+```
+
+or
+
+```
+postgres=# ALTER USER joe POLADMIN;
+```
+
+To run the  **ALTER USER**  statement, the user must exist.
