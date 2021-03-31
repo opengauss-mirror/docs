@@ -43,6 +43,12 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/1.1.0 && \
     cp -rf /src/1.1.0/docs/content/en/* /src/website/content/en/docs/1.1.0 && \
 
+    mkdir -p /src/website/content/zh/docs/2.0.0 && \
+    git clone -b 2.0.0 https://gitee.com/opengauss/docs 2.0.0/docs && \
+    cp -rf /src/2.0.0/docs/content/zh/* /src/website/content/zh/docs/2.0.0 && \
+    mkdir -p /src/website/content/en/docs/2.0.0 && \
+    cp -rf /src/2.0.0/docs/content/en/* /src/website/content/en/docs/2.0.0 && \
+
     cd /src/website && /usr/local/bin/hugo -b / && /usr/local/bin/hugo --gc --minify && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html && \
