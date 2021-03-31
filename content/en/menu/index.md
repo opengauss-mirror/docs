@@ -125,6 +125,8 @@ headless: true
 		-   [System Performance Snapshot]({{< relref "./docs/Developerguide/system-performance-snapshot.md" >}})
 		-   [Equality Query in a Fully-encrypted Database]({{< relref "./docs/Developerguide/equality-query-in-a-fully-encrypted-database.md" >}})
 		-   [Global Temporary Table]({{< relref "./docs/Developerguide/global-temporary-table.md" >}})
+		-   [Scheduled Task]({{< relref "./docs/Developerguide/scheduled-task.md" >}})
+		-   [Thread Pool]({{< relref "./docs/Developerguide/thread-pool.md" >}})
 	-   [FAQs]({{< relref "./docs/Quickstart/faqs.md" >}})
 
 -   [Installation Guide]({{< relref "./docs/Installation/Installation.md" >}})
@@ -1287,6 +1289,8 @@ headless: true
 		-   [System Performance Snapshot]({{< relref "./docs/Developerguide/system-performance-snapshot.md" >}})
 		-   [Equality Query in a Fully-encrypted Database]({{< relref "./docs/Developerguide/equality-query-in-a-fully-encrypted-database.md" >}})
 		-   [Global Temporary Table]({{< relref "./docs/Developerguide/global-temporary-table.md" >}})
+		-   [Scheduled Task]({{< relref "./docs/Developerguide/scheduled-task.md" >}})
+		-   [Thread Pool]({{< relref "./docs/Developerguide/thread-pool.md" >}})
 	-   [Common Faults and Identification]({{< relref "./docs/Developerguide/common-faults-and-identification.md" >}})
 		-   [Common Fault Locating Methods]({{< relref "./docs/Developerguide/common-fault-locating-methods.md" >}})
 		-   [Common Fault Locating Cases]({{< relref "./docs/Developerguide/common-fault-locating-cases.md" >}})
