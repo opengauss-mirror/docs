@@ -39,21 +39,21 @@ This version is openGauss 2.0.0 Release. Compared with 1.1.0, this version has t
 
 -   Logical replication of standby nodes
 
-    Supports logical decoding on a standby node.
+    Supports logical decoding on a standby node,this can reduce host pressure
 
--   Scale-out tool optimization
+-   Enhanced capacity expansion tool
 
     Optimizes the scale-out tool to support online scale-out without interrupting services and allows the standby node to be scaled out as a cascaded standby node.
 
 -   Gray upgrade
 
-    Optimizes the upgrade tool and adds the gray upgrade capability to support online upgrade without interrupting services. Currently, only the gray upgrade from version 1.1.0 to 2.0.0 is supported.
+    Optimizes the upgrade tool and support business online upgrade. Currently, only the gray upgrade from version 1.1.0 to 2.0.0 is supported.
 
--   Write amplification of standby node I/O
+-   Backup machine IO write amplification optimization
 
-    Optimizes the standby node I/O to reduce the I/O of disk flushing at a checkpoint and solve the problem of slow auto vacuum/vacuum.
+    Optimize the IO of the standby machine, smooth the IO volume of the standby machine checkpoint brushing, and solve the problem that the large amount of standby machine IO affects the query performance.
 
--   WDR
+-   WDR diagnostic report adds database operation indicators
 
     Adds four database running metrics: Effective CPU, WalWrite NoWait, Soft Parse, and Non-Parse CPU.
 

@@ -64,7 +64,7 @@ headless: true
 		-   [Executing SQL Statements Using JDBC]({{< relref "./docs/Quickstart/executing-sql-statements-using-jdbc.md" >}})
 	-   [Configuring Running Parameters]({{< relref "./docs/Quickstart/configuring-running-parameters.md" >}})
 	-   [GUC Parameters]({{< relref "./docs/Quickstart/guc-parameters.md" >}})
-	    -   [GUC Parameter Usage]({{< relref "./docs/Developerguide/guc-parameter-usage.md" >}})
+		-   [GUC Parameter Usage]({{< relref "./docs/Developerguide/guc-parameter-usage.md" >}})
 		-   [File Location]({{< relref "./docs/Developerguide/file-location.md" >}})
 		-   [Connection and Authentication]({{< relref "./docs/Developerguide/connection-and-authentication.md" >}})
 			-   [Connection Settings]({{< relref "./docs/Developerguide/connection-settings.md" >}})
@@ -123,6 +123,8 @@ headless: true
 		-   [Wait Events]({{< relref "./docs/Developerguide/wait-events-27.md" >}})
 		-   [Query]({{< relref "./docs/Developerguide/query-28.md" >}})
 		-   [System Performance Snapshot]({{< relref "./docs/Developerguide/system-performance-snapshot.md" >}})
+		-   [Equality Query in a Fully-encrypted Database]({{< relref "./docs/Developerguide/equality-query-in-a-fully-encrypted-database.md" >}})
+		-   [Global Temporary Table]({{< relref "./docs/Developerguide/global-temporary-table.md" >}})
 	-   [FAQs]({{< relref "./docs/Quickstart/faqs.md" >}})
 
 -   [Installation Guide]({{< relref "./docs/Installation/Installation.md" >}})
