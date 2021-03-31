@@ -223,6 +223,10 @@ The  **gs\_basebackup**  tool can use the following types of parameters:
   - -z
 
     Enables gzip compression for tar file output and uses the default compression level. The compression is available only when the tar format is used. The suffix .gz is automatically added to the end of all .tar file names.
+    
+  - -t, –rw-timeout
+  
+    Sets the checkpoint time limit during backup. The default value is 120s. If the full checkpoint of the database is time-consuming, you can increase the value of  **rw-timeout**.
 
 
 - Connection parameters
