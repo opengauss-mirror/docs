@@ -15,12 +15,12 @@ openGauss 2.0.0 is the first Release version released by openGauss. The lifecycl
 
 -   New features:
 
-    Delayed standby databases, logical replication of standby databases, Enhanced capacity expansion tool, gray upgrade, Backup machine IO write amplification optimization, and WDR diagnostic report adds database operation indicators. In addition, the Data Studio client tool is adapted to multiple features of the kernel.
+     Simplified Installation, Delayed standby databases, logical replication of standby databases, Enhanced capacity expansion tool, gray upgrade, Backup machine IO write amplification optimization, and WDR diagnostic report adds database operation indicators. In addition, the Data Studio client tool is adapted to multiple features of the kernel.
 
 
 The MOT, parallel query, and container-based deployment are in the beta test phase. You are welcome to give your comments or participate in the community contribution to improve these functions.
 
 openGauss is a stand-alone database. To use openGauss in formal commercial projects, you need to build complete tool chain capabilities such as database monitoring and primary/standby switchover.
 
-This version is maintained every three years.
+This version is maintained every  three years.
 
