@@ -15,12 +15,12 @@ openGauss 2.0.0 is the first ong-term support \(LTS\) version released by openGa
 
 -   New features:
 
-    Delayed standby databases, logical replication of standby databases, optimization of scale-out tools, gray upgrade, write amplification of standby database I/O, and workload diagnosis report \(WDR\). In addition, the Data Studio client tool is adapted to multiple features of the kernel.
+    Simplified Installation, Delayed standby databases, logical replication of standby databases, optimization of scale-out tools, gray upgrade, write amplification of standby database I/O, and workload diagnosis report \(WDR\). In addition, the Data Studio client tool is adapted to multiple features of the kernel.
 
 
 The MOT, parallel query, and container-based deployment are in the beta test phase. You are welcome to give your comments or participate in the community contribution to improve these functions.
 
 openGauss is a single database kernel. To use openGauss in formal commercial projects, you need to build complete tool chain capabilities such as database monitoring and primary/standby switchover.
 
-This version is maintained every six months.
+This version is maintained every  three years.
 

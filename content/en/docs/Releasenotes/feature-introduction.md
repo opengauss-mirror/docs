@@ -33,6 +33,10 @@
 
 This version is openGauss 2.0.0 LTS. Compared with 1.1.0, this version has the following new features:
 
+-   Simplified Installation
+
+    The Simplified Installation does not contain cluster management tools, provides binary files of the database kernel, can quickly start the database instance, simple installation and configuration, suitable for individual developers.
+
 -   Delayed standby databases
 
     Delays the time for a standby node to replay XLOG records, compared with the primary node.
