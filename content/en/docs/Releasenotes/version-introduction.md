@@ -1,6 +1,6 @@
 # Version Introduction<a name="EN-US_TOPIC_0289899200"></a>
 
-openGauss 2.0.0 is the first ong-term support \(LTS\) version released by openGauss. The lifecycle of this version is three years. The 2.0.0 version is compatible with the earlier versions. Main functions are as follows:
+openGauss 2.0.0 is the first Release version released by openGauss. The lifecycle of this version is three years. The 2.0.0 version is compatible with the earlier versions. Main functions are as follows:
 
 -   Inherited functions:
     -   SQL standard syntax, UPSERT, data type, XML type, table, temporary table, global temporary table, foreign table, view, materialized view, index, foreign key, Generalized Inverted Index \(GIN\), sequence, function, trigger, ROWNUM, and MEDIAN aggregate function.
@@ -15,12 +15,12 @@ openGauss 2.0.0 is the first ong-term support \(LTS\) version released by openGa
 
 -   New features:
 
-    Simplified Installation, Delayed standby databases, logical replication of standby databases, optimization of scale-out tools, gray upgrade, write amplification of standby database I/O, and workload diagnosis report \(WDR\). In addition, the Data Studio client tool is adapted to multiple features of the kernel.
+     Simplified Installation, Delayed standby databases, logical replication of standby databases, Enhanced capacity expansion tool, gray upgrade, Backup machine IO write amplification optimization, and WDR diagnostic report adds database operation indicators. In addition, the Data Studio client tool is adapted to multiple features of the kernel.
 
 
 The MOT, parallel query, and container-based deployment are in the beta test phase. You are welcome to give your comments or participate in the community contribution to improve these functions.
 
-openGauss is a single database kernel. To use openGauss in formal commercial projects, you need to build complete tool chain capabilities such as database monitoring and primary/standby switchover.
+openGauss is a stand-alone database. To use openGauss in formal commercial projects, you need to build complete tool chain capabilities such as database monitoring and primary/standby switchover.
 
 This version is maintained every  three years.
 

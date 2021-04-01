@@ -35,21 +35,21 @@ Command reference:  [Obtaining Help Information](obtaining-help-information-9.md
 ```
 Restart the agent:
     Local server:
-        python main.py stop --role agent
+        python main.py start --role agent
         python main.py stop --role agent
     Remote server:
         python main.py start --user USER --host HOST --project-path PROJECT_PATH --role agent    
         python main.py stop --user USER --host HOST --project-path PROJECT_PATH --role agent    
 Restart the server:
     Local server:
-        python main.py stop --role server
+        python main.py start --role server
         python main.py stop --role server
     Remote server:
         python main.py start --user USER --host HOST --project-path PROJECT_PATH --role server
         python main.py stop --user USER --host HOST --project-path PROJECT_PATH --role server
 Restarts the monitor:
     Local server:
-        python main.py stop --role monitor
+        python main.py start --role monitor
         python main.py stop --role monitor
     Remote server:
         python main.py start --user USER --host HOST --project-path PROJECT_PATH --role monitor

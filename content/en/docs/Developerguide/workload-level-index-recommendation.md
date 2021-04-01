@@ -15,7 +15,7 @@ For workload-level indexes, you can run scripts outside the database to use this
 
     ```
     python index_advisor_workload.py [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD]
-    [--max_index_num MAX_INDEX_NUM] [--multi_iter_mode] 
+    [--max_index_num MAX_INDEX_NUM][--max_index_storage MAX_INDEX_STORAGE] [--multi_iter_mode] 
     ```
 
     The input parameters are as follows:
@@ -27,11 +27,13 @@ For workload-level indexes, you can run scripts outside the database to use this
     -   **USERNAME**: \(optional\) username for connecting to the database.
     -   **PASSWORD**: \(optional\) password for connecting to the database.
     -   **MAX\_INDEX\_NUM**: \(optional\) maximum number of recommended indexes.
+    -   **MAX\_INDEX\_STORAGE:**  \(Optional\) Maximum size of the index set space.
     -   **multi\_iter\_mode**: \(optional\) algorithm mode. You can switch the algorithm mode by setting this parameter. For example:
 
         ```
         python index_advisor_workload.py 6001 postgres tpcc_log.txt --max_index_num 10 --multi_iter_mode
         ```
+
 
     The recommendation result is a batch of indexes, which are displayed on the screen in the format of multiple create index statements. The following is an example of the result.
 

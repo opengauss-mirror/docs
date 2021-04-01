@@ -1,12 +1,12 @@
-# Creating and Managing Schemas<a name="EN-US_TOPIC_0242370192"></a>
+# Creating and Managing Schemas<a name="EN-US_TOPIC_0289900215"></a>
 
-## Background<a name="en-us_topic_0237120306_en-us_topic_0059779372_sccec47ed8ad54f89b98b83caf9a0b4fd"></a>
+## Background<a name="en-us_topic_0283136693_en-us_topic_0237120306_en-us_topic_0059779372_sccec47ed8ad54f89b98b83caf9a0b4fd"></a>
 
 Schemas function as models. Schema management allows multiple users to use the same database without mutual impacts, to organize database objects as manageable logical groups, and to add third-party applications to the same schema without causing conflicts. Schema management involves creating a schema, using a schema, deleting a schema, setting a search path for a schema, and setting schema permissions.
 
-## Precautions<a name="en-us_topic_0237120306_en-us_topic_0059779372_sf39acabf4d3c4f199303910765daa0cd"></a>
+## Precautions<a name="en-us_topic_0283136693_en-us_topic_0237120306_en-us_topic_0059779372_sf39acabf4d3c4f199303910765daa0cd"></a>
 
--   openGauss contains one or more named databases. Users and user groups are shared within the openGauss, but their data is not shared. Any user who has connected to a server can access only the database specified in the connection request.
+-   openGauss contains one or more named databases. Users and user groups are shared within openGauss, but their data is not shared. Any user who has connected to a server can access only the database specified in the connection request.
 -   A database can have one or more schemas, and a schema can contain tables and other data objects, such as data types, functions, and operators. One object name can be used in different schemas. For example, both  **schema1**  and  **schema2**  can have a table named  **mytable**.
 -   Different from databases, schemas are not isolated. You can access the objects in a schema of the connected database if you have schema permissions. To manage schema permissions, you need to have knowledge about database permissions.
 -   A schema named with the  **PG\_**  prefix cannot be created because this type of schema is reserved for the database system.
@@ -14,13 +14,13 @@ Schemas function as models. Schema management allows multiple users to use the s
 -   To reference a table that is not modified with a schema name, the system uses  **search\_path**  to find the schema that the table belongs to.  **pg\_temp**  and  **pg\_catalog**  are always the first two schemas to be searched no matter whether or how they are specified in  **search\_path**.  **search\_path**  is a schema name list, and the first table detected in it is the target table. If no target table is found, an error will be reported. \(If a table exists but the schema it belongs to is not listed in  **search\_path**, the search fails as well.\) The first schema in  **search\_path**  is called "current schema". This schema is the first one to be searched. If no schema name is declared, newly created database objects are saved in this schema by default.
 -   Each database has a  **pg\_catalog**  schema, which contains system catalogs and all embedded data types, functions, and operators.  **pg\_catalog**  is a part of the search path and has the second highest search priority. It is searched after the schema of temporary tables and before other schemas specified in  **search\_path**. This search order ensures that database built-in objects can be found. To use a custom object that has the same name as a built-in object, you can specify the schema of the custom object.
 
-## Procedure<a name="en-us_topic_0237120306_en-us_topic_0059779372_sc91f8eff24b147da9ced875c4303f986"></a>
+## Procedure<a name="en-us_topic_0283136693_en-us_topic_0237120306_en-us_topic_0059779372_sc91f8eff24b147da9ced875c4303f986"></a>
 
--   Managing users and their permissions
+-   Manage users and their permissions.
     -   Run the following command to create a schema:
 
         ```
-        CREATE SCHEMA myschema;
+        postgres=# CREATE SCHEMA myschema;
         ```
 
         If the following information is displayed, the schema named  **myschema**  is successfully created:
@@ -34,7 +34,7 @@ Schemas function as models. Schema management allows multiple users to use the s
     -   Run the following command to create a schema and specify the owner:
 
         ```
-        CREATE SCHEMA myschema AUTHORIZATION omm;
+        postgres=# CREATE SCHEMA myschema AUTHORIZATION omm;
         ```
 
         If the following information is displayed, the  **myschema**  schema that belongs to  **omm**  is created successfully:
@@ -115,7 +115,7 @@ Schemas function as models. Schema management allows multiple users to use the s
     -   Run the following commands to create user  **jack**  and grant the  **usage**  permission for  **myschema**  to the user:
 
         ```
-        postgres=# CREATE USER jack IDENTIFIED BY 'Bigdata@123';
+        postgres=# CREATE USER jack IDENTIFIED BY 'xxxxxxxxx';
         CREATE ROLE
         postgres=# GRANT USAGE ON schema myschema TO jack;
         GRANT

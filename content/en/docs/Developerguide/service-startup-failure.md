@@ -6,12 +6,13 @@ The service startup failed.
 
 ## Cause Analysis<a name="section16300111295211"></a>
 
--   Parameters are set to improper values, resulting in insufficient system resources in the database cluster, or parameter settings do not meet the internal restrictions in the cluster.
--   The status of some DNs is abnormal.
--   Permissions to modify directories are insufficient. For example, users do not have sufficient permissions for the  **/tmp**  directory or the data directory in the cluster.
+-   Parameters are set to improper values, resulting in insufficient system resources in the database, or parameter settings do not meet the internal restrictions in the database.
+-   Some DNs are abnormal.
+-   Permissions to modify directories are insufficient. For example, users do not have sufficient permissions for the  **/tmp**  directory or the data directory in the database.
 -   The configured port has been occupied.
 -   The system firewall is enabled.
--   The trust relationship between servers of the database in the cluster is abnormal.
+-   The trust relationship between servers of the database is abnormal.
+-   The database control file is damaged.
 
 ## Procedure<a name="section7637151695218"></a>
 
@@ -26,11 +27,11 @@ FATAL: hot standby is not possible because max_connections = 10 is a lower setti
     -   Check whether the GUC parameters are set to proper values. For example, check parameters, such as  **shared\_buffers**,  **effective\_cache\_size**, and  **bulk\_write\_ring\_size **that consume much resources, or parameter  **max\_connections**  that cannot be easily set to a value that is less than its last value. For details about how to view and set GUC parameters, see  [Configuring Running Parameters](en-us_topic_0289900453.md).
 
 
--   Check whether the status of some DNs is abnormal. Check the status of each primary and standby instances in the current cluster using  **gs\_om -t status --detail**.
+-   Check whether some DNs are abnormal. Check the status of each primary and standby instance in the current database using  **gs\_om -t status --detail**.
 
     -   If the status of all the instances on a host is abnormal, replace the host.
 
-    -   If the status of an instance is  **Unknown**,  **Pending**, or  **Down**, log in to the node where the instance resides as a cluster user to view the instance log and identify the cause. For example:
+    -   If the status of an instance is  **Unknown**,  **Pending**, or  **Down**, log in to the node where the instance resides as a database user to view the instance log and identify the cause. For example:
 
         ```
         2014-11-27 14:10:07.022 CST 140720185366288 FATAL:  database "postgres" does not exist 2014-11-27 14:10:07.022 CST 140720185366288 DETAIL:  The database subdirectory "base/ 13252" is missing.
@@ -39,7 +40,7 @@ FATAL: hot standby is not possible because max_connections = 10 is a lower setti
         If the preceding information is displayed in a log, files stored in the data directory where the DN resides are damaged, and the instance cannot be queried. You cannot execute normal queries to this instance.
 
 
--   Check whether users have sufficient directory permissions. For example, users do not have sufficient permissions for the  **/tmp**  directory or the data directory in the cluster.
+-   Check whether users have sufficient directory permissions. For example, users do not have sufficient permissions for the  **/tmp**  directory or the data directory in the database.
 
     -   Determine the directory for which users have insufficient permissions.
 
@@ -84,6 +85,7 @@ FATAL: hot standby is not possible because max_connections = 10 is a lower setti
 
 -   Check whether the system firewall is enabled.
 
--   Check whether the mutual trust relationship is abnormal. Reconfigure the mutual trust relationship between servers in the cluster.
+-   Check whether the mutual trust relationship is abnormal. Reconfigure the mutual trust relationship between servers in the database.
 
+-   Check whether the database control file, for example,  **gaussdb.state**, is damaged or cleared. If the control file on the primary node is damaged, a failover can be triggered on the standby node, and then the original primary node can be restored by rebuilding. If the control file of the standby node is damaged, you can restore the standby node by rebuilding the control file.
 
