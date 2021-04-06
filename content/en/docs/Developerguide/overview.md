@@ -36,4 +36,7 @@ A logical replication slot means a stream of changes that can be replayed in oth
 -   Only the UTF-8 character set is supported.
 -   To decode multiple databases, you need to create a stream replication slot in each database and start decoding. Logs need to be scanned for decoding of each database.
 -   Forcible startup is not supported. After forcible startup, you need to export all data again.
+-   After the database failure restarts or the logical replication process restarts, the decoded data is duplicated, and the user needs to filter by himself.
+-   After the computer kernel fails, there are garbled codes in the decoding, which need to be filtered manually or automatically.
+-   When creating a logical replication slot, do not start a long transaction, otherwise the creation of the logical replication slot will be blocked.
 
