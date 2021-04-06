@@ -7,7 +7,7 @@ When the user uses date/time operators, explicit type prefixes are modified for 
 For example, abnormal mistakes will occur in the following example without an explicit data type.    
 ```    
 SELECT date '2001-10-01' - '7' AS RESULT;    
-```  
+```
 
 **Table  1**  Time and date operators
 
@@ -264,11 +264,12 @@ SELECT date '2001-10-01' - '7' AS RESULT;
     ```
 postgres=# SELECT date_part('hour', timestamp '2001-02-16 20:38:40');
      date_part 
+    ```
 -----------
             20
     (1 row)
     ```
-    
+
 -   date\_part\(text, interval\)
 
     Description: Obtains the subdomain value of the date/time value. When obtaining the month value, if the value is greater than 12, obtain the remainder after it is divided by 12. Equivalent to  **extract\(field from timestamp\)**.
@@ -603,7 +604,7 @@ postgres=# SELECT date_part('hour', timestamp '2001-02-16 20:38:40');
     Example:
 
     ```
-    postgres=# SELECT add_months(to_date('2017-5-29', 'yyyy-mm-dd'), 11) FROM dual;
+    postgres=# SELECT add_months(to_date('2017-5-29', 'yyyy-mm-dd'), 11) FROM sys_dummy;
          add_months      
     ---------------------
      2018-04-29 00:00:00
