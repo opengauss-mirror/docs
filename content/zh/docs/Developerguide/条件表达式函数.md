@@ -80,7 +80,7 @@
         ```
         postgres=# SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE);
         ERROR:  operator does not exist: boolean = timestamp without time zone
-        LINE 1: SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE) FROM DUAL;
+        LINE 1: SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE) FROM SYS_DUMMY;
         ^
         HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
         ```
