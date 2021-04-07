@@ -114,7 +114,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## max\_size\_for\_xlog\_prune<a name="section6785753141714"></a>
 
-**Parameter description**: Takes effect when  **enable\_xlog\_prune**  is enabled. If the standby server is disconnected and the size of Xlogs is greater than the threshold, the logs are recycled.
+**Parameter description**: Takes effect when  **enable\_xlog\_prune**  and synchronous_commit is enabled. If the standby server is disconnected and the size of Xlogs is greater than the threshold, the logs are recycled.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
