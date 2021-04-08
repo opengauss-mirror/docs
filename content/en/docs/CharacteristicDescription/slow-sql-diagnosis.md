@@ -1,31 +1,31 @@
-# 慢SQL诊断<a name="ZH-CN_TOPIC_0000001135403989"></a>
+# Slow SQL Diagnosis<a name="EN-US_TOPIC_0000001135403989"></a>
 
-## 可获得性<a name="section147531742205517"></a>
+## Availability<a name="section147531742205517"></a>
 
-本特性自openGauss 1.1.0版本开始引入。重构前慢SQL相关视图已废弃，包括：dbe\_perf. gs\_slow\_query\_info、dbe\_perf.gs\_slow\_query\_history、dbe\_perf.global\_slow\_query\_hisotry、dbe\_perf.global\_slow\_query\_info。
+This feature is available since V300R002C00 and is enhanced in V500R001C20. The following slow SQL views have been discarded before reconstruction: dbe\_perf.gs\_slow\_query\_info, dbe\_perf.gs\_slow\_query\_history, dbe\_perf.global\_slow\_query\_hisotry, and dbe\_perf.global\_slow\_query\_info.
 
-## 特性简介<a name="section134931562564"></a>
+## Introduction<a name="section134931562564"></a>
 
-慢SQL诊断提供诊断慢SQL所需要的必要信息，帮助开发者回溯执行时间超过阈值的SQL，诊断SQL性能瓶颈。
+Slow SQL diagnosis provides necessary information for diagnosing slow SQL statements, helping developers backtrack SQL statements whose execution time exceeds the threshold and diagnose SQL performance bottlenecks.
 
-## 客户价值<a name="section1407614175619"></a>
+## Benefits<a name="section1407614175619"></a>
 
-慢SQL提供给用户对于慢SQL诊断所需的详细信息，用户无需通过复现就能离线诊断特定慢SQL的性能问题。表和函数接口方便用户统计慢SQL指标，对接第三方平台。
+Slow SQL provides detailed information required for slow SQL diagnosis. You can diagnose performance problems of specific slow SQL statements offline without reproducing the problem. The table-based and function-based APIs help users collect statistics on slow SQL indicators and connect to third-party platforms.
 
-## 特性描述<a name="section8993113125610"></a>
+## Description<a name="section8993113125610"></a>
 
-慢SQL能根据用户提供的执行时间阈值\(log\_min\_duration\_statement\)，记录所有超过阈值的执行完毕的作业信息。
+Slow SQL diagnosis records information about all jobs whose execution time exceeds the threshold  **log\_min\_duration\_statement**.
 
-慢SQL提供表和函数两种维度的查询接口，用户从接口中能查询到作业的执行计划，开始、结束执行时间，执行查询的语句，行活动，内核时间，CPU时间，执行时间，解析时间，编译时间，查询重写时间，计划生成时间，网络时间，IO时间，网络开销，锁开销等。所有信息都是脱敏的。
+Slow SQL provides table-based and function-based query APIs. You can query the execution plan, start time, end time, query statement, row activity, kernel time, CPU time, execution time, parsing time, compilation time, query rewriting time, plan generation time, network time, I/O time, network overhead, and lock overhead. All information is anonymized.
 
-## 特性增强<a name="section1548515520568"></a>
+## Enhancements<a name="section1548515520568"></a>
 
-增加对慢SQL指标信息，安全性（脱敏），执行计划，查询接口的增强。
+Optimized slow SQL indicators, security \(anonymization\), execution plans, and query interfaces.
 
 ```
-执行命令查看数据库实例中SQL语句执行信息
+Run the following command to check the execution information about the SQL statements in the database instance:
 gsql> select * from dbe_perf.get_global_full_sql_by_timestamp(start_timestamp, end_timestamp); 
-例如：
+For example:
 postgres=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
@@ -53,7 +53,7 @@ query_plan           | Coordinator Name: coordinator1
                      |   Filter: (name = '***'::text)
 ...
 
-执行命令查看数据库实例中慢SQL语句执行信息
+Run the following command to check the execution information about the slow SQL statements in the database instance:
 gsql> select * from dbe_perf.get_global_slow_sql_by_timestamp(start_timestamp, end_timestamp);
 postgres=# select * from DBE_PERF.get_global_slow_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------
@@ -83,9 +83,9 @@ query_plan           | Coordinator Name: coordinator1
                      |           Filter: (nodeis_active AND ((node_type = '***'::"char") OR (node_type = '***'::"char")))
 ...
 
-查看当前节点SQL语句执行信息
+Check the execution information about the SQL statement on the current node.
 gsql> select * from statement_history;
-例如：
+For example:
 postgres=# select * from statement_history;
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
@@ -112,18 +112,18 @@ query_plan           | Coordinator Name: coordinator1
                      |   Filter: (name = '***'::text)
 ```
 
-## 特性约束<a name="section1956417145819"></a>
+## Constraints<a name="section1956417145819"></a>
 
-1.  目前的SQL跟踪信息，基于正常的执行逻辑。执行失败的SQL，其跟踪信息不具有准确的参考价值。
-2.  节点重启，可能导致该节点的数据丢失。
-3.  SQL语句执行完立即退出会话，可能会丢失该会话未刷新到系统表中的数据。
-4.  通过GUC参数设置收集SQL语句的数量，如果超过阈值，新的SQL语句执行信息不会被收集。
-5.  通过GUC参数设置单条SQL语句收集的锁事件详细信息的最大字节数，如果超过阈值，新的锁事件详细信息不会被收集。
-6.  通过异步刷新方式刷新用户执行中的SQL信息，所以用户Query执行结束后，存在查询相关视图函数结果短暂时延。
-7.  部分指标信息\(行活动、Cache/IO、时间分布等\)依赖于dbe\_perf.statement视图收集，如果该视图对应记录数超过预定大小\(依赖GUC:instr\_unique\_sql\_count\)，则本特性可能不收集相关指标。
-8.  statement\_history表相关函数以及视图中details字段为二进制格式，如果需要解析详细内容，请使用对应函数：pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\)。
+1.  The SQL tracing information is based on the normal execution logic. The tracing information may inaccurate if SQL statements fail to be executed.
+2.  Restarting a node may cause data loss on the node.
+3.  If you exit a session immediately after SQL statements are executed, the session data that is not updated to the system catalog may be lost.
+4.  The number of SQL statements to be collected is specified by a GUC parameter. If the number of SQL statements exceeds the threshold, new SQL statement execution information will not be collected.
+5.  The maximum number of bytes of lock event details collected by a single SQL statement is specified by a GUC parameter. If the number of bytes exceeds the threshold, new lock event details will not be collected.
+6.  The SQL statement information is updated in asynchronous mode. Therefore, after a query statement is executed, the related view function result is slightly delayed.
+7.  Certain indicator information \(such as row activities, cache I/O, and time distribution\) depends on the dbe\_perf.statement view. If the number of records in the view exceeds the preset size \(depending on GUC:instr\_unique\_sql\_count\), related indicators may not be collected.
+8.  Functions related to the statement\_history table and the details column in the view are in binary format. To parse the detailed information, use the pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\) function.
 
-## 依赖关系<a name="section15876411599"></a>
+## Dependencies<a name="section15876411599"></a>
 
-无。
+None
 
