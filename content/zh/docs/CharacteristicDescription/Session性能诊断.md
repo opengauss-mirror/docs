@@ -30,59 +30,62 @@ Session采样数据分为两级，如[图1](#fig197862247217)所示：
 
 部分使用场景如下所示：
 
-1.  查看session之间的阻塞关系
+1. 查看session之间的阻塞关系
 
-    select sessionid, block\_sessionid from pg\_thread\_wait\_status;
+   ```
+   select sessionid, block_sessionid from pg_thread_wait_status;
+   ```
 
-2.  采样blocking session信息
+2. 采样blocking session信息
 
-    select sessionid, block\_sessionid from DBE\_PERF.local\_active\_session;
+   ```
+   select sessionid, block_sessionid from DBE_PERF.local_active_session;
+   ```
 
-3.  Final blocking session展示
+3. Final blocking session展示
 
-    select sessionid, block\_sessionid, final\_block\_sessionid from DBE\_PERF.local\_active\_session;
+   ```
+   select sessionid, block_sessionid, final_block_sessionid from DBE_PERF.local_active_session;
+   ```
 
 4.  最耗资源的wait event
 
-    SELECT s.type, s.event, t.count
+    ```
+SELECT s.type, s.event, t.count
+    FROM dbe_perf.wait_events s, (
+SELECT event, COUNT (*)
+    FROM dbe_perf.local_active_session
+WHERE sample_time > now() - 5 / (24 * 60)
+    GROUP BY event)t WHERE s.event = t.event ORDER BY count DESC;
+```
+    
 
-    FROM dbe\_perf.wait\_events s, \(
-
-    SELECT event, COUNT\(\*\)
-
-    FROM dbe\_perf.local\_active\_session
-
-    WHERE sample\_time \> now\(\) - 5 / \(24 \* 60\)
-
-    GROUP BY event\)t WHERE s.event = t.event ORDER BY count DESC;
-
+    
 5.  查看最近五分钟较耗资源的session把资源都花费在哪些event上。
 
-    SELECT sessionid, start\_time, event, count
+    ```
+SELECT sessionid, start_time, event, count
+    FROM (
+SELECT sessionid, start_time, event, COUNT(*)
+    FROM dbe_perf.local_active_session
+WHERE sample_time > now() - 5 / (24 * 60)
+    GROUP BY sessionid, start_time, event) as t ORDER BY SUM(t.count) OVER \(PARTITION BY t. sessionid, start_time)DESC, t.event;
+```
+    
 
-    FROM \(
-
-    SELECT sessionid, start\_time, event, COUNT\(\*\)
-
-    FROM dbe\_perf.local\_active\_session
-
-    WHERE sample\_time \> now\(\) - 5 / \(24 \* 60\)
-
-    GROUP BY sessionid, start\_time, event\) as t ORDER BY SUM\(t.count\) OVER \(PARTITION BY t. sessionid, start\_time\)DESC, t.event;
-
+    
 6.  最近五分钟比较占资源的SQL把资源都消耗在哪些event上
 
-    SELECT query\_id, event, count
+    ```
+SELECT query_id, event, count
+    FROM (
+SELECT query_id, event, COUNT(*)
+    FROM dbe_perf.local_active_session
+WHERE sample_time > now() - 5 / (24 * 60)
+    GROUP BY query_id, event) t ORDER BY SUM (t.count) OVER (PARTITION BY t.query_id ) DESC, t.event DESC;
+```
+    
 
-    FROM \(
-
-    SELECT query\_id, event, COUNT\(\*\)
-
-    FROM dbe\_perf.local\_active\_session
-
-    WHERE sample\_time \> now\(\) - 5 / \(24 \* 60\)
-
-    GROUP BY query\_id, event\) t ORDER BY SUM\(t.count\) OVER \(PARTITION BY t.query\_id \) DESC, t.event DESC;
 
 
 ## 特性增强<a name="section35315526014"></a>
