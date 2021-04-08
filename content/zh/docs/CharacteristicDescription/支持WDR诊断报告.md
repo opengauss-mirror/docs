@@ -54,7 +54,7 @@ WDR主要依赖两个组件：
 <tr id="row189630111613"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p148961007164"><a name="p148961007164"></a><a name="p148961007164"></a>Events</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p115276341657"><a name="p115276341657"></a><a name="p115276341657"></a>用于评估当前系统内核关键资源，关键事件的性能。</p>
-<p id="p789680191613"><a name="p789680191613"></a><a name="p789680191613"></a>主要包含数据库内核关键时间的发生次数，时间的等待时间。</p>
+<p id="p789680191613"><a name="p789680191613"></a><a name="p789680191613"></a>主要包含数据库内核关键事件的发生次数，事件的等待时间。</p>
 </td>
 </tr>
 <tr id="row20583178178"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p559717121712"><a name="p559717121712"></a><a name="p559717121712"></a>Wait Classes</p>
