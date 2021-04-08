@@ -3,10 +3,6 @@ headless: true
 ---
 
 
-
-
-
-
 -   [法律声明]({{< relref "./docs/Releasenotes/法律声明.md" >}})
 -   [发行说明]({{< relref "./docs/Releasenotes/Releasenotes.md" >}})
     -   [用户须知]({{< relref "./docs/Releasenotes/用户须知.md" >}})
@@ -161,7 +157,8 @@ headless: true
             -   [发送端服务器]({{< relref "./docs/Developerguide/发送端服务器.md" >}})
             -   [主服务器]({{< relref "./docs/Developerguide/主服务器.md" >}})
             -   [备服务器]({{< relref "./docs/Developerguide/备服务器.md" >}})
-        -   [查询规划]({{< relref "./docs/Developerguide/查询规划.md" >}})
+        -   [内存表]({{< relref "./docs/Developerguide/内存表.md" >}})
+		-   [查询规划]({{< relref "./docs/Developerguide/查询规划.md" >}})
             -   [优化器方法配置]({{< relref "./docs/Developerguide/优化器方法配置.md" >}})
             -   [优化器开销常量]({{< relref "./docs/Developerguide/优化器开销常量.md" >}})
             -   [基因查询优化器]({{< relref "./docs/Developerguide/基因查询优化器.md" >}})
@@ -1367,7 +1364,8 @@ headless: true
             -   [发送端服务器]({{< relref "./docs/Developerguide/发送端服务器.md" >}})
             -   [主服务器]({{< relref "./docs/Developerguide/主服务器.md" >}})
             -   [备服务器]({{< relref "./docs/Developerguide/备服务器.md" >}})
-        -   [查询规划]({{< relref "./docs/Developerguide/查询规划.md" >}})
+        -   [内存表]({{< relref "./docs/Developerguide/内存表.md" >}})
+		-   [查询规划]({{< relref "./docs/Developerguide/查询规划.md" >}})
             -   [优化器方法配置]({{< relref "./docs/Developerguide/优化器方法配置.md" >}})
             -   [优化器开销常量]({{< relref "./docs/Developerguide/优化器开销常量.md" >}})
             -   [基因查询优化器]({{< relref "./docs/Developerguide/基因查询优化器.md" >}})
