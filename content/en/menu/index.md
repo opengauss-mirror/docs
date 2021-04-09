@@ -23,7 +23,7 @@ headless: true
 	-   [Operating Environment]({{< relref "./docs/Description/operating-environment.md" >}})
 	-   [Technical Specifications]({{< relref "./docs/Description/technical-specifications.md" >}})
 	-   [Basic Features]({{< relref "./docs/Description/basic-features.md" >}})
--   [Enhanced Features]({{< relref "./docs/Description/enhanced-features.md" >}})
+	-   [Enhanced Features]({{< relref "./docs/Description/enhanced-features.md" >}})
 	
 -   [Technical White Paper]({{< relref "./docs/Technicalwhitepaper/Technicalwhitepaper.md" >}})
 	-   [Product Positioning]({{< relref "./docs/Technicalwhitepaper/product-positioning.md" >}})
