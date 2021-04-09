@@ -777,10 +777,10 @@ headless: true
 			-   [CREATE MASKING POLICY]({{< relref "./docs/Developerguide/CREATE-MASKING-POLICY.md" >}})
             -   [CREATE MATERIALIZED VIEW]({{< relref "./docs/Developerguide/CREATE-MATERIALIZED-VIEW.md" >}})
 			-   [CREATE OPERATOR]({{< relref "./docs/Developerguide/CREATE-OPERATOR.md" >}})
-            -   [CREATE ROW LEVEL SECURITY POLICY]({{< relref "./docs/Developerguide/CREATE-ROW-LEVEL-SECURITY-POLICY.md" >}})
             -   [CREATE PROCEDURE]({{< relref "./docs/Developerguide/CREATE-PROCEDURE.md" >}})
-			-   [CREATE RESOURCE LABEL]({{< relref "./docs/Developerguide/CREATE-RESOURCE-LABEL.md" >}})
-            -   [CREATE ROLE]({{< relref "./docs/Developerguide/CREATE-ROLE.md" >}})
+            -   [CREATE RESOURCE LABEL]({{< relref "./docs/Developerguide/CREATE-RESOURCE-LABEL.md" >}})
+			-   [CREATE ROLE]({{< relref "./docs/Developerguide/CREATE-ROLE.md" >}})
+            -   [CREATE ROW LEVEL SECURITY POLICY]({{< relref "./docs/Developerguide/CREATE-ROW-LEVEL-SECURITY-POLICY.md" >}})
 			-   [CREATE RULE]({{< relref "./docs/Developerguide/CREATE-RULE.md" >}})
             -   [CREATE SCHEMA]({{< relref "./docs/Developerguide/CREATE-SCHEMA.md" >}})
             -   [CREATE SEQUENCE]({{< relref "./docs/Developerguide/CREATE-SEQUENCE.md" >}})
@@ -2302,7 +2302,7 @@ headless: true
 			-   [业务运行时整数转换错]({{< relref "./docs/Developerguide/业务运行时整数转换错.md" >}})
 			-   [高并发报错"too many clients already"或无法创建线程]({{< relref "./docs/Developerguide/高并发报错-too-many-clients-already-或无法创建线程.md" >}})
 			-   [btree 索引故障情况下应对策略]({{< relref "./docs/Developerguide/btree-索引故障情况下应对策略.md" >}}) 
-			
+	
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/Toolreference/客户端工具.md" >}})
