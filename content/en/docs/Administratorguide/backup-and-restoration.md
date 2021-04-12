@@ -563,6 +563,12 @@ To restore the original database, perform the following steps:
   Specifies timeout interval for streaming processing, in seconds.
 
   Default value:  **300**
+  
+- -t rwtimeout
+
+  The timeout period for connecting to the database in seconds.
+
+  Default value:  **120**
 
 
 **Restoration-related parameters**
