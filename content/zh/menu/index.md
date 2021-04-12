@@ -928,6 +928,7 @@ headless: true
             -   [游标循环]({{< relref "./docs/Developerguide/游标循环.md" >}})
         -   [Retry管理]({{< relref "./docs/Developerguide/Retry管理.md" >}})
         -   [调试]({{< relref "./docs/Developerguide/调试-20.md" >}})
+        -   [PLDEBUGGER]({{< relref "./docs/Developerguide/PLDEBUGGER.md" >}})
 	-   [自治事务]({{< relref "./docs/Developerguide/自治事务.md" >}})
 		-   [用户自定义函数支持自治事务]({{< relref "./docs/Developerguide/用户自定义函数支持自治事务.md" >}})
 		-   [存储过程支持自治事务]({{< relref "./docs/Developerguide/存储过程支持自治事务.md" >}})
