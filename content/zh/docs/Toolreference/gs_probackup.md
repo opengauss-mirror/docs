@@ -251,7 +251,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   --backup-pg-log
 
-    将日志目录包含到备份中。此目录通常包含日志消息。默认情况下不包含日志目录。guc参数log\_directory为pg\_log时该参数生效。
+    将日志目录包含到备份中。此目录通常包含日志消息。默认情况下不包含日志目录。guc参数log\_directory为pg\_log时该参数生效。如果修改了默认的日志路径，需要备份日志文件时可使用-E参数进行备份，使用方法见下文。
 
 -   -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
 
