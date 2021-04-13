@@ -4,29 +4,51 @@
 
 **Parameter description**: Specifies a comma-separated list of names of potential standby servers that support synchronous replication.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   The current synchronous standby server is on the top of the list. If the current synchronous standby server is disconnected, it will be replaced immediately with the next-highest-priority standby server. Name of the next-highest-priority standby server is added to the list.
 >-   The standby server name can be specified by setting the environment variable  **PGAPPNAME**.
 
-**Value range**: a string. If this parameter is set to  **\***, the name of any standby server that provides synchronous replication is matched.
+**Value range**: a string. If this parameter is set to  **\***, the name of any standby server that provides synchronous replication is matched. The value can be configured in the following format:
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->**ANY N \(node1,node2, ...\)**  indicates that any N host names in the brackets are selected as the name list of standby nodes for synchronous replication. For example,  **ANY 1\(node1,node2\)**  indicates that either node1 or node2 is used as the name of the standby node for synchronous replication.
+-   ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\)
+-   \[FIRST\]  _num\_sync_  \(_standby\_name_  \[, ...\]\)
+-   _standby\_name_  \[, ...\]
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   In the preceding command,  _num\_sync_  indicates the number of standby nodes that need to wait for responses from the transaction,  _standby\_name_  indicates the name of the standby node, and FIRST and ANY specify the policies for selecting standby nodes for synchronous replication from the listed servers.
+    >-   **ANY N \(dn\_instanceId1, dn\_instanceId2,...\)**  indicates that any  _N_  host names in the brackets are selected as the name list of standby nodes for synchronous replication. For example, ANY 1\(dn\_instanceId1, dn\_instanceId2\) indicates that any one of dn\_instanceId1 and dn\_instanceId2 is used as the standby node for synchronous replication.
+    >-   FIRST N \(dn\_instanceId1, dn\_instanceId2, ...\) indicates that the first N primary node names in the brackets are selected as the standby node name list for synchronous replication based on the priority. For example, FIRST 1 \(dn\_instanceId1, dn\_instanceId2\) indicates that dn\_instanceId1 is selected as the standby node for synchronous replication.
+    >-   The meanings of dn\_instanceId1, dn\_instanceId2, ... are the same as those of FIRST 1 \(dn\_instanceId1, dn\_instanceId2, ...\).
+
+
+If you use the gs\_guc tool to set this parameter, perform the following operations:
+
+```
+gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY NODE 1(dn_instanceId1, dn_instanceId2)'";
+```
+
+or
+
+```
+gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1, AZ2)'";
+```
 
 **Default value**:  **\***
 
 ## most\_available\_sync<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_se53a9bce83414d17b84a9beb44dd0dda"></a>
 
-**Parameter description**: Specifies whether to block the primary server when the primary-standby synchronization fails.
+**Parameter description:**  Specifies whether transactions on the primary server are not blocked due to faults on the synchronous standby server. For example, if one of the two synchronous standby nodes is faulty and the other is normal, the primary node waits for the normal synchronous standby node instead of being blocked by the faulty synchronous standby node.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+For another example, when the quroum protocol is executed, one primary node and three synchronous standby nodes are configured. ANY 2 \(node1, node2, and node3\) is configured. When node1 and node3 are faulty and node2 is normal, host services are not blocked.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the primary server is not blocked when the synchronization fails.
--   **off**  indicates that the primary server is blocked when the synchronization fails.
+-   **on**  indicates that the primary server is not blocked when all synchronous standby servers are faulty.
+-   **off**  indicates that the primary server is blocked when all synchronous standby servers are faulty.
 
 **Default value**:  **off**
 
@@ -34,7 +56,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies whether data and logs are synchronized between primary and standby servers, and between primary and secondary servers.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   This parameter is used for performance testing in scenarios where data synchronization to standby server is enabled and where it is disabled. If this parameter is set to  **off**, tests on abnormal scenarios, such as switchover and faults, cannot be performed to prevent inconsistency between the primary, standby, and secondary servers.
@@ -67,7 +89,7 @@ This parameter is an INTERNAL parameter. Its default value is  **off**  and cann
 
 **Parameter description**: Specifies the number of transactions by which  **VACUUM**  will defer the cleanup of invalid row-store table records, so that  **VACUUM**  and  **VACUUM FULL**  do not clean up deleted tuples immediately.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 1000000.  **0**  means no delay.
 
@@ -77,40 +99,40 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the amount of memory used by queues when the sender sends data pages to the receiver. The value of this parameter affects the buffer size used during the replication from the primary server to the standby server.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 4096 to 1072693248. The unit is KB.
+**Value range**: an integer ranging from 4096 to 10475524096..1072693248. The unit is KB.
 
-**Default value**:  **16MB**  \(16384 KB\)
+**Default value:**  16 MB \(that is, 16384 KB\)
 
 ## walsender\_max\_send\_size<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_sbef7a545706e4995b7028b980cdcb35a"></a>
 
 **Parameter description**: Specifies the size of the WAL or Sender buffers on the primary server.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 8 to  _INT\_MAX_. The unit is KB.
 
-**Default value**:  **8MB**  \(8192 KB\)
+**Default value**:  **8 MB**  \(8192 KB\)
 
 ## enable\_data\_replicate<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_sa5d3c2e3d3954dd9a4b9c84024c7b63c"></a>
 
 **Parameter description**: Specifies how data is synchronized between primary and standby servers when the data is imported to a row-store table.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
 -   **on**  indicates that the primary and standby servers synchronize data using data pages when the data is imported to a row-store table. When  **replication\_type**  is set to  **1**, this parameter cannot be set to  **on**. If this parameter is set to  **on**  using the GUC tool, its value will be forcibly changed to  **off**.
 -   **off**  indicates that the primary and standby servers synchronize data using Xlogs when the data is imported to a row-store table.
 
-**Default value**:  **off**
+**Default value**:  on
 
 ## ha\_module\_debug<a name="en-us_topic_0283137370_en-us_topic_0237124713_section143006151135"></a>
 
 **Parameter description**: Specifies the replication status log of a specific data block during data replication.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -123,12 +145,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the data catchup mode between the primary and standby servers.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
 -   **on**  indicates that the standby server uses the incremental catchup mode. That is, the standby server scans local data files on the standby server to obtain the list of differential data files between the primary and standby servers and then performs catchup between the primary and standby servers.
--   **off**  indicates that the standby server uses the full catchup mode. That is, the standby server scans all local data files on the primary server to obtain the list of differential data files between the primary and standby servers and performs catchup between the primary and standby servers.
+-   **off**  indicates that the standby server uses the full catchup mode. That is, the standby server scans all local data files on the primary server to obtain the list of differential data files between the primary and standby servers and then performs catchup between the primary and standby servers.
 
 **Default value**:  **on**
 
@@ -136,7 +158,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the maximum duration for the primary server to wait for the standby and secondary servers to start and send the scanning lists when incremental data catchup is enabled in openGauss.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to  _INT\_MAX_. The unit is second.
 
@@ -149,7 +171,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the maximum duration that the primary server is blocked during the data catchup on the standby server in the case of a single synchronous standby server.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from –1 to 10000. The unit is ms.
 
@@ -159,24 +181,20 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **–1**
 
-## sync_config_strategy<a name="en-us_topic_0283137370_en-us_topic_0237124713_section761015504410"></a>
+## sync\_config\_strategy<a name="section94339215542"></a>
 
-**Parameter description**:  Specifies the policy for synchronizing configuration files between the primary server and standby server, and between the standby server and cascaded standby server.
+**Parameter description:**  Specifies the policy for synchronizing configuration files between the primary server and standby server, and between the standby server and cascaded standby server.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: enumerated values
 
-+ all_node: If this parameter is set to all_node for the primary node, the primary node is allowed to proactively synchronize configuration files to all standby nodes. If this parameter is set to all_node for a standby server, the standby server is allowed to send synchronization requests to its primary server, and the standby server is allowed to proactively synchronize configuration files to all cascaded standby servers. If this parameter is set to all_node for , the current cascaded standby server is allowed to send synchronization requests to its standby server.
-+ only_sync_node: If this parameter is set to only_sync_node for the primary node, the primary node is only allowed to proactively synchronize configuration files to all standby nodes. If this parameter is set to only_sync_node for a standby server, the standby server is allowed to send synchronization requests to its primary server, and the standby server is not allowed to proactively synchronize configuration files to all cascaded standby servers. If this parameter is set to only_sync_node, the current cascaded standby server is allowed to send synchronization requests to its standby server.
-+ none_node: If this parameter is set to none_node for the primary node, the primary node is not allowed to proactively synchronize configuration files to all standby nodes. If this parameter is set to none_node for a standby server, the standby server is not allowed to send synchronization requests to its primary server, and the standby server is allowed to proactively synchronize configuration files to all cascaded standby servers. If this parameter is set to none_node, the current cascaded standby server is not allowed to send synchronization requests to its standby server.
+-   all\_node: If this parameter is set to  **all\_node**  for the primary node, the primary node is allowed to proactively synchronize configuration files to all standby nodes. If this parameter is set to  **all\_node**  for a standby server, the standby server is allowed to send synchronization requests to its primary server, and the standby server is allowed to proactively synchronize configuration files to all cascaded standby servers. If this parameter is set to  **all\_node**  for , the current cascaded standby server is allowed to send synchronization requests to its standby server.
+-   only\_sync\_node: If this parameter is set to only\_sync\_node for the primary node, the primary node is only allowed to proactively synchronize configuration files to all standby nodes. If this parameter is set to only\_sync\_node for a standby server, the standby server is allowed to send synchronization requests to its primary server, and the standby server is not allowed to proactively synchronize configuration files to all cascaded standby servers. If this parameter is set to only\_sync\_node, the current cascaded standby server is allowed to send synchronization requests to its standby server.
+-   none\_node: If this parameter is set to none\_node for the primary node, the primary node is not allowed to proactively synchronize configuration files to all standby nodes. If this parameter is set to none\_node for a standby server, the standby server is not allowed to send synchronization requests to its primary server, and the standby server is allowed to proactively synchronize configuration files to all cascaded standby servers. If this parameter is set to none\_node, the current cascaded standby server is not allowed to send synchronization requests to its standby server.
 
-**Default value**:  **all_node**
+**Default value:**  all\_node
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->
->+ In an openGauss cluster that includes the host, standby and cascaded standby, the host is the sender relative to the standby, the standby is the receiver relative to the host, the standby is the sender relative to the cascaded standby, and the cascaded standby Relative to the standby machine is the receiving end.
->+ The sender actively synchronizes the configuration file with the receiver, and the receiver requests the sender to synchronize the configuration file are two independent events that will synchronize the configuration file. If you do not want the configuration file to be synchronized, you need to configure the sync_config_strategy parameter of all nodes in the cluster to none_node; if you only want the host to synchronize the configuration file with the synchronized standby machine, you need to configure the sync_config_strategy parameter of the host to only_sync_node, and the other nodes to none_node; If you want all nodes to synchronize configuration files, you need to configure the sync_config_strategy parameter of all nodes to all_node. Currently, it does not support customizing and specifying synchronization strategies between any nodes.
->+ The specific performance of configuration parameter synchronization is that the sender sends a configuration file and directly overwrites the corresponding parameters in the configuration file of the receiver. If the configuration file needs synchronization strategy is set, after modifying the configuration parameters of the receiving end, the sending end will immediately overwrite the configuration parameters of the receiving end, so that the modification of the receiving end will not take effect.
->+ Even if you set a policy that the configuration file needs to be synchronized, there are still some configuration parameters that will not be synchronized. They are:
->      "application_name", "archive_command", "audit_directory", "available_zone", "comm_control_port", "comm_sctp_port", "listen_addresses", "log_directory", "port", "replconninfo1", "replconninfo2", "replconninfo3", 4 "replconninfo ", "replconninfo5", "replconninfo6", "replconninfo7", "replconninfo8", "ssl", "ssl_ca_file", "ssl_cert_file", "ssl_ciphers", "ssl_crl_file", "ssl_key_filesliation", "ssl_key_notify", "ssl" "synchronous_standby_names", "local_bind_address", "perf_directory", "query_log_directory", "asp_log_directory", "streaming_router_port", "enable_upsert_to_merge", "archive_dest", "recovery_min_apply_delay", "sync_config_strategy".
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The sender actively synchronizes the configuration file to the receiver, and the receiver requests the sender to synchronize the configuration file, which are two independent events, so that the configuration files are synchronized. If you do not want to synchronize configuration files, set this parameter to  **none\_node**  on the receiver. If the sender is a standby node, set this parameter to  **none\_node**. If the sender is a primary node, set this parameter to  **none\_node**. If the sending end is only\_sync\_node, set this parameter to only\_sync\_node, do not synchronize with asynchronous standby.
+

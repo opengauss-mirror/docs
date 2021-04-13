@@ -12,7 +12,7 @@ When changing the storage directory of a configuration file, set  **data\_direct
 **Parameter description**: Specifies the GaussDB Kernel data directory. You can set this parameter using one of the following methods:
 
 -   Set it when you install the GaussDB Kernel.
--   This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+-   This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string, consisting of one or more characters.
 
@@ -22,7 +22,7 @@ When changing the storage directory of a configuration file, set  **data\_direct
 
 **Parameter description**: Specifies the configuration file \(**postgresql.conf**\) of the primary server.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string, consisting of one or more characters.
 
@@ -32,7 +32,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the configuration file \(**pg\_hba.conf**\) for host-based authentication \(HBA\). You can set this parameter only in the configuration file  **postgresql.conf**.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -42,7 +42,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the configuration file \(**pg\_ident.conf\)**  for client authentication.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -52,7 +52,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the extra PID file that can be used by the server management program.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >This parameter takes effect only after the database restarts.
