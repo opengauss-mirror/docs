@@ -17,24 +17,26 @@
 打开“content”文件夹，该文件夹包含了中文（“zh”文件夹）和英文（“en”文件夹）两种语言文档，以中文文档举例进行说明。 在“zh”文件夹中，“docs”文件夹包含了具体文档的内容，“menu”包含了文档的大纲内容。
 打开“docs”文件夹，各手册和文件夹对应关系如下。
 
-| 文件夹名称          | 对应手册   |
-| ---------------- | ---------- |
-| Administratorguide  | 管理员指南 |
-| Compilationguide    | 编译指导书 |
-| Description         | 产品描述   |
-| Developerguide      | 开发者指南 |
-| Glossary            | 术语表     |
-| installation        | 安装指南   |
-| Quickstart          | 快速入门   |
-| Releasenotes        | 发行说明   |
-| Technicalwhitepaper | 技术白皮书 |
-| Toolreference       | 工具参考   |
-
+| 文件夹名称                       | 对应手册   |
+| --------------------------------| ---------- |
+| Administratorguide              | 管理员指南 |
+| Compilationguide                | 编译指导书 |
+| Description                     | 产品描述   |
+| Developerguide                  | 开发者指南 |
+| Glossary                        | 术语表     |
+| installation                    | 安装指南   |
+| Quickstart                      | 快速入门   |
+| Releasenotes                    | 发行说明   |
+| Technicalwhitepaper             | 技术白皮书 |
+| Toolreference                   | 工具参考   |
+| CharacteristicDescription       | 特性描述   |
+| FAQ                             | FAQ        |
 ### 版本分支对应关系
 
-Docs包含了如下3个分支：
+Docs包含了如下5个分支：
 
 - master：开发分支，为默认分支。
+- 2.0.0：2.0.0版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 2.0.0"。
 - 1.1.0：1.1.0版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 1.1.0"。
 - 1.0.1：1.0.1版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 1.0.1"。
 - 1.0.0：1.0.0版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 1.0.0"。

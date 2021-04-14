@@ -17,24 +17,27 @@ If you have any comments or suggestions on the document, please submit them in I
 Open the content folder which contains documents in Chinese (in the zh folder) and English (in the en folder). In the en folder, the docs folder contains specific document contents, and the menu folder contains the document outlines.
 Open the docs folder. The mapping between manuals and folders is as follows:
 
-| Folder Name         | Manual                |
-| ------------------- | --------------------- |
-| Administratorguide  | Administrator Guide   |
-| Compilationguide    | Compilation Guide     |
-| Description         | Product Description   |
-| Developerguide      | Developer Guide       |
-| Glossary            | Glossary              |
-| installation        | Installation Guide    |
-| Quickstart          | Quick Start           |
-| Releasenotes        | Release Notes         |
-| Technicalwhitepaper | Technical White Paper |
-| Toolreference       | Tool Reference        |
+| Folder Name              | Manual                    |
+| -------------------------| --------------------------|
+| Administratorguide       | Administrator Guide       |
+| Compilationguide         | Compilation Guide         |
+| Description              | Product Description       |
+| Developerguide           | Developer Guide           |
+| Glossary                 | Glossary                  |
+| installation             | Installation Guide        |
+| Quickstart               | Quick Start               |
+| Releasenotes             | Release Notes             |
+| Technicalwhitepaper      | Technical White Paper     |
+| Toolreference            | Tool Reference            |
+| CharacteristicDescription| Characteristic Description|
+| FAQ                      | FAQ|
 
 ### Version Branch Mapping
 
 Docs contains the following three branches:
 
 - master: development branch, which is the default branch.
+- 2.0.0: 2.0.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 2.0.0.
 - 1.1.0: 1.1.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 1.1.0.
 - 1.0.1: 1.0.1 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 1.0.1.
 - 1.0.0: 1.0.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 1.0.0.
