@@ -20,8 +20,10 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies whether to enable the ADIO function.
 
+This parameter belongs to the INTERNAL type parameter and is a fixed parameter. The user cannot modify this parameter, but can only view it.
+
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->The current version does not support the asynchronous I/O function. This function is disabled by default. Do not modify the setting.
+>The current version does not support the asynchronous I/O function. This function is disabled by default. 
 
 **Value range**: Boolean
 
