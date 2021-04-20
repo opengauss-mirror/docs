@@ -18,7 +18,7 @@
 </thead>
 <tbody><tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_row39478001"><td class="cellrowborder" valign="top" width="27.939999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p43601517"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p43601517"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p43601517"></a>DATE</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a>Date and time.</p>
+<td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a>Date and time, In compatibility mode A, it will be implicitly converted to TIMESTAMP(0) WITHOUT TIME ZONE.</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.27%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p17093938"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p17093938"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p17093938"></a>4 bytes (The actual storage space is 8 bytes.)</p>
 </td>
@@ -100,6 +100,7 @@
 </tr>
 </tbody>
 </table>
+
 
 Examples
 

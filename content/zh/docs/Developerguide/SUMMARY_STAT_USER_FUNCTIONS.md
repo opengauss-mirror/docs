@@ -1,6 +1,6 @@
 # SUMMARY\_STAT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0245374720"></a>
 
-SUMMARY\_STAT\_USER\_FUNCTIONS用来统计所数据库节点用户自定义视图的相关统计信息。
+SUMMARY\_STAT\_USER\_FUNCTIONS用来统计所数据库节点用户自定义函数的相关统计信息。
 
 **表 1**  SUMMARY\_STAT\_USER\_FUNCTIONS字段
 
