@@ -186,7 +186,7 @@ gs_restore [OPTION]... FILE
   gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
   ```
 
-  导入PUBLIC模式下的table1和test1 模式下test1
+  导入PUBLIC模式下的table1和test1 模式下table1
 
   ```
   gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar

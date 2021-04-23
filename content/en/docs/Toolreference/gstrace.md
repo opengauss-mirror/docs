@@ -17,7 +17,7 @@
 ## Syntax<a name="en-us_topic_0287275941_en-us_topic_0237152426_section681720817204"></a>
 
 ```
-gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <pid>][-s <BUFFER_SIZE>] [-f <DUMP_FILE>] [-o <OUTPUT_FILE>] [-t <STEP_SIZE>]
+gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_SIZE>] [-f <DUMP_FILE>] [-o <OUTPUT_FILE>] [-t <STEP_SIZE>]
 ```
 
 ## Parameter Description<a name="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_se0ebdb25733f42f5b4286a1fc7e54a13"></a>
