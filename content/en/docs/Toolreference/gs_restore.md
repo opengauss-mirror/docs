@@ -188,7 +188,7 @@ Parameters for importing data
   gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
   ```
 
-  Import  **table1**  in the  **PUBLIC**  schema and  **test1**  in the  **test1**  schema.
+  Import  **table1**  in the  **PUBLIC**  schema and  **test1**  in the  **table1**  schema.
 
   ```
   gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar

@@ -23,7 +23,7 @@ gstrace是openGauss提供的用来跟踪内核代码执行路径，记录内核�
 ## 语法<a name="zh-cn_topic_0237152426_section681720817204"></a>
 
 ```
-gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <pid>][-s <BUFFER_SIZE>] [-f <DUMP_FILE>] [-o <OUTPUT_FILE>] [-t <STEP_SIZE>]
+gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_SIZE>] [-f <DUMP_FILE>] [-o <OUTPUT_FILE>] [-t <STEP_SIZE>]
 ```
 
 ## 参数说明<a name="zh-cn_topic_0237152426_zh-cn_topic_0059778103_se0ebdb25733f42f5b4286a1fc7e54a13"></a>
