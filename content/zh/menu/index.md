@@ -2348,4 +2348,6 @@ headless: true
     -   [FAQ]({{< relref "./docs/Toolreference/FAQ.md" >}})
     -   [gs\_collector工具支持收集的系统表和视图列表]({{< relref "./docs/Toolreference/gs_collector工具支持收集的系统表和视图列表.md" >}})
 -   [FAQ]({{< relref "./docs/FAQ/FAQ.md" >}})
+	-   [产品FAQ]({{< relref "./docs/FAQ/产品FAQ.md" >}})
+	-   [使用FAQ]({{< relref "./docs/FAQ/使用FAQ.md" >}})	
 -   [术语表]({{< relref "./docs/Glossary/Glossary.md" >}})

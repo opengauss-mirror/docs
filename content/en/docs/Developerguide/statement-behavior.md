@@ -177,7 +177,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Although you can set this parameter to any value, VACUUM will limit the effective value to half the value of  **[autovacuum\_freeze\_max\_age](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s7857d2d0002547a3853b7aac36a458b3)**  by default.
 
-**Default value**:  **5000000000**
+**Default value**:  **2000000000**
 
 ## vacuum\_freeze\_table\_age<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_s92cb1531fa7b4cfe92aeaf209048571e"></a>
 
