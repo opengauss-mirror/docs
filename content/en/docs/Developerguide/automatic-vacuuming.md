@@ -150,7 +150,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer from 100000 to 576460752303423487
 
-**Default value**:  **20000000000**
+**Default value**:  **4000000000**
 
 ## autovacuum\_vacuum\_cost\_delay<a name="en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_sd5fd7715ef6447a28f1e5f898e5ae342"></a>
 
