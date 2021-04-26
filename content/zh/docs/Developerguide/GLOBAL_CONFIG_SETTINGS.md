@@ -87,14 +87,14 @@ GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息�
 </td>
 <td class="cellrowborder" valign="top" width="17.331733173317332%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122733_p8351716973"><a name="zh-cn_topic_0237122733_p8351716973"></a><a name="zh-cn_topic_0237122733_p8351716973"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p63511316272"><a name="zh-cn_topic_0237122733_p63511316272"></a><a name="zh-cn_topic_0237122733_p63511316272"></a>参数最大值。如果参数类型不是数值型，那么该字段值为null。</p>
+<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p63511316272"><a name="zh-cn_topic_0237122733_p63511316272"></a><a name="zh-cn_topic_0237122733_p63511316272"></a>参数最小值。如果参数类型不是数值型，那么该字段值为null。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122733_row18351141618718"><td class="cellrowborder" valign="top" width="17.711771177117715%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122733_p173511816475"><a name="zh-cn_topic_0237122733_p173511816475"></a><a name="zh-cn_topic_0237122733_p173511816475"></a>max_val</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.331733173317332%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122733_p1935113165718"><a name="zh-cn_topic_0237122733_p1935113165718"></a><a name="zh-cn_topic_0237122733_p1935113165718"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p133511416171"><a name="zh-cn_topic_0237122733_p133511416171"></a><a name="zh-cn_topic_0237122733_p133511416171"></a>参数最小值。如果参数类型不是数值型，那么该字段值为null。</p>
+<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p133511416171"><a name="zh-cn_topic_0237122733_p133511416171"></a><a name="zh-cn_topic_0237122733_p133511416171"></a>参数最大值。如果参数类型不是数值型，那么该字段值为null。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122733_row183519161275"><td class="cellrowborder" valign="top" width="17.711771177117715%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122733_p1935212161170"><a name="zh-cn_topic_0237122733_p1935212161170"></a><a name="zh-cn_topic_0237122733_p1935212161170"></a>enumvals</p>
