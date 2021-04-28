@@ -90,8 +90,6 @@ headless: true
 		-   [Creating an Index Online]({{< relref "./docs/CharacteristicDescription/creating-an-index-online.md" >}})
 		-   [Autonomous Transaction]({{< relref "./docs/CharacteristicDescription/autonomous-transaction.md" >}})
 		-   [Global Temporary Table]({{< relref "./docs/CharacteristicDescription/global-temporary-table.md" >}})
-		-   [Global Partition Index]({{< relref "./docs/CharacteristicDescription/global-partition-index.md" >}})
-		-   [AI Capabilities]({{< relref "./docs/CharacteristicDescription/ai-capabilities.md" >}})
 		-   [Pseudocolumn ROWNUM]({{< relref "./docs/CharacteristicDescription/pseudocolumn-rownum.md" >}})
 		-   [Stored Procedure Debugging]({{< relref "./docs/CharacteristicDescription/stored-procedure-debugging.md" >}})
 	-   [Application Development Interfaces]({{< relref "./docs/CharacteristicDescription/application-development-interfaces.md" >}})
