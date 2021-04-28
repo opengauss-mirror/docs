@@ -86,8 +86,6 @@ headless: true
 		-   [在线添加索引]({{< relref "./docs/CharacteristicDescription/在线添加索引.md" >}})
 		-   [自治事务]({{< relref "./docs/CharacteristicDescription/自治事务.md" >}})
 		-   [全局临时表]({{< relref "./docs/CharacteristicDescription/全局临时表.md" >}})
-		-   [全局分区索引]({{< relref "./docs/CharacteristicDescription/全局分区索引.md" >}})
-		-   [AI能力]({{< relref "./docs/CharacteristicDescription/AI能力.md" >}})
 		-   [伪列ROWNUM]({{< relref "./docs/CharacteristicDescription/伪列ROWNUM.md" >}})
 		-   [支持存储过程调试]({{< relref "./docs/CharacteristicDescription/支持存储过程调试.md" >}})
 	-   [应用开发接口]({{< relref "./docs/CharacteristicDescription/应用开发接口.md" >}})
