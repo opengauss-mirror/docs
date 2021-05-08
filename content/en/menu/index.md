@@ -2357,4 +2357,6 @@ headless: true
 	-   [FAQs]({{< relref "./docs/Toolreference/faqs.md" >}})
 	-   [System Catalogs and Views Supported by gs\_collector]({{< relref "./docs/Toolreference/system-catalogs-and-views-supported-by-gs_collector.md" >}})	
 -   [FAQ]({{< relref "./docs/FAQ/faqs.md" >}})
+	-   [Product-related FAQs]({{< relref "./docs/FAQ/product-related-faqs.md" >}})
+    -   [Usage-related FAQs]({{< relref "./docs/FAQ/usage-related-faqs.md" >}})
 -   [Glossary]({{< relref "./docs/Glossary/Glossary.md" >}})
