@@ -83,6 +83,10 @@ openGauss在安装过程中，需要在openGauss中的节点间执行命令，�
 
     是否将“-f”参数文件中IP与其hostname的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。普通用户无权限编辑/etc/hosts文件，故有无指定该参数，普通用户均不生成映射关系。
 
+-   --no-deduplicate
+
+    是否在配置互信修改/etc/hosts文件的时候，去除/etc/hosts文件中已经配置过的主机信息，默认是去重复。
+
 -   -?, --help
 
     显示帮助信息。
