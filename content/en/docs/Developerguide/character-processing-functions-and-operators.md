@@ -1218,7 +1218,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Extracts substrings from a regular expression.
 
-    Return type: varchar
+    Return type: text
 
     Example:
 
@@ -1503,7 +1503,7 @@ String functions and operators provided by openGauss are for concatenating strin
 >    -----------
 >    
 >    (1 row)
->  ```
+> ```
 > 
 >  This is because the kernel will determine whether the input parameter contains NULL before calling the corresponding function for processing. If so, the corresponding function will not be called, so there will be no output.In PG type, strings are handled in the same way as PostgresQL, so you won't have this problem。
 
