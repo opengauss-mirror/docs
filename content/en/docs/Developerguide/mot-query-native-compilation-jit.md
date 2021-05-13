@@ -63,5 +63,5 @@ In contrast, MOT JIT optimization provides LLVM code for entire queries that qua
 
 Another significant conceptual difference is that MOT LLVM code is only generated for prepared queries during the PREPARE phase of the query, rather than at query execution. This is especially important for OLTP scenarios due to the rather short runtime of OLTP queries, which cannot allow for code generation and relatively long query compilation time to be performed during each query execution.
 
-Finally, in PostgreSQL the activation of a PREPARE implies the reuse of the resulting plan across executions with different parameters in the same session. Similarly, the MOT JIT applies a caching policy for its LLVM code results, and extends it for reuse across different sessions. Thus, a single query may be compiled just once and its LLVM code may be reused across many sessions, which again is beneficial for OLTP scenarios.
+Finally, in openGauss the activation of a PREPARE implies the reuse of the resulting plan across executions with different parameters in the same session. Similarly, the MOT JIT applies a caching policy for its LLVM code results, and extends it for reuse across different sessions. Thus, a single query may be compiled just once and its LLVM code may be reused across many sessions, which again is beneficial for OLTP scenarios.
 
