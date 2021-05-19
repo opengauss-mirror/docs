@@ -1666,7 +1666,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_instance\_time\(\)
 
-    Description: Provides the time consumption of each key phase of openGauss. This function is supported only on the primary node of the database. To query this function, you must have the  **sysadmin**  permission.
+    Description: Provides the time consumption of each key phase of openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -1708,13 +1708,13 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_os\_runtime\(\)
 
-    Description: Displays the running status of the current OS. This function is supported only on the primary node of the database. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the running status of the current OS. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_os\_threads\(\)
 
-    Description: Provides information about the threads under all normal nodes of openGauss. This function is supported only on the primary node of the database. To query this function, you must have the  **sysadmin**  permission.
+    Description: Provides information about the threads under all normal nodes of openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
