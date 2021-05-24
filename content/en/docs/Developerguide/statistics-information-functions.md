@@ -1775,9 +1775,9 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   gs\_wlm\_get\_resource\_pool\_info\(\)
+-   gs\_wlm\_get\_resource\_pool\_info\(int\)
 
-    Description: Obtains the resource usage statistics of all users.
+    Description: Obtains the resource usage statistics of all users,The input parameter is of type int and can be any int value or null.
 
     Return type: record
 
@@ -1787,9 +1787,9 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   gs\_wlm\_get\_user\_info\(\)
+-   gs\_wlm\_get\_user\_info\(int\)
 
-    Description: Obtains information about all users.
+    Description: Obtains information about all users，The input parameter is of type int and can be any int value or null.You must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -1817,9 +1817,9 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   gs\_wlm\_session\_respool\(\)
+-   gs\_wlm\_session\_respool\(bigint\)
 
-    Description: Obtains the session resource pool information about all background threads.
+    Description: Obtains the session resource pool information about all background threads.The input parameter is bigint type and can be any bigint value or null.
 
     Return type: record
 
@@ -1912,7 +1912,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_local\_toastname\_and\_toastindexname\(\)
 
-    Description: Provides the mapping between the name and index of the local TOAST table and its associated tables.
+    Description: Provides the mapping between the name and index of the local TOAST table and its associated tables, you must have the  **sysadmin**  permission.
 
     Return type: record
 
