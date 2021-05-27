@@ -1331,6 +1331,7 @@ headless: true
         -   [用于Oracle的外部数据包装器]({{< relref "./docs/Developerguide/用于Oracle的外部数据包装器.md" >}})
         -   [mysql_fdw]({{< relref "./docs/Developerguide/mysql_fdw.md" >}})
         -   [postgres_fdw]({{< relref "./docs/Developerguide/postgres_fdw.md" >}})
+        -   [dblink]({{< relref "./docs/Developerguide/dblink.md" >}})
     -   [物化视图]({{< relref "./docs/Developerguide/物化视图.md" >}})
 		-   [全量物化视图]({{< relref "./docs/Developerguide/全量物化视图.md" >}})
 			-   [概述]({{< relref "./docs/Developerguide/概述-19.md" >}})

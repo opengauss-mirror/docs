@@ -7,4 +7,6 @@ openGauss的fdw实现的功能是各个openGauss数据库及远程数据库之�
 
 -   **[postgres_fdw](postgres_fdw.md)**  
 
+-   **[dblink](dblink.md)**
+
 
