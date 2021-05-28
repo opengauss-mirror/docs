@@ -7,6 +7,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 -   If parameter  **password\_encryption\_type**  is set to  **0**, passwords are encrypted using MD5. MD5 is an insecure encryption algorithm. Therefore, you are not advised to use MD5.
 -   If parameter  **password\_encryption\_type**  is set to  **1**, passwords are encrypted using SHA-256 and MD5. MD5 is an insecure encryption algorithm. Therefore, you are not advised to use MD5.
 -   If parameter  **password\_encryption\_type**  is set to  **2**, passwords are encrypted using SHA-256. This is the default configuration.
+-   If parameter  **password\_encryption\_type**  is set to  **3**, passwords are encrypted using sm3. This is the default configuration.
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Run the following command to connect to the database:

@@ -41,7 +41,7 @@ Perform the following operations \(assuming that the license files are saved in 
     Clients on the  **127.0.0.1/32**  network segment can connect to openGauss servers in SSL mode.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >If  **METHOD**  is set to  **cert**  in the  **pg\_hba.conf**  file of the server, the client must use the username \(common name\) configured in the license file \(**client.crt**\) for the database connection. If  **METHOD**  is set to  **md5**  or  **sha256**, there is no such a restriction.  
+    >If  **METHOD**  is set to  **cert**  in the  **pg\_hba.conf**  file of the server, the client must use the username \(common name\) configured in the license file \(**client.crt**\) for the database connection. If  **METHOD**  is set to  **md5** ,**sm3**   or  **sha256**, there is no such a restriction.  
 
 5.  Configure the digital certificate parameters related to SSL authentication.
 
