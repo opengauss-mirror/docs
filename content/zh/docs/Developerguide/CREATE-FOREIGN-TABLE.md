@@ -86,6 +86,46 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
     -   **column_name**
 
         远端server的表的列名。如果不指定的话，将使用外表自身的列名作为远端的的表的列名。
+		
+	file_fdw支持的options包括：
+	
+	-   **filename**
+
+        指定要读取的文件，必需的参数，且必须是一个绝对路径名。
+    
+    -   **format**
+
+        远端server的文件格式，支持text/csv/binary/fixed四种格式，和COPY语句的FORMAT选项相同。
+        
+    -   **header**
+
+        指定的文件是否有标题行，与COPY语句的HEADER选项相同。
+
+	-   **delimiter**
+	
+	    指定文件的分隔符，与COPY的DELIMITER选项相同。
+
+	-   **quote**
+	
+		指定文件的引用字符，与COPY的QUOTE选项相同。
+
+	-   **escape**
+	
+	    指定文件的转义字符，与COPY的ESCAPE选项相同。
+
+	-   **null**
+	
+        指定文件的null字符串，与COPY的NULL选项相同。
+
+	-   **encoding**
+	
+	    指定文件的编码，与COPY的ENCODING选项相同。
+
+	-   **force_not_null**
+		
+		这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是， 文件级别null选项）。与COPY的 FORCE_NOT_NULL选项里的字段相同。
+		
+    file_fdw更多介绍请参考 开发者指南/Foreign Data Wrapper/file_fdw 章节。
 
 ## 相关链接
 
