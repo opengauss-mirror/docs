@@ -8,6 +8,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >When  **[wal\_level](en-us_topic_0289900114.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **minimal**, the  **archive\_mode**  parameter is unavailable.
+>
+>Both synchronous standby machine and asynchronous standby machine can start archiving, and the way to start archiving is the same as that of single machine. Just set the archive_mode to on and set the correct archive_ dest or archive_ command.
+>Note: if the most_available is not on and there is a synchronous standby disconnected from the host, the primary will be unable to send the location of the archive to the standby due to traffic congestion, resulting in archive failure.
 
 **Value range**: Boolean
 
