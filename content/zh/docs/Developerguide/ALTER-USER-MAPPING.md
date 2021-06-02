@@ -1,9 +1,12 @@
-# ALTER USER MAPPING
+﻿# ALTER USER MAPPING
 
 ## 功能描述
 
 更改一个用户映射的定义。
 
+## 注意事项
+
+-   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在usermapping.key.cipher和usermapping.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并使用gs\_ssh工具发布到每个节点的$GAUSSHOME/bin目录下。
 
 ## 语法格式
 
