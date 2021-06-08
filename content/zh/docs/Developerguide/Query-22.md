@@ -1,4 +1,4 @@
-# Query<a name="ZH-CN_TOPIC_0242371546"></a>
+﻿# Query<a name="ZH-CN_TOPIC_0242371546"></a>
 
 ## instr\_unique\_sql\_count<a name="zh-cn_topic_0237124756_section983311682019"></a>
 
@@ -6,7 +6,7 @@
 
 该值由大变小将会清空系统中原有的数据重新统计；从小变大不受影响。
 
-当系统中产生的unique sql条目数量大于instr\_unique\_sql\_count时，若开启了unique sql自动淘汰，则系统会按unique sql的更新时间由远到近自动淘汰一定比例的条目，使得新产生的unique sql信息可以继续被统计，否则若没有开启自动淘汰，则系统产生的新的unique sql信息将不再被统计。
+当系统中产生的unique sql条目数量大于instr\_unique\_sql\_count时，若开启了unique sql自动淘汰，则系统会按unique sql的更新时间由远到近自动淘汰一定比例的条目，使得新产生的unique sql信息可以继续被统计，若没有开启自动淘汰，则系统产生的新的unique sql信息将不再被统计。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -77,17 +77,31 @@
 
 **默认值**：on
 
-## unique_sql_clean_ratio
+## enable\_auto\_clean\_unique\_sql
 
-**参数说明：**当系统中产生的unique sql条目数量大于instr_unique_sql_count时，每次自动淘汰的unique sql条目数量占总条目数量预设上限instr_unique_sql_count的比例。配置为0表示不启用unique sql自动淘汰功能。
+**参数说明：**当系统中产生的unique sql条目数量大于等于instr\_unique\_sql\_count时，是否启用unique sql自动淘汰功能。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**：double类型，0~0.2
+**取值范围**：**布尔型
 
-**默认值**：0
+**默认值**：off
 
 **注意事项**
 
 -   由于快照有部分信息是来源于unique sql，所以开启自动淘汰的情况下，在生成wdr报告时，如果选择的起始快照和终止快照跨过了淘汰发生的时间，会导致无法生成wdr报告。
+
+## unique\_sql\_clean\_ratio
+
+**参数说明：**当系统中产生的unique sql条目数量大于等于instr\_unique\_sql\_count时，每次自动淘汰的unique sql条目数量占总条目数量预设上限instr\_unique\_sql\_count的比例。
+
+该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：double类型，0~0.2
+
+**默认值**：0.1
+
+**注意事项**
+
 -   该值设置过小每次清理的条目较少，可能会导致频繁进行清理；设置过大时每次清理的条目较多，可能会导致频繁插入。建议值0.1。
+-   unique\_sql\_clean\_ratio设置为0不代表关闭自动淘汰功能，请通过enable\_auto\_clean\_unique\_sql来控制是否开启自动淘汰。当开启自动淘汰，且将unique\_sql\_clean\_ratio设置为0时，将自动把unique\_sql\_clean\_ratio重置为默认值0.1。
