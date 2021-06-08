@@ -11,7 +11,16 @@
 在创建数据库连接之前，需要加载数据库驱动类“org.postgresql.Driver”。
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一进程内使用两个JDBC驱动的时候，可能会类名冲突。  
+>
+>+ 由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一进程内使用两个JDBC驱动的时候，可能会类名冲突。  
+>
+>+ 相比于PG驱动，openGauss JDBC驱动主要做了以下特性的增强：
+>
+>  + 支持SHA256加密方式登录。
+>
+>  + 支持对接实现sf4j接口的第三方日志框架。
+>
+>  + 支持容灾切换。
 
 ## 环境类<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_section20655192913405"></a>
 

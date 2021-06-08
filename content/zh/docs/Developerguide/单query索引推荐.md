@@ -24,7 +24,8 @@
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本功能仅支持单条SELECT类型的语句，不支持其他类型的SQL语句。
+>-   本功能仅支持单条SELECT类型的语句，不支持其他类型的SQL语句。
+>-   本功能暂不支持分区表、列存表、段页式表、普通视图、物化视图、全局临时表以及密态数据库。
 
 ## 使用方法<a name="section54321094535"></a>
 
@@ -33,7 +34,7 @@
 例如：
 
 ```
-postgres=> select * from gs_index_advise('SELECT c_discount from bmsql_customer where c_w_id = 10');
+openGauss=> select "table", "column" from gs_index_advise('SELECT c_discount from bmsql_customer where c_w_id = 10');
      table      |  column  
 ----------------+----------
  bmsql_customer | (c_w_id)
@@ -49,7 +50,7 @@ CREATE INDEX idx on bmsql_customer(c_w_id);
 某些SQL语句，也可能被推荐创建联合索引，例如：
 
 ```
-postgres=# select * from gs_index_advise('select name, age, sex from t1 where age >= 18 and age < 35 and sex = ''f'';');
+openGauss=# select "table", "column" from gs_index_advise('select name, age, sex from t1 where age >= 18 and age < 35 and sex = ''f'';');
  table | column
 -------+------------
  t1    | (age, sex)
@@ -63,5 +64,5 @@ CREATE INDEX idx1 on t1(age, sex);
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->系统函数 gs\_index\_advise\(\) 的参数是文本型，如果参数中存在如单引号（'） 等特殊字符，可以使用单引号（'） 进行转义，可参考上述示例。
+>系统函数gs\_index\_advise\(\)的参数是文本型，如果参数中存在如单引号（'）等特殊字符，可以使用单引号（'）进行转义，可参考上述示例。
 
