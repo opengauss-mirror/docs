@@ -1,4 +1,4 @@
-# CREATE USER MAPPING
+﻿# CREATE USER MAPPING
 ## 功能描述
 定义一个用户到一个外部服务器的新映射。
 ## 语法格式
@@ -7,6 +7,10 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
     SERVER server_name
     [ OPTIONS ( option 'value' [ , ... ] ) ]
 ```
+
+## 注意事项
+
+-   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在usermapping.key.cipher和usermapping.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并使用gs\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。
 
 ## 参数说明
 
@@ -51,6 +55,8 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
     -   **password**
 
         远端openGauss用户对应的密码。
+
+    openGauss在后台会对用户输入的password加密以保证安全性。该加密所需密钥文件需要使用gs\_guc工具生成并使用gs\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。password不应当包含'encryptOpt'前缀，否则会被认为是加密后的密文。
 
 相关链接
 
