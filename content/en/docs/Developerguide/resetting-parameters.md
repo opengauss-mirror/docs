@@ -139,6 +139,7 @@ You can set GUC parameters in openGauss using the methods listed in  [Table 2](#
 </tr>
 </tbody>
 </table>
+When using method 1 and method 2 to set parameters, if the set parameter does not belong to the current environment, the database will prompt the relevant information that the parameter is not within the supported range.
 
 ## Procedure<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_s049438204a0941efb4b85981fb594e7c"></a>
 
