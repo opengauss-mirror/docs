@@ -86,7 +86,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
         该表的字段position的数据类型为 double precision\[\].
 
-        以Kmeans为例，训练一个模型：
+    -   以Kmeans为例，训练一个模型。从kmeans\_2d训练集中指定position为特征列，使用kmeans算法，创建并保存模型point\_kmeans。
 
         ```
         openGauss=# CREATE MODEL point_kmeans USING kmeans FEATURES position FROM kmeans_2d WITH num_centroids=3;
@@ -102,199 +102,204 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
         MODEL CREATED. PROCESSED 1
         ```
 
-        这条Query语法可以解读为：从kmeans\_2d训练集中指定position为特征列，使用kmeans算法，创建并保存模型point\_kmeans。
+        上述命令中：
 
-        “CREATE MODEL”语句用于模型的训练和保存；USING关键字指定算法名称；FEATURES用于指定训练模模型的特征，需根据训练数据表的列名添加；TARGET指定模型的训练目标，它可以是训练所需数据表的列名，也可以是一个表达式，例如: price \> 10000；WITH用于指定训练模型时的超参数。当超参未被用户进行设置的时候，框架会使用默认数值。
+        -   “CREATE MODEL”语句用于模型的训练和保存。
+        -   USING关键字指定算法名称。
+        -   FEATURES用于指定训练模模型的特征，需根据训练数据表的列名添加。
+        -   TARGET指定模型的训练目标，它可以是训练所需数据表的列名，也可以是一个表达式，例如: price \> 10000。
+        -   WITH用于指定训练模型时的超参数。当超参未被用户进行设置的时候，框架会使用默认数值。
 
-        针对不同的算子，框架支持不同的超参组合：
+            针对不同的算子，框架支持不同的超参组合：
 
-        **表 2**  算子支持的超参
+            **表 2**  算子支持的超参
 
-        <a name="table15985527185615"></a>
-        <table><thead align="left"><tr id="row4985102718565"><th class="cellrowborder" valign="top" width="35.49%" id="mcps1.2.3.1.1"><p id="p7986172713567"><a name="p7986172713567"></a><a name="p7986172713567"></a>算子</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="64.51%" id="mcps1.2.3.1.2"><p id="p159861727125619"><a name="p159861727125619"></a><a name="p159861727125619"></a>超参</p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="row1798682755614"><td class="cellrowborder" valign="top" width="35.49%" headers="mcps1.2.3.1.1 "><p id="p226171165710"><a name="p226171165710"></a><a name="p226171165710"></a>GD</p>
-        <p id="p1798662711568"><a name="p1798662711568"></a><a name="p1798662711568"></a>(logistic_regression、linear_regression、SVM)</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="64.51%" headers="mcps1.2.3.1.2 "><p id="p167491058185616"><a name="p167491058185616"></a><a name="p167491058185616"></a>optimizer(char*); verbose(bool); max_iterations(int); max_seconds(double); batch_size(int); learning_rate(double); decay(double); tolerance(double)</p>
-        <p id="p1074918587561"><a name="p1074918587561"></a><a name="p1074918587561"></a>其中，SVM限定超参lambda(double)</p>
-        </td>
-        </tr>
-        <tr id="row1986142785613"><td class="cellrowborder" valign="top" width="35.49%" headers="mcps1.2.3.1.1 "><p id="p098622717567"><a name="p098622717567"></a><a name="p098622717567"></a>Kmeans</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="64.51%" headers="mcps1.2.3.1.2 "><p id="p139861927185613"><a name="p139861927185613"></a><a name="p139861927185613"></a>max_iterations(int); num_centroids(int); tolerance(double); batch_size(int); num_features(int); distance_function(char*); seeding_function(char*); <span id="ph1339555510478"><a name="ph1339555510478"></a><a name="ph1339555510478"></a>verbose(int);seed(int)</span></p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
+            <a name="table15985527185615"></a>
+            <table><thead align="left"><tr id="row4985102718565"><th class="cellrowborder" valign="top" width="35.49%" id="mcps1.2.3.1.1"><p id="p7986172713567"><a name="p7986172713567"></a><a name="p7986172713567"></a>算子</p>
+            </th>
+            <th class="cellrowborder" valign="top" width="64.51%" id="mcps1.2.3.1.2"><p id="p159861727125619"><a name="p159861727125619"></a><a name="p159861727125619"></a>超参</p>
+            </th>
+            </tr>
+            </thead>
+            <tbody><tr id="row1798682755614"><td class="cellrowborder" valign="top" width="35.49%" headers="mcps1.2.3.1.1 "><p id="p226171165710"><a name="p226171165710"></a><a name="p226171165710"></a>GD</p>
+            <p id="p1798662711568"><a name="p1798662711568"></a><a name="p1798662711568"></a>(logistic_regression、linear_regression、SVM)</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="64.51%" headers="mcps1.2.3.1.2 "><p id="p167491058185616"><a name="p167491058185616"></a><a name="p167491058185616"></a>optimizer(char*); verbose(bool); max_iterations(int); max_seconds(double); batch_size(int); learning_rate(double); decay(double); tolerance(double)</p>
+            <p id="p1074918587561"><a name="p1074918587561"></a><a name="p1074918587561"></a>其中，SVM限定超参lambda(double)</p>
+            </td>
+            </tr>
+            <tr id="row1986142785613"><td class="cellrowborder" valign="top" width="35.49%" headers="mcps1.2.3.1.1 "><p id="p098622717567"><a name="p098622717567"></a><a name="p098622717567"></a>Kmeans</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="64.51%" headers="mcps1.2.3.1.2 "><p id="p139861927185613"><a name="p139861927185613"></a><a name="p139861927185613"></a>max_iterations(int); num_centroids(int); tolerance(double); batch_size(int); num_features(int); distance_function(char*); seeding_function(char*); verbose(int);seed(int)</p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
 
-        当前各个超参数设置的默认值和取值范围如下：
+            当前各个超参数设置的默认值和取值范围如下：
 
-        **表 3**  超参的默认值以及取值范围
+            **表 3**  超参的默认值以及取值范围
 
-        <a name="table86881521502"></a>
-        <table><thead align="left"><tr id="row9689452402"><th class="cellrowborder" valign="top" width="16.04%" id="mcps1.2.5.1.1"><p id="p1168911521406"><a name="p1168911521406"></a><a name="p1168911521406"></a>算子</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="35.28%" id="mcps1.2.5.1.2"><p id="p176891522013"><a name="p176891522013"></a><a name="p176891522013"></a>超参(默认值)</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="22.12%" id="mcps1.2.5.1.3"><p id="p1468955218017"><a name="p1468955218017"></a><a name="p1468955218017"></a>取值范围</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="26.56%" id="mcps1.2.5.1.4"><p id="p1749251941915"><a name="p1749251941915"></a><a name="p1749251941915"></a><span id="ph148223351915"><a name="ph148223351915"></a><a name="ph148223351915"></a>超参描述</span></p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="row768911521608"><td class="cellrowborder" rowspan="10" valign="top" width="16.04%" headers="mcps1.2.5.1.1 "><p id="p679095114313"><a name="p679095114313"></a><a name="p679095114313"></a>GD (logistic_regression、linear_regression、SVM)</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="35.28%" headers="mcps1.2.5.1.2 "><p id="p66891852902"><a name="p66891852902"></a><a name="p66891852902"></a>optimizer = gd（梯度下降法）</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p1168918523011"><a name="p1168918523011"></a><a name="p1168918523011"></a>gd/ngd（自然梯度下降）</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="26.56%" headers="mcps1.2.5.1.4 "><p id="p11492191911911"><a name="p11492191911911"></a><a name="p11492191911911"></a><span id="ph637032512208"><a name="ph637032512208"></a><a name="ph637032512208"></a>优化器</span></p>
-        </td>
-        </tr>
-        <tr id="row468915521103"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p106891552106"><a name="p106891552106"></a><a name="p106891552106"></a>verbose = false</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p3689252101"><a name="p3689252101"></a><a name="p3689252101"></a>T/F</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p19492319181916"><a name="p19492319181916"></a><a name="p19492319181916"></a><span id="ph578315157218"><a name="ph578315157218"></a><a name="ph578315157218"></a>日志显示</span></p>
-        </td>
-        </tr>
-        <tr id="row1168925220018"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p968914521303"><a name="p968914521303"></a><a name="p968914521303"></a>max_iterations = 100</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1268945210013"><a name="p1268945210013"></a><a name="p1268945210013"></a>(0, INT_MAX_VALUE]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p19492119171912"><a name="p19492119171912"></a><a name="p19492119171912"></a><span id="ph2378104292519"><a name="ph2378104292519"></a><a name="ph2378104292519"></a>最大迭代次数</span></p>
-        </td>
-        </tr>
-        <tr id="row968985213016"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p96891521904"><a name="p96891521904"></a><a name="p96891521904"></a>max_seconds = 0 (不对运行时长设限制)</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p5689752300"><a name="p5689752300"></a><a name="p5689752300"></a>[0,INT_MAX_VALUE]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p134928192199"><a name="p134928192199"></a><a name="p134928192199"></a><span id="ph154671613112715"><a name="ph154671613112715"></a><a name="ph154671613112715"></a>运行时长</span></p>
-        </td>
-        </tr>
-        <tr id="row56893521905"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p268975210020"><a name="p268975210020"></a><a name="p268975210020"></a>batch_size = 1000</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p76892521602"><a name="p76892521602"></a><a name="p76892521602"></a>(0, MAX_MEMORY_LIMIT]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p749216198198"><a name="p749216198198"></a><a name="p749216198198"></a><span id="ph39691224202817"><a name="ph39691224202817"></a><a name="ph39691224202817"></a>一次训练所选取的样本数</span></p>
-        </td>
-        </tr>
-        <tr id="row668912521304"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1969016527011"><a name="p1969016527011"></a><a name="p1969016527011"></a>learning_rate = 0.8</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p669020521409"><a name="p669020521409"></a><a name="p669020521409"></a>(0, DOUBLE_MAX_VALUE]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p14922196192"><a name="p14922196192"></a><a name="p14922196192"></a><span id="ph14221537142815"><a name="ph14221537142815"></a><a name="ph14221537142815"></a>学习率</span></p>
-        </td>
-        </tr>
-        <tr id="row66901752807"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p969095219014"><a name="p969095219014"></a><a name="p969095219014"></a>decay = 0.95</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p96901052706"><a name="p96901052706"></a><a name="p96901052706"></a>(0, DOUBLE_MAX_VALUE]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p174926195197"><a name="p174926195197"></a><a name="p174926195197"></a><span id="ph76683116299"><a name="ph76683116299"></a><a name="ph76683116299"></a>权值衰减率</span></p>
-        </td>
-        </tr>
-        <tr id="row1036182934"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p7361821939"><a name="p7361821939"></a><a name="p7361821939"></a>tolerance = 0.0005</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p183702838"><a name="p183702838"></a><a name="p183702838"></a>(0, DOUBLE_MAX_VALUE]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p64922193197"><a name="p64922193197"></a><a name="p64922193197"></a><span id="ph8838122673020"><a name="ph8838122673020"></a><a name="ph8838122673020"></a>公差</span></p>
-        </td>
-        </tr>
-        <tr id="row155121949191717"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p10512249181710"><a name="p10512249181710"></a><a name="p10512249181710"></a><span id="ph7310838171816"><a name="ph7310838171816"></a><a name="ph7310838171816"></a>seed = 0（对seed取随机值）</span></p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p05125496171"><a name="p05125496171"></a><a name="p05125496171"></a><span id="ph52020210198"><a name="ph52020210198"></a><a name="ph52020210198"></a>[0, </span><span id="ph4128131321918"><a name="ph4128131321918"></a><a name="ph4128131321918"></a>INT_MAX_VALUE</span><span id="ph182031616194"><a name="ph182031616194"></a><a name="ph182031616194"></a>]</span></p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p9492101941916"><a name="p9492101941916"></a><a name="p9492101941916"></a><span id="ph2316103193120"><a name="ph2316103193120"></a><a name="ph2316103193120"></a>种子</span></p>
-        </td>
-        </tr>
-        <tr id="row1852014830"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1452084430"><a name="p1452084430"></a><a name="p1452084430"></a>just for SVM：lambda = 0.01</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p175201044311"><a name="p175201044311"></a><a name="p175201044311"></a>(0, DOUBLE_MAX_VALUE)</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1949211917195"><a name="p1949211917195"></a><a name="p1949211917195"></a><span id="ph476811563519"><a name="ph476811563519"></a><a name="ph476811563519"></a>正则化参数</span></p>
-        </td>
-        </tr>
-        <tr id="row795511114310"><td class="cellrowborder" rowspan="9" valign="top" width="16.04%" headers="mcps1.2.5.1.1 "><p id="p21721416583"><a name="p21721416583"></a><a name="p21721416583"></a>Kmeans</p>
-        <p id="p1236895522813"><a name="p1236895522813"></a><a name="p1236895522813"></a></p>
-        </td>
-        <td class="cellrowborder" valign="top" width="35.28%" headers="mcps1.2.5.1.2 "><p id="p1695551116310"><a name="p1695551116310"></a><a name="p1695551116310"></a>max_iterations = 10</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p495501116310"><a name="p495501116310"></a><a name="p495501116310"></a>[1, INT_MAX_VALUE]</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="26.56%" headers="mcps1.2.5.1.4 "><p id="p1492131911910"><a name="p1492131911910"></a><a name="p1492131911910"></a><span id="ph572482616356"><a name="ph572482616356"></a><a name="ph572482616356"></a>最大迭代次数</span></p>
-        </td>
-        </tr>
-        <tr id="row568119236"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p136811191430"><a name="p136811191430"></a><a name="p136811191430"></a>num_centroids = 10</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1668111916316"><a name="p1668111916316"></a><a name="p1668111916316"></a>[1, MAX_MEMORY_LIMIT]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p2492151951911"><a name="p2492151951911"></a><a name="p2492151951911"></a><span id="ph26378402366"><a name="ph26378402366"></a><a name="ph26378402366"></a>簇的数目</span></p>
-        </td>
-        </tr>
-        <tr id="row1133613181825"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p193362181425"><a name="p193362181425"></a><a name="p193362181425"></a>tolerance = 0.00001</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p13336201813220"><a name="p13336201813220"></a><a name="p13336201813220"></a>(0,1)</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p549341912192"><a name="p549341912192"></a><a name="p549341912192"></a><span id="ph1989812883813"><a name="ph1989812883813"></a><a name="ph1989812883813"></a>中心点误差</span></p>
-        </td>
-        </tr>
-        <tr id="row17177771132"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p317713714311"><a name="p317713714311"></a><a name="p317713714311"></a>batch_size = 10</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p171771474313"><a name="p171771474313"></a><a name="p171771474313"></a>[1, MAX_MEMORY_LIMIT]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p8493219141910"><a name="p8493219141910"></a><a name="p8493219141910"></a><span id="ph13641151516392"><a name="ph13641151516392"></a><a name="ph13641151516392"></a>一次训练所选取的样本数</span></p>
-        </td>
-        </tr>
-        <tr id="row35347279220"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p14534162718220"><a name="p14534162718220"></a><a name="p14534162718220"></a>num_features = 2</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1953414271211"><a name="p1953414271211"></a><a name="p1953414271211"></a>[1, GS_MAX_COLS]</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p44933197199"><a name="p44933197199"></a><a name="p44933197199"></a><span id="ph550112015398"><a name="ph550112015398"></a><a name="ph550112015398"></a>输入样本特征数</span></p>
-        </td>
-        </tr>
-        <tr id="row1394785819212"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p894725814217"><a name="p894725814217"></a><a name="p894725814217"></a>distance_function = "L2_Squared"</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p3947205817210"><a name="p3947205817210"></a><a name="p3947205817210"></a>L1\L2\L2_Squared\Linf</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p649314195199"><a name="p649314195199"></a><a name="p649314195199"></a><span id="ph1362164118398"><a name="ph1362164118398"></a><a name="ph1362164118398"></a>正则化方法</span></p>
-        </td>
-        </tr>
-        <tr id="row17885311820"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p48816313212"><a name="p48816313212"></a><a name="p48816313212"></a>seeding_function = "Random++"</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1388143119218"><a name="p1388143119218"></a><a name="p1388143119218"></a>"Random++"\"KMeans||"</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p249314190191"><a name="p249314190191"></a><a name="p249314190191"></a><span id="ph56687492399"><a name="ph56687492399"></a><a name="ph56687492399"></a>初始化种子点方法</span></p>
-        </td>
-        </tr>
-        <tr id="row51731360211"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1717323612220"><a name="p1717323612220"></a><a name="p1717323612220"></a><span id="ph151784436283"><a name="ph151784436283"></a><a name="ph151784436283"></a>verbose</span><span id="ph1437017462283"><a name="ph1437017462283"></a><a name="ph1437017462283"></a> </span>= 0U</p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p121731736923"><a name="p121731736923"></a><a name="p121731736923"></a><span id="ph59291130124811"><a name="ph59291130124811"></a><a name="ph59291130124811"></a>{ 0, 1, 2 }</span></p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1849361991914"><a name="p1849361991914"></a><a name="p1849361991914"></a><span id="ph13398110154213"><a name="ph13398110154213"></a><a name="ph13398110154213"></a>冗长模式</span></p>
-        </td>
-        </tr>
-        <tr id="row15367155552818"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p036895592811"><a name="p036895592811"></a><a name="p036895592811"></a><span id="ph1570881692917"><a name="ph1570881692917"></a><a name="ph1570881692917"></a>seed</span><span id="ph249681712295"><a name="ph249681712295"></a><a name="ph249681712295"></a> = 0U</span></p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1836885512812"><a name="p1836885512812"></a><a name="p1836885512812"></a><span id="ph10629751143718"><a name="ph10629751143718"></a><a name="ph10629751143718"></a>[0, INT_MAX_VALUE]</span></p>
-        </td>
-        <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p24931319191911"><a name="p24931319191911"></a><a name="p24931319191911"></a><span id="ph13435101619401"><a name="ph13435101619401"></a><a name="ph13435101619401"></a>种子</span></p>
-        </td>
-        </tr>
-        <tr id="row580013512210"><td class="cellrowborder" colspan="4" valign="top" headers="mcps1.2.5.1.1 mcps1.2.5.1.2 mcps1.2.5.1.3 mcps1.2.5.1.4 "><p id="p1588154717714"><a name="p1588154717714"></a><a name="p1588154717714"></a>MAX_MEMORY_LIMIT = 最大内存加载的元组数量</p>
-        </td>
-        </tr>
-        <tr id="row411547826"><td class="cellrowborder" colspan="4" valign="top" headers="mcps1.2.5.1.1 mcps1.2.5.1.2 mcps1.2.5.1.3 mcps1.2.5.1.4 "><p id="p183191141289"><a name="p183191141289"></a><a name="p183191141289"></a>GS_MAX_COLS = 数据库单表最大属性数量</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
+            <a name="table86881521502"></a>
+            <table><thead align="left"><tr id="row9689452402"><th class="cellrowborder" valign="top" width="16.04%" id="mcps1.2.5.1.1"><p id="p1168911521406"><a name="p1168911521406"></a><a name="p1168911521406"></a>算子</p>
+            </th>
+            <th class="cellrowborder" valign="top" width="35.28%" id="mcps1.2.5.1.2"><p id="p176891522013"><a name="p176891522013"></a><a name="p176891522013"></a>超参(默认值)</p>
+            </th>
+            <th class="cellrowborder" valign="top" width="22.12%" id="mcps1.2.5.1.3"><p id="p1468955218017"><a name="p1468955218017"></a><a name="p1468955218017"></a>取值范围</p>
+            </th>
+            <th class="cellrowborder" valign="top" width="26.56%" id="mcps1.2.5.1.4"><p id="p1749251941915"><a name="p1749251941915"></a><a name="p1749251941915"></a>超参描述</p>
+            </th>
+            </tr>
+            </thead>
+            <tbody><tr id="row768911521608"><td class="cellrowborder" rowspan="10" valign="top" width="16.04%" headers="mcps1.2.5.1.1 "><p id="p679095114313"><a name="p679095114313"></a><a name="p679095114313"></a>GD (logistic_regression、linear_regression、SVM)</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="35.28%" headers="mcps1.2.5.1.2 "><p id="p66891852902"><a name="p66891852902"></a><a name="p66891852902"></a>optimizer = gd（梯度下降法）</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p1168918523011"><a name="p1168918523011"></a><a name="p1168918523011"></a>gd/ngd（自然梯度下降）</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="26.56%" headers="mcps1.2.5.1.4 "><p id="p11492191911911"><a name="p11492191911911"></a><a name="p11492191911911"></a>优化器</p>
+            </td>
+            </tr>
+            <tr id="row468915521103"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p106891552106"><a name="p106891552106"></a><a name="p106891552106"></a>verbose = false</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p3689252101"><a name="p3689252101"></a><a name="p3689252101"></a>T/F</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p19492319181916"><a name="p19492319181916"></a><a name="p19492319181916"></a>日志显示</p>
+            </td>
+            </tr>
+            <tr id="row1168925220018"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p968914521303"><a name="p968914521303"></a><a name="p968914521303"></a>max_iterations = 100</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1268945210013"><a name="p1268945210013"></a><a name="p1268945210013"></a>(0, INT_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p19492119171912"><a name="p19492119171912"></a><a name="p19492119171912"></a>最大迭代次数</p>
+            </td>
+            </tr>
+            <tr id="row968985213016"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p96891521904"><a name="p96891521904"></a><a name="p96891521904"></a>max_seconds = 0 (不对运行时长设限制)</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p5689752300"><a name="p5689752300"></a><a name="p5689752300"></a>[0,INT_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p134928192199"><a name="p134928192199"></a><a name="p134928192199"></a>运行时长</p>
+            </td>
+            </tr>
+            <tr id="row56893521905"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p268975210020"><a name="p268975210020"></a><a name="p268975210020"></a>batch_size = 1000</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p76892521602"><a name="p76892521602"></a><a name="p76892521602"></a>(0, MAX_MEMORY_LIMIT]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p749216198198"><a name="p749216198198"></a><a name="p749216198198"></a>一次训练所选取的样本数</p>
+            </td>
+            </tr>
+            <tr id="row668912521304"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1969016527011"><a name="p1969016527011"></a><a name="p1969016527011"></a>learning_rate = 0.8</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p669020521409"><a name="p669020521409"></a><a name="p669020521409"></a>(0, DOUBLE_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p14922196192"><a name="p14922196192"></a><a name="p14922196192"></a>学习率</p>
+            </td>
+            </tr>
+            <tr id="row66901752807"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p969095219014"><a name="p969095219014"></a><a name="p969095219014"></a>decay = 0.95</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p96901052706"><a name="p96901052706"></a><a name="p96901052706"></a>(0, DOUBLE_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p174926195197"><a name="p174926195197"></a><a name="p174926195197"></a>权值衰减率</p>
+            </td>
+            </tr>
+            <tr id="row1036182934"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p7361821939"><a name="p7361821939"></a><a name="p7361821939"></a>tolerance = 0.0005</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p183702838"><a name="p183702838"></a><a name="p183702838"></a>(0, DOUBLE_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p64922193197"><a name="p64922193197"></a><a name="p64922193197"></a>公差</p>
+            </td>
+            </tr>
+            <tr id="row155121949191717"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p10512249181710"><a name="p10512249181710"></a><a name="p10512249181710"></a>seed = 0（对seed取随机值）</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p05125496171"><a name="p05125496171"></a><a name="p05125496171"></a>[0, INT_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p9492101941916"><a name="p9492101941916"></a><a name="p9492101941916"></a>种子</p>
+            </td>
+            </tr>
+            <tr id="row1852014830"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1452084430"><a name="p1452084430"></a><a name="p1452084430"></a>just for SVM：lambda = 0.01</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p175201044311"><a name="p175201044311"></a><a name="p175201044311"></a>(0, DOUBLE_MAX_VALUE)</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1949211917195"><a name="p1949211917195"></a><a name="p1949211917195"></a>正则化参数</p>
+            </td>
+            </tr>
+            <tr id="row795511114310"><td class="cellrowborder" rowspan="9" valign="top" width="16.04%" headers="mcps1.2.5.1.1 "><p id="p21721416583"><a name="p21721416583"></a><a name="p21721416583"></a>Kmeans</p>
+            <p id="p1236895522813"><a name="p1236895522813"></a><a name="p1236895522813"></a></p>
+            </td>
+            <td class="cellrowborder" valign="top" width="35.28%" headers="mcps1.2.5.1.2 "><p id="p1695551116310"><a name="p1695551116310"></a><a name="p1695551116310"></a>max_iterations = 10</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p495501116310"><a name="p495501116310"></a><a name="p495501116310"></a>[1, INT_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="26.56%" headers="mcps1.2.5.1.4 "><p id="p1492131911910"><a name="p1492131911910"></a><a name="p1492131911910"></a>最大迭代次数</p>
+            </td>
+            </tr>
+            <tr id="row568119236"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p136811191430"><a name="p136811191430"></a><a name="p136811191430"></a>num_centroids = 10</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1668111916316"><a name="p1668111916316"></a><a name="p1668111916316"></a>[1, MAX_MEMORY_LIMIT]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p2492151951911"><a name="p2492151951911"></a><a name="p2492151951911"></a>簇的数目</p>
+            </td>
+            </tr>
+            <tr id="row1133613181825"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p193362181425"><a name="p193362181425"></a><a name="p193362181425"></a>tolerance = 0.00001</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p13336201813220"><a name="p13336201813220"></a><a name="p13336201813220"></a>(0,1)</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p549341912192"><a name="p549341912192"></a><a name="p549341912192"></a>中心点误差</p>
+            </td>
+            </tr>
+            <tr id="row17177771132"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p317713714311"><a name="p317713714311"></a><a name="p317713714311"></a>batch_size = 10</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p171771474313"><a name="p171771474313"></a><a name="p171771474313"></a>[1, MAX_MEMORY_LIMIT]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p8493219141910"><a name="p8493219141910"></a><a name="p8493219141910"></a>一次训练所选取的样本数</p>
+            </td>
+            </tr>
+            <tr id="row35347279220"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p14534162718220"><a name="p14534162718220"></a><a name="p14534162718220"></a>num_features = 2</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1953414271211"><a name="p1953414271211"></a><a name="p1953414271211"></a>[1, GS_MAX_COLS]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p44933197199"><a name="p44933197199"></a><a name="p44933197199"></a>输入样本特征数</p>
+            </td>
+            </tr>
+            <tr id="row1394785819212"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p894725814217"><a name="p894725814217"></a><a name="p894725814217"></a>distance_function = "L2_Squared"</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p3947205817210"><a name="p3947205817210"></a><a name="p3947205817210"></a>L1\L2\L2_Squared\Linf</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p649314195199"><a name="p649314195199"></a><a name="p649314195199"></a>正则化方法</p>
+            </td>
+            </tr>
+            <tr id="row17885311820"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p48816313212"><a name="p48816313212"></a><a name="p48816313212"></a>seeding_function = "Random++"</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1388143119218"><a name="p1388143119218"></a><a name="p1388143119218"></a>"Random++"\"KMeans||"</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p249314190191"><a name="p249314190191"></a><a name="p249314190191"></a>初始化种子点方法</p>
+            </td>
+            </tr>
+            <tr id="row51731360211"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1717323612220"><a name="p1717323612220"></a><a name="p1717323612220"></a>verbose = 0U</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p121731736923"><a name="p121731736923"></a><a name="p121731736923"></a>{ 0, 1, 2 }</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1849361991914"><a name="p1849361991914"></a><a name="p1849361991914"></a>冗长模式</p>
+            </td>
+            </tr>
+            <tr id="row15367155552818"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p036895592811"><a name="p036895592811"></a><a name="p036895592811"></a>seed = 0U</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1836885512812"><a name="p1836885512812"></a><a name="p1836885512812"></a>[0, INT_MAX_VALUE]</p>
+            </td>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p24931319191911"><a name="p24931319191911"></a><a name="p24931319191911"></a>种子</p>
+            </td>
+            </tr>
+            <tr id="row580013512210"><td class="cellrowborder" colspan="4" valign="top" headers="mcps1.2.5.1.1 mcps1.2.5.1.2 mcps1.2.5.1.3 mcps1.2.5.1.4 "><p id="p1588154717714"><a name="p1588154717714"></a><a name="p1588154717714"></a>MAX_MEMORY_LIMIT = 最大内存加载的元组数量</p>
+            </td>
+            </tr>
+            <tr id="row411547826"><td class="cellrowborder" colspan="4" valign="top" headers="mcps1.2.5.1.1 mcps1.2.5.1.2 mcps1.2.5.1.3 mcps1.2.5.1.4 "><p id="p183191141289"><a name="p183191141289"></a><a name="p183191141289"></a>GS_MAX_COLS = 数据库单表最大属性数量</p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
 
-        模型保存成功，则返回创建成功信息：
+
+    -   模型保存成功，则返回创建成功信息：
 
         ```
         MODEL CREATED. PROCESSED x
@@ -303,7 +308,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 3.  查看模型信息。
 
-    当训练完成后模型会被存储到系统表gs\_model\_warehouse中。系统表gs\_model\_warehouse可以查看到关于模型本身和训练过程的相关信息：
+    当训练完成后模型会被存储到系统表gs\_model\_warehouse中。系统表gs\_model\_warehouse可以查看到关于模型本身和训练过程的相关信息。
 
     用户可以通过查看系统表的方式查看模型，例如查看模型名为”point\_kmeans”的SQL语句如下：
 
@@ -338,7 +343,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
     使用“SELECT”和“PREDICT BY”关键字利用已有模型完成推断任务。
 
-    示例：SELECT…PREDICT BY…\(FEATURES…\)…FROM…;
+    查询语法：SELECT…PREDICT BY…\(FEATURES…\)…FROM…;
 
     ```
     openGauss=# SELECT id, PREDICT BY point_kmeans (FEATURES position) as pos FROM (select * from kmeans_2d limit 10);

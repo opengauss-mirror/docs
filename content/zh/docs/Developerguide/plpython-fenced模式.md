@@ -18,7 +18,7 @@ unix_socket_directory = '/user-set-dir-path'
 gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
 ```
 
-完成fence模式配置，针对plpython-fenced UDF数据库将在fenced-worker进程中执行UDF计算
+完成fence模式配置，针对plpython-fenced UDF数据库将在fenced-worker进程中执行UDF计算。
 
 ## 使用指导<a name="section823619213143"></a>
 
