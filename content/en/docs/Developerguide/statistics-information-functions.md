@@ -1676,11 +1676,15 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   reset\_unique\_sql\(text, text, bigint\)
+- reset\_unique\_sql\(text, text, bigint\)
 
-    Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be **global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
+  Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be **global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
 
-    Return type: Boolean
+  Return type: Boolean
+
+  > ![](public_sys-resources/icon-note.gif)NOTE
+  >
+  > The node in this function refers to a distributed node,openGauss is a centralized database.The global and local functions are the same, and only take effect on the current node.The value does not support BY_CNID.
 
 -   get\_instr\_wait\_event\(NULL\)
 
