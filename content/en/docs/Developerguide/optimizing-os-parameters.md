@@ -87,14 +87,11 @@ sysctl -p
 
 -   Use the  **ifconfig**  command to set the maximum transmission unit \(MTU\) of 10 GE NICs. The value  **8192**  is recommended because this setting improves the network bandwidth usage.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >When  **comm\_tcp\_mode**  is set to  **false**  for database nodes, set the MTU sizes in each node in openGauss to the same value. Otherwise, network communications may fail.  
-
     Example:
-
-    ```
+    
+```
     #ifconfig ethx mtu 8192
-    #ifconfig ethx
+#ifconfig ethx
     ethx   Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX
     inet addr:xxx.xxx.xxx.xxx  Bcast:xxx.xxx.xxx.xxx  Mask:xxx.xxx.xxx.0
     inet6 addr: fxxx::9xxx:bxxx:xxxa:1d18/64 Scope:Link
@@ -104,12 +101,12 @@ sysctl -p
     collisions:0 txqueuelen:1000
     RX bytes:17952090386 (17120.4 Mb)  TX bytes:171359670290 (163421.3 Mb)
     ```
-
+    
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >-   **ethx**  indicates the 10 GE service NIC used in the database.  
-    >-   The first command is used to set the MTU. The second command is used to verify that the MTU has been successfully set. The texts in bold indicate the value of the MTU.  
+>-   The first command is used to set the MTU. The second command is used to verify that the MTU has been successfully set. The texts in bold indicate the value of the MTU.  
     >-   Set the MTU as user  **root**.  
-
+    
 -   Use  **ethtool**  to set the length of the receiving \(**RX**\) queue and that of the sending \(**TX**\) queue for 10 GE NICs. The value  **4096**  is recommended because this setting improves the network bandwidth usage.
 
     Example:
