@@ -13,7 +13,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**:
 
 -   Host name or IP address. Multiple values are separated with commas \(,\).
--   Asterisk \(\*\) or  **0.0.0.0**, indicating that all IP addresses will be listened to, which is not recommended due to potential security risks. This parameter must be used together with valid addresses \(for example, the local IP address\). Otherwise, the build may fail.
+-   Asterisk \(\*\) or  **0.0.0.0**, indicating that all IP addresses will be listened to, which is not recommended due to potential security risks. This parameter must be used together with valid addresses \(for example, the local IP address\). Otherwise, the build may fail.At the same time, when the configuration is "\\*" or "0.0.0.0" in the active/standby environment, the localport port number in the postgresql.conf file under the database path of the active node cannot be the database dataPortBase+1, otherwise the database cannot be started.
 -   If the parameter is not specified, the server does not listen on any IP address. In this case, only Unix domain sockets can be used for database connections.
 
 **Default value**: After the database instance is installed, the default value is configured according to the IP address of different instances in the XML configuration file. The default value for the DN instance is  **'x.x.x.x'**.

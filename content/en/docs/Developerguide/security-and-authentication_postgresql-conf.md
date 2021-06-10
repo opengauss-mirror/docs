@@ -277,11 +277,12 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**:  **0**,  **1**, and  **2**
+**Value range**:  **0**,  **1**, **2**, **3**
 
 -   **0**  indicates that passwords are encrypted with MD5.
 -   **1**  indicates that passwords are encrypted with SHA-256 and MD5.
 -   **2**  indicates that passwords are encrypted with SHA-256.
+-   **3**  indicates that passwords are encrypted with sm3.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
@@ -308,7 +309,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **32**
 
-## password\_min\_uppercase<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s17e52632df154eba8c8e622b520b2c34"></a>
+## password\_min\_uppercase<a name="en-us_topic_0283137371_en-us_topic_088237124696_en-us_topic_0059778664_s17e52632df154eba8c8e622b520b2c34"></a>
 
 **Parameter description**: Specifies the minimum number of uppercase letters that an account password must contain.
 

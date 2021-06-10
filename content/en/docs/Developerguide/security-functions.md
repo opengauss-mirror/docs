@@ -12,7 +12,7 @@
 
     Example:
 
-    ```
+    ```sql
     postgres=# SELECT gs_encrypt_aes128('MPPDB','1234');
     
                                    gs_encrypt_aes128
@@ -23,6 +23,43 @@
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
+
+-   gs_encrypt(encryptstr,keystr, encrypttype)
+
+    Description: According to encrypttype, use keystr as the key to encrypt the encryptstr string, and return the encrypted string. The length of keystr ranges from 8 to 16 bytes and contains at least 3 types of characters (uppercase letters, lowercase letters, numbers, and special characters). The encrypttype can be aes128 or sm4.
+Return type: text
+    Return length: At least 92 bytes and no more than \(4\*\[_Len_/3\]+68\) bytes, where  _Len_  indicates the length of the data before encryption \(unit: byte\).
+    Example:
+
+    ```sql
+postgres=# SELECT gs_encrypt('MPPDB','Asdf1234','sm4');
+     gs_encrypt 
+------------
+     OucXMSo=
+    (1 row)
+    ```
+    
+    > ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    > A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
+    
+-   gs_decrypt_aes128(decryptstr,keystr，decrypttype)
+
+    Description: According to decrypttype, decrypt the decrypt string with keystr as the key, and return the decrypted string. The decrypttype and keystr used for decryption must be consistent with the encrypttype and keystr used for encryption in order to decrypt normally. keystr must not be empty. The decrypttype can be aes128 or sm4.
+
+    This parameter needs to be used in conjunction with the gs_encrypt encryption function.
+    Return type: text
+Example:
+    
+```sql
+    postgres=# SELECT gs_decrypt('OucXMSo=','Asdf1234','sm4');
+ gs_decrypt 
+    ------------
+     MPPDB
+    (1 row)
+    ```
+    
+    > ![](public_sys-resources/icon-note.gif) **NOTE:**   
+    > A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
 
 -   gs\_decrypt\_aes128\(decryptstr,keystr\)
 
@@ -35,7 +72,7 @@
 
     Example:
 
-    ```
+    ```sql
     postgres=# SELECT gs_decrypt_aes128('gwditQLQG8NhFw4OuoKhhQJoXojhFlYkjeG0aYdSCtLCnIUgkNwvYI04KbuhmcGZp8jWizBdR1vU9CspjuzI0lbz12A=','1234');
      gs_decrypt_aes128 
     -------------------
@@ -54,7 +91,7 @@
 
     Example:
 
-    ```
+    ```sql
     postgres=# SELECT gs_password_deadline();
       gs_password_deadline   
     -------------------------
@@ -72,7 +109,7 @@
 
     -   Checking the date, time, and IP address successfully authenticated during the last login.
 
-        ```
+        ```sql
         postgres=# SELECT * FROM login_audit_messages(true);
           username  | database |       logintime        |     type      | result |  client_conninfo   
         ------------+----------+------------------------+---------------+--------+--------------------
@@ -82,7 +119,7 @@
 
     -   Checking the date, time, and IP address that failed to be authenticated during the last login.
 
-        ```
+        ```sql
         postgres=# SELECT * FROM login_audit_messages(false) ORDER BY logintime desc limit 1;
           username  | database |       logintime        |     type     | result |     client_conninfo     
         ------------+----------+------------------------+--------------+--------+-------------------------
@@ -91,7 +128,7 @@
 
     -   Checking the number of failed attempts, date, and time since the previous successful authentication.
 
-        ```
+        ```sql
         postgres=# SELECT * FROM login_audit_messages(false);
           username  | database |       logintime        |     type     | result |     client_conninfo     
         ------------+----------+------------------------+--------------+--------+-------------------------
@@ -109,7 +146,7 @@
 
     -   Checking the date, time, and IP address successfully authenticated during the last login.
 
-        ```
+        ```sql
         postgres=# SELECT * FROM login_audit_messages(true);
           username  | database |       logintime        |     type      | result |  client_conninfo | backendid
         ------------+----------+------------------------+---------------+--------+--------------------
@@ -119,7 +156,7 @@
 
     -   Checking the date, time, and IP address that failed to be authenticated during the last login.
 
-        ```
+        ```sql
         postgres=# SELECT * FROM login_audit_messages(false) ORDER BY logintime desc limit 1;
           username  | database |       logintime        |     type     | result |     client_conninfo   | backendid
         ------------+----------+------------------------+--------------+--------+-------------------------
@@ -128,7 +165,7 @@
 
     -   Checking the number of failed attempts, date, and time since the previous successful authentication.
 
-        ```
+        ```sql
         postgres=# SELECT * FROM login_audit_messages(false);
           username  | database |       logintime        |     type     | result |     client_conninfo    | backendid
         ------------+----------+------------------------+--------------+--------+-------------------------
@@ -144,7 +181,7 @@
 
     Example:
 
-    ```
+    ```sql
     postgres=# SELECT inet_server_addr();
      inet_server_addr
     ------------------
@@ -164,7 +201,7 @@
 
     Example:
 
-    ```
+    ```sql
     postgres=# SELECT inet_client_addr();
      inet_client_addr
     ------------------
@@ -285,9 +322,9 @@
 -   pg\_delete\_audit
 
     Description: Deletes audit logs in a specified period.    
-     
+    
     Return value type: void  
-     
+    
     For details about how to use the function and details about function examples, see  [Maintaining Audit Logs](maintaining-audit-logs.md).
 
 

@@ -52,9 +52,9 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p482369138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p482369138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p482369138"></a>Command-line Interface，命令行界面。<span>应用程序和用户交互的一种方式，完全基于文本输入和输出。命令通过键盘或类似装置输入，由程序编译并执行。结果是以文本或图形的方式呈现在终端界面。</span></p>
 </td>
 </tr>
- <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row512353139138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"></a>CMK</p>
+<tr id="row12703164422712"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p54125431608"><a name="p54125431608"></a><a name="p54125431608"></a>CMK</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p65924179138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p65924179138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p65924179138"></a>Client Master Key，客户端加密主密钥。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>全密态场景：Client Master Key，客户端加密主密钥。透明数据加密场景：Cluster Master Key，集群主密钥。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row512353139138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"></a>CU</p>
@@ -99,14 +99,14 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p453142129138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p453142129138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p453142129138"></a>Data Definition Language，数据定义语言。</p>
 </td>
 </tr>
+<tr id="row413181665811"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1514171655813"><a name="p1514171655813"></a><a name="p1514171655813"></a>DEK</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1314416135814"><a name="p1314416135814"></a><a name="p1314416135814"></a>Data Encryption Key，数据加密密钥。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row51747249138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p164995069138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p164995069138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p164995069138"></a>DML</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613916499138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613916499138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613916499138"></a>Data Manipulation Language，数据操纵语言。</p>
-</td>
-</tr>
-    tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row51747249138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p164995069138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p164995069138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p164995069138"></a>DQL</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613916499138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613916499138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p613916499138"></a>Data Query Language，数据查询语言。。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row82781239138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p665481989138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p665481989138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p665481989138"></a>备份</p>
@@ -199,7 +199,7 @@
 </tr>
 <tr id="zh-cn_topic_0283139955_row57925184172335"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_p51564615172335"><a name="zh-cn_topic_0283139955_p51564615172335"></a><a name="zh-cn_topic_0283139955_p51564615172335"></a>FDW</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_p15984285172335"><a name="zh-cn_topic_0283139955_p15984285172335"></a><a name="zh-cn_topic_0283139955_p15984285172335"></a>Foreign Data Wrapper，外部数据封装器。是Postgres提供的一个SQL接口，用于访问远程数据存储中的大数据对象，使DBA可以整合来自不相关数据源的数据，将它们存入数据库中的一个公共模型。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_p15984285172335"><a name="zh-cn_topic_0283139955_p15984285172335"></a><a name="zh-cn_topic_0283139955_p15984285172335"></a>Foreign Data Wrapper，外部数据封装器。是openGauss提供的一个SQL接口，用于访问远程数据存储中的大数据对象，使DBA可以整合来自不相关数据源的数据，将它们存入数据库中的一个公共模型。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row592051909138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p308910819138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p308910819138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p308910819138"></a>Freeze</p>
@@ -244,6 +244,11 @@
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row265201679138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p6498799138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p6498799138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p6498799138"></a>HBA</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p526402119138"></a>host-based authentication，主机认证。主机鉴权允许主机鉴权部分或全部系统用户。适用于系统所有用户或者使用Match指令的子集。该类型鉴权对于管理计算以及其它完全同质设备非常有用。总之，服务器上的三个文件以及客户端上的一个文件必须修改，为主机鉴权做准备。</p>
+</td>
+</tr>
+<tr id="row1186012513118"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p386112511914"><a name="p386112511914"></a><a name="p386112511914"></a>IV</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p2086195116111"><a name="p2086195116111"></a><a name="p2086195116111"></a>Initialization Vector，初始向量。初始向量是许多加密模式中用于随机化加密的一块数据，因此可以由相同的明文、相同的密钥产生不同的密文。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row315421169138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p47746279138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p47746279138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p47746279138"></a>服务器</p>
@@ -311,22 +316,22 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p3678119138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p3678119138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p3678119138"></a>在关系型数据库中，每一条记录对应表中的每一行数据。</p>
 </td>
 </tr>
-<tr id="row10997235125313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p149979357530"><a name="p149979357530"></a><a name="p149979357530"></a>KMC</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1799733517531"><a name="p1799733517531"></a><a name="p1799733517531"></a>Key Management Component，密钥管理组件。</p>
-</td>
-</tr>
-<tr id="row1528124255313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p2028184285319"><a name="p2028184285319"></a><a name="p2028184285319"></a>KMS</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1028113421537"><a name="p1028113421537"></a><a name="p1028113421537"></a>Key Management Service，密钥管理服务。</p>
-</td>
-</tr>
-<tr id="row8578144585310"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1757813455536"><a name="p1757813455536"></a><a name="p1757813455536"></a>KSF</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p357834575312"><a name="p357834575312"></a><a name="p357834575312"></a>Key Store File，密钥存储文件。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row489675819138"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p69511029138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p69511029138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p69511029138"></a><strong id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_b625599259138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_b625599259138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_b625599259138"></a>K – O</strong></p>
+</td>
+</tr>
+<tr id="row5929175618595"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p159291556125920"><a name="p159291556125920"></a><a name="p159291556125920"></a>KMC</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1929856195917"><a name="p1929856195917"></a><a name="p1929856195917"></a>Key Management Component，密钥管理组件。</p>
+</td>
+</tr>
+<tr id="row105121150165917"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1551312509593"><a name="p1551312509593"></a><a name="p1551312509593"></a>KMS</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p85132050155911"><a name="p85132050155911"></a><a name="p85132050155911"></a>Key Management Service，密钥管理服务。</p>
+</td>
+</tr>
+<tr id="row20101114665913"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p91011546135912"><a name="p91011546135912"></a><a name="p91011546135912"></a>KSF</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1810244655913"><a name="p1810244655913"></a><a name="p1810244655913"></a>Key Store File，密钥存储文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_row964115292217"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_p46418222210"><a name="zh-cn_topic_0283139955_p46418222210"></a><a name="zh-cn_topic_0283139955_p46418222210"></a>逻辑复制</p>
@@ -407,6 +412,11 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"></a><span id="text112036019126"><a name="text112036019126"></a><a name="text112036019126"></a>openGauss</span>数据库关系对象结构中行存的最小内存单元。一个Page大小为默认为8KB。</p>
 </td>
 </tr>
+<tr id="row144648010501"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p15465705509"><a name="p15465705509"></a><a name="p15465705509"></a>Paxos</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p54659025011"><a name="p54659025011"></a><a name="p54659025011"></a>分布式一致性协议。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row152170209138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p246191259138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p246191259138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p246191259138"></a>PostgreSQL</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a>PostgreSQL是一个开源的关系数据库管理系统(DBMS)，由全球志愿者团队开发。PostgreSQL不受任何公司或个体所控制，源代码免费使用。</p>
@@ -414,8 +424,8 @@
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row292755189138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a>Postmaster</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a>数据库服务启动时启动的一个线程。用于监听来自数据库其它节点或客户端的连接请求。</p>
-<p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a>主机上监听到备机连接请求，并接受后，就会创建一个WAL Sender线程，用于处理与备机的交互。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a>数据库服务启动时启动的一个线程。用于侦听来自数据库其它节点或客户端的连接请求。</p>
+<p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a>主机上侦听到备机连接请求，并接受后，就会创建一个WAL Sender线程，用于处理与备机的交互。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_row5935841174156"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_p53422575174156"><a name="zh-cn_topic_0283139955_p53422575174156"></a><a name="zh-cn_topic_0283139955_p53422575174156"></a>RHEL</p>
@@ -468,9 +478,19 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p56222025171746"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p56222025171746"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p56222025171746"></a>交换机下行带宽与上行带宽的比值。收敛比越高，流量收敛程度越大，丢包越严重。</p>
 </td>
 </tr>
+<tr id="row1093222711277"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p693382792711"><a name="p693382792711"></a><a name="p693382792711"></a>Table Access Method</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p4933132792716"><a name="p4933132792716"></a><a name="p4933132792716"></a>表访问方法层，对执行引擎和存储引擎进行解耦，实现存储引擎的可插拔能力。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283139955_row19359741202514"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_p15361134112257"><a name="zh-cn_topic_0283139955_p15361134112257"></a><a name="zh-cn_topic_0283139955_p15361134112257"></a>TCP</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_p636124117252"><a name="zh-cn_topic_0283139955_p636124117252"></a><a name="zh-cn_topic_0283139955_p636124117252"></a>Transmission Control Protocol，传输控制协议。用于将数据信息分解成信息包，使之经过IP协议发送；并对利用IP协议接收来的信息包进行校验并将其重新装配成完整的信息。TCP是面向连接的可靠协议，能够确保信息的无误发送。</p>
+</td>
+</tr>
+<tr id="row989675675312"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p14897135675315"><a name="p14897135675315"></a><a name="p14897135675315"></a>TDE</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p16897356105317"><a name="p16897356105317"></a><a name="p16897356105317"></a>Transparent Data Encryption，透明数据加密。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row118471319138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p200935759138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p200935759138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p200935759138"></a>trace</p>
@@ -559,6 +579,46 @@
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row49026769138"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p615724659138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p615724659138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p615724659138"></a><strong id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_b172812759138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_b172812759138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_b172812759138"></a>U – Z</strong></p>
+</td>
+</tr>
+<tr id="row649535141610"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1349635141610"><a name="p1349635141610"></a><a name="p1349635141610"></a>Ustore</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p94919350162"><a name="p94919350162"></a><a name="p94919350162"></a>In-place Update存储引擎别称，很好的解决了Append update存储引擎空间膨胀，元组较大的劣势，高效回滚段的设计是In-place update存储引擎的基础。</p>
+</td>
+</tr>
+<tr id="row11884155614313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p888485653118"><a name="p888485653118"></a><a name="p888485653118"></a>Undo Record</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p48851256173120"><a name="p48851256173120"></a><a name="p48851256173120"></a>撤销记录，用于undo记录的插入、查询以及组织，北向对接ustore，南向对接buffer pool。</p>
+</td>
+</tr>
+<tr id="row4701184713326"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p12701747143211"><a name="p12701747143211"></a><a name="p12701747143211"></a>Undo Space</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p170184713320"><a name="p170184713320"></a><a name="p170184713320"></a>管理Undo记录的物理资源，包括增删undo文件等。</p>
+</td>
+</tr>
+<tr id="row18589427163515"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p958932733510"><a name="p958932733510"></a><a name="p958932733510"></a>Undo Zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p155891327133518"><a name="p155891327133518"></a><a name="p155891327133518"></a>与业务线程绑定，管理每个业务线程的Undo逻辑资源。</p>
+</td>
+</tr>
+<tr id="row17137530173510"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p6137193014355"><a name="p6137193014355"></a><a name="p6137193014355"></a>TransactionSlot</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1913712305353"><a name="p1913712305353"></a><a name="p1913712305353"></a>按照事务粒度记录Undo Record，用于事务回滚及Undo记录回收。</p>
+</td>
+</tr>
+<tr id="row167815435310"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p6678175416534"><a name="p6678175416534"></a><a name="p6678175416534"></a>TIMECAPSULE</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p16678054175312"><a name="p16678054175312"></a><a name="p16678054175312"></a>闪回的关键字，使用闪回技术后，恢复已提交的数据库修改前的数据，只需要秒级，而且恢复时间和数据库大小无关。</p>
+</td>
+</tr>
+<tr id="row1990314055918"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p129037075917"><a name="p129037075917"></a><a name="p129037075917"></a>RECYCLE BIN</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p119031507592"><a name="p119031507592"></a><a name="p119031507592"></a>回收站，开启回收站开关后，DROP TABLE可以将表及其子对象放入回收站中。</p>
+</td>
+</tr>
+<tr id="row098461435815"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1598515143586"><a name="p1598515143586"></a><a name="p1598515143586"></a>PURGE</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p13985191415581"><a name="p13985191415581"></a><a name="p13985191415581"></a>对回收站对象进行清理。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row213137509138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p486922049138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p486922049138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p486922049138"></a>Vacuum</p>
@@ -673,5 +733,4 @@
 </tr>
 </tbody>
 </table>
-
 

@@ -78,7 +78,7 @@ For details about the standalone and HA cluster deployment modes, see  [Table 1]
 </tr>
 <tr id="en-us_topic_0243295239_en-us_topic_0240782908_row1188192764517"><td class="cellrowborder" valign="top" width="7.830783078307831%" headers="mcps1.2.8.1.1 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p12881102744520"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p12881102744520"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p12881102744520"></a>One primary and multiple standbys</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.561156115611562%" headers="mcps1.2.8.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"></a>Primary node + Multiple standby nodes +Quorum</p>
+<td class="cellrowborder" valign="top" width="11.561156115611562%" headers="mcps1.2.8.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p28811277451"></a>Primary node + Multiple standby nodes +Quorum +Paxos</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.051005100510052%" headers="mcps1.2.8.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1965812387151"></a>Instance faults in the database can be withstood.</p>
 </td>

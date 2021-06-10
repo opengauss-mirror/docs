@@ -20,7 +20,7 @@ CREATE SERVER server_name
 
     指定外部数据封装器的名称。
 
-    取值范围：oracle_fdw，mysql_fdw，postgres_fdw，mot_fdw。
+    取值范围：oracle_fdw，mysql_fdw，postgres_fdw，mot_fdw，file_fdw。
 
 - **OPTIONS \(  \{ option\_name ' value '  \}  \[, ...\] \)**
 

@@ -173,7 +173,7 @@ WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.m
 
 ```
 --查询已经生成的快照。
-postgres=# select * from snapshot.snapshot;
+openGauss=# select * from snapshot.snapshot;
  snapshot_id |           start_ts            |            end_ts             
 -------------+-------------------------------+-------------------------------
            1 | 2020-09-07 10:20:36.763244+08 | 2020-09-07 10:20:42.166511+08
@@ -181,24 +181,24 @@ postgres=# select * from snapshot.snapshot;
 (2 rows)
 
 --生成格式化性能报告wdrTestNode.html。
-postgres=# \a \t \o /home/om/wdrTestNode.html
+openGauss=# \a \t \o /home/om/wdrTestNode.html
 Output format is unaligned.
 Showing only tuples.
 
 --向性能报告wdrTestNode.html中写入数据。
-postgres=# select generate_wdr_report(1, 2, 'all', 'node', 'dn');
+openGauss=# select generate_wdr_report(1, 2, 'all', 'node', 'dn');
 
 --关闭性能报告wdrTestNode.html。
-postgres=# \o
+openGauss=# \o
 
 --生成格式化性能报告wdrTestCluster.html。
-postgres=# \o /home/om/wdrTestCluster.html
+openGauss=# \o /home/om/wdrTestCluster.html
 
 --向格式化性能报告wdrTestCluster.html中写入数据。
-postgres=# select generate_wdr_report(1, 2, 'all', 'cluster');
+openGauss=# select generate_wdr_report(1, 2, 'all', 'cluster');
 
 --关闭性能报告wdrTestCluster.html。
-postgres=# \o \a \t
+openGauss=# \o \a \t
 Output format is aligned.
 Tuples only is off.
 ```

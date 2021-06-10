@@ -28,7 +28,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## debug\_print\_plan<a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_s8fc12b8c6e4d41fe8c63e22ebf9e7acb"></a>
 
-**Parameter description**: Specifies whether to print query execution results.
+**Parameter description**:Used to set whether to print the execution plan of the query to the log.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -238,6 +238,11 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 <td class="cellrowborder" valign="top" width="83.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p39662818"><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p39662818"></a><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p39662818"></a>Produces no output. If the current thread is a backend thread, this escape sequence is ignored and subsequent escape sequences are processed. Otherwise, this escape sequence and subsequent escape sequences are all ignored.</p>
 </td>
 </tr>
+ <tr id="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_row57383384"><td class="cellrowborder" valign="top" width="16.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p17542516"><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p17542516"></a><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p17542516"></a>%S</p>
+</td>
+<td class="cellrowborder" valign="top" width="83.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p11657652"><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p11657652"></a><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p11657652"></a>session ID.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_row57383384"><td class="cellrowborder" valign="top" width="16.580000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p17542516"><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p17542516"></a><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p17542516"></a>%%</p>
 </td>
 <td class="cellrowborder" valign="top" width="83.42%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p11657652"><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p11657652"></a><a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_p11657652"></a>The character %</p>
@@ -246,11 +251,13 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 </tbody>
 </table>
 
+
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The %c escape character prints a unique session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:
+>
 >```
 >SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||
->       to_hex(pid)
+>  to_hex(pid)
 >FROM pg_stat_activity;
 >```
 >-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.

@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section5314201001"></a>
 
-本特性自openGauss 1.0.0 版本开始引入。
+本特性自openGauss 1.0.0版本开始引入。
 
 ## 特性简介<a name="section1982512281105"></a>
 
@@ -57,46 +57,37 @@ SELECT event, COUNT (*)
     FROM dbe_perf.local_active_session
 WHERE sample_time > now() - 5 / (24 * 60)
     GROUP BY event)t WHERE s.event = t.event ORDER BY count DESC;
-```
-    
-
-    
-5.  查看最近五分钟较耗资源的session把资源都花费在哪些event上。
-
     ```
-SELECT sessionid, start_time, event, count
-    FROM (
-SELECT sessionid, start_time, event, COUNT(*)
-    FROM dbe_perf.local_active_session
-WHERE sample_time > now() - 5 / (24 * 60)
-    GROUP BY sessionid, start_time, event) as t ORDER BY SUM(t.count) OVER \(PARTITION BY t. sessionid, start_time)DESC, t.event;
-```
-    
+5. 查看最近五分钟较耗资源的session把资源都花费在哪些event上。
 
-    
-6.  最近五分钟比较占资源的SQL把资源都消耗在哪些event上
+   ```
+   SELECT sessionid, start_time, event, count
+       FROM (
+   SELECT sessionid, start_time, event, COUNT(*)
+       FROM dbe_perf.local_active_session
+   WHERE sample_time > now() - 5 / (24 * 60)
+       GROUP BY sessionid, start_time, event) as t ORDER BY SUM(t.count) OVER \(PARTITION BY t. sessionid, start_time)DESC, t.event;
+   ```
 
-    ```
-SELECT query_id, event, count
-    FROM (
-SELECT query_id, event, COUNT(*)
-    FROM dbe_perf.local_active_session
-WHERE sample_time > now() - 5 / (24 * 60)
-    GROUP BY query_id, event) t ORDER BY SUM (t.count) OVER (PARTITION BY t.query_id ) DESC, t.event DESC;
-```
-    
+6. 最近五分钟比较占资源的SQL把资源都消耗在哪些event上
 
+   ```
+   SELECT query_id, event, count
+       FROM (
+   SELECT query_id, event, COUNT(*)
+       FROM dbe_perf.local_active_session
+   WHERE sample_time > now() - 5 / (24 * 60)
+       GROUP BY query_id, event) t ORDER BY SUM (t.count) OVER (PARTITION BY t.query_id ) DESC, t.event DESC;
+   ```
 
-
-## 特性增强<a name="section35315526014"></a>
+## 特性增强
 
 无。
 
-## 特性约束<a name="section1956417145819"></a>
+## 特性约束
 
 无。
 
-## 依赖关系<a name="section15876411599"></a>
+## 依赖关系
 
 无。
-
