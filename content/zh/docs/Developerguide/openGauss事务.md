@@ -74,19 +74,6 @@
 
 **默认值：**off
 
-## enforce\_two\_phase\_commit<a name="zh-cn_topic_0283136901_zh-cn_topic_0237124741_zh-cn_topic_0059778361_sc6c4a7787ffe496282b2ac6bc26c4311"></a>
-
-**参数说明：**强制使用两阶段提交，为了兼容历史版本功能保留该参数，当前版本设置无效。
-
-该参数属于SUSET类型参数，请参考[表1](zh-cn_topic_0289899927.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
-
-**取值范围：**布尔型
-
--   on表示强制使用两阶段提交。
--   off表示不强制使用两阶段提交。
-
-**默认值：**on
-
 ## enable\_show\_any\_tuples<a name="zh-cn_topic_0283136901_zh-cn_topic_0237124741_zh-cn_topic_0059778361_s00599c10d3824fa6a76dcf22f22f0394"></a>
 
 **参数说明：**该参数只有在只读事务中可用，用于分析。当这个参数被置为on/true时，表中元组的所有版本都会可见。

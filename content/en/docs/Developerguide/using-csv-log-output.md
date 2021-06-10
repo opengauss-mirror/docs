@@ -12,7 +12,7 @@ Log lines are emitted in comma separated values \(CSV\) format.
 An example table definition for storing CSV-format log output is shown as follows:
 
 ```
-CREATE TABLE postgres_log
+CREATE TABLE gaussdb_log
 (
 log_time timestamp(3) with time zone,
 node_name text,
