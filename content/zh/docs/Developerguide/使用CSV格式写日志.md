@@ -12,7 +12,7 @@
 以下是简单的用来存储CSV形式日志输出的表定义：
 
 ```
-CREATE TABLE postgres_log
+CREATE TABLE gaussdb_log
 (
 log_time timestamp(3) with time zone,
 node_name text,
