@@ -1,8 +1,8 @@
-# SMP并行执行<a name="ZH-CN_TOPIC_0000001091439892"></a>
+# SMP并行执行<a name="ZH-CN_TOPIC_0000001105395260"></a>
 
 ## 可获得性<a name="section3480125215575"></a>
 
-本特性自openGauss 1.1.0版本开始引入。
+本特性自openGauss 1.1.0 版本开始引入。
 
 ## 特性简介<a name="section5814521587"></a>
 
@@ -22,6 +22,10 @@ SMP并行技术充分利用了系统多核的能力，来提高重查询的性�
 
 ## 特性约束<a name="section51513617597"></a>
 
+-   索引扫描不支持并行执行。
+-   MergeJoin不支持并行执行。
+-   WindowAgg order by不支持并行执行。
+-   cursor不支持并行执行。
 -   存储过程和函数内的查询不支持并行执行。
 -   不支持子查询subplan和initplan的并行，以及包含子查询的算子的并行。
 -   查询语句中带有median操作的查询不支持并行执行。
