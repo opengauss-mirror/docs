@@ -10,6 +10,10 @@ gs\_dump工具在进行数据导出时，其他用户可以访问openGauss数据
 
 gs\_dump工具支持导出完整一致的数据。例如，T1时刻启动gs\_dump导出A数据库，那么导出数据结果将会是T1时刻A数据库的数据状态，T1时刻之后对A数据库的修改不会被导出。
 
+gs\_dump时生成列不会被转储。
+
+gs\_dump支持导出兼容v1版本数据库的文本格式文件。
+
 gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其他归档文件中。
 
 -   纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过gsql运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
@@ -297,9 +301,27 @@ export PGDATABASE=postgres
     schema2.table2
     ......
 
--   -x, --no-privileges|--no-acl
+- -x, --no-privileges|--no-acl
 
-    防止转储访问权限（授权/撤销命令）。
+  防止转储访问权限（授权/撤销命令）。
+
+- -q, --target
+
+  指定导出兼容其他版本数据库的文本文件，目前支持v1和v5参数。v1参数用于导出v5数据库的数据为兼容v1的文本文件。v5参数用于导出v5数据库的数据为v5格式的文本文件，减少了导入v5时的可能的报错情况。
+
+  在使用v1参数时，建议和--exclude-guc="enable\_cluster\_resize"，--exclude-function，--exclude-with等选项共用，否则导入到v1时可能报错。
+
+- --exclude-guc
+
+  导出的文本文件中，不包括相关guc参数的set命令，目前只支持enable\_cluster\_resize。
+
+- --exclude-function
+
+  不导出函数和存储过程。
+
+- --exclude-with
+
+  导出的表定义，末尾不添加WITH\(orientation=row，compression=on）这样的描述。
 
 -   --binary-upgrade
 

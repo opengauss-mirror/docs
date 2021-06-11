@@ -142,7 +142,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r5d93022a354a4f6f863cdc9623106c56"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab7908eb6834847459104aac6fa8283da"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab7908eb6834847459104aac6fa8283da"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab7908eb6834847459104aac6fa8283da"></a>-t, --timeout=SECS</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a>等待数据库启动、关闭或者主备切换完成的最大秒数。</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a23aa7828a0404bb58c0e6de885ece985"></a>等待数据库启动、关闭或者主备切换完成的最大秒数。如果等待超时，命令会结束退出，并通知不再等待。此后，可以通过gs_om -t status --detail或其他查看数据库状态的命令，来确认数据库是否启动、关闭或主备切换成功。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a980dac01704a4f59863b07666f3dd4cc"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a980dac01704a4f59863b07666f3dd4cc"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a980dac01704a4f59863b07666f3dd4cc"></a>取值范围：整型（秒）。</p>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1fb7733ef113445da45a4e4d70b1f9ca"></a>默认值：等待数据库启动、关闭或者主备切换完成：60秒。</p>
@@ -310,10 +310,10 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-
 **表 6**  build参数
 
 <a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r991543695e1942e391e7bb42b7c235fe"><th class="cellrowborder" valign="top" width="21.12%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="31.45%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"></a>参数说明</p>
@@ -349,9 +349,10 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p62971529151411"><a name="p62971529151411"></a><a name="p62971529151411"></a>-q</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p13298629141413"><a name="p13298629141413"></a><a name="p13298629141413"></a>重建结束后，是否自动重启。</p>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p13298629141413"><a name="p13298629141413"></a><a name="p13298629141413"></a>重建结束后，是否自动重启。
+</p>
 <p id="p858016150165"><a name="p858016150165"></a><a name="p858016150165"></a>指定参数场合，不自动重启。</p>
-<p id="p1232613751612"><a name="p1232613751612"></a><a name="p1232613751612"></a>未指定场合，自动重启。</p>
+<p id="p1232613751612"><a name="p1232613751612"></a><a name="p1232613751612"></a>未指定场合，自动重启。重启默认最大等待时间是60秒。如果在此时间内数据库未能启动成功，就会报不再等待，命令退出。此后可以通过gs_om -t status --detail或其他查看数据库状态的命令，来确认数据库是否启动成功。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="p729832991415"><a name="p729832991415"></a><a name="p729832991415"></a>无参数</p>
 </td>
