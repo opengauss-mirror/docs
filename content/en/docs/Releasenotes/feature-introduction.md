@@ -1,8 +1,8 @@
-# Feature Introduction<a name="EN-US_TOPIC_0289899195"></a>
+# Features<a name="EN-US_TOPIC_0289899195"></a>
 
--   Standard SQLs
+-   Standard SQL support
 
-    Supports SQL92, SQL99, SQL2003, and SQL2011 standards, GBK and UTF-8 character sets, SQL standard functions and analytic functions, and SQL Procedural Language.
+    Supports SQL-92, SQL-99, SQL:2003, and SQL:2011 standards, GBK and UTF-8 character sets, SQL standard functions and analytic functions, and stored procedures.
 
 -   Database storage management
 
@@ -10,9 +10,9 @@
 
 -   Primary/standby deployment
 
-    Supports the ACID properties, single-node fault recoveries, primary/standby data synchronization, and primary/standby switchover.
+    Supports the ACID properties, single-node fault recovery, primary/standby data synchronization, and primary/standby switchover.
 
--   APIs
+-   Application programming interface \(API\)
 
     Supports standard JDBC 4.0 and ODBC 3.5 features.
 
@@ -31,47 +31,20 @@
 
 ## New Features<a name="en-us_topic_0283136327_section383172195410"></a>
 
-This version is openGauss 2.0.0 Release. Compared with 1.1.0, this version has the following new features:
+Compared with 2.0.0, openGauss 2.0.1 has the following new features:
 
--   Simplified Installation
+-   Archiving Xlogs on the standby node
 
-    The Simplified Installation does not contain cluster management tools, provides binary files of the database kernel, can quickly start the database instance, simple installation and configuration, suitable for individual developers.
+    Supports archiving of Xlogs on the standby node to reduce the I/O pressure on the primary node.
 
--   Delayed standby databases
+-   Enhancing the intelligent index recommendation capability
+    -   Obtains service sequence numbers in pg\_log.
 
-    Delays the time for a standby node to replay XLOG records, compared with the primary node.
+        Provides the function of extracting pg\_log service sequence numbers to enhance the availability of workload-level index recommendation.
 
--   Logical replication of standby nodes
+    -   Enhances the virtual index function.
 
-    Supports logical decoding on a standby node,this can reduce host pressure
+        Adds the filtering scenario where the virtual index is the same as the original index.
 
--   Enhanced capacity expansion tool
-
-    Optimizes the scale-out tool to support online scale-out without interrupting services and allows the standby node to be scaled out as a cascaded standby node.
-
--   Gray upgrade
-
-    Optimizes the upgrade tool and support business online upgrade. Currently, only the gray upgrade from version 1.1.0 to 2.0.0 is supported.
-
--   Backup machine IO write amplification optimization
-
-    Optimize the IO of the standby machine, smooth the IO volume of the standby machine checkpoint brushing, and solve the problem that the large amount of standby machine IO affects the query performance.
-
--   WDR diagnostic report adds database operation indicators
-
-    Adds four database running metrics: Effective CPU, WalWrite NoWait, Soft Parse, and Non-Parse CPU.
-
--   Features of the Data Studio client tool
-
-    Data Studio supports multiple features of the openGauss kernel. The details are as follows:
-
-    -   The pldebugger debugging function is added.
-    -   The rollback of the pldebugger debugging function is added. Before using Data Studio for debugging, add an option to ensure that the debugging function is rolled back after data is modified.
-    -   The XML and serial types are supported. Columns are added to the table. The column type can be XML or serial\(big|normal|small\).
-    -   Foreign table objects can be created and displayed in Data Studio.
-    -   The partial\_cluster\_key constraint of column-store tables is supported.
-    -   Global temporary tables support DDL display and export.
-    -   The LOCAL and GLOBAL flags are supported when a partitioned table is created.
-    -   The MOT table is displayed.
 
 
