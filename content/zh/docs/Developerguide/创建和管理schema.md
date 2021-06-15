@@ -51,7 +51,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令在myschema下创建mytable表。
 
         ```
-        postgres=# CREATE TABLE myschema.mytable(id int, name varchar(20));
+        openGauss=# CREATE TABLE myschema.mytable(id int, name varchar(20));
         CREATE TABLE
         ```
 
@@ -60,7 +60,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令查询myschema下mytable表的所有数据。
 
         ```
-        postgres=# SELECT * FROM myschema.mytable;
+        openGauss=# SELECT * FROM myschema.mytable;
         id | name 
         ----+------
         (0 rows)
@@ -74,7 +74,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令查看搜索路径。
 
         ```
-        postgres=# SHOW SEARCH_PATH;
+        openGauss=# SHOW SEARCH_PATH;
          search_path
         ----------------
          "$user",public
@@ -84,7 +84,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令将搜索路径设置为myschema、public，首先搜索myschema。
 
         ```
-        postgres=# SET SEARCH_PATH TO myschema, public;
+        openGauss=# SET SEARCH_PATH TO myschema, public;
         SET
         ```
 
@@ -98,14 +98,14 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   撤销PUBLIC在public模式下创建对象的权限，下面语句中第一个“public”是模式，第二个“PUBLIC”指的是所有角色。
 
         ```
-        postgres=# REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+        openGauss=# REVOKE CREATE ON SCHEMA public FROM PUBLIC;
         REVOKE
         ```
 
     -   使用以下命令查看现有的schema。
 
         ```
-        postgres=# SELECT current_schema();
+        openGauss=# SELECT current_schema();
          current_schema 
         ----------------
          myschema
@@ -115,16 +115,16 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   执行如下命令创建用户jack，并将myschema的usage权限赋给用户jack。
 
         ```
-        postgres=# CREATE USER jack IDENTIFIED BY 'xxxxxxxxxx';
+        openGauss=# CREATE USER jack IDENTIFIED BY 'xxxxxxxxxx';
         CREATE ROLE
-        postgres=# GRANT USAGE ON schema myschema TO jack;
+        openGauss=# GRANT USAGE ON schema myschema TO jack;
         GRANT
         ```
 
     -   将用户jack对于myschema的usage权限收回。
 
         ```
-        postgres=# REVOKE USAGE ON schema myschema FROM jack;
+        openGauss=# REVOKE USAGE ON schema myschema FROM jack;
         REVOKE
         ```
 
@@ -133,21 +133,21 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
     -   当schema为空时，即该schema下没有数据库对象，使用DROP SCHEMA命令进行删除。例如删除名为nullschema的空schema。
 
         ```
-        postgres=# DROP SCHEMA IF EXISTS nullschema;
+        openGauss=# DROP SCHEMA IF EXISTS nullschema;
         DROP SCHEMA
         ```
 
     -   当schema非空时，如果要删除一个schema及其包含的所有对象，需要使用CASCADE关键字。例如删除myschema及该schema下的所有对象。
 
         ```
-        postgres=# DROP SCHEMA myschema CASCADE;
+        openGauss=# DROP SCHEMA myschema CASCADE;
         DROP SCHEMA
         ```
 
     -   执行如下命令删除用户jack。
 
         ```
-        postgres=# DROP USER jack;
+        openGauss=# DROP USER jack;
         DROP ROLE
         ```
 
