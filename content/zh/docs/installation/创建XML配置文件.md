@@ -39,7 +39,10 @@
     <PARAM name="corePath" value="/opt/huawei/corefile"/>
   <!-- 节点IP，与数据库节点名称列表一一对应 -->
     <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/>
-  
+  <!-- 是否开启DN自选主 -->
+    <PARAM name="enable_dcf" value="on"/>
+  <!-- 开启开关后对应的节点IP、PORT和角色信息 -->
+    <PARAM name="dcf_config" value="       [{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;8.92.1.85&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;8.92.1.86&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;8.92.1.87&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/>
   </CLUSTER>
 ```
 
@@ -68,7 +71,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0249784584_row2076785215584"><td class="cellrowborder" rowspan="8" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
+<tbody><tr id="zh-cn_topic_0249784584_row2076785215584"><td class="cellrowborder" rowspan="10" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.8016801680168%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a>clusterName</p>
 </td>
@@ -111,13 +114,23 @@
 <p id="zh-cn_topic_0249784584_p3353328143519"><a name="zh-cn_topic_0249784584_p3353328143519"></a><a name="zh-cn_topic_0249784584_p3353328143519"></a>此目录可选。不指定的情况下，<span id="zh-cn_topic_0249784584_text03531828163513"><a name="zh-cn_topic_0249784584_text03531828163513"></a><a name="zh-cn_topic_0249784584_text03531828163513"></a>openGauss</span>安装时会默认指定“/opt/huawei/wisequery”作为数据库系统工具目录。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0249784584_row10235118121016"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p192361185103"><a name="zh-cn_topic_0249784584_p192361185103"></a><a name="zh-cn_topic_0249784584_p192361185103"></a>corePath</p>
-</td>
+<tr 
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p16236283104"><a name="zh-cn_topic_0249784584_p16236283104"></a><a name="zh-cn_topic_0249784584_p16236283104"></a>openGauss core文件的指定目录。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0249784584_row10235118121016"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p192361185103"><a name="zh-cn_topic_0249784584_p192361185103"></a><a name="zh-cn_topic_0249784584_p192361185103"></a>enable_dcf</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p16236283104"><a name="zh-cn_topic_0249784584_p16236283104"></a><a name="zh-cn_topic_0249784584_p16236283104"></a>是否开启DCF模式。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0249784584_row10235118121016"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p192361185103"><a name="zh-cn_topic_0249784584_p192361185103"></a><a name="zh-cn_topic_0249784584_p192361185103"></a>dcf_config</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p16236283104"><a name="zh-cn_topic_0249784584_p16236283104"></a><a name="zh-cn_topic_0249784584_p16236283104"></a>开启DCF模式时配置，DCF启动节点信息。</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 ## 配置Host基本信息
 
@@ -213,6 +226,10 @@
 <PARAM name="dataNodeXlogPath1" value="/home/omm/gauss_xlog,/home/omm/gauss_xlog "/>
 <!--数据库节点上设定同步模式的节点数-->
 <PARAM name="dataNode1_syncNum" value="0"/>
+<!--DCF的数据文件配置-->
+<PARAM name="dcf_data_path1" value="/opt/huawei/install/data/dn1,/opt/huawei/install/data/dn2"/>
+<!--DCF的运行日志-->
+<PARAM name="dcf_log_path1" value="/opt/huawei/install/data/dn1,/opt/huawei/install/data/dn2"/>
 ```
 
 **表 1**  参数说明
@@ -226,7 +243,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136469_row178502422283"><td class="cellrowborder" rowspan="6" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
+<tbody><tr id="zh-cn_topic_0283136469_row178502422283"><td class="cellrowborder" rowspan="8" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.73257325732573%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a>dataNum</p>
 </td>
@@ -259,8 +276,19 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，用于指定当前数据库中同步模式的节点数目。取值范围为0~数据库备机节点数。</p>
 </td>
 </tr>
+    <tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dcf_data_path1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，DCF模式下对应的数据文件目录，DCF配置时需要配置。</p>
+</td>
+</tr>
+    <tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dcf_log_path1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，DCF模式下对应的运行日志文件目录，DCF配置时需要配置。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
 
 
