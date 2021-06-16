@@ -123,7 +123,7 @@
 <td class="cellrowborder" valign="top" width="25.929999999999996%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122637_p133314338262"><a name="zh-cn_topic_0237122637_p133314338262"></a><a name="zh-cn_topic_0237122637_p133314338262"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.02%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122637_p7331133182619"><a name="zh-cn_topic_0237122637_p7331133182619"></a><a name="zh-cn_topic_0237122637_p7331133182619"></a>该后台当前总体状态。可能值是：<a name="zh-cn_topic_0237122637_ul10331103302614"></a><a name="zh-cn_topic_0237122637_ul10331103302614"></a><ul id="zh-cn_topic_0237122637_ul10331103302614"><li>active：后台正在执行一个查询。</li><li>idle：后台正在等待一个新的客户端命令。</li><li>idle in transaction：后台在事务中，但是目前无法执行查询。</li><li>idle in transaction (aborted)：这个状态除说明事务中有某个语句导致了错误外，类似于idle in transaction</li><li>fastpath function call：后台正在执行一个fast-path函数。</li><li>disabled：如果后台禁用track_activities，则报告这个状态。<div class="note" id="zh-cn_topic_0237122637_note17731530182016"><a name="zh-cn_topic_0237122637_note17731530182016"></a><a name="zh-cn_topic_0237122637_note17731530182016"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0237122637_p83328331263"><a name="zh-cn_topic_0237122637_p83328331263"></a><a name="zh-cn_topic_0237122637_p83328331263"></a>普通用户只能查看到自己帐户所对应的会话状态。即其他帐户的state信息为空。例如以judy用户连接数据库后，在pg_stat_activity中查看到的普通用户joe及初始用户omm的state信息为空：</p>
-<p id="zh-cn_topic_0237122637_p16332633192615"><a name="zh-cn_topic_0237122637_p16332633192615"></a><a name="zh-cn_topic_0237122637_p16332633192615"></a>postgres=# SELECT datname, usename, usesysid,state,pid FROM pg_stat_activity;</p>
+<p id="zh-cn_topic_0237122637_p16332633192615"><a name="zh-cn_topic_0237122637_p16332633192615"></a><a name="zh-cn_topic_0237122637_p16332633192615"></a>openGauss=# SELECT datname, usename, usesysid,state,pid FROM pg_stat_activity;</p>
 <p id="zh-cn_topic_0237122637_p6332103313269"><a name="zh-cn_topic_0237122637_p6332103313269"></a><a name="zh-cn_topic_0237122637_p6332103313269"></a>datname    | usename | usesysid | state    |       pid</p>
 <p id="zh-cn_topic_0237122637_p2332183392614"><a name="zh-cn_topic_0237122637_p2332183392614"></a><a name="zh-cn_topic_0237122637_p2332183392614"></a>----------+---------+----------+--------+-----------------postgres  | omm       | 10       |        |139968752121616</p>
 <p id="zh-cn_topic_0237122637_p163321833192615"><a name="zh-cn_topic_0237122637_p163321833192615"></a><a name="zh-cn_topic_0237122637_p163321833192615"></a>postgres  | omm       | 10       |        |139968903116560</p>
@@ -160,4 +160,5 @@
 </tr>
 </tbody>
 </table>
+
 

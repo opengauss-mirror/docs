@@ -15,7 +15,7 @@ goto statement ::=
 ## 示例<a name="zh-cn_topic_0237122238_section147058110414"></a>
 
 ```
-postgres=# CREATE OR REPLACE PROCEDURE GOTO_test()
+openGauss=# CREATE OR REPLACE PROCEDURE GOTO_test()
 AS 
 DECLARE
     v1  int;

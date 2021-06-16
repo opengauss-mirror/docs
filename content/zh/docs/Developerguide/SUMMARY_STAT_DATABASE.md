@@ -52,7 +52,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="27.602760276027606%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122595_p738390125411"><a name="zh-cn_topic_0237122595_p738390125411"></a><a name="zh-cn_topic_0237122595_p738390125411"></a>numeric</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.47534753475347%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122595_p113834017549"><a name="zh-cn_topic_0237122595_p113834017549"></a><a name="zh-cn_topic_0237122595_p113834017549"></a>高速缓存中已经发现的磁盘块的次数，这样读取是不必要的（这只包括PostgreSQL缓冲区高速缓存，没有操作系统的文件系统缓存）。</p>
+<td class="cellrowborder" valign="top" width="53.47534753475347%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122595_p113834017549"><a name="zh-cn_topic_0237122595_p113834017549"></a><a name="zh-cn_topic_0237122595_p113834017549"></a>高速缓存中已经发现的磁盘块的次数，这样读取是不必要的（这只包括openGauss缓冲区高速缓存，没有操作系统的文件系统缓存）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122595_row1238318025415"><td class="cellrowborder" valign="top" width="18.921892189218923%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122595_p11383140125411"><a name="zh-cn_topic_0237122595_p11383140125411"></a><a name="zh-cn_topic_0237122595_p11383140125411"></a>tup_returned</p>

@@ -7,7 +7,7 @@ Retry是数据库在SQL或存储过程（包含匿名块）执行失败时，在
     示例：
 
     ```
-    postgres=# CREATE OR REPLACE PROCEDURE retry_basic ( IN  x INT) 
+    openGauss=# CREATE OR REPLACE PROCEDURE retry_basic ( IN  x INT) 
     AS  
     BEGIN
     	  INSERT INTO t1 (a) VALUES (x);
@@ -15,7 +15,7 @@ Retry是数据库在SQL或存储过程（包含匿名块）执行失败时，在
     END;
     /
     
-    postgres=# CALL retry_basic(1); 
+    openGauss=# CALL retry_basic(1); 
     ```
 
 
