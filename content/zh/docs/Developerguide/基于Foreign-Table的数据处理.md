@@ -72,7 +72,7 @@
 1.  创建server。
 
     ```
-    postgres=# CREATE SERVER server_remote FOREIGN DATA WRAPPER GC_FDW OPTIONS 
+    openGauss=# CREATE SERVER server_remote FOREIGN DATA WRAPPER GC_FDW OPTIONS 
        (address '10.146.187.231:8000,10.180.157.130:8000' ,
       dbname 'test', 
       username 'test', 
@@ -90,7 +90,7 @@
 2.  创建外表。
 
     ```
-    postgres=# CREATE FOREIGN TABLE region
+    openGauss=# CREATE FOREIGN TABLE region
     (
         R_REGIONKEY INT4,
         R_NAME TEXT,
@@ -116,7 +116,7 @@
 3.  查看建立的外表。
 
     ```
-    postgres=# \d+ region
+    openGauss=# \d+ region
     
                                   Foreign table "public.region"
        Column    |  Type   | Modifiers | FDW Options | Storage  | Stats target | Description
@@ -136,13 +136,13 @@
     -   导入数据。
 
         ```
-        postgres=# CREATE TABLE local_region
+        openGauss=# CREATE TABLE local_region
         (
             R_REGIONKEY INT4,
             R_NAME TEXT,
             R_COMMENT TEXT
         );
-        postgres=# INSERT INTO local_region SELECT * FROM region;
+        openGauss=# INSERT INTO local_region SELECT * FROM region;
         ```
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -155,7 +155,7 @@
     -   关联查询。
 
         ```
-        postgres=# SELECT local_region * FROM region, local_region WHERE local_region.R_NAME = region.R_NAME;
+        openGauss=# SELECT local_region * FROM region, local_region WHERE local_region.R_NAME = region.R_NAME;
         ```
 
         >![](public_sys-resources/icon-note.gif) **说明：** 

@@ -98,7 +98,7 @@ You can use  **gs\_dump**  to export data and definition of a table-level object
 Example 1: Run  **gs\_dump**  to export full information of the  **hr.staffs**  table. The exported files are in text format.
 
 ```
-gs_dump -f /home/omm/backup/MPPDB_table_backup.sql -p 8000 human_resource -t hr.staffs -Z 6 -F p
+gs_dump -f /home/omm/backup/MPPDB_table_backup.sql -p 8000 human_resource -t hr.staffs -F p
 Password:
 gs_dump[port='8000'][human_resource][2017-07-21 17:05:10]: dump database human_resource successfully
 gs_dump[port='8000'][human_resource][2017-07-21 17:05:10]: total time: 3116  ms

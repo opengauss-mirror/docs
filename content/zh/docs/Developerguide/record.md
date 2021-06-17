@@ -34,7 +34,7 @@ record类型的语法参见[图1](#zh-cn_topic_0237122215_fig092918316312)。
 
 ```
 下面示例中用到的表定义如下：
-postgres=# \d emp_rec
+openGauss=# \d emp_rec
                 Table "public.emp_rec"
   Column  |              Type              | Modifiers 
 ----------+--------------------------------+-----------
@@ -48,7 +48,7 @@ postgres=# \d emp_rec
  deptno   | numeric(2,0)                   | 
 
 --演示在函数中对数组进行操作。
-postgres=# CREATE OR REPLACE FUNCTION regress_record(p_w VARCHAR2)
+openGauss=# CREATE OR REPLACE FUNCTION regress_record(p_w VARCHAR2)
 RETURNS
 VARCHAR2  AS $$
 DECLARE
@@ -106,9 +106,9 @@ $$
 LANGUAGE plpgsql;
 
 --调用该函数。
-postgres=# CALL regress_record('abc');
+openGauss=# CALL regress_record('abc');
 
 --删除函数。
-postgres=# DROP FUNCTION regress_record;
+openGauss=# DROP FUNCTION regress_record;
 ```
 

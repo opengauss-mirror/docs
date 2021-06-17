@@ -1,6 +1,6 @@
 # 使用gsql元命令导入数据<a name="ZH-CN_TOPIC_0242370286"></a>
 
-DWS的gsql工具提供了元命令\\copy进行数据导入。
+gsql工具提供了元命令\\copy进行数据导入。
 
 ## \\copy命令<a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_section58856731203635"></a>
 
@@ -179,7 +179,7 @@ DWS的gsql工具提供了元命令\\copy进行数据导入。
    查询导入目标表a的数据。
 
    ```
-   postgres=# SELECT * FROM a;
+   openGauss=# SELECT * FROM a;
     a 
    ---
     1

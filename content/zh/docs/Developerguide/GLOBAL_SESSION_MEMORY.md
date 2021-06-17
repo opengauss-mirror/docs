@@ -1,6 +1,6 @@
 # GLOBAL\_SESSION\_MEMORY<a name="ZH-CN_TOPIC_0245374738"></a>
 
-统计各节点的Session级别的内存使用情况，包含执行作业在数据节点上Postgres线程和Stream线程分配的所有内存，单位为MB。
+统计各节点的Session级别的内存使用情况，包含执行作业在数据节点上openGauss线程和Stream线程分配的所有内存，单位为MB。
 
 **表 1**  GLOBAL\_SESSION\_MEMORY字段
 

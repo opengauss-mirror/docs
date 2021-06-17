@@ -20,7 +20,7 @@
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
-    postgres=# 
+    openGauss=# 
     ```
 
 3.  查询系统中长时间运行的查询语句。

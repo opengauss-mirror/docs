@@ -23,11 +23,11 @@ RETURN QUERY有一种变体RETURN QUERY EXECUTE，后面还可以增加动态查
 ## 示例<a name="zh-cn_topic_0237122232_section663313751118"></a>
 
 ```
-postgres=# CREATE TABLE t1(a int);
-postgres=# INSERT INTO t1 VALUES(1),(10);
+openGauss=# CREATE TABLE t1(a int);
+openGauss=# INSERT INTO t1 VALUES(1),(10);
 
 --RETURN NEXT
-postgres=# CREATE OR REPLACE FUNCTION fun_for_return_next() RETURNS SETOF t1 AS $$
+openGauss=# CREATE OR REPLACE FUNCTION fun_for_return_next() RETURNS SETOF t1 AS $$
 DECLARE
    r t1%ROWTYPE;
 BEGIN
@@ -38,7 +38,7 @@ BEGIN
    RETURN;
 END;
 $$ LANGUAGE PLPGSQL;
-postgres=# call fun_for_return_next();
+openGauss=# call fun_for_return_next();
  a
 ---
  1
@@ -46,7 +46,7 @@ postgres=# call fun_for_return_next();
 (2 rows)
 
 -- RETURN QUERY
-postgres=# CREATE OR REPLACE FUNCTION fun_for_return_query() RETURNS SETOF t1 AS $$
+openGauss=# CREATE OR REPLACE FUNCTION fun_for_return_query() RETURNS SETOF t1 AS $$
 DECLARE
    r t1%ROWTYPE;
 BEGIN
@@ -54,7 +54,7 @@ BEGIN
 END;
 $$
 language plpgsql;
-postgres=# call fun_for_return_query();
+openGauss=# call fun_for_return_query();
  a
 ---
  1

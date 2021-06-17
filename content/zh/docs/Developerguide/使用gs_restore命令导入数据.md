@@ -33,7 +33,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
 **表 1**  常用参数说明
     
     <a name="zh-cn_topic_0237121137_table1781122816253"></a>
-
+    
     <table><thead align="left"><tr id="zh-cn_topic_0237121137_row10837281257"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237121137_p48382816258"><a name="zh-cn_topic_0237121137_p48382816258"></a><a name="zh-cn_topic_0237121137_p48382816258"></a>参数</p>
     </th>
     <th class="cellrowborder" valign="top" width="43.33%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237121137_p18332812257"><a name="zh-cn_topic_0237121137_p18332812257"></a><a name="zh-cn_topic_0237121137_p18332812257"></a>参数说明</p>
@@ -242,7 +242,7 @@ human_resource=# select * from hr.areas;
 示例十：执行gs\_restore，导入hr的模式，包含模式下的所有对象定义和数据。
 
 ```
-gs_restore -W Bigdata@123  /home/omm/backup/MPPDB_backup1.sql -p 8000 -d backupdb -n hr -e -c
+gs_restore -W Bigdata@123  /home/omm/backup/MPPDB_backup1.dmp -p 8000 -d backupdb -n hr -e -c
 restore operation successful
 total time: 702  ms
 ```
