@@ -21,7 +21,7 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
     执行如下语句创建TZ词典：
 
     ```
-    postgres=# CREATE TEXT SEARCH DICTIONARY thesaurus_astro (
+    openGauss=# CREATE TEXT SEARCH DICTIONARY thesaurus_astro (
         TEMPLATE = thesaurus,
         DictFile = thesaurus_astro,
         Dictionary = pg_catalog.english_stem,
@@ -34,7 +34,7 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
 2.  创建词典后，将其绑定到对应文本搜索配置中需要处理的token类型上：
 
     ```
-    postgres=# ALTER TEXT SEARCH CONFIGURATION russian
+    openGauss=# ALTER TEXT SEARCH CONFIGURATION russian
         ALTER MAPPING FOR asciiword, asciihword, hword_asciipart
         WITH thesaurus_astro, english_stem;
     ```
@@ -45,19 +45,19 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
         ts\_lexize函数对于测试TZ词典作用不大，因为该函数是按照单个token处理输入。可以使用plainto\_tsquery、to\_tsvector、to\_tsquery函数测试TZ词典，这些函数能够将输入分解成多个token（to\_tsquery函数需要将输入加上引号）。
 
         ```
-        postgres=# SELECT plainto_tsquery('russian','supernova star');
+        openGauss=# SELECT plainto_tsquery('russian','supernova star');
          plainto_tsquery 
         -----------------
          'sn'
         (1 row)
         
-        postgres=# SELECT to_tsvector('russian','supernova star');
+        openGauss=# SELECT to_tsvector('russian','supernova star');
          to_tsvector 
         -------------
          'sn':1
         (1 row)
         
-        postgres=# SELECT to_tsquery('russian','''supernova star''');
+        openGauss=# SELECT to_tsquery('russian','''supernova star''');
          to_tsquery 
         ------------
          'sn'
@@ -72,11 +72,11 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
         ```
         supernovae stars : sn supernovae stars
         
-        postgres=# ALTER TEXT SEARCH DICTIONARY thesaurus_astro (
+        openGauss=# ALTER TEXT SEARCH DICTIONARY thesaurus_astro (
             DictFile = thesaurus_astro,
             FILEPATH = 'file:///home/dicts/');
         
-        postgres=# SELECT plainto_tsquery('russian','supernova star');
+        openGauss=# SELECT plainto_tsquery('russian','supernova star');
                plainto_tsquery       
         -----------------------------
          'sn' & 'supernova' & 'star'

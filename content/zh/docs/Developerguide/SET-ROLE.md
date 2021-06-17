@@ -53,18 +53,18 @@
 
 ```
 --创建角色paul。
-postgres=# CREATE ROLE paul IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE ROLE paul IDENTIFIED BY 'xxxxxxxx';
 
 --设置当前用户为paul。
-postgres=# SET ROLE paul PASSWORD 'xxxxxxxx';
+openGauss=# SET ROLE paul PASSWORD 'xxxxxxxx';
 
 --查看当前会话用户，当前用户。
-postgres=# SELECT SESSION_USER, CURRENT_USER;
+openGauss=# SELECT SESSION_USER, CURRENT_USER;
 
 --重置当前用户。
-postgres=# RESET role;
+openGauss=# RESET role;
 
 --删除用户。
-postgres=# DROP USER paul;
+openGauss=# DROP USER paul;
 ```
 

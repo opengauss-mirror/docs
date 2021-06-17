@@ -82,33 +82,33 @@ ON ( condition )
 
 ```
 -- 创建目标表products和源表newproducts，并插入数据
-postgres=# CREATE TABLE products
+openGauss=# CREATE TABLE products
 (
 product_id INTEGER,
 product_name VARCHAR2(60),
 category VARCHAR2(60)
 );
 
-postgres=# INSERT INTO products VALUES (1501, 'vivitar 35mm', 'electrncs');
-postgres=# INSERT INTO products VALUES (1502, 'olympus is50', 'electrncs');
-postgres=# INSERT INTO products VALUES (1600, 'play gym', 'toys');
-postgres=# INSERT INTO products VALUES (1601, 'lamaze', 'toys');
-postgres=# INSERT INTO products VALUES (1666, 'harry potter', 'dvd');
+openGauss=# INSERT INTO products VALUES (1501, 'vivitar 35mm', 'electrncs');
+openGauss=# INSERT INTO products VALUES (1502, 'olympus is50', 'electrncs');
+openGauss=# INSERT INTO products VALUES (1600, 'play gym', 'toys');
+openGauss=# INSERT INTO products VALUES (1601, 'lamaze', 'toys');
+openGauss=# INSERT INTO products VALUES (1666, 'harry potter', 'dvd');
 
-postgres=# CREATE TABLE newproducts
+openGauss=# CREATE TABLE newproducts
 (
 product_id INTEGER,
 product_name VARCHAR2(60),
 category VARCHAR2(60)
 );
 
-postgres=# INSERT INTO newproducts VALUES (1502, 'olympus camera', 'electrncs');
-postgres=# INSERT INTO newproducts VALUES (1601, 'lamaze', 'toys');
-postgres=# INSERT INTO newproducts VALUES (1666, 'harry potter', 'toys');
-postgres=# INSERT INTO newproducts VALUES (1700, 'wait interface', 'books');
+openGauss=# INSERT INTO newproducts VALUES (1502, 'olympus camera', 'electrncs');
+openGauss=# INSERT INTO newproducts VALUES (1601, 'lamaze', 'toys');
+openGauss=# INSERT INTO newproducts VALUES (1666, 'harry potter', 'toys');
+openGauss=# INSERT INTO newproducts VALUES (1700, 'wait interface', 'books');
 
 -- 进行MERGE INTO操作
-postgres=# MERGE INTO products p   
+openGauss=# MERGE INTO products p   
 USING newproducts np   
 ON (p.product_id = np.product_id)   
 WHEN MATCHED THEN  
@@ -118,7 +118,7 @@ WHEN NOT MATCHED THEN
 MERGE 4
 
 -- 查询更新后的结果
-postgres=# SELECT * FROM products ORDER BY product_id;
+openGauss=# SELECT * FROM products ORDER BY product_id;
  product_id |  product_name  | category  
 ------------+----------------+-----------
        1501 | vivitar 35mm   | electrncs
@@ -130,7 +130,7 @@ postgres=# SELECT * FROM products ORDER BY product_id;
 (6 rows)
 
 -- 删除表
-postgres=# DROP TABLE products;
-postgres=# DROP TABLE newproducts;
+openGauss=# DROP TABLE products;
+openGauss=# DROP TABLE newproducts;
 ```
 

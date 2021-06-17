@@ -28,23 +28,23 @@ savepoint\_name
 
 ```
 --撤销 my_savepoint 建立之后执行的命令的影响。
-postgres=# START TRANSACTION;
-postgres=# SAVEPOINT my_savepoint;
-postgres=# ROLLBACK TO SAVEPOINT my_savepoint;
+openGauss=# START TRANSACTION;
+openGauss=# SAVEPOINT my_savepoint;
+openGauss=# ROLLBACK TO SAVEPOINT my_savepoint;
 --游标位置不受保存点回滚的影响。
-postgres=# DECLARE foo CURSOR FOR SELECT 1 UNION SELECT 2;
-postgres=# SAVEPOINT foo;
-postgres=# FETCH 1 FROM foo;
+openGauss=# DECLARE foo CURSOR FOR SELECT 1 UNION SELECT 2;
+openGauss=# SAVEPOINT foo;
+openGauss=# FETCH 1 FROM foo;
  ?column? 
 ----------
         1
-postgres=# ROLLBACK TO SAVEPOINT foo;
-postgres=# FETCH 1 FROM foo;
+openGauss=# ROLLBACK TO SAVEPOINT foo;
+openGauss=# FETCH 1 FROM foo;
  ?column? 
 ----------
         2
-postgres=# RELEASE SAVEPOINT my_savepoint;
-postgres=# COMMIT;
+openGauss=# RELEASE SAVEPOINT my_savepoint;
+openGauss=# COMMIT;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122182_zh-cn_topic_0059778869_section3863621131515"></a>

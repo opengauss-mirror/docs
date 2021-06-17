@@ -49,6 +49,6 @@ SET CONSTRAINTS  { ALL  |  { name  }  [, ...]  }  { DEFERRED  | IMMEDIATE  } ;
 
 ```
 --设置所有约束在事务提交时检查。
-postgres=# SET CONSTRAINTS ALL DEFERRED;
+openGauss=# SET CONSTRAINTS ALL DEFERRED;
 ```
 

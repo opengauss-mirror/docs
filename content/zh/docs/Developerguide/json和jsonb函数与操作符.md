@@ -48,7 +48,7 @@ json/jsonb数据类型参考[json和jsonb类型](json和jsonb类型.md)。
     返回类型：json
 
     ```
-postgres=# SELECT array_to_json('{{1,5},{99,100}}'::int[]);
+openGauss=# SELECT array_to_json('{{1,5},{99,100}}'::int[]);
     array_to_json
     ------------------
     [[1,5],[99,100]]
@@ -62,7 +62,7 @@ postgres=# SELECT array_to_json('{{1,5},{99,100}}'::int[]);
     返回类型：json
 
     ```
-postgres=# SELECT row_to_json(row(1,'foo'));
+openGauss=# SELECT row_to_json(row(1,'foo'));
          row_to_json     
     ---------------------
      {"f1":1,"f2":"foo"}
@@ -76,7 +76,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：json、jsonb
 
   ```
-  postgres=# select json_array_element('[1,true,[1,[2,3]],null]',2);
+  openGauss=# select json_array_element('[1,true,[1,[2,3]],null]',2);
   json_array_element
   --------------------
   [1,[2,3]]
@@ -90,7 +90,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：text、text
 
   ```
-  postgres=# select json_array_element_text('[1,true,[1,[2,3]],null]',2);
+  openGauss=# select json_array_element_text('[1,true,[1,[2,3]],null]',2);
   json_array_element_text
   -----------------------
   [1,[2,3]]
@@ -104,7 +104,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：json、jsonb
 
   ```
-  postgres=# select json_object_field('{"a": {"b":"foo"}}','a');
+  openGauss=# select json_object_field('{"a": {"b":"foo"}}','a');
   json_object_field
   -------------------
   {"b":"foo"}
@@ -118,7 +118,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：text、text
 
   ```
-  postgres=# select json_object_field_text('{"a": {"b":"foo"}}','a');
+  openGauss=# select json_object_field_text('{"a": {"b":"foo"}}','a');
   json_object_field_text
   ----------------------
   {"b":"foo"}
@@ -132,7 +132,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：json、jsonb
 
   ```
-  postgres=# select json_extract_path('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+  openGauss=# select json_extract_path('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
    json_extract_path
   -------------------
    "stringy"
@@ -146,7 +146,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：json、jsonb
 
   ```
-  postgres=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+  openGauss=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
    json_extract_path_op
   ---------------------
    "stringy"
@@ -160,7 +160,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：text、text
 
   ```
-  postgres=# select json_extract_path_text('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+  openGauss=# select json_extract_path_text('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
    json_extract_path_text
   -----------------------
    "stringy"
@@ -174,7 +174,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：text、text
 
   ```
-  postgres=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+  openGauss=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
    json_extract_path_text_op
   --------------------------
    "stringy"
@@ -205,7 +205,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：text、text
 
   ```
-  postgres=# select * from  json_array_elements_text('[1,true,[1,[2,3]],null]');
+  openGauss=# select * from  json_array_elements_text('[1,true,[1,[2,3]],null]');
      value
   -----------
    1
@@ -222,7 +222,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：integer
 
   ```
-  postgres=# SELECT json_array_length('[1,2,3,{"f1":1,"f2":[5,6]},4,null]');
+  openGauss=# SELECT json_array_length('[1,2,3,{"f1":1,"f2":[5,6]},4,null]');
    json_array_length
   -------------------
                    6
@@ -236,7 +236,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：setof(key text, value json)、setof(key text, value jsonb)
 
   ```
-  postgres=# select * from  json_each('{"f1":[1,2,3],"f2":{"f3":1},"f4":null}');
+  openGauss=# select * from  json_each('{"f1":[1,2,3],"f2":{"f3":1},"f4":null}');
    key |  value
   -----+----------
    f1  | [1,2,3]
@@ -252,7 +252,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：setof(key text, value text)、setof(key text, value text)
 
   ```
-  postgres=# select * from  json_each_text('{"f1":[1,2,3],"f2":{"f3":1},"f4":null}');
+  openGauss=# select * from  json_each_text('{"f1":[1,2,3],"f2":{"f3":1},"f4":null}');
    key |  value
   -----+----------
    f1  | [1,2,3]
@@ -268,7 +268,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：SETOF text
 
   ```
-  postgres=# select json_object_keys('{"f1":"abc","f2":{"f3":"a", "f4":"b"}, "f1":"abcd"}');
+  openGauss=# select json_object_keys('{"f1":"abc","f2":{"f3":"a", "f4":"b"}, "f1":"abcd"}');
    json_object_keys
   ------------------
    f1
@@ -277,7 +277,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   (3 rows)
   
   -- jsonb中会有去重操作
-  postgres=# select jsonb_object_keys('{"f1":"abc","f2":{"f3":"a", "f4":"b"}, "f1":"abcd"}');
+  openGauss=# select jsonb_object_keys('{"f1":"abc","f2":{"f3":"a", "f4":"b"}, "f1":"abcd"}');
    jsonb_object_keys
   -------------------
    f1
@@ -292,15 +292,15 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：anyelement、anyelement
 
   ```
-  postgres=# create type jpop as (a text, b int, c bool);
+  openGauss=# create type jpop as (a text, b int, c bool);
   CREATE TYPE
-  postgres=# select * from json_populate_record(null::jpop,'{"a":"blurfl","x":43.2}');
+  openGauss=# select * from json_populate_record(null::jpop,'{"a":"blurfl","x":43.2}');
      a    | b | c
   --------+---+---
    blurfl |   |
   (1 row)
   
-  postgres=# select * from json_populate_record((1,1,null)::jpop,'{"a":"blurfl","x":43.2}');
+  openGauss=# select * from json_populate_record((1,1,null)::jpop,'{"a":"blurfl","x":43.2}');
      a    | b | c
   --------+---+---
    blurfl | 1 |
@@ -314,9 +314,9 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：setof anyelement、setof anyelement
 
   ```
-  postgres=# create type jpop as (a text, b int, c bool);
+  openGauss=# create type jpop as (a text, b int, c bool);
   CREATE TYPE
-  postgres=# select * from json_populate_recordset(null::jpop, '[{"a":1,"b":2},{"a":3,"b":4}]');
+  openGauss=# select * from json_populate_recordset(null::jpop, '[{"a":1,"b":2},{"a":3,"b":4}]');
    a | b | c
   ---+---+---
    1 | 2 |
@@ -331,8 +331,8 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：text、text
 
   ```
-  postgres=# select value, json_typeof(value)
-  postgres-# from (values (json '123.4'), (json '"foo"'), (json 'true'), (json 'null'), (json '[1, 2, 3]'), (json '{"x":"foo", "y":123}'), (NULL::json))  as data(value);
+  openGauss=# select value, json_typeof(value)
+  openGauss-# from (values (json '123.4'), (json '"foo"'), (json 'true'), (json 'null'), (json '[1, 2, 3]'), (json '{"x":"foo", "y":123}'), (NULL::json))  as data(value);
           value         | json_typeof
   ----------------------+-------------
    123.4                | number
@@ -352,7 +352,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：array-json
 
   ```
-  postgres=# select json_build_array('a',1,'b',1.2,'c',true,'d',null,'e',json '{"x": 3, "y": [1,2,3]}','');
+  openGauss=# select json_build_array('a',1,'b',1.2,'c',true,'d',null,'e',json '{"x": 3, "y": [1,2,3]}','');
                                json_build_array
   ---------------------------------------------------------------------------
    ["a", 1, "b", 1.2, "c", true, "d", null, "e", {"x": 3, "y": [1,2,3]}, ""]
@@ -366,7 +366,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：object-json
 
   ```
-  postgres=# select json_build_object(1,2);
+  openGauss=# select json_build_object(1,2);
    json_build_object
   -------------------
    {"1" : 2}
@@ -380,7 +380,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：record
 
   ```
-  postgres=# select * from json_to_record('{"a":1,"b":"foo","c":"bar"}',true) as x(a int, b text, d text);
+  openGauss=# select * from json_to_record('{"a":1,"b":"foo","c":"bar"}',true) as x(a int, b text, d text);
    a |  b  | d
   ---+-----+---
    1 | foo |
@@ -394,10 +394,10 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：setof record
 
   ```
-  postgres=# select * from json_to_recordset(
-  postgres(#   '[{"a":1,"b":"foo","d":false},{"a":2,"b":"bar","c":true}]',
-  postgres(#   false
-  postgres(# ) as x(a int, b text, c boolean);
+  openGauss=# select * from json_to_recordset(
+  openGauss(#   '[{"a":1,"b":"foo","d":false},{"a":2,"b":"bar","c":true}]',
+  openGauss(#   false
+  openGauss(# ) as x(a int, b text, c boolean);
    a |  b  | c
   ---+-----+---
    1 | foo |
@@ -412,13 +412,13 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：object-json
 
   ```
-  postgres=# select json_object('{a,1,b,2,3,NULL,"d e f","a b c"}');
+  openGauss=# select json_object('{a,1,b,2,3,NULL,"d e f","a b c"}');
                         json_object
   -------------------------------------------------------
    {"a" : "1", "b" : "2", "3" : null, "d e f" : "a b c"}
   (1 row)
   
-  postgres=# select json_object('{a,b,"a b c"}', '{a,1,1}');
+  openGauss=# select json_object('{a,b,"a b c"}', '{a,1,1}');
                 json_object
   ---------------------------------------
    {"a" : "a", "b" : "1", "a b c" : "1"}
@@ -432,7 +432,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：array-json
 
   ```
-  postgres=# select * from classes;
+  openGauss=# select * from classes;
   name | score
   -----+-------
   A    |     2
@@ -441,7 +441,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   D    |
   (4 rows)
   
-  postgres=# select name, json_agg(score) score from classes group by name order by name;
+  openGauss=# select name, json_agg(score) score from classes group by name order by name;
   name |      score
   -----+-----------------
   A    | [2, 3]
@@ -457,7 +457,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：object-json
 
   ```
-  postgres=# select * from classes;
+  openGauss=# select * from classes;
   name | score
   -----+-------
   A    |     2
@@ -466,7 +466,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   D    |
   (4 rows)
   
-  postgres=# select json_object_agg(name, score) from classes group by name order by name;
+  openGauss=# select json_object_agg(name, score) from classes group by name order by name;
        json_object_agg
   -------------------------
    { "A" : 2, "A" : 3 }
@@ -481,7 +481,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：bool
 
   ```
-  postgres=# select jsonb_contained('[1,2,3]', '[1,2,3,4]');
+  openGauss=# select jsonb_contained('[1,2,3]', '[1,2,3,4]');
    jsonb_contained
   -----------------
    t
@@ -495,7 +495,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：bool
 
   ```
-  postgres=# select jsonb_contains('[1,2,3,4]', '[1,2,3]');
+  openGauss=# select jsonb_contains('[1,2,3,4]', '[1,2,3]');
    jsonb_contains
   ----------------
    t
@@ -509,7 +509,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：bool
 
   ```
-  postgres=# select jsonb_exists('["1",2,3]', '1');
+  openGauss=# select jsonb_exists('["1",2,3]', '1');
    jsonb_exists
   --------------
    t
@@ -523,7 +523,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：bool
 
   ```
-  postgres=# select jsonb_exists_all('["1","2",3]', '{1, 2}');
+  openGauss=# select jsonb_exists_all('["1","2",3]', '{1, 2}');
    jsonb_exists_all
   ------------------
    t
@@ -537,7 +537,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：bool
 
   ```
-  postgres=# select jsonb_exists_any('["1","2",3]', '{1, 2, 4}');
+  openGauss=# select jsonb_exists_any('["1","2",3]', '{1, 2, 4}');
    jsonb_exists_any
   ------------------
    t
@@ -551,7 +551,7 @@ postgres=# SELECT row_to_json(row(1,'foo'));
   返回类型：integer
 
   ```
-postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
+openGauss=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
    jsonb_cmp
   -----------
           -1
@@ -565,7 +565,7 @@ postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
   返回类型：bool
 
   ```
-  postgres=# select jsonb_eq('["a", "b"]', '{"a":1, "b":2}');
+  openGauss=# select jsonb_eq('["a", "b"]', '{"a":1, "b":2}');
    jsonb_eq
   ----------
    f
@@ -579,7 +579,7 @@ postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
   返回类型：bool
 
   ```
-  postgres=# select jsonb_ne('["a", "b"]', '{"a":1, "b":2}');
+  openGauss=# select jsonb_ne('["a", "b"]', '{"a":1, "b":2}');
    jsonb_ne
   ----------
    t
@@ -593,7 +593,7 @@ postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
   返回类型：bool
 
   ```
-  postgres=# select jsonb_gt('["a", "b"]', '{"a":1, "b":2}');
+  openGauss=# select jsonb_gt('["a", "b"]', '{"a":1, "b":2}');
    jsonb_gt
   ----------
    f
@@ -607,7 +607,7 @@ postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
   返回类型：bool
 
   ```
-  postgres=# select jsonb_ge('["a", "b"]', '{"a":1, "b":2}');
+  openGauss=# select jsonb_ge('["a", "b"]', '{"a":1, "b":2}');
    jsonb_ge
   ----------
    f
@@ -621,7 +621,7 @@ postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
   返回类型：bool
 
   ```
-  postgres=# select jsonb_lt('["a", "b"]', '{"a":1, "b":2}');
+  openGauss=# select jsonb_lt('["a", "b"]', '{"a":1, "b":2}');
    jsonb_lt
   ----------
    t
@@ -635,7 +635,7 @@ postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
   返回类型：bool
 
   ```
-  postgres=# select jsonb_le('["a", "b"]', '{"a":1, "b":2}');
+  openGauss=# select jsonb_le('["a", "b"]', '{"a":1, "b":2}');
    jsonb_le
   ----------
    t
@@ -649,7 +649,7 @@ postgres=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
   返回类型：json
 
   ```
-  postgres=# select to_json('{1,5}'::text[]);
+  openGauss=# select to_json('{1,5}'::text[]);
     to_json
   -----------
    ["1","5"]

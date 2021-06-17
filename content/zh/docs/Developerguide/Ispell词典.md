@@ -18,7 +18,7 @@ openGauss不提供任何预定义的Ispell类型词典或词典文件。dict文�
 2.  创建Ispell词典。
 
     ```
-    postgres=# CREATE TEXT SEARCH DICTIONARY norwegian_ispell (
+    openGauss=# CREATE TEXT SEARCH DICTIONARY norwegian_ispell (
         TEMPLATE = ispell,
         DictFile = nn_no,
         AffFile = nn_no,
@@ -31,7 +31,7 @@ openGauss不提供任何预定义的Ispell类型词典或词典文件。dict文�
 3.  使用Ispell词典进行复合词拆分。
 
     ```
-    postgres=# SELECT ts_lexize('norwegian_ispell', 'sjokoladefabrikk');
+    openGauss=# SELECT ts_lexize('norwegian_ispell', 'sjokoladefabrikk');
           ts_lexize      
     ---------------------
      {sjokolade,fabrikk}

@@ -98,27 +98,27 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ```
 --创建表student1。
-postgres=# CREATE TABLE student1
+openGauss=# CREATE TABLE student1
 (
    stuno     int,
    classno   int 
 );
 
 --插入数据。
-postgres=# INSERT INTO student1 VALUES(1,1);
-postgres=# INSERT INTO student1 VALUES(2,2);
-postgres=# INSERT INTO student1 VALUES(3,3);
+openGauss=# INSERT INTO student1 VALUES(1,1);
+openGauss=# INSERT INTO student1 VALUES(2,2);
+openGauss=# INSERT INTO student1 VALUES(3,3);
 
 --查看数据。
-postgres=# SELECT * FROM student1;
+openGauss=# SELECT * FROM student1;
 
 --直接更新所有记录的值。
-postgres=# UPDATE student1 SET classno = classno*2;
+openGauss=# UPDATE student1 SET classno = classno*2;
 
 --查看数据。
-postgres=# SELECT * FROM student1;
+openGauss=# SELECT * FROM student1;
 
 --删除表。
-postgres=# DROP TABLE student1;
+openGauss=# DROP TABLE student1;
 ```
 

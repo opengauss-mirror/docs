@@ -80,18 +80,18 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 
 ```
 --创建表。
-postgres=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
+openGauss=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
 
 --清空表tpcds.reason_t1。
-postgres=# TRUNCATE TABLE tpcds.reason_t1;
+openGauss=# TRUNCATE TABLE tpcds.reason_t1;
 
 --删除表。
-postgres=# DROP TABLE tpcds.reason_t1;
+openGauss=# DROP TABLE tpcds.reason_t1;
 ```
 
 ```
 --创建分区表。
-postgres=# CREATE TABLE tpcds.reason_p
+openGauss=# CREATE TABLE tpcds.reason_p
 (
   r_reason_sk integer,
   r_reason_id character(16),
@@ -106,18 +106,18 @@ postgres=# CREATE TABLE tpcds.reason_p
 );
 
 --插入数据。
-postgres=# INSERT INTO tpcds.reason_p SELECT * FROM tpcds.reason;
+openGauss=# INSERT INTO tpcds.reason_p SELECT * FROM tpcds.reason;
 
 --清空分区p_05_before。
-postgres=# ALTER TABLE tpcds.reason_p TRUNCATE PARTITION p_05_before;
+openGauss=# ALTER TABLE tpcds.reason_p TRUNCATE PARTITION p_05_before;
 
 --清空分区p_15。
-postgres=# ALTER TABLE tpcds.reason_p TRUNCATE PARTITION for (13);
+openGauss=# ALTER TABLE tpcds.reason_p TRUNCATE PARTITION for (13);
 
 --清空分区表。
-postgres=# TRUNCATE TABLE tpcds.reason_p;
+openGauss=# TRUNCATE TABLE tpcds.reason_p;
 
 --删除表。
-postgres=# DROP TABLE tpcds.reason_p;
+openGauss=# DROP TABLE tpcds.reason_p;
 ```
 

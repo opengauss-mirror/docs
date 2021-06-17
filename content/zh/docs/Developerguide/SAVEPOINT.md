@@ -30,61 +30,61 @@ savepoint\_name
 
 ```
 --创建一个新表。
-postgres=# CREATE TABLE table1(a int);
+openGauss=# CREATE TABLE table1(a int);
 
 --开启事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --插入数据。
-postgres=# INSERT INTO table1 VALUES (1);
+openGauss=# INSERT INTO table1 VALUES (1);
 
 --建立保存点。
-postgres=# SAVEPOINT my_savepoint;
+openGauss=# SAVEPOINT my_savepoint;
 
 --插入数据。
-postgres=# INSERT INTO table1 VALUES (2);
+openGauss=# INSERT INTO table1 VALUES (2);
 
 --回滚保存点。
-postgres=# ROLLBACK TO SAVEPOINT my_savepoint;
+openGauss=# ROLLBACK TO SAVEPOINT my_savepoint;
 
 --插入数据。
-postgres=# INSERT INTO table1 VALUES (3);
+openGauss=# INSERT INTO table1 VALUES (3);
 
 --提交事务。
-postgres=# COMMIT;
+openGauss=# COMMIT;
 
 --查询表的内容，会同时看到1和3,不能看到2，因为2被回滚。
-postgres=# SELECT * FROM table1;
+openGauss=# SELECT * FROM table1;
 
 --删除表。
-postgres=# DROP TABLE table1;
+openGauss=# DROP TABLE table1;
 
 --创建一个新表。
-postgres=# CREATE TABLE table2(a int);
+openGauss=# CREATE TABLE table2(a int);
 
 --开启事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --插入数据。
-postgres=# INSERT INTO table2 VALUES (3);
+openGauss=# INSERT INTO table2 VALUES (3);
 
 --建立保存点。
-postgres=# SAVEPOINT my_savepoint;
+openGauss=# SAVEPOINT my_savepoint;
 
 --插入数据。
-postgres=# INSERT INTO table2 VALUES (4);
+openGauss=# INSERT INTO table2 VALUES (4);
 
 --回滚保存点。
-postgres=# RELEASE SAVEPOINT my_savepoint;
+openGauss=# RELEASE SAVEPOINT my_savepoint;
 
 --提交事务。
-postgres=# COMMIT;
+openGauss=# COMMIT;
 
 --查询表的内容，会同时看到3和4。
-postgres=# SELECT * FROM table2;
+openGauss=# SELECT * FROM table2;
 
 --删除表。
-postgres=# DROP TABLE table2;
+openGauss=# DROP TABLE table2;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122183_zh-cn_topic_0059777880_section183301781176"></a>

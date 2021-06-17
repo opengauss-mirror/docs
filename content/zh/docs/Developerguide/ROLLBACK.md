@@ -26,10 +26,10 @@ ROLLBACK [ WORK | TRANSACTION ];
 
 ```
 --开启一个事务
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --取消所有更改
-postgres=# ROLLBACK;
+openGauss=# ROLLBACK;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122180_zh-cn_topic_0059778963_s1745a25c568b45c7ad9475ba14714358"></a>

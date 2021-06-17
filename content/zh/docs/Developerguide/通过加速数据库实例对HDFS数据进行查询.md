@@ -19,7 +19,7 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
 3.  在DN上配置通过计算资源池进行加速。
 
     ```
-    postgres=# set acceleration_with_compute_pool = on;
+    openGauss=# set acceleration_with_compute_pool = on;
     ```
 
 4.  创建dummy server用于保存计算资源池的连接信息。
@@ -27,7 +27,7 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
     客户端数据库实例需要在使用计算资源池的数据库中创建dummy server，以便提供访问加速数据库实例的各种信息。
 
     ```
-    postgres=# CREATE SERVER dummy_server FOREIGN DATA WRAPPER DFS_FDW OPTIONS (address 'xx.xx.178.243:61600', username 'omm', password 'Gauss@123', dbname 'accedb', remoteservername 'acceserver', type 'dummy');
+    openGauss=# CREATE SERVER dummy_server FOREIGN DATA WRAPPER DFS_FDW OPTIONS (address 'xx.xx.178.243:61600', username 'omm', password 'Gauss@123', dbname 'accedb', remoteservername 'acceserver', type 'dummy');
     ```
 
     address：加速数据库实例的连接地址，如果加速数据库实例配置了LVS，则IP为LVS的IP地址，否则为加速数据库实例某个DN的IP地址；
@@ -39,7 +39,7 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
 5.  创建HDFS SERVER用于直接访问远端Hadoop数据库实例。
 
     ```
-    postgres=# CREATE SERVER orc_server FOREIGN DATA WRAPPER DFS_FDW OPTIONS (address 'xx.xx.185.201:25000,xx.xx.185.203:25000',hdfscfgpath 'hdfs_cfg', type 'hdfs');
+    openGauss=# CREATE SERVER orc_server FOREIGN DATA WRAPPER DFS_FDW OPTIONS (address 'xx.xx.185.201:25000,xx.xx.185.203:25000',hdfscfgpath 'hdfs_cfg', type 'hdfs');
     ```
 
     上面例子中，假设在步骤1中将HDFS客户端配置文件存储在了客户端数据库实例物理服务器的/home/config路径下。因此将hdfscfgpath的值设置成了hdfs\_cfg，具体请根据实际的配置值进行修改。
@@ -78,14 +78,14 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
 5.  设置query\_dop为1，由动态资源管理决定客户端请求在加速数据库实例上的并发度。
 
     ```
-    postgres=# SET query_dop = 1;
+    openGauss=# SET query_dop = 1;
     ```
 
 6.  [session\_timeout](zh-cn_topic_0289899967.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)，[statement\_timeout](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_se47379dd6e1c4698aa7b28b7ca9bc7fe)设置为0，避免长时间查询的连接断掉。
 
     ```
-    postgres=# SET session_timeout = 0;
-    postgres=# SET statement_timeout = 0;
+    openGauss=# SET session_timeout = 0;
+    openGauss=# SET statement_timeout = 0;
     ```
 
 
@@ -106,15 +106,15 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
     例子如下：
 
     ```
-    postgres=# CREATE DATABASE accedb;
+    openGauss=# CREATE DATABASE accedb;
     ```
 
     ```
-    postgres=# \c accedb
+    openGauss=# \c accedb
     ```
 
     ```
-    postgres=# CREATE SERVER acceserver FOREIGN DATA WRAPPER DFS_FDW OPTIONS (address 'xx.xx.178.239:25000,xx.xx.178.241:25000', hdfscfgpath 'hdfs_cfg', type 'hdfs');
+    openGauss=# CREATE SERVER acceserver FOREIGN DATA WRAPPER DFS_FDW OPTIONS (address 'xx.xx.178.239:25000,xx.xx.178.241:25000', hdfscfgpath 'hdfs_cfg', type 'hdfs');
     ```
 
     上面的例子里，在加速数据库实例中物理服务器的hdfs\_cfg保存着存取HDFS系统的配置信息。因此将hdfscfgpath的值设置成了hdfs\_cfg，具体请根据实际的配置值进行修改。

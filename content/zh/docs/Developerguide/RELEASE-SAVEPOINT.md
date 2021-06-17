@@ -30,31 +30,31 @@ RELEASE [ SAVEPOINT ] savepoint_name;
 
 ```
 --创建一个新表。
-postgres=# CREATE TABLE tpcds.table1(a int);
+openGauss=# CREATE TABLE tpcds.table1(a int);
 
 --开启事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --插入数据。
-postgres=# INSERT INTO tpcds.table1 VALUES (3);
+openGauss=# INSERT INTO tpcds.table1 VALUES (3);
 
 --建立保存点。
-postgres=# SAVEPOINT my_savepoint;
+openGauss=# SAVEPOINT my_savepoint;
 
 --插入数据。
-postgres=# INSERT INTO tpcds.table1 VALUES (4);
+openGauss=# INSERT INTO tpcds.table1 VALUES (4);
 
 --删除保存点。
-postgres=# RELEASE SAVEPOINT my_savepoint;
+openGauss=# RELEASE SAVEPOINT my_savepoint;
 
 --提交事务。
-postgres=# COMMIT;
+openGauss=# COMMIT;
 
 --查询表的内容，会同时看到3和4。
-postgres=# SELECT * FROM tpcds.table1;
+openGauss=# SELECT * FROM tpcds.table1;
 
 --删除表。
-postgres=# DROP TABLE tpcds.table1;
+openGauss=# DROP TABLE tpcds.table1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122177_zh-cn_topic_0059778044_section1873501692219"></a>

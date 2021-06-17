@@ -28,7 +28,7 @@ SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一�
 示例1：Union中的待定类型解析。这里，unknown类型文本'b'将被解析成text类型。
 
 ```
-postgres=# SELECT text 'a' AS "text" UNION SELECT 'b';
+openGauss=# SELECT text 'a' AS "text" UNION SELECT 'b';
  text
 ------
  a
@@ -39,7 +39,7 @@ postgres=# SELECT text 'a' AS "text" UNION SELECT 'b';
 示例2：简单Union中的类型解析。文本1.2的类型为numeric，而且integer类型的1可以隐含地转换为numeric，因此使用这个类型。
 
 ```
-postgres=# SELECT 1.2 AS "numeric" UNION SELECT 1;
+openGauss=# SELECT 1.2 AS "numeric" UNION SELECT 1;
  numeric
 ---------
        1
@@ -50,7 +50,7 @@ postgres=# SELECT 1.2 AS "numeric" UNION SELECT 1;
 示例3：转置Union中的类型解析。这里，因为类型real不能被隐含转换成integer，但是integer可以隐含转换成real，那么联合的结果类型将是real。
 
 ```
-postgres=# SELECT 1 AS "real" UNION SELECT CAST('2.2' AS REAL);
+openGauss=# SELECT 1 AS "real" UNION SELECT CAST('2.2' AS REAL);
  real
 ------
     1
@@ -62,10 +62,10 @@ postgres=# SELECT 1 AS "real" UNION SELECT CAST('2.2' AS REAL);
 
 ```
 --在A模式下，创建A兼容模式的数据库a_1。
-postgres=# CREATE DATABASE a_1 dbcompatibility = 'A';
+openGauss=# CREATE DATABASE a_1 dbcompatibility = 'A';
 
 --切换数据库为a_1。
-postgres=# \c a_1
+openGauss=# \c a_1
 
 --创建表t1。
 a_1=# CREATE TABLE t1(a int, b varchar(10));
@@ -84,10 +84,10 @@ a_1=# DROP TABLE t1;
 a_1=# \c postgres
 
 --在TD模式下，创建TD兼容模式的数据库td_1。
-postgres=# CREATE DATABASE td_1 dbcompatibility = 'C';
+openGauss=# CREATE DATABASE td_1 dbcompatibility = 'C';
 
 --切换数据库为td_1。
-postgres=# \c td_1
+openGauss=# \c td_1
 
 --创建表t2。
 td_1=# CREATE TABLE t2(a int, b varchar(10));
@@ -109,7 +109,7 @@ td_1=# DROP TABLE t2;
 td_1=# \c postgres
 
 --删除A和TD模式的数据库。
-postgres=# DROP DATABASE a_1;
-postgres=# DROP DATABASE td_1;
+openGauss=# DROP DATABASE a_1;
+openGauss=# DROP DATABASE td_1;
 ```
 

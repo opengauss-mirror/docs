@@ -14,7 +14,7 @@ Simple词典首先将输入标记转换为小写字母，然后检查停用词�
 1.  创建Simple词典。
 
     ```
-    postgres=# CREATE TEXT SEARCH DICTIONARY public.simple_dict (
+    openGauss=# CREATE TEXT SEARCH DICTIONARY public.simple_dict (
          TEMPLATE = pg_catalog.simple,
          STOPWORDS = english
     );
@@ -25,13 +25,13 @@ Simple词典首先将输入标记转换为小写字母，然后检查停用词�
 2.  使用Simple词典。
 
     ```
-    postgres=# SELECT ts_lexize('public.simple_dict','YeS');
+    openGauss=# SELECT ts_lexize('public.simple_dict','YeS');
      ts_lexize 
     -----------
      {yes}
     (1 row)
     
-    postgres=# SELECT ts_lexize('public.simple_dict','The');
+    openGauss=# SELECT ts_lexize('public.simple_dict','The');
      ts_lexize 
     -----------
      {}
@@ -41,15 +41,15 @@ Simple词典首先将输入标记转换为小写字母，然后检查停用词�
 3.  设置参数ACCEPT=false，使Simple词典返回NULL，而不是返回非停用词的小写形式。
 
     ```
-    postgres=# ALTER TEXT SEARCH DICTIONARY public.simple_dict ( Accept = false );
+    openGauss=# ALTER TEXT SEARCH DICTIONARY public.simple_dict ( Accept = false );
     ALTER TEXT SEARCH DICTIONARY
-    postgres=# SELECT ts_lexize('public.simple_dict','YeS');
+    openGauss=# SELECT ts_lexize('public.simple_dict','YeS');
      ts_lexize 
     -----------
     
     (1 row)
     
-    postgres=# SELECT ts_lexize('public.simple_dict','The');
+    openGauss=# SELECT ts_lexize('public.simple_dict','The');
      ts_lexize 
     -----------
      {}

@@ -19,7 +19,7 @@
     示例1：
 
     ```
-    postgres=# select nextval('seqDemo'); 
+    openGauss=# select nextval('seqDemo'); 
      nextval
     ---------
            2
@@ -29,7 +29,7 @@
     示例2：
 
     ```
-    postgres=# select seqDemo.nextval; 
+    openGauss=# select seqDemo.nextval; 
      nextval
     ---------
            2
@@ -47,7 +47,7 @@
     示例1：
 
     ```
-    postgres=# select currval('seq1'); 
+    openGauss=# select currval('seq1'); 
      currval
     ---------
            2
@@ -57,7 +57,7 @@
     示例2：
 
     ```
-    postgres=# select seq1.currval; 
+    openGauss=# select seq1.currval; 
      currval
     ---------
            2
@@ -73,7 +73,7 @@
     示例：
 
     ```
-    postgres=# select lastval(); 
+    openGauss=# select lastval(); 
      lastval
     ---------
            2
@@ -89,7 +89,7 @@
     示例：
 
     ```
-    postgres=# select setval('seqDemo',1);
+    openGauss=# select setval('seqDemo',1);
      setval
     --------
           1
@@ -105,7 +105,7 @@
     示例：
 
     ```
-    postgres=# select setval('seqDemo',1,true);
+    openGauss=# select setval('seqDemo',1,true);
      setval
     --------
           1

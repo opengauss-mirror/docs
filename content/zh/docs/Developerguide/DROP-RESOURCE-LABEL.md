@@ -26,10 +26,10 @@ DROP RESOURCE LABEL [IF EXISTS] policy_name[, ...]*;
 
 ```
 --删除一个资源标签。
-postgres=# DROP RESOURCE LABEL IF EXISTS res_label1;
+openGauss=# DROP RESOURCE LABEL IF EXISTS res_label1;
 
 --删除一组资源标签。
-postgres=# DROP RESOURCE LABEL IF EXISTS res_label1, res_label2, res_label3;
+openGauss=# DROP RESOURCE LABEL IF EXISTS res_label1, res_label2, res_label3;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0059778399_s41faee269a414537919479fb56fc5a4d"></a>

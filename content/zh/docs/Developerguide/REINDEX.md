@@ -84,7 +84,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
 ```
 --创建一个行存表tpcds.customer_t1，并在tpcds.customer_t1表上的c_customer_sk字段创建索引。
-postgres=# CREATE TABLE tpcds.customer_t1
+openGauss=# CREATE TABLE tpcds.customer_t1
 (
     c_customer_sk             integer               not null,
     c_customer_id             char(16)              not null,
@@ -107,18 +107,18 @@ postgres=# CREATE TABLE tpcds.customer_t1
 )
 WITH (orientation = row);
 
-postgres=# CREATE INDEX tpcds_customer_index1 ON tpcds.customer_t1 (c_customer_sk);
+openGauss=# CREATE INDEX tpcds_customer_index1 ON tpcds.customer_t1 (c_customer_sk);
 
-postgres=# INSERT INTO tpcds.customer_t1 SELECT * FROM tpcds.customer WHERE c_customer_sk < 10;
+openGauss=# INSERT INTO tpcds.customer_t1 SELECT * FROM tpcds.customer WHERE c_customer_sk < 10;
 
 --重建一个单独索引。
-postgres=# REINDEX INDEX tpcds.tpcds_customer_index1;
+openGauss=# REINDEX INDEX tpcds.tpcds_customer_index1;
 
 --重建表tpcds.customer_t1上的所有索引。
-postgres=# REINDEX TABLE tpcds.customer_t1;
+openGauss=# REINDEX TABLE tpcds.customer_t1;
 
 --删除tpcds.customer_t1表。
-postgres=# DROP TABLE tpcds.customer_t1;
+openGauss=# DROP TABLE tpcds.customer_t1;
 ```
 
 ## 优化建议<a name="zh-cn_topic_0237122174_zh-cn_topic_0059777511_section21815038152246"></a>

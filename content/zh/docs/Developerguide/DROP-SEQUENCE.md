@@ -37,10 +37,10 @@ DROP SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTR
 
 ```
 --创建一个名为serial的递增序列，从101开始。
-postgres=# CREATE SEQUENCE serial START 101;
+openGauss=# CREATE SEQUENCE serial START 101;
 
 --删除序列。
-postgres=# DROP SEQUENCE serial;
+openGauss=# DROP SEQUENCE serial;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section365162034413"></a>

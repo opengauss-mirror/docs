@@ -38,13 +38,13 @@ DROP [ ROW LEVEL SECURITY ] POLICY [ IF EXISTS ] policy_name ON table_name [ CAS
 
 ```
 --创建数据表all_data
-postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
+openGauss=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
 
 --创建行访问控制策略
-postgres=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
+openGauss=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
 
 --删除行访问控制策略
-postgres=# DROP ROW LEVEL SECURITY POLICY all_data_rls ON all_data;
+openGauss=# DROP ROW LEVEL SECURITY POLICY all_data_rls ON all_data;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122144_section1426016489355"></a>

@@ -43,7 +43,7 @@ DROP TEXT SEARCH DICTIONARY [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 ```
 --删除词典english
-postgres=# DROP TEXT SEARCH DICTIONARY english;
+openGauss=# DROP TEXT SEARCH DICTIONARY english;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122155_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>

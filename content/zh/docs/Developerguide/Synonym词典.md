@@ -7,43 +7,43 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
 -   Synonym词典可用于解决语言学相关问题，例如，为避免使单词"Paris"变成"pari"，可在Synonym词典文件中定义一行"Paris paris"，并将该词典放置在预定义的english\_stem词典之前。
 
     ```
-    postgres=# SELECT * FROM ts_debug('english', 'Paris');
+    openGauss=# SELECT * FROM ts_debug('english', 'Paris');
        alias   |   description   | token |  dictionaries  |  dictionary  | lexemes 
     -----------+-----------------+-------+----------------+--------------+---------
      asciiword | Word, all ASCII | Paris | {english_stem} | english_stem | {pari}
     (1 row)
     
-    postgres=# CREATE TEXT SEARCH DICTIONARY my_synonym (
+    openGauss=# CREATE TEXT SEARCH DICTIONARY my_synonym (
         TEMPLATE = synonym,
         SYNONYMS = my_synonyms,
         FILEPATH = 'file:///home/dicts/' 
     );
     
-    postgres=# ALTER TEXT SEARCH CONFIGURATION english
+    openGauss=# ALTER TEXT SEARCH CONFIGURATION english
         ALTER MAPPING FOR asciiword
         WITH my_synonym, english_stem;
     
-    postgres=# SELECT * FROM ts_debug('english', 'Paris');
+    openGauss=# SELECT * FROM ts_debug('english', 'Paris');
        alias   |   description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {paris}
     (1 row)
     
-    postgres=# SELECT * FROM ts_debug('english', 'paris');
+    openGauss=# SELECT * FROM ts_debug('english', 'paris');
        alias   |   description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {paris}
     (1 row)
     
-    postgres=# ALTER TEXT SEARCH DICTIONARY my_synonym ( CASESENSITIVE=true);
+    openGauss=# ALTER TEXT SEARCH DICTIONARY my_synonym ( CASESENSITIVE=true);
     
-    postgres=# SELECT * FROM ts_debug('english', 'Paris');
+    openGauss=# SELECT * FROM ts_debug('english', 'Paris');
        alias   |   description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {paris}
     (1 row)
     
-    postgres=# SELECT * FROM ts_debug('english', 'paris');
+    openGauss=# SELECT * FROM ts_debug('english', 'paris');
        alias   |   description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {pari}
@@ -68,40 +68,40 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
     创建并使用词典：
 
     ```
-    postgres=# CREATE TEXT SEARCH DICTIONARY syn (
+    openGauss=# CREATE TEXT SEARCH DICTIONARY syn (
         TEMPLATE = synonym,
         SYNONYMS = synonym_sample
     );
     
-    postgres=# SELECT ts_lexize('syn','indices');
+    openGauss=# SELECT ts_lexize('syn','indices');
      ts_lexize 
     -----------
      {index}
     (1 row)
     
-    postgres=# CREATE TEXT SEARCH CONFIGURATION tst (copy=simple);
+    openGauss=# CREATE TEXT SEARCH CONFIGURATION tst (copy=simple);
     
-    postgres=# ALTER TEXT SEARCH CONFIGURATION tst ALTER MAPPING FOR asciiword WITH syn;
+    openGauss=# ALTER TEXT SEARCH CONFIGURATION tst ALTER MAPPING FOR asciiword WITH syn;
     
-    postgres=# SELECT to_tsvector('tst','indices');
+    openGauss=# SELECT to_tsvector('tst','indices');
      to_tsvector 
     -------------
      'index':1
     (1 row)
     
-    postgres=# SELECT to_tsquery('tst','indices');
+    openGauss=# SELECT to_tsquery('tst','indices');
      to_tsquery 
     ------------
      'index':*
     (1 row)
     
-    postgres=# SELECT 'indexes are very useful'::tsvector;
+    openGauss=# SELECT 'indexes are very useful'::tsvector;
                 tsvector             
     ---------------------------------
      'are' 'indexes' 'useful' 'very'
     (1 row)
     
-    postgres=# SELECT 'indexes are very useful'::tsvector @@ to_tsquery('tst','indices');
+    openGauss=# SELECT 'indexes are very useful'::tsvector @@ to_tsquery('tst','indices');
      ?column? 
     ----------
      t

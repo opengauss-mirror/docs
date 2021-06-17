@@ -276,19 +276,19 @@ LOCK的参数说明如下所示：
 
 ```
 --在执行删除操作时对一个有主键的表进行 SHARE ROW EXCLUSIVE 锁。
-postgres=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
+openGauss=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
 
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
-postgres=# LOCK TABLE tpcds.reason_t1 IN SHARE ROW EXCLUSIVE MODE;
+openGauss=# LOCK TABLE tpcds.reason_t1 IN SHARE ROW EXCLUSIVE MODE;
 
-postgres=# DELETE FROM tpcds.reason_t1 WHERE r_reason_desc IN(SELECT r_reason_desc FROM tpcds.reason_t1 WHERE r_reason_sk < 6 );
+openGauss=# DELETE FROM tpcds.reason_t1 WHERE r_reason_desc IN(SELECT r_reason_desc FROM tpcds.reason_t1 WHERE r_reason_sk < 6 );
 
-postgres=# DELETE FROM tpcds.reason_t1 WHERE r_reason_sk = 7;
+openGauss=# DELETE FROM tpcds.reason_t1 WHERE r_reason_sk = 7;
 
-postgres=# COMMIT;
+openGauss=# COMMIT;
 
 --删除表tpcds.reason_t1。
-postgres=# DROP TABLE tpcds.reason_t1;
+openGauss=# DROP TABLE tpcds.reason_t1;
 ```
 

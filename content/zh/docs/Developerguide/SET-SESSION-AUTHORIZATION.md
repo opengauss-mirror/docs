@@ -53,19 +53,19 @@
 
 ```
 --创建角色paul。
-postgres=# CREATE ROLE paul IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE ROLE paul IDENTIFIED BY 'xxxxxxxx';
 
 --设置当前用户为paul。
-postgres=# SET SESSION AUTHORIZATION paul password 'xxxxxxxx';
+openGauss=# SET SESSION AUTHORIZATION paul password 'xxxxxxxx';
 
 --查看当前会话用户，当前用户。
-postgres=# SELECT SESSION_USER, CURRENT_USER;
+openGauss=# SELECT SESSION_USER, CURRENT_USER;
 
 --重置当前用户。
-postgres=# RESET SESSION AUTHORIZATION;
+openGauss=# RESET SESSION AUTHORIZATION;
 
 --删除用户。
-postgres=# DROP USER paul;
+openGauss=# DROP USER paul;
 ```
 
 ## 相关参考<a name="zh-cn_topic_0237122189_zh-cn_topic_0059778193_sc0f2308a64c2470aaac2c18b49a18e95"></a>

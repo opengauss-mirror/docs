@@ -51,10 +51,10 @@ RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | TRANSACTION ISOLAT
 
 ```
 --把timezone设为缺省值。
-postgres=# RESET timezone;
+openGauss=# RESET timezone;
 
 --把所有参数设置为缺省值。
-postgres=# RESET ALL;
+openGauss=# RESET ALL;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122178_zh-cn_topic_0059779097_s97f0691750e2467d97f3e904047703d7"></a>
