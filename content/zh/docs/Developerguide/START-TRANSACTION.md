@@ -62,19 +62,19 @@ BEGIN [ WORK | TRANSACTION ]
 
 ```
 --以默认方式启动事务。
-postgres=# START TRANSACTION;
-postgres=# SELECT * FROM tpcds.reason;
-postgres=# END;
+openGauss=# START TRANSACTION;
+openGauss=# SELECT * FROM tpcds.reason;
+openGauss=# END;
 
 --以默认方式启动事务。
-postgres=# BEGIN;
-postgres=# SELECT * FROM tpcds.reason;
-postgres=# END;
+openGauss=# BEGIN;
+openGauss=# SELECT * FROM tpcds.reason;
+openGauss=# END;
 
 --以隔离级别为READ COMMITTED，读/写方式启动事务。
-postgres=# START TRANSACTION ISOLATION LEVEL READ COMMITTED READ WRITE;
-postgres=# SELECT * FROM tpcds.reason;
-postgres=# COMMIT;
+openGauss=# START TRANSACTION ISOLATION LEVEL READ COMMITTED READ WRITE;
+openGauss=# SELECT * FROM tpcds.reason;
+openGauss=# COMMIT;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s144c0965b0ba447e9d3a73dd5dac1aad"></a>

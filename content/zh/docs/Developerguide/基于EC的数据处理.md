@@ -261,7 +261,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     [连接数据库](zh-cn_topic_0289900104.md)，并创建Data Source对象。比如创建对应远端openGauss数据库实例的Data Source对象ds\_libra：
 
     ```
-    postgres=# CREATE DATA SOURCE ds_libra type 'MPPDB' OPTIONS (DSN 'libra', USERNAME 'libra_user', PASSWORD 'libra_pwd', ENCODING 'UTF8');
+    openGauss=# CREATE DATA SOURCE ds_libra type 'MPPDB' OPTIONS (DSN 'libra', USERNAME 'libra_user', PASSWORD 'libra_pwd', ENCODING 'UTF8');
     ```
 
     各字段含义、对象修改方法与SQL on Oracle中的[9](SQL-on-Oracle.md#li18691619432)类似。
@@ -271,7 +271,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     假设Data Source对象ds\_libra已经创建好，使用exec\_on\_extension函数进行连接，比如查询远端openGauss数据库实例中一张表a \(c1 int\)：
 
     ```
-    postgres=# SELECT * FROM exec_on_extension('ds_libra', 'select * from a;') AS (c1 int);
+    openGauss=# SELECT * FROM exec_on_extension('ds_libra', 'select * from a;') AS (c1 int);
     ```
 
 
@@ -285,7 +285,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
 6.  数据迁移时需要通过as子句指定表结构才能迁移成功。比如，将远端openGauss数据库实例中表a \(c1 int\)数据迁移至本地表b \(c1 int\)，使用如下语句：
 
     ```
-    postgres=# CREATE TABLE b AS SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
+    openGauss=# CREATE TABLE b AS SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
     NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'c1' as the distribution column by default.
     HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
     INSERT 0 1
@@ -297,33 +297,33 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
 
 ```
 -- 创建Data Source
-postgres=# CREATE DATA SOURCE librA OPTIONS (dsn 'odbc_librA', username 'mppcom', password 'Gs@123456');
+openGauss=# CREATE DATA SOURCE librA OPTIONS (dsn 'odbc_librA', username 'mppcom', password 'Gs@123456');
 
 
 -- 建远程表、插入数据
-postgres=# SELECT * FROM exec_on_extension('librA', 'create table a (c1 int);') AS (c1 text);
+openGauss=# SELECT * FROM exec_on_extension('librA', 'create table a (c1 int);') AS (c1 text);
  c1 
 ----
 (0 rows)
-postgres=# SELECT * FROM exec_on_extension('librA', 'insert into a values (911);') AS (c1 text);
+openGauss=# SELECT * FROM exec_on_extension('librA', 'insert into a values (911);') AS (c1 text);
  c1 
 ----
 (0 rows)
 -- 执行计划，如果计划在目标库是多列显示则此处需要以对应的列数返回
 -- 此处远端openGauss数据库实例中参数 explain_perf_mode=normal
-postgres=# SELECT * FROM exec_on_extension('librA', 'explain select * from a;') AS (c1 text);
+openGauss=# SELECT * FROM exec_on_extension('librA', 'explain select * from a;') AS (c1 text);
                     QUERY PLAN                    
 --------------------------------------------------
  Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
    Node/s: All datanodes
 (2 rows)
-postgres=# SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
+openGauss=# SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
  c1  
 -----
  911
 (1 row)
 -- 此处发送的SQL语句返回两列，但函数exec_on_extension只返回一列，注意靠前匹配原则
-postgres=# SELECT * FROM exec_on_extension('librA', 'select * from a a1 inner join a a2 on a1.c1=a2.c1;') AS (c1 int);
+openGauss=# SELECT * FROM exec_on_extension('librA', 'select * from a a1 inner join a a2 on a1.c1=a2.c1;') AS (c1 int);
  c1  
 -----
  911
@@ -331,13 +331,13 @@ postgres=# SELECT * FROM exec_on_extension('librA', 'select * from a a1 inner jo
 (2 rows)
 
 -- 与本地表关联
-postgres=# CREATE TABLE b AS SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
+openGauss=# CREATE TABLE b AS SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
 NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'c1' as the distribution column by default.
 HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
 INSERT 0 1
-postgres=# INSERT INTO b SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
+openGauss=# INSERT INTO b SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
 INSERT 0 1
-postgres=# SELECT * FROM b WHERE b.c1 in (SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int));
+openGauss=# SELECT * FROM b WHERE b.c1 in (SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int));
  c1  
 -----
  911
@@ -345,28 +345,28 @@ postgres=# SELECT * FROM b WHERE b.c1 in (SELECT * FROM exec_on_extension('librA
 (2 rows)
 
 -- 其他用户使用该Data Source
-postgres=# CREATE USER tmp_usr IDENTIFIED BY 'Gs@123456';
+openGauss=# CREATE USER tmp_usr IDENTIFIED BY 'Gs@123456';
 
-postgres=# GRANT USAGE ON DATA SOURCE librA TO tmp_usr;
+openGauss=# GRANT USAGE ON DATA SOURCE librA TO tmp_usr;
 
-postgres=# \c - tmp_usr
-postgres=> SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
+openGauss=# \c - tmp_usr
+openGauss=> SELECT * FROM exec_on_extension('librA', 'select * from a;') AS (c1 int);
  c1  
 -----
  911
 (1 row)
 
 -- 清除Data Source、表和用户
-postgres=>\c - omm
-postgres=# SELECT * FROM exec_on_extension('librA', 'drop table a;') AS (c1 text);
+openGauss=>\c - omm
+openGauss=# SELECT * FROM exec_on_extension('librA', 'drop table a;') AS (c1 text);
  c1 
 ----
 (0 rows)
-postgres=# DROP DATA SOURCE librA;
+openGauss=# DROP DATA SOURCE librA;
 
-postgres=# DROP TABLE b;
+openGauss=# DROP TABLE b;
 
-postgres=# DROP USER tmp_usr;
+openGauss=# DROP USER tmp_usr;
 ```
 
 ## 异常处理<a name="section884931314334"></a>

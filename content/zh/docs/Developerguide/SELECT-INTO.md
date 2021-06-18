@@ -71,11 +71,11 @@ new\_table指定新建表的名称。
 
 ```
 --将tpcds.reason表中r_reason_sk小于5的值加入到新建表中。
-postgres=# SELECT * INTO tpcds.reason_t1 FROM tpcds.reason WHERE r_reason_sk < 5;
+openGass=# SELECT * INTO tpcds.reason_t1 FROM tpcds.reason WHERE r_reason_sk < 5;
 INSERT 0 6
 
 --删除tpcds.reason_t1表。
-postgres=# DROP TABLE tpcds.reason_t1;
+openGauss=# DROP TABLE tpcds.reason_t1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122185_zh-cn_topic_0059779381_se82df922609a4e8eb3a6d6a011e508a6"></a>

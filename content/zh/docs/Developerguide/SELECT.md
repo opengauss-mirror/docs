@@ -443,34 +443,34 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ```
 --先通过子查询得到一张临时表temp_t，然后查询表temp_t中的所有数据。
-postgres=# WITH temp_t(name,isdba) AS (SELECT usename,usesuper FROM pg_user) SELECT * FROM temp_t;
+openGauss=# WITH temp_t(name,isdba) AS (SELECT usename,usesuper FROM pg_user) SELECT * FROM temp_t;
 
 --查询tpcds.reason表的所有r_reason_sk记录，且去除重复。
-postgres=# SELECT DISTINCT(r_reason_sk) FROM tpcds.reason;
+openGauss=# SELECT DISTINCT(r_reason_sk) FROM tpcds.reason;
 
 --LIMIT子句示例：获取表中一条记录。
-postgres=# SELECT * FROM tpcds.reason LIMIT 1;
+openGauss=# SELECT * FROM tpcds.reason LIMIT 1;
 
 --查询所有记录，且按字母升序排列。
-postgres=# SELECT r_reason_desc FROM tpcds.reason ORDER BY r_reason_desc;
+openGauss=# SELECT r_reason_desc FROM tpcds.reason ORDER BY r_reason_desc;
 
 --通过表别名，从pg_user和pg_user_status这两张表中获取数据。
-postgres=# SELECT a.usename,b.locktime FROM pg_user a,pg_user_status b WHERE a.usesysid=b.roloid;
+openGauss=# SELECT a.usename,b.locktime FROM pg_user a,pg_user_status b WHERE a.usesysid=b.roloid;
 
 --FULL JOIN子句示例：将pg_user和pg_user_status这两张表的数据进行全连接显示，即数据的合集。
-postgres=# SELECT a.usename,b.locktime,a.usesuper FROM pg_user a FULL JOIN pg_user_status b on a.usesysid=b.roloid;
+openGauss=# SELECT a.usename,b.locktime,a.usesuper FROM pg_user a FULL JOIN pg_user_status b on a.usesysid=b.roloid;
 
 --GROUP BY子句示例：根据查询条件过滤，并对结果进行分组。
-postgres=# SELECT r_reason_id, AVG(r_reason_sk) FROM tpcds.reason GROUP BY r_reason_id HAVING AVG(r_reason_sk) > 25;
+openGauss=# SELECT r_reason_id, AVG(r_reason_sk) FROM tpcds.reason GROUP BY r_reason_id HAVING AVG(r_reason_sk) > 25;
 
 --GROUP BY CUBE子句示例：根据查询条件过滤，并对结果进行分组汇总。
-postgres=# SELECT r_reason_id,AVG(r_reason_sk) FROM tpcds.reason GROUP BY CUBE(r_reason_id,r_reason_sk);
+openGauss=# SELECT r_reason_id,AVG(r_reason_sk) FROM tpcds.reason GROUP BY CUBE(r_reason_id,r_reason_sk);
 
 --GROUP BY GROUPING SETS子句示例:根据查询条件过滤，并对结果进行分组汇总。
-postgres=# SELECT r_reason_id,AVG(r_reason_sk) FROM tpcds.reason GROUP BY GROUPING SETS((r_reason_id,r_reason_sk),r_reason_sk);
+openGauss=# SELECT r_reason_id,AVG(r_reason_sk) FROM tpcds.reason GROUP BY GROUPING SETS((r_reason_id,r_reason_sk),r_reason_sk);
 
 --UNION子句示例：将表tpcds.reason里r_reason_desc字段中的内容以W开头和以N开头的进行合并。
-postgres=# SELECT r_reason_sk, tpcds.reason.r_reason_desc
+openGauss=# SELECT r_reason_sk, tpcds.reason.r_reason_desc
     FROM tpcds.reason
     WHERE tpcds.reason.r_reason_desc LIKE 'W%'
 UNION
@@ -479,14 +479,14 @@ SELECT r_reason_sk, tpcds.reason.r_reason_desc
     WHERE tpcds.reason.r_reason_desc LIKE 'N%';
 
 --NLS_SORT子句示例：中文拼音排序。
-postgres=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = SCHINESE_PINYIN_M');
+openGauss=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = SCHINESE_PINYIN_M');
 
 
 --不区分大小写排序:
-postgres=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = generic_m_ci');
+openGauss=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = generic_m_ci');
 
 --创建分区表tpcds.reason_p
-postgres=# CREATE TABLE tpcds.reason_p
+openGauss=# CREATE TABLE tpcds.reason_p
 (
   r_reason_sk integer,
   r_reason_id character(16),
@@ -503,10 +503,10 @@ PARTITION BY RANGE (r_reason_sk)
 ;
 
 --插入数据。
-postgres=# INSERT INTO tpcds.reason_p values(3,'AAAAAAAABAAAAAAA','reason 1'),(10,'AAAAAAAABAAAAAAA','reason 2'),(4,'AAAAAAAABAAAAAAA','reason 3'),(10,'AAAAAAAABAAAAAAA','reason 4'),(10,'AAAAAAAABAAAAAAA','reason 5'),(20,'AAAAAAAACAAAAAAA','reason 6'),(30,'AAAAAAAACAAAAAAA','reason 7');
+openGauss=# INSERT INTO tpcds.reason_p values(3,'AAAAAAAABAAAAAAA','reason 1'),(10,'AAAAAAAABAAAAAAA','reason 2'),(4,'AAAAAAAABAAAAAAA','reason 3'),(10,'AAAAAAAABAAAAAAA','reason 4'),(10,'AAAAAAAABAAAAAAA','reason 5'),(20,'AAAAAAAACAAAAAAA','reason 6'),(30,'AAAAAAAACAAAAAAA','reason 7');
 
 --PARTITION子句示例：从tpcds.reason_p的表分区P_05_BEFORE中获取数据。
-postgres=#  SELECT * FROM tpcds.reason_p PARTITION (P_05_BEFORE);
+openGauss=#  SELECT * FROM tpcds.reason_p PARTITION (P_05_BEFORE);
  r_reason_sk |   r_reason_id    |   r_reason_desc                   
 -------------+------------------+------------------------------------
            4 | AAAAAAAABAAAAAAA | reason 3                          
@@ -514,7 +514,7 @@ postgres=#  SELECT * FROM tpcds.reason_p PARTITION (P_05_BEFORE);
 (2 rows)
 
 --GROUP BY子句示例：按r_reason_id分组统计tpcds.reason_p表中的记录数。
-postgres=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id;
+openGauss=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id;
  count |   r_reason_id    
 -------+------------------
      2 | AAAAAAAACAAAAAAA
@@ -522,27 +522,27 @@ postgres=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id;
 (2 rows)
 
 --GROUP BY CUBE子句示例：根据查询条件过滤，并对查询结果分组汇总。
-postgres=# SELECT * FROM tpcds.reason GROUP BY  CUBE (r_reason_id,r_reason_sk,r_reason_desc);
+openGauss=# SELECT * FROM tpcds.reason GROUP BY  CUBE (r_reason_id,r_reason_sk,r_reason_desc);
 
 --GROUP BY GROUPING SETS子句示例：根据查询条件过滤，并对查询结果分组汇总。
-postgres=# SELECT * FROM tpcds.reason GROUP BY  GROUPING SETS ((r_reason_id,r_reason_sk),r_reason_desc);
+openGauss=# SELECT * FROM tpcds.reason GROUP BY  GROUPING SETS ((r_reason_id,r_reason_sk),r_reason_desc);
 
 --HAVING子句示例：按r_reason_id分组统计tpcds.reason_p表中的记录，并只显示r_reason_id个数大于2的信息。
-postgres=# SELECT COUNT(*) c,r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id HAVING c>2;
+openGauss=# SELECT COUNT(*) c,r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id HAVING c>2;
  c |   r_reason_id    
 ---+------------------
  5 | AAAAAAAABAAAAAAA
 (1 row)
 
 --IN子句示例：按r_reason_id分组统计tpcds.reason_p表中的r_reason_id个数，并只显示r_reason_id值为 AAAAAAAABAAAAAAA或AAAAAAAADAAAAAAA的个数。
-postgres=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id HAVING r_reason_id IN('AAAAAAAABAAAAAAA','AAAAAAAADAAAAAAA'); 
+openGauss=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id HAVING r_reason_id IN('AAAAAAAABAAAAAAA','AAAAAAAADAAAAAAA'); 
 count |   r_reason_id    
 -------+------------------
      5 | AAAAAAAABAAAAAAA
 (1 row)
 
 --INTERSECT子句示例：查询r_reason_id等于AAAAAAAABAAAAAAA，并且r_reason_sk小于5的信息。
-postgres=# SELECT * FROM tpcds.reason_p WHERE r_reason_id='AAAAAAAABAAAAAAA' INTERSECT SELECT * FROM tpcds.reason_p WHERE r_reason_sk<5;
+openGauss=# SELECT * FROM tpcds.reason_p WHERE r_reason_id='AAAAAAAABAAAAAAA' INTERSECT SELECT * FROM tpcds.reason_p WHERE r_reason_sk<5;
  r_reason_sk |   r_reason_id    |     r_reason_desc                 
 -------------+------------------+------------------------------------
            4 | AAAAAAAABAAAAAAA | reason 3                           
@@ -550,7 +550,7 @@ postgres=# SELECT * FROM tpcds.reason_p WHERE r_reason_id='AAAAAAAABAAAAAAA' INT
 (2 rows)
 
 --EXCEPT子句示例：查询r_reason_id等于AAAAAAAABAAAAAAA，并且去除r_reason_sk小于4的信息。
-postgres=# SELECT * FROM tpcds.reason_p WHERE r_reason_id='AAAAAAAABAAAAAAA' EXCEPT SELECT * FROM tpcds.reason_p WHERE r_reason_sk<4;
+openGauss=# SELECT * FROM tpcds.reason_p WHERE r_reason_id='AAAAAAAABAAAAAAA' EXCEPT SELECT * FROM tpcds.reason_p WHERE r_reason_sk<4;
 r_reason_sk |   r_reason_id    |      r_reason_desc                  
 -------------+------------------+------------------------------------
           10 | AAAAAAAABAAAAAAA | reason 2                          
@@ -560,7 +560,7 @@ r_reason_sk |   r_reason_id    |      r_reason_desc
 (4 rows)
 
 --通过在where子句中指定"(+)"来实现左连接。
-postgres=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk  = t2.c_customer_sk(+) 
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk  = t2.c_customer_sk(+) 
 order by 1 desc limit 1;
  sr_item_sk | c_customer_id
 ------------+---------------
@@ -568,7 +568,7 @@ order by 1 desc limit 1;
 (1 row)
 
 --通过在where子句中指定"(+)"来实现右连接。
-postgres=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk(+)  = t2.c_customer_sk 
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk(+)  = t2.c_customer_sk 
 order by 1 desc limit 1;
  sr_item_sk |  c_customer_id
 ------------+------------------
@@ -576,27 +576,27 @@ order by 1 desc limit 1;
 (1 row)
 
 --通过在where子句中指定"(+)"来实现左连接，并且增加连接条件。
-postgres=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk  = t2.c_customer_sk(+) and t2.c_customer_sk(+) < 1 order by 1  limit 1;
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk  = t2.c_customer_sk(+) and t2.c_customer_sk(+) < 1 order by 1  limit 1;
  sr_item_sk | c_customer_id
 ------------+---------------
           1 |
 (1 row)
 
 --不支持在where子句中指定"(+)"的同时使用内层嵌套AND/OR的表达式。
-postgres=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where not(t1.sr_customer_sk  = t2.c_customer_sk(+) and t2.c_customer_sk(+) < 1);
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where not(t1.sr_customer_sk  = t2.c_customer_sk(+) and t2.c_customer_sk(+) < 1);
 ERROR:  Operator "(+)" can not be used in nesting expression.
 LINE 1: ...tomer_id from store_returns t1, customer t2 where not(t1.sr_...
                                                              ^
 --where子句在不支持表达式宏指定"(+)"会报错。
-postgres=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where (t1.sr_customer_sk  = t2.c_customer_sk(+))::bool;
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where (t1.sr_customer_sk  = t2.c_customer_sk(+))::bool;
 ERROR:  Operator "(+)" can only be used in common expression.
 
 --where子句在表达式的两边都指定"(+)"会报错。
-postgres=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk(+)  = t2.c_customer_sk(+);
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk(+)  = t2.c_customer_sk(+);
 ERROR:  Operator "(+)" can't be specified on more than one relation in one join condition
 HINT:  "t1", "t2"...are specified Operator "(+)" in one condition.
 
 --删除表。
-postgres=# DROP TABLE tpcds.reason_p;
+openGauss=# DROP TABLE tpcds.reason_p;
 ```
 

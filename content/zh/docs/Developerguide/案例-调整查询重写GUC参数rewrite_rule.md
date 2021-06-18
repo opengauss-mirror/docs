@@ -7,13 +7,13 @@ rewrite\_rule包含了多个查询重写规则：magicset、partialpush、unique
 通过将目标列中子查询提升，转为JOIN，往往可以极大提升查询性能。举例如下查询：
 
 ```
-postgres=# set rewrite_rule='none';
+openGauss=# set rewrite_rule='none';
 SET
-postgres=# create table t1(c1 int,c2 int);
+openGauss=# create table t1(c1 int,c2 int);
 CREATE TABLE
-postgres=# create table t2(c1 int,c2 int);
+openGauss=# create table t2(c1 int,c2 int);
 CREATE TABLE
-postgres=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 where t2.c2=t1.c2) from t1 where t1.c1<100 order by t1.c2;
+openGauss=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 where t2.c2=t1.c2) from t1 where t1.c1<100 order by t1.c2;
                   QUERY PLAN
 -----------------------------------------------
  Sort
@@ -34,9 +34,9 @@ postgres=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 wh
 由于目标列中的相关子查询\(select avg\(c2\) from t2 where t2.c2=t1.c2\)无法提升的缘故，导致每扫描t1的一行数据，就会触发子查询的一次执行，效率低下。如果打开intargetlist参数会把子查询提升转为JOIN，来提升查询的性能：
 
 ```
-postgres=# set rewrite_rule='intargetlist';
+openGauss=# set rewrite_rule='intargetlist';
 SET
-postgres=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 where t2.c2=t1.c2) from t1 where t1.c1<100 order by t1.c2;
+openGauss=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 where t2.c2=t1.c2) from t1 where t1.c1<100 order by t1.c2;
                   QUERY PLAN
 -----------------------------------------------
  Sort
@@ -71,9 +71,9 @@ select t1.c1 from t1 join \(select t2.c1 from t2 where t2.c1 is not null group b
 为了保证语义等价，子查询tt必须保证对于每个group by t2.c1只能有一行输出。打开uniquecheck查询重写参数保证可以提升并且等价，如果在运行时输出了多于一行的数据，就会报错。
 
 ```
-postgres=# set rewrite_rule='uniquecheck';
+openGauss=# set rewrite_rule='uniquecheck';
 SET
-postgres=# explain verbose select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c1);
+openGauss=# explain verbose select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c1);
                                      QUERY PLAN
 -------------------------------------------------------------------------------------
  Hash Join  (cost=43.36..104.40 rows=2149 distinct=[200, 200] width=4)
@@ -100,14 +100,14 @@ postgres=# explain verbose select t1.c1 from t1 where t1.c1 = (select t2.c1 from
 有t1,t2表，其中的数据为：
 
 ```
-postgres=# select * from t1 order by c2;
+openGauss=# select * from t1 order by c2;
  c1 | c2
 ----+----
   1 |  1
   2 |  2
   3 |  3
 (3 rows)
-postgres=# select * from t2 order by c2;
+openGauss=# select * from t2 order by c2;
  c1 | c2
 ----+----
   1 |  1
@@ -122,16 +122,16 @@ postgres=# select * from t2 order by c2;
 分别关闭和打开uniquecheck参数对比，打开之后报错。
 
 ```
-postgres=# select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
+openGauss=# select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
  c1
 ----
   1
   2
   3
 (3 rows)
-postgres=# set rewrite_rule='uniquecheck';
+openGauss=# set rewrite_rule='uniquecheck';
 SET
-postgres=# select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
+openGauss=# select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
 ERROR:  more than one row returned by a subquery used as an expression
 ```
 

@@ -76,7 +76,7 @@ select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;
 - 对于输入的`object-json`字符串，解析成`jsonb`二进制后，会天然的丢弃语义上无关紧要的细节，比如空格:
 
 ```
-postgres=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;
+openGauss=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;
         jsonb
 ----------------------
  [1, " a ", {"a": 1}]
@@ -86,7 +86,7 @@ postgres=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;
 - 对于`object-json`，会删除重复的键值，只保留最后一个出现的，如：
 
 ```
-postgres=# select '{"a" : 1, "a" : 2}'::jsonb;
+openGauss=# select '{"a" : 1, "a" : 2}'::jsonb;
   jsonb
 ----------
  {"a": 2}
@@ -96,7 +96,7 @@ postgres=# select '{"a" : 1, "a" : 2}'::jsonb;
 - 对于object-json，键值会重新进行排序，排序规则：长度长的在后、长度相等则ascii码大的在后，如：
 
 ```
-postgres=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;
+openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;
            jsonb
 ---------------------------
  {"a": 3, "b": 2, "aa": 1}

@@ -24,13 +24,13 @@ ROLLBACK;
 - 在指定ANALYZE选项时，由于参数DETAIL，NODES，NUM_NODES是属于分布式模式的功能，因此在单机模式中是被禁止使用的。假如在单机模式中使用，会产生如下所示的错误：
 
   ```
-  postgres=# create table student(id int, name char(20));
+  openGauss=# create table student(id int, name char(20));
   CREATE TABLE
-  postgres=# explain (analyze,detail true)insert into student values(5,'a'),(6,'b');
+  openGauss=# explain (analyze,detail true)insert into student values(5,'a'),(6,'b');
   ERROR:  unrecognized EXPLAIN option "detail"
-  postgres=# explain (analyze,node true)insert into student values(5,'a'),(6,'b');
+  openGauss=# explain (analyze,node true)insert into student values(5,'a'),(6,'b');
   ERROR:  unrecognized EXPLAIN option "nodes"
-  postgres=# explain (analyze,num_nodes true)insert into student values(5,'a'),(6,'b');
+  openGauss=# explain (analyze,num_nodes true)insert into student values(5,'a'),(6,'b');
   ERROR:  unrecognized EXPLAIN option "num_nodes"
   ```
 
@@ -181,13 +181,13 @@ ROLLBACK;
 
 ```
 --创建一个表tpcds.customer_address_p1。
-postgres=# CREATE TABLE tpcds.customer_address_p1 AS TABLE tpcds.customer_address;
+openGauss=# CREATE TABLE tpcds.customer_address_p1 AS TABLE tpcds.customer_address;
 
 --修改explain_perf_mode为normal
-postgres=# SET explain_perf_mode=normal;
+openGauss=# SET explain_perf_mode=normal;
 
 --显示表简单查询的执行计划。
-postgres=# EXPLAIN SELECT * FROM tpcds.customer_address_p1;
+openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1;
 QUERY PLAN
 --------------------------------------------------
 Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
@@ -195,7 +195,7 @@ Node/s: All dbnodes
 (2 rows)
 
 --以JSON格式输出的执行计划（explain_perf_mode为normal时）。
-postgres=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
+openGauss=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
               QUERY PLAN              
 --------------------------------------
  [                                   +
@@ -213,7 +213,7 @@ postgres=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
 (1 row)
 
 --如果有一个索引，当使用一个带索引WHERE条件的查询，可能会显示一个不同的计划。
-postgres=# EXPLAIN SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
+openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
 QUERY PLAN
 --------------------------------------------------
 Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
@@ -221,7 +221,7 @@ Node/s: dn_6005_6006
 (2 rows)
 
 --以YAML格式输出的执行计划（explain_perf_mode为normal时）。
-postgres=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
+openGauss=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
            QUERY PLAN            
 ---------------------------------
  - Plan:                        +
@@ -234,7 +234,7 @@ postgres=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca
 (1 row)
 
 --禁止开销估计的执行计划。
-postgres=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
+openGauss=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
        QUERY PLAN       
 ------------------------
  Data Node Scan
@@ -242,7 +242,7 @@ postgres=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_
 (2 rows)
 
 --带有聚集函数查询的执行计划。
-postgres=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHERE ca_address_sk<10000;
+openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHERE ca_address_sk<10000;
                                       QUERY PLAN                                       
 ---------------------------------------------------------------------------------------
  Aggregate  (cost=18.19..14.32 rows=1 width=4)
@@ -254,7 +254,7 @@ postgres=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHER
 (6 rows)
 
 --删除表tpcds.customer_address_p1。
-postgres=# DROP TABLE tpcds.customer_address_p1;
+openGauss=# DROP TABLE tpcds.customer_address_p1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>

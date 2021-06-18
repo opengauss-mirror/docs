@@ -36,7 +36,7 @@ openGauss可以通过调用SQL函数，进行创建、删除、推进逻辑复�
 3.  创建名称为slot1的逻辑复制槽。
 
     ```
-    postgres=# SELECT * FROM pg_create_logical_replication_slot('slot1', 'mppdb_decoding');
+    openGauss=# SELECT * FROM pg_create_logical_replication_slot('slot1', 'mppdb_decoding');
     slotname | xlog_position
     ----------+---------------
     slot1    | 0/601C150
@@ -46,14 +46,14 @@ openGauss可以通过调用SQL函数，进行创建、删除、推进逻辑复�
 4.  在数据库中创建表t，并向表t中插入数据。
 
     ```
-    postgres=# CREATE TABLE t(a int PRIMARY KEY, b int);
-    postgres=# INSERT INTO t VALUES(3,3);
+    openGauss=# CREATE TABLE t(a int PRIMARY KEY, b int);
+    openGauss=# INSERT INTO t VALUES(3,3);
     ```
 
 5.  读取复制槽slot1解码结果，解码条数为4096。
 
     ```
-    postgres=# SELECT * FROM pg_logical_slot_peek_changes('slot1', NULL, 4096);
+    openGauss=# SELECT * FROM pg_logical_slot_peek_changes('slot1', NULL, 4096);
     location  |  xid  | data                                                                                         
     -----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------
     -------------------------------------------
@@ -68,7 +68,7 @@ openGauss可以通过调用SQL函数，进行创建、删除、推进逻辑复�
 6.  删除逻辑复制槽slot1。
 
     ```
-    postgres=#  SELECT * FROM pg_drop_replication_slot('slot1');
+    openGauss=#  SELECT * FROM pg_drop_replication_slot('slot1');
      pg_drop_replication_slot
     --------------------------
     

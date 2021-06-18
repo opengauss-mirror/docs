@@ -100,14 +100,14 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
 ```
 --在表tpcds.reason上创建索引。
-postgres=# CREATE UNIQUE INDEX ds_reason_index1 ON tpcds.reason(r_reason_sk);
+openGauss=# CREATE UNIQUE INDEX ds_reason_index1 ON tpcds.reason(r_reason_sk);
 
 --对带索引的表tpcds.reason执行VACUUM操作。
-postgres=# VACUUM (VERBOSE, ANALYZE) tpcds.reason;
+openGauss=# VACUUM (VERBOSE, ANALYZE) tpcds.reason;
 
 --删除索引。
-postgres=# DROP INDEX ds_reason_index1 CASCADE;
-postgres=# DROP TABLE tpcds.reason;
+openGauss=# DROP INDEX ds_reason_index1 CASCADE;
+openGauss=# DROP TABLE tpcds.reason;
 ```
 
 ## 优化建议<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_section34774208154224"></a>

@@ -31,9 +31,9 @@ immediate：强行关闭，在下次重新启动的时候将导致故障恢复�
 
 ```
 --关闭当前数据库节点。
-postgres=# SHUTDOWN;
+openGauss=# SHUTDOWN;
 
 --使用fast模式关闭当前数据库节点。
-postgres=# SHUTDOWN FAST;
+openGauss=# SHUTDOWN FAST;
 ```
 

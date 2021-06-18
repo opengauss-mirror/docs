@@ -171,19 +171,19 @@ pldebugger提供一系列接口，用于捕获、调试相关的存储过程。�
 
 ```
 --server端，注册并执行需要被调试的存储过程，此处举例存储过程名为compute，其oid为16382。
-postgres=# select plpgsql_oid_debug(16382);
+openGauss=# select plpgsql_oid_debug(16382);
 NOTICE:  Pldebugger is started successfully, you are SERVER now.
 CONTEXT:  referenced column: plpgsql_oid_debug
  plpgsql_oid_debug
 -------------------
                  0
 (1 row)
-postgres=# select * from compute(1);
+openGauss=# select * from compute(1);
 NOTICE:  YOUR PROXY PORT ID IS:0
 CONTEXT:  PL/pgSQL function compute(integer) line 3 at assignment
 
 --client端，根据proxy port id捕获server，并生成一个session id。
-postgres=# select * from pldbg_attach_to_port(0);
+openGauss=# select * from pldbg_attach_to_port(0);
 NOTICE:  Pldebugger is started successfully, you are CLIENT now.
  pldbg_attach_to_port
 ----------------------
@@ -194,20 +194,20 @@ NOTICE:  Pldebugger is started successfully, you are CLIENT now.
 示例2：断点操作，设置、查看、删除断点。
 
 ```
-postgres=# select pldbg_set_breakpoint(1, 16382, 6);
+openGauss=# select pldbg_set_breakpoint(1, 16382, 6);
  pldbg_set_breakpoint
 ----------------------
  t
 (1 row)
 
-postgres=# select * from pldbg_get_breakpoints(1);
+openGauss=# select * from pldbg_get_breakpoints(1);
  func  | linenumber | targetname
 -------+------------+------------
  16382 |          6 |
  16382 |         -1 |
 (2 rows)
 
-postgres=# select * from pldbg_drop_breakpoint(1, 16382, 6);
+openGauss=# select * from pldbg_drop_breakpoint(1, 16382, 6);
  pldbg_drop_breakpoint
 -----------------------
  t
@@ -217,7 +217,7 @@ postgres=# select * from pldbg_drop_breakpoint(1, 16382, 6);
 示例3：打印变量、堆栈。
 
 ```
-postgres=# select * from pldbg_get_variables(1);
+openGauss=# select * from pldbg_get_variables(1);
                 name                | varclass | linenumber | isunique | isconst | isnotnull | dtype | value
 ------------------------------------+----------+------------+----------+---------+-----------+-------+-------
  i                                  | A        |          0 | t        | f       | f         |    23 | 1
@@ -229,7 +229,7 @@ postgres=# select * from pldbg_get_variables(1);
  __gsdb_sql_cursor_attri_rowcount__ | L        |          0 | t        | f       | f         |    23 | NULL
 (7 rows)
 
-postgres=# select * from pldbg_get_stack(1);
+openGauss=# select * from pldbg_get_stack(1);
  level |    targetname     | func  | linenumber | args
 -------+-------------------+-------+------------+------
      0 | compute(integer)  | 16382 |          4 | i=1
@@ -239,21 +239,21 @@ postgres=# select * from pldbg_get_stack(1);
 示例4：单步执行、继续执行、停止执行。
 
 ```
-postgres=# select pldbg_step_into(1);
+openGauss=# select pldbg_step_into(1);
         pldbg_step_into
 -------------------------------
  (16382,5,"compute(integer)")
 (1 row)
 
-postgres=# select pldbg_step_over(1);
+openGauss=# select pldbg_step_over(1);
         pldbg_step_over
 -------------------------------
  (16382,6,"compute(integer)")
 (1 row)
 
-postgres=# select * from pldbg_continue(1);
+openGauss=# select * from pldbg_continue(1);
 
-postgres=# select * from pldbg_abort_target(1);
+openGauss=# select * from pldbg_abort_target(1);
  pldbg_abort_target
 --------------------
  t

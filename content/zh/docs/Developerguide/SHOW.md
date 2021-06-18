@@ -30,10 +30,10 @@ SHOW
 
 ```
 --显示 timezone 参数值。
-postgres=# SHOW timezone;
+openGauss=# SHOW timezone;
 
 --显示所有参数。
-postgres=# SHOW ALL;
+openGauss=# SHOW ALL;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122191_zh-cn_topic_0059779163_s5f7ae1b9fc8c4edfa04138996c61eaa4"></a>

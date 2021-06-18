@@ -167,7 +167,7 @@
 5.  删除外表。
 
     ```
-    postgres=# DROP FOREIGN TABLE region;
+    openGauss=# DROP FOREIGN TABLE region;
     DROP FOREIGN TABLE 
     ```
 

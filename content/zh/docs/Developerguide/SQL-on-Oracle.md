@@ -324,7 +324,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 
     -   不配置安全连接时，添加内容（'\#'及其后面的内容不要）:
-
+    
         ```
         [oracle]                                # DSN
         Driver=Oracle ODBC driver               # Oracle ODBC名称
@@ -332,7 +332,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         Database=orcl                           # 待连接的Oracle实例名称
         Port=XXXX                               # Oracle的端口号
         ```
-
+    
         创建Data Source时，其中的dsn字段就是此处DNS.ini文件中的"oracle".
 
 
@@ -439,7 +439,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     2.  创建Data Source。
 
         ```
-        postgres=# CREATE DATA SOURCE ds_oracle TYPE 'ORACLE' OPTIONS (DSN 'oracle', USERNAME 'oracle_user', PASSWORD 'oracle_pwd', ENCODING 'UTF8');
+        openGauss=# CREATE DATA SOURCE ds_oracle TYPE 'ORACLE' OPTIONS (DSN 'oracle', USERNAME 'oracle_user', PASSWORD 'oracle_pwd', ENCODING 'UTF8');
         ```
 
         其OPTIONS中DSN字段为odbc.ini中对应Oracle数据库的DSN（在上一个步骤中即是'oracle'），USERNAME和PASSWORD字段分别为Oracle数据库的待访问实例ORCL（odbc.ini中的database）的用户名和密码，ENCODING字段为Oracle字符集的编码方式。
@@ -447,7 +447,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         如果需要修改ds\_oracle中的PASSWORD为'new\_pwd'，则可做如下操作：
 
         ```
-        postgres=# ALTER DATA SOURCE ds_oracle OPTIONS (SET PASSWORD 'new_pwd');
+        openGauss=# ALTER DATA SOURCE ds_oracle OPTIONS (SET PASSWORD 'new_pwd');
         ```
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -464,7 +464,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     完成以上配置后，在数据库实例正常的情况下，即可连接openGauss数据库，对Oracle数据库进行SQL操作。比如查询Oracle的一张表a\(c1 number\(9,0\)\)：
 
     ```
-    postgres=# SELECT * FROM exec_on_extension('ds_oracle', 'select * from a;') AS (c1 int);
+    openGauss=# SELECT * FROM exec_on_extension('ds_oracle', 'select * from a;') AS (c1 int);
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -488,29 +488,29 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 ```
 -- 创建Data Source（这里的username/password是指待连接的Oracle数据库的用户名/密码）
-postgres=# CREATE DATA SOURCE oracle VERSION '11g' OPTIONS (dsn 'oracle', username 'user_ora', password 'pwd_ora', encoding 'utf8');
+openGauss=# CREATE DATA SOURCE oracle VERSION '11g' OPTIONS (dsn 'oracle', username 'user_ora', password 'pwd_ora', encoding 'utf8');
 
 
 -- 建远程表、插入数据、查询数据
-postgres=# SELECT * FROM exec_on_extension('oracle', 'create table a (c1 int);') AS (c1 text);
+openGauss=# SELECT * FROM exec_on_extension('oracle', 'create table a (c1 int);') AS (c1 text);
  c1 
 ----
 (0 rows)
-postgres=# SELECT * FROM exec_on_extension('oracle', 'insert into a values (119);') AS (c1 text);
+openGauss=# SELECT * FROM exec_on_extension('oracle', 'insert into a values (119);') AS (c1 text);
  c1 
 ----
 (0 rows)
-postgres=# SELECT * FROM exec_on_extension('oracle', 'insert into a select * from a;') AS (c1 text);
+openGauss=# SELECT * FROM exec_on_extension('oracle', 'insert into a select * from a;') AS (c1 text);
  c1 
 ----
 (0 rows)
-postgres=# SELECT * FROM exec_on_extension('oracle', 'select * from a;') AS (c1 int);
+openGauss=# SELECT * FROM exec_on_extension('oracle', 'select * from a;') AS (c1 int);
  c1  
 -----
  119
  119
 (2 rows)
-postgres=# SELECT * FROM exec_on_extension('oracle', 'select * from a a1 inner join a a2 on a1.c1=a2.c1;') AS (c1 int, c2 int);
+openGauss=# SELECT * FROM exec_on_extension('oracle', 'select * from a a1 inner join a a2 on a1.c1=a2.c1;') AS (c1 int, c2 int);
  c1  | c2  
 -----+-----
  119 | 119
@@ -520,15 +520,15 @@ postgres=# SELECT * FROM exec_on_extension('oracle', 'select * from a a1 inner j
 (4 rows)
 
 -- 查询结果入本地表
-postgres=# CREATE TABLE b AS SELECT * FROM exec_on_extension('oracle', 'select * from a group by c1;') AS (c1 int);
+openGauss=# CREATE TABLE b AS SELECT * FROM exec_on_extension('oracle', 'select * from a group by c1;') AS (c1 int);
 NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'c1' as the distribution column by default.
 HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
 INSERT 0 1
-postgres=# INSERT INTO b SELECT * FROM exec_on_extension('oracle', 'select * from a group by c1;') AS (c1 int);
+openGauss=# INSERT INTO b SELECT * FROM exec_on_extension('oracle', 'select * from a group by c1;') AS (c1 int);
 INSERT 0 1
 
 -- 查询结果与本地表关联查询
-postgres=# SELECT * FROM b INNER JOIN (SELECT * FROM exec_on_extension('oracle', 'select * from a;') AS (c1 int)) a ON a.c1=b.c1;
+openGauss=# SELECT * FROM b INNER JOIN (SELECT * FROM exec_on_extension('oracle', 'select * from a;') AS (c1 int)) a ON a.c1=b.c1;
  c1  | c2  
 -----+-----
  119 | 119
@@ -538,28 +538,28 @@ postgres=# SELECT * FROM b INNER JOIN (SELECT * FROM exec_on_extension('oracle',
 (4 rows)
 
 -- 其他用户使用该Data Source
-postgres=# CREATE USER tmp_usr IDENTIFIED BY 'Gs@123456';
+openGauss=# CREATE USER tmp_usr IDENTIFIED BY 'Gs@123456';
 
-postgres=# GRANT USAGE ON DATA SOURCE oracle TO tmp_usr;
+openGauss=# GRANT USAGE ON DATA SOURCE oracle TO tmp_usr;
 
-postgres=# \c - tmp_usr
-postgres=#  SELECT * FROM exec_on_extension('oracle', 'select * from a group by c1;') AS (c1 int);
+openGauss=# \c - tmp_usr
+openGauss=#  SELECT * FROM exec_on_extension('oracle', 'select * from a group by c1;') AS (c1 int);
  c1  
 -----
  119
 (1 row)
 
 -- 清除Data Source、表和用户
-postgres=# \c - omm
-postgres=# SELECT * FROM exec_on_extension('oracle', 'drop table a;') AS (c1 text);
+openGauss=# \c - omm
+openGauss=# SELECT * FROM exec_on_extension('oracle', 'drop table a;') AS (c1 text);
  c1 
 ----
 (0 rows)
-postgres=# DROP DATA SOURCE oracle;
+openGauss=# DROP DATA SOURCE oracle;
 
-postgres=# DROP TABLE b;
+openGauss=# DROP TABLE b;
 
-postgres=# DROP USER tmp_usr;
+openGauss=# DROP USER tmp_usr;
 ```
 
 ## 异常处理<a name="section12844151163616"></a>

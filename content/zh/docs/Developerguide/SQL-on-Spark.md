@@ -202,7 +202,7 @@ SQL on Spark支持的数据类型，见下表。
     2.  创建Data Source。
 
         ```
-        postgres=# CREATE DATA SOURCE spark_ds OPTIONS(DSN 'spark_odbc', encoding 'utf8');
+        openGauss=# CREATE DATA SOURCE spark_ds OPTIONS(DSN 'spark_odbc', encoding 'utf8');
         ```
 
         各字段含义、对象修改方法与SQL on Oracle中的[9](SQL-on-Oracle.md#li18691619432)类似。
@@ -228,21 +228,21 @@ SQL on Spark支持的数据类型，见下表。
 -- 1  spark
 -- 2  hive
 -- 通过 exec_hadoop_sql 函数查询，其中spark_odbc是odbc.ini中对应Spark的DSN，
-postgres=# SELECT * FROM exec_hadoop_sql('spark_odbc', 'select * from t1;', '') AS (c1 int, c2 text);
+openGauss=# SELECT * FROM exec_hadoop_sql('spark_odbc', 'select * from t1;', '') AS (c1 int, c2 text);
  c1 |  c2   
 ----+-------
   1 | spark
   2 | hive
 (2 rows)
 -- 通过 exec_on_extension 函数查询
-postgres=# CREATE DATA SOURCE spark_ds OPTIONS(dsn 'spark_odbc');
-postgres=# SELECT * FROM exec_on_extension ('spark_ds', 'select * from t1;') AS (c1 int, c2 text);
+openGauss=# CREATE DATA SOURCE spark_ds OPTIONS(dsn 'spark_odbc');
+openGauss=# SELECT * FROM exec_on_extension ('spark_ds', 'select * from t1;') AS (c1 int, c2 text);
  c1 |  c2   
 ----+-------
   1 | spark
   2 | hive
 (2 rows)
-postgres=# DROP DATA SOURCE spark_ds;
+openGauss=# DROP DATA SOURCE spark_ds;
 ```
 
 ## 异常处理<a name="section12844151163616"></a>

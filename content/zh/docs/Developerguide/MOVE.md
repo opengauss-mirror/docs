@@ -44,16 +44,16 @@ MOVE命令的参数与FETCH的相同，详细请参见FETCH的[参数说明](FET
 
 ```
 --开始一个事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --定义一个名为cursor1的游标。
-postgres=# CURSOR cursor1 FOR SELECT * FROM tpcds.reason;
+openGauss=# CURSOR cursor1 FOR SELECT * FROM tpcds.reason;
 
 --忽略游标cursor1的前3行。
-postgres=# MOVE FORWARD 3 FROM cursor1;
+openGauss=# MOVE FORWARD 3 FROM cursor1;
 
 --抓取游标cursor1的前4行。
-postgres=# FETCH 4 FROM cursor1;
+openGauss=# FETCH 4 FROM cursor1;
  r_reason_sk |   r_reason_id    |                                            r_reason_desc                                             
 -------------+------------------+------------------------------------------------------------------------------------------------------
            4 | AAAAAAAAEAAAAAAA | Not the product that was ordred                                                                     
@@ -63,10 +63,10 @@ postgres=# FETCH 4 FROM cursor1;
 (4 rows)
 
 --关闭游标。
-postgres=# CLOSE cursor1;
+openGauss=# CLOSE cursor1;
 
 --结束一个事务。
-postgres=# END;
+openGauss=# END;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122169_zh-cn_topic_0059778649_s576a05d59d374a6684001f646161ee14"></a>

@@ -139,13 +139,13 @@ NEXT
 
 ```
 --SELECT语句，用一个游标读取一个表。开始一个事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --建立一个名为cursor1的游标。
-postgres=# CURSOR cursor1 FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
+openGauss=# CURSOR cursor1 FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
 
 --抓取头3行到游标cursor1里。
-postgres=# FETCH FORWARD 3 FROM cursor1;
+openGauss=# FETCH FORWARD 3 FROM cursor1;
  ca_address_sk |  ca_address_id   | ca_street_number |   ca_street_name   | ca_street_type  | ca_suite_number |     ca_city     |    ca_county    | ca_state |   ca_zip   |  ca_country   | ca_gmt_offset |   ca_location_type   
 ---------------+------------------+------------------+--------------------+-----------------+-----------------+-----------------+-----------------+----------+------------+---------------+---------------+----------------------
              1 | AAAAAAAABAAAAAAA | 18               | Jackson            | Parkway         | Suite 280       | Fairfield       | Maricopa County | AZ       | 86192      | United States |         -7.00 | condo               
@@ -154,19 +154,19 @@ postgres=# FETCH FORWARD 3 FROM cursor1;
 (3 rows)
 
 --关闭游标并提交事务。
-postgres=# CLOSE cursor1;
+openGauss=# CLOSE cursor1;
 
 --结束一个事务。
-postgres=# END;
+openGauss=# END;
 
 --VALUES子句，用一个游标读取VALUES子句中的内容。开始一个事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --建立一个名为cursor2的游标。
-postgres=# CURSOR cursor2 FOR VALUES(1,2),(0,3) ORDER BY 1;
+openGauss=# CURSOR cursor2 FOR VALUES(1,2),(0,3) ORDER BY 1;
 
 --抓取头2行到游标cursor2里。
-postgres=# FETCH FORWARD 2 FROM cursor2;
+openGauss=# FETCH FORWARD 2 FROM cursor2;
 column1 | column2
 ---------+---------
 0 |       3
@@ -174,19 +174,19 @@ column1 | column2
 (2 rows)
 
 --关闭游标并提交事务。
-postgres=# CLOSE cursor2;
+openGauss=# CLOSE cursor2;
 
 --结束一个事务。
-postgres=# END;
+openGauss=# END;
 
 --WITH HOLD游标的使用，开启事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --创建一个with hold游标。
-postgres=# DECLARE cursor1 CURSOR WITH HOLD FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
+openGauss=# DECLARE cursor1 CURSOR WITH HOLD FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
 
 --抓取头2行到游标cursor1里。
-postgres=# FETCH FORWARD 2 FROM cursor1;
+openGauss=# FETCH FORWARD 2 FROM cursor1;
  ca_address_sk |  ca_address_id   | ca_street_number |   ca_street_name   | ca_street_type  | ca_suite_number |     ca_city     |    ca_county    | ca_state |   ca_zip   |  ca_country   | ca_gmt_offset |   ca_location_type   
 ---------------+------------------+------------------+--------------------+-----------------+-----------------+-----------------+-----------------+----------+------------+---------------+---------------+----------------------
              1 | AAAAAAAABAAAAAAA | 18               | Jackson            | Parkway         | Suite 280       | Fairfield       | Maricopa County | AZ       | 86192      | United States |         -7.00 | condo               
@@ -194,17 +194,17 @@ postgres=# FETCH FORWARD 2 FROM cursor1;
 (2 rows)
 
 --结束事务。
-postgres=# END;
+openGauss=# END;
 
 --抓取下一行到游标cursor1里。
-postgres=# FETCH FORWARD 1 FROM cursor1;
+openGauss=# FETCH FORWARD 1 FROM cursor1;
  ca_address_sk |  ca_address_id   | ca_street_number |   ca_street_name   | ca_street_type  | ca_suite_number |     ca_city     |    ca_county    | ca_state |   ca_zip   |  ca_country   | ca_gmt_offset |   ca_location_type   
 ---------------+------------------+------------------+--------------------+-----------------+-----------------+-----------------+-----------------+----------+------------+---------------+---------------+----------------------
              3 | AAAAAAAADAAAAAAA | 585              | Dogwood Washington | Circle          | Suite Q         | Pleasant Valley | York County     | PA       | 12477      | United States |         -5.00 | single family       
 (1 row)
 
 --关闭游标。
-postgres=# CLOSE cursor1;
+openGauss=# CLOSE cursor1;
 
 ```
 

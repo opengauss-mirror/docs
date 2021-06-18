@@ -26,17 +26,17 @@ REFRESH MATERIALIZED VIEW mv_name;
 
 ```
 --创建一个普通表
-postgres=# CREATE TABLE my_table (c1 int, c2 int);
+openGauss=# CREATE TABLE my_table (c1 int, c2 int);
 --创建全量物化视图
-postgres=# CREATE MATERIALIZED VIEW my_mv AS SELECT * FROM my_table;
+openGauss=# CREATE MATERIALIZED VIEW my_mv AS SELECT * FROM my_table;
 --创建增量物化视图
-postgres=# CREATE INCREMENTAL MATERIALIZED VIEW my_imv AS SELECT * FROM my_table;
+openGauss=# CREATE INCREMENTAL MATERIALIZED VIEW my_imv AS SELECT * FROM my_table;
 --基表写入数据
-postgres=# INSERT INTO my_table VALUES(1,1),(2,2);
+openGauss=# INSERT INTO my_table VALUES(1,1),(2,2);
 --对全量物化视图my_mv进行全量刷新
-postgres=# REFRESH MATERIALIZED VIEW my_mv;
+openGauss=# REFRESH MATERIALIZED VIEW my_mv;
 --对增量物化视图my_imv进行全量刷新
-postgres=# REFRESH MATERIALIZED VIEW my_imv;
+openGauss=# REFRESH MATERIALIZED VIEW my_imv;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136612_section1922813315464"></a>

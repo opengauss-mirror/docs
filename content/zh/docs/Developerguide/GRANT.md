@@ -421,8 +421,8 @@ GRANT的参数说明如下所示。
 创建名为joe的用户，并将sysadmin权限授权给他。
 
 ```
-postgres=# CREATE USER joe PASSWORD 'xxxxxxxxx';
-postgres=# GRANT ALL PRIVILEGES TO joe;
+openGauss=# CREATE USER joe PASSWORD 'xxxxxxxxx';
+openGauss=# GRANT ALL PRIVILEGES TO joe;
 ```
 
 授权成功后，用户joe会拥有sysadmin的所有权限。
@@ -432,9 +432,9 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 1.  撤销joe用户的sysadmin权限，然后将模式tpcds的使用权限和表tpcds.reason的所有权限授权给用户joe。
 
     ```
-    postgres=# REVOKE ALL PRIVILEGES FROM joe;
-    postgres=# GRANT USAGE ON SCHEMA tpcds TO joe;
-    postgres=# GRANT ALL PRIVILEGES ON tpcds.reason TO joe;
+    openGauss=# REVOKE ALL PRIVILEGES FROM joe;
+    openGauss=# GRANT USAGE ON SCHEMA tpcds TO joe;
+    openGauss=# GRANT ALL PRIVILEGES ON tpcds.reason TO joe;
     ```
 
     授权成功后，joe用户就拥有了tpcds.reason表的所有权限，包括增删改查等权限。
@@ -442,33 +442,33 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 2.  将tpcds.reason表中r\_reason\_sk、r\_reason\_id、r\_reason\_desc列的查询权限，r\_reason\_desc的更新权限授权给joe。
 
     ```
-    postgres=# GRANT select (r_reason_sk,r_reason_id,r_reason_desc),update (r_reason_desc) ON tpcds.reason TO joe;
+    openGauss=# GRANT select (r_reason_sk,r_reason_id,r_reason_desc),update (r_reason_desc) ON tpcds.reason TO joe;
     ```
 
     授权成功后，用户joe对tpcds.reason表中r\_reason\_sk，r\_reason\_id的查询权限会立即生效。如果joe用户需要拥有将这些权限授权给其他用户的权限，可以通过以下语法对joe用户进行授权。
 
     ```
-    postgres=# GRANT select (r_reason_sk, r_reason_id) ON tpcds.reason TO joe WITH GRANT OPTION;
+    openGauss=# GRANT select (r_reason_sk, r_reason_id) ON tpcds.reason TO joe WITH GRANT OPTION;
     ```
 
     将数据库postgres的连接权限授权给用户joe，并给予其在postgres中创建schema的权限，而且允许joe将此权限授权给其他用户。
 
     ```
-    postgres=# GRANT create,connect on database postgres TO joe WITH GRANT OPTION;
+    openGauss=# GRANT create,connect on database postgres TO joe WITH GRANT OPTION;
     ```
 
     创建角色tpcds\_manager，将模式tpcds的访问权限授权给角色tpcds\_manager，并授予该角色在tpcds下创建对象的权限，不允许该角色中的用户将权限授权给其他人。
 
     ```
-    postgres=# CREATE ROLE tpcds_manager PASSWORD 'xxxxxxxxx';
-    postgres=# GRANT USAGE,CREATE ON SCHEMA tpcds TO tpcds_manager;
+    openGauss=# CREATE ROLE tpcds_manager PASSWORD 'xxxxxxxxx';
+    openGauss=# GRANT USAGE,CREATE ON SCHEMA tpcds TO tpcds_manager;
     ```
 
     将表空间tpcds\_tbspc的所有权限授权给用户joe，但用户joe无法将权限继续授予其他用户。
 
     ```
-    postgres=# CREATE TABLESPACE tpcds_tbspc RELATIVE LOCATION 'tablespace/tablespace_1';
-    postgres=# GRANT ALL ON TABLESPACE tpcds_tbspc TO joe;
+    openGauss=# CREATE TABLESPACE tpcds_tbspc RELATIVE LOCATION 'tablespace/tablespace_1';
+    openGauss=# GRANT ALL ON TABLESPACE tpcds_tbspc TO joe;
     ```
 
 
@@ -477,23 +477,23 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 1.  创建角色manager，将joe的权限授权给manager，并允许该角色将权限授权给其他人。
 
     ```
-    postgres=# CREATE ROLE manager PASSWORD 'xxxxxxxxx';
-    postgres=# GRANT joe TO manager WITH ADMIN OPTION;
+    openGauss=# CREATE ROLE manager PASSWORD 'xxxxxxxxx';
+    openGauss=# GRANT joe TO manager WITH ADMIN OPTION;
     ```
 
 2.  创建用户senior\_manager，将用户manager的权限授权给该用户。
 
     ```
-    postgres=# CREATE ROLE senior_manager PASSWORD 'xxxxxxxxx';
-    postgres=# GRANT manager TO senior_manager;
+    openGauss=# CREATE ROLE senior_manager PASSWORD 'xxxxxxxxx';
+    openGauss=# GRANT manager TO senior_manager;
     ```
 
 3.  撤销权限，并清理用户。
 
     ```
-    postgres=# REVOKE manager FROM joe;
-    postgres=# REVOKE senior_manager FROM manager;
-    postgres=# DROP USER manager;
+    openGauss=# REVOKE manager FROM joe;
+    openGauss=# REVOKE senior_manager FROM manager;
+    openGauss=# DROP USER manager;
     ```
 
 
@@ -503,33 +503,33 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 
     ```
     gsql -p 57101 postgres -r -C
-    postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = gs_ktool, KEY_PATH = "gs_ktool/1" , ALGORITHM = AES_256_CBC);
-    postgres=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = localkms , KEY_PATH = "key_path_value" , ALGORITHM = RSA_2048);
+    openGauss=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = gs_ktool, KEY_PATH = "gs_ktool/1" , ALGORITHM = AES_256_CBC);
+    openGauss=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = localkms , KEY_PATH = "key_path_value" , ALGORITHM = RSA_2048);
     CREATE CLIENT MASTER KEY
-    postgres=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
+    openGauss=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
     CREATE COLUMN ENCRYPTION KEY
     ```
 
 2.  创建角色newuser，将密钥的权限授权给newuser。
 
     ```
-    postgres=# CREATE USER newuser PASSWORD 'xxxxxxxxx';
+    openGauss=# CREATE USER newuser PASSWORD 'xxxxxxxxx';
     CREATE ROLE
-    postgres=# GRANT ALL ON SCHEMA public TO newuser;
+    openGauss=# GRANT ALL ON SCHEMA public TO newuser;
     GRANT
-    postgres=# GRANT USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 to newuser;
+    openGauss=# GRANT USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 to newuser;
     GRANT
-    postgres=# GRANT USAGE ON CLIENT_MASTER_KEY MyCMK1 to newuser;
+    openGauss=# GRANT USAGE ON CLIENT_MASTER_KEY MyCMK1 to newuser;
     GRANT
     ```
 
 3.  设置该用户连接数据库,使用该CEK创建加密表。
 
     ```
-    postgres=# SET SESSION AUTHORIZATION newuser PASSWORD 'xxxxxxxxx';
-    postgres=>  CREATE TABLE acltest1 (x int, x2 varchar(50) ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = MyCEK1, ENCRYPTION_TYPE = DETERMINISTIC));
+    openGauss=# SET SESSION AUTHORIZATION newuser PASSWORD 'xxxxxxxxx';
+    openGauss=>  CREATE TABLE acltest1 (x int, x2 varchar(50) ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = MyCEK1, ENCRYPTION_TYPE = DETERMINISTIC));
     CREATE TABLE
-    postgres=> SELECT has_cek_privilege('newuser', 'MyCEK1', 'USAGE');
+    openGauss=> SELECT has_cek_privilege('newuser', 'MyCEK1', 'USAGE');
      has_cek_privilege
     -------------------
      t
@@ -539,28 +539,28 @@ postgres=# GRANT ALL PRIVILEGES TO joe;
 4.  撤销权限，并清理用户。
 
     ```
-    postgres=# REVOKE USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 FROM newuser;
-    postgres=# REVOKE USAGE ON CLIENT_MASTER_KEY MyCMK1 FROM newuser;
-    postgres=# DROP TABLE newuser.acltest1;
-    postgres=# DROP COLUMN ENCRYPTION KEY MyCEK1;
-    postgres=# DROP CLIENT MASTER KEY MyCMK1;
-    postgres=# DROP SCHEMA IF EXISTS newuser CASCADE;
-    postgres=# REVOKE ALL ON SCHEMA public FROM newuser;
-    postgres=# DROP ROLE IF EXISTS newuser;
+    openGauss=# REVOKE USAGE ON COLUMN_ENCRYPTION_KEY MyCEK1 FROM newuser;
+    openGauss=# REVOKE USAGE ON CLIENT_MASTER_KEY MyCMK1 FROM newuser;
+    openGauss=# DROP TABLE newuser.acltest1;
+    openGauss=# DROP COLUMN ENCRYPTION KEY MyCEK1;
+    openGauss=# DROP CLIENT MASTER KEY MyCMK1;
+    openGauss=# DROP SCHEMA IF EXISTS newuser CASCADE;
+    openGauss=# REVOKE ALL ON SCHEMA public FROM newuser;
+    openGauss=# DROP ROLE IF EXISTS newuser;
     ```
 
 
 **示例：撤销上述授予的权限，并清理角色和用户。**
 
 ```
-postgres=# REVOKE ALL PRIVILEGES ON tpcds.reason FROM joe;
-postgres=# REVOKE ALL PRIVILEGES ON SCHEMA tpcds FROM joe;
-postgres=# REVOKE ALL ON TABLESPACE tpcds_tbspc FROM joe;
-postgres=# DROP TABLESPACE tpcds_tbspc;
-postgres=# REVOKE USAGE,CREATE ON SCHEMA tpcds FROM tpcds_manager;
-postgres=# DROP ROLE tpcds_manager;
-postgres=# DROP ROLE senior_manager;
-postgres=# DROP USER joe CASCADE;
+openGauss=# REVOKE ALL PRIVILEGES ON tpcds.reason FROM joe;
+openGauss=# REVOKE ALL PRIVILEGES ON SCHEMA tpcds FROM joe;
+openGauss=# REVOKE ALL ON TABLESPACE tpcds_tbspc FROM joe;
+openGauss=# DROP TABLESPACE tpcds_tbspc;
+openGauss=# REVOKE USAGE,CREATE ON SCHEMA tpcds FROM tpcds_manager;
+openGauss=# DROP ROLE tpcds_manager;
+openGauss=# DROP ROLE senior_manager;
+openGauss=# DROP USER joe CASCADE;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
