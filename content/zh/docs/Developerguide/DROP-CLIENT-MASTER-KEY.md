@@ -28,6 +28,7 @@ DROP CLIENT MASTER KEY [ IF EXISTS ] client_master_key_name [CASCADE];
     取值范围：字符串，已存在的客户端加密主密钥名称。
 
 -   **CASCADE**
+    
     -   **CASCADE**：表示允许级联删除依赖于客户端加密主密钥的对象。
 
 
@@ -35,7 +36,7 @@ DROP CLIENT MASTER KEY [ IF EXISTS ] client_master_key_name [CASCADE];
 
 ```
 --删除客户端加密主密钥对象。
-postgres=> DROP CLIENT MASTER KEY ImgCMK CASCADE;
+openGauss=> DROP CLIENT MASTER KEY ImgCMK CASCADE;
 NOTICE:  drop cascades to column setting: imgcek
 DROP GLOBAL SETTING
 ```

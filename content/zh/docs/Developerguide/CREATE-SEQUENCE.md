@@ -81,7 +81,7 @@ CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
 创建一个名为serial的递增序列，从101开始：
 
 ```
-postgres=# CREATE SEQUENCE serial
+openGauss=# CREATE SEQUENCE serial
  START 101
  CACHE 20;
 ```
@@ -89,7 +89,7 @@ postgres=# CREATE SEQUENCE serial
 从序列中选出下一个数字：
 
 ```
-postgres=# SELECT nextval('serial');
+openGauss=# SELECT nextval('serial');
  nextval 
  ---------
       101
@@ -98,7 +98,7 @@ postgres=# SELECT nextval('serial');
 从序列中选出下一个数字：
 
 ```
-postgres=# SELECT nextval('serial');
+openGauss=# SELECT nextval('serial');
  nextval 
  ---------
       102
@@ -107,7 +107,7 @@ postgres=# SELECT nextval('serial');
 创建与表关联的序列：
 
 ```
-postgres=# CREATE TABLE customer_address
+openGauss=# CREATE TABLE customer_address
 (
     ca_address_sk             integer               not null,
     ca_address_id             char(16)              not null,
@@ -124,14 +124,14 @@ postgres=# CREATE TABLE customer_address
     ca_location_type          char(20)                     
 );
 
-postgres=# CREATE SEQUENCE serial1
+openGauss=# CREATE SEQUENCE serial1
  START 101
  CACHE 20
 OWNED BY customer_address.ca_address_sk;
 --删除表和序列。
-postgres=# DROP TABLE customer_address;
-postgres=# DROP SEQUENCE serial cascade;
-postgres=# DROP SEQUENCE serial1 cascade;
+openGauss=# DROP TABLE customer_address;
+openGauss=# DROP SEQUENCE serial cascade;
+openGauss=# DROP SEQUENCE serial1 cascade;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section184942174514"></a>

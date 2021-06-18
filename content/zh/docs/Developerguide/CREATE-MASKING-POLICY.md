@@ -82,23 +82,23 @@ CREATE MASKING POLICY policy_name masking_clause[, ...]* policy_filter [ENABLE |
 
 ```
 --创建dev_mask和bob_mask用户。
-postgres=# CREATE USER dev_mask PASSWORD 'dev@1234';
-postgres=# CREATE USER bob_mask PASSWORD 'bob@1234';
+openGauss=# CREATE USER dev_mask PASSWORD 'dev@1234';
+openGauss=# CREATE USER bob_mask PASSWORD 'bob@1234';
 
 --创建一个表tb_for_masking
-postgres=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);
+openGauss=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);
 
 --创建资源标签标记敏感列col1
-postgres=# CREATE RESOURCE LABEL mask_lb1 ADD COLUMN(tb_for_masking.col1);
+openGauss=# CREATE RESOURCE LABEL mask_lb1 ADD COLUMN(tb_for_masking.col1);
 
 --创建资源标签标记敏感列col2
-postgres=# CREATE RESOURCE LABEL mask_lb2 ADD COLUMN(tb_for_masking.col2);
+openGauss=# CREATE RESOURCE LABEL mask_lb2 ADD COLUMN(tb_for_masking.col2);
 
 --对访问敏感列col1的操作创建脱敏策略
-postgres=# CREATE MASKING POLICY maskpol1 maskall ON LABEL(mask_lb1);
+openGauss=# CREATE MASKING POLICY maskpol1 maskall ON LABEL(mask_lb1);
 
 --创建仅对用户dev_mask和bob_mask,客户端工具为psql和gsql，IP地址为'10.20.30.40', '127.0.0.0/24'场景下生效的脱敏策略。
-postgres=# CREATE MASKING POLICY maskpol2 randommasking ON LABEL(mask_lb2) FILTER ON ROLES(dev_mask, bob_mask), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24');
+openGauss=# CREATE MASKING POLICY maskpol2 randommasking ON LABEL(mask_lb2) FILTER ON ROLES(dev_mask, bob_mask), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24');
 ```
 
 ## 相关链接<a name="zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>

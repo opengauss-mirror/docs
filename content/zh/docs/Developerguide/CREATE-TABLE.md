@@ -207,7 +207,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 
     默认值：
-
+    
     不指定表时，默认是Append-Only存储。
 
   -   COMPRESSION
@@ -409,7 +409,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 ```
 --创建简单的表。
-postgres=# CREATE TABLE tpcds.warehouse_t1
+openGauss=# CREATE TABLE tpcds.warehouse_t1
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -427,7 +427,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t1
     W_GMT_OFFSET              DECIMAL(5,2)
 );
 
-postgres=# CREATE TABLE tpcds.warehouse_t2
+openGauss=# CREATE TABLE tpcds.warehouse_t2
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -448,7 +448,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t2
 
 ```
 --创建表，并指定W_STATE字段的缺省值为GA。
-postgres=# CREATE TABLE tpcds.warehouse_t3
+openGauss=# CREATE TABLE tpcds.warehouse_t3
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -467,7 +467,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t3
 );
 
 --创建表，并在事务结束时检查W_WAREHOUSE_NAME字段是否有重复。
-postgres=# CREATE TABLE tpcds.warehouse_t4
+openGauss=# CREATE TABLE tpcds.warehouse_t4
 (
     W_WAREHOUSE_SK            INTEGER                NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)               NOT NULL,
@@ -488,7 +488,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t4
 
 ```
 --创建一个带有70%填充因子的表。
-postgres=# CREATE TABLE tpcds.warehouse_t5
+openGauss=# CREATE TABLE tpcds.warehouse_t5
 (
     W_WAREHOUSE_SK            INTEGER                NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)               NOT NULL,
@@ -508,7 +508,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t5
 );
 
 --或者用下面的语法。
-postgres=# CREATE TABLE tpcds.warehouse_t6
+openGauss=# CREATE TABLE tpcds.warehouse_t6
 (
     W_WAREHOUSE_SK            INTEGER                NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)               NOT NULL,
@@ -527,7 +527,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t6
 ) WITH(fillfactor=70);
 
 --创建表，并指定该表数据不写入预写日志。
-postgres=# CREATE UNLOGGED TABLE tpcds.warehouse_t7
+openGauss=# CREATE UNLOGGED TABLE tpcds.warehouse_t7
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -546,7 +546,7 @@ postgres=# CREATE UNLOGGED TABLE tpcds.warehouse_t7
 );
 
 --创建表临时表。
-postgres=# CREATE TEMPORARY TABLE warehouse_t24
+openGauss=# CREATE TEMPORARY TABLE warehouse_t24
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -565,7 +565,7 @@ postgres=# CREATE TEMPORARY TABLE warehouse_t24
 );
 
 --创建本地临时表，并指定提交事务时删除该临时表数据。
-postgres=# CREATE TEMPORARY TABLE warehouse_t25
+openGauss=# CREATE TEMPORARY TABLE warehouse_t25
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -584,7 +584,7 @@ postgres=# CREATE TEMPORARY TABLE warehouse_t25
 ) ON COMMIT DELETE ROWS;
 
 --创建全局临时表，并指定会话结束时删除该临时表数据。
-postgres=# CREATE GLOBAL TEMPORARY TABLE gtt1
+openGauss=# CREATE GLOBAL TEMPORARY TABLE gtt1
 (
     ID                        INTEGER               NOT NULL,
     NAME                      CHAR(16)              NOT NULL,
@@ -593,7 +593,7 @@ postgres=# CREATE GLOBAL TEMPORARY TABLE gtt1
 ) ON COMMIT PRESERVE ROWS;
 
 --创建表时，不希望因为表已存在而报错。
-postgres=# CREATE TABLE IF NOT EXISTS tpcds.warehouse_t8
+openGauss=# CREATE TABLE IF NOT EXISTS tpcds.warehouse_t8
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -612,9 +612,9 @@ postgres=# CREATE TABLE IF NOT EXISTS tpcds.warehouse_t8
 );
 
 --创建普通表空间。
-postgres=# CREATE TABLESPACE DS_TABLESPACE1 RELATIVE LOCATION 'tablespace/tablespace_1';
+openGauss=# CREATE TABLESPACE DS_TABLESPACE1 RELATIVE LOCATION 'tablespace/tablespace_1';
 --创建表时，指定表空间。
-postgres=# CREATE TABLE tpcds.warehouse_t9
+openGauss=# CREATE TABLE tpcds.warehouse_t9
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -633,7 +633,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t9
 ) TABLESPACE DS_TABLESPACE1;
 
 --创建表时，单独指定W_WAREHOUSE_NAME的索引表空间。
-postgres=# CREATE TABLE tpcds.warehouse_t10
+openGauss=# CREATE TABLE tpcds.warehouse_t10
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -654,7 +654,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t10
 
 ```
 --创建一个有主键约束的表。
-postgres=# CREATE TABLE tpcds.warehouse_t11
+openGauss=# CREATE TABLE tpcds.warehouse_t11
 (
     W_WAREHOUSE_SK            INTEGER            PRIMARY KEY,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -673,7 +673,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t11
 );
 
 ---或是用下面的语法，效果完全一样。
-postgres=# CREATE TABLE tpcds.warehouse_t12
+openGauss=# CREATE TABLE tpcds.warehouse_t12
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -693,7 +693,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t12
 );
 
 --或是用下面的语法，指定约束的名称。
-postgres=# CREATE TABLE tpcds.warehouse_t13
+openGauss=# CREATE TABLE tpcds.warehouse_t13
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -713,7 +713,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t13
 );
 
 --创建一个有复合主键约束的表。
-postgres=# CREATE TABLE tpcds.warehouse_t14
+openGauss=# CREATE TABLE tpcds.warehouse_t14
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -732,7 +732,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t14
     CONSTRAINT W_CSTR_KEY2 PRIMARY KEY(W_WAREHOUSE_SK, W_WAREHOUSE_ID)
 );
 --创建列存表。
-postgres=# CREATE TABLE tpcds.warehouse_t15
+openGauss=# CREATE TABLE tpcds.warehouse_t15
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -751,7 +751,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t15
 ) WITH (ORIENTATION = COLUMN);
 
 --创建局部聚簇存储的列存表。
-postgres=# CREATE TABLE tpcds.warehouse_t16
+openGauss=# CREATE TABLE tpcds.warehouse_t16
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -771,7 +771,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t16
 ) WITH (ORIENTATION = COLUMN);
 
 --定义一个带压缩的列存表。
-postgres=# CREATE TABLE tpcds.warehouse_t17
+openGauss=# CREATE TABLE tpcds.warehouse_t17
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -790,7 +790,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t17
 ) WITH (ORIENTATION = COLUMN, COMPRESSION=HIGH);
 
 --定义一个检查列约束。
-postgres=# CREATE TABLE tpcds.warehouse_t19
+openGauss=# CREATE TABLE tpcds.warehouse_t19
 (
     W_WAREHOUSE_SK            INTEGER               PRIMARY KEY CHECK (W_WAREHOUSE_SK > 0),
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -808,7 +808,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t19
     W_GMT_OFFSET              DECIMAL(5,2)
 );
 
-postgres=# CREATE TABLE tpcds.warehouse_t20
+openGauss=# CREATE TABLE tpcds.warehouse_t20
 (
     W_WAREHOUSE_SK            INTEGER               PRIMARY KEY,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -828,12 +828,12 @@ postgres=# CREATE TABLE tpcds.warehouse_t20
 );
 
 --创建一个有外键约束的表。
-postgres=# CREATE TABLE tpcds.city_t23
+openGauss=# CREATE TABLE tpcds.city_t23
 (
     W_CITY            VARCHAR(60)                PRIMARY KEY,
     W_ADDRESS       TEXT                     
 );
-postgres=# CREATE TABLE tpcds.warehouse_t23
+openGauss=# CREATE TABLE tpcds.warehouse_t23
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -852,7 +852,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t23
 );
 
 --或是用下面的语法，效果完全一样。
-postgres=# CREATE TABLE tpcds.warehouse_t23
+openGauss=# CREATE TABLE tpcds.warehouse_t23
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -872,7 +872,7 @@ postgres=# CREATE TABLE tpcds.warehouse_t23
 );
 
 --或是用下面的语法，指定约束的名称。
-postgres=# CREATE TABLE tpcds.warehouse_t23
+openGauss=# CREATE TABLE tpcds.warehouse_t23
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -895,30 +895,30 @@ postgres=# CREATE TABLE tpcds.warehouse_t23
 ```
 
 ```
-postgres=# ALTER TABLE tpcds.warehouse_t19 ADD W_GOODS_CATEGORY varchar(30);
+openGauss=# ALTER TABLE tpcds.warehouse_t19 ADD W_GOODS_CATEGORY varchar(30);
 
 --给tpcds.warehouse_t19表增加一个检查约束。
-postgres=# ALTER TABLE tpcds.warehouse_t19 ADD CONSTRAINT W_CONSTR_KEY4 CHECK (W_STATE IS NOT NULL);
+openGauss=# ALTER TABLE tpcds.warehouse_t19 ADD CONSTRAINT W_CONSTR_KEY4 CHECK (W_STATE IS NOT NULL);
 
 --在一个操作中改变两个现存字段的类型。
-postgres=# ALTER TABLE tpcds.warehouse_t19
+openGauss=# ALTER TABLE tpcds.warehouse_t19
     ALTER COLUMN W_GOODS_CATEGORY TYPE varchar(80),
     ALTER COLUMN W_STREET_NAME TYPE varchar(100);
 
 --此语句与上面语句等效。
-postgres=# ALTER TABLE tpcds.warehouse_t19 MODIFY (W_GOODS_CATEGORY varchar(30), W_STREET_NAME varchar(60));
+openGauss=# ALTER TABLE tpcds.warehouse_t19 MODIFY (W_GOODS_CATEGORY varchar(30), W_STREET_NAME varchar(60));
 
 --给一个已存在字段添加非空约束。
-postgres=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY SET NOT NULL;
+openGauss=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY SET NOT NULL;
 
 --移除已存在字段的非空约束。
-postgres=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY DROP NOT NULL;
+openGauss=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY DROP NOT NULL;
 
 --如果列存表中还未指定局部聚簇，向在一个列存表中添加局部聚簇列。
-postgres=# ALTER TABLE tpcds.warehouse_t17 ADD PARTIAL CLUSTER KEY(W_WAREHOUSE_SK);
+openGauss=# ALTER TABLE tpcds.warehouse_t17 ADD PARTIAL CLUSTER KEY(W_WAREHOUSE_SK);
 
 --查看约束的名称，并删除一个列存表中的局部聚簇列。
-postgres=# \d+ tpcds.warehouse_t17
+openGauss=# \d+ tpcds.warehouse_t17
                               Table "tpcds.warehouse_t17"
       Column       |         Type          | Modifiers | Storage  | Stats target | Description 
 -------------------+-----------------------+-----------+----------+--------------+-------------
@@ -941,49 +941,49 @@ Partial Cluster :
 Has OIDs: no
 Location Nodes: ALL DATANODES
 Options: compression=no, version=0.12
-postgres=# ALTER TABLE tpcds.warehouse_t17 DROP CONSTRAINT warehouse_t17_cluster;
+openGauss=# ALTER TABLE tpcds.warehouse_t17 DROP CONSTRAINT warehouse_t17_cluster;
 
 --将表移动到另一个表空间。
-postgres=# ALTER TABLE tpcds.warehouse_t19 SET TABLESPACE PG_DEFAULT; 
+openGauss=# ALTER TABLE tpcds.warehouse_t19 SET TABLESPACE PG_DEFAULT; 
 --创建模式joe。
-postgres=# CREATE SCHEMA joe;
+openGauss=# CREATE SCHEMA joe;
 
 --将表移动到另一个模式中。
-postgres=# ALTER TABLE tpcds.warehouse_t19 SET SCHEMA joe;
+openGauss=# ALTER TABLE tpcds.warehouse_t19 SET SCHEMA joe;
 
 --重命名已存在的表。
-postgres=# ALTER TABLE joe.warehouse_t19 RENAME TO warehouse_t23;
+openGauss=# ALTER TABLE joe.warehouse_t19 RENAME TO warehouse_t23;
 
 --从warehouse_t23表中删除一个字段。
-postgres=# ALTER TABLE joe.warehouse_t23 DROP COLUMN W_STREET_NAME;
+openGauss=# ALTER TABLE joe.warehouse_t23 DROP COLUMN W_STREET_NAME;
 
 --删除表空间、模式joe和模式表warehouse。
-postgres=# DROP TABLE tpcds.warehouse_t1;
-postgres=# DROP TABLE tpcds.warehouse_t2;
-postgres=# DROP TABLE tpcds.warehouse_t3;
-postgres=# DROP TABLE tpcds.warehouse_t4;
-postgres=# DROP TABLE tpcds.warehouse_t5;
-postgres=# DROP TABLE tpcds.warehouse_t6;
-postgres=# DROP TABLE tpcds.warehouse_t7;
-postgres=# DROP TABLE tpcds.warehouse_t8;
-postgres=# DROP TABLE tpcds.warehouse_t9;
-postgres=# DROP TABLE tpcds.warehouse_t10;
-postgres=# DROP TABLE tpcds.warehouse_t11;
-postgres=# DROP TABLE tpcds.warehouse_t12;
-postgres=# DROP TABLE tpcds.warehouse_t13;
-postgres=# DROP TABLE tpcds.warehouse_t14;
-postgres=# DROP TABLE tpcds.warehouse_t15;
-postgres=# DROP TABLE tpcds.warehouse_t16;
-postgres=# DROP TABLE tpcds.warehouse_t17;
-postgres=# DROP TABLE tpcds.warehouse_t18;
-postgres=# DROP TABLE tpcds.warehouse_t20;
-postgres=# DROP TABLE tpcds.warehouse_t21;
-postgres=# DROP TABLE tpcds.warehouse_t22;
-postgres=# DROP TABLE joe.warehouse_t23;
-postgres=# DROP TABLE tpcds.warehouse_t24;
-postgres=# DROP TABLE tpcds.warehouse_t25;
-postgres=# DROP TABLESPACE DS_TABLESPACE1;
-postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
+openGauss=# DROP TABLE tpcds.warehouse_t1;
+openGauss=# DROP TABLE tpcds.warehouse_t2;
+openGauss=# DROP TABLE tpcds.warehouse_t3;
+openGauss=# DROP TABLE tpcds.warehouse_t4;
+openGauss=# DROP TABLE tpcds.warehouse_t5;
+openGauss=# DROP TABLE tpcds.warehouse_t6;
+openGauss=# DROP TABLE tpcds.warehouse_t7;
+openGauss=# DROP TABLE tpcds.warehouse_t8;
+openGauss=# DROP TABLE tpcds.warehouse_t9;
+openGauss=# DROP TABLE tpcds.warehouse_t10;
+openGauss=# DROP TABLE tpcds.warehouse_t11;
+openGauss=# DROP TABLE tpcds.warehouse_t12;
+openGauss=# DROP TABLE tpcds.warehouse_t13;
+openGauss=# DROP TABLE tpcds.warehouse_t14;
+openGauss=# DROP TABLE tpcds.warehouse_t15;
+openGauss=# DROP TABLE tpcds.warehouse_t16;
+openGauss=# DROP TABLE tpcds.warehouse_t17;
+openGauss=# DROP TABLE tpcds.warehouse_t18;
+openGauss=# DROP TABLE tpcds.warehouse_t20;
+openGauss=# DROP TABLE tpcds.warehouse_t21;
+openGauss=# DROP TABLE tpcds.warehouse_t22;
+openGauss=# DROP TABLE joe.warehouse_t23;
+openGauss=# DROP TABLE tpcds.warehouse_t24;
+openGauss=# DROP TABLE tpcds.warehouse_t25;
+openGauss=# DROP TABLESPACE DS_TABLESPACE1;
+openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>

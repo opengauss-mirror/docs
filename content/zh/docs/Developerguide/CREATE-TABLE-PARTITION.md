@@ -395,7 +395,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     ```
     --创建表tpcds.web_returns。
-    postgres=# CREATE TABLE tpcds.web_returns
+    openGauss=# CREATE TABLE tpcds.web_returns
     (
         W_WAREHOUSE_SK            INTEGER               NOT NULL,
         W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -413,7 +413,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         W_GMT_OFFSET              DECIMAL(5,2)
     );
     --创建分区表tpcds.web_returns_p1。
-    postgres=# CREATE TABLE tpcds.web_returns_p1
+    openGauss=# CREATE TABLE tpcds.web_returns_p1
     (
         WR_RETURNED_DATE_SK       INTEGER                       ,
         WR_RETURNED_TIME_SK       INTEGER                       ,
@@ -454,35 +454,35 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     );
     
     --从示例数据表导入数据。
-    postgres=# INSERT INTO tpcds.web_returns_p1 SELECT * FROM tpcds.web_returns;
+    openGauss=# INSERT INTO tpcds.web_returns_p1 SELECT * FROM tpcds.web_returns;
     
     --删除分区P8。
-    postgres=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION P8;
+    openGauss=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION P8;
     
     --增加分区WR_RETURNED_DATE_SK介于2453005和2453105之间。
-    postgres=# ALTER TABLE tpcds.web_returns_p1 ADD PARTITION P8 VALUES LESS THAN (2453105);
+    openGauss=# ALTER TABLE tpcds.web_returns_p1 ADD PARTITION P8 VALUES LESS THAN (2453105);
     
     --增加分区WR_RETURNED_DATE_SK介于2453105和MAXVALUE之间。
-    postgres=# ALTER TABLE tpcds.web_returns_p1 ADD PARTITION P9 VALUES LESS THAN (MAXVALUE);
+    openGauss=# ALTER TABLE tpcds.web_returns_p1 ADD PARTITION P9 VALUES LESS THAN (MAXVALUE);
     
     --删除分区P8。
-    postgres=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION FOR (2453005);
+    openGauss=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION FOR (2453005);
     
     --分区P7重命名为P10。
-    postgres=# ALTER TABLE tpcds.web_returns_p1 RENAME PARTITION P7 TO P10;
+    openGauss=# ALTER TABLE tpcds.web_returns_p1 RENAME PARTITION P7 TO P10;
     
     --分区P6重命名为P11。
-    postgres=# ALTER TABLE tpcds.web_returns_p1 RENAME PARTITION FOR (2452639) TO P11;
+    openGauss=# ALTER TABLE tpcds.web_returns_p1 RENAME PARTITION FOR (2452639) TO P11;
     
     --查询分区P10的行数。
-    postgres=# SELECT count(*) FROM tpcds.web_returns_p1 PARTITION (P10);
+    openGauss=# SELECT count(*) FROM tpcds.web_returns_p1 PARTITION (P10);
      count  
     --------
      0
     (1 row)
     
     --查询分区P1的行数。
-    postgres=# SELECT COUNT(*) FROM tpcds.web_returns_p1 PARTITION FOR (2450815);
+    openGauss=# SELECT COUNT(*) FROM tpcds.web_returns_p1 PARTITION FOR (2450815);
      count  
     --------
      0
@@ -498,12 +498,12 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     假定数据库节点的数据目录/pg\_location/mount1/path1，数据库节点的数据目录/pg\_location/mount2/path2，数据库节点的数据目录/pg\_location/mount3/path3，数据库节点的数据目录/pg\_location/mount4/path4是dwsadmin用户拥有读写权限的空目录。
 
     ```
-    postgres=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
-    postgres=# CREATE TABLESPACE example2 RELATIVE LOCATION 'tablespace2/tablespace_2';
-    postgres=# CREATE TABLESPACE example3 RELATIVE LOCATION 'tablespace3/tablespace_3';
-    postgres=# CREATE TABLESPACE example4 RELATIVE LOCATION 'tablespace4/tablespace_4';
+    openGauss=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
+    openGauss=# CREATE TABLESPACE example2 RELATIVE LOCATION 'tablespace2/tablespace_2';
+    openGauss=# CREATE TABLESPACE example3 RELATIVE LOCATION 'tablespace3/tablespace_3';
+    openGauss=# CREATE TABLESPACE example4 RELATIVE LOCATION 'tablespace4/tablespace_4';
     
-    postgres=# CREATE TABLE tpcds.web_returns_p2
+    openGauss=# CREATE TABLE tpcds.web_returns_p2
     (
         WR_RETURNED_DATE_SK       INTEGER                       ,
         WR_RETURNED_TIME_SK       INTEGER                       ,
@@ -545,34 +545,34 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ENABLE ROW MOVEMENT;
     
     --以like方式创建一个分区表。
-    postgres=# CREATE TABLE tpcds.web_returns_p3 (LIKE tpcds.web_returns_p2 INCLUDING PARTITION);
+    openGauss=# CREATE TABLE tpcds.web_returns_p3 (LIKE tpcds.web_returns_p2 INCLUDING PARTITION);
     
     --修改分区P1的表空间为example2。
-    postgres=# ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P1 TABLESPACE example2;
+    openGauss=# ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P1 TABLESPACE example2;
     
     --修改分区P2的表空间为example3。
-    postgres=# ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P2 TABLESPACE example3;
+    openGauss=# ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P2 TABLESPACE example3;
     
     --以2453010为分割点切分P8。
-    postgres=# ALTER TABLE tpcds.web_returns_p2 SPLIT PARTITION P8 AT (2453010) INTO
+    openGauss=# ALTER TABLE tpcds.web_returns_p2 SPLIT PARTITION P8 AT (2453010) INTO
     (
             PARTITION P9,
             PARTITION P10
     ); 
     
     --将P6，P7合并为一个分区。
-    postgres=# ALTER TABLE tpcds.web_returns_p2 MERGE PARTITIONS P6, P7 INTO PARTITION P8;
+    openGauss=# ALTER TABLE tpcds.web_returns_p2 MERGE PARTITIONS P6, P7 INTO PARTITION P8;
     
     --修改分区表迁移属性。
-    postgres=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
+    openGauss=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
     --删除表和表空间。
-    postgres=# DROP TABLE tpcds.web_returns_p1;
-    postgres=# DROP TABLE tpcds.web_returns_p2;
-    postgres=# DROP TABLE tpcds.web_returns_p3;
-    postgres=# DROP TABLESPACE example1;
-    postgres=# DROP TABLESPACE example2;
-    postgres=# DROP TABLESPACE example3;
-    postgres=# DROP TABLESPACE example4;
+    openGauss=# DROP TABLE tpcds.web_returns_p1;
+    openGauss=# DROP TABLE tpcds.web_returns_p2;
+    openGauss=# DROP TABLE tpcds.web_returns_p3;
+    openGauss=# DROP TABLESPACE example1;
+    openGauss=# DROP TABLESPACE example2;
+    openGauss=# DROP TABLESPACE example3;
+    openGauss=# DROP TABLESPACE example4;
     ```
 
 
@@ -582,17 +582,17 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     ```
     -- 创建表空间
-    postgres=# CREATE TABLESPACE startend_tbs1 LOCATION '/home/omm/startend_tbs1';
-    postgres=# CREATE TABLESPACE startend_tbs2 LOCATION '/home/omm/startend_tbs2';
-    postgres=# CREATE TABLESPACE startend_tbs3 LOCATION '/home/omm/startend_tbs3';
-    postgres=# CREATE TABLESPACE startend_tbs4 LOCATION '/home/omm/startend_tbs4';
+    openGauss=# CREATE TABLESPACE startend_tbs1 LOCATION '/home/omm/startend_tbs1';
+    openGauss=# CREATE TABLESPACE startend_tbs2 LOCATION '/home/omm/startend_tbs2';
+    openGauss=# CREATE TABLESPACE startend_tbs3 LOCATION '/home/omm/startend_tbs3';
+    openGauss=# CREATE TABLESPACE startend_tbs4 LOCATION '/home/omm/startend_tbs4';
     
     -- 创建临时schema
-    postgres=# CREATE SCHEMA tpcds;
-    postgres=# SET CURRENT_SCHEMA TO tpcds;
+    openGauss=# CREATE SCHEMA tpcds;
+    openGauss=# SET CURRENT_SCHEMA TO tpcds;
     
     -- 创建分区表，分区键是integer类型
-    postgres=# CREATE TABLE tpcds.startend_pt (c1 INT, c2 INT) 
+    openGauss=# CREATE TABLE tpcds.startend_pt (c1 INT, c2 INT) 
     TABLESPACE startend_tbs1 
     PARTITION BY RANGE (c2) (
         PARTITION p1 START(1) END(1000) EVERY(200) TABLESPACE startend_tbs2,
@@ -604,7 +604,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ENABLE ROW MOVEMENT;
     
     -- 查看分区表信息
-    postgres=# SELECT relname, boundaries, spcname FROM pg_partition p JOIN pg_tablespace t ON p.reltablespace=t.oid and p.parentid='tpcds.startend_pt'::regclass ORDER BY 1;
+    openGauss=# SELECT relname, boundaries, spcname FROM pg_partition p JOIN pg_tablespace t ON p.reltablespace=t.oid and p.parentid='tpcds.startend_pt'::regclass ORDER BY 1;
        relname   | boundaries |    spcname
     -------------+------------+---------------
      p1_0        | {1}        | startend_tbs2
@@ -622,42 +622,42 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (12 rows)
     
     -- 导入数据，查看分区数据量
-    postgres=# INSERT INTO tpcds.startend_pt VALUES (GENERATE_SERIES(0, 4999), GENERATE_SERIES(0, 4999));
-    postgres=# SELECT COUNT(*) FROM tpcds.startend_pt PARTITION FOR (0);
+    openGauss=# INSERT INTO tpcds.startend_pt VALUES (GENERATE_SERIES(0, 4999), GENERATE_SERIES(0, 4999));
+    openGauss=# SELECT COUNT(*) FROM tpcds.startend_pt PARTITION FOR (0);
      count
     -------
          1
     (1 row)
     
-    postgres=# SELECT COUNT(*) FROM tpcds.startend_pt PARTITION (p3);
+    openGauss=# SELECT COUNT(*) FROM tpcds.startend_pt PARTITION (p3);
      count
     -------
        500
     (1 row)
     
     -- 增加分区: [5000, 5300), [5300, 5600), [5600, 5900), [5900, 6000)
-    postgres=# ALTER TABLE tpcds.startend_pt ADD PARTITION p6 START(5000) END(6000) EVERY(300) TABLESPACE startend_tbs4;
+    openGauss=# ALTER TABLE tpcds.startend_pt ADD PARTITION p6 START(5000) END(6000) EVERY(300) TABLESPACE startend_tbs4;
     
     -- 增加MAXVALUE分区: p7
-    postgres=# ALTER TABLE tpcds.startend_pt ADD PARTITION p7 END(MAXVALUE);
+    openGauss=# ALTER TABLE tpcds.startend_pt ADD PARTITION p7 END(MAXVALUE);
     
     -- 重命名分区p7为p8
-    postgres=# ALTER TABLE tpcds.startend_pt RENAME PARTITION p7 TO p8;
+    openGauss=# ALTER TABLE tpcds.startend_pt RENAME PARTITION p7 TO p8;
     
     -- 删除分区p8
-    postgres=# ALTER TABLE tpcds.startend_pt DROP PARTITION p8;
+    openGauss=# ALTER TABLE tpcds.startend_pt DROP PARTITION p8;
     
     -- 重命名5950所在的分区为：p71
-    postgres=# ALTER TABLE tpcds.startend_pt RENAME PARTITION FOR(5950) TO p71;
+    openGauss=# ALTER TABLE tpcds.startend_pt RENAME PARTITION FOR(5950) TO p71;
     
     -- 分裂4500所在的分区[4000, 5000)
-    postgres=# ALTER TABLE tpcds.startend_pt SPLIT PARTITION FOR(4500) INTO(PARTITION q1 START(4000) END(5000) EVERY(250) TABLESPACE startend_tbs3);
+    openGauss=# ALTER TABLE tpcds.startend_pt SPLIT PARTITION FOR(4500) INTO(PARTITION q1 START(4000) END(5000) EVERY(250) TABLESPACE startend_tbs3);
     
     -- 修改分区p2的表空间为startend_tbs4
-    postgres=# ALTER TABLE tpcds.startend_pt MOVE PARTITION p2 TABLESPACE startend_tbs4;
+    openGauss=# ALTER TABLE tpcds.startend_pt MOVE PARTITION p2 TABLESPACE startend_tbs4;
     
     -- 查看分区情形
-    postgres=# SELECT relname, boundaries, spcname FROM pg_partition p JOIN pg_tablespace t ON p.reltablespace=t.oid and p.parentid='tpcds.startend_pt'::regclass ORDER BY 1;
+    openGauss=# SELECT relname, boundaries, spcname FROM pg_partition p JOIN pg_tablespace t ON p.reltablespace=t.oid and p.parentid='tpcds.startend_pt'::regclass ORDER BY 1;
        relname   | boundaries |    spcname
     -------------+------------+---------------
      p1_0        | {1}        | startend_tbs2
@@ -682,11 +682,11 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (19 rows)
     
     -- 删除表和表空间
-    postgres=# DROP SCHEMA tpcds CASCADE;
-    postgres=# DROP TABLESPACE startend_tbs1;
-    postgres=# DROP TABLESPACE startend_tbs2;
-    postgres=# DROP TABLESPACE startend_tbs3;
-    postgres=# DROP TABLESPACE startend_tbs4;
+    openGauss=# DROP SCHEMA tpcds CASCADE;
+    openGauss=# DROP TABLESPACE startend_tbs1;
+    openGauss=# DROP TABLESPACE startend_tbs2;
+    openGauss=# DROP TABLESPACE startend_tbs3;
+    openGauss=# DROP TABLESPACE startend_tbs4;
     ```
 
 
@@ -696,7 +696,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     ```
     --创建表sales
-    postgres=# CREATE TABLE sales
+    openGauss=# CREATE TABLE sales
     (prod_id NUMBER(6),
      cust_id NUMBER,
      time_id DATE,
@@ -712,13 +712,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     );
     
     -- 数据插入分区p1
-    postgres=# INSERT INTO sales VALUES(1, 12, '2019-01-10 00:00:00', 'a', 1, 1, 1);
+    openGauss=# INSERT INTO sales VALUES(1, 12, '2019-01-10 00:00:00', 'a', 1, 1, 1);
     
     -- 数据插入分区p2
-    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-01 00:00:00', 'a', 1, 1, 1);
+    openGauss=# INSERT INTO sales VALUES(1, 12, '2019-02-01 00:00:00', 'a', 1, 1, 1);
     
     -- 查看分区信息
-    postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
+    openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
      relname | partstrategy |       boundaries
     ---------+--------------+-------------------------
      p1      | r            | {"2019-02-01 00:00:00"}
@@ -727,14 +727,14 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     
     -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
     -- 新分区的范围为 '2019-02-05 00:00:00' <= time_id < '2019-02-06 00:00:00'
-    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-05 00:00:00', 'a', 1, 1, 1);
+    openGauss=# INSERT INTO sales VALUES(1, 12, '2019-02-05 00:00:00', 'a', 1, 1, 1);
     
     -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
     -- 新分区的范围为 '2019-02-03 00:00:00' <= time_id < '2019-02-04 00:00:00'
-    postgres=# INSERT INTO sales VALUES(1, 12, '2019-02-03 00:00:00', 'a', 1, 1, 1);
+    openGauss=# INSERT INTO sales VALUES(1, 12, '2019-02-03 00:00:00', 'a', 1, 1, 1);
     
     -- 查看分区信息
-    postgres=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
+    openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
      relname | partstrategy |       boundaries
     ---------+--------------+-------------------------
      sys_p1  | i            | {"2019-02-06 00:00:00"}

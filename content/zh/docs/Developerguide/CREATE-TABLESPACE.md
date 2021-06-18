@@ -92,30 +92,30 @@ WITH ( {filesystem= { 'general'| "general" | general} |
 
 ```
 --创建表空间。
-postgres=# CREATE TABLESPACE ds_location1 RELATIVE LOCATION 'tablespace/tablespace_1';
+openGauss=# CREATE TABLESPACE ds_location1 RELATIVE LOCATION 'tablespace/tablespace_1';
 
 --创建用户joe。
-postgres=# CREATE ROLE joe IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE ROLE joe IDENTIFIED BY 'xxxxxxxx';
 
 --创建用户jay。
-postgres=# CREATE ROLE jay IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE ROLE jay IDENTIFIED BY 'xxxxxxxx';
 
 --创建表空间，且所有者指定为用户joe。
-postgres=# CREATE TABLESPACE ds_location2 OWNER joe RELATIVE LOCATION 'tablespace/tablespace_1';
+openGauss=# CREATE TABLESPACE ds_location2 OWNER joe RELATIVE LOCATION 'tablespace/tablespace_1';
 
 --把表空间ds_location1重命名为ds_location3。
-postgres=# ALTER TABLESPACE ds_location1 RENAME TO ds_location3;
+openGauss=# ALTER TABLESPACE ds_location1 RENAME TO ds_location3;
 
 --改变表空间ds_location2的所有者。
-postgres=# ALTER TABLESPACE ds_location2 OWNER TO jay;
+openGauss=# ALTER TABLESPACE ds_location2 OWNER TO jay;
 
 --删除表空间。
-postgres=# DROP TABLESPACE ds_location2;
-postgres=# DROP TABLESPACE ds_location3;
+openGauss=# DROP TABLESPACE ds_location2;
+openGauss=# DROP TABLESPACE ds_location3;
 
 --删除用户。
-postgres=# DROP ROLE joe;
-postgres=# DROP ROLE jay;
+openGauss=# DROP ROLE joe;
+openGauss=# DROP ROLE jay;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_s59e2126c54fc4725a3a50713b9163304"></a>

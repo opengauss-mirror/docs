@@ -210,8 +210,8 @@
 
 ```
 --创建表tpcds.ship_mode_t1。
-postgres=# create schema tpcds;
-postgres=# CREATE TABLE tpcds.ship_mode_t1
+openGauss=# create schema tpcds;
+openGauss=# CREATE TABLE tpcds.ship_mode_t1
 (
     SM_SHIP_MODE_SK           INTEGER               NOT NULL,
     SM_SHIP_MODE_ID           CHAR(16)              NOT NULL,
@@ -223,39 +223,39 @@ postgres=# CREATE TABLE tpcds.ship_mode_t1
 ;
 
 --在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建普通索引。
-postgres=# CREATE UNIQUE INDEX ds_ship_mode_t1_index1 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK);
+openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index1 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK);
 
 --在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建指定B-tree索引。
-postgres=# CREATE INDEX ds_ship_mode_t1_index4 ON tpcds.ship_mode_t1 USING btree(SM_SHIP_MODE_SK);
+openGauss=# CREATE INDEX ds_ship_mode_t1_index4 ON tpcds.ship_mode_t1 USING btree(SM_SHIP_MODE_SK);
 
 --在表tpcds.ship_mode_t1上SM_CODE字段上创建表达式索引。
-postgres=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_CODE,1 ,4));
+openGauss=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_CODE,1 ,4));
 
 --在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建SM_SHIP_MODE_SK大于10的部分索引。
-postgres=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) WHERE SM_SHIP_MODE_SK>10;
+openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) WHERE SM_SHIP_MODE_SK>10;
 
 --重命名一个现有的索引。
-postgres=# ALTER INDEX tpcds.ds_ship_mode_t1_index1 RENAME TO ds_ship_mode_t1_index5;
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index1 RENAME TO ds_ship_mode_t1_index5;
 
 --设置索引不可用。
-postgres=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 UNUSABLE;
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 UNUSABLE;
 
 --重建索引。
-postgres=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 REBUILD;
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 REBUILD;
 
 --删除一个现有的索引。
-postgres=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
+openGauss=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
 
 --删除表。
-postgres=# DROP TABLE tpcds.ship_mode_t1;
+openGauss=# DROP TABLE tpcds.ship_mode_t1;
 
 --创建表空间。
-postgres=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
-postgres=# CREATE TABLESPACE example2 RELATIVE LOCATION 'tablespace2/tablespace_2';
-postgres=# CREATE TABLESPACE example3 RELATIVE LOCATION 'tablespace3/tablespace_3';
-postgres=# CREATE TABLESPACE example4 RELATIVE LOCATION 'tablespace4/tablespace_4';
+openGauss=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
+openGauss=# CREATE TABLESPACE example2 RELATIVE LOCATION 'tablespace2/tablespace_2';
+openGauss=# CREATE TABLESPACE example3 RELATIVE LOCATION 'tablespace3/tablespace_3';
+openGauss=# CREATE TABLESPACE example4 RELATIVE LOCATION 'tablespace4/tablespace_4';
 --创建表tpcds.customer_address_p1。
-postgres=# CREATE TABLE tpcds.customer_address_p1
+openGauss=# CREATE TABLE tpcds.customer_address_p1
 (
     CA_ADDRESS_SK             INTEGER               NOT NULL,
     CA_ADDRESS_ID             CHAR(16)              NOT NULL,
@@ -280,9 +280,9 @@ PARTITION BY RANGE(CA_ADDRESS_SK)
 )
 ENABLE ROW MOVEMENT;
 --创建分区表索引ds_customer_address_p1_index1，不指定索引分区的名称。
-postgres=# CREATE INDEX ds_customer_address_p1_index1 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL; 
+openGauss=# CREATE INDEX ds_customer_address_p1_index1 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL; 
 --创建分区表索引ds_customer_address_p1_index2，并指定索引分区的名称。
-postgres=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL
+openGauss=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL
 (
     PARTITION CA_ADDRESS_SK_index1,
     PARTITION CA_ADDRESS_SK_index2 TABLESPACE example3,
@@ -291,34 +291,34 @@ postgres=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_
 TABLESPACE example2;
 
 --创建GLOBAL分区索引
-postgres=CREATE INDEX ds_customer_address_p1_index3 ON tpcds.customer_address_p1(CA_ADDRESS_ID) GLOBAL;
+openGauss=CREATE INDEX ds_customer_address_p1_index3 ON tpcds.customer_address_p1(CA_ADDRESS_ID) GLOBAL;
 
 --不指定关键字，默认创建GLOBAL分区索引
-postgres=CREATE INDEX ds_customer_address_p1_index4 ON tpcds.customer_address_p1(CA_ADDRESS_ID);
+openGauss=CREATE INDEX ds_customer_address_p1_index4 ON tpcds.customer_address_p1(CA_ADDRESS_ID);
 
 --修改分区表索引CA_ADDRESS_SK_index2的表空间为example1。
-postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index2 TABLESPACE example1;
+openGauss=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index2 TABLESPACE example1;
 
 --修改分区表索引CA_ADDRESS_SK_index3的表空间为example2。
-postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index3 TABLESPACE example2;
+openGauss=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index3 TABLESPACE example2;
 
 --重命名分区表索引。
-postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 RENAME PARTITION CA_ADDRESS_SK_index1 TO CA_ADDRESS_SK_index4;
+openGauss=# ALTER INDEX tpcds.ds_customer_address_p1_index2 RENAME PARTITION CA_ADDRESS_SK_index1 TO CA_ADDRESS_SK_index4;
 
 --删除索引和分区表。
-postgres=# DROP INDEX tpcds.ds_customer_address_p1_index1;
-postgres=# DROP INDEX tpcds.ds_customer_address_p1_index2;
-postgres=# DROP TABLE tpcds.customer_address_p1;
+openGauss=# DROP INDEX tpcds.ds_customer_address_p1_index1;
+openGauss=# DROP INDEX tpcds.ds_customer_address_p1_index2;
+openGauss=# DROP TABLE tpcds.customer_address_p1;
 --删除表空间。
-postgres=# DROP TABLESPACE example1;
-postgres=# DROP TABLESPACE example2;
-postgres=# DROP TABLESPACE example3;
-postgres=# DROP TABLESPACE example4;
+openGauss=# DROP TABLESPACE example1;
+openGauss=# DROP TABLESPACE example2;
+openGauss=# DROP TABLESPACE example3;
+openGauss=# DROP TABLESPACE example4;
 
 --创建列存表以及列存表GIN索引。
-postgres=# create table cgin_create_test(a int, b text) with (orientation = column);
+openGauss=# create table cgin_create_test(a int, b text) with (orientation = column);
 CREATE TABLE
-postgres=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
+openGauss=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
 CREATE INDEX
 ```
 

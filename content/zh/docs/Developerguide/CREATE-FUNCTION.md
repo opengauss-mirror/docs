@@ -247,21 +247,21 @@
 
 ```
 --定义函数为SQL查询。
-postgres=# CREATE FUNCTION func_add_sql(integer, integer) RETURNS integer
+openGauss=# CREATE FUNCTION func_add_sql(integer, integer) RETURNS integer
     AS 'select $1 + $2;'
     LANGUAGE SQL
     IMMUTABLE
     RETURNS NULL ON NULL INPUT;
 
 --利用参数名用 PL/pgSQL 自增一个整数。
-postgres=# CREATE OR REPLACE FUNCTION func_increment_plsql(i integer) RETURNS integer AS $$
+openGauss=# CREATE OR REPLACE FUNCTION func_increment_plsql(i integer) RETURNS integer AS $$
         BEGIN
                 RETURN i + 1;
         END;
 $$ LANGUAGE plpgsql;
 
 --返回RECORD类型
-postgres=# CREATE OR REPLACE FUNCTION func_increment_sql(i int, out result_1 bigint, out result_2 bigint)
+openGauss=# CREATE OR REPLACE FUNCTION func_increment_sql(i int, out result_1 bigint, out result_2 bigint)
 returns SETOF RECORD
 as $$
 begin
@@ -272,34 +272,34 @@ end;
 $$language plpgsql;
 
 --返回一个包含多个输出参数的记录。
-postgres=# CREATE FUNCTION func_dup_sql(in int, out f1 int, out f2 text)
+openGauss=# CREATE FUNCTION func_dup_sql(in int, out f1 int, out f2 text)
     AS $$ SELECT $1, CAST($1 AS text) || ' is text' $$
     LANGUAGE SQL;
 
-postgres=# SELECT * FROM func_dup_sql(42);
+openGauss=# SELECT * FROM func_dup_sql(42);
 
 --计算两个整数的和，并返回结果。如果输入为null，则返回null。
-postgres=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
+openGauss=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
 AS
 BEGIN 
 RETURN num1 + num2;
 END;
 /
 --修改函数func_add_sql2的执行规则为IMMUTABLE，即参数不变时返回相同结果。
-postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
+openGauss=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
 
 --将函数func_add_sql2的名称修改为add_two_number。
-postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
+openGauss=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
 
 --将函数add_two_number的属者改为omm。
-postgres=# ALTER FUNCTION add_two_number(INTEGER, INTEGER) OWNER TO omm;
+openGauss=# ALTER FUNCTION add_two_number(INTEGER, INTEGER) OWNER TO omm;
 
 --删除函数。
-postgres=# DROP FUNCTION add_two_number;
-postgres=# DROP FUNCTION func_increment_sql;
-postgres=# DROP FUNCTION func_dup_sql;
-postgres=# DROP FUNCTION func_increment_plsql;
-postgres=# DROP FUNCTION func_add_sql;
+openGauss=# DROP FUNCTION add_two_number;
+openGauss=# DROP FUNCTION func_increment_sql;
+openGauss=# DROP FUNCTION func_dup_sql;
+openGauss=# DROP FUNCTION func_increment_plsql;
+openGauss=# DROP FUNCTION func_add_sql;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>

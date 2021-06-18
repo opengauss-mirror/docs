@@ -27,9 +27,10 @@ DROP DATA SOURCE [IF EXISTS] src_name [CASCADE | RESTRICT];
     如果指定的Data Source不存在，则发出一个notice而不是报错。
 
 -   **CASCADE | RESTRICT**
+    
     -   **CASCADE**：表示允许级联删除依赖于Data Source的对象
-    -   **RESTRICT**（缺省值）：表示有依赖于该Data Source的对象存在，则该Data Source无法删除。
-
+-   **RESTRICT**（缺省值）：表示有依赖于该Data Source的对象存在，则该Data Source无法删除。
+    
         目前Data Source对象没有被依赖的对象，CASCADE和RESTRICT效果一样，保留此选项是为了向后兼容性。
 
 
@@ -38,11 +39,11 @@ DROP DATA SOURCE [IF EXISTS] src_name [CASCADE | RESTRICT];
 
 ```
 --创建Data Source对象。
-postgres=# CREATE DATA SOURCE ds_tst1;
+openGauss=# CREATE DATA SOURCE ds_tst1;
 
 --删除Data Source对象。
-postgres=# DROP DATA SOURCE ds_tst1 CASCADE;
-postgres=# DROP DATA SOURCE IF EXISTS ds_tst1 RESTRICT; 
+openGauss=# DROP DATA SOURCE ds_tst1 CASCADE;
+openGauss=# DROP DATA SOURCE IF EXISTS ds_tst1 RESTRICT; 
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122135_section191190297715"></a>

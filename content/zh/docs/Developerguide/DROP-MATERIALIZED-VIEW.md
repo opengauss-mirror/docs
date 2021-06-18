@@ -33,7 +33,7 @@ DROP MATERIALIZED VIEW [ IF EXISTS ] mv_name [, ...] [ CASCADE | RESTRICT ];
 
 ```
 --删除名为my_mv的物化视图。
-postgres=# DROP MATERIALIZED VIEW my_mv;
+openGauss=# DROP MATERIALIZED VIEW my_mv;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>

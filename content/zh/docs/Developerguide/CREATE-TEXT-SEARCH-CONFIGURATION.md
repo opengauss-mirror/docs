@@ -85,36 +85,36 @@ CREATE TEXT SEARCH CONFIGURATION name
 
 ```
 --创建文本搜索配置。
-postgres=# CREATE TEXT SEARCH CONFIGURATION ngram2 (parser=ngram) WITH (gram_size = 2, grapsymbol_ignore = false);
+openGauss=# CREATE TEXT SEARCH CONFIGURATION ngram2 (parser=ngram) WITH (gram_size = 2, grapsymbol_ignore = false);
 
 --创建文本搜索配置。
-postgres=# CREATE TEXT SEARCH CONFIGURATION ngram3 (copy=ngram2) WITH (gram_size = 2, grapsymbol_ignore = false);
+openGauss=# CREATE TEXT SEARCH CONFIGURATION ngram3 (copy=ngram2) WITH (gram_size = 2, grapsymbol_ignore = false);
 
 --添加类型映射。
-postgres=# ALTER TEXT SEARCH CONFIGURATION ngram2 ADD MAPPING FOR multisymbol WITH simple;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION ngram2 ADD MAPPING FOR multisymbol WITH simple;
 
 --创建用户joe。
-postgres=# CREATE USER joe IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE USER joe IDENTIFIED BY 'xxxxxxxx';
 
 --修改文本搜索配置的所有者。
-postgres=# ALTER TEXT SEARCH CONFIGURATION ngram2 OWNER TO joe;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION ngram2 OWNER TO joe;
 
 --修改文本搜索配置的schema。
-postgres=# ALTER TEXT SEARCH CONFIGURATION ngram2 SET SCHEMA joe;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION ngram2 SET SCHEMA joe;
 
 --重命名文本搜索配置。
-postgres=# ALTER TEXT SEARCH CONFIGURATION joe.ngram2 RENAME TO ngram_2;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION joe.ngram2 RENAME TO ngram_2;
 
 --删除类型映射。
-postgres=# ALTER TEXT SEARCH CONFIGURATION joe.ngram_2 DROP MAPPING IF EXISTS FOR multisymbol;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION joe.ngram_2 DROP MAPPING IF EXISTS FOR multisymbol;
 
 --删除文本搜索配置。
-postgres=# DROP TEXT SEARCH CONFIGURATION joe.ngram_2;
-postgres=# DROP TEXT SEARCH CONFIGURATION ngram3;
+openGauss=# DROP TEXT SEARCH CONFIGURATION joe.ngram_2;
+openGauss=# DROP TEXT SEARCH CONFIGURATION ngram3;
 
 --删除Schema及用户joe。
-postgres=# DROP SCHEMA IF EXISTS joe CASCADE;
-postgres=# DROP ROLE IF EXISTS joe;
+openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
+openGauss=# DROP ROLE IF EXISTS joe;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122121_zh-cn_topic_0059777835_s0205fc5b18e94f51af91402258be4747"></a>

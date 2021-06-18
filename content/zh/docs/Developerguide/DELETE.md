@@ -84,16 +84,16 @@ DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
 ```
 --创建表tpcds.customer_address_bak。
-postgres=# CREATE TABLE tpcds.customer_address_bak AS TABLE tpcds.customer_address;
+openGauss=# CREATE TABLE tpcds.customer_address_bak AS TABLE tpcds.customer_address;
 
 --删除tpcds.customer_address_bak中ca_address_sk小于14888的职员。
-postgres=# DELETE FROM tpcds.customer_address_bak WHERE ca_address_sk < 14888;
+openGauss=# DELETE FROM tpcds.customer_address_bak WHERE ca_address_sk < 14888;
 
 --删除tpcds.customer_address_bak中所有数据。
-postgres=# DELETE FROM tpcds.customer_address_bak;
+openGauss=# DELETE FROM tpcds.customer_address_bak;
 
 --删除tpcds.customer_address_bak表。
-postgres=# DROP TABLE tpcds.customer_address_bak;
+openGauss=# DROP TABLE tpcds.customer_address_bak;
 ```
 
 ## 优化建议<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_section50155651112741"></a>

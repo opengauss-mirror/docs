@@ -32,10 +32,10 @@ DO [ LANGUAGE lang_name ] code;
 
 ```
 --创建用户webuser。
-postgres=# CREATE USER webuser PASSWORD 'xxxxxx';
+openGauss=# CREATE USER webuser PASSWORD 'xxxxxx';
 
 --授予用户webuser对模式tpcds下视图的所有操作权限。
-postgres=# DO $$DECLARE r record;
+openGauss=# DO $$DECLARE r record;
 BEGIN
     FOR r IN SELECT c.relname table_name,n.nspname table_schema FROM pg_class c,pg_namespace n 
              WHERE c.relnamespace = n.oid AND n.nspname = 'tpcds' AND relkind IN ('r','v')
@@ -46,6 +46,6 @@ END$$;
 
 
 --删除用户webuser。
-postgres=# DROP USER webuser CASCADE;
+openGauss=# DROP USER webuser CASCADE;
 ```
 

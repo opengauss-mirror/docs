@@ -26,10 +26,10 @@ DROP MASKING POLICY [IF EXISTS] policy_name;
 
 ```
 --删除一个脱敏策略。
-postgres=# DROP MASKING POLICY IF EXISTS maskpol1;
+openGauss=# DROP MASKING POLICY IF EXISTS maskpol1;
 
 --删除一组脱敏策略。
-postgres=# DROP MASKING POLICY IF EXISTS maskpol1, maskpol2, maskpol3;
+openGauss=# DROP MASKING POLICY IF EXISTS maskpol1, maskpol2, maskpol3;
 ```
 
 ## 相关链接<a name="section12181292265"></a>

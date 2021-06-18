@@ -222,22 +222,22 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
 ```
 --创建一个角色，名为manager，密码为xxxxxxxxx。
-postgres=# CREATE ROLE manager IDENTIFIED BY 'xxxxxxxxx';
+openGauss=# CREATE ROLE manager IDENTIFIED BY 'xxxxxxxxx';
 
 --创建一个角色，从2015年1月1日开始生效，到2026年1月1日失效。
-postgres=# CREATE ROLE miriam WITH LOGIN PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
+openGauss=# CREATE ROLE miriam WITH LOGIN PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
 
 --修改角色manager的密码为abcd@123。
-postgres=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'xxxxxxxxx';
+openGauss=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'xxxxxxxxx';
 
 --修改角色manager为系统管理员。
-postgres=# ALTER ROLE manager SYSADMIN;
+openGauss=# ALTER ROLE manager SYSADMIN;
 
 --删除角色manager。
-postgres=# DROP ROLE manager;
+openGauss=# DROP ROLE manager;
 
 --删除角色miriam。
-postgres=# DROP ROLE miriam;
+openGauss=# DROP ROLE miriam;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>

@@ -61,18 +61,18 @@
 
 ```
 --创建一个角色role1。
-postgres=# CREATE ROLE role1 IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE ROLE role1 IDENTIFIED BY 'xxxxxxxx';
 
 -- 为用户role1创建一个同名schema，子命令创建的表films和winners的拥有者为role1。
-postgres=# CREATE SCHEMA AUTHORIZATION role1
+openGauss=# CREATE SCHEMA AUTHORIZATION role1
      CREATE TABLE films (title text, release date, awards text[])      
      CREATE VIEW winners AS         
      SELECT title, release FROM films WHERE awards IS NOT NULL;
 
 --删除schema。
-postgres=# DROP SCHEMA role1 CASCADE;
+openGauss=# DROP SCHEMA role1 CASCADE;
 --删除用户。
-postgres=# DROP USER role1 CASCADE;
+openGauss=# DROP USER role1 CASCADE;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122113_zh-cn_topic_0059777945_sf210cb55e4884955b9809f27c7c55ce9"></a>

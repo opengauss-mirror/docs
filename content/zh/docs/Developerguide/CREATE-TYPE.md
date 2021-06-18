@@ -228,44 +228,44 @@ CREATE TYPE name AS ENUM
 
 ```
 --创建一种复合类型，建表并插入数据以及查询。
-postgres=# CREATE TYPE compfoo AS (f1 int, f2 text);
-postgres=# CREATE TABLE t1_compfoo(a int, b compfoo);
-postgres=# CREATE TABLE t2_compfoo(a int, b compfoo);
-postgres=# INSERT INTO t1_compfoo values(1,(1,'demo'));
-postgres=# INSERT INTO t2_compfoo select * from t1_compfoo;
-postgres=# SELECT (b).f1 FROM t1_compfoo;
-postgres=# SELECT * FROM t1_compfoo t1 join t2_compfoo t2 on (t1.b).f1=(t1.b).f1;
+openGauss=# CREATE TYPE compfoo AS (f1 int, f2 text);
+openGauss=# CREATE TABLE t1_compfoo(a int, b compfoo);
+openGauss=# CREATE TABLE t2_compfoo(a int, b compfoo);
+openGauss=# INSERT INTO t1_compfoo values(1,(1,'demo'));
+openGauss=# INSERT INTO t2_compfoo select * from t1_compfoo;
+openGauss=# SELECT (b).f1 FROM t1_compfoo;
+openGauss=# SELECT * FROM t1_compfoo t1 join t2_compfoo t2 on (t1.b).f1=(t1.b).f1;
 
 --重命名数据类型。
-postgres=# ALTER TYPE compfoo RENAME TO compfoo1;
+openGauss=# ALTER TYPE compfoo RENAME TO compfoo1;
 
 --要改变一个用户定义类型compfoo1的所有者为usr1。
-postgres=# CREATE USER usr1 PASSWORD 'xxxxxxxx';
-postgres=# ALTER TYPE compfoo1 OWNER TO usr1;
+openGauss=# CREATE USER usr1 PASSWORD 'xxxxxxxx';
+openGauss=# ALTER TYPE compfoo1 OWNER TO usr1;
 
 --把用户定义类型compfoo1的模式改变为usr1。
-postgres=# ALTER TYPE compfoo1 SET SCHEMA usr1;
+openGauss=# ALTER TYPE compfoo1 SET SCHEMA usr1;
 
 --给一个数据类型增加一个新的属性。
-postgres=# ALTER TYPE usr1.compfoo1 ADD ATTRIBUTE f3 int;
+openGauss=# ALTER TYPE usr1.compfoo1 ADD ATTRIBUTE f3 int;
 
 --删除compfoo1类型。
-postgres=# DROP TYPE usr1.compfoo1 cascade;
+openGauss=# DROP TYPE usr1.compfoo1 cascade;
 
 --删除相关表和用户。
-postgres=# DROP TABLE t1_compfoo;
-postgres=# DROP TABLE t2_compfoo;
-postgres=# DROP SCHEMA usr1;
-postgres=# DROP USER usr1;
+openGauss=# DROP TABLE t1_compfoo;
+openGauss=# DROP TABLE t2_compfoo;
+openGauss=# DROP SCHEMA usr1;
+openGauss=# DROP USER usr1;
 
 --创建一个枚举类型。
-postgres=# CREATE TYPE bugstatus AS ENUM ('create', 'modify', 'closed');
+openGauss=# CREATE TYPE bugstatus AS ENUM ('create', 'modify', 'closed');
 
 --添加一个标签值。
-postgres=# ALTER TYPE bugstatus ADD VALUE IF NOT EXISTS 'regress' BEFORE 'closed';
+openGauss=# ALTER TYPE bugstatus ADD VALUE IF NOT EXISTS 'regress' BEFORE 'closed';
 
 --重命名一个标签值。
-postgres=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
+openGauss=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122124_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
