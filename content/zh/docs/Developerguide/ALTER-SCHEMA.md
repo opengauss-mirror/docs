@@ -10,6 +10,12 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
+-   修改模式的防篡改属性。
+
+    ```
+    ALTER SCHEMA schema_name { WITH | WITHOUT } BLOCKCHAIN
+    ```
+    
 -   修改模式的名称。
 
     ```
@@ -48,26 +54,30 @@
     new\_owner：模式的新所有者。
 
     取值范围：已存在的用户名/角色名。
+    
+-   **\{ WITH | WITHOUT \} BLOCKCHAIN**
+
+    修改模式的防篡改属性。具有防篡改属性模式下的普通行存表均为防篡改历史表，不包括外表，临时表，系统表。当该模式下不包含任何表时才可修改防篡改属性。另外，不支持临时表模式。toast表模式、dbe\_perf模式、blockchain模式修改防篡改属性。
 
 
 ## 示例<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
 ```
 --创建模式ds。
-postgres=# CREATE SCHEMA ds;
+openGauss=# CREATE SCHEMA ds;
 
 --将当前模式ds更名为ds_new。
-postgres=# ALTER SCHEMA ds RENAME TO ds_new;
+openGauss=# ALTER SCHEMA ds RENAME TO ds_new;
 
 --创建用户jack。
-postgres=# CREATE USER jack PASSWORD 'xxxxxx';
+openGauss=# CREATE USER jack PASSWORD 'xxxxxx';
 
 --将DS_NEW的所有者修改为jack。
-postgres=# ALTER SCHEMA ds_new OWNER TO jack;
+openGauss=# ALTER SCHEMA ds_new OWNER TO jack;
 
 --删除用户jack和模式ds_new。
-postgres=# DROP SCHEMA ds_new;
-postgres=# DROP USER jack;
+openGauss=# DROP SCHEMA ds_new;
+openGauss=# DROP USER jack;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>

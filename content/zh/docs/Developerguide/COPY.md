@@ -8,18 +8,18 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 ## 注意事项<a name="zh-cn_topic_0237122096_zh-cn_topic_0059778766_sc996fd2c14664963bae3e1e0ce655441"></a>
 
--   执行COPY FROM FILENAME或COPY TO FILENAME语句需要SYSADMIN权限，但默认禁止SYSADMIN用户对数据库配置文件，密钥文件，证书文件和审计日志执行COPY FROM FILENAME或COPY TO FILENAME，以防止SYSADMIN用户越权查看或修改敏感文件。放开这一权限需要通过更改enable\_copy\_server\_files的设定来完成。
+-   当参数enable\_copy\_server\_files关闭时，只允许初始用户执行COPY FROM FILENAME或COPY TO FILENAME命令，当参数enable\_copy\_server\_files打开，允许具有SYSADMIN权限的用户或继承了内置角色gs\_role\_copy\_files权限的用户执行，但默认禁止对数据库配置文件，密钥文件，证书文件和审计日志执行COPY FROM FILENAME或COPY TO FILENAME，以防止用户越权查看或修改敏感文件。
 -   COPY只能用于表，不能用于视图。
--   对任何要插入数据的表必须有插入权限。
+-   COPY TO需要读取的表的select权限，COPY FROM需要插入的表的INSERT权限。
 -   如果声明了一个字段列表，COPY将只在文件和表之间拷贝已声明字段的数据。如果表中有任何不在字段列表里的字段，COPY FROM将为那些字段插入缺省值。
 -   如果声明了数据源文件，服务器必须可以访问该文件；如果指定了STDIN，数据将在客户前端和服务器之间流动，输入时，表的列与列之间使用TAB键分隔，在新的一行中以反斜杠和句点（\\.）表示输入结束。
 -   如果数据文件的任意行包含比预期多或者少的字段，COPY FROM将抛出一个错误。
 -   数据的结束可以用一个只包含反斜杠和句点（\\.）的行表示。如果从文件中读取数据，数据结束的标记是不必要的；如果在客户端应用之间拷贝数据，必须要有结束标记。
 -   COPY FROM中\\N为空字符串，如果要输入实际数据值\\N ，使用\\\\N。
-
 -   COPY FROM不支持在导入过程中对数据做预处理（比如说表达式运算，填充指定默认值等）。如果需要在导入过程中对数据做预处理，用户需先把数据导入到临时表中，然后执行SQL语句通过运算插入到表中，但此方法会导致I/O膨胀，降低导入性能。
 -   COPY FROM在遇到数据格式错误时会回滚事务，但没有足够的错误信息，不方便用户从大量的原始数据中定位错误数据。
 -   COPY FROM/TO适合低并发，本地小数据量导入导出。
+-   目标表存在trigger，支持COPY操作。
 
 ## 语法格式<a name="zh-cn_topic_0237122096_zh-cn_topic_0059778766_s85a73a9ad894403da754c5d6b3d8210f"></a>
 
@@ -34,7 +34,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         [ REJECT LIMIT 'limit' ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -579,13 +579,13 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 ```
 --将tpcds.ship_mode中的数据拷贝到/home/omm/ds_ship_mode.dat文件中。
-postgres=# COPY tpcds.ship_mode TO '/home/omm/ds_ship_mode.dat';
+openGauss=# COPY tpcds.ship_mode TO '/home/omm/ds_ship_mode.dat';
 
 --将tpcds.ship_mode 输出到stdout。
-postgres=# COPY tpcds.ship_mode TO stdout;
+openGauss=# COPY tpcds.ship_mode TO stdout;
 
 --创建tpcds.ship_mode_t1表。
-postgres=# CREATE TABLE tpcds.ship_mode_t1
+openGauss=# CREATE TABLE tpcds.ship_mode_t1
 (
     SM_SHIP_MODE_SK           INTEGER               NOT NULL,
     SM_SHIP_MODE_ID           CHAR(16)              NOT NULL,
@@ -598,18 +598,18 @@ WITH (ORIENTATION = COLUMN,COMPRESSION=MIDDLE)
 ;
 
 --从stdin拷贝数据到表tpcds.ship_mode_t1。
-postgres=# COPY tpcds.ship_mode_t1 FROM stdin;
+openGauss=# COPY tpcds.ship_mode_t1 FROM stdin;
 
 --从/home/omm/ds_ship_mode.dat文件拷贝数据到表tpcds.ship_mode_t1。
-postgres=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat';
+openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat';
 
 --从/home/omm/ds_ship_mode.dat文件拷贝数据到表tpcds.ship_mode_t1，使用参数如下：导入格式为TEXT（format 'text'），分隔符为'\t'（delimiter E'\t'），忽略多余列（ignore_extra_data 'true'），不指定转义（noescaping 'true'）。
-postgres=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' WITH(format 'text', delimiter E'\t', ignore_extra_data 'true', noescaping 'true');
+openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' WITH(format 'text', delimiter E'\t', ignore_extra_data 'true', noescaping 'true');
 
 --从/home/omm/ds_ship_mode.dat文件拷贝数据到表tpcds.ship_mode_t1，使用参数如下：导入格式为FIXED（FIXED），指定定长格式（FORMATTER(SM_SHIP_MODE_SK(0, 2), SM_SHIP_MODE_ID(2,16), SM_TYPE(18,30), SM_CODE(50,10), SM_CARRIER(61,20), SM_CONTRACT(82,20))），忽略多余列（ignore_extra_data），有数据头（header）。
-postgres=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' FIXED FORMATTER(SM_SHIP_MODE_SK(0, 2), SM_SHIP_MODE_ID(2,16), SM_TYPE(18,30), SM_CODE(50,10), SM_CARRIER(61,20), SM_CONTRACT(82,20)) header ignore_extra_data;
+openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' FIXED FORMATTER(SM_SHIP_MODE_SK(0, 2), SM_SHIP_MODE_ID(2,16), SM_TYPE(18,30), SM_CODE(50,10), SM_CARRIER(61,20), SM_CONTRACT(82,20)) header ignore_extra_data;
 
 --删除tpcds.ship_mode_t1。
-postgres=# DROP TABLE tpcds.ship_mode_t1;
+openGauss=# DROP TABLE tpcds.ship_mode_t1;
 ```
 
