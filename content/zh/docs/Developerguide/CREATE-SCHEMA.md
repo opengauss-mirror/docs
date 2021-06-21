@@ -19,7 +19,7 @@
 
     ```
     CREATE SCHEMA schema_name 
-        [ AUTHORIZATION user_name ] [ schema_element [ ... ] ];
+        [ AUTHORIZATION user_name ] [WITH BLOCKCHAIN] [ schema_element [ ... ] ];
     ```
 
 -   根据用户名创建模式。
@@ -46,6 +46,10 @@
     指定模式的所有者。当不指定schema\_name时，把user\_name当作模式名，此时user\_name只能是角色名。
 
     取值范围：已存在的用户名/角色名。
+
+-   **WITH BLOCKCHAIN**
+
+    指定模式的防篡改属性，防篡改模式下的行存普通用户表将自动扩展为防篡改用户表。
 
 -   **schema\_element**
 
