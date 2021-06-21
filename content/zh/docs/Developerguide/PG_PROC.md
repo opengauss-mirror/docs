@@ -250,6 +250,28 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p1552619614416"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p1552619614416"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p1552619614416"></a>表示该函数是否支持重载，默认值是false。</p>
 </td>
 </tr>
+    <tr id="row2763955123418"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p14764165515348"><a name="p14764165515348"></a><a name="p14764165515348"></a>proargsrc</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p276455543413"><a name="p276455543413"></a><a name="p276455543413"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p5764115523412"><a name="p5764115523412"></a><a name="p5764115523412"></a>描述兼容oracle语法定义的函数或存储过程的参数输入字符串，包括参数注释。默认值为NULL。</p>
+</td>
+</tr>
+<tr id="row1189834720161"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p108999475167"><a name="p108999475167"></a><a name="p108999475167"></a><span id="ph182961619171"><a name="ph182961619171"></a><a name="ph182961619171"></a>proisprivate</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p17899747201612"><a name="p17899747201612"></a><a name="p17899747201612"></a><span id="ph13383321151718"><a name="ph13383321151718"></a><a name="ph13383321151718"></a>Boolean</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p17899134717162"><a name="p17899134717162"></a><a name="p17899134717162"></a><span id="ph655394318175"><a name="ph655394318175"></a><a name="ph655394318175"></a>描述函数是否是PACKAGE内的私有函数，默认为false</span></p>
+</td>
+</tr>
+<tr id="row10661757181718"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p566115718178"><a name="p566115718178"></a><a name="p566115718178"></a><span id="ph173128015181"><a name="ph173128015181"></a><a name="ph173128015181"></a>propackageid</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p9661195719177"><a name="p9661195719177"></a><a name="p9661195719177"></a><span id="ph1414216511817"><a name="ph1414216511817"></a><a name="ph1414216511817"></a>oid</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p566145712172"><a name="p566145712172"></a><a name="p566145712172"></a><span id="ph16491010131810"><a name="ph16491010131810"></a><a name="ph16491010131810"></a>函数所属的package oid，如果不在package内，则为0.</span></p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
