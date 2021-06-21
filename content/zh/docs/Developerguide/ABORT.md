@@ -26,7 +26,7 @@ ABORT [ WORK | TRANSACTION ] ;
 
 ```
 --创建表customer_demographics_t1。
-postgres=# CREATE TABLE customer_demographics_t1
+openGauss=# CREATE TABLE customer_demographics_t1
 (
     CD_DEMO_SK                INTEGER               NOT NULL,
     CD_GENDER                 CHAR(1)                       ,
@@ -42,26 +42,26 @@ WITH (ORIENTATION = COLUMN,COMPRESSION=MIDDLE)
 ;
 
 --插入记录。
-postgres=# INSERT INTO customer_demographics_t1 VALUES(1920801,'M', 'U', 'DOCTOR DEGREE', 200, 'GOOD', 1, 0,0);
+openGauss=# INSERT INTO customer_demographics_t1 VALUES(1920801,'M', 'U', 'DOCTOR DEGREE', 200, 'GOOD', 1, 0,0);
 
 --开启事务。
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --更新字段值。
-postgres=# UPDATE customer_demographics_t1 SET cd_education_status= 'Unknown';
+openGauss=# UPDATE customer_demographics_t1 SET cd_education_status= 'Unknown';
 
 --终止事务，上面所执行的更新会被撤销掉。
-postgres=# ABORT; 
+openGauss=# ABORT; 
 
 --查询数据。
-postgres=# SELECT * FROM customer_demographics_t1 WHERE cd_demo_sk = 1920801;
+openGauss=# SELECT * FROM customer_demographics_t1 WHERE cd_demo_sk = 1920801;
 cd_demo_sk | cd_gender | cd_marital_status | cd_education_status  | cd_purchase_estimate | cd_credit_rating | cd_dep_count | cd_dep_employed_count | cd_dep_college_count 
 ------------+-----------+-------------------+----------------------+----------------------+------------------+--------------+-----------------------+----------------------
     1920801 | M         | U                 | DOCTOR DEGREE        |                  200 | GOOD             |            1 |                     0 |                    0
 (1 row)
 
 --删除表。
-postgres=# DROP TABLE customer_demographics_t1;
+openGauss=# DROP TABLE customer_demographics_t1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_s51afa4e9c2fd4b07b11d4eb49fe546b8"></a>

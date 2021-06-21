@@ -37,19 +37,19 @@ ALTER SYNONYM synonym_name
 
 ```
 --创建同义词t1。
-postgres=#  CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
+openGauss=#  CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
 
 --创建新用户u1。
-postgres=# CREATE USER u1 PASSWORD 'user@111';
+openGauss=# CREATE USER u1 PASSWORD 'user@111';
 
 --修改同义词t1的owner为u1。
-postgres=# ALTER SYNONYM t1 OWNER TO u1;
+openGauss=# ALTER SYNONYM t1 OWNER TO u1;
 
 --删除同义词t1。
-postgres=# DROP SYNONYM t1;
+openGauss=# DROP SYNONYM t1;
 
 --删除用户u1。
-postgres=# DROP USER u1;
+openGauss=# DROP USER u1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122074_section613212620440"></a>

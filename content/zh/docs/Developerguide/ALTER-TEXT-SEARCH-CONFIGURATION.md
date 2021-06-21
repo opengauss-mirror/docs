@@ -131,19 +131,19 @@ ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
 
 ```
 --创建文本搜索配置。
-postgres=# CREATE TEXT SEARCH CONFIGURATION english_1 (parser=default);
+openGauss=# CREATE TEXT SEARCH CONFIGURATION english_1 (parser=default);
 CREATE TEXT SEARCH CONFIGURATION
 
 --增加文本搜索配置字串类型映射语法。
-postgres=# ALTER TEXT SEARCH CONFIGURATION english_1 ADD MAPPING FOR word WITH simple,english_stem;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION english_1 ADD MAPPING FOR word WITH simple,english_stem;
 ALTER TEXT SEARCH CONFIGURATION
 
 --增加文本搜索配置字串类型映射语法。
-postgres=# ALTER TEXT SEARCH CONFIGURATION english_1 ADD MAPPING FOR email WITH english_stem, french_stem;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION english_1 ADD MAPPING FOR email WITH english_stem, french_stem;
 ALTER TEXT SEARCH CONFIGURATION
 
 --查询文本搜索配置相关信息。
-postgres=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM pg_ts_config_map a,pg_ts_config b, pg_ts_dict c WHERE a.mapcfg=b.oid AND a.mapdict=c.oid AND b.cfgname='english_1' ORDER BY 1,2,3,4,5;
+openGauss=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM pg_ts_config_map a,pg_ts_config b, pg_ts_dict c WHERE a.mapcfg=b.oid AND a.mapdict=c.oid AND b.cfgname='english_1' ORDER BY 1,2,3,4,5;
   cfgname  | maptokentype | mapseqno | mapdict |   dictname   
 -----------+--------------+----------+---------+--------------
  english_1 |            2 |        1 |    3765 | simple
@@ -153,11 +153,11 @@ postgres=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM 
 (4 rows)
 
 --增加文本搜索配置字串类型映射语法。
-postgres=# ALTER TEXT SEARCH CONFIGURATION english_1 ALTER MAPPING REPLACE french_stem with german_stem;
+openGauss=# ALTER TEXT SEARCH CONFIGURATION english_1 ALTER MAPPING REPLACE french_stem with german_stem;
 ALTER TEXT SEARCH CONFIGURATION
 
 --查询文本搜索配置相关信息。
-postgres=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM pg_ts_config_map a,pg_ts_config b, pg_ts_dict c WHERE a.mapcfg=b.oid AND a.mapdict=c.oid AND b.cfgname='english_1' ORDER BY 1,2,3,4,5;
+openGauss=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM pg_ts_config_map a,pg_ts_config b, pg_ts_dict c WHERE a.mapcfg=b.oid AND a.mapdict=c.oid AND b.cfgname='english_1' ORDER BY 1,2,3,4,5;
   cfgname  | maptokentype | mapseqno | mapdict |   dictname   
 -----------+--------------+----------+---------+--------------
  english_1 |            2 |        1 |    3765 | simple

@@ -70,31 +70,31 @@ ALTER DATA SOURCE src_name OWNER TO new_owner;
 
 ```
 --创建一个空Data Source对象。
-postgres=# CREATE DATA SOURCE ds_test1;
+openGauss=# CREATE DATA SOURCE ds_test1;
 
 --修改名称。
-postgres=# ALTER DATA SOURCE ds_test1 RENAME TO ds_test;
+openGauss=# ALTER DATA SOURCE ds_test1 RENAME TO ds_test;
 
 --修改属主。
-postgres=# CREATE USER user_test1 IDENTIFIED BY 'Gs@123456';
-postgres=# ALTER USER user_test1 WITH SYSADMIN;
-postgres=# ALTER DATA SOURCE ds_test OWNER TO user_test1;
+openGauss=# CREATE USER user_test1 IDENTIFIED BY 'Gs@123456';
+openGauss=# ALTER USER user_test1 WITH SYSADMIN;
+openGauss=# ALTER DATA SOURCE ds_test OWNER TO user_test1;
 
 --修改TYPE和VERSION。
-postgres=# ALTER DATA SOURCE ds_test TYPE 'MPPDB_TYPE' VERSION 'XXX';
+openGauss=# ALTER DATA SOURCE ds_test TYPE 'MPPDB_TYPE' VERSION 'XXX';
 
 --添加字段。
-postgres=# ALTER DATA SOURCE ds_test OPTIONS (add dsn 'gaussdb', username 'test_user');
+openGauss=# ALTER DATA SOURCE ds_test OPTIONS (add dsn 'gaussdb', username 'test_user');
 
 --修改字段。
-postgres=# ALTER DATA SOURCE ds_test OPTIONS (set dsn 'unknown');
+openGauss=# ALTER DATA SOURCE ds_test OPTIONS (set dsn 'unknown');
 
 --删除字段。
-postgres=# ALTER DATA SOURCE ds_test OPTIONS (drop username);
+openGauss=# ALTER DATA SOURCE ds_test OPTIONS (drop username);
 
 --删除Data Source和user对象。
-postgres=# DROP DATA SOURCE ds_test;
-postgres=# DROP USER user_test1;
+openGauss=# DROP DATA SOURCE ds_test;
+openGauss=# DROP USER user_test1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122056_section779812311320"></a>

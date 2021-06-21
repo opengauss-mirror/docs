@@ -25,6 +25,6 @@ CHECKPOINT;
 
 ```
 --设置检查点。
-postgres=# CHECKPOINT;
+openGauss=# CHECKPOINT;
 ```
 

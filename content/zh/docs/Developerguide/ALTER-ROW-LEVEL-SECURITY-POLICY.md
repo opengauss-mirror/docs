@@ -45,11 +45,11 @@ ALTER [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
 ```
 --创建数据表all_data
-postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
+openGauss=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
 
 --创建行访问控制策略，当前用户只能查看用户自身的数据
-postgres=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
-postgres=# \d+ all_data
+openGauss=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
+openGauss=# \d+ all_data
                                Table "public.all_data"
  Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------
@@ -64,11 +64,11 @@ Location Nodes: ALL DATANODES
 Options: orientation=row, compression=no
 
 --修改行访问控制all_data_rls的名称
-postgres=# ALTER ROW LEVEL SECURITY POLICY all_data_rls ON all_data RENAME TO all_data_new_rls;
+openGauss=# ALTER ROW LEVEL SECURITY POLICY all_data_rls ON all_data RENAME TO all_data_new_rls;
 
 --修改行访问控制策略影响的用户
-postgres=# ALTER ROW LEVEL SECURITY POLICY all_data_new_rls ON all_data TO alice, bob;
-postgres=# \d+ all_data
+openGauss=# ALTER ROW LEVEL SECURITY POLICY all_data_new_rls ON all_data TO alice, bob;
+openGauss=# \d+ all_data
                                Table "public.all_data"
  Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------
@@ -84,8 +84,8 @@ Location Nodes: ALL DATANODES
 Options: orientation=row, compression=no, enable_rowsecurity=true
 
 --修改行访问控制策略表达式
-postgres=# ALTER ROW LEVEL SECURITY POLICY all_data_new_rls ON all_data USING (id > 100 AND role = current_user);
-postgres=# \d+ all_data
+openGauss=# ALTER ROW LEVEL SECURITY POLICY all_data_new_rls ON all_data USING (id > 100 AND role = current_user);
+openGauss=# \d+ all_data
                                Table "public.all_data"
  Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------

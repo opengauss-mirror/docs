@@ -86,13 +86,13 @@
 
 ```
 --更改Snowball类型字典的停用词定义，其他参数保持不变。
-postgres=# ALTER TEXT SEARCH DICTIONARY my_dict ( StopWords = newrussian, FilePath = 'file:///home/dicts' );
+openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( StopWords = newrussian, FilePath = 'file:///home/dicts' );
 
 --更改Snowball类型字典的Language参数，并删除停用词定义。
-postgres=# ALTER TEXT SEARCH DICTIONARY my_dict ( Language = dutch， StopWords );
+openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( Language = dutch， StopWords );
 
 --更新词典定义，不实际更改任何内容。
-postgres=# ALTER TEXT SEARCH DICTIONARY my_dict ( dummy );
+openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( dummy );
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122080_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>

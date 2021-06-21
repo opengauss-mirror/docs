@@ -49,16 +49,16 @@ ALTER RESOURCE LABEL label_name (ADD|REMOVE)
 
 ```
 --创建基本表table_for_label。
-postgres=# CREATE TABLE table_for_label(col1 int, col2 text);
+openGauss=# CREATE TABLE table_for_label(col1 int, col2 text);
 
 --创建资源标签table_label。
-postgres=# CREATE RESOURCE LABEL table_label ADD COLUMN(table_for_label.col1);
+openGauss=# CREATE RESOURCE LABEL table_label ADD COLUMN(table_for_label.col1);
 
 --将col2添加至资源标签table_label中
-postgres=# ALTER RESOURCE LABEL table_label ADD COLUMN(table_for_label.col2)
+openGauss=# ALTER RESOURCE LABEL table_label ADD COLUMN(table_for_label.col2)
 
 --将资源标签table_label中的一项移除
-postgres=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1);
+openGauss=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1);
 ```
 
 ## 相关链接<a name="section156744489391"></a>

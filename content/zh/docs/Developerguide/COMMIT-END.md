@@ -29,7 +29,7 @@
 
 ```
 --创建表。
-postgres=# CREATE TABLE tpcds.customer_demographics_t2
+openGauss=# CREATE TABLE tpcds.customer_demographics_t2
 (
     CD_DEMO_SK                INTEGER               NOT NULL,
     CD_GENDER                 CHAR(1)                       ,
@@ -45,20 +45,20 @@ WITH (ORIENTATION = COLUMN,COMPRESSION=MIDDLE)
 ;
 
 --开启事务。   
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 --插入数据。
-postgres=# INSERT INTO tpcds.customer_demographics_t2 VALUES(1,'M', 'U', 'DOCTOR DEGREE', 1200, 'GOOD', 1, 0, 0);
-postgres=# INSERT INTO tpcds.customer_demographics_t2 VALUES(2,'F', 'U', 'MASTER DEGREE', 300, 'BAD', 1, 0, 0);
+openGauss=# INSERT INTO tpcds.customer_demographics_t2 VALUES(1,'M', 'U', 'DOCTOR DEGREE', 1200, 'GOOD', 1, 0, 0);
+openGauss=# INSERT INTO tpcds.customer_demographics_t2 VALUES(2,'F', 'U', 'MASTER DEGREE', 300, 'BAD', 1, 0, 0);
 
 --提交事务，让所有更改永久化。
-postgres=# COMMIT;
+openGauss=# COMMIT;
 
 --查询数据。
-postgres=# SELECT * FROM tpcds.customer_demographics_t2;
+openGauss=# SELECT * FROM tpcds.customer_demographics_t2;
 
 --删除表tpcds.customer_demographics_t2。
-postgres=# DROP TABLE tpcds.customer_demographics_t2;
+openGauss=# DROP TABLE tpcds.customer_demographics_t2;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122094_zh-cn_topic_0059779032_s652dd12556d94ac0a003244758ed74e8"></a>

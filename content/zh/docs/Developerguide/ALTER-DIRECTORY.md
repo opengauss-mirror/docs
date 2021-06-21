@@ -26,13 +26,13 @@ ALTER DIRECTORY directory_name
 
 ```
 --创建目录。
-postgres=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
+openGauss=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 
 --修改目录的owner。
-postgres=# ALTER DIRECTORY dir OWNER TO system;
+openGauss=# ALTER DIRECTORY dir OWNER TO system;
 
 --删除目录。
-postgres=# DROP DIRECTORY dir;
+openGauss=# DROP DIRECTORY dir;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122058_section613212620440"></a>

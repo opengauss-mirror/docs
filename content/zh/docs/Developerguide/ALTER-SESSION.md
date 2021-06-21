@@ -42,41 +42,41 @@ ALTER SESSION命令用于定义或修改那些对当前会话有影响的条件�
 
 ```
 -- 创建模式ds。
-postgres=# CREATE SCHEMA ds;
+openGauss=# CREATE SCHEMA ds;
 
 --设置模式搜索路径。
-postgres=# SET SEARCH_PATH TO ds, public;
+openGauss=# SET SEARCH_PATH TO ds, public;
 
 --设置日期时间风格为传统的POSTGRES风格（日在月前）。
-postgres=# SET DATESTYLE TO postgres, dmy;
+openGauss=# SET DATESTYLE TO postgres, dmy;
 
 --设置当前会话的字符编码为UTF8。
-postgres=# ALTER SESSION SET NAMES 'UTF8';
+openGauss=# ALTER SESSION SET NAMES 'UTF8';
 
 --设置时区为加州伯克利。
-postgres=# SET TIME ZONE 'PST8PDT';
+openGauss=# SET TIME ZONE 'PST8PDT';
 
 --设置时区为意大利。
-postgres=# SET TIME ZONE 'Europe/Rome';
+openGauss=# SET TIME ZONE 'Europe/Rome';
 
 --设置当前模式。
-postgres=# ALTER SESSION SET CURRENT_SCHEMA TO tpcds;
+openGauss=# ALTER SESSION SET CURRENT_SCHEMA TO tpcds;
 
 --设置XML OPTION为DOCUMENT。
-postgres=# ALTER SESSION SET XML OPTION DOCUMENT;
+openGauss=# ALTER SESSION SET XML OPTION DOCUMENT;
 
 --创建角色joe，并设置会话的角色为joe。
-postgres=# CREATE ROLE joe WITH PASSWORD 'xxxxxx';
-postgres=# ALTER SESSION SET SESSION AUTHORIZATION joe PASSWORD 'xxxxxx';
+openGauss=# CREATE ROLE joe WITH PASSWORD 'xxxxxx';
+openGauss=# ALTER SESSION SET SESSION AUTHORIZATION joe PASSWORD 'xxxxxx';
 
 --切换到默认用户。
-postgres=> ALTER SESSION SET SESSION AUTHORIZATION default;
+openGauss=> ALTER SESSION SET SESSION AUTHORIZATION default;
 
 --删除ds模式。
-postgres=# DROP SCHEMA ds;
+openGauss=# DROP SCHEMA ds;
 
 --删除joe。
-postgres=# DROP ROLE joe;
+openGauss=# DROP ROLE joe;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122073_zh-cn_topic_0059778275_sae8fd88368e642f8bec50ae5712a870c"></a>

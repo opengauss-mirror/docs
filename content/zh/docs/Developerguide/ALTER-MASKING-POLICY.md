@@ -91,41 +91,41 @@
 
 ```
 --创建dev_mask和bob_mask用户。
-postgres=# CREATE USER dev_mask PASSWORD 'dev@1234';
-postgres=# CREATE USER bob_mask PASSWORD 'bob@1234';
+openGauss=# CREATE USER dev_mask PASSWORD 'dev@1234';
+openGauss=# CREATE USER bob_mask PASSWORD 'bob@1234';
 
 --创建一个表tb_for_masking
-postgres=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);
+openGauss=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);
 
 --创建资源标签标记敏感列col1
-postgres=# CREATE RESOURCE LABEL mask_lb1 ADD COLUMN(tb_for_masking.col1);
+openGauss=# CREATE RESOURCE LABEL mask_lb1 ADD COLUMN(tb_for_masking.col1);
 
 --创建资源标签标记敏感列col2
-postgres=# CREATE RESOURCE LABEL mask_lb2 ADD COLUMN(tb_for_masking.col2);
+openGauss=# CREATE RESOURCE LABEL mask_lb2 ADD COLUMN(tb_for_masking.col2);
 
 --对访问敏感列col1的操作创建脱敏策略
-postgres=# CREATE MASKING POLICY maskpol1 maskall ON LABEL(mask_lb1);
+openGauss=# CREATE MASKING POLICY maskpol1 maskall ON LABEL(mask_lb1);
 
 --为脱敏策略maskpol1添加描述
-postgres=# ALTER MASKING POLICY maskpol1 COMMENTS 'masking policy for tb_for_masking.col1';
+openGauss=# ALTER MASKING POLICY maskpol1 COMMENTS 'masking policy for tb_for_masking.col1';
 
 --修改脱敏策略maskpol1，新增一项脱敏方式
-postgres=# ALTER MASKING POLICY maskpol1 ADD randommasking ON LABEL(mask_lb2);
+openGauss=# ALTER MASKING POLICY maskpol1 ADD randommasking ON LABEL(mask_lb2);
 
 --修改脱敏策略maskpol1，移除一项脱敏方式
-postgres=# ALTER MASKING POLICY maskpol1 REMOVE randommasking ON LABEL(mask_lb2);
+openGauss=# ALTER MASKING POLICY maskpol1 REMOVE randommasking ON LABEL(mask_lb2);
 
 --修改脱敏策略maskpol1，修改一项脱敏方式
-postgres=# ALTER MASKING POLICY maskpol1 MODIFY randommasking ON LABEL(mask_lb1);
+openGauss=# ALTER MASKING POLICY maskpol1 MODIFY randommasking ON LABEL(mask_lb1);
 
 --修改脱敏策略maskpol1使之仅对用户dev_mask和bob_mask,客户端工具为psql和gsql，IP地址为'10.20.30.40', '127.0.0.0/24'场景生效。
-postgres=# ALTER MASKING POLICY maskpol1 MODIFY (FILTER ON ROLES(dev_mask, bob_mask), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24'));
+openGauss=# ALTER MASKING POLICY maskpol1 MODIFY (FILTER ON ROLES(dev_mask, bob_mask), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24'));
 
 --修改脱敏策略maskpol1，使之对所有用户场景生效
-postgres=# ALTER MASKING POLICY maskpol1 DROP FILTER;
+openGauss=# ALTER MASKING POLICY maskpol1 DROP FILTER;
 
 --禁用脱敏策略maskpol1
-postgres=# ALTER MASKING POLICY maskpol1 DISABLE;
+openGauss=# ALTER MASKING POLICY maskpol1 DISABLE;
 ```
 
 ## 相关链接<a name="section156744489391"></a>

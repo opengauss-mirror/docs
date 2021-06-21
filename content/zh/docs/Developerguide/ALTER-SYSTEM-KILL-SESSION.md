@@ -29,8 +29,7 @@ ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
 
 ```
 --查询会话信息。
-postgres=# 
-SELECT sa.sessionid AS sid,0::integer AS serial#,ad.rolname AS username FROM pg_stat_get_activity(NULL) AS sa
+openGauss=# SELECT sa.sessionid AS sid,0::integer AS serial#,ad.rolname AS username FROM pg_stat_get_activity(NULL) AS sa
 LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)WHERE sa.application_name <> 'JobScheduler';
        sid       | serial# | username 
 -----------------+---------+----------
@@ -45,6 +44,6 @@ LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)WHERE sa.application_name <> 'Job
 (8 rows)
 
 --结束SID为140131075880720的会话。
-postgres=#  ALTER SYSTEM KILL SESSION '140131075880720,0' IMMEDIATE;
+openGauss=#  ALTER SYSTEM KILL SESSION '140131075880720,0' IMMEDIATE;
 ```
 
