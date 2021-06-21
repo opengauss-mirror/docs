@@ -59,17 +59,17 @@
 
 ```
 --创建一个名为serial的递增序列，从101开始。
-postgres=# CREATE SEQUENCE serial START 101;
+openGauss=# CREATE SEQUENCE serial START 101;
 
 --创建一个表,定义默认值。
-postgres=# CREATE TABLE T1(C1 bigint default nextval('serial'));
+openGauss=# CREATE TABLE T1(C1 bigint default nextval('serial'));
 
 --将序列serial的归属列变为T1.C1。
-postgres=# ALTER SEQUENCE serial OWNED BY T1.C1;
+openGauss=# ALTER SEQUENCE serial OWNED BY T1.C1;
 
 --删除序列和表。
-postgres=# DROP SEQUENCE serial cascade;
-postgres=# DROP TABLE T1;
+openGauss=# DROP SEQUENCE serial cascade;
+openGauss=# DROP TABLE T1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_seadab16e00ee41c383d8cba1759ed7c8"></a>

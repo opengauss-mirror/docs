@@ -79,26 +79,26 @@ CREATE AUDIT POLICY [ IF NOT EXISTS ] policy_name { { privilege_audit_clause | a
 
 ```
 --创建dev_audit和bob_audit用户。
-postgres=# CREATE USER dev_audit PASSWORD 'dev@1234';
-postgres=# CREATE USER bob_audit password 'bob@1234';
+openGauss=# CREATE USER dev_audit PASSWORD 'dev@1234';
+openGauss=# CREATE USER bob_audit password 'bob@1234';
 
 --创建一个表tb_for_audit
-postgres=# CREATE TABLE tb_for_audit(col1 text, col2 text, col3 text);
+openGauss=# CREATE TABLE tb_for_audit(col1 text, col2 text, col3 text);
 
 --创建资源标签
-postgres=# CREATE RESOURCE LABEL adt_lb0 add TABLE(tb_for_audit);
+openGauss=# CREATE RESOURCE LABEL adt_lb0 add TABLE(tb_for_audit);
 
 --对数据库执行create操作创建审计策略
-postgres=# CREATE AUDIT POLICY adt1 PRIVILEGES CREATE;
+openGauss=# CREATE AUDIT POLICY adt1 PRIVILEGES CREATE;
 
 --对数据库执行select操作创建审计策略
-postgres=# CREATE AUDIT POLICY adt2 ACCESS SELECT;
+openGauss=# CREATE AUDIT POLICY adt2 ACCESS SELECT;
 
 --仅审计记录用户dev_audit和bob_audit在执行针对adt_lb0资源进行的create操作数据库创建审计策略
-postgres=# CREATE AUDIT POLICY adt3 PRIVILEGES CREATE ON LABEL(adt_lb0) FILTER ON ROLES(dev_audit, bob_audit);
+openGauss=# CREATE AUDIT POLICY adt3 PRIVILEGES CREATE ON LABEL(adt_lb0) FILTER ON ROLES(dev_audit, bob_audit);
 
 --仅审计记录用户dev_audit和bob_audit,客户端工具为psql和gsql，IP地址为'10.20.30.40', '127.0.0.0/24'，在执行针对adt_lb0资源进行的select、insert、delete操作数据库创建审计策略。
-postgres=# CREATE AUDIT POLICY adt4 ACCESS SELECT ON LABEL(adt_lb0), INSERT ON LABEL(adt_lb0), DELETE FILTER ON ROLES(dev_audit, bob_audit), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24');
+openGauss=# CREATE AUDIT POLICY adt4 ACCESS SELECT ON LABEL(adt_lb0), INSERT ON LABEL(adt_lb0), DELETE FILTER ON ROLES(dev_audit, bob_audit), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24');
 ```
 
 ## 相关链接<a name="zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>

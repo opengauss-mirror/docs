@@ -89,7 +89,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
-    postgres=# 
+    openGauss=# 
     ```
 
     omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。
@@ -99,13 +99,13 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》中“安装openGauss \> 执行安装”章节，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
 
     ```
-    postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
+    openGauss=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
     ```
 
 4.  退出数据库。
 
     ```
-    postgres=# \q
+    openGauss=# \q
     ```
 
 
@@ -131,7 +131,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     ![](public_sys-resources/icon-note.gif) **说明：** 
     -   使用“jack”用户前，需先本地连接数据库，并在数据库中使用如下语句建立“jack”用户：
         ```
-        postgres=# CREATE USER jack PASSWORD 'Test@123';
+        openGauss=# CREATE USER jack PASSWORD 'Test@123';
         ```
 
     -   -N all表示openGauss的所有主机。

@@ -110,18 +110,18 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
 
 ```
 --创建一个由c_customer_sk小于150的内容组成的视图。
-postgres=# CREATE VIEW tpcds.customer_details_view_v1 AS
+openGauss=# CREATE VIEW tpcds.customer_details_view_v1 AS
     SELECT * FROM tpcds.customer
     WHERE c_customer_sk < 150;
 
 --修改视图名称。
-postgres=# ALTER VIEW tpcds.customer_details_view_v1 RENAME TO customer_details_view_v2;
+openGauss=# ALTER VIEW tpcds.customer_details_view_v1 RENAME TO customer_details_view_v2;
 
 --修改视图所属schema。
-postgres=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
+openGauss=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
 
 --删除视图。
-postgres=# DROP VIEW public.customer_details_view_v2;
+openGauss=# DROP VIEW public.customer_details_view_v2;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>

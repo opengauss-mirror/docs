@@ -40,7 +40,7 @@ CALL [schema.] {func_name| procedure_name} ( param_expr );
 
 ```
 --创建一个函数func_add_sql，计算两个整数的和，并返回结果。
-postgres=# CREATE FUNCTION func_add_sql(num1 integer, num2 integer) RETURN integer
+openGauss=# CREATE FUNCTION func_add_sql(num1 integer, num2 integer) RETURN integer
 AS
 BEGIN
 RETURN num1 + num2;
@@ -48,17 +48,17 @@ END;
 /
 
 --按参数值传递。
-postgres=# CALL func_add_sql(1, 3);
+openGauss=# CALL func_add_sql(1, 3);
 
 --使用命名标记法传参。
-postgres=# CALL func_add_sql(num1 => 1,num2 => 3);
-postgres=# CALL func_add_sql(num2 := 2, num1 := 3);
+openGauss=# CALL func_add_sql(num1 => 1,num2 => 3);
+openGauss=# CALL func_add_sql(num2 := 2, num1 := 3);
 
 --删除函数。
-postgres=# DROP FUNCTION func_add_sql;
+openGauss=# DROP FUNCTION func_add_sql;
 
 --创建带出参的函数。
-postgres=# CREATE FUNCTION func_increment_sql(num1 IN integer, num2 IN integer, res OUT integer)
+openGauss=# CREATE FUNCTION func_increment_sql(num1 IN integer, num2 IN integer, res OUT integer)
 RETURN integer
 AS
 BEGIN
@@ -67,9 +67,9 @@ END;
 /
 
 --出参传入常量。
-postgres=# CALL func_increment_sql(1,2,1);
+openGauss=# CALL func_increment_sql(1,2,1);
 
 --删除函数。
-postgres=# DROP FUNCTION func_increment_sql;
+openGauss=# DROP FUNCTION func_increment_sql;
 ```
 

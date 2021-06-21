@@ -118,7 +118,7 @@ COMMENT ON
 ## 示例<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_s57de72dc01404015a1a8a938238ad917"></a>
 
 ```
-postgres=# CREATE TABLE tpcds.customer_demographics_t2
+openGauss=# CREATE TABLE tpcds.customer_demographics_t2
 (
     CD_DEMO_SK                INTEGER               NOT NULL,
     CD_GENDER                 CHAR(1)                       ,
@@ -134,21 +134,21 @@ WITH (ORIENTATION = COLUMN,COMPRESSION=MIDDLE)
 ;
 
 -- 为tpcds.customer_demographics_t2.cd_demo_sk列加注释。
-postgres=# COMMENT ON COLUMN tpcds.customer_demographics_t2.cd_demo_sk IS 'Primary key of customer demographics table.';
+openGauss=# COMMENT ON COLUMN tpcds.customer_demographics_t2.cd_demo_sk IS 'Primary key of customer demographics table.';
 
 --创建一个由c_customer_sk小于150的内容组成的视图。
-postgres=# CREATE VIEW tpcds.customer_details_view_v2 AS
+openGauss=# CREATE VIEW tpcds.customer_details_view_v2 AS
     SELECT *
     FROM tpcds.customer
     WHERE c_customer_sk < 150;
 
 -- 为tpcds.customer_details_view_v2视图加注释。
-postgres=# COMMENT ON VIEW tpcds.customer_details_view_v2 IS 'View of customer detail';
+openGauss=# COMMENT ON VIEW tpcds.customer_details_view_v2 IS 'View of customer detail';
 
 -- 删除view。
-postgres=# DROP VIEW tpcds.customer_details_view_v2;
+openGauss=# DROP VIEW tpcds.customer_details_view_v2;
 
 -- 删除tpcds.customer_demographics_t2。
-postgres=# DROP TABLE tpcds.customer_demographics_t2;
+openGauss=# DROP TABLE tpcds.customer_demographics_t2;
 ```
 

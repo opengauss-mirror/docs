@@ -48,7 +48,7 @@ ALTER SYSTEM SET parameter TO value;
 
 ```
 --设置SIGHUP级别参数audit_enabled。
-postgres=#  alter system set audit_enabled to off;
+openGauss=#  alter system set audit_enabled to off;
 ALTER SYSTEM SET
 postgres=#  show audit_enabled;
  audit_enabled
@@ -57,7 +57,7 @@ postgres=#  show audit_enabled;
 (1 row)
 
 --设置POSTMASTER级别参数 enable_thread_pool，将在重启之后生效。
-postgres=# alter system set enable_thread_pool to on;
+openGauss=# alter system set enable_thread_pool to on;
 NOTICE:  please restart the database for the POSTMASTER level parameter to take effect.
 ALTER SYSTEM SET
 ```

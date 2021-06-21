@@ -78,7 +78,7 @@ CLUSTER不允许在事务中执行。
 
 ```
 -- 创建一个分区表。
-postgres=# CREATE TABLE tpcds.inventory_p1
+openGauss=# CREATE TABLE tpcds.inventory_p1
 (
     INV_DATE_SK               INTEGER               NOT NULL,
     INV_ITEM_SK               INTEGER               NOT NULL,
@@ -97,22 +97,22 @@ PARTITION BY RANGE(INV_DATE_SK)
 );
 
 -- 创建索引ds_inventory_p1_index1。
-postgres=# CREATE INDEX ds_inventory_p1_index1 ON tpcds.inventory_p1 (INV_ITEM_SK) LOCAL;
+openGauss=# CREATE INDEX ds_inventory_p1_index1 ON tpcds.inventory_p1 (INV_ITEM_SK) LOCAL;
 
 -- 对表tpcds.inventory_p1进行聚集。
-postgres=# CLUSTER tpcds.inventory_p1 USING ds_inventory_p1_index1;
+openGauss=# CLUSTER tpcds.inventory_p1 USING ds_inventory_p1_index1;
 
 -- 对分区p3进行聚集。
-postgres=# CLUSTER tpcds.inventory_p1 PARTITION (p3) USING ds_inventory_p1_index1;
+openGauss=# CLUSTER tpcds.inventory_p1 PARTITION (p3) USING ds_inventory_p1_index1;
 
 -- 对数据库中可以进行聚集的表进聚集。
-postgres=# CLUSTER;
+openGauss=# CLUSTER;
 
 --删除索引。
-postgres=# DROP INDEX tpcds.ds_inventory_p1_index1;
+openGauss=# DROP INDEX tpcds.ds_inventory_p1_index1;
 
 --删除分区表。
-postgres=# DROP TABLE tpcds.inventory_p1;
+openGauss=# DROP TABLE tpcds.inventory_p1;
 ```
 
 ## 优化建议<a name="zh-cn_topic_0237122092_zh-cn_topic_0059778981_section8558510163121"></a>

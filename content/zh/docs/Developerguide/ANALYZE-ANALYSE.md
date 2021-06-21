@@ -133,7 +133,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 --- 创建表。
 
 ```
-postgres=# CREATE TABLE customer_info
+openGauss=# CREATE TABLE customer_info
 (
 WR_RETURNED_DATE_SK       INTEGER                       ,
 WR_RETURNED_TIME_SK       INTEGER                       ,
@@ -146,7 +146,7 @@ WR_REFUNDED_CUSTOMER_SK   INTEGER
 --- 创建分区表。
 
 ```
-postgres=# CREATE TABLE customer_par
+openGauss=# CREATE TABLE customer_par
 (
 WR_RETURNED_DATE_SK       INTEGER                       ,
 WR_RETURNED_TIME_SK       INTEGER                       ,
@@ -166,14 +166,14 @@ ENABLE ROW MOVEMENT;
 --- 使用ANALYZE语句更新统计信息。
 
 ```
-postgres=# ANALYZE customer_info;
-postgres=# ANALYZE customer_par;
+openGauss=# ANALYZE customer_info;
+openGauss=# ANALYZE customer_par;
 ```
 
 --- 使用ANALYZE VERBOSE语句更新统计信息，并输出表的相关信息。
 
 ```
-postgres=# ANALYZE VERBOSE customer_info;
+openGauss=# ANALYZE VERBOSE customer_info;
 INFO:  analyzing "cstore.pg_delta_3394584009"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info" inheritance tree(cn_5002 pid=53078)
@@ -186,7 +186,7 @@ ANALYZE
 --- 删除表。
 
 ```
-postgres=# DROP TABLE customer_info;
-postgres=# DROP TABLE customer_par;
+openGauss=# DROP TABLE customer_info;
+openGauss=# DROP TABLE customer_par;
 ```
 

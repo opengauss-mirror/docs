@@ -41,13 +41,13 @@ ALTER GROUP是ALTER ROLE的别名，非SQL标准语法，不推荐使用，建�
 
 ```
 --向用户组中添加用户。
-postgres=# ALTER GROUP super_users ADD USER lche, jim;
+openGauss=# ALTER GROUP super_users ADD USER lche, jim;
 
 --从用户组中删除用户。
-postgres=# ALTER GROUP super_users DROP USER jim;
+openGauss=# ALTER GROUP super_users DROP USER jim;
 
 --修改用户组的名称。
-postgres=# ALTER GROUP super_users RENAME TO normal_users;
+openGauss=# ALTER GROUP super_users RENAME TO normal_users;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122062_zh-cn_topic_0059777426_s72bcc1ca592a4b47bfaf7849e51e7e30"></a>

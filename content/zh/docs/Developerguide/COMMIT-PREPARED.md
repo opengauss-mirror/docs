@@ -33,7 +33,7 @@ COMMIT PREPARED transaction_id WITH CSN;
 
 ```
 --提交标识符为的trans_test的事务。
-postgres=# COMMIT PREPARED 'trans_test';
+openGauss=# COMMIT PREPARED 'trans_test';
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122095_zh-cn_topic_0059777686_s7c42ca786fad42b0badcb6f63e895aff"></a>
