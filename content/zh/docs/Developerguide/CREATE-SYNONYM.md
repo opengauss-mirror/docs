@@ -41,45 +41,45 @@ CREATE [ OR REPLACE ] SYNONYM synonym_name
 
 ```
 --创建模式ot。
-postgres=# CREATE SCHEMA ot;
+openGauss=# CREATE SCHEMA ot;
 
 --创建表ot.t1及其同义词t1。
-postgres=# CREATE TABLE ot.t1(id int, name varchar2(10));
-postgres=# CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
+openGauss=# CREATE TABLE ot.t1(id int, name varchar2(10));
+openGauss=# CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
 
 --使用同义词t1。
-postgres=# SELECT * FROM t1;
-postgres=# INSERT INTO t1 VALUES (1, 'ada'), (2, 'bob');
-postgres=# UPDATE t1 SET t1.name = 'cici' WHERE t1.id = 2;
+openGauss=# SELECT * FROM t1;
+openGauss=# INSERT INTO t1 VALUES (1, 'ada'), (2, 'bob');
+openGauss=# UPDATE t1 SET t1.name = 'cici' WHERE t1.id = 2;
 
 --创建同义词v1及其关联视图ot.v_t1。
-postgres=# CREATE SYNONYM v1 FOR ot.v_t1;
-postgres=# CREATE VIEW ot.v_t1 AS SELECT * FROM ot.t1;
+openGauss=# CREATE SYNONYM v1 FOR ot.v_t1;
+openGauss=# CREATE VIEW ot.v_t1 AS SELECT * FROM ot.t1;
 
 --使用同义词v1。
-postgres=# SELECT * FROM v1;
+openGauss=# SELECT * FROM v1;
 
 --创建重载函数ot.add及其同义词add。
-postgres=# CREATE OR REPLACE FUNCTION ot.add(a integer, b integer) RETURNS integer AS
+openGauss=# CREATE OR REPLACE FUNCTION ot.add(a integer, b integer) RETURNS integer AS
 $$
 SELECT $1 + $2
 $$
 LANGUAGE sql;
 
-postgres=# CREATE OR REPLACE FUNCTION ot.add(a decimal(5,2), b decimal(5,2)) RETURNS decimal(5,2) AS
+openGauss=# CREATE OR REPLACE FUNCTION ot.add(a decimal(5,2), b decimal(5,2)) RETURNS decimal(5,2) AS
 $$
 SELECT $1 + $2
 $$
 LANGUAGE sql;
 
-postgres=# CREATE OR REPLACE SYNONYM add FOR ot.add;
+openGauss=# CREATE OR REPLACE SYNONYM add FOR ot.add;
 
 --使用同义词add。
-postgres=# SELECT add(1,2);
-postgres=# SELECT add(1.2,2.3);
+openGauss=# SELECT add(1,2);
+openGauss=# SELECT add(1.2,2.3);
 
 --创建存储过程ot.register及其同义词register。
-postgres=# CREATE PROCEDURE ot.register(n_id integer, n_name varchar2(10))
+openGauss=# CREATE PROCEDURE ot.register(n_id integer, n_name varchar2(10))
 SECURITY INVOKER
 AS
 BEGIN
@@ -87,17 +87,17 @@ BEGIN
 END;
 /
 
-postgres=# CREATE OR REPLACE SYNONYM register FOR ot.register;
+openGauss=# CREATE OR REPLACE SYNONYM register FOR ot.register;
 
 --使用同义词register，调用存储过程。
-postgres=# CALL register(3,'mia');
+openGauss=# CALL register(3,'mia');
 
 --删除同义词。
-postgres=# DROP SYNONYM t1;
-postgres=# DROP SYNONYM IF EXISTS v1;
-postgres=# DROP SYNONYM IF EXISTS add;
-postgres=# DROP SYNONYM register;
-postgres=# DROP SCHEMA ot CASCADE;
+openGauss=# DROP SYNONYM t1;
+openGauss=# DROP SYNONYM IF EXISTS v1;
+openGauss=# DROP SYNONYM IF EXISTS add;
+openGauss=# DROP SYNONYM register;
+openGauss=# DROP SCHEMA ot CASCADE;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122116_zh-cn_topic_0059778825_section184942174514"></a>

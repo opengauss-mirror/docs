@@ -267,11 +267,11 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
 
 ```
 --创建源表及触发表
-postgres=# CREATE TABLE test_trigger_src_tbl(id1 INT, id2 INT, id3 INT);
-postgres=# CREATE TABLE test_trigger_des_tbl(id1 INT, id2 INT, id3 INT);
+openGauss=# CREATE TABLE test_trigger_src_tbl(id1 INT, id2 INT, id3 INT);
+openGauss=# CREATE TABLE test_trigger_des_tbl(id1 INT, id2 INT, id3 INT);
 
 --创建触发器函数
-postgres=# CREATE OR REPLACE FUNCTION tri_insert_func() RETURNS TRIGGER AS
+openGauss=# CREATE OR REPLACE FUNCTION tri_insert_func() RETURNS TRIGGER AS
            $$
            DECLARE
            BEGIN
@@ -280,7 +280,7 @@ postgres=# CREATE OR REPLACE FUNCTION tri_insert_func() RETURNS TRIGGER AS
            END
            $$ LANGUAGE PLPGSQL;
 
-postgres=# CREATE OR REPLACE FUNCTION tri_update_func() RETURNS TRIGGER AS
+openGauss=# CREATE OR REPLACE FUNCTION tri_update_func() RETURNS TRIGGER AS
            $$
            DECLARE
            BEGIN
@@ -289,7 +289,7 @@ postgres=# CREATE OR REPLACE FUNCTION tri_update_func() RETURNS TRIGGER AS
            END
            $$ LANGUAGE PLPGSQL;
 
-postgres=# CREATE OR REPLACE FUNCTION TRI_DELETE_FUNC() RETURNS TRIGGER AS
+openGauss=# CREATE OR REPLACE FUNCTION TRI_DELETE_FUNC() RETURNS TRIGGER AS
            $$
            DECLARE
            BEGIN
@@ -299,51 +299,51 @@ postgres=# CREATE OR REPLACE FUNCTION TRI_DELETE_FUNC() RETURNS TRIGGER AS
            $$ LANGUAGE PLPGSQL;
 
 --创建INSERT触发器
-postgres=# CREATE TRIGGER insert_trigger
+openGauss=# CREATE TRIGGER insert_trigger
            BEFORE INSERT ON test_trigger_src_tbl
            FOR EACH ROW
            EXECUTE PROCEDURE tri_insert_func();
 
 --创建UPDATE触发器
-postgres=# CREATE TRIGGER update_trigger
+openGauss=# CREATE TRIGGER update_trigger
            AFTER UPDATE ON test_trigger_src_tbl  
            FOR EACH ROW
            EXECUTE PROCEDURE tri_update_func();
 
 --创建DELETE触发器
-postgres=# CREATE TRIGGER delete_trigger
+openGauss=# CREATE TRIGGER delete_trigger
            BEFORE DELETE ON test_trigger_src_tbl
            FOR EACH ROW
            EXECUTE PROCEDURE tri_delete_func();
 
 --执行INSERT触发事件并检查触发结果
-postgres=# INSERT INTO test_trigger_src_tbl VALUES(100,200,300);
-postgres=# SELECT * FROM test_trigger_src_tbl;
-postgres=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生效。
+openGauss=# INSERT INTO test_trigger_src_tbl VALUES(100,200,300);
+openGauss=# SELECT * FROM test_trigger_src_tbl;
+openGauss=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生效。
 
 --执行UPDATE触发事件并检查触发结果
-postgres=# UPDATE test_trigger_src_tbl SET id3=400 WHERE id1=100;
-postgres=# SELECT * FROM test_trigger_src_tbl;
-postgres=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生效
+openGauss=# UPDATE test_trigger_src_tbl SET id3=400 WHERE id1=100;
+openGauss=# SELECT * FROM test_trigger_src_tbl;
+openGauss=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生效
 
 --执行DELETE触发事件并检查触发结果
-postgres=# DELETE FROM test_trigger_src_tbl WHERE id1=100;
-postgres=# SELECT * FROM test_trigger_src_tbl;
-postgres=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生效
+openGauss=# DELETE FROM test_trigger_src_tbl WHERE id1=100;
+openGauss=# SELECT * FROM test_trigger_src_tbl;
+openGauss=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生效
 
 --修改触发器
-postgres=# ALTER TRIGGER delete_trigger ON test_trigger_src_tbl RENAME TO delete_trigger_renamed;
+openGauss=# ALTER TRIGGER delete_trigger ON test_trigger_src_tbl RENAME TO delete_trigger_renamed;
 
 --禁用insert_trigger触发器
-postgres=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER insert_trigger;  
+openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER insert_trigger;  
 
 --禁用当前表上所有触发器
-postgres=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER ALL;  
+openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER ALL;  
 
 --删除触发器
-postgres=# DROP TRIGGER insert_trigger ON test_trigger_src_tbl;
-postgres=# DROP TRIGGER update_trigger ON test_trigger_src_tbl;
-postgres=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
+openGauss=# DROP TRIGGER insert_trigger ON test_trigger_src_tbl;
+openGauss=# DROP TRIGGER update_trigger ON test_trigger_src_tbl;
+openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>

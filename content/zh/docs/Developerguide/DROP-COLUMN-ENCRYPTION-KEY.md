@@ -31,7 +31,7 @@ DROP COLUMN ENCRYPTION KEY [ IF EXISTS ] column_encryption_key_name [CASCADE];
 
 ```
 --删除客户端加密主密钥对象。
-postgres=# DROP COLUMN ENCRYPTION KEY ImgCEK CASCADE;
+openGauss=# DROP COLUMN ENCRYPTION KEY ImgCEK CASCADE;
 ERROR:  cannot drop column setting: imgcek cascadely because encrypted column depend on it.
 HINT:  we have to drop encrypted column: name, ... before drop column setting: imgcek cascadely.
 ```

@@ -158,30 +158,30 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
 ```
 --创建用户alice
-postgres=# CREATE USER alice PASSWORD 'Gauss@123';
+openGauss=# CREATE USER alice PASSWORD 'Gauss@123';
 
 --创建用户bob
-postgres=# CREATE USER bob PASSWORD 'Gauss@123';
+openGauss=# CREATE USER bob PASSWORD 'Gauss@123';
 
 --创建数据表all_data
-postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
+openGauss=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
 
 --向数据表插入数据
-postgres=# INSERT INTO all_data VALUES(1, 'alice', 'alice data');
-postgres=# INSERT INTO all_data VALUES(2, 'bob', 'bob data');
-postgres=# INSERT INTO all_data VALUES(3, 'peter', 'peter data');
+openGauss=# INSERT INTO all_data VALUES(1, 'alice', 'alice data');
+openGauss=# INSERT INTO all_data VALUES(2, 'bob', 'bob data');
+openGauss=# INSERT INTO all_data VALUES(3, 'peter', 'peter data');
 
 --将表all_data的读取权限赋予alice和bob用户
-postgres=# GRANT SELECT ON all_data TO alice, bob;
+openGauss=# GRANT SELECT ON all_data TO alice, bob;
 
 --打开行访问控制策略开关
-postgres=# ALTER TABLE all_data ENABLE ROW LEVEL SECURITY;
+openGauss=# ALTER TABLE all_data ENABLE ROW LEVEL SECURITY;
 
 --创建行访问控制策略，当前用户只能查看用户自身的数据
-postgres=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
+openGauss=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
 
 --查看表all_data相关信息
-postgres=# \d+ all_data
+openGauss=# \d+ all_data
                                Table "public.all_data"
  Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------
@@ -195,7 +195,7 @@ Has OIDs: no
 Options: orientation=row, compression=no, enable_rowsecurity=true
 
 --当前用户执行SELECT操作
-postgres=# SELECT * FROM all_data;
+openGauss=# SELECT * FROM all_data;
  id | role  |    data
 ----+-------+------------
   1 | alice | alice data
@@ -203,20 +203,20 @@ postgres=# SELECT * FROM all_data;
   3 | peter | peter data
 (3 rows)
 
-postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
+openGauss=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
       QUERY PLAN
 ----------------------
  Seq Scan on all_data
 (1 row)
 
 --切换至alice用户执行SELECT操作
-postgres=# SELECT * FROM all_data;
+openGauss=# SELECT * FROM all_data;
  id | role  |    data
 ----+-------+------------
   1 | alice | alice data
 (1 row)
 
-postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
+openGauss=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
  QUERY PLAN
 ----------------------------------------------------------------
  Seq Scan on all_data

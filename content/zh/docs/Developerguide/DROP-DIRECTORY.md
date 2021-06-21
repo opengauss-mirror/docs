@@ -27,10 +27,10 @@ DROP DIRECTORY [ IF EXISTS ] directory_name;
 
 ```
 --创建目录。
-postgres=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
+openGauss=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 
 --删除目录。
-postgres=# DROP DIRECTORY dir;
+openGauss=# DROP DIRECTORY dir;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122136_section14134121715454"></a>

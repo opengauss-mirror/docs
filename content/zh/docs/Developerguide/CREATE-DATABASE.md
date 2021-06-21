@@ -764,54 +764,54 @@ CREATE DATABASE database_name
 
 ```
 --创建jim和tom用户。
-postgres=# CREATE USER jim PASSWORD 'Bigdata@123';
-postgres=# CREATE USER tom PASSWORD 'Bigdata@123';
+openGauss=# CREATE USER jim PASSWORD 'Bigdata@123';
+openGauss=# CREATE USER tom PASSWORD 'Bigdata@123';
 
 --创建一个GBK编码的数据库music（本地环境的编码格式必须也为GBK）。
-postgres=# CREATE DATABASE music ENCODING 'GBK' template = template0;
+openGauss=# CREATE DATABASE music ENCODING 'GBK' template = template0;
 
 --创建数据库music2，并指定所有者为jim。
-postgres=# CREATE DATABASE music2 OWNER jim;
+openGauss=# CREATE DATABASE music2 OWNER jim;
 
 --用模板template0创建数据库music3，并指定所有者为jim。
-postgres=# CREATE DATABASE music3 OWNER jim TEMPLATE template0;
+openGauss=# CREATE DATABASE music3 OWNER jim TEMPLATE template0;
 
 --设置music数据库的连接数为10。
-postgres=# ALTER DATABASE music CONNECTION LIMIT= 10;
+openGauss=# ALTER DATABASE music CONNECTION LIMIT= 10;
 
 --将music名称改为music4。
-postgres=# ALTER DATABASE music RENAME TO music4;
+openGauss=# ALTER DATABASE music RENAME TO music4;
 
 --将数据库music2的所属者改为tom。
-postgres=# ALTER DATABASE music2 OWNER TO tom;
+openGauss=# ALTER DATABASE music2 OWNER TO tom;
 
 --设置music3的表空间为PG_DEFAULT。
-postgres=# ALTER DATABASE music3 SET TABLESPACE PG_DEFAULT;
+openGauss=# ALTER DATABASE music3 SET TABLESPACE PG_DEFAULT;
 
 --关闭在数据库music3上缺省的索引扫描。
-postgres=# ALTER DATABASE music3 SET enable_indexscan TO off;
+openGauss=# ALTER DATABASE music3 SET enable_indexscan TO off;
 
 --重置enable_indexscan参数。
-postgres=# ALTER DATABASE music3 RESET enable_indexscan;
+openGauss=# ALTER DATABASE music3 RESET enable_indexscan;
 
 --删除数据库。
-postgres=# DROP DATABASE music2;
-postgres=# DROP DATABASE music3;
-postgres=# DROP DATABASE music4;
+openGauss=# DROP DATABASE music2;
+openGauss=# DROP DATABASE music3;
+openGauss=# DROP DATABASE music4;
 
 --删除jim和tom用户。
-postgres=# DROP USER jim;
-postgres=# DROP USER tom;
+openGauss=# DROP USER jim;
+openGauss=# DROP USER tom;
 
 --创建兼容TD格式的数据库。
-postgres=# CREATE DATABASE td_compatible_db DBCOMPATIBILITY 'C';
+openGauss=# CREATE DATABASE td_compatible_db DBCOMPATIBILITY 'C';
 
 --创建兼容A格式的数据库。
-postgres=# CREATE DATABASE ora_compatible_db DBCOMPATIBILITY 'A';
+openGauss=# CREATE DATABASE ora_compatible_db DBCOMPATIBILITY 'A';
 
 --删除兼容TD、A格式的数据库。
-postgres=# DROP DATABASE td_compatible_db;
-postgres=# DROP DATABASE ora_compatible_db;
+openGauss=# DROP DATABASE td_compatible_db;
+openGauss=# DROP DATABASE ora_compatible_db;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>

@@ -48,31 +48,31 @@ CREATE RESOURCE LABEL [IF NOT EXISTS] label_name ADD label_item_list[, ...]*;
 
 ```
 --创建一个表tb_for_label
-postgres=# CREATE TABLE tb_for_label(col1 text, col2 text, col3 text);
+openGauss=# CREATE TABLE tb_for_label(col1 text, col2 text, col3 text);
 
 --创建一个模式schema_for_label
-postgres=# CREATE SCHEMA schema_for_label;
+openGauss=# CREATE SCHEMA schema_for_label;
 
 --创建一个视图view_for_label
-postgres=# CREATE VIEW view_for_label AS SELECT 1;
+openGauss=# CREATE VIEW view_for_label AS SELECT 1;
 
 --创建一个函数func_for_label
-postgres=# CREATE FUNCTION func_for_label RETURNS TEXT AS $$ SELECT col1 FROM tb_for_label; $$ LANGUAGE SQL;
+openGauss=# CREATE FUNCTION func_for_label RETURNS TEXT AS $$ SELECT col1 FROM tb_for_label; $$ LANGUAGE SQL;
 
 --基于表创建资源标签
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS table_label add TABLE(public.tb_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS table_label add TABLE(public.tb_for_label);
 
 --基于列创建资源标签
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS column_label add COLUMN(public.tb_for_label.col1);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS column_label add COLUMN(public.tb_for_label.col1);
 
 --基于模式创建资源标签
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS schema_label add SCHEMA(schema_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS schema_label add SCHEMA(schema_for_label);
 
 --基于视图创建资源标签
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS view_label add VIEW(view_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS view_label add VIEW(view_for_label);
 
 --基于函数创建资源标签
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS func_label add FUNCTION(func_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS func_label add FUNCTION(func_for_label);
 
 ```
 

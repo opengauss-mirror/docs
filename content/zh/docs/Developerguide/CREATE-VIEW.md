@@ -58,14 +58,14 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 
 ```
 --创建字段spcname为pg_default组成的视图。
-postgres=# CREATE VIEW myView AS
+openGauss=# CREATE VIEW myView AS
     SELECT * FROM pg_tablespace WHERE spcname = 'pg_default';
 
 --查看视图。
-postgres=# SELECT * FROM myView ;
+openGauss=# SELECT * FROM myView ;
 
 --删除视图myView。
-postgres=# DROP VIEW myView;
+openGauss=# DROP VIEW myView;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0237122126_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
