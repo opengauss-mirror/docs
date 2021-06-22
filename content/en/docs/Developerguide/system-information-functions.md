@@ -1620,7 +1620,7 @@ The following functions provide server transaction information in an exportable 
 
     Return type: Boolean
 
-    The internal transaction ID type \(**xid**\) is 32 bits wide and wraps around every 4 billion transactions.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment in time.  [Table 11](#en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
+    The internal transaction ID type \(**xid**\) is 64 bits wide and wraps around every 4 billion transactions.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment in time.  [Table 11](#en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
 
     **Table  11**  Snapshot components
 

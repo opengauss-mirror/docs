@@ -39,7 +39,7 @@ The  **OID**  type is currently implemented as an unsigned four-byte integer. So
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237121960_en-us_topic_0059778444_a81a191c65815453399464909025ee9ed"><a name="en-us_topic_0237121960_en-us_topic_0059778444_a81a191c65815453399464909025ee9ed"></a><a name="en-us_topic_0237121960_en-us_topic_0059778444_a81a191c65815453399464909025ee9ed"></a>N/A</p>
 </td>
-<td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237121960_en-us_topic_0059778444_af338c33823764d349e2a4b621cf6c671"><a name="en-us_topic_0237121960_en-us_topic_0059778444_af338c33823764d349e2a4b621cf6c671"></a><a name="en-us_topic_0237121960_en-us_topic_0059778444_af338c33823764d349e2a4b621cf6c671"></a>A transaction identifier. This is the data type of the system columns <strong id="en-us_topic_0237121960_b2054214692012"><a name="en-us_topic_0237121960_b2054214692012"></a><a name="en-us_topic_0237121960_b2054214692012"></a>xmin</strong> and <strong id="en-us_topic_0237121960_b1380712742014"><a name="en-us_topic_0237121960_b1380712742014"></a><a name="en-us_topic_0237121960_b1380712742014"></a>xmax</strong>. Transaction identifiers are also 32-bit quantities.</p>
+<td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237121960_en-us_topic_0059778444_af338c33823764d349e2a4b621cf6c671"><a name="en-us_topic_0237121960_en-us_topic_0059778444_af338c33823764d349e2a4b621cf6c671"></a><a name="en-us_topic_0237121960_en-us_topic_0059778444_af338c33823764d349e2a4b621cf6c671"></a>A transaction identifier. This is the data type of the system columns <strong id="en-us_topic_0237121960_b2054214692012"><a name="en-us_topic_0237121960_b2054214692012"></a><a name="en-us_topic_0237121960_b2054214692012"></a>xmin</strong> and <strong id="en-us_topic_0237121960_b1380712742014"><a name="en-us_topic_0237121960_b1380712742014"></a><a name="en-us_topic_0237121960_b1380712742014"></a>xmax</strong>. Transaction identifiers are also 64-bit quantities.</p>
 </td>
 <td class="cellrowborder" valign="top" width="31%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0237121960_en-us_topic_0059778444_a5fd85f63cd024c5d8fd03c763e74a761"><a name="en-us_topic_0237121960_en-us_topic_0059778444_a5fd85f63cd024c5d8fd03c763e74a761"></a><a name="en-us_topic_0237121960_en-us_topic_0059778444_a5fd85f63cd024c5d8fd03c763e74a761"></a>N/A</p>
 </td>
@@ -127,6 +127,7 @@ The  **OID**  type is currently implemented as an unsigned four-byte integer. So
 </tr>
 </tbody>
 </table>
+
 
 The  **OID**  type is used for a column in the database system catalog.
 
