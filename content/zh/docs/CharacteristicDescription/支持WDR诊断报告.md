@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section11239174173316"></a>
 
-本特性自openGauss 1.0.0版本开始引入。
+本特性自openGauss 1.0.0 版本开始引入。
 
 ## 特性简介<a name="section2238114973310"></a>
 
