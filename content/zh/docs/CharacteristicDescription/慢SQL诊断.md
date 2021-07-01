@@ -2,9 +2,9 @@
 
 ## 可获得性<a name="section147531742205517"></a>
 
-本特性自openGauss 1.1.0版本开始引入。
+本特性自openGauss 1.1.0 版本开始引入。
 
-重构前慢SQL相关视图已废弃，包括：dbe\_perf. gs\_slow\_query\_info、dbe\_perf.gs\_slow\_query\_history、dbe\_perf.global\_slow\_query\_hisotry、dbe\_perf.global\_slow\_query\_info。
+重构前慢SQL相关视图已废弃，包括dbe\_perf. gs\_slow\_query\_info、dbe\_perf.gs\_slow\_query\_history、dbe\_perf.global\_slow\_query\_hisotry、dbe\_perf.global\_slow\_query\_info。
 
 ## 特性简介<a name="section134931562564"></a>
 
@@ -12,13 +12,13 @@
 
 ## 客户价值<a name="section1407614175619"></a>
 
-慢SQL提供给用户对于慢SQL诊断所需的详细信息，用户无需通过复现就能离线诊断特定慢SQL的性能问题。表和函数接口方便用户统计慢SQL指标，对接第三方平台。
+慢SQL诊断提供给用户对于慢SQL所需的详细信息，用户无需通过复现就能离线诊断特定慢SQL的性能问题。表和函数接口方便用户统计慢SQL指标，对接第三方平台。
 
 ## 特性描述<a name="section8993113125610"></a>
 
-慢SQL能根据用户提供的执行时间阈值\(log\_min\_duration\_statement\)，记录所有超过阈值的执行完毕的作业信息。
+慢SQL能根据用户提供的执行时间阈值（log\_min\_duration\_statement），记录所有超过阈值的执行完毕的作业信息。
 
-慢SQL提供表和函数两种维度的查询接口，用户从接口中能查询到作业的执行计划，开始、结束执行时间，执行查询的语句，行活动，内核时间，CPU时间，执行时间，解析时间，编译时间，查询重写时间，计划生成时间，网络时间，IO时间，网络开销，锁开销等。所有信息都是脱敏的。
+慢SQL提供表和函数两种维度的查询接口。用户从接口中能查询到作业的执行计划，开始、结束执行时间，执行查询的语句，行活动，内核时间，CPU时间，执行时间，解析时间，编译时间，查询重写时间，计划生成时间，网络时间，IO时间，网络开销，锁开销等。以上所有信息都是脱敏的。
 
 ## 特性增强<a name="section1548515520568"></a>
 
@@ -28,7 +28,7 @@
 执行命令查看数据库实例中SQL语句执行信息
 gsql> select * from dbe_perf.get_global_full_sql_by_timestamp(start_timestamp, end_timestamp); 
 例如：
-postgres=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
+openGauss=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
 node_name            | coordinator1
@@ -57,7 +57,7 @@ query_plan           | Coordinator Name: coordinator1
 
 执行命令查看数据库实例中慢SQL语句执行信息
 gsql> select * from dbe_perf.get_global_slow_sql_by_timestamp(start_timestamp, end_timestamp);
-postgres=# select * from DBE_PERF.get_global_slow_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
+openGauss=# select * from DBE_PERF.get_global_slow_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------
 node_name            | coordinator1
 db_name              | postgres
@@ -88,7 +88,7 @@ query_plan           | Coordinator Name: coordinator1
 查看当前节点SQL语句执行信息
 gsql> select * from statement_history;
 例如：
-postgres=# select * from statement_history;
+openGauss=# select * from statement_history;
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
 db_name              | postgres

@@ -1012,6 +1012,7 @@ headless: true
 			-   [PG\_SHSECLABEL]({{< relref "./docs/Developerguide/pg_shseclabel.md" >}})
 			-   [PG\_STATISTIC]({{< relref "./docs/Developerguide/pg_statistic.md" >}})
 			-   [PG\_STATISTIC\_EXT]({{< relref "./docs/Developerguide/pg_statistic_ext.md" >}})
+			-   [PG\_SYNONYM]({{< relref "./docs/Developerguide/pg_synonym.md" >}})
 			-   [PG\_TABLESPACE]({{< relref "./docs/Developerguide/pg_tablespace.md" >}})
 			-   [PG\_TRIGGER]({{< relref "./docs/Developerguide/pg_trigger.md" >}})
 			-   [PG\_TS\_CONFIG]({{< relref "./docs/Developerguide/pg_ts_config.md" >}})
