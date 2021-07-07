@@ -101,7 +101,7 @@ gs\_initdb支持的常用参数和不常用参数请分别参见[表 常用参�
 <p id="p128419701615"><a name="p128419701615"></a><a name="p128419701615"></a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a63ab922337dd4d04aeeccf564ba3d5c9"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a63ab922337dd4d04aeeccf564ba3d5c9"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a63ab922337dd4d04aeeccf564ba3d5c9"></a>METHOD的取值：</p>
-<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_uc88578ae236a4c23901b34032feecabd"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_uc88578ae236a4c23901b34032feecabd"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_uc88578ae236a4c23901b34032feecabd"><li>trust</li><li>reject</li><li>md5（不安全的算法，为了兼容老版本而存在）</li><li>sha256</li></ul>
+<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_uc88578ae236a4c23901b34032feecabd"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_uc88578ae236a4c23901b34032feecabd"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_uc88578ae236a4c23901b34032feecabd"><li>trust</li><li>reject</li><li>md5（不安全的算法，为了兼容老版本而存在）</li><li>sha256</li> <li>sm3</li></ul>
 <p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ad4b8bf2ccd58490788bcf20d798a6b8d"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ad4b8bf2ccd58490788bcf20d798a6b8d"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ad4b8bf2ccd58490788bcf20d798a6b8d"></a>默认值：trust</p>
 </td>
 </tr>
@@ -111,7 +111,7 @@ gs\_initdb支持的常用参数和不常用参数请分别参见[表 常用参�
 <p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ac3bf14491ea44e3787b2ea25eaac0aa5"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ac3bf14491ea44e3787b2ea25eaac0aa5"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ac3bf14491ea44e3787b2ea25eaac0aa5"></a>指定此参数则会覆盖-A参数的值。</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_adf75e663ccd74766a057c833066b5ecc"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_adf75e663ccd74766a057c833066b5ecc"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_adf75e663ccd74766a057c833066b5ecc"></a>METHOD的取值：</p>
-<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua0bc882ad25b4c30889bd8beb2df1684"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua0bc882ad25b4c30889bd8beb2df1684"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua0bc882ad25b4c30889bd8beb2df1684"><li>trust</li><li>reject</li><li>md5（不安全的算法，为了兼容老版本而存在）</li><li>sha256</li></ul>
+<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua0bc882ad25b4c30889bd8beb2df1684"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua0bc882ad25b4c30889bd8beb2df1684"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua0bc882ad25b4c30889bd8beb2df1684"><li>trust</li><li>reject</li><li>md5（不安全的算法，为了兼容老版本而存在）</li><li>sha256</li><li>sm3</li></ul>
 <p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abd57e40a917448c2b7edd44975429a92"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abd57e40a917448c2b7edd44975429a92"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abd57e40a917448c2b7edd44975429a92"></a>默认值：trust</p>
 </td>
 </tr>
@@ -121,7 +121,7 @@ gs\_initdb支持的常用参数和不常用参数请分别参见[表 常用参�
 <p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a51a82f8aca384c1cb239459acc286af3"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a51a82f8aca384c1cb239459acc286af3"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a51a82f8aca384c1cb239459acc286af3"></a>指定此参数则会覆盖-A参数的值。</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a66742067d6074ae1b1e4f9dcf9c991ef"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a66742067d6074ae1b1e4f9dcf9c991ef"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a66742067d6074ae1b1e4f9dcf9c991ef"></a>METHOD的取值：</p>
-<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua8f41201ecce4a38838612396d037513"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua8f41201ecce4a38838612396d037513"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua8f41201ecce4a38838612396d037513"><li>trust</li><li>reject</li><li>md5（不安全的算法，为了兼容老版本而存在）</li><li>sha256</li></ul>
+<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua8f41201ecce4a38838612396d037513"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua8f41201ecce4a38838612396d037513"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_ua8f41201ecce4a38838612396d037513"><li>trust</li><li>reject</li><li>md5（不安全的算法，为了兼容老版本而存在）</li><li>sha256</li><li>sm3</li></ul>
 <p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p338903114578"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p338903114578"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p338903114578"></a>默认值：trust</p>
 </td>
 </tr>
