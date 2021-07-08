@@ -525,15 +525,15 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
         -   场景七：当做推断任务FEATURES的数据维度和数据类型与训练集存在不一致，将报ERROR，并提示错误原因，例如：
 
-        ```
-        openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES second_attack) FROM patients;
-        ERROR:  Invalid number of features for prediction, provided 1, expected 2
-        CONTEXT:  referenced column: patient_linear_regression_pred
-        -------------------------------------------------------------------------------------------------------------------------------------
-        openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES 1,second_attack,treatment) FROM patients;
-        ERROR:  Invalid number of features for prediction, provided 3, expected 2
-        CONTEXT:  referenced column: patient_linear_regression_pre
-        ```
+            ```
+            openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES second_attack) FROM patients;
+            ERROR:  Invalid number of features for prediction, provided 1, expected 2
+            CONTEXT:  referenced column: patient_linear_regression_pred
+            -------------------------------------------------------------------------------------------------------------------------------------
+            openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES 1,second_attack,treatment) FROM patients;
+            ERROR:  Invalid number of features for prediction, provided 3, expected 2
+            CONTEXT:  referenced column: patient_linear_regression_pre
+            ```
 
 
 
