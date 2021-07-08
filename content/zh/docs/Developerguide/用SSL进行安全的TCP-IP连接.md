@@ -163,8 +163,17 @@ openGauss在openGauss部署完成后，默认已开启SSL认证模式。服务�
 <p id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"></a><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"></a><strong id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"></a><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"></a>默认值：</strong>ALL，表示允许对端使用产品支持的所有加密算法，但不包含ADH、LOW、EXP、MD5算法。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_r15ddd719d55f46d38e3976ec89f58988"><td class="cellrowborder" valign="top" width="17.5017501750175%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_acde59b1470614c1f889bf18ad6da40a6"><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_acde59b1470614c1f889bf18ad6da40a6"></a><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_acde59b1470614c1f889bf18ad6da40a6"></a>ssl_cert_notify_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a6632087907ee43c8a83118fb87c7792c"><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a6632087907ee43c8a83118fb87c7792c"></a><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a6632087907ee43c8a83118fb87c7792c"></a>SSL服务器证书到期前提醒的天数。</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"></a><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"></a>请按照需求配置证书过期前提醒天数。</p>
+<p id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"></a><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"></a><strong id="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"></a><a name="zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"></a>默认值：</strong>90</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
 在客户端配置SSL认证相关的环境变量，详细信息请参见[表3](#zh-cn_topic_0237121092_zh-cn_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b)。
 

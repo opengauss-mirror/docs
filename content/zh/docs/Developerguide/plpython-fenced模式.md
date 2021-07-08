@@ -2,7 +2,7 @@
 
 在fenced模式中添加plpython非安全语言。在数据库编译时需要将python集成进数据库中，在configure截断加入--with-python选项。同时也可指定安装plpython的python路径，添加选项--with-includes='/python-dir=path'。
 
-在启动数据库之前配置GUC参数unix\_socket\_directory ，指定unix\_socket进程间通讯的文件地址。
+在启动数据库之前配置GUC参数unix\_socket\_directory ，指定unix\_socket进程间通讯的文件地址。用户需要提前在user-set-dir-path路径下创建文件夹，并将该文件夹权限修改为可读可写可执行。
 
 ```
 unix_socket_directory = '/user-set-dir-path'
@@ -22,6 +22,21 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
 
 ## 使用指导<a name="section823619213143"></a>
 
+-   创建extension  
+
+    - 当编译的plpython为Python2时：
+
+        ```
+        openGauss=# create extension plpythonu;
+        CREATE EXTENSION
+        ```
+    - 当编译的plpython为Python3时：
+
+        ```
+        openGauss=# create extension plpython3u;
+        CREATE EXTENSION
+        ```
+    下面示例是以Python2为例。
 -   创建plpython-fenced UDF
 
     ```
