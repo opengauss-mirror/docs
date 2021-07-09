@@ -35,6 +35,7 @@ Gray upgrade: supports operations on all service during the upgrade and upgrades
 -   The GUC parameter  **enable\_stream\_replication**  must be set to  **on**  for the upgrade. If this parameter is set to  **off**, the upgrade is not allowed.
 -   In gray upgrade, ensure that there are less than 200 concurrent reads and 200 concurrent writes.
 -   You are advised to perform the upgrade when the disk usage of the database node is less than 80%.
+-   After execute gs_upgradectl -t auto-upgrade, snapshot generation cannot be performed before it is submitted, that is, snapshot generation cannot be performed during upgrade.
 
 ## Syntax<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
 

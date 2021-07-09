@@ -35,6 +35,7 @@
 -   升级需要guc参数enable\_stream\_replication=on，该参数为off时不允许升级。
 -   灰度升级中， 业务并发要小于200并发读加200并发写的情况。
 -   建议数据库节点磁盘使用率低于80%时再执行升级操作。
+-   执行gs_upgradectl -t auto-upgrade 之后，没有提交之前，不能执行快照生成，即升级过程中不能执行快照生成。
 
 ## 语法<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
 
