@@ -16,6 +16,7 @@
 -   列存表的字段约束只支持NULL、NOT NULL和DEFAULT常量值。
 -   列存表支持delta表，受参数enable\_delta\_store控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
 -   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
+-   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte，text、varchar、char等长度可变的类型除外。
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 

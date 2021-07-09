@@ -14,6 +14,7 @@
 -   Column-store tables support only  **PARTIAL CLUSTER KEY**  table-level constraints, but do not support primary and foreign key table-level constraints.
 -   Only the  **NULL**,  **NOT NULL**, and  **DEFAULT**  constant values can be used as column-store table constraints.
 -   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
+-   The maximum number of columns in each table is 1600, depending on the type of columns. The total size of all columns cannot exceed 8192 bytes, except for text, varchar, char and other types with variable length.
 
 ## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
