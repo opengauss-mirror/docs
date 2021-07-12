@@ -1388,6 +1388,7 @@ headless: true
 		-   [DBE\_PLDEBUGGER.add\_breakpoint]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-add_breakpoint.md" >}})
 		-   [DBE\_PLDEBUGGER.delete\_breakpoint]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-delete_breakpoint.md" >}})
 		-   [DBE\_PLDEBUGGER.info\_breakpoints]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-info_breakpoints.md" >}})
+		-   [DBE\_PLDEBUGGER.backtrace]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-backtrace.md" >}})
 	-   [逻辑复制]({{< relref "./docs/Developerguide/逻辑复制.md" >}})
         -   [逻辑解码]({{< relref "./docs/Developerguide/逻辑解码.md" >}})
             -   [逻辑解码概述]({{< relref "./docs/Developerguide/逻辑解码概述.md" >}})
