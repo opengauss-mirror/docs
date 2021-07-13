@@ -48,6 +48,15 @@ PG\_ATTRDEF系统表存储列的默认值。
 <td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>可读的缺省值的内部表现形式。</p>
 </td>
 </tr>
+ <tr id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_re62d9c51bbec48779e1ebe6cea87eb94"><td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a5a146d84a95f45ff91d18d63dd486c8e"><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a5a146d84a95f45ff91d18d63dd486c8e"></a><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a5a146d84a95f45ff91d18d63dd486c8e"></a>adgencol</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a>char</p>
+</td>
+<td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="zh-cn_topic_0237122271_zh-cn_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>标识该列是否为生成列。取值为's'表示该列为生成列，取值为''表示该列为普通列。默认值为''。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
+
 
