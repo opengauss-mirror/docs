@@ -53,7 +53,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"><a name="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a>char</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>Identifies whether the column is a generated column. A value of ‘s’ indicates that the column is a generated column, and a value of ‘’ indicates that the column is a normal column. The default value is ‘’.</p>
+<td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>Identifies whether the column is a generated column. A value of 's' indicates that the column is a generated column, and a value of '' indicates that the column is a normal column. The default value is ''.</p>
 </td>
 </tr>
 </tbody>
