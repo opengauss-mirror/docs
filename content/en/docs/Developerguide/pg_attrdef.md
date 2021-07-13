@@ -5,6 +5,7 @@
 **Table  1**  PG\_ATTRDEF columns
 
 <a name="en-us_topic_0237122271_en-us_topic_0059778317_t2ba5a1edcb8445fda46e3fafa534d5fa"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0237122271_en-us_topic_0059778317_rb10db346535b4ed9a5e262c40e735077"><th class="cellrowborder" valign="top" width="22.57%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237122271_en-us_topic_0059778317_a822582bcca3c4ce58c806b4a9257021f"><a name="en-us_topic_0237122271_en-us_topic_0059778317_a822582bcca3c4ce58c806b4a9257021f"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_a822582bcca3c4ce58c806b4a9257021f"></a>Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.81%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237122271_en-us_topic_0059778317_a2fbcc0aa74b94848b4ee1d32a2058b32"><a name="en-us_topic_0237122271_en-us_topic_0059778317_a2fbcc0aa74b94848b4ee1d32a2058b32"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_a2fbcc0aa74b94848b4ee1d32a2058b32"></a>Type</p>
@@ -46,6 +47,13 @@
 <td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"><a name="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>Internal representation of the human-readable default value</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237122271_en-us_topic_0059778317_re62d9c51bbec48779e1ebe6cea87eb94"><td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_a5a146d84a95f45ff91d18d63dd486c8e"><a name="en-us_topic_0237122271_en-us_topic_0059778317_a5a146d84a95f45ff91d18d63dd486c8e"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_a5a146d84a95f45ff91d18d63dd486c8e"></a>adgencol</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"><a name="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_aa97463c5346f434db8f2fc42dfcd47b2"></a>char</p>
+</td>
+<td class="cellrowborder" valign="top" width="52.62%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a><a name="en-us_topic_0237122271_en-us_topic_0059778317_a16715bca864f4373a621ec6b6b9bd1ef"></a>Identifies whether the column is a generated column. A value of ‘s’ indicates that the column is a generated column, and a value of ‘’ indicates that the column is a normal column. The default value is ‘’.</p>
 </td>
 </tr>
 </tbody>
