@@ -64,10 +64,9 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
     gs_om -t start
     ```
 
-2.  确认白名单配置情况。操作如下，并确保配置文件的其他部分没有被修改。
-    1.  修改数据库的pg\_hba.conf文件。
-
-        在GS\_HOME中查找pg\_hba.conf文件，假设数据库GS\_HOME设置的为/gaussdb/data/db1。
+2.  确认白名单配置情况。操作如下，并确保配置文件的其他部分没有被修改。  
+    a.  修改数据库的pg\_hba.conf文件。  
+    在GS\_HOME中查找pg\_hba.conf文件，假设数据库GS\_HOME设置的为/gaussdb/data/db1。  
 
         ```
         cd /gaussdb/data/db1
@@ -80,7 +79,8 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
         ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>
         >```
 
-        输入“:90”找到对应位置，然后输入“i”切换到INSERT模式，将以下内容添加进pg\_hba.conf文件，添加后按下“ECS”键，退出INSERT模式，输入“:wq”后回车保存。
+        
+    输入“:90”找到对应位置，然后输入“i”切换到INSERT模式，将以下内容添加进pg\_hba.conf文件，添加后按下“ECS”键，退出INSERT模式，输入“:wq”后回车保存。  
 
         ```
         # IPv4 local connections:
@@ -91,38 +91,39 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
         host    all             all             ::1/128                 trust
         ```
 
-        使用omm用户登陆，使用gs\_ctl将策略生效。
+    使用omm用户登陆，使用gs\_ctl将策略生效。  
 
         ```
         su - omm
         gs_ctl reload -D /gaussdb/data/db1/
         ```
 
-    2.  修改数据库监听地址。
+    b.  修改数据库监听地址。
 
-        在GS\_HOME中查找pg\_hba.conf文件，假设数据库GS\_HOME设置的为/gaussdb/data/db1。
+    在GS\_HOME中查找pg\_hba.conf文件，假设数据库GS\_HOME设置的为/gaussdb/data/db1。    
 
         ```
         cd /gaussdb/data/db1
         vi postgresql.conf
         ```
 
-        输入“:60”找到对应位置，然后输入“i”切换到INSERT模式，将listen\_addresses的值修改成为\*，修改后按下“ECS”键，退出INSERT模式，输入“:wq”后回车保存。
+       
+    输入“:60”找到对应位置，然后输入“i”切换到INSERT模式，将listen\_addresses的值修改成为\*，修改后按下“ECS”键，退出INSERT模式，输入“:wq”后回车保存。  
 
         ```
         #listen_addresses = '192.168.0.19'              # what IP address(es) to listen on;
         listen_addresses = '*'
         ```
 
-        修改完成后重启数据库生效（-D后面的数据库默认路径，需要根据实际情况进行修改）。
+    修改完成后重启数据库生效（-D后面的数据库默认路径，需要根据实际情况进行修改）。    
 
         ```
         gs_ctl restart -D /gaussdb/data/db1/
         ```
 
 
-3.  确认虚拟机网络畅通
-    1.  在Linux操作系统上，通过ifconfig来查看二张网卡是否都正常启动，具体如下。
+3.  确认虚拟机网络畅通  
+    a.  在Linux操作系统上，通过ifconfig来查看二张网卡是否都正常启动，具体如下。
 
         ```
         [root@db1 ~]# ifconfig
@@ -153,7 +154,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
                 TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
         ```
 
-    2.  通过ping baidu.com确认是否能上网，具体如下。
+    b.  通过ping baidu.com确认是否能上网，具体如下。
 
         ```
         [root@db1 ~]# ping baidu.com
@@ -168,7 +169,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
         64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=8 ttl=47 time=48.3 ms
         ```
 
-        使用 ctrl+c组合键可以结束输出。
+    使用 ctrl+c组合键可以结束输出。
 
 
 
