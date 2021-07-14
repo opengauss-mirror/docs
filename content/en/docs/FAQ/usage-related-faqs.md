@@ -65,64 +65,65 @@ If the connection configuration is incorrect, perform the following steps:
     ```
 
 2.  Check the whitelist configuration. Perform the following operations and ensure that no other content of the configuration file is modified.
-    1.  Modify the  **pg\_hba.conf**  file of the database.
+    
+    Modify the  **pg\_hba.conf**  file of the database.
 
-        Search for the  **pg\_hba.conf**  file in  _GS\_HOME_. Assume that  _GS\_HOME_  is set to  **/gaussdb/data/db1**.
+    Search for the  **pg\_hba.conf**  file in  _GS\_HOME_. Assume that  _GS\_HOME_  is set to  **/gaussdb/data/db1**.
 
-        ```
-        cd /gaussdb/data/db1
-        vi pg_hba.conf
-        ```
+       ```
+       cd /gaussdb/data/db1
+       vi pg_hba.conf
+       ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >You can view the  _GS\_HOME_  address in the configuration file during the installation.
-        >```
-        ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>
-        >```
+       >![](public_sys-resources/icon-note.gif) **NOTE:** 
+       >You can view the  _GS\_HOME_  address in the configuration file during the installation.
+       >```
+       ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>
+       >```   
 
-        Enter  **:90**  to find the corresponding location, enter  **i**  to switch to the  **INSERT**  mode, add the following content to the  **pg\_hba.conf**  file, press  **ESC**  to exit the  **INSERT**  mode, enter** :wq**, and press  **Enter**  to save the change.
+    Enter  **:90**  to find the corresponding location, enter  **i**  to switch to the  **INSERT**  mode, add the following content to the  **pg\_hba.conf**  file, press  **ESC**  to exit the  **INSERT**  mode, enter** :wq**, and press  **Enter**  to save the change.
+    
+       ```
+       # IPv4 local connections:
+       host    all             all             127.0.0.1/32            trust
+       host    all    all    192.168.0.19/32    trust
+       host all all 0.0.0.0/0 sha256
+       # IPv6 local connections:
+       host    all             all             ::1/128                 trust
+       ```
 
-        ```
-        # IPv4 local connections:
-        host    all             all             127.0.0.1/32            trust
-        host    all    all    192.168.0.19/32    trust
-        host all all 0.0.0.0/0 sha256
-        # IPv6 local connections:
-        host    all             all             ::1/128                 trust
-        ```
+       Log in as user  **omm**  and run the  **gs\_ctl**  command to make the policy take effect.
+    
+       ```
+       su - omm
+       gs_ctl reload -D /gaussdb/data/db1/
+       ```
 
-        Log in as user  **omm**  and run the  **gs\_ctl**  command to make the policy take effect.
+    Change the database listening address.
 
-        ```
-        su - omm
-        gs_ctl reload -D /gaussdb/data/db1/
-        ```
-
-    2.  Change the database listening address.
-
-        Search for the  **pg\_hba.conf**  file in  _GS\_HOME_. Assume that  _GS\_HOME_  is set to  **/gaussdb/data/db1**.
-
+    Search for the  **pg\_hba.conf**  file in  _GS\_HOME_. Assume that  _GS\_HOME_  is set to  **/gaussdb/data/db1**.
+    
         ```
         cd /gaussdb/data/db1
         vi postgresql.conf
         ```
 
-        Enter  **:60**  to find the corresponding location, enter  **i**  to switch to the  **INSERT**  mode, change the value of  **listen\_addresses**  to  **\***, press  **ESC**  to exit the  **INSERT**  mode, enter  **:wq**, and press  **Enter**  to save the change.
-
+    Enter  **:60**  to find the corresponding location, enter  **i**  to switch to the  **INSERT**  mode, change the value of  **listen\_addresses**  to  **\***, press  **ESC**  to exit the  **INSERT**  mode, enter  **:wq**, and press  **Enter**  to save the change.
+    
         ```
         #listen_addresses = '192.168.0.19'              # what IP address(es) to listen on;
         listen_addresses = '*'
         ```
 
-        After the modification is complete, restart the database for the modification to take effect. \(The default database path following  **-D**  needs to be changed based on the actual situation.\)
-
+    After the modification is complete, restart the database for the modification to take effect. \(The default database path following  **-D**  needs to be changed based on the actual situation.\)
+    
         ```
         gs_ctl restart -D /gaussdb/data/db1/
         ```
 
 
 3.  Check whether the VM network is normal.
-    1.  In the Linux operating system, run the  **ifconfig**  command to check whether the two network NICs are started normally.
+    a.  In the Linux operating system, run the  **ifconfig**  command to check whether the two network NICs are started normally.
 
         ```
         [root@db1 ~]# ifconfig
@@ -153,7 +154,7 @@ If the connection configuration is incorrect, perform the following steps:
                 TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
         ```
 
-    2.  Run the  **ping baidu.com**  command to check whether you can access the Internet.
+    b.  Run the  **ping baidu.com**  command to check whether you can access the Internet.
 
         ```
         [root@db1 ~]# ping baidu.com
@@ -168,7 +169,7 @@ If the connection configuration is incorrect, perform the following steps:
         64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=8 ttl=47 time=48.3 ms
         ```
 
-        You can press  **Ctrl**+**C**  to stop the output.
+    You can press  **Ctrl**+**C**  to stop the output.
 
 
 
