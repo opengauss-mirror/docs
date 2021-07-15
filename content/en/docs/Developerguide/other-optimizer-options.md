@@ -664,7 +664,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## query\_dop<a name="en-us_topic_0059779049_s01c9d749fe8048928eeb2b47c6f61fbb"></a>
 
-**Parameter description**: Specifies the user-defined degree of parallelism \(DOP\). This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Parameter description**: Specifies the user-defined degree of parallelism \(DOP\). This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to 64 If the fixed SMP function is enabled, the system uses the fixed DOP.
 
