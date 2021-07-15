@@ -12,7 +12,7 @@
 -   列存表不支持创建全局临时表。
 -   创建列存表的数量建议不超过1000个。
 -   如果在建表过程中数据库系统发生故障，系统恢复后可能无法自动清除之前已创建的、大小为0的磁盘文件。此种情况出现概率小，不影响数据库系统的正常运行。
--   列存表的表级约束只支持PARTIAL CLUSTER KEY，不支持主外键等表级约束。
+-   列存表的表级约束只支持PARTIAL CLUSTER KEY、UNIQUE、PRIAMRY KEY，不支持外键等表级约束。
 -   列存表的字段约束只支持NULL、NOT NULL和DEFAULT常量值。
 -   列存表支持delta表，受参数enable\_delta\_store控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
 -   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。

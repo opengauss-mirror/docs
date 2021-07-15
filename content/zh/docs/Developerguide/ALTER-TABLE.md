@@ -10,7 +10,7 @@
 -   不能修改分区表的tablespace，但可以修改分区的tablespace。
 -   不支持修改存储参数ORIENTATION。
 -   SET SCHEMA操作不支持修改为系统内部模式，当前仅支持用户模式之间的修改。
--   列存表只支持PARTIAL CLUSTER KEY表级约束，不支持主外键等表级约束。
+-   列存表支持PARTIAL CLUSTER KEY、UNIQUE、PRIMARY KEY表级约束，不支持外键等表级约束。
 -   列存表只支持添加字段ADD COLUMN、修改字段的数据类型ALTER TYPE、设置单个字段的收集目标SET STATISTICS、支持更改表名称、支持更改表空间，支持删除字段DROP COLUMN。对于添加的字段和修改的字段类型要求是列存支持的[数据类型](数据类型.md)。ALTER TYPE的USING选项只支持常量表达式和涉及本字段的表达式，暂不支持涉及其他字段的表达式。
 -   列存表支持的字段约束包括NULL、NOT NULL和DEFAULT常量值；对字段约束的修改当前只支持对DEFAULT值的修改（SET DEFAULT）和删除（DROP DEFAULT），暂不支持对非空约束NULL/NOT NULL的修改。
 
