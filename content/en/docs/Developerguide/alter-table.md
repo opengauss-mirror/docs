@@ -10,7 +10,7 @@
 -   The tablespace of a partitioned table cannot be modified, but the tablespace of the partition can be modified.
 -   The storage parameter  **ORIENTATION**  cannot be modified.
 -   Currently,  **SET SCHEMA**  can only set schemas to user schemas. It cannot set a schema to a system internal schema.
--   Column-store tables support only  **PARTIAL CLUSTER KEY**  table-level constraints, but do not support primary and foreign key table-level constraints.
+-   Column-store tables support  **PARTIAL CLUSTER KEY**,  **UNIQUE**  and  **PRIMARY KEY**  table-level constraints, but do not support foreign key table-level constraints.
 -   In a column-store table, you can perform  **ADD COLUMN**,  **ALTER TYPE**,  **SET STATISTICS**,  **DROP COLUMN**  operations, and change table name and space. The types of new and modified columns should be the  [Data Types](en-us_topic_0283136848.md)  supported by column-store. The  **USING**  option of  **ALTER TYPE**  only supports constant expression and expression involved in the column.
 -   The column constraints supported by column-store tables include  **NULL**,  **NOT NULL**, and  **DEFAULT**  constant values. Only the  **DEFAULT**  value can be modified \(by using  **SET DEFAULT**  and  **DROP DEFAULT**\). Currently,  **NULL**  and  **NOT NULL**  constraints cannot be modified.
 

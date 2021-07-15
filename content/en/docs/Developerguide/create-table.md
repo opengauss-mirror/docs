@@ -11,7 +11,7 @@
 -   Column-store tables cannot be created as global temporary tables.
 -   It is recommended that the number of column-store tables do not exceed 1000.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
--   Column-store tables support only  **PARTIAL CLUSTER KEY**  table-level constraints, but do not support primary and foreign key table-level constraints.
+-   Column-store tables support only  **PARTIAL CLUSTER KEY**,  **UNIQUE**,  **PRIMARY KEY**  table-level constraints, but do not support foreign key table-level constraints.
 -   Only the  **NULL**,  **NOT NULL**, and  **DEFAULT**  constant values can be used as column-store table constraints.
 -   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
 -   The maximum number of columns in each table is 1600, depending on the type of columns. The total size of all columns cannot exceed 8192 bytes, except for text, varchar, char and other types with variable length.

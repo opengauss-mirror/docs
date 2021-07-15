@@ -18,7 +18,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 -   Indexes consume storage and computing resources. Creating too many indexes has negative impact on database performance \(especially the performance of data import. Therefore, you are advised to import the data before creating indexes\). Therefore, create indexes only when they are necessary.
 -   All functions and operators used in an index definition must be immutable, that is, their results must depend only on their parameters and never on any outside influence \(such as the contents of another table or the current time\). This restriction ensures that the behavior of the index is well-defined. To use a customized function in an index expression or  **WHERE**  clause, remember to mark the function  **immutable**  when you create it.
 -   Partitioned table indexes are classified into LOCAL indexes and GLOBAL indexes. A LOCAL index binds to a specific partition, and a GLOBAL index corresponds to the entire partitioned table.
--   Column-store tables support B-tree and PSORT indexes. If the two indexes are used, you cannot create expression, partial, and unique indexes.
+-   Column-store tables support B-tree and PSORT indexes. If the two indexes are used, you cannot create expression, partial indexes. PSORT does not support unique indexes but B-tree supports unique indexes.
 -   Column-store tables support GIN indexes, rather than partial indexes and unique indexes. If GIN indexes are used, you can create expression indexes. However, an expression in this situation cannot contain empty splitters, empty columns, or multiple columns.
 
 ## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
