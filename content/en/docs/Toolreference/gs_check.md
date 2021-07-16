@@ -211,14 +211,6 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152330_p488320114811"><a name="en-us_topic_0237152330_p488320114811"></a><a name="en-us_topic_0237152330_p488320114811"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237152330_row393310505129"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152330_p199341150131220"><a name="en-us_topic_0237152330_p199341150131220"></a><a name="en-us_topic_0237152330_p199341150131220"></a>CheckNoCheckSum</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152330_p119845811414"><a name="en-us_topic_0237152330_p119845811414"></a><a name="en-us_topic_0237152330_p119845811414"></a>Checks the value of <strong id="b842352706201823"><a name="b842352706201823"></a><a name="b842352706201823"></a>nochecksum</strong>.</p>
-<a name="en-us_topic_0237152330_ul940219189148"></a><a name="en-us_topic_0237152330_ul940219189148"></a><ul id="en-us_topic_0237152330_ul940219189148"><li>When bond NICs are used on the Red Hat 6.4 or 6.5, if the check result is <strong id="b14642135015545"><a name="b14642135015545"></a><a name="b14642135015545"></a>Y</strong> on every node, this item passes the check. Otherwise, this item fails the check.</li><li>For other OSs, if the check result is <strong id="b3410211125512"><a name="b3410211125512"></a><a name="b3410211125512"></a>N</strong> on every node, this item passes the check. Otherwise, this item fails the check.</li></ul>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152330_p8883100124820"><a name="en-us_topic_0237152330_p8883100124820"></a><a name="en-us_topic_0237152330_p8883100124820"></a>No</p>
-</td>
-</tr>
 <tr id="en-us_topic_0237152330_row1724914911158"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152330_p52503971517"><a name="en-us_topic_0237152330_p52503971517"></a><a name="en-us_topic_0237152330_p52503971517"></a>CheckOmmUserExist</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152330_p1425017921518"><a name="en-us_topic_0237152330_p1425017921518"></a><a name="en-us_topic_0237152330_p1425017921518"></a>Checks whether user <strong id="b21570473557"><a name="b21570473557"></a><a name="b21570473557"></a><span id="en-us_topic_0237152330_text124761221185"><a name="en-us_topic_0237152330_text124761221185"></a><a name="en-us_topic_0237152330_text124761221185"></a>omm</span></strong> exists on new nodes after scale-out. If no, this item passes the check. Otherwise, this item fails the check.</p>
@@ -252,13 +244,6 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152330_p13883518192015"><a name="en-us_topic_0237152330_p13883518192015"></a><a name="en-us_topic_0237152330_p13883518192015"></a>Checks the number of CPU cores. If the number is different from that of available CPUs, this item fails the check. If the two numbers are the same but unavailability messages exist, a warning is reported. If the CPU information of all nodes is different, this item fails the check.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152330_p1888340184811"><a name="en-us_topic_0237152330_p1888340184811"></a><a name="en-us_topic_0237152330_p1888340184811"></a>No</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row199055593202"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152330_p890511591203"><a name="en-us_topic_0237152330_p890511591203"></a><a name="en-us_topic_0237152330_p890511591203"></a>CheckSctpService</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152330_p790615917200"><a name="en-us_topic_0237152330_p790615917200"></a><a name="en-us_topic_0237152330_p790615917200"></a>Checks the SCTP service. If the service is enabled and written in the startup file, this item passes the check. Otherwise, this item fails the check.</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152330_p28835014481"><a name="en-us_topic_0237152330_p28835014481"></a><a name="en-us_topic_0237152330_p28835014481"></a>Yes</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152330_row18540145112113"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237152330_p35414515216"><a name="en-us_topic_0237152330_p35414515216"></a><a name="en-us_topic_0237152330_p35414515216"></a>CheckHyperThread</p>
@@ -815,7 +800,6 @@
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0237152330_p12117504466"><a name="en-us_topic_0237152330_p12117504466"></a><a name="en-us_topic_0237152330_p12117504466"></a>Checks the value of <strong id="b1093213214223"><a name="b1093213214223"></a><a name="b1093213214223"></a>net.ipv4.ip_local_port_range</strong>. If the value is greater than or equal to the default value of the OS (32768 to 61000), this item passes the check.</p>
 <p id="en-us_topic_0237152330_p921135019469"><a name="en-us_topic_0237152330_p921135019469"></a><a name="en-us_topic_0237152330_p921135019469"></a>Checks the number of random TCP ports. If the number is less than 80% of the total number of random ports, this item passes the check.</p>
-<p id="en-us_topic_0237152330_p82145011465"><a name="en-us_topic_0237152330_p82145011465"></a><a name="en-us_topic_0237152330_p82145011465"></a>Checks the number of random SCTP ports. If the number is less than 80% of the total number of random ports, this item passes the check.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0237152330_p58869018489"><a name="en-us_topic_0237152330_p58869018489"></a><a name="en-us_topic_0237152330_p58869018489"></a>No</p>
 </td>
@@ -854,6 +838,7 @@
 </tr>
 </tbody>
 </table>
+
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
@@ -1414,13 +1399,13 @@ Check result of a scenario:
 [perfadm@SIA1000131072 Check]$ gs_check -e inspect
 Skip CheckHdfsForeignTabEncoding because it only applies to V1R5 upgrade V1R6 with cluster.
 Parsing the check items config file successfully
-The below items require root privileges to execute:[CheckBlockdev CheckIOConfigure CheckMTU CheckRXTX CheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckNoCheckSum CheckSctpService CheckMaxProcMemory CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
+The below items require root privileges to execute:[CheckBlockdev CheckIOConfigure CheckMTU CheckRXTX CheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckMaxProcMemory CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
 Please enter root privileges user[root]:
 Please enter password for user[root]:
 Check root password connection successfully
 Distribute the context file to remote hosts successfully
-Start to health check for the cluster. Total Items:64 Nodes:3
-Checking...               [=========================] 64/64
+Start to health check for the cluster. Total Items:57 Nodes:3
+Checking...               [=========================] 57/57
 Start to analysis the check result
 CheckClusterState...........................OK
 The item run on 3 nodes.  success: 3
@@ -1430,7 +1415,7 @@ CheckMpprcFile..............................OK
 The item run on 3 nodes.  success: 3
 
 Analysis the check result successfully
-Failed. All check items run completed. Total:64   Success:56   Warning:5   NG:3   Error:0
+Failed. All check items run completed. Total:57   Success:49   Warning:5   NG:3   Error:0
 For more information please refer to /opt/huawei/wisequery/script/gspylib/inspection/output/CheckReport_inspect_201902207129254785.tar.gz
 ```
 
