@@ -211,14 +211,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p488320114811"><a name="zh-cn_topic_0237152330_p488320114811"></a><a name="zh-cn_topic_0237152330_p488320114811"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row393310505129"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p199341150131220"><a name="zh-cn_topic_0237152330_p199341150131220"></a><a name="zh-cn_topic_0237152330_p199341150131220"></a>CheckNoCheckSum(检查nochecksum值是否为预期值且一致)</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p119845811414"><a name="zh-cn_topic_0237152330_p119845811414"></a><a name="zh-cn_topic_0237152330_p119845811414"></a>检查nochecksum值，</p>
-<a name="zh-cn_topic_0237152330_ul940219189148"></a><a name="zh-cn_topic_0237152330_ul940219189148"></a><ul id="zh-cn_topic_0237152330_ul940219189148"><li>Redhat 6.4/6.5且使用bond网卡时，各个节点都为Y则检查项通过，否则检查项不通过。</li><li>其他系统：若各个节点都为N则检查项通过，否则检查项不通过。</li></ul>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p8883100124820"><a name="zh-cn_topic_0237152330_p8883100124820"></a><a name="zh-cn_topic_0237152330_p8883100124820"></a>否</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237152330_row1724914911158"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p52503971517"><a name="zh-cn_topic_0237152330_p52503971517"></a><a name="zh-cn_topic_0237152330_p52503971517"></a>CheckOmmUserExist(检查<span id="zh-cn_topic_0237152330_text201853210817"><a name="zh-cn_topic_0237152330_text201853210817"></a><a name="zh-cn_topic_0237152330_text201853210817"></a>omm</span>用户是否存在)</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1425017921518"><a name="zh-cn_topic_0237152330_p1425017921518"></a><a name="zh-cn_topic_0237152330_p1425017921518"></a>检查是否存在<span id="zh-cn_topic_0237152330_text124761221185"><a name="zh-cn_topic_0237152330_text124761221185"></a><a name="zh-cn_topic_0237152330_text124761221185"></a>omm</span>用户，若不存在<span id="zh-cn_topic_0237152330_text1845216231582"><a name="zh-cn_topic_0237152330_text1845216231582"></a><a name="zh-cn_topic_0237152330_text1845216231582"></a>omm</span>用户则检查项通过，否则检查项不通过。</p>
@@ -252,13 +244,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p13883518192015"><a name="zh-cn_topic_0237152330_p13883518192015"></a><a name="zh-cn_topic_0237152330_p13883518192015"></a>检查CPU核心与可用CPU不符检查项不通过，相符但存在不可用信息Warning。 所有节点CPU信息不相同检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p1888340184811"><a name="zh-cn_topic_0237152330_p1888340184811"></a><a name="zh-cn_topic_0237152330_p1888340184811"></a>否</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row199055593202"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p890511591203"><a name="zh-cn_topic_0237152330_p890511591203"></a><a name="zh-cn_topic_0237152330_p890511591203"></a>CheckSctpService（检查sctp服务）</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p790615917200"><a name="zh-cn_topic_0237152330_p790615917200"></a><a name="zh-cn_topic_0237152330_p790615917200"></a>检查sctp服务开启且写在开机自启动文件中则检查项通过，否则检查项不通过。</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p28835014481"><a name="zh-cn_topic_0237152330_p28835014481"></a><a name="zh-cn_topic_0237152330_p28835014481"></a>是</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152330_row18540145112113"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p35414515216"><a name="zh-cn_topic_0237152330_p35414515216"></a><a name="zh-cn_topic_0237152330_p35414515216"></a>CheckHyperThread（检查超线程是否打开）</p>
@@ -805,8 +790,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <tr id="zh-cn_topic_0237152330_row488303013452"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1188413307451"><a name="zh-cn_topic_0237152330_p1188413307451"></a><a name="zh-cn_topic_0237152330_p1188413307451"></a>CheckUsedPort(检查随机端口使用数量)</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p12117504466"><a name="zh-cn_topic_0237152330_p12117504466"></a><a name="zh-cn_topic_0237152330_p12117504466"></a>检查net.ipv4.ip_local_port_range，范围大于等于OS默认值通过（32768-61000）;</p>
-<p id="zh-cn_topic_0237152330_p921135019469"><a name="zh-cn_topic_0237152330_p921135019469"></a><a name="zh-cn_topic_0237152330_p921135019469"></a>检查TCP协议随机端口数，小于总随机端口数的80%通过;</p>
-<p id="zh-cn_topic_0237152330_p82145011465"><a name="zh-cn_topic_0237152330_p82145011465"></a><a name="zh-cn_topic_0237152330_p82145011465"></a>检查SCTP协议随机端口数，小于总随机端口数的80%通过。</p>
+<p id="zh-cn_topic_0237152330_p921135019469"><a name="zh-cn_topic_0237152330_p921135019469"></a><a name="zh-cn_topic_0237152330_p921135019469"></a>检查TCP协议随机端口数，小于总随机端口数的80%通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p58869018489"><a name="zh-cn_topic_0237152330_p58869018489"></a><a name="zh-cn_topic_0237152330_p58869018489"></a>否</p>
 </td>
@@ -845,6 +829,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 </tbody>
 </table>
+
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -1405,13 +1390,13 @@ Average:        all      0.43      0.00      0.35      0.03      0.03     99.17
 [perfadm@SIA1000131072 Check]$ gs_check -e inspect
 Skip CheckHdfsForeignTabEncoding because it only applies to V1R5 upgrade V1R6 with cluster.
 Parsing the check items config file successfully
-The below items require root privileges to execute:[CheckBlockdev CheckIOConfigure CheckMTU CheckRXTX CheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckNoCheckSum CheckSctpService CheckMaxProcMemory CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
+The below items require root privileges to execute:[CheckBlockdev CheckIOConfigure CheckMTU CheckRXTX CheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckMaxProcMemory CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
 Please enter root privileges user[root]:
 Please enter password for user[root]:
 Check root password connection successfully
 Distribute the context file to remote hosts successfully
-Start to health check for the cluster. Total Items:64 Nodes:3
-Checking...               [=========================] 64/64
+Start to health check for the cluster. Total Items:57 Nodes:3
+Checking...               [=========================] 57/57
 Start to analysis the check result
 CheckClusterState...........................OK
 The item run on 3 nodes.  success: 3
@@ -1421,7 +1406,7 @@ CheckMpprcFile..............................OK
 The item run on 3 nodes.  success: 3
 
 Analysis the check result successfully
-Failed. All check items run completed. Total:64   Success:56   Warning:5   NG:3   Error:0
+Failed. All check items run completed. Total:57   Success:49   Warning:5   NG:3   Error:0
 For more information please refer to /opt/huawei/wisequery/script/gspylib/inspection/output/CheckReport_inspect_201902207129254785.tar.gz
 ```
 
