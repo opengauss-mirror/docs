@@ -12,10 +12,6 @@ The administrator can use tablespaces to control the layout of disks where a dat
 
 
 -   The administrator can use tablespaces to set the maximum available disk space. In this way, when a partition is shared with other data, tablespaces will not occupy excessive space in the partition.
--   You can use tablespaces to control the disk space occupied by data in a database. If the usage of a disk where a tablespace resides reaches 90%, the database switches to the read-only mode. It switches back to read/write mode when the disk usage becomes less than 90%.
-
-    You are advised to use the background monitoring program or Database Manager to monitor the disk space usage when using the database to prevent the database from switching to the read-only mode.
-
 -   Each tablespace corresponds to a file system directory. Assume that  _Database node data directory_**/pg\_location/mount1/path1**  is an empty directory for which users have read and write permissions.
 
     If the tablespace quota management is used, the performance may deteriorate by about 30%.  **MAXSIZE**  specifies the maximum quota for each database node. The deviation must be within 500 MB. Determine whether to set a tablespace to its maximum size as required.
