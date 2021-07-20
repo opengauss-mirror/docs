@@ -181,7 +181,7 @@ application_name text
 使用COPY FROM命令将日志文件导入这个表：
 
 ```
-COPY postgres_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
+COPY gaussdb_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：**   

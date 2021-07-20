@@ -181,7 +181,7 @@ For details, see  [Table 1](#en-us_topic_0237124724_en-us_topic_0059779007_en-us
 Run the following command to import a log file to this table:
 
 ```
-COPY postgres_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
+COPY gaussdb_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   

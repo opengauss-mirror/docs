@@ -9,7 +9,7 @@ This section describes the default database loading parameters.
 The value of  **dynamic\_library\_path**  must be a list of absolute paths separated by colons \(:\). When the name of a path starts with the special variable $libdir, the variable will be replaced with the directory in which the module provided by the openGauss is installed. For example:
 
 ```
-dynamic_library_path = '/usr/local/lib/postgresql:/opt/testgs/lib:$libdir'
+dynamic_library_path = '/usr/local/lib/gaussdb:/opt/testgs/lib:$libdir'
 ```
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).

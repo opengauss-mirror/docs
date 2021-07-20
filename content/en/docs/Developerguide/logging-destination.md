@@ -15,7 +15,7 @@ The valid values are  **stderr**,  **csvlog**, and  **syslog**.
 -   **syslog**  indicates that logs are recorded using the syslog of the OS. openGauss can record logs using syslog from  **LOCAL0**  to  **LOCAL7**. For details, see  [syslog\_facility](#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s853e14ac6a8a47678036cdc8e5119090). To record logs using syslog, add the following information to syslog daemon's configuration file:
 
     ```
-    local0.*  /var/log/postgresql
+    local0.*  /var/log/omm
     ```
 
 
