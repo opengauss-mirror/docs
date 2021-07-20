@@ -19,7 +19,7 @@ If multiple business departments use different database users to perform service
 In separation-of-duties mode, a database administrator does not have permissions for the tables in schemas of other users. In this case, database administrators have neither control permissions nor access permissions. This does not meet the requirements of the business departments mentioned above. Therefore, GaussDB Kernel provides private users to solve the problem. That is, create private users with the  **INDEPENDENT**  attribute in non-separation-of-duties mode. Users with the CREATEROLE permission or the system administrator permission can create private users or change the attributes of common users to private users. Common users can also change their own attributes to private users.
 
 ```
-postgres=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "1234@abc";
+openGauss=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "1234@abc";
 ```
 
 System administrators can manage \(**DROP**,  **ALTER**, and  **TRUNCATE**\) table objects of private users but cannot access \(**INSERT**,  **DELETE**,  **SELECT**,  **UPDATE**,  **COPY**,  **GRANT**,  **REVOKE**, and  **ALTER OWNER**\) the objects before being authorized.
