@@ -32,7 +32,7 @@ openGauss provides tools to check database and instance status, ensuring that da
 -   Check parameters.
 
     ```
-    postgres=# SHOW parameter_name;
+    openGauss=# SHOW parameter_name;
     ```
 
 -   Modify parameters.
@@ -49,19 +49,13 @@ The lock mechanism is an important method to ensure data consistency. Informatio
 -   Query lock information in the database.
 
     ```
-    postgres=# SELECT * FROM pg_locks;
+    openGauss=# SELECT * FROM pg_locks;
     ```
 
 -   Query the status of threads waiting to acquire locks.
 
     ```
-    postgres=# SELECT * FROM pg_thread_wait_status WHERE wait_status = 'acquire lock';
-    ```
-
--   Query the status of events waiting to acquire locks.
-
-    ```
-    postgres=# SELECT node_name, thread_name, tid, wait_status, query_id FROM pgxc_thread_wait_status WHERE wait_status = 'acquire lock';
+    openGauss=# SELECT * FROM pg_thread_wait_status WHERE wait_status = 'acquire lock';
     ```
 
 -   Kill a system process.
@@ -83,13 +77,13 @@ Long-time running of SQL statements will occupy a lot of system resources. You c
     Run the following command to query the thread start time, transaction start time, SQL start time, and status change time of the event:
 
     ```
-    postgres=# SELECT backend_start,xact_start,query_start,state_change FROM pg_stat_activity;
+    openGauss=# SELECT backend_start,xact_start,query_start,state_change FROM pg_stat_activity;
     ```
 
 -   Query the number of sessions on the current server.
 
     ```
-    postgres=# SELECT count(*) FROM pg_stat_activity;
+    openGauss=# SELECT count(*) FROM pg_stat_activity;
     ```
 
 -   Collect system-level statistics.
@@ -97,7 +91,7 @@ Long-time running of SQL statements will occupy a lot of system resources. You c
     Run the following command to query information about the session that uses the maximum memory:
 
     ```
-    postgres=# SELECT * FROM pv_session_memory_detail() ORDER BY usedsize desc limit 10;
+    openGauss=# SELECT * FROM pv_session_memory_detail() ORDER BY usedsize desc limit 10;
     ```
 
 
@@ -108,25 +102,25 @@ Tables, indexes, partitions, and constraints are key storage objects of a databa
 -   View table details.
 
     ```
-    postgres=# \d+ table_name 
+    openGauss=# \d+ table_name 
     ```
 
 -   Query table statistics.
 
     ```
-    postgres=# SELECT * FROM pg_statistic;
+    openGauss=# SELECT * FROM pg_statistic;
     ```
 
 -   View index details.
 
     ```
-    postgres=# \d+ index_name
+    openGauss=# \d+ index_name
     ```
 
 -   Query partitioned table information.
 
     ```
-    postgres=# SELECT * FROM pg_partition;
+    openGauss=# SELECT * FROM pg_partition;
     ```
 
 -   Collect statistics.
@@ -138,7 +132,7 @@ Tables, indexes, partitions, and constraints are key storage objects of a databa
 -   Query constraint information.
 
     ```
-    postgres=# SELECT * FROM pg_constraint;
+    openGauss=# SELECT * FROM pg_constraint;
     ```
 
 
@@ -176,14 +170,14 @@ Basic information includes versions, components, and patches. Periodic database 
 -   Check version information.
 
     ```
-    postgres=# SELECT version();
+    openGauss=# SELECT version();
     ```
 
 -   Check table size and database size.
 
     ```
-    postgres=# SELECT pg_table_size('table_name');
-    postgres=# SELECT pg_database_size('database_name');
+    openGauss=# SELECT pg_table_size('table_name');
+    openGauss=# SELECT pg_database_size('database_name');
     ```
 
 
@@ -449,7 +443,7 @@ Check result of a scenario:
 ```
 [perfadm@SIA1000131072 Check]$ gs_check -e inspect
 Parsing the check items config file successfully
-The below items require root privileges to execute:[CheckBlockdev CheckIOrequestqueue CheckIOConfigure CheckCheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckNoCheckSum CheckSctpSeProcMemory CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
+The below items require root privileges to execute:[CheckBlockdev CheckIOrequestqueue CheckIOConfigure CheckCheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
 Please enter root privileges user[root]:root
 Please enter password for user[root]:
 Please enter password for user[root] on the node[10.244.57.240]:
@@ -457,8 +451,8 @@ Check root password connection successfully
 Distribute the context file to remote hosts successfully
 Start to health check for the cluster. Total Items:59 Nodes:2
 
-Checking...               [                         ] 21/59
-Checking...               [=========================] 59/59
+Checking...               [                         ] 21/57
+Checking...               [=========================] 59/57
 Start to analysis the check result
 CheckClusterState...........................OK
 The item run on 2 nodes.  success: 2
@@ -575,8 +569,6 @@ The item run on 2 nodes.  warning: 2
 The warning[host240,host157] value:
 Warning reason: variable 'net.ipv4.tcp_retries1' RealValue '3' ExpectedValue '5'.
 Warning reason: variable 'net.ipv4.tcp_syn_retries' RealValue '6' ExpectedValue '5'.
-Warning reason: variable 'net.sctp.path_max_retrans' RealValue '5' ExpectedValue '10'.
-Warning reason: variable 'net.sctp.max_init_retransmits' RealValue '8' ExpectedValue '10'.
 
 
 CheckTHP....................................OK
@@ -607,11 +599,6 @@ The item run on 2 nodes.  success: 2  (consistent)
 The success on all nodes value:
 8192
 
-CheckNoCheckSum.............................OK
-The item run on 2 nodes.  success: 2  (consistent)
-The success on all nodes value:
-Nochecksum value is N,Check items pass.
-
 CheckSysPortRange...........................OK
 The item run on 2 nodes.  success: 2
 
@@ -625,9 +612,6 @@ The item run on 2 nodes.  success: 2
 
 CheckTableSpace.............................OK
 The item run on 1 nodes.  success: 1
-
-CheckSctpService............................OK
-The item run on 2 nodes.  success: 2
 
 CheckSysadminUser...........................OK
 The item run on 1 nodes.  success: 1
@@ -690,7 +674,7 @@ The ng[host240,host157] value:
 There is no mpprc file
 
 Analysis the check result successfully
-Failed. All check items run completed. Total:59   Success:52   Warning:5   NG:2
+Failed. All check items run completed. Total:57   Success:50   Warning:5   NG:2
 For more information please refer to /usr1/gaussdb/tool/script/gspylib/inspection/output/CheckReport_inspect611.tar.gz
 
 ```
@@ -1006,14 +990,6 @@ ClientAliveInterval=10800/ClientAliveInterval=0</pre>
 <pre class="screen" id="en-us_topic_0237088800_screen724123081415"><a name="en-us_topic_0237088800_screen724123081415"></a><a name="en-us_topic_0237088800_screen724123081415"></a><strong id="en-us_topic_0237088800_b1724523061413"><a name="en-us_topic_0237088800_b1724523061413"></a><a name="en-us_topic_0237088800_b1724523061413"></a>gs_checkos -i B2</strong></pre>
 </td>
 </tr>
-<tr id="en-us_topic_0237088800_row1314417920158"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p111449916154"><a name="en-us_topic_0237088800_p111449916154"></a><a name="en-us_topic_0237088800_p111449916154"></a>CheckNoCheckSum (Checks the <strong id="b1023813116369"><a name="b1023813116369"></a><a name="b1023813116369"></a>NoCheckSum</strong> parameter.)</p>
-</td>
-<td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p1014419941510"><a name="en-us_topic_0237088800_p1014419941510"></a><a name="en-us_topic_0237088800_p1014419941510"></a><strong id="b643713445115"><a name="b643713445115"></a><a name="b643713445115"></a>NoCheckSum</strong> is incorrectly set or its value is inconsistent on each node.</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p01441192152"><a name="en-us_topic_0237088800_p01441192152"></a><a name="en-us_topic_0237088800_p01441192152"></a>Set <strong id="b16437113413512"><a name="b16437113413512"></a><a name="b16437113413512"></a>NoCheckSum</strong> to a consistent value on each node. If <strong id="b184373346517"><a name="b184373346517"></a><a name="b184373346517"></a>redHat6.4</strong> or <strong id="b643733415116"><a name="b643733415116"></a><a name="b643733415116"></a>redHat6.5</strong> with the NIC binding mode <strong id="b194371434165115"><a name="b194371434165115"></a><a name="b194371434165115"></a>bond0</strong> exists, set <strong id="b174381434155118"><a name="b174381434155118"></a><a name="b174381434155118"></a>NoCheckSum</strong> to <strong id="b643843455116"><a name="b643843455116"></a><a name="b643843455116"></a>Y</strong>. In other cases, set it to <strong id="b124380341514"><a name="b124380341514"></a><a name="b124380341514"></a>N</strong>.</p>
-<pre class="screen" id="en-us_topic_0237088800_screen0838115441612"><a name="en-us_topic_0237088800_screen0838115441612"></a><a name="en-us_topic_0237088800_screen0838115441612"></a><strong id="en-us_topic_0237088800_b13269195722416"><a name="en-us_topic_0237088800_b13269195722416"></a><a name="en-us_topic_0237088800_b13269195722416"></a>echo Y &gt; /sys/module/sctp/parameters/no_checksums</strong></pre>
-</td>
-</tr>
 <tr id="en-us_topic_0237088800_row1441717382175"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p10417338181711"><a name="en-us_topic_0237088800_p10417338181711"></a><a name="en-us_topic_0237088800_p10417338181711"></a>CheckSysPortRange (Checks OS port configurations.)</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p164175380179"><a name="en-us_topic_0237088800_p164175380179"></a><a name="en-us_topic_0237088800_p164175380179"></a>OS IP ports are not within the required port range or <span id="en-us_topic_0237088800_text1528414110195"><a name="en-us_topic_0237088800_text1528414110195"></a><a name="en-us_topic_0237088800_text1528414110195"></a>openGauss</span> ports are within the OS IP port range.</p>
@@ -1043,16 +1019,9 @@ ClientAliveInterval=10800/ClientAliveInterval=0</pre>
 <td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p1013412471215"><a name="en-us_topic_0237088800_p1013412471215"></a><a name="en-us_topic_0237088800_p1013412471215"></a>Migrate tablespace data to the tablespace with a valid path.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237088800_row1710581982312"><td class="cellrowborder" valign="top" width="20.59%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237088800_p1910511197237"><a name="en-us_topic_0237088800_p1910511197237"></a><a name="en-us_topic_0237088800_p1910511197237"></a>CheckSctpService (Checks the SCTP service.)</p>
-</td>
-<td class="cellrowborder" valign="top" width="22.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237088800_p3105151972315"><a name="en-us_topic_0237088800_p3105151972315"></a><a name="en-us_topic_0237088800_p3105151972315"></a>The SCTP service is disabled.</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237088800_p8105191917231"><a name="en-us_topic_0237088800_p8105191917231"></a><a name="en-us_topic_0237088800_p8105191917231"></a>Install and enable the SCTP service.</p>
-<pre class="screen" id="en-us_topic_0237088800_screen1663719183242"><a name="en-us_topic_0237088800_screen1663719183242"></a><a name="en-us_topic_0237088800_screen1663719183242"></a><strong id="en-us_topic_0237088800_b1364221852411"><a name="en-us_topic_0237088800_b1364221852411"></a><a name="en-us_topic_0237088800_b1364221852411"></a>modprobe sctp</strong></pre>
-</td>
-</tr>
 </tbody>
 </table>
+
 
 
 ## Checking Database Performance
@@ -1445,13 +1414,13 @@ If the number of connections between applications and the database exceeds the m
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
-    postgres=# 
+    openGauss=#  
     ```
 
 3.  Run the following SQL statement to check the number of connections:
 
     ```
-    postgres=# SELECT count(*) FROM (SELECT pg_stat_get_backend_idset() AS backendid) AS s;
+    openGauss=#  SELECT count(*) FROM (SELECT pg_stat_get_backend_idset() AS backendid) AS s;
     ```
 
     Information similar to the following is displayed.  **2**  indicates that two applications are connected to the database.
@@ -1466,7 +1435,7 @@ If the number of connections between applications and the database exceeds the m
 4.  View the allowed maximum connections.
 
     ```
-    postgres=# SHOW max_connections;
+    openGauss=# SHOW max_connections;
     ```
 
     Information similar to the following is displayed.  **200**  indicates the currently allowed maximum number of connections.
@@ -1486,7 +1455,7 @@ If the number of connections in the command output is close to the value of  **m
 1.  Run the following SQL statement to view information about connections whose  **state**  is set to  **idle**, and  **state\_change**  column is not updated for a long time.
 
     ```
-    postgres=# SELECT * FROM pg_stat_activity where state='idle' order by state_change;
+    openGauss=#  SELECT * FROM pg_stat_activity where state='idle' order by state_change;
     ```
 
     Information similar to the following is displayed:
@@ -1516,13 +1485,13 @@ If the number of connections in the command output is close to the value of  **m
     Check each connection and release them after obtaining approval from the users of the connections. Run the following SQL command to release a connection using  **pid**  obtained in the previous step:
 
     ```
-    postgres=# SELECT pg_terminate_backend(140390132872976);
+    openGauss=# SELECT pg_terminate_backend(140390132872976);
     ```
 
     Information similar to the following is displayed:
 
     ```
-    postgres=# SELECT pg_terminate_backend(140390132872976);
+    openGauss=# SELECT pg_terminate_backend(140390132872976);
      pg_terminate_backend 
     ----------------------
      t
@@ -1570,7 +1539,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
         Run  **VACUUM**  for a table.
 
         ```
-        postgres=# VACUUM customer;
+        openGauss=# VACUUM customer;
         ```
 
         ```
@@ -1582,7 +1551,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
         Run  **VACUUM**  for the table partition.
 
         ```
-        postgres=# VACUUM customer_par PARTITION ( P1 );
+        openGauss=# VACUUM customer_par PARTITION ( P1 );
         ```
 
         ```
@@ -1592,7 +1561,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     -   **VACUUM FULL**:
 
         ```
-        postgres=# VACUUM FULL customer;
+        openGauss=# VACUUM FULL customer;
         ```
 
         ```
@@ -1604,7 +1573,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
 2.  Run  **ANALYZE**  to update statistics.
 
     ```
-    postgres=# ANALYZE customer;
+    openGauss=# ANALYZE customer;
     ```
 
     ```
@@ -1614,7 +1583,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     Run  **ANALYZE VERBOSE**  to update statistics and display table information.
 
     ```
-    postgres=# ANALYZE VERBOSE customer;
+    openGauss=# ANALYZE VERBOSE customer;
     ```
 
     ```
@@ -1624,7 +1593,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     You can run  **VACUUM ANALYZE**  at the same time to optimize the query.
 
     ```
-    postgres=# VACUUM ANALYZE customer;
+    openGauss=# VACUUM ANALYZE customer;
     ```
 
     ```
@@ -1637,9 +1606,9 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
 3.  Delete a table.
 
     ```
-    postgres=# DROP TABLE customer;
-    postgres=# DROP TABLE customer_par;
-    postgres=# DROP TABLE part;
+    openGauss=# DROP TABLE customer;
+    openGauss=# DROP TABLE customer_par;
+    openGauss=# DROP TABLE part;
     ```
 
     If the following information is displayed, the tables have been deleted:
@@ -1687,14 +1656,14 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
     1.  Delete the index.
 
         ```
-        postgres=# DROP INDEX areaS_idx;
+        openGauss=# DROP INDEX areaS_idx;
         DROP INDEX
         ```
 
     2.  Create an index
 
         ```
-        postgres=# CREATE INDEX areaS_idx ON areaS (area_id);
+        openGauss=# CREATE INDEX areaS_idx ON areaS (area_id);
         CREATE INDEX
         ```
 
@@ -1703,14 +1672,14 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
     -   Run  **REINDEX TABLE**  to recreate an index.
 
         ```
-        postgres=# REINDEX TABLE areaS;
+        openGauss=# REINDEX TABLE areaS;
         REINDEX
         ```
 
     -   Run  **REINDEX INTERNAL TABLE**  to recreate an index for a  **desc**  table \(such as column-store  **cudesc**  table\).
 
         ```
-        postgres=# REINDEX INTERNAL TABLE areaS;
+        openGauss=# REINDEX INTERNAL TABLE areaS;
         REINDEX
         ```
 
