@@ -18,7 +18,7 @@
 
 -   hextoraw\(string\)
 
-    Description: Converts a string in hexadecimal format into binary format.
+    Description: Converts a string in hexadecimal format into raw format.
 
     Return type: raw
 
