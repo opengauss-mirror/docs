@@ -10,7 +10,12 @@ After the openGauss installation environment is prepared by executing the pre-in
 
 ## Procedure<a name="en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_se06775d062f144a5a491267c284e67dd"></a>
 
-1.  Check whether the installation package and openGauss configuration file exist in the planned path. If they do not exist, perform the preinstallation again to ensure that the preinstallation is successful, and then perform the following steps.
+1.  Check whether the installation package and openGauss configuration file exist in the planned path. If they do not exist, perform the preinstallation again to ensure that the preinstallation is successful, and then perform the following steps.The database installation program is uploaded as the root user, and the permissions of the directory and subdirectories where the installation package is located need to be granted to the omm user.
+
+    ```
+    chown omm:dbgrp -R /opt/software/openGauss
+    ```
+
 2.  Log in to any host of the openGauss and switch to the  **omm**  user.
 
    ```
