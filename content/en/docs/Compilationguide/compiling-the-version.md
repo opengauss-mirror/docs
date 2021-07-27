@@ -308,6 +308,17 @@ Software compilation and installation are to compile code to generate software a
     -   The software installation path after compilation is  **/sda/openGauss-server/mppdb_temp_install**.
     -   The compiled binary files are stored in  **/sda/openGauss-server/mppdb_temp_install/bin**.
     -   Compilation log: **./build/script/makemppdb_pkg.log**
+    
+4. Import environment variables to initialize and start the database.
+
+   ```
+   export CODE_BASE=________     # openGauss-server path
+   export GAUSSHOME=$CODE_BASE/mppdb_temp_install/
+   export LD_LIBRARY_PATH=$GAUSSHOME/lib::$LD_LIBRARY_PATH
+   export PATH=$GAUSSHOME/bin:$PATH
+   ```
+
+   
 
 
 ### Manual Compilation
