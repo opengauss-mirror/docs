@@ -174,3 +174,20 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 
 
+### **Q6：安装openGauss时，运行gs_ctl报错找不到程序路径或缺失so，如何处理？**
+
+**回答：**
+
+此问题可能是由于环境变量没有配置，造成的报错。建议通过配置环境变量的方式，解决此问题。
+
+配置GAUSSHOME为所有二进制的目录，然后再配置LD_LIBRARY_PATH、PATH，示例代码如下。
+
+```
+export GAUSSHOME=/xxxx
+export LD_LIBRARY_PATH=$GAUSSHOME/lib::$LD_LIBRARY_PATH
+export PATH=$GAUSSHOME/bin:$PATH
+```
+
+上述这些可以放在/etc/profile文件、 /home/user/.bashrc文件或者自定义的环境变量文件中。每次使用前，请source环境变量文件以初始化环境变量。
+
+如果安装企业版openGauss，以上配置路径已经写入环境变量，将用户切换至子用户，导入环境变量，即可正常使用。

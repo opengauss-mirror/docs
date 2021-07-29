@@ -79,7 +79,7 @@ If the connection configuration is incorrect, perform the following steps:
        >You can view the  _GS\_HOME_  address in the configuration file during the installation.
        >```
        ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>
-       >```   
+       >```
 
     Enter  **:90**  to find the corresponding location, enter  **i**  to switch to the  **INSERT**  mode, add the following content to the  **pg\_hba.conf**  file, press  **ESC**  to exit the  **INSERT**  mode, enter** :wq**, and press  **Enter**  to save the change.
     
@@ -173,3 +173,22 @@ If the connection configuration is incorrect, perform the following steps:
 
 
 
+**6. During the installation of openGauss, when running gs_ctl, an error is reported that the program path cannot be found or so file is missing. What should I do?**
+
+**Answer:**
+
+The possible cause is that the JDK version is incompatible with the system. The JDK version must be 1.8. You are advised to download and install the JDK again, modify global variables, and try again.
+
+This problem may be caused by the fact that environment variables are not configured. It is recommended to solve this problem by configuring environment variables.
+
+Configure GAUSSHOME as all binary directories, and then configure LD_LIBRARY_PATH and PATH. The sample code is as follows.
+
+```
+export GAUSSHOME=/xxxx
+export LD_LIBRARY_PATH=$GAUSSHOME/lib::$LD_LIBRARY_PATH
+export PATH=$GAUSSHOME/bin:$PATH
+```
+
+The above can be placed in the /etc/profile file, /home/user/.bashrc file or a custom environment variable file. Before each use, please source the environment variable file to initialize the environment variable.
+
+If you install the enterprise version of openGauss, the above configuration path has been written into the environment variables, switch the user to a sub-user, import the environment variables, and you can use it normally.
