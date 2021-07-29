@@ -10,6 +10,8 @@ When  **gs\_dumpall**  is used to export data, other users can still access \(re
 
 **gs\_dumpall**  can export complete, consistent data. For example, if  **gs\_dumpall**  is started to export openGauss database at T1, data of the database at that time point will be exported, and modifications on the database after that time point will not be exported.
 
+The generated columns are not dumped during gs_dumpall is used.
+
 **gs\_dumpall**  exports all openGauss databases in two parts:
 
 -   **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).

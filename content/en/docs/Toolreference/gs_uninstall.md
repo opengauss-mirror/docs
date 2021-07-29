@@ -59,7 +59,7 @@ gs\_uninstall, provided by , can be used to uninstall a cluster.
 
 ## Example<a name="en-us_topic_0237152424_en-us_topic_0059778700_se3158b665fdf47dd929b96da689819df"></a>
 
-Use the gs\_uninstall script to uninstall a cluster.
+Execute the gs_uninstall script as a database user to uninstall openGauss.
 
 ```
 gs_uninstall --delete-data

@@ -93,6 +93,6 @@ _OPTION_  is described as follows:
 
     Displays help information.
 
-> ![](public_sys-resources/icon-notice.gif) **须知：**
+> ![](public_sys-resources/icon-notice.gif) **CAUTION：**
 >
 > The openGauss kernel will periodically call gs_clean in the background to clean up temporary tables. The authentication policy of the machine must be set to trust in the pg_hba.conf file, otherwise the execution of gs_clean will fail.

@@ -233,8 +233,6 @@ Checking OS version.
 Successfully checked OS version.
 Creating cluster's path.
 Successfully created cluster's path.
-Setting SCTP service.
-Successfully set SCTP service.
 Set and check OS parameter.
 Setting OS parameters.
 Successfully set OS parameters.
@@ -330,8 +328,6 @@ Checking OS version.
 Successfully checked OS version.
 Creating cluster's path.
 Successfully created cluster's path.
-Setting SCTP service.
-Successfully set SCTP service.
 Set and check OS parameter.
 Setting OS parameters.
 Successfully set OS parameters.

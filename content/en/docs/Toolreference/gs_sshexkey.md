@@ -83,6 +83,9 @@ During the openGauss installation, you need to perform operations such as runnin
 
     Specifies whether to write the mapping relationship between the host name and IP address of the  **-f**  parameter file to the  **/etc/hosts**  file. By default, the relationship is written to the file. If this parameter is specified, the relationship is not written to the file.
 
+-   --no-deduplicate
+    Determines whether to delete the host information that has been configured in the /etc/hosts file when the /etc/hosts file is modified during mutual trust configuration. By default, duplicate host information is deleted.
+
 -   -?, --help
 
     Displays help information.
