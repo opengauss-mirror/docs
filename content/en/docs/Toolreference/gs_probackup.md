@@ -102,7 +102,7 @@
     gs_probackup backup -B backup-path --instance=instance_name -b backup-mode
     [-D pgdata-path] [-C] [-S slot-name] [--temp-slot] [--backup-pg-log] [-j threads_num] [--progress]
     [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
-    [--archive-timeout=timeout]
+    [--archive-timeout=timeout] [-t rwtimeout]
     [logging_options] [retention_options] [compression_options]
     [connection_options] [remote_options] [pinning_options]
     [--help]

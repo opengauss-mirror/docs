@@ -1073,34 +1073,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p99331013155811"><a name="zh-cn_topic_0237152330_p99331013155811"></a><a name="zh-cn_topic_0237152330_p99331013155811"></a>5</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row16854153425715"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p20306163975820"><a name="zh-cn_topic_0237152330_p20306163975820"></a><a name="zh-cn_topic_0237152330_p20306163975820"></a>net.sctp.path_max_retrans</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1930673905818"><a name="zh-cn_topic_0237152330_p1930673905818"></a><a name="zh-cn_topic_0237152330_p1930673905818"></a>SCTP协议最大重试次数。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p13062395586"><a name="zh-cn_topic_0237152330_p13062395586"></a><a name="zh-cn_topic_0237152330_p13062395586"></a>10</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row48543346572"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p18307113975816"><a name="zh-cn_topic_0237152330_p18307113975816"></a><a name="zh-cn_topic_0237152330_p18307113975816"></a>net.sctp.max_init_retransmits</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p73071396587"><a name="zh-cn_topic_0237152330_p73071396587"></a><a name="zh-cn_topic_0237152330_p73071396587"></a>SCTP协议INIT报文最大重试次数。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p5307193935812"><a name="zh-cn_topic_0237152330_p5307193935812"></a><a name="zh-cn_topic_0237152330_p5307193935812"></a>10</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row15187154135712"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p183081739155818"><a name="zh-cn_topic_0237152330_p183081739155818"></a><a name="zh-cn_topic_0237152330_p183081739155818"></a>net.sctp.association_max_retrans</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p183081397580"><a name="zh-cn_topic_0237152330_p183081397580"></a><a name="zh-cn_topic_0237152330_p183081397580"></a>SCTP协议单个逻辑连接最大重试次数。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p93081394588"><a name="zh-cn_topic_0237152330_p93081394588"></a><a name="zh-cn_topic_0237152330_p93081394588"></a>10</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row141877415577"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p1530815395588"><a name="zh-cn_topic_0237152330_p1530815395588"></a><a name="zh-cn_topic_0237152330_p1530815395588"></a>net.sctp.hb_interval</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p3309739105813"><a name="zh-cn_topic_0237152330_p3309739105813"></a><a name="zh-cn_topic_0237152330_p3309739105813"></a>SCTP协议心跳检测包重传间隔。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p33093399584"><a name="zh-cn_topic_0237152330_p33093399584"></a><a name="zh-cn_topic_0237152330_p33093399584"></a>30000</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237152330_row0188144110571"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p203091939195813"><a name="zh-cn_topic_0237152330_p203091939195813"></a><a name="zh-cn_topic_0237152330_p203091939195813"></a>net.ipv4.tcp_retries2</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1331013399587"><a name="zh-cn_topic_0237152330_p1331013399587"></a><a name="zh-cn_topic_0237152330_p1331013399587"></a>控制内核向已经建立连接的远程主机重新发送数据的次数，低值可以更早的检测到与远程主机失效的连接，因此服务器可以更快的释放该连接。</p>
@@ -1116,43 +1088,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <p id="zh-cn_topic_0237152330_p193123394589"><a name="zh-cn_topic_0237152330_p193123394589"></a><a name="zh-cn_topic_0237152330_p193123394589"></a>内核默认是2过于保守，推荐设置为0，如果系统压力大可以设置为1。</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p13313153945816"><a name="zh-cn_topic_0237152330_p13313153945816"></a><a name="zh-cn_topic_0237152330_p13313153945816"></a>0</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row518920412574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p1852316514595"><a name="zh-cn_topic_0237152330_p1852316514595"></a><a name="zh-cn_topic_0237152330_p1852316514595"></a>net.sctp.sndbuf_policy</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p552314515913"><a name="zh-cn_topic_0237152330_p552314515913"></a><a name="zh-cn_topic_0237152330_p552314515913"></a>SCTP发送缓冲区分配原则。</p>
-<a name="zh-cn_topic_0237152330_ul1352319514598"></a><a name="zh-cn_topic_0237152330_ul1352319514598"></a><ul id="zh-cn_topic_0237152330_ul1352319514598"><li>0为按连接。</li><li>1为按耦联。</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p1952565185913"><a name="zh-cn_topic_0237152330_p1952565185913"></a><a name="zh-cn_topic_0237152330_p1952565185913"></a>0</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row734759175715"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p1652514545918"><a name="zh-cn_topic_0237152330_p1652514545918"></a><a name="zh-cn_topic_0237152330_p1652514545918"></a>net.sctp.rcvbuf_policy</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p13525115165918"><a name="zh-cn_topic_0237152330_p13525115165918"></a><a name="zh-cn_topic_0237152330_p13525115165918"></a>SCTP接收缓冲区分配原则。</p>
-<a name="zh-cn_topic_0237152330_ul6525145195911"></a><a name="zh-cn_topic_0237152330_ul6525145195911"></a><ul id="zh-cn_topic_0237152330_ul6525145195911"><li>0为按连接。</li><li>1为按耦联。</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p1652614565913"><a name="zh-cn_topic_0237152330_p1652614565913"></a><a name="zh-cn_topic_0237152330_p1652614565913"></a>0</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row334559165716"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p1852712519597"><a name="zh-cn_topic_0237152330_p1852712519597"></a><a name="zh-cn_topic_0237152330_p1852712519597"></a>net.sctp.sctp_mem</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1952719585918"><a name="zh-cn_topic_0237152330_p1952719585918"></a><a name="zh-cn_topic_0237152330_p1952719585918"></a>内核SCTP协议栈的最大可用内存，分无压力，有压力，和压力大三个区间，压力大时会丢包，单位为页面。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p2052714595917"><a name="zh-cn_topic_0237152330_p2052714595917"></a><a name="zh-cn_topic_0237152330_p2052714595917"></a>94500000 915000000 927000000</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row103535911574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p8528125155919"><a name="zh-cn_topic_0237152330_p8528125155919"></a><a name="zh-cn_topic_0237152330_p8528125155919"></a>net.sctp.sctp_rmem</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p4528953598"><a name="zh-cn_topic_0237152330_p4528953598"></a><a name="zh-cn_topic_0237152330_p4528953598"></a>内核SCTP协议栈的接收总可用内存，分无压力，有压力和压力大三个区间，压力大时会丢包，单位为页面。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p452875125919"><a name="zh-cn_topic_0237152330_p452875125919"></a><a name="zh-cn_topic_0237152330_p452875125919"></a>8192 250000 16777216</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237152330_row1236175915571"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p452885125914"><a name="zh-cn_topic_0237152330_p452885125914"></a><a name="zh-cn_topic_0237152330_p452885125914"></a>net.sctp.sctp_wmem</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p13529165115911"><a name="zh-cn_topic_0237152330_p13529165115911"></a><a name="zh-cn_topic_0237152330_p13529165115911"></a>内核SCTP协议栈的发送总可用内存，分无压力，有压力和压力大三个区间，压力大时会丢包，单位为页面。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p85291751593"><a name="zh-cn_topic_0237152330_p85291751593"></a><a name="zh-cn_topic_0237152330_p85291751593"></a>8192 250000 16777216</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152330_row3361592574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p19529155145913"><a name="zh-cn_topic_0237152330_p19529155145913"></a><a name="zh-cn_topic_0237152330_p19529155145913"></a>net.ipv4.tcp_rmem</p>
@@ -1233,14 +1168,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p133441022135919"><a name="zh-cn_topic_0237152330_p133441022135919"></a><a name="zh-cn_topic_0237152330_p133441022135919"></a>1</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row8189114185719"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p1034512214592"><a name="zh-cn_topic_0237152330_p1034512214592"></a><a name="zh-cn_topic_0237152330_p1034512214592"></a>net.sctp.addip_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1434552213599"><a name="zh-cn_topic_0237152330_p1434552213599"></a><a name="zh-cn_topic_0237152330_p1434552213599"></a>SCTP动态地址重置支持开关</p>
-<a name="zh-cn_topic_0237152330_ul15345142220596"></a><a name="zh-cn_topic_0237152330_ul15345142220596"></a><ul id="zh-cn_topic_0237152330_ul15345142220596"><li>0表示关闭。</li><li>1表示开启。</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p123461722165910"><a name="zh-cn_topic_0237152330_p123461722165910"></a><a name="zh-cn_topic_0237152330_p123461722165910"></a>0</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237152330_row119054135715"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p1671381607"><a name="zh-cn_topic_0237152330_p1671381607"></a><a name="zh-cn_topic_0237152330_p1671381607"></a>net.core.netdev_max_backlog</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1975811012"><a name="zh-cn_topic_0237152330_p1975811012"></a><a name="zh-cn_topic_0237152330_p1975811012"></a>在每个网络接口接收数据包的速率比内核处理这些包的速率快时，允许送到队列的数据包的最大数目。</p>
@@ -1306,13 +1233,6 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p12232121819017"><a name="zh-cn_topic_0237152330_p12232121819017"></a><a name="zh-cn_topic_0237152330_p12232121819017"></a>90</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row711514515597"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p523211182017"><a name="zh-cn_topic_0237152330_p523211182017"></a><a name="zh-cn_topic_0237152330_p523211182017"></a>/sys/module/sctp/parameters/no_checksums</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p122324181200"><a name="zh-cn_topic_0237152330_p122324181200"></a><a name="zh-cn_topic_0237152330_p122324181200"></a>SCTP协议是否关闭checksum。</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p172331418805"><a name="zh-cn_topic_0237152330_p172331418805"></a><a name="zh-cn_topic_0237152330_p172331418805"></a>0</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237152330_row151152051125910"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p2233161813015"><a name="zh-cn_topic_0237152330_p2233161813015"></a><a name="zh-cn_topic_0237152330_p2233161813015"></a>MTU</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p32330181404"><a name="zh-cn_topic_0237152330_p32330181404"></a><a name="zh-cn_topic_0237152330_p32330181404"></a>节点网卡最大传输单元。OS默认值为1500，调整为8192可以提升SCTP协议数据收发的性能。</p>
@@ -1322,6 +1242,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 </tbody>
 </table>
+
 
 ## 文件系统参数<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_s6bc6e27aba3d44139c026373229dcd89"></a>
 

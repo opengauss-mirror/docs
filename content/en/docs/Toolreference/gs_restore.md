@@ -10,7 +10,7 @@ It has the following functions:
 
 -   Importing data to the database
 
-    If a database is specified, data is imported to the database. For parallel import, the password for connecting to the database is required.
+    If a database is specified, data is imported to the database. For parallel import, the password for connecting to the database is required. During data import, the generated columns are automatically updated and saved as common columns.
 
 -   Importing data to the script file
 

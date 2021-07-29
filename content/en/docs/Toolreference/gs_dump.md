@@ -82,9 +82,10 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 
 ## Precautions<a name="en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
-Do not modify an exported file or its content. Otherwise, restoration may fail.
+- Do not modify an exported file or its content. Otherwise, restoration may fail.
 
-To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dump**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
+- To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dump**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
+- Stored procedures and functions cannot be exported in encrypted mode.
 
 ## Syntax<a name="en-us_topic_0237152335_en-us_topic_0059777770_s884f9e03cedd408cbe7ce5303df97df6"></a>
 
@@ -378,7 +379,8 @@ Dump parameters:
 
    **NOTE:**   
 
-  When using the gs_dump tool for encrypted export, only plain format export is supported. The data exported through -F plain needs to be imported through the gsql tool, and if it is imported through encryption, the --with-key parameter must be specified when importing through gsql.
+  - When using the gs_dump tool for encrypted export, only plain format export is supported. The data exported through -F plain needs to be imported through the gsql tool, and if it is imported through encryption, the --with-key parameter must be specified when importing through gsql.
+  - Stored procedures and functions cannot be exported in encrypted mode.
 
 -   --include-extension
 

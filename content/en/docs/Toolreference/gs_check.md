@@ -1082,34 +1082,6 @@
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p99331013155811"><a name="en-us_topic_0237152330_p99331013155811"></a><a name="en-us_topic_0237152330_p99331013155811"></a>5</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237152330_row16854153425715"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p20306163975820"><a name="en-us_topic_0237152330_p20306163975820"></a><a name="en-us_topic_0237152330_p20306163975820"></a>net.sctp.path_max_retrans</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p1930673905818"><a name="en-us_topic_0237152330_p1930673905818"></a><a name="en-us_topic_0237152330_p1930673905818"></a>Specifies the maximum SCTP reattempts.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p13062395586"><a name="en-us_topic_0237152330_p13062395586"></a><a name="en-us_topic_0237152330_p13062395586"></a>10</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row48543346572"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p18307113975816"><a name="en-us_topic_0237152330_p18307113975816"></a><a name="en-us_topic_0237152330_p18307113975816"></a>net.sctp.max_init_retransmits</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p73071396587"><a name="en-us_topic_0237152330_p73071396587"></a><a name="en-us_topic_0237152330_p73071396587"></a>Specifies the maximum INIT packet reattempts in the SCTP.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p5307193935812"><a name="en-us_topic_0237152330_p5307193935812"></a><a name="en-us_topic_0237152330_p5307193935812"></a>10</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row15187154135712"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p183081739155818"><a name="en-us_topic_0237152330_p183081739155818"></a><a name="en-us_topic_0237152330_p183081739155818"></a>net.sctp.association_max_retrans</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p183081397580"><a name="en-us_topic_0237152330_p183081397580"></a><a name="en-us_topic_0237152330_p183081397580"></a>Specifies the maximum reattempts of a single logical connection in the SCTP.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p93081394588"><a name="en-us_topic_0237152330_p93081394588"></a><a name="en-us_topic_0237152330_p93081394588"></a>10</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row141877415577"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p1530815395588"><a name="en-us_topic_0237152330_p1530815395588"></a><a name="en-us_topic_0237152330_p1530815395588"></a>net.sctp.hb_interval</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p3309739105813"><a name="en-us_topic_0237152330_p3309739105813"></a><a name="en-us_topic_0237152330_p3309739105813"></a>Specifies the retransmission interval of heartbeat detection packets in the SCTP.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p33093399584"><a name="en-us_topic_0237152330_p33093399584"></a><a name="en-us_topic_0237152330_p33093399584"></a>30000</p>
-</td>
-</tr>
 <tr id="en-us_topic_0237152330_row0188144110571"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p203091939195813"><a name="en-us_topic_0237152330_p203091939195813"></a><a name="en-us_topic_0237152330_p203091939195813"></a>net.ipv4.tcp_retries2</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p1331013399587"><a name="en-us_topic_0237152330_p1331013399587"></a><a name="en-us_topic_0237152330_p1331013399587"></a>Specifies the number of times that the kernel re-sends data to a connected remote host. A smaller value leads to earlier detection of an invalid connection to the remote host, and the server can quickly release this connection.</p>
@@ -1125,43 +1097,6 @@
 <p id="en-us_topic_0237152330_p193123394589"><a name="en-us_topic_0237152330_p193123394589"></a><a name="en-us_topic_0237152330_p193123394589"></a>The default value for a kernel is <strong id="b144171433191519"><a name="b144171433191519"></a><a name="b144171433191519"></a>2</strong>, which is too conservative. The recommended value is <strong id="b3417153313154"><a name="b3417153313154"></a><a name="b3417153313154"></a>0</strong>. If system loads are high, set this parameter to <strong id="b20417153310155"><a name="b20417153310155"></a><a name="b20417153310155"></a>1</strong>.</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p13313153945816"><a name="en-us_topic_0237152330_p13313153945816"></a><a name="en-us_topic_0237152330_p13313153945816"></a>0</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row518920412574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p1852316514595"><a name="en-us_topic_0237152330_p1852316514595"></a><a name="en-us_topic_0237152330_p1852316514595"></a>net.sctp.sndbuf_policy</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p552314515913"><a name="en-us_topic_0237152330_p552314515913"></a><a name="en-us_topic_0237152330_p552314515913"></a>Specifies the buffer allocation policy on the SCTP sender.</p>
-<a name="en-us_topic_0237152330_ul1352319514598"></a><a name="en-us_topic_0237152330_ul1352319514598"></a><ul id="en-us_topic_0237152330_ul1352319514598"><li><strong id="b13284722101812"><a name="b13284722101812"></a><a name="b13284722101812"></a>0</strong>: The buffer is allocated by connection.</li><li><strong id="b1785015244186"><a name="b1785015244186"></a><a name="b1785015244186"></a>1</strong>: The buffer is allocated by association.</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p1952565185913"><a name="en-us_topic_0237152330_p1952565185913"></a><a name="en-us_topic_0237152330_p1952565185913"></a>0</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row734759175715"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p1652514545918"><a name="en-us_topic_0237152330_p1652514545918"></a><a name="en-us_topic_0237152330_p1652514545918"></a>net.sctp.rcvbuf_policy</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p13525115165918"><a name="en-us_topic_0237152330_p13525115165918"></a><a name="en-us_topic_0237152330_p13525115165918"></a>Specifies the buffer allocation policy on the SCTP receiver.</p>
-<a name="en-us_topic_0237152330_ul6525145195911"></a><a name="en-us_topic_0237152330_ul6525145195911"></a><ul id="en-us_topic_0237152330_ul6525145195911"><li><strong id="b10551622173215"><a name="b10551622173215"></a><a name="b10551622173215"></a>0</strong>: The buffer is allocated by connection.</li><li><strong id="b144371024193210"><a name="b144371024193210"></a><a name="b144371024193210"></a>1</strong>: The buffer is allocated by association.</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p1652614565913"><a name="en-us_topic_0237152330_p1652614565913"></a><a name="en-us_topic_0237152330_p1652614565913"></a>0</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row334559165716"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p1852712519597"><a name="en-us_topic_0237152330_p1852712519597"></a><a name="en-us_topic_0237152330_p1852712519597"></a>net.sctp.sctp_mem</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p1952719585918"><a name="en-us_topic_0237152330_p1952719585918"></a><a name="en-us_topic_0237152330_p1952719585918"></a>Specifies the maximum free memory of the kernel SCTP stack. Three memory size ranges in the unit of page are provided: <strong id="b384313516339"><a name="b384313516339"></a><a name="b384313516339"></a>min</strong>, <strong id="b1684315563313"><a name="b1684315563313"></a><a name="b1684315563313"></a>default</strong>, and <strong id="b5844457333"><a name="b5844457333"></a><a name="b5844457333"></a>max</strong>. If the value is <strong id="b1284435163320"><a name="b1284435163320"></a><a name="b1284435163320"></a>max</strong>, packet loss occurs.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p2052714595917"><a name="en-us_topic_0237152330_p2052714595917"></a><a name="en-us_topic_0237152330_p2052714595917"></a>94500000 915000000 927000000</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row103535911574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p8528125155919"><a name="en-us_topic_0237152330_p8528125155919"></a><a name="en-us_topic_0237152330_p8528125155919"></a>net.sctp.sctp_rmem</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p4528953598"><a name="en-us_topic_0237152330_p4528953598"></a><a name="en-us_topic_0237152330_p4528953598"></a>Specifies the total free memory for receiving data in the kernel SCTP stack. Three memory size ranges in the unit of page are provided: <strong id="b17132128102011"><a name="b17132128102011"></a><a name="b17132128102011"></a>min</strong>, <strong id="b1713312811205"><a name="b1713312811205"></a><a name="b1713312811205"></a>default</strong>, and <strong id="b1513311284204"><a name="b1513311284204"></a><a name="b1513311284204"></a>max</strong>. If the value is <strong id="b18134132816205"><a name="b18134132816205"></a><a name="b18134132816205"></a>max</strong>, packet loss occurs.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p452875125919"><a name="en-us_topic_0237152330_p452875125919"></a><a name="en-us_topic_0237152330_p452875125919"></a>8192 250000 16777216</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row1236175915571"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p452885125914"><a name="en-us_topic_0237152330_p452885125914"></a><a name="en-us_topic_0237152330_p452885125914"></a>net.sctp.sctp_wmem</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p13529165115911"><a name="en-us_topic_0237152330_p13529165115911"></a><a name="en-us_topic_0237152330_p13529165115911"></a>Specifies the total free memory for sending data in the kernel SCTP stack. Three memory size ranges in the unit of page are provided: <strong id="b415198132210"><a name="b415198132210"></a><a name="b415198132210"></a>min</strong>, <strong id="b515118142218"><a name="b515118142218"></a><a name="b515118142218"></a>default</strong>, and <strong id="b16151178162213"><a name="b16151178162213"></a><a name="b16151178162213"></a>max</strong>. If the value is <strong id="b1215215818227"><a name="b1215215818227"></a><a name="b1215215818227"></a>max</strong>, packet loss occurs.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p85291751593"><a name="en-us_topic_0237152330_p85291751593"></a><a name="en-us_topic_0237152330_p85291751593"></a>8192 250000 16777216</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152330_row3361592574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p19529155145913"><a name="en-us_topic_0237152330_p19529155145913"></a><a name="en-us_topic_0237152330_p19529155145913"></a>net.ipv4.tcp_rmem</p>
@@ -1242,14 +1177,6 @@
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p133441022135919"><a name="en-us_topic_0237152330_p133441022135919"></a><a name="en-us_topic_0237152330_p133441022135919"></a>1</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237152330_row8189114185719"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p1034512214592"><a name="en-us_topic_0237152330_p1034512214592"></a><a name="en-us_topic_0237152330_p1034512214592"></a>net.sctp.addip_enable</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p1434552213599"><a name="en-us_topic_0237152330_p1434552213599"></a><a name="en-us_topic_0237152330_p1434552213599"></a>Specifies whether dynamic address reset of the SCTP is enabled.</p>
-<a name="en-us_topic_0237152330_ul15345142220596"></a><a name="en-us_topic_0237152330_ul15345142220596"></a><ul id="en-us_topic_0237152330_ul15345142220596"><li><strong id="b53761419272"><a name="b53761419272"></a><a name="b53761419272"></a>0</strong>: This function is disabled.</li><li><strong id="b15820419102718"><a name="b15820419102718"></a><a name="b15820419102718"></a>1</strong>: This function is enabled.</li></ul>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p123461722165910"><a name="en-us_topic_0237152330_p123461722165910"></a><a name="en-us_topic_0237152330_p123461722165910"></a>0</p>
-</td>
-</tr>
 <tr id="en-us_topic_0237152330_row119054135715"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p1671381607"><a name="en-us_topic_0237152330_p1671381607"></a><a name="en-us_topic_0237152330_p1671381607"></a>net.core.netdev_max_backlog</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p1975811012"><a name="en-us_topic_0237152330_p1975811012"></a><a name="en-us_topic_0237152330_p1975811012"></a>Specifies the maximum number of data packets that can be sent to the queue when the rate at which the network device receives data packets is higher than that at which the kernel processes the data packets.</p>
@@ -1313,13 +1240,6 @@
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p1823117183015"><a name="en-us_topic_0237152330_p1823117183015"></a><a name="en-us_topic_0237152330_p1823117183015"></a>When the system uses the algorithms where memory usage never exceeds the thresholds, the total memory address space of the system cannot exceed the value of <strong id="b5952116204412"><a name="b5952116204412"></a><a name="b5952116204412"></a>swap+RAM</strong> multiplied by the percentage specified by this parameter. When the value of <strong id="b1795321604420"><a name="b1795321604420"></a><a name="b1795321604420"></a>vm.overcommit_memory</strong> is set to <strong id="b13953916174414"><a name="b13953916174414"></a><a name="b13953916174414"></a>2</strong>, this parameter takes effect.</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p12232121819017"><a name="en-us_topic_0237152330_p12232121819017"></a><a name="en-us_topic_0237152330_p12232121819017"></a>90</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152330_row711514515597"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p523211182017"><a name="en-us_topic_0237152330_p523211182017"></a><a name="en-us_topic_0237152330_p523211182017"></a>/sys/module/sctp/parameters/no_checksums</p>
-</td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152330_p122324181200"><a name="en-us_topic_0237152330_p122324181200"></a><a name="en-us_topic_0237152330_p122324181200"></a>Specifies whether <strong id="b11402145054510"><a name="b11402145054510"></a><a name="b11402145054510"></a>checksum</strong> is disabled in SCTP.</p>
-</td>
-<td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152330_p172331418805"><a name="en-us_topic_0237152330_p172331418805"></a><a name="en-us_topic_0237152330_p172331418805"></a>0</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237152330_row151152051125910"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152330_p2233161813015"><a name="en-us_topic_0237152330_p2233161813015"></a><a name="en-us_topic_0237152330_p2233161813015"></a>MTU</p>

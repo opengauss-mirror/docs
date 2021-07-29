@@ -7,7 +7,7 @@ After openGauss is deployed, problems and exceptions may occur during database r
 ## Prerequisites<a name="en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
 -   The openGauss database can be connected.
--   There are backup files in the backup directory for each node when the restoration is performed. If the backup file of a node is missing, copy a backup file from other nodes \(for binary files, the node name in the file name needs to be changed\).
+-   There are backup files in the backup directory for each node when the restoration is performed.
 -   Log in to the OS as the OS user  **omm**  to run the  **gs\_backup**  command.
 
 ## Syntax<a name="en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
@@ -21,7 +21,7 @@ After openGauss is deployed, problems and exceptions may occur during database r
 -   Restore the database host.
 
     ```
-    gs_backup -t restore --backup-dir=BACKUPDIR [-h HOSTNAME] [--parameter] [--binary] [--all] [-l LOGFILE]
+    gs_backup -t restore --backup-dir=BACKUPDIR [-h HOSTNAME] [--parameter] [--binary] [--all] [-l LOGFILE] [--force]
     ```
 
 -   Display help information.
@@ -99,6 +99,10 @@ The  **gs\_backup**  tool can use the following types of parameters:
         Specifies a log file and its storage path.
 
         Default value:  **$GAUSSLOG/om/gs\_backup-YYYY-MM-DD\_hhmmss.log**.
+        
+    -   ###### --force
+    
+        Forcibly restores static files on a node after the files are lost. This parameter is valid only when --all or --binary is used together.
 
 
 -   Other parameters:

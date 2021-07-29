@@ -66,9 +66,9 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 <td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p1132963412212"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p1132963412212"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p1132963412212"></a>Collects statistics on the number of execution times, total duration, average duration, maximum duration, and minimum duration of each function.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_r4cd4463ebb5e4719ba97a9a170e1c336"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"></a>-p PID</p>
+<tr id="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_r4cd4463ebb5e4719ba97a9a170e1c336"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"></a>-p PORT</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a>Specifies the process ID of the instance for which the trace function is enabled.</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a>Specifies the listening number of the instance for which the trace function is enabled.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_rf78e1c297caa4e1b8c449b6475e9457f"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p33241034112218"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p33241034112218"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p33241034112218"></a>-f DUMP_FILE</p>
@@ -94,54 +94,55 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 </tbody>
 </table>
 
+
 ## Example<a name="en-us_topic_0287275941_en-us_topic_0237152426_section2838131051812"></a>
 
 1.  Start the tracing.
 
     ```
-    gstrace start -p 207787
+    gstrace start -p 8000
     ```
 
 2.  Stop the tracing.
 
     ```
-    gstrace stop -p 207787
+    gstrace stop -p 8000
     ```
 
 3.  Check the configurations for tracing.
 
     ```
-    gstrace config -p 207787
+    gstrace config -p 8000
     ```
 
 4.  dump trace
 
     ```
-    gstrace dump -p 207787 -o /data/207787.dump
+    gstrace dump -p 8000 -o /data/8000.dump
     ```
 
 5.  Parses dumped details.
 
     ```
-    gstrace detail -f /data/207787.dump -o /data/207787.detail
+    gstrace detail -f /data/8000.dump -o /data/8000.detail
     ```
 
 6.  Parse dumped codepath.
 
     ```
-    gstrace codepath -f /data/207787.dump -o /data/207787.codepath
+    gstrace codepath -f /data/8000.dump -o /data/8000.codepath
     ```
 
 7.  Analyze the global performance.
 
     ```
-    gstrace analyze -f /data/207787.dump -o /data/207787.perf
+    gstrace analyze -f /data/8000.dump -o /data/8000.perf
     ```
 
 8.  Analyze the segment performance.
 
     ```
-    gstrace analyze -f /data/207787.dump -o /data/207787.perf -t 1
+    gstrace analyze -f /data/8000.dump -o /data/8000.perf -t 1
     ```
 
 

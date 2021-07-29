@@ -923,7 +923,9 @@ For details about gsql parameters, see  [Table Common parameters](#en-us_topic_0
 <tr id="en-us_topic_0237152145_en-us_topic_0059779319_raaf263ab8e2c4891a204f1debeeb0b5a"><td class="cellrowborder" valign="top" width="14.67%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152145_en-us_topic_0059779319_af6bfa8e1ab3b46d28d3254e9b531a471"><a name="en-us_topic_0237152145_en-us_topic_0059779319_af6bfa8e1ab3b46d28d3254e9b531a471"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_af6bfa8e1ab3b46d28d3254e9b531a471"></a>-k, --with-key=KEY</p>
 </td>
 <td class="cellrowborder" valign="top" width="62.59%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152145_en-us_topic_0059779319_aa94324ec591940b5af8c3a3696eeeecf"><a name="en-us_topic_0237152145_en-us_topic_0059779319_aa94324ec591940b5af8c3a3696eeeecf"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_aa94324ec591940b5af8c3a3696eeeecf"></a>Uses <strong id="b270913575116"><a name="b270913575116"></a><a name="b270913575116"></a>gsql</strong> to decrypt imported encrypted files.</p>
-<div class="notice" id="en-us_topic_0237152145_en-us_topic_0059779319_n46eecf163255483f9d63b7e3f8e05a7f"><a name="en-us_topic_0237152145_en-us_topic_0059779319_n46eecf163255483f9d63b7e3f8e05a7f"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_n46eecf163255483f9d63b7e3f8e05a7f"></a><span class="noticetitle"> NOTICE: </span><div class="noticebody"><p id="en-us_topic_0237152145_en-us_topic_0059779319_a906559dd722949ac84910c15452d6340"><a name="en-us_topic_0237152145_en-us_topic_0059779319_a906559dd722949ac84910c15452d6340"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_a906559dd722949ac84910c15452d6340"></a>For key characters, such as the single quotation mark (') or double quotation mark (") in shell commands, Linux shell checks whether the input single quotation mark (') or double quotation mark (") matches. If they do not match, Linux shell regards that the user input is unfinished and waits for more input instead of entering the <strong id="b1939013349519"><a name="b1939013349519"></a><a name="b1939013349519"></a>gsql</strong> program.</p>
+<div class="notice" id="en-us_topic_0237152145_en-us_topic_0059779319_n46eecf163255483f9d63b7e3f8e05a7f"><a name="en-us_topic_0237152145_en-us_topic_0059779319_n46eecf163255483f9d63b7e3f8e05a7f"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_n46eecf163255483f9d63b7e3f8e05a7f"></a><span class="noticetitle"> NOTICE: </span><div class="noticebody"><p id="en-us_topic_0237152145_en-us_topic_0059779319_a906559dd722949ac84910c15452d6340"><a name="en-us_topic_0237152145_en-us_topic_0059779319_a906559dd722949ac84910c15452d6340"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_a906559dd722949ac84910c15452d6340"></a> <li>For key characters, such as the single quotation mark (') or double quotation mark (") in shell commands, Linux shell checks whether the input single quotation mark (') or double quotation mark (") matches. If no match is found, Linux shell does not enter the gsql program until input is complete.</li><li>
+Stored procedures and functions cannot be decrypted and imported.</li>
+    <strong id="b1939013349519"><a name="b1939013349519"></a><a name="b1939013349519"></a>gsql</strong> program.</p>
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="22.74%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p97792999117"><a name="en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p97792999117"></a><a name="en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p97792999117"></a>-</p>
@@ -1243,7 +1245,6 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 </tr>
 </tbody>
 </table>
-
 **Table  13**  Input and output meta-commands
 
 <a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table62130565"></a>
@@ -1253,10 +1254,14 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_row25232449"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p53653520"><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p53653520"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p53653520"></a>\copy { table [ ( column_list ) ] | ( query ) } { from | to } { filename | stdin | stdout | pstdin | pstdout } [ with ] [ binary ] [ oids ] [ delimiter [ as ] 'character' ] [ null [ as ] 'string' ] [ csv [ header ] [ quote [ as ] 'character' ] [ escape [ as ] 'character' ] [ force quote column_list | * ] [ force not null column_list ] ]</p>
+<tbody><tr id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_row25232449"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p53653520"><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p53653520"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p53653520"></a>\copy { table [ ( column_list ) ] | ( query ) } { from | to } { filename | stdin | stdout | pstdin | pstdout } [ with ] [ binary ] [ oids ] [ delimiter [ as ] 'character' ] [ null [ as ] 'string' ] [ csv [ header ] [ quote [ as ] 'character' ] [ escape [ as ] 'character' ] [ force quote column_list | * ] [ force not null column_list ] ][parallel integer]</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_p1671244475815"><a name="en-us_topic_0237152146_p1671244475815"></a><a name="en-us_topic_0237152146_p1671244475815"></a>After logging in to the database on any psql client, you can import and export data. This is an operation of running the <strong id="b1641125572714"><a name="b1641125572714"></a><a name="b1641125572714"></a>SQL COPY</strong> command, but not the server that reads or writes data to a specified file. Instead, data is transferred between the server and the local file system. This means that the accessibility and permissions of the file are the permissions of the local user rather than the server. The initial database user permission is not required.</p>
-<div class="note" id="en-us_topic_0237152146_note1924115273417"><a name="en-us_topic_0237152146_note1924115273417"></a><a name="en-us_topic_0237152146_note1924115273417"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0237152146_p54222394915"><a name="en-us_topic_0237152146_p54222394915"></a><a name="en-us_topic_0237152146_p54222394915"></a><strong id="b16131162113281"><a name="b16131162113281"></a><a name="b16131162113281"></a>\copy</strong> applies only to small-scale data import in good format. It does not preprocess invalid characters or provide error tolerance. <strong id="b168921030172818"><a name="b168921030172818"></a><a name="b168921030172818"></a>COPY</strong> is preferred for data import.</p>
+<div class="note" id="en-us_topic_0237152146_note1924115273417"><a name="en-us_topic_0237152146_note1924115273417"></a><a name="en-us_topic_0237152146_note1924115273417"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0237152146_p54222394915"><a name="en-us_topic_0237152146_p54222394915"></a><a name="en-us_topic_0237152146_p54222394915"></a><strong id="b16131162113281"><a name="b16131162113281"></a><a name="b16131162113281"></a>\copy</strong> applies only to small-scale data import in good format. It does not preprocess invalid characters or provide error tolerance. <strong id="b168921030172818"><a name="b168921030172818"></a><a name="b168921030172818"></a>COPY</strong> is preferred for data import.
+    <li>\COPY specifies the number of clients to import data to implement parallel import of data files. Currently, the value ranges from 1 to 8.</li><li>
+The parallel import using
+    \COPY has the following constraints: Parallel import of temporary tables is not supported. Parallel import within transactions is not supported. Parallel import of binary files is not supported. Parallel import of data encrypted using AES-128 is not supported. In these cases, even if the parallel parameter is specified, a non-parallel process is performed.</li>
+</p>
 </div></div>
 </td>
 </tr>
@@ -1297,6 +1302,7 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 </tr>
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >In  [Table 14](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table44907299), option  **S**  indicates displaying the system object and  **PATTERN**  indicates displaying the additional description information and the name of the object to be displayed.
@@ -1754,11 +1760,33 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 <td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p872203911735"><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p872203911735"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p872203911735"></a>TEMPORARY: allows you to create temporary tables.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237152146_en-us_topic_0059778645_r78da08440dc840aabf1141a2d6df9bb8"><td class="cellrowborder" valign="top" width="28.060000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a>arwdDxt</p>
+<tr id="en-us_topic_0237152146_en-us_topic_0059778645_r78da08440dc840aabf1141a2d6df9bb8"><td class="cellrowborder" valign="top" width="28.060000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a>A</p>
 </td>
-<td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a>ALL PRIVILEGES: grants all available permissions to specified users or roles at a time.</p>
+<td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a>ALTER: allows users to modify the attributes of a specified object.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0237152146_en-us_topic_0059778645_r78da08440dc840aabf1141a2d6df9bb8"><td class="cellrowborder" valign="top" width="28.060000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a>P</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a>DROP: allows users to delete a specified object.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237152146_en-us_topic_0059778645_r78da08440dc840aabf1141a2d6df9bb8"><td class="cellrowborder" valign="top" width="28.060000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a>m</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a>COMMENT: allows users to define or modify comments of a specified object.</p>
+</td>
+</tr>    
+<tr id="en-us_topic_0237152146_en-us_topic_0059778645_r78da08440dc840aabf1141a2d6df9bb8"><td class="cellrowborder" valign="top" width="28.060000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a>i</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a>INDEX: allows users to create indexes on specified tables.
+</p>
+</td>
+</tr>     
+ <tr id="en-us_topic_0237152146_en-us_topic_0059778645_r78da08440dc840aabf1141a2d6df9bb8"><td class="cellrowborder" valign="top" width="28.060000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a57f56718f7554020b005366bf17273fe"></a>v</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a8289b40b8d9d4ac1b1d57c72e6d0dfe9"></a>VACUUM: allows users to perform ANALYZE and VACUUM operations on specified tables.
+</p>
+</td>
+</tr>       
 <tr id="en-us_topic_0237152146_en-us_topic_0059778645_r2005c4e9bd924590a921dc3e81672ac1"><td class="cellrowborder" valign="top" width="28.060000000000002%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p616168911735"><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p616168911735"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p616168911735"></a>*</p>
 </td>
 <td class="cellrowborder" valign="top" width="71.94%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0059778645_aa0e0e01d93804c4da37097ead6090ecf"><a name="en-us_topic_0237152146_en-us_topic_0059778645_aa0e0e01d93804c4da37097ead6090ecf"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_aa0e0e01d93804c4da37097ead6090ecf"></a>Authorization options for preceding permissions.</p>
