@@ -139,6 +139,13 @@ java.sql.CallableStatement是存储过程执行接口。
 <td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1385091417395"><a name="p1385091417395"></a><a name="p1385091417395"></a>Yes</p>
 </td>
 </tr>
+ <tr id="row1184941493911"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p128505140394"><a name="p128505140394"></a><a name="p128505140394"></a>getNString(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1385015148393"><a name="p1385015148393"></a><a name="p1385015148393"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1385091417395"><a name="p1385091417395"></a><a name="p1385091417395"></a>Yes</p>
+</td>
+</tr>  
 <tr id="row18341192584512"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p934120254458"><a name="p934120254458"></a><a name="p934120254458"></a>getTime(int parameterIndex)</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1534119257455"><a name="p1534119257455"></a><a name="p1534119257455"></a>Time</p>
@@ -181,64 +188,9 @@ java.sql.CallableStatement是存储过程执行接口。
 <td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p12114571"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p12114571"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p12114571"></a>Yes</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row41922278"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row11699963"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row47540285"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row42686078"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row54577493"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row6325349"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row44138901"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row11337048"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row19412198"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row66971264"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row62399407"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row66291076"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row43078361"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row40806541"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   不允许含有OUT参数的语句执行批量操作。
