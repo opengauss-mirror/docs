@@ -71,18 +71,7 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
    vi /etc/profile.d/performance.sh
    ```
 
-7. To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.
-
-   ```
-   hostname
-   cat /etc/hostname 
-   ```
-
-   If the value of  **hostname**  is different from the host name in the  **/etc/hostname**  file, run the following command to open the  **/etc/hostname**  file and change the host name. Press  **Esc**  to enter the command mode, and then run the  **:wq**  command to save the change and exit.
-
-   ```
-   vi /etc/hostname 
-   ```
+7. To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.During pre-installation, the hostname is checked.
 
 8. Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
    -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
@@ -201,8 +190,6 @@ Checking OS version.
 Successfully checked OS version.
 Creating cluster's path.
 Successfully created cluster's path.
-Setting SCTP service.
-Successfully set SCTP service.
 Set and check OS parameter.
 Setting OS parameters.
 Successfully set OS parameters.
@@ -236,8 +223,6 @@ Checking OS version.
 Successfully checked OS version.
 Creating cluster's path.
 Successfully created cluster's path.
-Setting SCTP service.
-Successfully set SCTP service.
 Set and check OS parameter.
 Setting OS parameters.
 Successfully set OS parameters.
@@ -283,8 +268,6 @@ Checking OS version.
 Successfully checked OS version.
 Creating cluster's path.
 Successfully created cluster's path.
-Setting SCTP service.
-Successfully set SCTP service.
 Set and check OS parameter.
 Setting OS parameters.
 Successfully set OS parameters.

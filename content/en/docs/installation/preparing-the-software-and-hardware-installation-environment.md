@@ -361,11 +361,8 @@ During the openGauss installation, the user  **root**  is required for remote lo
 3. Run the following command to validate the settings:
 
     ```
-    service sshd restart
+    systemctl restart sshd.service 
     ```
-
-    ![](public_sys-resources/icon-caution.gif) **CAUTION:**   
-   If  **Redirecting to /bin/systemctl restart sshd.service**  is displayed, run the  **/bin/systemctl restart sshd.service**  command.  
 
 4. Re-log in to the system as user  **root**.
 
