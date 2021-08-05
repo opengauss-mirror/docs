@@ -1,6 +1,6 @@
 # Using a gsql Meta-Command to Import Data<a name="EN-US_TOPIC_0242370286"></a>
 
-The  **gsql**  tool of DWS provides the  **\\copy**  meta-command to import data.
+The  **gsql**  tool  provides the  **\\copy**  meta-command to import data.
 
 ## \\copy Command<a name="en-us_topic_0237121136_en-us_topic_0117407672_section58856731203635"></a>
 

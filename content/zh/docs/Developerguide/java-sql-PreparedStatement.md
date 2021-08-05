@@ -325,6 +325,13 @@ java.sql.PreparedStatement是预处理语句接口。
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a>Yes</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_row66088519"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p20844712"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p20844712"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p20844712"></a>setNString(int parameterIndex, String x)</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p55246051"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p55246051"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p55246051"></a>void</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a>Yes</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_row28430838"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p9676836"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p9676836"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p9676836"></a>addBatch()</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p19873808"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p19873808"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p19873808"></a>void</p>
@@ -345,6 +352,7 @@ java.sql.PreparedStatement是预处理语句接口。
 </tr>
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   addBatch\(\)、execute\(\)必须在clearBatch\(\)之后才能执行。

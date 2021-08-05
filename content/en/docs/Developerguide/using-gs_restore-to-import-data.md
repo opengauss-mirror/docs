@@ -244,7 +244,7 @@ human_resource=# select * from hr.areas;
 Example 10: Run  **gs\_restore**  to import data and all object definitions in the  **hr**  schema.
 
 ```
-gs_restore /home/omm/backup/MPPDB_backup1.sql -p 8000 -d backupdb -n hr -e -c
+gs_restore /home/omm/backup/MPPDB_backup1.dmp -p 8000 -d backupdb -n hr -e -c
 Password:
 restore operation successful
 total time: 702  ms
