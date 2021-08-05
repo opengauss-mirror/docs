@@ -15,10 +15,10 @@ You can use  **gs\_dump**  to export data and all object definitions of a databa
 ## Procedure<a name="en-us_topic_0283136854_en-us_topic_0237121169_en-us_topic_0096392335_s3e29cf3b34314c088216013e01293af6"></a>
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Use  **gs\_dump**  to export data of the  **postgres**  database.
+2.  Use  **gs\_dump**  to export data of the  **userdatabase**  database.
 
     ```
-    gs_dump -U jack -f /home/omm/backup/postgres_backup.tar -p 8000 postgres -F t 
+    gs_dump -U jack -f /home/omm/backup/userdatabase_backup.tar -p 8000 postgres -F t 
     Password:
     ```
 
