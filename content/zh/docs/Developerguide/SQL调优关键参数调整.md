@@ -71,9 +71,10 @@
 </tr>
 <tr id="row15768191461612"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p076951417163"><a name="p076951417163"></a><a name="p076951417163"></a>sql_beta_feature</p>
 </td>
-<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p1676941418160"><a name="p1676941418160"></a><a name="p1676941418160"></a>控制优化器是否启用。SEL_SEMI_POISSON/SEL_EXPR_INSTR/PARAM_PATH_GEN/RAND_COST_OPT/PARAM_PATH_OPT/PAGE_EST_OPT/CANONICAL_PATHKEY测试功能。</p>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p1676941418160"><a name="p1676941418160"></a><a name="p1676941418160"></a>控制优化器是否启用。SEL_SEMI_POISSON/SEL_EXPR_INSTR/PARAM_PATH_GEN/RAND_COST_OPT/PARAM_PATH_OPT/PAGE_EST_OPT/CANONICAL_PATHKEY/PARTITION_OPFUSION测试功能。</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
