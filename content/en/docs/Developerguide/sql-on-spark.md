@@ -219,7 +219,7 @@ The following procedure uses  **exec\_on\_extension**  as an example. When using
 2.  Ensure that the content in  **package.zip**  is complete and that the content in the  **DSN.ini**  file is correct. Do not modify them after the installation and deployment are complete. Otherwise, the environment probably cannot be used.
 3.  Extension Connector can connect to only one Spark database instance each time. If multiple Spark connections are set up, authentication conflicts occur.
 4.  Changing the user password of the Spark database instance will invalidate the authentication credential. On top of the home page, click  **System**  to go to the user interface. Select the user that is used for connecting to Spark, click  **More**, and select the authentication credential to download it again. Upload the downloaded authentication credential to the  _GAUSSHOME_**/utilslib/fc\_conf/**_DSN_**/**  directory.  _DSN_  indicates a user-defined DSN name. Decompress the authentication credential to replace the existing files. Change the owner of the authentication credential to the database instance user.
-5.  Spark ODBC must be compiled by using GCC 5.4 or later.
+5.  Spark ODBC must be compiled by using GCC 7.3 or later.
 
 ## Examples<a name="section15891020125711"></a>
 

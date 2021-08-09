@@ -1,6 +1,6 @@
 # STATEMENT\_HISTORY<a name="EN-US_TOPIC_0301824804"></a>
 
-**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query system catalogs, you must have the  **sysadmin **permission.
+**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query system catalogs, you must have the  **sysadmin **permission.The results can only be queried in the system library, but not in the user library.
 
 **Table  1**  STATEMENT\_HISTORY columns
 
