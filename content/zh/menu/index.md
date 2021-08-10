@@ -1288,6 +1288,7 @@ headless: true
             -   [SESSION\_CPU\_RUNTIME]({{< relref "./docs/Developerguide/SESSION_CPU_RUNTIME.md" >}})
             -   [SESSION\_MEMORY\_RUNTIME]({{< relref "./docs/Developerguide/SESSION_MEMORY_RUNTIME.md" >}})
             -   [STATEMENT\_IOSTAT\_COMPLEX\_RUNTIME]({{< relref "./docs/Developerguide/STATEMENT_IOSTAT_COMPLEX_RUNTIME.md" >}})
+			-   [LOCAL\_ACTIVE\_SESSION]({{< relref "./docs/Developerguide/LOCAL_ACTIVE_SESSION.md" >}})
         -   [Transaction]({{< relref "./docs/Developerguide/Transaction.md" >}})
             -   [TRANSACTIONS\_PREPARED\_XACTS]({{< relref "./docs/Developerguide/TRANSACTIONS_PREPARED_XACTS.md" >}})
             -   [SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS]({{< relref "./docs/Developerguide/SUMMARY_TRANSACTIONS_PREPARED_XACTS.md" >}})

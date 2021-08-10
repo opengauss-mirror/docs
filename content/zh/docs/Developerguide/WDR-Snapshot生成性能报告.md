@@ -4,23 +4,32 @@
 
 ## 前提条件<a name="zh-cn_topic_0283137259_section128252205291"></a>
 
-WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
+WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
 
 ## 操作步骤<a name="zh-cn_topic_0283137259_section49941629132915"></a>
 
-1.  执行如下命令查询已经生成的快照，以获取快照的snapshot\_id。
+1.  执行以下命令连接postgres数据库。
+
+    ```
+    gsql -d postgres -p 端口号 -r
+    ```
+
+2.  执行如下命令查询已经生成的快照，以获取快照的snapshot\_id。
 
     ```
     select * from snapshot.snapshot;
     ```
 
-2.  （可选）执行如下命令手动创建快照。数据库中只有一个快照或者需要查看在当前时间段数据库的监控数据，可以选择手动执行快照操作，该命令需要用户具有sysadmin权限。
+3.  （可选）在CCN上执行如下命令手动创建快照。数据库中只有一个快照或者需要查看在当前时间段数据库的监控数据，可以选择手动执行快照操作，该命令需要用户具有sysadmin权限。
 
     ```
     select create_wdr_snapshot();
     ```
 
-3.  执行如下步骤生成性能报告。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >执行“cm\_ctl query -Cdvi”，回显中“Central Coordinator State”下显示的信息即为CCN信息。
+
+4.  执行如下步骤生成性能报告。
     1.  执行如下命令生成格式化性能报告文件。
 
         ```
@@ -98,8 +107,7 @@ WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.m
         \o \a \t 
         ```
 
-
-4.  根据需要查看WDR报告内容。
+5.  根据需要查看WDR报告内容。
 
     **表 2**  WDR报表主要内容
 
