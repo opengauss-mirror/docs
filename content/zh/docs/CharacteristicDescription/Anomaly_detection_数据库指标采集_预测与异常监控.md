@@ -21,7 +21,7 @@ detector模块基于http或https和agent模块通信，因此它可以部署到�
 
 ## 特性增强<a name="section144513469345"></a>
 
-无
+无。
 
 ## 特性约束<a name="section1613131119346"></a>
 
@@ -34,5 +34,5 @@ detector模块基于http或https和agent模块通信，因此它可以部署到�
 
 ## 依赖关系<a name="section4228145683310"></a>
 
-无
+无。
 
