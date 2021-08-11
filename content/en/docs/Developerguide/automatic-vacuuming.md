@@ -14,7 +14,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >-   If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to a value greater than  **0**, the autovacuum process is enabled to clean up bloated tables during daily operations and abnormal two-phase transactions when the system recovers from faults.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->Even if the  **autovacuum**  parameter is set to  **off**, the autovacuum process will be enabled automatically when a transaction ID wraparound is about to occur. When a CREATE DATABASE or DROP DATABASE operation fails, it is possible that the transaction has been committed or rolled back on some nodes whereas some nodes are still in the prepared status. In this case, manual operation is required to restore the nodes。
+>Even if the  **autovacuum**  parameter is set to  **off**, the autovacuum process will be enabled automatically when a transaction ID wraparound is about to occur. When a CREATE DATABASE or DROP DATABASE operation fails, it is possible that the transaction has been committed or rolled back on some nodes whereas some nodes are still in the prepared status. In this case, manual operation is required to restore the nodes.
 
 **Value range**: Boolean
 
