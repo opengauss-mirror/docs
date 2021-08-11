@@ -48,7 +48,7 @@ headless: true
 		-   [Kunpeng NUMA Architecture Optimization]({{< relref "./docs/CharacteristicDescription/kunpeng-numa-architecture-optimization.md" >}})
 		-   [High Concurrency of Thread Pools]({{< relref "./docs/CharacteristicDescription/high-concurrency-of-thread-pools.md" >}})
 		-   [SMP for Parallel Execution]({{< relref "./docs/CharacteristicDescription/smp-for-parallel-execution.md" >}})
-	-   [High Availability \(HA\)](high-availability-ha.md" >}})
+	-   [High Availability \(HA\)]({{<relref "./docs/CharacteristicDescription/high-availability-ha.md" >}})
 		-   [Primary/Standby]({{< relref "./docs/CharacteristicDescription/primary-standby.md" >}})
 		-   [Logical Replication]({{< relref "./docs/CharacteristicDescription/logical-replication.md" >}})
 		-   [Online Node Replacement]({{< relref "./docs/CharacteristicDescription/online-node-replacement.md" >}})
