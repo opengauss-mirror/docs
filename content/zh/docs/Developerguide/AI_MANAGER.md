@@ -29,7 +29,7 @@ python3 ai_manager --module anomaly_detection--action uninstall --param-file ope
 
 ```
 {
-  "scene": "opengauss",                                       # 场景，opengauss安装server及agent,huaweiyun仅安装server
+  "scene": "opengauss",                                       # 场景，openGauss安装server及agent,huaweiyun仅安装server
   "module": "anomaly_detection",                              # 模块（特性）名称，目前仅支持anomaly_detection
   "action": "install",                                        # 操作类型，支持install及uninstall
   "ca_info": {
