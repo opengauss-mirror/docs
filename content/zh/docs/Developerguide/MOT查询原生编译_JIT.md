@@ -50,7 +50,7 @@ while (rs2.next()) {…}
 
 有关更多详细信息，请参阅“支持Lite执行的查询”和“不支持Lite执行的查询”部分。
 
-## JIT编译对比-opengauss盘表与MOT表<a name="section825456"></a>
+## JIT编译对比-openGauss盘表与MOT表<a name="section825456"></a>
 
 目前，openGauss包含针对其基于磁盘的表的JIT/CodeGen查询优化的两种主要形式：
 
