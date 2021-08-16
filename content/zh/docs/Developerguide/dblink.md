@@ -71,5 +71,4 @@ make install
 ## 注意事项<a name="section1910642310280"></a>
 
 目前dblink仅支持openGauss数据库访问另一个openGauss数据库，不支持openGauss数据库访问PostgreSQL数据库。
-目前dblink暂时不支持线程池模式。
 
