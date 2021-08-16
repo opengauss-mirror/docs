@@ -2,7 +2,7 @@
 
 ## 连接密态数据库<a name="section6796167162618"></a>
 
-具体JDBC连接参数参考[基于JDBC开发](zh-cn_topic_0289899900.md)章节介绍。JDBC支持密态数据库相关操作，需要设置enable\_ce=1，示例如下。
+具体JDBC连接参数参考[基于JDBC开发](基于JDBC开发.md)章节介绍。JDBC支持密态数据库相关操作，需要设置enable\_ce=1，示例如下。
 
 ```
 public static Connection getConnect(String username, String passwd)

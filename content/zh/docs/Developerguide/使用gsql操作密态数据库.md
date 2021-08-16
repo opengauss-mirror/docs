@@ -9,7 +9,7 @@
     gsql -p PORT postgres -r -C
     ```
 
-3.  创建客户端主密钥CMK和列加密密钥CEK。具体涉及到的新增创建CMK的语法参考[CREATE CLIENT MASTER KEY](zh-cn_topic_0294528088.md)、创建的CEK的语法参考[CREATE COLUMN ENCRYPTION KEY](zh-cn_topic_0294528089.md)
+3.  创建客户端主密钥CMK和列加密密钥CEK。创建CMK的语法请参考[CREATE CLIENT MASTER KEY](CREATE-CLIENT-MASTER-KEY.md)、创建的CEK的语法请参考[CREATE COLUMN ENCRYPTION KEY](CREATE-COLUMN-ENCRYPTION-KEY.md)。
 
     ```
     --创建客户端加密主密钥(CMK)
