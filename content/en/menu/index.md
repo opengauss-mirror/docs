@@ -37,7 +37,7 @@ headless: true
 	-   [Technical Specifications]({{< relref "./docs/Technicalwhitepaper/technical-specifications.md" >}})
 	-   [Glossary]({{< relref "./docs/Technicalwhitepaper/glossary.md" >}})
 	
--   [CharacteristicDescription]({{< relref "./docs/CharacteristicDescription/CharacteristicDescription.md" >}})
+-   [Characteristic Description]({{< relref "./docs/CharacteristicDescription/CharacteristicDescription.md" >}})
 	-   [High Performance]({{< relref "./docs/CharacteristicDescription/high-performance.md" >}})
 		-   [CBO Optimizer]({{< relref "./docs/CharacteristicDescription/cbo-optimizer.md" >}})
 		-   [LLVM]({{< relref "./docs/CharacteristicDescription/llvm.md" >}})
