@@ -84,8 +84,8 @@ top：只记录顶层SQL。
 
 **取值范围：**布尔型
 
--   on：表示开启Full /Slow SQL捕获
--   off：表示关闭Full /Slow SQL捕获
+-   on：表示开启Full /Slow SQL捕获。
+-   off：表示关闭Full /Slow SQL捕获。
 
 **默认值：**on
 
