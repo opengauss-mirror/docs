@@ -84,7 +84,7 @@ SQLRETURN  SQLGetDiagRec(SQLSMALLINT    HandleType
 SQLGetDiagRec不发布自己的诊断记录。它用下列返回值来报告它自己的执行结果：
 
 -   SQL\_SUCCESS：函数成功返回诊断信息。
--   SQL\_SUCCESS\_WITH\_INFO：\*MessageText太小以致不能容纳所请求的诊断信息。没有诊断记录生成。
+-   SQL\_SUCCESS\_WITH\_INFO：MessageText太小以致不能容纳所请求的诊断信息。没有诊断记录生成。
 -   SQL\_INVALID\_HANDLE：由HandType和Handle所指出的句柄是不合法句柄。
 -   SQL\_ERROR：RecNumber小于等于0或BufferLength小于0。
 
