@@ -55,7 +55,7 @@ You can use a client tool to connect to a database through the primary node of t
 
 ### Precautions
 
-By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **session\_timeout**. To disable the timeout setting, set  **session\_timeout **to  **0**.
+By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **session\_timeout**. To disable the timeout setting, set  **session\_timeout** to  **0**.
 
 ### Prerequisites
 
