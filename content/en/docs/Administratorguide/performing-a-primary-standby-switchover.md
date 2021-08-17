@@ -109,7 +109,7 @@ Successfully generated dynamic configuration file.
 
 ## Troubleshooting<a name="en-us_topic_0283140544_en-us_topic_0237088791_en-us_topic_0059779253_s24c0d0766ecf46f1b90899bb6298d45b"></a>
 
-If a switchover fails, troubleshoot the problem according to the log information. For details, see  [Log Reference](en-us_topic_0289897020.md).
+If a switchover fails, troubleshoot the problem according to the log information. For details, see  [Log Reference](log-reference.md).
 
 ## Exception Handling<a name="en-us_topic_0283140544_en-us_topic_0237088791_en-us_topic_0059779253_seda6113ac28b46249907b9327a653307"></a>
 
