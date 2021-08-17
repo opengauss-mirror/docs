@@ -198,7 +198,7 @@ SQL on Spark支持的数据类型，见下表。
 
     可以参考如下操作：
 
-    1.  [连接数据库](zh-cn_topic_0289900104.md)。
+    1.  [连接数据库](连接数据库.md)。
     2.  创建Data Source。
 
         ```
@@ -297,5 +297,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 
 ## **相关链接**<a name="section67639236412"></a>
 
-[CREATE DATA SOURCE](zh-cn_topic_0289900178.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](create-data-source.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
 
