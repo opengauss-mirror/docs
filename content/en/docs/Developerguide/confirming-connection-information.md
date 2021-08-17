@@ -19,7 +19,7 @@ You can use a client tool to connect to a database through the primary node of t
     1  plat1 192.168.0.11  5001 /srv/BigData/gaussdb/data1/dbnode P Primary Normal
     ```
     
-    For example, the server IP addresses where the primary node of the database is deployed are 192.168.10.11. The data path of the primary node of the database is  **/srv/BigData/gaussdb/data1/dbnode**. "P" indicates that the initial role of the node is primary, and it not change after installation. "Primary" indicates that the instance is the primary instance; "Normal" indicates that opengauss is available. For details about the other parameters, see "Server Tools" \> gs\_om" in the  _Tool Refrence_.
+    For example, the server IP addresses where the primary node of the database is deployed are 192.168.10.11. The data path of the primary node of the database is  **/srv/BigData/gaussdb/data1/dbnode**. "P" indicates that the initial role of the node is primary, and it not change after installation. "Primary" indicates that the instance is the primary instance; "Normal" indicates that openGauss is available. For details about the other parameters, see "Server Tools" \> gs\_om" in the  _Tool Refrence_.
 
 3.  Confirm the port number of the primary node of the database.
 

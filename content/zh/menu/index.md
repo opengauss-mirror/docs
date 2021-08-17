@@ -1503,6 +1503,7 @@ headless: true
 		-   [用户自定义函数]({{< relref "./docs/Developerguide/用户自定义函数.md" >}})
 		-   [定时任务]({{< relref "./docs/Developerguide/定时任务.md" >}})
 		-   [线程池]({{< relref "./docs/Developerguide/线程池.md" >}})
+		-   [备份恢复]({{< relref "./docs/Developerguide/备份恢复.md" >}})
 		-   [Undo]({{< relref "./docs/Developerguide/Undo.md" >}})
 		-   [AI特性]({{< relref "./docs/Developerguide/AI特性-GUC.md" >}})
 	-   [错误码参考]({{< relref "./docs/Developerguide/错误码参考.md">}})

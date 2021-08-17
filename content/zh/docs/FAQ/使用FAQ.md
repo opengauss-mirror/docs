@@ -48,7 +48,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 此问题可能是由于系统上的JDK版本不兼容造成的。JDK版本要求为1.8，建议您重新下载安装JDK并修改全局变量后再次尝试。
 
-### **Q5：Data Studio连接openGauss数据库时出现错误，提示“连接失败”，如何处理？**错误信息如下。
+### **Q5：Data Studio连接openGauss数据库时出现错误，提示“连接失败”，如何处理？错误信息如下。**
 
 ![](figures/zh-cn_image_0000001104198936.png)
 

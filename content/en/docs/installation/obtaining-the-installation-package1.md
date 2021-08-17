@@ -15,7 +15,7 @@ You can obtain the installation package from the openGauss open-source community
 
     ```
     tar -jxf openGauss-x.x.x-openEuler-64bit.tar.bz2
-    ls -1b
+    ls -lb
     ```
 
     Run the  **ls**  command to display information similar to the following:

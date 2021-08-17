@@ -15,7 +15,7 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
 ## 客户端数据库实例配置<a name="section152213321570"></a>
 
 1.  根据[使用前的对接配置](使用前的对接配置.md)在客户端数据库实例配置访问远端Hadoop数据库实例。
-2.  [使用gsql连接](zh-cn_topic_0289900019.md)数据库。
+2.  [使用gsql连接](使用gsql连接.md)数据库。
 3.  在DN上配置通过计算资源池进行加速。
 
     ```
@@ -74,7 +74,7 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
     gs_guc reload -Z datanode -N all -I all -c "max_active_statements=10" 
     ```
 
-4.  [使用gsql连接](zh-cn_topic_0289900019.md)数据库。
+4.  [使用gsql连接](使用gsql连接.md)数据库。
 5.  设置query\_dop为1，由动态资源管理决定客户端请求在加速数据库实例上的并发度。
 
     ```

@@ -8,7 +8,7 @@ You can use a client tool to connect to a database through the primary node of t
 ### Procedure
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  <a name="en-us_topic_0242370176_en-us_topic_0237120290_en-us_topic_0062129725_li736435692628"></a>Run the  **gs\_om-t status--detail**  command to query instances in the openGauss cluster.
+2.  Run the  **gs\_om-t status--detail**  command to query instances in the openGauss cluster.
 
     ```
     gs_om -t status --detail
@@ -24,7 +24,7 @@ You can use a client tool to connect to a database through the primary node of t
     3  plat3 192.168.0.13  5003 /srv/BigData/gaussdb/data1/dbnode Normal
     ```
 
-    For example, the server IP addresses where the primary node of the database is deployed are 192.168.10.11, 192.168.10.12, and 192.168.0.13. The data path of the primary node of the database is  **/srv/BigData/gaussdb/data1/dbnode**.
+    For example, the server IP addresses where the primary node of the database is deployed are 192.168.0.11, 192.168.0.12, and 192.168.0.13. The data path of the primary node of the database is  **/srv/BigData/gaussdb/data1/dbnode**.
 
 3.  Confirm the port number of the primary node of the database.
 
@@ -55,7 +55,7 @@ You can use a client tool to connect to a database through the primary node of t
 
 ### Precautions
 
-By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **session\_timeout**. To disable the timeout setting, set  **session\_timeout **to  **0**.
+By default, if a client is idle state after connecting to a database, the client automatically disconnects from the database in the duration specified by  **session\_timeout**. To disable the timeout setting, set  **session\_timeout** to  **0**.
 
 ### Prerequisites
 

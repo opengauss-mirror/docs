@@ -12,8 +12,13 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 0 to 8
 
--   To test the effect of disabling this feature during development, you can set this parameter to  **0**. However, if this parameter is set to  **0**, the value will be changed to  **1**  in the code and the feature cannot be disabled.
--   If this parameter is set to a value ranging from 1 to 8, the corresponding number of background threads are started to maintain the candidate buffer chain. Dirty pages that meet the conditions are flushed to disks, and non-dirty pages are added to the candidate list.
+- To test the effect of turning off this feature during development, it can be set to 0, but if it is currently set to 0, two background threads will actually be started, one of which is used for normal buffers and the other for segmented segment buffers. It is no longer supported to turn off this feature.
+
+- If this parameter is set to a value ranging from 1 to 8, the corresponding number of background threads are started to maintain the candidate buffer chain. Dirty pages that meet the conditions are flushed to disks, and non-dirty pages are added to the candidate list.
+
+  > ![](public_sys-resources/icon-note.gif)**notes：**  
+  >
+  > Support segment buffer flushing, the background will automatically start an independent background thread to accelerate the segment buffer elimination speed, so the actual number of background threads to start that is bgwriter_thread_num+1.
 
 **Default value**:  **2**
 

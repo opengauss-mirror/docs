@@ -210,7 +210,7 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 gs_checkperf -i pmk -U omm
 Cluster statistics information:
     Host CPU busy time ratio                     :    1.43       %
-    GaussDB CPU time % in busy time              :    1.88       %
+    MPPDB CPU time % in busy time              :    1.88       %
     Shared Buffer Hit ratio                      :    99.96      %
     In-memory sort ratio                         :    100.00     %
     Physical Reads                               :    4
@@ -232,9 +232,9 @@ Host CPU usage rate:
     Host CPU iowait time                         :    20.000     Jiffies
     Host CPU busy time ratio                     :    4.42       %
     Host CPU iowait time ratio                   :    .05        %
-GaussDB CPU usage rate:
-    GaussDB CPU time % in busy time              :    19.04      %
-    GaussDB CPU time % in total time             :    .84        %
+MPPDB CPU usage rate:
+    MPPDB CPU time % in busy time              :    19.04      %
+    MPPDB CPU time % in total time             :    .84        %
 Shared buffer hit rate:
     Shared Buffer Reads                          :    0
     Shared Buffer Hits                           :    24129
@@ -256,11 +256,11 @@ Activity statistics:
     Session count                                :    3
 Node statistics information:
 dn_6001_6002:
-    GaussDB CPU Time                             :    200        Jiffies
+    MPPDB CPU Time                             :    200        Jiffies
     Host CPU Busy Time                           :    3490       Jiffies
     Host CPU Total Time                          :    42330      Jiffies
-    GaussDB CPU Time % in Busy Time              :    5.73       %
-    GaussDB CPU Time % in Total Time             :    .47        %
+    MPPDB CPU Time % in Busy Time              :    5.73       %
+    MPPDB CPU Time % in Total Time             :    .47        %
     Physical memory                              :    8231776256 Bytes
     DB Memory usage                              :    877236224  Bytes
     Shared buffer size                           :    33554432   Bytes
@@ -274,11 +274,11 @@ dn_6001_6002:
     Read Time                                    :    0
     Write Time                                   :    0
 dn_6003_6004:
-    GaussDB CPU Time                             :    170       
+    MPPDB CPU Time                             :    170       
     Jiffies    Host CPU Busy Time                :    1030       Jiffies
     Host CPU Total Time                          :    42470      Jiffies    
-    GaussDB CPU Time % in Busy Time              :    16.50      %
-    GaussDB CPU Time % in Total Time             :    .40        %
+    MPPDB CPU Time % in Busy Time              :    16.50      %
+    MPPDB CPU Time % in Total Time             :    .40        %
     Physical memory                              :    8231776256 Bytes
     DB Memory usage                              :    881434624  Bytes    
     Shared buffer size                           :    33554432   Bytes
@@ -292,11 +292,11 @@ dn_6003_6004:
     Read Time                                    :    0
     Write Time                                   :    0
 dn_6005_6006:
-    GaussDB CPU Time                             :    220        Jiffies
+    MPPDB CPU Time                             :    220        Jiffies
     Host CPU Busy Time                           :    1100       Jiffies
     Host CPU Total Time                          :    42360      Jiffies
-    GaussDB CPU Time % in Busy Time              :    20.00      %
-    GaussDB CPU Time % in Total Time             :    .52        %
+    MPPDB CPU Time % in Busy Time              :    20.00      %
+    MPPDB CPU Time % in Total Time             :    .52        %
     Physical memory                              :    8231776256 Bytes
     DB Memory usage                              :    881430528  Bytes
     Shared buffer size                           :    33554432   Bytes
