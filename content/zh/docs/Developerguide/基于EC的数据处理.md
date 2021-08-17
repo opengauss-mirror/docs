@@ -421,5 +421,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#zh-cn_topic_0085032
 
 ## 相关链接<a name="section2388125415014"></a>
 
-[CREATE DATA SOURCE](zh-cn_topic_0289900178.md)，[CREATE DATA SOURCE](zh-cn_topic_0289900178.md)，[SQL on Oracle](SQL-on-Oracle.md)，《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](create-data-source.md)，[CREATE DATA SOURCE](create-data-source.md)，[SQL on Oracle](SQL-on-Oracle.md)，《工具参考》中“服务端工具 \> gs\_om”章节
 
