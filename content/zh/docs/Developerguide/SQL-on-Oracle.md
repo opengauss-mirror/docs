@@ -374,8 +374,8 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   实际部署时，编译参数--with-iconv-char-enc=enc中的enc需要替换为Oracle数据库的字符集编码。
     >-   常见的Oracle数据库中文字符编码有AL32UTF8和ZHS16GBK。
-    >    -   如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8
-    >    -   如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030
+    >    -   如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8。
+    >    -   如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030。
 
     c\) 编译安装。
 
@@ -417,7 +417,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     h\) 把步骤d中的unixODBC文件拷贝到数据库实例的其它数据节点的$GPHOME/unixodbc/路径下，并执行步骤e和步骤f修改文件权限、属主，并配置环境变量。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）
+    >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）。
 
 8.  执行如下命令，重启数据库实例，终止om\_monitor进程，以使openGauss的进程感知到环境变量的变化。
 
