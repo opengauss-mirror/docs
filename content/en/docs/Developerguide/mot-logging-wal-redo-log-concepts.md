@@ -24,7 +24,7 @@ To ensure Durability, MOT is fully integrated with the openGauss's Write-Ahead L
 
 Two synchronous transaction logging options and one asynchronous transaction logging option are supported \(these are also supported by the standard openGauss disk engine\). MOT also supports synchronous Group Commit logging with NUMA-awareness optimization, as described below.
 
-According to your configuration, one of the following types of logging is implemented –
+According to your configuration, one of the following types of logging is implemented: 
 
 -   [Synchronous Redo Logging](synchronous-redo-logging.md)
 -   [Group Synchronous Redo Logging](group-synchronous-redo-logging.md)
