@@ -20,7 +20,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
 ## 操作步骤<a name="zh-cn_topic_0237121137_section3467125218532"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议选择使用"-c" 和"-e"参数。"-c"表示在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象；"-e"表示当发送SQL语句到数据库时如果出现错误请退出，默认状态下会继续，且在导入后会显示一系列错误信息。  
+>gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议选择使用“-c”和“-e”参数。“-c”表示在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象；“-e”表示当发送SQL语句到数据库时如果出现错误请退出，默认状态下会继续，且在导入后会显示一系列错误信息。  
 
 1.  以操作系统用户omm登录数据库主节点。
 2.  使用gs\_restore命令，从postgres整个数据库内容的导出文件中，将数据库的所有对象的定义导入到backupdb。
@@ -31,68 +31,68 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     ```
 
 **表 1**  常用参数说明
-    
-    <a name="zh-cn_topic_0237121137_table1781122816253"></a>
-    
-    <table><thead align="left"><tr id="zh-cn_topic_0237121137_row10837281257"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237121137_p48382816258"><a name="zh-cn_topic_0237121137_p48382816258"></a><a name="zh-cn_topic_0237121137_p48382816258"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="43.33%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237121137_p18332812257"><a name="zh-cn_topic_0237121137_p18332812257"></a><a name="zh-cn_topic_0237121137_p18332812257"></a>参数说明</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="31.669999999999998%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237121137_p583122816257"><a name="zh-cn_topic_0237121137_p583122816257"></a><a name="zh-cn_topic_0237121137_p583122816257"></a>举例</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0237121137_row1483528152520"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p3830287252"><a name="zh-cn_topic_0237121137_p3830287252"></a><a name="zh-cn_topic_0237121137_p3830287252"></a>-U</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p8232111218592"><a name="zh-cn_topic_0237121137_p8232111218592"></a><a name="zh-cn_topic_0237121137_p8232111218592"></a>连接数据库的用户名。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1583152842510"><a name="zh-cn_topic_0237121137_p1583152842510"></a><a name="zh-cn_topic_0237121137_p1583152842510"></a>-U jack</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237121137_row199295855317"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p89920588539"><a name="zh-cn_topic_0237121137_p89920588539"></a><a name="zh-cn_topic_0237121137_p89920588539"></a>-W</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p69431335210"><a name="zh-cn_topic_0237121137_p69431335210"></a><a name="zh-cn_topic_0237121137_p69431335210"></a>指定用户连接的密码。</p>
-    <a name="zh-cn_topic_0237121137_ul194074341627"></a><a name="zh-cn_topic_0237121137_ul194074341627"></a><ul id="zh-cn_topic_0237121137_ul194074341627"><li>如果主机的认证策略是trust，则不会对数据库管理员进行密码验证，即无需输入-W选项；</li><li>如果没有-W选项，并且不是数据库管理员，会提示用户输入密码。</li></ul>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1898043113581"><a name="zh-cn_topic_0237121137_p1898043113581"></a><a name="zh-cn_topic_0237121137_p1898043113581"></a>-W abcd@123</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237121137_row4650191445011"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p9650161425019"><a name="zh-cn_topic_0237121137_p9650161425019"></a><a name="zh-cn_topic_0237121137_p9650161425019"></a>-d</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p1565110140508"><a name="zh-cn_topic_0237121137_p1565110140508"></a><a name="zh-cn_topic_0237121137_p1565110140508"></a>连接数据库dbname，并直接将数据导入到该数据库中。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p7651201455010"><a name="zh-cn_topic_0237121137_p7651201455010"></a><a name="zh-cn_topic_0237121137_p7651201455010"></a>-d backupdb</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237121137_row9411195215519"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p84119521250"><a name="zh-cn_topic_0237121137_p84119521250"></a><a name="zh-cn_topic_0237121137_p84119521250"></a>-p</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p14838631464"><a name="zh-cn_topic_0237121137_p14838631464"></a><a name="zh-cn_topic_0237121137_p14838631464"></a>指定服务器所侦听的TCP端口或本地Unix域套接字后缀，以确保连接。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p341117521853"><a name="zh-cn_topic_0237121137_p341117521853"></a><a name="zh-cn_topic_0237121137_p341117521853"></a>-p <span id="zh-cn_topic_0237121137_text986814282459"><a name="zh-cn_topic_0237121137_text986814282459"></a><a name="zh-cn_topic_0237121137_text986814282459"></a>8000</span></p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237121137_row1362511481379"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p195642019125512"><a name="zh-cn_topic_0237121137_p195642019125512"></a><a name="zh-cn_topic_0237121137_p195642019125512"></a>-e</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p18979244175512"><a name="zh-cn_topic_0237121137_p18979244175512"></a><a name="zh-cn_topic_0237121137_p18979244175512"></a>当发送SQL语句到数据库时如果出现错误，则退出。默认状态下会忽略错误任务并继续执行导入，且在导入后会显示一系列错误信息。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p12782147122820"><a name="zh-cn_topic_0237121137_p12782147122820"></a><a name="zh-cn_topic_0237121137_p12782147122820"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237121137_row057817297550"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p1557922912557"><a name="zh-cn_topic_0237121137_p1557922912557"></a><a name="zh-cn_topic_0237121137_p1557922912557"></a>-c</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p1762611020568"><a name="zh-cn_topic_0237121137_p1762611020568"></a><a name="zh-cn_topic_0237121137_p1762611020568"></a>在重新创建数据库对象前，清理（删除）已存在于将要导入的数据库中的数据库对象。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p55791029105515"><a name="zh-cn_topic_0237121137_p55791029105515"></a><a name="zh-cn_topic_0237121137_p55791029105515"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237121137_row1339718574716"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p18625164815715"><a name="zh-cn_topic_0237121137_p18625164815715"></a><a name="zh-cn_topic_0237121137_p18625164815715"></a>-s</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p1962511481717"><a name="zh-cn_topic_0237121137_p1962511481717"></a><a name="zh-cn_topic_0237121137_p1962511481717"></a>只导入模式定义，不导入数据。当前的序列值也不会被导入。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1662514481776"><a name="zh-cn_topic_0237121137_p1662514481776"></a><a name="zh-cn_topic_0237121137_p1662514481776"></a>-</p>
-    </td>
-    </tr>
-    </tbody>
+
+<a name="zh-cn_topic_0237121137_table1781122816253"></a>
+
+<table><thead align="left"><tr id="zh-cn_topic_0237121137_row10837281257"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237121137_p48382816258"><a name="zh-cn_topic_0237121137_p48382816258"></a><a name="zh-cn_topic_0237121137_p48382816258"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="43.33%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237121137_p18332812257"><a name="zh-cn_topic_0237121137_p18332812257"></a><a name="zh-cn_topic_0237121137_p18332812257"></a>参数说明</p>
+</th>
+<th class="cellrowborder" valign="top" width="31.669999999999998%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237121137_p583122816257"><a name="zh-cn_topic_0237121137_p583122816257"></a><a name="zh-cn_topic_0237121137_p583122816257"></a>举例</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0237121137_row1483528152520"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p3830287252"><a name="zh-cn_topic_0237121137_p3830287252"></a><a name="zh-cn_topic_0237121137_p3830287252"></a>-U</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p8232111218592"><a name="zh-cn_topic_0237121137_p8232111218592"></a><a name="zh-cn_topic_0237121137_p8232111218592"></a>连接数据库的用户名。</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1583152842510"><a name="zh-cn_topic_0237121137_p1583152842510"></a><a name="zh-cn_topic_0237121137_p1583152842510"></a>-U jack</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237121137_row199295855317"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p89920588539"><a name="zh-cn_topic_0237121137_p89920588539"></a><a name="zh-cn_topic_0237121137_p89920588539"></a>-W</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p69431335210"><a name="zh-cn_topic_0237121137_p69431335210"></a><a name="zh-cn_topic_0237121137_p69431335210"></a>指定用户连接的密码。</p>
+<a name="zh-cn_topic_0237121137_ul194074341627"></a><a name="zh-cn_topic_0237121137_ul194074341627"></a><ul id="zh-cn_topic_0237121137_ul194074341627"><li>如果主机的认证策略是trust，则不会对数据库管理员进行密码验证，即无需输入-W选项；</li><li>如果没有-W选项，并且不是数据库管理员，会提示用户输入密码。</li></ul>
+</td>
+<td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1898043113581"><a name="zh-cn_topic_0237121137_p1898043113581"></a><a name="zh-cn_topic_0237121137_p1898043113581"></a>-W abcd@123</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237121137_row4650191445011"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p9650161425019"><a name="zh-cn_topic_0237121137_p9650161425019"></a><a name="zh-cn_topic_0237121137_p9650161425019"></a>-d</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p1565110140508"><a name="zh-cn_topic_0237121137_p1565110140508"></a><a name="zh-cn_topic_0237121137_p1565110140508"></a>连接数据库dbname，并直接将数据导入到该数据库中。</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p7651201455010"><a name="zh-cn_topic_0237121137_p7651201455010"></a><a name="zh-cn_topic_0237121137_p7651201455010"></a>-d backupdb</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237121137_row9411195215519"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p84119521250"><a name="zh-cn_topic_0237121137_p84119521250"></a><a name="zh-cn_topic_0237121137_p84119521250"></a>-p</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p14838631464"><a name="zh-cn_topic_0237121137_p14838631464"></a><a name="zh-cn_topic_0237121137_p14838631464"></a>指定服务器所侦听的TCP端口或本地Unix域套接字后缀，以确保连接。</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p341117521853"><a name="zh-cn_topic_0237121137_p341117521853"></a><a name="zh-cn_topic_0237121137_p341117521853"></a>-p <span id="zh-cn_topic_0237121137_text986814282459"><a name="zh-cn_topic_0237121137_text986814282459"></a><a name="zh-cn_topic_0237121137_text986814282459"></a>8000</span></p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237121137_row1362511481379"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p195642019125512"><a name="zh-cn_topic_0237121137_p195642019125512"></a><a name="zh-cn_topic_0237121137_p195642019125512"></a>-e</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p18979244175512"><a name="zh-cn_topic_0237121137_p18979244175512"></a><a name="zh-cn_topic_0237121137_p18979244175512"></a>当发送SQL语句到数据库时如果出现错误，则退出。默认状态下会忽略错误任务并继续执行导入，且在导入后会显示一系列错误信息。</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p12782147122820"><a name="zh-cn_topic_0237121137_p12782147122820"></a><a name="zh-cn_topic_0237121137_p12782147122820"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237121137_row057817297550"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p1557922912557"><a name="zh-cn_topic_0237121137_p1557922912557"></a><a name="zh-cn_topic_0237121137_p1557922912557"></a>-c</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p1762611020568"><a name="zh-cn_topic_0237121137_p1762611020568"></a><a name="zh-cn_topic_0237121137_p1762611020568"></a>在重新创建数据库对象前，清理（删除）已存在于将要导入的数据库中的数据库对象。</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p55791029105515"><a name="zh-cn_topic_0237121137_p55791029105515"></a><a name="zh-cn_topic_0237121137_p55791029105515"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237121137_row1339718574716"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237121137_p18625164815715"><a name="zh-cn_topic_0237121137_p18625164815715"></a><a name="zh-cn_topic_0237121137_p18625164815715"></a>-s</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237121137_p1962511481717"><a name="zh-cn_topic_0237121137_p1962511481717"></a><a name="zh-cn_topic_0237121137_p1962511481717"></a>只导入模式定义，不导入数据。当前的序列值也不会被导入。</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237121137_p1662514481776"><a name="zh-cn_topic_0237121137_p1662514481776"></a><a name="zh-cn_topic_0237121137_p1662514481776"></a>-</p>
+</td>
+</tr>
+</tbody>
 </table>
 
  其他参数说明请参见《工具参考》中“服务端工具 \> gs\_restore”章节。
