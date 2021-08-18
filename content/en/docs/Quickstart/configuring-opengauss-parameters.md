@@ -153,7 +153,7 @@ The current default values for parameters in the openGauss configuration file \(
     Specifies the name and value of the openGauss configuration parameter to be set.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   If the parameter is a string variable, use  **-c **_parameter_**="'**_value_**'"**  or  **-c "**_parameter_** = '**_value_**'"**.  
+    >-   If the parameter is a string variable, use  **-c ** _parameter_ ="'_value_'"  or  **-c** "_parameter_ = '_value_'".  
     >-   When  **gs\_guc set**  or  **reload**  is set to  **log\_directory**, the default value is restored and set to a specific data directory.  
 
     Value range: all the parameters in the  **postgresql.conf**  file
