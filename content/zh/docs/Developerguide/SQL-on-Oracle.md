@@ -352,7 +352,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     unixODBC的安装推荐使用源码进行安装。
 
-    源码可在http://www.unixodbc.org/或https://sourceforge.net/projects/unixodbc/files/unixODBC/进行下载。
+    源码可在[http://www.unixodbc.org/](http://www.unixodbc.org/)或[https://sourceforge.net/projects/unixodbc/files/unixODBC/](https://sourceforge.net/projects/unixodbc/files/unixODBC/)进行下载。
 
     建议使用2.3.6版本。推荐如下方法进行unixODBC安装部署：
 
@@ -435,7 +435,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     可以参考如下操作：
 
-    1.  [连接数据库](zh-cn_topic_0289900104.md)。
+    1.  [连接数据库](连接数据库.md)。
     2.  创建Data Source。
 
         ```
@@ -591,7 +591,7 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 </td>
 <td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p14100953175412"><a name="p14100953175412"></a><a name="p14100953175412"></a>ERROR:  source "spark_ds" does not exist</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="zh-cn_topic_0289900178.md">CREATE DATA SOURCE</a>。</p>
+<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="create-data-source.md">CREATE DATA SOURCE</a>。</p>
 </td>
 </tr>
 <tr id="row1611213537544"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p912145375413"><a name="p912145375413"></a><a name="p912145375413"></a>执行异常</p>
@@ -614,5 +614,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 
 ## **相关链接**<a name="section187221926368"></a>
 
-[CREATE DATA SOURCE](zh-cn_topic_0289900178.md)，[SQL on Spark](SQL-on-Spark.md)，[SQL on other openGauss](SQL-on-other-openGauss.md)，《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](create-data-source.md)，[SQL on Spark](SQL-on-Spark.md)，[SQL on other openGauss](SQL-on-other-openGauss.md)，《工具参考》中“服务端工具 \> gs\_om”章节
 
