@@ -217,7 +217,8 @@
 <!--DBnode-->
 <PARAM name="dataNum" value="1"/>
 <!--数据库端口号-->
-<PARAM name="dataPortBase" value="15400"/>
+<PARAM name="dataPortBase" value="
+"/>
 <!--DBnode侦听IP-->
 <PARAM name="dataListenIp1" value="172.31.13.124,172.31.6.198"/>
 <!--数据库主节点上的数据目录，及备机数据目录-->
@@ -432,7 +433,7 @@
             
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataPortBase" value="26000"/>
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
@@ -500,7 +501,7 @@
             
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataPortBase" value="26000"/>
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
@@ -571,7 +572,7 @@
             
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataPortBase" value="26000"/>
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
@@ -693,6 +694,7 @@
             <!-- 节点4的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.4"/>
             <PARAM name="sshIp1" value="192.168.0.4"/>
+
 	</DEVICE>
 
         <!-- 节点5上的部署信息 -->
