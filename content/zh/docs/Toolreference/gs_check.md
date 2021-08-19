@@ -26,13 +26,13 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     gs_check -e SCENE_NAME [-U USER] [-L] [-l LOGFILE] [-o OUTPUTDIR] [--skip-root-items] [--time-out=SECS][--set][--routing][--skip-items]
     ```
 
--   显示帮助信息
+-   显示帮助信息：
 
     ```
     gs_check -? | --help
     ```
 
--   显示版本号信息
+-   显示版本号信息：
 
     ```
     gs_check -V | --version
@@ -49,7 +49,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 -   -L
 
-    本地执行
+    本地执行。
 
 -   -i
 
