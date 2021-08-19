@@ -1440,7 +1440,6 @@ headless: true
 			-   [After You Run the du Command to Query Data File Size In the XFS File System, the Query Result Is Greater than the Actual File Size]({{< relref "./docs/Developerguide/after-you-run-the-du-command-to-query-data-file-size-in-the-xfs-file-system-the-query-result-is-grea.md" >}})
 			-   [File Is Damaged in the XFS File System]({{< relref "./docs/Developerguide/file-is-damaged-in-the-xfs-file-system.md" >}})
 			-   [Primary Node Is Hung in Demoting During a Switchover]({{< relref "./docs/Developerguide/primary-node-is-hung-in-demoting-during-a-switchover.md" >}})
-			-   [Disk Space Usage Reaches the Threshold and the Database Becomes Read-only]({{< relref "./docs/Developerguide/disk-space-usage-reaches-the-threshold-and-the-database-becomes-read-only.md" >}})
 			-   [Slow Response to a Query Statement]({{< relref "./docs/Developerguide/slow-response-to-a-query-statement.md" >}})
 			-   [Analyzing the Status of a Query Statement]({{< relref "./docs/Developerguide/analyzing-the-status-of-a-query-statement.md" >}})
 			-   [Forcibly Terminating a Session]({{< relref "./docs/Developerguide/forcibly-terminating-a-session.md" >}})
@@ -2321,8 +2320,7 @@ headless: true
 			-   [GAUSS-53300 -- GAUSS-53399]({{< relref "./docs/Developerguide/gauss-53300----gauss-53399.md" >}})
 			-   [GAUSS-53400 -- GAUSS-53499]({{< relref "./docs/Developerguide/gauss-53400----gauss-53499.md" >}})
 			-   [GAUSS-53500 -- GAUSS-53599]({{< relref "./docs/Developerguide/gauss-53500----gauss-53599.md" >}})
-			-   [GAUSS-53600 -- GAUSS-53699]({{< relref "./docs/Developerguide/gauss-53600----gauss-53699.md" >}})
-	
+			-   [GAUSS-53600 -- GAUSS-53699]({{< relref "./docs/Developerguide/gauss-53600----gauss-53699.md" >}})	
 -   [Tool Reference]({{< relref "./docs/Toolreference/Toolreference.md" >}})
 	-   [Tool Overview]({{< relref "./docs/Toolreference/tool-overview.md" >}})
 	-   [Client Tool]({{< relref "./docs/Toolreference/client-tool.md" >}})
