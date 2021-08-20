@@ -10,7 +10,7 @@ JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行S
 
 -   **[连接数据库](连接数据库-0.md)**  
 
--   **[连接数据库（以SSL方式）](连接数据库（以SSL方式）.md)**  
+-   **[连接数据库（以SSL方式）](连接数据库_以SSL方式.md)**  
 
 -   **[执行SQL语句](执行SQL语句.md)**  
 
