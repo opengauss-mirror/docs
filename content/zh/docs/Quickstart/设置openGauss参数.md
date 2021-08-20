@@ -158,7 +158,7 @@ Success to perform gs_guc!
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
-    >-   -D 与"-I" 不能一块使用
+    >-   "-D" 与"-I" 不能一块使用
 
 -   -c parameter=value
 
