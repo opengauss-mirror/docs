@@ -206,7 +206,7 @@ LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中
 </td>
 <td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p08711049881"><a name="p08711049881"></a><a name="p08711049881"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p587111491981"><a name="p587111491981"></a><a name="p587111491981"></a>全局会话ID</p>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p587111491981"><a name="p587111491981"></a><a name="p587111491981"></a>全局会话ID。</p>
 </td>
 </tr>
 </tbody>
