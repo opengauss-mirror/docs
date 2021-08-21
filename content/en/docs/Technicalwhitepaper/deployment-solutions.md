@@ -112,7 +112,7 @@ openGauss supports the following CPUs and OSs:
 </thead>
 <tbody><tr id="en-us_topic_0243295239_en-us_topic_0240782908_row18214144823411"><td class="cellrowborder" rowspan="2" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p42141148193411"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p42141148193411"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p42141148193411"></a>Open source and offline</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a>X86</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a>x86</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a>CentOS 7.6 or openEuler 20.3 LTS</p>
 </td>
