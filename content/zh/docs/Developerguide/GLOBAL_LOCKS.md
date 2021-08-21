@@ -29,7 +29,7 @@ GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122727_p109094129404"><a name="zh-cn_topic_0237122727_p109094129404"></a><a name="zh-cn_topic_0237122727_p109094129404"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122727_p09091012134019"><a name="zh-cn_topic_0237122727_p09091012134019"></a><a name="zh-cn_topic_0237122727_p09091012134019"></a>被锁定对象所在数据库的OID：<a name="zh-cn_topic_0237122727_ul690917127402"></a><a name="zh-cn_topic_0237122727_ul690917127402"></a><ul id="zh-cn_topic_0237122727_ul690917127402"><li>如果被锁定的对象是共享对象，则OID为0。</li><li>如果是一个事物ID，则为NULL。</li></ul>
+<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122727_p09091012134019"><a name="zh-cn_topic_0237122727_p09091012134019"></a><a name="zh-cn_topic_0237122727_p09091012134019"></a>被锁定对象所在数据库的OID：<a name="zh-cn_topic_0237122727_ul690917127402"></a><a name="zh-cn_topic_0237122727_ul690917127402"></a><ul id="zh-cn_topic_0237122727_ul690917127402"><li>如果被锁定的对象是共享对象，则OID为0。</li><li>如果是一个事务ID，则为NULL。</li></ul>
 </div>
 </td>
 </tr>
