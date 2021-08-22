@@ -137,7 +137,7 @@ The  **cidr**  type \(Classless Inter-Domain Routing\) holds an IPv4 or IPv6 net
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121954_en-us_topic_0059778276_a29a5d6841bd74258b5518e6be3954b52"><a name="en-us_topic_0237121954_en-us_topic_0059778276_a29a5d6841bd74258b5518e6be3954b52"></a><a name="en-us_topic_0237121954_en-us_topic_0059778276_a29a5d6841bd74258b5518e6be3954b52"></a>::ffff:1.2.3.0/120</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"><a name="en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a><a name="en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a>::ffff:1.2.3/120</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"><a name="en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a><a name="en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a>::ffff:1.2.3/<span>120</span></p>
 </td>
 </tr>
 <tr id="en-us_topic_0237121954_en-us_topic_0059778276_rbbbef9b57a6d4ec9bb47494c03c06296"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121954_en-us_topic_0059778276_a2ceb20a62ad743c087863b5d33bfe6ae"><a name="en-us_topic_0237121954_en-us_topic_0059778276_a2ceb20a62ad743c087863b5d33bfe6ae"></a><a name="en-us_topic_0237121954_en-us_topic_0059778276_a2ceb20a62ad743c087863b5d33bfe6ae"></a>::ffff:1.2.3.0/128</p>
