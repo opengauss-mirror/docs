@@ -138,7 +138,7 @@ headless: true
 		-   [Executing SQL Statements Using the Client Tool]({{< relref "./docs/Quickstart/executing-sql-statements-using-the-client-tool.md" >}})
 		-   [Executing SQL Statements Using JDBC]({{< relref "./docs/Quickstart/executing-sql-statements-using-jdbc.md" >}})
 	-   [Configuring Running Parameters]({{< relref "./docs/Quickstart/configuring-running-parameters.md" >}})
-	-   [GUC Parameters]({{< relref "./docs/Quickstart/guc-parameters.md" >}})
+	-   [GUC Parameters]({{< relref "./docs/Developerguide/guc-parameters.md" >}})
 		-   [GUC Parameter Usage]({{< relref "./docs/Developerguide/guc-parameter-usage.md" >}})
 		-   [File Location]({{< relref "./docs/Developerguide/file-location.md" >}})
 		-   [Connection and Authentication]({{< relref "./docs/Developerguide/connection-and-authentication.md" >}})
