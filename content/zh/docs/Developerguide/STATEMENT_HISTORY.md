@@ -311,7 +311,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p1743816482294"><a name="p1743816482294"></a><a name="p1743816482294"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p11438144832911"><a name="p11438144832911"></a><a name="p11438144832911"></a>加锁等待次数.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p11438144832911"><a name="p11438144832911"></a><a name="p11438144832911"></a>加锁等待次数。</p>
 </td>
 </tr>
 <tr id="row12165137203010"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p01662710309"><a name="p01662710309"></a><a name="p01662710309"></a>lock_wait_time</p>
