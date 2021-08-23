@@ -42,7 +42,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="22.82%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122542_p75791139173314"><a name="zh-cn_topic_0237122542_p75791139173314"></a><a name="zh-cn_topic_0237122542_p75791139173314"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122542_p125797399330"><a name="zh-cn_topic_0237122542_p125797399330"></a><a name="zh-cn_topic_0237122542_p125797399330"></a>时间值(单位：微秒)。</p>
+<td class="cellrowborder" valign="top" width="59.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122542_p125797399330"><a name="zh-cn_topic_0237122542_p125797399330"></a><a name="zh-cn_topic_0237122542_p125797399330"></a>时间值（单位：微秒）。</p>
 </td>
 </tr>
 </tbody>
