@@ -48,7 +48,7 @@ The results show that performance increases significantly even when there are ma
 
 -   **8-Socket 384 Cores**
 
-The following demonstrates MOT’s excellent concurrency control performance by comparing the tpmC per quantity of connections between disk-based tables and MOT. This test was performed on an X86 server with eight sockets and 384 cores. The orange represents the results of the MOT table.
+The following demonstrates MOT’s excellent concurrency control performance by comparing the tpmC per quantity of connections between disk-based tables and MOT. This test was performed on an x86 server with eight sockets and 384 cores. The orange represents the results of the MOT table.
 
 **Figure  4**  x86 8-Socket 384 Cores – Performance Benchmarks<a name="fig16827229164115"></a>  
 ![](figures/x86-8-socket-384-cores-performance-benchmarks.png "x86-8-socket-384-cores-performance-benchmarks")
