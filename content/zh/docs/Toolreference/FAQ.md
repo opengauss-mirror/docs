@@ -120,7 +120,7 @@ read cipher file or random parameter file failed.
 
 ### 问题现象<a name="section147641250161616"></a>
 
-openeuler环境下，gs\_sshexkey支持相同用户不同密码做互信，但是输入了正确的密码还是报鉴权失败。
+openEuler环境下，gs\_sshexkey支持相同用户不同密码做互信，但是输入了正确的密码还是报鉴权失败。
 
 ### 原因分析<a name="section232313361171"></a>
 
