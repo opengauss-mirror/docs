@@ -104,18 +104,19 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
 -   **ON DUPLICATE KEY UPDATE**
 
-    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新。对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDE." 或者 "VALUES()" 来选择源数据相应的列。
+    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新。对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDED." 或者 "VALUES()" 来选择源数据相应的列。
 
-    -   支持触发器，触发器执行顺序由实际执行流程决定：
+-   支持触发器，触发器执行顺序由实际执行流程决定：
     -   执行insert：触发before insert、after insert触发器。
     -   执行update：触发before insert、before update、after update触发器。
     -   执行update nothing：触发before insert触发器。
-    -   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
+-   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
 -   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
     
-    -   如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
+-   如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
 -   主键、唯一索引列不允许UPDATE。
-    -   不支持列存，不支持外表、内存表。
+-   不支持列存，不支持外表、内存表。
+-   expression支持使用子查询表达式，其语法与功能同UPDATE。子查询表达式中支持使用"EXCLUDED."来选择源数据相应的列。
     
 
 

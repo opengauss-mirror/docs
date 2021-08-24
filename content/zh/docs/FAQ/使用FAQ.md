@@ -82,6 +82,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
    ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>
    >```
 
+   
    输入“:90”找到对应位置，然后输入“i”切换到INSERT模式，将以下内容添加进pg\_hba.conf文件，添加后按下“ECS”键，退出INSERT模式，输入“:wq”后回车保存。
 
    ```
@@ -100,75 +101,77 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
    gs_ctl reload -D /gaussdb/data/db1/
    ```
 
-2.  修改数据库监听地址。
+3.  修改数据库监听地址。
     
     在GS\_HOME中查找pg\_hba.conf文件，假设数据库GS\_HOME设置的为/gaussdb/data/db1。
     
-        ```
-        cd /gaussdb/data/db1
-        vi postgresql.conf
-        ```
+    ```
+    cd /gaussdb/data/db1
+    vi postgresql.conf
+    ```
     
     输入“:60”找到对应位置，然后输入“i”切换到INSERT模式，将listen\_addresses的值修改成为\*，修改后按下“ECS”键，退出INSERT模式，输入“:wq”后回车保存。
     
-        ```
-        #listen_addresses = '192.168.0.19'              # what IP address(es) to listen on;
-        listen_addresses = '*'
-        ```
+    ```
+    #listen_addresses = '192.168.0.19'              # what IP address(es) to listen on;
+    listen_addresses = '*'
+    ```
     
     修改完成后重启数据库生效（-D后面的数据库默认路径，需要根据实际情况进行修改）。
     
-        ```
-        gs_ctl restart -D /gaussdb/data/db1/
-        ```
+    ```
+    gs_ctl restart -D /gaussdb/data/db1/
+    ```
+    
+    
 
 
-3.  确认虚拟机网络畅通
+4.  确认虚拟机网络畅通
     a.  在Linux操作系统上，通过ifconfig来查看二张网卡是否都正常启动，具体如下。
 
-        ```
-        [root@db1 ~]# ifconfig
-        enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-                inet 192.168.56.108  netmask 255.255.255.0  broadcast 192.168.56.255
-                inet6 fe80::ac2f:dc4f:edfe:1d57  prefixlen 64  scopeid 0x20<link>
-                ether 08:00:27:0f:78:e3  txqueuelen 1000  (Ethernet)
-                RX packets 519  bytes 48509 (47.3 KiB)
-                RX errors 0  dropped 0  overruns 0  frame 0
-                TX packets 178  bytes 52937 (51.6 KiB)
-                TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-         
-        enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-                inet 10.0.3.15  netmask 255.255.255.0  broadcast 10.0.3.255
-                inet6 fe80::bedc:2040:4b9:23ed  prefixlen 64  scopeid 0x20<link>
-                ether 08:00:27:45:8d:f0  txqueuelen 1000  (Ethernet)
-                vRX packets 72  bytes 10702 (10.4 KiB)
-                RX errors 0  dropped 0  overruns 0  frame 0
-                TX packets 124  bytes 11664 (11.3 KiB)
-                TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-        ……………………………..
-        virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
-                inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
-                ether 52:54:00:05:11:90  txqueuelen 1000  (Ethernet)
-                RX packets 0  bytes 0 (0.0 B)
-                RX errors 0  dropped 0  overruns 0  frame 0
-                TX packets 0  bytes 0 (0.0 B)
-                TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-        ```
+    ```
+    [root@db1 ~]# ifconfig
+    enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+            inet 192.168.56.108  netmask 255.255.255.0  broadcast 192.168.56.255
+            inet6 fe80::ac2f:dc4f:edfe:1d57  prefixlen 64  scopeid 0x20<link>
+            ether 08:00:27:0f:78:e3  txqueuelen 1000  (Ethernet)
+            RX packets 519  bytes 48509 (47.3 KiB)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 178  bytes 52937 (51.6 KiB)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+     
+    enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+            inet 10.0.3.15  netmask 255.255.255.0  broadcast 10.0.3.255
+            inet6 fe80::bedc:2040:4b9:23ed  prefixlen 64  scopeid 0x20<link>
+            ether 08:00:27:45:8d:f0  txqueuelen 1000  (Ethernet)
+            vRX packets 72  bytes 10702 (10.4 KiB)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 124  bytes 11664 (11.3 KiB)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ……………………………..
+    virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+            inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+            ether 52:54:00:05:11:90  txqueuelen 1000  (Ethernet)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ```
 
     b.  通过ping baidu.com确认是否能上网，具体如下。
 
-        ```
-        [root@db1 ~]# ping baidu.com
-        PING baidu.com (39.156.69.79) 56(84) bytes of data.
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=1 ttl=47 time=48.1 ms
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=2 ttl=47 time=46.5 ms
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=3 ttl=47 time=49.2 ms
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=4 ttl=47 time=47.3 ms
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=5 ttl=47 time=46.7 ms
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=6 ttl=47 time=45.9 ms
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=7 ttl=47 time=46.7 ms
-        64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=8 ttl=47 time=48.3 ms
-        ```
+    ```
+    [root@db1 ~]# ping baidu.com
+    PING baidu.com (39.156.69.79) 56(84) bytes of data.
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=1 ttl=47 time=48.1 ms
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=2 ttl=47 time=46.5 ms
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=3 ttl=47 time=49.2 ms
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=4 ttl=47 time=47.3 ms
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=5 ttl=47 time=46.7 ms
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=6 ttl=47 time=45.9 ms
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=7 ttl=47 time=46.7 ms
+    64 bytes from 39.156.69.79 (39.156.69.79): icmp_seq=8 ttl=47 time=48.3 ms
+    ```
 
     使用 ctrl+c组合键可以结束输出。
 

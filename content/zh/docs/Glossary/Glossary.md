@@ -176,7 +176,7 @@
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row636819959138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p579680009138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p579680009138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p579680009138"></a>操作系统</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p648964469138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p648964469138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p648964469138"></a>操作系统OS（operating system）由引导程序加载到计算中，对计算机中其它程序进行管理。其它程序叫做应用或应用程序。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p648964469138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p648964469138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p648964469138"></a>操作系统OS（operating system）由引导程序加载到计算机中，对计算机中其它程序进行管理。其它程序叫做应用或应用程序。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row448641859138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p101203609138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p101203609138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p101203609138"></a>大对象</p>
@@ -409,7 +409,7 @@
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row229034429138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p432394889138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p432394889138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p432394889138"></a>Page</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"></a><span id="text112036019126"><a name="text112036019126"></a><a name="text112036019126"></a>openGauss</span>数据库关系对象结构中行存的最小内存单元。一个Page大小为默认为8KB。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p127376069138"></a><span id="text112036019126"><a name="text112036019126"></a><a name="text112036019126"></a>openGauss</span>数据库关系对象结构中行存的最小内存单元。一个Page大小默认为8KB。</p>
 </td>
 </tr>
 <tr id="row144648010501"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p15465705509"><a name="p15465705509"></a><a name="p15465705509"></a>Paxos</p>
@@ -419,7 +419,7 @@
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row152170209138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p246191259138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p246191259138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p246191259138"></a>PostgreSQL</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a>PostgreSQL是一个开源的关系数据库管理系统(DBMS)，由全球志愿者团队开发。PostgreSQL不受任何公司或个体所控制，源代码免费使用。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a>PostgreSQL是一个开源的关系数据库管理系统（DBMS），由全球志愿者团队开发。PostgreSQL不受任何公司或个体所控制，源代码免费使用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row292755189138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a>Postmaster</p>
@@ -530,7 +530,7 @@
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row658116379138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p291424129138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p291424129138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p291424129138"></a>数据分区</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p117251349138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p117251349138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p117251349138"></a>数据分区是指在一个数据库实例内部，将表按照划分为多个数据互不重叠的部分（Partition）。具体的分区方式可以有：范围分区（Range），它根据元组中指定字段的取值所处的范围映射到目标存储位置。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p117251349138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p117251349138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p117251349138"></a>数据分区是指在一个数据库实例内部，将表按照指定范围划分为多个数据互不重叠的部分（Partition）。具体的分区方式可以有：范围分区（Range），它根据元组中指定字段的取值所处的范围映射到目标存储位置。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row384173489138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p247974609138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p247974609138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p247974609138"></a>数据库</p>
@@ -733,4 +733,3 @@
 </tr>
 </tbody>
 </table>
-

@@ -135,7 +135,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a28f079c7f4e24fa39c3b17051fa1711f"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a28f079c7f4e24fa39c3b17051fa1711f"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a28f079c7f4e24fa39c3b17051fa1711f"></a>在启动时指定数据库的启动模式。</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a>SERVERMODE可以取下面三个值：</p>
+<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a>SERVERMODE可以取下面四个值：</p>
 <a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"></a><ul id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>cascade_standby：本端以级联备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
 </td>
 </tr>
@@ -387,7 +387,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tbody>
 </table>
 
-除以上参数外，出现在postgres.conf中的所有参数，均可以用--guc\_name=guc\_value的方式在gaussdb启动时传给gaussdb。例如，--enable\_fast\_query\_shipping=off
+除以上参数外，出现在postgres.conf中的所有参数，均可以用--guc\_name=guc\_value的方式在gaussdb启动时传给gaussdb。例如，--enable\_fast\_query\_shipping=off。
 
 ## 环境变量<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_sac6ef2b8033a4b3687c3968ca3692932"></a>
 
@@ -459,5 +459,4 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
     ```
     gsql -d postgres -p 1234
     ```
-
 

@@ -95,13 +95,15 @@ Oracle到openGauss的数据类型转换关系如[表1](#table11811516202811)所�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。
->-   待返回的Oracle数据中不可含有NAN或INF。
->-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
->-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，如：
->    select c2,length\(c2\) from exec\_on\_extension\('oracle','select \* from a;'\) as \(c1 int, c2 text\);
->    返回的第二列就是字符串的字节数，而不是实际字符数。
+>![](public_sys-resources/icon-notice.gif) **须知：**  
+>-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。  
+>-   待返回的Oracle数据中不可含有NAN或INF。  
+>-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
+>      ```
+>     select c2,length\(c2\) from exec\_on\_extension\('oracle','select \* from a;'\) as \(c1 int, c2 text\);
+>     ```
+>      返回的第二列就是字符串的字节数，而不是实际字符数。  
 >-   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求Oracle数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
 
 ## **使用前的对接配置**<a name="section082131416315"></a>
@@ -116,7 +118,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     该密钥文件将用于加密Data Source对象中的敏感字段username/password。若不配置系统会默认使用$GAUSSHOME/bin中server的密钥文件：server.key.cipher和server.key.rand。
 
-    1.  使用gs\_guc工具生成密钥文件。
+    a.  使用gs\_guc工具生成密钥文件。
 
         ```
         gs_guc encrypt –M source –K ‘用户密钥串’ –D  ‘密钥文件存放目录’
@@ -126,7 +128,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         -   生成后的密钥文件有两个，分别为datasource.key.cipher和datasource.key.rand。文件名称需固定不可变更。
         -   datasource.key.cipher和datasource.key.rand这两个文件，需分发到数据库实例各节点的$GAUSSHOME/bin下。
 
-    2.  将密钥文件放入指定位置$GAUSSHOME/bin下。然后使用gs\_om ec工具将密钥文件发送到数据库实例其他节点。
+    b.  将密钥文件放入指定位置$GAUSSHOME/bin下。然后使用gs\_om ec工具将密钥文件发送到数据库实例其他节点。
 
         ```
         gs_om -t ec -m install --key-files --force
@@ -136,12 +138,12 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 
 3.  准备package.zip压缩包。安装配置方法可参考如下：
-    1.  前往Oracle官网（[http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)）下载如下三个oracle压缩包。放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN是以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。
+    a.  前往Oracle官网（[http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)）下载如下三个oracle压缩包。放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN是以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。
         -   oracle-instantclient-basic-linux.x64-12.2.0.1.0.zip
         -   oracle-instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
         -   oracle-instantclient-odbc-linux.x64-12.2.0.1.0.zip
 
-    2.  打包三个oracle压缩至package.zip。
+    b.  打包三个oracle压缩至package.zip。
 
         ```
         cd $GAUSSHOME/utilslib/fc_conf/$DSN
@@ -153,7 +155,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     可参考如下设置。
 
-    1.  设置listener.ora文件（添加侦听列表）：
+    a.  设置listener.ora文件（添加侦听列表）：
 
         ```
         cd $ORACLE_HOME/network/admin
@@ -192,7 +194,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         ADR_BASE_LISTENER = /opt/oracle/db
         ```
 
-    2.  设置tnsnames.ora文件（添加数据库实例）：
+    b.  设置tnsnames.ora文件（添加数据库实例）：
 
         ```
         cd $ORACLE_HOME/network/admin
@@ -215,7 +217,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
           )
         ```
 
-    3.  查看侦听状态：
+    c.  查看侦听状态：
 
         通过lsnrctl命令，status是查看状态，start是打开侦听，stop是关闭侦听。以下是数据库实例ORCL处于侦听状态的示例：
 
@@ -241,7 +243,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         lsnrctl start     # 打开侦听。
         ```
 
-    4.  **（可选）**配置安全连接：
+    d.  **（可选）**配置安全连接：
 
         以Network Data Encryption为例，详细的配置和可选加密方法请参考Oracle文档：
 
@@ -402,9 +404,9 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >实际部署时使用数据库实例安装用户和属主替换命令行中的user:group
 
-    f\) 设置unixODBC配置文件 。参考[4](zh-cn_topic_0289900737.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
+    f\) 设置unixODBC配置文件 。参考[4](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
 
-    g\) 设置环境变量。参考[7](zh-cn_topic_0289900737.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)
+    g\) 设置环境变量。参考[7](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)
 
     修改$GAUSSHOME/utilslib/env\_ec，修改或者追加环境变量NLS\_LANG设置。
 
@@ -435,8 +437,8 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     可以参考如下操作：
 
-    1.  [连接数据库](连接数据库.md)。
-    2.  创建Data Source。
+    a.  [连接数据库](连接数据库.md)。
+    b.  创建Data Source。
 
         ```
         openGauss=# CREATE DATA SOURCE ds_oracle TYPE 'ORACLE' OPTIONS (DSN 'oracle', USERNAME 'oracle_user', PASSWORD 'oracle_pwd', ENCODING 'UTF8');

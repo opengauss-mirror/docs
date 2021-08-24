@@ -24,7 +24,7 @@ GS\_AUDITING视图显示对数据库相关操作的所有审计信息。需要�
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a0b778f8c6817439484fd5f0cb1d91e8b"><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>审计策略类型，值为‘access’或者‘privilege’</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>审计策略类型，值为‘access’或者‘privilege’。</p>
 </td>
 </tr>
 <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p106232332384"><a name="p106232332384"></a><a name="p106232332384"></a>polenabled</p>
@@ -52,7 +52,7 @@ GS\_AUDITING视图显示对数据库相关操作的所有审计信息。需要�
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a9193af9c57084a81b157fec2c2935f90"><a name="a9193af9c57084a81b157fec2c2935f90"></a><a name="a9193af9c57084a81b157fec2c2935f90"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p94681158175615"><a name="p94681158175615"></a><a name="p94681158175615"></a>用来描述数据库资产的路径</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p94681158175615"><a name="p94681158175615"></a><a name="p94681158175615"></a>用来描述数据库资产的路径。</p>
 </td>
 </tr>
 <tr id="rdb4c5c3a41fb4325a8c11787c3af82b1"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="ab44539456dc4418bbfdc32a89a1f2851"><a name="ab44539456dc4418bbfdc32a89a1f2851"></a><a name="ab44539456dc4418bbfdc32a89a1f2851"></a>filter_name</p>

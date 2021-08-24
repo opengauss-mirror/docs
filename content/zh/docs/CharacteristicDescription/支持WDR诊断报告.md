@@ -35,7 +35,7 @@ WDR主要依赖两个组件：
 </thead>
 <tbody><tr id="row1189517019163"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p16896205162"><a name="p16896205162"></a><a name="p16896205162"></a>Database Stat</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p7110144513222"><a name="p7110144513222"></a><a name="p7110144513222"></a>主要用于评估当前数据库上的负载，IO状况，负载和IO是衡量TP系统最最要的特性。</p>
+<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p7110144513222"><a name="p7110144513222"></a><a name="p7110144513222"></a>主要用于评估当前数据库上的负载和IO状况，负载和IO状况是衡量TP系统最重要的特性。</p>
 <p id="p15896180171619"><a name="p15896180171619"></a><a name="p15896180171619"></a>包含当前连接到该数据库的session，提交、回滚的事务数，读取的磁盘块的数量，高速缓存中已经发现的磁盘块的次数，通过数据库查询返回、抓取、插入、更新、删除的行数，冲突、死锁发生的次数，临时文件的使用量，IO读写时间等。</p>
 </td>
 </tr>

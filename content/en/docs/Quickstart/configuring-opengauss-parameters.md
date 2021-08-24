@@ -2,7 +2,7 @@
 
 ## Setting a Client Authentication Policy
 
-The current default values for parameters in the openGauss configuration file \(**pg\_hba.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**. For more configurations, see the [*Developer Guide*](https://opengauss.org/en/docs/1.0.0/docs/Developerguide/Developerguide.html).
+The current default values for parameters in the openGauss configuration file \(**pg\_hba.conf**\) are all in single-instance configuration mode. You can set application parameters by using  **gs\_guc**. For more configurations, see the [*Developer Guide*](https://opengauss.org/en/docs/latest/docs/Developerguide/Developerguide.html).
 
 ### Syntax
 
@@ -12,7 +12,7 @@ Set a client authentication policy and send semaphores to the database process.
 gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options option" 
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
 >**authmehod-options**  supports the following options:
 >**trust**: no authentication. Remote hosts are not allowed to access openGauss in trust mode.
 >**reject**: access denied.
@@ -37,7 +37,7 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
 
     When this parameter is set to  **ALL**, all the hosts in openGauss are to be set.
 
--   **-I **_INSTANCE-NAME_:
+-   **-I** _INSTANCE-NAME_:
 
     Specifies the name of the instance to be set.
 
@@ -51,9 +51,9 @@ gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTT
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >
-    >-   **-D**  cannot be used together with  **-I**.
+    > **-D**  cannot be used together with  **-I**.
 
--   **-h **_host-auth-policy_:
+-   **-h** _host-auth-policy_:
 
     Specifies the client authentication policy added to the  **pg\_hba.conf**  configuration file.
 
@@ -132,7 +132,7 @@ The current default values for parameters in the openGauss configuration file \(
 
     When this parameter is set to  **ALL**, all the hosts in openGauss are to be set.
 
--   **-I **_INSTANCE-NAME_:
+-   **-I** _INSTANCE-NAME_:
 
     Specifies the name of the instance to be set.
 
@@ -146,14 +146,14 @@ The current default values for parameters in the openGauss configuration file \(
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >
-    >-   **-D**  cannot be used together with  **-I**.
+    >**-D**  cannot be used together with  **-I**.
 
 -   **-c _parameter_=_value_**
 
     Specifies the name and value of the openGauss configuration parameter to be set.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   If the parameter is a string variable, use  **-c ** _parameter_ ="'_value_'"  or  **-c** "_parameter_ = '_value_'".  
+    >-   If the parameter is a string variable, use  **-c** _parameter_ ="'_value_'"  or  **-c** "_parameter_ = '_value_'".  
     >-   When  **gs\_guc set**  or  **reload**  is set to  **log\_directory**, the default value is restored and set to a specific data directory.  
 
     Value range: all the parameters in the  **postgresql.conf**  file

@@ -108,11 +108,11 @@ SQL on Spark支持的数据类型，见下表。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   对于Spark返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果Spark返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。
->-   当Spark端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
->-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。如，下面查询exec\_on\_extension返回数据的length时，
->    select c2,length\(c2\) from exec\_on\_extension\('spark','select \* from a;'\) as \(c1 int, c2 text\);
+>![](public_sys-resources/icon-notice.gif) **须知：**  
+>-   对于Spark返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果Spark返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。  
+>-   当Spark端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。例如，下面查询exec\_on\_extension返回数据的length时： 
+>    select c2,length\(c2\) from exec\_on\_extension\('spark','select \* from a;'\) as \(c1 int, c2 text\);  
 >    返回的第二列为字符串的字节数，而不是实际字符数。exec\_hadoop\_sql也有此特征。
 
 ## **使用前的对接配置**<a name="section72009141218"></a>
@@ -198,8 +198,8 @@ SQL on Spark支持的数据类型，见下表。
 
     可以参考如下操作：
 
-    1.  [连接数据库](连接数据库.md)。
-    2.  创建Data Source。
+    a.  [连接数据库](连接数据库.md)。
+    b.  创建Data Source。
 
         ```
         openGauss=# CREATE DATA SOURCE spark_ds OPTIONS(DSN 'spark_odbc', encoding 'utf8');
