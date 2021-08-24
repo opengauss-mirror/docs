@@ -48,7 +48,7 @@
 
 ![](public_sys-resources/icon-notice.gif) **须知：** 
 
--   “/opt/huawei/install/om”存放互信等工具，避免权限问题，不要把实例数据目录放在此目录下。
+-   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
 
 -   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
 
