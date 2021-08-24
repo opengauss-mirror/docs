@@ -387,7 +387,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tbody>
 </table>
 
-除以上参数外，出现在postgres.conf中的所有参数，均可以用--guc\_name=guc\_value的方式在gaussdb启动时传给gaussdb。例如，--enable\_fast\_query\_shipping=off
+除以上参数外，出现在postgres.conf中的所有参数，均可以用--guc\_name=guc\_value的方式在gaussdb启动时传给gaussdb。例如，--enable\_fast\_query\_shipping=off。
 
 ## 环境变量<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_sac6ef2b8033a4b3687c3968ca3692932"></a>
 
@@ -459,5 +459,4 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
     ```
     gsql -d postgres -p 1234
     ```
-
 
