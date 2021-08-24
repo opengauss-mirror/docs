@@ -29,6 +29,7 @@
    ```
 
    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+   >
    >- **-w**: initializes the database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
    >
    >- **-p**: specifies the openGauss port number. If the port number is not specified, the default value  **5432**  is used.

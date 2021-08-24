@@ -131,7 +131,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## comm\_no\_delay<a name="en-us_topic_0283137640_en-us_topic_0237124697_section1371661611123"></a>
 
-**Parameter description**: Specifies whether to use the  **NO\_DELAY**  attribute of the communication library connection. Restart openGauss for the setting to take effect.
+**Parameter description**: Specifies whether to use the  **NO\_DELAY**  attribute of the communication library connection.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

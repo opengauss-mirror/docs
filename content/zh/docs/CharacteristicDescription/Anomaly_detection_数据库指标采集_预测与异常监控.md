@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section1394818443613"></a>
 
-本特性自opengauss1.1.0版本开始引入
+本特性自openGauss1.1.0版本开始引入
 
 ## 特性简介<a name="section36382403357"></a>
 
@@ -21,7 +21,7 @@ detector模块基于http或https和agent模块通信，因此它可以部署到�
 
 ## 特性增强<a name="section144513469345"></a>
 
-无
+无。
 
 ## 特性约束<a name="section1613131119346"></a>
 
@@ -34,5 +34,5 @@ detector模块基于http或https和agent模块通信，因此它可以部署到�
 
 ## 依赖关系<a name="section4228145683310"></a>
 
-无
+无。
 

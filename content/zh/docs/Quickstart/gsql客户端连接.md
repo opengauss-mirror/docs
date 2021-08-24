@@ -30,7 +30,7 @@
     1  plat1 192.168.0.11  5001 /srv/BigData/gaussdb/data1/dbnode Normal
     ```
     
-    如上部署了数据库主节点实例的服务器IP地址分别为192.168.10.11。数据库主节点数据路径为“/srv/BigData/gaussdb/data1/dbnode”。
+    如上部署了数据库主节点实例的服务器IP地址分别为192.168.0.11。数据库主节点数据路径为“/srv/BigData/gaussdb/data1/dbnode”。
 
 3.  确认数据库主节点的端口号。
 

@@ -48,7 +48,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 此问题可能是由于系统上的JDK版本不兼容造成的。JDK版本要求为1.8，建议您重新下载安装JDK并修改全局变量后再次尝试。
 
-### **Q5：Data Studio连接openGauss数据库时出现错误，提示“连接失败”，如何处理？**错误信息如下。
+### **Q5：Data Studio连接openGauss数据库时出现错误，提示“连接失败”，如何处理？错误信息如下。**
 
 ![](figures/zh-cn_image_0000001104198936.png)
 
@@ -82,6 +82,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
    ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>
    >```
 
+   
    输入“:90”找到对应位置，然后输入“i”切换到INSERT模式，将以下内容添加进pg\_hba.conf文件，添加后按下“ECS”键，退出INSERT模式，输入“:wq”后回车保存。
 
    ```
@@ -100,7 +101,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
    gs_ctl reload -D /gaussdb/data/db1/
    ```
 
-2.  修改数据库监听地址。
+3.  修改数据库监听地址。
     
     在GS\_HOME中查找pg\_hba.conf文件，假设数据库GS\_HOME设置的为/gaussdb/data/db1。
     
@@ -123,7 +124,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
         ```
 
 
-3.  确认虚拟机网络畅通
+4.  确认虚拟机网络畅通
     a.  在Linux操作系统上，通过ifconfig来查看二张网卡是否都正常启动，具体如下。
 
         ```

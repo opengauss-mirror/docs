@@ -6,9 +6,9 @@
 
 极致RTO、并行恢复、备机可读配置分别如下：
 
--   极致RTO配置：recovery\_parse\_workers 并行恢复时解析XLOG线程的个数 recovery\_parallelism 并行恢复线程的实际个数 recovery\_parse\_workers大于1时是极致RTO恢复，同时需要配置recovery\_parallelism大于1，才会实现并行恢复。
--   并行恢复配置：recovery\_max\_workers 并行恢复的最大线程个数 recovery\_parallelism 并行恢复线程的实际个数 recovery\_max\_workers大于1时是并行恢复，同时需要配置recovery\_parallelism大于1，才会实现并行恢复。
--   备机可读配置：hot\_standby 备机热备，在恢复时支持读操作。 hot\_standby为true时是备机可读。
+-   极致RTO配置：recovery\_parse\_workers表明并行恢复时解析Xlog线程的个数。recovery\_parallelism表明并行恢复线程的实际个数。当recovery\_parse\_workers大于1时是极致RTO恢复。当recovery\_parse\_workers和recovery\_parallelism同时配置大于1时，才会实现并行恢复。
+-   并行恢复配置：recovery\_max\_workers指定并行恢复的最大线程个数。recovery\_parallelism指定并行恢复线程的实际个数。当recovery\_max\_workers大于1时是并行恢复。当recovery\_max\_workers和recovery\_parallelism同时配置大于1时，才会实现并行恢复。
+-   备机可读配置：hot\_standby表明热备机在恢复时支持读操作。如果hot\_standby为true时，备机可读。
 
 并行恢复是文件级别的并行REDO，极致RTO是数据块级别的并行恢复。并行恢复和备机可读是兼容的，极致RTO和备机可读是不兼容的。 配置上面参数时，代码中有检查（CheckExtremeRtoGUCConflicts），如果同时配置了recovery\_parse\_workers大于1和hot\_standby会报错。
 

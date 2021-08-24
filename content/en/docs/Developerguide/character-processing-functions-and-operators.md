@@ -1495,7 +1495,7 @@ String functions and operators provided by openGauss are for concatenating strin
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >- For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.  
 >- In openGauss,  _n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than n.  
->- OpenGauss supports four types of databases: A, B, C, and PG. If the database type is not specified, the database type is A by default. The lexical analyzer of A is  different from the other three types. In A, a null character string is regarded as NULL. Therefore, when the database of type A is used, if the preceding character operation function has an empter string as a parameter, no output is displayed.For example:
+>- openGauss supports four types of databases: A, B, C, and PG. If the database type is not specified, the database type is A by default. The lexical analyzer of A is  different from the other three types. In A, a null character string is regarded as NULL. Therefore, when the database of type A is used, if the preceding character operation function has an empter string as a parameter, no output is displayed.For example:
 >
 > ```
 >   postgres=# SELECT translate('12345','123','');
@@ -1505,5 +1505,5 @@ String functions and operators provided by openGauss are for concatenating strin
 >    (1 row)
 > ```
 > 
->  This is because the kernel will determine whether the input parameter contains NULL before calling the corresponding function for processing. If so, the corresponding function will not be called, so there will be no output.In PG type, strings are handled in the same way as PostgresQL, so you won't have this problem。
+>  This is because the kernel will determine whether the input parameter contains NULL before calling the corresponding function for processing. If so, the corresponding function will not be called, so there will be no output.In PG type, strings are handled in the same way as PostgresQL, so you won't have this problem.
 

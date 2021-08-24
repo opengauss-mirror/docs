@@ -36,7 +36,7 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Value range**: an integer.
 
-**Default value**:  **666**
+**Default value**:  **8192**
 
 ## transform\_null\_equals<a name="en-us_topic_0283137001_en-us_topic_0237124738_en-us_topic_0059779195_s08818c8140cf437196068571d8291e0e"></a>
 

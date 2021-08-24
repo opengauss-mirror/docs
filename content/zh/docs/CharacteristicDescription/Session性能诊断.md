@@ -62,7 +62,7 @@ SELECT event, COUNT (*)
 WHERE sample_time > now() - 5 / (24 * 60)
     GROUP BY event)t WHERE s.event = t.event ORDER BY count DESC;
     ```
-5. 查看最近五分钟较耗资源的session把资源都花费在哪些event上。
+5. 查看最近五分钟较耗资源的session把资源都花费在哪些event上
 
    ```
    SELECT sessionid, start_time, event, count

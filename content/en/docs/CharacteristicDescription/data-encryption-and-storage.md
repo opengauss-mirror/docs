@@ -14,15 +14,15 @@ You can use encrypted import interfaces to encrypt sensitive information and sto
 
 ## Description<a name="section53763648"></a>
 
-openGauss provides the encryption function  **gs\_encrypt\_aes128\(\)**  and decryption function  **gs\_decrypt\_aes128\(\)**. Before you import data to a certain column in a table, you can use this function to encrypt the data. The function can be called using a statement in the following format:
+openGauss provides the encryption function  **gs\_encrypt\_aes128\(\) 、gs_encrypt() **and decryption function  **gs\_decrypt\_aes128\(\)、gs\_decrypt()**. Before you import data to a certain column in a table, you can use this function to encrypt the data. The function can be called using a statement in the following format:
 
-**gs\_encrypt\_aes128\(**_column_**, **_key_**\)**
+**gs\_encrypt\_aes128\(**_column_**, **_key_**\),gs_encrypt(decryptstr,keystr,decrypttype)****
 
 In the preceding command,  **key**  indicates the initial password specified by the user, which is used to derive the encryption key. To encrypt an entire table, you need to write an encryption function for each column.
 
 If a user with the required permission wants to view specific data, the user can decrypt required columns using the decryption function interface  **gs\_decrypt\_aes128\(**_column_**, **_key_**\)**. To invoke the interface, run the following command:
 
-**gs\_decrypt\_aes128\(column, key\)**
+**gs\_decrypt\_aes128\(column, key\),gs\_decrypt(decryptstr,keystr,decrypttype)**
 
 ## Enhancements<a name="section14110789"></a>
 

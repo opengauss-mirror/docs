@@ -251,7 +251,7 @@ swapoff -a
 
 ### Setting the NIC MTU
 
-Set the NIC MTU value on each database node to the same value. For X86, the recommended MTU value is 1500. For ARM, the recommended MTU value is 8192.
+Set the NIC MTU value on each database node to the same value. For x86, the recommended MTU value is 1500. For ARM, the recommended MTU value is 8192.
 
 ```
 ifconfig NIC ID mtu Value

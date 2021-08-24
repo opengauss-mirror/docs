@@ -187,12 +187,13 @@ gs\_guc工具由操作系统用户omm执行。
 
     当参数取值为ALL时，表示设置主机中所有的实例。
 
--   -D
+- -D
 
-    需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
+  需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
-    -   与"-I" 不能一块使用
+  ![](public_sys-resources/icon-note.gif) **说明：** 
+
+  -   与"-I" 不能一块使用
 
 -   -c parameter=value
 
@@ -200,9 +201,9 @@ gs\_guc工具由操作系统用户omm执行。
 
     ![](public_sys-resources/icon-note.gif) **说明：** 
 
-    -   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。
+    -   如果参数是一个字符串变量，则使用-c parameter='value'或者使用-c "parameter = 'value'"。
 
-    -   当使用gs\_guc set/reload为"log\_directory" 恢复默认值时，其默认值会被置为具体的data目录。
+    -   当使用gs\_guc set/reload为"log\_directory"恢复默认值时，其默认值会被置为具体的data目录。
 
     -   当使用gs\_guc reload进行参数设定，并指定-N参数时，当指定的节点为主节点时，主备节点的参数值都会被修改；当指定节点为备节点时，只会修改备节点的参数值，不会修改主节点的参数值。
 

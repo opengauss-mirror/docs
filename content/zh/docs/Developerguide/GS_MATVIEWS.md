@@ -48,7 +48,7 @@ GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。
 </td>
 <td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_p09671627195415"><a name="zh-cn_topic_0283136548_p09671627195415"></a><a name="zh-cn_topic_0283136548_p09671627195415"></a><a href="PG_TABLESPACE.md">PG_TABLESPACE</a>.spcname</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136548_p59679278541"><a name="zh-cn_topic_0283136548_p59679278541"></a><a name="zh-cn_topic_0283136548_p59679278541"></a>物化视图的表空间名（如果使用数据库默认表空间则为空）</p>
+<td class="cellrowborder" valign="top" width="40.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136548_p59679278541"><a name="zh-cn_topic_0283136548_p59679278541"></a><a name="zh-cn_topic_0283136548_p59679278541"></a>物化视图的表空间名（如果使用数据库默认表空间则为空）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136548_row20541132712558"><td class="cellrowborder" valign="top" width="18.87%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136548_p554292795514"><a name="zh-cn_topic_0283136548_p554292795514"></a><a name="zh-cn_topic_0283136548_p554292795514"></a>hasindexes</p>

@@ -48,15 +48,15 @@
 
 ![](public_sys-resources/icon-notice.gif) **须知：** 
 
--   “/opt/huawei/install/om”存放互信等工具，避免权限问题，不要把实例数据目录放在此目录下。
+-   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
 
 -   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
 
--   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为"/opt/huawei/install/app"，gaussdbLogPath为"/opt/huawei/install/app/omm"。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
+-   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为“/opt/huawei/install/app”，gaussdbLogPath为“/opt/huawei/install/app/omm”。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
 
 -   若需要安装脚本自动创建安装用户时各配置的目录需保证不与系统创建的默认用户目录耦合关联。
 
--   配置openGauss路径和实例路径时，路径中不能包含"|",";","&","$","<","\>","\`","\\\\","'","\\"","\{","\}","\(","\)","\[","\]","\~","\*","?"特殊字符。
+-   配置openGauss路径和实例路径时，路径中不能包含“|”,“;”,“&”,“$”,“<”,“\>”,“\`”,“\\\\”,“'”,“\\”,“,”,“\{”,“\}”,“\(”,“\)”,“\[”,“\]”,“\~”,“\*”,“?”特殊字符。
 
 -   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的**node1\_hostname**,**node2\_hostname**。
 
@@ -217,7 +217,8 @@
 <!--DBnode-->
 <PARAM name="dataNum" value="1"/>
 <!--数据库端口号-->
-<PARAM name="dataPortBase" value="15400"/>
+<PARAM name="dataPortBase" value="
+"/>
 <!--DBnode侦听IP-->
 <PARAM name="dataListenIp1" value="172.31.13.124,172.31.6.198"/>
 <!--数据库主节点上的数据目录，及备机数据目录-->
@@ -432,7 +433,7 @@
             
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataPortBase" value="26000"/>
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
@@ -500,7 +501,7 @@
             
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataPortBase" value="26000"/>
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
@@ -571,7 +572,7 @@
             
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
+	    <PARAM name="dataPortBase" value="26000"/>
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
@@ -693,6 +694,7 @@
             <!-- 节点4的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.4"/>
             <PARAM name="sshIp1" value="192.168.0.4"/>
+
 	</DEVICE>
 
         <!-- 节点5上的部署信息 -->

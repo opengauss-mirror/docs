@@ -108,11 +108,11 @@ SQL on Spark支持的数据类型，见下表。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   对于Spark返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果Spark返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。
->-   当Spark端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
->-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。如，下面查询exec\_on\_extension返回数据的length时，
->    select c2,length\(c2\) from exec\_on\_extension\('spark','select \* from a;'\) as \(c1 int, c2 text\);
+>![](public_sys-resources/icon-notice.gif) **须知：**  
+>-   对于Spark返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果Spark返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。  
+>-   当Spark端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。例如，下面查询exec\_on\_extension返回数据的length时： 
+>    select c2,length\(c2\) from exec\_on\_extension\('spark','select \* from a;'\) as \(c1 int, c2 text\);  
 >    返回的第二列为字符串的字节数，而不是实际字符数。exec\_hadoop\_sql也有此特征。
 
 ## **使用前的对接配置**<a name="section72009141218"></a>
@@ -198,8 +198,8 @@ SQL on Spark支持的数据类型，见下表。
 
     可以参考如下操作：
 
-    1.  [连接数据库](zh-cn_topic_0289900104.md)。
-    2.  创建Data Source。
+    a.  [连接数据库](连接数据库.md)。
+    b.  创建Data Source。
 
         ```
         openGauss=# CREATE DATA SOURCE spark_ds OPTIONS(DSN 'spark_odbc', encoding 'utf8');
@@ -219,7 +219,7 @@ SQL on Spark支持的数据类型，见下表。
 2.  用户需要保证package.zip中的内容完整，DSN.ini中的内容正确。安装部署完成后不进行修改，否则搭建好的环境有无法正常使用的风险。
 3.  Extension Connector仅支持连接单个Spark数据库实例。若建立多个Spark连接，则会产生认证冲突。
 4.  修改Spark数据库实例的用户密码会导致认证凭据失效。需要在主界面点击最上方的“系统”选项进入用户界面。选择需要连接Spark的用户，点击“更多”，选择认证凭据后重新下载。再把下载好的认证凭据上传至GAUSSHOME/utilslib/fc\_conf/DSN/路径下。其中DSN为用户自定义DSN名。然后解压认证凭据替换已有文件。最后修改认证凭据属主为数据库实例用户。
-5.  要求Spark ODBC必须用gcc 5.4及以上版本编译。
+5.  要求Spark ODBC必须用gcc 7.3及以上版本编译。
 
 ## **示例**<a name="section15891020125711"></a>
 
@@ -297,5 +297,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 
 ## **相关链接**<a name="section67639236412"></a>
 
-[CREATE DATA SOURCE](zh-cn_topic_0289900178.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](create-data-source.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
 

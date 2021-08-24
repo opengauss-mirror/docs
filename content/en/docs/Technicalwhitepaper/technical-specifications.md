@@ -69,7 +69,7 @@
 </tr>
 <tr id="en-us_concept_0238166180_row4706552671"><td class="cellrowborder" valign="top" width="45.45%" headers="mcps1.1.3.1.1 "><p id="en-us_concept_0238166180_p9706552878"><a name="en-us_concept_0238166180_p9706552878"></a><a name="en-us_concept_0238166180_p9706552878"></a>Number of partitions in a partitioned table</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.1.3.1.2 "><p id="en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"><a name="en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a><a name="en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a>32768</p>
+<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.1.3.1.2 "><p id="en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"><a name="en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a><a name="en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a>32767</p>
 </td>
 </tr>
 <tr id="en-us_concept_0238166180_row870618521574"><td class="cellrowborder" valign="top" width="45.45%" headers="mcps1.1.3.1.1 "><p id="en-us_concept_0238166180_p870615529719"><a name="en-us_concept_0238166180_p870615529719"></a><a name="en-us_concept_0238166180_p870615529719"></a>Size of each partition in a partitioned table</p>
@@ -94,4 +94,5 @@
 </tr>
 </tbody>
 </table>
+
 

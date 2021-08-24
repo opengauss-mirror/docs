@@ -11,7 +11,7 @@ A pgbench benchmark (26/08/2020) showed that MOT engine outperforms the Disk-eng
 
 ## How to run pgbench with MOT:
 
-1. To load data into MOT you need to use the “–m” flag like in the following example 
+1. To load data into MOT you need to use the "–m" flag like in the following example 
 
    ```
    ./pgbench -h <server_ip> -p <server_port> -U <user> -W <password> -i –m -s 100

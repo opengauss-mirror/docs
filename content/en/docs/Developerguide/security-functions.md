@@ -34,14 +34,14 @@ Return type: text
     ```sql
 postgres=# SELECT gs_encrypt('MPPDB','Asdf1234','sm4');
      gs_encrypt 
-------------
-     OucXMSo=
-    (1 row)
+      ------------
+      ZBzOmaGA4Bb+coyucJOB8AkIShqc
+      (1 row)
+    ​```
     ```
-    
-    > ![](public_sys-resources/icon-note.gif) **NOTE:**   
-    > A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
-    
+> **![](public_sys-resources/icon-note.gif)NOTE:**   
+> A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
+
 -   gs_decrypt_aes128(decryptstr,keystr，decrypttype)
 
     Description: According to decrypttype, decrypt the decrypt string with keystr as the key, and return the decrypted string. The decrypttype and keystr used for decryption must be consistent with the encrypttype and keystr used for encryption in order to decrypt normally. keystr must not be empty. The decrypttype can be aes128 or sm4.
@@ -51,13 +51,13 @@ postgres=# SELECT gs_encrypt('MPPDB','Asdf1234','sm4');
 Example:
     
 ```sql
-    postgres=# SELECT gs_decrypt('OucXMSo=','Asdf1234','sm4');
+    postgres=# SELECT gs_decrypt(' ZBzOmaGA4Bb+coyucJOB8AkIShqc','Asdf1234','sm4');
  gs_decrypt 
     ------------
      MPPDB
     (1 row)
-    ```
-    
+```
+
     > ![](public_sys-resources/icon-note.gif) **NOTE:**   
     > A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
 

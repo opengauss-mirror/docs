@@ -1,6 +1,6 @@
 # SNAPSHOT.SNAPSHOT<a name="EN-US_TOPIC_0245374864"></a>
 
-**SNAPSHOT**  records the index information, start time, and end time of WDR snapshots stored in the current system.
+**SNAPSHOT**  records the index information, start time, and end time of WDR snapshots stored in the current system.The results can only be queried in the system library, but not in the user library.
 
 **Table  1**  SNAPSHOT attributes
 

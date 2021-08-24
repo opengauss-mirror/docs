@@ -13,14 +13,12 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **on**  indicates the resource management function is enabled.
 -   **off**  indicates the resource management function is disabled.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If method 2 in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)  is used to change the parameter value, the new value takes effect only for the threads that are started after the change. In addition, the new value does not take effect for new jobs that are executed by backend threads and reused threads. You can make the new value take effect for these threads by using  **kill session**  or restarting the node.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**  
+    >-   If method 2 in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)  is used to change the parameter value, the new value takes effect only for the threads that are started after the change. In addition, the new value does not take effect for new jobs that are executed by backend threads and reused threads. You can make the new value take effect for these threads by using  **kill session**  or restarting the node.  
     >-   After the value of  **use\_workload\_manager**  changes from  **off**  to  **on**, statistics about storage resources when  **use\_workload\_manager**  is  **off**  are not collected. To collect statistics about such resources, run the following statement:
-    >    ```
-    >    select gs_wlm_readjust_user_space(0);
-    >    ```
-
-
+    >       ```
+    >       select gs_wlm_readjust_user_space(0);
+    >       ```
 **Default value**:  **off**
 
 ## cgroup\_name<a name="en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_sf87b8e83f9984548aa8c3c5261388782"></a>

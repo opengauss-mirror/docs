@@ -34,7 +34,7 @@
 
 解决办法：若binarylibs是通过开源软件构建而来，请重新构建开源第三方软件；若binarylibs是代码下载而来，请重新下载。最后重新执行当前脚本或命令。
 
-## 如何解决 "g++: fatal error:  Killed signal terminated program cclplus" 报错
+## 如何解决 “g++: fatal error:  Killed signal terminated program cclplus” 报错
 
 ### 问题<a name="section14676321181511"></a>
 
@@ -46,7 +46,7 @@
 
 解决办法：编译过程中降低make 并发数，或者直接使用make命令。使用一键式脚本的话需要修改脚本。
 
-## 如何解决"out of memory allocating xxx bytes after a total of xxx bytes"报错
+## 如何解决“out of memory allocating xxx bytes after a total of xxx bytes”报错
 
 ### 问题<a name="section1450054211918"></a>
 

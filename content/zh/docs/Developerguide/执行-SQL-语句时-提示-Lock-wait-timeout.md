@@ -2,7 +2,7 @@
 
 ## 问题现象<a name="section158125414577"></a>
 
-执行SQL语句时，提示"Lock wait timeout"。
+执行SQL语句时，提示“Lock wait timeout”。
 
 ```
 ERROR:  Lock wait timeout: thread 140533638080272 waiting for ShareLock on relation 16409 of database 13218 after 1200000.122 ms ERROR:  Lock wait timeout: thread 140533638080272 waiting for AccessExclusiveLock on relation 16409 of database 13218 after 1200000.193 ms

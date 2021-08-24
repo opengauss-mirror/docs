@@ -95,13 +95,15 @@ Oracle到openGauss的数据类型转换关系如[表1](#table11811516202811)所�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。
->-   待返回的Oracle数据中不可含有NAN或INF。
->-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
->-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，如：
->    select c2,length\(c2\) from exec\_on\_extension\('oracle','select \* from a;'\) as \(c1 int, c2 text\);
->    返回的第二列就是字符串的字节数，而不是实际字符数。
+>![](public_sys-resources/icon-notice.gif) **须知：**  
+>-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。  
+>-   待返回的Oracle数据中不可含有NAN或INF。  
+>-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
+>      ```
+>     select c2,length\(c2\) from exec\_on\_extension\('oracle','select \* from a;'\) as \(c1 int, c2 text\);
+>     ```
+>      返回的第二列就是字符串的字节数，而不是实际字符数。  
 >-   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求Oracle数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
 
 ## **使用前的对接配置**<a name="section082131416315"></a>
@@ -116,7 +118,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     该密钥文件将用于加密Data Source对象中的敏感字段username/password。若不配置系统会默认使用$GAUSSHOME/bin中server的密钥文件：server.key.cipher和server.key.rand。
 
-    1.  使用gs\_guc工具生成密钥文件。
+    a.  使用gs\_guc工具生成密钥文件。
 
         ```
         gs_guc encrypt –M source –K ‘用户密钥串’ –D  ‘密钥文件存放目录’
@@ -126,7 +128,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         -   生成后的密钥文件有两个，分别为datasource.key.cipher和datasource.key.rand。文件名称需固定不可变更。
         -   datasource.key.cipher和datasource.key.rand这两个文件，需分发到数据库实例各节点的$GAUSSHOME/bin下。
 
-    2.  将密钥文件放入指定位置$GAUSSHOME/bin下。然后使用gs\_om ec工具将密钥文件发送到数据库实例其他节点。
+    b.  将密钥文件放入指定位置$GAUSSHOME/bin下。然后使用gs\_om ec工具将密钥文件发送到数据库实例其他节点。
 
         ```
         gs_om -t ec -m install --key-files --force
@@ -136,12 +138,12 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 
 3.  准备package.zip压缩包。安装配置方法可参考如下：
-    1.  前往Oracle官网（[http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)）下载如下三个oracle压缩包。放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN是以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。
+    a.  前往Oracle官网（[http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)）下载如下三个oracle压缩包。放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN是以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。
         -   oracle-instantclient-basic-linux.x64-12.2.0.1.0.zip
         -   oracle-instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
         -   oracle-instantclient-odbc-linux.x64-12.2.0.1.0.zip
 
-    2.  打包三个oracle压缩至package.zip。
+    b.  打包三个oracle压缩至package.zip。
 
         ```
         cd $GAUSSHOME/utilslib/fc_conf/$DSN
@@ -153,7 +155,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     可参考如下设置。
 
-    1.  设置listener.ora文件（添加侦听列表）：
+    a.  设置listener.ora文件（添加侦听列表）：
 
         ```
         cd $ORACLE_HOME/network/admin
@@ -192,7 +194,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         ADR_BASE_LISTENER = /opt/oracle/db
         ```
 
-    2.  设置tnsnames.ora文件（添加数据库实例）：
+    b.  设置tnsnames.ora文件（添加数据库实例）：
 
         ```
         cd $ORACLE_HOME/network/admin
@@ -215,7 +217,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
           )
         ```
 
-    3.  查看侦听状态：
+    c.  查看侦听状态：
 
         通过lsnrctl命令，status是查看状态，start是打开侦听，stop是关闭侦听。以下是数据库实例ORCL处于侦听状态的示例：
 
@@ -241,7 +243,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         lsnrctl start     # 打开侦听。
         ```
 
-    4.  **（可选）**配置安全连接：
+    d.  **（可选）**配置安全连接：
 
         以Network Data Encryption为例，详细的配置和可选加密方法请参考Oracle文档：
 
@@ -352,7 +354,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     unixODBC的安装推荐使用源码进行安装。
 
-    源码可在http://www.unixodbc.org/或https://sourceforge.net/projects/unixodbc/files/unixODBC/进行下载。
+    源码可在[http://www.unixodbc.org/](http://www.unixodbc.org/)或[https://sourceforge.net/projects/unixodbc/files/unixODBC/](https://sourceforge.net/projects/unixodbc/files/unixODBC/)进行下载。
 
     建议使用2.3.6版本。推荐如下方法进行unixODBC安装部署：
 
@@ -374,8 +376,8 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   实际部署时，编译参数--with-iconv-char-enc=enc中的enc需要替换为Oracle数据库的字符集编码。
     >-   常见的Oracle数据库中文字符编码有AL32UTF8和ZHS16GBK。
-    >    -   如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8
-    >    -   如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030
+    >    -   如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8。
+    >    -   如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030。
 
     c\) 编译安装。
 
@@ -402,9 +404,9 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >实际部署时使用数据库实例安装用户和属主替换命令行中的user:group
 
-    f\) 设置unixODBC配置文件 。参考[4](zh-cn_topic_0289900737.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
+    f\) 设置unixODBC配置文件 。参考[4](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
 
-    g\) 设置环境变量。参考[7](zh-cn_topic_0289900737.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)
+    g\) 设置环境变量。参考[7](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)
 
     修改$GAUSSHOME/utilslib/env\_ec，修改或者追加环境变量NLS\_LANG设置。
 
@@ -417,7 +419,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     h\) 把步骤d中的unixODBC文件拷贝到数据库实例的其它数据节点的$GPHOME/unixodbc/路径下，并执行步骤e和步骤f修改文件权限、属主，并配置环境变量。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）
+    >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）。
 
 8.  执行如下命令，重启数据库实例，终止om\_monitor进程，以使openGauss的进程感知到环境变量的变化。
 
@@ -435,8 +437,8 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     可以参考如下操作：
 
-    1.  [连接数据库](zh-cn_topic_0289900104.md)。
-    2.  创建Data Source。
+    a.  [连接数据库](连接数据库.md)。
+    b.  创建Data Source。
 
         ```
         openGauss=# CREATE DATA SOURCE ds_oracle TYPE 'ORACLE' OPTIONS (DSN 'oracle', USERNAME 'oracle_user', PASSWORD 'oracle_pwd', ENCODING 'UTF8');
@@ -591,7 +593,7 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 </td>
 <td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p14100953175412"><a name="p14100953175412"></a><a name="p14100953175412"></a>ERROR:  source "spark_ds" does not exist</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="zh-cn_topic_0289900178.md">CREATE DATA SOURCE</a>。</p>
+<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="create-data-source.md">CREATE DATA SOURCE</a>。</p>
 </td>
 </tr>
 <tr id="row1611213537544"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p912145375413"><a name="p912145375413"></a><a name="p912145375413"></a>执行异常</p>
@@ -614,5 +616,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 
 ## **相关链接**<a name="section187221926368"></a>
 
-[CREATE DATA SOURCE](zh-cn_topic_0289900178.md)，[SQL on Spark](SQL-on-Spark.md)，[SQL on other openGauss](SQL-on-other-openGauss.md)，《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](create-data-source.md)，[SQL on Spark](SQL-on-Spark.md)，[SQL on other openGauss](SQL-on-other-openGauss.md)，《工具参考》中“服务端工具 \> gs\_om”章节
 

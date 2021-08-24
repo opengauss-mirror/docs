@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section76684290441"></a>
 
-本特性自opengauss1.1.0版本开始引入
+本特性自openGauss1.1.0版本开始引入
 
 ## 特性简介<a name="section106701152184410"></a>
 
@@ -18,7 +18,7 @@ DeepSQL是对openGauss DB4AI能力的增强。DeepSQL将常用的机器学习算
 
 ## 特性增强<a name="section1715553994720"></a>
 
-无
+无。
 
 ## 特性约束<a name="section11980155994711"></a>
 
@@ -28,5 +28,5 @@ DeepSQL是对openGauss DB4AI能力的增强。DeepSQL将常用的机器学习算
 
 ## 依赖关系<a name="section850692718486"></a>
 
-无
+无。
 

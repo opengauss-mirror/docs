@@ -1,135 +1,191 @@
-# java.sql.CallableStatement<a name="EN-US_TOPIC_0242371421"></a>
+# java.sql.CallableStatement<a name="EN-US_TOPIC_0289900773"></a>
 
-This section describes  **java.sql.CallableStatement**, the interface for executing the stored procedure.
+This section describes  **java.sql.CallableStatement**, the API for executing the stored procedure.
 
 **Table  1**  Support status for java.sql.CallableStatement
 
-<a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_table3828870"></a>
-<table><thead align="left"><tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row36987648"><th class="cellrowborder" valign="top" width="38.33%" id="mcps1.2.4.1.1"><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p43209511"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p43209511"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p43209511"></a>Method Name</p>
+<a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_table3828870"></a>
+<table><thead align="left"><tr id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row36987648"><th class="cellrowborder" valign="top" width="38.33%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p43209511"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p43209511"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p43209511"></a>Method Name</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.330000000000002%" id="mcps1.2.4.1.2"><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p10309494"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p10309494"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p10309494"></a>Return Type</p>
+<th class="cellrowborder" valign="top" width="30.330000000000002%" id="mcps1.2.4.1.2"><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p10309494"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p10309494"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p10309494"></a>Return Type</p>
 </th>
-<th class="cellrowborder" valign="top" width="31.34%" id="mcps1.2.4.1.3"><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61969327"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61969327"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61969327"></a>Support JDBC 4</p>
+<th class="cellrowborder" valign="top" width="31.34%" id="mcps1.2.4.1.3"><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61969327"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61969327"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61969327"></a>JDBC 4 Is Supported Or Not</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row53459560"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p39399037"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p39399037"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p39399037"></a>registerOutParameter(int parameterIndex, int type)</p>
+<tbody><tr id="row12430336205012"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p1543019364504"><a name="p1543019364504"></a><a name="p1543019364504"></a>getArray(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p58131666"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p58131666"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p58131666"></a>void</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p143016364508"><a name="p143016364508"></a><a name="p143016364508"></a>Array</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"></a>Yes</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row15792565"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"></a>wasNull()</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"></a><span id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"></a>Boolean</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p12114571"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p12114571"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p12114571"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p7430103617507"><a name="p7430103617507"></a><a name="p7430103617507"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row41922278"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59201097"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59201097"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59201097"></a>getString(int parameterIndex)</p>
+<tr id="row1321975917113"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p2219125918117"><a name="p2219125918117"></a><a name="p2219125918117"></a>getBigDecimal(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61953199"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61953199"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p61953199"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1021965910111"><a name="p1021965910111"></a><a name="p1021965910111"></a>BigDecimal</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23669617"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23669617"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23669617"></a>Yes</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row11699963"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p15153728"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p15153728"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p15153728"></a>getBoolean(int parameterIndex)</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p20017161"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p20017161"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p20017161"></a><span id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text155217429497"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text155217429497"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text155217429497"></a>Boolean</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p27651875"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p27651875"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p27651875"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1321920594111"><a name="p1321920594111"></a><a name="p1321920594111"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row47540285"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p27722276"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p27722276"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p27722276"></a>getByte(int parameterIndex)</p>
+<tr id="row7856581647"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p4869582419"><a name="p4869582419"></a><a name="p4869582419"></a>getBlob(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2912092"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2912092"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2912092"></a>byte</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p11864580412"><a name="p11864580412"></a><a name="p11864580412"></a>Blob</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p19655978"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p19655978"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p19655978"></a>Yes</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row42686078"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2681896"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2681896"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2681896"></a>getShort(int parameterIndex)</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p41724457"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p41724457"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p41724457"></a>short</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p35890327"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p35890327"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p35890327"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p5864589415"><a name="p5864589415"></a><a name="p5864589415"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row54577493"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p22828779"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p22828779"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p22828779"></a>getInt(int parameterIndex)</p>
+<tr id="row1744091961"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p144418919616"><a name="p144418919616"></a><a name="p144418919616"></a>getBoolean(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p51679877"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p51679877"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p51679877"></a>int</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p244149464"><a name="p244149464"></a><a name="p244149464"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p60355140"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p60355140"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p60355140"></a>Yes</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row6325349"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p51065849"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p51065849"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p51065849"></a>getLong(int parameterIndex)</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p3464166"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p3464166"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p3464166"></a>long</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p42187024"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p42187024"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p42187024"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p3441991560"><a name="p3441991560"></a><a name="p3441991560"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row44138901"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p45997186"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p45997186"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p45997186"></a>getFloat(int parameterIndex)</p>
+<tr id="row99816261715"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p10981162612715"><a name="p10981162612715"></a><a name="p10981162612715"></a>getByte(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p36312917"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p36312917"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p36312917"></a>float</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p129811226472"><a name="p129811226472"></a><a name="p129811226472"></a>byte</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p38542374"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p38542374"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p38542374"></a>Yes</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row11337048"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p62324272"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p62324272"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p62324272"></a>getDouble(int parameterIndex)</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p20341492"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p20341492"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p20341492"></a>double</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p54352694"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p54352694"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p54352694"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p59818265711"><a name="p59818265711"></a><a name="p59818265711"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row19412198"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p47860848"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p47860848"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p47860848"></a>getBigDecimal(int parameterIndex)</p>
+<tr id="row4966514681"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p696716141283"><a name="p696716141283"></a><a name="p696716141283"></a>getBytes(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p44678150"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p44678150"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p44678150"></a>BigDecimal</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p189679141189"><a name="p189679141189"></a><a name="p189679141189"></a>byte[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p29810872"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p29810872"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p29810872"></a>Yes</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row66971264"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2763204"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2763204"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p2763204"></a>getBytes(int parameterIndex)</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p14324367"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p14324367"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p14324367"></a>byte[]</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p14389807"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p14389807"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p14389807"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p49678146815"><a name="p49678146815"></a><a name="p49678146815"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row62399407"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p6319150"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p6319150"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p6319150"></a>getDate(int parameterIndex)</p>
+<tr id="row1710458491"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p191052081693"><a name="p191052081693"></a><a name="p191052081693"></a>getClob(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p6211613"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p6211613"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p6211613"></a>Date</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1810510814918"><a name="p1810510814918"></a><a name="p1810510814918"></a>Clob</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p22278756"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p22278756"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p22278756"></a>Yes</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row66291076"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p33974975"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p33974975"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p33974975"></a>getTime(int parameterIndex)</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p36325141"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p36325141"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p36325141"></a>Time</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p34612646"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p34612646"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p34612646"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1210548794"><a name="p1210548794"></a><a name="p1210548794"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row43078361"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53344140"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53344140"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53344140"></a>getTimestamp(int parameterIndex)</p>
+<tr id="row1292275217101"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p3922105291017"><a name="p3922105291017"></a><a name="p3922105291017"></a>getDate(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p31436940"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p31436940"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p31436940"></a>Timestamp</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p11922185231020"><a name="p11922185231020"></a><a name="p11922185231020"></a>Date</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p64186383"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p64186383"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p64186383"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p692265281020"><a name="p692265281020"></a><a name="p692265281020"></a>Yes</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row40806541"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p5352527"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p5352527"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p5352527"></a>getObject(int parameterIndex)</p>
+<tr id="row4574257171015"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p8574105751014"><a name="p8574105751014"></a><a name="p8574105751014"></a>getDate(int parameterIndex, Calendar cal)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p34556286"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p34556286"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p34556286"></a>Object</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p19574135710108"><a name="p19574135710108"></a><a name="p19574135710108"></a>Date</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p9635265"><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p9635265"></a><a name="en-us_topic_0238274469_en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p9635265"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p20574145719104"><a name="p20574145719104"></a><a name="p20574145719104"></a>Yes</p>
+</td>
+</tr>
+<tr id="row1376665914115"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p10766859111119"><a name="p10766859111119"></a><a name="p10766859111119"></a>getDouble(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p9766105911111"><a name="p9766105911111"></a><a name="p9766105911111"></a>double</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1976611593113"><a name="p1976611593113"></a><a name="p1976611593113"></a>Yes</p>
+</td>
+</tr>
+<tr id="row18905124315010"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p5905144345018"><a name="p5905144345018"></a><a name="p5905144345018"></a>getFloat(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p69065438503"><a name="p69065438503"></a><a name="p69065438503"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1390617434501"><a name="p1390617434501"></a><a name="p1390617434501"></a>Yes</p>
+</td>
+</tr>
+<tr id="row171601565117"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p1016165195117"><a name="p1016165195117"></a><a name="p1016165195117"></a>getInt(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p4161155145112"><a name="p4161155145112"></a><a name="p4161155145112"></a>int</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p11161457515"><a name="p11161457515"></a><a name="p11161457515"></a>Yes</p>
+</td>
+</tr>
+<tr id="row17392621155114"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p1639222125117"><a name="p1639222125117"></a><a name="p1639222125117"></a>getLong(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p193921021175111"><a name="p193921021175111"></a><a name="p193921021175111"></a>long</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p339292114517"><a name="p339292114517"></a><a name="p339292114517"></a>Yes</p>
+</td>
+</tr>
+<tr id="row18307115014517"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p143071650195115"><a name="p143071650195115"></a><a name="p143071650195115"></a>getObject(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p43071550145117"><a name="p43071550145117"></a><a name="p43071550145117"></a>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p16307550105116"><a name="p16307550105116"></a><a name="p16307550105116"></a>Yes</p>
+</td>
+</tr>
+<tr id="row20865131146"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p118651718413"><a name="p118651718413"></a><a name="p118651718413"></a>getObject(int parameterIndex, Class&lt;T&gt; type)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p20865211418"><a name="p20865211418"></a><a name="p20865211418"></a>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1986516112413"><a name="p1986516112413"></a><a name="p1986516112413"></a>Yes</p>
+</td>
+</tr>
+<tr id="row185973072815"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p1786083018284"><a name="p1786083018284"></a><a name="p1786083018284"></a>getShort(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1986093012818"><a name="p1986093012818"></a><a name="p1986093012818"></a>short</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p686073019284"><a name="p686073019284"></a><a name="p686073019284"></a>Yes</p>
+</td>
+</tr>
+<tr id="row8447174373815"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p13448343163812"><a name="p13448343163812"></a><a name="p13448343163812"></a>getSQLXML(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1448114333818"><a name="p1448114333818"></a><a name="p1448114333818"></a>SQLXML</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p5448164383819"><a name="p5448164383819"></a><a name="p5448164383819"></a>Yes</p>
+</td>
+</tr>
+<tr id="row1184941493911"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p128505140394"><a name="p128505140394"></a><a name="p128505140394"></a>getString(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1385015148393"><a name="p1385015148393"></a><a name="p1385015148393"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1385091417395"><a name="p1385091417395"></a><a name="p1385091417395"></a>Yes</p>
+</td>
+</tr>
+<tr id="row18341192584512"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p934120254458"><a name="p934120254458"></a><a name="p934120254458"></a>getTime(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1534119257455"><a name="p1534119257455"></a><a name="p1534119257455"></a>Time</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1534102504518"><a name="p1534102504518"></a><a name="p1534102504518"></a>Yes</p>
+</td>
+</tr>
+<tr id="row175291112194718"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p75296122477"><a name="p75296122477"></a><a name="p75296122477"></a>getTime(int parameterIndex, Calendar cal)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p352951204715"><a name="p352951204715"></a><a name="p352951204715"></a>Time</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1152991274716"><a name="p1152991274716"></a><a name="p1152991274716"></a>Yes</p>
+</td>
+</tr>
+<tr id="row3233394714"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p62163312475"><a name="p62163312475"></a><a name="p62163312475"></a>getTimestamp(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p102533114717"><a name="p102533114717"></a><a name="p102533114717"></a>Timestamp</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p192173316476"><a name="p192173316476"></a><a name="p192173316476"></a>Yes</p>
+</td>
+</tr>
+<tr id="row16554175264716"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p1255545211476"><a name="p1255545211476"></a><a name="p1255545211476"></a>getTimestamp(int parameterIndex, Calendar cal)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p165551952174715"><a name="p165551952174715"></a><a name="p165551952174715"></a>Timestamp</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p11555155215476"><a name="p11555155215476"></a><a name="p11555155215476"></a>Yes</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row53459560"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p39399037"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p39399037"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p39399037"></a>registerOutParameter(int parameterIndex, int type)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p58131666"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p58131666"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p58131666"></a>void</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"></a>Yes</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row15792565"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"></a>wasNull()</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"></a><span id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"></a>Boolean</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p12114571"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p12114571"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p12114571"></a>Yes</p>
 </td>
 </tr>
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   The batch operation of statements containing OUT parameter is not allowed.  
->-   The following methods are inherited from java.sql.Statement: close, execute, executeQuery, executeUpdate, getConnection, getResultSet, getUpdateCount, isClosed, setMaxRows, and setFetchSize.  
->-   The following methods are inherited from java.sql.PreparedStatement: addBatch, clearParameters, execute, executeQuery, executeUpdate, getMetaData, setBigDecimal, setBoolean, setByte, setBytes, setDate, setDouble, setFloat, setInt, setLong, setNull, setObject, setString, setTime, and setTimestamp.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   The batch operation of statements containing OUT parameter is not allowed.
+>-   The following methods are inherited from java.sql.Statement: close, execute, executeQuery, executeUpdate, getConnection, getResultSet, getUpdateCount, isClosed, setMaxRows, and setFetchSize.
+>-   The following methods are inherited from java.sql.PreparedStatement: addBatch, clearParameters, execute, executeQuery, executeUpdate, getMetaData, setBigDecimal, setBoolean, setByte, setBytes, setDate, setDouble, setFloat, setInt, setLong, setNull, setObject, setString, setTime, and setTimestamp.
 
