@@ -33,7 +33,7 @@ MOT is fully aligned with the operating systems supported by openGauss.
 MOT supports both bare-metal and virtualized environments that run the following operating systems on a bare-metal server or virtual machine –
 
 -   **x86 –**  CentOS 7.6 and EulerOS 2.0
--   **ARM –**  OpenEuler and EulerOS
+-   **ARM –**  openEuler and EulerOS
 
 ## OS Optimization<a name="section1020616174314"></a>
 

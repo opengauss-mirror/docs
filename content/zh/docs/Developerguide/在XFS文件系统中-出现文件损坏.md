@@ -2,7 +2,7 @@
 
 ## 问题现象<a name="section172487523295"></a>
 
-在数据库使用过程中，有极小的概率出现XFS文件系统的报错 \(Input/Output error , structure needs cleaning\)。
+在数据库使用过程中，有极小的概率出现XFS文件系统的报错（Input/Output error , structure needs cleaning）。
 
 ## 原因分析<a name="section1744562618577"></a>
 
