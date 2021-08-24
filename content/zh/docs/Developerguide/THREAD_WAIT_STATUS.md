@@ -94,7 +94,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122639_p11514227192819"><a name="zh-cn_topic_0237122639_p11514227192819"></a><a name="zh-cn_topic_0237122639_p11514227192819"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122639_p15514152772812"><a name="zh-cn_topic_0237122639_p15514152772812"></a><a name="zh-cn_topic_0237122639_p15514152772812"></a>如果wait_status是acquire lock、acquire lwlock、wait io三种类型，此列描述具体的锁、轻量级锁、IO的信息；否则为空。</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122639_p15514152772812"><a name="zh-cn_topic_0237122639_p15514152772812"></a><a name="zh-cn_topic_0237122639_p15514152772812"></a>如果wait_status是acquire lock、acquire lwlock、wait io三种类型，此列描述具体的锁、轻量级锁、IO的信息。否则为空。</p>
 </td>
 </tr>
 </tbody>
