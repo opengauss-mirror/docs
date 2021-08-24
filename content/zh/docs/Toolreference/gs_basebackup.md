@@ -118,7 +118,7 @@ gs\_basebackup参数可以分为如下几类：
 
     -   -s, --status-interval=INTERVAL
 
-        发送到服务器的状态包的时间\(以秒为单位\)
+        发送到服务器的状态包的时间\(以秒为单位\)。
 
     -   -w,--no-password
 
