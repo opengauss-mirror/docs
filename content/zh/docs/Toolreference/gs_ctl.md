@@ -181,14 +181,14 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0237152408_row79165943917"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_p16108598396"><a name="zh-cn_topic_0237152408_p16108598396"></a><a name="zh-cn_topic_0237152408_p16108598396"></a>-T</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_p110125916399"><a name="zh-cn_topic_0237152408_p110125916399"></a><a name="zh-cn_topic_0237152408_p110125916399"></a>-T 后面跟term，升主命令时会用此term作为主机term，build时会连接大于等于此term的主机进行build</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_p110125916399"><a name="zh-cn_topic_0237152408_p110125916399"></a><a name="zh-cn_topic_0237152408_p110125916399"></a>-T 后面跟term，升主命令时会用此term作为主机term，build时会连接大于等于此term的主机进行build。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_p2106594397"><a name="zh-cn_topic_0237152408_p2106594397"></a><a name="zh-cn_topic_0237152408_p2106594397"></a>term的取值范围，无符号整型。</p>
 </td>
 </tr>
 <tr id="row89351326193410"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="p19935152683419"><a name="p19935152683419"></a><a name="p19935152683419"></a>-d</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p19935726153414"><a name="p19935726153414"></a><a name="p19935726153414"></a>打印更多调试信息</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p19935726153414"><a name="p19935726153414"></a><a name="p19935726153414"></a>打印更多调试信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="p1493592615345"><a name="p1493592615345"></a><a name="p1493592615345"></a>无参数</p>
 </td>
@@ -220,6 +220,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
+
 
 **表 3**  start或restart共有参数
 
@@ -304,7 +305,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="31.81681831816818%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a>声明双机主备实例正常时切换的切换模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a>mode的取值：</p>
-<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li><li>smart：本版本暂不支持该模式</li><li>immediate：本版本暂不支持该模式</li></ul>
+<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li><li>smart：本版本暂不支持该模式。</li><li>immediate：本版本暂不支持该模式。</li></ul>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a>默认值：fast</p>
 </td>
 </tr>
@@ -401,4 +402,3 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-
