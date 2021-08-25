@@ -53,7 +53,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p20995135132817"><a name="zh-cn_topic_0237152334_p20995135132817"></a><a name="zh-cn_topic_0237152334_p20995135132817"></a>DataNode</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul498532372610"></a><a name="zh-cn_topic_0237152334_ul498532372610"></a><ul id="zh-cn_topic_0237152334_ul498532372610"><li>收集DataNode的配置信息:<a name="zh-cn_topic_0237152334_ul1741811415273"></a><a name="zh-cn_topic_0237152334_ul1741811415273"></a><ul id="zh-cn_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul498532372610"></a><a name="zh-cn_topic_0237152334_ul498532372610"></a><ul id="zh-cn_topic_0237152334_ul498532372610"><li>收集DataNode的配置信息：<a name="zh-cn_topic_0237152334_ul1741811415273"></a><a name="zh-cn_topic_0237152334_ul1741811415273"></a><ul id="zh-cn_topic_0237152334_ul1741811415273"><li>postgresql.conf</li><li>gaussdb.state</li><li>pg_hba.conf</li><li>pg_control</li><li>pg_replslot</li><li>pg_ident.conf</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p515933239"><a name="zh-cn_topic_0237152334_p515933239"></a><a name="zh-cn_topic_0237152334_p515933239"></a>是</p>
