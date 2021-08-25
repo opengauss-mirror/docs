@@ -149,7 +149,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a>文件系统配置状态（File system configuration status）</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a>系统文件句柄检查：系统文件句柄的参数值必须大于等于100万。</p>
-<p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a>线程堆栈大小检查：线程堆栈大小大于等于3072KB</p>
+<p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a>线程堆栈大小检查：线程堆栈大小大于等于3072KB。</p>
 <p id="zh-cn_topic_0237152331_p19824808473"><a name="zh-cn_topic_0237152331_p19824808473"></a><a name="zh-cn_topic_0237152331_p19824808473"></a>进程最大可用虚拟内存：系统进程最大可用虚拟内存为unlimited。</p>
 </td>
 </tr>
@@ -265,6 +265,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 </tr>       
 </tbody>
 </table>
+
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -486,7 +487,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_row1493934585918"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p412986019"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p412986019"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p412986019"></a>net.ipv4.tcp_sack</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p112881904"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p112881904"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p112881904"></a>启用有选择的应答，通过有选择地应答乱序接受到的报文来提高性能，让发送者只发送丢失的报文段（对于广域网来说）这个选项应该启用，但是会增加对CPU的占用。</p>
-<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"><li>0表示关闭。</li><li>1表示开启</li></ul>
+<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"><li>0表示关闭。</li><li>1表示开启。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p17131181208"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p17131181208"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p17131181208"></a>1</p>
 </td>
@@ -494,7 +495,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_row199407451592"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"></a>net.ipv4.tcp_timestamps</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a>TCP时间戳（会在TCP包头增加12节），以一种比重发超时更精确的方式（参考RFC 1323）来启用对RTT的计算，启用可以实现更好的性能。</p>
-<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"><li>0表示关闭。</li><li>1表示开启</li></ul>
+<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"><li>0表示关闭。</li><li>1表示开启。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"></a>1</p>
 </td>
