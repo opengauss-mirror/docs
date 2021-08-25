@@ -14,7 +14,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
     1. 前置条件：需设置GAUSSHOME环境变量为数据库安装目录；且root用户已创建普通用户默认的控制组。
     
     2.  创建控制组及设置对应的资源配额，以便在数据库中运行作业时，指定到此控制组，使用此控制组管理的资源；通常数据库管理员为每个数据库用户创建Class组。  
-    a.  创建Class控制组和Workload控制组。  
+        a.  创建Class控制组和Workload控制组。  
     
         ```
         gs_cgroup -c -S class1 -s 40  
@@ -119,7 +119,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
     控制组配置信息
 
         gs_cgroup -p
-    
+        
         Top Group information is listed:
         GID:   0 Type: Top    Percent(%): 1000( 50) Name: Root                  Cores: 0-47
         GID:   1 Type: Top    Percent(%):  833( 83) Name: Gaussdb:omm           Cores: 0-20
@@ -292,7 +292,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
 ​    b.  查看操作系统中树形结构的控制组信息  
 ​    gs\_cgroup -P显示控制组树形结构信息，其中shares代表操作系统中CPU资源的动态资源配额“cpu.shares”的数值，cpus代表操作系统中CPUSET资源的动态资源限额“cpuset.cpus”的数值，指的是该控制组能够使用的核数范围。
-  
+
         gs_cgroup -P
         Mount Information:
         cpu:/dev/cgroup/cpu
@@ -340,7 +340,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
     取值范围
 
-    -   为1 \~ 99。在不进行设置的情况下，默认CPU配额设置为Vacuum控制组占20%，DefaultBackend控制组占%80。Vacuum和DefaultBackend控制组配额之和设置应小于100%。
+    -   为1 \~ 99。在不进行设置的情况下，默认CPU配额设置为Vacuum控制组占20%，DefaultBackend控制组占80%。Vacuum和DefaultBackend控制组配额之和设置应小于100%。
 
 -   -B name
 
