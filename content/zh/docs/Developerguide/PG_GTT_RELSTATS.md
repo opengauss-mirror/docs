@@ -59,7 +59,7 @@ PG\_GTT\_RELSTATS视图查看当前会话所有全局临时表基本信息，调
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p15210224169"><a name="p15210224169"></a><a name="p15210224169"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p8112956193210"><a name="p8112956193210"></a><a name="p8112956193210"></a>该表中所有在这个之前的事务ID已经被一个固定的（“frozen”）事务ID替换。</p>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p8112956193210"><a name="p8112956193210"></a><a name="p8112956193210"></a>该表中所有在这个之前的事务ID已经被一个固定的（frozen）事务ID替换。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122419_zh-cn_topic_0059777999_r37d2b2511ed84812b6f857b53fa914cd"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p19436184631611"><a name="p19436184631611"></a><a name="p19436184631611"></a>relminmxid</p>
