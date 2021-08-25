@@ -193,7 +193,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
 
-  -   与"-I" 不能一块使用
+  -   与"-I" 不能一块使用。
 
 -   -c parameter=value
 
@@ -255,7 +255,7 @@ gs\_guc工具由操作系统用户omm执行。
 
 -   -M, --keymode=MODE
 
-    设定该密码在数据库运行过程中，用于服务端\(server\)、客户端\(client\)还是创建Data Source对象时调用。
+    设定该密码在数据库运行过程中，用于服务端（server）、客户端（client）还是创建Data Source对象时调用。
 
     ![](public_sys-resources/icon-note.gif) **说明：** 
 
@@ -324,7 +324,7 @@ Total instances: 1. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-示例3：设置客户端认证策略
+示例3：设置客户端认证策略。
 
 ```
 gs_guc set -N all -I all -h "host replication testuser 10.252.95.191/32 sha256"
@@ -333,7 +333,7 @@ Total instances: 2. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-示例4：注释清理已经设置的客户端认证策略
+示例4：注释清理已经设置的客户端认证策略。
 
 ```
 gs_guc set -N all -I all -h "host replication testuser 10.252.95.191/32"
