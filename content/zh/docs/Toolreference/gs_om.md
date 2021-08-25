@@ -197,7 +197,7 @@ gs\_om参数可以分为如下几类：
         显示详细信息。如果不指定，只提示该服务器是否正常。
 
         ![](public_sys-resources/icon-note.gif) **说明：** 
-本参数通过在每个数据库节点执行gs_ctl query命令进行查询并汇总结果，来获取openGauss的详细信息。
+        本参数通过在每个数据库节点执行gs_ctl query命令进行查询并汇总结果，来获取openGauss的详细信息。
         
         --all
         
@@ -527,7 +527,7 @@ gs\_om参数可以分为如下几类：
     [plat3] SSL cert files rollback successfully.
     ```
 
--   新License注册
+-   新License注册。
 
     ```
     gs_om -t license -m register -f MTgsMTkK  
@@ -541,7 +541,7 @@ gs\_om参数可以分为如下几类：
     License register successfully.
     ```
 
--   新License反注册
+-   新License反注册。
 
     ```
     gs_om -t license -m unregister -f MTgsMTkK
@@ -554,5 +554,4 @@ gs\_om参数可以分为如下几类：
     Remove the backup license file on all of the cluster hosts.
     License unregister successfully.
     ```
-
 
