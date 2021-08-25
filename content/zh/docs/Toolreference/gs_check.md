@@ -162,63 +162,63 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p38831104484"><a name="zh-cn_topic_0237152330_p38831104484"></a><a name="zh-cn_topic_0237152330_p38831104484"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row334519320714"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1034593574"><a name="zh-cn_topic_0237152330_p1034593574"></a><a name="zh-cn_topic_0237152330_p1034593574"></a>CheckTHP(检查THP服务)</p>
+<tr id="zh-cn_topic_0237152330_row334519320714"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1034593574"><a name="zh-cn_topic_0237152330_p1034593574"></a><a name="zh-cn_topic_0237152330_p1034593574"></a>CheckTHP（检查THP服务）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p11345337714"><a name="zh-cn_topic_0237152330_p11345337714"></a><a name="zh-cn_topic_0237152330_p11345337714"></a>检查系统THP服务，如果服务开启则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p588310024810"><a name="zh-cn_topic_0237152330_p588310024810"></a><a name="zh-cn_topic_0237152330_p588310024810"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row5208181218815"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p32081121489"><a name="zh-cn_topic_0237152330_p32081121489"></a><a name="zh-cn_topic_0237152330_p32081121489"></a>CheckSshdService(检查sshd服务是否已启动)</p>
+<tr id="zh-cn_topic_0237152330_row5208181218815"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p32081121489"><a name="zh-cn_topic_0237152330_p32081121489"></a><a name="zh-cn_topic_0237152330_p32081121489"></a>CheckSshdService（检查sshd服务是否已启动）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p13209912283"><a name="zh-cn_topic_0237152330_p13209912283"></a><a name="zh-cn_topic_0237152330_p13209912283"></a>检查系统是否存在sshd服务，若存在则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p108834019489"><a name="zh-cn_topic_0237152330_p108834019489"></a><a name="zh-cn_topic_0237152330_p108834019489"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row1929571696"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p152956118917"><a name="zh-cn_topic_0237152330_p152956118917"></a><a name="zh-cn_topic_0237152330_p152956118917"></a>CheckCrondService(检查crontab服务是否已启动)</p>
+<tr id="zh-cn_topic_0237152330_row1929571696"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p152956118917"><a name="zh-cn_topic_0237152330_p152956118917"></a><a name="zh-cn_topic_0237152330_p152956118917"></a>CheckCrondService（检查crontab服务是否已启动）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p122951011395"><a name="zh-cn_topic_0237152330_p122951011395"></a><a name="zh-cn_topic_0237152330_p122951011395"></a>检查系统是否存在crontab服务，若存在则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p3883100114818"><a name="zh-cn_topic_0237152330_p3883100114818"></a><a name="zh-cn_topic_0237152330_p3883100114818"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row111450421899"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p814514429920"><a name="zh-cn_topic_0237152330_p814514429920"></a><a name="zh-cn_topic_0237152330_p814514429920"></a>CheckCrontabLeft(检查crontab是否有残留Gauss相关信息)</p>
+<tr id="zh-cn_topic_0237152330_row111450421899"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p814514429920"><a name="zh-cn_topic_0237152330_p814514429920"></a><a name="zh-cn_topic_0237152330_p814514429920"></a>CheckCrontabLeft（检查crontab是否有残留Gauss相关信息）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p9146124213913"><a name="zh-cn_topic_0237152330_p9146124213913"></a><a name="zh-cn_topic_0237152330_p9146124213913"></a>检查crontab是否残留Gauss相关信息，若无该信息则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p78831902482"><a name="zh-cn_topic_0237152330_p78831902482"></a><a name="zh-cn_topic_0237152330_p78831902482"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row84171030161016"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p12417143010104"><a name="zh-cn_topic_0237152330_p12417143010104"></a><a name="zh-cn_topic_0237152330_p12417143010104"></a>CheckDirLeft(检查文件目录是否有残留)</p>
+<tr id="zh-cn_topic_0237152330_row84171030161016"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p12417143010104"><a name="zh-cn_topic_0237152330_p12417143010104"></a><a name="zh-cn_topic_0237152330_p12417143010104"></a>CheckDirLeft（检查文件目录是否有残留）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1684810621114"><a name="zh-cn_topic_0237152330_p1684810621114"></a><a name="zh-cn_topic_0237152330_p1684810621114"></a>检查文件目录（/opt/huawei/Bigdata/ ,/var/log/Bigdata/, /home/<span id="zh-cn_topic_0237152330_text203561459476"><a name="zh-cn_topic_0237152330_text203561459476"></a><a name="zh-cn_topic_0237152330_text203561459476"></a>omm</span>）是否存在，（若mount目录包含此目录则忽略）若不存在则查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p3883200174819"><a name="zh-cn_topic_0237152330_p3883200174819"></a><a name="zh-cn_topic_0237152330_p3883200174819"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row16961423181114"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1597112321110"><a name="zh-cn_topic_0237152330_p1597112321110"></a><a name="zh-cn_topic_0237152330_p1597112321110"></a>CheckProcessLeft(检查进程是否有残留)</p>
+<tr id="zh-cn_topic_0237152330_row16961423181114"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1597112321110"><a name="zh-cn_topic_0237152330_p1597112321110"></a><a name="zh-cn_topic_0237152330_p1597112321110"></a>CheckProcessLeft（检查进程是否有残留）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p16971023131114"><a name="zh-cn_topic_0237152330_p16971023131114"></a><a name="zh-cn_topic_0237152330_p16971023131114"></a>检查是否残留gaussdb和<span id="zh-cn_topic_0237152330_text112408111814"><a name="zh-cn_topic_0237152330_text112408111814"></a><a name="zh-cn_topic_0237152330_text112408111814"></a>omm</span>进程，若未残留则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p1788300194819"><a name="zh-cn_topic_0237152330_p1788300194819"></a><a name="zh-cn_topic_0237152330_p1788300194819"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row565366125"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1666156111216"><a name="zh-cn_topic_0237152330_p1666156111216"></a><a name="zh-cn_topic_0237152330_p1666156111216"></a>CheckStack(栈深度检查)</p>
+<tr id="zh-cn_topic_0237152330_row565366125"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1666156111216"><a name="zh-cn_topic_0237152330_p1666156111216"></a><a name="zh-cn_topic_0237152330_p1666156111216"></a>CheckStack（栈深度检查）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p16676131219"><a name="zh-cn_topic_0237152330_p16676131219"></a><a name="zh-cn_topic_0237152330_p16676131219"></a>检查栈深度，若各个节点不一致则报warning ，若大于等于3072则检查项通过，否则不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p488320114811"><a name="zh-cn_topic_0237152330_p488320114811"></a><a name="zh-cn_topic_0237152330_p488320114811"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row1724914911158"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p52503971517"><a name="zh-cn_topic_0237152330_p52503971517"></a><a name="zh-cn_topic_0237152330_p52503971517"></a>CheckOmmUserExist(检查<span id="zh-cn_topic_0237152330_text201853210817"><a name="zh-cn_topic_0237152330_text201853210817"></a><a name="zh-cn_topic_0237152330_text201853210817"></a>omm</span>用户是否存在)</p>
+<tr id="zh-cn_topic_0237152330_row1724914911158"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p52503971517"><a name="zh-cn_topic_0237152330_p52503971517"></a><a name="zh-cn_topic_0237152330_p52503971517"></a>CheckOmmUserExist（检查<span id="zh-cn_topic_0237152330_text201853210817"><a name="zh-cn_topic_0237152330_text201853210817"></a><a name="zh-cn_topic_0237152330_text201853210817"></a>omm</span>用户是否存在）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1425017921518"><a name="zh-cn_topic_0237152330_p1425017921518"></a><a name="zh-cn_topic_0237152330_p1425017921518"></a>检查是否存在<span id="zh-cn_topic_0237152330_text124761221185"><a name="zh-cn_topic_0237152330_text124761221185"></a><a name="zh-cn_topic_0237152330_text124761221185"></a>omm</span>用户，若不存在<span id="zh-cn_topic_0237152330_text1845216231582"><a name="zh-cn_topic_0237152330_text1845216231582"></a><a name="zh-cn_topic_0237152330_text1845216231582"></a>omm</span>用户则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p8883130164819"><a name="zh-cn_topic_0237152330_p8883130164819"></a><a name="zh-cn_topic_0237152330_p8883130164819"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row21641355151514"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p13164195531511"><a name="zh-cn_topic_0237152330_p13164195531511"></a><a name="zh-cn_topic_0237152330_p13164195531511"></a>CheckPortConflict(检查数据库节点端口是否占用)</p>
+<tr id="zh-cn_topic_0237152330_row21641355151514"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p13164195531511"><a name="zh-cn_topic_0237152330_p13164195531511"></a><a name="zh-cn_topic_0237152330_p13164195531511"></a>CheckPortConflict（检查数据库节点端口是否占用）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p12165185541510"><a name="zh-cn_topic_0237152330_p12165185541510"></a><a name="zh-cn_topic_0237152330_p12165185541510"></a>检查数据库节点端口是否已被占用，若未占用则检查项通过，否则检查项不通过。</p>
 </td>
@@ -504,7 +504,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_row149791210266"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p199795101064"><a name="zh-cn_topic_0237152330_p199795101064"></a><a name="zh-cn_topic_0237152330_p199795101064"></a>CheckSpecialFile（特殊文件检查）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p998019101363"><a name="zh-cn_topic_0237152330_p998019101363"></a><a name="zh-cn_topic_0237152330_p998019101363"></a>检查tmp目录(PGHOST)、OM目录(GPHOME)、日志目录(GAUSSLOG)、data目录、程序目录(GAUSSHOME)下文件是否存在特殊字符以及非<span id="zh-cn_topic_0237152330_text1080714359816"><a name="zh-cn_topic_0237152330_text1080714359816"></a><a name="zh-cn_topic_0237152330_text1080714359816"></a>omm</span>用户的文件，若不存在则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p998019101363"><a name="zh-cn_topic_0237152330_p998019101363"></a><a name="zh-cn_topic_0237152330_p998019101363"></a>检查tmp目录（PGHOST）、OM目录（GPHOME）、日志目录（GAUSSLOG）、data目录、程序目录（GAUSSHOME）下文件是否存在特殊字符以及非<span id="zh-cn_topic_0237152330_text1080714359816"><a name="zh-cn_topic_0237152330_text1080714359816"></a><a name="zh-cn_topic_0237152330_text1080714359816"></a>omm</span>用户的文件，若不存在则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p14884160104816"><a name="zh-cn_topic_0237152330_p14884160104816"></a><a name="zh-cn_topic_0237152330_p14884160104816"></a>否</p>
 </td>
@@ -560,77 +560,77 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p19885309487"><a name="zh-cn_topic_0237152330_p19885309487"></a><a name="zh-cn_topic_0237152330_p19885309487"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row49678411210"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p189671541142117"><a name="zh-cn_topic_0237152330_p189671541142117"></a><a name="zh-cn_topic_0237152330_p189671541142117"></a>CheckCurConnCount(检查当前连接数)</p>
+<tr id="zh-cn_topic_0237152330_row49678411210"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p189671541142117"><a name="zh-cn_topic_0237152330_p189671541142117"></a><a name="zh-cn_topic_0237152330_p189671541142117"></a>CheckCurConnCount（检查当前连接数）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p9967194182110"><a name="zh-cn_topic_0237152330_p9967194182110"></a><a name="zh-cn_topic_0237152330_p9967194182110"></a>检查数据库连接数，如果连接数小于最大连接数的90%则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p178851301483"><a name="zh-cn_topic_0237152330_p178851301483"></a><a name="zh-cn_topic_0237152330_p178851301483"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row1956052811220"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p35601828182218"><a name="zh-cn_topic_0237152330_p35601828182218"></a><a name="zh-cn_topic_0237152330_p35601828182218"></a>CheckCursorNum(检查当前游标数)</p>
+<tr id="zh-cn_topic_0237152330_row1956052811220"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p35601828182218"><a name="zh-cn_topic_0237152330_p35601828182218"></a><a name="zh-cn_topic_0237152330_p35601828182218"></a>CheckCursorNum（检查当前游标数）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p175611328132213"><a name="zh-cn_topic_0237152330_p175611328132213"></a><a name="zh-cn_topic_0237152330_p175611328132213"></a>检查数据库的游标数，检查成功则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p7885100204812"><a name="zh-cn_topic_0237152330_p7885100204812"></a><a name="zh-cn_topic_0237152330_p7885100204812"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row1454980102315"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1955420172312"><a name="zh-cn_topic_0237152330_p1955420172312"></a><a name="zh-cn_topic_0237152330_p1955420172312"></a>CheckMaxDatanode(检查comm_max_datanode参数值范围小于数据库节点个数)</p>
+<tr id="zh-cn_topic_0237152330_row1454980102315"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1955420172312"><a name="zh-cn_topic_0237152330_p1955420172312"></a><a name="zh-cn_topic_0237152330_p1955420172312"></a>CheckMaxDatanode（检查comm_max_datanode参数值范围小于数据库节点个数）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p18554160122314"><a name="zh-cn_topic_0237152330_p18554160122314"></a><a name="zh-cn_topic_0237152330_p18554160122314"></a>检查最大数据库节点数，若最大数据库节点数小于xml配置的节点数*数据库节点数（默认值为90*5）报warning，否则检查项通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p388515084817"><a name="zh-cn_topic_0237152330_p388515084817"></a><a name="zh-cn_topic_0237152330_p388515084817"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row159501122192419"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p695062232415"><a name="zh-cn_topic_0237152330_p695062232415"></a><a name="zh-cn_topic_0237152330_p695062232415"></a>CheckPgPreparedXacts(检查残留两阶段事务)</p>
+<tr id="zh-cn_topic_0237152330_row159501122192419"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p695062232415"><a name="zh-cn_topic_0237152330_p695062232415"></a><a name="zh-cn_topic_0237152330_p695062232415"></a>CheckPgPreparedXacts（检查残留两阶段事务）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p5951112272412"><a name="zh-cn_topic_0237152330_p5951112272412"></a><a name="zh-cn_topic_0237152330_p5951112272412"></a>检查pgxc_prepared_xacts参数，如果不存在二阶段事务则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p158851800480"><a name="zh-cn_topic_0237152330_p158851800480"></a><a name="zh-cn_topic_0237152330_p158851800480"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row72101927202517"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p10210142712515"><a name="zh-cn_topic_0237152330_p10210142712515"></a><a name="zh-cn_topic_0237152330_p10210142712515"></a>CheckPgxcgroup(检查pgxc_group表中需要重分布的个数)</p>
+<tr id="zh-cn_topic_0237152330_row72101927202517"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p10210142712515"><a name="zh-cn_topic_0237152330_p10210142712515"></a><a name="zh-cn_topic_0237152330_p10210142712515"></a>CheckPgxcgroup（检查pgxc_group表中需要重分布的个数）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p192111327122517"><a name="zh-cn_topic_0237152330_p192111327122517"></a><a name="zh-cn_topic_0237152330_p192111327122517"></a>检查pgxc_group表中需要重分布的个数，检查结果为0则通过， 否则不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p2885140164816"><a name="zh-cn_topic_0237152330_p2885140164816"></a><a name="zh-cn_topic_0237152330_p2885140164816"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row87581311162614"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p147597119266"><a name="zh-cn_topic_0237152330_p147597119266"></a><a name="zh-cn_topic_0237152330_p147597119266"></a>CheckLockState(<span id="text16549132972314"><a name="text16549132972314"></a><a name="text16549132972314"></a>openGauss</span>是否被锁)</p>
+<tr id="zh-cn_topic_0237152330_row87581311162614"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p147597119266"><a name="zh-cn_topic_0237152330_p147597119266"></a><a name="zh-cn_topic_0237152330_p147597119266"></a>CheckLockState（<span id="text16549132972314"><a name="text16549132972314"></a><a name="text16549132972314"></a>openGauss</span>是否被锁）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p11759111202610"><a name="zh-cn_topic_0237152330_p11759111202610"></a><a name="zh-cn_topic_0237152330_p11759111202610"></a>检查<span id="text1545422692512"><a name="text1545422692512"></a><a name="text1545422692512"></a>openGauss</span>是否被锁，若<span id="text199888289255"><a name="text199888289255"></a><a name="text199888289255"></a>openGauss</span>被锁则不通过，否则检查项通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p888510064817"><a name="zh-cn_topic_0237152330_p888510064817"></a><a name="zh-cn_topic_0237152330_p888510064817"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row10770144617263"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1677111460261"><a name="zh-cn_topic_0237152330_p1677111460261"></a><a name="zh-cn_topic_0237152330_p1677111460261"></a>CheckIdleSession(检查业务停止)</p>
+<tr id="zh-cn_topic_0237152330_row10770144617263"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1677111460261"><a name="zh-cn_topic_0237152330_p1677111460261"></a><a name="zh-cn_topic_0237152330_p1677111460261"></a>CheckIdleSession（检查业务停止）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p146551617585"><a name="zh-cn_topic_0237152330_p146551617585"></a><a name="zh-cn_topic_0237152330_p146551617585"></a>检查非空闲会话数，如果数量为0则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p88851908489"><a name="zh-cn_topic_0237152330_p88851908489"></a><a name="zh-cn_topic_0237152330_p88851908489"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row178761737112711"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1687683732716"><a name="zh-cn_topic_0237152330_p1687683732716"></a><a name="zh-cn_topic_0237152330_p1687683732716"></a>CheckDBConnection(检查数据库连接)</p>
+<tr id="zh-cn_topic_0237152330_row178761737112711"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1687683732716"><a name="zh-cn_topic_0237152330_p1687683732716"></a><a name="zh-cn_topic_0237152330_p1687683732716"></a>CheckDBConnection（检查数据库连接）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p12876537122719"><a name="zh-cn_topic_0237152330_p12876537122719"></a><a name="zh-cn_topic_0237152330_p12876537122719"></a>检查能否连接数据库，如果连接成功则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p1188520094814"><a name="zh-cn_topic_0237152330_p1188520094814"></a><a name="zh-cn_topic_0237152330_p1188520094814"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row9530101314283"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1853117132281"><a name="zh-cn_topic_0237152330_p1853117132281"></a><a name="zh-cn_topic_0237152330_p1853117132281"></a>CheckGUCValue(GUC参数检查)</p>
+<tr id="zh-cn_topic_0237152330_row9530101314283"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1853117132281"><a name="zh-cn_topic_0237152330_p1853117132281"></a><a name="zh-cn_topic_0237152330_p1853117132281"></a>CheckGUCValue（GUC参数检查）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p8531413132810"><a name="zh-cn_topic_0237152330_p8531413132810"></a><a name="zh-cn_topic_0237152330_p8531413132810"></a>检查(max_connections + max_prepared_transactions) * max_locks_per_transaction的值，若该值大于等于1000000则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p18851074816"><a name="zh-cn_topic_0237152330_p18851074816"></a><a name="zh-cn_topic_0237152330_p18851074816"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row6213122814292"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p172142028102912"><a name="zh-cn_topic_0237152330_p172142028102912"></a><a name="zh-cn_topic_0237152330_p172142028102912"></a>CheckPMKData(检查PMK异常数据)</p>
+<tr id="zh-cn_topic_0237152330_row6213122814292"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p172142028102912"><a name="zh-cn_topic_0237152330_p172142028102912"></a><a name="zh-cn_topic_0237152330_p172142028102912"></a>CheckPMKData（检查PMK异常数据）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p42148283292"><a name="zh-cn_topic_0237152330_p42148283292"></a><a name="zh-cn_topic_0237152330_p42148283292"></a>检查数据库PMK schema是否包含有异常数据，如果不存在异常数据则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p68856084818"><a name="zh-cn_topic_0237152330_p68856084818"></a><a name="zh-cn_topic_0237152330_p68856084818"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row116211351308"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p4622175143010"><a name="zh-cn_topic_0237152330_p4622175143010"></a><a name="zh-cn_topic_0237152330_p4622175143010"></a>CheckSysTable(检查系统表)</p>
+<tr id="zh-cn_topic_0237152330_row116211351308"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p4622175143010"><a name="zh-cn_topic_0237152330_p4622175143010"></a><a name="zh-cn_topic_0237152330_p4622175143010"></a>CheckSysTable（检查系统表）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p362217553010"><a name="zh-cn_topic_0237152330_p362217553010"></a><a name="zh-cn_topic_0237152330_p362217553010"></a>检查系统表，检查成功则检查项通过。</p>
 </td>
@@ -745,49 +745,49 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_r9026797791aa43ad896fa3e312414c4e"><td class="cellrowborder" rowspan="10" valign="top" width="13.969999999999999%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p26871935143214"><a name="zh-cn_topic_0237152330_p26871935143214"></a><a name="zh-cn_topic_0237152330_p26871935143214"></a>network</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.88%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_a4e4cdce379d342d984ae8ba2850e6a52"><a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_a4e4cdce379d342d984ae8ba2850e6a52"></a><a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_a4e4cdce379d342d984ae8ba2850e6a52"></a></p>
-<p id="zh-cn_topic_0237152330_p23631756143213"><a name="zh-cn_topic_0237152330_p23631756143213"></a><a name="zh-cn_topic_0237152330_p23631756143213"></a>CheckPing(检查网络通畅)</p>
+<p id="zh-cn_topic_0237152330_p23631756143213"><a name="zh-cn_topic_0237152330_p23631756143213"></a><a name="zh-cn_topic_0237152330_p23631756143213"></a>CheckPing（检查网络通畅）</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.35%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p1973392743316"><a name="zh-cn_topic_0237152330_p1973392743316"></a><a name="zh-cn_topic_0237152330_p1973392743316"></a>检查<span id="text172811119154215"><a name="text172811119154215"></a><a name="text172811119154215"></a>openGauss</span>内所有节点的互通性，如果各节点所有IP均可ping通则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152330_p178858084816"><a name="zh-cn_topic_0237152330_p178858084816"></a><a name="zh-cn_topic_0237152330_p178858084816"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row18763524336"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p27617522332"><a name="zh-cn_topic_0237152330_p27617522332"></a><a name="zh-cn_topic_0237152330_p27617522332"></a>CheckRXTX(检查网卡RXTX值)</p>
+<tr id="zh-cn_topic_0237152330_row18763524336"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p27617522332"><a name="zh-cn_topic_0237152330_p27617522332"></a><a name="zh-cn_topic_0237152330_p27617522332"></a>CheckRXTX（检查网卡RXTX值）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1566119285356"><a name="zh-cn_topic_0237152330_p1566119285356"></a><a name="zh-cn_topic_0237152330_p1566119285356"></a>检查节点backIP的RX/TX值，如果该值为4096则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p48851709489"><a name="zh-cn_topic_0237152330_p48851709489"></a><a name="zh-cn_topic_0237152330_p48851709489"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row9348205983511"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p173483598359"><a name="zh-cn_topic_0237152330_p173483598359"></a><a name="zh-cn_topic_0237152330_p173483598359"></a>CheckMTU(检查网卡MTU值)</p>
+<tr id="zh-cn_topic_0237152330_row9348205983511"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p173483598359"><a name="zh-cn_topic_0237152330_p173483598359"></a><a name="zh-cn_topic_0237152330_p173483598359"></a>CheckMTU（检查网卡MTU值）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1734845917355"><a name="zh-cn_topic_0237152330_p1734845917355"></a><a name="zh-cn_topic_0237152330_p1734845917355"></a>检查节点backIP对应的网卡MTU值（ bond后的物理网卡要确保一致），如果该值不是8192或1500报warning若<span id="text1491732010421"><a name="text1491732010421"></a><a name="text1491732010421"></a>openGauss</span>MTU值一致则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p48857034819"><a name="zh-cn_topic_0237152330_p48857034819"></a><a name="zh-cn_topic_0237152330_p48857034819"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row167431638123612"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1974423815362"><a name="zh-cn_topic_0237152330_p1974423815362"></a><a name="zh-cn_topic_0237152330_p1974423815362"></a>CheckNetWorkDrop(检查网络掉包率)</p>
+<tr id="zh-cn_topic_0237152330_row167431638123612"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1974423815362"><a name="zh-cn_topic_0237152330_p1974423815362"></a><a name="zh-cn_topic_0237152330_p1974423815362"></a>CheckNetWorkDrop（检查网络掉包率）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p1774473863614"><a name="zh-cn_topic_0237152330_p1774473863614"></a><a name="zh-cn_topic_0237152330_p1774473863614"></a>检查各IP1分钟内网络掉包率，如果不超过1%则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p108852013488"><a name="zh-cn_topic_0237152330_p108852013488"></a><a name="zh-cn_topic_0237152330_p108852013488"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row1418243363716"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p141825333379"><a name="zh-cn_topic_0237152330_p141825333379"></a><a name="zh-cn_topic_0237152330_p141825333379"></a>CheckBond(检查网卡绑定模式)</p>
+<tr id="zh-cn_topic_0237152330_row1418243363716"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p141825333379"><a name="zh-cn_topic_0237152330_p141825333379"></a><a name="zh-cn_topic_0237152330_p141825333379"></a>CheckBond（检查网卡绑定模式）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p163628164386"><a name="zh-cn_topic_0237152330_p163628164386"></a><a name="zh-cn_topic_0237152330_p163628164386"></a>检查是否有配置BONDING_OPTS或BONDING_MODULE_OPTS，若没有配置则报warning。检查各节点bond模式是否一致，如果同时满足则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p588614012489"><a name="zh-cn_topic_0237152330_p588614012489"></a><a name="zh-cn_topic_0237152330_p588614012489"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row654814264313"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p11548154214316"><a name="zh-cn_topic_0237152330_p11548154214316"></a><a name="zh-cn_topic_0237152330_p11548154214316"></a>CheckMultiQueue(检查网卡多队列)</p>
+<tr id="zh-cn_topic_0237152330_row654814264313"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p11548154214316"><a name="zh-cn_topic_0237152330_p11548154214316"></a><a name="zh-cn_topic_0237152330_p11548154214316"></a>CheckMultiQueue（检查网卡多队列）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p12652154317447"><a name="zh-cn_topic_0237152330_p12652154317447"></a><a name="zh-cn_topic_0237152330_p12652154317447"></a>检查cat /proc/interrupts，判断是否开启网卡多队列且绑定不同CPU，如果满足则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p18886307480"><a name="zh-cn_topic_0237152330_p18886307480"></a><a name="zh-cn_topic_0237152330_p18886307480"></a>是</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_row488303013452"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1188413307451"><a name="zh-cn_topic_0237152330_p1188413307451"></a><a name="zh-cn_topic_0237152330_p1188413307451"></a>CheckUsedPort(检查随机端口使用数量)</p>
+<tr id="zh-cn_topic_0237152330_row488303013452"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p1188413307451"><a name="zh-cn_topic_0237152330_p1188413307451"></a><a name="zh-cn_topic_0237152330_p1188413307451"></a>CheckUsedPort（检查随机端口使用数量）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p12117504466"><a name="zh-cn_topic_0237152330_p12117504466"></a><a name="zh-cn_topic_0237152330_p12117504466"></a>检查net.ipv4.ip_local_port_range，范围大于等于OS默认值通过（32768-61000）;</p>
 <p id="zh-cn_topic_0237152330_p921135019469"><a name="zh-cn_topic_0237152330_p921135019469"></a><a name="zh-cn_topic_0237152330_p921135019469"></a>检查TCP协议随机端口数，小于总随机端口数的80%通过。</p>
@@ -809,7 +809,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p188865019487"><a name="zh-cn_topic_0237152330_p188865019487"></a><a name="zh-cn_topic_0237152330_p188865019487"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_rb677d671b7bc4d068f2732f5e9a3cea3"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p762065654618"><a name="zh-cn_topic_0237152330_p762065654618"></a><a name="zh-cn_topic_0237152330_p762065654618"></a>CheckNetSpeed(检查网卡接收带宽，ping值，丢包率)</p>
+<tr id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_rb677d671b7bc4d068f2732f5e9a3cea3"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p762065654618"><a name="zh-cn_topic_0237152330_p762065654618"></a><a name="zh-cn_topic_0237152330_p762065654618"></a>CheckNetSpeed（检查网卡接收带宽，ping值，丢包率）</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_zh-cn_topic_0059777799_aa3f091afaf8c4a6f86aa755b40e2ceec"><a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_aa3f091afaf8c4a6f86aa755b40e2ceec"></a><a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_aa3f091afaf8c4a6f86aa755b40e2ceec"></a>网络满载时，检查网卡平均接收带宽大于600MB通过;</p>
 <p id="zh-cn_topic_0237152330_p7248318124817"><a name="zh-cn_topic_0237152330_p7248318124817"></a><a name="zh-cn_topic_0237152330_p7248318124817"></a>网络满载时，检查网络ping值，小于1秒通过;</p>
@@ -820,7 +820,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_row154751136492"><td class="cellrowborder" valign="top" width="13.969999999999999%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152330_p447523204919"><a name="zh-cn_topic_0237152330_p447523204919"></a><a name="zh-cn_topic_0237152330_p447523204919"></a>other</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.88%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p184751317492"><a name="zh-cn_topic_0237152330_p184751317492"></a><a name="zh-cn_topic_0237152330_p184751317492"></a>CheckDataDiskUsage(检查数据库节点磁盘空间使用率)</p>
+<td class="cellrowborder" valign="top" width="24.88%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152330_p184751317492"><a name="zh-cn_topic_0237152330_p184751317492"></a><a name="zh-cn_topic_0237152330_p184751317492"></a>CheckDataDiskUsage（检查数据库节点磁盘空间使用率）</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.35%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152330_p19476738497"><a name="zh-cn_topic_0237152330_p19476738497"></a><a name="zh-cn_topic_0237152330_p19476738497"></a>检查磁盘数据库节点目录使用率，如果使用率低于90%则检查项通过，否则检查项不通过。</p>
 </td>
@@ -829,6 +829,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -914,7 +915,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     -   suggestion： 巡检项修复建议说明（支持多语言）。
     -   threshold：巡检项阈值定义，多值之间使用分号隔开，示例Key1=Value1;Key2=Value2。
     -   category： 巡检项分类，可选参数：os，device，network，cluster，database，other。
-    -   permission： 巡检项需要的执行权限，可选参数：root，user默认为user\(普通用户\)。
+    -   permission： 巡检项需要的执行权限，可选参数：root，user默认为user（普通用户）。
     -   scope：巡检项执行的节点范围，可选参数：cn-仅在数据库主节点执行，local-仅在当前节点执行，all-在openGauss所有节点执行，默认为all。
     -   analysis：巡检项执行结果分析方式，default-检查每个节点的结果，所有节点检查项通过，则最终检查通过，consistent-openGauss内所有节点一致性检查，单节点仅返回结果，各个节点结果一致则判定检查通过，custom-自定义结果分析方式，默认为default。
 
