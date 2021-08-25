@@ -66,7 +66,7 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 -   **group\_commit\_size = 16**
 -   **group\_commit\_timeout = 10 ms**
 
-    只有当MOT引擎配置为同步组提交日志记录时，此选项才相关。即postgresql.conf中的synchronization\_commit配置为True，mot.conf配置文件中的enable\_group\_commit配置为True。
+    只有当MOT引擎配置为同步组提交日志记录时，此选项才相关。即postgresql.conf中的synchronization\_commit配置为true，mot.conf配置文件中的enable\_group\_commit配置为true。
 
     当一组事务记录在WAL重做日志中时，需确定以下设置项取值：
 
