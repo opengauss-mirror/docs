@@ -385,7 +385,7 @@ export PGDATABASE=postgres
 
 -   --section=SECTION
 
-    指定已转储的名称区段（pre-data、data、和post-data）。
+    指定已转储的名称区段（pre-data、data和post-data）。
 
 -   --serializable-deferrable
 
