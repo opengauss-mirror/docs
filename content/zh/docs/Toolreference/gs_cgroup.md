@@ -69,7 +69,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
     更新Gaussdb进程使用的CPU核数为0-20。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-f参数只适用于对Gaussdb设置核数范围。对于其他各控制组，如需设置核数范围，需要使用--fixed参数
+    >-f参数只适用于对Gaussdb设置核数范围。对于其他各控制组，如需设置核数范围，需要使用--fixed参数。
 
 5.  设置异常处理信息（class:wg组需存在）。  
     a.  设置组class:wg下的作业阻塞到1200秒或执行2400秒时执行终止动作：
@@ -259,7 +259,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
     </td>
     <td class="cellrowborder" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"></a>-</p>
     </td>
-    <td class="cellrowborder" rowspan="4" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a>Rate：代表Timeshare中的分配比例，Low最少为1，Rush最高为8。这四个Timeshare组的资源配比为Rush:High:Medium:Low=8:4:2:1</p>
+    <td class="cellrowborder" rowspan="4" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a>Rate：代表Timeshare中的分配比例，Low最少为1，Rush最高为8。这四个Timeshare组的资源配比为Rush:High:Medium:Low=8:4:2:1。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rc218d5326a2744f3aea8ed9b5854b8ea"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"></a>725</p>
@@ -543,7 +543,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
     指定Class Cgroups的资源占用“Top Class”Cgroups资源的百分比，需同时指定“-S classname”参数；用于创建“-c”或更新“-u”Class Cgroups。
 
-    取值范围为1-99。默认Class控制组的CPU配额设置为20%，R6C10版本中，Class控制组的CPU配额设置为40%，升级过程中，不会对此配额做更新。新创建的Class控制组的CPU配额以及默认的DefaultClass之和应小于100%
+    取值范围为1-99。默认Class控制组的CPU配额设置为20%，R6C10版本中，Class控制组的CPU配额设置为40%，升级过程中，不会对此配额做更新。新创建的Class控制组的CPU配额以及默认的DefaultClass之和应小于100%。
 
 -   -S name
 
