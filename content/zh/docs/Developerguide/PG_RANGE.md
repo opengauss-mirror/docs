@@ -39,7 +39,7 @@ PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.m
 </td>
 <td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a59a637af38d1492a98c0722946e1f7db"></a><a href="PG_COLLATION.md">PG_COLLATION</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="41.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"></a>用于范围比较的排序规则的OID，如果没有则为零。</p>
+<td class="cellrowborder" valign="top" width="41.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_a6a04fe0e13d04eb1aec77ed0d2891278"></a>用于范围比较的排序规则的OID，如果没有则为0。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_r52e5c9c931084a52937cc948e60b5a2c"><td class="cellrowborder" valign="top" width="18.04%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122309_zh-cn_topic_0059778637_aa4fd917d0e9244af82200067215dd815"><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_aa4fd917d0e9244af82200067215dd815"></a><a name="zh-cn_topic_0237122309_zh-cn_topic_0059778637_aa4fd917d0e9244af82200067215dd815"></a>rngsubopc</p>
