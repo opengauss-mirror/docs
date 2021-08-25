@@ -340,7 +340,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
     取值范围
 
-    -   为1 \~ 99。在不进行设置的情况下，默认CPU配额设置为Vacuum控制组占20%，DefaultBackend控制组占%80。Vacuum和DefaultBackend控制组配额之和设置应小于100%。
+    -   为1 \~ 99。在不进行设置的情况下，默认CPU配额设置为Vacuum控制组占20%，DefaultBackend控制组占80%。Vacuum和DefaultBackend控制组配额之和设置应小于100%。
 
 -   -B name
 
