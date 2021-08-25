@@ -1003,7 +1003,7 @@ headless: true
         -   [调试]({{< relref "./docs/Developerguide/调试-20.md" >}})
         -   [PLDEBUGGER]({{< relref "./docs/Developerguide/PLDEBUGGER.md" >}})
 		-   [package]({{< relref "./docs/Developerguide/package.md" >}})
-	-   [自治事务](自治事务.md)
+	-   [自治事务]({{< relref "./docs/Developerguide/自治事务.md" >}})
 		-   [存储过程支持自治事务](存储过程支持自治事务.md)
 		-   [匿名块支持自治事务](匿名块支持自治事务.md)
 		-   [规格约束](规格约束.md)	
