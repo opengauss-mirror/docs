@@ -12,5 +12,5 @@ The following shows the results of very high resource utilization that was teste
 
 ![](figures/en-us_image_0257713433.png)
 
-This graph compares the performance results of openGauss, ORACLE, Postgres or MYSQL disk-based tables, with the results of MOT \(the orange line\). It shows that only MOT demonstrates a significant performance increase correlation with an increase of the quantity of cores. Only MOT consumes more and more of the CPU correlating to the increase of the quantity of cores; other solutions do not increase and sometimes show slightly degraded performance.
+This graph compares the performance results of openGauss, ORACLE, Postgres or MySQL disk-based tables, with the results of MOT \(the orange line\). It shows that only MOT demonstrates a significant performance increase correlation with an increase of the quantity of cores. Only MOT consumes more and more of the CPU correlating to the increase of the quantity of cores; other solutions do not increase and sometimes show slightly degraded performance.
 
