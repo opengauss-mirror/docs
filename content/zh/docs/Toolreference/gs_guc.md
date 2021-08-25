@@ -26,7 +26,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     ![](public_sys-resources/icon-note.gif) **说明：**
 
-    “client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为:“test.key.cipher、test.key.rand”。
+    “client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为：“test.key.cipher、test.key.rand”。
 
 
 -   “datasource.key.cipher”，“datasource.key.rand”
