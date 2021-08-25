@@ -80,14 +80,14 @@ GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据
 </td>
 <td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122262_p352410521067"><a name="zh-cn_topic_0237122262_p352410521067"></a><a name="zh-cn_topic_0237122262_p352410521067"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p1452410528610"><a name="zh-cn_topic_0237122262_p1452410528610"></a><a name="zh-cn_topic_0237122262_p1452410528610"></a>实例对应进程从磁盘读数据的读速率(不包括从磁盘pagecache中读取的字节数，10秒均值)，单位KB/s。</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p1452410528610"><a name="zh-cn_topic_0237122262_p1452410528610"></a><a name="zh-cn_topic_0237122262_p1452410528610"></a>实例对应进程从磁盘读数据的读速率（不包括从磁盘pagecache中读取的字节数，10秒均值），单位KB/s。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122262_row185242528614"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122262_p952435210618"><a name="zh-cn_topic_0237122262_p952435210618"></a><a name="zh-cn_topic_0237122262_p952435210618"></a>process_write</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.57%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122262_p145243524611"><a name="zh-cn_topic_0237122262_p145243524611"></a><a name="zh-cn_topic_0237122262_p145243524611"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p145245521961"><a name="zh-cn_topic_0237122262_p145245521961"></a><a name="zh-cn_topic_0237122262_p145245521961"></a>实例对应进程向磁盘写数据的写速率(不包括向磁盘pagecache中写入的字节数，10秒均值)，单位KB/s。</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122262_p145245521961"><a name="zh-cn_topic_0237122262_p145245521961"></a><a name="zh-cn_topic_0237122262_p145245521961"></a>实例对应进程向磁盘写数据的写速率（不包括向磁盘pagecache中写入的字节数，10秒均值），单位KB/s。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122262_row7524952862"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122262_p952417521767"><a name="zh-cn_topic_0237122262_p952417521767"></a><a name="zh-cn_topic_0237122262_p952417521767"></a>logical_read</p>
