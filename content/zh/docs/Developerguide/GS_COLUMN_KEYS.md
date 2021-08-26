@@ -17,28 +17,28 @@ GS\_COLUMN\_KEYS系统表记录密态等值特性中列加密密钥相关信息�
 </td>
 <td class="cellrowborder" valign="top" width="26.72267226722672%" headers="mcps1.2.4.1.2 "><p id="p1187332611532"><a name="p1187332611532"></a><a name="p1187332611532"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p6481690534"><a name="p6481690534"></a><a name="p6481690534"></a>列加密密钥(cek)名称。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p6481690534"><a name="p6481690534"></a><a name="p6481690534"></a>列加密密钥（cek）名称。</p>
 </td>
 </tr>
 <tr id="row988420582379"><td class="cellrowborder" valign="top" width="28.12281228122812%" headers="mcps1.2.4.1.1 "><p id="p2060715083816"><a name="p2060715083816"></a><a name="p2060715083816"></a>column_key_distributed_id</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.72267226722672%" headers="mcps1.2.4.1.2 "><p id="p7884458103720"><a name="p7884458103720"></a><a name="p7884458103720"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p988495823710"><a name="p988495823710"></a><a name="p988495823710"></a>根据加密密钥(cek)全称域名hash值得到的id。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p988495823710"><a name="p988495823710"></a><a name="p988495823710"></a>根据加密密钥（cek）全称域名hash值得到的id。</p>
 </td>
 </tr>
 <tr id="row8695719203810"><td class="cellrowborder" valign="top" width="28.12281228122812%" headers="mcps1.2.4.1.1 "><p id="p16647142015383"><a name="p16647142015383"></a><a name="p16647142015383"></a>global_key_id</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.72267226722672%" headers="mcps1.2.4.1.2 "><p id="p116969196381"><a name="p116969196381"></a><a name="p116969196381"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p1369611973814"><a name="p1369611973814"></a><a name="p1369611973814"></a>外键。客户端加密主密钥(cmk)的OID。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p1369611973814"><a name="p1369611973814"></a><a name="p1369611973814"></a>外键。客户端加密主密钥（cmk）的OID。</p>
 </td>
 </tr>
 <tr id="row10460542185211"><td class="cellrowborder" valign="top" width="28.12281228122812%" headers="mcps1.2.4.1.1 "><p id="p163156504535"><a name="p163156504535"></a><a name="p163156504535"></a>key_namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.72267226722672%" headers="mcps1.2.4.1.2 "><p id="p10187125355311"><a name="p10187125355311"></a><a name="p10187125355311"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p84761096534"><a name="p84761096534"></a><a name="p84761096534"></a>包含此列加密密钥(cek)的命名空间OID。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p84761096534"><a name="p84761096534"></a><a name="p84761096534"></a>包含此列加密密钥（cek）的命名空间OID。</p>
 </td>
 </tr>
 <tr id="row9460154275216"><td class="cellrowborder" valign="top" width="28.12281228122812%" headers="mcps1.2.4.1.1 "><p id="p10712105012310"><a name="p10712105012310"></a><a name="p10712105012310"></a>key_owner</p>

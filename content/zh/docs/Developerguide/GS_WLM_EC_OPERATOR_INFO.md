@@ -38,7 +38,7 @@ GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作�
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p205191014155120"><a name="zh-cn_topic_0111176227_p205191014155120"></a><a name="zh-cn_topic_0111176227_p205191014155120"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p1451971495114"><a name="zh-cn_topic_0111176227_p1451971495114"></a><a name="zh-cn_topic_0111176227_p1451971495114"></a>EC算子到结束时候总的执行时间(ms)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p1451971495114"><a name="zh-cn_topic_0111176227_p1451971495114"></a><a name="zh-cn_topic_0111176227_p1451971495114"></a>EC算子到结束时候总的执行时间（ms）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row14519161419512"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p4519181485114"><a name="zh-cn_topic_0111176227_p4519181485114"></a><a name="zh-cn_topic_0111176227_p4519181485114"></a>tuple_processed</p>
@@ -52,21 +52,21 @@ GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作�
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p8519151410510"><a name="zh-cn_topic_0111176227_p8519151410510"></a><a name="zh-cn_topic_0111176227_p8519151410510"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p165191114145119"><a name="zh-cn_topic_0111176227_p165191114145119"></a><a name="zh-cn_topic_0111176227_p165191114145119"></a>EC算子在所有DN上的最小内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p165191114145119"><a name="zh-cn_topic_0111176227_p165191114145119"></a><a name="zh-cn_topic_0111176227_p165191114145119"></a>EC算子在所有DN上的最小内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row651951425114"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p1519121413516"><a name="zh-cn_topic_0111176227_p1519121413516"></a><a name="zh-cn_topic_0111176227_p1519121413516"></a>max_peak_memory</p>
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p1751916147515"><a name="zh-cn_topic_0111176227_p1751916147515"></a><a name="zh-cn_topic_0111176227_p1751916147515"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p85191314135116"><a name="zh-cn_topic_0111176227_p85191314135116"></a><a name="zh-cn_topic_0111176227_p85191314135116"></a>EC算子在所有DN上的最大内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p85191314135116"><a name="zh-cn_topic_0111176227_p85191314135116"></a><a name="zh-cn_topic_0111176227_p85191314135116"></a>EC算子在所有DN上的最大内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row165191314175116"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p1252010141514"><a name="zh-cn_topic_0111176227_p1252010141514"></a><a name="zh-cn_topic_0111176227_p1252010141514"></a>average_peak_memory</p>
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p3520171413517"><a name="zh-cn_topic_0111176227_p3520171413517"></a><a name="zh-cn_topic_0111176227_p3520171413517"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p15520161445117"><a name="zh-cn_topic_0111176227_p15520161445117"></a><a name="zh-cn_topic_0111176227_p15520161445117"></a>EC算子在所有DN上的平均内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p15520161445117"><a name="zh-cn_topic_0111176227_p15520161445117"></a><a name="zh-cn_topic_0111176227_p15520161445117"></a>EC算子在所有DN上的平均内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row1252051419514"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p19520161411513"><a name="zh-cn_topic_0111176227_p19520161411513"></a><a name="zh-cn_topic_0111176227_p19520161411513"></a>ec_status</p>

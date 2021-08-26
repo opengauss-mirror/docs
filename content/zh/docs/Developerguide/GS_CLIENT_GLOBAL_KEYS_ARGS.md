@@ -17,7 +17,7 @@ GS\_CLIENT\_GLOBAL\_KEYS\_ARGS系统表记录密态等值特性中客户端加�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p1187332611532"><a name="p1187332611532"></a><a name="p1187332611532"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p6481690534"><a name="p6481690534"></a><a name="p6481690534"></a>客户端加密主密钥(cmk)oid。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p6481690534"><a name="p6481690534"></a><a name="p6481690534"></a>客户端加密主密钥（cmk）oid。</p>
 </td>
 </tr>
 <tr id="row10460542185211"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p163156504535"><a name="p163156504535"></a><a name="p163156504535"></a>function_name</p>
@@ -31,14 +31,14 @@ GS\_CLIENT\_GLOBAL\_KEYS\_ARGS系统表记录密态等值特性中客户端加�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p3474109115313"><a name="p3474109115313"></a><a name="p3474109115313"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0883744141916"><a name="p0883744141916"></a><a name="p0883744141916"></a>客户端加密主密钥(cmk)的元数据信息对应的名称。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0883744141916"><a name="p0883744141916"></a><a name="p0883744141916"></a>客户端加密主密钥（cmk）的元数据信息对应的名称。</p>
 </td>
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>value</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p5442184019342"><a name="p5442184019342"></a><a name="p5442184019342"></a>客户端加密主密钥(cmk)的元数据信息名称的值。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p5442184019342"><a name="p5442184019342"></a><a name="p5442184019342"></a>客户端加密主密钥（cmk）的元数据信息名称的值。</p>
 </td>
 </tr>
 </tbody>
