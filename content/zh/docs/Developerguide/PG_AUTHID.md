@@ -188,21 +188,21 @@ GaussDB KernelopenGauss中只有一份pg\_authid，不是每个数据库有一�
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="p164621422155812"><a name="p164621422155812"></a><a name="p164621422155812"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p194628227587"><a name="p194628227587"></a><a name="p194628227587"></a>监控管理员用户</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p194628227587"><a name="p194628227587"></a><a name="p194628227587"></a>是否设置为监控管理员用户。</p>
 </td>
 </tr>
 <tr id="row18630132515114"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p221692625819"><a name="p221692625819"></a><a name="p221692625819"></a>roloperatoradmin</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="p321732625820"><a name="p321732625820"></a><a name="p321732625820"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p1221719260585"><a name="p1221719260585"></a><a name="p1221719260585"></a>运维管理员用户</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p1221719260585"><a name="p1221719260585"></a><a name="p1221719260585"></a>是否设置为运维管理员用户。</p>
 </td>
 </tr>
 <tr id="row146315257512"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p250818301582"><a name="p250818301582"></a><a name="p250818301582"></a>rolpolicyadmin</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="p18508330125815"><a name="p18508330125815"></a><a name="p18508330125815"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p6508123013585"><a name="p6508123013585"></a><a name="p6508123013585"></a>安全策略管理员用户</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p6508123013585"><a name="p6508123013585"></a><a name="p6508123013585"></a>是否设置为安全策略管理员用户。</p>
 </td>
 </tr>
 </tbody>

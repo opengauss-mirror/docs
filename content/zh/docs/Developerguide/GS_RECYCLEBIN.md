@@ -60,7 +60,7 @@ gs\_recyclebin描述了回收站对象的详细信息。
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p0248173712522"><a name="p0248173712522"></a><a name="p0248173712522"></a>"char"</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p124833719522"><a name="p124833719522"></a><a name="p124833719522"></a>操作类型</p>
-<a name="ul9248537185214"></a><a name="ul9248537185214"></a><ul id="ul9248537185214"><li>d表示drop,</li><li>t表示truncate</li></ul>
+<a name="ul9248537185214"></a><a name="ul9248537185214"></a><ul id="ul9248537185214"><li>d表示drop</li><li>t表示truncate</li></ul>
 </td>
 </tr>
 <tr id="row15249143716526"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p162491437205212"><a name="p162491437205212"></a><a name="p162491437205212"></a>rcytype</p>
@@ -117,7 +117,7 @@ gs\_recyclebin描述了回收站对象的详细信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p82507377523"><a name="p82507377523"></a><a name="p82507377523"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p92501737125218"><a name="p92501737125218"></a><a name="p92501737125218"></a>这个关系存储所在的表空间。如果为零，则意味着使用该数据库的缺省表空间。如果关系在磁盘上没有文件，则这个字段没有什么意义。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p92501737125218"><a name="p92501737125218"></a><a name="p92501737125218"></a>这个关系存储所在的表空间。如果为0，则意味着使用该数据库的缺省表空间。如果关系在磁盘上没有文件，则这个字段没有什么意义。</p>
 </td>
 </tr>
 <tr id="row15250103713521"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p1525015375521"><a name="p1525015375521"></a><a name="p1525015375521"></a>rcyrelfilenode</p>

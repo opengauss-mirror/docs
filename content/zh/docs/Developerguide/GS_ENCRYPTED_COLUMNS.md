@@ -45,14 +45,14 @@ GS\_ENCRYPTED\_COLUMNS系统表记录密态等值特性中表的加密列相关�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p15635713355"><a name="p15635713355"></a><a name="p15635713355"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p76347103519"><a name="p76347103519"></a><a name="p76347103519"></a>加密列的原始数据类型id；</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p76347103519"><a name="p76347103519"></a><a name="p76347103519"></a>加密列的原始数据类型id。</p>
 </td>
 </tr>
 <tr id="row149191821183516"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p1550316317400"><a name="p1550316317400"></a><a name="p1550316317400"></a>data_type_original_mod</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p15919421203519"><a name="p15919421203519"></a><a name="p15919421203519"></a>int4</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p119191921193514"><a name="p119191921193514"></a><a name="p119191921193514"></a>加密列的原始数据类型修饰符；</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p119191921193514"><a name="p119191921193514"></a><a name="p119191921193514"></a>加密列的原始数据类型修饰符。</p>
 </td>
 </tr>
 <tr id="row18615103614409"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p1799441144010"><a name="p1799441144010"></a><a name="p1799441144010"></a>create_date</p>

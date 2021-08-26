@@ -14,7 +14,7 @@ openGauss提供了gs\_ssh工具帮助用户在openGauss各节点上执行相同�
 -   各个主机间互信正常。
 -   openGauss已经正确安装部署。
 -   调用命令可用which查询到且在当前用户下有执行权限。
--   需以操作系统用户omm执行gs\_ssh命令
+-   需以操作系统用户omm执行gs\_ssh命令。
 
 ## 语法<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_s1b40498eb43141dcb07e36a6a51325f1"></a>
 
