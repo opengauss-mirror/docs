@@ -38,14 +38,14 @@ SUMMARY\_STAT\_USER\_FUNCTIONS用来统计所数据库节点用户自定义函�
 </td>
 <td class="cellrowborder" valign="top" width="16.950000000000003%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122616_p8306175274717"><a name="zh-cn_topic_0237122616_p8306175274717"></a><a name="zh-cn_topic_0237122616_p8306175274717"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122616_p530655211474"><a name="zh-cn_topic_0237122616_p530655211474"></a><a name="zh-cn_topic_0237122616_p530655211474"></a>调用此function的总时间花费，包含调用其它function的时间(单位：毫秒)。</p>
+<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122616_p530655211474"><a name="zh-cn_topic_0237122616_p530655211474"></a><a name="zh-cn_topic_0237122616_p530655211474"></a>调用此function的总时间花费，包含调用其它function的时间（单位：毫秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122616_row2306165204715"><td class="cellrowborder" valign="top" width="25.14%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122616_p3306155214470"><a name="zh-cn_topic_0237122616_p3306155214470"></a><a name="zh-cn_topic_0237122616_p3306155214470"></a>self_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.950000000000003%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122616_p1830616528477"><a name="zh-cn_topic_0237122616_p1830616528477"></a><a name="zh-cn_topic_0237122616_p1830616528477"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122616_p930611521471"><a name="zh-cn_topic_0237122616_p930611521471"></a><a name="zh-cn_topic_0237122616_p930611521471"></a>调用此function自己时间的花费，不包含调用其它function的时间(单位：毫秒)。</p>
+<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122616_p930611521471"><a name="zh-cn_topic_0237122616_p930611521471"></a><a name="zh-cn_topic_0237122616_p930611521471"></a>调用此function自己时间的花费，不包含调用其它function的时间（单位：毫秒）。</p>
 </td>
 </tr>
 </tbody>
