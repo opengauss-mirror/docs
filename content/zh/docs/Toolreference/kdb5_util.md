@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="zh-cn_topic_0237152428_section10172172474817"></a>
 
-为openGauss认证服务Kerberos提供数据库管理操作的工具, 可以新建、销毁、导入和导出数据库。
+为openGauss认证服务Kerberos提供数据库管理操作的工具，可以新建、销毁、导入和导出数据库。
 
 ## 参数说明<a name="zh-cn_topic_0237152428_zh-cn_topic_0059778103_se0ebdb25733f42f5b4286a1fc7e54a13"></a>
 
