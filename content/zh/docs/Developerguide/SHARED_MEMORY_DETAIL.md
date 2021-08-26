@@ -38,21 +38,21 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122563_p1482769125120"><a name="zh-cn_topic_0237122563_p1482769125120"></a><a name="zh-cn_topic_0237122563_p1482769125120"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122563_p28274910516"><a name="zh-cn_topic_0237122563_p28274910516"></a><a name="zh-cn_topic_0237122563_p28274910516"></a>共享内存总大小(单位：字节)。</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122563_p28274910516"><a name="zh-cn_topic_0237122563_p28274910516"></a><a name="zh-cn_topic_0237122563_p28274910516"></a>共享内存总大小（单位：字节）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122563_row1082779155117"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122563_p1982710985119"><a name="zh-cn_topic_0237122563_p1982710985119"></a><a name="zh-cn_topic_0237122563_p1982710985119"></a>freesize</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122563_p082711925117"><a name="zh-cn_topic_0237122563_p082711925117"></a><a name="zh-cn_topic_0237122563_p082711925117"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122563_p1382712925114"><a name="zh-cn_topic_0237122563_p1382712925114"></a><a name="zh-cn_topic_0237122563_p1382712925114"></a>共享内存剩余大小(单位：字节)。</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122563_p1382712925114"><a name="zh-cn_topic_0237122563_p1382712925114"></a><a name="zh-cn_topic_0237122563_p1382712925114"></a>共享内存剩余大小（单位：字节）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122563_row128281955119"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122563_p682811955110"><a name="zh-cn_topic_0237122563_p682811955110"></a><a name="zh-cn_topic_0237122563_p682811955110"></a>usedsize</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122563_p28285915516"><a name="zh-cn_topic_0237122563_p28285915516"></a><a name="zh-cn_topic_0237122563_p28285915516"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122563_p1682814985114"><a name="zh-cn_topic_0237122563_p1682814985114"></a><a name="zh-cn_topic_0237122563_p1682814985114"></a>共享内存使用大小(单位：字节)。</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122563_p1682814985114"><a name="zh-cn_topic_0237122563_p1682814985114"></a><a name="zh-cn_topic_0237122563_p1682814985114"></a>共享内存使用大小（单位：字节）。</p>
 </td>
 </tr>
 </tbody>
