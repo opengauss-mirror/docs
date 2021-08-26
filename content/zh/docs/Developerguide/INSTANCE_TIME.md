@@ -8,7 +8,7 @@
 -   PARSE\_TIME：SQL解析的时间花销。
 -   PLAN\_TIME：生成Plan的时间花销。
 -   REWRITE\_TIME：SQL重写的时间花销。
--   PL\_EXECUTION\_TIME ：plpgsql（存储过程）执行的时间花销。
+-   PL\_EXECUTION\_TIME：plpgsql（存储过程）执行的时间花销。
 -   PL\_COMPILATION\_TIME：plpgsql（存储过程）编译的时间花销。
 -   NET\_SEND\_TIME：网络上的时间花销。
 -   DATA\_IO\_TIME：IO上的时间花销。
