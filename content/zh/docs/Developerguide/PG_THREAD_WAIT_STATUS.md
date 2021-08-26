@@ -1017,32 +1017,32 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0237122466_row452973123618"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p195299316365"><a name="zh-cn_topic_0237122466_p195299316365"></a><a name="zh-cn_topic_0237122466_p195299316365"></a>LockFileAddToDataDirRead</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p15291031113612"><a name="zh-cn_topic_0237122466_p15291031113612"></a><a name="zh-cn_topic_0237122466_p15291031113612"></a>读取"postmaster.pid"文件。</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p15291031113612"><a name="zh-cn_topic_0237122466_p15291031113612"></a><a name="zh-cn_topic_0237122466_p15291031113612"></a>读取“postmaster.pid”文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row1552915315362"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p16529153163615"><a name="zh-cn_topic_0237122466_p16529153163615"></a><a name="zh-cn_topic_0237122466_p16529153163615"></a>LockFileAddToDataDirSync</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p19529163111365"><a name="zh-cn_topic_0237122466_p19529163111365"></a><a name="zh-cn_topic_0237122466_p19529163111365"></a>将"postmaster.pid"内容持久化到磁盘。</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p19529163111365"><a name="zh-cn_topic_0237122466_p19529163111365"></a><a name="zh-cn_topic_0237122466_p19529163111365"></a>将“postmaster.pid”内容持久化到磁盘。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row35291731163610"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p852923163610"><a name="zh-cn_topic_0237122466_p852923163610"></a><a name="zh-cn_topic_0237122466_p852923163610"></a>LockFileAddToDataDirWrite</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1852916316365"><a name="zh-cn_topic_0237122466_p1852916316365"></a><a name="zh-cn_topic_0237122466_p1852916316365"></a>将pid信息写到"postmaster.pid"文件。</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1852916316365"><a name="zh-cn_topic_0237122466_p1852916316365"></a><a name="zh-cn_topic_0237122466_p1852916316365"></a>将pid信息写到“postmaster.pid”文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row0529123173620"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p55291031183614"><a name="zh-cn_topic_0237122466_p55291031183614"></a><a name="zh-cn_topic_0237122466_p55291031183614"></a>LockFileCreateRead</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1252919318367"><a name="zh-cn_topic_0237122466_p1252919318367"></a><a name="zh-cn_topic_0237122466_p1252919318367"></a>读取LockFile文件"%s.lock"。</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1252919318367"><a name="zh-cn_topic_0237122466_p1252919318367"></a><a name="zh-cn_topic_0237122466_p1252919318367"></a>读取LockFile文件“%s.lock”。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row6529183193619"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1852963143611"><a name="zh-cn_topic_0237122466_p1852963143611"></a><a name="zh-cn_topic_0237122466_p1852963143611"></a>LockFileCreateSync</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1052983114369"><a name="zh-cn_topic_0237122466_p1052983114369"></a><a name="zh-cn_topic_0237122466_p1052983114369"></a>将LockFile文件"%s.lock"内容持久化到磁盘。</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p1052983114369"><a name="zh-cn_topic_0237122466_p1052983114369"></a><a name="zh-cn_topic_0237122466_p1052983114369"></a>将LockFile文件“%s.lock”内容持久化到磁盘。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row65291313368"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p352923115362"><a name="zh-cn_topic_0237122466_p352923115362"></a><a name="zh-cn_topic_0237122466_p352923115362"></a>LockFileCreateWRITE</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p5529103193611"><a name="zh-cn_topic_0237122466_p5529103193611"></a><a name="zh-cn_topic_0237122466_p5529103193611"></a>将pid信息写到LockFile文件"%s.lock"。</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122466_p5529103193611"><a name="zh-cn_topic_0237122466_p5529103193611"></a><a name="zh-cn_topic_0237122466_p5529103193611"></a>将pid信息写到LockFile文件“%s.lock”。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122466_row2052973193615"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122466_p1252903118368"><a name="zh-cn_topic_0237122466_p1252903118368"></a><a name="zh-cn_topic_0237122466_p1252903118368"></a>RelationMapRead</p>
