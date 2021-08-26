@@ -673,7 +673,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="row115345178541"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p135341179541"><a name="p135341179541"></a><a name="p135341179541"></a>CBMParseXlogLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p75341617115410"><a name="p75341617115410"></a><a name="p75341617115410"></a>Cbm 解析xlog时的保护锁</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p75341617115410"><a name="p75341617115410"></a><a name="p75341617115410"></a>Cbm 解析xlog时的保护锁。</p>
 </td>
 </tr>
 <tr id="row1419795555416"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p019875565411"><a name="p019875565411"></a><a name="p019875565411"></a>RelfilenodeReuseLock</p>
@@ -688,17 +688,17 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="row75270512587"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p14528185115817"><a name="p14528185115817"></a><a name="p14528185115817"></a>PercentileLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1652817519585"><a name="p1652817519585"></a><a name="p1652817519585"></a>用于保护全局PercentileBuffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1652817519585"><a name="p1652817519585"></a><a name="p1652817519585"></a>用于保护全局PercentileBuffer。</p>
 </td>
 </tr>
 <tr id="row642581816115"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1542571810117"><a name="p1542571810117"></a><a name="p1542571810117"></a>CSNBufMappingLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p174251118119"><a name="p174251118119"></a><a name="p174251118119"></a>保护csn页面</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p174251118119"><a name="p174251118119"></a><a name="p174251118119"></a>保护csn页面。</p>
 </td>
 </tr>
 <tr id="row16334361129"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p133341162219"><a name="p133341162219"></a><a name="p133341162219"></a>UniqueSQLMappingLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p15334961128"><a name="p15334961128"></a><a name="p15334961128"></a>用于保护uniquesql hash table</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p15334961128"><a name="p15334961128"></a><a name="p15334961128"></a>用于保护uniquesql hash table。</p>
 </td>
 </tr>
 <tr id="row107301846161711"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p573013460178"><a name="p573013460178"></a><a name="p573013460178"></a>DelayDDLLock</p>
@@ -708,47 +708,47 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="row0177126141920"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p15177132691912"><a name="p15177132691912"></a><a name="p15177132691912"></a>CLOG Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p9177102631917"><a name="p9177102631917"></a><a name="p9177102631917"></a>用于避免并发访问或者修改Clog控制数据结构</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p9177102631917"><a name="p9177102631917"></a><a name="p9177102631917"></a>用于避免并发访问或者修改Clog控制数据结构。</p>
 </td>
 </tr>
 <tr id="row13521171316206"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p2521181342020"><a name="p2521181342020"></a><a name="p2521181342020"></a>Async Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p552291322017"><a name="p552291322017"></a><a name="p552291322017"></a>保护Async buffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p552291322017"><a name="p552291322017"></a><a name="p552291322017"></a>保护Async buffer。</p>
 </td>
 </tr>
 <tr id="row039155742010"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1439115714203"><a name="p1439115714203"></a><a name="p1439115714203"></a>MultiXactOffset Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p133935792010"><a name="p133935792010"></a><a name="p133935792010"></a>保护MultiXact offet的slru buffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p133935792010"><a name="p133935792010"></a><a name="p133935792010"></a>保护MultiXact offet的slru buffer。</p>
 </td>
 </tr>
 <tr id="row8426111952114"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p9426111912211"><a name="p9426111912211"></a><a name="p9426111912211"></a>MultiXactMember Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p14426111922110"><a name="p14426111922110"></a><a name="p14426111922110"></a>保护MultiXact member的slrubuffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p14426111922110"><a name="p14426111922110"></a><a name="p14426111922110"></a>保护MultiXact member的slrubuffer。</p>
 </td>
 </tr>
 <tr id="row16796316172217"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p3796201602217"><a name="p3796201602217"></a><a name="p3796201602217"></a>OldSerXid SLRU Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1879651619229"><a name="p1879651619229"></a><a name="p1879651619229"></a>保护old xids的slru buffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p1879651619229"><a name="p1879651619229"></a><a name="p1879651619229"></a>保护old xids的slru buffer。</p>
 </td>
 </tr>
 <tr id="row13779172092517"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p12780122022517"><a name="p12780122022517"></a><a name="p12780122022517"></a>ReplicationSlotLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p10780192013252"><a name="p10780192013252"></a><a name="p10780192013252"></a>用于保护ReplicationSlot</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p10780192013252"><a name="p10780192013252"></a><a name="p10780192013252"></a>用于保护ReplicationSlot。</p>
 </td>
 </tr>
 <tr id="row61636273260"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p201634278269"><a name="p201634278269"></a><a name="p201634278269"></a>PGPROCLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p13163132713260"><a name="p13163132713260"></a><a name="p13163132713260"></a>用于保护pgproc</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p13163132713260"><a name="p13163132713260"></a><a name="p13163132713260"></a>用于保护pgproc。</p>
 </td>
 </tr>
 <tr id="row93871137270"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p1838711316274"><a name="p1838711316274"></a><a name="p1838711316274"></a>MetaCacheLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p338711139273"><a name="p338711139273"></a><a name="p338711139273"></a>用于保护MetaCache</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p338711139273"><a name="p338711139273"></a><a name="p338711139273"></a>用于保护MetaCache。</p>
 </td>
 </tr>
 <tr id="row51712311285"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p181783132811"><a name="p181783132811"></a><a name="p181783132811"></a>DataCacheLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p151763132817"><a name="p151763132817"></a><a name="p151763132817"></a>用于保护datacache</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="p151763132817"><a name="p151763132817"></a><a name="p151763132817"></a>用于保护datacache。</p>
 </td>
 </tr>
 <tr id="row10781736162818"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="p167953692820"><a name="p167953692820"></a><a name="p167953692820"></a>InstrUserLock</p>
