@@ -316,7 +316,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     允许忽略备份的无效状态。如果出于某种原因需要从损坏的或无效的备份中恢复数据，可以使用此标志。请谨慎使用。
 
-**恢复目标相关参数\(recovery\_options\)**
+**恢复目标相关参数（recovery_options）**
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
 
@@ -354,8 +354,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     该参数必须和--recovery-target-name、--recovery-target-time、--recovery-target-lsn或--recovery-target-xid一起使用。
 
-
-**留存相关参数\(retention\_options\)**
+**留存相关参数（retention_options）**
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
 
@@ -395,8 +394,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     显示所有可用备份的当前状态，不删除或合并过期备份。
 
-
-**固定备份相关参数\(pinning\_options\)**
+**固定备份相关参数（pinning_options）**
 
 ![](public_sys-resources/icon-note.gif) **说明：**
 
@@ -416,8 +414,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     例如：--expire-time='2020-01-01 00:00:00+03'
 
-
-**日志相关参数\(logging\_options\)**
+**日志相关参数（logging_options）**
 
 日志级别：verbose、log、info、warning、error和off。
 
@@ -471,8 +468,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：0
 
-
-**连接相关参数\(connection\_options\)**
+**连接相关参数（connection_options）**
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
 
@@ -514,8 +510,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     指定用户连接的密码。如果主机的认证策略是trust，则不会对系统管理员进行密码验证，即无需输入-W选项；如果没有-W选项，并且不是系统管理员，则会提示用户输入密码。
 
-
-**压缩相关参数\(compression\_options\)**
+**压缩相关参数（compression_options）**
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
 
@@ -544,7 +539,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     以--compress-algorithm=zlib和--compress-level=1进行压缩。
 
-**远程模式相关参数\(remote\_options\)**
+**远程模式相关参数（remote_options）**
 
 ![](public_sys-resources/icon-note.gif) **说明：**
 
@@ -655,4 +650,3 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 </tr>
 </tbody>
 </table>
-
