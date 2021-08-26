@@ -225,5 +225,5 @@ Password:
    ```
 
    >![](C:/Users/lijun/Desktop/opengauss/docs/content/zh/docs/Quickstart/public_sys-resources/icon-note.gif) **说明：** 
-   >如果三个以上节点，和上述过程类似。假设节点名为plat1、plat2、plat3、......。第一步，需要在plat1上生成root用户的本机授权文件；第二步，需要收集所有待建互信主机\(plat1、plat2、plat3、......\)的公钥并写入到本机known\_hosts文件中；第三步，需要将互信文件分发到除本机外的所有其它主机\(plat2、plat3、......\)上；第四步，检查互信是否建立成功。
+   >如果三个以上节点，和上述过程类似。假设节点名为plat1、plat2、plat3、......。第一步，需要在plat1上生成root用户的本机授权文件；第二步，需要收集所有待建互信主机（plat1、plat2、plat3、......）的公钥并写入到本机known\_hosts文件中；第三步，需要将互信文件分发到除本机外的所有其它主机（plat2、plat3、......)上；第四步，检查互信是否建立成功。
 
