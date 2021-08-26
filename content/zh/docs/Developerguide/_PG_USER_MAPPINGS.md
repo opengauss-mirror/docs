@@ -23,7 +23,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="30.243024302430243%"><p id="p1013416713174"><a name="p1013416713174"></a><a name="p1013416713174"></a>text[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.373937393739375%"><p id="p173511513616"><a name="p173511513616"></a><a name="p173511513616"></a>用户映射指定选项，使用"keyword=value”格式的字符串。</p>
+<td class="cellrowborder" valign="top" width="39.373937393739375%"><p id="p173511513616"><a name="p173511513616"></a><a name="p173511513616"></a>用户映射指定选项，使用“keyword=value”格式的字符串。</p>
 </td>
 </tr>
 <tr id="row201063118176"><td class="cellrowborder" valign="top" width="30.383038303830386%"><p id="p3107611171717"><a name="p3107611171717"></a><a name="p3107611171717"></a>umuser</p>
