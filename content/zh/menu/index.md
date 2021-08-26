@@ -1006,7 +1006,7 @@ headless: true
 	-   [自治事务](自治事务.md)
 		-   [存储过程支持自治事务](存储过程支持自治事务.md)
 		-   [匿名块支持自治事务](匿名块支持自治事务.md)
-		-   [规格约束](规格约束.md)	
+		-   [规格约束]({{< relref "./docs/Developerguide/规格约束.md" >}})
     -   [系统表和系统视图]({{< relref "./docs/Developerguide/系统表和系统视图.md" >}})
         -   [系统表和系统视图概述]({{< relref "./docs/Developerguide/系统表和系统视图概述.md" >}})
         -   [系统表]({{< relref "./docs/Developerguide/系统表.md" >}})
