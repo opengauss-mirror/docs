@@ -1,6 +1,6 @@
 # GLOBAL\_FILE\_IOSTAT<a name="ZH-CN_TOPIC_0245374672"></a>
 
-得到所有节点上的数据文件IO 统计信息。
+得到所有节点上的数据文件IO统计信息。
 
 **表 1**  GLOBAL\_FILE\_IOSTAT字段
 
@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122568_p20187144417413"><a name="zh-cn_topic_0237122568_p20187144417413"></a><a name="zh-cn_topic_0237122568_p20187144417413"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122568_p51874441144"><a name="zh-cn_topic_0237122568_p51874441144"></a><a name="zh-cn_topic_0237122568_p51874441144"></a>数据库进程名称</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122568_p51874441144"><a name="zh-cn_topic_0237122568_p51874441144"></a><a name="zh-cn_topic_0237122568_p51874441144"></a>数据库进程名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122568_row1918834418418"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122568_p141886442411"><a name="zh-cn_topic_0237122568_p141886442411"></a><a name="zh-cn_topic_0237122568_p141886442411"></a>filenum</p>
