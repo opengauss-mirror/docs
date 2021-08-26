@@ -25,7 +25,7 @@ PG\_SHDEPEND系统表记录数据库对象和共享对象（比如角色）之�
 </td>
 <td class="cellrowborder" valign="top" width="21.73%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a40ff5c957a3e4fc59572bb4625ec3329"></a><a href="PG_DATABASE.md">PG_DATABASE</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.449999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"></a>依赖对象所在的数据库的OID ，如果是共享对象，则为零。</p>
+<td class="cellrowborder" valign="top" width="50.449999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a8aa5ec846bac4d07bbd9165f40c8d81a"></a>依赖对象所在的数据库的OID，如果是共享对象，则为零。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_r5c689fb4174b4aed85f6ff7b445b2121"><td class="cellrowborder" valign="top" width="15.229999999999999%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a6a6b446e7cef42168c1c662330f83f7b"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a6a6b446e7cef42168c1c662330f83f7b"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a6a6b446e7cef42168c1c662330f83f7b"></a>classid</p>
@@ -61,7 +61,7 @@ PG\_SHDEPEND系统表记录数据库对象和共享对象（比如角色）之�
 </td>
 <td class="cellrowborder" valign="top" width="21.73%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699d32fc2f8549aea23c5eb8503f49ee"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699d32fc2f8549aea23c5eb8503f49ee"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699d32fc2f8549aea23c5eb8503f49ee"></a><a href="PG_CLASS.md">PG_CLASS</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.449999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699e2fbd4c8f480ba65994e4a02b066c"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699e2fbd4c8f480ba65994e4a02b066c"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699e2fbd4c8f480ba65994e4a02b066c"></a>被引用对象所在的系统表的OID(必须是一个共享表)。</p>
+<td class="cellrowborder" valign="top" width="50.449999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699e2fbd4c8f480ba65994e4a02b066c"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699e2fbd4c8f480ba65994e4a02b066c"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_a699e2fbd4c8f480ba65994e4a02b066c"></a>被引用对象所在的系统表的OID（必须是一个共享表）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_rfee4540ac48d444ab78a790f58c11b52"><td class="cellrowborder" valign="top" width="15.229999999999999%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122314_zh-cn_topic_0059778501_ab8bb5468c2c54f4a9a9ecf503a2d84bb"><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_ab8bb5468c2c54f4a9a9ecf503a2d84bb"></a><a name="zh-cn_topic_0237122314_zh-cn_topic_0059778501_ab8bb5468c2c54f4a9a9ecf503a2d84bb"></a>refobjid</p>
