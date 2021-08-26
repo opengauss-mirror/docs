@@ -45,14 +45,14 @@ STAT\_USER\_FUNCTIONS视图显示命名空间中用户自定义函数（函数�
 </td>
 <td class="cellrowborder" valign="top" width="27.35%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a3125de3a8ac441f5843b772b8f901a13"><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a3125de3a8ac441f5843b772b8f901a13"></a><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a3125de3a8ac441f5843b772b8f901a13"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a77832cfe0845486e904f60db7c70c6e1"><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a77832cfe0845486e904f60db7c70c6e1"></a><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a77832cfe0845486e904f60db7c70c6e1"></a>调用此函数花费的总时间，包含调用其它函数的时间(单位：毫秒)。</p>
+<td class="cellrowborder" valign="top" width="46.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a77832cfe0845486e904f60db7c70c6e1"><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a77832cfe0845486e904f60db7c70c6e1"></a><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a77832cfe0845486e904f60db7c70c6e1"></a>调用此函数花费的总时间，包含调用其它函数的时间（单位：毫秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122615_zh-cn_topic_0059779233_r73262a50b5c340bc8786db87cfc5b965"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122615_zh-cn_topic_0059779233_aa6857fed27734c4faa3d46b51611c9ca"><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_aa6857fed27734c4faa3d46b51611c9ca"></a><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_aa6857fed27734c4faa3d46b51611c9ca"></a>self_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.35%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a6708bc962d0744fd8c0d0b5c39dc7798"><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a6708bc962d0744fd8c0d0b5c39dc7798"></a><a name="zh-cn_topic_0237122615_zh-cn_topic_0059779233_a6708bc962d0744fd8c0d0b5c39dc7798"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122615_p930611521471"><a name="zh-cn_topic_0237122615_p930611521471"></a><a name="zh-cn_topic_0237122615_p930611521471"></a>调用此函数自己花费的时间，不包含调用其它函数的时间(单位：毫秒)。</p>
+<td class="cellrowborder" valign="top" width="46.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122615_p930611521471"><a name="zh-cn_topic_0237122615_p930611521471"></a><a name="zh-cn_topic_0237122615_p930611521471"></a>调用此函数自己花费的时间，不包含调用其它函数的时间（单位：毫秒）。</p>
 </td>
 </tr>
 </tbody>
