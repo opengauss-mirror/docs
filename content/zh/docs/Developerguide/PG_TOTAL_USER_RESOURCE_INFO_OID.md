@@ -66,7 +66,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p21954919338"><a name="p21954919338"></a><a name="p21954919338"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p61951093331"><a name="p61951093331"></a><a name="p61951093331"></a>已使用的临时空间大小，单位KB</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p61951093331"><a name="p61951093331"></a><a name="p61951093331"></a>已使用的临时空间大小，单位KB。</p>
 </td>
 </tr>
 <tr id="row1519616963319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p119610911330"><a name="p119610911330"></a><a name="p119610911330"></a>total_temp_space</p>
