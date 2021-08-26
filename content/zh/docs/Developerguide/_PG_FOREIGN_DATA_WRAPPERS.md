@@ -37,7 +37,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.41314131413141%"><p id="p1616633315187"><a name="p1616633315187"></a><a name="p1616633315187"></a>information_schema.sql_identifier</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.13391339133913%"><p id="p6165533191819"><a name="p6165533191819"></a><a name="p6165533191819"></a>外部封装器所在的数据库名称(永远为当前数据库)。</p>
+<td class="cellrowborder" valign="top" width="39.13391339133913%"><p id="p6165533191819"><a name="p6165533191819"></a><a name="p6165533191819"></a>外部封装器所在的数据库名称（永远为当前数据库）。</p>
 </td>
 </tr>
 <tr id="row0654102510108"><td class="cellrowborder" valign="top" width="29.452945294529453%"><p id="p616313320185"><a name="p616313320185"></a><a name="p616313320185"></a>foreign_data_wrapper_name</p>
