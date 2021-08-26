@@ -16,7 +16,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="30.893089308930893%"><p id="p178131316185010"><a name="p178131316185010"></a><a name="p178131316185010"></a>information_schema.sql_identifier</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.373937393739375%"><p id="p128106169502"><a name="p128106169502"></a><a name="p128106169502"></a>外部表所在的数据库名称(永远是当前数据库)。</p>
+<td class="cellrowborder" valign="top" width="39.373937393739375%"><p id="p128106169502"><a name="p128106169502"></a><a name="p128106169502"></a>外部表所在的数据库名称（永远是当前数据库）。</p>
 </td>
 </tr>
 <tr id="row413211712177"><td class="cellrowborder" valign="top" width="29.732973297329735%"><p id="p1980831675010"><a name="p1980831675010"></a><a name="p1980831675010"></a>foreign_table_schema</p>
@@ -44,7 +44,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="30.893089308930893%"><p id="p8782516125011"><a name="p8782516125011"></a><a name="p8782516125011"></a>information_schema.sql_identifier</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.373937393739375%"><p id="p17779111618501"><a name="p17779111618501"></a><a name="p17779111618501"></a>外部服务器所在的数据库名称(永远是当前数据库)。</p>
+<td class="cellrowborder" valign="top" width="39.373937393739375%"><p id="p17779111618501"><a name="p17779111618501"></a><a name="p17779111618501"></a>外部服务器所在的数据库名称（永远是当前数据库）。</p>
 </td>
 </tr>
 <tr id="row4857142761714"><td class="cellrowborder" valign="top" width="29.732973297329735%"><p id="p11776116115013"><a name="p11776116115013"></a><a name="p11776116115013"></a>foreign_server_name</p>
