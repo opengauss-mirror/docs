@@ -145,14 +145,14 @@ gs\_recyclebin描述了回收站对象的详细信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p925113735219"><a name="p925113735219"></a><a name="p925113735219"></a>xid32</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p42511237175211"><a name="p42511237175211"></a><a name="p42511237175211"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p42511237175211"><a name="p42511237175211"></a><a name="p42511237175211"></a>该表中所有在这个之前的事务ID已经被一个固定的（“frozen”）事务ID替换。</p>
 </td>
 </tr>
 <tr id="row11251937175218"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p3251163755213"><a name="p3251163755213"></a><a name="p3251163755213"></a>rcyfrozenxid64</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p132519372521"><a name="p132519372521"></a><a name="p132519372521"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p5251103710528"><a name="p5251103710528"></a><a name="p5251103710528"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p5251103710528"><a name="p5251103710528"></a><a name="p5251103710528"></a>该表中所有在这个之前的事务ID已经被一个固定的（“frozen”）事务ID替换。</p>
 </td>
 </tr>
 </tbody>
