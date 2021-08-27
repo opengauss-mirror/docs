@@ -55,13 +55,16 @@ Session采样数据分为两级，如[图1](#fig197862247217)所示：
 4.  最耗资源的wait event
 
     ```
-SELECT s.type, s.event, t.count
+    SELECT s.type, s.event, t.count
     FROM dbe_perf.wait_events s, (
-SELECT event, COUNT (*)
+    SELECT event, COUNT (*)
     FROM dbe_perf.local_active_session
-WHERE sample_time > now() - 5 / (24 * 60)
+    WHERE sample_time > now() - 5 / (24 * 60)
     GROUP BY event)t WHERE s.event = t.event ORDER BY count DESC;
     ```
+    
+    
+    
 5. 查看最近五分钟较耗资源的session把资源都花费在哪些event上
 
    ```
