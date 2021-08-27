@@ -30,7 +30,8 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     >执行“cm\_ctl query -Cdvi”，回显中“Central Coordinator State”下显示的信息即为CCN信息。
 
 4.  执行如下步骤生成性能报告。
-    1.  执行如下命令生成格式化性能报告文件。
+
+    a.  执行如下命令生成格式化性能报告文件。
 
         ```
         \a \t \o 服务器文件路径
@@ -43,7 +44,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         -   \\o：把所有的查询结果发送至服务器文件里。
         -   服务器文件路径：生成性能报告文件存放路径。用户需要拥有此路径的读写权限。
 
-    2.  执行如下命令将查询到的信息写入性能报告中。
+    b.  执行如下命令将查询到的信息写入性能报告中。
 
         ```
         select generate_wdr_report(begin_snap_id bigint, end_snap_id bigint, report_type cstring, report_scope cstring, node_name cstring);
@@ -101,7 +102,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         </tbody>
         </table>
 
-    3.  执行如下命令关闭输出选项及格式化输出命令。
+    c.  执行如下命令关闭输出选项及格式化输出命令。
 
         ```
         \o \a \t 
