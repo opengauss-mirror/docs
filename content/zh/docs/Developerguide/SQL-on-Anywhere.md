@@ -80,8 +80,10 @@ Extension Connector的基本工作原理是：用户首先构建Data Source对�
     -   不能发送交互命令，如：切换用户需要输入密码的场景等。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.gif) **说明：**
+>
 >1.  为保证兼容性，保留了上个版本对接Spark数据库实例的连接函数exec\_hadoop\_sql。也就是说既可以使用exec\_on\_extension也可以使用exec\_hadoop\_sql进行Spark对接。由于exec\_hadoop\_sql存在安全问题，只有赋权后才能使用，建议用户使用exec\_on\_extension函数。
+>
 >2.  在MySQL兼容性下暂不支持exec\_on\_extension和exec\_hadoop\_sql函数的使用。
 
 -   **[SQL on Hadoop](SQL-on-Hadoop.md)**  
