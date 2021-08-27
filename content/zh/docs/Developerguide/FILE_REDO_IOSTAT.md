@@ -1,6 +1,6 @@
 # FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0245374673"></a>
 
-本节点Redo\(WAL\)相关的统计信息。
+本节点Redo（WAL）相关的统计信息。
 
 **表 1**  FILE\_REDO\_IOSTAT字段
 
@@ -38,7 +38,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122569_p87189271754"><a name="zh-cn_topic_0237122569_p87189271754"></a><a name="zh-cn_topic_0237122569_p87189271754"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122569_p371816272514"><a name="zh-cn_topic_0237122569_p371816272514"></a><a name="zh-cn_topic_0237122569_p371816272514"></a>平均写xlog的时间(writetim/phywrts)（单位：微秒）。</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122569_p371816272514"><a name="zh-cn_topic_0237122569_p371816272514"></a><a name="zh-cn_topic_0237122569_p371816272514"></a>平均写xlog的时间（writetim/phywrts）（单位：微秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122569_row16718122716510"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122569_p7718127258"><a name="zh-cn_topic_0237122569_p7718127258"></a><a name="zh-cn_topic_0237122569_p7718127258"></a>lstiotim</p>
