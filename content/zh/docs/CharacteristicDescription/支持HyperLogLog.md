@@ -6,7 +6,7 @@
 
 ## 特性简介<a name="section47786844"></a>
 
-通过使用HyperLogLog相关函数，计算唯一值个数Count\(Distinct\)，提升性能。
+通过使用HyperLogLog相关函数，计算唯一值个数Count（Distinct），提升性能。
 
 ## 客户价值<a name="section27428414"></a>
 
