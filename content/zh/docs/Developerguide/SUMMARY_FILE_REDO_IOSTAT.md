@@ -1,6 +1,6 @@
 # SUMMARY\_FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0245374674"></a>
 
-openGauss内汇聚所有的Redo\(WAL\)相关的统计信息。
+openGauss内汇聚所有的Redo（WAL）相关的统计信息。
 
 **表 1**  SUMMARY\_FILE\_REDO\_IOSTAT字段
 
@@ -38,7 +38,7 @@ openGauss内汇聚所有的Redo\(WAL\)相关的统计信息。
 </td>
 <td class="cellrowborder" valign="top" width="31.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122570_p745415911113"><a name="zh-cn_topic_0237122570_p745415911113"></a><a name="zh-cn_topic_0237122570_p745415911113"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122570_p645479121110"><a name="zh-cn_topic_0237122570_p645479121110"></a><a name="zh-cn_topic_0237122570_p645479121110"></a>平均写xlog的时间(writetim/phywrts)（单位：微秒）。</p>
+<td class="cellrowborder" valign="top" width="51.019999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122570_p645479121110"><a name="zh-cn_topic_0237122570_p645479121110"></a><a name="zh-cn_topic_0237122570_p645479121110"></a>平均写xlog的时间（writetim/phywrts）（单位：微秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122570_row1145412914118"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122570_p194548901116"><a name="zh-cn_topic_0237122570_p194548901116"></a><a name="zh-cn_topic_0237122570_p194548901116"></a>lstiotim</p>
