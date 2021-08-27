@@ -80,7 +80,7 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ad2c0b7ea0ff3407bb2a41bcb3718b637"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ad2c0b7ea0ff3407bb2a41bcb3718b637"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ad2c0b7ea0ff3407bb2a41bcb3718b637"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ac66369f9f33b4b47bc886f6e9a3eb613"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ac66369f9f33b4b47bc886f6e9a3eb613"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ac66369f9f33b4b47bc886f6e9a3eb613"></a>以页(大小为BLCKSZ)为单位的此表在磁盘上的大小，它只是优化器用的一个近似值。</p>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ac66369f9f33b4b47bc886f6e9a3eb613"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ac66369f9f33b4b47bc886f6e9a3eb613"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ac66369f9f33b4b47bc886f6e9a3eb613"></a>以页（大小为BLCKSZ）为单位的此表在磁盘上的大小，它只是优化器用的一个近似值。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_r390d64228ae6464ca92091e653218fc8"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a006ef52b5bde4f1ca959c07e6867f1c3"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a006ef52b5bde4f1ca959c07e6867f1c3"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a006ef52b5bde4f1ca959c07e6867f1c3"></a>reltuples</p>
@@ -255,7 +255,7 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a297b191930ab44ff9efe461ae6259c5f"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a297b191930ab44ff9efe461ae6259c5f"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a297b191930ab44ff9efe461ae6259c5f"></a>xid32</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19698102273214"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19698102273214"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19698102273214"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。该字段用于跟踪此表是否需要为了防止事务ID重叠（或者允许收缩pg_clog）而进行清理。如果该关系不是表则为零（InvalidTransactionId）。</p>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19698102273214"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19698102273214"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19698102273214"></a>该表中所有在这个之前的事务ID已经被一个固定的（“frozen”）事务ID替换。该字段用于跟踪此表是否需要为了防止事务ID重叠（或者允许收缩pg_clog）而进行清理。如果该关系不是表则为零（InvalidTransactionId）。</p>
 <p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a84702d84e2cb4716a21a71efe76c4d47"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a84702d84e2cb4716a21a71efe76c4d47"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a84702d84e2cb4716a21a71efe76c4d47"></a>为保持前向兼容，保留此字段，新增relfrozenxid64用于记录此信息。</p>
 </td>
 </tr>
@@ -274,14 +274,14 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a7014f10cd95d4e3f9922cd2161ca6f5b"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a7014f10cd95d4e3f9922cd2161ca6f5b"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a7014f10cd95d4e3f9922cd2161ca6f5b"></a>text[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ab6f0f1abbf7d499b8526535c7681dfda"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ab6f0f1abbf7d499b8526535c7681dfda"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ab6f0f1abbf7d499b8526535c7681dfda"></a>索引的访问方法，使用"keyword=value"格式的字符串。</p>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ab6f0f1abbf7d499b8526535c7681dfda"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ab6f0f1abbf7d499b8526535c7681dfda"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ab6f0f1abbf7d499b8526535c7681dfda"></a>索引的访问方法，使用“keyword=value”格式的字符串。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_row6912152512319"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p9912325102310"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p9912325102310"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p9912325102310"></a>relreplident</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1891252562312"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1891252562312"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1891252562312"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19160328132612"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19160328132612"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19160328132612"></a>逻辑解码中解码列的标识：<a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_ul188391441162615"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_ul188391441162615"></a><ul id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_ul188391441162615"><li>d = 默认 (主键，如果存在)。</li><li>n = 无。</li><li>f = 所有列。</li><li>i = 索引的indisreplident被设置或者为默认。</li></ul>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19160328132612"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19160328132612"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p19160328132612"></a>逻辑解码中解码列的标识：<a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_ul188391441162615"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_ul188391441162615"></a><ul id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_ul188391441162615"><li>d = 默认（主键，如果存在）。</li><li>n = 无。</li><li>f = 所有列。</li><li>i = 索引的indisreplident被设置或者为默认。</li></ul>
 </div>
 </td>
 </tr>
@@ -289,7 +289,7 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p18185509339"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p18185509339"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p18185509339"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。该字段用于跟踪此表是否需要为了防止事务ID重叠（或者允许收缩pg_clog）而进行清理。如果该关系不是表则为零（InvalidTransactionId）。</p>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"></a>该表中所有在这个之前的事务ID已经被一个固定的（“frozen”）事务ID替换。该字段用于跟踪此表是否需要为了防止事务ID重叠（或者允许收缩pg_clog）而进行清理。如果该关系不是表则为零（InvalidTransactionId）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136767_row650864153515"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136767_p1450974113351"><a name="zh-cn_topic_0283136767_p1450974113351"></a><a name="zh-cn_topic_0283136767_p1450974113351"></a>relbucket</p>
