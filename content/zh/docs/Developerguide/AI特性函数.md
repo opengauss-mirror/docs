@@ -64,7 +64,7 @@
 
     描述：测试给定的ip和port上是否有predictor engine提供服务。
 
-    参数：predictor engine的ip地址和端口号。
+    参数：predictor engine的ip地址和端口号
 
     返回值类型：text
 
@@ -77,9 +77,9 @@
 
     描述：对入参的计划算子信息进行编码。
 
-    参数：计划算子信息。
+    参数：计划算子信息
 
-    返回值类型：text。
+    返回值类型：text
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >该函数为内部功能调用函数，不建议用户直接使用。
@@ -88,7 +88,7 @@
 
     描述：训练给定的查询性能预测模型。
 
-    参数：性能预测模型的模板名和模型名。
+    参数：性能预测模型的模板名和模型名
 
     返回值类型：tartup\_time\_accuracy FLOAT8,  total\_time\_accuracy FLOAT8,  rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
 
@@ -101,7 +101,7 @@
 
     描述：返回给定ip和port predictor engine的训练日志地址。
 
-    参数：predictor engine的ip地址和端口号。
+    参数：predictor engine的ip地址和端口号
 
     返回值类型：text
 
@@ -114,7 +114,7 @@
 
     描述：将目标数据库已收集的历史计划算子进行编码。
 
-    参数：数据库名。
+    参数：数据库名
 
     返回值类型：queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, peak\_memory int
 
@@ -124,10 +124,9 @@
 
     描述：调用encode\_feature\_perf\_hist，将编码好的数据进行持久化保存。
 
-    参数：数据库名。
+    参数：数据库名
 
     返回值类型：int
 
     示例请参见[使用指导](使用指导-20.md)。
-
 
