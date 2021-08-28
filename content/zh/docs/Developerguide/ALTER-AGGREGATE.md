@@ -20,7 +20,7 @@ ALTER AGGREGATE name ( argtype [ , ... ] ) SET SCHEMA new_schema
 
 -   **name**
 
-    现有的聚合函数的名称\(可以有模式修饰\)。
+    现有的聚合函数的名称（可以有模式修饰）。
 
 -   **argtype**
 
