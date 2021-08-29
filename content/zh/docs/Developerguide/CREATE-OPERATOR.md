@@ -25,7 +25,7 @@ CREATE OPERATOR定义一个新的name操作符。定义该操作符的用户将�
 
 至少需要定义一个LEFTARG和RIGHTARG。对于双目操作符来说，两者都需要定义。对右目操作符来说，只需要定义LEFTARG，而对于左目操作符来说，只需要定义RIGHTARG。
 
-同样，function\_name过程必须已经用CREATE FUNCTION定义过，而且必须定义为接受正确数量的指定类型参数\(一个或是两个\)。
+同样，function\_name过程必须已经用CREATE FUNCTION定义过，而且必须定义为接受正确数量的指定类型参数（一个或是两个）。
 
 其它子句声明可选的操作符优化子句。他们的含义在[第 35.13 节](http://postgres.cn/docs/9.3/xoper-optimization.html)里定义。
 
