@@ -68,7 +68,7 @@
     gs_om -t stop && gs_om -t start
     ```
 
-7.  生成并上传证书文件
+7.  生成并上传证书文件。
 
 ## 客户端配置<a name="zh-cn_topic_0237120382_zh-cn_topic_0213179127_zh-cn_topic_0189251215_zh-cn_topic_0059777633_s29b328f4eb634c5b903c430d663d038b"></a>
 
