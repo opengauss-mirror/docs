@@ -37,7 +37,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     >普通分区表目前支持针对某个分区的统计信息的语法，但功能上不支持针对某个分区的统计信息收集。
 
 
--   收集多列统计信息
+-   收集多列统计信息。
 
     ```
     {ANALYZE | ANALYSE} [ VERBOSE ]
@@ -50,7 +50,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     >-   不支持收集多列统计信息的表：系统表。
 
 
--   检测当前库的数据文件
+-   检测当前库的数据文件。
 
     ```
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE};
@@ -63,7 +63,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     >-   此命令的处理可容错ERROR级别的处理。由于debug版本的Assert可能会导致core无法继续执行命令，建议在release模式下操作。
     >-   对于全库操作时，当关键系统表出现损坏则直接报错，不再继续执行。
 
--   检测表和索引的数据文件
+-   检测表和索引的数据文件。
 
     ```
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name|index_name [CASCADE];
@@ -74,7 +74,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     >-   对于主表的检测会同步检测主表的内部表，例如toast表、cudesc表等。
     >-   当提示索引表损坏时，建议使用reindex命令进行重建索引操作。
 
--   检测表分区的数据文件
+-   检测表分区的数据文件。
 
     ```
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(patrition_name)}[CASCADE];
