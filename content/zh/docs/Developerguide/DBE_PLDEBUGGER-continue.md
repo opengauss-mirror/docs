@@ -1,6 +1,6 @@
 # DBE\_PLDEBUGGER.continue<a name="ZH-CN_TOPIC_0000001147937843"></a>
 
-执行当前存储过程，直到结束。返回值表示是否成功continue执行。
+执行当前存储过程，直到结束。返回值表示continue是否执行成功。
 
 函数原型为：
 
