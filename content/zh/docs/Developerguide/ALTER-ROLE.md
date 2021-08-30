@@ -16,7 +16,7 @@
     ALTER ROLE role_name [ [ WITH ] option [ ... ] ];
     ```
 
-    其中权限项子句option为。
+    其中权限项子句option为：
 
     ```
     {CREATEDB | NOCREATEDB}
