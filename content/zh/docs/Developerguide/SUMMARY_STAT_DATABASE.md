@@ -2,7 +2,7 @@
 
 视图将包含数据库内汇聚的每个数据库的每一行，显示数据库统计。
 
-**表 1**  SUMMARY\_STAT\_DATABASE
+**表 1**  SUMMARY\_STAT\_DATABASE字段
 
 <a name="zh-cn_topic_0237122595_table15180120145411"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0237122595_row9380102549"><th class="cellrowborder" valign="top" width="18.921892189218923%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122595_p1238010018540"><a name="zh-cn_topic_0237122595_p1238010018540"></a><a name="zh-cn_topic_0237122595_p1238010018540"></a><strong id="zh-cn_topic_0237122595_b93801055412"><a name="zh-cn_topic_0237122595_b93801055412"></a><a name="zh-cn_topic_0237122595_b93801055412"></a>名称</strong></p>

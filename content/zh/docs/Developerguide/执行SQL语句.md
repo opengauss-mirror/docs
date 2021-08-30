@@ -117,12 +117,17 @@ openGauss支持通过JDBC直接调用事先创建的存储过程，步骤如下�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+
     >-   很多的数据库类如Connection、Statement和ResultSet都有close\(\)方法，在使用完对象后应把它们关闭。要注意的是，Connection的关闭将间接关闭所有与它关联的Statement，Statement的关闭间接关闭了ResultSet。
+
     >-   一些JDBC驱动程序还提供命名参数的方法来设置参数。命名参数的方法允许根据名称而不是顺序来设置参数，若参数有默认值，则可以不用指定参数值就可以使用此参数的默认值。即使存储过程中参数的顺序发生了变更，也不必修改应用程序。目前openGauss数据库的JDBC驱动程序不支持此方法。
+
     >-   openGauss数据库不支持带有输出参数的函数，也不支持存储过程和函数参数默认值。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+
     >-   当游标作为存储过程的返回值时，如果使用JDBC调用该存储过程，返回的游标将不可用。
+    
     >-   存储过程不能和普通SQL在同一条语句中执行。
 
 

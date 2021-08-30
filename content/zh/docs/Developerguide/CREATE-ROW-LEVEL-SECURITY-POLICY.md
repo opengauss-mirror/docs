@@ -4,15 +4,15 @@
 
 对表创建行访问控制策略。
 
-当对表创建了行访问控制策略，只有打开该表的行访问控制开关\(ALTER TABLE ... ENABLE ROW LEVEL SECURITY\)，策略才能生效。否则不生效。
+当对表创建了行访问控制策略，只有打开该表的行访问控制开关（ALTER TABLE ... ENABLE ROW LEVEL SECURITY），策略才能生效。否则不生效。
 
-当前行访问控制影响数据表的读取操作\(SELECT、UPDATE、DELETE\)，暂不影响数据表的写入操作\(INSERT、MERGE INTO\)。表所有者或系统管理员可以在USING子句中创建表达式，在客户端执行数据表读取操作时，数据库后台在查询重写阶段会将满足条件的表达式拼接并应用到执行计划中。针对数据表的每一条元组，当USING表达式返回TRUE时，元组对当前用户可见，当USING表达式返回FALSE或NULL时，元组对当前用户不可见。
+当前行访问控制影响数据表的读取操作（SELECT、UPDATE、DELETE），暂不影响数据表的写入操作（INSERT、MERGE INTO）。表所有者或系统管理员可以在USING子句中创建表达式，在客户端执行数据表读取操作时，数据库后台在查询重写阶段会将满足条件的表达式拼接并应用到执行计划中。针对数据表的每一条元组，当USING表达式返回TRUE时，元组对当前用户可见，当USING表达式返回FALSE或NULL时，元组对当前用户不可见。
 
 行访问控制策略名称是针对表的，同一个数据表上不能有同名的行访问控制策略；对不同的数据表，可以有同名的行访问控制策略。
 
-行访问控制策略可以应用到指定的操作\(SELECT、UPDATE、DELETE、ALL\)，ALL表示会影响SELECT、UPDATE、DELETE三种操作；定义行访问控制策略时，若未指定受影响的相关操作，默认为ALL。
+行访问控制策略可以应用到指定的操作（SELECT、UPDATE、DELETE、ALL），ALL表示会影响SELECT、UPDATE、DELETE三种操作；定义行访问控制策略时，若未指定受影响的相关操作，默认为ALL。
 
-行访问控制策略可以应用到指定的用户\(角色\)，也可应用到全部用户\(PUBLIC\)；定义行访问控制策略时，若未指定受影响的用户，默认为PUBLIC。
+行访问控制策略可以应用到指定的用户（角色），也可应用到全部用户（PUBLIC）；定义行访问控制策略时，若未指定受影响的用户，默认为PUBLIC。
 
 ## 注意事项<a name="zh-cn_topic_0283137345_zh-cn_topic_0237122109_section12765201893310"></a>
 
@@ -59,11 +59,11 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     当前行访问控制影响的SQL操作，可指定操作包括：ALL、SELECT、UPDATE、DELETE。当未指定时，ALL为默认值，涵盖SELECT、UPDATE、DELETE操作。
 
-    当command为SELECT时，SELECT类操作受行访问控制的影响，只能查看到满足条件\(using\_expression返回值为TRUE\)的元组数据，受影响的操作包括SELECT，UPDATE ... RETURNING，DELETE ... RETURNING。
+    当command为SELECT时，SELECT类操作受行访问控制的影响，只能查看到满足条件（using\_expression返回值为TRUE）的元组数据，受影响的操作包括：SELECT、UPDATE ... RETURNING、DELETE ... RETURNING。
 
-    当command为UPDATE时，UPDATE类操作受行访问控制的影响，只能更新满足条件\(using\_expression返回值为TRUE\)的元组数据，受影响的操作包括UPDATE, UPDATE ... RETURNING, SELECT ... FOR UPDATE/SHARE。
+    当command为UPDATE时，UPDATE类操作受行访问控制的影响，只能更新满足条件（using\_expression返回值为TRUE）的元组数据，受影响的操作包括：UPDATE、UPDATE ... RETURNING、SELECT ... FOR UPDATE/SHARE。
 
-    当command为DELETE时，DELETE类操作受行访问控制的影响，只能删除满足条件\(using\_expression返回值为TRUE\)的元组数据，受影响的操作包括DELETE, DELETE ... RETURNING。
+    当command为DELETE时，DELETE类操作受行访问控制的影响，只能删除满足条件（using\_expression返回值为TRUE）的元组数据，受影响的操作包括：DELETE、DELETE ... RETURNING。
 
     行访问控制策略与适配的SQL语法关系参加下表：
 

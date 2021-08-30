@@ -521,7 +521,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
 -   -D mpoint
 
-    指定的挂载点，默认的挂载点"/dev/cgroup/subsystem"。
+    指定的挂载点，默认的挂载点“/dev/cgroup/subsystem”。
 
 -   -m
 

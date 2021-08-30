@@ -261,14 +261,14 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p17899747201612"><a name="p17899747201612"></a><a name="p17899747201612"></a><span id="ph13383321151718"><a name="ph13383321151718"></a><a name="ph13383321151718"></a>Boolean</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p17899134717162"><a name="p17899134717162"></a><a name="p17899134717162"></a><span id="ph655394318175"><a name="ph655394318175"></a><a name="ph655394318175"></a>描述函数是否是PACKAGE内的私有函数，默认为false</span></p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p17899134717162"><a name="p17899134717162"></a><a name="p17899134717162"></a><span id="ph655394318175"><a name="ph655394318175"></a><a name="ph655394318175"></a>描述函数是否是PACKAGE内的私有函数，默认为false。</span></p>
 </td>
 </tr>
 <tr id="row10661757181718"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p566115718178"><a name="p566115718178"></a><a name="p566115718178"></a><span id="ph173128015181"><a name="ph173128015181"></a><a name="ph173128015181"></a>propackageid</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p9661195719177"><a name="p9661195719177"></a><a name="p9661195719177"></a><span id="ph1414216511817"><a name="ph1414216511817"></a><a name="ph1414216511817"></a>oid</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p566145712172"><a name="p566145712172"></a><a name="p566145712172"></a><span id="ph16491010131810"><a name="ph16491010131810"></a><a name="ph16491010131810"></a>函数所属的package oid，如果不在package内，则为0.</span></p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p566145712172"><a name="p566145712172"></a><a name="p566145712172"></a><span id="ph16491010131810"><a name="ph16491010131810"></a><a name="ph16491010131810"></a>函数所属的package oid，如果不在package内，则为0。</span></p>
 </td>
 </tr>
 </tbody>

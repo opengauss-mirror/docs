@@ -210,7 +210,7 @@ PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）�
 </td>
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122306_p12781131555614"><a name="zh-cn_topic_0237122306_p12781131555614"></a><a name="zh-cn_topic_0237122306_p12781131555614"></a>text[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122306_p15781121575617"><a name="zh-cn_topic_0237122306_p15781121575617"></a><a name="zh-cn_topic_0237122306_p15781121575617"></a>设置partition的存储属性，与pg_class.reloptions的形态一样，用"keyword=value"格式的字符串来表示 ，目前用于在线扩容的信息搜集。</p>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122306_p15781121575617"><a name="zh-cn_topic_0237122306_p15781121575617"></a><a name="zh-cn_topic_0237122306_p15781121575617"></a>设置partition的存储属性，与pg_class.reloptions的形态一样，用“keyword=value”格式的字符串来表示 ，目前用于在线扩容的信息搜集。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122306_row17427204774817"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122306_p1942874784818"><a name="zh-cn_topic_0237122306_p1942874784818"></a><a name="zh-cn_topic_0237122306_p1942874784818"></a>relfrozenxid64</p>

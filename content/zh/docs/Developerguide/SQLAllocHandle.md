@@ -46,9 +46,9 @@ SQLRETURN SQLAllocHandle(SQLSMALLINT   HandleType,
 
 ## 返回值<a name="zh-cn_topic_0238272884_zh-cn_topic_0237120414_zh-cn_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
--   SQL\_SUCCESS：表示调用正确，
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息，
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等、
+-   SQL\_SUCCESS：表示调用正确。
+-   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+-   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
 -   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
 
 ## 注意事项<a name="zh-cn_topic_0238272884_zh-cn_topic_0237120414_zh-cn_topic_0059778058_s9076893176f14464a773531cbd9e81b4"></a>
