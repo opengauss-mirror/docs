@@ -44,7 +44,7 @@ PGconn *PQsetdbLogin(const char *pghost,
 </tr>
 <tr id="zh-cn_topic_0241735615_zh-cn_topic_0237120432_zh-cn_topic_0059778852_rc78d71a78a944585b1a9275d30efa604"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735615_p737003913919"><a name="zh-cn_topic_0241735615_p737003913919"></a><a name="zh-cn_topic_0241735615_p737003913919"></a>pgtty</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735615_p2576195855917"><a name="zh-cn_topic_0241735615_p2576195855917"></a><a name="zh-cn_topic_0241735615_p2576195855917"></a>忽略（以前，这个选项声明服务器日志的输出方向）</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735615_p2576195855917"><a name="zh-cn_topic_0241735615_p2576195855917"></a><a name="zh-cn_topic_0241735615_p2576195855917"></a>忽略（以前，这个选项声明服务器日志的输出方向）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0241735615_row89651041155418"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735615_p1696614418544"><a name="zh-cn_topic_0241735615_p1696614418544"></a><a name="zh-cn_topic_0241735615_p1696614418544"></a>dbName</p>
