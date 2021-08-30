@@ -112,7 +112,7 @@ PG\_LOCKS视图存储各打开事务所持有的锁信息。
 </td>
 <td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_aea4379a04a8c457d90b82efa1c7ee4ac"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_aea4379a04a8c457d90b82efa1c7ee4ac"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_aea4379a04a8c457d90b82efa1c7ee4ac"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbfccbae1b8247fb87def4c78c37cd16"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbfccbae1b8247fb87def4c78c37cd16"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbfccbae1b8247fb87def4c78c37cd16"></a>对于表的一个字段，这是字段编号；对于其他对象类型，这个字段是零；如果这个对象不是普通数据库对象，则为NULL。</p>
+<td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbfccbae1b8247fb87def4c78c37cd16"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbfccbae1b8247fb87def4c78c37cd16"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_afbfccbae1b8247fb87def4c78c37cd16"></a>对于表的一个字段，这是字段编号；对于其他对象类型，这个字段是0；如果这个对象不是普通数据库对象，则为NULL。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_rb487063e0c964afab6bccbde1bdcb796"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a1577832a6cca4c4dacb036e074de5048"><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a1577832a6cca4c4dacb036e074de5048"></a><a name="zh-cn_topic_0237122421_zh-cn_topic_0059779012_a1577832a6cca4c4dacb036e074de5048"></a>virtualtransaction</p>
