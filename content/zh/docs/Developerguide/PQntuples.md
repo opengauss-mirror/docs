@@ -31,7 +31,7 @@ int PQntuples(const PGresult *res);
 
 ## 返回值<a name="zh-cn_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
-int类型数字
+int类型数字。
 
 ## 示例<a name="zh-cn_topic_0059778058_sb7bc1f5b242e441583cf7237bb33199b"></a>
 
