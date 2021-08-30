@@ -31,7 +31,7 @@ CREATE AGGREGATE name (
 
 -   **name**
 
-    要创建的聚合函数名\(可以有模式修饰\) 。
+    要创建的聚合函数名（可以有模式修饰） 。
 
 -   **input\_data\_type**
 
