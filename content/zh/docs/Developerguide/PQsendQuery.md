@@ -28,7 +28,7 @@ int PQsendQuery(PGconn *conn, const char *command);
 </tr>
 <tr id="zh-cn_topic_0241735627_row17367126192516"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241735627_p43682026202518"><a name="zh-cn_topic_0241735627_p43682026202518"></a><a name="zh-cn_topic_0241735627_p43682026202518"></a>command</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735627_p188061636131313"><a name="zh-cn_topic_0241735627_p188061636131313"></a><a name="zh-cn_topic_0241735627_p188061636131313"></a>需要执行的查询字符串.</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241735627_p188061636131313"><a name="zh-cn_topic_0241735627_p188061636131313"></a><a name="zh-cn_topic_0241735627_p188061636131313"></a>需要执行的查询字符串。</p>
 </td>
 </tr>
 </tbody>
