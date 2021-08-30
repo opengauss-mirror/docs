@@ -138,6 +138,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 
 3.  准备package.zip压缩包。安装配置方法可参考如下：
+    
     a.  前往Oracle官网（[http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)）下载如下三个oracle压缩包。放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN是以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。
         -   oracle-instantclient-basic-linux.x64-12.2.0.1.0.zip
         -   oracle-instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
