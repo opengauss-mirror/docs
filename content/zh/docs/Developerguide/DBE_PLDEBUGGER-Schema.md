@@ -152,7 +152,7 @@ GRANT gs_role_pldebugger to user;
     </tr>
     <tr id="row34281710909"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p7428111010014"><a name="p7428111010014"></a><a name="p7428111010014"></a><a href="DBE_PLDEBUGGER-info_code.md">DBE_PLDEBUGGER.info_code</a></p>
     </td>
-    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1442813107018"><a name="p1442813107018"></a><a name="p1442813107018"></a>debug和server端都可以调用，打印指定存储过程的源语句和各行对应的行号</p>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1442813107018"><a name="p1442813107018"></a><a name="p1442813107018"></a>debug和server端都可以调用，打印指定存储过程的源语句和各行对应的行号。</p>
     </td>
     </tr>
     <tr id="row18493441451"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p15849114410454"><a name="p15849114410454"></a><a name="p15849114410454"></a><a href="DBE_PLDEBUGGER-step.md">DBE_PLDEBUGGER.step</a></p>
@@ -172,7 +172,7 @@ GRANT gs_role_pldebugger to user;
     </tr>
     <tr id="row183409813150"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p53401081151"><a name="p53401081151"></a><a name="p53401081151"></a><a href="DBE_PLDEBUGGER-info_breakpoints.md">DBE_PLDEBUGGER.info_breakpoints</a></p>
     </td>
-    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p634016841518"><a name="p634016841518"></a><a name="p634016841518"></a>debug端调用，查看当前的所有所有断点。</p>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p634016841518"><a name="p634016841518"></a><a name="p634016841518"></a>debug端调用，查看当前的所有断点。</p>
     </td>
     </tr>
     <tr id="row18516252185316"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p20516165275310"><a name="p20516165275310"></a><a name="p20516165275310"></a><a href="DBE_PLDEBUGGER-backtrace.md">DBE_PLDEBUGGER.backtrace</a></p>
