@@ -16,7 +16,7 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
     ALTER USER user_name [ [ WITH ] option [ ... ] ];
     ```
 
-    其中option子句为。
+    其中option子句为：
 
     ```
     { CREATEDB | NOCREATEDB }
