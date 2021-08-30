@@ -57,7 +57,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 -   -e
 
-    场景检查项。默认的场景有inspect（例行巡检）、upgrade（升级前巡检）、binary\_upgrade（就地升级前巡检）、health（健康检查巡检）、install\(安装\)，等，用户可以根据需求自己编写场景。
+    场景检查项。默认的场景有inspect（例行巡检）、upgrade（升级前巡检）、binary\_upgrade（就地升级前巡检）、health（健康检查巡检）、install（安装），等，用户可以根据需求自己编写场景。
 
 -   -l
 
