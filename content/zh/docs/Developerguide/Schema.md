@@ -49,7 +49,7 @@ CREATE USER创建用户的同时，系统会在执行该命令的数据库中，
     (1 row)
     ```
 
-    search\_path参数的默认值为："$user"，public。$user表示与当前会话用户名同名的Schema名，如果这样的模式不存在，$user将被忽略。所以默认情况下，用户连接数据库后，如果数据库下存在同名Schema，则对象会添加到同名Schema下，否则对象被添加到Public Schema下。
+    search\_path参数的默认值为："$user",public。$user表示与当前会话用户名同名的Schema名，如果这样的模式不存在，$user将被忽略。所以默认情况下，用户连接数据库后，如果数据库下存在同名Schema，则对象会添加到同名Schema下，否则对象被添加到Public Schema下。
 
 -   要更改当前会话的默认Schema，请使用SET命令。
 
