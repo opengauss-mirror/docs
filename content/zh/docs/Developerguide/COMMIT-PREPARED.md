@@ -24,7 +24,7 @@ COMMIT PREPARED transaction_id WITH CSN;
     待提交事务的标识符。它不能和任何当前预备事务已经使用了的标识符同名。
 
 
--   **CSN\(commit sequence number\)**
+-   **CSN（commit sequence number）**
 
     待提交事务的序列号。它是一个64位递增无符号数。
 
