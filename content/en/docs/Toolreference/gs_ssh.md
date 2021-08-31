@@ -13,7 +13,7 @@
 
 -   The trust relationship among the hosts is normal.
 -   openGauss has been correctly installed and deployed.
--   The command to be run can be found by the  **which **command, and the current user has the required execution permission.
+-   The command to be run can be found by the  **which** command, and the current user has the required execution permission.
 -   Log in to the OS as the OS user  **omm**  to run the  **gs\_ssh**  command.
 
 ## Syntax<a name="en-us_topic_0237152344_en-us_topic_0059777951_s1b40498eb43141dcb07e36a6a51325f1"></a>
