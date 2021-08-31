@@ -55,7 +55,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-Value range:
+**Value range**:
 
 -   **none**: Memory statistics are not collected.
 -   **normal:**  Only memory statistics are collected in real time and no file is generated.
