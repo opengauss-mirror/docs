@@ -10,7 +10,7 @@ openGauss创建的HDFS外表的数据类型要和HDFS上通过Hadoop HIVE创建�
 
 要修改外部服务器的信息，请使用[ALTER SERVER](ALTER-SERVER.md)语法。
 
-要删除外部服务器，请使用[DROP SERVER](drop-server.md)语法。
+要删除外部服务器，请使用[DROP SERVER](DROP-SERVER.md)语法。
 
 ## 管理Foreign Table<a name="section135985217459"></a>
 
