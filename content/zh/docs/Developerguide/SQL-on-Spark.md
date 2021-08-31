@@ -277,7 +277,7 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 </td>
 <td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p14100953175412"><a name="p14100953175412"></a><a name="p14100953175412"></a>ERROR:  source "spark_ds" does not exist</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="zh-cn_topic_0289900178.md">CREATE DATA SOURCE</a>。</p>
+<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="CREATE-DATA-SOURCE.md">CREATE DATA SOURCE</a>。</p>
 </td>
 </tr>
 <tr id="row1611213537544"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p912145375413"><a name="p912145375413"></a><a name="p912145375413"></a>执行异常</p>
@@ -301,5 +301,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 
 ## **相关链接**<a name="section67639236412"></a>
 
-[CREATE DATA SOURCE](create-data-source.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
 
