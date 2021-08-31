@@ -106,7 +106,7 @@ Currently, the default values of parameters in openGauss configuration files \(*
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   **-K**  indicates a user-specified password.  **gs\_guc**  specifies the requirements of the password length \(ranging from 8 to 16\) and complexity. If the requirements are not meet, an error is reported.
-    >-   **-M **indicates the encryption type. Its value can be  **server**,  **client**  or  **source**. The default value is  **server**.
+    >-   **-M** indicates the encryption type. Its value can be  **server**,  **client**  or  **source**. The default value is  **server**.
 
 -   Generate an encrypted OBS password file.
 
