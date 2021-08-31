@@ -13,14 +13,7 @@ javax.sql.ConnectionPoolDataSource是数据源连接池接口。
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_row57728327"><td class="cellrowborder" valign="top" width="30.696930306969307%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="41.38586141385861%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="27.917208279172083%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_row20540680"><td class="cellrowborder" valign="top" width="30.696930306969307%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="41.38586141385861%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="27.917208279172083%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
+<tbody>
 <tr id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_row60351727"><td class="cellrowborder" valign="top" width="30.696930306969307%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p64293409"><a name="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p64293409"></a><a name="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p64293409"></a>getPooledConnection()</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.38586141385861%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p29933340"><a name="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p29933340"></a><a name="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p29933340"></a>PooledConnection</p>
@@ -34,14 +27,6 @@ javax.sql.ConnectionPoolDataSource是数据源连接池接口。
 </td>
 <td class="cellrowborder" valign="top" width="27.917208279172083%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p37916637"><a name="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p37916637"></a><a name="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_p37916637"></a>Yes</p>
 </td>
-</tr>
-<tr id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_row63424724"><td class="cellrowborder" valign="top" width="30.696930306969307%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="41.38586141385861%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="27.917208279172083%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120399_zh-cn_topic_0213179165_zh-cn_topic_0189251794_zh-cn_topic_0059778247_zh-cn_topic_0058965221_row50027325"><td class="cellrowborder" valign="top" width="30.696930306969307%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="41.38586141385861%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="27.917208279172083%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
 </tr>
 </tbody>
 </table>
