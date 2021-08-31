@@ -259,7 +259,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
 
 8.  创建Data Source对象。
 
-    [连接数据库](zh-cn_topic_0289900104.md)，并创建Data Source对象。比如创建对应远端openGauss数据库实例的Data Source对象ds\_libra：
+    [连接数据库](连接数据库.md)，并创建Data Source对象。比如创建对应远端openGauss数据库实例的Data Source对象ds\_libra：
 
     ```
     openGauss=# CREATE DATA SOURCE ds_libra type 'MPPDB' OPTIONS (DSN 'libra', USERNAME 'libra_user', PASSWORD 'libra_pwd', ENCODING 'UTF8');
@@ -399,7 +399,7 @@ EC对接openGauss时产生的常见异常，请参见[表2](#zh-cn_topic_0085032
 </td>
 <td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0085032368_p14100953175412"><a name="zh-cn_topic_0085032368_p14100953175412"></a><a name="zh-cn_topic_0085032368_p14100953175412"></a>ERROR:  source "spark_ds" does not exist</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0085032368_p18105175313544"><a name="zh-cn_topic_0085032368_p18105175313544"></a><a name="zh-cn_topic_0085032368_p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="zh-cn_topic_0289900178.md">CREATE DATA SOURCE</a>。</p>
+<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0085032368_p18105175313544"><a name="zh-cn_topic_0085032368_p18105175313544"></a><a name="zh-cn_topic_0085032368_p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="CREATE-DATA-SOURCE.md">CREATE DATA SOURCE</a>。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0085032368_row1611213537544"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0085032368_p912145375413"><a name="zh-cn_topic_0085032368_p912145375413"></a><a name="zh-cn_topic_0085032368_p912145375413"></a>执行异常</p>
@@ -422,5 +422,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#zh-cn_topic_0085032
 
 ## 相关链接<a name="section2388125415014"></a>
 
-[CREATE DATA SOURCE](create-data-source.md)，[SQL on Oracle](SQL-on-Oracle.md)，《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)，[SQL on Oracle](SQL-on-Oracle.md)，《工具参考》中“服务端工具 \> gs\_om”章节
 
