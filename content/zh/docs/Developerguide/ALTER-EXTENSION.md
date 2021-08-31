@@ -70,7 +70,7 @@ where member_object is:
 
 -   **new\_version**
 
-    希望的扩展新版本。这个能被标识符和字面字符重写。如果不是指定的，ALTER EXTENSION UPDATE 尝试去更新到不管是什么在扩展的控制文件中显示的默认版本。
+    希望的扩展新版本。这个能被标识符和字面字符重写。如果不是指定的，ALTER EXTENSION UPDATE 尝试去更新到任何在扩展的控制文件中显示的默认版本。
 
 -   **new\_schema**
 
@@ -84,7 +84,7 @@ where member_object is:
 
     **operator\_name**
 
-    从扩展里被被添加或移除的对象的名称。表，聚合，域，外链表，函数，操作符，操作符类，操作符族，序列，文本搜索对象，类型，和能被模式合格的视图的名称。
+    从扩展里被添加或移除的对象的名称。表，聚合，域，外链表，函数，操作符，操作符类，操作符族，序列，文本搜索对象，类型，和能被模式合格的视图的名称。
 
 -   **agg\_type**
 
@@ -100,7 +100,7 @@ where member_object is:
 
 -   **argmode**
 
-    这个函数参数的模型：IN，OUT，INOUT，或者 VARIADIC。如果省略的话，默认的是 IN。注意 ALTER EXTENSION 不关心OUT参数，因为确认函数的一致性只需要输入参数。因此列出 IN，INOUT，和 VARIADIC 参数就足够了。
+    这个函数参数的模型：IN，OUT，INOUT，或者 VARIADIC。如果省略的话，默认的是 IN。注意 ALTER EXTENSION 不关心OUT参数，因为确认函数的一致性只需要输入参数。因此列出 IN，INOUT和 VARIADIC 参数就足够了。
 
 -   **argname**
 
