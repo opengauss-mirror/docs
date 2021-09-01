@@ -133,7 +133,7 @@ openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;
 
   ​	GIN索引可以用来有效的搜索出现在大量jsonb文档（datums） 中的键或者键/值对。提供了两个GIN操作符类(jsonb_ops、jsonb_hash_ops)，提供了不同的性能和灵活性取舍。缺省的GIN操作符类支持使用@>、<@、?、 ?&和?|操作符查询，非缺省的GIN操作符类jsonb_path_ops只支持索引@>、<@操作符。
 
-  ​	相关的操作符请参见[json/jsonb函数和操作符](json/jsonb函数和操作符.md)。
+  ​	相关的操作符请参见[json/jsonb函数和操作符](json和jsonb函数与操作符.md)。
 
 
 
@@ -161,13 +161,13 @@ SELECT '[1, 2, [1, 3]]'::jsonb @> '[1, 3]'::jsonb; -- 产生假
 SELECT '{"foo": {"bar": "baz"}}'::jsonb @> '{"bar": "baz"}'::jsonb; -- false
 ```
 
-相关的操作符请参见[json/jsonb函数和操作符](json/jsonb函数和操作符.md)。
+相关的操作符请参见[json/jsonb函数和操作符](json和jsonb函数与操作符.md)。
 
 
 
 ## 函数和操作符
 
-json/jsonb类型相关支持的函数和操作符请参见[json和jsonb函数和操作符](json和jsonb函数和操作符.md)。
+json/jsonb类型相关支持的函数和操作符请参见[json和jsonb函数和操作符](json和jsonb函数与操作符.md)。
 
 
 
