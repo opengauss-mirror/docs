@@ -14,7 +14,7 @@ openGauss创建的HDFS外表的数据类型要和HDFS上通过Hadoop HIVE创建�
 
 ## 管理Foreign Table<a name="section135985217459"></a>
 
--   完成对接配置，通过CREATE SERVER语法定义完外部服务器来存储HDFS数据库实例信息后。即可创建外表，通过外表读取远端HDFS数据库实例上的数据。外表的创建语法为[CREATE FOREIGN TABLE](CREATE-FOREIGN-TABLE.md)
+-   完成对接配置，通过CREATE SERVER语法定义完外部服务器来存储HDFS数据库实例信息后。即可创建外表，通过外表读取远端HDFS数据库实例上的数据。外表的创建语法为[CREATE FOREIGN TABLE](CREATE-FOREIGN-TABLE.md)。
     -   创建HDFS外表需要指定该外表所在HDFS服务器的server\_name，以及该表在此HDFS数据库实例服务器上的存储文件列表或存储目录。一个HDFS外表可以对应多个HDFS存储文件或一个文件存储目录。如果指定的是HDFS文件存储目录，默认该目录及子目录内的所有文件都为该表的数据文件。
     -   引擎支持访问存储在HDFS上的ORC version 0.11和version 0.12格式的数据表，并支持ORC格式采用SNAPPY、ZLIB及NO压缩方式。
     -   引擎支持访问存储在HDFS上的Parquet version 1.0和version 2.0格式的数据表，并支持Parquet格式采用SNAPPY及NO压缩方式。
