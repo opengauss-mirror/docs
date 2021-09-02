@@ -37,102 +37,101 @@ Return type: text
       ZBzOmaGA4Bb+coyucJOB8AkIShqc
       (1 row)
     ​```
-    ```
+```
 > **![](public_sys-resources/icon-note.gif)NOTE:**   
 > A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
 
--   gs_decrypt(decryptstr,keystr，decrypttype)
+-   gs_decrypt(decryptstr,keystr,decrypttype)
 
     Description: According to decrypttype, decrypt the decrypt string with keystr as the key, and return the decrypted string. The decrypttype and keystr used for decryption must be consistent with the encrypttype and keystr used for encryption in order to decrypt normally. keystr must not be empty. The decrypttype can be aes128 or sm4.
 
     This parameter needs to be used in conjunction with the gs_encrypt encryption function.
     Return type: text
 Example:
-    
 ```sql
     postgres=# SELECT gs_decrypt(' ZBzOmaGA4Bb+coyucJOB8AkIShqc','Asdf1234','sm4');
  gs_decrypt 
     ------------
      MPPDB
-    (1 row)
+    (1 row) 
 ```
 
-    > ![](public_sys-resources/icon-note.gif) **NOTE:**   
-    > A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down. 
 
--   gs\_decrypt\_aes128\(decryptstr,keystr\)
+gs\_decrypt\_aes128\(decryptstr,keystr\)
 
-    Description: Decrypts  **decrypt**  strings using  **keystr**  as the key and returns decrypted strings. The  **keystr**  used for decryption must be consistent with that used for encryption.  **keystr**  cannot be empty.
+Description: Decrypts  **decrypt**  strings using  **keystr**  as the key and returns decrypted strings. The  **keystr**  used for decryption must be consistent with that used for encryption.  **keystr**  cannot be empty.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >This parameter needs to be used with the  **gs\_encrypt\_aes128**  encryption function.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>This parameter needs to be used with the  **gs\_encrypt\_aes128**  encryption function.  
 
-    Return type: text
+Return type: text
 
-    Example:
+Example:
+
+```sql
+postgres=# SELECT gs_decrypt_aes128('gwditQLQG8NhFw4OuoKhhQJoXojhFlYkjeG0aYdSCtLCnIUgkNwvYI04KbuhmcGZp8jWizBdR1vU9CspjuzI0lbz12A=','1234');
+ gs_decrypt_aes128 
+-------------------
+ MPPDB
+(1 row)
+```
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
+
+gs\_password\_deadline
+
+Description: Indicates the number of remaining days before the password of the current user expires.
+
+Return type: interval
+
+Example:
+
+```sql
+postgres=# SELECT gs_password_deadline();
+  gs_password_deadline   
+-------------------------
+ 83 days 17:44:32.196094
+(1 row)
+```
+
+login\_audit\_messages
+
+Description: Queries login information about a login user.
+
+Return type: tuple
+
+Example:
+
+-   Checking the date, time, and IP address successfully authenticated during the last login.
 
     ```sql
-    postgres=# SELECT gs_decrypt_aes128('gwditQLQG8NhFw4OuoKhhQJoXojhFlYkjeG0aYdSCtLCnIUgkNwvYI04KbuhmcGZp8jWizBdR1vU9CspjuzI0lbz12A=','1234');
-     gs_decrypt_aes128 
-    -------------------
-     MPPDB
+    postgres=# SELECT * FROM login_audit_messages(true);
+      username  | database |       logintime        |     type      | result |  client_conninfo   
+    ------------+----------+------------------------+---------------+--------+--------------------
+         omm    | postgres | 2017-06-02 15:28:34+08 | login_success | ok     | gsql@[local]
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.  
-
--   gs\_password\_deadline
-
-    Description: Indicates the number of remaining days before the password of the current user expires.
-
-    Return type: interval
-
-    Example:
+-   Checking the date, time, and IP address that failed to be authenticated during the last login.
 
     ```sql
-    postgres=# SELECT gs_password_deadline();
-      gs_password_deadline   
-    -------------------------
-     83 days 17:44:32.196094
-    (1 row)
+    postgres=# SELECT * FROM login_audit_messages(false) ORDER BY logintime desc limit 1;
+      username  | database |       logintime        |     type     | result |     client_conninfo     
+    ------------+----------+------------------------+--------------+--------+-------------------------
+    (0 rows)
     ```
 
--   login\_audit\_messages
+-   Checking the number of failed attempts, date, and time since the previous successful authentication.
 
-    Description: Queries login information about a login user.
-
-    Return type: tuple
-
-    Example:
-
-    -   Checking the date, time, and IP address successfully authenticated during the last login.
-
-        ```sql
-        postgres=# SELECT * FROM login_audit_messages(true);
-          username  | database |       logintime        |     type      | result |  client_conninfo   
-        ------------+----------+------------------------+---------------+--------+--------------------
-             omm    | postgres | 2017-06-02 15:28:34+08 | login_success | ok     | gsql@[local]
-        (1 row)
-        ```
-
-    -   Checking the date, time, and IP address that failed to be authenticated during the last login.
-
-        ```sql
-        postgres=# SELECT * FROM login_audit_messages(false) ORDER BY logintime desc limit 1;
-          username  | database |       logintime        |     type     | result |     client_conninfo     
-        ------------+----------+------------------------+--------------+--------+-------------------------
-        (0 rows)
-        ```
-
-    -   Checking the number of failed attempts, date, and time since the previous successful authentication.
-
-        ```sql
-        postgres=# SELECT * FROM login_audit_messages(false);
-          username  | database |       logintime        |     type     | result |     client_conninfo     
-        ------------+----------+------------------------+--------------+--------+-------------------------
-        (0 rows)
-        ```
+    ```sql
+    postgres=# SELECT * FROM login_audit_messages(false);
+      username  | database |       logintime        |     type     | result |     client_conninfo     
+    ------------+----------+------------------------+--------------+--------+-------------------------
+    (0 rows)
+    ```
 
 
 -   login\_audit\_messages\_pid
