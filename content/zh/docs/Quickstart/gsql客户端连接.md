@@ -34,7 +34,7 @@
 
 3.  确认数据库主节点的端口号。
 
-    在[2](#zh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_li736435692628)查到的数据库主节点数据路径下的postgresql.conf文件中查看端口号信息。示例如下：
+    在[步骤 2](#zh-cn_topic_0242370176_zh-cn_topic_0237120290_zh-cn_topic_0062129725_li736435692628)中查到的数据库主节点数据路径下的postgresql.conf文件中查看端口号信息。示例如下：
 
     ```
     cat /srv/BigData/gaussdb/data1/dbnode/postgresql.conf | grep port
@@ -96,7 +96,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请使用SSL连接。
 
-3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》中“安装openGauss \> 执行安装”章节，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
+3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》中“安装openGauss \> [执行安装](../installation/执行安装.md)”章节，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
 
     ```
     openGauss=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';

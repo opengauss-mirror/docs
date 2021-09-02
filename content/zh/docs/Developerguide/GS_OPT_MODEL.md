@@ -124,7 +124,7 @@ GS\_OPT\_MODEL是启用AiEngine执行计划时间预测功能时的数据表，�
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p11417554164513"><a name="p11417554164513"></a><a name="p11417554164513"></a>real[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p44171554184519"><a name="p44171554184519"></a><a name="p44171554184519"></a>[不需设置]标识模型个任务的准确率。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p44171554184519"><a name="p44171554184519"></a><a name="p44171554184519"></a>[不需设置]标识模型各任务的准确率。</p>
 </td>
 </tr>
 <tr id="row1737015571459"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p5370125734517"><a name="p5370125734517"></a><a name="p5370125734517"></a>description</p>

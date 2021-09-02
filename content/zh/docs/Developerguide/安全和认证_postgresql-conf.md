@@ -207,7 +207,7 @@
 >-   当[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)为0时，表示不限制密码重用次数，仅限制密码重用天数。  
 >-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为0时，表示不对密码重用进行限制。  
 
-**取值范围：**浮点型（天），最小值为0，最大值为3650。
+**取值范围：**浮点型，最小值为0，最大值为3650，单位为天。
 
 -   0表示不检查密码可重用的天数。
 -   正数表示新密码不能为该值指定的天数内使用过的密码。
@@ -252,7 +252,7 @@
 
 ## failed\_login\_attempts<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959"></a>
 
-**参数说明：**在任意时候，如果输入密码错误的次数达到failed\_login\_attempts则当前帐户被锁定，password\_lock\_time秒后被自动解锁。 例如，登录时输入密码失败，ALTER USER时修改密码失败等。关于帐户自动锁定策略请参见[设置密码安全策略](设置密码安全策略.md)。
+**参数说明：**在任意时候，如果输入密码错误的次数达到failed\_login\_attempts参数设定的值，则当前帐户会被锁定。password\_lock\_time参数设定的天数过后，帐户自动解锁。 例如，登录时输入密码失败，ALTER USER时修改密码失败等。关于帐户自动锁定策略请参见[设置密码安全策略](设置密码安全策略.md)。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 

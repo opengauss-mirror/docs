@@ -96,7 +96,7 @@ pg_recvlogical [OPTION]...
 
         设置输出到指定文件。
 
-        直接使用"-"表示输出到stdout。
+        直接使用“-”表示输出到stdout。
 
     -   -n, --no-loop
 

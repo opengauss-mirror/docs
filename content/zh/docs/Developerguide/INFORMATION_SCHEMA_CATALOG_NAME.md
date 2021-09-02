@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="32.53325332533253%" headers="mcps1.2.4.1.2 "><p id="p216911100815"><a name="p216911100815"></a><a name="p216911100815"></a>information_schema.sql_identifier</p>
 </td>
-<td class="cellrowborder" valign="top" width="37.643764376437645%" headers="mcps1.2.4.1.3 "><p id="p216941019819"><a name="p216941019819"></a><a name="p216941019819"></a>当前database的名称</p>
+<td class="cellrowborder" valign="top" width="37.643764376437645%" headers="mcps1.2.4.1.3 "><p id="p216941019819"><a name="p216941019819"></a><a name="p216941019819"></a>当前database的名称。</p>
 </td>
 </tr>
 </tbody>

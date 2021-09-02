@@ -26,7 +26,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     ![](public_sys-resources/icon-note.gif) **说明：**
 
-    “client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为:“test.key.cipher、test.key.rand”。
+    “client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为：“test.key.cipher、test.key.rand”。
 
 
 -   “datasource.key.cipher”，“datasource.key.rand”
@@ -193,7 +193,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
 
-  -   与"-I" 不能一块使用
+  -   与“-I” 不能一块使用。
 
 -   -c parameter=value
 
@@ -201,9 +201,9 @@ gs\_guc工具由操作系统用户omm执行。
 
     ![](public_sys-resources/icon-note.gif) **说明：** 
 
-    -   如果参数是一个字符串变量，则使用-c parameter='value'或者使用-c "parameter = 'value'"。
+    -   如果参数是一个字符串变量，则使用-c parameter='value'或者使用-c “parameter = 'value'”。
 
-    -   当使用gs\_guc set/reload为"log\_directory"恢复默认值时，其默认值会被置为具体的data目录。
+    -   当使用gs\_guc set/reload为“log\_directory”恢复默认值时，其默认值会被置为具体的data目录。
 
     -   当使用gs\_guc reload进行参数设定，并指定-N参数时，当指定的节点为主节点时，主备节点的参数值都会被修改；当指定节点为备节点时，只会修改备节点的参数值，不会修改主节点的参数值。
 
@@ -255,7 +255,7 @@ gs\_guc工具由操作系统用户omm执行。
 
 -   -M, --keymode=MODE
 
-    设定该密码在数据库运行过程中，用于服务端\(server\)、客户端\(client\)还是创建Data Source对象时调用。
+    设定该密码在数据库运行过程中，用于服务端（server）、客户端（client）还是创建Data Source对象时调用。
 
     ![](public_sys-resources/icon-note.gif) **说明：** 
 
@@ -324,7 +324,7 @@ Total instances: 1. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-示例3：设置客户端认证策略
+示例3：设置客户端认证策略。
 
 ```
 gs_guc set -N all -I all -h "host replication testuser 10.252.95.191/32 sha256"
@@ -333,7 +333,7 @@ Total instances: 2. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-示例4：注释清理已经设置的客户端认证策略
+示例4：注释清理已经设置的客户端认证策略。
 
 ```
 gs_guc set -N all -I all -h "host replication testuser 10.252.95.191/32"

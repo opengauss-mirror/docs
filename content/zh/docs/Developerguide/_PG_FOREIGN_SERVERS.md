@@ -30,7 +30,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.41314131413141%"><p id="p15263123596"><a name="p15263123596"></a><a name="p15263123596"></a>information_schema.sql_identifier</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.10381038103811%"><p id="p726052311918"><a name="p726052311918"></a><a name="p726052311918"></a>外部服务器所在database名称(永远为当前数据库)。</p>
+<td class="cellrowborder" valign="top" width="38.10381038103811%"><p id="p726052311918"><a name="p726052311918"></a><a name="p726052311918"></a>外部服务器所在database名称（永远为当前数据库）。</p>
 </td>
 </tr>
 <tr id="row3696121410172"><td class="cellrowborder" valign="top" width="30.483048304830483%"><p id="p17258923196"><a name="p17258923196"></a><a name="p17258923196"></a>foreign_server_name</p>
@@ -44,7 +44,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="31.41314131413141%"><p id="p565632581018"><a name="p565632581018"></a><a name="p565632581018"></a>information_schema.sql_identifier</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.10381038103811%"><p id="p9656202511106"><a name="p9656202511106"></a><a name="p9656202511106"></a>外部数据封装器所在database名称(永远为当前数据库)。</p>
+<td class="cellrowborder" valign="top" width="38.10381038103811%"><p id="p9656202511106"><a name="p9656202511106"></a><a name="p9656202511106"></a>外部数据封装器所在database名称（永远为当前数据库）。</p>
 </td>
 </tr>
 <tr id="row113297295101"><td class="cellrowborder" valign="top" width="30.483048304830483%"><p id="p632982991014"><a name="p632982991014"></a><a name="p632982991014"></a>foreign_data_wrapper_name</p>

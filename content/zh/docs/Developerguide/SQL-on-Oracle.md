@@ -138,6 +138,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 
 3.  准备package.zip压缩包。安装配置方法可参考如下：
+    
     a.  前往Oracle官网（[http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)）下载如下三个oracle压缩包。放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN是以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。
         -   oracle-instantclient-basic-linux.x64-12.2.0.1.0.zip
         -   oracle-instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
@@ -374,9 +375,13 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+
     >-   实际部署时，编译参数--with-iconv-char-enc=enc中的enc需要替换为Oracle数据库的字符集编码。
+
     >-   常见的Oracle数据库中文字符编码有AL32UTF8和ZHS16GBK。
+
     >    -   如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8。
+    
     >    -   如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030。
 
     c\) 编译安装。
@@ -593,7 +598,7 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 </td>
 <td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p14100953175412"><a name="p14100953175412"></a><a name="p14100953175412"></a>ERROR:  source "spark_ds" does not exist</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="create-data-source.md">CREATE DATA SOURCE</a>。</p>
+<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="CREATE-DATA-SOURCE.md">CREATE DATA SOURCE</a>。</p>
 </td>
 </tr>
 <tr id="row1611213537544"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p912145375413"><a name="p912145375413"></a><a name="p912145375413"></a>执行异常</p>
@@ -616,5 +621,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 
 ## **相关链接**<a name="section187221926368"></a>
 
-[CREATE DATA SOURCE](create-data-source.md)，[SQL on Spark](SQL-on-Spark.md)，[SQL on other openGauss](SQL-on-other-openGauss.md)，《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)，[SQL on Spark](SQL-on-Spark.md)，[SQL on other openGauss](SQL-on-other-openGauss.md)，《工具参考》中“服务端工具 \> gs\_om”章节
 

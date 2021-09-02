@@ -2,7 +2,7 @@
 
 ## 背景信息<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>
 
-gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内容，并对系统控制参数、I/O配置、网络配置和THP服务等信息进行配置。
+gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等内容，并对系统控制参数、I/O配置、网络配置和THP服务等信息进行配置。
 
 ## 前提条件<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_scab2909286904a92959e438b7ac1b8c7"></a>
 
@@ -105,7 +105,7 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 </td>
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aaee89948999b4c6499ac2b915649500b"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aaee89948999b4c6499ac2b915649500b"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aaee89948999b4c6499ac2b915649500b"></a>操作系统版本（OS version status）</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p312231214577"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p312231214577"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p312231214577"></a>操作系统版本检查：保证主机平台是支持的SUSE11、SUSE12、RHEL和CentOS平台中的一种。同时保证<span id="text14744214448"><a name="text14744214448"></a><a name="text14744214448"></a>openGauss</span>各个主机的平台是属于同一混编范围的。</p>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p312231214577"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p312231214577"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p312231214577"></a>操作系统版本检查：保证主机平台是支持的openEuler和CentOS平台中的一种。同时保证<span id="text14744214448"><a name="text14744214448"></a><a name="text14744214448"></a>openGauss</span>各个主机的平台是属于同一混编范围的。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_rb2f376211ded4f38bfd31e2bfe310480"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p51180414496"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p51180414496"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p51180414496"></a>A2</p>
@@ -149,7 +149,7 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a>文件系统配置状态（File system configuration status）</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a>系统文件句柄检查：系统文件句柄的参数值必须大于等于100万。</p>
-<p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a>线程堆栈大小检查：线程堆栈大小大于等于3072KB</p>
+<p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a65726c175c38436c85da99b4c0bf8894"></a>线程堆栈大小检查：线程堆栈大小大于等于3072KB。</p>
 <p id="zh-cn_topic_0237152331_p19824808473"><a name="zh-cn_topic_0237152331_p19824808473"></a><a name="zh-cn_topic_0237152331_p19824808473"></a>进程最大可用虚拟内存：系统进程最大可用虚拟内存为unlimited。</p>
 </td>
 </tr>
@@ -157,7 +157,7 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 </td>
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ac53fa789493c45eba3348172f41af3cb"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ac53fa789493c45eba3348172f41af3cb"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ac53fa789493c45eba3348172f41af3cb"></a>磁盘配置状态（Disk configuration status）</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a24f0bea1a74f4ff1a725b499d4aa6da8"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a24f0bea1a74f4ff1a725b499d4aa6da8"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a24f0bea1a74f4ff1a725b499d4aa6da8"></a>硬盘挂载参数检查：格式为xfs的硬盘，其挂载格式必须为："rw,noatime,inode64,allocsize=16m"。</p>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a24f0bea1a74f4ff1a725b499d4aa6da8"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a24f0bea1a74f4ff1a725b499d4aa6da8"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a24f0bea1a74f4ff1a725b499d4aa6da8"></a>硬盘挂载参数检查：格式为xfs的硬盘，其挂载格式必须为：“rw,noatime,inode64,allocsize=16m”。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_r5f0c920f5297418184dcdb383ab11e9a"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a1ff804b1d6f44f748954517b05edcf4c"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a1ff804b1d6f44f748954517b05edcf4c"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a1ff804b1d6f44f748954517b05edcf4c"></a>A9</p>
@@ -267,12 +267,13 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 </table>
 
 
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
 > -   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
 >    若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。
 >    若\[SUGGEST:/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Warning，B1参数不会进行设置，需根据实际情况进行手动设置。
 > -   A7选项检查系统文件句柄标准来自配置文件check\_list.conf下\[/etc/security/limits.conf\]域open file参数，可以使用B2参数进行设置。
-> -   A11选项检查万兆网卡参数"MTU"、"RX"、"TX"标准来自配置文件check\_list.conf下\[/sbin/ifconfig\]域，可以使用B5参数对RX、TX进行设置，MTU需用户手动设置。
+> -   A11选项检查万兆网卡参数“MTU”、“RX”、“TX”标准来自配置文件check\_list.conf下\[/sbin/ifconfig\]域，可以使用B5参数对RX、TX进行设置，MTU需用户手动设置。
 > -   使用gs\_checkos设置的内核参数值和文件句柄参数值，需重启新会话生效。
 
 ## 操作系统参数<a name="zh-cn_topic_0237152331_section15489145820128"></a>
@@ -486,7 +487,7 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_row1493934585918"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p412986019"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p412986019"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p412986019"></a>net.ipv4.tcp_sack</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p112881904"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p112881904"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p112881904"></a>启用有选择的应答，通过有选择地应答乱序接受到的报文来提高性能，让发送者只发送丢失的报文段（对于广域网来说）这个选项应该启用，但是会增加对CPU的占用。</p>
-<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"><li>0表示关闭。</li><li>1表示开启</li></ul>
+<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul112208308"><li>0表示关闭。</li><li>1表示开启。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p17131181208"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p17131181208"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p17131181208"></a>1</p>
 </td>
@@ -494,7 +495,7 @@ gs\_checkos工具来帮助检查操作系统、控制参数、磁盘配置等内
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_row199407451592"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"></a>net.ipv4.tcp_timestamps</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a>TCP时间戳（会在TCP包头增加12节），以一种比重发超时更精确的方式（参考RFC 1323）来启用对RTT的计算，启用可以实现更好的性能。</p>
-<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"><li>0表示关闭。</li><li>1表示开启</li></ul>
+<a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"><li>0表示关闭。</li><li>1表示开启。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"></a>1</p>
 </td>

@@ -134,10 +134,13 @@ SQL on Spark支持的数据类型，见下表。
 
     其中，KrbClient.zip为需要连接的spark客户端中的kerberos客户端，kuser\_1544261037803\_keytab.tar为需要连接的用户认证凭据，datasight-hiveodbc-1.0.0-1.el6.x86\_64.rpm为sparkodbc安装包。具体获取方式参考如下：
 
-    1.  登录要连接的对端Spark数据库实例。
-    2.  在主界面点击右上角“更多”选项，选择“下载客户端”进行下载。解压下载好的客户端，得到FusionInsight\_Services\_ClientConfig.tar压缩包，解压后进入FusionInsight\_Services\_ClientConfig目录下，按照准备package.zip包的方式打包KrbClient为KrbClient.zip。
-    3.  进入FusionInsight\_Services\_ClientConfig的Spark2x目录下，解压DataSight\_Spark\_V100R002C50RC2SPC200\_HiveODBC.zip。进入解压后生成的Linux目录下，根据操作系统版本选择对应的rpm包。Red Hat/Centos：datasight-hiveodbc-1.0.0-1.el6.x86\_64.rpm。SUSE：datasight-hiveodbc-1.0.0-1.x86\_64.rpm。
-    4.  在主界面点击最上方的“系统”选项进入用户界面。选择需要连接Spark的用户，点击“更多”选择认证凭据，下载kuser\_1544261037803\_keytab.tar。
+    a. 登录要连接的对端Spark数据库实例。
+
+    b. 在主界面点击右上角“更多”选项，选择“下载客户端”进行下载。解压下载好的客户端，得到FusionInsight\_Services\_ClientConfig.tar压缩包，解压后进入FusionInsight\_Services\_ClientConfig目录下，按照准备package.zip包的方式打包KrbClient为KrbClient.zip。
+
+    c. 进入FusionInsight\_Services\_ClientConfig的Spark2x目录下，解压DataSight\_Spark\_V100R002C50RC2SPC200\_HiveODBC.zip。进入解压后生成的Linux目录下，根据操作系统版本选择对应的rpm包。Red Hat/Centos：datasight-hiveodbc-1.0.0-1.el6.x86\_64.rpm。SUSE：datasight-hiveodbc-1.0.0-1.x86\_64.rpm。
+    
+    d. 在主界面点击最上方的“系统”选项进入用户界面。选择需要连接Spark的用户，点击“更多”选择认证凭据，下载kuser\_1544261037803\_keytab.tar。
 
 3.  <a name="li13407125013577"></a>在$GAUSSHOME/utilslib/fc\_conf/$DSN下生成DSN.ini文件。用户需保证文件内容与格式正确。参考示例如下：
 
@@ -199,6 +202,7 @@ SQL on Spark支持的数据类型，见下表。
     可以参考如下操作：
 
     a.  [连接数据库](连接数据库.md)。
+    
     b.  创建Data Source。
 
         ```
@@ -273,7 +277,7 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 </td>
 <td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p14100953175412"><a name="p14100953175412"></a><a name="p14100953175412"></a>ERROR:  source "spark_ds" does not exist</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="zh-cn_topic_0289900178.md">CREATE DATA SOURCE</a>。</p>
+<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="CREATE-DATA-SOURCE.md">CREATE DATA SOURCE</a>。</p>
 </td>
 </tr>
 <tr id="row1611213537544"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p912145375413"><a name="p912145375413"></a><a name="p912145375413"></a>执行异常</p>
@@ -297,5 +301,5 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 
 ## **相关链接**<a name="section67639236412"></a>
 
-[CREATE DATA SOURCE](create-data-source.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
+[CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
 

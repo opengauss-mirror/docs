@@ -22,7 +22,7 @@ GS\_AUDITING\_PRIVILEGE视图显示对数据库DDL相关操作的所有审计信
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="aecd744296d7d4b0397b2fe1fd923b6bf"><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>审计策略类型，值为‘privilege’</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>审计策略类型，值为‘privilege’。</p>
 </td>
 </tr>
 <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p166473965113"><a name="p166473965113"></a><a name="p166473965113"></a>polenabled</p>

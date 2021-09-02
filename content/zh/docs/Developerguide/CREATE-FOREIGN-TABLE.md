@@ -51,7 +51,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
 
 -   **OPTIONS ( option 'value' [, ... ] )**
 
-    选项与新外部表或外部表中的字段有关。允许的选项名称和值，是由每一个外部数据封装器指定的。 也是通过外部数据封装器的验证函数来验证。重复的选项名称是不被允许的(尽管表选项和表字段选项可以有相同的名字)。
+    选项与新外部表或外部表中的字段有关。允许的选项名称和值，是由每一个外部数据封装器指定的。也是通过外部数据封装器的验证函数来验证。重复的选项名称是不被允许的（尽管表选项和表字段选项可以有相同的名字）。
     
     oracle_fdw支持的options包括：
 
@@ -86,7 +86,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
     -   **column_name**
 
         远端server的表的列名。如果不指定的话，将使用外表自身的列名作为远端的的表的列名。
-		
+	
 	file_fdw支持的options包括：
 	
 	-   **filename**
@@ -123,8 +123,8 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
 
 	-   **force_not_null**
 		
-		这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是， 文件级别null选项）。与COPY的 FORCE_NOT_NULL选项里的字段相同。
-		
+		这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是，文件级别null选项）。与COPY的 FORCE_NOT_NULL选项里的字段相同。
+	
     file_fdw更多介绍请参考 开发者指南/Foreign Data Wrapper/file_fdw 章节。
 
 ## 相关链接

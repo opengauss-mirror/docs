@@ -67,7 +67,7 @@ CREATE CAST (source_type AS target_type)
 
 ## 示例<a name="section14411351193419"></a>
 
-为了从类型bigint到类型int4创建一个指派映射要通过使用函数int4\(bigint\):
+为了从类型bigint到类型int4创建一个指派映射要通过使用函数int4\(bigint\)：
 
 ```
 CREATE CAST (bigint AS int4) WITH FUNCTION int4(bigint) AS ASSIGNMENT;

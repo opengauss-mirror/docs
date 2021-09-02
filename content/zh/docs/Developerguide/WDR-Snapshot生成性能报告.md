@@ -30,7 +30,8 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     >执行“cm\_ctl query -Cdvi”，回显中“Central Coordinator State”下显示的信息即为CCN信息。
 
 4.  执行如下步骤生成性能报告。
-    1.  执行如下命令生成格式化性能报告文件。
+
+    a.  执行如下命令生成格式化性能报告文件。
 
         ```
         \a \t \o 服务器文件路径
@@ -43,7 +44,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         -   \\o：把所有的查询结果发送至服务器文件里。
         -   服务器文件路径：生成性能报告文件存放路径。用户需要拥有此路径的读写权限。
 
-    2.  执行如下命令将查询到的信息写入性能报告中。
+    b.  执行如下命令将查询到的信息写入性能报告中。
 
         ```
         select generate_wdr_report(begin_snap_id bigint, end_snap_id bigint, report_type cstring, report_scope cstring, node_name cstring);
@@ -101,7 +102,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         </tbody>
         </table>
 
-    3.  执行如下命令关闭输出选项及格式化输出命令。
+    c.  执行如下命令关闭输出选项及格式化输出命令。
 
         ```
         \o \a \t 
@@ -125,12 +126,12 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     </tr>
     <tr id="row55761015114"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p135731021"><a name="p135731021"></a><a name="p135731021"></a>Load Profile（数据库范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p357617151311"><a name="p357617151311"></a><a name="p357617151311"></a>数据库维度的性能统计信息：CPU时间，DB时间，逻辑读/物理读，IO性能，登入登出，负载强度，负载性能表现等。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p357617151311"><a name="p357617151311"></a><a name="p357617151311"></a>数据库维度的性能统计信息：CPU时间、DB时间、逻辑读/物理读、IO性能、登入登出、负载强度和负载性能表现等。</p>
     </td>
     </tr>
     <tr id="row18576141511115"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p13524917629"><a name="p13524917629"></a><a name="p13524917629"></a>Instance Efficiency Percentages（数据库/节点范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p0576615218"><a name="p0576615218"></a><a name="p0576615218"></a>数据库级或者节点Buffer Hit（缓冲命中率），Effective CPU（CPU使用率），WalWrite NoWait（获取Wal Buffer成功率），Soft Parse（软解析率），Non-parse CPU（CPU非解析时间比例）。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p0576615218"><a name="p0576615218"></a><a name="p0576615218"></a>数据库级或者节点Buffer Hit（缓冲命中率）、Effective CPU（CPU使用率）、WalWrite NoWait（获取Wal Buffer成功率）、Soft Parse（软解析率）和Non-parse CPU（CPU非解析时间比例）。</p>
     </td>
     </tr>
     <tr id="row115764151812"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p177481629821"><a name="p177481629821"></a><a name="p177481629821"></a>Top 10 Events by Total Wait Time（节点范围）</p>
@@ -155,7 +156,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     </tr>
     <tr id="row185761150118"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p12651331239"><a name="p12651331239"></a><a name="p12651331239"></a>Object stats（节点范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p1457691518114"><a name="p1457691518114"></a><a name="p1457691518114"></a>表，索引维度的性能统计信息。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p1457691518114"><a name="p1457691518114"></a><a name="p1457691518114"></a>表、索引维度的性能统计信息。</p>
     </td>
     </tr>
     <tr id="row145762156112"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a>Database Configuration（节点范围）</p>
@@ -165,7 +166,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     </tr>
     <tr id="row4576111519111"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p148180593320"><a name="p148180593320"></a><a name="p148180593320"></a>SQL Statistics（节点范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p75772015713"><a name="p75772015713"></a><a name="p75772015713"></a>SQL语句各个维度性能统计：端到端时间，行活动，缓存命中，CPU消耗，时间消耗细分。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p75772015713"><a name="p75772015713"></a><a name="p75772015713"></a>SQL语句各个维度性能统计：端到端时间、行活动、缓存命中、CPU消耗和时间消耗细分。</p>
     </td>
     </tr>
     <tr id="row205775151415"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p15283141442"><a name="p15283141442"></a><a name="p15283141442"></a>SQL Detail（节点范围）</p>

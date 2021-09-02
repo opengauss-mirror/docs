@@ -12,7 +12,7 @@ rows(table_list #|+|-|* const)
 
 ## 参数说明<a name="zh-cn_topic_0237121535_section55696776143642"></a>
 
--   **\#**,**+**,**-**,**\***，进行行数估算hint的四种操作符号。\#表示直接使用后面的行数进行hint。+,-,\*表示对原来估算的行数进行加、减、乘操作，运算后的行数最小值为1行。table\_list为hint对应的单表或多表join结果集，与[Join方式的Hint](Join方式的Hint.md)中[table\_list](Join方式的Hint.md#zh-cn_topic_0237121534_li1090312446510)相同。
+-   **\#**，**+**，**-**，**\***，进行行数估算hint的四种操作符号。\#表示直接使用后面的行数进行hint。+，-，\*表示对原来估算的行数进行加、减、乘操作，运算后的行数最小值为1行。table\_list为hint对应的单表或多表join结果集，与[Join方式的Hint](Join方式的Hint.md)中[table\_list](Join方式的Hint.md#zh-cn_topic_0237121534_li1090312446510)相同。
 
 -   **const**可以是任意非负数，支持科学计数法。
 
@@ -29,7 +29,7 @@ rows\(t1 t2 t3 \*1000\)表示：指定t1, t2, t3 join完的结果集的行数乘
 
 ## 示例<a name="zh-cn_topic_0237121535_section1127715590585"></a>
 
-对[示例](Plan-Hint调优概述.md#zh-cn_topic_0237121532_section671421102912)中原语句使用如下hint:
+对[示例](Plan-Hint调优概述.md#zh-cn_topic_0237121532_section671421102912)中原语句使用如下hint：
 
 ```
 explain

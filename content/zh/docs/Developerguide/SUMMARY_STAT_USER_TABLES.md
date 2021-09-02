@@ -2,7 +2,7 @@
 
 openGauss内汇聚所有命名空间中用户自定义普通表的状态信息。
 
-**表 1**  SUMMARY\_STAT\_USER\_TABLES
+**表 1**  SUMMARY\_STAT\_USER\_TABLES字段
 
 <a name="zh-cn_topic_0237122577_table2068616526305"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0237122577_row19867115213300"><th class="cellrowborder" valign="top" width="23.05%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122577_p1867135223019"><a name="zh-cn_topic_0237122577_p1867135223019"></a><a name="zh-cn_topic_0237122577_p1867135223019"></a><strong id="zh-cn_topic_0237122577_b38671052163010"><a name="zh-cn_topic_0237122577_b38671052163010"></a><a name="zh-cn_topic_0237122577_b38671052163010"></a>名称</strong></p>

@@ -41,14 +41,6 @@ javax.sql.PooledConnection是由连接池创建的连接接口。
 <td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120401_zh-cn_topic_0213179167_zh-cn_topic_0189250547_zh-cn_topic_0059777419_zh-cn_topic_0058965236_p21665867"><a name="zh-cn_topic_0237120401_zh-cn_topic_0213179167_zh-cn_topic_0189250547_zh-cn_topic_0059777419_zh-cn_topic_0058965236_p21665867"></a><a name="zh-cn_topic_0237120401_zh-cn_topic_0213179167_zh-cn_topic_0189250547_zh-cn_topic_0059777419_zh-cn_topic_0058965236_p21665867"></a>Yes</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237120401_zh-cn_topic_0213179167_zh-cn_topic_0189250547_zh-cn_topic_0059777419_zh-cn_topic_0058965236_row7440289"><td class="cellrowborder" valign="top" width="48.51%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="24.89%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
-<tr id="zh-cn_topic_0237120401_zh-cn_topic_0213179167_zh-cn_topic_0189250547_zh-cn_topic_0059777419_zh-cn_topic_0058965236_row4798588"><td class="cellrowborder" valign="top" width="48.51%" headers="mcps1.2.4.1.1 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="24.89%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
-<td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
-</tr>
 </tbody>
 </table>
 

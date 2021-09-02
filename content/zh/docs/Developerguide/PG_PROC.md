@@ -130,7 +130,7 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a7d344268005c4e99a56160922432ab84"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a7d344268005c4e99a56160922432ab84"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a7d344268005c4e99a56160922432ab84"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a>告诉该函数的结果是否只依赖于它的输入参数，或者还会被外界因素影响。<a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><ul id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"><li>i：“不可变的”（immutable）函数，这样的函数对于相同的输入总是产生相同的结果。</li><li>s：稳定的”（stable）函数它是s，（对于固定输入）其结果在一次扫描里不变。</li><li>v：“易变”（volatile）函数它是v，其结果可能在任何时候变化v也用于那些有副作用的函数，因此调用它们无法得到优化。</li></ul>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a>告诉该函数的结果是否只依赖于它的输入参数，或者还会被外界因素影响。<a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><ul id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"><li>i：“不可变的”（immutable）函数，这样的函数对于相同的输入总是产生相同的结果。</li><li>s：“稳定的”（stable）函数它是s，（对于固定输入）其结果在一次扫描里不变。</li><li>v：“易变”（volatile）函数它是v，其结果可能在任何时候变化v也用于那些有副作用的函数，因此调用它们无法得到优化。</li></ul>
 </div>
 </td>
 </tr>
@@ -261,14 +261,14 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p17899747201612"><a name="p17899747201612"></a><a name="p17899747201612"></a><span id="ph13383321151718"><a name="ph13383321151718"></a><a name="ph13383321151718"></a>Boolean</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p17899134717162"><a name="p17899134717162"></a><a name="p17899134717162"></a><span id="ph655394318175"><a name="ph655394318175"></a><a name="ph655394318175"></a>描述函数是否是PACKAGE内的私有函数，默认为false</span></p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p17899134717162"><a name="p17899134717162"></a><a name="p17899134717162"></a><span id="ph655394318175"><a name="ph655394318175"></a><a name="ph655394318175"></a>描述函数是否是PACKAGE内的私有函数，默认为false。</span></p>
 </td>
 </tr>
 <tr id="row10661757181718"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p566115718178"><a name="p566115718178"></a><a name="p566115718178"></a><span id="ph173128015181"><a name="ph173128015181"></a><a name="ph173128015181"></a>propackageid</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p9661195719177"><a name="p9661195719177"></a><a name="p9661195719177"></a><span id="ph1414216511817"><a name="ph1414216511817"></a><a name="ph1414216511817"></a>oid</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p566145712172"><a name="p566145712172"></a><a name="p566145712172"></a><span id="ph16491010131810"><a name="ph16491010131810"></a><a name="ph16491010131810"></a>函数所属的package oid，如果不在package内，则为0.</span></p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p566145712172"><a name="p566145712172"></a><a name="p566145712172"></a><span id="ph16491010131810"><a name="ph16491010131810"></a><a name="ph16491010131810"></a>函数所属的package oid，如果不在package内，则为0。</span></p>
 </td>
 </tr>
 </tbody>

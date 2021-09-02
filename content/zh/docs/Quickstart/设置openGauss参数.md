@@ -61,9 +61,9 @@ authentication-options支持以下选项：
 
     需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
-    
-    -   -D 与"-I" 不能一块使用
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
+    >-D与-I不能一块使用。
 
 -   -h host-auth-policy
 
@@ -158,7 +158,7 @@ Success to perform gs_guc!
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
-    >-   "-D" 与"-I" 不能一块使用
+    >-D 与-I不能一块使用。
 
 -   -c parameter=value
 

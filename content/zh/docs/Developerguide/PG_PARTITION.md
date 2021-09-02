@@ -1,6 +1,6 @@
 # PG\_PARTITION<a name="ZH-CN_TOPIC_0242385834"></a>
 
-PG\_PARTITION系统表存储数据库内所有分区表\(partitioned table\)、分区\(table partition\)、分区上toast表和分区索引\(index partition\)四类对象的信息。分区表索引\(partitioned index\)的信息不在PG\_PARTITION系统表中保存。
+PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）、分区（table partition）、分区上toast表和分区索引（index partition）四类对象的信息。分区表索引（partitioned index）的信息不在PG\_PARTITION系统表中保存。
 
 **表 1**  PG\_PARTITION字段
 
@@ -40,7 +40,7 @@ PG\_PARTITION系统表存储数据库内所有分区表\(partitioned table\)、�
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a2b6bd96293ba46c4b592a1b196e0346a"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a2b6bd96293ba46c4b592a1b196e0346a"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a2b6bd96293ba46c4b592a1b196e0346a"></a>oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a73c636f763ea4cbe894196418784ba25"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a73c636f763ea4cbe894196418784ba25"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a73c636f763ea4cbe894196418784ba25"></a>当对象为分区表或分区时，此字段表示分区表在PG_CLASS中的OID。</p>
-<p id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_af58decc10d6c438e90055c4f2e33c70b"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_af58decc10d6c438e90055c4f2e33c70b"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_af58decc10d6c438e90055c4f2e33c70b"></a>当对象为index partition时，此字段表示所属分区表索引(partitioned index)的OID。</p>
+<p id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_af58decc10d6c438e90055c4f2e33c70b"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_af58decc10d6c438e90055c4f2e33c70b"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_af58decc10d6c438e90055c4f2e33c70b"></a>当对象为index partition时，此字段表示所属分区表索引（partitioned index）的OID。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_r0f27d2d7f4ff483084a5a822ffa697f3"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a342f8fbc52a440bc9b05523186bf0ba8"><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a342f8fbc52a440bc9b05523186bf0ba8"></a><a name="zh-cn_topic_0237122306_zh-cn_topic_0059779194_a342f8fbc52a440bc9b05523186bf0ba8"></a>rangenum</p>
@@ -210,7 +210,7 @@ PG\_PARTITION系统表存储数据库内所有分区表\(partitioned table\)、�
 </td>
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122306_p12781131555614"><a name="zh-cn_topic_0237122306_p12781131555614"></a><a name="zh-cn_topic_0237122306_p12781131555614"></a>text[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122306_p15781121575617"><a name="zh-cn_topic_0237122306_p15781121575617"></a><a name="zh-cn_topic_0237122306_p15781121575617"></a>设置partition的存储属性，与pg_class.reloptions的形态一样，用"keyword=value"格式的字符串来表示 ，目前用于在线扩容的信息搜集。</p>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122306_p15781121575617"><a name="zh-cn_topic_0237122306_p15781121575617"></a><a name="zh-cn_topic_0237122306_p15781121575617"></a>设置partition的存储属性，与pg_class.reloptions的形态一样，用“keyword=value”格式的字符串来表示 ，目前用于在线扩容的信息搜集。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122306_row17427204774817"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122306_p1942874784818"><a name="zh-cn_topic_0237122306_p1942874784818"></a><a name="zh-cn_topic_0237122306_p1942874784818"></a>relfrozenxid64</p>

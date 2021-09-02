@@ -10,7 +10,7 @@
 -   当前版本仅支持修改拥有者、归属列和最大值。若要修改其他参数，可以删除重建，并用Setval函数恢复当前值。
 -   ALTER SEQUENCE MAXVALUE不支持在事务、函数和存储过程中使用。
 -   修改序列的最大值后，会清空该序列在所有会话的cache。
--   ALTER SEQUENCE会阻塞nextval、setval、currval和lastval的调用、
+-   ALTER SEQUENCE会阻塞nextval、setval、currval和lastval的调用。
 
 ## 语法格式<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 

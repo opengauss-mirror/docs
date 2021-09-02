@@ -92,7 +92,7 @@
         SPLIT PARTITION { partition_name | FOR ( partition_value [, ...] ) } { split_point_clause | no_split_point_clause }
         ```
 
-        -   指定切割点split\_point\_clause的语法为。
+        -   指定切割点split\_point\_clause的语法为：
 
             ```
             AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
@@ -102,7 +102,7 @@
             >-   列存分区表不支持切割分区。
             >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
 
-        -   不指定切割点no\_split\_point\_clause的语法为。
+        -   不指定切割点no\_split\_point\_clause的语法为：
 
             ```
             INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
@@ -115,7 +115,7 @@
             >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。
 
 
-        -   分区项partition\_less\_than\_item的语法为。
+        -   分区项partition\_less\_than\_item的语法为：
     
             ```
             PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 

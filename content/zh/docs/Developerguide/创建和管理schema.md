@@ -11,7 +11,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
 -   和数据库不同，schema不是严格分离的。用户根据其对schema的权限，可以访问所连接数据库的schema中的对象。进行schema权限管理首先需要对数据库的权限控制进行了解。
 -   不能创建以PG\_为前缀的schema名，该类schema为数据库系统预留的。
 -   在每次创建新用户时，系统会在当前登录的数据库中为新用户创建一个同名Schema。对于其他数据库，若需要同名Schema，则需要用户手动创建。
--   通过未修饰的表名（名称中只含有表名，没有“schema名”）引用表时，系统会通过search\_path（搜索路径）来判断该表是哪个schema下的表。pg\_temp和pg\_catalog始终会作为搜索路径顺序中的前两位，无论二者是否出现在search\_path中，或者出现在search\_path中的任何位置。search\_path（搜索路径）是一个schema名列表，在其中找到的第一个表就是目标表，如果没有找到则报错。（某个表即使存在，如果它的schema不在search\_path中，依然会查找失败）在搜索路径中的第一个schema叫做"当前schema"。它是搜索时查询的第一个schema，同时在没有声明schema名时，新创建的数据库对象会默认存放在该schema下。
+-   通过未修饰的表名（名称中只含有表名，没有“schema名”）引用表时，系统会通过search\_path（搜索路径）来判断该表是哪个schema下的表。pg\_temp和pg\_catalog始终会作为搜索路径顺序中的前两位，无论二者是否出现在search\_path中，或者出现在search\_path中的任何位置。search\_path（搜索路径）是一个schema名列表，在其中找到的第一个表就是目标表，如果没有找到则报错。（某个表即使存在，如果它的schema不在search\_path中，依然会查找失败）在搜索路径中的第一个schema叫做“当前schema”。它是搜索时查询的第一个schema，同时在没有声明schema名时，新创建的数据库对象会默认存放在该schema下。
 -   每个数据库都包含一个pg\_catalog schema，它包含系统表和所有内置数据类型、函数、操作符。pg\_catalog是搜索路径中的一部分，始终在临时表所属的模式后面，并在search\_path中所有模式的前面，即具有第二搜索优先级。这样确保可以搜索到数据库内置对象。如果用户需要使用和系统内置对象重名的自定义对象时，可以在操作自定义对象时带上自己的模式。
 
 ## 操作步骤<a name="zh-cn_topic_0237120306_zh-cn_topic_0059779372_sc91f8eff24b147da9ced875c4303f986"></a>

@@ -356,8 +356,12 @@ java.sql.PreparedStatement是预处理语句接口。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   addBatch\(\)、execute\(\)必须在clearBatch\(\)之后才能执行。
+
 >-   调用executeBatch\(\)方法并不会清除batch。用户必须显式使用clearBatch\(\)清除 。
->-   在添加了一个batch的绑定变量后，用户若想重用这些值\(再次添加一个batch\)，无需再次使用set\*\(\)方法 。
+
+>-   在添加了一个batch的绑定变量后，用户若想重用这些值（再次添加一个batch），无需再次使用set\*\(\)方法 。
+
 >-   以下方法是从java.sql.Statement继承而来：close，execute，executeQuery，executeUpdate，getConnection，getResultSet，getUpdateCount，isClosed，setMaxRows,  setFetchSize。
+
 >-   executeLargeUpdate\(\)方法必须在JDBC4.2及以上使用。
 

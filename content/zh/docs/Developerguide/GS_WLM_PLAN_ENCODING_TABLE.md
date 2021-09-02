@@ -1,6 +1,6 @@
 # GS\_WLM\_PLAN\_ENCODING\_TABLE<a name="ZH-CN_TOPIC_0243595910"></a>
 
-GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，为机器学习模型的提供包括startup time, total time, peak memory, rows等标签值的训练、预测集。
+GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，为机器学习模型的提供包括startup time、total time、peak memory、rows等标签值的训练、预测集。
 
 **表 1**  GS\_WLM\_PLAN\_ENCODING\_TABLE的字段
 
@@ -45,7 +45,7 @@ GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，�
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p1777362810279"><a name="p1777362810279"></a><a name="p1777362810279"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p19773152842718"><a name="p19773152842718"></a><a name="p19773152842718"></a>该算子到结束时候总的执行时间(ms)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p19773152842718"><a name="p19773152842718"></a><a name="p19773152842718"></a>该算子到结束时候总的执行时间（ms）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row15519614165115"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p19121191334215"><a name="p19121191334215"></a><a name="p19121191334215"></a>rows</p>
@@ -59,7 +59,7 @@ GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，�
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p136011309436"><a name="p136011309436"></a><a name="p136011309436"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p260170144313"><a name="p260170144313"></a><a name="p260170144313"></a>当前算子在数据库节点上的最大内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p260170144313"><a name="p260170144313"></a><a name="p260170144313"></a>当前算子在数据库节点上的最大内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="row79205911292"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p1292011918298"><a name="p1292011918298"></a><a name="p1292011918298"></a>encode</p>

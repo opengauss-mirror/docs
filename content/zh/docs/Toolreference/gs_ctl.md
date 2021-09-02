@@ -135,7 +135,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r01437712745143c7b52a1c5f2b9f7b52"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a>-s,  --silent</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>对于promote，reload，restart，stop命令仅打印部分提示信息，对其他命令不生效。打印信息如：server promoting，server shuting down。不打印如”waiting for server to shut down, server stopped"等提示信息。</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>对于promote、reload、restart、stop命令仅打印部分提示信息，对其他命令不生效。打印信息如：server promoting、server shuting down。不打印信息如：waiting for server to shut down、server stopped等提示信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a>-</p>
 </td>
@@ -181,14 +181,14 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0237152408_row79165943917"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_p16108598396"><a name="zh-cn_topic_0237152408_p16108598396"></a><a name="zh-cn_topic_0237152408_p16108598396"></a>-T</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_p110125916399"><a name="zh-cn_topic_0237152408_p110125916399"></a><a name="zh-cn_topic_0237152408_p110125916399"></a>-T 后面跟term，升主命令时会用此term作为主机term，build时会连接大于等于此term的主机进行build</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_p110125916399"><a name="zh-cn_topic_0237152408_p110125916399"></a><a name="zh-cn_topic_0237152408_p110125916399"></a>-T 后面跟term，升主命令时会用此term作为主机term，build时会连接大于等于此term的主机进行build。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_p2106594397"><a name="zh-cn_topic_0237152408_p2106594397"></a><a name="zh-cn_topic_0237152408_p2106594397"></a>term的取值范围，无符号整型。</p>
 </td>
 </tr>
 <tr id="row89351326193410"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="p19935152683419"><a name="p19935152683419"></a><a name="p19935152683419"></a>-d</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p19935726153414"><a name="p19935726153414"></a><a name="p19935726153414"></a>打印更多调试信息</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p19935726153414"><a name="p19935726153414"></a><a name="p19935726153414"></a>打印更多调试信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="p1493592615345"><a name="p1493592615345"></a><a name="p1493592615345"></a>无参数</p>
 </td>
@@ -220,6 +220,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
+
 
 **表 3**  start或restart共有参数
 
@@ -304,7 +305,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="31.81681831816818%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a>声明双机主备实例正常时切换的切换模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a>mode的取值：</p>
-<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li><li>smart：本版本暂不支持该模式</li><li>immediate：本版本暂不支持该模式</li></ul>
+<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li><li>smart：本版本暂不支持该模式。</li><li>immediate：本版本暂不支持该模式。</li></ul>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a>默认值：fast</p>
 </td>
 </tr>
@@ -332,8 +333,8 @@ gs\_ctl参数可分为如下几类：
 <p id="p106721111857"><a name="p106721111857"></a><a name="p106721111857"></a>说明：增量重建适用于主备双主等因日志造成的不一致的场景。</p>
 <p id="p15978143115518"><a name="p15978143115518"></a><a name="p15978143115518"></a>警告 ● 增量重建适用于主备双主等因日志 造成的不一致场景。</p>
 <p id="p643515574347"><a name="p643515574347"></a><a name="p643515574347"></a>● 增量重建不适用于一主一备并且没有开启最大高可用的场景，此种场景下需要使用全量重建或者开启最大高可用后再进行增量重建。</p>
-<p id="p105751436553"><a name="p105751436553"></a><a name="p105751436553"></a>● 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</p>
-<p id="p381916183516"><a name="p381916183516"></a><a name="p381916183516"></a>● auto(不指定)：先增量，增量失败后进行会自动进行一次全量重建。</p>
+<p id="p105751436553"><a name="p105751436553"></a><a name="p105751436553"></a>● 备机数据文件损坏、数据目录丢失等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重新修复备机。</p>
+<p id="p381916183516"><a name="p381916183516"></a><a name="p381916183516"></a>● auto（不指定）：先增量，增量失败后进行会自动进行一次全量重建。</p>
 <p id="p106721111857"><a name="p106721111857"></a><a name="p106721111857"></a>默认值：auto</p>
 <p id="p106721111857"><a name="p106721111857"></a><a name="p106721111857"></a>说明：重建级联备机需要加上-M cascade_standy参数。</p>
 </td>
@@ -401,4 +402,3 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-

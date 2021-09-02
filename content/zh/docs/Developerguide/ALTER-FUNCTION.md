@@ -20,7 +20,7 @@
         action [ ... ] [ RESTRICT ];
     ```
 
-    其中附加参数action子句语法为。
+    其中附加参数action子句语法为：
 
     ```
     {CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT}

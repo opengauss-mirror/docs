@@ -104,7 +104,7 @@ GaussDB KernelopenGauss中只有一份pg\_authid，不是每个数据库有一�
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a>口令(可能是加密的)，如果没有口令，则为NULL。</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a>口令（可能是加密的），如果没有口令，则为NULL。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_r5c73cff5463e4071901ce4872d446303"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a873c0bae5ab24116ab4e3f2e4a54465e"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a873c0bae5ab24116ab4e3f2e4a54465e"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_zh-cn_topic_0059778259_a873c0bae5ab24116ab4e3f2e4a54465e"></a>rolvalidbegin</p>
@@ -181,28 +181,28 @@ GaussDB KernelopenGauss中只有一份pg\_authid，不是每个数据库有一�
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p933811330718"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p933811330718"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p933811330718"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p13338163317712"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p13338163317712"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p13338163317712"></a>用户可以设置的查询规则(当前未使用)。</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p13338163317712"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p13338163317712"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p13338163317712"></a>用户可以设置的查询规则（当前未使用）。</p>
 </td>
 </tr>
 <tr id="row462912555113"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p6462132235816"><a name="p6462132235816"></a><a name="p6462132235816"></a>rolmonitoradmin</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="p164621422155812"><a name="p164621422155812"></a><a name="p164621422155812"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p194628227587"><a name="p194628227587"></a><a name="p194628227587"></a>监控管理员用户</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p194628227587"><a name="p194628227587"></a><a name="p194628227587"></a>是否设置为监控管理员用户。</p>
 </td>
 </tr>
 <tr id="row18630132515114"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p221692625819"><a name="p221692625819"></a><a name="p221692625819"></a>roloperatoradmin</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="p321732625820"><a name="p321732625820"></a><a name="p321732625820"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p1221719260585"><a name="p1221719260585"></a><a name="p1221719260585"></a>运维管理员用户</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p1221719260585"><a name="p1221719260585"></a><a name="p1221719260585"></a>是否设置为运维管理员用户。</p>
 </td>
 </tr>
 <tr id="row146315257512"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p250818301582"><a name="p250818301582"></a><a name="p250818301582"></a>rolpolicyadmin</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.72%" headers="mcps1.2.4.1.2 "><p id="p18508330125815"><a name="p18508330125815"></a><a name="p18508330125815"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p6508123013585"><a name="p6508123013585"></a><a name="p6508123013585"></a>安全策略管理员用户</p>
+<td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.3 "><p id="p6508123013585"><a name="p6508123013585"></a><a name="p6508123013585"></a>是否设置为安全策略管理员用户。</p>
 </td>
 </tr>
 </tbody>

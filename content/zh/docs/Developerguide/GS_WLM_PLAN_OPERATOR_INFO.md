@@ -45,7 +45,7 @@ GS\_WLM\_PLAN\_OPERATOR\_INFO系统表显示执行作业结束后计划算子级
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p205191014155120"><a name="zh-cn_topic_0111176227_p205191014155120"></a><a name="zh-cn_topic_0111176227_p205191014155120"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p1451971495114"><a name="zh-cn_topic_0111176227_p1451971495114"></a><a name="zh-cn_topic_0111176227_p1451971495114"></a>该算子到结束时候总的执行时间(ms)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p1451971495114"><a name="zh-cn_topic_0111176227_p1451971495114"></a><a name="zh-cn_topic_0111176227_p1451971495114"></a>该算子到结束时候总的执行时间（ms）。</p>
 </td>
 </tr>
 <tr id="row4120813174216"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p19121191334215"><a name="p19121191334215"></a><a name="p19121191334215"></a>actual_rows</p>
@@ -59,7 +59,7 @@ GS\_WLM\_PLAN\_OPERATOR\_INFO系统表显示执行作业结束后计划算子级
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p136011309436"><a name="p136011309436"></a><a name="p136011309436"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p260170144313"><a name="p260170144313"></a><a name="p260170144313"></a>当前算子在数据库节点上的最大内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p260170144313"><a name="p260170144313"></a><a name="p260170144313"></a>当前算子在数据库节点上的最大内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row15519614165115"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p1451911141518"><a name="zh-cn_topic_0111176227_p1451911141518"></a><a name="zh-cn_topic_0111176227_p1451911141518"></a>query_dop</p>

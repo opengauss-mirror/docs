@@ -87,7 +87,7 @@ LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中
 </td>
 <td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p198699493819"><a name="p198699493819"></a><a name="p198699493819"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p18698491482"><a name="p18698491482"></a><a name="p18698491482"></a>streaming线程的层级。与执行计划的层级(id)相对应。</p>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p18698491482"><a name="p18698491482"></a><a name="p18698491482"></a>streaming线程的层级。与执行计划的层级（ID）相对应。</p>
 </td>
 </tr>
 <tr id="row1869144920819"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p1986915498818"><a name="p1986915498818"></a><a name="p1986915498818"></a>smpid</p>
@@ -101,7 +101,7 @@ LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中
 </td>
 <td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p2086924913815"><a name="p2086924913815"></a><a name="p2086924913815"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p1986914491789"><a name="p1986914491789"></a><a name="p1986914491789"></a>session用户的id。</p>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p1986914491789"><a name="p1986914491789"></a><a name="p1986914491789"></a>session用户的ID。</p>
 </td>
 </tr>
 <tr id="row786919491080"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p78699492819"><a name="p78699492819"></a><a name="p78699492819"></a>application_name</p>
@@ -192,7 +192,7 @@ LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中
 </td>
 <td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p287054910816"><a name="p287054910816"></a><a name="p287054910816"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p28701449689"><a name="p28701449689"></a><a name="p28701449689"></a>表示源头阻塞会话id。</p>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p28701449689"><a name="p28701449689"></a><a name="p28701449689"></a>表示源头阻塞会话ID。</p>
 </td>
 </tr>
 <tr id="row3870184911816"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p787084916814"><a name="p787084916814"></a><a name="p787084916814"></a>wait_status</p>

@@ -10,7 +10,7 @@ openGauss创建的HDFS外表的数据类型要和HDFS上通过Hadoop HIVE创建�
 
 要修改外部服务器的信息，请使用[ALTER SERVER](ALTER-SERVER.md)语法。
 
-要删除外部服务器，请使用[DROP SERVER](drop-server.md)语法。
+要删除外部服务器，请使用[DROP SERVER](DROP-SERVER.md)语法。
 
 ## 管理Foreign Table<a name="section135985217459"></a>
 
@@ -27,13 +27,22 @@ openGauss创建的HDFS外表的数据类型要和HDFS上通过Hadoop HIVE创建�
 -   查看外表。外表创建完成后，即可以通过SELECT进行数据查询。更多信息请参见[外表使用](外表使用.md)。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >-   HDFS外表在建表语句中，不支持普通表定义中的column constraint、table constraint特性及语法。
+>
 >-   不支持建立索引INDEX，不支持被继承，支持创建视图VIEW。
+>
 >-   enable\_hdfs\_predicate\_pushdown：bool型GUC参数，标示是否启用谓词下推至原生数据层的功能，默认打开（true）。
+>
 >-   HDFS外表指定的目录或者文件必须是连接HD的用户有权限访问的，否则会报错该文件不存在。
+>
 >-   访问HDFS数据支持数据传输加密，但有如下约束：
+>
 >    -   开启数据传输加密（设置dfs.encrypt.data.transfer为true）时，必须同时设置hadoop.rpc.protection为"privacy"；
+>
 >    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.algorithm只支持"3des"（不推荐使用3DES，因为3DES为不安全的加密算法，存在网络安全风险）；
+>
 >    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.cipher.key.bitlength只支持128长度的初始密钥（FusionInsight HD该参数默认值为192，故当开启数据传输加密时，需要配套修改该参数值为128）；
+>
 >    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.cipher.suites只支持"AES/CTR/NoPadding"。
 

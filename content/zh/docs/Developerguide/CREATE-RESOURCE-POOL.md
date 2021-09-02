@@ -56,16 +56,17 @@ CREATE RESOURCE POOL pool_name
 
     取值范围：字符串，内容范围1KB\~2047GB
 
--   **mem\_percent**
+- **mem\_percent**
 
-    资源池可用内存占全部内存或者组用户内存使用的比例。
+  资源池可用内存占全部内存或者组用户内存使用的比例。
 
-    在多租户场景下，组用户和业务用户的mem\_percent范围1-100，默认为20。
+  在多租户场景下，组用户和业务用户的mem\_percent范围1-100，默认为20。
 
-    在普通场景下，普通用户的mem\_percent范围为0-100，默认值为0。
+  在普通场景下，普通用户的mem\_percent范围为0-100，默认值为0。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >mem\_percent和memory\_limit同时指定时，只有mem\_percent起作用。
+  >![](public_sys-resources/icon-note.gif) **说明：**
+  >
+  >mem\_percent和memory\_limit同时指定时，只有mem\_percent起作用。
 
 -   **io\_limits**
 
@@ -73,14 +74,15 @@ CREATE RESOURCE POOL pool_name
 
     对于行存，以万次为单位计数，而列存则以正常次数计数。
 
--   **io\_priority**
+- **io\_priority**
 
-    IO利用率高达90%时，重消耗IO作业进行IO资源管控时关联的优先级等级。
+  IO利用率高达90%时，重消耗IO作业进行IO资源管控时关联的优先级等级。
 
-    包括三档可选：Low、Medium和High。不控制时可设置为None。默认为None。
+  包括三档可选：Low、Medium和High。不控制时可设置为None。默认为None。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT，COPY FROM，CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
+  >![](public_sys-resources/icon-note.gif) **说明：**
+  >
+  >io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT，COPY FROM，CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
 
 -   **nodegroup**
 
