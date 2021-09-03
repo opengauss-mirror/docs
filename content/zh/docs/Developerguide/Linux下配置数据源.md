@@ -81,7 +81,7 @@
 
    b.配置数据源文件。
 
-   在“/usr/local/etc/odbc.ini ”文件中追加以下内容。
+   在“/usr/local/etc/odbc.ini”文件中追加以下内容。
 
    ```
    [MPPODBC]
@@ -198,7 +198,7 @@
 
    其中关于Sslmode的选项的允许值，具体信息见下表：
 
-   **表 3**  sslmode的可选项及其描述
+   **表 3** Sslmode的可选项及其描述
 
    <a name="zh-cn_topic_0237120407_zh-cn_topic_0059778464_table22136585143846"></a>
    <table><thead align="left"><tr id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_row7964795143846"><th class="cellrowborder" valign="top" width="14.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a><a name="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a><strong>sslmode</strong></p>
@@ -447,6 +447,6 @@
 
 -   FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
 
-    目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用"gss"方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到"sha256"后再试。配置方法见[7](#zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
+    目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用“gss”方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到“sha256”后再试。配置方法见[7](#zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
 
 
