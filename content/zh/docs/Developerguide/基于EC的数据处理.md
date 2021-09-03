@@ -121,14 +121,20 @@ SQL on other openGauss目前仅支持以下数据类型：
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->-   对于openGauss返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果openGauss返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如openGauss返回类型VARCHAR\(10\)需要使用VARCHAR\(n\)（n\>=10）或TEXT来接收。  
->-   当openGauss端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>![](public_sys-resources/icon-notice.gif) **须知：**  
+> 
 >-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
 >     ```
 >     select c2,length(c2) from exec_on_extension('libra','select * from a;') as (c1 int, c2 text);
 >     ```
+>
+>-   对于openGauss返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果openGauss返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如openGauss返回类型VARCHAR\(10\)需要使用VARCHAR\(n\)（n\>=10）或TEXT来接收。
+> 
+>-   当openGauss端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
+> 
+>
 >     返回的第二列就是字符串的字节数，而不是实际字符数。  
+>
 >-   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求远端数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
 
 ## 使用前的对接配置<a name="section1179315795514"></a>
@@ -145,21 +151,21 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
 
     a.  使用gs\_guc工具生成密钥文件。
 
-        ```
-        gs_guc encrypt –M source –K ‘用户密钥串’ –D  ‘密钥文件存放目录’
-        ```
+    ```
+    gs_guc encrypt –M source –K ‘用户密钥串’ –D  ‘密钥文件存放目录’
+    ```
     
-        -   用户密钥串需至少包含3种字符，且不少于8个字符。
-        -   生成后的密钥文件有两个，分别为datasource.key.cipher和datasource.key.rand。文件名称需固定不可变更。
-        -   datasource.key.cipher和datasource.key.rand这两个文件，需分发到数据库实例各节点的$GAUSSHOME/bin下。
+    -   用户密钥串需至少包含3种字符，且不少于8个字符。
+    -   生成后的密钥文件有两个，分别为datasource.key.cipher和datasource.key.rand。文件名称需固定不可变更。
+    -   datasource.key.cipher和datasource.key.rand这两个文件，需分发到数据库实例各节点的$GAUSSHOME/bin下。
 
     b.  将密钥文件放入指定位置$GAUSSHOME/bin下。然后使用gs\_om ec工具将密钥文件发送到数据库实例其他节点。
 
-        ```
-        gs_om -t ec -m install --key-files --force
-        ```
+    ```
+    gs_om -t ec -m install --key-files --force
+    ```
     
-        更多详细信息请参考《工具参考》中“服务端工具 \> gs\_om”章节。
+    更多详细信息请参考《工具参考》中“服务端工具 \> gs\_om”章节。
 
 
 3.  准备package.zip压缩包，放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN为以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。压缩包包含如下内容：
@@ -178,39 +184,39 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     a.  以操作系统用户omm登录数据库主节点。
     b.  设置远端数据库实例的侦听IP（通过remoteip设置无需执行此步骤）。
 
-        在需要接受远程服务的DN上（假设其主机名为Linux-235，IP为10.11.12.16），将其对外提供服务的网卡IP或主机名（英文逗号分隔）添加到侦听列表中去（一般为本机IP，如果列表中已有则可以不用设置），如
+    在需要接受远程服务的DN上（假设其主机名为Linux-235，IP为10.11.12.16），将其对外提供服务的网卡IP或主机名（英文逗号分隔）添加到侦听列表中去（一般为本机IP，如果列表中已有则可以不用设置），如
     
-        ```
-        gs_guc reload -Z datanode -N Linux-235 -I all -c "listen_addresses='localhost,10.11.12.16'"
-        ```
+    ```
+    gs_guc reload -Z datanode -N Linux-235 -I all -c "listen_addresses='localhost,10.11.12.16'"
+    ```
     
-        更详细的说明请参考章节[Linux下配置数据源](zh-cn_topic_0289900737.md)中的[7](zh-cn_topic_0289900737.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
+    更详细的说明请参考章节[Linux下配置数据源](zh-cn_topic_0289900737.md)中的[7](zh-cn_topic_0289900737.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
 
     c.  在远端数据库实例DN设置认证方式。
 
-        假定本地openGauss数据库实例的各节点IP地址为：10.11.12.13，10.11.12.14，10.11.12.15，如设置sha256连接认证方式，则可在远端openGauss数据库实例上进行如下设置：
+    假定本地openGauss数据库实例的各节点IP地址为：10.11.12.13，10.11.12.14，10.11.12.15，如设置sha256连接认证方式，则可在远端openGauss数据库实例上进行如下设置：
     
-        ```
-        gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.13/32 sha256"
-        gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.14/32 sha256"
-        gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.15/32 sha256"
-        ```
+    ```
+    gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.13/32 sha256"
+    gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.14/32 sha256"
+    gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.15/32 sha256"
+    ```
     
-        对于本地openGauss数据库实例有很多节点时，且其IP连续、在一个网段，可进行批量设置，如：
+    对于本地openGauss数据库实例有很多节点时，且其IP连续、在一个网段，可进行批量设置，如：
     
-        ```
-        # 允许IP为10.11.12.x的任何主机进行连接访问
-        gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.0/24 sha256"
-        # 允许IP为10.11.x.x的任何主机进行连接访问
-        gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.0.0/16 sha256"
-        ```
+    ```
+    # 允许IP为10.11.12.x的任何主机进行连接访问
+    gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.12.0/24 sha256"
+    # 允许IP为10.11.x.x的任何主机进行连接访问
+    gs_guc reload -Z datanode -N all -I all -h "host all all 10.11.0.0/16 sha256"
+    ```
     
-        对于本地openGauss数据库实例有很多节点时，且其IP不连续或不在同网段，则用户可用EC的remoteIP功能进行设置（将需要设置的IP放入文本文件中，例：/opt/host/hostfile（文件路径和文件名可变更，但需要确保有读取权限）），其中每行一个IP，然后再执行如下命令设置IP：
+    对于本地openGauss数据库实例有很多节点时，且其IP不连续或不在同网段，则用户可用EC的remoteIP功能进行设置（将需要设置的IP放入文本文件中，例：/opt/host/hostfile（文件路径和文件名可变更，但需要确保有读取权限）），其中每行一个IP，然后再执行如下命令设置IP：
     
-        ```
-        gs_om -t ec -m add -N /opt/host/hostfile -U username --type=remoteip
-        gs_om -t ec -m add -N /opt/host/hostfile -U username --type=remoteip -L  # -L为本地模式，需要在全部节点完成上述步骤并执行该命令。
-        ```
+    ```
+    gs_om -t ec -m add -N /opt/host/hostfile -U username --type=remoteip
+    gs_om -t ec -m add -N /opt/host/hostfile -U username --type=remoteip -L  # -L为本地模式，需要在全部节点完成上述步骤并执行该命令。
+    ```
 
     4.  重启远端数据库实例（通过remoteip设置无需执行此步骤）。
 

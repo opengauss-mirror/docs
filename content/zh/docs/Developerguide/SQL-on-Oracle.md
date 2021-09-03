@@ -96,15 +96,22 @@ Oracle到openGauss的数据类型转换关系如[表1](#table11811516202811)所�
 </table>
 
 >![](public_sys-resources/icon-notice.gif) **须知：**  
->-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。  
->-   待返回的Oracle数据中不可含有NAN或INF。  
->-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>
+>-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。
+>  
 >-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
 >      ```
 >     select c2,length\(c2\) from exec\_on\_extension\('oracle','select \* from a;'\) as \(c1 int, c2 text\);
 >     ```
->      返回的第二列就是字符串的字节数，而不是实际字符数。  
->-   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求Oracle数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
+>
+>-   待返回的Oracle数据中不可含有NAN或INF。
+>  
+>-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>
+>
+>      返回的第二列就是字符串的字节数，而不是实际字符数。 
+> 
+> -   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求Oracle数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
 
 ## **使用前的对接配置**<a name="section082131416315"></a>
 
