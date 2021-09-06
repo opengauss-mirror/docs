@@ -92,7 +92,7 @@ Parameters for importing data
 
 -   -C, --create
 
-    Creates the database before importing data to it. \(When this parameter is used, the database specified by  **-d**  is used to issue the initial  **CREATE DATABASE**  command. All data is imported to the created database.\)
+    Before importing to the database, CREATE DATABASE will be used to create the database (after specifying this option, the database specified by **-d** is only used to execute the CREATE DATABASE command, and all data will be imported into the created database).
 
 -   -e, --exit-on-error
 

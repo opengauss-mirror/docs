@@ -113,8 +113,12 @@ The  **gs\_backup**  tool can use the following types of parameters:
     -   -V, --version
 
         Displays version information.
-
-
+        
+    -   -t
+    
+        Specify the type of operation.
+        
+        Value range: backup or restore.
 
 ## Example<a name="en-us_topic_0237152406_en-us_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
 

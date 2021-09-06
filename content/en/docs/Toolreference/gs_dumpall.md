@@ -148,7 +148,7 @@ Dump parameters:
 
 -   --include-alter-table
 
-    Delete the column in the dumped table.
+    Export the deleted column information in the table.
 
 - --include-extension
 

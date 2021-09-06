@@ -83,6 +83,10 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
     修复支持设置的Abnormal项。
 
+- --cid
+
+  检查ID，仅被内部check进程使用。
+
 -   --time-out
 
     设置超时时间。单位为秒，默认为1500s，若用户自定义超时时间不得少于1500s。
@@ -382,7 +386,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row114585213411"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p3145165264118"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p3145165264118"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p3145165264118"></a>CheckInodeUsage（检查磁盘inodes使用率）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p19997141884214"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p19997141884214"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p19997141884214"></a><span id="zh-cn_topic_0287275940_text1449413429412"><a name="zh-cn_topic_0287275940_text1449413429412"></a><a name="zh-cn_topic_0287275940_text1449413429412"></a>openGauss</span>路径（GAUSSHOME/PGHOST/<span id="ph15461922165411"><a name="ph15461922165411"></a><a name="ph15461922165411"></a>GPHOME</span>E/GAUSSLOG/tmp及实例目录）</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p19997141884214"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p19997141884214"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p19997141884214"></a><span id="zh-cn_topic_0287275940_text1449413429412"><a name="zh-cn_topic_0287275940_text1449413429412"></a><a name="zh-cn_topic_0287275940_text1449413429412"></a>openGauss</span>路径（GAUSSHOME/PGHOST/<span id="ph15461922165411"><a name="ph15461922165411"></a><a name="ph15461922165411"></a>GPHOME</span>/GAUSSLOG/tmp及实例目录）</p>
 <p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p13997318164215"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p13997318164215"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p13997318164215"></a>检查以上指定目录使用率，如果使用率超过warning阈值（默认为60%） 报warning超过NG阈值（默认为80%）则检查项不通过，否则通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p16884150104812"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p16884150104812"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p16884150104812"></a>否</p>
@@ -826,6 +830,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 </tbody>
 </table>
+
 
 
 

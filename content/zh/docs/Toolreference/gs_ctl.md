@@ -19,101 +19,95 @@ gs\_ctl参数可分为如下几类：
 -   start和restart模式的参数，详细请参见[表3](#zh-cn_topic_0237152408_zh-cn_topic_0059777628_t6d75b31bab9540b284e45222396ae38b)。
 -   stop和restart模式的参数，详细请参见[表4](#zh-cn_topic_0237152408_zh-cn_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a)。
 -   switchover模式的参数，详细请参见[表5](#zh-cn_topic_0237152408_zh-cn_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31)。
--   build参数，详细请参见[表6](#zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b)。
--   restore参数，详细请参见[表7](#zh-cn_topic_0237152408_table19356432161112)。
+- build参数，详细请参见[表6](#zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b)。
 
-    **表 1**  option参数
+  **表 1**  option参数
 
-    <a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_t56b333c48c5e46cc93262560e23032f5"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3929a183903a469ab774fba257d687b4"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a>参数说明</p>
-    </th>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>init</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>创建数据库。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>启动数据库。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r31c37425852d4a24a3d79984a227aec5"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a>restart</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a>重启数据库。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r515fd2102d1d4bd3bd5bfded3a737b80"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a>build</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a>在主机上重建备实例或级联备实例。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r0cd18abaee9141439b20f10f5909a508"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a>stop</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a789c0f0db6af439da52f73d557be2018"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a>停止数据库。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rac69552e400344fdb7e6fd33ec6c5510"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a>reload</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a>重载配置文件（postgresql.conf, pg_hba.conf）。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3608cac8fce041f2b62be02691c710fd"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a>status</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a>显示数据库运行状态。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>在指定的数据目录运行的备用服务器被命令退出故障恢复，并开始进行读写操作。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>finishredo</p></td><td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>主机故障时，备机停止回放，强制升主。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a>在主机异常时，将备机切换为主机。</p>
-    <p id="p0444145125912"><a name="p0444145125912"></a><a name="p0444145125912"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rf3ffc423f13a4943b18d24be85bcc74f"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a>switchover</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>在主备机正常时，出于维护的需要，将备机切换为主机，可保证切换过程中数据不丢失。</p>
-    <p id="p12188127154613"><a name="p12188127154613"></a><a name="p12188127154613"></a>必须在要切换为主机的备机上，执行switchover命令才会生效。在主机上执行switchover命令，仅做查询使用。</p>
-    <p id="p1977111500144"><a name="p1977111500144"></a><a name="p1977111500144"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
-    <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r30b3aa9baf20460baf9e2b4f5fc55af3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a>query</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a>查询主备机之间的状态信息。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r2ce5962d0dea41f3908b55f917778497"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a>notify</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae482529d18be4765a5527786608c11f7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a>启动后再指定主备机。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r35e8037818c84fdeafe486b78988f621"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a>kill</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>给指定的进程发送信号量。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r49b9f0118eb54e7da572b7511322b93d"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a>querybuild</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a>查看数据库的重建进度。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237152408_row181087439152"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_p1811113439157"><a name="zh-cn_topic_0237152408_p1811113439157"></a><a name="zh-cn_topic_0237152408_p1811113439157"></a>restore</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_p101113431156"><a name="zh-cn_topic_0237152408_p101113431156"></a><a name="zh-cn_topic_0237152408_p101113431156"></a>恢复增量备份集，需要在gaussdb进程停止的情况下执行。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+  <a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_t56b333c48c5e46cc93262560e23032f5"></a>
+  <table><thead align="left"><tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3929a183903a469ab774fba257d687b4"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a>参数</p>
+  </th>
+  <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a>参数说明</p>
+  </th>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>init</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>创建数据库。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>启动数据库。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r31c37425852d4a24a3d79984a227aec5"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a>restart</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a>重启数据库。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r515fd2102d1d4bd3bd5bfded3a737b80"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a>build</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a>在主机上重建备实例或级联备实例。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r0cd18abaee9141439b20f10f5909a508"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a>stop</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a789c0f0db6af439da52f73d557be2018"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a>停止数据库。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rac69552e400344fdb7e6fd33ec6c5510"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a>reload</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a>重载配置文件（postgresql.conf, pg_hba.conf）。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r3608cac8fce041f2b62be02691c710fd"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a>status</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a>显示数据库运行状态。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>在指定的数据目录运行的备用服务器被命令退出故障恢复，并开始进行读写操作。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>finishredo</p></td><td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>主机故障时，备机停止回放，强制升主。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a>在主机异常时，将备机切换为主机。</p>
+  <p id="p0444145125912"><a name="p0444145125912"></a><a name="p0444145125912"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_rf3ffc423f13a4943b18d24be85bcc74f"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a>switchover</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>在主备机正常时，出于维护的需要，将备机切换为主机，可保证切换过程中数据不丢失。</p>
+  <p id="p12188127154613"><a name="p12188127154613"></a><a name="p12188127154613"></a>必须在要切换为主机的备机上，执行switchover命令才会生效。在主机上执行switchover命令，仅做查询使用。</p>
+  <p id="p1977111500144"><a name="p1977111500144"></a><a name="p1977111500144"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
+  <p id="p1701525967"><a name="p1701525967"></a><a name="p1701525967"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r30b3aa9baf20460baf9e2b4f5fc55af3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a>query</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a>查询主备机之间的状态信息。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r2ce5962d0dea41f3908b55f917778497"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a>notify</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae482529d18be4765a5527786608c11f7"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a>启动后再指定主备机。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r35e8037818c84fdeafe486b78988f621"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a>kill</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>给指定的进程发送信号量。</p>
+  </td>
+  </tr>
+  <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r49b9f0118eb54e7da572b7511322b93d"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a>querybuild</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a>查看数据库的重建进度。</p>
+  </td>
+  </tr>
+  </tbody>
+  </table>
 
 **表 2**  公共参数
 
@@ -193,6 +187,13 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="p1493592615345"><a name="p1493592615345"></a><a name="p1493592615345"></a>无参数</p>
 </td>
 </tr>
+    <tr id="row89351326193410"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="p19935152683419"><a name="p19935152683419"></a><a name="p19935152683419"></a>-q</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p19935726153414"><a name="p19935726153414"></a><a name="p19935726153414"></a>生成完成个后不自动启动，需要调用者启动。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="p1493592615345"><a name="p1493592615345"></a><a name="p1493592615345"></a>无参数</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_r0297ef20051849eeaa6c1304ff282801"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3327025f553a4190952a4672db74812c"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3327025f553a4190952a4672db74812c"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3327025f553a4190952a4672db74812c"></a>-P PASSWORD</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a>与-U参数配合使用，指定连接本地数据库的用户密码。</p>
@@ -220,6 +221,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
+
 
 
 **表 3**  start或restart共有参数
@@ -305,12 +307,13 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="31.81681831816818%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a>声明双机主备实例正常时切换的切换模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a>mode的取值：</p>
-<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li><li>smart：本版本暂不支持该模式。</li><li>immediate：本版本暂不支持该模式。</li></ul>
+<a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li>fast：不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换。</li><li>smart：本版本暂不支持该模式。</li></ul>
 <p id="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a><a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a>默认值：fast</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 **表 6**  build参数
 
 <a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b"></a>
@@ -360,29 +363,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-
-**表 7**  restore参数
-
-<a name="zh-cn_topic_0237152408_table19356432161112"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152408_row7357193212113"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152408_p1828211549118"><a name="zh-cn_topic_0237152408_p1828211549118"></a><a name="zh-cn_topic_0237152408_p1828211549118"></a>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152408_p1928210546117"><a name="zh-cn_topic_0237152408_p1928210546117"></a><a name="zh-cn_topic_0237152408_p1928210546117"></a>参数说明</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152408_p15282175461116"><a name="zh-cn_topic_0237152408_p15282175461116"></a><a name="zh-cn_topic_0237152408_p15282175461116"></a>取值范围</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="zh-cn_topic_0237152408_row9358123210116"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152408_p152821543115"><a name="zh-cn_topic_0237152408_p152821543115"></a><a name="zh-cn_topic_0237152408_p152821543115"></a>--remove-backup</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152408_p62831654121117"><a name="zh-cn_topic_0237152408_p62831654121117"></a><a name="zh-cn_topic_0237152408_p62831654121117"></a>指定是否删除增量备份集。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152408_p16283115418114"><a name="zh-cn_topic_0237152408_p16283115418114"></a><a name="zh-cn_topic_0237152408_p16283115418114"></a>无参数</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-**表 8**  query参数
+**表 7**  query参数
 
 <a name="table198621411133319"></a>
 <table><thead align="left"><tr id="row2086211117339"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p2862181110338"><a name="p2862181110338"></a><a name="p2862181110338"></a>参数</p>

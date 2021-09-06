@@ -1,52 +1,53 @@
-# pg\_archivecleanup<a name="ZH-CN_TOPIC_0000001092048361"></a>
+# pg\_archivecleanup<a name="ZH-CN_TOPIC_0000001196676731"></a>
 
-## 功能介绍<a name="section143231619112113"></a>
+## 功能介绍<a name="section125419154813"></a>
 
 pg\_archivecleanup是一个用于清理旧的归档日志的工具。
 
-## 语法<a name="section1763981272215"></a>
+## 语法<a name="section554725769"></a>
 
 ```
 pg_archivecleanup [OPTION]... ARCHIVELOCATION OLDESTKEPTWALFILE
 ```
 
-## 参数说明<a name="section927885412230"></a>
+## 参数说明<a name="section9655840194219"></a>
 
--   OPTION取值如下所示：
-    -   -d
+-   -d
 
-        在stderr上打印调试日志。
+    在stderr上打印调试日志。
 
-    -   -n
+-   -n
 
-        打印将要删除的文件名。
+    打印将要删除的文件名。
 
-    -   -V | --version
+-   -V,--version
 
-        打印pg_archivecleanup的版本并退出。
+    打印pg\_archivecleanup的版本并退出。
 
-    -   -x extension
+-   -x extension
 
-        当该程序用作单独的工具时，提供一个扩展选项，只选择对应扩展名格式的文件。
+    当该程序用作单独的工具时，提供一个扩展选项，只选择对应扩展名格式的文件。
 
-    -   -? | --help
+-   -?,--help
 
-        显示关于pg_archivecleanup命令行参数的帮助信息。
+    显示关于pg\_archivecleanup命令行参数的帮助信息。
 
-## 示例<a name="section655133344515"></a>
 
-1.  删除比000000010000000000000010更早的日志
+## 示例<a name="section111861451184417"></a>
 
-    ```
-    pg_archivecleanup /mnt/server/archiverdir 000000010000000000000010
-    ```
+删除比000000010000000000000010更早的日志
 
-## 扩展应用<a name="section655133344516"></a>
+```
+pg_archivecleanup [OPTION]... ARCHIVELOCATION OLDESTKEPTWALFILE
+```
 
-1.  备机恢复时，在recovery.conf里配置archive_cleanup_command参数。
+## 扩展应用<a name="section81714278467"></a>
 
-    ```
-    archive_cleanup_command = 'pg_archivecleanup /mnt/server/archiverdir %r'
-    ```
+备机恢复时，在recovery.conf里配置archive\_cleanup\_command参数。
 
-    恢复完成后从归档目录中清除不再需要的文件。
+```
+archive_cleanup_command = 'pg_archivecleanup /mnt/server/archiverdir %r'
+```
+
+恢复完成后从归档目录中清除不再需要的文件。
+

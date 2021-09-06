@@ -382,6 +382,10 @@ Dump parameters:
   - When using the gs_dump tool for encrypted export, only plain format export is supported. The data exported through -F plain needs to be imported through the gsql tool, and if it is imported through encryption, the --with-key parameter must be specified when importing through gsql.
   - Stored procedures and functions cannot be exported in encrypted mode.
 
+-   --with-salt=RANDVALUES
+
+    gs_dumpall uses this parameter to pass random values.
+
 -   --include-extension
 
     Include extensions in the dump.

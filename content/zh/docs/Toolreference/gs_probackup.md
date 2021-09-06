@@ -4,7 +4,7 @@
 
 gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。它对openGauss实例进行定期备份，以便在数据库出现故障时能够恢复服务器。
 
--   可用于备份单机数据库或者集群主节点数据库，为物理备份。
+-   可用于备份单机数据库或者主节点数据库，为物理备份。
 -   可备份外部目录的内容，如脚本文件、配置文件、日志文件、dump文件等。
 -   支持增量备份、定期备份和远程备份。
 -   可设置备份的留存策略。
@@ -21,6 +21,9 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   如果要通过ssh在远程模式下备份数据库，需要在本地和远程主机安装相同主版本的数据库，并通过ssh-copy-id remote\_user@remote\_host命令设置本地主机备份用户和远程主机数据库用户的无密码ssh连接。
 -   远程模式下只能执行add-instance、backup、restore子命令。
 -   使用restore子命令前，应先停止gaussdb进程。
+-   当存在用户自定义表空间时，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份。
+-   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgres.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数--rw-timeout的值。
+-   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 
 ## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>
 
@@ -195,18 +198,18 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：plain
 
-- --status=_backup\_status_
+-   --status=_backup\_status_
 
-  删除指定状态的所有备份。
+    删除指定状态的所有备份，包含以下状态：
 
-  - OK ：备份已完成且有效。
-  - DONE：备份已完成但未经过验证。
-  - RUNNING：备份正在进行中。
-  - MERGING：备份正在合并中。
-  - DELTING：备份正在删除中。
-  - CORRUPT：部分备份文件已损坏。
-  - ERROR：由于意外错误，备份失败。
-  - ORPHAN：由于其父备份之一已损坏或丢失，备份无效。
+    -   OK：备份已完成且有效。
+    -   DONE：备份已完成但未经过验证。
+    -   RUNNING：备份正在进行中。
+    -   MERGING：备份正在合并中。
+    -   DELETING：备份正在删除中。
+    -   CORRUPT：部分备份文件已损坏。
+    -   ERROR：由于意外错误，备份失败。
+    -   ORPHAN：由于其父备份之一已损坏或丢失，备份无效。
 
 -   -j  _threads\_num_, --threads=_threads\_num_
 
@@ -251,7 +254,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   --backup-pg-log
 
-    将日志目录包含到备份中。此目录通常包含日志消息。默认情况下包含日志目录，但不包含日志文件。guc参数log\_directory为pg\_log时该参数生效。如果修改了默认的日志路径，需要备份日志文件时可使用-E参数进行备份，使用方法见下文。
+    将日志目录包含到备份中。此目录通常包含日志消息。默认情况下包含日志目录，但不包含日志文件。如果修改了默认的日志路径，需要备份日志文件时可使用-E参数进行备份，使用方法见下文。
 
 -   -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
 
@@ -276,12 +279,12 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     以秒为单位设置流式处理的超时时间。
 
     默认值：300
-    
+
 -   -t rwtimeout
 
-    以秒为单位连接数据库的超时时间。
+    以秒为单位的连接的超时时间。
 
-    默认值：120
+    默认值: 120
 
 
 **恢复相关参数**
@@ -316,19 +319,18 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     允许忽略备份的无效状态。如果出于某种原因需要从损坏的或无效的备份中恢复数据，可以使用此标志。请谨慎使用。
 
-**恢复目标相关参数（recovery_options）**
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+**恢复目标相关参数\(recovery\_options\)**
 
-当前不支持配置连续的WAL归档的PITR，因而使用这些参数会有一定限制，具体如下描述。
-如果需要使用持续归档的WAL日志进行PITR恢复，请按照下面描述的步骤：
-
-1.  将物理备份的文件替换目标数据库目录。
-2.  删除数据库目录下pg\_xlog/中的所有文件。
-3.  将归档的WAL日志文件复制到pg\_xlog文件中（此步骤可以省略，通过配置recovery.conf恢复命令文件中的restore\_command项替代）。
-4.  在数据库目录下创建恢复命令文件recovery.conf，指定数据库恢复的程度。
-5.  启动数据库。
-6.  连接数据库，查看是否恢复到希望预期的状态。若已经恢复到预期状态，通过pg\_xlog\_replay\_resume\(\)指令使主节点对外提供服务。
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当前不支持配置连续的WAL归档的PITR，因而使用这些参数会有一定限制，具体如下描述。
+>如果需要使用持续归档的WAL日志进行PITR恢复，请按照下面描述的步骤：
+>1.  将物理备份的文件替换目标数据库目录。
+>2.  删除数据库目录下pg\_xlog/中的所有文件。
+>3.  将归档的WAL日志文件复制到pg\_xlog文件中（此步骤可以省略，通过配置recovery.conf恢复命令文件中的restore\_command项替代）。
+>4.  在数据库目录下创建恢复命令文件recovery.conf，指定数据库恢复的程度。
+>5.  启动数据库。
+>6.  连接数据库，查看是否恢复到希望预期的状态。若已经恢复到预期状态，通过pg\_xlog\_replay\_resume\(\)指令使主节点对外提供服务。
 
 -   --recovery-target-lsn=_lsn_
 
@@ -354,11 +356,11 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     该参数必须和--recovery-target-name、--recovery-target-time、--recovery-target-lsn或--recovery-target-xid一起使用。
 
-**留存相关参数（retention_options）**
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+**留存相关参数\(retention\_options\)**
 
-可以和backup和delete命令一起使用这些参数。
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>可以和backup和delete命令一起使用这些参数。
 
 -   --retention-redundancy=_retention-redundancy_
 
@@ -394,11 +396,11 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     显示所有可用备份的当前状态，不删除或合并过期备份。
 
-**固定备份相关参数（pinning_options）**
 
-![](public_sys-resources/icon-note.gif) **说明：**
+**固定备份相关参数\(pinning\_options\)**
 
-如果要将某些备份从已建立的留存策略中排除，可以和backup和set-backup命令一起使用这些参数。
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>如果要将某些备份从已建立的留存策略中排除，可以和backup和set-backup命令一起使用这些参数。
 
 -   --ttl=_interval_
 
@@ -414,7 +416,8 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     例如：--expire-time='2020-01-01 00:00:00+03'
 
-**日志相关参数（logging_options）**
+
+**日志相关参数\(logging\_options\)**
 
 日志级别：verbose、log、info、warning、error和off。
 
@@ -438,7 +441,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     如果指定了--log-level-file参数启用日志文件记录，则该参数有效。
 
-    默认值："pg\_probackup.log"
+    默认值：“pg\_probackup.log”
 
 -   --error-log-filename=_error-log-filename_
 
@@ -468,11 +471,11 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：0
 
-**连接相关参数（connection_options）**
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+**连接相关参数\(connection\_options\)**
 
-可以和backup命令一起使用这些参数。
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>可以和backup命令一起使用这些参数。
 
 -   -d  _dbname_, --pgdatabase=_dbname_
 
@@ -510,11 +513,11 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     指定用户连接的密码。如果主机的认证策略是trust，则不会对系统管理员进行密码验证，即无需输入-W选项；如果没有-W选项，并且不是系统管理员，则会提示用户输入密码。
 
-**压缩相关参数（compression_options）**
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+**压缩相关参数\(compression\_options\)**
 
-可以和backup命令一起使用这些参数。
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>可以和backup命令一起使用这些参数。
 
 -   --compress-algorithm=_compress-algorithm_
 
@@ -539,11 +542,11 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     以--compress-algorithm=zlib和--compress-level=1进行压缩。
 
-**远程模式相关参数（remote_options）**
 
-![](public_sys-resources/icon-note.gif) **说明：**
+**远程模式相关参数\(remote\_options\)**
 
-通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
 
 -   --remote-proto=_protocol_
 
@@ -577,8 +580,8 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：当前路径
 
-- --remote-lib=_libpath_
-  
+-   --remote-lib=_libpath_
+
     指定gs\_probackup在远程系统安装的lib库目录。
 
 -   --ssh-options=_ssh\_options_
@@ -586,22 +589,19 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     指定SSH命令行参数的字符串。
 
     例如：--ssh-options='-c cipher\_spec -F configfile'
-    
-    ![](public_sys-resources/icon-note.gif) **说明：**
-    
-    - 如果因为网络临时故障等原因导致server端无应答,gs_probackup将在等待archive-timeout（默认300秒）后退出。
-    
-    - 如果备机lsn与主机有差别时，数据库会不停地刷以下log信息，此时应重新build备机。
-    
-      ```
-      LOG: walsender thread shut down
-      LOG: walsender thread started
-      LOG: received wal replication command: IDENTIFY_VERSION
-      LOG: received wal replication command: IDENTIFY_MODE
-      LOG: received wal replication command: IDENTIFY_SYSTEM
-      LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
-      LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
-      ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果因为网络临时故障等原因导致server端无应答,gs\_probackup将在等待archive-timeout（默认300秒）后退出。
+    >-   如果备机lsn与主机有差别时，数据库会不停地刷以下log信息，此时应重新build备机。
+    >```
+    >LOG: walsender thread shut down
+    >LOG: walsender thread started
+    >LOG: received wal replication command: IDENTIFY_VERSION
+    >LOG: received wal replication command: IDENTIFY_MODE
+    >LOG: received wal replication command: IDENTIFY_SYSTEM
+    >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
+    >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
+    >```
 
 
 ## 备份流程<a name="zh-cn_topic_0287276008_section1735727125216"></a>
@@ -630,10 +630,10 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
     ```
 
+
 ## 故障处理<a name="section1494010372368"></a>
 
 <a name="table580714103714"></a>
-
 <table><thead align="left"><tr id="row1881191415371"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p88111145376"><a name="p88111145376"></a><a name="p88111145376"></a>问题描述</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3811314113715"><a name="p3811314113715"></a><a name="p3811314113715"></a>原因和解决方案</p>
@@ -654,3 +654,4 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 </tr>
 </tbody>
 </table>
+

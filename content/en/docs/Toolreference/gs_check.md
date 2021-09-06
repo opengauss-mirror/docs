@@ -83,6 +83,10 @@
 
     Specifies abnormal items that can be fixed.
 
+- --cid
+
+  The check ID is only used by the internal check process.
+
 -   --time-out
 
     Specifies the timeout period. The unit is second. If the user-defined timeout period is not less than 1500 seconds, the default value \(1500 seconds\) is used.
@@ -102,7 +106,6 @@
 -   -V, --version
 
     Displays version information.
-
 
 **Table  1**  openGauss status checklist
 
@@ -838,6 +841,7 @@
 </tr>
 </tbody>
 </table>
+
 
 
 

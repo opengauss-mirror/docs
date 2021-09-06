@@ -413,6 +413,10 @@ export PGDATABASE=postgres
 
   - 不支持加密导出存储过程和函数。
 
+-   --with-salt=RANDVALUES
+
+    gs_dumpall使用此参数传递随机值。
+
 -   --include-extension
 
     在转储中包含扩展。

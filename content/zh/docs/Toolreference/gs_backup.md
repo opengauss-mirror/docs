@@ -106,16 +106,22 @@ gs\_backup参数可以分为如下几类：
     
 
 
--   其他参数：
-    -   -?, --help
+- 其他参数：
+  -   -?, --help
 
-        显示帮助信息。
+      显示帮助信息。
 
-    -   -V, --version
+  - -V, --version
 
-        显示版本号信息。
+    显示版本号信息。
 
+  -   -t
 
+      指定操作类型。
+      
+      取值范围：backup或者restore。
+
+  
 
 ## 示例<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
 
