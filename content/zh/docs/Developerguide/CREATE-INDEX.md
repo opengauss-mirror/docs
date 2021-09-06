@@ -20,6 +20,7 @@
 -   分区表索引分为LOCAL索引与GLOBAL索引，LOCAL索引与某个具体分区绑定，而GLOBAL索引则对应整个分区表。
 -   列存表支持的PSORT和B-tree索引都不支持创建表达式索引、部分索引，PSORT不支持创建唯一索引，B-tree支持创建唯一索引。
 -   列存表支持的GIN索引支持创建表达式索引，但表达式不能包含空分词、空列和多列，不支持创建部分索引和唯一索引。
+-   HASH索引目前仅限于行存表索引、临时表索引和分区表local索引，且不支持创建多字段索引。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -95,11 +96,12 @@
     取值范围：
 
     -   btree：B-tree索引使用一种类似于B+树的结构来存储数据的键值，通过这种结构能够快速的查找索引。btree适合支持比较查询以及查询范围。
+    -   hash: Hash索引使用Hash函数对索引的关键字进行散列。只能处理简单等值比较，比较适合在索引值较长的情况下使用。
     -   gin：GIN索引是倒排索引，可以处理包含多个键的值（比如数组）。
     -   gist：Gist索引适用于几何和地理等多维数据类型和集合数据类型。目前支持的数据类型有box、point、poly、circle、tsvector、tsquery、range。
     -   Psort：Psort索引。针对列存表进行局部排序索引。
 
-    行存表支持的索引类型：btree（行存表缺省值）、gin、gist。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。
+    行存表支持的索引类型：btree（行存表缺省值）、hash、gin、gist。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >列存表对GIN索引支持仅限于对于tsvector类型的支持，即创建列存GIN索引入参需要为to\_tsvector函数（的返回值）。此方法为GIN索引比较普遍的使用方式。
