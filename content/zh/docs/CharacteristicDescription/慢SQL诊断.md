@@ -31,7 +31,7 @@ gsql> select * from dbe_perf.get_global_full_sql_by_timestamp(start_timestamp, e
 openGauss=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
-node_name            | coordinator1
+node_name            | dn_6001_6002_6003
 db_name              | postgres
 schema_name          | "$user",public
 origin_node          | 1938253334
@@ -50,7 +50,7 @@ thread_id            | 139884662093568
 session_id           | 139884662093568
 n_soft_parse         | 0
 n_hard_parse         | 1
-query_plan           | Coordinator Name: coordinator1
+query_plan           | Datanode Name: dn_6001_6002_6003
                      | Function Scan on pg_show_all_settings a  (cost=0.00..12.50 rows=5 width=64)
                      |   Filter: (name = '***'::text)
 ...
@@ -59,7 +59,7 @@ query_plan           | Coordinator Name: coordinator1
 gsql> select * from dbe_perf.get_global_slow_sql_by_timestamp(start_timestamp, end_timestamp);
 openGauss=# select * from DBE_PERF.get_global_slow_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------
-node_name            | coordinator1
+node_name            | dn_6001_6002_6003
 db_name              | postgres
 schema_name          | "$user",public
 origin_node          | 1938253334
@@ -78,7 +78,7 @@ thread_id            | 139884662093568
 session_id           | 139884662093568
 n_soft_parse         | 10
 n_hard_parse         | 8
-query_plan           | Coordinator Name: coordinator1
+query_plan           | Datanode Name: dn_6001_6002_6003
                      | Result  (cost=1.01..1.02 rows=1 width=0)
                      |   InitPlan 1 (returns $0)
                      |     ->  Seq Scan on pgxc_node  (cost=0.00..1.01 rows=1 width=64)
@@ -109,7 +109,7 @@ thread_id            | 139884662093568
 session_id           | 139884662093568
 n_soft_parse         | 0
 n_hard_parse         | 1
-query_plan           | Coordinator Name: coordinator1
+query_plan           | Datanode Name: dn_6001_6002_6003
                      | Function Scan on pg_show_all_settings a  (cost=0.00..12.50 rows=5 width=64)
                      |   Filter: (name = '***'::text)
 ```
