@@ -9,7 +9,7 @@ SMP特性通过算子并行来提升性能，同时会占用更多的系统资�
 -   支持并行的算子：计划中存在以下算子支持并行。
     -   Scan：支持行存普通表和行存分区表顺序扫描 、列存普通表和列存分区表顺序扫描。
     -   Join：HashJoin、NestLoop
-    -   Agg：HashAgg、SortAgg、PlainAgg、WindowAgg（只支持partition by，不支持order by）。
+    -   Agg：HashAgg、SortAgg、PlainAgg、WindowAgg（只支持partition by，不支持order by）
     -   Stream：Local Redistribute、Local Broadcast
     -   其他：Result、Subqueryscan、Unique、Material、Setop、Append、VectoRow、RowToVec
 
