@@ -29,7 +29,7 @@
 create index i on item(i_item_sk);
 ```
 
-对[示例](Plan-Hint调优概述.md#zh-cn_topic_0237121532_section671421102912)中原语句使用如下hint:
+对[示例](Plan-Hint调优概述.md#zh-cn_topic_0237121532_section671421102912)中原语句使用如下hint：
 
 ```
 explain
