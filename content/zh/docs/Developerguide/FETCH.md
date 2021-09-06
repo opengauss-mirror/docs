@@ -111,7 +111,7 @@ NEXT
 
     -   BACKWARD
 
-        从当前关联位置开始，抓取前面一行\(和PRIOR一样\) 。
+        从当前关联位置开始，抓取前面一行（和PRIOR一样） 。
 
     -   BACKWARD count
 

@@ -28,7 +28,7 @@ Statistic Not Collect:
     schema_test.t2(c1,c2)
 ```
 
-多列统计信息未收集:
+多列统计信息未收集：
 
 ```
 Statistic Not Collect:
