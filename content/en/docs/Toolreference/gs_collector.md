@@ -192,7 +192,7 @@ An OS tool \(such as  **gstack**\) that  **gs\_collector**  requires has been in
     >\]
     >\}
     >For details about the value ranges of  **TypeName**  and corresponding  **Content**, see Table 1 Information to be collected by gs\_collector.
-    >The  **Interval**  and  **Count**  parameters do not take effect when  **TypeName**  is  **Log**,  **CoreDump**,  **Config**, or  **XLog**.
+    >The  **Interval**  and  **Count**  parameters do not take effect when  **TypeName**  is  **Log**、 **CoreDump**、 **Config** or  **XLog**.
 
 -   --keyword=KEYWORD
 

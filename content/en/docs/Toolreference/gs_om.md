@@ -186,6 +186,12 @@ Default value:  **fast**
 
         If no server name is specified, openGauss is queried.
 
+    -   --az
+
+        Specify the name of the AZ to be queried, such as --az=AZ1.
+
+        Value range: AZ name. If AZ name is not specified, it means to query all AZs.
+
     -   -o
 
         Outputs status information to the specified output file.
@@ -193,11 +199,11 @@ Default value:  **fast**
         If the parameter is not output to the specified file, it is displayed on the screen.
 
     -   --detail
-
+    
         Displays detailed information. If the parameter is not specified, only a prompt is displayed indicating whether the server is normal.
-
+    
         --all
-
+    
         Displays information about all openGauss nodes.
 
 
@@ -244,8 +250,10 @@ Default value:  **fast**
         --rollback
 
         Rolls back the certificates to the last backup.
-
-
+        
+    -   -L
+    
+        When setting this parameter, only the current node is performed.
 
 **Table  1**  Status description
 

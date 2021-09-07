@@ -126,6 +126,10 @@ gs_dumpall [OPTION]...
 
     该参数为扩展预留接口，不建议使用。
 
+-   --include-alter-table
+
+    导出表中已删除的列信息。
+
 -   --quote-all-identifiers
 
     强制对所有标识符加引号。为了向后续版本迁移，且其中可能涉及引入额外关键词，在转储相应数据库时该选项会有帮助。
@@ -145,10 +149,6 @@ gs_dumpall [OPTION]...
 -   --with-key=KEY
 
     AES128密钥长度必须是16字节。
-
--   --include-alter-table
-
-    转储后的表删除列。
 
 -   --include-extension
 

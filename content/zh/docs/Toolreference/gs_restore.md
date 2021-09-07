@@ -90,7 +90,7 @@ gs_restore [OPTION]... FILE
 
 -   -C, --create
 
-    导入到数据库之前先创建数据库（选择该选项后，-d指定的数据库将被用作发布首个CREATE DATABASE命令，所有数据将被导入到创建的数据库中）。
+    导入到数据库之前会先使用CREATE DATABASE创建数据库（指定该选项后，-d指定的数据库仅用以执行CREATE DATABASE命令，所有数据将被导入到创建的数据库中）。
 
 -   -e, --exit-on-error
 

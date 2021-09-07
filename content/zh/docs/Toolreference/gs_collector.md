@@ -158,40 +158,44 @@
 
     指定的日志文件以及存放路径。
 
--   -C
+- -C
 
-    指定待收集内容的配置文件，利用TypeName指定需要收集的信息类型，利用Content指定每一类信息的具体内容，利用Count指定此类信息收集的次数，利用Interval指定收集间隔，单位为秒。
+  指定待收集内容的配置文件，利用TypeName指定需要收集的信息类型，利用Content指定每一类信息的具体内容，利用Count指定此类信息收集的次数，利用Interval指定收集间隔，单位为秒。
 
-    TypeName和Content不允许缺失或者内容为空。
+  TypeName和Content不允许缺失或者内容为空。
 
-    Interval和Count可以不指定，如果没有指定Count，则默认收集一次。如果没有指定Interval则表示间隔为0秒，Interval和Count的值不能小于0。
+  Interval和Count可以不指定，如果没有指定Count，则默认收集一次。如果没有指定Interval则表示间隔为0秒，Interval和Count的值不能小于0。
 
-    如果不指定则使用默认的配置文件。
+  如果不指定则使用默认的配置文件。
 
-    配置文件格式采用json格式，模板如下：
+  配置文件格式采用json格式，模板如下：
 
-    ```
-    {
-        "Collect":
-        [
-            {"TypeName": "name", "Content":"value","Interval":"seconds", "Count":"count"}
-        ]
-    }
-    ```
+  ```
+  {
+      "Collect":
+      [
+          {"TypeName": "name", "Content":"value","Interval":"seconds", "Count":"count"}
+      ]
+  }
+  ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >默认配置文件内容如下：
-    >\{
-    >"Collect":
-    >\[
-    >\{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"\},
-    >\{"TypeName": "Log", "Content" : "DataNode,ClusterManager", "Interval":"0", "Count":"1"\},
-    >\{"TypeName": "Database", "Content": "pg\_locks,pg\_stat\_activity,pg\_thread\_wait\_status","Interval":"0", "Count":"1"\},
-    >\{"TypeName": "Config", "Content": "DataNode", "Interval":"0", "Count":"1"\}
-    >\]
-    >\}
-    >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
-    >对于Log，CoreDump，Config，XLog四种类型，Interval和Count参数不生效。
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >默认配置文件内容如下：
+  >
+  >```
+  >{
+  >"Collect":
+  >[
+  >{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"},
+  >{"TypeName": "Log", "Content" : "DataNode,ClusterManager", "Interval":"0", "Count":"1"},
+  >{"TypeName": "Database", "Content": "pg_locks,pg_stat_activity,pg_thread_wait_status","Interval":"0", "Count":"1"},
+  >{"TypeName": "Config", "Content": "DataNode", "Interval":"0", "Count":"1"}
+  >]
+  >}
+  >```
+  >
+  >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
+  >对于Log、CoreDump、Config和XLog四种类型，Interval和Count参数不生效。
 
 -   --keyword=KEYWORD
 

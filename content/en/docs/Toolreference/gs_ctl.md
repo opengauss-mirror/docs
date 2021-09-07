@@ -19,105 +19,98 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 -   Parameters for  **start**  and  **restart**. For details, see  [Table 3](#en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_t6d75b31bab9540b284e45222396ae38b).
 -   Parameters for  **stop**  and  **restart**. For details, see  [Table 4](#en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a).
 -   Parameters for  **switchover**. For details, see  [Table 5](#en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31).
--   Parameters for  **build**. For details, see  [Table 6](#en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b).
--   Parameters for  **restore**. For details, see  [Table 7](#en-us_topic_0287275989_en-us_topic_0237152408_table19356432161112).
+- Parameters for  **build**. For details, see  [Table 6](#en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b).
 
-    **Table  1**  Parameters for option
+  **Table  1**  Parameters for option
 
-    <a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_t56b333c48c5e46cc93262560e23032f5"></a>
-    <table><thead align="left"><tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r3929a183903a469ab774fba257d687b4"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a>Parameter</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a>Description</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row181711619123"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p68172168121"><a name="p68172168121"></a><a name="p68172168121"></a>init</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p18172169122"><a name="p18172169122"></a><a name="p18172169122"></a>Creates a database.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>Starts the database.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r31c37425852d4a24a3d79984a227aec5"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a>restart</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a>Restarts the database.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r515fd2102d1d4bd3bd5bfded3a737b80"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a>build</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a>Rebuilds the standby or cascaded standby server on the primary server.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r0cd18abaee9141439b20f10f5909a508"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a>stop</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a789c0f0db6af439da52f73d557be2018"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a>Stops the database.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_rac69552e400344fdb7e6fd33ec6c5510"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a>reload</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a>Reloads the configuration files (<strong id="b135871748195315"><a name="b135871748195315"></a><a name="b135871748195315"></a>postgresql.conf</strong> and <strong id="b25929485536"><a name="b25929485536"></a><a name="b25929485536"></a>pg_hba.conf</strong>).</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r3608cac8fce041f2b62be02691c710fd"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a>status</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a>Displays the running status of the database services.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>Exits the faulty restoration when the running standby server is instructed in the specified data directory, and starts to perform the read and write operations.</p>
-    </td>
-    </tr>
-    <tr id="row73071824121416"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p6307132414148"><a name="p6307132414148"></a><a name="p6307132414148"></a>finishredo</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1030710244147"><a name="p1030710244147"></a><a name="p1030710244147"></a>Specifies that the standby server stops playback and is forcibly switched to the primary when the primary server is faulty.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a>When the primary server is abnormal, switches the standby server to a primary server.</p>
-    <p id="en-us_topic_0287275989_p0444145125912"><a name="en-us_topic_0287275989_p0444145125912"></a><a name="en-us_topic_0287275989_p0444145125912"></a>After the switchover is successful, run the <strong id="b15302195714183"><a name="b15302195714183"></a><a name="b15302195714183"></a>gs_om -t refreshconf</strong> command to record the information about the primary and standby servers. Ensure that the <strong id="b430755716183"><a name="b430755716183"></a><a name="b430755716183"></a>gs_om -t refreshconf</strong> command is executed successfully. Otherwise, the database status will be affected when the database is restarted.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_rf3ffc423f13a4943b18d24be85bcc74f"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a>switchover</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>When the primary/standby server relationship is normal, switches the standby server to primary for maintenance purposes. Data will not be lost during the switchover.</p>
-    <p id="en-us_topic_0287275989_p12188127154613"><a name="en-us_topic_0287275989_p12188127154613"></a><a name="en-us_topic_0287275989_p12188127154613"></a>The <strong id="b19985191881919"><a name="b19985191881919"></a><a name="b19985191881919"></a>switchover</strong> command takes effect only when it is executed on the standby server to be switched to the primary server. If the <strong id="b844612314223"><a name="b844612314223"></a><a name="b844612314223"></a>switchover</strong> command is executed on the primary server, it is used only for query.</p>
-    <p id="en-us_topic_0287275989_p1977111500144"><a name="en-us_topic_0287275989_p1977111500144"></a><a name="en-us_topic_0287275989_p1977111500144"></a>After the switchover is successful, run the <strong id="b567315201564"><a name="b567315201564"></a><a name="b567315201564"></a>gs_om -t refreshconf</strong> command to record the information about the primary and standby servers. Ensure that the <strong id="b1067312201768"><a name="b1067312201768"></a><a name="b1067312201768"></a>gs_om -t refreshconf</strong> command is executed successfully. Otherwise, the database status will be affected when the database is restarted.</p>
-    <p id="en-us_topic_0287275989_p1701525967"><a name="en-us_topic_0287275989_p1701525967"></a><a name="en-us_topic_0287275989_p1701525967"></a>After the <strong id="b42601545112519"><a name="b42601545112519"></a><a name="b42601545112519"></a>switchover</strong> command is delivered, if the command execution times out, the execution status of the background process may be uncertain.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r30b3aa9baf20460baf9e2b4f5fc55af3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a>query</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a>Queries the status between the primary and standby server.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r2ce5962d0dea41f3908b55f917778497"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a>notify</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae482529d18be4765a5527786608c11f7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a>Specifies the primary and standby servers after startup.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r35e8037818c84fdeafe486b78988f621"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a988038b433da4187a1c13d0b953ce677"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a>kill</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>Sends semaphore to a specified process.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r49b9f0118eb54e7da572b7511322b93d"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a>querybuild</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a>Checks the rebuilding process of the database.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_row181087439152"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_p1811113439157"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p1811113439157"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p1811113439157"></a>restore</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_p101113431156"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p101113431156"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p101113431156"></a>Restores an incremental backup set. The restoration can be performed only when the <strong id="b1514712122516"><a name="b1514712122516"></a><a name="b1514712122516"></a>gaussdb</strong> process is stopped.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
+  <a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_t56b333c48c5e46cc93262560e23032f5"></a>
+  <table><thead align="left"><tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r3929a183903a469ab774fba257d687b4"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_afa4039b4b9364850ae1fec4b95e894fc"></a>Parameter</p>
+  </th>
+  <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8b8a2d3711244e90b0305a484e90f9ff"></a>Description</p>
+  </th>
+  </tr>
+  </thead>
+  <tbody><tr id="row181711619123"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p68172168121"><a name="p68172168121"></a><a name="p68172168121"></a>init</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p18172169122"><a name="p18172169122"></a><a name="p18172169122"></a>Creates a database.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a72ab2ed393d541928b39adae53cfcdca"></a>Starts the database.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r31c37425852d4a24a3d79984a227aec5"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a95a12ca9f06c4f51987e568cbdfdbe0c"></a>restart</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae23478cff6104615ad729d85fe238cfd"></a>Restarts the database.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r515fd2102d1d4bd3bd5bfded3a737b80"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a8954793ab7324bbbadc2918ac5a879b5"></a>build</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a37cc0cf546a24ea5af5c2fd108b781f7"></a>Rebuilds the standby or cascaded standby server on the primary server.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r0cd18abaee9141439b20f10f5909a508"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aafaefbf4f86c4c5780185eb041db1e19"></a>stop</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a789c0f0db6af439da52f73d557be2018"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a789c0f0db6af439da52f73d557be2018"></a>Stops the database.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_rac69552e400344fdb7e6fd33ec6c5510"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ab247effbdee84ab1844e1083db41e26c"></a>reload</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_aa66695e9ba8247a68218d9a5729c9b2b"></a>Reloads the configuration files (<strong id="b135871748195315"><a name="b135871748195315"></a><a name="b135871748195315"></a>postgresql.conf</strong> and <strong id="b25929485536"><a name="b25929485536"></a><a name="b25929485536"></a>pg_hba.conf</strong>).</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r3608cac8fce041f2b62be02691c710fd"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adba39c429e9e4997b2a8aa0db8a78a02"></a>status</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a>Displays the running status of the database services.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>Exits the faulty restoration when the running standby server is instructed in the specified data directory, and starts to perform the read and write operations.</p>
+  </td>
+  </tr>
+  <tr id="row73071824121416"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p6307132414148"><a name="p6307132414148"></a><a name="p6307132414148"></a>finishredo</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1030710244147"><a name="p1030710244147"></a><a name="p1030710244147"></a>Specifies that the standby server stops playback and is forcibly switched to the primary when the primary server is faulty.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a>When the primary server is abnormal, switches the standby server to a primary server.</p>
+  <p id="en-us_topic_0287275989_p0444145125912"><a name="en-us_topic_0287275989_p0444145125912"></a><a name="en-us_topic_0287275989_p0444145125912"></a>After the switchover is successful, run the <strong id="b15302195714183"><a name="b15302195714183"></a><a name="b15302195714183"></a>gs_om -t refreshconf</strong> command to record the information about the primary and standby servers. Ensure that the <strong id="b430755716183"><a name="b430755716183"></a><a name="b430755716183"></a>gs_om -t refreshconf</strong> command is executed successfully. Otherwise, the database status will be affected when the database is restarted.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_rf3ffc423f13a4943b18d24be85bcc74f"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a1ad3e7a546a04d24bb48bf4b19fd0d7c"></a>switchover</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a68a9c0e9002d4338abf24a3427f8f1e8"></a>When the primary/standby server relationship is normal, switches the standby server to primary for maintenance purposes. Data will not be lost during the switchover.</p>
+  <p id="en-us_topic_0287275989_p12188127154613"><a name="en-us_topic_0287275989_p12188127154613"></a><a name="en-us_topic_0287275989_p12188127154613"></a>The <strong id="b19985191881919"><a name="b19985191881919"></a><a name="b19985191881919"></a>switchover</strong> command takes effect only when it is executed on the standby server to be switched to the primary server. If the <strong id="b844612314223"><a name="b844612314223"></a><a name="b844612314223"></a>switchover</strong> command is executed on the primary server, it is used only for query.</p>
+  <p id="en-us_topic_0287275989_p1977111500144"><a name="en-us_topic_0287275989_p1977111500144"></a><a name="en-us_topic_0287275989_p1977111500144"></a>After the switchover is successful, run the <strong id="b567315201564"><a name="b567315201564"></a><a name="b567315201564"></a>gs_om -t refreshconf</strong> command to record the information about the primary and standby servers. Ensure that the <strong id="b1067312201768"><a name="b1067312201768"></a><a name="b1067312201768"></a>gs_om -t refreshconf</strong> command is executed successfully. Otherwise, the database status will be affected when the database is restarted.</p>
+  <p id="en-us_topic_0287275989_p1701525967"><a name="en-us_topic_0287275989_p1701525967"></a><a name="en-us_topic_0287275989_p1701525967"></a>After the <strong id="b42601545112519"><a name="b42601545112519"></a><a name="b42601545112519"></a>switchover</strong> command is delivered, if the command execution times out, the execution status of the background process may be uncertain.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r30b3aa9baf20460baf9e2b4f5fc55af3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a94884c00e8b84621bc978b3fba6fce4c"></a>query</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ac4b07e8b28234e978cab7d001aa11b5f"></a>Queries the status between the primary and standby server.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r2ce5962d0dea41f3908b55f917778497"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a24e6f45222114f2d9cee95b0f1dcaba9"></a>notify</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae482529d18be4765a5527786608c11f7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ae482529d18be4765a5527786608c11f7"></a>Specifies the primary and standby servers after startup.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r35e8037818c84fdeafe486b78988f621"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a988038b433da4187a1c13d0b953ce677"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a>kill</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>Sends semaphore to a specified process.</p>
+  </td>
+  </tr>
+  <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r49b9f0118eb54e7da572b7511322b93d"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a>querybuild</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a21c9b7614320489fa62f71f15d1d2a27"></a>Checks the rebuilding process of the database.</p>
+  </td>
+  </tr>
+  </tbody>
+  </table>
 
 **Table  2**  Common parameters
 
@@ -198,6 +191,16 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275989_p1493592615345"><a name="en-us_topic_0287275989_p1493592615345"></a><a name="en-us_topic_0287275989_p1493592615345"></a>None</p>
 </td>
 </tr>
+    <tr id="en-us_topic_0287275989_row89351326193410"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275989_p19935152683419"><a name="en-us_topic_0287275989_p19935152683419"></a><a name="en-us_topic_0287275989_p19935152683419"></a>-q</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275989_p19935726153414"><a name="en-us_topic_0287275989_p19935726153414"></a><a name="en-us_topic_0287275989_p19935726153414"></a>After the generation is completed, it does not start automatically, and needs to be started by the caller.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275989_p1493592615345"><a name="en-us_topic_0287275989_p1493592615345"></a><a name="en-us_topic_0287275989_p1493592615345"></a>None</p>
+</td>
+</tr>
+    <tr id="en-us_topic_0287275989_row89351326193410"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275989_p19935152683419"><a name="en-us_topic_0287275989_p19935152683419"></a><a name="en-us_topic_0287275989_p19935152683419"></a>-d</p></td><td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275989_p19935726153414"><a name="en-us_topic_0287275989_p19935726153414"></a><a name="en-us_topic_0287275989_p19935726153414"></a>Prints more debugging information.</p></td><td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275989_p1493592615345"><a name="en-us_topic_0287275989_p1493592615345"></a><a name="en-us_topic_0287275989_p1493592615345"></a>None</p>
+        </td>
+    </tr>
 <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r0297ef20051849eeaa6c1304ff282801"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a3327025f553a4190952a4672db74812c"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a3327025f553a4190952a4672db74812c"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a3327025f553a4190952a4672db74812c"></a>-P PASSWORD</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a>Specifies the password of the user connecting to the local database. It is used in conjunction with the <strong id="b26509356277"><a name="b26509356277"></a><a name="b26509356277"></a>-U</strong> parameter.</p>
@@ -225,6 +228,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 </tbody>
 </table>
+
 
 **Table  3**  Common parameters for  **start**  and  **restart**
 
@@ -292,7 +296,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 </tbody>
 </table>
-
 **Table  5**  Parameters for switchover 
 
 <a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31"></a>
@@ -309,12 +312,13 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 <td class="cellrowborder" valign="top" width="31.81681831816818%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a56dac3daa98d4aeaafff709d28416938"></a>Specifies the HA switchover mode when the primary and standby servers are normal.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a46084dc528fd40b4acf2cb824712259d"></a>Values of <strong id="b614016616711"><a name="b614016616711"></a><a name="b614016616711"></a>mode</strong>:</p>
-<a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li><strong id="b1316717120488"><a name="b1316717120488"></a><a name="b1316717120488"></a>fast</strong>: All active transactions are rolled back and all clients are disconnected forcibly, and then the server is switched.</li><li><strong id="b5708191713265"><a name="b5708191713265"></a><a name="b5708191713265"></a>smart</strong>: This mode is not supported in this version.</li><li><strong id="b1558152112710"><a name="b1558152112710"></a><a name="b1558152112710"></a>immediate</strong>: This mode is not supported in this version.</li></ul>
+<a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"></a><ul id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_ub1c664579d5c471aad1c937aff62631d"><li><strong id="b1316717120488"><a name="b1316717120488"></a><a name="b1316717120488"></a>fast</strong>: All active transactions are rolled back and all clients are disconnected forcibly, and then the server is switched.</li><li><strong id="b5708191713265"><a name="b5708191713265"></a><a name="b5708191713265"></a>smart</strong>: This mode is not supported in this version.</li></ul>
 <p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_af569c9abf23c46238bafee5bc8e39620"></a>Default value: <strong id="b1390728885"><a name="b1390728885"></a><a name="b1390728885"></a>fast</strong></p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 **Table  6**  Parameters for build
 
@@ -365,28 +369,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tbody>
 </table>
 
-**Table  7**  Parameters for restore
-
-<a name="en-us_topic_0287275989_en-us_topic_0237152408_table19356432161112"></a>
-<table><thead align="left"><tr id="en-us_topic_0287275989_en-us_topic_0237152408_row7357193212113"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0287275989_en-us_topic_0237152408_p1828211549118"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p1828211549118"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p1828211549118"></a>Parameter</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="en-us_topic_0287275989_en-us_topic_0237152408_p1928210546117"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p1928210546117"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p1928210546117"></a>Description</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="en-us_topic_0287275989_en-us_topic_0237152408_p15282175461116"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p15282175461116"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p15282175461116"></a>Value Range</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0287275989_en-us_topic_0237152408_row9358123210116"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_p152821543115"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p152821543115"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p152821543115"></a>--remove-backup</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_p62831654121117"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p62831654121117"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p62831654121117"></a>Specifies whether to delete an incremental backup set.</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_p16283115418114"><a name="en-us_topic_0287275989_en-us_topic_0237152408_p16283115418114"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_p16283115418114"></a>None</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-**Table  8**  Parameters for query
+**Table  7**  Parameters for query
 
 <a name="en-us_topic_0287275989_table198621411133319"></a>
 <table><thead align="left"><tr id="en-us_topic_0287275989_row2086211117339"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0287275989_p2862181110338"><a name="en-us_topic_0287275989_p2862181110338"></a><a name="en-us_topic_0287275989_p2862181110338"></a>Parameter</p>

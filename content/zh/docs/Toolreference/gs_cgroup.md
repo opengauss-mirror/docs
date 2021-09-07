@@ -364,7 +364,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
 -   -E data
 
-    设定异常阈值，目前阈值包括：blocktime，elapsedtime，allcputime，spillsize，broadcastsize以及qualificationtime和cpuskewpercent，指定多个阈值时用“，”分隔。参数值0表示取消设置，设置不合法的值时会提示。
+    设定异常阈值，目前阈值包括：blocktime、elapsedtime、allcputime、spillsize、broadcastsize以及qualificationtime和cpuskewpercent，指定多个阈值时用“，”分隔。参数值0表示取消设置，设置不合法的值时会提示。
 
     **表 2**  异常阈值类型
 
