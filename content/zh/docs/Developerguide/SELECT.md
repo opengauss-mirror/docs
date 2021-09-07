@@ -161,11 +161,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
         _table\_name_之后的TABLESAMPLE子句表示应该用指定的_sampling\_method_来检索表中行的子集。
 
-        可选的REPEATABLE子句指定一个用于产生采样方法中随机数的_种子_数。种子值可以是任何非空常量值。如果查询时表没有被更改，指定相同种子和_argument_值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
+        可选的REPEATABLE子句指定一个用于产生采样方法中随机数的种子数。种子值可以是任何非空常量值。如果查询时表没有被更改，指定相同种子和_argument_值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
 
     -   column\_alias
 
-        列别名
+        列别名。
 
     -   PARTITION
 
@@ -268,11 +268,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     -   CUBE \( \{ expression | \( expression \[, ...\] \) \} \[, ...\] \)
 
-        CUBE是自动对group by子句中列出的字段进行分组汇总，结果集将包含维度列中各值的所有可能组合，以及与这些维度值组合相匹配的基础行中的聚合值。它会为每个分组返回一行汇总信息， 用户可以使用CUBE来产生交叉表值。比如，在CUBE子句中给出三个表达式（n = 3），运算结果为2<sup>n</sup>  = 2<sup>3</sup>  = 8组。 以n个表达式的值分组的行称为常规行，其余的行称为超级聚集行。
+        CUBE是自动对group by子句中列出的字段进行分组汇总，结果集将包含维度列中各值的所有可能组合，以及与这些维度值组合相匹配的基础行中的聚合值。它会为每个分组返回一行汇总信息，用户可以使用CUBE来产生交叉表值。比如，在CUBE子句中给出三个表达式（n = 3），运算结果为2<sup>n</sup>  = 2<sup>3</sup>  = 8组。以n个表达式的值分组的行称为常规行，其余的行称为超级聚集行。
 
     -   GROUPING SETS \( grouping\_element \[, ...\] \)
 
-        GROUPING SETS子句是GROUP BY子句的进一步扩展，它可以使用户指定多个GROUP BY选项。 这样做可以通过裁剪用户不需要的数据组来提高效率。 当用户指定了所需的数据组时，数据库不需要执行完整CUBE或ROLLUP生成的聚合集合。
+        GROUPING SETS子句是GROUP BY子句的进一步扩展，它可以使用户指定多个GROUP BY选项。这样做可以通过裁剪用户不需要的数据组来提高效率。当用户指定了所需的数据组时，数据库不需要执行完整CUBE或ROLLUP生成的聚合集合。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >如果SELECT列表的表达式中引用了那些没有分组的字段，则会报错，除非使用了聚集函数，因为对于未分组的字段，可能返回多个数值。
@@ -362,7 +362,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     EXCEPT操作符计算存在于左边SELECT语句的输出而不存在于右边SELECT语句输出的行。
 
-    EXCEPT的结果不包含任何重复的行，除非声明了ALL选项。使用ALL时，一个在左边表中有m个重复而在右边表中有n个重复的行将在结果中出现max\(m-n,0\) 次。
+    EXCEPT的结果不包含任何重复的行，除非声明了ALL选项。使用ALL时，一个在左边表中有m个重复而在右边表中有n个重复的行将在结果中出现max\(m-n,0\)次。
 
     除非用圆括弧指明顺序，否则同一个SELECT语句中的多个EXCEPT操作符是从左向右计算的。EXCEPT和UNION的绑定级别相同。
 
@@ -372,19 +372,20 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     与EXCEPT子句具有相同的功能和用法。
 
--   **ORDER BY子句**
+- **ORDER BY子句**
 
-    对SELECT语句检索得到的数据进行升序或降序排序。对于ORDER BY表达式中包含多列的情况：
+  对SELECT语句检索得到的数据进行升序或降序排序。对于ORDER BY表达式中包含多列的情况：
 
-    -   首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
-    -   如果对于所有声明的表达式都相同，则按随机顺序返回。
-    -   ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
+  -   首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
+  -   如果对于所有声明的表达式都相同，则按随机顺序返回。
+  -   ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >如果要支持中文拼音排序和不区分大小写排序，需要在初始化数据库时指定编码格式为UTF-8或GBK。 命令如下:
-    >```
-    >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8或initdb –E GBK –D ../data –locale=zh\_CN.GBK。
-    >```
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >如果要支持中文拼音排序和不区分大小写排序，需要在初始化数据库时指定编码格式为UTF-8或GBK。命令如下:
+  >
+  >```
+  >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8或initdb –E GBK –D ../data –locale=zh\_CN.GBK。
+  >```
 
 -   **LIMIT子句**
 
@@ -408,7 +409,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **FOR UPDATE子句**
 
-    FOR UPDATE子句将对SELECT检索出来的行进行加锁。这样避免它们在当前事务结束前被其他事务修改或者删除，即其他企图UPDATE、 DELETE、 SELECT FOR UPDATE这些行的事务将被阻塞，直到当前事务结束。
+    FOR UPDATE子句将对SELECT检索出来的行进行加锁。这样避免它们在当前事务结束前被其他事务修改或者删除，即其他企图UPDATE、DELETE、SELECT FOR UPDATE这些行的事务将被阻塞，直到当前事务结束。
 
     为了避免操作等待其他事务提交，可使用NOWAIT选项，如果被选择的行不能立即被锁住，执行SELECT FOR UPDATE NOWAIT将会立即汇报一个错误，而不是等待。
 

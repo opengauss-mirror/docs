@@ -37,11 +37,11 @@ CREATE [ OR REPLACE ] RULE name AS ON event
 
 -   **table_name**
 
-    规则作用的表或者视图的名字(可以有模式修饰)。
+    规则作用的表或者视图的名字（可以有模式修饰）。
 
 -   **condition**
 
-    返回boolean的SQL条件表达式，决定是否实际执行规则。表达式除了引用NEW和OLD之外不能引用任何表， 并且不能有聚合函数。
+    返回boolean的SQL条件表达式，决定是否实际执行规则。表达式除了引用NEW和OLD之外不能引用任何表，并且不能有聚合函数。
 
 -   **INSTEAD**
 
@@ -49,11 +49,11 @@ CREATE [ OR REPLACE ] RULE name AS ON event
 
 -   **ALSO**
 
-    ALSO指示该命令应该在初始事件执行之后执行。如果既没有声明ALSO也没有声明INSTEAD， 那么ALSO为缺省值。
+    ALSO指示该命令应该在初始事件执行之后执行。如果既没有声明ALSO也没有声明INSTEAD，那么ALSO为缺省值。
 
 -   **command**
 
-    组成规则动作的命令。有效的命令是SELECT、 INSERT、UPDATE、 DELETE语句之一。
+    组成规则动作的命令。有效的命令是SELECT、INSERT、UPDATE、DELETE语句之一。
 
 ## 示例<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 

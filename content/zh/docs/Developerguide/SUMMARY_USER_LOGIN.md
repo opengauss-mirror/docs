@@ -31,7 +31,7 @@ SUMMARY\_USER\_LOGIN用来记录数据库主节点上用户登录和退出次数
 </td>
 <td class="cellrowborder" valign="top" width="16.950000000000003%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122724_p122154802312"><a name="zh-cn_topic_0237122724_p122154802312"></a><a name="zh-cn_topic_0237122724_p122154802312"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122724_p142384892313"><a name="zh-cn_topic_0237122724_p142384892313"></a><a name="zh-cn_topic_0237122724_p142384892313"></a>用户oid(同pg_authid中的oid字段)。</p>
+<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122724_p142384892313"><a name="zh-cn_topic_0237122724_p142384892313"></a><a name="zh-cn_topic_0237122724_p142384892313"></a>用户oid（同pg_authid中的oid字段）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122724_row102334813235"><td class="cellrowborder" valign="top" width="25.14%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122724_p122304842311"><a name="zh-cn_topic_0237122724_p122304842311"></a><a name="zh-cn_topic_0237122724_p122304842311"></a>login_counter</p>
