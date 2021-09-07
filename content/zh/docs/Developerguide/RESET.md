@@ -28,7 +28,7 @@ RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | TRANSACTION ISOLAT
 
 -   **CURRENT\_SCHEMA**
 
-    当前模式
+    当前模式。
 
 -   **TIME ZONE**
 

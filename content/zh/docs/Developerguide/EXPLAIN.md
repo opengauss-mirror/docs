@@ -44,7 +44,7 @@ ROLLBACK;
     EXPLAIN [ (  option  [, ...] )  ] statement;
     ```
 
-    其中选项option子句的语法为。
+    其中选项option子句的语法为：
 
     ```
     ANALYZE [ boolean ] |
