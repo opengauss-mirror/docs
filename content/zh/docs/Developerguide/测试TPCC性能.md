@@ -1,6 +1,6 @@
 # 测试TPCC性能<a name="ZH-CN_TOPIC_0263913274"></a>
 
-1.  下载TPCC标准测试工具BenchmarkSQL5.0**。**
+1.  下载TPCC标准测试工具BenchmarkSQL5.0。
 2.  将目录lib/postgresql下面的\*.jar 替换为openGauss适配的jar包。
 
     ```
@@ -13,7 +13,7 @@
 
     openGauss适配的JDBC版本包获取路径为[openGauss-x.x.x-JDBC .tar.gz](https://opengauss.org/zh/download.html)。
 
-3.  进入benchmarksql-5.0根目录, 输入ant命令进行编译。
+3.  进入benchmarksql-5.0根目录，输入ant命令进行编译。
 
     ```
     $ cd /your path/benchmarksql-5.0/ 
@@ -22,7 +22,7 @@
 
     编译成功后会生成build和dist两个目录。
 
-4.  创建benchmarkSQL配置文件，使用benchmarkSQL前需要配置数据库相关的信息, 包括数据库账号、密码、端口、数据库名称.。
+4.  创建benchmarkSQL配置文件，使用benchmarkSQL前需要配置数据库相关的信息，包括数据库账号、密码、端口、数据库名称。
 
     ```
     $ cd /your path/benchmarksql-5.0/run 
@@ -229,11 +229,11 @@
 
 7.  <a name="li11139125793619"></a>备份数据。
 
-    为了方便多次测试， 减少导入数据的时间，可以通过停止数据库，将整个数据目录执行一次拷贝对数据库进行备份。
+    为了方便多次测试，减少导入数据的时间，可以通过停止数据库，将整个数据目录执行一次拷贝对数据库进行备份。
 
 8.  <a name="li1840654753618"></a>对数据进行分盘。
 
-    在性能测试过程中，为了增加IO的吞吐量，需要将数据分散到不同的存储介质上。由于机器上有4块NVME盘，可以将数据分散到不同的盘上。 将pg\_xlog、tablespace2、tablespace3这三个目录放置在其他3个NVME盘上，并在原有的位置给出指向真实位置的软连接。pg\_xlog位于数据库目录下，tablespace2、tablespace3分别位于数据库目录pg\_location下。对tablespace2分盘的命令如下:
+    在性能测试过程中，为了增加IO的吞吐量，需要将数据分散到不同的存储介质上。由于机器上有4块NVME盘，可以将数据分散到不同的盘上。将pg\_xlog、tablespace2、tablespace3这三个目录放置在其他3个NVME盘上，并在原有的位置给出指向真实位置的软连接。pg\_xlog位于数据库目录下，tablespace2、tablespace3分别位于数据库目录pg\_location下。对tablespace2分盘的命令如下:
 
     ```
     mv $DATA_DIR/pg_location/tablespace2 $TABSPACE2_DIR/tablespace2 
