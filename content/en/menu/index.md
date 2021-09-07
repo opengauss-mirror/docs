@@ -2329,7 +2329,6 @@ headless: true
 		-   [gs\_check]({{< relref "./docs/Toolreference/gs_check.md" >}})
 		-   [gs\_checkos]({{< relref "./docs/Toolreference/gs_checkos.md" >}})
 		-   [gs\_checkperf]({{< relref "./docs/Toolreference/gs_checkperf.md" >}})
-		-   [gs\_clean]({{< relref "./docs/Toolreference/gs_clean.md" >}})
 		-   [gs\_collector]({{< relref "./docs/Toolreference/gs_collector.md" >}})
 		-   [gs\_dump]({{< relref "./docs/Toolreference/gs_dump.md" >}})
 		-   [gs\_dumpall]({{< relref "./docs/Toolreference/gs_dumpall.md" >}})
