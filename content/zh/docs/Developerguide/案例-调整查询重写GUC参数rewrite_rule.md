@@ -62,7 +62,7 @@ openGauss=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 w
 
 子链接提升需要保证对于每个条件只有一行输出，对于有agg的子查询可以自动提升，对于无agg的子查询如：
 
-select t1.c1 from t1 where t1.c1 = \(select t2.c1 from t2 where t1.c1=t2.c2\) ;
+select t1.c1 from t1 where t1.c1 = \(select t2.c1 from t2 where t1.c1=t2.c2\);
 
 重写为：
 
@@ -97,7 +97,7 @@ openGauss=# explain verbose select t1.c1 from t1 where t1.c1 = (select t2.c1 fro
 
 注意：因为分组group by t2.c1 unique check发生在过滤条件tt.c1=t1.c1之前，可能导致原来不报错的查询重写之后报错。举例：
 
-有t1,t2表，其中的数据为：
+有t1，t2表，其中的数据为：
 
 ```
 openGauss=# select * from t1 order by c2;
