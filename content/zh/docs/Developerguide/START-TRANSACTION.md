@@ -50,7 +50,7 @@ BEGIN [ WORK | TRANSACTION ]
     取值范围：
 
     -   READ COMMITTED：读已提交隔离级别，只能读到已经提交的数据，而不会读到未提交的数据。这是缺省值。
-    -   REPEATABLE READ： 可重复读隔离级别，仅仅看到事务开始之前提交的数据，它不能看到未提交的数据，以及在事务执行期间由其它并发事务提交的修改。
+    -   REPEATABLE READ：可重复读隔离级别，仅仅看到事务开始之前提交的数据，它不能看到未提交的数据，以及在事务执行期间由其它并发事务提交的修改。
     -   SERIALIZABLE：openGauss目前功能上不支持此隔离级别，等价于REPEATABLE READ。
 
 -   **READ WRITE | READ ONLY**
