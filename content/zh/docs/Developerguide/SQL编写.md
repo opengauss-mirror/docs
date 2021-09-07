@@ -23,7 +23,7 @@
 
 -   【建议】在需要数据类型转换（不同数据类型进行比较或转换）时，使用强制类型转换，以防隐式类型转换结果与预期不符。
 -   【建议】在查询中，对常量要显式指定数据类型，不要试图依赖任何隐式的数据类型转换。
--   【关注】若sql\_compatibility参数设置为ORA，在导入数据时，空字符串会自动转化为NULL。如果需要保留空字符串需要sql\_compatibility参数设置为TD。
+-   【关注】若sql\_compatibility参数设置为A，在导入数据时，空字符串会自动转化为NULL。如果需要保留空字符串需要sql\_compatibility参数设置为C。
 
 ## 查询操作<a name="section48841047154511"></a>
 
@@ -137,22 +137,23 @@
     ```
 
 -   【建议】当in\(val1, val2, val3…\)表达式中字段较多时，建议使用in \(values \(va11\), \(val2\),\(val3\)…\)语句进行替换。优化器会自动把in约束转换为非关联子查询，从而提升查询性能。
--   【建议】在关联字段不存在NULL值的情况下，使用\(not\) exist代替\(not\) in。例如，在下面查询语句中，当T1.C1列不存在NULL值时，可以先为T1.C1字段添加NOT NULL约束，再进行如下改写。
+- 【建议】在关联字段不存在NULL值的情况下，使用\(not\) exist代替\(not\) in。例如，在下面查询语句中，当T1.C1列不存在NULL值时，可以先为T1.C1字段添加NOT NULL约束，再进行如下改写。
 
-    ```
-    SELECT * FROM T1 WHERE T1.C1 NOT IN (SELECT T2.C2 FROM T2);
-    ```
+  ```
+  SELECT * FROM T1 WHERE T1.C1 NOT IN (SELECT T2.C2 FROM T2);
+  ```
 
-    可以改写为：
+  可以改写为：
 
-    ```
-    SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T1,T2 WHERE T1.C1=T2.C2);
-    ```
+  ```
+  SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T1,T2 WHERE T1.C1=T2.C2);
+  ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   如果不能保证T1.C1列的值为NOT NULL的情况下，就不能进行上述改写。
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  >-   如果不能保证T1.C1列的值为NOT NULL的情况下，就不能进行上述改写。
 
-    >-   如果T1.C1为子查询的输出，要根据业务逻辑确认其输出是否为NOT NULL。
+  >-   如果T1.C1为子查询的输出，要根据业务逻辑确认其输出是否为NOT NULL。
 
 -   【建议】通过游标进行翻页查询，而不是使用LIMIT OFFSET语法，避免多次执行带来的资源开销。游标必须在事务中使用，执行完后务必关闭游标并提交事务。
 

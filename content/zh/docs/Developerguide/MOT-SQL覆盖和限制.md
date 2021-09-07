@@ -29,6 +29,7 @@ MOT功能限制：
 -   子事务
 -   DML触发器
 -   DDL触发器
+-   “C”或“POSIX”以外的排序规则
 
 ## 不支持的DDL操作<a name="section56822082"></a>
 

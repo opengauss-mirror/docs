@@ -10,7 +10,7 @@ openGauss中可以使用Database和Schema实现业务的隔离，区别在于Dat
 -   【规则】在实际业务中，根据需要创建新的Database，不建议直接使用数据库实例默认的postgres数据库。
 -   【建议】一个数据库实例内，用户自定义的Database数量建议不超过3个。
 -   【建议】为了适应全球化的需求，使数据库编码能够存储与表示绝大多数的字符，建议创建Database的时候使用UTF-8编码。
--   【关注】创建Database时，需要重点关注字符集编码（ENCODING）和兼容性（DBCOMPATIBILITY）两个配置项。openGauss支持Teradata、Oracle、MySQL和PostgreSQL四种兼容模式，分别部分兼容Teradata语法、Oracle语法、MySQL语法和PostgreSQL语法，不同兼容模式下的语法行为存在一定差异，默认为MySQL兼容模式。
+-   【关注】创建Database时，需要重点关注字符集编码（ENCODING）和兼容性（DBCOMPATIBILITY）两个配置项。openGauss支持A、B、C和PG四种兼容模式，分别表示兼容O语法、MY语法、TD语法和POSTGRES语法，不同兼容模式下的语法行为存在一定差异，默认为A兼容模式。
 -   【关注】Database的owner默认拥有该Database下所有对象的所有权限，包括删除权限。删除权限影响较大，请谨慎使用。
 
 ## Schema设计建议<a name="zh-cn_topic_0097078336_section11591445165916"></a>

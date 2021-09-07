@@ -29,6 +29,7 @@ The following lists the functionality limitations of MOT tables –
 -   Sub-transactions
 -   DML triggers
 -   DDL triggers
+-   Collations other than "C" or "POSIX"
 
 ## Unsupported Table DDLs<a name="section1072117103819"></a>
 
