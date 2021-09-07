@@ -50,7 +50,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 1.  本版本支持的算法概述。
 
-    当前版本的DB4AI支持基于SGD算子的逻辑回归\(目前支持二分类任务\)、线性回归和支持向量机算法\(分类任务\)，以及基于K-Means算子的Kmeans聚类算法。
+    当前版本的DB4AI支持基于SGD算子的逻辑回归（目前支持二分类任务）、线性回归和支持向量机算法（分类任务），以及基于K-Means算子的Kmeans聚类算法。
 
 2.  模型训练语法说明。
     -   CREATE MODEL
@@ -84,7 +84,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
         (20 rows)
         ```
 
-        该表的字段position的数据类型为 double precision\[\].
+        该表的字段position的数据类型为 double precision\[\]。
 
     -   以Kmeans为例，训练一个模型。从kmeans\_2d训练集中指定position为特征列，使用kmeans算法，创建并保存模型point\_kmeans。
 
@@ -300,7 +300,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 
     -   模型保存成功，则返回创建成功信息：
-
+    
         ```
         MODEL CREATED. PROCESSED x
         ```
@@ -473,7 +473,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 
         -   场景二：当模型名称已存在，模型保存失败，返回ERROR，并提示错误原因：
-
+    
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment TARGET trait_anxiety  FROM patients;
             NOTICE:  Hyperparameter batch_size takes value DEFAULT (1000)
@@ -491,7 +491,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 
         -   场景三：FEATURE或者TARGETS列是\*，返回ERROR，并提示错误原因：
-
+    
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES *  TARGET trait_anxiety  FROM
             patients;
@@ -503,7 +503,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 
         -   场景四：对于无监督学习方法使用TARGET关键字，或者在监督学习方法中不适用TARGET关键字，均会返回ERROR，并提示错误原因：
-
+    
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment FROM patients;
             ERROR:  Supervised ML algorithms require TARGET clause
@@ -513,18 +513,18 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 
         -   场景五：当GUC参数statement\_timeout设置了时长，训练超时执行的语句将被终止：执行CREATE MODEL语句。训练集的大小、训练轮数\(iteration\)、提前终止条件\(tolerance、max\_seconds\)、并行线程数\(nthread\)等参数都会影响训练时长。当时长超过数据库限制，语句被终止模型训练失败。
-
+    
     -   推断阶段。
-
+    
         -   场景六：当模型名在系统表中查找不到，数据库会报ERROR：
-
+    
             ```
             openGauss=# select id, PREDICT BY patient_logistic_regression (FEATURES second_attack,treatment) FROM patients;
             ERROR:  There is no model called "patient_logistic_regression".
             ```
-
+    
         -   场景七：当做推断任务FEATURES的数据维度和数据类型与训练集存在不一致，将报ERROR，并提示错误原因，例如：
-
+    
             ```
             openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES second_attack) FROM patients;
             ERROR:  Invalid number of features for prediction, provided 1, expected 2

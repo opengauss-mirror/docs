@@ -266,8 +266,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     指定各分区的信息，各参数意义如下：
 
     -   partition\_name：范围分区的名称或名称前缀，除以下情形外（假定其中的partition\_name是p1），均为分区的名称。
-        -   若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1, p1\_2, ...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\), \[2, 3\) 和 \[3, 4\)，名称依次为p1\_1, p1\_2和p1\_3，即此处的p1是名称前缀。
-        -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\), \[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0, p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
+        -   若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1，p1\_2，...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\)，\[2, 3\) 和 \[3, 4\)，名称依次为p1\_，p1\_2和p1\_3，即此处的p1是名称前缀。
+        -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1，p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\)，\[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0，p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
 
     -   partition\_value：范围分区的端点值（起始或终点），取值依赖于partition\_key的类型，不可是MAXVALUE。
     -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
@@ -351,7 +351,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **DEFAULT default\_expr**
 
-    DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式\(不允许使用子查询和对本表中的其他字段的交叉引用\)。缺省表达式的数据类型必须和字段类型匹配。
+    DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式（不允许使用子查询和对本表中的其他字段的交叉引用）。缺省表达式的数据类型必须和字段类型匹配。
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
 

@@ -1,4 +1,4 @@
-﻿# CREATE USER MAPPING
+﻿﻿# CREATE USER MAPPING
 ## 功能描述
 定义一个用户到一个外部服务器的新映射。
 ## 语法格式
@@ -16,7 +16,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
 -   **user\_name**
 
-    要映射到外部服务器的一个现有用户的名称。 `CURRENT_USER`和`USER`匹配当前用户的名称。 当`PUBLIC`被指定时，一个所谓的公共映射会被创建，当没有特定用户的映射可用时将会使用它。
+    要映射到外部服务器的一个现有用户的名称。`CURRENT_USER`和`USER`匹配当前用户的名称。当`PUBLIC`被指定时，一个所谓的公共映射会被创建，当没有特定用户的映射可用时将会使用它。
 
 -   **server\_name**
 
@@ -46,16 +46,17 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
         MySQL Server/MariaDB用户对应的密码。
         
+    
     postgres_fdw支持的options包括：
     
     -   **user**
-
+    
         远端openGauss的用户名。
-
+    
     -   **password**
-
+    
         远端openGauss用户对应的密码。
-
+    
     openGauss在后台会对用户输入的password加密以保证安全性。该加密所需密钥文件需要使用gs\_guc工具生成并使用gs\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。password不应当包含'encryptOpt'前缀，否则会被认为是加密后的密文。
 
 相关链接
