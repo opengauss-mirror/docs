@@ -2,7 +2,7 @@
 
 ## 背景信息<a name="zh-cn_topic_0237120306_zh-cn_topic_0059779372_sccec47ed8ad54f89b98b83caf9a0b4fd"></a>
 
-schema又称作模式。通过管理schema，允许多个用户使用同一数据库而不相互干扰，可以将数据库对象组织成易于管理的逻辑组，同时便于将第三方应用添加到相应的schema下而不引起冲突。 管理schema包括：创建schema、使用schema、删除schema、设置schema的搜索路径以及schema的权限控制。
+schema又称作模式。通过管理schema，允许多个用户使用同一数据库而不相互干扰，可以将数据库对象组织成易于管理的逻辑组，同时便于将第三方应用添加到相应的schema下而不引起冲突。管理schema包括：创建schema、使用schema、删除schema、设置schema的搜索路径以及schema的权限控制。
 
 ## 注意事项<a name="zh-cn_topic_0237120306_zh-cn_topic_0059779372_sf39acabf4d3c4f199303910765daa0cd"></a>
 
