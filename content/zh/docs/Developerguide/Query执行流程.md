@@ -16,7 +16,7 @@ SQL引擎从接受SQL语句到执行SQL语句需要经历的步骤如[图1](#zh-
 </thead>
 <tbody><tr id="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_row16064139152535"><td class="cellrowborder" valign="top" width="27.400000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p26126919152535"><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p26126919152535"></a><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p26126919152535"></a>1、语法&amp;词法解析</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.6%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p35905662152535"><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p35905662152535"></a><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p35905662152535"></a>按照约定的SQL语句规则，把输入的SQL语句从字符串转化为格式化结构(Stmt)。</p>
+<td class="cellrowborder" valign="top" width="72.6%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p35905662152535"><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p35905662152535"></a><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p35905662152535"></a>按照约定的SQL语句规则，把输入的SQL语句从字符串转化为格式化结构（Stmt）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_row54715508152535"><td class="cellrowborder" valign="top" width="27.400000000000002%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p2771186152535"><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p2771186152535"></a><a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_p2771186152535"></a>2、语义解析</p>
@@ -42,9 +42,10 @@ SQL引擎从接受SQL语句到执行SQL语句需要经历的步骤如[图1](#zh-
 </tbody>
 </table>
 
+
 ## 调优手段之统计信息<a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_section4423891162533"></a>
 
-openGauss优化器是典型的基于代价的优化 \(Cost-Based Optimization，简称CBO\)。在这种优化器模型下，数据库根据表的元组数、字段宽度、NULL记录比率、distinct值、MCV值、HB值等表的特征值，以及一定的代价计算模型，计算出每一个执行步骤的不同执行方式的输出元组数和执行代价\(cost\)，进而选出整体执行代价最小/首元组返回代价最小的执行方式进行执行。这些特征值就是统计信息。从上面描述可以看出统计信息是查询优化的核心输入，准确的统计信息将帮助规划器选择最合适的查询规划，一般来说我们通过analyze语法收集整个表或者表的若干个字段的统计信息，周期性地运行ANALYZE，或者在对表的大部分内容做了更改之后马上运行它是个好习惯。
+openGauss优化器是典型的基于代价的优化（Cost-Based Optimization，简称CBO）。在这种优化器模型下，数据库根据表的元组数、字段宽度、NULL记录比率、distinct值、MCV值、HB值等表的特征值，以及一定的代价计算模型，计算出每一个执行步骤的不同执行方式的输出元组数和执行代价（cost），进而选出整体执行代价最小/首元组返回代价最小的执行方式进行执行。这些特征值就是统计信息。从上面描述可以看出统计信息是查询优化的核心输入，准确的统计信息将帮助规划器选择最合适的查询规划，一般来说我们通过analyze语法收集整个表或者表的若干个字段的统计信息，周期性地运行ANALYZE，或者在对表的大部分内容做了更改之后马上运行它是个好习惯。
 
 ## 调优手段之GUC参数<a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_section31995703163247"></a>
 
@@ -63,7 +64,7 @@ from customer inner join store_sales on (ss_customer_sk = c_customer_sk);
 
 ## 调优手段之底层存储<a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_section46729206162627"></a>
 
-openGauss的表支持行存表、列存表，底层存储方式的选择严格依赖于客户的具体业务场景。一般来说计算型业务查询场景\(以关联、聚合操作为主\)建议使用列存表；点查询、大批量UPDATE/DELETE业务场景适合行存表。
+openGauss的表支持行存表、列存表，底层存储方式的选择严格依赖于客户的具体业务场景。一般来说计算型业务查询场景（以关联、聚合操作为主）建议使用列存表；点查询、大批量UPDATE/DELETE业务场景适合行存表。
 
 对于每种存储方式还有对应的存储层优化手段，这部分会在后续的调优章节深入介绍。
 
