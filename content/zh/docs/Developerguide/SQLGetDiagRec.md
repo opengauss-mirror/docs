@@ -147,7 +147,7 @@ SQLGetDiagRec不发布自己的诊断记录。它用下列返回值来报告它�
 </td>
 <td class="cellrowborder" valign="top" width="31.983198319831978%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_af0bc113423374289b9d37d28a6e2bd2c"><a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_af0bc113423374289b9d37d28a6e2bd2c"></a><a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_af0bc113423374289b9d37d28a6e2bd2c"></a>驱动程序不支持此函数</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.66476647664767%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_a7490bf4e38344511966387267b13ed3c"><a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_a7490bf4e38344511966387267b13ed3c"></a><a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_a7490bf4e38344511966387267b13ed3c"></a>调用了StatementHandle相关的驱动程序不支持的函数</p>
+<td class="cellrowborder" valign="top" width="47.66476647664767%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_a7490bf4e38344511966387267b13ed3c"><a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_a7490bf4e38344511966387267b13ed3c"></a><a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_a7490bf4e38344511966387267b13ed3c"></a>调用了StatementHandle相关的驱动程序不支持的函数。</p>
 </td>
 </tr>
 </tbody>
