@@ -1218,7 +1218,7 @@ headless: true
         -   [Memory]({{< relref "./docs/Developerguide/Memory.md" >}})
             -   [MEMORY\_NODE\_DETAIL]({{< relref "./docs/Developerguide/MEMORY_NODE_DETAIL.md" >}})
             -   [GLOBAL\_MEMORY\_NODE\_DETAIL]({{< relref "./docs/Developerguide/GLOBAL_MEMORY_NODE_DETAIL.md" >}})
-            -   [SHARED\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/SHARED_MEMORY_DETAIL.md" >}})
+            -   [GS\_SHARED\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/GS_SHARED_MEMORY_DETAIL.md" >}})
             -   [GLOBAL\_SHARED\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/GLOBAL_SHARED_MEMORY_DETAIL.md" >}})
         -   [File]({{< relref "./docs/Developerguide/File.md" >}})
             -   [FILE\_IOSTAT]({{< relref "./docs/Developerguide/FILE_IOSTAT.md" >}})
