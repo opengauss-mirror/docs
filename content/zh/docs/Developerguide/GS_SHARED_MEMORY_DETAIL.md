@@ -1,8 +1,8 @@
-# SHARED\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0245374667"></a>
+# GS_SHARED\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0245374667"></a>
 
 查询当前节点所有已产生的共享内存上下文的使用信息。
 
-**表 1**  SHARED\_MEMORY\_DETAIL字段
+**表 1**  GS_SHARED\_MEMORY\_DETAIL字段
 
 <a name="zh-cn_topic_0237122563_table1275129115118"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0237122563_row1782510920511"><th class="cellrowborder" valign="top" width="17.27%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122563_p98251193519"><a name="zh-cn_topic_0237122563_p98251193519"></a><a name="zh-cn_topic_0237122563_p98251193519"></a><strong id="zh-cn_topic_0237122563_b082514985114"><a name="zh-cn_topic_0237122563_b082514985114"></a><a name="zh-cn_topic_0237122563_b082514985114"></a>名称</strong></p>
