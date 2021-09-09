@@ -2,7 +2,7 @@
 
 debug端调试过程中，调用add\_breakpoint增加新的断点。如果返回-1则说明指定的断点不合法，请参考[DBE\_PLDEBUGGER.info\_code](DBE_PLDEBUGGER-info_code.md)的canbreak字段确定断点合适的位置。
 
-**表 1**  add\_breakpoint返回值列表
+**表 1**  add\_breakpoint入参和返回值列表
 
 <a name="table8940114934019"></a>
 <table><thead align="left"><tr id="row1294094911409"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p4771101912150"><a name="p4771101912150"></a><a name="p4771101912150"></a>名称</p>
