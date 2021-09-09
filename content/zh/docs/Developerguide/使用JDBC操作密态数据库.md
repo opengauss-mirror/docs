@@ -41,7 +41,25 @@ public static Connection getConnect(String username, String passwd)
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->【建议】使用JDBC操作密态数据库时，一个数据库连接对象对应一个线程，否则，不同线程变更可能导致冲突。
+>-   【建议】使用JDBC操作密态数据库时，一个数据库连接对象对应一个线程，否则，不同线程变更可能导致冲突。
+>-   【建议】使用JDBC操作密态数据库时，不同connection对密态配置数据有变更，由客户端调用isvalid方法保证connection能够持有变更后的密态配置数据，此时需要保证参数refreshClientEncryption为1\(默认值为1\)，在单客户端操作密态数据场景下，refreshClientEncryption参数可以设置为0。
+
+## 调用isValid方法刷新缓存示例<a name="section8416165433116"></a>
+
+```
+// 创建客户端主密钥
+Connection conn1 = DriverManager.getConnection("url","user","password");
+
+// conn1通过调用isValid刷新缓存
+try {
+ if (!conn1.getConnection().isValid(60)) {
+  conn1.getFileWriter().writeLine("isValid Failed for connection 1");
+ }
+} catch (SQLException e) {
+ conn1.getFileWriter().writeLine("isValid Failed with error");
+ e.printStackTrace();
+}
+```
 
 ## 执行密态等值查询相关的创建密钥语句<a name="section15271115213271"></a>
 
@@ -49,6 +67,7 @@ public static Connection getConnect(String username, String passwd)
 // 创建客户端主密钥
 Connection conn = DriverManager.getConnection("url","user","password");
 Statement stmt = conn.createStatement();
+int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = gs_ktool, KEY_PATH = \"gs_ktool/1\", ALGORITHM = AES_256_CBC;"); 
 int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = localkms, KEY_PATH = \"key_path_value\" , ALGORITHM = RSA_2048);
 ```
 

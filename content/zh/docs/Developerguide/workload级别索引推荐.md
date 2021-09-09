@@ -9,7 +9,6 @@
 -   具备Python3.6+的环境。
 -   若使用本功能提供的业务数据抽取功能，需提前将要收集的节点的GUC参数按如下设置：
     -   log\_min\_duration\_statement = 0
-    -   log\_truncate\_on\_rotation= off
     -   log\_statement= 'all'
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -19,26 +18,31 @@
 
 ## 业务数据抽取脚本使用步骤<a name="section183663372522"></a>
 
-1.  按前提条件中设置相关GUC参数
+1.  <a name="li541620573521"></a>按前提条件中要求设置相关GUC参数。
 2.  运行python脚本extract\_log.py，命令如下：
 
     ```
-    python extract_log.py [l LOG_DIRECTORY] [f OUTPUT_FILE] 
+    python extract_log.py [l LOG_DIRECTORY] [f OUTPUT_FILE] [-d DATABASE] [-U USERNAME][--start_time] [--sql_amount] [--statement] [--json]
     ```
 
     其中的输入参数依次为：
 
     -   LOG\_DIRECTORY：pg\_log的存放目录。
-    -   OUTPUT\_PATH：输出的SQL流水保存文件路径，即抽取出的业务数据存放的文件路径。
+    -   OUTPUT\_PATH：输出SQL流水文件文件的保存路径，即抽取出的业务数据存放的文件路径。
+    -   DATABASE：（可选）数据库名称，不指定默认所有数据库。
+    -   USERNAME：（可选）用户名称，不指定默认所有用户。
+    -   start\_time：（可选）日志收集的开始时间， 不指定默认所有文件。
+    -   sql\_amount：（可选）收集SQL数量的最大值， 不指定默认收集所有SQL。
+    -   statement：（可选）表示收集pg\_log日志中statement标识开头的SQL，不指定默认不收集。
+    -   json：指定收集日志的文件存储格式为SQL归一化后的json，不指定默认格式每条SQL占一行。
 
-        使用示例：
+    使用示例：
 
-        ```
-        python extract_log.py 6001 postgres $GAUSSLOG/pg_log/dn_6001 sql_log.txt
-        ```
+    ```
+    python extract_log.py $GAUSSLOG/pg_log/dn_6001 sql_log.txt -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
+    ```
 
-
-3.  GUC参数复原
+3.  将[1](#li541620573521)中设置的GUC参数还原为设置前的值。
 
 ## 索引推荐脚本使用步骤<a name="section174995305018"></a>
 
@@ -47,7 +51,7 @@
 
     ```
     python index_advisor_workload.py [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD][--schema SCHEMA]
-    [--max_index_num MAX_INDEX_NUM][--max_index_storage MAX_INDEX_STORAGE] [--multi_iter_mode] [--multi_node]
+    [--max_index_num MAX_INDEX_NUM][--max_index_storage MAX_INDEX_STORAGE] [--multi_iter_mode] [--multi_node]  [--json] [--driver] [--show_detail]
     ```
 
     其中的输入参数依次为：
@@ -58,30 +62,37 @@
     -   HOST：（可选）连接数据库的主机号。
     -   USERNAME：（可选）连接数据库的用户名。
     -   PASSWORD：（可选）连接数据库用户的密码。
-    -   SCHEMA：（可选）模式名称。
+    -   SCHEMA：模式名称。
     -   MAX\_INDEX\_NUM：（可选）最大的索引推荐数目。
     -   MAX\_INDEX\_STORAGE：（可选）最大的索引集合空间大小。
-    -   multi\_node：（可选）指定当前是否为分布式集群。
-    -   multi\_iter\_mode：（可选）算法模式，可通过是否设置该参数来切换算法。例如：
+    -   multi\_node：（可选）指定当前是否为分布式数据库实例。
+    -   multi\_iter\_mode：（可选）算法模式，可通过是否设置该参数来切换算法。
+    -   json：（可选）指定workload语句的文件路径格式为SQL归一化后的json，默认格式每条SQL占一行。
+    -   driver：（可选）指定是否使用python驱动器连接数据库，默认gsql连接。
+    -   show\_detail：（可选）是否显示当前推荐索引集合的详细优化信息。
 
-        ```
-        python index_advisor_workload.py 6001 postgres tpcc_log.txt --max_index_num 10 --multi_iter_mode
-        ```
+    例如：
 
+    ```
+    python index_advisor_workload.py 6001 postgres tpcc_log.txt --schema public --max_index_num 10 --multi_iter_mode
+    ```
 
     推荐结果为一批索引，以多个创建索引语句的格式显示在屏幕上，结果示例。
 
     ```
-    create index ind0 on bmsql_stock(s_i_id,s_w_id);
-    create index ind1 on bmsql_customer(c_w_id,c_id,c_d_id);
-    create index ind2 on bmsql_order_line(ol_w_id,ol_o_id,ol_d_id);
-    create index ind3 on bmsql_item(i_id);
-    create index ind4 on bmsql_oorder(o_w_id,o_id,o_d_id);
-    create index ind5 on bmsql_new_order(no_w_id,no_d_id,no_o_id);
-    create index ind6 on bmsql_customer(c_w_id,c_d_id,c_last,c_first);
-    create index ind7 on bmsql_new_order(no_w_id);
-    create index ind8 on bmsql_oorder(o_w_id,o_c_id,o_d_id);
-    create index ind9 on bmsql_district(d_w_id);
+    create index ind0 on public.bmsql_stock(s_i_id,s_w_id);
+    create index ind1 on public.bmsql_customer(c_w_id,c_id,c_d_id);
+    create index ind2 on public.bmsql_order_line(ol_w_id,ol_o_id,ol_d_id);
+    create index ind3 on public.bmsql_item(i_id);
+    create index ind4 on public.bmsql_oorder(o_w_id,o_id,o_d_id);
+    create index ind5 on public.bmsql_new_order(no_w_id,no_d_id,no_o_id);
+    create index ind6 on public.bmsql_customer(c_w_id,c_d_id,c_last,c_first);
+    create index ind7 on public.bmsql_new_order(no_w_id);
+    create index ind8 on public.bmsql_oorder(o_w_id,o_c_id,o_d_id);
+    create index ind9 on public.bmsql_district(d_w_id);
     ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >multi\_node参数需严格按照当前数据库架构进行指定，否则推荐结果不全，甚至导致无推荐结果。
 
 
