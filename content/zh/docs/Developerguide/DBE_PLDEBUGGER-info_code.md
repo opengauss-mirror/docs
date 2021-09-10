@@ -2,7 +2,7 @@
 
 debug端调试过程中，调用info\_code，查看指定存储过程的源语句和各行对应的行号，行号从函数体开始，函数头部分行号为空。
 
-**表 1**  info\_code返回值列表
+**表 1**  info\_code入参和返回值列表
 
 <a name="table8940114934019"></a>
 <table><thead align="left"><tr id="row1294094911409"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p4771101912150"><a name="p4771101912150"></a><a name="p4771101912150"></a>名称</p>
