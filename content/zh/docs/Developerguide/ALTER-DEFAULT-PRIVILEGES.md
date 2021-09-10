@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s4737e0edf6af464282c48f14a9d9c0f4"></a>
 
-目前只支持表（包括视图）、 序列、函数和类型的权限更改。
+目前只支持表（包括视图）、 序列、函数，类型，密态数据库客户端主密钥和列加密密钥的权限更改。
 
 ## 语法格式<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s760a84be01534119a13af50d2ff535aa"></a>
 
@@ -24,10 +24,14 @@ ALTER DEFAULT PRIVILEGES
       | grant_on_sequences_clause
       | grant_on_functions_clause
       | grant_on_types_clause
+      | grant_on_client_master_keys_clause
+      | grant_on_column_encryption_keys_clause
       | revoke_on_tables_clause
       | revoke_on_sequences_clause
       | revoke_on_functions_clause
       | revoke_on_types_clause
+      | revoke_on_client_master_keys_clause
+      | revoke_on_column_encryption_keys_clause
     ```
 
 
@@ -65,6 +69,24 @@ ALTER DEFAULT PRIVILEGES
     ```
     GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPES 
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ]
+    ```
+
+-   其中grant\_on\_client\_master\_keys\_clause子句用于对客户端主密钥授权。
+
+    ```
+    GRANT { { USAGE  | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON CLIENT_MASTER_KEYS
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ]
+    ```
+
+-   其中grant\_on\_column\_encryption\_keys\_clause子句用于对列加密密钥授权。
+
+    ```
+    GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON COLUMN_ENCRYPTION_KEYS 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -112,6 +134,27 @@ ALTER DEFAULT PRIVILEGES
     ```
 
 
+-   其中revoke\_on\_client\_master\_keys\_clause子句用于回收客户端主密钥的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON CLIENT_MASTER_KEYS 
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
+    ```
+
+-   其中revoke\_on\_column\_encryption\_keys\_clause子句用于回收列加密密钥的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON COLUMN_ENCRYPTION_KEYS
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
+    ```
+
+
 ## 参数说明<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb713f37e7b9a40ad936d0bbba0449eb1"></a>
 
 -   **target\_role**
@@ -145,7 +188,7 @@ ALTER DEFAULT PRIVILEGES
 openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT SELECT ON TABLES TO PUBLIC;
 
 --创建用户普通用户jack。
-openGauss=# CREATE USER jack PASSWORD 'xxxxxxx';
+openGauss=# CREATE USER jack PASSWORD 'xxxxxxxxx';
 
 --将tpcds下的所有表的插入权限授予用户jack。
 openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT INSERT ON TABLES TO jack;

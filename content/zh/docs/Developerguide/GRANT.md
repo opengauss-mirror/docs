@@ -20,9 +20,9 @@
 
     关键字PUBLIC表示该权限要赋予所有角色，包括以后创建的用户。PUBLIC可以看做是一个隐含定义好的组，它总是包括所有角色。任何角色或用户都将拥有通过GRANT直接赋予的权限和所属的权限，再加上PUBLIC的权限。
 
-    如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC，这是GaussDB KernelopenGauss特有的属性。
+    如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC，这是openGauss特有的属性。
 
-    GaussDB KernelopenGauss会将某些类型的对象上的权限授予PUBLIC。默认情况下，对表、表字段、序列、外部数据源、外部服务器、模式或表空间对象的权限不会授予PUBLIC，而以下这些对象的权限会授予PUBLIC：数据库的CONNECT权限和CREATE TEMP TABLE权限、函数的EXECUTE特权、语言和数据类型（包括域）的USAGE特权。当然，对象拥有者可以撤销默认授予PUBLIC的权限并专门授予权限给其他用户。为了更安全，建议在同一个事务中创建对象并设置权限，这样其他用户就没有时间窗口使用该对象。另外可参考安全加固指南的权限控制章节，对PUBLIC用户组的权限进行限制。这些初始的默认权限可以使用ALTER DEFAULT PRIVILEGES命令修改。
+    openGauss会将某些类型的对象上的权限授予PUBLIC。默认情况下，对表、表字段、序列、外部数据源、外部服务器、模式或表空间对象的权限不会授予PUBLIC，而以下这些对象的权限会授予PUBLIC：数据库的CONNECT权限和CREATE TEMP TABLE权限、函数的EXECUTE特权、语言和数据类型（包括域）的USAGE特权。当然，对象拥有者可以撤销默认授予PUBLIC的权限并专门授予权限给其他用户。为了更安全，建议在同一个事务中创建对象并设置权限，这样其他用户就没有时间窗口使用该对象。另外可参考安全加固指南的权限控制章节，对PUBLIC用户组的权限进行限制。这些初始的默认权限可以使用ALTER DEFAULT PRIVILEGES命令修改。
 
     对象的所有者缺省具有该对象上的所有权限，出于安全考虑所有者可以舍弃部分权限，但ALTER、DROP、COMMENT、INDEX、VACUUM以及对象的可再授予权限属于所有者固有的权限，隐式拥有。
 
@@ -68,7 +68,7 @@
     ```
     GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } [, ...] 
           | ALL [ PRIVILEGES ] }
-        ON { [ SEQUENCE ] sequence_name [, ...]
+        ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         TO { [ GROUP ] role_name | PUBLIC } [, ...] 
         [ WITH GRANT OPTION ];
@@ -99,8 +99,8 @@
 -   将客户端加密主密钥CMK的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { USAGE | DROP | ALL [ PRIVILEGES ] }
-        ON { CLIENT_MASTER_KEY client_master_key [, ...]
+    GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON CLIENT_MASTER_KEY client_master_key [, ...] 
         TO { [ GROUP ] role_name | PUBLIC } [, ...] 
         [ WITH GRANT OPTION ];
     ```
@@ -108,8 +108,8 @@
 -   将列加密密钥CEK的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { USAGE | DROP| ALL [ PRIVILEGES ] }
-        ON { COLUMN_ENCRYPTION_KEY column_encryption_key [, ...]
+    GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON COLUMN_ENCRYPTION_KEY column_encryption_key [, ...] 
         TO { [ GROUP ] role_name | PUBLIC } [, ...] 
         [ WITH GRANT OPTION ];
     ```
@@ -173,8 +173,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。
-    >同名模式下创建表的权限无法通过此语法赋予，可以通过将角色的权限赋予其他用户或角色的语法，赋予同名模式下创建表的权限。
+    >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。 同名模式下创建表的权限无法通过此语法赋予，可以通过将角色的权限赋予其他用户或角色的语法，赋予同名模式下创建表的权限。
 
 -   将表空间的访问权限赋予指定的用户或角色。
 
@@ -197,6 +196,33 @@
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >本版本暂时不支持赋予类型的访问权限。
 
+-   将Data Source对象的权限赋予指定的角色。
+
+    ```
+    GRANT { USAGE | ALL [PRIVILEGES]}
+       ON DATA SOURCE src_name [, ...]
+       TO { [GROUP] role_name | PUBLIC } [, ...]
+       [WITH GRANT OPTION];
+    ```
+
+-   将directory对象的权限赋予指定的角色。
+
+    ```
+    GRANT { { READ | WRITE } [, ...] | ALL [PRIVILEGES] }
+       ON DIRECTORY directory_name [, ...]
+       TO { [GROUP] role_name | PUBLIC } [, ...]
+       [WITH GRANT OPTION];
+    ```
+
+-   将package对象的权限赋予指定的角色。
+
+    ```
+    GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [PRIVILEGES] }
+       ON PACKAGE package_name [, ...]
+       TO { [GROUP] role_name | PUBLIC } [, ...]
+       [WITH GRANT OPTION];
+    ```
+
 -   将角色的权限赋予其他用户或角色的语法。
 
     ```
@@ -210,24 +236,6 @@
     ```
     GRANT ALL { PRIVILEGES | PRIVILEGE }
        TO role_name;
-    ```
-
-
--   将Data Source对象的权限赋予指定的角色。
-
-    ```
-    GRANT {USAGE | ALL [PRIVILEGES]}
-       ON DATA SOURCE src_name [, ...]
-       TO {[GROUP] role_name | PUBLIC} [, ...] [WITH GRANT OPTION];
-    ```
-
-
--   将directory对象的权限赋予指定的角色。
-
-    ```
-    GRANT {READ|WRITE| ALL [PRIVILEGES]}
-       ON DIRECTORY directory_name [, ...]
-       TO {[GROUP] role_name | PUBLIC} [, ...] [WITH GRANT OPTION];
     ```
 
 
@@ -325,7 +333,7 @@ GRANT的参数说明如下所示。
 
     已存在数据库名称。
 
--   **funcation\_name**
+-   **function\_name**
 
     已存在函数名称。
 
@@ -451,10 +459,10 @@ openGauss=# GRANT ALL PRIVILEGES TO joe;
     openGauss=# GRANT select (r_reason_sk, r_reason_id) ON tpcds.reason TO joe WITH GRANT OPTION;
     ```
 
-    将数据库postgres的连接权限授权给用户joe，并给予其在postgres中创建schema的权限，而且允许joe将此权限授权给其他用户。
+    将数据库openGauss的连接权限授权给用户joe，并给予其在openGauss中创建schema的权限，而且允许joe将此权限授权给其他用户。
 
     ```
-    openGauss=# GRANT create,connect on database postgres TO joe WITH GRANT OPTION;
+    openGauss=# GRANT create,connect on database openGauss TO joe WITH GRANT OPTION;
     ```
 
     创建角色tpcds\_manager，将模式tpcds的访问权限授权给角色tpcds\_manager，并授予该角色在tpcds下创建对象的权限，不允许该角色中的用户将权限授权给其他人。
@@ -502,8 +510,7 @@ openGauss=# GRANT ALL PRIVILEGES TO joe;
 1.  连接密态数据库
 
     ```
-    gsql -p 57101 postgres -r -C
-    openGauss=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = gs_ktool, KEY_PATH = "gs_ktool/1" , ALGORITHM = AES_256_CBC);
+    gsql -p 57101 openGauss -r -C
     openGauss=#  CREATE CLIENT MASTER KEY MyCMK1 WITH ( KEY_STORE = localkms , KEY_PATH = "key_path_value" , ALGORITHM = RSA_2048);
     CREATE CLIENT MASTER KEY
     openGauss=# CREATE COLUMN ENCRYPTION KEY MyCEK1 WITH VALUES (CLIENT_MASTER_KEY = MyCMK1, ALGORITHM = AEAD_AES_256_CBC_HMAC_SHA256);
@@ -565,5 +572,5 @@ openGauss=# DROP USER joe CASCADE;
 
 ## 相关链接<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
-[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER DEFAULT PRIVILEGES.md)
+[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)
 

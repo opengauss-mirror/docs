@@ -30,7 +30,7 @@ DROP COLUMN ENCRYPTION KEY [ IF EXISTS ] column_encryption_key_name [CASCADE];
 ## 示例<a name="section162746130164"></a>
 
 ```
---删除客户端加密主密钥对象。
+--删除列加密密钥。
 openGauss=# DROP COLUMN ENCRYPTION KEY ImgCEK CASCADE;
 ERROR:  cannot drop column setting: imgcek cascadely because encrypted column depend on it.
 HINT:  we have to drop encrypted column: name, ... before drop column setting: imgcek cascadely.

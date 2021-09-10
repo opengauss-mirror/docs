@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="section173831846163116"></a>
 
-定义一个用户自定义的转换
+定义一个用户自定义的转换。
 
 ## 注意事项<a name="section786041713618"></a>
 
@@ -67,7 +67,7 @@ CREATE CAST (source_type AS target_type)
 
 ## 示例<a name="section14411351193419"></a>
 
-为了从类型bigint到类型int4创建一个指派映射要通过使用函数int4\(bigint\)：
+为了从类型bigint到类型int4创建一个指派映射要通过使用函数int4\(bigint\):
 
 ```
 CREATE CAST (bigint AS int4) WITH FUNCTION int4(bigint) AS ASSIGNMENT;

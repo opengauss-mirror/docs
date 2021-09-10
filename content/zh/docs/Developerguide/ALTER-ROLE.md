@@ -16,7 +16,7 @@
     ALTER ROLE role_name [ [ WITH ] option [ ... ] ];
     ```
 
-    其中权限项子句option为：
+    其中权限项子句option为。
 
     ```
     {CREATEDB | NOCREATEDB}
@@ -101,6 +101,16 @@
 -   **PGUSER**
 
     当前版本不允许修改角色的PGUSER属性
+
+-   **PASSWORD/IDENTIFIED BY **'password'
+
+    重置或修改用户密码。修改用户自己的密码需要输入正确的旧密码。只有初始用户、系统管理员（sysadmin）或拥有创建用户（CREATEROLE）权限的用户才可以重置普通用户密码，无需输入旧密码。初始用户可以重置系统管理员的密码，系统管理员不允许重置其他系统管理员的密码。
+
+-   **EXPIRED**
+
+    设置密码失效。只有初始用户、系统管理员（sysadmin）或拥有创建用户（CREATEROLE）权限的用户才可以设置用户密码失效，其中系统管理员也可以设置自己或其他系统管理员密码失效。不允许设置初始用户密码失效。
+
+    密码失效的用户可以登录数据库但不能执行查询操作，只有修改密码或由管理员重置密码后才可以恢复正常查询操作。
 
 
 其他参数请参见CREATE ROLE的[参数说明](CREATE-ROLE.md#zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4)。

@@ -47,7 +47,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     ```
     with_query_name [ ( column_name [, ...] ) ]
-        AS ( {select | values | insert | update | delete} )
+        AS [ [ NOT ] MATERIALZED ] ( {select | values | insert | update | delete} )
     ```
 
 -   其中指定查询源from\_item为：
@@ -55,6 +55,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     ```
     {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
+    [TIMECAPSULE {TIMESTAMP|CSN} expression]
     |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
     |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
@@ -104,18 +105,19 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
 
-    其中with\_query的详细格式为：
-    ```
-    with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \( \{select | values | insert | update | delete\} \)
-    ```
+    其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \[ \[ NOT \] MATERIALZED \] \( \{select | values | insert | update | delete\} \)
 
     -   with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
     -   column\_name指定子查询结果集中显示的列名。
     -   每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+    -   用户可以使用MATERIALIZED / NOT MATERIALIZED对CTE进行修饰。
+        -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
+        -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属SELECT主干中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
+
 
 -   **plan\_hint子句**
 
-    以/\*+ \*/的形式在SELECT关键字后，用于对SELECT对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](使用Plan-Hint进行调优.md)。
+    以/\*+ \*/的形式在SELECT关键字后，用于对SELECT对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](zh-cn_topic_0289900289.md)。每条语句中只有第一个/\*+ plan\_hint \*/注释块会作为hint生效，里面可以写多条hint。
 
 -   **ALL**
 
@@ -161,11 +163,31 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
         _table\_name_之后的TABLESAMPLE子句表示应该用指定的_sampling\_method_来检索表中行的子集。
 
-        可选的REPEATABLE子句指定一个用于产生采样方法中随机数的种子数。种子值可以是任何非空常量值。如果查询时表没有被更改，指定相同种子和_argument_值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
+        可选的REPEATABLE子句指定一个用于产生采样方法中随机数的_种子_数。种子值可以是任何非空常量值。如果查询时表没有被更改，指定相同种子和_argument_值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
+
+    -   TIMECAPSULE \{ TIMESTAMP | CSN \} expression
+
+        查询指定CSN点或者指定时间点表的内容。
+
+        目前不支持闪回查询的表：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、分区表、视图、序列表、Hbkt表、共享表、继承表、带有PARTIAL CLUSTER KEY约束的表。
+
+        -   TIMECAPSULE TIMESTAMP
+
+            关键字，闪回查询的标识，根据date日期，闪回查找指定时间点的结果集。date日期必须是一个过去有效的时间戳。
+
+        -   TIMECAPSULE CSN
+
+            关键字，闪回查询的标识，根据表的CSN闪回查询指定CSN点的结果集。其中CSN可从gs\_txn\_snapshot记录的snpcsn号查得。
+
+            >![](public_sys-resources/icon-note.gif) **说明：** 
+            >-   闪回查询不能跨越影响表结构或物理存储的语句，否则会报错。即闪回点和当前点之间，如果执行过修改表结构或影响物理存储的语句（DDL、DCL、VACUUM FULL），则闪回失败，报错:“ERROR: The table definition of T1 has been changed.”。
+            >-   闪回点过旧时，因闪回版本被回收等导致无法获取旧版本会导致闪回失败，报错：Restore point too old。可通过将version\_retention\_age和vacuum\_defer\_cleanup\_age设置成同值，配置闪回功能旧版本保留期限，取值范围是0\~1000000，值为0表示VACUUM不会延迟清除无效的行存记录。
+            >-   通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
+
 
     -   column\_alias
 
-        列别名。
+        列别名
 
     -   PARTITION
 
@@ -224,21 +246,21 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 
         其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
-    
+
     -   ON join\_condition
-    
+
         连接条件，用于限定连接中的哪些行是匹配的。如：ON left\_table.a = right\_table.a。
-    
+
     -   USING\(join\_column\[，...\]\)
-    
+
         ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ... 的简写。要求对应的列必须同名。
-    
+
     -   NATURAL
-    
+
         NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
-    
+
     -   from item
-    
+
         用于连接的查询源对象的名称。
 
 
@@ -248,16 +270,16 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     WHERE子句中可以通过指定"\(+\)"操作符的方法将表的连接关系转换为外连接。但是不建议用户使用这种用法，因为这并不是SQL的标准语法，在做平台迁移的时候可能面临语法兼容性的问题。同时，使用"\(+\)"有很多限制：
 
-    1.  "\(+\)"只能出现在where子句中。  
-    2.  如果from子句中已经有指定表连接关系，那么不能再在where子句中使用"\(+\)"。  
-    3.  "\(+\)"只能作用在表或者视图的列上，不能作用在表达式上。  
-    4.  如果表A和表B有多个连接条件，那么必须在所有的连接条件中指定"\(+\)"，否则"\(+\)"将不会生效，表连接会转化成内连接，并且不给出任何提示信息。  
-    5.  "\(+\)"作用的连接条件中的表不能跨查询或者子查询。如果"\(+\)"作用的表，不在当前查询或者子查询的from子句中，则会报错。如果"\(+\)"作用的对端的表不存在，则不报错，同时连接关系会转化为内连接。  
-    6.  "\(+\)"作用的表达式不能直接通过"OR"连接。  
-    7.  如果"\(+\)"作用的列是和一个常量的比较关系， 那么这个表达式会成为join条件的一部分。  
-    8.  同一个表不能对应多个外表。  
-    9.  "\(+\)"只能出现"比较表达式"，"NOT表达式"，“ANY表达式”，“ALL表达式”，“IN表达式”，“NULLIF表达式”，“IS DISTINCT FROM表达式”，“IS OF”表达式。"\(+\)"不能出现在其他类型表达式中，并且这些表达式中不允许出现通过“AND”和“OR”连接的表达式。  
-    10. "\(+\)"只能转化为左外连接或者右外连接，不能转化为全连接，即不能在一个表达式的两个表上同时指定"\(+\)"。  
+    1.  "\(+\)"只能出现在where子句中。
+    2.  如果from子句中已经有指定表连接关系，那么不能再在where子句中使用"\(+\)"。
+    3.  "\(+\)"只能作用在表或者视图的列上，不能作用在表达式上。
+    4.  如果表A和表B有多个连接条件，那么必须在所有的连接条件中指定"\(+\)"，否则"\(+\)"将不会生效，表连接会转化成内连接，并且不给出任何提示信息。
+    5.  "\(+\)"作用的连接条件中的表不能跨查询或者子查询。如果"\(+\)"作用的表，不在当前查询或者子查询的from子句中，则会报错。如果"\(+\)"作用的对端的表不存在，则不报错，同时连接关系会转化为内连接。
+    6.  "\(+\)"作用的表达式不能直接通过"OR"连接。
+    7.  如果"\(+\)"作用的列是和一个常量的比较关系， 那么这个表达式会成为join条件的一部分。
+    8.  同一个表不能对应多个外表。
+    9.  "\(+\)"只能出现"比较表达式"，"NOT表达式"，“ANY表达式”，“ALL表达式”，“IN表达式”，“NULLIF表达式”，“IS DISTINCT FROM表达式”，“IS OF”表达式。"\(+\)"不能出现在其他类型表达式中，并且这些表达式中不允许出现通过“AND”和“OR”连接的表达式。
+    10. "\(+\)"只能转化为左外连接或者右外连接，不能转化为全连接，即不能在一个表达式的两个表上同时指定"\(+\)"
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >对于WHERE子句的LIKE操作符，当LIKE中要查询特殊字符“%”、“\_”、“\\”的时候需要使用反斜杠“\\”来进行转义。
@@ -268,11 +290,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     -   CUBE \( \{ expression | \( expression \[, ...\] \) \} \[, ...\] \)
 
-        CUBE是自动对group by子句中列出的字段进行分组汇总，结果集将包含维度列中各值的所有可能组合，以及与这些维度值组合相匹配的基础行中的聚合值。它会为每个分组返回一行汇总信息，用户可以使用CUBE来产生交叉表值。比如，在CUBE子句中给出三个表达式（n = 3），运算结果为2<sup>n</sup>  = 2<sup>3</sup>  = 8组。以n个表达式的值分组的行称为常规行，其余的行称为超级聚集行。
+        CUBE是自动对group by子句中列出的字段进行分组汇总，结果集将包含维度列中各值的所有可能组合，以及与这些维度值组合相匹配的基础行中的聚合值。它会为每个分组返回一行汇总信息， 用户可以使用CUBE来产生交叉表值。比如，在CUBE子句中给出三个表达式（n = 3），运算结果为2<sup>n</sup>  = 2<sup>3</sup>  = 8组。 以n个表达式的值分组的行称为常规行，其余的行称为超级聚集行。
 
     -   GROUPING SETS \( grouping\_element \[, ...\] \)
 
-        GROUPING SETS子句是GROUP BY子句的进一步扩展，它可以使用户指定多个GROUP BY选项。这样做可以通过裁剪用户不需要的数据组来提高效率。当用户指定了所需的数据组时，数据库不需要执行完整CUBE或ROLLUP生成的聚合集合。
+        GROUPING SETS子句是GROUP BY子句的进一步扩展，它可以使用户指定多个GROUP BY选项。 这样做可以通过裁剪用户不需要的数据组来提高效率。 当用户指定了所需的数据组时，数据库不需要执行完整CUBE或ROLLUP生成的聚合集合。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >如果SELECT列表的表达式中引用了那些没有分组的字段，则会报错，除非使用了聚集函数，因为对于未分组的字段，可能返回多个数值。
@@ -284,7 +306,6 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **WINDOW子句**
 
     一般形式为WINDOW window\_name AS \( window\_definition \) \[， ...\]，window\_name是可以被随后的窗口定义所引用的名称，window\_definition可以是以下的形式：
-    ```
 
     \[ existing\_window\_name \]
 
@@ -293,10 +314,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     \[ ORDER BY expression \[ ASC | DESC | USING operator \] \[ NULLS \{ FIRST | LAST \} \] \[, ...\] \]
 
     \[ frame\_clause \]
-    ```
 
     frame\_clause为窗函数定义一个窗口框架window frame，窗函数（并非所有）依赖于框架，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
-    ```
 
     \[ RANGE | ROWS \] frame\_start
 
@@ -313,7 +332,6 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     value FOLLOWING
 
     UNBOUNDED FOLLOWING
-    ```
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
@@ -353,16 +371,14 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **EXCEPT子句**
 
     EXCEPT子句有如下的通用形式：
-    ```
 
     select\_statement EXCEPT \[ ALL \] select\_statement
-    ```
 
     select\_statement是任何没有FOR UPDATE子句的SELECT表达式。
 
     EXCEPT操作符计算存在于左边SELECT语句的输出而不存在于右边SELECT语句输出的行。
 
-    EXCEPT的结果不包含任何重复的行，除非声明了ALL选项。使用ALL时，一个在左边表中有m个重复而在右边表中有n个重复的行将在结果中出现max\(m-n,0\)次。
+    EXCEPT的结果不包含任何重复的行，除非声明了ALL选项。使用ALL时，一个在左边表中有m个重复而在右边表中有n个重复的行将在结果中出现max\(m-n,0\) 次。
 
     除非用圆括弧指明顺序，否则同一个SELECT语句中的多个EXCEPT操作符是从左向右计算的。EXCEPT和UNION的绑定级别相同。
 
@@ -372,20 +388,18 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     与EXCEPT子句具有相同的功能和用法。
 
-- **ORDER BY子句**
+-   **ORDER BY子句**
 
-  对SELECT语句检索得到的数据进行升序或降序排序。对于ORDER BY表达式中包含多列的情况：
+    对SELECT语句检索得到的数据进行升序或降序排序。对于ORDER BY表达式中包含多列的情况：
 
-  -   首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
-  -   如果对于所有声明的表达式都相同，则按随机顺序返回。
-  -   ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
+    -   首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
+    -   如果对于所有声明的表达式都相同，则按随机顺序返回。
+    -   在与DISTINCT关键字一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
+    -   在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
-  >如果要支持中文拼音排序和不区分大小写排序，需要在初始化数据库时指定编码格式为UTF-8或GBK。命令如下:
-  >
-  >```
-  >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8或initdb –E GBK –D ../data –locale=zh\_CN.GBK。
-  >```
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >如果要支持中文拼音排序，需要在初始化数据库时指定编码格式为UTF-8或GBK。 命令如下:
+    >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8或initdb –E GBK –D ../data –locale=zh\_CN.GBK。
 
 -   **LIMIT子句**
 
@@ -409,7 +423,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **FOR UPDATE子句**
 
-    FOR UPDATE子句将对SELECT检索出来的行进行加锁。这样避免它们在当前事务结束前被其他事务修改或者删除，即其他企图UPDATE、DELETE、SELECT FOR UPDATE这些行的事务将被阻塞，直到当前事务结束。
+    FOR UPDATE子句将对SELECT检索出来的行进行加锁。这样避免它们在当前事务结束前被其他事务修改或者删除，即其他企图UPDATE、 DELETE、 SELECT FOR UPDATE这些行的事务将被阻塞，直到当前事务结束。
 
     为了避免操作等待其他事务提交，可使用NOWAIT选项，如果被选择的行不能立即被锁住，执行SELECT FOR UPDATE NOWAIT将会立即汇报一个错误，而不是等待。
 
@@ -432,7 +446,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     取值范围：
 
-    -   SCHINESE\_PINYIN\_M，按照中文拼音排序。如果要支持此排序方式，在创建数据库时需要指定编码格式为“GBK”，否则排序无效。
+    -   SCHINESE\_PINYIN\_M，按照中文拼音排序。如果要支持此排序方式，在创建数据库时需要指定编码格式为“UTF8”或“GBK”，否则排序无效。
     -   generic\_m\_ci，不区分大小写排序。
 
 -   **PARTITION子句**
@@ -599,5 +613,39 @@ HINT:  "t1", "t2"...are specified Operator "(+)" in one condition.
 
 --删除表。
 openGauss=# DROP TABLE tpcds.reason_p;
+
+--闪回查询示例
+--创建表tpcds.time_table
+openGauss=#  create table tpcds.time_table(idx integer, snaptime timestamp, snapcsn bigint, timeDesc character(100));
+--向表tpcds.time_table中插入记录
+openGauss=#  INSERT INTO tpcds.time_table select 1, now(),int8in(xidout(next_csn)), 'time1' from gs_get_next_xid_csn();
+openGauss=#  INSERT INTO tpcds.time_table select 2, now(),int8in(xidout(next_csn)), 'time2' from gs_get_next_xid_csn();
+openGauss=#  INSERT INTO tpcds.time_table select 3, now(),int8in(xidout(next_csn)), 'time3' from gs_get_next_xid_csn();
+openGauss=#  INSERT INTO tpcds.time_table select 4, now(),int8in(xidout(next_csn)), 'time4' from gs_get_next_xid_csn();
+openGauss=#  select * from tpcds.time_table;
+
+ idx |          snaptime          | snapcsn |                                               timedesc
+-----+----------------------------+---------+------------------------------------------------------------------------------------------------------
+   1 | 2021-04-25 17:50:05.360326 |  107322 | time1
+   2 | 2021-04-25 17:50:10.886848 |  107324 | time2
+   3 | 2021-04-25 17:50:16.12921  |  107327 | time3
+   4 | 2021-04-25 17:50:22.311176 |  107330 | time4
+(4 rows)
+openGauss=#  delete tpcds.time_table;
+DELETE 4
+openGauss=#  SELECT * FROM tpcds.time_table TIMECAPSULE TIMESTAMP to_timestamp('2021-04-25 17:50:22.311176','YYYY-MM-DD HH24:MI:SS.FF');
+ idx |          snaptime          | snapcsn |                                               timedesc
+-----+----------------------------+---------+------------------------------------------------------------------------------------------------------
+   1 | 2021-04-25 17:50:05.360326 |  107322 | time1
+   2 | 2021-04-25 17:50:10.886848 |  107324 | time2
+   3 | 2021-04-25 17:50:16.12921  |  107327 | time3
+(3 rows)
+openGauss=#  SELECT * FROM tpcds.time_table TIMECAPSULE CSN 107330;
+ idx |          snaptime          | snapcsn |                                               timedesc
+-----+----------------------------+---------+------------------------------------------------------------------------------------------------------
+   1 | 2021-04-25 17:50:05.360326 |  107322 | time1
+   2 | 2021-04-25 17:50:10.886848 |  107324 | time2
+   3 | 2021-04-25 17:50:16.12921  |  107327 | time3
+(3 rows)
 ```
 

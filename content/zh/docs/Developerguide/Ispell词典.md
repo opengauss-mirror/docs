@@ -1,10 +1,10 @@
-# Ispell词典<a name="ZH-CN_TOPIC_0242370503"></a>
+# Ispell词典<a name="ZH-CN_TOPIC_0289900767"></a>
 
 Ispell词典模板支持词法词典，它可以把一个词的各种语言学形式规范化成相同的词位。比如，一个Ispell英语词典可以匹配搜索词bank的词尾变化和词形变化，如banking、banked、banks、banks'和bank's等。
 
 openGauss不提供任何预定义的Ispell类型词典或词典文件。dict文件和affix文件支持多种开源词典格式，包括Ispell、MySpell和Hunspell等。
 
-## 操作步骤<a name="zh-cn_topic_0237122039_section737061503610"></a>
+## 操作步骤<a name="zh-cn_topic_0283136907_zh-cn_topic_0237122039_section737061503610"></a>
 
 1.  获取词典定义文件和词缀文件。
 

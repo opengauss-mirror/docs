@@ -1,6 +1,6 @@
-# ALTER TEXT SEARCH CONFIGURATION<a name="ZH-CN_TOPIC_0242370543"></a>
+# ALTER TEXT SEARCH CONFIGURATION<a name="ZH-CN_TOPIC_0289900161"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122079_zh-cn_topic_0059778328_s9adfe253d8074dff8561df762ecd7460"></a>
+## 功能描述<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_s9adfe253d8074dff8561df762ecd7460"></a>
 
 更改文本搜索配置的定义。用户可以将映射从字串类型调整为字典，或者改变配置的名称或者所有者，或者修改搜索配置的配置参数。
 
@@ -12,12 +12,12 @@ ALTER MAPPING REPLACE ... WITH ... 与ALTER MAPPING FOR ... REPLACE ... WITH ...
 
 DROP MAPPING FOR选项会删除当前文本搜索配置中指定的字串类型映射。 如果没有指定IF EXISTS选项，当DROP MAPPING FOR选项指定的字串类型映射在文本搜索配置中不存在时，数据库会报错。
 
-## 注意事项<a name="zh-cn_topic_0237122079_zh-cn_topic_0059778328_s269e65b549b14fc7b0350b5ff9c25722"></a>
+## 注意事项<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_s269e65b549b14fc7b0350b5ff9c25722"></a>
 
 -   当一个搜索配置已经被引用（如被用来创建索引），则不允许用户修改此文本搜索配置。
 -   要使用ALTER TEXT SEARCH CONFIGURATION，用户必须是配置的所有者。
 
-## 语法格式<a name="zh-cn_topic_0237122079_zh-cn_topic_0059778328_s4d87827fb0cf409aabcd17379f82b1c3"></a>
+## 语法格式<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_s4d87827fb0cf409aabcd17379f82b1c3"></a>
 
 -   增加文本搜索配置字串类型映射语法
 
@@ -84,7 +84,7 @@ ALTER TEXT SEARCH CONFIGURATION name SET ( { configuration_option = value } [, .
 ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122079_zh-cn_topic_0059778328_sf1c3321032274c75b33ec6927629ba5a"></a>
+## 参数说明<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_sf1c3321032274c75b33ec6927629ba5a"></a>
 
 -   **name**
 
@@ -127,7 +127,7 @@ ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
     文本搜索配置项的值。
 
 
-## 示例<a name="zh-cn_topic_0237122079_zh-cn_topic_0059778328_s5e2c22ccd01e485788ada368262a3447"></a>
+## 示例<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_s5e2c22ccd01e485788ada368262a3447"></a>
 
 ```
 --创建文本搜索配置。
@@ -167,9 +167,9 @@ openGauss=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM
 (4 rows)
 ```
 
-请参见CREATE TEXT SEARCH CONFIGURATION的[示例](CREATE-TEXT-SEARCH-CONFIGURATION.md#zh-cn_topic_0237122121_zh-cn_topic_0059777835_sc3a4aef5c0c0420eaf5a2e67097004a2)。
+请参见CREATE TEXT SEARCH CONFIGURATION的[示例](CREATE-TEXT-SEARCH-CONFIGURATION.md#zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_sc3a4aef5c0c0420eaf5a2e67097004a2)。
 
-## 相关链接<a name="zh-cn_topic_0237122079_zh-cn_topic_0059778328_sb5eacaaa1ba74a8abb0193ac98c34512"></a>
+## 相关链接<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_sb5eacaaa1ba74a8abb0193ac98c34512"></a>
 
 [CREATE TEXT SEARCH CONFIGURATION](CREATE-TEXT-SEARCH-CONFIGURATION.md)，  [DROP TEXT SEARCH CONFIGURATION](DROP-TEXT-SEARCH-CONFIGURATION.md)
 

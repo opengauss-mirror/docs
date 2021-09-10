@@ -1,16 +1,17 @@
 # PURGE<a name="ZH-CN_TOPIC_0000001151429881"></a>
 
-**功能描述**
+## 功能描述<a name="section625854265112"></a>
 
 使用PURGE语句可以实现如下功能：
 
 -   从回收站中清理表或索引，并释放对象相关的全部空间。
 -   清理回收站。
--   清理回收站中指定表空间的对象。
+-   清理回收站中指定表空间的对象
 
-**注意事项**
+## 注意事项<a name="section749425816510"></a>
 
 -   清除（PURGE）操作支持：表（PURGE  TABLE）、索引（PURGE INDEX）、回收站（PURGE RECYCLEBIN）、表空间（PURGE TABLESPACE）。
+
 
 -   执行PURGE操作的权限要求如下：
 
@@ -20,31 +21,35 @@
     -   PURGE RECYCLEBIN：普通用户只能清理回收站中当前用户拥有的对象，且用户必须拥有对象所在模式的USAGE权限，系统管理员默认可以清理回收站所有对象。
 
 
+## 语法格式<a name="section2067414318544"></a>
+
 ```
 PURGE { TABLE [schema_name.]table_name          
         | INDEX index_name         
         | RECYCLEBIN       
-      }     
+      }
 ```
 
-**参数说明**
+## 参数说明<a name="section19287181805211"></a>
 
 -   _\[  __schema\_name.__  \]_
 
+    模式名。
 
-模式名
 
 -   TABLE  _\[ schema\_name. \] table\_name_
 
-清空回收站中指定的表
+    清空回收站中指定的表。
+
 
 -   INDEX  _index\_name_
 
-清空回收站中指定的索引
+    清空回收站中指定的索引。
+
 
 -   RECYCLEBIN
 
-    清空回收站中的对象
+    清空回收站中的对象。
 
 
 ## 示例<a name="section763816452134"></a>

@@ -8,6 +8,7 @@
 
 -   只有poladmin，sysadmin或初始用户才能执行此操作。
 -   需要打开enable\_security\_policy开关脱敏策略才可以生效，开关打开方式请参考《安全加固指南》中“数据库配置 \> 数据库安全管理策略 \> 数据动态脱敏”章节。
+-   预置脱敏函数的执行效果及支持的数据类型请参考《特性描述》中”数据库安全 \> 动态数据脱敏机制”章节。
 
 ## 语法格式<a name="zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -62,10 +63,14 @@
 
 -   **masking\_function**
 
-    指的是预置的七种脱敏方式：
+    指的是预置的八种脱敏方式或者用户自定义的函数，支持模式。
+
+    maskall不是预置函数，硬编码在代码中，不支持\\df展示。
+
+    预置时脱敏方式如下：
 
     ```
-    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking 
+    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking | regexpmasking 
     ```
 
 -   **label\_name**
@@ -130,5 +135,5 @@ openGauss=# ALTER MASKING POLICY maskpol1 DISABLE;
 
 ## 相关链接<a name="section156744489391"></a>
 
-[CREATE MASKING POLICY](CREATE-MASKING-POLICY.md),，[DROP MASKING POLICY](DROP-MASKING-POLICY.md)。
+[CREATE MASKING POLICY](CREATE-MASKING-POLICY.md),[DROP MASKING POLICY](DROP-MASKING-POLICY.md)。
 

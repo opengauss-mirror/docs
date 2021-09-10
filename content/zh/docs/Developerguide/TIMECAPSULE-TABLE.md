@@ -66,7 +66,6 @@ TIMECAPSULE TABLE [ schema_name.]table_name TO {CSN expr | TIMESTAMP expr | BEFO
 
         -   执行TIMECAPSULE TABLE ... TO BEFORE  DROP语句，直到你要检索的表。
 
-
     -   恢复DROP表时，只恢复基表名，其他子对象名均保持回收站对象名。用户可根据需要，执行DDL命令手工调整子对象名。
     -   回收站对象不支持DML、DCL、DDL等写操作，不支持DQL查询操作（后续支持）。
     -   recyclebin\_retention配置参数用于设置回收站对象保留时间，超过该时间的回收站对象将被自动清理。
@@ -116,6 +115,5 @@ openGauss=#  DROP TABLE tpcds.reason_t2;
 --执行闪回DROP
 openGauss=#  TIMECAPSULE TABLE tpcds.reason_t2 to BEFORE DROP;
 TimeCapsule Table
-
 ```
 

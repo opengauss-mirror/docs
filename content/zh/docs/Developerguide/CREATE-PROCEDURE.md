@@ -13,6 +13,8 @@
 -   存储过程指定package属性时支持重载。
 -   在创建procedure时，不能在avg函数外面嵌套其他agg函数，或者其他系统函数。
 -   在存储过程内部调用其它无参数的存储过程时，可以省略括号，直接使用存储过程名进行调用。
+-   存储过程支持参数注释的查看与导出、导入。
+-   存储过程支持介于IS/AS与plsql\_body之间的注释的查看与导出、导入。
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
@@ -50,10 +52,10 @@ plsql_body
 
     参数的模式。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
     >VARIADIC用于声明数组类型的参数。
 
-    取值范围：IN，OUT，INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。
+    取值范围： IN，OUT，INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。
 
 -   **argname**
 
@@ -63,7 +65,7 @@ plsql_body
 
 -   **argtype**
 
-    参数的数据类型。
+    参数的数据类型。可以使用%TYPE或%ROWTYPE间接引用变量或表的类型，详细可参考存储过程章节[定义变量](zh-cn_topic_0289900208.md)。
 
     取值范围：可用的数据类型。
 
@@ -91,7 +93,7 @@ plsql_body
 
     PL/SQL存储过程体。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
     >当在存储过程体中进行创建用户等涉及用户密码相关操作时，系统表及csv日志中会记录密码的明文。因此不建议用户在存储过程体中进行涉及用户密码的相关操作。
 
 
@@ -105,6 +107,7 @@ plsql_body
 ## 优化建议<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_section60380346161036"></a>
 
 -   analyse | analyze
-    -   不支持在事务或匿名块中执行analyze。
+    -   不支持在事务或匿名块中执行analyze 。
     -   不支持在函数或存储过程中执行analyze操作。
+
 

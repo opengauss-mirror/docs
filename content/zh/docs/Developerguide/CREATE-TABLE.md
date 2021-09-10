@@ -12,9 +12,9 @@
 -   列存表不支持创建全局临时表。
 -   创建列存表的数量建议不超过1000个。
 -   如果在建表过程中数据库系统发生故障，系统恢复后可能无法自动清除之前已创建的、大小为0的磁盘文件。此种情况出现概率小，不影响数据库系统的正常运行。
--   列存表的表级约束只支持PARTIAL CLUSTER KEY、UNIQUE、PRIAMRY KEY，不支持外键等表级约束。
+-   列存表的表级约束只支持PARTIAL CLUSTER KEY、UNIQUE、PRIAMRY KEY，不支持主外键等表级约束。
 -   列存表的字段约束只支持NULL、NOT NULL和DEFAULT常量值。
--   列存表支持delta表，受参数enable\_delta\_store控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
+-   列存表支持delta表，受参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
 -   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
 -   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte，text、varchar、char等长度可变的类型除外。
 
@@ -43,7 +43,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       CHECK ( expression ) |
       DEFAULT default_expr |
       UNIQUE index_parameters |
-      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value) |
+      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
@@ -74,7 +74,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   其中like选项like\_option为：
 
     ```
-    { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
+    { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
     ```
 
 -   其中索引参数index\_parameters为：
@@ -99,22 +99,22 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     创建临时表时可以在TEMP或TEMPORARY前指定GLOBAL或LOCAL关键字。如果指定GLOBAL关键字，openGauss会创建全局临时表，否则openGauss会创建本地临时表。
 
-- **TEMPORARY | TEMP**
+-   **TEMPORARY | TEMP**
 
-  如果指定TEMP或TEMPORARY关键字，则创建的表为临时表。临时表分为全局临时表和本地临时表两种类型。创建临时表时如果指定GLOBAL关键字则为全局临时表，否则为本地临时表。
+    如果指定TEMP或TEMPORARY关键字，则创建的表为临时表。临时表分为全局临时表和本地临时表两种类型。创建临时表时如果指定GLOBAL关键字则为全局临时表，否则为本地临时表。
 
-  全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的（ON COMMIT PRESERVE ROWS），当会话结束时自动清空用户数据；一种是基于事务级别的（ON COMMIT PRESERVE ROWS），当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg\_temp\_开头的schema。
+    全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的\(ON COMMIT PRESERVE ROWS\), 当会话结束时自动清空用户数据；一种是基于事务级别的\(ON COMMIT DELETE ROWS\), 当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg\_temp\_开头的schema。
 
-  本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
+    本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
-  >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。
-  >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
-  >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
-  >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
-  >-   全局临时表功能可以通过设置GUC参数max\_active\_global\_temporary\_table控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
-  >-   临时表只对当前会话可见，因此不支持与\\parallel on并行执行一起使用。
-  >-   临时表不支持主备切换。
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp，pg\_toast\_temp开头的schema。
+    >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
+    >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
+    >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
+    >-   全局临时表功能可以通过设置GUC参数max\_active\_global\_temporary\_table控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
+    >-   临时表只对当前会话可见，因此不支持与\\parallel on并行执行一起使用。
+    >-   \\parallel on临时表不支持主备切换。
 
 -   **IF NOT EXISTS**
 
@@ -155,141 +155,116 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
     -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
-    -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
+    -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。如果源表上带有索引，可以使用INCLUDING PARTITION INCLUDING INDEXES语法实现。如果对分区表只使用INCLUDING INDEXES，目标表定义将是普通表，但是索引是分区索引，最后结果会报错，因为普通表不支持分区索引。
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >-   如果源表包含serial、bigserial、smallserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
     >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。
+    >-   对于分区表EXCLUDING，需要配合INCLUDING ALL使用，如INCLUDING ALL EXCLUDING DEFAULTS，除源分区表的DEFAULTS，其它全包含。
 
-- **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
+-   **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
-  这个子句为表或索引指定一个可选的存储参数。
+    这个子句为表或索引指定一个可选的存储参数。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
-  >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。
 
-  参数的详细描述如下所示。
+    参数的详细描述如下所示。
 
-  -   FILLFACTOR
+    -   FILLFACTOR
 
-      一个表的填充因子（fillfactor）是一个介于10和100之间的百分数。100（完全填充）是默认值。如果指定了较小的填充因子，INSERT操作仅按照填充因子指定的百分率填充表页。每个页上的剩余空间将用于在该页上更新行，这就使得UPDATE有机会在同一页上放置同一条记录的新版本，这比把新版本放置在其他页上更有效。对于一个从不更新的表将填充因子设为100是最佳选择，但是对于频繁更新的表，选择较小的填充因子则更加合适。该参数对于列存表没有意义。
+        一个表的填充因子（fillfactor）是一个介于10和100之间的百分数。100（完全填充）是默认值。如果指定了较小的填充因子，INSERT操作仅按照填充因子指定的百分率填充表页。每个页上的剩余空间将用于在该页上更新行，这就使得UPDATE有机会在同一页上放置同一条记录的新版本，这比把新版本放置在其他页上更有效。对于一个从不更新的表将填充因子设为100是最佳选择，但是对于频繁更新的表，选择较小的填充因子则更加合适。该参数对于列存表没有意义。
 
-      取值范围：10\~100
+        取值范围：10\~100
 
-  - ORIENTATION
+    -   ORIENTATION
 
-    指定表数据的存储方式，即行存方式、列存方式、ORC格式的方式，该参数设置成功后就不再支持修改。
+        指定表数据的存储方式，即行存方式、列存方式、ORC格式的方式，该参数设置成功后就不再支持修改。
 
-    取值范围：
+        取值范围：
 
-    -   ROW，表示表的数据将以行式存储。
+        -   ROW，表示表的数据将以行式存储。
 
-        行存储适合于OLTP业务，适用于点查询或者增删操作较多的场景。
+            行存储适合于OLTP业务，适用于点查询或者增删操作较多的场景。
 
-    -   COLUMN，表示表的数据将以列式存储。
+        -   COLUMN，表示表的数据将以列式存储。
 
-        列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
+            列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
 
-    默认值：
+        默认值：
 
-    若指定表空间为普通表空间，默认值为ROW。
+        若指定表空间为普通表空间，默认值为ROW。
 
-  - STORAGE\_TYPE
+    -   STORAGE\_TYPE
 
-    指定存储引擎类型，该参数设置成功后就不再支持修改。
+        指定存储引擎类型，该参数设置成功后就不再支持修改。
 
-    取值范围：
+        取值范围：
 
-    -   USTORE，表示表支持Inplace-Update存储引擎。
+        -   USTORE，表示表支持Inplace-Update存储引擎。
+        -   ASTORE，表示表支持Append-Only存储引擎。
 
-    -   ASTORE，表示表支持Append-Only存储引擎。
+        默认值：
 
+        不指定表时，默认是Append-Only存储。
 
-    默认值：
-    
-    不指定表时，默认是Append-Only存储。
+    -   COMPRESSION
 
-  -   COMPRESSION
+        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
 
-      指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
+        取值范围：
 
-      取值范围：
+        列存表的有效值为YES/NO/LOW/MIDDLE/HIGH，默认值为LOW。
 
-      列存表的有效值为YES/NO/LOW/MIDDLE/HIGH，默认值为LOW。
+    -   COMPRESSLEVEL
 
-  -   COMPRESSLEVEL
+        指定表数据同一压缩级别下的不同压缩水平，它决定了同一压缩级别下表数据的压缩比以及压缩时间。对同一压缩级别进行了更加详细的划分，为用户选择压缩比和压缩时间提供了更多的空间。总体来讲，此值越大，表示同一压缩级别下压缩比越大，压缩时间越长；反之亦然。
 
-      指定表数据同一压缩级别下的不同压缩水平，它决定了同一压缩级别下表数据的压缩比以及压缩时间。对同一压缩级别进行了更加详细的划分，为用户选择压缩比和压缩时间提供了更多的空间。总体来讲，此值越大，表示同一压缩级别下压缩比越大，压缩时间越长；反之亦然。
+        取值范围：0\~3，默认值为0。
 
-      取值范围：0\~3，默认值为0。
+    -   MAX\_BATCHROW
 
-  -   MAX\_BATCHROW
+        指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
 
-      指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
+        取值范围：10000\~60000，默认60000。
 
-      取值范围：10000\~60000，默认60000。
+    -   PARTIAL\_CLUSTER\_ROWS
 
-  -   PARTIAL\_CLUSTER\_ROWS
+        指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
 
-      指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
 
-      取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
+    -   DELTAROW\_THRESHOLD
 
-  -   DELTAROW\_THRESHOLD
+        指定列存表导入时小于多少行的数据进入delta表，只在GUC参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)开启时生效。该参数只对列存表有效。
 
-      指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
+        取值范围：0～9999，默认值为100
 
-      取值范围：0～9999，默认值为100
+    -   VERSION
 
-  - VERSION
+        指定ORC存储格式的版本。
 
-    指定ORC存储格式的版本。
+        取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
 
-    取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
+        默认值：0.12
 
-    默认值：0.12
+    -   segment
 
-  -   segment
+        使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
 
-      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
+        取值范围：on/off
 
-      取值范围：on/off
+        默认值：off
 
-      默认值：off
+    -   dek\_cipher
 
-  - enable\_tde
+        透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
 
-    创建透明加密表。前提是开启透明数据加密开关GUC参数[enable\_tde](zh-cn_topic_0311764209.md#section17961238192110)，同时启用了KMS密钥管理服务，并正确配置了集群主密钥ID GUC参数[tde\_cmk\_id](zh-cn_topic_0311764209.md#section4132027193410)。本参数仅支持行存表。不支持列存表、临时表。不支持ustore存储引擎。
+        取值范围：字符串。
 
-    取值范围：on/off。当前配置为on时表示开启透明数据加密；当前配置为off时，表示当前不开启加密但是保留后期打开加密功能，在创建表时会向KMS申请创建数据加密密钥。
-
-    默认值：off
-
-  - encrypt\_algo
-
-    指定透明数据加密算法。前提是需要对该表设置enable\_tde选项。加密算法只能在创建表时指定，不同的表允许使用不同的加密算法，创建表成功后算法不可修改。
-
-    取值范围：字符串，有效值为：AES-128-CTR，SM4-CTR。
-
-    默认值：不设置enable\_tde选项时默认为空；当enable\_tde选项设置为on或off时，如果不设置encrypt\_algo则算法默认为AES-128-CTR。
-
-  - dek\_cipher
-
-    透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
-
-    取值范围：字符串。
-
-    默认值：不开启加密时默认为空。
-
-  - cmk\_id
-
-    透明数据加密使用的集群主密钥ID。当开启enable\_tde选项时通过GUC参数[tde\_cmk\_id](zh-cn_topic_0311764209.md#section4132027193410)获取，用户单独不可指定或修改。
-
-    取值范围：字符串。
-
-    默认值：不开启加密时默认为空。
+        默认值：不开启加密时默认为空。
 
 
 -   **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
@@ -340,7 +315,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 -   **DEFAULT default\_expr**
 
-    DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式（不允许使用子查询和对本表中的其他字段的交叉引用）。缺省表达式的数据类型必须和字段类型匹配。
+    DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式\(不允许使用子查询和对本表中的其他字段的交叉引用\)。缺省表达式的数据类型必须和字段类型匹配。
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
 
@@ -382,11 +357,11 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 -   **DEFERRABLE | NOT DEFERRABLE**
 
-    这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束和主键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
+    这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
 
 -   **PARTIAL CLUSTER KEY**
 
-    局部聚簇存储，列存表导入数据时按照指定的列（单列或多列），进行局部排序。
+    局部聚簇存储，列存表导入数据时按照指定的列\(单列或多列\)，进行局部排序。
 
 -   **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
 
@@ -400,7 +375,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **USING INDEX TABLESPACE tablespace\_name**
 
     为UNIQUE或PRIMARY KEY约束相关的索引声明一个表空间。如果没有提供这个子句，这个索引将在default\_tablespace中创建，如果default\_tablespace为空，将使用数据库的缺省表空间。
-    
+
 -   **ENCRYPTION\_TYPE = encryption\_type\_value**
 
     为ENCRYPTED WITH约束中的加密类型，encryption\_type\_value的值为\[ DETERMINISTIC | RANDOMIZED \]
@@ -790,6 +765,7 @@ openGauss=# CREATE TABLE tpcds.warehouse_t17
     W_GMT_OFFSET              DECIMAL(5,2)
 ) WITH (ORIENTATION = COLUMN, COMPRESSION=HIGH);
 
+
 --定义一个检查列约束。
 openGauss=# CREATE TABLE tpcds.warehouse_t19
 (
@@ -998,33 +974,26 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   UNLOGGED表无主备机制，在系统故障或异常断点等情况下，会有数据丢失风险，因此，不可用来存储基础数据。
 
 -   TEMPORARY | TEMP
-    
--   临时表只在当前会话可见，会话结束后会自动删除。
-    
+    -   临时表只在当前会话可见，会话结束后会自动删除。
+
 -   LIKE
-    
--   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
-    
+    -   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
+
 -   LIKE INCLUDING DEFAULTS
-    
--   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
-    
+    -   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
+
 -   LIKE INCLUDING CONSTRAINTS
-    
--   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
-    
+    -   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
+
 -   LIKE INCLUDING INDEXES
-    
--   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-    
+    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
+
 -   LIKE INCLUDING STORAGE
-    
--   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
-    
+    -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
+
 -   LIKE INCLUDING COMMENTS
-    
--   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
-    
+    -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
+
 -   LIKE INCLUDING PARTITION
 
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
@@ -1033,18 +1002,15 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
 
 -   LIKE INCLUDING RELOPTIONS
-    
--   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
-    
+    -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
+
 -   LIKE INCLUDING ALL
-    
--   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
-    
+    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
+
 -   ORIENTATION ROW
-    
--   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
-    
+    -   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
+
 -   ORIENTATION COLUMN
-    
     -   创建列存表，列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
+
 

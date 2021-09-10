@@ -44,7 +44,7 @@ REVOKE用于撤销一个或多个角色的权限。
     REVOKE [ GRANT OPTION FOR ]
         { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
         | ALL [ PRIVILEGES ] }
-        ON { [ SEQUENCE ] sequence_name [, ...]
+        ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -61,6 +61,66 @@ REVOKE用于撤销一个或多个角色的权限。
         [ CASCADE | RESTRICT ];
     ```
 
+-   回收指定域上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { USAGE | ALL [ PRIVILEGES ] }
+        ON DOMAIN domain_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定客户端加密主密钥上的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [PRIVILEGES] }
+        ON CLIENT_MASTER_KEYS client_master_keys_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定列加密密钥上的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [PRIVILEGES]}
+        ON COLUMN_ENCRYPTION_KEYS column_encryption_keys_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定目录上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { READ | WRITE } [, ...] | ALL [ PRIVILEGES ] }
+        ON DIRECTORY directory_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定外部数据源上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { USAGE | ALL [ PRIVILEGES ] }
+        ON FOREIGN DATA WRAPPER fdw_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定外部服务器上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+        ON FOREIGN SERVER server_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
 -   回收指定函数上权限。
 
     ```
@@ -68,6 +128,16 @@ REVOKE用于撤销一个或多个角色的权限。
         { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON { FUNCTION {function_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
            | ALL FUNCTIONS IN SCHEMA schema_name [, ...] }
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收指定过程语言上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { USAGE | ALL [ PRIVILEGES ] }
+        ON LANGUAGE lang_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
     ```
@@ -102,6 +172,46 @@ REVOKE用于撤销一个或多个角色的权限。
         [ CASCADE | RESTRICT ];
     ```
 
+-   回收指定类型上权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+        ON TYPE type_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   回收Data Source对象上的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { USAGE | ALL [PRIVILEGES] }
+        ON DATA SOURCE src_name [, ...]
+        FROM {[GROUP] role_name | PUBLIC} [, ...]
+       [ CASCADE | RESTRICT ];
+    ```
+
+-   回收directory对象的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { { READ | WRITE } [, ...] | ALL [PRIVILEGES] }
+       ON DIRECTORY directory_name [, ...]
+       FROM {[GROUP] role_name | PUBLIC} [, ...]
+       [ CASCADE | RESTRICT ];
+    ```
+
+-   回收package对象的权限。
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [PRIVILEGES] }
+       ON PACKAGE package_name [, ...]
+       FROM {[GROUP] role_name | PUBLIC} [, ...]
+       [ CASCADE | RESTRICT ];
+    ```
+
 -   按角色回收角色上的权限。
 
     ```
@@ -114,44 +224,6 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE ALL { PRIVILEGES | PRIVILEGE } FROM role_name;
-    ```
-
-
--   回收Data Source对象上的权限。
-
-    ```
-    REVOKE {USAGE | ALL [PRIVILEGES]}
-        ON DATA SOURCE src_name [, ...]
-        FROM {[GROUP] role_name | PUBLIC} [, ...];
-    ```
-
-
--   回收指定客户端加密主密钥上的权限。
-
-    ```
-    REVOKE [ GRANT OPTION FOR ]
-        {USAGE | DROP | ALL [PRIVILEGES]}
-        ON {  CLIENT_MASTER_KEYS  client_master_keys_name [, ...]
-              FROM { [ GROUP ] role_name | PUBLIC } [, ...]
-        [ CASCADE | RESTRICT ];
-    ```
-
--   回收指定列加密密钥上的权限。
-
-    ```
-    REVOKE [ GRANT OPTION FOR ]
-        {USAGE | DROP | ALL [PRIVILEGES]}
-        ON {  COLUMN_ENCRYPTION_KEYS column_encryption_keys_name [, ...]
-              FROM { [ GROUP ] role_name | PUBLIC } [, ...]
-        [ CASCADE | RESTRICT ];
-    ```
-
--   回收directory对象的权限。
-
-    ```
-    REVOKE {READ|WRITE| ALL [PRIVILEGES]}
-       ON DIRECTORY src_name [, ...]
-       FROM {[GROUP] role_name | PUBLIC} [, ...] [WITH GRANT OPTION];
     ```
 
 

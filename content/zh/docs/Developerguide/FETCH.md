@@ -1,6 +1,6 @@
-# FETCH<a name="ZH-CN_TOPIC_0242370629"></a>
+# FETCH<a name="ZH-CN_TOPIC_0289900300"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>
+## 功能描述<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>
 
 FETCH通过已创建的游标来检索数据。
 
@@ -11,7 +11,7 @@ FETCH通过已创建的游标来检索数据。
 -   如果FETCH抓取完了所有可用行，它就停在最后一行后面，或者在反向抓取的情况下是停在第一行前面。
 -   FETCH ALL或FETCH BACKWARD ALL将总是把游标的关联位置放在最后一行或者在第一行前面。
 
-## 注意事项<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_s000e3e857e5349aa8560855805267e6f"></a>
+## 注意事项<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s000e3e857e5349aa8560855805267e6f"></a>
 
 -   如果游标定义了NO SCROLL，则不允许使用例如FETCH BACKWARD之类的反向抓取。
 -   NEXT，PRIOR，FIRST，LAST，ABSOLUTE，RELATIVE形式在恰当地移动游标之后抓取一条记录。如果后面没有数据行，就返回一个空的结果，此时游标就会停在查询结果的最后一行之后（向后查询时）或者第一行之前（向前查询时）。
@@ -19,7 +19,7 @@ FETCH通过已创建的游标来检索数据。
 -   RELATIVE 0，FORWARD 0，BACKWARD 0都要求在不移动游标的前提下抓取当前行，也就是重新抓取最近刚抓取过的行。除非游标定位在第一行之前或者最后一行之后，这个动作都应该成功，而在那两种情况下，不返回任何行。
 -   当FETCH的游标上涉及列存表时，不支持BACKWARD、PRIOR等涉及反向获取操作。
 
-## 语法格式<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_sccece13e07c346e8b7e89d726533f687"></a>
+## 语法格式<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_sccece13e07c346e8b7e89d726533f687"></a>
 
 ```
 FETCH [ direction { FROM | IN } ] cursor_name;
@@ -44,7 +44,7 @@ NEXT
    | BACKWARD ALL
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_sceb763c430654064b8f61e9aa0792af9"></a>
+## 参数说明<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_sceb763c430654064b8f61e9aa0792af9"></a>
 
 -   **direction\_clause**
 
@@ -77,7 +77,8 @@ NEXT
         count取值范围：有符号的整数
 
         -   count为正数，就从查询结果的第一行开始，抓取第count行。
-        -   count为负数，就从查询结果末尾抓取第abs(count)行。
+        -   count为负数，就从查询结果末尾抓取第abs\(_count_\)行。
+        -   count为0时，定位在第一行之前。
 
     -   RELATIVE count
 
@@ -86,7 +87,7 @@ NEXT
         取值范围：有符号的整数
 
         -   count为正数就抓取当前关联位置之后的第count行。
-        -   count为负数就抓取当前关联位置之前的第abs(count)行。
+        -   count为负数就抓取当前关联位置之前的第abs\(count\)行。
         -   如果当前行没有数据的话，RELATIVE 0返回空。
 
     -   count
@@ -111,7 +112,7 @@ NEXT
 
     -   BACKWARD
 
-        从当前关联位置开始，抓取前面一行（和PRIOR一样） 。
+        从当前关联位置开始，抓取前面一行\(和PRIOR一样\) 。
 
     -   BACKWARD count
 
@@ -135,7 +136,7 @@ NEXT
     取值范围：已创建的游标的名称。
 
 
-## 示例<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578"></a>
+## 示例<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578"></a>
 
 ```
 --SELECT语句，用一个游标读取一个表。开始一个事务。
@@ -208,7 +209,7 @@ openGauss=# CLOSE cursor1;
 
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122165_zh-cn_topic_0059778422_scff73b2bdc594902afb6925b8a3b97ac"></a>
+## 相关链接<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_scff73b2bdc594902afb6925b8a3b97ac"></a>
 
 [CLOSE](CLOSE.md)，[MOVE](MOVE.md)
 

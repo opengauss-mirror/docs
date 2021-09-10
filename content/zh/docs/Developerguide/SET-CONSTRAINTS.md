@@ -1,6 +1,6 @@
-# SET CONSTRAINTS<a name="ZH-CN_TOPIC_0242370651"></a>
+# SET CONSTRAINTS<a name="ZH-CN_TOPIC_0289900402"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122187_zh-cn_topic_0059779017_s016571300554457884633ea16394654e"></a>
+## 功能描述<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_s016571300554457884633ea16394654e"></a>
 
 SET CONSTRAINTS设置当前事务检查行为的约束条件。
 
@@ -12,19 +12,19 @@ IMMEDIATE约束是在每条语句后面进行检查。DEFERRED约束一直到事
 
 当SET CONSTRAINTS把一个约束从DEFERRED改成IMMEDIATE的时候，新模式反作用式地起作用：任何将在事务结束准备进行的数据修改都将在SET CONSTRAINTS的时候执行检查。如果违反了任何约束，SET CONSTRAINTS都会失败（并且不会修改约束模式）。因此，SET CONSTRAINTS可以用于强制在事务中某一点进行约束检查。
 
-检查和唯一约束总是不可推迟的。
+检查约束总是不可推迟的。
 
-## 注意事项<a name="zh-cn_topic_0237122187_zh-cn_topic_0059779017_s321677998664492982aeded9dee52787"></a>
+## 注意事项<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_s321677998664492982aeded9dee52787"></a>
 
 SET CONSTRAINTS只在当前事务里设置约束的行为。因此，如果用户在事务块之外（START TRANSACTION/COMMIT对）执行这个命令，它将没有任何作用。
 
-## 语法格式<a name="zh-cn_topic_0237122187_zh-cn_topic_0059779017_s8d239b808d544e6cbfdbf0be45ed052c"></a>
+## 语法格式<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_s8d239b808d544e6cbfdbf0be45ed052c"></a>
 
 ```
 SET CONSTRAINTS  { ALL  |  { name  }  [, ...]  }  { DEFERRED  | IMMEDIATE  } ;
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122187_zh-cn_topic_0059779017_sce8e8c2751c740879354a5adb7da996e"></a>
+## 参数说明<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_sce8e8c2751c740879354a5adb7da996e"></a>
 
 -   **name**
 
@@ -45,7 +45,7 @@ SET CONSTRAINTS  { ALL  |  { name  }  [, ...]  }  { DEFERRED  | IMMEDIATE  } ;
     约束在每条语句后进行检查。
 
 
-## 示例<a name="zh-cn_topic_0237122187_zh-cn_topic_0059779017_s1a9e95b23ffc4ba9b8873c7352f3d1f5"></a>
+## 示例<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_s1a9e95b23ffc4ba9b8873c7352f3d1f5"></a>
 
 ```
 --设置所有约束在事务提交时检查。

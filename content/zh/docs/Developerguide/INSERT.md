@@ -1,10 +1,10 @@
-# INSERT<a name="ZH-CN_TOPIC_0242370631"></a>
+# INSERT<a name="ZH-CN_TOPIC_0289900448"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
+## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
 向表中添加一行或多行数据。
 
-## 注意事项<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
+## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
 -   只有拥有表INSERT权限的用户，才可以向表中插入数据。
 -   如果使用RETURNING子句，用户必须要有该表的SELECT权限。
@@ -12,11 +12,11 @@
 -   如果使用query子句插入来自查询里的数据行，用户还需要拥有在查询里使用的表的SELECT权限。
 -   当连接到TD兼容的数据库时，td\_compatible\_truncation参数设置为on时，将启用超长字符串自动截断功能，在后续的insert语句中（不包含外表的场景下），对目标表中char和varchar类型的列上插入超长字符串时，系统会自动按照目标表中相应列定义的最大长度对超长字符串进行截断。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如果向字符集为字节类型编码（SQL\_ASCII，LATIN1等）的数据库中插入多字节字符数据（如汉字等），且字符数据跨越截断位置，这种情况下，按照字节长度自动截断，自动截断后会在尾部产生非预期结果。如果用户有对于截断结果正确性的要求，建议用户采用UTF8等能够按照字符截断的输入字符集作为数据库的编码集。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果向字符集为字节类型编码（SQL\_ASCII，LATIN1等）的数据库中插入多字节字符数据（如汉字等），且字符数据跨越截断位置，这种情况下，按照字节长度自动截断，自动截断后会在尾部产生非预期结果。如果用户有对于截断结果正确性的要求，建议用户采用UTF8等能够按照字符截断的输入字符集作为数据库的编码集。
 
 
-## 语法格式<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
+## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -24,11 +24,11 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     { DEFAULT VALUES
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
-    [ ON DUPLICATE KEY UPDATE {{ column_name = { expression | DEFAULT } } [, ...] | NOTHING} ]
+    [ ON DUPLICATE KEY UPDATE {{ column_name = { expression | DEFAULT } } [, ...] | NOTHING }]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
+## 参数说明<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
 
 -   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
@@ -48,8 +48,8 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
     – 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >INSERT ON DUPLICATE KEY UPDATE不支持WITH及WITH RECURSIVE子句。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >INSERT ON DUPLICATE KEY UPDATE不支持WITH及WITH RECURSIVE子句。
 
 -   **table\_name**
 
@@ -104,23 +104,24 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
 -   **ON DUPLICATE KEY UPDATE**
 
-    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新。对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDED." 或者 "VALUES()" 来选择源数据相应的列。
+    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新，对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDE." 或者 "VALUES\(\)" 来选择源数据相应的列。
 
--   支持触发器，触发器执行顺序由实际执行流程决定：
-    -   执行insert：触发before insert、after insert触发器。
-    -   执行update：触发before insert、before update、after update触发器。
-    -   执行update nothing：触发before insert触发器。
--   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
--   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
-    
--   如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
--   主键、唯一索引列不允许UPDATE。
--   不支持列存，不支持外表、内存表。
--   expression支持使用子查询表达式，其语法与功能同UPDATE。子查询表达式中支持使用"EXCLUDED."来选择源数据相应的列。
-    
+    -   支持触发器，触发器执行顺序由实际执行流程决定：
+        -   执行insert： 触发 before insert、 after insert触发器。
+        -   执行update：触发before insert、before update、after update触发器。
+        -   执行update nothing： 触发before insert触发器。
+
+    -   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
+
+    -   如果表中存在多个唯一约束，如果所插入数据违反多个唯一约束，对于检测到冲突的第一行进行更新，其他冲突行不更新（检查顺序与索引维护具有强相关性，一般先创建的索引先进行冲突检查）。
+    -   如果插入多行，这些行均与表中同一行数据存在唯一约束冲突，则按照顺序，第一条执行插入或更新，之后依次执行更新。
+
+    -   主键、唯一索引列不允许UPDATE。
+    -   不支持列存，不支持外表、内存表。
+    -   expression支持使用子查询表达式，其语法与功能同UPDATE。子查询表达式中支持使用“EXCLUDED.”来选择源数据相应的列。
 
 
-## 示例<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
+## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
 ```
 --创建表tpcds.reason_t2。
@@ -149,18 +150,11 @@ openGauss=# CREATE UNIQUE INDEX reason_t2_u_index ON tpcds.reason_t2(r_reason_sk
 --向表中插入多条记录，如果冲突则更新冲突数据行中r_reason_id字段为'BBBBBBBBCAAAAAAA'。
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6') ON DUPLICATE KEY UPDATE r_reason_id = 'BBBBBBBBCAAAAAAA';
 
---向表中插入多条记录，如果冲突则忽略此条插入。
-openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6') ON DUPLICATE KEY UPDATE NOTHING;
-
---向表中插入多条记录，如果冲突则更新冲突数据行中r_reason_id字段为插入数据的r_reason_id值。
-openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6') ON DUPLICATE KEY UPDATE r_reason_id = EXCLUDED.r_reason_id;
-openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6') ON DUPLICATE KEY UPDATE r_reason_id = values(r_reason_id);
-
 --删除表tpcds.reason_t2。
 openGauss=# DROP TABLE tpcds.reason_t2;
 ```
 
-## 优化建议<a name="zh-cn_topic_0237122167_zh-cn_topic_0059778902_section3855297014560"></a>
+## 优化建议<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_section3855297014560"></a>
 
 -   VALUES
 

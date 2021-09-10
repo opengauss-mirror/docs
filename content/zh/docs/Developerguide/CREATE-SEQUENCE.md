@@ -1,31 +1,32 @@
-# CREATE SEQUENCE<a name="ZH-CN_TOPIC_0242370578"></a>
+# CREATE SEQUENCE<a name="ZH-CN_TOPIC_0289899862"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section11152141914129"></a>
+## 功能描述<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section11152141914129"></a>
 
 CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Owner为创建此序列的用户。
 
-## 注意事项<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section192715972011"></a>
+## 注意事项<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section192715972011"></a>
 
 -   Sequence是一个存放等差数列的特殊表。这个表没有实际意义，通常用于为行或者表生成唯一的标识符。
 -   如果给出一个模式名，则该序列就在给定的模式中创建，否则会在当前模式中创建。序列名必须和同一个模式中的其他序列、表、索引、视图或外表的名称不同。
 -   创建序列后，在表中使用序列的nextval\(\)函数和generate\_series\(1,N\)函数对表插入数据，请保证nextval的可调用次数大于等于N+1次，否则会因为generate\_series\(\)函数会调用N+1次而导致报错。
+-   Sequence默认最大值为2^63-1，如果使用了Large标识则最大值可以支持到2^127-1。
 
-## 语法格式<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section1963019544155"></a>
+## 语法格式<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section1963019544155"></a>
 
 ```
-CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
+CREATE [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
     [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section969884316205"></a>
+## 参数说明<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section969884316205"></a>
 
 -   **name**
 
     将要创建的序列名称。
 
-    取值范围：仅可以使用小写字母（a\~z）、 大写字母（A\~Z），数字和特殊字符"\#"，"\_"，"$"的组合。
+    取值范围: 仅可以使用小写字母（a\~z）、 大写字母（A\~Z），数字和特殊字符"\#"，"\_"，"$"的组合。
 
 -   **increment**
 
@@ -51,8 +52,8 @@ CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为1，表示一次只能生成一个值，也就是没有缓存。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >不建议同时定义cache和maxvalue或minvalue。因为定义cache后不能保证序列的连续性，可能会产生空洞，造成序列号段浪费。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >不建议同时定义cache和maxvalue或minvalue。因为定义cache后不能保证序列的连续性，可能会产生空洞，造成序列号段浪费。
 
 -   **CYCLE**
 
@@ -72,11 +73,11 @@ CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为OWNED BY NONE，表示不存在这样的关联。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >通过OWNED BY创建的Sequence不建议用于其他表，如果希望多个表共享Sequence，该Sequence不应该从属于特定表。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >通过OWNED BY创建的Sequence不建议用于其他表，如果希望多个表共享Sequence，该Sequence不应该从属于特定表。
 
 
-## 示例<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section17779175211714"></a>
+## 示例<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section17779175211714"></a>
 
 创建一个名为serial的递增序列，从101开始：
 
@@ -128,13 +129,13 @@ openGauss=# CREATE SEQUENCE serial1
  START 101
  CACHE 20
 OWNED BY customer_address.ca_address_sk;
---删除表和序列。
+--删除表和序列
 openGauss=# DROP TABLE customer_address;
 openGauss=# DROP SEQUENCE serial cascade;
 openGauss=# DROP SEQUENCE serial1 cascade;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122114_zh-cn_topic_0059778825_section184942174514"></a>
+## 相关链接<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section184942174514"></a>
 
 [DROP SEQUENCE](DROP-SEQUENCE.md)，[ALTER SEQUENCE](ALTER-SEQUENCE.md)
 

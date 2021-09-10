@@ -1,20 +1,20 @@
-# DROP ROW LEVEL SECURITY POLICY<a name="ZH-CN_TOPIC_0242370608"></a>
+# DROP ROW LEVEL SECURITY POLICY<a name="ZH-CN_TOPIC_0289900923"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122144_section196521854173211"></a>
+## 功能描述<a name="zh-cn_topic_0283136715_zh-cn_topic_0237122144_section196521854173211"></a>
 
 删除表上某个行访问控制策略。
 
-## 注意事项<a name="zh-cn_topic_0237122144_section12765201893310"></a>
+## 注意事项<a name="zh-cn_topic_0283136715_zh-cn_topic_0237122144_section12765201893310"></a>
 
 仅表的所有者或者管理员用户才能删除表的行访问控制策略。
 
-## 语法格式<a name="zh-cn_topic_0237122144_section16798192723415"></a>
+## 语法格式<a name="zh-cn_topic_0283136715_zh-cn_topic_0237122144_section16798192723415"></a>
 
 ```
 DROP [ ROW LEVEL SECURITY ] POLICY [ IF EXISTS ] policy_name ON table_name [ CASCADE | RESTRICT ]
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122144_section11851526346"></a>
+## 参数说明<a name="zh-cn_topic_0283136715_zh-cn_topic_0237122144_section11851526346"></a>
 
 -   **IF EXISTS**
 
@@ -34,7 +34,7 @@ DROP [ ROW LEVEL SECURITY ] POLICY [ IF EXISTS ] policy_name ON table_name [ CAS
 
 
 
-## 示例<a name="zh-cn_topic_0237122144_section17979101023515"></a>
+## 示例<a name="zh-cn_topic_0283136715_zh-cn_topic_0237122144_section17979101023515"></a>
 
 ```
 --创建数据表all_data
@@ -47,7 +47,7 @@ openGauss=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role
 openGauss=# DROP ROW LEVEL SECURITY POLICY all_data_rls ON all_data;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122144_section1426016489355"></a>
+## 相关链接<a name="zh-cn_topic_0283136715_zh-cn_topic_0237122144_section1426016489355"></a>
 
 [ALTER ROW LEVEL SECURITY POLICY](ALTER-ROW-LEVEL-SECURITY-POLICY.md)，[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)
 

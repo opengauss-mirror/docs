@@ -1,16 +1,16 @@
-# CREATE TRIGGER<a name="ZH-CN_TOPIC_0242370587"></a>
+# CREATE TRIGGER<a name="ZH-CN_TOPIC_0289900727"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
+## 功能描述<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
 
-创建一个触发器。触发器将与指定的表或视图关联，并在特定条件下执行指定的函数。
+创建一个触发器。 触发器将与指定的表或视图关联，并在特定条件下执行指定的函数。
 
-## 注意事项<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
+## 注意事项<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
 
 -   当前仅支持在普通行存表上创建触发器，不支持在列存表、临时表、unlogged表等类型表上创建触发器。
 -   如果为同一事件定义了多个相同类型的触发器，则按触发器的名称字母顺序触发它们。
 -   触发器常用于多表间数据关联同步场景，对SQL执行性能影响较大，不建议在大数据量同步及对性能要求高的场景中使用。
 
-## 语法格式<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
+## 语法格式<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
 ```
 CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
@@ -31,7 +31,7 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
     TRUNCATE
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
+## 参数说明<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
 -   **CONSTRAINT**
 
@@ -65,7 +65,7 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
     UPDATE OF column_name1 [, column_name2 ... ]
     ```
 
-    表示只有这些列作为UPDATE语句的目标列时，才会启动触发器，但是INSTEAD OF UPDATE类型不支持指定列信息。
+    表示当这些列作为UPDATE语句的目标列时，才会启动触发器，但是INSTEAD OF UPDATE类型不支持指定列信息。
 
 -   **table\_name**
 
@@ -110,7 +110,7 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
 
     WHEN表达式不能包含子查询。
 
-    对于约束触发器，WHEN条件的评估不会延迟，而是在执行更新操作后立即发生。如果条件返回值不为true，则触发器不会排队等待延迟执行。
+    对于约束触发器，WHEN条件的评估不会延迟，而是在执行更新操作后立即发生。 如果条件返回值不为true，则触发器不会排队等待延迟执行。
 
 -   **function\_name**
 
@@ -118,73 +118,73 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
 
 -   **arguments**
 
-    执行触发器时要提供给函数的可选的以逗号分隔的参数列表。参数是文字字符串常量，简单的名称和数字常量也可以写在这里，但它们都将被转换为字符串。请检查触发器函数的实现语言的描述，以了解如何在函数内访问这些参数。
+    执行触发器时要提供给函数的可选的以逗号分隔的参数列表。参数是文字字符串常量，简单的名称和数字常量也可以写在这里，但它们都将被转换为字符串。 请检查触发器函数的实现语言的描述，以了解如何在函数内访问这些参数。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >关于触发器种类：  
-    >-   INSTEAD OF的触发器必须标记为FOR EACH ROW，并且只能在视图上定义。  
-    >-   BEFORE和AFTER触发器作用在视图上时，只能标记为FOR EACH STATEMENT。  
-    >-   TRUNCATE类型触发器仅限FOR EACH STATEMENT。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >关于触发器种类：
+    >-   INSTEAD OF的触发器必须标记为FOR EACH ROW，并且只能在视图上定义。
+    >-   BEFORE和AFTER触发器作用在视图上时，只能标记为FOR EACH STATEMENT。
+    >-   TRUNCATE类型触发器仅限FOR EACH STATEMENT。
 
     **表 1**  表和视图上支持的触发器种类：
 
-    <a name="zh-cn_topic_0237122123_table15282217184416"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237122123_row1928351717446"><th class="cellrowborder" valign="top" width="18.61%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0237122123_p172831717164411"><a name="zh-cn_topic_0237122123_p172831717164411"></a><a name="zh-cn_topic_0237122123_p172831717164411"></a>触发时机</p>
+    <a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_table15282217184416"></a>
+    <table><thead align="left"><tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row1928351717446"><th class="cellrowborder" valign="top" width="18.61%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p172831717164411"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p172831717164411"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p172831717164411"></a>触发时机</p>
     </th>
-    <th class="cellrowborder" valign="top" width="31.39%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0237122123_p12831417204411"><a name="zh-cn_topic_0237122123_p12831417204411"></a><a name="zh-cn_topic_0237122123_p12831417204411"></a>触发事件</p>
+    <th class="cellrowborder" valign="top" width="31.39%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p12831417204411"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p12831417204411"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p12831417204411"></a>触发事件</p>
     </th>
-    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0237122123_p02835173441"><a name="zh-cn_topic_0237122123_p02835173441"></a><a name="zh-cn_topic_0237122123_p02835173441"></a>行级</p>
+    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p02835173441"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p02835173441"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p02835173441"></a>行级</p>
     </th>
-    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0237122123_p7283151724411"><a name="zh-cn_topic_0237122123_p7283151724411"></a><a name="zh-cn_topic_0237122123_p7283151724411"></a>语句级</p>
+    <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p7283151724411"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p7283151724411"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p7283151724411"></a>语句级</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="zh-cn_topic_0237122123_row172831817174411"><td class="cellrowborder" rowspan="2" valign="top" width="18.61%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122123_p730044544511"><a name="zh-cn_topic_0237122123_p730044544511"></a><a name="zh-cn_topic_0237122123_p730044544511"></a>BEFORE</p>
+    <tbody><tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row172831817174411"><td class="cellrowborder" rowspan="2" valign="top" width="18.61%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p730044544511"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p730044544511"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p730044544511"></a>BEFORE</p>
     </td>
-    <td class="cellrowborder" valign="top" width="31.39%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122123_p3284317124416"><a name="zh-cn_topic_0237122123_p3284317124416"></a><a name="zh-cn_topic_0237122123_p3284317124416"></a>INSERT/UPDATE/DELETE</p>
+    <td class="cellrowborder" valign="top" width="31.39%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p3284317124416"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p3284317124416"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p3284317124416"></a>INSERT/UPDATE/DELETE</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122123_p328415179448"><a name="zh-cn_topic_0237122123_p328415179448"></a><a name="zh-cn_topic_0237122123_p328415179448"></a>表</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p328415179448"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p328415179448"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p328415179448"></a>表</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122123_p52841717144413"><a name="zh-cn_topic_0237122123_p52841717144413"></a><a name="zh-cn_topic_0237122123_p52841717144413"></a>表和视图</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237122123_row16284131794411"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122123_p11284117194411"><a name="zh-cn_topic_0237122123_p11284117194411"></a><a name="zh-cn_topic_0237122123_p11284117194411"></a>TRUNCATE</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122123_p17284117134416"><a name="zh-cn_topic_0237122123_p17284117134416"></a><a name="zh-cn_topic_0237122123_p17284117134416"></a>不支持</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122123_p928411720440"><a name="zh-cn_topic_0237122123_p928411720440"></a><a name="zh-cn_topic_0237122123_p928411720440"></a>表</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p52841717144413"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p52841717144413"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p52841717144413"></a>表和视图</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row13284111719447"><td class="cellrowborder" rowspan="2" valign="top" width="18.61%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122123_p77757114469"><a name="zh-cn_topic_0237122123_p77757114469"></a><a name="zh-cn_topic_0237122123_p77757114469"></a>AFTER</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row16284131794411"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p11284117194411"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p11284117194411"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p11284117194411"></a>TRUNCATE</p>
     </td>
-    <td class="cellrowborder" valign="top" width="31.39%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122123_p152851217194419"><a name="zh-cn_topic_0237122123_p152851217194419"></a><a name="zh-cn_topic_0237122123_p152851217194419"></a>INSERT/UPDATE/DELETE</p>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p17284117134416"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p17284117134416"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p17284117134416"></a>不支持</p>
     </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122123_p18285111715443"><a name="zh-cn_topic_0237122123_p18285111715443"></a><a name="zh-cn_topic_0237122123_p18285111715443"></a>表</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122123_p6285191714444"><a name="zh-cn_topic_0237122123_p6285191714444"></a><a name="zh-cn_topic_0237122123_p6285191714444"></a>表和视图</p>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p928411720440"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p928411720440"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p928411720440"></a>表</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row628521784416"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122123_p028581720447"><a name="zh-cn_topic_0237122123_p028581720447"></a><a name="zh-cn_topic_0237122123_p028581720447"></a>TRUNCATE</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row13284111719447"><td class="cellrowborder" rowspan="2" valign="top" width="18.61%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p77757114469"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p77757114469"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p77757114469"></a>AFTER</p>
     </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122123_p79551335194718"><a name="zh-cn_topic_0237122123_p79551335194718"></a><a name="zh-cn_topic_0237122123_p79551335194718"></a>不支持</p>
+    <td class="cellrowborder" valign="top" width="31.39%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p152851217194419"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p152851217194419"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p152851217194419"></a>INSERT/UPDATE/DELETE</p>
     </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122123_p32851817104412"><a name="zh-cn_topic_0237122123_p32851817104412"></a><a name="zh-cn_topic_0237122123_p32851817104412"></a>表</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p18285111715443"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p18285111715443"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p18285111715443"></a>表</p>
     </td>
-    </tr>
-    <tr id="zh-cn_topic_0237122123_row1628517179447"><td class="cellrowborder" rowspan="2" valign="top" width="18.61%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122123_p76867126463"><a name="zh-cn_topic_0237122123_p76867126463"></a><a name="zh-cn_topic_0237122123_p76867126463"></a>INSTEAD OF</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.39%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122123_p132851717134412"><a name="zh-cn_topic_0237122123_p132851717134412"></a><a name="zh-cn_topic_0237122123_p132851717134412"></a>INSERT/UPDATE/DELETE</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122123_p628520177441"><a name="zh-cn_topic_0237122123_p628520177441"></a><a name="zh-cn_topic_0237122123_p628520177441"></a>视图</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237122123_p328521734411"><a name="zh-cn_topic_0237122123_p328521734411"></a><a name="zh-cn_topic_0237122123_p328521734411"></a>不支持</p>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p6285191714444"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p6285191714444"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p6285191714444"></a>表和视图</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row4285121715449"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237122123_p5285121710449"><a name="zh-cn_topic_0237122123_p5285121710449"></a><a name="zh-cn_topic_0237122123_p5285121710449"></a>TRUNCATE</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row628521784416"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p028581720447"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p028581720447"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p028581720447"></a>TRUNCATE</p>
     </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237122123_p13881123616473"><a name="zh-cn_topic_0237122123_p13881123616473"></a><a name="zh-cn_topic_0237122123_p13881123616473"></a>不支持</p>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p79551335194718"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p79551335194718"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p79551335194718"></a>不支持</p>
     </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237122123_p828581719444"><a name="zh-cn_topic_0237122123_p828581719444"></a><a name="zh-cn_topic_0237122123_p828581719444"></a>不支持</p>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p32851817104412"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p32851817104412"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p32851817104412"></a>表</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row1628517179447"><td class="cellrowborder" rowspan="2" valign="top" width="18.61%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p76867126463"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p76867126463"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p76867126463"></a>INSTEAD OF</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="31.39%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p132851717134412"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p132851717134412"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p132851717134412"></a>INSERT/UPDATE/DELETE</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p628520177441"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p628520177441"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p628520177441"></a>视图</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p328521734411"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p328521734411"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p328521734411"></a>不支持</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row4285121715449"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p5285121710449"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p5285121710449"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p5285121710449"></a>TRUNCATE</p>
+    </td>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p13881123616473"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p13881123616473"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p13881123616473"></a>不支持</p>
+    </td>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p828581719444"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p828581719444"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p828581719444"></a>不支持</p>
     </td>
     </tr>
     </tbody>
@@ -192,78 +192,78 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
 
     **表 2**  PLPGSQL类型触发器函数特殊变量：
 
-    <a name="zh-cn_topic_0237122123_table760181655812"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237122123_row19602716145815"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237122123_p206021716105816"><a name="zh-cn_topic_0237122123_p206021716105816"></a><a name="zh-cn_topic_0237122123_p206021716105816"></a>变量名</p>
+    <a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_table760181655812"></a>
+    <table><thead align="left"><tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row19602716145815"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p206021716105816"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p206021716105816"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p206021716105816"></a>变量名</p>
     </th>
-    <th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237122123_p1460201645816"><a name="zh-cn_topic_0237122123_p1460201645816"></a><a name="zh-cn_topic_0237122123_p1460201645816"></a>变量含义</p>
+    <th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1460201645816"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1460201645816"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1460201645816"></a>变量含义</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="zh-cn_topic_0237122123_row3602131614583"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p14602151695812"><a name="zh-cn_topic_0237122123_p14602151695812"></a><a name="zh-cn_topic_0237122123_p14602151695812"></a>NEW</p>
+    <tbody><tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row3602131614583"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p14602151695812"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p14602151695812"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p14602151695812"></a>NEW</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p1860211675810"><a name="zh-cn_topic_0237122123_p1860211675810"></a><a name="zh-cn_topic_0237122123_p1860211675810"></a>INSERT及UPDATE操作涉及tuple信息中的新值，对DELETE为空。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237122123_row76021816145814"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p11602191615818"><a name="zh-cn_topic_0237122123_p11602191615818"></a><a name="zh-cn_topic_0237122123_p11602191615818"></a>OLD</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p1602171615583"><a name="zh-cn_topic_0237122123_p1602171615583"></a><a name="zh-cn_topic_0237122123_p1602171615583"></a>UPDATE及DELETE操作涉及tuple信息中的旧值，对INSERT为空。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1860211675810"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1860211675810"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1860211675810"></a>INSERT及UPDATE操作涉及tuple信息中的新值，对DELETE为空。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row18602416155810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p1475416171454"><a name="zh-cn_topic_0237122123_p1475416171454"></a><a name="zh-cn_topic_0237122123_p1475416171454"></a>TG_NAME</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row76021816145814"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p11602191615818"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p11602191615818"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p11602191615818"></a>OLD</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p5602181610580"><a name="zh-cn_topic_0237122123_p5602181610580"></a><a name="zh-cn_topic_0237122123_p5602181610580"></a>触发器名称。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237122123_row1603161675820"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p1475411171056"><a name="zh-cn_topic_0237122123_p1475411171056"></a><a name="zh-cn_topic_0237122123_p1475411171056"></a>TG_WHEN</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p206031016115811"><a name="zh-cn_topic_0237122123_p206031016115811"></a><a name="zh-cn_topic_0237122123_p206031016115811"></a>触发器触发时机（BEFORE/AFTER/INSTEAD OF）。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1602171615583"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1602171615583"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1602171615583"></a>UPDATE及DELETE操作涉及tuple信息中的旧值，对INSERT为空。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row1660319162582"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p1175418171457"><a name="zh-cn_topic_0237122123_p1175418171457"></a><a name="zh-cn_topic_0237122123_p1175418171457"></a>TG_LEVEL</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row18602416155810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475416171454"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475416171454"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475416171454"></a>TG_NAME</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p0603191615816"><a name="zh-cn_topic_0237122123_p0603191615816"></a><a name="zh-cn_topic_0237122123_p0603191615816"></a>触发频率（ROW/STATEMENT）。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237122123_row1560316166589"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p127546171358"><a name="zh-cn_topic_0237122123_p127546171358"></a><a name="zh-cn_topic_0237122123_p127546171358"></a>TG_OP</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p10603716185818"><a name="zh-cn_topic_0237122123_p10603716185818"></a><a name="zh-cn_topic_0237122123_p10603716185818"></a>触发操作（INSERT/UPDATE/DELETE/TRUNCATE）。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p5602181610580"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p5602181610580"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p5602181610580"></a>触发器名称。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row10541541358"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p27541171651"><a name="zh-cn_topic_0237122123_p27541171651"></a><a name="zh-cn_topic_0237122123_p27541171651"></a>TG_RELID</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row1603161675820"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475411171056"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475411171056"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475411171056"></a>TG_WHEN</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p1954041519"><a name="zh-cn_topic_0237122123_p1954041519"></a><a name="zh-cn_topic_0237122123_p1954041519"></a>触发器所在表OID。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237122123_row45412413517"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p1875420175514"><a name="zh-cn_topic_0237122123_p1875420175514"></a><a name="zh-cn_topic_0237122123_p1875420175514"></a>TG_RELNAME</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p205414755"><a name="zh-cn_topic_0237122123_p205414755"></a><a name="zh-cn_topic_0237122123_p205414755"></a>触发器所在表名（已废弃，现用TG_TABLE_NAME替代）。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p206031016115811"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p206031016115811"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p206031016115811"></a>触发器触发时机（BEFORE/AFTER/INSTEAD OF）。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row13249111110518"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p87540171655"><a name="zh-cn_topic_0237122123_p87540171655"></a><a name="zh-cn_topic_0237122123_p87540171655"></a>TG_TABLE_NAME</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row1660319162582"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1175418171457"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1175418171457"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1175418171457"></a>TG_LEVEL</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p10250201116514"><a name="zh-cn_topic_0237122123_p10250201116514"></a><a name="zh-cn_topic_0237122123_p10250201116514"></a>触发器所在表名。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0237122123_row162500111657"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p1475451710513"><a name="zh-cn_topic_0237122123_p1475451710513"></a><a name="zh-cn_topic_0237122123_p1475451710513"></a>TG_TABLE_SCHEMA</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p6250711553"><a name="zh-cn_topic_0237122123_p6250711553"></a><a name="zh-cn_topic_0237122123_p6250711553"></a>触发器所在表的SCHEMA信息。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p0603191615816"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p0603191615816"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p0603191615816"></a>触发频率（ROW/STATEMENT）。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row625014111253"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p117543174514"><a name="zh-cn_topic_0237122123_p117543174514"></a><a name="zh-cn_topic_0237122123_p117543174514"></a>TG_NARGS</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row1560316166589"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p127546171358"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p127546171358"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p127546171358"></a>TG_OP</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p192506111453"><a name="zh-cn_topic_0237122123_p192506111453"></a><a name="zh-cn_topic_0237122123_p192506111453"></a>触发器函数参数个数。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p10603716185818"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p10603716185818"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p10603716185818"></a>触发操作（INSERT/UPDATE/DELETE/TRUNCATE）。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0237122123_row1764175611515"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237122123_p37540171551"><a name="zh-cn_topic_0237122123_p37540171551"></a><a name="zh-cn_topic_0237122123_p37540171551"></a>TG_ARGV[]</p>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row10541541358"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p27541171651"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p27541171651"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p27541171651"></a>TG_RELID</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237122123_p676419562519"><a name="zh-cn_topic_0237122123_p676419562519"></a><a name="zh-cn_topic_0237122123_p676419562519"></a>触发器函数参数列表。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1954041519"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1954041519"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1954041519"></a>触发器所在表OID。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row45412413517"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1875420175514"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1875420175514"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1875420175514"></a>TG_RELNAME</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p205414755"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p205414755"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p205414755"></a>触发器所在表名（已废弃，现用TG_TABLE_NAME替代）。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row13249111110518"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p87540171655"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p87540171655"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p87540171655"></a>TG_TABLE_NAME</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p10250201116514"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p10250201116514"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p10250201116514"></a>触发器所在表名。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row162500111657"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475451710513"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475451710513"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p1475451710513"></a>TG_TABLE_SCHEMA</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p6250711553"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p6250711553"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p6250711553"></a>触发器所在表的SCHEMA信息。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row625014111253"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p117543174514"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p117543174514"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p117543174514"></a>TG_NARGS</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p192506111453"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p192506111453"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p192506111453"></a>触发器函数参数个数。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row1764175611515"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p37540171551"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p37540171551"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p37540171551"></a>TG_ARGV[]</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p676419562519"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p676419562519"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p676419562519"></a>触发器函数参数列表。</p>
     </td>
     </tr>
     </tbody>
     </table>
 
 
-## 示例<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
+## 示例<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
 ```
 --创建源表及触发表
@@ -346,7 +346,7 @@ openGauss=# DROP TRIGGER update_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122123_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
+## 相关链接<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
 [ALTER TRIGGER](ALTER-TRIGGER.md)，[DROP TRIGGER](DROP-TRIGGER.md)，[ALTER TABLE](ALTER-TABLE.md)
 

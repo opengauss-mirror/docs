@@ -1,28 +1,28 @@
-# ABORT<a name="ZH-CN_TOPIC_0242370517"></a>
+# ABORT<a name="ZH-CN_TOPIC_0289900704"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_s35ca23dd889c479da90f14c150c52f4b"></a>
+## 功能描述<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s35ca23dd889c479da90f14c150c52f4b"></a>
 
 回滚当前事务并且撤销所有当前事务中所做的更改。
 
 作用等同于[ROLLBACK](ROLLBACK.md)，早期SQL有用ABORT，现在推荐使用ROLLBACK。
 
-## 注意事项<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_sa23945b94808484d82b947d70ee28dc6"></a>
+## 注意事项<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_sa23945b94808484d82b947d70ee28dc6"></a>
 
 在事务外部执行ABORT语句不会影响事务的执行，但是会抛出一个NOTICE信息。
 
-## 语法格式<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_s36354f226d754e5bb76ed954add5eea3"></a>
+## 语法格式<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s36354f226d754e5bb76ed954add5eea3"></a>
 
 ```
 ABORT [ WORK | TRANSACTION ] ;
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_s740ca09be515490cbbfb36db4e2fb13e"></a>
+## 参数说明<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s740ca09be515490cbbfb36db4e2fb13e"></a>
 
 **WORK | TRANSACTION**
 
 可选关键字，除了增加可读性没有其他任何作用。
 
-## 示例<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_saa47e844dd304bcc8a75123e66d1fa37"></a>
+## 示例<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_saa47e844dd304bcc8a75123e66d1fa37"></a>
 
 ```
 --创建表customer_demographics_t1。
@@ -64,7 +64,7 @@ cd_demo_sk | cd_gender | cd_marital_status | cd_education_status  | cd_purchase_
 openGauss=# DROP TABLE customer_demographics_t1;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122053_zh-cn_topic_0059778271_s51afa4e9c2fd4b07b11d4eb49fe546b8"></a>
+## 相关链接<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s51afa4e9c2fd4b07b11d4eb49fe546b8"></a>
 
 [SET TRANSACTION](SET-TRANSACTION.md)，[COMMIT | END](COMMIT-END.md)，[ROLLBACK](ROLLBACK.md)
 

@@ -1,14 +1,14 @@
-# SET<a name="ZH-CN_TOPIC_0242370650"></a>
+# SET<a name="ZH-CN_TOPIC_0289899950"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>
+## 功能描述<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>
 
 用于修改运行时配置参数。
 
-## 注意事项<a name="zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8cb7444b58764d99913a4cc61f397f9f"></a>
+## 注意事项<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8cb7444b58764d99913a4cc61f397f9f"></a>
 
 大多数运行时参数都可以用SET在运行时设置，但有些则在服务运行过程中或会话开始之后不能修改。
 
-## 语法格式<a name="zh-cn_topic_0237122186_zh-cn_topic_0059779029_s29888afda1844d6f9fc677f1b59b5b7d"></a>
+## 语法格式<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s29888afda1844d6f9fc677f1b59b5b7d"></a>
 
 -   设置所处的时区。
 
@@ -45,7 +45,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122186_zh-cn_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3"></a>
+## 参数说明<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3"></a>
 
 -   **SESSION**
 
@@ -71,7 +71,7 @@
 
     CURRENT\_SCHEMA用于指定当前的模式。
 
-    取值范围：已存在模式名称。如果模式名不存在，会导致CURRENT_SCHEMA值为空。
+    取值范围：已存在模式名称。如果模式名不存在，会导致CURRENT\_SCHEMA值为空。
 
 -   **SCHEMA schema**
 
@@ -95,22 +95,25 @@
 
     可设置的运行时参数的名称。可用的运行时参数可以使用SHOW ALL命令查看。
 
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >部分通过SHOW ALL查看的参数不能通过SET设置。如max\_datanodes。
+
 -   **value**
 
     config\_parameter的新值。可以声明为字符串常量、标识符、数字，或者逗号分隔的列表。DEFAULT用于把这些参数设置为它们的缺省值。
 
 
-## 示例<a name="zh-cn_topic_0237122186_zh-cn_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
+## 示例<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
 
 ```
 --设置模式搜索路径。    
 openGauss=# SET search_path TO tpcds, public;
 
 --把日期时间风格设置为传统的 POSTGRES 风格(日在月前)。
-openGauss=# SET datestyle TO postgres，dym;
+openGauss=# SET datestyle TO postgres,dmy;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122186_zh-cn_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
+## 相关链接<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
 
 [RESET](RESET.md)，[SHOW](SHOW.md)
 

@@ -6,8 +6,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
 
--   通过CREATE USER创建的用户，默认具有LOGIN权限；
--   通过CREATE USER创建用户的同时系统会在执行该命令的数据库中，为该用户创建一个同名的SCHEMA；其他数据库中，则不自动创建同名的SCHEMA；用户可使用CREATE SCHEMA命令，分别在其他数据库中，为该用户创建同名SCHEMA。
+-   通过CREATE USER创建的用户，默认具有LOGIN权限。
+-   通过CREATE USER创建用户的同时，系统会在执行该命令的数据库中，为该用户创建一个同名的SCHEMA。
 -   系统管理员在普通用户同名schema下创建的对象，所有者为schema的同名用户（非系统管理员）。
 
 ## 语法格式<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
@@ -21,7 +21,7 @@ CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 ```
 {SYSADMIN | NOSYSADMIN}
     | {MONADMIN | NOMONADMIN}
-    | {OPRADMIN | OPRADMIN}
+    | {OPRADMIN | NOOPRADMIN}
     | {POLADMIN | NOPOLADMIN}
     | {AUDITADMIN | NOAUDITADMIN}
     | {CREATEDB | NOCREATEDB}
@@ -69,8 +69,8 @@ CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     -   不能与用户名及用户名倒序相同。
     -   至少包含大写字母（A-Z），小写字母（a-z），数字（0-9），非字母数字字符（限定为\~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?）四类字符中的三类字符。
     -   密码也可以是符合格式要求的密文字符串，这种情况主要用于用户数据导入场景，不推荐用户直接使用。如果直接使用密文密码，用户需要知道密文密码对应的明文，并且保证明文密码复杂度，数据库不会校验密文密码复杂度，直接使用密文密码的安全性由用户保证。
--   创建用户时，应当使用双引号或单引号将用户密码括起来。
-    
+    -   创建用户时，应当使用双引号或单引号将用户密码括起来。
+
     取值范围：字符串。
 
 
@@ -79,17 +79,17 @@ CREATE USER的其他参数值请参考[CREATE ROLE](CREATE-ROLE.md)。
 ## 示例<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
 ```
---创建用户jim，登录密码为xxxxxxxx。
-openGauss=# CREATE USER jim PASSWORD 'xxxxxxxx';
+--创建用户jim，登录密码为xxxxxxxxx。
+openGauss=# CREATE USER jim PASSWORD 'xxxxxxxxx';
 
 --下面语句与上面的等价。
-openGauss=# CREATE USER kim IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE USER kim IDENTIFIED BY 'xxxxxxxxx';
 
 --如果创建有“创建数据库”权限的用户，则需要加CREATEDB关键字。
-openGauss=# CREATE USER dim CREATEDB PASSWORD 'xxxxxxxx';
+openGauss=# CREATE USER dim CREATEDB PASSWORD 'xxxxxxxxx';
 
---将用户jim的登录密码由xxxxxxxx修改为Abcd@123。
-openGauss=# ALTER USER jim IDENTIFIED BY 'Abcd@123' REPLACE 'xxxxxxxx';
+--将用户jim的登录密码由xxxxxxxxx修改为Abcd@123。
+openGauss=# ALTER USER jim IDENTIFIED BY 'Abcd@123' REPLACE 'xxxxxxxxx';
 
 --为用户jim追加CREATEROLE权限。
 openGauss=# ALTER USER jim CREATEROLE;

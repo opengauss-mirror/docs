@@ -1,20 +1,20 @@
-# EXECUTE<a name="ZH-CN_TOPIC_0242370625"></a>
+# EXECUTE<a name="ZH-CN_TOPIC_0289900825"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122161_zh-cn_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>
+## 功能描述<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>
 
 执行一个前面准备好的预备语句。因为一个预备语句只在会话的生命期里存在，那么预备语句必须是在当前会话的前些时候用PREPARE语句创建的。
 
-## 注意事项<a name="zh-cn_topic_0237122161_zh-cn_topic_0059777447_s3a6fd145e83b4e61a22dabdcf32ac282"></a>
+## 注意事项<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s3a6fd145e83b4e61a22dabdcf32ac282"></a>
 
 如果创建预备语句的PREPARE语句声明了一些参数，那么传递给EXECUTE语句的必须是一个兼容的参数集，否则就会生成一个错误。
 
-## 语法格式<a name="zh-cn_topic_0237122161_zh-cn_topic_0059777447_sbe280a5c331e4b75969129444d341882"></a>
+## 语法格式<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_sbe280a5c331e4b75969129444d341882"></a>
 
 ```
 EXECUTE name [ ( parameter [, ...] ) ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122161_zh-cn_topic_0059777447_sf2fd7956e26c49a8ae566c80a0e8e1c0"></a>
+## 参数说明<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_sf2fd7956e26c49a8ae566c80a0e8e1c0"></a>
 
 -   **name**
 
@@ -25,7 +25,7 @@ EXECUTE name [ ( parameter [, ...] ) ];
     给预备语句的一个参数的具体数值。它必须是一个和生成与创建这个预备语句时指定参数的数据类型相兼容的值的表达式。
 
 
-## 示例<a name="zh-cn_topic_0237122161_zh-cn_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
+## 示例<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
 
 ```
 --创建表reason。

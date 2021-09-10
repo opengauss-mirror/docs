@@ -1,6 +1,6 @@
-# PREPARE TRANSACTION<a name="ZH-CN_TOPIC_0242370636"></a>
+# PREPARE TRANSACTION<a name="ZH-CN_TOPIC_0289900175"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122172_zh-cn_topic_0059779173_s84c1f6c6e66743a3b5e71a25e070e50f"></a>
+## 功能描述<a name="zh-cn_topic_0283137205_zh-cn_topic_0237122172_zh-cn_topic_0059779173_s84c1f6c6e66743a3b5e71a25e070e50f"></a>
 
 为当前事务做两阶段提交的准备。
 
@@ -12,18 +12,18 @@
 
 如果PREPARE TRANSACTION因为某些原因失败，那么它就会变成一个ROLLBACK，当前事务被取消。
 
-## 注意事项<a name="zh-cn_topic_0237122172_zh-cn_topic_0059779173_sa5991e597322481d9b5cf468c92b7af7"></a>
+## 注意事项<a name="zh-cn_topic_0283137205_zh-cn_topic_0237122172_zh-cn_topic_0059779173_sa5991e597322481d9b5cf468c92b7af7"></a>
 
 -   事务功能由数据库自动维护，不应显式使用事务功能。
 -   在运行PREPARE TRANSACTION命令时，必须在postgresql.conf配置文件中增大max\_prepared\_transactions的数值。建议至少将其设置为等于max\_connections，这样每个会话都可以有一个等待中的预备事务。
 
-## 语法格式<a name="zh-cn_topic_0237122172_zh-cn_topic_0059779173_s53fd0bedc6174ab7a4c21729b10b8889"></a>
+## 语法格式<a name="zh-cn_topic_0283137205_zh-cn_topic_0237122172_zh-cn_topic_0059779173_s53fd0bedc6174ab7a4c21729b10b8889"></a>
 
 ```
 PREPARE TRANSACTION transaction_id;
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122172_zh-cn_topic_0059779173_safa475d1f6f848039db0d794c7f5aa5b"></a>
+## 参数说明<a name="zh-cn_topic_0283137205_zh-cn_topic_0237122172_zh-cn_topic_0059779173_safa475d1f6f848039db0d794c7f5aa5b"></a>
 
 **transaction\_id**
 
@@ -31,7 +31,7 @@ PREPARE TRANSACTION transaction_id;
 
 取值范围：标识符必须以字符串文本的方式书写，并且必须小于200字节长。
 
-## 相关链接<a name="zh-cn_topic_0237122172_zh-cn_topic_0059779173_s2562d8e8d89a4cd981f08e57f14bb219"></a>
+## 相关链接<a name="zh-cn_topic_0283137205_zh-cn_topic_0237122172_zh-cn_topic_0059779173_s2562d8e8d89a4cd981f08e57f14bb219"></a>
 
 [COMMIT PREPARED](COMMIT-PREPARED.md)，[ROLLBACK PREPARED](ROLLBACK-PREPARED.md)
 

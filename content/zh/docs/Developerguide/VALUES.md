@@ -1,15 +1,15 @@
-# VALUES<a name="ZH-CN_TOPIC_0242370660"></a>
+# VALUES<a name="ZH-CN_TOPIC_0289900362"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122196_zh-cn_topic_0059779241_s25c2a01507274648bf05cbcb1dc418bf"></a>
+## 功能描述<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_s25c2a01507274648bf05cbcb1dc418bf"></a>
 
 根据给定的值表达式计算一个或一组行的值。它通常用于在一个较大的命令内生成一个“常数表”。
 
-## 注意事项<a name="zh-cn_topic_0237122196_zh-cn_topic_0059779241_s60091e11d710468f8772f6732699506b"></a>
+## 注意事项<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_s60091e11d710468f8772f6732699506b"></a>
 
 -   应当避免使用VALUES返回数量非常大的结果行，否则可能会遭遇内存耗尽或者性能低下。出现在INSERT中的VALUES是一个特殊情况，因为目标字段类型可以从INSERT的目标表获知，并不需要通过扫描VALUES列表来推测，所以在此情况下可以处理非常大的结果行。
 -   如果指定了多行，那么每一行都必须拥有相同的元素个数。
 
-## 语法格式<a name="zh-cn_topic_0237122196_zh-cn_topic_0059779241_sb9827c497faf4cc490614f51246dbc5b"></a>
+## 语法格式<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_sb9827c497faf4cc490614f51246dbc5b"></a>
 
 ```
 VALUES {( expression [, ...] )} [, ...]
@@ -19,7 +19,7 @@ VALUES {( expression [, ...] )} [, ...]
     [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122196_zh-cn_topic_0059779241_s0a4a952823114ec6bfe2864b0af1db2f"></a>
+## 参数说明<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_s0a4a952823114ec6bfe2864b0af1db2f"></a>
 
 -   **expression**
 
@@ -56,7 +56,7 @@ VALUES {( expression [, ...] )} [, ...]
     FETCH子句限定返回查询结果从第一行开始的总行数，count的缺省值为1。
 
 
-## 示例<a name="zh-cn_topic_0237122196_zh-cn_topic_0059779241_sdb42dc749d654038b498d0f77883ae8a"></a>
+## 示例<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_sdb42dc749d654038b498d0f77883ae8a"></a>
 
-请参见INSERT的[示例](INSERT.md#zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d)。
+请参见INSERT的[示例](INSERT.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d)。
 

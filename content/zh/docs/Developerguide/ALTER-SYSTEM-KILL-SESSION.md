@@ -1,20 +1,20 @@
-# ALTER SYSTEM KILL SESSION<a name="ZH-CN_TOPIC_0242370539"></a>
+# ALTER SYSTEM KILL SESSION<a name="ZH-CN_TOPIC_0289900551"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122075_zh-cn_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>
+## 功能描述<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>
 
 ALTER SYSTEM KILL SESSION命令用于结束一个会话。
 
-## 注意事项<a name="zh-cn_topic_0237122075_zh-cn_topic_0059778605_s16279beb536e4281b8403ab11195cb3a"></a>
+## 注意事项<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s16279beb536e4281b8403ab11195cb3a"></a>
 
 无。
 
-## 语法格式<a name="zh-cn_topic_0237122075_zh-cn_topic_0059778605_s3b7743fa7cab42718575f7194d1112ba"></a>
+## 语法格式<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s3b7743fa7cab42718575f7194d1112ba"></a>
 
 ```
 ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122075_zh-cn_topic_0059778605_sa834b01395fd4366a5dce7a64ad867b6"></a>
+## 参数说明<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_sa834b01395fd4366a5dce7a64ad867b6"></a>
 
 -   **session\_sid, serial**
 
@@ -25,11 +25,12 @@ ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
     表明会话将在命令执行后立即结束。
 
 
-## 示例<a name="zh-cn_topic_0237122075_zh-cn_topic_0059778605_s731ce019d40848b1aa9b394fd2484a33"></a>
+## 示例<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s731ce019d40848b1aa9b394fd2484a33"></a>
 
 ```
 --查询会话信息。
-openGauss=# SELECT sa.sessionid AS sid,0::integer AS serial#,ad.rolname AS username FROM pg_stat_get_activity(NULL) AS sa
+openGauss=# 
+SELECT sa.sessionid AS sid,0::integer AS serial#,ad.rolname AS username FROM pg_stat_get_activity(NULL) AS sa
 LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)WHERE sa.application_name <> 'JobScheduler';
        sid       | serial# | username 
 -----------------+---------+----------

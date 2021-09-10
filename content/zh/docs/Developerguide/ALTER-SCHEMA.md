@@ -15,7 +15,8 @@
     ```
     ALTER SCHEMA schema_name { WITH | WITHOUT } BLOCKCHAIN
     ```
-    
+
+
 -   修改模式的名称。
 
     ```
@@ -41,7 +42,7 @@
 
 -   **RENAME TO new\_name**
 
-    修改模式的名称。非系统管理员要改变模式的名称，该用户必须在此数据库上有CREATE权限。
+    修改模式的名称。非系统管理员要改变模式的名称，则该用户必须在此数据库上有CREATE权限。
 
     new\_name：模式的新名称。
 
@@ -54,7 +55,7 @@
     new\_owner：模式的新所有者。
 
     取值范围：已存在的用户名/角色名。
-    
+
 -   **\{ WITH | WITHOUT \} BLOCKCHAIN**
 
     修改模式的防篡改属性。具有防篡改属性模式下的普通行存表均为防篡改历史表，不包括外表，临时表，系统表。当该模式下不包含任何表时才可修改防篡改属性。另外，不支持临时表模式。toast表模式、dbe\_perf模式、blockchain模式修改防篡改属性。
@@ -70,7 +71,7 @@ openGauss=# CREATE SCHEMA ds;
 openGauss=# ALTER SCHEMA ds RENAME TO ds_new;
 
 --创建用户jack。
-openGauss=# CREATE USER jack PASSWORD 'xxxxxx';
+openGauss=# CREATE USER jack PASSWORD 'xxxxxxxxx';
 
 --将DS_NEW的所有者修改为jack。
 openGauss=# ALTER SCHEMA ds_new OWNER TO jack;

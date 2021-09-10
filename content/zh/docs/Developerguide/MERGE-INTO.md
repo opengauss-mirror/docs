@@ -1,18 +1,17 @@
-# MERGE INTO<a name="ZH-CN_TOPIC_0242370634"></a>
+# MERGE INTO<a name="ZH-CN_TOPIC_0289900297"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122170_section11462163155618"></a>
+## 功能描述<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section11462163155618"></a>
 
 通过MERGE INTO语句，将目标表和源表中数据针对关联条件进行匹配，若关联条件匹配时对目标表进行UPDATE，无法匹配时对目标表执行INSERT。此语法可以很方便地用来合并执行UPDATE和INSERT，避免多次执行。
 
-## 注意事项<a name="zh-cn_topic_0237122170_section166351045574"></a>
+## 注意事项<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section166351045574"></a>
 
--   进行MERGE INTO操作的用户需要同时拥有目标表的UPDATE和INSERT权限，以及源表的SELECT权限。
--   不支持重分布过程中MERGE INTO。
+进行MERGE INTO操作的用户需要同时拥有目标表的UPDATE和INSERT权限，以及源表的SELECT权限。
 
-## 语法格式<a name="zh-cn_topic_0237122170_section10551749579"></a>
+## 语法格式<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section10551749579"></a>
 
 ```
-MERGE INTO table_name [ [ AS ] alias ]
+MERGE [/*+ plan_hint */] INTO table_name [ [ AS ] alias ]
 USING { { table_name | view_name } | subquery } [ [ AS ] alias ]
 ON ( condition )
 [
@@ -28,20 +27,24 @@ ON ( condition )
 ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122170_section1315653475"></a>
+## 参数说明<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section1315653475"></a>
+
+-   **plan\_hint子句**
+
+    以/\*+ \*/的形式在MERGE关键字后，用于对MERGE对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](zh-cn_topic_0289900289.md)。每条语句中只有第一个/\*+ plan\_hint \*/注释块会作为hint生效，里面可以写多条hint。
 
 -   **INTO子句**
 
     指定正在更新或插入的目标表。
 
-    - **table_name**
+    -   **talbe\_name**
 
-      目标表的表名。
+        目标表的表名。
 
     -   **alias**
 
         目标表的别名。
-    
+
         取值范围：字符串，符合标识符命名规范。
 
 
@@ -57,7 +60,7 @@ ON ( condition )
 
     当源表和目标表中数据针对关联条件可以匹配上时，选择WHEN MATCHED子句进行UPDATE操作。
 
-    不支持更新分布列。不支持更新系统表、系统列。
+    不支持更新系统表、系统列。
 
 -   **WHEN NOT MATCHED子句**
 
@@ -78,7 +81,7 @@ ON ( condition )
     UPDATE子句和INSERT子句的条件，只有在条件满足时才进行更新操作，可缺省。不支持WHERE条件中引用系统列。
 
 
-## 示例<a name="zh-cn_topic_0237122170_section3650125620712"></a>
+## 示例<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section3650125620712"></a>
 
 ```
 -- 创建目标表products和源表newproducts，并插入数据

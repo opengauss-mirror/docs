@@ -101,13 +101,11 @@
     -   由space\_size来确定，其格式参考[CREATE TABLESPACE](CREATE-TABLESPACE.md)。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
-        >
-        >- 若调整后的限额值比当前表空间实际使用的值小，调整操作可以执行成功。后续用户需要将该表空间的使用值降低至新限额值之下，才能继续往该表空间中写入数据。
-        >- 修改参数MAXSIZE时也可使用：
-        >
+        >-   若调整后的限额值比当前表空间实际使用的值要小，调整操作可以执行成功，后续用户需要将该表空间的使用值降低到新限额值之下，才能继续往该表空间中写入数据。
+        >-   修改参数MAXSIZE时也可使用：
         >```
         >ALTER TABLESPACE tablespace_name RESIZE MAXSIZE
-        >{ 'UNLIMITED' | 'space_size'};
+        > { 'UNLIMITED' | 'space_size'};
         >```
 
 

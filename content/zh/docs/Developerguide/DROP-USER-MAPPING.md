@@ -1,16 +1,16 @@
-# DROP USER MAPPING
+# DROP USER MAPPING<a name="ZH-CN_TOPIC_0289900601"></a>
 
-## 功能描述
+## 功能描述<a name="zh-cn_topic_0283136651_section152751851406"></a>
 
 移除一个用于外部服务器的用户映射。
 
-## 语法格式
+## 语法格式<a name="zh-cn_topic_0283136651_section4460205915011"></a>
 
 ```
-DROP USER MAPPING [ IF EXISTS ] FOR { user_name | USER | CURRENT_USER | PUBLIC } SERVER server_name
+DROP USER MAPPING [ IF EXISTS ] FOR { user_name | USER | CURRENT_USER | PUBLIC } SERVER server_name;
 ```
 
-## 参数描述
+## 参数描述<a name="zh-cn_topic_0283136651_section115661681112"></a>
 
 -   **IF EXISTS**
 
@@ -18,13 +18,16 @@ DROP USER MAPPING [ IF EXISTS ] FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
 -   **user\_name**
 
-    该映射的用户名。`CURRENT_USER`和`USER`匹配当前用户的名称。`PUBLIC`被用来匹配系统中所有现存和未来的用户名。
+    该映射的用户名。
+
+    CURRENT\_USER和USER匹配当前用户的名称。PUBLIC被用来匹配系统中所有现存和未来的用户名。
 
 -   **server\_name**
+
     用户映射的服务器名。
 
 
-## 相关链接
+## 相关链接<a name="zh-cn_topic_0283136651_section17590015119"></a>
 
-[CREATE USER MAPPING](CREATE-USER-MAPPING.md)，[ALTER USER MAPPING](ALTER-USER-MAPPING.md)
+[ALTER USER MAPPING](ALTER-USER-MAPPING.md)，[CREATE USER MAPPING](CREATE-USER-MAPPING.md)
 

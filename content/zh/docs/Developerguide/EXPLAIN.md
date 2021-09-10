@@ -1,6 +1,6 @@
-# EXPLAIN<a name="ZH-CN_TOPIC_0242370627"></a>
+# EXPLAIN<a name="ZH-CN_TOPIC_0289900742"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_sd22ce4e4c8c14244afb6492e84f92d80"></a>
+## 功能描述<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_sd22ce4e4c8c14244afb6492e84f92d80"></a>
 
 显示SQL语句的执行计划。
 
@@ -10,33 +10,29 @@
 
 若指定了ANALYZE选项，则该语句会被执行，然后根据实际的运行结果显示统计数据，包括每个计划节点内时间总开销（毫秒为单位）和实际返回的总行数。这对于判断计划生成器的估计是否接近现实非常有用。
 
-## 注意事项<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
+## 注意事项<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
 
-- 在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT，UPDATE，DELETE，CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用这种方法：
+-   在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT，UPDATE，DELETE，CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用如下方法。
+
+    ```
+    START TRANSACTION;
+    EXPLAIN ANALYZE ...;
+    ROLLBACK;
+    ```
+
+-   由于参数DETAIL，NODES，NUM\_NODES是分布式模式下的功能，在单机模式中是被禁止使用的。假如使用，会产生如下错误。
+
+    ```
+    openGauss=# create table student(id int, name char(20));
+    CREATE TABLE
+    openGauss=# explain (nodes true) insert into student values(5,'a'),(6,'b');
+    ERROR:  unrecognized EXPLAIN option "nodes"
+    openGauss=# explain (num_nodes true) insert into student values(5,'a'),(6,'b');
+    ERROR:  unrecognized EXPLAIN option "num_nodes"
+    ```
 
 
-```
-START TRANSACTION;
-EXPLAIN ANALYZE ...;
-ROLLBACK;
-```
-
-- 在指定ANALYZE选项时，由于参数DETAIL，NODES，NUM_NODES是属于分布式模式的功能，因此在单机模式中是被禁止使用的。假如在单机模式中使用，会产生如下所示的错误：
-
-  ```
-  openGauss=# create table student(id int, name char(20));
-  CREATE TABLE
-  openGauss=# explain (analyze,detail true)insert into student values(5,'a'),(6,'b');
-  ERROR:  unrecognized EXPLAIN option "detail"
-  openGauss=# explain (analyze,node true)insert into student values(5,'a'),(6,'b');
-  ERROR:  unrecognized EXPLAIN option "nodes"
-  openGauss=# explain (analyze,num_nodes true)insert into student values(5,'a'),(6,'b');
-  ERROR:  unrecognized EXPLAIN option "num_nodes"
-  ```
-
-  
-
-## 语法格式<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
+## 语法格式<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
 
 -   显示SQL语句的执行计划，支持多种选项，对选项顺序无要求。
 
@@ -44,7 +40,7 @@ ROLLBACK;
     EXPLAIN [ (  option  [, ...] )  ] statement;
     ```
 
-    其中选项option子句的语法为：
+    其中选项option子句的语法为。
 
     ```
     ANALYZE [ boolean ] |
@@ -52,9 +48,9 @@ ROLLBACK;
         VERBOSE [ boolean ] |
         COSTS [ boolean ] |
         CPU [ boolean ] |
-        DETAIL [ boolean ] |
-        NODES [ boolean ] |
-        NUM_NODES [ boolean ] |
+        DETAIL [ boolean ] |(仅分布式模式可用，集中式模式不可用)
+        NODES [ boolean ] |(仅分布式模式可用，集中式模式不可用)
+        NUM_NODES [ boolean ] |(仅分布式模式可用，集中式模式不可用)
         BUFFERS [ boolean ] |
         TIMING [ boolean ] |
         PLAN [ boolean ] |
@@ -68,7 +64,7 @@ ROLLBACK;
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_se66550d2d643408ebe3189e751499cd5"></a>
+## 参数说明<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_se66550d2d643408ebe3189e751499cd5"></a>
 
 -   **statement**
 
@@ -110,7 +106,7 @@ ROLLBACK;
     -   TRUE（缺省值）：显示CPU的使用情况。
     -   FALSE：不显示。
 
--   **DETAIL boolean**
+-   **DETAIL boolean**（仅分布式模式可用，集中式模式不可用）
 
     打印数据库节点上的信息。
 
@@ -119,7 +115,7 @@ ROLLBACK;
     -   TRUE（缺省值）：打印数据库节点的信息。
     -   FALSE：不打印。
 
--   **NODES boolean**
+-   **NODES boolean**（仅分布式模式可用，集中式模式不可用）
 
     打印query执行的节点信息。
 
@@ -128,7 +124,7 @@ ROLLBACK;
     -   TRUE（缺省值）：打印执行的节点的信息。
     -   FALSE：不打印。
 
--   **NUM\_NODES boolean**
+-   **NUM\_NODES boolean**（仅分布式模式可用，集中式模式不可用）
 
     打印执行中的节点的个数信息。
 
@@ -177,7 +173,7 @@ ROLLBACK;
     使用此选项时，即打印执行中的所有相关信息。
 
 
-## 示例<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
+## 示例<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 
 ```
 --创建一个表tpcds.customer_address_p1。
@@ -257,7 +253,7 @@ openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHE
 openGauss=# DROP TABLE tpcds.customer_address_p1;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
+## 相关链接<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
 [ANALYZE | ANALYSE](ANALYZE-ANALYSE.md)
 

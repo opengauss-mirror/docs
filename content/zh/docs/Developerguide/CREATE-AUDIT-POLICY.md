@@ -80,7 +80,7 @@ CREATE AUDIT POLICY [ IF NOT EXISTS ] policy_name { { privilege_audit_clause | a
 ```
 --创建dev_audit和bob_audit用户。
 openGauss=# CREATE USER dev_audit PASSWORD 'dev@1234';
-openGauss=# CREATE USER bob_audit password 'bob@1234';
+CREATE USER bob_audit password 'bob@1234';
 
 --创建一个表tb_for_audit
 openGauss=# CREATE TABLE tb_for_audit(col1 text, col2 text, col3 text);
