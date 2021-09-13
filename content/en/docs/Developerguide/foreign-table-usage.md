@@ -2,7 +2,7 @@
 
 In  [\#EN-US\_TOPIC\_0311524276/en-us\_topic\_0085032368\_table1097865225410](#en-us_topic_0085032368_table1097865225410), you can partition a table before storing it, facilitating filtering in queries. You can also specify partition attributes when creating a table using Hive and writing the table in ORC or Parquet format to HDFS. The partition attributes of openGauss should be consistent with those of the table created using Hive to ensure correct mapping and effective queries.
 
-In openGauss, you can use  **CREATE FOREIGN TABLE**  to specify the partition information used for the created table. For details about how to use  **CREATE FOREIGN TABLE**, see  [CREATE FOREIGN TABLE](en-us_topic_0289900252.md).
+In openGauss, you can use  **CREATE FOREIGN TABLE**  to specify the partition information used for the created table. For details about how to use  **CREATE FOREIGN TABLE**, see  [CREATE FOREIGN TABLE](create-foreign-table.md).
 
 The constraints on partitions are as follows:
 
