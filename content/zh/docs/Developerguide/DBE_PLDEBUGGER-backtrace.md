@@ -41,6 +41,13 @@ debug端调试过程中，调用backtrace，查看当前的调用堆栈。
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p3870154243112"><a name="p3870154243112"></a><a name="p3870154243112"></a>断点内容</p>
 </td>
 </tr>
+<tr id="row16607749122318"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p46071649112312"><a name="p46071649112312"></a><a name="p46071649112312"></a>funcoid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p4607249102320"><a name="p4607249102320"></a><a name="p4607249102320"></a>OUT oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p06071149122316"><a name="p06071149122316"></a><a name="p06071149122316"></a>函数oid</p>
+</td>
+</tr>
 </tbody>
 </table>
 

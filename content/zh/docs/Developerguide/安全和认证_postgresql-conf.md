@@ -25,6 +25,16 @@
 >![](public_sys-resources/icon-notice.gif) **须知：**   
 >迭代次数设置过小会降低口令存储的安全性，设置过大会导致认证、用户创建等涉及口令加密的场景性能劣化，请根据实际硬件条件合理设置迭代次数，推荐采用默认迭代次数。  
 
+## session\_authorization<a name="section2099118013294"></a>
+
+**参数说明：**当前会话的用户标识。
+
+该参数属于USERSET类型参数，此参数为内部参数，只能通过[SET SESSION AUTHORIZATION](SET-SESSION-AUTHORIZATION.md)语法设置，不支持直接设置。
+
+**取值范围：**字符串。
+
+**默认值：**NULL
+
 ## session\_timeout<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a"></a>
 
 **参数说明：**表明与服务器建立链接后，不进行任何操作的最长时间。

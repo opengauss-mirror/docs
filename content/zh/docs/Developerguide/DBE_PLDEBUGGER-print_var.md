@@ -1,8 +1,8 @@
 # DBE\_PLDEBUGGER.print\_var<a name="ZH-CN_TOPIC_0000001116086114"></a>
 
-debug端调试过程中，调用print\_var，打印当前存储过程内变量中指定的变量名及其取值。
+debug端调试过程中，调用print\_var，打印当前存储过程内变量中指定的变量名及其取值。该函数入参frameno表示查询遍历的栈层数，支持不加入该参数调用，缺省为查看最上层栈变量。
 
-**表 1**  print\_var返回值列表
+**表 1**  print\_var入参和返回值列表
 
 <a name="table8940114934019"></a>
 <table><thead align="left"><tr id="row1294094911409"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p4771101912150"><a name="p4771101912150"></a><a name="p4771101912150"></a>名称</p>
@@ -18,6 +18,13 @@ debug端调试过程中，调用print\_var，打印当前存储过程内变量�
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1388347165712"><a name="p1388347165712"></a><a name="p1388347165712"></a>IN text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1088367115715"><a name="p1088367115715"></a><a name="p1088367115715"></a>变量</p>
+</td>
+</tr>
+<tr id="row167393942113"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p473913932115"><a name="p473913932115"></a><a name="p473913932115"></a>frameno</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p373917982114"><a name="p373917982114"></a><a name="p373917982114"></a>IN integer（可选）</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p373916992116"><a name="p373916992116"></a><a name="p373916992116"></a>指定的栈层数，缺省为最顶层</p>
 </td>
 </tr>
 <tr id="row19940249184016"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p39401949114016"><a name="p39401949114016"></a><a name="p39401949114016"></a>varname</p>
@@ -46,6 +53,13 @@ debug端调试过程中，调用print\_var，打印当前存储过程内变量�
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p2941154911400"><a name="p2941154911400"></a><a name="p2941154911400"></a>OUT text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p17941049134010"><a name="p17941049134010"></a><a name="p17941049134010"></a>变量对应的package名，预留使用，当前均为空</p>
+</td>
+</tr>
+<tr id="row1740345632214"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p134041568229"><a name="p134041568229"></a><a name="p134041568229"></a>isconst</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p5404656132216"><a name="p5404656132216"></a><a name="p5404656132216"></a>OUT boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p2040465622217"><a name="p2040465622217"></a><a name="p2040465622217"></a>是否为常量</p>
 </td>
 </tr>
 </tbody>

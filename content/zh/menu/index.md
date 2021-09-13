@@ -1447,6 +1447,24 @@ headless: true
 			-   [DBE\_PLDEBUGGER.delete\_breakpoint]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-delete_breakpoint.md" >}})
 			-   [DBE\_PLDEBUGGER.info\_breakpoints]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-info_breakpoints.md" >}})
 			-   [DBE\_PLDEBUGGER.backtrace]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-backtrace.md" >}})
+			-   [DBE\_PLDEBUGGER.backtrace]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-backtrace.md" >}})
+			-   [DBE\_PLDEBUGGER.enable\_breakpoint]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-enable_breakpoint.md" >}})
+			-   [DBE\_PLDEBUGGER.disable\_breakpoint]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-disable_breakpoint.md" >}})
+			-   [DBE\_PLDEBUGGER.finish]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-finish.md" >}})
+			-   [DBE\_PLDEBUGGER.set\_var]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-set_var.md" >}})
+		-   [DBE\_PLDEBUGGER.set\_var]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-set_var.md" >}})
+			-   [DB4AI Schema]({{< relref "./docs/Developerguide/DB4AI-Schema.md" >}})
+			-   [DB4AI.SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-SNAPSHOT.md" >}}
+			-   [DB4AI.CREATE\_SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-CREATE_SNAPSHOT.md" >}}
+			-   [DB4AI.CREATE\_SNAPSHOT\_INTERNAL]({{< relref "./docs/Developerguide/DB4AI-CREATE_SNAPSHOT_INTERNAL.md" >}}
+			-   [DB4AI.PREPARE\_SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-PREPARE_SNAPSHOT.md" >}}
+			-   [DB4AI.PREPARE\_SNAPSHOT\_INTERNAL]({{< relref "./docs/Developerguide/DB4AI-PREPARE_SNAPSHOT_INTERNAL.md" >}}
+			-   [DB4AI.ARCHIVE\_SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-ARCHIVE_SNAPSHOT.md" >}}
+			-   [DB4AI.PUBLISH\_SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-PUBLISH_SNAPSHOT.md" >}}
+			-   [DB4AI.MANAGE\_SNAPSHOT\_INTERNAL]({{< relref "./docs/Developerguide/DB4AI-MANAGE_SNAPSHOT_INTERNAL.md" >}}
+			-   [DB4AI.SAMPLE\_SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-SAMPLE_SNAPSHOT.md" >}}
+			-   [DB4AI.PURGE\_SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-PURGE_SNAPSHOT.md" >}}
+			-   [DB4AI.PURGE\_SNAPSHOT\_INTERNAL]({{< relref "./docs/Developerguide/DB4AI-PURGE_SNAPSHOT_INTERNAL.md" >}}				
 	-   [逻辑复制]({{< relref "./docs/Developerguide/逻辑复制.md" >}})
         -   [逻辑解码]({{< relref "./docs/Developerguide/逻辑解码.md" >}})
             -   [逻辑解码概述]({{< relref "./docs/Developerguide/逻辑解码概述.md" >}})
@@ -1541,6 +1559,7 @@ headless: true
         -   [等待事件]({{< relref "./docs/Developerguide/等待事件.md" >}})
         -   [Query]({{< relref "./docs/Developerguide/Query-22.md" >}})
         -   [系统性能快照]({{< relref "./docs/Developerguide/系统性能快照.md" >}})
+		-   [安全配置]({{< relref "./docs/Developerguide/安全配置.md" >}}
 		-   [全局临时表]({{< relref "./docs/Developerguide/全局临时表.md" >}})
 		-   [HyperLogLog]({{< relref "./docs/Developerguide/HyperLogLog.md" >}})
 		-   [定时任务]({{< relref "./docs/Developerguide/定时任务.md" >}})
@@ -1551,6 +1570,10 @@ headless: true
 		-   [线程池]({{< relref "./docs/Developerguide/线程池.md" >}})
 		-   [备份恢复]({{< relref "./docs/Developerguide/备份恢复.md" >}})
 		-   [Undo]({{< relref "./docs/Developerguide/Undo.md" >}})
+		-   [DCF参数设置]({{< relref "./docs/Developerguide/DCF参数设置.md" >}}
+		-   [闪回相关参数]({{< relref "./docs/Developerguide/闪回相关参数.md" >}}
+		-   [回滚相关参数]({{< relref "./docs/Developerguide/回滚相关参数.md" >}}
+		-   [预留参数]({{< relref "./docs/Developerguide/预留参数.md" >}}
 		-   [AI特性]({{< relref "./docs/Developerguide/AI特性-GUC.md" >}})
 	-   [错误码参考]({{< relref "./docs/Developerguide/错误码参考.md">}})
 		-   [SQL标准错误码说明]({{< relref "./docs/Developerguide/SQL标准错误码说明.md" >}})
