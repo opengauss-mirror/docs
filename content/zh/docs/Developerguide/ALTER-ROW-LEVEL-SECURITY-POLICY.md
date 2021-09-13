@@ -1,14 +1,14 @@
-# ALTER ROW LEVEL SECURITY POLICY<a name="ZH-CN_TOPIC_0242370533"></a>
+# ALTER ROW LEVEL SECURITY POLICY<a name="ZH-CN_TOPIC_0289900230"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122069_section196521854173211"></a>
+## 功能描述<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section196521854173211"></a>
 
 对已存在的行访问控制策略（包括行访问控制策略的名称，行访问控制指定的用户，行访问控制的策略表达式）进行修改。
 
-## 注意事项<a name="zh-cn_topic_0237122069_section12765201893310"></a>
+## 注意事项<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section12765201893310"></a>
 
 表的所有者或管理员用户才能进行此操作。
 
-## 语法格式<a name="zh-cn_topic_0237122069_section16798192723415"></a>
+## 语法格式<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section16798192723415"></a>
 
 ```
 ALTER [ ROW LEVEL SECURITY ] POLICY [ IF EXISTS ] policy_name ON table_name RENAME TO new_policy_name;
@@ -18,7 +18,7 @@ ALTER [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
     [ USING ( using_expression ) ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122069_section11851526346"></a>
+## 参数说明<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section11851526346"></a>
 
 -   policy\_name
 
@@ -41,7 +41,7 @@ ALTER [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
     行访问控制的表达式，返回值为boolean类型。
 
 
-## 示例<a name="zh-cn_topic_0237122069_section17979101023515"></a>
+## 示例<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section17979101023515"></a>
 
 ```
 --创建数据表all_data
@@ -101,7 +101,7 @@ Location Nodes: ALL DATANODES
 Options: orientation=row, compression=no, enable_rowsecurity=true
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122069_section1426016489355"></a>
+## 相关链接<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section1426016489355"></a>
 
 [CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)，[DROP ROW LEVEL SECURITY POLICY](DROP-ROW-LEVEL-SECURITY-POLICY.md)
 

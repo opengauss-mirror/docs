@@ -34,7 +34,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
--   有限地支持唯一约束和主键约束，即唯一约束和主键约束的约束键必须包含所有分区键。
+-   唯一约束和主键约束的约束键包含所有分区键将为约束创建LOCAL索引，否则创建GLOBAL索引。
 -   目前哈希分区和列表分区仅支持单列构建分区键，暂不支持多列构建分区键。
 -   只需要有间隔分区表的INSERT权限，往该表INSERT数据时就可以自动创建分区。
 
@@ -64,11 +64,12 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     { NOT NULL |
       NULL | 
       CHECK ( expression ) | 
-      DEFAULT default_expr | 
+      DEFAULT default_e xpr | 
+      GENERATED ALWAYS AS ( generation_expr ) STORED |
       UNIQUE index_parameters | 
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-          [ ON DELETE action ] [ ON UPDATE action ] }
+            [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
@@ -88,7 +89,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 -   like选项like\_option：
 
     ```
-    { INCLUDING | EXCLUDING } { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | RELOPTIONS| ALL }
+    { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | RELOPTIONS| ALL }
     ```
 
 
@@ -159,12 +160,10 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     和INHERITS不同，新表与原来的表之间在创建动作完毕之后是完全无关的。在源表做的任何修改都不会传播到新表中，并且也不可能在扫描源表的时候包含新表的数据。
 
-    字段缺省表达式只有在声明了INCLUDING DEFAULTS之后才会包含进来。缺省是不包含缺省表达式的，即新表中所有字段的缺省值都是NULL。
-
-    非空约束将总是复制到新表中，CHECK约束则仅在指定了INCLUDING CONSTRAINTS的时候才复制，而其他类型的约束则永远也不会被复制。此规则同时适用于表约束和列约束。
-
-    和INHERITS不同，被复制的列和约束并不使用相同的名称进行融合。如果明确的指定了相同的名称或者在另外一个LIKE子句中，将会报错。
-
+    -   字段缺省表达式只有在声明了INCLUDING DEFAULTS之后才会包含进来。缺省是不包含缺省表达式的，即新表中所有字段的缺省值都是NULL。
+    -   如果指定了INCLUDING GENERATED，则源表列的生成表达式会复制到新表中。默认不复制生成表达式。
+    -   非空约束将总是复制到新表中，CHECK约束则仅在指定了INCLUDING CONSTRAINTS的时候才复制，而其他类型的约束则永远也不会被复制。此规则同时适用于表约束和列约束。
+    -   和INHERITS不同，被复制的列和约束并不使用相同的名称进行融合。如果明确的指定了相同的名称或者在另外一个LIKE子句中，将会报错。
     -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
     -   如果指定了INCLUDING STORAGE，则拷贝列的STORAGE设置也将被拷贝，默认情况下不包含STORAGE设置。
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释也会被拷贝过来。默认情况下，不拷贝源表的注释。
@@ -197,23 +196,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   COMPRESSION
         -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
         -   行存表不支持压缩。
-    
+
     -   MAX\_BATCHROW
-    
+
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-    
+
         取值范围：10000\~60000，默认60000。
-    
+
     -   PARTIAL\_CLUSTER\_ROWS
-    
+
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-    
+
         取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
-    
+
     -   DELTAROW\_THRESHOLD
-    
+
         预留参数。该参数只对列存表有效。
-    
+
         取值范围：0～9999
 
 
@@ -266,8 +265,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     指定各分区的信息，各参数意义如下：
 
     -   partition\_name：范围分区的名称或名称前缀，除以下情形外（假定其中的partition\_name是p1），均为分区的名称。
-        -   若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1，p1\_2，...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\)，\[2, 3\) 和 \[3, 4\)，名称依次为p1\_，p1\_2和p1\_3，即此处的p1是名称前缀。
-        -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1，p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\)，\[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0，p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
+        -   若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1, p1\_2, ...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\), \[2, 3\) 和 \[3, 4\)，名称依次为p1\_1, p1\_2和p1\_3，即此处的p1是名称前缀。
+        -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\), \[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0, p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
 
     -   partition\_value：范围分区的端点值（起始或终点），取值依赖于partition\_key的类型，不可是MAXVALUE。
     -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
@@ -282,7 +281,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >    -   每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
     >    -   一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
     >    -   partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
-    >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（32767）；
+    >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
     >3.  在创建分区表时START END与LESS THAN语法不可混合使用。
     >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
 
@@ -302,7 +301,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     创建列表分区。partition\_key为分区键的名称。
 
     -   对于partition\_key，列表分区策略的分区键仅支持1列。
-    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
+    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过1048575个。
 
     分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
@@ -312,7 +311,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     对于partition\_key，哈希分区策略的分区键仅支持1列。
 
-    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
+    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过1048575个。
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
@@ -351,9 +350,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **DEFAULT default\_expr**
 
-    DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式（不允许使用子查询和对本表中的其他字段的交叉引用）。缺省表达式的数据类型必须和字段类型匹配。
+    DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式\(不允许使用子查询和对本表中的其他字段的交叉引用\)。缺省表达式的数据类型必须和字段类型匹配。
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
+
+-   GENERATED ALWAYS AS \( generation\_expr \) STORED
+
+    该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
+    >-   不能为生成列指定默认值。
+    >-   生成列不能作为分区键的一部分。
+    >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL,SET DEFAULT动作同时指定。
+    >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
+    >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
+    >-   生成列的权限控制和普通列一样。
+    >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
 
 -   **UNIQUE index\_parameters**
 
@@ -373,7 +386,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **DEFERRABLE | NOT DEFERRABLE**
 
-    这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束和主键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
+    这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
 
 -   **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
 
@@ -743,6 +756,180 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      p2      | r            | {"2019-02-02 00:00:00"}
     (4 rows)
     
+    ```
+
+
+-   示例5：创建LIST分区表test\_list，初始包含4个分区，分区键为INT类型。4个分区的范围分别为：2000，3000，4000，5000。
+
+    ```
+    --创建表test_list
+    openGauss=# create table test_list (col1 int, col2 int)
+    partition by list(col1)
+    (
+    partition p1 values (2000),
+    partition p2 values (3000),
+    partition p3 values (4000),
+    partition p4 values (5000)
+    );
+    
+    -- 数据插入
+    openGauss=# INSERT INTO test_list VALUES(2000, 2000);
+    INSERT 0 1
+    openGauss=# INSERT INTO test_list VALUES(3000, 3000);
+    INSERT 0 1
+    
+    -- 查看分区信息
+    openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'test_list' AND t1.parttype = 'p';
+     relname | partstrategy | boundaries
+    ---------+--------------+------------
+     p1      | l            | {2000}
+     p2      | l            | {3000}
+     p3      | l            | {4000}
+     p4      | l            | {5000}
+    (4 rows)
+    
+    -- 插入数据没有匹配到分区，报错处理
+    openGauss=# INSERT INTO test_list VALUES(6000, 6000);
+    ERROR:  inserted partition key does not map to any table partition
+    
+    -- 添加分区
+    openGauss=# alter table test_list add partition p5 values (6000);
+    ALTER TABLE
+    openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'test_list' AND t1.parttype = 'p';
+     relname | partstrategy | boundaries
+    ---------+--------------+------------
+     p5      | l            | {6000}
+     p4      | l            | {5000}
+     p1      | l            | {2000}
+     p2      | l            | {3000}
+     p3      | l            | {4000}
+    (5 rows)
+    openGauss=# INSERT INTO test_list VALUES(6000, 6000);
+    INSERT 0 1
+    
+    -- 分区表和普通表交换数据
+    openGauss=# create table t1 (col1 int, col2 int);
+    CREATE TABLE
+    openGauss=# select * from test_list partition (p1);
+     col1 | col2
+    ------+------
+     2000 | 2000
+    (1 row)
+    openGauss=# alter table test_list exchange partition (p1) with table t1;
+    ALTER TABLE
+    openGauss=# select * from test_list partition (p1);
+     col1 | col2
+    ------+------
+    (0 rows)
+    openGauss=# select * from t1;
+     col1 | col2
+    ------+------
+     2000 | 2000
+    (1 row)
+    
+    -- truncate分区
+    openGauss=# select * from test_list partition (p2);
+     col1 | col2
+    ------+------
+     3000 | 3000
+    (1 row)
+    openGauss=# alter table test_list truncate partition p2;
+    ALTER TABLE
+    openGauss=# select * from test_list partition (p2);
+     col1 | col2
+    ------+------
+    (0 rows)
+    
+    -- 删除分区
+    openGauss=# alter table test_list drop partition p5;
+    ALTER TABLE
+    openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'test_list' AND t1.parttype = 'p';
+     relname | partstrategy | boundaries
+    ---------+--------------+------------
+     p4      | l            | {5000}
+     p1      | l            | {2000}
+     p2      | l            | {3000}
+     p3      | l            | {4000}
+    (4 rows)
+    
+    openGauss=# INSERT INTO test_list VALUES(6000, 6000);
+    ERROR:  inserted partition key does not map to any table partition
+    
+    -- 删除分区表
+    openGauss=# drop table test_list;
+    ```
+
+
+-   示例6：创建HASH分区表test\_hash，初始包含2个分区，分区键为INT类型。
+
+    ```
+    --创建表test_hash
+    openGauss=# create table test_hash (col1 int, col2 int)
+    partition by hash(col1)
+    (
+    partition p1,
+    partition p2
+    );
+    
+    -- 数据插入
+    openGauss=# INSERT INTO test_hash VALUES(1, 1);
+    INSERT 0 1
+    openGauss=# INSERT INTO test_hash VALUES(2, 2);
+    INSERT 0 1
+    openGauss=# INSERT INTO test_hash VALUES(3, 3);
+    INSERT 0 1
+    openGauss=# INSERT INTO test_hash VALUES(4, 4);
+    INSERT 0 1
+    
+    -- 查看分区信息
+    openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'test_hash' AND t1.parttype = 'p';
+     relname | partstrategy | boundaries
+    ---------+--------------+------------
+     p1      | h            | {0}
+     p2      | h            | {1}
+    (2 rows)
+    
+    -- 查看数据
+    openGauss=# select * from test_hash partition (p1);
+     col1 | col2
+    ------+------
+        3 |    3
+        4 |    4
+    (2 rows)
+    
+    openGauss=# select * from test_hash partition (p2);
+     col1 | col2
+    ------+------
+        1 |    1
+        2 |    2
+    (2 rows)
+    
+    -- 分区表和普通表交换数据
+    openGauss=# create table t1 (col1 int, col2 int);
+    CREATE TABLE
+    openGauss=# alter table test_hash exchange partition (p1) with table t1;
+    ALTER TABLE
+    openGauss=# select * from test_hash partition (p1);
+     col1 | col2
+    ------+------
+    (0 rows)
+    openGauss=# select * from t1;
+     col1 | col2
+    ------+------
+        3 |    3
+        4 |    4
+    (2 rows)
+    
+    -- truncate分区
+    openGauss=# alter table test_hash truncate partition p2;
+    ALTER TABLE
+    openGauss=#  select * from test_hash partition (p2);
+     col1 | col2
+    ------+------
+    (0 rows)
+    
+    -- 删除分区表
+    openGauss=# drop table test_hash;
     ```
 
 

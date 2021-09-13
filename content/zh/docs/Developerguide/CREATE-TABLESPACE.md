@@ -1,18 +1,19 @@
-# CREATE TABLESPACE<a name="ZH-CN_TOPIC_0242370584"></a>
+# CREATE TABLESPACE<a name="ZH-CN_TOPIC_0289900078"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_sbf00214c21e441f5adc2bc08ecaca4e7"></a>
+## 功能描述<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_sbf00214c21e441f5adc2bc08ecaca4e7"></a>
 
 在数据库中创建一个新的表空间。
 
-## 注意事项<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_s54948265e9f34f1fac838f60ac0bd3a6"></a>
+## 注意事项<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s54948265e9f34f1fac838f60ac0bd3a6"></a>
 
--   只有系统管理员可以创建表空间。
+-   系统管理员或者继承了内置角色gs\_roles\_tablespace权限的用户可以创建表空间。
 -   不允许在一个事务块内部执行CREATE TABLESPACE。
 -   执行CREATE TABLESPACE失败，如果内部创建目录（文件）操作成功了就会产生残留的目录（文件），重新创建时需要用户手动清理表空间指定的目录下残留的内容。如果在创建过程中涉及到数据目录下的表空间软连接残留，需要先将软连接的残留文件删除，再重新执行OM相关操作。
 -   CREATE TABLESPACE不支持两阶段事务，如果部分节点执行失败，不支持回滚。
 -   创建表空间前的准备工作参考下述参数说明。
+-   在HCS等场景下一般不建议用户使用自定义的表空间。原因：用户自定义表空间通常配合主存（即默认表空间所在的存储设备，如磁盘）以外的其它存储介质使用，以隔离不同业务可以使用的IO资源，而在HCS等场景下，存储设备都是采用标准化的配置，无其它可用的存储介质，自定义表空间使用不当不利于系统长稳运行以及影响整体性能，因此建议使用默认表空间即可。
 
-## 语法格式<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_s9f8a8395cc464cd2a34dec7a82fedc7b"></a>
+## 语法格式<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s9f8a8395cc464cd2a34dec7a82fedc7b"></a>
 
 ```
 CREATE TABLESPACE tablespace_name
@@ -28,7 +29,7 @@ WITH ( {filesystem= { 'general'| "general" | general} |
     seq_page_cost = { 'value ' | value }}[,...])
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_see2346106f4e402da499ad74c533dfa8"></a>
+## 参数说明<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_see2346106f4e402da499ad74c533dfa8"></a>
 
 -   **tablespace\_name**
 
@@ -88,17 +89,17 @@ WITH ( {filesystem= { 'general'| "general" | general} |
     默认值：使用GUC参数seq\_page\_cost的值。
 
 
-## 示例<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e"></a>
+## 示例<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e"></a>
 
 ```
 --创建表空间。
 openGauss=# CREATE TABLESPACE ds_location1 RELATIVE LOCATION 'tablespace/tablespace_1';
 
 --创建用户joe。
-openGauss=# CREATE ROLE joe IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE ROLE joe IDENTIFIED BY 'xxxxxxxxx';
 
 --创建用户jay。
-openGauss=# CREATE ROLE jay IDENTIFIED BY 'xxxxxxxx';
+openGauss=# CREATE ROLE jay IDENTIFIED BY 'xxxxxxxxx';
 
 --创建表空间，且所有者指定为用户joe。
 openGauss=# CREATE TABLESPACE ds_location2 OWNER joe RELATIVE LOCATION 'tablespace/tablespace_1';
@@ -118,11 +119,11 @@ openGauss=# DROP ROLE joe;
 openGauss=# DROP ROLE jay;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_s59e2126c54fc4725a3a50713b9163304"></a>
+## 相关链接<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s59e2126c54fc4725a3a50713b9163304"></a>
 
 [CREATE DATABASE](CREATE-DATABASE.md)，[CREATE TABLE](CREATE-TABLE.md)，[CREATE INDEX](CREATE-INDEX.md)，[DROP TABLESPACE](DROP-TABLESPACE.md)，[ALTER TABLESPACE](ALTER-TABLESPACE.md)
 
-## 优化建议<a name="zh-cn_topic_0237122120_zh-cn_topic_0059777670_section60380346161036"></a>
+## 优化建议<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_section60380346161036"></a>
 
 -   create tablespace
 

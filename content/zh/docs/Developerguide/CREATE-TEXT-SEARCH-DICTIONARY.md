@@ -1,18 +1,18 @@
-# CREATE TEXT SEARCH DICTIONARY<a name="ZH-CN_TOPIC_0242370586"></a>
+# CREATE TEXT SEARCH DICTIONARY<a name="ZH-CN_TOPIC_0289899995"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
+## 功能描述<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 
 创建一个新的全文检索词典。词典是一种指定在全文检索时识别特定词并处理的方法。
 
 词典的创建依赖于预定义模板（在系统表[PG\_TS\_TEMPLATE](PG_TS_TEMPLATE.md)中定义），支持创建五种类型的词典，分别是Simple、Ispell、Synonym、Thesaurus、以及Snowball，每种类型的词典可以完成不同的任务。
 
-## 注意事项<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
+## 注意事项<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
 -   具有SYSADMIN权限的用户可以执行创建词典操作，创建该词典的用户自动成为其所有者。
 -   临时模式（pg\_temp）下不允许创建词典。
 -   创建或修改词典之后，任何对于用户自定义的词典定义文件的修改，将不会影响到数据库中的词典。如果需要在数据库中使用这些修改，需使用ALTER语句更新对应词典的定义文件。
 
-## 语法格式<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
+## 语法格式<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
 
 ```
 CREATE TEXT SEARCH DICTIONARY name (
@@ -21,7 +21,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 );
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
+## 参数说明<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
 -   **name**
 
@@ -82,7 +82,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
             如果子词典无法识别输入词，将会报错。此时，需要移除该词或者更新子词典使其识别。此外，可在indexed words的开头放上一个星号（\*）来跳过在其上应用子词典，但是所有sample words必须可以被子词典识别。
 
-            如果词典文件定义的sample words中，含有子词典中定义的停用词，需要用问号（?）替代停用词。假设a和the是子词典中所定义的停用词，如下：
+            如果词典文件定义的sample words中，含有子词典中定义的停用词，需要用问号（？）替代停用词。假设a和the是子词典中所定义的停用词，如下：
 
             ```
             ? one ? two : swsw
@@ -125,19 +125,19 @@ CREATE TEXT SEARCH DICTIONARY name (
             词典定义文件所在目录。可以指定为本地目录或者OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
 
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >词典定义文件的文件名仅支持小写字母、数据、下划线混合。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >词典定义文件的文件名仅支持小写字母、数据、下划线混合。
 
 -   **value**
 
     参数值。如果不是简单的标识符或数字，则参数值必须加单引号（标示符和数字同样可以加上单引号）。
 
 
-## 示例<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
+## 示例<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
 请参见[配置示例](配置示例.md)一节的示例。
 
-## 相关链接<a name="zh-cn_topic_0237122122_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
+## 相关链接<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [ALTER TEXT SEARCH DICTIONARY](ALTER-TEXT-SEARCH-DICTIONARY.md)，[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)
 

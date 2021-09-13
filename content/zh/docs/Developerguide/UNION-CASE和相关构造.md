@@ -1,21 +1,21 @@
-# UNION，CASE和相关构造<a name="ZH-CN_TOPIC_0242370475"></a>
+# UNION，CASE和相关构造<a name="ZH-CN_TOPIC_0289900690"></a>
 
 SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一个结果集。解析算法分别应用于联合查询的每个输出字段。INTERSECT和EXCEPT构造对不相同的类型使用和UNION相同的算法进行解析。CASE、ARRAY、VALUES、GREATEST和LEAST构造也使用同样的算法匹配它的部件表达式并且选择一个结果数据类型。
 
-## UNION，CASE和相关构造解析<a name="zh-cn_topic_0237122011_zh-cn_topic_0059779260_s4d37d0d92a7e4067a51798614b044fb4"></a>
+## UNION，CASE和相关构造解析<a name="zh-cn_topic_0283136625_zh-cn_topic_0237122011_zh-cn_topic_0059779260_s4d37d0d92a7e4067a51798614b044fb4"></a>
 
 -   如果所有输入都是相同的类型，并且不是unknown类型，那么解析成这种类型。
 -   如果所有输入都是unknown类型则解析成text类型（字符串类型范畴的首选类型）。否则，忽略unknown输入。
 -   如果输入不属于同一个类型范畴，失败。（unknown类型除外）
 -   如果输入类型是同一个类型范畴，则选择该类型范畴的首选类型。（例外：union操作会选择第一个分支的类型作为所选类型。）
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >系统表pg\_type中typcategory表示数据类型范畴，typispreferred表示是否是typcategory分类中的首选类型。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >系统表pg\_type中typcategory表示数据类型范畴，typispreferred表示是否是typcategory分类中的首选类型。
 
 -   把所有输入转换为所选的类型（对于字符串保持原有长度）。如果从给定的输入到所选的类型没有隐式转换则失败。
 -   若输入中含json、txid\_snapshot、sys\_refcursor或几何类型，则不能进行union。
 
-## 对于case和coalesce，在TD兼容模式下的处理<a name="zh-cn_topic_0237122011_zh-cn_topic_0059779260_sa6bf47fa5cdb4d2caabf956bb11c7649"></a>
+## 对于case和coalesce，在TD兼容模式下的处理<a name="zh-cn_topic_0283136625_zh-cn_topic_0237122011_zh-cn_topic_0059779260_sa6bf47fa5cdb4d2caabf956bb11c7649"></a>
 
 -   如果所有输入都是相同的类型，并且不是unknown类型，那么解析成这种类型。
 -   如果所有输入都是unknown类型则解析成text类型。
@@ -23,7 +23,7 @@ SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一�
 -   如果输入类型是同一个类型范畴，则选择该类型的优先级较高的类型。
 -   把所有输入转换为所选的类型。如果从给定的输入到所选的类型没有隐式转换则失败。
 
-## 示例<a name="zh-cn_topic_0237122011_zh-cn_topic_0059779260_sb48a6ac8819342588bbdeeb006db477e"></a>
+## 示例<a name="zh-cn_topic_0283136625_zh-cn_topic_0237122011_zh-cn_topic_0059779260_sb48a6ac8819342588bbdeeb006db477e"></a>
 
 示例1：Union中的待定类型解析。这里，unknown类型文本'b'将被解析成text类型。
 
@@ -58,7 +58,7 @@ openGauss=# SELECT 1 AS "real" UNION SELECT CAST('2.2' AS REAL);
 (2 rows)
 ```
 
-示例4：TD模式下，coalesce参数输入int和varchar类型，那么解析成varchar类型。ORA模式下会报错。
+示例4：TD模式下，coalesce参数输入int和varchar类型，那么解析成varchar类型。A模式下会报错。
 
 ```
 --在A模式下，创建A兼容模式的数据库a_1。
@@ -80,8 +80,8 @@ CONTEXT:  referenced column: coalesce
 --删除表。
 a_1=# DROP TABLE t1;
 
---切换数据库为postgres。
-a_1=# \c postgres
+--切换数据库为openGauss。
+a_1=# \c openGauss
 
 --在TD模式下，创建TD兼容模式的数据库td_1。
 openGauss=# CREATE DATABASE td_1 dbcompatibility = 'C';
@@ -105,8 +105,8 @@ td_1=# EXPLAIN VERBOSE select coalesce(a, b) from t2;
 --删除表。
 td_1=# DROP TABLE t2;
 
---切换数据库为postgres。
-td_1=# \c postgres
+--切换数据库为openGauss。
+td_1=# \c openGauss
 
 --删除A和TD模式的数据库。
 openGauss=# DROP DATABASE a_1;

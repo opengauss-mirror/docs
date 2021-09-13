@@ -62,7 +62,7 @@
 
             MySQL Server/MariaDB侦听的端口号。
 
-    -   postgres\_fdw支持的options同libpq支持的连接参数一致，可参考[链接字符](链接字符.md)。需要注意的是，以下几个options不支持修改：
+    -   postgres\_fdw支持的options同libpq支持的连接参数一致，可参考[链接字符](zh-cn_topic_0289900649.md)。需要注意的是，以下几个options不支持修改：
         -   **user**和**password**
 
             用户名和密码将在创建user mapping时指定
@@ -77,17 +77,17 @@
 
 
     除了libpq支持的连接参数外，还额外提供3个options：
-    
+
     -   **use\_remote\_estimate**
-    
+
         控制postgres\_fdw是否发出EXPLAIN命令以获取运行消耗估算。默认值为false。
-    
+
     -   **fdw\_startup\_cost**
-    
+
         执行一个外表扫描时的启动耗时估算。这个值通常包含建立连接、远端对请求的分析和生成计划的耗时。默认值为100。
-    
+
     -   **fdw\_typle\_cost**
-    
+
         在远端服务器上对每一个元组进行扫描时的额外消耗。这个值通常表示数据在server间传输的额外消耗。默认值为0.01。
 
 
@@ -99,5 +99,5 @@
 
 ## 相关链接<a name="zh-cn_topic_0283136932_section13898752175613"></a>
 
-[CREATE SERVER ](CREATE-SERVER.md)，[DROP SERVER](DROP-SERVER.md)
+[CREATE SERVER ](CREATE-SERVER.md)，[CREATE SERVER](DROP-SERVER.md)
 

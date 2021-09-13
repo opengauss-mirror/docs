@@ -10,6 +10,7 @@
 
 -   如果函数中涉及对临时表相关的操作，则无法使用ALTER FUNCTION。
 -   修改函数的所有者或修改函数的模式，当前用户必须是该函数的所有者或者系统管理员，且该用户是新所有者角色的成员。
+-   只有系统管理员和初始化用户可以将function的schema修改成public。
 
 ## 语法格式<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
@@ -20,7 +21,7 @@
         action [ ... ] [ RESTRICT ];
     ```
 
-    其中附加参数action子句语法为：
+    其中附加参数action子句语法为。
 
     ```
     {CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT}

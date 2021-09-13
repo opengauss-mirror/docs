@@ -1,6 +1,6 @@
-# openGauss SQL<a name="ZH-CN_TOPIC_0242370408"></a>
+# openGauss SQL<a name="ZH-CN_TOPIC_0289900158"></a>
 
-## 什么是SQL<a name="zh-cn_topic_0237121924_section07961139165815"></a>
+## 什么是SQL<a name="zh-cn_topic_0283136913_zh-cn_topic_0237121924_section07961139165815"></a>
 
 SQL是用于访问和处理数据库的标准计算机语言。
 
@@ -14,7 +14,7 @@ SQL提供了各种任务的语句，包括：
 
 SQL语言由用于处理数据库和数据库对象的命令和函数组成。该语言还会强制实施有关数据类型、表达式和文本使用的规则。因此在[SQL参考](SQL参考.md)章节，除了SQL语法参考外，还会看到有关数据类型、表达式、函数和操作符等信息。
 
-## SQL发展简史<a name="zh-cn_topic_0237121924_zh-cn_topic_0059778020_sf8ba5f5ea8ce4cd3b59402dcdc0f9d15"></a>
+## SQL发展简史<a name="zh-cn_topic_0283136913_zh-cn_topic_0237121924_zh-cn_topic_0059778020_sf8ba5f5ea8ce4cd3b59402dcdc0f9d15"></a>
 
 SQL发展简史如下：
 
@@ -25,7 +25,7 @@ SQL发展简史如下：
 -   2003年，ISO/IEC 9075:2003，SQL:2003（SQL4）
 -   2011年，ISO/IEC 9075:200N，SQL:2011（SQL5）
 
-## openGauss支持的SQL标准<a name="zh-cn_topic_0237121924_zh-cn_topic_0059778020_sd52420ad5d4f4fbd9461a8c937e6f469"></a>
+## openGauss支持的SQL标准<a name="zh-cn_topic_0283136913_zh-cn_topic_0237121924_zh-cn_topic_0059778020_sd52420ad5d4f4fbd9461a8c937e6f469"></a>
 
 openGauss默认支持SQL2、SQL3和SQL4的主要特性。
 

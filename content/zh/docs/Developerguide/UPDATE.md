@@ -1,22 +1,22 @@
-# UPDATE<a name="ZH-CN_TOPIC_0242370658"></a>
+# UPDATE<a name="ZH-CN_TOPIC_0289900207"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122194_zh-cn_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>
+## 功能描述<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>
 
 更新表中的数据。UPDATE修改满足条件的所有行中指定的字段值，WHERE子句声明条件，SET子句指定的字段会被修改，没有出现的字段则保持它们的原值。
 
-## 注意事项<a name="zh-cn_topic_0237122194_zh-cn_topic_0059778969_s7e9e912f472543cbb190edb83e5f22d2"></a>
+## 注意事项<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s7e9e912f472543cbb190edb83e5f22d2"></a>
 
 -   要修改表，用户必须对该表有UPDATE权限。
 -   对expression或condition条件里涉及到的任何表要有SELECT权限。
 -   对于列存表，暂时不支持RETURNING子句。
--   列存表不支持结果不确定的更新（non-deterministic update）。试图对列存表用多行数据更新一行时会报错。
+-   列存表不支持结果不确定的更新\(non-deterministic update\)。试图对列存表用多行数据更新一行时会报错。
 -   列存表的更新操作，旧记录空间不会回收，需要执行VACUUM FULL table\_name进行清理。
 -   对于列存复制表，暂不支持UPDATE操作。
 
-## 语法格式<a name="zh-cn_topic_0237122194_zh-cn_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
+## 语法格式<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
 ```
-UPDATE [ ONLY ] table_name [ * ] [ [ AS ] alias ]
+UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]
@@ -32,7 +32,11 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ HAVING condition [, ...] ]
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122194_zh-cn_topic_0059778969_sf3e3262b89854b3d829a94054116838c"></a>
+## 参数说明<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_sf3e3262b89854b3d829a94054116838c"></a>
+
+-   **plan\_hint子句**
+
+    以/\*+ \*/的形式在UPDATE关键字后，用于对UPDATE对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](zh-cn_topic_0289900289.md)。每条语句中只有第一个/\*+ plan\_hint \*/注释块会作为hint生效，里面可以写多条hint。
 
 -   **table\_name**
 
@@ -52,7 +56,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     支持使用目标表的别名加字段名来引用这个字段。例如：
 
-    UPDATE foo AS f SET f.col\_name = 'postgres';
+    UPDATE foo AS f SET f.col\_name = 'namecol';
 
     取值范围：已存在的字段名。
 
@@ -76,8 +80,8 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     一个表的表达式列表，允许在WHERE条件里使用其他表的字段。与在一个SELECT语句的FROM子句里声明表列表类似。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >目标表绝对不能出现在from\_list里，除非在使用一个自连接（此时它必须以from\_list的别名出现）。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >目标表绝对不能出现在from\_list里，除非在使用一个自连接（此时它必须以from\_list的别名出现）。
 
 -   **condition**
 
@@ -94,7 +98,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     字段的返回名称。
 
 
-## 示例<a name="zh-cn_topic_0237122194_zh-cn_topic_0059778969_s23d933f56bc745e1bd819083b4e50155"></a>
+## 示例<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s23d933f56bc745e1bd819083b4e50155"></a>
 
 ```
 --创建表student1。

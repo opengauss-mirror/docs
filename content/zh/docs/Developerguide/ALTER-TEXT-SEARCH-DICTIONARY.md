@@ -1,16 +1,16 @@
-# ALTER TEXT SEARCH DICTIONARY<a name="ZH-CN_TOPIC_0242370544"></a>
+# ALTER TEXT SEARCH DICTIONARY<a name="ZH-CN_TOPIC_0289900782"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122080_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
+## 功能描述<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 
 修改全文检索词典的相关定义，包括参数、名称、所有者、以及模式等。
 
-## 注意事项<a name="zh-cn_topic_0237122080_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
+## 注意事项<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
 -   预定义词典不支持ALTER操作。
 -   只有词典的所有者可以执行ALTER操作，系统管理员默认拥有此权限。
 -   创建或修改词典之后，任何对于filepath路径下用户自定义的词典定义文件的修改，将不会影响到数据库中的词典。如果需要在数据库中使用这些修改，需使用ALTER TEXT SEARCH DICTIONARY语句更新对应词典的定义文件。
 
-## 语法格式<a name="zh-cn_topic_0237122080_zh-cn_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
+## 语法格式<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
 
 -   修改词典定义。
 
@@ -40,7 +40,7 @@
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122080_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
+## 参数说明<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
 -   **name**
 
@@ -50,12 +50,12 @@
 
 -   **option**
 
-    要修改的参数名。与template对应，不同的词典类型具有不同的参数列表，且与指定顺序无关。详细参数说明请见[option](CREATE-TEXT-SEARCH-DICTIONARY.md#zh-cn_topic_0237122122_li1286812455448)。
+    要修改的参数名。与template对应，不同的词典类型具有不同的参数列表，且与指定顺序无关。详细参数说明请见[option](CREATE-TEXT-SEARCH-DICTIONARY.md#zh-cn_topic_0283137272_zh-cn_topic_0237122122_li1286812455448)。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   不支持修改词典的TEMPLATE参数值。  
-    >-   不支持仅修改FILEPATH参数而不修改对应的词典定义文件参数。  
-    >-   词典定义文件的文件名仅支持小写字母、数据、下划线混合。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   不支持修改词典的TEMPLATE参数值。
+    >-   不支持仅修改FILEPATH参数而不修改对应的词典定义文件参数。
+    >-   词典定义文件的文件名仅支持小写字母、数据、下划线混合。
 
 -   **value**
 
@@ -82,7 +82,7 @@
     取值范围：已存在的模式。
 
 
-## 示例<a name="zh-cn_topic_0237122080_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
+## 示例<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
 ```
 --更改Snowball类型字典的停用词定义，其他参数保持不变。
@@ -95,7 +95,7 @@ openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( Language = dutch， StopWords
 openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( dummy );
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122080_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
+## 相关链接<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)，[DROP TEXT SEARCH DICTIONARY](DROP-TEXT-SEARCH-DICTIONARY.md)
 

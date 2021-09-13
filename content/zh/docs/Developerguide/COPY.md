@@ -1,27 +1,28 @@
-# COPY<a name="ZH-CN_TOPIC_0242370560"></a>
+# COPY<a name="ZH-CN_TOPIC_0289899980"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122096_zh-cn_topic_0059778766_s0d743b5d862d4cf1829449f474af6d9c"></a>
+## 功能描述<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s0d743b5d862d4cf1829449f474af6d9c"></a>
 
 通过COPY命令实现在表和文件之间拷贝数据。
 
 COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据拷贝到一个文件。
 
-## 注意事项<a name="zh-cn_topic_0237122096_zh-cn_topic_0059778766_sc996fd2c14664963bae3e1e0ce655441"></a>
+## 注意事项<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_sc996fd2c14664963bae3e1e0ce655441"></a>
 
 -   当参数enable\_copy\_server\_files关闭时，只允许初始用户执行COPY FROM FILENAME或COPY TO FILENAME命令，当参数enable\_copy\_server\_files打开，允许具有SYSADMIN权限的用户或继承了内置角色gs\_role\_copy\_files权限的用户执行，但默认禁止对数据库配置文件，密钥文件，证书文件和审计日志执行COPY FROM FILENAME或COPY TO FILENAME，以防止用户越权查看或修改敏感文件。
 -   COPY只能用于表，不能用于视图。
--   COPY TO需要读取的表的select权限，COPY FROM需要插入的表的INSERT权限。
+-   COPY TO需要读取的表的select权限，copy from需要插入的表的insert权限。
 -   如果声明了一个字段列表，COPY将只在文件和表之间拷贝已声明字段的数据。如果表中有任何不在字段列表里的字段，COPY FROM将为那些字段插入缺省值。
 -   如果声明了数据源文件，服务器必须可以访问该文件；如果指定了STDIN，数据将在客户前端和服务器之间流动，输入时，表的列与列之间使用TAB键分隔，在新的一行中以反斜杠和句点（\\.）表示输入结束。
 -   如果数据文件的任意行包含比预期多或者少的字段，COPY FROM将抛出一个错误。
 -   数据的结束可以用一个只包含反斜杠和句点（\\.）的行表示。如果从文件中读取数据，数据结束的标记是不必要的；如果在客户端应用之间拷贝数据，必须要有结束标记。
 -   COPY FROM中\\N为空字符串，如果要输入实际数据值\\N ，使用\\\\N。
+
 -   COPY FROM不支持在导入过程中对数据做预处理（比如说表达式运算，填充指定默认值等）。如果需要在导入过程中对数据做预处理，用户需先把数据导入到临时表中，然后执行SQL语句通过运算插入到表中，但此方法会导致I/O膨胀，降低导入性能。
 -   COPY FROM在遇到数据格式错误时会回滚事务，但没有足够的错误信息，不方便用户从大量的原始数据中定位错误数据。
 -   COPY FROM/TO适合低并发，本地小数据量导入导出。
 -   目标表存在trigger，支持COPY操作。
 
-## 语法格式<a name="zh-cn_topic_0237122096_zh-cn_topic_0059778766_s85a73a9ad894403da754c5d6b3d8210f"></a>
+## 语法格式<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s85a73a9ad894403da754c5d6b3d8210f"></a>
 
 -   从一个文件拷贝数据到一个表。
 
@@ -34,11 +35,12 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         [ REJECT LIMIT 'limit' ]
         [ WITH ( option [, ...] ) ]
         | copy_option
+        | TRANSFORM  ( { column_name [ data_type ] [ AS transform_expr ] } [, ...] )
         | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >语法中的FIXED、FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及copy\_option \[ ...\]可以任意排列组合，但FIXED和FORMATTER必须配合使用。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >语法中的FIXED FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及 \[ \( option \[, ...\] \) | copy\_option \[ ...\] \] 可以任意排列组合。
 
 -   把一个表的数据拷贝到一个文件。
 
@@ -49,22 +51,22 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         [ WITHOUT ESCAPING ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
     
     COPY query
         TO { 'filename' | STDOUT }
         [ WITHOUT ESCAPING ]
         [ WITH ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ copy_option [  ...] ];
+        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >1.  COPY TO语法形式约束如下：  
-    >    \(query\)与\[USING\] DELIMITER不兼容，即若COPY TO的数据来自于一个query的查询结果，那么COPY TO语法不能再指定\[USING\] DELIMITERS语法子句。  
-    >2.  对于FIXED FORMATTTER语法后面跟随的copy\_option是以空格进行分隔的。  
-    >3.  copy\_option是指COPY原生的参数形式，而option是兼容外表导入的参数形式。  
-    >4.  语法中的FIXED、FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及 copy\_option \[ ...\] \] 可以任意排列组合，但FIXED和FORMATTER必须配合使用。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >1.  COPY TO语法形式约束如下：
+    >    \(query\)与\[USING\] DELIMITER不兼容，即若COPY TO的数据来自于一个query的查询结果，那么COPY TO语法不能再指定\[USING\] DELIMITERS语法子句。
+    >2.  对于FIXED FORMATTTER语法后面跟随的copy\_option是以空格进行分隔的。
+    >3.  copy\_option是指COPY原生的参数形式，而option是兼容外表导入的参数形式。
+    >4.  语法中的FIXED FORMATTER \( \{ column\_name\( offset, length \) \} \[, ...\] \)以及 \[ \( option \[, ...\] \) | copy\_option \[ ...\] \] 可以任意排列组合。
 
     其中可选参数option子句语法为：
 
@@ -118,7 +120,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     ```
 
 
-## 参数说明<a name="zh-cn_topic_0237122096_zh-cn_topic_0059778766_sd35c0a2e8c2f4c18837224240e8c4e3e"></a>
+## 参数说明<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_sd35c0a2e8c2f4c18837224240e8c4e3e"></a>
 
 -   **query**
 
@@ -148,13 +150,13 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 -   **FIXED**
 
-    打开字段固定长度模式。在字段固定长度模式下，不能声明DELIMITER，NULL，CSV选项。指定FIXED类型后，不能再通过copy\_option指定BINARY、CSV、TEXT等类型。
+    打开字段固定长度模式。在字段固定长度模式下，不能声明DELIMITER，NULL，CSV选项。指定FIXED类型后，不能再通过option或copy\_option指定BINARY、CSV、TEXT等类型。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >定长格式定义如下：  
-    >1.  每条记录的每个字段长度相同。  
-    >2.  长度不足的字段以空格填充，数字类型字段左对齐，字符字段右对齐。  
-    >3.  字段和字段之间没有分隔符。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >定长格式定义如下：
+    >1.  每条记录的每个字段长度相同。
+    >2.  长度不足的字段以空格填充，数字类型字段左对齐，字符字段右对齐。
+    >3.  字段和字段之间没有分隔符。
 
 -   **\[USING\] DELIMITER 'delimiters'**
 
@@ -172,16 +174,14 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 -   **LOG ERRORS**
 
-    若指定，则开启对于COPY FROM语句中数据类型错误的容错机制，相关错误行的错误记录会记录到此库中public.pgxc\_copy\_error\_log表中，备后续查阅。
+    若指定，则开启对于COPY FROM语句中数据类型错误的容错机制。
 
     取值范围：仅支持导入（即COPY FROM）时指定。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >此容错选项的使用限制如下：  
-    >-   此容错机制仅捕捉COPY FROM过程中数据库主节点上数据解析过程中相关的数据类型错误（DATA\_EXCEPTION）。  
-    >-   在每个库第一次使用时COPY FROM容错时，请先行检查public.pgxc\_copy\_error\_log（COPY错误表）是否存在，若不存在请调用copy\_error\_log\_create\(\) 函数创建；若存在，请转移此表数据并删除这张表后，调用copy\_error\_log\_create\(\) 函数创建。更多关于表public.pgxc\_copy\_error\_log的字段信息，请参见[表1](其它函数.md#zh-cn_topic_0237121997_table138318280213)。  
-    >-   若在指定了LOG ERRORS的COPY FROM运行时，public.pgxc\_copy\_error\_log不存在（未创建或者已删除）或表定义不符合copy\_error\_log\_create\(\) 中的预设表定义，则会报错。因此请确定此COPY错误表是使用copy\_error\_log\_create\(\) 函数创建的，否则可能导致容错的COPY FROM语句无法正常执行。  
-    >-   COPY已有的容错选项（如IGNORE\_EXTRA\_DATA）开启时，对应类型的错误会按照已有的方式处理而不会报出异常，因此错误表也不会有相应数据。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >此容错选项的使用限制如下：
+    >-   此容错机制仅捕捉COPY FROM过程中数据库主节点上数据解析过程中相关的数据类型错误（DATA\_EXCEPTION）。
+    >-   COPY已有的容错选项（如IGNORE\_EXTRA\_DATA）开启时，对应类型的错误会按照已有的方式处理而不会报出异常，因此错误表也不会有相应数据。
 
 -   **LOG ERRORS DATA**
 
@@ -190,8 +190,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     1.  LOG ERRORS DATA会填充容错表的rawrecord字段。
     2.  只有supper权限的用户才能使用LOG ERRORS DATA参数选项。
 
-        >![](public_sys-resources/icon-caution.gif) **注意：**   
-        >使用**“LOG ERRORS DATA”**时，若错误内容过于复杂可能存在写入容错表失败的风险，导致任务失败。  
+        >![](public_sys-resources/icon-caution.gif) **注意：** 
+        >使用**“LOG ERRORS DATA”**时，若错误内容过于复杂可能存在写入容错表失败的风险，导致任务失败。
 
 
 -   **REJECT LIMIT  **'**limit'**
@@ -202,8 +202,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
     缺省值：若未指定LOG ERRORS，则会报错；若指定LOG ERRORS，则默认为0。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如上述LOG ERRORS中描述的容错机制，REJECT LIMIT的计数也是按照执行COPY FROM的数据库主节点上遇到的解析错误数量计算，而不是数据库节点的错误数量。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如上述LOG ERRORS中描述的容错机制，REJECT LIMIT的计数也是按照执行COPY FROM的数据库主节点上遇到的解析错误数量计算，而不是数据库节点的错误数量。
 
 -   **FORMATTER**
 
@@ -239,12 +239,12 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         指定数据文件行数据的字段分隔符。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >-   分隔符不能是\\r和\\n。  
-        >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。  
-        >-   TEXT格式数据的分隔符不能包含： 小写字母、数字和特殊字符.\\。  
-        >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。  
-        >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07，0x08，0x1b等。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   分隔符不能是\\r和\\n。
+        >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。
+        >-   TEXT格式数据的分隔符不能包含： 小写字母、数字和特殊字符.\\。
+        >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。
+        >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07，0x08，0x1b等。
 
         取值范围：支持多字符分隔符，但分隔符不能超过10个字节。
 
@@ -286,10 +286,10 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         缺省值：双引号
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >-   quote参数不能和分隔符、null参数相同。  
-        >-   quote参数只能是单字节的字符。  
-        >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   quote参数不能和分隔符、null参数相同。
+        >-   quote参数只能是单字节的字符。
+        >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。
 
     -   ESCAPE
 
@@ -303,10 +303,10 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式导入。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。  
-        >-   EOL参数不能和分隔符、null参数相同。  
-        >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式导入。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。
+        >-   EOL参数不能和分隔符、null参数相同。
+        >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
 
     -   FORCE\_QUOTE \{ \( column\_name \[, ...\] \) | \* \}
 
@@ -339,8 +339,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         缺省值：false。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：**   
-        >如果行尾换行符丢失，使两行变成一行时，设置此参数为true将导致后一行数据被忽略掉。  
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >如果行尾换行符丢失，使两行变成一行时，设置此参数为true将导致后一行数据被忽略掉。
 
     -   COMPATIBLE\_ILLEGAL\_CHARS
 
@@ -353,11 +353,11 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         缺省值：false/off
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >导入非法字符容错规则如下：  
-        >（1）对于'\\0'，容错后转换为空格；  
-        >（2）对于其他非法字符，容错后转换为问号；  
-        >（3）若compatible\_illegal\_chars为true/on标识导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如"illegal chars conversion may confuse COPY escape 0x20"等报错信息提示用户修改可能引起混淆的参数以避免导入错误。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >导入非法字符容错规则如下：
+        >（1）对于'\\0'，容错后转换为空格；
+        >（2）对于其他非法字符，容错后转换为问号；
+        >（3）若compatible\_illegal\_chars为true/on标识导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如"illegal chars conversion may confuse COPY escape 0x20"等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
 
     -   FILL\_MISSING\_FIELDS
 
@@ -373,8 +373,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         取值范围：合法DATE格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。
 
     -   TIME\_FORMAT
 
@@ -403,8 +403,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         用来指定数据文件中空值的表示。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：**   
-        >在使用COPY FROM的时候，任何匹配这个字符串的字符串将被存储为NULL值，所以应该确保指定的字符串和COPY TO相同。  
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >在使用COPY FROM的时候，任何匹配这个字符串的字符串将被存储为NULL值，所以应该确保指定的字符串和COPY TO相同。
 
         取值范围：
 
@@ -428,11 +428,11 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         导出数据时用于定义标题行的文件，一般用来描述每一列的数据信息。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：**   
-        >-   仅在header为on或true的情况下有效。  
-        >-   fileheader指定的是绝对路径。  
-        >-   该文件只能包含一行标题信息，并以换行符结尾，多余的行将被丢弃（标题信息不能包含换行符）。  
-        >-   该文件包括换行符在内长度不超过1M。  
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >-   仅在header为on或true的情况下有效。
+        >-   fileheader指定的是绝对路径。
+        >-   该文件只能包含一行标题信息，并以换行符结尾，多余的行将被丢弃（标题信息不能包含换行符）。
+        >-   该文件包括换行符在内长度不超过1M。
 
     -   FREEZE
 
@@ -444,8 +444,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         -   当前事务中没有打开的游标。
         -   当前事务中没有原有的快照。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >COPY完成后，所有其他会话将会立刻看到这些数据。但是这违反了MVCC可见性的一般原则，用户应当了解这样会导致潜在的风险。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >COPY完成后，所有其他会话将会立刻看到这些数据。但是这违反了MVCC可见性的一般原则，用户应当了解这样会导致潜在的风险。
 
     -   FORCE NOT NULL column\_name \[, ...\]
 
@@ -473,10 +473,10 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         缺省值：双引号。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >-   quote参数不能和分隔符、null参数相同。  
-        >-   quote参数只能是单字节的字符。  
-        >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   quote参数不能和分隔符、null参数相同。
+        >-   quote参数只能是单字节的字符。
+        >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。
 
     -   ESCAPE \[AS\] 'escape\_character'
 
@@ -490,10 +490,10 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。  
-        >-   EOL参数不能和分隔符、null参数相同。  
-        >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。
+        >-   EOL参数不能和分隔符、null参数相同。
+        >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
 
     -   ENCODING 'encoding\_name'
 
@@ -519,11 +519,11 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         若不使用该参数，导入时遇到非法字符进行报错，中断导入。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >导入非法字符容错规则如下：  
-        >（1）对于'\\0'，容错后转换为空格；  
-        >（2）对于其他非法字符，容错后转换为问号；  
-        >（3）若compatible\_illegal\_chars为true/on标识，导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如"illegal chars conversion may confuse COPY escape 0x20"等报错信息提示用户修改可能引起混淆的参数以避免导入错误。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >导入非法字符容错规则如下：
+        >（1）对于'\\0'，容错后转换为空格；
+        >（2）对于其他非法字符，容错后转换为问号；
+        >（3）若compatible\_illegal\_chars为true/on标识，导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如"illegal chars conversion may confuse COPY escape 0x20"等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
 
     -   FILL\_MISSING\_FIELDS
 
@@ -533,8 +533,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         缺省值：false/off。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：**   
-        >目前COPY指定此Option实际不会生效，即不会有相应的容错处理效果（不生效）。需要额外注意的是，打开此选项会导致解析器在数据库主节点数据解析阶段（即COPY错误表容错的涵盖范围）忽略此数据问题，而到数据库节点重新报错，从而使得COPY错误表（打开LOG ERRORS REJECT LIMIT）在此选项打开的情况下无法成功捕获这类少列的数据异常。因此请不要指定此选项。  
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >目前COPY指定此Option实际不会生效，即不会有相应的容错处理效果（不生效）。需要额外注意的是，打开此选项会导致解析器在数据库主节点数据解析阶段（即COPY错误表容错的涵盖范围）忽略此数据问题，而到数据库节点重新报错，从而使得COPY错误表（打开LOG ERRORS REJECT LIMIT）在此选项打开的情况下无法成功捕获这类少列的数据异常。因此请不要指定此选项。
 
     -   DATE\_FORMAT 'date\_format\_string'
 
@@ -542,8 +542,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         取值范围：合法DATE格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。
 
     -   TIME\_FORMAT 'time\_format\_string'
 
@@ -563,6 +563,10 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         取值范围：合法SMALLDATETIME格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
 
+    -   TRANSFORM \( \{ column\_name \[ data\_type \] \[ AS transform\_expr \] \} \[, ...\] \)
+
+        指定表中各个列的转换表达式；其中data\_type指定该列在表达式参数中的数据类型；transform\_expr为目标表达式，返回与表中目标列数据类型一致的结果值，表达式可参考[表达式](表达式.md)。
+
     COPY FROM能够识别的特殊反斜杠序列如下所示。
 
     -   **\\b**：反斜杠 （ASCII 8）
@@ -575,7 +579,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     -   **\\xdigits**：反斜杠x后面跟着一个或两个十六进制位声明指定数值编码的字符。
 
 
-## 示例<a name="zh-cn_topic_0237122096_zh-cn_topic_0059778766_s30bb80bf2fbd4cb3af1ab84e7cb1e0c9"></a>
+## 示例<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s30bb80bf2fbd4cb3af1ab84e7cb1e0c9"></a>
 
 ```
 --将tpcds.ship_mode中的数据拷贝到/home/omm/ds_ship_mode.dat文件中。
@@ -602,6 +606,9 @@ openGauss=# COPY tpcds.ship_mode_t1 FROM stdin;
 
 --从/home/omm/ds_ship_mode.dat文件拷贝数据到表tpcds.ship_mode_t1。
 openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat';
+
+--从/home/omm/ds_ship_mode.dat文件拷贝数据到表tpcds.ship_mode_t1，应用TRANSFORM表达式转换，取SM_TYPE列左边10个字符插入到表中。
+openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' TRANSFORM (SM_TYPE AS LEFT(SM_TYPE, 10));
 
 --从/home/omm/ds_ship_mode.dat文件拷贝数据到表tpcds.ship_mode_t1，使用参数如下：导入格式为TEXT（format 'text'），分隔符为'\t'（delimiter E'\t'），忽略多余列（ignore_extra_data 'true'），不指定转义（noescaping 'true'）。
 openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' WITH(format 'text', delimiter E'\t', ignore_extra_data 'true', noescaping 'true');

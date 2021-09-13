@@ -1,16 +1,16 @@
-# CREATE DATA SOURCE<a name="ZH-CN_TOPIC_0242370564"></a>
+# CREATE DATA SOURCE<a name="ZH-CN_TOPIC_0289900178"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122100_section1697927113919"></a>
+## 功能描述<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section1697927113919"></a>
 
 创建一个新的外部数据源对象，该对象用于定义openGauss要连接的目标库信息。
 
-## 注意事项<a name="zh-cn_topic_0237122100_section106551466418"></a>
+## 注意事项<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section106551466418"></a>
 
 -   Data Source名称在数据库中需唯一，遵循标识符命名规范，长度限制为63字节，过长则会被截断。
 -   只有系统管理员或初始用户才有权限创建Data Source对象。且创建该对象的用户为其默认属主。
 -   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在datasource.key.cipher和datasource.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并使用gs\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。
 
-## 语法格式<a name="zh-cn_topic_0237122100_section1673654518413"></a>
+## 语法格式<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section1673654518413"></a>
 
 ```
 CREATE DATA SOURCE src_name
@@ -19,7 +19,7 @@ CREATE DATA SOURCE src_name
     [OPTIONS (optname 'optvalue' [, ...])];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122100_section1520523385620"></a>
+## 参数说明<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section1520523385620"></a>
 
 -   **src\_name**
 
@@ -47,7 +47,7 @@ CREATE DATA SOURCE src_name
 
         选项名称。
 
-        取值范围：dsn，username，password，encoding。不区分大小写。
+        取值范围：dsn， username， password， encoding。不区分大小写。
 
         -   dsn对应odbc配置文件中的DSN。
         -   username/password对应连接目标库的用户名和密码。
@@ -64,7 +64,7 @@ CREATE DATA SOURCE src_name
 
 
 
-## 示例<a name="zh-cn_topic_0237122100_section459639151114"></a>
+## 示例<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section459639151114"></a>
 
 ```
 --创建一个空的Data Source对象，不含任何信息。
@@ -86,7 +86,7 @@ openGauss=# DROP DATA SOURCE ds_test3;
 openGauss=# DROP DATA SOURCE ds_test4;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122100_section45538169227"></a>
+## 相关链接<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section45538169227"></a>
 
 [ALTER DATA SOURCE](ALTER-DATA-SOURCE.md),  [DROP DATA SOURCE](DROP-DATA-SOURCE.md)
 

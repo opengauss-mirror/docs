@@ -1,25 +1,25 @@
-# DELETE<a name="ZH-CN_TOPIC_0242370595"></a>
+# DELETE<a name="ZH-CN_TOPIC_0289900955"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_se9507fb26df547a795ac7940e3a19ecf"></a>
+## 功能描述<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_se9507fb26df547a795ac7940e3a19ecf"></a>
 
 DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存在，将删除表中所有行，结果只保留表结构。
 
-## 注意事项<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
+## 注意事项<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
 
 -   要删除表中的数据，用户必须对它有DELETE权限。同样也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
 -   对于列存表，暂时不支持RETURNING子句。
 
-## 语法格式<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
+## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
+DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
     [ RETURNING { * | { output_expr [ [ AS ] output_name ] } [, ...] } ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
+## 参数说明<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
 
 -   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
@@ -29,9 +29,10 @@ DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
     其中with\_query的详细格式为：
 
-    with\_query\_name \[ \( column\_name \[, ...\] \) \] AS
-
-    \( \{select | values | insert | update | delete\} \)
+    ```
+    with_query_name [ ( column_name [, ...] ) ] AS
+    ( {select | values | insert | update | delete} )
+    ```
 
     – with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问
 
@@ -40,6 +41,10 @@ DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     – column\_name指定子查询结果集中显示的列名。
 
     – 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+
+-   **plan\_hint子句**
+
+    以/\*+ \*/的形式在DELETE关键字后，用于对DELETE对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](zh-cn_topic_0289900289.md)。每条语句中只有第一个/\*+ plan\_hint \*/注释块会作为hint生效，里面可以写多条hint。
 
 -   **ONLY**
 
@@ -80,7 +85,7 @@ DELETE FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     取值范围：字符串，符合标识符命名规范。
 
 
-## 示例<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_s90a3978214f644269ab932c29df31137"></a>
+## 示例<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s90a3978214f644269ab932c29df31137"></a>
 
 ```
 --创建表tpcds.customer_address_bak。
@@ -96,7 +101,7 @@ openGauss=# DELETE FROM tpcds.customer_address_bak;
 openGauss=# DROP TABLE tpcds.customer_address_bak;
 ```
 
-## 优化建议<a name="zh-cn_topic_0237122131_zh-cn_topic_0059778379_section50155651112741"></a>
+## 优化建议<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_section50155651112741"></a>
 
 -   delete
 

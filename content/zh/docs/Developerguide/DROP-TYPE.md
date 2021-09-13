@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>
 
-删除一个用户定义的数据类型。superuser、sysadmin以及类型所有者才有删除权限。
+删除一个用户定义的数据类型。
 
 ## 注意事项<a name="section114668159414"></a>
 
@@ -22,11 +22,11 @@ DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 -   **name**
 
-    要删除的类型名（可以有模式修饰）。
+    要删除的类型名\(可以有模式修饰\)。
 
 -   **CASCADE**
 
-    级联删除依赖该类型的对象（比如字段、函数、操作符等）。
+    级联删除依赖该类型的对象\(比如字段、函数、操作符等\)
 
     **RESTRICT**
 

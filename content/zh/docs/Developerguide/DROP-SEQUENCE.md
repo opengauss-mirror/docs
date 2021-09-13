@@ -6,12 +6,13 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section3924194973416"></a>
 
-只有序列的所有者或者被授予了序列DROP权限的用户才能删除，系统管理员默认拥有该权限。
+-   只有序列的所有者或者被授予了序列DROP权限的用户才能删除，系统管理员默认拥有该权限。
+-   如果SEQUENCE被创建时使用了LARGE标识，DROP时也需要使用LARGE标识。
 
 ## 语法格式<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section292414499345"></a>
 
 ```
-DROP SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTRICT ];
+DROP [ LARGE ] SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTRICT ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section1692544913344"></a>
@@ -45,5 +46,5 @@ openGauss=# DROP SEQUENCE serial;
 
 ## 相关链接<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section365162034413"></a>
 
-[ALTER SEQUENCE](ALTER-SEQUENCE.md)，  [CREATE SEQUENCE](CREATE-SEQUENCE.md)
+[ALTER SEQUENCE](ALTER-SEQUENCE.md)，  [DROP SEQUENCE](DROP-SEQUENCE.md)
 

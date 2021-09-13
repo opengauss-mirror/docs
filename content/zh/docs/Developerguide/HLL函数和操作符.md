@@ -826,42 +826,42 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
 </tr>
 <tr id="row3636185719550"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p206361757145510"><a name="p206361757145510"></a><a name="p206361757145510"></a>hll_add_trans0</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p7636857125517"><a name="p7636857125517"></a><a name="p7636857125517"></a>类似于hll_add所提供的功能，初始化时无指定入参，通常在分布式聚合运算的第一阶段DN上使用。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p7636857125517"><a name="p7636857125517"></a><a name="p7636857125517"></a>类似于hll_add所提供的功能，初始化时无指定入参，通常在聚合运算的第一阶段DN上使用。</p>
 </td>
 </tr>
 <tr id="row176361357125520"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p13636105715556"><a name="p13636105715556"></a><a name="p13636105715556"></a>hll_add_trans1</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p196361576559"><a name="p196361576559"></a><a name="p196361576559"></a>类似于hll_add所提供的功能，初始化时指定一个入参，通常在分布式聚合运算的第一阶段DN上使用。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p196361576559"><a name="p196361576559"></a><a name="p196361576559"></a>类似于hll_add所提供的功能，初始化时指定一个入参，通常在聚合运算的第一阶段DN上使用。</p>
 </td>
 </tr>
 <tr id="row363635755513"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p186361957105517"><a name="p186361957105517"></a><a name="p186361957105517"></a>hll_add_trans2</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p10636145715554"><a name="p10636145715554"></a><a name="p10636145715554"></a>类似于hll_add所提供的功能，初始化时指定两个入参，通常在分布式聚合运算的第一阶段DN上使用。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p10636145715554"><a name="p10636145715554"></a><a name="p10636145715554"></a>类似于hll_add所提供的功能，初始化时指定两个入参，通常在聚合运算的第一阶段DN上使用。</p>
 </td>
 </tr>
 <tr id="row14636135795519"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p11636195725515"><a name="p11636195725515"></a><a name="p11636195725515"></a>hll_add_trans3</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p18636357155517"><a name="p18636357155517"></a><a name="p18636357155517"></a>类似于hll_add所提供的功能，初始化时指定三个入参，通常在分布式聚合运算的第一阶段DN上使用。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p18636357155517"><a name="p18636357155517"></a><a name="p18636357155517"></a>类似于hll_add所提供的功能，初始化时指定三个入参，通常在聚合运算的第一阶段DN上使用。</p>
 </td>
 </tr>
 <tr id="row463645719553"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p563655710554"><a name="p563655710554"></a><a name="p563655710554"></a>hll_add_trans4</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p11637145755512"><a name="p11637145755512"></a><a name="p11637145755512"></a>类似于hll_add所提供的功能，初始化时指定四个入参，通常在分布式聚合运算的第一阶段DN上使用。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p11637145755512"><a name="p11637145755512"></a><a name="p11637145755512"></a>类似于hll_add所提供的功能，初始化时指定四个入参，通常在聚合运算的第一阶段DN上使用。</p>
 </td>
 </tr>
 <tr id="row116371157145510"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p1363785719555"><a name="p1363785719555"></a><a name="p1363785719555"></a>hll_union_trans</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p66373575550"><a name="p66373575550"></a><a name="p66373575550"></a>类似hll_union所提供的功能，在分布式聚合运算的第一阶段DN上使用。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p66373575550"><a name="p66373575550"></a><a name="p66373575550"></a>类似hll_union所提供的功能，在聚合运算的第一阶段DN上使用。</p>
 </td>
 </tr>
 <tr id="row063725795518"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p14637195755519"><a name="p14637195755519"></a><a name="p14637195755519"></a>hll_union_collect</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p1163755785517"><a name="p1163755785517"></a><a name="p1163755785517"></a>类似于hll_union所提供的功能，在分布式聚合运算第二阶段CN上使用，汇总各个DN上的结果。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p1163755785517"><a name="p1163755785517"></a><a name="p1163755785517"></a>类似于hll_union所提供的功能，在聚合运算第二阶段DN上使用，汇总各个DN上的结果。</p>
 </td>
 </tr>
 <tr id="row2063775765512"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p1863718579555"><a name="p1863718579555"></a><a name="p1863718579555"></a>hll_pack</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p1463717579551"><a name="p1463717579551"></a><a name="p1463717579551"></a>在分布式聚合运算第三阶段CN上使用，把自定义hll_trans_type类型最后转换成hll类型。</p>
+<td class="cellrowborder" valign="top" width="75.52%" headers="mcps1.2.3.1.2 "><p id="p1463717579551"><a name="p1463717579551"></a><a name="p1463717579551"></a>在聚合运算第三阶段DN上使用，把自定义hll_trans_type类型最后转换成hll类型。</p>
 </td>
 </tr>
 <tr id="row66371957195511"><td class="cellrowborder" valign="top" width="24.48%" headers="mcps1.2.3.1.1 "><p id="p116371857105518"><a name="p116371857105518"></a><a name="p116371857105518"></a>hll</p>

@@ -1,10 +1,10 @@
 # CREATE COLUMN ENCRYPTION KEY<a name="ZH-CN_TOPIC_0294528089"></a>
 
-## 功能描述<a name="section1163224811518"></a>
+## 功能描述<a name="section1020475817135"></a>
 
-创建一个列解密密钥，该密钥可用于加密表中指定列。
+创建一个列加密密钥，该密钥可用于加密表中指定列。
 
-## 注意事项<a name="zh-cn_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
+## 注意事项<a name="section1120413582134"></a>
 
 本语法属于全密态数据库特有语法。
 
@@ -12,13 +12,13 @@
 
 由该语法创建CEK对象可用于列级加密。在定义表中列字段时，可指定一个CEK对象，用于加密该列。
 
-## 语法格式<a name="zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
+## 语法格式<a name="section182042586132"></a>
 
 ```
 CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH(CLIENT_MASTER_KEY = client_master_key_name, ALGORITHM = algorithm_type, ENCRYPTED_VALUE = encrypted_value);
 ```
 
-## 参数说明<a name="section2852173114389"></a>
+## 参数说明<a name="section32041258181311"></a>
 
 -   **column\_encryption\_key\_name**
 
@@ -30,19 +30,19 @@ CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH(CLIENT_MASTER_KEY =
 
     指定用于加密本CEK的CMK，取值为：CMK对象名，该CMK对象由CREATE CLIENT MASTER KEY语法创建。
 
-- **ALGORITHM**
+-   **ALGORITHM**
 
-  指定该CEK将用于何种加密算法，取值范围为：AEAD\_AES\_256\_CBC\_HMAC\_SHA256、AEAD\_AES\_128\_CBC\_HMAC\_SHA256和SM4\_SM3。
+    指定该CEK将用于何种加密算法，取值范围为：AEAD\_AES\_256\_CBC\_HMAC\_SHA256、AEAD\_AES\_128\_CBC\_HMAC\_SHA256和SM4\_SM3；
 
-- **ENCRYPTED\_VALUE（可选项）**
+-   **ENCRYPTED\_VALUE（可选项）**
 
-  该值为用户指定的密钥口令，密钥口令长度范围为28 \~ 256位，28位派生出来的密钥安全强度满足AES128，若用户需要用AES256，密钥口令的长度需要39位，如果不指定，则会自动生成256比特的密钥。
+    该值为用户指定的密钥口令，密钥口令长度范围为28 \~ 256位，28位派生出来的密钥安全强度满足AES128，若用户需要用AES256，密钥口令的长度需要39位，如果不指定，则会自动生成256比特的密钥。
 
-  >![](public_sys-resources/icon-note.gif) **须知：** 
-  >国密算法约束：由于SM2、SM3、SM4等算法属于中国国家密码标准算法，为规避法律风险，需配套使用。即如果将CEK用于SM4\_SM3算法，则仅能使用SM4算法来对该CEK进行加密。
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >国密算法约束：由于SM2、SM3、SM4等算法属于中国国家密码标准算法，为规避法律风险，需配套使用。即如果将CEK用于SM4\_SM3算法，则仅能使用SM4算法来对该CEK进行加密。
 
 
-## 示例<a name="section7854941155112"></a>
+## 示例<a name="section18204185851316"></a>
 
 ```
 --创建列加密密钥(CEK)

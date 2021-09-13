@@ -10,6 +10,8 @@
 
 需要开启安全策略开关，即设置GUC参数enable\_security\_policy=on，脱敏策略才可以生效。具体设置请参考《安全加固指南》中“数据库配置\>数据库安全管理策略\>数据动态脱敏”章节。
 
+预置脱敏函数的执行效果及支持的数据类型请参考《特性描述》中”数据库安全 \> 动态数据脱敏机制”章节。
+
 ## 语法格式<a name="zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
 ```
@@ -24,8 +26,12 @@ CREATE MASKING POLICY policy_name masking_clause[, ...]* policy_filter [ENABLE |
 
 -   masking\_function：
 
+    maskall不是预置函数，硬编码在代码中，不支持\\df展示。
+
+    预置时脱敏方式如下：
+
     ```
-    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking 
+    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking | regexpmasking
     ```
 
 
@@ -57,7 +63,7 @@ CREATE MASKING POLICY policy_name masking_clause[, ...]* policy_filter [ENABLE |
 
 -   **masking\_clause**
 
-    指出使用何种脱敏函数来脱敏被label\_name标签标记的数据库资源。
+    指出使用何种脱敏函数对被label\_name标签标记的数据库资源进行脱敏，支持用schema.function的方式指定脱敏函数。
 
 -   **policy\_filter**
 

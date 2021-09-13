@@ -1,18 +1,18 @@
-# ALTER DATA SOURCE<a name="ZH-CN_TOPIC_0242370520"></a>
+# ALTER DATA SOURCE<a name="ZH-CN_TOPIC_0289899857"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122056_section1246564332711"></a>
+## 功能描述<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section1246564332711"></a>
 
 修改Data Source对象的属性和内容。
 
 属性有：名称和属主；内容有：类型、版本和连接选项。
 
-## 注意选项<a name="zh-cn_topic_0237122056_section12438141318319"></a>
+## 注意选项<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section12438141318319"></a>
 
 -   只有初始用户/系统管理员/属主才拥有修改Data Source的权限。
 -   修改属主时，新的属主用户必须是初始用户或系统管理员。
 -   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在datasource.key.cipher和datasource.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并使用gs\_ssh工具发布到每个节点的$GAUSSHOME/bin目录下。
 
-## 语法格式<a name="zh-cn_topic_0237122056_section20592145145512"></a>
+## 语法格式<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section20592145145512"></a>
 
 ```
 ALTER DATA SOURCE src_name
@@ -23,7 +23,7 @@ ALTER DATA SOURCE src_name RENAME TO src_new_name;
 ALTER DATA SOURCE src_name OWNER TO new_owner;
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122056_section1562551151015"></a>
+## 参数说明<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section1562551151015"></a>
 
 -   **src\_name**
 
@@ -66,7 +66,7 @@ ALTER DATA SOURCE src_name OWNER TO new_owner;
     取值范围：字符串，有效的用户名。
 
 
-## 示例<a name="zh-cn_topic_0237122056_section96641814616"></a>
+## 示例<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section96641814616"></a>
 
 ```
 --创建一个空Data Source对象。
@@ -97,7 +97,7 @@ openGauss=# DROP DATA SOURCE ds_test;
 openGauss=# DROP USER user_test1;
 ```
 
-## 相关链接<a name="zh-cn_topic_0237122056_section779812311320"></a>
+## 相关链接<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section779812311320"></a>
 
 [CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)，[DROP DATA SOURCE](DROP-DATA-SOURCE.md)
 

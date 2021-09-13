@@ -1,12 +1,12 @@
-# TRUNCATE<a name="ZH-CN_TOPIC_0242370657"></a>
+# TRUNCATE<a name="ZH-CN_TOPIC_0289900169"></a>
 
-## 功能描述<a name="zh-cn_topic_0237122193_zh-cn_topic_0059777694_sf3e0cbc4893c4042ac208fca35e705e8"></a>
+## 功能描述<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sf3e0cbc4893c4042ac208fca35e705e8"></a>
 
 清理表数据，TRUNCATE快速地从表中删除所有行。
 
 它和在目标表上进行无条件的DELETE有同样的效果，但由于TRUNCATE不做表扫描，因而快得多。在大表上操作效果更明显。
 
-## 注意事项<a name="zh-cn_topic_0237122193_section5258164117111"></a>
+## 注意事项<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_section5258164117111"></a>
 
 -   TRUNCATE TABLE在功能上与不带WHERE子句DELETE语句相同：二者均删除表中的全部行。
 -   TRUNCATE TABLE比DELETE速度快且使用系统和事务日志资源少：
@@ -19,13 +19,13 @@
     -   DROP TABLE，删除内容和定义，释放空间。
 
 
-## 语法格式<a name="zh-cn_topic_0237122193_zh-cn_topic_0059777694_s8446a9bd83d843dfa13302117908ed38"></a>
+## 语法格式<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_s8446a9bd83d843dfa13302117908ed38"></a>
 
 -   清理表数据。
 
 ```
 TRUNCATE [ TABLE ] [ ONLY ] {table_name [ * ]} [, ... ]
-    [ CONTINUE IDENTITY ] [ CASCADE | RESTRICT ];
+    [ CONTINUE IDENTITY ] [ CASCADE | RESTRICT][PURGE]};
 ```
 
 -   清理表分区的数据。
@@ -35,10 +35,10 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
                            | table_name *  
                            | ONLY ( table_name )  } 
     TRUNCATE PARTITION { partition_name  
-                       | FOR (  partition_value  [, ...] )  } ;
+                       | FOR (  partition_value  [, ...] )  } [ UPDATE GLOBAL INDEX ];
 ```
 
-## 参数说明<a name="zh-cn_topic_0237122193_zh-cn_topic_0059777694_sdbad1b573aae49f5aeba613b6fc3130d"></a>
+## 参数说明<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sdbad1b573aae49f5aeba613b6fc3130d"></a>
 
 -   **ONLY**
 
@@ -58,6 +58,7 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
     -   CASCADE：级联清空所有由于CASCADE而被添加到组中的表。
     -   RESTRICT（缺省值）：完全清空。
 
+-   PURGE：默认将表数据放入回收站中，PURGE直接清理。
 -   **partition\_name**
 
     目标分区表的分区名。
@@ -72,11 +73,16 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 
     取值范围：需要进行删除数据分区的分区键的取值范围。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >使用PARTITION FOR子句时，partition\_value所在的整个分区会被清空。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >使用PARTITION FOR子句时，partition\_value所在的整个分区会被清空。
 
 
-## 示例<a name="zh-cn_topic_0237122193_zh-cn_topic_0059777694_sfa74039cf5ab429abe7b4980088b2c5e"></a>
+-   **UPDATE GLOBAL INDEX**
+
+    如果使用该参数，则会更新分区表上的所有全局索引，以确保使用全局索引可以查询出正确的数据；如果不使用该参数，则分区表上的所有全局索引将会失效。
+
+
+## 示例<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sfa74039cf5ab429abe7b4980088b2c5e"></a>
 
 ```
 --创建表。

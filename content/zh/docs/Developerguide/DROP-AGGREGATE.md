@@ -30,7 +30,7 @@ DROP AGGREGATE [ IF EXISTS ] name ( argtype [ , ... ] ) [ CASCADE | RESTRICT ]
 
 -   **CASCADE**
 
-    级联删除依赖于这个聚合函数的对象
+    级联删除依赖于这个聚合函数的对象。
 
 -   **RESTRICT**
 

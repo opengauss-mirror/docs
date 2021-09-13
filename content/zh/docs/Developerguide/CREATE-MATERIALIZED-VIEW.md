@@ -60,7 +60,7 @@ openGauss=# CREATE MATERIALIZED VIEW my_mv AS SELECT * FROM my_table;
 --基表写入数据
 openGauss=# INSERT INTO my_table VALUES(1,1),(2,2);
 --对全量物化视图my_mv进行全量刷新
-openGauss=# REFRESH INCREMENTAL MATERIALIZED VIEW my_mv;
+openGauss=# REFRESH MATERIALIZED VIEW my_mv;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136593_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
