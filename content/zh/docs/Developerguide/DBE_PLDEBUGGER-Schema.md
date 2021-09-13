@@ -2,6 +2,9 @@
 
 DBE\_PLDEBUGGER下系统函数用于单机下调试存储过程，目前支持的接口及其描述如下所示。仅管理员有权限执行这些调试接口。
 
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>当在函数体中创建用户时，调用attach、next、continue、 info\_code、step、info\_breakpoint、backtrace、 finish中会返回密码的明文。因此不建议用户在函数体中创建用户。
+
 对应权限角色为gs\_role\_pldebugger，可以由管理员用户通过如下命令将debugger权限赋权给该用户。
 
 ```
@@ -98,7 +101,6 @@ GRANT gs_role_pldebugger to user;
     **表 1**  DBE\_PLDEBUGGER
 
     <a name="table0523162410321"></a>
-    
     <table><thead align="left"><tr id="row1052312411327"><th class="cellrowborder" valign="top" width="34.599999999999994%" id="mcps1.2.3.1.1"><p id="p125231924143220"><a name="p125231924143220"></a><a name="p125231924143220"></a>接口名称</p>
     </th>
     <th class="cellrowborder" valign="top" width="65.4%" id="mcps1.2.3.1.2"><p id="p145231924173213"><a name="p145231924173213"></a><a name="p145231924173213"></a>描述</p>
@@ -137,7 +139,7 @@ GRANT gs_role_pldebugger to user;
     </tr>
     <tr id="row16524192418321"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p0524192463215"><a name="p0524192463215"></a><a name="p0524192463215"></a><a href="DBE_PLDEBUGGER-continue.md">DBE_PLDEBUGGER.continue</a></p>
     </td>
-    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p9524152453218"><a name="p9524152453218"></a><a name="p9524152453218"></a>debug端调用，继续执行，直到存储过程结束。</p>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p9524152453218"><a name="p9524152453218"></a><a name="p9524152453218"></a>debug端调用，继续执行，直到断点或存储过程结束。</p>
     </td>
     </tr>
     <tr id="row1152462433216"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p185241824203210"><a name="p185241824203210"></a><a name="p185241824203210"></a><a href="DBE_PLDEBUGGER-abort.md">DBE_PLDEBUGGER.abort</a></p>
@@ -180,7 +182,29 @@ GRANT gs_role_pldebugger to user;
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p13516052175320"><a name="p13516052175320"></a><a name="p13516052175320"></a>debug端调用，查看当前的调用栈。</p>
     </td>
     </tr>
+    <tr id="row4326749272"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p732713416277"><a name="p732713416277"></a><a name="p732713416277"></a><a href="DBE_PLDEBUGGER-enable_breakpoint.md">DBE_PLDEBUGGER.enable_breakpoint</a></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1132714413277"><a name="p1132714413277"></a><a name="p1132714413277"></a>debug端调用，激活被禁用的断点。</p>
+    </td>
+    </tr>
+    <tr id="row2435191692810"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p204359162284"><a name="p204359162284"></a><a name="p204359162284"></a><a href="DBE_PLDEBUGGER-disable_breakpoint.md">DBE_PLDEBUGGER.disable_breakpoint</a></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p54351316112813"><a name="p54351316112813"></a><a name="p54351316112813"></a>debug端调用，禁用已激活的断点。</p>
+    </td>
+    </tr>
+    <tr id="row830972423018"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p20310224133018"><a name="p20310224133018"></a><a name="p20310224133018"></a><a href="DBE_PLDEBUGGER-finish.md">DBE_PLDEBUGGER.finish</a></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1731022415301"><a name="p1731022415301"></a><a name="p1731022415301"></a>debug端调用，继续调试，直到断点或返回上一层调用栈。</p>
+    </td>
+    </tr>
+    <tr id="row8735537113017"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p1581201715318"><a name="p1581201715318"></a><a name="p1581201715318"></a><a href="DBE_PLDEBUGGER-set_var.md">DBE_PLDEBUGGER.set_var</a></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p10755616193115"><a name="p10755616193115"></a><a name="p10755616193115"></a>debug端调用，为变量进行赋值操作。</p>
+    </td>
+    </tr>
     </tbody>
     </table>
+
+
 
 
