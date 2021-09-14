@@ -1,6 +1,7 @@
 # Core Database Technologies<a name="EN-US_CONCEPT_0252569318"></a>
 <!-- TOC -->
 
+- [Basic Functions Oriented to Application Development](#Basic Functions Oriented to Application Development)
 - [High Performance](#high-performance)
 - [High Scalability](#high-scalability)
 - [HA](#ha)
@@ -10,12 +11,93 @@
 
 <!-- /TOC -->
 
+## Basic Functions Oriented to Application Development
+
+- Standard SQL
+
+  openGauss supports standard SQL statements. The SQL standard is an international standard and is updated periodically. SQL standards are classified into core features and optional features. Most databases do not fully support SQL standards. SQL features are built by database vendors to maintain customers and push up application migration costs. New SQL features are increasingly different among vendors. Currently, there is no authoritative SQL standard test.
+
+  openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  _Developer Guide_.
+
+  The introduction of standard SQL provides a unified SQL interface for all database vendors, reducing the learning costs of users and openGauss application migration costs.
+
+- Standard Development Interfaces
+
+  Standard ODBC and JDBC interfaces are provided to ensure quick migration of user services to openGauss.
+
+  Currently, the standard ODBC 3.5 and JDBC 4.0 interfaces are supported. The ODBC interface supports SUSE Linux, Windows 32-bit, and Windows 64-bit platforms. The JDBC interface supports all platforms.
+
+- Multiple Storage Engines
+
+  openGauss is based on the unified transaction mechanism, log system, concurrency control system, metadata information, and cache management, provides Table Access Method API, and supports different storage engines.
+
+  Currently, the Astore and Ustore storage engines are supported.
+
+- Transaction Support
+
+  Transaction support refers to the system capability to ensure the atomicity, consistency, isolation, and durability \(ACID\) features of global transactions.
+
+  Transaction support and data consistency assurance are the basic functions of most databases and the prerequisites for a database to satisfy transaction-based application requirements.
+
+  - Atomicity
+
+    A transaction is comprised of an indivisible unit of work. Operations performed in a transaction must be all finished or have not been performed.
+
+  - Consistency
+
+    Transactions must be consistent within a system no matter when or how many concurrent transactions are ongoing.
+
+  - Isolation
+
+    Transactions are isolated for execution, as if each of them is the only operation performed during the specified period planned by the system. If there are two transactions that are executed within the same period of time and performing the same function, the transaction isolation makes each of them regard itself as the only transaction using the system.
+
+  - Durability
+
+    After a transaction is complete, the changes made by the transaction to the database are permanently stored in the database and will not be rolled back.
+
+  The default transaction isolation level is READ COMMITTED, ensuring no dirty data will be read.
+
+  Transactions are categorized into single-statement transactions and transaction blocks. Their basic interfaces are as follows:
+
+  -   Start transaction;
+  -   Commit;
+  -   Rollback;
+
+  Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  _Developer Guide_.
+
+- Support for Functions and Stored Procedures
+
+  Functions are important database objects. They encapsulate SQL statement sets used for certain functions so that the statements can be easily invoked.
+
+  A stored procedure is a combination of SQL and PL/SQL. Stored procedures can move the code that executes business rules from the application to the database. Therefore, the code storage can be used by multiple programs at a time.
+
+  1.  Allows customers to modularize program design and encapsulate SQL statement sets, easy to invoke.
+  2.  Caches the compilation results of stored procedures to accelerate SQL statement set execution.
+  3.  Allows system administrators to restrict the permission for executing a specific stored procedure and controls access to the corresponding type of data. This prevents access from unauthorized users and ensures data security.
+  4.  To process SQL statements, the stored procedure process assigns a memory fragment to store context association. Cursors are handles or pointers to context areas. With cursors, stored procedures can control alterations in context areas.
+  5.  Six levels of exception information are supported to facilitate the debugging of stored procedures. Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the process executed by the stored procedure step by step and find the error cause or program bug based on the variable value to improve the fault locating efficiency. You can set breakpoints and perform independent debugging.
+
+  openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  _Developer Guide_.
+
+- PG Interface Compatibility
+
+  Compatible with PostgreSQL clients and interfaces.
+
+- SQL Hints
+
+  SQL hints are supported, which can override any execution plan and thus improve SQL query performance.
+
+  In plan hints, you can specify a join order; join, stream, and scan operations; and the number of rows in a result to tune an execution plan, improving query performance.
+
+- Copy Interface for Error Tolerance
+
+  openGauss provides the encapsulated copy error tables for creating functions and allows users to specify error tolerance options when using the  **Copy From**  statement. In this way, errors related to parsing, data format, and character set during the execution of the  **Copy From**  statement are recorded in the error table instead of being reported and interrupted. Even if a small amount of data in the target file of  **Copy From**  is incorrect, the data can be imported to the database. You can locate and rectify the fault in the error table later.
 
 ## High Performance
 
 ### CBO Optimizer<a name="section1056021019542"></a>
 
-The openGauss optimizer is a typical Cost-based Optimization \(CBO\). By using CBO, the database calculates the number of tuples and the execution cost for each execution step under each execution plan based on the number of table tuples, column width, null record ratio, and characteristic values, such as distinct, MCV, and HB values, and certain cost calculation methods. The database then selects the execution plan that takes the lowest cost for the overall execution or for the return of the first tuple.
+The openGauss optimizer is a typical Cost-based Optimization \(CBO\). By using CBO, the database calculates the number of tuples and the execution cost for each execution step under each execution plan based on the number of table tuples, column width, NULL record ratio, and characteristic values, such as distinct, MCV, and HB values, and certain cost calculation methods. The database then selects the execution plan that takes the lowest cost for the overall execution or for the return of the first tuple.
 
 The CBO optimizer can select the most efficient execution plan among multiple plans based on the cost to meet customer service requirements to the maximum extent.
 
@@ -65,6 +147,16 @@ The principles for selecting row-store and column-store tables are as follows:
 
     The compression ratio of a column-store table is higher than that of a row-store table. The higher the compression ratio is, the more CPU resources will be consumed.
 
+### In-place Upate Storage<a name="section11892054124413"></a>
+
+The in-place update storage engine solves the problems of space expansion and large tuples of the Append update storage engine. The design of efficient rollback segments is the basis of the in-place update storage engine.
+
+### Xlog Lockless Update and Parallel Page Playback<a name="section18905074613"></a>
+
+**Figure  2**  Xlog lock less Design<a name="fig7888181774615"></a>  
+![](figures/xlog-lock-less-design.png "xlog-lock-less-design")
+
+This feature optimizes the WalInsertLock mechanism by using log sequence numbers \(LSNs\) and log record counts \(LRCs\) to record the copy progress of each backend and canceling the WalInsertLock mechanism. The backend can directly copy logs to the WalBuffer without contending for the WalInsertLock. In addition, a dedicated WALWriter thread is used to write logs, and the backend thread does not need to ensure the Xlog flushing. After the preceding optimization, the WalInsertLock contention and WalWriter dedicated disk write threads are canceled. The system performance can be further improved while the original XLog function remains unchanged. This feature optimizes the Ustore in-place update WALs and Ustore DML operation parallel playback and distribution. Prefixes and suffixes are used to reduce the update WALs. The playback thread is divided into multiple types to solve the problem that most Ustore DML WALs are replayed on multiple pages. In addition, the Ustore data page playback is distributed based on blkno to improve the degree of parallel playback.
 
 ### Adaptive Compression<a name="section146050573546"></a>
 
@@ -240,6 +332,10 @@ openGauss provides the physical backup capability to back up data of the entire 
 
 Physical backup is classified into full backup and incremental backup. The difference is as follows: Full backup includes the full data of the database at the backup time point. The time required for full backup is long \(in direct proportion to the total data volume of the database\), and a complete database can be restored. An incremental backup involves only incremental data modified after a specified time point. It takes a short period of time \(in direct proportion to the incremental data volume and irrelevant to the total data volume\). However, a complete database can be restored only after the incremental backup and full backup are performed. openGauss supports both full and incremental backup modes.
 
+### Flashback Restoration<a name="section49964184312"></a>
+
+The flashback function is used to restore dropped tables from the recycle bin. Like in a Window OS, dropped table information is stored in the recycle bin of databases. The MVCC mechanism is used to restore data to a specified point in time or system change number \(SCN\).
+
 ### Ultimate RTO<a name="section277463514817"></a>
 
 After the ultimate RTO function is enabled, multi-level pipelines are established for Xlog log playback to improve the concurrency and log playback speed.
@@ -391,25 +487,7 @@ Slow SQL records information about all jobs whose execution time exceeds the thr
 
 Historical slow SQL provides table-based and function-based query interfaces. You can query the execution plan, start time, end time, query statement, row activity, kernel time, CPU time, execution time, parsing time, compilation time, query rewriting time, plan generation time, network time, I/O time, network overhead, and lock overhead. All information is anonymized.
 
-Benefits:
-
-Slow SQL provides detailed information required for slow SQL diagnosis. You can diagnose performance problems of specific slow SQL statements offline without reproducing the problem. The table-based and function-based interfaces help users collect statistics on slow SQL indicators and connect to third-party platforms.
-
-### One-Click Diagnosis Information Collection<a name="section38495113486"></a>
-
-Multiple suites are provided to capture, collect, and analyze diagnosis data, enabling fault diagnosis and accelerating the diagnosis process. Necessary database logs, cluster management logs, and stack information can be extracted from the production environment based on the requirements of development and fault locating personnel. Fault locating personnel demarcate and locate faults based on the obtained information.
-
-The one-click collection tool obtains different information from the production environment depending on the actual faults, improving the fault locating and demarcation efficiency. You can modify the configuration file to collect the required information:
-
--   OS information by running OS commands
--   Database information by querying system catalogs or views
--   Run logs of the database system and logs related to cluster management
--   Database system configuration information
--   Core files generated by database-related processes
--   Stack information about database-related processes
--   Trace information generated by the database process
--   Redo log file XLOG generated by the database
--   Planned reproduction information
+Slow SQL provides detailed information required for slow SQL diagnosis. You can diagnose performance problems of specific slow SQL statements offline without reproducing the problem. The table-based and function-based APIs help users collect statistics on slow SQL indicators and connect to third-party platforms.
 
 ## Database Security
 
@@ -450,14 +528,6 @@ You can set parameters to specify the statements or operations for which audit l
 Audit logs record the event time, type, execution result, username, database, connection information, database object, database instance name, port number, and details. You can query audit logs by start time and end time and filter audit logs by recorded field.
 
 Database security administrators can use the audit logs to reproduce a series of events that cause faults in the database and identify unauthorized users, unauthorized operations, and the time when these operations are performed.
-
-### Equal-value Query in a Fully-encrypted Database
-
-A fully-encrypted database is the same as the streaming database and graph database that we understand. It is a database system dedicated to processing ciphertext data. Data is encrypted and stored in the database server. The database supports retrieval and calculation of ciphertext data and inherits the original database capabilities related to query tasks, including the lexical parsing, syntax parsing, execution plan generation, transaction consistency assurance, and storage.
-
-To fully encrypt the database on the client, you need to perform a large number of operations on the client, including managing data keys, encrypting sensitive data, parsing and modifying the actually executed SQL statements, and identifying the encrypted data returned to the client. GaussDB Kernel automatically encapsulates these complex operations in front-end parsing and encrypts and replaces sensitive information in SQL queries. In this way, the query tasks sent to the database services do not disclose users' query intentions, reducing the complexity of security management and operations on the client and making user be unaware of the application development.
-
-The fully-encrypted databases use technical means to implement database ciphertext query and calculation, resolving the privacy leakage problem on the cloud and third-party trust problems. It provides full lifecycle protection for data on the cloud and decouples the read capabilities of data owners and data administrators.
 
 ### Network Communication Security
 
@@ -549,13 +619,13 @@ The TLS 1.2 protocol and a highly secure encryption algorithm suite are adopted.
 </table>
 
 
-### Row-Level Access Control
+### Row-Level Security
 
-The row-level access control feature enables database access control to be accurate to each row of data tables. When different users perform the same SQL query operation, the read results may be different according to the row-level access control policy.
+he row-level security \(RLS\) feature enables database access control to be accurate to each row of data tables. When different users perform the same SQL query operation, the read results may be different according to the RLS policy.
 
-You can create a row-level access control policy for a data table. The policy defines an expression that takes effect only for specific database users and SQL operations. When a database user accesses the data table, if a SQL statement meets the specified row-level access control policy of the data table, the expressions that meet the specified condition will be combined by using  **AND**  or  **OR**  based on the attribute type \(**PERMISSIVE**  |  **RESTRICTIVE**\) and applied to the execution plan in the query optimization phase.
+You can create an RLS policy for a data table. The policy defines an expression that takes effect only for specific database users and SQL operations. When a database user accesses the data table, if a SQL statement meets the specified RLS policy of the data table, the expressions that meet the specified condition will be combined by using  **AND**  or  **OR**  based on the attribute type \(**PERMISSIVE**  |  **RESTRICTIVE**\) and applied to the execution plan in the query optimization phase.
 
-Row-level access control is used to control the visibility of row-level data in tables. By predefining filters for data tables, the expressions that meet the specified condition can be applied to execution plans in the query optimization phase, which will affect the final execution result. Currently, row-level access control supports the following SQL statements: SELECT, UPDATE, and DELETE.
+RLS is used to control the visibility of row-level data in tables. By predefining filters for data tables, the expressions that meet the specified condition can be applied to execution plans in the query optimization phase, which will affect the final execution result. Currently, RLS supports the following SQL statements: SELECT, UPDATE, and DELETE.
 
 ### Resource Labels
 
@@ -604,6 +674,14 @@ If a user with the required permission wants to view specific data, the user can
 ### Full Encryption<a name="section472583517127"></a>
 
 An encrypted database aims to protect privacy throughout the data lifecycle. In this way, data is always in ciphertext during transmission, computing, and storage regardless of the service scenario and environment. After the data owner encrypts data on the client and sends the encrypted data to the server, an attacker cannot obtain valuable information even if the attacker steals user data by exploiting system vulnerabilities. In this way, data privacy is protected.
+
+### Ledger Database<a name="section185956502478"></a>
+
+To prevent database O&M personnel from stealing, tampering with, and erasing traces of the database, you can use the ledger database feature to perform comprehensive audit and trace the history. When a tamper-proof user table is modified, the database records the modification behavior to the history table where only data can be appended. In this way, the operation history can be recorded and the operation source can be traced.
+
+The ledger database stores and verifies historical operations by generating data hash digests. Ledgers refer to user history tables and global blockchain tables. For table-level data modification operations, the system records the operation information and hash digest in a global blockchain table. In addition, each tamper-proof user table corresponds to a user history table to record the hash digest of row-level data changes. You can determine whether the user table is tampered by recalculating the hash digest and verifying the hash digest consistency.
+
+Each record in the ledger represents a given operation fact that has occurred. The content of the record can only be appended and cannot be modified. The consistency between the tamper-proof user table and the corresponding history table can be checked to identify and track the tampering behavior. In addition, the ledger database provides an API for checking the tamper-proof user table consistency and an API for restoring and archiving history tables to meet the requirements of tampering identification, data expansion and mitigation, and historical data restoration and archiving.
 
 ## AI Capabilities
 

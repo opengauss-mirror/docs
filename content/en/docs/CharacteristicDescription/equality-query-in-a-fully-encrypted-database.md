@@ -1,12 +1,12 @@
-# Equality Query in a Fully-encrypted Database<a name="EN-US_TOPIC_0000001088278190"></a>
+# Equality Query in a Fully-encrypted Database<a name="EN-US_TOPIC_0000001105235294"></a>
 
 ## Availability<a name="section17746747"></a>
 
-This feature is available since V500R001C20.
+This feature is available since openGauss 1.1.0.
 
 ## Introduction<a name="section25503003"></a>
 
-The encrypted database aims to protect privacy throughout the data lifecycle. In this way, data is always in ciphertext during transmission, computing, and storage regardless of the service scenario and environment. After the data owner encrypts data on the client and sends the encrypted data to the server, the attacker cannot obtain valuable information even if the attacker steals user data by exploiting system vulnerabilities. In this way, data privacy is protected.
+The encrypted database aims to protect privacy throughout the data lifecycle. In this way, data is always in ciphertext during transmission, computing, and storage regardless of the service scenario and environment. After the data owner encrypts data on the client and sends the encrypted data to the server, no attacker can obtain valuable information even if the attacker steals user data by exploiting system vulnerabilities. In this way, data privacy is protected.
 
 ## Benefits<a name="section28200442"></a>
 
@@ -30,24 +30,30 @@ From the overall perspective, this feature is used to store and manage data base
 
 ## Enhancements<a name="section2534498"></a>
 
-None
+None.
 
 ## Constraints<a name="section06531946143616"></a>
 
 -   Data is encrypted at the column level, and encryption policies cannot be differentiated by row level.
 -   Except the RENAME operation, the ALTER TABLE syntax cannot be used to change columns in an encrypted table \(including the conversion between encrypted and unencrypted columns\). The ADD and DROP operations can be used to add and delete encrypted columns, respectively.
--   The CHECK\(COLUMN IS NOT NULL\) syntax can be used, but most check syntax cannot be set for encrypted columns.
+-   The CHECK\(COLUMN IS NOT NULL\) syntax can be used, but most check constraint syntax cannot be set for encrypted columns.
 -   When  **support\_extended\_features **is set to  **off**, primary key and unique cannot be used for encrypted columns. When  **support\_extended\_features **is set to  **on**, only primary key and unique can be used for encrypted columns.
 -   Different data types cannot be implicitly converted.
 -   The set operation cannot be performed between ciphertexts of different data types.
 -   Range partitioning cannot be created for encrypted columns.
 -   Only the repeat and empty\_blob\(\) functions can be used to encrypt columns.
--   The current version supports only the gsql client. Other clients such as JDBC and ODBC are not supported.
+-   The current version supports only gsql and JDBC \(deployed on a Linux OS\) clients. Other clients such as ODBC do not support encrypted equality query.
 -   Data can only be imported to the encrypted table by running  **copy from stdin**,  **\\copy**, or  **insert into values \(...\)**  on the client.
+-   Copying an encrypted table to a file is not supported.
 -   The system does not support encrypted queries, such as sorting, range query, and fuzzy query, except equality query.
--   The PROCEDURE STATEMENT syntax cannot be used for stored procedures.
--   Non-encrypted table data cannot be inserted into encrypted table data using the INSERT INTO... SELECT... syntax.
--   An error is reported if the two attribute conditions used for comparison in the query operation use different data encryption keys.
+-   The encrypted syntax of stored procedures for some functions is supported. For details about the constraints, see "Encrypted Functions and Stored Procedures" in the  _Developer Guide_.
+-   Non-encrypted table data cannot be inserted into encrypted table data using the  **INSERT INTO... SELECT...**  or  **MERGE INTO**  syntax.
+-   For a request in connection state, the CEK information change on the server can be detected only after the cache update operation is triggered \(for example, the user is changed or the encrypted column fails to be decrypted\) and the connection is re-established.
+-   Encrypted equality query is not supported on columns encrypted using the random encryption algorithm.
+-   An error is reported if the two attribute conditions used for comparison in the encrypted equality query use different data encryption keys.
+-   Encrypted equality query is not supported in time series tables and foreign tables. The ustore storage engine is not supported.
+-   If the database service configuration \(such as the pg\_settings system catalog, permission, key, and encrypted column\) is changed, you need to re-establish a JDBC connection to make the configuration take effect.
+-   Multiple SQL statements cannot be executed at the same time. This constraint does not apply to the scenario where the INSERT INTO statement is executed in multiple batches.
 -   Encrypted equality query supports the following data types:
 
     <a name="table1495331175519"></a>
@@ -159,5 +165,5 @@ None
 
 ## Dependencies<a name="section22810484"></a>
 
-None
+None.
 

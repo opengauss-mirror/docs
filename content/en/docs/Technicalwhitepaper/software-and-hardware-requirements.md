@@ -39,7 +39,7 @@
 
 ## Hardware Requirements<a name="en-us_concept_0283139016_section108961253113216"></a>
 
-**Table  2**  Hardware requirements
+**Table  2**  Hardware Requirements
 
 <a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_t62cd0eed17004265b1b8ad98f302a4bc"></a>
 <table><thead align="left"><tr id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_r22159407d305418785de8468729ae773"><th class="cellrowborder" valign="top" width="19.919999999999998%" id="mcps1.2.3.1.1"><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"></a>Item</p>

@@ -4,7 +4,11 @@
 
 Data partitioning is a general function for most database products. In the openGauss, data is partitioned horizontally with a user-specified policy. This operation splits a table into multiple partitions that are not overlapped.
 
-openGauss supports: 1. The range partitioning function divides a record, which is to be inserted into a table, into multiple ranges using one or more columns and create a partition for each range to store data. Partition ranges do not overlap. 2. The list partitioning function divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data. 3. The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter in the  **CREATE TABLE**  statement, data in the table will be partitioned.
+openGauss supports:
+
+-   Range partitioning. It can divide a record, which is to be inserted into a table, into multiple ranges using one or more columns and create a partition for each range to store data. Partition ranges do not overlap.
+-   List partitioning. It divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data.
+-   Hash partitioning. It uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned.
 
 For example,  [Table 1](#en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_t77b9e09809f742f1aaadea05d041bc23)  uses an xDR scenario to describe the benefits provided after data is partitioned based on time fragments.
 
@@ -50,9 +54,9 @@ Data partitioning provides the following benefits:
 
 ## Vectorized Executor and Hybrid Row-Column Storage Engine<a name="en-us_topic_0283136537_section118111201716"></a>
 
-In a wide table containing a huge amount of data, a query usually only involves certain columns. In this case, the query performance of the row-store engine is poor. For example, a single table containing the data of a meteorological agency has 200 to 800 columns. Among these columns, only ten of them are frequently accessed. In this case, a vectorized executor and column-store engine can significantly improve performance by saving storage space.
+In a wide table containing a huge amount of data, a query usually only involves certain columns. In this case, the query performance of the row-store engine is poor. For example, a single table containing the data of a meteorological agency has 200 to 800 columns. Among these columns, only 10 are frequently accessed. In this case, the vectorized execution technology and column-store engine can significantly improve performance by saving storage space.
 
--   Vectorized executor
+-   Vectorized execution
 
     [Figure 1](#en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_f9d90aebe179a40759039d0263492489d)  shows a standard iterator module. Control flow travels in the downlink direction \(shown as solid lines in the following figure\) and data flow in the uplink direction \(shown as dotted lines in the following figure\). The upper-layer node invokes the lower-layer node to request data and the lower-layer node only returns one tuple to the upper-layer node at a time.
 
@@ -63,7 +67,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     ![](figures/向量化执行引擎(png).png)
 
--   Hybrid Row-Column Storage Engine
+-   Hybrid row-column storage engine
 
     openGauss supports both the row-store and column-store models. Users can choose a row-store or column-store table based on their needs.
 
@@ -99,6 +103,45 @@ In a wide table containing a huge amount of data, a query usually only involves 
     In openGauss, data can be compressed using delta encoding, dictionary coder, RLE, LZ4, and ZLIB algorithms. The system automatically selects a compression algorithm based on data characteristics. The average compression ratio is 7:1. Compressed data can be directly accessed and is transparent to services. This greatly reduces the preparation time before accessing historical data.
 
 
+## Fusion Storage Engine<a name="section1070714862319"></a>
+
+The fusion engine architecture supports the pluggable storage engine architecture. The in-place update storage engine is added. The indexing multiversion supports adding transaction information to indexes. The Xlog lockless update greatly improves the Xlog write efficiency. The parallel page playback improves the playback efficiency of the standby node, and the enterprise-level flashback provides a stable query state for users.
+
+-   In-place update storage engine
+
+    The in-place update storage engine solves the problems of space expansion and large tuples of the Append update storage engine. The design of efficient rollback segments is the basis of the in-place update storage engine.
+
+-   Indexing multiversion
+
+    **Figure  3**  Comparison between UBTree and BTree searching and updating<a name="fig38821655122012"></a>  
+    ![](figures/comparison-between-ubtree-and-btree-searching-and-updating.png "comparison-between-ubtree-and-btree-searching-and-updating")
+
+    UBtree can check multiversion concurrency control \(MVCC\) visibility at the index layer by maintaining version information on tuples on the index page. In addition, the UBtree can independently determine whether the index tuple is dead based on the version information, so that the in-place update engine can implement page-level space cleanup for the data table and index table, and build an independent garbage collection mechanism independent of AutoVacuum.
+
+
+-   Xlog lockless update
+
+    **Figure  4**  Xlog lockless design<a name="fig1120113136417"></a>  
+    ![](figures/xlog-lockless-design.png "xlog-lockless-design")
+
+    This feature optimizes the WalInsertLock mechanism by using log sequence numbers \(LSNs\) and log record counts \(LRCs\) to record the copy progress of each backend and canceling the WalInsertLock mechanism. The backend can directly copy logs to the WalBuffer without contending for the WalInsertLock. In addition, a dedicated WALWriter thread is used to write logs, and the backend thread does not need to ensure the Xlog flushing. After the preceding optimization, the WalInsertLock contention and WalWriter dedicated disk write threads are canceled. The system performance can be further improved while the original Xlog function remains unchanged.
+
+-   Parallel page playback
+
+    This feature optimizes the Ustore in-place update WALs and Ustore DML operation parallel playback and distribution. Prefixes and suffixes are used to reduce the update WALs. The playback thread is divided into multiple types to solve the problem that most Ustore DML WALs are replayed on multiple pages. In addition, the Ustore data page playback is distributed based on blkno to improve the degree of parallel playback.
+
+-   Enterprise-class feature flashback
+
+    Flashback is a part of the database recovery technology. It enables the DBA to selectively and efficiently cancel the impact of a committed transaction and restore data from incorrect manual operations. Before the flashback technology is used, the committed database modification can be retrieved only by means of restoring backup and PITR. The restoration takes several minutes or even hours. After the flashback technology is used, it takes only seconds to restore the submitted data before the database is modified. The restoration time is irrelevant to the database size.
+
+    This feature supports the following flashback modes:
+
+    -   Flashback query: You can query a snapshot of a table at a certain time point in the past. This feature can be used to view and logically rebuild damaged data that is accidentally deleted or modified. The flashback query is based on the MVCC mechanism. You can retrieve and query the old version to obtain the data of the specified old version.
+    -   Flashback table: You can restore a table to a specific point in time. When only one table or a group of tables are logically damaged instead of the entire database, this feature can be used to quickly restore the table data. Based on the MVCC mechanism, the flashback table deletes incremental data at a specified time point and after the specified time point and retrieves the data deleted at the specified time point and the current time point to restore table-level data.
+    -   Flashback drop: You can restore tables that are deleted by mistake and their auxiliary structures, such as indexes and table constraints, from the recycle bin. Flashback drop is based on the recycle bin mechanism. You can restore physical table files recorded in the recycle bin to restore dropped tables.
+    -   Flashback truncate: You can restore tables that are truncated by mistake and restore the physical data of the truncated tables and indexes from the recycle bin. Flashback truncate is based on the recycle bin mechanism. You can restore physical table files recorded in the recycle bin to restore truncated tables.
+
+
 ## High Availability \(HA\) Transaction Processing<a name="en-us_topic_0283136537_section975313598411"></a>
 
 openGauss manages transactions and guarantees the ACID properties.
@@ -132,23 +175,23 @@ With the rapid growth and maturity of cloud infrastructure, cloud database servi
 
 -   Overall encrypted database solution
 
-    The encrypted equality query belongs to the first phase of the encrypted database solution, but complies with the overall architecture of the encrypted database.  [Figure 3](#en-us_topic_0231763017_fig141362033122319)  shows the overall architecture of the encrypted database. The complete form of the encrypted database includes the cryptology solution and the combination solution of software and hardware.
+    The encrypted equality query belongs to the first phase of the encrypted database solution, but complies with the overall architecture of the encrypted database.  [Figure 5](#en-us_topic_0231763017_fig141362033122319)  shows the overall architecture of the encrypted database. The complete form of the encrypted database includes the cryptology solution and the combination solution of software and hardware.
 
-    **Figure  3**  Overall encrypted database architecture <a name="en-us_topic_0231763017_fig141362033122319"></a>  
+    **Figure  5**  Overall encrypted database architecture <a name="en-us_topic_0231763017_fig141362033122319"></a>  
     
 
     ![](figures/向量化执行引擎(png)-0.png)
 
-    Only the software part of the overall encrypted database architecture needs to be integrated because only the software part is involved in the encrypted equality query.  [Figure 4](#fig18836194875513)  shows the overall implementation solution.
+    Only the software part of the overall encrypted database architecture needs to be integrated because only the software part is involved in the encrypted equality query.  [Figure 6](#fig18836194875513)  shows the overall implementation solution.
 
-    **Figure  4**  Overall encrypted equality query solution<a name="fig18836194875513"></a>  
+    **Figure  6**  Overall encrypted equality query solution<a name="fig18836194875513"></a>  
     
 
     ![](figures/向量化执行引擎(png)-1.png)
 
-    In the overall process, data is encrypted on the client and sent to the openGauss server in ciphertext. That is, an encryption and decryption module needs to be constructed on the client. The encryption and decryption module depends on the key management module which generates the root key \(RK\) and client master key \(CMK\). With the CMK, a column encryption key \(CEK\) can be defined through the SQL syntax. A CMK is encrypted by an RK and then saved in the key store file \(KSF\). Both CMK and RK are managed by the KeyTool. The CMK uses the symmetric encryption algorithm AES256 to encrypt a CEK and then stores it on the server.
+    In the overall process, data is encrypted on the client and sent to the openGauss server in ciphertext. That is, an encryption and decryption module needs to be constructed on the client. The encryption and decryption module depends on the key management module which generates the root key \(RK\) and client master key \(CMK\). With the CMK, a column encryption key \(CEK\) can be defined through the SQL syntax. A CMK is encrypted by an RK and then saved in the key store file \(KSF\). Both CMK and RK are managed by the KeyTool. The CMK encrypts a CEK \(using the symmetric encryption algorithm AES256 and the  SM2  algorithm\) and then stores it on the server.
 
-    The client uses the symmetric encryption algorithms AES \(including AES128 and AES256\) to encrypt data based on the generated CEK. The encrypted data is stored on the database server. After the ciphertext calculation, the server returns the ciphertext result set, and the client decrypts the data to obtain the final result.
+    The client uses the symmetric encryption algorithms AES \(including AES128 and AES256\) and the SM4 algorithm to encrypt data based on the generated CEK. The encrypted data is stored on the database server. After the ciphertext calculation, the server returns the ciphertext result set, and the client decrypts the data to obtain the final result.
 
     Users can define encryption attributes for data based on service requirements. Data that does not need to be encrypted is sent to the server in the original plaintext format. After a query task is initiated, the client needs to parse the current query. If the query statement involves encrypted columns, the parameters related to encrypted columns need to be encrypted. \(The encryption must be deterministic encryption. Otherwise, the corresponding query cannot be supported.\) If no encrypted column is involved in the query statement, the query statement is directly sent to the server, and no additional operation is required.
 
@@ -156,7 +199,7 @@ With the rapid growth and maturity of cloud infrastructure, cloud database servi
 
 -   Encrypted database flowchart
 
-    **Figure  5**  Encrypted database flowchart<a name="fig19889211143016"></a>  
+    **Figure  7**  Encrypted database flowchart<a name="fig19889211143016"></a>  
     ![](figures/encrypted-database-flowchart.png "encrypted-database-flowchart")
 
     In the flowchart, the encrypted database allows the client to encrypt sensitive data within the client application. During the query period, the entire service data flow exists in the form of ciphertext during data processing. It has the following advantages: 
@@ -176,7 +219,13 @@ With the rapid growth and maturity of cloud infrastructure, cloud database servi
 
 ## Memory Table<a name="en-us_topic_0283136537_section1482992711616"></a>
 
-With memory tables, all data access is lock-free and concurrent, optimizing data processing and meeting real-time requirements.
+With memory tables, all data access is lockless and concurrent, optimizing data processing and meeting real-time requirements.
+
+## Multiple Storage Engines<a name="section4989115175214"></a>
+
+openGauss is based on the unified transaction mechanism, log system, concurrency control system, metadata information, and cache management, provides Table Access Method API, and supports different storage engines.
+
+Currently, the Astore and Ustore storage engines are supported.
 
 ## Primary/Standby Deployment<a name="en-us_topic_0283136537_section238711473613"></a>
 
@@ -261,7 +310,7 @@ The WDR module consists of the following two components:
 
 Supports full backup and incremental backup of the database, manages backup data, and views the backup status. Supports combination of incremental backups and deletion of expired backups. The database server dynamically tracks page changes, and when a relational page is updated, the page is marked for backup. The incremental backup function requires that the GUC parameter enable\_cbm\_tracking be enabled to allow the server to track the modification page.
 
-## Point-In-Time Recovery<a name="en-us_topic_0283136537_section1513644121818"></a>
+## Point-In-Time Recovery \(PITR\)<a name="en-us_topic_0283136537_section1513644121818"></a>
 
-Point-in-time recovery \(PITR\) uses basic hot backup, write-ahead logs \(WALs\), and archived WALs for backup and recovery. Replaying a WAL record can be stopped at any point of time, so that there is a consistent snapshot of the database at any point of time. That is, you can restore the database to the state at any time since the backup starts. During recovery, you can specify a recovery stop point with a terminal ID \(TID\), time, and license serial number \(LSN\).
+PITR uses basic hot backup, write-ahead logs \(WALs\), and archived WALs for backup and recovery. When replaying a WAL record, you can stop at any point in time, so that there is a snapshot of the consistent database at any point in time. That is, you can restore the database to the state at any time since the backup starts. During recovery, you can specify a recovery stop point with a terminal ID \(TID\), time, and license serial number \(LSN\).
 
