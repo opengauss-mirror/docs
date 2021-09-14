@@ -1,8 +1,8 @@
-# Slow SQL Diagnosis<a name="EN-US_TOPIC_0000001135403989"></a>
+# Slow SQL Diagnosis<a name="EN-US_TOPIC_0000001151995075"></a>
 
 ## Availability<a name="section147531742205517"></a>
 
-This feature is available since V300R002C00 and is enhanced in V500R001C20. The following slow SQL views have been discarded before reconstruction: dbe\_perf.gs\_slow\_query\_info, dbe\_perf.gs\_slow\_query\_history, dbe\_perf.global\_slow\_query\_hisotry, and dbe\_perf.global\_slow\_query\_info.
+This feature is available since openGauss 1.1.0. The following slow SQL views have been discarded before reconstruction: dbe\_perf.gs\_slow\_query\_info, dbe\_perf.gs\_slow\_query\_history, dbe\_perf.global\_slow\_query\_hisotry, and dbe\_perf.global\_slow\_query\_info.
 
 ## Introduction<a name="section134931562564"></a>
 
@@ -26,10 +26,10 @@ Optimized slow SQL indicators, security \(anonymization\), execution plans, and 
 Run the following command to check the execution information about the SQL statements in the database instance:
 gsql> select * from dbe_perf.get_global_full_sql_by_timestamp(start_timestamp, end_timestamp); 
 For example:
-postgres=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
+openGauss=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
-node_name            | coordinator1
+node_name            | dn_6001_6002_6003
 db_name              | postgres
 schema_name          | "$user",public
 origin_node          | 1938253334
@@ -48,16 +48,16 @@ thread_id            | 139884662093568
 session_id           | 139884662093568
 n_soft_parse         | 0
 n_hard_parse         | 1
-query_plan           | Coordinator Name: coordinator1
+query_plan           | Datanode Name: dn_6001_6002_6003
                      | Function Scan on pg_show_all_settings a  (cost=0.00..12.50 rows=5 width=64)
                      |   Filter: (name = '***'::text)
 ...
 
 Run the following command to check the execution information about the slow SQL statements in the database instance:
 gsql> select * from dbe_perf.get_global_slow_sql_by_timestamp(start_timestamp, end_timestamp);
-postgres=# select * from DBE_PERF.get_global_slow_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
+openGauss=# select * from DBE_PERF.get_global_slow_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------
-node_name            | coordinator1
+node_name            | dn_6001_6002_6003
 db_name              | postgres
 schema_name          | "$user",public
 origin_node          | 1938253334
@@ -76,7 +76,7 @@ thread_id            | 139884662093568
 session_id           | 139884662093568
 n_soft_parse         | 10
 n_hard_parse         | 8
-query_plan           | Coordinator Name: coordinator1
+query_plan           | Datanode Name: dn_6001_6002_6003
                      | Result  (cost=1.01..1.02 rows=1 width=0)
                      |   InitPlan 1 (returns $0)
                      |     ->  Seq Scan on pgxc_node  (cost=0.00..1.01 rows=1 width=64)
@@ -86,7 +86,7 @@ query_plan           | Coordinator Name: coordinator1
 Check the execution information about the SQL statement on the current node.
 gsql> select * from statement_history;
 For example:
-postgres=# select * from statement_history;
+openGauss=# select * from statement_history;
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
 db_name              | postgres
@@ -107,23 +107,25 @@ thread_id            | 139884662093568
 session_id           | 139884662093568
 n_soft_parse         | 0
 n_hard_parse         | 1
-query_plan           | Coordinator Name: coordinator1
+query_plan           | Datanode Name: dn_6001_6002_6003
                      | Function Scan on pg_show_all_settings a  (cost=0.00..12.50 rows=5 width=64)
                      |   Filter: (name = '***'::text)
 ```
 
 ## Constraints<a name="section1956417145819"></a>
 
-1.  The SQL tracing information is based on the normal execution logic. The tracing information may inaccurate if SQL statements fail to be executed.
-2.  Restarting a node may cause data loss on the node.
-3.  If you exit a session immediately after SQL statements are executed, the session data that is not updated to the system catalog may be lost.
-4.  The number of SQL statements to be collected is specified by a GUC parameter. If the number of SQL statements exceeds the threshold, new SQL statement execution information will not be collected.
-5.  The maximum number of bytes of lock event details collected by a single SQL statement is specified by a GUC parameter. If the number of bytes exceeds the threshold, new lock event details will not be collected.
-6.  The SQL statement information is updated in asynchronous mode. Therefore, after a query statement is executed, the related view function result is slightly delayed.
-7.  Certain indicator information \(such as row activities, cache I/O, and time distribution\) depends on the dbe\_perf.statement view. If the number of records in the view exceeds the preset size \(depending on GUC:instr\_unique\_sql\_count\), related indicators may not be collected.
-8.  Functions related to the statement\_history table and the details column in the view are in binary format. To parse the detailed information, use the pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\) function.
+-   The SQL tracing information is based on the normal execution logic. The tracing information may inaccurate if SQL statements fail to be executed.
+-   Restarting a node may cause data loss on the node.
+-   If you exit a session immediately after SQL statements are executed, the session data that is not updated to the system catalog may be lost.
+-   The number of SQL statements to be collected is specified by a GUC parameter. If the number of SQL statements exceeds the threshold, new SQL statement execution information will not be collected.
+-   The maximum number of bytes of lock event details collected by a single SQL statement is specified by a GUC parameter. If the number of bytes exceeds the threshold, new lock event details will not be collected.
+-   The SQL statement information is updated in asynchronous mode. Therefore, after a query statement is executed, the related view function result is slightly delayed.
+-   Certain indicator information \(such as row activities, cache I/O, and time distribution\) depends on the dbe\_perf.statement view. If the number of records in the view exceeds the preset size \(depending on GUC:instr\_unique\_sql\_count\), related indicators may not be collected.
+-   Functions related to the statement\_history table and the details column in the view are in binary format. To parse the detailed information, use the  **pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\)**  function.
+-   The statement\_history table can be queried only in the postgres database. The data in other databases is empty.
+-   The content of the statement\_history table is controlled by track\_stmt\_stat\_level. The default value is  **'OFF,L0'**. The first part of the parameter indicates the full SQL statement, and the second part indicates the slow SQL statement. Slow SQL statements are recorded in the statement\_history table only when the SQL statement execution time exceeds the value of  **log\_min\_duration\_statement**.
 
 ## Dependencies<a name="section15876411599"></a>
 
-None
+None.
 

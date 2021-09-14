@@ -54,7 +54,7 @@
 </tr>
 <tr id="row12703164422712"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p54125431608"><a name="p54125431608"></a><a name="p54125431608"></a>CMK</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>Acronym for client master key.</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>Acronym for client master key in the full encryption scenario. </p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row512353139138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p564196939138"></a>CU</p>
@@ -97,6 +97,11 @@
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row510571039138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p419846599138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p419846599138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p419846599138"></a>DDL</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p453142129138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p453142129138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p453142129138"></a>Acronym for data definition language.</p>
+</td>
+</tr>
+<tr id="row413181665811"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1514171655813"><a name="p1514171655813"></a><a name="p1514171655813"></a>DEK</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1314416135814"><a name="p1314416135814"></a><a name="p1314416135814"></a>Acronym for data encryption key.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row51747249138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a>DML</p>
@@ -194,7 +199,7 @@
 </tr>
 <tr id="en-us_topic_0283139955_row57925184172335"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_p51564615172335"><a name="en-us_topic_0283139955_p51564615172335"></a><a name="en-us_topic_0283139955_p51564615172335"></a>FDW</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_p15984285172335"><a name="en-us_topic_0283139955_p15984285172335"></a><a name="en-us_topic_0283139955_p15984285172335"></a>Acronym for foreign data wrapper. It is an SQL interface provided by Postgres. It is used to access big data objects stored in remote data so that DBAs can integrate data from unrelated data sources and store them in public schema in the database.</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_p15984285172335"><a name="en-us_topic_0283139955_p15984285172335"></a><a name="en-us_topic_0283139955_p15984285172335"></a>Acronym for foreign data wrapper. It is an SQL interface provided by openGauss. It is used to access big data objects stored in remote data so that DBAs can integrate data from unrelated data sources and store them in public schema in the database.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row592051909138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p308910819138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p308910819138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p308910819138"></a>freeze</p>
@@ -239,6 +244,11 @@
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row265201679138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p6498799138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p6498799138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p6498799138"></a>HBA</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p526402119138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p526402119138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p526402119138"></a>Acronym for host-based authentication which allows hosts to authenticate on behalf of all or some of that particular host's users. Those accounts can be all of the accounts on a system or a subset designated by the <strong id="b242511811378"><a name="b242511811378"></a><a name="b242511811378"></a>Match</strong> directive. This type of authentication can be useful for managing computing and other fairly homogenous pools of machines. In all, three files on the server and one file on the client must be modified to prepare for host-based authentication.</p>
+</td>
+</tr>
+<tr id="row1186012513118"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p386112511914"><a name="p386112511914"></a><a name="p386112511914"></a>IV</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p2086195116111"><a name="p2086195116111"></a><a name="p2086195116111"></a>Acronym for initialization vector. An IV is a block used for random encryption in many encryption modes. Therefore, different ciphertexts may be generated by using the same plaintext and key.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row315421169138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p47746279138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p47746279138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p47746279138"></a>server</p>
@@ -306,22 +316,22 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p3678119138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p3678119138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p3678119138"></a>In a relational database, a record corresponds to data in each row of a table.</p>
 </td>
 </tr>
-<tr id="row10997235125313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p149979357530"><a name="p149979357530"></a><a name="p149979357530"></a>KMC</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1799733517531"><a name="p1799733517531"></a><a name="p1799733517531"></a>Acronym for key management component.</p>
-</td>
-</tr>
-<tr id="row1528124255313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p2028184285319"><a name="p2028184285319"></a><a name="p2028184285319"></a>KMS</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1028113421537"><a name="p1028113421537"></a><a name="p1028113421537"></a>Acronym for key management service.</p>
-</td>
-</tr>
-<tr id="row8578144585310"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1757813455536"><a name="p1757813455536"></a><a name="p1757813455536"></a>KSF</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p357834575312"><a name="p357834575312"></a><a name="p357834575312"></a>Acronym for key store file.</p>
-</td>
-</tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row489675819138"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p69511029138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p69511029138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p69511029138"></a><strong id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_b625599259138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_b625599259138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_b625599259138"></a>K – O</strong></p>
+</td>
+</tr>
+<tr id="row5929175618595"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p159291556125920"><a name="p159291556125920"></a><a name="p159291556125920"></a>KMC</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1929856195917"><a name="p1929856195917"></a><a name="p1929856195917"></a>Acronym for key management component.</p>
+</td>
+</tr>
+<tr id="row105121150165917"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1551312509593"><a name="p1551312509593"></a><a name="p1551312509593"></a>KMS</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p85132050155911"><a name="p85132050155911"></a><a name="p85132050155911"></a>Acronym for key management service.</p>
+</td>
+</tr>
+<tr id="row20101114665913"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p91011546135912"><a name="p91011546135912"></a><a name="p91011546135912"></a>KSF</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1810244655913"><a name="p1810244655913"></a><a name="p1810244655913"></a>Acronym for key store file.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_row964115292217"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_p46418222210"><a name="en-us_topic_0283139955_p46418222210"></a><a name="en-us_topic_0283139955_p46418222210"></a>logical replication</p>
@@ -402,6 +412,11 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p127376069138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p127376069138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p127376069138"></a>Smallest memory unit for row storage in the relational object structure in <span id="text112036019126"><a name="text112036019126"></a><a name="text112036019126"></a>openGauss</span>. The default size of a page is 8 KB.</p>
 </td>
 </tr>
+<tr id="row144648010501"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p15465705509"><a name="p15465705509"></a><a name="p15465705509"></a>Paxos</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p54659025011"><a name="p54659025011"></a><a name="p54659025011"></a>Distributed consistency protocol.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row152170209138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p246191259138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p246191259138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p246191259138"></a>PostgreSQL</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p479920789138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p479920789138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p479920789138"></a>An open-source relational DBMS developed by volunteers all over the world. PostgreSQL is not controlled by any companies or individuals. Its source code can be used for free.</p>
@@ -461,6 +476,11 @@
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row22066799171746"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p57115730171746"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p57115730171746"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p57115730171746"></a>oversubscription ratio</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p56222025171746"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p56222025171746"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p56222025171746"></a>The ratio of downlink bandwidth to uplink bandwidth of a switch. A high oversubscription ratio indicates a highly oversubscribed traffic environment and severe packet loss.</p>
+</td>
+</tr>
+<tr id="row1093222711277"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p693382792711"><a name="p693382792711"></a><a name="p693382792711"></a>Table Access Method</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p4933132792716"><a name="p4933132792716"></a><a name="p4933132792716"></a>The table access method layer decouples the execution engine from the storage engine to implement the pluggable capability of the storage engine.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_row19359741202514"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_p15361134112257"><a name="en-us_topic_0283139955_p15361134112257"></a><a name="en-us_topic_0283139955_p15361134112257"></a>TCP</p>
@@ -556,6 +576,46 @@
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row49026769138"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p615724659138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p615724659138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p615724659138"></a><strong id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_b172812759138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_b172812759138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_b172812759138"></a>U – Z</strong></p>
 </td>
 </tr>
+<tr id="row649535141610"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1349635141610"><a name="p1349635141610"></a><a name="p1349635141610"></a>Ustore</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p94919350162"><a name="p94919350162"></a><a name="p94919350162"></a>Alias for the in-place update storage engine which solves the problems of space expansion and large tuples of the Append update storage engine. The design of efficient rollback segments is the basis of the in-place update storage engine.</p>
+</td>
+</tr>
+<tr id="row11884155614313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p888485653118"><a name="p888485653118"></a><a name="p888485653118"></a>Undo Record</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p48851256173120"><a name="p48851256173120"></a><a name="p48851256173120"></a>An undo record can be inserted, queried, and organized. It connects to the ustore through the northbound interface and connects to the buffer pool through the southbound interface.</p>
+</td>
+</tr>
+<tr id="row4701184713326"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p12701747143211"><a name="p12701747143211"></a><a name="p12701747143211"></a>Undo Space</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p170184713320"><a name="p170184713320"></a><a name="p170184713320"></a>Manages physical resources of undo records, including adding and deleting undo files.</p>
+</td>
+</tr>
+<tr id="row18589427163515"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p958932733510"><a name="p958932733510"></a><a name="p958932733510"></a>Undo Zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p155891327133518"><a name="p155891327133518"></a><a name="p155891327133518"></a>Be bound to service threads and manages the undo logical resources of each service thread.</p>
+</td>
+</tr>
+<tr id="row17137530173510"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p6137193014355"><a name="p6137193014355"></a><a name="p6137193014355"></a>TransactionSlot</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1913712305353"><a name="p1913712305353"></a><a name="p1913712305353"></a>Records undo records by transaction granularity for transaction rollback and undo record recycling.</p>
+</td>
+</tr>
+<tr id="row167815435310"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p6678175416534"><a name="p6678175416534"></a><a name="p6678175416534"></a>TIMECAPSULE</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p16678054175312"><a name="p16678054175312"></a><a name="p16678054175312"></a>Flashback keyword. After the flashback technology is used, it takes only seconds to restore the submitted data before the database is modified. The restoration time is irrelevant to the database size.</p>
+</td>
+</tr>
+<tr id="row1990314055918"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p129037075917"><a name="p129037075917"></a><a name="p129037075917"></a>RECYCLE BIN</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p119031507592"><a name="p119031507592"></a><a name="p119031507592"></a>After the recycle bin function is enabled, DROP TABLE can move a table and its sub-objects to the recycle bin.</p>
+</td>
+</tr>
+<tr id="row098461435815"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1598515143586"><a name="p1598515143586"></a><a name="p1598515143586"></a>PURGE</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p13985191415581"><a name="p13985191415581"></a><a name="p13985191415581"></a>Clears objects in the recycle bin.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row213137509138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p486922049138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p486922049138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p486922049138"></a>VACUUM</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p517544589138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p517544589138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p517544589138"></a>A thread that is periodically started by a database to remove junk tuples. Multiple <strong id="b10337142244618"><a name="b10337142244618"></a><a name="b10337142244618"></a>VACUUM</strong> threads can be started concurrently by setting a parameter.</p>
@@ -628,7 +688,7 @@
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row21207509138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p375630949138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p375630949138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p375630949138"></a>atomicity</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p227117589138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p227117589138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p227117589138"></a>One of the ACID properties of a database transaction. A transaction is comprised of an indivisible unit of work. Operations performed in a transaction must be all finished or have not been performed. If an error occurs during transaction execution, the transaction is rolled back to the state when it was not performed.</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p227117589138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p227117589138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p227117589138"></a>One of the ACID properties of a database transaction. A transaction is composed of an indivisible unit of work. Operations performed in a transaction must be all finished or have not been performed. If an error occurs during transaction execution, the transaction is rolled back to the state when it was not performed.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row30792319138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p480911879138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p480911879138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p480911879138"></a>dirty page</p>

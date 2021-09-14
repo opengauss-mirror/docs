@@ -1,4 +1,4 @@
-# SMP for Parallel Execution<a name="EN-US_TOPIC_0000001091439892"></a>
+# SMP for Parallel Execution<a name="EN-US_TOPIC_0000001105395260"></a>
 
 ## Availability<a name="section3480125215575"></a>
 
@@ -18,10 +18,14 @@ In complex query scenarios, a single query takes long time and the system concur
 
 ## Enhancements<a name="section21149265913"></a>
 
-None
+None.
 
 ## Constraints<a name="section51513617597"></a>
 
+-   Index scanning cannot be executed in parallel.
+-   MergeJoin cannot be executed in parallel.
+-   WindowAgg order by cannot be executed in parallel.
+-   The cursor cannot be executed in parallel.
 -   Queries in stored procedures and functions cannot be executed in parallel.
 -   Subplans and initplans cannot be queried in parallel, and operators that contain subqueries cannot be executed in parallel, either.
 -   Query statements that contain the median operation cannot be executed in parallel.
@@ -30,5 +34,5 @@ None
 
 ## Dependencies<a name="section20491151513592"></a>
 
-None
+None.
 
