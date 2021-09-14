@@ -297,5 +297,5 @@ For details about common issues that occur while Extension Connector interconnec
 
 ## Related Links<a name="section67639236412"></a>
 
-[CREATE DATA SOURCE](en-us_topic_0289900178.md); "Server Tools \> gs\_om" in the  _Tool Reference_
+[CREATE DATA SOURCE](create-data-source.md); "Server Tools \> gs\_om" in the  _Tool Reference_
 

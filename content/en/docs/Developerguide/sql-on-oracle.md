@@ -324,7 +324,7 @@ SQL on Oracle uses the standard unixODBC-2.3.6 and Oracle ODBC-12.2 to connect t
 
 
     -   If a secure connection is not required, add the following content \(Omit the number sign \[\#\] and the content following it.\): 
-
+    
         ```
         [oracle]                                # DSN
         Driver=Oracle ODBC driver               #Oracle ODBC name
@@ -332,7 +332,7 @@ SQL on Oracle uses the standard unixODBC-2.3.6 and Oracle ODBC-12.2 to connect t
         Database=orcl                          #Name of the Oracle instance to be connected
         Port=XXXX                               #Oracle port number
         ```
-
+    
         When you create a data source, the value of  **dsn**  is  **oracle**  defined in the  **DNS.ini**  file.
 
 
@@ -435,7 +435,7 @@ SQL on Oracle uses the standard unixODBC-2.3.6 and Oracle ODBC-12.2 to connect t
 
     Perform the following steps:
 
-    1.  Perform the steps in  [Connecting to a Database](en-us_topic_0289900104.md).
+    1.  Perform the steps in  [Connecting to a Database](connecting-to-a-database-1.md).
     2.  Create a data source.
 
         ```
@@ -614,5 +614,5 @@ For details about common issues that occur while Extension Connector interconnec
 
 ## Related Links<a name="section187221926368"></a>
 
-[CREATE DATA SOURCE](en-us_topic_0289900178.md),  [SQL on Spark](sql-on-spark.md),  [SQL on openGauss](sql-on-opengauss.md), and "Server Tools \> gs\_om" in the  _Tool Reference_.
+[CREATE DATA SOURCE](create-data-source.md),  [SQL on Spark](sql-on-spark.md),  [SQL on openGauss](sql-on-opengauss.md), and "Server Tools \> gs\_om" in the  _Tool Reference_.
 
