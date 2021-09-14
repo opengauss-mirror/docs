@@ -73,7 +73,7 @@ GS\_WLM\_CGROUP\_INFO视图显示当前执行作业的控制组的信息。
 </td>
 <td class="cellrowborder" valign="top" width="23.11%" headers="mcps1.2.4.1.2 "><p id="p1395014272450"><a name="p1395014272450"></a><a name="p1395014272450"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.8%" headers="mcps1.2.4.1.3 "><p id="p18950327124517"><a name="p18950327124517"></a><a name="p18950327124517"></a>逻辑集群名称。</p>
+<td class="cellrowborder" valign="top" width="50.8%" headers="mcps1.2.4.1.3 "><p id="p18950327124517"><a name="p18950327124517"></a><a name="p18950327124517"></a>逻辑数据库实例名称。</p>
 </td>
 </tr>
 </tbody>

@@ -67,6 +67,7 @@ PG\_COMM\_SEND\_STREAM视图展示单个DN上所有的通信库发送流状态�
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059779141_a3ee979c5ac274b2e80bd57b286cc2ce3"><a name="zh-cn_topic_0059779141_a3ee979c5ac274b2e80bd57b286cc2ce3"></a><a name="zh-cn_topic_0059779141_a3ee979c5ac274b2e80bd57b286cc2ce3"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059779141_a24c291507dea480c80264d0e15a0b928"><a name="zh-cn_topic_0059779141_a24c291507dea480c80264d0e15a0b928"></a><a name="zh-cn_topic_0059779141_a24c291507dea480c80264d0e15a0b928"></a>通信流当前的状态。</p>
+<a name="ul1326154815220"></a><a name="ul1326154815220"></a><ul id="ul1326154815220"><li>UNKNOWN：表示当前逻辑连接状态未知。</li><li>READY：表示逻辑连接已就绪。</li><li>RUN：表示逻辑连接发送报文正常。</li><li>HOLD：表示逻辑连接发送报文等待中。</li><li>CLOSED：表示关闭逻辑连接。</li><li>TO_CLOSED：表示将会关闭逻辑连接。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0059779141_r6d7ed552745b4444850bbb6b489017a4"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059779141_a47333f97cd5c4ad98d04393c9ae5e194"><a name="zh-cn_topic_0059779141_a47333f97cd5c4ad98d04393c9ae5e194"></a><a name="zh-cn_topic_0059779141_a47333f97cd5c4ad98d04393c9ae5e194"></a>query_id</p>

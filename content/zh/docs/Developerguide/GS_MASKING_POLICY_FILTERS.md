@@ -13,7 +13,14 @@ GS\_MASKING\_POLICY\_FILTERS系统表记录动态数据脱敏策略对应的用�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p981501874519"><a name="p981501874519"></a><a name="p981501874519"></a>filtertype</p>
+<tbody><tr id="row85081037151512"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p9509737181518"><a name="p9509737181518"></a><a name="p9509737181518"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p65097376152"><a name="p65097376152"></a><a name="p65097376152"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p85092379156"><a name="p85092379156"></a><a name="p85092379156"></a>行标识符（隐藏属性，必须明确选择）。</p>
+</td>
+</tr>
+<tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p981501874519"><a name="p981501874519"></a><a name="p981501874519"></a>filtertype</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p1187332611532"><a name="p1187332611532"></a><a name="p1187332611532"></a>name</p>
 </td>
@@ -31,7 +38,7 @@ GS\_MASKING\_POLICY\_FILTERS系统表记录动态数据脱敏策略对应的用�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p2251185683420"><a name="p2251185683420"></a><a name="p2251185683420"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p725145693419"><a name="p725145693419"></a><a name="p725145693419"></a>该条用户过滤条件所属的脱敏策略oid。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p725145693419"><a name="p725145693419"></a><a name="p725145693419"></a>该条用户过滤条件所属的脱敏策略oid，对应<a href="GS_MASKING_POLICY.md">GS_MASKING_POLICY</a>中的oid。</p>
 </td>
 </tr>
 <tr id="row9460154275216"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p539014288543"><a name="p539014288543"></a><a name="p539014288543"></a>modifydate</p>

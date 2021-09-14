@@ -25,6 +25,7 @@ GS\_AUDITING视图显示对数据库相关操作的所有审计信息。需要�
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a0b778f8c6817439484fd5f0cb1d91e8b"><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>审计策略类型，值为‘access’或者‘privilege’。</p>
+<a name="ul9534444204311"></a><a name="ul9534444204311"></a><ul id="ul9534444204311"><li>access：表示审计DML操作。</li><li>privilege：表示审计DDL操作。</li></ul>
 </td>
 </tr>
 <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p106232332384"><a name="p106232332384"></a><a name="p106232332384"></a>polenabled</p>
@@ -32,6 +33,7 @@ GS\_AUDITING视图显示对数据库相关操作的所有审计信息。需要�
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="abe1aa36777e444c48c10c68dea6d28bd"><a name="abe1aa36777e444c48c10c68dea6d28bd"></a><a name="abe1aa36777e444c48c10c68dea6d28bd"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>用来表示策略启动开关。</p>
+<a name="ul21561963304"></a><a name="ul21561963304"></a><ul id="ul21561963304"><li>t（true）：表示启动。</li><li>f（false）：表示不启动。</li></ul>
 </td>
 </tr>
 <tr id="ra3bccb8528cd408aa54f8e30557c0359"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p13227139193819"><a name="p13227139193819"></a><a name="p13227139193819"></a>access_type</p>

@@ -1,6 +1,6 @@
 # GS\_WLM\_EC\_OPERATOR\_INFO<a name="ZH-CN_TOPIC_0289900046"></a>
 
-GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作业结束后的算子相关的记录。当设置GUC参数[enable\_resource\_record](负载管理.md#enable-resource-record-a-name-zh-cn-topic-0283137479-zh-cn-topic-0237124729-zh-cn-topic-0059777791-s77bd1023b63c4cd489760aa33f08d1ea-a)为on时，系统会每3分钟将GS\_WLM\_EC\_OPERATOR\_HISTORY中的记录导入此系统表，开启此功能会占用系统存储空间并对性能有一定影响。查询该系统表需要sysadmin权限。
+GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作业结束后的算子相关的记录。当设置GUC参数[enable\_resource\_record](zh-cn_topic_0289900033.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)为on时，系统会每3分钟将GS\_WLM\_EC\_OPERATOR\_HISTORY中的记录导入此系统表，开启此功能会占用系统存储空间并对性能有一定影响。查询该系统表需要sysadmin权限。
 
 **表 1**  GS\_WLM\_EC\_OPERATOR\_INFO的字段
 
@@ -59,7 +59,7 @@ GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作�
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p1751916147515"><a name="zh-cn_topic_0111176227_p1751916147515"></a><a name="zh-cn_topic_0111176227_p1751916147515"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p85191314135116"><a name="zh-cn_topic_0111176227_p85191314135116"></a><a name="zh-cn_topic_0111176227_p85191314135116"></a>EC算子在所有DN上的最大内存峰值（MB）。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p85191314135116"><a name="zh-cn_topic_0111176227_p85191314135116"></a><a name="zh-cn_topic_0111176227_p85191314135116"></a>EC算子在所有DN上的最大内存峰值（MB)。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row165191314175116"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p1252010141514"><a name="zh-cn_topic_0111176227_p1252010141514"></a><a name="zh-cn_topic_0111176227_p1252010141514"></a>average_peak_memory</p>
@@ -94,14 +94,14 @@ GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作�
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p78491180263"><a name="p78491180263"></a><a name="p78491180263"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p1452031415113"><a name="zh-cn_topic_0111176227_p1452031415113"></a><a name="zh-cn_topic_0111176227_p1452031415113"></a>EC作业访问远端集群的USERNAME（远端集群为SPARK类型时该值为空）。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p1452031415113"><a name="zh-cn_topic_0111176227_p1452031415113"></a><a name="zh-cn_topic_0111176227_p1452031415113"></a>EC作业访问远端数据库实例的USERNAME（远端数据库实例为SPARK类型时该值为空）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row1752017141518"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p12520111475115"><a name="zh-cn_topic_0111176227_p12520111475115"></a><a name="zh-cn_topic_0111176227_p12520111475115"></a>ec_query</p>
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p189871974265"><a name="p189871974265"></a><a name="p189871974265"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p3520111414515"><a name="zh-cn_topic_0111176227_p3520111414515"></a><a name="zh-cn_topic_0111176227_p3520111414515"></a>EC作业发送给远端集群执行的语句。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p3520111414515"><a name="zh-cn_topic_0111176227_p3520111414515"></a><a name="zh-cn_topic_0111176227_p3520111414515"></a>EC作业发送给远端数据库实例执行的语句。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row752012145514"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p6520181475113"><a name="zh-cn_topic_0111176227_p6520181475113"></a><a name="zh-cn_topic_0111176227_p6520181475113"></a>ec_libodbc_type</p>

@@ -81,6 +81,7 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"><a name="zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"></a><a name="zh-cn_topic_0059777772_a513caba4231542fa96109bca59c1173e"></a><span id="text14936183112816"><a name="text14936183112816"></a><a name="text14936183112816"></a>Boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"><a name="zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"></a><a name="zh-cn_topic_0059777772_abfc7418ffd15461f99d94cf94b483cb4"></a>函数是聚集函数。</p>
+<a name="ul1867245610132"></a><a name="ul1867245610132"></a><ul id="ul1867245610132"><li>t（true）：表示是。</li><li>f（false）：表示不是。</li></ul>
 </td>
 </tr>
 <tr id="row767701013588"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777772_a19c069d3dbb74c5594ef687c31ed327c"><a name="zh-cn_topic_0059777772_a19c069d3dbb74c5594ef687c31ed327c"></a><a name="zh-cn_topic_0059777772_a19c069d3dbb74c5594ef687c31ed327c"></a>proiswindow</p>
@@ -88,14 +89,7 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777772_a189c23ec67e4414395af97bfa913a4c6"><a name="zh-cn_topic_0059777772_a189c23ec67e4414395af97bfa913a4c6"></a><a name="zh-cn_topic_0059777772_a189c23ec67e4414395af97bfa913a4c6"></a><span id="text1561585132817"><a name="text1561585132817"></a><a name="text1561585132817"></a>Boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777772_aea5822047a5a443f9bf2ebba64c37804"><a name="zh-cn_topic_0059777772_aea5822047a5a443f9bf2ebba64c37804"></a><a name="zh-cn_topic_0059777772_aea5822047a5a443f9bf2ebba64c37804"></a>函数是窗口函数。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0283136964_row1788815012717"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136964_p118901407273"><a name="zh-cn_topic_0283136964_p118901407273"></a><a name="zh-cn_topic_0283136964_p118901407273"></a>prokind</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136964_p10890110172710"><a name="zh-cn_topic_0283136964_p10890110172710"></a><a name="zh-cn_topic_0283136964_p10890110172710"></a>"char"</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136964_p260914309271"><a name="zh-cn_topic_0283136964_p260914309271"></a><a name="zh-cn_topic_0283136964_p260914309271"></a>函数类型。</p>
-<a name="zh-cn_topic_0283136964_ul20410343172718"></a><a name="zh-cn_topic_0283136964_ul20410343172718"></a><ul id="zh-cn_topic_0283136964_ul20410343172718"><li>'f'代表普通函数。</li><li>'p'代表存储过程。</li><li>'a'代表聚集函数。</li><li>'w'代表窗口函数。</li></ul>
+<a name="ul137961429272"></a><a name="ul137961429272"></a><ul id="ul137961429272"><li>t（true）：表示是。</li><li>f（false）：表示不是。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_r86d27248134d4094a93856ead3ec3b11"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2887ec1245484caa9ed70fcbb251d63f"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2887ec1245484caa9ed70fcbb251d63f"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2887ec1245484caa9ed70fcbb251d63f"></a>prosecdef</p>
@@ -103,6 +97,7 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a592c679153924bd6af313f466e342b57"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a592c679153924bd6af313f466e342b57"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a592c679153924bd6af313f466e342b57"></a><span id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text183551964288"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text183551964288"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text183551964288"></a>Boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a12cbd29f096c414490757d4a78a4c9df"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a12cbd29f096c414490757d4a78a4c9df"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a12cbd29f096c414490757d4a78a4c9df"></a>函数是一个安全定义器（也就是一个“setuid”函数）。</p>
+<a name="ul81713301095"></a><a name="ul81713301095"></a><ul id="ul81713301095"><li>t（true）：表示是。</li><li>f（false）：表示不是。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_rd94a49f843924aa3ae07b455cd3dcffc"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2f02cf76c7c34f989ecbc27ffed5d42f"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2f02cf76c7c34f989ecbc27ffed5d42f"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a2f02cf76c7c34f989ecbc27ffed5d42f"></a>proleakproof</p>
@@ -110,6 +105,7 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_aeffa08270c2d431a988f1fd18cfe2d32"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_aeffa08270c2d431a988f1fd18cfe2d32"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_aeffa08270c2d431a988f1fd18cfe2d32"></a><span id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text77216719283"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text77216719283"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text77216719283"></a>Boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a98182d4f2f35481d89b076223217a7df"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a98182d4f2f35481d89b076223217a7df"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a98182d4f2f35481d89b076223217a7df"></a>函数没副作用。如果函数没有对参数进行防泄露处理，则会抛出错误。</p>
+<a name="ul19112743598"></a><a name="ul19112743598"></a><ul id="ul19112743598"><li>t（true）：表示没副作用。</li><li>f（false）：表示有副作用。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_r7f16697c044045d1a1d8c0fb461d8253"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_acce9e97f8097422585e5f28e3ad39521"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_acce9e97f8097422585e5f28e3ad39521"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_acce9e97f8097422585e5f28e3ad39521"></a>proisstrict</p>
@@ -130,7 +126,7 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a7d344268005c4e99a56160922432ab84"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a7d344268005c4e99a56160922432ab84"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a7d344268005c4e99a56160922432ab84"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a>告诉该函数的结果是否只依赖于它的输入参数，或者还会被外界因素影响。<a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><ul id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"><li>i：“不可变的”（immutable）函数，这样的函数对于相同的输入总是产生相同的结果。</li><li>s：“稳定的”（stable）函数它是s，（对于固定输入）其结果在一次扫描里不变。</li><li>v：“易变”（volatile）函数它是v，其结果可能在任何时候变化v也用于那些有副作用的函数，因此调用它们无法得到优化。</li></ul>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a09925a61815944f59aedc3000c25f3bc"></a>告诉该函数的结果是否只依赖于它的输入参数，或者还会被外界因素影响。<a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"></a><ul id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_u0d41dcc462b847f29bbc1dcc5df9d7a7"><li>i：“不可变的”（immutable）函数，这样的函数对于相同的输入总是产生相同的结果。</li><li>s：稳定的”（stable）函数它是s，（对于固定输入）其结果在一次扫描里不变。</li><li>v：“易变”（volatile）函数它是v，其结果可能在任何时候变化v也用于那些有副作用的函数，因此调用它们无法得到优化。</li></ul>
 </div>
 </td>
 </tr>
@@ -217,7 +213,7 @@ PG\_PROC系统表存储函数或过程的信息。
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ab3757371ada749eb92229073a281e2db"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ab3757371ada749eb92229073a281e2db"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ab3757371ada749eb92229073a281e2db"></a>aclitem[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a>访问权限。</p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_ac7b92dad8f6346ce9fa8520efecdd23e"></a>访问权限。具体请参见<a href="zh-cn_topic_0289900312.md">GRANT</a>和<a href="zh-cn_topic_0289900263.md">REVOKE</a>。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_r2ed4f1dc24834437847084bd08f19028"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a9bdb37d4499c4b4eb47a13e66d0ddec6"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a9bdb37d4499c4b4eb47a13e66d0ddec6"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_zh-cn_topic_0059777772_a9bdb37d4499c4b4eb47a13e66d0ddec6"></a>prodefaultargpos</p>
@@ -248,30 +244,52 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p17209185853314"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p17209185853314"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p17209185853314"></a><span id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text14295151415286"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text14295151415286"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_text14295151415286"></a>Boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p1552619614416"><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p1552619614416"></a><a name="zh-cn_topic_0283136964_zh-cn_topic_0237122308_p1552619614416"></a>表示该函数是否支持重载，默认值是false。</p>
+<a name="ul3376181815149"></a><a name="ul3376181815149"></a><ul id="ul3376181815149"><li>t（true）：表示支持。</li><li>f（false）：表示不支持。</li></ul>
 </td>
 </tr>
-    <tr id="row2763955123418"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p14764165515348"><a name="p14764165515348"></a><a name="p14764165515348"></a>proargsrc</p>
+<tr id="row15108133551919"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p181094351191"><a name="p181094351191"></a><a name="p181094351191"></a>prokind</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p3109173511910"><a name="p3109173511910"></a><a name="p3109173511910"></a>"char"</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p61095352195"><a name="p61095352195"></a><a name="p61095352195"></a>表示该对象为函数还是存储过程：</p>
+<a name="ul137311211520"></a><a name="ul137311211520"></a><ul id="ul137311211520"><li>值为'f'表示该对象为函数。</li><li>值为'p'表示该对象为存储过程。</li></ul>
+</td>
+</tr>
+<tr id="row2763955123418"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p14764165515348"><a name="p14764165515348"></a><a name="p14764165515348"></a>proargsrc</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p276455543413"><a name="p276455543413"></a><a name="p276455543413"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p5764115523412"><a name="p5764115523412"></a><a name="p5764115523412"></a>描述兼容oracle语法定义的函数或存储过程的参数输入字符串，包括参数注释。默认值为NULL。</p>
 </td>
 </tr>
-<tr id="row1189834720161"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p108999475167"><a name="p108999475167"></a><a name="p108999475167"></a><span id="ph182961619171"><a name="ph182961619171"></a><a name="ph182961619171"></a>proisprivate</span></p>
+<tr id="row1189834720161"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p108999475167"><a name="p108999475167"></a><a name="p108999475167"></a>proisprivate</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p17899747201612"><a name="p17899747201612"></a><a name="p17899747201612"></a><span id="ph13383321151718"><a name="ph13383321151718"></a><a name="ph13383321151718"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p17899747201612"><a name="p17899747201612"></a><a name="p17899747201612"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p17899134717162"><a name="p17899134717162"></a><a name="p17899134717162"></a><span id="ph655394318175"><a name="ph655394318175"></a><a name="ph655394318175"></a>描述函数是否是PACKAGE内的私有函数，默认为false。</span></p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p17899134717162"><a name="p17899134717162"></a><a name="p17899134717162"></a>描述函数是否是PACKAGE内的私有函数，默认为false。</p>
 </td>
 </tr>
-<tr id="row10661757181718"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p566115718178"><a name="p566115718178"></a><a name="p566115718178"></a><span id="ph173128015181"><a name="ph173128015181"></a><a name="ph173128015181"></a>propackageid</span></p>
+<tr id="row10661757181718"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p566115718178"><a name="p566115718178"></a><a name="p566115718178"></a>propackageid</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p9661195719177"><a name="p9661195719177"></a><a name="p9661195719177"></a><span id="ph1414216511817"><a name="ph1414216511817"></a><a name="ph1414216511817"></a>oid</span></p>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p9661195719177"><a name="p9661195719177"></a><a name="p9661195719177"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p566145712172"><a name="p566145712172"></a><a name="p566145712172"></a><span id="ph16491010131810"><a name="ph16491010131810"></a><a name="ph16491010131810"></a>函数所属的package oid，如果不在package内，则为0。</span></p>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p566145712172"><a name="p566145712172"></a><a name="p566145712172"></a>函数所属的package oid，如果不在package内，则为0。</p>
+</td>
+</tr>
+<tr id="row4481314104414"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p848213148443"><a name="p848213148443"></a><a name="p848213148443"></a>proargtypesext</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p1448213147444"><a name="p1448213147444"></a><a name="p1448213147444"></a>oidvector_extend</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p8482171494413"><a name="p8482171494413"></a><a name="p8482171494413"></a>当函数参数较多时，用来存放函数参数的数据类型的数组。数组里只包括输入参数（包括INOUT参数）此代表该函数的调用签名（接口）。</p>
+</td>
+</tr>
+<tr id="row456511144810"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p125751114810"><a name="p125751114810"></a><a name="p125751114810"></a>prodefaultargposext</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p15720112486"><a name="p15720112486"></a><a name="p15720112486"></a>int2vector_extend</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p55741111480"><a name="p55741111480"></a><a name="p55741111480"></a>当函数参数较多时，函数具有默认值的入参的位置。</p>
 </td>
 </tr>
 </tbody>
 </table>
-
 
