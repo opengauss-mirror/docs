@@ -369,6 +369,8 @@ postgres=# DROP TABLE b;
 postgres=# DROP USER tmp_usr;
 ```
 
+
+
 ## Troubleshooting<a name="section884931314334"></a>
 
 For details about common issues that occur while Extension Connector interconnects with openGauss, see  [Table 2](#en-us_topic_0085032368_table1097865225410).

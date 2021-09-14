@@ -16,7 +16,7 @@
 
 ## 配置数据库名称及各项目录
 
-在script/gspylib/etc/conf/cluster\_config\_template.xml获取XML文件模板。加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
+在script/gspylib/etc/conf/cluster\_config\_template.xml获取XML文件模板。以下配置内容为示例，可自行替换。每行信息均有注释进行说明。
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

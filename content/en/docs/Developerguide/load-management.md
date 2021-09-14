@@ -146,7 +146,7 @@ If the value is greater than  **0**, user historical resource monitoring data is
 
 ## enable\_instance\_metric\_persistent<a name="en-us_topic_0283137479_en-us_topic_0237124729_section18113133910385"></a>
 
-**Parameter description**: Specifies whether the instance resource monitoring dumping function is enabled. When this function is enabled, the instance monitoring data is saved to the system catalog  [GS\_WLM\_INSTANCE\_HISTORY](en-us_topic_0283136549.md).
+**Parameter description**: Specifies whether the instance resource monitoring dumping function is enabled. When this function is enabled, the instance monitoring data is saved to the system catalog  [GS\_WLM\_INSTANCE\_HISTORY](gs_wlm_instance_history.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

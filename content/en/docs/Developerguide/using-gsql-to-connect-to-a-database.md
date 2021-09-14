@@ -116,7 +116,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
     **postgres**  is the name of the database,  **10.10.0.11**  is the IP address of the server where the primary node of the database resides,  **jack**  is the user of the database,  **8000**  is the port number of the CN, and  **Test@123**  is the password of user  **jack**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If a machine connected to openGauss is not in the same network segment as openGauss, the IP address specified by  **-h**  should be the value of  **coo.cooListenIp2**  \(application access IP address\) set in Manager.
+    >-   If a machine connected to openGauss is not in the same network segment as openGauss, the IP address specified by  **-h**  should be the value of  **coo.cooListenIp2**  \(application access IP address\) set in Manager.  
     >-   Do not remotely connect to the database as user  **omm**.
 
 
