@@ -13,7 +13,14 @@ PG\_SYNONYM系统表存储同义词对象名与其他数据库对象名间的映
 </th>
 </tr>
 </thead>
-<tbody><tr id="row97906591330"><td class="cellrowborder" valign="top" width="23.472347234723472%" headers="mcps1.2.4.1.1 "><p id="p1790185918337"><a name="p1790185918337"></a><a name="p1790185918337"></a>synname</p>
+<tbody><tr id="row8305185610447"><td class="cellrowborder" valign="top" width="23.472347234723472%" headers="mcps1.2.4.1.1 "><p id="p4306175610448"><a name="p4306175610448"></a><a name="p4306175610448"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.85178517851785%" headers="mcps1.2.4.1.2 "><p id="p11306165616441"><a name="p11306165616441"></a><a name="p11306165616441"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.67586758675868%" headers="mcps1.2.4.1.3 "><p id="p03067561448"><a name="p03067561448"></a><a name="p03067561448"></a>数据库对象id。</p>
+</td>
+</tr>
+<tr id="row97906591330"><td class="cellrowborder" valign="top" width="23.472347234723472%" headers="mcps1.2.4.1.1 "><p id="p1790185918337"><a name="p1790185918337"></a><a name="p1790185918337"></a>synname</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.85178517851785%" headers="mcps1.2.4.1.2 "><p id="p18790175953317"><a name="p18790175953317"></a><a name="p18790175953317"></a>name</p>
 </td>

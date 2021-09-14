@@ -13,7 +13,14 @@ GS\_AUDITING\_POLICY\_PRIVILEGES系统表记录统一审计DDL数据库相关操
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p1236651611535"><a name="p1236651611535"></a><a name="p1236651611535"></a>privilegetype</p>
+<tbody><tr id="row867698171519"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p6676168191513"><a name="p6676168191513"></a><a name="p6676168191513"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p167608181518"><a name="p167608181518"></a><a name="p167608181518"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p1267715819157"><a name="p1267715819157"></a><a name="p1267715819157"></a>行标识符（隐藏属性，必须明确选择）。</p>
+</td>
+</tr>
+<tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p1236651611535"><a name="p1236651611535"></a><a name="p1236651611535"></a>privilegetype</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p1187332611532"><a name="p1187332611532"></a><a name="p1187332611532"></a>name</p>
 </td>

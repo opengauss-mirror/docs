@@ -15,7 +15,14 @@ FQDN（Fully Qualified Domain Name）标识了数据库资源所属的绝对路�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p497463145916"><a name="p497463145916"></a><a name="p497463145916"></a>labelname</p>
+<tbody><tr id="row1637335161513"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p237315516153"><a name="p237315516153"></a><a name="p237315516153"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p163731551191515"><a name="p163731551191515"></a><a name="p163731551191515"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p17373105191516"><a name="p17373105191516"></a><a name="p17373105191516"></a>行标识符（隐藏属性，必须明确选择）。</p>
+</td>
+</tr>
+<tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p497463145916"><a name="p497463145916"></a><a name="p497463145916"></a>labelname</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p1187332611532"><a name="p1187332611532"></a><a name="p1187332611532"></a>name</p>
 </td>
@@ -54,7 +61,7 @@ FQDN（Fully Qualified Domain Name）标识了数据库资源所属的绝对路�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p4288271597"><a name="p4288271597"></a><a name="p4288271597"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0281327145911"><a name="p0281327145911"></a><a name="p0281327145911"></a>被标识的数据库资源的类型。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0281327145911"><a name="p0281327145911"></a><a name="p0281327145911"></a>被标识的数据库资源的类型名称，例如：schema, table, column, view等。</p>
 </td>
 </tr>
 </tbody>

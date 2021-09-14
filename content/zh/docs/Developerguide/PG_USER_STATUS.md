@@ -1,6 +1,6 @@
 # PG\_USER\_STATUS<a name="ZH-CN_TOPIC_0289900511"></a>
 
-PG\_USER\_STATUS系统表提供了访问数据库用户的状态。需要有系统管理员权限才可以访问此系统表。
+PG\_USER\_STATUS系统表提供了访问数据库用户的状态。需要有系统管理员权限才可以访问此系统表
 
 **表 1**  PG\_USER\_STATUS字段
 
@@ -13,7 +13,14 @@ PG\_USER\_STATUS系统表提供了访问数据库用户的状态。需要有系�
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_r952b3514b68e44dfbdb604548a5b11f1"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"><a name="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a><a name="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a>roloid</p>
+<tbody><tr id="row8966338112711"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059778259_a5a31d0f121244e7f893efcd027fe3df1"><a name="zh-cn_topic_0059778259_a5a31d0f121244e7f893efcd027fe3df1"></a><a name="zh-cn_topic_0059778259_a5a31d0f121244e7f893efcd027fe3df1"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.07%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778259_a76e99ac8f3eb4810a5dec895a38ce0c3"><a name="zh-cn_topic_0059778259_a76e99ac8f3eb4810a5dec895a38ce0c3"></a><a name="zh-cn_topic_0059778259_a76e99ac8f3eb4810a5dec895a38ce0c3"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778259_a12ae5fa1dc394b27ab6eeaa7f74f7120"><a name="zh-cn_topic_0059778259_a12ae5fa1dc394b27ab6eeaa7f74f7120"></a><a name="zh-cn_topic_0059778259_a12ae5fa1dc394b27ab6eeaa7f74f7120"></a>行标识符（隐含字段，必须明确选择）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_r952b3514b68e44dfbdb604548a5b11f1"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"><a name="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a><a name="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a>roloid</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.07%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_ad5cbd42fa7a64543a7ca81042a3121d5"><a name="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_ad5cbd42fa7a64543a7ca81042a3121d5"></a><a name="zh-cn_topic_0283137679_zh-cn_topic_0237122329_zh-cn_topic_0059778886_ad5cbd42fa7a64543a7ca81042a3121d5"></a>oid</p>
 </td>

@@ -17,28 +17,28 @@ gs\_recyclebin描述了回收站对象的详细信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p3247837105214"><a name="p3247837105214"></a><a name="p3247837105214"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p11247143711529"><a name="p11247143711529"></a><a name="p11247143711529"></a>系统列。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p11247143711529"><a name="p11247143711529"></a><a name="p11247143711529"></a>系统列</p>
 </td>
 </tr>
 <tr id="row172471137155215"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p9248143785217"><a name="p9248143785217"></a><a name="p9248143785217"></a>rcybaseid</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p62481537205220"><a name="p62481537205220"></a><a name="p62481537205220"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p8248133710526"><a name="p8248133710526"></a><a name="p8248133710526"></a>基表对象id，引用gs_recyclebin.oid。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p8248133710526"><a name="p8248133710526"></a><a name="p8248133710526"></a>基表对象id，引用gs_recyclebin.oid</p>
 </td>
 </tr>
 <tr id="row20248193725219"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p32481037145214"><a name="p32481037145214"></a><a name="p32481037145214"></a>rcydbid</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p2024810376522"><a name="p2024810376522"></a><a name="p2024810376522"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p17248837195214"><a name="p17248837195214"></a><a name="p17248837195214"></a>当前对象所属数据库oid。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p17248837195214"><a name="p17248837195214"></a><a name="p17248837195214"></a>当前对象所属数据库oid</p>
 </td>
 </tr>
 <tr id="row1999202511419"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p1754716331041"><a name="p1754716331041"></a><a name="p1754716331041"></a>rcyrelid</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p15476331845"><a name="p15476331845"></a><a name="p15476331845"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p6548143310410"><a name="p6548143310410"></a><a name="p6548143310410"></a>当前对象oid。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p6548143310410"><a name="p6548143310410"></a><a name="p6548143310410"></a>当前对象oid</p>
 </td>
 </tr>
 <tr id="row92481137155216"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p152481437175210"><a name="p152481437175210"></a><a name="p152481437175210"></a>rcyname</p>
@@ -52,7 +52,7 @@ gs\_recyclebin描述了回收站对象的详细信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p1524853711521"><a name="p1524853711521"></a><a name="p1524853711521"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p19248337145218"><a name="p19248337145218"></a><a name="p19248337145218"></a>原始对象名称。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p19248337145218"><a name="p19248337145218"></a><a name="p19248337145218"></a>原始对象名称</p>
 </td>
 </tr>
 <tr id="row192483377521"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p162480379527"><a name="p162480379527"></a><a name="p162480379527"></a>rcyoperation</p>
@@ -75,28 +75,28 @@ gs\_recyclebin描述了回收站对象的详细信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p15249163715219"><a name="p15249163715219"></a><a name="p15249163715219"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p1249133714525"><a name="p1249133714525"></a><a name="p1249133714525"></a>对象drop、truncate时csn。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p1249133714525"><a name="p1249133714525"></a><a name="p1249133714525"></a>对象drop、truncate时csn</p>
 </td>
 </tr>
 <tr id="row202491937195219"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p1024933775212"><a name="p1024933775212"></a><a name="p1024933775212"></a>rcyrecycletime</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p132491137195213"><a name="p132491137195213"></a><a name="p132491137195213"></a>timestamptz</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p32491237135212"><a name="p32491237135212"></a><a name="p32491237135212"></a>对象drop、truncate时间。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p32491237135212"><a name="p32491237135212"></a><a name="p32491237135212"></a>对象drop、truncate时间</p>
 </td>
 </tr>
 <tr id="row1624915373526"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p9250737165218"><a name="p9250737165218"></a><a name="p9250737165218"></a>rcycreatecsn</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p1025015379526"><a name="p1025015379526"></a><a name="p1025015379526"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p1425043718525"><a name="p1425043718525"></a><a name="p1425043718525"></a>对象创建时csn。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p1425043718525"><a name="p1425043718525"></a><a name="p1425043718525"></a>对象创建时csn</p>
 </td>
 </tr>
 <tr id="row12250237155218"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p8250337115219"><a name="p8250337115219"></a><a name="p8250337115219"></a>rcychangecsn</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p6250337115210"><a name="p6250337115210"></a><a name="p6250337115210"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p1250173719522"><a name="p1250173719522"></a><a name="p1250173719522"></a>对象定义改变的csn。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p1250173719522"><a name="p1250173719522"></a><a name="p1250173719522"></a>对象定义改变的csn</p>
 </td>
 </tr>
 <tr id="row1725083755217"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p172501037105217"><a name="p172501037105217"></a><a name="p172501037105217"></a>rcynamespace</p>
@@ -145,14 +145,14 @@ gs\_recyclebin描述了回收站对象的详细信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p925113735219"><a name="p925113735219"></a><a name="p925113735219"></a>xid32</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p42511237175211"><a name="p42511237175211"></a><a name="p42511237175211"></a>该表中所有在这个之前的事务ID已经被一个固定的（“frozen”）事务ID替换。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p42511237175211"><a name="p42511237175211"></a><a name="p42511237175211"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。</p>
 </td>
 </tr>
 <tr id="row11251937175218"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p3251163755213"><a name="p3251163755213"></a><a name="p3251163755213"></a>rcyfrozenxid64</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p132519372521"><a name="p132519372521"></a><a name="p132519372521"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p5251103710528"><a name="p5251103710528"></a><a name="p5251103710528"></a>该表中所有在这个之前的事务ID已经被一个固定的（“frozen”）事务ID替换。</p>
+<td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p5251103710528"><a name="p5251103710528"></a><a name="p5251103710528"></a>该表中所有在这个之前的事务ID已经被一个固定的（"frozen"）事务ID替换。</p>
 </td>
 </tr>
 </tbody>

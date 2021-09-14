@@ -1,6 +1,6 @@
 # GS\_ENCRYPTED\_PROC<a name="ZH-CN_TOPIC_0000001151424329"></a>
 
-GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返回值的原始数据类型、加密列等信息。
+GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返回值的原始数据类型，加密列等信息。
 
 **表 1**  GS\_ENCRYPTED\_PROC字段
 
@@ -13,11 +13,18 @@ GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_row66864593507"><td class="cellrowborder" valign="top" width="25.39%" headers="mcps1.2.4.1.1 "><p id="p9623101016225"><a name="p9623101016225"></a><a name="p9623101016225"></a>func_id</p>
+<tbody><tr id="row2310135071013"><td class="cellrowborder" valign="top" width="25.39%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777617_aa0e331f0f9a646438d86f2220a18c777"><a name="zh-cn_topic_0059777617_aa0e331f0f9a646438d86f2220a18c777"></a><a name="zh-cn_topic_0059777617_aa0e331f0f9a646438d86f2220a18c777"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777617_ac5bb8f24ba914a4b98adf0ebbb782934"><a name="zh-cn_topic_0059777617_ac5bb8f24ba914a4b98adf0ebbb782934"></a><a name="zh-cn_topic_0059777617_ac5bb8f24ba914a4b98adf0ebbb782934"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777617_a78a98df2ddc64dd8982cc9b10ad05c4d"><a name="zh-cn_topic_0059777617_a78a98df2ddc64dd8982cc9b10ad05c4d"></a><a name="zh-cn_topic_0059777617_a78a98df2ddc64dd8982cc9b10ad05c4d"></a>行标识符（隐含字段）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_row66864593507"><td class="cellrowborder" valign="top" width="25.39%" headers="mcps1.2.4.1.1 "><p id="p9623101016225"><a name="p9623101016225"></a><a name="p9623101016225"></a>func_id</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.4.1.2 "><p id="p18954195702214"><a name="p18954195702214"></a><a name="p18954195702214"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a>function的oid，对<span id="ph9985051172211"><a name="ph9985051172211"></a><a name="ph9985051172211"></a>应</span>pg_proc系统表中的oid行标识符。</p>
+<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a>function的oid， 对应pg_proc系统表中的oid行标识符。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ra264416a2ea9459eb3b51dd35fd98150"><td class="cellrowborder" valign="top" width="25.39%" headers="mcps1.2.4.1.1 "><p id="p1482951512216"><a name="p1482951512216"></a><a name="p1482951512216"></a>prorettype_orig</p>
@@ -31,12 +38,12 @@ GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返
 </td>
 <td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.4.1.2 "><p id="p1998213508222"><a name="p1998213508222"></a><a name="p1998213508222"></a>oidvector</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ac73ffec88fff45eeb4d197fe709c1b20"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ac73ffec88fff45eeb4d197fe709c1b20"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ac73ffec88fff45eeb4d197fe709c1b20"></a>函数<span id="ph05891239151111"><a name="ph05891239151111"></a><a name="ph05891239151111"></a>INPUT</span>参数对应的加密列的oid<span id="ph39963540222"><a name="ph39963540222"></a><a name="ph39963540222"></a>，对应gs_encrypted_column</span><span id="ph18496134410377"><a name="ph18496134410377"></a><a name="ph18496134410377"></a>s系统表中的oid行标识符</span>。</p>
+<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ac73ffec88fff45eeb4d197fe709c1b20"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ac73ffec88fff45eeb4d197fe709c1b20"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ac73ffec88fff45eeb4d197fe709c1b20"></a>函数INPUT参数对应的加密列的oid，对应gs_encrypted_columns系统表中的oid行标识符。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_r2dd412e98d2e4c95b36e62b059427f02"><td class="cellrowborder" valign="top" width="25.39%" headers="mcps1.2.4.1.1 "><p id="p1835743418224"><a name="p1835743418224"></a><a name="p1835743418224"></a>proallargtypes_orig</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.4.1.2 "><p id="p87068446223"><a name="p87068446223"></a><a name="p87068446223"></a>oid[1]</p>
+<td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.4.1.2 "><p id="p87068446223"><a name="p87068446223"></a><a name="p87068446223"></a>oid[]</p>
 </td>
 <td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_a9af2d5896f2e46248cc7ec2cbd476743"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_a9af2d5896f2e46248cc7ec2cbd476743"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_a9af2d5896f2e46248cc7ec2cbd476743"></a>所有函数参数的原始数据类型。</p>
 </td>

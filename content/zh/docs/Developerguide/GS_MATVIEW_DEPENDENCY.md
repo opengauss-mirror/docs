@@ -1,6 +1,6 @@
-# GS\_MATVIEW\_DEPENDENCY<a name="ZH-CN_TOPIC_0000001133157237"></a>
+# GS\_MATVIEW\_DEPENDENCY<a name="ZH-CN_TOPIC_0000001133365251"></a>
 
-GS\_MATVIEW\_DEPENDENCY系统表提供了关于数据库中每一个物化视图的基表和mlog表的关联信息。
+GS\_MATVIEW\_DEPENDENCY系统表提供了关于数据库中每一个增量物化视图、基表和mlog表的关联信息。全量物化视图不存在与基表对应的mlog表，不会写入记录。
 
 **表 1**  GS\_MATVIEW\_DEPENDENCY字段
 
@@ -13,7 +13,14 @@ GS\_MATVIEW\_DEPENDENCY系统表提供了关于数据库中每一个物化视图
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_rf7c766cddff0407bb805393c013b902a"><td class="cellrowborder" valign="top" width="28.77%" headers="mcps1.2.4.1.1 "><p id="p250910823410"><a name="p250910823410"></a><a name="p250910823410"></a>matviewid</p>
+<tbody><tr id="row1165319364208"><td class="cellrowborder" valign="top" width="28.77%" headers="mcps1.2.4.1.1 "><p id="p138967052117"><a name="p138967052117"></a><a name="p138967052117"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.4.1.2 "><p id="p53581040101412"><a name="p53581040101412"></a><a name="p53581040101412"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.73%" headers="mcps1.2.4.1.3 "><p id="p43585408143"><a name="p43585408143"></a><a name="p43585408143"></a>行标识符（隐藏属性，必须明确选择）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_rf7c766cddff0407bb805393c013b902a"><td class="cellrowborder" valign="top" width="28.77%" headers="mcps1.2.4.1.1 "><p id="p250910823410"><a name="p250910823410"></a><a name="p250910823410"></a>matviewid</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"></a>oid</p>
 </td>
@@ -38,7 +45,7 @@ GS\_MATVIEW\_DEPENDENCY系统表提供了关于数据库中每一个物化视图
 </td>
 <td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_af714117bc9e440918302783fbe09bb44"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_af714117bc9e440918302783fbe09bb44"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_af714117bc9e440918302783fbe09bb44"></a>int4</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a54f43de71be1479ebba316242658c99e"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a54f43de71be1479ebba316242658c99e"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a54f43de71be1479ebba316242658c99e"></a>防止在mlog中被删除的元组被vacuum操作清理掉。</p>
+<td class="cellrowborder" valign="top" width="44.73%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a54f43de71be1479ebba316242658c99e"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a54f43de71be1479ebba316242658c99e"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a54f43de71be1479ebba316242658c99e"></a>保留字段。</p>
 </td>
 </tr>
 </tbody>
