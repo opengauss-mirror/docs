@@ -121,21 +121,23 @@ SQL on other openGauss目前仅支持以下数据类型：
 </tbody>
 </table>
 
+
+
 >![](public_sys-resources/icon-notice.gif) **须知：**  
 > 
 >-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
+>     
 >     ```
 >     select c2,length(c2) from exec_on_extension('libra','select * from a;') as (c1 int, c2 text);
->     ```
->
->-   对于openGauss返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果openGauss返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如openGauss返回类型VARCHAR\(10\)需要使用VARCHAR\(n\)（n\>=10）或TEXT来接收。
+>    ```
 > 
->-   当openGauss端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
-> 
+> -   对于openGauss返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果openGauss返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如openGauss返回类型VARCHAR\(10\)需要使用VARCHAR\(n\)（n\>=10）或TEXT来接收。
 >
->     返回的第二列就是字符串的字节数，而不是实际字符数。  
+> -   当openGauss端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。返回的第二列就是字符串的字节数，而不是实际字符数。  
 >
->-   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求远端数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
+> -   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求远端数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
+
+
 
 ## 使用前的对接配置<a name="section1179315795514"></a>
 
