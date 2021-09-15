@@ -179,32 +179,33 @@
   }
   ```
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
-  >默认配置文件内容如下：
-  >
-  >```
-  >{
-  >"Collect":
-  >[
-  >{"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"},
-  >{"TypeName": "Log", "Content" : "DataNode,ClusterManager", "Interval":"0", "Count":"1"},
-  >{"TypeName": "Database", "Content": "pg_locks,pg_stat_activity,pg_thread_wait_status","Interval":"0", "Count":"1"},
-  >{"TypeName": "Config", "Content": "DataNode", "Interval":"0", "Count":"1"}
-  >]
-  >}
-  >```
-  >
-  >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
-  >对于Log、CoreDump、Config和XLog四种类型，Interval和Count参数不生效。
+  ![](public_sys-resources/icon-note.gif) **说明：**
 
--   --keyword=KEYWORD
+   TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
+  对于Log、CoreDump、Config和XLog四种类型，Interval和Count参数不生效。
 
-    包含关键字KEYWORD的日志文件。
+  默认配置文件内容如下：
 
-    若关键字KEYWORD中含有空格，需要使用双引号包围。
+  ```
+  {
+  "Collect":
+  [
+  {"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"},
+  {"TypeName": "Log", "Content" : "DataNode,ClusterManager", "Interval":"0", "Count":"1"},
+  {"TypeName": "Database", "Content": "pg_locks,pg_stat_activity,pg_thread_wait_status","Interval":"0", "Count":"1"},
+  {"TypeName": "Config", "Content": "DataNode", "Interval":"0", "Count":"1"}
+  ]
+  }
+  ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >性能日志为二进制日志，关键字搜集功能不支持该日志的搜集。
+- --keyword=KEYWORD
+
+  包含关键字KEYWORD的日志文件。
+
+  若关键字KEYWORD中含有空格，需要使用双引号包围。
+
+  ![](public_sys-resources/icon-note.gif)  **说明：** 
+  性能日志为二进制日志，关键字搜集功能不支持该日志的搜集。
 
 -   --begin-time
 

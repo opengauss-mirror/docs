@@ -142,9 +142,12 @@ Dump parameters:
 
     Specifies that dumping data needs to be encrypted using AES128.
 
--   --with-key=KEY
+- --with-key=KEY
 
-    Specifies that the key length of AES128 must be 16 bytes.
+  Aes128 key length rules are as follows: 
+
+  - The key length is 8 ~ 16 characters. 
+  - At least three of the four types of characters are included: uppercase letters (A-Z), lowercase letters (A-Z), numbers (0-9), non alphanumeric characters (limited to ~! @ #$% ^ & * () - = + \ | [] {};:, <. > /?). 
 
 -   --include-alter-table
 

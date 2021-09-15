@@ -405,7 +405,10 @@ export PGDATABASE=postgres
 
 - --with-key=KEY
 
-  AES128密钥长度必须是16字节。
+  AES128密钥长度规则如下：
+
+  - 密钥长度为8~16字符。
+  - 至少包含大写字母（A-Z），小写字母（a-z）,数字（0-9），非字母数字字符（限定为~!@#$%^&*()-_=+\|[]{};:,<.>/?）四类字符中的三类字符。
 
   ![](public_sys-resources/icon-note.gif) **说明：**  
 

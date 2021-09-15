@@ -62,20 +62,21 @@ Currently, the default values of parameters in openGauss configuration files \(*
     gs_guc reload [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -c parameter=value
     ```
 
--   Modify a client authentication policy and send semaphore to  **pg\_hba.conf**.
+- Modify a client authentication policy and send semaphore to  **pg\_hba.conf**.
 
-    ```
-    gs_guc [ set | reload ]  [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options" 
-    ```
+  ```
+  gs_guc [ set | reload ]  [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD authentication-options" 
+  ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**authentication-options**  supports the following options:
-    >-   **trust**: no authentication. Remote hosts are not allowed to access openGauss in trust mode.
-    >-   **reject**: access denied.
-    >-   **md5**: MD5 authentication, which is not supported by default.
-    >-   **sha256**: SHA256 authentication \(recommended\).
-    >-   **cert**: client certificate authentication.
-    >-   **gss**: kerberos authentication.
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >**authentication-options**  supports the following options:
+  >-   **trust**: no authentication. Remote hosts are not allowed to access openGauss in trust mode.
+  >-   **reject**: access denied.
+  >-   **md5**: MD5 authentication, which is not supported by default.
+  >-   **sha256**: SHA256 authentication \(recommended\).
+  >-   **cert**: client certificate authentication.
+  >-   **gss**: kerberos authentication.
+  >-   **sm3**: SM3 certification (state secret SM3) 
 
 -   Comment out a configured client authentication policy and send semaphore to  **pg\_hba.conf**.
 

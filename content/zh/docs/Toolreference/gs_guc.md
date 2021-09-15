@@ -75,16 +75,12 @@ gs\_guc工具由操作系统用户omm执行。
     authentication-options支持以下选项：
 
     -   trust：不验密，禁止远程主机使用trust方式访问openGauss
-
-    -   reject：拒绝访问
-
+-   reject：拒绝访问
     -   md5：md5认证，默认不支持
-
-    -   sha256：sha256认证（推荐使用）
-
+-   sha256：sha256认证（推荐使用）
     -   cert：客户端证书认证
-
-    -   gss：kerberos认证
+-   gss：kerberos认证
+    -   sm3：sm3认证（国密SM3）
 
 -   注释已经设置的客户端认证策略， 同时发送信号量到pg\_hba.conf
 
