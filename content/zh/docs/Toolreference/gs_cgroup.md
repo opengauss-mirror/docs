@@ -10,281 +10,298 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
 ## 使用示例<a name="zh-cn_topic_0059777958_s9a5160c94e894511a98780d923399a96"></a>
 
--   使用普通用户或数据库管理员执行命令。
-    1. 前置条件：需设置GAUSSHOME环境变量为数据库安装目录；且root用户已创建普通用户默认的控制组。
-    
-    2.  创建控制组及设置对应的资源配额，以便在数据库中运行作业时，指定到此控制组，使用此控制组管理的资源；通常数据库管理员为每个数据库用户创建Class组。  
-        a.  创建Class控制组和Workload控制组。  
-    
-        ```
-        gs_cgroup -c -S class1 -s 40  
-        ```
-    
-         创建当前用户新的Class Cgroups命名为“class1”，资源配额为总Class的40%。
-    
-         ```
-         gs_cgroup -c -S class1 -G grp1 -g 20
-         ```
-    
-        创建当前用户新的class1 Cgroups下属的Workload控制组，命名为“grp1”，资源配额为class1 Cgroups的20%。  
-        
-         b.  删除grp1控制组和Class控制组。
-        
-        ```
-            gs_cgroup -d -S class1 -G grp1
-        ```
-        
-        ​	删除当前用户已建的“grp1”Cgroups。
-        
-        ```
-         gs_cgroup -d -S class1
-        ```
-        
-        
-        ​    删除当前用户已建的“class1”Cgroups。
-    
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >如果删除Class控制组，则Workload控制组也被删除。
+- 使用普通用户或数据库管理员执行命令。
 
-3.  更新已创建控制组的资源配额。  
-    a.  更新动态资源配额。
+  1.前置条件：需设置GAUSSHOME环境变量为数据库安装目录；且root用户已创建普通用户默认的控制组。
 
-        gs_cgroup -u -S class1 -G grp1 -g 30
-    
-    ​    更新当前用户的class1 Cgroups下属grp1 Cgroups资源配额为class1 Cgroups的30%。
+  2.创建控制组及设置对应的资源配额，以便在数据库中运行作业时，指定到此控制组，使用此控制组管理的资源；通常数据库管理员为每个数据库用户创建Class组。  
+  a.  创建Class控制组和Workload控制组。  
 
-    b.  更新限制资源配额。
+  ```
+  gs_cgroup -c -S class1 -s 40  
+  ```
 
-        gs_cgroup --fixed -u -S class1 -G grp1 -g 30
-    
-    
-    ​    更新当前用户的class1 Cgroups下属grp1 Cgroups限制使用CPU核数范围占上一级class1可用核数的30%。
-    
-4.  更新Gaussdb的CPU核数范围。
+   创建当前用户新的Class Cgroups命名为“class1”，资源配额为总Class的40%。
 
-    ```
-    gs_cgroup -u -T Gaussdb -f 0-20
-    ```
+  ```
+   gs_cgroup -c -S class1 -G grp1 -g 20
+  ```
 
-    更新Gaussdb进程使用的CPU核数为0-20。
+  创建当前用户新的class1 Cgroups下属的Workload控制组，命名为“grp1”，资源配额为class1 Cgroups的20%。  
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-f参数只适用于对Gaussdb设置核数范围。对于其他各控制组，如需设置核数范围，需要使用--fixed参数。
+   b.  删除grp1控制组和Class控制组。
 
-5.  设置异常处理信息（class:wg组需存在）。  
-    a.  设置组class:wg下的作业阻塞到1200秒或执行2400秒时执行终止动作：
+  ```
+      gs_cgroup -d -S class1 -G grp1
+  ```
 
-        gs_cgroup -S class -G wg -E "blocktime=1200,elapsedtime=2400" -a
-    
-    b.  设置组class:wg下的作业下盘数据量达到256MB或大表广播数据量达到100MB时执行终止动作：
+  ​	删除当前用户已建的“grp1”Cgroups。
 
-        gs_cgroup -S class -G wg -E "spillsize=256,broadcastsize=100" -a
+  ```
+   gs_cgroup -d -S class1
+  ```
 
-    c.  设置组Class下的作业在所有DN上CPU总时间到达100s时执行降级动作：
-    
-        gs_cgroup -S class -E "allcputime=100" --penalty
 
-    d.  设置组Class下的作业在所有DN上执行时间到达2400秒，倾斜率达到90时执行降级动作:
+  ​    删除当前用户已建的“class1”Cgroups。
 
-        gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
-    
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >给控制组设置异常处理信息，需要确保对应的控制组已经创建。指定多个阈值时用“，”分隔，不指定任何动作时默认为“penalty”操作。
-    
-6.  设置控制组使用的核数范围。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >如果删除Class控制组，则Workload控制组也被删除。
 
-    设置组class:wg的核数范围占Class控制组的20%
+3.更新已创建控制组的资源配额。  
+a.  更新动态资源配额。
 
-    ```
-    gs_cgroup -S class -G wg -g 20 --fixed -u
-    ```
+```
+gs_cgroup -u -S class1 -G grp1 -g 30
+```
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >Class或Workload核数范围必须通过指定--fixed参数设置。
+​    更新当前用户的class1 Cgroups下属grp1 Cgroups资源配额为class1 Cgroups的30%。
 
-7.  回退上一个步骤。
+b.  更新限制资源配额。
 
-    ```
-    gs_cgroup --recover
-    ```
+```
+gs_cgroup --fixed -u -S class1 -G grp1 -g 30
+```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >--recover只支持对Class控制组和Workload控制组的增删改操作进行回退，且只支持回退一次操作。
 
-8.  查看已创建的控制组信息。  
-    a.  查看配置文件中控制组信息。
+​    更新当前用户的class1 Cgroups下属grp1 Cgroups限制使用CPU核数范围占上一级class1可用核数的30%。
 
-        gs_cgroup -p 
-    
-    控制组配置信息
+4.更新Gaussdb的CPU核数范围。
 
-        gs_cgroup -p
-        
-        Top Group information is listed:
-        GID:   0 Type: Top    Percent(%): 1000( 50) Name: Root                  Cores: 0-47
-        GID:   1 Type: Top    Percent(%):  833( 83) Name: Gaussdb:omm           Cores: 0-20
-        GID:   2 Type: Top    Percent(%):  333( 40) Name: Backend               Cores: 0-20
-        GID:   3 Type: Top    Percent(%):  499( 60) Name: Class                 Cores: 0-20
-        
-        Backend Group information is listed:
-        GID:   4 Type: BAKWD  Name: DefaultBackend   TopGID:   2 Percent(%): 266(80) Cores: 0-20
-        GID:   5 Type: BAKWD  Name: Vacuum           TopGID:   2 Percent(%):  66(20) Cores: 0-20
-        
-        Class Group information is listed:
-        GID:  20 Type: CLASS  Name: DefaultClass     TopGID:   3 Percent(%): 166(20) MaxLevel: 1 RemPCT: 100 Cores: 0-20
-        GID:  21 Type: CLASS  Name: class1           TopGID:   3 Percent(%): 332(40) MaxLevel: 2 RemPCT:  70 Cores: 0-20
-        
-        Workload Group information is listed:
-        GID:  86 Type: DEFWD  Name: grp1:2           ClsGID:  21 Percent(%):  99(30) WDLevel:  2 Quota(%): 30 Cores: 0-5
-        
-        Timeshare Group information is listed:
-        GID: 724 Type: TSWD   Name: Low              Rate: 1
-        GID: 725 Type: TSWD   Name: Medium           Rate: 2
-        GID: 726 Type: TSWD   Name: High             Rate: 4
-        GID: 727 Type: TSWD   Name: Rush             Rate: 8
-        
-        Group Exception information is listed:
-        GID:  20 Type: EXCEPTION Class: DefaultClass
-        PENALTY: QualificationTime=1800 CPUSkewPercent=30
-        
-        GID:  21 Type: EXCEPTION Class: class1
-        PENALTY: AllCpuTime=100 QualificationTime=2400 CPUSkewPercent=90
-        
-        GID:  86 Type: EXCEPTION Group: class1:grp1:2
-        ABORT: BlockTime=1200 ElapsedTime=2400
-    
-     上述示例查看到的控制组配置信息如下表所示。
-    
-    **表 1**  控制组配置信息
+```
+gs_cgroup -u -T Gaussdb -f 0-20
+```
 
-    <table><thead align="left"><tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_raf32468133ec42a98fa0a24a84f6e542"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.6.1.1"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a>GID</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="13.900000000000002%" id="mcps1.2.6.1.2"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a>类型</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="15.61%" id="mcps1.2.6.1.3"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a>名称</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="31.55%" id="mcps1.2.6.1.4"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a>Percent（%）信息</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="26.52%" id="mcps1.2.6.1.5"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a>特定信息</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r40c9836246fc434cb849097be80f4238"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2917dc8c27254a51a345ee36e67a1720"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2917dc8c27254a51a345ee36e67a1720"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2917dc8c27254a51a345ee36e67a1720"></a>0</p>
-    </td>
-    <td class="cellrowborder" rowspan="4" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a06d02d08bbc2479ab2f65b40bd7b1aa2"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a06d02d08bbc2479ab2f65b40bd7b1aa2"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a06d02d08bbc2479ab2f65b40bd7b1aa2"></a>Top控制组</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5aa339132fd84fffb152ea53482ffcad"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5aa339132fd84fffb152ea53482ffcad"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5aa339132fd84fffb152ea53482ffcad"></a>Root</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a338af691b8b349658412db97f3db8076"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a338af691b8b349658412db97f3db8076"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a338af691b8b349658412db97f3db8076"></a>1000代表总的系统资源为1000份。</p>
-    <p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1581165ca9ae4dd080b5f9b82f5de2e7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1581165ca9ae4dd080b5f9b82f5de2e7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1581165ca9ae4dd080b5f9b82f5de2e7"></a>括号中的50代表IO资源的50%。</p>
-    <p id="zh-cn_topic_0085032167_p7162175943818"><a name="zh-cn_topic_0085032167_p7162175943818"></a><a name="zh-cn_topic_0085032167_p7162175943818"></a><span id="text72654133610"><a name="text72654133610"></a><a name="text72654133610"></a>openGauss</span>不通过控制组对IO资源做控制，因此下面其他控制组信息中仅涉及CPU配额情况。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a6eb5d42ab11f40ef961f8058258bd179"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a6eb5d42ab11f40ef961f8058258bd179"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a6eb5d42ab11f40ef961f8058258bd179"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r983cfc45212e4992b1950009f0e56504"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1eaf0bdb85924deab2806570de44f3af"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1eaf0bdb85924deab2806570de44f3af"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1eaf0bdb85924deab2806570de44f3af"></a>1</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a90c7540a2a9f46af829f8337a21fcbe7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a90c7540a2a9f46af829f8337a21fcbe7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a90c7540a2a9f46af829f8337a21fcbe7"></a>Gaussdb:<span id="text1785391015013"><a name="text1785391015013"></a><a name="text1785391015013"></a>omm</span></p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_abcad05a44a894c50ade6a6054e936ddf"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_abcad05a44a894c50ade6a6054e936ddf"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_abcad05a44a894c50ade6a6054e936ddf"></a>系统中只运行一套数据库程序，Gaussdb:<span id="text4458181275015"><a name="text4458181275015"></a><a name="text4458181275015"></a>omm</span>控制组默认配额为833，数据库程序和非数据库程序的比值为（833:167=5:1）。</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ab57c2123aa8a4f648fcaf14225f6c74a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ab57c2123aa8a4f648fcaf14225f6c74a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ab57c2123aa8a4f648fcaf14225f6c74a"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rb51a7c2bd35249f58e7520595cfb74f4"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7f152f6bf6484613a26adc92a992a612"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7f152f6bf6484613a26adc92a992a612"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7f152f6bf6484613a26adc92a992a612"></a>2</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae34f31263140431ab5b0eb6800bbe56a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae34f31263140431ab5b0eb6800bbe56a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae34f31263140431ab5b0eb6800bbe56a"></a>Backend</p>
-    </td>
-    <td class="cellrowborder" rowspan="2" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adcc253590a304f1eba6dbc3f56a42b31"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adcc253590a304f1eba6dbc3f56a42b31"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adcc253590a304f1eba6dbc3f56a42b31"></a>Backend和Class括号中的40和60，代表Backend占用Gaussdb:dbuser控制组40%的资源，Class占用Gaussdb:dbuser控制组60%的资源。</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a55cc1dc9b6d8417996044cd8757ef808"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a55cc1dc9b6d8417996044cd8757ef808"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a55cc1dc9b6d8417996044cd8757ef808"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rc5b04760cc9443d7894575b28d6f82bc"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a073225e9f51c4d45afb1ccfcb9c98f62"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a073225e9f51c4d45afb1ccfcb9c98f62"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a073225e9f51c4d45afb1ccfcb9c98f62"></a>3</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a94cd7a0e32c84ee9a996e6f8c9db099a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a94cd7a0e32c84ee9a996e6f8c9db099a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a94cd7a0e32c84ee9a996e6f8c9db099a"></a>Class</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a56886ba6fcde430f9a6eb0f257b4f3bf"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a56886ba6fcde430f9a6eb0f257b4f3bf"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a56886ba6fcde430f9a6eb0f257b4f3bf"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rebb21435963c46d69a04d0ab35e0caf8"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5078655f17a24de5839b2be2076ccba1"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5078655f17a24de5839b2be2076ccba1"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5078655f17a24de5839b2be2076ccba1"></a>4</p>
-    </td>
-    <td class="cellrowborder" rowspan="2" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a139683e2a3e843ea93915c9d37de3cf8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a139683e2a3e843ea93915c9d37de3cf8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a139683e2a3e843ea93915c9d37de3cf8"></a>Backend控制组</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a89fe583c176e448da9f169b3f01e5e27"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a89fe583c176e448da9f169b3f01e5e27"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a89fe583c176e448da9f169b3f01e5e27"></a>DefaultBackend</p>
-    </td>
-    <td class="cellrowborder" rowspan="2" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a632dadada0c2425298fa5621a11ca772"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a632dadada0c2425298fa5621a11ca772"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a632dadada0c2425298fa5621a11ca772"></a>括号中的80和20代表DefaultBackend和Vacuum占用Backend控制组80%和20%的资源。</p>
-    </td>
-    <td class="cellrowborder" rowspan="2" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac7d60f8f0b3742d19ef61e5b17b8201f"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac7d60f8f0b3742d19ef61e5b17b8201f"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac7d60f8f0b3742d19ef61e5b17b8201f"></a>TopGID：代表Top类型控制组中Backend组的GID，即2。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r3bbdbf32c9a54aaeb216b0c132d62439"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7eae4871ce5c4b2b8ab519f7dbc3f0e8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7eae4871ce5c4b2b8ab519f7dbc3f0e8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7eae4871ce5c4b2b8ab519f7dbc3f0e8"></a>5</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2656aced855847baa02b9208adcfabd9"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2656aced855847baa02b9208adcfabd9"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2656aced855847baa02b9208adcfabd9"></a>Vacuum</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r4bdc9c26155048b7b6fef177826bb6f9"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aad0efd2996714e8fbad3d9d970f10017"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aad0efd2996714e8fbad3d9d970f10017"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aad0efd2996714e8fbad3d9d970f10017"></a>20</p>
-    </td>
-    <td class="cellrowborder" rowspan="2" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad7825e742b514ec2871344b0bc037279"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad7825e742b514ec2871344b0bc037279"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad7825e742b514ec2871344b0bc037279"></a>Class控制组</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7cf846331fb24b13b663a961e3e2905c"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7cf846331fb24b13b663a961e3e2905c"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7cf846331fb24b13b663a961e3e2905c"></a>DefaultClass</p>
-    </td>
-    <td class="cellrowborder" rowspan="2" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac93ff437c8ba41ea9d7e35368d3ab5bb"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac93ff437c8ba41ea9d7e35368d3ab5bb"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac93ff437c8ba41ea9d7e35368d3ab5bb"></a>DefaultClass和class1的20和40代表占Class控制组20%和40%的资源。因为当前只有两个Class组，所有它们按照20:40的比例分配Class控制组499的系统配额，则分别为166和332。</p>
-    </td>
-    <td class="cellrowborder" rowspan="2" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u01f01475a56e48468034a2f15ebcd156"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u01f01475a56e48468034a2f15ebcd156"></a><ul id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u01f01475a56e48468034a2f15ebcd156"><li>TopGID：代表DefaultClass和class1所属的上层控制（Top控制组中的Class组）的GID，即3。</li><li>MaxLevel：Class组当前含有的Workload组的最大层次，DefaultClass没有Workload Cgroup，其数值为1。</li><li>RemPCT：代表Class组分配Workload组后剩余的资源百分比。如class1中剩余的百分比为70。</li></ul>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rb09775a1dc284a5badceb435d1fa0deb"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a47e5ba42370049b0a39138e3b7028243"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a47e5ba42370049b0a39138e3b7028243"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a47e5ba42370049b0a39138e3b7028243"></a>21</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a952d4b454c754614961bd0acc1d8eb14"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a952d4b454c754614961bd0acc1d8eb14"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a952d4b454c754614961bd0acc1d8eb14"></a>class1</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r69f1f4dcc43042d49dbf46ac0cc7fd5a"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a3d0e978aa70947b7bf8ee28f7f69ef41"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a3d0e978aa70947b7bf8ee28f7f69ef41"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a3d0e978aa70947b7bf8ee28f7f69ef41"></a>86</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a00b2084dc9164cdbb7c2152fb45144ac"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a00b2084dc9164cdbb7c2152fb45144ac"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a00b2084dc9164cdbb7c2152fb45144ac"></a>Workload控制组</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_p1643572385820"><a name="zh-cn_topic_0085032167_p1643572385820"></a><a name="zh-cn_topic_0085032167_p1643572385820"></a>grp1:2</p>
-    <p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35c42c0dbaf341eda30f77c6dfe3206a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35c42c0dbaf341eda30f77c6dfe3206a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35c42c0dbaf341eda30f77c6dfe3206a"></a>（该名称由Workload Cgroup Name和其在class中的层级组成，它是class1的第一个Workload组，层级为2，每个Class组最多10层Workload Cgroup。）</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa56d91049b224ed2a92027036762be85"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa56d91049b224ed2a92027036762be85"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa56d91049b224ed2a92027036762be85"></a>根据设置，其占class1的百分比为30，则为332*30%=99。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u37d2117f9f64408ea81e8167d73d9153"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u37d2117f9f64408ea81e8167d73d9153"></a><ul id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u37d2117f9f64408ea81e8167d73d9153"><li>ClsGID：代表Workload控制组所属的上层控制组（class1控制组）的GID。</li><li>WDLevel：代表当前Workload Cgroup在对应的Class组所在的层次。</li></ul>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ra51ec99f046248e4a80f1357d7cbbbf6"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac66021fdd084e699cf47892c7aac50f"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac66021fdd084e699cf47892c7aac50f"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac66021fdd084e699cf47892c7aac50f"></a>724</p>
-    </td>
-    <td class="cellrowborder" rowspan="4" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a31622eb38f454fe4bb0e201ca2bf7af7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a31622eb38f454fe4bb0e201ca2bf7af7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a31622eb38f454fe4bb0e201ca2bf7af7"></a>Timeshare控制组</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aebc6436beb654da299f46f73c7c73c86"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aebc6436beb654da299f46f73c7c73c86"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aebc6436beb654da299f46f73c7c73c86"></a>Low</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"></a>-</p>
-    </td>
-    <td class="cellrowborder" rowspan="4" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a>Rate：代表Timeshare中的分配比例，Low最少为1，Rush最高为8。这四个Timeshare组的资源配比为Rush:High:Medium:Low=8:4:2:1。</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rc218d5326a2744f3aea8ed9b5854b8ea"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"></a>725</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adf5d2ad6919d4242a0314c0d5893c4c7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adf5d2ad6919d4242a0314c0d5893c4c7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adf5d2ad6919d4242a0314c0d5893c4c7"></a>Medium</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a899b0db2dbf34c108c267729c1aaa715"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a899b0db2dbf34c108c267729c1aaa715"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a899b0db2dbf34c108c267729c1aaa715"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rc8fa48c94125496f99288554c61d6b0f"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a73d01fb5ca31424492c153ae6313011b"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a73d01fb5ca31424492c153ae6313011b"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a73d01fb5ca31424492c153ae6313011b"></a>726</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad5ed1e4abafc46a7888901c64ae77fb0"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad5ed1e4abafc46a7888901c64ae77fb0"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad5ed1e4abafc46a7888901c64ae77fb0"></a>High</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a931e04a7e35645719108993544a8de7b"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a931e04a7e35645719108993544a8de7b"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a931e04a7e35645719108993544a8de7b"></a>-</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r6f7fb17cc6f7454c8a73990b1439ec2b"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aeaa5db9e07664c90994f3cc96133eedd"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aeaa5db9e07664c90994f3cc96133eedd"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aeaa5db9e07664c90994f3cc96133eedd"></a>727</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1f2edf02225d433cb2209eaaf68d3815"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1f2edf02225d433cb2209eaaf68d3815"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1f2edf02225d433cb2209eaaf68d3815"></a>Rush</p>
-    </td>
-    <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa5ee50649fe74d3d938f201dd5cdfbf3"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa5ee50649fe74d3d938f201dd5cdfbf3"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa5ee50649fe74d3d938f201dd5cdfbf3"></a>-</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+更新Gaussdb进程使用的CPU核数为0-20。
+
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>-f参数只适用于对Gaussdb设置核数范围。对于其他各控制组，如需设置核数范围，需要使用--fixed参数。
+
+4.设置异常处理信息（class:wg组需存在）。  
+a.  设置组class:wg下的作业阻塞到1200秒或执行2400秒时执行终止动作：
+
+```
+gs_cgroup -S class -G wg -E "blocktime=1200,elapsedtime=2400" -a
+```
+
+b.  设置组class:wg下的作业下盘数据量达到256MB或大表广播数据量达到100MB时执行终止动作：
+
+```
+gs_cgroup -S class -G wg -E "spillsize=256,broadcastsize=100" -a
+```
+
+c.  设置组Class下的作业在所有DN上CPU总时间到达100s时执行降级动作：
+
+```
+gs_cgroup -S class -E "allcputime=100" --penalty
+```
+
+d.  设置组Class下的作业在所有DN上执行时间到达2400秒，倾斜率达到90时执行降级动作:
+
+```
+gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
+```
+
+>![](public_sys-resources/icon-notice.gif) **须知：**   
+>给控制组设置异常处理信息，需要确保对应的控制组已经创建。指定多个阈值时用“，”分隔，不指定任何动作时默认为“penalty”操作。
+
+6.设置控制组使用的核数范围。
+
+设置组class:wg的核数范围占Class控制组的20%
+
+```
+gs_cgroup -S class -G wg -g 20 --fixed -u
+```
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>Class或Workload核数范围必须通过指定--fixed参数设置。
+
+7.回退上一个步骤。
+
+```
+gs_cgroup --recover
+```
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>--recover只支持对Class控制组和Workload控制组的增删改操作进行回退，且只支持回退一次操作。
+
+8.查看已创建的控制组信息。  
+a.  查看配置文件中控制组信息。
+
+```
+gs_cgroup -p 
+```
+
+控制组配置信息
+
+```
+gs_cgroup -p
+
+Top Group information is listed:
+GID:   0 Type: Top    Percent(%): 1000( 50) Name: Root                  Cores: 0-47
+GID:   1 Type: Top    Percent(%):  833( 83) Name: Gaussdb:omm           Cores: 0-20
+GID:   2 Type: Top    Percent(%):  333( 40) Name: Backend               Cores: 0-20
+GID:   3 Type: Top    Percent(%):  499( 60) Name: Class                 Cores: 0-20
+
+Backend Group information is listed:
+GID:   4 Type: BAKWD  Name: DefaultBackend   TopGID:   2 Percent(%): 266(80) Cores: 0-20
+GID:   5 Type: BAKWD  Name: Vacuum           TopGID:   2 Percent(%):  66(20) Cores: 0-20
+
+Class Group information is listed:
+GID:  20 Type: CLASS  Name: DefaultClass     TopGID:   3 Percent(%): 166(20) MaxLevel: 1 RemPCT: 100 Cores: 0-20
+GID:  21 Type: CLASS  Name: class1           TopGID:   3 Percent(%): 332(40) MaxLevel: 2 RemPCT:  70 Cores: 0-20
+
+Workload Group information is listed:
+GID:  86 Type: DEFWD  Name: grp1:2           ClsGID:  21 Percent(%):  99(30) WDLevel:  2 Quota(%): 30 Cores: 0-5
+
+Timeshare Group information is listed:
+GID: 724 Type: TSWD   Name: Low              Rate: 1
+GID: 725 Type: TSWD   Name: Medium           Rate: 2
+GID: 726 Type: TSWD   Name: High             Rate: 4
+GID: 727 Type: TSWD   Name: Rush             Rate: 8
+
+Group Exception information is listed:
+GID:  20 Type: EXCEPTION Class: DefaultClass
+PENALTY: QualificationTime=1800 CPUSkewPercent=30
+
+GID:  21 Type: EXCEPTION Class: class1
+PENALTY: AllCpuTime=100 QualificationTime=2400 CPUSkewPercent=90
+
+GID:  86 Type: EXCEPTION Group: class1:grp1:2
+ABORT: BlockTime=1200 ElapsedTime=2400
+```
+
+ 上述示例查看到的控制组配置信息如下表所示。
+
+**表 1**  控制组配置信息
+
+<table><thead align="left"><tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_raf32468133ec42a98fa0a24a84f6e542"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.6.1.1"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a>GID</p>
+</th>
+<th class="cellrowborder" valign="top" width="13.900000000000002%" id="mcps1.2.6.1.2"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a>类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="15.61%" id="mcps1.2.6.1.3"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a>名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="31.55%" id="mcps1.2.6.1.4"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a>Percent（%）信息</p>
+</th>
+<th class="cellrowborder" valign="top" width="26.52%" id="mcps1.2.6.1.5"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a>特定信息</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r40c9836246fc434cb849097be80f4238"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2917dc8c27254a51a345ee36e67a1720"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2917dc8c27254a51a345ee36e67a1720"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2917dc8c27254a51a345ee36e67a1720"></a>0</p>
+</td>
+<td class="cellrowborder" rowspan="4" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a06d02d08bbc2479ab2f65b40bd7b1aa2"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a06d02d08bbc2479ab2f65b40bd7b1aa2"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a06d02d08bbc2479ab2f65b40bd7b1aa2"></a>Top控制组</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5aa339132fd84fffb152ea53482ffcad"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5aa339132fd84fffb152ea53482ffcad"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5aa339132fd84fffb152ea53482ffcad"></a>Root</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a338af691b8b349658412db97f3db8076"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a338af691b8b349658412db97f3db8076"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a338af691b8b349658412db97f3db8076"></a>1000代表总的系统资源为1000份。</p>
+<p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1581165ca9ae4dd080b5f9b82f5de2e7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1581165ca9ae4dd080b5f9b82f5de2e7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1581165ca9ae4dd080b5f9b82f5de2e7"></a>括号中的50代表IO资源的50%。</p>
+<p id="zh-cn_topic_0085032167_p7162175943818"><a name="zh-cn_topic_0085032167_p7162175943818"></a><a name="zh-cn_topic_0085032167_p7162175943818"></a><span id="text72654133610"><a name="text72654133610"></a><a name="text72654133610"></a>openGauss</span>不通过控制组对IO资源做控制，因此下面其他控制组信息中仅涉及CPU配额情况。</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a6eb5d42ab11f40ef961f8058258bd179"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a6eb5d42ab11f40ef961f8058258bd179"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a6eb5d42ab11f40ef961f8058258bd179"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r983cfc45212e4992b1950009f0e56504"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1eaf0bdb85924deab2806570de44f3af"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1eaf0bdb85924deab2806570de44f3af"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1eaf0bdb85924deab2806570de44f3af"></a>1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a90c7540a2a9f46af829f8337a21fcbe7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a90c7540a2a9f46af829f8337a21fcbe7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a90c7540a2a9f46af829f8337a21fcbe7"></a>Gaussdb:<span id="text1785391015013"><a name="text1785391015013"></a><a name="text1785391015013"></a>omm</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_abcad05a44a894c50ade6a6054e936ddf"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_abcad05a44a894c50ade6a6054e936ddf"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_abcad05a44a894c50ade6a6054e936ddf"></a>系统中只运行一套数据库程序，Gaussdb:<span id="text4458181275015"><a name="text4458181275015"></a><a name="text4458181275015"></a>omm</span>控制组默认配额为833，数据库程序和非数据库程序的比值为（833:167=5:1）。</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ab57c2123aa8a4f648fcaf14225f6c74a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ab57c2123aa8a4f648fcaf14225f6c74a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ab57c2123aa8a4f648fcaf14225f6c74a"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rb51a7c2bd35249f58e7520595cfb74f4"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7f152f6bf6484613a26adc92a992a612"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7f152f6bf6484613a26adc92a992a612"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7f152f6bf6484613a26adc92a992a612"></a>2</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae34f31263140431ab5b0eb6800bbe56a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae34f31263140431ab5b0eb6800bbe56a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae34f31263140431ab5b0eb6800bbe56a"></a>Backend</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adcc253590a304f1eba6dbc3f56a42b31"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adcc253590a304f1eba6dbc3f56a42b31"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adcc253590a304f1eba6dbc3f56a42b31"></a>Backend和Class括号中的40和60，代表Backend占用Gaussdb:dbuser控制组40%的资源，Class占用Gaussdb:dbuser控制组60%的资源。</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a55cc1dc9b6d8417996044cd8757ef808"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a55cc1dc9b6d8417996044cd8757ef808"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a55cc1dc9b6d8417996044cd8757ef808"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rc5b04760cc9443d7894575b28d6f82bc"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a073225e9f51c4d45afb1ccfcb9c98f62"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a073225e9f51c4d45afb1ccfcb9c98f62"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a073225e9f51c4d45afb1ccfcb9c98f62"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a94cd7a0e32c84ee9a996e6f8c9db099a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a94cd7a0e32c84ee9a996e6f8c9db099a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a94cd7a0e32c84ee9a996e6f8c9db099a"></a>Class</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a56886ba6fcde430f9a6eb0f257b4f3bf"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a56886ba6fcde430f9a6eb0f257b4f3bf"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a56886ba6fcde430f9a6eb0f257b4f3bf"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rebb21435963c46d69a04d0ab35e0caf8"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5078655f17a24de5839b2be2076ccba1"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5078655f17a24de5839b2be2076ccba1"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5078655f17a24de5839b2be2076ccba1"></a>4</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a139683e2a3e843ea93915c9d37de3cf8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a139683e2a3e843ea93915c9d37de3cf8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a139683e2a3e843ea93915c9d37de3cf8"></a>Backend控制组</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a89fe583c176e448da9f169b3f01e5e27"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a89fe583c176e448da9f169b3f01e5e27"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a89fe583c176e448da9f169b3f01e5e27"></a>DefaultBackend</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a632dadada0c2425298fa5621a11ca772"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a632dadada0c2425298fa5621a11ca772"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a632dadada0c2425298fa5621a11ca772"></a>括号中的80和20代表DefaultBackend和Vacuum占用Backend控制组80%和20%的资源。</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac7d60f8f0b3742d19ef61e5b17b8201f"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac7d60f8f0b3742d19ef61e5b17b8201f"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac7d60f8f0b3742d19ef61e5b17b8201f"></a>TopGID：代表Top类型控制组中Backend组的GID，即2。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r3bbdbf32c9a54aaeb216b0c132d62439"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7eae4871ce5c4b2b8ab519f7dbc3f0e8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7eae4871ce5c4b2b8ab519f7dbc3f0e8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7eae4871ce5c4b2b8ab519f7dbc3f0e8"></a>5</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2656aced855847baa02b9208adcfabd9"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2656aced855847baa02b9208adcfabd9"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a2656aced855847baa02b9208adcfabd9"></a>Vacuum</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r4bdc9c26155048b7b6fef177826bb6f9"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aad0efd2996714e8fbad3d9d970f10017"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aad0efd2996714e8fbad3d9d970f10017"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aad0efd2996714e8fbad3d9d970f10017"></a>20</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad7825e742b514ec2871344b0bc037279"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad7825e742b514ec2871344b0bc037279"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad7825e742b514ec2871344b0bc037279"></a>Class控制组</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7cf846331fb24b13b663a961e3e2905c"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7cf846331fb24b13b663a961e3e2905c"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a7cf846331fb24b13b663a961e3e2905c"></a>DefaultClass</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac93ff437c8ba41ea9d7e35368d3ab5bb"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac93ff437c8ba41ea9d7e35368d3ab5bb"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ac93ff437c8ba41ea9d7e35368d3ab5bb"></a>DefaultClass和class1的20和40代表占Class控制组20%和40%的资源。因为当前只有两个Class组，所有它们按照20:40的比例分配Class控制组499的系统配额，则分别为166和332。</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u01f01475a56e48468034a2f15ebcd156"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u01f01475a56e48468034a2f15ebcd156"></a><ul id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u01f01475a56e48468034a2f15ebcd156"><li>TopGID：代表DefaultClass和class1所属的上层控制（Top控制组中的Class组）的GID，即3。</li><li>MaxLevel：Class组当前含有的Workload组的最大层次，DefaultClass没有Workload Cgroup，其数值为1。</li><li>RemPCT：代表Class组分配Workload组后剩余的资源百分比。如class1中剩余的百分比为70。</li></ul>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rb09775a1dc284a5badceb435d1fa0deb"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a47e5ba42370049b0a39138e3b7028243"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a47e5ba42370049b0a39138e3b7028243"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a47e5ba42370049b0a39138e3b7028243"></a>21</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a952d4b454c754614961bd0acc1d8eb14"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a952d4b454c754614961bd0acc1d8eb14"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a952d4b454c754614961bd0acc1d8eb14"></a>class1</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r69f1f4dcc43042d49dbf46ac0cc7fd5a"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a3d0e978aa70947b7bf8ee28f7f69ef41"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a3d0e978aa70947b7bf8ee28f7f69ef41"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a3d0e978aa70947b7bf8ee28f7f69ef41"></a>86</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a00b2084dc9164cdbb7c2152fb45144ac"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a00b2084dc9164cdbb7c2152fb45144ac"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a00b2084dc9164cdbb7c2152fb45144ac"></a>Workload控制组</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_p1643572385820"><a name="zh-cn_topic_0085032167_p1643572385820"></a><a name="zh-cn_topic_0085032167_p1643572385820"></a>grp1:2</p>
+<p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35c42c0dbaf341eda30f77c6dfe3206a"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35c42c0dbaf341eda30f77c6dfe3206a"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35c42c0dbaf341eda30f77c6dfe3206a"></a>（该名称由Workload Cgroup Name和其在class中的层级组成，它是class1的第一个Workload组，层级为2，每个Class组最多10层Workload Cgroup。）</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa56d91049b224ed2a92027036762be85"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa56d91049b224ed2a92027036762be85"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa56d91049b224ed2a92027036762be85"></a>根据设置，其占class1的百分比为30，则为332*30%=99。</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u37d2117f9f64408ea81e8167d73d9153"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u37d2117f9f64408ea81e8167d73d9153"></a><ul id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_u37d2117f9f64408ea81e8167d73d9153"><li>ClsGID：代表Workload控制组所属的上层控制组（class1控制组）的GID。</li><li>WDLevel：代表当前Workload Cgroup在对应的Class组所在的层次。</li></ul>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ra51ec99f046248e4a80f1357d7cbbbf6"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac66021fdd084e699cf47892c7aac50f"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac66021fdd084e699cf47892c7aac50f"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac66021fdd084e699cf47892c7aac50f"></a>724</p>
+</td>
+<td class="cellrowborder" rowspan="4" valign="top" width="13.900000000000002%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a31622eb38f454fe4bb0e201ca2bf7af7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a31622eb38f454fe4bb0e201ca2bf7af7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a31622eb38f454fe4bb0e201ca2bf7af7"></a>Timeshare控制组</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.61%" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aebc6436beb654da299f46f73c7c73c86"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aebc6436beb654da299f46f73c7c73c86"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aebc6436beb654da299f46f73c7c73c86"></a>Low</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.55%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aac1ccc37de00462f869d63432b3ea2ed"></a>-</p>
+</td>
+<td class="cellrowborder" rowspan="4" valign="top" width="26.52%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aacc9155fa98446588808649ce29fc559"></a>Rate：代表Timeshare中的分配比例，Low最少为1，Rush最高为8。这四个Timeshare组的资源配比为Rush:High:Medium:Low=8:4:2:1。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rc218d5326a2744f3aea8ed9b5854b8ea"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ace62508ac2424abb8a994e84175e63c2"></a>725</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adf5d2ad6919d4242a0314c0d5893c4c7"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adf5d2ad6919d4242a0314c0d5893c4c7"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_adf5d2ad6919d4242a0314c0d5893c4c7"></a>Medium</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a899b0db2dbf34c108c267729c1aaa715"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a899b0db2dbf34c108c267729c1aaa715"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a899b0db2dbf34c108c267729c1aaa715"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_rc8fa48c94125496f99288554c61d6b0f"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a73d01fb5ca31424492c153ae6313011b"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a73d01fb5ca31424492c153ae6313011b"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a73d01fb5ca31424492c153ae6313011b"></a>726</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad5ed1e4abafc46a7888901c64ae77fb0"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad5ed1e4abafc46a7888901c64ae77fb0"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ad5ed1e4abafc46a7888901c64ae77fb0"></a>High</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a931e04a7e35645719108993544a8de7b"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a931e04a7e35645719108993544a8de7b"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a931e04a7e35645719108993544a8de7b"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_r6f7fb17cc6f7454c8a73990b1439ec2b"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aeaa5db9e07664c90994f3cc96133eedd"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aeaa5db9e07664c90994f3cc96133eedd"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aeaa5db9e07664c90994f3cc96133eedd"></a>727</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1f2edf02225d433cb2209eaaf68d3815"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1f2edf02225d433cb2209eaaf68d3815"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a1f2edf02225d433cb2209eaaf68d3815"></a>Rush</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa5ee50649fe74d3d938f201dd5cdfbf3"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa5ee50649fe74d3d938f201dd5cdfbf3"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_aa5ee50649fe74d3d938f201dd5cdfbf3"></a>-</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 ​     
 
