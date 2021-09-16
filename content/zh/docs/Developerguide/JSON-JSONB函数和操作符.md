@@ -115,6 +115,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </table>
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
+>
 >对于 \#\> 和 \#\>\> 操作符，当给出的路径无法查找到数据时，不会报错，会返回空。
 
 **表 2** **jsonb额外支持操作符**
@@ -232,7 +233,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tbody>
 </table>
 
-## ****JSON/JSONB**支持的函数**<a name="section845725420151"></a>
+## **JSON/JSONB**支持的函数<a name="section845725420151"></a>
 
 -   array\\\_to\\\_json\\\(anyarray \\\[, pretty\\\_bool\\\]\\\)
 

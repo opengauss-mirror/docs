@@ -2,7 +2,7 @@
 
 ## Function<a name="section143231619112111"></a>
 
-**pg\_recvlogical**  connects to a specified DN to create and delete logical replication slots, obtains the intermediate result of logic decoding from the DN continuously in real time, and outputs the result to a file or in standard mode.
+**pg\_recvlogical**  connects to a specified datanode to create and delete logical replication slots, obtains the intermediate result of logic decoding from the datanode continuously in real time, and outputs the result to a file or in standard mode.
 
 ## Syntax<a name="section1763981272214"></a>
 

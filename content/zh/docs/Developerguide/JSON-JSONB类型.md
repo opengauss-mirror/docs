@@ -50,7 +50,8 @@ select '[1, 2, "foo", null]'::json;select '[]'::json;select '[1, 2, "foo", null,
 select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.gif) **注意：**
+>
 >-   区分 'null'::json 和 null::json 是两个不同的概念，类似于字符串 str="" 和 str=null。
 >-   对于数字，当使用科学计数法的时候，jsonb类型会将其展开，而json会精准拷贝输入。
 
@@ -62,7 +63,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
     -   不支持外表、mot。
 
 
-​JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解析后的二进制，能够体现JSON的层次结构，更方便直接访问等，因此JSONB会有很多JSON所不具有的高级特性。
+JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解析后的二进制，能够体现JSON的层次结构，更方便直接访问等，因此JSONB会有很多JSON所不具有的高级特性。
 
 -   格式归一化
 
@@ -103,19 +104,20 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
         -   object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，在比较值。
 
         >![](public_sys-resources/icon-caution.gif) **注意：** 
+        >
         >object-jsonb类型内比较时，比较时使用的是格式整理后的最终结果进行比较，因此相对于我们直接的输入未必会很直观。
 
 
 -   创建索引、主外键
     -   BTREE索引
 
-        ​ jsonb类型支持创建btree索引，支持创建主键、外键。
+         jsonb类型支持创建btree索引，支持创建主键、外键。
 
     -   GIN索引
 
-        ​ GIN索引可以用来有效的搜索出现在大量jsonb文档（datums） 中的键或者键/值对。提供了两个GIN操作符类\(jsonb\_ops、jsonb\_hash\_ops\)，提供了不同的性能和灵活性取舍。缺省的GIN操作符类支持使用@\>、<@、?、 ?&和?|操作符查询，非缺省的GIN操作符类jsonb\_path\_ops只支持索引@\>、<@操作符。
+         GIN索引可以用来有效的搜索出现在大量jsonb文档（datums） 中的键或者键/值对。提供了两个GIN操作符类\(jsonb\_ops、jsonb\_hash\_ops\)，提供了不同的性能和灵活性取舍。缺省的GIN操作符类支持使用@\>、<@、?、 ?&和?|操作符查询，非缺省的GIN操作符类jsonb\_path\_ops只支持索引@\>、<@操作符。
 
-        ​ 相关的操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。
+         相关的操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。
 
 
 -   包含存在
@@ -126,7 +128,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
     -- 简单的标量/原始值只包含相同的值：SELECT '"foo"'::jsonb @> '"foo"'::jsonb;-- 左侧数组包含了右侧字符串。SELECT '[1, “aa”, 3]'::jsonb ? 'aa';-- 左侧数组包含了右侧的数组所有元素，顺序、重复不重要。SELECT '[1, 2, 3]'::jsonb @> '[1, 3, 1]'::jsonb;-- 左侧object-json包含了右侧object-json的所有键值对SELECT '{"product": "PostgreSQL", "version": 9.4, "jsonb":true}'::jsonb @> '{"version":9.4}'::jsonb;-- 左侧数组并没有包含右侧的数组所有元素，因为左侧数组的三个元素为1、2、[1,3]，右侧的为1、3SELECT '[1, 2, [1, 3]]'::jsonb @> '[1, 3]'::jsonb; -- 产生假-- 相似的，这样也不对SELECT '{"foo": {"bar": "baz"}}'::jsonb @> '{"bar": "baz"}'::jsonb; -- false
     ```
 
-    相关的操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。。
+    相关的操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。
 
 -   函数和操作符
 

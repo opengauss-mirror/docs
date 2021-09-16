@@ -8,7 +8,7 @@
 
     返回值类型：record
 
-    示例请参见[单query索引推荐](zh-cn_topic_0296549246.md)。
+    示例请参见[单query索引推荐](单query索引推荐.md)。
 
 -   hypopg\_create\_index\(text\)
 
@@ -18,7 +18,7 @@
 
     返回值类型：record
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_display\_index\(\)
 
@@ -28,7 +28,7 @@
 
     返回值类型：record
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_drop\_index\(oid\)
 
@@ -38,7 +38,7 @@
 
     返回值类型：bool
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_reset\_index\(\)
 
@@ -48,7 +48,7 @@
 
     返回值类型：无
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   hypopg\_estimate\_size\(oid\)
 
@@ -58,7 +58,7 @@
 
     返回值类型：int8
 
-    示例请参见[虚拟索引](zh-cn_topic_0296549247.md)。
+    示例请参见[虚拟索引](虚拟索引.md)。
 
 -   check\_engine\_status\(ip text, port text\)
 
@@ -68,18 +68,19 @@
 
     返回值类型：text
 
-    示例请参见[使用指导](zh-cn_topic_0289900575.md)。
+    示例请参见[使用指导](使用指导-20.md)。
 
--   encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
+- encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
 
-    描述：对入参的计划算子信息进行编码。
+  描述：对入参的计划算子信息进行编码。
 
-    参数：计划算子信息。
+  参数：计划算子信息。
 
-    返回值类型：text。
+  返回值类型：text。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >该函数为内部功能调用函数，不建议用户直接使用。
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  >该函数为内部功能调用函数，不建议用户直接使用。
 
 -   model\_train\_opt\(template text, model text\)
 
@@ -89,7 +90,7 @@
 
     返回值类型：tartup\_time\_accuracy FLOAT8,  total\_time\_accuracy FLOAT8,  rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
 
-    示例请参见[使用指导](zh-cn_topic_0289900575.md)。
+    示例请参见[使用指导](使用指导-20.md)。
 
 -   track\_model\_train\_opt\(ip text, port text\)
 
@@ -99,7 +100,7 @@
 
     返回值类型：text
 
-    示例请参见[使用指导](zh-cn_topic_0289900575.md)。
+    示例请参见[使用指导](使用指导-20.md)。
 
 -   encode\_feature\_perf\_hist\(datname text\)
 
@@ -109,7 +110,7 @@
 
     返回值类型：queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, peak\_memory int
 
-    示例请参见[使用指导](zh-cn_topic_0289900575.md)。
+    示例请参见[使用指导](使用指导-20.md)。
 
 -   gather\_encoding\_info\(datname text\)
 
@@ -119,7 +120,7 @@
 
     返回值类型：int
 
-    示例请参见[使用指导](zh-cn_topic_0289900575.md)。
+    示例请参见[使用指导](使用指导-20.md)。
 
 -   db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
 
