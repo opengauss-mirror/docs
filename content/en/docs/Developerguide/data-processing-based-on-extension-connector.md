@@ -121,13 +121,14 @@ Currently, SQL on openGauss supports only the following data types.
 </table>
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   To receive a type of data returned by openGauss, specify its corresponding data type in the  **AS**  clause. If the returned type of openGauss is not listed in the table or its corresponding data type is not specified, the type conversion may generate an incorrect result or fail. For example,  **VARCHAR \(10\)**  returned by openGauss needs to be received using  **VARCHAR\(**_n_**\)**  \(_n_\>=10\) or  **TEXT**.
->-   For a string of the  **CHAR\(**_n_**\)**  type in openGauss, if its length is less than  _n_, it will be automatically padded with spaces. These spaces will be retained when the string is transferred to openGauss and converted to the  **TEXT**  type.
->-   If the encoding mode of openGauss is set to  **SQL\_ASCII**, the  **length\(\)**  function returns the number of bytes of the string rather than the actual number of characters. For example, run the following statement to query for the length of data returned by  **exec\_on\_extension**:
->    ```
->    select c2,length(c2) from exec_on_extension('libra','select * from a;') as (c1 int, c2 text);
->    ```
->    The second column returned is the number of bytes of the string, rather than the number of characters.
+>- To receive a type of data returned by openGauss, specify its corresponding data type in the  **AS**  clause. If the returned type of openGauss is not listed in the table or its corresponding data type is not specified, the type conversion may generate an incorrect result or fail. For example,  **VARCHAR \(10\)**  returned by openGauss needs to be received using  **VARCHAR\(**_n_**\)**  \(_n_\>=10\) or  **TEXT**.
+>
+>-   If the encoding mode of openGauss is set to  **SQL\_ASCII**, the  **length\(\)**  function returns the number of bytes of the string rather than the actual number of characters. For example, run the following statement to query for the length of data returned by  **exec\_on\_extension**:  
+>   `select c2,length(c2) from exec_on_extension('libra','select * from a;') as (c1 int, c2 text);`  
+>  The second column returned is the number of bytes of the string, rather than the number of characters.
+>  
+>- For a string of the  **CHAR\(**_n_**\)**  type in openGauss, if its length is less than  _n_, it will be automatically padded with spaces. These spaces will be retained when the string is transferred to openGauss and converted to the  **TEXT**  type.
+>
 >-   For the  **TIMESTAMP\[\(**_p_**\)\] WITH TIME ZONE**  data type, the time zone of the remote database must be the same as that of the local database. Otherwise, an error may occur.
 
 ## Interconnection Configuration<a name="section1179315795514"></a>

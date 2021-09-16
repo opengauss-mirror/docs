@@ -4,7 +4,7 @@
 
 -   JDBC包
 
-    在linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar，包位置在源代码目录下。从发布包中获取，包名为openGauss-1.0.1-操作系统版本号-64bit-Jdbc.tar.gz。
+    在linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar，包位置在源代码目录下。从发布包中获取，包名为openGauss-x.x.x-操作系统版本号-64bit-Jdbc.tar.gz。
 
     驱动包与PostgreSQL保持兼容，其中类名、类结构与PostgreSQL驱动完全一致，曾经运行于PostgreSQL的应用程序可以直接移植到当前系统使用。
 

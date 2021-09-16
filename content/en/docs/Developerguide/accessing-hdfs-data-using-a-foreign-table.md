@@ -6,15 +6,15 @@ The HDFS foreign table created in openGauss must support the ROUND ROBIN and rep
 
 ## Managing Foreign Data Servers<a name="section1485280104511"></a>
 
-As described in  [Interconnection Configuration](interconnection-configuration.md), the connection finally requires  **[CREATE SERVER](en-us_topic_0289899991.md)**  to define foreign servers to store HDFS database instance information.
+As described in  [Interconnection Configuration](interconnection-configuration.md), the connection finally requires  **[CREATE SERVER](CREATE-SERVER.md)**  to define foreign servers to store HDFS database instance information.
 
-To modify the information about a foreign server, use  **[ALTER SERVER](en-us_topic_0289900400.md)**.
+To modify the information about a foreign server, use  **[ALTER SERVER](ALTER-SERVER.md)**.
 
-To delete a foreign server, use  **[DROP SERVER](en-us_topic_0289900384.md)**.
+To delete a foreign server, use  **[DROP SERVER](DROP-SERVER.md)**.
 
 ## Managing Foreign Tables<a name="section135985217459"></a>
 
--   After the interconnection configuration is complete, use  **CREATE SERVER**  to define foreign servers to store HDFS database instance information. In this case, you can create a foreign table and use it to read data from the remote HDFS database instance. For details about the syntax for creating a foreign table, see  [CREATE FOREIGN TABLE](en-us_topic_0289900252.md).
+-   After the interconnection configuration is complete, use  **CREATE SERVER**  to define foreign servers to store HDFS database instance information. In this case, you can create a foreign table and use it to read data from the remote HDFS database instance. For details about the syntax for creating a foreign table, see  [CREATE FOREIGN TABLE](CREATE-FOREIGN-TABLE.md).
     -   You need to specify  **server\_name**  of the HDFS server where the foreign table is located, and the storage file list or storage directory of the foreign table on the HDFS database instance server. An HDFS foreign table can correspond to multiple HDFS storage files or one file storage directory. If the HDFS file storage directory is specified, all the files in this directory and its subdirectory are data files of this table by default.
     -   The database engine can access data tables in ORC 0.11 and 0.12 formats in HDFS, and allows ORC files to be compressed in SNAPPY, ZLIB, or NO mode.
     -   The database engine can access data tables in Parquet 1.0 and 2.0 formats in HDFS, and allows Parquet files to be compressed in SNAPPY or NO mode.
@@ -22,8 +22,8 @@ To delete a foreign server, use  **[DROP SERVER](en-us_topic_0289900384.md)**.
     -   The data is imported to the HDFS database instance file system by the external tool, and stored to the HDFS native format data table on the Hadoop. The default HDFS data distribution mode between nodes is that data is distributed on all the HDFS data nodes randomly. The supported HDFS foreign table must specify the ROUNDROBIN distribution mode.
     -   The column attribute can be set to  **NULL**  by default. When you select  **NOT NULL**, the database will not perform the consistency check and you need to ensure that there is no null value using the application.
 
--   For details about how to modify a foreign table, see  [ALTER FOREIGN TABLE](en-us_topic_0289900030.md).
--   For details about how to delete a foreign table, see  [DROP FOREIGN TABLE](en-us_topic_0289899895.md).
+-   For details about how to modify a foreign table, see  [ALTER FOREIGN TABLE](ALTER-FOREIGN-TABLE.md).
+-   For details about how to delete a foreign table, see  [DROP FOREIGN TABLE](DROP-FOREIGN-TABLE.md).
 -   View a foreign table. After a foreign table is created, you can use  **SELECT**  to query foreign table data. For details, see  [Foreign Table Usage](foreign-table-usage.md).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
