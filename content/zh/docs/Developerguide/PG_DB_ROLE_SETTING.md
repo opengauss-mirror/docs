@@ -5,6 +5,7 @@ PG\_DB\_ROLE\_SETTING系统表存储数据库运行时每个角色与数据绑�
 **表 1**  PG\_DB\_ROLE\_SETTING字段
 
 <a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_tef5c482abadd48948fb83116dc7c4eb5"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_r73864329e7f94a15b4d19009ac562ce2"><th class="cellrowborder" valign="top" width="28.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ad2a4bdfaa43c4c5fa65727d5752c3479"><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ad2a4bdfaa43c4c5fa65727d5752c3479"></a><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ad2a4bdfaa43c4c5fa65727d5752c3479"></a>名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.290000000000001%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_acec7305944ba45008d255cfa572d873a"><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_acec7305944ba45008d255cfa572d873a"></a><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_acec7305944ba45008d255cfa572d873a"></a>类型</p>
@@ -31,9 +32,10 @@ PG\_DB\_ROLE\_SETTING系统表存储数据库运行时每个角色与数据绑�
 </td>
 <td class="cellrowborder" valign="top" width="15.290000000000001%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_aef4695b9508045559fba4aa016aad1a2"><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_aef4695b9508045559fba4aa016aad1a2"></a><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_aef4695b9508045559fba4aa016aad1a2"></a>text[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.84%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ae64fd124cc7d43149561ac0aac00393a"><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ae64fd124cc7d43149561ac0aac00393a"></a><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ae64fd124cc7d43149561ac0aac00393a"></a>运行时配置项的默认值，配置方法参考<a href="zh-cn_topic_0289899927.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d">表2</a>。</p>
+<td class="cellrowborder" valign="top" width="55.84%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ae64fd124cc7d43149561ac0aac00393a"><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ae64fd124cc7d43149561ac0aac00393a"></a><a name="zh-cn_topic_0283136855_zh-cn_topic_0237122282_zh-cn_topic_0059779021_ae64fd124cc7d43149561ac0aac00393a"></a>运行时配置项的默认值，配置方法参考<a href="重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d">表2</a>。</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
