@@ -29,9 +29,9 @@ set(param value)
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   设置不在白名单中的参数，参数取值不合法，或hint语法错误时，不会影响查询执行的正确性。使用explain\(verbose on\)执行可以看到hint解析错误的报错提示。
->-   GUC参数的hint只在最外层查询生效——子查询内的GUC参数hint不生效。
->-   视图定义内的GUC参数hint不生效。
->-   CREATE TABLE ... AS ... 查询最外层的GUC参数hint可以生效。
+>![](public_sys-resources/icon-note.gif) **说明：**  
+>-   设置不在白名单中的参数，参数取值不合法，或hint语法错误时，不会影响查询执行的正确性。使用explain\(verbose on\)执行可以看到hint解析错误的报错提示。  
+>-   GUC参数的hint只在最外层查询生效——子查询内的GUC参数hint不生效。  
+>-   视图定义内的GUC参数hint不生效。  
+>-   CREATE TABLE ... AS ... 查询最外层的GUC参数hint可以生效。  
 

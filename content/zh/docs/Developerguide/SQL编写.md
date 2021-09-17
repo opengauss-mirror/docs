@@ -59,7 +59,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><a name="screen5951115464718"></a><a name="screen5951115464718"></a><pre class="screen" codetype="Sql" id="screen5951115464718"><span id="text16770185141319"><a name="text16770185141319"></a><a name="text16770185141319"></a>openGauss=# </span>select CURRENT_DATE;
     date
-    ------------
+    \------------
     2018-02-02
     (1 row)</pre>
     </td>
@@ -70,7 +70,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><a name="screen240216513483"></a><a name="screen240216513483"></a><pre class="screen" codetype="Sql" id="screen240216513483"><span id="text158172008141"><a name="text158172008141"></a><a name="text158172008141"></a>openGauss=# </span>select CURRENT_TIME;
     timetz
-    --------------------
+    \--------------------
     00:39:34.633938+08
     (1 row)</pre>
     </td>
@@ -83,7 +83,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><a name="screen23871411134810"></a><a name="screen23871411134810"></a><pre class="screen" codetype="Sql" id="screen23871411134810"><span id="text3942673146"><a name="text3942673146"></a><a name="text3942673146"></a>openGauss=# </span>select CURRENT_TIMESTAMP(6);
     timestamptz
-    -------------------------------
+    \-------------------------------
     2018-02-02 00:39:55.231689+08
     (1 row)</pre>
     </td>

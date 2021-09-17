@@ -1028,6 +1028,7 @@ headless: true
 	-   [自治事务]({{< relref "./docs/Developerguide/自治事务.md" >}})
 		-   [存储过程支持自治事务]({{< relref "./docs/Developerguide/存储过程支持自治事务.md" >}})
 		-   [匿名块支持自治事务]({{< relref "./docs/Developerguide/匿名块支持自治事务.md" >}})
+		-   [函数支持自治事务]({{< relref "./docs/Developerguide/函数支持自治事务.md" >}})
 		-   [规格约束]({{< relref "./docs/Developerguide/规格约束.md" >}})
     -   [系统表和系统视图]({{< relref "./docs/Developerguide/系统表和系统视图.md" >}})
         -   [系统表和系统视图概述]({{< relref "./docs/Developerguide/系统表和系统视图概述.md" >}})
