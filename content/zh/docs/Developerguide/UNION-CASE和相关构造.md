@@ -7,10 +7,11 @@ SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一�
 -   如果所有输入都是相同的类型，并且不是unknown类型，那么解析成这种类型。
 -   如果所有输入都是unknown类型则解析成text类型（字符串类型范畴的首选类型）。否则，忽略unknown输入。
 -   如果输入不属于同一个类型范畴，失败。（unknown类型除外）
--   如果输入类型是同一个类型范畴，则选择该类型范畴的首选类型。（例外：union操作会选择第一个分支的类型作为所选类型。）
+- 如果输入类型是同一个类型范畴，则选择该类型范畴的首选类型。（例外：union操作会选择第一个分支的类型作为所选类型。）
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >系统表pg\_type中typcategory表示数据类型范畴，typispreferred表示是否是typcategory分类中的首选类型。
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  >系统表pg\_type中typcategory表示数据类型范畴，typispreferred表示是否是typcategory分类中的首选类型。
 
 -   把所有输入转换为所选的类型（对于字符串保持原有长度）。如果从给定的输入到所选的类型没有隐式转换则失败。
 -   若输入中含json、txid\_snapshot、sys\_refcursor或几何类型，则不能进行union。
