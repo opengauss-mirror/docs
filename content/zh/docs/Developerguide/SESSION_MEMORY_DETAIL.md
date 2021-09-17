@@ -52,23 +52,22 @@
 </td>
 <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122635_p7787183251"><a name="zh-cn_topic_0237122635_p7787183251"></a><a name="zh-cn_topic_0237122635_p7787183251"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122635_p678712812510"><a name="zh-cn_topic_0237122635_p678712812510"></a><a name="zh-cn_topic_0237122635_p678712812510"></a>总申请内存大小(单位：字节)。</p>
+<td class="cellrowborder" valign="top" width="63.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122635_p678712812510"><a name="zh-cn_topic_0237122635_p678712812510"></a><a name="zh-cn_topic_0237122635_p678712812510"></a>总申请内存大小（单位：字节）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122635_row27873815257"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122635_p1578718842519"><a name="zh-cn_topic_0237122635_p1578718842519"></a><a name="zh-cn_topic_0237122635_p1578718842519"></a>freesize</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122635_p1378718892518"><a name="zh-cn_topic_0237122635_p1378718892518"></a><a name="zh-cn_topic_0237122635_p1378718892518"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122635_p4787188152518"><a name="zh-cn_topic_0237122635_p4787188152518"></a><a name="zh-cn_topic_0237122635_p4787188152518"></a>空闲内存大小(单位：字节)。</p>
+<td class="cellrowborder" valign="top" width="63.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122635_p4787188152518"><a name="zh-cn_topic_0237122635_p4787188152518"></a><a name="zh-cn_topic_0237122635_p4787188152518"></a>空闲内存大小（单位：字节）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122635_row978715814252"><td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122635_p278728102514"><a name="zh-cn_topic_0237122635_p278728102514"></a><a name="zh-cn_topic_0237122635_p278728102514"></a>usedsize</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122635_p578778192511"><a name="zh-cn_topic_0237122635_p578778192511"></a><a name="zh-cn_topic_0237122635_p578778192511"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122635_p378718142515"><a name="zh-cn_topic_0237122635_p378718142515"></a><a name="zh-cn_topic_0237122635_p378718142515"></a>使用内存大小(单位：字节)。</p>
+<td class="cellrowborder" valign="top" width="63.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122635_p378718142515"><a name="zh-cn_topic_0237122635_p378718142515"></a><a name="zh-cn_topic_0237122635_p378718142515"></a>使用内存大小（单位：字节）。</p>
 </td>
 </tr>
 </tbody>
 </table>
-
