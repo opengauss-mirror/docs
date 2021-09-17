@@ -6,7 +6,7 @@ package包含包头（Package Specification）和Package Body两个部分，其�
 
 PACKAGE的创建请参见[CREATE PACKAGE](CREATE-PACKAGE.md)。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   跨PACKAGE变量不支持作为FOR以及WHILE循环中控制变量使用。
+>![](public_sys-resources/icon-notice.gif) **须知：**   
+>-   跨PACKAGE变量不支持作为FOR以及WHILE循环中控制变量使用。  
 >-   PACKAGE中定义类型不支持删除、修改等操作，也不支持定义表。
 
