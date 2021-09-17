@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="section1685724811811"></a>
 
-DROP OPERATOR语句从数据库中删除一个现存的操作符。 要执行这个命令，你必须是操作符所有者。
+DROP OPERATOR语句从数据库中删除一个现存的操作符。要执行这个命令，你必须是操作符所有者。
 
 ## 语法格式<a name="section122664751912"></a>
 
@@ -22,7 +22,7 @@ DROP OPERATOR [ IF EXISTS ] name ( { left_type | NONE } , { right_type | NONE } 
 
 -   **name**
 
-    一个现存的操作符的名字\(可以有模式修饰\)。
+    一个现存的操作符的名字（可以有模式修饰）。
 
 -   **left\_type**
 

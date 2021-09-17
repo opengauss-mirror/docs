@@ -38,7 +38,7 @@ DROP FUNCTION [ IF EXISTS ] function_name
 
 -   **argtype**
 
-    函数参数的类型
+    函数参数的类型。
 
 
 ## 示例<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_s4c0a49238b6c41bdbf9c9cbd3aabcf08"></a>
