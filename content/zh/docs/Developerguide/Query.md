@@ -32,7 +32,7 @@ top：只记录顶层SQL。
 
 ## unique\_sql\_retention\_time<a name="section83014223920"></a>
 
-**参数说明：**清理unique sql哈希表的间隔，默认为30分钟
+**参数说明：**清理unique sql哈希表的间隔，默认为30分钟。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_sb2763fa0003e4ff1815379339bffe994)中对应设置方法进行设置。
 
@@ -42,7 +42,7 @@ top：只记录顶层SQL。
 
 ## enable\_instr\_rt\_percentile<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section137313294592"></a>
 
-**参数说明：**是否开启计算系统中80%和95%的SQL响应时间的功能
+**参数说明：**是否开启计算系统中80%和95%的SQL响应时间的功能。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -94,8 +94,8 @@ top：只记录顶层SQL。
 
 **取值范围：**布尔型
 
--   on：表示开启Full /Slow SQL捕获
--   off：表示关闭Full /Slow SQL捕获
+-   on：表示开启Full /Slow SQL捕获。
+-   off：表示关闭Full /Slow SQL捕获。
 
 **默认值：**on
 
@@ -124,7 +124,7 @@ top：只记录顶层SQL。
 
 ## track\_stmt\_details\_size<a name="section584919463"></a>
 
-**参数说明：**设置单语句可以收集的最大的执行事件的大小\(byte\)。
+**参数说明：**设置单语句可以收集的最大的执行事件的大小（byte）。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
