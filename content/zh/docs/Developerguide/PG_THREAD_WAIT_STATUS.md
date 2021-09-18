@@ -776,12 +776,12 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_row10781736162818"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p167953692820"><a name="zh-cn_topic_0283136724_p167953692820"></a><a name="zh-cn_topic_0283136724_p167953692820"></a>InstrUserLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1879183682811"><a name="zh-cn_topic_0283136724_p1879183682811"></a><a name="zh-cn_topic_0283136724_p1879183682811"></a>用于保护InstrUserHTAB。</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1879183682811"><a name="zh-cn_topic_0283136724_p1879183682811"></a><a name="zh-cn_topic_0283136724_p1879183682811"></a>用于保护InstrUserHTAB</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row17506195395619"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p202581307577"><a name="zh-cn_topic_0283136724_p202581307577"></a><a name="zh-cn_topic_0283136724_p202581307577"></a>BadBlockStatHashLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p19258133035719"><a name="zh-cn_topic_0283136724_p19258133035719"></a><a name="zh-cn_topic_0283136724_p19258133035719"></a>用于保护global_bad_block_stat hash表。</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p19258133035719"><a name="zh-cn_topic_0283136724_p19258133035719"></a><a name="zh-cn_topic_0283136724_p19258133035719"></a>用于保护global_bad_block_stat hash表</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row22422561403"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p8243175620019"><a name="zh-cn_topic_0283136724_p8243175620019"></a><a name="zh-cn_topic_0283136724_p8243175620019"></a>BufFreelistLock</p>
@@ -1005,7 +1005,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row35286310369"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p17528133116368"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p17528133116368"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p17528133116368"></a>DataFileFlush</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p8528143117367"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p8528143117367"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p8528143117367"></a>将表数据文件持久化到磁盘</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p8528143117367"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p8528143117367"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p8528143117367"></a>将表数据文件持久化到磁盘。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row3528431183617"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p4528113133612"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p4528113133612"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p4528113133612"></a>DataFileImmediateSync</p>
@@ -1070,7 +1070,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row2052973193615"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1252903118368"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1252903118368"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1252903118368"></a>RelationMapRead</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1652993119366"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1652993119366"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1652993119366"></a>读取系统表到存储位置之间的映射文件</p>
+<td class="cellrowborder" valign="top" width="61.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1652993119366"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1652993119366"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1652993119366"></a>读取系统表到存储位置之间的映射文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row1529163193618"><td class="cellrowborder" valign="top" width="38.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p652923112361"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p652923112361"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p652923112361"></a>RelationMapSync</p>
@@ -1256,6 +1256,7 @@ wait\_status列的等待状态有以下状态。
 </tbody>
 </table>
 
+
 当wait\_status值为acquire lock（事务锁）时对应的wait\_event等待事件类型与描述信息如下。
 
 **表 5**  事务锁等待事件列表
@@ -1329,4 +1330,3 @@ wait\_status列的等待状态有以下状态。
 </tr>
 </tbody>
 </table>
-
