@@ -31,7 +31,7 @@ PGXC\_GROUP系统表存储节点组信息。PGXC\_GROUP系统表仅在分布式�
 </td>
 <td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778124_a76edc60dabb44b539b96f3d8381e3266"><a name="zh-cn_topic_0059778124_a76edc60dabb44b539b96f3d8381e3266"></a><a name="zh-cn_topic_0059778124_a76edc60dabb44b539b96f3d8381e3266"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.46%" headers="mcps1.2.4.1.3 "><div class="p" id="p31791216459"><a name="p31791216459"></a><a name="p31791216459"></a>是否需要重分布。取值包括n,y,t。<a name="ul18285112624511"></a><a name="ul18285112624511"></a><ul id="ul18285112624511"><li>n：表示NodeGroup没有再进行重分布。</li><li>y：表示NodeGroup是重分布过程中的源节点组。</li><li>t：表示NodeGroup是重分布过程中的目的节点组。</li></ul>
+<td class="cellrowborder" valign="top" width="60.46%" headers="mcps1.2.4.1.3 "><div class="p" id="p31791216459"><a name="p31791216459"></a><a name="p31791216459"></a>是否需要重分布。取值包括n，y，t。<a name="ul18285112624511"></a><a name="ul18285112624511"></a><ul id="ul18285112624511"><li>n：表示NodeGroup没有再进行重分布。</li><li>y：表示NodeGroup是重分布过程中的源节点组。</li><li>t：表示NodeGroup是重分布过程中的目的节点组。</li></ul>
 </div>
 </td>
 </tr>
@@ -81,4 +81,3 @@ PGXC\_GROUP系统表存储节点组信息。PGXC\_GROUP系统表仅在分布式�
 </tr>
 </tbody>
 </table>
-

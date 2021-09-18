@@ -66,7 +66,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p21954919338"><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p21954919338"></a><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p21954919338"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p61951093331"><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p61951093331"></a><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p61951093331"></a>已使用的临时空间大小，单位KB</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p61951093331"><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p61951093331"></a><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p61951093331"></a>已使用的临时空间大小，单位KB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136771_zh-cn_topic_0237122540_row1519616963319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p119610911330"><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p119610911330"></a><a name="zh-cn_topic_0283136771_zh-cn_topic_0237122540_p119610911330"></a>total_temp_space</p>
@@ -134,4 +134,3 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </tr>
 </tbody>
 </table>
-
