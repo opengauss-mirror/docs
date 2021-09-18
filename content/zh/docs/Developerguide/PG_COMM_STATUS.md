@@ -1,6 +1,6 @@
 # PG\_COMM\_STATUS<a name="ZH-CN_TOPIC_0311526905"></a>
 
-PG\_COMM\_STATUS视图展示单个DN的通信库状态。
+PG\_COMM\_STATUS视图展示节点的通信库状态。
 
 **表 1**  PG\_COMM\_STATUS字段
 
