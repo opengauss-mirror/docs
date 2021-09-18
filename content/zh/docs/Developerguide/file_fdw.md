@@ -13,7 +13,7 @@ file\_fdw模块提供了外部数据封装器file\_fdw，可以用来在服务�
 	
 	-   **format**
 	
-	    远端server的文件格式，支持text/csv/binary/fixed四种格式，和COPY语句的FORMAT选项相同。
+	    远端server的文件格式，支持text/csv/binary三种格式，和COPY语句的FORMAT选项相同。
 	    
 	-   **header**
 	
