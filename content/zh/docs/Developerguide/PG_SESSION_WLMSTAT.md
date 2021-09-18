@@ -144,7 +144,7 @@ PG\_SESSION\_WLMSTAT视图显示当前用户执行作业正在运行时的负载
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777813_a85e90919e2c14bfda686b399a410a8ef"><a name="zh-cn_topic_0059777813_a85e90919e2c14bfda686b399a410a8ef"></a><a name="zh-cn_topic_0059777813_a85e90919e2c14bfda686b399a410a8ef"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0059777813_a52d8aa96b9ad4db89fa0403130714f94"><a name="zh-cn_topic_0059777813_a52d8aa96b9ad4db89fa0403130714f94"></a><a name="zh-cn_topic_0059777813_a52d8aa96b9ad4db89fa0403130714f94"></a>语句当前的状态，包括：<a name="zh-cn_topic_0059777813_u8178e6c3854c44b7ba964d821ba60847"></a><a name="zh-cn_topic_0059777813_u8178e6c3854c44b7ba964d821ba60847"></a><ul id="zh-cn_topic_0059777813_u8178e6c3854c44b7ba964d821ba60847"><li>pending：执行前状态。</li><li>running：执行进行状态。</li><li>finished：执行正常结束。（当enqueue字段为StoredProc或Transaction时，仅代表语句中的部分作业已经执行完毕，该状态会持续到该语句完全执行完毕。）</li><li>aborted：执行异常终止。</li><li>active: 非以上四种状态外的正常状态。</li><li>unknown: 未知状态。</li></ul>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0059777813_a52d8aa96b9ad4db89fa0403130714f94"><a name="zh-cn_topic_0059777813_a52d8aa96b9ad4db89fa0403130714f94"></a><a name="zh-cn_topic_0059777813_a52d8aa96b9ad4db89fa0403130714f94"></a>语句当前的状态，包括：<a name="zh-cn_topic_0059777813_u8178e6c3854c44b7ba964d821ba60847"></a><a name="zh-cn_topic_0059777813_u8178e6c3854c44b7ba964d821ba60847"></a><ul id="zh-cn_topic_0059777813_u8178e6c3854c44b7ba964d821ba60847"><li>pending：执行前状态。</li><li>running：执行进行状态。</li><li>finished：执行正常结束。（当enqueue字段为StoredProc或Transaction时，仅代表语句中的部分作业已经执行完毕，该状态会持续到该语句完全执行完毕。）</li><li>aborted：执行异常终止。</li><li>active：非以上四种状态外的正常状态。</li><li>unknown：未知状态。</li></ul>
 </div>
 </td>
 </tr>
@@ -185,4 +185,3 @@ PG\_SESSION\_WLMSTAT视图显示当前用户执行作业正在运行时的负载
 </tr>
 </tbody>
 </table>
-
