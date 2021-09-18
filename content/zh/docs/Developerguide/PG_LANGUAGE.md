@@ -66,7 +66,7 @@ PG\_LANGUAGE系统表登记编程语言，用户可以用这些语言或接口�
 </td>
 <td class="cellrowborder" valign="top" width="20.49%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_ac53628dd501c4e4ca2d10741c82728b7"><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_ac53628dd501c4e4ca2d10741c82728b7"></a><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_ac53628dd501c4e4ca2d10741c82728b7"></a><a href="PG_PROC.md">PG_PROC</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.93%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a3d146d75214e4c8da8f3344ca941ba36"><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a3d146d75214e4c8da8f3344ca941ba36"></a><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a3d146d75214e4c8da8f3344ca941ba36"></a>对于非内部语言，这是指向该语言处理器的引用，语言处理器是一个特殊函数， 负责执行以某种语言写的所有函数。</p>
+<td class="cellrowborder" valign="top" width="47.93%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a3d146d75214e4c8da8f3344ca941ba36"><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a3d146d75214e4c8da8f3344ca941ba36"></a><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a3d146d75214e4c8da8f3344ca941ba36"></a>对于非内部语言，这是指向该语言处理器的引用，语言处理器是一个特殊函数，负责执行以某种语言写的所有函数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_rc9736b07409c4d998130cdf15b7c7d57"><td class="cellrowborder" valign="top" width="17.48%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a10300d43e5144d17906ee7b355da2af5"><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a10300d43e5144d17906ee7b355da2af5"></a><a name="zh-cn_topic_0283137263_zh-cn_topic_0237122297_zh-cn_topic_0059779185_a10300d43e5144d17906ee7b355da2af5"></a>laninline</p>
@@ -98,4 +98,3 @@ PG\_LANGUAGE系统表登记编程语言，用户可以用这些语言或接口�
 </tr>
 </tbody>
 </table>
-
