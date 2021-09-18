@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="section786041713618"></a>
 
--   DROP EXTENSION 命令从数据库中删除一个扩展。 在删除扩展的过程中，构成扩展的组件也会一起删除。
+-   DROP EXTENSION命令从数据库中删除一个扩展。在删除扩展的过程中，构成扩展的组件也会一起删除。
 -   必须是扩展的拥有者才能够使用DROP EXTENSION命令。
 
 ## 语法格式<a name="section1374719912321"></a>
@@ -31,7 +31,7 @@ DROP EXTENSION [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 -   **RESTRICT**
 
-    如果有依赖于扩展的对象，则不允许删除次扩展（除非它所有的成员对象和其它扩展对象在一条 DROP命令一起删除）。 这是缺省行为。
+    如果有依赖于扩展的对象，则不允许删除次扩展（除非它所有的成员对象和其它扩展对象在一条DROP命令一起删除）。这是缺省行为。
 
 
 ## 示例<a name="section14411351193419"></a>
@@ -42,5 +42,5 @@ DROP EXTENSION [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 DROP EXTENSION hstore;
 ```
 
-在当前数据库中，如果有使用hstore的对象的，这条命令就会失败，比如 任一表中的字段使用hstore类型。这时增加CASCADE选项会强制删除扩展和 依赖于扩展的对象。
+在当前数据库中，如果有使用hstore的对象的，这条命令就会失败，比如任一表中的字段使用hstore类型。这时增加CASCADE选项会强制删除扩展和依赖于扩展的对象。
 

@@ -22,7 +22,7 @@ DROP AGGREGATE [ IF EXISTS ] name ( argtype [ , ... ] ) [ CASCADE | RESTRICT ]
 
 -   **name**
 
-    现存的聚合函数名\(可以有模式修饰\)
+    现存的聚合函数名（可以有模式修饰）
 
 -   **argtype**
 

@@ -22,7 +22,7 @@ DROP [ PROCEDURAL ] LANGUAGE [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 -   **CASCADE**
 
-    级联删除依赖于该语言的对象\(比如该语言写的函数\)。
+    级联删除依赖于该语言的对象（比如该语言写的函数）。
 
 -   **RESTRICT**
 
