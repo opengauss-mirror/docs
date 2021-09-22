@@ -1,11 +1,11 @@
-# Confirming Connection Information<a name="EN-US_TOPIC_0242370176"></a>
+# Confirming Connection Information<a name="EN-US_TOPIC_0289899830"></a>
 
-You can use a client tool to connect to a database through the primary node of the database. Before the connection, obtain the IP address of the primary node of the database and the port number of the server where the primary node of the database is deployed.
+You can use a client tool to connect to a database through a the primary node of the database in the database. Before the connection, obtain the IP address and the primary node of the database port number of the server where the the primary node of the database is deployed.
 
-## Procedure<a name="en-us_topic_0237120290_en-us_topic_0062129725_section3641787792727"></a>
+## Procedure<a name="en-us_topic_0283137330_en-us_topic_0237120290_en-us_topic_0062129725_section3641787792727"></a>
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  <a name="en-us_topic_0237120290_en-us_topic_0062129725_li736435692628"></a>Run the  **gs\_om-t status--detail**  command to query instances in the openGauss cluster.
+2.  <a name="en-us_topic_0283137330_en-us_topic_0237120290_en-us_topic_0062129725_li736435692628"></a>Run the  **gs\_om-t status--detail**  command to query instances in openGauss.
 
     ```
     gs_om -t status --detail
@@ -15,15 +15,15 @@ You can use a client tool to connect to a database through the primary node of t
     [ DBnode State ]
     
     node        node_ip         instance                                  state
-    -----------------------------------------------------------------------------
-    1  plat1 192.168.0.11  5001 /srv/BigData/gaussdb/data1/dbnode P Primary Normal
+     -----------------------------------------------------------------------------
+     1  plat1 192.168.0.11  5001 /srv/gaussdb/data1/dbnode  P Primary Normal
     ```
-    
-    For example, the server IP addresses where the primary node of the database is deployed are 192.168.10.11. The data path of the primary node of the database is  **/srv/BigData/gaussdb/data1/dbnode**. "P" indicates that the initial role of the node is primary, and it not change after installation. "Primary" indicates that the instance is the primary instance; "Normal" indicates that openGauss is available. For details about the other parameters, see "Server Tools" \> gs\_om" in the  _Tool Refrence_.
+
+    In the preceding information, the IP address of the server where the primary database node instance is deployed is  **192.168.10.11**. The data path of the primary node of the database is  **/srv/gaussdb/data1/dbnode**.  **P**  indicates that the role specified during the installation is  **Primary**. The role does not change after the database is installed and is read from the system static file.  **Primary**  means the primary instance.  **Normal**  indicates that openGauss is available, the data has redundancy backup, all processes are running, and the primary/standby relationship is normal.
 
 3.  Confirm the port number of the primary node of the database.
 
-    View the port number in the  **postgresql.conf**  file in the data path of the database primary node obtained in  [2](#en-us_topic_0237120290_en-us_topic_0062129725_li736435692628). The command is as follows:
+    View the port number in the  **postgresql.conf**  file of the primary node of the database path, which is queried in  [2](#en-us_topic_0283137330_en-us_topic_0237120290_en-us_topic_0062129725_li736435692628). The command is as follows:
 
     ```
     cat /srv/BigData/gaussdb/data1/dbnode/postgresql.conf | grep port
@@ -41,6 +41,6 @@ You can use a client tool to connect to a database through the primary node of t
     support_extended_features=true
     ```
 
-    **8000**  is the port number of the database primary node.
+    **8000**  is the port number of the the primary node of the database.
 
 

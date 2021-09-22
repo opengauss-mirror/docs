@@ -4,7 +4,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
 ## Procedure<a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_s0b78a5ac02d949ada15c29b00b5c734d"></a>
 
-1.  Obtain the source code package of unixODBC. Try the following link: 
+1.  Obtain the source code package of unixODBC by following link: 
 
     [https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.7/unixODBC-2.3.7pre.tar.gz/download](https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.7/unixODBC-2.3.7pre.tar.gz/download)
 
@@ -17,29 +17,29 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     ```
     tar zxvf unixODBC-2.3.0.tar.gz
     cd unixODBC-2.3.0
-    # Open the configure file. If it does not exist, open the configure.ac file. Find LIB_VERSION.
+    # Modify the configure file. (If it does not exist, modify the configure.ac file.) Find LIB_VERSION.
     # Change the value of LIB_VERSION to 1:0:0 to compile a *.so.1 dynamic library with the same dependency on psqlodbcw.so.
     vim configure
     
-    ./configure --enable-gui=no # To perform build on a Kunpeng server, add the configure parameter --build=aarch64-unknown-linux-gnu.
+    ./configure --enable-gui=no #To perform compilation on a Kunpeng server, add the configure parameter --build=aarch64-unknown-linux-gnu.
     make
     # The installation may require root permissions.
     make install
     ```
 
 3.  Replace the openGauss client driver.
-    1.  Decompress  **openGauss-X.X.X-ODBC.tar.gz**  to the  **/usr/local/lib**  directory. The  **psqlodbcw.la**  and  **psqlodbcw.so**  files are obtained.
-    2.  Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-X.X.X-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
+    1.  Decompress  **openGauss-1.1.0-ODBC.tar.gz**  to the  **/usr/local/lib**  directory. The  **psqlodbcw.la**  and  **psqlodbcw.so**  files are obtained.
+    2.  Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-1.1.0-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
 
 4.  Configure a data source.
     1.  Configure the ODBC driver file.
 
-        Add the following content to the end of the  **/usr/local/etc/odbcinst.ini**  file:
+        Add the following content to the  **/xxx/odbc/etc/odbcinst.ini**  file:
 
         ```
         [GaussMPP]
-        Driver64=/usr/local/lib/psqlodbcw.so
-        setup=/usr/local/lib/psqlodbcw.so
+        Driver64=/xxx/odbc/lib/psqlodbcw.so
+        setup=/xxx/odbc/lib/psqlodbcw.so
         ```
 
         For descriptions of the parameters in the  **odbcinst.ini**  file, see  [Table 1](#en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_td564f21e7c8e458bbd741b09896f5d91).
@@ -51,7 +51,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </th>
         <th class="cellrowborder" valign="top" width="38.89%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a87fb9ed3f1b140119593e71843494a31"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a87fb9ed3f1b140119593e71843494a31"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a87fb9ed3f1b140119593e71843494a31"></a><strong id="b1786105011417"><a name="b1786105011417"></a><a name="b1786105011417"></a>Description</strong></p>
         </th>
-        <th class="cellrowborder" valign="top" width="34.77%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ad3bb948669de4429be3b566882116d70"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ad3bb948669de4429be3b566882116d70"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ad3bb948669de4429be3b566882116d70"></a><strong id="b842352706105726"><a name="b842352706105726"></a><a name="b842352706105726"></a>Example Value</strong></p>
+        <th class="cellrowborder" valign="top" width="34.77%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ad3bb948669de4429be3b566882116d70"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ad3bb948669de4429be3b566882116d70"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ad3bb948669de4429be3b566882116d70"></a><strong id="b720613391014"><a name="b720613391014"></a><a name="b720613391014"></a>Example</strong></p>
         </th>
         </tr>
         </thead>
@@ -81,17 +81,17 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
     2.  Configure the data source file.
 
-        Add the following content to the end of the  **/usr/local/etc/odbc.ini**  file:
+        Add the following content to the  **/usr/local/etc/odbc.ini**  file:
 
         ```
         [MPPODBC]
         Driver=GaussMPP
-        Servername=10.10.0.13 (database server IP address)
+        Servername=10.145.130.26 (IP address of the server where the database resides)
         Database=postgres  (database name)
         Username=omm  (database username)
-        Password=    (database user password)
-        Port=8000 (Database listening port)
-        Sslmode=allow
+        Password=    (user password of the database)
+        Port=8000 (listening port of the database)
+        Sslmode = allow
         ```
 
         For descriptions of the parameters in the  **odbc.ini**  file, see  [Table 2](#en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_t55845a6555f2454297b64ce47ad3d648).
@@ -99,113 +99,155 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         **Table  2**  odbc.ini configuration parameters
 
         <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_t55845a6555f2454297b64ce47ad3d648"></a>
-        <table><thead align="left"><tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r670b13dddd7d4cf1803d4fb238347e4f"><th class="cellrowborder" valign="top" width="25.96%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"></a><strong id="b566754655"><a name="b566754655"></a><a name="b566754655"></a>Parameter</strong></p>
+        <table><thead align="left"><tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r670b13dddd7d4cf1803d4fb238347e4f"><th class="cellrowborder" valign="top" width="30.570000000000004%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"></a><strong id="b566754655"><a name="b566754655"></a><a name="b566754655"></a>Parameter</strong></p>
         </th>
-        <th class="cellrowborder" valign="top" width="39.45%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><strong id="b1269818660"><a name="b1269818660"></a><a name="b1269818660"></a>Description</strong></p>
+        <th class="cellrowborder" valign="top" width="33.37%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><strong id="b71385514"><a name="b71385514"></a><a name="b71385514"></a>Description</strong></p>
         </th>
-        <th class="cellrowborder" valign="top" width="34.589999999999996%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"></a><strong id="b637397586"><a name="b637397586"></a><a name="b637397586"></a>Example Value</strong></p>
+        <th class="cellrowborder" valign="top" width="36.059999999999995%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"></a><strong id="b15508183881020"><a name="b15508183881020"></a><a name="b15508183881020"></a>Example</strong></p>
         </th>
         </tr>
         </thead>
-        <tbody><tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r0fb190e64b064cd5bdc4ba6a85b7f5b5"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5a22b1b502ce470daf0e150a5a22478d"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5a22b1b502ce470daf0e150a5a22478d"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5a22b1b502ce470daf0e150a5a22478d"></a>[DSN]</p>
+        <tbody><tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r0fb190e64b064cd5bdc4ba6a85b7f5b5"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5a22b1b502ce470daf0e150a5a22478d"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5a22b1b502ce470daf0e150a5a22478d"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5a22b1b502ce470daf0e150a5a22478d"></a>[DSN]</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4d0e13e5a4974e95ba02b65f0880769a"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4d0e13e5a4974e95ba02b65f0880769a"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4d0e13e5a4974e95ba02b65f0880769a"></a>Data source name.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4d0e13e5a4974e95ba02b65f0880769a"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4d0e13e5a4974e95ba02b65f0880769a"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4d0e13e5a4974e95ba02b65f0880769a"></a>Data source name.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p574463221213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p574463221213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p574463221213"></a>[MPPODBC]</p>
-        </td>
-        </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r6594d9c7f185417cbb0362b69ff20436"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a11f2651489984caaa3ba6c5a69b3bb4a"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a11f2651489984caaa3ba6c5a69b3bb4a"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a11f2651489984caaa3ba6c5a69b3bb4a"></a>Driver</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a45cdb983d7eb4357bfe4363048fff41b"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a45cdb983d7eb4357bfe4363048fff41b"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a45cdb983d7eb4357bfe4363048fff41b"></a>Driver name, corresponding to DriverName in <strong id="b207611103616"><a name="b207611103616"></a><a name="b207611103616"></a>odbcinst.ini</strong>.</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p587420421213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p587420421213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p587420421213"></a>Driver=DRIVER_N</p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p574463221213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p574463221213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p574463221213"></a>[MPPODBC]</p>
         </td>
         </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ra2915c8c5cb64c31bca0b7cc97b3cb94"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a>Servername</p>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r6594d9c7f185417cbb0362b69ff20436"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a11f2651489984caaa3ba6c5a69b3bb4a"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a11f2651489984caaa3ba6c5a69b3bb4a"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a11f2651489984caaa3ba6c5a69b3bb4a"></a>Driver</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a>Server IP address.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a45cdb983d7eb4357bfe4363048fff41b"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a45cdb983d7eb4357bfe4363048fff41b"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a45cdb983d7eb4357bfe4363048fff41b"></a>Driver name, corresponding to DriverName in <strong id="b207611103616"><a name="b207611103616"></a><a name="b207611103616"></a>odbcinst.ini</strong>.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"></a>Servername=10.145.130.26</p>
-        </td>
-        </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_rf57dbfc6a8404544a5844f08783f6892"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a628bf205a20d43c69555a3424981c8f0"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a628bf205a20d43c69555a3424981c8f0"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a628bf205a20d43c69555a3424981c8f0"></a>Database</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7dacdbe0757946ed85ca6e897a443cab"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7dacdbe0757946ed85ca6e897a443cab"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7dacdbe0757946ed85ca6e897a443cab"></a>Name of the database to connect.</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a44897122ba4248fb8fdb9ff9235f04f2"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a44897122ba4248fb8fdb9ff9235f04f2"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a44897122ba4248fb8fdb9ff9235f04f2"></a>Database=postgres</p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p587420421213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p587420421213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p587420421213"></a>Driver = DRIVER_N</p>
         </td>
         </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r478d8852e4294c01bb48cbaaf087df82"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p237028621213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p237028621213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p237028621213"></a>Username</p>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ra2915c8c5cb64c31bca0b7cc97b3cb94"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a>Servername</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6d4497d8c6134705a3971992b73eb9a8"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6d4497d8c6134705a3971992b73eb9a8"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6d4497d8c6134705a3971992b73eb9a8"></a>Database username.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a>Server IP address.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4c244a359e2341a9a25a634898bef6f8"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4c244a359e2341a9a25a634898bef6f8"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4c244a359e2341a9a25a634898bef6f8"></a>Username=<span id="en-us_topic_0283136654_en-us_topic_0237120407_text542984584919"><a name="en-us_topic_0283136654_en-us_topic_0237120407_text542984584919"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_text542984584919"></a>omm</span></p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"></a>Servername = 10.145.130.26</p>
         </td>
         </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r373830e4fd9c4f8997fcdde5596099f4"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a72415586711142e39d29a2d8b664ff2b"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a72415586711142e39d29a2d8b664ff2b"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a72415586711142e39d29a2d8b664ff2b"></a>Password</p>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_rf57dbfc6a8404544a5844f08783f6892"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a628bf205a20d43c69555a3424981c8f0"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a628bf205a20d43c69555a3424981c8f0"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a628bf205a20d43c69555a3424981c8f0"></a>Database</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab0a86a7c047f420081b1c5d1c57ca78f"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab0a86a7c047f420081b1c5d1c57ca78f"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab0a86a7c047f420081b1c5d1c57ca78f"></a>Database user password.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7dacdbe0757946ed85ca6e897a443cab"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7dacdbe0757946ed85ca6e897a443cab"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7dacdbe0757946ed85ca6e897a443cab"></a>Name of the database to connect to.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a>Password=</p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a44897122ba4248fb8fdb9ff9235f04f2"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a44897122ba4248fb8fdb9ff9235f04f2"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a44897122ba4248fb8fdb9ff9235f04f2"></a>Database = postgres</p>
+        </td>
+        </tr>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r478d8852e4294c01bb48cbaaf087df82"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p237028621213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p237028621213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p237028621213"></a>Username</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6d4497d8c6134705a3971992b73eb9a8"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6d4497d8c6134705a3971992b73eb9a8"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6d4497d8c6134705a3971992b73eb9a8"></a>Database username.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4c244a359e2341a9a25a634898bef6f8"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4c244a359e2341a9a25a634898bef6f8"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a4c244a359e2341a9a25a634898bef6f8"></a>Username = <span id="en-us_topic_0283136654_en-us_topic_0237120407_text542984584919"><a name="en-us_topic_0283136654_en-us_topic_0237120407_text542984584919"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_text542984584919"></a>omm</span></p>
+        </td>
+        </tr>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r373830e4fd9c4f8997fcdde5596099f4"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a72415586711142e39d29a2d8b664ff2b"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a72415586711142e39d29a2d8b664ff2b"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a72415586711142e39d29a2d8b664ff2b"></a>Password</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab0a86a7c047f420081b1c5d1c57ca78f"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab0a86a7c047f420081b1c5d1c57ca78f"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab0a86a7c047f420081b1c5d1c57ca78f"></a>Database user password.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a>Password=</p>
         <div class="note" id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_note66001755162217"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_note66001755162217"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_note66001755162217"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p57144884162217"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p57144884162217"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p57144884162217"></a>After a user established a connection, the ODBC driver automatically clears their password stored in memory.</p>
         <p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p33900700162423"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p33900700162423"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p33900700162423"></a>However, if this parameter is configured, UnixODBC will cache data source files, which may cause the password to be stored in the memory for a long time.</p>
         <p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p9307938162511"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p9307938162511"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p9307938162511"></a>When you connect to an application, you are advised to send your password through an API instead of writing it in a data source configuration file. After the connection has been established, immediately clear the memory segment where your password is stored.</p>
         </div></div>
         </td>
         </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r99417f5e349c4f7b89331e2a2d56200d"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af23b15858fa341b6b849ff850e10a6cb"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af23b15858fa341b6b849ff850e10a6cb"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af23b15858fa341b6b849ff850e10a6cb"></a>Port</p>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r99417f5e349c4f7b89331e2a2d56200d"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af23b15858fa341b6b849ff850e10a6cb"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af23b15858fa341b6b849ff850e10a6cb"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af23b15858fa341b6b849ff850e10a6cb"></a>Port</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a86b34375cfcd4cdd84b070cc42d847c3"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a86b34375cfcd4cdd84b070cc42d847c3"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a86b34375cfcd4cdd84b070cc42d847c3"></a>Port number of the server.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a86b34375cfcd4cdd84b070cc42d847c3"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a86b34375cfcd4cdd84b070cc42d847c3"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a86b34375cfcd4cdd84b070cc42d847c3"></a>Port number of the server.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab47ede062bc6450097f576df5aa63442"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab47ede062bc6450097f576df5aa63442"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab47ede062bc6450097f576df5aa63442"></a>Port=<span id="en-us_topic_0283136654_en-us_topic_0237120407_text64689595438"><a name="en-us_topic_0283136654_en-us_topic_0237120407_text64689595438"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_text64689595438"></a>8000</span></p>
-        </td>
-        </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_rd27aa89b945d4ac6b33000b6df5c916e"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a>Sslmode</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p462272821213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p462272821213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p462272821213"></a>Whether to enable SSL.</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a>Sslmode=allow</p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab47ede062bc6450097f576df5aa63442"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab47ede062bc6450097f576df5aa63442"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ab47ede062bc6450097f576df5aa63442"></a>Port = <span id="en-us_topic_0283136654_en-us_topic_0237120407_text64689595438"><a name="en-us_topic_0283136654_en-us_topic_0237120407_text64689595438"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_text64689595438"></a>8000</span></p>
         </td>
         </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_row3180734193610"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p91811034123617"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p91811034123617"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p91811034123617"></a>UseServerSidePrepare</p>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_rd27aa89b945d4ac6b33000b6df5c916e"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a>Sslmode</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p31811134143616"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p31811134143616"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p31811134143616"></a>Whether to enable the extended query protocol for the database.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p462272821213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p462272821213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p462272821213"></a>Whether to enable SSL.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a>Sslmode = allow</p>
+        </td>
+        </tr>
+        <tr id="row115681541336"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p65681140317"><a name="p65681140317"></a><a name="p65681140317"></a>Debug</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p195681543312"><a name="p195681543312"></a><a name="p195681543312"></a>If this parameter is set to <strong id="b1638153182116"><a name="b1638153182116"></a><a name="b1638153182116"></a>1</strong>, the <strong id="b893511282474"><a name="b893511282474"></a><a name="b893511282474"></a>mylog</strong> file of the PostgreSQL ODBC driver will be printed. The directory generated for storing logs is <strong id="b17947114672111"><a name="b17947114672111"></a><a name="b17947114672111"></a>/tmp/</strong>. If this parameter is set to <strong id="b1722513421233"><a name="b1722513421233"></a><a name="b1722513421233"></a>0</strong>, no directory is generated.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="p205681419316"><a name="p205681419316"></a><a name="p205681419316"></a>Debug = 1</p>
+        </td>
+        </tr>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_row3180734193610"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p91811034123617"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p91811034123617"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p91811034123617"></a>UseServerSidePrepare</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p31811134143616"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p31811134143616"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p31811134143616"></a>Whether to enable the extended query protocol for the database.</p>
         <p id="en-us_topic_0283136654_en-us_topic_0237120407_p19694134018382"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p19694134018382"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p19694134018382"></a>The value can be <strong id="b15189172412713"><a name="b15189172412713"></a><a name="b15189172412713"></a>0</strong> or <strong id="b121943241370"><a name="b121943241370"></a><a name="b121943241370"></a>1</strong>. The default value is <strong id="b201941245718"><a name="b201941245718"></a><a name="b201941245718"></a>1</strong>, indicating that the extended query protocol is enabled.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p318163493616"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p318163493616"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p318163493616"></a>UseServerSidePrepare=1</p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p318163493616"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p318163493616"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p318163493616"></a>UseServerSidePrepare = 1</p>
         </td>
         </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_row18741310143913"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p674191083916"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p674191083916"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p674191083916"></a>UseBatchProtocol</p>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_row18741310143913"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p674191083916"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p674191083916"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p674191083916"></a>UseBatchProtocol</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p67427101397"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p67427101397"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p67427101397"></a>Whether to enable the batch query protocol. If it is enabled, DML performance can be improved. The value can be <strong id="b16526329179"><a name="b16526329179"></a><a name="b16526329179"></a>0</strong> or <strong id="b185311229070"><a name="b185311229070"></a><a name="b185311229070"></a>1</strong>. The default value is <strong id="b1753111291713"><a name="b1753111291713"></a><a name="b1753111291713"></a>1</strong>.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p67427101397"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p67427101397"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p67427101397"></a>Whether to enable the batch query protocol. If it is enabled, DML performance can be improved. The value can be <strong id="b16526329179"><a name="b16526329179"></a><a name="b16526329179"></a>0</strong> or <strong id="b185311229070"><a name="b185311229070"></a><a name="b185311229070"></a>1</strong>. The default value is <strong id="b1753111291713"><a name="b1753111291713"></a><a name="b1753111291713"></a>1</strong>.</p>
         <p id="en-us_topic_0283136654_en-us_topic_0237120407_p20481152784010"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p20481152784010"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p20481152784010"></a>If this parameter is set to <strong id="b965614018713"><a name="b965614018713"></a><a name="b965614018713"></a>0</strong>, the batch query protocol is disabled (mainly for communication with earlier database versions).</p>
         <p id="en-us_topic_0283136654_en-us_topic_0237120407_p05131728428"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p05131728428"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p05131728428"></a>If this parameter is set to <strong id="b496916455714"><a name="b496916455714"></a><a name="b496916455714"></a>1</strong> and <strong id="b15974845879"><a name="b15974845879"></a><a name="b15974845879"></a>support_batch_bind</strong> is set to <strong id="b197414453720"><a name="b197414453720"></a><a name="b197414453720"></a>on</strong>, the batch query protocol is enabled.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p7742101083917"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p7742101083917"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p7742101083917"></a>UseBatchProtocol=1</p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p7742101083917"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p7742101083917"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p7742101083917"></a>UseBatchProtocol = 1</p>
         </td>
         </tr>
-        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_row9789524184113"><td class="cellrowborder" valign="top" width="25.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"></a>ConnectionExtraInfo</p>
+        <tr id="row3254426236"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p725410268312"><a name="p725410268312"></a><a name="p725410268312"></a>ForExtensionConnector</p>
         </td>
-        <td class="cellrowborder" valign="top" width="39.45%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a>Whether to display the driver deployment path and process owner in the <strong id="b323618214810"><a name="b323618214810"></a><a name="b323618214810"></a>connection_info</strong> parameter mentioned in <a href="connection-settings.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p1125417269313"><a name="p1125417269313"></a><a name="p1125417269313"></a>This parameter specifies whether the savepoint is sent.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"></a>ConnectionExtraInfo=1</p>
-        <div class="note" id="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a>The default value is <strong id="b18201217781"><a name="b18201217781"></a><a name="b18201217781"></a>0</strong>. If this parameter is set to <strong id="b261315312492"><a name="b261315312492"></a><a name="b261315312492"></a>1</strong>, the ODBC driver reports the driver deployment path and process owner to the database and displays the information in the <strong id="b4614143116497"><a name="b4614143116497"></a><a name="b4614143116497"></a>connection_info</strong> parameter (see <a href="en-us_topic_0289900173.md">BEGIN</a>). In this case, you can query the information from <a href="PG_STAT_ACTIVITY.md">PG_STAT_ACTIVITY</a>.</p>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="p32542266317"><a name="p32542266317"></a><a name="p32542266317"></a>ForExtensionConnector = 1</p>
+        </td>
+        </tr>
+        <tr id="row102684231731"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p6268223637"><a name="p6268223637"></a><a name="p6268223637"></a>UnamedPrepStmtThreshold</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p42681323638"><a name="p42681323638"></a><a name="p42681323638"></a>Each time <strong id="b17628202615373"><a name="b17628202615373"></a><a name="b17628202615373"></a>SQLFreeHandle</strong> is invoked to release statements, ODBC sends a <strong id="b12308173723819"><a name="b12308173723819"></a><a name="b12308173723819"></a>Deallocate plan_name</strong> statement to the server. A large number of such a statement exist in the service. To reduce the number of the statements to be sent, <strong id="b17478186175019"><a name="b17478186175019"></a><a name="b17478186175019"></a>stmt-&gt;plan_name</strong> is left empty so that the database can identify them as unnamed statements. This parameter is added to control the threshold for unnamed statements.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="p0268142318319"><a name="p0268142318319"></a><a name="p0268142318319"></a>UnamedPrepStmtThreshold = 100</p>
+        </td>
+        </tr>
+        <tr id="en-us_topic_0283136654_en-us_topic_0237120407_row9789524184113"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"></a>ConnectionExtraInfo</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a>Whether to display the driver deployment path and process owner in the <strong id="b323618214810"><a name="b323618214810"></a><a name="b323618214810"></a>connection_info</strong> parameter mentioned in <a href="connection-settings.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"></a>ConnectionExtraInfo = 1</p>
+        <div class="note" id="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a>The default value is <strong id="b18201217781"><a name="b18201217781"></a><a name="b18201217781"></a>0</strong>. If this parameter is set to <strong id="b261315312492"><a name="b261315312492"></a><a name="b261315312492"></a>1</strong>, the ODBC driver reports the driver deployment path and process owner to the database and displays the information in the <strong id="b4614143116497"><a name="b4614143116497"></a><a name="b4614143116497"></a>connection_info</strong> parameter (see <a href="en-us_topic_0289900173.md">BEGIN</a>). In this case, you can query the information from <a href="en-us_topic_0289899849.md">PG_STAT_ACTIVITY</a>.</p>
         </div></div>
+        </td>
+        </tr>
+        <tr id="row151219194419"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p1812118199417"><a name="p1812118199417"></a><a name="p1812118199417"></a>BoolAsChar</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p9121419947"><a name="p9121419947"></a><a name="p9121419947"></a>If this parameter is set to <strong id="b527850153914"><a name="b527850153914"></a><a name="b527850153914"></a>Yes</strong>, the Boolean value is mapped to the SQL_CHAR type. If this parameter is not set, the value is mapped to the SQL_BIT type.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="p1712114193419"><a name="p1712114193419"></a><a name="p1712114193419"></a>BoolsAsChar = Yes</p>
+        </td>
+        </tr>
+        <tr id="row1295715161419"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p195720163417"><a name="p195720163417"></a><a name="p195720163417"></a>RowVersioning</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p9957191615418"><a name="p9957191615418"></a><a name="p9957191615418"></a>When an attempt is made to update a row of data, setting this parameter to <strong id="b244816354211"><a name="b244816354211"></a><a name="b244816354211"></a>Yes</strong> allows the application to detect whether the data has been modified by other users.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="p2095791613416"><a name="p2095791613416"></a><a name="p2095791613416"></a>RowVersioning = Yes</p>
+        </td>
+        </tr>
+        <tr id="row1429519142045"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p12954141643"><a name="p12954141643"></a><a name="p12954141643"></a>ShowSystemTables</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p529511142411"><a name="p529511142411"></a><a name="p529511142411"></a>By default, the driver regards the system table as a common SQL table.</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="p162955148416"><a name="p162955148416"></a><a name="p162955148416"></a>ShowSystemTables = Yes</p>
         </td>
         </tr>
         </tbody>
         </table>
 
-        The valid values of  **sslmode**  are as follows:
+        The valid values of  **Sslmode**  are as follows:
 
-        **Table  3**  sslmode options and description
+        **Table  3**  Sslmode options
 
         <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_table22136585143846"></a>
-        <table><thead align="left"><tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_row7964795143846"><th class="cellrowborder" valign="top" width="14.87%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p44475740143856"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p44475740143856"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p44475740143856"></a><strong>sslmode</strong></p>
+        <table><thead align="left"><tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_row7964795143846"><th class="cellrowborder" valign="top" width="14.87%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p44475740143856"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p44475740143856"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p44475740143856"></a>Sslmode</p>
         </th>
-            <th class="cellrowborder" valign="top" width="18.87%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p45765196143856"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p45765196143856"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p45765196143856"></a><strong>Whether SSL Encryption Is Enabled</strong></p>
+        <th class="cellrowborder" valign="top" width="18.87%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p45765196143856"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p45765196143856"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p45765196143856"></a>Whether SSL Encryption Is Enabled</p>
         </th>
-            <th class="cellrowborder" valign="top" width="66.25999999999999%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p15993376143856"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p15993376143856"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p15993376143856"></a><strong>Description</strong></p>
+        <th class="cellrowborder" valign="top" width="66.25999999999999%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p15993376143856"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p15993376143856"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_p15993376143856"></a>Description</p>
         </th>
         </tr>
         </thead>
@@ -254,9 +296,8 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tbody>
         </table>
 
-
-5.  \(Optional\) Generate an SSL certificate. For details, see  [Generating Certificates](en-us_topic_0289900216.md). This step and step  [6](#en-us_topic_0283136654_li1724551081815)  are required only when the server and client are connected in SSL mode. Skip the two steps if the non-SSL connection mode is used.
-6.  <a name="en-us_topic_0283136654_li1724551081815"></a>\(Optional\) Replace an SSL certificate. For details, see  [Replacing Certificates](en-us_topic_0289900549.md).
+5.  \(Optional\) Generate an SSL certificate. For details, see  [Generating Certificates](generating-certificates.md). This step and step  [6](#en-us_topic_0283136654_li1724551081815)  are required only when the server and client are connected in SSL mode. Skip the two steps if the non-SSL connection mode is used.
+6.  <a name="en-us_topic_0283136654_li1724551081815"></a>\(Optional\) Replace an SSL certificate. For details, see  [Replacing Certificates](replacing-certificates.md).
 7.  <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>Configure the database server.
     1.  Log in as the OS user  **omm**  to the primary node of the database.
     2.  Run the following command to add NIC IP addresses or host names, with values separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  _NodeName_  specifies the name of the current node.
@@ -304,7 +345,6 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         gs_om -t start
         ```
 
-
 8.  Configure the environment variables on the client.
 
     ```
@@ -328,7 +368,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
 ## Verifying the Data Source Configuration<a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_scfaeeaa70a9448889e6fdd7e37d172c5"></a>
 
-Run the  **isql-v** _MPPODBC_  command \(**_MPPODBC_**  is the data source name\).
+Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source name\).
 
 -   If the following information is displayed, the configuration is correct and the connection succeeds.
 

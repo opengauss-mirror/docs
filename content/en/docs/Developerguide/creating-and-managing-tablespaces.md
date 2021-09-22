@@ -1,6 +1,6 @@
-# Creating and Managing Tablespaces<a name="EN-US_TOPIC_0242370183"></a>
+# Creating and Managing Tablespaces<a name="EN-US_TOPIC_0289900987"></a>
 
-## Background<a name="en-us_topic_0237120297_en-us_topic_0059778849_saaab96d21e01450bb4a62113d37a03c7"></a>
+## Background<a name="en-us_topic_0283137616_en-us_topic_0237120297_en-us_topic_0059778849_saaab96d21e01450bb4a62113d37a03c7"></a>
 
 The administrator can use tablespaces to control the layout of disks where a database is installed. This has the following advantages:
 
@@ -17,13 +17,22 @@ The administrator can use tablespaces to control the layout of disks where a dat
     If the tablespace quota management is used, the performance may deteriorate by about 30%.  **MAXSIZE**  specifies the maximum quota for each database node. The deviation must be within 500 MB. Determine whether to set a tablespace to its maximum size as required.
 
 
-## Procedure<a name="en-us_topic_0237120297_en-us_topic_0059778849_se40504a685a14d718e41d4f669a4ddca"></a>
+openGauss provides two tablespaces:  **pg\_default**  and  **pg\_global**.
+
+-   Default tablespace  **pg\_default**: stores non-shared system tables, user tables, user table indexes, temporary tables, temporary table indexes, and internal temporary tables. The corresponding storage directory is the base directory in the instance data directory.
+-   Shared tablespace  **pg\_global**: stores shared system tables. The corresponding storage directory is the base directory in the global data directory.
+
+## Precautions<a name="section03301347122915"></a>
+
+In scenarios such as HCS, you are not advised to use user-defined tablespaces. This is because user-defined tablespaces are usually used with storage media other than the main storage \(storage device where the default tablespace is located, such as a disk\) to isolate I/O resources that can be used by different services. In HCS scenarios, storage devices use standard configurations and do not have other available storage media. If the customized tablespace is not properly used, the system cannot run stably for a long time and the overall performance is affected. Therefore, you are advised to use the default tablespace.
+
+## Procedure<a name="en-us_topic_0283137616_en-us_topic_0237120297_en-us_topic_0059778849_se40504a685a14d718e41d4f669a4ddca"></a>
 
 -   Create a tablespace.
     1.  Run the following command to create user  **jack**:
 
         ```
-        CREATE USER jack IDENTIFIED BY 'xxxxxxxxx';
+        openGauss=# CREATE USER jack IDENTIFIED BY 'xxxxxxxxx';
         ```
 
         If the following information is displayed, the user has been created:
@@ -35,7 +44,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     2.  Run the following command to create a tablespace:
 
         ```
-        CREATE TABLESPACE fastspace RELATIVE LOCATION 'tablespace/tablespace_1';
+        openGauss=# CREATE TABLESPACE fastspace RELATIVE LOCATION 'tablespace/tablespace_1';
         ```
 
         If the following information is displayed, the tablespace has been created:
@@ -49,7 +58,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     3.  A database system administrator can run the following command to grant the permission of accessing the  **fastspace**  tablespace to user  **jack**:
 
         ```
-        GRANT CREATE ON TABLESPACE fastspace TO jack;
+        openGauss=# GRANT CREATE ON TABLESPACE fastspace TO jack;
         ```
 
         If the following information is displayed, the permission has been assigned:
@@ -62,14 +71,14 @@ The administrator can use tablespaces to control the layout of disks where a dat
 
 -   Create an object in a tablespace.
 
-    If you have the  **CREATE**  permission for the tablespace, you can create database objects in the tablespace, such as tables and indexes.
+    If you have the CREATE permission on the tablespace, you can create database objects in the tablespace, such as tables and indexes.
 
     Take creating a table as an example:
 
     -   Method 1: Run the following command to create a table in a specified tablespace:
 
         ```
-        CREATE TABLE foo(i int) TABLESPACE fastspace;
+        openGauss=# CREATE TABLE foo(i int) TABLESPACE fastspace;
         ```
 
         If the following information is displayed, the table has been created:
@@ -81,9 +90,9 @@ The administrator can use tablespaces to control the layout of disks where a dat
     -   Method 2: Use  **set default\_tablespace**  to set the default tablespace and then create a table:
 
         ```
-        postgres=# SET default_tablespace = 'fastspace';
+        openGauss=# SET default_tablespace = 'fastspace';
         SET
-        postgres=# CREATE TABLE foo2(i int);
+        openGauss=# CREATE TABLE foo2(i int);
         CREATE TABLE
         ```
 
@@ -94,13 +103,13 @@ The administrator can use tablespaces to control the layout of disks where a dat
     -   Method 1: Check the  **pg\_tablespace**  system catalog. Run the following command to view all the tablespaces defined by the system and users:
 
         ```
-        SELECT spcname FROM pg_tablespace;
+        openGauss=# SELECT spcname FROM pg_tablespace;
         ```
 
     -   Method 2: Run the following meta-command of the  **gsql**  program to query the tablespaces:
 
         ```
-        \db
+        openGauss=# \db
         ```
 
 
@@ -108,10 +117,10 @@ The administrator can use tablespaces to control the layout of disks where a dat
     1.  Query the current usage of the tablespace.
 
         ```
-        SELECT PG_TABLESPACE_SIZE('example');
+        openGauss=# SELECT PG_TABLESPACE_SIZE('example');
         ```
 
-        Information similar to the following is displayed:
+        The following information is displayed:
 
         ```
          pg_tablespace_size 
@@ -132,7 +141,7 @@ The administrator can use tablespaces to control the layout of disks where a dat
     Run the following command to rename tablespace  **fastspace**  to  **fspace**:
 
     ```
-    postgres=# ALTER TABLESPACE fastspace RENAME TO fspace;
+    openGauss=# ALTER TABLESPACE fastspace RENAME TO fspace;
     ALTER TABLESPACE
     ```
 
@@ -140,15 +149,15 @@ The administrator can use tablespaces to control the layout of disks where a dat
     -   Run the following command to delete user  **jack**:
 
         ```
-        postgres=# DROP USER jack CASCADE;
+        openGauss=# DROP USER jack CASCADE;
         DROP ROLE
         ```
 
     -   Run the following commands to delete tables  **foo**  and  **foo2**:
 
         ```
-        postgres=# DROP TABLE foo;
-        postgres=# DROP TABLE foo2;
+        openGauss=# DROP TABLE foo;
+        openGauss=# DROP TABLE foo2;
         ```
 
         If the following information is displayed, the tables have been deleted:
@@ -160,12 +169,12 @@ The administrator can use tablespaces to control the layout of disks where a dat
     -   Run the following command to delete tablespace  **fspace**:
 
         ```
-        postgres=# DROP TABLESPACE fspace;
+        openGauss=# DROP TABLESPACE fspace;
         DROP TABLESPACE
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
-        >Only the tablespace owner or system administrator can delete a tablespace.  
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >Only the tablespace owner or system administrator can delete a tablespace.
 
 
 

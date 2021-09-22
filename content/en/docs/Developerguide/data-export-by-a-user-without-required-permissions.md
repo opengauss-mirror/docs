@@ -1,13 +1,13 @@
 # Data Export By a User Without Required Permissions<a name="EN-US_TOPIC_0289899959"></a>
 
-**gs\_dump**  and  **gs\_dumpall**  use  **-U**  to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you can set  **--role**  in the  **gs\_dump**  or  **gs\_dumpall**  command to the role that has the permissions. Then,  **gs\_dump**  or  **gs\_dumpall**  uses the specified role to export data.
+**gs\_dump**  and  **gs\_dumpall**  use  **-U**  to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you need to assign the permission to a user who does not have the permission, and then set the  **--role**  parameter in the export command to specify the role with the permission. Then,  **gs\_dump**  or  **gs\_dumpall**  uses the  **--role**  parameter to specify a role to export data.
 
 ## Procedure<a name="en-us_topic_0283136762_en-us_topic_0237121175_en-us_topic_0096393674_s29032edccba443edb1990c4715fcc047"></a>
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Use  **gs\_dump**  to export data of the  **human\_resource**  database.
 
-    User  **jack**  does not have the permissions to export data of the  **human\_resource**  database and the role  **role1**  has this permission. To export data of the  **human\_resource**  database, you can set  **--role**  to  **role1**  in the  **gs\_dump**  command. The exported files are in .tar format.
+    User  **jack**  does not have the permissions to export data of the  **human\_resource**  database and the role  **role1**  has this permission. To export data of the  **human\_resource**  database, you need to assign the permission of  **role1**  to  **jack**  and set  **--role**  to  **role1**  in the export command. The exported files are in .tar format.
 
     ```
     gs_dump -U jack -f /home/omm/backup/MPPDB_backup.tar -p 8000 human_resource --role role1 --rolepassword  abc@1234 -F t
@@ -35,7 +35,7 @@
     <tr id="en-us_topic_0283136762_en-us_topic_0237121175_row199295855317"><td class="cellrowborder" valign="top" width="24.169999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136762_en-us_topic_0237121175_p89920588539"><a name="en-us_topic_0283136762_en-us_topic_0237121175_p89920588539"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_p89920588539"></a>-W</p>
     </td>
     <td class="cellrowborder" valign="top" width="44.16%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136762_en-us_topic_0237121175_p69431335210"><a name="en-us_topic_0283136762_en-us_topic_0237121175_p69431335210"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_p69431335210"></a>User password for database connection.</p>
-    <a name="en-us_topic_0283136762_en-us_topic_0237121175_ul194074341627"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_ul194074341627"></a><ul id="en-us_topic_0283136762_en-us_topic_0237121175_ul194074341627"><li>This parameter is not required for database administrators if the trust policy is used for authentication.</li><li>If you connect to the database without specifying this parameter and you are not a database administrator, you will be prompted to enter the password.</li></ul>
+    <a name="en-us_topic_0283136762_en-us_topic_0237121175_ul194074341627"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_ul194074341627"></a><ul id="en-us_topic_0283136762_en-us_topic_0237121175_ul194074341627"><li>This parameter is not required for database administrators if the trust policy is used for authentication.</li><li>If you connect to the database without specifying the <strong id="b1979615923317"><a name="b1979615923317"></a><a name="b1979615923317"></a>-W</strong> parameter and you are not a database administrator, you will be prompted to enter the password.</li></ul>
     </td>
     <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136762_en-us_topic_0237121175_p1898043113581"><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1898043113581"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1898043113581"></a>-W abcd@123</p>
     </td>
@@ -96,6 +96,8 @@ Example 1: User  **jack**  does not have the permissions required to export data
 ```
 human_resource=# CREATE USER jack IDENTIFIED BY "1234@abc";
 CREATE ROLE
+human_resource=# GRANT role1 TO jack;
+GRANT ROLE
 
 gs_dump -U jack -f /home/omm/backup/MPPDB_backup11.tar -p 8000 human_resource --role role1 --rolepassword abc@1234 -F t
 Password:
@@ -108,6 +110,8 @@ Example 2: User  **jack**  does not have the permissions required to export the 
 ```
 human_resource=# CREATE USER jack IDENTIFIED BY "1234@abc";
 CREATE ROLE
+human_resource=# GRANT role1 TO jack;
+GRANT ROLE
 
 gs_dump -U jack -f /home/omm/backup/MPPDB_backup12.tar -p 8000 human_resource -n public --role role1 --rolepassword abc@1234 -F t
 Password:
@@ -120,6 +124,8 @@ Example 3: User  **jack**  does not have the permissions required to export all 
 ```
 human_resource=# CREATE USER jack IDENTIFIED BY "1234@abc";
 CREATE ROLE
+human_resource=# GRANT role1 TO jack;
+GRANT ROLE
 
 gs_dumpall -U jack -f /home/omm/backup/MPPDB_backup.sql -p 8000 --role role1 --rolepassword abc@1234
 Password:

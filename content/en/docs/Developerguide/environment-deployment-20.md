@@ -206,19 +206,19 @@ Before using the prediction function, you need to use OpenSSL to generate certif
     ```
 
 
-## Starting AIEngine<a name="en-us_topic_0283136738_section8478201519121"></a>
+## Starting the AIEngine<a name="en-us_topic_0283136738_section8478201519121"></a>
 
 1.  Switch to the AIEngine environment \(that is, copy the target environment  **ai\_user**  of the predictor\).
 
     Set parameters in  **predictor/python/settings.py**.
 
     ```
-    DEFAULT_FLASK_SERVER_HOST = '127.0.0.1' (running IP address of AIEngine)
-    DEFAULT_FLASK_SERVER_PORT = '5000' (running port number of AIEngine)
+    DEFAULT_FLASK_SERVER_HOST = '127.0.0.1' (running IP address of the AIEngine)
+    DEFAULT_FLASK_SERVER_PORT = '5000' (running port number of the AIEngine)
     PATH_SSL = "path_to_CA" (CA folder path)
     ```
 
-2.  Run the startup script of AIEngine.
+2.  Run the startup script of the AIEngine.
 
     ```
     python path_to_Predictor/python/run.py
@@ -226,6 +226,6 @@ Before using the prediction function, you need to use OpenSSL to generate certif
 
     In this case, the AIEngine keeps enabled on the corresponding port and waits for the request of the time prediction function from the kernel.
 
-    For details about how to initiate a time prediction command from the kernel, see the  _Time Prediction Usage Guide_.
+    For details about how to initiate a time prediction command from the kernel, see  _Time Prediction Usage Guide_.
 
 
