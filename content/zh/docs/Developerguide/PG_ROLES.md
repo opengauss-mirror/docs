@@ -111,7 +111,7 @@ PG\_ROLES视图提供访问数据库角色的相关信息，初始化用户和�
 </td>
 <td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a7bb5c72576dd4ad2807c999970c6307f"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a7bb5c72576dd4ad2807c999970c6307f"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a7bb5c72576dd4ad2807c999970c6307f"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a78b86a9910e64b5a8467fe617fd904ae"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a78b86a9910e64b5a8467fe617fd904ae"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a78b86a9910e64b5a8467fe617fd904ae"></a>对于可以登录的角色，这里限制了该角色允许发起的最大并发连接数。 -1表示无限制。</p>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a78b86a9910e64b5a8467fe617fd904ae"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a78b86a9910e64b5a8467fe617fd904ae"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a78b86a9910e64b5a8467fe617fd904ae"></a>对于可以登录的角色，这里限制了该角色允许发起的最大并发连接数。-1表示无限制。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_re856ceac87c04f558523ca179f8498ed"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a85ae2ac96efb4761b55ec63ec67f4c54"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a85ae2ac96efb4761b55ec63ec67f4c54"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a85ae2ac96efb4761b55ec63ec67f4c54"></a>rolpassword</p>
@@ -260,4 +260,3 @@ PG\_ROLES视图提供访问数据库角色的相关信息，初始化用户和�
 </tr>
 </tbody>
 </table>
-
