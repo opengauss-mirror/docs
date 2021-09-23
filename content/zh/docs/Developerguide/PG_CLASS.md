@@ -101,7 +101,7 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a72c5f373b53a41ae8dfb15460fe3d4ec"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a72c5f373b53a41ae8dfb15460fe3d4ec"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a72c5f373b53a41ae8dfb15460fe3d4ec"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6c91be64c3bc4eb8a80d0691c07920a7"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6c91be64c3bc4eb8a80d0691c07920a7"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6c91be64c3bc4eb8a80d0691c07920a7"></a>与此表关联的TOAST表的OID ，如果没有则为0。</p>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6c91be64c3bc4eb8a80d0691c07920a7"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6c91be64c3bc4eb8a80d0691c07920a7"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6c91be64c3bc4eb8a80d0691c07920a7"></a>与此表关联的TOAST表的OID，如果没有则为0。</p>
 <p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a242886e2c0d447d6b2797bae9dd24655"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a242886e2c0d447d6b2797bae9dd24655"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a242886e2c0d447d6b2797bae9dd24655"></a>TOAST表在一个从属表里“离线”存储大字段。</p>
 </td>
 </tr>
@@ -403,4 +403,3 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </tr>
 </tbody>
 </table>
-

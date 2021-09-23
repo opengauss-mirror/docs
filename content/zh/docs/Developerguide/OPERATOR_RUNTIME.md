@@ -52,7 +52,7 @@ OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p205191014155120"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p205191014155120"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p205191014155120"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1451971495114"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1451971495114"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1451971495114"></a>该算子到结束时候总的执行时间(ms)。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1451971495114"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1451971495114"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1451971495114"></a>该算子到结束时候总的执行时间（ms）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row104162389916"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p14171438299"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p14171438299"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p14171438299"></a>status</p>
@@ -87,21 +87,21 @@ OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p8519151410510"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p8519151410510"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p8519151410510"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p165191114145119"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p165191114145119"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p165191114145119"></a>当前算子在数据库节点上的最小内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p165191114145119"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p165191114145119"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p165191114145119"></a>当前算子在数据库节点上的最小内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row560118255504"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1519121413516"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1519121413516"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1519121413516"></a>max_peak_memory</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1751916147515"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1751916147515"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1751916147515"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p85191314135116"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p85191314135116"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p85191314135116"></a>当前算子在数据库节点上的最大内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p85191314135116"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p85191314135116"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p85191314135116"></a>当前算子在数据库节点上的最大内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row5601125145017"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1252010141514"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1252010141514"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1252010141514"></a>average_peak_memory</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p3520171413517"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p3520171413517"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p3520171413517"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p15520161445117"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p15520161445117"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p15520161445117"></a>当前算子在数据库节点上的平均内存峰值(MB)。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p15520161445117"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p15520161445117"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p15520161445117"></a>当前算子在数据库节点上的平均内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row2601625135011"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p162135421546"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p162135421546"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p162135421546"></a>memory_skew_percent</p>
@@ -115,21 +115,21 @@ OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p952021419512"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p952021419512"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p952021419512"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752071475115"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752071475115"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752071475115"></a>若发生下盘，数据库节点上下盘的最小数据量(MB)，默认为0。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752071475115"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752071475115"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752071475115"></a>若发生下盘，数据库节点上下盘的最小数据量（MB），默认为0。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row196011125165015"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1952021418517"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1952021418517"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1952021418517"></a>max_spill_size</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1452018144513"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1452018144513"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1452018144513"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185201314115112"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185201314115112"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185201314115112"></a>若发生下盘，数据库节点上下盘的最大数据量(MB)，默认为0。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185201314115112"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185201314115112"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185201314115112"></a>若发生下盘，数据库节点上下盘的最大数据量（MB），默认为0。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row14601192513507"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1352081445118"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1352081445118"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p1352081445118"></a>average_spill_size</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752061414517"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752061414517"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752061414517"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p155201514155118"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p155201514155118"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p155201514155118"></a>若发生下盘，数据库节点上下盘的平均数据量(MB)，默认为0。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p155201514155118"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p155201514155118"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p155201514155118"></a>若发生下盘，数据库节点上下盘的平均数据量（MB），默认为0。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row1660112535017"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p19520161411513"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p19520161411513"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p19520161411513"></a>spill_skew_percent</p>
@@ -143,7 +143,7 @@ OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p145200142510"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p145200142510"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p145200142510"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185204140516"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185204140516"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185204140516"></a>该算子在数据库节点上的最小执行时间(ms)。</p>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185204140516"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185204140516"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p185204140516"></a>该算子在数据库节点上的最小执行时间（ms）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_row560262535019"><td class="cellrowborder" valign="top" width="21.782178217821784%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752019149519"><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752019149519"></a><a name="zh-cn_topic_0237122740_zh-cn_topic_0111176228_p752019149519"></a>max_cpu_time</p>
@@ -177,4 +177,3 @@ OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信
 </tr>
 </tbody>
 </table>
-
