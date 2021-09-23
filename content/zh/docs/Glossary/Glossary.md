@@ -22,19 +22,19 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_p71861455205814"><a name="zh-cn_topic_0283139955_p71861455205814"></a><a name="zh-cn_topic_0283139955_p71861455205814"></a>Available Zone，通常指一个机房。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row503286879138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500918429138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500918429138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500918429138"></a>Bgwriter</p>
+<tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row503286879138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500918429138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500918429138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500918429138"></a>bgwriter</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p309074109138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p309074109138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p309074109138"></a>数据库启动时创建的一个后台写线程，此线程用于将数据库中脏页面写入到持久性设备（例如磁盘）中。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row97312369138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500326339138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500326339138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500326339138"></a>bit</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a>比特。计算机处理的最小的信息单位。比特用来表示二进制数字1或0，或者一种逻辑条件真或假。在物理上，比特表示一个电路上高或低的电压点或者磁盘上的磁化单程或其它。一个单独的比特位所传达的信息很少有意义的。然而，一个8位组却构成了一个字节，可用于表示如一个英文字母，十进制数字，或其它字符等多种类型的信息。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a>比特。计算机处理的最小的信息单位。比特用来表示二进制数字1或0，或者一种逻辑条件真或假。一个单独的比特位所传达的信息很少有意义的。8个bit构成一个byte(字节)，可用于表示如一个英文字母，十进制数字，或其它字符等多种类型的信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_row5079095419250"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_p5446540219250"><a name="zh-cn_topic_0283139955_p5446540219250"></a><a name="zh-cn_topic_0283139955_p5446540219250"></a>Bloom Filter</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_p4962146019250"><a name="zh-cn_topic_0283139955_p4962146019250"></a><a name="zh-cn_topic_0283139955_p4962146019250"></a>布隆过滤器。由Howard Bloom在1970年提出的二进制向量数据结构，它具有很好的空间和时间效率，被用来检测一个元素是不是集合中的一个成员，这种检测只会对在集合内的数据错判，而不会对不是集合内的数据进行错判，这样每个检测请求返回有“在集合内（可能错误）”和“不在集合内（绝对不在集合内）”两种情况，可见Bloom filter是牺牲了正确率换取时间和空间。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_p4962146019250"><a name="zh-cn_topic_0283139955_p4962146019250"></a><a name="zh-cn_topic_0283139955_p4962146019250"></a>布隆过滤器。由Howard Bloom在1970年提出的二进制向量数据结构，它具有很好的空间和时间效率，被用来检测一个元素是不是集合中的一个成员，这种检测只会对在集合内的数据进行错判，而不会对不是集合内的数据进行错判，这样每个检测请求返回有“在集合内（可能错误）”和“不在集合内（绝对不在集合内）”两种情况，可见Bloom Filter是牺牲了正确率换取时间和空间。</p>
 </td>
 </tr>
 <tr id="row115588268482"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p18558122624816"><a name="p18558122624816"></a><a name="p18558122624816"></a>CEK</p>
@@ -54,7 +54,8 @@
 </tr>
 <tr id="row12703164422712"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p54125431608"><a name="p54125431608"></a><a name="p54125431608"></a>CMK</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>全密态场景：Client Master Key，客户端加密主密钥。透明数据加密场景：Cluster Master Key，集群主密钥。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>全密态场景：Client Master Key，客户端加密主密钥。</p>
+<p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>透明数据加密场景：Cluster Master Key，集群主密钥。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row512353139138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p564196939138"></a>CU</p>
@@ -422,7 +423,7 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p479920789138"></a>PostgreSQL是一个开源的关系数据库管理系统（DBMS），由全球志愿者团队开发。PostgreSQL不受任何公司或个体所控制，源代码免费使用。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row292755189138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a>Postmaster</p>
+<tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row292755189138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p225067309138"></a>postmaster</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p111058679138"></a>数据库服务启动时启动的一个线程。用于侦听来自数据库其它节点或客户端的连接请求。</p>
 <p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a>主机上侦听到备机连接请求，并接受后，就会创建一个WAL Sender线程，用于处理与备机的交互。</p>
