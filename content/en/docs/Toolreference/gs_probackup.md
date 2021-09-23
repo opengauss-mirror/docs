@@ -21,6 +21,10 @@
 -   To back up a database in remote mode using SSH, install the database of the same major version on the local and remote hosts, and run the  **ssh-copy-id remote\_user@remote\_host**  command to set an SSH connection without a password between the local host backup user and the remote host database user.
 -   In remote mode, only the subcommands  **add-instance**,  **backup**, and  **restore**  can be executed.
 -   Before running the  **restore**  subcommand, stop the gaussdb process.
+-   If a user-defined tablespace exists, add the  **--external-dirs**  parameter when backing up the tablespace. Otherwise, the tablespace will not be backed up.
+-   If a large amount of data needs to be backed up, adjust the values of  **session\_timeout**  and  **wal\_sender\_timeout**  in the  **postgres.conf**  file to prevent backup timeout. In addition, adjust the value of  **--rw-timeout**  in the backup command line parameters.
+-   When using the  **-T**  option to redirect the external directory in the backup to a new directory during restoration, specify the  **--external-mapping**  parameter.
+-   After an incremental backup is restored, the created logical replication slot is unavailable and needs to be deleted and recreated.
 
 ## Command Description<a name="en-us_topic_0287276008_section86861610172816"></a>
 
@@ -108,7 +112,7 @@
     [--help]
     ```
 
--   Restore a specified instance from the backup copy in the  **backup-path**  directory. If an instance to be restored is specified,  **gs\_probackup**  will look for its latest backup and restore it to the specified recovery target. Otherwise, the latest backup of any instance is used.
+-   Restore a specified instance from the backup copy in the  **backup-path**  directory. If an instance to be restored is specified,  **gs\_probackup**  will look for its latest backup and restore it to the specified recovery objective. Otherwise, the latest backup of any instance is used.
 
     ```
     gs_probackup restore -B backup-path --instance=instance_name
@@ -251,7 +255,7 @@
 
 -   --backup-pg-log
 
-    Includes the log directory in the backup. This directory typically contains log messages. By default, the log directory is not included.
+    Includes the log directory in the backup. This directory typically contains log messages. By default, the log directory is included, but the log file is not included. If the default log path is changed, you can use the  **-E**  parameter to back up log files. The following describes how to use the  **-E**  parameter.
 
 -   -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
 
@@ -276,10 +280,10 @@
     Specifies timeout interval for streaming processing, in seconds.
 
     Default value:  **300**
-    
+
 -   -t rwtimeout
 
-    The timeout period for connecting to the database in seconds.
+    Specifies timeout interval for a connection, in seconds.
 
     Default value:  **120**
 
@@ -325,7 +329,7 @@
 >1.  Replace the target database directory with the physical backup files.
 >2.  Delete all files in the database directory  **pg\_xlog/**.
 >3.  Copy the archived WAL log file to the  **pg\_xlog**  file. \(Or you can configure  **restore\_command**  in the  **recovery.conf**  file to skip this step.\)
->4.  Create the recovery command file  **recovery.conf**  in the database directory and specify the database recovery degree.
+>4.  Create the  **recovery.conf**  file in the database directory and specify the database restoration degree.
 >5.  Start the database.
 >6.  Connect to the database and check whether the database is recovered to the expected status. If the expected status is reached, run the  **pg\_xlog\_replay\_resume\(\)**  command so that the primary node can provide services externally.
 
@@ -347,9 +351,9 @@
 
 -   --recovery-target-inclusive=_boolean_
 
-    When this parameter is set to  **true**, the recovery target will include the specified content.
+    When this parameter is set to  **true**, the recovery objective will include the specified content.
 
-    When this parameter is set to  **false**, the recovery target will not include the specified content.
+    When this parameter is set to  **false**, the recovery objective will not include the specified content.
 
     This parameter must be used together with  **--recovery-target-name**,  **--recovery-target-time**,  **--recovery-target-lsn**, or  **--recovery-target-xid**.
 
@@ -373,7 +377,7 @@
 
 -   --wal-depth=_wal-depth_
 
-    Latest number of valid backups that must be retained on each timeline to perform the PITR capability The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
+    Latest number of valid backups that must be retained on each timeline to perform the PITR capability. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
     Default value:  **0**
 
@@ -438,7 +442,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     This parameter is valid if the  **--log-level-file**  parameter is specified to enable log file recording.
 
-    Default value:  **"pg\_probackup.log"**
+    Default value:  **pg\_probackup.log**
 
 -   --error-log-filename=_error-log-filename_
 
@@ -476,7 +480,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
 -   -d  _dbname_, --pgdatabase=_dbname_
 
-    Specifies the name of the database to connect to. This connection is only used to manage the backup process. Therefore, you can connect to any existing database. If this parameter is not specified in the command line, the  _PGDATABASE_  environment variable, or the  **pg\_probackup.conf**  configuration file, gs\_probackup attempts to obtain the value from the  _PGUSER_  environment variable. If the  _PGUSER_  variable is not set, the value is obtained from the current user name.
+    Specifies the name of the database to connect to. This connection is only used to manage the backup process. Therefore, you can connect to any existing database. If this parameter is not specified in the command line, the  _PGDATABASE_  environment variable, or the  **pg\_probackup.conf**  configuration file,  **gs\_probackup**  attempts to obtain the value from the  _PGUSER_  environment variable. If the  _PGUSER_  variable is not set, the value is obtained from the current user name.
 
     System environment variable:  _$PGDATABASE_
 
@@ -504,11 +508,11 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
 -   -w, --no-password
 
-    Never issues a password prompt. The connection attempt fails if the host requires password verification and the password is not provided in other ways. This parameter is useful in batch jobs and the scripts that require no user password.
+    Never issues a password prompt. The connection attempt fails if the host requires password verification and the password is not provided in other ways. This option is useful in batch jobs and scripts in which no user password is required.
 
 -   -W  _password_, --password=_password_
 
-    User password for database connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  parameter. If the  **-W**  parameter is not provided and you are not a system administrator, the system will ask you to enter a password.
+    Specifies the user password for connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  option. If the  **-W**  option is not provided and you are not a system administrator, the system will ask you to enter a password.
 
 
 **Compression-related parameters \(compression\_options\)**
@@ -526,7 +530,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
 -   --compress-level=_compress-level_
 
-    Specifies the compression level. Value range: 0-9
+    Specifies the compression level. Value range: 0–9
 
     -   **0**  indicates no compression.
     -   **1**  indicates that the compression ratio is the lowest and processing speed the fastest.
@@ -543,7 +547,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 **Remote mode-related parameters \(remote\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->The following are parameters that remotely run gs\_probackup through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.
+>The following are parameters that remotely run  **gs\_probackup**  through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.
 
 -   --remote-proto=_protocol_
 
@@ -569,13 +573,17 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Specifies the remote host user for SSH connection. If this parameter is not specified, the user who initiates the SSH connection is used.
 
-    Default value:  **the current user**.
+    Default value: the current user.
 
 -   --remote-path=_path_
 
-    Specifies the installation directory of gs\_probackup in the remote system.
+    Specifies the installation directory of  **gs\_probackup**  in the remote system.
 
     Default value: current path
+
+-   --remote-lib=_libpath_
+
+    Specifies the lib directory where gs\_probackup is installed in the remote system.
 
 -   --ssh-options=_ssh\_options_
 
@@ -605,7 +613,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
     gs_probackup init -B backup_dir
     ```
 
-2.  Add a new backup instance. gs\_probackup can store backups of multiple database instances in the same backup directory.
+2.  Add a new backup instance.  **gs\_probackup**  can store backups of multiple database instances in the same backup directory.
 
     ```
     gs_probackup add-instance -B backup_dir -D data_dir --instance instance_name
@@ -617,7 +625,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
     gs_probackup backup -B backup_dir --instance instance_name -b backup_mode
     ```
 
-4.  Restore data from the backup of a specified DB instance.
+4.  Restore data from the backup of a specified instance.
 
     ```
     gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id

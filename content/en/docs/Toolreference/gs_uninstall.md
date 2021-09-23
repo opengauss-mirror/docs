@@ -1,12 +1,12 @@
-# gs\_uninstall<a name="EN-US_TOPIC_0249632242"></a>
+# gs\_uninstall<a name="EN-US_TOPIC_0289899255"></a>
 
-## Background<a name="en-us_topic_0237152424_en-us_topic_0059778700_section104365437437"></a>
+## Background<a name="en-us_topic_0287275992_en-us_topic_0237152424_en-us_topic_0059778700_section104365437437"></a>
 
-gs\_uninstall, provided by , can be used to uninstall a cluster.
+openGauss provides the  **gs\_uninstall**  tool to uninstall a cluster.
 
-## Syntax<a name="en-us_topic_0237152424_en-us_topic_0059778700_s6f518f13661f4d718c7397ec91f60bdb"></a>
+## Syntax<a name="en-us_topic_0287275992_en-us_topic_0237152424_en-us_topic_0059778700_s6f518f13661f4d718c7397ec91f60bdb"></a>
 
--   Uninstall a cluster.
+-   Uninstalling openGauss
 
     ```
     gs_uninstall [--delete-data] [-L] [-l LOGFILE]
@@ -25,28 +25,27 @@ gs\_uninstall, provided by , can be used to uninstall a cluster.
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237152424_en-us_topic_0059778700_s28c128a273dc452781a9fe18176ab9b2"></a>
+## Parameter Description<a name="en-us_topic_0287275992_en-us_topic_0237152424_en-us_topic_0059778700_s28c128a273dc452781a9fe18176ab9b2"></a>
 
 -   --delete-data
 
     Deletes the data file.
 
-- -L
+-   -L
 
-  Uninstalls the local host only. If a host in the cluster is uninstalled, the cluster cannot undergo full uninstallation.
+    Uninstalls the local host only. If a host in openGauss is uninstalled, openGauss cannot be performed full uninstallation.
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:** 
+    -   -l
 
-  After executing gs\_postuninstall, the system will automatically delete the directories related to openGauss \(including $GAUSSLOG\). You are advised to set the log file path to a path outside the openGauss database.
+        Specifies a log file name and its absolute path that can be accessed. A timestamp will be added automatically to the log file name.
 
-- -l
+        -   When  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, the default value of the  **-l**  parameter is  _$GAUSSLOG_**/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log**.
+        -   When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is  **gaussdbLogPath/**_Username_**/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log**.
 
-  Specifies a log file name and its path. A timestamp will be added automatically to the log file name.
+            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >When executing  **gs\_uninstall**, the system will automatically delete the directories related to openGauss. You are advised to set the log file path to a path outside the openGauss database.
 
-  When  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, the default value of the  **-l**  parameter is  **/var/log/gaussdb/om/gs_local-YYYY-MMDD_hhmmss.log**.
 
-  >![](C:/Users/lijun/Desktop/opengauss/docs/content/en/docs/Toolreference/public_sys-resources/icon-note.gif) **NOTE:** 
-  >After executing gs\_uninstall, the system will automatically delete the directories related to openGauss \(including $GAUSSLOG\). You are advised to set the log file path to a path outside the openGauss database.
 
 -   -?, --help
 
@@ -57,9 +56,9 @@ gs\_uninstall, provided by , can be used to uninstall a cluster.
     Displays version information.
 
 
-## Example<a name="en-us_topic_0237152424_en-us_topic_0059778700_se3158b665fdf47dd929b96da689819df"></a>
+## Example<a name="en-us_topic_0287275992_en-us_topic_0237152424_en-us_topic_0059778700_se3158b665fdf47dd929b96da689819df"></a>
 
-Execute the gs_uninstall script as a database user to uninstall openGauss.
+Execute the  **gs\_uninstall**  script as a database user to uninstall openGauss.
 
 ```
 gs_uninstall --delete-data
@@ -73,6 +72,7 @@ Successfully uninstalled application.
 Uninstallation succeeded.
 ```
 
-## Related Commands<a name="en-us_topic_0237152424_en-us_topic_0059778700_s81551f14e776431db12f55306b1d2250"></a>
+## Related Commands<a name="en-us_topic_0287275992_en-us_topic_0237152424_en-us_topic_0059778700_s81551f14e776431db12f55306b1d2250"></a>
 
 [gs\_install](gs_install.md)  and  [gs\_postuninstall](gs_postuninstall.md)
+
