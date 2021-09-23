@@ -2,9 +2,9 @@
 
 ## audit\_system\_object<a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s05a5cf2a231d43d8aa731caae59abb33"></a>
 
-**Parameter description**: Specifies whether to audit the CREATE, DROP, and ALTER operations on the GaussDB Kernel database object. The GaussDB Kernel database objects include databases, users, schemas, and tables. The operations on the database object can be audited by changing the value of this parameter.
+**Parameter description**: Specifies whether to audit the CREATE, DROP, and ALTER operations on the openGauss database object. The openGauss database objects include databases, users, schemas, and tables. The operations on the database object can be audited by changing the value of this parameter.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 2097151
 
@@ -13,7 +13,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value description:**
 
-The value of this parameter is calculated by 20 binary bits. The 20 binary bits represent 20 types of GaussDB Kernel objects. If the corresponding binary bit is set to  **0**, the CREATE, DROP, and ALTER operations on corresponding database objects are not audited. If it is set to  **1**, the CREATE, DROP, and ALTER operations are audited. For details about the audit contents represented by these 20 binary bits, see  [Table 1](#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_table53712060).
+The value of this parameter is calculated by 20 binary bits. The 20 binary bits represent 20 types of openGauss objects. If the corresponding binary bit is set to  **0**, the CREATE, DROP, and ALTER operations on corresponding database objects are not audited. If it is set to  **1**, the CREATE, DROP, and ALTER operations are audited. For details about the audit contents represented by these 20 binary bits, see  [Table 1](#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_table53712060).
 
 **Default value**:  **12295**
 
@@ -122,7 +122,7 @@ The value of this parameter is calculated by 20 binary bits. The 20 binary bits 
 </tr>
 <tr id="en-us_topic_0283136929_en-us_topic_0237124747_row14996171520226"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a>Bit 13</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a>Whether to audit the CREATE and DROP operations on Node Group objects.</p>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a>Whether to audit the CREATE and DROP operations on node groups.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"><li><strong id="b61094371403"><a name="b61094371403"></a><a name="b61094371403"></a>0</strong> indicates that the CREATE and DROP operations on these objects are not audited.</li></ul>
 <a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"><li><strong id="b1951020371011"><a name="b1951020371011"></a><a name="b1951020371011"></a>1</strong> indicates that the CREATE and DROP operations on these objects are audited.</li></ul>
@@ -158,7 +158,7 @@ The value of this parameter is calculated by 20 binary bits. The 20 binary bits 
 </tr>
 <tr id="en-us_topic_0283136929_en-us_topic_0237124747_row11776411216"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"></a>Bit 18</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"></a>Whether to audit the CREATE, DROP, and ALTER operations on workloads.</p>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"></a>Whether to audit the CREATE, DROP, and ALTER operations on synonyms.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul2222131763217"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul2222131763217"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul2222131763217"><li><strong id="b12462410111"><a name="b12462410111"></a><a name="b12462410111"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on types are not audited.</li><li><strong id="b8876182520118"><a name="b8876182520118"></a><a name="b8876182520118"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on types are audited.</li></ul>
 </td>
@@ -184,7 +184,7 @@ The value of this parameter is calculated by 20 binary bits. The 20 binary bits 
 
 **Parameter description**: Specifies whether to audit the INSERT, UPDATE, and DELETE operations on a specific table.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:** **0**  or  **1**
 
@@ -197,7 +197,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies whether to audit the SELECT operation.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:** **0**  or  **1**
 
@@ -210,7 +210,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies whether to record the audit information during the execution of the stored procedures, anonymous blocks, or user-defined functions \(excluding system functions\).
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:** **0**  or  **1**
 
@@ -223,7 +223,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 
 **Parameter description**: Specifies whether to audit the COPY operation.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:** **0**  or  **1**
 
@@ -236,7 +236,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 
 **Parameter description**: Specifies whether to audit the SET operation.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:** **0**  or  **1**
 
@@ -249,7 +249,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies whether the separation of three duties is enabled.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -262,7 +262,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies whether non-system administrators and non-monitoring administrator are allowed to execute the EXECUTE DIRECT ON statement.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -275,7 +275,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies whether to enable the permission to copy server files.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -285,13 +285,13 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Default value**:  **off**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->The copy from/to file function can be used only by users with system administrator permissions or initial users. However, when  **enableSeparationOfDuty**  is set to  **on**, system administrators and initial users have different permissions. You can use  **enable\_copy\_server\_file**  to control the copy permission of the system administrator. By default, the system administrators are not allowed to copy files. They can perform this operation only after this parameter is set to  **on**.
+>When the  **enable\_copy\_server\_files**  parameter is disabled, only the initial user is allowed to run the  **COPY FROM FILENAME **or  **COPY TO FILENAME**  statement. When the  **enable\_copy\_server\_files**  parameter is enabled, users with the  **SYSADMIN**  permission or users who inherit the  **gs\_role\_copy\_files**  permission of the built-in role are allowed to run the  **COPY FROM FILENAME**  or  **COPY TO FILENAME**  statement.
 
 ## enable\_access\_server\_directory<a name="en-us_topic_0283136929_en-us_topic_0237124747_section4279164545515"></a>
 
 **Parameter description**: Specifies whether the system administrator has the permissions to create and delete DIRECTORY objects.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 

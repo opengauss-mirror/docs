@@ -81,7 +81,7 @@ This function involves the following GUC parameters:
 1.  Use the  **hypopg\_create\_index **function to create a virtual index. For example:
 
     ```
-    postgres=> select * from hypopg_create_index('create index on bmsql_customer(c_w_id)');
+    openGauss=> select * from hypopg_create_index('create index on bmsql_customer(c_w_id)');
      indexrelid |              indexname              
     ------------+-------------------------------------
          329726 | <329726>btree_bmsql_customer_c_w_id
@@ -91,14 +91,14 @@ This function involves the following GUC parameters:
 2.  Enable the GUC parameter  **enable\_hypo\_index**. This parameter controls whether the database optimizer considers the created virtual index when executing the EXPLAIN statement. By executing EXPLAIN on a specific query statement, you can evaluate whether the index can improve the execution efficiency of the query statement based on the execution plan provided by the optimizer. For example:
 
     ```
-    postgres=> set enable_hypo_index = on;
+    openGauss=> set enable_hypo_index = on;
     SET
     ```
 
     Before enabling the GUC parameter, run  **EXPLAIN **and the query statement.
 
     ```
-    postgres=> explain SELECT c_discount from bmsql_customer where c_w_id = 10;
+    openGauss=> explain SELECT c_discount from bmsql_customer where c_w_id = 10;
                                   QUERY PLAN                              
     ----------------------------------------------------------------------
      Seq Scan on bmsql_customer  (cost=0.00..52963.06 rows=31224 width=4)
@@ -109,7 +109,7 @@ This function involves the following GUC parameters:
     After enabling the GUC parameter, run  **EXPLAIN **and the query statement.
 
     ```
-    postgres=> explain SELECT c_discount from bmsql_customer where c_w_id = 10;
+    openGauss=> explain SELECT c_discount from bmsql_customer where c_w_id = 10;
                                                         QUERY PLAN                                                    
     ------------------------------------------------------------------------------------------------------------------
      [Bypass]
@@ -123,7 +123,7 @@ This function involves the following GUC parameters:
 3.  \(Optional\) Use the  **hypopg\_display\_index **function to display all created virtual indexes. For example:
 
     ```
-    postgres=> select * from hypopg_display_index();
+    openGauss=> select * from hypopg_display_index();
                      indexname                  | indexrelid |     table      |      column      
     --------------------------------------------+------------+----------------+------------------
      <329726>btree_bmsql_customer_c_w_id        |     329726 | bmsql_customer | (c_w_id)
@@ -134,7 +134,7 @@ This function involves the following GUC parameters:
 4.  \(Optional\) Use the  **hypopg\_estimate\_size **function to estimate the space \(in bytes\) required for creating a virtual index. For example:
 
     ```
-    postgres=> select * from hypopg_estimate_size(329730);
+    openGauss=> select * from hypopg_estimate_size(329730);
      hypopg_estimate_size 
     ----------------------
                  15687680
@@ -146,7 +146,7 @@ This function involves the following GUC parameters:
     Use the  **hypopg\_drop\_index **function to delete the virtual index of a specified OID. For example:
 
     ```
-    postgres=> select * from hypopg_drop_index(329726);
+    openGauss=> select * from hypopg_drop_index(329726);
      hypopg_drop_index 
     -------------------
      t
@@ -156,7 +156,7 @@ This function involves the following GUC parameters:
     Use the  **hypopg\_reset\_index **function to clear all created virtual indexes at a time. For example:
 
     ```
-    postgres=> select * from hypopg_reset_index();
+    openGauss=> select * from hypopg_reset_index();
      hypopg_reset_index 
     --------------------
     
@@ -167,4 +167,5 @@ This function involves the following GUC parameters:
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   Running  **EXPLAIN ANALYZE**  does not involve the virtual index function.
 >-   The created virtual index is at the database instance level and can be shared by sessions. After a session is closed, the virtual index still exists. However, the virtual index will be cleared after the database is restarted.
+>-   This function does not support common views, materialized views, and column-store tables.
 

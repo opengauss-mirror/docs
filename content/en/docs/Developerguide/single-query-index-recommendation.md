@@ -1,6 +1,6 @@
 # Single-query Index Recommendation<a name="EN-US_TOPIC_0296549246"></a>
 
-The single-query index recommendation function allows users to directly perform operations in the database. This function generates recommended indexes for a single query statement entered by users based on the semantic information of the query statement and the statistics of the database. This function involves the following APIs:
+The single-query index recommendation function allows users to directly perform operations in the database. This function generates recommended indexes for a single query statement entered by users based on the semantic information of the query statement and the statistics of the database. This function involves the following interfaces:
 
 **Table  1**  Single-query index recommendation APIs
 
@@ -24,7 +24,8 @@ The single-query index recommendation function allows users to directly perform 
 </table>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->This function supports only a single SELECT statement and does not support other types of SQL statements.
+>-   This function supports only a single SELECT statement and does not support other types of SQL statements.
+>-   Partitioned tables, column-store tables, segment-paged tables, common views, materialized views, global temporary tables, and encrypted databases are not supported.
 
 ## Application Scenarios<a name="section54321094535"></a>
 
@@ -33,14 +34,14 @@ Use the preceding function to obtain the recommendation index generated for the 
 For example:
 
 ```
-postgres=> select * from gs_index_advise('SELECT c_discount from bmsql_customer where c_w_id = 10');
+openGauss=> select "table", "column" from gs_index_advise('SELECT c_discount from bmsql_customer where c_w_id = 10');
      table      |  column  
 ----------------+----------
  bmsql_customer | (c_w_id)
 (1 row)
 ```
 
-The preceding information indicates that an index should be created on the  **c\_w\_id **column of the  **bmsql\_customer **table. You can run the following SQL statement to create an index:
+The preceding information indicates that an index should be created on the  **c\_w\_id**  column of the  **bmsql\_customer**  table. You can run the following SQL statement to create an index:
 
 ```
 CREATE INDEX idx on bmsql_customer(c_w_id);
@@ -49,7 +50,7 @@ CREATE INDEX idx on bmsql_customer(c_w_id);
 Some SQL statements may also be recommended to create a join index, for example:
 
 ```
-postgres=# select * from gs_index_advise('select name, age, sex from t1 where age >= 18 and age < 35 and sex = ''f'';');
+openGauss=# select "table", "column" from gs_index_advise('select name, age, sex from t1 where age >= 18 and age < 35 and sex = ''f'';');
  table | column
 -------+------------
  t1    | (age, sex)

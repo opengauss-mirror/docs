@@ -6,9 +6,9 @@ This section describes related default parameters involved in the execution of S
 
 **Parameter description**: Specifies the order in which schemas are searched when an object is referenced with no schema specified. The value of this parameter consists of one or more schema names. Different schema names are separated by commas \(,\).
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   If the schema of temporary tables exists in the current session, the scheme can be listed in  **search\_path**  by using the alias  **pg\_temp**, for example,  **'pg\_temp,public'**. The schema of temporary tables has the highest search priority and is always searched before all the other schemas specified in  **pg\_catalog**  and  **search\_path**. Therefore, do not explicitly specify  **pg\_temp**  to be searched after other schemas in  **search\_path**. This setting will not take effect and an error message will be displayed. If the alias  **pg\_temp**  is used, the temporary schema will be searched only for tables, views, and data types, and not for functions or operators.
+-   If the schema of temporary tables exists in the current session, the schema can be listed in  **search\_path**  by using the alias  **pg\_temp**, for example,  **'pg\_temp,public'**. The schema of temporary tables has the highest search priority and is always searched before all the other schemas specified in  **pg\_catalog**  and  **search\_path**. Therefore, do not explicitly specify  **pg\_temp**  to be searched after other schemas in  **search\_path**. This setting will not take effect and an error message will be displayed. If the alias  **pg\_temp**  is used, the temporary schema will be searched only for tables, views, and data types, and not for functions or operators.
 -   The system catalog schema,  **pg\_catalog**, has the second highest search priority and is the first to be searched among all the schemas, excluding  **pg\_temp**, specified in  **search\_path**. Therefore, do not explicitly specify  **pg\_catalog**  to be searched after other schemas in  **search\_path**. This setting will not take effect and an error message will be displayed.
 -   When an object is created without a specific target schema, the object will be placed in the first valid schema listed in  **search\_path**. An error is reported if the search path is empty.
 -   The current effective value of the search path can be examined through the SQL function  **current\_schema**. This is different from examining the value of  **search\_path**, because the  **current\_schema**  function displays the first valid schema name in  **search\_path**.
@@ -29,7 +29,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the current schema.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
@@ -46,7 +46,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   This parameter is not used for temporary tables. For them, the  **[temp\_tablespaces](#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sd5bfdc9f2696411894b2912cf3f23fcc)**  is used instead.
 -   This parameter is not used when users create databases. By default, a new database inherits its tablespace setting from the template database.
 
-    This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+    This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 
 **Value range**: a string. An empty string indicates that the default tablespace is used.
@@ -57,7 +57,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the Node Group where a table is created by default. This parameter takes effect only for ordinary tables.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 -   **installation**  indicates that tables will be created in the Node Group created during database installation.
 -   A value other than  **installation**  indicates that tables will be created in the Node Group specified by this parameter.
@@ -70,9 +70,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies one or more tablespaces to which temporary objects \(temporary tables and their indexes\) will be created when a CREATE command does not explicitly specify a tablespace. Temporary files for sorting large data sets are created in these tablespaces.
 
-The value of this parameter can be a list of names of tablespaces. When there is more than one name in the list, GaussDB Kernel chooses a random tablespace from the list upon the creation of a temporary object each time. However, within a transaction, successively created temporary objects are placed in successive tablespaces in the list. If the element selected from the list is an empty string, GaussDB Kernel will automatically use the default tablespace of the current database instead.
+The value of this parameter can be a list of names of tablespaces. When there is more than one name in the list, openGauss chooses a random tablespace from the list upon the creation of a temporary object each time. However, within a transaction, successively created temporary objects are placed in successive tablespaces in the list. If the element selected from the list is an empty string, openGauss will automatically use the default tablespace of the current database instead.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string An empty string indicates that all temporary objects are created only in the default tablespace of the current database. For details, see  [default\_tablespace](#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sa058ceea3c3142f0a8a40b5799a682d3).
 
@@ -82,7 +82,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to enable validation of the function body string during the execution of  **CREATE FUNCTION**. Verification is occasionally disabled to avoid problems, such as forward references when you restore function definitions from a dump. After the function is enabled, the word syntax of the PL/SQL in the stored procedure is verified, including the data type, statement, and expression. The SQL statements in the stored procedure are not checked in the Create phase. Instead, they are checked during running.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
@@ -95,7 +95,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the default isolation level of each transaction.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The current version does not support the setting of the default transaction isolation level. The default value is  **read committed**. Do not change the value.
@@ -104,7 +104,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 -   **read committed**  indicates that the data read by a transaction is committed at the moment it is read.
 -   **repeatable read**  indicates that the data that has been read by the current transaction cannot be modified by other transactions until the current transaction completes, thereby preventing unrepeatable reads.
--   **serializable**: Currently, this isolation level is not supported in GaussDB Kernel. It is equivalent to  **repeatable read**.
+-   **serializable**: Currently, this isolation level is not supported in openGauss. It is equivalent to  **repeatable read**.
 
 **Default value:** **read committed**
 
@@ -112,7 +112,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether each new transaction is in read-only state.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >If this parameter is set to  **on**, the DML and write transactions cannot be executed.
@@ -128,9 +128,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the default deferrable status of each new transaction. It currently has no effect on read-only transactions or those running at isolation levels lower than serializable.
 
-GaussDB Kernel does not support the serializable isolation level. Therefore, the parameter takes no effect.
+openGauss does not support the serializable isolation level. Therefore, the parameter takes no effect.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
@@ -143,12 +143,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the behavior of replication-related triggers and rules for the current session.
 
-This parameter is a SUSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >Setting this parameter will discard all the cached execution plans.
 
-**Valid value**: enumerated values
+**Value range**: enumerated values
 
 -   **origin**  indicates that the system copies operations such as insert, delete, and update from the current session.
 -   **replica**  indicates that the system copies operations such as insert, delete, and update from other places to the current session.
@@ -160,7 +160,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in   
 
 **Parameter description**: If the statement execution time \(starting from the time the server receives the command\) is longer than the duration specified by the parameter, error information is displayed and the statement exits.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to 2147483647. The unit is ms.
 
@@ -168,9 +168,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## vacuum\_freeze\_min\_age<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_s047458943d8a4f4a98df60fd91c6c96b"></a>
 
-**Parameter description:**  Specifies whether VACUUM replaces the xmin column of a record with FrozenXID when scanning a table \(in the same transaction\).
+**Parameter description:**  Specifies whether VACUUM replaces the  **xmin**  column of a record with  **FrozenXID**  when scanning a table \(in the same transaction\).
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to 576460752303423487
 
@@ -183,22 +183,22 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies when VACUUM scans the whole table and freezes old tuples. VACUUM performs a full table scan if the difference between the current transaction ID and the value of pg\_class.relfrozenxid64 is greater than the specified time.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to 576460752303423487
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->Although you can set this parameter to any value,  **VACUUM**  will limit the effective value to 95% of  **[autovacuum\_freeze\_max\_age](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s7857d2d0002547a3853b7aac36a458b3)**  by default. Therefore, a periodic manual VACUUM has a chance to run before an anti-wraparound autovacuum is launched for the table.
+>Although you can set this parameter to any value,  **VACUUM**  will limit the effective value to 95% of  **[autovacuum\_freeze\_max\_age](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s7857d2d0002547a3853b7aac36a458b3)**  by default. Therefore, a periodical manual  **VACUUM**  has a chance to run before an anti-wraparound autovacuum is launched for the table.
 
-**Default value**:  **15000000000**
+**Default value**:  **4000000000**
 
 ## bytea\_output<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sb95ebefb0b624975b0714dfe8e0ec15c"></a>
 
 **Parameter description:**  Specifies the output format for values of the bytea type.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Valid value**: enumerated values
+**Value range**: enumerated values
 
 -   **hex**  indicates that the binary data is converted to hexadecimal format.
 -   **escape**  indicates that the traditional PostgreSQL format is used. It takes the approach of representing a binary string as a sequence of ASCII characters, while converting those bytes that cannot be represented as an ASCII character into special escape sequences.
@@ -209,9 +209,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies how binary values are to be encoded in XML.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Valid value**: enumerated values
+**Value range**: enumerated values
 
 -   base64
 -   hex
@@ -222,9 +222,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether DOCUMENT or CONTENT is implicit when converting between XML and string values.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Valid value**: enumerated values
+**Value range**: enumerated values
 
 -   **document**  indicates an HTML document.
 -   **content**  indicates a common string.
@@ -235,7 +235,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the maximum number of function compilation results stored in the server. Excessive functions and compilation results of stored procedures may occupy large memory space. Setting this parameter to a proper value can reduce the memory usage and improve system performance.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 1 to 2147483647
 
@@ -245,9 +245,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the maximum size of the GIN pending list which is used when  **fastupdate**  is enabled. If the list grows larger than this maximum size, it is cleaned up by moving the entries in it to the main GIN data structure in batches. This setting can be overridden for individual GIN indexes by changing index storage parameters.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Valid value**: an integer. The minimum value is 64 and the maximum value is INT\_MAX. The default unit is KB.
+**Value range**: an integer. The minimum value is 64 and the maximum value is INT\_MAX. The default unit is KB.
 
-**Default value**:  **4MB**
+**Default value**:  **4 MB**
 

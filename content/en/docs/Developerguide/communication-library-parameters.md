@@ -6,7 +6,7 @@ This section describes parameter settings and value ranges for communication lib
 
 **Parameter description**: Specifies the interval for transmitting keepalive signals on an OS that supports the  **TCP\_KEEPIDLE**  socket option. If no keepalive signal is transmitted, the connection is in idle mode.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPIDLE**, set this parameter to  **0**.
@@ -20,7 +20,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description:**  Specifies the response time before retransmission on an OS that supports the  **TCP\_KEEPINTVL**  socket option.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: 0 to 180. The unit is s.
 
@@ -32,15 +32,15 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## tcp\_keepalives\_count<a name="en-us_topic_0283137640_en-us_topic_0237124697_en-us_topic_0059778583_scb812ad2f34f47dcabeac73c6e1a163c"></a>
 
-**Parameter description**: Specifies the number of keepalive signals that can be waited before the GaussDB Kernel server is disconnected from the client on an OS that supports the  **TCP\_KEEPCNT**  socket option.
+**Parameter description**: Specifies the number of keepalive signals that can be waited before the openGauss server is disconnected from the client on an OS that supports the  **TCP\_KEEPCNT**  socket option.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPCNT**, set this parameter to  **0**.
 >-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
 
-**Value range**: 0 to 100.  **0**  indicates that the connection is immediately broken if GaussDB Kernel does not receive a keepalived signal from the client.
+**Value range**: 0 to 100.  **0**  indicates that the connection is immediately broken if openGauss does not receive a keepalived signal from the client.
 
 **Default value:** **20**
 
@@ -48,7 +48,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the TCP or SCTP port used to listen on data packet channels by the TCP proxy communication library or SCTP communication library.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >This port number is automatically allocated during openGauss deployment. Do not change the parameter value. If the port number is incorrectly configured, the database communication fails.
@@ -61,7 +61,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the TCP listening port used by the TCP proxy communication library or SCTP communication library.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >This port number is automatically allocated during openGauss deployment. Do not change the parameter value. If the port number is incorrectly configured, the database communication fails.
@@ -74,7 +74,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the maximum number of receiving threads for the TCP proxy communication library or SCTP communication library.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to 50
 
@@ -84,20 +84,20 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the maximum size of packets that can be consecutively sent by the TCP proxy communication library or SCTP communication library. When you use a 1GE NIC, a small value ranging from 20 KB to 40 KB is recommended.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 2048000. The default unit is KB.
 
-**Default value**:  **1MB**
+**Default value**:  **1 MB**
 
 ## comm\_usable\_memory<a name="en-us_topic_0283137640_en-us_topic_0237124697_en-us_topic_0059778583_s67902ead6192494aa7451b60fbcc68e4"></a>
 
-**Parameter description**: Specifies the maximum memory available for buffering on the TCP proxy communication library or SCTP communication library on a DN.
+**Parameter description**: Specifies the maximum memory available for buffering on the TCP proxy communication library or SCTP communication library on a database node.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >This parameter must be set based on environment memory and the deployment method. If it is too large, an out-of-memory \(OOM\) exception may occur. If it is too small, the performance of the TCP proxy communication library or SCTP communication library may deteriorate.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 100 x 1024 to  _INT\_MAX_/2. The default unit is KB.
 
@@ -105,12 +105,12 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## comm\_memory\_pool<a name="en-us_topic_0283137640_en-us_topic_0237124697_section176091443181918"></a>
 
-**Parameter description**: Specifies the size of the memory pool resources that can be used by the TCP proxy communication library or SCTP communication library on a DN.
+**Parameter description**: Specifies the size of the memory pool resources that can be used by the TCP proxy communication library or SCTP communication library on a database node.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >If the memory used by the communication library is small, set this parameter to a small value. Otherwise, set it to a large value.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 100 x 1024 to  _INT\_MAX_/2. The default unit is KB.
 
@@ -118,12 +118,12 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## comm\_memory\_pool\_percent<a name="en-us_topic_0283137640_en-us_topic_0237124697_section165486311620"></a>
 
-**Parameter description**: Specifies the percentage of the memory pool resources that can be used by the TCP proxy communication library or the SCTP communication library on a DN. This parameter is used to adaptively reserve memory used by the communication libraries.
+**Parameter description**: Specifies the percentage of the memory pool resources that can be used by the TCP proxy communication library or SCTP communication library on a database node. This parameter is used to adaptively reserve memory used by the communication libraries.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >If the memory used by the communication library is small, set this parameter to a small value. Otherwise, set it to a large value.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 100
 
@@ -131,9 +131,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## comm\_no\_delay<a name="en-us_topic_0283137640_en-us_topic_0237124697_section1371661611123"></a>
 
-**Parameter description**: Specifies whether to use the  **NO\_DELAY**  attribute of the communication library connection.
+**Parameter description**: Specifies whether to use the  **NO\_DELAY**  attribute of a communication library connection.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -149,7 +149,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -162,9 +162,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the duration after which the communication library server automatically triggers ACK when no data packet is received.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to 20000. The unit is ms.  **0**  indicates that automatic ACK triggering is disabled.
+**Value range**: an integer ranging from 0 to 20000. The unit is ms.  **0**: disabled
 
 **Default value**:  **2000**
 
@@ -175,7 +175,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -191,7 +191,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >If this parameter is set to  **on**, a huge number of logs will be printed, adding extra overhead and reducing database performance. Therefore, set it to  **on**  only in debugging scenarios.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -199,4 +199,25 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off**  indicates that the statistics logs of the communication library are not printed.
 
 **Default value**:  **off**
+
+## comm\_proxy\_attr<a name="section167117211811"></a>
+
+**Parameter description**: Specifies the parameters related to the communication proxy library.
+
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   This parameter applies only to the centralized ARM standalone system running EulerOS 2.9.
+>-   This function takes effect when the thread pool is enabled, that is,  **enable\_thread\_pool**  is set to  **on**.
+>-   When setting this parameter, you need to set the GUC parameter  **local\_bind\_address**  to the IP address of the NIC of the  **libos\_kni**.
+>-   **Parameter template**: comm\_proxy\_attr = '\{enable\_libnet:true, enable\_dfx:false, numa\_num:4, numa\_bind:\[\[30,31\],\[62,63\],\[94,95\],\[126,127\]\]\}'
+>-   Parameters that need to be configured include:
+>    -   **enable\_libnet**: whether to enable the user-mode protocol. The options are as follows:  **true**  and  **false**.
+>    -   **enable\_dfx**: whether to enable the communication proxy library view. The options are as follows:  **true**  and  **false**.
+>    -   **numa\_num**: number of NUMA nodes in the system. 2P and 4P servers are supported. The value can be:  **4**  or  **8**.
+>    -   **numa\_bind**: core binding parameter of the agent thread. Each numa has two CPUs. There are a total of  **numa\_num**  groups. The value range is as follows: \[0, Number of CPUs – 1\].
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: a string, consisting of one or more characters
+
+**Default value**:  **none**
 

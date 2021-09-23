@@ -158,7 +158,7 @@ Take the housing price prediction with the support vector machine \(SVM\) as an 
 >SET search_path="$user",public,madlib;
 >SET behavior_compat_options = 'bind_procedure_searchpath';
 >```
->Before executing the algorithm, you need to set the schema in  **search\_path **and set the  **bind\_procedure\_searchpath**. Otherwise, the table cannot be found. All machine learning methods are installed in a schema, and user tables are installed in user's schemas. In this example, the algorithm is installed in  **madlib**, and user tables are stored in  **public**. If schema is not set, the table may not be found when the algorithm is executed. When executing the algorithm, you are advised to add the scheme of the input table.
+>Before executing the algorithm, you need to set the schema in  **search\_path **and set the  **bind\_procedure\_searchpath**. Otherwise, the table cannot be found. All machine learning methods are installed in a schema, and user tables are installed in user's schemas. In this example, the algorithm is installed in  **madlib**, and user tables are stored in  **public**. If no schema is set, the table may not be found when the algorithm is executed. When executing the algorithm, you are advised to add the schema of the input table.
 
 ## Regression Algorithm<a name="section1358933811168"></a>
 
@@ -560,7 +560,7 @@ Although the gdbt base learner is a regression tree, the algorithm itself suppor
     );
     ```
 
-    When  **is\_classification **is set to  **FALSE**, the model is a regression task. By default, gbdt provides the regression calculation function. The method generates two tables. One table records the collective information of each tree and the binary of the model. The other table records the parameter information of the method.
+    When  **is\_clasification**  is set to  **FALSE**, the model is a regression task. By default, gbdt provides the regression calculation function. The method generates two tables. One table records the collective information of each tree and the binary of the model. The other table records the parameter information of the method.
 
 3.  Perform prediction.
 

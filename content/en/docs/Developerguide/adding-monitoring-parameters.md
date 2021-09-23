@@ -1,58 +1,35 @@
 # Adding Monitoring Parameters<a name="EN-US_TOPIC_0303986185"></a>
 
-## Compiling the API for Obtaining Metric Data<a name="section5892154973918"></a>
+The tool performs trend prediction and threshold exception detection only for metrics in  **os\_exporter**. You can add new monitoring parameters. The procedure is as follows:
 
-The following uses  **io\_read **as an example to describe how to compile the  **io\_read **metric obtaining function in  **metric\_task.py**  under the  **task**  directory:
+1.  Compile a function for obtaining metrics in  **os\_exporter**  of  **task/os\_exporter.py**, and add the function to the output result list. For example:
 
-```
-def io_read():
-     child1 = subprocess.Popen(['pidstat', '-d'], stdout=subprocess.PIPE, shell=False)
-     child2 = subprocess.Popen(['grep', 'gaussd[b]'], stdin=child1.stdout, stdout=subprocess.PIPE, shell=False)
-     result = child2.communicate()
-     if not result[0]:
-         return 0.0
-     else:
-         return result[0].split()[3].decode('utf-8')
-```
+    ```
+    @staticmethod
+    def new_metric():
+        return metric_value
+        
+    def output(self):
+        result = [self.cpu_usage(), self.io_wait(), self.io_read(),
+                  self.io_write(), self.memory_usage(), self.disk_space(), self.new_metric()]
+        return result
+    
+    ```
 
-## Adding Metric Monitoring Parameters<a name="section1945041517195"></a>
+2.  In  **os\_exporter**  of  **table.json**, add the  **new\_metric**  field to  **CREATE table**  and add the field type information to  **INSERT**. For example:
 
-Add the io\_read section to  **metric\_task.conf**  under the  **task**  directory.
+    ```
+    "os_exporter": {
+      "create_table": "create table  os_exporter(timestamp bigint, cpu_usage text, io_wait text, io_read text, io_write text, memory_usage text, disk_space text, new_metric text);",
+      "insert": "insert into os_exporter values(%d, \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");",
+    ```
 
-```
-[io_read]
-minimum = 30
-maximum = 100
-data_period = 1H
-forecast_interval = 2H
-forecast_period = 30M
-```
+3.  Add the upper or lower limit of the metric to the  **task/metric\_task.conf**  file. For example:
 
-## Restarting Services<a name="section13907125892019"></a>
+    ```
+    [os_exporter]
+    new_metric_minimum = 0
+    new_metric_maximum = 10
+    ```
 
-Command reference:  [Obtaining Help Information](obtaining-help-information-9.md)
-
-```
-Restart the agent:
-    Local server:
-        python main.py start --role agent
-        python main.py stop --role agent
-    Remote server:
-        python main.py start --user USER --host HOST --project-path PROJECT_PATH --role agent    
-        python main.py stop --user USER --host HOST --project-path PROJECT_PATH --role agent    
-Restart the server:
-    Local server:
-        python main.py start --role server
-        python main.py stop --role server
-    Remote server:
-        python main.py start --user USER --host HOST --project-path PROJECT_PATH --role server
-        python main.py stop --user USER --host HOST --project-path PROJECT_PATH --role server
-Restarts the monitor:
-    Local server:
-        python main.py start --role monitor
-        python main.py stop --role monitor
-    Remote server:
-        python main.py start --user USER --host HOST --project-path PROJECT_PATH --role monitor
-        python main.py stop --user USER --host HOST --project-path PROJECT_PATH --role monitor
-```
 
