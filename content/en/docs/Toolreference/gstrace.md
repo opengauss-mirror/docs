@@ -1,6 +1,6 @@
 # gstrace<a name="EN-US_TOPIC_0289899251"></a>
 
-## Function Description<a name="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>
+## Function<a name="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>
 
 **gstrace**, provided by openGauss, is used to trace the kernel code execution path, record kernel data structure, and analyze code performance. The number of trace points and data are fixed in the version and cannot be dynamically added or deleted.
 
@@ -68,7 +68,7 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 </tr>
 <tr id="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_r4cd4463ebb5e4719ba97a9a170e1c336"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p15327334122215"></a>-p PORT</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a>Specifies the listening number of the instance for which the trace function is enabled.</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p732613416227"></a>Specifies the listening port number of an instance on which the trace function is enabled.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_rf78e1c297caa4e1b8c449b6475e9457f"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p33241034112218"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p33241034112218"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p33241034112218"></a>-f DUMP_FILE</p>
@@ -86,6 +86,17 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 <td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p16317134152214"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p16317134152214"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p16317134152214"></a>Specifies the time span for segment analysis, in seconds. This parameter is optional. A separate <em id="i1518714141418"><a name="i1518714141418"></a><a name="i1518714141418"></a>{OUTPUT_FILE}</em><strong id="b925810461417"><a name="b925810461417"></a><a name="b925810461417"></a>.step</strong> file will be generated.</p>
 </td>
 </tr>
+<tr id="row19271527135319"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="p22713278539"><a name="p22713278539"></a><a name="p22713278539"></a>-m MASK</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="p1271527145315"><a name="p1271527145315"></a><a name="p1271527145315"></a>Specifies the modules and functions to be traced. If this parameter is left blank, all functions of all modules with the <strong id="b14473918112518"><a name="b14473918112518"></a><a name="b14473918112518"></a>trace</strong> interface added are traced.</p>
+<p id="p176851402914"><a name="p176851402914"></a><a name="p176851402914"></a>Format: [comp…][ALL].[func…][ALL]</p>
+<p id="p476815146299"><a name="p476815146299"></a><a name="p476815146299"></a>Description:</p>
+<a name="ul191841558155417"></a><a name="ul191841558155417"></a><ul id="ul191841558155417"><li><strong id="b1695325612511"><a name="b1695325612511"></a><a name="b1695325612511"></a>comp</strong> indicates the module list, which is separated by commas (,). For example, <strong id="b1980614542618"><a name="b1980614542618"></a><a name="b1980614542618"></a>executer,opengauss</strong>. You can also use a sequence number, for example, <strong id="b199731552152717"><a name="b199731552152717"></a><a name="b199731552152717"></a>executer,2</strong>.</li><li><strong id="b146761139285"><a name="b146761139285"></a><a name="b146761139285"></a>func</strong> indicates a function list, which is separated by commas (,). For example, <strong id="b9484142602810"><a name="b9484142602810"></a><a name="b9484142602810"></a>sql_execute_ddl, sql_execute_dcl</strong>. You can also use a sequence number to indicate the sequence number of a function in a module, for example, <strong id="b4180145217287"><a name="b4180145217287"></a><a name="b4180145217287"></a>2</strong>.</li><li>The value <strong id="b142252326296"><a name="b142252326296"></a><a name="b142252326296"></a>ALL</strong> indicates that all modules or functions are traced.</li></ul>
+<p id="p276921442916"><a name="p276921442916"></a><a name="p276921442916"></a>Examples:</p>
+<a name="ul31951366551"></a><a name="ul31951366551"></a><ul id="ul31951366551"><li><strong id="b351614415298"><a name="b351614415298"></a><a name="b351614415298"></a>executer,opengauss.ALL</strong>: All functions defined in the executer and opengauss modules are traced.</li><li><strong id="b1628374782920"><a name="b1628374782920"></a><a name="b1628374782920"></a>executer,opengauss.sql_execute_ddl</strong>: The <strong id="b581955862910"><a name="b581955862910"></a><a name="b581955862910"></a>sql_execute_ddl</strong> function defined in the executer is traced. The opengauss module is ignored because this function does not exist.</li><li><strong id="b1140325793010"><a name="b1140325793010"></a><a name="b1140325793010"></a>executer,opengauss.1</strong>: The first functions in the executer and opengauss modules are traced.</li></ul>
+<p id="p176921422917"><a name="p176921422917"></a><a name="p176921422917"></a><strong id="b1622513344314"><a name="b1622513344314"></a><a name="b1622513344314"></a>ALL.1,2</strong>: The first and second functions in all modules are traced.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0287275941_en-us_topic_0237152426_row12693367813"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p43111434122216"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p43111434122216"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p43111434122216"></a>-s BUFFER_SIZE</p>
 </td>
 <td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275941_en-us_topic_0237152426_p5310203414226"><a name="en-us_topic_0287275941_en-us_topic_0237152426_p5310203414226"></a><a name="en-us_topic_0287275941_en-us_topic_0237152426_p5310203414226"></a>Specifies the size of the shared memory used for the trace function. The default value is 1 GB. If the specified value of BUFFER_SIZE is less than the minimum value 2048, the system automatically adjusts the value to the minimum value. If the value specified by BUFFER_SIZE is not 2^N (2 to the power of N), 2^N is aligned downwards. For example, if BUFFER_SIZE is set to 3072, the system changes the value to 2048 because 2^11 &lt; 3072 &lt; 2^12.</p>
@@ -93,7 +104,6 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 </tr>
 </tbody>
 </table>
-
 
 ## Example<a name="en-us_topic_0287275941_en-us_topic_0237152426_section2838131051812"></a>
 
