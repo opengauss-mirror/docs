@@ -73,7 +73,7 @@ PG\_STAT\_BGWRITER视图显示关于后端写进程活动的统计信息。
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a07c186bd1f1943489cee9b0c0cc9863c"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a07c186bd1f1943489cee9b0c0cc9863c"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a07c186bd1f1943489cee9b0c0cc9863c"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a>后端不得不执行自己的fsync调用的时间数 （通常后端写进程处理这些即使后端确实自己写）。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a>后端不得不执行自己的fsync调用的时间数（通常后端写进程处理这些即使后端确实自己写）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_rb37065bf6aed41119f3100c140f61754"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_adcc054c5c2f24ce8ba26ffd8095ddd9d"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_adcc054c5c2f24ce8ba26ffd8095ddd9d"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_adcc054c5c2f24ce8ba26ffd8095ddd9d"></a>buffers_alloc</p>
@@ -92,4 +92,3 @@ PG\_STAT\_BGWRITER视图显示关于后端写进程活动的统计信息。
 </tr>
 </tbody>
 </table>
-
