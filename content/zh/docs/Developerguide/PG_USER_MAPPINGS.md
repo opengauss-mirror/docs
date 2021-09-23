@@ -68,9 +68,8 @@ PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。
 </td>
 <td class="cellrowborder" valign="top" width="31.000000000000007%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a06536016fd99419a894ed5191e76075c"><a name="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a06536016fd99419a894ed5191e76075c"></a><a name="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a06536016fd99419a894ed5191e76075c"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.86000000000001%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8653654a9d634404a819dddce8352f70"><a name="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8653654a9d634404a819dddce8352f70"></a><a name="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8653654a9d634404a819dddce8352f70"></a>如果当前用户是外部服务器的所有者，则为用户映射指定选项， 使用“keyword=value”字符串，否则为null。</p>
+<td class="cellrowborder" valign="top" width="42.86000000000001%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8653654a9d634404a819dddce8352f70"><a name="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8653654a9d634404a819dddce8352f70"></a><a name="zh-cn_topic_0283137427_zh-cn_topic_0237122473_zh-cn_topic_0059777822_a8653654a9d634404a819dddce8352f70"></a>如果当前用户是外部服务器的所有者，则为用户映射指定选项，使用“keyword=value”字符串，否则为null。</p>
 </td>
 </tr>
 </tbody>
 </table>
-

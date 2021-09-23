@@ -91,14 +91,14 @@ PGXC\_SLICE系统表仅在分布式场景下有具体含义，openGauss只能查
 </td>
 <td class="cellrowborder" valign="top" width="20.152015201520154%" headers="mcps1.2.4.1.2 "><p id="p8805113110294"><a name="p8805113110294"></a><a name="p8805113110294"></a>text[]</p>
 </td>
-<td class="cellrowborder" valign="top" width="66.87668766876688%" headers="mcps1.2.4.1.3 "><p id="p148051831132912"><a name="p148051831132912"></a><a name="p148051831132912"></a>当relname为分片名时，对应该分片的边界值。</p>
+<td class="cellrowborder" valign="top" width="66.87668766876688%" headers="mcps1.2.4.1.3 "><p id="p148051831132912"><a name="p148051831132912"></a><a name="p148051831132912"></a>当relname为分片名时，对应该分片的边界值</p>
 </td>
 </tr>
 <tr id="row1680517317296"><td class="cellrowborder" valign="top" width="12.971297129712973%" headers="mcps1.2.4.1.1 "><p id="p5805113113291"><a name="p5805113113291"></a><a name="p5805113113291"></a>specified</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.152015201520154%" headers="mcps1.2.4.1.2 "><p id="p480573162911"><a name="p480573162911"></a><a name="p480573162911"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="66.87668766876688%" headers="mcps1.2.4.1.3 "><p id="p78062315299"><a name="p78062315299"></a><a name="p78062315299"></a>当前分片对应的DN是否是用户在DDL中显示指定的。</p>
+<td class="cellrowborder" valign="top" width="66.87668766876688%" headers="mcps1.2.4.1.3 "><p id="p78062315299"><a name="p78062315299"></a><a name="p78062315299"></a>当前分片对应的DN是否是用户在DDL中显示指定的</p>
 </td>
 </tr>
 <tr id="row180673114291"><td class="cellrowborder" valign="top" width="12.971297129712973%" headers="mcps1.2.4.1.1 "><p id="p980633122915"><a name="p980633122915"></a><a name="p980633122915"></a>sliceorder</p>
@@ -110,4 +110,3 @@ PGXC\_SLICE系统表仅在分布式场景下有具体含义，openGauss只能查
 </tr>
 </tbody>
 </table>
-
