@@ -2,23 +2,27 @@
 
 ## Prerequisites and Precautions<a name="en-us_topic_0283137591_section887921944913"></a>
 
--   The database is normal, and the data directory has been written into environment variables and named  **PGDATA**.
+-   The database is running properly.
+-   During the running of the tool, if the system time is tampered with, the slow SQL data collection may fail.
+-   The tool does not support data collection on the standby node.
 -   If you log in to the database host as a Linux user, add  **$GAUSSHOME/bin**  to the  _PATH _environment variable so that you can directly run database O&M tools, such as gsql, gs\_guc, and gs\_ctl.
 -   The recommended Python version is Python 3.6 or later. The required dependency has been installed in the operating environment, and the optimization program can be started properly.
 -   This tool consists of the agent and detector. Data is transmitted between the agent and detector in HTTP or HTTPS mode. Therefore, ensure that the agent server can communicate with the detector server properly.
--   Detector module runs the server and monitor services, which need to be started separately.
--   If HTTPS is used for communication, you need to prepare the CA certificate, and certificates and keys of the agent and detector, and save them to  **ca**,  **agent**, and  **server **in the  **root **directory of the project, respectively. In addition, you need to save the key encryption password to  **pwf **of the certificate, and set the permission to  **600**  to prevent other users from performing read and write operations. You can also use the script in the  **share **directory to generate certificates and keys.
+-   The detector module runs the collector and monitor services, which need to be started separately.
+-   If HTTPS is used for communication, you need to prepare the CA certificate, and certificates and keys of the agent and detector, and save them to  **ca**,  **agent**, and  **collector**  in the  **root **directory of the project, respectively. In addition, you need to save the key encryption password to  **pwf**  of the certificate, and set the permission to  **600**  to prevent other users from performing read and write operations. You can also use the script in the  **share **directory to generate certificates and keys.
+-   You are advised to configure your own Python environment to avoid affecting other functions \(for example, using miniconda\).
+-   To analyze the root cause of slow SQL statements, you need the WDR report. In this case, you need to set  **track\_stmt\_stat\_level**  to  **'OFF,L1'**  and  **log\_min\_duration\_statement**  to  **3000**  \(slow SQL threshold, which can be set as required\). The unit is ms.
+-   If the detecor and database are deployed on the same server, the service port of the collector cannot be the same as the local port of the database. Otherwise, the process cannot be started.
 
 ## Principles<a name="en-us_topic_0283137591_section1767203555113"></a>
 
-![](figures/图片16.png)
+**Figure  1**  anomaly\_detection structure<a name="fig1933719505315"></a>  
+![](figures/anomaly_detection-structure.png "anomaly_detection-structure")
 
-Figure 1 anomaly\_detection structure
+anomaly\_detection is a tool independent of the database kernel. Figure 1 shows the anomaly\_detection structure. The anomaly\_detection tool consists of the agent and detector modules.
 
-anomaly\_detection is a tool independent of the database kernel. Figure 1 shows the structure of anomaly\_detection. anomaly\_detection consists of the agent and detector modules.
-
--   **agent**: data agent module, which consists of the source, channel, and sink. It collects metrics in the database and sends the metrics to the remote detector in HTTP or HTTPS mode.
--   **detector**: collects and stores data pushed by the agent, monitors and detects database metrics based on algorithms such as time series forecasting and exception detection, and notifies users of the exceptions through logs.
+-   Agent: data agent module, which consists of the source, channel, and sink. It collects metrics in the database and sends the metrics to the remote detector in HTTP or HTTPS mode.
+-   Detector: collects and stores data pushed by the agent, monitors and detects database metrics based on algorithms such as time series forecast and exception detection, and provides root cause analysis on slow SQL statements.
 
 ## Running and Installation of anomaly\_detection<a name="section7752113811419"></a>
 
@@ -32,7 +36,6 @@ anomaly\_detection is a tool independent of the database kernel. Figure 1 shows 
 3.  After the installation is successful, run  **main.py**. For example, to obtain the help information, run the following command:
 
     ```
-    cd anomaly_detection # Switch to the directory where the main.py entry file is located.
     python main.py --help # Obtain help information. The methods of using other functions are similar.
     ```
 
@@ -44,88 +47,75 @@ The  **a-detection.conf **and  **metric\_task.conf **configuration files need to
 **a-detection.conf**  contains six sections: agent, server, database, security, forecast, and log. The parameters are described as follows:
 
 ```
-# Parameter configuration on the agent.
-[agent] 
-# Interval for the agent to collect data, in seconds.
-source_timer_interval = 1 
-# Interval for the agent to send data to the detector, in seconds.
-sink_timer_interval = 1 
-# Length of the buffer queue on the agent.
-channel_capacity = 300  
-
-# Communication mode configuration
-[security] 
-# tls=True. The HTTPS communication mode is used. You must place the certificate and key in the following path.
-# Use gen_ca_certificate.sh in the share script to generate a CA certificate.
-# Use gen_certificate.sh to generate the server certificate and key, and write the key encryption password to the pwf file of certificates.
-# tls=False. The HTTP communication mode is used. You do not need to configure the paths of the following certificates and keys.
-tls = False 
-# CA certificate path
-ca = ./certificate/ca/ca.crt 
-# Path of the certificate on the detector
-server_cert = ./certificate/server/server.crt 
-# Path of the key on the detector.
-server_key = ./certificate/server/server.key 
-# Path of the certificate on the agent
-agent_cert = ./certificate/agent/agent.crt 
-# Path of the key on the agent
-agent_key = ./certificate/agent/agent.key  
-
-# Database parameter configuration
 [database]
-# Path for storing the database
-database_path = ./data/metric.db 
-# Maximum number of rows in a database table. This parameter is used to prevent insufficient disk space due to a large amount of data.
-max_rows = 20000 
-# Frequency of refreshing the database table. In this example, the table is refreshed before 1000 rows are inserted. The old data that is greater than the value of max_rows is refreshed to store the new data.
-max_flush_cache = 1000  
+storage_duration = 12H  # Data storage duration. The default value is 12 hours.
+database_dir = ./data  # Data storage directory
 
-# Server parameter configuration
+[security]
+tls = False
+ca = ./certificate/ca/ca.crt
+server_cert = ./certificate/server/server.crt
+server_key = ./certificate/server/server.key
+agent_cert = ./certificate/agent/agent.crt
+agent_key = ./certificate/agent/agent.key
+
 [server]
-# IP address of the detector
-host = 127.0.0.1 
-# Listening IP address of the detector
-listen_host = 0.0.0.0 
-# Listening port of the detector. Make sure that the port is not occupied.
-listen_port = 8080  
+host = 0.0.0.0  # IP address of the server
+listen_host = 0.0.0.0
+listen_port = 8080
+white_host = 0.0.0.0  # IP address whitelist
+white_port = 8000  # Port number whitelist
 
-# Forecasting algorithm configuration. By default, the auto_arima and fbprophet algorithms are included.
-[forecast] 
-#Time series forecasting algorithm. The default algorithm is arima.
-predict_alg = auto_arima
+[agent]
+source_timer_interval = 10S  #  Agent data collection frequency
+sink_timer_interval = 10S  # Agent data sending frequency
+channel_capacity = 1000  # Maximum length of the buffer queue
+db_host = 0.0.0.0  # IP address of the agent node
+db_port = 8080  # Port number of the agent node
+db_type = single # Agent node type. The value can be single (single node), cn (CN), or dn (DN).
 
-# Path for storing logs
-[log] 
-# Location for storing logs
-log_dir = ./log
+[forecast]
+forecast_alg = auto_arima  # Time series prediction algorithm. The value can be auto_arima or fbprophet (You need to install by yourself).
+[log]
+log_dir = ./log  # Log file location
 ```
 
-**metric\_task.conf**  contains parameters of all monitoring metrics. The following uses  **disk\_space **as an example:
+**metric\_task.conf**: This configuration file contains three sections:  **detector\_method**,  **os\_exporter**, and  **trend\_parameter**. The parameters are described as follows:
 
 ```
-[disk_space] 
-# Lower limit of the metric (used for monitoring and alarming)
-minimum = 20 
-# Upper limit of the metric (used for monitoring and alarming)
-maximum = 100 
-# Training data length during forecasting. The value can be an integer or an integer plus the time unit.
-# If the value is an integer, the training data of the corresponding length is obtained. If the value is an integer plus a time unit, the training data of the corresponding length is obtained.
-# 100S indicates that the data in the latest 100 seconds is used as the training data.
-data_period = 100S 
-# Interval of forecasting. The following indicates that the forecasting is performed every 100s.
-forecast_interval = 100S 
-# Period of forecasting. The following indicates that the data of the next 60 seconds is forecasted each time.
-forecast_period = 60S 
+[detector_method]
+trend = os_exporter # Name of the table used for time series prediction
+slow_sql = wdr # Name of the table for slow SQL diagnosis
+
+[os_exporter]
+cpu_usage_minimum = 1 # Lower limit of CPU usage
+cpu_usage_maximum = 10 # Upper limit of CPU usage
+memory_usage_minimum = 1 # Lower limit of memory usage
+memory_usage_maximum = 10 # Upper limit of memory usage
+io_read_minimum = 1
+io_read_maximum = 10
+io_write_minimum = 1
+io_write_maximum = 10
+io_wait_minimum = 1
+io_wait_maximum = 10
+disk_space_minimum = 1
+disk_space_maximum = 10
+
+[common_parameter]
+data_period = 1000S # Length of historical data used for time series forecast. The value can be an integer plus the time unit (for example, 100S, 2M, and 10D).
+interval = 20S # Monitoring interval
+freq = 3S # Trend forecast frequency
+period = 2 # Trend forecast period
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   The following time units are supported:
->    'S': second
->    'M': minute
->    'H': hour
->    'D': day
->    'W': week
+>    -   **'S'**: second
+>    -   **'M'**: minute
+>    -   **'H'**: hour
+>    -   **'D'**: day
+>    -   **'W'**: week
 >-   At least one of  **minimum **and  **maximum **must be provided.
->-   The value of  **data\_period **can be an integer or an integer plus a time unit, for example, 100 or 100S.
+>-   **freq**  and  **period**  determine the time series forecast result. For example, if  **freq**  is set to  **2S**  and  **period**  is set to  **5**, the values of future 2s, 4s, 6s, 8s, and 10s will be forecasted.
 >-   Ensure that the training data length is greater than the forecasting length. Otherwise, the forecasting effect will be affected.
 

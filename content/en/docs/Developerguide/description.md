@@ -1,8 +1,8 @@
-# Description<a name="EN-US_TOPIC_0245374546"></a>
+# Description<a name="EN-US_TOPIC_0289899920"></a>
 
-As described in  [Overview](overview-16.md),  **EXPLAIN**  displays the execution plan, but will not actually run SQL statements.  **EXPLAIN ANALYZE**  and  **EXPLAIN PERFORMANCE**  both will actually run SQL statements and return the execution information. This section describes the execution plan and execution information in detail.
+As described in  [Overview](overview-32.md),  **EXPLAIN**  displays the execution plan, but will not actually run SQL statements.  **EXPLAIN ANALYZE**  and  **EXPLAIN PERFORMANCE**  both will actually run SQL statements and return the execution information. This section describes the execution plan and execution information in detail.
 
-## Execution Plans<a name="en-us_topic_0237121511_en-us_topic_0073548188_section5369140493714"></a>
+## Execution Plans<a name="en-us_topic_0283137659_en-us_topic_0237121511_en-us_topic_0073548188_section5369140493714"></a>
 
 The following SQL statement is used as an example:
 
@@ -12,7 +12,7 @@ SELECT * FROM t1, t2 WHERE t1.c1 = t2.c2;
 
 Run the  **EXPLAIN**  command and the output is as follows:
 
-![](figures/en-us_image_0252663634.png)
+![](figures/zh-cn_image_0289900952.png)
 
 **Interpretation of the execution plan level \(vertical\)**:
 
@@ -46,13 +46,13 @@ Run the  **EXPLAIN**  command and the output is as follows:
 
         If there are separate indexes on multiple columns referenced in  **WHERE**, the optimizer might choose to use an  **AND**  or  **OR**  combination of the indexes. However, this requires the visiting of both indexes, so it is not necessarily a win compared to using just one index and treating the other condition as a filter.
 
-        The following Index scans featured with different sorting mechanisms are involved:
+        The following index scans featured with different sorting mechanisms are involved:
 
-        -   Bitmap Index Scan
+        -   Bitmap index scan
 
             Fetches data pages using a bitmap.
 
-        -   Index Scan using index\_name
+        -   Index scan using index\_name
 
             Fetches table rows in index order, which makes them even more expensive to read. However, there are so few rows that the extra cost of sorting the row locations is unnecessary. This plan type is used mainly for queries fetching just a single row and queries having an  **ORDER BY**  condition that matches the index order, because no extra sorting step is needed to satisfy  **ORDER BY**.
 
@@ -85,7 +85,7 @@ Run the  **EXPLAIN**  command and the output is as follows:
 
 
 
-## Execution Information<a name="en-us_topic_0237121511_en-us_topic_0073548188_section665450193752"></a>
+## Execution Information<a name="en-us_topic_0283137659_en-us_topic_0237121511_en-us_topic_0073548188_section665450193752"></a>
 
 The following SQL statement is used as an example:
 
@@ -95,5 +95,5 @@ select sum(t2.c1) from t1,t2 where t1.c1=t2.c2 group by t1.c2;
 
 The output of running  **EXPLAIN PERFORMANCE**  is as follows:
 
-![](figures/en-us_image_0252660975.png)
+![](figures/zh-cn_image_0289900964.png)
 

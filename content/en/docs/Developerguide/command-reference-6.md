@@ -11,26 +11,30 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0283137337_row162915844513"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137337_p132968134510"><a name="en-us_topic_0283137337_p132968134510"></a><a name="en-us_topic_0283137337_p132968134510"></a>-m, --mode</p>
+<tbody><tr id="en-us_topic_0283137337_row162915844513"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137337_p132968134510"><a name="en-us_topic_0283137337_p132968134510"></a><a name="en-us_topic_0283137337_p132968134510"></a>-f</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137337_p152474092416"><a name="en-us_topic_0283137337_p152474092416"></a><a name="en-us_topic_0283137337_p152474092416"></a>Module selection</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137337_p152474092416"><a name="en-us_topic_0283137337_p152474092416"></a><a name="en-us_topic_0283137337_p152474092416"></a>Training or prediction file location</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137337_p94668717174"><a name="en-us_topic_0283137337_p94668717174"></a><a name="en-us_topic_0283137337_p94668717174"></a>train, predict</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="en-us_topic_0283137337_row19291888452"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137337_p16296874513"><a name="en-us_topic_0283137337_p16296874513"></a><a name="en-us_topic_0283137337_p16296874513"></a>--predicted-file</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p565320418232"><a name="p565320418232"></a><a name="p565320418232"></a>Prediction result location</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="en-us_topic_0283137337_row18298818455"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137337_p82912864518"><a name="en-us_topic_0283137337_p82912864518"></a><a name="en-us_topic_0283137337_p82912864518"></a>--model</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137337_p22917874513"><a name="en-us_topic_0283137337_p22917874513"></a><a name="en-us_topic_0283137337_p22917874513"></a>Model selection</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137337_p142948194511"><a name="en-us_topic_0283137337_p142948194511"></a><a name="en-us_topic_0283137337_p142948194511"></a>template, dnn</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283137337_row19291888452"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137337_p16296874513"><a name="en-us_topic_0283137337_p16296874513"></a><a name="en-us_topic_0283137337_p16296874513"></a>-f, --file</p>
+<tr id="row1050373018258"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p9503143018254"><a name="p9503143018254"></a><a name="p9503143018254"></a>--model-path</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p565320418232"><a name="p565320418232"></a><a name="p565320418232"></a>File path</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18503730132514"><a name="p18503730132514"></a><a name="p18503730132514"></a>Location of the training model</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137337_p132968124510"><a name="en-us_topic_0283137337_p132968124510"></a><a name="en-us_topic_0283137337_p132968124510"></a>-</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283137337_row18298818455"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137337_p82912864518"><a name="en-us_topic_0283137337_p82912864518"></a><a name="en-us_topic_0283137337_p82912864518"></a>-h, --help</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137337_p22917874513"><a name="en-us_topic_0283137337_p22917874513"></a><a name="en-us_topic_0283137337_p22917874513"></a>Description of operation parameters</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137337_p142948194511"><a name="en-us_topic_0283137337_p142948194511"></a><a name="en-us_topic_0283137337_p142948194511"></a>-</p>
-</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 ">&nbsp;&nbsp;</td>
 </tr>
 </tbody>
 </table>

@@ -4,7 +4,7 @@
 
 **Parameter description**: Specifies the time for a standby server to write and replay logs.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 3600. The unit is s.
 
@@ -16,21 +16,21 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 
 **Parameter description**: Specifies the maximum number of concurrent replay threads.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 20
 
-**Default value**: 1 \(For better performance, the default value in tool installation is set to  **4**.\)
+**Default value**:  **1**  \(For better performance, the default value in tool installation is  **4**.\)
 
 ## recovery\_parse\_workers<a name="en-us_topic_0283136722_section2094717549015"></a>
 
 **Parameter description**: Specifies the number of  **ParseRedoRecord**  threads for the extreme Recovery Time Objective \(RTO\) feature.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to 16
 
-This parameter can be set to a value greater than 1 only when the extreme RTO feature is enabled. In addition, it must be used together with  **recovery\_redo\_workers**. If both  **recovery\_parse\_workers**  and  **recovery\_max\_workers**  are enabled, the setting of  **recovery\_parse\_workers**  prevails and the concurrent replay function is disabled. The extreme RTO feature does not support the hot standby mode or primary/standby/secondary mode. Therefore,  **recovery\_parse\_workers**  can be set to a value greater than 1 only when  hot\_standby  is set to  **off**  and  replication\_type  to  **1**. This feature does not support column-store tables, either. Therefore, disable this feature in a system where column-store tables are used or are to be used.
+This parameter can be set to a value greater than 1 only when the extreme RTO feature is enabled. In addition, it must be used together with  **recovery\_redo\_workers**. If both  **recovery\_parse\_workers**  and  **recovery\_max\_workers**  are enabled, the setting of  **recovery\_parse\_workers**  prevails and the concurrent replay function is disabled. The extreme RTO feature does not support the hot standby mode or primary/standby/secondary mode. Therefore,  **recovery\_parse\_workers**  can be set to a value greater than 1 only when  **[hot\_standby](standby-server.md#en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa43017102b08472cb160e9f856e664bd)**  is set to  **off**  and  **[replication\_type](opengauss-transactions.md#en-us_topic_0283136901_en-us_topic_0237124741_section94292665717)**  to  **1**. This feature does not support column-store tables, either. Therefore, disable this feature in a system where column-store tables are used or are to be used.
 
 **Default value**:  **1**
 
@@ -38,7 +38,7 @@ This parameter can be set to a value greater than 1 only when the extreme RTO fe
 
 **Parameter description**: Specifies the number of  **PageRedoWorker**  threads corresponding to each  **ParseRedoRecord**  thread when the ultimate RTO feature is enabled.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to 8
 
@@ -60,7 +60,7 @@ This parameter is a POSTMASTER parameter and is affected by recovery\_max\_worke
 
 **Parameter description**: Specifies whether to enable the data page LSN check. During replay, the current LSN of the data page is checked to see if it is the expected one.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -68,21 +68,22 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## recovery\_min\_apply\_delay<a name="en-us_topic_0283137238_en-us_topic_0237124710_en-us_topic_0059778119_sc70ee2a3ae214c89a156d9ad7a8b81e8"></a>
 
-**Parameter description**: Specifies the delay for backing up the database.
+**Parameter description**: Specifies the replay delay of the standby node.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   This parameter is invalid on the primary node. It must be set on the standby node to be delayed.
->-   The delay time is calculated based on the timestamp of transaction submission on the primary server and the current time on the standby server. Therefore, ensure that the clocks of the primary and standby servers are the same.
+>-   This parameter does not take effect on the primary node. It must be set on the standby node that requires a delay. You are advised to set this parameter on the asynchronous standby node. If the delay is set on the asynchronous standby node, the RTO will be long after the node is promoted to primary.
+>-   The delay time is calculated based on the transaction commit timestamp on the primary server and the current time on the standby server. Therefore, ensure that the clocks of the primary and standby servers are synchronized.
+>-   If the delay time is too long, the disk where the XLOG file is located on the standby node may be full. Therefore, you need to set the delay time based on the disk size.
 >-   Operations without transactions are not delayed.
 >-   After the primary/standby switchover, if the original primary node needs to be delayed, you need to manually set this parameter.
->-   When synchronous\_commit is set to remote\_apply, synchronous replication is affected by the delay. Each commit message is returned only after the replay on the standby node is complete.
+>-   When  **synchronous\_commit**  is set to  **remote\_apply**, synchronous replication is affected by the delay. Each commit message is returned only after the replay on the standby server is complete.
 >-   Using this feature also delays  **hot\_standby\_feedback**, which may cause the primary server to bloat, so be careful when using both.
 >-   If a DDL operation \(such as DROP or TRUNCATE\) that holds an AccessExclusive lock is performed on the primary node, the query operation on the operation object on the standby node will be returned only after the lock is released during the delayed replay of the record on the standby node.
 >-   The MOT table is not supported.
 
 **Value range**: an integer ranging from 0 to INT\_MAX. The unit is ms.
 
-**Default value**: 0 \(no delay added\)
+**Default value**:  **0**  \(no delay added\)
 

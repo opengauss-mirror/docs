@@ -1,6 +1,6 @@
 # Overview<a name="EN-US_TOPIC_0300593882"></a>
 
-DeepSQL is an enhancement to openGauss DB4AI. DeepSQL encapsulates common machine learning algorithms into SQL statements and supports more than 60 general algorithms, including regression algorithms \(such as linear regression, logistic regression, and random forest\), classification algorithms \(such as KNN\), and clustering algorithms \(such as K-means\). In addition to basic machine learning algorithms, graph-related algorithms are also included, such as algorithms about the shortest path and graph diameter. Also, it supports data processing \(such as PCA\), sparse vectors, common statistical algorithms \(such as covariance and Pearson coefficient calculation\), training set and test set segmentation, and cross validation.
+DeepSQL is an enhancement to openGauss DB4AI, allowing data analysts or developers who are familiar with MADLib to easily migrate data to openGauss. DeepSQL encapsulates common machine learning algorithms into SQL statements and supports more than 60 general algorithms, including regression algorithms \(such as linear regression, logistic regression, and random forest\), classification algorithms \(such as KNN\), and clustering algorithms \(such as K-means\). In addition to basic machine learning algorithms, graph-related algorithms are also included, such as algorithms about the shortest path and graph diameter. Also, it supports data processing \(such as PCA\), sparse vectors, common statistical algorithms \(such as covariance and Pearson coefficient calculation\), training set and test set segmentation, and cross validation.
 
 **Table  1**  Supported machine learning algorithms: regression algorithms
 
@@ -61,7 +61,7 @@ DeepSQL is an enhancement to openGauss DB4AI. DeepSQL encapsulates common machin
 </td>
 <td class="cellrowborder" valign="top" width="17.31%" headers="mcps1.2.4.1.2 "><p id="p7969307224"><a name="p7969307224"></a><a name="p7969307224"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.06%" headers="mcps1.2.4.1.3 "><p id="p59743019228"><a name="p59743019228"></a><a name="p59743019228"></a>In statistics, ordinal regression is a regression analysis used to predict ordinal variables. That is, the values of variables are within any range, and the metric distances between different values are different. It can be considered as an issue between regression and classification. Examples include the severity of illness (levels 1, 2, 3, and 4), the pain scale (no pain, mild, moderate, and severe), and the drug dose-response effects (ineffective, less effective, effective, and very effective). The difference between levels is not necessarily equal, for example, the difference between no pain and mild is not necessarily equal to the difference between moderate and severe.</p>
+<td class="cellrowborder" valign="top" width="72.06%" headers="mcps1.2.4.1.3 "><p id="p59743019228"><a name="p59743019228"></a><a name="p59743019228"></a>In statistics, ordinal regression is a regression analysis used to predict ordinal variables. That is, the values of variables are within any range, and the metric distances between different values are different. It can be considered as an issue between regression and classification. Examples include the severity of illness (levels 1, 2, 3, and 4), the pain scale (no pain, mild, moderate, and severe), and the drug dose-response effects (ineffective, less effective, effective, and very effective). The differences between levels are not necessarily equal, for example, the difference between no pain and mild is not necessarily equal to the difference between moderate and severe.</p>
 </td>
 </tr>
 <tr id="row1175543110251"><td class="cellrowborder" valign="top" width="10.63%" headers="mcps1.2.4.1.1 "><p id="p197565312259"><a name="p197565312259"></a><a name="p197565312259"></a>Clustered variance</p>
@@ -459,7 +459,7 @@ DeepSQL is an enhancement to openGauss DB4AI. DeepSQL encapsulates common machin
 </td>
 <td class="cellrowborder" valign="top" width="24.98249824982498%" headers="mcps1.2.4.1.2 "><p id="p1603194431510"><a name="p1603194431510"></a><a name="p1603194431510"></a>MFV</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.976097609760984%" headers="mcps1.2.4.1.3 "><p id="p46039446153"><a name="p46039446153"></a><a name="p46039446153"></a>This algorithm is used to computes frequent values.</p>
+<td class="cellrowborder" valign="top" width="60.976097609760984%" headers="mcps1.2.4.1.3 "><p id="p46039446153"><a name="p46039446153"></a><a name="p46039446153"></a>This algorithm is used to compute frequent values.</p>
 </td>
 </tr>
 <tr id="row5603174416151"><td class="cellrowborder" valign="top" width="14.041404140414041%" headers="mcps1.2.4.1.1 "><p id="p12603154431512"><a name="p12603154431512"></a><a name="p12603154431512"></a>Hypothesis test</p>
