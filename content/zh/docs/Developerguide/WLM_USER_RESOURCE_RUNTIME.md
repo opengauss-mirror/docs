@@ -66,30 +66,29 @@ WLM\_USER\_RESOURCE\_RUNTIME视图显示所有用户资源使用情况，需要�
 </td>
 <td class="cellrowborder" valign="top" width="21.16%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122754_p266113118514"><a name="zh-cn_topic_0237122754_p266113118514"></a><a name="zh-cn_topic_0237122754_p266113118514"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p1618419541472"><a name="zh-cn_topic_0237122754_p1618419541472"></a><a name="zh-cn_topic_0237122754_p1618419541472"></a>已使用的临时空间大小(预留字段，暂未使用)，单位KB。</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p1618419541472"><a name="zh-cn_topic_0237122754_p1618419541472"></a><a name="zh-cn_topic_0237122754_p1618419541472"></a>已使用的临时空间大小（预留字段，暂未使用），单位KB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122754_row197631736455"><td class="cellrowborder" valign="top" width="24.39%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122754_p147630366520"><a name="zh-cn_topic_0237122754_p147630366520"></a><a name="zh-cn_topic_0237122754_p147630366520"></a>total_temp_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.16%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122754_p17636361954"><a name="zh-cn_topic_0237122754_p17636361954"></a><a name="zh-cn_topic_0237122754_p17636361954"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p4662418811"><a name="zh-cn_topic_0237122754_p4662418811"></a><a name="zh-cn_topic_0237122754_p4662418811"></a>可使用的临时空间大小(预留字段，暂未使用)，单位KB，值为-1表示未限制最大临时存储空间。</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p4662418811"><a name="zh-cn_topic_0237122754_p4662418811"></a><a name="zh-cn_topic_0237122754_p4662418811"></a>可使用的临时空间大小（预留字段，暂未使用），单位KB，值为-1表示未限制最大临时存储空间。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122754_row158024426515"><td class="cellrowborder" valign="top" width="24.39%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122754_p38038421450"><a name="zh-cn_topic_0237122754_p38038421450"></a><a name="zh-cn_topic_0237122754_p38038421450"></a>used_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.16%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122754_p208031342653"><a name="zh-cn_topic_0237122754_p208031342653"></a><a name="zh-cn_topic_0237122754_p208031342653"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p16491541192818"><a name="zh-cn_topic_0237122754_p16491541192818"></a><a name="zh-cn_topic_0237122754_p16491541192818"></a>已使用的下盘空间大小(预留字段，暂未使用)，单位KB。</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p16491541192818"><a name="zh-cn_topic_0237122754_p16491541192818"></a><a name="zh-cn_topic_0237122754_p16491541192818"></a>已使用的下盘空间大小（预留字段，暂未使用），单位KB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122754_row151641471652"><td class="cellrowborder" valign="top" width="24.39%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122754_p416464713516"><a name="zh-cn_topic_0237122754_p416464713516"></a><a name="zh-cn_topic_0237122754_p416464713516"></a>total_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.16%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122754_p19164047150"><a name="zh-cn_topic_0237122754_p19164047150"></a><a name="zh-cn_topic_0237122754_p19164047150"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p95452026810"><a name="zh-cn_topic_0237122754_p95452026810"></a><a name="zh-cn_topic_0237122754_p95452026810"></a>可使用的下盘空间大小(预留字段，暂未使用)，单位KB，值为-1表示未限制最大下盘空间。</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122754_p95452026810"><a name="zh-cn_topic_0237122754_p95452026810"></a><a name="zh-cn_topic_0237122754_p95452026810"></a>可使用的下盘空间大小（预留字段，暂未使用），单位KB，值为-1表示未限制最大下盘空间。</p>
 </td>
 </tr>
 </tbody>
 </table>
-

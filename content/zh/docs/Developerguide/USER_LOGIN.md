@@ -31,7 +31,7 @@ USER\_LOGIN用来记录用户登录和退出次数的相关信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.950000000000003%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122723_p52065717207"><a name="zh-cn_topic_0237122723_p52065717207"></a><a name="zh-cn_topic_0237122723_p52065717207"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122723_p12201575206"><a name="zh-cn_topic_0237122723_p12201575206"></a><a name="zh-cn_topic_0237122723_p12201575206"></a>用户oid(同pg_authid中的oid字段)。</p>
+<td class="cellrowborder" valign="top" width="57.91%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122723_p12201575206"><a name="zh-cn_topic_0237122723_p12201575206"></a><a name="zh-cn_topic_0237122723_p12201575206"></a>用户oid（同pg_authid中的oid字段）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122723_row172055762012"><td class="cellrowborder" valign="top" width="25.14%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122723_p1320195792018"><a name="zh-cn_topic_0237122723_p1320195792018"></a><a name="zh-cn_topic_0237122723_p1320195792018"></a>login_counter</p>
@@ -50,4 +50,3 @@ USER\_LOGIN用来记录用户登录和退出次数的相关信息。
 </tr>
 </tbody>
 </table>
-
