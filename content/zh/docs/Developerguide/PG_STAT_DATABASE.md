@@ -31,7 +31,7 @@ PG\_STAT\_DATABASE视图将包含openGauss中每个数据库的数据库统计�
 </td>
 <td class="cellrowborder" valign="top" width="19.46%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a15020e534dd34f78a5daa1c552f94903"><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a15020e534dd34f78a5daa1c552f94903"></a><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a15020e534dd34f78a5daa1c552f94903"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.690000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a8d434ffeb00a4fb9ac45118daef0f412"><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a8d434ffeb00a4fb9ac45118daef0f412"></a><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a8d434ffeb00a4fb9ac45118daef0f412"></a>当前连接到该数据库的后端数。 这是在返回一个反映目前状态值的视图中唯一的列；自上次重置所有其他列返回累积值。</p>
+<td class="cellrowborder" valign="top" width="54.690000000000005%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a8d434ffeb00a4fb9ac45118daef0f412"><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a8d434ffeb00a4fb9ac45118daef0f412"></a><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_a8d434ffeb00a4fb9ac45118daef0f412"></a>当前连接到该数据库的后端数。这是在返回一个反映目前状态值的视图中唯一的列；自上次重置所有其他列返回累积值。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_r85107e99422841c7b2c3899ec919776f"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_afc9b3486f3664ab68db8a48a338cd7b9"><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_afc9b3486f3664ab68db8a48a338cd7b9"></a><a name="zh-cn_topic_0283137044_zh-cn_topic_0237122445_zh-cn_topic_0059777912_afc9b3486f3664ab68db8a48a338cd7b9"></a>xact_commit</p>
@@ -148,4 +148,3 @@ PG\_STAT\_DATABASE视图将包含openGauss中每个数据库的数据库统计�
 </tr>
 </tbody>
 </table>
-

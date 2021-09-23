@@ -38,7 +38,7 @@ PG\_STATIO\_USER\_INDEXES视图显示命名空间中所有用户关系表索引�
 </td>
 <td class="cellrowborder" valign="top" width="23.03%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_a7167db765d234041a7a56843d7d8b4e2"><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_a7167db765d234041a7a56843d7d8b4e2"></a><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_a7167db765d234041a7a56843d7d8b4e2"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.12%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_ae2452176af094d0da2bc4641d67efa68"><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_ae2452176af094d0da2bc4641d67efa68"></a><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_ae2452176af094d0da2bc4641d67efa68"></a>该索引的表名.</p>
+<td class="cellrowborder" valign="top" width="51.12%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_ae2452176af094d0da2bc4641d67efa68"><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_ae2452176af094d0da2bc4641d67efa68"></a><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_ae2452176af094d0da2bc4641d67efa68"></a>该索引的表名。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_ra1b4c4fa6688436688c96753c63b39a7"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_a81e4d77fccb542f385a43c07c47d3cfc"><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_a81e4d77fccb542f385a43c07c47d3cfc"></a><a name="zh-cn_topic_0283137714_zh-cn_topic_0237122463_zh-cn_topic_0059778710_a81e4d77fccb542f385a43c07c47d3cfc"></a>indexrelname</p>
@@ -64,4 +64,3 @@ PG\_STATIO\_USER\_INDEXES视图显示命名空间中所有用户关系表索引�
 </tr>
 </tbody>
 </table>
-
