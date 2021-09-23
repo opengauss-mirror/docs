@@ -139,6 +139,13 @@ This section describes  **java.sql.CallableStatement**, the API for executing th
 <td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1385091417395"><a name="p1385091417395"></a><a name="p1385091417395"></a>Yes</p>
 </td>
 </tr>
+<tr id="row1014674783314"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p1614624793312"><a name="p1614624793312"></a><a name="p1614624793312"></a>getNString(int parameterIndex)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p2146747103318"><a name="p2146747103318"></a><a name="p2146747103318"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1614617476335"><a name="p1614617476335"></a><a name="p1614617476335"></a>Yes</p>
+</td>
+</tr>
 <tr id="row18341192584512"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p934120254458"><a name="p934120254458"></a><a name="p934120254458"></a>getTime(int parameterIndex)</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1534119257455"><a name="p1534119257455"></a><a name="p1534119257455"></a>Time</p>
@@ -186,6 +193,6 @@ This section describes  **java.sql.CallableStatement**, the API for executing th
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   The batch operation of statements containing OUT parameter is not allowed.
->-   The following methods are inherited from java.sql.Statement: close, execute, executeQuery, executeUpdate, getConnection, getResultSet, getUpdateCount, isClosed, setMaxRows, and setFetchSize.
->-   The following methods are inherited from java.sql.PreparedStatement: addBatch, clearParameters, execute, executeQuery, executeUpdate, getMetaData, setBigDecimal, setBoolean, setByte, setBytes, setDate, setDouble, setFloat, setInt, setLong, setNull, setObject, setString, setTime, and setTimestamp.
+>-   The following methods are inherited from  **java.sql.Statement**:  **close**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getConnection**,  **getResultSet**,  **getUpdateCount**,  **isClosed**,  **setMaxRows**, and  **setFetchSize**.
+>-   The following methods are inherited from  **java.sql.PreparedStatement**:  **addBatch**,  **clearParameters**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getMetaData**,  **setBigDecimal**,  **setBoolean**,  **setByte**,  **setBytes**,  **setDate**,  **setDouble**,  **setFloat**,  **setInt**,  **setLong**,** setNull**,  **setObject**,  **setString**,  **setTime**, and  **setTimestamp**.
 
