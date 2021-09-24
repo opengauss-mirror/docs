@@ -57,7 +57,7 @@ PG\_FOREIGN\_DATA\_WRAPPER系统表存储外部数据封装器定义。一个外
 </td>
 <td class="cellrowborder" valign="top" width="21.08%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_ab16dc03534e948dca2eee3d913d74ee3"><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_ab16dc03534e948dca2eee3d913d74ee3"></a><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_ab16dc03534e948dca2eee3d913d74ee3"></a><a href="PG_PROC.md">PG_PROC</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a3660ca4109c840c19db48cd492a5523e"><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a3660ca4109c840c19db48cd492a5523e"></a><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a3660ca4109c840c19db48cd492a5523e"></a>引用一个验证器函数，这个验证器函数负责验证给予外部数据封装器的选项、 外部服务器选项和使用外部数据封装器的用户映射的有效性。 如果没有提供验证器函数则为零。</p>
+<td class="cellrowborder" valign="top" width="53.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a3660ca4109c840c19db48cd492a5523e"><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a3660ca4109c840c19db48cd492a5523e"></a><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a3660ca4109c840c19db48cd492a5523e"></a>引用一个验证器函数，这个验证器函数负责验证给予外部数据封装器的选项、外部服务器选项和使用外部数据封装器的用户映射的有效性。如果没有提供验证器函数则为零。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_r773d9957b570465abc22e9ba1ccd9c69"><td class="cellrowborder" valign="top" width="13.25%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a8a053742614644d78675aed99665513a"><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a8a053742614644d78675aed99665513a"></a><a name="zh-cn_topic_0283136647_zh-cn_topic_0237122290_zh-cn_topic_0059777666_a8a053742614644d78675aed99665513a"></a>fdwacl</p>
@@ -80,4 +80,3 @@ PG\_FOREIGN\_DATA\_WRAPPER系统表存储外部数据封装器定义。一个外
 </tr>
 </tbody>
 </table>
-
