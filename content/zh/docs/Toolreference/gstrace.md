@@ -34,7 +34,7 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 </thead>
 <tbody><tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_row11827125619439"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p15830145612433"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p15830145612433"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p15830145612433"></a>start</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p133635214218"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p133635214218"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p133635214218"></a>开始记录trace</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p133635214218"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p133635214218"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p133635214218"></a>开始记录trace。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_r65d586da5c9c4f8da0dc5dab60f2c818"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_a6a197174fa6845f5a9302430adb2c86e"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_a6a197174fa6845f5a9302430adb2c86e"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_a6a197174fa6845f5a9302430adb2c86e"></a>stop</p>
@@ -44,7 +44,7 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_r8e7b1a27e27d49e9b602e50973b412b3"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_zh-cn_topic_0058968088_p485426916248"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_zh-cn_topic_0058968088_p485426916248"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_zh-cn_topic_0058968088_p485426916248"></a>config</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p25031714162217"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p25031714162217"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p25031714162217"></a>显示trace的配置信息</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p25031714162217"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p25031714162217"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p25031714162217"></a>显示trace的配置信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_r9a81825bfd004895bd49bb565f44e248"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p11540121819226"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p11540121819226"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p11540121819226"></a>dump</p>
@@ -64,22 +64,22 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_r61bf02df0d904a1988a04a22027417ec"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p433083419226"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p433083419226"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p433083419226"></a>analyze</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p1132963412212"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p1132963412212"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p1132963412212"></a>统计各个函数的执行次数、总耗时、平均耗时、最长耗时、最短耗时</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p1132963412212"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p1132963412212"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p1132963412212"></a>统计各个函数的执行次数、总耗时、平均耗时、最长耗时、最短耗时。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_r4cd4463ebb5e4719ba97a9a170e1c336"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p15327334122215"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p15327334122215"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p15327334122215"></a>-p PORT</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p732613416227"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p732613416227"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p732613416227"></a>指定启动trace功能的实例侦听的端口号</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p732613416227"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p732613416227"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p732613416227"></a>指定启动trace功能的实例侦听的端口号。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_rf78e1c297caa4e1b8c449b6475e9457f"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p33241034112218"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p33241034112218"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p33241034112218"></a>-f DUMP_FILE</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p155451829202515"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p155451829202515"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p155451829202515"></a>指定dump导出的trace文件</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p155451829202515"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p155451829202515"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p155451829202515"></a>指定dump导出的trace文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_rf1d87491bb174b2aa6a8008c2ec3e7d3"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p11321173462215"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p11321173462215"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p11321173462215"></a>-o OUTPUT_FILE</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p832013402216"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p832013402216"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p832013402216"></a>指定写入的文件</p>
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p832013402216"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p832013402216"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p832013402216"></a>指定写入的文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_r96238b14ad9a4a9e886adc9ae0cdd228"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p03185341227"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p03185341227"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p03185341227"></a>-t STEP_SIZE</p>
