@@ -272,8 +272,11 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 > -   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
 >    若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。
 >    若\[SUGGEST:/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Warning，B1参数不会进行设置，需根据实际情况进行手动设置。
+>
 > -   A7选项检查系统文件句柄标准来自配置文件check\_list.conf下\[/etc/security/limits.conf\]域open file参数，可以使用B2参数进行设置。
+>
 > -   A11选项检查万兆网卡参数“MTU”、“RX”、“TX”标准来自配置文件check\_list.conf下\[/sbin/ifconfig\]域，可以使用B5参数对RX、TX进行设置，MTU需用户手动设置。
+>
 > -   使用gs\_checkos设置的内核参数值和文件句柄参数值，需重启新会话生效。
 
 ## 操作系统参数<a name="zh-cn_topic_0237152331_section15489145820128"></a>

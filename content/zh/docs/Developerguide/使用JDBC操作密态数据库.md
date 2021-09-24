@@ -40,8 +40,10 @@ public static Connection getConnect(String username, String passwd)
     };
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   【建议】使用JDBC操作密态数据库时，一个数据库连接对象对应一个线程，否则，不同线程变更可能导致冲突。  
+>![](public_sys-resources/icon-note.gif) **说明：**  
+>
+>-   【建议】使用JDBC操作密态数据库时，一个数据库连接对象对应一个线程，否则，不同线程变更可能导致冲突。 
+> 
 >-   【建议】使用JDBC操作密态数据库时，不同connection对密态配置数据有变更，由客户端调用isvalid方法保证connection能够持有变更后的密态配置数据，此时需要保证参数refreshClientEncryption为1\(默认值为1\)，在单客户端操作密态数据场景下，refreshClientEncryption参数可以设置为0。  
 
 ## 调用isValid方法刷新缓存示例<a name="section8416165433116"></a>
