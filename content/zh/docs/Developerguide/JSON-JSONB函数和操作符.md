@@ -578,7 +578,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_typeof\(json\)、jsonb\_typeof\(jsonb\)
 
-    描述：检测json类型
+    描述：检测json类型。
 
     返回类型：text、text
 
@@ -962,7 +962,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - to\_json\(anyelement\)
 
-    描述：把参数转换为\`json\`
+    描述：把参数转换为\`json\`。
 
     返回类型：json
 
