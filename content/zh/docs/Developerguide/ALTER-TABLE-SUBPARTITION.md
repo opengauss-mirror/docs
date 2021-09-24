@@ -40,6 +40,7 @@
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >-   切割点的大小要位于正在被切割的分区的分区键范围内。
+    
     >-   只能把一个分区切割成两个新分区。
 
 -   truncate\_clause子语法用于清空分区表中的指定分区。
