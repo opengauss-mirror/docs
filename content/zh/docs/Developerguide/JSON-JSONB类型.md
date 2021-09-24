@@ -53,6 +53,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
 >![](public_sys-resources/icon-caution.gif) **注意：**
 >
 >-   区分 'null'::json 和 null::json 是两个不同的概念，类似于字符串 str="" 和 str=null。
+>
 >-   对于数字，当使用科学计数法的时候，jsonb类型会将其展开，而json会精准拷贝输入。
 
 ## JSONB高级特性<a name="section8871947018"></a>
