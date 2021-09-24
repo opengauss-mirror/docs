@@ -32,7 +32,7 @@ ALTER AUDIT POLICY [ IF EXISTS ] policy_name { ENABLE | DISABLE };
     ```
 
 
--   filter\_group\_clause
+-   filter\_group\_clause：
 
     ```
     FILTER ON { ( FILTER_TYPE ( filter_value [, ... ] ) ) [, ... ] }

@@ -4,7 +4,7 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
 
 ## 示例<a name="zh-cn_topic_0283137688_zh-cn_topic_0237122037_section10442451826"></a>
 
--   Synonym词典可用于解决语言学相关问题，例如，为避免使单词"Paris"变成"pari"，可在Synonym词典文件中定义一行"Paris paris"，并将该词典放置在预定义的english\_stem词典之前。
+-   Synonym词典可用于解决语言学相关问题，例如，为避免使单词“Paris”变成“pari”，可在Synonym词典文件中定义一行“Paris paris”，并将该词典放置在预定义的english\_stem词典之前。
 
     ```
     openGauss=# SELECT * FROM ts_debug('english', 'Paris');
