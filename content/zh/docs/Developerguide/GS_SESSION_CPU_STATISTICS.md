@@ -1,6 +1,6 @@
 # GS\_SESSION\_CPU\_STATISTICS<a name="ZH-CN_TOPIC_0289899916"></a>
 
-GS\_SESSION\_CPU\_STATISTICS视图显示和当前用户执行复杂作业正在运行时的负载管理CPU使用的信息。
+GS\_SESSION\_CPU\_STATISTICS视图显示当前用户执行的正在运行的复杂作业的CPU使用的负载管理信息。
 
 **表 1**  GS\_SESSION\_CPU\_STATISTICS字段
 
@@ -66,7 +66,7 @@ GS\_SESSION\_CPU\_STATISTICS视图显示和当前用户执行复杂作业正在�
 </td>
 <td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_ac0400ce695b945b89702ff50805ac554"><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_ac0400ce695b945b89702ff50805ac554"></a><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_ac0400ce695b945b89702ff50805ac554"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_a04d603fa66434a178026e29847b76f40"><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_a04d603fa66434a178026e29847b76f40"></a><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_a04d603fa66434a178026e29847b76f40"></a>正在执行的语句</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_a04d603fa66434a178026e29847b76f40"><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_a04d603fa66434a178026e29847b76f40"></a><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_zh-cn_topic_0059778298_a04d603fa66434a178026e29847b76f40"></a>正在执行的语句。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137350_zh-cn_topic_0237122387_row4739252163715"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137350_zh-cn_topic_0237122387_p1873905216375"><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_p1873905216375"></a><a name="zh-cn_topic_0283137350_zh-cn_topic_0237122387_p1873905216375"></a>node_group</p>
@@ -85,4 +85,3 @@ GS\_SESSION\_CPU\_STATISTICS视图显示和当前用户执行复杂作业正在�
 </tr>
 </tbody>
 </table>
-

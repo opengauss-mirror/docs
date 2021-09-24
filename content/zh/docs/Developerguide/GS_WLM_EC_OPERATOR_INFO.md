@@ -60,7 +60,7 @@ GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作�
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176227_p1751916147515"><a name="zh-cn_topic_0111176227_p1751916147515"></a><a name="zh-cn_topic_0111176227_p1751916147515"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p85191314135116"><a name="zh-cn_topic_0111176227_p85191314135116"></a><a name="zh-cn_topic_0111176227_p85191314135116"></a>EC算子在所有DN上的最大内存峰值（MB)。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176227_p85191314135116"><a name="zh-cn_topic_0111176227_p85191314135116"></a><a name="zh-cn_topic_0111176227_p85191314135116"></a>EC算子在所有DN上的最大内存峰值（MB）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176227_row165191314175116"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176227_p1252010141514"><a name="zh-cn_topic_0111176227_p1252010141514"></a><a name="zh-cn_topic_0111176227_p1252010141514"></a>average_peak_memory</p>
@@ -114,4 +114,3 @@ GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作�
 </tr>
 </tbody>
 </table>
-
