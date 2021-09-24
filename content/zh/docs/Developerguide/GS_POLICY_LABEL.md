@@ -61,9 +61,8 @@ FQDN（Fully Qualified Domain Name）标识了数据库资源所属的绝对路�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p4288271597"><a name="p4288271597"></a><a name="p4288271597"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0281327145911"><a name="p0281327145911"></a><a name="p0281327145911"></a>被标识的数据库资源的类型名称，例如：schema, table, column, view等。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0281327145911"><a name="p0281327145911"></a><a name="p0281327145911"></a>被标识的数据库资源的类型名称，例如：schema，table，column，view等。</p>
 </td>
 </tr>
 </tbody>
 </table>
-
