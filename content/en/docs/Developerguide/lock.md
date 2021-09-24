@@ -274,23 +274,23 @@ LOCK [ TABLE ] {[ ONLY ] name [, ...]| {name [ * ]} [, ...]}
     If  **NOWAIT**  is not specified,  **LOCK TABLE**  obtains a table-level lock, waiting if necessary for any conflicting locks to be released.
 
 
-## Example<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s9884bdbe455b460a9a2dde267283b75b"></a>
+## Examples<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s9884bdbe455b460a9a2dde267283b75b"></a>
 
 ```
 -- Obtain a SHARE ROW EXCLUSIVE lock on a primary key table when going to perform a delete operation.
-postgres=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
+openGauss=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
 
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
-postgres=# LOCK TABLE tpcds.reason_t1 IN SHARE ROW EXCLUSIVE MODE;
+openGauss=# LOCK TABLE tpcds.reason_t1 IN SHARE ROW EXCLUSIVE MODE;
 
-postgres=# DELETE FROM tpcds.reason_t1 WHERE r_reason_desc IN(SELECT r_reason_desc FROM tpcds.reason_t1 WHERE r_reason_sk < 6 );
+openGauss=# DELETE FROM tpcds.reason_t1 WHERE r_reason_desc IN(SELECT r_reason_desc FROM tpcds.reason_t1 WHERE r_reason_sk < 6 );
 
-postgres=# DELETE FROM tpcds.reason_t1 WHERE r_reason_sk = 7;
+openGauss=# DELETE FROM tpcds.reason_t1 WHERE r_reason_sk = 7;
 
-postgres=# COMMIT;
+openGauss=# COMMIT;
 
 -- Delete the tpcds.reason_t1 table.
-postgres=# DROP TABLE tpcds.reason_t1;
+openGauss=# DROP TABLE tpcds.reason_t1;
 ```
 

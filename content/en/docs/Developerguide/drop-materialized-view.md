@@ -29,14 +29,14 @@ DROP MATERIALIZED VIEW [ IF EXISTS ] mv_name [, ...] [ CASCADE | RESTRICT ];
     -   **RESTRICT**: refuses to delete the materialized view if any objects depend on it. This is the default action.
 
 
-## Example<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
+## Examples<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
 ```
 -- Delete the materialized view named my_mv.
-postgres=# DROP MATERIALIZED VIEW my_mv;
+openGauss=# DROP MATERIALIZED VIEW my_mv;
 ```
 
-## Link<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
+## Helpful Links<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
-[ALTER MATERIALIZED VIEW](alter-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE TABLE](create-table.md),  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md),  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)
+[ALTER MATERIALIZED VIEW](alter-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE TABLE](create-table.md),  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md), and  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)
 

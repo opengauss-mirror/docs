@@ -9,12 +9,14 @@
 -   If the parameters or return values of a function have precision, the precision is not checked.
 -   When creating a function, you are advised to explicitly specify the schemas of tables in the function definition. Otherwise, the function may fail to be executed.
 -   **current\_schema**  and  **search\_path**  specified by  **SET**  during function creation are invalid.  **search\_path**  and  **current\_schema**  before and after function execution should be the same.
--   If a function has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the function. When the  **CALL**  statement calls the function, it requires that the output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](en-us_topic_0283137636.md).
+-   If a function has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the function. When the  **CALL**  statement calls the function, it requires that the output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](call.md).
 -   Only the functions compatible with PostgreSQL or those with the  **PACKAGE**  attribute can be overloaded. After  **REPLACE**  is specified, a new function is created instead of replacing a function if the number of parameters, parameter type, or return value is different.
 -   You can use the  **SELECT**  statement to specify different parameters using identical functions, but cannot use the  **CALL**  statement to call identical functions without the  **PACKAGE**  attribute.
 -   When you create a function, you cannot insert other agg functions out of the avg function or other functions.
--   By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](en-us_topic_0283137177.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
+-   By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](grant.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
 -   When calling functions without parameters inside another function, you can omit brackets and call functions using their names directly.
+-   Oracle-compatible functions support viewing, exporting, and importing parameter comments.
+-   Oracle-compatible functions support viewing, exporting, and importing comments between IS/AS and plsql\_body.
 
 ## Syntax<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
@@ -98,7 +100,7 @@
 
 -   **argtype**
 
-    Specifies the data type of a function parameter.
+    Specifies the data type of a function parameter.  **%TYPE**  or  **%ROWTYPE**  can be used to indirectly reference a variable or table type. For details, see  [Variable Definition Statements](en-us_topic_0289900208.md).
 
 -   **expression**
 
@@ -111,6 +113,8 @@
     When there is  **OUT**  or  **INOUT**  parameter, the  **RETURNS**  clause can be omitted. If the clause exists, the result type of the clause must be the same as that of the output parameter. If there are multiple output parameters, the result type of the clause is  **RECORD**. Otherwise, the result type of the clause is the same as that of a single output parameter.
 
     The  **SETOF**  modifier indicates that the function will return a set of items, rather than a single item.
+
+    Same as  **argtype**,  **%TYPE**  or  **%ROWTYPE**  can also be used to indirectly reference types.
 
 -   **column\_name**
 
@@ -247,21 +251,21 @@
 
 ```
 -- Define a function as SQL query.
-postgres=# CREATE FUNCTION func_add_sql(integer, integer) RETURNS integer
+openGauss=# CREATE FUNCTION func_add_sql(integer, integer) RETURNS integer
     AS 'select $1 + $2;'
     LANGUAGE SQL
     IMMUTABLE
     RETURNS NULL ON NULL INPUT;
 
 -- Add an integer by parameter name using PL/pgSQL.
-postgres=# CREATE OR REPLACE FUNCTION func_increment_plsql(i integer) RETURNS integer AS $$
+openGauss=# CREATE OR REPLACE FUNCTION func_increment_plsql(i integer) RETURNS integer AS $$
         BEGIN
                 RETURN i + 1;
         END;
 $$ LANGUAGE plpgsql;
 
 -- Return the RECORD type.
-postgres=# CREATE OR REPLACE FUNCTION func_increment_sql(i int, out result_1 bigint, out result_2 bigint)
+openGauss=# CREATE OR REPLACE FUNCTION func_increment_sql(i int, out result_1 bigint, out result_2 bigint)
 returns SETOF RECORD
 as $$
 begin
@@ -272,37 +276,37 @@ end;
 $$language plpgsql;
 
 -- Return a record containing multiple output parameters.
-postgres=# CREATE FUNCTION func_dup_sql(in int, out f1 int, out f2 text)
+openGauss=# CREATE FUNCTION func_dup_sql(in int, out f1 int, out f2 text)
     AS $$ SELECT $1, CAST($1 AS text) || ' is text' $$
     LANGUAGE SQL;
 
-postgres=# SELECT * FROM func_dup_sql(42);
+openGauss=# SELECT * FROM func_dup_sql(42);
 
 -- Compute the sum of two integers and returning the result (if the input is null, the returned result is null):
-postgres=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
+openGauss=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
 AS
 BEGIN 
 RETURN num1 + num2;
 END;
 /
 -- Alter the execution rule of function func_add_sql2 to IMMUTABLE (that is, the same result is returned if the parameter remains unchanged).
-postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
+openGauss=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
 
 -- Rename the func_add_sql2 function as add_two_number:
-postgres=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
+openGauss=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
 
 -- Change the owner of function add_two_number to omm.
-postgres=# ALTER FUNCTION add_two_number(INTEGER, INTEGER) OWNER TO omm;
+openGauss=# ALTER FUNCTION add_two_number(INTEGER, INTEGER) OWNER TO omm;
 
 -- Delete the function.
-postgres=# DROP FUNCTION add_two_number;
-postgres=# DROP FUNCTION func_increment_sql;
-postgres=# DROP FUNCTION func_dup_sql;
-postgres=# DROP FUNCTION func_increment_plsql;
-postgres=# DROP FUNCTION func_add_sql;
+openGauss=# DROP FUNCTION add_two_number;
+openGauss=# DROP FUNCTION func_increment_sql;
+openGauss=# DROP FUNCTION func_dup_sql;
+openGauss=# DROP FUNCTION func_increment_plsql;
+openGauss=# DROP FUNCTION func_add_sql;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
-[ALTER FUNCTION](en-us_topic_0283136989.md)  and  [DROP FUNCTION](en-us_topic_0283137306.md)
+[ALTER FUNCTION](alter-function.md)  and  [DROP FUNCTION](drop-function.md)
 

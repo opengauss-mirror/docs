@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>
 
-**DROP TYPE**  deletes a user-defined data type. Only the superuser, sysadmin, and owner of a type has the  **DROP TYPE**  permission.
+**DROP TYPE**  deletes a user-defined data type.
 
 ## Precautions<a name="section114668159414"></a>
 
@@ -33,11 +33,11 @@ DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
     Refuses to delete the type if any objects depend on it. This is the default action.
 
 
-## Example<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_sd583a49fc83b42fd8e73efee55f98ace"></a>
+## Examples<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_sd583a49fc83b42fd8e73efee55f98ace"></a>
 
-See  [Examples](en-us_topic_0283136568.md#en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE TYPE**.
+See  [Examples](create-type.md#en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE TYPE**.
 
 ## Helpful Links<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_s428358f9df2f458a8d50d103683f7ee0"></a>
 
-[CREATE TYPE](en-us_topic_0283136568.md)  and  [ALTER TYPE](en-us_topic_0283136571.md)
+[CREATE TYPE](create-type.md)  and  [ALTER TYPE](alter-type.md)
 

@@ -1,4 +1,18 @@
-# System Views<a name="EN-US_TOPIC_0242385863"></a>
+# System Views<a name="EN-US_TOPIC_0289901002"></a>
+
+-   **[GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\)](get_global_prepared_xacts-(discarded).md)**  
+
+-   **[GS\_AUDITING](gs_auditing.md)**  
+
+-   **[GS\_AUDITING\_ACCESS](gs_auditing_access.md)**  
+
+-   **[GS\_AUDITING\_PRIVILEGE](gs_auditing_privilege.md)**  
+
+-   **[GS\_LABELS](gs_labels.md)**  
+
+-   **[GS\_MASKING](gs_masking.md)**  
+
+-   **[GS\_MATVIEWS](gs_matviews.md)**  
 
 -   **[GS\_SESSION\_CPU\_STATISTICS](gs_session_cpu_statistics.md)**  
 
@@ -6,9 +20,7 @@
 
 -   **[GS\_SQL\_COUNT](gs_sql_count.md)**  
 
--   **[GS\_WLM\_OPERATOR\_HISTORY](gs_wlm_operator_history.md)**  
-
--   **[GS\_WLM\_OPERATOR\_STATISTICS](gs_wlm_operator_statistics.md)**  
+-   **[GS\_WLM\_CGROUP\_INFO](gs_wlm_cgroup_info.md)**  
 
 -   **[GS\_WLM\_PLAN\_OPERATOR\_HISTORY](gs_wlm_plan_operator_history.md)**  
 
@@ -16,15 +28,13 @@
 
 -   **[GS\_WLM\_RESOURCE\_POOL](gs_wlm_resource_pool.md)**  
 
--   **[GS\_WLM\_SESSION\_HISTORY](gs_wlm_session_history.md)**  
+-   **[GS\_SESSION\_MEMORY\_DETAIL](gs_session_memory_detail.md)**  
 
--   **[GS\_WLM\_SESSION\_INFO\_ALL](gs_wlm_session_info_all.md)**  
+-   **[GS\_SESSION\_MEMORY\_CONTEXT](gs_session_memory_context.md)**  
 
 -   **[GS\_WLM\_USER\_INFO](gs_wlm_user_info.md)**  
 
--   **[GS\_WLM\_SESSION\_STATISTICS](gs_wlm_session_statistics.md)**  
-
--   **[GS\_STAT\_DB\_CU](gs_stat_db_cu.md)**  
+-   **[PG\_CONTROL\_GROUP\_CONFIG](pg_control_group_config.md)**  
 
 -   **[GS\_STAT\_SESSION\_CU](gs_stat_session_cu.md)**  
 
@@ -36,6 +46,14 @@
 
 -   **[PG\_CURSORS](pg_cursors.md)**  
 
+-   **[PG\_COMM\_DELAY](pg_comm_delay.md)**  
+
+-   **[PG\_COMM\_RECV\_STREAM](pg_comm_recv_stream.md)**  
+
+-   **[PG\_COMM\_SEND\_STREAM](pg_comm_send_stream.md)**  
+
+-   **[PG\_COMM\_STATUS](pg_comm_status.md)**  
+
 -   **[PG\_EXT\_STATS](pg_ext_stats.md)**  
 
 -   **[PG\_GET\_INVALID\_BACKENDS](pg_get_invalid_backends.md)**  
@@ -43,6 +61,12 @@
 -   **[PG\_GET\_SENDERS\_CATCHUP\_TIME](pg_get_senders_catchup_time.md)**  
 
 -   **[PG\_GROUP](pg_group.md)**  
+
+-   **[PG\_GTT\_RELSTATS](pg_gtt_relstats.md)**  
+
+-   **[PG\_GTT\_STATS](pg_gtt_stats.md)**  
+
+-   **[PG\_GTT\_ATTACHED\_PIDS](pg_gtt_attached_pids.md)**  
 
 -   **[PG\_INDEXES](pg_indexes.md)**  
 
@@ -64,11 +88,13 @@
 
 -   **[PG\_RULES](pg_rules.md)**  
 
+-   **[PG\_RUNNING\_XACTS](pg_running_xacts.md)**  
+
 -   **[PG\_SECLABELS](pg_seclabels.md)**  
 
--   **[PG\_SESSION\_WLMSTAT](pg_session_wlmstat.md)**  
+-   **[PG\_TOTAL\_MEMORY\_DETAIL](pg_total_memory_detail.md)**  
 
--   **[PG\_SESSION\_IOSTAT](pg_session_iostat.md)**  
+-   **[PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID](pg_total_user_resource_info_oid.md)**  
 
 -   **[PG\_SETTINGS](pg_settings.md)**  
 
@@ -77,6 +103,8 @@
 -   **[PG\_STATS](pg_stats.md)**  
 
 -   **[PG\_STAT\_ACTIVITY](pg_stat_activity.md)**  
+
+-   **[PG\_STAT\_ACTIVITY\_NG](pg_stat_activity_ng.md)**  
 
 -   **[PG\_STAT\_ALL\_INDEXES](pg_stat_all_indexes.md)**  
 
@@ -144,7 +172,7 @@
 
 -   **[PG\_VIEWS](pg_views.md)**  
 
--   **[PG\_WLM\_STATISTICS](pg_wlm_statistics.md)**  
+-   **[GS\_SESSION\_MEMORY](gs_session_memory.md)**  
 
 -   **[PLAN\_TABLE](plan_table.md)**  
 
@@ -154,24 +182,48 @@
 
 -   **[GS\_REDO\_STAT](gs_redo_stat.md)**  
 
--   **[GS\_SESSION\_MEMORY](gs_session_memory.md)**  
-
--   **[GS\_SESSION\_MEMORY\_DETAIL](gs_session_memory_detail.md)**  
-
 -   **[GS\_SESSION\_STAT](gs_session_stat.md)**  
 
 -   **[GS\_SESSION\_TIME](gs_session_time.md)**  
 
--   **[GS\_THREAD\_MEMORY\_DETAIL](gs_thread_memory_detail.md)**  
+-   **[GS\_THREAD\_MEMORY\_CONTEXT](gs_thread_memory_context.md)**  
 
 -   **[GS\_TOTAL\_MEMORY\_DETAIL](gs_total_memory_detail.md)**  
 
 -   **[PG\_TIMEZONE\_ABBREVS](pg_timezone_abbrevs.md)**  
 
--   **[PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID](pg_total_user_resource_info_oid.md)**  
+-   **[PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID](pg_total_user_resource_info_oid-2.md)**  
 
 -   **[PG\_VARIABLE\_INFO](pg_variable_info.md)**  
 
 -   **[GS\_INSTANCE\_TIME](gs_instance_time.md)**  
+
+-   **[GS\_WLM\_OPERATOR\_HISTORY](gs_wlm_operator_history.md)**  
+
+-   **[GS\_WLM\_OPERATOR\_STATISTICS](gs_wlm_operator_statistics.md)**  
+
+-   **[GS\_WLM\_SESSION\_HISTORY](gs_wlm_session_history.md)**  
+
+-   **[GS\_WLM\_SESSION\_INFO](gs_wlm_session_info.md)**  
+
+-   **[GS\_WLM\_SESSION\_INFO\_ALL](gs_wlm_session_info_all.md)**  
+
+-   **[GS\_WLM\_USER\_SESSION\_INFO](gs_wlm_user_session_info.md)**  
+
+-   **[PG\_SESSION\_IOSTAT](pg_session_iostat.md)**  
+
+-   **[PG\_SESSION\_WLMSTAT](pg_session_wlmstat.md)**  
+
+-   **[PG\_WLM\_STATISTICS](pg_wlm_statistics.md)**  
+
+-   **[PGXC\_PREPARED\_XACTS](pgxc_prepared_xacts.md)**  
+
+-   **[GS\_WLM\_SESSION\_STATISTICS](gs_wlm_session_statistics.md)**  
+
+-   **[GS\_WLM\_EC\_OPERATOR\_STATISTICS](gs_wlm_ec_operator_statistics.md)**  
+
+-   **[DV\_SESSIONS](dv_sessions.md)**  
+
+-   **[DV\_SESSION\_LONGOPS](dv_session_longops.md)**  
 
 

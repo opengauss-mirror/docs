@@ -65,32 +65,32 @@ The following functions in openGauss have been discarded in the latest version:
 </tr>
 <tr id="row847903019414"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p132251645259"><a name="p132251645259"></a><a name="p132251645259"></a>pg_stat_get_pooler_status</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p04791130947"><a name="p04791130947"></a><a name="p04791130947"></a>pg_stat_get_session_wlmstat</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1890420521811"><a name="p1890420521811"></a><a name="p1890420521811"></a>pg_stat_get_wlm_node_resource_info</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p648003010419"><a name="p648003010419"></a><a name="p648003010419"></a>pg_stat_get_wlm_ec_operator_info</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p648003010419"><a name="p648003010419"></a><a name="p648003010419"></a>pg_stat_get_wlm_session_info_internal</p>
 </td>
-<td class="cellrowborder" valign="top" width="9.077276816954914%"><p id="p048043016415"><a name="p048043016415"></a><a name="p048043016415"></a>pg_stat_get_wlm_instance_info</p>
+<td class="cellrowborder" valign="top" width="9.077276816954914%"><p id="p048043016415"><a name="p048043016415"></a><a name="p048043016415"></a>DBE_PERF.get_wlm_controlgroup_ng_config()</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.49415175447366%"><p id="p148083018410"><a name="p148083018410"></a><a name="p148083018410"></a>pg_stat_get_wlm_instance_info_with_cleanup</p>
+<td class="cellrowborder" valign="top" width="19.49415175447366%"><p id="p148083018410"><a name="p148083018410"></a><a name="p148083018410"></a>DBE_PERF.get_wlm_user_resource_runtime()</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p184808301947"><a name="p184808301947"></a><a name="p184808301947"></a>pg_stat_get_wlm_statistics</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p17130133114246"><a name="p17130133114246"></a><a name="p17130133114246"></a>global_space_shrink</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p9480430941"><a name="p9480430941"></a><a name="p9480430941"></a>pg_stat_get_wlm_session_iostat_info</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p9480430941"><a name="p9480430941"></a><a name="p9480430941"></a>pg_pool_validate</p>
 </td>
 </tr>
-<tr id="row137606111218"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p9761161131213"><a name="p9761161131213"></a><a name="p9761161131213"></a>pg_stat_get_wlm_session_info_internal</p>
+<tr id="row1380912816123"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p148091728131212"><a name="p148091728131212"></a><a name="p148091728131212"></a>gs_stat_ustore</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p67610181218"><a name="p67610181218"></a><a name="p67610181218"></a>pg_stat_get_wlm_realtime_session_info</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p38091228141217"><a name="p38091228141217"></a><a name="p38091228141217"></a>table_skewness(text)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p177611214123"><a name="p177611214123"></a><a name="p177611214123"></a>gs_total_nodegroup_memory_detail</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p11810122820128"><a name="p11810122820128"></a><a name="p11810122820128"></a>table_skewness(text, text, text)</p>
 </td>
-<td class="cellrowborder" valign="top" width="9.077276816954914%"><p id="p876171101213"><a name="p876171101213"></a><a name="p876171101213"></a>-</p>
+<td class="cellrowborder" valign="top" width="9.077276816954914%"><p id="p19810928161210"><a name="p19810928161210"></a><a name="p19810928161210"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.49415175447366%"><p id="p197611216124"><a name="p197611216124"></a><a name="p197611216124"></a>-</p>
+<td class="cellrowborder" valign="top" width="19.49415175447366%"><p id="p178100288127"><a name="p178100288127"></a><a name="p178100288127"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p4761191131210"><a name="p4761191131210"></a><a name="p4761191131210"></a>-</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p38101928151213"><a name="p38101928151213"></a><a name="p38101928151213"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p676120111220"><a name="p676120111220"></a><a name="p676120111220"></a>-</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817122"></a><a name="p2810132817122"></a>-</p>
 </td>
 </tr>
 </tbody>

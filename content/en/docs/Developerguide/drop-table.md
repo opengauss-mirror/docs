@@ -37,9 +37,9 @@ DROP TABLE [ IF EXISTS ]
 
 ## Examples<a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_s1af12a7c6e4e456f9fc72da9c90358ff"></a>
 
-See  [Example:](en-us_topic_0283137629.md#en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)  in  **CREATE TABLE**.
+See  [Examples](create-table.md#en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)  in  **CREATE TABLE**.
 
 ## Helpful Links<a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_s08580f38742d47efa6a955c9385d6ae2"></a>
 
-[ALTER TABLE](en-us_topic_0283137126.md)  and  [CREATE TABLE](en-us_topic_0283137629.md)
+[ALTER TABLE](alter-table.md)  and  [CREATE TABLE](create-table.md)
 

@@ -2,69 +2,101 @@
 
 Statistics information functions are divided into the following two categories: functions that access databases, using the OID of each table or index in a database to mark the database for which statistics are generated; functions that access servers, identified by the server process ID, whose value ranges from 1 to the number of currently active servers.
 
+-   global\_comm\_get\_status\(\)
+
+    Description: Obtains the communication library status of all DNs.
+
+    Return type: record
+
+-   global\_comm\_get\_send\_stream\(\)
+
+    Description: Obtains the sending stream status of all communication libraries on all DNs.
+
+    Return type: record
+
+-   global\_comm\_get\_recv\_stream\(\)
+
+    Description: Obtains the receiving stream status of all communication libraries on all DNs.
+
+    Return type: record
+
+
+-   global\_comm\_get\_client\_info\(\)
+
+    Description: Obtains information about client connections of global nodes.
+
+    Return type: record
+
+
 -   pg\_stat\_get\_db\_conflict\_tablespace\(oid\)
 
-    Description: Number of queries canceled due to a conflict between the restored tablespace and the deleted tablespace in the database.
+    Description: Specifies the number of queries canceled due to a conflict between the restored tablespace and the deleted tablespace in the database.
 
     Return type: bigint
 
 -   pg\_control\_group\_config
 
-    Description: Prints cgroup configurations on the current node.
+    Description: Prints Cgroup configurations on the current node.
 
     Return type: record
 
 -   pg\_stat\_get\_db\_stat\_reset\_time\(oid\)
 
-    Description: Last time when database statistics were reset. It is initialized to the system time during the first connection to each database. The reset time is updated when you call  **pg\_stat\_reset**  on the database and execute  **pg\_stat\_reset\_single\_table\_counters**  against any table or index in it.
+    Description: Specifies the most recent time when database statistics were reset. It is initialized to the system time during the first connection to each database. The reset time is updated when you call  **pg\_stat\_reset**  on the database and execute  **pg\_stat\_reset\_single\_table\_counters**  against any table or index in it.
 
     Return type: timestamptz
 
 -   pg\_stat\_get\_function\_total\_time\(oid\)
 
-    Description: Total wall clock time spent in the function, in microseconds. The time spent on this function calling other functions is included.
+    Description: Specifies the total wall clock time spent in the function, in microseconds. The time spent on this function calling other functions is included.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_tuples\_returned\(oid\)
 
-    Description: Number of rows read through sequential scans when the parameter is a table in the current transaction, or number of index entries returned when the parameter is an index.
+    Description: Specifies the number of rows read through sequential scans when the parameter is a table in the current transaction or the number of index entries returned when the parameter is an index.
 
     Return type: bigint
 
+-   pg\_lock\_status\(\)
+
+    Description: Queries information about locks held by open transactions. All users can execute this function.
+
+    Return type: For details, see  **PG\_LOCKS**  which is obtained by querying this function.
+
 -   pg\_stat\_get\_xact\_numscans\(oid\)
 
-    Description: Number of sequential scans performed when the parameter is a table in the current transaction, or number of index scans performed when the parameter is an index.
+    Description: Specifies the number of sequential scans performed when the parameter is a table in the current transaction or the number of index scans performed when the parameter is an index.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_blocks\_fetched\(oid\)
 
-    Description: Number of disk block fetch requests for a table or index in the current transaction.
+    Description: Specifies the number of disk block fetch requests for a table or an index in the current transaction.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_blocks\_hit\(oid\)
 
-    Description: Number of disk block fetch requests for tables or indexes found in cache in the current transaction.
+    Description: Specifies the number of disk block fetch requests for tables or indexes found in cache in the current transaction.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_function\_calls\(oid\)
 
-    Description: Number of times the function is called in the current transaction.
+    Description: Specifies the number of times the function is called in the current transaction.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_function\_self\_time\(oid\)
 
-    Description: Time spent on this function in the current transaction, excluding the time spent on this function internally calling other functions.
+    Description: Specifies the time spent on this function in the current transaction, excluding the time spent on this function internally calling other functions.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_function\_total\_time\(oid\)
 
-    Description: Total wall clock time \(in microseconds\) spent on the function in the current transaction, including the time spent on this function internally calling other functions.
+    Description: Specifies the total wall clock time \(in microseconds\) spent on the function in the current transaction, including the time spent on this function internally calling other functions.
 
     Return type: bigint
 
@@ -74,12 +106,12 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: setofrecord
 
-    The following table describes return fields.
+    The following table describes return columns.
 
-    **Table  1**  Return field description
+    **Table  1**  Return column description
 
     <a name="en-us_topic_0283136951_table4851182894313"></a>
-    <table><thead align="left"><tr id="en-us_topic_0283136951_row1785310288438"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p12853128154310"><a name="en-us_topic_0283136951_p12853128154310"></a><a name="en-us_topic_0283136951_p12853128154310"></a>Field</p>
+    <table><thead align="left"><tr id="en-us_topic_0283136951_row1785310288438"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p12853128154310"><a name="en-us_topic_0283136951_p12853128154310"></a><a name="en-us_topic_0283136951_p12853128154310"></a>Column</p>
     </th>
     <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136951_p19853828194315"><a name="en-us_topic_0283136951_p19853828194315"></a><a name="en-us_topic_0283136951_p19853828194315"></a>Type</p>
     </th>
@@ -98,7 +130,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p385432814435"><a name="en-us_topic_0283136951_p385432814435"></a><a name="en-us_topic_0283136951_p385432814435"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p9855202814433"><a name="en-us_topic_0283136951_p9855202814433"></a><a name="en-us_topic_0283136951_p9855202814433"></a>Lightweight thread ID of the WAL sender.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p9855202814433"><a name="en-us_topic_0283136951_p9855202814433"></a><a name="en-us_topic_0283136951_p9855202814433"></a>Lightweight thread ID of the WAL sender</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row148551928134318"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p16855192874317"><a name="en-us_topic_0283136951_p16855192874317"></a><a name="en-us_topic_0283136951_p16855192874317"></a>local_role</p>
@@ -237,6 +269,70 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
+-   get\_paxos\_replication\_info\(\)
+
+    Description: Queries the primary/standby replication status in Paxos mode.
+
+    Return type: setofrecord
+
+    The following table describes return columns.
+
+    **Table  2**  Return column description
+
+    <a name="table132714190424"></a>
+    <table><thead align="left"><tr id="row827215193425"><th class="cellrowborder" valign="top" width="26.672667266726673%" id="mcps1.2.4.1.1"><p id="p5272919114214"><a name="p5272919114214"></a><a name="p5272919114214"></a>Column</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="24.512451245124513%" id="mcps1.2.4.1.2"><p id="p182720199429"><a name="p182720199429"></a><a name="p182720199429"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="48.814881488148814%" id="mcps1.2.4.1.3"><p id="p527271918427"><a name="p527271918427"></a><a name="p527271918427"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row9275619194218"><td class="cellrowborder" valign="top" width="26.672667266726673%" headers="mcps1.2.4.1.1 "><p id="p3275719104212"><a name="p3275719104212"></a><a name="p3275719104212"></a>paxos_write_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.2 "><p id="p1627620193422"><a name="p1627620193422"></a><a name="p1627620193422"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.814881488148814%" headers="mcps1.2.4.1.3 "><p id="p17276151910426"><a name="p17276151910426"></a><a name="p17276151910426"></a>Location of the Xlog that has been written to the Distribute Consensus Framework (DCF)</p>
+    </td>
+    </tr>
+    <tr id="row1827717196424"><td class="cellrowborder" valign="top" width="26.672667266726673%" headers="mcps1.2.4.1.1 "><p id="p327716196428"><a name="p327716196428"></a><a name="p327716196428"></a>paxos_commit_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.2 "><p id="p10277319124213"><a name="p10277319124213"></a><a name="p10277319124213"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.814881488148814%" headers="mcps1.2.4.1.3 "><p id="p18277121917422"><a name="p18277121917422"></a><a name="p18277121917422"></a>Location of the Xlog agreed in the DCF</p>
+    </td>
+    </tr>
+    <tr id="row32772019114220"><td class="cellrowborder" valign="top" width="26.672667266726673%" headers="mcps1.2.4.1.1 "><p id="p1842517495520"><a name="p1842517495520"></a><a name="p1842517495520"></a>local_write_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.2 "><p id="p5277141915429"><a name="p5277141915429"></a><a name="p5277141915429"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.814881488148814%" headers="mcps1.2.4.1.3 "><p id="p122772198423"><a name="p122772198423"></a><a name="p122772198423"></a>Writing position of a node</p>
+    </td>
+    </tr>
+    <tr id="row827713199426"><td class="cellrowborder" valign="top" width="26.672667266726673%" headers="mcps1.2.4.1.1 "><p id="p14277519124215"><a name="p14277519124215"></a><a name="p14277519124215"></a>local_flush_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.2 "><p id="p1727741916421"><a name="p1727741916421"></a><a name="p1727741916421"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.814881488148814%" headers="mcps1.2.4.1.3 "><p id="p72771919164215"><a name="p72771919164215"></a><a name="p72771919164215"></a>Flushing position of a node</p>
+    </td>
+    </tr>
+    <tr id="row1827720199425"><td class="cellrowborder" valign="top" width="26.672667266726673%" headers="mcps1.2.4.1.1 "><p id="p19903132413555"><a name="p19903132413555"></a><a name="p19903132413555"></a>local_replay_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.2 "><p id="p22773199426"><a name="p22773199426"></a><a name="p22773199426"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.814881488148814%" headers="mcps1.2.4.1.3 "><p id="p2278161915426"><a name="p2278161915426"></a><a name="p2278161915426"></a>Redo position of a node</p>
+    </td>
+    </tr>
+    <tr id="row62781196425"><td class="cellrowborder" valign="top" width="26.672667266726673%" headers="mcps1.2.4.1.1 "><p id="p6278201944211"><a name="p6278201944211"></a><a name="p6278201944211"></a>dcf_replication_info</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.2 "><p id="p427861924215"><a name="p427861924215"></a><a name="p427861924215"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="48.814881488148814%" headers="mcps1.2.4.1.3 "><p id="p827912190427"><a name="p827912190427"></a><a name="p827912190427"></a>DCF module information of a node</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 -   pg\_stat\_get\_stream\_replications\(\)
 
     Description: Queries the primary/standby replication status.
@@ -245,7 +341,7 @@ Statistics information functions are divided into the following two categories: 
 
     The following table describes return values.
 
-    **Table  2**  Return value description
+    **Table  3**  Return value description
 
     <a name="en-us_topic_0283136951_table1662971714811"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row11630717882"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p11633617483"><a name="en-us_topic_0283136951_p11633617483"></a><a name="en-us_topic_0283136951_p11633617483"></a>Return Parameter</p>
@@ -289,92 +385,92 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_db\_numbackends\(oid\)
 
-    Description: Number of active server processes for a database
+    Description: Specifies the number of active server processes for a database.
 
     Return type: integer
 
 -   pg\_stat\_get\_db\_xact\_commit\(oid\)
 
-    Description: Number of transactions committed in a database
+    Description: Specifies the number of transactions committed in a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_xact\_rollback\(oid\)
 
-    Description: Number of transactions rolled back in a database
+    Description: Specifies the number of transactions rolled back in a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_blocks\_fetched\(oid\)
 
-    Description: Number of disk blocks fetch requests for a database
+    Description: Specifies the number of disk blocks fetch requests for a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_blocks\_hit\(oid\)
 
-    Description: Number of disk block fetch requests found in cache for a database
+    Description: Specifies the number of disk block fetch requests found in cache for a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_tuples\_returned\(oid\)
 
-    Description: Number of tuples returned for a database
+    Description: Specifies the number of tuples returned for a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_tuples\_fetched\(oid\)
 
-    Description: Number of tuples fetched for a database
+    Description: Specifies the number of tuples fetched for a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_tuples\_inserted\(oid\)
 
-    Description: Number of tuples inserted in a database
+    Description: Specifies the number of tuples inserted in a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_tuples\_updated\(oid\)
 
-    Description: Number of tuples updated in a database
+    Description: Specifies the number of tuples updated in a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_tuples\_deleted\(oid\)
 
-    Description: Number of tuples deleted in a database
+    Description: Specifies the number of tuples deleted in a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_conflict\_lock\(oid\)
 
-    Description: Number of lock conflicts in a database
+    Description: Specifies the number of lock conflicts in a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_db\_deadlocks\(oid\)
 
-    Description: Number of deadlocks in a database
+    Description: Specifies the number of deadlocks in a database.
 
     Return type: bigint
 
 -   pg\_stat\_get\_numscans\(oid\)
 
-    Description: Number of sequential row scans done if parameters are in a table or number of index scans done if parameters are in an index
+    Description: Specifies the number of sequential row scans done if parameters are in a table or the number of index scans done if parameters are in an index.
 
     Return type: bigint
 
 -   pg\_stat\_get\_role\_name\(oid\)
 
-    Description: Obtains the username based on the user OID. Only the sysadmin and monitor admin users can access.
+    Description: Obtains the username based on the user OID. Only users with the  **sysadmin**  or  **monitor admin**  permission can access the information.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# select pg_stat_get_role_name(10);
+    openGauss=# select pg_stat_get_role_name(10);
      pg_stat_get_role_name
     -----------------------
      aabbcc
@@ -383,205 +479,205 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_tuples\_returned\(oid\)
 
-    Description: Number of sequential row scans done if parameters are in a table or number of index scans done if parameters are in an index
+    Description: Specifies the number of sequential row scans done if parameters are in a table or the number of index scans done if parameters are in an index.
 
     Return type: bigint
 
 -   pg\_stat\_get\_tuples\_fetched\(oid\)
 
-    Description: Number of table rows fetched by bitmap scans if parameters are in a table, or table rows fetched by simple index scans using the index if parameters are in an index
+    Description: Specifies the number of table rows fetched by bitmap scans if parameters are in a table or the number of table rows fetched by simple index scans using the index if parameters are in an index.
 
     Return type: bigint
 
 -   pg\_stat\_get\_tuples\_inserted\(oid\)
 
-    Description: Number of rows inserted into table
+    Description: Specifies the number of rows inserted into a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_tuples\_updated\(oid\)
 
-    Description: Number of rows updated in table
+    Description: Specifies the number of rows updated in a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_tuples\_deleted\(oid\)
 
-    Description: Number of rows deleted from table
+    Description: Specifies the number of rows deleted from a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_tuples\_changed\(oid\)
 
-    Description: Total number of inserted, updated, and deleted rows after the table was last analyzed or autoanalyzed
+    Description: Specifies the total number of inserted, updated, and deleted rows after a table was last analyzed or autoanalyzed.
 
     Return type: bigint
 
 -   pg\_stat\_get\_tuples\_hot\_updated\(oid\)
 
-    Description: Number of rows hot updated in table
+    Description: Specifies the number of rows hot updated in a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_live\_tuples\(oid\)
 
-    Description: Number of live rows in table
+    Description: Specifies the number of live rows in a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_dead\_tuples\(oid\)
 
-    Description: Number of dead rows in table
+    Description: Specifies the number of dead rows in a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_blocks\_fetched\(oid\)
 
-    Description: Number of disk block fetch requests for table or index
+    Description: Specifies the number of disk block fetch requests for a table or an index.
 
     Return type: bigint
 
 -   pg\_stat\_get\_blocks\_hit\(oid\)
 
-    Description: Number of disk block requests found in cache for table or index
+    Description: Specifies the number of disk block requests found in cache for a table or an index.
 
     Return type: bigint
 
 -   pg\_stat\_get\_partition\_tuples\_inserted\(oid\)
 
-    Description: Number of rows in the corresponding table partition
+    Description: Specifies the number of rows in the corresponding table partition.
 
     Return type: bigint
 
 -   pg\_stat\_get\_partition\_tuples\_updated\(oid\)
 
-    Description: Number of rows that have been updated in the corresponding table partition
+    Description: Specifies the number of rows that have been updated in the corresponding table partition.
 
     Return type: bigint
 
 -   pg\_stat\_get\_partition\_tuples\_deleted\(oid\)
 
-    Description: Number of rows deleted from the corresponding table partition
+    Description: Specifies the number of rows deleted from the corresponding table partition.
 
     Return type: bigint
 
 -   pg\_stat\_get\_partition\_tuples\_changed\(oid\)
 
-    Description: Total number of inserted, updated, and deleted rows after the table partition was last analyzed or autoanalyzed
+    Description: Specifies the total number of inserted, updated, and deleted rows after a table partition was last analyzed or autoanalyzed.
 
     Return type: bigint
 
 -   pg\_stat\_get\_partition\_live\_tuples\(oid\)
 
-    Description: Number of live rows in partitioned table
+    Description: Specifies the number of live rows in a partitioned table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_partition\_dead\_tuples\(oid\)
 
-    Description: Number of dead rows in partitioned table
+    Description: Specifies the number of dead rows in a partitioned table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_tuples\_fetched\(oid\)
 
-    Description: Number of tuple rows scanned in a transaction.
+    Description: Specifies the number of tuple rows scanned in a transaction.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_tuples\_inserted\(oid\)
 
-    Description: Number of tuple inserted into the active subtransactions related to the table.
+    Description: Specifies the number of tuple inserted into the active subtransactions related to a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_tuples\_deleted\(oid\)
 
-    Description: Number of deleted tuples in the active subtransactions related to a table
+    Description: Specifies the number of deleted tuples in the active subtransactions related to a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_tuples\_hot\_updated\(oid\)
 
-    Description: Number of hot updated tuples in the active subtransactions related to a table
+    Description: Specifies the number of hot updated tuples in the active subtransactions related to a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_tuples\_updated\(oid\)
 
-    Description: Number of updated tuples in the active subtransactions related to a table
+    Description: Specifies the number of updated tuples in the active subtransactions related to a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_partition\_tuples\_inserted\(oid\)
 
-    Description: Number of inserted tuples in the active subtransactions related to a table partition
+    Description: Specifies the number of inserted tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_partition\_tuples\_deleted\(oid\)
 
-    Description: Number of deleted tuples in the active subtransactions related to a table partition
+    Description: Specifies the number of deleted tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_partition\_tuples\_hot\_updated\(oid\)
 
-    Description: Number of hot updated tuples in the active subtransactions related to a table partition
+    Description: Specifies the number of hot updated tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
 -   pg\_stat\_get\_xact\_partition\_tuples\_updated\(oid\)
 
-    Description: Number of updated tuples in the active subtransactions related to a table partition
+    Description: Specifies the number of updated tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
 -   pg\_stat\_get\_last\_vacuum\_time\(oid\)
 
-    Description: Last time when the autovacuum thread is manually started to clear a table
+    Description: Specifies the most recent time when the autovacuum thread is manually started to clear a table.
 
     Return type: timestamptz
 
 -   pg\_stat\_get\_last\_autovacuum\_time\(oid\)
 
-    Description: Time of the last vacuum initiated by the autovacuum daemon on this table
+    Description: Specifies the time of the last vacuum initiated by the autovacuum daemon on a table.
 
     Return type: timestamptz
 
 -   pg\_stat\_get\_vacuum\_count\(oid\)
 
-    Description: Number of times a table is manually cleared.
+    Description: Specifies the number of times a table is manually cleared.
 
     Return type: bigint
 
 -   pg\_stat\_get\_autovacuum\_count\(oid\)
 
-    Description: Number of times the autovacuum daemon is started to clear a table
+    Description: Specifies the number of times the autovacuum daemon is started to clear a table.
 
     Return type: bigint
 
 -   pg\_stat\_get\_last\_analyze\_time\(oid\)
 
-    Description: Last time when a table starts to be analyzed manually or by the autovacuum thread
+    Description: Specifies the last time when a table starts to be analyzed manually or by the autovacuum thread.
 
     Return type: timestamptz
 
 -   pg\_stat\_get\_last\_autoanalyze\_time\(oid\)
 
-    Description: Time of the last analysis initiated by the autovacuum daemon on this table
+    Description: Specifies the time when the last analysis initiated by the autovacuum daemon on a table.
 
     Return type: timestamptz
 
 -   pg\_stat\_get\_analyze\_count\(oid\)
 
-    Description: Number of times a table is manually analyzed.
+    Description: Specifies the number of times a table is manually analyzed.
 
     Return type: bigint
 
 -   pg\_stat\_get\_autoanalyze\_count\(oid\)
 
-    Description: Number of times the autovacuum daemon analyzes a table
+    Description: Specifies the number of times the autovacuum daemon analyzes a table.
 
     Return type: bigint
 
@@ -593,7 +689,7 @@ Statistics information functions are divided into the following two categories: 
 
     The following table describes return parameters.
 
-    **Table  3**  Return parameter description
+    **Table  4**  Return parameter description
 
     <a name="en-us_topic_0283136951_table14816112541517"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row148172025141520"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p58171325151511"><a name="en-us_topic_0283136951_p58171325151511"></a><a name="en-us_topic_0283136951_p58171325151511"></a>Return Parameter</p>
@@ -622,7 +718,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1981810253156"><a name="en-us_topic_0283136951_p1981810253156"></a><a name="en-us_topic_0283136951_p1981810253156"></a>name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p108191125101512"><a name="en-us_topic_0283136951_p108191125101512"></a><a name="en-us_topic_0283136951_p108191125101512"></a>Name of an object, such as a table, index, or view</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p108191125101512"><a name="en-us_topic_0283136951_p108191125101512"></a><a name="en-us_topic_0283136951_p108191125101512"></a>Name of an object, such as a table, an index, or a view</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row7819925111516"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p16819162510156"><a name="en-us_topic_0283136951_p16819162510156"></a><a name="en-us_topic_0283136951_p16819162510156"></a>partname</p>
@@ -658,13 +754,13 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_autovac\_status\(oid\)
 
-    Description: Returns autovac information, such as  **nodename**,  **nspname**,  **relname**,  **analyze**,  **vacuum**, thresholds of  **analyze**  and  **vacuum**, and the number of analyzed or vacuumed tuples. Only the sysadmin user can use this function.
+    Description: Returns autovac information, such as  **nodename**,  **nspname**,  **relname**,  **analyze**,  **vacuum**, thresholds of  **analyze**  and  **vacuum**, and the number of analyzed or vacuumed tuples. Only users with the  **sysadmin**  permission can use this function.
 
     Return type: setofrecord
 
     The following table describes return parameters.
 
-    **Table  4**  Return parameter description
+    **Table  5**  Return parameter description
 
     <a name="en-us_topic_0283136951_table1494614261571"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row109474261377"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p994712261279"><a name="en-us_topic_0283136951_p994712261279"></a><a name="en-us_topic_0283136951_p994712261279"></a>Return Parameter</p>
@@ -686,7 +782,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p149484261873"><a name="en-us_topic_0283136951_p149484261873"></a><a name="en-us_topic_0283136951_p149484261873"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1149882681218"><a name="en-us_topic_0283136951_p1149882681218"></a><a name="en-us_topic_0283136951_p1149882681218"></a>Name of an object, such as a table, index, or view</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p1149882681218"><a name="en-us_topic_0283136951_p1149882681218"></a><a name="en-us_topic_0283136951_p1149882681218"></a>Name of an object, such as a table, an index, or a view</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1494915261174"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1294916261572"><a name="en-us_topic_0283136951_p1294916261572"></a><a name="en-us_topic_0283136951_p1294916261572"></a>nodename</p>
@@ -749,39 +845,36 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_last\_data\_changed\_time\(oid\)
 
-    Description: Returns the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was performed last time on a table. The data in the  **last\_data\_changed**  column of the  [PG\_STAT\_ALL\_TABLES](en-us_topic_0289900450.md)  view is calculated by using this function. The performance of obtaining the last modification time by using the view is poor when the table has a large amount of data. In this case, you are advised to use the function.
+    Description: Returns the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was last performed on a table. The data in the  **last\_data\_changed**  column of the  [PG\_STAT\_ALL\_TABLES](pg_stat_all_tables.md)  view is calculated by using this function. The performance of obtaining the last modification time by using the view is poor when the table has a large amount of data. In this case, you are advised to use the function.
 
     Return type: timestamptz
 
 -   pg\_stat\_set\_last\_data\_changed\_time\(oid\)
 
-    Description: Manually changes the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was performed last time.
+    Description: Manually changes the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was last performed.
 
     Return type: void
 
 -   pg\_backend\_pid\(\)
 
-    Description: Thread ID of the server thread attached to the current session
+    Description: Specifies the thread ID of the server thread attached to the current session.
 
     Return type: integer
 
 -   pg\_stat\_get\_activity\(integer\)
 
-    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those \(excluding the  **connection\_info**  column\) in the  [PG\_STAT\_ACTIVITY](PG_STAT_ACTIVITY)  view.
+    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those \(excluding the  **connection\_info**  column\) in the  [PG\_STAT\_ACTIVITY](pg_stat_activity.md)  view.
 
     Example:
 
     ```
-    postgres=# select * from pg_stat_get_activity(140036483839744);
-     datid |       pid       |    sessionid    | usesysid | application_name | state  |                        query                         | waiting |          xact_start    
-           |          query_start          |         backend_start         |         state_change          | client_addr | client_hostname | client_port | enqueue |     query_i
-    d      
-    -------+-----------------+-----------------+----------+------------------+--------+------------------------------------------------------+---------+------------------------
-    -------+-------------------------------+-------------------------------+-------------------------------+-------------+-----------------+-------------+---------+------------
-    -------
-     15914 | 140036483839744 | 140036483839744 |       10 | gsql             | active | select * from pg_stat_get_activity(140036483839744); | f       | 2020-06-24 10:53:19.583
-    666+08 | 2020-06-24 10:53:19.583598+08 | 2020-06-24 10:00:03.471893+08 | 2020-06-24 10:53:19.583601+08 |             |                 |          -1 |         | 72902018968
-    108794
+    openGauss=# select * from pg_stat_get_activity(139754904483584);
+     datid |       pid       |    sessionid    | usesysid | application_name | state |                    query                     | waiting | xact_start |          query_start          |         backend_start         |         state_cha
+    nge          | client_addr | client_hostname | client_port | enqueue | query_id | srespool | global_sessionid
+    -------+-----------------+-----------------+----------+------------------+-------+----------------------------------------------+---------+------------+-------------------------------+-------------------------------+------------------
+    -------------+-------------+-----------------+-------------+---------+----------+----------+------------------
+     16099 | 139754904483584 | 139754904483584 |       10 | coordinator2     | idle  | SET SESSION AUTHORIZATION DEFAULT;RESET ALL; | f       |            | 2021-06-09 16:40:58.391727+08 | 2021-06-09 16:03:52.040929+08 | 2021-06-09 16:40:
+    58.392143+08 | ::1         |                 |       35210 |         |        0 | unknown  | 0#0#0
     (1 row)
     ```
 
@@ -789,7 +882,7 @@ Statistics information functions are divided into the following two categories: 
 
     The following table describes return parameters.
 
-    **Table  5**  Return parameter description
+    **Table  6**  Return parameter description
 
     <a name="en-us_topic_0283136951_table147214071613"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row77304010165"><th class="cellrowborder" valign="top" width="35.063506350635066%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p5737405161"><a name="en-us_topic_0283136951_p5737405161"></a><a name="en-us_topic_0283136951_p5737405161"></a>Return Parameter</p>
@@ -839,14 +932,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p52401239271"><a name="en-us_topic_0283136951_p52401239271"></a><a name="en-us_topic_0283136951_p52401239271"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p8410553181812"><a name="en-us_topic_0283136951_p8410553181812"></a><a name="en-us_topic_0283136951_p8410553181812"></a>Overall status of this backend.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p8410553181812"><a name="en-us_topic_0283136951_p8410553181812"></a><a name="en-us_topic_0283136951_p8410553181812"></a>Overall status of the backend</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row20433131516198"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1743491521918"><a name="en-us_topic_0283136951_p1743491521918"></a><a name="en-us_topic_0283136951_p1743491521918"></a>query</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p04341915121912"><a name="en-us_topic_0283136951_p04341915121912"></a><a name="en-us_topic_0283136951_p04341915121912"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18434101541910"><a name="en-us_topic_0283136951_p18434101541910"></a><a name="en-us_topic_0283136951_p18434101541910"></a>Text of this backend's most recent query. If <strong id="b183586738145811"><a name="b183586738145811"></a><a name="b183586738145811"></a>state</strong> is <strong id="b203765162745811"><a name="b203765162745811"></a><a name="b203765162745811"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18434101541910"><a name="en-us_topic_0283136951_p18434101541910"></a><a name="en-us_topic_0283136951_p18434101541910"></a>Latest query at the backend. If <strong id="b183586738145811"><a name="b183586738145811"></a><a name="b183586738145811"></a>state</strong> is <strong id="b203765162745811"><a name="b203765162745811"></a><a name="b203765162745811"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row18561719141914"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p17857181918193"><a name="en-us_topic_0283136951_p17857181918193"></a><a name="en-us_topic_0283136951_p17857181918193"></a>waiting</p>
@@ -882,7 +975,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p4451121692014"><a name="en-us_topic_0283136951_p4451121692014"></a><a name="en-us_topic_0283136951_p4451121692014"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p2982153210243"><a name="en-us_topic_0283136951_p2982153210243"></a><a name="en-us_topic_0283136951_p2982153210243"></a>Time when the <strong id="b77158886845811"><a name="b77158886845811"></a><a name="b77158886845811"></a>state</strong> was last changed</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p2982153210243"><a name="en-us_topic_0283136951_p2982153210243"></a><a name="en-us_topic_0283136951_p2982153210243"></a>Time when <strong id="b4186337566"><a name="b4186337566"></a><a name="b4186337566"></a>state</strong> was last modified</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row167765339204"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p177683342016"><a name="en-us_topic_0283136951_p177683342016"></a><a name="en-us_topic_0283136951_p177683342016"></a>client_addr</p>
@@ -903,7 +996,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p3868691216"><a name="en-us_topic_0283136951_p3868691216"></a><a name="en-us_topic_0283136951_p3868691216"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18331162415238"><a name="en-us_topic_0283136951_p18331162415238"></a><a name="en-us_topic_0283136951_p18331162415238"></a>TCP port number that the client uses for communication with this backend (<strong id="b137159610645811"><a name="b137159610645811"></a><a name="b137159610645811"></a>-1</strong> if a Unix socket is used)</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18331162415238"><a name="en-us_topic_0283136951_p18331162415238"></a><a name="en-us_topic_0283136951_p18331162415238"></a>TCP port number that the client uses for communication with this backend (<strong id="b112021142195612"><a name="b112021142195612"></a><a name="b112021142195612"></a>-1</strong> if a Unix socket is used).</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1660362882120"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p960322812212"><a name="en-us_topic_0283136951_p960322812212"></a><a name="en-us_topic_0283136951_p960322812212"></a>enqueue</p>
@@ -920,25 +1013,32 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p99128408218"><a name="en-us_topic_0283136951_p99128408218"></a><a name="en-us_topic_0283136951_p99128408218"></a>ID of a query</p>
     </td>
     </tr>
+    <tr id="row28955115323"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="p38951917329"><a name="p38951917329"></a><a name="p38951917329"></a>global_sessionid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="p168959143217"><a name="p168959143217"></a><a name="p168959143217"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p168951113321"><a name="p168951113321"></a><a name="p168951113321"></a>Global session ID</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
 -   pg\_stat\_get\_activity\_with\_conninfo\(integer\)
 
-    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those in the  [PG\_STAT\_ACTIVITY](PG_STAT_ACTIVITY.md)  view.
+    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified.  [PG\_STAT\_ACTIVITY](pg_stat_activity.md)  is a subset of the function.
 
     Return type: setofrecord
 
     The following table describes return values.
 
-    **Table  6**  Return value description
+    **Table  7**  Return value description
 
     <a name="en-us_topic_0283136951_table8714322156"></a>
     <table><thead align="left"><tr id="en-us_topic_0283136951_row27218327150"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136951_p137215323156"><a name="en-us_topic_0283136951_p137215323156"></a><a name="en-us_topic_0283136951_p137215323156"></a>Return Value</p>
     </th>
     <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136951_p107253241511"><a name="en-us_topic_0283136951_p107253241511"></a><a name="en-us_topic_0283136951_p107253241511"></a>Return Type</p>
     </th>
-    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136951_p1873153219152"><a name="en-us_topic_0283136951_p1873153219152"></a><a name="en-us_topic_0283136951_p1873153219152"></a>Return value description</p>
+    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136951_p1873153219152"><a name="en-us_topic_0283136951_p1873153219152"></a><a name="en-us_topic_0283136951_p1873153219152"></a>Description</p>
     </th>
     </tr>
     </thead>
@@ -981,14 +1081,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p145116196184"><a name="en-us_topic_0283136951_p145116196184"></a><a name="en-us_topic_0283136951_p145116196184"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p95213198185"><a name="en-us_topic_0283136951_p95213198185"></a><a name="en-us_topic_0283136951_p95213198185"></a>Overall status of this backend</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p95213198185"><a name="en-us_topic_0283136951_p95213198185"></a><a name="en-us_topic_0283136951_p95213198185"></a>Overall status of the backend</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row3658547131812"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p5659047191816"><a name="en-us_topic_0283136951_p5659047191816"></a><a name="en-us_topic_0283136951_p5659047191816"></a>query</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p2065914714188"><a name="en-us_topic_0283136951_p2065914714188"></a><a name="en-us_topic_0283136951_p2065914714188"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p826110558358"><a name="en-us_topic_0283136951_p826110558358"></a><a name="en-us_topic_0283136951_p826110558358"></a>Text of this backend's most recent query. If <strong id="b288476535"><a name="b288476535"></a><a name="b288476535"></a>state</strong> is <strong id="b747386137"><a name="b747386137"></a><a name="b747386137"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p826110558358"><a name="en-us_topic_0283136951_p826110558358"></a><a name="en-us_topic_0283136951_p826110558358"></a>Latest query at the backend. If <strong id="b1318024006"><a name="b1318024006"></a><a name="b1318024006"></a>state</strong> is <strong id="b997116344"><a name="b997116344"></a><a name="b997116344"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1112454181810"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1812654141816"><a name="en-us_topic_0283136951_p1812654141816"></a><a name="en-us_topic_0283136951_p1812654141816"></a>waiting</p>
@@ -1002,14 +1102,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p3601175851814"><a name="en-us_topic_0283136951_p3601175851814"></a><a name="en-us_topic_0283136951_p3601175851814"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p791672733514"><a name="en-us_topic_0283136951_p791672733514"></a><a name="en-us_topic_0283136951_p791672733514"></a>Time when current transaction was started (null if no transaction is active). If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b919055665"><a name="b919055665"></a><a name="b919055665"></a>query_start</strong> column.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p791672733514"><a name="en-us_topic_0283136951_p791672733514"></a><a name="en-us_topic_0283136951_p791672733514"></a>Time when current transaction was started (null if no transaction is active). If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b1755852410"><a name="b1755852410"></a><a name="b1755852410"></a>query_start</strong> column.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row371718291910"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1871719261916"><a name="en-us_topic_0283136951_p1871719261916"></a><a name="en-us_topic_0283136951_p1871719261916"></a>query_start</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p17171826194"><a name="en-us_topic_0283136951_p17171826194"></a><a name="en-us_topic_0283136951_p17171826194"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p193581715153516"><a name="en-us_topic_0283136951_p193581715153516"></a><a name="en-us_topic_0283136951_p193581715153516"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b352678312"><a name="b352678312"></a><a name="b352678312"></a>state</strong> is not <strong id="b1009762811"><a name="b1009762811"></a><a name="b1009762811"></a>active</strong></p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p193581715153516"><a name="en-us_topic_0283136951_p193581715153516"></a><a name="en-us_topic_0283136951_p193581715153516"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b1505992719"><a name="b1505992719"></a><a name="b1505992719"></a>state</strong> is not <strong id="b2009002130"><a name="b2009002130"></a><a name="b2009002130"></a>active</strong></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row342571181911"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1942501101911"><a name="en-us_topic_0283136951_p1942501101911"></a><a name="en-us_topic_0283136951_p1942501101911"></a>backend_start</p>
@@ -1023,28 +1123,28 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p7818125115208"><a name="en-us_topic_0283136951_p7818125115208"></a><a name="en-us_topic_0283136951_p7818125115208"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p158185514208"><a name="en-us_topic_0283136951_p158185514208"></a><a name="en-us_topic_0283136951_p158185514208"></a>Time when the <strong id="b915631470"><a name="b915631470"></a><a name="b915631470"></a>state</strong> was last changed</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p158185514208"><a name="en-us_topic_0283136951_p158185514208"></a><a name="en-us_topic_0283136951_p158185514208"></a>Time when <strong id="b10442141125814"><a name="b10442141125814"></a><a name="b10442141125814"></a>state</strong> was last modified</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1956611310248"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p105678312411"><a name="en-us_topic_0283136951_p105678312411"></a><a name="en-us_topic_0283136951_p105678312411"></a>client_addr</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p18567183192419"><a name="en-us_topic_0283136951_p18567183192419"></a><a name="en-us_topic_0283136951_p18567183192419"></a>inet</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p272643273311"><a name="en-us_topic_0283136951_p272643273311"></a><a name="en-us_topic_0283136951_p272643273311"></a>IP address of the client connected to the backend. If this column is <strong id="b91111723195213"><a name="b91111723195213"></a><a name="b91111723195213"></a>NULL</strong>, it indicates either the client is connected via a Unix socket on the server or this is an internal process, such as <strong id="b111613232528"><a name="b111613232528"></a><a name="b111613232528"></a>AUTOVACUUM</strong>.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p272643273311"><a name="en-us_topic_0283136951_p272643273311"></a><a name="en-us_topic_0283136951_p272643273311"></a>IP address of the client connected to the backend If this column is <strong id="b91111723195213"><a name="b91111723195213"></a><a name="b91111723195213"></a>NULL</strong>, it indicates either the client is connected via a Unix socket on the server or this is an internal process, such as <strong id="b111613232528"><a name="b111613232528"></a><a name="b111613232528"></a>AUTOVACUUM</strong>.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row184018578326"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p19402757103218"><a name="en-us_topic_0283136951_p19402757103218"></a><a name="en-us_topic_0283136951_p19402757103218"></a>client_hostname</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p7402125717322"><a name="en-us_topic_0283136951_p7402125717322"></a><a name="en-us_topic_0283136951_p7402125717322"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p114021557193219"><a name="en-us_topic_0283136951_p114021557193219"></a><a name="en-us_topic_0283136951_p114021557193219"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b1871992520"><a name="b1871992520"></a><a name="b1871992520"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b1397491959"><a name="b1397491959"></a><a name="b1397491959"></a>log_hostname</strong> is enabled.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p114021557193219"><a name="en-us_topic_0283136951_p114021557193219"></a><a name="en-us_topic_0283136951_p114021557193219"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b275676929"><a name="b275676929"></a><a name="b275676929"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b331422876"><a name="b331422876"></a><a name="b331422876"></a>log_hostname</strong> is enabled.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1119736182610"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p51977652616"><a name="en-us_topic_0283136951_p51977652616"></a><a name="en-us_topic_0283136951_p51977652616"></a>client_port</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p21973672616"><a name="en-us_topic_0283136951_p21973672616"></a><a name="en-us_topic_0283136951_p21973672616"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p191971667265"><a name="en-us_topic_0283136951_p191971667265"></a><a name="en-us_topic_0283136951_p191971667265"></a>TCP port number that the client uses for communication with this backend (<strong id="b231139243"><a name="b231139243"></a><a name="b231139243"></a>-1</strong> if a Unix socket is used)</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p191971667265"><a name="en-us_topic_0283136951_p191971667265"></a><a name="en-us_topic_0283136951_p191971667265"></a>TCP port number that the client uses for communication with this backend (<strong id="b137159610645811"><a name="b137159610645811"></a><a name="b137159610645811"></a>-1</strong> if a Unix socket is used)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row428083319266"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p5281103322619"><a name="en-us_topic_0283136951_p5281103322619"></a><a name="en-us_topic_0283136951_p5281103322619"></a>enqueue</p>
@@ -1066,6 +1166,13 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p1056632052912"><a name="en-us_topic_0283136951_p1056632052912"></a><a name="en-us_topic_0283136951_p1056632052912"></a>text</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18563443173114"><a name="en-us_topic_0283136951_p18563443173114"></a><a name="en-us_topic_0283136951_p18563443173114"></a>A string in JSON format recording the driver type, driver version, driver deployment path, and process owner of the connected database</p>
+    </td>
+    </tr>
+    <tr id="row1675483312441"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1075518336447"><a name="p1075518336447"></a><a name="p1075518336447"></a>global_sessionid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p27551833164411"><a name="p27551833164411"></a><a name="p27551833164411"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p12755133134415"><a name="p12755133134415"></a><a name="p12755133134415"></a>Global session ID</p>
     </td>
     </tr>
     </tbody>
@@ -1092,7 +1199,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1742611310413"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742611310413"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1742611310413"></a>oid</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a>User ID.</p>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p114261231143"></a>User ID</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row7426039410"><td class="cellrowborder" valign="top" width="14.6%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p10426203540"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p10426203540"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p10426203540"></a>min_curr_iops</p>
@@ -1137,42 +1244,49 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1542716312414"></a><strong id="b14427181911811"><a name="b14427181911811"></a><a name="b14427181911811"></a>io_priority</strong> set for the user. The IOPS is counted by ones for column storage and by ten thousands for row storage.</p>
     </td>
     </tr>
+    <tr id="row5459121216528"><td class="cellrowborder" valign="top" width="14.6%" headers="mcps1.1.4.1.1 "><p id="p164601912195214"><a name="p164601912195214"></a><a name="p164601912195214"></a>curr_io_limits</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="8.9%" headers="mcps1.1.4.1.2 "><p id="p1946081265217"><a name="p1946081265217"></a><a name="p1946081265217"></a>int4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="76.5%" headers="mcps1.1.4.1.3 "><p id="p1246081210522"><a name="p1246081210522"></a><a name="p1246081210522"></a>Real-time <strong id="b78282504283"><a name="b78282504283"></a><a name="b78282504283"></a>io_limits</strong> value when <strong id="b082965052815"><a name="b082965052815"></a><a name="b082965052815"></a>io_priority</strong> is used to control I/Os</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
 -   pg\_stat\_get\_function\_calls\(oid\)
 
-    Description: Number of times the function has been called
+    Description: Specifies the number of times the function has been called.
 
     Return type: bigint
 
 -   pg\_stat\_get\_function\_self\_time\(oid\)
 
-    Description: Time spent in only this function. The time spent on this function calling other functions is excluded.
+    Description: Specifies the time spent in only this function. The time spent on this function calling other functions is excluded.
 
     Return type: bigint
 
 -   pg\_stat\_get\_backend\_idset\(\)
 
-    Description: Set of currently active server process numbers \(from 1 to the number of active server processes\)
+    Description: Sets the number of currently active server processes \(from 1 to the number of active server processes\).
 
     Return type: setofinteger
 
 -   pg\_stat\_get\_backend\_pid\(integer\)
 
-    Description: Thread ID of the given server thread
+    Description: Specifies the ID of the given server thread.
 
     Return type: bigint
 
 -   pg\_stat\_get\_backend\_dbid\(integer\)
 
-    Description: ID of the database connected to the given server process
+    Description: Specifies the ID of the database connected to the given server process.
 
     Return type: oid
 
 -   pg\_stat\_get\_backend\_userid\(integer\)
 
-    Description: User ID of the given server process
+    Description: Specifies the user ID of the given server process.
 
     Return type: oid
 
@@ -1190,73 +1304,73 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_backend\_activity\_start\(integer\)
 
-    Description: The time at which the given server process's currently executing query was started, but only if the current user is a system administrator or the same user as that of the session being queried and  **track\_activities**  is on
+    Description: Specifies the time when the given server process's currently executing query is started only if the current user is the system administrator or the user of the session being queried and  **track\_activities**  is enabled.
 
     Return type: timestamp with time zone
 
 -   pg\_stat\_get\_backend\_xact\_start\(integer\)
 
-    Description: The time at which the given server process's currently executing transaction was started, but only if the current user is a system administrator or the same user as that of the session being queried and  **track\_activities**  is on
+    Description: Specifies the time when the given server process's currently executing transaction is started only if the current user is the system administrator or the user of the session being queried and  **track\_activities**  is enabled.
 
     Return type: timestamp with time zone
 
 -   pg\_stat\_get\_backend\_start\(integer\)
 
-    Description: The time at which the given server process was started, or  **NULL**  if the current user is neither a system administrator nor the same user as that of the session being queried
+    Description: Specifies the time when the given server process is started. If the current user is neither the system administrator nor the user of the session being queried, NULL is  **returned**.
 
     Return type: timestamp with time zone
 
 -   pg\_stat\_get\_backend\_client\_addr\(integer\)
 
-    Description: IP address of the client connected to the given server process. If the connection is over a Unix domain socket, or if the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
+    Description: Specifies the IP address of the client connected to the given server process. If the connection is over a Unix domain socket, or if the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
 
     Return type: inet
 
 -   pg\_stat\_get\_backend\_client\_port\(integer\)
 
-    Description: TCP port number of the client connected to the given server process. If the connection is over a Unix domain socket,  **-1**  will be returned. If the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
+    Description: Specifies the TCP port number of the client connected to the given server process. If the connection is over a Unix domain socket,  **-1**  will be returned. If the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
 
     Return type: integer
 
 -   pg\_stat\_get\_bgwriter\_timed\_checkpoints\(\)
 
-    Description: The number of times the background writer has started timed checkpoints \(because the  **checkpoint\_timeout**  time has expired\)
+    Description: Specifies the time when the background writer starts scheduled checkpoints \(because the  **checkpoint\_timeout**  time has expired\).
 
     Return type: bigint
 
 -   pg\_stat\_get\_bgwriter\_requested\_checkpoints\(\)
 
-    Description: The number of times the background writer has started checkpoints based on requests from the backend because  **checkpoint\_segments**  has been exceeded or the  **CHECKPOINT**  command has been executed
+    Description: Specifies the time when the background writer starts checkpoints based on requests from the backend because  **checkpoint\_segments**  has been exceeded or the  **CHECKPOINT**  command has been executed.
 
     Return type: bigint
 
 -   pg\_stat\_get\_bgwriter\_buf\_written\_checkpoints\(\)
 
-    Description: The number of buffers written by the background writer during checkpoints
+    Description: Specifies the number of buffers written by the background writer during checkpoints.
 
     Return type: bigint
 
 -   pg\_stat\_get\_bgwriter\_buf\_written\_clean\(\)
 
-    Description: The number of buffers written by the background writer for routine cleaning of dirty pages
+    Description: Specifies the number of buffers written by the background writer for routine cleaning of dirty pages.
 
     Return type: bigint
 
 -   pg\_stat\_get\_bgwriter\_maxwritten\_clean\(\)
 
-    Description: The number of times the background writer has stopped its cleaning scan because it has written more buffers than specified in the  **bgwriter\_lru\_maxpages**  parameter
+    Description: Specifies the time when the background writer stops its cleaning scan because it has written more buffers than specified in the  **bgwriter\_lru\_maxpages**  parameter.
 
     Return type: bigint
 
 -   pg\_stat\_get\_buf\_written\_backend\(\)
 
-    Description: The number of buffers written by the backend because they needed to allocate a new buffer
+    Description: Specifies the number of buffers written by the backend because they need to allocate a new buffer.
 
     Return type: bigint
 
 -   pg\_stat\_get\_buf\_alloc\(\)
 
-    Description: The total number of buffer allocations
+    Description: Specifies the total number of the allocated buffers.
 
     Return type: bigint
 
@@ -1338,6 +1452,24 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
+-   mot\_global\_memory\_detail\(\)
+
+    Description: Checks the size of the MOT global memory, including data and indexes.
+
+    Return type: record
+
+-   mot\_local\_memory\_detail\(\)
+
+    Description: Checks the size of the MOT local memory, including data and indexes.
+
+    Return type: record
+
+-   mot\_session\_memory\_detail\(\)
+
+    Description: Checks the MOT memory usage of all sessions.
+
+    Return type: record
+
 -   total\_memory\(\)
 
     Description: Obtains the size of the virtual memory used by the current node, in KB.
@@ -1362,19 +1494,19 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_bad\_block\_clear\(\)
 
-    Description: Deletes the page and CU damage information that is read and recorded on the node. \(System administrator rights are required.\)
+    Description: Deletes the page and CU damage information that is read and recorded on the node \(requires system administrator permissions\).
 
     Return type: void
 
 -   gs\_respool\_exception\_info\(pool text\)
 
-    Description: Queries for the query rule of a specified resource pool.
+    Description: Queries the query rule of a specified resource pool.
 
     Return type: record
 
 -   gs\_control\_group\_info\(pool text\)
 
-    Description: Queries for information about Cgroups associated with a resource pool.
+    Description: Queries information about Cgroups associated with a resource pool.
 
     Return type: record
 
@@ -1442,7 +1574,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="28.44715528447155%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p188871519125814"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p188871519125814"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p188871519125814"></a>0</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1988821914586"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1988821914586"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1988821914586"></a>Allocation raio in Timeshare</p>
+    <td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1988821914586"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1988821914586"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1988821914586"></a>Allocation ratio in Timeshare</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row1970717163583"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p47079162588"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p47079162588"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p47079162588"></a>cpucores</p>
@@ -1535,42 +1667,42 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p15984206380"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p15984206380"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p15984206380"></a>910</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p075814565503"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p075814565503"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p075814565503"></a>Number of background transactions that were committed</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p075814565503"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p075814565503"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p075814565503"></a>Number of backend transactions that were committed</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row19598192013815"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p559812053810"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p559812053810"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p559812053810"></a>bg_rollback_counter</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p16598152020386"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p16598152020386"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p16598152020386"></a>0</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p9769159175019"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p9769159175019"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p9769159175019"></a>Number of background transactions that were rolled back</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p9769159175019"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p9769159175019"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p9769159175019"></a>Number of backend transactions that were rolled back</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row337414493389"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p133752049173811"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p133752049173811"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p133752049173811"></a>bg_resp_min</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p183757493389"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p183757493389"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p183757493389"></a>97</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1192231165119"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1192231165119"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1192231165119"></a>Minimum response time of background transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p1192231165119"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1192231165119"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p1192231165119"></a>Minimum response time of backend transactions (unit: μs)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row45313548389"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p65355419381"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65355419381"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p65355419381"></a>bg_resp_max</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p175345413382"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p175345413382"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p175345413382"></a>678080687</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p76633614519"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p76633614519"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p76633614519"></a>Maximum response time of background transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p76633614519"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p76633614519"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p76633614519"></a>Maximum response time of backend transactions (unit: μs)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row225795743818"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p2257857123819"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p2257857123819"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p2257857123819"></a>bg_resp_avg</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p3257257143815"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p3257257143815"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p3257257143815"></a>327847884</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p13572131118512"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p13572131118512"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p13572131118512"></a>Average response time of background transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p13572131118512"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p13572131118512"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p13572131118512"></a>Average response time of backend transactions (unit: μs)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_en-us_topic_0237121998_row35321851114514"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p7533951154513"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7533951154513"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7533951154513"></a>bg_resp_total</p>
     </td>
     <td class="cellrowborder" valign="top" width="28.357164283571645%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p7533351194520"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7533351194520"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p7533351194520"></a>298341575300</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p17865151410518"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17865151410518"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17865151410518"></a>Total response time of background transactions (unit: μs)</p>
+    <td class="cellrowborder" valign="top" width="45.26547345265474%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283136951_en-us_topic_0237121998_p17865151410518"><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17865151410518"></a><a name="en-us_topic_0283136951_en-us_topic_0237121998_p17865151410518"></a>Total response time of backend transactions (unit: μs)</p>
     </td>
     </tr>
     </tbody>
@@ -1666,7 +1798,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_instance\_time\(\)
 
-    Description: Provides the time consumption of each key phase of openGauss. To query this function, you must have the  **sysadmin**  permission.
+    Description: Provides the time consumed in each key phase in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -1676,15 +1808,14 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-- reset\_unique\_sql\(text, text, bigint\)
+-   reset\_unique\_sql\(text, text, bigint\)
 
-  Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be **global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
+    Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be** global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
 
-  Return type: Boolean
+    Return type: Boolean
 
-  > ![](public_sys-resources/icon-note.gif)NOTE
-  >
-  > The node in this function refers to a distributed node,openGauss is a centralized database.The global and local functions are the same, and only take effect on the current node.The value does not support BY_CNID.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >This function involves distributed nodes. Currently, openGauss is a centralized database, for which the function of the value  **global**  is the same as that of the value  **local**  and the second parameter cannot set to be  **BY\_CNID**.
 
 -   get\_instr\_wait\_event\(NULL\)
 
@@ -1694,7 +1825,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   get\_instr\_user\_login\(\)
 
-    Description: Obtains the number of user login and logout times of the current node as a user with the  **sysadmin**  permission.
+    Description: Obtains the number of user login and logout times on the current node. Only users with the  **sysadmin**  or  **monitor admin**  permission can execute this function.
 
     Return type: record
 
@@ -1712,7 +1843,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_os\_runtime\(\)
 
-    Description: Displays the running status of the current OS. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the running status of the current operating system. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -1775,13 +1906,144 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_wlm\_session\_info\(int flag\)
 
-    Description: Obtains top SQL query statement-level statistics recorded in the current memory. If the input parameter is not 0, the information is cleared from the memory. Only the system admin and monitor admin users can execute this function.
+    Description: Obtains top SQL query statement-level statistics recorded in the current memory. If the input parameter is not 0, the information is cleared from the memory. Only users with the  **system admin**  or  **monitor admin**  permission can execute this function.
 
     Return type: record
 
+-   gs\_paxos\_stat\_replication\(\)
+
+    Description: Queries the standby server information on the primary server. Currently, only the centralized DCF mode is supported.
+
+    Return type: setofrecord
+
+    The following table describes return columns.
+
+    <a name="table16852919405"></a>
+    <table><tbody><tr id="row1665112920400"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p136552919401"><a name="p136552919401"></a><a name="p136552919401"></a>Column</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1659293405"><a name="p1659293405"></a><a name="p1659293405"></a>Type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p136592910407"><a name="p136592910407"></a><a name="p136592910407"></a>Description</p>
+    </td>
+    </tr>
+    <tr id="row965132944017"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p106520295408"><a name="p106520295408"></a><a name="p106520295408"></a>local_role</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1565162974013"><a name="p1565162974013"></a><a name="p1565162974013"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p1165129154019"><a name="p1165129154019"></a><a name="p1165129154019"></a>Role of the node that sends logs</p>
+    </td>
+    </tr>
+    <tr id="row1666142974018"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p166582924019"><a name="p166582924019"></a><a name="p166582924019"></a>peer_role</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p765182954019"><a name="p765182954019"></a><a name="p765182954019"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p4665297408"><a name="p4665297408"></a><a name="p4665297408"></a>Role of the node that receives logs</p>
+    </td>
+    </tr>
+    <tr id="row06612298408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p566182912401"><a name="p566182912401"></a><a name="p566182912401"></a>local_dcf_role</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1866152918409"><a name="p1866152918409"></a><a name="p1866152918409"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p96622911403"><a name="p96622911403"></a><a name="p96622911403"></a>DCF role of the node that sends logs</p>
+    </td>
+    </tr>
+    <tr id="row1066142984013"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p186612299403"><a name="p186612299403"></a><a name="p186612299403"></a>peer_dcf_role</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p106622984019"><a name="p106622984019"></a><a name="p106622984019"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p56620298405"><a name="p56620298405"></a><a name="p56620298405"></a>DCF role of the node that receives logs</p>
+    </td>
+    </tr>
+    <tr id="row96619291401"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p1666729144013"><a name="p1666729144013"></a><a name="p1666729144013"></a>peer_state</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p10669292402"><a name="p10669292402"></a><a name="p10669292402"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p2066429144015"><a name="p2066429144015"></a><a name="p2066429144015"></a>Status of the node that receives logs</p>
+    </td>
+    </tr>
+    <tr id="row16619291400"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p166202920402"><a name="p166202920402"></a><a name="p166202920402"></a>sender_write_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p5663292405"><a name="p5663292405"></a><a name="p5663292405"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p10661294406"><a name="p10661294406"></a><a name="p10661294406"></a>Location in the Xlog buffer where the node that sends logs is written</p>
+    </td>
+    </tr>
+    <tr id="row15671729154013"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p106613299405"><a name="p106613299405"></a><a name="p106613299405"></a>sender_commit_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p86642916405"><a name="p86642916405"></a><a name="p86642916405"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p15661229164014"><a name="p15661229164014"></a><a name="p15661229164014"></a>Consistency point reached for the DCF logs of the node that sends logs</p>
+    </td>
+    </tr>
+    <tr id="row2067229184017"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p567152910409"><a name="p567152910409"></a><a name="p567152910409"></a>sender_flush_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p136717297405"><a name="p136717297405"></a><a name="p136717297405"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p16752912402"><a name="p16752912402"></a><a name="p16752912402"></a>Location in the Xlog disk where the node that sends logs is written</p>
+    </td>
+    </tr>
+    <tr id="row206719299402"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p186772984013"><a name="p186772984013"></a><a name="p186772984013"></a>sender_replay_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p067629134011"><a name="p067629134011"></a><a name="p067629134011"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p1767142910409"><a name="p1767142910409"></a><a name="p1767142910409"></a>Location where the node that sends logs replays logs</p>
+    </td>
+    </tr>
+    <tr id="row86719290408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p1967112964016"><a name="p1967112964016"></a><a name="p1967112964016"></a>receiver_write_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p136762984011"><a name="p136762984011"></a><a name="p136762984011"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p106713297406"><a name="p106713297406"></a><a name="p106713297406"></a>Location in the Xlog buffer where the node that receives logs is written</p>
+    </td>
+    </tr>
+    <tr id="row20671829124015"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p26710290408"><a name="p26710290408"></a><a name="p26710290408"></a>receiver_commit_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p156715294409"><a name="p156715294409"></a><a name="p156715294409"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p1067192917402"><a name="p1067192917402"></a><a name="p1067192917402"></a>Consistency point reached for the DCF logs of the node that receives logs</p>
+    </td>
+    </tr>
+    <tr id="row1467142910409"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p116722918403"><a name="p116722918403"></a><a name="p116722918403"></a>receiver_flush_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p19671629154013"><a name="p19671629154013"></a><a name="p19671629154013"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p126712912406"><a name="p126712912406"></a><a name="p126712912406"></a>Location in the Xlog disk where the node that receives logs is written</p>
+    </td>
+    </tr>
+    <tr id="row126872934013"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p968162914012"><a name="p968162914012"></a><a name="p968162914012"></a>receiver_replay_location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p568529174019"><a name="p568529174019"></a><a name="p568529174019"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p36842994013"><a name="p36842994013"></a><a name="p36842994013"></a>Location where the node that receives logs replays Xlogs</p>
+    </td>
+    </tr>
+    <tr id="row1868129124019"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p1168829204020"><a name="p1168829204020"></a><a name="p1168829204020"></a>sync_percent</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p116892994017"><a name="p116892994017"></a><a name="p116892994017"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p7681929164017"><a name="p7681929164017"></a><a name="p7681929164017"></a>Synchronization percentage</p>
+    </td>
+    </tr>
+    <tr id="row1468529144020"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p18681298406"><a name="p18681298406"></a><a name="p18681298406"></a>dcf_run_mode</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p668102934015"><a name="p668102934015"></a><a name="p668102934015"></a>int4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p156862934015"><a name="p156862934015"></a><a name="p156862934015"></a>DCF synchronization mode</p>
+    </td>
+    </tr>
+    <tr id="row26822974013"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p10681329164013"><a name="p10681329164013"></a><a name="p10681329164013"></a>channel</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p136862916408"><a name="p136862916408"></a><a name="p136862916408"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p56816298407"><a name="p56816298407"></a><a name="p56816298407"></a>Channel information</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 -   gs\_wlm\_get\_resource\_pool\_info\(int\)
 
-    Description: Obtains the resource usage statistics of all users,The input parameter is of type int and can be any int value or null.
+    Description: Obtains resource usage statistics of all users. The input parameter can be any value of the INT type or be null.
 
     Return type: record
 
@@ -1793,7 +2055,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_get\_user\_info\(int\)
 
-    Description: Obtains information about all users，The input parameter is of type int and can be any int value or null.You must have the  **sysadmin**  permission.
+    Description: Obtains information about all users. The input parameter can be any value of the INT type or be null. Only users with the  **sysadmin**  permission can execute this function.
 
     Return type: record
 
@@ -1823,7 +2085,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_session\_respool\(bigint\)
 
-    Description: Obtains the session resource pool information about all background threads.The input parameter is bigint type and can be any bigint value or null.
+    Description: Obtains the session resource pool information about all backend threads. The input parameter can be any value of the bigint type or can be null.
 
     Return type: record
 
@@ -1835,6 +2097,18 @@ Statistics information functions are divided into the following two categories: 
 
     Description: This API has been discarded and is unavailable currently.
 
+-   gs\_io\_wait\_status\(\)
+
+    Description: This API does not support single-node systems or centralized systems and is unavailable currently.
+
+-   global\_stat\_get\_hotkeys\_info\(\)
+
+    Description: Obtains the statistics of hot keys in the entire cluster. This API does not support single-node systems or centralized systems and is unavailable currently.
+
+-   global\_stat\_clean\_hotkeys\(\)
+
+    Description: Clears statistics on hot keys in the entire cluster. This API does not support single-node systems or centralized systems and is unavailable currently.
+
 
 -   DBE\_PERF.get\_global\_session\_stat\_activity\(\)
 
@@ -1844,7 +2118,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_thread\_wait\_status\(\)
 
-    Description: Displays the block waiting status of backend threads and auxiliary threads on all nodes. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the block waiting status of backend threads and auxiliary threads on all nodes. To query this function, you must have the  **sysadmin**  or  **monitoradmin**  permission.
 
     Return type: record
 
@@ -1880,7 +2154,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_statement\_complex\_runtime\(\)
 
-    Description: Displays the real-time information of complex queries on the primary database node of the current user. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the real-time information of complex queries on the primary database node of the current user. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
@@ -1916,7 +2190,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_local\_toastname\_and\_toastindexname\(\)
 
-    Description: Provides the mapping between the name and index of the local TOAST table and its associated tables, you must have the  **sysadmin**  permission.
+    Description: Provides the mapping between the name and index of the local TOAST table and its associated table. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -1934,7 +2208,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_statio\_all\_tables\(\)
 
-    Description: Displays the I/O statistics about each table in databases on each node as a user with the  **sysadmin**  permission.
+    Description: Displays the I/O statistics about each table in databases on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -1946,7 +2220,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_local\_toast\_relation\(\)
 
-    Description: Provides the mapping between the name of the local toast table and its associated table. To query this function, you must have the  **sysadmin**  permission.
+    Description: Provides the mapping between the name of the local TOAST table and its associated table. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -2000,7 +2274,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_statio\_user\_tables\(\)
 
-    Description: Displays the displays I/O status information about all user relationship tables in namespaces on each node. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the I/O status information about all user relationship tables in namespaces on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -2024,7 +2298,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_summary\_stat\_all\_indexes\(\)
 
-    Description: Collects statistics on each index in all databases on all nodes. To query this function, you must have the  **sysadmin**  permission.
+    Description: Collects statistics of each index in all databases on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -2126,13 +2400,13 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_stat\_user\_functions\(\)
 
-    Description: Displays the transaction status information of customized functions in the namespaces on all nodes. To query the function, you must have the  **sysadmin**  permission.
+    Description: Displays the transaction status information of customized functions in the namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_stat\_xact\_user\_functions\(\)
 
-    Description: Collects statistics about the transaction status information of customized functions in the namespaces on all nodes. To query the function, you must have the  **sysadmin**  permission.
+    Description: Collects statistics about the transaction status information of customized functions in the namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -2156,13 +2430,13 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_locks\(\)
 
-    Description: Displays lock information of all nodes. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays lock information of all nodes. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_replication\_slots\(\)
 
-    Description: Displays logical replication information on all nodes. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays logical replication information on all nodes. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
@@ -2174,7 +2448,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_replication\_stat\(\)
 
-    Description: Displays information about log synchronization status on each node, such as the locations where the sender sends logs and where the receiver receives logs. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays information about log synchronization status on each node, such as the locations where the sender sends logs and where the receiver receives logs. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
@@ -2204,13 +2478,13 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_summary\_statement\(\)
 
-    Description: Displays the status information of the historically-executed statements on each node. To query this function, you must have the  **sysadmin**  or  **monitor admin**  permission.
+    Description: Displays the status information of the historically-executed statements on each node. To query this function, you must have the  **sysadmin**  or  **monitoradmin**  permission.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_statement\_count\(\)
 
-    Description: Displays the number of SELECT, UPDATE, INSERT, and DELETE statements and response time information \(TOTAL, AVG, MIN, and MAX\) on each node. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the number of  **SELECT**,  **UPDATE**,  **INSERT**, and  **DELETE**  statements and response time information \(TOTAL, AVG, MIN, and MAX\) on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -2266,7 +2540,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_user\_resource\_info\(name text\)
 
-    Description: Queries for a user's resource quota and resource usage.
+    Description: Queries a user's resource quota and resource usage.
 
     Return type: record
 
@@ -2284,7 +2558,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_status\(int8\)
 
-    Description: Allows you to test the block waiting status about the backend thread and auxiliary thread of the current instance.
+    Description: Tests the block waiting status about the backend thread and auxiliary thread of the current instance.
 
     Return type: record
 
@@ -2302,7 +2576,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.global\_threadpool\_status\(\)
 
-    Description: Displays the status of worker threads and sessions in thread pools on all nodes. For details about the columns returned by the function, see  [GLOBAL\_THREADPOOL\_STATUS](GLOBAL_THREADPOOL_STATUS.md).
+    Description: Displays the status of worker threads and sessions in thread pools on all nodes. For details about the columns returned by the function, see  [GLOBAL\_THREADPOOL\_STATUS](en-us_topic_0289900218.md).
 
     Return type: record
 
@@ -2314,7 +2588,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pv\_os\_run\_info
 
-    Description: Displays the running status of the current OS. For details about the fields, see  [GS\_OS\_RUN\_INFO](GS_OS_RUN_INFO.md).
+    Description: Displays the running status of the current OS. For details about the columns, see  [GS\_OS\_RUN\_INFO](gs_os_run_info.md).
 
     Parameter: nan
 
@@ -2322,17 +2596,17 @@ Statistics information functions are divided into the following two categories: 
 
 -   pv\_session\_stat
 
-    Description: Collects session status information by session thread or AutoVacuum thread. For details about the fields, see  [GS\_SESSION\_STAT](GS_SESSION_STAT.md).
+    Description: Collects session status information by session thread or AutoVacuum thread. For details about the columns, see  [GS\_SESSION\_STAT](gs_session_stat.md).
 
-    Parameter: nan
+    Parameter:  **nan**
 
     Return type: SETOF record
 
 -   pv\_session\_time
 
-    Description: Collects statistics on the running time of session threads and the time consumed in each execution phase. For details about the fields, see  [GS\_SESSION\_TIME](GS_SESSION_TIME.md).
+    Description: Collects statistics on the running time of session threads and the time consumed in each execution phase. For details about the columns, see  [GS\_SESSION\_TIME](gs_session_time.md).
 
-    Parameter: nan
+    Parameter:  **nan**
 
     Return type: SETOF record
 
@@ -2340,7 +2614,7 @@ Statistics information functions are divided into the following two categories: 
 
     Description: Collects statistics on the total amount of data written to temporary files through database query. All temporary files are counted, regardless of why the temporary file was created, and regardless of the  **log\_temp\_files**  setting.
 
-    Parameter: oid
+    Parameter:  **oid**
 
     Return type: bigint
 
@@ -2348,10 +2622,15 @@ Statistics information functions are divided into the following two categories: 
 
     Description: Queries the number of temporary files created in the database. All temporary files are counted, regardless of why the temporary file was created \(for example, sorting or hashing\), and regardless of the  **log\_temp\_files**  setting.
 
-    Parameter: oid
+    Parameter:  **oid**
 
     Return type: bigint
 
+-   remote\_candidate\_stat\(\)
+
+    Description: Displays the checkpoint information and log flushing information about all instances in the database \(except the current node\). Centralized systems are not supported.
+
+    Return type: record
 
 
 -   dbe\_perf.gs\_stat\_activity\_timeout\(int\)
@@ -2373,7 +2652,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p10757123103619"><a name="p10757123103619"></a><a name="p10757123103619"></a>name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p127571931193619"><a name="p127571931193619"></a><a name="p127571931193619"></a>Name of the database to which a user session is connected.</p>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p127571931193619"><a name="p127571931193619"></a><a name="p127571931193619"></a>Name of the database to which a user session is connected</p>
     </td>
     </tr>
     <tr id="row1475716311369"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p10757183143616"><a name="p10757183143616"></a><a name="p10757183143616"></a>pid</p>
@@ -2408,48 +2687,36 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p187582314366"><a name="p187582314366"></a><a name="p187582314366"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p9958411164014"><a name="p9958411164014"></a><a name="p9958411164014"></a>Query that is being executed on the background.</p>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p9958411164014"><a name="p9958411164014"></a><a name="p9958411164014"></a>Query that is being executed on the backend</p>
     </td>
     </tr>
     <tr id="row1775813313364"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p8758193119369"><a name="p8758193119369"></a><a name="p8758193119369"></a>xact_start</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p8758331143619"><a name="p8758331143619"></a><a name="p8758331143619"></a>timestamptz</p>
     </td>
-    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p4758133153614"><a name="p4758133153614"></a><a name="p4758133153614"></a>Time when the current transaction is started.</p>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p4758133153614"><a name="p4758133153614"></a><a name="p4758133153614"></a>Time when the current transaction is started</p>
     </td>
     </tr>
     <tr id="row1675818318362"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p57581331123617"><a name="p57581331123617"></a><a name="p57581331123617"></a>query_start</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p8394162712488"><a name="p8394162712488"></a><a name="p8394162712488"></a>timestamptz</p>
     </td>
-    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p890615614815"><a name="p890615614815"></a><a name="p890615614815"></a>Time when the current query starts.</p>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p890615614815"><a name="p890615614815"></a><a name="p890615614815"></a>Time when the current query starts</p>
     </td>
     </tr>
     <tr id="row207586318365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p7758331163615"><a name="p7758331163615"></a><a name="p7758331163615"></a>query_id</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p1539104464813"><a name="p1539104464813"></a><a name="p1539104464813"></a>bigint</p>
     </td>
-    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p121591542134811"><a name="p121591542134811"></a><a name="p121591542134811"></a>Query statement ID.</p>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p121591542134811"><a name="p121591542134811"></a><a name="p121591542134811"></a>Query statement ID</p>
     </td>
     </tr>
     </tbody>
     </table>
 
--   DBE\_PERF.get\_wlm\_controlgroup\_ng\_config\(\)
-
-    Description: Collects information about all Cgroups in the database. After a cluster is created, by default, you must have the  **monadmin**  permission to query this function.
-
-    Return type: record
-
--   DBE\_PERF.get\_wlm\_user\_resource\_runtime\(\)
-
-    Description: Displays the resource usage of all users. This parameter is valid only when  **use\_workload\_manager**  is set to  **on**. After a cluster is created, by default, you must have the  **monadmin**  permission to query this function.
-
-    Return type: record
-
 -   gs\_wlm\_user\_resource\_info\(name text\)
 
-    Description: Queries for a user's resource quota and resource usage. Common users can query only their own information. Administrators can query information about all users.
+    Description: Queries a user's resource quota and resource usage. Common users can query only their own information. Administrators can query information about all users.
 
     Return type: record
 
@@ -2457,7 +2724,7 @@ Statistics information functions are divided into the following two categories: 
 
     Description: Saves the historical monitoring data of the current instance persistently.
 
-    Parameter: nan
+    Parameter:  **nan**
 
     Return type: integer
 
@@ -2466,11 +2733,11 @@ Statistics information functions are divided into the following two categories: 
     Description: Collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to Postgres and Stream threads on DNs for tasks currently executed by users.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If  **enable\_memory\_limit=off**, this function cannot be used.
+    >If  **[enable\_memory\_limit](en-us_topic_0289900310.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)**  is set to  **off**, this function cannot be used.
 
     Return type: record
 
-    **Table  12**  Return value description
+    **Table  8**  Return value description
 
     <a name="en-us_topic_0059778767_t953e37afd21641229bbccf7b10f8ae94"></a>
     <table><thead align="left"><tr id="en-us_topic_0059778767_rad825274bf5e49cebafef1d184ef1c6c"><th class="cellrowborder" valign="top" width="19.23%" id="mcps1.2.4.1.1"><p id="en-us_topic_0059778767_ae6a72d70e64d4cc986cdaa013c32cdb7"><a name="en-us_topic_0059778767_ae6a72d70e64d4cc986cdaa013c32cdb7"></a><a name="en-us_topic_0059778767_ae6a72d70e64d4cc986cdaa013c32cdb7"></a>Name</p>
@@ -2514,7 +2781,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_persistent\_user\_resource\_info\(\)
 
-    Description: Archives all user resource usage statistics to the  **gs\_wlm\_user\_resource\_history**  system catalog.
+    Description: Archives all user resource usage statistics to the  **gs\_wlm\_user\_resource\_history**  system catalog. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
@@ -2523,5 +2790,105 @@ Statistics information functions are divided into the following two categories: 
     Description: Clears top SQL operator-level statistics recorded in the current memory. If the input parameter is greater than 0, the information is archived to  **gs\_wlm\_operator\_info**  and  **gs\_wlm\_ec\_operator\_info**. Otherwise, the information is not archived. Only users with the  **sysadmin**  permission can execute this function.
 
     Return type: int
+
+-   GS\_ALL\_NODEGROUP\_CONTROL\_GROUP\_INFO\(text\)
+
+    Description: Provides Cgroup information for all logical database instances. Before invoking this function, you need to specify the name of a logical database instance to be queried. For example, to query the Cgroup information for the installation logical database instance, run the following command:
+
+    ```
+    SELECT * FROM GS_ALL_NODEGROUP_CONTROL_GROUP_INFO('installation')
+    ```
+
+    Return type: record
+
+    The following table describes return columns.
+
+    <a name="t8f0334486f934453827d563b90c86711"></a>
+    <table><thead align="left"><tr id="r2a0276b542d54fd0808927c2c54b0fc6"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="a5579cdd06a5645b3862144b2131a8649"><a name="a5579cdd06a5645b3862144b2131a8649"></a><a name="a5579cdd06a5645b3862144b2131a8649"></a>Name</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.4.1.2"><p id="a1f7bf547d07e4656a132c0e34ba635ca"><a name="a1f7bf547d07e4656a132c0e34ba635ca"></a><a name="a1f7bf547d07e4656a132c0e34ba635ca"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.3"><p id="a8447f6b31ba54199a8224fea8463c23d"><a name="a8447f6b31ba54199a8224fea8463c23d"></a><a name="a8447f6b31ba54199a8224fea8463c23d"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="rf8b75b68e6a24e29931035876b3c3dfb"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="a8f18d3f0e5cd44d096020df47ca28e00"><a name="a8f18d3f0e5cd44d096020df47ca28e00"></a><a name="a8f18d3f0e5cd44d096020df47ca28e00"></a>name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="aecd744296d7d4b0397b2fe1fd923b6bf"><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="a8579d68414bb40968ecb2f54fd50bfa3"><a name="a8579d68414bb40968ecb2f54fd50bfa3"></a><a name="a8579d68414bb40968ecb2f54fd50bfa3"></a>Cgroup name.</p>
+    </td>
+    </tr>
+    <tr id="r685dd7e8104e4020b260711d0d1cf9a9"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="ad7f3b45edf4748ef8bf45be74968b4ac"><a name="ad7f3b45edf4748ef8bf45be74968b4ac"></a><a name="ad7f3b45edf4748ef8bf45be74968b4ac"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="a0b778f8c6817439484fd5f0cb1d91e8b"><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="abd4a7662d8784ec1890fd6e25a2ce17d"><a name="abd4a7662d8784ec1890fd6e25a2ce17d"></a><a name="abd4a7662d8784ec1890fd6e25a2ce17d"></a>Cgroup type.</p>
+    </td>
+    </tr>
+    <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="a09bb26374b104b3fb29bbe2a80ef226a"><a name="a09bb26374b104b3fb29bbe2a80ef226a"></a><a name="a09bb26374b104b3fb29bbe2a80ef226a"></a>gid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="abe1aa36777e444c48c10c68dea6d28bd"><a name="abe1aa36777e444c48c10c68dea6d28bd"></a><a name="abe1aa36777e444c48c10c68dea6d28bd"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="a08d938eccee84d42b9018a66f6b6784c"><a name="a08d938eccee84d42b9018a66f6b6784c"></a><a name="a08d938eccee84d42b9018a66f6b6784c"></a>Cgroup ID.</p>
+    </td>
+    </tr>
+    <tr id="ra3bccb8528cd408aa54f8e30557c0359"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="ac1f1c391b720448fb6cff2861dc151b6"><a name="ac1f1c391b720448fb6cff2861dc151b6"></a><a name="ac1f1c391b720448fb6cff2861dc151b6"></a>classgid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p84741447191914"><a name="p84741447191914"></a><a name="p84741447191914"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="a83dfda58a9ac418fab57f167cd4a8244"><a name="a83dfda58a9ac418fab57f167cd4a8244"></a><a name="a83dfda58a9ac418fab57f167cd4a8244"></a>ID of the <strong id="b181063473442"><a name="b181063473442"></a><a name="b181063473442"></a>Class</strong> cgroup where a <strong id="b171121476449"><a name="b171121476449"></a><a name="b171121476449"></a>Workload</strong> cgroup belongs.</p>
+    </td>
+    </tr>
+    <tr id="rd7538143f1a648d2ae003ee563237226"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="adad82d644319412cb3a8d9cb60daa836"><a name="adad82d644319412cb3a8d9cb60daa836"></a><a name="adad82d644319412cb3a8d9cb60daa836"></a>class</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="a0a0c18f59f1a47bdb17413bbe1716f3a"><a name="a0a0c18f59f1a47bdb17413bbe1716f3a"></a><a name="a0a0c18f59f1a47bdb17413bbe1716f3a"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="a2fe293248c694ffd9fe3f04bdf3a3f6d"><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><strong id="b118725334413"><a name="b118725334413"></a><a name="b118725334413"></a>Class</strong> cgroup.</p>
+    </td>
+    </tr>
+    <tr id="ra831355d65f64e7b92f51f84021f4947"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="a71cd5950d6ef4ea888015a515726ccf1"><a name="a71cd5950d6ef4ea888015a515726ccf1"></a><a name="a71cd5950d6ef4ea888015a515726ccf1"></a>workload</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="a9193af9c57084a81b157fec2c2935f90"><a name="a9193af9c57084a81b157fec2c2935f90"></a><a name="a9193af9c57084a81b157fec2c2935f90"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="a8900dd32319f4d53937621db1727f5cf"><a name="a8900dd32319f4d53937621db1727f5cf"></a><a name="a8900dd32319f4d53937621db1727f5cf"></a><strong id="b3659195811442"><a name="b3659195811442"></a><a name="b3659195811442"></a>Workload</strong> cgroup.</p>
+    </td>
+    </tr>
+    <tr id="rdb4c5c3a41fb4325a8c11787c3af82b1"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="ab44539456dc4418bbfdc32a89a1f2851"><a name="ab44539456dc4418bbfdc32a89a1f2851"></a><a name="ab44539456dc4418bbfdc32a89a1f2851"></a>shares</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="a17a7c300ce604cd380d8340e5bfa63c3"><a name="a17a7c300ce604cd380d8340e5bfa63c3"></a><a name="a17a7c300ce604cd380d8340e5bfa63c3"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="aad54cacd015d4619bf9acb9cb4736cd3"><a name="aad54cacd015d4619bf9acb9cb4736cd3"></a><a name="aad54cacd015d4619bf9acb9cb4736cd3"></a>CPU quota allocated to the cgroup.</p>
+    </td>
+    </tr>
+    <tr id="r47bd7dff24334c239af7266eeeb52c2b"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="a97cfc7c8c5c8412aa7b03489d5df0b8a"><a name="a97cfc7c8c5c8412aa7b03489d5df0b8a"></a><a name="a97cfc7c8c5c8412aa7b03489d5df0b8a"></a>limits</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="ac0400ce695b945b89702ff50805ac554"><a name="ac0400ce695b945b89702ff50805ac554"></a><a name="ac0400ce695b945b89702ff50805ac554"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="a04d603fa66434a178026e29847b76f40"><a name="a04d603fa66434a178026e29847b76f40"></a><a name="a04d603fa66434a178026e29847b76f40"></a>Limit of CPUs allocated to a cgroup.</p>
+    </td>
+    </tr>
+    <tr id="row5504610171814"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p105051710131812"><a name="p105051710131812"></a><a name="p105051710131812"></a>wdlevel</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p20505010181817"><a name="p20505010181817"></a><a name="p20505010181817"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p25051510141815"><a name="p25051510141815"></a><a name="p25051510141815"></a><strong id="b103001115144519"><a name="b103001115144519"></a><a name="b103001115144519"></a>Workload</strong> cgroup level.</p>
+    </td>
+    </tr>
+    <tr id="row15968121961816"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p149683193188"><a name="p149683193188"></a><a name="p149683193188"></a>cpucores</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p14968519121811"><a name="p14968519121811"></a><a name="p14968519121811"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p19681196183"><a name="p19681196183"></a><a name="p19681196183"></a>Usage of CPU cores in a cgroup.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   gs\_total\_nodegroup\_memory\_detail
+
+    Description: Returns information about the memory used by the current logical database, in MB.
+
+    Return type: SETOF record
 
 

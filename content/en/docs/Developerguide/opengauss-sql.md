@@ -1,6 +1,6 @@
-# openGauss SQL<a name="EN-US_TOPIC_0242370408"></a>
+# openGauss SQL<a name="EN-US_TOPIC_0289900158"></a>
 
-## What Is SQL?<a name="en-us_topic_0237121924_section07961139165815"></a>
+## What Is SQL?<a name="en-us_topic_0283136913_en-us_topic_0237121924_section07961139165815"></a>
 
 SQL is a standard computer language used to control the access to databases and manage data in databases.
 
@@ -14,7 +14,7 @@ SQL provides different statements to enable you to:
 
 SQL consists of commands and functions that are used to manage databases and database objects. SQL can also forcibly implement the rules for data types, expressions, and texts. Therefore,  [SQL Reference](sql-reference.md)  describes data types, expressions, functions, and operators in addition to SQL syntax.
 
-## Development of SQL Standards<a name="en-us_topic_0237121924_en-us_topic_0059778020_sf8ba5f5ea8ce4cd3b59402dcdc0f9d15"></a>
+## Development of SQL Standards<a name="en-us_topic_0283136913_en-us_topic_0237121924_en-us_topic_0059778020_sf8ba5f5ea8ce4cd3b59402dcdc0f9d15"></a>
 
 The development history of SQL standards is as follows:
 
@@ -25,7 +25,7 @@ The development history of SQL standards is as follows:
 -   2003: ISO/IEC 9075:2003, SQL:2003 \(SQL4\)
 -   2011: ISO/IEC 9075:200N, SQL:2011 \(SQL5\)
 
-## SQL Standards Supported by openGauss<a name="en-us_topic_0237121924_en-us_topic_0059778020_sd52420ad5d4f4fbd9461a8c937e6f469"></a>
+## SQL Standards Supported by openGauss<a name="en-us_topic_0283136913_en-us_topic_0237121924_en-us_topic_0059778020_sd52420ad5d4f4fbd9461a8c937e6f469"></a>
 
 openGauss supports major SQL2, SQL3, and SQL4 features by default.
 

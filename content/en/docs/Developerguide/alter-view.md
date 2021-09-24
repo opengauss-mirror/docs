@@ -79,11 +79,11 @@ Only the view owner or a user granted with the ALTER permission can run the  **A
 
     Specifies an optional list of names to be used for columns of the view. If not given, the column names are deduced from the query.
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the naming convention.
 
 -   **SET/DROP DEFAULT**
 
-    Sets or deletes the default value of a column. this parameter does not take effect.
+    Sets or deletes the default value of a column. This parameter does not take effect.
 
 -   **new\_owner**
 
@@ -110,21 +110,21 @@ Only the view owner or a user granted with the ALTER permission can run the  **A
 
 ```
 -- Create a view consisting of rows with c_customer_sk less than 150.
-postgres=# CREATE VIEW tpcds.customer_details_view_v1 AS
+openGauss=# CREATE VIEW tpcds.customer_details_view_v1 AS
     SELECT * FROM tpcds.customer
     WHERE c_customer_sk < 150;
 
 -- Rename a view.
-postgres=# ALTER VIEW tpcds.customer_details_view_v1 RENAME TO customer_details_view_v2;
+openGauss=# ALTER VIEW tpcds.customer_details_view_v1 RENAME TO customer_details_view_v2;
 
 -- Change the schema of a view.
-postgres=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
+openGauss=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
 
 -- Delete a view.
-postgres=# DROP VIEW public.customer_details_view_v2;
+openGauss=# DROP VIEW public.customer_details_view_v2;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
-[CREATE VIEW](en-us_topic_0283137480.md)  and  [DROP VIEW](en-us_topic_0283137706.md)
+[CREATE VIEW](create-view.md)  and  [DROP VIEW](drop-view.md)
 

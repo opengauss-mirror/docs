@@ -1,6 +1,6 @@
-# CREATE TYPE<a name="EN-US_TOPIC_0242370588"></a>
+# CREATE TYPE<a name="EN-US_TOPIC_0289900603"></a>
 
-## Function<a name="en-us_topic_0237122124_en-us_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>
+## Function<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>
 
 **CREATE TYPE**  registers a new data type for use in the current database. The user who defines a type becomes its owner. Types are designed only for row-store tables.
 
@@ -25,11 +25,11 @@ The following data types can be created: composite type, base type, shell type, 
     An enumerated type is a list of one or more quoted labels, each of which must be 1 to 63 bytes long.
 
 
-## Precautions<a name="en-us_topic_0237122124_en-us_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
+## Precautions<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
 
 If a schema name is given then the type is created in the specified schema. Otherwise, it is created in the current schema. The type name must be distinct from the name of any existing type or domain in the same schema. \(Because tables have associated data types, the type name must also be distinct from the name of any existing table in the same schema.\)
 
-## Syntax<a name="en-us_topic_0237122124_en-us_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
+## Syntax<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
 CREATE TYPE name AS
@@ -65,7 +65,7 @@ CREATE TYPE name AS ENUM
     ( [ 'label' [, ... ] ] )
 ```
 
-## Parameter Description<a name="en-us_topic_0237122124_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
+## Parameter Description<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
 Composite type
 
@@ -83,11 +83,12 @@ Composite type
 
 -   **collation**
 
-    Specifies the name of an existing collation rule to be associated with a column of the composite type.
+    Specifies the name of an existing collation rule to be associated with a column of the composite type. You can run the  **select \* from pg\_collation**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
-    Base type
 
-    When creating a base type, you can place parameters in any order. The  **input\_function**  and  **output\_function**  parameters are mandatory, and other parameters are optional.
+Base type
+
+When creating a base type, you can place parameters in any order. The  **input\_function**  and  **output\_function**  parameters are mandatory, and other parameters are optional.
 
 -   **input\_function**
 
@@ -101,8 +102,8 @@ Composite type
 
     The input function must return a value of the data type itself. Usually, an input function should be declared  **STRICT**; if it is not, it will be called with a  **NULL**  first parameter when reading a  **NULL**  input value. The function must still return  **NULL**  in this case, unless it raises an error. \(This case is mainly meant to support domain input functions, which might need to reject  **NULL**  inputs.\)
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The input and output functions can be declared to have results or parameters of the new type, when they have to be created before the new type can be created. The type should first be defined as a shell type, which is a placeholder type that has no attributes except a name and an owner. This is done by issuing the  **CREATE TYPE** _name_  statement, with no additional parameters. Then the I/O functions can be defined referencing the shell type. Finally,  **CREATE TYPE**  with a full definition replaces the shell entry with a complete, valid type definition, after which the new type can be used normally.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The input and output functions can be declared to have results or parameters of the new type, when they have to be created before the new type can be created. The type should first be defined as a shell type, which is a placeholder type that has no attributes except a name and an owner. This is done by issuing the  **CREATE TYPE **_name_  statement, with no additional parameters. Then the I/O functions can be defined referencing the shell type. Finally,  **CREATE TYPE**  with a full definition replaces the shell entry with a complete, valid type definition, after which the new type can be used normally.
 
 -   **output\_function**
 
@@ -137,8 +138,8 @@ Composite type
 
     \(Optional\) Specifies the name of a function that converts the internal form of the type's modifier\(s\) to its external textual form.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >**type\_modifier\_input\_function**  and  **type\_modifier\_output\_function**  are needed if the type supports modifiers, that is optional constraints attached to a type declaration, such as char\(5\) or numeric\(30,2\). openGauss allows user-defined types to take one or more simple constants or identifiers as modifiers. However, this information must be capable of being packed into a single non-negative integer value for storage in the system catalogs. The  **type\_modifier\_input\_function**  is passed the declared modifier\(s\) in the form of a cstring array. It must check the values for validity \(throwing an error if they are wrong\), and if they are correct, return a single non-negative integer value that will be stored as the column "typmod". Type modifiers will be rejected if the type does not have a  **type\_modifier\_input\_function**. The  **type\_modifier\_output\_function**  converts the internal integer typmod value back to the correct form for user display. It must return a cstring value that is the exact string to append to the type name; for example numeric's function might return \(30,2\). It is allowed to omit the  **type\_modifier\_output\_function**, in which case the default display format is just the stored typmod integer value enclosed in parentheses.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**type\_modifier\_input\_function**  and  **type\_modifier\_output\_function**  are needed if the type supports modifiers, that is optional constraints attached to a type declaration, such as char\(5\) or numeric\(30,2\). openGauss allows user-defined types to take one or more simple constants or identifiers as modifiers. However, this information must be capable of being packed into a single non-negative integer value for storage in the system catalogs. The  **type\_modifier\_input\_function**  is passed the declared modifier\(s\) in the form of a cstring array. It must check the values for validity \(throwing an error if they are wrong\), and if they are correct, return a single non-negative integer value that will be stored as the column "typmod". Type modifiers will be rejected if the type does not have a  **type\_modifier\_input\_function**. The  **type\_modifier\_output\_function**  converts the internal integer typmod value back to the correct form for user display. It must return a cstring value that is the exact string to append to the type name; for example numeric's function might return \(30,2\). It is allowed to omit the  **type\_modifier\_output\_function**, in which case the default display format is just the stored typmod integer value enclosed in parentheses.
 
 -   **analyze\_function**
 
@@ -150,7 +151,7 @@ Composite type
 
     \(Optional\) Specifies the length in bytes of the new type's internal representation. The default assumption is that it is variable-length.
 
-    While the details of the new type's internal representation are only known to the I/O functions and other functions you create to work with the type, there are several attributes of the internal representation that must be declared to openGauss.  **internallength**  is the most important one. Base data types can be fixed-length, in which case  **internallength**  is a positive integer, or variable length, indicated by setting  **internallength**  to  **VARIABLE**. \(Internally, this is represented by setting  **typlen**  to  **-1**.\) The internal representation of all variable-length types must start with a 4-byte integer giving the total length of this value of the type.
+    While the details of the new type's internal representation are only known to the I/O functions and other functions you create to work with the type, there are several attributes of the internal representation that must be declared to openGauss. Foremost of these is  **internallength**. Base data types can be fixed-length, in which case  **internallength**  is a positive integer, or variable length, indicated by setting  **internallength**  to  **VARIABLE**. \(Internally, this is represented by setting  **typlen**  to  **-1**.\) The internal representation of all variable-length types must start with a 4-byte integer giving the total length of this value of the type.
 
 -   **PASSEDBYVALUE**
 
@@ -190,8 +191,8 @@ Composite type
 
     \(Optional\) Specifies whether a type is preferred within its type category. If it is, the value will be  **TRUE**, else  **FALSE**. The default is  **FALSE**. Be very careful about creating a preferred type within an existing type category, as this could cause surprising changes in behavior.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The  **category**  and  **preferred**  parameters can be used to help control which implicit cast will be applied in ambiguous situations. Each data type belongs to a category named by a single ASCII character, and each type is either preferred or not within its category. The parser will prefer casting to preferred types \(but only from other types within the same category\) when this rule is helpful in resolving overloaded functions or operators. For types that have no implicit casts to or from any other types, it is sufficient to leave these settings at the defaults. However, for a group of related types that have implicit casts, it is often helpful to mark them all as belonging to a category and select one or two of the most general types as being preferred within the category. The  **category**  parameter is especially useful when adding a user-defined type to an existing built-in category, such as the numeric or string types. However, it is also possible to create entirely-user-defined type categories. Select any ASCII character other than an uppercase letter to name such a category.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The  **category**  and  **preferred**  parameters can be used to help control which implicit cast will be applied in ambiguous situations. Each data type belongs to a category named by a single ASCII character, and each type is either preferred or not within its category. The parser will prefer casting to preferred types \(but only from other types within the same category\) when this rule is helpful in resolving overloaded functions or operators. For types that have no implicit casts to or from any other types, it is sufficient to leave these settings at the defaults. However, for a group of related types that have implicit casts, it is often helpful to mark them all as belonging to a category and select one or two of the most general types as being preferred within the category. The  **category**  parameter is especially useful when adding a user-defined type to an existing built-in category, such as the numeric or string types. However, it is also possible to create entirely-user-defined type categories. Select any ASCII character other than an uppercase letter to name such a category.
 
 -   **default**
 
@@ -213,61 +214,61 @@ Composite type
 
     \(Optional\) Specifies whether this type's operations can use collation information. If they can, the value will be  **TRUE**, else  **FALSE**  \(default\).
 
-    If  **collatable**  is  **TRUE**, column definitions and expressions of the type may carry collation information through use of the  **COLLATE**  clause. It is up to the implementations of the functions operating on the type to actually use the collation information; this does not happen automatically merely by marking the type collatable.
+    If  **collatable**  is  **TRUE**, column definitions and expressions of the type may carry collation information through use of the  **COLLATE**  clause. It is up to the implementations of the functions operating on the type to actually make use of the collation information; this does not happen automatically merely by marking the type collatable.
 
--   **lable**
+-   **label**
 
     \(Optional\) Represents the textual label associated with one value of an enumerated type. It is a string of 1 to 63 characters.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->Whenever a user-defined type is created, openGauss automatically creates an associated array type whose name consists of the element type's name prepended with an underscore \(\_\).  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Whenever a user-defined type is created, openGauss automatically creates an associated array type whose name consists of the element type's name prepended with an underscore \(\_\).
 
-## Examples<a name="en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d"></a>
+## Examples<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d"></a>
 
 ```
 -- Create a composite type, create a table, insert data, and make a query.
-postgres=# CREATE TYPE compfoo AS (f1 int, f2 text);
-postgres=# CREATE TABLE t1_compfoo(a int, b compfoo);
-postgres=# CREATE TABLE t2_compfoo(a int, b compfoo);
-postgres=# INSERT INTO t1_compfoo values(1,(1,'demo'));
-postgres=# INSERT INTO t2_compfoo select * from t1_compfoo;
-postgres=# SELECT (b).f1 FROM t1_compfoo;
-postgres=# SELECT * FROM t1_compfoo t1 join t2_compfoo t2 on (t1.b).f1=(t1.b).f1;
+openGauss=# CREATE TYPE compfoo AS (f1 int, f2 text);
+openGauss=# CREATE TABLE t1_compfoo(a int, b compfoo);
+openGauss=# CREATE TABLE t2_compfoo(a int, b compfoo);
+openGauss=# INSERT INTO t1_compfoo values(1,(1,'demo'));
+openGauss=# INSERT INTO t2_compfoo select * from t1_compfoo;
+openGauss=# SELECT (b).f1 FROM t1_compfoo;
+openGauss=# SELECT * FROM t1_compfoo t1 join t2_compfoo t2 on (t1.b).f1=(t1.b).f1;
 
 -- Rename the data type.
-postgres=# ALTER TYPE compfoo RENAME TO compfoo1;
+openGauss=# ALTER TYPE compfoo RENAME TO compfoo1;
 
 -- Change the owner of the user-defined type compfoo1 to usr1.
-postgres=# CREATE USER usr1 PASSWORD 'Bigdata@123';
-postgres=# ALTER TYPE compfoo1 OWNER TO usr1;
+openGauss=# CREATE USER usr1 PASSWORD 'xxxxxxxxx';
+openGauss=# ALTER TYPE compfoo1 OWNER TO usr1;
 
 -- Change the schema of the user-defined type compfoo1 to usr1.
-postgres=# ALTER TYPE compfoo1 SET SCHEMA usr1;
+openGauss=# ALTER TYPE compfoo1 SET SCHEMA usr1;
 
 -- Add a new attribute to the data type.
-postgres=# ALTER TYPE usr1.compfoo1 ADD ATTRIBUTE f3 int;
+openGauss=# ALTER TYPE usr1.compfoo1 ADD ATTRIBUTE f3 int;
 
 -- Delete the compfoo1 type.
-postgres=# DROP TYPE usr1.compfoo1 cascade;
+openGauss=# DROP TYPE usr1.compfoo1 cascade;
 
 -- Delete related tables and users.
-postgres=# DROP TABLE t1_compfoo;
-postgres=# DROP TABLE t2_compfoo;
-postgres=# DROP SCHEMA usr1;
-postgres=# DROP USER usr1;
+openGauss=# DROP TABLE t1_compfoo;
+openGauss=# DROP TABLE t2_compfoo;
+openGauss=# DROP SCHEMA usr1;
+openGauss=# DROP USER usr1;
 
 -- Create an enumerated type.
-postgres=# CREATE TYPE bugstatus AS ENUM ('create', 'modify', 'closed');
+openGauss=# CREATE TYPE bugstatus AS ENUM ('create', 'modify', 'closed');
 
 -- Add a label.
-postgres=# ALTER TYPE bugstatus ADD VALUE IF NOT EXISTS 'regress' BEFORE 'closed';
+openGauss=# ALTER TYPE bugstatus ADD VALUE IF NOT EXISTS 'regress' BEFORE 'closed';
 
--- Rename the label.
-postgres=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
+-- Rename a label.
+openGauss=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
 ```
 
-## Helpful Links<a name="en-us_topic_0237122124_en-us_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
+## Helpful Links<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
 
 [ALTER TYPE](alter-type.md)  and  [DROP TYPE](drop-type.md)
 

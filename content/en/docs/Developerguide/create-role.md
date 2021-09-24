@@ -67,11 +67,13 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Specifies the login password.
 
-    The new password must:
+    A new password must:
 
     -   Contain at least eight characters. This is the default length.
     -   Differ from the username or the username spelled backward.
-    -   Contain at least three types of the following four types of characters: uppercase characters \(A to Z\), lowercase characters \(a to z\), digits \(0 to 9\), and special characters, including: \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?
+    -   Contain at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$ %^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
+    -   The password can also be a ciphertext character string that meets the format requirements. This mode is mainly used to import user data. You are not advised to use it directly. If a ciphertext password is used, the user must know the plaintext corresponding to the ciphertext password and ensure that the plaintext password meets the complexity requirements. The database does not verify the complexity of the ciphertext password. Instead, the security of the ciphertext password is ensured by the user.
+    -   Be enclosed by single or double quotation marks.
 
     Value range: a string
 
@@ -79,13 +81,13 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     When creating a user, you can specify the  **EXPIRED**  parameter to create a user whose password is invalid. The user cannot perform simple or extended queries. The statement can be executed only after the password is changed.
 
--   DISABLE
+-   **DISABLE**
 
     By default, you can change your password unless it is disabled. To disable the password of a user, use this parameter. After the password of a user is disabled, the password will be deleted from the system. The user can connect to the database only through external authentication, for example, Kerberos authentication. Only administrators can enable or disable a password. Common users cannot disable the password of an initial user. To enable a password, run  **ALTER USER**  and specify the password.
 
 -   **ENCRYPTED | UNENCRYPTED**
 
-    Controls whether the password is stored encrypted in the system catalogs. \(If neither is specified, the default behavior is determined by the configuration parameter  **password\_encryption**.\) According to product security requirement, the password must be stored encrypted. Therefore,  **UNENCRYPTED**  is forbidden in openGauss. If the password string has already been encrypted in the SHA256 format, it is stored encrypted as it was, regardless of whether  **ENCRYPTED**  or  **UNENCRYPTED**  is specified \(since the system cannot decrypt the specified encrypted password string\). This allows reloading of encrypted passwords during dump/restore.
+    Controls whether the password is stored encrypted in the system catalogs. According to product security requirement, the password must be stored encrypted. Therefore,  **UNENCRYPTED**  is forbidden in openGauss. If the password string has already been encrypted in the SHA256 format, it is stored encrypted as it was, regardless of whether  **ENCRYPTED**  or  **UNENCRYPTED**  is specified \(since the system cannot decrypt the specified encrypted password string\). This allows reloading of encrypted passwords during dump/restore.
 
 -   **SYSADMIN | NOSYSADMIN**
 
@@ -119,7 +121,7 @@ The syntax of role information configuration clause  **option**  is as follows:
 
 -   **INHERIT | NOINHERIT**
 
-    Determines whether a role "inherits" the permissions of roles in the same group. You are not advised to set this parameter.
+    Determines whether a role "inherits" the permissions of roles in the same group. It is not recommended.
 
 -   **LOGIN | NOLOGIN**
 
@@ -138,6 +140,7 @@ The syntax of role information configuration clause  **option**  is as follows:
     Defines private, independent roles. For a role with the  **INDEPENDENT**  attribute, administrators' permissions to control and access this role are separated. The rules are as follows:
 
     -   Administrators have no permission to add, delete, query, modify, copy, or authorize the corresponding table objects without the authorization from the  **INDEPENDENT**  role.
+    -   If permissions related to private user tables are granted to non-private users, the system administrator will obtain the same permissions.
     -   System administrators and security administrators with the  **CREATEROLE**  attribute have no permission to modify the inheritance relationship of the  **INDEPENDENT**  role without the authorization of the  **INDEPENDENT**  role.
     -   System administrators have no permission to modify the owner of the table objects for the  **INDEPENDENT**  role.
     -   System administrators and security administrators with the  **CREATEROLE**  attribute have no permission to remove the  **INDEPENDENT**  attribute of the  **INDEPENDENT**  role.
@@ -180,11 +183,11 @@ The syntax of role information configuration clause  **option**  is as follows:
 
 -   **IN ROLE**
 
-    Lists one or more existing roles to which the new role will be immediately added as a new member. You are not advised to set this parameter.
+    Lists one or more existing roles to which the new role will be immediately added as a new member. It is not recommended.
 
 -   **IN GROUP**
 
-    Specifies an obsolete spelling of  **IN ROLE**. You are not advised to set this parameter.
+    Specifies an obsolete spelling of  **IN ROLE**. It is not recommended.
 
 -   **ROLE**
 
@@ -215,29 +218,29 @@ The syntax of role information configuration clause  **option**  is as follows:
     In the current version, this attribute is reserved only for forward compatibility.
 
 
-## Example:<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
+## Examples<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e"></a>
 
 ```
--- Create role manager whose password is Bigdata123@.
-postgres=# CREATE ROLE manager IDENTIFIED BY 'Bigdata@123';
+-- Create role manager whose password is xxxxxxxxx.
+openGauss=# CREATE ROLE manager IDENTIFIED BY 'xxxxxxxxx';
 
 -- Create a role with its validity from January 1, 2015 to January 1, 2026.
-postgres=# CREATE ROLE miriam WITH LOGIN PASSWORD 'Bigdata@123' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
+openGauss=# CREATE ROLE miriam WITH LOGIN PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
 
 -- Change the password of role manager to abcd@123.
-postgres=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'Bigdata@123';
+openGauss=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'xxxxxxxxx';
 
 -- Change role manager to the system administrator.
-postgres=# ALTER ROLE manager SYSADMIN;
+openGauss=# ALTER ROLE manager SYSADMIN;
 
 -- Delete role manager.
-postgres=# DROP ROLE manager;
+openGauss=# DROP ROLE manager;
 
 -- Delete role miriam.
-postgres=# DROP ROLE miriam;
+openGauss=# DROP ROLE miriam;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
-[SET ROLE](en-us_topic_0283137642.md),  [ALTER ROLE](en-us_topic_0283137195.md),  [DROP ROLE](en-us_topic_0283136937.md), and  [GRANT](en-us_topic_0283137177.md)
+[SET ROLE](set-role.md),  [ALTER ROLE](alter-role.md),  [DROP ROLE](drop-role.md), and  [GRANT](grant.md)
 

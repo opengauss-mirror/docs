@@ -11,10 +11,10 @@
     Example:
 
     ```
-    postgres=# SELECT current_catalog;
+    openGauss=# SELECT current_catalog;
      current_database
     ------------------
-     postgres
+     openGauss
     (1 row)
     ```
 
@@ -27,10 +27,10 @@
     Example:
 
     ```
-    postgres=# SELECT current_database();
+    openGauss=# SELECT current_database();
      current_database
     ------------------
-     postgres
+     openGauss
     (1 row)
     ```
 
@@ -43,7 +43,7 @@
     Example:
 
     ```
-    postgres=# SELECT current_query();
+    openGauss=# SELECT current_query();
           current_query
     -------------------------
      SELECT current_query();
@@ -59,7 +59,7 @@
     Example:
 
     ```
-    postgres=# SELECT current_schema();
+    openGauss=# SELECT current_schema();
      current_schema
     ----------------
      public
@@ -77,7 +77,7 @@
     Example:
 
     ```
-    postgres=# SELECT current_schemas(true);
+    openGauss=# SELECT current_schemas(true);
        current_schemas
     ---------------------
      {pg_catalog,public}
@@ -103,14 +103,14 @@
     Example:
 
     ```
-    postgres=# SELECT current_user;
+    openGauss=# SELECT current_user;
      current_user
     --------------
      omm
     (1 row)
     ```
 
-    Note:  **current\_user**  is the user identifier that is applicable for permission checking. Normally it is equal to the session user, but it can be changed with  [SET ROLE](SET-ROLE.md). It also changes during the execution of functions with the attribute  **SECURITY DEFINER**.
+    Note:  **current\_user**  is the user identifier that is applicable for permission checking. Normally it is equal to the session user, but it can be changed with  [SET ROLE](set-role.md). It also changes during the execution of functions with the attribute  **SECURITY DEFINER**.
 
 -   definer\_current\_user
 
@@ -121,7 +121,7 @@
     Example:
 
     ```
-    postgres=# SELECT definer_current_user();
+    openGauss=# SELECT definer_current_user();
      definer_current_user
     ----------------------
      omm
@@ -130,14 +130,14 @@
 
 -   pg\_current\_sessionid\(\)
 
-    Description: Session ID of current execution context
+    Description: Session ID of the current execution context
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT pg_current_sessionid();
+    openGauss=# SELECT pg_current_sessionid();
         pg_current_sessionid
     ----------------------------
      1579228402.140190434944768
@@ -148,14 +148,14 @@
 
 -   pg\_current\_sessid
 
-    Description: Session ID of current execution context
+    Description: Session ID of the current execution context
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# select pg_current_sessid();
+    openGauss=# select pg_current_sessid();
     pg_current_sessid
     -------------------
     140308875015936
@@ -171,11 +171,28 @@
     Return type: text
 
     ```
-    postgres=# SELECT pg_current_userid();
+    openGauss=# SELECT pg_current_userid();
     pg_current_userid
     -------------------
     10
     (1 row)
+    ```
+
+-   working\_version\_num\(\)
+
+    Description: Returns a version number regarding system compatibility.
+
+    Return type: int
+
+    Example:
+
+    ```
+    openGauss=# SELECT working_version_num();
+     working_version_num
+    ---------------------
+                   92231
+    (1 row)
+    
     ```
 
 -   tablespace\_oid\_name\(\)
@@ -187,7 +204,7 @@
     Example:
 
     ```
-    postgres=# select tablespace_oid_name(1663);
+    openGauss=# select tablespace_oid_name(1663);
      tablespace_oid_name
     ---------------------
      pg_default
@@ -206,7 +223,7 @@
     Example:
 
     ```
-    postgres=# SELECT inet_client_addr();
+    openGauss=# SELECT inet_client_addr();
      inet_client_addr
     ------------------
      10.10.0.50
@@ -225,7 +242,7 @@
     Example:
 
     ```
-    postgres=# SELECT inet_client_port();
+    openGauss=# SELECT inet_client_port();
      inet_client_port
     ------------------
                 33143
@@ -244,7 +261,7 @@
     Example:
 
     ```
-    postgres=# SELECT inet_server_addr();
+    openGauss=# SELECT inet_server_addr();
      inet_server_addr
     ------------------
      10.10.0.13
@@ -263,7 +280,7 @@
     Example:
 
     ```
-    postgres=# SELECT inet_server_port();
+    openGauss=# SELECT inet_server_port();
      inet_server_port
     ------------------
                  8000
@@ -279,7 +296,7 @@
     Example:
 
     ```
-    postgres=# SELECT pg_backend_pid();
+    openGauss=# SELECT pg_backend_pid();
      pg_backend_pid
     -----------------
      140229352617744
@@ -295,7 +312,7 @@
     Example:
 
     ```
-    postgres=# SELECT pg_conf_load_time();
+    openGauss=# SELECT pg_conf_load_time();
           pg_conf_load_time       
     ------------------------------
      2017-09-01 16:05:23.89868+08
@@ -304,14 +321,14 @@
 
 -   pg\_my\_temp\_schema\(\)
 
-    Description: OID of the temporary schema of a session. The value is 0 if the OID does not exist.
+    Description: OID of the temporary schema of a session. The value is  **0**  if the OID does not exist.
 
     Return type: oid
 
     Example:
 
     ```
-    postgres=# SELECT pg_my_temp_schema();
+    openGauss=# SELECT pg_my_temp_schema();
      pg_my_temp_schema 
     -------------------
                      0
@@ -322,14 +339,14 @@
 
 -   pg\_is\_other\_temp\_schema\(oid\)
 
-    Description: Whether the schema is the temporary schema of another session.
+    Description: Specifies whether the schema is the temporary schema of another session.
 
     Return type: Boolean
 
     Example:
 
     ```
-    postgres=# SELECT pg_is_other_temp_schema(25356);
+    openGauss=# SELECT pg_is_other_temp_schema(25356);
      pg_is_other_temp_schema
     -------------------------
      f
@@ -345,7 +362,7 @@
     Example:
 
     ```
-    postgres=# SELECT pg_listening_channels();
+    openGauss=# SELECT pg_listening_channels();
      pg_listening_channels
     -----------------------
     (0 rows)
@@ -362,7 +379,7 @@
     Example:
 
     ```
-    postgres=# SELECT pg_postmaster_start_time();
+    openGauss=# SELECT pg_postmaster_start_time();
        pg_postmaster_start_time   
     ------------------------------
      2017-08-30 16:02:54.99854+08
@@ -371,14 +388,14 @@
 
 -   pg\_get\_ruledef\(rule\_oid\)
 
-    Description: Obtains CREATE RULE command for rule.
+    Description: Obtains the  **CREATE RULE**  command for a rule.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# select * from pg_get_ruledef(24828);
+    openGauss=# select * from pg_get_ruledef(24828);
                                     pg_get_ruledef
     -------------------------------------------------------------------
      CREATE RULE t1_ins AS ON INSERT TO t1 DO INSTEAD INSERT INTO t2 (id) VALUES (new.id);
@@ -394,7 +411,7 @@
     Example:
 
     ```
-    postgres=# select sessionid2pid(sessid::cstring) from gs_session_stat limit 2;
+    openGauss=# select sessionid2pid(sessid::cstring) from gs_session_stat limit 2;
       sessionid2pid
     -----------------
      139973107902208
@@ -411,7 +428,7 @@
     Example:
 
     ```
-    postgres=# SELECT pg_trigger_depth();
+    openGauss=# SELECT pg_trigger_depth();
      pg_trigger_depth 
     ------------------
                     0
@@ -427,14 +444,14 @@
     Example:
 
     ```
-    postgres=# SELECT session_user;
+    openGauss=# SELECT session_user;
      session_user
     --------------
      omm
     (1 row)
     ```
 
-    Note:  **session\_user**  is usually the user who initiated the current database connection, but administrators can change this setting with  [SET SESSION AUTHORIZATION](SET-SESSION-AUTHORIZATION.md).
+    Note:  **session\_user**  is usually the user who initiated the current database connection, but administrators can change this setting with  [SET SESSION AUTHORIZATION](set-session-authorization.md).
 
 -   user
 
@@ -445,7 +462,7 @@
     Example:
 
     ```
-    postgres=# SELECT user;
+    openGauss=# SELECT user;
      current_user
     --------------
      omm
@@ -461,7 +478,7 @@
     Example:
 
     ```
-    postgres=# select getpgusername();
+    openGauss=# select getpgusername();
      getpgusername 
     ---------------
      GaussDB_userna
@@ -477,7 +494,7 @@
     Example:
 
     ```
-    postgres=# select getdatabaseencoding();
+    openGauss=# select getdatabaseencoding();
      getdatabaseencoding 
     ---------------------
      SQL_ASCII
@@ -486,32 +503,64 @@
 
 -   version\(\)
 
-    Description: version information.  **version**  returns a string describing a server's version.
+    Description: Version information.  **version**  returns a string describing a server's version.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT version();
-                                                                    version                                                                
-    ---------------------------------------------------------------------------------------------------------------------------------------
-     PostgreSQL 9.2.4 (openGauss-1.1.0 build 66e54e4d) compiled at 2020-01-02 13:02:26 commit 7218 last mr 10175  on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 8.2.0, 64-bit
-    
+    openGauss=# select version();
+    version
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------
+    (openGauss 2.0.0 build 24abfc73) compiled at 2021-04-16 19:39:59 commit 0 last mr 305 debug on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 7.3.0, 64-bit
     (1 row)
     ```
 
 
--   get\_hostname\(\)
+-   opengauss\_version\(\)
 
-    Description: Returns the hostname of the current node.
+    Description: openGauss version information
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT get_hostname();
+    openGauss=# select opengauss_version();
+     opengauss_version
+    -------------------
+     2.0.0
+    (1 row)
+    ```
+
+-   gs\_deployment\(\)
+
+    Description: Information about the deployment mode of the current system
+
+    Return type: text
+
+    Example:
+
+    ```
+    
+    openGauss=# select gs_deployment();
+         gs_deployment
+    -----------------------
+     OpenSourceCentralized
+    (1 row)
+    ```
+
+-   get\_hostname\(\)
+
+    Description: Returns the host name of the current node.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# SELECT get_hostname();
      get_hostname
     --------------
      linux-user
@@ -528,7 +577,7 @@
     Example:
 
     ```
-    postgres=# SELECT get_nodename();
+    openGauss=# SELECT get_nodename();
      get_nodename
     --------------
      datanode1
@@ -545,7 +594,7 @@
     Example:
 
     ```
-    postgres=# SELECT get_schema_oid('public');
+    openGauss=# SELECT get_schema_oid('public');
      get_schema_oid
     ----------------
                2200
@@ -554,6 +603,8 @@
 
 
 ## Access privilege inquiry function<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s8be48efddaf84c7fb405513993705867"></a>
+
+The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inherent permissions implicitly owned by the owner.
 
 -   has\_any\_column\_privilege\(user, table, privilege\)
 
@@ -601,7 +652,7 @@
 
 -   has\_column\_privilege\(user, table, column, privilege\)
 
-    Description: Queries whether a specified user has permission for column.
+    Description: Specifies whether a specified user has permission for columns.
 
     **Table  2**  Parameter type description
 
@@ -639,7 +690,7 @@
 
 -   has\_column\_privilege\(table, column, privilege\)
 
-    Description: Queries whether the current user has permission to access columns. For details about the valid parameter types, see  [Table 2](#en-us_topic_0283136950_table9581157145120).
+    Description: Specifies whether the current user has permission to access columns. For details about the valid parameter types, see  [Table 2](#en-us_topic_0283136950_table9581157145120).
 
     Return type: Boolean
 
@@ -650,7 +701,7 @@
 
 -   has\_cek\_privilege\(user, cek, privilege\)
 
-    Description: Queries whether a specified user has permission for column encryption key \(CEK\). The parameters are described as follows:
+    Description: Specifies whether a specified user has permission for CEKs. The parameters are described as follows:
 
     **Table  3**  Parameter type description
 
@@ -699,7 +750,7 @@
 
 -   has\_cmk\_privilege\(user, cmk, privilege\)
 
-    Description: Queries whether a specified user has permission for client master key \(CMK\). The parameters are described as follows:
+    Description: Specifies whether a specified user has permission for CMKs. The parameters are described as follows:
 
     **Table  4**  Parameter type description
 
@@ -727,7 +778,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="16.96169616961696%" headers="mcps1.2.5.1.2 "><p id="p915712304416"><a name="p915712304416"></a><a name="p915712304416"></a>text, oid</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.442144214421443%" headers="mcps1.2.5.1.3 "><p id="p01571730184112"><a name="p01571730184112"></a><a name="p01571730184112"></a>Client master key</p>
+    <td class="cellrowborder" valign="top" width="21.442144214421443%" headers="mcps1.2.5.1.3 "><p id="p01571730184112"><a name="p01571730184112"></a><a name="p01571730184112"></a>CMK</p>
     </td>
     <td class="cellrowborder" valign="top" width="46.26462646264626%" headers="mcps1.2.5.1.4 "><p id="p101586303416"><a name="p101586303416"></a><a name="p101586303416"></a>Name or ID of the CMK</p>
     </td>
@@ -748,7 +799,7 @@
 
 -   has\_database\_privilege\(user, database, privilege\)
 
-    Description: Queries whether a specified user has permission for database. The parameters are described as follows:
+    Description: Specifies whether a specified user has permission for databases. The parameters are described as follows:
 
     **Table  5**  Parameter type description
 
@@ -781,7 +832,7 @@
 
 -   has\_database\_privilege\(database, privilege\)
 
-    Description: Queries whether the current user has permission to access a database. For details about the valid parameter types, see  [Table 5](#en-us_topic_0283136950_table111152337017).
+    Description: Specifies whether the current user has permission to access a database. For details about the valid parameter types, see  [Table 5](#en-us_topic_0283136950_table111152337017).
 
     Return type: Boolean
 
@@ -789,7 +840,7 @@
 
 -   has\_directory\_privilege\(user, database, privilege\)
 
-    Description: Queries whether a specified user has permission for directory.
+    Description: Specifies whether a specified user has permission for directories.
 
     **Table  6**  Parameter type description
 
@@ -822,13 +873,13 @@
 
 -   has\_directory\_privilege\(database, privilege\)
 
-    Description: Queries whether the current user has permission to access a directory. For details about the valid parameter types, see  [Table 6](#en-us_topic_0283136950_table111483362025).
+    Description: Specifies whether the current user has permission to access a directory. For details about the valid parameter types, see  [Table 6](#en-us_topic_0283136950_table111483362025).
 
     Return type: Boolean
 
 -   has\_foreign\_data\_wrapper\_privilege\(user, fdw, privilege\)
 
-    Description: Queries whether a specified user has permission for foreign-data wrapper.
+    Description: Specifies whether a specified user has permission for foreign-data wrappers.
 
     **Table  7**  Parameter type description
 
@@ -861,7 +912,7 @@
 
 -   has\_foreign\_data\_wrapper\_privilege\(fdw, privilege\)
 
-    Description: Queries whether the current user has permission for foreign-data wrapper. For details about valid parameter types, see  [Table 7](#en-us_topic_0283136950_table3176631131).
+    Description: Specifies whether the current user has permission for foreign-data wrappers. For details about the valid parameter types, see  [Table 7](#en-us_topic_0283136950_table3176631131).
 
     Return type: Boolean
 
@@ -869,7 +920,7 @@
 
 -   has\_function\_privilege\(user, function, privilege\)
 
-    Description: Queries whether a specified user has permission for function.
+    Description: Specifies whether a specified user has permission for functions.
 
     **Table  8**  Parameter type description
 
@@ -902,15 +953,15 @@
 
 -   has\_function\_privilege\(function, privilege\)
 
-    Description: Queries whether the current user has permission for function. For details about valid parameter types, see  [Table 8](#en-us_topic_0283136950_table169651367619).
+    Description: Specifies whether the current user has permission for functions. For details about the valid parameter types, see  [Table 8](#en-us_topic_0283136950_table169651367619).
 
     Return type: Boolean
 
-    Note:  **has\_function\_privilege**  checks whether a user can access a function in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. When a function is specified by a text string rather than by OID, the allowed input is the same as that for the  **regprocedure**  data type \(see  [Object Identifier Types](Object-Identifier-Types.md)\). The access permission type must be  **EXECUTE**,  **ALTER**,  **DROP**, or  **COMMENT**.
+    Note:  **has\_function\_privilege**  checks whether a user can access a function in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. When a function is specified by a text string rather than by OID, the allowed input is the same as that for the  **regprocedure**  data type \(see  [OID Types](oid-types.md)\). The access permission type must be  **EXECUTE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
 -   has\_language\_privilege\(user, language, privilege\)
 
-    Description: Queries whether a specified user has permission for language.
+    Description: Specifies whether a specified user has permission for languages.
 
     **Table  9**  Parameter type description
 
@@ -943,7 +994,7 @@
 
 -   has\_language\_privilege\(language, privilege\)
 
-    Description: Queries whether the current user has permission for language. For details about valid parameter types, see  [Table 9](#en-us_topic_0283136950_table7622265910).
+    Description: Specifies whether the current user has permission for languages. For details about the valid parameter types, see  [Table 9](#en-us_topic_0283136950_table7622265910).
 
     Return type: Boolean
 
@@ -984,33 +1035,33 @@
 
 -   has\_nodegroup\_privilege\(nodegroup, privilege\)
 
-    Description: Checks whether a user has permission to access a database node. The parameter is similar to has\_table\_privilege. The access permission type must be  **USAGE**,  **CREATE**,  **COMPUTE**,  **ALTER**, or  **CROP**.
+    Description: Checks whether a user has permission to access a database node. The parameter is similar to  **has\_table\_privilege**. The access permission type must be  **USAGE**,  **CREATE**,  **COMPUTE**,  **ALTER**, or  **CROP**.
 
     Return type: Boolean
 
 -   has\_schema\_privilege\(user, schema, privilege\)
 
-    Description: Queries whether a specified user has permission for schema.
+    Description: Specifies whether a specified user has permission for schemas.
 
     Return type: Boolean
 
 -   has\_schema\_privilege\(schema, privilege\)
 
-    Description: Queries whether the current user has permission for schema.
+    Description: Specifies whether the current user has permission for schemas.
 
     Return type: Boolean
 
-    Note:  **has\_schema\_privilege**  checks whether a user can access a schema in a particular way. Its parameter possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must be some combination of  **CREATE**,  **USAGE**,  **ALTER**,  **DROP**  or  **COMMENT**.
+    Note:  **has\_schema\_privilege**  checks whether a user can access a schema in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must be some combination of  **CREATE**,  **USAGE**,  **ALTER**,  **DROP**  or  **COMMENT**.
 
 -   has\_server\_privilege\(user, server, privilege\)
 
-    Description: Queries whether a specified user has permission for foreign server.
+    Description: Specifies whether a specified user has permission for foreign servers.
 
     Return type: Boolean
 
 -   has\_server\_privilege\(server, privilege\)
 
-    Description: Queries whether the current user has permission for foreign server.
+    Description: Specifies whether the current user has permission for foreign servers.
 
     Return type: Boolean
 
@@ -1018,28 +1069,28 @@
 
 -   has\_table\_privilege\(user, table, privilege\)
 
-    Description: Queries whether a specified user has permission for table.
+    Description: Specifies whether a specified user has permission for tables.
 
     Return type: Boolean
 
 -   has\_table\_privilege\(table, privilege\)
 
-    Description: Queries whether the current user has permission for table.
+    Description: Specifies whether the current user has permission for tables.
 
     Return type: Boolean
 
-    **has\_table\_privilege**  checks whether a user can access a table in a particular way. The user can be specified by name, by OID \(**pg\_authid.oid**\),  **public**  to indicate the PUBLIC pseudo-role, or if the argument is omitted  **current\_user**  is assumed. The table can be specified by name or by OID. When specifying by name, the name can be schema-qualified if necessary. The desired access permission type is specified by a text string, which must be one of the values  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **TRUNCATE**,  **REFERENCES**,  **TRIGGER**,  **ALTER**,  **DROP**,  **COMMENT**,  **INDEX**  or  **VACUUM**. Optionally,  **WITH GRANT OPTION**  can be added to a permission type to test whether the permission is held with grant option. Also, multiple permission types can be listed separated by commas, in which case the result will be  **true**  if any of the listed permissions is held.
+    **has\_table\_privilege**  checks whether a user can access a table in a particular way. The user can be specified by name, by OID \(**pg\_authid.oid**\),  **public**  to indicate the PUBLIC pseudo-role, or if the argument is omitted  **current\_user**  is assumed. The table can be specified by name or by OID. When it is specified by name, the name can be schema-qualified if necessary. The desired access permission type is specified by a text string, which must be one of the values  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **TRUNCATE**,  **REFERENCES**,  **TRIGGER**,  **ALTER**,  **DROP**,  **COMMENT**,  **INDEX**  or  **VACUUM**. Optionally,  **WITH GRANT OPTION**  can be added to a permission type to test whether the permission is held with grant option. Also, multiple permission types can be listed separated by commas, in which case the result will be  **true**  if any of the listed permissions is held.
 
     Example:
 
     ```
-    postgres=# SELECT has_table_privilege('tpcds.web_site', 'select');
+    openGauss=# SELECT has_table_privilege('tpcds.web_site', 'select');
      has_table_privilege  
     --------------------- 
      t 
     (1 row)
     
-    postgres=# SELECT has_table_privilege('omm', 'tpcds.web_site', 'select,INSERT WITH GRANT OPTION ');
+    openGauss=# SELECT has_table_privilege('omm', 'tpcds.web_site', 'select,INSERT WITH GRANT OPTION ');
      has_table_privilege  
     --------------------- 
      t 
@@ -1048,13 +1099,13 @@
 
 -   has\_tablespace\_privilege\(user, tablespace, privilege\)
 
-    Description: Queries whether a specified user has permission for tablespace.
+    Description: Specifies whether a specified user has permission for tablespaces.
 
     Return type: Boolean
 
 -   has\_tablespace\_privilege\(tablespace, privilege\)
 
-    Description: Queries whether the current user has permission for tablespace.
+    Description: Specifies whether the current user has permission for tablespaces.
 
     Return type: Boolean
 
@@ -1062,13 +1113,13 @@
 
 -   pg\_has\_role\(user, role, privilege\)
 
-    Description: Queries whether a specified user has permission for role.
+    Description: Specifies whether a specified user has permission for roles.
 
     Return type: Boolean
 
 -   pg\_has\_role\(role, privilege\)
 
-    Description: Specifies whether the current user has permission for role.
+    Description: Specifies whether the current user has permission for roles.
 
     Return type: Boolean
 
@@ -1077,85 +1128,85 @@
 
 ## Schema Visibility Inquiry Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s8c676f27906a4d0babc4ed2bca955536"></a>
 
-Each function performs the visibility check for one type of database object. For functions and operators, an object in the search path is visible if there is no object of the same name and argument data type\(s\) earlier in the path. For operator classes, both name and associated index access method are considered.
+Each function performs the visibility check for one type of database object. For functions and operators, an object in the search path is visible if there is no object of the same name and parameter data type earlier in the path. For operator classes, both name and associated index access method are considered.
 
 All these functions require object OIDs to identify the object to be checked. If you want to test an object by name, it is convenient to use the OID alias types \(**regclass**,  **regtype**,  **regprocedure**,  **regoperator**,  **regconfig**, or  **regdictionary**\).
 
 For example, a table is said to be visible if its containing schema is in the search path and no table of the same name appears earlier in the search path. This is equivalent to the statement that the table can be referenced by name without explicit schema qualification. For example, to list the names of all visible tables:
 
 ```
-postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
+openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 ```
 
 -   pg\_collation\_is\_visible\(collation\_oid\)
 
-    Description: Queries whether the collation is visible in search path.
+    Description: Specifies whether the collation is visible in search path.
 
     Return type: Boolean
 
 -   pg\_conversion\_is\_visible\(conversion\_oid\)
 
-    Description: Queries whether the conversion is visible in search path.
+    Description: Specifies whether the conversion is visible in search path.
 
     Return type: Boolean
 
 -   pg\_function\_is\_visible\(function\_oid\)
 
-    Description: Queries whether the function is visible in search path.
+    Description: Specifies whether the function is visible in search path.
 
     Return type: Boolean
 
 -   pg\_opclass\_is\_visible\(opclass\_oid\)
 
-    Description: Queries whether the operator class is visible in search path.
+    Description: Specifies whether the operator class is visible in search path.
 
     Return type: Boolean
 
 -   pg\_operator\_is\_visible\(operator\_oid\)
 
-    Description: Queries whether the operator is visible in search path.
+    Description: Specifies whether the operator is visible in search path.
 
     Return type: Boolean
 
 -   pg\_opfamily\_is\_visible\(opclass\_oid\)
 
-    Description: Queries whether the operator family is visible in search path.
+    Description: Specifies whether the operator family is visible in search path.
 
     Return type: Boolean
 
 -   pg\_table\_is\_visible\(table\_oid\)
 
-    Description: Queries whether the table is visible in search path.
+    Description: Specifies whether the table is visible in search path.
 
     Return type: Boolean
 
 -   pg\_ts\_config\_is\_visible\(config\_oid\)
 
-    Description: Queries whether the text search configuration is visible in search path.
+    Description: Specifies whether the text search configuration is visible in search path.
 
     Return type: Boolean
 
 -   pg\_ts\_dict\_is\_visible\(dict\_oid\)
 
-    Description: Queries whether the text search dictionary is visible in search path.
+    Description: Specifies whether the text search dictionary is visible in search path.
 
     Return type: Boolean
 
 -   pg\_ts\_parser\_is\_visible\(parser\_oid\)
 
-    Description: Queries whether the text search parser is visible in search path.
+    Description: Specifies whether the text search parser is visible in search path.
 
     Return type: Boolean
 
 -   pg\_ts\_template\_is\_visible\(template\_oid\)
 
-    Description: Queries whether the text search template is visible in search path.
+    Description: Specifies whether the text search template is visible in search path.
 
     Return type: Boolean
 
 -   pg\_type\_is\_visible\(type\_oid\)
 
-    Description: Queries whether the type \(or domain\) is visible in search path.
+    Description: Specifies whether the type \(or domain\) is visible in search path.
 
     Return type: Boolean
 
@@ -1164,30 +1215,34 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   format\_type\(type\_oid, typemod\)
 
-    Description: Gets SQL name of a data type.
+    Description: Obtains the SQL name of a data type.
 
     Return type: text
 
     Note:  **format\_type**  returns the SQL name of a data type that is identified by its type OID and possibly a type modifier. Pass NULL for the type modifier if no specific modifier is known. Certain type modifiers are passed for data types with length limitations. The SQL name returned from  **format\_type**  contains the length of the data type, which can be calculated by taking sizeof\(int32\) from actual storage length \[actual storage len - sizeof\(int32\)\] in the unit of bytes. 32-bit space is required to store the customized length set by users. So the actual storage length contains 4 bytes more than the customized length. In the following example, the SQL name returned from  **format\_type**  is character varying\(6\), indicating the length of varchar type is 6 bytes. So the actual storage length of varchar type is 10 bytes.
 
     ```
-    postgres=# SELECT format_type((SELECT oid FROM pg_type WHERE typname='varchar'), 10);
+    openGauss=# SELECT format_type((SELECT oid FROM pg_type WHERE typname='varchar'), 10);
          format_type      
     ----------------------
      character varying(6)
     (1 row)
     ```
 
+-   getdistributekey\(table\_name\)
+
+    Description: Obtains a distribution column for a hash table. Distribution is not supported in a standalone system and the return value of this function is empty.
+
 -   pg\_check\_authid\(role\_oid\)
 
-    Description: Check whether a role name with given OID exists.
+    Description: Checks whether a role name with a given OID exists.
 
-    Return type: bool
+    Return type: Boolean
 
     Example:
 
     ```
-    postgres=# select pg_check_authid(1);
+    openGauss=# select pg_check_authid(1);
     pg_check_authid
     -----------------
     f
@@ -1196,7 +1251,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_describe\_object\(catalog\_id, object\_id, object\_sub\_id\)
 
-    Description: Gets description of a database object.
+    Description: Obtains the description of a database object.
 
     Return type: text
 
@@ -1204,13 +1259,13 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_constraintdef\(constraint\_oid\)
 
-    Description: Gets definition of a constraint.
+    Description: Obtains the definition of a constraint.
 
     Return type: text
 
 -   pg\_get\_constraintdef\(constraint\_oid, pretty\_bool\)
 
-    Description: Gets definition of a constraint.
+    Description: Obtains the definition of a constraint.
 
     Return type: text
 
@@ -1232,14 +1287,14 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_functiondef\(func\_oid\)
 
-    Description: Gets definition of a function.
+    Description: Obtains the definition of a function.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# select * from pg_get_functiondef(598);
+    openGauss=# select * from pg_get_functiondef(598);
      headerlines |                     definition                     
     -------------+----------------------------------------------------
                4 | CREATE OR REPLACE FUNCTION pg_catalog.abbrev(inet)+
@@ -1253,23 +1308,23 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_function\_arguments\(func\_oid\)
 
-    Description: Gets argument list of function's definition \(with default values\).
+    Description: Obtains the parameter list of the function's definition \(with default values\).
 
     Return type: text
 
-    Note:  **pg\_get\_function\_arguments**  returns the argument list of a function, in the form it would need to appear in within  **CREATE FUNCTION**.
+    Note:  **pg\_get\_function\_arguments**  returns the parameter list of a function, in the form it would need to appear in within  **CREATE FUNCTION**.
 
 -   pg\_get\_function\_identity\_arguments\(func\_oid\)
 
-    Description: Gets argument list to identify a function \(without default values\).
+    Description: Obtains the parameter list to identify a function \(without default values\).
 
     Return type: text
 
-    Note:  **pg\_get\_function\_identity\_arguments**  returns the argument list necessary to identify a function, in the form it would need to appear in within  **ALTER FUNCTION**. This form omits default values.
+    Note:  **pg\_get\_function\_identity\_arguments**  returns the parameter list necessary to identify a function, in the form it would need to appear in within  **ALTER FUNCTION**. This form omits default values.
 
 -   pg\_get\_function\_result\(func\_oid\)
 
-    Description: Gets  **RETURNS**  clause for function.
+    Description: Obtains the  **RETURNS**  clause for a function.
 
     Return type: text
 
@@ -1277,33 +1332,82 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_indexdef\(index\_oid\)
 
-    Description: Gets  **CREATE INDEX**  command for index.
+    Description: Obtains the  **CREATE INDEX**  command for an index.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# select * from pg_get_indexdef(16416);
+    openGauss=# select * from pg_get_indexdef(16416);
                                  pg_get_indexdef                             
     -------------------------------------------------------------------------
      CREATE INDEX test3_b_idx ON test3 USING btree (b) TABLESPACE pg_default
     (1 row)
     ```
 
--   pg\_get\_indexdef\(index\_oid, column\_no, pretty\_bool\)
+-   pg\_get\_indexdef\(index\_oid, dump\_schema\_only\)
 
-    Description: Gets  **CREATE INDEX**  command for index, or definition of just one index column when  **column\_no**  is not zero.
+    Description: Obtains the  **CREATE INDEX**  command for indexes in dump scenarios. For an interval partitioned table that contains a local index, if  **dump\_schema\_only**  is set to  **true**, the returned index creation statement does not contain the local index information of the automatically created partition. If  **dump\_schema\_only**  is set to  **false**, the returned index creation statement contains the local index information of the automatically created partition. For a non-interval partitioned table or an interval partitioned table that does not contain a local index, the value of  **dump\_schema\_only**  does not affect the returned result of the function.
+
+    Return type: text
 
     Example:
 
     ```
-    postgres=# select * from pg_get_indexdef(16416, 0, false);
+    openGauss=# CREATE TABLE sales
+    openGauss-# (prod_id NUMBER(6),
+    openGauss(#  cust_id NUMBER,
+    openGauss(#  time_id DATE,
+    openGauss(#  channel_id CHAR(1),
+    openGauss(#  promo_id NUMBER(6),
+    openGauss(#  quantity_sold NUMBER(3),
+    openGauss(#  amount_sold NUMBER(10,2)
+    openGauss(# )
+    PARTITION BY RANGE( time_id) INTERVAL('1 day')
+    openGauss-# openGauss-# (
+    openGauss(#  partition p1 VALUES LESS THAN ('2019-02-01 00:00:00'),
+    openGauss(#  partition p2 VALUES LESS THAN ('2019-02-02 00:00:00')
+    openGauss(# );
+    CREATE TABLE
+    openGauss=# create index index_sales on sales(prod_id) local (PARTITION idx_p1 ,PARTITION idx_p2);
+    CREATE INDEX
+    openGauss=#-- If the data to be inserted does not match any partition, create a partition and insert the data into the new partition.
+    openGauss=# INSERT INTO sales VALUES(1, 12, '2019-02-05 00:00:00', 'a', 1, 1, 1);
+    INSERT 0 1
+    openGauss=# select oid from pg_class where relname = 'index_sales';
+      oid
+    -------
+     24632
+    (1 row)
+    openGauss=# select * from pg_get_indexdef(24632, true);
+                                                         pg_get_indexdef
+    --------------------------------------------------------------------------------------------------------------------------
+     CREATE INDEX index_sales ON sales USING btree (prod_id) LOCAL(PARTITION idx_p1, PARTITION idx_p2)  TABLESPACE pg_default
+    (1 row)
+    openGauss=# select * from pg_get_indexdef(24632, false);
+                                                                        pg_get_indexdef
+    
+    ------------------------------------------------------------------------------------------------------------------------------------
+    --------------------
+     CREATE INDEX index_sales ON sales USING btree (prod_id) LOCAL(PARTITION idx_p1, PARTITION idx_p2, PARTITION sys_p1_prod_id_idx)  TA
+    BLESPACE pg_default
+    (1 row
+    ```
+
+-   pg\_get\_indexdef\(index\_oid, column\_no, pretty\_bool\)
+
+    Description: Obtains the  **CREATE INDEX**  command for an index, or definition of just one index column when  **column\_no**  is not zero.
+
+    Example:
+
+    ```
+    openGauss=# select * from pg_get_indexdef(16416, 0, false);
                                  pg_get_indexdef                             
     -------------------------------------------------------------------------
      CREATE INDEX test3_b_idx ON test3 USING btree (b) TABLESPACE pg_default
     (1 row)
-    postgres=# select * from pg_get_indexdef(16416, 1, false);
+    openGauss=# select * from pg_get_indexdef(16416, 1, false);
      pg_get_indexdef 
     -----------------
      b
@@ -1316,7 +1420,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_keywords\(\)
 
-    Description: Gets list of SQL keywords and their categories.
+    Description: Obtains the list of SQL keywords and their categories.
 
     Return type: SETOF record
 
@@ -1324,7 +1428,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_userbyid\(role\_oid\)
 
-    Description: Gets role name with given OID.
+    Description: Obtains the role name with a given OID.
 
     Return type: name
 
@@ -1339,7 +1443,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     Example:
 
     ```
-    postgres=# select pg_check_authid(20);
+    openGauss=# select pg_check_authid(20);
     pg_check_authid
     -----------------
     f
@@ -1348,13 +1452,13 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_viewdef\(view\_name\)
 
-    Description: Gets underlying SELECT command for view.
+    Description: Obtains the underlying  **SELECT**  command for a view.
 
     Return type: text
 
 -   pg\_get\_viewdef\(view\_name, pretty\_bool\)
 
-    Description: Gets underlying  **SELECT**  command for view, lines with columns are wrapped to 80 columns if  **pretty\_bool**  is true.
+    Description: Obtains the underlying  **SELECT**  command for a view, lines with columns are wrapped to 80 columns if  **pretty\_bool**  is set to  **true**.
 
     Return type: text
 
@@ -1362,19 +1466,19 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_get\_viewdef\(view\_oid\)
 
-    Description: Gets underlying SELECT command for view.
+    Description: Obtains the underlying  **SELECT**  command for a view.
 
     Return type: text
 
 -   pg\_get\_viewdef\(view\_oid, pretty\_bool\)
 
-    Description: Gets underlying  **SELECT**  command for view, lines with columns are wrapped to 80 columns if  **pretty\_bool**  is true.
+    Description: Obtains the underlying  **SELECT**  command for a view, lines with columns are wrapped to 80 columns if  **pretty\_bool**  is set to  **true**.
 
     Return type: text
 
 -   pg\_get\_viewdef\(view\_oid, wrap\_column\_int\)
 
-    Description: Gets underlying SELECT command for view, wrapping lines with columns as specified, printing is implied.
+    Description: Obtains the underlying  **SELECT**  command for a view, wrapping lines with columns as specified, printing is implied.
 
     Return type: text
 
@@ -1385,7 +1489,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     Example:
 
     ```
-    postgres=# select * from pg_get_tabledef(16384);
+    openGauss=# select * from pg_get_tabledef(16384);
                         pg_get_tabledef                    
     -------------------------------------------------------
      SET search_path = public;                            +
@@ -1406,7 +1510,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     Example:
 
     ```
-    postgres=# select * from pg_get_tabledef('t1');
+    openGauss=# select * from pg_get_tabledef('t1');
                         pg_get_tabledef                    
     -------------------------------------------------------
      SET search_path = public;                            +
@@ -1424,7 +1528,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_options\_to\_table\(reloptions\)
 
-    Description: Gets the set of storage option name/value pairs.
+    Description: Obtains the set of storage option name/value pairs.
 
     Return type: SETOF record
 
@@ -1432,7 +1536,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_tablespace\_databases\(tablespace\_oid\)
 
-    Description: Gets the set of database OIDs that have objects in the specified tablespace.
+    Description: Obtains the set of database OIDs that have objects in the specified tablespace.
 
     Return type: SETOF oid
 
@@ -1440,28 +1544,28 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   pg\_tablespace\_location\(tablespace\_oid\)
 
-    Description: Gets the path in the file system that this tablespace is located in.
+    Description: Obtains the path in the file system that this tablespace is located in.
 
     Return type: text
 
 -   pg\_typeof\(any\)
 
-    Description: Gets the data type of any value.
+    Description: Obtains the data type of any value.
 
     Return type: regtype
 
-    Note:  **pg\_typeof**  returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries. The function is declared as returning  **regtype**, which is an OID alias type \(see  [Object Identifier Types](Object-Identifier-Types.md)\). This means that it is the same as an OID for comparison purposes but displays as a type name.
+    Note:  **pg\_typeof**  returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries. The function is declared as returning  **regtype**, which is an OID alias type \(see  [OID Types](oid-types.md)\). This means that it is the same as an OID for comparison purposes but displays as a type name.
 
     Example:
 
     ```
-    postgres=# SELECT pg_typeof(33);
+    openGauss=# SELECT pg_typeof(33);
      pg_typeof 
     -----------
      integer
     (1 row)
     
-    postgres=# SELECT typlen FROM pg_type WHERE oid = pg_typeof(33);
+    openGauss=# SELECT typlen FROM pg_type WHERE oid = pg_typeof(33);
      typlen 
     --------
           4
@@ -1470,7 +1574,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   collation for \(any\)
 
-    Description: Gets the collation of the parameter.
+    Description: Obtains the collation of the parameter.
 
     Return type: text
 
@@ -1479,7 +1583,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     Example:
 
     ```
-    postgres=# SELECT collation for (description) FROM pg_description LIMIT 1;
+    openGauss=# SELECT collation for (description) FROM pg_description LIMIT 1;
      pg_collation_for 
     ------------------
      "default"
@@ -1503,7 +1607,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     Example:
 
     ```
-    postgres=# select * from pg_get_serial_sequence('t1', 'c1');
+    openGauss=# select * from pg_get_serial_sequence('t1', 'c1');
      pg_get_serial_sequence 
     ------------------------
      public.serial
@@ -1519,7 +1623,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     Example:
 
     ```
-    postgres=# select * from pg_sequence_parameters(16420);
+    openGauss=# select * from pg_sequence_parameters(16420);
      start_value | minimum_value |    maximum_value    | increment | cycle_option 
     -------------+---------------+---------------------+-----------+--------------
              101 |             1 | 9223372036854775807 |         1 | f
@@ -1531,7 +1635,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   col\_description\(table\_oid, column\_number\)
 
-    Description: Gets comment for a table column.
+    Description: Obtains the comment for a table column.
 
     Return type: text
 
@@ -1539,7 +1643,7 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   obj\_description\(object\_oid, catalog\_name\)
 
-    Description: Gets comment for a database object.
+    Description: Obtains the comment for a database object.
 
     Return type: text
 
@@ -1549,13 +1653,13 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 -   obj\_description\(object\_oid\)
 
-    Description: Gets comment for a database object.
+    Description: Obtains the comment for a database object.
 
     Return type: text
 
 -   shobj\_description\(object\_oid, catalog\_name\)
 
-    Description: Gets comment for a shared database object.
+    Description: Obtains the comment for a shared database object.
 
     Return type: text
 
@@ -1564,53 +1668,92 @@ postgres=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 ## Transaction IDs and Snapshots<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s13629462b1e147b2a9e93634a69e54e7"></a>
 
+Internal transaction IDs \(XIDs\) are 64 bits.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment.  [Table 11](#en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
+
+**Table  11**  Snapshot components
+
+<a name="en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d"></a>
+<table><thead align="left"><tr id="en-us_topic_0059777618_rff0daa55919a489da9225a223f21b3fd"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.3.1.1"><p id="en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"><a name="en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a><a name="en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a>Name</p>
+</th>
+<th class="cellrowborder" valign="top" width="87.58%" id="mcps1.2.3.1.2"><p id="en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"><a name="en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a><a name="en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="en-us_topic_0059777618_r5e9bee6140e5494e801e951823e54da9"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"><a name="en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a><a name="en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a>xmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"><a name="en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a><a name="en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a>Earliest transaction ID (txid) that is still active. All earlier transactions will either be committed and visible, or rolled back.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0059777618_rb57b3b18232b440681b3a1f991fa2a3a"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"><a name="en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a><a name="en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a>xmax</p>
+</td>
+<td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"><a name="en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a><a name="en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a>First as-yet-unassigned txid. All txids greater than or equal to this are not yet started as of the time of the snapshot, so they are invisible.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0059777618_r2def97a3e61c4109adfd6ae3e61474c6"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"><a name="en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a><a name="en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a>xip_list</p>
+</td>
+<td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"><a name="en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a><a name="en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a>Active txids at the time of the snapshot. The list includes only those active txids between <strong id="b84235270615284"><a name="b84235270615284"></a><a name="b84235270615284"></a>xmin</strong> and <strong id="b84235270615287"><a name="b84235270615287"></a><a name="b84235270615287"></a>xmax</strong>; there might be active txids higher than <strong id="b842352706152813"><a name="b842352706152813"></a><a name="b842352706152813"></a>xmax</strong>. A txid that is <strong id="en-us_topic_0058965770_b84235270615399"><a name="en-us_topic_0058965770_b84235270615399"></a><a name="en-us_topic_0058965770_b84235270615399"></a>xmin &lt;= txid &lt; xmax</strong> and not in this list was already completed at the time of the snapshot, and is either visible or dead according to its commit status. The list does not include txids of subtransactions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**txid\_snapshot**'s textual representation is  **xmin:xmax:xip\_list**.
+
+For example,  **10:20:10,14,15**  means  **xmin=10, xmax=20, xip\_list=10, 14, 15**.
+
 The following functions provide server transaction information in an exportable form. The main use of these functions is to determine which transactions were committed between two snapshots.
 
 -   txid\_current\(\)
 
-    Description: Gets current transaction ID.
+    Description: Obtains the current transaction ID.
+
+    Return type: bigint
+
+-   gs\_txid\_oldestxmin\(\)
+
+    Description: Obtains the minimum transaction ID \(specified by  **oldesxmin**\).
 
     Return type: bigint
 
 -   txid\_current\_snapshot\(\)
 
-    Description: Gets current snapshot.
+    Description: Obtains the current snapshot.
 
     Return type: txid\_snapshot
 
 -   txid\_snapshot\_xip\(txid\_snapshot\)
 
-    Description: Gets in-progress transaction IDs in snapshot.
+    Description: Obtains in-progress transaction IDs in a snapshot.
 
     Return type: SETOF bigint
 
 -   txid\_snapshot\_xmax\(txid\_snapshot\)
 
-    Description: Gets  **xmax**  of snapshot.
+    Description: Obtains  **xmax**  of snapshots.
 
     Return type: bigint
 
 -   txid\_snapshot\_xmin\(txid\_snapshot\)
 
-    Description: Gets  **xmin**  of snapshot.
+    Description: Obtains  **xmin**  of snapshots.
 
     Return type: bigint
 
 -   txid\_visible\_in\_snapshot\(bigint, txid\_snapshot\)
 
-    Description: Queries whether the transaction ID is visible in snapshot. \(do not use with subtransaction ids\)
+    Description: Specifies whether the transaction ID is visible in a snapshot \(do not use subtransaction IDs\).
 
     Return type: Boolean
 
 -   get\_local\_prepared\_xact\(\)
 
-    Description: Obtains the two-phase residual transaction information of the current node, including the transaction ID, GID the two-phase transaction, prepared time, owner OID, database OID, and node name of the current node.
+    Description: Obtains the two-phase residual transaction information of the current node, including the transaction ID, GID of the two-phase transaction, prepared time, owner OID, database OID, and node name of the current node.
 
     Return type: xid, text, timestamptz, oid, oid, text
 
 -   get\_remote\_prepared\_xacts\(\)
 
-    Description: Obtains the two-phase residual transaction information of all remote nodes, including the transaction ID, GID the two-phase transaction, prepared time, owner name, database name, and node name.
+    Description: Obtains the two-phase residual transaction information of all remote nodes, including the transaction ID, GID of the two-phase transaction, prepared time, owner name, database name, and node name.
 
     Return type: xid, text, timestamptz, name, name, text
 
@@ -1619,39 +1762,6 @@ The following functions provide server transaction information in an exportable 
     Description: Concurrently cleans two-phase residual transactions. Only the  **gs\_clean**  tool can call this function for the cleaning. In other situations,  **false**  is returned.
 
     Return type: Boolean
-
-    The internal transaction ID type \(**xid**\) is 64 bits wide and wraps around every 4 billion transactions.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment in time.  [Table 11](#en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
-
-    **Table  11**  Snapshot components
-
-    <a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d"></a>
-    <table><thead align="left"><tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_rff0daa55919a489da9225a223f21b3fd"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a>Name</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="87.58%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_a89130c7ca03545e8a74ba67675059af4"></a>Description</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_r5e9bee6140e5494e801e951823e54da9"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p54263521293"></a>xmin</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p114265521693"></a>Earliest transaction ID (txid) that is still active. All earlier transactions will either be committed and visible, or rolled back.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_rb57b3b18232b440681b3a1f991fa2a3a"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p18426252396"></a>xmax</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_abf4101861d574691903a3e16ee380e35"></a>First as-yet-unassigned txid. All txids greater than or equal to this are not yet started as of the time of the snapshot, so they are invisible.</p>
-    </td>
-    </tr>
-    <tr id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_r2def97a3e61c4109adfd6ae3e61474c6"><td class="cellrowborder" valign="top" width="12.42%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p84261652990"></a>xip_list</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a><a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_en-us_topic_0058965770_p24271152991"></a>Active txids at the time of the snapshot. The list includes only those active txids between <strong id="b84235270615284"><a name="b84235270615284"></a><a name="b84235270615284"></a>xmin</strong> and <strong id="b84235270615287"><a name="b84235270615287"></a><a name="b84235270615287"></a>xmax</strong>; there might be active txids higher than <strong id="b842352706152813"><a name="b842352706152813"></a><a name="b842352706152813"></a>xmax</strong>. A txid that is <strong id="en-us_topic_0058965770_b84235270615399"><a name="en-us_topic_0058965770_b84235270615399"></a><a name="en-us_topic_0058965770_b84235270615399"></a>xmin &lt;= txid &lt; xmax</strong> and not in this list was already completed at the time of the snapshot, and is either visible or dead according to its commit status. The list does not include txids of subtransactions.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-    **txid\_snapshot**'s textual representation is  **xmin:xmax:xip\_list**.
-
-    For example,  **10:20:10,14,15**  means  **xmin=10, xmax=20, xip\_list=10, 14, 15**.
 
 
 -   slice\(hstore, text\[\]\)
@@ -1663,7 +1773,7 @@ The following functions provide server transaction information in an exportable 
     Example:
 
     ```
-    postgres=# select slice('a=>1,b=>2,c=>3'::hstore, ARRAY['b','c','x']);
+    openGauss=# select slice('a=>1,b=>2,c=>3'::hstore, ARRAY['b','c','x']);
            slice
     --------------------
      "b"=>"2", "c"=>"3"
@@ -1679,7 +1789,7 @@ The following functions provide server transaction information in an exportable 
     Example:
 
     ```
-    postgres=# select slice_array('a=>1,b=>2,c=>3'::hstore, ARRAY['b','c','x']);
+    openGauss=# select slice_array('a=>1,b=>2,c=>3'::hstore, ARRAY['b','c','x']);
      slice_array
     -------------
      {2,3,NULL}
@@ -1695,7 +1805,7 @@ The following functions provide server transaction information in an exportable 
     Example:
 
     ```
-    postgres=# select skeys('a=>1,b=>2');
+    openGauss=# select skeys('a=>1,b=>2');
      skeys
     -------
      a
@@ -1732,13 +1842,39 @@ The following functions provide server transaction information in an exportable 
 
     Return type: threadid text, tid bigint, thrdtype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
+-   pg\_relation\_compression\_ratio
+
+    Description: Queries the compression rate of a table. By default,  **1.0**  is returned.
+
+    Parameter: text
+
+    Return type: real
+
+-   pg\_relation\_with\_compression
+
+    Description: Specifies whether a table is compressed.
+
+    Parameter: text
+
+    Return type: Boolean
+
+-   pg\_stat\_file\_recursive
+
+    Description: Lists all files in a path.
+
+    Parameter: location text
+
 -   pg\_shared\_memory\_detail
 
-    Description: Returns usage information about all generated shared memory contexts. For details about each column, see  [SHARED\_MEMORY\_DETAIL](SHARED_MEMORY_DETAIL.md).
+    Description: Returns usage information about all generated shared memory contexts. For details about each column, see  [GS\_SHARED\_MEMORY\_DETAIL](en-us_topic_0289900730.md).
 
     Parameter: nan
 
     Return type: contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
+
+-   get\_gtm\_lite\_status
+
+    Description: Returns the backup XID and CSN on the GTM for fault locating. This system function is not supported in GTM-FREE mode.
 
 -   gs\_stat\_get\_wlm\_plan\_operator\_info
 
@@ -1803,5 +1939,61 @@ The following functions provide server transaction information in an exportable 
     Parameter: nan
 
     Return type: min\_mem\_util integer, max\_mem\_util integer, min\_cpu\_util integer, max\_cpu\_util integer, min\_io\_util integer, max\_io\_util integer, used\_mem\_rate integer
+
+-   pg\_stat\_get\_session\_wlmstat
+
+    Description: Returns the load information of the current session.
+
+    Parameter: pid integer
+
+    Return type: datid oid, threadid bigint, sessionid bigint, threadpid integer, usesysid oid, appname text, query text, priority bigint, block\_time bigint, elapsed\_time bigint, total\_cpu\_time bigint, skew\_percent integer, statement\_mem integer, active\_points integer, dop\_value integer, current\_cgroup text, current\_status text, enqueue\_state text, attribute text, is\_plana boolean, node\_group text, srespool name
+
+-   pg\_stat\_get\_wlm\_ec\_operator\_info
+
+    Description: Obtains the operator information of the EC execution plan from the internal hash table.
+
+    Parameter: nan
+
+    Return type: queryid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, ec\_operator integer, ec\_status text, ec\_execute\_datanode text, ec\_dsn text, ec\_username text, ec\_query text, ec\_libodbc\_type text, ec\_fetch\_count bigint
+
+-   pg\_stat\_get\_wlm\_instance\_info
+
+    Description: Returns the load information of the current instance.
+
+    Parameter: nan
+
+    Return type: instancename text, timestamp, timestamp with time zone, used\_cpu integer, free\_memory integer, used\_memory integer, io\_await double precision, io\_util double precision, disk\_read double precision, disk\_write double precision, process\_read bigint, process\_write bigint, logical\_read bigint, logical\_write bigint, read\_counts bigint, write\_counts bigint
+
+-   pg\_stat\_get\_wlm\_instance\_info\_with\_cleanup
+
+    Description: Returns the load information of the current instance and saves the information to the system catalog.
+
+    Parameter: nan
+
+    Return type: instancename text, timestamp, timestamp with time zone, used\_cpu integer, free\_memory integer, used\_memory integer, io\_await double precision, io\_util double precision, disk\_read double precision, disk\_write double precision, process\_read bigint, process\_write bigint, logical\_read bigint, logical\_write bigint, read\_counts bigint, write\_counts bigint
+
+-   pg\_stat\_get\_wlm\_realtime\_session\_info
+
+    Description: Returns the load information of the real-time session.
+
+    Parameter: nan
+
+    Return type: nodename text, threadid bigint, block\_time bigint, duration bigint, estimate\_total\_time bigint, estimate\_left\_time bigint, schemaname text, query\_band text, spill\_info text, control\_group text, estimate\_memory integer, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_dn\_time bigint, max\_dn\_time bigint, average\_dn\_time bigint, dntime\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, min\_peak\_iops integer, max\_peak\_iops integer, average\_peak\_iops integer, iops\_skew\_percent integer, warning text, query text, query\_plan text, cpu\_top1\_node\_name text, cpu\_top2\_node\_name text, cpu\_top3\_node\_name text, cpu\_top4\_node\_name text, cpu\_top5\_node\_name text, mem\_top1\_node\_name text, mem\_top2\_node\_name text, mem\_top3\_node\_name text, mem\_top4\_node\_name text, mem\_top5\_node\_name text, cpu\_top1\_value bigint, cpu\_top2\_value bigint, cpu\_top3\_value bigint, cpu\_top4\_value bigint, cpu\_top5\_value bigint, mem\_top1\_value bigint, mem\_top2\_value bigint, mem\_top3\_value bigint, mem\_top4\_value bigint, mem\_top5\_value bigint, top\_mem\_dn text, top\_cpu\_dn text
+
+-   pg\_stat\_get\_wlm\_session\_iostat\_info
+
+    Description: Returns the session load I/O information.
+
+    Parameter: nan
+
+    Return type: threadid bigint, maxcurr\_iops integer, mincurr\_iops integer, maxpeak\_iops integer, minpeak\_iops integer, iops\_limits integer, io\_priority integer, curr\_io\_limits integer
+
+-   pg\_stat\_get\_wlm\_statistics
+
+    Description: Returns session load statistics.
+
+    Parameter: nan
+
+    Return type: statement text, block\_time bigint, elapsed\_time bigint, total\_cpu\_time bigint, qualification\_time bigint, skew\_percent integer, control\_group text, status text, action text
 
 

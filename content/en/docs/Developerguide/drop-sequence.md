@@ -6,12 +6,13 @@
 
 ## Precautions<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section3924194973416"></a>
 
-Only the sequence owner or a user granted with the DROP permission can run the  **DROP SEQUENCE**  command. The system administrator has this permission by default.
+-   Only the sequence owner or a user granted with the DROP permission can run the  **DROP SEQUENCE**  command. The system administrator has this permission by default.
+-   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is dropped.
 
 ## Syntax<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section292414499345"></a>
 
 ```
-DROP SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTRICT ];
+DROP [ LARGE ] SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTRICT ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section1692544913344"></a>
@@ -37,13 +38,13 @@ DROP SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTR
 
 ```
 -- Create an ascending sequence named serial, starting from 101.
-postgres=# CREATE SEQUENCE serial START 101;
+openGauss=# CREATE SEQUENCE serial START 101;
 
 -- Delete a sequence.
-postgres=# DROP SEQUENCE serial;
+openGauss=# DROP SEQUENCE serial;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section365162034413"></a>
 
-[ALTER SEQUENCE](en-us_topic_0283137303.md)  and  [DROP SEQUENCE](en-us_topic_0283137072.md)
+[ALTER SEQUENCE](alter-sequence.md)  and  [DROP SEQUENCE](drop-sequence.md)
 

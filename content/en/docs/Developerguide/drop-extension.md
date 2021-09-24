@@ -31,7 +31,7 @@ DROP EXTENSION [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 -   **RESTRICT**
 
-    If any object depends on an extension, the extension cannot be deleted \(unless all its member objects and other extension objects are deleted at a time using the  **DROP**  command\). This is the default processing.
+    If any object depends on an extension, the extension cannot be deleted \(unless all its member objects and other extension objects are deleted at a time using the  **DROP**  command\). This is a default processing.
 
 
 ## Examples<a name="section14411351193419"></a>

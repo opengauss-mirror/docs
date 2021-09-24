@@ -55,7 +55,7 @@ CREATE AGGREGATE name (
 
 -   **ffunc**
 
-    Final processing function called after all the input lines have been converted, which calculates the result of aggregation. This function must accept a parameter of  **state\_data\_type**. The output data type of the aggregation is defined as the return type of this function. If  **sfunc**  is not specified, the state value of the aggregation result is used as the aggregation result, and the output type is  **state\_data\_type**.
+    Final processing function called after all the input lines have been converted, which calculates the result of aggregation. This function must accept a parameter of  **state\_data\_type**. The output data type of the aggregation is defined as the return type of this function. If  **ffunc**  is not specified, the state value of the aggregation result is used as the aggregation result, and the output type is  **state\_data\_type**.
 
 
 -   **initial\_condition**

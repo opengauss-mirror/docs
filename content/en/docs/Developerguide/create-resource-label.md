@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
-Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
+Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -48,31 +48,31 @@ CREATE RESOURCE LABEL [IF NOT EXISTS] label_name ADD label_item_list[, ...]*;
 
 ```
 -- Create table tb_for_label.
-postgres=# CREATE TABLE tb_for_label(col1 text, col2 text, col3 text);
+openGauss=# CREATE TABLE tb_for_label(col1 text, col2 text, col3 text);
 
 -- Create schema schema_for_label.
-postgres=# CREATE SCHEMA schema_for_label;
+openGauss=# CREATE SCHEMA schema_for_label;
 
 -- Create view view_for_label.
-postgres=# CREATE VIEW view_for_label AS SELECT 1;
+openGauss=# CREATE VIEW view_for_label AS SELECT 1;
 
 -- Create function func_for_label.
-postgres=# CREATE FUNCTION func_for_label RETURNS TEXT AS $$ SELECT col1 FROM tb_for_label; $$ LANGUAGE SQL;
+openGauss=# CREATE FUNCTION func_for_label RETURNS TEXT AS $$ SELECT col1 FROM tb_for_label; $$ LANGUAGE SQL;
 
 -- Create a resource label based on the table.
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS table_label add TABLE(public.tb_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS table_label add TABLE(public.tb_for_label);
 
 -- Create a resource label based on the columns.
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS column_label add COLUMN(public.tb_for_label.col1);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS column_label add COLUMN(public.tb_for_label.col1);
 
 -- Create a resource label based on the schema.
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS schema_label add SCHEMA(schema_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS schema_label add SCHEMA(schema_for_label);
 
 -- Create a resource label based on the view.
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS view_label add VIEW(view_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS view_label add VIEW(view_for_label);
 
 -- Create a resource label based on the function.
-postgres=# CREATE RESOURCE LABEL IF NOT EXISTS func_label add FUNCTION(func_for_label);
+openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS func_label add FUNCTION(func_for_label);
 
 ```
 

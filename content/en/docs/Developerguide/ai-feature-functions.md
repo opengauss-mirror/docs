@@ -8,7 +8,7 @@
 
     Return type: record
 
-    [Single-query Index Recommendation](single-query-index-recommendation.md)  describes the examples.
+    [Single-query Index Recommendation](en-us_topic_0296549246.md)  describes the examples.
 
 -   hypopg\_create\_index\(text\)
 
@@ -18,17 +18,17 @@
 
     Return type: record
 
-    [Virtual Index](virtual-index.md)  describes the examples.
+    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
 
 -   hypopg\_display\_index\(\)
 
     Description: Displays information about all created virtual indexes.
 
-    **Parameters**: none
+    Parameter: none
 
     Return type: record
 
-    [Virtual Index](virtual-index.md)  describes the examples.
+    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
 
 -   hypopg\_drop\_index\(oid\)
 
@@ -38,17 +38,17 @@
 
     Return type: Boolean
 
-    [Virtual Index](virtual-index.md)  describes the examples.
+    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
 
 -   hypopg\_reset\_index\(\)
 
     Description: Clears all virtual indexes.
 
-    **Parameters**: none
+    Parameter: none
 
     Return type: none
 
-    [Virtual Index](virtual-index.md)  describes the examples.
+    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
 
 -   hypopg\_estimate\_size\(oid\)
 
@@ -58,7 +58,7 @@
 
     Return type: int8
 
-    [Virtual Index](virtual-index.md)  describes the examples.
+    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
 
 -   check\_engine\_status\(ip text, port text\)
 
@@ -68,15 +68,15 @@
 
     Return type: text
 
-    [User Guide](usage-guide.md)  describes the examples.
+    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
 
     Description: Encodes the plan operator information in the input parameters.
 
-    Parameter: plan operator information.
+    Parameter: plan operator information
 
-    Return type: text.
+    Return type: text
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >This function is an internal function. You are not advised to use it directly.
@@ -85,21 +85,21 @@
 
     Description: Trains a given query performance prediction model.
 
-    Parameters: template name and model name of the performance prediction model.
+    Parameters: template name and model name of the performance prediction model
 
     Return type: tartup\_time\_accuracy FLOAT8, total\_time\_accuracy FLOAT8, rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
 
-    [User Guide](usage-guide.md)  describes the examples.
+    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   track\_model\_train\_opt\(ip text, port text\)
 
     Description: Returns the training log address of the specified IP address and port predictor engine.
 
-    Parameter: IP address and port number of the predictor engine.
+    Parameter: IP address and port number of the predictor engine
 
     Return type: text
 
-    [User Guide](usage-guide.md)  describes the examples.
+    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   encode\_feature\_perf\_hist\(datname text\)
 
@@ -107,18 +107,74 @@
 
     Parameter: database name
 
-    Return type: queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, peak\_memory int
+    Return type: queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, and peak\_memory int
 
-    [User Guide](usage-guide.md)  describes the examples.
+    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   gather\_encoding\_info\(datname text\)
 
-    Description: Invokes encode\_feature\_perf\_hist to save the encoded data persistently.
+    Description: Invokes  **encode\_feature\_perf\_hist**  to save the encoded data persistently.
 
     Parameter: database name
 
     Return type: int
 
-    [User Guide](usage-guide.md)  describes the examples.
+    [User Guide](en-us_topic_0289900575.md)  describes the examples.
+
+-   db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the Boolean type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: Boolean
+
+-   db4ai\_predict\_by\_float4\(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the float4 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: float
+
+-   db4ai\_predict\_by\_float8\(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the float8 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: float
+
+-   db4ai\_predict\_by\_int32\(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the int32 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: int
+
+-   db4ai\_predict\_by\_int64\(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the int64 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: int
+
+-   db4ai\_predict\_by\_numeric\(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the numeric type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: numeric
+
+-   db4ai\_predict\_by\_text\(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the character type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: text
 
 

@@ -1,19 +1,19 @@
-# Conditional Expression Functions<a name="EN-US_TOPIC_0242370450"></a>
+# Conditional Expression Functions<a name="EN-US_TOPIC_0289900535"></a>
 
-## Conditional Expression Functions<a name="en-us_topic_0237121986_en-us_topic_0059778809_s67706c61c09047c4bca384689f7f5c08"></a>
+## Conditional Expression Functions<a name="en-us_topic_0283136903_en-us_topic_0237121986_en-us_topic_0059778809_s67706c61c09047c4bca384689f7f5c08"></a>
 
 -   coalesce\(expr1, expr2, ..., exprn\)
 
     Description:
 
-    Returns the first of its arguments that are not null.
+    Returns the first of its parameters that are not null.
 
     **COALESCE\(expr1, expr2\)**  is equivalent to  **CASE WHEN expr1 IS NOT NULL THEN expr1 ELSE expr2 END**.
 
     Example:
 
     ```
-    postgres=# SELECT coalesce(NULL,'hello');
+    openGauss=# SELECT coalesce(NULL,'hello');
      coalesce
     ----------
      hello
@@ -22,7 +22,7 @@
 
     Note:
 
-    -   Null is returned only if all parameters are null.
+    -   If all the expressions are equivalent to NULL in the expression list, this function returns  **NULL**.
     -   This value is replaced by the default value when data is displayed.
     -   Like a  **CASE**  expression,  **COALESCE**  only evaluates the parameters that are needed to determine the result. That is, parameters to the right of the first not-**NULL**  parameter are not evaluated.
 
@@ -33,7 +33,7 @@
     Example:
 
     ```
-    postgres=# SELECT decode('A','A',1,'B',2,0);
+    openGauss=# SELECT decode('A','A',1,'B',2,0);
      case
     ------
      1
@@ -49,7 +49,7 @@
     Example:
 
     ```
-    postgres=# SELECT nullif('hello','world');
+    openGauss=# SELECT nullif('hello','world');
      nullif 
     --------
      hello
@@ -60,10 +60,10 @@
 
     Assume the two parameter data types are different:
 
-    -   If implicit conversion exists between the two data types, implicitly convert the parameter of lower priority to this data type using the data type of higher priority. If the conversion succeeds, computation is performed. Otherwise, an error is returned. For example:
+    -   If implicit conversion exists between the two data types, implicitly convert the parameter of lower priority to this data type using the data type of higher priority. If the conversion succeeds, computation is performed. Otherwise, an error is returned. Example:
 
         ```
-        postgres=# SELECT nullif('1234'::VARCHAR,123::INT4);
+        openGauss=# SELECT nullif('1234'::VARCHAR,123::INT4);
          nullif 
         --------
            1234
@@ -71,16 +71,16 @@
         ```
 
         ```
-        postgres=# SELECT nullif('1234'::VARCHAR,'2012-12-24'::DATE);
+        openGauss=# SELECT nullif('1234'::VARCHAR,'2012-12-24'::DATE);
         ERROR:  invalid input syntax for type timestamp: "1234"
         ```
 
-    -   If implicit conversion is not applied between two data types, an error is displayed. For example:
+    -   If implicit conversion is not applied between two data types, an error is returned. Example:
 
         ```
-        postgres=# SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE);
+        openGauss=# SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE);
         ERROR:  operator does not exist: boolean = timestamp without time zone
-        LINE 1: SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE) FROM SYS_DUMMY;
+        LINE 1: SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE) FROM sys_dummy;
         ^
         HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
         ```
@@ -96,14 +96,14 @@
     Example:
 
     ```
-    postgres=# SELECT nvl('hello','world');
+    openGauss=# SELECT nvl('hello','world');
       nvl  
     -------
      hello
     (1 row)
     ```
 
-    Parameters  **expr1**  and  **expr2**  can be of any data type. If  **expr1**  and  **expr2**  are of different data types, NVL checks whether  **expr2**  can be implicitly converted to  **expr1**. If it can, the  **expr1**  data type is returned. otherwise return an error.
+    Note: Parameters  **expr1**  and  **expr2**  can be of any data type. If  **expr1**  and  **expr2**  are of different data types, NVL checks whether  **expr2**  can be implicitly converted to  **expr1**. If it can, the data type of  **expr1**  is returned. Otherwise, an error is returned.
 
 -   greatest\(expr1 \[, ...\]\)
 
@@ -114,7 +114,7 @@
     Example:
 
     ```
-    postgres=# SELECT greatest(1*2,2-3,4-1);
+    openGauss=# SELECT greatest(1*2,2-3,4-1);
      greatest 
     ----------
             3
@@ -122,7 +122,7 @@
     ```
 
     ```
-    postgres=# SELECT greatest('HARRY', 'HARRIOT', 'HAROLD');
+    openGauss=# SELECT greatest('HARRY', 'HARRIOT', 'HAROLD');
      greatest 
     ----------
      HARRY
@@ -136,7 +136,7 @@
     Example:
 
     ```
-    postgres=# SELECT least(1*2,2-3,4-1);
+    openGauss=# SELECT least(1*2,2-3,4-1);
      least 
     -------
         -1
@@ -144,7 +144,7 @@
     ```
 
     ```
-    postgres=# SELECT least('HARRY','HARRIOT','HAROLD');
+    openGauss=# SELECT least('HARRY','HARRIOT','HAROLD');
      least  
     --------
      HAROLD
@@ -161,11 +161,13 @@
 
     ```
     -- Create a table.
-    postgres=# CREATE TABLE blob_tb(b blob,id int);
+    openGauss=# CREATE TABLE blob_tb(b blob,id int);
     -- Insert data.
-    postgres=# INSERT INTO blob_tb VALUES (empty_blob(),1);
+    openGauss=# INSERT INTO blob_tb VALUES (empty_blob(),1);
     --Delete the table.
-    postgres=# DROP TABLE blob_tb;
+    openGauss=# DROP TABLE blob_tb;
     ```
+
+    Note: The length is 0 obtained using  **DBE\_LOB.GET\_LENGTH**.
 
 

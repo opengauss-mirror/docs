@@ -1,14 +1,14 @@
-# SET SESSION AUTHORIZATION<a name="EN-US_TOPIC_0242370653"></a>
+# SET SESSION AUTHORIZATION<a name="EN-US_TOPIC_0289899948"></a>
 
-## Function<a name="en-us_topic_0237122189_en-us_topic_0059778193_se24abe3c44f645b091e061c97d8957e7"></a>
+## Function<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_se24abe3c44f645b091e061c97d8957e7"></a>
 
-**SET SESSION AUTHORIZATION**  sets the session user identifier and the current user identifier of the current SQL session to a specified user.
+Sets the session user identifier and the current user identifier of the current SQL session to a specified user.
 
-## Precautions<a name="en-us_topic_0237122189_en-us_topic_0059778193_s50bdb366a8344d82bd8877b075ead315"></a>
+## Precautions<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_s50bdb366a8344d82bd8877b075ead315"></a>
 
 The session identifier can be changed only when the initial session user has the system administrator rights. Otherwise, the system supports the statement only when the authenticated user name is specified.
 
-## Syntax<a name="en-us_topic_0237122189_en-us_topic_0059778193_s9c2df0ee86bb4fae9be40201b8ca286e"></a>
+## Syntax<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_s9c2df0ee86bb4fae9be40201b8ca286e"></a>
 
 -   Set the session user identifier and the current user identifier of the current session.
 
@@ -24,7 +24,7 @@ The session identifier can be changed only when the initial session user has the
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122189_en-us_topic_0059778193_sb099078e31b74c4bb9d94876d02bc16e"></a>
+## Parameter Description<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_sb099078e31b74c4bb9d94876d02bc16e"></a>
 
 -   **SESSION**
 
@@ -38,7 +38,7 @@ The session identifier can be changed only when the initial session user has the
 
     Username
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **password**
 
@@ -49,26 +49,26 @@ The session identifier can be changed only when the initial session user has the
     Resets the identifiers of the session and current users to the initially authenticated user names.
 
 
-## Examples<a name="en-us_topic_0237122189_en-us_topic_0059778193_s6407418328e544dc8b8cfcf30db74af1"></a>
+## Examples<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_s6407418328e544dc8b8cfcf30db74af1"></a>
 
 ```
 -- Create a role paul.
-postgres=# CREATE ROLE paul IDENTIFIED BY 'Bigdata@123';
+openGauss=# CREATE ROLE paul IDENTIFIED BY 'xxxxxxxxx';
 
 -- Set the current user to paul.
-postgres=# SET SESSION AUTHORIZATION paul password 'Bigdata@123';
+openGauss=# SET SESSION AUTHORIZATION paul password 'xxxxxxxxx';
 
 -- View the current session user and the current user.
-postgres=# SELECT SESSION_USER, CURRENT_USER;
+openGauss=# SELECT SESSION_USER, CURRENT_USER;
 
 -- Reset the current user.
-postgres=# RESET SESSION AUTHORIZATION;
+openGauss=# RESET SESSION AUTHORIZATION;
 
 -- Delete the user.
-postgres=# DROP USER paul;
+openGauss=# DROP USER paul;
 ```
 
-## Reference<a name="en-us_topic_0237122189_en-us_topic_0059778193_sc0f2308a64c2470aaac2c18b49a18e95"></a>
+## Reference<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_sc0f2308a64c2470aaac2c18b49a18e95"></a>
 
 [SET ROLE](set-role.md)
 

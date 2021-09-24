@@ -1,4 +1,4 @@
-# Manipulating tsvector<a name="EN-US_TOPIC_0242370492"></a>
+# Manipulating tsvector<a name="EN-US_TOPIC_0289900182"></a>
 
 openGauss provides functions and operators that can be used to manipulate documents that are already in  **tsvector**  type.
 
@@ -12,8 +12,8 @@ openGauss provides functions and operators that can be used to manipulate docume
 
     **setweight**  returns a copy of the input tsvector in which every position has been labeled with the given weight, either  **A**,  **B**,  **C**, or  **D**. \(**D**  is the default for new tsvectors and as such is not displayed on output.\) These labels are retained when tsvectors are concatenated, allowing words from different parts of a document to be weighted differently by ranking functions.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >Note that weight labels apply to positions, not lexemes. If the input tsvector has been stripped of positions then  **setweight**  does nothing.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >Note that weight labels apply to positions, not lexemes. If the input tsvector has been stripped of positions then  **setweight**  does nothing.
 
 -   length\(vector tsvector\) returns integer
 

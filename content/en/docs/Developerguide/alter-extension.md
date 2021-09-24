@@ -6,7 +6,8 @@ ALTER EXTENSION modifies the plug-in extension.
 
 ## Precautions<a name="section786041713618"></a>
 
--   ALTER EXTENSION modifies the definition of an installed extension. Methods are as follows:
+ALTER EXTENSION modifies the definition of an installed extension. Methods are as follows:
+
 -   UPDATE
 
     The extension is updated to a new version. The extension must be applicable to an update script \(or a series of scripts\) so that the current installation version can be modified to a required version.
@@ -70,11 +71,11 @@ where member_object is:
 
 -   **new\_version**
 
-    Desired extension of a new version. This parameter can be overwritten by identifiers and literal characters. If a new version is not specified, ALTER EXTENSION UPDATE will update the version to an extended control file to display the default version.
+    New version of the extension, which can be overridden by identifiers and string literals. If a new version of the extension is not specified, ALTER EXTENSION UPDATE updates to the default version shown in the extension's control file.
 
 -   **new\_schema**
 
-    New extended schema.
+    New schema of the extension.
 
 -   **object\_name**
 
@@ -84,11 +85,11 @@ where member_object is:
 
     **operator\_name**
 
-    The name of the object that is added or removed from the extension, including names of tables, aggregations, fields, outer lists, functions, operators, operator classes, operator families, sequences, text search objects, types, and views that can be schema-qualified.
+    Names of objects that are added or removed from the extension, including names of tables, aggregations, domains, external linked lists, functions, operators, operator classes, operator families, sequences, text search objects, types, and views that can be schema-qualified.
 
 -   **agg\_type**
 
-    Input data type on an aggregate function operation. Dereference a zero-parameter aggregate function and write an asterisk \(\*\) instead of a list of these input data types.
+    Input data type of the aggregate function. To reference a zero-parameter aggregate function, use  **\***  to replace the input data type list.
 
 -   **source\_type**
 
@@ -100,32 +101,32 @@ where member_object is:
 
 -   **argmode**
 
-    Model of the function parameter. The value can be  **IN**,  **OUT**,  **INOUT**, or  **VARIADIC**. If this parameter is not set, the default value  **IN**  is used. Note that ALTER EXTENSION does not relate to the  **OUT**  parameter, because you only need to enter parameters to confirm the consistency of functions. Therefore, the  **IN**,  **INOUT**, and  **VARIADIC**  parameters are enough.
+    Model of the function parameter. The value can be  **IN**,  **OUT**,  **INOUT**, or  **VARIADIC**. The default value is  **IN**. ALTER EXTENSION does not relate to the  **OUT**  parameter, because you only need to enter parameters to confirm the consistency of functions. Therefore, the  **IN**,  **INOUT**, and  **VARIADIC**  parameters are enough.
 
 -   **argname**
 
-    Name of a function parameter. Note that ALTER EXTENSION does not relate to the parameter name, because only the parameter data type is required to confirm the consistency of the function.
+    Name of a function parameter. ALTER EXTENSION does not relate to the parameter name. Only the parameter data type is required to confirm the consistency of the function.
 
 -   **argtype**
 
-    Data type \(optionally schema modified\) of a function parameter.
+    Data type \(optionally schema-qualified\) of a function parameter.
 
 -   **left\_type**
 
     **right\_type**
 
-    Data type \(optionally schema modified\) of an operator's parameter. Write NONE for missing parameters of prefix or suffix operators.
+    Data type \(optionally schema-qualified\) of an operator parameter.  **NONE**  is written for a missing parameter of a prefix or suffix operator.
 
 
 ## Example<a name="section14411351193419"></a>
 
-Update the hstore extension to version 2.0:
+Update the hstore extension to version 2.0.
 
 ```
 ALTER EXTENSION hstore UPDATE TO '2.0';
 ```
 
-Run the following command to update the hstore extension mode to utils:
+Run the following command to update the hstore extension mode to utils.
 
 ```
 ALTER EXTENSION hstore SET SCHEMA utils;

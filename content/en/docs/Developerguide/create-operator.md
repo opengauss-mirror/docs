@@ -27,7 +27,7 @@ At least one LEFTARG and one RIGHTARG must be defined. For binocular operators, 
 
 Also, the function\_name procedure must have been defined with CREATE FUNCTION, and must be defined to accept the correct number of specified type parameters \(one or two\).
 
-Other clauses declare optional operator optimization clauses. Their meanings are defined in Section 35.13.
+Other clauses declare optional operator optimization clauses. Their meanings are defined in  [Section 35.13](https://www.postgresql.org/docs/9.3/xoper-optimization.html).
 
 To create an operator, you must have the USAGE permission on the parameter type and return type, and the EXECUTE permission on the underlying function. If exchange or negative operators are specified, you must have them.
 

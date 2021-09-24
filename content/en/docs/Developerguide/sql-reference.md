@@ -1,4 +1,4 @@
-# SQL Reference<a name="EN-US_TOPIC_0242370407"></a>
+# SQL Reference<a name="EN-US_TOPIC_0289900204"></a>
 
 -   **[openGauss SQL](opengauss-sql.md)**  
 

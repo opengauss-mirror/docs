@@ -1,15 +1,15 @@
-# Text Search Functions and Operators<a name="EN-US_TOPIC_0242370440"></a>
+# Text Search Functions and Operators<a name="EN-US_TOPIC_0289900663"></a>
 
-## Text Search Operators<a name="en-us_topic_0237121976_en-us_topic_0059779255_sd5fffb0507864456a3be705c4680bfbb"></a>
+## Text Search Operators<a name="en-us_topic_0283137544_en-us_topic_0237121976_en-us_topic_0059779255_sd5fffb0507864456a3be705c4680bfbb"></a>
 
 -   @@
 
-    Description: Specifies whether the  **tsvector**-typed words match the  **tsquery**-typed words.
+    Description: Specifies whether the  **tsvector**-type words match the  **tsquery**-type words.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT to_tsvector('fat cats ate rats') @@ to_tsquery('cat & rat') AS RESULT;
+    openGauss=# SELECT to_tsvector('fat cats ate rats') @@ to_tsquery('cat & rat') AS RESULT;
      result 
     --------
      t
@@ -20,10 +20,10 @@
 
     Description: Synonym for @@
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT to_tsvector('fat cats ate rats') @@@ to_tsquery('cat & rat') AS RESULT;
+    openGauss=# SELECT to_tsvector('fat cats ate rats') @@@ to_tsquery('cat & rat') AS RESULT;
      result 
     --------
      t
@@ -32,12 +32,12 @@
 
 -   ||
 
-    Description: Connects two  **tsvector**-typed words.
+    Description: Connects two  **tsvector**-type words.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT 'a:1 b:2'::tsvector || 'c:1 d:2 b:3'::tsvector AS RESULT;
+    openGauss=# SELECT 'a:1 b:2'::tsvector || 'c:1 d:2 b:3'::tsvector AS RESULT;
               result           
     ---------------------------
      'a':1 'b':2,5 'c':3 'd':4
@@ -46,12 +46,12 @@
 
 -   &&
 
-    Description: Performs the AND operation on two  **tsquery**-typed words.
+    Description: Performs an AND operation on two  **tsquery**-type words.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT 'fat | rat'::tsquery && 'cat'::tsquery AS RESULT;
+    openGauss=# SELECT 'fat | rat'::tsquery && 'cat'::tsquery AS RESULT;
               result           
     ---------------------------
      ( 'fat' | 'rat' ) & 'cat'
@@ -60,12 +60,12 @@
 
 -   ||
 
-    Description: Performs the OR operation on two  **tsquery**-typed words.
+    Description: Performs an OR operation on two  **tsquery**-type words.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT 'fat | rat'::tsquery || 'cat'::tsquery AS RESULT;
+    openGauss=# SELECT 'fat | rat'::tsquery || 'cat'::tsquery AS RESULT;
               result           
     ---------------------------
      ( 'fat' | 'rat' ) | 'cat'
@@ -76,10 +76,10 @@
 
     Description:  **NOT**  a  **tsquery**
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT !! 'cat'::tsquery AS RESULT;
+    openGauss=# SELECT !! 'cat'::tsquery AS RESULT;
      result 
     --------
      !'cat'
@@ -88,12 +88,12 @@
 
 -   @\>
 
-    Description: Specifies whether a  **tsquery**-typed word contains another  **tsquery**-typed word.
+    Description: Specifies whether a  **tsquery**-type word contains another  **tsquery**-type word.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT 'cat'::tsquery @> 'cat & rat'::tsquery AS RESULT;
+    openGauss=# SELECT 'cat'::tsquery @> 'cat & rat'::tsquery AS RESULT;
      result 
     --------
      f
@@ -102,12 +102,12 @@
 
 -   <@
 
-    Description: Specifies whether a  **tsquery**-typed word is contained in another  **tsquery**-typed word.
+    Description: Specifies whether a  **tsquery**-type word is contained in another  **tsquery**-type word.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT 'cat'::tsquery <@ 'cat & rat'::tsquery AS RESULT;
+    openGauss=# SELECT 'cat'::tsquery <@ 'cat & rat'::tsquery AS RESULT;
      result 
     --------
      t
@@ -117,18 +117,18 @@
 
 In addition to the preceding operators, the ordinary B-tree comparison operators \(including = and <\) are defined for types  **tsvector**  and  **tsquery**.
 
-## Text Search Functions<a name="en-us_topic_0237121976_en-us_topic_0059779255_s06e6cc0c308848d4b5ab9fa7bfe9f62a"></a>
+## Text Search Functions<a name="en-us_topic_0283137544_en-us_topic_0237121976_en-us_topic_0059779255_s06e6cc0c308848d4b5ab9fa7bfe9f62a"></a>
 
 -   get\_current\_ts\_config\(\)
 
-    Description: Gets default text search configuration.
+    Description: Obtains default text search configurations.
 
     Return type: regconfig
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT get_current_ts_config();
+    openGauss=# SELECT get_current_ts_config();
      get_current_ts_config 
     -----------------------
      english
@@ -137,14 +137,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   length\(tsvector\)
 
-    Description: Number of lexemes in a  **tsvector**-typed word.
+    Description: Specifies the number of lexemes in a  **tsvector**-type word.
 
     Return type: integer
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT length('fat:2,4 cat:3 rat:5A'::tsvector);
+    openGauss=# SELECT length('fat:2,4 cat:3 rat:5A'::tsvector);
      length 
     --------
           3
@@ -153,14 +153,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   numnode\(tsquery\)
 
-    Description: Number of lexemes plus  **tsquery**  operators
+    Description: Specifies the number of lexemes plus  **tsquery**  operators.
 
     Return type: integer
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT numnode('(fat & rat) | cat'::tsquery);
+    openGauss=# SELECT numnode('(fat & rat) | cat'::tsquery);
      numnode 
     ---------
            5
@@ -169,14 +169,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   plainto\_tsquery\(\[ config regconfig , \] query text\)
 
-    Description: Generates  **tsquery**  lexemes without punctuation.
+    Description: Generates  **tsquery**  lexemes without punctuations.
 
     Return type: tsquery
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT plainto_tsquery('english', 'The Fat Rats');
+    openGauss=# SELECT plainto_tsquery('english', 'The Fat Rats');
      plainto_tsquery 
     -----------------
      'fat' & 'rat'
@@ -185,14 +185,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   querytree\(query tsquery\)
 
-    Description: Gets indexable part of a  **tsquery**.
+    Description: Obtains the indexable part of a  **tsquery**.
 
     Return type: text
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT querytree('foo & ! bar'::tsquery);
+    openGauss=# SELECT querytree('foo & ! bar'::tsquery);
      querytree 
     -----------
      'foo'
@@ -205,10 +205,10 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Return type: tsvector
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT setweight('fat:2,4 cat:3 rat:5B'::tsvector, 'A');
+    openGauss=# SELECT setweight('fat:2,4 cat:3 rat:5B'::tsvector, 'A');
                setweight           
     -------------------------------
      'cat':3A 'fat':2A,4A 'rat':5A
@@ -221,10 +221,10 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Return type: tsvector
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT strip('fat:2,4 cat:3 rat:5A'::tsvector);
+    openGauss=# SELECT strip('fat:2,4 cat:3 rat:5A'::tsvector);
            strip       
     -------------------
      'cat' 'fat' 'rat'
@@ -237,10 +237,10 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Return type: tsquery
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT to_tsquery('english', 'The & Fat & Rats');
+    openGauss=# SELECT to_tsquery('english', 'The & Fat & Rats');
       to_tsquery   
     ---------------
      'fat' & 'rat'
@@ -253,10 +253,26 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Return type: tsvector
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT to_tsvector('english', 'The Fat Rats');
+    openGauss=# SELECT to_tsvector('english', 'The Fat Rats');
+       to_tsvector   
+    -----------------
+     'fat':2 'rat':3
+    (1 row)
+    ```
+
+-   to\_tsvector\_for\_batch\(\[ config regconfig , \] document text\)
+
+    Description: Reduces document text to  **tsvector**.
+
+    Return type: tsvector
+
+    Example:
+
+    ```
+    openGauss=# SELECT to_tsvector_for_batch('english', 'The Fat Rats');
        to_tsvector   
     -----------------
      'fat':2 'rat':3
@@ -269,10 +285,10 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Return type: text
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_headline('x y z', 'z'::tsquery);
+    openGauss=# SELECT ts_headline('x y z', 'z'::tsquery);
      ts_headline  
     --------------
      x y <b>z</b>
@@ -281,14 +297,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   ts\_rank\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
 
-    Description: Ranks document for query.
+    Description: Ranks documents for a query.
 
     Return type: float4
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_rank('hello world'::tsvector, 'world'::tsquery);
+    openGauss=# SELECT ts_rank('hello world'::tsvector, 'world'::tsquery);
      ts_rank  
     ----------
      .0607927
@@ -297,14 +313,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   ts\_rank\_cd\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
 
-    Description: Ranks document for query using cover density.
+    Description: Ranks documents for a query using cover density.
 
     Return type: float4
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_rank_cd('hello world'::tsvector, 'world'::tsquery);
+    openGauss=# SELECT ts_rank_cd('hello world'::tsvector, 'world'::tsquery);
      ts_rank_cd 
     ------------
               .1
@@ -313,14 +329,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   ts\_rewrite\(query tsquery, target tsquery, substitute tsquery\)
 
-    Description: Replaces  **tsquery**-typed word.
+    Description: Replaces a  **tsquery**-type word.
 
     Return type: tsquery
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_rewrite('a & b'::tsquery, 'a'::tsquery, 'foo|bar'::tsquery);
+    openGauss=# SELECT ts_rewrite('a & b'::tsquery, 'a'::tsquery, 'foo|bar'::tsquery);
            ts_rewrite        
     -------------------------
      'b' & ( 'foo' | 'bar' )
@@ -333,10 +349,10 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Return type: tsquery
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_rewrite('world'::tsquery, 'select ''world''::tsquery, ''hello''::tsquery');
+    openGauss=# SELECT ts_rewrite('world'::tsquery, 'select ''world''::tsquery, ''hello''::tsquery');
      ts_rewrite 
     ------------
      'hello'
@@ -344,18 +360,18 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     ```
 
 
-## Text Search Debugging Functions<a name="en-us_topic_0237121976_en-us_topic_0059779255_s945ba95d2c0e472cb1903d9f734c3c36"></a>
+## Text Search Debugging Functions<a name="en-us_topic_0283137544_en-us_topic_0237121976_en-us_topic_0059779255_s945ba95d2c0e472cb1903d9f734c3c36"></a>
 
 -   ts\_debug\(\[ config regconfig, \] document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary\[\], OUT dictionary regdictionary, OUT lexemes text\[\]\)
 
     Description: Tests a configuration.
 
-    Return type: setof record
+    Return type: SETOF record
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_debug('english', 'The Brightest supernovaes');
+    openGauss=# SELECT ts_debug('english', 'The Brightest supernovaes');
                                          ts_debug                                      
     -----------------------------------------------------------------------------------
      (asciiword,"Word, all ASCII",The,{english_stem},english_stem,{})
@@ -372,10 +388,10 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Return type: text\[\]
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_lexize('english_stem', 'stars');
+    openGauss=# SELECT ts_lexize('english_stem', 'stars');
      ts_lexize 
     -----------
      {star}
@@ -386,12 +402,12 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Description: Tests a parser.
 
-    Return type: setof record
+    Return type: SETOF record
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_parse('default', 'foo - bar');
+    openGauss=# SELECT ts_parse('default', 'foo - bar');
      ts_parse  
     -----------
      (1,foo)
@@ -405,12 +421,12 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
     Description: Tests a parser.
 
-    Return type: setof record
+    Return type: SETOF record
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_parse(3722, 'foo - bar');
+    openGauss=# SELECT ts_parse(3722, 'foo - bar');
      ts_parse  
     -----------
      (1,foo)
@@ -422,14 +438,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   ts\_token\_type\(parser\_name text, OUT tokid integer, OUT alias text, OUT description text\)
 
-    Description: Gets token types defined by parser.
+    Description: Obtains token types defined by a parser.
 
-    Return type: setof record
+    Return type: SETOF record
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_token_type('default');
+    openGauss=# SELECT ts_token_type('default');
                             ts_token_type                         
     --------------------------------------------------------------
      (1,asciiword,"Word, all ASCII")
@@ -460,14 +476,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   ts\_token\_type\(parser\_oid oid, OUT tokid integer, OUT alias text, OUT description text\)
 
-    Description: Gets token types defined by parser.
+    Description: Obtains token types defined by a parser.
 
-    Return type: setof record
+    Return type: SETOF record
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_token_type(3722);
+    openGauss=# SELECT ts_token_type(3722);
                             ts_token_type                         
     --------------------------------------------------------------
      (1,asciiword,"Word, all ASCII")
@@ -498,14 +514,14 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
 
 -   ts\_stat\(sqlquery text, \[ weights text, \] OUT word text, OUT ndoc integer, OUT nentry integer\)
 
-    Description: Gets statistics of a  **tsvector**  column.
+    Description: Obtains statistics of a  **tsvector**  column.
 
-    Return type: setof record
+    Return type: SETOF record
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ts_stat('select ''hello world''::tsvector');
+    openGauss=# SELECT ts_stat('select ''hello world''::tsvector');
        ts_stat   
     -------------
      (world,1,1)
