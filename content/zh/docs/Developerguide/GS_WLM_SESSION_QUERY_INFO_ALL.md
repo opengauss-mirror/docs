@@ -185,7 +185,7 @@ GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作�
 </td>
 <td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0112535431_p4645493920"><a name="zh-cn_topic_0112535431_p4645493920"></a><a name="zh-cn_topic_0112535431_p4645493920"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0112535431_p166414433910"><a name="zh-cn_topic_0112535431_p166414433910"></a><a name="zh-cn_topic_0112535431_p166414433910"></a>语句在数据库实例上的下盘信息：<a name="ul184242191366"></a><a name="ul184242191366"></a><ul id="ul184242191366"><li>None：数据库实例均未下盘。</li><li>All: 数据库实例均下盘。</li><li>[a:b]: 数量为b个数据库实例中有a个数据库实例下盘。</li></ul>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0112535431_p166414433910"><a name="zh-cn_topic_0112535431_p166414433910"></a><a name="zh-cn_topic_0112535431_p166414433910"></a>语句在数据库实例上的下盘信息：<a name="ul184242191366"></a><a name="ul184242191366"></a><ul id="ul184242191366"><li>None：数据库实例均未下盘。</li><li>All：数据库实例均下盘。</li><li>[a:b]：数量为b个数据库实例中有a个数据库实例下盘。</li></ul>
 </div>
 </td>
 </tr>
@@ -627,4 +627,3 @@ GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作�
 </tr>
 </tbody>
 </table>
-

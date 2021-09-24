@@ -157,7 +157,7 @@ GS\_WLM\_OPERATOR\_STATISTICS视图显示当前用户正在执行的作业的算
 </td>
 <td class="cellrowborder" valign="top" width="27.316831683168314%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0111176228_p1852061414513"><a name="zh-cn_topic_0111176228_p1852061414513"></a><a name="zh-cn_topic_0111176228_p1852061414513"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.32673267326732%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176228_p1452031415113"><a name="zh-cn_topic_0111176228_p1452031415113"></a><a name="zh-cn_topic_0111176228_p1452031415113"></a>该算子在数据库实例上的总执行时间(ms)。</p>
+<td class="cellrowborder" valign="top" width="47.32673267326732%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0111176228_p1452031415113"><a name="zh-cn_topic_0111176228_p1452031415113"></a><a name="zh-cn_topic_0111176228_p1452031415113"></a>该算子在数据库实例上的总执行时间（ms）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0111176228_row1060252515011"><td class="cellrowborder" valign="top" width="25.356435643564357%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0111176228_p12520111475115"><a name="zh-cn_topic_0111176228_p12520111475115"></a><a name="zh-cn_topic_0111176228_p12520111475115"></a>cpu_skew_percent</p>
@@ -177,4 +177,3 @@ GS\_WLM\_OPERATOR\_STATISTICS视图显示当前用户正在执行的作业的算
 </tr>
 </tbody>
 </table>
-
