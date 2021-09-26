@@ -530,7 +530,7 @@ openGauss=# GRANT ALL PRIVILEGES TO joe;
     GRANT
     ```
 
-3.  设置该用户连接数据库,使用该CEK创建加密表。
+3.  设置该用户连接数据库，使用该CEK创建加密表。
 
     ```
     openGauss=# SET SESSION AUTHORIZATION newuser PASSWORD 'xxxxxxxxx';

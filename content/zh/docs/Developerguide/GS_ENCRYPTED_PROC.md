@@ -24,7 +24,7 @@ GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返
 </td>
 <td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.4.1.2 "><p id="p18954195702214"><a name="p18954195702214"></a><a name="p18954195702214"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a>function的oid， 对应pg_proc系统表中的oid行标识符。</p>
+<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a>function的oid，对应pg_proc系统表中的oid行标识符。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ra264416a2ea9459eb3b51dd35fd98150"><td class="cellrowborder" valign="top" width="25.39%" headers="mcps1.2.4.1.1 "><p id="p1482951512216"><a name="p1482951512216"></a><a name="p1482951512216"></a>prorettype_orig</p>
@@ -50,4 +50,3 @@ GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返
 </tr>
 </tbody>
 </table>
-
