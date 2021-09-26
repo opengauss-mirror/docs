@@ -59,7 +59,7 @@ GLOBAL\_USER\_TRANSACTION用来统计全局用户执行的事务信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.61%" headers="mcps1.2.4.1.2 "><p id="p1243382191712"><a name="p1243382191712"></a><a name="p1243382191712"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.17%" headers="mcps1.2.4.1.3 "><p id="p843422201718"><a name="p843422201718"></a><a name="p843422201718"></a>用户事务平均响应时间(单位：微秒）。</p>
+<td class="cellrowborder" valign="top" width="59.17%" headers="mcps1.2.4.1.3 "><p id="p843422201718"><a name="p843422201718"></a><a name="p843422201718"></a>用户事务平均响应时间（单位：微秒）。</p>
 </td>
 </tr>
 <tr id="row14434152141713"><td class="cellrowborder" valign="top" width="24.22%" headers="mcps1.2.4.1.1 "><p id="p143411291719"><a name="p143411291719"></a><a name="p143411291719"></a>resp_total</p>
@@ -113,4 +113,3 @@ GLOBAL\_USER\_TRANSACTION用来统计全局用户执行的事务信息。
 </tr>
 </tbody>
 </table>
-

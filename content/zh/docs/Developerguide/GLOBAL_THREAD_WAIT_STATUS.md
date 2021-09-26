@@ -56,7 +56,7 @@ GLOBAL\_THREAD\_WAIT\_STATUS视图和THREAD\_WAIT\_STATUS视图列定义完全�
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122640_p1722623310299"><a name="zh-cn_topic_0237122640_p1722623310299"></a><a name="zh-cn_topic_0237122640_p1722623310299"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p722633311293"><a name="zh-cn_topic_0237122640_p722633311293"></a><a name="zh-cn_topic_0237122640_p722633311293"></a>session的ID</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p722633311293"><a name="zh-cn_topic_0237122640_p722633311293"></a><a name="zh-cn_topic_0237122640_p722633311293"></a>session的ID。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122640_row16226183310293"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122640_p32261339290"><a name="zh-cn_topic_0237122640_p32261339290"></a><a name="zh-cn_topic_0237122640_p32261339290"></a>lwtid</p>
@@ -103,4 +103,3 @@ GLOBAL\_THREAD\_WAIT\_STATUS视图和THREAD\_WAIT\_STATUS视图列定义完全�
 </tr>
 </tbody>
 </table>
-
