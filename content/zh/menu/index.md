@@ -133,7 +133,7 @@ headless: true
 		-   [简单权限管理]({{< relref "./docs/Quickstart/简单权限管理.md" >}})
 		-   [通过客户端工具执行SQL]({{< relref "./docs/Quickstart/通过客户端工具执行SQL.md" >}})
 		-   [通过JDBC执行SQL]({{< relref "./docs/Quickstart/通过JDBC执行SQL.md" >}})
-	-   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})
+	 -   [GUC参数说明]({{< relref "./docs/Developerguide/GUC参数说明.md" >}})
         -   [GUC使用说明]({{< relref "./docs/Developerguide/GUC使用说明.md" >}})
         -   [文件位置]({{< relref "./docs/Developerguide/文件位置.md" >}})
         -   [连接和认证]({{< relref "./docs/Developerguide/连接和认证.md" >}})
@@ -194,9 +194,22 @@ headless: true
         -   [等待事件]({{< relref "./docs/Developerguide/等待事件.md" >}})
         -   [Query]({{< relref "./docs/Developerguide/Query-22.md" >}})
         -   [系统性能快照]({{< relref "./docs/Developerguide/系统性能快照.md" >}})
+		-   [安全配置]({{< relref "./docs/Developerguide/安全配置.md" >}}
 		-   [全局临时表]({{< relref "./docs/Developerguide/全局临时表.md" >}})
+		-   [HyperLogLog]({{< relref "./docs/Developerguide/HyperLogLog.md" >}})
 		-   [定时任务]({{< relref "./docs/Developerguide/定时任务.md" >}})
-		-   [线程池]({{< relref "./docs/Developerguide/线程池.md" >}})	
+		-   [线程池]({{< relref "./docs/Developerguide/线程池.md" >}})
+		-   [闪回相关参数]({{< relref "./docs/Developerguide/闪回相关参数.md" >}})
+		-   [用户自定义函数]({{< relref "./docs/Developerguide/用户自定义函数.md" >}})
+		-   [定时任务]({{< relref "./docs/Developerguide/定时任务.md" >}})
+		-   [线程池]({{< relref "./docs/Developerguide/线程池.md" >}})
+		-   [备份恢复]({{< relref "./docs/Developerguide/备份恢复.md" >}})
+		-   [Undo]({{< relref "./docs/Developerguide/Undo.md" >}})
+		-   [DCF参数设置]({{< relref "./docs/Developerguide/DCF参数设置.md" >}}
+		-   [闪回相关参数]({{< relref "./docs/Developerguide/闪回相关参数.md" >}}
+		-   [回滚相关参数]({{< relref "./docs/Developerguide/回滚相关参数.md" >}}
+		-   [预留参数]({{< relref "./docs/Developerguide/预留参数.md" >}}
+		-   [AI特性]({{< relref "./docs/Developerguide/AI特性-GUC.md" >}})
 	-   [FAQ]({{< relref "./docs/Quickstart/FAQ.md" >}})
 -   [安装指南]({{< relref "./docs/Installation/Installation.md" >}})
     -   [安装概述]({{< relref "./docs/Installation/安装概述.md" >}})
@@ -934,7 +947,7 @@ headless: true
             -   [FETCH]({{< relref "./docs/Developerguide/FETCH.md" >}})
             -   [GRANT]({{< relref "./docs/Developerguide/GRANT.md" >}})
             -   [INSERT]({{< relref "./docs/Developerguide/INSERT.md" >}})
-            -   [LOCK]({{< relref "./docs/Developerguide/LOCK.md" >}})
+            -   [LOCK]({{< relref "./docs/Developerguide/LOCK-1.md" >}})
             -   [MOVE]({{< relref "./docs/Developerguide/MOVE.md" >}})
             -   [MERGE INTO]({{< relref "./docs/Developerguide/MERGE-INTO.md" >}})
             -   [PURGE]({{< relref "./docs/Developerguide/PURGE.md" >}})
@@ -1454,8 +1467,7 @@ headless: true
 			-   [DBE\_PLDEBUGGER.disable\_breakpoint]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-disable_breakpoint.md" >}})
 			-   [DBE\_PLDEBUGGER.finish]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-finish.md" >}})
 			-   [DBE\_PLDEBUGGER.set\_var]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-set_var.md" >}})
-		-   [DBE\_PLDEBUGGER.set\_var]({{< relref "./docs/Developerguide/DBE_PLDEBUGGER-set_var.md" >}})
-			-   [DB4AI Schema]({{< relref "./docs/Developerguide/DB4AI-Schema.md" >}})
+		-   [DB4AI Schema]({{< relref "./docs/Developerguide/DB4AI-Schema.md" >}})
 			-   [DB4AI.SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-SNAPSHOT.md" >}}
 			-   [DB4AI.CREATE\_SNAPSHOT]({{< relref "./docs/Developerguide/DB4AI-CREATE_SNAPSHOT.md" >}}
 			-   [DB4AI.CREATE\_SNAPSHOT\_INTERNAL]({{< relref "./docs/Developerguide/DB4AI-CREATE_SNAPSHOT_INTERNAL.md" >}}
