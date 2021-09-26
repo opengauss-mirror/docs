@@ -71,7 +71,7 @@ PG\_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG
 <td class="cellrowborder" valign="top" width="17.04%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_aef6f68b77235493484c9bf7bfa74095e"><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_aef6f68b77235493484c9bf7bfa74095e"></a><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_aef6f68b77235493484c9bf7bfa74095e"></a><span id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_text13201331162712"><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_text13201331162712"></a><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_text13201331162712"></a>Boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="66.32000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a26e747b0b2ba464ba1de89d4cc49d364"><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a26e747b0b2ba464ba1de89d4cc49d364"></a><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a26e747b0b2ba464ba1de89d4cc49d364"></a>如果为真，则该表最后在这个索引上建了簇。</p>
-<p id="p4106043175113"><a name="p4106043175113"></a><a name="p4106043175113"></a>如果为假，则该表没有再这个索引上建簇</p>
+<p id="p4106043175113"><a name="p4106043175113"></a><a name="p4106043175113"></a>如果为假，则该表没有再这个索引上建簇。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_r6ac01e895ae844458ed48a4c146e1c10"><td class="cellrowborder" valign="top" width="16.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2eb57e5d1cba432b9f255adf526bfa1c"><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2eb57e5d1cba432b9f255adf526bfa1c"></a><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2eb57e5d1cba432b9f255adf526bfa1c"></a>indisusable</p>
@@ -164,4 +164,3 @@ PG\_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG
 </tr>
 </tbody>
 </table>
-

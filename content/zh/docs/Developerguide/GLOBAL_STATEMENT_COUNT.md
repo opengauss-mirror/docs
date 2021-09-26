@@ -101,7 +101,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122657_p1494525819563"><a name="zh-cn_topic_0237122657_p1494525819563"></a><a name="zh-cn_topic_0237122657_p1494525819563"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p169451158155614"><a name="zh-cn_topic_0237122657_p169451158155614"></a><a name="zh-cn_topic_0237122657_p169451158155614"></a>最大select的时间花费(单位：微秒)。</p>
+<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p169451158155614"><a name="zh-cn_topic_0237122657_p169451158155614"></a><a name="zh-cn_topic_0237122657_p169451158155614"></a>最大select的时间花费（单位：微秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122657_row19451558155615"><td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122657_p10946158115611"><a name="zh-cn_topic_0237122657_p10946158115611"></a><a name="zh-cn_topic_0237122657_p10946158115611"></a>min_select_elapse</p>
@@ -115,7 +115,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122657_p59461158135618"><a name="zh-cn_topic_0237122657_p59461158135618"></a><a name="zh-cn_topic_0237122657_p59461158135618"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p20946185810560"><a name="zh-cn_topic_0237122657_p20946185810560"></a><a name="zh-cn_topic_0237122657_p20946185810560"></a>总update的时间花费(单位：微秒)。</p>
+<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p20946185810560"><a name="zh-cn_topic_0237122657_p20946185810560"></a><a name="zh-cn_topic_0237122657_p20946185810560"></a>总update的时间花费（单位：微秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122657_row1094655845617"><td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122657_p594665885615"><a name="zh-cn_topic_0237122657_p594665885615"></a><a name="zh-cn_topic_0237122657_p594665885615"></a>avg_update_elapse</p>
@@ -157,7 +157,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122657_p1694713584565"><a name="zh-cn_topic_0237122657_p1694713584565"></a><a name="zh-cn_topic_0237122657_p1694713584565"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p9947145813565"><a name="zh-cn_topic_0237122657_p9947145813565"></a><a name="zh-cn_topic_0237122657_p9947145813565"></a>最大insert的时间花费(单位：微秒)。</p>
+<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p9947145813565"><a name="zh-cn_topic_0237122657_p9947145813565"></a><a name="zh-cn_topic_0237122657_p9947145813565"></a>最大insert的时间花费（单位：微秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122657_row1947145835616"><td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122657_p494716584564"><a name="zh-cn_topic_0237122657_p494716584564"></a><a name="zh-cn_topic_0237122657_p494716584564"></a>min_insert_elapse</p>
@@ -178,7 +178,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122657_p49471587567"><a name="zh-cn_topic_0237122657_p49471587567"></a><a name="zh-cn_topic_0237122657_p49471587567"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p15947165815614"><a name="zh-cn_topic_0237122657_p15947165815614"></a><a name="zh-cn_topic_0237122657_p15947165815614"></a>平均delete的时间花费(单位：微秒)。</p>
+<td class="cellrowborder" valign="top" width="53.53%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122657_p15947165815614"><a name="zh-cn_topic_0237122657_p15947165815614"></a><a name="zh-cn_topic_0237122657_p15947165815614"></a>平均delete的时间花费（单位：微秒）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122657_row3947115855617"><td class="cellrowborder" valign="top" width="28.03%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122657_p0947195805615"><a name="zh-cn_topic_0237122657_p0947195805615"></a><a name="zh-cn_topic_0237122657_p0947195805615"></a>max_delete_elapse</p>
@@ -197,4 +197,3 @@
 </tr>
 </tbody>
 </table>
-

@@ -17,7 +17,7 @@ PG\_JOB系统表存储用户创建的定时任务的任务详细信息，定时�
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p116221444926"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p116221444926"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p116221444926"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p462214441621"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p462214441621"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p462214441621"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p462214441621"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p462214441621"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_p462214441621"></a>行标识符（隐藏属性，必须明确选择）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_row2960188145112"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p6653144317513"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p6653144317513"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p6653144317513"></a>job_id</p>
@@ -137,4 +137,3 @@ PG\_JOB系统表存储用户创建的定时任务的任务详细信息，定时�
 </tr>
 </tbody>
 </table>
-

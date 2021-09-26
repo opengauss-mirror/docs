@@ -186,7 +186,7 @@
 
 -   hll\_hash\_text\(text, int32\)
 
-    描述：对text类型数据计算哈希值, 并设置hashseed（即改变哈希策略）。
+    描述：对text类型数据计算哈希值，并设置hashseed（即改变哈希策略）。
 
     返回值类型：hll\_hashval
 
@@ -648,7 +648,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
 
 -   hll\_add\_agg\(hll\_hashval, int32 log2m\)
 
-    描述：把哈希后的数据按照分组放到hll中， 并指定参数log2m，取值范围是10到16。若输入-1或者NULL，则采用内置默认值。
+    描述：把哈希后的数据按照分组放到hll中，并指定参数log2m，取值范围是10到16。若输入-1或者NULL，则采用内置默认值。
 
     返回值类型：hll
 
@@ -664,7 +664,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
 
 -   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit\)
 
-    描述：把哈希后的数据按照分组放到hll中，依次指定参数log2m、log2explicit。 log2explicit取值范围是0到12，0表示直接跳过Explicit模式。该参数可以用来设置Explicit模式的阈值大小，在数据段长度达到2<sup>log2explicit</sup>后切换为Sparse模式或者Full模式。若输入-1或者NULL，则log2explicit采用内置默认值。
+    描述：把哈希后的数据按照分组放到hll中，依次指定参数log2m、log2explicit。log2explicit取值范围是0到12，0表示直接跳过Explicit模式。该参数可以用来设置Explicit模式的阈值大小，在数据段长度达到2<sup>log2explicit</sup>后切换为Sparse模式或者Full模式。若输入-1或者NULL，则log2explicit采用内置默认值。
 
     返回值类型：hll
 
@@ -680,7 +680,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
 
 -   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse\)
 
-    描述：把哈希后的数据按照分组放到hll中， 依次指定参数log2m、log2explicit、log2sparse。，log2sparse取值范围是0到14，0表示直接跳过Sparse模式。该参数可以用来设置Sparse模式的阈值大小，在数据段长度达到2<sup>log2sparse</sup>后切换为Full模式。若输入-1或者NULL，则log2sparse采用内置默认值。
+    描述：把哈希后的数据按照分组放到hll中，依次指定参数log2m、log2explicit、log2sparse。log2sparse取值范围是0到14，0表示直接跳过Sparse模式。该参数可以用来设置Sparse模式的阈值大小，在数据段长度达到2<sup>log2sparse</sup>后切换为Full模式。若输入-1或者NULL，则log2sparse采用内置默认值。
 
     返回值类型：hll
 
@@ -937,7 +937,7 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
 
 -   ||
 
-    描述：可代表hll\_add, hll\_union, hll\_add\_rev三个函数的功能。
+    描述：可代表hll\_add，hll\_union，hll\_add\_rev三个函数的功能。
 
     返回值类型：hll
 
@@ -981,5 +981,4 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
             1
     (1 row)
     ```
-
 
