@@ -1018,7 +1018,7 @@ headless: true
 		-	[Anonymous Block Supporting Autonomous Transaction]({{< relref "./docs/Developerguide/anonymous-block-supporting-autonomous-transaction.md" >}})
 		-   [Function Supporting Autonomous Transaction]({{< relref "./docs/Developerguide/function-supporting-autonomous-transaction.md" >}})
 		-   [Restrictions]({{< relref "./docs/Developerguide/restrictions.md" >}})	
-    -   [System Catalogs and System Views]({{< relref "./docs/Developerguide/{{< relref "./docs/Developerguide/system-catalogs-and-system-views.md" >}}" >}})
+    -   [System Catalogs and System Views]({{< relref "./docs/Developerguide/system-catalogs-and-system-views.md" >}}" >}})
         -   [Overview of System Catalogs and System Views]({{< relref "./docs/Developerguide/overview-of-system-catalogs-and-system-views.md" >}})
         -   [System Catalogs]({{< relref "./docs/Developerguide/system-catalogs.md" >}})
             -   [GS\_AUDITING\_POLICY]({{< relref "./docs/Developerguide/gs_auditing_policy.md" >}})
