@@ -1,4 +1,4 @@
-# Gathering Document Statistics<a name="EN-US_TOPIC_0242370495"></a>
+# Gathering Document Statistics<a name="EN-US_TOPIC_0289900738"></a>
 
 The function  **ts\_stat**  is useful for checking your configuration and for finding stop-word candidates.
 
@@ -14,10 +14,10 @@ ts_stat(sqlquery text, [ weights text, ]
 -   **ndoc integer**: number of documents \(**tsvector**\) the word occurred in
 -   **nentry integer**: total number of occurrences of the word 
 
-If  **weights**  are supplied, only occurrences having one of those weights are counted. For example, to find the ten most frequent words in a document collection:
+If  **weights**  is supplied, only occurrences having one of those weights are counted. For example, to find the ten most frequent words in a document collection:
 
 ```
-postgres=# SELECT * FROM ts_stat('SELECT to_tsvector(''english'', sr_reason_sk) FROM tpcds.store_returns WHERE sr_customer_sk < 10') ORDER BY nentry DESC, ndoc DESC, word LIMIT 10;
+openGauss=# SELECT * FROM ts_stat('SELECT to_tsvector(''english'', sr_reason_sk) FROM tpcds.store_returns WHERE sr_customer_sk < 10') ORDER BY nentry DESC, ndoc DESC, word LIMIT 10;
    word | ndoc | nentry 
 ------+------+--------
  32   |    2 |      2
@@ -36,7 +36,7 @@ postgres=# SELECT * FROM ts_stat('SELECT to_tsvector(''english'', sr_reason_sk) 
 The same, but counting only word occurrences with weight  **A**  or  **B**:
 
 ```
-postgres=# SELECT * FROM ts_stat('SELECT to_tsvector(''english'', sr_reason_sk) FROM tpcds.store_returns WHERE sr_customer_sk < 10', 'a') ORDER BY nentry DESC, ndoc DESC, word LIMIT 10;
+openGauss=# SELECT * FROM ts_stat('SELECT to_tsvector(''english'', sr_reason_sk) FROM tpcds.store_returns WHERE sr_customer_sk < 10', 'a') ORDER BY nentry DESC, ndoc DESC, word LIMIT 10;
  word | ndoc | nentry 
 ------+------+--------
 (0 rows)

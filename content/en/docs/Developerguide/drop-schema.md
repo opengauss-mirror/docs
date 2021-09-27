@@ -39,9 +39,9 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
 
 ## Examples<a name="en-us_topic_0283137271_en-us_topic_0237122148_en-us_topic_0059778467_s3390f031a430477da6a945b09b36b73d"></a>
 
-See  [Examples](en-us_topic_0283137491.md#en-us_topic_0237122113_en-us_topic_0059777945_s05e72232af5e4507aad1511c025d7617)  in  **CREATE SCHEMA**.
+See  [Examples](create-schema.md#en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_s05e72232af5e4507aad1511c025d7617)  in  **CREATE SCHEMA**.
 
 ## Helpful Links<a name="en-us_topic_0283137271_en-us_topic_0237122148_en-us_topic_0059778467_s344eb8c77efa4c209c358dd81f79034f"></a>
 
-[ALTER SCHEMA](en-us_topic_0283136607.md)  and  [CREATE SCHEMA](en-us_topic_0283137491.md)
+[ALTER SCHEMA](alter-schema.md)  and  [CREATE SCHEMA](create-schema.md)
 

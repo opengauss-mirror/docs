@@ -1,6 +1,50 @@
-# System Catalogs<a name="EN-US_TOPIC_0242385745"></a>
+# System Catalogs<a name="EN-US_TOPIC_0289900034"></a>
+
+-   **[GS\_AUDITING\_POLICY](gs_auditing_policy.md)**  
+
+-   **[GS\_AUDITING\_POLICY\_ACCESS](gs_auditing_policy_access.md)**  
+
+-   **[GS\_AUDITING\_POLICY\_FILTERS](gs_auditing_policy_filters.md)**  
+
+-   **[GS\_AUDITING\_POLICY\_PRIVILEGES](gs_auditing_policy_privileges.md)**  
+
+-   **[GS\_CLIENT\_GLOBAL\_KEYS](gs_client_global_keys.md)**  
+
+-   **[GS\_CLIENT\_GLOBAL\_KEYS\_ARGS](gs_client_global_keys_args.md)**  
+
+-   **[GS\_COLUMN\_KEYS](gs_column_keys.md)**  
+
+-   **[GS\_COLUMN\_KEYS\_ARGS](gs_column_keys_args.md)**  
+
+-   **[GS\_ENCRYPTED\_COLUMNS](gs_encrypted_columns.md)**  
+
+-   **[GS\_GLOBAL\_CHAIN](gs_global_chain.md)**  
+
+-   **[GS\_GLOBAL\_CONFIG](gs_global_config.md)**  
+
+-   **[GS\_PACKAGE](gs_package.md)**  
+
+-   **[GS\_MASKING\_POLICY](gs_masking_policy.md)**  
+
+-   **[GS\_MASKING\_POLICY\_ACTIONS](gs_masking_policy_actions.md)**  
+
+-   **[GS\_MASKING\_POLICY\_FILTERS](gs_masking_policy_filters.md)**  
+
+-   **[GS\_MATVIEW](gs_matview.md)**  
+
+-   **[GS\_MATVIEW\_DEPENDENCY](gs_matview_dependency.md)**  
+
+-   **[GS\_MODEL\_WAREHOUSE](gs_model_warehouse.md)**  
 
 -   **[GS\_OPT\_MODEL](gs_opt_model.md)**  
+
+-   **[GS\_POLICY\_LABEL](gs_policy_label.md)**  
+
+-   **[GS\_RECYCLEBIN](gs_recyclebin.md)**  
+
+-   **[GS\_TXN\_SNAPSHOT](gs_txn_snapshot.md)**  
+
+-   **[GS\_WLM\_EC\_OPERATOR\_INFO](gs_wlm_ec_operator_info.md)**  
 
 -   **[GS\_WLM\_INSTANCE\_HISTORY](gs_wlm_instance_history.md)**  
 
@@ -9,6 +53,8 @@
 -   **[GS\_WLM\_PLAN\_ENCODING\_TABLE](gs_wlm_plan_encoding_table.md)**  
 
 -   **[GS\_WLM\_PLAN\_OPERATOR\_INFO](gs_wlm_plan_operator_info.md)**  
+
+-   **[GS\_WLM\_SESSION\_QUERY\_INFO\_ALL](gs_wlm_session_query_info_all.md)**  
 
 -   **[GS\_WLM\_USER\_RESOURCE\_HISTORY](gs_wlm_user_resource_history.md)**  
 
@@ -21,6 +67,8 @@
 -   **[PG\_AMPROC](pg_amproc.md)**  
 
 -   **[PG\_APP\_WORKLOADGROUP\_MAPPING](pg_app_workloadgroup_mapping.md)**  
+
+-   **[GS\_ASP](gs_asp.md)**  
 
 -   **[PG\_ATTRDEF](pg_attrdef.md)**  
 
@@ -65,6 +113,8 @@
 -   **[PG\_FOREIGN\_SERVER](pg_foreign_server.md)**  
 
 -   **[PG\_FOREIGN\_TABLE](pg_foreign_table.md)**  
+
+-   **[PG\_HASHBUCKET](pg_hashbucket.md)**  
 
 -   **[PG\_INDEX](pg_index.md)**  
 
@@ -116,6 +166,8 @@
 
 -   **[PG\_STATISTIC\_EXT](pg_statistic_ext.md)**  
 
+-   **[PG\_SYNONYM](pg_synonym.md)**  
+
 -   **[PG\_TABLESPACE](pg_tablespace.md)**  
 
 -   **[PG\_TRIGGER](pg_trigger.md)**  
@@ -138,6 +190,18 @@
 
 -   **[PG\_WORKLOAD\_GROUP](pg_workload_group.md)**  
 
+-   **[PGXC\_CLASS](pgxc_class.md)**  
+
+-   **[PGXC\_GROUP](pgxc_group.md)**  
+
+-   **[PGXC\_NODE](pgxc_node.md)**  
+
+-   **[PGXC\_SLICE](pgxc_slice.md)**  
+
 -   **[PLAN\_TABLE\_DATA](plan_table_data.md)**  
+
+-   **[STATEMENT\_HISTORY](statement_history.md)**  
+
+-   **[GS\_ENCRYPTED\_PROC](gs_encrypted_proc.md)**  
 
 

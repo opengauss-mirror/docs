@@ -1,10 +1,10 @@
-# Ispell Dictionary<a name="EN-US_TOPIC_0242370503"></a>
+# Ispell Dictionary<a name="EN-US_TOPIC_0289900767"></a>
 
 An  **Ispell**  dictionary is a morphological dictionary, which can normalize different linguistic forms of a word into the same lexeme. For example, an English  **Ispell**  dictionary can match all declensions and conjugations of the search term  **bank**, such as,  **banking**,  **banked**,  **banks**,  **banks'**, and  **bank's**.
 
 openGauss does not provide any predefined  **Ispell**  dictionaries or dictionary files. The .dict files and .affix files support multiple open-source dictionary formats, including  **Ispell**,  **MySpell**, and  **Hunspell**.
 
-## Procedure<a name="en-us_topic_0237122039_section737061503610"></a>
+## Procedure<a name="en-us_topic_0283136907_en-us_topic_0237122039_section737061503610"></a>
 
 1.  Obtain the dictionary definition file \(.dict\) and affix file \(.affix\).
 
@@ -18,7 +18,7 @@ openGauss does not provide any predefined  **Ispell**  dictionaries or dictionar
 2.  Create an  **Ispell**  dictionary.
 
     ```
-    postgres=# CREATE TEXT SEARCH DICTIONARY norwegian_ispell (
+    openGauss=# CREATE TEXT SEARCH DICTIONARY norwegian_ispell (
         TEMPLATE = ispell,
         DictFile = nn_no,
         AffFile = nn_no,
@@ -26,12 +26,12 @@ openGauss does not provide any predefined  **Ispell**  dictionaries or dictionar
     );
     ```
 
-    The full names of the  **Ispell**  dictionary files are  **nn\_no.dict**  and  **nn\_no.affix**, and the dictionary is stored in the  **/home/dicts/**  directory of the current database primary node. For details about the syntax and parameters for creating an  **Ispell**  dictionary, see  [CREATE TEXT SEARCH DICTIONARY](create-text-search-dictionary.md).
+    The full names of the  **Ispell**  dictionary files are  **nn\_no.dict**  and  **nn\_no.affix**, and the dictionary is stored in the  **/home/dicts/**  directory of the current database primary node. For details about the syntax and parameters for creating a dictionary, see  [CREATE TEXT SEARCH DICTIONARY](create-text-search-dictionary.md).
 
 3.  Use the  **Ispell**  dictionary to split compound words.
 
     ```
-    postgres=# SELECT ts_lexize('norwegian_ispell', 'sjokoladefabrikk');
+    openGauss=# SELECT ts_lexize('norwegian_ispell', 'sjokoladefabrikk');
           ts_lexize      
     ---------------------
      {sjokolade,fabrikk}

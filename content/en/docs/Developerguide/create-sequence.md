@@ -1,25 +1,26 @@
-# CREATE SEQUENCE<a name="EN-US_TOPIC_0242370578"></a>
+# CREATE SEQUENCE<a name="EN-US_TOPIC_0289899862"></a>
 
-## Function<a name="en-us_topic_0237122114_en-us_topic_0059778825_section11152141914129"></a>
+## Function<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section11152141914129"></a>
 
 **CREATE SEQUENCE**  adds a sequence to the current database. The owner of a sequence is the user who creates the sequence.
 
-## Precautions<a name="en-us_topic_0237122114_en-us_topic_0059778825_section192715972011"></a>
+## Precautions<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section192715972011"></a>
 
 -   A sequence is a special table that stores arithmetic progressions. It has no actual meaning and is usually used to generate unique identifiers for rows or tables.
 -   If a schema name is given, the sequence is created in the specified schema; otherwise, it is created in the current schema. The sequence name must be different from the names of other sequences, tables, indexes, views in the same schema.
 -   After the sequence is created, functions  **nextval\(\)**  and  **generate\_series\(1,N\)**  insert data to the table. Make sure that the number of times for invoking  **nextval**  is greater than or equal to N+1. Otherwise, errors will be reported because the number of times for invoking function  **generate\_series\(\)**  is N+1.
+-   By default, the maximum value of  **Sequence**  is 2^63 – 1. If a large identifier is used, the maximum value can be 2^127 – 1.
 
-## Syntax<a name="en-us_topic_0237122114_en-us_topic_0059778825_section1963019544155"></a>
+## Syntax<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section1963019544155"></a>
 
 ```
-CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
+CREATE [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
     [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
-## Parameter Description<a name="en-us_topic_0237122114_en-us_topic_0059778825_section969884316205"></a>
+## Parameter Description<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section969884316205"></a>
 
 -   **name**
 
@@ -51,8 +52,8 @@ CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     Default value  **1**  indicates that one sequence can be generated each time.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >It is not recommended that you define  **cache**  and  **maxvalue**  or  **minvalue**  at the same time. The continuity of sequences cannot be ensured after  **cache**  is defined because unacknowledged sequences may be generated, causing waste of sequences.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >It is not recommended that you define  **cache**  and  **maxvalue**  or  **minvalue**  at the same time. The continuity of sequences cannot be ensured after  **cache**  is defined because unacknowledged sequences may be generated, causing waste of sequences.
 
 -   **CYCLE**
 
@@ -72,16 +73,16 @@ CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     The default value  **OWNED BY NONE**  indicates that such association does not exist.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >You are not advised to use the sequence created using  **OWNED BY**  in other tables. If multiple tables need to share a sequence, the sequence must not belong to a specific table.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >You are not advised to use the sequence created using  **OWNED BY**  in other tables. If multiple tables need to share a sequence, the sequence must not belong to a specific table.
 
 
-## Examples<a name="en-us_topic_0237122114_en-us_topic_0059778825_section17779175211714"></a>
+## Examples<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section17779175211714"></a>
 
 Create an ascending sequence named  **serial**, which starts from 101.
 
 ```
-postgres=# CREATE SEQUENCE serial
+openGauss=# CREATE SEQUENCE serial
  START 101
  CACHE 20;
 ```
@@ -89,7 +90,7 @@ postgres=# CREATE SEQUENCE serial
 Select the next number from the sequence.
 
 ```
-postgres=# SELECT nextval('serial');
+openGauss=# SELECT nextval('serial');
  nextval 
  ---------
       101
@@ -98,7 +99,7 @@ postgres=# SELECT nextval('serial');
 Select the next number from the sequence.
 
 ```
-postgres=# SELECT nextval('serial');
+openGauss=# SELECT nextval('serial');
  nextval 
  ---------
       102
@@ -107,7 +108,7 @@ postgres=# SELECT nextval('serial');
 Create a sequence associated with the table.
 
 ```
-postgres=# CREATE TABLE customer_address
+openGauss=# CREATE TABLE customer_address
 (
     ca_address_sk             integer               not null,
     ca_address_id             char(16)              not null,
@@ -124,17 +125,17 @@ postgres=# CREATE TABLE customer_address
     ca_location_type          char(20)                     
 );
 
-postgres=# CREATE SEQUENCE serial1
+openGauss=# CREATE SEQUENCE serial1
  START 101
  CACHE 20
 OWNED BY customer_address.ca_address_sk;
--- Delete the table and sequence.
-postgres=# DROP TABLE customer_address;
-postgres=# DROP SEQUENCE serial cascade;
-postgres=# DROP SEQUENCE serial1 cascade;
+-- Delete a table and sequences.
+openGauss=# DROP TABLE customer_address;
+openGauss=# DROP SEQUENCE serial cascade;
+openGauss=# DROP SEQUENCE serial1 cascade;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122114_en-us_topic_0059778825_section184942174514"></a>
+## Helpful Links<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section184942174514"></a>
 
 [DROP SEQUENCE](drop-sequence.md)  and  [ALTER SEQUENCE](alter-sequence.md)
 

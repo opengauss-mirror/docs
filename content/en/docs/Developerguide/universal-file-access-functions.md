@@ -1,4 +1,4 @@
-# Universal File Access Functions<a name="EN-US_TOPIC_0242370454"></a>
+# Universal File Access Functions<a name="EN-US_TOPIC_0289900407"></a>
 
 Universal file access functions provide local access interfaces for files on a database server. Only files in the openGauss directory and the  **log\_directory**  directory can be accessed. Use a relative path for files in the openGauss directory, and a path matching the  **log\_directory**  configuration setting for log files. Only database initialization users can use these functions.
 
@@ -10,10 +10,10 @@ Universal file access functions provide local access interfaces for files on a d
 
     Note:  **pg\_ls\_dir**  returns all the names in the specified directory, except the special entries "." and "..".
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT pg_ls_dir('./');
+    openGauss=# SELECT pg_ls_dir('./');
           pg_ls_dir       
     ----------------------
      .postgresql.conf.swp
@@ -57,12 +57,12 @@ Universal file access functions provide local access interfaces for files on a d
 
     Return type: text
 
-    Note:  **pg\_read\_file**  returns part of a text file. It can return a maximum of  _length_  bytes from  _offset_. The actual size of fetched data is less than  _length_  if the end of the file is reached first. If  **offset**  is negative, it is the length rolled back from the file end. If  **offset**  and  **length**  are omitted, the entire file is returned.
+    Note:  **pg\_read\_file**  returns part of a text file. It can return a maximum of  _length_  bytes from  _offset_. The actual size of fetched data is less than  _length_  if the end of the file is reached first. If  _offset_  is negative, it is the length rolled back from the file end. If  _offset_  and  _length_  are omitted, the entire file is returned.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT pg_read_file('postmaster.pid',0,100);
+    openGauss=# SELECT pg_read_file('postmaster.pid',0,100);
                  pg_read_file              
     ---------------------------------------
      53078                                +
@@ -81,10 +81,10 @@ Universal file access functions provide local access interfaces for files on a d
 
     Return type: bytea
 
-    Note:  **pg\_read\_binary\_file**  is similar to  **pg\_read\_file**, except that the result is a  **bytea**  value; accordingly, no encoding checks are performed. In combination with the  **convert\_from**  function, this function can be used to read a file in a specified encoding:
+    Note:  **pg\_read\_binary\_file**  is similar to  **pg\_read\_file**, except that the result is a  **bytea**  value; accordingly, no encoding checks are performed. In combination with the  **convert\_from**  function, this function can be used to read a file in a specified encoding.
 
     ```
-    postgres=# SELECT convert_from(pg_read_binary_file('filename'), 'UTF8');
+    openGauss=# SELECT convert_from(pg_read_binary_file('filename'), 'UTF8');
     ```
 
 -   pg\_stat\_file\(filename text\)
@@ -96,17 +96,17 @@ Universal file access functions provide local access interfaces for files on a d
     Note:  **pg\_stat\_file**  returns a record containing the file size, last access timestamp, last modification timestamp, last file status change timestamp, and a Boolean value indicating if it is a directory. Typical use cases are as follows:
 
     ```
-    postgres=# SELECT * FROM pg_stat_file('filename');
+    openGauss=# SELECT * FROM pg_stat_file('filename');
     ```
 
     ```
-    postgres=# SELECT (pg_stat_file('filename')).modification;
+    openGauss=# SELECT (pg_stat_file('filename')).modification;
     ```
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT convert_from(pg_read_binary_file('postmaster.pid'), 'UTF8');
+    openGauss=# SELECT convert_from(pg_read_binary_file('postmaster.pid'), 'UTF8');
                  convert_from             
     --------------------------------------
      4881                                +
@@ -121,7 +121,7 @@ Universal file access functions provide local access interfaces for files on a d
     ```
 
     ```
-    postgres=# SELECT * FROM pg_stat_file('postmaster.pid');
+    openGauss=# SELECT * FROM pg_stat_file('postmaster.pid');
      
      size |         access         |      modification      |         change         
     | creation | isdir 
@@ -133,7 +133,7 @@ Universal file access functions provide local access interfaces for files on a d
     ```
 
     ```
-    postgres=# SELECT (pg_stat_file('postmaster.pid')).modification;
+    openGauss=# SELECT (pg_stat_file('postmaster.pid')).modification;
           modification      
     ------------------------
      2017-06-01 17:18:08+08

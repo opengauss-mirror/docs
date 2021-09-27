@@ -1,19 +1,19 @@
-# Binary String Functions and Operators<a name="EN-US_TOPIC_0242370432"></a>
+# Binary String Functions and Operators<a name="EN-US_TOPIC_0289900418"></a>
 
-## String Operators<a name="en-us_topic_0237121968_en-us_topic_0059778049_s48b25a0eb8364edc885d82ec73d3fdf5"></a>
+## String Operators<a name="en-us_topic_0283137016_en-us_topic_0237121968_en-us_topic_0059778049_s48b25a0eb8364edc885d82ec73d3fdf5"></a>
 
 SQL defines some string functions that use keywords, rather than commas, to separate arguments.
 
 -   octet\_length\(string\)
 
-    Description: Number of bytes in binary string
+    Description: Specifies the number of bytes in a binary string.
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT octet_length(E'jo\\000se'::bytea) AS RESULT;
+    openGauss=# SELECT octet_length(E'jo\\000se'::bytea) AS RESULT;
      result
     --------
           5
@@ -22,14 +22,14 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
 
 -   overlay\(string placing string from int \[for int\]\)
 
-    Description: Replaces substring.
+    Description: Replaces substrings.
 
     Return type: bytea
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT overlay(E'Th\\000omas'::bytea placing E'\\002\\003'::bytea from 2 for 3) AS RESULT;
+    openGauss=# SELECT overlay(E'Th\\000omas'::bytea placing E'\\002\\003'::bytea from 2 for 3) AS RESULT;
          result     
     ----------------
      \x5402036d6173
@@ -38,31 +38,47 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
 
 -   position\(substring in string\)
 
-    Description: Location of specified substring
+    Description: Specifies the location of a specified substring.
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT position(E'\\000om'::bytea in E'Th\\000omas'::bytea) AS RESULT;
+    openGauss=# SELECT position(E'\\000om'::bytea in E'Th\\000omas'::bytea) AS RESULT;
      result
     --------
           3
     (1 row)
     ```
 
--   substring\(string, from int \[,for int\]\)
+-   substring\(string \[from int\] \[for int\]\)
 
-    Description: Truncates substring.
+    Description: Truncates a substring.
 
     Return type: bytea
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT substring(E'Th\\000omas'::bytea from 2 for 3) AS RESULT; 
+    openGauss=# SELECT substring(E'Th\\000omas'::bytea from 2 for 3) AS RESULT; 
       result  
+    ----------
+     \x68006f
+    (1 row)
+    ```
+
+-   substr\(string, from int \[, for int\]\)
+
+    Description: Truncates a substring.
+
+    Return type: bytea
+
+    Example:
+
+    ```
+    openGauss=# select substr(E'Th\\000omas'::bytea,2, 3) as result;
+      result
     ----------
      \x68006f
     (1 row)
@@ -74,10 +90,10 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
 
     Return type: bytea
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT trim(E'\\000'::bytea from E'\\000Tom\\000'::bytea) AS RESULT;
+    openGauss=# SELECT trim(E'\\000'::bytea from E'\\000Tom\\000'::bytea) AS RESULT;
       result  
     ----------
      \x546f6d
@@ -85,7 +101,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     ```
 
 
-## Other Binary String Functions<a name="en-us_topic_0237121968_en-us_topic_0059778049_s460ba3376a004239a3cc867b5466c5f5"></a>
+## Other Binary String Functions<a name="en-us_topic_0283137016_en-us_topic_0237121968_en-us_topic_0059778049_s460ba3376a004239a3cc867b5466c5f5"></a>
 
 openGauss provides common syntax used for calling functions.
 
@@ -95,10 +111,10 @@ openGauss provides common syntax used for calling functions.
 
     Return type: bytea
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT btrim(E'\\000trim\\000'::bytea, E'\\000'::bytea) AS RESULT;
+    openGauss=# SELECT btrim(E'\\000trim\\000'::bytea, E'\\000'::bytea) AS RESULT;
        result   
     ------------
      \x7472696d
@@ -107,14 +123,14 @@ openGauss provides common syntax used for calling functions.
 
 -   get\_bit\(string, offset\)
 
-    Description: Extracts bit from string.
+    Description: Extracts bits from a string.
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT get_bit(E'Th\\000omas'::bytea, 45) AS RESULT; 
+    openGauss=# SELECT get_bit(E'Th\\000omas'::bytea, 45) AS RESULT; 
      result
     --------
           1
@@ -123,14 +139,14 @@ openGauss provides common syntax used for calling functions.
 
 -   get\_byte\(string, offset\)
 
-    Description: Extracts byte from string.
+    Description: Extracts bytes from a string.
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT get_byte(E'Th\\000omas'::bytea, 4) AS RESULT; 
+    openGauss=# SELECT get_byte(E'Th\\000omas'::bytea, 4) AS RESULT; 
      result
     --------
         109
@@ -139,14 +155,14 @@ openGauss provides common syntax used for calling functions.
 
 -   set\_bit\(string,offset, newvalue\)
 
-    Description: Sets bit in string.
+    Description: Sets bits in a string.
 
     Return type: bytea
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT set_bit(E'Th\\000omas'::bytea, 45, 0) AS RESULT; 
+    openGauss=# SELECT set_bit(E'Th\\000omas'::bytea, 45, 0) AS RESULT; 
           result      
     ------------------
      \x5468006f6d4173
@@ -155,14 +171,14 @@ openGauss provides common syntax used for calling functions.
 
 -   set\_byte\(string,offset, newvalue\)
 
-    Description: Sets byte in string.
+    Description: Sets bytes in a string.
 
     Return type: bytea
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT set_byte(E'Th\\000omas'::bytea, 4, 64) AS RESULT; 
+    openGauss=# SELECT set_byte(E'Th\\000omas'::bytea, 4, 64) AS RESULT; 
           result      
     ------------------
      \x5468006f406173

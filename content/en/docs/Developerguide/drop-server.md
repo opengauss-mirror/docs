@@ -34,5 +34,5 @@ DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 
 ## Helpful Links<a name="en-us_topic_0283136745_section620331805317"></a>
 
-[ALTER SERVER](en-us_topic_0283136932.md)  and  [CREATE SERVER](en-us_topic_0283137586.md)
+[ALTER SERVER](alter-server.md)  and  [CREATE SERVER](create-server.md)
 

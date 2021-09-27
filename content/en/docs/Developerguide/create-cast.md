@@ -54,7 +54,7 @@ CREATE CAST (source_type AS target_type)
 
     Indicates that the transformation can be implicitly called in any environment.
 
-    A conversion implementation function can have one to three parameters. The type of the first parameter must be the same as that of the source type to be converted, or can be forcibly converted from the binary of the source type to be converted. If the second parameter exists, it must be of the integer type. It receives these type modifiers associated with the target type, or  **-1**  if nothing is present. If the third parameter exists, it must be of the boolean type. If the conversion is an explicit type conversion,  **true**  is received. Otherwise,  **false**  is received.
+    A conversion implementation function can have one to three parameters. The type of the first parameter must be the same as that of the source type to be converted, or can be forcibly converted from the binary of the source type to be converted. If the second parameter exists, it must be of the integer type. It receives these type modifiers associated with the target type, or  **-1**  if nothing is present. If the third parameter exists, it must be of the Boolean type. If the conversion is an explicit type conversion,  **true**  is received. Otherwise,  **false**  is received.
 
     The return type of a conversion function must be the same as the target type of the conversion, or the binary of the target type of the conversion can be forcibly converted.
 

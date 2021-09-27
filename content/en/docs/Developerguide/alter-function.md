@@ -10,6 +10,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
 -   If a function involves operations on temporary tables,  **ALTER FUNCTION**  cannot be used.
 -   To modify the owner or schema of a function, you must be a function owner or system administrator and a member of the new owner role.
+-   Only the system administrator and initial user can change the schema of a function to  **public**.
 
 ## Syntax<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
@@ -76,7 +77,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     Parameter name.
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the naming convention.
 
 -   **argtype**
 
@@ -84,7 +85,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
 -   **CALLED ON NULL INPUT**
 
-    Declares that some parameters of the function can be invoked in normal mode if the parameter values are null. Omitting this parameter is the same as specifying it. 
+    Declares that some parameters of the function can be invoked in normal mode if the parameter values are null. Omitting this parameter is the same as specifying it.
 
 -   **RETURNS NULL ON NULL INPUT**
 
@@ -118,7 +119,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     **AUTHID CURRENT\_USER**
 
-    Specifies that the function will be executed with the permissions of the user who invokes it. Omitting this parameter is the same as specifying it. 
+    Specifies that the function will be executed with the permissions of the user who invokes it. Omitting this parameter is the same as specifying it.
 
     **SECURITY INVOKER**  and  **AUTHID CURRENT\_USER**  have the same functions.
 
@@ -166,7 +167,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     Specifies the new name of a function. To change the schema of a function, you must have the  **CREATE**  permission on the new schema.
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the naming convention.
 
 -   **new\_owner**
 
@@ -183,9 +184,9 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
 ## Examples<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
 
-See  [Examples](en-us_topic_0283136560.md#en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)  in  **CREATE FUNCTION**.
+See  [Examples](create-function.md#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)  in  **CREATE FUNCTION**.
 
 ## Helpful Links<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
 
-[CREATE FUNCTION](en-us_topic_0283136560.md)  and  [DROP FUNCTION](en-us_topic_0283137306.md)
+[CREATE FUNCTION](create-function.md)  and  [DROP FUNCTION](drop-function.md)
 

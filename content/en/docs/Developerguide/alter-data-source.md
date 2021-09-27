@@ -1,18 +1,18 @@
-# ALTER DATA SOURCE<a name="EN-US_TOPIC_0242370520"></a>
+# ALTER DATA SOURCE<a name="EN-US_TOPIC_0289899857"></a>
 
-## Function<a name="en-us_topic_0237122056_section1246564332711"></a>
+## Function<a name="en-us_topic_0283136847_en-us_topic_0237122056_section1246564332711"></a>
 
 **ALTER DATA SOURCE**  modifies the attributes and content of the data source.
 
 The attributes include the name and owner. The content includes the type, version, and connection options.
 
-## Precautions<a name="en-us_topic_0237122056_section12438141318319"></a>
+## Precautions<a name="en-us_topic_0283136847_en-us_topic_0237122056_section12438141318319"></a>
 
 -   Only the initial user, system administrator, and owner have the permission to modify data sources.
 -   To change the owner, the new owner must be the initial user or a system administrator.
--   If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  _$GAUSSHOME_**/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  _$GAUSSHOME_**/bin**  directory on each node in openGauss.
+-   If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  _$GAUSSHOME_**/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  _$GAUSSHOME_**/bin**  directory on each node.
 
-## Syntax<a name="en-us_topic_0237122056_section20592145145512"></a>
+## Syntax<a name="en-us_topic_0283136847_en-us_topic_0237122056_section20592145145512"></a>
 
 ```
 ALTER DATA SOURCE src_name
@@ -23,13 +23,13 @@ ALTER DATA SOURCE src_name RENAME TO src_new_name;
 ALTER DATA SOURCE src_name OWNER TO new_owner;
 ```
 
-## Parameter Description<a name="en-us_topic_0237122056_section1562551151015"></a>
+## Parameter Description<a name="en-us_topic_0283136847_en-us_topic_0237122056_section1562551151015"></a>
 
 -   **src\_name**
 
     Specifies the data source name to be modified.
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **TYPE**
 
@@ -45,7 +45,7 @@ ALTER DATA SOURCE src_name OWNER TO new_owner;
 
 -   **OPTIONS**
 
-    Specifies the column to be added, modified, or deleted. The value of optname should be unique. Comply with the following rules to set this parameter:
+    Specifies the column to be added, modified, or deleted. The value of  **optname**  should be unique. Comply with the following rules to set this parameter:
 
     To add a column, you can omit  **ADD**  and simply specify the column name, which cannot be an existing column name.
 
@@ -66,38 +66,38 @@ ALTER DATA SOURCE src_name OWNER TO new_owner;
     Value range: a string. It must be a valid username.
 
 
-## Examples<a name="en-us_topic_0237122056_section96641814616"></a>
+## Examples<a name="en-us_topic_0283136847_en-us_topic_0237122056_section96641814616"></a>
 
 ```
 -- Create an empty data source.
-postgres=# CREATE DATA SOURCE ds_test1;
+openGauss=# CREATE DATA SOURCE ds_test1;
 
 -- Rename the data source.
-postgres=# ALTER DATA SOURCE ds_test1 RENAME TO ds_test;
+openGauss=# ALTER DATA SOURCE ds_test1 RENAME TO ds_test;
 
 -- Change the owner.
-postgres=# CREATE USER user_test1 IDENTIFIED BY 'Gs@123456';
-postgres=# ALTER USER user_test1 WITH SYSADMIN;
-postgres=# ALTER DATA SOURCE ds_test OWNER TO user_test1;
+openGauss=# CREATE USER user_test1 IDENTIFIED BY 'Gs@123456';
+openGauss=# ALTER USER user_test1 WITH SYSADMIN;
+openGauss=# ALTER DATA SOURCE ds_test OWNER TO user_test1;
 
 -- Modify TYPE and VERSION.
-postgres=# ALTER DATA SOURCE ds_test TYPE 'MPPDB_TYPE' VERSION 'XXX';
+openGauss=# ALTER DATA SOURCE ds_test TYPE 'MPPDB_TYPE' VERSION 'XXX';
 
 -- Add a column.
-postgres=# ALTER DATA SOURCE ds_test OPTIONS (add dsn 'gaussdb', username 'test_user');
+openGauss=# ALTER DATA SOURCE ds_test OPTIONS (add dsn 'gaussdb', username 'test_user');
 
 -- Modify a column.
-postgres=# ALTER DATA SOURCE ds_test OPTIONS (set dsn 'unknown');
+openGauss=# ALTER DATA SOURCE ds_test OPTIONS (set dsn 'unknown');
 
 -- Delete a column.
-postgres=# ALTER DATA SOURCE ds_test OPTIONS (drop username);
+openGauss=# ALTER DATA SOURCE ds_test OPTIONS (drop username);
 
 -- Delete the data source and user objects.
-postgres=# DROP DATA SOURCE ds_test;
-postgres=# DROP USER user_test1;
+openGauss=# DROP DATA SOURCE ds_test;
+openGauss=# DROP USER user_test1;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122056_section779812311320"></a>
+## Helpful Links<a name="en-us_topic_0283136847_en-us_topic_0237122056_section779812311320"></a>
 
 [CREATE DATA SOURCE](create-data-source.md)  and  [DROP DATA SOURCE](drop-data-source.md)
 

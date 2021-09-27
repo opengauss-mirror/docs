@@ -2,7 +2,7 @@
 
 ## Function<a name="section113331284191"></a>
 
-ALTER LANGUAGE modifies the definition of a procedural language.
+**ALTER LANGUAGE**  modifies the definition of a procedural language. A single-node system or centralized system does not support modifying procedural languages.
 
 ## Syntax<a name="section122664751912"></a>
 
@@ -22,10 +22,10 @@ ALTER [ PROCEDURAL ] LANGUAGE name RENAME TO new_name ALTER [ PROCEDURAL ] LANGU
 
 -   **new\_owner**
 
-    New owner of the language.
+    New owner of a language.
 
 
 ## Compatibility<a name="section446220148329"></a>
 
-The SQL standard does not contain the ALTER LANGUAGE statement.
+The SQL standard does not contain the  **ALTER LANGUAGE**  statement.
 

@@ -1,6 +1,6 @@
-# Network Address Functions and Operators<a name="EN-US_TOPIC_0242370439"></a>
+# Network Address Functions and Operators<a name="EN-US_TOPIC_0289900807"></a>
 
-## cidr and inet Operators<a name="en-us_topic_0237121975_en-us_topic_0059778594_s71ca011b21f64c9891528dc0883de0d3"></a>
+## cidr and inet Operators<a name="en-us_topic_0283136843_en-us_topic_0237121975_en-us_topic_0059778594_s71ca011b21f64c9891528dc0883de0d3"></a>
 
 The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet inclusion. They consider only the network parts of the two addresses \(ignoring any host part\) and determine whether one network is identical to or a subnet of the other.
 
@@ -8,10 +8,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Is less than
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.5' < inet '192.168.1.6' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.5' < inet '192.168.1.6' AS RESULT;
      result 
     --------
      t
@@ -22,10 +22,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Is less than or equals
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.5' <= inet '192.168.1.5' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.5' <= inet '192.168.1.5' AS RESULT;
      result 
     --------
      t
@@ -36,10 +36,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Equals
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.5' = inet '192.168.1.5' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.5' = inet '192.168.1.5' AS RESULT;
      result 
     --------
      t
@@ -50,10 +50,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Is greater than or equals
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.5' >= inet '192.168.1.5' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.5' >= inet '192.168.1.5' AS RESULT;
      result 
     --------
      t
@@ -64,10 +64,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Is greater than
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.5' > inet '192.168.1.4' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.5' > inet '192.168.1.4' AS RESULT;
      result 
     --------
      t
@@ -78,10 +78,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Does not equal to
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.5' <> inet '192.168.1.4' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.5' <> inet '192.168.1.4' AS RESULT;
      result 
     --------
      t
@@ -92,10 +92,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Is contained in
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.5' << inet '192.168.1/24' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.5' << inet '192.168.1/24' AS RESULT;
      result 
     --------
      t
@@ -106,10 +106,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Is contained in or equals
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1/24' <<= inet '192.168.1/24' AS RESULT;
+    openGauss=# SELECT inet '192.168.1/24' <<= inet '192.168.1/24' AS RESULT;
      result 
     --------
      t
@@ -120,10 +120,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Contains
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1/24' >> inet '192.168.1.5' AS RESULT;
+    openGauss=# SELECT inet '192.168.1/24' >> inet '192.168.1.5' AS RESULT;
      result 
     --------
      t
@@ -134,10 +134,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Contains or equals
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1/24' >>= inet '192.168.1/24' AS RESULT;
+    openGauss=# SELECT inet '192.168.1/24' >>= inet '192.168.1/24' AS RESULT;
      result 
     --------
      t
@@ -148,10 +148,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Bitwise NOT
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ~ inet '192.168.1.6' AS RESULT; 
+    openGauss=# SELECT ~ inet '192.168.1.6' AS RESULT; 
         result     
     ---------------
      63.87.254.249
@@ -160,12 +160,12 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
 -   &
 
-    Description: The AND operation is performed on each bit of the two network addresses.
+    Description: Performs an AND operation on each bit of the two network addresses.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.6' & inet '10.0.0.0' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.6' & inet '10.0.0.0' AS RESULT;
      result  
     ---------
      0.0.0.0
@@ -174,12 +174,12 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
 -   |
 
-    Description: The OR operation is performed on each bit of the two network addresses.
+    Description: Performs an OR operation on each bit of the two network addresses.
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.6' | inet '10.0.0.0' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.6' | inet '10.0.0.0' AS RESULT;
        result    
     -------------
      202.168.1.6
@@ -190,10 +190,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Addition
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.6' + 25 AS RESULT;
+    openGauss=# SELECT inet '192.168.1.6' + 25 AS RESULT;
         result    
     --------------
      192.168.1.31
@@ -204,10 +204,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Subtraction
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.43' - 36 AS RESULT;
+    openGauss=# SELECT inet '192.168.1.43' - 36 AS RESULT;
        result    
     -------------
      192.168.1.7
@@ -218,10 +218,10 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
 
     Description: Subtraction
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT inet '192.168.1.43' - inet '192.168.1.19' AS RESULT;
+    openGauss=# SELECT inet '192.168.1.43' - inet '192.168.1.19' AS RESULT;
      result 
     --------
          24
@@ -229,7 +229,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     ```
 
 
-## cidr and inet Functions<a name="en-us_topic_0237121975_en-us_topic_0059778594_s32e5e4347b124a09b39c9ddb92c7618d"></a>
+## cidr and inet Functions<a name="en-us_topic_0283136843_en-us_topic_0237121975_en-us_topic_0059778594_s32e5e4347b124a09b39c9ddb92c7618d"></a>
 
 The  **abbrev**,  **host**, and  **text**  functions are primarily intended to offer alternative display formats.
 
@@ -239,10 +239,10 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
     Return type: text
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT abbrev(inet '10.1.0.0/16') AS RESULT;
+    openGauss=# SELECT abbrev(inet '10.1.0.0/16') AS RESULT;
        result    
     -------------
      10.1.0.0/16
@@ -255,10 +255,10 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
     Return type: text
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT abbrev(cidr '10.1.0.0/16') AS RESULT;
+    openGauss=# SELECT abbrev(cidr '10.1.0.0/16') AS RESULT;
      result  
     ---------
      10.1/16
@@ -267,14 +267,14 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   broadcast\(inet\)
 
-    Description: Broadcast address for network
+    Description: Broadcast address for networks
 
     Return type: inet
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT broadcast('192.168.1.5/24') AS RESULT;
+    openGauss=# SELECT broadcast('192.168.1.5/24') AS RESULT;
           result      
     ------------------
      192.168.1.255/24
@@ -283,30 +283,30 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   family\(inet\)
 
-    Description: Extracts family of address;  **4**  for IPv4,  **6**  for IPv6
+    Description: Extracts family of addresses,  **4**  for IPv4, and  **6**  for IPv6.
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT family('::1') AS RESULT;
+    openGauss=# SELECT family('127.0.0.1') AS RESULT;
      result 
     --------
-          6
+          4
     (1 row)
     ```
 
 -   host\(inet\)
 
-    Description: Extracts IP address as text.
+    Description: Extracts IP addresses as text.
 
     Return type: text
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT host('192.168.1.5/24') AS RESULT;
+    openGauss=# SELECT host('192.168.1.5/24') AS RESULT;
        result    
     -------------
      192.168.1.5
@@ -315,14 +315,14 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   hostmask\(inet\)
 
-    Description: Constructs host mask for network.
+    Description: Constructs the host mask for a network.
 
     Return type: inet
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT hostmask('192.168.23.20/30') AS RESULT;
+    openGauss=# SELECT hostmask('192.168.23.20/30') AS RESULT;
      result  
     ---------
      0.0.0.3
@@ -335,10 +335,10 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT masklen('192.168.1.5/24') AS RESULT;
+    openGauss=# SELECT masklen('192.168.1.5/24') AS RESULT;
      result 
     --------
          24
@@ -347,14 +347,14 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   netmask\(inet\)
 
-    Description: Constructs subnet mask for network.
+    Description: Constructs the subnet mask for a network.
 
     Return type: inet
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT netmask('192.168.1.5/24') AS RESULT;
+    openGauss=# SELECT netmask('192.168.1.5/24') AS RESULT;
         result     
     ---------------
      255.255.255.0
@@ -363,14 +363,14 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   network\(inet\)
 
-    Description: Extracts network part of address.
+    Description: Extracts the network part of an address.
 
     Return type: cidr
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT network('192.168.1.5/24') AS RESULT;
+    openGauss=# SELECT network('192.168.1.5/24') AS RESULT;
          result     
     ----------------
      192.168.1.0/24
@@ -379,14 +379,14 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   set\_masklen\(inet, int\)
 
-    Description: Sets subnet mask length for  **inet**  value.
+    Description: Sets subnet mask length for the  **inet**  value.
 
     Return type: inet
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT set_masklen('192.168.1.5/24', 16) AS RESULT;
+    openGauss=# SELECT set_masklen('192.168.1.5/24', 16) AS RESULT;
          result     
     ----------------
      192.168.1.5/16
@@ -395,14 +395,14 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   set\_masklen\(cidr, int\)
 
-    Description: Sets subnet mask length for  **cidr**  value.
+    Description: Sets subnet mask length for the  **cidr**  value.
 
     Return type: cidr
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT set_masklen('192.168.1.0/24'::cidr, 16) AS RESULT;
+    openGauss=# SELECT set_masklen('192.168.1.0/24'::cidr, 16) AS RESULT;
          result     
     ----------------
      192.168.0.0/16
@@ -411,14 +411,14 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 -   text\(inet\)
 
-    Description: Extracts IP address and subnet mask length as text.
+    Description: Extracts IP addresses and subnet mask length as text.
 
     Return type: text
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT text(inet '192.168.1.5') AS RESULT;
+    openGauss=# SELECT text(inet '192.168.1.5') AS RESULT;
          result     
     ----------------
      192.168.1.5/32
@@ -428,25 +428,26 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
 
 Any  **cidr**  value can be cast to  **inet**  implicitly or explicitly; therefore, the functions shown above as operating on  **inet**  also work on  **cidr**  values. An  **inet**  value can be cast to  **cidr**. After the conversion, any bits to the right of the subnet mask are silently zeroed to create a valid  **cidr**  value. In addition, you can cast a text string to  **inet**  or  **cidr**  using normal casting syntax. For example,  **inet\(expression\)**  or  **colname::cidr**.
 
-## **macaddr**  Functions<a name="en-us_topic_0237121975_en-us_topic_0059778594_s0395a90cd97040cbbcd45e59a111a122"></a>
+## macaddr Functions<a name="en-us_topic_0283136843_en-us_topic_0237121975_en-us_topic_0059778594_s0395a90cd97040cbbcd45e59a111a122"></a>
 
 The function  **trunc\(macaddr\)**  returns a MAC address with the last 3 bytes set to zero.
 
-trunc\(macaddr\)
+-   trunc\(macaddr\)
 
-Description: Sets last 3 bytes to zero.
+    Description: Sets last 3 bytes to zero.
 
-Return type: macaddr
+    Return type: macaddr
 
-For example:
+    Example:
 
-```
-postgres=# SELECT trunc(macaddr '12:34:56:78:90:ab') AS RESULT;
-      result       
--------------------
- 12:34:56:00:00:00
-(1 row)
-```
+    ```
+    openGauss=# SELECT trunc(macaddr '12:34:56:78:90:ab') AS RESULT;
+          result       
+    -------------------
+     12:34:56:00:00:00
+    (1 row)
+    ```
+
 
 The  **macaddr**  type also supports the standard relational operators \(such as  **\>**  and  **<=**\) for lexicographical ordering, and the bitwise arithmetic operators \(**\~**,  **&**  and  **|**\) for NOT, AND and OR.
 

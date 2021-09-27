@@ -140,13 +140,13 @@ NEXT
 
 ```
 -- (For the SELECT statement, traverse a table using a cursor.) Start a transaction.
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 -- Set up cursor1.
-postgres=# CURSOR cursor1 FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
+openGauss=# CURSOR cursor1 FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
 
 -- Fetch the first three rows in cursor1.
-postgres=# FETCH FORWARD 3 FROM cursor1;
+openGauss=# FETCH FORWARD 3 FROM cursor1;
  ca_address_sk |  ca_address_id   | ca_street_number |   ca_street_name   | ca_street_type  | ca_suite_number |     ca_city     |    ca_county    | ca_state |   ca_zip   |  ca_country   | ca_gmt_offset |   ca_location_type   
 ---------------+------------------+------------------+--------------------+-----------------+-----------------+-----------------+-----------------+----------+------------+---------------+---------------+----------------------
              1 | AAAAAAAABAAAAAAA | 18               | Jackson            | Parkway         | Suite 280       | Fairfield       | Maricopa County | AZ       | 86192      | United States |         -7.00 | condo               
@@ -155,19 +155,19 @@ postgres=# FETCH FORWARD 3 FROM cursor1;
 (3 rows)
 
 -- Close the cursor and commit the transaction.
-postgres=# CLOSE cursor1;
+openGauss=# CLOSE cursor1;
 
 -- End the transaction.
-postgres=# END;
+openGauss=# END;
 
 -- (For the VALUES clause, traverse the clause using a cursor.) Start a transaction.
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 -- Set up cursor2.
-postgres=# CURSOR cursor2 FOR VALUES(1,2),(0,3) ORDER BY 1;
+openGauss=# CURSOR cursor2 FOR VALUES(1,2),(0,3) ORDER BY 1;
 
 -- Fetch the first two rows in cursor2.
-postgres=# FETCH FORWARD 2 FROM cursor2;
+openGauss=# FETCH FORWARD 2 FROM cursor2;
 column1 | column2
 ---------+---------
 0 |       3
@@ -175,19 +175,19 @@ column1 | column2
 (2 rows)
 
 -- Close the cursor and commit the transaction.
-postgres=# CLOSE cursor2;
+openGauss=# CLOSE cursor2;
 
 -- End the transaction.
-postgres=# END;
+openGauss=# END;
 
 -- (WITH HOLD cursor) Start a transaction.
-postgres=# START TRANSACTION;
+openGauss=# START TRANSACTION;
 
 -- Set up a WITH HOLD cursor.
-postgres=# DECLARE cursor1 CURSOR WITH HOLD FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
+openGauss=# DECLARE cursor1 CURSOR WITH HOLD FOR SELECT * FROM tpcds.customer_address ORDER BY 1;
 
 -- Fetch the first two rows in cursor1.
-postgres=# FETCH FORWARD 2 FROM cursor1;
+openGauss=# FETCH FORWARD 2 FROM cursor1;
  ca_address_sk |  ca_address_id   | ca_street_number |   ca_street_name   | ca_street_type  | ca_suite_number |     ca_city     |    ca_county    | ca_state |   ca_zip   |  ca_country   | ca_gmt_offset |   ca_location_type   
 ---------------+------------------+------------------+--------------------+-----------------+-----------------+-----------------+-----------------+----------+------------+---------------+---------------+----------------------
              1 | AAAAAAAABAAAAAAA | 18               | Jackson            | Parkway         | Suite 280       | Fairfield       | Maricopa County | AZ       | 86192      | United States |         -7.00 | condo               
@@ -195,21 +195,21 @@ postgres=# FETCH FORWARD 2 FROM cursor1;
 (2 rows)
 
 -- End the transaction.
-postgres=# END;
+openGauss=# END;
 
 -- Fetch the next row in cursor1.
-postgres=# FETCH FORWARD 1 FROM cursor1;
+openGauss=# FETCH FORWARD 1 FROM cursor1;
  ca_address_sk |  ca_address_id   | ca_street_number |   ca_street_name   | ca_street_type  | ca_suite_number |     ca_city     |    ca_county    | ca_state |   ca_zip   |  ca_country   | ca_gmt_offset |   ca_location_type   
 ---------------+------------------+------------------+--------------------+-----------------+-----------------+-----------------+-----------------+----------+------------+---------------+---------------+----------------------
              3 | AAAAAAAADAAAAAAA | 585              | Dogwood Washington | Circle          | Suite Q         | Pleasant Valley | York County     | PA       | 12477      | United States |         -5.00 | single family       
 (1 row)
 
 -- Close the cursor.
-postgres=# CLOSE cursor1;
+openGauss=# CLOSE cursor1;
 
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_scff73b2bdc594902afb6925b8a3b97ac"></a>
 
-[CLOSE](en-us_topic_0283137397.md)  and  [MOVE](en-us_topic_0283137573.md)
+[CLOSE](close.md)  and  [MOVE](move.md)
 

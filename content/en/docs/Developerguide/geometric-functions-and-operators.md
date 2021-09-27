@@ -1,15 +1,15 @@
-# Geometric Functions and Operators<a name="EN-US_TOPIC_0242370438"></a>
+# Geometric Functions and Operators<a name="EN-US_TOPIC_0289900606"></a>
 
-## Geometric Operators<a name="en-us_topic_0237121974_en-us_topic_0059778617_sf6144d7c3ed34b8c801ec2d86e2dea63"></a>
+## Geometric Operators<a name="en-us_topic_0283137097_en-us_topic_0237121974_en-us_topic_0059778617_sf6144d7c3ed34b8c801ec2d86e2dea63"></a>
 
 -   +
 
     Description: Translation
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(1,1))' + point '(2.0,0)' AS RESULT;
+    openGauss=# SELECT box '((0,0),(1,1))' + point '(2.0,0)' AS RESULT;
        result    
     -------------
      (3,1),(2,0)
@@ -20,10 +20,10 @@
 
     Description: Translation
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(1,1))' - point '(2.0,0)' AS RESULT;
+    openGauss=# SELECT box '((0,0),(1,1))' - point '(2.0,0)' AS RESULT;
         result     
     ---------------
      (-1,1),(-2,0)
@@ -32,12 +32,12 @@
 
 -   \*
 
-    Description: Scaling out/rotation
+    Description: Scaling out/Rotation
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(1,1))' * point '(2.0,0)' AS RESULT;
+    openGauss=# SELECT box '((0,0),(1,1))' * point '(2.0,0)' AS RESULT;
        result    
     -------------
      (2,2),(0,0)
@@ -46,12 +46,12 @@
 
 -   /
 
-    Description: Scaling in/rotation
+    Description: Scaling in/Rotation
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(2,2))' / point '(2.0,0)' AS RESULT;
+    openGauss=# SELECT box '((0,0),(2,2))' / point '(2.0,0)' AS RESULT;
        result    
     -------------
      (1,1),(0,0)
@@ -60,12 +60,12 @@
 
 -   \#
 
-    Description: Box of intersection
+    Description: Intersection of two figures
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((1,-1),(-1,1))' # box '((1,1),(-2,-2))' AS RESULT;
+    openGauss=# SELECT box '((1,-1),(-1,1))' # box '((1,1),(-2,-2))' AS RESULT;
      result 
     ---------------
      (1,1),(-1,-1)
@@ -74,12 +74,12 @@
 
 -   \#
 
-    Description: Number of paths or polygon vertexes
+    Description: Number of paths or polygon vertexes of a figure
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT # path'((1,0),(0,1),(-1,0))' AS RESULT;
+    openGauss=# SELECT # path'((1,0),(0,1),(-1,0))' AS RESULT;
      result 
     --------
           3
@@ -88,12 +88,12 @@
 
 -   @-@
 
-    Description: Length or circumference
+    Description: Length or circumference of a figure
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT @-@ path '((0,0),(1,0))' AS RESULT;
+    openGauss=# SELECT @-@ path '((0,0),(1,0))' AS RESULT;
      result 
     --------
           2
@@ -102,12 +102,12 @@
 
 -   @@
 
-    Description: Center of box
+    Description: Center of a figure
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT @@ circle '((0,0),10)' AS RESULT;
+    openGauss=# SELECT @@ circle '((0,0),10)' AS RESULT;
      result 
     --------
      (0,0)
@@ -116,12 +116,12 @@
 
 -   <-\>
 
-    Description: Distance between the two figures.
+    Description: Distance between two figures
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT circle '((0,0),1)' <-> circle '((5,0),1)' AS RESULT;
+    openGauss=# SELECT circle '((0,0),1)' <-> circle '((5,0),1)' AS RESULT;
      result 
     --------
           3
@@ -132,10 +132,10 @@
 
     Description: Overlaps? \(One point in common makes this true.\)
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(1,1))' && box '((0,0),(2,2))' AS RESULT;
+    openGauss=# SELECT box '((0,0),(1,1))' && box '((0,0),(2,2))' AS RESULT;
      result 
     --------
      t
@@ -146,10 +146,10 @@
 
     Description: Is strictly left of \(no common horizontal coordinate\)?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT circle '((0,0),1)' << circle '((5,0),1)' AS RESULT;
+    openGauss=# SELECT circle '((0,0),1)' << circle '((5,0),1)' AS RESULT;
      result 
     --------
      t
@@ -160,10 +160,10 @@
 
     Description: Is strictly right of \(no common horizontal coordinate\)?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT circle '((5,0),1)' >> circle '((0,0),1)' AS RESULT;
+    openGauss=# SELECT circle '((5,0),1)' >> circle '((0,0),1)' AS RESULT;
      result 
     --------
      t
@@ -174,10 +174,10 @@
 
     Description: Does not extend to the right of?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(1,1))' &< box '((0,0),(2,2))' AS RESULT;
+    openGauss=# SELECT box '((0,0),(1,1))' &< box '((0,0),(2,2))' AS RESULT;
      result 
     --------
      t
@@ -188,10 +188,10 @@
 
     Description: Does not extend to the left of?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(3,3))' &> box '((0,0),(2,2))' AS RESULT;
+    openGauss=# SELECT box '((0,0),(3,3))' &> box '((0,0),(2,2))' AS RESULT;
      result 
     --------
      t
@@ -202,10 +202,10 @@
 
     Description: Is strictly below \(no common horizontal coordinate\)?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(3,3))' <<| box '((3,4),(5,5))' AS RESULT;
+    openGauss=# SELECT box '((0,0),(3,3))' <<| box '((3,4),(5,5))' AS RESULT;
      result 
     --------
      t
@@ -216,10 +216,10 @@
 
     Description: Is strictly above \(no common horizontal coordinate\)?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((3,4),(5,5))' |>> box '((0,0),(3,3))' AS RESULT;
+    openGauss=# SELECT box '((3,4),(5,5))' |>> box '((0,0),(3,3))' AS RESULT;
      result 
     --------
      t
@@ -230,10 +230,10 @@
 
     Description: Does not extend above?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(1,1))' &<| box '((0,0),(2,2))' AS RESULT;
+    openGauss=# SELECT box '((0,0),(1,1))' &<| box '((0,0),(2,2))' AS RESULT;
      result 
     --------
      t
@@ -244,10 +244,10 @@
 
     Description: Does not extend below?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(3,3))' |&> box '((0,0),(2,2))' AS RESULT;
+    openGauss=# SELECT box '((0,0),(3,3))' |&> box '((0,0),(2,2))' AS RESULT;
      result 
     --------
      t
@@ -258,10 +258,10 @@
 
     Description: Is below \(allows touching\)?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(-3,-3))' <^ box '((0,0),(2,2))' AS RESULT;
+    openGauss=# SELECT box '((0,0),(-3,-3))' <^ box '((0,0),(2,2))' AS RESULT;
      result 
     --------
      t
@@ -272,10 +272,10 @@
 
     Description: Is above \(allows touching\)?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box '((0,0),(2,2))' >^ box '((0,0),(-3,-3))'  AS RESULT;
+    openGauss=# SELECT box '((0,0),(2,2))' >^ box '((0,0),(-3,-3))'  AS RESULT;
      result 
     --------
      t
@@ -286,10 +286,10 @@
 
     Description: Intersect?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT lseg '((-1,0),(1,0))' ?# box '((-2,-2),(2,2))' AS RESULT;
+    openGauss=# SELECT lseg '((-1,0),(1,0))' ?# box '((-2,-2),(2,2))' AS RESULT;
      result 
     --------
      t
@@ -300,10 +300,10 @@
 
     Description: Is horizontal?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ?- lseg '((-1,0),(1,0))' AS RESULT;
+    openGauss=# SELECT ?- lseg '((-1,0),(1,0))' AS RESULT;
      result 
     --------
      t
@@ -314,10 +314,10 @@
 
     Description: Are horizontally aligned?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point '(1,0)' ?- point '(0,0)' AS RESULT;
+    openGauss=# SELECT point '(1,0)' ?- point '(0,0)' AS RESULT;
      result 
     --------
      t
@@ -328,10 +328,10 @@
 
     Description: Is vertical?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT ?| lseg '((-1,0),(1,0))' AS RESULT;
+    openGauss=# SELECT ?| lseg '((-1,0),(1,0))' AS RESULT;
      result 
     --------
      f
@@ -342,10 +342,10 @@
 
     Description: Are vertically aligned?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point '(0,1)' ?| point '(0,0)' AS RESULT;
+    openGauss=# SELECT point '(0,1)' ?| point '(0,0)' AS RESULT;
      result 
     --------
      t
@@ -356,10 +356,10 @@
 
     Description: Are perpendicular?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT lseg '((0,0),(0,1))' ?-| lseg '((0,0),(1,0))' AS RESULT;
+    openGauss=# SELECT lseg '((0,0),(0,1))' ?-| lseg '((0,0),(1,0))' AS RESULT;
      result 
     --------
      t
@@ -370,10 +370,10 @@
 
     Description: Are parallel?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT lseg '((-1,0),(1,0))' ?|| lseg '((-1,2),(1,2))' AS RESULT;
+    openGauss=# SELECT lseg '((-1,0),(1,0))' ?|| lseg '((-1,2),(1,2))' AS RESULT;
      result 
     --------
      t
@@ -384,10 +384,10 @@
 
     Description: Contains?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT circle '((0,0),2)' @> point '(1,1)' AS RESULT;
+    openGauss=# SELECT circle '((0,0),2)' @> point '(1,1)' AS RESULT;
      result 
     --------
      t
@@ -398,10 +398,10 @@
 
     Description: Contained in or on?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point '(1,1)' <@ circle '((0,0),2)' AS RESULT;
+    openGauss=# SELECT point '(1,1)' <@ circle '((0,0),2)' AS RESULT;
      result 
     --------
      t
@@ -412,10 +412,10 @@
 
     Description: Same as?
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT polygon '((0,0),(1,1))' ~= polygon '((1,1),(0,0))' AS RESULT;
+    openGauss=# SELECT polygon '((0,0),(1,1))' ~= polygon '((1,1),(0,0))' AS RESULT;
      result 
     --------
      t
@@ -423,7 +423,7 @@
     ```
 
 
-## Geometric Functions<a name="en-us_topic_0237121974_en-us_topic_0059778617_s7307c979b2ab48129cda400b52255f0b"></a>
+## Geometric Functions<a name="en-us_topic_0283137097_en-us_topic_0237121974_en-us_topic_0059778617_s7307c979b2ab48129cda400b52255f0b"></a>
 
 -   area\(object\)
 
@@ -431,10 +431,10 @@
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT area(box '((0,0),(1,1))') AS RESULT;
+    openGauss=# SELECT area(box '((0,0),(1,1))') AS RESULT;
      result 
     --------
           1
@@ -447,10 +447,10 @@
 
     Return type: point
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT center(box '((0,0),(1,2))') AS RESULT;
+    openGauss=# SELECT center(box '((0,0),(1,2))') AS RESULT;
      result  
     ---------
      (0.5,1)
@@ -463,10 +463,10 @@
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT diameter(circle '((0,0),2.0)') AS RESULT;
+    openGauss=# SELECT diameter(circle '((0,0),2.0)') AS RESULT;
      result 
     --------
           4
@@ -479,10 +479,10 @@
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT height(box '((0,0),(1,1))') AS RESULT;
+    openGauss=# SELECT height(box '((0,0),(1,1))') AS RESULT;
      result 
     --------
           1
@@ -495,10 +495,10 @@
 
     Return type: Boolean
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT isclosed(path '((0,0),(1,1),(2,0))') AS RESULT;
+    openGauss=# SELECT isclosed(path '((0,0),(1,1),(2,0))') AS RESULT;
      result 
     --------
      t
@@ -511,10 +511,10 @@
 
     Return type: Boolean
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT isopen(path '[(0,0),(1,1),(2,0)]') AS RESULT;
+    openGauss=# SELECT isopen(path '[(0,0),(1,1),(2,0)]') AS RESULT;
      result 
     --------
      t
@@ -527,10 +527,10 @@
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT length(path '((-1,0),(1,0))') AS RESULT;
+    openGauss=# SELECT length(path '((-1,0),(1,0))') AS RESULT;
      result 
     --------
           4
@@ -539,14 +539,14 @@
 
 -   npoints\(path\)
 
-    Description: Number of points in path
+    Description: Number of points in a path
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT npoints(path '[(0,0),(1,1),(2,0)]') AS RESULT;
+    openGauss=# SELECT npoints(path '[(0,0),(1,1),(2,0)]') AS RESULT;
      result 
     --------
           3
@@ -555,14 +555,14 @@
 
 -   npoints\(polygon\)
 
-    Description: Number of points in polygon
+    Description: Number of points in a polygon
 
     Return type: int
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT npoints(polygon '((1,1),(0,0))') AS RESULT;
+    openGauss=# SELECT npoints(polygon '((1,1),(0,0))') AS RESULT;
      result 
     --------
           2
@@ -571,14 +571,14 @@
 
 -   pclose\(path\)
 
-    Description: Converts path to closed.
+    Description: Converts a path to closed.
 
     Return type: path
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT pclose(path '[(0,0),(1,1),(2,0)]') AS RESULT;
+    openGauss=# SELECT pclose(path '[(0,0),(1,1),(2,0)]') AS RESULT;
            result        
     ---------------------
      ((0,0),(1,1),(2,0))
@@ -587,14 +587,14 @@
 
 -   popen\(path\)
 
-    Description: Converts path to open.
+    Description: Converts a path to open.
 
     Return type: path
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT popen(path '((0,0),(1,1),(2,0))') AS RESULT;
+    openGauss=# SELECT popen(path '((0,0),(1,1),(2,0))') AS RESULT;
            result        
     ---------------------
      [(0,0),(1,1),(2,0)]
@@ -603,14 +603,14 @@
 
 -   radius\(circle\)
 
-    Description: Circle diameter calculation
+    Description: Circle radius calculation
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT radius(circle '((0,0),2.0)') AS RESULT;
+    openGauss=# SELECT radius(circle '((0,0),2.0)') AS RESULT;
      result 
     --------
           2
@@ -619,14 +619,14 @@
 
 -   width\(box\)
 
-    Description: Horizontal size of box
+    Description: Horizontal size of a box
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT width(box '((0,0),(1,1))') AS RESULT;
+    openGauss=# SELECT width(box '((0,0),(1,1))') AS RESULT;
      result 
     --------
           1
@@ -634,7 +634,7 @@
     ```
 
 
-## Geometric Type Conversion Functions<a name="en-us_topic_0237121974_en-us_topic_0059778617_s7e4c712738474adbb63addaa69fe43e4"></a>
+## Geometric Type Conversion Functions<a name="en-us_topic_0283137097_en-us_topic_0237121974_en-us_topic_0059778617_s7e4c712738474adbb63addaa69fe43e4"></a>
 
 -   box\(circle\)
 
@@ -642,10 +642,10 @@
 
     Return type: box
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box(circle '((0,0),2.0)') AS RESULT;
+    openGauss=# SELECT box(circle '((0,0),2.0)') AS RESULT;
                                       result                                   
     ---------------------------------------------------------------------------
      (1.41421356237309,1.41421356237309),(-1.41421356237309,-1.41421356237309)
@@ -658,10 +658,10 @@
 
     Return type: box
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box(point '(0,0)', point '(1,1)') AS RESULT;
+    openGauss=# SELECT box(point '(0,0)', point '(1,1)') AS RESULT;
        result    
     -------------
      (1,1),(0,0)
@@ -674,10 +674,10 @@
 
     Return type: box
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT box(polygon '((0,0),(1,1),(2,0))') AS RESULT;
+    openGauss=# SELECT box(polygon '((0,0),(1,1),(2,0))') AS RESULT;
        result    
     -------------
      (2,1),(0,0)
@@ -690,10 +690,10 @@
 
     Return type: circle
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT circle(box '((0,0),(1,1))') AS RESULT;
+    openGauss=# SELECT circle(box '((0,0),(1,1))') AS RESULT;
                 result             
     -------------------------------
      <(0.5,0.5),0.707106781186548>
@@ -706,10 +706,10 @@
 
     Return type: circle
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT circle(point '(0,0)', 2.0) AS RESULT;
+    openGauss=# SELECT circle(point '(0,0)', 2.0) AS RESULT;
       result   
     -----------
      <(0,0),2>
@@ -722,10 +722,10 @@
 
     Return type: circle
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT circle(polygon '((0,0),(1,1),(2,0))') AS RESULT;
+    openGauss=# SELECT circle(polygon '((0,0),(1,1),(2,0))') AS RESULT;
                       result                   
     -------------------------------------------
      <(1,0.333333333333333),0.924950591148529>
@@ -738,10 +738,10 @@
 
     Return type: lseg
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT lseg(box '((-1,0),(1,0))') AS RESULT;
+    openGauss=# SELECT lseg(box '((-1,0),(1,0))') AS RESULT;
          result     
     ----------------
      [(1,0),(-1,0)]
@@ -754,13 +754,29 @@
 
     Return type: lseg
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT lseg(point '(-1,0)', point '(1,0)') AS RESULT;
+    openGauss=# SELECT lseg(point '(-1,0)', point '(1,0)') AS RESULT;
          result     
     ----------------
      [(-1,0),(1,0)]
+    (1 row)
+    ```
+
+-   slope\(point, point\)
+
+    Description: Calculates the slope of a straight line formed by two points.
+
+    Return type: double
+
+    Example:
+
+    ```
+    openGauss=# SELECT slope(point '(1,1)', point '(0,0)') AS RESULT;
+     result
+    --------
+          1
     (1 row)
     ```
 
@@ -770,10 +786,10 @@
 
     Return type: path
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT path(polygon '((0,0),(1,1),(2,0))') AS RESULT;
+    openGauss=# SELECT path(polygon '((0,0),(1,1),(2,0))') AS RESULT;
            result        
     ---------------------
      ((0,0),(1,1),(2,0))
@@ -786,10 +802,10 @@
 
     Return type: point
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point(23.4, -44.5) AS RESULT;
+    openGauss=# SELECT point(23.4, -44.5) AS RESULT;
         result    
     --------------
      (23.4,-44.5)
@@ -798,14 +814,14 @@
 
 -   point\(box\)
 
-    Description: Center of box
+    Description: Center of a box
 
     Return type: point
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point(box '((-1,0),(1,0))') AS RESULT;
+    openGauss=# SELECT point(box '((-1,0),(1,0))') AS RESULT;
      result 
     --------
      (0,0)
@@ -814,14 +830,14 @@
 
 -   point\(circle\)
 
-    Description: Center of circle
+    Description: Center of a circle
 
     Return type: point
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point(circle '((0,0),2.0)') AS RESULT;
+    openGauss=# SELECT point(circle '((0,0),2.0)') AS RESULT;
      result 
     --------
      (0,0)
@@ -830,14 +846,14 @@
 
 -   point\(lseg\)
 
-    Description: Center of line segment
+    Description: Center of a line segment
 
     Return type: point
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point(lseg '((-1,0),(1,0))') AS RESULT;
+    openGauss=# SELECT point(lseg '((-1,0),(1,0))') AS RESULT;
      result 
     --------
      (0,0)
@@ -846,14 +862,14 @@
 
 -   point\(polygon\)
 
-    Description: Center of polygon
+    Description: Center of a polygon
 
     Return type: point
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT point(polygon '((0,0),(1,1),(2,0))') AS RESULT;
+    openGauss=# SELECT point(polygon '((0,0),(1,1),(2,0))') AS RESULT;
             result         
     -----------------------
      (1,0.333333333333333)
@@ -866,10 +882,10 @@
 
     Return type: polygon
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT polygon(box '((0,0),(1,1))') AS RESULT;
+    openGauss=# SELECT polygon(box '((0,0),(1,1))') AS RESULT;
               result           
     ---------------------------
      ((0,0),(0,1),(1,1),(1,0))
@@ -882,10 +898,10 @@
 
     Return type: polygon
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT polygon(circle '((0,0),2.0)') AS RESULT;
+    openGauss=# SELECT polygon(circle '((0,0),2.0)') AS RESULT;
                                                                                                                                                     result                                                                                      
     
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -899,10 +915,10 @@
 
     Return type: polygon
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT polygon(12, circle '((0,0),2.0)') AS RESULT;
+    openGauss=# SELECT polygon(12, circle '((0,0),2.0)') AS RESULT;
                                                                                                                                                     result                                                                                      
     
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -916,10 +932,10 @@
 
     Return type: polygon
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT polygon(path '((0,0),(1,1),(2,0))') AS RESULT;
+    openGauss=# SELECT polygon(path '((0,0),(1,1),(2,0))') AS RESULT;
            result        
     ---------------------
      ((0,0),(1,1),(2,0))

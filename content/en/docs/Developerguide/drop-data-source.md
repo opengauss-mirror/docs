@@ -1,20 +1,20 @@
-# DROP DATA SOURCE<a name="EN-US_TOPIC_0242370599"></a>
+# DROP DATA SOURCE<a name="EN-US_TOPIC_0289900803"></a>
 
-## Function<a name="en-us_topic_0237122135_section324414515172"></a>
+## Function<a name="en-us_topic_0283136822_en-us_topic_0237122135_section324414515172"></a>
 
 **DROP DATA SOURCE**  deletes a data source.
 
-## Important Notes<a name="en-us_topic_0237122135_section6945185782115"></a>
+## Precautions<a name="en-us_topic_0283136822_en-us_topic_0237122135_section6945185782115"></a>
 
 Only an owner, system administrator, or initial user can delete a data source.
 
-## Syntax<a name="en-us_topic_0237122135_section1289212618239"></a>
+## Syntax<a name="en-us_topic_0283136822_en-us_topic_0237122135_section1289212618239"></a>
 
 ```
 DROP DATA SOURCE [IF EXISTS] src_name [CASCADE | RESTRICT];
 ```
 
-## Parameter Description<a name="en-us_topic_0237122135_section1789010295266"></a>
+## Parameter Description<a name="en-us_topic_0283136822_en-us_topic_0237122135_section1789010295266"></a>
 
 -   **src\_name**
 
@@ -34,18 +34,18 @@ DROP DATA SOURCE [IF EXISTS] src_name [CASCADE | RESTRICT];
 
 
 
-## Examples<a name="en-us_topic_0237122135_section162746130164"></a>
+## Examples<a name="en-us_topic_0283136822_en-us_topic_0237122135_section162746130164"></a>
 
 ```
 -- Create a data source.
-postgres=# CREATE DATA SOURCE ds_tst1;
+openGauss=# CREATE DATA SOURCE ds_tst1;
 
 -- Delete the data source.
-postgres=# DROP DATA SOURCE ds_tst1 CASCADE;
-postgres=# DROP DATA SOURCE IF EXISTS ds_tst1 RESTRICT; 
+openGauss=# DROP DATA SOURCE ds_tst1 CASCADE;
+openGauss=# DROP DATA SOURCE IF EXISTS ds_tst1 RESTRICT; 
 ```
 
-## Helpful Links<a name="en-us_topic_0237122135_section191190297715"></a>
+## Helpful Links<a name="en-us_topic_0283136822_en-us_topic_0237122135_section191190297715"></a>
 
-[CREATE DATA SOURCE](create-data-source.md)  and  [DROP DATA SOURCE](drop-data-source.md)
+[CREATE DATA SOURCE](create-data-source.md)  and  [ALTER DATA SOURCE](alter-data-source.md)
 

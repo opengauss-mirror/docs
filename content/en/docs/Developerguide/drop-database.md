@@ -36,11 +36,11 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 
 ## Examples<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_sabd40dc25b604e1b8c213e7e9f6b5200"></a>
 
-See  [Examples](en-us_topic_0283137050.md#en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)  in  **CREATE DATABASE**.
+See  [Examples](create-database.md#en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)  in  **CREATE DATABASE**.
 
 ## Helpful Links<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_s5f331542a3f84ab58b896c25bfff41db"></a>
 
-[CREATE DATABASE](create-database.md)，[ALTER DATABASE](alter-database.md)
+[CREATE DATABASE](create-database.md)
 
 ## Suggestions<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_section29255108114255"></a>
 

@@ -1,12 +1,12 @@
-# Simple Expressions<a name="EN-US_TOPIC_0283137643"></a>
+# Simple Expressions<a name="EN-US_TOPIC_0289900627"></a>
 
-## Logical Expressions<a name="en-us_topic_0237122001_en-us_topic_0059778068_s3998c0a95e73437db8ea894c6eecb3f2"></a>
+## Logical Expressions<a name="en-us_topic_0283137643_en-us_topic_0237122001_en-us_topic_0059778068_s3998c0a95e73437db8ea894c6eecb3f2"></a>
 
-[Logical Operators](en-us_topic_0283137740.md)  lists the operators and calculation rules of logical expressions.
+[Logical Operators](logical-operators.md)  lists the operators and calculation rules of logical expressions.
 
-## Comparative Expressions<a name="en-us_topic_0237122001_en-us_topic_0059778068_s1b8089e350ba466f9baafc8c95e678ce"></a>
+## Comparative Expressions<a name="en-us_topic_0283137643_en-us_topic_0237122001_en-us_topic_0059778068_s1b8089e350ba466f9baafc8c95e678ce"></a>
 
-[Operators](en-us_topic_0283137550.md)  lists the common comparative operators.
+[Operators](operators.md)  lists the common comparative operators.
 
 In addition to comparative operators, you can also use the following sentence structure:
 
@@ -51,7 +51,7 @@ In addition to comparative operators, you can also use the following sentence st
 
 
 
-## Pseudocolumn<a name="section104921036122717"></a>
+## Pseudocolumn<a name="en-us_topic_0283137643_section104921036122717"></a>
 
 ROWNUM
 
@@ -63,64 +63,64 @@ The return type of  **ROWNUM**  is BIGINT.  **ROWNUM**  can be used to limit the
 select * from Students where rownum <= 10;
 ```
 
-## Examples<a name="en-us_topic_0237122001_en-us_topic_0059778068_sa45abd926c8248c3b0b03e0173b11821"></a>
+## Examples<a name="en-us_topic_0283137643_en-us_topic_0237122001_en-us_topic_0059778068_sa45abd926c8248c3b0b03e0173b11821"></a>
 
 ```
-postgres=# SELECT 2 BETWEEN 1 AND 3 AS RESULT;
+openGauss=# SELECT 2 BETWEEN 1 AND 3 AS RESULT;
  result 
 ----------
  t
 (1 row)
 
-postgres=# SELECT 2 >= 1 AND 2 <= 3 AS RESULT;
+openGauss=# SELECT 2 >= 1 AND 2 <= 3 AS RESULT;
  result 
 ----------
  t
 (1 row)
 
-postgres=# SELECT 2 NOT BETWEEN 1 AND 3 AS RESULT;
+openGauss=# SELECT 2 NOT BETWEEN 1 AND 3 AS RESULT;
  result 
 ----------
  f
 (1 row)
 
-postgres=# SELECT 2 < 1 OR 2 > 3 AS RESULT;
+openGauss=# SELECT 2 < 1 OR 2 > 3 AS RESULT;
  result 
 ----------
  f
 (1 row)
 
-postgres=# SELECT 2+2 IS NULL AS RESULT;
+openGauss=# SELECT 2+2 IS NULL AS RESULT;
  result 
 ----------
  f
 (1 row)
 
-postgres=# SELECT 2+2 IS NOT NULL AS RESULT;
+openGauss=# SELECT 2+2 IS NOT NULL AS RESULT;
  result 
 ----------
  t
 (1 row)
 
-postgres=# SELECT 2+2 ISNULL AS RESULT;
+openGauss=# SELECT 2+2 ISNULL AS RESULT;
  result 
 ----------
  f
 (1 row)
 
-postgres=# SELECT 2+2 NOTNULL AS RESULT;
+openGauss=# SELECT 2+2 NOTNULL AS RESULT;
  result 
 ----------
  t
 (1 row)
 
-postgres=# SELECT 2+2 IS DISTINCT FROM NULL AS RESULT;
+openGauss=# SELECT 2+2 IS DISTINCT FROM NULL AS RESULT;
  result 
 ----------
  t
 (1 row)
 
-postgres=# SELECT 2+2 IS NOT DISTINCT FROM NULL AS RESULT;
+openGauss=# SELECT 2+2 IS NOT DISTINCT FROM NULL AS RESULT;
  result  
 ----------
  f

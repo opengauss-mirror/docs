@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0059777864_scf0935dc3ada4baa9a77f7734edb20bb"></a>
 
-Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
+Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
 
 ## Syntax<a name="en-us_topic_0059777864_sd069c15075874e97a7d0b18af750ad9d"></a>
 
@@ -26,10 +26,10 @@ Value range: a string. It must comply with the naming convention.
 
 ```
 -- Delete a resource label.
-postgres=# DROP RESOURCE LABEL IF EXISTS res_label1;
+openGauss=# DROP RESOURCE LABEL IF EXISTS res_label1;
 
 -- Delete a group resource label.
-postgres=# DROP RESOURCE LABEL IF EXISTS res_label1, res_label2, res_label3;
+openGauss=# DROP RESOURCE LABEL IF EXISTS res_label1, res_label2, res_label3;
 ```
 
 ## Helpful Links<a name="en-us_topic_0059778399_s41faee269a414537919479fb56fc5a4d"></a>

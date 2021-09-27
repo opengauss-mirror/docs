@@ -25,11 +25,11 @@ Value range: a string. It must comply with the naming convention.
 ## Examples<a name="en-us_topic_0059777864_s0f84a315f2804403a4545fd742d2e09d"></a>
 
 ```
--- Delete an anonymization policy.
-postgres=# DROP MASKING POLICY IF EXISTS maskpol1;
+-- Delete an masking policy.
+openGauss=# DROP MASKING POLICY IF EXISTS maskpol1;
 
--- Delete a group of anonymization policies.
-postgres=# DROP MASKING POLICY IF EXISTS maskpol1, maskpol2, maskpol3;
+-- Delete a group of masking policies.
+openGauss=# DROP MASKING POLICY IF EXISTS maskpol1, maskpol2, maskpol3;
 ```
 
 ## Helpful Links<a name="section12181292265"></a>

@@ -33,9 +33,9 @@ DROP VIEW [ IF EXISTS ] view_name [, ...] [ CASCADE | RESTRICT ];
 
 ## Examples<a name="en-us_topic_0283137706_en-us_topic_0237122159_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
-See  [Examples](en-us_topic_0283137480.md#en-us_topic_0237122126_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE VIEW**.
+See  [Examples](create-view.md#en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE VIEW**.
 
 ## Helpful Links<a name="en-us_topic_0283137706_en-us_topic_0237122159_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
-[ALTER VIEW](en-us_topic_0283137021.md)  and  [CREATE VIEW](en-us_topic_0283137480.md)
+[ALTER VIEW](alter-view.md)  and  [CREATE VIEW](create-view.md)
 

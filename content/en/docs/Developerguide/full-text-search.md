@@ -1,4 +1,4 @@
-# Full Text Search<a name="EN-US_TOPIC_0242370476"></a>
+# Full Text Search<a name="EN-US_TOPIC_0289900577"></a>
 
 -   **[Introduction](introduction.md)**  
 
