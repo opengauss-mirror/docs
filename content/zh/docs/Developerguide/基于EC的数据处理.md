@@ -251,6 +251,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >使用本地模式时，需要在各个节点上分别执行[步骤1](#li16860111962113)-[5](#li116928192517)。
 
 7.  <a name="li119541014192319"></a>调用EC的restart命令，重启数据库实例，终止om\_monitor进程，以使openGauss的进程感知到环境变量的变化。
