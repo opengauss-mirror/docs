@@ -1124,7 +1124,7 @@ headless: true
             -   [STATEMENT\_HISTORY]({{< relref "./docs/Developerguide/statement_history.md" >}})
             -   [GS\_ENCRYPTED\_PROC]({{< relref "./docs/Developerguide/gs_encrypted_proc.md" >}})
         -   [System Views]({{< relref "./docs/Developerguide/system-views.md" >}})
-            -   [GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\" >}})]({{< relref "./docs/Developerguide/get_global_prepared_xacts-(discarded" >}}).md" >}})
+            -   [GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\" >}})]({{< relref "./docs/Developerguide/get_global_prepared_xacts-discarded.md" >}})
             -   [GS\_AUDITING]({{< relref "./docs/Developerguide/gs_auditing.md" >}})
             -   [GS\_AUDITING\_ACCESS]({{< relref "./docs/Developerguide/gs_auditing_access.md" >}})
             -   [GS\_AUDITING\_PRIVILEGE]({{< relref "./docs/Developerguide/gs_auditing_privilege.md" >}})
