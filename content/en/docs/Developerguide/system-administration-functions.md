@@ -1,4 +1,4 @@
-# System Administration Functions<a name="EN-US_TOPIC_0242370452"></a>
+# System Administration Functions<a name="EN-US_TOPIC_0289900149"></a>
 
 -   **[Configuration Settings Functions](configuration-settings-functions.md)**  
 
@@ -16,6 +16,10 @@
 
 -   **[Logical Replication Functions](logical-replication-functions.md)**  
 
+-   **[Segment-Page Storage Functions](segment-page-storage-functions.md)**  
+
 -   **[Other Functions](other-functions.md)**  
+
+-   **[Undo System Functions](undo-system-functions.md)**  
 
 

@@ -1,12 +1,12 @@
-# CREATE DIRECTORY<a name="EN-US_TOPIC_0242370565"></a>
+# CREATE DIRECTORY<a name="EN-US_TOPIC_0289900765"></a>
 
-## Function<a name="en-us_topic_0237122101_en-us_topic_0059778310_section50807000114421"></a>
+## Function<a name="en-us_topic_0283136620_en-us_topic_0237122101_en-us_topic_0059778310_section50807000114421"></a>
 
 **CREATE DIRECTORY**  creates a directory. The directory defines an alias for a path in the server file system and is used to store data files used by users.
 
-## Precautions<a name="en-us_topic_0237122101_en-us_topic_0059778310_section25762026103427"></a>
+## Precautions<a name="en-us_topic_0283136620_en-us_topic_0237122101_en-us_topic_0059778310_section25762026103427"></a>
 
--   By default, only initial users can create directories. If  **enable\_access\_server\_directory**  is enabled \(for details, see  [enable\_access\_server\_directory](operation-auditing.md#en-us_topic_0237124747_section4279164545515)\), users with the  **sysadmin**  permission can also create directories.
+-   By default, only initial users can create directories. If  **enable\_access\_server\_directory**  is enabled \(for details, see  [enable\_access\_server\_directory](en-us_topic_0289900107.md#en-us_topic_0283136929_en-us_topic_0237124747_section4279164545515)\), users with the  **sysadmin**  permission can also create directories.
 -   By default, the user who creates a directory has the read and write permissions on the directory.
 -   The default owner of a directory is the user who creates the directory.
 -   A directory cannot be created for the following paths:
@@ -20,20 +20,20 @@
 
 -   In openGauss, ensure that the path is the same on all the nodes. Otherwise, the path may fail to be found on some nodes when the directory is used.
 
-## Syntax<a name="en-us_topic_0237122101_en-us_topic_0059778310_section30531647103427"></a>
+## Syntax<a name="en-us_topic_0283136620_en-us_topic_0237122101_en-us_topic_0059778310_section30531647103427"></a>
 
 ```
 CREATE [OR REPLACE] DIRECTORY directory_name
 AS 'path_name';
 ```
 
-## Parameter Description<a name="en-us_topic_0237122101_section687510282437"></a>
+## Parameter Description<a name="en-us_topic_0283136620_en-us_topic_0237122101_section687510282437"></a>
 
 -   **directory\_name**
 
     Specifies the name of a directory.
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the naming convention.
 
 -   **path\_name**
 
@@ -42,14 +42,14 @@ AS 'path_name';
     Value range: a valid OS path
 
 
-## Examples<a name="en-us_topic_0237122101_section1853433744413"></a>
+## Examples<a name="en-us_topic_0283136620_en-us_topic_0237122101_section1853433744413"></a>
 
 ```
 -- Create a directory.
-postgres=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
+openGauss=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 ```
 
-## Helpful Links<a name="en-us_topic_0237122101_section1767373224414"></a>
+## Helpful Links<a name="en-us_topic_0283136620_en-us_topic_0237122101_section1767373224414"></a>
 
 [ALTER DIRECTORY](alter-directory.md)  and  [DROP DIRECTORY](drop-directory.md)
 

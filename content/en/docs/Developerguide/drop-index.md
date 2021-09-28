@@ -42,9 +42,9 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 
 ## Examples<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s95dd4a9a45334e81be4841d86d7a47f1"></a>
 
-See  [Examples](en-us_topic_0283136578.md#en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
+See  [Examples](create-index.md#en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
 
 ## Helpful Links<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
 
-[ALTER INDEX](en-us_topic_0283137124.md)  and  [CREATE INDEX](en-us_topic_0283136578.md)
+[ALTER INDEX](alter-index.md)  and  [CREATE INDEX](create-index.md)
 

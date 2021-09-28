@@ -1,4 +1,4 @@
-# Introduction<a name="EN-US_TOPIC_0242370477"></a>
+# Introduction<a name="EN-US_TOPIC_0289900610"></a>
 
 -   **[Full-Text Retrieval](full-text-retrieval.md)**  
 

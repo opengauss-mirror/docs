@@ -52,8 +52,8 @@ Set the isolation level and access mode of the transaction.
 
 ```
 -- Start a transaction and set its isolation level to READ COMMITTED and access mode to READ ONLY.
-postgres=# START TRANSACTION;
-postgres=# SET LOCAL TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY;
-postgres=# COMMIT;
+openGauss=# START TRANSACTION;
+openGauss=# SET LOCAL TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY;
+openGauss=# COMMIT;
 ```
 

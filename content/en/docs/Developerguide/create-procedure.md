@@ -9,10 +9,12 @@
 -   If the parameters or return values of a stored procedure have precision, the precision is not checked.
 -   When creating a stored procedure, you are advised to explicitly specify the schemas of all operations on table objects in the stored procedure definition. Otherwise, the stored procedure may fail to be executed.
 -   **current\_schema**  and  **search\_path**  specified by  **SET**  during stored procedure creation are invalid.  **search\_path**  and  **current\_schema**  before and after function execution should be the same.
--   If a stored procedure has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the procedure. When the  **CALL**  statement calls the stored procedure or a non-overloaded function, output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](en-us_topic_0283137636.md).
+-   If a stored procedure has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the procedure. When the  **CALL**  statement calls the stored procedure or a non-overloaded function, output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](call.md).
 -   A stored procedure with the  **PACKAGE**  attribute can use overloaded functions.
 -   When you create a procedure, you cannot insert aggregate functions or other functions out of the average function.
 -   When calling stored procedures without parameters inside another stored procedure, you can omit brackets and call stored procedures using their names directly.
+-   The stored procedure supports viewing, exporting, and importing parameter comments.
+-   The stored procedure supports viewing, exporting, and importing parameter comments between IS/AS and plsql\_body.
 
 ## Syntax<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
@@ -63,7 +65,7 @@ plsql_body
 
 -   **argtype**
 
-    Specifies the type of an argument.
+    Specifies the type of an argument.  **%TYPE**  or  **%ROWTYPE**  can be used to indirectly reference a variable or table type. For details, see  [Variable Definition Statements](en-us_topic_0289900208.md).
 
     Value range: a valid data type
 
@@ -85,7 +87,7 @@ plsql_body
 
 -   **IMMUTABLE, STABLE,**...
 
-    Specifies a constraint. The function of each parameter is similar to that of  **CREATE FUNCTION**. For details, see  [CREATE FUNCTION](en-us_topic_0283136560.md).
+    Specifies a constraint. The function of each parameter is similar to that of  **CREATE FUNCTION**. For details, see  [CREATE FUNCTION](create-function.md).
 
 -   **plsql\_body**
 
@@ -100,7 +102,7 @@ plsql_body
 
 ## Helpful Links<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>
 
-[DROP PROCEDURE](en-us_topic_0289900018.md)
+[DROP PROCEDURE](drop-procedure.md)
 
 ## Suggestions<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_section60380346161036"></a>
 

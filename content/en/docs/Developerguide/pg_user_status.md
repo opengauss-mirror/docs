@@ -13,11 +13,18 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_r952b3514b68e44dfbdb604548a5b11f1"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a>roloid</p>
+<tbody><tr id="row8966338112711"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778259_a5a31d0f121244e7f893efcd027fe3df1"><a name="en-us_topic_0059778259_a5a31d0f121244e7f893efcd027fe3df1"></a><a name="en-us_topic_0059778259_a5a31d0f121244e7f893efcd027fe3df1"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.07%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778259_a76e99ac8f3eb4810a5dec895a38ce0c3"><a name="en-us_topic_0059778259_a76e99ac8f3eb4810a5dec895a38ce0c3"></a><a name="en-us_topic_0059778259_a76e99ac8f3eb4810a5dec895a38ce0c3"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778259_a12ae5fa1dc394b27ab6eeaa7f74f7120"><a name="en-us_topic_0059778259_a12ae5fa1dc394b27ab6eeaa7f74f7120"></a><a name="en-us_topic_0059778259_a12ae5fa1dc394b27ab6eeaa7f74f7120"></a>Row identifier (hidden attribute, which must be specified)</p>
+</td>
+</tr>
+<tr id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_r952b3514b68e44dfbdb604548a5b11f1"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a67ed15d494c1418baf55bf69a5e31bfd"></a>roloid</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.07%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_ad5cbd42fa7a64543a7ca81042a3121d5"><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_ad5cbd42fa7a64543a7ca81042a3121d5"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_ad5cbd42fa7a64543a7ca81042a3121d5"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a9ae2a19d8ddc44fd816c603d17d284cf"><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a9ae2a19d8ddc44fd816c603d17d284cf"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a9ae2a19d8ddc44fd816c603d17d284cf"></a>ID of a role</p>
+<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a9ae2a19d8ddc44fd816c603d17d284cf"><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a9ae2a19d8ddc44fd816c603d17d284cf"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a9ae2a19d8ddc44fd816c603d17d284cf"></a>ID of the role</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_r937e43eae0ee4433809e4ca7a1aea4cf"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a2df0d7e69620470280f1eac18f26a401"><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a2df0d7e69620470280f1eac18f26a401"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_en-us_topic_0059778886_a2df0d7e69620470280f1eac18f26a401"></a>failcount</p>
@@ -46,14 +53,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="35.07%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_p1686112541104"><a name="en-us_topic_0283137679_en-us_topic_0237122329_p1686112541104"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_p1686112541104"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_p1886155418107"><a name="en-us_topic_0283137679_en-us_topic_0237122329_p1886155418107"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_p1886155418107"></a>Size of the permanent table storage space used by a role</p>
+<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_p1886155418107"><a name="en-us_topic_0283137679_en-us_topic_0237122329_p1886155418107"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_p1886155418107"></a>Size of the permanent table storage space used by the role</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137679_en-us_topic_0237122329_row1797655515101"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_p15976755111010"><a name="en-us_topic_0283137679_en-us_topic_0237122329_p15976755111010"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_p15976755111010"></a>tempspace</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.07%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_p14976205571011"><a name="en-us_topic_0283137679_en-us_topic_0237122329_p14976205571011"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_p14976205571011"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_p59761855181016"><a name="en-us_topic_0283137679_en-us_topic_0237122329_p59761855181016"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_p59761855181016"></a>Size of the temporary table storage space used by a role</p>
+<td class="cellrowborder" valign="top" width="49.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137679_en-us_topic_0237122329_p59761855181016"><a name="en-us_topic_0283137679_en-us_topic_0237122329_p59761855181016"></a><a name="en-us_topic_0283137679_en-us_topic_0237122329_p59761855181016"></a>Size of the temporary table storage space used by the role</p>
 </td>
 </tr>
 <tr id="row18456193462918"><td class="cellrowborder" valign="top" width="15.049999999999999%" headers="mcps1.2.4.1.1 "><p id="p445773418295"><a name="p445773418295"></a><a name="p445773418295"></a>passwordexpired</p>

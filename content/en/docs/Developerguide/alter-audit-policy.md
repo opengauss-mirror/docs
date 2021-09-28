@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0059778839_s63ad21f92ad74c9e8d6bf18bb7218c4f"></a>
 
--   Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
--   The unified audit policy takes effect only after  **enable\_security\_policy**  is set to  **on**. For details, see "Database Configuration \> Database Security Management Policies \> Unified Auditing" in the  _Security Hardening Guide_.
+-   Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
+-   The unified audit policy takes effect only after  **enable\_security\_policy**  is set to  **on**. For details, see "Database Configuration \> Database Security Management Policies \> Unified Auditing" in  _Security Hardening Guide_.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -45,33 +45,33 @@ ALTER AUDIT POLICY [ IF EXISTS ] policy_name { ENABLE | DISABLE };
 
     Specifies the audit policy name, which must be unique.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **DDL**
 
-    Specifies the operations that are audited within the database:  **CREATE**,  **ALTER**,  **DROP**,  **ANALYZE**,  **COMMENT**,  **GRANT**,  **REVOKE**,  **SET**,  **SHOW**,  **LOGIN\_ANY**,  **LOGIN\_FAILURE**,  **LOGIN\_SUCCESS**, and  **LOGOUT**.
+    Specifies the operations that are audited in the database:  **CREATE**,  **ALTER**,  **DROP**,  **ANALYZE**,  **COMMENT**,  **GRANT**,  **REVOKE**,  **SET**,  **SHOW**,  **LOGIN\_ANY**,  **LOGIN\_FAILURE**,  **LOGIN\_SUCCESS**, and  **LOGOUT**.
 
 -   **ALL**
 
-    Indicates all operations supported by the specified DDL statements in the database.
+    Specifies all operations supported by the specified DDL statements in the database.
 
 -   **DML**
 
-    Specifies the operations that are audited within the database:  **SELECT**,  **COPY**,  **DEALLOCATE**,  **DELETE**,  **EXECUTE**,  **INSERT**,  **PREPARE**,  **REINDEX**,  **TRUNCATE**, and  **UPDATE**.
+    Specifies the operations that are audited in the database:  **SELECT**,  **COPY**,  **DEALLOCATE**,  **DELETE**,  **EXECUTE**,  **INSERT**,  **PREPARE**,  **REINDEX**,  **TRUNCATE**, and  **UPDATE**.
 
 
 -   **FILTER\_TYPE**
 
-    Specifies the types of information to be filtered by the audit:  **IP**,  **ROLES**, and  **APP**.
+    Specifies the types of information to be filtered by the policy:  **IP**,  **ROLES**, and  **APP**.
 
 -   **filter\_value**
 
-    Indicates the detailed information to be filtered.
+    Specifies the detailed information to be filtered.
 
 
 -   **policy\_comments**
 
-    Records description information of audit policies.
+    Records description information of the audit policy.
 
 -   **ENABLE|DISABLE**
 

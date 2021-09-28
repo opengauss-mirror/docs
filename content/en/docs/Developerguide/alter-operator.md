@@ -25,11 +25,11 @@ ALTER OPERATOR name ( { left_type | NONE } , { right_type | NONE } ) SET SCHEMA 
 
 -   **left\_type**
 
-    Data type of the left operand for the operator; If there is no left operand, write NONE.
+    Data type of the left operand for the operator; if there is no left operand, write NONE.
 
 -   **right\_type**
 
-    Data type of the right operand for the operator; If there is no right operand, write NONE.
+    Data type of the right operand for the operator; if there is no right operand, write NONE.
 
 -   **new\_owner**
 

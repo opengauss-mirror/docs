@@ -1,18 +1,18 @@
-# CREATE TEXT SEARCH DICTIONARY<a name="EN-US_TOPIC_0242370586"></a>
+# CREATE TEXT SEARCH DICTIONARY<a name="EN-US_TOPIC_0289899995"></a>
 
-## Function<a name="en-us_topic_0237122122_en-us_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
+## Function<a name="en-us_topic_0283137272_en-us_topic_0237122122_en-us_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 
 **CREATE TEXT SEARCH DICTIONARY**  creates a full-text retrieval dictionary. A dictionary is used to identify and process particular words during full-text retrieval.
 
 Dictionaries are created by using predefined templates \(defined in the  [PG\_TS\_TEMPLATE](pg_ts_template.md)  system catalog\). Five types of dictionaries can be created,  **Simple**,  **Ispell**,  **Synonym**,  **Thesaurus**, and  **Snowball**. These dictionaries are used to handle different types of tasks.
 
-## Precautions<a name="en-us_topic_0237122122_en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
+## Precautions<a name="en-us_topic_0283137272_en-us_topic_0237122122_en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
 -   A user with the  **SYSADMIN**  permission can create a dictionary. Then, the user automatically becomes the owner of the dictionary.
 -   A dictionary cannot be created in  **pg\_temp**  mode.
 -   After a dictionary is created or modified, any modification to the customized dictionary definition file will not affect the dictionary in the database. To make such modifications take effect in the dictionary in the database, run the  **ALTER**  statement to update the definition file of the dictionary.
 
-## Syntax<a name="en-us_topic_0237122122_en-us_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
+## Syntax<a name="en-us_topic_0283137272_en-us_topic_0237122122_en-us_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
 
 ```
 CREATE TEXT SEARCH DICTIONARY name (
@@ -21,7 +21,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 );
 ```
 
-## Parameter Description<a name="en-us_topic_0237122122_en-us_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
+## Parameter Description<a name="en-us_topic_0283137272_en-us_topic_0237122122_en-us_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
 -   **name**
 
@@ -52,7 +52,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            Specifies the directory for storing dictionary files. The directory can be a local directory or an OBS directory. The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located. If any of the  **FILEPATH**  and  **STOPWORDS**  parameters is specified, the other one must also be specified.
+            Specifies the directory for storing dictionary files. The directory can be a local directory or an OBS directory. \(The OBS directory can be specified only in security mode. You can add the securitymode option during startup to enter the security mode.\) The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located. If any of the  **FILEPATH**  and  **STOPWORDS**  parameters is specified, the other one must also be specified.
 
     -   Parameters for a  **Synonym**  dictionary
         -   **SYNONYM**
@@ -67,14 +67,14 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            Specifies the directory for storing  **Synonym**  dictionary files. The directory can be a local directory or an OBS directory. The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located.
+            Specifies the directory for storing  **Synonym**  dictionary files. The directory can be a local directory or an OBS directory. \(The OBS directory can be specified only in security mode. You can add the  **securitymode**  option during startup to enter the security mode.\) The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located.
 
     -   Parameters for a  **Thesaurus**  dictionary
         -   **DICTFILE**
 
             Specifies the name of a dictionary definition file. The default file name extension is .ths.
 
-            The file is a list of synonyms. Each line is in the format of  _sample words_**:** _indexed words_. The colon \(:\) is used as a separator between a phrase and its substitute word. If multiple sample words are matched, the TZ selects the longest one.
+            The file is a list of synonyms. Each line is in the format of  _sample words_ **:** _indexed words_. The colon \(:\) is used as a separator between a phrase and its substitute word. If multiple sample words are matched, the TZ selects the longest one.
 
         -   **DICTIONARY**
 
@@ -92,7 +92,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            Specifies the directory for storing dictionary definition files. The directory can be a local directory or an OBS directory. The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located.
+            Specifies the directory for storing dictionary definition files. The directory can be a local directory or an OBS directory. \(The OBS directory can be specified only in security mode. You can add the securitymode option during startup to enter the security mode.\) The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located.
 
     -   Parameters for an  **Ispell**  dictionary
         -   **DICTFILE**
@@ -109,7 +109,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            Specifies the directory for storing dictionary files. The directory can be a local directory or an OBS directory. The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located.
+            Specifies the directory for storing dictionary files. The directory can be a local directory or an OBS directory. \(The OBS directory can be specified only in security mode. You can add the  **securitymode**  option during startup to enter the security mode.\) The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located.
 
     -   Parameters for a  **Snowball**  dictionary
         -   **LANGUAGE**
@@ -122,22 +122,22 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            Specifies the directory for storing dictionary definition files. The directory can be a local directory or an OBS directory. The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located. If any of the  **FILEPATH**  and  **STOPWORDS**  parameters is specified, the other one must also be specified.
+            Specifies the directory for storing dictionary definition files. You can specify a local directory or an OBS directory. \(The OBS directory can be specified only in security mode. You can enter the security mode by adding the  **securitymode**  option during startup.\) The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located. If any of the  **FILEPATH**  and  **STOPWORDS**  parameters is specified, the other one must also be specified.
 
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The name of a dictionary definition file can contain only lowercase letters, digits, and underscores \(\_\).  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The name of a dictionary definition file can contain only lowercase letters, digits, and underscores \(\_\).
 
 -   **value**
 
     Specifies a parameter value. If the value is not an identifier or a number, enclose it with single quotation marks \(''\). You can also enclose identifiers and numbers.
 
 
-## Examples<a name="en-us_topic_0237122122_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
+## Examples<a name="en-us_topic_0283137272_en-us_topic_0237122122_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
 See examples in  [Configuration Examples](configuration-examples.md).
 
-## Helpful Links<a name="en-us_topic_0237122122_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
+## Helpful Links<a name="en-us_topic_0283137272_en-us_topic_0237122122_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [ALTER TEXT SEARCH DICTIONARY](alter-text-search-dictionary.md)  and  [CREATE TEXT SEARCH DICTIONARY](create-text-search-dictionary.md)
 

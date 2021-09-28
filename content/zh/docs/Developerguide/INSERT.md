@@ -107,9 +107,9 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新，对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDE." 或者 "VALUES\(\)" 来选择源数据相应的列。
 
     -   支持触发器，触发器执行顺序由实际执行流程决定：
-        -   执行insert： 触发 before insert、 after insert触发器。
+        -   执行insert：触发 before insert、after insert触发器。
         -   执行update：触发before insert、before update、after update触发器。
-        -   执行update nothing： 触发before insert触发器。
+        -   执行update nothing：触发before insert触发器。
 
     -   不支持延迟生效（DEFERRABLE）的唯一约束或主键。
 
@@ -159,5 +159,4 @@ openGauss=# DROP TABLE tpcds.reason_t2;
 -   VALUES
 
     通过insert语句批量插入数据时，建议将多条记录合并入一条语句中执行插入，以提高数据加载性能。例如，INSERT INTO sections VALUES \(30, 'Administration', 31, 1900\),\(40, 'Development', 35, 2000\), \(50, 'Development' , 60 , 2001\);
-
 

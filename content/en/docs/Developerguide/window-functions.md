@@ -4,21 +4,21 @@
 
 Currently, column-store tables only support  **rank\(expression\)**  and  **row\_number\(expression\)**  functions.
 
-This statement is used together with the window function. The  **OVER**  clause is used for grouping data and sorting the elements in a group. Window functions are used for generating sequence numbers for the values in the group.
+Window functions and the  **OVER**  clause are used together. The  **OVER**  clause is used for grouping data and sorting the elements in a group. Window functions are used for generating sequence numbers for the values in the group.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >**order by**  in a window function must be followed by a column name. If it is followed by a number, the number is processed as a constant value and the target column is not ranked.
 
 -   RANK\(\)
 
-    Description: The  **RANK**  function is used for generating non-consecutive sequence numbers for the values in each group. The same values have the same sequence number.
+    Description: Generates non-consecutive sequence numbers for the values in each group. The same values have the same sequence number.
 
     Return type: bigint
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, rank() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, rank() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
        d_moy | d_fy_week_seq | rank 
     -------+---------------+------
          1 |             1 |    1
@@ -68,14 +68,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   ROW\_NUMBER\(\)
 
-    Description: The  **ROW\_NUMBER**  function is used for generating consecutive sequence numbers for the values in each group. The same values have different sequence numbers.
+    Description: Generates consecutive sequence numbers for the values in each group. The same values have different sequence numbers.
 
     Return type: bigint
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, Row_number() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim  WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, Row_number() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim  WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
      d_moy | d_fy_week_seq | row_number 
     -------+---------------+------------
          1 |             1 |          1
@@ -125,14 +125,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   DENSE\_RANK\(\)
 
-    Description: The  **DENSE\_RANK**  function is used for generating consecutive sequence numbers for the values in each group. The same values have the same sequence number.
+    Description: Generates consecutive sequence numbers for the values in each group. The same values have the same sequence number.
 
     Return type: bigint
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, dense_rank() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, dense_rank() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
      d_moy | d_fy_week_seq | dense_rank 
     -------+---------------+------------
          1 |             1 |          1
@@ -182,14 +182,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   PERCENT\_RANK\(\)
 
-    Description: The  **PERCENT\_RANK**  function is used for generating corresponding sequence numbers for the values in each group. That is, the function calculates the value according to the formula Sequence number = \(**rank**  - 1\) / \(**total rows**  - 1\).  **rank**  is the corresponding sequence number generated based on the  **RANK**  function for the value and  **totalrows**  is the total number of elements in a group.
+    Description: Generates corresponding sequence numbers for the values in each group. That is, the function calculates the value according to the formula Sequence number = \(**rank**  - 1\)/\(**total rows**  - 1\).  **rank**  is the corresponding sequence number generated based on the  **RANK**  function for the value and  **totalrows**  is the total number of elements in a group.
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, percent_rank() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, percent_rank() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
      d_moy | d_fy_week_seq |   percent_rank   
     -------+---------------+------------------
          1 |             1 |                0
@@ -239,14 +239,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   CUME\_DIST\(\)
 
-    Description: The  **CUME\_DIST**  function is used for generating accumulative distribution sequence numbers for the values in each group. That is, the function calculates the value according to the following formula: Sequence number = Number of rows preceding or peer with current row/Total rows.
+    Description: Generates accumulative distribution sequence numbers for the values in each group. That is, the function calculates the value according to the following formula: Sequence number = Number of rows preceding or peer with current row/Total rows.
 
     Return type: double precision
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, cume_dist() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim e_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, cume_dist() OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim e_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
      d_moy | d_fy_week_seq |    cume_dist     
     -------+---------------+------------------
          1 |             1 | .233333333333333
@@ -296,14 +296,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   NTILE\(num\_buckets integer\)
 
-    Description: The  **NTILE**  function is used for equally allocating sequential data sets to the buckets whose quantity is specified by  **num\_buckets**  according to  **num\_buckets integer**  and allocating the bucket number to each row. Divide the partition as evenly as possible.
+    Description: Equally allocates sequential data sets to the buckets whose quantity is specified by  **num\_buckets**  according to  **num\_buckets integer**  and allocates the bucket number to each row. Divide the partition as evenly as possible.
 
     Return type: integer
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, ntile(3) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, ntile(3) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
      d_moy | d_fy_week_seq | ntile 
     -------+---------------+-------
          1 |             1 |     1
@@ -353,14 +353,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   LAG\(value any \[, offset integer \[, default any \]\]\)
 
-    Description: The  **LAG**  function is used for generating lag values for the corresponding values in each group. That is, the value of the row obtained by moving forward the row corresponding to the current value by  **offset**  \(integer\) is the sequence number. If the row does not exist after the moving, the result value is the default value. If omitted,  **offset**  defaults to  **1**  and  **default**  to  **NULL**.
+    Description: Generates lag values for the corresponding values in each group. That is, the value of the row obtained by moving forward the row corresponding to the current value by  **offset**  \(integer\) is the sequence number. If the row does not exist after the moving, the result value is the default value. If omitted,  **offset**  defaults to  **1**  and  **default**  to  **NULL**.
 
-    Return type: same as the argument type
+    Return type: same as the parameter type
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, lag(d_moy,3,null) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, lag(d_moy,3,null) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
      d_moy | d_fy_week_seq | lag 
     -------+---------------+-----
          1 |             1 |    
@@ -410,14 +410,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   LEAD\(value any \[, offset integer \[, default any \]\]\)
 
-    Description: The  **LEAD**  function is used for generating leading values for the corresponding values in each group. That is, the value of the row obtained by moving backward the row corresponding to the current value by  **offset**  \(integer\) is the sequence number. If the row after the moving exceeds the total number of rows for the current group, the result value is the default value. If omitted,  **offset**  defaults to  **1**  and  **default**  to  **NULL**.
+    Description: Generates leading values for the corresponding values in each group. That is, the value of the row obtained by moving backward the row corresponding to the current value by  **offset**  \(integer\) is the sequence number. If the row after the moving exceeds the total number of rows for the current group, the result value is the default value. If omitted,  **offset**  defaults to  **1**  and  **default**  to  **NULL**.
 
     Return type: same as the parameter type
 
     Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, lead(d_fy_week_seq,2) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM  tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, lead(d_fy_week_seq,2) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM  tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2;
     d_moy | d_fy_week_seq | lead
     -------+---------------+------
          1 |             1 |    1
@@ -471,10 +471,10 @@ This statement is used together with the window function. The  **OVER**  clause 
 
     Return type: same as the parameter type
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, first_value(d_fy_week_seq) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2; 
+    openGauss=# SELECT d_moy, d_fy_week_seq, first_value(d_fy_week_seq) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 7 ORDER BY 1,2; 
      d_moy | d_fy_week_seq | first_value 
     -------+---------------+-------------
          1 |             1 |           1
@@ -528,10 +528,10 @@ This statement is used together with the window function. The  **OVER**  clause 
 
     Return type: same as the parameter type
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, last_value(d_moy) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 6 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, last_value(d_moy) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 6 ORDER BY 1,2;
       d_moy | d_fy_week_seq | last_value 
     -------+---------------+------------
          1 |             1 |          1
@@ -575,14 +575,14 @@ This statement is used together with the window function. The  **OVER**  clause 
 
 -   NTH\_VALUE\(value any, nth integer\)
 
-    Description: The nth row for a group is the returned value. If the row does not exist,  **NULL**  is returned by default.
+    Description: Returns the  _n_th row for a group. If the row does not exist,  **NULL**  is returned by default.
 
     Return type: same as the parameter type
 
-    For example:
+    Example:
 
     ```
-    postgres=# SELECT d_moy, d_fy_week_seq, nth_value(d_fy_week_seq,6) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 6 ORDER BY 1,2;
+    openGauss=# SELECT d_moy, d_fy_week_seq, nth_value(d_fy_week_seq,6) OVER(PARTITION BY d_moy ORDER BY d_fy_week_seq) FROM tpcds.date_dim WHERE d_moy < 4 AND d_fy_week_seq < 6 ORDER BY 1,2;
      d_moy | d_fy_week_seq | nth_value 
     -------+---------------+-----------
          1 |             1 |         1

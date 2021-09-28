@@ -8,14 +8,14 @@
 
 -   pg\_stat\_get\_env\(\)
 
-    Description: Obtains the environment variable information of the current node. Only the sysadmin and monitor admin users can access the environment variable information.
+    Description: Obtains the environment variable information of the current node. Only users with the  **sysadmin**  or  **monitor admin**  permission can access the environment variable information.
 
     Return type: record
 
     Example:
 
     ```
-    postgres=# select pg_stat_get_env();
+    openGauss=# select pg_stat_get_env();
                                                                                   pg_stat_get_env
     ---------------------------------------------------------------------------------------------------------------------------------------
      (coordinator1,localhost,144773,49100,/data1/GaussDB_Kernel_TRUNK/install,/data1/GaussDB_Kernel_TRUNK/install/data/coordinator1,pg_log)
@@ -30,7 +30,7 @@
 
 -   pg\_catalog.plancache\_status\(\)
 
-    Description: Displays information about the global plan cache on nodes. The information returned by the function is the same as that in  [GLOBAL\_PLANCACHE\_STATUS](GLOBAL_PLANCACHE_STATUS.md).
+    Description: Displays information about the global plan cache on nodes. The information returned by the function is the same as that in  [GLOBAL\_PLANCACHE\_STATUS](en-us_topic_0297927201.md).
 
     Return type: record
 
@@ -48,19 +48,19 @@
 
 -   get\_local\_active\_session\(\)
 
-    Description: Provides sampling records of the historical active session status stored in the memory of the current node.
+    Description: Provides sampling records of the historical active sessions stored in the memory of the current node.
 
     Return type: record
 
 -   pg\_stat\_get\_thread\(\)
 
-    Description: Provides information about the status of all threads under the current node.
+    Description: Provides status information about all threads on the current node. Users with the  **sysadmin**  or  **monitor admin**  permission can view information about all threads, and common users can view only their own thread information.
 
     Return type: record
 
 -   pg\_stat\_get\_sql\_count\(\)
 
-    Description: Provides the counts of the  **SELECT**,  **UPDATE**,  **INSERT**,  **DELETE**, and  **MERGE INTO**  statements executed on the current node.
+    Description: Provides the counts of the  **SELECT**,  **UPDATE**,  **INSERT**,  **DELETE**, and  **MERGE INTO**  statements executed on the current node. Users with the  **sysadmin**  or  **monitor admin**  permission can view information about all users, and common users can view only their own statistics.
 
     Return type: record
 
@@ -70,9 +70,15 @@
 
     Return type: record
 
+-   get\_wait\_event\_info\(\)
+
+    Description: Provides detailed information about the wait event.
+
+    Return type: record
+
 -   generate\_wdr\_report\(begin\_snap\_id bigint, end\_snap\_id bigint, report\_type cstring, report\_scope cstring, node\_name cstring\)
 
-    Description: Generates system diagnosis reports based on two snapshots. You need to run the command in the postgres database. By default, the initial user or the monadmin user can access the database. In V500R001C20SPC002 and earlier versions, the initial user or the sysadmin user can access the database.
+    Description: Generates system diagnosis reports based on two snapshots. You need to run the command in the  **postgres**  database. By default, the initial user or the user with the  **monadmin**  permission can access the database. In V500R001C20SPC002 and earlier versions, the initial user or the user with the  **sysadmin**  permission can access the database. The result can be queried only in the system database but cannot be queried in the user database.
 
     Return type: record
 
@@ -83,7 +89,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p158015584310"></a>Description</p>
     </td>
-    <td class="cellrowborder" valign="top" width="34.47%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a>Value Range</p>
+    <td class="cellrowborder" valign="top" width="34.47%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1880217581937"></a>Range</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row680211581937"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p380217581314"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p380217581314"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p380217581314"></a>begin_snap_id</p>
@@ -111,16 +117,16 @@
     </td>
     <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p108034581732"></a>Specifies the scope for a report to be generated.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="34.47%"><a name="ul10102152712184"></a><a name="ul10102152712184"></a><ul id="ul10102152712184"><li>cluster: database-level information</li><li>node: node-level information</li></ul>
+    <td class="cellrowborder" valign="top" width="34.47%"><a name="ul10102152712184"></a><a name="ul10102152712184"></a><ul id="ul10102152712184"><li><strong id="b1735195574411"><a name="b1735195574411"></a><a name="b1735195574411"></a>cluster</strong>: database-level information</li><li><strong id="b1081545813446"><a name="b1081545813446"></a><a name="b1081545813446"></a>node</strong>: node-level information</li></ul>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_en-us_topic_0237121997_row188031958732"><td class="cellrowborder" valign="top" width="20.24%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p1280316588318"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1280316588318"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p1280316588318"></a>node_name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137259_p9831125295619"><a name="en-us_topic_0283137259_p9831125295619"></a><a name="en-us_topic_0283137259_p9831125295619"></a>When <strong id="b51081142164115"><a name="b51081142164115"></a><a name="b51081142164115"></a>report_scope</strong> is set to <strong id="b81764554114"><a name="b81764554114"></a><a name="b81764554114"></a>node</strong>, set this parameter to the name of the corresponding node. (You can run the select * from pg_node_env; command to query the node name.)</p>
+    <td class="cellrowborder" valign="top" width="45.29%"><p id="en-us_topic_0283137259_p9831125295619"><a name="en-us_topic_0283137259_p9831125295619"></a><a name="en-us_topic_0283137259_p9831125295619"></a>When <strong id="b51081142164115"><a name="b51081142164115"></a><a name="b51081142164115"></a>report_scope</strong> is set to <strong id="b81764554114"><a name="b81764554114"></a><a name="b81764554114"></a>node</strong>, set this parameter to the name of the corresponding node. (You can run the <strong id="b2583181384512"><a name="b2583181384512"></a><a name="b2583181384512"></a>select * from pg_node_env;</strong> command to query the node name.)</p>
     <p id="en-us_topic_0283137259_p941074755313"><a name="en-us_topic_0283137259_p941074755313"></a><a name="en-us_topic_0283137259_p941074755313"></a>If <strong id="b87314582410"><a name="b87314582410"></a><a name="b87314582410"></a>report_scope</strong> is set to <strong id="b83581212424"><a name="b83581212424"></a><a name="b83581212424"></a>cluster</strong>, this parameter can be omitted, left blank, or set to <strong id="b3186694426"><a name="b3186694426"></a><a name="b3186694426"></a>NULL</strong>.</p>
     </td>
     <td class="cellrowborder" valign="top" width="34.47%"><p id="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"><a name="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"></a><a name="en-us_topic_0283137465_en-us_topic_0237121997_p12803258238"></a></p>
-    <a name="ul8919134451817"></a><a name="ul8919134451817"></a><ul id="ul8919134451817"><li>cluster: omitted/null/NULL</li><li>node: indicates the node name in openGauss.</li></ul>
+    <a name="ul8919134451817"></a><a name="ul8919134451817"></a><ul id="ul8919134451817"><li><strong id="b6455103810456"><a name="b6455103810456"></a><a name="b6455103810456"></a>cluster</strong>: This value is omitted, left blank or set to <strong id="b9462638114517"><a name="b9462638114517"></a><a name="b9462638114517"></a>NULL</strong>.</li><li><strong id="b142954464511"><a name="b142954464511"></a><a name="b142954464511"></a>node</strong>: indicates the node name in openGauss.</li></ul>
     </td>
     </tr>
     </tbody>
@@ -128,13 +134,25 @@
 
 -   create\_wdr\_snapshot\(\)
 
-    Description: Manually generates system diagnosis snapshots. This function requires the sysadmin permission.
+    Description: Manually generates system diagnosis snapshots. This function requires the  **sysadmin**  permission.
 
     Return type: text
 
+-   kill\_snapshot\(\)
+
+    Description: Kills the WDR snapshot backend thread. Users who invoke this function must have the  **SYSADMIN**  permission, the  **REPLICATION**  permission, or inherit the  **gs\_role\_replication**  permission of the built-in role.
+
+    Return type: void
+
+-   capture\_view\_to\_json\(text,integer\)
+
+    Description: Saves the view result to the directory specified by GUC:  **perf\_directory**. If  **is\_crossdb**  is set to  **1**, the view is accessed once for all databases. If the value of  **is\_crossdb**  is  **0**, the current database is accessed only once. Only users with the  **sysadmin**  or  **monitor admin**  permission can execute this function.
+
+    Return type: int
+
 -   reset\_unique\_sql
 
-    Description: Clears the Unique SQL statements in the memory of the database node. \(The sysadmin permission is required.\)
+    Description: Clears the unique SQL statements in the memory of the database node. \(The  **sysadmin**  permission is required.\)
 
     Return type: Boolean
 
@@ -154,14 +172,14 @@
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137465_p9227144715250"><a name="en-us_topic_0283137465_p9227144715250"></a><a name="en-us_topic_0283137465_p9227144715250"></a>text</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137465_p1322620473258"><a name="en-us_topic_0283137465_p1322620473258"></a><a name="en-us_topic_0283137465_p1322620473258"></a>Clearance scope type. The options are as follows:</p>
-    <a name="en-us_topic_0283137465_ul27053230486"></a><a name="en-us_topic_0283137465_ul27053230486"></a><ul id="en-us_topic_0283137465_ul27053230486"><li><strong id="b1041264162318"><a name="b1041264162318"></a><a name="b1041264162318"></a>'GLOBAL'</strong>: Clears all nodes. If the value is <strong id="b1746111919233"><a name="b1746111919233"></a><a name="b1746111919233"></a>'GLOBAL'</strong>, this function can be executed only on the primary node.</li><li><strong id="b134321043182313"><a name="b134321043182313"></a><a name="b134321043182313"></a>'LOCAL'</strong>: Clears the current node.</li></ul>
+    <a name="en-us_topic_0283137465_ul27053230486"></a><a name="en-us_topic_0283137465_ul27053230486"></a><ul id="en-us_topic_0283137465_ul27053230486"><li><strong id="b1041264162318"><a name="b1041264162318"></a><a name="b1041264162318"></a>GLOBAL</strong>: Clears all nodes. If the value is <strong id="b1746111919233"><a name="b1746111919233"></a><a name="b1746111919233"></a>GLOBAL</strong>, this function can be executed only on the primary node.</li><li><strong id="b134321043182313"><a name="b134321043182313"></a><a name="b134321043182313"></a>LOCAL</strong>: Clears the current node.</li></ul>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_row113456461571"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137465_p13830135712614"><a name="en-us_topic_0283137465_p13830135712614"></a><a name="en-us_topic_0283137465_p13830135712614"></a>clean_type</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137465_p1722494715253"><a name="en-us_topic_0283137465_p1722494715253"></a><a name="en-us_topic_0283137465_p1722494715253"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283137465_ul9212421184913"></a><a name="en-us_topic_0283137465_ul9212421184913"></a><ul id="en-us_topic_0283137465_ul9212421184913"><li><strong id="b1998874142411"><a name="b1998874142411"></a><a name="b1998874142411"></a>'BY_USERID'</strong>: The Unique SQL statements are cleared based on user IDs.</li><li><strong id="b1870945142914"><a name="b1870945142914"></a><a name="b1870945142914"></a>'BY_CNID'</strong>: The Unique SQL statements are cleared based on primary node IDs.</li><li><strong id="b187256345263"><a name="b187256345263"></a><a name="b187256345263"></a>'ALL'</strong>: All data is cleared.</li></ul>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283137465_ul9212421184913"></a><a name="en-us_topic_0283137465_ul9212421184913"></a><ul id="en-us_topic_0283137465_ul9212421184913"><li><strong id="b9926615194612"><a name="b9926615194612"></a><a name="b9926615194612"></a>BY_USERID</strong>: Unique SQL statements are cleared based on user IDs.</li><li><strong id="b1870945142914"><a name="b1870945142914"></a><a name="b1870945142914"></a>BY_CNID</strong>: Unique SQL statements are cleared based on primary node IDs.</li><li><strong id="b187256345263"><a name="b187256345263"></a><a name="b187256345263"></a>ALL</strong>: All data is cleared.</li></ul>
     </td>
     </tr>
     <tr id="en-us_topic_0283137465_row934510461379"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137465_p1122194711253"><a name="en-us_topic_0283137465_p1122194711253"></a><a name="en-us_topic_0283137465_p1122194711253"></a>clean_value</p>
@@ -173,6 +191,10 @@
     </tr>
     </tbody>
     </table>
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   The values  **GLOBAL**  and  **LOCAL**  of  **scope**  apply to distributed databases. For openGauss, the values have the same meaning, indicating that the local node is cleared.
+    >-   The value  **BY\_CNID**  of  **clean\_type**  applies only to distributed databases and is invalid for openGauss.
 
 -   wdr\_xdb\_query\(db\_name\_str text, query text\)
 
@@ -186,7 +208,7 @@
 
 -   pg\_wlm\_jump\_queue\(pid int\)
 
-    Description: Moves a task to the top of the CN queue.
+    Description: Moves a task to the top of the queue of the primary node of the database.
 
     Return type: Boolean
 
@@ -195,7 +217,7 @@
 
 -   gs\_wlm\_switch\_cgroup\(pid int, cgroup text\)
 
-    Description: Moves a job to other Cgroup to improve the job priority.
+    Description: Moves a job to another Cgroup to change the job priority.
 
     Return type: Boolean
 
@@ -204,7 +226,7 @@
 
 -   pv\_session\_memctx\_detail\(threadid tid, MemoryContextName text\)
 
-    Description: Record information about the memory context  **MemoryContextName**  of the thread  **tid**  into the  _threadid_**\_timestamp.log**  file in the  _$GAUSSLOG_**/pg\_log/**_$\{node\_name\}_**/dumpmem**  directory.  _threadid_  can be obtained from  _sessid_  in the  **PV\_SESSION\_MEMORY\_DETAIL**  table. In the officially released version, only the  **MemoryContextName**  that is an empty string \(two single quotation marks indicate that the input is an empty string\) is accepted. In this case, all memory context information is recorded. Otherwise, no operation is performed. For the DEBUG version for internal development and test personnel to debug, you can specify the  **MemoryContextName**  to be counted. In this case, all the memory usage of the context is recorded in the specified file. Only the administrator can execute this function.
+    Description: Records information about the memory context  **MemoryContextName**  of the thread  **tid**  into the  _threadid_**\_timestamp.log**  file in the  _$GAUSSLOG_**/pg\_log/**_$\{node\_name\}_**/dumpmem**  directory.  _threadid_  can be obtained from  _sessid_  in the  **GS\_SESSION\_MEMORY\_DETAIL**  view. In the officially released version, only the  **MemoryContextName**  that is an empty string \(two single quotation marks indicate that the input is an empty string\) is accepted. In this case, all memory context information is recorded. Otherwise, no operation is performed. For the DEBUG version for internal development and test personnel to debug, you can specify the  **MemoryContextName**  to be counted. In this case, all the memory usage of the context is recorded in the specified file. Only the administrator can execute this function.
 
     Return type: Boolean
 
@@ -213,7 +235,7 @@
 
 -   pg\_shared\_memctx\_detail\(MemoryContextName text\)
 
-    Description: Record information about the memory context  **MemoryContextName**  into the  _threadid_**\_timestamp.log**  file in the  _$GAUSSLOG_**/pg\_log/**_$\{node\_name\}_**/dumpmem**  directory. This function is provided only for internal development and test personnel to debug in the DEBUG version. Calling this function in the officially released version does not involve any operation. Only the administrator can execute this function.
+    Description: Records information about the memory context  **MemoryContextName**  into the  _threadid_**\_timestamp.log**  file in the  _$GAUSSLOG_**/pg\_log/**_$\{node\_name\}_**/dumpmem**  directory. This function is provided only for internal development and test personnel to debug in the DEBUG version. Calling this function in the officially released version does not involve any operation. Only the administrator can execute this function.
 
     Return type: Boolean
 
@@ -223,6 +245,12 @@
 -   local\_bgwriter\_stat\(\)
 
     Description: Displays the information about pages flushed by the bgwriter thread of this instance, number of pages in the candidate buffer chain, and buffer elimination information.
+
+    Return type: record
+
+-   local\_candidate\_stat\(\)
+
+    Description: Displays the number of pages in the candidate buffer chain of this instance and buffer elimination information, including the normal buffer pool and segment buffer pool.
 
     Return type: record
 
@@ -260,15 +288,21 @@
 
 -   local\_recovery\_status\(\)
 
-    Description: Displays log flow control information about the primary and standby instances.
+    Description: Displays log flow control information about the primary and standby nodes.
 
     Return type: record
 
 -   gs\_wlm\_node\_recover\(boolean isForce\)
 
-    Description: Obtains top SQL query statement-level statistics recorded in the current memory. If the input parameter is not 0, the information is cleared from the memory.
+    Description: Obtains top SQL query statement-level statistics recorded in the current memory. If the input parameter is not  **0**, the information is cleared from the memory.
 
     Return type: record
+
+-   gs\_wlm\_node\_clean\(cstring nodename\)
+
+    Description: Clears data after the dynamic load management node is faulty. Only administrators can execute this function. This function is called by the cluster management module. You are not advised to directly call this function. This view is not supported in a centralized or standalone system.
+
+    Return type: Boolean
 
 -   gs\_cgroup\_map\_ng\_conf\(group name\)
 
@@ -278,7 +312,7 @@
 
 -   gs\_wlm\_switch\_cgroup\(sess\_id int8, cgroup name\)
 
-    Description: Switches the cgroup of a specified session.
+    Description: Switches the Cgroup of a specified session.
 
     Return type: record
 
@@ -333,7 +367,7 @@
     Example:
 
     ```
-    postgres=# select gs_create_log_tables();
+    openGauss=# select gs_create_log_tables();
      gs_create_log_tables
     ----------------------
     
@@ -342,7 +376,7 @@
 
 -   dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
 
-    Description: Obtains full SQL information at the database level.
+    Description: Obtains full SQL information at the database level. The result can be queried only in the system database but cannot be queried in the user database.
 
     Return type: record
 
@@ -376,7 +410,7 @@
 
 -   dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
 
-    Description: Obtains slow SQL information at the database level.
+    Description: Obtains slow SQL information at the database level. The result can be queried only in the system database but cannot be queried in the user database.
 
     Return type: record
 
@@ -410,7 +444,7 @@
 
 -   statement\_detail\_decode\(detail text, format text, pretty boolean\)
 
-    Description: Parses the details column in a full or slow SQL statement.
+    Description: Parses the  **details**  column in a full or slow SQL statement. The result can be queried only in the system database but cannot be queried in the user database.
 
     Return type: text
 
@@ -429,7 +463,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p137462712123"><a name="p137462712123"></a><a name="p137462712123"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p138588178133"><a name="p138588178133"></a><a name="p138588178133"></a>A set of events generated by the SQL statement (unreadable).</p>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p138588178133"><a name="p138588178133"></a><a name="p138588178133"></a>Set of events generated by the SQL statement (unreadable).</p>
     </td>
     </tr>
     <tr id="row187462714127"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p1674617710129"><a name="p1674617710129"></a><a name="p1674617710129"></a>format</p>
@@ -450,11 +484,67 @@
     </tbody>
     </table>
 
+-   get\_prepared\_pending\_xid
+
+    Description: Returns nextxid when restoration is complete.
+
+    Parameter: nan
+
+    Return type: text
+
+-   pg\_clean\_region\_info
+
+    Description: Clears the regionmap.
+
+    Parameter: nan
+
+    Return type: character varying
+
+-   pg\_get\_delta\_info
+
+    Description: Obtains delta information from a single DN.
+
+    Parameter: rel text, schema\_name text
+
+    Return type: part\_name text, live\_tuple bigint, data\_size bigint, and blocknum bigint
+
+-   pg\_get\_replication\_slot\_name
+
+    Description: Obtains the slot name.
+
+    Parameter: nan
+
+    Return type: text
+
+-   pg\_get\_running\_xacts
+
+    Description: Obtains running transactions.
+
+    Parameter:  **nan**
+
+    Return type: handle integer, gxid xid, state tinyint, node text, xmin xid, vacuum boolean, timeline bigint, prepare\_xid xid, pid bigint, and next\_xid xid
+
+-   pg\_get\_variable\_info
+
+    Description: Obtains the shared memory variable  _cache_.
+
+    Parameter: nan
+
+    Return type: node\_name text, nextOid oid, nextXid xid, oldestXid xid, xidVacLimit xid, oldestXidDB oid, lastExtendCSNLogpage xid, startExtendCSNLogpage xid, nextCommitSeqNo xid, latestCompletedXid xid, and startupMaxXid xid
+
+-   pg\_get\_xidlimit
+
+    Description: Obtains transaction ID information from the shared memory.
+
+    Parameter: nan
+
+    Return type: nextXid xid, oldestXid xid, xidVacLimit xid, xidWarnLimit xid, xidStopLimit xid, xidWrapLimit xid, and oldestXidDB oid
+
 -   get\_global\_user\_transaction\(\)
 
     Description: Returns transaction information about each user on all nodes.
 
-    Return type: node\_name name, usename name, commit\_counter bigint, rollback\_counter bigint, resp\_min bigint, resp\_max bigint, resp\_avg bigint, resp\_total bigint, bg\_commit\_counter bigint, bg\_rollback\_counter bigint, bg\_resp\_min bigint, bg\_resp\_max bigint, bg\_resp\_avg bigint, bg\_resp\_total bigint
+    Return type: node\_name name, usename name, commit\_counter bigint, rollback\_counter bigint, resp\_min bigint, resp\_max bigint, resp\_avg bigint, resp\_total bigint, bg\_commit\_counter bigint, bg\_rollback\_counter bigint, bg\_resp\_min bigint, bg\_resp\_max bigint, bg\_resp\_avg bigint, and bg\_resp\_total bigint
 
 -   pg\_collation\_for
 
@@ -489,7 +579,7 @@
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   This function attempts to create the  **public.pgxc\_copy\_error\_log**  table. For details about the table, see  [Table 6](#table138318280213).
     >-   Create the B-tree index on the  **relname**  column and execute  **REVOKE ALL on public.pgxc\_copy\_error\_log FROM public**  to manage permissions for the error table \(the permissions are the same as those of the  **COPY**  statement\).
-    >-   **public.pgxc\_copy\_error\_log**  is a row-store table. Therefore, this function can be executed and  **COPY**  error tolerance is available only when row-store tables can be created in the database instance. Note that after the GUC parameter  **enable\_hadoop\_env**  is enabled, row-store tables cannot be created in the database instance \(the default value of GaussDB Kernel is off\).
+    >-   **public.pgxc\_copy\_error\_log**  is a row-store table. Therefore, this function can be executed and  **COPY**  error tolerance is available only when row-store tables can be created in the database instance. Note that after the GUC parameter  **enable\_hadoop\_env**  is enabled, row-store tables cannot be created in the database instance \(the default value is  **off**  for GaussDB Kernel\).
     >-   Same as the error table and the  **COPY**  statement, the function requires  **sysadmin**  or higher permissions.
     >-   If the  **public.pgxc\_copy\_error\_log**  table or the  **copy\_error\_log\_relname\_idx**  index exists before the function creates it, the function will report an error and roll back.
 
@@ -539,7 +629,7 @@
     <td class="cellrowborder" valign="top" width="48.6948694869487%" headers="mcps1.2.4.1.3 "><p id="p1135810527714"><a name="p1135810527714"></a><a name="p1135810527714"></a>Raw record of a data format error in the source data file</p>
     </td>
     </tr>
-    <tr id="row1487854919720"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p9359145212719"><a name="p9359145212719"></a><a name="p9359145212719"></a><strong id="b824691720"><a name="b824691720"></a><a name="b824691720"></a>detail</strong></p>
+    <tr id="row1487854919720"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p9359145212719"><a name="p9359145212719"></a><a name="p9359145212719"></a><strong id="b253639013"><a name="b253639013"></a><a name="b253639013"></a>detail</strong></p>
     </td>
     <td class="cellrowborder" valign="top" width="28.992899289928992%" headers="mcps1.2.4.1.2 "><p id="p83592521276"><a name="p83592521276"></a><a name="p83592521276"></a>text</p>
     </td>
@@ -548,5 +638,16 @@
     </tr>
     </tbody>
     </table>
+
+-   gs\_comm\_proxy\_thread\_status\(\)
+
+    Description: Collects statistics on data packets sent and received by the proxy communication library  **comm\_proxy**  when a user-mode network is configured for the cluster.
+
+    Parameter: nan
+
+    Return type: record
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The query result of this function is displayed only when the user-mode network is deployed in a centralized environment and  **enable\_dfx in comm\_proxy\_attr**  is set to  **true**. In other scenarios, an error message is displayed, indicating that queries are not supported.
 
 

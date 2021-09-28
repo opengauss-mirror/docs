@@ -45,8 +45,11 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   收集多列统计信息时，请设置GUC参数[default\_statistics\_target](zh-cn_topic_0289900235.md#zh-cn_topic_0283137690_zh-cn_topic_0237124719_zh-cn_topic_0059779049_se18c86fcdf5e4a22870f71187436d815)为负数，以使用百分比采样方式。
+    >
     >-   每组多列统计信息最多支持32列。
+    >
     >-   不支持收集多列统计信息的表：系统表。
 
 
@@ -57,10 +60,15 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   Fast模式校验时，需要对校验的表有并发的DML操作，会导致校验过程中有误报的问题，因为当前Fast模式是直接从磁盘上读取，并发有其他线程修改文件时，会导致获取的数据不准确，建议离线操作。
+    >
     >-   支持对全库进行操作，由于涉及的表较多，建议以重定向保存结果**gsql -d database -p port -f "verify.sql"\> verify\_warning.txt  2\>&1**。
+    >
     >-   对外提示NOTICE只核对外可见的表，内部表的检测会包含在它所依赖的外部表，不对外显示和呈现。
+    >
     >-   此命令的处理可容错ERROR级别的处理。由于debug版本的Assert可能会导致core无法继续执行命令，建议在release模式下操作。
+    >
     >-   对于全库操作时，当关键系统表出现损坏则直接报错，不再继续执行。
 
 -   检测表和索引的数据文件
@@ -70,8 +78,11 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   支持对普通表的操作和索引表的操作，但不支持对索引表index使用CASCADE操作。原因是由于CASCADE模式用于处理主表的所有索引表，当单独对索引表进行检测时，无需使用CASCADE模式。
+    >
     >-   对于主表的检测会同步检测主表的内部表，例如toast表、cudesc表等。
+    >
     >-   当提示索引表损坏时，建议使用reindex命令进行重建索引操作。
 
 -   检测表分区的数据文件

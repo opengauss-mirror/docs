@@ -1,4 +1,4 @@
-# Snowball Dictionary<a name="EN-US_TOPIC_0242370504"></a>
+# Snowball Dictionary<a name="EN-US_TOPIC_0289900109"></a>
 
 A  **Snowball**  dictionary is based on a project by Martin Porter and is used for stem analysis, providing stemming algorithms for many languages. openGauss provides predefined  **Snowball**  dictionaries of many languages. You can query the  [PG\_TS\_DICT](pg_ts_dict.md)  system catalog to view the predefined  **Snowball**  dictionaries and supported stemming algorithms.
 

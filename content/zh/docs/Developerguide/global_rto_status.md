@@ -1,8 +1,6 @@
 # global\_rto\_status<a name="ZH-CN_TOPIC_0000001150228308"></a>
 
-描述：显示关于主机和备机的日志流控信息（本节点除外、备DN上不可使用）。
-
-返回值类型：record
+global\_rto\_status视图显示关于主机和备机的日志流控信息（本节点除外、备DN上不可使用）。
 
 **表 1**  remote\_rto\_status参数说明
 

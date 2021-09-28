@@ -10,14 +10,15 @@
 -   In the current version, you can modify only the owner, owning column, and maximum value. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
 -   **ALTER SEQUENCE MAXVALUE**  cannot be used in transactions, functions, and stored procedures.
 -   After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
--   The  **ALTER SEQUENCE**  statement blocks the invoking of  **nextval**,  **setval**,  **currval**, and  **lastval**.
+-   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is altered.
+-   The  **ALTER SEQUENCE**  statement blocks the invocation of  **nextval**,  **setval**,  **currval**, and  **lastval**.
 
 ## Syntax<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
 -   Change the owning column of a sequence.
 
     ```
-    ALTER SEQUENCE [ IF EXISTS ] name 
+    ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name 
         [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
         [ OWNED BY { table_name.column_name | NONE } ] ;
     ```
@@ -26,7 +27,7 @@
 -   Change the owner of a sequence.
 
     ```
-    ALTER SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
+    ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
     ```
 
 
@@ -59,20 +60,20 @@
 
 ```
 -- Create an ascending sequence named serial, which starts from 101.
-postgres=# CREATE SEQUENCE serial START 101;
+openGauss=# CREATE SEQUENCE serial START 101;
 
 -- Create a table and specify default values for the sequence.
-postgres=# CREATE TABLE T1(C1 bigint default nextval('serial'));
+openGauss=# CREATE TABLE T1(C1 bigint default nextval('serial'));
 
 -- Change the owning column of serial to T1.C1.
-postgres=# ALTER SEQUENCE serial OWNED BY T1.C1;
+openGauss=# ALTER SEQUENCE serial OWNED BY T1.C1;
 
 -- Delete a sequence and a table.
-postgres=# DROP SEQUENCE serial cascade;
-postgres=# DROP TABLE T1;
+openGauss=# DROP SEQUENCE serial cascade;
+openGauss=# DROP TABLE T1;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
-[CREATE SEQUENCE](en-us_topic_0283137208.md)  and  [DROP SEQUENCE](en-us_topic_0283137072.md)
+[CREATE SEQUENCE](create-sequence.md)  and  [DROP SEQUENCE](drop-sequence.md)
 

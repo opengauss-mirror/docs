@@ -1,6 +1,6 @@
 # Other System Functions<a name="EN-US_TOPIC_0289900172"></a>
 
-The openGauss built-in functions and operators of are inherited from the open-source PG. For details about the following functions, see the  [official PG documents](https://www.postgresql.org/docs/9.2/functions.html).
+The built-in functions and operators of openGauss are inherited from the open-source PG. For details about the following functions, see the  [official PG documents](https://www.postgresql.org/docs/9.2/functions.html).
 
 <a name="en-us_topic_0283137115_table11249131114414"></a>
 <table><tbody><tr id="en-us_topic_0283137115_row126641212124110"><td class="cellrowborder" valign="top" width="17.73%"><p id="en-us_topic_0283137115_p15664151264118"><a name="en-us_topic_0283137115_p15664151264118"></a><a name="en-us_topic_0283137115_p15664151264118"></a>_pg_char_max_length</p>
@@ -2542,9 +2542,9 @@ The openGauss built-in functions and operators of are inherited from the open-so
 </td>
 <td class="cellrowborder" valign="top" width="14.08%"><p id="en-us_topic_0283137115_p27191512184111"><a name="en-us_topic_0283137115_p27191512184111"></a><a name="en-us_topic_0283137115_p27191512184111"></a>pg_extension_config_dump</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.540000000000001%"><p id="en-us_topic_0283137115_p87191512134115"><a name="en-us_topic_0283137115_p87191512134115"></a><a name="en-us_topic_0283137115_p87191512134115"></a>pg_logical_slot_get_binary_changes</p>
+<td class="cellrowborder" valign="top" width="14.540000000000001%"><p id="p16549132417135"><a name="p16549132417135"></a><a name="p16549132417135"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.78%"><p id="en-us_topic_0283137115_p57191712104120"><a name="en-us_topic_0283137115_p57191712104120"></a><a name="en-us_topic_0283137115_p57191712104120"></a>pg_logical_slot_peek_binary_changes</p>
+<td class="cellrowborder" valign="top" width="11.78%"><p id="p154922421318"><a name="p154922421318"></a><a name="p154922421318"></a>-</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.889999999999999%"><p id="en-us_topic_0283137115_p13719181254111"><a name="en-us_topic_0283137115_p13719181254111"></a><a name="en-us_topic_0283137115_p13719181254111"></a>pg_node_tree_in</p>
 </td>
@@ -3863,11 +3863,25 @@ The openGauss built-in functions and operators of are inherited from the open-so
 
 The following table lists the functions used by GaussDB Kernel to implement internal system functions. You are not advised to use these functions. If you need to use them, contact Huawei technical support.
 
+-   pv\_compute\_pool\_workload\(\)
+
+    Description: Provides the current load information about computing Node Groups on cloud.
+
+    Return type: record
+
+
+-   locktag\_decode\(locktag text\)
+
+    Description: Parses lock details from  **locktag**.
+
+    Return type: text
+
+
 -   smgreq\(a smgr, b smgr\)
 
     Description: Compares two smgrs to check whether they are the same.
 
-    Parameters: smgr, smgr
+    Parameter: smgr, smgr
 
     Return type: Boolean
 
@@ -3875,7 +3889,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Checks whether the two smgrs are different.
 
-    Parameters: smgr, smgr
+    Parameter: smgr, smgr
 
     Return type: Boolean
 
@@ -3899,7 +3913,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Concatenates two pieces of hstore data.
 
-    Parameters: hstore, hstore
+    Parameter: hstore, hstore
 
     Return type: hstore
 
@@ -3907,7 +3921,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Determines whether two hstore data records are included. The return value is of the Boolean type.
 
-    Parameters: hstore, hstore
+    Parameter: hstore, hstore
 
     Return type: Boolean
 
@@ -3915,7 +3929,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Determines whether two hstore data records are included. The return value is of the Boolean type.
 
-    Parameters: hstore, hstore
+    Parameter: hstore, hstore
 
     Return type: Boolean
 
@@ -3923,7 +3937,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Converts parameters to the hstore type.
 
-    Parameters: text, text
+    Parameter: text, text
 
     Return type: hstore
 
@@ -3987,21 +4001,21 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Checks whether a specified key exists.
 
-    Parameters: hstore, text
+    Parameter: hstore, text
 
     Return type: Boolean
 
 -   listagg
 
-    Description: aggregate function of the list type
+    Description: Specifies aggregate functions of the list type.
 
-    Parameters: smallint, text
+    Parameter: smallint, text
 
     Return type: text
 
 -   log\_fdw\_validator
 
-    Description: validate function
+    Description: Specifies validation functions.
 
     Parameter: text\[\], oid
 
@@ -4009,7 +4023,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   nvarchar2typmodin
 
-    Description: Obtains the typmod information of varchar.
+    Description: Obtains the typmod information of the varchar type.
 
     Parameter: cstring\[\]
 
@@ -4017,7 +4031,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   nvarchar2typmodout
 
-    Description: Obtains the typmod information of varchar, constructs a character string, and returns the character string.
+    Description: Obtains the typmod information of the varchar type, constructs a character string, and returns the character string.
 
     Parameter: integer
 
@@ -4033,9 +4047,9 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   regex\_like\_m
 
-    Description: Regular expression match, which is used to determine whether a character string complies with a specified regular expression.
+    Description: Specifies the regular expression match, which is used to determine whether a character string complies with a specified regular expression.
 
-    Parameters: text, text
+    Parameter: text, text
 
     Return type: Boolean
 
@@ -4049,7 +4063,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_cmp
 
-    Description: Enumeration comparison function, which is used to determine whether two enumeration classes are equal and determine their relative sizes.
+    Description: Specifies the enumeration comparison function, which is used to determine whether two enumeration classes are equal and determine their relative sizes.
 
     Parameter: anyenum, anyenum
 
@@ -4057,7 +4071,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_eq
 
-    Description: Enumeration comparison function, which is used to implement the = symbol.
+    Description: Specifies the enumeration comparison function, which is used to implement the equal sign \(=\).
 
     Parameter: anyenum, anyenum
 
@@ -4073,7 +4087,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_ge
 
-    Description: Enumeration comparison function, which is used to implement the \>= symbol.
+    Description: Specifies the enumeration comparison function, which is used to implement the greater-than sign \(\>\) and equal sign \(=\).
 
     Parameter: anyenum, anyenum
 
@@ -4081,7 +4095,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_gt
 
-    Description: Enumeration comparison function, which is used to implement the \> sign.
+    Description: Specifies the enumeration comparison function, which is used to implement the greater-than sign \(\>\).
 
     Parameter: anyenum, anyenum
 
@@ -4089,7 +4103,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_in
 
-    Description: Enumeration comparison function, which is used to determine whether an element is in an enumeration class.
+    Description: Specifies the enumeration comparison function, which is used to determine whether an element is in an enumeration class.
 
     Parameter: cstring, oid
 
@@ -4097,7 +4111,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_larger
 
-    Description: Enumeration comparison function, which is used to implement the \> sign.
+    Description: Specifies the enumeration comparison function, which is used to implement the greater-than sign \(\>\).
 
     Parameter: anyenum, anyenum
 
@@ -4113,7 +4127,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_le
 
-    Description: Enumeration comparison function, which is used to implement the <= symbol.
+    Description: Specifies the enumeration comparison function, which is used to implement the less-than sign \(<\) and equal sign \(=\).
 
     Parameter: anyenum, anyenum
 
@@ -4121,7 +4135,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_lt
 
-    Description: Enumeration comparison function, which is used to implement the < symbol.
+    Description: Specifies the enumeration comparison function, which is used to implement the less-than sign \(<\).
 
     Parameter: anyenum, anyenum
 
@@ -4129,7 +4143,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   enum\_smaller
 
-    Description: Enumeration comparison function, which is used to implement the < symbol.
+    Description: Specifies the enumeration comparison function, which is used to implement the less-than sign \(<\).
 
     Parameter: anyenum, anyenum
 
@@ -4157,7 +4171,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Parameter: nan
 
-    Return type: boolean
+    Return type: Boolean
 
 -   pg\_comm\_delay
 
@@ -4235,7 +4249,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Compares two values of the xid type to check whether they are the same.
 
-    Parameters: xid32, xid32
+    Parameter: xid32, xid32
 
     Return type: Boolean
 
@@ -4259,7 +4273,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: Returns whether xid1 < xid2 is true.
 
-    Parameters: xid32, xid32
+    Parameter: xid32, xid32
 
     Return type: Boolean
 

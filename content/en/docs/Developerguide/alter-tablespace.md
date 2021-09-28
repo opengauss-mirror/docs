@@ -65,7 +65,7 @@
 
     The new name cannot start with  **PG\_**.
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the naming convention.
 
 -   **new\_owner**
 
@@ -97,11 +97,12 @@
 
     Value range:
 
-    -   **UNLIMITED**: No limit is set for this tablespace.
-    -   Determined by  **space\_size**. For details about the format, see  [CREATE TABLESPACE](en-us_topic_0283137328.md).
+    -   **UNLIMITED**: No limit is set for the tablespace.
+    -   Determined by  **space\_size**. For details about the format, see  [CREATE TABLESPACE](create-tablespace.md).
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >You can also use the following statement to change the value of  **MAXSIZE**:
+        >-   If the adjusted quota is smaller than the current tablespace usage, the adjustment is successful. You need to decrease the tablespace usage to a value less than the new quota before writing data to the tablespace.
+        >-   You can also use the following statement to change the value of  **MAXSIZE**:
         >```
         >ALTER TABLESPACE tablespace_name RESIZE MAXSIZE
         > { 'UNLIMITED' | 'space_size'};
@@ -111,9 +112,9 @@
 
 ## Examples<a name="en-us_topic_0283137270_en-us_topic_0237122078_en-us_topic_0059777507_sf0e218df4bb44fd0afce8f50d6654d19"></a>
 
-See  [Examples](en-us_topic_0283137328.md#en-us_topic_0237122120_en-us_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)  in  **CREATE TABLESPACE**.
+See  [Examples](create-tablespace.md#en-us_topic_0283137328_en-us_topic_0237122120_en-us_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)  in  **CREATE TABLESPACE**.
 
 ## Helpful Links<a name="en-us_topic_0283137270_en-us_topic_0237122078_en-us_topic_0059777507_sac21888107614d73bf2f04cd684aed03"></a>
 
-[CREATE TABLESPACE](en-us_topic_0283137328.md)  and  [DROP TABLESPACE](en-us_topic_0283137549.md)
+[CREATE TABLESPACE](create-tablespace.md)  and  [DROP TABLESPACE](drop-tablespace.md)
 

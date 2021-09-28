@@ -1,4 +1,4 @@
-# Testing a Parser<a name="EN-US_TOPIC_0242370508"></a>
+# Testing a Parser<a name="EN-US_TOPIC_0289900442"></a>
 
 The  **ts\_parse**  function allows direct testing of a text search parser.
 
@@ -7,10 +7,10 @@ ts_parse(parser_name text, document text,
          OUT tokid integer, OUT token text) returns setof record
 ```
 
-**ts\_parse**  parses the given  **document**  and returns a series of records, one for each token produced by parsing. Each record includes a  **tokid**  showing the assigned token type and a  **token**  which is the text of the token. For example:
+**ts\_parse**  parses the given  **document**  and returns a series of records, one for each token produced by parsing. Each record includes a  **tokid**  showing the assigned token type and a  **token**  which is the text of the token. Example:
 
 ```
-postgres=# SELECT * FROM ts_parse('default', '123 - a number');
+openGauss=# SELECT * FROM ts_parse('default', '123 - a number');
  tokid | token
 -------+--------
     22 | 123
@@ -29,10 +29,10 @@ ts_token_type(parser_name text, OUT tokid integer,
               OUT alias text, OUT description text) returns setof record
 ```
 
-**ts\_token\_type**  returns a table which describes each type of token the specified parser can recognize. For each token type, the table gives the integer  **tokid**  that the parser uses to label a token of that type, the  **alias**  that names the token type in configuration commands, and a short description. For example:
+**ts\_token\_type**  returns a table which describes each type of token the specified parser can recognize. For each token type, the table gives the integer  **tokid**  that the parser uses to label a token of that type, the  **alias**  that names the token type in configuration commands, and a short description. Example:
 
 ```
-postgres=# SELECT * FROM ts_token_type('default');
+openGauss=# SELECT * FROM ts_token_type('default');
  tokid |      alias      |               description                
 -------+-----------------+------------------------------------------
      1 | asciiword       | Word, all ASCII

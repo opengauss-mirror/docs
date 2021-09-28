@@ -132,9 +132,9 @@
 
 ## Examples<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_sb089bcdb51bd4932a2967c246217d29e"></a>
 
-See  [Examples](en-us_topic_0283137050.md#en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)  in  **CREATE DATABASE**.
+See  [Examples](create-database.md#en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c)  in  **CREATE DATABASE**.
 
 ## Helpful Links<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_saa1e5193215b4927989f304541d2ecbd"></a>
 
-[CREATE DATABASE](en-us_topic_0283137050.md)  and  [DROP DATABASE](en-us_topic_0283137424.md)
+[CREATE DATABASE](create-database.md)  and  [DROP DATABASE](drop-database.md)
 

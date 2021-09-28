@@ -24,14 +24,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a0b778f8c6817439484fd5f0cb1d91e8b"><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>Audit policy type. The value is <strong id="b942662619124"><a name="b942662619124"></a><a name="b942662619124"></a>access</strong>.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>Audit policy type. The value <strong id="b1250747132816"><a name="b1250747132816"></a><a name="b1250747132816"></a>access</strong> indicates that DML operations are audited.</p>
 </td>
 </tr>
 <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p106232332384"><a name="p106232332384"></a><a name="p106232332384"></a>polenabled</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="abe1aa36777e444c48c10c68dea6d28bd"><a name="abe1aa36777e444c48c10c68dea6d28bd"></a><a name="abe1aa36777e444c48c10c68dea6d28bd"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>Specifies whether to enable the policy.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>Specifies whether to enable a policy.</p>
 </td>
 </tr>
 <tr id="ra3bccb8528cd408aa54f8e30557c0359"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p13227139193819"><a name="p13227139193819"></a><a name="p13227139193819"></a>access_type</p>
@@ -45,7 +45,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a0a0c18f59f1a47bdb17413bbe1716f3a"><a name="a0a0c18f59f1a47bdb17413bbe1716f3a"></a><a name="a0a0c18f59f1a47bdb17413bbe1716f3a"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="a2fe293248c694ffd9fe3f04bdf3a3f6d"><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a>Specifies the resource label name. This parameter corresponds to the <strong id="b14817333217"><a name="b14817333217"></a><a name="b14817333217"></a>polname</strong> column in the <strong id="b88653382112"><a name="b88653382112"></a><a name="b88653382112"></a>GS_AUDITING_POLICY</strong> system catalog.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="a2fe293248c694ffd9fe3f04bdf3a3f6d"><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a>Resource label name. This column corresponds to the <strong id="b37642131884"><a name="b37642131884"></a><a name="b37642131884"></a>polname</strong> column in the <strong id="b27652131284"><a name="b27652131284"></a><a name="b27652131284"></a>GS_AUDITING_POLICY</strong> system catalog.</p>
 </td>
 </tr>
 <tr id="ra831355d65f64e7b92f51f84021f4947"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p1382717480382"><a name="p1382717480382"></a><a name="p1382717480382"></a>access_object</p>
@@ -59,7 +59,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a17a7c300ce604cd380d8340e5bfa63c3"><a name="a17a7c300ce604cd380d8340e5bfa63c3"></a><a name="a17a7c300ce604cd380d8340e5bfa63c3"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p10707151153"><a name="p10707151153"></a><a name="p10707151153"></a>Logical character string of a filter criterion.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p10707151153"><a name="p10707151153"></a><a name="p10707151153"></a>Logical character string of a filter criterion</p>
 </td>
 </tr>
 </tbody>

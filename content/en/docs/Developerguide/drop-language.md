@@ -2,7 +2,7 @@
 
 ## Function<a name="section113331284191"></a>
 
-DROP LANGUAGE deletes a procedural language.
+**DROP LANGUAGE**  deletes a procedural language. A single-node system or centralized system does not support deleting procedural languages.
 
 ## Syntax<a name="section122664751912"></a>
 
@@ -14,11 +14,11 @@ DROP [ PROCEDURAL ] LANGUAGE [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 -   **IF EXISTS**
 
-    Do not throw an error if the specified procedural language does not exist. A notice is issued in this case.
+    Sends a notice instead of an error if a specified procedural language does not exist.
 
 -   **name**
 
-    Name of an existing language. For downward compatibility, the name can be enclosed in single quotes.
+    Specifies the name of an existing language. For downward compatibility, the name can be enclosed in single quotation marks \('\).
 
 -   **CASCADE**
 
@@ -29,7 +29,7 @@ DROP [ PROCEDURAL ] LANGUAGE [ IF EXISTS ] name [ CASCADE | RESTRICT ]
     Refuses to delete the object if any objects depend on it. This is a default parameter.
 
 
-## Example<a name="section551802613349"></a>
+## Examples<a name="section551802613349"></a>
 
 Run the following command to delete the plsample language:
 
@@ -39,5 +39,5 @@ DROP LANGUAGE plsample;
 
 ## Compatibility<a name="section446220148329"></a>
 
-The SQL standard does not contain the DROP LANGUAGE statement.
+The SQL standard does not contain the  **DROP LANGUAGE**  statement.
 

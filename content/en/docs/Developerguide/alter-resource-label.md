@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0059778839_s63ad21f92ad74c9e8d6bf18bb7218c4f"></a>
 
-Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
+Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -49,16 +49,16 @@ ALTER RESOURCE LABEL label_name (ADD|REMOVE)
 
 ```
 -- Create basic table table_for_label.
-postgres=# CREATE TABLE table_for_label(col1 int, col2 text);
+openGauss=# CREATE TABLE table_for_label(col1 int, col2 text);
 
 -- Create resource label table_label.
-postgres=# CREATE RESOURCE LABEL table_label ADD COLUMN(table_for_label.col1);
+openGauss=# CREATE RESOURCE LABEL table_label ADD COLUMN(table_for_label.col1);
 
 -- Attach resource label table_label to col2.
-postgres=# ALTER RESOURCE LABEL table_label ADD COLUMN(table_for_label.col2)
+openGauss=# ALTER RESOURCE LABEL table_label ADD COLUMN(table_for_label.col2)
 
 -- Remove table_label from an item.
-postgres=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1);
+openGauss=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1);
 ```
 
 ## Helpful Links<a name="section156744489391"></a>

@@ -22,14 +22,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="aecd744296d7d4b0397b2fe1fd923b6bf"><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>Resource label type</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>Resource label type This parameter corresponds to the <strong id="b19971324115518"><a name="b19971324115518"></a><a name="b19971324115518"></a>labeltype</strong> column in the <a href="gs_policy_label.md">GS_POLICY_LABEL</a> system catalog.</p>
 </td>
 </tr>
 <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p21843251120"><a name="p21843251120"></a><a name="p21843251120"></a>fqdntype</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p45674412546"><a name="p45674412546"></a><a name="p45674412546"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p0425184695416"><a name="p0425184695416"></a><a name="p0425184695416"></a>Database resource type</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p0425184695416"><a name="p0425184695416"></a><a name="p0425184695416"></a>Database resource type Such as table, schema, and index.</p>
 </td>
 </tr>
 <tr id="ra3bccb8528cd408aa54f8e30557c0359"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p1840348181111"><a name="p1840348181111"></a><a name="p1840348181111"></a>schemaname</p>

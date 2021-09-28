@@ -6,9 +6,9 @@
 
 ## Precautions<a name="en-us_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
-Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
+Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
 
-The masking policy takes effect only after the security policy is enabled, that is,  **enable\_security\_policy**  is set to  **on**. For details, see "Database Configuration \> Database Security Management Policies \> Unified Auditing" in the  _Security Hardening Guide_.
+The masking policy takes effect only after the security policy is enabled, that is,  **enable\_security\_policy**  is set to  **on**. For details, see "Database Configuration \> Database Security Management Policies \> Unified Auditing" in  _Security Hardening Guide_.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -79,26 +79,26 @@ CREATE AUDIT POLICY [ IF NOT EXISTS ] policy_name { { privilege_audit_clause | a
 
 ```
 -- Create users dev_audit and bob_audit.
-postgres=# CREATE USER dev_audit PASSWORD 'dev@1234';
-postgres=# CREATE USER bob_audit password 'bob@1234';
+openGauss=# CREATE USER dev_audit PASSWORD 'dev@1234';
+CREATE USER bob_audit password 'bob@1234';
 
 -- Create table tb_for_audit.
-postgres=# CREATE TABLE tb_for_audit(col1 text, col2 text, col3 text);
+openGauss=# CREATE TABLE tb_for_audit(col1 text, col2 text, col3 text);
 
 -- Create a resource label.
-postgres=# CREATE RESOURCE LABEL adt_lb0 add TABLE(tb_for_audit);
+openGauss=# CREATE RESOURCE LABEL adt_lb0 add TABLE(tb_for_audit);
 
 -- Perform the CREATE operation on the database to create an audit policy.
-postgres=# CREATE AUDIT POLICY adt1 PRIVILEGES CREATE;
+openGauss=# CREATE AUDIT POLICY adt1 PRIVILEGES CREATE;
 
 -- Perform the SELECT operation on the database to create an audit policy.
-postgres=# CREATE AUDIT POLICY adt2 ACCESS SELECT;
+openGauss=# CREATE AUDIT POLICY adt2 ACCESS SELECT;
 
 -- Create an audit policy to audit only the CREATE operations performed on the adt_lb0 resource by users dev_audit and bob_audit.
-postgres=# CREATE AUDIT POLICY adt3 PRIVILEGES CREATE ON LABEL(adt_lb0) FILTER ON ROLES(dev_audit, bob_audit);
+openGauss=# CREATE AUDIT POLICY adt3 PRIVILEGES CREATE ON LABEL(adt_lb0) FILTER ON ROLES(dev_audit, bob_audit);
 
 -- Create an audit policy to audit only the SELECT, INSERT, and DELETE operations performed on the adt_lb0 resource by users dev_audit and bob_audit using client tools psql and gsql on the servers whose IP addresses are 10.20.30.40 and 127.0.0.0/24.
-postgres=# CREATE AUDIT POLICY adt4 ACCESS SELECT ON LABEL(adt_lb0), INSERT ON LABEL(adt_lb0), DELETE FILTER ON ROLES(dev_audit, bob_audit), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24');
+openGauss=# CREATE AUDIT POLICY adt4 ACCESS SELECT ON LABEL(adt_lb0), INSERT ON LABEL(adt_lb0), DELETE FILTER ON ROLES(dev_audit, bob_audit), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24');
 ```
 
 ## Helpful Links<a name="en-us_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>

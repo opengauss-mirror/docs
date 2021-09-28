@@ -96,13 +96,13 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
     In the current version, the  **PGUSER**  attribute of a user cannot be modified.
 
 
-For details about other parameters, see "Parameter Description" in  [CREATE ROLE](en-us_topic_0283136858.md)  and  [ALTER ROLE](en-us_topic_0283137195.md).
+For details about other parameters, see "Parameter Description" in  [CREATE ROLE](create-role.md)  and  [ALTER ROLE](alter-role.md).
 
 ## Example<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 
-See  [Example](en-us_topic_0283136891.md#en-us_topic_0237122125_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa)  in  **CREATE USER**.
+See  [Examples](create-user.md#en-us_topic_0283136891_en-us_topic_0237122125_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa)  in  **CREATE USER**.
 
 ## Helpful Links<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE ROLE](en-us_topic_0283136858.md),  [CREATE USER](en-us_topic_0283136891.md), and  [DROP USER](en-us_topic_0283137192.md)
+[CREATE ROLE](create-role.md),  [CREATE USER](create-user.md), and  [DROP USER](drop-user.md)
 

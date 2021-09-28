@@ -1,6 +1,6 @@
-# GIN Indexes<a name="EN-US_TOPIC_0242370662"></a>
+# GIN Indexes<a name="EN-US_TOPIC_0289900571"></a>
 
--   **[Introduction](introduction-20.md)**  
+-   **[Introduction](introduction-1.md)**  
 
 -   **[Scalability](scalability.md)**  
 

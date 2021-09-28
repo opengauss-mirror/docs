@@ -6,7 +6,7 @@
 
 ## Precautions<a name="section7776101818719"></a>
 
-Only the CEK owner or a user who has been granted the DROP permission can run this command. By default, the system administrator has the permission.
+Only the CEK owner or a user who has been granted the DROP permission can run this command. By default, the system administrator has this permission.
 
 ## Syntax<a name="en-us_topic_0059778607_seefd39b3ef1942df9e333846afd3a56c"></a>
 
@@ -30,8 +30,8 @@ DROP COLUMN ENCRYPTION KEY [ IF EXISTS ] column_encryption_key_name [CASCADE];
 ## Examples<a name="section162746130164"></a>
 
 ```
--- Delete a CEK object.
-postgres=# DROP COLUMN ENCRYPTION KEY ImgCEK CASCADE;
+-- Delete a CEK.
+openGauss=# DROP COLUMN ENCRYPTION KEY ImgCEK CASCADE;
 ERROR:  cannot drop column setting: imgcek cascadely because encrypted column depend on it.
 HINT:  we have to drop encrypted column: name, ... before drop column setting: imgcek cascadely.
 ```

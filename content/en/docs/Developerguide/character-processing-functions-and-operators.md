@@ -1,4 +1,4 @@
-# Character Processing Functions and Operators<a name="EN-US_TOPIC_0242370431"></a>
+# Character Processing Functions and Operators<a name="EN-US_TOPIC_0289900656"></a>
 
 String functions and operators provided by openGauss are for concatenating strings with each other, concatenating strings with non-strings, and matching the patterns of strings.
 
@@ -11,7 +11,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT bit_length('world');
+    openGauss=# SELECT bit_length('world');
      bit_length
     ------------
              40
@@ -27,7 +27,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT btrim('sring' , 'ing');
+    openGauss=# SELECT btrim('sring' , 'ing');
      btrim
     -------
      sr
@@ -36,14 +36,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   char\_length\(string\) or character\_length\(string\)
 
-    Description: Number of characters in a string
+    Description: Specifies the number of characters in a string.
 
     Return type: int
 
     Example:
 
     ```
-    postgres=# SELECT char_length('hello');
+    openGauss=# SELECT char_length('hello');
      char_length
     -------------
                5
@@ -52,14 +52,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   instr\(text,text,int,int\)
 
-    Description: instr\(string1,string2,int1,int2\) returns the position where  _string2_  has been matched for  _int2_  times starting from  _int1_  in  _string1_.  _int1_  indicates the starting position for matching, and  _int2_  indicates the number of matching times.
+    Description:  **instr\(string1,string2,int1,int2\)**  returns the text from  **int1**  to  **int2**  in  **string1**. The first  **int**  indicates the start position for matching, and the second  **int**  indicates the number of matching times.
 
     Return type: int
 
     Example:
 
     ```
-    postgres=# SELECT instr( 'abcdabcdabcd', 'bcd', 2, 2 );
+    openGauss=# SELECT instr( 'abcdabcdabcd', 'bcd', 2, 2 );
      instr
     -------
          6
@@ -75,7 +75,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT lengthb('hello');
+    openGauss=# SELECT lengthb('hello');
      lengthb
     ---------
            5
@@ -84,14 +84,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   left\(str text, n int\)
 
-    Description: Returns first  **n**  characters in the string. When  **n**  is negative, return all but the last  **|n|**  characters.
+    Description: Returns the first  _n_  characters in a string. When  _n_  is negative, all but the last  **|n|**  characters are returned.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT left('abcde', 2);
+    openGauss=# SELECT left('abcde', 2);
      left
     ------
      ab
@@ -100,46 +100,70 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   length\(string bytea, encoding name \)
 
-    Description: Number of characters in  **string**  in the given  **encoding**. The  **string**  must be valid in this encoding.
+    Description: Specifies the number of characters in  **string**  in the given  **encoding**.  **string**  must be valid in this encoding.
 
     Return type: int
 
     Example:
 
     ```
-    postgres=# SELECT length('jose', 'UTF8');
+    openGauss=# SELECT length('jose', 'UTF8');
      length
     --------
           4
     (1 row)
     ```
 
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >If the length of the bytea type is queried and UTF8 encoding is specified, the maximum length can only be  **536870888**.
+
 -   lpad\(string text, length int \[, fill text\]\)
 
-    Description: Fills up the string to length  **length**  by prepending the characters  **fill**  \(a space by default\). If the  **string**  is already longer than  **length**  then it is truncated \(on the right\).
+    Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT lpad('hi', 5, 'xyza');
+    openGauss=# SELECT lpad('hi', 5, 'xyza');
      lpad  
     -------
      xyzhi
     (1 row)
     ```
 
+-   notlike\(x bytea name text, y bytea text\)
+
+    Description: Compares x and y to check whether they are inconsistent.
+
+    Return type: Boolean
+
+    Example:
+
+    ```
+    openGauss=# SELECT notlike(1,2);
+        notlike
+    --------------
+                t
+    (1 row)
+    openGauss=# SELECT notlike(1,1);
+        notlike
+    --------------
+                f
+    (1 row)
+    ```
+
 -   octet\_length\(string\)
 
-    Description: Number of bytes in a string
+    Description: Specifies the number of bytes in a string.
 
     Return type: int
 
     Example:
 
     ```
-    postgres=# SELECT octet_length('jose');
+    openGauss=# SELECT octet_length('jose');
      octet_length
     --------------
                 4
@@ -148,14 +172,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   overlay\(string placing string FROM int \[for int\]\)
 
-    Description: Replaces substring.  **FROM int**  indicates the start position of the replacement in the first string.  **for int**  indicates the number of characters replaced in the first string.
+    Description: Replaces substrings.  **FROM int**  indicates the start position of the replacement in the first string.  **for int**  indicates the number of characters replaced in the first string.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT overlay('hello' placing 'world' from 2 for 3 );
+    openGauss=# SELECT overlay('hello' placing 'world' from 2 for 3 );
      overlay 
     ---------
      hworldo
@@ -164,14 +188,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   position\(substring in string\)
 
-    Description: Specifies the position of a substring. The string is case sensitive.
+    Description: Specifies the position of a substring. Parameters are case-sensitive.
 
-    Return type: int, 0 is returned when the string does not exist.
+    Return type: int. If the character string does not exist,  **0**  is returned.
 
     Example:
 
     ```
-    postgres=# SELECT position('ing' in 'string');
+    openGauss=# SELECT position('ing' in 'string');
      position
     ----------
             4
@@ -180,14 +204,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   pg\_client\_encoding\(\)
 
-    Description: Current client encoding name
+    Description: Specifies the current client encoding name.
 
     Return type: name
 
     Example:
 
     ```
-    postgres=# SELECT pg_client_encoding();
+    openGauss=# SELECT pg_client_encoding();
      pg_client_encoding
     --------------------
      UTF8
@@ -196,14 +220,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   quote\_ident\(string text\)
 
-    Description: Returns the given string suitably quoted to be used as an identifier in an SQL statement string \(quotation marks are used as required\). Quotes are added only if necessary \(that is, if the string contains non-identifier characters or would be case-folded\). Embedded quotes are properly doubled.
+    Description: Returns the given string suitably quoted to be used as an identifier in an SQL statement string \(quotation marks are used as required\). Quotation marks are added only if necessary \(that is, if the string contains non-identifier characters or would be case-folded\). Embedded quotation marks are properly doubled.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT quote_ident('hello world');
+    openGauss=# SELECT quote_ident('hello world');
      quote_ident
     --------------
      "hello world"
@@ -219,37 +243,37 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT quote_literal('hello');
+    openGauss=# SELECT quote_literal('hello');
      quote_literal 
     ---------------
      'hello'
     (1 row)
     ```
 
-    If command similar to the following exists, text will be escaped.
+    If a command similar to the following exists, the text will be escaped.
 
     ```
-    postgres=# SELECT quote_literal(E'O\'hello');
+    openGauss=# SELECT quote_literal(E'O\'hello');
      quote_literal
     ---------------
      'O''hello'
     (1 row)
     ```
 
-    If command similar to the following exists, backslash will be properly doubled.
+    If a command similar to the following exists, the backslash will be properly doubled.
 
     ```
-    postgres=# SELECT quote_literal('O\hello');
+    openGauss=# SELECT quote_literal('O\hello');
      quote_literal 
     ---------------
      E'O\\hello'
     (1 row)
     ```
 
-    If the parameter is null, return  **NULL**. If the parameter may be null, you are advised to use  **quote\_nullable**.
+    If the parameter is null,  **NULL**  is returned. If the parameter may be null, you are advised to use  **quote\_nullable**.
 
     ```
-    postgres=# SELECT quote_literal(NULL);
+    openGauss=# SELECT quote_literal(NULL);
      quote_literal 
     ---------------
     
@@ -265,27 +289,27 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT quote_literal(42.5);
+    openGauss=# SELECT quote_literal(42.5);
      quote_literal 
     ---------------
      '42.5'
     (1 row)
     ```
 
-    If command similar to the following exists, the given value will be escaped.
+    If a command similar to the following exists, the given value will be escaped.
 
     ```
-    postgres=# SELECT quote_literal(E'O\'42.5');
+    openGauss=# SELECT quote_literal(E'O\'42.5');
      quote_literal
     ---------------
      '0''42.5'
     (1 row)
     ```
 
-    If command similar to the following exists, backslash will be properly doubled.
+    If a command similar to the following exists, the backslash will be properly doubled.
 
     ```
-    postgres=# SELECT quote_literal('O\42.5');
+    openGauss=# SELECT quote_literal('O\42.5');
      quote_literal 
     ---------------
      E'O\\42.5'
@@ -301,37 +325,37 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT quote_nullable('hello');
+    openGauss=# SELECT quote_nullable('hello');
      quote_nullable 
     ----------------
      'hello'
     (1 row)
     ```
 
-    If command similar to the following exists, text will be escaped.
+    If a command similar to the following exists, the text will be escaped.
 
     ```
-    postgres=# SELECT quote_nullable(E'O\'hello');
+    openGauss=# SELECT quote_nullable(E'O\'hello');
      quote_nullable
     ----------------
      'O''hello'
     (1 row)
     ```
 
-    If command similar to the following exists, backslash will be properly doubled.
+    If a command similar to the following exists, the backslash will be properly doubled.
 
     ```
-    postgres=# SELECT quote_nullable('O\hello');
+    openGauss=# SELECT quote_nullable('O\hello');
      quote_nullable
     ----------------
      E'O\\hello'
     (1 row)
     ```
 
-    If the parameter is null, return  **NULL**.
+    If the parameter is null,  **NULL**  is returned.
 
     ```
-    postgres=# SELECT quote_nullable(NULL);
+    openGauss=# SELECT quote_nullable(NULL);
      quote_nullable
     ----------------
      NULL
@@ -347,40 +371,56 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT quote_nullable(42.5);
+    openGauss=# SELECT quote_nullable(42.5);
      quote_nullable
     ----------------
      '42.5'
     (1 row)
     ```
 
-    If command similar to the following exists, the given value will be escaped.
+    If a command similar to the following exists, the given value will be escaped.
 
     ```
-    postgres=# SELECT quote_nullable(E'O\'42.5');
+    openGauss=# SELECT quote_nullable(E'O\'42.5');
      quote_nullable 
     ----------------
      'O''42.5'
     (1 row)
     ```
 
-    If command similar to the following exists, backslash will be properly doubled.
+    If a command similar to the following exists, the backslash will be properly doubled.
 
     ```
-    postgres=# SELECT quote_nullable('O\42.5');
+    openGauss=# SELECT quote_nullable('O\42.5');
      quote_nullable
     ----------------
      E'O\\42.5'
     (1 row)
     ```
 
-    If the parameter is null, return  **NULL**.
+    If the parameter is null,  **NULL**  is returned.
 
     ```
-    postgres=# SELECT quote_nullable(NULL);
+    openGauss=# SELECT quote_nullable(NULL);
      quote_nullable
     ----------------
      NULL
+    (1 row)
+    ```
+
+-   substring\_inner\(string \[from int\] \[for int\]\)
+
+    Description: Extracts a substring.  **from int**  indicates the start position of the truncation.  **for int**  indicates the number of characters truncated.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# select substring_inner('adcde', 2,3);
+     substring_inner
+    -----------------
+     dcd
     (1 row)
     ```
 
@@ -393,7 +433,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT substring('Thomas' from 2 for 3);
+    openGauss=# SELECT substring('Thomas' from 2 for 3);
      substring
     -----------
      hom
@@ -402,43 +442,43 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   substring\(string from  _pattern_\)
 
-    Description: Extracts substring matching POSIX regular expression. It returns the text that matches the pattern. If no match record is found, a null value is returned.
+    Description: Extracts substrings matching the POSIX regular expression. It returns the text that matches the pattern. If no match record is found, a null value is returned.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT substring('Thomas' from '...$');
+    openGauss=# SELECT substring('Thomas' from '...$');
      substring
     -----------
      mas
     (1 row)
-    postgres=# SELECT substring('foobar' from 'o(.)b');
+    openGauss=# SELECT substring('foobar' from 'o(.)b');
      result 
     --------
      o
     (1 row)
-    postgres=# SELECT substring('foobar' from '(o(.)b)');
+    openGauss=# SELECT substring('foobar' from '(o(.)b)');
      result 
     --------
      oob
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >If the POSIX pattern contains any parentheses, the portion of the text that matched the first parenthesized sub-expression \(the one whose left parenthesis comes first\) is returned. You can put parentheses around the whole expression if you want to use parentheses within it without triggering this exception.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >If the POSIX pattern contains any parentheses, the portion of the text that matched the first parenthesized sub-expression \(the one whose left parenthesis comes first\) is returned. You can put parentheses around the whole expression if you want to use parentheses within it without triggering this exception.
 
 -   substring\(string from  _pattern_  for  _escape_\)
 
-    Description: Extracts substring matching SQL regular expression. The declared schema must match the entire data string; otherwise, the function fails and returns a null value. To indicate the part of the pattern that should be returned on success, the pattern must contain two occurrences of the escape character followed by a double quote \("\). The text matching the portion of the pattern between these markers is returned.
+    Description: Extracts substrings matching the SQL regular expression. The declared schema must match the entire data string; otherwise, the function fails and returns a null value. To indicate the part of the pattern that should be returned on success, the pattern must contain two occurrences of the escape character followed by a double quotation mark \("\). The text matching the portion of the pattern between these marks is returned.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT substring('Thomas' from '%#"o_a#"_' for '#');
+    openGauss=# SELECT substring('Thomas' from '%#"o_a#"_' for '#');
      substring
     -----------
      oma
@@ -447,14 +487,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   rawcat\(raw,raw\)
 
-    Description: Indicates the string concatenation functions.
+    Description: Indicates the string concatenation function.
 
     Return type: raw
 
     Example:
 
     ```
-    postgres=# SELECT rawcat('ab','cd');
+    openGauss=# SELECT rawcat('ab','cd');
      rawcat
     --------
      ABCD
@@ -465,12 +505,12 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Indicates the mode matching function of a regular expression.
 
-    Return type: bool
+    Return type: Boolean
 
     Example:
 
     ```
-    postgres=# SELECT regexp_like('str','[ac]');
+    openGauss=# SELECT regexp_like('str','[ac]');
      regexp_like
     -------------
      f
@@ -486,7 +526,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT regexp_substr('str','[ac]');
+    openGauss=# SELECT regexp_substr('str','[ac]');
      regexp_substr
     ---------------
     
@@ -495,31 +535,31 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   regexp\_matches\(string text, pattern text \[, flags text\]\)
 
-    Description: Returns all captured substrings resulting from matching a POSIX regular expression against the  **string**. If the pattern does not match, the function returns no rows. If the pattern contains no parenthesized sub-expressions, then each row returned is a single-element text array containing the substring matching the whole pattern. If the pattern contains parenthesized sub-expressions, the function returns a text array whose  _n_th element is the substring matching the  _n_th parenthesized sub-expression of the pattern.
+    Description: Returns all captured substrings resulting from matching a POSIX regular expression against  **string**. If the pattern does not match, the function returns no rows. If the pattern contains no parenthesized sub-expressions, then each row returned is a single-element text array containing the substring matching the whole pattern. If the pattern contains parenthesized sub-expressions, the function returns a text array whose  _n_th element is the substring matching the  _n_th parenthesized sub-expression of the pattern.
 
     The optional  **flags**  argument contains zero or multiple single-letter flags that change function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matching substring is replaced, instead of replacing only the first one.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >If the last parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to ORA, the returned result is an empty set. This is because the ORA compatible mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can:  
-    >-   Change the database SQL compatibility mode to TD.  
-    >-   Do not provide the last parameter or do not set the last parameter to an empty string.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >If the last parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to A, the returned result is an empty set. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can:
+    >-   Change the database SQL compatibility mode to C.
+    >-   Do not provide the last parameter or do not set the last parameter to an empty string.
 
-    Return type: setof text\[\]
+    Return type: SETOF text\[\]
 
     Example:
 
     ```
-    postgres=# SELECT regexp_matches('foobarbequebaz', '(bar)(beque)');
+    openGauss=# SELECT regexp_matches('foobarbequebaz', '(bar)(beque)');
      regexp_matches
     ----------------
      {bar,beque}
     (1 row)
-    postgres=# SELECT regexp_matches('foobarbequebaz', 'barbeque');
+    openGauss=# SELECT regexp_matches('foobarbequebaz', 'barbeque');
      regexp_matches 
     ----------------
      {barbeque}
     (1 row)
-    postgres=#  SELECT regexp_matches('foobarbequebazilbarfbonk', '(b[^b]+)(b[^b]+)', 'g');
+    openGauss=#  SELECT regexp_matches('foobarbequebazilbarfbonk', '(b[^b]+)(b[^b]+)', 'g');
         result    
     --------------
      {bar,beque}
@@ -529,14 +569,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   regexp\_split\_to\_array\(string text, pattern text \[, flags text \]\)
 
-    Description: Splits  **string**  using a POSIX regular expression as the delimiter. The regexp\_split\_to\_array function behaves the same as regexp\_split\_to\_table, except that regexp\_split\_to\_array returns its result as an array of text.
+    Description: Splits  **string**  using a POSIX regular expression as the delimiter. The  **regexp\_split\_to\_array**  function behaves the same as  **regexp\_split\_to\_table**, except that  **regexp\_split\_to\_array**  returns its result as an array of text.
 
     Return type: text\[\]
 
     Example:
 
     ```
-    postgres=# SELECT regexp_split_to_array('hello world', E'\\s+');
+    openGauss=# SELECT regexp_split_to_array('hello world', E'\\s+');
      regexp_split_to_array
     -----------------------
      {hello,world}
@@ -547,14 +587,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Splits  **string**  using a POSIX regular expression as the delimiter. If there is no match to the pattern, the function returns the string. If there is at least one match, for each match it returns the text from the end of the last match \(or the beginning of the string\) to the beginning of the match. When there are no more matches, it returns the text from the end of the last match to the end of the string.
 
-    The  **flags**  parameter is a text string containing zero or more single-letter flags that change the function's behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matching substring is replaced, instead of replacing only the first one.
+    The  **flags**  parameter is a text string containing zero or more single-letter flags that change the function's behavior.  **i**  indicates case-insensitive matching.
 
-    Return type: setof text
+    Return type: SETOF text
 
     Example:
 
     ```
-    postgres=# SELECT regexp_split_to_table('hello world', E'\\s+');
+    openGauss=# SELECT regexp_split_to_table('hello world', E'\\s+');
      regexp_split_to_table
     -----------------------
      hello
@@ -571,15 +611,15 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT repeat('Pg', 4);
+    openGauss=# SELECT repeat('Pg', 4);
       repeat
     ----------
      PgPgPgPg
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The maximum size of memory allocated at a time cannot exceed 1 GB due to the memory allocation mechanism of the database. Therefore, the maximum value of  **number**  cannot exceed \(1 GB -  **x**\)/**lengthb**  \(**string**\) - 1.  **x**  indicates the header length, which is usually greater than 4 bytes. The value varies in different scenarios.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The maximum size of memory allocated at a time cannot exceed 1 GB due to the memory allocation mechanism of the database. Therefore, the maximum value of  **number**  cannot exceed \(1 GB –  **x**\)/**lengthb**  \(**string**\) – 1.  **x**  indicates the length of the header information, which is usually greater than 4 bytes. The value varies among different scenarios.
 
 -   replace\(string text, from text, to text\)
 
@@ -590,7 +630,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT replace('abcdefabcdef', 'cd', 'XXX');
+    openGauss=# SELECT replace('abcdefabcdef', 'cd', 'XXX');
         replace     
     ----------------
      abXXXefabXXXef
@@ -598,16 +638,36 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
 
--   reverse\(str\)
+-   replace\(string, substring\)
 
-    Description: Returns reversed string.
+    Description: Deletes all substrings in a string.
+
+    String type: text
+
+    Substring type: text
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT reverse('abcde');
+    openGauss=# SELECT replace('abcdefabcdef', 'cd');
+        replace     
+    ----------------
+     abefabef
+    (1 row)
+    ```
+
+-   reverse\(str\)
+
+    Description: Returns the reversed string.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# SELECT reverse('abcde');
      reverse
     ---------
      edcba
@@ -616,20 +676,20 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   right\(str text, n int\)
 
-    Description: Returns the last  **n**  characters in a string. When  **n**  is negative, return all but first  **|n|**  characters.
+    Description: Returns the last  _n_  characters in a string. When  _n_  is negative, all but the first  **|n|**  characters are returned.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT right('abcde', 2);
+    openGauss=# SELECT right('abcde', 2);
      right
     -------
      de
     (1 row)
     
-    postgres=# SELECT right('abcde', -2);
+    openGauss=# SELECT right('abcde', -2);
      right 
     -------
      cde
@@ -638,14 +698,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   rpad\(string text, length int \[, fill text\]\)
 
-    Description: Fills up the string to length  **length**  by prepending the characters  **fill**  \(a space by default\). If the string is already longer than length then it is truncated.
+    Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT rpad('hi', 5, 'xy');
+    openGauss=# SELECT rpad('hi', 5, 'xy');
      rpad
     -------
      hixyx
@@ -661,7 +721,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT rtrim('trimxxxx', 'x');
+    openGauss=# SELECT rtrim('trimxxxx', 'x');
      rtrim
     -------
      trim
@@ -670,14 +730,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   substrb\(text,int,int\)
 
-    Description: Extracts a substring. The first  **int **indicates the start position of the subtraction. The second  **int**  indicates the number of characters subtracted.
+    Description: Extracts a substring. The first  **int **indicates the start position of the subtraction. The second  **int**  indicates the number of characters extracted.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT substrb('string',2,3);
+    openGauss=# SELECT substrb('string',2,3);
      substrb
     ---------
      tri
@@ -686,14 +746,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   substrb\(text,int\)
 
-    Description: Extracts a substring.  **int**  indicates the start position of the subtraction.
+    Description: Extracts a substring.  **int**  indicates the start position of the extraction.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT substrb('string',2);
+    openGauss=# SELECT substrb('string',2);
      substrb
     ---------
      tring
@@ -709,7 +769,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT substr('string',2,3);
+    openGauss=# SELECT substr('string',2,3);
      substr
     --------
      tri
@@ -725,7 +785,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT 'MPP'||'DB' AS RESULT;
+    openGauss=# SELECT 'MPP'||'DB' AS RESULT;
      result 
     --------
      MPPDB
@@ -741,7 +801,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT 'Value: '||42 AS RESULT;
+    openGauss=# SELECT 'Value: '||42 AS RESULT;
       result   
     -----------
      Value: 42
@@ -757,7 +817,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT split_part('abc~@~def~@~ghi', '~@~', 2);
+    openGauss=# SELECT split_part('abc~@~def~@~ghi', '~@~', 2);
      split_part
     ------------
      def
@@ -773,7 +833,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT strpos('source', 'rc');
+    openGauss=# SELECT strpos('source', 'rc');
      strpos
     --------
           4
@@ -782,14 +842,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   to\_hex\(number int or bigint\)
 
-    Description: Converts number to a hexadecimal expression.
+    Description: Converts a number to a hexadecimal expression.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT to_hex(2147483647);
+    openGauss=# SELECT to_hex(2147483647);
       to_hex
     ----------
      7fffffff
@@ -805,7 +865,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT translate('12345', '143', 'ax');
+    openGauss=# SELECT translate('12345', '143', 'ax');
      translate
     -----------
      a2x5
@@ -822,7 +882,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT length('abcd');
+    openGauss=# SELECT length('abcd');
      length 
     --------
           4
@@ -838,7 +898,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT lengthb('Chinese');
+    openGauss=# SELECT lengthb('Chinese');
      lengthb 
     ---------
            7
@@ -855,7 +915,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     -   If  **from**  starts at 0, the value  **1**  is used.
     -   If the value of  **from**  is positive, all characters from  **from**  to the end are extracted.
-    -   If the value of  **from**  is negative, the last n characters in the string are extracted, in which n indicates the absolute value of  **from**.
+    -   If the value of  **from**  is negative, the last  _n_  characters in the string are extracted, in which  **n**  indicates the absolute value of  **from**.
 
     Return type: varchar
 
@@ -864,7 +924,7 @@ String functions and operators provided by openGauss are for concatenating strin
     If the value of  **from**  is positive:
 
     ```
-    postgres=# SELECT substr('ABCDEF',2);
+    openGauss=# SELECT substr('ABCDEF',2);
      substr
     --------
      BCDEF
@@ -874,7 +934,7 @@ String functions and operators provided by openGauss are for concatenating strin
     If the value of  **from**  is negative:
 
     ```
-    postgres=# SELECT substr('ABCDEF',-2);
+    openGauss=# SELECT substr('ABCDEF',-2);
      substr
     --------
      EF
@@ -889,7 +949,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     **from**  indicates the start position of the extraction.
 
-    **count**  indicates the length of the extracted sub-string.
+    **count**  indicates the length of the extracted substring.
 
     -   If  **from**  starts at 0, the value  **1**  is used.
     -   If the value of  **from**  is positive, extract  **count**  characters starting from  **from**.
@@ -903,7 +963,7 @@ String functions and operators provided by openGauss are for concatenating strin
     If the value of  **from**  is positive:
 
     ```
-    postgres=# SELECT substr('ABCDEF',2,2);
+    openGauss=# SELECT substr('ABCDEF',2,2);
      substr 
     --------
      BC
@@ -913,7 +973,7 @@ String functions and operators provided by openGauss are for concatenating strin
     If the value of  **from**  is negative:
 
     ```
-    postgres=# SELECT substr('ABCDEF',-3,2);
+    openGauss=# SELECT substr('ABCDEF',-3,2);
      substr 
     --------
      DE
@@ -929,7 +989,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT substrb('ABCDEF',-2);
+    openGauss=# SELECT substrb('ABCDEF',-2);
      substrb 
     ---------
      EF
@@ -945,7 +1005,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT substrb('ABCDEF',2,2);
+    openGauss=# SELECT substrb('ABCDEF',2,2);
      substrb 
     ---------
      BC
@@ -961,7 +1021,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT trim(BOTH 'x' FROM 'xTomxx');
+    openGauss=# SELECT trim(BOTH 'x' FROM 'xTomxx');
      btrim
     -------
      Tom
@@ -969,7 +1029,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT trim(LEADING 'x' FROM 'xTomxx');
+    openGauss=# SELECT trim(LEADING 'x' FROM 'xTomxx');
      ltrim
     -------
      Tomxx
@@ -977,7 +1037,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT trim(TRAILING 'x' FROM 'xTomxx');
+    openGauss=# SELECT trim(TRAILING 'x' FROM 'xTomxx');
      rtrim
     -------
      xTom
@@ -993,7 +1053,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT rtrim('TRIMxxxx','x');
+    openGauss=# SELECT rtrim('TRIMxxxx','x');
      rtrim
     -------
      TRIM
@@ -1009,7 +1069,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT ltrim('xxxxTRIM','x');
+    openGauss=# SELECT ltrim('xxxxTRIM','x');
      ltrim
     -------
      TRIM
@@ -1025,7 +1085,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT upper('tom');
+    openGauss=# SELECT upper('tom');
      upper
     -------
      TOM
@@ -1041,7 +1101,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT lower('TOM');
+    openGauss=# SELECT lower('TOM');
      lower
     -------
      tom
@@ -1050,7 +1110,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   rpad\(string varchar, length int \[, fill varchar\]\)
 
-    Description: Fills up the string to length  **length**  by prepending the characters  **fill**  \(a space by default\). If the string is already longer than length then it is truncated.
+    Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
     **length**  in openGauss indicates the character length. One Chinese character is counted as one character.
 
@@ -1059,7 +1119,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT rpad('hi',5,'xyza');
+    openGauss=# SELECT rpad('hi',5,'xyza');
      rpad
     -------
      hixyz
@@ -1067,7 +1127,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT rpad('hi',5,'abcdefg');
+    openGauss=# SELECT rpad('hi',5,'abcdefg');
      rpad  
     -------
      hiabc
@@ -1076,10 +1136,10 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   instr\(string,substring\[,position,occurrence\]\)
 
-    Description: Queries and returns the value of the substring position that occurs the occurrence \(first by default\) times from the position \(1 by default\) in the string.
+    Description: Queries and returns the value of the substring position that occurs the  **occurrence**  \(1 by default\) times from the  **position**  \(1 by default\) in the string.
 
     -   If the value of  **position**  is  **0**,  **0**  is returned.
-    -   If the value of position is negative, searches backwards from the last  _n_th character in the string, in which  _n_  indicates the absolute value of position.
+    -   If the value of  **position**  is negative, the search is performed backwards from the last  _n_th character in the string, in which  _n_  indicates the absolute value of  **position**.
 
     In this function, the calculation unit is character. One Chinese character is one character.
 
@@ -1088,7 +1148,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT instr('corporate floor','or', 3);
+    openGauss=# SELECT instr('corporate floor','or', 3);
      instr 
     -------
          5
@@ -1096,7 +1156,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT instr('corporate floor','or',-3,2);
+    openGauss=# SELECT instr('corporate floor','or',-3,2);
      instr 
     -------
          2
@@ -1105,14 +1165,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   initcap\(string\)
 
-    Description: The first letter of each word in the string is converted into the uppercase and the other letters are converted into the lowercase.
+    Description: Converts the first letter of each word in the string into the uppercase and the other letters into the lowercase.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT initcap('hi THOMAS');
+    openGauss=# SELECT initcap('hi THOMAS');
       initcap
     -----------
      Hi Thomas
@@ -1128,7 +1188,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT ascii('xyz');
+    openGauss=# SELECT ascii('xyz');
      ascii 
     -------
        120
@@ -1137,14 +1197,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   replace\(string varchar, search\_string varchar, replacement\_string varchar\)
 
-    Description: Replaces all  **search-string**  in the string with  **replacement\_string**.
+    Description: Replaces all  **search\_string**  in the string with  **replacement\_string**.
 
     Return type: varchar
 
     Example:
 
     ```
-    postgres=# SELECT replace('jack and jue','j','bl');
+    openGauss=# SELECT replace('jack and jue','j','bl');
         replace     
     ----------------
      black and blue
@@ -1153,7 +1213,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   lpad\(string varchar, length int\[, repeat\_string varchar\]\)
 
-    Description: Adds a series of  **repeat\_string**  \(a space by default\) on the left of the string to generate a new string with the total length of n.
+    Description: Adds a series of  **repeat\_string**  \(a space by default\) on the left of the string to generate a new string with the total length of  _n_.
 
     If the length of the string is longer than the specified length, the function truncates the string and returns the substrings with the specified length.
 
@@ -1162,7 +1222,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT lpad('PAGE 1',15,'*.');
+    openGauss=# SELECT lpad('PAGE 1',15,'*.');
           lpad       
     -----------------
      *.*.*.*.*PAGE 1
@@ -1170,7 +1230,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT lpad('hello world',5,'abcd');
+    openGauss=# SELECT lpad('hello world',5,'abcd');
      lpad  
     -------
      hello
@@ -1181,17 +1241,20 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Connects str1 and str2 and returns the string.
 
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >If the SQL compatibility mode is set to  **MY**  and  **str1**  or  **str2**  is set to  **NULL**,  **NULL**  will be returned.
+
     Return type: varchar
 
     Example:
 
     ```
-    postgres=# SELECT concat('Hello', ' World!');
+    openGauss=# SELECT concat('Hello', ' World!');
         concat    
     --------------
      Hello World!
     (1 row)
-    postgres=# SELECT concat('Hello', NULL);
+    openGauss=# SELECT concat('Hello', NULL);
      concat
     --------
      Hello
@@ -1207,7 +1270,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT chr(65);
+    openGauss=# SELECT chr(65);
      chr
     -----
      A
@@ -1223,7 +1286,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT regexp_substr('500 Hello World, Redwood Shores, CA', ',[^,]+,') "REGEXPR_SUBSTR";
+    openGauss=# SELECT regexp_substr('500 Hello World, Redwood Shores, CA', ',[^,]+,') "REGEXPR_SUBSTR";
       REGEXPR_SUBSTR   
     -------------------
      , Redwood Shores,
@@ -1232,7 +1295,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   regexp\_replace\(string, pattern, replacement \[,flags \]\)
 
-    Description: Replaces substring matching POSIX regular expression. The source string is returned unchanged if there is no match to the pattern. If there is a match, the source string is returned with the replacement string substituted for the matching substring.
+    Description: Replaces substrings matching the POSIX regular expression. The source string is returned unchanged if there is no match to the pattern. If there is a match, the source string is returned with the replacement string substituted for the matching substring.
 
     The replacement string can contain \\n, where n is 1 through 9, to indicate that the source substring matching the  _n_th parenthesized sub-expression of the pattern should be inserted, and it can contain \\& to indicate that the substring matching the entire pattern should be inserted.
 
@@ -1243,12 +1306,12 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT regexp_replace('Thomas', '.[mN]a.', 'M');
+    openGauss=# SELECT regexp_replace('Thomas', '.[mN]a.', 'M');
      regexp_replace
     ----------------
      ThM
     (1 row)
-    postgres=# SELECT regexp_replace('foobarbaz','b(..)', E'X\\1Y', 'g') AS RESULT;                                                    
+    openGauss=# SELECT regexp_replace('foobarbaz','b(..)', E'X\\1Y', 'g') AS RESULT;                                                    
        result    
     -------------
      fooXarYXazY
@@ -1257,14 +1320,18 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   concat\_ws\(sep text, str"any" \[, str"any" \[, ...\] \]\)
 
-    Description: The first parameter is used as the separator, which is associated with all following parameters.
+    Description: Uses the first parameter as the separator, which is associated with all following parameters. The  **NULL**  parameter is ignored.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   If the first parameter value is  **NULL**, the returned result is  **NULL**.
+    >-   If the first parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to  **A**, the returned result is  **NULL**. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can change the SQL compatibility mode of the database to  **B**,  **C**, or  **PG**.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT concat_ws(',', 'ABCDE', 2, NULL, 22);
+    openGauss=# SELECT concat_ws(',', 'ABCDE', 2, NULL, 22);
      concat_ws
     ------------
      ABCDE,2,22
@@ -1280,37 +1347,37 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT convert('text_in_utf8', 'UTF8', 'GBK');
+    openGauss=# SELECT convert('text_in_utf8', 'UTF8', 'GBK');
               convert        
     ----------------------------
      \x746578745f696e5f75746638
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >If the rule for converting between source to target encoding \(for example, GBK and LATIN1\) does not exist, the string is returned without conversion. See the  **pg\_conversion**  system catalog for details.  
-    >Example:  
-    >```  
-    >postgres=# show server_encoding;  
-    > server_encoding   
-    >-----------------  
-    > LATIN1  
-    >(1 row)  
-    >postgres=# SELECT convert_from('some text', 'GBK');  
-    > convert_from   
-    >--------------  
-    > some text  
-    >(1 row)  
-    >db_latin1=# SELECT convert_to('some text', 'GBK');  
-    >      convert_to        
-    >----------------------  
-    > \x736f6d652074657874  
-    >(1 row)  
-    >db_latin1=# SELECT convert('some text', 'GBK', 'LATIN1');  
-    >       convert          
-    >----------------------  
-    > \x736f6d652074657874  
-    >(1 row)  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >If the rule for converting between source to target encoding \(for example, GBK and LATIN1\) does not exist, the string is returned without conversion. See the  **pg\_conversion**  system catalog for details.
+    >Example:
+    >```
+    >openGauss=# show server_encoding;
+    > server_encoding 
+    >-----------------
+    > LATIN1
+    >(1 row)
+    >openGauss=# SELECT convert_from('some text', 'GBK');
+    > convert_from 
+    >--------------
+    > some text
+    >(1 row)
+    >db_latin1=# SELECT convert_to('some text', 'GBK');
+    >      convert_to      
+    >----------------------
+    > \x736f6d652074657874
+    >(1 row)
+    >db_latin1=# SELECT convert('some text', 'GBK', 'LATIN1');
+    >       convert        
+    >----------------------
+    > \x736f6d652074657874
+    >(1 row)
     >```
 
 -   convert\_from\(string bytea, src\_encoding name\)
@@ -1324,7 +1391,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT convert_from('text_in_utf8', 'UTF8');
+    openGauss=# SELECT convert_from('text_in_utf8', 'UTF8');
      convert_from
     --------------
      text_in_utf8
@@ -1333,14 +1400,14 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   convert\_to\(string text, dest\_encoding name\)
 
-    Description: Converts string to  **dest\_encoding**.
+    Description: Converts a string to  **dest\_encoding**.
 
     Return type: bytea
 
     Example:
 
     ```
-    postgres=# SELECT convert_to('some text', 'UTF8');
+    openGauss=# SELECT convert_to('some text', 'UTF8');
           convert_to
     ----------------------
      \x736f6d652074657874
@@ -1349,18 +1416,18 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   string \[NOT\] LIKE pattern \[ESCAPE escape-character\]
 
-    Description: Pattern matching function
+    Description: Specifies the pattern matching function.
 
     If the pattern does not include a percentage sign \(%\) or an underscore \(\_\), this mode represents itself only. In this case, the behavior of LIKE is the same as the equal operator. The underscore \(\_\) in the pattern matches any single character while one percentage sign \(%\) matches no or multiple characters.
 
-    To match with underscores \(\_\) or percent signs \(%\), corresponding characters in pattern must lead escape characters. The default escape character is a backward slash \(\\\) and can be specified using the  **ESCAPE**  clause. To match with escape characters, enter two escape characters.
+    To match with underscores \(\_\) or percent signs \(%\), corresponding characters in  **pattern**  must lead escape characters. The default escape character is a backward slash \(\\\) and can be specified using the  **ESCAPE**  clause. To match with escape characters, enter two escape characters.
 
     Return type: Boolean
 
     Example:
 
     ```
-    postgres=# SELECT 'AA_BBCC' LIKE '%A@_B%' ESCAPE '@' AS RESULT;
+    openGauss=# SELECT 'AA_BBCC' LIKE '%A@_B%' ESCAPE '@' AS RESULT;
      result
     --------
      t
@@ -1368,7 +1435,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT 'AA_BBCC' LIKE '%A@_B%' AS RESULT;
+    openGauss=# SELECT 'AA_BBCC' LIKE '%A@_B%' AS RESULT;
      result
     --------
      f
@@ -1376,7 +1443,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT 'AA@_BBCC' LIKE '%A@_B%' AS RESULT;
+    openGauss=# SELECT 'AA@_BBCC' LIKE '%A@_B%' AS RESULT;
      result
     --------
      t
@@ -1390,9 +1457,9 @@ String functions and operators provided by openGauss are for concatenating strin
     **source\_string**  indicates the source string and  **pattern**  indicates the matching pattern of the regular expression.  **match\_parameter**  indicates the matching items and the values are as follows: 
 
     -   'i': case-insensitive
-    -   "c": case-sensitive
-    -   "n": allowing the metacharacter "." in a regular expression to be matched with a linefeed.
-    -   "m": allows  **source\_string**  to be regarded as multiple rows.
+    -   'c': case-sensitive
+    -   'n': allowing the metacharacter "." in a regular expression to be matched with a linefeed.
+    -   'm': allows  **source\_string**  to be regarded as multiple rows.
 
     If  **match\_parameter**  is ignored,  **case-sensitive**  is enabled by default, "." is not matched with a linefeed, and  **source\_string**  is regarded as a single row.
 
@@ -1401,7 +1468,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT regexp_like('ABC', '[A-Z]');
+    openGauss=# SELECT regexp_like('ABC', '[A-Z]');
      regexp_like
     -------------
      t
@@ -1409,7 +1476,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT regexp_like('ABC', '[D-Z]');
+    openGauss=# SELECT regexp_like('ABC', '[D-Z]');
      regexp_like
     -------------
      f
@@ -1417,7 +1484,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     ```
-    postgres=# SELECT regexp_like('ABC', '[a-z]','i');
+    openGauss=# SELECT regexp_like('ABC', '[a-z]','i');
      regexp_like
     -------------
      t
@@ -1433,7 +1500,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT format('Hello %s, %1$s', 'World');
+    openGauss=# SELECT format('Hello %s, %1$s', 'World');
            format       
     --------------------
      Hello World, World
@@ -1444,15 +1511,15 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Encrypts a string in MD5 mode and returns a value in hexadecimal form.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >MD5 is insecure and is not recommended.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
 
     Return type: text
 
     Example:
 
     ```
-    postgres=# SELECT md5('ABC');
+    openGauss=# SELECT md5('ABC');
                    md5                
     ----------------------------------
      902fbdd2b1df0c4f70b4a5d23525e932
@@ -1468,10 +1535,58 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT decode('MTIzAAE=', 'base64');
+    openGauss=# SELECT decode('MTIzAAE=', 'base64');
         decode    
     --------------
      \x3132330001
+    (1 row)
+    ```
+
+-   similar\_escape\(pat text, esc text\)
+
+    Description: Converts a regular expression of the SQL:2008 style to the POSIX style.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# select similar_escape('\s+ab','2');
+     similar_escape
+    ----------------
+     ^(?:\\s+ab)$
+    (1 row)
+    ```
+
+-   svals\(hstore\)
+
+    Description: Obtains the value of the hstore type.
+
+    Return type: SETOF text
+
+    Example:
+
+    ```
+    openGauss=# select svals('"aa"=>"bb"');
+     svals
+    -------
+     bb
+    (1 row)
+    ```
+
+-   tconvert\(key text, value text\)
+
+    Description: Converts character strings to the hstore format.
+
+    Return type: hstore
+
+    Example:
+
+    ```
+    openGauss=# select tconvert('aa', 'bb');
+      tconvert
+    ------------
+     "aa"=>"bb"
     (1 row)
     ```
 
@@ -1484,7 +1599,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    postgres=# SELECT encode(E'123\\000\\001', 'base64');
+    openGauss=# SELECT encode(E'123\\000\\001', 'base64');
       encode  
     ----------
      MTIzAAE=
@@ -1492,18 +1607,15 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->- For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.  
->- In openGauss,  _n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than n.  
->- openGauss supports four types of databases: A, B, C, and PG. If the database type is not specified, the database type is A by default. The lexical analyzer of A is  different from the other three types. In A, a null character string is regarded as NULL. Therefore, when the database of type A is used, if the preceding character operation function has an empter string as a parameter, no output is displayed.For example:
->
-> ```
->   postgres=# SELECT translate('12345','123','');
->     translate  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.
+>-   In openGauss,  _n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than  _n_.
+>-   openGauss supports multiple types of databases, including A, B, C, and PG. If the database type is not specified, A is used by default. The lexical analyzer of A database is different from that of the other three databases. In A database, an empty character string is considered as  **NULL**. Therefore, when a type A database is used, if a  **NULL**  character string is used as a parameter in the preceding character operation function, no output is displayed. For example:
+>    ```
+>    openGauss=# SELECT translate('12345','123','');
+>    translate  
 >    -----------
->    
 >    (1 row)
-> ```
-> 
->  This is because the kernel will determine whether the input parameter contains NULL before calling the corresponding function for processing. If so, the corresponding function will not be called, so there will be no output.In PG type, strings are handled in the same way as PostgresQL, so you won't have this problem.
+>    ```
+>    This is because the kernel checks whether the input parameter contains  **NULL**  before calling the corresponding function. If yes, the kernel does not call the corresponding function. As a result, no output is displayed. In PG mode, the processing of character strings is the same as that of PostgreSQL. Therefore, the preceding problem does not occur.
 

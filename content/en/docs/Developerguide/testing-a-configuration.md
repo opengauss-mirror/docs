@@ -1,6 +1,6 @@
-# Testing a Configuration<a name="EN-US_TOPIC_0242370507"></a>
+# Testing a Configuration<a name="EN-US_TOPIC_0289900260"></a>
 
-The function ts\_debug allows easy testing of a text search configuration. 
+The  **ts\_debug**  function allows easy testing of a text search configuration.
 
 ```
 ts_debug([ config regconfig, ] document text,
@@ -27,7 +27,7 @@ ts_debug([ config regconfig, ] document text,
 Here is a simple example:
 
 ```
-postgres=# SELECT * FROM ts_debug('english','a fat  cat sat on a mat - it ate a fat rats');
+openGauss=# SELECT * FROM ts_debug('english','a fat  cat sat on a mat - it ate a fat rats');
    alias   |   description   | token |  dictionaries  |  dictionary  | lexemes 
 -----------+-----------------+-------+----------------+--------------+---------
  asciiword | Word, all ASCII | a     | {english_stem} | english_stem | {}

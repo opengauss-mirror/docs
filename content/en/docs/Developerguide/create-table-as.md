@@ -16,7 +16,7 @@ It creates a table and fills it with data obtained using  **SELECT**. The table 
 ## Syntax<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
 
 ```
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
     [ (column_name [, ...] ) ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
@@ -30,7 +30,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
 
 -   **UNLOGGED**
 
-    Specifies that the table is created as an unlogged table. Data written to unlogged tables is not written to the WALs, which makes them considerably faster than ordinary tables. However, they are not crash-safe: an unlogged table is automatically truncated after a crash or unclean shutdown. The contents of an unlogged table are also not replicated to standby servers. Any indexes created on an unlogged table are automatically unlogged as well.
+    Specifies that the table is created as an unlogged table. Data written to unlogged tables is not written to the WALs, which makes them considerably faster than ordinary tables. However, they are not crash-safe: an unlogged table is automatically truncated after a crash or unclean shutdown. Contents of an unlogged table are also not replicated to standby servers. Any indexes created on an unlogged table are automatically unlogged as well.
 
     -   Usage scenario: Unlogged tables do not ensure data security. Users can back up data before using unlogged tables; for example, users should back up the data before a system upgrade.
     -   Troubleshooting: If data is missing in the indexes of unlogged tables due to some unexpected operations such as an unclean shutdown, users should re-create the indexes with errors.
@@ -91,7 +91,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
 
         The valid values for column-store tables are  **YES**,  **NO**,  **LOW**,  **MIDDLE**, and  **HIGH**, and the default value is  **LOW**.
 
-        Valid values for row-store tables are  **YES**  and  **NO**, and the default value is  **NO**.
+        Row-store tables do not support compression.
 
     -   MAX\_BATCHROW
 
@@ -110,7 +110,7 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
 
 -   **COMPRESS / NOCOMPRESS**
 
-    Specifies keyword  **COMPRESS**  during the creation of a table, so that the compression feature is triggered in case of bulk  **INSERT**  operations. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed.
+    Specifies keyword  **COMPRESS**  during the creation of a table, so that the compression feature is triggered in case of bulk  **INSERT**  operations. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed. Row-store tables do not support compression.
 
     Default value:  **NOCOMPRESS**, that is, tuple data is not compressed before storage.
 
@@ -127,11 +127,11 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE table_name
     Specifies whether the data produced by the query should be copied to the new table. By default, the data will be copied. If the value  **NO**  is used, only the table structure will be copied.
 
 
-## Example:<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
+## Examples<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
 
 ```
 -- Create the tpcds.store_returns table.
-postgres=# CREATE TABLE tpcds.store_returns
+openGauss=# CREATE TABLE tpcds.store_returns
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
     W_WAREHOUSE_ID            CHAR(16)              NOT NULL,
@@ -139,18 +139,18 @@ postgres=# CREATE TABLE tpcds.store_returns
     W_WAREHOUSE_SQ_FT         INTEGER                       
 );
 -- Create the tpcds.store_returns_t1 table and insert numbers that are greater than 16 in the sr_item_sk column of the tpcds.store_returns table.
-postgres=# CREATE TABLE tpcds.store_returns_t1 AS SELECT * FROM tpcds.store_returns WHERE sr_item_sk > '4795';
+openGauss=# CREATE TABLE tpcds.store_returns_t1 AS SELECT * FROM tpcds.store_returns WHERE sr_item_sk > '4795';
 
 -- Copy tpcds.store_returns to create the tpcds.store_returns_t2 table.
-postgres=# CREATE TABLE tpcds.store_returns_t2 AS table tpcds.store_returns;
+openGauss=# CREATE TABLE tpcds.store_returns_t2 AS table tpcds.store_returns;
 
 -- Delete the table.
-postgres=# DROP TABLE tpcds.store_returns_t1 ;
-postgres=# DROP TABLE tpcds.store_returns_t2 ;
-postgres=# DROP TABLE tpcds.store_returns;
+openGauss=# DROP TABLE tpcds.store_returns_t1 ;
+openGauss=# DROP TABLE tpcds.store_returns_t2 ;
+openGauss=# DROP TABLE tpcds.store_returns;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
 
-[CREATE TABLE](en-us_topic_0283137629.md)  and  [SELECT](en-us_topic_0283136463.md)
+[CREATE TABLE](create-table.md)  and  [SELECT](select.md)
 

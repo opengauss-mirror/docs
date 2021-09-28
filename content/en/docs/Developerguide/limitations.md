@@ -1,4 +1,4 @@
-# Limitations<a name="EN-US_TOPIC_0242370510"></a>
+# Limitations<a name="EN-US_TOPIC_0289899883"></a>
 
 The current limitations of openGauss's text search features are:
 

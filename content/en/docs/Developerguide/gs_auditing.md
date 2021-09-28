@@ -24,14 +24,16 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a0b778f8c6817439484fd5f0cb1d91e8b"><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a><a name="a0b778f8c6817439484fd5f0cb1d91e8b"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>Audit policy type. The value can be <strong id="b1658542811191"><a name="b1658542811191"></a><a name="b1658542811191"></a>access</strong> or <strong id="b1616815317194"><a name="b1616815317194"></a><a name="b1616815317194"></a>privilege</strong>.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>Audit policy type. The value can be <strong id="b381413117114"><a name="b381413117114"></a><a name="b381413117114"></a>access</strong> or <strong id="b13814213118"><a name="b13814213118"></a><a name="b13814213118"></a>privilege</strong>.</p>
+<a name="ul9534444204311"></a><a name="ul9534444204311"></a><ul id="ul9534444204311"><li><strong id="b1535213398175"><a name="b1535213398175"></a><a name="b1535213398175"></a>access</strong>: DML operations are audited.</li><li><strong id="b6942124312176"><a name="b6942124312176"></a><a name="b6942124312176"></a>privilege</strong>: DDL operations are audited.</li></ul>
 </td>
 </tr>
 <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p106232332384"><a name="p106232332384"></a><a name="p106232332384"></a>polenabled</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="abe1aa36777e444c48c10c68dea6d28bd"><a name="abe1aa36777e444c48c10c68dea6d28bd"></a><a name="abe1aa36777e444c48c10c68dea6d28bd"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>Specifies whether to enable the policy.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>Specifies whether to enable a policy.</p>
+<a name="ul21561963304"></a><a name="ul21561963304"></a><ul id="ul21561963304"><li><strong id="b9786252125411"><a name="b9786252125411"></a><a name="b9786252125411"></a>t</strong> (true): enabled</li><li><strong id="b44528520559"><a name="b44528520559"></a><a name="b44528520559"></a>f</strong> (false): disabled</li></ul>
 </td>
 </tr>
 <tr id="ra3bccb8528cd408aa54f8e30557c0359"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p13227139193819"><a name="p13227139193819"></a><a name="p13227139193819"></a>access_type</p>
@@ -45,7 +47,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a0a0c18f59f1a47bdb17413bbe1716f3a"><a name="a0a0c18f59f1a47bdb17413bbe1716f3a"></a><a name="a0a0c18f59f1a47bdb17413bbe1716f3a"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="a2fe293248c694ffd9fe3f04bdf3a3f6d"><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a>Specifies the resource label name. This parameter corresponds to the <strong id="b1683543917197"><a name="b1683543917197"></a><a name="b1683543917197"></a>polname</strong> column in the <strong id="b16841739101913"><a name="b16841739101913"></a><a name="b16841739101913"></a>GS_AUDITING_POLICY</strong> system catalog.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="a2fe293248c694ffd9fe3f04bdf3a3f6d"><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a><a name="a2fe293248c694ffd9fe3f04bdf3a3f6d"></a>Resource label name. This column corresponds to the <strong id="b92051391565"><a name="b92051391565"></a><a name="b92051391565"></a>polname</strong> column in the <strong id="b321293911615"><a name="b321293911615"></a><a name="b321293911615"></a>GS_AUDITING_POLICY</strong> system catalog.</p>
 </td>
 </tr>
 <tr id="ra831355d65f64e7b92f51f84021f4947"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p13905154725612"><a name="p13905154725612"></a><a name="p13905154725612"></a>priv_object</p>
@@ -59,7 +61,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="a17a7c300ce604cd380d8340e5bfa63c3"><a name="a17a7c300ce604cd380d8340e5bfa63c3"></a><a name="a17a7c300ce604cd380d8340e5bfa63c3"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p10707151153"><a name="p10707151153"></a><a name="p10707151153"></a>Logical character string of a filter criterion.</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.2.4.1.3 "><p id="p10707151153"><a name="p10707151153"></a><a name="p10707151153"></a>Logical character string of a filter criterion</p>
 </td>
 </tr>
 </tbody>

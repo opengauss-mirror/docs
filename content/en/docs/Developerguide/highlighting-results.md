@@ -1,4 +1,4 @@
-# Highlighting Results<a name="EN-US_TOPIC_0242370490"></a>
+# Highlighting Results<a name="EN-US_TOPIC_0289899896"></a>
 
 To present search results it is ideal to show a part of each document and how it is related to the query. Usually, search engines show fragments of the document with marked search terms. openGauss provides a function  **ts\_headline**  that implements this functionality.
 
@@ -29,10 +29,10 @@ MaxWords=35, MinWords=15, ShortWord=3, HighlightAll=FALSE,
 MaxFragments=0, FragmentDelimiter=" ... "
 ```
 
-For example:
+Example:
 
 ```
-postgres=# SELECT ts_headline('english',
+openGauss=# SELECT ts_headline('english',
 'The most common type of search
 is to find all documents containing given query terms
 and return them in order of their similarity to the
@@ -45,7 +45,7 @@ to_tsquery('english', 'query & similarity'));
  <b>query</b>.
 (1 row)
 
-postgres=# SELECT ts_headline('english',
+openGauss=# SELECT ts_headline('english',
 'The most common type of search
 is to find all documents containing given query terms
 and return them in order of their similarity to the

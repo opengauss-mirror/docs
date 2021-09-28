@@ -4,7 +4,7 @@
 
 -   sum\(expression\)
 
-    Description: Sum of expression across all input values
+    Description: Specifies the sum of expressions across all input values.
 
     Return type:
 
@@ -17,7 +17,7 @@
     Example:
 
     ```
-    postgres=# SELECT SUM(ss_ext_tax) FROM tpcds.STORE_SALES;
+    openGauss=# SELECT SUM(ss_ext_tax) FROM tpcds.STORE_SALES;
       sum      
     --------------
      213267594.69
@@ -26,30 +26,30 @@
 
 -   max\(expression\)
 
-    Description: maximum value of expression across all input values
+    Description: Specifies the maximum value of expression across all input values.
 
-    Argument types: any array, numeric, string, or date/time type
+    Parameter type: any array, numeric, string, date/time type, or IPv4 and IPv6 addresses \(INET and CIDR data types\)
 
     Return type: same as the argument type
 
     Example:
 
     ```
-    postgres=# SELECT MAX(inv_quantity_on_hand) FROM tpcds.inventory;
+    openGauss=# SELECT MAX(inv_quantity_on_hand) FROM tpcds.inventory;
     ```
 
 -   min\(expression\)
 
-    Description: minimum value of expression across all input values
+    Description: Specifies the minimum value of expression across all input values.
 
-    Argument types: any array, numeric, string, or date/time type
+    Parameter type: any array, numeric, string, date/time type, or IPv4 and IPv6 addresses \(INET and CIDR data types\)
 
     Return type: same as the argument type
 
     Example:
 
     ```
-    postgres=# SELECT MIN(inv_quantity_on_hand) FROM tpcds.inventory;
+    openGauss=# SELECT MIN(inv_quantity_on_hand) FROM tpcds.inventory;
      min 
     -----
        0
@@ -58,20 +58,20 @@
 
 -   avg\(expression\)
 
-    Description: Average \(arithmetic mean\) of all input values
+    Description: Specifies the average \(arithmetic mean\) of all input values.
 
     Return type:
 
     **NUMBER**  for any integer-type argument.
 
-    **DOUBLE PRECISION**  for a floating-point argument,
+    **DOUBLE PRECISION**  for floating-point arguments.
 
     otherwise the same as the argument data type.
 
     Example:
 
     ```
-    postgres=# SELECT AVG(inv_quantity_on_hand) FROM tpcds.inventory;
+    openGauss=# SELECT AVG(inv_quantity_on_hand) FROM tpcds.inventory;
              avg          
     ----------------------
      500.0387129084044604
@@ -80,14 +80,14 @@
 
 -   count\(expression\)
 
-    Description: number of input rows for which the value of expression is not null
+    Description: Specifies the number of input rows for which the value of the expression is not null.
 
     Return type: bigint
 
     Example:
 
     ```
-    postgres=# SELECT COUNT(inv_quantity_on_hand) FROM tpcds.inventory;
+    openGauss=# SELECT COUNT(inv_quantity_on_hand) FROM tpcds.inventory;
       count   
     ----------
      11158087
@@ -96,14 +96,14 @@
 
 -   count\(\*\)
 
-    Description: number of input rows
+    Description: Returns the number of input rows.
 
     Return type: bigint
 
     Example:
 
     ```
-    postgres=# SELECT COUNT(*) FROM tpcds.inventory;
+    openGauss=# SELECT COUNT(*) FROM tpcds.inventory;
       count   
     ----------
      11745000
@@ -128,14 +128,14 @@
 
 -   array\_agg\(expression\)
 
-    Description: input values, including nulls, concatenated into an array
+    Description: Concatenates input values, including nulls, into an array.
 
     Return type: array of the argument type
 
     Example:
 
     ```
-    postgres=# SELECT ARRAY_AGG(sr_fee) FROM tpcds.store_returns WHERE sr_customer_sk = 2;
+    openGauss=# SELECT ARRAY_AGG(sr_fee) FROM tpcds.store_returns WHERE sr_customer_sk = 2;
        array_agg   
     ---------------
      {22.18,63.21}
@@ -144,14 +144,14 @@
 
 -   string\_agg\(expression, delimiter\)
 
-    Description: input values concatenated into a string, separated by delimiter
+    Description: Concatenates input values into a string, separated by delimiter.
 
     Return type: same as the argument type
 
     Example:
 
     ```
-    postgres=# SELECT string_agg(sr_item_sk, ',') FROM tpcds.store_returns where sr_item_sk < 3;
+    openGauss=# SELECT string_agg(sr_item_sk, ',') FROM tpcds.store_returns where sr_item_sk < 3;
              string_agg         
     ---------------------------------------------------------------------------------
     ------------------------------
@@ -162,9 +162,9 @@
 
 -   listagg\(expression \[, delimiter\]\) WITHIN GROUP\(ORDER BY order-list\)
 
-    Description: aggregation column data sorted according to the mode specified by  **WITHIN GROUP**, and concatenated to a string using the specified delimiter
+    Description: Sorts aggregation column data according to the mode specified by  **WITHIN GROUP**  and concatenates the data to a string using the specified delimiter.
 
-    -   **expression**: Mandatory. It specifies an aggregation column name or a column-based, valid expression. It does not support the  **DISTINCT**  keyword and the  **VARIADIC**  parameter.
+    -   **expression**: Mandatory. It specifies an aggregation column name or a column-based valid expression. It does not support the  **DISTINCT**  keyword and the  **VARIADIC**  parameter.
     -   **delimiter**: Optional. It specifies a delimiter, which can be a string constant or a deterministic expression based on a group of columns. The default value is empty.
     -   **order-list**: Mandatory. It specifies the sorting mode in a group.
 
@@ -175,7 +175,7 @@
     The aggregation column is of the text character set type.
 
     ```
-    postgres=# SELECT deptno, listagg(ename, ',') WITHIN GROUP(ORDER BY ename) AS employees FROM emp GROUP BY deptno;
+    openGauss=# SELECT deptno, listagg(ename, ',') WITHIN GROUP(ORDER BY ename) AS employees FROM emp GROUP BY deptno;
      deptno |              employees               
     --------+--------------------------------------
          10 | CLARK,KING,MILLER
@@ -187,7 +187,7 @@
     The aggregation column is of the integer type.
 
     ```
-    postgres=# SELECT deptno, listagg(mgrno, ',') WITHIN GROUP(ORDER BY mgrno NULLS FIRST) AS mgrnos FROM emp GROUP BY deptno;
+    openGauss=# SELECT deptno, listagg(mgrno, ',') WITHIN GROUP(ORDER BY mgrno NULLS FIRST) AS mgrnos FROM emp GROUP BY deptno;
      deptno |            mgrnos             
     --------+-------------------------------
          10 | 7782,7839
@@ -199,7 +199,7 @@
     The aggregation column is of the floating point type.
 
     ```
-    postgres=# SELECT job, listagg(bonus, '($); ') WITHIN GROUP(ORDER BY bonus DESC) || '($)' AS bonus FROM emp GROUP BY job;
+    openGauss=# SELECT job, listagg(bonus, '($); ') WITHIN GROUP(ORDER BY bonus DESC) || '($)' AS bonus FROM emp GROUP BY job;
         job     |                      bonus                      
     ------------+-------------------------------------------------
      CLERK      | 10234.21($); 2000.80($); 1100.00($); 1000.22($)
@@ -213,7 +213,7 @@
     The aggregation column is of the time type.
 
     ```
-    postgres=# SELECT deptno, listagg(hiredate, ', ') WITHIN GROUP(ORDER BY hiredate DESC) AS hiredates FROM emp GROUP BY deptno;
+    openGauss=# SELECT deptno, listagg(hiredate, ', ') WITHIN GROUP(ORDER BY hiredate DESC) AS hiredates FROM emp GROUP BY deptno;
      deptno |                                                          hiredates                                                           
     --------+------------------------------------------------------------------------------------------------------------------------------
          10 | 1982-01-23 00:00:00, 1981-11-17 00:00:00, 1981-06-09 00:00:00
@@ -225,7 +225,7 @@
     The aggregation column is of the time interval type.
 
     ```
-    postgres=# SELECT deptno, listagg(vacationTime, '; ') WITHIN GROUP(ORDER BY vacationTime DESC) AS vacationTime FROM emp GROUP BY deptno;
+    openGauss=# SELECT deptno, listagg(vacationTime, '; ') WITHIN GROUP(ORDER BY vacationTime DESC) AS vacationTime FROM emp GROUP BY deptno;
      deptno |                                    vacationtime                                    
     --------+------------------------------------------------------------------------------------
          10 | 1 year 30 days; 40 days; 10 days
@@ -237,7 +237,7 @@
     By default, the delimiter is empty.
 
     ```
-    postgres=# SELECT deptno, listagg(job) WITHIN GROUP(ORDER BY job) AS jobs FROM emp GROUP BY deptno;
+    openGauss=# SELECT deptno, listagg(job) WITHIN GROUP(ORDER BY job) AS jobs FROM emp GROUP BY deptno;
      deptno |                     jobs                     
     --------+----------------------------------------------
          10 | CLERKMANAGERPRESIDENT
@@ -249,7 +249,7 @@
     When  **listagg**  is used as a window function, the  **OVER**  clause does not support the window sorting of  **ORDER BY**, and the  **listagg**  column is an ordered aggregation of the corresponding groups.
 
     ```
-    postgres=# SELECT deptno, mgrno, bonus, listagg(ename,'; ') WITHIN GROUP(ORDER BY hiredate) OVER(PARTITION BY deptno) AS employees FROM emp;
+    openGauss=# SELECT deptno, mgrno, bonus, listagg(ename,'; ') WITHIN GROUP(ORDER BY hiredate) OVER(PARTITION BY deptno) AS employees FROM emp;
      deptno | mgrno |  bonus   |                 employees                 
     --------+-------+----------+-------------------------------------------
          10 |  7839 | 10000.01 | CLARK; KING; MILLER
@@ -271,14 +271,14 @@
 
 -   covar\_pop\(Y, X\)
 
-    Description: overall covariance
+    Description: Specifies the overall covariance.
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT COVAR_POP(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT COVAR_POP(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
         covar_pop     
     ------------------
      829.749627587403
@@ -287,14 +287,14 @@
 
 -   covar\_samp\(Y, X\)
 
-    Description: sample covariance
+    Description: Specifies the sample covariance.
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT COVAR_SAMP(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT COVAR_SAMP(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
         covar_samp    
     ------------------
      830.052235037289
@@ -303,14 +303,14 @@
 
 -   stddev\_pop\(expression\)
 
-    Description: overall standard difference
+    Description: Specifies the overall standard deviation.
 
     Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
 
     Example:
 
     ```
-    postgres=# SELECT STDDEV_POP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT STDDEV_POP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
         stddev_pop    
     ------------------
      289.224294957556
@@ -319,14 +319,14 @@
 
 -   stddev\_samp\(expression\)
 
-    Description: sample standard deviation of the input values
+    Description: Specifies the sample standard deviation of the input values.
 
     Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
 
     Example:
 
     ```
-    postgres=# SELECT STDDEV_SAMP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT STDDEV_SAMP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
        stddev_samp    
     ------------------
      289.224359757315
@@ -335,14 +335,14 @@
 
 -   var\_pop\(expression\)
 
-    Description: population variance of the input values \(square of the population standard deviation\)
+    Description: Specifies the population variance of the input values \(square of the population standard deviation\).
 
     Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
 
     Example:
 
     ```
-    postgres=# SELECT VAR_POP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT VAR_POP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
           var_pop       
     --------------------
      83650.692793695475
@@ -351,14 +351,14 @@
 
 -   var\_samp\(expression\)
 
-    Description: sample variance of the input values \(square of the sample standard deviation\)
+    Description: Specifies the sample variance of the input values \(square of the sample standard deviation\).
 
     Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
 
     Example:
 
     ```
-    postgres=# SELECT VAR_SAMP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT VAR_SAMP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
           var_samp      
     --------------------
      83650.730277028768
@@ -367,14 +367,14 @@
 
 -   bit\_and\(expression\)
 
-    Description: the bitwise AND of all non-null input values, or null if none
+    Description: bitwise AND of all non-null input values, or null if none
 
     Return type: same as the argument type
 
     Example:
 
     ```
-    postgres=# SELECT BIT_AND(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT BIT_AND(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
      bit_and 
     ---------
            0
@@ -383,14 +383,14 @@
 
 -   bit\_or\(expression\)
 
-    Description: the bitwise OR of all non-null input values, or null if none
+    Description: bitwise OR of all non-null input values, or null if none
 
     Return type: same as the argument type
 
     Example:
 
     ```
-    postgres=# SELECT BIT_OR(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT BIT_OR(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
      bit_or 
     --------
        1023
@@ -401,12 +401,12 @@
 
     Description: Its value is  **true**  if all input values are  **true**, otherwise  **false**.
 
-    Return type: bool
+    Return type: Boolean
 
     Example:
 
     ```
-    postgres=# SELECT bool_and(100 <2500);
+    openGauss=# SELECT bool_and(100 <2500);
      bool_and
     ----------
      t
@@ -417,12 +417,12 @@
 
     Description: Its value is  **true**  if at least one input value is  **true**, otherwise  **false**.
 
-    Return type: bool
+    Return type: Boolean
 
     Example:
 
     ```
-    postgres=# SELECT bool_or(100 <2500);
+    openGauss=# SELECT bool_or(100 <2500);
      bool_or
     ----------
      t
@@ -431,14 +431,14 @@
 
 -   corr\(Y, X\)
 
-    Description: correlation coefficient
+    Description: Specifies the correlation coefficient.
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT CORR(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT CORR(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
            corr        
     -------------------
      .0381383624904186
@@ -447,14 +447,14 @@
 
 -   every\(expression\)
 
-    Description: equivalent to  **bool\_and**
+    Description: Equivalent to  **bool\_and**
 
-    Return type: bool
+    Return type: Boolean
 
     Example:
 
     ```
-    postgres=# SELECT every(100 <2500);
+    openGauss=# SELECT every(100 <2500);
      every
     -------
      t
@@ -463,14 +463,14 @@
 
 -   regr\_avgx\(Y, X\)
 
-    Description: average of the independent variable \(**sum\(X\)/N**\)
+    Description: Specifies the average of the independent variable \(**sum\(X\)/N**\).
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT REGR_AVGX(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_AVGX(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
         regr_avgx     
     ------------------
      578.606576740795
@@ -479,14 +479,14 @@
 
 -   regr\_avgy\(Y, X\)
 
-    Description: average of the dependent variable \(**sum\(Y\)/N**\)
+    Description: Specifies the average of the dependent variable \(**sum\(Y\)/N**\).
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT REGR_AVGY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_AVGY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
         regr_avgy     
     ------------------
      50.0136711629602
@@ -495,14 +495,14 @@
 
 -   regr\_count\(Y, X\)
 
-    Description: number of input rows in which both expressions are non-null
+    Description: Specifies the number of input rows in which both expressions are non-null.
 
     Return type: bigint
 
     Example:
 
     ```
-    postgres=# SELECT REGR_COUNT(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_COUNT(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
      regr_count 
     ------------
            2743
@@ -511,14 +511,14 @@
 
 -   regr\_intercept\(Y, X\)
 
-    Description: y-intercept of the least-squares-fit linear equation determined by the \(X, Y\) pairs
+    Description: Specifies the y-intercept of the least-squares-fit linear equation determined by the \(X, Y\) pairs.
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT REGR_INTERCEPT(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_INTERCEPT(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
       regr_intercept  
     ------------------
      49.2040847848607
@@ -527,14 +527,14 @@
 
 -   regr\_r2\(Y, X\)
 
-    Description: square of the correlation coefficient
+    Description: Specifies the square of the correlation coefficient.
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT REGR_R2(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_R2(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
           regr_r2       
     --------------------
      .00145453469345058
@@ -543,14 +543,14 @@
 
 -   regr\_slope\(Y, X\)
 
-    Description: slope of the least-squares-fit linear equation determined by the \(X, Y\) pairs
+    Description: Specifies the slope of the least-squares-fit linear equation determined by the \(X, Y\) pairs.
 
     Return type: double precision
 
     Example:
 
     ```
-    postgres=# SELECT REGR_SLOPE(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_SLOPE(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
          regr_slope     
     --------------------
      .00139920009665259
@@ -566,7 +566,7 @@
     Example:
 
     ```
-    postgres=# SELECT REGR_SXX(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_SXX(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
          regr_sxx     
     ------------------
      1626645991.46135
@@ -582,7 +582,7 @@
     Example:
 
     ```
-    postgres=# SELECT REGR_SXY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_SXY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
          regr_sxy     
     ------------------
      2276003.22847225
@@ -598,7 +598,7 @@
     Example:
 
     ```
-    postgres=# SELECT REGR_SYY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# SELECT REGR_SYY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
         regr_syy     
     -----------------
      2189417.6547314
@@ -607,14 +607,14 @@
 
 -   stddev\(expression\)
 
-    Description: alias of  **stddev\_samp**
+    Description: Specifies the alias of  **stddev\_samp**.
 
     Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
 
     Example:
 
     ```
-    postgres=# SELECT STDDEV(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT STDDEV(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
           stddev      
     ------------------
      289.224359757315
@@ -623,32 +623,40 @@
 
 -   variance\(expexpression,ression\)
 
-    Description: alias of  **var\_samp**
+    Description: Specifies the alias of  **var\_samp**.
 
     Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
 
     Example:
 
     ```
-    postgres=# SELECT VARIANCE(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
+    openGauss=# SELECT VARIANCE(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
           variance      
     --------------------
      83650.730277028768
     (1 row)
     ```
 
+-   delta
+
+    Description: Returns the difference between the current row and the previous row.
+
+    Parameter: numeric
+
+    Return type: numeric
+
 -   checksum\(expression\)
 
-    Description: Returns the CHECKSUM value of all input values. This function can be used to check whether the data in the tables is the same before and after the backup, restoration, or migration of the openGauss database \(databases other than openGauss are not supported\). Before and after database backup, database restoration, or data migration, you need to manually run SQL commands to obtain the execution results. Compare the obtained execution results to check whether the data in the tables before and after the backup or migration is the same.
+    Description: Returns the  **CHECKSUM**  value of all input values. This function can be used to check whether the data in the tables is the same before and after the backup, restoration, or migration of the openGauss database \(databases other than openGauss are not supported\). Before and after database backup, database restoration, or data migration, you need to manually run SQL commands to obtain the execution results. Compare the obtained execution results to check whether the data in the tables before and after the backup or migration is the same.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   For large tables, the execution of CHECKSUM function may take a long time.
-    >-   If the CHECKSUM values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the CHECKSUM function may incur conflicts. There is low possibility that two tables with different contents may have the same CHECKSUM value. The same problem may occur when CHECKSUM is used for columns.
-    >-   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the CHECKSUM value.
+    >-   For large tables, the execution of the  **CHECKSUM**  function may take a long time.
+    >-   If the  **CHECKSUM**  values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the  **CHECKSUM**  function may incur conflicts. There is low possibility that two tables with different contents may have the same  **CHECKSUM**  value. The same problem may occur when  **CHECKSUM**  is used for columns.
+    >-   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the  **CHECKSUM**  value.
 
-    -   If the CHECKSUM value of a column is calculated and the column type can be changed to TEXT by default, set  _expression_  to the column name.
-    -   If the CHECKSUM value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.
-    -   If the CHECKSUM value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.
+    -   If the  **CHECKSUM**  value of a column is calculated and the column type can be changed to TEXT by default, set  _expression_  to the column name.
+    -   If the  **CHECKSUM**  value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.
+    -   If the  **CHECKSUM**  value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.
 
     The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
 
@@ -656,55 +664,156 @@
 
     Example:
 
-    The following shows the CHECKSUM value of a column that can be converted to the TEXT type by default:
+    The following shows the  **CHECKSUM**  value of a column that can be converted to the TEXT type by default:
 
     ```
-    postgres=# SELECT CHECKSUM(inv_quantity_on_hand) FROM tpcds.inventory;
+    openGauss=# SELECT CHECKSUM(inv_quantity_on_hand) FROM tpcds.inventory;
          checksum      
     -------------------
      24417258945265247
     (1 row)
     ```
 
-    The following shows the CHECKSUM value of a column that cannot be converted to the TEXT type by default. Note that the CHECKSUM parameter is set to  _Column name_**::TEXT**.
+    The following shows the  **CHECKSUM**  value of a column that cannot be converted to the TEXT type by default. Note that the  **CHECKSUM**  parameter is set to  _Column name_**::TEXT**.
 
     ```
-    postgres=# SELECT CHECKSUM(inv_quantity_on_hand::TEXT) FROM tpcds.inventory;
+    openGauss=# SELECT CHECKSUM(inv_quantity_on_hand::TEXT) FROM tpcds.inventory;
          checksum      
     -------------------
      24417258945265247
     (1 row)
     ```
 
-    The following shows the CHECKSUM value of all columns in a table. Note that the CHECKSUM parameter is set to  _Table name_**::TEXT**. The table name is not modified by its schema.
+    The following shows the  **CHECKSUM**  value of all columns in a table. Note that the  **CHECKSUM**  parameter is set to  _Table name_**::TEXT**. The table name is not modified by its schema.
 
     ```
-    postgres=# SELECT CHECKSUM(inventory::TEXT) FROM tpcds.inventory;                    
+    openGauss=# SELECT CHECKSUM(inventory::TEXT) FROM tpcds.inventory;                    
          checksum      
     -------------------
      25223696246875800
     (1 row)
     ```
 
+-   first\(anyelement\)
+
+    Description: Returns the first non-null input.
+
+    Return type: anyelement
+
+    ```
+    openGauss=# select * from tba;
+    name 
+    -----
+    A    
+    A    
+    D    
+    (4 rows)
+    
+    openGauss=# select first(name) from tba;
+    first
+    -----
+    A
+    (1 rows)
+    ```
+
+-   last\(anyelement\)
+
+    Description: Returns the last non-null input.
+
+    Return type: anyelement
+
+    ```
+    openGauss=# select * from tba;
+    name 
+    -----
+    A    
+    A    
+    D    
+    (4 rows)
+    
+    openGauss=# select last(name) from tba;
+    last
+    -----
+    D
+    (1 rows)
+    ```
+
 -   mode\(\) within group \(order by value anyelement\)
 
-    Description: value with the highest occurrence frequency in a column. If multiple values have the same frequency, the smallest value is returned. The sorting mode is the same as the default sorting mode of the column type.  **value**  is an input parameter and can be of any type.
+    Description: Returns the value with the highest occurrence frequency in a column. If multiple values have the same frequency, the smallest value is returned. The sorting mode is the same as the default sorting mode of the column type.  **value**  is an input parameter and can be of any type.
 
     Return type: same as the input parameter type
 
     Example:
 
     ```
-    postgres=# select mode() within group (order by value) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
+    openGauss=# select mode() within group (order by value) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
      mode
     ------
         2
     (1 row)
-    postgres=# select mode() within group (order by tag) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
+    openGauss=# select mode() within group (order by tag) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
      mode
     ------
      a
     (1 row)
+    ```
+
+-   json\_agg\(any\)
+
+    Description: Aggregates values into a JSON array.
+
+    Return type: array-json
+
+    Example:
+
+    ```
+    openGauss=# select * from classes;
+    name | score
+    -----+-------
+    A    |     2
+    A    |     3
+    D    |     5
+    D    |
+    (4 rows)
+    ```
+
+    ```
+    openGauss=# select name, json_agg(score) score from classes group by name order by name;
+    name |      score
+    -----+-----------------
+    A    | [2, 3]
+    D    | [5, null]
+    | [null]
+    (3 rows)
+    ```
+
+-   json\_object\_agg\(any, any\)
+
+    Description: Aggregates values into a JSON object.
+
+    Return type: object-json
+
+    Example:
+
+    ```
+    openGauss=# select * from classes;
+    name | score
+    -----+-------
+    A    |     2
+    A    |     3
+    D    |     5
+    D    |
+    (4 rows)
+    ```
+
+    ```
+    openGauss=# select json_object_agg(name, score) from classes group by name order by name;
+    json_object_agg
+    -------------------------
+    { "A" : 2, "A" : 3 }
+    { "D" : 5, "D" : null }
+    (2 rows)
     ```
 
 

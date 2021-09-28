@@ -1,6 +1,6 @@
 # GS\_SESSION\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0289900281"></a>
 
-**GS\_SESSION\_MEMORY\_DETAIL**  collects statistics about thread memory usage by the memory context. When  **enable\_thread\_pool**  is set to  **on**, this view contains memory usage of all threads and sessions.
+**GS\_SESSION\_MEMORY\_DETAIL**  collects statistics about thread memory usage by the memory context. When  **enable\_thread\_pool**  is set to  **on**, this view contains memory usage of all threads and sessions. If the GUC parameter  **enable\_memory\_limit**  is set to  **off**, this view is unavailable.
 
 The memory context  **TempSmallContextGroup**  collects information about all memory contexts whose value in the  **totalsize**  column is less than 8192 bytes in the current thread, and the number of the collected memory contexts is recorded in the  **usedsize**  column. Therefore, the  **totalsize**  and  **freesize**  columns for  **TempSmallContextGroup**  in the view display the corresponding information about all the memory contexts whose value in the  **totalsize**  column is less than 8192 bytes in the current thread, and the  **usedsize**  column displays the number of these memory contexts.
 

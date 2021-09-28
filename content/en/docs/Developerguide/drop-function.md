@@ -43,9 +43,9 @@ DROP FUNCTION [ IF EXISTS ] function_name
 
 ## Examples<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_s4c0a49238b6c41bdbf9c9cbd3aabcf08"></a>
 
-For details, see  [Examples](en-us_topic_0283136560.md#en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
+For details, see  [Examples](create-function.md#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
 
 ## Helpful Links<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_sf722b7d9e13547449d559364553b790a"></a>
 
-[ALTER FUNCTION](en-us_topic_0283136989.md)  and  [CREATE FUNCTION](en-us_topic_0283136560.md)
+[ALTER FUNCTION](alter-function.md)  and  [CREATE FUNCTION](create-function.md)
 
