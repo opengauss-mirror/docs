@@ -989,7 +989,6 @@ headless: true
             -   [VACUUM]({{< relref "./docs/Developerguide/vacuum.md" >}})
             -   [VALUES]({{< relref "./docs/Developerguide/values.md" >}})
             -   [EXECUTE DIRECT]({{< relref "./docs/Developerguide/execute-direct.md" >}})
-            -   [CLEAN CONNECTION]({{< relref "./docs/Developerguide/CLEAN-CONNECTION.md" >}})
          -   [Appendix]({{< relref "./docs/Developerguide/appendix.md" >}})
             -   [GIN Indexes]({{< relref "./docs/Developerguide/gin-indexes.md" >}})
                 -   [Introduction]({{< relref "./docs/Developerguide/introduction-1.md" >}})
