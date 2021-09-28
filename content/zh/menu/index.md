@@ -803,7 +803,7 @@ headless: true
         -   [DML语法一览表]({{< relref "./docs/Developerguide/DML语法一览表.md" >}})
         -   [DCL语法一览表]({{< relref "./docs/Developerguide/DCL语法一览表.md" >}})
         -   [SQL语法]({{< relref "./docs/Developerguide/SQL语法.md" >}})
-            -   [ABORT]({{< relref "./docs/Developerguide/{{< relref "./docs/Developerguide/ABORT.md" >}}) 
+            -   [ABORT]{{< relref "./docs/Developerguide/ABORT.md" >}}) 
             -   [ALTER AGGREGATE]({{< relref "./docs/Developerguide/ALTER-AGGREGATE.md" >}}) 
             -   [ALTER AUDIT POLICY]({{< relref "./docs/Developerguide/ALTER-AUDIT-POLICY.md" >}}) 
             -   [ALTER DATABASE]({{< relref "./docs/Developerguide/ALTER-DATABASE.md" >}}) 
