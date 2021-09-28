@@ -490,17 +490,20 @@ gs\_om参数可以分为如下几类：
 
   ```
   gs_om -t status --detail
-  [   Cluster State   ]
-  
-  cluster_state   : Normal
-  redistributing  : No
-  current_az      : AZ_ALL
-  
-  [  Datanode State   ]
-  
-  node               node_ip         instance                                 state            | node               node_ip         instance                                 state
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1  hostname1 10.10.10.1   6001 /opt/opengauss/install/data/dn1 P Primary Normal | 2 hostname2 10.10.10.2    6002 /opt/opengauss/install/data/dn1 S Standby Normal
+
+    [   Cluster State   ]
+
+    cluster_state   : Normal
+    redistributing  : No
+    current_az      : AZ_ALL
+
+    [  Datanode State   ]
+
+        node             node_ip         port      instance                                   state
+    -----------------------------------------------------------------------------------------------------
+    1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
+    2  pekpopgsci00238  10.244.61.81     5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
+ 
   ```
 
 -   在openGauss上执行如下命令，生成配置文件。

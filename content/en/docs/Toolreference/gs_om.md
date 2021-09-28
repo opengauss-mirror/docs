@@ -481,14 +481,19 @@ Default value:  **fast**
 
     ```
     gs_om -t status --detail
+
     [   Cluster State   ]
-    
+
     cluster_state   : Normal
     redistributing  : No
-    
+    current_az      : AZ_ALL
+
     [  Datanode State   ]
-    node          node_ip         instance                                    state            | node          node_ip         instance                                    state            | node          node_ip         instance                                    state
-    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        node             node_ip         port      instance                            state
+    --------------------------------------------------------------------------------------------------
+    1  pekpopgsci00235  10.244.62.204    5432      6001 /home/wuqw/cluster/dn1/   P Primary Normal
+    2  pekpopgsci00238  10.244.61.81     5432      6002 /home/wuqw/cluster/dn1/   S Standby Normal
     ```
 
 -   Run the following commands on openGauss to generate the configuration file:
