@@ -145,6 +145,7 @@ INFO:  The starting position of the xlog copy of the full build is: 0/1B800000. 
 
 >-   若当前数据库实例正在运行，直接从备份文件启动数据库可能会存在端口冲突，这时需要修改配置文件的port参数，或者在启动数据库时指定一下端口。
 >-   若当前备份文件为主备数据库，可能需要修改一下主备之间的复制连接。即配置文件中的postgresql.conf中的replconninfo1，replconninfo2等。
+>-   若配置文件postgresql.conf的参数data_directory打开且有配置，当使用备份目录启动数据库时候，data_directory和备份目录不同会导致启动失败。可以修改data_directory的值为新的数据目录，或者注释掉该参数。
 
 若要在原库的地方恢复数据库，参考步骤如下：
 
