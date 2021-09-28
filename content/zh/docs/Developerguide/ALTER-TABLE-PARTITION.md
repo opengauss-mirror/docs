@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
 
-修改表分区，包括增删分区、切割分区、合成分区，以及修改分区属性等。
+修改表分区，包括增删分区、切割分区、合成分区以及修改分区属性等。
 
 ## 注意事项<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s5b88399280d4435fbb63e27378589a97"></a>
 
@@ -63,12 +63,13 @@
         -   普通表和分区的表压缩信息严格一致。
         -   普通表和分区的索引个数相同，且对应索引的信息严格一致。
         -   普通表和分区的表约束个数相同，且对应表约束的信息严格一致。
-        -   普通表不可以是临时表，分区表只能是范围分区表，列表分区表，哈希分区表。
+        -   普通表不可以是临时表，分区表只能是范围分区表、列表分区表、哈希分区表。
         -   普通表和分区表上不可以有动态数据脱敏，行访问控制约束。
         -   列表分区表，哈希分区表不能是列存储。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >-   完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
+
         >-   由于非分区键不能建立本地唯一索引，只能建立全局唯一索引，所以如果普通表含有唯一索引时，会导致不能交换数据。
 
     -   row\_clause子语法用于设置分区表的行迁移开关。
@@ -104,6 +105,7 @@
 
             >![](public_sys-resources/icon-notice.gif) **须知：** 
             >-   列存分区表不支持切割分区。
+
             >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
 
         -   不指定切割点no\_split\_point\_clause的语法为。
@@ -114,8 +116,11 @@
 
             >![](public_sys-resources/icon-notice.gif) **须知：** 
             >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
+
             >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
+
             >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
+
             >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。
 
 
@@ -158,6 +163,7 @@
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
+
         >-   间隔/哈希分区表不支持添加分区。
 
 
@@ -169,6 +175,7 @@
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >-   哈希分区表不支持删除分区。
+        
         >-   列表分区表仅支持通过子分区名称删除子分区。
 
 

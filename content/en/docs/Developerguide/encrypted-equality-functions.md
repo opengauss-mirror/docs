@@ -84,7 +84,7 @@
 
 -   byteawithoutorderwithequalcolcmp\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
 
-    Description: Compares two byteawithoutorderwithequalcol data sizes. If the first data size is smaller than the second one,  **-1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
+    Description: Compares two byteawithoutorderwithequalcol data sizes. If the first data size is smaller than the second one,  **–1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
 
     Parameter type: byteawithoutorderwithequalcol, byteawithoutorderwithequalcol
 
@@ -92,7 +92,7 @@
 
 -   byteawithoutorderwithequalcolcmpbytear\(byteawithoutorderwithequalcol, bytea\)
 
-    Description: Compares the byteawithoutorderwithequalcol and bytea data sizes. If the first data size is smaller than the second one,  **-1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
+    Description: Compares the byteawithoutorderwithequalcol and bytea data sizes. If the first data size is smaller than the second one,  **–1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
 
     Parameter type: byteawithoutorderwithequalcol, bytea
 
@@ -100,7 +100,7 @@
 
 -   byteawithoutorderwithequalcolcmpbyteal\(bytea, byteawithoutorderwithequalcol\)
 
-    Description: Compares the bytea and byteawithoutorderwithequalcol data sizes. If the first data size is smaller than the second one,  **-1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
+    Description: Compares the bytea and byteawithoutorderwithequalcol data sizes. If the first data size is smaller than the second one,  **–1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
 
     Parameter type: byteawithoutorderwithequalcol, bytea
 
@@ -140,7 +140,7 @@
 
 -   byteawithoutorderwithequalcolnebyteal\(bytea, byteawithoutorderwithequalcol\)
 
-    Description: Compares bytea with byteawithoutorderwithequalcol. If they are the same, true is returned. Otherwise, false is returned.
+    Description: Compares the bytea and byteawithoutorderwithequalcol data records. If they are the same,  **true **is returned. Otherwise,  **false **is returned.
 
     Parameter type: bytea, byteawithoutorderwithequalcol
 
@@ -165,18 +165,18 @@
     The implementation of byteawithoutorderwithequalcolin searches for CEK and determines whether it is a normal encrypted data type. Therefore, if the format of the data entered by the user is not the encrypted data format and the corresponding CEK does not exist on the local host, an error is returned.
 
     ```
-    postgres=# SELECT * FROM byteawithoutorderwithequalcolsend('\x907219912381298461289346129'::byteawithoutorderwithequalcol);
+    openGauss=# SELECT * FROM byteawithoutorderwithequalcolsend('\x907219912381298461289346129'::byteawithoutorderwithequalcol);
     ERROR:  cek with OID 596711794 not found
     LINE 1: SELECT * FROM byteawithoutorderwithequalcolsend('\x907219912...
                                                             ^
-    postgres=# SELECT * FROM byteawithoutordercolout('\x90721901999999999999912381298461289346129');
+    openGauss=# SELECT * FROM byteawithoutordercolout('\x90721901999999999999912381298461289346129');
     ERROR:  cek with OID 2566986098 not found
     LINE 1: SELECT * FROM byteawithoutordercolout('\x9072190199999999999...
        
     SELECT * FROM byteawithoutorderwithequalcolrecv('\x90721901999999999999912381298461289346129'::byteawithoutorderwithequalcol);
     ERROR:  cek with OID 2566986098 not found
                                                ^
-    postgres=# SELECT * FROM byteawithoutorderwithequalcolsend('\x90721901999999999999912381298461289346129'::byteawithoutorderwithequalcol);
+    openGauss=# SELECT * FROM byteawithoutorderwithequalcolsend('\x90721901999999999999912381298461289346129'::byteawithoutorderwithequalcol);
     ERROR:  cek with OID 2566986098 not found
     LINE 1: SELECT * FROM byteawithoutorderwithequalcolsend('\x907219019...
                                                             ^

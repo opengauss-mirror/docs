@@ -28,7 +28,7 @@ Row-level access control policies can be applied to a specified user \(role\) or
 ```
 CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
      [ AS { PERMISSIVE | RESTRICTIVE } ]
-     [ FOR { ALL | SELECT | INSERT | UPDATE | DELETE } ]
+     [ FOR { ALL | SELECT | UPDATE | DELETE } ]
      [ TO { role_name | PUBLIC | CURRENT_USER | SESSION_USER } [, ...] ]
      USING ( using_expression )
 ```
@@ -154,34 +154,34 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
     The expression cannot contain aggregate functions or window functions. In the statement rewriting phase of a query, if row-level access control for a data table is enabled, the expressions that meet the specified conditions will be added to the plan tree. The expression is calculated for each tuple in the data table. For  **SELECT**,  **UPDATE**, and  **DELETE**, row data is visible to the current user only when the return value of the expression is  **TRUE**. If the expression returns  **FALSE**, the tuple is invisible to the current user. In this case, the user cannot view the tuple through the  **SELECT**  statement, update the tuple through the  **UPDATE**  statement, or delete the tuple through the  **DELETE**  statement.
 
 
-## Example:<a name="en-us_topic_0283137345_en-us_topic_0237122109_section17979101023515"></a>
+## Examples<a name="en-us_topic_0283137345_en-us_topic_0237122109_section17979101023515"></a>
 
 ```
 -- Create user alice.
-postgres=# CREATE USER alice PASSWORD 'Gauss@123';
+openGauss=# CREATE USER alice PASSWORD 'xxxxxxxxx';
 
 -- Create user bob.
-postgres=# CREATE USER bob PASSWORD 'Gauss@123';
+openGauss=# CREATE USER bob PASSWORD 'xxxxxxxxx';
 
 -- Create the data table all_data.
-postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
+openGauss=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
 
---Insert data into the data table.
-postgres=# INSERT INTO all_data VALUES(1, 'alice', 'alice data');
-postgres=# INSERT INTO all_data VALUES(2, 'bob', 'bob data');
-postgres=# INSERT INTO all_data VALUES(3, 'peter', 'peter data');
+-- Insert data into the data table.
+openGauss=# INSERT INTO all_data VALUES(1, 'alice', 'alice data');
+openGauss=# INSERT INTO all_data VALUES(2, 'bob', 'bob data');
+openGauss=# INSERT INTO all_data VALUES(3, 'peter', 'peter data');
 
 -- Grant the read permission on the all_data table to users alice and bob.
-postgres=# GRANT SELECT ON all_data TO alice, bob;
+openGauss=# GRANT SELECT ON all_data TO alice, bob;
 
---Enable row-level access control.
-postgres=# ALTER TABLE all_data ENABLE ROW LEVEL SECURITY;
+-- Enable row-level access control.
+openGauss=# ALTER TABLE all_data ENABLE ROW LEVEL SECURITY;
 
---Create a row-level access control policy to specify that the current user can view only their own data.
-postgres=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
+-- Create a row-level access control policy to specify that the current user can view only their own data.
+openGauss=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
 
 -- View information about the all_data table.
-postgres=# \d+ all_data
+openGauss=# \d+ all_data
                                Table "public.all_data"
  Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------
@@ -195,7 +195,7 @@ Has OIDs: no
 Options: orientation=row, compression=no, enable_rowsecurity=true
 
 -- Run SELECT.
-postgres=# SELECT * FROM all_data;
+openGauss=# SELECT * FROM all_data;
  id | role  |    data
 ----+-------+------------
   1 | alice | alice data
@@ -203,20 +203,20 @@ postgres=# SELECT * FROM all_data;
   3 | peter | peter data
 (3 rows)
 
-postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
+openGauss=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
       QUERY PLAN
 ----------------------
  Seq Scan on all_data
 (1 row)
 
 -- Switch to user alice and run SELECT.
-postgres=# SELECT * FROM all_data;
+openGauss=# SELECT * FROM all_data;
  id | role  |    data
 ----+-------+------------
   1 | alice | alice data
 (1 row)
 
-postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
+openGauss=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
  QUERY PLAN
 ----------------------------------------------------------------
  Seq Scan on all_data
@@ -228,5 +228,5 @@ postgres=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
 
 ## Helpful Links<a name="en-us_topic_0283137345_en-us_topic_0237122109_section1426016489355"></a>
 
-[DROP ROW LEVEL SECURITY POLICY](en-us_topic_0283136715.md),  [ALTER ROW LEVEL SECURITY POLICY](en-us_topic_0283137062.md)
+[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md),  [ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)
 

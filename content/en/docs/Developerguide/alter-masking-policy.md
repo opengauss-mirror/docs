@@ -2,12 +2,13 @@
 
 ## Function<a name="en-us_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>
 
-**ALTER MASKING POLICY**  modifies anonymization policies.
+**ALTER MASKING POLICY**  modifies masking policies.
 
 ## Precautions<a name="en-us_topic_0059778839_s63ad21f92ad74c9e8d6bf18bb7218c4f"></a>
 
--   Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
--   The masking policy takes effect only after  **enable\_security\_policy**  is set to  **on**. For details about how to enable the masking policy, see "Database Configuration \> Database Security Management Policies \> Dynamic Data Masking" in the  _Security Hardening Guide_.
+-   Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
+-   The masking policy takes effect only after  **enable\_security\_policy**  is set to  **on**. For details about how to enable the masking policy, see "Database Configuration \> Database Security Management Policies \> Dynamic Data Masking" in  _Security Hardening Guide_.
+-   For details about the execution effect and supported data types of preset masking functions, see "Database Security \> Dynamic Data Masking" in  _Feature Description_.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -18,7 +19,7 @@
     ```
 
 
--   Modify the anonymization method.
+-   Modify the masking method.
 
     ```
     ALTER MASKING POLICY policy_name [ADD | REMOVE | MODIFY] masking_actions[, ...]*;
@@ -27,21 +28,21 @@
     ```
 
 
--   Modify the scenarios where the anonymization policies take effect.
+-   Modify the scenarios where the masking policies take effect.
 
     ```
     ALTER MASKING POLICY policy_name MODIFY(FILTER ON FILTER_TYPE(filter_value[, ...]*)[, ...]*);
     ```
 
 
--   Removes the filters of the anonymization policies.
+-   Removes the filters of the masking policies.
 
     ```
     ALTER MASKING POLICY policy_name DROP FILTER;
     ```
 
 
--   Enable or disable the anonymization policies.
+-   Enable or disable the masking policies.
 
     ```
     ALTER MASKING POLICY policy_name [ENABLE | DISABLE];
@@ -52,20 +53,24 @@
 
 -   **policy\_name**
 
-    Specifies the anonymization policy name, which must be unique.
+    Specifies the masking policy name, which must be unique.
 
     Value range: a string. It must comply with the naming convention.
 
 -   **policy\_comments**
 
-    Adds or modifies description of anonymization policies.
+    Adds or modifies description of masking policies.
 
 -   **masking\_function**
 
-    Specifies seven preset anonymization methods.
+    Specifies eight preset masking methods or user-defined functions. Schemas are supported.
+
+    **maskall**  is not a preset function. It is hard-coded and cannot be displayed by running  **\\df**.
+
+    The masking methods during presetting are as follows:
 
     ```
-    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking 
+    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking | regexpmasking 
     ```
 
 -   **label\_name**
@@ -91,41 +96,41 @@
 
 ```
 -- Create users dev_mask and bob_mask.
-postgres=# CREATE USER dev_mask PASSWORD 'dev@1234';
-postgres=# CREATE USER bob_mask PASSWORD 'bob@1234';
+openGauss=# CREATE USER dev_mask PASSWORD 'dev@1234';
+openGauss=# CREATE USER bob_mask PASSWORD 'bob@1234';
 
 -- Create table tb_for_masking.
-postgres=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);
+openGauss=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);
 
 -- Create a resource label for label sensitive column col1.
-postgres=# CREATE RESOURCE LABEL mask_lb1 ADD COLUMN(tb_for_masking.col1);
+openGauss=# CREATE RESOURCE LABEL mask_lb1 ADD COLUMN(tb_for_masking.col1);
 
 -- Create a resource label for label sensitive column col2.
-postgres=# CREATE RESOURCE LABEL mask_lb2 ADD COLUMN(tb_for_masking.col2);
+openGauss=# CREATE RESOURCE LABEL mask_lb2 ADD COLUMN(tb_for_masking.col2);
 
--- Create an anonymization policy for the operation of accessing sensitive column col1.
-postgres=# CREATE MASKING POLICY maskpol1 maskall ON LABEL(mask_lb1);
+-- Create a masking policy for the operation of accessing sensitive column col1.
+openGauss=# CREATE MASKING POLICY maskpol1 maskall ON LABEL(mask_lb1);
 
--- Add description for anonymization policy maskpol1.
-postgres=# ALTER MASKING POLICY maskpol1 COMMENTS 'masking policy for tb_for_masking.col1';
+-- Add description for masking policy maskpol1.
+openGauss=# ALTER MASKING POLICY maskpol1 COMMENTS 'masking policy for tb_for_masking.col1';
 
--- Modify anonymization policy maskpol1 to add an anonymization method.
-postgres=# ALTER MASKING POLICY maskpol1 ADD randommasking ON LABEL(mask_lb2);
+-- Modify masking policy maskpol1 to add a masking method.
+openGauss=# ALTER MASKING POLICY maskpol1 ADD randommasking ON LABEL(mask_lb2);
 
--- Modify anonymization policy maskpol1 to remove an anonymization method.
-postgres=# ALTER MASKING POLICY maskpol1 REMOVE randommasking ON LABEL(mask_lb2);
+-- Modify masking policy maskpol1 to remove a masking method.
+openGauss=# ALTER MASKING POLICY maskpol1 REMOVE randommasking ON LABEL(mask_lb2);
 
--- Modify anonymization policy maskpol1 to modify an anonymization method.
-postgres=# ALTER MASKING POLICY maskpol1 MODIFY randommasking ON LABEL(mask_lb1);
+-- Modify masking policy maskpol1 to modify a masking method.
+openGauss=# ALTER MASKING POLICY maskpol1 MODIFY randommasking ON LABEL(mask_lb1);
 
--- Modify anonymization policy maskpol1 so that it takes effect only for scenarios where users are dev_mask and bob_mask, client tools are psql and gsql, and the IP addresses are 10.20.30.40 and 127.0.0.0/24.
-postgres=# ALTER MASKING POLICY maskpol1 MODIFY (FILTER ON ROLES(dev_mask, bob_mask), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24'));
+-- Modify masking policy maskpol1 so that it takes effect only for scenarios where users are dev_mask and bob_mask, client tools are psql and gsql, and the IP addresses are 10.20.30.40 and 127.0.0.0/24.
+openGauss=# ALTER MASKING POLICY maskpol1 MODIFY (FILTER ON ROLES(dev_mask, bob_mask), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24'));
 
--- Modify anonymization policy maskpol1 so that it takes effect for all user scenarios.
-postgres=# ALTER MASKING POLICY maskpol1 DROP FILTER;
+-- Modify masking policy maskpol1 so that it takes effect for all user scenarios.
+openGauss=# ALTER MASKING POLICY maskpol1 DROP FILTER;
 
--- Disable anonymization policy maskpol1.
-postgres=# ALTER MASKING POLICY maskpol1 DISABLE;
+-- Disable masking policy maskpol1.
+openGauss=# ALTER MASKING POLICY maskpol1 DISABLE;
 ```
 
 ## Helpful Links<a name="section156744489391"></a>

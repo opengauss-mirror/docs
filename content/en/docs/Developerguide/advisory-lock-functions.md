@@ -1,4 +1,4 @@
-# Advisory Lock Functions<a name="EN-US_TOPIC_0242370459"></a>
+# Advisory Lock Functions<a name="EN-US_TOPIC_0289900296"></a>
 
 Advisory lock functions manage advisory locks.
 
@@ -17,6 +17,12 @@ Advisory lock functions manage advisory locks.
     Return type: void
 
     Note: Only users with the  **sysadmin**  permission can add session-level exclusive advisory locks to the key-value pair \(65535, 65535\).
+
+-   pg\_advisory\_lock\(int4, int4, Name\)
+
+    Description: Obtains the exclusive advisory lock of a specified database.
+
+    Return type: void
 
 -   pg\_advisory\_lock\_shared\(key bigint\)
 
@@ -45,6 +51,14 @@ Advisory lock functions manage advisory locks.
     Return type: Boolean
 
     Note:  **pg\_advisory\_unlock**  releases the obtained exclusive advisory lock. If the release is successful, the function returns  **true**. If the lock was not held, it will return  **false**. In addition, a SQL warning will be reported by the server.
+
+-   pg\_advisory\_unlock\(int4, int4, Name\)
+
+    Description: Releases the exclusive advisory lock of a specified database.
+
+    Return type: Boolean
+
+    Note: If the release is successful,  **true**  is returned. If no lock is held,  **false**  is returned.
 
 -   pg\_advisory\_unlock\_shared\(key bigint\)
 

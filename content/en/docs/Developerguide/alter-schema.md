@@ -10,6 +10,13 @@ Only the schema owner or a user granted with the ALTER permission can run the  *
 
 ## Syntax<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
+-   Modify the tamper-proof attribute of a schema.
+
+    ```
+    ALTER SCHEMA schema_name { WITH | WITHOUT } BLOCKCHAIN
+    ```
+
+
 -   Rename a schema.
 
     ```
@@ -35,42 +42,46 @@ Only the schema owner or a user granted with the ALTER permission can run the  *
 
 -   **RENAME TO new\_name**
 
-    Renames a schema.
+    Rename a schema. If a non-administrator user wants to change the schema name, the user must have the  **CREATE**  permission on the database.
 
-    **new\_name**: new name of the schema. To do this as a non-administrator, you must  have  **CREATE**  permission in the database.
+    **new\_name**: new name of the schema.
 
     Value range: a string. It must comply with the naming convention rule.
 
 -   **OWNER TO new\_owner**
 
-    Changes the owner of a schema. To do this as a non-administrator, you must be a direct or indirect member of the new owning role, and that role must have  **CREATE**  permission in the database.
+    Change the owner of a schema. To do this as a non-administrator, you must be a direct or indirect member of the new owning role, and that role must have  **CREATE**  permission in the database.
 
     **new\_owner**: new owner of the schema.
 
-    Value range: an existing username or role name
+    Value range: an existing username or role name.
+
+-   **\{ WITH | WITHOUT \} BLOCKCHAIN**
+
+    Modifies the tamper-proof attribute of a schema. Common row-store tables with the tamper-proof attribute are tamper-proof history tables, excluding foreign tables, temporary tables, and system catalogs. The tamper-proof attribute can be modified only when no table is contained in the schema. In addition, the temporary table mode is not supported. Modify the tamper-proof attribute in toast table mode, dbe\_perf mode, and blockchain mode.
 
 
 ## Examples<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
 ```
 -- Create the ds schema.
-postgres=# CREATE SCHEMA ds;
+openGauss=# CREATE SCHEMA ds;
 
 -- Rename the current schema ds to ds_new.
-postgres=# ALTER SCHEMA ds RENAME TO ds_new;
+openGauss=# ALTER SCHEMA ds RENAME TO ds_new;
 
 -- Create user jack.
-postgres=# CREATE USER jack PASSWORD 'Bigdata@123';
+openGauss=# CREATE USER jack PASSWORD 'xxxxxxxxx';
 
 -- Change the owner of ds_new to jack.
-postgres=# ALTER SCHEMA ds_new OWNER TO jack;
+openGauss=# ALTER SCHEMA ds_new OWNER TO jack;
 
 -- Delete user jack and schema ds_new.
-postgres=# DROP SCHEMA ds_new;
-postgres=# DROP USER jack;
+openGauss=# DROP SCHEMA ds_new;
+openGauss=# DROP USER jack;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
-[CREATE SCHEMA](en-us_topic_0283137491.md)  and  [DROP SCHEMA](en-us_topic_0283137271.md)
+[CREATE SCHEMA](create-schema.md)  and  [DROP SCHEMA](drop-schema.md)
 

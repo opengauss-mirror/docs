@@ -1,12 +1,12 @@
-# Backup and Restoration Control Functions<a name="EN-US_TOPIC_0242370456"></a>
+# Backup and Restoration Control Functions<a name="EN-US_TOPIC_0289900147"></a>
 
-## Backup Control Functions<a name="en-us_topic_0237121992_en-us_topic_0059778344_s540f3b3ffcd845909fe45a65f5cff84f"></a>
+## Backup Control Functions<a name="en-us_topic_0283137026_en-us_topic_0237121992_en-us_topic_0059778344_s540f3b3ffcd845909fe45a65f5cff84f"></a>
 
 Backup control functions help with online backup.
 
 -   pg\_create\_restore\_point\(name text\)
 
-    Description: Creates a named point for performing the restore operation \(restricted to system administrators\).
+    Description: Creates a named point for performing the restoration operation \(restricted to the system administrator\).
 
     Return type: text
 
@@ -18,7 +18,7 @@ Backup control functions help with online backup.
 
     Return type: text
 
-    Note:  **pg\_current\_xlog\_location**  displays the write position of the current transaction log in the same format as those of the previous functions. Read-only operations do not require rights of the system administrator.
+    Note:  **pg\_current\_xlog\_location**  displays the write position of the current transaction log in the same format as those of the previous functions. Read-only operations do not require permissions of the system administrator.
 
 -   pg\_current\_xlog\_insert\_location\(\)
 
@@ -26,18 +26,26 @@ Backup control functions help with online backup.
 
     Return type: text
 
-    Note:  **pg\_current\_xlog\_insert\_location**  displays the insert position of the current transaction log. The insertion point is the logical end of the transaction log at any instant, while the write location is the end of what has been written out from the server's internal buffers. The write position is the end that can be detected externally from the server. This operation can be performed to archive only some of completed transaction log files. The insert position is used for commissioning the server. Read-only operations do not require rights of the system administrator.
+    Note:  **pg\_current\_xlog\_insert\_location**  displays the insert position of the current transaction log. The insertion point is the logical end of the transaction log at any instant, while the write location is the end of what has been written out from the server's internal buffers. The write position is the end that can be detected externally from the server. This operation can be performed to archive only some of completed transaction log files. The insert position is mainly used for commissioning the server. Read-only operations do not require permissions of the system administrator.
 
--   pg\_start\_backup\(label text \[, fast boolean \]\)
+-   gs\_current\_xlog\_insert\_end\_location\(\)
 
-    Description: Starts executing online backup \(restricted to system administrators or replication roles\).
+    Description: Obtains the insert position of the current transaction log.
 
     Return type: text
 
-    Note:  **pg\_start\_backup**  receives a user-defined backup label \(usually the name of the position where the backup dump file is stored\). This function writes a backup label file to the data directory of openGauss and then returns the starting position of backed up transaction logs in text mode.
+    Note:  **gs\_current\_xlog\_insert\_end\_location**  displays the insert position of the current transaction log.
+
+-   pg\_start\_backup\(label text \[, fast boolean \]\)
+
+    Description: Starts executing online backup \(restricted to the system administrator or replication roles\).
+
+    Return type: text
+
+    Note:  **pg\_start\_backup**  receives a user-defined backup label \(usually the name of the position where the backup dump file is stored\). This function writes a backup label file to the data directory of openGauss and then returns the start position of backed up transaction logs in text mode.
 
     ```
-    postgres=# SELECT pg_start_backup('label_goes_here');
+    openGauss=# SELECT pg_start_backup('label_goes_here');
      pg_start_backup
     -----------------
      0/3000020
@@ -46,15 +54,15 @@ Backup control functions help with online backup.
 
 -   pg\_stop\_backup\(\)
 
-    Description: Completes online backup \(restricted to system administrators or replication roles\).
+    Description: Completes online backup \(restricted to the system administrator or replication roles\).
 
     Return type: text
 
-    Note:  **pg\_stop\_backup**  deletes the label file created by  **pg\_start\_backup**  and creates a backup history file in the transaction log archive area. The history file includes the label given to  **pg\_start\_backup**, the starting and ending transaction log locations for the backup, and the starting and ending times of the backup. The return value is the backup's ending transaction log location. After the ending position is calculated, the insert position of the current transaction log automatically goes ahead to the next transaction log file. This way, the ended transaction log file can be immediately archived so that backup is complete.
+    Note:  **pg\_stop\_backup**  deletes the label file created by  **pg\_start\_backup**  and creates a backup history file in the transaction log archive area. The history file includes the label given to  **pg\_start\_backup**, the start and end transaction log locations for the backup, and the start and end time of the backup. The return value is the backup's ending transaction log location. After the end position is calculated, the insert position of the current transaction log automatically goes ahead to the next transaction log file. In this way, the ended transaction log file can be immediately archived so that backup is complete.
 
 -   pg\_switch\_xlog\(\)
 
-    Description: Switches to a new transaction log file \(restricted to system administrators\).
+    Description: Switches to a new transaction log file \(restricted to the system administrator\).
 
     Return type: text
 
@@ -72,12 +80,12 @@ Backup control functions help with online backup.
 
     Description: Converts the position string in a transaction log to a file name and returns the byte offset in the file.
 
-    Return type: text, integer
+    Return type: text and integer
 
     Note:  **pg\_xlogfile\_name\_offset**  can extract transaction log file names and byte offsets from the returned results of the preceding functions. Example:
 
     ```
-    postgres=# SELECT * FROM pg_xlogfile_name_offset(pg_stop_backup());
+    openGauss=# SELECT * FROM pg_xlogfile_name_offset(pg_stop_backup());
     NOTICE:  pg_stop_backup cleanup done, waiting for required WAL segments to be archived
     NOTICE:  pg_stop_backup complete, all required WAL segments have been archived
             file_name         | file_offset 
@@ -88,13 +96,13 @@ Backup control functions help with online backup.
 
 -   pg\_xlog\_location\_diff\(location text, location text\)
 
-    Description:  **pg\_xlog\_location\_diff**  calculates the difference in bytes between two transaction log locations.
+    Description: Calculates the difference in bytes between two transaction log locations.
 
     Return type: numeric
 
 -   pg\_cbm\_tracked\_location\(\)
 
-    Description: Queries for the LSN location parsed by CBM.
+    Description: Queries the LSN location parsed by CBM.
 
     Return type: text
 
@@ -104,13 +112,15 @@ Backup control functions help with online backup.
 
     Return type: text
 
+    Note: Only the system administrator or O&M administrator can obtain the CBM combination file.
+
 -   pg\_cbm\_get\_changed\_block\(startLSNArg text, endLSNArg text\)
 
     Description: Combines CBM files within the specified LSN range into a table and return records of this table.
 
     Return type: record
 
-    Note: The table columns include the start LSN, end LSN, tablespace OID, database OID, table relfilenode, table fork number, whether the table is deleted, whether the table is created, whether the table is truncated, number of pages in the truncated table, number of modified pages, and list of No. of modified pages.
+    Note: The table columns include the start LSN, end LSN, tablespace OID, database OID, table relfilenode, table fork number, whether the table is deleted, whether the table is created, whether the table is truncated, number of pages in the truncated table, number of modified pages, and list of modified page numbers.
 
 -   pg\_cbm\_recycle\_file\(targetLSNArg text\)
 
@@ -124,15 +134,15 @@ Backup control functions help with online backup.
 
     Return type: text
 
--   pg\_enable\_delay\_ddl\_recycle\(is\_full\_backup boolean, backup\_key  text\)
+-   pg\_enable\_delay\_ddl\_recycle\(\)
 
-    Description: Enables DDL delay and returns the Xlog position of the enabling point.
+    Description: Enables DDL delay and returns the Xlog position of the enabling point. You need to enable  **operate\_mode**  as the administrator or O&M administrator.
 
     Return type: text
 
--   pg\_disable\_delay\_ddl\_recycle\(barrierLSNArg text, isForce bool, is\_full\_backup boolean, backup\_key  text\)
+-   pg\_disable\_delay\_ddl\_recycle\(barrierLSNArg text, isForce bool\)
 
-    Description: Disables DDL delay and returns the Xlog range where DDL delay takes effect.
+    Description: Disables DDL delay and returns the Xlog range where DDL delay takes effect. You need to enable  **operate\_mode**  as the administrator or O&M administrator.
 
     Return type: record
 
@@ -148,8 +158,46 @@ Backup control functions help with online backup.
 
     Return type: void
 
+-   pg\_cbm\_rotate\_file\(rotate\_lsn text\)
 
-## Restoration Control Functions<a name="en-us_topic_0237121992_en-us_topic_0059778344_sc7012e6115754c129c650cb2a0f899c9"></a>
+    Description: Forcibly switches the file after the CBM parses  **rotate\_lsn**. This function is called during the build process.
+
+    Return type: void
+
+-   gs\_roach\_stop\_backup\(backupid text\)
+
+    Description: Stops a backup started by the internal backup tool GaussRoach. It is similar to the  **pg\_stop\_backup system**  function but is more lightweight.
+
+    Return type: text. The content is the insertion position of the current log.
+
+    Note: Currently, openGauss does not support this function.
+
+-   gs\_roach\_enable\_delay\_ddl\_recycle\(backupid name\)
+
+    Description: Enables DDL delay and returns the log location of the enabling point. It is similar to the  **pg\_enable\_delay\_ddl\_recycle**  system function but is more lightweight. In addition, different  **backupid**  values can be used to concurrently open DDL statements with delay.
+
+    Return type: text. The content is the log location of the start point.
+
+    Note: Currently, openGauss does not support this function.
+
+-   gs\_roach\_disable\_delay\_ddl\_recycle\(backupid text\)
+
+    Description: Disables DDL delay, returns the range of logs on which DDL delay takes effect, and deletes the physical files of column-store tables that are deleted by users within this range. It is similar to the  **pg\_enable\_delay\_ddl\_recycle**  system function but is more lightweight. In addition, the DDL delay function can be disabled concurrently by specifying different backupid values.
+
+    Return type: record. The content is the range of logs for which DDL is delayed to take effect.
+
+    Note: Currently, openGauss does not support this function.
+
+-   gs\_roach\_switch\_xlog\(request\_ckpt bool\)
+
+    Description: Switches the currently used log segment file and triggers a full checkpoint if  **request\_ckpt**  is set to  **true**.
+
+    Return type: text. The content is the location of the segment log.
+
+    Note: Currently, openGauss does not support this function.
+
+
+## Restoration Control Functions<a name="en-us_topic_0283137026_en-us_topic_0237121992_en-us_topic_0059778344_sc7012e6115754c129c650cb2a0f899c9"></a>
 
 Restoration control functions provide information about the status of standby nodes. These functions may be executed both during restoration and in normal running.
 
@@ -157,23 +205,23 @@ Restoration control functions provide information about the status of standby no
 
     Description: Returns  **true**  if restoration is still in progress.
 
-    Return type: bool
+    Return type: Boolean
 
 -   pg\_last\_xlog\_receive\_location\(\)
 
-    Description: Gets the last transaction log location received and synchronized to disk by streaming replication. While streaming replication is in progress, this will increase monotonically. If restoration has completed, this value will remain static at the value of the last WAL record received and synchronized to disk during restoration. If streaming replication is disabled or if it has not yet started, the function returns  **NULL**.
+    Description: Obtains the last transaction log location received and synchronized to disk by streaming replication. While streaming replication is in progress, this will increase monotonically. If restoration has been completed, then this value will remain static at the value of the last WAL record received and synchronized to disk during restoration. If streaming replication is disabled or if it has not yet started, the function returns  **NULL**.
 
     Return type: text
 
 -   pg\_last\_xlog\_replay\_location\(\)
 
-    Description: Gets last transaction log location replayed during restoration. If restoration is still in progress, this will increase monotonically. If restoration has completed, then this value will remain static at the value of the last WAL record received during that restoration. When the server has been started normally without restoration, the function returns  **NULL**.
+    Description: Obtains last transaction log location replayed during restoration. If restoration is still in progress, this will increase monotonically. If restoration has been completed, then this value will remain static at the value of the last WAL record received during that restoration. When the server has been started normally without restoration, the function returns  **NULL**.
 
     Return type: text
 
 -   pg\_last\_xact\_replay\_timestamp\(\)
 
-    Description: Gets the timestamp of last transaction replayed during restoration. This is the time to commit a transaction or abort a WAL record on the primary node. If no transactions have been replayed during restoration, this function will return  **NULL**. If restoration is still in progress, this will increase monotonically. If restoration has completed, then this value will remain static at the value of the last WAL record received during that restoration. If the server normally starts without manual intervention, this function will return  **NULL**.
+    Description: Obtains the timestamp of last transaction replayed during restoration. This is the time to commit a transaction or abort a WAL record on the primary node. If no transactions have been replayed during restoration, this function will return  **NULL**. If restoration is still in progress, this will increase monotonically. If restoration has been completed, then this value will remain static at the value of the last WAL record received during that restoration. If the server normally starts without manual intervention, this function will return  **NULL**.
 
     Return type: timestamp with time zone
 
@@ -184,7 +232,7 @@ Restoration control functions control restoration processes. These functions may
 
     Description: Returns  **true**  if restoration is paused.
 
-    Return type: bool
+    Return type: Boolean
 
 -   pg\_xlog\_replay\_pause\(\)
 

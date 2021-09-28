@@ -193,7 +193,9 @@ SQL on Spark支持的数据类型，见下表。
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   使用本地模式时，需要在各个节点上分别执行[1](#li1343510529592)-[4](#li18491441322)。
+    >
     >-   本地模式不启停数据库实例，因此需要手动执行启停命令。
 
 7.  创建Data Source。
@@ -274,14 +276,14 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 </tr>
 <tr id="row6837532545"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p209155315542"><a name="p209155315542"></a><a name="p209155315542"></a>连接异常</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p14100953175412"><a name="p14100953175412"></a><a name="p14100953175412"></a>ERROR:  source "spark_ds" does not exist</p>
+<td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p14100953175412"><a name="p14100953175412"></a><a name="p14100953175412"></a>ERROR:  source "spark_ds" does not exist.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p18105175313544"><a name="p18105175313544"></a><a name="p18105175313544"></a>需要创建DATA SOURCE，创建语句请参考<a href="CREATE-DATA-SOURCE.md">CREATE DATA SOURCE</a>。</p>
 </td>
 </tr>
 <tr id="row1611213537544"><td class="cellrowborder" valign="top" width="16.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p912145375413"><a name="p912145375413"></a><a name="p912145375413"></a>执行异常</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p19131125365411"><a name="p19131125365411"></a><a name="p19131125365411"></a>ERROR:  invalid input syntax for integer</p>
+<td class="cellrowborder" valign="top" width="36.33%" headers="mcps1.2.4.1.2 "><p id="p19131125365411"><a name="p19131125365411"></a><a name="p19131125365411"></a>ERROR:  invalid input syntax for integer.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.3 "><p id="p1113919539542"><a name="p1113919539542"></a><a name="p1113919539542"></a>查看EC支持的LirbA数据类型。请参见<a href="SQL-on-Oracle.md#table11811516202811">表1</a>。</p>
 </td>

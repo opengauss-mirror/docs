@@ -1,6 +1,6 @@
-# Mathematical Functions and Operators<a name="EN-US_TOPIC_0242370435"></a>
+# Mathematical Functions and Operators<a name="EN-US_TOPIC_0289900469"></a>
 
-## Numeric Operators<a name="en-us_topic_0237121971_en-us_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>
+## Numeric Operators<a name="en-us_topic_0283136987_en-us_topic_0237121971_en-us_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>
 
 -   +
 
@@ -9,7 +9,7 @@
     Example:
 
     ```
-    postgres=# SELECT 2+3 AS RESULT;
+    openGauss=# SELECT 2+3 AS RESULT;
      result 
     --------
           5
@@ -23,7 +23,7 @@
     Example:
 
     ```
-    postgres=# SELECT 2-3 AS RESULT;
+    openGauss=# SELECT 2-3 AS RESULT;
      result 
     --------
          -1
@@ -37,7 +37,7 @@
     Example:
 
     ```
-    postgres=# SELECT 2*3 AS RESULT;
+    openGauss=# SELECT 2*3 AS RESULT;
      result 
     --------
           6
@@ -51,7 +51,7 @@
     Example:
 
     ```
-    postgres=# SELECT 4/2 AS RESULT;
+    openGauss=# SELECT 4/2 AS RESULT;
      result 
     --------
           2
@@ -59,7 +59,7 @@
     ```
 
     ```
-    postgres=# SELECT 4/3 AS RESULT;
+    openGauss=# SELECT 4/3 AS RESULT;
           result      
     ------------------
      1.33333333333333
@@ -68,12 +68,12 @@
 
 -   +/-
 
-    Description: Positive/negative
+    Description: Positive/Negative
 
     Example:
 
     ```
-    postgres=# SELECT -2 AS RESULT;
+    openGauss=# SELECT -2 AS RESULT;
      result 
     --------
          -2
@@ -87,7 +87,7 @@
     Example:
 
     ```
-    postgres=# SELECT 5%4 AS RESULT;
+    openGauss=# SELECT 5%4 AS RESULT;
      result 
     --------
           1
@@ -101,7 +101,7 @@
     Example:
 
     ```
-    postgres=# SELECT @ -5.0 AS RESULT;
+    openGauss=# SELECT @ -5.0 AS RESULT;
      result 
     --------
         5.0
@@ -115,7 +115,7 @@
     Example:
 
     ```
-    postgres=# SELECT 2.0^3.0 AS RESULT;
+    openGauss=# SELECT 2.0^3.0 AS RESULT;
            result       
     --------------------
      8.0000000000000000
@@ -129,7 +129,7 @@
     Example:
 
     ```
-    postgres=# SELECT |/ 25.0 AS RESULT;
+    openGauss=# SELECT |/ 25.0 AS RESULT;
      result 
     --------
           5
@@ -143,7 +143,7 @@
     Example:
 
     ```
-    postgres=# SELECT ||/ 27.0 AS RESULT;
+    openGauss=# SELECT ||/ 27.0 AS RESULT;
      result 
     --------
           3
@@ -157,7 +157,7 @@
     Example:
 
     ```
-    postgres=# SELECT 5! AS RESULT;
+    openGauss=# SELECT 5! AS RESULT;
      result 
     --------
         120
@@ -171,7 +171,7 @@
     Example:
 
     ```
-    postgres=# SELECT !!5 AS RESULT;
+    openGauss=# SELECT !!5 AS RESULT;
      result 
     --------
         120
@@ -185,7 +185,7 @@
     Example:
 
     ```
-    postgres=# SELECT 91&15  AS RESULT;
+    openGauss=# SELECT 91&15  AS RESULT;
      result 
     --------
          11
@@ -199,7 +199,7 @@
     Example:
 
     ```
-    postgres=# SELECT 32|3  AS RESULT;
+    openGauss=# SELECT 32|3  AS RESULT;
      result 
     --------
          35
@@ -213,7 +213,7 @@
     Example:
 
     ```
-    postgres=# SELECT 17#5  AS RESULT;
+    openGauss=# SELECT 17#5  AS RESULT;
      result 
     --------
          20
@@ -227,7 +227,7 @@
     Example:
 
     ```
-    postgres=# SELECT ~1 AS RESULT;
+    openGauss=# SELECT ~1 AS RESULT;
      result 
     --------
          -2
@@ -241,7 +241,7 @@
     Example:
 
     ```
-    postgres=# SELECT 1<<4 AS RESULT;
+    openGauss=# SELECT 1<<4 AS RESULT;
      result 
     --------
          16
@@ -255,7 +255,7 @@
     Example:
 
     ```
-    postgres=# SELECT 8>>2 AS RESULT;
+    openGauss=# SELECT 8>>2 AS RESULT;
      result 
     --------
           2
@@ -263,7 +263,7 @@
     ```
 
 
-## Numeric Operation Functions<a name="en-us_topic_0237121971_en-us_topic_0059777932_s04c663eefe5a433d9a486b67706e44e1"></a>
+## Numeric Operation Functions<a name="en-us_topic_0283136987_en-us_topic_0237121971_en-us_topic_0059777932_s04c663eefe5a433d9a486b67706e44e1"></a>
 
 -   abs\(x\)
 
@@ -274,7 +274,7 @@
     Example:
 
     ```
-    postgres=# SELECT abs(-17.4);
+    openGauss=# SELECT abs(-17.4);
      abs
     ------
      17.4
@@ -290,7 +290,7 @@
     Example:
 
     ```
-    postgres=# SELECT acos(-1);
+    openGauss=# SELECT acos(-1);
            acos       
     ------------------
      3.14159265358979
@@ -306,7 +306,7 @@
     Example:
 
     ```
-    postgres=# SELECT asin(0.5);
+    openGauss=# SELECT asin(0.5);
            asin       
     ------------------
      .523598775598299
@@ -322,7 +322,7 @@
     Example:
 
     ```
-    postgres=# SELECT atan(1);
+    openGauss=# SELECT atan(1);
            atan       
     ------------------
      .785398163397448
@@ -338,7 +338,7 @@
     Example:
 
     ```
-    postgres=# SELECT atan2(2, 1);
+    openGauss=# SELECT atan2(2, 1);
           atan2
     ------------------
      1.10714871779409
@@ -347,14 +347,14 @@
 
 -   bitand\(integer, integer\)
 
-    Description: Performs AND \(&\) operation on two integers.
+    Description: Performs an AND \(&\) operation on two integers.
 
     Return type: bigint
 
     Example:
 
     ```
-    postgres=# SELECT bitand(127, 63);
+    openGauss=# SELECT bitand(127, 63);
      bitand 
     --------
          63
@@ -370,7 +370,7 @@
     Example:
 
     ```
-    postgres=# SELECT cbrt(27.0);
+    openGauss=# SELECT cbrt(27.0);
      cbrt
     ------
         3
@@ -386,7 +386,7 @@
     Example:
 
     ```
-    postgres=# SELECT ceil(-42.8);
+    openGauss=# SELECT ceil(-42.8);
      ceil 
     ------
       -42
@@ -397,12 +397,12 @@
 
     Description: Minimum integer \(alias of ceil\) greater than or equal to the parameter
 
-    Return type: same as the input
+    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
 
     Example:
 
     ```
-    postgres=# SELECT ceiling(-95.3);
+    openGauss=# SELECT ceiling(-95.3);
      ceiling
     ---------
          -95
@@ -418,7 +418,7 @@
     Example:
 
     ```
-    postgres=# SELECT cos(-3.1415927);
+    openGauss=# SELECT cos(-3.1415927);
             cos        
     -------------------
      -.999999999999999
@@ -434,7 +434,7 @@
     Example:
 
     ```
-    postgres=# SELECT cot(1);
+    openGauss=# SELECT cot(1);
            cot
     ------------------
      .642092615934331
@@ -450,7 +450,7 @@
     Example:
 
     ```
-    postgres=# SELECT degrees(0.5);
+    openGauss=# SELECT degrees(0.5);
          degrees
     ------------------
      28.6478897565412
@@ -466,7 +466,7 @@
     Example:
 
     ```
-    postgres=# SELECT div(9,4);
+    openGauss=# SELECT div(9,4);
      div
     -----
        2
@@ -477,12 +477,12 @@
 
     Description: Natural exponent
 
-    Return type: same as the input
+    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
 
     Example:
 
     ```
-    postgres=# SELECT exp(1.0);
+    openGauss=# SELECT exp(1.0);
             exp         
     --------------------
      2.7182818284590452
@@ -491,17 +491,84 @@
 
 -   floor\(x\)
 
-    Description: Not larger than the maximum integer of the parameter
+    Description: Maximum integer not larger than the parameter
 
     Return type: same as the input
 
     Example:
 
     ```
-    postgres=# SELECT floor(-42.8);
+    openGauss=# SELECT floor(-42.8);
      floor 
     -------
        -43
+    (1 row)
+    ```
+
+-   int1\(in\)
+
+    Description: Converts the input text parameter to a value of the int1 type and returns the value.
+
+    Return type: int1
+
+    Example:
+
+    ```
+    openGauss=# select int1('123');
+     int1
+    ------
+     123
+    (1 row)
+    openGauss=# select int1('a');
+     int1
+    ------
+       0
+    (1 row)
+    ```
+
+-   int2\(in\)
+
+    Description: Converts the input parameter to a value of the int2 type and returns the value.
+
+    The supported input parameter types include float4, float8, numeric, and text.
+
+    Return type: int2
+
+    Example:
+
+    ```
+    openGauss=# select int2('1234');
+     int2
+    ------
+     1234
+    (1 row)
+    openGauss=# select int2(25.3);
+     int2
+    ------
+       25
+    (1 row)
+    ```
+
+-   int4\(in\)
+
+    Description: Converts the input parameter to a value of the int4 type and returns the value.
+
+    The supported input parameter types include bit, boolean, char, double precision, numeric, real, smallint and text
+
+    Return type: int4
+
+    Example:
+
+    ```
+    openGauss=# select int4('789');
+     int4
+    ------
+     789
+    (1 row)
+    openGauss=# select int4(99.9);
+     int4
+    ------
+       99
     (1 row)
     ```
 
@@ -514,7 +581,7 @@
     Example:
 
     ```
-    postgres=# SELECT radians(45.0);
+    openGauss=# SELECT radians(45.0);
          radians
     ------------------
      .785398163397448
@@ -530,10 +597,31 @@
     Example:
 
     ```
-    postgres=# SELECT random();
+    openGauss=# SELECT random();
           random
     ------------------
      .824823560658842
+    (1 row)
+    ```
+
+-   multiply\(x double precision or text, y double precision or text\)
+
+    Description: Product of x and y.
+
+    Return type: double precision
+
+    Example:
+
+    ```
+    openGauss=# SELECT multiply(9.0, '3.0');
+         multiply         
+    -------------------
+                   27
+    (1 row)
+    openGauss=# SELECT multiply('9.0', 3.0);
+         multiply         
+    -------------------
+                   27
     (1 row)
     ```
 
@@ -541,12 +629,12 @@
 
     Description: Natural logarithm
 
-    Return type: same as the input
+    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
 
     Example:
 
     ```
-    postgres=# SELECT ln(2.0);
+    openGauss=# SELECT ln(2.0);
             ln         
     -------------------
      .6931471805599453
@@ -562,7 +650,7 @@
     Example:
 
     ```
-    postgres=# SELECT log(100.0);
+    openGauss=# SELECT log(100.0);
             log         
     --------------------
      2.0000000000000000
@@ -578,7 +666,7 @@
     Example:
 
     ```
-    postgres=# SELECT log(2.0, 64.0);
+    openGauss=# SELECT log(2.0, 64.0);
             log         
     --------------------
      6.0000000000000000
@@ -594,7 +682,7 @@
     Example:
 
     ```
-    postgres=# SELECT mod(9,4);
+    openGauss=# SELECT mod(9,4);
      mod 
     -----
        1
@@ -602,7 +690,7 @@
     ```
 
     ```
-    postgres=# SELECT mod(9,0);
+    openGauss=# SELECT mod(9,0);
      mod 
     -----
        9
@@ -618,7 +706,7 @@
     Example:
 
     ```
-    postgres=# SELECT pi();
+    openGauss=# SELECT pi();
             pi
     ------------------
      3.14159265358979
@@ -634,7 +722,7 @@
     Example:
 
     ```
-    postgres=# SELECT power(9.0, 3.0);
+    openGauss=# SELECT power(9.0, 3.0);
             power         
     ----------------------
      729.0000000000000000
@@ -650,13 +738,13 @@
     Example:
 
     ```
-    postgres=# SELECT round(42.4);
+    openGauss=# SELECT round(42.4);
      round 
     -------
         42
     (1 row)
     
-    postgres=# SELECT round(42.6);
+    openGauss=# SELECT round(42.6);
      round 
     -------
         43
@@ -672,7 +760,7 @@
     Example:
 
     ```
-    postgres=# SELECT round(42.4382, 2);
+    openGauss=# SELECT round(42.4382, 2);
      round
     -------
      42.44
@@ -681,14 +769,14 @@
 
 -   setseed\(dp\)
 
-    Description: Sets seed for the following random\(\) invoking \(between -1.0 and 1.0, inclusive\).
+    Description: Sets seed for the following random\(\) invoking \(between –1.0 and 1.0, inclusive\).
 
     Return type: void
 
     Example:
 
     ```
-    postgres=# SELECT setseed(0.54823);
+    openGauss=# SELECT setseed(0.54823);
      setseed
     ---------
     
@@ -697,14 +785,14 @@
 
 -   sign\(x\)
 
-    Description: returns symbols of this parameter.
+    Description: Returns symbols of this parameter.
 
-    The return value type:-1 indicates negative. 0 indicates 0, and 1 indicates a positive number.
+    Return type:  **–1**  indicates minus.  **0**  indicates 0, and  **1**  indicates positive numbers.
 
     Example:
 
     ```
-    postgres=# SELECT sign(-8.4);
+    openGauss=# SELECT sign(-8.4);
      sign 
     ------
        -1
@@ -720,7 +808,7 @@
     Example:
 
     ```
-    postgres=# SELECT sin(1.57079);
+    openGauss=# SELECT sin(1.57079);
            sin        
     ------------------
      .999999999979986
@@ -731,12 +819,12 @@
 
     Description: Square root
 
-    Return type: same as the input
+    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
 
     Example:
 
     ```
-    postgres=# SELECT sqrt(2.0);
+    openGauss=# SELECT sqrt(2.0);
            sqrt        
     -------------------
      1.414213562373095
@@ -752,7 +840,7 @@
     Example:
 
     ```
-    postgres=# SELECT tan(20);
+    openGauss=# SELECT tan(20);
            tan        
     ------------------
      2.23716094422474
@@ -761,14 +849,14 @@
 
 -   trunc\(x\)
 
-    Description: truncates \(the integral part\).
+    Description: Truncates \(the integral part\).
 
     Return type: same as the input
 
     Example:
 
     ```
-    postgres=# SELECT trunc(42.8);
+    openGauss=# SELECT trunc(42.8);
      trunc 
     -------
         42
@@ -784,12 +872,216 @@
     Example:
 
     ```
-    postgres=# SELECT trunc(42.4382, 2);
+    openGauss=# SELECT trunc(42.4382, 2);
      trunc
     -------
      42.43
     (1 row)
     ```
+
+-   smgrne\(a smgr, b smgr\)
+
+    Description: Compares two integers of the smgr type to check whether they are different.
+
+    Return type: Boolean
+
+-   smgreq\(a smgr, b smgr\)
+
+    Description: Compares two integers of the smgr type to check whether they are equivalent.
+
+    Return type: Boolean
+
+-   int1abs
+
+    Description: Returns the absolute value of data of the uint8 type.
+
+    Parameter: tinyint
+
+    Return type: tinyint
+
+-   int1and
+
+    Description: Returns the bitwise AND result of two data records of the uint8 type.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1cmp
+
+    Description: Returns the comparison result of two data records of the uint8 type. If the value of the first parameter is greater,  **1**  is returned. If the value of the second parameter is greater,  **–1**  is returned. If they are the same,  **0**  is returned.
+
+    Parameter: tinyint, tinyint
+
+    Return type: integer
+
+-   int1div
+
+    Description: Returns the result of dividing two data records of the uint8 type. The result is of the float8 type.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1eq
+
+    Description: Compares two pieces of data of the uint8 type to check whether they are the same.
+
+    Parameter: tinyint, tinyint
+
+    Return type: Boolean
+
+-   int1ge
+
+    Description: Determines whether the value of the first parameter is greater than or equal to the value of the second parameter in two data records of the uint8 type.
+
+    Parameter: tinyint, tinyint
+
+    Return type: Boolean
+
+-   int1gt
+
+    Description: Performs a greater-than operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: Boolean
+
+-   int1larger
+
+    Description: Returns the maximum value of an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1le
+
+    Description: Performs a less-than or an equal-to operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: Boolean
+
+-   int1lt
+
+    Description: Performs a less-than operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: Boolean
+
+-   int1smaller
+
+    Description: Calculates the minimum value of an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1inc
+
+    Description: Unsigned 1-byte integer plus 1.
+
+    Parameter: tinyint
+
+    Return type: tinyint
+
+-   int1mi
+
+    Description: Performs a minus operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1mod
+
+    Description: Performs a reminder operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1mul
+
+    Description: Performs a multiplication operation on unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1ne
+
+    Description: Performs a not-equal-to operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: Boolean
+
+-   int1pl
+
+    Description: Performs an addition operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1um
+
+    Description: Returns an unsigned 2-byte integer after subtracting the opposite number from the unsigned 1-byte integer.
+
+    Parameter: tinyint
+
+    Return type: smallint
+
+-   int1xor
+
+    Description: Performs an exclusive OR operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   cash\_div\_int1
+
+    Description: Performs a division operation on the money type.
+
+    Parameter: money, tinyint
+
+    Return type: money
+
+-   cash\_mul\_int1
+
+    Description: Performs a multiplication operation on the money type.
+
+    Parameter: money, tinyint
+
+    Return type: money
+
+-   int1not
+
+    Description: Reverts binary bits of an unsigned 1-byte integer.
+
+    Parameter: tinyint
+
+    Return type: tinyint
+
+-   int1or
+
+    Description: Performs an OR operation on an unsigned 1-byte integer.
+
+    Parameter: tinyint, tinyint
+
+    Return type: tinyint
+
+-   int1shl
+
+    Description: Shifts an unsigned 1-byte integer leftwards by a specified number of bits.
+
+    Parameter: tinyint, integer
+
+    Return type: tinyint
 
 -   width\_bucket\(op numeric, b1 numeric, b2 numeric, count int\)
 
@@ -800,7 +1092,7 @@
     Example:
 
     ```
-    postgres=# SELECT width_bucket(5.35, 0.024, 10.06, 5);
+    openGauss=# SELECT width_bucket(5.35, 0.024, 10.06, 5);
      width_bucket
     --------------
                 3
@@ -816,7 +1108,7 @@
     Example:
 
     ```
-    postgres=# SELECT width_bucket(5.35, 0.024, 10.06, 5);
+    openGauss=# SELECT width_bucket(5.35, 0.024, 10.06, 5);
      width_bucket
     --------------
                 3

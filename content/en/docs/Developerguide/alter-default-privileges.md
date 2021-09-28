@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s4737e0edf6af464282c48f14a9d9c0f4"></a>
 
-Only the permissions for tables \(including views\), sequences, functions, and types can be changed.
+Currently, you can change only the permissions for tables \(including views\), sequences, functions, types, CMKs of encrypted databases, and CEKs.
 
 ## Syntax<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s760a84be01534119a13af50d2ff535aa"></a>
 
@@ -24,10 +24,14 @@ ALTER DEFAULT PRIVILEGES
       | grant_on_sequences_clause
       | grant_on_functions_clause
       | grant_on_types_clause
+      | grant_on_client_master_keys_clause
+      | grant_on_column_encryption_keys_clause
       | revoke_on_tables_clause
       | revoke_on_sequences_clause
       | revoke_on_functions_clause
       | revoke_on_types_clause
+      | revoke_on_client_master_keys_clause
+      | revoke_on_column_encryption_keys_clause
     ```
 
 
@@ -65,6 +69,24 @@ ALTER DEFAULT PRIVILEGES
     ```
     GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON TYPES 
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ]
+    ```
+
+-   **grant\_on\_client\_master\_keys\_clause**  grants permissions on CMKs.
+
+    ```
+    GRANT { { USAGE  | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON CLIENT_MASTER_KEYS
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ]
+    ```
+
+-   **grant\_on\_column\_encryption\_keys\_clause**  grants permissions on CEKs.
+
+    ```
+    GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON COLUMN_ENCRYPTION_KEYS 
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -112,6 +134,27 @@ ALTER DEFAULT PRIVILEGES
     ```
 
 
+-   **revoke\_on\_client\_master\_keys\_clause**  revokes permissions on CMKs.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON CLIENT_MASTER_KEYS 
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
+    ```
+
+-   **revoke\_on\_column\_encryption\_keys\_clause**  revokes permissions on CEKs.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
+        ON COLUMN_ENCRYPTION_KEYS
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
+    ```
+
+
 ## Parameter Description<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_sb713f37e7b9a40ad936d0bbba0449eb1"></a>
 
 -   **target\_role**
@@ -142,23 +185,23 @@ ALTER DEFAULT PRIVILEGES
 
 ```
 -- Grant the SELECT permission on all the tables (and views) in tpcds to every user.
-postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT SELECT ON TABLES TO PUBLIC;
+openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT SELECT ON TABLES TO PUBLIC;
 
 -- Create a common user jack.
-postgres=# CREATE USER jack PASSWORD 'xxxxxxxxx';
+openGauss=# CREATE USER jack PASSWORD 'xxxxxxxxx';
 
 -- Grant the INSERT permission on all the tables in tpcds to the user jack.
-postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT INSERT ON TABLES TO jack;
+openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT INSERT ON TABLES TO jack;
 
 -- Revoke the preceding permissions.
-postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE SELECT ON TABLES FROM PUBLIC; 
-postgres=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE INSERT ON TABLES FROM jack;
+openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE SELECT ON TABLES FROM PUBLIC; 
+openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE INSERT ON TABLES FROM jack;
 
 -- Delete user jack.
-postgres=# DROP USER jack;
+openGauss=# DROP USER jack;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
-[GRANT](grant.md)  and  [REVOKE](REVOKE.md)
+[GRANT](grant.md)  and  [REVOKE](revoke.md)
 

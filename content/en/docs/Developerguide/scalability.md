@@ -1,4 +1,4 @@
-# Scalability<a name="EN-US_TOPIC_0242370664"></a>
+# Scalability<a name="EN-US_TOPIC_0289900647"></a>
 
 The GIN interface has a high level of abstraction, requiring the access method implementer only to implement the semantics of the data type being accessed. The GIN layer itself takes care of concurrency, logging and searching the tree structure.
 
@@ -43,7 +43,7 @@ Optionally, an operator class for GIN can supply the following method:
     Compares a partial-match query key to an index key. Returns an integer whose sign indicates the result: less than zero means the index key does not match the query, but the index scan should continue; zero means that the index key matches the query; greater than zero indicates that the index scan should stop because no more matches are possible. The strategy number  **n**  of the operator that generated the partial match query is provided, in case its semantics are needed to determine when to end the scan. Also,  **extra\_data**  is the corresponding element of the extra-data array made by  **extractQuery**, or  **NULL**  if none. Null keys are never passed to this function.
 
 
-To support "partial match" queries, an operator class must provide the  **comparePartial**  method, and its  **extractQuery**  method must set the  **pmatch**  parameter when a partial-match query is encountered. For details, see  [Partial Match Algorithm](implementation.md#en-us_topic_0237122201_en-us_topic_0059778495_s9dc41ea95b9144c38d709b0b9a43fe9e).
+To support "partial match" queries, an operator class must provide the  **comparePartial**  method, and its  **extractQuery**  method must set the  **pmatch**  parameter when a partial-match query is encountered. For details, see  [Partial Match Algorithm](implementation.md#en-us_topic_0283137368_en-us_topic_0237122201_en-us_topic_0059778495_s9dc41ea95b9144c38d709b0b9a43fe9e).
 
 The actual data types of the various Datum values mentioned in this section vary depending on the operator class. The item values passed to  **extractValue**  are always of the operator class's input type, and all key values must be of the class's  **STORAGE**  type. The type of the query argument passed to  **extractQuery**, consistent and  **triConsistent**  is whatever is specified as the right-hand input type of the class member operator identified by the strategy number. This need not be the same as the item type, so long as key values of the correct type can be extracted from it.
 

@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>
 
-REFRESH MATERIALIZED VIEW refreshes the materialized view in full refresh mode.
+**REFRESH MATERIALIZED VIEW**  refreshes materialized views in full refresh mode.
 
 ## Precautions<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s3a6fd145e83b4e61a22dabdcf32ac282"></a>
 
@@ -22,24 +22,24 @@ REFRESH MATERIALIZED VIEW mv_name;
     Name of the materialized view to be refreshed.
 
 
-## Example<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
+## Examples<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
 
 ```
 -- Create an ordinary table.
-postgres=# CREATE TABLE my_table (c1 int, c2 int);
+openGauss=# CREATE TABLE my_table (c1 int, c2 int);
 -- Create a full materialized view.
-postgres=# CREATE MATERIALIZED VIEW my_mv AS SELECT * FROM my_table;
+openGauss=# CREATE MATERIALIZED VIEW my_mv AS SELECT * FROM my_table;
 -- Create an incremental materialized view.
-postgres=# CREATE INCREMENTAL MATERIALIZED VIEW my_imv AS SELECT * FROM my_table;
+openGauss=# CREATE INCREMENTAL MATERIALIZED VIEW my_imv AS SELECT * FROM my_table;
 -- Write data to the base table.
-postgres=# INSERT INTO my_table VALUES(1,1),(2,2);
+openGauss=# INSERT INTO my_table VALUES(1,1),(2,2);
 -- Refresh the full materialized view my_mv.
-postgres=# REFRESH MATERIALIZED VIEW my_mv;
+openGauss=# REFRESH MATERIALIZED VIEW my_mv;
 -- Fully refresh the incremental materialized view my_imv.
-postgres=# REFRESH MATERIALIZED VIEW my_imv;
+openGauss=# REFRESH MATERIALIZED VIEW my_imv;
 ```
 
-## Link<a name="en-us_topic_0283136612_section1922813315464"></a>
+## Helpful Links<a name="en-us_topic_0283136612_section1922813315464"></a>
 
-[ALTER MATERIALIZED VIEW](alter-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE TABLE](create-table.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md),  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md)
+[ALTER MATERIALIZED VIEW](alter-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE TABLE](create-table.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md), and  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md)
 

@@ -1,14 +1,14 @@
-# SET<a name="EN-US_TOPIC_0242370650"></a>
+# SET<a name="EN-US_TOPIC_0289899950"></a>
 
-## Function<a name="en-us_topic_0237122186_en-us_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>
+## Function<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>
 
 **SET**  modifies a run-time parameter.
 
-## Precautions<a name="en-us_topic_0237122186_en-us_topic_0059779029_s8cb7444b58764d99913a4cc61f397f9f"></a>
+## Precautions<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s8cb7444b58764d99913a4cc61f397f9f"></a>
 
 Most run-time parameters can be modified by executing  **SET**. Some parameters cannot be modified after a server or session starts.
 
-## Syntax<a name="en-us_topic_0237122186_en-us_topic_0059779029_s29888afda1844d6f9fc677f1b59b5b7d"></a>
+## Syntax<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s29888afda1844d6f9fc677f1b59b5b7d"></a>
 
 -   Set the system time zone.
 
@@ -45,7 +45,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122186_en-us_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3"></a>
+## Parameter Description<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3"></a>
 
 -   **SESSION**
 
@@ -71,7 +71,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
     Specifies the current schema.
 
-    Value range: an existing schema name. If the schema name does not exist, it will cause the CURRENT_SCHEMA value to be empty.
+    Value range: an existing schema name If the schema name does not exist, the value of  **CURRENT\_SCHEMA**  will be empty.
 
 -   **SCHEMA schema**
 
@@ -95,22 +95,25 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
     Specifies the name of a configurable run-time parameter. You can use  **SHOW ALL**  to view available run-time parameters.
 
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Some parameters that viewed by  **SHOW ALL**  cannot be set by  **SET**. For example,  **max\_datanodes**.
+
 -   **value**
 
     Specifies the new value of  **config\_parameter**. This parameter can be specified as string constants, identifiers, numbers, or comma-separated lists of these.  **DEFAULT**  can be written to indicate resetting the parameter to its default value.
 
 
-## Examples<a name="en-us_topic_0237122186_en-us_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
+## Examples<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
 
 ```
 -- Set the search path of a schema.
-postgres=# SET search_path TO tpcds, public;
+openGauss=# SET search_path TO tpcds, public;
 
 -- Set the date style to the traditional POSTGRES style (date placed before month).
-postgres=# SET datestyle TO postgres,dmy;
+openGauss=# SET datestyle TO postgres,dmy;
 ```
 
-## Helpful Links<a name="en-us_topic_0237122186_en-us_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
+## Helpful Links<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
 
 [RESET](reset.md)  and  [SHOW](show.md)
 

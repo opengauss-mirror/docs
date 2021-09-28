@@ -82,7 +82,7 @@ None
 
     Value range:
 
-    For details about the values of  **configuration\_parameter**  and  **value**, see  [SET](en-us_topic_0283136841.md).
+    For details about the values of  **configuration\_parameter**  and  **value**, see  [SET](set.md).
 
     **DEFAULT**: clears the value of  **configuration\_parameter**.  **configuration\_parameter**  will inherit the default value of the new session generated for the role.
 
@@ -95,21 +95,31 @@ None
     Value range:  **ALL**  indicates that the values of all parameters are cleared.
 
 -   **ACCOUNT LOCK | ACCOUNT UNLOCK**
-    -   **ACCOUNT LOCK**: locks an account to forbid login to databases.
-    -   **ACCOUNT UNLOCK**: unlocks an account to allow login to databases.
+    -   **ACCOUNT LOCK**: locks an account to prevent it from logging in to the database.
+    -   **ACCOUNT UNLOCK**: unlocks an account and allows the account to log in to the database.
 
 -   **PGUSER**
 
     In the current version, the  **PGUSER**  attribute of a role cannot be modified.
 
+-   **PASSWORD/IDENTIFIED BY **'password'
 
-For details about other parameters, see  [Parameter Description](en-us_topic_0283136858.md#en-us_topic_0237122112_en-us_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4)  in  **CREATE ROLE**.
+    Resets or changes the user password. To change users' own passwords, they need to enter the correct old passwords. Only the initial user, the system administrator \(sysadmin\), or users who have the permission to create users \(CREATEROLE\) can reset the password of a common user without entering the old password. The initial user can reset passwords of system administrators. System administrators cannot reset passwords of other system administrators.
 
-## Example<a name="en-us_topic_0283137195_en-us_topic_0237122068_en-us_topic_0059778744_s961f01774f174a5aa4e6f59dea50381a"></a>
+-   **EXPIRED**
 
-See  [Example:](en-us_topic_0283136858.md#en-us_topic_0237122112_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e)  in  **CREATE ROLE**.
+    Invalidates the password. Only initial users, system administrators \(sysadmin\), and users who have the permission to create users \(CREATEROLE\) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. The password of the initial user cannot be invalidated.
+
+    The user whose password is invalid can log in to the database but cannot perform the query operation. The query operation can be performed only after the password is changed or the administrator resets the password.
+
+
+For details about other parameters, see  [Parameter Description](create-role.md#en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s5a43ec5742a742089e2c302063de7fe4)  in  **CREATE ROLE**.
+
+## Examples<a name="en-us_topic_0283137195_en-us_topic_0237122068_en-us_topic_0059778744_s961f01774f174a5aa4e6f59dea50381a"></a>
+
+See  [Examples](create-role.md#en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s0dea2f90b8474387aff0ab3f366a611e)  in  **CREATE ROLE**.
 
 ## Helpful Links<a name="en-us_topic_0283137195_en-us_topic_0237122068_en-us_topic_0059778744_sb24012e0cec94bc3ba5c2c0e8997d052"></a>
 
-[CREATE ROLE](en-us_topic_0283136858.md),  [DROP ROLE](en-us_topic_0283136937.md), and  [SET](en-us_topic_0283136841.md)
+[CREATE ROLE](create-role.md),  [DROP ROLE](drop-role.md), and  [SET](set.md)
 

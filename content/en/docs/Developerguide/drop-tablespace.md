@@ -33,11 +33,11 @@ DROP TABLESPACE [ IF EXISTS ] tablespace_name;
 
 ## Examples<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_sbcb08a6a5edc433b951080b230808c35"></a>
 
-See  [Examples](en-us_topic_0283137328.md#en-us_topic_0237122120_en-us_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)  in  **CREATE TABLESPACE**.
+See  [Examples](create-tablespace.md#en-us_topic_0283137328_en-us_topic_0237122120_en-us_topic_0059777670_s4e5e97caa377440d87fad0d49b56323e)  in  **CREATE TABLESPACE**.
 
 ## Helpful Links<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_s5f1d0e75c90d465fadd639b26f10ab64"></a>
 
-[ALTER TABLESPACE](en-us_topic_0283137270.md)  and  [CREATE TABLESPACE](en-us_topic_0283137328.md)
+[ALTER TABLESPACE](alter-tablespace.md)  and  [CREATE TABLESPACE](create-tablespace.md)
 
 ## Suggestions<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_section29255108114255"></a>
 

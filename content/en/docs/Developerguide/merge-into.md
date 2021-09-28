@@ -1,18 +1,17 @@
-# MERGE INTO<a name="EN-US_TOPIC_0242370634"></a>
+# MERGE INTO<a name="EN-US_TOPIC_0289900297"></a>
 
-## Function<a name="en-us_topic_0237122170_section11462163155618"></a>
+## Function<a name="en-us_topic_0283137308_en-us_topic_0237122170_section11462163155618"></a>
 
 **MERGE INTO**  conditionally matches data in a target table with that in a source table. If data matches,  **UPDATE**  is executed on the target table; if data does not match,  **INSERT**  is executed. You can use this syntax to run  **UPDATE**  and  **INSERT**  at a time for convenience
 
-## Precautions<a name="en-us_topic_0237122170_section166351045574"></a>
+## Precautions<a name="en-us_topic_0283137308_en-us_topic_0237122170_section166351045574"></a>
 
--   You have the  **INSERT**  and  **UPDATE**  permissions for the target table and the  **SELECT**  permission for the source table.
--   **MERGE INTO**  cannot be executed during redistribution.
+You have the  **INSERT**  and  **UPDATE**  permissions for the target table and the  **SELECT**  permission for the source table.
 
-## Syntax<a name="en-us_topic_0237122170_section10551749579"></a>
+## Syntax<a name="en-us_topic_0283137308_en-us_topic_0237122170_section10551749579"></a>
 
 ```
-MERGE INTO table_name [ [ AS ] alias ]
+MERGE [/*+ plan_hint */] INTO table_name [ [ AS ] alias ]
 USING { { table_name | view_name } | subquery } [ [ AS ] alias ]
 ON ( condition )
 [
@@ -28,11 +27,15 @@ ON ( condition )
 ];
 ```
 
-## Parameter Description<a name="en-us_topic_0237122170_section1315653475"></a>
+## Parameter Description<a name="en-us_topic_0283137308_en-us_topic_0237122170_section1315653475"></a>
+
+-   **plan\_hint**  clause
+
+    Follows the  **MERGE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **MERGE**  statement block. For details, see  [Hint-based Tuning](en-us_topic_0289900289.md). In each statement, only the first  **/\*+** _plan\_hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
 -   **INTO**  clause
 
-    Specifies the target table that is being updated or has data being inserted. 
+    Specifies the target table that is being updated or has data being inserted.
 
     -   **talbe\_name**
 
@@ -42,12 +45,12 @@ ON ( condition )
 
         Specifies the alias of the target table.
 
-        Value range: a string. It must comply with the naming convention rule.
+        Value range: a string. It must comply with the naming convention.
 
 
 -   **USING**  clause
 
-    Specifies the source table, which can be a table, view, or subquery. If the target table is a replication table, the  **USING**  clause cannot contain non-replication tables.
+    Specifies the source table, which can be a table, view, or subquery.
 
 -   **ON**  clause
 
@@ -57,7 +60,7 @@ ON ( condition )
 
     Performs  **UPDATE**  if data in the source table matches that in the target table based on the condition.
 
-    Distribution keys cannot be updated. System catalogs and system columns cannot be updated.
+    System catalogs and system columns cannot be updated.
 
 -   **WHEN NOT MATCHED**  clause
 
@@ -78,37 +81,37 @@ ON ( condition )
     Specifies the conditions for the  **UPDATE**  and  **INSERT**  clauses. The two clauses will be executed only when the conditions are met. The default value can be used. System columns cannot be referenced in  **WHERE condition**.
 
 
-## Examples<a name="en-us_topic_0237122170_section3650125620712"></a>
+## Examples<a name="en-us_topic_0283137308_en-us_topic_0237122170_section3650125620712"></a>
 
 ```
 -- Create the target table products and source table newproducts, and insert data to them.
-postgres=# CREATE TABLE products
+openGauss=# CREATE TABLE products
 (
 product_id INTEGER,
 product_name VARCHAR2(60),
 category VARCHAR2(60)
 );
 
-postgres=# INSERT INTO products VALUES (1501, 'vivitar 35mm', 'electrncs');
-postgres=# INSERT INTO products VALUES (1502, 'olympus is50', 'electrncs');
-postgres=# INSERT INTO products VALUES (1600, 'play gym', 'toys');
-postgres=# INSERT INTO products VALUES (1601, 'lamaze', 'toys');
-postgres=# INSERT INTO products VALUES (1666, 'harry potter', 'dvd');
+openGauss=# INSERT INTO products VALUES (1501, 'vivitar 35mm', 'electrncs');
+openGauss=# INSERT INTO products VALUES (1502, 'olympus is50', 'electrncs');
+openGauss=# INSERT INTO products VALUES (1600, 'play gym', 'toys');
+openGauss=# INSERT INTO products VALUES (1601, 'lamaze', 'toys');
+openGauss=# INSERT INTO products VALUES (1666, 'harry potter', 'dvd');
 
-postgres=# CREATE TABLE newproducts
+openGauss=# CREATE TABLE newproducts
 (
 product_id INTEGER,
 product_name VARCHAR2(60),
 category VARCHAR2(60)
 );
 
-postgres=# INSERT INTO newproducts VALUES (1502, 'olympus camera', 'electrncs');
-postgres=# INSERT INTO newproducts VALUES (1601, 'lamaze', 'toys');
-postgres=# INSERT INTO newproducts VALUES (1666, 'harry potter', 'toys');
-postgres=# INSERT INTO newproducts VALUES (1700, 'wait interface', 'books');
+openGauss=# INSERT INTO newproducts VALUES (1502, 'olympus camera', 'electrncs');
+openGauss=# INSERT INTO newproducts VALUES (1601, 'lamaze', 'toys');
+openGauss=# INSERT INTO newproducts VALUES (1666, 'harry potter', 'toys');
+openGauss=# INSERT INTO newproducts VALUES (1700, 'wait interface', 'books');
 
 -- Run MERGE INTO.
-postgres=# MERGE INTO products p   
+openGauss=# MERGE INTO products p   
 USING newproducts np   
 ON (p.product_id = np.product_id)   
 WHEN MATCHED THEN  
@@ -118,7 +121,7 @@ WHEN NOT MATCHED THEN
 MERGE 4
 
 -- Query updates.
-postgres=# SELECT * FROM products ORDER BY product_id;
+openGauss=# SELECT * FROM products ORDER BY product_id;
  product_id |  product_name  | category  
 ------------+----------------+-----------
        1501 | vivitar 35mm   | electrncs
@@ -130,7 +133,7 @@ postgres=# SELECT * FROM products ORDER BY product_id;
 (6 rows)
 
 -- Delete the table.
-postgres=# DROP TABLE products;
-postgres=# DROP TABLE newproducts;
+openGauss=# DROP TABLE products;
+openGauss=# DROP TABLE newproducts;
 ```
 

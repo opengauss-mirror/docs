@@ -1,4 +1,4 @@
-# Trigger Functions<a name="EN-US_TOPIC_0242370463"></a>
+# Trigger Functions<a name="EN-US_TOPIC_0289900144"></a>
 
 -   pg\_get\_triggerdef\(oid\)
 
@@ -11,7 +11,7 @@
     Example:
 
     ```
-    postgres=# select pg_get_triggerdef(oid) from pg_trigger;
+    openGauss=# select pg_get_triggerdef(oid) from pg_trigger;
                                                                                          pg_get_triggerdef
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
@@ -33,14 +33,14 @@
     Example:
 
     ```
-    postgres=# select pg_get_triggerdef(oid,true) from pg_trigger;
+    openGauss=# select pg_get_triggerdef(oid,true) from pg_trigger;
                                                                                          pg_get_triggerdef
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
      CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN (new.a IS NOT NULL) EXECUTE PROCEDURE gtest_trigger_func()
     (2 rows)
     
-    postgres=# select pg_get_triggerdef(oid,false) from pg_trigger;
+    openGauss=# select pg_get_triggerdef(oid,false) from pg_trigger;
                                                                                          pg_get_triggerdef
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()

@@ -16,12 +16,12 @@ A partial cluster key \(PCK\) is a local clustering technology used for column-s
 
 ## Unique Constraints<a name="section958094516718"></a>
 
--   \[Notice\] Unique constraints can be used in row-store tables but not in column-store tables.
+-   \[Notice\] Unique constraints can be used in row-store tables and column-store tables.
 -   \[Proposal\] The constraint name should indicate that it is a unique constraint, for example,  **UNI**_Included columns_.
 
 ## Primary Key Constraints<a name="section3696271616719"></a>
 
--   \[Notice\] Primary key constraints can be used in row-store tables but not in column-store tables.
+-   \[Notice\] Primary key constraints can be used in row-store tables and column-store tables.
 -   \[Proposal\] The constraint name should indicate that it is a primary key constraint, for example,  **PK**_Included columns_.
 
 ## Check Constraints<a name="section45602286161148"></a>

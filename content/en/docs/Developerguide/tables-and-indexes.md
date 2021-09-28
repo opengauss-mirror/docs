@@ -1,4 +1,4 @@
-# Tables and Indexes<a name="EN-US_TOPIC_0242370482"></a>
+# Tables and Indexes<a name="EN-US_TOPIC_0289900304"></a>
 
 -   **[Searching a Table](searching-a-table.md)**  
 

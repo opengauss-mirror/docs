@@ -1,18 +1,18 @@
-# CURSOR<a name="EN-US_TOPIC_0242370592"></a>
+# CURSOR<a name="EN-US_TOPIC_0289900700"></a>
 
-## Function<a name="en-us_topic_0237122128_en-us_topic_0059778820_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>
+## Function<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>
 
 **CURSOR**  defines a cursor to retrieve a small number of rows at a time out of a larger query.
 
 To process SQL statements, the stored procedure process assigns a memory segment to store context association. Cursors are handles or pointers pointing to context regions. With cursors, stored procedures can control alterations in context regions.
 
-## Precautions<a name="en-us_topic_0237122128_en-us_topic_0059778820_s8f58e1ff1b9849b2845f196df6352f13"></a>
+## Precautions<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s8f58e1ff1b9849b2845f196df6352f13"></a>
 
 -   **CURSOR**  is used only in transaction blocks.
 -   Generally,  **CURSOR**  and  **SELECT**  both have text returns. Since data is stored in binary format in the system, the system needs to convert the data from the binary format to the text format. If data is returned in text format, client applications need to convert the data back to the binary format for processing.  **FETCH**  implements conversion between binary data and text data.
 -   Binary cursors should be used carefully. Text usually occupies larger space than binary data. A binary cursor returns internal binary data, which is easier to operate. A text cursor returns text, which is easier to retrieve and therefore reduces workload on the client. As an example, if a query returns a value of one from an integer column, you would get a string of 1 with a default cursor, whereas with a binary cursor you would get a 4-byte field containing the internal representation of the value \(in big-endian byte order\).
 
-## Syntax<a name="en-us_topic_0237122128_en-us_topic_0059778820_s77068dc6043742e086ef7bfea9075223"></a>
+## Syntax<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s77068dc6043742e086ef7bfea9075223"></a>
 
 ```
 CURSOR cursor_name
@@ -20,7 +20,7 @@ CURSOR cursor_name
     FOR query ;
 ```
 
-## Parameter Description<a name="en-us_topic_0237122128_en-us_topic_0059778820_safdd83ccfa754a3188de60962295adad"></a>
+## Parameter Description<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_safdd83ccfa754a3188de60962295adad"></a>
 
 -   **cursor\_name**
 
@@ -55,11 +55,11 @@ CURSOR cursor_name
     Value range:  **SELECT**  or  **VALUES**  clause
 
 
-## Examples<a name="en-us_topic_0237122128_en-us_topic_0059778820_s5587dfafbfee44509237e4eb718ccc55"></a>
+## Examples<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s5587dfafbfee44509237e4eb718ccc55"></a>
 
-See  [Examples](fetch.md#en-us_topic_0237122165_en-us_topic_0059778422_s1ee72832a27547e4949061a010e24578)  in  **FETCH**.
+See  [Examples](fetch.md#en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_s1ee72832a27547e4949061a010e24578)  in  **FETCH**.
 
-## Helpful Links<a name="en-us_topic_0237122128_en-us_topic_0059778820_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
+## Helpful Links<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
 [FETCH](fetch.md)
 

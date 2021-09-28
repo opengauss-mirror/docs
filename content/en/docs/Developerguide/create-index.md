@@ -2,24 +2,25 @@
 
 ## Function<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s10bd477b6f0a4b4687123335b61aa981"></a>
 
-**CREATE INDEX**  creates an index in a specified table.
+**CREATE INDEX-bak**  defines a new index.
 
 Indexes are primarily used to enhance database performance \(though inappropriate use can result in database performance deterioration\). You are advised to create indexes on:
 
 -   Columns that are often queried
--   Join conditions. For a query on joined columns, you are advised to create a composite index on the columns, for example,  **select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b**. You can create a composite index on columns  **a**  and  **b**  in table  **t1**.
+-   Join conditions. For a query on joined columns, you are advised to create a composite index on the columns, For example, for  **select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b**, you can create a composite index on columns  **a**  and  **b**  in table  **t1**.
 -   Columns having filter criteria \(especially scope criteria\) of a  **where**  clause
 -   Columns that appear after  **order by**,  **group by**, and  **distinct**
 
-Partitioned tables do not support concurrent index creation, partial index creation, and  **NULL FIRST**.
+Partitioned tables do not support concurrent index creation and partial index creation.
 
 ## Precautions<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
 -   Indexes consume storage and computing resources. Creating too many indexes has negative impact on database performance \(especially the performance of data import. Therefore, you are advised to import the data before creating indexes\). Therefore, create indexes only when they are necessary.
 -   All functions and operators used in an index definition must be immutable, that is, their results must depend only on their parameters and never on any outside influence \(such as the contents of another table or the current time\). This restriction ensures that the behavior of the index is well-defined. To use a customized function in an index expression or  **WHERE**  clause, remember to mark the function  **immutable**  when you create it.
 -   Partitioned table indexes are classified into LOCAL indexes and GLOBAL indexes. A LOCAL index binds to a specific partition, and a GLOBAL index corresponds to the entire partitioned table.
--   Column-store tables support B-tree and PSORT indexes. If the two indexes are used, you cannot create expression, partial indexes. PSORT does not support unique indexes but B-tree supports unique indexes.
+-   If the two indexes are used, you cannot create expression and partial indexes. If the PSORT index is used, you cannot create unique indexes. If the B-tree index is used, you can create unique indexes.
 -   Column-store tables support GIN indexes, rather than partial indexes and unique indexes. If GIN indexes are used, you can create expression indexes. However, an expression in this situation cannot contain empty splitters, empty columns, or multiple columns.
+-   Currently, only row-store table indexes, temporary table indexes, and local indexes of partitioned tables can be used as hash indexes. Multi-column indexes are not supported.
 
 ## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -50,7 +51,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
     Creates a unique index. In this way, the system checks whether new values are unique in the index column. Attempts to insert or update data which would result in duplicate entries will generate an error.
 
-    Currently, only B-tree supports  **UNIQUE**  indexes.
+    Currently, only the B-tree index supports unique indexes.
 
 -   **CONCURRENTLY**
 
@@ -58,17 +59,17 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
     -   This option can only specify a name of one index.
     -   The  **CREATE INDEX**  statement can be run within a transaction, but  **CREATE INDEX CONCURRENTLY**  cannot.
-    -   Column-store tables，temporary tables and partitioned tables do not support  **CREATE INDEX CONCURRENTLY**.
+    -   Column-store tables, partitioned tables, and temporary tables do not support  **CREATE INDEX CONCURRENTLY**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   This keyword is specified when an index is created. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.  
-    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the creation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.  
-    >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **CREATE INDEX CONCURRENTLY**  again.  
-    >-   After the second scan, index creation must wait for any transaction that holds a snapshot earlier than the snapshot taken by the second scan to terminate. In addition, the ShareUpdateExclusiveLock \(level 4\) added during index creation conflicts with a lock whose level is greater than or equal to 4. Therefore, when such an index is created, the system is prone to hang or deadlock. For example:  
-    >    -      If two sessions create an index concurrently for the same table, a deadlock occurs.  
-    >    -      If a session creates an index concurrently for a table and another session drops a table, a deadlock occurs.  
-    >    -      There are three sessions. Session 1 locks table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Session 3 writes data to table  **a**. Before the transaction of session 1 is committed, session 2 is blocked.  
-    >    -      The transaction isolation level is set to repeatable read \(read committed by default\). Two sessions are started. Session 1 writes data to table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Before the transaction of session 1 is committed, session 2 is blocked.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   This keyword is specified when an index is created. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
+    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the creation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
+    >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **CREATE INDEX CONCURRENTLY**  again.
+    >-   After the second scan, index creation must wait for any transaction that holds a snapshot earlier than the snapshot taken by the second scan to terminate. In addition, the ShareUpdateExclusiveLock \(level 4\) added during index creation conflicts with a lock whose level is greater than or equal to 4. Therefore, when such an index is created, the system is prone to hang or deadlock. For example:
+    >    -   If two sessions create an index concurrently for the same table, a deadlock occurs.
+    >    -   If a session creates an index concurrently for a table and another session drops a table, a deadlock occurs.
+    >    -   There are three sessions. Session 1 locks table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Session 3 writes data to table  **a**. Before the transaction of session 1 is committed, session 2 is blocked.
+    >    -   The transaction isolation level is set to repeatable read \(read committed by default\). Two sessions are started. Session 1 writes data to table  **a**  and does not commit it. Session 2 creates an index concurrently for table  **b**. Before the transaction of session 1 is committed, session 2 is blocked.
 
 -   **schema\_name**
 
@@ -94,12 +95,14 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
     Value range:
 
-    -   **btree**: B-tree indexes store key values of data in a B+ tree structure. This structure helps users to quickly search for indexes. B-tree supports comparison queries with a scope specified.
+    -   **btree**: B-tree indexes store key values of data in a B+ tree structure. This structure helps users to quickly search for indexes. B-tree indexes support comparison queries with ranges specified.
+    -   **hash**: Hash indexes use hash functions to hash index keywords. Only simple equivalence comparison can be processed. This value is applicable to scenarios where index values are long.
     -   **gin**: GIN indexes are reverse indexes and can process values that contain multiple keys \(for example, arrays\).
-    -   **gist**: GiST indexes are suitable for the set data type and multidimensional data types, such as geometric and geographic data types.The currently supported data types are box, point, poly, circle, tsvector, tsquery, range.
+    -   **gist**: GiST indexes are suitable for the set data type and multidimensional data types, such as geometric and geographic data types. The following data types are supported: box, point, poly, circle, tsvector, tsquery, and range.
     -   **Psort**: psort index. It is used to perform partial sort on column-store tables.
+    -   **ubtree**: Multi-version B-tree index used only for Ustore tables. The index page contains transaction information and can be recycled.
 
-    Row-store tables support the following index types:  **btree**  \(default\),  **gin**, and  **gist**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**.
+    Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support the following index type:  **ubtree**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Column-store tables support GIN indexes only for the tsvector type. That is, the input parameter for creating a column-store GIN index must be the return value of the  **to\_tsvector**  function. This method is commonly used for GIN indexes.
@@ -108,7 +111,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
     Specifies the name of the column on which an index is to be created.
 
-    Multiple columns can be specified if the index method supports multi-column indexes. A maximum of 32 columns can be specified.
+    Multiple columns can be specified if the index method supports multi-column indexes. A global index supports a maximum of 31 columns, and other indexes support a maximum of 32 columns.
 
 -   **expression**
 
@@ -120,7 +123,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
 -   **COLLATE collation**
 
-    Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used.
+    Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used. You can run the  **select \* from pg\_collation**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
 -   **opclass**
 
@@ -178,7 +181,7 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
         Value range: 64–_INT\_MAX_. The unit is KB.
 
-        Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is 4 MB.
+        Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is  **4**.
 
 
 -   **TABLESPACE tablespace\_name**
@@ -210,8 +213,8 @@ Partitioned tables do not support concurrent index creation, partial index creat
 
 ```
 -- Create the tpcds.ship_mode_t1 table.
-postgres=# create schema tpcds;
-postgres=# CREATE TABLE tpcds.ship_mode_t1
+openGauss=# create schema tpcds;
+openGauss=# CREATE TABLE tpcds.ship_mode_t1
 (
     SM_SHIP_MODE_SK           INTEGER               NOT NULL,
     SM_SHIP_MODE_ID           CHAR(16)              NOT NULL,
@@ -222,40 +225,40 @@ postgres=# CREATE TABLE tpcds.ship_mode_t1
 ) 
 ;
 
--- Create a common index on the SM_SHIP_MODE_SK column in the tpcds.ship_mode_t1 table.
-postgres=# CREATE UNIQUE INDEX ds_ship_mode_t1_index1 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK);
+-- Create a common unique index on the SM_SHIP_MODE_SK column in the tpcds.ship_mode_t1 table.
+openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index1 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK);
 
 -- Create a B-tree index on the SM_SHIP_MODE_SK column in the tpcds.ship_mode_t1 table.
-postgres=# CREATE INDEX ds_ship_mode_t1_index4 ON tpcds.ship_mode_t1 USING btree(SM_SHIP_MODE_SK);
+openGauss=# CREATE INDEX ds_ship_mode_t1_index4 ON tpcds.ship_mode_t1 USING btree(SM_SHIP_MODE_SK);
 
 -- Create an expression index on the SM_CODE column in the tpcds.ship_mode_t1 table:
-postgres=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_CODE,1 ,4));
+openGauss=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_CODE,1 ,4));
 
 -- Create a partial index on the SM_SHIP_MODE_SK column where SM_SHIP_MODE_SK is greater than 10 in the tpcds.ship_mode_t1 table.
-postgres=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) WHERE SM_SHIP_MODE_SK>10;
+openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) WHERE SM_SHIP_MODE_SK>10;
 
 -- Rename an existing index.
-postgres=# ALTER INDEX tpcds.ds_ship_mode_t1_index1 RENAME TO ds_ship_mode_t1_index5;
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index1 RENAME TO ds_ship_mode_t1_index5;
 
 -- Set the index as unusable.
-postgres=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 UNUSABLE;
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 UNUSABLE;
 
 -- Rebuild an index.
-postgres=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 REBUILD;
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 REBUILD;
 
 -- Delete an existing index.
-postgres=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
+openGauss=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
 
 -- Delete the table.
-postgres=# DROP TABLE tpcds.ship_mode_t1;
+openGauss=# DROP TABLE tpcds.ship_mode_t1;
 
 -- Create a tablespace.
-postgres=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
-postgres=# CREATE TABLESPACE example2 RELATIVE LOCATION 'tablespace2/tablespace_2';
-postgres=# CREATE TABLESPACE example3 RELATIVE LOCATION 'tablespace3/tablespace_3';
-postgres=# CREATE TABLESPACE example4 RELATIVE LOCATION 'tablespace4/tablespace_4';
+openGauss=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
+openGauss=# CREATE TABLESPACE example2 RELATIVE LOCATION 'tablespace2/tablespace_2';
+openGauss=# CREATE TABLESPACE example3 RELATIVE LOCATION 'tablespace3/tablespace_3';
+openGauss=# CREATE TABLESPACE example4 RELATIVE LOCATION 'tablespace4/tablespace_4';
 -- Create the tpcds.customer_address_p1 table.
-postgres=# CREATE TABLE tpcds.customer_address_p1
+openGauss=# CREATE TABLE tpcds.customer_address_p1
 (
     CA_ADDRESS_SK             INTEGER               NOT NULL,
     CA_ADDRESS_ID             CHAR(16)              NOT NULL,
@@ -280,9 +283,9 @@ PARTITION BY RANGE(CA_ADDRESS_SK)
 )
 ENABLE ROW MOVEMENT;
 -- Create the partitioned table index ds_customer_address_p1_index1 without specifying the index partition name.
-postgres=# CREATE INDEX ds_customer_address_p1_index1 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL; 
+openGauss=# CREATE INDEX ds_customer_address_p1_index1 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL; 
 -- Create the partitioned table index ds_customer_address_p1_index2 with the name of the index partition specified.
-postgres=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL
+openGauss=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL
 (
     PARTITION CA_ADDRESS_SK_index1,
     PARTITION CA_ADDRESS_SK_index2 TABLESPACE example3,
@@ -290,41 +293,41 @@ postgres=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_
 ) 
 TABLESPACE example2;
 
--- Create a GLOBAL partitioned index.
-postgres=CREATE INDEX ds_customer_address_p1_index3 ON tpcds.customer_address_p1(CA_ADDRESS_ID) GLOBAL;
+-- Create a global partitioned index.
+openGauss=CREATE INDEX ds_customer_address_p1_index3 ON tpcds.customer_address_p1(CA_ADDRESS_ID) GLOBAL;
 
--- If no keyword is specified, a GLOBAL partitioned index is created by default.
-postgres=CREATE INDEX ds_customer_address_p1_index4 ON tpcds.customer_address_p1(CA_ADDRESS_ID);
+-- If no keyword is specified, a global partitioned index is created by default.
+openGauss=CREATE INDEX ds_customer_address_p1_index4 ON tpcds.customer_address_p1(CA_ADDRESS_ID);
 
 -- Change the tablespace of the partitioned table index CA_ADDRESS_SK_index2 to example1.
-postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index2 TABLESPACE example1;
+openGauss=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index2 TABLESPACE example1;
 
 -- Change the tablespace of the partitioned table index CA_ADDRESS_SK_index3 to example2.
-postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index3 TABLESPACE example2;
+openGauss=# ALTER INDEX tpcds.ds_customer_address_p1_index2 MOVE PARTITION CA_ADDRESS_SK_index3 TABLESPACE example2;
 
 -- Rename a partitioned table index.
-postgres=# ALTER INDEX tpcds.ds_customer_address_p1_index2 RENAME PARTITION CA_ADDRESS_SK_index1 TO CA_ADDRESS_SK_index4;
+openGauss=# ALTER INDEX tpcds.ds_customer_address_p1_index2 RENAME PARTITION CA_ADDRESS_SK_index1 TO CA_ADDRESS_SK_index4;
 
 -- Delete the created indexes and the partitioned table.
-postgres=# DROP INDEX tpcds.ds_customer_address_p1_index1;
-postgres=# DROP INDEX tpcds.ds_customer_address_p1_index2;
-postgres=# DROP TABLE tpcds.customer_address_p1;
+openGauss=# DROP INDEX tpcds.ds_customer_address_p1_index1;
+openGauss=# DROP INDEX tpcds.ds_customer_address_p1_index2;
+openGauss=# DROP TABLE tpcds.customer_address_p1;
 -- Delete the tablespace.
-postgres=# DROP TABLESPACE example1;
-postgres=# DROP TABLESPACE example2;
-postgres=# DROP TABLESPACE example3;
-postgres=# DROP TABLESPACE example4;
+openGauss=# DROP TABLESPACE example1;
+openGauss=# DROP TABLESPACE example2;
+openGauss=# DROP TABLESPACE example3;
+openGauss=# DROP TABLESPACE example4;
 
 -- Create a column-store table and its GIN index:
-postgres=# create table cgin_create_test(a int, b text) with (orientation = column);
+openGauss=# create table cgin_create_test(a int, b text) with (orientation = column);
 CREATE TABLE
-postgres=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
+openGauss=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
 CREATE INDEX
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>
 
-[ALTER INDEX](en-us_topic_0283137124.md)  and  [DROP INDEX](en-us_topic_0283136794.md)
+[ALTER INDEX](alter-index.md)  and  [DROP INDEX](drop-index.md)
 
 ## Suggestions<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_section3814797010859"></a>
 
@@ -333,15 +336,14 @@ CREATE INDEX
     You are advised to create indexes on:
 
     -   Columns that are often queried
-    -   Join conditions. For a query on joined columns, you are advised to create a composite index on the columns, for example,  **select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b**. You can create a composite index on columns  **a**  and  **b**  in table  **t1**.
+    -   Join conditions. For a query on joined columns, you are advised to create a composite index on the columns, For example, for  **select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b**, you can create a composite index on columns  **a**  and  **b**  in table  **t1**.
     -   Columns having filter criteria \(especially scope criteria\) of a  **where**  clause
     -   Columns that appear after  **order by**,  **group by**, and  **distinct**
 
     Constraints:
 
-    -   Partitioned tables do not support partial indexes or the  **NULL FIRST**  feature.
+    -   Partial indexes cannot be created in a partitioned table.
 
-    -   A unique LOCAL index to be created must include a partitioned column and all the partition keys. This constraint does not apply to GLOBAL indexes.
     -   When a GLOBAL index is created on a partitioned table, the following constraints apply:
         -   Expression indexes and partial indexes are not supported.
         -   Row-store tables are not supported.
@@ -349,6 +351,6 @@ CREATE INDEX
 
     -   In the same attribute column, the LOCAL index and GLOBAL index of a partition cannot coexist.
     -   GLOBAL index supports a maximum of 31 columns.
-    -   If the alter statement does not have UPDATE GLOBAL INDEX, then the original GLOBAL index will be invalid, and other indexes will be used for query; if the alter statement has UPDATE GLOBAL INDEX, then the original GLOBAL index is still valid and the index function is correct.
+    -   If the  **ALTER**  statement does not contain  **UPDATE GLOBAL INDEX**, the original GLOBAL index is invalid. In this case, other indexes are used for query. If the ALTER statement contains UPDATE GLOBAL INDEX, the original GLOBAL index is still valid and the index function is correct.
 
 

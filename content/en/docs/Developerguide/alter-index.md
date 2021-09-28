@@ -157,9 +157,9 @@ Only the index owner or a user who has the INDEX permission on the table where t
 
 ## Examples<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sc18e85a8e57649469b874f56ded3847b"></a>
 
-See  [Examples](en-us_topic_0283136578.md#en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
+See  [Examples](create-index.md#en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362)  in  **CREATE INDEX**.
 
 ## Helpful Links<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 
-[CREATE INDEX](en-us_topic_0283136578.md),  [DROP INDEX](en-us_topic_0283136794.md), and  [REINDEX](en-us_topic_0283137442.md)
+[CREATE INDEX](create-index.md),  [DROP INDEX](drop-index.md), and  [REINDEX](reindex.md)
 

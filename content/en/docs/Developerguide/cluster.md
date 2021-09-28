@@ -1,6 +1,6 @@
-# CLUSTER<a name="EN-US_TOPIC_0242370556"></a>
+# CLUSTER<a name="EN-US_TOPIC_0289899899"></a>
 
-## Function<a name="en-us_topic_0237122092_en-us_topic_0059778981_s0e572999489a4677bdb5354183b3efbf"></a>
+## Function<a name="en-us_topic_0283137352_en-us_topic_0237122092_en-us_topic_0059778981_s0e572999489a4677bdb5354183b3efbf"></a>
 
 **CLUSTER**  is used to cluster a table based on an index.
 
@@ -14,21 +14,17 @@ When a table is clustered, openGauss records which index the table was clustered
 
 When a table is being clustered, an  **ACCESS EXCLUSIVE**  lock is acquired on it. This prevents any other database operations \(both read and write\) from being performed on the table until the  **CLUSTER**  is finished.
 
-## Precautions<a name="en-us_topic_0237122092_en-us_topic_0059778981_s4e7b14ca57a84f719386c5788cc36e67"></a>
+## Precautions<a name="en-us_topic_0283137352_en-us_topic_0237122092_en-us_topic_0059778981_s4e7b14ca57a84f719386c5788cc36e67"></a>
 
-Only row-store B-tree indexes support  **CLUSTER**.
+-   Only row-store B-tree indexes support  **CLUSTER**.
+-   In the case where you are accessing single rows randomly within a table, the actual order of the data in the table is unimportant. However, if you tend to access some data more than others, and there is an index that groups them together, it is helpful by using  **CLUSTER**. If you are requesting a range of indexed values from a table, or a single indexed value that has multiple rows that match,  **CLUSTER**  will help because once the index identifies the table page for the first row that matches, all other rows that match are probably already on the same table page, and so you save disk accesses and speed up the query.
+-   When an index scan is used, a temporary copy of the table is created that contains the table data in the index order. Temporary copies of each index on the table are created as well. Therefore, you need free space on disk at least equal to the sum of the table size and the total index size. 
+-   Because  **CLUSTER**  remembers which indexes are clustered, one can cluster the tables manually the first time, then set up a time like  **VACUUM**  without any parameters, so that the desired tables are periodically reclustered.
+-   Because the optimizer records statistics about the ordering of tables, it is advisable to run  **ANALYZE**  on the newly clustered table. Otherwise, the optimizer might make poor choices of query plans. 
+-   **CLUSTER**  cannot be executed in transactions.
+-   If the  **xc\_maintenance\_mode**  parameter is not enabled, the CLUSTER operation will skip all system catalogs.
 
-In the case where you are accessing single rows randomly within a table, the actual order of the data in the table is unimportant. However, if you tend to access some data more than others, and there is an index that groups them together, it is helpful by using  **CLUSTER**. If you are requesting a range of indexed values from a table, or a single indexed value that has multiple rows that match,  **CLUSTER**  will help because once the index identifies the table page for the first row that matches, all other rows that match are probably already on the same table page, and so you save disk accesses and speed up the query.
-
-When an index scan is used, a temporary copy of the table is created that contains the table data in the index order. Temporary copies of each index on the table are created as well. Therefore, you need free space on disk at least equal to the sum of the table size and the total index size. 
-
-Because  **CLUSTER**  remembers which indexes are clustered, one can cluster the tables manually the first time, then set up a time like  **VACUUM**  without any parameters, so that the desired tables are periodically reclustered.
-
-Because the optimizer records statistics about the ordering of tables, it is advisable to run  **ANALYZE**  on the newly clustered table. Otherwise, the optimizer might make poor choices of query plans. 
-
-**CLUSTER**  cannot be executed in transactions.
-
-## Syntax<a name="en-us_topic_0237122092_en-us_topic_0059778981_s893ab8c9210b4276b975b47546c2f17e"></a>
+## Syntax<a name="en-us_topic_0283137352_en-us_topic_0237122092_en-us_topic_0059778981_s893ab8c9210b4276b975b47546c2f17e"></a>
 
 -   Cluster a table.
 
@@ -49,7 +45,7 @@ Because the optimizer records statistics about the ordering of tables, it is adv
     ```
 
 
-## Parameter Description<a name="en-us_topic_0237122092_en-us_topic_0059778981_s28dde0419d7548e78e12c7de2cb64fa8"></a>
+## Parameter Description<a name="en-us_topic_0283137352_en-us_topic_0237122092_en-us_topic_0059778981_s28dde0419d7548e78e12c7de2cb64fa8"></a>
 
 -   **VERBOSE**
 
@@ -74,11 +70,11 @@ Because the optimizer records statistics about the ordering of tables, it is adv
     Value range: an existing partition name
 
 
-## Examples<a name="en-us_topic_0237122092_en-us_topic_0059778981_sdb050484e7b9488899733d8718cd9dad"></a>
+## Examples<a name="en-us_topic_0283137352_en-us_topic_0237122092_en-us_topic_0059778981_sdb050484e7b9488899733d8718cd9dad"></a>
 
 ```
 -- Create a partitioned table.
-postgres=# CREATE TABLE tpcds.inventory_p1
+openGauss=# CREATE TABLE tpcds.inventory_p1
 (
     INV_DATE_SK               INTEGER               NOT NULL,
     INV_ITEM_SK               INTEGER               NOT NULL,
@@ -97,25 +93,25 @@ PARTITION BY RANGE(INV_DATE_SK)
 );
 
 -- Create an index named ds_inventory_p1_index1.
-postgres=# CREATE INDEX ds_inventory_p1_index1 ON tpcds.inventory_p1 (INV_ITEM_SK) LOCAL;
+openGauss=# CREATE INDEX ds_inventory_p1_index1 ON tpcds.inventory_p1 (INV_ITEM_SK) LOCAL;
 
 -- Cluster the tpcds.inventory_p1 table.
-postgres=# CLUSTER tpcds.inventory_p1 USING ds_inventory_p1_index1;
+openGauss=# CLUSTER tpcds.inventory_p1 USING ds_inventory_p1_index1;
 
 -- Cluster the p3 partition.
-postgres=# CLUSTER tpcds.inventory_p1 PARTITION (p3) USING ds_inventory_p1_index1;
+openGauss=# CLUSTER tpcds.inventory_p1 PARTITION (p3) USING ds_inventory_p1_index1;
 
 -- Cluster the tables that can be clustered in the database.
-postgres=# CLUSTER;
+openGauss=# CLUSTER;
 
 -- Delete the index.
-postgres=# DROP INDEX tpcds.ds_inventory_p1_index1;
+openGauss=# DROP INDEX tpcds.ds_inventory_p1_index1;
 
--- Drop the partitioned table.
-postgres=# DROP TABLE tpcds.inventory_p1;
+-- Delete the partitioned table.
+openGauss=# DROP TABLE tpcds.inventory_p1;
 ```
 
-## Suggestions<a name="en-us_topic_0237122092_en-us_topic_0059778981_section8558510163121"></a>
+## Suggestions<a name="en-us_topic_0283137352_en-us_topic_0237122092_en-us_topic_0059778981_section8558510163121"></a>
 
 -   cluster
     -   It is recommended that you run  **ANALYZE**  on a newly clustered table. Otherwise, the optimizer might make poor choices of query plans. 

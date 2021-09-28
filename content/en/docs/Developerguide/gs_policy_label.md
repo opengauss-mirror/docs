@@ -15,25 +15,32 @@ Fully Qualified Domain Name \(FQDN\) identifies an absolute path of a database r
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p497463145916"><a name="p497463145916"></a><a name="p497463145916"></a>labelname</p>
+<tbody><tr id="row1637335161513"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p237315516153"><a name="p237315516153"></a><a name="p237315516153"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p163731551191515"><a name="p163731551191515"></a><a name="p163731551191515"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p17373105191516"><a name="p17373105191516"></a><a name="p17373105191516"></a>Row identifier (hidden attribute, which must be specified)</p>
+</td>
+</tr>
+<tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p497463145916"><a name="p497463145916"></a><a name="p497463145916"></a>labelname</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p1187332611532"><a name="p1187332611532"></a><a name="p1187332611532"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p6481690534"><a name="p6481690534"></a><a name="p6481690534"></a>Specifies the resource label name.</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p6481690534"><a name="p6481690534"></a><a name="p6481690534"></a>Resource label name</p>
 </td>
 </tr>
 <tr id="row10460542185211"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p426131210591"><a name="p426131210591"></a><a name="p426131210591"></a>labeltype</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p10187125355311"><a name="p10187125355311"></a><a name="p10187125355311"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p7160121618462"><a name="p7160121618462"></a><a name="p7160121618462"></a>Resource tag type.  Currently, the value is <strong id="b1959954616124"><a name="b1959954616124"></a><a name="b1959954616124"></a>RESOURCE</strong>.</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p7160121618462"><a name="p7160121618462"></a><a name="p7160121618462"></a>Resource tag type. Currently, the value is <strong id="b1959954616124"><a name="b1959954616124"></a><a name="b1959954616124"></a>RESOURCE</strong>.</p>
 </td>
 </tr>
 <tr id="row22511356153413"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p164556169595"><a name="p164556169595"></a><a name="p164556169595"></a>fqdnnamespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p2251185683420"><a name="p2251185683420"></a><a name="p2251185683420"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p725145693419"><a name="p725145693419"></a><a name="p725145693419"></a>OID of a namespace to which an identified database resource belongs.</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p725145693419"><a name="p725145693419"></a><a name="p725145693419"></a>OID of a namespace to which an identified database resource belongs</p>
 </td>
 </tr>
 <tr id="row9460154275216"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p913332025910"><a name="p913332025910"></a><a name="p913332025910"></a>fqdnid</p>
@@ -54,7 +61,7 @@ Fully Qualified Domain Name \(FQDN\) identifies an absolute path of a database r
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p4288271597"><a name="p4288271597"></a><a name="p4288271597"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0281327145911"><a name="p0281327145911"></a><a name="p0281327145911"></a>Type of an identified database resource.</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p0281327145911"><a name="p0281327145911"></a><a name="p0281327145911"></a>Type of the identified database resource, for example, schema, table, column, or view</p>
 </td>
 </tr>
 </tbody>

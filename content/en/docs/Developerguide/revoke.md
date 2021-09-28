@@ -38,13 +38,13 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified sequence.
+-   Revoke the permission on a specified sequence. The  **LARGE**  field is optional. The recycling statement does not distinguish whether the sequence is LARGE.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
         { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
         | ALL [ PRIVILEGES ] }
-        ON { [ SEQUENCE ] sequence_name [, ...]
+        ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -61,6 +61,66 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
+-   Revoke the permission on a specified domain.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { USAGE | ALL [ PRIVILEGES ] }
+        ON DOMAIN domain_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the specified CMK permission.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [PRIVILEGES] }
+        ON CLIENT_MASTER_KEYS client_master_keys_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the specified CEK permission.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | DROP } [, ...] | ALL [PRIVILEGES]}
+        ON COLUMN_ENCRYPTION_KEYS column_encryption_keys_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the permission on a specified directory.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { READ | WRITE } [, ...] | ALL [ PRIVILEGES ] }
+        ON DIRECTORY directory_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the permission on a specified external data source.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { USAGE | ALL [ PRIVILEGES ] }
+        ON FOREIGN DATA WRAPPER fdw_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the permission on a specified external server.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+        ON FOREIGN SERVER server_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
 -   Revoke the permission on a specified function.
 
     ```
@@ -68,6 +128,16 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
         ON { FUNCTION {function_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
            | ALL FUNCTIONS IN SCHEMA schema_name [, ...] }
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the permission on a specified procedural language.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { USAGE | ALL [ PRIVILEGES ] }
+        ON LANGUAGE lang_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
     ```
@@ -102,6 +172,46 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
+-   Revoke the permission on a specified type.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+        ON TYPE type_name [, ...]
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the permission on a data source object.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { USAGE | ALL [PRIVILEGES] }
+        ON DATA SOURCE src_name [, ...]
+        FROM {[GROUP] role_name | PUBLIC} [, ...]
+       [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the permission on a directory object.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { { READ | WRITE } [, ...] | ALL [PRIVILEGES] }
+       ON DIRECTORY directory_name [, ...]
+       FROM {[GROUP] role_name | PUBLIC} [, ...]
+       [ CASCADE | RESTRICT ];
+    ```
+
+-   Revoke the permission on a package object.
+
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+       { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [PRIVILEGES] }
+       ON PACKAGE package_name [, ...]
+       FROM {[GROUP] role_name | PUBLIC} [, ...]
+       [ CASCADE | RESTRICT ];
+    ```
+
 -   Revoke permissions from a role.
 
     ```
@@ -117,49 +227,11 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
     ```
 
 
--   Revoke the permission on a data source object.
-
-    ```
-    REVOKE {USAGE | ALL [PRIVILEGES]}
-        ON DATA SOURCE src_name [, ...]
-        FROM {[GROUP] role_name | PUBLIC} [, ...];
-    ```
-
-
--   Revoke the specified CMK permission.
-
-    ```
-    REVOKE [ GRANT OPTION FOR ]
-        {USAGE | DROP | ALL [PRIVILEGES]}
-        ON {  CLIENT_MASTER_KEYS  client_master_keys_name [, ...]
-              FROM { [ GROUP ] role_name | PUBLIC } [, ...]
-        [ CASCADE | RESTRICT ];
-    ```
-
--   Revoke the specified CEK permission.
-
-    ```
-    REVOKE [ GRANT OPTION FOR ]
-        {USAGE | DROP | ALL [PRIVILEGES]}
-        ON {  COLUMN_ENCRYPTION_KEYS column_encryption_keys_name [, ...]
-              FROM { [ GROUP ] role_name | PUBLIC } [, ...]
-        [ CASCADE | RESTRICT ];
-    ```
-
--   Revoke the permission on a directory object.
-
-    ```
-    REVOKE {READ|WRITE| ALL [PRIVILEGES]}
-       ON DIRECTORY src_name [, ...]
-       FROM {[GROUP] role_name | PUBLIC} [, ...] [WITH GRANT OPTION];
-    ```
-
-
 ## Parameter Description<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s54fe58f3f55f4965a6b9370f9edebfdf"></a>
 
 The keyword  **PUBLIC**  indicates an implicitly defined group that has all roles.
 
-For details about the permission types and parameters, see  [Parameter Description](en-us_topic_0283137177.md#en-us_topic_0237122166_en-us_topic_0059778755_s3557d45c54124d86bc3f619358d806f8)  in GRANT.
+For details about permission types and parameters, see  [Parameter Description](grant.md#en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s3557d45c54124d86bc3f619358d806f8)  in section "GRANT".
 
 Permissions of a role include the permissions directly granted to the role, permissions inherited from the parent role, and permissions granted to  **PUBLIC**. Therefore, revoking the  **SELECT**  permission for an object from  **PUBLIC**  does not necessarily mean that the  **SELECT**  permission for the object has been revoked from all roles, because the  **SELECT**  permission directly granted to roles and inherited from parent roles remains. Similarly, if the  **SELECT**  permission is revoked from a user but is not revoked from  **PUBLIC**, the user can still run the  **SELECT**  statement.
 
@@ -173,7 +245,7 @@ If the role executing  **REVOKE**  holds permissions indirectly via more than on
 
 ## Examples<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s82ec0652acdd4e6091abc851b909926d"></a>
 
-See  [Examples](en-us_topic_0283137177.md#en-us_topic_0237122166_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447)  in GRANT.
+See  [Examples](grant.md#en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447)  in section "GRANT".
 
 ## Helpful Links<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s865f60db543c4043bd5fa9b678295c5a"></a>
 

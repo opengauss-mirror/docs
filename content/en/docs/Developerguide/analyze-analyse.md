@@ -45,7 +45,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   When collecting statistics about multiple columns, set GUC parameter  [default\_statistics\_target](en-us_topic_0283137690.md#en-us_topic_0237124719_en-us_topic_0059779049_se18c86fcdf5e4a22870f71187436d815)  to a negative value to sample data in percentage.
+    >-   When collecting statistics about multiple columns, set the GUC parameter  [default\_statistics\_target](en-us_topic_0289900235.md#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_se18c86fcdf5e4a22870f71187436d815)  to a negative value to sample data in percentage.
     >-   The statistics about a maximum of 32 columns can be collected at a time.
     >-   You are not allowed to collect statistics about multiple columns in system catalogs.
 
@@ -133,7 +133,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
 -- Create a table.
 
 ```
-postgres=# CREATE TABLE customer_info
+openGauss=# CREATE TABLE customer_info
 (
 WR_RETURNED_DATE_SK       INTEGER                       ,
 WR_RETURNED_TIME_SK       INTEGER                       ,
@@ -146,7 +146,7 @@ WR_REFUNDED_CUSTOMER_SK   INTEGER
 -- Create a partitioned table. 
 
 ```
-postgres=# CREATE TABLE customer_par
+openGauss=# CREATE TABLE customer_par
 (
 WR_RETURNED_DATE_SK       INTEGER                       ,
 WR_RETURNED_TIME_SK       INTEGER                       ,
@@ -166,14 +166,14 @@ ENABLE ROW MOVEMENT;
 -- Run  **ANALYZE**  to update statistics.
 
 ```
-postgres=# ANALYZE customer_info;
-postgres=# ANALYZE customer_par;
+openGauss=# ANALYZE customer_info;
+openGauss=# ANALYZE customer_par;
 ```
 
--- Run  **ANALYZE VERBOSE**  statement to update statistics and display table information.
+-- Run the  **ANALYZE VERBOSE**  statement to update statistics and display table information.
 
 ```
-postgres=# ANALYZE VERBOSE customer_info;
+openGauss=# ANALYZE VERBOSE customer_info;
 INFO:  analyzing "cstore.pg_delta_3394584009"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info" inheritance tree(cn_5002 pid=53078)
@@ -186,7 +186,7 @@ ANALYZE
 -- Delete the table.
 
 ```
-postgres=# DROP TABLE customer_info;
-postgres=# DROP TABLE customer_par;
+openGauss=# DROP TABLE customer_info;
+openGauss=# DROP TABLE customer_par;
 ```
 

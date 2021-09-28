@@ -54,11 +54,11 @@ COMMENT ON
 
 -   **agg\_name**
 
-    Specifies the new name of an aggregation function.
+    Specifies the new name of an aggregate function.
 
 -   **agg\_type**
 
-    Specifies the data type of the aggregation function parameters.
+    Specifies the data type of the aggregate function parameters.
 
 -   **source\_type**
 
@@ -118,7 +118,7 @@ COMMENT ON
 ## Examples<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_s57de72dc01404015a1a8a938238ad917"></a>
 
 ```
-postgres=# CREATE TABLE tpcds.customer_demographics_t2
+openGauss=# CREATE TABLE tpcds.customer_demographics_t2
 (
     CD_DEMO_SK                INTEGER               NOT NULL,
     CD_GENDER                 CHAR(1)                       ,
@@ -134,21 +134,21 @@ WITH (ORIENTATION = COLUMN,COMPRESSION=MIDDLE)
 ;
 
 -- Comment out the tpcds.customer_demographics_t2.cd_demo_sk column.
-postgres=# COMMENT ON COLUMN tpcds.customer_demographics_t2.cd_demo_sk IS 'Primary key of customer demographics table.';
+openGauss=# COMMENT ON COLUMN tpcds.customer_demographics_t2.cd_demo_sk IS 'Primary key of customer demographics table.';
 
 -- Create a view consisting of rows with c_customer_sk less than 150.
-postgres=# CREATE VIEW tpcds.customer_details_view_v2 AS
+openGauss=# CREATE VIEW tpcds.customer_details_view_v2 AS
     SELECT *
     FROM tpcds.customer
     WHERE c_customer_sk < 150;
 
 -- Comment out the tpcds.customer_details_view_v2 view.
-postgres=# COMMENT ON VIEW tpcds.customer_details_view_v2 IS 'View of customer detail';
+openGauss=# COMMENT ON VIEW tpcds.customer_details_view_v2 IS 'View of customer detail';
 
 -- Delete the view.
-postgres=# DROP VIEW tpcds.customer_details_view_v2;
+openGauss=# DROP VIEW tpcds.customer_details_view_v2;
 
 -- Delete the tpcds.customer_demographics_t2 table.
-postgres=# DROP TABLE tpcds.customer_demographics_t2;
+openGauss=# DROP TABLE tpcds.customer_demographics_t2;
 ```
 

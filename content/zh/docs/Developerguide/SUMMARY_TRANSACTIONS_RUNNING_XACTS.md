@@ -1,6 +1,6 @@
 # SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS<a name="ZH-CN_TOPIC_0000001153389738"></a>
 
-显示集群中各个CN节点运行事务的信息，字段内容和transactions\_running\_xacts一致。
+显示集群中各个节点运行事务的信息，字段内容和transactions\_running\_xacts一致。
 
 **表 1**  SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS字段
 

@@ -4,7 +4,7 @@
 
 **ALTER MATERIALIZED VIEW**  changes multiple auxiliary attributes of an existing materialized view.
 
-Statements and actions that can be used for ALTER MATERIALIZED VIEW are a subset of ALTER TABLE and have the same meaning when used for materialized views. For details, see  [ALTER TABLE](alter-table.md).
+Statements and actions that can be used for  **ALTER MATERIALIZED VIEW**  are a subset of  **ALTER TABLE**  and have the same meaning when used for materialized views. For details, see  [ALTER TABLE](alter-table.md).
 
 ## Precautions<a name="en-us_topic_0283137307_en-us_topic_0237122084_en-us_topic_0059778428_s5a554e8d15974449b7ffffee772b46f2"></a>
 
@@ -63,14 +63,14 @@ Statements and actions that can be used for ALTER MATERIALIZED VIEW are a subset
     Specifies the new name of a materialized view.
 
 
-## Example<a name="en-us_topic_0283137307_en-us_topic_0237122084_en-us_topic_0059778428_s3d5088f2366242cf9ef14a91c2081248"></a>
+## Examples<a name="en-us_topic_0283137307_en-us_topic_0237122084_en-us_topic_0059778428_s3d5088f2366242cf9ef14a91c2081248"></a>
 
 ```
 -- Rename the materialized view foo to bar.
-postgres=# ALTER MATERIALIZED VIEW foo RENAME TO bar;
+openGauss=# ALTER MATERIALIZED VIEW foo RENAME TO bar;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137307_en-us_topic_0237122084_en-us_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
-[CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md),  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md),  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)
+[CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md),  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md), and  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)
 

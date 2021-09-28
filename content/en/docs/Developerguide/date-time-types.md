@@ -1,6 +1,6 @@
-# Date/Time<a name="EN-US_TOPIC_0289901014"></a>
+# Date/Time Types<a name="EN-US_TOPIC_0289901014"></a>
 
-[Table 1](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_table60826369)  lists the date/time types supported by openGauss. For the operators and built-in functions of the types, see  [Date and Time Processing Functions and Operators](en-us_topic_0289900496.md).
+[Table 1](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_table60826369)  lists the date/time types supported by openGauss. For the operators and built-in functions of the types, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >If the time format of another database is different from that of openGauss, modify the value of the  **DateStyle**  parameter to keep them consistent.
@@ -18,7 +18,7 @@
 </thead>
 <tbody><tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_row39478001"><td class="cellrowborder" valign="top" width="27.939999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p43601517"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p43601517"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p43601517"></a>DATE</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a>Date and time, In compatibility mode A, it will be implicitly converted to TIMESTAMP(0) WITHOUT TIME ZONE.</p>
+<td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p42061985"></a>Date and time.</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.27%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p17093938"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p17093938"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p17093938"></a>4 bytes (The actual storage space is 8 bytes.)</p>
 </td>
@@ -58,7 +58,7 @@
 <tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_r95d7e93d231644798765e24537017ac9"><td class="cellrowborder" valign="top" width="27.939999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aeb9be387a9434127a1a1a1a6a7c9c841"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aeb9be387a9434127a1a1a1a6a7c9c841"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aeb9be387a9434127a1a1a1a6a7c9c841"></a>SMALLDATETIME</p>
 </td>
 <td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a355e0d78a29c4c46a1d8ff5c92264ccb"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a355e0d78a29c4c46a1d8ff5c92264ccb"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a355e0d78a29c4c46a1d8ff5c92264ccb"></a>Date and time (without time zone).</p>
-<p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5b7de3a29efb47188e9614c9b4f16550"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5b7de3a29efb47188e9614c9b4f16550"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5b7de3a29efb47188e9614c9b4f16550"></a>The precision level is minute. 31s to 59s are rounded into 1 minute.</p>
+<p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5b7de3a29efb47188e9614c9b4f16550"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5b7de3a29efb47188e9614c9b4f16550"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5b7de3a29efb47188e9614c9b4f16550"></a>The precision is minute. A duration between 30s and 60s is rounded into 1 minute.</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.27%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a341a944ffc3b4bf7807cfefd281a850e"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a341a944ffc3b4bf7807cfefd281a850e"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a341a944ffc3b4bf7807cfefd281a850e"></a>8 bytes</p>
 </td>
@@ -74,8 +74,8 @@
 <tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_r510306560a9b4dedba4f22ac119ce7b5"><td class="cellrowborder" valign="top" width="27.939999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a3b305cd085dc496eb55f451259913501"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a3b305cd085dc496eb55f451259913501"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a3b305cd085dc496eb55f451259913501"></a>INTERVAL [FIELDS] [ (p) ]</p>
 </td>
 <td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a02ba213b5cd5417692dfc7b47757195a"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a02ba213b5cd5417692dfc7b47757195a"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a02ba213b5cd5417692dfc7b47757195a"></a>Time interval.</p>
-<a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_u165b042828164958ae4bcb1afa043c27"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_u165b042828164958ae4bcb1afa043c27"></a><ul id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_u165b042828164958ae4bcb1afa043c27"><li>fields: <strong id="b4503153519109"><a name="b4503153519109"></a><a name="b4503153519109"></a>YEAR</strong>, <strong id="b1633413851017"><a name="b1633413851017"></a><a name="b1633413851017"></a>MONTH</strong>, <strong id="b1316284017101"><a name="b1316284017101"></a><a name="b1316284017101"></a>DAY</strong>, <strong id="b117134221017"><a name="b117134221017"></a><a name="b117134221017"></a>HOUR</strong>, <strong id="b5166184451015"><a name="b5166184451015"></a><a name="b5166184451015"></a>MINUTE</strong>, <strong id="b9281174641016"><a name="b9281174641016"></a><a name="b9281174641016"></a>SECOND</strong>, <strong id="b1132875315109"><a name="b1132875315109"></a><a name="b1132875315109"></a>DAY TO HOUR</strong>, <strong id="b949719579109"><a name="b949719579109"></a><a name="b949719579109"></a>DAY TO MINUTE</strong>, <strong id="b12872010111"><a name="b12872010111"></a><a name="b12872010111"></a>DAY TO SECOND</strong>, <strong id="b1388617112"><a name="b1388617112"></a><a name="b1388617112"></a>HOUR TO MINUTE</strong>, <strong id="b64701791113"><a name="b64701791113"></a><a name="b64701791113"></a>HOUR TO SECOND</strong>, and <strong id="b423918130114"><a name="b423918130114"></a><a name="b423918130114"></a>MINUTE TO SECOND</strong>.</li></ul>
-<a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ud7c50b05903b4a4f88e913092f63e4b7"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ud7c50b05903b4a4f88e913092f63e4b7"></a><ul id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ud7c50b05903b4a4f88e913092f63e4b7"><li><strong id="b58311727111113"><a name="b58311727111113"></a><a name="b58311727111113"></a>p</strong>: indicates the precision of seconds. The value ranges from 0 to 6. <strong id="b11595103821115"><a name="b11595103821115"></a><a name="b11595103821115"></a>p</strong> takes effect only when fields are <strong id="b354144117111"><a name="b354144117111"></a><a name="b354144117111"></a>SECOND</strong>, <strong id="b5967124311116"><a name="b5967124311116"></a><a name="b5967124311116"></a>DAY TO SECOND</strong>, <strong id="b17425114691112"><a name="b17425114691112"></a><a name="b17425114691112"></a>HOUR TO SECOND</strong>, or <strong id="b113715141219"><a name="b113715141219"></a><a name="b113715141219"></a>MINUTE TO SECOND</strong>. The digit 0 at the end of a decimal number is not displayed.</li></ul>
+<a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_u165b042828164958ae4bcb1afa043c27"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_u165b042828164958ae4bcb1afa043c27"></a><ul id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_u165b042828164958ae4bcb1afa043c27"><li><strong id="b16138163415911"><a name="b16138163415911"></a><a name="b16138163415911"></a>FIELDS</strong>: <strong id="b4503153519109"><a name="b4503153519109"></a><a name="b4503153519109"></a>YEAR</strong>, <strong id="b1633413851017"><a name="b1633413851017"></a><a name="b1633413851017"></a>MONTH</strong>, <strong id="b1316284017101"><a name="b1316284017101"></a><a name="b1316284017101"></a>DAY</strong>, <strong id="b117134221017"><a name="b117134221017"></a><a name="b117134221017"></a>HOUR</strong>, <strong id="b5166184451015"><a name="b5166184451015"></a><a name="b5166184451015"></a>MINUTE</strong>, <strong id="b9281174641016"><a name="b9281174641016"></a><a name="b9281174641016"></a>SECOND</strong>, <strong id="b1132875315109"><a name="b1132875315109"></a><a name="b1132875315109"></a>DAY TO HOUR</strong>, <strong id="b949719579109"><a name="b949719579109"></a><a name="b949719579109"></a>DAY TO MINUTE</strong>, <strong id="b12872010111"><a name="b12872010111"></a><a name="b12872010111"></a>DAY TO SECOND</strong>, <strong id="b1388617112"><a name="b1388617112"></a><a name="b1388617112"></a>HOUR TO MINUTE</strong>, <strong id="b64701791113"><a name="b64701791113"></a><a name="b64701791113"></a>HOUR TO SECOND</strong>, or <strong id="b423918130114"><a name="b423918130114"></a><a name="b423918130114"></a>MINUTE TO SECOND</strong>.</li></ul>
+<a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ud7c50b05903b4a4f88e913092f63e4b7"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ud7c50b05903b4a4f88e913092f63e4b7"></a><ul id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ud7c50b05903b4a4f88e913092f63e4b7"><li><strong id="b58311727111113"><a name="b58311727111113"></a><a name="b58311727111113"></a>p</strong>: indicates the precision of seconds. The value ranges from 0 to 6. <strong id="b11595103821115"><a name="b11595103821115"></a><a name="b11595103821115"></a>p</strong> takes effect only when <strong id="b533855611916"><a name="b533855611916"></a><a name="b533855611916"></a>FIELDS</strong> is <strong id="b354144117111"><a name="b354144117111"></a><a name="b354144117111"></a>SECOND</strong>, <strong id="b5967124311116"><a name="b5967124311116"></a><a name="b5967124311116"></a>DAY TO SECOND</strong>, <strong id="b17425114691112"><a name="b17425114691112"></a><a name="b17425114691112"></a>HOUR TO SECOND</strong>, or <strong id="b113715141219"><a name="b113715141219"></a><a name="b113715141219"></a>MINUTE TO SECOND</strong>. The digit 0 at the end of a decimal number is not displayed.</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="26.27%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a94a50b28e3cd453fbae7368c766674a0"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a94a50b28e3cd453fbae7368c766674a0"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a94a50b28e3cd453fbae7368c766674a0"></a>12 bytes</p>
 </td>
@@ -83,7 +83,7 @@
 <tr id="en-us_topic_0283136973_en-us_topic_0237121952_row144417485416"><td class="cellrowborder" valign="top" width="27.939999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_p4445748144"><a name="en-us_topic_0283136973_en-us_topic_0237121952_p4445748144"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_p4445748144"></a>reltime</p>
 </td>
 <td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_p660982815360"><a name="en-us_topic_0283136973_en-us_topic_0237121952_p660982815360"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_p660982815360"></a>Relative time interval. The format is as follows:</p>
-<p id="en-us_topic_0283136973_en-us_topic_0237121952_p844554814414"><a name="en-us_topic_0283136973_en-us_topic_0237121952_p844554814414"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_p844554814414"></a><em id="i19453124121419"><a name="i19453124121419"></a><a name="i19453124121419"></a>X</em> years <em id="i285015280143"><a name="i285015280143"></a><a name="i285015280143"></a>X</em> mons <em id="i18341233121418"><a name="i18341233121418"></a><a name="i18341233121418"></a>X</em> days <em id="i21781840141418"><a name="i21781840141418"></a><a name="i21781840141418"></a>XX:XX:XX</em></p>
+<p id="en-us_topic_0283136973_en-us_topic_0237121952_p844554814414"><a name="en-us_topic_0283136973_en-us_topic_0237121952_p844554814414"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_p844554814414"></a><em id="i381264810346"><a name="i381264810346"></a><a name="i381264810346"></a>X</em> years <em id="i1820194814347"><a name="i1820194814347"></a><a name="i1820194814347"></a>X</em> months <em id="i138218489349"><a name="i138218489349"></a><a name="i138218489349"></a>X</em> days <em id="i1822184816344"><a name="i1822184816344"></a><a name="i1822184816344"></a>XX:XX:XX</em></p>
 <p id="p95863372713"><a name="p95863372713"></a><a name="p95863372713"></a>The Julian calendar is used. It specifies that a year has 365.25 days and a month has 30 days. The relative time interval needs to be calculated based on the input value. The output format is POSTGRES.</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.27%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_p344517481945"><a name="en-us_topic_0283136973_en-us_topic_0237121952_p344517481945"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_p344517481945"></a>4 bytes</p>
@@ -93,7 +93,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="45.79%" headers="mcps1.2.4.1.2 "><p id="p45611014517"><a name="p45611014517"></a><a name="p45611014517"></a>Date and time. The format is as follows:</p>
 <p id="p991812291082"><a name="p991812291082"></a><a name="p991812291082"></a>YYYY-MM-DD hh:mm:ss+timezone</p>
-<p id="p340410363717"><a name="p340410363717"></a><a name="p340410363717"></a>The value range is from 1901-12-13 20:45:53 GMT to 2038-01-19 03:14:04 GMT. The precision level is second.</p>
+<p id="p340410363717"><a name="p340410363717"></a><a name="p340410363717"></a>The value range is from 1901-12-13 20:45:53 GMT to 2038-01-18 23:59:59 GMT. The precision is second.</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.27%" headers="mcps1.2.4.1.3 "><p id="p05671019520"><a name="p05671019520"></a><a name="p05671019520"></a>4 bytes</p>
 </td>
@@ -101,80 +101,79 @@
 </tbody>
 </table>
 
-
-Examples
+Example:
 
 ```
 -- Create a table.
-postgres=# CREATE TABLE date_type_tab(coll date);
+openGauss=# CREATE TABLE date_type_tab(coll date);
 
 -- Insert data.
-postgres=# INSERT INTO date_type_tab VALUES (date '12-10-2010');
+openGauss=# INSERT INTO date_type_tab VALUES (date '12-10-2010');
 
 -- View data.
-postgres=# SELECT * FROM date_type_tab;
+openGauss=# SELECT * FROM date_type_tab;
         coll         
 ---------------------
  2010-12-10 00:00:00
 (1 row)
 
--- Drop the table.
-postgres=# DROP TABLE date_type_tab;
+-- Delete the table.
+openGauss=# DROP TABLE date_type_tab;
 
 -- Create a table.
-postgres=# CREATE TABLE time_type_tab (da time without time zone ,dai time with time zone,dfgh timestamp without time zone,dfga timestamp with time zone, vbg smalldatetime);
+openGauss=# CREATE TABLE time_type_tab (da time without time zone ,dai time with time zone,dfgh timestamp without time zone,dfga timestamp with time zone, vbg smalldatetime);
 
 -- Insert data.
-postgres=# INSERT INTO time_type_tab VALUES ('21:21:21','21:21:21 pst','2010-12-12','2013-12-11 pst','2003-04-12 04:05:06');
+openGauss=# INSERT INTO time_type_tab VALUES ('21:21:21','21:21:21 pst','2010-12-12','2013-12-11 pst','2003-04-12 04:05:06');
 
 -- View data.
-postgres=# SELECT * FROM time_type_tab;
+openGauss=# SELECT * FROM time_type_tab;
     da    |     dai     |        dfgh         |          dfga          |         vbg         
 ----------+-------------+---------------------+------------------------+---------------------
  21:21:21 | 21:21:21-08 | 2010-12-12 00:00:00 | 2013-12-11 16:00:00+08 | 2003-04-12 04:05:00
 (1 row)
 
--- Drop the table.
-postgres=# DROP TABLE time_type_tab;
+-- Delete the table.
+openGauss=# DROP TABLE time_type_tab;
 
 -- Create a table.
-postgres=# CREATE TABLE day_type_tab (a int,b INTERVAL DAY(3) TO SECOND (4)); 
+openGauss=# CREATE TABLE day_type_tab (a int,b INTERVAL DAY(3) TO SECOND (4)); 
 
 -- Insert data.
-postgres=# INSERT INTO day_type_tab VALUES (1, INTERVAL '3' DAY);
+openGauss=# INSERT INTO day_type_tab VALUES (1, INTERVAL '3' DAY);
 
 -- View data.
-postgres=# SELECT * FROM day_type_tab;
+openGauss=# SELECT * FROM day_type_tab;
  a |   b    
 ---+--------
  1 | 3 days
 (1 row)
 
--- Drop the table.
-postgres=# DROP TABLE day_type_tab;
+-- Delete the table.
+openGauss=# DROP TABLE day_type_tab;
 
 -- Create a table.
-postgres=# CREATE TABLE year_type_tab(a int, b interval year (6));
+openGauss=# CREATE TABLE year_type_tab(a int, b interval year (6));
 
 -- Insert data.
-postgres=# INSERT INTO year_type_tab VALUES(1,interval '2' year);
+openGauss=# INSERT INTO year_type_tab VALUES(1,interval '2' year);
 
 -- View data.
-postgres=# SELECT * FROM year_type_tab;
+openGauss=# SELECT * FROM year_type_tab;
  a |    b    
 ---+---------
  1 | 2 years
 (1 row)
 
--- Drop the table.
-postgres=# DROP TABLE year_type_tab;
+-- Delete the table.
+openGauss=# DROP TABLE year_type_tab;
 ```
 
 ## Date Input<a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_s6223e3ec408141de8c5d3f3ef9b6d842"></a>
 
 Date and time input is accepted in almost any reasonable formats, including ISO 8601, SQL-compatible, and traditional POSTGRES. The system allows you to customize the sequence of day, month, and year in the date input. Set the  **DateStyle**  parameter to  **MDY**  to select month-day-year interpretation,  **DMY**  to select day-month-year interpretation, or  **YMD**  to select year-month-day interpretation.
 
-Remember that any date or time literal input needs to be enclosed with single quotes, and the syntax is as follows:
+Remember that any date or time literal input needs to be enclosed with single quotation marks \(''\), and the syntax is as follows:
 
 type \[ \( p \) \] 'value'
 
@@ -272,46 +271,46 @@ The  **p**  that can be selected in the precision statement is an integer, indic
 </tbody>
 </table>
 
-Examples
+Example:
 
 ```
 -- Create a table.
-postgres=# CREATE TABLE date_type_tab(coll date);
+openGauss=# CREATE TABLE date_type_tab(coll date);
 
 -- Insert data.
-postgres=# INSERT INTO date_type_tab VALUES (date '12-10-2010');
+openGauss=# INSERT INTO date_type_tab VALUES (date '12-10-2010');
 
 -- View data.
-postgres=# SELECT * FROM date_type_tab;
+openGauss=# SELECT * FROM date_type_tab;
         coll         
 ---------------------
  2010-12-10 00:00:00
 (1 row)
 
 -- View the date format.
-postgres=# SHOW datestyle;
+openGauss=# SHOW datestyle;
  DateStyle 
 -----------
  ISO, MDY
 (1 row)
 
 -- Set the date format.
-postgres=# SET datestyle='YMD';
+openGauss=# SET datestyle='YMD';
 SET
 
 -- Insert data.
-postgres=# INSERT INTO date_type_tab VALUES(date '2010-12-11');
+openGauss=# INSERT INTO date_type_tab VALUES(date '2010-12-11');
 
 -- View data.
-postgres=# SELECT * FROM date_type_tab;
+openGauss=# SELECT * FROM date_type_tab;
         coll         
 ---------------------
  2010-12-10 00:00:00
  2010-12-11 00:00:00
 (2 rows)
 
--- Drop the table.
-postgres=# DROP TABLE date_type_tab;
+-- Delete the table.
+openGauss=# DROP TABLE date_type_tab;
 ```
 
 ## Time<a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_s6bc199a3d64b43999223aa9a9281a2d1"></a>
@@ -322,7 +321,7 @@ If a time zone is specified in the input for  **TIME WITHOUT TIME ZONE**, it is 
 
 For details about the time input types, see  [Table 3](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_tc5d1089552ca4fb2a9f5ba27767a26b6). For details about time zone input types, see  [Table 4](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_te78a582bdc984cd3b5ecac5502f7793e).
 
-**Table  3**  Time input types
+**Table  3**  Time input
 
 <a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_tc5d1089552ca4fb2a9f5ba27767a26b6"></a>
 <table><thead align="left"><tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_r2fd7649d3da443eaa4645cda936dd630"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aac511385849348aaa068350112bd20a9"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aac511385849348aaa068350112bd20a9"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aac511385849348aaa068350112bd20a9"></a>Example</p>
@@ -394,7 +393,7 @@ For details about the time input types, see  [Table 3](#en-us_topic_0283136973_e
 </tbody>
 </table>
 
-**Table  4**  Time zone input types
+**Table  4**  Time zone input
 
 <a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_te78a582bdc984cd3b5ecac5502f7793e"></a>
 <table><thead align="left"><tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_r9cf868ff810946afa9edd67e70e3b5b6"><th class="cellrowborder" valign="top" width="40.98%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p662145115048"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p662145115048"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p662145115048"></a>Example</p>
@@ -431,22 +430,22 @@ For details about the time input types, see  [Table 3](#en-us_topic_0283136973_e
 </tbody>
 </table>
 
-Examples
+Example:
 
 ```
-postgres=# SELECT time '04:05:06';
+openGauss=# SELECT time '04:05:06';
    time   
 ----------
  04:05:06
 (1 row)
 
-postgres=# SELECT time '04:05:06 PST';
+openGauss=# SELECT time '04:05:06 PST';
    time   
 ----------
  04:05:06
 (1 row)
 
-postgres=# SELECT time with time zone '04:05:06 PST';
+openGauss=# SELECT time with time zone '04:05:06 PST';
    timetz    
 -------------
  04:05:06-08
@@ -470,7 +469,7 @@ The special values supported by openGauss are converted to common date/time valu
 </thead>
 <tbody><tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_rf40e35b26a2a4204a8b339a6d952735e"><td class="cellrowborder" valign="top" width="17.599999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a773379708415436cbf4346aab05b521a"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a773379708415436cbf4346aab05b521a"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a773379708415436cbf4346aab05b521a"></a>epoch</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a302741ec5ca74b8380d096dc96e675d4"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a302741ec5ca74b8380d096dc96e675d4"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a302741ec5ca74b8380d096dc96e675d4"></a>date, timestamp</p>
+<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a302741ec5ca74b8380d096dc96e675d4"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a302741ec5ca74b8380d096dc96e675d4"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a302741ec5ca74b8380d096dc96e675d4"></a>date and timestamp</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.96999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a04e838536c1d4aa8996fab736a86f407"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a04e838536c1d4aa8996fab736a86f407"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a04e838536c1d4aa8996fab736a86f407"></a>1970-01-01 00:00:00+00 (Unix system time zero)</p>
 </td>
@@ -491,28 +490,28 @@ The special values supported by openGauss are converted to common date/time valu
 </tr>
 <tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_r654c4b1141bf4068961731e266eb3ff0"><td class="cellrowborder" valign="top" width="17.599999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5dc309f4fd604a8881ce507ae8cd3083"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5dc309f4fd604a8881ce507ae8cd3083"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5dc309f4fd604a8881ce507ae8cd3083"></a>now</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a7b27503fc2bf4146b8b514f6e1b9622a"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a7b27503fc2bf4146b8b514f6e1b9622a"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a7b27503fc2bf4146b8b514f6e1b9622a"></a>date, time, timestamp</p>
+<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a7b27503fc2bf4146b8b514f6e1b9622a"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a7b27503fc2bf4146b8b514f6e1b9622a"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a7b27503fc2bf4146b8b514f6e1b9622a"></a>date, time, and timestamp</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.96999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p510099115023"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p510099115023"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p510099115023"></a>Start time of the current transaction</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_r1c3086c78bef42169155feea5f0e2e43"><td class="cellrowborder" valign="top" width="17.599999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ae4c1d8e4e7674545be6091067d0a2411"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ae4c1d8e4e7674545be6091067d0a2411"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ae4c1d8e4e7674545be6091067d0a2411"></a>today</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p404532515023"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p404532515023"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p404532515023"></a>date, timestamp</p>
+<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p404532515023"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p404532515023"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_p404532515023"></a>date and timestamp</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.96999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5d622e4587b64044bbac098cfed3d870"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5d622e4587b64044bbac098cfed3d870"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a5d622e4587b64044bbac098cfed3d870"></a>Midnight today</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_rebe511e0b6dd4f4d89f73fde6ddf1af5"><td class="cellrowborder" valign="top" width="17.599999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ac7c26c073039404690f36cba47dec27b"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ac7c26c073039404690f36cba47dec27b"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_ac7c26c073039404690f36cba47dec27b"></a>tomorrow</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a68e134f6377143e8ac4c04576c11b053"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a68e134f6377143e8ac4c04576c11b053"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a68e134f6377143e8ac4c04576c11b053"></a>date, timestamp</p>
+<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a68e134f6377143e8ac4c04576c11b053"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a68e134f6377143e8ac4c04576c11b053"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a68e134f6377143e8ac4c04576c11b053"></a>date and timestamp</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.96999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aeadfd82b69ef426ab4036569827bff84"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aeadfd82b69ef426ab4036569827bff84"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aeadfd82b69ef426ab4036569827bff84"></a>Midnight tomorrow</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_rf8aabadc25674a06b0c9c5db09d7b3fe"><td class="cellrowborder" valign="top" width="17.599999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a2be6302e23f0413caf36f08259d15f59"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a2be6302e23f0413caf36f08259d15f59"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a2be6302e23f0413caf36f08259d15f59"></a>yesterday</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a4dc709eca5064e6ab6168b033e3ef9bf"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a4dc709eca5064e6ab6168b033e3ef9bf"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a4dc709eca5064e6ab6168b033e3ef9bf"></a>date, timestamp</p>
+<td class="cellrowborder" valign="top" width="29.43%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a4dc709eca5064e6ab6168b033e3ef9bf"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a4dc709eca5064e6ab6168b033e3ef9bf"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_a4dc709eca5064e6ab6168b033e3ef9bf"></a>date and timestamp</p>
 </td>
 <td class="cellrowborder" valign="top" width="52.96999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aee115833ef8f448993fd037ff661449e"><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aee115833ef8f448993fd037ff661449e"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_aee115833ef8f448993fd037ff661449e"></a>Midnight yesterday</p>
 </td>
@@ -531,9 +530,9 @@ The special values supported by openGauss are converted to common date/time valu
 
 The input of  **reltime**  can be any valid interval in text format. It can be a number \(negative numbers and decimals are also allowed\) or a specific time, which must be in SQL standard format, ISO-8601 format, or POSTGRES format. In addition, the text input needs to be enclosed with single quotation marks \(''\).
 
-For details, see  [Table6 Interval input types](#en-us_topic_0283136973_en-us_topic_0237121952_table1747116463276).
+For details, see  [Table 6 Interval input](#en-us_topic_0283136973_en-us_topic_0237121952_table1747116463276).
 
-**Table  6**  Interval input types
+**Table  6**  Interval input
 
 <a name="en-us_topic_0283136973_en-us_topic_0237121952_table1747116463276"></a>
 <table><thead align="left"><tr id="en-us_topic_0283136973_en-us_topic_0237121952_row146914611277"><th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136973_en-us_topic_0237121952_p174691446172714"><a name="en-us_topic_0283136973_en-us_topic_0237121952_p174691446172714"></a><a name="en-us_topic_0283136973_en-us_topic_0237121952_p174691446172714"></a>Input</p>
@@ -594,22 +593,22 @@ For details, see  [Table6 Interval input types](#en-us_topic_0283136973_en-us_to
 </tbody>
 </table>
 
-Examples
+Example:
 
 ```
 -- Create a table.
-postgres=# CREATE TABLE reltime_type_tab(col1 character(30), col2 reltime);
+openGauss=# CREATE TABLE reltime_type_tab(col1 character(30), col2 reltime);
 
 -- Insert data.
-postgres=# INSERT INTO reltime_type_tab VALUES ('90', '90');
-postgres=# INSERT INTO reltime_type_tab VALUES ('-366', '-366');
-postgres=# INSERT INTO reltime_type_tab VALUES ('1975.25', '1975.25');
-postgres=# INSERT INTO reltime_type_tab VALUES ('-2 YEARS +5 MONTHS 10 DAYS', '-2 YEARS +5 MONTHS 10 DAYS');
-postgres=# INSERT INTO reltime_type_tab VALUES ('30 DAYS 12:00:00', '30 DAYS 12:00:00');
-postgres=# INSERT INTO reltime_type_tab VALUES ('P-1.1Y10M', 'P-1.1Y10M');
+openGauss=# INSERT INTO reltime_type_tab VALUES ('90', '90');
+openGauss=# INSERT INTO reltime_type_tab VALUES ('-366', '-366');
+openGauss=# INSERT INTO reltime_type_tab VALUES ('1975.25', '1975.25');
+openGauss=# INSERT INTO reltime_type_tab VALUES ('-2 YEARS +5 MONTHS 10 DAYS', '-2 YEARS +5 MONTHS 10 DAYS');
+openGauss=# INSERT INTO reltime_type_tab VALUES ('30 DAYS 12:00:00', '30 DAYS 12:00:00');
+openGauss=# INSERT INTO reltime_type_tab VALUES ('P-1.1Y10M', 'P-1.1Y10M');
 
 -- View data.
-postgres=# SELECT * FROM reltime_type_tab;
+openGauss=# SELECT * FROM reltime_type_tab;
               col1              |                col2                 
 --------------------------------+-------------------------------------
  1975.25                        | 5 years 4 mons 29 days
@@ -620,7 +619,7 @@ postgres=# SELECT * FROM reltime_type_tab;
  30 DAYS 12:00:00               | 1 mon 12:00:00
 (6 rows)
 
--- Drop the table.
-postgres=# DROP TABLE reltime_type_tab;
+-- Delete the table.
+openGauss=# DROP TABLE reltime_type_tab;
 ```
 

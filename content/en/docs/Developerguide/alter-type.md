@@ -148,9 +148,9 @@ Only the type owner or a user granted with the ALTER permission can run the  **A
 
 ## Example<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 
-See  [Examples](en-us_topic_0283136568.md#en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE TYPE**.
+See  [Examples](create-type.md#en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d)  in  **CREATE TYPE**.
 
 ## Helpful Links<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
-[CREATE TYPE](en-us_topic_0283136568.md)  and  [DROP TYPE](en-us_topic_0283137107.md)
+[CREATE TYPE](create-type.md)  and  [DROP TYPE](drop-type.md)
 

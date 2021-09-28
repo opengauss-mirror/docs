@@ -1,50 +1,50 @@
 # JSON/JSONB类型<a name="ZH-CN_TOPIC_0289899996"></a>
 
-JSON\(JavaScript Object Notation\)数据，可以是单独的一个标量，也可以是一个数组，也可以是一个键值对象，其中数组和对象可以统称容器\(container\)：
+JSON（JavaScript Object Notation）数据，可以是单独的一个标量，也可以是一个数组，也可以是一个键值对象，其中数组和对象可以统称容器（container）：
 
--   标量\(scalar\)：单一的数字、bool、string、null都可以叫做标量。
--   数组\(array\)：\[\]结构，里面存放的元素可以是任意类型的JSON，并且不要求数组内所有元素都是同一类型。
--   对象\(object\)：\{\}结构，存储key:value的键值对，其键只能是用“”包裹起来的字符串，值可以是任意类型的JSON，对于重复的键，按最后一个键值对为准。
+-   标量（scalar）：单一的数字、bool、string、null都可以叫做标量。
+-   数组（array）：\[\]结构，里面存放的元素可以是任意类型的JSON，并且不要求数组内所有元素都是同一类型。
+-   对象（object）：\{\}结构，存储key:value的键值对，其键只能是用“”包裹起来的字符串，值可以是任意类型的JSON，对于重复的键，按最后一个键值对为准。
 
 openGauss内存在两种数据类型JSON和JSONB，可以用来存储JSON数据。其中JSON是对输入的字符串的完整拷贝，使用时再去解析，所以它会保留输入的空格，重复键以及顺序等；JSONB解析输入后保存的二进制，它在解析时会删除语义无关的细节和重复的键，对键值也会进行排序，使用时不用再次解析。
 
-因此可以发现，两者其实都是JSON，它们接受相同的字符串作为输入。它们实际的主要差别是效率。JSON数据类型存储输入文本的精确拷贝，处理函数必须在每个执行上重新解析； 而JSONB数据以分解的二进制格式存储， 这使得它由于添加了转换机制而在输入上稍微慢些，但是在处理上明显更快， 因为不需要重新解析。同时由于JSONB类型存在解析后的格式归一化等操作，同等的语义下只会有一种格式，因此可以更好更强大的支持很多其他额外的操作，比如按照一定的规则进行大小比较等。JSONB也支持索引，这也是一个明显的优势。
+因此可以发现，两者其实都是JSON，它们接受相同的字符串作为输入。它们实际的主要差别是效率。JSON数据类型存储输入文本的精确拷贝，处理函数必须在每个执行上重新解析； 而JSONB数据以分解的二进制格式存储，这使得它由于添加了转换机制而在输入上稍微慢些，但是在处理上明显更快，因为不需要重新解析。同时由于JSONB类型存在解析后的格式归一化等操作，同等的语义下只会有一种格式，因此可以更好更强大的支持很多其他额外的操作，比如按照一定的规则进行大小比较等。JSONB也支持索引，这也是一个明显的优势。
 
 ## 输入格式<a name="section1253934210012"></a>
 
 输入必须是一个符合JSON数据格式的字符串，此字符串用单引号''声明。
 
-null \(null-json\)：仅null，全小写。
+null（null-json）：仅null，全小写。
 
 ```
 select 'null'::json;   -- sucselect 'NULL'::jsonb;  -- err
 ```
 
-数字 \(num-json\)：正负整数、小数、0，支持科学计数法。
+数字（num-json）：正负整数、小数、0，支持科学计数法。
 
 ```
 select '1'::json;select '-1.5'::json;select '-1.5e-5'::jsonb, '-1.5e+2'::jsonb;select '001'::json, '+15'::json, 'NaN'::json;  -- 不支持多余的前导0，正数的+号，以及NaN和infinity。
 ```
 
-布尔\(bool-json\)：仅true、false，全小写。
+布尔（bool-json）：仅true、false，全小写。
 
 ```
 select 'true'::json;select 'false'::jsonb;  
 ```
 
-字符串\(str-json\)：必须是加双引号的字符串。
+字符串（str-json）：必须是加双引号的字符串。
 
 ```
 select '"a"'::json;select '"abc"'::jsonb;  
 ```
 
-数组\(array-json\)：使用中括号\[\]包裹，满足数组书写条件。数组内元素类型可以是任意合法的JSON，且不要求类型一致。
+数组（array-json）：使用中括号\[\]包裹，满足数组书写条件。数组内元素类型可以是任意合法的JSON，且不要求类型一致。
 
 ```
 select '[1, 2, "foo", null]'::json;select '[]'::json;select '[1, 2, "foo", null, [[]], {}]'::jsonb; 
 ```
 
-对象\(object-json\)：使用大括号\{\}包裹，键必须是满足JSON字符串规则的字符串，值可以是任意合法的JSON。
+对象（object-json）：使用大括号\{\}包裹，键必须是满足JSON字符串规则的字符串，值可以是任意合法的JSON。
 
 ```
 select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
@@ -53,6 +53,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
 >![](public_sys-resources/icon-caution.gif) **注意：**
 >
 >-   区分 'null'::json 和 null::json 是两个不同的概念，类似于字符串 str="" 和 str=null。
+>
 >-   对于数字，当使用科学计数法的时候，jsonb类型会将其展开，而json会精准拷贝输入。
 
 ## JSONB高级特性<a name="section8871947018"></a>
@@ -67,7 +68,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 
 -   格式归一化
 
-    -   对于输入的object-json字符串，解析成jsonb二进制后，会天然的丢弃语义上无关紧要的细节，比如空格:
+    -   对于输入的object-json字符串，解析成jsonb二进制后，会天然的丢弃语义上无关紧要的细节，比如空格：
 
         ```
         postgres=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        jsonb
@@ -115,7 +116,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 
     -   GIN索引
 
-         GIN索引可以用来有效的搜索出现在大量jsonb文档（datums） 中的键或者键/值对。提供了两个GIN操作符类\(jsonb\_ops、jsonb\_hash\_ops\)，提供了不同的性能和灵活性取舍。缺省的GIN操作符类支持使用@\>、<@、?、 ?&和?|操作符查询，非缺省的GIN操作符类jsonb\_path\_ops只支持索引@\>、<@操作符。
+         GIN索引可以用来有效的搜索出现在大量jsonb文档（datums）中的键或者键/值对。提供了两个GIN操作符类（jsonb\_ops、jsonb\_hash\_ops），提供了不同的性能和灵活性取舍。缺省的GIN操作符类支持使用@\>、<@、?、 ?&和?|操作符查询，非缺省的GIN操作符类jsonb\_path\_ops只支持索引@\>、<@操作符。
 
          相关的操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。
 
@@ -133,5 +134,4 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 -   函数和操作符
 
     json/jsonb类型相关支持的函数和操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。
-
 

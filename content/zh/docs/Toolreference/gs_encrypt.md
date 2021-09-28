@@ -12,6 +12,7 @@ gs_encrypt [OPTION]... PLAINTEXT
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   “PLAINTEXT”前不需要加短选项或长选项。
+>
 >-   “PLAINTEXT”是需要加密的明文字符串。
 
 ## 参数说明<a name="section13415675164452"></a>

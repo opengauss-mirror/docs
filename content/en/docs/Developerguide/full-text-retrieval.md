@@ -1,4 +1,4 @@
-# Full-Text Retrieval<a name="EN-US_TOPIC_0242370478"></a>
+# Full-Text Retrieval<a name="EN-US_TOPIC_0289900659"></a>
 
 Textual search operators have been used in databases for years. openGauss has  **\~**,  **\~\***,  **LIKE**, and  **ILIKE**  operators for textual data types, but they lack many essential properties required by modern information systems. They can be supplemented by indexes and dictionaries.
 

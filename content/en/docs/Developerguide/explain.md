@@ -20,14 +20,14 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     ROLLBACK;
     ```
 
--   The  **NODES **and  **NUM\_NODES **parameters are disabled in standalone mode because they are available only in distributed mode. If parameters are used, the following error is reported:
+-   The  **DETAIL**,  **NODES**, and  **NUM\_NODES**  parameters are disabled in standalone mode. They are available only in distributed mode. If the parameters are used, the following error is reported:
 
     ```
-    postgres=# create table student(id int, name char(20));
+    openGauss=# create table student(id int, name char(20));
     CREATE TABLE
-    postgres=# explain (nodes true) insert into student values(5,'a'),(6,'b');
+    openGauss=# explain (nodes true) insert into student values(5,'a'),(6,'b');
     ERROR:  unrecognized EXPLAIN option "nodes"
-    postgres=# explain (num_nodes true) insert into student values(5,'a'),(6,'b');
+    openGauss=# explain (num_nodes true) insert into student values(5,'a'),(6,'b');
     ERROR:  unrecognized EXPLAIN option "num_nodes"
     ```
 
@@ -48,9 +48,9 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
         VERBOSE [ boolean ] |
         COSTS [ boolean ] |
         CPU [ boolean ] |
-        DETAIL [ boolean ] |
-        NODES [ boolean ] |
-        NUM_NODES [ boolean ] |
+        DETAIL [ boolean ] | (available only in distributed mode)
+        NODES [ boolean ] | (available only in distributed mode)
+        NUM_NODES [ boolean ] | (available only in distributed mode)
         BUFFERS [ boolean ] |
         TIMING [ boolean ] |
         PLAN [ boolean ] |
@@ -85,8 +85,8 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
 
     Value range:
 
-    -   **TRUE**  \(default\): displays them.
-    -   **FALSE**: does not display them.
+    -   **TRUE**  \(default\): displays it.
+    -   **FALSE**: does not display it.
 
 -   **COSTS boolean**
 
@@ -106,16 +106,16 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **DETAIL boolean**
+-   **DETAIL boolean**  \(available only in distributed mode\)
 
     Displays information about database nodes.
 
     Value range:
 
-    -   **TRUE**  \(default value\): displays it.
+    -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **NODES boolean**
+-   **NODES boolean**  \(available only in distributed mode\)
 
     Specifies whether to display information about the nodes executed by query.
 
@@ -124,13 +124,13 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **NUM\_NODES boolean**
+-   **NUM\_NODES boolean**  \(available only in distributed mode\)
 
     Specifies whether to display the number of executing nodes.
 
     Value range:
 
-    -   **TRUE**  \(default value\): displays it.
+    -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
 -   **BUFFERS boolean**
@@ -177,13 +177,13 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
 
 ```
 -- Create the tpcds.customer_address_p1 table.
-postgres=# CREATE TABLE tpcds.customer_address_p1 AS TABLE tpcds.customer_address;
+openGauss=# CREATE TABLE tpcds.customer_address_p1 AS TABLE tpcds.customer_address;
 
 -- Change the value of explain_perf_mode to normal.
-postgres=# SET explain_perf_mode=normal;
+openGauss=# SET explain_perf_mode=normal;
 
 -- Display an execution plan for simple queries in the table.
-postgres=# EXPLAIN SELECT * FROM tpcds.customer_address_p1;
+openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1;
 QUERY PLAN
 --------------------------------------------------
 Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
@@ -191,7 +191,7 @@ Node/s: All dbnodes
 (2 rows)
 
 -- Generate an execution plan in JSON format (with explain_perf_mode being normal).
-postgres=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
+openGauss=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
               QUERY PLAN              
 --------------------------------------
  [                                   +
@@ -209,7 +209,7 @@ postgres=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
 (1 row)
 
 -- If there is an index and we use a query with an indexable WHERE condition, EXPLAIN might show a different plan.
-postgres=# EXPLAIN SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
+openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
 QUERY PLAN
 --------------------------------------------------
 Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
@@ -217,7 +217,7 @@ Node/s: dn_6005_6006
 (2 rows)
 
 -- Generate an execution plan in YAML format (with explain_perf_mode being normal).
-postgres=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
+openGauss=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
            QUERY PLAN            
 ---------------------------------
  - Plan:                        +
@@ -230,7 +230,7 @@ postgres=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca
 (1 row)
 
 -- Here is an example of a query plan with cost estimates suppressed:
-postgres=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
+openGauss=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
        QUERY PLAN       
 ------------------------
  Data Node Scan
@@ -238,7 +238,7 @@ postgres=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_
 (2 rows)
 
 -- Here is an example of a query plan for a query using an aggregate function:
-postgres=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHERE ca_address_sk<10000;
+openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHERE ca_address_sk<10000;
                                       QUERY PLAN                                       
 ---------------------------------------------------------------------------------------
  Aggregate  (cost=18.19..14.32 rows=1 width=4)
@@ -250,7 +250,7 @@ postgres=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHER
 (6 rows)
 
 -- Delete the tpcds.customer_address_p1 table.
-postgres=# DROP TABLE tpcds.customer_address_p1;
+openGauss=# DROP TABLE tpcds.customer_address_p1;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>

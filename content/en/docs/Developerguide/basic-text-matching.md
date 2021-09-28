@@ -1,9 +1,9 @@
-# Basic Text Matching<a name="EN-US_TOPIC_0242370480"></a>
+# Basic Text Matching<a name="EN-US_TOPIC_0289899963"></a>
 
 Full text search in openGauss is based on the match operator  **@@**, which returns  **true**  if a  **tsvector**  \(document\) matches a  **tsquery**  \(query\). It does not matter which data type is written first:
 
 ```
-postgres=# SELECT 'a fat cat sat on a mat and ate a fat rat'::tsvector @@ 'cat & rat'::tsquery AS RESULT;
+openGauss=# SELECT 'a fat cat sat on a mat and ate a fat rat'::tsvector @@ 'cat & rat'::tsquery AS RESULT;
  result
 ----------
  t
@@ -11,7 +11,7 @@ postgres=# SELECT 'a fat cat sat on a mat and ate a fat rat'::tsvector @@ 'cat &
 ```
 
 ```
-postgres=# SELECT 'fat & cow'::tsquery @@ 'a fat cat sat on a mat and ate a fat rat'::tsvector AS RESULT;
+openGauss=# SELECT 'fat & cow'::tsquery @@ 'a fat cat sat on a mat and ate a fat rat'::tsvector AS RESULT;
  result
 ----------
  f
@@ -21,7 +21,7 @@ postgres=# SELECT 'fat & cow'::tsquery @@ 'a fat cat sat on a mat and ate a fat 
 As the above example suggests, a  **tsquery**  is not raw text, any more than a  **tsvector**  is. A tsquery contains search terms, which must be already-normalized lexemes, and may combine multiple terms using  **AND**,  **OR**, and  **NOT**  operators. For details, see  [Text Search Types](text-search-types.md). There are functions  **to\_tsquery**  and  **plainto\_tsquery**  that are helpful in converting user-written text into a proper tsquery, for example by normalizing words appearing in the text. Similarly,  **to\_tsvector**  is used to parse and normalize a document string. So in practice a text search match would look more like this:
 
 ```
-postgres=# SELECT to_tsvector('fat cats ate fat rats') @@ to_tsquery('fat & rat') AS RESULT;
+openGauss=# SELECT to_tsvector('fat cats ate fat rats') @@ to_tsquery('fat & rat') AS RESULT;
 result
 ----------
  t
@@ -31,7 +31,7 @@ result
 Observe that this match would not succeed if written as follows:
 
 ```
-postgres=# SELECT 'fat cats ate fat rats'::tsvector @@ to_tsquery('fat & rat')AS RESULT;
+openGauss=# SELECT 'fat cats ate fat rats'::tsvector @@ to_tsquery('fat & rat')AS RESULT;
 result
 ----------
  f

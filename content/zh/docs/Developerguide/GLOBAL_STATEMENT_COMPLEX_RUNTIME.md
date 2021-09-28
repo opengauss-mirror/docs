@@ -59,7 +59,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="20.29%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122661_p88271415966"><a name="zh-cn_topic_0237122661_p88271415966"></a><a name="zh-cn_topic_0237122661_p88271415966"></a>inet</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.77%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122661_p10827121511613"><a name="zh-cn_topic_0237122661_p10827121511613"></a><a name="zh-cn_topic_0237122661_p10827121511613"></a>连接到后端的客户端的IP地址。 如果此字段是null，它表明通过服务器机器上UNIX套接字连接客户端或者这是内部进程，如autovacuum。</p>
+<td class="cellrowborder" valign="top" width="51.77%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122661_p10827121511613"><a name="zh-cn_topic_0237122661_p10827121511613"></a><a name="zh-cn_topic_0237122661_p10827121511613"></a>连接到后端的客户端的IP地址。如果此字段是null，它表明通过服务器机器上UNIX套接字连接客户端或者这是内部进程，如autovacuum。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122661_row17561419164719"><td class="cellrowborder" valign="top" width="27.939999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122661_p28277151166"><a name="zh-cn_topic_0237122661_p28277151166"></a><a name="zh-cn_topic_0237122661_p28277151166"></a>client_hostname</p>
@@ -353,4 +353,3 @@
 </tr>
 </tbody>
 </table>
-
