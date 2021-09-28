@@ -13,7 +13,7 @@
 -   It is recommended that the number of column-store tables do not exceed 1000.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
 -   Only  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIAMRY KEY**  can be used as the table-level constraint of column-store tables. Table-level primary key and foreign key constraints are not supported.
--   Only the  **NULL**,  **NOT NULL**, and  **DEFAULT**  constant values can be used as column-store table constraints.
+-   Only the  **NULL**,  **NOT NULL**, **DEFAULT**  constant values, **UNIQUE** and **PRIMARY KEY** can be used as column-store table constraints.
 -   Whether column-store tables support a delta table is specified by the  [enable\_delta\_store](en-us_topic_0289900911.md#en-us_topic_0283136577_en-us_topic_0237124705_section1035224982816)  parameter. The threshold for storing data into a delta table is specified by the  **deltarow\_threshold**  parameter.
 -   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
 -   The maximum number of columns on each table is 1600, which depends on the column type. The total size of all columns cannot exceed 8192 bytes, except for the columns of variable data types, such as text, varchar, and char.
