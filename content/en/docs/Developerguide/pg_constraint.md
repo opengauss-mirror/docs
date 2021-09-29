@@ -38,7 +38,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136792_en-us_topic_0237122279_en-us_topic_0059778647_a21f28d61a91f4830943354d172be31ce"><a name="en-us_topic_0283136792_en-us_topic_0237122279_en-us_topic_0059778647_a21f28d61a91f4830943354d172be31ce"></a><a name="en-us_topic_0283136792_en-us_topic_0237122279_en-us_topic_0059778647_a21f28d61a91f4830943354d172be31ce"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><a name="ul1973810318239"></a><a name="ul1973810318239"></a><ul id="ul1973810318239"><li><strong id="b1085914342341"><a name="b1085914342341"></a><a name="b1085914342341"></a>c</strong>: check constraint</li><li><strong id="b6553133523419"><a name="b6553133523419"></a><a name="b6553133523419"></a>p</strong>: primary key constraint</li><li><strong id="b132161336173419"><a name="b132161336173419"></a><a name="b132161336173419"></a>u</strong>: unique constraint</li><li><strong id="b1850392755117"><a name="b1850392755117"></a><a name="b1850392755117"></a>t</strong>: trigger constraint</li><li><strong id="b58833135116"><a name="b58833135116"></a><a name="b58833135116"></a>x</strong>: mutual exclusion constraint</li><li><strong id="b10491103515511"><a name="b10491103515511"></a><a name="b10491103515511"></a>f</strong>: foreign key constraint</li><li><strong id="b1017351718529"><a name="b1017351718529"></a><a name="b1017351718529"></a>s</strong>: clustering constraint</li><li><strong id="b9690128135213"><a name="b9690128135213"></a><a name="b9690128135213"></a>i</strong>: invalid constraint</li></ul>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><a name="ul1973810318239"></a><a name="ul1973810318239"></a><ul id="ul1973810318239"><li><strong id="b1085914342341"><a name="b1085914342341"></a><a name="b1085914342341"></a>c</strong>: check constraint</li><li><strong id="b6553133523419"><a name="b6553133523419"></a><a name="b6553133523419"></a>p</strong>: primary key constraint</li><li><strong id="b132161336173419"><a name="b132161336173419"></a><a name="b132161336173419"></a>u</strong>: unique constraint</li><li><strong id="b1850392755117"><a name="b1850392755117"></a><a name="b1850392755117"></a>t</strong>: trigger constraint</li></ul>
 </td>
 </tr>
 <tr id="en-us_topic_0283136792_en-us_topic_0237122279_en-us_topic_0059778647_r5f122a827af241148dd12d1c97f6ce94"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136792_en-us_topic_0237122279_en-us_topic_0059778647_a7ff2f060460c4ac7a53248d329e21df0"><a name="en-us_topic_0283136792_en-us_topic_0237122279_en-us_topic_0059778647_a7ff2f060460c4ac7a53248d329e21df0"></a><a name="en-us_topic_0283136792_en-us_topic_0237122279_en-us_topic_0059778647_a7ff2f060460c4ac7a53248d329e21df0"></a>condeferrable</p>
@@ -214,6 +214,7 @@
 </tr>
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   **consrc**  is not updated when referenced objects change and does not track new column names. Instead of relying on this column to update, you are advised to use  **pg\_get\_constraintdef\(\)**  to extract the definition of a check constraint.

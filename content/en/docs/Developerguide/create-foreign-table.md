@@ -6,7 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0283137606_section1614655042716"></a>
 
-System columns \(such as  **tableoid**  and  **ctid**\) cannot be used in foreign tables.
+- System columns \(such as  **tableoid**  and  **ctid**\) cannot be used in foreign tables.
+- Among them, the appearance of Private and Shares mode requires the initial user and operation and maintenance administrator authority in operation mode (operation_mode).
 
 ## Syntax<a name="en-us_topic_0283137606_section0692184823016"></a>
 

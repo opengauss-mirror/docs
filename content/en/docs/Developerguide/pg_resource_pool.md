@@ -113,4 +113,4 @@
 </tr>
 </tbody>
 </table>
-
+Note: max_dop and max_worker user expansion is not applicable to openGauss.

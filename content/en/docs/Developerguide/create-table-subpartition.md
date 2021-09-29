@@ -17,6 +17,7 @@ Common combination solutions for level-2 partitioned tables include range-range 
 -   UPSERT and MERGE INTO into are not supported.
 -   When specifying a partition for query, for example,  **select \* from tablename partition/subpartition**  \(_partitionname_\), ensure that the keywords  **partition**  and  **subpartition**  are correct. If they are incorrect, no error is reported during the query. In this case, the query is performed based on the table alias.
 -   Level-2 partitioned tables do not support the subpartition for \(values\) query, for example,  **select \* from tablename subpartition for**  \(_values_\).
+-   Does not support secret database, ledger database and row-level access control.
 
 ## Syntax<a name="section11556125664117"></a>
 
@@ -119,21 +120,9 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     -   A column constraint is defined as part of a column definition, and it is bound to a particular column.
     -   A table constraint is not bound to a particular column and can apply to more than one column.
 
--   **LIKE source\_table \[ like\_option ... \]**
+- **LIKE source\_table \[ like\_option ... \]**
 
-    The LIKE clause specifies a table from which the new table automatically copies all column names, their data types, and their non-null constraints.
-
-    Unlike INHERITS, the new table and original table are decoupled after creation is complete. Changes to the source table will not be applied to the new table, and it is not possible to include data of the new table in scans of the source table.
-
-    -   Default expressions for the copied column definitions will be copied only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
-    -   If  **INCLUDING GENERATED**  is specified, the generated expression of the source table column is copied to the new table. By default, the generated expression is not copied.
-    -   Non-null constraints are always copied to the new table. CHECK constraints will only be copied if  **INCLUDING CONSTRAINTS**  is specified; other types of constraints will never be copied. These rules also apply to column constraints and table constraints.
-    -   Unlike those of INHERITS, columns and constraints copied by LIKE are not merged with similarly named columns and constraints. If the same name is specified explicitly or in another LIKE clause, an error is reported.
-    -   Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
-    -   **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
-    -   Comments for the copied columns, constraints, and indexes will be copied only if  **INCLUDING COMMENTS**  is specified. The default behavior is to exclude comments.
-    -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(WITH clause of the source table\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the source table.
-    -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,  **INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
+  The secondary partition table does not support this function temporarily.
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
@@ -161,23 +150,23 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     -   COMPRESSION
         -   Value range:  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**  for column-store tables, with compression level increasing in ascending order. The default value is  **LOW**.
         -   Row-store tables cannot be compressed.
-
+    
     -   MAX\_BATCHROW
-
+    
         Specifies the maximum number of records in a storage unit during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: 10000 to 60000. The default value is  **60000**.
-
+    
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
-
+    
     -   DELTAROW\_THRESHOLD
-
+    
         A reserved parameter. The parameter is only valid for column-store tables.
-
+    
         Value range: 0 to 9999
 
 

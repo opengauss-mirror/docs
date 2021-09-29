@@ -14,7 +14,7 @@
   >
   >nextval函数只能在主机上执行，备机不支持执行此函数。
 
-  返回类型：numeric
+  返回类型：bigint
 
   nextval函数有两种调用方式（其中第二种调用方式目前不支持Sequence命名中有特殊字符"."的情况），如下：
 
@@ -42,7 +42,7 @@
 
     返回当前会话里最近一次nextval返回的指定的sequence的数值。如果当前会话还没有调用过指定的sequence的nextval，那么调用currval将会报错。
 
-    返回类型：numeric
+    返回类型：bigint
 
     currval函数有两种调用方式（其中第二种调用方式目前不支持Sequence命名中有特殊字符"."的情况），如下：
 
@@ -70,7 +70,7 @@
 
     描述：返回当前会话里最近一次nextval返回的数值。这个函数等效于currval，只是它不用序列名为参数，它抓取当前会话里面最近一次nextval使用的序列。如果当前会话还没有调用过nextval，那么调用lastval将会报错。
 
-    返回类型：numeric
+    返回类型：bigint
 
     示例：
 
@@ -82,11 +82,11 @@
     (1 row)
     ```
 
--   setval\(regclass, numeric\)
+-   setval\(regclass, bigint\)
 
     描述：设置序列的当前数值。
 
-    返回类型：numeric
+    返回类型：bigint
 
     示例：
 
@@ -98,11 +98,11 @@
     (1 row)
     ```
 
--   setval\(regclass, numeric, Boolean\)
+-   setval\(regclass, bigint, Boolean\)
 
     描述：设置序列的当前数值以及is\_called标志。
 
-    返回类型：numeric
+    返回类型：bigint
 
     示例：
 
@@ -118,7 +118,7 @@
     >
     >Setval后当前会话会立刻生效，但如果其他会话有缓存的序列值，只能等到缓存值用尽才能感知Setval的作用。所以为了避免序列值冲突，setval要谨慎使用。
 >因为序列是非事务的，setval造成的改变不会由于事务的回滚而撤销。
-    
+
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >
     >nextval函数只能在主机上执行，备机不支持执行此函数。

@@ -13,6 +13,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   可以正常连接openGauss数据库。
 -   若要使用PTRACK增量备份，需在postgresql.conf中手动添加参数“enable\_cbm\_tracking = on”。
+-   为了防止xlog在传输结束前被清理，请适当调高postgresql.conf文件中wal_keep_segements的值。
 
 ## 限制说明<a name="zh-cn_topic_0287276008_section6439171332614"></a>
 
@@ -22,7 +23,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   远程模式下只能执行add-instance、backup、restore子命令。
 -   使用restore子命令前，应先停止gaussdb进程。
 -   当存在用户自定义表空间时，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份。
--   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgres.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数--rw-timeout的值。
+-   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数--rw-timeout的值。
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 
 ## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>

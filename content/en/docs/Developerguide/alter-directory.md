@@ -7,7 +7,7 @@
 ## Precautions<a name="en-us_topic_0283137159_en-us_topic_0237122058_en-us_topic_0059778392_sb3569429c1304678895bcf79fb6304cf"></a>
 
 -   Currently, only the directory owner can be changed.
--   The owner can only be a user with the  **sysadmin**  permission.
+-   When enable_access_server_directory=off, only the initial user is allowed to modify the owner of the directory; when enable_access_server_directory=on, users with SYSADMIN authority and the owner of the directory object can modify the directory, and the user is required to be a member of the new owner.
 
 ## Syntax<a name="en-us_topic_0283137159_en-us_topic_0237122058_section185432369210"></a>
 

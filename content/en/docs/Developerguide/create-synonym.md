@@ -11,6 +11,7 @@
 -   Database objects that can be accessed using synonyms include tables, views, functions, and stored procedures.
 -   To use synonyms, you must have the required permissions on associated objects.
 -   The following DML statements support synonyms:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **EXPLAIN**, and  **CALL**.
+-   It is not recommended to create synonyms for temporary tables. If you need to create it, you need to specify the schema name of the target temporary table of the synonym, responsible for the inability to use the synonym, and execute the DROP SYNONYM command before the end of the current session.
 
 ## Syntax<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 

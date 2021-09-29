@@ -38,7 +38,7 @@ PG\_CONSTRAINT系统表存储表上的检查约束、主键和唯一约束。
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136792_zh-cn_topic_0237122279_zh-cn_topic_0059778647_a21f28d61a91f4830943354d172be31ce"><a name="zh-cn_topic_0283136792_zh-cn_topic_0237122279_zh-cn_topic_0059778647_a21f28d61a91f4830943354d172be31ce"></a><a name="zh-cn_topic_0283136792_zh-cn_topic_0237122279_zh-cn_topic_0059778647_a21f28d61a91f4830943354d172be31ce"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><a name="ul1973810318239"></a><a name="ul1973810318239"></a><ul id="ul1973810318239"><li>c = 检查约束</li><li>p = 主键约束</li><li>u = 唯一约束</li><li>t =  触发器约束</li><li>x = 互斥约束</li><li>f = 外键约束</li><li>s = 聚簇约束</li><li>i = 无效约束</li></ul>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><a name="ul1973810318239"></a><a name="ul1973810318239"></a><ul id="ul1973810318239"><li>c = 检查约束</li><li>p = 主键约束</li><li>u = 唯一约束</li><li>t =  触发器约束</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136792_zh-cn_topic_0237122279_zh-cn_topic_0059778647_r5f122a827af241148dd12d1c97f6ce94"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136792_zh-cn_topic_0237122279_zh-cn_topic_0059778647_a7ff2f060460c4ac7a53248d329e21df0"><a name="zh-cn_topic_0283136792_zh-cn_topic_0237122279_zh-cn_topic_0059778647_a7ff2f060460c4ac7a53248d329e21df0"></a><a name="zh-cn_topic_0283136792_zh-cn_topic_0237122279_zh-cn_topic_0059778647_a7ff2f060460c4ac7a53248d329e21df0"></a>condeferrable</p>
@@ -214,6 +214,7 @@ PG\_CONSTRAINT系统表存储表上的检查约束、主键和唯一约束。
 </tr>
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >

@@ -638,26 +638,6 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
 
--   replace\(string, substring\)
-
-    Description: Deletes all substrings in a string.
-
-    String type: text
-
-    Substring type: text
-
-    Return type: text
-
-    Example:
-
-    ```
-    openGauss=# SELECT replace('abcdefabcdef', 'cd');
-        replace     
-    ----------------
-     abefabef
-    (1 row)
-    ```
-
 -   reverse\(str\)
 
     Description: Returns the reversed string.

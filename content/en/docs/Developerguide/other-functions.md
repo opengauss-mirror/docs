@@ -34,7 +34,7 @@
 
     Return type: record
 
--   textlen\(\)
+-   textlen\(text\)
 
     Description: Provides the method of querying the logical length of text.
 

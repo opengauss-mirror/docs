@@ -6,7 +6,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137028_zh-cn_topic_0237122136_zh-cn_topic_0059779050_sd775e695334845048410c46ecc8adaea"></a>
 
-默认只有初始化用户可以执行drop操作，当enable\_access\_server\_directory开启时（可参考[enable\_access\_server\_directory](zh-cn_topic_0289900107.md#zh-cn_topic_0283136929_zh-cn_topic_0237124747_section4279164545515)），sysadmin权限的用户也可以执行drop操作。
+当enable_access_server_directory=off时，只允许初始用户删除directory对象；当enable_access_server_directory=on时，具有SYSADMIN权限的用户、directory对象的属主、被授予了该directory的DROP权限的用户或者继承了内置角色gs_rloe_directory_drop权限的用户可以删除directory。
+
+## 语法格式<a name="zh-cn_topic_028313
 
 ## 语法格式<a name="zh-cn_topic_0283137028_zh-cn_topic_0237122136_zh-cn_topic_0059779050_s6d36dd755c5a47d086e5b767a88f208b"></a>
 

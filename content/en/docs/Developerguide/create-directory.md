@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283136620_en-us_topic_0237122101_en-us_topic_0059778310_section25762026103427"></a>
 
--   By default, only initial users can create directories. If  **enable\_access\_server\_directory**  is enabled \(for details, see  [enable\_access\_server\_directory](en-us_topic_0289900107.md#en-us_topic_0283136929_en-us_topic_0237124747_section4279164545515)\), users with the  **sysadmin**  permission can also create directories.
+-   When enable_access_server_directory=off, only the initial user is allowed to create directory objects; when enable_access_server_directory=on, users with SYSADMIN permissions and users who inherit the built-in role gs_role_directory_create permissions can create directory objects.
 -   By default, the user who creates a directory has the read and write permissions on the directory.
 -   The default owner of a directory is the user who creates the directory.
 -   A directory cannot be created for the following paths:

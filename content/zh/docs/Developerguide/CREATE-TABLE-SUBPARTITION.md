@@ -17,6 +17,7 @@
 -   不支持Upsert，Merge into。
 -   指定分区查询时，如select \* from tablename partition/subpartition \(partitionname\)，关键字partition和subpartition注意不要写错。如果写错，查询不会报错，这时查询会变为对表起别名进行查询。
 -   不支持对二级分区 subpartition for \(values\)查询。如select \* from tablename subpartition for \(values\)。
+-   不支持密态数据库、账本数据库和行级访问控制。
 
 ## 语法格式<a name="section11556125664117"></a>
 
@@ -119,21 +120,9 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     -   列约束：作为一个列定义的一部分，仅影响该列。
     -   表约束：不和某个列绑在一起，可以作用于多个列。
 
--   **LIKE source\_table \[ like\_option ... \]**
+- **LIKE source\_table \[ like\_option ... \]**
 
-    LIKE子句声明一个表，新表自动从这个表里面继承所有字段名及其数据类型和非空约束。
-
-    和INHERITS不同，新表与原来的表之间在创建动作完毕之后是完全无关的。在源表做的任何修改都不会传播到新表中，并且也不可能在扫描源表的时候包含新表的数据。
-
-    -   字段缺省表达式只有在声明了INCLUDING DEFAULTS之后才会包含进来。缺省是不包含缺省表达式的，即新表中所有字段的缺省值都是NULL。
-    -   如果指定了INCLUDING GENERATED，则源表列的生成表达式会复制到新表中。默认不复制生成表达式。
-    -   非空约束将总是复制到新表中，CHECK约束则仅在指定了INCLUDING CONSTRAINTS的时候才复制，而其他类型的约束则永远也不会被复制。此规则同时适用于表约束和列约束。
-    -   和INHERITS不同，被复制的列和约束并不使用相同的名称进行融合。如果明确的指定了相同的名称或者在另外一个LIKE子句中，将会报错。
-    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-    -   如果指定了INCLUDING STORAGE，则拷贝列的STORAGE设置也将被拷贝，默认情况下不包含STORAGE设置。
-    -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释也会被拷贝过来。默认情况下，不拷贝源表的注释。
-    -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）也将拷贝至新表。默认情况下，不拷贝源表的存储参数。
-    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
+  二级分区表暂不支持该功能。
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
@@ -161,23 +150,23 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     -   COMPRESSION
         -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
         -   行存表不支持压缩。
-
+    
     -   MAX\_BATCHROW
-
+    
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-
+    
         取值范围：10000\~60000，默认60000。
-
+    
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-
+    
         取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
-
+    
     -   DELTAROW\_THRESHOLD
-
+    
         预留参数。该参数只对列存表有效。
-
+    
         取值范围：0～9999
 
 

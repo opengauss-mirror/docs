@@ -483,22 +483,6 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_trim\(anyarray, int\)
-
-    Description: Deletes a specified number of elements from the end of an array.
-
-    Return type: anyarray
-
-    Example:
-
-    ```
-    openGauss=# SELECT array_trim(ARRAY[1,8,3,7],1) AS RESULT;
-     result
-    ---------
-     {1,8,3}
-    (1 row)
-    ```
-
 -   array\_exists\(anyarray, int\)
 
     Description: Checks whether the second parameter is a valid subscript of an array.

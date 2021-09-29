@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   hextoraw\(string\)
+-   hextoraw\(raw\)
 
     Description: Converts a string in hexadecimal format into raw type.
 

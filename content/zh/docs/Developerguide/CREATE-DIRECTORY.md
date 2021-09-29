@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136620_zh-cn_topic_0237122101_zh-cn_topic_0059778310_section25762026103427"></a>
 
--   默认只允许初始化用户创建，如果开启enable\_access\_server\_directory（可参考[enable\_access\_server\_directory](zh-cn_topic_0289900107.md#zh-cn_topic_0283136929_zh-cn_topic_0237124747_section4279164545515)），sysadmin权限的用户也可以创建目录。
+-   当enable_access_server_directory=off时，只允许初始用户创建directory对象；当enable_access_server_directory=on时，具有SYSADMIN权限的用户和继承了内置角色gs_role_directory_create权限的用户可以创建directory对象。
 -   创建用户默认拥有此路径的READ和WRITE操作权限。
 -   目录的默认owner为创建directory的用户。
 -   以下路径禁止创建：

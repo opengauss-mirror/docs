@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137028_en-us_topic_0237122136_en-us_topic_0059779050_sd775e695334845048410c46ecc8adaea"></a>
 
-By default, only the initial user can perform the drop operation. When  **enable\_access\_server\_directory**  \([enable\_access\_server\_directory](en-us_topic_0289900107.md#en-us_topic_0283136929_en-us_topic_0237124747_section4279164545515)\), users with the  **sysadmin**  permission can also perform the drop operation.
+When enable_access_server_directory=off, only the initial user is allowed to delete the directory object; when enable_access_server_directory=on, the user with SYSADMIN permission, the owner of the directory object, the user who has been granted the DROP permission of the directory, or the user who has inherited the built-in role gs_rloe_directory_drop permission The user can delete the directory.
 
 ## Syntax<a name="en-us_topic_0283137028_en-us_topic_0237122136_en-us_topic_0059779050_s6d36dd755c5a47d086e5b767a88f208b"></a>
 

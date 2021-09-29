@@ -77,8 +77,9 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->To reduce the size of an exported file, you can use  **gs\_dump**  to compress it to a plain-text file or custom-format file. By default, a plain-text file is not compressed when generated. When a custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**. When a plain-text file is exported in compressed mode,  **gsql**  fails to import data objects.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**  
+>
+>You can use the gs\_dump program to compress the file into a directory archive or custom archive export file to reduce the size of the export file. When generating catalog archives or custom archive export files, medium-level compression is performed by default. The gs\_dump program cannot compress the archived export file.
 
 ## Precautions<a name="en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
@@ -147,7 +148,7 @@ Common parameters
     -   **1**  indicates that the compression ratio is the lowest and processing speed the fastest.
     -   **9**  indicates that the compression ratio is the highest and processing speed the slowest.
 
-    For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The .tar archive formats do not support compression currently.
+    For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The plain text format or .tar archive formats do not support compression currently.
 
 -   --lock-wait-timeout=TIMEOUT
 
