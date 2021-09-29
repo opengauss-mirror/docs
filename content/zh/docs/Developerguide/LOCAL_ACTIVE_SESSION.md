@@ -38,7 +38,7 @@ LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中
 </td>
 <td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p2868194918818"><a name="p2868194918818"></a><a name="p2868194918818"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p3868144920815"><a name="p3868144920815"></a><a name="p3868144920815"></a>数据库ID</p>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p3868144920815"><a name="p3868144920815"></a><a name="p3868144920815"></a>数据库ID。</p>
 </td>
 </tr>
 <tr id="row78680491682"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p178685491285"><a name="p178685491285"></a><a name="p178685491285"></a>thread_id</p>
