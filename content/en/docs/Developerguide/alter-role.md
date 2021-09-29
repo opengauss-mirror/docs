@@ -104,7 +104,7 @@ None
 
 -   **PASSWORD/IDENTIFIED BY **'password'
 
-    Resets or changes the user password. To change users' own passwords, they need to enter the correct old passwords. Only the initial user, the system administrator \(sysadmin\), or users who have the permission to create users \(CREATEROLE\) can reset the password of a common user without entering the old password. The initial user can reset passwords of system administrators. System administrators cannot reset passwords of other system administrators.
+    Resets or changes the user password. In addition to the initial user, other administrators or ordinary users need to enter the correct old password to modify their own password.Only the initial user, the system administrator \(sysadmin\), or users who have the permission to create users \(CREATEROLE\) can reset the password of a common user without entering the old password. The initial user can reset passwords of system administrators. System administrators cannot reset passwords of other system administrators.
 
 -   **EXPIRED**
 

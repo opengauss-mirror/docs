@@ -12,7 +12,7 @@ The sequence functions provide a simple method to ensure security of multiple us
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >The  **nextval**  function can be executed only on the primary node. It is not supported on standby nodes.
 
-    Return type: numeric
+    Return type: bigint
 
     The  **nextval**  function can be invoked in either of the following ways: \(In example 2, the sequence name cannot contain a dot.\)
 
@@ -40,7 +40,7 @@ The sequence functions provide a simple method to ensure security of multiple us
 
     Returns the last value of  **nextval**  for a specified sequence in the current session. If  **nextval**  has not been invoked for the specified sequence in the current session, an error is reported when  **currval**  is invoked.
 
-    Return type: numeric
+    Return type: bigint
 
     The  **currval**  function can be invoked in either of the following ways: \(In example 2, the sequence name cannot contain a dot.\)
 
@@ -68,7 +68,7 @@ The sequence functions provide a simple method to ensure security of multiple us
 
     Description: Returns the last value of  **nextval**  in the current session. This function is equivalent to  **currval**, but  **lastval**  does not have a parameter. If  **nextval**  has not been invoked in the current session, invoking  **lastval**  will report an error.
 
-    Return type: numeric
+    Return type: bigint
 
     Example:
 
@@ -80,11 +80,11 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
--   setval\(regclass, numeric\)
+-   setval\(regclass, bigint\)
 
     Description: Sets the current value of a sequence.
 
-    Return type: numeric
+    Return type: bigint
 
     Example:
 
@@ -96,11 +96,11 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
--   setval\(regclass, numeric, Boolean\)
+-   setval\(regclass, bigint, Boolean\)
 
     Description: Sets the current value of a sequence and the is\_called sign.
 
-    Return type: numeric
+    Return type: bigint
 
     Example:
 

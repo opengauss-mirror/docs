@@ -47,7 +47,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     ```
     with_query_name [ ( column_name [, ...] ) ]
-        AS [ [ NOT ] MATERIALZED ] ( {select | values | insert | update | delete} )
+        AS ( {select | values | insert | update | delete} )
     ```
 
 -   其中指定查询源from\_item为：
@@ -99,20 +99,17 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
--   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
+- **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
-    用于声明一个或多个可以在主查询中通过名称引用的子查询，相当于临时表。
+  用于声明一个或多个可以在主查询中通过名称引用的子查询，相当于临时表。
 
-    如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
+  如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
 
-    其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \[ \[ NOT \] MATERIALZED \] \( \{select | values | insert | update | delete\} \)
+  其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS\( \{select | values | insert | update | delete\} \)
 
-    -   with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
-    -   column\_name指定子查询结果集中显示的列名。
-    -   每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
-    -   用户可以使用MATERIALIZED / NOT MATERIALIZED对CTE进行修饰。
-        -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
-        -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属SELECT主干中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
+  -   with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
+  -   column\_name指定子查询结果集中显示的列名。
+  -   每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
 
 
 -   **plan\_hint子句**
@@ -186,81 +183,81 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 
     -   column\_alias
-
+    
         列别名
-
+    
     -   PARTITION
-
+    
         查询分区表的某个分区的数据。
-
+    
     -   partition\_name
-
+    
         分区名。
-
+    
     -   partition\_value
-
+    
         指定的分区键值。在创建分区表时，如果指定了多个分区键，可以通过PARTITION FOR子句指定的这一组分区键的值，唯一确定一个分区。
-
+    
     -   subquery
-
+    
         FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。
-
+    
     -   with\_query\_name
-
+    
         WITH子句同样可以作为FROM子句的源，可以通过WITH查询的名称对其进行引用。
-
+    
     -   function\_name
-
+    
         函数名称。函数调用也可以出现在FROM子句中。
-
+    
     -   join\_type
-
+    
         有5种类型，如下所示。
-
+    
         -   \[ INNER \] JOIN
-
+    
             一个JOIN子句组合两个FROM项。可使用圆括弧以决定嵌套的顺序。如果没有圆括弧，JOIN从左向右嵌套。
-
+    
             在任何情况下，JOIN都比逗号分隔的FROM项绑定得更紧。
-
+    
         -   LEFT \[ OUTER \] JOIN
-
+    
             返回笛卡尔积中所有符合连接条件的行，再加上左表中通过连接条件没有匹配到右表行的那些行。这样，左边的行将扩展为生成表的全长，方法是在那些右表对应的字段位置填上NULL。请注意，只在计算匹配的时候，才使用JOIN子句的条件，外层的条件是在计算完毕之后施加的。
-
+    
         -   RIGHT \[ OUTER \] JOIN
-
+    
             返回所有内连接的结果行，加上每个不匹配的右边行（左边用NULL扩展）。
-
+    
             这只是一个符号上的方便，因为总是可以把它转换成一个LEFT OUTER JOIN，只要把左边和右边的输入互换位置即可。
-
+    
         -   FULL \[ OUTER \] JOIN
-
+    
             返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
-
+    
         -   CROSS JOIN
-
+    
             CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
-
+    
             >![](public_sys-resources/icon-note.gif) **说明：** 
             >必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON，join\_condition，USING \(join\_column \[， ...\]\) 之一。但是它们不能出现在CROSS JOIN中。
 
 
         其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
-
+    
     -   ON join\_condition
-
+    
         连接条件，用于限定连接中的哪些行是匹配的。如：ON left\_table.a = right\_table.a。
-
+    
     -   USING\(join\_column\[，...\]\)
-
+    
         ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ... 的简写。要求对应的列必须同名。
-
+    
     -   NATURAL
-
+    
         NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
-
+    
     -   from item
-
+    
         用于连接的查询源对象的名称。
 
 
@@ -283,6 +280,10 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >对于WHERE子句的LIKE操作符，当LIKE中要查询特殊字符“%”、“\_”、“\\”的时候需要使用反斜杠“\\”来进行转义。
+
+-   **START WITH**
+
+    START WITH子句通常与CONNECT BY子句同时出现，  是一种递归语句对数据进行图遍历。START WITH代表递归的初始条数，CONNECT BY条件中可以对列指定PRIOR关键字。代表以这列为递归进行递归。当前约束只能对表中的列指定PRIOR，不支持对表达式、类型转换指定PRIOR关键字。
 
 -   **GROUP BY子句**
 

@@ -10,7 +10,6 @@
 -   当前版本仅支持修改拥有者、归属列和最大值。若要修改其他参数，可以删除重建，并用Setval函数恢复当前值。
 -   ALTER SEQUENCE MAXVALUE不支持在事务、函数和存储过程中使用。
 -   修改序列的最大值后，会清空该序列在所有会话的cache。
--   如果Sequence被创建时使用了LARGE标识，则DROP时也需要使用LARGE标识。
 -   ALTER SEQUENCE会阻塞nextval、setval、currval和lastval的调用。
 
 ## 语法格式<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
@@ -18,8 +17,8 @@
 -   修改序列归属列
 
     ```
-    ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name 
-        [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
+    ALTER  SEQUENCE [ IF EXISTS ] name 
+        [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE | CACHE cache]
         [ OWNED BY { table_name.column_name | NONE } ] ;
     ```
 
@@ -27,7 +26,7 @@
 -   修改序列的拥有者
 
     ```
-    ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
+    ALTER SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
     ```
 
 
@@ -40,6 +39,10 @@
 -   IF EXISTS
 
     当序列不存在时使用该选项不会出现错误消息，仅有一个通知。
+
+-    CACHE
+
+    为了快速访问，而在内存中预先存储序列号的个数。如果没有指定，将保持旧的缓冲值。
 
 -   OWNED BY
 

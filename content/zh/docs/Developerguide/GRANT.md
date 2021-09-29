@@ -208,7 +208,7 @@
 -   将directory对象的权限赋予指定的角色。
 
     ```
-    GRANT { { READ | WRITE } [, ...] | ALL [PRIVILEGES] }
+    GRANT { { READ | WRITE | ALTER | DROP } [, ...] | ALL [PRIVILEGES] }
        ON DIRECTORY directory_name [, ...]
        TO { [GROUP] role_name | PUBLIC } [, ...]
        [WITH GRANT OPTION];

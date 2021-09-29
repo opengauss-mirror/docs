@@ -31,7 +31,7 @@ PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）�
 </td>
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_ad384de51b68941679df9cc66e724d42a"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a>对象类型：<a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><ul id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"><li>'r'：partitioned table</li><li>'p'：table partition</li><li>'s'：table subpartition</li><li>'x'：index partition</li><li>'t'：toast table</li></ul>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_ad384de51b68941679df9cc66e724d42a"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a>对象类型：<a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><ul id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_zh-cn_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"><li>'r'：partitioned table</li><li>'p'：table partition</li><li>'x'：index partition</li><li>'t'：toast table</li></ul>
 </div>
 </td>
 </tr>
@@ -222,3 +222,4 @@ PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）�
 </tr>
 </tbody>
 </table>
+

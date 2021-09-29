@@ -6,13 +6,12 @@
 
 ## Precautions<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section3924194973416"></a>
 
--   Only the sequence owner or a user granted with the DROP permission can run the  **DROP SEQUENCE**  command. The system administrator has this permission by default.
--   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is dropped.
+Only the sequence owner or a user granted with the DROP permission can run the  **DROP SEQUENCE**  command. The system administrator has this permission by default.
 
 ## Syntax<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section292414499345"></a>
 
 ```
-DROP [ LARGE ] SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTRICT ];
+DROP  SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASCADE | RESTRICT ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section1692544913344"></a>

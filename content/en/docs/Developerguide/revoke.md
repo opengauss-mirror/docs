@@ -38,13 +38,13 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified sequence. The  **LARGE**  field is optional. The recycling statement does not distinguish whether the sequence is LARGE.
+-   Revoke the permission on a specified sequence. 
 
     ```
     REVOKE [ GRANT OPTION FOR ]
         { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
         | ALL [ PRIVILEGES ] }
-        ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
+        ON { [ SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -95,7 +95,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { READ | WRITE } [, ...] | ALL [ PRIVILEGES ] }
+        { { READ | WRITE  ALTER |DROP } [, ...] | ALL [ PRIVILEGES ] }
         ON DIRECTORY directory_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -189,16 +189,6 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
        { USAGE | ALL [PRIVILEGES] }
         ON DATA SOURCE src_name [, ...]
         FROM {[GROUP] role_name | PUBLIC} [, ...]
-       [ CASCADE | RESTRICT ];
-    ```
-
--   Revoke the permission on a directory object.
-
-    ```
-    REVOKE [ GRANT OPTION FOR ]
-       { { READ | WRITE } [, ...] | ALL [PRIVILEGES] }
-       ON DIRECTORY directory_name [, ...]
-       FROM {[GROUP] role_name | PUBLIC} [, ...]
        [ CASCADE | RESTRICT ];
     ```
 

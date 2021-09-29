@@ -44,7 +44,7 @@ REVOKE用于撤销一个或多个角色的权限。
     REVOKE [ GRANT OPTION FOR ]
         { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
         | ALL [ PRIVILEGES ] }
-        ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
+        ON { [  SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -95,7 +95,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { READ | WRITE } [, ...] | ALL [ PRIVILEGES ] }
+        { { READ | WRITE | ALTER |DROP } [, ...] | ALL [ PRIVILEGES ] }
         ON DIRECTORY directory_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -189,16 +189,6 @@ REVOKE用于撤销一个或多个角色的权限。
        { USAGE | ALL [PRIVILEGES] }
         ON DATA SOURCE src_name [, ...]
         FROM {[GROUP] role_name | PUBLIC} [, ...]
-       [ CASCADE | RESTRICT ];
-    ```
-
--   回收directory对象的权限。
-
-    ```
-    REVOKE [ GRANT OPTION FOR ]
-       { { READ | WRITE } [, ...] | ALL [PRIVILEGES] }
-       ON DIRECTORY directory_name [, ...]
-       FROM {[GROUP] role_name | PUBLIC} [, ...]
        [ CASCADE | RESTRICT ];
     ```
 

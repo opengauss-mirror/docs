@@ -13,6 +13,7 @@
 
 -   The openGauss database can be connected.
 -   To use PTRACK incremental backup, manually add  **enable\_cbm\_tracking = on**  to  **postgresql.conf**.
+-   In order to prevent the xlog from being cleaned up before the end of the transfer, please increase the value of wal_keep_segements in the postgresql.conf file appropriately.
 
 ## Important Notes<a name="en-us_topic_0287276008_section6439171332614"></a>
 
@@ -22,7 +23,7 @@
 -   In remote mode, only the subcommands  **add-instance**,  **backup**, and  **restore**  can be executed.
 -   Before running the  **restore**  subcommand, stop the gaussdb process.
 -   If a user-defined tablespace exists, add the  **--external-dirs**  parameter when backing up the tablespace. Otherwise, the tablespace will not be backed up.
--   If a large amount of data needs to be backed up, adjust the values of  **session\_timeout**  and  **wal\_sender\_timeout**  in the  **postgres.conf**  file to prevent backup timeout. In addition, adjust the value of  **--rw-timeout**  in the backup command line parameters.
+-   If a large amount of data needs to be backed up, adjust the values of  **session\_timeout**  and  **wal\_sender\_timeout**  in the  **postgresql.conf**  file to prevent backup timeout. In addition, adjust the value of  **--rw-timeout**  in the backup command line parameters.
 -   When using the  **-T**  option to redirect the external directory in the backup to a new directory during restoration, specify the  **--external-mapping**  parameter.
 -   After an incremental backup is restored, the created logical replication slot is unavailable and needs to be deleted and recreated.
 

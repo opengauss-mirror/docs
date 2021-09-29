@@ -48,9 +48,9 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
         VERBOSE [ boolean ] |
         COSTS [ boolean ] |
         CPU [ boolean ] |
-        DETAIL [ boolean ] | (available only in distributed mode)
-        NODES [ boolean ] | (available only in distributed mode)
-        NUM_NODES [ boolean ] | (available only in distributed mode)
+        DETAIL [ boolean ] | (unavailable)
+        NODES [ boolean ] | (unavailable)
+        NUM_NODES [ boolean ] | (unavailable)
         BUFFERS [ boolean ] |
         TIMING [ boolean ] |
         PLAN [ boolean ] |
@@ -106,7 +106,7 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **DETAIL boolean**  \(available only in distributed mode\)
+-   **DETAIL boolean**  unavailable\)
 
     Displays information about database nodes.
 
@@ -115,7 +115,7 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **NODES boolean**  \(available only in distributed mode\)
+-   **NODES boolean**  \(unavailable\)
 
     Specifies whether to display information about the nodes executed by query.
 
@@ -124,7 +124,7 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **NUM\_NODES boolean**  \(available only in distributed mode\)
+-   **NUM\_NODES boolean**  \(unavailable\)
 
     Specifies whether to display the number of executing nodes.
 

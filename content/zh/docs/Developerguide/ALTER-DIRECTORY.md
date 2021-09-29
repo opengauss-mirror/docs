@@ -7,7 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0283137159_zh-cn_topic_0237122058_zh-cn_topic_0059778392_sb3569429c1304678895bcf79fb6304cf"></a>
 
 -   目前只支持修改directory属主。
--   属主仅允许是sysadmin权限用户，不允许赋予普通用户。
+-   当enable_access_server_directory=off时，只允许初始用户修改directory属主；当enable_access_server_directory=on时，具有SYSADMIN权限的用户和directory对象的属主可以修改directory，且要求该用户是新属主的成员。
 
 ## 语法格式<a name="zh-cn_topic_0283137159_zh-cn_topic_0237122058_section185432369210"></a>
 

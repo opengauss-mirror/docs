@@ -48,9 +48,9 @@
         VERBOSE [ boolean ] |
         COSTS [ boolean ] |
         CPU [ boolean ] |
-        DETAIL [ boolean ] |(仅分布式模式可用，集中式模式不可用)
-        NODES [ boolean ] |(仅分布式模式可用，集中式模式不可用)
-        NUM_NODES [ boolean ] |(仅分布式模式可用，集中式模式不可用)
+        DETAIL [ boolean ] |(不可用)
+        NODES [ boolean ] |(不可用)
+        NUM_NODES [ boolean ] |(不可用)
         BUFFERS [ boolean ] |
         TIMING [ boolean ] |
         PLAN [ boolean ] |
@@ -106,7 +106,7 @@
     -   TRUE（缺省值）：显示CPU的使用情况。
     -   FALSE：不显示。
 
--   **DETAIL boolean**（仅分布式模式可用，集中式模式不可用）
+-   **DETAIL boolean**（不可用）
 
     打印数据库节点上的信息。
 
@@ -115,7 +115,7 @@
     -   TRUE（缺省值）：打印数据库节点的信息。
     -   FALSE：不打印。
 
--   **NODES boolean**（仅分布式模式可用，集中式模式不可用）
+-   **NODES boolean**（不可用）
 
     打印query执行的节点信息。
 
@@ -124,7 +124,7 @@
     -   TRUE（缺省值）：打印执行的节点的信息。
     -   FALSE：不打印。
 
--   **NUM\_NODES boolean**（仅分布式模式可用，集中式模式不可用）
+-   **NUM\_NODES boolean**（不可用）
 
     打印执行中的节点的个数信息。
 
