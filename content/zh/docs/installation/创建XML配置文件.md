@@ -217,8 +217,7 @@
 <!--DBnode-->
 <PARAM name="dataNum" value="1"/>
 <!--数据库端口号-->
-<PARAM name="dataPortBase" value="
-"/>
+<PARAM name="dataPortBase" value=""/>
 <!--DBnode侦听IP-->
 <PARAM name="dataListenIp1" value="172.31.13.124,172.31.6.198"/>
 <!--数据库主节点上的数据目录，及备机数据目录-->
