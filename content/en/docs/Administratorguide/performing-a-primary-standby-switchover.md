@@ -42,6 +42,7 @@ Run the following command to switch the standby database instance to the primary
 
 ```
 gs_om -t status --detail
+
 [   Cluster State   ]
 
 cluster_state   : Normal
@@ -50,9 +51,10 @@ current_az      : AZ_ALL
 
 [  Datanode State   ]
 
-node               node_ip         instance                       state            | node               node_ip         instance                       state
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1  pekpopgsci00234 10.244.60.70    6001 /home/wuqw/cluster/dn1 P Primary Normal | 2  pekpopgsci00238 10.244.61.81    6002 /home/wuqw/cluster/dn1 S Standby Normal
+    node             node_ip         port      instance                            state
+--------------------------------------------------------------------------------------------------
+1  pekpopgsci00235  10.244.62.204    5432      6001 /home/wuqw/cluster/dn1/   P Primary Normal
+2  pekpopgsci00238  10.244.61.81     5432      6002 /home/wuqw/cluster/dn1/   S Standby Normal
 ```
 
 ```
