@@ -1,4 +1,4 @@
-# 支持SQL hint<a name="ZH-CN_TOPIC_0000001135548521"></a>
+# 支持SQL hint<a name="ZH-CN_TOPIC_0000001162578986"></a>
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -18,7 +18,11 @@ Plan Hint为用户提供了直接影响执行计划生成的手段，用户可�
 
 ## 特性增强<a name="section28788730"></a>
 
-无。
+支持planhint设置session级优化器参数。
+
+支持指定子查询不展开。
+
+支持单query禁用gpc。
 
 ## 特性约束<a name="section06531946143616"></a>
 

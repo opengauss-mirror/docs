@@ -1,4 +1,4 @@
-# DB4AI-Query：模型训练和推断<a name="ZH-CN_TOPIC_0000001149426339"></a>
+# DB4AI-Query：模型训练和推断<a name="ZH-CN_TOPIC_0000001162739736"></a>
 
 openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，简化操作流程，充分利用数据库优化器、执行器的优化与执行能力，获得高性能的数据库内模型训练能力。更简化的模型训练与预测流程、更高的性能表现，让开发者在更短时间内能更专注于模型的调优与数据分析上，而避免了碎片化的技术栈与冗余的代码实现。
 
@@ -50,7 +50,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 1.  本版本支持的算法概述。
 
-    当前版本的DB4AI支持基于SGD算子的逻辑回归（目前支持二分类任务）、线性回归和支持向量机算法（分类任务），以及基于K-Means算子的Kmeans聚类算法。
+    当前版本的DB4AI支持基于SGD算子的逻辑回归\(目前支持二分类任务\)、线性回归和支持向量机算法\(分类任务\)，以及基于K-Means算子的Kmeans聚类算法。
 
 2.  模型训练语法说明。
     -   CREATE MODEL
@@ -84,7 +84,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
         (20 rows)
         ```
 
-        该表的字段position的数据类型为 double precision\[\]。
+        该表的字段position的数据类型为 double precision\[\].
 
     -   以Kmeans为例，训练一个模型。从kmeans\_2d训练集中指定position为特征列，使用kmeans算法，创建并保存模型point\_kmeans。
 
@@ -122,7 +122,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </tr>
             </thead>
             <tbody><tr id="row1798682755614"><td class="cellrowborder" valign="top" width="35.49%" headers="mcps1.2.3.1.1 "><p id="p226171165710"><a name="p226171165710"></a><a name="p226171165710"></a>GD</p>
-            <p id="p1798662711568"><a name="p1798662711568"></a><a name="p1798662711568"></a>(logistic_regression、linear_regression、SVM)</p>
+            <p id="p1798662711568"><a name="p1798662711568"></a><a name="p1798662711568"></a>(logistic_regression、linear_regression、svm_classification)</p>
             </td>
             <td class="cellrowborder" valign="top" width="64.51%" headers="mcps1.2.3.1.2 "><p id="p167491058185616"><a name="p167491058185616"></a><a name="p167491058185616"></a>optimizer(char*); verbose(bool); max_iterations(int); max_seconds(double); batch_size(int); learning_rate(double); decay(double); tolerance(double)</p>
             <p id="p1074918587561"><a name="p1074918587561"></a><a name="p1074918587561"></a>其中，SVM限定超参lambda(double)</p>
@@ -151,7 +151,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </th>
             </tr>
             </thead>
-            <tbody><tr id="row768911521608"><td class="cellrowborder" rowspan="10" valign="top" width="16.04%" headers="mcps1.2.5.1.1 "><p id="p679095114313"><a name="p679095114313"></a><a name="p679095114313"></a>GD (logistic_regression、linear_regression、SVM)</p>
+            <tbody><tr id="row768911521608"><td class="cellrowborder" rowspan="10" valign="top" width="16.04%" headers="mcps1.2.5.1.1 "><p id="p679095114313"><a name="p679095114313"></a><a name="p679095114313"></a>GD (logistic_regression、linear_regression、svm_classification)</p>
             </td>
             <td class="cellrowborder" valign="top" width="35.28%" headers="mcps1.2.5.1.2 "><p id="p66891852902"><a name="p66891852902"></a><a name="p66891852902"></a>optimizer = gd（梯度下降法）</p>
             </td>
@@ -298,13 +298,11 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </tbody>
             </table>
 
-
     -   模型保存成功，则返回创建成功信息：
-    
+
         ```
         MODEL CREATED. PROCESSED x
         ```
-
 
 3.  查看模型信息。
 
@@ -399,17 +397,17 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
     </tr>
     <tr id="row457633718349"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17576173711341"><a name="p17576173711341"></a><a name="p17576173711341"></a>DETAIL</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14576203713347"><a name="p14576203713347"></a><a name="p14576203713347"></a>布尔型变量</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14576203713347"><a name="p14576203713347"></a><a name="p14576203713347"></a>布尔型变量，不可用。</p>
     </td>
     </tr>
     <tr id="row1257603714348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p857623743413"><a name="p857623743413"></a><a name="p857623743413"></a>NODES</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p157633733410"><a name="p157633733410"></a><a name="p157633733410"></a>布尔型变量</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p157633733410"><a name="p157633733410"></a><a name="p157633733410"></a>布尔型变量，不可用</p>
     </td>
     </tr>
     <tr id="row195765377349"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p0576193712347"><a name="p0576193712347"></a><a name="p0576193712347"></a>NUM_NODES</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1576337113416"><a name="p1576337113416"></a><a name="p1576337113416"></a>布尔型变量</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1576337113416"><a name="p1576337113416"></a><a name="p1576337113416"></a>布尔型变量，不可用</p>
     </td>
     </tr>
     <tr id="row14795829173510"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1779512913351"><a name="p1779512913351"></a><a name="p1779512913351"></a>BUFFERS</p>
@@ -471,9 +469,8 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  Invalid hyperparameter value for optimizer. Valid values are: gd, ngd. (default is gd)
             ```
 
-
         -   场景二：当模型名称已存在，模型保存失败，返回ERROR，并提示错误原因：
-    
+
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment TARGET trait_anxiety  FROM patients;
             NOTICE:  Hyperparameter batch_size takes value DEFAULT (1000)
@@ -489,9 +486,8 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  The model name "patient_linear_regression" already exists in gs_model_warehouse.
             ```
 
-
         -   场景三：FEATURE或者TARGETS列是\*，返回ERROR，并提示错误原因：
-    
+
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES *  TARGET trait_anxiety  FROM
             patients;
@@ -501,9 +497,8 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  TARGET clause cannot be *
             ```
 
-
         -   场景四：对于无监督学习方法使用TARGET关键字，或者在监督学习方法中不适用TARGET关键字，均会返回ERROR，并提示错误原因：
-    
+
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment FROM patients;
             ERROR:  Supervised ML algorithms require TARGET clause
@@ -511,20 +506,18 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             CREATE MODEL patient_linear_regression USING linear_regression TARGET trait_anxiety  FROM patients;   ERROR:  Supervised ML algorithms require FEATURES clause
             ```
 
-
         -   场景五：当GUC参数statement\_timeout设置了时长，训练超时执行的语句将被终止：执行CREATE MODEL语句。训练集的大小、训练轮数\(iteration\)、提前终止条件\(tolerance、max\_seconds\)、并行线程数\(nthread\)等参数都会影响训练时长。当时长超过数据库限制，语句被终止模型训练失败。
-    
+
     -   推断阶段。
-    
         -   场景六：当模型名在系统表中查找不到，数据库会报ERROR：
-    
+
             ```
             openGauss=# select id, PREDICT BY patient_logistic_regression (FEATURES second_attack,treatment) FROM patients;
             ERROR:  There is no model called "patient_logistic_regression".
             ```
-    
+
         -   场景七：当做推断任务FEATURES的数据维度和数据类型与训练集存在不一致，将报ERROR，并提示错误原因，例如：
-    
+
             ```
             openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES second_attack) FROM patients;
             ERROR:  Invalid number of features for prediction, provided 1, expected 2
@@ -534,6 +527,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  Invalid number of features for prediction, provided 3, expected 2
             CONTEXT:  referenced column: patient_linear_regression_pre
             ```
+
 
 
 
