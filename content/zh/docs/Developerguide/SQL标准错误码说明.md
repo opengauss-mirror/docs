@@ -1,4 +1,4 @@
-# SQL标准错误码说明<a name="ZH-CN_TOPIC_0302073676"></a>
+# SQL标准错误码说明<a name="ZH-CN_TOPIC_0000001208140033"></a>
 
 根据X/Open和SQL Access Group SQL CAE规范（1992）所进行的定义，SQLERROR返回SQLSTATE值。SQLSTATE值是包含五个字符的字符串，由2个字符的SQL错误类和3个字符的子类构成。五个字符包含数值或者大写字母， 代表各种错误或者警告条件的代码。成功的状态是由00000标识的。SQLSTATE代码大多数情况下都是定义在SQL标准里的。
 
@@ -345,12 +345,12 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row74451007554"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p24456017558"><a name="zh-cn_topic_0237124759_p24456017558"></a><a name="zh-cn_topic_0237124759_p24456017558"></a>2202H</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p12445607556"><a name="zh-cn_topic_0237124759_p12445607556"></a><a name="zh-cn_topic_0237124759_p12445607556"></a>非法抽样参数（ERRCODE_INVALID_TABLESAMPLE_ARGUMENT）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p12445607556"><a name="zh-cn_topic_0237124759_p12445607556"></a><a name="zh-cn_topic_0237124759_p12445607556"></a>非法抽样参数（INVALID_TABLESAMPLE_ARGUMENT）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row199952516160"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p14999132571619"><a name="zh-cn_topic_0237124759_p14999132571619"></a><a name="zh-cn_topic_0237124759_p14999132571619"></a>2202G</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1399942517164"><a name="zh-cn_topic_0237124759_p1399942517164"></a><a name="zh-cn_topic_0237124759_p1399942517164"></a>非法重复抽样（ERRCODE_INVALID_TABLESAMPLE_REPEAT）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1399942517164"><a name="zh-cn_topic_0237124759_p1399942517164"></a><a name="zh-cn_topic_0237124759_p1399942517164"></a>非法重复抽样（INVALID_TABLESAMPLE_REPEAT）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r9469a2299e7a42f0a34bb8b4e136a0ac"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p585585231175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p585585231175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p585585231175"></a>22009</p>
@@ -385,7 +385,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row6155183813170"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p4155193831718"><a name="zh-cn_topic_0237124759_p4155193831718"></a><a name="zh-cn_topic_0237124759_p4155193831718"></a>22017</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p015563811170"><a name="zh-cn_topic_0237124759_p015563811170"></a><a name="zh-cn_topic_0237124759_p015563811170"></a>并发数超限（ERRCODE_DOP_VALUE_OUT_OF_RANGE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p015563811170"><a name="zh-cn_topic_0237124759_p015563811170"></a><a name="zh-cn_topic_0237124759_p015563811170"></a>并发数超限（DOP_VALUE_OUT_OF_RANGE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_ra04284cbfe9f44d898c200438ca3a580"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p145807621175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p145807621175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p145807621175"></a>22026</p>
@@ -395,7 +395,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row759419418204"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p185949410201"><a name="zh-cn_topic_0237124759_p185949410201"></a><a name="zh-cn_topic_0237124759_p185949410201"></a>22028</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p185946415208"><a name="zh-cn_topic_0237124759_p185946415208"></a><a name="zh-cn_topic_0237124759_p185946415208"></a>正则表达式不匹配（ERRCODE_REGEXP_MISMATCH）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p185946415208"><a name="zh-cn_topic_0237124759_p185946415208"></a><a name="zh-cn_topic_0237124759_p185946415208"></a>正则表达式不匹配（REGEXP_MISMATCH）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r76789737bfb54867bf055d62ed3f914b"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p398019651175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p398019651175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p398019651175"></a>22001</p>
@@ -450,17 +450,17 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row10707100102013"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p16707202203"><a name="zh-cn_topic_0237124759_p16707202203"></a><a name="zh-cn_topic_0237124759_p16707202203"></a>22P06</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1570711052019"><a name="zh-cn_topic_0237124759_p1570711052019"></a><a name="zh-cn_topic_0237124759_p1570711052019"></a>内存查找失败（ERRCODE_CACHE_LOOKUP_FAILED）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1570711052019"><a name="zh-cn_topic_0237124759_p1570711052019"></a><a name="zh-cn_topic_0237124759_p1570711052019"></a>内存查找失败（CACHE_LOOKUP_FAILED）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row432813359234"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p3328235162313"><a name="zh-cn_topic_0237124759_p3328235162313"></a><a name="zh-cn_topic_0237124759_p3328235162313"></a>22P07</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p6328183512313"><a name="zh-cn_topic_0237124759_p6328183512313"></a><a name="zh-cn_topic_0237124759_p6328183512313"></a>文件读取失败（ERRCODE_FILE_READ_FAILED）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p6328183512313"><a name="zh-cn_topic_0237124759_p6328183512313"></a><a name="zh-cn_topic_0237124759_p6328183512313"></a>文件读取失败（FILE_READ_FAILED）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row101347913248"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p013411972411"><a name="zh-cn_topic_0237124759_p013411972411"></a><a name="zh-cn_topic_0237124759_p013411972411"></a>22P08</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p131341911247"><a name="zh-cn_topic_0237124759_p131341911247"></a><a name="zh-cn_topic_0237124759_p131341911247"></a>获取数据失败（ERRCODE_FETCH_DATA_FAILED）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p131341911247"><a name="zh-cn_topic_0237124759_p131341911247"></a><a name="zh-cn_topic_0237124759_p131341911247"></a>获取数据失败（FETCH_DATA_FAILED）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r6e86bdbbffe946d699d94297767ed2b9"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p108556751175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p108556751175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p108556751175"></a>2200L</p>
@@ -480,7 +480,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row125191536152219"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p1452083614227"><a name="zh-cn_topic_0237124759_p1452083614227"></a><a name="zh-cn_topic_0237124759_p1452083614227"></a>2200O</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1452063652214"><a name="zh-cn_topic_0237124759_p1452063652214"></a><a name="zh-cn_topic_0237124759_p1452063652214"></a>非法的XML错误信息（ERRCODE_INVALID_XML_ERROR_CONTEXT）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1452063652214"><a name="zh-cn_topic_0237124759_p1452063652214"></a><a name="zh-cn_topic_0237124759_p1452063652214"></a>非法的XML错误信息（INVALID_XML_ERROR_CONTEXT）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r68240dadc61643acb9d2ecf669df998c"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p598613721175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p598613721175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p598613721175"></a>2200S</p>
@@ -594,12 +594,12 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row780324032313"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p108031440102317"><a name="zh-cn_topic_0237124759_p108031440102317"></a><a name="zh-cn_topic_0237124759_p108031440102317"></a>25009</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p108041240112315"><a name="zh-cn_topic_0237124759_p108041240112315"></a><a name="zh-cn_topic_0237124759_p108041240112315"></a>恢复期间无法启用事务（ERRCODE_RUN_TRANSACTION_DURING_RECOVERY）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p108041240112315"><a name="zh-cn_topic_0237124759_p108041240112315"></a><a name="zh-cn_topic_0237124759_p108041240112315"></a>恢复期间无法启用事务（RUN_TRANSACTION_DURING_RECOVERY）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row27551447182613"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p87551047192612"><a name="zh-cn_topic_0237124759_p87551047192612"></a><a name="zh-cn_topic_0237124759_p87551047192612"></a>25010</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p17551947202612"><a name="zh-cn_topic_0237124759_p17551947202612"></a><a name="zh-cn_topic_0237124759_p17551947202612"></a>事务ID不存在（ERRCODE_GXID_DOES_NOT_EXIST）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p17551947202612"><a name="zh-cn_topic_0237124759_p17551947202612"></a><a name="zh-cn_topic_0237124759_p17551947202612"></a>事务ID不存在（GXID_DOES_NOT_EXIST）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_rcff1c211f66a4e93ab8a2e2db9f29eab"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p381221561175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p381221561175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p381221561175"></a>25P01</p>
@@ -630,7 +630,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row1526520213018"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p926514210304"><a name="zh-cn_topic_0237124759_p926514210304"></a><a name="zh-cn_topic_0237124759_p926514210304"></a>27001</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p72651213011"><a name="zh-cn_topic_0237124759_p72651213011"></a><a name="zh-cn_topic_0237124759_p72651213011"></a>触发的元素非法（ERRCODE_TRIGGERED_INVALID_TUPLE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p72651213011"><a name="zh-cn_topic_0237124759_p72651213011"></a><a name="zh-cn_topic_0237124759_p72651213011"></a>触发的元素非法（TRIGGERED_INVALID_TUPLE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r89c3ab082ce64c99acf31353d154d8cf"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p561030991175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p561030991175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p561030991175"></a>类 28 - 非法授权声明</p>
@@ -801,6 +801,11 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p475824831175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p475824831175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p475824831175"></a>非法模式名（INVALID_SCHEMA_NAME）</p>
 </td>
 </tr>
+<tr id="row148218185307"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="p0483141823012"><a name="p0483141823012"></a><a name="p0483141823012"></a><span id="ph2069915321302"><a name="ph2069915321302"></a><a name="ph2069915321302"></a>3F001</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="p124831187303"><a name="p124831187303"></a><a name="p124831187303"></a><span id="ph94279449303"><a name="ph94279449303"></a><a name="ph94279449303"></a>未定义模式（UNDEFINED_SCHEMA）</span></p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_rb5e42b1e1b304cabb77a0894f4dba08d"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p594566261175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p594566261175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p594566261175"></a>类 40 - 事务回滚</p>
 </td>
 </tr>
@@ -909,37 +914,37 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row11915184843411"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p291519487347"><a name="zh-cn_topic_0237124759_p291519487347"></a><a name="zh-cn_topic_0237124759_p291519487347"></a>42P23</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p10915848123419"><a name="zh-cn_topic_0237124759_p10915848123419"></a><a name="zh-cn_topic_0237124759_p10915848123419"></a>分区错误（ERRCODE_PARTITION_ERROR）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p10915848123419"><a name="zh-cn_topic_0237124759_p10915848123419"></a><a name="zh-cn_topic_0237124759_p10915848123419"></a>分区错误（PARTITION_ERROR）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row633631113510"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p933611103519"><a name="zh-cn_topic_0237124759_p933611103519"></a><a name="zh-cn_topic_0237124759_p933611103519"></a>42P24</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p6336161133510"><a name="zh-cn_topic_0237124759_p6336161133510"></a><a name="zh-cn_topic_0237124759_p6336161133510"></a>非法属性值（ERRCODE_INVALID_ATTRIBUTE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p6336161133510"><a name="zh-cn_topic_0237124759_p6336161133510"></a><a name="zh-cn_topic_0237124759_p6336161133510"></a>非法属性值（INVALID_ATTRIBUTE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row910521523510"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p1510561519354"><a name="zh-cn_topic_0237124759_p1510561519354"></a><a name="zh-cn_topic_0237124759_p1510561519354"></a>42P25</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p910561514356"><a name="zh-cn_topic_0237124759_p910561514356"></a><a name="zh-cn_topic_0237124759_p910561514356"></a>非法聚集函数（ERRCODE_INVALID_AGG）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p910561514356"><a name="zh-cn_topic_0237124759_p910561514356"></a><a name="zh-cn_topic_0237124759_p910561514356"></a>非法聚集函数（INVALID_AGG）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row9563187113517"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p1356318713518"><a name="zh-cn_topic_0237124759_p1356318713518"></a><a name="zh-cn_topic_0237124759_p1356318713518"></a>42P26</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p205631278354"><a name="zh-cn_topic_0237124759_p205631278354"></a><a name="zh-cn_topic_0237124759_p205631278354"></a>资源池错误（ERRCODE_RESOURCE_POOL_ERROR）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p205631278354"><a name="zh-cn_topic_0237124759_p205631278354"></a><a name="zh-cn_topic_0237124759_p205631278354"></a>资源池错误（RESOURCE_POOL_ERROR）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row6372102414358"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p153726243353"><a name="zh-cn_topic_0237124759_p153726243353"></a><a name="zh-cn_topic_0237124759_p153726243353"></a>42P27</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p133725249359"><a name="zh-cn_topic_0237124759_p133725249359"></a><a name="zh-cn_topic_0237124759_p133725249359"></a>未找到父级计划（ERRCODE_PLAN_PARENT_NOT_FOUND）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p133725249359"><a name="zh-cn_topic_0237124759_p133725249359"></a><a name="zh-cn_topic_0237124759_p133725249359"></a>未找到父级计划（PLAN_PARENT_NOT_FOUND）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row3449192119357"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p7450172183518"><a name="zh-cn_topic_0237124759_p7450172183518"></a><a name="zh-cn_topic_0237124759_p7450172183518"></a>42P28</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1145011217354"><a name="zh-cn_topic_0237124759_p1145011217354"></a><a name="zh-cn_topic_0237124759_p1145011217354"></a>更新冲突（ERRCODE_MODIFY_CONFLICTS）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1145011217354"><a name="zh-cn_topic_0237124759_p1145011217354"></a><a name="zh-cn_topic_0237124759_p1145011217354"></a>更新冲突（MODIFY_CONFLICTS）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row193416312191"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p133428310199"><a name="zh-cn_topic_0237124759_p133428310199"></a><a name="zh-cn_topic_0237124759_p133428310199"></a>42P29</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p13342638193"><a name="zh-cn_topic_0237124759_p13342638193"></a><a name="zh-cn_topic_0237124759_p13342638193"></a>分布错误（ERRCODE_DISTRIBUTION_ERROR）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p13342638193"><a name="zh-cn_topic_0237124759_p13342638193"></a><a name="zh-cn_topic_0237124759_p13342638193"></a>分布错误（DISTRIBUTION_ERROR）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_row3515781175"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p284778391175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p284778391175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p284778391175"></a>42809</p>
@@ -1151,7 +1156,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r5f43d69ae2404824b6c58e615d5b9f07"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p211805661175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p211805661175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p211805661175"></a>55006</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p379042991175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p379042991175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p379042991175"></a>对象在使用中（OBJECT_IN_USE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p379042991175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p379042991175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p379042991175"></a>对象在使用中(OBJECT_IN_USE)</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r9ed18846dfe448b9a090d96c80fe7175"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p504910961175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p504910961175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p504910961175"></a>55P02</p>
@@ -1363,7 +1368,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row106141021133515"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p4614182110359"><a name="zh-cn_topic_0237124759_p4614182110359"></a><a name="zh-cn_topic_0237124759_p4614182110359"></a>HV00S</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p561592193514"><a name="zh-cn_topic_0237124759_p561592193514"></a><a name="zh-cn_topic_0237124759_p561592193514"></a>不正确的服务器类型（FDW_INVALID_SERVER_TYPE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p561592193514"><a name="zh-cn_topic_0237124759_p561592193514"></a><a name="zh-cn_topic_0237124759_p561592193514"></a>不正确的服务器类型(FDW_INVALID_SERVER_TYPE)</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r59890baa86f64596953e2875606398cc"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p330861541175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p330861541175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p330861541175"></a>HV00L</p>
@@ -1434,32 +1439,32 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row18971157125013"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p6971137125010"><a name="zh-cn_topic_0237124759_p6971137125010"></a><a name="zh-cn_topic_0237124759_p6971137125010"></a>XX004</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p39715719504"><a name="zh-cn_topic_0237124759_p39715719504"></a><a name="zh-cn_topic_0237124759_p39715719504"></a>未知节点类型（ERRCODE_UNRECOGNIZED_NODE_TYPE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p39715719504"><a name="zh-cn_topic_0237124759_p39715719504"></a><a name="zh-cn_topic_0237124759_p39715719504"></a>未知节点类型（UNRECOGNIZED_NODE_TYPE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row492010544414"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p139211154184115"><a name="zh-cn_topic_0237124759_p139211154184115"></a><a name="zh-cn_topic_0237124759_p139211154184115"></a>XX005</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1892195416417"><a name="zh-cn_topic_0237124759_p1892195416417"></a><a name="zh-cn_topic_0237124759_p1892195416417"></a>异常空值（ERRCODE_UNEXPECTED_NULL_VALUE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1892195416417"><a name="zh-cn_topic_0237124759_p1892195416417"></a><a name="zh-cn_topic_0237124759_p1892195416417"></a>异常空值（UNEXPECTED_NULL_VALUE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row5106851502"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p210610545018"><a name="zh-cn_topic_0237124759_p210610545018"></a><a name="zh-cn_topic_0237124759_p210610545018"></a>XX006</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p41061356505"><a name="zh-cn_topic_0237124759_p41061356505"></a><a name="zh-cn_topic_0237124759_p41061356505"></a>异常节点状态（ERRCODE_UNEXPECTED_NODE_STATE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p41061356505"><a name="zh-cn_topic_0237124759_p41061356505"></a><a name="zh-cn_topic_0237124759_p41061356505"></a>异常节点状态（UNEXPECTED_NODE_STATE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row450914095014"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p250919045016"><a name="zh-cn_topic_0237124759_p250919045016"></a><a name="zh-cn_topic_0237124759_p250919045016"></a>XX007</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p9509150195010"><a name="zh-cn_topic_0237124759_p9509150195010"></a><a name="zh-cn_topic_0237124759_p9509150195010"></a>JUNK列为空（ERRCODE_NULL_JUNK_ATTRIBUTE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p9509150195010"><a name="zh-cn_topic_0237124759_p9509150195010"></a><a name="zh-cn_topic_0237124759_p9509150195010"></a>JUNK列为空（NULL_JUNK_ATTRIBUTE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row1254815713493"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p1754811571496"><a name="zh-cn_topic_0237124759_p1754811571496"></a><a name="zh-cn_topic_0237124759_p1754811571496"></a>XX008</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p55481157144916"><a name="zh-cn_topic_0237124759_p55481157144916"></a><a name="zh-cn_topic_0237124759_p55481157144916"></a>优化器状态不一致（ERRCODE_OPTIMIZER_INCONSISTENT_STATE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p55481157144916"><a name="zh-cn_topic_0237124759_p55481157144916"></a><a name="zh-cn_topic_0237124759_p55481157144916"></a>优化器状态不一致（OPTIMIZER_INCONSISTENT_STATE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row6461547164915"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p646144784913"><a name="zh-cn_topic_0237124759_p646144784913"></a><a name="zh-cn_topic_0237124759_p646144784913"></a>XX009</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p154611473490"><a name="zh-cn_topic_0237124759_p154611473490"></a><a name="zh-cn_topic_0237124759_p154611473490"></a>重复查询编号（ERRCODE_STREAM_DUPLICATE_QUERY_ID）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p154611473490"><a name="zh-cn_topic_0237124759_p154611473490"></a><a name="zh-cn_topic_0237124759_p154611473490"></a>重复查询编号（STREAM_DUPLICATE_QUERY_ID）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row238485461415"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p12385654191414"><a name="zh-cn_topic_0237124759_p12385654191414"></a><a name="zh-cn_topic_0237124759_p12385654191414"></a>XX010</p>
@@ -1474,7 +1479,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row2066913221283"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p1066910229812"><a name="zh-cn_topic_0237124759_p1066910229812"></a><a name="zh-cn_topic_0237124759_p1066910229812"></a>XX012</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1066916228816"><a name="zh-cn_topic_0237124759_p1066916228816"></a><a name="zh-cn_topic_0237124759_p1066916228816"></a>节点编号不匹配（ERRCODE_NODE_ID_MISSMATCH）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1066916228816"><a name="zh-cn_topic_0237124759_p1066916228816"></a><a name="zh-cn_topic_0237124759_p1066916228816"></a>节点编号不匹配（NODE_ID_MISSMATCH）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row92353216571"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p14237132155713"><a name="zh-cn_topic_0237124759_p14237132155713"></a><a name="zh-cn_topic_0237124759_p14237132155713"></a>XX013</p>
@@ -1562,7 +1567,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row102261938201013"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p0226193812103"><a name="zh-cn_topic_0237124759_p0226193812103"></a><a name="zh-cn_topic_0237124759_p0226193812103"></a>YY015</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p17226183810103"><a name="zh-cn_topic_0237124759_p17226183810103"></a><a name="zh-cn_topic_0237124759_p17226183810103"></a>通讯接收信息错误（ERRCODE_CONNECTION_RECEIVE_WRONG）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p17226183810103"><a name="zh-cn_topic_0237124759_p17226183810103"></a><a name="zh-cn_topic_0237124759_p17226183810103"></a>通讯接收信息错误（CONNECTION_RECEIVE_WRONG）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row3862183701120"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p12690174317129"><a name="zh-cn_topic_0237124759_p12690174317129"></a><a name="zh-cn_topic_0237124759_p12690174317129"></a>类SI – SPI接口错误</p>
@@ -1570,37 +1575,37 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row17736205513125"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p19736155181218"><a name="zh-cn_topic_0237124759_p19736155181218"></a><a name="zh-cn_topic_0237124759_p19736155181218"></a>SP000</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p07366558125"><a name="zh-cn_topic_0237124759_p07366558125"></a><a name="zh-cn_topic_0237124759_p07366558125"></a>SPI接口错误（ERRCODE_SPI_ERROR）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p07366558125"><a name="zh-cn_topic_0237124759_p07366558125"></a><a name="zh-cn_topic_0237124759_p07366558125"></a>SPI接口错误（SPI_ERROR）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row1325316498133"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p7253249151314"><a name="zh-cn_topic_0237124759_p7253249151314"></a><a name="zh-cn_topic_0237124759_p7253249151314"></a>SP001</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p8253124921315"><a name="zh-cn_topic_0237124759_p8253124921315"></a><a name="zh-cn_topic_0237124759_p8253124921315"></a>SPI通讯失败（ERRCODE_SPI_CONNECTION_FAILURE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p8253124921315"><a name="zh-cn_topic_0237124759_p8253124921315"></a><a name="zh-cn_topic_0237124759_p8253124921315"></a>SPI通讯失败（SPI_CONNECTION_FAILURE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row3388164310138"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p73887438134"><a name="zh-cn_topic_0237124759_p73887438134"></a><a name="zh-cn_topic_0237124759_p73887438134"></a>SP002</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p238884316133"><a name="zh-cn_topic_0237124759_p238884316133"></a><a name="zh-cn_topic_0237124759_p238884316133"></a>SPI完成失败（ERRCODE_SPI_FINISH_FAILURE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p238884316133"><a name="zh-cn_topic_0237124759_p238884316133"></a><a name="zh-cn_topic_0237124759_p238884316133"></a>SPI完成失败（SPI_FINISH_FAILURE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row515016350138"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p3150135171311"><a name="zh-cn_topic_0237124759_p3150135171311"></a><a name="zh-cn_topic_0237124759_p3150135171311"></a>SP003</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1815083551316"><a name="zh-cn_topic_0237124759_p1815083551316"></a><a name="zh-cn_topic_0237124759_p1815083551316"></a>SPI准备失败（ERRCODE_SPI_PREPARE_FAILURE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1815083551316"><a name="zh-cn_topic_0237124759_p1815083551316"></a><a name="zh-cn_topic_0237124759_p1815083551316"></a>SPI准备失败（SPI_PREPARE_FAILURE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row2670140161318"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p17670940161310"><a name="zh-cn_topic_0237124759_p17670940161310"></a><a name="zh-cn_topic_0237124759_p17670940161310"></a>SP004</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p166711740161318"><a name="zh-cn_topic_0237124759_p166711740161318"></a><a name="zh-cn_topic_0237124759_p166711740161318"></a>SPI游标开启失败（ERRCODE_SPI_CURSOR_OPEN_FAILURE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p166711740161318"><a name="zh-cn_topic_0237124759_p166711740161318"></a><a name="zh-cn_topic_0237124759_p166711740161318"></a>SPI游标开启失败（SPI_CURSOR_OPEN_FAILURE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row2081110256135"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p4811102551319"><a name="zh-cn_topic_0237124759_p4811102551319"></a><a name="zh-cn_topic_0237124759_p4811102551319"></a>SP005</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p138111725181317"><a name="zh-cn_topic_0237124759_p138111725181317"></a><a name="zh-cn_topic_0237124759_p138111725181317"></a>SPI执行失败（ERRCODE_SPI_EXECUTE_FAILURE）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p138111725181317"><a name="zh-cn_topic_0237124759_p138111725181317"></a><a name="zh-cn_topic_0237124759_p138111725181317"></a>SPI执行失败（SPI_EXECUTE_FAILURE）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row171327327135"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p17133133219134"><a name="zh-cn_topic_0237124759_p17133133219134"></a><a name="zh-cn_topic_0237124759_p17133133219134"></a>SP006</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1413312322131"><a name="zh-cn_topic_0237124759_p1413312322131"></a><a name="zh-cn_topic_0237124759_p1413312322131"></a>SPI不当调用（ERRORCODE_SPI_IMPROPER_CALL）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p1413312322131"><a name="zh-cn_topic_0237124759_p1413312322131"></a><a name="zh-cn_topic_0237124759_p1413312322131"></a>SPI不当调用（<span id="ph835616014013"><a name="ph835616014013"></a><a name="ph835616014013"></a>SPI_IMPROPER_CALL_FUNCTION</span>）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_row149641015172119"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p647913297217"><a name="zh-cn_topic_0237124759_p647913297217"></a><a name="zh-cn_topic_0237124759_p647913297217"></a>类RB - RBTree错误</p>
@@ -1704,3 +1709,90 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 </tbody>
 </table>
+
+**表 2**  GaussDB Kernel CM错误码SQLSTATE值
+
+<a name="table548617911814"></a>
+<table><thead align="left"><tr id="row174871598183"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1352583209"><a name="p1352583209"></a><a name="p1352583209"></a>类 c0 - 连接异常（Connection Exception）</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2">&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody><tr id="row16487498187"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p26847299588"><a name="p26847299588"></a><a name="p26847299588"></a>c0000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5684142965813"><a name="p5684142965813"></a><a name="p5684142965813"></a>连接异常（connection_exception）</p>
+</td>
+</tr>
+<tr id="row248718981813"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1368412919589"><a name="p1368412919589"></a><a name="p1368412919589"></a>c0001</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p20684829185813"><a name="p20684829185813"></a><a name="p20684829185813"></a>连接不存在（connection_does_not_exist）</p>
+</td>
+</tr>
+<tr id="row748719961810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p96845291586"><a name="p96845291586"></a><a name="p96845291586"></a>c0002</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p10684729135810"><a name="p10684729135810"></a><a name="p10684729135810"></a>连接失败（connection_failure）</p>
+</td>
+</tr>
+<tr id="row24873914181"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17684329165811"><a name="p17684329165811"></a><a name="p17684329165811"></a>类 c1 - 环境异常（Environment Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row64875991816"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1468462905810"><a name="p1468462905810"></a><a name="p1468462905810"></a>c1000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1068411296586"><a name="p1068411296586"></a><a name="p1068411296586"></a>内存不足（out_of_memory）</p>
+</td>
+</tr>
+<tr id="row1348816931816"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p87419425417"><a name="p87419425417"></a><a name="p87419425417"></a>类 c2 - 文件异常（File Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row1548818911185"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p166855299589"><a name="p166855299589"></a><a name="p166855299589"></a>c2000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1168562955811"><a name="p1168562955811"></a><a name="p1168562955811"></a>打开文件失败（open_file_failure）</p>
+</td>
+</tr>
+<tr id="row134881695184"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p668582916589"><a name="p668582916589"></a><a name="p668582916589"></a>c2001</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2685122945815"><a name="p2685122945815"></a><a name="p2685122945815"></a>文件读取失败（read_file_failure）</p>
+</td>
+</tr>
+<tr id="row15488179191818"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76852291582"><a name="p76852291582"></a><a name="p76852291582"></a>c2002</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p6685142915589"><a name="p6685142915589"></a><a name="p6685142915589"></a>配置文件失败（config_file_failure）</p>
+</td>
+</tr>
+<tr id="row74886912189"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p417655515915"><a name="p417655515915"></a><a name="p417655515915"></a>类 c3 - 参数异常（Parameter Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row174886971816"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9818323101020"><a name="p9818323101020"></a><a name="p9818323101020"></a>c3000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1818152381016"><a name="p1818152381016"></a><a name="p1818152381016"></a>参数失败（parameter_failure）</p>
+</td>
+</tr>
+<tr id="row748811917183"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p697020193111"><a name="p697020193111"></a><a name="p697020193111"></a>c3001</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p797031912113"><a name="p797031912113"></a><a name="p797031912113"></a>环境变量失败（environment_variable_failure）</p>
+</td>
+</tr>
+<tr id="row134887919182"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p648113615127"><a name="p648113615127"></a><a name="p648113615127"></a>类 c4 - Etcd异常（Etcd Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row748829141813"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12985622111213"><a name="p12985622111213"></a><a name="p12985622111213"></a>c4000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19851822121220"><a name="p19851822121220"></a><a name="p19851822121220"></a>etcd打开失败（etcd_open_failure）</p>
+</td>
+</tr>
+<tr id="row1048889121815"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p32411930101211"><a name="p32411930101211"></a><a name="p32411930101211"></a>类 c5 - 内部异常（Internal Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row24896941819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p205810405138"><a name="p205810405138"></a><a name="p205810405138"></a>c5000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2058340171318"><a name="p2058340171318"></a><a name="p2058340171318"></a>内部错误（internal_error）</p>
+</td>
+</tr>
+</tbody>
+</table>
+
