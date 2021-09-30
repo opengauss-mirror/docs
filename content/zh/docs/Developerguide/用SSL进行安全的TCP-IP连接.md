@@ -178,7 +178,7 @@ openGauss在openGauss部署完成后，默认已开启SSL认证模式。服务�
 在客户端配置SSL认证相关的环境变量，详细信息请参见[表3](#zh-cn_topic_0237121092_zh-cn_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b)。
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->客户端环境变量的路径以“_/home/omm_”为例，在实际操作中请使用实际路径进行替换。  
+>客户端环境变量的路径以“/home/omm_”为例，在实际操作中请使用实际路径进行替换。  
 
 **表 3**  客户端参数
 
