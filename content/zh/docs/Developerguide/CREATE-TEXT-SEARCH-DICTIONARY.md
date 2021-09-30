@@ -4,7 +4,7 @@
 
 创建一个新的全文检索词典。词典是一种指定在全文检索时识别特定词并处理的方法。
 
-词典的创建依赖于预定义模板（在系统表[PG\_TS\_TEMPLATE](PG_TS_TEMPLATE.md)中定义），支持创建五种类型的词典，分别是Simple、Ispell、Synonym、Thesaurus、以及Snowball，每种类型的词典可以完成不同的任务。
+词典的创建依赖于预定义模板（在系统表[PG\_TS\_TEMPLATE](PG_TS_TEMPLATE.md)中定义），支持创建五种类型的词典，分别是Simple、Ispell、Synonym、Thesaurus以及Snowball，每种类型的词典可以完成不同的任务。
 
 ## 注意事项<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
@@ -52,14 +52,14 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            词典文件所在目录。目录可以指定为本地目录和OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
+            词典文件所在目录。目录可以指定为本地目录和OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为“file://absolute\_path”，OBS目录格式为“obs://bucket\_name/path accesskey=ak secretkey=sk region=rg”。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
 
     -   Synonym词典对应的option
         -   **SYNONYM**
 
             同义词词典的定义文件名，默认后缀名为syn。
 
-            文件格式为一组同义词列表，每行格式为"token synonym"，即token和其对应的synonym，中间以空格相连。
+            文件格式为一组同义词列表，每行格式为“token synonym”，即token和其对应的synonym，中间以空格相连。
 
         -   **CASESENSITIVE**
 
@@ -67,14 +67,14 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            同义词词典文件所在目录。目录可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
+            同义词词典文件所在目录。目录可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为“file://absolute\_path”，OBS目录格式为“obs://bucket\_name/path accesskey=ak secretkey=sk region=rg”。默认值为预定义词典文件所在目录。
 
     -   Thesaurus词典对应的option
         -   **DICTFILE**
 
             词典定义文件名，默认后缀名为ths。
 
-            文件格式为一组同义词列表，每行格式为"sample words : indexed words"，中间冒号（:）作为短语和其替换词间的分隔符。TZ词典处理时，如果有多个匹配的sample words，将选择最长匹配输出。
+            文件格式为一组同义词列表，每行格式为“sample words : indexed words”，中间冒号（:）作为短语和其替换词间的分隔符。TZ词典处理时，如果有多个匹配的sample words，将选择最长匹配输出。
 
         -   **DICTIONARY**
 
@@ -88,11 +88,11 @@ CREATE TEXT SEARCH DICTIONARY name (
             ? one ? two : swsw
             ```
 
-            上述同义词组定义会匹配"a one the two"以及"the one a two"，这两个短语均会被swsw替代输出。
+            上述同义词组定义会匹配“a one the two”以及“the one a two”，这两个短语均会被swsw替代输出。
 
         -   **FILEPATH**
 
-            词典定义文件所在目录。目录可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
+            词典定义文件所在目录。目录可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为“file://absolute\_path”，OBS目录格式为“obs://bucket\_name/path accesskey=ak secretkey=sk region=rg”。默认值为预定义词典文件所在目录。
 
     -   Ispell词典
         -   **DICTFILE**
@@ -109,7 +109,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            词典文件所在目录。可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。
+            词典文件所在目录。可以指定为本地目录和OBS目录两种形式（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为“file://absolute\_path”，OBS目录格式为“obs://bucket\_name/path accesskey=ak secretkey=sk region=rg”。默认值为预定义词典文件所在目录。
 
     -   Snowball词典
         -   **LANGUAGE**
@@ -122,7 +122,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
         -   **FILEPATH**
 
-            词典定义文件所在目录。可以指定为本地目录或者OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为"file://absolute\_path"，OBS目录格式为"obs://bucket\_name/path accesskey=ak secretkey=sk region=rg"。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
+            词典定义文件所在目录。可以指定为本地目录或者OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为“file://absolute\_path”，OBS目录格式为“obs://bucket\_name/path accesskey=ak secretkey=sk region=rg”。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
 
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
