@@ -157,6 +157,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
 >-   该值设置过小每次清理的条目较少，可能会导致频繁进行清理；设置过大时每次清理的条目较多，可能会导致频繁插入。建议值0.1。
+>
 >-   unique\_sql\_clean\_ratio设置为0不代表关闭自动淘汰功能，请通过enable\_auto\_clean\_unique\_sql来控制是否开启自动淘汰。当开启自动淘汰，且将unique\_sql\_clean\_ratio设置为0时，将自动把unique\_sql\_clean\_ratio重置为默认值0.1。
 
 ## enable\_auto\_clean\_unique\_sql<a name="section7679208201"></a>
