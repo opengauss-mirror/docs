@@ -23,7 +23,8 @@ select 'null'::json;   -- sucselect 'NULL'::jsonb;  -- err
 数字 \(num-json\)：正负整数、小数、0，支持科学计数法。
 
 ```
-select '1'::json;select '-1.5'::json;select '-1.5e-5'::jsonb, '-1.5e+2'::jsonb;select '001'::json, '+15'::json, 'NaN'::json;  -- 不支持多余的前导0，正数的+号，以及NaN和infinity。
+select '1'::json;select '-1.5'::json;select '-1.5e-5'::jsonb, '-1.5e+2'::jsonb;select '001'::json, '+15'::json, 'NaN'::json; 
+-- 不支持多余的前导0，正数的+号，以及NaN和infinity。
 ```
 
 布尔\(bool-json\)：仅true、false，全小写。
@@ -125,7 +126,12 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
     查询一个JSON之中是否包含某些元素，或者某些元素是否存在于某个JSON中是jsonb的一个重要能力。
 
     ```
-    -- 简单的标量/原始值只包含相同的值：SELECT '"foo"'::jsonb @> '"foo"'::jsonb;-- 左侧数组包含了右侧字符串。SELECT '[1, “aa”, 3]'::jsonb ? 'aa';-- 左侧数组包含了右侧的数组所有元素，顺序、重复不重要。SELECT '[1, 2, 3]'::jsonb @> '[1, 3, 1]'::jsonb;-- 左侧object-json包含了右侧object-json的所有键值对SELECT '{"product": "PostgreSQL", "version": 9.4, "jsonb":true}'::jsonb @> '{"version":9.4}'::jsonb;-- 左侧数组并没有包含右侧的数组所有元素，因为左侧数组的三个元素为1、2、[1,3]，右侧的为1、3SELECT '[1, 2, [1, 3]]'::jsonb @> '[1, 3]'::jsonb; -- 产生假-- 相似的，这样也不对SELECT '{"foo": {"bar": "baz"}}'::jsonb @> '{"bar": "baz"}'::jsonb; -- false
+    -- 简单的标量/原始值只包含相同的值：SELECT '"foo"'::jsonb @> '"foo"'::jsonb;
+    -- 左侧数组包含了右侧字符串：SELECT '[1, “aa”, 3]'::jsonb ? 'aa';
+    -- 左侧数组包含了右侧的数组所有元素，顺序、重复不重要：SELECT '[1, 2, 3]'::jsonb @> '[1, 3, 1]'::jsonb;
+    -- 左侧object-json包含了右侧object-json的所有键值对：SELECT '{"product": "PostgreSQL", "version": 9.4, "jsonb":true}'::jsonb @> '{"version":9.4}'::jsonb;
+    -- 左侧数组并没有包含右侧的数组所有元素，因为左侧数组的三个元素为1、2、[1,3]，右侧的为1、3：SELECT '[1, 2, [1, 3]]'::jsonb @> '[1, 3]'::jsonb; 
+    -- 产生假-- 相似的，这样也不对：SELECT '{"foo": {"bar": "baz"}}'::jsonb @> '{"bar": "baz"}'::jsonb; -- false
     ```
 
     相关的操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。
