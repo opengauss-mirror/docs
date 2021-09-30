@@ -36,9 +36,9 @@ CREATE TEXT SEARCH CONFIGURATION name
 
 -   **configuration\_option**
 
-    文本搜索配置的配置参数，主要是针对parser\_name执行的解析器，或者source\_config隐含的解析器而言的。
+    文本搜索配置的配置参数，主要是针对parser\_name执行的解析器或者source\_config隐含的解析器而言的。
 
-    取值范围：目前共支持default、ngram两种类型的解析器，其中default类型的解析器没有对应的configuration\_option，ngram类型解析器对应的configuration\_option如[表1](#zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_t0d301ca84e1a4c16ae8bead85aa1a8c3)所示。 
+    取值范围：目前共支持default、ngram两种类型的解析器，其中default类型的解析器没有对应的configuration\_option、ngram类型解析器对应的configuration\_option如[表1](#zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_t0d301ca84e1a4c16ae8bead85aa1a8c3)所示。 
 
     **表 1**  ngram类型解析器对应的配置参数
 

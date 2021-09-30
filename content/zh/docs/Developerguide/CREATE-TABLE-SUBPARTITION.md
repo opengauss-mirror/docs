@@ -13,8 +13,8 @@
 -   二级分区表有两个分区键，每个分区键只能支持1列。
 -   唯一约束和主键约束的约束键包含所有分区键将为约束创建LOCAL索引，否则创建GLOBAL索引。
 -   二级分区表的二级分区（叶子节点）个数不能超过1048575个，一级分区无限制，但一级分区下面至少有一个二级分区。
--   二级分区表只支持行存，不支持列存，段页式，hashbucket。
--   不支持Upsert，Merge into。
+-   二级分区表只支持行存，不支持列存、段页式、hashbucket。
+-   不支持Upsert、Merge into。
 -   指定分区查询时，如select \* from tablename partition/subpartition \(partitionname\)，关键字partition和subpartition注意不要写错。如果写错，查询不会报错，这时查询会变为对表起别名进行查询。
 -   不支持对二级分区 subpartition for \(values\)查询。如select \* from tablename subpartition for \(values\)。
 -   不支持密态数据库、账本数据库和行级访问控制。
@@ -232,12 +232,19 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
+
     >-   不能为生成列指定默认值。
+
     >-   生成列不能作为分区键的一部分。
+
     >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL,SET DEFAULT动作同时指定。
+
     >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
+
     >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
+
     >-   生成列的权限控制和普通列一样。
+    
     >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
 
 -   **UNIQUE index\_parameters**
