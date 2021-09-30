@@ -32,7 +32,7 @@ value=max(32768，实例数目*8192)
 * soft nproc [value] 
 ```
 
-对于不同操作系统修改方式略有不同，centos6以上版本可以修改/etc/security/ limits.d/90-nofile.conf文件，方法同上。
+对于不同操作系统修改方式略有不同，centos6以上版本可以修改/etc/security/limits.d/90-nofile.conf文件，方法同上。
 
 另外，也可以直接通过如下命令设置，但OS重启会失效，可以添加到全局环境变量/etc/profile文件中使其生效。
 
