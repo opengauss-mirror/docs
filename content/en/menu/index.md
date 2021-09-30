@@ -6,7 +6,7 @@ headless: true
 
 -   [Release Notes]({{< relref "./docs/Releasenotes/Releasenotes.md" >}})
     -   [User Notice]({{< relref "./docs/Releasenotes/user-notice.md" >}})
-    -   [Version Introduction]({{< relref "./docs/Releasenotes/version-introduction.md" >}})
+    -   [Versions]({{< relref "./docs/Releasenotes/versions.md" >}})
     -   [Feature Introduction]({{< relref "./docs/Releasenotes/feature-introduction.md" >}})
     -   [Important Notes]({{< relref "./docs/Releasenotes/important-notes.md" >}})
     -   [Known Issues]({{< relref "./docs/Releasenotes/known-issues.md" >}})
