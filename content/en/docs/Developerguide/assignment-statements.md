@@ -56,29 +56,3 @@ END;
 >-   In INTO mode, values can be assigned only to the columns at the first layer. Two-dimensional or above arrays are not supported.
 >-   When a nested column value is referenced, if an array subscript exists, only one parenthesis can exist in the first three layers of columns. You are advised to use square brackets to reference the subscript.
 
-## INTO/BULK COLLECT INTO<a name="section1491111311511"></a>
-
-**INTO**  and  **BULK COLLECT INTO**  store values returned by statements in a stored procedure to variables.  **BULK COLLECT INTO**  allows some or all returned values to be temporarily stored in an array.
-
-## Examples<a name="section1174210218183"></a>
-
-```
-openGauss=# DECLARE
-    my_id integer;
-BEGIN
-    select id into my_id from customers limit 1; -- Assign a value.
-END;
-/
-
-openGauss=# DECLARE
-    type id_list is varray(6) of customers.id%type;
-    id_arr id_list;
-BEGIN
-    select id bulk collect into id_arr from customers order by id DESC limit 20; -- Assign values in batches.
-END;
-/
-```
-
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->**BULK COLLECT INTO**  can only assign values to arrays in batches. Use  **LIMIT**  properly to prevent performance deterioration caused by excessive operations on data.
-
