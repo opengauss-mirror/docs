@@ -13,7 +13,7 @@
 
 ## 语法格式<a name="section1452716494253"></a>
 
-1.  创建快照
+1.  创建快照。
 
     可以采用“CREATE SNAPSHOT … AS”以及“CREATE SNAPSHOT … FROM”语句创建**数据表快照**。
 
