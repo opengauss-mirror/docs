@@ -1,17 +1,19 @@
-# Technical Characteristics<a name="EN-US_CONCEPT_0289895596"></a>
+# Technical Characteristics<a name="EN-US_CONCEPT_0000001208233985"></a>
 
 Compared with other open-source databases, openGauss has the following characteristics:
 
 -   High performance
-    -   Provides the multi-core architecture-oriented concurrency control technology and Kunpeng hardware optimization, and achieves that the TPC-C benchmark performance reaches 1,500,000 tpmC in Kunpeng 2-socket servers.
+    -   Provides the multi-core architecture-oriented concurrency control technology and Kunpeng hardware optimization, and achieves that the TPC-C benchmark performance reaches 1,800,000 tpmC in Kunpeng 2-socket servers.
     -   Uses NUMA-Aware data structures as the key kernel structures to adapt to the trend of using multi-core NUMA architecture on hardware.
-    -   Provides the SQL bypass intelligent fast engine and fusion engine technologies.
+    -   Provides the SQL bypass intelligent fast engine technology.
+    -   The Ustore storage engine is provided for frequent update scenarios.
 
 
 -   High availability \(HA\)
     -   Supports multiple deployment modes, such as primary/standby synchronization, primary/standby asynchronization, and cascaded standby server deployment.
     -   Supports data page cyclic redundancy check \(CRC\), and automatically restores damaged data pages through the standby node.
     -   Recovers the standby node in parallel and promots it to primary to provide services within 10 seconds.
+    -   Log replication and primary selection framework are provided based on the Paxos distributed consistency protocol.
 
 
 -   High security
