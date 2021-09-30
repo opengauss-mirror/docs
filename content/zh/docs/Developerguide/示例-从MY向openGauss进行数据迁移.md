@@ -1,6 +1,6 @@
 # 示例：从MY向openGauss进行数据迁移<a name="ZH-CN_TOPIC_0244721230"></a>
 
-下面示例演示如何通过CopyManager从MY向openGauss进行数据迁移的过程。
+下面示例演示如何通过CopyManager从MY向openGauss进行数据迁移。
 
 ```
 import java.io.StringReader;
