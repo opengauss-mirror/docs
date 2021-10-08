@@ -85,7 +85,7 @@ CREATE RESOURCE POOL pool_name
     包括三档可选：Low、Medium和High。不控制时可设置为None。默认为None。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT，COPY FROM，CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
+    >io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT、COPY FROM、CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
 
 -   **nodegroup**
 
@@ -106,7 +106,7 @@ CREATE RESOURCE POOL pool_name
 
 ## 示例<a name="zh-cn_topic_0059777569_s44181f6d005b4da1952aaeff4ef66e0e"></a>
 
-本示例假定用户已预先成功创建控制组（创建控制组请参考[设置控制组](zh-cn_topic_0000001147994526.md)）。
+本示例假定用户已预先成功创建控制组（创建控制组请参考[设置控制组](设置控制组.md)）。
 
 ```
 --创建一个默认资源池，其控制组为"DefaultClass"组下属的"Medium" Timeshare Workload控制组。

@@ -6,7 +6,7 @@
 
 ## 特性简介<a name="section5814521587"></a>
 
-openGauss优化器是基于代价的优化 （Cost-Based Optimization，简称CBO）。
+openGauss优化器是基于代价的优化（Cost-Based Optimization，简称CBO）。
 
 ## 客户价值<a name="section148987345811"></a>
 
