@@ -37,7 +37,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     >普通分区表目前支持针对某个分区的统计信息的语法，但功能上不支持针对某个分区的统计信息收集。
 
 
--   收集多列统计信息
+-   收集多列统计信息。
 
     ```
     {ANALYZE | ANALYSE} [ VERBOSE ]
@@ -53,7 +53,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     >-   不支持收集多列统计信息的表：系统表。
 
 
--   检测当前库的数据文件
+-   检测当前库的数据文件。
 
     ```
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE};
