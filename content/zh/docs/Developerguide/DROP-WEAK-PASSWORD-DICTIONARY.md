@@ -16,7 +16,7 @@ DROP WEAK PASSWORD DICTIONARY;
 
 ## 参数说明<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_sf2fd7956e26c49a8ae566c80a0e8e1c0"></a>
 
-无
+无。
 
 ## 示例<a name="section12982173212518"></a>
 

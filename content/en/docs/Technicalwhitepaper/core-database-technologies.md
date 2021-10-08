@@ -350,6 +350,10 @@ openGauss provides the logical decoding function to reversely parse physical log
 
 PITR uses basic hot backup, write-ahead logs \(WALs\), and archived WALs for backup and recovery. When replay a WAL record, you can stop at any point in time, so that there is a snapshot of the consistent database at any point in time. That is, you can restore the database to the state at any time since the backup starts. During recovery, openGauss supports specifying the recovery stop point as TID, time, and LSN.
 
+### High Availability Based on the Paxos Protocol \(DCF\)<a name="section4565549116"></a>
+
+After DCF is enabled, DNs support Paxos-based replication and quorum, achieving high availability and disaster recovery. DNs support automatic primary node selection and log replication. The replication process supports compression and stream control to prevent high bandwidth usage. Node types based on Paxos roles are provided and can be adjusted.
+
 ## Maintainability
 
 ### Workload Diagnosis Report
@@ -519,6 +523,56 @@ The password of the created user is encrypted and stored in the system catalog. 
 
 The message processing flow in the unified encryption and authentication process effectively prevents attackers from cracking the username or password by capturing packets.
 
+### Built-in Database Role Permission Management<a name="section210351882916"></a>
+
+openGauss provides a group of default roles whose names start with  **gs\_role\_**. These roles are provided to access to specific, typically high-privileged operations. You can grant these roles to other users or roles within the database so that they can use specific functions. These roles should be given with great care to ensure that they are used where they are needed.  [Table 1](#table2118117460)  describes the permissions of built-in roles.
+
+**Table  1**  Built-in role permissions
+
+<table><thead align="left"><tr id="row142101115461"><th class="cellrowborder" valign="top" width="17.44%" id="mcps1.2.3.1.1"><p id="p152141116461"><a name="p152141116461"></a><a name="p152141116461"></a>Role</p>
+</th>
+<th class="cellrowborder" valign="top" width="82.56%" id="mcps1.2.3.1.2"><p id="p18211117468"><a name="p18211117468"></a><a name="p18211117468"></a>Permission</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row132011124611"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p132161115462"><a name="p132161115462"></a><a name="p132161115462"></a>gs_role_copy_files</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p42101120469"><a name="p42101120469"></a><a name="p42101120469"></a>Permission to run the <strong id="b161060808"><a name="b161060808"></a><a name="b161060808"></a>copy... to/from filename</strong> command. However, the GUC parameter <strong id="b16111308013"><a name="b16111308013"></a><a name="b16111308013"></a>enable_copy_server_files</strong> must be set first to enable the function of copying server files.</p>
+</td>
+</tr>
+<tr id="row13218113465"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p122117468"><a name="p122117468"></a><a name="p122117468"></a>gs_role_signal_backend</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p112101115462"><a name="p112101115462"></a><a name="p112101115462"></a>Permission to invoke the <strong id="b205551310016"><a name="b205551310016"></a><a name="b205551310016"></a>pg_cancel_backend</strong>, <strong id="b11555532012"><a name="b11555532012"></a><a name="b11555532012"></a>pg_terminate_backend</strong>, and <strong id="b1755653902"><a name="b1755653902"></a><a name="b1755653902"></a>pg_terminate_session</strong> functions to cancel or terminate other sessions. However, this role cannot perform operations on sessions of the initial user or <strong id="b85569319014"><a name="b85569319014"></a><a name="b85569319014"></a>PERSISTENCE</strong> user.</p>
+</td>
+</tr>
+<tr id="row182161164616"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p15271114460"><a name="p15271114460"></a><a name="p15271114460"></a>gs_role_tablespace</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p1921011184615"><a name="p1921011184615"></a><a name="p1921011184615"></a>Permission to create a tablespace.</p>
+</td>
+</tr>
+<tr id="row2261194613"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p152191113468"><a name="p152191113468"></a><a name="p152191113468"></a>gs_role_replication</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p6271194616"><a name="p6271194616"></a><a name="p6271194616"></a>Permission to invoke logical replication functions, such as <strong id="b135690144016"><a name="b135690144016"></a><a name="b135690144016"></a>kill_snapshot</strong>, <strong id="b1156918141505"><a name="b1156918141505"></a><a name="b1156918141505"></a>pg_create_logical_replication_slot</strong>, <strong id="b45691914506"><a name="b45691914506"></a><a name="b45691914506"></a>pg_create_physical_replication_slot</strong>, <strong id="b12570614207"><a name="b12570614207"></a><a name="b12570614207"></a>pg_drop_replication_slot</strong>, <strong id="b175709141003"><a name="b175709141003"></a><a name="b175709141003"></a>pg_replication_slot_advance</strong>, <strong id="b175702144017"><a name="b175702144017"></a><a name="b175702144017"></a>pg_create_physical_replication_slot_extern</strong>, <strong id="b10571161414012"><a name="b10571161414012"></a><a name="b10571161414012"></a>pg_logical_slot_get_changes</strong>, <strong id="b1571714103"><a name="b1571714103"></a><a name="b1571714103"></a>pg_logical_slot_peek_changes</strong>, <strong id="b1257117145011"><a name="b1257117145011"></a><a name="b1257117145011"></a>pg_logical_slot_get_binary_changes</strong> and <strong id="b125711514305"><a name="b125711514305"></a><a name="b125711514305"></a>pg_logical_slot_peek_binary_changes</strong>.</p>
+</td>
+</tr>
+<tr id="row132201154612"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p12141118462"><a name="p12141118462"></a><a name="p12141118462"></a>gs_role_account_lock</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p829117463"><a name="p829117463"></a><a name="p829117463"></a>Permission to lock and unlock users. However, this role cannot lock or unlock the initial user or <strong id="b186742301794557"><a name="b186742301794557"></a><a name="b186742301794557"></a>PERSISTENCE</strong> user.</p>
+</td>
+</tr>
+<tr id="row0460611191614"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p64601118162"><a name="p64601118162"></a><a name="p64601118162"></a>gs_role_directory_create</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p17460311141616"><a name="p17460311141616"></a><a name="p17460311141616"></a>Permission to create directory objects. However, this role needs to enable the GUC parameter <strong id="b378975913168"><a name="b378975913168"></a><a name="b378975913168"></a>enable_access_server_directory</strong> first.</p>
+</td>
+</tr>
+<tr id="row10679131511613"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p96791115121616"><a name="p96791115121616"></a><a name="p96791115121616"></a>gs_role_directory_drop</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p14679111519168"><a name="p14679111519168"></a><a name="p14679111519168"></a>Permission to delete directory objects. However, this role needs to enable the GUC parameter <strong id="b1519672711175"><a name="b1519672711175"></a><a name="b1519672711175"></a>enable_access_server_directory</strong> first.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Database Audit<a name="section1544614711502"></a>
 
 Audit logs record user operations performed on database startup and stopping, connection, and DDL, DML, and DCL operations. The audit log mechanism enhances the database capability of tracing illegal operations and collecting evidence.
@@ -528,6 +582,12 @@ You can set parameters to specify the statements or operations for which audit l
 Audit logs record the event time, type, execution result, username, database, connection information, database object, database instance name, port number, and details. You can query audit logs by start time and end time and filter audit logs by recorded field.
 
 Database security administrators can use the audit logs to reproduce a series of events that cause faults in the database and identify unauthorized users, unauthorized operations, and the time when these operations are performed.
+
+## Equality Query in a Fully-encrypted Database<a name="section74321552121516"></a>
+
+Compared with a common database, a fully-encrypted database inherits its basic functions and provides the capability of computing data ciphertext. In the fully-encrypted database solution, data encryption and decryption are performed only on the client, and the server processes only ciphertext data. In addition to the user client medium, ciphertext data is only exposed to ciphertext-only attacks. To address issues such as database privacy leakage and third-party trust, you can use a fully-encrypted database solution that provides full data lifecycle protection.
+
+For a server that processes only ciphertext data, ensure that the performance impact is within the acceptable range. The server needs to inherit the capabilities of the native database, such as generating execution plans, processing transaction consistency, and retrieving and computing data. For a client that requires additional encryption capabilities, provide capabilities such as identifying and encrypting/decrypting private data, rewriting SQL statements that contain private data, and managing multi-level keys on the premise that encryption/decryption automation and transparency are ensured.
 
 ### Network Communication Security
 
@@ -671,9 +731,21 @@ If you need to encrypt the entire table, you need to write an encryption functio
 
 If a user with the required permission wants to view specific data, the user can decrypt required columns using the decryption function API.
 
-### Full Encryption<a name="section472583517127"></a>
+## Transparent Data Encryption<a name="section186712732518"></a>
 
-An encrypted database aims to protect privacy throughout the data lifecycle. In this way, data is always in ciphertext during transmission, computing, and storage regardless of the service scenario and environment. After the data owner encrypts data on the client and sends the encrypted data to the server, an attacker cannot obtain valuable information even if the attacker steals user data by exploiting system vulnerabilities. In this way, data privacy is protected.
+Transparent data encryption \(TDE\) encrypts data when the database writes the data to the storage medium and automatically decrypts the data when reading the data from the storage medium. This prevents attackers from reading data in the data file without database authentication, solving the static data leakage problem. This function is almost transparent to the application layer. You can determine whether to enable the transparent data encryption function as required.
+
+The three-layer key structure is used to implement the key management mechanism, including the root key \(RK\), cluster master key \(CMK\), and data encryption key \(DEK\). CMKs are encrypted and protected by RKs, and DEKs are encrypted and protected by CMKs. DEKs are used to encrypt and decrypt user data. Each table corresponds to a DEK.
+
+Table-level encryption is supported. When creating a table, you can specify whether to encrypt the table and the encryption algorithm to be used. The encryption algorithm can be AES-128-CTR or SM4-CTR, which cannot be changed once specified. If an encrypted table is created, the database automatically applies for a DEK for the table and saves the encryption algorithm, key ciphertext, and corresponding CMK ID in the  **reloptions**  column of the pg\_class system catalog in keyword=value format.
+
+You can change the encryption status of an encrypted table, that is, from an encrypted table to a non-encrypted table or from a non-encrypted table to an encrypted table. If the encryption function is not enabled when a table is created, the table cannot be switched to an encrypted table.
+
+For encrypted tables, DEK rotation is supported. After the key rotation, the data encrypted using the old key is decrypted using the old key, and the newly written data is encrypted using the new key. The encryption algorithm is not changed during key rotation.
+
+The key management service is provided by the external KMS. The current version can interconnect with HUAWEI CLOUD KMS.
+
+Currently, only row-store tables can be encrypted. For more feature constraints, see the  _Feature Description_.
 
 ### Ledger Database<a name="section185956502478"></a>
 
@@ -685,10 +757,13 @@ Each record in the ledger represents a given operation fact that has occurred. T
 
 ## AI Capabilities
 
-### AI4DB
+### AI4DB<a name="section9713101812114"></a>
 
 AI4DB includes intelligent parameter tuning and diagnosis, slow SQL discovery, index recommendation, time sequence prediction, and exception detection. It provides users with more convenient O&M operations and performance improvement, and implements functions such as self-tuning, self-monitoring, and self-diagnosis.
 
-### DB4AI
+### DB4AI<a name="section1639183432317"></a>
 
 DB4AI is compatible with the MADlib ecosystem, supports more than 70 algorithms, and delivers performance several times higher than that of MADlib on PostgreSQL. Advanced and common algorithm suites such as XGBoost, prophet, and GBDT are added to supplement the shortcomings of the MADlib ecosystem. The technology stack from SQL to machine learning is unified to implement one-click driving of SQL statements from data management to model training.
+
+The fenced UDF and native DB4AI algorithm capabilities are provided, including the execution plan, operators, and SQL syntax in the database.
+

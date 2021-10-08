@@ -64,16 +64,6 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **8KB**
 
-## max\_cn\_temp\_file\_size<a name="en-us_topic_0283137273_en-us_topic_0237124739_section37665521353"></a>
-
-**Parameter description**: Specifies the maximum number of temporary files that can be used by the CN during automatic SQL statement retries. The value  **0**  indicates that no temporary file is used.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
-
-**Value range**: an integer ranging from 0 to 10485760. The unit is KB.
-
-**Default value**:  **5GB**
-
 ## retry\_ecode\_list<a name="en-us_topic_0283137273_en-us_topic_0237124739_section21795287405"></a>
 
 **Parameter description**: Specifies the list of SQL error types that support automatic retries.
