@@ -33,7 +33,7 @@
     item_list_1可以为声明的变量或者存储过程以及函数。
     ```
 
-    PACKAGE SPECIFICATION\(包规格\)声明了包内的公有变量、函数、异常等，可以被外部函数或者存储过程调用。在PACKAGE SPECIFICATION中只能声明存储过程，函数，不能定义存储过程或者函数。
+    PACKAGE SPECIFICATION\(包规格\)声明了包内的公有变量、函数、异常等，可以被外部函数或者存储过程调用。在PACKAGE SPECIFICATION中只能声明存储过程、函数，不能定义存储过程或者函数。
 
 -   CREATE PACKAGE BODY语法格式。
 
@@ -42,7 +42,7 @@
         { IS | AS } declare_section [ initialize_section ] END package_name;
     ```
 
-    PACKAGE BODY\(包体内\)定义了包的私有变量，函数等。如果变量或者函数没有在PACKAGE SPECIFICATION中声明过，那么这个变量或者函数则为私有变量或者函数。
+    PACKAGE BODY\(包体内\)定义了包的私有变量、函数等。如果变量或者函数没有在PACKAGE SPECIFICATION中声明过，那么这个变量或者函数则为私有变量或者函数。
 
     PACKAGE BODY也可以声明实例化部分，用来初始化package，详见示例。
 
