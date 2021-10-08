@@ -711,6 +711,7 @@ CREATE DATABASE database_name
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >-   The character set encoding of the new database must be compatible with the local settings \(**LC\_COLLATE**  and  **LC\_CTYPE**\).
     >-   When the specified character encoding set is  **GBK**, some uncommon Chinese characters cannot be directly used as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E.  **@\[\\\]^\_'\{|\}**  is an operator in the database. If it is directly used as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is  **0x8240**, and the second byte is  **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use this function, you can add double quotation marks \(""\) to avoid this problem when creating and accessing objects.
+    >-   If the client-side encoding is A and the server-side encoding is B, the conversion between encoding format A and B in the database needs to be met. For example: if the server-side encoding is gb18030, since the current database does not support the conversion between gb18030 and gbk, When the client encoding format is set to gbk, the error "Conversion between GB18030 and GBK is not supported." will be reported. For all the encoding format conversions that the database can support, see the system table pg_conversion for details.
 
 -   **LC\_COLLATE \[ = \] lc\_collate**
 
@@ -828,5 +829,6 @@ openGauss=# DROP DATABASE ora_compatible_db;
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
     If the new database Encoding, LC-Collate, or LC\_Ctype does not match the template database \(SQL\_ASCII\) \(**'GBK'**,  **'UTF8'**, or  **'LATIN1'**\),  **template \[=\] template0**  must be specified.
+
 
 

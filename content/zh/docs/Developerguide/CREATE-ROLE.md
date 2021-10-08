@@ -153,6 +153,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >-   系统管理员不受此参数的限制。
+    
     >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
 
     取值范围：整数，\>=-1，缺省值为-1，表示没有限制。

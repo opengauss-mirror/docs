@@ -80,7 +80,7 @@ Password:
 
 建立互信的过程中需要生成如下4个文件：authorized\_keys、id\_rsa、id\_rsa.pub、known\_hosts。请勿删除或破坏这些互信相关的文件。
 
-手工建立信任关系，步骤如下，plat1，plat2，plat3是主机名：
+手工建立信任关系，步骤如下，plat1、plat2、plat3是主机名：
 
 1. 在其中一个主机上，生成root用户的本机授权文件。假设在主机plat1上执行。
 
