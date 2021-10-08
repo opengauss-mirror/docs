@@ -24,7 +24,7 @@ RELEASE [ SAVEPOINT ] savepoint_name;
 
 **savepoint\_name**
 
-要删除的保存点的名称
+要删除的保存点的名称。
 
 ## 示例<a name="zh-cn_topic_0283137262_zh-cn_topic_0237122177_zh-cn_topic_0059778044_section147341160228"></a>
 

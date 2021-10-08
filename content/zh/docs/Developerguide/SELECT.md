@@ -35,12 +35,19 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >condition和expression中可以使用targetlist中表达式的别名。
+>
 >-   只能同一层引用。
+>
 >-   只能引用targetlist中的别名。
+>
 >-   只能是后面的表达式引用前面的表达式。
+>
 >-   不能包含volatile函数。
+>
 >-   不能包含Window function函数。
+>
 >-   不支持在join on条件中引用别名。
+>
 >-   targetlist中有多个要应用的别名则报错。
 
 -   其中子查询with\_query为：
@@ -177,8 +184,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
             关键字，闪回查询的标识，根据表的CSN闪回查询指定CSN点的结果集。其中CSN可从gs\_txn\_snapshot记录的snpcsn号查得。
 
             >![](public_sys-resources/icon-note.gif) **说明：** 
+            >
             >-   闪回查询不能跨越影响表结构或物理存储的语句，否则会报错。即闪回点和当前点之间，如果执行过修改表结构或影响物理存储的语句（DDL、DCL、VACUUM FULL），则闪回失败，报错:“ERROR: The table definition of T1 has been changed.”。
+            >
             >-   闪回点过旧时，因闪回版本被回收等导致无法获取旧版本会导致闪回失败，报错：Restore point too old。可通过将version\_retention\_age和vacuum\_defer\_cleanup\_age设置成同值，配置闪回功能旧版本保留期限，取值范围是0\~1000000，值为0表示VACUUM不会延迟清除无效的行存记录。
+            >
             >-   通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
 
 

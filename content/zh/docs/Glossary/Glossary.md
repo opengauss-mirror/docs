@@ -29,7 +29,7 @@
 </tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row97312369138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500326339138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500326339138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p500326339138"></a>bit</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a>比特。计算机处理的最小的信息单位。比特用来表示二进制数字1或0，或者一种逻辑条件真或假。一个单独的比特位所传达的信息很少有意义的。8个bit构成一个byte(字节)，可用于表示如一个英文字母，十进制数字，或其它字符等多种类型的信息。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p261114879138"></a>比特。计算机处理的最小的信息单位。比特用来表示二进制数字1或0，或者一种逻辑条件真或假。一个单独的比特位所传达的信息很少有意义的。8个bit构成一个byte（字节），可用于表示如一个英文字母，十进制数字，或其它字符等多种类型的信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283139955_row5079095419250"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_p5446540219250"><a name="zh-cn_topic_0283139955_p5446540219250"></a><a name="zh-cn_topic_0283139955_p5446540219250"></a>Bloom Filter</p>

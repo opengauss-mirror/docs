@@ -122,11 +122,11 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >关于触发器种类：
-
+    >
     >-   INSTEAD OF的触发器必须标记为FOR EACH ROW，并且只能在视图上定义。
-
+    >
     >-   BEFORE和AFTER触发器作用在视图上时，只能标记为FOR EACH STATEMENT。
-    
+    >
     >-   TRUNCATE类型触发器仅限FOR EACH STATEMENT。
 
     **表 1**  表和视图上支持的触发器种类：

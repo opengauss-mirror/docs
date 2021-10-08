@@ -27,7 +27,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
    gs_cgroup -c -S class1 -G grp1 -g 20
   ```
 
-  创建当前用户新的class1 Cgroups下属的Workload控制组，命名为“grp1”，资源配额为class1 Cgroups的20%。  
+  创建当前用户新的“class1” Cgroups下属的Workload控制组，命名为“grp1”，资源配额为“class1” Cgroups的20%。  
 
    b.  删除grp1控制组和Class控制组。
 
