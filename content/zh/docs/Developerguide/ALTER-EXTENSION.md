@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="section786041713618"></a>
 
-ALTER EXTENSION 修改一个已安装的扩展的定义. 这里有几种方式：
+ALTER EXTENSION 修改一个已安装的扩展的定义。 这里有几种方式：
 
 -   UPDATE
 

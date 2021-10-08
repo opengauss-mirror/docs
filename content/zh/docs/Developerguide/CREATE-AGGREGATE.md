@@ -40,7 +40,7 @@ CREATE AGGREGATE name (
 
 -   **base\_type**
 
-    在以前的CREATE AGGREGATE语法中，输入数据类型是通过basetype参数指定的，而不是写在聚合的名称之后。 需要注意的是这种以前语法仅允许一个输入参数。 要创建一个零参数聚合函数，可以将basetype指定为"ANY"\(而不是\*\)。
+    在以前的CREATE AGGREGATE语法中，输入数据类型是通过basetype参数指定的，而不是写在聚合的名称之后。 需要注意的是这种以前语法仅允许一个输入参数。 要创建一个零参数聚合函数，可以将basetype指定为“ANY”\(而不是\*\)。
 
 
 -   **sfunc**
