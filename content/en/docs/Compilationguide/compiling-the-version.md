@@ -36,7 +36,7 @@ The git and git-lfs have been installed and configured on the local host.
     >-   **openGauss-server**: openGauss code repository.  
     >-   **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.  
     >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#Compiling Open-source Software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.  
-    >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-third\_party\_binarylibs.tar.gz**.  
+    >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-third\_party\_binarylibs.tar.gz**.  
     >    After the download is complete, decompress the package and rename the folder to  **binarylibs**.  
 
 2.  When the progress of each download reaches 100%, the download is successful.
