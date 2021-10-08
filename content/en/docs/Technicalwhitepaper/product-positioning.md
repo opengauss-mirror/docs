@@ -4,7 +4,7 @@ openGauss is a HA rational database that supports the SQL2003 standard and prima
 
 -   Multiple storage modes support composite service scenarios. The in-place update storage engine is introduced.
 -   The NUMA data structure supports high performance.
--   HA is supported by PAXO consistency log replication protocol, primary/standby mode, and cyclic redundancy check \(CRC\).
+-   HA is supported by Paxos consistency log replication protocol, primary/standby mode, and cyclic redundancy check \(CRC\).
 -   Security features are supported, such as fully-encrypted computing and ledger database, to provide comprehensive end-to-end data security protection.
 -   The Table Access Method API layer supports multiple storage engines.
 

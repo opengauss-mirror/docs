@@ -68,7 +68,7 @@ TIMECAPSULE TABLE [ schema_name.]table_name TO {CSN expr | TIMESTAMP expr | BEFO
 
     -   When a dropped table is restored, only the base table name is restored, and the names of other subobjects remain the same as those in the recycle bin. You can run the DDL command to manually change the names of subobjects as required.
     -   The recycle bin does not support write operations such as DML, DCL, and DDL, and does not support DQL query operations \(supported in later versions\).
-    -   The  **recyclebin\_retention**  parameter has been set for specifying the retention period of objects in the recycle bin. The objects will be automatically deleted after the retention period expires.
+    -   The  **recyclebin\_retention\_time**  parameter has been set for specifying the retention period of objects in the recycle bin. The objects will be automatically deleted after the retention period expires.
 
 -   **RENAME  TO**
 
