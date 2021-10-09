@@ -36,7 +36,7 @@ curosr.execute(query,vars_list)
 
 ## 返回值<a name="section899452817814"></a>
 
-无
+无。
 
 ## 示例<a name="section4160944682"></a>
 

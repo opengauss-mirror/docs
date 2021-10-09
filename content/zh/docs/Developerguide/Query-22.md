@@ -145,6 +145,21 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 **默认值：**OFF,L0
 
+## unique\_sql\_clean\_ratio<a name="section4987541125919"></a>
+
+**参数说明：**当系统中产生的unique sql条目数量大于等于instr\_unique\_sql\_count时，每次自动淘汰的unique sql条目数量占总条目数量预设上限instr\_unique\_sql\_count的比例。
+
+该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：**double类型，0\~0.2
+
+**默认值：**0.1
+
+>![](public_sys-resources/icon-caution.gif) **注意：** 
+>-   该值设置过小每次清理的条目较少，可能会导致频繁进行清理；设置过大时每次清理的条目较多，可能会导致频繁插入。建议值0.1。
+>
+>-   unique\_sql\_clean\_ratio设置为0不代表关闭自动淘汰功能，请通过enable\_auto\_clean\_unique\_sql来控制是否开启自动淘汰。当开启自动淘汰，且将unique\_sql\_clean\_ratio设置为0时，将自动把unique\_sql\_clean\_ratio重置为默认值0.1。
+
 ## enable\_auto\_clean\_unique\_sql<a name="section7679208201"></a>
 
 **参数说明：**当系统中产生的unique sql条目数量大于等于instr\_unique\_sql\_count时，是否启用unique sql自动淘汰功能。

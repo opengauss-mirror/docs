@@ -30,15 +30,16 @@ CREATE RESOURCE POOL pool_name
     控制组名称。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   设置控制组名称时，语法可以使用双引号，也可以使用单引号。
-
+    >
     >-   group\_name对大小写敏感。
-
-    >-   不指定group\_name时，默认指定的字符串为 “Medium”，代表指定DefaultClass控制组的“Medium” Timeshare控制组。
-
-    >-   若数据库管理员指定自定义Class组下的Workload控制组，如control\_group的字符串为：“class1:workload1”；代表此资源池指定到class1控制组下的workload1控制组。也可同时指定Workload控制组的层次，如control\_group的字符串为：“class1:workload1:1”。
-
-    >-   若数据库用户指定Timeshare控制组代表的字符串，即“Rush”、“High”、“Medium”或“Low”其中一种，如control\_group的字符串为“High”；代表资源池指定到DefaultClass控制组下的“High”Timeshare控制组。
+    >
+    >-   不指定group\_name时，默认指定的字符串为 "Medium"，代表指定DefaultClass控制组的"Medium" Timeshare控制组。
+    >
+    >-   若数据库管理员指定自定义Class组下的Workload控制组，如control\_group的字符串为："class1:workload1"；代表此资源池指定到class1控制组下的workload1控制组。也可同时指定Workload控制组的层次，如control\_group的字符串为："class1:workload1:1"。
+    >
+    >-   若数据库用户指定Timeshare控制组代表的字符串，即"Rush"、"High"、"Medium"或"Low"其中一种，如control\_group的字符串为"High"；代表资源池指定到DefaultClass控制组下的"High" Timeshare控制组。
 
     取值范围：字符串，要符合说明中的规则，其指定已创建的控制组。
 
@@ -97,8 +98,9 @@ CREATE RESOURCE POOL pool_name
     在逻辑集群模式下，指定当前资源池用于控制没有关联本逻辑集群的普通用户的资源。这里的逻辑集群是由资源池nodegroup字段指定的。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   nodegroup必须是存在的逻辑集群，不能是elastic\_group和安装的nodegroup \(group\_version1\)。
-
+    >
     >-   如果指定了is\_foreign为true，则资源池不能再关联用户，即不允许通过CREATE USER ... RESOURCE POOL语句来将该资源池配置给用户。该资源池自动检查用户是否关联到资源池指定的逻辑集群，如果用户没有关联到该逻辑集群，则这些用户在逻辑集群所包含的DN上运行将受到该资源池的资源控制。
 
 
