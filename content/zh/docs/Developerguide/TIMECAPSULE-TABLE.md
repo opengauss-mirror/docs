@@ -68,7 +68,7 @@ TIMECAPSULE TABLE [ schema_name.]table_name TO {CSN expr | TIMESTAMP expr | BEFO
 
     -   恢复DROP表时，只恢复基表名，其他子对象名均保持回收站对象名。用户可根据需要，执行DDL命令手工调整子对象名。
     -   回收站对象不支持DML、DCL、DDL等写操作，不支持DQL查询操作（后续支持）。
-    -   recyclebin\_retention配置参数用于设置回收站对象保留时间，超过该时间的回收站对象将被自动清理。
+    -   recyclebin\_retention_time配置参数用于设置回收站对象保留时间，超过该时间的回收站对象将被自动清理。
 
 -   **RENAME  TO**
 
