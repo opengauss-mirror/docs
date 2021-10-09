@@ -1,8 +1,8 @@
-# Support for Functions and Stored Procedures<a name="EN-US_TOPIC_0000001135665705"></a>
+# Support for Functions and Stored Procedures<a name="EN-US_TOPIC_0000001162738992"></a>
 
 ## Availability<a name="section56086982"></a>
 
-This feature is available since V300R002C00.
+This feature is available since openGauss 1.1.0.
 
 ## Introduction<a name="section35020791"></a>
 
@@ -20,13 +20,13 @@ openGauss  supports functions and stored procedures compliant with the SQL stand
 
 ## Enhancements<a name="section28788730"></a>
 
-None
+PL/pgSQL single-step debugging is supported.
 
 ## Constraints<a name="section06531946143616"></a>
 
-None
+None.
 
 ## Dependencies<a name="section57771982"></a>
 
-None
+None.
 

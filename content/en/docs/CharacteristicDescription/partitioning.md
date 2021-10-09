@@ -1,8 +1,8 @@
-# Partitioning<a name="EN-US_TOPIC_0000001135665707"></a>
+# Partitioning<a name="EN-US_TOPIC_0000001208298901"></a>
 
 ## Availability<a name="section3104013"></a>
 
-This feature is available since V300R002C00.
+This feature is available since openGauss 1.1.0.
 
 ## Introduction<a name="section27936123"></a>
 
@@ -41,11 +41,13 @@ In actual services, time is often used to filter query objects. Therefore, you c
 
 Range partitioned tables can be combined.
 
+The list and hash partitioned tables support data exchange.
+
 ## Constraints<a name="section06531946143616"></a>
 
-None
+None.
 
 ## Dependencies<a name="section14599532"></a>
 
-None
+None.
 

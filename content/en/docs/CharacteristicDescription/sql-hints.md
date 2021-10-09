@@ -1,8 +1,8 @@
-# SQL Hints<a name="EN-US_TOPIC_0000001135548521"></a>
+# SQL Hints<a name="EN-US_TOPIC_0000001162578986"></a>
 
 ## Availability<a name="section56086982"></a>
 
-This feature is available as of V300R002C00.
+This feature is available since openGauss 1.1.0.
 
 ## Introduction<a name="section35020791"></a>
 
@@ -18,13 +18,17 @@ In plan hints, you can specify a join order; join, stream, and scan operations, 
 
 ## Enhancements<a name="section28788730"></a>
 
-None
+The session-level optimizer parameters can be set by using planhint.
+
+The specified subquery can be not expanded.
+
+GPC can be disabled for a single query.
 
 ## Constraints<a name="section06531946143616"></a>
 
-None
+None.
 
 ## Dependencies<a name="section57771982"></a>
 
-None
+None.
 
