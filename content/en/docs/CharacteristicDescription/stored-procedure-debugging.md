@@ -1,4 +1,4 @@
-# Stored Procedure Debugging<a name="EN-US_TOPIC_0000001138290305"></a>
+# Stored Procedure Debugging<a name="EN-US_TOPIC_0000001163057482"></a>
 
 ## Availability<a name="section1076382216287"></a>
 

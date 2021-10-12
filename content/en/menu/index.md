@@ -48,6 +48,8 @@ headless: true
 		-   [Kunpeng NUMA Architecture Optimization]({{< relref "./docs/CharacteristicDescription/kunpeng-numa-architecture-optimization.md" >}})
 		-   [High Concurrency of Thread Pools]({{< relref "./docs/CharacteristicDescription/high-concurrency-of-thread-pools.md" >}})
 		-   [SMP for Parallel Execution]({{< relref "./docs/CharacteristicDescription/smp-for-parallel-execution.md" >}})
+		-   [Xlog no Lock Flush]({{< relref "./docs/CharacteristicDescription/xlog-no-lock-flush.md" >}}) 
+		-   [Parallel Page-based Redo For Ustore]({{< relref "./docs/CharacteristicDescription/parallel-page-based-redo-for-ustore.md" >}})
 	-   [High Availability \(HA\)]({{<relref "./docs/CharacteristicDescription/high-availability-ha.md" >}})
 		-   [Primary/Standby]({{< relref "./docs/CharacteristicDescription/primary-standby.md" >}})
 		-   [Logical Replication]({{< relref "./docs/CharacteristicDescription/logical-replication.md" >}})
