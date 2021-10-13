@@ -20,7 +20,7 @@ Backup and restoration can be classified into logical backup and restoration, ph
 
 - Flashback: This function is used to restore dropped tables from the recycle bin. Like in a Window OS, dropped table information is stored in the recycle bin of databases. The MVCC mechanism is used to restore data to a specified point in time or change sequence number \(CSN\).
 
-  The two data backup and restoration solutions supported by openGauss are as follows. Methods for restoring data in case of an exception differ for different backup and restoration solutions.
+  The three data backup and restoration solutions supported by openGauss are as follows. Methods for restoring data in case of an exception differ for different backup and restoration solutions.
 
   **Table  1**  Comparison of three backup and restoration types
 
@@ -943,7 +943,6 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
   >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
   >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
   >```
-
 
 #### Backup Process<a name="en-us_topic_0287276008_section1735727125216"></a>
 
