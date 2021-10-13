@@ -35,7 +35,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p127501419122615"><a name="zh-cn_topic_0237152334_p127501419122615"></a><a name="zh-cn_topic_0237152334_p127501419122615"></a>收集系统视图或者系统表的内容。</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p022210297269"><a name="zh-cn_topic_0237152334_p022210297269"></a><a name="zh-cn_topic_0237152334_p022210297269"></a>是，默认收集pg_locks，pg_stat_activity和 pg_thread_wait_status三个视图的信息。</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p022210297269"><a name="zh-cn_topic_0237152334_p022210297269"></a><a name="zh-cn_topic_0237152334_p022210297269"></a>是，默认收集pg_locks、pg_stat_activity和 pg_thread_wait_status三个视图的信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152334_row101318382316"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p6133313233"><a name="zh-cn_topic_0237152334_p6133313233"></a><a name="zh-cn_topic_0237152334_p6133313233"></a>Log</p>
