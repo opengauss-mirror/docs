@@ -28,7 +28,7 @@ openGauss提供了gs\_dropnode工具从一主多备的数据库中移除不需�
 
 -   当目标备机被移除后，如果不再需要目标备机，请在目标备机上使用**gs\_uninstall --delete-data -L**命令单点卸载，请注意务必添加-L选项。
 
--   当目标备机被移除后，如果需要以单机方式使用目标备机且保留原数据，请在目标备机上先执行**gs\_guc set -D _/gaussdb/data/dbnode_ -c "replconninfo*X*"** 其中 _/gaussdb/data/dbnode_ 表示数据目录，_replconninfoX_ 表示主备集群中的除本节点外的其他节点，比如一主一备则需要配置 _replconninfo1_, 一主两备需要配置 _replconninfo1_ 和 _replconninfo2_, 以此类推；如果无需保留原数据，请先执行**gs\_uninstall --delete-data -L**命令卸载后重新安装。
+-   当目标备机被移除后，如果需要以单机方式使用目标备机且保留原数据，请在目标备机上先执行**gs\_guc set -D _/gaussdb/data/dbnode_ -c “replconninfo*X*”** 其中 _/gaussdb/data/dbnode_ 表示数据目录，_replconninfoX_ 表示主备集群中的除本节点外的其他节点，比如一主一备则需要配置 _replconninfo1_, 一主两备需要配置 _replconninfo1_ 和 _replconninfo2_, 以此类推；如果无需保留原数据，请先执行**gs\_uninstall --delete-data -L**命令卸载后重新安装。
 
 -   当目标备机被移除后，如果需要以备机方式使用目标备机，请参考[gs\_expansion](gs_expansion.md)命令重新将目标备机添加到集群中。
 ## 前提条件
