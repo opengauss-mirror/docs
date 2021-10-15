@@ -34,6 +34,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   “datasource.key.cipher”和“datasource.key.rand”是创建Data Source对象时调用的密钥文件。gs\_guc生成时即有读权限。使用前需将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。gs\_ssh工具可以协助您快速将文件放入集群各节点对应目录下。
+    >
     >-   此外，使用gs\_guc generate命令也可以生成这两个文件，可以选择以下两种方式中的任一种，并根据提示输入密码。
     >    方式1：gs\_guc encrypt -M source  -D ./
     >    方式2：gs\_guc generate -o datasource  -D ./
@@ -41,25 +42,25 @@ gs\_guc工具由操作系统用户omm执行。
 
 ## 语法<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_se02e295596714317bc63dc8508898bdd"></a>
 
--   检查配置文件中参数
+-   检查配置文件中参数。
 
     ```
     gs_guc check [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -c "parameter"
     ```
 
--   修改配置文件中参数
+-   修改配置文件中参数。
 
     ```
     gs_guc set [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -c "parameter = value"
     ```
 
--   将已设置的参数值修改为默认值
+-   将已设置的参数值修改为默认值。
 
     ```
     gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -c "parameter"
     ```
 
--   修改配置文件中参数，同时发送信号量到postgresql.conf
+-   修改配置文件中参数，同时发送信号量到postgresql.conf。
 
     ```
     gs_guc reload [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -c parameter=value
@@ -75,17 +76,29 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   AUTHMEHOD后的authentication-options为可选参数，AUTHMEHOD支持以下选项：
+    > 
     >    -   trust：不验密，禁止远程主机使用trust方式访问数据库。
+    > 
     >    -   reject：拒绝访问。
+    >  
     >    -   md5：md5认证，默认不支持（MD5加密算法安全性低，存在安全风险，不建议使用）。
+    >  
     >    -   sha256：sha256认证（推荐使用）。
+    > 
     >    -   cert：客户端证书认证。
+    > 
     >    -   gss：kerberos认证，仅用于内部节点间认证。
+    > 
     >    -   sm3：sm3认证（国密SM3）。
+    >  
     >-   pg\_hba.conf中的认证策略越靠前优先级越高，使用gs\_guc工具配置时会按一定规则排序将新策略插入到原有认证策略中。配置字段比较顺序为：IPADDR/HOSTNAME \> HOSTTYPE \> DATABASE \> USERNAME，即优先比较IPADDR或HOSTNAME，如果无法区分优先级则继续比较HOSTTYPE，以此类推。对于每个配置字段，通常越严格的配置参数优先级越高、排序越靠前，越宽松的配置参数优先级越低、排序越靠后，具体如下：
+    > 
     >    -   IPADDR：当配置为全0时表示不限制IP，会放在指定具体某个IP地址的策略后面。
+    > 
     >    -   DATABASE：当配置为all时表示不限制数据库，会放在指定具体某个数据库的策略后面；当数据库配置为replication时会放在其他策略后面。
+    > 
     >    -   USERNAME：当配置为all时表示不限制用户，会放在指定具体某个用户的策略后面。
+    > 
     >    -   HOSTTYPE：local \> hostssl \> hostnossl \> host。
 
 -   注释已经设置的客户端认证策略。若选择reload会同时发送信号量到pg\_hba.conf，即无需重启即可生效。
@@ -94,19 +107,19 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc [ set | reload ] [-N NODE-NAME] [-I INSTANCE-NAME | -D DATADIR] -h "HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK AUTHMEHOD" 
     ```
 
--   显示帮助信息
+-   显示帮助信息。
 
     ```
     gs_guc -? | --help
     ```
 
--   显示版本号信息
+-   显示版本号信息。
 
     ```
     gs_guc -V | --version
     ```
 
--   gs\_guc encrypt生成加密密码和加密因子文件
+-   gs\_guc encrypt生成加密密码和加密因子文件。
 
     ```
     gs_guc encrypt [-M keymode] -K password [-U username] -D DATADIR
@@ -114,9 +127,10 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<=16）和密码复杂度要求，如果不满足，将会报错。此密码用于保证生成密码文件的安全性和唯一性，用户无需保存或记忆。
+    > 
     >-   -M是加密类型，当前仅支持server、client和source。默认值为server。
 
--   gs\_guc generate生成其他前缀的加密密码和加密因子文件
+-   gs\_guc generate生成其他前缀的加密密码和加密因子文件。
 
     ```
     gs_guc generate [-o prefix] [-S cipherkey] -D DATADIR
@@ -124,19 +138,29 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   -o是输出cipher和rand文件前缀名称，默认输出文件名前缀为obsserver。其内容仅支持数字、字母和下划线。
+    > 
     >-   -S是用户指定的密码，密码需要满足长度要求（8<=len<=16）和复杂度要求，如不满足将会报错。当其值为default时，会随机生成一段字符串作为密码，该密码长度为13。如果不带-S参数则会提示交互式输入密码。为了系统安全，推荐使用交互式输入密码方式。
+    > 
     >-   使用gs\_guc encrypt或generate命令生成加密密码和加密因子文件时只是参数不同，本质上是一样的。生成过程中会使用随机数作为加密密钥材料和盐值，因此是每次生成的文件都是不同的。每次生成的加密密码和加密因子文件需要成对使用，不能更换或交替使用，加密和解密时需要使用相同的加密密码和加密因子文件。
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   gs\_guc工具不支持参数值中包含'\#'的设置。可以使用vi工具通过手工修改配置文件来设置。
+>
 >-   如果已经在环境变量中设置PGDATA，则可以省略-D参数。否则提示设置参数失败。
+>
 >-   环境变量PGDATA设置方法：先将参数PGDATA设置为_/gaussdb/data_，然后在执行“export PGDATA”使设置生效。
->-   authpolicy包含一串认证参数：HOSTTYPE DATABASE USERNAME IPADDR IPMASK，或者HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK，或者HOSTTYPE DATABASE USERNAME HOSTNAME。
+>
+>-   authpolicy包含一串认证参数：HOSTTYPE DATABASE USERNAME IPADDR IPMASK或者HOSTTYPE DATABASE USERNAME IPADDR-WITH-IPMASK或者HOSTTYPE DATABASE USERNAME HOSTNAME。
+>
 >-   如果设置GUC参数时使用-c "parameter"，则会将已设置的GUC参数值设置成该参数的内核默认值（注意log\_directory和audit\_directory不会被设置为内核参数默认值，而是设为$GAUSSLOG/pg\_audit/instance\_name）。因GUC参数间存在依赖关系，因此请慎用该功能。
+>
 >-   设置-c参数时，参数都可以省略双引号。
+>
 >-   如果value中含有特殊字符（如$），请转义后使用。
->-   如果同一个配置参数在配置文件里面出现多行，且有两行或多于两行同时生效（即没有用"\#"注释掉），那么只有最后一个配置参数会被设置，而前面的都会被忽略。
+>
+>-   如果同一个配置参数在配置文件里面出现多行，且有两行或多于两行同时生效（即没有用“\#”注释掉），那么只有最后一个配置参数会被设置，而前面的都会被忽略。
+>
 >-   通过reload模式设置或修改openGauss节点配置文件（postgresql.conf）的参数，生效存在短暂延迟，有可能导致配置后openGauss各实例参数极短时间不一致。
 
 ## 命令参考<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
@@ -185,7 +209,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   >![](public_sys-resources/icon-note.gif) **说明：** 
   >
-  >-   与"-I" 不能一块使用
+  >-   与“-I” 不能一块使用
 
 -   -c parameter=value
 
@@ -193,8 +217,11 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。
-    >-   当使用gs\_guc set/reload为"log\_directory" 恢复默认值时，其默认值会被置为具体的data目录。
+    >
+    >-   当使用gs\_guc set/reload为“log\_directory” 恢复默认值时，其默认值会被置为具体的data目录。
+    >
     >-   当使用gs\_guc reload进行参数设定，并指定-N参数时，当指定的节点为主节点时，主备节点的参数值都会被修改；当指定节点为备节点时，只会修改备节点的参数值，不会修改主节点的参数值。
+    >
     >-   当使用gs\_guc reload进行参数设定，未指定-N参数时，当在主节点上执行时，主备节点的参数值都会被修改；当在备节点上执行时，只会修改备节点的参数值，不会修改主节点的参数值。
 
     取值范围：postgresql.conf中的所有参数。
@@ -205,6 +232,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   该参数必需同-Z datanode一起使用。即gs\_guc只允许作用于逻辑数据库的DN实例。
+    >
     >-   逻辑数据库允许操作的参数同完整数据库不同。具体差异可参见$GAUSSHOME/bin/cluster\_guc.conf。
 
     取值范围：已经创建的逻辑数据库名称。
@@ -323,7 +351,7 @@ Total instances: 1. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-示例3：设置客户端认证策略
+示例3：设置客户端认证策略。
 
 ```
 gs_guc set -N all -I all -h "host replication testuser 10.252.95.191/32 sha256"
@@ -332,7 +360,7 @@ Total instances: 2. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-示例4：注释清理已经设置的客户端认证策略
+示例4：注释清理已经设置的客户端认证策略。
 
 ```
 gs_guc set -N all -I all -h "host replication testuser 10.252.95.191/32"
