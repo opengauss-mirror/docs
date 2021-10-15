@@ -308,7 +308,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
     当训练完成后模型会被存储到系统表gs\_model\_warehouse中。系统表gs\_model\_warehouse可以查看到关于模型本身和训练过程的相关信息。
 
-    用户可以通过查看系统表的方式查看模型，例如查看模型名为”point\_kmeans”的SQL语句如下：
+    用户可以通过查看系统表的方式查看模型，例如查看模型名为“point\_kmeans”的SQL语句如下：
 
     ```
     openGauss=# select * from gs_model_warehouse where modelname='point_kmeans';
