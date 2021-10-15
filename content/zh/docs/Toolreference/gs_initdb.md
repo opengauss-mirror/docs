@@ -137,7 +137,7 @@ gs\_initdb支持的常用参数和不常用参数请分别参见[表 常用参�
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afa4fd3ea63b44774b96814d9e7d5c33a"></a>初始化的节点名称。</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p39322419302"><a name="p39322419302"></a><a name="p39322419302"></a>节点的命名需要遵守如下规范：</p>
-<a name="ul0976124733118"></a><a name="ul0976124733118"></a><ul id="ul0976124733118"><li>节点名称必须为小写字母（a-z）、下划线（_）、特殊符号#、数字（0-9）或美元符号（$）。</li><li>节点名称必须以小写字母（a-z）、或下划线（_）开头。</li><li>节点名称不能为空，且最大的长度为64个字符。</li></ul>
+<a name="ul0976124733118"></a><a name="ul0976124733118"></a><ul id="ul0976124733118"><li>节点名称必须为小写字母（a-z）、下划线（_）、特殊符号#、数字（0-9）或美元符号（$）。</li><li>节点名称必须以小写字母（a-z）或下划线（_）开头。</li><li>节点名称不能为空，且最大的长度为64个字符。</li></ul>
 </td>
 </tr>
 <tr id="row1020519334218"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_abe6235a1ec1a41bdbe8b52c706ea8d94"></a>-E, --encoding=ENCODING</p>
@@ -229,7 +229,7 @@ zh_SG.gbk
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a9036f008e6b2417ab4fd693d1afd5281"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a9036f008e6b2417ab4fd693d1afd5281"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a9036f008e6b2417ab4fd693d1afd5281"></a>gs_initdb时通过命令行指定的管理员用户的密码，而不是交互式输入。</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a166374baf1b9417fa4d889f2b9e7b3ff"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a166374baf1b9417fa4d889f2b9e7b3ff"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a166374baf1b9417fa4d889f2b9e7b3ff"></a>设置的密码要符合复杂度要求：</p>
-<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"><li>最少包含8个字符；</li><li>不能和用户名和当前密码（ALTER）相同，或和当前密码反序；</li><li>至少包含大写字母（A-Z），小写字母（a-z），数字，非字母数字字符（限定为~!@#$%^&amp;*()-_=+\|[{}];:,&lt;.&gt;/?）四类字符中的三类字符。</li></ul>
+<a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><ul id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"><li>最少包含8个字符；</li><li>不能和用户名和当前密码（ALTER）相同，或和当前密码反序；</li><li>至少包含大写字母（A-Z）、小写字母（a-z）、数字、非字母数字字符（限定为~!@#$%^&amp;*()-_=+\|[{}];:,&lt;.&gt;/?）四类字符中的三类字符。</li></ul>
 </td>
 </tr>
 <tr id="row16291853162117"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afaf2c98348cc4a5591a2884a984183ce"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afaf2c98348cc4a5591a2884a984183ce"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_afaf2c98348cc4a5591a2884a984183ce"></a>-C, --enpwdfiledir=DIR</p>
