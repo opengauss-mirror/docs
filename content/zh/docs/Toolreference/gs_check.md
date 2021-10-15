@@ -2,7 +2,7 @@
 
 ## 背景信息<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_section2466014153117"></a>
 
-gs\_check改进增强，统一化当前系统中存在的各种检查工具，例如[gs\_check](gs_check.md)，[gs\_checkos](gs_checkos.md)等，帮助用户在openGauss运行过程中，全量的检查openGauss运行环境，操作系统环境，网络环境及数据库执行环境，也有助于在openGauss重大操作之前对各类环境进行全面检查，有效保证操作执行成功。
+gs\_check改进增强，统一化当前系统中存在的各种检查工具，例如[gs\_check](gs_check.md)、[gs\_checkos](gs_checkos.md)等，帮助用户在openGauss运行过程中，全量的检查openGauss运行环境、操作系统环境、网络环境及数据库执行环境，也有助于在openGauss重大操作之前对各类环境进行全面检查，有效保证操作执行成功。
 
 ## 注意事项<a name="zh-cn_topic_0237152330_section4290135616319"></a>
 
@@ -57,7 +57,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 -   -e
 
-    场景检查项。默认的场景有inspect（例行巡检）、upgrade（升级前巡检）、binary\_upgrade（就地升级前巡检）、health（健康检查巡检）、install（安装），等，用户可以根据需求自己编写场景。
+    场景检查项。默认的场景有inspect（例行巡检）、upgrade（升级前巡检）、binary\_upgrade（就地升级前巡检）、health（健康检查巡检）、install（安装）等，用户可以根据需求自己编写场景。
 
 -   -l
 
