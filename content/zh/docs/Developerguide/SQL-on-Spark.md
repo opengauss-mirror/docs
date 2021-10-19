@@ -119,7 +119,7 @@ SQL on Spark支持的数据类型，见下表。
 以下以使用exec\_on\_extension为例进行说明。以exec\_hadoop\_sql连接Spark时，无需创建Data Source。
 
 1.  <a name="li1343510529592"></a>以操作系统用户omm登录数据库主节点。
-2.  准备package.zip压缩包，放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN为以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。压缩包包含如下内容：
+2.  准备package.zip压缩包，放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN为以DSN为名的文件夹。DSN名必须由字母、数字、下划线组成。压缩包包含如下内容：
 
     -   KrbClient.zip
     -   datasight-hiveodbc-1.0.0-1.el6.x86\_64.rpm
