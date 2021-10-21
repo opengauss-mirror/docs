@@ -37,7 +37,7 @@ CREATE USER创建用户的同时，系统会在执行该命令的数据库中，
 
 ## 搜索路径<a name="zh-cn_topic_0283137084_zh-cn_topic_0237121104_zh-cn_topic_0156599225_section03655314403"></a>
 
-搜索路径定义在[search\_path](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_s304b0a206e2e4ca782210ffb66cbc4b0)参数中，参数取值形式为采用逗号分隔的Schema名称列表。如果创建对象时未指定目标Schema，则该对象会被添加到搜索路径中列出的第一个Schema中。当不同Schema中存在同名的对象时，查询对象未指定Schema的情况下，将从搜索路径中包含该对象的第一个Schema中返回对象。
+搜索路径定义在[search\_path](语句行为.html#zh-cn_topic_0237124732_zh-cn_topic_0059779117_s304b0a206e2e4ca782210ffb66cbc4b0)参数中，参数取值形式为采用逗号分隔的Schema名称列表。如果创建对象时未指定目标Schema，则该对象会被添加到搜索路径中列出的第一个Schema中。当不同Schema中存在同名的对象时，查询对象未指定Schema的情况下，将从搜索路径中包含该对象的第一个Schema中返回对象。
 
 -   要查看当前搜索路径，请使用[SHOW](SHOW.md)。
 
@@ -49,7 +49,7 @@ CREATE USER创建用户的同时，系统会在执行该命令的数据库中，
     (1 row)
     ```
 
-    search\_path参数的默认值为："$user",public。$user表示与当前会话用户名同名的Schema名，如果这样的模式不存在，$user将被忽略。所以默认情况下，用户连接数据库后，如果数据库下存在同名Schema，则对象会添加到同名Schema下，否则对象被添加到Public Schema下。
+    search\_path参数的默认值为：“$user”,public。$user表示与当前会话用户名同名的Schema名，如果这样的模式不存在，$user将被忽略。所以默认情况下，用户连接数据库后，如果数据库下存在同名Schema，则对象会添加到同名Schema下，否则对象被添加到Public Schema下。
 
 -   要更改当前会话的默认Schema，请使用SET命令。
 

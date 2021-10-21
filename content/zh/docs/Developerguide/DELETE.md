@@ -40,7 +40,7 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
     – column\_name指定子查询结果集中显示的列名。
 
-    – 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+    – 每个子查询可以是SELECT、VALUES、INSERT、UPDATE或DELETE语句。
 
 -   **plan\_hint子句**
 

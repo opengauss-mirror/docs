@@ -55,7 +55,7 @@ plsql_body
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >VARIADIC用于声明数组类型的参数。
 
-    取值范围： IN，OUT，INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。
+    取值范围： IN、OUT、INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。
 
 -   **argname**
 
@@ -65,7 +65,7 @@ plsql_body
 
 -   **argtype**
 
-    参数的数据类型。可以使用%TYPE或%ROWTYPE间接引用变量或表的类型，详细可参考存储过程章节[定义变量](zh-cn_topic_0289900208.md)。
+    参数的数据类型。可以使用%TYPE或%ROWTYPE间接引用变量或表的类型，详细可参考存储过程章节[定义变量](定义变量.md)。
 
     取值范围：可用的数据类型。
 

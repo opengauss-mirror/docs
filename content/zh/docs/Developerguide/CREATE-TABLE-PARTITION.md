@@ -257,7 +257,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >-   每个分区都需要指定一个上边界。
+
     >-   分区上边界的类型应当和分区键的类型一致。
+
     >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
 -   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
@@ -275,13 +277,20 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
     >2.  START END语法需要遵循以下限制：
-    >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值；
+    >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
+
     >    -   相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
+
     >    -   每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
+
     >    -   每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
+
     >    -   一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
+
     >    -   partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
+
     >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
+
     >3.  在创建分区表时START END与LESS THAN语法不可混合使用。
     >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
 
@@ -360,12 +369,19 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
+    >
     >-   不能为生成列指定默认值。
+    >
     >-   生成列不能作为分区键的一部分。
+    >
     >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL,SET DEFAULT动作同时指定。
+    >
     >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
+    >
     >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
+    >
     >-   生成列的权限控制和普通列一样。
+    >
     >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
 
 -   **UNIQUE index\_parameters**

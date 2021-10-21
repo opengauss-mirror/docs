@@ -84,7 +84,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row62985800"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32636334"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32636334"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32636334"></a>-e</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p43794247"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p43794247"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p43794247"></a>把缺省日期风格设置为"European"，也就是说用DMY规则解释日期输入，并且在一些日期输出格式里日在月份前面打印。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p43794247"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p43794247"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p43794247"></a>把缺省日期风格设置为“European”，也就是说用DMY规则解释日期输入，并且在一些日期输出格式里日在月份前面打印。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_abd2013cc2b63455b933888eccc77bb56"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_abd2013cc2b63455b933888eccc77bb56"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_abd2013cc2b63455b933888eccc77bb56"></a>-</p>
 </td>
@@ -418,7 +418,7 @@ ps -ef | grep gaussdb
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 
 >-   如果有可能，不要使用SIGKILL杀死主进程。这样会阻止gaussdb在退出前释放它持有的系统资源（例如共享内存和信号灯）。这样可能会影响到将来启动新的进程。
->-   可以使用SIGTERM，SIGINT，SIGQUIT信号正常结束服务器进程。第一个信号将等待所有的客户端退出后才退出。第二个将强制断开所有客户端，而第三个将不停止立刻退出，导致在重启时的恢复运行。
+>-   可以使用SIGTERM、SIGINT、SIGQUIT信号正常结束服务器进程。第一个信号将等待所有的客户端退出后才退出。第二个将强制断开所有客户端，而第三个将不停止立刻退出，导致在重启时的恢复运行。
 >-   信号SIGHUP将会重新加载服务器配置文件。它也可能给单个服务器进程发送SIGHUP信号，但是这通常是不明显的。
 >-   要取消一个正在执行的查询，向正在运行的进程发送SIGINT信号。
 >-   主服务器进程向子进程发送SIGTERM信号让它们正常退出；发送SIGQUIT信号立即退出且不做清理工作。用户有三种信号不能用。同时，发送SIGKILL信号也是不明智的：主进程将把这个信号当作崩溃信号，然后会强制其他兄弟进程作为标准的崩溃回复过程退出。

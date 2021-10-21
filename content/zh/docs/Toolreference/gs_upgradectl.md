@@ -16,7 +16,7 @@
 
 -   升级操作不能和扩容、缩容同时执行。
 -   不支持虚拟IP。
--   升级过程中，不允许对wal\_level，max\_connections，max\_prepared\_transactions，max\_locks\_per\_transaction这四个GUC参数的值进行修改。如果修改，会导致回滚后实例启动异常。
+-   升级过程中，不允许对wal\_level、max\_connections、max\_prepared\_transactions、max\_locks\_per\_transaction这四个GUC参数的值进行修改。如果修改，会导致回滚后实例启动异常。
 -   建议在数据库系统空闲情况下进行升级，尽量避开业务繁忙的时间段（可按照经验判断，如节假日等）。
 -   升级前尽可能保证数据库正常。可以通过gs\_om -t status查询，查询结果的cluster\_state为Normal代表数据库正常。
 -   升级前保证数据库互信正常，可以在任意节点上，通过ssh hostname命令，连接另外一个节点进行验证。如果各机器间互连不用输入密码，说明互信正常（通常数据库状态正常时，互信一般都是正常的）。

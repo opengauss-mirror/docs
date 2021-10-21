@@ -38,11 +38,11 @@ openGauss创建的HDFS外表的数据类型要和HDFS上通过Hadoop HIVE创建�
 >
 >-   访问HDFS数据支持数据传输加密，但有如下约束：
 >
->    -   开启数据传输加密（设置dfs.encrypt.data.transfer为true）时，必须同时设置hadoop.rpc.protection为"privacy"；
+>    -   开启数据传输加密（设置dfs.encrypt.data.transfer为true）时，必须同时设置hadoop.rpc.protection为“privacy”；
 >
->    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.algorithm只支持"3des"（不推荐使用3DES，因为3DES为不安全的加密算法，存在网络安全风险）；
+>    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.algorithm只支持“3des”（不推荐使用3DES，因为3DES为不安全的加密算法，存在网络安全风险）；
 >
 >    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.cipher.key.bitlength只支持128长度的初始密钥（FusionInsight HD该参数默认值为192，故当开启数据传输加密时，需要配套修改该参数值为128）；
 >
->    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.cipher.suites只支持"AES/CTR/NoPadding"。
+>    -   HDFS数据传输加密相关配置dfs.encrypt.data.transfer.cipher.suites只支持“AES/CTR/NoPadding”。
 

@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>
 
-gstrace是openGauss提供的用来跟踪内核代码执行路径，记录内核数据结构，分析代码性能的工具。Trace的有限点位和数据在版本中被固化，无法动态添加和删除。
+gstrace是openGauss提供的用来跟踪内核代码执行路径、记录内核数据结构、分析代码性能的工具。Trace的有限点位和数据在版本中被固化，无法动态添加和删除。
 
 >![](public_sys-resources/icon-warning.gif) **警告：** 
 >

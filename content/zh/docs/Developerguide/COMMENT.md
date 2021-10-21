@@ -54,11 +54,11 @@ COMMENT ON
 
 -   **agg\_name**
 
-    聚集函数的名称
+    聚集函数的名称。
 
 -   **agg\_type**
 
-    聚集函数参数的类型
+    聚集函数参数的类型。
 
 -   **source\_type**
 

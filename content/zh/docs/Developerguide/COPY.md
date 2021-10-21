@@ -181,6 +181,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >此容错选项的使用限制如下：
     >-   此容错机制仅捕捉COPY FROM过程中数据库主节点上数据解析过程中相关的数据类型错误（DATA\_EXCEPTION）。
+
     >-   COPY已有的容错选项（如IGNORE\_EXTRA\_DATA）开启时，对应类型的错误会按照已有的方式处理而不会报出异常，因此错误表也不会有相应数据。
 
 -   **LOG ERRORS DATA**
@@ -241,9 +242,13 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   分隔符不能是\\r和\\n。
+        >
         >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。
+        >
         >-   TEXT格式数据的分隔符不能包含： 小写字母、数字和特殊字符.\\。
+        >
         >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。
+        >
         >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07，0x08，0x1b等。
 
         取值范围：支持多字符分隔符，但分隔符不能超过10个字节。
@@ -288,7 +293,9 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   quote参数不能和分隔符、null参数相同。
+
         >-   quote参数只能是单字节的字符。
+        
         >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。
 
     -   ESCAPE
@@ -305,7 +312,9 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式导入。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。
+        >
         >-   EOL参数不能和分隔符、null参数相同。
+        >
         >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
 
     -   FORCE\_QUOTE \{ \( column\_name \[, ...\] \) | \* \}
@@ -430,8 +439,11 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >-   仅在header为on或true的情况下有效。
+
         >-   fileheader指定的是绝对路径。
+
         >-   该文件只能包含一行标题信息，并以换行符结尾，多余的行将被丢弃（标题信息不能包含换行符）。
+
         >-   该文件包括换行符在内长度不超过1M。
 
     -   FREEZE
@@ -461,7 +473,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
     -   BINARY
 
-        使用二进制格式存储和读取，而不是以文本的方式。在二进制模式下，不能声明DELIMITER，NULL，CSV选项。指定BINARY类型后，不能再通过option或copy\_option指定CSV、FIXED、TEXT等类型。
+        使用二进制格式存储和读取，而不是以文本的方式。在二进制模式下，不能声明DELIMITER、NULL、CSV选项。指定BINARY类型后，不能再通过option或copy\_option指定CSV、FIXED、TEXT等类型。
 
     -   CSV
 
@@ -475,7 +487,9 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   quote参数不能和分隔符、null参数相同。
+
         >-   quote参数只能是单字节的字符。
+
         >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。
 
     -   ESCAPE \[AS\] 'escape\_character'
@@ -492,7 +506,9 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。
+
         >-   EOL参数不能和分隔符、null参数相同。
+        
         >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
 
     -   ENCODING 'encoding\_name'

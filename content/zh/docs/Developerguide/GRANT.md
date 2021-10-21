@@ -507,7 +507,7 @@ openGauss=# GRANT ALL PRIVILEGES TO joe;
 
 **示例：将CMK或者CEK的权限授权给其他用户或角色。**
 
-1.  连接密态数据库
+1.  连接密态数据库。
 
     ```
     gsql -p 57101 openGauss -r -C

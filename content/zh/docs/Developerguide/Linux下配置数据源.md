@@ -86,11 +86,11 @@
         ```
         [MPPODBC]
         Driver=GaussMPP
-        Servername=10.145.130.26（数据库Server IP）
-        Database=postgres  （数据库名）
-        Username=omm  （数据库用户名）
-        Password=  （数据库用户密码）
-        Port=8000 （数据库侦听端口）
+        Servername=10.145.130.26 #（数据库Server IP）
+        Database=postgres        #（数据库名）
+        Username=omm             #（数据库用户名）
+        Password=                #（数据库用户密码）
+        Port=8000                #（数据库侦听端口）
         Sslmode=allow
         ```
 
@@ -162,7 +162,7 @@
         </tr>
         <tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_rd27aa89b945d4ac6b33000b6df5c916e"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a>Sslmode</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a>开启SSL模式</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a>开启SSL模式。</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a>Sslmode=allow</p>
         </td>
@@ -207,10 +207,10 @@
         </tr>
         <tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_row9789524184113"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"></a>ConnectionExtraInfo</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a>GUC参数connection_info（参见<a href="zh-cn_topic_0000001162739322.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）中显示驱动部署路径和进程属主用户的开关。</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a>GUC参数connection_info（参见<a href="连接设置.html#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）中显示驱动部署路径和进程属主用户的开关。</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a>ConnectionExtraInfo=1</p>
-        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="zh-cn_topic_0000001162739322.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="zh-cn_topic_0000001162579488.md">PG_STAT_ACTIVITY</a>中查询到。</p>
+        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="连接设置.html#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="PG_STAT_ACTIVITY.md">PG_STAT_ACTIVITY</a>中查询到。</p>
         </div></div>
         </td>
         </tr>
@@ -243,11 +243,11 @@
         **表 3**  Sslmode的可选项及其描述
 
         <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_table22136585143846"></a>
-        <table><thead align="left"><tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_row7964795143846"><th class="cellrowborder" valign="top" width="14.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a>Sslmode</p>
+        <table><thead align="left"><tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_row7964795143846"><th class="cellrowborder" valign="top" width="14.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><strong id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a>Sslmode</strong></p>
         </th>
-        <th class="cellrowborder" valign="top" width="18.87%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a>是否会启用SSL加密</p>
+        <th class="cellrowborder" valign="top" width="18.87%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"><strong id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a>是否会启用SSL加密</strong></p>
         </th>
-        <th class="cellrowborder" valign="top" width="66.25999999999999%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a>描述</p>
+        <th class="cellrowborder" valign="top" width="66.25999999999999%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"><strong id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a>描述</strong></p>
         </th>
         </tr>
         </thead>
@@ -331,13 +331,21 @@
         ```
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >-   ****
+        >
         >-   -N all表示openGauss中的所有主机。
+        >
         >-   -I all表示主机中的所有实例。
+        >
         >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
+        >
         >-   all表示允许客户端连接到任意的数据库。
+        >
         >-   jack表示连接数据库的用户。
+        >
         >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
+        >
         >-   sha256表示连接时jack用户的密码使用sha256算法加密。
 
         如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
@@ -475,7 +483,7 @@
 
     由于安全原因，数据库主节点禁止openGauss内部其他节点无认证接入。
 
-    如果要在openGauss内部访问数据库主节点，请将ODBC程序部署在数据库主节点所在机器，服务器地址使用"127.0.0.1"。建议业务系统单独部署在openGauss外部，否则可能会影响数据库运行性能。
+    如果要在openGauss内部访问数据库主节点，请将ODBC程序部署在数据库主节点所在机器，服务器地址使用“127.0.0.1”。建议业务系统单独部署在openGauss外部，否则可能会影响数据库运行性能。
 
 -   \[unixODBC\]\[Driver Manager\]Invalid attribute value
 
@@ -488,12 +496,16 @@
     数据库中存储的口令校验只存储了SHA256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   数据库并不存储用户口令，只存储用户口令的哈希码。
+    >
     >-   数据库当用户更新用户口令或者新建用户时，会同时存储两种格式的哈希码，这时将兼容开源的认证协议。
+    >
     >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。
+    >
     >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。
 
-    要解决该问题，可以更新用户口令（参见[ALTER USER](alter-user.md)）；或者新建一个用户（参见[CREATE USER](create-user.md)），赋于同等权限，使用新用户连接数据库。
+    要解决该问题，可以更新用户口令（参见[ALTER USER](ALTER-USER.md)）；或者新建一个用户（参见[CREATE USER](CREATE-USER.md)），赋于同等权限，使用新用户连接数据库。
 
 -   unsupported frontend protocol 3.51: server supports 1.0 to 3.0
 
@@ -501,6 +513,6 @@
 
 -   FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
 
-    目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用"gss"方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到"sha256"后再试。配置方法见[8](#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
+    目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用“gss”方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到“sha256”后再试。配置方法见[8](#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
 
 

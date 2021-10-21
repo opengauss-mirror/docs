@@ -157,12 +157,12 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 </td>
 <td class="cellrowborder" valign="top" width="31.09%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p515020414910"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p515020414910"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p515020414910"></a>CPU使用情况</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.74999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a058428e2b5654026afc621dd3500a984"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a058428e2b5654026afc621dd3500a984"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a058428e2b5654026afc621dd3500a984"></a>主机使用CPU情况，包括cpu busy time，cpu idle time等。</p>
+<td class="cellrowborder" valign="top" width="50.74999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a058428e2b5654026afc621dd3500a984"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a058428e2b5654026afc621dd3500a984"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a058428e2b5654026afc621dd3500a984"></a>主机使用CPU情况，包括cpu busy time、cpu idle time等。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_r02d863fa5fe14a1c96790c46a71ed1a8"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a3cc4b0c8f76c4921bd942eba8f21a0eb"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a3cc4b0c8f76c4921bd942eba8f21a0eb"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a3cc4b0c8f76c4921bd942eba8f21a0eb"></a>内存使用情况</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a43a755d8d7fe4c84a59426d3f764be39"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a43a755d8d7fe4c84a59426d3f764be39"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a43a755d8d7fe4c84a59426d3f764be39"></a>主机使用内存情况，包括物理内存总量，已使用量等。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a43a755d8d7fe4c84a59426d3f764be39"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a43a755d8d7fe4c84a59426d3f764be39"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a43a755d8d7fe4c84a59426d3f764be39"></a>主机使用内存情况，包括物理内存总量、已使用量等。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_r940d692764e34352b2bfba19e918f96b"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p396640414929"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p396640414929"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p396640414929"></a>I/O使用情况</p>
@@ -174,12 +174,12 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 </td>
 <td class="cellrowborder" valign="top" width="31.09%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a63fb0c0123c649deb50443de0d10f240"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a63fb0c0123c649deb50443de0d10f240"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a63fb0c0123c649deb50443de0d10f240"></a>CPU使用情况</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.74999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a5083725c98584ae79ef4705cf68f212d"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a5083725c98584ae79ef4705cf68f212d"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a5083725c98584ae79ef4705cf68f212d"></a>会话使用CPU情况，包括cpu busy time，cpu idle time等。</p>
+<td class="cellrowborder" valign="top" width="50.74999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a5083725c98584ae79ef4705cf68f212d"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a5083725c98584ae79ef4705cf68f212d"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a5083725c98584ae79ef4705cf68f212d"></a>会话使用CPU情况，包括cpu busy time、cpu idle time等。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_rb41eb0e7c0d54348bd83b4a55fed05ac"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a45e3e83ebafc4f5c97c0df1d102aad2a"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a45e3e83ebafc4f5c97c0df1d102aad2a"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a45e3e83ebafc4f5c97c0df1d102aad2a"></a>内存使用情况</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p635716114918"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p635716114918"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p635716114918"></a>会话使用内存情况，包括物理内存总量，已使用量等。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p635716114918"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p635716114918"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_zh-cn_topic_0058968144_p635716114918"></a>会话使用内存情况，包括物理内存总量、已使用量等。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_r0a419614613c49b78e54607d2191d498"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a6ed31d37a3f940429de1a3b56319ec7e"><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a6ed31d37a3f940429de1a3b56319ec7e"></a><a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_a6ed31d37a3f940429de1a3b56319ec7e"></a>I/O使用情况</p>

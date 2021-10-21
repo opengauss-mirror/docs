@@ -14,7 +14,7 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 
 编译完成后，编译产物为**mysql\_fdw.so**，位于安装目录的**lib/postgresql/** 下。mysql\_fdw相关的sql文件和control文件，位于安装目录的**share/postgresql/extension/**下。
 
-如果编译安装时，没有加入**--enable-mysql-fdw**选项，可以在openGauss安装完成后，再次编译mysql\_fdw，然后手动将编译产物**mysql\_fdw.so**放到对应的安装目录**lib/postgresql/**，将**mysql\_fdw--1.0--1.1.sql，mysql\_fdw--1.1.sql，mysql\_fdw--1.0.sql，mysql\_fdw.control**放到对应的安装目录**share/postgresql/extension/**即可。
+如果编译安装时，没有加入**--enable-mysql-fdw**选项，可以在openGauss安装完成后，再次编译mysql\_fdw，然后手动将编译产物**mysql\_fdw.so**放到对应的安装目录**lib/postgresql/**，将**mysql\_fdw--1.0--1.1.sql、mysql\_fdw--1.1.sql、mysql\_fdw--1.0.sql、mysql\_fdw.control**放到对应的安装目录**share/postgresql/extension/**即可。
 
 ## 使用mysql\_fdw<a name="section1776874817393"></a>
 
