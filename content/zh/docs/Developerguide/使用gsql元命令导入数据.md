@@ -73,7 +73,7 @@ gsql工具提供了元命令\\copy进行数据导入。
 -   声明输出打印到gsql的标准输出。
 -   binary
 
-    使用二进制格式存储和读取，而不是以文本的方式。在二进制模式下，不能声明DELIMITER，NULL，CSV选项。指定binary类型后，不能再通过option或copy\_option指定CSV、FIXED、TEXT等类型。
+    使用二进制格式存储和读取，而不是以文本的方式。在二进制模式下，不能声明DELIMITER、NULL、CSV选项。指定binary类型后，不能再通过option或copy\_option指定CSV、FIXED、TEXT等类型。
 
 -   delimiter \[ as \] 'character'
 
@@ -84,7 +84,7 @@ gsql工具提供了元命令\\copy进行数据导入。
     >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。  
     >-   TEXT格式数据的分隔符不能包含： \\.abcdefghijklmnopqrstuvwxyz0123456789。  
     >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。  
-    >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07，0x08，0x1b等。  
+    >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07、0x08、0x1b等。  
 
     取值范围：支持多字符分隔符，但分隔符不能超过10个字节。
 
@@ -129,7 +129,7 @@ gsql工具提供了元命令\\copy进行数据导入。
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   quote参数不能和分隔符、null参数相同。  
     >-   quote参数只能是单字节的字符。  
-    >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。  
+    >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。  
 
 -   escape \[ as \] 'character'
 
