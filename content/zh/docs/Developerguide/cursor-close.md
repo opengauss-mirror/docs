@@ -12,11 +12,11 @@ cursor.close()
 
 ## 参数<a name="zh-cn_topic_0237120432_zh-cn_topic_0059778852_s1c9b27937d964eaba00ae77fe1cd2c71"></a>
 
-无
+无。
 
 ## 返回值<a name="section899452817814"></a>
 
-无
+无。
 
 ## 示例<a name="section4160944682"></a>
 
