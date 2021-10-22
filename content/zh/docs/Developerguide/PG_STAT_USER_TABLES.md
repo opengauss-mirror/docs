@@ -157,7 +157,7 @@ PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表�
 </td>
 <td class="cellrowborder" valign="top" width="32.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_aec381e2578c64902b8ec56ddf39c7add"><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_aec381e2578c64902b8ec56ddf39c7add"></a><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_aec381e2578c64902b8ec56ddf39c7add"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_a567f6b5102fa4c4e85e0e33968c51892"><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_a567f6b5102fa4c4e85e0e33968c51892"></a><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_a567f6b5102fa4c4e85e0e33968c51892"></a>这个表被autovacuum守护进程分析的次。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_a567f6b5102fa4c4e85e0e33968c51892"><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_a567f6b5102fa4c4e85e0e33968c51892"></a><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_zh-cn_topic_0059777497_a567f6b5102fa4c4e85e0e33968c51892"></a>这个表被autovacuum守护进程分析的次数。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136842_zh-cn_topic_0237122449_row134601324172614"><td class="cellrowborder" valign="top" width="24.16%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136842_zh-cn_topic_0237122449_p718818892119"><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_p718818892119"></a><a name="zh-cn_topic_0283136842_zh-cn_topic_0237122449_p718818892119"></a>last_data_changed</p>
@@ -169,4 +169,5 @@ PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表�
 </tr>
 </tbody>
 </table>
+
 
