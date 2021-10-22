@@ -61,7 +61,7 @@ CONNECTION_BAD
 
 ## 注意事项<a name="zh-cn_topic_0241735618_zh-cn_topic_0237120433_zh-cn_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
-状态可以是多个值之一。但是，在异步连接过程之外只能看到其中两个：CONNECTION\_OK和CONNECTION\_BAD。与数据库的良好连接状态为CONNECTION\_OK。状态表示连接尝试失败CONNECTION\_BAD。通常，“正常”状态将一直保持到PQfinish，但通信失败可能会导致状态CONNECTION\_BAD过早变为。在这种情况下，应用程序可以尝试通过调用进行恢复PQreset。
+状态可以是多个值之一。但是，在异步连接过程之外只能看到其中两个：CONNECTION\_OK和CONNECTION\_BAD。与数据库的良好连接状态为CONNECTION\_OK。与数据库的连接尝试失败为CONNECTION\_BAD。通常，“正常”状态将一直保持到PQfinish，但通信失败可能会导致状态CONNECTION\_BAD过早变为。在这种情况下，应用程序可以尝试通过调用进行恢复PQreset。
 
 ## 示例<a name="zh-cn_topic_0241735618_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
