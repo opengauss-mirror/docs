@@ -121,7 +121,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     </thead>
     <tbody><tr id="row115761915713"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p135718501312"><a name="p135718501312"></a><a name="p135718501312"></a>Database Stat（数据库范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p15576615117"><a name="p15576615117"></a><a name="p15576615117"></a>数据库维度性能统计信息：事务，读写，行活动，写冲突，死锁等。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p15576615117"><a name="p15576615117"></a><a name="p15576615117"></a>数据库维度性能统计信息：事务、读写、行活动、写冲突、死锁等。</p>
     </td>
     </tr>
     <tr id="row55761015114"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p135731021"><a name="p135731021"></a><a name="p135731021"></a>Load Profile（数据库范围）</p>
