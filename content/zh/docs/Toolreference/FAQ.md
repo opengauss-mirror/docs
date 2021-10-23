@@ -128,4 +128,4 @@ openEuler环境下，gs\_sshexkey支持相同用户不同密码做互信，但�
 
 ### 操作步骤<a name="section952412551818"></a>
 
-在/etc/pam.d目录下修改相关配置文件system-auth，password-auth，password-auth-crond，将文件中deny=3的地方适当放大，待互信全部建立完成后再恢复。
+在/etc/pam.d目录下修改相关配置文件system-auth、password-auth、password-auth-crond，将文件中deny=3的地方适当放大，待互信全部建立完成后再恢复。
