@@ -44,7 +44,7 @@ Statistic Not Collect:
 
 ## 规格约束<a name="zh-cn_topic_0237121523_section728715105125"></a>
 
-1.  告警字符串长度上限为2048。如果告警信息超过这个长度（例如存在大量未收集统计信息的超长表名，列名等信息）则不告警，只上报warning：
+1.  告警字符串长度上限为2048。如果告警信息超过这个长度（例如存在大量未收集统计信息的超长表名、列名等信息）则不告警，只上报warning：
 
     ```
     WARNING, "Planner issue report is truncated, the rest of planner issues will be skipped"
