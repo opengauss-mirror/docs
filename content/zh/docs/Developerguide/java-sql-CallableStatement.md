@@ -196,7 +196,7 @@ java.sql.CallableStatement是存储过程执行接口。
 >
 >-   不允许含有OUT参数的语句执行批量操作。
 >
->-   以下方法是从java.sql.Statement继承而来：close，execute，executeQuery，executeUpdate，getConnection，getResultSet，getUpdateCount，isClosed，setMaxRows ,  setFetchSize。
+>-   以下方法是从java.sql.Statement继承而来：close、execute、executeQuery、executeUpdate、getConnection、getResultSet、getUpdateCount、isClosed、setMaxRows 、 setFetchSize。
 >
->-   以下方法是从java.sql.PreparedStatement继承而来：addBatch，clearParameters，execute，executeQuery，executeUpdate，getMetaData，setBigDecimal，setBoolean，setByte，setBytes，setDate，setDouble，setFloat，setInt，setLong，setNull，setObject，setString，setTime，setTimestamp。
+>-   以下方法是从java.sql.PreparedStatement继承而来：addBatch、clearParameters、execute、executeQuery、executeUpdate、getMetaData、setBigDecimal、setBoolean、setByte、setBytes、setDate、setDouble、setFloat、setInt、setLong、setNull、setObject、setString、setTime、setTimestamp。
 
