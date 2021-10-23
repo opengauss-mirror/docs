@@ -23,7 +23,7 @@
 
 ## 语法格式<a name="section4157123095714"></a>
 
--   CREATE PACKAGE SPECIFICATION语法格式
+-   CREATE PACKAGE SPECIFICATION语法格式。
 
     ```
     CREATE [ OR REPLACE ] PACKAGE [ schema ] package_name

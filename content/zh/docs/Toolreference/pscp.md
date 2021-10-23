@@ -54,7 +54,7 @@ python3 pscp [OPTIONS]
 
 -   -x EXTRA
 
-    额外的命令行参数
+    额外的命令行参数。
 
 -   -i
 
