@@ -273,7 +273,7 @@
 
 ## 日志函数<a name="section362275717559"></a>
 
-hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小的时候会使用Explicit模式，这种模式下distinct值的计算是没有误差的；随着distinct值越来越多，hll会先后转换为Sparse模式和Full模式，这两种模式在计算结果上没有任何区别，只影响hll函数的计算效率和hll对象的存储空间。下面的函数可以用于查看hll的一些参数。
+hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小的时候会使用Explicit模式，这种模式下distinct值的计算是没有误差的；随着distinct值越来越多，hll会先后转换为Sparse模式和Full模式，这两种模式在计算结果上没有任何区别，只影响hll函数的计算效率和hll对象的存储空间。下面的函数可以用于查看hll的一些参数。
 
 -   hll\_print\(hll\)
 
@@ -937,7 +937,7 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
 
 -   ||
 
-    描述：可代表hll\_add，hll\_union，hll\_add\_rev三个函数的功能。
+    描述：可代表hll\_add、hll\_union、hll\_add\_rev三个函数的功能。
 
     返回值类型：hll
 
