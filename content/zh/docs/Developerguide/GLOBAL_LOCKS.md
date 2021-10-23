@@ -22,7 +22,7 @@ GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122727_p1390941214409"><a name="zh-cn_topic_0237122727_p1390941214409"></a><a name="zh-cn_topic_0237122727_p1390941214409"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122727_p2090981215405"><a name="zh-cn_topic_0237122727_p2090981215405"></a><a name="zh-cn_topic_0237122727_p2090981215405"></a>被锁定对象的类型：relation，extend，page，tuple，transactionid，virtualxid，object，userlock，advisory。</p>
+<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122727_p2090981215405"><a name="zh-cn_topic_0237122727_p2090981215405"></a><a name="zh-cn_topic_0237122727_p2090981215405"></a>被锁定对象的类型：relation、extend、page、tuple、transactionid、virtualxid、object、userlock、advisory。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122727_row18909112194018"><td class="cellrowborder" valign="top" width="23.189999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122727_p16909112184011"><a name="zh-cn_topic_0237122727_p16909112184011"></a><a name="zh-cn_topic_0237122727_p16909112184011"></a>database</p>
