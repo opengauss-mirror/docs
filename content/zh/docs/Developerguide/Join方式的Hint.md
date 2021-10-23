@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0237121534_section290819468377"></a>
 
-指明Join使用的方法，可以为Nested Loop，Hash Join和Merge Join。
+指明Join使用的方法，可以为Nested Loop、Hash Join和Merge Join。
 
 ## 语法格式<a name="zh-cn_topic_0237121534_section3654114133815"></a>
 

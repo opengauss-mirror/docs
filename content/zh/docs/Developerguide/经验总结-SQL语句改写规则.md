@@ -14,7 +14,7 @@
 
     not in语句需要使用nestloop anti join来实现，而not exists则可以通过hash anti join来实现。在join列不存在null值的情况下，not exists和not in等价。因此在确保没有null值时，可以通过将not in转换为not exists，通过生成hash join来提升查询效率。
 
-    如下所示，如果t2.d2字段中没有null值（t2.d2字段在表定义中not null）查询可以修改为
+    如下所示，如果t2.d2字段中没有null值（t2.d2字段在表定义中not null）查询可以修改为：
 
     ```
     SELECT * FROM t1 WHERE  NOT EXISTS (SELECT * FROM t2 WHERE t1.c1=t2.d2);
