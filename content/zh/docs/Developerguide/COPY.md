@@ -150,7 +150,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 -   **FIXED**
 
-    打开字段固定长度模式。在字段固定长度模式下，不能声明DELIMITER，NULL，CSV选项。指定FIXED类型后，不能再通过option或copy\_option指定BINARY、CSV、TEXT等类型。
+    打开字段固定长度模式。在字段固定长度模式下，不能声明DELIMITER、NULL、CSV选项。指定FIXED类型后，不能再通过option或copy\_option指定BINARY、CSV、TEXT等类型。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >定长格式定义如下：
@@ -249,7 +249,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         >
         >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。
         >
-        >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07，0x08，0x1b等。
+        >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07、0x08、0x1b等。
 
         取值范围：支持多字符分隔符，但分隔符不能超过10个字节。
 
@@ -281,7 +281,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         在导出数据时，如果header选项为on，则需要指定fileheader。如果header为off，则导出数据文件不包含标题行。
 
-        取值范围：true/on，false/off。
+        取值范围：true/on、false/off。
 
         缺省值：false
 
@@ -296,7 +296,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >-   quote参数只能是单字节的字符。
         
-        >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。
+        >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
 
     -   ESCAPE
 
@@ -355,7 +355,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         导入非法字符容错参数。此语法仅对COPY FROM导入有效。
 
-        取值范围：true/on，false/off。
+        取值范围：true/on、false/off。
 
         -   参数为true/on，则导入时遇到非法字符进行容错处理，非法字符转换后入库，不报错，不中断导入。
         -   参数为false/off，导入时遇到非法字符进行报错，中断导入。
@@ -372,7 +372,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         当数据加载时，若数据源文件中一行的最后一个字段缺失的处理方式。
 
-        取值范围：true/on，false/off。
+        取值范围：true/on、false/off。
 
         缺省值：false/off
 
@@ -490,7 +490,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         >-   quote参数只能是单字节的字符。
 
-        >-   推荐不可见字符作为quote，例如0x07，0x08，0x1b等。
+        >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
 
     -   ESCAPE \[AS\] 'escape\_character'
 
@@ -545,7 +545,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         当数据加载时，若数据源文件中一行的最后一个字段缺失的处理方式。
 
-        取值范围：true/on，false/off。
+        取值范围：true/on、false/off。
 
         缺省值：false/off。
 

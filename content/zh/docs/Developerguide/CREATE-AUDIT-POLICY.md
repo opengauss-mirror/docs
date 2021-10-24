@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
-只有poladmin，sysadmin或初始用户能进行此操作。
+只有poladmin、sysadmin或初始用户能进行此操作。
 
 需要开启安全策略开关，即设置GUC参数enable\_security\_policy=on，审计策略才可以生效。
 
