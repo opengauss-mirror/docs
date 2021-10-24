@@ -85,7 +85,7 @@ ALTER RESOURCE POOL pool_name
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT，COPY FROM，CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
+>io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT、COPY FROM、CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
 
 ## 示例<a name="zh-cn_topic_0059778630_s5701ea039ae94537a49dec3cd0c173d8"></a>
 

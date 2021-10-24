@@ -51,7 +51,7 @@
 
             oracle数据库的事务隔离级别。
 
-            取值范围：serializable, read\_committed , read\_only
+            取值范围：serializable、 read\_committed 、 read\_only
 
     -   mysql\_fdw支持的options包括：
         -   **host**  （默认值为 127.0.0.1）
@@ -65,15 +65,15 @@
     -   postgres\_fdw支持的options同libpq支持的连接参数一致，可参考[链接字符](链接字符.md)。需要注意的是，以下几个options不支持修改：
         -   **user**和**password**
 
-            用户名和密码将在创建user mapping时指定
+            用户名和密码将在创建user mapping时指定。
 
         -   **client\_encoding**
 
-            将自动获取本地server的编码方式并设置该值
+            将自动获取本地server的编码方式并设置该值。
 
         -   **application\_name**
 
-            总是设置成postgres\_fdw
+            总是设置成postgres\_fdw。
 
 
     除了libpq支持的连接参数外，还额外提供3个options：
