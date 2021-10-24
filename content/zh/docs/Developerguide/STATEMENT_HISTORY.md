@@ -5,7 +5,7 @@
 对于此系统表查询有如下约束：
 
 -   必须在postgres库内查询，其它库中不存数据。
--   此系统表受track\_stmt\_stat\_level控制，默认为"OFF,L0"，第一部分控制Full SQL，第二部分控制Slow SQL，具体字段记录级别见下表。
+-   此系统表受track\_stmt\_stat\_level控制，默认为“OFF,L0”，第一部分控制Full SQL，第二部分控制Slow SQL，具体字段记录级别见下表。
 -   对于Slow SQL，当track\_stmt\_stat\_level的值为非OFF时，且SQL执行时间超过log\_min\_duration\_statement，会记录为慢SQL。
 
 **表 1**  STATEMENT\_HISTORY字段
