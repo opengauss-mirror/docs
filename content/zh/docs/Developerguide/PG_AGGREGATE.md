@@ -94,7 +94,7 @@ PG\_AGGREGATE系统表存储与聚集函数有关的信息。PG\_AGGREGATE里的
 </td>
 <td class="cellrowborder" valign="top" width="27.82%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p1158375125213"><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p1158375125213"></a><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p1158375125213"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.1%" headers="mcps1.2.5.1.4 "><div class="p" id="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p14944809242"><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p14944809242"></a><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p14944809242"></a>此聚集函数类型：<a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_ul173372515244"></a><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_ul173372515244"></a><ul id="zh-cn_topic_0283137420_zh-cn_topic_0237122266_ul173372515244"><li>'n' ：表示Normal Agg</li><li>'o' ：表示Ordered Set Agg</li></ul>
+<td class="cellrowborder" valign="top" width="39.1%" headers="mcps1.2.5.1.4 "><div class="p" id="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p14944809242"><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p14944809242"></a><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_p14944809242"></a>此聚集函数类型：<a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_ul173372515244"></a><a name="zh-cn_topic_0283137420_zh-cn_topic_0237122266_ul173372515244"></a><ul id="zh-cn_topic_0283137420_zh-cn_topic_0237122266_ul173372515244"><li>'n' ：表示Normal Agg。</li><li>'o' ：表示Ordered Set Agg。</li></ul>
 </div>
 </td>
 </tr>
