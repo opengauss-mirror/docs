@@ -88,7 +88,7 @@
 
     参数：性能预测模型的模板名和模型名。
 
-    返回值类型：tartup\_time\_accuracy FLOAT8,  total\_time\_accuracy FLOAT8,  rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
+    返回值类型：tartup\_time\_accuracy FLOAT8、  total\_time\_accuracy FLOAT8、  rows\_accuracy FLOAT8、 peak\_memory\_accuracy FLOAT8
 
     示例请参见[使用指导](使用指导-20.md)。
 
@@ -108,7 +108,7 @@
 
     参数：数据库名。
 
-    返回值类型：queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, peak\_memory int
+    返回值类型：queryid bigint、 plan\_node\_id int、 parent\_node\_id int、 left\_child\_id int、 right\_child\_id int, encode text、 startup\_time bigint、 total\_time bigint、 rows bigint、 peak\_memory int
 
     示例请参见[使用指导](使用指导-20.md)。
 
