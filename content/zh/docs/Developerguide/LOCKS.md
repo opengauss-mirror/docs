@@ -17,7 +17,7 @@ LOCKS视图用于查看各打开事务所持有的锁信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p118501317182511"><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p118501317182511"></a><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p118501317182511"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p1985018176258"><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p1985018176258"></a><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p1985018176258"></a>被锁定对象的类型：relation，extend，page，tuple，transactionid，virtualxid，object，userlock，advisory。</p>
+<td class="cellrowborder" valign="top" width="60.27%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p1985018176258"><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p1985018176258"></a><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p1985018176258"></a>被锁定对象的类型：relation、extend、page、tuple、transactionid、virtualxid、object、userlock、advisory。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137639_zh-cn_topic_0237122726_row20850161722511"><td class="cellrowborder" valign="top" width="23.189999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p885010178256"><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p885010178256"></a><a name="zh-cn_topic_0283137639_zh-cn_topic_0237122726_p885010178256"></a>database</p>
