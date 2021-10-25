@@ -26,7 +26,7 @@ DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 -   **CASCADE**
 
-    级联删除依赖该类型的对象\(比如字段、函数、操作符等\)
+    级联删除依赖该类型的对象\(比如字段、函数、操作符等\)。
 
     **RESTRICT**
 
