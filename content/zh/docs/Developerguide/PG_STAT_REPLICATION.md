@@ -74,7 +74,7 @@ PG\_STAT\_REPLICATION视图用于描述日志同步状态信息，例如发起�
 <td class="cellrowborder" valign="top" width="35.21352135213521%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_a0c770a2371b14390bfdf09407f09810f"><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_a0c770a2371b14390bfdf09407f09810f"></a><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_a0c770a2371b14390bfdf09407f09810f"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137065_p16270641135419"><a name="zh-cn_topic_0283137065_p16270641135419"></a><a name="zh-cn_topic_0283137065_p16270641135419"></a>日志复制的状态：</p>
-<a name="zh-cn_topic_0283137065_ul158009492546"></a><a name="zh-cn_topic_0283137065_ul158009492546"></a><ul id="zh-cn_topic_0283137065_ul158009492546"><li>追赶状态</li><li>一致的流状态</li></ul>
+<a name="zh-cn_topic_0283137065_ul158009492546"></a><a name="zh-cn_topic_0283137065_ul158009492546"></a><ul id="zh-cn_topic_0283137065_ul158009492546"><li>追赶状态。</li><li>一致的流状态。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_r9dd8b3fefc7e416d8ef895fc9d8ad0a1"><td class="cellrowborder" valign="top" width="31.453145314531454%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_a3d614dcbe4fb430887ea7f4eb8224aad"><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_a3d614dcbe4fb430887ea7f4eb8224aad"></a><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_a3d614dcbe4fb430887ea7f4eb8224aad"></a>sender_sent_location</p>
@@ -117,7 +117,7 @@ PG\_STAT\_REPLICATION视图用于描述日志同步状态信息，例如发起�
 <td class="cellrowborder" valign="top" width="35.21352135213521%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"></a><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137065_p1654561565417"><a name="zh-cn_topic_0283137065_p1654561565417"></a><a name="zh-cn_topic_0283137065_p1654561565417"></a>同步状态：</p>
-<a name="zh-cn_topic_0283137065_ul8410419125415"></a><a name="zh-cn_topic_0283137065_ul8410419125415"></a><ul id="zh-cn_topic_0283137065_ul8410419125415"><li>异步复制</li><li>同步复制</li><li>潜在同步者</li></ul>
+<a name="zh-cn_topic_0283137065_ul8410419125415"></a><a name="zh-cn_topic_0283137065_ul8410419125415"></a><ul id="zh-cn_topic_0283137065_ul8410419125415"><li>异步复制。</li><li>同步复制。</li><li>潜在同步者。</li></ul>
 </td>
 </tr>
 </tbody>
