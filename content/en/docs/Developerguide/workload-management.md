@@ -21,7 +21,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
     >    ```
 
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 ## cgroup\_name<a name="en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_sf87b8e83f9984548aa8c3c5261388782"></a>
 
