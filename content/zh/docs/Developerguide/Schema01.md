@@ -63,7 +63,7 @@ GaussDB KernelopenGauss的Schema如下表所示。
 </tr>
 <tr id="row035912711315"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p143601970314"><a name="p143601970314"></a><a name="p143601970314"></a>public</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p63601871233"><a name="p63601871233"></a><a name="p63601871233"></a>公共模式，缺省时， 创建的表(以及其它对象)自动放入该模式。</p>
+<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p63601871233"><a name="p63601871233"></a><a name="p63601871233"></a>公共模式，缺省时，创建的表（以及其它对象）自动放入该模式。</p>
 </td>
 </tr>
 <tr id="row1057751281014"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p557718129103"><a name="p557718129103"></a><a name="p557718129103"></a>pkg_service</p>
@@ -104,5 +104,4 @@ GaussDB KernelopenGauss的Schema如下表所示。
 -   **[LOCKS](LOCKS.md)**  
 
 -   **[RTO](RTO.md)**  
-
 
