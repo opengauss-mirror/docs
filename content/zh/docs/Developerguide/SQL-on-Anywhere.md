@@ -16,7 +16,7 @@ Extension Connector的基本工作原理是：用户首先构建Data Source对�
 
 -   exec\_on\_extension连接目标库的权限由控制Data Source的使用权限实现。
 -   exec\_on\_extension处理字符的编码方式放在了Data Source对象中，缺省值为UTF-8。
--   exec\_on\_extension是返回类型为record的函数，即数据集。因而语法上需要'AS\(表定义\)'来接收返回的数据，且不能省略，其基本调用形式如下，且不支持CALL调用：
+-   exec\_on\_extension是返回类型为record的函数，即数据集。因而语法上需要'AS\(表定义\)'来接收返回的数据，且不能省略，其基本调用形式如下，且不支持CALL调用。
 -   exec\_on\_extension支持发送多种类型的SQL语句，对于处理结果集的方式，建议按下表处理：
 
     <a name="table173552601415"></a>
