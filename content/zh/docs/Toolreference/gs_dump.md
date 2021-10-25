@@ -309,7 +309,7 @@ export PGDATABASE=postgres
 
   指定导出兼容其他版本数据库的文本文件，目前支持v1和v5参数。v1参数用于导出v5数据库的数据为兼容v1的文本文件。v5参数用于导出v5数据库的数据为v5格式的文本文件，减少了导入v5时的可能的报错情况。
 
-  在使用v1参数时，建议和--exclude-guc="enable\_cluster\_resize"，--exclude-function，--exclude-with等选项共用，否则导入到v1时可能报错。
+  在使用v1参数时，建议和--exclude-guc="enable\_cluster\_resize"、--exclude-function、--exclude-with等选项共用，否则导入到v1时可能报错。
 
 - --exclude-guc
 

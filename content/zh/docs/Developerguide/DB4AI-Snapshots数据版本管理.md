@@ -6,7 +6,7 @@ DB4AI-Snapshots是DB4AI模块用于管理数据集版本的功能。通过DB4ai-
 
 DB4AI-Snapshots的状态包括published、archived以及purged。其中，published可以用于标记该DB4AI-Snapshots已经发布，可以进行使用。archived表示当前 DB4AI-Snapshots 处于“存档期”，一般不进行新模型的训练，而是利用旧数据对新的模型进行验证。purged则是该DB4AI-Snapshots 已经被删除的状态，在数据库系统中无法再检索到。
 
-需要注意的是快照管理功能是为了给用户提供统一的训练数据，不同团队成员可以使用给定的训练数据来重新训练机器学习模型，方便用户间协同。为此**私有用户**和**三权分立**状态\(enableSeparationOfDuty=ON\)等涉及不支持用户数据转写等情况将不支持Snapshot特性。
+需要注意的是快照管理功能是为了给用户提供统一的训练数据，不同团队成员可以使用给定的训练数据来重新训练机器学习模型，方便用户间协同。为此**私有用户**和**三权分立**状态（enableSeparationOfDuty=ON）等涉及不支持用户数据转写等情况将不支持Snapshot特性。
 
 用户可以通过“CREATE SNAPSHOT”语句创建数据表快照，创建好的快照默认即为published状态。可以采用两种模式创建数据表快照，即为MSS以及CSS模式，它们可以通过GUC参数db4ai\_snapshot\_mode进行配置。对于MSS模式，它是采用物化算法进行实现的，存储了原始数据集的数据实体；CSS则是基于相对计算算法实现的，存储的是数据的增量信息。数据表快照的元信息存储在DB4AI的系统目录中。可以通过db4ai.snapshot 系统表查看到。
 

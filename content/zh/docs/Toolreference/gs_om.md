@@ -121,11 +121,11 @@ gs\_om参数可以分为如下几类：
 
     -   -D
 
-        指定 dn路径
+        指定 dn路径。
 
-        取值范围：dn路径
+        取值范围：dn路径。
 
-        不指定dn路径，表示使用静态文件中的dn路径
+        不指定dn路径，表示使用静态文件中的dn路径。
 
     -   --time-out=SECS
 
@@ -133,7 +133,7 @@ gs\_om参数可以分为如下几类：
 
         取值范围：正整数，建议值300。
 
-        默认值：300
+        默认值：300。
 
     -   --security-mode
 
@@ -171,7 +171,7 @@ gs\_om参数可以分为如下几类：
 
         取值范围：正整数，建议值300。
 
-        默认值：300
+        默认值：300。
 
 
 -   查询状态参数：
@@ -230,7 +230,7 @@ gs\_om参数可以分为如下几类：
 
         指定数据库部署用户。
 
-        取值范围：数据库部署用户
+        取值范围：数据库部署用户。
 
     -   -m
 
@@ -245,7 +245,7 @@ gs\_om参数可以分为如下几类：
     -   --krb-server安装kerberos服务端认证。
     -   --krb-client安装kerberos客户端认证。
 
-        注：需要先安装--krb-server，卸载时同步卸载不需要该参数
+        注：需要先安装--krb-server，卸载时同步卸载不需要该参数。
 
 
 -   SSL证书替换：
@@ -283,7 +283,7 @@ gs\_om参数可以分为如下几类：
 </tr>
 <tr id="row020217369"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p8213171167"><a name="p8213171167"></a><a name="p8213171167"></a>redistributing</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p14211017768"><a name="p14211017768"></a><a name="p14211017768"></a>数据重分布状态</p>
+<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p14211017768"><a name="p14211017768"></a><a name="p14211017768"></a>数据重分布状态。</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14218176612"></a><a name="ul14218176612"></a><ul id="ul14218176612"><li>Yes：表示<span id="text42111171767"><a name="text42111171767"></a><a name="text42111171767"></a>openGauss</span>处于数据重分布状态。</li><li>No：表示<span id="text16241517961"><a name="text16241517961"></a><a name="text16241517961"></a>openGauss</span>未处于数据重分步状态。</li></ul>
 </td>
@@ -297,21 +297,21 @@ gs\_om参数可以分为如下几类：
 </tr>
 <tr id="row1525317264"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p12581718613"><a name="p12581718613"></a><a name="p12581718613"></a>node</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p92519171668"><a name="p92519171668"></a><a name="p92519171668"></a>主机名称</p>
+<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p92519171668"><a name="p92519171668"></a><a name="p92519171668"></a>主机名称。</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><p id="p192515171964"><a name="p192515171964"></a><a name="p192515171964"></a>表示该实例所在的主机名称。多AZ时会显示AZ编号。</p>
 </td>
 </tr>
 <tr id="row122515171668"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p19265171463"><a name="p19265171463"></a><a name="p19265171463"></a>node_ip</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p192614174612"><a name="p192614174612"></a><a name="p192614174612"></a>主机IP</p>
+<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p192614174612"><a name="p192614174612"></a><a name="p192614174612"></a>主机IP。</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><p id="p15261017061"><a name="p15261017061"></a><a name="p15261017061"></a>表示该实例所在的主机IP。</p>
 </td>
 </tr>
 <tr id="row626181719616"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p192612176611"><a name="p192612176611"></a><a name="p192612176611"></a>instance</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p192611176616"><a name="p192611176616"></a><a name="p192611176616"></a>实例ID</p>
+<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p192611176616"><a name="p192611176616"></a><a name="p192611176616"></a>实例ID。</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><p id="p7268178613"><a name="p7268178613"></a><a name="p7268178613"></a>表示该实例的ID。</p>
 </td>
@@ -319,7 +319,7 @@ gs\_om参数可以分为如下几类：
 <tr id="row11262171166"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p2271417062"><a name="p2271417062"></a><a name="p2271417062"></a>state</p>
 <p id="p14821350153410"><a name="p14821350153410"></a><a name="p14821350153410"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p172731718619"><a name="p172731718619"></a><a name="p172731718619"></a>实例状态</p>
+<td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p172731718619"><a name="p172731718619"></a><a name="p172731718619"></a>实例状态。</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li>P: 节点的初始角色是Primary，数据库安装后就不再变动，从系统静态文件读取。</li><li>S: 节点的初始角色是Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>C: 节点的初始角色是Cascade Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>Primary：表示实例为主实例。</li><li>Standby：表示实例为备实例。</li><li>Cascade Standby：表示实例为级联备实例。</li><li>Secondary：表示实例为从备实例。</li><li>Pending：表示该实例在仲裁阶段。</li><li>Unknown：表示实例状态未知。</li><li>Down：表示实例处于宕机状态。</li></ul>
 </td>

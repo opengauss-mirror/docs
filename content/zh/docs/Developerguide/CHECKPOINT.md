@@ -4,7 +4,7 @@
 
 检查点（CHECKPOINT）是一个事务日志中的点，所有数据文件都在该点被更新以反映日志中的信息，所有数据文件都将被刷新到磁盘。
 
-设置事务日志检查点。预写式日志（WAL）缺省时在事务日志中每隔一段时间放置一个检查点。可以使用gs\_guc命令设置相关运行时参数（checkpoint\_segments，checkpoint\_timeout和incremental\_checkpoint\_timeout）来调整这个原子化检查点的间隔。
+设置事务日志检查点。预写式日志（WAL）缺省时在事务日志中每隔一段时间放置一个检查点。可以使用gs\_guc命令设置相关运行时参数（checkpoint\_segments、checkpoint\_timeout和incremental\_checkpoint\_timeout）来调整这个原子化检查点的间隔。
 
 ## 注意事项<a name="zh-cn_topic_0283137558_zh-cn_topic_0237122089_zh-cn_topic_0059778147_s86cf086bf81043cba0f2133b169b333d"></a>
 

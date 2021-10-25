@@ -113,7 +113,7 @@ openGauss=# DROP TABLE tpcds.inventory_p1;
 
 ## 优化建议<a name="zh-cn_topic_0283137352_zh-cn_topic_0237122092_zh-cn_topic_0059778981_section8558510163121"></a>
 
--   cluster
+    -   cluster
     -   建议在新近聚簇的表上运行ANALYZE。否则，优化器可能会选择很差劲的查询规划。
     -   不允许在事务中执行CLUSTER。
 

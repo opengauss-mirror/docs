@@ -59,14 +59,14 @@ CONFIG\_SETTINGS视图显示数据库运行时参数的相关信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.331733173317332%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122732_p21092282556"><a name="zh-cn_topic_0237122732_p21092282556"></a><a name="zh-cn_topic_0237122732_p21092282556"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122732_p91091328125512"><a name="zh-cn_topic_0237122732_p91091328125512"></a><a name="zh-cn_topic_0237122732_p91091328125512"></a>设置参数值的上下文，包括internal，postmaster，sighup，backend，superuser，user。</p>
+<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122732_p91091328125512"><a name="zh-cn_topic_0237122732_p91091328125512"></a><a name="zh-cn_topic_0237122732_p91091328125512"></a>设置参数值的上下文，包括internal、postmaster、sighup、backend、superuser、user。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122732_row16109128175517"><td class="cellrowborder" valign="top" width="17.711771177117715%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122732_p15109132815551"><a name="zh-cn_topic_0237122732_p15109132815551"></a><a name="zh-cn_topic_0237122732_p15109132815551"></a>vartype</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.331733173317332%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122732_p12109142819552"><a name="zh-cn_topic_0237122732_p12109142819552"></a><a name="zh-cn_topic_0237122732_p12109142819552"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122732_p5109112845517"><a name="zh-cn_topic_0237122732_p5109112845517"></a><a name="zh-cn_topic_0237122732_p5109112845517"></a>参数类型，包括bool，enum，integer，real，string。</p>
+<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122732_p5109112845517"><a name="zh-cn_topic_0237122732_p5109112845517"></a><a name="zh-cn_topic_0237122732_p5109112845517"></a>参数类型，包括bool、enum、integer、real、string。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122732_row110962815558"><td class="cellrowborder" valign="top" width="17.711771177117715%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122732_p191097289556"><a name="zh-cn_topic_0237122732_p191097289556"></a><a name="zh-cn_topic_0237122732_p191097289556"></a>source</p>

@@ -25,7 +25,7 @@ PG\_TDE\_INFO视图提供了openGauss加密信息。
 </td>
 <td class="cellrowborder" valign="top" width="21.95%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137258_zh-cn_topic_0237122468_zh-cn_topic_0059777983_a582a0cdec211439eb537138f5ca9008c"><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_zh-cn_topic_0059777983_a582a0cdec211439eb537138f5ca9008c"></a><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_zh-cn_topic_0059777983_a582a0cdec211439eb537138f5ca9008c"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.05%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137258_zh-cn_topic_0237122468_p0171183942310"><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_p0171183942310"></a><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_p0171183942310"></a>加密算法。<a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_ul5602184782317"></a><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_ul5602184782317"></a><ul id="zh-cn_topic_0283137258_zh-cn_topic_0237122468_ul5602184782317"><li>SM4-CTR-128</li><li>AES-CTR-128</li></ul>
+<td class="cellrowborder" valign="top" width="56.05%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137258_zh-cn_topic_0237122468_p0171183942310"><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_p0171183942310"></a><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_p0171183942310"></a>加密算法。<a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_ul5602184782317"></a><a name="zh-cn_topic_0283137258_zh-cn_topic_0237122468_ul5602184782317"></a><ul id="zh-cn_topic_0283137258_zh-cn_topic_0237122468_ul5602184782317"><li>SM4-CTR-128。</li><li>AES-CTR-128。</li></ul>
 </div>
 </td>
 </tr>
