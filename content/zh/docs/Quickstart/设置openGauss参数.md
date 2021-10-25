@@ -165,8 +165,8 @@ Success to perform gs_guc!
     要设定的openGauss配置参数的名称和参数值。
 
     >![](public_sys-resources/icon-note.gif) **说明：**    
-    >-   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。   
-    >-   当使用gs\_guc set/reload为"log\_directory" 恢复默认值时，其默认值会被置为具体的data目录。
+    >-   如果参数是一个字符串变量，则使用-c parameter=“'value'”或者使用-c “parameter = 'value'”。   
+    >-   当使用gs\_guc set/reload为“log\_directory” 恢复默认值时，其默认值会被置为具体的data目录。
 
     取值范围：postgresql.conf中的所有参数。
 
