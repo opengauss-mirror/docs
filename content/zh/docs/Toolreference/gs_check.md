@@ -980,7 +980,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
         -   ERROR – 检查项发生内部错误，未完成检查。
 
     -   preCheck: 检查前条件判定，内置两种实现：cnPreCheck – 用于检查当前执行节点是否包含数据库主节点实例，localPreCheck – 用于检查当前执行节点是否指定节点。可通过巡检项配置文件中的scope参数进行配置。 可重载该方法实现自定义的前置检查
-    -   postAnalysis：检查结果分析方法，内置两种实现：default，consistent。可通过巡检项配置文件中的analysis参数进行配置。可重载该方法实现自定义的结果分析。
+    -   postAnalysis：检查结果分析方法，内置两种实现：default、consistent。可通过巡检项配置文件中的analysis参数进行配置。可重载该方法实现自定义的结果分析。
 
     注：用户自定义的检查项名称不得与已有检查项名称相同，同时用户需保证自定义检查项脚本的规范性。
 
@@ -1097,14 +1097,14 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0237152330_row3361592574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p19529155145913"><a name="zh-cn_topic_0237152330_p19529155145913"></a><a name="zh-cn_topic_0237152330_p19529155145913"></a>net.ipv4.tcp_rmem</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1452915511595"><a name="zh-cn_topic_0237152330_p1452915511595"></a><a name="zh-cn_topic_0237152330_p1452915511595"></a>TCP协议接收端缓冲区的可用内存大小。分无压力，有压力，和压力大三个区间，单位为页面。</p>
+<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1452915511595"><a name="zh-cn_topic_0237152330_p1452915511595"></a><a name="zh-cn_topic_0237152330_p1452915511595"></a>TCP协议接收端缓冲区的可用内存大小。分无压力、有压力、和压力大三个区间，单位为页面。</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p5529155105915"><a name="zh-cn_topic_0237152330_p5529155105915"></a><a name="zh-cn_topic_0237152330_p5529155105915"></a>8192 250000 16777216</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152330_row10378590579"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p953010511591"><a name="zh-cn_topic_0237152330_p953010511591"></a><a name="zh-cn_topic_0237152330_p953010511591"></a>net.ipv4.tcp_wmem</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1153017545918"><a name="zh-cn_topic_0237152330_p1153017545918"></a><a name="zh-cn_topic_0237152330_p1153017545918"></a>TCP协议发送端缓冲区的可用内存大小。分无压力，有压力，和压力大三个区间，单位为页面。</p>
+<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p1153017545918"><a name="zh-cn_topic_0237152330_p1153017545918"></a><a name="zh-cn_topic_0237152330_p1153017545918"></a>TCP协议发送端缓冲区的可用内存大小。分无压力、有压力、和压力大三个区间，单位为页面。</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p195301356597"><a name="zh-cn_topic_0237152330_p195301356597"></a><a name="zh-cn_topic_0237152330_p195301356597"></a>8192 250000 16777216</p>
 </td>

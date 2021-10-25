@@ -407,7 +407,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     指定从恢复时间开始计算，备份要固定的时间量。必须为正整数。0表示取消备份固定。
 
-    支持的单位：ms, s, min, h, d（默认为s）。
+    支持的单位：ms、 s、 min、 h、 d（默认为s）。
 
     例如：--ttl=30d。
 
@@ -468,7 +468,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     单个日志文件的最大生命周期。如果达到此值，则启动gs\_probackup命令后，日志文件将循环，但help和version命令除外。$BACKUP\_PATH/log/log\_rotation目录下保存最后一次创建日志文件的时间。0表示禁用基于时间的循环。
 
-    支持的单位：ms, s, min, h, d（默认为min）。
+    支持的单位：ms、 s、 min、 h、 d（默认为min）。
 
     默认值：0
 
