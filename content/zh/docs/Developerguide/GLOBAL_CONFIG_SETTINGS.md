@@ -66,14 +66,14 @@ GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息�
 </td>
 <td class="cellrowborder" valign="top" width="17.331733173317332%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122733_p16349516977"><a name="zh-cn_topic_0237122733_p16349516977"></a><a name="zh-cn_topic_0237122733_p16349516977"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p1534919166712"><a name="zh-cn_topic_0237122733_p1534919166712"></a><a name="zh-cn_topic_0237122733_p1534919166712"></a>设置参数值的上下文，包括internal，postmaster，sighup，backend，superuser，user。</p>
+<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p1534919166712"><a name="zh-cn_topic_0237122733_p1534919166712"></a><a name="zh-cn_topic_0237122733_p1534919166712"></a>设置参数值的上下文，包括internal、postmaster、sighup、backend、superuser、user。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122733_row23508161878"><td class="cellrowborder" valign="top" width="17.711771177117715%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122733_p63501416672"><a name="zh-cn_topic_0237122733_p63501416672"></a><a name="zh-cn_topic_0237122733_p63501416672"></a>vartype</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.331733173317332%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122733_p1535019162714"><a name="zh-cn_topic_0237122733_p1535019162714"></a><a name="zh-cn_topic_0237122733_p1535019162714"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p73502162715"><a name="zh-cn_topic_0237122733_p73502162715"></a><a name="zh-cn_topic_0237122733_p73502162715"></a>参数类型，包括bool，enum，integer，real，string。</p>
+<td class="cellrowborder" valign="top" width="64.95649564956494%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122733_p73502162715"><a name="zh-cn_topic_0237122733_p73502162715"></a><a name="zh-cn_topic_0237122733_p73502162715"></a>参数类型，包括bool、enum、integer、real、string。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122733_row335013161071"><td class="cellrowborder" valign="top" width="17.711771177117715%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122733_p43501916377"><a name="zh-cn_topic_0237122733_p43501916377"></a><a name="zh-cn_topic_0237122733_p43501916377"></a>source</p>

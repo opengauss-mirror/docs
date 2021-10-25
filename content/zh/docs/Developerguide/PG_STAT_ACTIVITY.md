@@ -170,7 +170,7 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </td>
 <td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a>json格式字符串，记录当前连接数据库的驱动类型、驱动版本号、当前驱动的部署路径、进程属主用户等信息（参见<a href="连接设置.MD">connection_info</a>）。</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a>json格式字符串，记录当前连接数据库的驱动类型、驱动版本号、当前驱动的部署路径、进程属主用户等信息（参见<a href="连接设置.md">connection_info</a>）。</p>
 </td>
 </tr>
 </tbody>

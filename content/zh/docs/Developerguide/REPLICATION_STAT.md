@@ -1,6 +1,6 @@
 # REPLICATION\_STAT<a name="ZH-CN_TOPIC_0245374812"></a>
 
-REPLICATION\_STAT用于描述日志同步状态信息，如发起端发送日志位置，收端接收日志位置等。
+REPLICATION\_STAT用于描述日志同步状态信息，如发起端发送日志位置、收端接收日志位置等。
 
 **表 1**  REPLICATION\_STAT字段
 

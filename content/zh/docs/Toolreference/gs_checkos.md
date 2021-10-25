@@ -376,14 +376,14 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_row3361592574"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p19529155145913"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p19529155145913"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p19529155145913"></a>net.ipv4.tcp_rmem</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1452915511595"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1452915511595"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1452915511595"></a>TCP协议接收端缓冲区的可用内存大小。分无压力，有压力，和压力大三个区间，单位为页面。</p>
+<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1452915511595"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1452915511595"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1452915511595"></a>TCP协议接收端缓冲区的可用内存大小。分无压力、有压力、和压力大三个区间，单位为页面。</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p5529155105915"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p5529155105915"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p5529155105915"></a>8192 250000 16777216</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_row10378590579"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p953010511591"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p953010511591"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p953010511591"></a>net.ipv4.tcp_wmem</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1153017545918"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1153017545918"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1153017545918"></a>TCP协议发送端缓冲区的可用内存大小。分无压力，有压力，和压力大三个区间，单位为页面。</p>
+<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1153017545918"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1153017545918"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p1153017545918"></a>TCP协议发送端缓冲区的可用内存大小。分无压力、有压力、和压力大三个区间，单位为页面。</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p195301356597"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p195301356597"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p195301356597"></a>8192 250000 16777216</p>
 </td>

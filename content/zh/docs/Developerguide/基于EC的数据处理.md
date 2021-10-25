@@ -170,7 +170,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     更多详细信息请参考《工具参考》中“服务端工具 \> gs\_om”章节。
 
 
-3.  准备package.zip压缩包，放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN为以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。压缩包包含如下内容：
+3.  准备package.zip压缩包，放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN为以DSN为名的文件夹。DSN名必须由字母、数字、下划线组成。压缩包包含如下内容：
 
     ```
     openGauss-*.*.0-ODBC.tar.gz

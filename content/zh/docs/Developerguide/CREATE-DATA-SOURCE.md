@@ -47,7 +47,7 @@ CREATE DATA SOURCE src_name
 
         选项名称。
 
-        取值范围：dsn， username， password， encoding。不区分大小写。
+        取值范围：dsn、 username、 password、 encoding。不区分大小写。
 
         -   dsn对应odbc配置文件中的DSN。
         -   username/password对应连接目标库的用户名和密码。

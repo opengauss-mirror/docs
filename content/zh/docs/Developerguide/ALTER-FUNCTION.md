@@ -71,7 +71,7 @@
 
     标识该参数是输入、输出参数。
 
-    取值范围：IN/OUT/INOUT/VARIADIC
+    取值范围：IN/OUT/INOUT/VARIADIC。
 
 -   **argname**
 

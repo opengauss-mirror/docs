@@ -50,7 +50,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 1.  本版本支持的算法概述。
 
-    当前版本的DB4AI支持基于SGD算子的逻辑回归\(目前支持二分类任务\)、线性回归和支持向量机算法\(分类任务\)，以及基于K-Means算子的Kmeans聚类算法。
+    当前版本的DB4AI支持基于SGD算子的逻辑回归（目前支持二分类任务）、线性回归和支持向量机算法（分类任务），以及基于K-Means算子的Kmeans聚类算法。
 
 2.  模型训练语法说明。
     -   CREATE MODEL
@@ -143,7 +143,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             <a name="table86881521502"></a>
             <table><thead align="left"><tr id="row9689452402"><th class="cellrowborder" valign="top" width="16.04%" id="mcps1.2.5.1.1"><p id="p1168911521406"><a name="p1168911521406"></a><a name="p1168911521406"></a>算子</p>
             </th>
-            <th class="cellrowborder" valign="top" width="35.28%" id="mcps1.2.5.1.2"><p id="p176891522013"><a name="p176891522013"></a><a name="p176891522013"></a>超参(默认值)</p>
+            <th class="cellrowborder" valign="top" width="35.28%" id="mcps1.2.5.1.2"><p id="p176891522013"><a name="p176891522013"></a><a name="p176891522013"></a>超参（默认值）</p>
             </th>
             <th class="cellrowborder" valign="top" width="22.12%" id="mcps1.2.5.1.3"><p id="p1468955218017"><a name="p1468955218017"></a><a name="p1468955218017"></a>取值范围</p>
             </th>
@@ -174,7 +174,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p19492119171912"><a name="p19492119171912"></a><a name="p19492119171912"></a>最大迭代次数</p>
             </td>
             </tr>
-            <tr id="row968985213016"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p96891521904"><a name="p96891521904"></a><a name="p96891521904"></a>max_seconds = 0 (不对运行时长设限制)</p>
+            <tr id="row968985213016"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p96891521904"><a name="p96891521904"></a><a name="p96891521904"></a>max_seconds = 0（不对运行时长设限制）</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p5689752300"><a name="p5689752300"></a><a name="p5689752300"></a>[0,INT_MAX_VALUE]</p>
             </td>
@@ -397,7 +397,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
     </tr>
     <tr id="row457633718349"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17576173711341"><a name="p17576173711341"></a><a name="p17576173711341"></a>DETAIL</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14576203713347"><a name="p14576203713347"></a><a name="p14576203713347"></a>布尔型变量，不可用。</p>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14576203713347"><a name="p14576203713347"></a><a name="p14576203713347"></a>布尔型变量，不可用</p>
     </td>
     </tr>
     <tr id="row1257603714348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p857623743413"><a name="p857623743413"></a><a name="p857623743413"></a>NODES</p>
@@ -506,7 +506,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             CREATE MODEL patient_linear_regression USING linear_regression TARGET trait_anxiety  FROM patients;   ERROR:  Supervised ML algorithms require FEATURES clause
             ```
 
-        -   场景五：当GUC参数statement\_timeout设置了时长，训练超时执行的语句将被终止：执行CREATE MODEL语句。训练集的大小、训练轮数\(iteration\)、提前终止条件\(tolerance、max\_seconds\)、并行线程数\(nthread\)等参数都会影响训练时长。当时长超过数据库限制，语句被终止模型训练失败。
+        -   场景五：当GUC参数statement\_timeout设置了时长，训练超时执行的语句将被终止：执行CREATE MODEL语句。训练集的大小、训练轮数（iteration）、提前终止条件（tolerance、max\_seconds）、并行线程数（nthread）等参数都会影响训练时长。当时长超过数据库限制，语句被终止模型训练失败。
 
     -   推断阶段。
         -   场景六：当模型名在系统表中查找不到，数据库会报ERROR：

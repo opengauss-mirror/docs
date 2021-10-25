@@ -34,11 +34,11 @@ ALTER RESOURCE POOL pool_name
 
     >-   group\_name对大小写敏感。
 
-    >-   不指定group\_name时，默认指定的字符串为 "Medium"，代表指定DefaultClass控制组的"Medium" Timeshare控制组。
+    >-   不指定group\_name时，默认指定的字符串为 "Medium"，代表指定DefaultClass控制组的“Medium” Timeshare控制组。
 
-    >-   若数据库管理员指定自定义Class组下的Workload控制组，如control\_group的字符串为："class1:workload1"；代表此资源池指定到class1控制组下的workload1控制组。也可同时指定Workload控制组的层次，如control\_group的字符串为："class1:workload1:1"。
+    >-   若数据库管理员指定自定义Class组下的Workload控制组，如control\_group的字符串为：“class1:workload1”；代表此资源池指定到class1控制组下的workload1控制组。也可同时指定Workload控制组的层次，如control\_group的字符串为：“class1:workload1:1”。
     
-    >-   若数据库用户指定Timeshare控制组代表的字符串，即"Rush"、"High"、"Medium"或"Low"其中一种，如control\_group的字符串为"High"；代表资源池指定到DefaultClass控制组下的"High" Timeshare控制组。
+    >-   若数据库用户指定Timeshare控制组代表的字符串，即“Rush”、“High”、“Medium”或“Low”其中一种，如control\_group的字符串为“High”；代表资源池指定到DefaultClass控制组下的“High” Timeshare控制组。
 
     取值范围：已创建的控制组。
 
@@ -85,7 +85,7 @@ ALTER RESOURCE POOL pool_name
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT，COPY FROM，CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
+>io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT、COPY FROM、CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
 
 ## 示例<a name="zh-cn_topic_0059778630_s5701ea039ae94537a49dec3cd0c173d8"></a>
 

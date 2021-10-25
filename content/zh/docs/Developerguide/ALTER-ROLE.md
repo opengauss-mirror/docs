@@ -100,7 +100,7 @@
 
 -   **PGUSER**
 
-    当前版本不允许修改角色的PGUSER属性
+    当前版本不允许修改角色的PGUSER属性。
 
 -   **PASSWORD/IDENTIFIED BY **'password'
 
