@@ -63,7 +63,7 @@
 
 ## transaction\_deferrable<a name="zh-cn_topic_0283136901_zh-cn_topic_0237124741_zh-cn_topic_0059778361_s0f3a7cc4a78f476390a39c0df72ec257"></a>
 
-**参数说明：**指定是否允许一个只读串行事务延迟执行，使其不会执行失败。该参数设置为on时，当一个只读事务发现读取的元组正在被其他事务修改，则延迟该只读事务直到其他事务修改完成。该参数为预留参数，该版本不生效。与该参数类似的还有一个[default\_transaction\_deferrable](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_s031e2bbea2cf42a5a1c24e6dbaa70365)，设置它来指定一个事务是否允许延迟。
+**参数说明：**指定是否允许一个只读串行事务延迟执行，使其不会执行失败。该参数设置为on时，当一个只读事务发现读取的元组正在被其他事务修改，则延迟该只读事务直到其他事务修改完成。该参数为预留参数，该版本不生效。与该参数类似的还有一个[default\_transaction\_deferrable](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_s031e2bbea2cf42a5a1c24e6dbaa70365)，设置它来指定一个事务是否允许延迟。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
