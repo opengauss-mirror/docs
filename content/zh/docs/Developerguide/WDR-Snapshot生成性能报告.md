@@ -33,9 +33,9 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
 
     a.  执行如下命令生成格式化性能报告文件。
 
-        ```
+    ```
         \a \t \o 服务器文件路径
-        ```
+    ```
 
         上述命令涉及参数说明如下：
 
@@ -46,9 +46,9 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
 
     b.  执行如下命令将查询到的信息写入性能报告中。
 
-        ```
+    ```
         select generate_wdr_report(begin_snap_id bigint, end_snap_id bigint, report_type cstring, report_scope cstring, node_name cstring);
-        ```
+    ```
 
         命令中涉及的参数说明如下。
 
@@ -104,9 +104,9 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
 
     c.  执行如下命令关闭输出选项及格式化输出命令。
 
-        ```
+    ```
         \o \a \t 
-        ```
+    ```
 
 5.  根据需要查看WDR报告内容。
 

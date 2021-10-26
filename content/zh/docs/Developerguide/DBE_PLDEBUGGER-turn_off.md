@@ -24,14 +24,14 @@ RETURN boolean;
 </td>
 <td class="cellrowborder" valign="top" width="38.693869386938694%" headers="mcps1.2.4.1.2 "><p id="p174151715112614"><a name="p174151715112614"></a><a name="p174151715112614"></a>IN oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.65336533653365%" headers="mcps1.2.4.1.3 "><p id="p174151615152616"><a name="p174151615152616"></a><a name="p174151615152616"></a>函数oid</p>
+<td class="cellrowborder" valign="top" width="33.65336533653365%" headers="mcps1.2.4.1.3 "><p id="p174151615152616"><a name="p174151615152616"></a><a name="p174151615152616"></a>函数oid。</p>
 </td>
 </tr>
 <tr id="row1277121911516"><td class="cellrowborder" valign="top" width="27.652765276527653%" headers="mcps1.2.4.1.1 "><p id="p1777181917157"><a name="p1777181917157"></a><a name="p1777181917157"></a>turn_off</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.693869386938694%" headers="mcps1.2.4.1.2 "><p id="p1677171914150"><a name="p1677171914150"></a><a name="p1677171914150"></a>OUT boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.65336533653365%" headers="mcps1.2.4.1.3 "><p id="p877191911517"><a name="p877191911517"></a><a name="p877191911517"></a>turn off是否成功</p>
+<td class="cellrowborder" valign="top" width="33.65336533653365%" headers="mcps1.2.4.1.3 "><p id="p877191911517"><a name="p877191911517"></a><a name="p877191911517"></a>turn off是否成功。</p>
 </td>
 </tr>
 </tbody>
