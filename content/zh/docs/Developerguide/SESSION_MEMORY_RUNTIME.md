@@ -59,7 +59,7 @@ SESSION\_MEMORY\_RUNTIME视图显示和当前用户执行复杂作业正在运�
 </td>
 <td class="cellrowborder" valign="top" width="25.590000000000003%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aae3018b41e064e4ba9e7ac6ca05d3b43"><a name="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aae3018b41e064e4ba9e7ac6ca05d3b43"></a><a name="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aae3018b41e064e4ba9e7ac6ca05d3b43"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.44%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aa9b7a1e8f84048e0aab9363ce5863040"><a name="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aa9b7a1e8f84048e0aab9363ce5863040"></a><a name="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aa9b7a1e8f84048e0aab9363ce5863040"></a>语句在数据库节点上的下盘信息：<a name="zh-cn_topic_0237122644_ul16420191016115"></a><a name="zh-cn_topic_0237122644_ul16420191016115"></a><ul id="zh-cn_topic_0237122644_ul16420191016115"><li>None：数据库节点均未下盘</li><li>All：数据库节点均下盘</li><li>[a:b]：数量为b个数据库节点中有a个数据库节点下盘</li></ul>
+<td class="cellrowborder" valign="top" width="52.44%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aa9b7a1e8f84048e0aab9363ce5863040"><a name="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aa9b7a1e8f84048e0aab9363ce5863040"></a><a name="zh-cn_topic_0237122644_zh-cn_topic_0059778509_aa9b7a1e8f84048e0aab9363ce5863040"></a>语句在数据库节点上的下盘信息：<a name="zh-cn_topic_0237122644_ul16420191016115"></a><a name="zh-cn_topic_0237122644_ul16420191016115"></a><ul id="zh-cn_topic_0237122644_ul16420191016115"><li>None：数据库节点均未下盘。</li><li>All：数据库节点均下盘。</li><li>[a:b]：数量为b个数据库节点中有a个数据库节点下盘。</li></ul>
 </div>
 </td>
 </tr>
