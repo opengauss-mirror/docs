@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0059777864_scf0935dc3ada4baa9a77f7734edb20bb"></a>
 
-只有poladmin，sysadmin或初始用户才能进行此操作。
+只有poladmin、sysadmin或初始用户才能进行此操作。
 
 ## 语法格式<a name="zh-cn_topic_0059777864_sd069c15075874e97a7d0b18af750ad9d"></a>
 

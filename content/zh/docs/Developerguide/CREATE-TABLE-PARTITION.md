@@ -374,7 +374,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >
     >-   生成列不能作为分区键的一部分。
     >
-    >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL,SET DEFAULT动作同时指定。
+    >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL、SET DEFAULT动作同时指定。
     >
     >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
     >
@@ -420,7 +420,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 ## 示例<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842"></a>
 
--   示例1：创建范围分区表tpcds.web\_returns\_p1，含有8个分区，分区键为integer类型。  分区的范围分别为：wr\_returned\_date\_sk< 2450815，2450815<= wr\_returned\_date\_sk< 2451179，2451179<=wr\_returned\_date\_sk< 2451544，2451544 <= wr\_returned\_date\_sk< 2451910，2451910 <= wr\_returned\_date\_sk< 2452275，2452275 <= wr\_returned\_date\_sk< 2452640，2452640 <= wr\_returned\_date\_sk< 2453005，wr\_returned\_date\_sk\>=2453005。
+-   示例1：创建范围分区表tpcds.web\_returns\_p1，含有8个分区，分区键为integer类型。  分区的范围分别为：wr\_returned\_date\_sk< 2450815、2450815<= wr\_returned\_date\_sk< 2451179、2451179<=wr\_returned\_date\_sk< 2451544、2451544 <= wr\_returned\_date\_sk< 2451910、2451910 <= wr\_returned\_date\_sk< 2452275、2452275 <= wr\_returned\_date\_sk< 2452640、2452640 <= wr\_returned\_date\_sk< 2453005、wr\_returned\_date\_sk\>=2453005。
 
     ```
     --创建表tpcds.web_returns。
@@ -520,7 +520,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   示例2：创建范围分区表tpcds.web\_returns\_p2，含有8个分区，分区键类型为integer类型，其中第8个分区上边界为MAXVALUE。
 
-    八个分区的范围分别为：  wr\_returned\_date\_sk< 2450815，2450815<= wr\_returned\_date\_sk< 2451179，2451179<=wr\_returned\_date\_sk< 2451544，2451544 <= wr\_returned\_date\_sk< 2451910，2451910 <= wr\_returned\_date\_sk< 2452275，2452275 <= wr\_returned\_date\_sk< 2452640，2452640 <= wr\_returned\_date\_sk< 2453005，wr\_returned\_date\_sk\>=2453005。
+    八个分区的范围分别为：  wr\_returned\_date\_sk< 2450815、2450815<= wr\_returned\_date\_sk< 2451179、2451179<=wr\_returned\_date\_sk< 2451544、2451544 <= wr\_returned\_date\_sk< 2451910、2451910 <= wr\_returned\_date\_sk< 2452275、2452275 <= wr\_returned\_date\_sk< 2452640、2452640 <= wr\_returned\_date\_sk< 2453005、wr\_returned\_date\_sk\>=2453005。
 
     分区表tpcds.web\_returns\_p2的表空间为example1；分区P1到P7没有声明表空间，使用采用分区表tpcds.web\_returns\_p2的表空间example1；指定分区P8的表空间为example2。
 
@@ -607,7 +607,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   示例3：START END语法创建、修改Range分区表。
 
-    假定/home/omm/startend\_tbs1，/home/omm/startend\_tbs2，/home/omm/startend\_tbs3，/home/omm/startend\_tbs4是omm用户拥有读写权限的空目录。
+    假定/home/omm/startend\_tbs1、/home/omm/startend\_tbs2、/home/omm/startend\_tbs3、/home/omm/startend\_tbs4是omm用户拥有读写权限的空目录。
 
     ```
     -- 创建表空间
@@ -719,7 +719,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
--   示例4：创建间隔分区表sales，初始包含2个分区，分区键为DATE类型。  分区的范围分别为：time\_id  <  '2019-02-01 00:00:00'，
+-   示例4：创建间隔分区表sales，初始包含2个分区，分区键为DATE类型。  分区的范围分别为：time\_id  <  '2019-02-01 00:00:00'、
 
     '2019-02-01 00:00:00' <= time\_id < '2019-02-02 00:00:00' 。
 
@@ -775,7 +775,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
--   示例5：创建LIST分区表test\_list，初始包含4个分区，分区键为INT类型。4个分区的范围分别为：2000，3000，4000，5000。
+-   示例5：创建LIST分区表test\_list，初始包含4个分区，分区键为INT类型。4个分区的范围分别为：2000、3000、4000、5000。
 
     ```
     --创建表test_list
