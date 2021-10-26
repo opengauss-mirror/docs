@@ -1,4 +1,4 @@
-# Exporting a Database<a name="EN-US_TOPIC_0289899839"></a>
+# Exporting a Database<a name="EN-US_TOPIC_0000001162579664"></a>
 
 You can use  **gs\_dump**  to export data and all object definitions of a database from openGauss. You can specify the information to export as follows:
 
@@ -15,7 +15,7 @@ You can use  **gs\_dump**  to export data and all object definitions of a databa
 ## Procedure<a name="en-us_topic_0283136854_en-us_topic_0237121169_en-us_topic_0096392335_s3e29cf3b34314c088216013e01293af6"></a>
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Use  **gs\_dump**  to export data of the  **userdatabase**  database.
+2.  Use gs\_dump to export data of the  **userdatabase**  database.
 
     ```
     gs_dump -U jack -f /home/omm/backup/userdatabase_backup.tar -p 8000 postgres -F t 
@@ -54,7 +54,7 @@ You can use  **gs\_dump**  to export data and all object definitions of a databa
     </td>
     <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136854_en-us_topic_0237121169_p323861311565"><a name="en-us_topic_0283136854_en-us_topic_0237121169_p323861311565"></a><a name="en-us_topic_0283136854_en-us_topic_0237121169_p323861311565"></a>Folder to store exported files. If this parameter is not specified, the exported files are stored in the standard output.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136854_en-us_topic_0237121169_p11238513175619"><a name="en-us_topic_0283136854_en-us_topic_0237121169_p11238513175619"></a><a name="en-us_topic_0283136854_en-us_topic_0237121169_p11238513175619"></a>-f /home/<span id="en-us_topic_0283136854_en-us_topic_0237121169_text550520295319"><a name="en-us_topic_0283136854_en-us_topic_0237121169_text550520295319"></a><a name="en-us_topic_0283136854_en-us_topic_0237121169_text550520295319"></a>omm</span>/backup/<em id="en-us_topic_0283136854_en-us_topic_0237121169_i522734715214"><a name="en-us_topic_0283136854_en-us_topic_0237121169_i522734715214"></a><a name="en-us_topic_0283136854_en-us_topic_0237121169_i522734715214"></a>postgres</em>_backup.tar</p>
+    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136854_en-us_topic_0237121169_p11238513175619"><a name="en-us_topic_0283136854_en-us_topic_0237121169_p11238513175619"></a><a name="en-us_topic_0283136854_en-us_topic_0237121169_p11238513175619"></a>-f /home/<span id="en-us_topic_0283136854_en-us_topic_0237121169_text550520295319"><a name="en-us_topic_0283136854_en-us_topic_0237121169_text550520295319"></a><a name="en-us_topic_0283136854_en-us_topic_0237121169_text550520295319"></a>omm</span>/backup/<em id="i189217515234"><a name="i189217515234"></a><a name="i189217515234"></a>postgres</em>_backup.tar</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136854_en-us_topic_0237121169_row9411195215519"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136854_en-us_topic_0237121169_p84119521250"><a name="en-us_topic_0283136854_en-us_topic_0237121169_p84119521250"></a><a name="en-us_topic_0283136854_en-us_topic_0237121169_p84119521250"></a>-p</p>

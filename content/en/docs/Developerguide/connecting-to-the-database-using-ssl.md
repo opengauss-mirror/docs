@@ -1,17 +1,17 @@
-# Connecting to the Database \(Using SSL\)<a name="EN-US_TOPIC_0244720263"></a>
+# Connecting to the Database \(Using SSL\)<a name="EN-US_TOPIC_0000001162579686"></a>
 
-When establishing connections to the openGauss server using JDBC, you can enable SSL connections to encrypt client and server communications for security of sensitive data transmission on the Internet. This section describes how applications establish an SSL connection to openGauss using JDBC. To start the SSL mode, you must have the server certificate, client certificate, and private key files. For details on how to obtain these files, see related documents and commands of OpenSSL.
+When establishing connections to the openGauss server using JDBC, you can enable SSL connections to encrypt client and server communications for security of sensitive data transmission on the Internet. This section describes how applications establish an SSL connection to openGauss using JDBC. To start the SSL mode, you must have the server certificate, client certificate, and private key files. For details how to obtain these files, see related documents and commands of OpenSSL.
 
-## Configuring the Server<a name="en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_en-us_topic_0059777633_s513e457bfaa24ce4b1a20a1f2322f9ae"></a>
+## Configuring the Server<a name="en-us_topic_0283137170_en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_en-us_topic_0059777633_s513e457bfaa24ce4b1a20a1f2322f9ae"></a>
 
 The SSL mode requires a root certificate, a server certificate, and a private key.
 
 Perform the following operations \(assuming that the license files are saved in the data directory  **/gaussdb/data/datanode**  and the default file names are used\):
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
+1.  Log in as the OS user omm to the primary node of the database.
 2.  Generate and import a certificate.
 
-    Generate an SSL certificate. For details, see  [Generating Certificates](generating-certificates.md). Copy the generated  **server.crt**,  **server.key**, and  **cacert.pem**  files to the data directory on the server.
+    Generate an SSL certificate. For details, see  [Generating Certificates](en-us_topic_0000001162897862.md). Copy the generated  **server.crt**,  **server.key**, and  **cacert.pem**  files to the data directory on the server.
 
     Run the following command to query the data directory of the database node. The instance column indicates the data directory.
 
@@ -40,8 +40,9 @@ Perform the following operations \(assuming that the license files are saved in 
 
     Clients on the  **127.0.0.1/32**  network segment can connect to openGauss servers in SSL mode.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    >If  **METHOD**  is set to  **cert**  in the  **pg\_hba.conf**  file of the server, the client must use the username \(common name\) configured in the license file \(**client.crt**\) for the database connection. If  **METHOD**  is set to  **md5** ,**sm3**   or  **sha256**, there is no such a restriction.  
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >-   If  **METHOD**  is set to  **cert**  in the  **pg\_hba.conf**  file of the server, the client must use the username \(common name\) configured in the certificate file \(**client.crt**\) for the database connection. If  **METHOD**  is set to  **md5**,  **sm3**, or  **sha256**, there is no such a restriction.
+    >-   The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
 
 5.  Configure the digital certificate parameters related to SSL authentication.
 
@@ -68,56 +69,46 @@ Perform the following operations \(assuming that the license files are saved in 
     gs_om -t stop && gs_om -t start
     ```
 
-7.  Generate and upload a certificate file.
 
-## Configuring the Client<a name="en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_en-us_topic_0059777633_s29b328f4eb634c5b903c430d663d038b"></a>
+## Configuring the Client<a name="en-us_topic_0283137170_en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_en-us_topic_0059777633_s29b328f4eb634c5b903c430d663d038b"></a>
 
 To configure the client, perform the following steps:
 
-Upload the certificate files  **client.key.pk8**,  **client.crt**, and  **cacert.pem**  generated in  [Configuring the Server](#en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_en-us_topic_0059777633_s513e457bfaa24ce4b1a20a1f2322f9ae)  to the client.
+Upload the certificate files  **client.key.pk8**,  **client.crt**, and  **cacert.pem**  generated in  [Configuring the Server](#en-us_topic_0283137170_en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_en-us_topic_0059777633_s513e457bfaa24ce4b1a20a1f2322f9ae)  to the client.
 
-## Example<a name="en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_sac62520495454e38a58fb1c067bd8adc"></a>
+## Examples<a name="en-us_topic_0283137170_en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_sac62520495454e38a58fb1c067bd8adc"></a>
+
+Note: Select either example 1 or example 2.
 
 ```
-import java.sql.Connection;
-import java.util.Properties;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.sql.ResultSet;
-
 public class SSL{
     public static void main(String[] args) {
         Properties urlProps = new Properties();
         String urls = "jdbc:postgresql://10.29.37.136:8000/postgres";
 
         /**
-* ================== Example 1: The NonValidatingFactory channel is used, and MTETHOD in the pg_hba.conf file is not cert.
+         * ================== Example 1: Use the NonValidatingFactory channel.
          */
-/* 
         urlProps.setProperty("sslfactory","org.postgresql.ssl.NonValidatingFactory");
         urlProps.setProperty("user", "world");
-//test@123 is the password specified when user CREATE USER world WITH PASSWORD 'test123@' is created.
         urlProps.setProperty("password", "test@123");
         urlProps.setProperty("ssl", "true");
-*/
         /**
-* ================== Example 2 - 5: Use a certificate. In the pg_hba.conf file, MTETHOD is cert.
+         * ==================  Examples 2: Use a certificate.
          */
         urlProps.setProperty("sslcert", "client.crt");
-// Client key in DER format
         urlProps.setProperty("sslkey", "client.key.pk8");
         urlProps.setProperty("sslrootcert", "cacert.pem");
         urlProps.setProperty("user", "world");
-       /* ================== Example 2: Set ssl to true to use the certificate for authentication.*/
         urlProps.setProperty("ssl", "true");
-       /* ================== Example 3: Set sslmode to require to use the certificate for authentication. */
-//        urlProps.setProperty("sslmode", "require");
-       /* ================== Example 4: Set sslmode to verify-ca to use the certificate for authentication. */
-//        urlProps.setProperty("sslmode", "verify-ca");
-       /* ================== Example 5: Set sslmode to verify-full to use the certificate (in the Linux OS) for authentication. */
-//        urls = "jdbc:postgresql://world:8000/postgres";
-//        urlProps.setProperty("sslmode", "verify-full");
-
+        /* sslmode can be set to require, verify-ca, or verify-full. Select one from the following three examples.*/
+       /* ================== Example 2.1: Set sslmode to require to use the certificate for authentication. */
+        urlProps.setProperty("sslmode", "require");
+       /* ================== Example 2.2: Set sslmode to verify-ca to use the certificate for authentication. */
+        urlProps.setProperty("sslmode", "verify-ca");
+       /* ================== Example 2.3: Set sslmode to verify-full to use the certificate (in the Linux OS) for authentication. */
+        urls = "jdbc:postgresql://world:8000/postgres";
+        urlProps.setProperty("sslmode", "verify-full");
         try {
             Class.forName("org.postgresql.Driver").newInstance();
         } catch (Exception e) {
@@ -132,5 +123,17 @@ public class SSL{
         }
     }
 }
+/**
+ * Note: Convert the client key to the DER format.
+ * openssl pkcs8 -topk8 -outform DER -in client.key -out client.key.pk8 -nocrypt
+ * openssl pkcs8 -topk8 -inform PEM -in client.key -outform DER -out client.key.der -v1 PBE-MD5-DES
+ * openssl pkcs8 -topk8 -inform PEM -in client.key -outform DER -out client.key.der -v1 PBE-SHA1-3DES
+ * The preceding algorithms are not recommended due to their low security.
+ * If the customer needs to use a higher-level private key encryption algorithm, the following private key encryption algorithms can be used after the BouncyCastle or a third-party private key is used to decrypt the password package:
+ * openssl pkcs8 -in client.key -topk8  -outform DER -out client.key.der -v2 AES128
+ * openssl pkcs8 -in client.key -topk8  -outform DER -out client.key.der -v2 aes-256-cbc -iter 1000000
+ * openssl pkcs8 -in client.key -topk8 -out client.key.der  -outform Der -v2 aes-256-cbc -v2prf hmacWithSHA512
+ * Enable BouncyCastle: Introduce the bcpkix-jdk15on.jar package for projects that use JDBC. The recommended version is 1.65 or later.
+ */
 ```
 
