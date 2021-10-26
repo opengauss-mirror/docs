@@ -696,7 +696,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_row115345178541"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p135341179541"><a name="zh-cn_topic_0283136724_p135341179541"></a><a name="zh-cn_topic_0283136724_p135341179541"></a>CBMParseXlogLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p75341617115410"><a name="zh-cn_topic_0283136724_p75341617115410"></a><a name="zh-cn_topic_0283136724_p75341617115410"></a>Cbm解析xlog时的保护锁</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p75341617115410"><a name="zh-cn_topic_0283136724_p75341617115410"></a><a name="zh-cn_topic_0283136724_p75341617115410"></a>Cbm解析xlog时的保护锁。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row1419795555416"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p019875565411"><a name="zh-cn_topic_0283136724_p019875565411"></a><a name="zh-cn_topic_0283136724_p019875565411"></a>RelfilenodeReuseLock</p>
@@ -711,17 +711,17 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_row75270512587"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p14528185115817"><a name="zh-cn_topic_0283136724_p14528185115817"></a><a name="zh-cn_topic_0283136724_p14528185115817"></a>PercentileLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1652817519585"><a name="zh-cn_topic_0283136724_p1652817519585"></a><a name="zh-cn_topic_0283136724_p1652817519585"></a>用于保护全局PercentileBuffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1652817519585"><a name="zh-cn_topic_0283136724_p1652817519585"></a><a name="zh-cn_topic_0283136724_p1652817519585"></a>用于保护全局PercentileBuffer。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row642581816115"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p1542571810117"><a name="zh-cn_topic_0283136724_p1542571810117"></a><a name="zh-cn_topic_0283136724_p1542571810117"></a>CSNBufMappingLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p174251118119"><a name="zh-cn_topic_0283136724_p174251118119"></a><a name="zh-cn_topic_0283136724_p174251118119"></a>保护csn页面</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p174251118119"><a name="zh-cn_topic_0283136724_p174251118119"></a><a name="zh-cn_topic_0283136724_p174251118119"></a>保护csn页面。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row16334361129"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p133341162219"><a name="zh-cn_topic_0283136724_p133341162219"></a><a name="zh-cn_topic_0283136724_p133341162219"></a>UniqueSQLMappingLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p15334961128"><a name="zh-cn_topic_0283136724_p15334961128"></a><a name="zh-cn_topic_0283136724_p15334961128"></a>用于保护uniquesql hash table</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p15334961128"><a name="zh-cn_topic_0283136724_p15334961128"></a><a name="zh-cn_topic_0283136724_p15334961128"></a>用于保护uniquesql hash table。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row107301846161711"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p573013460178"><a name="zh-cn_topic_0283136724_p573013460178"></a><a name="zh-cn_topic_0283136724_p573013460178"></a>DelayDDLLock</p>
@@ -731,7 +731,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_row0177126141920"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p15177132691912"><a name="zh-cn_topic_0283136724_p15177132691912"></a><a name="zh-cn_topic_0283136724_p15177132691912"></a>CLOG Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p9177102631917"><a name="zh-cn_topic_0283136724_p9177102631917"></a><a name="zh-cn_topic_0283136724_p9177102631917"></a>用于避免并发访问或者修改Clog控制数据结构</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p9177102631917"><a name="zh-cn_topic_0283136724_p9177102631917"></a><a name="zh-cn_topic_0283136724_p9177102631917"></a>用于避免并发访问或者修改Clog控制数据结构。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row13521171316206"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p2521181342020"><a name="zh-cn_topic_0283136724_p2521181342020"></a><a name="zh-cn_topic_0283136724_p2521181342020"></a>Async Ctl</p>
