@@ -77,7 +77,7 @@
 
     同CURRENT\_SCHEMA。此处的schema是个字符串。
 
-    例如：set schema  'public';
+    例如：set schema  'public'。
 
 -   **NAMES encoding\_name**
 
@@ -89,7 +89,7 @@
 
     用于设置XML的解析方式。
 
-    取值范围：CONTENT（缺省）、DOCUMENT
+    取值范围：CONTENT（缺省）、DOCUMENT。
 
 -   **config\_parameter**
 
