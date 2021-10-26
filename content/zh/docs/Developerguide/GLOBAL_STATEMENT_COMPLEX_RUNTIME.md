@@ -305,7 +305,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="20.29%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122661_p1383318153613"><a name="zh-cn_topic_0237122661_p1383318153613"></a><a name="zh-cn_topic_0237122661_p1383318153613"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.77%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122661_p18833191517617"><a name="zh-cn_topic_0237122661_p18833191517617"></a><a name="zh-cn_topic_0237122661_p18833191517617"></a>主要显示如下几类告警信息：<a name="zh-cn_topic_0237122661_ul194623145713"></a><a name="zh-cn_topic_0237122661_ul194623145713"></a><ul id="zh-cn_topic_0237122661_ul194623145713"><li>Spill file size large than 256MB</li><li>Broadcast size large than 100MB</li><li>Early spill</li><li>Spill times is greater than 3</li><li>Spill on memory adaptive</li><li>Hash table conflict</li></ul>
+<td class="cellrowborder" valign="top" width="51.77%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122661_p18833191517617"><a name="zh-cn_topic_0237122661_p18833191517617"></a><a name="zh-cn_topic_0237122661_p18833191517617"></a>主要显示如下几类告警信息：<a name="zh-cn_topic_0237122661_ul194623145713"></a><a name="zh-cn_topic_0237122661_ul194623145713"></a><ul id="zh-cn_topic_0237122661_ul194623145713"><li>Spill file size large than 256MB。</li><li>Broadcast size large than 100MB。</li><li>Early spill。</li><li>Spill times is greater than 3。</li><li>Spill on memory adaptive。</li><li>Hash table conflict。</li></ul>
 </div>
 </td>
 </tr>
