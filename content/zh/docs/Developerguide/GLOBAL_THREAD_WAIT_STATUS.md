@@ -1,6 +1,6 @@
 # GLOBAL\_THREAD\_WAIT\_STATUS<a name="ZH-CN_TOPIC_0245374744"></a>
 
-通过该视图可以检测所有节点上工作线程（backend thread）以及辅助线程（auxiliary thread）的阻塞等待情况。具体事件信息请参见[15.3.67-表2 等待状态列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[15.3.67-表3 轻量级锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table38811324183420)、[15.3.67-表4 IO等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table124603113369)和[15.3.67-表5 事务锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table11826123533718)。
+通过该视图可以检测所有节点上工作线程（backend thread）以及辅助线程（auxiliary thread）的阻塞等待情况。具体事件信息请参见[15.3.67-表2 等待状态列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[15.3.67-表3 轻量级锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table38811324183420)、[15.3.67-表4 IO等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table124603113369)和[15.3.67-表5 事务锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718)。
 
 通过GLOBAL\_THREAD\_WAIT\_STATUS视图，可以查看openGauss全局各个节点上所有SQL语句产生的线程之间的调用层次关系，以及各个线程的阻塞等待状态，从而更容易定位hang以及类似现象的原因。
 
@@ -91,7 +91,7 @@ GLOBAL\_THREAD\_WAIT\_STATUS视图和THREAD\_WAIT\_STATUS视图列定义完全�
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122640_p192281733112915"><a name="zh-cn_topic_0237122640_p192281733112915"></a><a name="zh-cn_topic_0237122640_p192281733112915"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p1122820333294"><a name="zh-cn_topic_0237122640_p1122820333294"></a><a name="zh-cn_topic_0237122640_p1122820333294"></a>当前线程的等待状态。等待状态的详细信息请参见<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4">15.3.67-表2 等待状态列表</a>。</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p1122820333294"><a name="zh-cn_topic_0237122640_p1122820333294"></a><a name="zh-cn_topic_0237122640_p1122820333294"></a>当前线程的等待状态。等待状态的详细信息请参见<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4">15.3.67-表2 等待状态列表</a>。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122640_row142282033152915"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122640_p3228113316292"><a name="zh-cn_topic_0237122640_p3228113316292"></a><a name="zh-cn_topic_0237122640_p3228113316292"></a>wait_event</p>
