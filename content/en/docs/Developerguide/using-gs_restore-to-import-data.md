@@ -1,14 +1,14 @@
-# Using gs\_restore to Import Data<a name="EN-US_TOPIC_0289900222"></a>
+# Using gs\_restore to Import Data<a name="EN-US_TOPIC_0000001208139521"></a>
 
 ## Scenarios<a name="en-us_topic_0283137171_en-us_topic_0237121137_section17330121375310"></a>
 
-**gs\_restore**  is an import tool provided by the openGauss database. You can use  **gs\_restore**  to import the files exported by  **gs\_dump**  to a database.  **gs\_restore**  can import the files in .tar, custom, or directory format.
+**gs\_restore**  is an import tool provided by the openGauss database. You can use this tool to import the files exported by  **gs\_dump**  to a database.  **gs\_restore**  can import the files in .tar, custom, or directory format.
 
 **gs\_restore**  can:
 
 -   Import data to a database.
 
-    If a database is specified, data is imported to the database. If multiple databases are specified, the password for connecting to each database also needs to be specified.
+    If a database is specified, data is imported to the database. If multiple databases are specified, the password for connecting to each database also needs to be specified. During data import, the generated columns are automatically updated and saved as common columns.
 
 -   Import data to a script.
 
@@ -51,14 +51,14 @@ You can specify and sort the data to import.
     <tr id="en-us_topic_0283137171_en-us_topic_0237121137_row199295855317"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p89920588539"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p89920588539"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p89920588539"></a>-W</p>
     </td>
     <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p69431335210"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p69431335210"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p69431335210"></a>User password for database connection.</p>
-    <a name="en-us_topic_0283137171_en-us_topic_0237121137_ul194074341627"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_ul194074341627"></a><ul id="en-us_topic_0283137171_en-us_topic_0237121137_ul194074341627"><li>This parameter is not required for database administrators if the trust policy is used for authentication.</li><li>If you connect to the database without specifying this parameter and you are not a database administrator, you will be prompted to enter the password.</li></ul>
+    <a name="en-us_topic_0283137171_en-us_topic_0237121137_ul194074341627"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_ul194074341627"></a><ul id="en-us_topic_0283137171_en-us_topic_0237121137_ul194074341627"><li>The <strong id="b2024915416541"><a name="b2024915416541"></a><a name="b2024915416541"></a>-W</strong> parameter is not required for database administrators if the trust policy is used for authentication.</li><li>If you connect to the database without specifying the <strong id="b11133186175513"><a name="b11133186175513"></a><a name="b11133186175513"></a>-W</strong> parameter and you are not a database administrator, you will be prompted to enter the password.</li></ul>
     </td>
     <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p1898043113581"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1898043113581"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1898043113581"></a>-W abcd@123</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283137171_en-us_topic_0237121137_row4650191445011"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p9650161425019"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p9650161425019"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p9650161425019"></a>-d</p>
     </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p1565110140508"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1565110140508"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1565110140508"></a>Database to which data will be imported.</p>
+    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p1565110140508"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1565110140508"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1565110140508"></a>Name of a database to which data will be imported.</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p7651201455010"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p7651201455010"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p7651201455010"></a>-d backupdb</p>
     </td>
@@ -124,7 +124,7 @@ gs_restore[2017-07-21 19:26:46]: restore operation successful
 gs_restore[2017-07-21 19:26:46]: total time: 21003  ms
 ```
 
-Example 4: Run  **gs\_restore**  to import all object definitions of the  **postgres**  database from the  **MPPDB\_backup.tar**  file to the  **backupdb**  database. Table data is not imported.
+Example 4: Run  **gs\_restore**  to import all object definitions of the  **postgres**  database to the  **backupdb**  database. Before the import, complete definitions and data exist in the database. After the import, all object definitions exist in the  **backupdb**  database and no data exists in the table.
 
 ```
 gs_restore /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c 
@@ -153,18 +153,18 @@ gs_restore[2017-07-21 19:52:26]: restore operation successful
 gs_restore[2017-07-21 19:52:26]: total time: 2203  ms
 ```
 
-Example 6: Run  **gs\_restore**  to import the definition of the  **hr.staffs**  table in the  **hr**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table does not exist.
+Example 6: Run  **gs\_restore**  to import the definition of the  **hr.staffs**  table in the  **hr**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table does not exist. Ensure that the hr schema exists.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -c -s -n hr -t hr.staffs
+gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -c -s -n hr -t staffs
 gs_restore[2017-07-21 19:56:29]: restore operation successful
 gs_restore[2017-07-21 19:56:29]: total time: 21000  ms
 ```
 
-Example 7: Run  **gs\_restore**  to import data of the  **hr.staffs**  table in  **hr**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table is empty.
+Example 7: Run  **gs\_restore**  to import data of the  **hr.staffs**  table in  **hr**  schema from the  **MPPDB\_backup.dmp**  file. Before the import, the  **hr.staffs**  table does not contain data. Ensure that the hr schema exists.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -a -n hr -t hr.staffs
+gs_restore backup/MPPDB_backup.dmp -p 8000 -d backupdb -e -a -n hr -t staffs
 gs_restore[2017-07-21 20:12:32]: restore operation successful
 gs_restore[2017-07-21 20:12:32]: total time: 20203  ms
 ```
@@ -180,7 +180,7 @@ human_resource=# select * from hr.staffs;
 
 gsql -d human_resource -p 8000
 
-gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+gsql((openGauss x.x.x build f521c606) compiled at 2021-09-16 14:55:22 commit 2935 last mr 6385 release)
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 
@@ -244,7 +244,7 @@ human_resource=# select * from hr.areas;
 Example 10: Run  **gs\_restore**  to import data and all object definitions in the  **hr**  schema.
 
 ```
-gs_restore /home/omm/backup/MPPDB_backup1.dmp -p 8000 -d backupdb -n hr -e -c
+gs_restore /home/omm/backup/MPPDB_backup1.dmp -p 8000 -d backupdb -n hr -e
 Password:
 restore operation successful
 total time: 702  ms
@@ -262,7 +262,7 @@ total time: 665  ms
 Example 12: Run  **gs\_restore**  to decrypt the files exported from the  **human\_resource**  database and import them to the  **backupdb**  database.
 
 ```
-postgres=# create database backupdb;
+openGauss=# create database backupdb;
 CREATE DATABASE
 
 gs_restore /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb --with-key=1234567812345678
@@ -271,7 +271,7 @@ total time: 23472  ms
 
 gsql -d backupdb -p 8000 -r
 
-gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+gsql((openGauss x.x.x build f521c606) compiled at 2021-09-16 14:55:22 commit 2935 last mr 6385 release)
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 
@@ -285,7 +285,7 @@ backupdb=# select * from hr.areas;
 (4 rows)
 ```
 
-Example 13:  **user 1**  does not have the permission to import data from an exported file to the  **backupdb**  database and  **role1**  has this permission. To import the exported data to the  **backupdb**  database, you can set  **--role**  to  **role1**  in the  **gs\_restore**  command.
+Example 13:  **user1**  does not have the permission to import data from an exported file to the  **backupdb**  database and  **role1**  has this permission. To import the exported data to the  **backupdb**  database, you can set  **--role**  to  **role1**  in the  **gs\_restore**  command.
 
 ```
 human_resource=# CREATE USER user1 IDENTIFIED BY "1234@abc";
@@ -297,7 +297,7 @@ total time: 554  ms
 
 gsql -d backupdb -p 8000 -r 
 
-gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+gsql((openGauss x.x.x build f521c606) compiled at 2021-09-16 14:55:22 commit 2935 last mr 6385 release)
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 

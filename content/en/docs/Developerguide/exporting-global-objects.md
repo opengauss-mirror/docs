@@ -1,4 +1,4 @@
-# Exporting Global Objects<a name="EN-US_TOPIC_0289900728"></a>
+# Exporting Global Objects<a name="EN-US_TOPIC_0000001208299131"></a>
 
 You can use  **gs\_dumpall**  to export global objects, including database users, user groups, tablespaces, and attributes \(for example, global access permissions\), from openGauss.
 

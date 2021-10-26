@@ -300,6 +300,7 @@ headless: true
 			-   [Running SQL Statements]({{< relref "./docs/Developerguide/running-sql-statements.md" >}})
 			-   [Processing Data in a Result Set]({{< relref "./docs/Developerguide/processing-data-in-a-result-set.md" >}})
 			-   [Closing a Connection]({{< relref "./docs/Developerguide/closing-a-connection.md" >}})
+			-   [Log Management]({{< relref "./docs/Developerguide/log-management.md" >}})
 			-   [Example: Common Operations]({{< relref "./docs/Developerguide/example-common-operations.md" >}})
 			-   [Example: Retrying SQL Queries for Applications]({{< relref "./docs/Developerguide/example-retrying-sql-queries-for-applications.md" >}})
 			-   [Example: Importing and Exporting Data Through Local Files]({{< relref "./docs/Developerguide/example-importing-and-exporting-data-through-local-files.md" >}})
