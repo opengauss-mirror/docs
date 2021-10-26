@@ -1,4 +1,4 @@
-# Exporting a Table<a name="EN-US_TOPIC_0289900755"></a>
+# Exporting a Table<a name="EN-US_TOPIC_0000001162579696"></a>
 
 You can use  **gs\_dump**  to export data and definition of a table-level object from openGauss. Views, sequences, and foreign tables are special tables. You can export one or more specified tables as needed. You can specify the information to export as follows:
 
@@ -95,7 +95,7 @@ You can use  **gs\_dump**  to export data and definition of a table-level object
 
 ## Examples<a name="en-us_topic_0283137162_en-us_topic_0237121171_en-us_topic_0096393572_s2612a8b058f24a14b1dfa8efd6f4c410"></a>
 
-Example 1: Run  **gs\_dump**  to export full information of the  **hr.staffs**  table. The exported files are in text format.
+Example 1: Run  **gs\_dump**  to export definitions and data of the  **hr.staffs**  table. The exported files are in text format.
 
 ```
 gs_dump -f /home/omm/backup/MPPDB_table_backup.sql -p 8000 human_resource -t hr.staffs -F p
