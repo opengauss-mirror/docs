@@ -122,7 +122,7 @@ GLOBAL\_REPLICATION\_STAT视图用于获得各节点描述日志同步状态信�
 </td>
 <td class="cellrowborder" valign="top" width="25.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122709_p7537130144210"><a name="zh-cn_topic_0237122709_p7537130144210"></a><a name="zh-cn_topic_0237122709_p7537130144210"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.54%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122709_p1923818314818"><a name="zh-cn_topic_0237122709_p1923818314818"></a><a name="zh-cn_topic_0237122709_p1923818314818"></a>同步状态：<a name="zh-cn_topic_0237122709_ul2985161910480"></a><a name="zh-cn_topic_0237122709_ul2985161910480"></a><ul id="zh-cn_topic_0237122709_ul2985161910480"><li>异步复制</li><li>同步复制</li><li>潜在同步者</li></ul>
+<td class="cellrowborder" valign="top" width="49.54%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122709_p1923818314818"><a name="zh-cn_topic_0237122709_p1923818314818"></a><a name="zh-cn_topic_0237122709_p1923818314818"></a>同步状态：<a name="zh-cn_topic_0237122709_ul2985161910480"></a><a name="zh-cn_topic_0237122709_ul2985161910480"></a><ul id="zh-cn_topic_0237122709_ul2985161910480"><li>异步复制。</li><li>同步复制。</li><li>潜在同步者。</li></ul>
 </div>
 </td>
 </tr>
