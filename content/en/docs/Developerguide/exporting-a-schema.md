@@ -1,4 +1,4 @@
-# Exporting a Schema<a name="EN-US_TOPIC_0289900343"></a>
+# Exporting a Schema<a name="EN-US_TOPIC_0000001163057656"></a>
 
 You can use  **gs\_dump**  to export data and all object definitions of a schema from openGauss. You can export one or more specified schemas as needed. You can specify the information to export as follows:
 
