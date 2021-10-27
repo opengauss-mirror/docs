@@ -13,7 +13,7 @@
     -   DELETE语句每次删除一行，并在事务日志中为所删除每行记录一项。
     -   TRUNCATE TABLE通过释放存储表数据所用数据页来删除数据，并且只在事务日志中记录页的释放。
 
--   TRUNCATE，DELETE，DROP三者的差异如下：
+-   TRUNCATE、DELETE、DROP三者的差异如下：
     -   TRUNCATE TABLE，删除内容，释放空间，但不删除定义。
     -   DELETE TABLE，删除内容，不删除定义，不释放空间。
     -   DROP TABLE，删除内容和定义，释放空间。
