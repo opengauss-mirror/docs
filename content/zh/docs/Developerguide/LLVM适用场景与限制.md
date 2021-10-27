@@ -17,7 +17,7 @@
 
     表达式计算支持的数据类型包括bool、tinyint、smallint、int、bigint、float4、float8、numeric、date、time、timetz、timestamp、timestamptz、interval、bpchar、varchar、text、oid。
 
-    仅当表达式出现在向量化执行引擎中Scan节点的filter、Hash Join节点中的complicate hash condition、hash join filter、hash join target，Nested Loop节点中的filter、join filter，Merge Join节点的merge join filter、merge join target，Group节点中的filter表达式时，才会考虑是否使用LLVM动态编译优化。
+    仅当表达式出现在向量化执行引擎中Scan节点的filter，Hash Join节点中的complicate hash condition、hash join filter、hash join target，Nested Loop节点中的filter、join filter，Merge Join节点的merge join filter、merge join target，Group节点中的filter表达式时，才会考虑是否使用LLVM动态编译优化。
 
 -   支持LLVM的算子：
 
