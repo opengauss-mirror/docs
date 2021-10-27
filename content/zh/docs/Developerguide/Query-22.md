@@ -27,7 +27,7 @@
 
 **取值范围：**枚举类型
 
-top：只记录顶层SQL。
+top：代表只记录顶层SQL。
 
 **默认值**：top
 
@@ -39,14 +39,14 @@ top：只记录顶层SQL。
 
 **取值范围：**布尔型
 
--   on：表示打开sql响应时间信息计算功能。
--   off：表示关闭sql响应时间信息计算功能。
+-   on：表示打开SQL响应时间信息计算功能。
+-   off：表示关闭SQL响应时间信息计算功能。
 
 **默认值**：on
 
 ## percentile<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section193531235231"></a>
 
-**参数说明：**sql响应时间百分比信息，后台计算线程根据设置的值计算相应的百分比信息。
+**参数说明：**SQL响应时间百分比信息，后台计算线程根据设置的值计算相应的百分比信息。
 
 该参数属于INTERNAL类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -56,24 +56,24 @@ top：只记录顶层SQL。
 
 ## instr\_rt\_percentile\_interval<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section1658494717518"></a>
 
-**参数说明：**sql响应时间信息计算间隔，sql响应时间信息计算功能打开后，后台计算线程每隔设置的时间进行一次计算。
+**参数说明：**SQL响应时间信息计算间隔，SQL响应时间信息计算功能打开后，后台计算线程每隔设置的时间进行一次计算。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，0～3600（秒）。
+**取值范围：**整型，0～3600，单位为秒。
 
 **默认值**：10s
 
 ## enable\_instr\_cpu\_timer<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section1261620172577"></a>
 
-**参数说明：**是否捕获sql执行的cpu时间消耗 。
+**参数说明：**是否捕获SQL执行的cpu时间消耗 。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围：**布尔型
 
--   on：表示捕获sql执行的cpu时间消耗。
--   off：表示不捕获sql执行的cpu时间消耗。
+-   on：表示捕获SQL执行的CPU时间消耗。
+-   off：表示不捕获SQL执行的CPU时间消耗。
 
 **默认值**：on
 
@@ -120,7 +120,7 @@ top：只记录顶层SQL。
 
 该参数分为两部分，形式为'full sql retention time, slow sql retention time'
 
-full sql retention time为全量SQL保留时间，取值范围为0 \~ 86400
+full sql retention time为全量SQL的保留时间，取值范围为0 \~ 86400
 
 slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
@@ -136,12 +136,12 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 该参数分为两部分，形式为'full sql stat level, slow sql stat level'
 
-第一部分为全量SQL跟踪级别，取值范围为OFF、L0、L1、L2
+full sql stat level为全量SQL跟踪级别，取值范围为OFF、L0、L1、L2
 
-第二部分为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
+slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->若全量SQL跟踪级别值为非OFF时，当前SQL跟踪级别值为全量SQL和慢SQL的较高级别（L2 \> L1 \>L0），级别说明请参见[表1](STATEMENT_HISTORY.md)。
+>若全量SQL跟踪级别值为非OFF时，当前SQL跟踪级别值为全量SQL和慢SQL的较高级别（L2 \> L1 \> L0），级别说明请参见[表1](STATEMENT_HISTORY.md)。
 
 **默认值：**OFF,L0
 
