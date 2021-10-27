@@ -3,7 +3,7 @@
 用户通过psycopy2连接GaussDB Kernel服务器时，可以通过开启SSL加密客户端和服务器之间的通讯。在使用SSL时，默认用户已经获取了服务端和客户端所需要的证书和私钥文件，关于证书等文件的获取请参考Openssl相关文档和命令。
 
 1.  使用\*.ini文件（python的configparser包可以解析这种类型的配置文件）保存数据库连接的配置信息。
-2.  在连接选项中添加SSL连接相关参数：sslmode，sslcert，sslkey，sslrootcert。
+2.  在连接选项中添加SSL连接相关参数：sslmode、sslcert、sslkey、sslrootcert。
     1.  sslmode：可选项见[表1](#table167989176183)。
     2.  sslcert：客户端证书路径。
     3.  sslkey：客户端密钥路径。
