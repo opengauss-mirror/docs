@@ -23,7 +23,7 @@ The OpenSSL component has been installed in the Linux environment.
     --Establish the CA environment under the test folder.
     --Create folder demoCA./demoCA/newcerts./demoCA/private.
     mkdir ./demoCA ./demoCA/newcerts ./demoCA/private
-    chmod 777 ./demoCA/private
+    chmod 700 ./demoCA/private
     --Create the serial file and write it to 01.
     echo '01'>./demoCA/serial
     -- Create the index.txt file.

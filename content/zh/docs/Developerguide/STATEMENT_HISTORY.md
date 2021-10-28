@@ -468,7 +468,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>语句锁事件的列表，该列表按时间书序记录事件，记录的数量受参数track_stmt_details_size的影响。</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>事件包括：</p>
-<a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>加锁开始</li><li>加锁结束</li><li>等锁开始</li><li>等锁结束</li><li>放锁开始</li><li>放锁结束</li><li>轻量级等锁开始</li><li>轻量级等锁结束</li></ul>
+<a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>加锁开始。</li><li>加锁结束。</li><li>等锁开始。</li><li>等锁结束。</li><li>放锁开始。</li><li>放锁结束。</li><li>轻量级等锁开始。</li><li>轻量级等锁结束。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p162884132309"><a name="p162884132309"></a><a name="p162884132309"></a>L2</p>
 </td>

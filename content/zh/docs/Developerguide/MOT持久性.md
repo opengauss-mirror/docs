@@ -107,7 +107,7 @@ WAL重做日志将保留所有表行修改，直到执行检查点（如上所�
 1.  在postgres.conf配置文件中的sync\_commit \(On = Synchronous\)参数中指定是否执行同步或异步事务日志记录。
 2.  在重做日志章节中的mot.conf配置文件里，将enable\_redo\_log参数设置为True。
 
-如果已选择事务日志记录的同步模式（如上文所述，synchronous\_commit = On），则在mot.conf配置文件中的enable\_group\_commit参数中指定Group Synchronous Redo Logging选项或Synchronous Redo Logging选项。如果选择Group Synchronous Redo Logging，必须在mot.conf文件中定义以下阈值，决定何时将一组事务记录在WAL中。
+如果已选择事务日志记录的同步模式（如上文所述，synchronous\_commit = on），则在mot.conf配置文件中的enable\_group\_commit参数中指定Group Synchronous Redo Logging选项或Synchronous Redo Logging选项。如果选择Group Synchronous Redo Logging，必须在mot.conf文件中定义以下阈值，决定何时将一组事务记录在WAL中。
 
 -   group\_commit\_size：一组已提交的事务数。例如，16表示当同一组中的16个事务已由它们的客户端应用程序提交时，则针对16个事务中的每个事务，在磁盘的WAL重做日志中写入一个条目。
 -   group\_commit\_timeout：超时时间，单位为毫秒。例如，10表示在10毫秒之后，为同一组由客户端应用程序在最近10毫秒内提交的每个事务，在磁盘的WAL重做日志中写入一个条目。

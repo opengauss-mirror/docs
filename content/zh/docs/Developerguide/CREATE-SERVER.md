@@ -24,7 +24,7 @@ CREATE SERVER server_name
 
     指定外部数据封装器的名称。
 
-    取值范围：oracle\_fdw，mysql\_fdw，postgres\_fdw，file\_fdw，mot\_fdw。
+    取值范围：oracle\_fdw、mysql\_fdw、postgres\_fdw、file\_fdw、mot\_fdw。
 
 -   **OPTIONS \(  \{ option\_name ' value '  \}  \[, ...\] \)**
 
@@ -39,7 +39,7 @@ CREATE SERVER server_name
 
             oracle数据库的事务隔离级别。
 
-            取值范围：serializable, read\_committed , read\_only
+            取值范围：serializable、 read\_committed 、 read\_only
 
     -   mysql\_fdw支持的options包括：
         -   **host**  （默认值为 127.0.0.1）

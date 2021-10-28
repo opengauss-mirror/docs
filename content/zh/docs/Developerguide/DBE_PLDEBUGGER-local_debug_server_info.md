@@ -17,21 +17,21 @@
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p14507432124611"><a name="p14507432124611"></a><a name="p14507432124611"></a>OUT text</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p5507133218467"><a name="p5507133218467"></a><a name="p5507133218467"></a>节点名称</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p5507133218467"><a name="p5507133218467"></a><a name="p5507133218467"></a>节点名称。</p>
 </td>
 </tr>
 <tr id="row1050717322463"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p55079325462"><a name="p55079325462"></a><a name="p55079325462"></a>port</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p75081232184616"><a name="p75081232184616"></a><a name="p75081232184616"></a>OUT bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1050813244613"><a name="p1050813244613"></a><a name="p1050813244613"></a>端口号</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1050813244613"><a name="p1050813244613"></a><a name="p1050813244613"></a>端口号。</p>
 </td>
 </tr>
 <tr id="row4508113218465"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p950817324463"><a name="p950817324463"></a><a name="p950817324463"></a>funcoid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p105081325460"><a name="p105081325460"></a><a name="p105081325460"></a>OUT oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p155081232124611"><a name="p155081232124611"></a><a name="p155081232124611"></a>存储过程oid</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p155081232124611"><a name="p155081232124611"></a><a name="p155081232124611"></a>存储过程oid。</p>
 </td>
 </tr>
 </tbody>

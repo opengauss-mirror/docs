@@ -136,14 +136,14 @@ LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中
 </td>
 <td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p586994918818"><a name="p586994918818"></a><a name="p586994918818"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p168691749986"><a name="p168691749986"></a><a name="p168691749986"></a>debug query id</p>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p168691749986"><a name="p168691749986"></a><a name="p168691749986"></a>debug query id。</p>
 </td>
 </tr>
 <tr id="row138691249480"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p886912498817"><a name="p886912498817"></a><a name="p886912498817"></a>unique_query_id</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p138705491811"><a name="p138705491811"></a><a name="p138705491811"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p487016491287"><a name="p487016491287"></a><a name="p487016491287"></a>unique query id</p>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p487016491287"><a name="p487016491287"></a><a name="p487016491287"></a>unique query id。</p>
 </td>
 </tr>
 <tr id="row28701749183"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p387012490813"><a name="p387012490813"></a><a name="p387012490813"></a>user_id</p>
