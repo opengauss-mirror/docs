@@ -112,7 +112,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 
     取值范围：已有的表名。
 
--   **column\_name**、column\_1\_name、column\_2\_name
+-   **column\_name**，column\_1\_name，column\_2\_name
 
     需要分析特定列的列名，默认为所有列。
 

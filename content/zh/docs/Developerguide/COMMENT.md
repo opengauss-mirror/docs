@@ -90,7 +90,7 @@ COMMENT ON
 
     定义/修改注释的函数名称。
 
--   **argmode、argname、argtype**
+-   **argmode,argname,argtype**
 
     函数参数的模式、名称、类型。
 
@@ -102,7 +102,7 @@ COMMENT ON
 
     操作符名称。
 
--   **left\_type、right\_type**
+-   **left\_type,right\_type**
 
     操作参数的数据类型（可以用模式修饰）。当前置或者后置操作符不存在时，可以增加NONE选项。
 

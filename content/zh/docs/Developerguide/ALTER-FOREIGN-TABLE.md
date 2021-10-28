@@ -97,7 +97,7 @@ ALTER FOREIGN TABLE [ IF EXISTS ] table_name
 
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
-        >file\_fdw更多使用请参见[file\_fdw](zh-cn_topic_0000001116194726.md)。
+        >file\_fdw更多使用请参见[file\_fdw](file_fdw.md)。
 
 
 -   **value**

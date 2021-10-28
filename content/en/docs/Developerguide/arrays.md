@@ -1,10 +1,10 @@
-# Arrays<a name="EN-US_TOPIC_0245374604"></a>
+# aArrays<a name="EN-US_TOPIC_0000001162898214"></a>
 
-## Use of Array Types<a name="en-us_topic_0237122214_en-us_topic_0059778979_s9b23a1cdca6042f3ae428afa25038607"></a>
+## Use of Array Types<a name="en-us_topic_0283137521_en-us_topic_0237122214_en-us_topic_0059778979_s9b23a1cdca6042f3ae428afa25038607"></a>
 
-Before the use of arrays, an array type needs to be defined:
+Before the use of arrays, an array type needs to be defined.
 
-Define an array type immediately after the  **AS**  keyword in a stored procedure. The method is as follows:
+Define an array type immediately after the  **AS**  keyword in a stored procedure. The definition method is as follows:
 
 ```
 TYPE array_type IS VARRAY(size) OF data_type;
@@ -14,16 +14,53 @@ In the preceding information:
 
 -   **array\_type**: indicates the name of the array type to be defined.
 -   **VARRAY**: indicates the array type to be defined.
--   **size**: indicates the maximum number of members in the array type to be defined. The value is a positive integer.
--   **data\_type**: indicates the types of members in the array type to be created.
+-   **size**: indicates the maximum number of members in the array to be defined. The value is a positive integer.
+-   **data\_type**: indicates the types of members in the array to be created.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   In openGauss, an array automatically increases. If an access violation occurs, a null value is returned, and no error message is reported.  
->-   The scope of an array type defined in a stored procedure takes effect only in this storage process.  
->-   It is recommended that you use one of the preceding methods to define an array type. If both methods are used to define the same array type, openGauss prefers the array type defined in a stored procedure to declare array variables.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   In openGauss, an array automatically increases. If an access violation occurs, a null value is returned, and no error message is reported.
+>-   The scope of an array type defined in a stored procedure takes effect only in this stored procedure.
+>-   It is recommended that you use one of the preceding methods to define an array type. If both methods are used to define the same array type, openGauss prefers the array type defined in a stored procedure to declare array variables.
+>-   **data\_type**  can also be the record type defined in a stored procedure \(anonymous blocks are not supported\), but cannot be the array or set type defined in the stored procedure.
 
-openGauss supports the access of contents in an array by using parentheses, and the  **extend**,  **count**,  **first**, and  **last**  functions.
+openGauss supports access to array elements by using parentheses, and it also supports the  **extend**,  **count**,  **first**,  **last**,  **prior**,  **exists**,  **trim**,  **next**, and  **delete**  functions.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->If the stored procedure contains the DML statement \(SELECT, UPDATE, INSERT, or DELETE\), DML statements can access array elements only using brackets. In this way, it may be separated from the function expression area.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>If a stored procedure contains a DML statement \(such as SELECT, UPDATE, INSERT, and DELETE\), you are advised to use square brackets to access array elements. Using parentheses will access arrays by default. If no array exists, function expressions will be identified.
+
+## Examples<a name="en-us_topic_0059778979_s471412484c0048debf8a78d76cf1a439"></a>
+
+```
+-- Perform operations on an array in the stored procedure.
+openGauss=# CREATE OR REPLACE PROCEDURE array_proc
+AS 
+       TYPE ARRAY_INTEGER IS VARRAY(1024) OF INTEGER;-- Define the array type.
+       ARRINT ARRAY_INTEGER: = ARRAY_INTEGER();  -- Declare the variable of the array type.
+BEGIN 
+       ARRINT.extend(10);  
+       FOR I IN 1..10 LOOP  
+               ARRINT(I) := I; 
+       END LOOP; 
+       DBE_OUTPUT.PRINT_LINE(ARRINT.COUNT);  
+       DBE_OUTPUT.PRINT_LINE(ARRINT(1));  
+       DBE_OUTPUT.PRINT_LINE(ARRINT(10)); 
+       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.FIRST)); 
+       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.LAST));
+       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.NEXT(ARRINT.FIRST)));
+       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.PRIOR(ARRINT.LAST)));
+       ARRINT.TRIM();
+       DBE_OUTPUT.PRINT_LINE(ARRINT.EXISTS(10));
+       DBE_OUTPUT.PRINT_LINE(ARRINT.COUNT);
+       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.FIRST)); 
+       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.LAST));
+       ARRINT.DELETE();
+END;  
+/
+
+-- Invoke the stored procedure.
+openGauss=# CALL array_proc();
+
+-- Delete the stored procedure.
+openGauss=# DROP PROCEDURE array_proc;
+```
 
