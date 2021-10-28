@@ -50,7 +50,7 @@ hint的错误分为以下类型：
     -   不包含索引的表使用indexscan hint或indexonlyscan hint。
     -   通常只有在索引列上使用过滤条件才会生成相应的索引路径，全表扫描将不会使用索引，因此使用indexscan hint或indexonlyscan hint将不会使用。
     -   indexonlyscan只有输出列仅包含索引列才会使用，否则指定时hint不会被使用。
-    -   多个表存在等值连接时，仅尝试有等值连接条件的表的连接，此时没有关联条件的表之间的路径将不会生成，所以指定相应的leading，join，rows hint将不使用，例如：t1 t2 t3表join，t1和t2，t2和t3有等值连接条件，则t1和t3不会优先连接，leading\(t1 t3\)不会被使用。
+    -   多个表存在等值连接时，仅尝试有等值连接条件的表的连接，此时没有关联条件的表之间的路径将不会生成，所以指定相应的leading、join、rows hint将不使用，例如：t1 t2 t3表join，t1和t2，t2和t3有等值连接条件，则t1和t3不会优先连接，leading\(t1 t3\)不会被使用。
     -   生成stream计划时，如果表的分布列与join列相同，则不会生成redistribute的计划；如果不同，且另一表分布列与join列相同，只能生成redistribute的计划，不会生成broadcast的计划，指定相应的hint则不会被使用。
     -   如果子链接未被提升，则blockname hint不会被使用。
     -   对于skew hint，hint未被使用可能由于：
