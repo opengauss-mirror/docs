@@ -100,8 +100,8 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
     -   同类型则比较内容：
 
         -   str-json类型：依据text比较的方法，使用数据库默认排序规则进行比较，返回值正数代表大于，负数代表小于，0表示相等。
-        -   num-json类型：数值比较
-        -   bool-json类型：true \> false
+        -   num-json类型：数值比较。
+        -   bool-json类型：true \> false。
         -   array-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个元素。
         -   object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，在比较值。
 

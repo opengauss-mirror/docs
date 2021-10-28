@@ -349,7 +349,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p19022242917"><a name="p19022242917"></a><a name="p19022242917"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p166675265421"><a name="p166675265421"></a><a name="p166675265421"></a>通过物理连接发送消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx、 "n_calls":xxx、 "size":xxx}。</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p166675265421"><a name="p166675265421"></a><a name="p166675265421"></a>通过物理连接发送消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p202871513143012"><a name="p202871513143012"></a><a name="p202871513143012"></a>L0</p>
 </td>
@@ -358,7 +358,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p19976131232915"><a name="p19976131232915"></a><a name="p19976131232915"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p16967114513427"><a name="p16967114513427"></a><a name="p16967114513427"></a>通过物理连接接收消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx、 "n_calls":xxx、 "size":xxx}。</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p16967114513427"><a name="p16967114513427"></a><a name="p16967114513427"></a>通过物理连接接收消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p15287413123014"><a name="p15287413123014"></a><a name="p15287413123014"></a>L0</p>
 </td>
@@ -367,7 +367,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p1451215911291"><a name="p1451215911291"></a><a name="p1451215911291"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p695315818427"><a name="p695315818427"></a><a name="p695315818427"></a>通过逻辑连接发送消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx、 "n_calls":xxx、 "size":xxx}。</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p695315818427"><a name="p695315818427"></a><a name="p695315818427"></a>通过逻辑连接发送消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p192871113113013"><a name="p192871113113013"></a><a name="p192871113113013"></a>L0</p>
 </td>
@@ -376,7 +376,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p1578173110298"><a name="p1578173110298"></a><a name="p1578173110298"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p292014112436"><a name="p292014112436"></a><a name="p292014112436"></a>通过逻辑连接接收消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx、 "n_calls":xxx、 "size":xxx}。</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p292014112436"><a name="p292014112436"></a><a name="p292014112436"></a>通过逻辑连接接收消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p5287131303020"><a name="p5287131303020"></a><a name="p5287131303020"></a>L0</p>
 </td>

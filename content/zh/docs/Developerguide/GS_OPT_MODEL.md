@@ -117,7 +117,7 @@ GS\_OPT\_MODEL是启用AiEngine执行计划时间预测功能时的数据表，�
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136832_p117751241135215"><a name="zh-cn_topic_0283136832_p117751241135215"></a><a name="zh-cn_topic_0283136832_p117751241135215"></a>模型的目标任务：</p>
 <a name="zh-cn_topic_0283136832_ul7527155113527"></a><a name="zh-cn_topic_0283136832_ul7527155113527"></a><ul id="zh-cn_topic_0283136832_ul7527155113527"><li>S：startup time。</li><li>T：total time。</li><li>R：rows。</li><li>M：peak memory。</li></ul>
-<p id="zh-cn_topic_0283136832_p877684111526"><a name="zh-cn_topic_0283136832_p877684111526"></a><a name="zh-cn_topic_0283136832_p877684111526"></a>目前受模型性能限制，推荐{S、 T}或{R}。</p>
+<p id="zh-cn_topic_0283136832_p877684111526"><a name="zh-cn_topic_0283136832_p877684111526"></a><a name="zh-cn_topic_0283136832_p877684111526"></a>目前受模型性能限制，推荐{S, T}或{R}。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136832_row658214912457"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136832_p10583114944510"><a name="zh-cn_topic_0283136832_p10583114944510"></a><a name="zh-cn_topic_0283136832_p10583114944510"></a>max</p>

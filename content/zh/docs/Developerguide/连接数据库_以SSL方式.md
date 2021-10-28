@@ -11,7 +11,7 @@
 1.  以操作系统用户omm登录数据库主节点。
 2.  生成并配置证书。
 
-    生成SSL证书，具体请参见[证书生成](证书生成.md)。将生成出的文件server.crt，server.key，cacert.pem拷贝到服务端数据目录下。
+    生成SSL证书，具体请参见[证书生成](证书生成.md)。将生成出的文件server.crt、server.key、cacert.pem拷贝到服务端数据目录下。
 
     使用如下命令可以查询数据库节点的数据目录，instance列为数据目录。
 
@@ -75,7 +75,7 @@
 
 配置步骤如下：
 
-上传证书文件，将在服务端配置章节生成出的文件client.key.pk8，client.crt，cacert.pem放置在客户端。
+上传证书文件，将在服务端配置章节生成出的文件client.key.pk8、client.crt、cacert.pem放置在客户端。
 
 ## 示例<a name="zh-cn_topic_0283137170_zh-cn_topic_0237120382_zh-cn_topic_0213179127_zh-cn_topic_0189251215_sac62520495454e38a58fb1c067bd8adc"></a>
 

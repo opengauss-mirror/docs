@@ -46,7 +46,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
     – column\_name指定子查询结果集中显示的列名。
 
-    – 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+    – 每个子查询可以是SELECT、VALUES、INSERT、UPDATE或DELETE语句。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >INSERT ON DUPLICATE KEY UPDATE不支持WITH及WITH RECURSIVE子句。
@@ -75,7 +75,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
     -   如果是INSERT ON DUPLICATE KEY UPDATE语句下，expression可以为VALUES\(column\_name\)或EXCLUDED.column\_name用来表示引用冲突行对应的column\_name字段的值。需注意，其中VALUES\(column\_name\)不支持嵌套在表达式中（例如VALUES\(column\_name\)+1），但EXCLUDED不受此限制。
 
-    -   向表中字段插入单引号 " ' "时需要使用单引号自身进行转义。
+    -   向表中字段插入单引号 “ ' ”时需要使用单引号自身进行转义。
     -   如果插入行的表达式不是正确的数据类型，系统试图进行类型转换，若转换不成功，则插入数据失败，系统返回错误信息。
 
 -   **DEFAULT**
@@ -104,7 +104,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
 -   **ON DUPLICATE KEY UPDATE**
 
-    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新，对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过"EXCLUDE." 或者 "VALUES\(\)" 来选择源数据相应的列。
+    对于带有唯一约束（UNIQUE INDEX或PRIMARY KEY）的表，如果插入数据违反唯一约束，则对冲突行执行UPDATE子句完成更新，对于不带唯一约束的表，则仅执行插入。UPDATE时，若指定NOTHING则忽略此条插入，可通过“EXCLUDE.” 或者 "VALUES\(\)" 来选择源数据相应的列。
 
     -   支持触发器，触发器执行顺序由实际执行流程决定：
         -   执行insert：触发 before insert、after insert触发器。
@@ -158,5 +158,5 @@ openGauss=# DROP TABLE tpcds.reason_t2;
 
 -   VALUES
 
-    通过insert语句批量插入数据时，建议将多条记录合并入一条语句中执行插入，以提高数据加载性能。例如，INSERT INTO sections VALUES \(30, 'Administration', 31, 1900\),\(40, 'Development', 35, 2000\), \(50, 'Development' , 60 , 2001\);
+    通过insert语句批量插入数据时，建议将多条记录合并入一条语句中执行插入，以提高数据加载性能。例如，INSERT INTO sections VALUES \(30, 'Administration', 31, 1900\)、\(40, 'Development', 35, 2000\)、 \(50, 'Development' , 60 , 2001\)。
 

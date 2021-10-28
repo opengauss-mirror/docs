@@ -12,7 +12,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
 
--   在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT，UPDATE，DELETE，CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用如下方法。
+-   在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT、UPDATE、DELETE、CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用如下方法。
 
     ```
     START TRANSACTION;
@@ -20,7 +20,7 @@
     ROLLBACK;
     ```
 
--   由于参数DETAIL，NODES，NUM\_NODES是分布式模式下的功能，在单机模式中是被禁止使用的。假如使用，会产生如下错误。
+-   由于参数DETAIL、NODES、NUM\_NODES是分布式模式下的功能，在单机模式中是被禁止使用的。假如使用，会产生如下错误。
 
     ```
     openGauss=# create table student(id int, name char(20));
@@ -164,7 +164,7 @@
 
     指定输出格式。
 
-    取值范围：TEXT，XML，JSON和YAML。
+    取值范围：TEXT、XML、JSON和YAML。
 
     默认值：TEXT。
 

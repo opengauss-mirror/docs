@@ -736,52 +736,52 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_row13521171316206"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p2521181342020"><a name="zh-cn_topic_0283136724_p2521181342020"></a><a name="zh-cn_topic_0283136724_p2521181342020"></a>Async Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p552291322017"><a name="zh-cn_topic_0283136724_p552291322017"></a><a name="zh-cn_topic_0283136724_p552291322017"></a>保护Async buffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p552291322017"><a name="zh-cn_topic_0283136724_p552291322017"></a><a name="zh-cn_topic_0283136724_p552291322017"></a>保护Async buffer。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row039155742010"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p1439115714203"><a name="zh-cn_topic_0283136724_p1439115714203"></a><a name="zh-cn_topic_0283136724_p1439115714203"></a>MultiXactOffset Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p133935792010"><a name="zh-cn_topic_0283136724_p133935792010"></a><a name="zh-cn_topic_0283136724_p133935792010"></a>保护MultiXact offet的slru buffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p133935792010"><a name="zh-cn_topic_0283136724_p133935792010"></a><a name="zh-cn_topic_0283136724_p133935792010"></a>保护MultiXact offet的slru buffer。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row8426111952114"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p9426111912211"><a name="zh-cn_topic_0283136724_p9426111912211"></a><a name="zh-cn_topic_0283136724_p9426111912211"></a>MultiXactMember Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p14426111922110"><a name="zh-cn_topic_0283136724_p14426111922110"></a><a name="zh-cn_topic_0283136724_p14426111922110"></a>保护MultiXact member的slrubuffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p14426111922110"><a name="zh-cn_topic_0283136724_p14426111922110"></a><a name="zh-cn_topic_0283136724_p14426111922110"></a>保护MultiXact member的slrubuffer。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row16796316172217"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p3796201602217"><a name="zh-cn_topic_0283136724_p3796201602217"></a><a name="zh-cn_topic_0283136724_p3796201602217"></a>OldSerXid SLRU Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1879651619229"><a name="zh-cn_topic_0283136724_p1879651619229"></a><a name="zh-cn_topic_0283136724_p1879651619229"></a>保护old xids的slru buffer</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1879651619229"><a name="zh-cn_topic_0283136724_p1879651619229"></a><a name="zh-cn_topic_0283136724_p1879651619229"></a>保护old xids的slru buffer。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row13779172092517"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p12780122022517"><a name="zh-cn_topic_0283136724_p12780122022517"></a><a name="zh-cn_topic_0283136724_p12780122022517"></a>ReplicationSlotLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p10780192013252"><a name="zh-cn_topic_0283136724_p10780192013252"></a><a name="zh-cn_topic_0283136724_p10780192013252"></a>用于保护ReplicationSlot</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p10780192013252"><a name="zh-cn_topic_0283136724_p10780192013252"></a><a name="zh-cn_topic_0283136724_p10780192013252"></a>用于保护ReplicationSlot。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row61636273260"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p201634278269"><a name="zh-cn_topic_0283136724_p201634278269"></a><a name="zh-cn_topic_0283136724_p201634278269"></a>PGPROCLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p13163132713260"><a name="zh-cn_topic_0283136724_p13163132713260"></a><a name="zh-cn_topic_0283136724_p13163132713260"></a>用于保护pgproc</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p13163132713260"><a name="zh-cn_topic_0283136724_p13163132713260"></a><a name="zh-cn_topic_0283136724_p13163132713260"></a>用于保护pgproc。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row93871137270"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p1838711316274"><a name="zh-cn_topic_0283136724_p1838711316274"></a><a name="zh-cn_topic_0283136724_p1838711316274"></a>MetaCacheLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p338711139273"><a name="zh-cn_topic_0283136724_p338711139273"></a><a name="zh-cn_topic_0283136724_p338711139273"></a>用于保护MetaCache</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p338711139273"><a name="zh-cn_topic_0283136724_p338711139273"></a><a name="zh-cn_topic_0283136724_p338711139273"></a>用于保护MetaCache。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row51712311285"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p181783132811"><a name="zh-cn_topic_0283136724_p181783132811"></a><a name="zh-cn_topic_0283136724_p181783132811"></a>DataCacheLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p151763132817"><a name="zh-cn_topic_0283136724_p151763132817"></a><a name="zh-cn_topic_0283136724_p151763132817"></a>用于保护datacache</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p151763132817"><a name="zh-cn_topic_0283136724_p151763132817"></a><a name="zh-cn_topic_0283136724_p151763132817"></a>用于保护datacache。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row10781736162818"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p167953692820"><a name="zh-cn_topic_0283136724_p167953692820"></a><a name="zh-cn_topic_0283136724_p167953692820"></a>InstrUserLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1879183682811"><a name="zh-cn_topic_0283136724_p1879183682811"></a><a name="zh-cn_topic_0283136724_p1879183682811"></a>用于保护InstrUserHTAB</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1879183682811"><a name="zh-cn_topic_0283136724_p1879183682811"></a><a name="zh-cn_topic_0283136724_p1879183682811"></a>用于保护InstrUserHTAB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row17506195395619"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p202581307577"><a name="zh-cn_topic_0283136724_p202581307577"></a><a name="zh-cn_topic_0283136724_p202581307577"></a>BadBlockStatHashLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p19258133035719"><a name="zh-cn_topic_0283136724_p19258133035719"></a><a name="zh-cn_topic_0283136724_p19258133035719"></a>用于保护global_bad_block_stat hash表</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p19258133035719"><a name="zh-cn_topic_0283136724_p19258133035719"></a><a name="zh-cn_topic_0283136724_p19258133035719"></a>用于保护global_bad_block_stat hash表。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row22422561403"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p8243175620019"><a name="zh-cn_topic_0283136724_p8243175620019"></a><a name="zh-cn_topic_0283136724_p8243175620019"></a>BufFreelistLock</p>
