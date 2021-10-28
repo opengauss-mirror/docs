@@ -7,7 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s5b88399280d4435fbb63e27378589a97"></a>
 
 -   目前二级分区表只支持清空分区、切割分区。
--   切割分区只能对二级分区（叶子节点）进行切割，被切割分区只能是Range，List分区策略，List分区策略只能是default分区才能被切割。
+-   切割分区只能对二级分区（叶子节点）进行切割，被切割分区只能是Range、List分区策略，List分区策略只能是default分区才能被切割。
 -   只有分区表的所有者或者被授予了分区表ALTER权限的用户有权限执行ALTER TABLE PARTITION命令，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
