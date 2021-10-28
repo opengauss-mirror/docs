@@ -19,7 +19,7 @@
 <tr id="row2978832"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.3.1.1 "><p id="p39958824"><a name="p39958824"></a><a name="p39958824"></a>READ COMMITTED</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.75757575757575%" headers="mcps1.2.3.1.2 "><p id="p15439288"><a name="p15439288"></a><a name="p15439288"></a><strong id="b4735869"><a name="b4735869"></a><a name="b4735869"></a>MOT支持</strong></p>
-<p id="p48061109"><a name="p48061109"></a><a name="p48061109"></a>READ COMMITTED（读已提交）隔离级别保证任何正在读取的数据在上一次读取时都已提交。它只是限制读者看到任何中间数据、未提交数据，或脏读。数据被读取后可以自由更改，因此，读已提交隔离级别并不保证事务再次读取时能找到相同的数据。</p>
+<p id="p48061109"><a name="p48061109"></a><a name="p48061109"></a>READ COMMITTED（读已提交）隔离级别保证任何正在读取的数据在上一次读取时都已提交。它只是限制读者看到任何中间数据、未提交数据或脏读。数据被读取后可以自由更改，因此，读已提交隔离级别并不保证事务再次读取时能找到相同的数据。</p>
 </td>
 </tr>
 <tr id="row29896802"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.3.1.1 "><p id="p5721932"><a name="p5721932"></a><a name="p5721932"></a>SNAPSHOT</p>
