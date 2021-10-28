@@ -312,60 +312,58 @@
     修改配置文件odbc.ini中的sslmode参数（require或verify-ca）。
     ```
 
-8.  <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>配置数据库服务器。
-    1.  以操作系统用户omm登录数据库主节点。
-    2.  执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
+8. <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>配置数据库服务器。
+   1.  以操作系统用户omm登录数据库主节点。
+   2.  执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
 
-        ```
-        gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
-        ```
+       ```
+       gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
+       ```
 
-        在DR（Direct Routing，LVS的直接路由DR模式）模式中需要将虚拟IP地址（10.11.12.13）加入到服务器的侦听地址列表中。
+       在DR（Direct Routing，LVS的直接路由DR模式）模式中需要将虚拟IP地址（10.11.12.13）加入到服务器的侦听地址列表中。
 
-        listen\_addresses也可以配置为“\*”或“0.0.0.0”，此配置下将侦听所有网卡，但存在安全风险，不推荐用户使用，推荐用户按照需要配置IP或者主机名，打开侦听。
+       listen\_addresses也可以配置为“\*”或“0.0.0.0”，此配置下将侦听所有网卡，但存在安全风险，不推荐用户使用，推荐用户按照需要配置IP或者主机名，打开侦听。
 
-    3.  执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
+   3. 执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
 
-        ```
-        gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
-        ```
+      ```
+      gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
+      ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >
-        >-   ****
-        >
-        >-   -N all表示openGauss中的所有主机。
-        >
-        >-   -I all表示主机中的所有实例。
-        >
-        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
-        >
-        >-   all表示允许客户端连接到任意的数据库。
-        >
-        >-   jack表示连接数据库的用户。
-        >
-        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
-        >
-        >-   sha256表示连接时jack用户的密码使用sha256算法加密。
+      >![](public_sys-resources/icon-note.gif) **说明：** 
+      >
+      >- -N all表示openGauss中的所有主机。
+      >
+      >-   -I all表示主机中的所有实例。
+      >
+      >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
+      >
+      >-   all表示允许客户端连接到任意的数据库。
+      >
+      >-   jack表示连接数据库的用户。
+      >
+      >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
+      >
+      >-   sha256表示连接时jack用户的密码使用sha256算法加密。
 
-        如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
+      如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
 
-        ```
-        local all all trust
-        ```
+      ```
+      local all all trust
+      ```
 
-        如果将ODBC客户端配置在和要连接的数据库主节点在不同机器上，则需要使用sha256认证方式，如下：
+      如果将ODBC客户端配置在和要连接的数据库主节点在不同机器上，则需要使用sha256认证方式，如下：
 
-        ```
-        host all all xxx.xxx.xxx.xxx/32 sha256
-        ```
+      ```
+      host all all xxx.xxx.xxx.xxx/32 sha256
+      ```
 
-    4.  重启openGauss。
+   4.  重启openGauss。
 
-        ```
-        gs_om -t stop
-        gs_om -t start
-        ```
+       ```
+       gs_om -t stop
+       gs_om -t start
+       ```
 
 9.  在客户端配置环境变量。
 
