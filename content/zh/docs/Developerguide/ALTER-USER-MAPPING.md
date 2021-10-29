@@ -32,7 +32,7 @@ ALTER USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
 -   **OPTIONS**
 
-    为该用户映射更改选项。新选项会覆盖任何之前指定的选项。ADD、 SET和DROP指定要被执行的动作。如果没有显式地指定操作，将假定为ADD。选项名称必须为唯一，该服务器的外部数据包装器也会验证选项。
+    为该用户映射更改选项。新选项会覆盖任何之前指定的选项。ADD、SET和DROP指定要被执行的动作。如果没有显式地指定操作，将假定为ADD。选项名称必须为唯一，该服务器的外部数据包装器也会验证选项。
 
     -   oracle\_fdw支持的options包括：
         -   **user**
