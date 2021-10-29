@@ -39,7 +39,8 @@
 </td>
 <td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a href="pg_type.md">PG_TYPE</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a>Left-hand input data type of the operator For details about the possible values and their description, see <strong id="b19319557121910"><a name="b19319557121910"></a><a name="b19319557121910"></a>pg_type.h</strong>.</p>
+<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a>Left-hand input data type of the operator 
+    <p>For details about the possible values and their description, see <strong id="b19319557121910"><a name="b19319557121910"></a><a name="b19319557121910"></a>pg_type.h</strong>.</p></p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_r77f955a33dbd44c181e272790b61786f"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_aa9ce20a269e44885872fe3281a216b45"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_aa9ce20a269e44885872fe3281a216b45"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_aa9ce20a269e44885872fe3281a216b45"></a>amoprighttype</p>
@@ -48,7 +49,8 @@
 </td>
 <td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a href="pg_type.md">PG_TYPE</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a41d23917f5344595a96980a46a3068d9"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a>Right-hand input data type of the operator For details about the possible values and their description, see <strong id="b1157575013197"><a name="b1157575013197"></a><a name="b1157575013197"></a>pg_type.h</strong>.</p>
+<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a41d23917f5344595a96980a46a3068d9"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a>Right-hand input data type of the operator 
+    <p>For details about the possible values and their description, see <strong id="b1157575013197"><a name="b1157575013197"></a><a name="b1157575013197"></a>pg_type.h</strong>.</p></p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_r123c6b79378e4f35bd5b8aa18e564c27"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_aff10bc2961334e5fb5135841a64e5e87"><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_aff10bc2961334e5fb5135841a64e5e87"></a><a name="en-us_topic_0283137662_en-us_topic_0237122268_en-us_topic_0059777617_aff10bc2961334e5fb5135841a64e5e87"></a>amopstrategy</p>
@@ -98,6 +100,7 @@
 </tr>
 </tbody>
 </table>
+
 
 A search operator entry indicates that an index of this operator family can be searched to find all rows satisfying  **WHERE indexed\_column operator constant**. Obviously, such an operator must return a Boolean value, and its left-hand input type must match the index's column data type.
 
