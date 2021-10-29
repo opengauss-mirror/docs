@@ -39,7 +39,7 @@ call GOTO_test();
 
 ## 限制场景<a name="zh-cn_topic_0237122238_section186169245159"></a>
 
-GOTO使用有以下限制场景
+GOTO使用有以下限制场景：
 
 -   不支持有多个相同的GOTO labels目标场景，无论是否在同一个block中。
 
@@ -54,7 +54,7 @@ GOTO使用有以下限制场景
     ```
 
 
--   不支持GOTO跳转到IF语句，CASE语句，LOOP语句中。
+-   不支持GOTO跳转到IF语句、CASE语句、LOOP语句中。
 
     ```
     BEGIN

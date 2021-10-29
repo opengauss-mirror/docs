@@ -17,7 +17,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range:**  0 to 3600. The unit is s.
 
-**Default value**:  **60**
+**Default value**:  **0**
 
 ## tcp\_keepalives\_interval<a name="en-us_topic_0283137640_en-us_topic_0237124697_en-us_topic_0059778583_s468705800b794486898007eb63b3b595"></a>
 
@@ -27,7 +27,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: 0 to 180. The unit is s.
 
-**Default value**:  **30**
+**Default value**:  **0**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPINTVL**, set this parameter to  **0**.
@@ -51,9 +51,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: 0 to 100.  **0**  indicates that the connection is immediately broken if openGauss does not receive a keepalived signal from the client.
 
-**Default value:** **20**
-
-
+**Default value:** **0**
 
 ## comm\_proxy\_attr<a name="section167117211811"></a>
 
