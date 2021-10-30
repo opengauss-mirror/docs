@@ -76,7 +76,7 @@ CREATE MASKING POLICY policy_name masking_clause[, ...]* policy_filter [ENABLE |
 
 -   **filter\_value**
 
-    指具体过滤信息内容，例如具体的IP，具体的APP名称，具体的用户名。
+    指具体过滤信息内容，例如具体的IP、具体的APP名称、具体的用户名。
 
 
 -   **ENABLE|DISABLE**
