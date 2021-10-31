@@ -188,7 +188,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p35391818754"><a name="p35391818754"></a><a name="p35391818754"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p453971811510"><a name="p453971811510"></a><a name="p453971811510"></a>WIN936, Windows936</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p453971811510"><a name="p453971811510"></a><a name="p453971811510"></a>WIN936，Windows936</p>
     </td>
     </tr>
     <tr id="row153961813513"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1453914181854"><a name="p1453914181854"></a><a name="p1453914181854"></a>ISO_8859_5</p>
@@ -473,7 +473,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p455631813517"><a name="p455631813517"></a><a name="p455631813517"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p175564181352"><a name="p175564181352"></a><a name="p175564181352"></a>Mskanji, ShiftJIS, WIN932, Windows932</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p175564181352"><a name="p175564181352"></a><a name="p175564181352"></a>Mskanji，ShiftJIS，WIN932，Windows932</p>
     </td>
     </tr>
     <tr id="row17556161812515"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p18557161816514"><a name="p18557161816514"></a><a name="p18557161816514"></a>SHIFT_JIS_2004</p>
@@ -518,7 +518,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p35596189516"><a name="p35596189516"></a><a name="p35596189516"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p8559618750"><a name="p8559618750"></a><a name="p8559618750"></a>WIN949, Windows949</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p8559618750"><a name="p8559618750"></a><a name="p8559618750"></a>WIN949，Windows949</p>
     </td>
     </tr>
     <tr id="row175591518459"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1955915182510"><a name="p1955915182510"></a><a name="p1955915182510"></a>UTF8</p>
@@ -698,7 +698,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p1857121818514"><a name="p1857121818514"></a><a name="p1857121818514"></a>1</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p9571018856"><a name="p9571018856"></a><a name="p9571018856"></a>ABC, TCVN, TCVN5712, VSCII</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p9571018856"><a name="p9571018856"></a><a name="p9571018856"></a>ABC, TCVN，TCVN5712，VSCII</p>
     </td>
     </tr>
     </tbody>
