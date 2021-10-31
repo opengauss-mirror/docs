@@ -83,7 +83,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p1353220187514"><a name="p1353220187514"></a><a name="p1353220187514"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p105329180512"><a name="p105329180512"></a><a name="p105329180512"></a>WIN950, Windows950</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p105329180512"><a name="p105329180512"></a><a name="p105329180512"></a>WIN950，Windows950</p>
     </td>
     </tr>
     <tr id="row1353215183517"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p85338186510"><a name="p85338186510"></a><a name="p85338186510"></a>EUC_CN</p>
