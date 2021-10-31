@@ -38,7 +38,7 @@ GS\_AUDITING\_POLICY\_FILTERS系统表记录统一审计相关的过滤策略相
 </td>
 <td class="cellrowborder" valign="top" width="26.38263826382638%" headers="mcps1.2.4.1.2 "><p id="p3474109115313"><a name="p3474109115313"></a><a name="p3474109115313"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.374537453745376%" headers="mcps1.2.4.1.3 "><p id="p136759531164"><a name="p136759531164"></a><a name="p136759531164"></a>所属审计策略的Oid，对应系统表GS_AUDITING_POLICY中的oid。</p>
+<td class="cellrowborder" valign="top" width="45.374537453745376%" headers="mcps1.2.4.1.3 "><p id="p136759531164"><a name="p136759531164"></a><a name="p136759531164"></a>所属审计策略的oid，对应系统表GS_AUDITING_POLICY中的oid。</p>
 </td>
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="28.24282428242824%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>modifydate</p>
