@@ -7,7 +7,7 @@ ai\_manager是AI特性部署工具，旨在为AI特性提供自动化、高效�
 -   项目部署路径为/dbs/AI-tools，需保证该路径存在并有读写执行权限，安装/卸载操作中会清理该路径下的内容，不要将其它文件保存在该路径下。
 -   需要安装python3环境及特性所需python库,依赖库请参考包内的requirements.txt文件。
 -   如开启https，需准备相应的根证书，秘钥文件及密码。
--   agent节点已启动GaussDB Kernel数据库。
+-   agent节点已启动openGauss数据库。
 -   安装agent节点须使用集群用户操作。
 -   如果agent节点集群用户的\~/.bashrc文件中没有正确的PGHOST配置，需要将PGHOST配置到/dbs/AI-tools/ai\_env文件中。
 
