@@ -34,13 +34,9 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     ( {select | values | insert | update | delete} )
     ```
 
-    – with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问
-
-    子查询的结果集。
-
-    – column\_name指定子查询结果集中显示的列名。
-
-    – 每个子查询可以是SELECT、VALUES、INSERT、UPDATE或DELETE语句。
+    - with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
+- column\_name指定子查询结果集中显示的列名。
+    - 每个子查询可以是SELECT、VALUES、INSERT、UPDATE或DELETE语句。
 
 -   **plan\_hint子句**
 
