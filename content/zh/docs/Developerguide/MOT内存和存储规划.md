@@ -15,7 +15,7 @@ MOT是一种内存数据库存储引擎（IMDB），其中所有表和索引完�
 
 -   **内存配置**
 
-    openGauss数据库和标准Postgres类似，其内存上限是由max\_process\_memory设置的，该上限在postgres.conf文件中定义。MOT及其所有组件和线程，都驻留在openGauss进程中。因此，分配给MOT的内存也是在整个openGauss数据库进程的max\_process\_memory定义的上限内分配。
+    openGauss数据库和标准Postgres类似，其内存上限是由max\_process\_memory设置的，该上限在postgresql.conf文件中定义。MOT及其所有组件和线程，都驻留在openGauss进程中。因此，分配给MOT的内存也是在整个openGauss数据库进程的max\_process\_memory定义的上限内分配。
 
     MOT为自己保留的内存是max\_process\_memory的一部分。可以通过百分比或通过小于max\_process\_memory的绝对值定义。这个部分在mot.conf配置文件中由<min / max\>\_mot\_<global / local\>\_memory配置项定义。
 
@@ -69,7 +69,7 @@ MOT是一种内存数据库存储引擎（IMDB），其中所有表和索引完�
 
     在开始执行对MOT性能的最小评估前，请确保：
 
-    除了磁盘表缓冲区和额外的内存，max\_process\_memory（在postgres.conf中定义）还有足够的容量用于MOT和会话（由mix/max\_mot\_global\_memory和mix/max\_mot\_local\_memory配置）。对于简单的测试，可以使用mot.conf的默认设置。
+    除了磁盘表缓冲区和额外的内存，max\_process\_memory（在postgresql.conf中定义）还有足够的容量用于MOT和会话（由mix/max\_mot\_global\_memory和mix/max\_mot\_local\_memory配置）。对于简单的测试，可以使用mot.conf的默认设置。
 
 -   **生产过程中实际内存需求**
 

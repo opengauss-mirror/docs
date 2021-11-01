@@ -4,7 +4,7 @@
 
 该文件在服务器启动时只读。如果在系统运行中编辑此文件，则必须重新加载服务器才能使修改内容生效。
 
-mot.conf文件与postgres.conf配置文件在同一文件夹下。
+mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
 在主备部署模式下，主备节点的mot.conf文件需要完全相同，否则，系统行为不明确。
 
@@ -391,10 +391,10 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 
 ## 默认MOT.conf文件<a name="section40674409"></a>
 
-最小设置和配置指定将Postgresql.conf文件指向MOT.conf文件的位置：
+最小设置和配置指定将postgresql.conf文件指向MOT.conf文件的位置：
 
 ```
-Postgresql.conf  
+postgresql.conf  
 ```
 
 ```
