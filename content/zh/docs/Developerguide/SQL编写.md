@@ -31,8 +31,8 @@
 -   【建议】使用事务方式执行DDL和DML操作。例如，truncate table、update table、delete table、drop table等操作，一旦执行提交就无法恢复。对于这类操作，建议使用事务进行封装，必要时可以进行回滚。
 -   【建议】在查询编写时，建议明确列出查询涉及的所有字段，不建议使用“SELECT \*”这种写法。一方面基于性能考虑，尽量减少查询输出列；另一方面避免增删字段对前端业务兼容性的影响。
 -   【建议】在访问表对象时带上schema前缀，可以避免因schema切换导致访问到非预期的表。
--   【建议】超过3张表或视图进行关联（特别是full join）时，执行代价难以估算。建议使用WITH TABLE AS语句创建中间临时表的方式增加SQL语句的可读性。
--   【建议】尽量避免使用笛卡尔积和Full join。这些操作会造成结果集的急剧膨胀，同时其执行性能也很低。
+-   【建议】超过3张表或视图进行关联（特别是FULL JOIN）时，执行代价难以估算。建议使用WITH TABLE AS语句创建中间临时表的方式增加SQL语句的可读性。
+-   【建议】尽量避免使用笛卡尔积和FULL JOIN。这些操作会造成结果集的急剧膨胀，同时其执行性能也很低。
 -   【关注】NULL值的比较只能使用IS NULL或者IS NOT NULL的方式判断，其他任何形式的逻辑判断都返回NULL。例如：NULL<\>NULL、NULL=NULL和NULL<\>1返回结果都是NULL，而不是期望的布尔值。
 -   【关注】需要统计表中所有记录数时，不要使用count\(col\)来替代count\(\*\)。count\(\*\)会统计NULL值（真实行数），而count\(col\)不会统计。
 -   【关注】在执行count\(col\)时，将“值为NULL”的记录行计数为0。在执行sum\(col\)时，当所有记录都为NULL时，最终将返回NULL；当不全为NULL时，“值为NULL”的记录行将被计数为0。
@@ -112,9 +112,9 @@
     SELECT id, from_image_id, from_person_id, from_video_id FROM face_data where time >  current_timestamp(6) - '1 days'::interval;
     ```
 
--   【建议】尽量避免不必要的排序操作。排序需要耗费大量的内存及CPU，如果业务逻辑许可，可以组合使用order by和limit，减小资源开销。openGauss默认按照ASC & NULL LAST进行排序。
+-   【建议】尽量避免不必要的排序操作。排序需要耗费大量的内存及CPU，如果业务逻辑许可，可以组合使用ORDER BY和LIMIT，减小资源开销。openGauss默认按照ASC & NULL LAST进行排序。
 -   【建议】使用ORDER BY子句进行排序时，显式指定排序方式（ASC/DESC），NULL的排序方式（NULL FIRST/NULL LAST）。
--   【建议】不要单独依赖limit子句返回特定顺序的结果集。如果部分特定结果集，可以将ORDER BY子句与Limit子句组合使用，必要时也可以使用offset跳过特定结果。
+-   【建议】不要单独依赖limit子句返回特定顺序的结果集。如果部分特定结果集，可以将ORDER BY子句与Limit子句组合使用，必要时也可以使用OFFSET跳过特定结果。
 -   【建议】在保障业务逻辑准确的情况下，建议尽量使用UNION ALL来代替UNION。
 -   【建议】如果过滤条件只有OR表达式，可以将OR表达式转化为UNION ALL以提升性能。使用OR的SQL语句经常无法优化，导致执行速度慢。例如，将下面语句
 

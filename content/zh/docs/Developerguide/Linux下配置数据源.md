@@ -28,11 +28,11 @@
     ```
 
 3.  替换客户端openGauss驱动程序。
-    1.  将openGauss-1.1.0-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
-    2.  将openGauss-1.1.0-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
+    a.  将openGauss-1.1.0-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
+    b.  将openGauss-1.1.0-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
 
 4.  配置数据源。
-    1.  配置ODBC驱动文件。
+    a.  配置ODBC驱动文件。
 
         在“/xxx/odbc/etc/odbcinst.ini”文件中追加以下内容。
 
@@ -79,7 +79,7 @@
         </tbody>
         </table>
 
-    2.  配置数据源文件。
+    b.  配置数据源文件。
 
         在“/usr/local/etc/odbc.ini”文件中追加以下内容。
 
@@ -148,7 +148,7 @@
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a>Password=</p>
         <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_note66001755162217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_note66001755162217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_note66001755162217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p57144884162217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p57144884162217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p57144884162217"></a>ODBC驱动本身已经对内存密码进行过清理，以保证用户密码在连接后不会再在内存中保留。</p>
-        <p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a>但是如果配置了此参数，由于UnixODBC对数据源文件等进行缓存，可能导致密码长期保留在内存中。</p>
+        <p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a>但是如果配置了此参数，由于unixODBC对数据源文件等进行缓存，可能导致密码长期保留在内存中。</p>
         <p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p9307938162511"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p9307938162511"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p9307938162511"></a>推荐在应用程序连接时，将密码传递给相应API，而非写在数据源配置文件中。同时连接成功后，应当及时清理保存密码的内存段。</p>
         </div></div>
         </td>
@@ -312,60 +312,58 @@
     修改配置文件odbc.ini中的sslmode参数（require或verify-ca）。
     ```
 
-8.  <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>配置数据库服务器。
-    1.  以操作系统用户omm登录数据库主节点。
-    2.  执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
+8. <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>配置数据库服务器。
+   a.  以操作系统用户omm登录数据库主节点。
+   b.  执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
 
-        ```
-        gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
-        ```
+       ```
+       gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
+       ```
 
-        在DR（Direct Routing，LVS的直接路由DR模式）模式中需要将虚拟IP地址（10.11.12.13）加入到服务器的侦听地址列表中。
+       在DR（Direct Routing，LVS的直接路由DR模式）模式中需要将虚拟IP地址（10.11.12.13）加入到服务器的侦听地址列表中。
 
-        listen\_addresses也可以配置为“\*”或“0.0.0.0”，此配置下将侦听所有网卡，但存在安全风险，不推荐用户使用，推荐用户按照需要配置IP或者主机名，打开侦听。
+       listen\_addresses也可以配置为“\*”或“0.0.0.0”，此配置下将侦听所有网卡，但存在安全风险，不推荐用户使用，推荐用户按照需要配置IP或者主机名，打开侦听。
 
-    3.  执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
+   c. 执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
 
-        ```
-        gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
-        ```
+      ```
+      gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
+      ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >
-        >-   ****
-        >
-        >-   -N all表示openGauss中的所有主机。
-        >
-        >-   -I all表示主机中的所有实例。
-        >
-        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
-        >
-        >-   all表示允许客户端连接到任意的数据库。
-        >
-        >-   jack表示连接数据库的用户。
-        >
-        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
-        >
-        >-   sha256表示连接时jack用户的密码使用sha256算法加密。
+      >![](public_sys-resources/icon-note.gif) **说明：** 
+      >
+      >- -N all表示openGauss中的所有主机。
+      >
+      >-   -I all表示主机中的所有实例。
+      >
+      >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
+      >
+      >-   all表示允许客户端连接到任意的数据库。
+      >
+      >-   jack表示连接数据库的用户。
+      >
+      >-   10.11.12.13/32表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
+      >
+      >-   sha256表示连接时jack用户的密码使用sha256算法加密。
 
-        如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
+      如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
 
-        ```
-        local all all trust
-        ```
+      ```
+      local all all trust
+      ```
 
-        如果将ODBC客户端配置在和要连接的数据库主节点在不同机器上，则需要使用sha256认证方式，如下：
+      如果将ODBC客户端配置在和要连接的数据库主节点在不同机器上，则需要使用sha256认证方式，如下：
 
-        ```
-        host all all xxx.xxx.xxx.xxx/32 sha256
-        ```
+      ```
+      host all all xxx.xxx.xxx.xxx/32 sha256
+      ```
 
-    4.  重启openGauss。
+   d.  重启openGauss。
 
-        ```
-        gs_om -t stop
-        gs_om -t start
-        ```
+       ```
+       gs_om -t stop
+       gs_om -t start
+       ```
 
 9.  在客户端配置环境变量。
 
@@ -410,7 +408,7 @@
 
 ## 常见问题处理<a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_section29040424163013"></a>
 
--   \[UnixODBC\]\[Driver Manager\]Can't open lib 'xxx/xxx/psqlodbcw.so' : file not found.
+-   \[unixODBC\]\[Driver Manager\]Can't open lib 'xxx/xxx/psqlodbcw.so' : file not found.
 
     此问题的可能原因：
 
@@ -420,10 +418,10 @@
 
     -   psqlodbcw.so的依赖库不存在，或者不在系统环境变量中
 
-        确认的办法：ldd一下错误信息中的路径，如果是缺少libodbc.so.1等UnixODBC的库，那么按照“操作步骤”中的方法重新配置UnixODBC，并确保它的安装路径下的lib目录添加到了LD\_LIBRARY\_PATH中；如果是缺少其他库，请将ODBC驱动包中的lib目录添加到LD\_LIBRARY\_PATH中。
+        确认的办法：ldd一下错误信息中的路径，如果是缺少libodbc.so.1等unixODBC的库，那么按照“操作步骤”中的方法重新配置unixODBC，并确保它的安装路径下的lib目录添加到了LD\_LIBRARY\_PATH中；如果是缺少其他库，请将ODBC驱动包中的lib目录添加到LD\_LIBRARY\_PATH中。
 
 
--   \[UnixODBC\]connect to server failed: no such file or directory
+-   \[unixODBC\]connect to server failed: no such file or directory
 
     此问题可能的原因：
 
@@ -466,18 +464,18 @@
 
     此问题的可能原因：
 
-    可执行文件（比如UnixODBC的isql，以下都以isql为例）与数据库驱动（psqlodbcw.so）依赖于不同的odbc的库版本：libodbc.so.1或者libodbc.so.2。此问题可以通过如下方式确认：
+    可执行文件（比如unixODBC的isql，以下都以isql为例）与数据库驱动（psqlodbcw.so）依赖于不同的ODBC的库版本：libodbc.so.1或者libodbc.so.2。此问题可以通过如下方式确认：
 
     ```
     ldd `which isql` | grep odbc
     ldd psqlodbcw.so | grep odbc
     ```
 
-    这时，如果输出的libodbc.so最后的后缀数字不同或者指向不同的磁盘物理文件，那么基本就可以断定是此问题。isql与psqlodbcw.so都会要求加载libodbc.so，这时如果它们加载的是不同的物理文件，便会导致两套完全同名的函数列表，同时出现在同一个可见域里（UnixODBC的libodbc.so.\*的函数导出列表完全一致），产生冲突，无法加载数据库驱动。
+    这时，如果输出的libodbc.so最后的后缀数字不同或者指向不同的磁盘物理文件，那么基本就可以断定是此问题。isql与psqlodbcw.so都会要求加载libodbc.so，这时如果它们加载的是不同的物理文件，便会导致两套完全同名的函数列表，同时出现在同一个可见域里（unixODBC的libodbc.so.\*的函数导出列表完全一致），产生冲突，无法加载数据库驱动。
 
     解决办法：
 
-    确定一个要使用的UnixODBC，然后卸载另外一个（比如卸载库版本号为.so.2的UnixODBC），然后将剩下的.so.1的库，新建一个同名但是后缀为.so.2的软链接，便可解决此问题。
+    确定一个要使用的unixODBC，然后卸载另外一个（比如卸载库版本号为.so.2的unixODBC），然后将剩下的.so.1的库，新建一个同名但是后缀为.so.2的软链接，便可解决此问题。
 
 -   FATAL: Forbid remote connection with trust method!
 
@@ -493,7 +491,7 @@
 
     使用开源客户端碰到此问题，可能原因：
 
-    数据库中存储的口令校验只存储了SHA256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
+    数据库中存储的口令校验只存储了sha256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
@@ -501,7 +499,7 @@
     >
     >-   数据库当用户更新用户口令或者新建用户时，会同时存储两种格式的哈希码，这时将兼容开源的认证协议。
     >
-    >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。
+    >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了sha256格式的哈希，导致仍然无法使用MD5做口令认证。
     >
     >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。
 

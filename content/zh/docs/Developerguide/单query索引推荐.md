@@ -57,7 +57,7 @@ openGauss=# select "table", "column" from gs_index_advise('select name, age, sex
 (1 row)
 ```
 
-则上述语句表明应该在表 t1 上创建一个联合索引 \(age, sex\)， 则可以通过下述命令创建：
+则上述语句表明应该在表 t1 上创建一个联合索引 \(age, sex\)，则可以通过下述命令创建：
 
 ```
 CREATE INDEX idx1 on t1(age, sex);

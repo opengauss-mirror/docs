@@ -31,7 +31,7 @@ GS\_CLIENT\_GLOBAL\_KEYS系统表记录密态等值特性中客户端加密主�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p10187125355311"><a name="p10187125355311"></a><a name="p10187125355311"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p84761096534"><a name="p84761096534"></a><a name="p84761096534"></a>包含此客户端加密主密钥（cmk）的命名空间OID。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p84761096534"><a name="p84761096534"></a><a name="p84761096534"></a>包含此客户端加密主密钥（cmk）的命名空间oid。</p>
 </td>
 </tr>
 <tr id="row9460154275216"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p10712105012310"><a name="p10712105012310"></a><a name="p10712105012310"></a>key_owner</p>

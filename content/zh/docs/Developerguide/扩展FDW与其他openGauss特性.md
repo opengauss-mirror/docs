@@ -21,7 +21,7 @@ openGauss基于PostgreSQL，而PostgreSQL没有内置存储引擎适配器，如
 
 MOT DW机制将指令传递给MOT存储引擎，用于实际建表。同样，我们支持创建索引（create index …）。此功能以前在FDW中不可用，因为表由外部管理，不需要此功能。
 
-为了在MOT FDW中支持两者，ValidateTableDef函数实际上创建了指定的表。它还处理该关系的索引创建，DROP TABLE和DROP INDEX，以及先前在FDW中不支持的VACUUM和ALTER TABLE。
+为了在MOT FDW中支持两者，ValidateTableDef函数实际上创建了指定的表。它还处理该关系的索引创建、DROP TABLE和DROP INDEX以及先前在FDW中不支持的VACUUM和ALTER TABLE。
 
 ## 索引规划与执行的使用方法<a name="section33147611"></a>
 
@@ -48,5 +48,5 @@ MOT DW机制将指令传递给MOT存储引擎，用于实际建表。同样，�
 
 ## 查询本机编译（JIT）<a name="section48756423"></a>
 
-MOT引擎的FDW适配器还包含一个轻量级执行路径，该路径使用LLVM编译器执行JIT编译查询。有关MOT查询本机编译的更多信息可以在**查询本机编译（JIT）**一节中找到。
+MOT引擎的FDW适配器还包含一个轻量级执行路径，该路径使用LLVM编译器执行JIT编译查询。有关MOT查询本机编译的更多信息可以在[MOT查询原生编译（JIT）](MOT查询原生编译_JIT.md)一节中找到。
 

@@ -18,7 +18,7 @@
 
 例如：
 
-no nestloop\(t1 t2 t3\)表示：生成t1，t2，t3三表连接计划时，不使用nestloop。三表连接计划可能是t2 t3先join，再跟t1 join，或t1 t2先join，再跟t3 join。此hint只hint最后一次join的join方式，对于两表连接的方法不hint。如果需要，可以单独指定，例如：任意表均不允许nestloop连接，且希望t2 t3先join，则增加hint：no nestloop\(t2 t3\)。
+no nestloop\(t1 t2 t3\)表示：生成t1、t2、t3三表连接计划时，不使用nestloop。三表连接计划可能是t2 t3先join，再跟t1 join，或t1 t2先join，再跟t3 join。此hint只hint最后一次join的join方式，对于两表连接的方法不hint。如果需要，可以单独指定，例如：任意表均不允许nestloop连接，且希望t2 t3先join，则增加hint：no nestloop\(t2 t3\)。
 
 ## 示例<a name="zh-cn_topic_0237121534_section1127715590585"></a>
 
@@ -29,7 +29,7 @@ explain
 select /*+ nestloop(store_sales store_returns item) */ i_product_name product_name ...
 ```
 
-该hint表示：生成store\_sales，store\_returns和item三表的结果集时，最后的两表关联使用nestloop。生成计划如下所示：
+该hint表示：生成store\_sales、store\_returns和item三表的结果集时，最后的两表关联使用nestloop。生成计划如下所示：
 
 ![](figures/zh-cn_image_0253032870.png)
 

@@ -35,15 +35,15 @@ join table list中指定的表需要满足以下要求，否则会报语义错�
 
 例如：
 
-leading\(t1 t2 t3 t4 t5\)表示：t1，t2，t3，t4，t5先join，五表join顺序及内外表不限。
+leading\(t1 t2 t3 t4 t5\)表示：t1、t2、t3、t4、t5先join，五表join顺序及内外表不限。
 
 leading\(\(t1 t2 t3 t4 t5\)\)表示：t1和t2先join，t2做内表；再和t3 join，t3做内表；再和t4 join，t4做内表；再和t5 join，t5做内表。
 
-leading\(t1 \(t2 t3 t4\) t5\)表示：t2，t3，t4先join，内外表不限；再和t1，t5 join，内外表不限。
+leading\(t1 \(t2 t3 t4\) t5\)表示：t2、t3、t4先join，内外表不限；再和t1、t5 join，内外表不限。
 
-leading\(\(t1 \(t2 t3 t4\) t5\)\)表示：t2，t3，t4先join，内外表不限；在最外层，t1再和t2，t3，t4的join表join，t1为外表，再和t5 join，t5为内表。
+leading\(\(t1 \(t2 t3 t4\) t5\)\)表示：t2、t3、t4先join，内外表不限；在最外层，t1再和t2、t3、t4的join表join，t1为外表，再和t5 join，t5为内表。
 
-leading\(\(t1 \(t2 t3\) t4 t5\)\) leading\(\(t3 t2\)\)表示：t2，t3先join，t2做内表；然后再和t1 join，t2，t3的join表做内表；然后再依次跟t4，t5做join，t4，t5做内表。
+leading\(\(t1 \(t2 t3\) t4 t5\)\) leading\(\(t3 t2\)\)表示：t2、t3先join，t2做内表；然后再和t1 join，t2、t3的join表做内表；然后再依次跟t4、t5做join，t4、t5做内表。
 
 ## 示例<a name="zh-cn_topic_0237121533_section1127715590585"></a>
 

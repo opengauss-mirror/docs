@@ -1,16 +1,16 @@
-# record<a name="EN-US_TOPIC_0245374605"></a>
+# record<a name="EN-US_TOPIC_0000001208139393"></a>
 
-## record Variables<a name="en-us_topic_0237122215_section16992418680"></a>
+## record Variables<a name="en-us_topic_0283136936_en-us_topic_0237122215_section16992418680"></a>
 
 Perform the following operations to create a record variable:
 
 Define a record type and use this type to declare a variable.
 
-## Syntax<a name="en-us_topic_0237122215_section7403195020496"></a>
+## Syntax<a name="en-us_topic_0283136936_en-us_topic_0237122215_section7403195020496"></a>
 
-For the syntax of the record type, see  [Figure 1](#en-us_topic_0237122215_fig092918316312).
+For the syntax of the record type, see  [Figure 1](#en-us_topic_0283136936_en-us_topic_0237122215_fig092918316312).
 
-**Figure  1**  Syntax of the record type<a name="en-us_topic_0237122215_fig092918316312"></a>  
+**Figure  1**  Syntax of the record type<a name="en-us_topic_0283136936_en-us_topic_0237122215_fig092918316312"></a>  
 ![](figures/syntax-of-the-record-type.png "syntax-of-the-record-type")
 
 The above syntax diagram is explained as follows:
@@ -20,21 +20,22 @@ The above syntax diagram is explained as follows:
 -   **datatype**: record data type
 -   **expression**: expression for setting a default value
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->In openGauss:  
->-   When assigning values to record variables, you can:  
->    -   Declare a record type and define member variables of this type when you declare a function or stored procedure.  
->    -   Assign the value of a record variable to another record variable.  
->    -   Use  **SELECT INTO**  or  **FETCH**  to assign values to a record type.  
->    -   Assign the  **NULL**  value to a record variable.  
->-   The  **INSERT**  and  **UPDATE**  statements cannot use a record variable to insert or update data.  
->-   Just like a variable, a record column of the compound type does not have a default value in the declaration.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>In openGauss:
+>-   When assigning values to record variables, you can:
+>    -   Declare a record type and define member variables of this type when you declare a function or stored procedure.
+>    -   Assign the value of a record variable to another record variable.
+>    -   Use  **SELECT INTO**  or  **FETCH**  to assign values to a record type.
+>    -   Assign the  **NULL**  value to a record variable.
+>-   The  **INSERT**  and  **UPDATE**  statements cannot use a record variable to insert or update data.
+>-   Just like a variable, a record column of the compound type does not have a default value in the declaration.
+>-   The data type can be the record type, array type, or set type defined in a stored procedure \(anonymous blocks are not supported\).
 
-## Example<a name="en-us_topic_0237122215_en-us_topic_0059778979_s471412484c0048debf8a78d76cf1a439"></a>
+## Examples<a name="en-us_topic_0283136936_en-us_topic_0237122215_en-us_topic_0059778979_s471412484c0048debf8a78d76cf1a439"></a>
 
 ```
-The table used in the following example is defined as follows:
-postgres=# \d emp_rec
+The table definition used in the following is defined as follows:
+openGauss=# \d emp_rec
                 Table "public.emp_rec"
   Column  |              Type              | Modifiers 
 ----------+--------------------------------+-----------
@@ -48,7 +49,7 @@ postgres=# \d emp_rec
  deptno   | numeric(2,0)                   | 
 
 -- Perform array operations in the function.
-postgres=# CREATE OR REPLACE FUNCTION regress_record(p_w VARCHAR2)
+openGauss=# CREATE OR REPLACE FUNCTION regress_record(p_w VARCHAR2)
 RETURNS
 VARCHAR2  AS $$
 DECLARE
@@ -105,10 +106,10 @@ END;
 $$
 LANGUAGE plpgsql;
 
--- Invoke the function.
-postgres=# CALL regress_record('abc');
+-- Call this function.
+openGauss=# CALL regress_record('abc');
 
 -- Delete the function.
-postgres=# DROP FUNCTION regress_record;
+openGauss=# DROP FUNCTION regress_record;
 ```
 

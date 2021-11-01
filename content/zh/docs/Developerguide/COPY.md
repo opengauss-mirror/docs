@@ -8,7 +8,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 ## 注意事项<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_sc996fd2c14664963bae3e1e0ce655441"></a>
 
--   当参数enable\_copy\_server\_files关闭时，只允许初始用户执行COPY FROM FILENAME或COPY TO FILENAME命令，当参数enable\_copy\_server\_files打开，允许具有SYSADMIN权限的用户或继承了内置角色gs\_role\_copy\_files权限的用户执行，但默认禁止对数据库配置文件，密钥文件，证书文件和审计日志执行COPY FROM FILENAME或COPY TO FILENAME，以防止用户越权查看或修改敏感文件。
+-   当参数enable\_copy\_server\_files关闭时，只允许初始用户执行COPY FROM FILENAME或COPY TO FILENAME命令，当参数enable\_copy\_server\_files打开，允许具有SYSADMIN权限的用户或继承了内置角色gs\_role\_copy\_files权限的用户执行，但默认禁止对数据库配置文件、密钥文件、证书文件和审计日志执行COPY FROM FILENAME或COPY TO FILENAME，以防止用户越权查看或修改敏感文件。
 -   COPY只能用于表，不能用于视图。
 -   COPY TO需要读取的表的select权限，copy from需要插入的表的insert权限。
 -   如果声明了一个字段列表，COPY将只在文件和表之间拷贝已声明字段的数据。如果表中有任何不在字段列表里的字段，COPY FROM将为那些字段插入缺省值。
@@ -17,7 +17,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 -   数据的结束可以用一个只包含反斜杠和句点（\\.）的行表示。如果从文件中读取数据，数据结束的标记是不必要的；如果在客户端应用之间拷贝数据，必须要有结束标记。
 -   COPY FROM中\\N为空字符串，如果要输入实际数据值\\N ，使用\\\\N。
 
--   COPY FROM不支持在导入过程中对数据做预处理（比如说表达式运算，填充指定默认值等）。如果需要在导入过程中对数据做预处理，用户需先把数据导入到临时表中，然后执行SQL语句通过运算插入到表中，但此方法会导致I/O膨胀，降低导入性能。
+-   COPY FROM不支持在导入过程中对数据做预处理（比如说表达式运算、填充指定默认值等）。如果需要在导入过程中对数据做预处理，用户需先把数据导入到临时表中，然后执行SQL语句通过运算插入到表中，但此方法会导致I/O膨胀，降低导入性能。
 -   COPY FROM在遇到数据格式错误时会回滚事务，但没有足够的错误信息，不方便用户从大量的原始数据中定位错误数据。
 -   COPY FROM/TO适合低并发，本地小数据量导入导出。
 -   目标表存在trigger，支持COPY操作。
@@ -245,7 +245,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         >
         >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。
         >
-        >-   TEXT格式数据的分隔符不能包含： 小写字母、数字和特殊字符.\\。
+        >-   TEXT格式数据的分隔符不能包含：小写字母、数字和特殊字符.\\。
         >
         >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。
         >
@@ -275,7 +275,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
     -   HEADER
 
-        指定导出数据文件是否包含标题行，标题行一般用来描述表中每个字段的信息。header只能用于CSV，FIXED格式的文件中。
+        指定导出数据文件是否包含标题行，标题行一般用来描述表中每个字段的信息。header只能用于CSV、FIXED格式的文件中。
 
         在导入数据时，如果header选项为on，则数据文本第一行会被识别为标题行，会忽略此行。如果header为off，而数据文件中第一行会被识别为数据。
 
@@ -366,7 +366,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         >导入非法字符容错规则如下：
         >（1）对于'\\0'，容错后转换为空格；
         >（2）对于其他非法字符，容错后转换为问号；
-        >（3）若compatible\_illegal\_chars为true/on标识导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如"illegal chars conversion may confuse COPY escape 0x20"等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
+        >（3）若compatible\_illegal\_chars为true/on标识导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如“illegal chars conversion may confuse COPY escape 0x20”等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
 
     -   FILL\_MISSING\_FIELDS
 
@@ -427,7 +427,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
     -   HEADER
 
-        指定导出数据文件是否包含标题行，标题行一般用来描述表中每个字段的信息。header只能用于CSV，FIXED格式的文件中。
+        指定导出数据文件是否包含标题行，标题行一般用来描述表中每个字段的信息。header只能用于CSV、FIXED格式的文件中。
 
         在导入数据时，如果header选项为on，则数据文本第一行会被识别为标题行，会忽略此行。如果header为off，而数据文件中第一行会被识别为数据。
 
@@ -539,7 +539,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         >导入非法字符容错规则如下：
         >（1）对于'\\0'，容错后转换为空格；
         >（2）对于其他非法字符，容错后转换为问号；
-        >（3）若compatible\_illegal\_chars为true/on标识，导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如"illegal chars conversion may confuse COPY escape 0x20"等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
+        >（3）若compatible\_illegal\_chars为true/on标识，导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如“illegal chars conversion may confuse COPY escape 0x20”等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
 
     -   FILL\_MISSING\_FIELDS
 

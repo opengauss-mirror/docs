@@ -2,7 +2,7 @@
 
 持久性是指长期的数据保护（也称为磁盘持久化）。持久性意味着存储的数据不会遭受任何形式的退化或损坏，因此数据不会丢失或损坏。持久性可确保在有计划停机（例如维护）或计划外崩溃（例如电源故障）后数据和MOT引擎恢复到一致状态。
 
-内存存储是易失的，需要电力来维护所存储的信息。另一方面，磁盘存储是非易失性的，这意味着它不需要电源来维护存储的信息，因此不用担心停电。MOT同时使用这两种类型的存储。内存中存储了所有数据，同时将事务性更改持久化到磁盘，并保持频繁的定期[MOT检查点](#section182761535131617)，以确保在关机时恢复数据。
+内存存储是易失的、需要电力来维护所存储的信息。另一方面，磁盘存储是非易失性的，这意味着它不需要电源来维护存储的信息，因此不用担心停电。MOT同时使用这两种类型的存储。内存中存储了所有数据，同时将事务性更改持久化到磁盘，并保持频繁的定期[MOT检查点](#section182761535131617)，以确保在关机时恢复数据。
 
 用户必须保证有足够的磁盘空间用于日志记录和检查点操作。检查点使用单独的驱动器，通过减少磁盘I/O负载来提高性能。
 
@@ -10,7 +10,7 @@
 
 若要设置持久性：
 
-为保证严格一致性，请在postgres.conf配置文件中将参数sync\_commit配置为On。
+为保证严格一致性，请在postgresql.conf配置文件中将参数sync\_commit配置为on。
 
 MOT的WAL重做日志和检查点开启持久性，下面将详细介绍。
 
@@ -104,10 +104,10 @@ WAL重做日志将保留所有表行修改，直到执行检查点（如上所�
 
 配置日志记录
 
-1.  在postgres.conf配置文件中的sync\_commit \(On = Synchronous\)参数中指定是否执行同步或异步事务日志记录。
+1.  在postgresql.conf配置文件中的sync\_commit \(On = Synchronous\)参数中指定是否执行同步或异步事务日志记录。
 2.  在重做日志章节中的mot.conf配置文件里，将enable\_redo\_log参数设置为True。
 
-如果已选择事务日志记录的同步模式（如上文所述，synchronous\_commit = On），则在mot.conf配置文件中的enable\_group\_commit参数中指定Group Synchronous Redo Logging选项或Synchronous Redo Logging选项。如果选择Group Synchronous Redo Logging，必须在mot.conf文件中定义以下阈值，决定何时将一组事务记录在WAL中。
+如果已选择事务日志记录的同步模式（如上文所述，synchronous\_commit = on），则在mot.conf配置文件中的enable\_group\_commit参数中指定Group Synchronous Redo Logging选项或Synchronous Redo Logging选项。如果选择Group Synchronous Redo Logging，必须在mot.conf文件中定义以下阈值，决定何时将一组事务记录在WAL中。
 
 -   group\_commit\_size：一组已提交的事务数。例如，16表示当同一组中的16个事务已由它们的客户端应用程序提交时，则针对16个事务中的每个事务，在磁盘的WAL重做日志中写入一个条目。
 -   group\_commit\_timeout：超时时间，单位为毫秒。例如，10表示在10毫秒之后，为同一组由客户端应用程序在最近10毫秒内提交的每个事务，在磁盘的WAL重做日志中写入一个条目。
@@ -129,7 +129,7 @@ WAL重做日志将保留所有表行修改，直到执行检查点（如上所�
 
 **配置检查点**
 
-检查点在mot.conf文件中的CHECKPOINT;配置。有关这些配置参数的说明，请参阅[MOT检查点](#section182761535131617)。
+检查点在mot.conf文件中的CHECKPOINT配置。有关这些配置参数的说明，请参阅[MOT检查点](#section182761535131617)。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
 >生产部署时，该值必须为TRUE \#enable\_Checkpoint = true。FALSE值只能用于测试。

@@ -83,7 +83,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p1353220187514"><a name="p1353220187514"></a><a name="p1353220187514"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p105329180512"><a name="p105329180512"></a><a name="p105329180512"></a>WIN950, Windows950</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p105329180512"><a name="p105329180512"></a><a name="p105329180512"></a>WIN950，Windows950</p>
     </td>
     </tr>
     <tr id="row1353215183517"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p85338186510"><a name="p85338186510"></a><a name="p85338186510"></a>EUC_CN</p>
@@ -188,7 +188,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p35391818754"><a name="p35391818754"></a><a name="p35391818754"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p453971811510"><a name="p453971811510"></a><a name="p453971811510"></a>WIN936, Windows936</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p453971811510"><a name="p453971811510"></a><a name="p453971811510"></a>WIN936，Windows936</p>
     </td>
     </tr>
     <tr id="row153961813513"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1453914181854"><a name="p1453914181854"></a><a name="p1453914181854"></a>ISO_8859_5</p>
@@ -473,7 +473,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p455631813517"><a name="p455631813517"></a><a name="p455631813517"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p175564181352"><a name="p175564181352"></a><a name="p175564181352"></a>Mskanji, ShiftJIS, WIN932, Windows932</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p175564181352"><a name="p175564181352"></a><a name="p175564181352"></a>Mskanji，ShiftJIS，WIN932，Windows932</p>
     </td>
     </tr>
     <tr id="row17556161812515"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p18557161816514"><a name="p18557161816514"></a><a name="p18557161816514"></a>SHIFT_JIS_2004</p>
@@ -518,7 +518,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p35596189516"><a name="p35596189516"></a><a name="p35596189516"></a>1-2</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p8559618750"><a name="p8559618750"></a><a name="p8559618750"></a>WIN949, Windows949</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p8559618750"><a name="p8559618750"></a><a name="p8559618750"></a>WIN949，Windows949</p>
     </td>
     </tr>
     <tr id="row175591518459"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1955915182510"><a name="p1955915182510"></a><a name="p1955915182510"></a>UTF8</p>
@@ -698,7 +698,7 @@ CREATE DATABASE database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p1857121818514"><a name="p1857121818514"></a><a name="p1857121818514"></a>1</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p9571018856"><a name="p9571018856"></a><a name="p9571018856"></a>ABC, TCVN, TCVN5712, VSCII</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p9571018856"><a name="p9571018856"></a><a name="p9571018856"></a>ABC, TCVN，TCVN5712，VSCII</p>
     </td>
     </tr>
     </tbody>
@@ -712,7 +712,7 @@ CREATE DATABASE database_name
     >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。
 
     >-   当指定的字符编码集为GBK时，部分中文生僻字无法直接作为对象名。这是因为GBK第二个字节的编码范围在0x40-0x7E之间时，字节编码与ASCII字符@A-Z\[\\\]^\_\`a-z\{|\}重叠。其中@\[\\\]^\_'\{|\}是数据库中的操作符，直接作为对象名时，会语法报错。例如“侤”字，GBK16进制编码为0x8240，第二个字节为0x40，与ASCII“@”符号编码相同，因此无法直接作为对象名使用。如果确实要使用，可以在创建和访问对象时，通过增加双引号来规避这个问题。
-    >-  若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换，例如：若服务器端编码为gb18030，由于当前数据库不支持gb18030与gbk的相互转换，所以此时设置客户端编码格式为gbk时，会报错"Conversion between GB18030 and GBK is not supported."。数据库能够支持的所有的编码格式转换详见系统表pg_conversion。
+    >-  若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换，例如：若服务器端编码为gb18030，由于当前数据库不支持gb18030与gbk的相互转换，所以此时设置客户端编码格式为gbk时，会报错“Conversion between GB18030 and GBK is not supported.”。数据库能够支持的所有的编码格式转换详见系统表pg_conversion。
 
 -   **LC\_COLLATE \[ = \] lc\_collate**
 

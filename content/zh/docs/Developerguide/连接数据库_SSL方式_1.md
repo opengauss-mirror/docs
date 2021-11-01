@@ -4,10 +4,10 @@
 
 1.  使用\*.ini文件（python的configparser包可以解析这种类型的配置文件）保存数据库连接的配置信息。
 2.  在连接选项中添加SSL连接相关参数：sslmode、sslcert、sslkey、sslrootcert。
-    1.  sslmode：可选项见[表1](#table167989176183)。
-    2.  sslcert：客户端证书路径。
-    3.  sslkey：客户端密钥路径。
-    4.  sslrootcert：根证书路径。
+    a.  sslmode：可选项见[表1](#table167989176183)。
+    b.  sslcert：客户端证书路径。
+    c.  sslkey：客户端密钥路径。
+    d.  sslrootcert：根证书路径。
 
 3.  使用psycopg2.connect函数获得connection对象。
 4.  使用connection对象创建cursor对象。
