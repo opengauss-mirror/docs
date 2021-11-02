@@ -18,7 +18,7 @@ DROP CAST [ IF EXISTS ] (source_type AS target_type) [ CASCADE | RESTRICT ]
 
 ## 参数说明<a name="section62781959163314"></a>
 
--   I**F EXISTS**
+-   **IF EXISTS**
 
     如果指定的转换不存在，那么发出一个 notice 而不是抛出一个错误。
 
