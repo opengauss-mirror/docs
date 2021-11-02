@@ -20,7 +20,7 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 -   使用oracle\_fdw需要连接Oracle，Oracle server请自行安装。
 
--   加载oracle\_fdw扩展：**CREATE EXTENSION oracle\_fdw;**
+-   加载oracle\_fdw扩展：**CREATE EXTENSION oracle\_fdw**
 
 -   创建服务器对象：**CREATE SERVER**
 
@@ -36,7 +36,7 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 -   删除服务器对象：**DROP SERVER**
 
--   删除扩展：**DROP EXTENSION oracle\_fdw；**
+-   删除扩展：**DROP EXTENSION oracle\_fdw**
 
 
 ## 常见问题<a name="section41707373437"></a>

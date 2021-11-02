@@ -334,48 +334,48 @@ MOT从内部返回Postgres代码（见下文）到数据库包，数据库封装
 </tr>
 <tr id="row32781246"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p38035264"><a name="p38035264"></a><a name="p38035264"></a>&lt;recovery message&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p38612917"><a name="p38612917"></a><a name="p38612917"></a>ERRCODE_CONFIG_FILE_ERROR</p>
 </td>
 </tr>
 <tr id="row11971938"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p30202945"><a name="p30202945"></a><a name="p30202945"></a>&lt;recovery message&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p56158500"><a name="p56158500"></a><a name="p56158500"></a>ERRCODE_INVALID_TABLE_</p>
 <p id="p35664454"><a name="p35664454"></a><a name="p35664454"></a>DEFINITION</p>
 </td>
 </tr>
 <tr id="row52544632"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p28256793"><a name="p28256793"></a><a name="p28256793"></a>Memory engine – Failed to perform commit prepared.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p38136927"><a name="p38136927"></a><a name="p38136927"></a>ERRCODE_INVALID_TRANSACTION_</p>
 <p id="p7688030"><a name="p7688030"></a><a name="p7688030"></a>STATE</p>
 </td>
 </tr>
 <tr id="row2083414"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p34538808"><a name="p34538808"></a><a name="p34538808"></a>Invalid option &lt;option name&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p49598947"><a name="p49598947"></a><a name="p49598947"></a>ERRCODE_FDW_INVALID_OPTION_</p>
 <p id="p43737343"><a name="p43737343"></a><a name="p43737343"></a>NAME</p>
 </td>
 </tr>
 <tr id="row58091771"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p7813024"><a name="p7813024"></a><a name="p7813024"></a>Invalid memory allocation request size.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p57189295"><a name="p57189295"></a><a name="p57189295"></a>ERRCODE_INVALID_PARAMETER_</p>
 <p id="p44941608"><a name="p44941608"></a><a name="p44941608"></a>VALUE</p>
 </td>
 </tr>
 <tr id="row1821289"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p13306703"><a name="p13306703"></a><a name="p13306703"></a>Memory is temporarily unavailable.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p63761346"><a name="p63761346"></a><a name="p63761346"></a>ERRCODE_OUT_OF_LOGICAL_</p>
 <p id="p36981208"><a name="p36981208"></a><a name="p36981208"></a>MEMORY</p>
 </td>
 </tr>
 <tr id="row64395422"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p48646727"><a name="p48646727"></a><a name="p48646727"></a>Could not serialize access due to concurrent update.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p1422366"><a name="p1422366"></a><a name="p1422366"></a>ERRCODE_T_R_SERIALIZATION_</p>
 <p id="p12801297"><a name="p12801297"></a><a name="p12801297"></a>FAILURE</p>
 </td>
@@ -384,33 +384,33 @@ MOT从内部返回Postgres代码（见下文）到数据库包，数据库封装
 <p id="p36123328"><a name="p36123328"></a><a name="p36123328"></a>Cannot create MOT tables while incremental checkpoint is enabled.</p>
 <p id="p56674502"><a name="p56674502"></a><a name="p56674502"></a>Re-index is not supported for memory tables.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p58303330"><a name="p58303330"></a><a name="p58303330"></a>ERRCODE_FDW_OPERATION_NOT_</p>
 <p id="p54967923"><a name="p54967923"></a><a name="p54967923"></a>SUPPORTED</p>
 </td>
 </tr>
 <tr id="row24949262"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p7624367"><a name="p7624367"></a><a name="p7624367"></a>Allocation of table metadata failed.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p27374575"><a name="p27374575"></a><a name="p27374575"></a>ERRCODE_OUT_OF_MEMORY</p>
 </td>
 </tr>
 <tr id="row45044590"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p24733137"><a name="p24733137"></a><a name="p24733137"></a>Database with OID %u does not exist.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p4884971"><a name="p4884971"></a><a name="p4884971"></a>ERRCODE_UNDEFINED_DATABASE</p>
 </td>
 </tr>
 <tr id="row43964741"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p4374262"><a name="p4374262"></a><a name="p4374262"></a>Value exceeds maximum precision: %d.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p44048476"><a name="p44048476"></a><a name="p44048476"></a>ERRCODE_NUMERIC_VALUE_OUT_</p>
 <p id="p60891971"><a name="p60891971"></a><a name="p60891971"></a>OF_RANGE</p>
 </td>
 </tr>
 <tr id="row11156835"><td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.1 "><p id="p31288405"><a name="p31288405"></a><a name="p31288405"></a>You have reached a maximum logical capacity %lu of allowed %lu.</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="30.612244897959183%" headers="mcps1.2.4.1.2 ">-</td>
 <td class="cellrowborder" valign="top" width="34.69387755102041%" headers="mcps1.2.4.1.3 "><p id="p64323616"><a name="p64323616"></a><a name="p64323616"></a>ERRCODE_OUT_OF_LOGICAL_</p>
 <p id="p42041636"><a name="p42041636"></a><a name="p42041636"></a>MEMORY</p>
 </td>

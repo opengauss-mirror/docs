@@ -22,7 +22,7 @@ gs_om -t start
 第一次使用数据库，必须修改omm用户密码，使用如下语句。
 
 ```
-alter role omm identified by ‘新密码’ replace ‘旧密码’;
+alter role omm identified by '新密码' replace '旧密码';
 ```
 
 如果忘记omm密码，无法进行修改，可以使用如下命令关闭密码修改设置。
