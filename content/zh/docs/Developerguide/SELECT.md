@@ -147,128 +147,123 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   手动输入列名，多个列之间用英文逗号（,）分隔。
     -   可以是FROM子句里面计算出来的字段。
 
--   **FROM子句**
+- **FROM子句**
 
-    为SELECT声明一个或者多个源表。
+  为SELECT声明一个或者多个源表。
 
-    FROM子句涉及的元素如下所示。
+  FROM子句涉及的元素如下所示。
 
-    -   table\_name
+  -   table\_name
 
-        表名或视图名，名称前可加上模式名，如：schema\_name.table\_name。
+      表名或视图名，名称前可加上模式名，如：schema\_name.table\_name。
 
-    -   alias
+  -   alias
 
-        给表或复杂的表引用起一个临时的表别名，以便被其余的查询引用。
+      给表或复杂的表引用起一个临时的表别名，以便被其余的查询引用。
 
-        别名用于缩写或者在自连接中消除歧义。如果提供了别名，它就会完全隐藏表的实际名称。
+      别名用于缩写或者在自连接中消除歧义。如果提供了别名，它就会完全隐藏表的实际名称。
 
-    -   TABLESAMPLE  _sampling\_method_  \(  _argument_  \[, ...\] \) \[ REPEATABLE \(  _seed_  \) \]
+  -   TABLESAMPLE  _sampling\_method_  \(  _argument_  \[, ...\] \) \[ REPEATABLE \(  _seed_  \) \]
 
-        _table\_name_之后的TABLESAMPLE子句表示应该用指定的_sampling\_method_来检索表中行的子集。
+      _table\_name_之后的TABLESAMPLE子句表示应该用指定的_sampling\_method_来检索表中行的子集。
 
-        可选的REPEATABLE子句指定一个用于产生采样方法中随机数的_种子_数。种子值可以是任何非空常量值。如果查询时表没有被更改，指定相同种子和_argument_值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
+      可选的REPEATABLE子句指定一个用于产生采样方法中随机数的_种子_数。种子值可以是任何非空常量值。如果查询时表没有被更改，指定相同种子和_argument_值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
 
-    -   TIMECAPSULE \{ TIMESTAMP | CSN \} expression
+  - TIMECAPSULE \{ TIMESTAMP | CSN \} expression
 
-        查询指定CSN点或者指定时间点表的内容。
+    查询指定CSN点或者指定时间点表的内容。
 
-        目前不支持闪回查询的表：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、分区表、视图、序列表、Hbkt表、共享表、继承表、带有PARTIAL CLUSTER KEY约束的表。
+    目前不支持闪回查询的表：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、分区表、视图、序列表、Hbkt表、共享表、继承表、带有PARTIAL CLUSTER KEY约束的表。
 
-        -   TIMECAPSULE TIMESTAMP
+    - TIMECAPSULE TIMESTAMP
 
-            关键字，闪回查询的标识，根据date日期，闪回查找指定时间点的结果集。date日期必须是一个过去有效的时间戳。
+      关键字，闪回查询的标识，根据date日期，闪回查找指定时间点的结果集。date日期必须是一个过去有效的时间戳。
 
-        -   TIMECAPSULE CSN
+    - TIMECAPSULE CSN
 
-            关键字，闪回查询的标识，根据表的CSN闪回查询指定CSN点的结果集。其中CSN可从gs\_txn\_snapshot记录的snpcsn号查得。
+      关键字，闪回查询的标识，根据表的CSN闪回查询指定CSN点的结果集。其中CSN可从gs_txn_snapshot记录的snpcsn号查得。
 
-            >![](public_sys-resources/icon-note.gif) **说明：** 
-            >
-            >-   闪回查询不能跨越影响表结构或物理存储的语句，否则会报错。即闪回点和当前点之间，如果执行过修改表结构或影响物理存储的语句（DDL、DCL、VACUUM FULL），则闪回失败，报错:ERROR: The table definition of T1 has been changed。
-            >
-            >-   闪回点过旧时，因闪回版本被回收等导致无法获取旧版本会导致闪回失败，报错：Restore point too old。可通过将version\_retention\_age和vacuum\_defer\_cleanup\_age设置成同值，配置闪回功能旧版本保留期限，取值范围是0\~1000000，值为0表示VACUUM不会延迟清除无效的行存记录。
-            >
-            >-   通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
+      > ![img](https://opengauss.org/zh/docs/latest/docs/Developerguide/public_sys-resources/icon-note.gif) **说明：**
+      >
+      > - 闪回查询不能跨越影响表结构或物理存储的语句，否则会报错。即闪回点和当前点之间，如果执行过修改表结构或影响物理存储的语句（DDL、DCL、VACUUM FULL），则闪回失败，报错:ERROR: The table definition of T1 has been changed。
+      > - 闪回点过旧时，因闪回版本被回收等导致无法获取旧版本会导致闪回失败，报错：Restore point too old。可通过将version_retention_age和vacuum_defer_cleanup_age设置成同值，配置闪回功能旧版本保留期限，取值范围是0~1000000，值为0表示VACUUM不会延迟清除无效的行存记录。
+      > - 通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
 
+    - column_alias
 
-    -   column\_alias
-    
-        列别名。
-    
-    -   PARTITION
-    
-        查询分区表的某个分区的数据。
-    
-    -   partition\_name
-    
-        分区名。
-    
-    -   partition\_value
-    
-        指定的分区键值。在创建分区表时，如果指定了多个分区键，可以通过PARTITION FOR子句指定的这一组分区键的值，唯一确定一个分区。
-    
-    -   subquery
-    
-        FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。
-    
-    -   with\_query\_name
-    
-        WITH子句同样可以作为FROM子句的源，可以通过WITH查询的名称对其进行引用。
-    
-    -   function\_name
-    
-        函数名称。函数调用也可以出现在FROM子句中。
-    
-    -   join\_type
-    
-        有5种类型，如下所示。
-    
-        -   \[ INNER \] JOIN
-    
-            一个JOIN子句组合两个FROM项。可使用圆括弧以决定嵌套的顺序。如果没有圆括弧，JOIN从左向右嵌套。
-    
-            在任何情况下，JOIN都比逗号分隔的FROM项绑定得更紧。
-    
-        -   LEFT \[ OUTER \] JOIN
-    
-            返回笛卡尔积中所有符合连接条件的行，再加上左表中通过连接条件没有匹配到右表行的那些行。这样，左边的行将扩展为生成表的全长，方法是在那些右表对应的字段位置填上NULL。请注意，只在计算匹配的时候，才使用JOIN子句的条件，外层的条件是在计算完毕之后施加的。
-    
-        -   RIGHT \[ OUTER \] JOIN
-    
-            返回所有内连接的结果行，加上每个不匹配的右边行（左边用NULL扩展）。
-    
-            这只是一个符号上的方便，因为总是可以把它转换成一个LEFT OUTER JOIN，只要把左边和右边的输入互换位置即可。
-    
-        -   FULL \[ OUTER \] JOIN
-    
-            返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
-    
-        -   CROSS JOIN
-    
-            CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
-    
-            >![](public_sys-resources/icon-note.gif) **说明：** 
-            >必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON、join\_condition、USING \(join\_column \[， ...\]\) 之一。但是它们不能出现在CROSS JOIN中。
+      列别名。
 
+    - PARTITION
 
-        其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
-    
-    -   ON join\_condition
-    
-        连接条件，用于限定连接中的哪些行是匹配的。如：ON left\_table.a = right\_table.a。
-    
-    -   USING\(join\_column\[，...\]\)
-    
-        ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ... 的简写。要求对应的列必须同名。
-    
-    -   NATURAL
-    
-        NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
-    
-    -   from item
-    
-        用于连接的查询源对象的名称。
+      查询分区表的某个分区的数据。
+
+    - partition_name
+
+      分区名。
+
+    - partition_value
+
+      指定的分区键值。在创建分区表时，如果指定了多个分区键，可以通过PARTITION FOR子句指定的这一组分区键的值，唯一确定一个分区。
+
+    - subquery
+
+      FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。
+
+    - with_query_name
+
+      WITH子句同样可以作为FROM子句的源，可以通过WITH查询的名称对其进行引用。
+
+    - function_name
+
+      函数名称。函数调用也可以出现在FROM子句中。
+
+    - join_type
+
+      有5种类型，如下所示。
+
+      - [ INNER ] JOIN
+
+        一个JOIN子句组合两个FROM项。可使用圆括弧以决定嵌套的顺序。如果没有圆括弧，JOIN从左向右嵌套。
+
+        在任何情况下，JOIN都比逗号分隔的FROM项绑定得更紧。
+
+      - LEFT [ OUTER ] JOIN
+
+        返回笛卡尔积中所有符合连接条件的行，再加上左表中通过连接条件没有匹配到右表行的那些行。这样，左边的行将扩展为生成表的全长，方法是在那些右表对应的字段位置填上NULL。请注意，只在计算匹配的时候，才使用JOIN子句的条件，外层的条件是在计算完毕之后施加的。
+
+      - RIGHT [ OUTER ] JOIN
+
+        返回所有内连接的结果行，加上每个不匹配的右边行（左边用NULL扩展）。
+
+        这只是一个符号上的方便，因为总是可以把它转换成一个LEFT OUTER JOIN，只要把左边和右边的输入互换位置即可。
+
+      - FULL [ OUTER ] JOIN
+
+        返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
+
+      - CROSS JOIN
+
+        CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
+
+        > ![img](https://opengauss.org/zh/docs/latest/docs/Developerguide/public_sys-resources/icon-note.gif) **说明：** 必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON、join_condition、USING (join_column [， …]) 之一。但是它们不能出现在CROSS JOIN中。
+
+      其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
+
+    - ON join_condition
+
+      连接条件，用于限定连接中的哪些行是匹配的。如：ON left_table.a = right_table.a。
+
+    - USING(join_column[，…])
+
+      ON left_table.a = right_table.a AND left_table.b = right_table.b … 的简写。要求对应的列必须同名。
+
+    - NATURAL
+
+      NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
+
+    - from item
+
+      用于连接的查询源对象的名称。
 
 
 -   **WHERE子句**
@@ -314,38 +309,42 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     与GROUP BY子句配合用来选择特殊的组。HAVING子句将组的一些属性与一个常数值比较，只有满足HAVING子句中的逻辑表达式的组才会被提取出来。
 
--   **WINDOW子句**
+- **WINDOW子句**
 
-    一般形式为WINDOW window\_name AS \( window\_definition \) \[， ...\]，window\_name是可以被随后的窗口定义所引用的名称，window\_definition可以是以下的形式：
+  一般形式为WINDOW window\_name AS \( window\_definition \) \[， ...\]，window\_name是可以被随后的窗口定义所引用的名称，window\_definition可以是以下的形式：
 
-    \[ existing\_window\_name \]
+  ```
+  [ existing\_window\_name \]
+  
+  [ PARTITION BY expression \[, ...\] \]
+  
+  [ ORDER BY expression \[ ASC | DESC | USING operator \] \[ NULLS \{ FIRST | LAST \} \] \[, ...\] \]
+  
+  [ frame\_clause \]
+  ```
 
-    \[ PARTITION BY expression \[, ...\] \]
+  frame\_clause为窗函数定义一个窗口框架window frame，窗函数（并非所有）依赖于框架，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
 
-    \[ ORDER BY expression \[ ASC | DESC | USING operator \] \[ NULLS \{ FIRST | LAST \} \] \[, ...\] \]
+  ```
+  [ RANGE | ROWS \] frame\_start
+  
+  [ RANGE | ROWS \] BETWEEN frame\_start AND frame\_end
+  
+  frame\_start和frame\_end可以是：
+  
+  UNBOUNDED PRECEDING
+  
+  value PRECEDING
+  
+  CURRENT ROW
+  
+  value FOLLOWING
+  
+  UNBOUNDED FOLLOWING
+  ```
 
-    \[ frame\_clause \]
-
-    frame\_clause为窗函数定义一个窗口框架window frame，窗函数（并非所有）依赖于框架，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
-
-    \[ RANGE | ROWS \] frame\_start
-
-    \[ RANGE | ROWS \] BETWEEN frame\_start AND frame\_end
-
-    frame\_start和frame\_end可以是：
-
-    UNBOUNDED PRECEDING
-
-    value PRECEDING
-
-    CURRENT ROW
-
-    value FOLLOWING
-
-    UNBOUNDED FOLLOWING
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
 
 -   **UNION子句**
 
