@@ -23,10 +23,10 @@ record类型的语法参见[图1](#zh-cn_topic_0237122215_fig092918316312)。
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >在openGauss中：  
 >-   record类型变量的赋值支持：  
->    在函数或存储过程的声明阶段，声明一个record类型，并且可以在该类型中定义成员变量。  
->    一个record变量到另一个record变量的赋值。  
->    SELECT INTO和FETCH向一个record类型的变量中赋值。  
->    将一个NULL值赋值给一个record变量。  
+>    1. 在函数或存储过程的声明阶段，声明一个record类型，并且可以在该类型中定义成员变量。  
+>    2. 一个record变量到另一个record变量的赋值。  
+>    3. SELECT INTO和FETCH向一个record类型的变量中赋值。  
+>    4. 将一个NULL值赋值给一个record变量。  
 >-   不支持INSERT和UPDATE语句使用record变量进行插入数据和更新数据。  
 >-   如果成员有复合类型，在声明阶段不支持指定默认值，该行为同声明阶段的变量一样。
 >

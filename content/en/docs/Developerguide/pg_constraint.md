@@ -218,5 +218,6 @@
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   **consrc**  is not updated when referenced objects change and does not track new column names. Instead of relying on this column to update, you are advised to use  **pg\_get\_constraintdef\(\)**  to extract the definition of a check constraint.
+>
 >-   **pg\_class.relchecks**  must agree with the number of check-constraint entries found in the table for each relationship.
 

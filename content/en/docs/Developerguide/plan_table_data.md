@@ -95,6 +95,8 @@
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   **PLAN\_TABLE\_DATA**  records data of all users and sessions on the current node. Only administrators can access all the data. Common users can view their own data in the  [PLAN\_TABLE](plan_table.md)  view.
+>
 >-   Data is automatically inserted into  **PLAN\_TABLE\_DATA**  after  **EXPLAIN PLAN**  is executed. Therefore, do not manually insert data into or update data in  **PLAN\_TABLE\_DATA**. Otherwise, data in  **PLAN\_TABLE\_DATA**  may be disordered. To delete data from  **PLAN\_TABLE\_DATA**, you are advised to use the  [PLAN\_TABLE](plan_table.md)  view.
+>
 >-   Information in the  **statement\_id**,  **object\_name**,  **object\_owner**, and  **projection**  columns is stored in letter cases specified by users and information in other columns is stored in uppercase.
 

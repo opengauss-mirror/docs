@@ -53,19 +53,6 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**: empty
 
-## default\_storage\_nodegroup<a name="en-us_topic_0283136752_en-us_topic_0237124732_section1785192713303"></a>
-
-**Parameter description**: Specifies the Node Group where a table is created by default. This parameter takes effect only for ordinary tables.
-
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
-
--   **installation**  indicates that tables will be created in the Node Group created during database installation.
--   A value other than  **installation**  indicates that tables will be created in the Node Group specified by this parameter.
-
-**Value range**: a string
-
-**Default value**:  **installation**
-
 ## temp\_tablespaces<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sd5bfdc9f2696411894b2912cf3f23fcc"></a>
 
 **Parameter description**: Specifies one or more tablespaces to which temporary objects \(temporary tables and their indexes\) will be created when a CREATE command does not explicitly specify a tablespace. Temporary files for sorting large data sets are created in these tablespaces.

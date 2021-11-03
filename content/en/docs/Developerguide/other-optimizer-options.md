@@ -109,19 +109,6 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Default value**:  **on**
 
-## enable\_light\_proxy<a name="en-us_topic_0283137548_en-us_topic_0237124743_section46891552174813"></a>
-
-**Parameter description**: Specifies whether the optimizer optimizes the execution of simple queries on the primary node of the databases. This parameter does not take effect if the character set of the application side does not match that of the kernel side. You are advised to set the character set to UTF8 when creating a database.
-
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: Boolean
-
--   **on**  indicates that the optimizer optimizes the execution of simple queries on the primary node of the databases.
--   **off**  indicates that the optimizer does not optimize the execution.
-
-**Default value**:  **on**
-
 ## enable\_global\_plancache<a name="en-us_topic_0283137548_section1062361853620"></a>
 
 **Parameter description**: Specifies whether to share the cache of the PBE query execution plan. Enabling this function can reduce the memory usage of database nodes in high concurrency scenarios.

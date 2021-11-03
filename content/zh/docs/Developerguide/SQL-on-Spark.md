@@ -300,6 +300,7 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 </tbody>
 </table>
 
+
 ## **相关链接**<a name="section67639236412"></a>
 
 [CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
