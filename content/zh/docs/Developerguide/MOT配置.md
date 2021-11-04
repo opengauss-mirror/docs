@@ -38,6 +38,8 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 -   GB：吉字节
 -   TB：太字节
 
+如果未指定内存单元，则假定为字节。
+
 某些内存单位为postgresql.conf中的max\_process\_memory的百分比值。例如，20%。
 
 时间单位表示如下：
@@ -49,11 +51,9 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 -   h：小时
 -   d：天
 
+如果未指定时间单位，则假定为微秒。
+
 ## 重做日志（MOT）<a name="section361563811235"></a>
-
--   **enable\_redo\_log = true**
-
-    指定是否使用重做日志以获得持久性。有关重做日志的详细信息，请参阅[MOT日志记录：WAL重做日志](MOT持久性.md#section129831140121218)。
 
 -   **enable\_group\_commit = false**
 
@@ -80,10 +80,6 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 
 
 ## 检查点（MOT）<a name="section8719101152712"></a>
-
--   **enable\_checkpoint = true**
-
-    是否使用周期检查点。
 
 -   **checkpoint\_dir =**
 
@@ -175,19 +171,19 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
     例如，要为系统组件中的ThreadIdPool日志记录器配置TRACE日志级别，请使用以下语法：
 
     ```
-    Log/System/ThreadIdPool=TRACE
+    Log.System.ThreadIdPool.log_level=TRACE
     ```
 
     要为某个组件下的所有记录器配置日志级别，请使用以下语法：
 
     ```
-    Log/COMPONENT=LOG_LEVEL
+    Log.COMPONENT.log_level=LOG_LEVEL
     ```
 
     例如：
 
     ```
-    Log/System=DEBUG
+    Log.System.log_level=DEBUG
     ```
 
 
@@ -304,12 +300,6 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 
     此值用于在会话创建期间预分配内存，以及确保会话有最小的可用内存量来执行其正常操作。
 
--   **high\_red\_mark\_percent = 90**
-
-    设置内存分配的高红标记。
-
-    这是按照由max\_mot\_memory设置的MOT引擎的最大值百分比计算的。默认值为90，即90%。当MOT占用内存总量达到此值时，只允许进行破坏性操作。其它操作都向用户报告错误。
-
 -   **session\_large\_buffer\_store\_size = 0 MB**
 
     设置会话的大缓冲区存储。
@@ -383,13 +373,6 @@ mot.conf文件与postgres.conf配置文件在同一文件夹下。
 -   **mot\_codegen\_limit = 100**
 
     限制每个用户会话允许的JIT查询数。
-
-
-## 存储（MOT）<a name="section16572933681"></a>
-
-**allow\_index\_on\_nullable\_column = true**
-
-指定是否允许在可空列上定义索引。
 
 ## 默认MOT.conf文件<a name="section40674409"></a>
 
