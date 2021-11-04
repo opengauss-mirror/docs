@@ -36,7 +36,7 @@ DROP RULE [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 ## 示例<a name="section192526392717"></a>
 
 ```
---删除重写规则
-newruleDROP RULE newrule ON mytable;
+--删除重写规则newrule
+DROP RULE newrule ON mytable;
 ```
 
