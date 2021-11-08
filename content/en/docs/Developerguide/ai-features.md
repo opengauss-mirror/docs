@@ -17,6 +17,6 @@ The history of artificial intelligence \(AI\) can be dated back to as early as t
 
 -   **[DeepSQL: AI Algorithm in the Library](deepsql-ai-algorithm-in-the-library.md)**  
 
--   **[AI-Native Database \(DB4AI\)](ai-native-database-(db4ai).md)**  
+-   **[AI-Native Database \(DB4AI\)](ai-native-database-db4ai.md)**  
 
 
