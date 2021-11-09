@@ -204,7 +204,7 @@ wait\_status列的等待状态有以下状态。
 <td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_ac9a1ff3e709048ecb07b7e280518a8f7"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_ac9a1ff3e709048ecb07b7e280518a8f7"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_ac9a1ff3e709048ecb07b7e280518a8f7"></a>停止某连接上正在执行的查询。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_rf0c9fecb5ae04bd6a504990d7673ed40"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_a57ab22c9044a4760b6ad8b48ddd06864"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_a57ab22c9044a4760b6ad8b48ddd06864"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_a57ab22c9044a4760b6ad8b48ddd06864"></a>wait node: [nodename](plevel), total N, [phase]</p>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_rf0c9fecb5ae04bd6a504990d7673ed40"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_a57ab22c9044a4760b6ad8b48ddd06864"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_a57ab22c9044a4760b6ad8b48ddd06864"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_a57ab22c9044a4760b6ad8b48ddd06864"></a>wait node: \[nodename\](plevel), total N, [phase]</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><div class="p" id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p577573613228"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p577573613228"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p577573613228"></a>等待接收与某节点的连接上的数据，当前正在等待nodename节点plevel线程的数据，且仍有N个连接的数据待返回。如果状态包含phase信息，则可能的阶段状态有：<a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_ul21682503315"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_ul21682503315"></a><ul id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_ul21682503315"><li>begin：表示处于事务开始阶段。</li><li>commit：表示处于事务提交阶段。</li><li>rollback：表示处于事务回滚阶段。</li></ul>
 </div>
@@ -330,6 +330,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 </tbody>
 </table>
+
 
 当wait\_status为acquire lwlock、acquire lock或者wait io时，表示有等待事件。正在等待获取wait\_event列对应类型的轻量级锁、事务锁，或者正在进行IO。
 
