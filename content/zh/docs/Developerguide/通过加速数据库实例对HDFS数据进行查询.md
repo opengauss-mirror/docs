@@ -81,7 +81,7 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
     openGauss=# SET query_dop = 1;
     ```
 
-6.  [session\_timeout](zh-cn_topic_0289899967.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a)，[statement\_timeout](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_se47379dd6e1c4698aa7b28b7ca9bc7fe)设置为0，避免长时间查询的连接断掉。
+6.  [session\_timeout](安全和认证_postgresql-conf.md)，[statement\_timeout](语句行为.md)设置为0，避免长时间查询的连接断掉。
 
     ```
     openGauss=# SET session_timeout = 0;
