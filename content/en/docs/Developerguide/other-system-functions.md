@@ -4163,7 +4163,105 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Parameter: nan
 
-    Return type: bufferid integer, relfilenode oid, bucketid integer, storage\_type bigint, reltablespace oid, reldatabase oid, relforknumber integer, relblocknumber integer, isdirty boolean, isvalid boolean, usage\_count smallint, pinning\_backends integer
+    Return type: setof record
+
+    Descriptions of returned fields:
+
+    <a name="table975614311360"></a>
+    <table><thead align="left"><tr id="row175723117360"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p4757231113617"><a name="p4757231113617"></a><a name="p4757231113617"></a>Field name</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.4.1.2"><p id="p1675713193611"><a name="p1675713193611"></a><a name="p1675713193611"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.3"><p id="p4757193118368"><a name="p4757193118368"></a><a name="p4757193118368"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1757193163615"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p2757631103613"><a name="p2757631103613"></a><a name="p2757631103613"></a>bufferid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p10757123103619"><a name="p10757123103619"></a><a name="p10757123103619"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p127571931193619"><a name="p127571931193619"></a><a name="p127571931193619"></a>Internal id of the buffer.</p>
+    </td>
+    </tr>
+    <tr id="row1475716311369"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p10757183143616"><a name="p10757183143616"></a><a name="p10757183143616"></a>relfilenode</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p675712312361"><a name="p675712312361"></a><a name="p675712312361"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p47571331183613"><a name="p47571331183613"></a><a name="p47571331183613"></a>OID of the relation contains the page in the buffer.</p>
+    </td>
+    </tr>
+    <tr id="row127571731173616"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p875763123616"><a name="p875763123616"></a><a name="p875763123616"></a>bucketid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p27571931123613"><a name="p27571931123613"></a><a name="p27571931123613"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p187571431153613"><a name="p187571431153613"></a><a name="p187571431153613"></a>Internal id of the bucket in which the buffer resides.</p>
+    </td>
+    </tr>
+    <tr id="row1675819312369"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p375803112361"><a name="p375803112361"></a><a name="p375803112361"></a>storage_type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p27581831153612"><a name="p27581831153612"></a><a name="p27581831153612"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p575818311366"><a name="p575818311366"></a><a name="p575818311366"></a>Storage type of the data in the buffer.</p>
+    </td>
+    </tr>
+    <tr id="row157587319365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p1075893117368"><a name="p1075893117368"></a><a name="p1075893117368"></a>reltablespace</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p5758113114362"><a name="p5758113114362"></a><a name="p5758113114362"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p0758183113614"><a name="p0758183113614"></a><a name="p0758183113614"></a>OID of the tablespace contains the data in the buffer.</p>
+    </td>
+    </tr>
+    <tr id="row675815319366"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p11758183111365"><a name="p11758183111365"></a><a name="p11758183111365"></a>reldatabase</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p187582314366"><a name="p187582314366"></a><a name="p187582314366"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p9958411164014"><a name="p9958411164014"></a><a name="p9958411164014"></a>OID of the database contains the data in the buffer.</p>
+    </td>
+    </tr>
+    <tr id="row1775813313364"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p8758193119369"><a name="p8758193119369"></a><a name="p8758193119369"></a>relforknumber</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p8758331143619"><a name="p8758331143619"></a><a name="p8758331143619"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p4758133153614"><a name="p4758133153614"></a><a name="p4758133153614"></a>Fork number of the relation file contains the data in the buffer.</p>
+    </td>
+    </tr>
+    <tr id="row1675818318362"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p57581331123617"><a name="p57581331123617"></a><a name="p57581331123617"></a>relblocknumber</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p8394162712488"><a name="p8394162712488"></a><a name="p8394162712488"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p890615614815"><a name="p890615614815"></a><a name="p890615614815"></a>Number of the file block in which the data in the buffer resides.</p>
+    </td>
+    </tr>
+    <tr id="row207586318365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p7758331163615"><a name="p7758331163615"></a><a name="p7758331163615"></a>isdirty</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p1539104464813"><a name="p1539104464813"></a><a name="p1539104464813"></a>boolean</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p121591542134811"><a name="p121591542134811"></a><a name="p121591542134811"></a>If the buffer is dirty.</p>
+    </td>
+    </tr>
+    <tr id="row207586318365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p7758331163615"><a name="p7758331163615"></a><a name="p7758331163615"></a>isvalid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p1539104464813"><a name="p1539104464813"></a><a name="p1539104464813"></a>boolean</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p121591542134811"><a name="p121591542134811"></a><a name="p121591542134811"></a>If the buffer is valid.</p>
+    </td>
+    </tr>
+    <tr id="row207586318365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p7758331163615"><a name="p7758331163615"></a><a name="p7758331163615"></a>usage_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p1539104464813"><a name="p1539104464813"></a><a name="p1539104464813"></a>smallint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p121591542134811"><a name="p121591542134811"></a><a name="p121591542134811"></a>Usage count of the buffer.</p>
+    </td>
+    </tr>
+    <tr id="row207586318365"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p7758331163615"><a name="p7758331163615"></a><a name="p7758331163615"></a>pinning_backends</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="p1539104464813"><a name="p1539104464813"></a><a name="p1539104464813"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p121591542134811"><a name="p121591542134811"></a><a name="p121591542134811"></a>Number of backends which have pins on the buffer currently.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 -   pg\_check\_xidlimit
 
