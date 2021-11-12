@@ -4159,11 +4159,11 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   pg\_buffercache\_pages
 
-    Description: Reads data from the shared buffer.
+    Description: Reads status of the shared buffers.
 
     Parameter: nan
 
-    Return type: bufferid integer, relfilenode oid, bucketid smallint, reltablespace oid, reldatabase oid, relforknumber smallint, relblocknumber bigint, isdirty boolean, usage\_count smallint
+    Return type: bufferid integer, relfilenode oid, bucketid integer, storage\_type bigint, reltablespace oid, reldatabase oid, relforknumber integer, relblocknumber integer, isdirty boolean, isvalid boolean, usage\_count smallint, pinning\_backends integer
 
 -   pg\_check\_xidlimit
 
