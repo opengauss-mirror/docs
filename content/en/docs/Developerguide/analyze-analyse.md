@@ -45,7 +45,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   When collecting statistics about multiple columns, set the GUC parameter  [default\_statistics\_target](en-us_topic_0289900235.md#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_se18c86fcdf5e4a22870f71187436d815)  to a negative value to sample data in percentage.
+    >-   When collecting statistics about multiple columns, set the GUC parameter  default\_statistics\_target  to a negative value to sample data in percentage.
     >-   The statistics about a maximum of 32 columns can be collected at a time.
     >-   You are not allowed to collect statistics about multiple columns in system catalogs.
 

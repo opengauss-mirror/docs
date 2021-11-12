@@ -1695,7 +1695,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   Example: --ssh-options='-c cipher\_spec -F configfile'
 
-  >![](C:/Users/lijun/Downloads/管理员、工具、安装、编译-中英文/管理员、工具、安装、编译-中英文/04 Administrator Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >
   >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  _archive-timeout_  seconds \(300 seconds is set by default\).
   >-   If the LSN of the standby server is different from that of the primary server, the database continuously updates the following log information. In this case, you need to rebuild the standby server.
@@ -1709,6 +1709,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
   >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
   >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
   >```
+
 
 
 #### Backup Process<a name="en-us_topic_0289899221_en-us_topic_0287276008_section1735727125216"></a>

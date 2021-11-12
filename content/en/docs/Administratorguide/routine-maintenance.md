@@ -29,11 +29,13 @@ openGauss provides tools to check database and instance status, ensuring that da
     gs_check -U omm -i CheckClusterState
     ```
 
--   Check parameters.
+- Check parameters.
 
-    ```
-    openGauss=# SHOW parameter_name;
-    ```
+  ```
+  openGauss=# SHOW parameter_name;
+  ```
+
+  In the above command, parameter_name needs to be replaced with a specific parameter name.
 
 -   Modify parameters.
 
