@@ -1,13 +1,13 @@
-# postgres\_fdw<a name="EN-US_TOPIC_0272283428"></a>
+# postgres\_fdw<a name="EN-US_TOPIC_0289899930"></a>
 
 postgres\_fdw is an open-source plug-in. Its code is released with the PostgreSQL source code. openGauss is developed and adapted based on the open-source postgres\_fdw source code \([https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz](https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz)\) in PostgreSQL 9.4.26.
 
 The postgres\_fdw plug-in is involved in compilation by default. After installing openGauss using the installation package, you can directly use postgres\_fdw without performing other operations.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->Currently, postgres\_fdw supports only connection between openGauss databases.
+>Currently, postgres\_fdw supports only connections between openGauss databases, and does not support connections between openGauss and PostgreSQL databases.
 
-## Using postgres\_fdw<a name="section862733411474"></a>
+## Using postgres\_fdw<a name="en-us_topic_0283136935_section862733411474"></a>
 
 -   Load the postgres\_fdw extension using  **CREATE EXTENSION postgres\_fdw;**.
 
@@ -28,14 +28,14 @@ The postgres\_fdw plug-in is involved in compilation by default. After installin
 -   Drop an extension using  **DROP EXTENSION postgres\_fdw;**.
 
 
-## Common Issues<a name="section16239134819476"></a>
+## Common Issues<a name="en-us_topic_0283136935_section16239134819476"></a>
 
--   When a foreign table is created on the openGauss, the table is not created on the remote openGauss database. You need to use the Oracle client to connect to the remote openGauss database to create a table.
+-   When a foreign table is created on openGauss, the table is not created on the remote openGauss database. You need to use a client to connect to the remote openGauss database to create a table.
 
 -   The openGauss user used for executing  **CREATE USER MAPPING**  must have the permission to remotely connect to the openGauss database and perform operations on tables. Before using a foreign table, you can use the gsql client on the local machine and use the corresponding user name and password to check whether the remote openGauss database can be successfully connected and operations can be performed.
 
 
-## Precautions<a name="section121691157134716"></a>
+## Precautions<a name="en-us_topic_0283136935_section121691157134716"></a>
 
 -   **SELECT JOIN**  between two postgres\_fdw foreign tables cannot be pushed down to the remote openGauss database for execution. Instead,  **SELECT JOIN**  is divided into two SQL statements and transferred to the remote openGauss database for execution. Then the processing result is summarized locally.
 

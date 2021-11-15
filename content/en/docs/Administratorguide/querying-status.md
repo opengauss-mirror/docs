@@ -2,7 +2,7 @@
 
 ## Background<a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0059778948_section199712094115"></a>
 
-GaussDB KernelopenGauss allows you to view the status of the entire GaussDB KernelopenGauss. The query result shows whether openGaussthe database  or a single host is running properly.
+openGauss allows you to view the status of the entire openGauss. The query result shows whether openGaussthe database  or a single host is running properly.
 
 ## Prerequisites<a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0059778948_sa8f556adc7a142bd8efdec0f4483d2bd"></a>
 
@@ -199,7 +199,7 @@ Table 3 Node rebuilding causes
 
 ## Examples<a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0059778948_s2ca7a9ce813e4d209f3801b2171de8b1"></a>
 
-View openGaussthe database  status details, including instance status.
+View openGauss the database  status details, including instance status.
 
 ```
 gs_om -t status --detail
