@@ -3,7 +3,7 @@
 ### **Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？**
 
 ```
-gsql -d postgres =p 26000 -r
+gsql -d postgres -p 26000 -r
 failed to connect Unkown:26000.
 ```
 
