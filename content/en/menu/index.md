@@ -833,7 +833,6 @@ headless: true
             -   [ALTER SYSTEM SET]({{< relref "./docs/Developerguide/alter-system-set.md" >}})
             -   [ALTER TABLE]({{< relref "./docs/Developerguide/alter-table.md" >}})
             -   [ALTER TABLE PARTITION]({{< relref "./docs/Developerguide/alter-table-partition.md" >}})
-            -   [ALTER TABLE SUBPARTITION]({{< relref "./docs/Developerguide/alter-table-subpartition.md" >}})
             -   [ALTER TABLESPACE]({{< relref "./docs/Developerguide/alter-tablespace.md" >}})
             -   [ALTER TEXT SEARCH CONFIGURATION]({{< relref "./docs/Developerguide/alter-text-search-configuration.md" >}})
             -   [ALTER TEXT SEARCH DICTIONARY]({{< relref "./docs/Developerguide/alter-text-search-dictionary.md" >}})
