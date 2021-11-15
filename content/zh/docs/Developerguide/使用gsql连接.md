@@ -39,7 +39,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](连接数据库_以SSL方式.md)。
 
-3.  首次登录需要修改密码。原始密码为安装openGauss数据库手动输入的密码，具体请参见《安装指南》中“安装openGauss \> [执行安装](../installation/执行安装.md)”章节，此处需将原始密码修改为自定义的密码，例如Mypwd123，命令如下：
+3.  首次登录建议修改密码。命令如下。
 
     ```
     openGauss=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
@@ -100,7 +100,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   软件包相对位置为安装时所放位置，根据实际情况填写。
-
+    
         >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
     d.  解压文件。
@@ -115,19 +115,19 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
         ```
         scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
         ```
-
+    
         其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
 
     f.  登录客户端所在主机，设置环境变量。
 
         打开“\~/.bashrc”文件。
-
+    
         ```
         vi ~/.bashrc
         ```
-
+    
         在其中输入如下内容后，使用“:wq!”命令保存并退出。
-
+    
         ```
         export PATH=/tmp/tools/bin:$PATH
         export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH

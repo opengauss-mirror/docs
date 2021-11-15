@@ -103,12 +103,12 @@
     >-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
     >    启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
     >-   **| ENABLE REPLICA TRIGGER trigger\_name**
-    >    触发器触发机制受配置变量[session\_replication\_role](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+    >    触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
     >    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
     >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
     >    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
     >-   **| DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
-    >    配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](zh-cn_topic_0289900775.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
+    >    配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
     >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
     >    开启或关闭表的行访问控制开关。
     >    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
@@ -206,15 +206,15 @@
 
 
     -   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
-
+    
         ```
         [ CONSTRAINT constraint_name ]
             { UNIQUE | PRIMARY KEY } USING INDEX index_name
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-
+    
     -   其中表约束table\_constraint为：
-
+    
         ```
         [ CONSTRAINT constraint_name ]
             { CHECK ( expression ) |
@@ -225,9 +225,9 @@
                  [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-
+    
         其中索引参数index\_parameters为：
-
+    
         ```
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
             [ USING INDEX TABLESPACE tablespace_name ]
