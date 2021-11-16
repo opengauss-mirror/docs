@@ -39,7 +39,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
 
     **Non-SSL connection**  indicates that the database is not connected in SSL mode. If high security is required,  [connect to the database in SSL mode](en-us_topic_0283137035.md).
 
-3.  Change the password after your first login. The initial password was set manually during openGauss database installation. For details, see  **Installing openGauss**  \>  **Executing Installation**  in the  _Installation Guide_. Here you need to change the initial password to a new one, for example,  **Mypwd123**, by running the following command:
+3.  Change the password after your first login.  by running the following command:
 
     ```
     postgres=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
