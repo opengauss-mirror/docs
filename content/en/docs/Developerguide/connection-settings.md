@@ -52,7 +52,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer. The minimum value is  **10**  \(greater than  _max\_wal\_senders_\). The theoretical maximum value is  **262143**. The actual maximum value is a dynamic value, which is calculated using the formula 262143 –_ job\_queue\_processes_  –  _autovacuum\_max\_workers_  –  _AUXILIARY\_BACKENDS_  –  _AV\_LAUNCHER\_PROCS_. The values of  _[job\_queue\_processes](en-us_topic_0289900522.md#en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section10342177134137)_,  _[autovacuum\_max\_workers](en-us_topic_0289900634.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)_, and  _[max\_inner\_tool\_connections](#en-us_topic_0283136886_section132711513143211)_  depend on the settings of the corresponding GUC parameters.  _AUXILIARY\_BACKENDS_  indicates the number of reserved auxiliary threads, which is fixed to 20.  _AV\_LAUNCHER\_PROCS_  indicates the number of reserved lancher threads for autovacuum, which is fixed to 2.
 
-**Default value**:  **200**
+**Default value**: **200**
 
 **Setting suggestions**:
 
@@ -73,7 +73,7 @@ Retain the default value of this parameter on the primary node of the databases.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _MIN_  \(which takes the smaller value between  **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connection_, see the preceding description.
+**Value range**: an integer ranging from 0 to  _MIN_  \(which takes the smaller value between **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connection_, see the preceding description.
 
 **Default value**:  **50**  for each database node. If the default value is greater than the maximum value supported by the kernel \(determined when the  **gs\_initdb**  command is executed\), an error message is displayed.
 
@@ -169,5 +169,5 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 >    ```
 >    {"driver_name":"ODBC","driver_version": "(openGauss X.X.X build 13b34b53) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 debug","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}
 >    ```
->    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](connecting-to-a-database.md)  and  [Configuring a Data Source in the Linux OS](configuring-a-data-source-in-the-linux-os.md).
+>    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](connecting-to-a-database.md) and [Configuring a Data Source in the Linux OS](configuring-a-data-source-in-the-linux-os.md).
 
