@@ -15,6 +15,8 @@
 
 REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行。
 
+REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
+
 ## 语法格式<a name="zh-cn_topic_0283137442_zh-cn_topic_0237122174_zh-cn_topic_0059777511_s2ba0db3344cd44189859fbd0cefdd97f"></a>
 
 -   重建普通索引。
@@ -28,6 +30,21 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
     ```
     REINDEX  { INDEX|  [INTERNAL] TABLE} name
+        PARTITION partition_name [ FORCE  ];
+    ```
+
+
+-   实时重建普通索引。
+
+    ```
+    REINDEX { INDEX | TABLE | DATABASE | SYSTEM } CONCURRENTLY name [ FORCE ];
+    ```
+
+
+-   实时重建索引分区。
+
+    ```
+    REINDEX  { INDEX| TABLE} CONCURRENTLY name
         PARTITION partition_name [ FORCE  ];
     ```
 
@@ -53,6 +70,33 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 -   **SYSTEM**
 
     在当前数据库上重建所有系统表上的索引。不会处理在用户表上的索引。
+
+-   **CONCURRENTLY**
+
+    以不阻塞DML的方式重建索引（加ShareUpdateExclusiveLock锁）。重建索引时，一般会阻塞其他语句对该索引所依赖表的访问。指定此关键字，可以实现重建过程中不阻塞DML。
+
+    -   此选项只能指定一个索引的名称。
+    -   普通REINDEX命令可以在事务内执行，但是REINDEX CONCURRENTLY不可以在事务内执行。
+    -   列存表、全局分区表和临时表不支持CONCURRENTLY方式重建索引。
+    -   REINDEX SYSTEM CONCURRENTLY不会执行任何操作，因为系统表不支持实时重建索引。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   重建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建新索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
+
+    >-   由于需要执行两次对表的扫描和build，而且必须等待现有的所有可能对该表执行修改的事务结束。这意味着该索引的重建比正常耗时更长，同时因此带来的CPU和I/O消耗对其他业务也会造成影响。
+
+    >-   如果在索引构建时发生失败，那会留下一个“不可用”的索引。这个索引会被查询忽略，但它仍消耗更新开销。这种情况推荐的恢复方法是删除该索引并尝试再次CONCURRENTLY重建索引。
+
+    >-   由于在第二次扫描之后，索引构建必须等待任何持有早于第二次扫描拿的快照的事务终止，而且建索引时加的ShareUpdateExclusiveLock锁（4级）会和大于等于4级的锁冲突，在创建这类索引时，容易引发卡住（hang）或者死锁问题。例如：
+
+    >    -   两个会话对同一个表重建CONCURRENTLY索引，会引起死锁问题；
+
+    >    -   两个会话，一个对表重建CONCURRENTLY索引，一个drop table，会引起死锁问题；
+
+    >    -   三个会话，会话1先对表a加锁，不提交，会话2接着对表b重建CONCURRENTLY索引，会话3接着对表a执行写入操作，在会话1事务未提交之前，会话2会一直被阻塞；
+    
+    >    -   将事务隔离级别设置成可重复读（默认为读已提交），起两个会话，会话1起事务对表a执行写入操作，不提交，会话2对表b重建CONCURRENTLY索引，在会话1事务未提交之前，会话2会一直被阻塞。
+
 
 -   **name**
 
@@ -113,8 +157,14 @@ openGauss=# INSERT INTO tpcds.customer_t1 SELECT * FROM tpcds.customer WHERE c_c
 --重建一个单独索引。
 openGauss=# REINDEX INDEX tpcds.tpcds_customer_index1;
 
+--实时重建一个单独索引。
+openGauss=# REINDEX INDEX CONCURRENTLY tpcds.tpcds_customer_index1;
+
 --重建表tpcds.customer_t1上的所有索引。
 openGauss=# REINDEX TABLE tpcds.customer_t1;
+
+--实时重建表tpcds.customer_t1上的所有索引。
+openGauss=# REINDEX TABLE CONCURRENTLY tpcds.customer_t1;
 
 --删除tpcds.customer_t1表。
 openGauss=# DROP TABLE tpcds.customer_t1;
