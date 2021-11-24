@@ -22,29 +22,14 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
 -   重建普通索引。
 
     ```
-    REINDEX { INDEX | [INTERNAL] TABLE | DATABASE | SYSTEM } name [ FORCE ];
+    REINDEX { INDEX | [INTERNAL] TABLE | DATABASE | SYSTEM } [CONCURRENTLY] name [ FORCE ];
     ```
 
 
 -   重建索引分区。
 
     ```
-    REINDEX  { INDEX|  [INTERNAL] TABLE} name
-        PARTITION partition_name [ FORCE  ];
-    ```
-
-
--   实时重建普通索引。
-
-    ```
-    REINDEX { INDEX | TABLE | DATABASE | SYSTEM } CONCURRENTLY name [ FORCE ];
-    ```
-
-
--   实时重建索引分区。
-
-    ```
-    REINDEX  { INDEX| TABLE} CONCURRENTLY name
+    REINDEX  { INDEX|  [INTERNAL] TABLE} [CONCURRENTLY] name
         PARTITION partition_name [ FORCE  ];
     ```
 
