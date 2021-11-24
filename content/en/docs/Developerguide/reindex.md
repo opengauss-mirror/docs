@@ -15,6 +15,8 @@ There are several scenarios in which  **REINDEX**  can be used:
 
 **REINDEX DATABASE**  and  **REINDEX SYSTEM**  type cannot be performed in transaction blocks.
 
+**REINDEX CONCURRENTLY** cannot be performed in transaction blocks.
+
 ## Syntax<a name="en-us_topic_0283137442_en-us_topic_0237122174_en-us_topic_0059777511_s2ba0db3344cd44189859fbd0cefdd97f"></a>
 
 -   Rebuild a general index.
@@ -65,7 +67,7 @@ There are several scenarios in which  **REINDEX**  can be used:
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   This keyword is specified when an index is recreated. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
-    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the re-creation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
+    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the recreation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
     >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **REINDEX CONCURRENTLY**  again.
     >-   After the second scan, index creation must wait for any transaction that holds a snapshot earlier than the snapshot taken by the second scan to terminate. In addition, the ShareUpdateExclusiveLock \(level 4\) added during index creation conflicts with a lock whose level is greater than or equal to 4. Therefore, when such an index is recreated, the system is prone to hang or deadlock. For example:
     >    -   If two sessions reindex concurrently for the same table, a deadlock occurs.
@@ -132,10 +134,16 @@ openGauss=# INSERT INTO tpcds.customer_t1 SELECT * FROM tpcds.customer WHERE c_c
 -- Rebuild a single index.
 openGauss=# REINDEX INDEX tpcds.tpcds_customer_index1;
 
+-- Rebuild a single index concurrently.
+openGauss=# REINDEX INDEX CONCURRENTLY tpcds.tpcds_customer_index1;
+
 -- Rebuild all indexes in the tpcds.customer_t1 table:
 openGauss=# REINDEX TABLE tpcds.customer_t1;
 
-Delete the tpcds.customer_t1 table.
+-- Rebuild all indexes in the tpcds.customer_t1 table concurrently:
+openGauss=# REINDEX TABLE CONCURRENTLY tpcds.customer_t1;
+
+-- Delete the tpcds.customer_t1 table.
 openGauss=# DROP TABLE tpcds.customer_t1;
 ```
 
