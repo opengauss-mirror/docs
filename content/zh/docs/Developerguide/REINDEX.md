@@ -43,7 +43,6 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
 -   **INTERNAL TABLE**
 
     重建列存表或Hadoop内表的Desc表的索引，如果表有从属的“TOAST”表，则这个表也会重建索引。
-    不支持CONCURRENTLY关键字。
 
 -   **TABLE**
 
@@ -56,7 +55,6 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
 -   **SYSTEM**
 
     在当前数据库上重建所有系统表上的索引。不会处理在用户表上的索引。
-    系统表不支持REINDEX CONCURRENTLY。
 
 -   **CONCURRENTLY**
 
@@ -65,7 +63,7 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
     -   此选项只能指定一个索引的名称。
     -   普通REINDEX命令可以在事务内执行，但是REINDEX CONCURRENTLY不可以在事务内执行。
     -   列存表、全局分区表和临时表不支持CONCURRENTLY方式重建索引。
-    -   REINDEX SYSTEM CONCURRENTLY不会执行任何操作，因为系统表不支持实时重建索引。
+    -   REINDEX SYSTEM CONCURRENTLY不会执行任何操作，因为系统表不支持在线重建索引。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   重建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建新索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
