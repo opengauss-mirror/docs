@@ -34,11 +34,12 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [-l LOGFILE]
     ```
 
--   生成静态配置文件
+- 生成静态配置文件
 
-    ```
-    gs_om -t generateconf -X XMLFILE [--distribute] [-l LOGFILE]
-    ```
+  ```
+  gs_om -t generateconf -X XMLFILE [--distribute] [-l LOGFILE]
+  gs_om -t generateconf --old-values=old --new-values=new [--distribute] [-l LOGFILE]
+  ```
 
 -   生成动态配置文件，备机failover或switchover成主机后，需要执行此操作
 
@@ -220,8 +221,20 @@ gs\_om参数可以分为如下几类：
 
         取值范围：clusterconfig.xml的路径。
 
-    -   --distribute
+    - --old-values=old
 
+      需要修改的静态文件中的旧值。
+    
+      取值范围：port、ip、hostname，可以输入多个值，用逗号隔开。
+    
+    - --new-values=new
+    
+      需要修改的静态文件中的新值。
+    
+      取值范围：port、ip、hostname，可以输入多个值，用逗号隔开，与old-values一一对应。
+    
+    -   --distribute
+    
         将静态配置文件发布到openGauss实例的安装目录。
 
 
@@ -499,10 +512,10 @@ gs\_om参数可以分为如下几类：
 
     [  Datanode State   ]
 
-        node             node_ip         port      instance                                   state
-    -----------------------------------------------------------------------------------------------------
-    1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
-    2  pekpopgsci00238  10.244.61.81     5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
+  node                              node_ip         port                 instance                                   state
+  -----------------------------------------------------------------------------------------------------------------
+  1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
+  2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
  
   ```
 
