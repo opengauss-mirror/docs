@@ -80,9 +80,9 @@ gs\_guc工具由操作系统用户omm执行。
     >    -   trust：不验密，禁止远程主机使用trust方式访问数据库。
     > 
     >    -   reject：拒绝访问。
-    >  
+    > 
     >    -   md5：md5认证，默认不支持（MD5加密算法安全性低，存在安全风险，不建议使用）。
-    >  
+    > 
     >    -   sha256：sha256认证（推荐使用）。
     > 
     >    -   cert：客户端证书认证。
@@ -90,7 +90,7 @@ gs\_guc工具由操作系统用户omm执行。
     >    -   gss：kerberos认证，仅用于内部节点间认证。
     > 
     >    -   sm3：sm3认证（国密SM3）。
-    >  
+    > 
     >-   pg\_hba.conf中的认证策略越靠前优先级越高，使用gs\_guc工具配置时会按一定规则排序将新策略插入到原有认证策略中。配置字段比较顺序为：IPADDR/HOSTNAME \> HOSTTYPE \> DATABASE \> USERNAME，即优先比较IPADDR或HOSTNAME，如果无法区分优先级则继续比较HOSTTYPE，以此类推。对于每个配置字段，通常越严格的配置参数优先级越高、排序越靠前，越宽松的配置参数优先级越低、排序越靠后，具体如下：
     > 
     >    -   IPADDR：当配置为全0时表示不限制IP，会放在指定具体某个IP地址的策略后面。
@@ -236,6 +236,16 @@ gs\_guc工具由操作系统用户omm执行。
     >-   逻辑数据库允许操作的参数同完整数据库不同。具体差异可参见$GAUSSHOME/bin/cluster\_guc.conf。
 
     取值范围：已经创建的逻辑数据库名称。
+
+- --ignore-node=NODES
+
+  需要忽略的主机名称。
+
+  >![](C:/Users/lijun/Downloads/04 管理员指南_20211124103637/04 管理员指南_20211124103637/08 工具参考_仅openGauss/public_sys-resources/icon-note.gif) **说明：** 
+  >
+  >-   该参数必须与set/reload一起使用，且-Z只支持datanode/coordinator。
+  >-   该参数不支持与-D一起使用。
+  >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
 
 -   -c parameter
 

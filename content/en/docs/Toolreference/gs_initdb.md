@@ -301,6 +301,13 @@ zh_SG.gbk
 <td class="cellrowborder" valign="top" width="23.119999999999997%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_adb419280469547c786f06333a1d3f20a"><a name="en-us_topic_0237152414_en-us_topic_0059778168_adb419280469547c786f06333a1d3f20a"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_adb419280469547c786f06333a1d3f20a"></a>-</p>
 </td>
 </tr>
+    <tr id="row5351111014018"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p133518103016"><a name="p133518103016"></a><a name="p133518103016"></a>-H, --host-ip</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.940000000000005%" headers="mcps1.2.4.1.2 "><p id="p113512103016"><a name="p113512103016"></a><a name="p113512103016"></a>Initializes the openGauss node <strong id="b1388424251619"><a name="b1388424251619"></a><a name="b1388424251619"></a>node_host</strong>.</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.119999999999997%" headers="mcps1.2.4.1.3 "><p id="p6352101014015"><a name="p6352101014015"></a><a name="p6352101014015"></a>-</p>
+</td>
+</tr>
 <tr id="en-us_topic_0237152414_en-us_topic_0059778168_re847d900ac2c4d18b1a81472b956cc0d"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p938216814042"><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p938216814042"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_en-us_topic_0058968084_p938216814042"></a>-V, --version</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.940000000000005%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237152414_en-us_topic_0059778168_a9f3d5f19499c4294915ffd31b51d521a"><a name="en-us_topic_0237152414_en-us_topic_0059778168_a9f3d5f19499c4294915ffd31b51d521a"></a><a name="en-us_topic_0237152414_en-us_topic_0059778168_a9f3d5f19499c4294915ffd31b51d521a"></a>Prints the <strong id="b196296451632"><a name="b196296451632"></a><a name="b196296451632"></a>gs_initdb</strong> version and exits.</p>
@@ -317,4 +324,5 @@ zh_SG.gbk
 </tr>
 </tbody>
 </table>
+
 

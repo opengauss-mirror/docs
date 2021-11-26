@@ -34,11 +34,12 @@ Log in to the OS as the OS user  **omm**  to run the  **gs\_om**  command.
     gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [-l LOGFILE]
     ```
 
--   Generate a static configuration file.
+- Generate a static configuration file.
 
-    ```
-    gs_om -t generateconf -X XMLFILE [--distribute] [-l LOGFILE]
-    ```
+  ```
+  gs_om -t generateconf -X XMLFILE [--distribute] [-l LOGFILE]
+  gs_om -t generateconf --old-values=old --new-values=new [--distribute] [-l LOGFILE]
+  ```
 
 -   Generate a dynamic configuration file. Perform this operation after the failover or switchover from the standby node to the primary node.
 
@@ -207,16 +208,28 @@ Default value:  **fast**
         Displays information about all openGauss nodes.
 
 
--   Parameters for generating the configuration file:
-    -   -X
+- Parameters for generating the configuration file:
+  - -X
 
-        Selects the path of the openGauss configuration file.
+    Selects the path of the openGauss configuration file.
 
-        Value range: path of the  **clusterconfig.xml**  file
+    Value range: path of the  **clusterconfig.xml**  file.
 
-    -   --distribute
+  -   --old-values=old
 
-        Publishes the static configuration file to the installation directory of the openGauss instance.
+      The old values in static files that need to be modified.
+
+      Value range: port, ip, hostname, you can enter multiple values, separated by commas.
+
+  - --new-values=new
+
+    The new value in the static file that needs to be modified.
+
+    Value range: port, ip, hostname, multiple values can be entered, separated by commas, corresponding to old-values one-to-one.
+
+  -   --distribute
+
+      Publishes the static configuration file to the installation directory of the openGauss instance.
 
 
 -   Parameters for enabling or disabling the Kerberos authentication in the cluster
