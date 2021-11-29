@@ -63,6 +63,7 @@
 **表 1**  参数说明
 
 <a name="zh-cn_topic_0249784584_table1876635205813"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0249784584_row476775215811"><th class="cellrowborder" valign="top" width="10.87108710871087%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a>实例类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.8016801680168%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a>参数</p>
@@ -91,7 +92,7 @@
 <tr id="zh-cn_topic_0249784584_row1776745213589"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"></a>gaussdbAppPath</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"></a>openGauss程序安装目录。此目录应满足如下要求：</p>
-<a name="zh-cn_topic_0249784584_ul6325251103320"></a><a name="zh-cn_topic_0249784584_ul6325251103320"></a><ul id="zh-cn_topic_0249784584_ul6325251103320"><li>磁盘空间&gt;1GB</li><li>与数据库所需其它路径相互独立，没有包含关系。</li></ul>
+<a name="zh-cn_topic_0249784584_ul6325251103320"></a><a name="zh-cn_topic_0249784584_ul6325251103320"></a><ul id="zh-cn_topic_0249784584_ul6325251103320"><li>磁盘空间&gt;1GB。</li><li>与数据库所需其它路径相互独立，没有包含关系。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0249784584_row1999732255920"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"></a>gaussdbLogPath</p>
@@ -110,11 +111,12 @@
 <tr id="zh-cn_topic_0249784584_row123267298592"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a>gaussdbToolPath</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"></a>openGauss系统工具目录，主要用于存放互信工具等。此目录应满足如下要求：</p>
-<a name="zh-cn_topic_0249784584_ul735382813519"></a><a name="zh-cn_topic_0249784584_ul735382813519"></a><ul id="zh-cn_topic_0249784584_ul735382813519"><li>磁盘空间&gt;100MB</li><li>固定目录，与数据库所需其它目录相互独立，没有包含关系。</li></ul>
+<a name="zh-cn_topic_0249784584_ul735382813519"></a><a name="zh-cn_topic_0249784584_ul735382813519"></a><ul id="zh-cn_topic_0249784584_ul735382813519"><li>磁盘空间&gt;100MB。</li><li>固定目录，与数据库所需其它目录相互独立，没有包含关系。</li></ul>
 <p id="zh-cn_topic_0249784584_p3353328143519"><a name="zh-cn_topic_0249784584_p3353328143519"></a><a name="zh-cn_topic_0249784584_p3353328143519"></a>此目录可选。不指定的情况下，<span id="zh-cn_topic_0249784584_text03531828163513"><a name="zh-cn_topic_0249784584_text03531828163513"></a><a name="zh-cn_topic_0249784584_text03531828163513"></a>openGauss</span>安装时会默认指定“/opt/huawei/wisequery”作为数据库系统工具目录。</p>
 </td>
 </tr>
-<tr 
+<tr id="zh-cn_topic_0249784584_row10235118121016"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p192361185103"><a name="zh-cn_topic_0249784584_p192361185103"></a><a name="zh-cn_topic_0249784584_p192361185103"></a>corePath</p>
+</td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p16236283104"><a name="zh-cn_topic_0249784584_p16236283104"></a><a name="zh-cn_topic_0249784584_p16236283104"></a>openGauss core文件的指定目录。</p>
 </td>
 </tr>
@@ -130,6 +132,7 @@
 </tr>
 </tbody>
 </table>
+
 
 
 ## 配置Host基本信息

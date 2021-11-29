@@ -14,4 +14,12 @@
 
 -   **[Hint Errors, Conflicts, and Other Warnings](hint-errors-conflicts-and-other-warnings.md)**  
 
+-   **[Optimizer GUC Parameter Hints](optimizer-guc-parameter-hints.md)**  
+
+-   **[Hint for Selecting the Custom Plan or Generic Plan](hint-for-selecting-the-custom-plan-or-generic-plan.md)**  
+
+-   **[Hint Specifying Not to Expand Subqueries](hint-specifying-not-to-expand-subqueries.md)**  
+
+-   **[Hint Specifying Not to Use Global Plan Cache](hint-specifying-not-to-use-global-plan-cache.md)**  
+
 

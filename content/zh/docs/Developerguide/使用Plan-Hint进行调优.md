@@ -14,4 +14,10 @@
 
 -   **[Hint的错误、冲突及告警](Hint的错误-冲突及告警.md)**  
 
+-   **[优化器GUC参数的Hint](优化器GUC参数的Hint.md)**  
 
+-   **[Custom Plan和Generic Plan选择的Hint](Custom Plan和Generic Plan选择的Hint.md)**  
+
+-   **[指定子查询不展开的Hint](指定子查询不展开的Hint.md)**  
+
+-   **[指定不使用全局计划缓存的Hint](指定不使用全局计划缓存的Hint.md)**  

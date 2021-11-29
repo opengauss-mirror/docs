@@ -258,7 +258,6 @@ zh_SG.gbk
 </tr>
 </tbody>
 </table>
-
 **表 2**  不常用参数说明
 
 <a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_t2f464cb1775044808eceb29e25d6d37f"></a>
@@ -296,6 +295,13 @@ zh_SG.gbk
 <td class="cellrowborder" valign="top" width="60.940000000000005%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a5011243f8d344adc983426a76fe5c054"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a5011243f8d344adc983426a76fe5c054"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_a5011243f8d344adc983426a76fe5c054"></a>显示内部设置。</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.119999999999997%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_adb419280469547c786f06333a1d3f20a"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_adb419280469547c786f06333a1d3f20a"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_adb419280469547c786f06333a1d3f20a"></a>-</p>
+</td>
+</tr>
+    <tr id="row5351111014018"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p133518103016"><a name="p133518103016"></a><a name="p133518103016"></a>-H, --host-ip</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.940000000000005%" headers="mcps1.2.4.1.2 "><p id="p113512103016"><a name="p113512103016"></a><a name="p113512103016"></a>初始化openGauss节点node_host。</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.119999999999997%" headers="mcps1.2.4.1.3 "><p id="p6352101014015"><a name="p6352101014015"></a><a name="p6352101014015"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_re847d900ac2c4d18b1a81472b956cc0d"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p938216814042"><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p938216814042"></a><a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_zh-cn_topic_0058968084_p938216814042"></a>-V, --version</p>
