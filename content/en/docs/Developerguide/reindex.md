@@ -15,19 +15,21 @@ There are several scenarios in which  **REINDEX**  can be used:
 
 **REINDEX DATABASE**  and  **REINDEX SYSTEM**  type cannot be performed in transaction blocks.
 
+**REINDEX CONCURRENTLY** cannot be performed in transaction blocks.
+
 ## Syntax<a name="en-us_topic_0283137442_en-us_topic_0237122174_en-us_topic_0059777511_s2ba0db3344cd44189859fbd0cefdd97f"></a>
 
 -   Rebuild a general index.
 
     ```
-    REINDEX { INDEX | [INTERNAL] TABLE | DATABASE | SYSTEM } name [ FORCE ];
+    REINDEX { INDEX | [INTERNAL] TABLE | DATABASE | SYSTEM } [CONCURRENTLY] name [ FORCE ];
     ```
 
 
 -   Rebuild an index partition.
 
     ```
-    REINDEX  { INDEX|  [INTERNAL] TABLE} name
+    REINDEX  { INDEX|  [INTERNAL] TABLE} [CONCURRENTLY] name
         PARTITION partition_name [ FORCE  ];
     ```
 
@@ -53,6 +55,25 @@ There are several scenarios in which  **REINDEX**  can be used:
 -   **SYSTEM**
 
     Recreates all indexes on system catalogs within the current database. Indexes on user tables are not processed.
+
+-   **CONCURRENTLY**
+
+    Recreates indexes \(with ShareUpdateExclusiveLock\) in non-blocking DML mode. A normal  **REAINDEX**  acquires exclusive lock on the table on which the index depends, blocking other accesses until the index drop can be completed. If this keyword is specified, DML is not blocked during the creation.
+
+    -   This option can only specify a name of one index.
+    -   The  **REINDEX**  statement can be run within a transaction, but  **REINDEX CONCURRENTLY**  cannot.
+    -   Column-store tables, GLOBAL partitioned index, and temporary tables do not support  **REINDEX CONCURRENTLY**.
+    -   **REINDEX SYSTEM CONCURRENTLY** will no do anything, because system catalogs do not support **REINDEX CONCURRENTLY**. 
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   This keyword is specified when an index is recreated. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
+    >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the recreation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
+    >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **REINDEX CONCURRENTLY**  again.
+    >-   After the second scan, index creation must wait for any transaction that holds a snapshot earlier than the snapshot taken by the second scan to terminate. In addition, the ShareUpdateExclusiveLock \(level 4\) added during index creation conflicts with a lock whose level is greater than or equal to 4. Therefore, when such an index is recreated, the system is prone to hang or deadlock. For example:
+    >    -   If two sessions reindex concurrently for the same table, a deadlock occurs.
+    >    -   If a session reindex concurrently for a table and another session drops a table, a deadlock occurs.
+    >    -   There are three sessions. Session 1 locks table  **a**  and does not commit it. Session 2 reindex concurrently for table  **b**. Session 3 writes data to table  **a**. Before the transaction of session 1 is committed, session 2 is blocked.
+    >    -   The transaction isolation level is set to repeatable read \(read committed by default\). Two sessions are started. Session 1 writes data to table  **a**  and does not commit it. Session 2 reindex concurrently for table  **b**. Before the transaction of session 1 is committed, session 2 is blocked.
 
 -   **name**
 
@@ -113,10 +134,16 @@ openGauss=# INSERT INTO tpcds.customer_t1 SELECT * FROM tpcds.customer WHERE c_c
 -- Rebuild a single index.
 openGauss=# REINDEX INDEX tpcds.tpcds_customer_index1;
 
+-- Rebuild a single index concurrently.
+openGauss=# REINDEX INDEX CONCURRENTLY tpcds.tpcds_customer_index1;
+
 -- Rebuild all indexes in the tpcds.customer_t1 table:
 openGauss=# REINDEX TABLE tpcds.customer_t1;
 
-Delete the tpcds.customer_t1 table.
+-- Rebuild all indexes in the tpcds.customer_t1 table concurrently:
+openGauss=# REINDEX TABLE CONCURRENTLY tpcds.customer_t1;
+
+-- Delete the tpcds.customer_t1 table.
 openGauss=# DROP TABLE tpcds.customer_t1;
 ```
 
