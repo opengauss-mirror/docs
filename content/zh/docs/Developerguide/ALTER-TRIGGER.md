@@ -2,7 +2,11 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 
-修改触发器定义。
+修改触发器名称。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>
+>目前只支持修改名称。
 
 ## 注意事项<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 

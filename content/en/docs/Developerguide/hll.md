@@ -98,16 +98,17 @@ openGauss=# \d t1
       Table "public.t1"
  Column |  Type   | Modifiers
 --------+---------+-----------
- c1     | integer |
- c2     | hll     |
+ id     | integer |
+ set     | hll     |
 
 -- Create an HLL table, specify the first two input parameters, and use the default values for the last two input parameters.
 openGauss=# create table t2 (id integer, set hll(12,4));
+openGauss=# \d t2
           Table "public.t2"
  Column |      Type      | Modifiers
 --------+----------------+-----------
- c1     | integer        |
- c2     | hll(12,4,12,0) |
+ id     | integer        |
+ set     | hll(12,4,12,0) |
 
 -- Create an HLL table, specify the third input parameter, and use default values for other parameters.
 openGauss=# create table t3(id int, set hll(-1,-1,8,-1));
@@ -115,8 +116,8 @@ openGauss=# \d t3
           Table "public.t3"
  Column |      Type      | Modifiers
 --------+----------------+-----------
- c1     | integer        |
- c2     | hll(14,10,8,0) |
+ id     | integer        |
+ set     | hll(14,10,8,0) |
 
 -- When a user creates an HLL table and specifies an invalid input parameter, an error is reported.
 openGauss=# create table t4(id int, set hll(5,-1));

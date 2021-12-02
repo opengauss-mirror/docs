@@ -6,7 +6,6 @@
 
 ## 注意事项<a name="section9619125512555"></a>
 
--   由于升级的限制，在V5R2C00版本中，即使在不同的Package间，也无法创建同名同参的存储过程。
 -   package只支持集中式，无法在分布式中使用。
 -   在package specification中声明过的函数或者存储过程，必须在package body中找到定义。
 -   在实例化中，无法调用带有commit/rollback的存储过程。

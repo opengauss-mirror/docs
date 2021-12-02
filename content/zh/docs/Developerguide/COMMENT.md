@@ -27,7 +27,7 @@ COMMENT ON
   EXTENSION object_name |
   FOREIGN DATA WRAPPER object_name |
   FOREIGN TABLE object_name |
-  FUNCTION function_name ( [ {[ argmode ] [ argname ] argtype} [, ...] ] ) |
+  FUNCTION function_name ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) |
   INDEX object_name |
   LARGE OBJECT large_object_oid |
   OPERATOR operator_name (left_type, right_type) |
@@ -90,7 +90,7 @@ COMMENT ON
 
     定义/修改注释的函数名称。
 
--   **argmode,argname,argtype**
+-   **argname,argmode,argtype**
 
     函数参数的模式、名称、类型。
 

@@ -30,7 +30,7 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     其中with\_query的详细格式为：
 
     ```
-    with_query_name [ ( column_name [, ...] ) ] AS
+    with_query_name [ ( column_name [, ...] ) ] AS [ [ NOT ] MATERIALIZED]
     ( {select | values | insert | update | delete} )
     ```
 

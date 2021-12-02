@@ -333,9 +333,13 @@ The possible permissions are:
 
     Specifies the database name.
 
--   **function\_name**
+- **function\_name**
 
-    Specifies the function name.
+  Specifies the function name.
+
+-   **procedure\_name**
+
+    Specifies theprocedure name.
 
 -   **sequence\_name**
 

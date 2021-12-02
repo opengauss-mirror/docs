@@ -1440,9 +1440,9 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
--   fenced\_udf\_process\(\)
+-   fenced\_udf\_process\(integer\)
 
-    Description: Shows the number of local UDF Master and Work processes.
+    Description: Shows the number of local UDF Master and Work processes.When the input parameter is 1, check the number of master processes; when the input parameter is 2, check the number of worker processes; when the input parameter is 3, terminate all worker processes.
 
     Return type: record
 
