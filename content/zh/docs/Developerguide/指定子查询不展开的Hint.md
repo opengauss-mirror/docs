@@ -20,7 +20,7 @@ explain select * from t1 where t1.a in (select t2.a from t2);
 
 计划
 
-![](figures/zh-cn_image_0000001144259139.png)
+![](figures/zh-cn_image_0000001209615959.png)
 
 加入no\_expand
 
@@ -30,5 +30,5 @@ explain select * from t1 where t1.a in (select /*+ no_expand*/ t2.a from t2);
 
 计划
 
-![](figures/zh-cn_image_0000001143979187.png)
+![](figures/zh-cn_image_0000001209736009.png)
 

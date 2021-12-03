@@ -19,16 +19,15 @@
     ```
 
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   对于非PBE方式执行的SQL语句，设置本hint不会影响执行方式。  
->-   本Hint的优先级仅高于基于代价的选择和plan\_cache\_mode参数，即plan\_cache\_mode无法强制选择执行方式的语句本hint也无法生效。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   对于非PBE方式执行的SQL语句，设置本hint不会影响执行方式。
+>-   本Hint的优先级仅高于基于代价的选择和plan\_cache\_mode参数，即plan\_cache\_mode无法强制选择执行方式的语句本hint也无法生效。
 
 ## 示例<a name="section41303128143838"></a>
 
 强制使用Custom Plan
 
 ```
-set enable_fast_query_shipping = off;
 create table t (a int, b int, c int);
 prepare p as select /*+ use_cplan */ * from t where a = $1;
 explain execute p(1);
@@ -36,7 +35,7 @@ explain execute p(1);
 
 计划如下。可以看到过滤条件为入参的实际值，即此计划为Custom Plan。
 
-![](figures/zh-cn_image_0000001097419094.png)
+![](figures/zh-cn_image_0000001209735947.png)
 
 强制使用Generic Plan
 
@@ -48,5 +47,5 @@ explain execute p(1);
 
 计划如下。可以看到过滤条件为待填充的入参，即此计划为Custom Plan。
 
-![](figures/zh-cn_image_0000001097739076.png)
+![](figures/zh-cn_image_0000001209457383.png)
 

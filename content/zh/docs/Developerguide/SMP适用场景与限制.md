@@ -11,7 +11,7 @@ SMP特性通过算子并行来提升性能，同时会占用更多的系统资�
     -   Join：HashJoin、NestLoop。
     -   Agg：HashAgg、SortAgg、PlainAgg、WindowAgg（只支持partition by，不支持order by）。
     -   Stream：Local Redistribute、Local Broadcast。
-    -   其他：Result、Subqueryscan、Unique、Material、Setop、Append、VectoRow、RowToVec。
+    -   其他：Result、Subqueryscan、Unique、Material、Setop、Append、VectoRow。
 
 -   SMP特有算子：为了实现并行，新增了并行线程间的数据交换Stream算子供SMP特性使用。这些新增的算子可以看做Stream算子的子类。
     -   Local Gather：实现实例内部并行线程的数据汇总。

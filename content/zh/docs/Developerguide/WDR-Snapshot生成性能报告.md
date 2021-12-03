@@ -4,7 +4,7 @@
 
 ## 前提条件<a name="zh-cn_topic_0283137259_section128252205291"></a>
 
-WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
+WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-cn_topic_0283137284_zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
 
 ## 操作步骤<a name="zh-cn_topic_0283137259_section49941629132915"></a>
 
@@ -30,12 +30,11 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     >执行“cm\_ctl query -Cdvi”，回显中“Central Coordinator State”下显示的信息即为CCN信息。
 
 4.  执行如下步骤生成性能报告。
+    1.  执行如下命令生成格式化性能报告文件。
 
-    a.  执行如下命令生成格式化性能报告文件。
-
-    ```
+        ```
         \a \t \o 服务器文件路径
-    ```
+        ```
 
         上述命令涉及参数说明如下：
 
@@ -44,11 +43,11 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         -   \\o：把所有的查询结果发送至服务器文件里。
         -   服务器文件路径：生成性能报告文件存放路径。用户需要拥有此路径的读写权限。
 
-    b.  执行如下命令将查询到的信息写入性能报告中。
+    2.  执行如下命令将查询到的信息写入性能报告中。
 
-    ```
+        ```
         select generate_wdr_report(begin_snap_id bigint, end_snap_id bigint, report_type cstring, report_scope cstring, node_name cstring);
-    ```
+        ```
 
         命令中涉及的参数说明如下。
 
@@ -93,7 +92,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         </tr>
         <tr id="zh-cn_topic_0283137259_row1841064716537"><td class="cellrowborder" valign="top" width="34.01010101010101%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137259_p11410194725316"><a name="zh-cn_topic_0283137259_p11410194725316"></a><a name="zh-cn_topic_0283137259_p11410194725316"></a>node_name</p>
         </td>
-        <td class="cellrowborder" valign="top" width="32.56565656565657%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137259_p9831125295619"><a name="zh-cn_topic_0283137259_p9831125295619"></a><a name="zh-cn_topic_0283137259_p9831125295619"></a>在report_scope指定为node时，需要把该参数指定为对应节点的名称。(节点名称可以执行select * from pg_node_env;查询)。</p>
+        <td class="cellrowborder" valign="top" width="32.56565656565657%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137259_p9831125295619"><a name="zh-cn_topic_0283137259_p9831125295619"></a><a name="zh-cn_topic_0283137259_p9831125295619"></a>在report_scope指定为node时，需要把该参数指定为对应节点的名称。（节点名称可以执行select * from pg_node_env;查询）。</p>
         <p id="zh-cn_topic_0283137259_p941074755313"><a name="zh-cn_topic_0283137259_p941074755313"></a><a name="zh-cn_topic_0283137259_p941074755313"></a>在report_scope为cluster时，该值可以省略或者指定为空或NULL。</p>
         </td>
         <td class="cellrowborder" valign="top" width="33.42424242424243%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283137259_ul481800164318"></a><a name="zh-cn_topic_0283137259_ul481800164318"></a><ul id="zh-cn_topic_0283137259_ul481800164318"><li>node：<span id="text1798254510538"><a name="text1798254510538"></a><a name="text1798254510538"></a>openGauss</span>中的节点名称。</li><li>cluster：省略/空/NULL。</li></ul>
@@ -102,11 +101,11 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         </tbody>
         </table>
 
-    c.  执行如下命令关闭输出选项及格式化输出命令。
+    3.  执行如下命令关闭输出选项及格式化输出命令。
 
-    ```
+        ```
         \o \a \t 
-    ```
+        ```
 
 5.  根据需要查看WDR报告内容。
 
@@ -121,7 +120,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     </thead>
     <tbody><tr id="row115761915713"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p135718501312"><a name="p135718501312"></a><a name="p135718501312"></a>Database Stat（数据库范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p15576615117"><a name="p15576615117"></a><a name="p15576615117"></a>数据库维度性能统计信息：事务、读写、行活动、写冲突、死锁等。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p15576615117"><a name="p15576615117"></a><a name="p15576615117"></a>数据库维度性能统计信息：事务，读写，行活动，写冲突，死锁等。</p>
     </td>
     </tr>
     <tr id="row55761015114"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p135731021"><a name="p135731021"></a><a name="p135731021"></a>Load Profile（数据库范围）</p>
@@ -156,7 +155,7 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
     </tr>
     <tr id="row185761150118"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p12651331239"><a name="p12651331239"></a><a name="p12651331239"></a>Object stats（节点范围）</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p1457691518114"><a name="p1457691518114"></a><a name="p1457691518114"></a>表、索引维度的性能统计信息。</p>
+    <td class="cellrowborder" valign="top" width="73.4%" headers="mcps1.2.3.1.2 "><p id="p1457691518114"><a name="p1457691518114"></a><a name="p1457691518114"></a>表，索引维度的性能统计信息。</p>
     </td>
     </tr>
     <tr id="row145762156112"><td class="cellrowborder" valign="top" width="26.6%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a>Database Configuration（节点范围）</p>
