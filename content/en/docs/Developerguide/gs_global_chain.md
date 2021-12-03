@@ -13,13 +13,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1030344193520"><td class="cellrowborder" valign="top" width="17.06170617061706%" headers="mcps1.2.4.1.1 "><p id="p1830164412357"><a name="p1830164412357"></a><a name="p1830164412357"></a>oid</p>
-</td>
-<td class="cellrowborder" valign="top" width="24.09240924092409%" headers="mcps1.2.4.1.2 "><p id="p73074415357"><a name="p73074415357"></a><a name="p73074415357"></a>oid</p>
-</td>
-<td class="cellrowborder" valign="top" width="58.84588458845885%" headers="mcps1.2.4.1.3 "><p id="p5301544183513"><a name="p5301544183513"></a><a name="p5301544183513"></a>Row identifier (hidden attribute, which must be specified)</p>
-</td>
-</tr>
+<tbody>
 <tr id="row1146094213529"><td class="cellrowborder" valign="top" width="17.06170617061706%" headers="mcps1.2.4.1.1 "><p id="p1236651611535"><a name="p1236651611535"></a><a name="p1236651611535"></a>blocknum</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.09240924092409%" headers="mcps1.2.4.1.2 "><p id="p1187332611532"><a name="p1187332611532"></a><a name="p1187332611532"></a>bigint</p>
@@ -92,4 +86,5 @@
 </tr>
 </tbody>
 </table>
+
 

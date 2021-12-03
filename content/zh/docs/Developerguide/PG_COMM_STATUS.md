@@ -34,14 +34,14 @@ PG\_COMM\_STATUS视图展示节点的通信库状态。
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p10923441162011"><a name="p10923441162011"></a><a name="p10923441162011"></a>节点通信库发送速率，单位Byte/s。</p>
 </td>
 </tr>
-<tr id="row1495218552013"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p129522562013"><a name="p129522562013"></a><a name="p129522562013"></a>rxkB_rate</p>
+<tr id="row1495218552013"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p129522562013"><a name="p129522562013"></a><a name="p129522562013"></a>rxkbyte_rate</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p89528542019"><a name="p89528542019"></a><a name="p89528542019"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p5952251208"><a name="p5952251208"></a><a name="p5952251208"></a>bigint节点通信库接收速率，单位KByte/s。</p>
 </td>
 </tr>
-<tr id="row1375223462512"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p97527346253"><a name="p97527346253"></a><a name="p97527346253"></a>txkB_rate</p>
+<tr id="row1375223462512"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p97527346253"><a name="p97527346253"></a><a name="p97527346253"></a>txkbyte_rate</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p14752123418250"><a name="p14752123418250"></a><a name="p14752123418250"></a>bigint</p>
 </td>
@@ -55,21 +55,21 @@ PG\_COMM\_STATUS视图展示节点的通信库状态。
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p5827131172513"><a name="p5827131172513"></a><a name="p5827131172513"></a>cmailbox的buffer大小。</p>
 </td>
 </tr>
-<tr id="row7964165913255"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p596535932520"><a name="p596535932520"></a><a name="p596535932520"></a>memKB_libcomm</p>
+<tr id="row7964165913255"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p596535932520"><a name="p596535932520"></a><a name="p596535932520"></a>memkbyte_libcomm</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p6965105912252"><a name="p6965105912252"></a><a name="p6965105912252"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p29651459192515"><a name="p29651459192515"></a><a name="p29651459192515"></a>libcomm进程通信内存大小，单位Byte。</p>
 </td>
 </tr>
-<tr id="row84151914252"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p1541196259"><a name="p1541196259"></a><a name="p1541196259"></a>memKB_libpq</p>
+<tr id="row84151914252"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p1541196259"><a name="p1541196259"></a><a name="p1541196259"></a>memkbyte_libpq</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p16413198256"><a name="p16413198256"></a><a name="p16413198256"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1741719112516"><a name="p1741719112516"></a><a name="p1741719112516"></a>libpq进程通信内存大小，单位Byte。</p>
 </td>
 </tr>
-<tr id="row36729154250"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p3672121512516"><a name="p3672121512516"></a><a name="p3672121512516"></a>used_PM</p>
+<tr id="row36729154250"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p3672121512516"><a name="p3672121512516"></a><a name="p3672121512516"></a>used_pm</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p156721915102517"><a name="p156721915102517"></a><a name="p156721915102517"></a>integer</p>
 </td>
@@ -106,4 +106,5 @@ PG\_COMM\_STATUS视图展示节点的通信库状态。
 </tr>
 </tbody>
 </table>
+
 

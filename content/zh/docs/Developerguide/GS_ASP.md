@@ -1,6 +1,6 @@
 # GS\_ASP<a name="ZH-CN_TOPIC_0000001158569987"></a>
 
-GS\_ASP显示被持久化的ACTIVE SESSION PROFILE样本。
+GS\_ASP显示被持久化的ACTIVE SESSION PROFILE样本，该表只在系统库下查询，在用户库下查询无数据。
 
 **表 1**  GS\_ASP字段
 

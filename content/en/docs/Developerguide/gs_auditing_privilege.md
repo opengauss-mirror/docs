@@ -2,6 +2,8 @@
 
 **GS\_AUDITING\_PRIVILEGE**  displays all audit information about database DDL-related operations. Only the users with system administrator or security policy administrator permission can access this view.
 
+**Table  1**  GS\_AUDITING\_PRIVILEGE columns
+
 <a name="t8f0334486f934453827d563b90c86711"></a>
 <table><thead align="left"><tr id="r2a0276b542d54fd0808927c2c54b0fc6"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="a5579cdd06a5645b3862144b2131a8649"><a name="a5579cdd06a5645b3862144b2131a8649"></a><a name="a5579cdd06a5645b3862144b2131a8649"></a>Name</p>
 </th>
