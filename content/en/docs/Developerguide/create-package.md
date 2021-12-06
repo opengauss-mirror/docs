@@ -6,7 +6,6 @@
 
 ## Precautions<a name="section9619125512555"></a>
 
--   Due to upgrade restrictions, in V500R002C00, stored procedures with the same name and parameters cannot be created even in different packages.
 -   The package can be used only in centralized databases and cannot be used in distributed databases.
 -   The functions or stored procedures declared in the package specification must be defined in the package body.
 -   During instantiation, the stored procedure with  **commit**  or  **rollback**  cannot be invoked.

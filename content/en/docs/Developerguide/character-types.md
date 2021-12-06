@@ -62,7 +62,9 @@
 </table>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB - 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether NULL fields exist in the tuple.
+>
+>1. In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB - 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether NULL fields exist in the tuple.
+>2. NCHAR is an alias of bpchar type, and NCHAR(n) is an alias of bpchar(n) type.
 
 In openGauss, there are two other fixed-length character types, as shown in  [Table 2](#en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_tf74658686f5e4d979adf0ac04769ea16). The  **name**  type exists only for the storage of identifiers in the internal system catalogs and is not intended for use by general users. Its length is currently defined as 64 bytes \(63 usable characters plus terminator\). The type  **"char"**  only uses one byte of storage. It is internally used in the system catalogs as a simplistic enumeration type.
 

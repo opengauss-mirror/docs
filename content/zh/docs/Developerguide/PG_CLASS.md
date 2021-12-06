@@ -247,7 +247,7 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_aafaab1a0efc64a5cb2bacfa73348a01c"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_aafaab1a0efc64a5cb2bacfa73348a01c"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_aafaab1a0efc64a5cb2bacfa73348a01c"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ae88d5e6512b7488a8200d94cde0d329d"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ae88d5e6512b7488a8200d94cde0d329d"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ae88d5e6512b7488a8200d94cde0d329d"></a>表或者索引是否具有分区表的性质。<a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ud9bf9b8444c1404bb4e8b6706f57ec72"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ud9bf9b8444c1404bb4e8b6706f57ec72"></a><ul id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ud9bf9b8444c1404bb4e8b6706f57ec72"><li>p：表示带有分区表性质。</li><li>n：表示没有分区表特性。</li><li>v：表示该表为HDFS的Value分区表。</li></ul>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ae88d5e6512b7488a8200d94cde0d329d"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ae88d5e6512b7488a8200d94cde0d329d"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ae88d5e6512b7488a8200d94cde0d329d"></a>表或者索引是否具有分区表的性质。<a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ud9bf9b8444c1404bb4e8b6706f57ec72"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ud9bf9b8444c1404bb4e8b6706f57ec72"></a><ul id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_ud9bf9b8444c1404bb4e8b6706f57ec72"><li>p：表示带有分区表性质。</li><li>n：表示没有分区表特性。</li><li>v：表示该表为HDFS的Value分区表。</li><li>s：表示该表为二级分区表。</li></ul>
 </div>
 </td>
 </tr>
@@ -301,6 +301,7 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </tr>
 </tbody>
 </table>
+
 
 
 **表 2**  权限的参数说明

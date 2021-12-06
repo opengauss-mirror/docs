@@ -17,7 +17,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 -   Modify the additional parameters of the customized function.
 
     ```
-    ALTER FUNCTION function_name ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION function_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         action [ ... ] [ RESTRICT ];
     ```
 
@@ -40,21 +40,21 @@ Only the function owner or a user granted with the ALTER permission can run the 
 -   Rename the customized function.
 
     ```
-    ALTER FUNCTION funname ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         RENAME TO new_name;
     ```
 
 -   Change the owner of the customized function.
 
     ```
-    ALTER FUNCTION funname ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         OWNER TO new_owner;
     ```
 
 -   Modify the schema of the customized function.
 
     ```
-    ALTER FUNCTION funname ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         SET SCHEMA new_schema;
     ```
 

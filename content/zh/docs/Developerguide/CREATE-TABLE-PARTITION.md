@@ -196,23 +196,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   COMPRESSION
         -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
         -   行存表不支持压缩。
-
+    
     -   MAX\_BATCHROW
-
+    
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-
+    
         取值范围：10000\~60000，默认60000。
-
+    
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-
+    
         取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
-
+    
     -   DELTAROW\_THRESHOLD
-
+    
         预留参数。该参数只对列存表有效。
-
+    
         取值范围：0～9999
 
 
@@ -251,16 +251,17 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
--   **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
+- **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
 
-    指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
+  指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   每个分区都需要指定一个上边界。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >
+  >-   每个分区都需要指定一个上边界。
 
-    >-   分区上边界的类型应当和分区键的类型一致。
+  >-   分区上边界的类型应当和分区键的类型一致。
 
-    >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
+  >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
 -   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
 
@@ -310,7 +311,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     创建列表分区。partition\_key为分区键的名称。
 
     -   对于partition\_key，列表分区策略的分区键仅支持1列。
-    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过1048575个。
+    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
 
     分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
@@ -320,7 +321,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     对于partition\_key，哈希分区策略的分区键仅支持1列。
 
-    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过1048575个。
+    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 

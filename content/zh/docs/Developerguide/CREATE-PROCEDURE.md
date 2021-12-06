@@ -20,7 +20,7 @@
 
 ```
 CREATE [ OR REPLACE ] PROCEDURE procedure_name
-    [ ( {[ argmode ] [ argname ] argtype [ { DEFAULT | := | = } expression ]}[,...]) ]
+    [ ( {[ argname ] [ argmode ] argtype [ { DEFAULT | := | = } expression ]}[,...]) ]
     [
        { IMMUTABLE | STABLE | VOLATILE }
        | { SHIPPABLE | NOT SHIPPABLE }
@@ -98,7 +98,7 @@ plsql_body
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->argument\_name和argmode的顺序没有严格要求，推荐按照argument\_name、argmode、argument\_type的顺序使用。
+>argname和argmode的顺序没有严格要求，推荐按照argname、argmode、argtype的顺序使用。
 
 ## 相关链接<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>
 

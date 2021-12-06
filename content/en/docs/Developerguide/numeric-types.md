@@ -5,6 +5,7 @@
 **Table  1**  Integer types
 
 <a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_table40398258"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_row60544059"><th class="cellrowborder" valign="top" width="17.17171717171717%" id="mcps1.2.5.1.1"><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p5121737"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p5121737"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p5121737"></a>Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="27.27272727272727%" id="mcps1.2.5.1.2"><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p12207556"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p12207556"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p12207556"></a>Description</p>
@@ -315,16 +316,35 @@ openGauss=# SELECT * FROM bigserial_type_tab;
  2
 (2 rows)
 
+--创建表。
+openGauss=# CREATE TABLE largeserial_type_tab(c LARGESERIAL);
+
+--插入数据。
+openGauss=# INSERT INTO largeserial_type_tab VALUES(default);
+
+--插入数据。
+openGauss=# INSERT INTO largeserial_type_tab VALUES(default);
+
+--查看数据。
+openGauss=# SELECT * FROM largeserial_type_tab;
+ c 
+---
+ 1
+ 2
+(2 rows)
+
 -- Delete the table.
 openGauss=# DROP TABLE smallserial_type_tab;
 
 openGauss=# DROP TABLE serial_type_tab;
 
 openGauss=# DROP TABLE bigserial_type_tab;
+
+openGauss=# DROP TABLE largeserial_type_tab;
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->SMALLSERIAL, SERIAL and BIGSERIAL are not real types. They are concepts used for setting a unique identifier for a table. Therefore, an integer column is created and its default value plans to be read from a sequencer. A NOT NULL constraint is used to ensure NULL is not inserted. In most cases you would also want to attach a  **UNIQUE**  or  **PRIMARY KEY**  constraint to prevent duplicate values from being inserted unexpectedly, but this is not automatic. The sequencer is set so that it belongs to the column. In this case, when the column or the table is deleted, the sequencer is also deleted. Currently, the  **SERIAL**  column can be specified only when you create a table. You cannot add the  **SERIAL**  column in an existing table. In addition,  **SERIAL**  columns cannot be created in temporary tables. Because SERIAL is not a data type, columns cannot be converted to this type.
+>SMALLSERIAL, SERIAL 、 BIGSERIAL and LARGESERIAL are not real types. They are concepts used for setting a unique identifier for a table. Therefore, an integer column is created and its default value plans to be read from a sequencer. A NOT NULL constraint is used to ensure NULL is not inserted. In most cases you would also want to attach a  **UNIQUE**  or  **PRIMARY KEY**  constraint to prevent duplicate values from being inserted unexpectedly, but this is not automatic. The sequencer is set so that it belongs to the column. In this case, when the column or the table is deleted, the sequencer is also deleted. Currently, the  **SERIAL**  column can be specified only when you create a table. You cannot add the  **SERIAL**  column in an existing table. In addition,  **SERIAL**  columns cannot be created in temporary tables. Because SERIAL is not a data type, columns cannot be converted to this type.
 
 **Table  4**  Floating point types
 

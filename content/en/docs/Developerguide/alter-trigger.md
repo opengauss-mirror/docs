@@ -2,7 +2,11 @@
 
 ## Function<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 
-**ALTER TRIGGER**  modifies the definition of a trigger.
+**ALTER TRIGGER**  modifies the name of a trigger.
+
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
+>Only the name modification is currently supported.
 
 ## Precautions<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 

@@ -13,7 +13,7 @@
 
 ```
 DROP FUNCTION [ IF EXISTS ] function_name 
-[ ( [ {[ argmode ] [ argname ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
+[ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_sf080415ead494e02bd48dbc9ec81a573"></a>

@@ -174,7 +174,7 @@ PG\_ROLES视图提供访问数据库角色的相关信息，初始化用户和�
 </td>
 <td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p18369121834712"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p18369121834712"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p18369121834712"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p4369818204711"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p4369818204711"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p4369818204711"></a>用户临时表存储空间限额。</p>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p4369818204711"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p4369818204711"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p4369818204711"></a>用户临时表存储空间限额，单位为KB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_row19583121994714"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p19583101914717"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p19583101914717"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p19583101914717"></a>rolspillspace</p>
@@ -183,7 +183,7 @@ PG\_ROLES视图提供访问数据库角色的相关信息，初始化用户和�
 </td>
 <td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p135838191473"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p135838191473"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p135838191473"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p11583201954714"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p11583201954714"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p11583201954714"></a>用户算子落盘空间限额。</p>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p11583201954714"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p11583201954714"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_p11583201954714"></a>用户算子落盘空间限额，单位为KB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_r3cfff1aa9e26404bb9e43f4994852cec"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a6662994b7ca04e72bca41385b53f75a0"><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a6662994b7ca04e72bca41385b53f75a0"></a><a name="zh-cn_topic_0283137074_zh-cn_topic_0237122429_zh-cn_topic_0059777484_a6662994b7ca04e72bca41385b53f75a0"></a>rolconfig</p>

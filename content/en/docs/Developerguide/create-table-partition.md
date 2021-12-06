@@ -196,23 +196,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   COMPRESSION
         -   Valid values for column-store tables are  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**, and the compression level increases accordingly. The default is  **LOW**.
         -   Row-store tables do not support compression.
-
+    
     -   MAX\_BATCHROW
-
+    
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: 10000 to 60000. The default value is  **60000**.
-
+    
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
-
+    
         Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
-
+    
     -   DELTAROW\_THRESHOLD
-
+    
         A reserved parameter. The parameter is only valid for column-store tables.
-
+    
         Value range: 0 to 9999
 
 
@@ -301,7 +301,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     Create a list partition.  **partition\_key**  is the name of the partition key.
 
     -   For  **partition\_key**, the list partitioning policy supports only one column of partition keys.
-    -   If the clause is  **VALUES \(list\_values\_clause\)**,  **list\_values\_clause**  contains the key values of the corresponding partition. It is recommended that the number of key values of each partition be less than or equal to 1048575.
+    -   If the clause is  **VALUES \(list\_values\_clause\)**,  **list\_values\_clause**  contains the key values of the corresponding partition. It is recommended that the number of key values of each partition be less than or equal to 64.
 
     Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed 64.
 
@@ -311,7 +311,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     For  **partition\_key**, the hash partitioning policy supports only one column of partition keys.
 
-    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed 1048575.
+    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed 64.
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
