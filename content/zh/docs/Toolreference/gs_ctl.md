@@ -361,7 +361,8 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-**表 7**   query参数
+
+**表 7**  query参数
 
 <a name="table198621411133319"></a>
 

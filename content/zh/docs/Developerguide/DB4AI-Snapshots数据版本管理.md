@@ -111,7 +111,6 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
             SELECT * FROM s1@3.0;
             id |   name
             ----+----------
-              1 | zhangsan
               2 | lisi
               3 | wangwu
               4 | lisa
@@ -216,11 +215,11 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
 
         ```
         purge snapshot s1@1.0;
-        ERROR:  cannot purge root snapshot 'public."s1@1.0"' having dependent db4ai-snapshots
-        HINT:  purge all dependent db4ai-snapshots first
-        CONTEXT:  referenced column: purge_snapshot_internal
+        ERROR: cannot purge root snapshot 'public."s1@1.0"' having dependent snapshots
+        HINT: purge all dependent snapshots first
+        CONTEXT: referenced column: purge_snapshot_internal
         SQL statement "SELECT db4ai.purge_snapshot_internal(i_schema, i_name)"
-        PL/pgSQL function db4ai.purge_snapshot(name,name) line 62 at PERFORM
+        PL/pgSQL function db4ai.purge_snapshot(name,name) line 71 at PERFORM
         ```
 
 

@@ -31,8 +31,8 @@
     -   OUTPUT\_PATH：输出SQL流水文件文件的保存路径，即抽取出的业务数据存放的文件路径。
     -   DATABASE：（可选）数据库名称，不指定默认所有数据库。
     -   USERNAME：（可选）用户名称，不指定默认所有用户。
-    -   start\_time：（可选）日志收集的开始时间，不指定默认所有文件。
-    -   sql\_amount：（可选）收集SQL数量的最大值，不指定默认收集所有SQL。
+    -   start\_time：（可选）日志收集的开始时间， 不指定默认所有文件。
+    -   sql\_amount：（可选）收集SQL数量的最大值， 不指定默认收集所有SQL。
     -   statement：（可选）表示收集pg\_log日志中statement标识开头的SQL，不指定默认不收集。
     -   json：指定收集日志的文件存储格式为SQL归一化后的json，不指定默认格式每条SQL占一行。
 
@@ -41,6 +41,9 @@
     ```
     python extract_log.py $GAUSSLOG/pg_log/dn_6001 sql_log.txt -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
     ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >若指定-d/-U参数，日志打印每条日志信息的前缀格式需包含%d、%u，详见log\_line\_prefix参数。
 
 3.  将[1](#li541620573521)中设置的GUC参数还原为设置前的值。
 
