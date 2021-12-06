@@ -45,7 +45,7 @@ where member_object is:
   EVENT TRIGGER object_name |
   FOREIGN DATA WRAPPER object_name |
   FOREIGN TABLE object_name |
-  FUNCTION function_name ( [ [ argmode ] [ argname ] argtype [, ...] ] ) |
+  FUNCTION function_name ( [ [ argname ] [ argmode ] argtype [, ...] ] ) |
   MATERIALIZED VIEW object_name |
   OPERATOR operator_name (left_type, right_type) |
   OPERATOR CLASS object_name USING index_method |

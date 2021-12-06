@@ -102,7 +102,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
     -   **Psort**: psort index. It is used to perform partial sort on column-store tables.
     -   **ubtree**: Multi-version B-tree index used only for Ustore tables. The index page contains transaction information and can be recycled.
 
-    Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support the following index type:  **ubtree**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**.
+    Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support the following index type:  **ubtree**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**.Global temporary tables do not support GIN index and Gist index.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Column-store tables support GIN indexes only for the tsvector type. That is, the input parameter for creating a column-store GIN index must be the return value of the  **to\_tsvector**  function. This method is commonly used for GIN indexes.

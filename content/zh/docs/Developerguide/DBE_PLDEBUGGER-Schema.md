@@ -21,7 +21,8 @@ GRANT gs_role_pldebugger to user;
     openGauss=# CREATE OR REPLACE PROCEDURE test_debug ( IN  x INT) 
     AS  
     BEGIN
-    	  INSERT INTO t1 (a) VALUES (x);
+        INSERT INTO t1 (a) VALUES (x);
+        DELETE FROM t1 WHERE a = x;
     END;
     /
     CREATE PROCEDURE
@@ -66,14 +67,25 @@ GRANT gs_role_pldebugger to user;
     (1 row)
     ```
 
-    在执行attach的客户端调试，将当前所有变量输出。
+    在执行attach的客户端调试，可以执行以下变量操作
 
     ```
-    openGauss=# SELECT * FROM DBE_PLDEBUGGER.info_locals();
-     varname | vartype | value | package_name
-    ---------+---------+-------+--------------
-     $1      | int4    | 1     |
+    openGauss=# SELECT * FROM DBE_PLDEBUGGER.info_locals(); --打印全部变量
+     varname | vartype | value | package_name | isconst
+    ---------+---------+-------+--------------+---------
+     x       | int4    | 1     |              | f
     (1 row)
+    openGauss=# SELECT * FROM DBE_PLDEBUGGER.set_var('x', 2); --变量赋值
+     set_var
+    ---------
+     t
+    (1 row)
+    openGauss=# SELECT * FROM DBE_PLDEBUGGER.print_var('x'); --打印单个变量
+     varname | vartype | value | package_name | isconst
+    ---------+---------+-------+--------------+---------
+     x       | int4    | 2     |              | f
+    (1 row)
+    
     ```
 
     直接执行完成当前正在调试的存储过程。
@@ -93,6 +105,58 @@ GRANT gs_role_pldebugger to user;
      abort
     -------
      t
+    (1 row)
+    ```
+
+    client端查看代码信息并识别可以设置断点行号。
+
+    ```
+    openGauss=# SELECT * FROM DBE_PLDEBUGGER.info_code(16389);
+     lineno |                           query                           | canbreak
+    --------+-----------------------------------------------------------+----------
+            | CREATE OR REPLACE PROCEDURE public.test_debug( IN  x INT) | f
+          1 | AS  DECLARE                                               | f
+          2 | BEGIN                                                     | f
+          3 |     INSERT INTO t1 (a) VALUES (x);                        | t
+          4 |     DELETE FROM t1 WHERE a = x;                           | t
+          5 | END;                                                      | f
+          6 | /                                                         | f
+    (7 rows)
+    ```
+
+    设置断点。
+
+    ```
+    openGauss=# SELECT * FROM DBE_PLDEBUGGER.add_breakpoint(16389,4);
+     lineno |                           query                           | canbreak
+    --------+-----------------------------------------------------------+----------
+            | CREATE OR REPLACE PROCEDURE public.test_debug( IN  x INT) | f
+          1 | AS  DECLARE                                               | f
+          2 | BEGIN                                                     | f
+          3 |     INSERT INTO t1 (a) VALUES (x);                        | t
+          4 |     DELETE FROM t1 WHERE a = x;                           | t
+          5 | END;                                                      | f
+          6 | /                                                         | f
+    (7 rows)
+    ```
+
+    查看断点信息。
+
+    ```
+    openGauss=# SELECT * FROM DBE_PLDEBUGGER.info_breakpoints();
+     breakpointno | funcoid | lineno |              query              | enable
+    --------------+---------+--------+---------------------------------+--------
+                0 |   16389 |      4 |     DELETE FROM t1 WHERE a = x; | t
+    (1 row)
+    ```
+
+    执行至断点。
+
+    ```
+    openGauss=# SELECT * FROM DBE_PLDEBUGGER.continue();
+     funcoid |  funcname  | lineno |              query
+    ---------+------------+--------+---------------------------------
+       16389 | test_debug |      4 |     DELETE FROM t1 WHERE a = x;
     (1 row)
     ```
 
@@ -206,5 +270,42 @@ GRANT gs_role_pldebugger to user;
     </table>
 
 
+-   **[DBE\_PLDEBUGGER.turn\_on](DBE_PLDEBUGGER-turn_on.md)**  
+
+-   **[DBE\_PLDEBUGGER.turn\_off](DBE_PLDEBUGGER-turn_off.md)**  
+
+-   **[DBE\_PLDEBUGGER.local\_debug\_server\_info](DBE_PLDEBUGGER-local_debug_server_info.md)**  
+
+-   **[DBE\_PLDEBUGGER.attach](DBE_PLDEBUGGER-attach.md)**  
+
+-   **[DBE\_PLDEBUGGER.info\_locals](DBE_PLDEBUGGER-info_locals.md)**  
+
+-   **[DBE\_PLDEBUGGER.next](DBE_PLDEBUGGER-next.md)**  
+
+-   **[DBE\_PLDEBUGGER.continue](DBE_PLDEBUGGER-continue.md)**  
+
+-   **[DBE\_PLDEBUGGER.abort](DBE_PLDEBUGGER-abort.md)**  
+
+-   **[DBE\_PLDEBUGGER.print\_var](DBE_PLDEBUGGER-print_var.md)**  
+
+-   **[DBE\_PLDEBUGGER.info\_code](DBE_PLDEBUGGER-info_code.md)**  
+
+-   **[DBE\_PLDEBUGGER.step](DBE_PLDEBUGGER-step.md)**  
+
+-   **[DBE\_PLDEBUGGER.add\_breakpoint](DBE_PLDEBUGGER-add_breakpoint.md)**  
+
+-   **[DBE\_PLDEBUGGER.delete\_breakpoint](DBE_PLDEBUGGER-delete_breakpoint.md)**  
+
+-   **[DBE\_PLDEBUGGER.info\_breakpoints](DBE_PLDEBUGGER-info_breakpoints.md)**  
+
+-   **[DBE\_PLDEBUGGER.backtrace](DBE_PLDEBUGGER-backtrace.md)**  
+
+-   **[DBE\_PLDEBUGGER.enable\_breakpoint](DBE_PLDEBUGGER-enable_breakpoint.md)**  
+
+-   **[DBE\_PLDEBUGGER.disable\_breakpoint](DBE_PLDEBUGGER-disable_breakpoint.md)**  
+
+-   **[DBE\_PLDEBUGGER.finish](DBE_PLDEBUGGER-finish.md)**  
+
+-   **[DBE\_PLDEBUGGER.set\_var](DBE_PLDEBUGGER-set_var.md)**  
 
 

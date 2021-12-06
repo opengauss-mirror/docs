@@ -106,16 +106,17 @@ openGauss=# \d t1
       Table "public.t1"
  Column |  Type   | Modifiers
 --------+---------+-----------
- c1     | integer |
- c2     | hll     |
+ id     | integer |
+ set     | hll     |
 
 -- 创建hll类型的表，指定前两个入参，后两个采用默认值
 openGauss=# create table t2 (id integer, set hll(12,4));
+openGauss=# \d t2
           Table "public.t2"
  Column |      Type      | Modifiers
 --------+----------------+-----------
- c1     | integer        |
- c2     | hll(12,4,12,0) |
+ id     | integer        |
+ set     | hll(12,4,12,0) |
 
 --创建hll类型的表，指定第三个入参，其余采用默认值
 openGauss=# create table t3(id int, set hll(-1,-1,8,-1));
@@ -123,8 +124,8 @@ openGauss=# \d t3
           Table "public.t3"
  Column |      Type      | Modifiers
 --------+----------------+-----------
- c1     | integer        |
- c2     | hll(14,10,8,0) |
+ id     | integer        |
+ set     | hll(14,10,8,0) |
 
 --创建hll类型的表，指定入参不合法报错
 openGauss=# create table t4(id int, set hll(5,-1));

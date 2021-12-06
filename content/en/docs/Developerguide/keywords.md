@@ -925,15 +925,6 @@ The naming rules for identifiers are as follows:
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p62229016"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p62229016"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p62229016"></a>Reserved</p>
 </td>
 </tr>
-<tr id="row6513172520215"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p451462562120"><a name="p451462562120"></a><a name="p451462562120"></a>COLUMN_ARGS</p>
-</td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p16514102514213"><a name="p16514102514213"></a><a name="p16514102514213"></a>Non-reserved</p>
-</td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p155149258217"><a name="p155149258217"></a><a name="p155149258217"></a>N/A</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p051412582110"><a name="p051412582110"></a><a name="p051412582110"></a>N/A</p>
-</td>
-</tr>
 <tr id="row81471629152113"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p1214792952113"><a name="p1214792952113"></a><a name="p1214792952113"></a>COLUMN_ENCRYPTION_KEY</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p614742992118"><a name="p614742992118"></a><a name="p614742992118"></a>Non-reserved</p>
@@ -950,15 +941,6 @@ The naming rules for identifiers are as follows:
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p15514133602111"><a name="p15514133602111"></a><a name="p15514133602111"></a>N/A</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p1651413618218"><a name="p1651413618218"></a><a name="p1651413618218"></a>N/A</p>
-</td>
-</tr>
-<tr id="row65451532172114"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p1454553262112"><a name="p1454553262112"></a><a name="p1454553262112"></a>COLUMN_FUNCTION</p>
-</td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p1054513242114"><a name="p1054513242114"></a><a name="p1054513242114"></a>Non-reserved</p>
-</td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p954511321212"><a name="p954511321212"></a><a name="p954511321212"></a>N/A</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p185461032162120"><a name="p185461032162120"></a><a name="p185461032162120"></a>N/A</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_row65304345"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p57808248"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p57808248"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p57808248"></a>COLUMN_NAME</p>
@@ -2482,15 +2464,6 @@ The naming rules for identifiers are as follows:
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p48885745"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p48885745"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p48885745"></a>Reserved</p>
 </td>
 </tr>
-<tr id="row5545119172612"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p145455198260"><a name="p145455198260"></a><a name="p145455198260"></a>GLOBAL_FUNCTION</p>
-</td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p9545141920263"><a name="p9545141920263"></a><a name="p9545141920263"></a>Non-reserved</p>
-</td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p554551952610"><a name="p554551952610"></a><a name="p554551952610"></a>N/A</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p205452198260"><a name="p205452198260"></a><a name="p205452198260"></a>N/A</p>
-</td>
-</tr>
 <tr id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_row52874531"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p8670524"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p8670524"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p8670524"></a>GO</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p549604"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p549604"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p549604"></a>N/A</p>
@@ -3677,15 +3650,6 @@ The naming rules for identifiers are as follows:
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p57880945"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p57880945"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p57880945"></a>Reserved</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p1264664"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p1264664"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p1264664"></a>Reserved</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_row58544543"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p48339962"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p48339962"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p48339962"></a>NLSSORT</p>
-</td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p44413781"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p44413781"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p44413781"></a>Reserved</p>
-</td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p54766768"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p54766768"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p54766768"></a>N/A</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p60062732"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p60062732"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p60062732"></a>N/A</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_row43527684"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p30891762"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p30891762"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p30891762"></a>NO</p>
@@ -6684,4 +6648,5 @@ The naming rules for identifiers are as follows:
 </tr>
 </tbody>
 </table>
+
 

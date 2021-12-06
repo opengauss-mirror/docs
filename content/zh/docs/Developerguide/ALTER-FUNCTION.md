@@ -17,7 +17,7 @@
 -   修改自定义函数的附加参数。
 
     ```
-    ALTER FUNCTION function_name ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION function_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         action [ ... ] [ RESTRICT ];
     ```
 
@@ -40,21 +40,21 @@
 -   修改自定义函数的名称。
 
     ```
-    ALTER FUNCTION funname ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         RENAME TO new_name;
     ```
 
 -   修改自定义函数的所属者。
 
     ```
-    ALTER FUNCTION funname ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         OWNER TO new_owner;
     ```
 
 -   修改自定义函数的模式。
 
     ```
-    ALTER FUNCTION funname ( [ { [ argmode ] [ argname ] argtype} [, ...] ] )
+    ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         SET SCHEMA new_schema;
     ```
 

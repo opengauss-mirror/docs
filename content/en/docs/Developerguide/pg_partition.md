@@ -31,7 +31,12 @@
 </td>
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a>Object type<a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><ul id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"><li><strong id="en-us_topic_0237122306_b109312317811"><a name="en-us_topic_0237122306_b109312317811"></a><a name="en-us_topic_0237122306_b109312317811"></a>r</strong>: partitioned table</li><li><strong id="en-us_topic_0237122306_b1216617401812"><a name="en-us_topic_0237122306_b1216617401812"></a><a name="en-us_topic_0237122306_b1216617401812"></a>p</strong>: table partition</li><li><strong id="en-us_topic_0237122306_b168956471888"><a name="en-us_topic_0237122306_b168956471888"></a><a name="en-us_topic_0237122306_b168956471888"></a>x</strong>: index partition</li><li><strong id="b13276115439"><a name="b13276115439"></a><a name="b13276115439"></a>t</strong>: TOAST table</li></ul>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a>Object type<a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><ul id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"><li><strong id="en-us_topic_0237122306_b109312317811"><a name="en-us_topic_0237122306_b109312317811"></a>
+    <a name="en-us_topic_0237122306_b109312317811"></a>r</strong>: partitioned table</li><li><strong id="en-us_topic_0237122306_b1216617401812">
+    <a name="en-us_topic_0237122306_b1216617401812"></a><a name="en-us_topic_0237122306_b1216617401812"></a>p</strong>: table partition</li><li><strong id="en-us_topic_0237122306_b168956471888">
+    <a name="en-us_topic_0237122306_b168956471888"></a><a name="b13276115439"></a>s</strong>: table subpartition</li></ul>
+    <a name="en-us_topic_0237122306_b168956471888"></a><a name="b13276115439"></a>x</strong>: index partition</li><li><strong id="b13276115439">
+    <a name="b13276115439"></a><a name="b13276115439"></a>t</strong>: TOAST table</li></ul>
 </div>
 </td>
 </tr>
@@ -222,4 +227,5 @@
 </tr>
 </tbody>
 </table>
+
 

@@ -174,7 +174,7 @@ PG\_ROLES provides information about database roles. Initialization users and us
 </td>
 <td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_p18369121834712"><a name="en-us_topic_0283137074_en-us_topic_0237122429_p18369121834712"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_p18369121834712"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_p4369818204711"><a name="en-us_topic_0283137074_en-us_topic_0237122429_p4369818204711"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_p4369818204711"></a>Storage space of the user temporary table</p>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_p4369818204711"><a name="en-us_topic_0283137074_en-us_topic_0237122429_p4369818204711"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_p4369818204711"></a>Storage space of the user temporary table,The unit is KB.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137074_en-us_topic_0237122429_row19583121994714"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_p19583101914717"><a name="en-us_topic_0283137074_en-us_topic_0237122429_p19583101914717"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_p19583101914717"></a>rolspillspace</p>
@@ -183,7 +183,7 @@ PG\_ROLES provides information about database roles. Initialization users and us
 </td>
 <td class="cellrowborder" valign="top" width="17.330000000000002%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_p135838191473"><a name="en-us_topic_0283137074_en-us_topic_0237122429_p135838191473"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_p135838191473"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_p11583201954714"><a name="en-us_topic_0283137074_en-us_topic_0237122429_p11583201954714"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_p11583201954714"></a>Operator disk flushing space of the user</p>
+<td class="cellrowborder" valign="top" width="45.839999999999996%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_p11583201954714"><a name="en-us_topic_0283137074_en-us_topic_0237122429_p11583201954714"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_p11583201954714"></a>Operator disk flushing space of the user,The unit is KB.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137074_en-us_topic_0237122429_en-us_topic_0059777484_r3cfff1aa9e26404bb9e43f4994852cec"><td class="cellrowborder" valign="top" width="19.45%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137074_en-us_topic_0237122429_en-us_topic_0059777484_a6662994b7ca04e72bca41385b53f75a0"><a name="en-us_topic_0283137074_en-us_topic_0237122429_en-us_topic_0059777484_a6662994b7ca04e72bca41385b53f75a0"></a><a name="en-us_topic_0283137074_en-us_topic_0237122429_en-us_topic_0059777484_a6662994b7ca04e72bca41385b53f75a0"></a>rolconfig</p>

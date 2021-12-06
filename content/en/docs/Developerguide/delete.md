@@ -30,7 +30,7 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     Format of  **with\_query**:
 
     ```
-    with_query_name [ ( column_name [, ...] ) ] AS
+    with_query_name [ ( column_name [, ...] ) ] AS [ [ NOT ] MATERIALIZED]
     ( {select | values | insert | update | delete} )
     ```
 

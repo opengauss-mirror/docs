@@ -8,4 +8,7 @@ The simplified installation process is intended for users in universities and te
 
 -   **[Installation on Primary/Standby Nodes](installation-on-primary-standby-nodes.md)**  
 
+---
+
+-   **[Quick experience on Docker(Available in Windows)](quick-experience-on-Docker.md)**  
 

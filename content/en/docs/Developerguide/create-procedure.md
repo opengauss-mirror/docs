@@ -20,7 +20,7 @@
 
 ```
 CREATE [ OR REPLACE ] PROCEDURE procedure_name
-    [ ( {[ argmode ] [ argname ] argtype [ { DEFAULT | := | = } expression ]}[,...]) ]
+    [ ( {[ argmode argname ] [ argmode ] argtype [ { DEFAULT | := | = } expression ]}[,...]) ]
     [
        { IMMUTABLE | STABLE | VOLATILE }
        | { SHIPPABLE | NOT SHIPPABLE }
@@ -98,7 +98,7 @@ plsql_body
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->No specific order is applied to  **argument\_name**  and  **argmode**. The following order is advised:  **argument\_name**,  **argmode**, and  **argument\_type**.
+>No specific order is applied to  **argname**  and  **argmode**. The following order is advised:  **argname**,  **argmode**, and  **argtype**.
 
 ## Helpful Links<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>
 

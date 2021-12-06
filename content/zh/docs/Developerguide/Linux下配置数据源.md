@@ -1,4 +1,4 @@
-# Linux下配置数据源<a name="ZH-CN_TOPIC_0000001162579252"></a>
+# Linux下配置数据源<a name="ZH-CN_TOPIC_0289900737"></a>
 
 将openGauss提供的ODBC DRIVER（psqlodbcw.so）配置到数据源中便可使用。配置数据源需要配置“odbc.ini”和“odbcinst.ini”两个文件（在编译安装unixODBC过程中生成且默认放在“/usr/local/etc”目录下），并在服务器端进行配置。
 
@@ -28,11 +28,11 @@
     ```
 
 3.  替换客户端openGauss驱动程序。
-    a.  将openGauss-1.1.0-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
-    b.  将openGauss-1.1.0-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
+    1.  将openGauss-1.1.0-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
+    2.  将openGauss-1.1.0-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
 
 4.  配置数据源。
-    a.  配置ODBC驱动文件。
+    1.  配置ODBC驱动文件。
 
         在“/xxx/odbc/etc/odbcinst.ini”文件中追加以下内容。
 
@@ -79,18 +79,18 @@
         </tbody>
         </table>
 
-    b.  配置数据源文件。
+    2.  配置数据源文件。
 
         在“/usr/local/etc/odbc.ini”文件中追加以下内容。
 
         ```
         [MPPODBC]
         Driver=GaussMPP
-        Servername=10.145.130.26 #（数据库Server IP）
-        Database=postgres        #（数据库名）
-        Username=omm             #（数据库用户名）
-        Password=                #（数据库用户密码）
-        Port=8000                #（数据库侦听端口）
+        Servername=10.145.130.26（数据库Server IP）
+        Database=postgres  （数据库名）
+        Username=omm  （数据库用户名）
+        Password=  （数据库用户密码）
+        Port=8000 （数据库侦听端口）
         Sslmode=allow
         ```
 
@@ -148,7 +148,7 @@
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7803bcaba1324e56913a1a44d46f692e"></a>Password=</p>
         <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_note66001755162217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_note66001755162217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_note66001755162217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p57144884162217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p57144884162217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p57144884162217"></a>ODBC驱动本身已经对内存密码进行过清理，以保证用户密码在连接后不会再在内存中保留。</p>
-        <p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a>但是如果配置了此参数，由于unixODBC对数据源文件等进行缓存，可能导致密码长期保留在内存中。</p>
+        <p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p33900700162423"></a>但是如果配置了此参数，由于UnixODBC对数据源文件等进行缓存，可能导致密码长期保留在内存中。</p>
         <p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p9307938162511"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p9307938162511"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p9307938162511"></a>推荐在应用程序连接时，将密码传递给相应API，而非写在数据源配置文件中。同时连接成功后，应当及时清理保存密码的内存段。</p>
         </div></div>
         </td>
@@ -162,7 +162,7 @@
         </tr>
         <tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_rd27aa89b945d4ac6b33000b6df5c916e"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a5f7c150a5b5f471fa60adba4fd913dd4"></a>Sslmode</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a>开启SSL模式。</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p462272821213"></a>开启SSL模式</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a53d9561f3715460d9f7b8a022292214c"></a>Sslmode=allow</p>
         </td>
@@ -207,10 +207,10 @@
         </tr>
         <tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_row9789524184113"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"></a>ConnectionExtraInfo</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a>GUC参数connection_info（参见<a href="连接设置.html#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）中显示驱动部署路径和进程属主用户的开关。</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a>GUC参数connection_info（参见<a href="zh-cn_topic_0289900801.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）中显示驱动部署路径和进程属主用户的开关。</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a>ConnectionExtraInfo=1</p>
-        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="连接设置.html#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="PG_STAT_ACTIVITY.md">PG_STAT_ACTIVITY</a>中查询到。</p>
+        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="zh-cn_topic_0289900801.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="zh-cn_topic_0289899849.md">PG_STAT_ACTIVITY</a>中查询到。</p>
         </div></div>
         </td>
         </tr>
@@ -243,11 +243,11 @@
         **表 3**  Sslmode的可选项及其描述
 
         <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_table22136585143846"></a>
-        <table><thead align="left"><tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_row7964795143846"><th class="cellrowborder" valign="top" width="14.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><strong id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a>Sslmode</strong></p>
+        <table><thead align="left"><tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_row7964795143846"><th class="cellrowborder" valign="top" width="14.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"></a>Sslmode</p>
         </th>
-        <th class="cellrowborder" valign="top" width="18.87%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"><strong id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a>是否会启用SSL加密</strong></p>
+        <th class="cellrowborder" valign="top" width="18.87%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p45765196143856"></a>是否会启用SSL加密</p>
         </th>
-        <th class="cellrowborder" valign="top" width="66.25999999999999%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"><strong id="zh-cn_topic_0237120407_zh-cn_topic_0059778464_p44475740143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a>描述</strong></p>
+        <th class="cellrowborder" valign="top" width="66.25999999999999%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_p15993376143856"></a>描述</p>
         </th>
         </tr>
         </thead>
@@ -300,8 +300,12 @@
 6.  <a name="zh-cn_topic_0283136654_li1724551081815"></a>（可选）替换SSL证书，具体请参见[证书替换](证书替换.md)。
 7.  SSL模式：
 
+    声明如下环境变量，同时保证client.key\*系列文件为600权限：
+
     ```
     退回根目录，创建.postgresql目录，并将root.crt，client.crt，client.key，client.key.cipher，client.key.rand，client.req，server.crt，server.key，server.key.cipher，server.key.rand，server.req放在此路径下。
+    Unix系统下，server.crt、server.key的权限设置必须禁止任何外部或组的访问，请执行如下命令实现这一点。
+    chmod 0600 server.key
     将root.crt以及server开头的证书相关文件全部拷贝进数据库install/data目录下（与postgresql.conf文件在同一路径）。
     修改postgresql.conf文件：
         ssl = on
@@ -312,58 +316,52 @@
     修改配置文件odbc.ini中的sslmode参数（require或verify-ca）。
     ```
 
-8. <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>配置数据库服务器。
-   a.  以操作系统用户omm登录数据库主节点。
-   b.  执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
+8.  <a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>配置数据库服务器。
+    1.  以操作系统用户omm登录数据库主节点。
+    2.  执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
 
-       ```
-       gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
-       ```
+        ```
+        gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
+        ```
 
-       在DR（Direct Routing，LVS的直接路由DR模式）模式中需要将虚拟IP地址（10.11.12.13）加入到服务器的侦听地址列表中。
+        在DR（Direct Routing，LVS的直接路由DR模式）模式中需要将虚拟IP地址（10.11.12.13）加入到服务器的侦听地址列表中。
 
-       listen\_addresses也可以配置为“\*”或“0.0.0.0”，此配置下将侦听所有网卡，但存在安全风险，不推荐用户使用，推荐用户按照需要配置IP或者主机名，打开侦听。
+        listen\_addresses也可以配置为“\*”或“0.0.0.0”，此配置下将侦听所有网卡，但存在安全风险，不推荐用户使用，推荐用户按照需要配置IP或者主机名，打开侦听。
 
-   c. 执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
+    3.  执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
 
-      ```
-      gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
-      ```
+        ```
+        gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
+        ```
 
-      >![](public_sys-resources/icon-note.gif) **说明：** 
-      >
-      >- -N all表示openGauss中的所有主机。
-      >
-      >-   -I all表示主机中的所有实例。
-      >
-      >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
-      >
-      >-   all表示允许客户端连接到任意的数据库。
-      >
-      >-   jack表示连接数据库的用户。
-      >
-      >-   10.11.12.13/32表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
-      >
-      >-   sha256表示连接时jack用户的密码使用sha256算法加密。
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   ****
+        >-   -N all表示openGauss中的所有主机。
+        >-   -I all表示主机中的所有实例。
+        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
+        >-   all表示允许客户端连接到任意的数据库。
+        >-   jack表示连接数据库的用户。
+        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
+        >-   sha256表示连接时jack用户的密码使用sha256算法加密。
 
-      如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
+        如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
 
-      ```
-      local all all trust
-      ```
+        ```
+        local all all trust
+        ```
 
-      如果将ODBC客户端配置在和要连接的数据库主节点在不同机器上，则需要使用sha256认证方式，如下：
+        如果将ODBC客户端配置在和要连接的数据库主节点在不同机器上，则需要使用sha256认证方式，如下：
 
-      ```
-      host all all xxx.xxx.xxx.xxx/32 sha256
-      ```
+        ```
+        host all all xxx.xxx.xxx.xxx/32 sha256
+        ```
 
-   d.  重启openGauss。
+    4.  重启openGauss。
 
-       ```
-       gs_om -t stop
-       gs_om -t start
-       ```
+        ```
+        gs_om -t stop
+        gs_om -t start
+        ```
 
 9.  在客户端配置环境变量。
 
@@ -408,7 +406,7 @@
 
 ## 常见问题处理<a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_section29040424163013"></a>
 
--   \[unixODBC\]\[Driver Manager\]Can't open lib 'xxx/xxx/psqlodbcw.so' : file not found.
+-   \[UnixODBC\]\[Driver Manager\]Can't open lib 'xxx/xxx/psqlodbcw.so' : file not found.
 
     此问题的可能原因：
 
@@ -418,10 +416,10 @@
 
     -   psqlodbcw.so的依赖库不存在，或者不在系统环境变量中
 
-        确认的办法：ldd一下错误信息中的路径，如果是缺少libodbc.so.1等unixODBC的库，那么按照“操作步骤”中的方法重新配置unixODBC，并确保它的安装路径下的lib目录添加到了LD\_LIBRARY\_PATH中；如果是缺少其他库，请将ODBC驱动包中的lib目录添加到LD\_LIBRARY\_PATH中。
+        确认的办法：ldd一下错误信息中的路径，如果是缺少libodbc.so.1等UnixODBC的库，那么按照“操作步骤”中的方法重新配置UnixODBC，并确保它的安装路径下的lib目录添加到了LD\_LIBRARY\_PATH中；如果是缺少其他库，请将ODBC驱动包中的lib目录添加到LD\_LIBRARY\_PATH中。
 
 
--   \[unixODBC\]connect to server failed: no such file or directory
+-   \[UnixODBC\]connect to server failed: no such file or directory
 
     此问题可能的原因：
 
@@ -464,24 +462,24 @@
 
     此问题的可能原因：
 
-    可执行文件（比如unixODBC的isql，以下都以isql为例）与数据库驱动（psqlodbcw.so）依赖于不同的ODBC的库版本：libodbc.so.1或者libodbc.so.2。此问题可以通过如下方式确认：
+    可执行文件（比如UnixODBC的isql，以下都以isql为例）与数据库驱动（psqlodbcw.so）依赖于不同的odbc的库版本：libodbc.so.1或者libodbc.so.2。此问题可以通过如下方式确认：
 
     ```
     ldd `which isql` | grep odbc
     ldd psqlodbcw.so | grep odbc
     ```
 
-    这时，如果输出的libodbc.so最后的后缀数字不同或者指向不同的磁盘物理文件，那么基本就可以断定是此问题。isql与psqlodbcw.so都会要求加载libodbc.so，这时如果它们加载的是不同的物理文件，便会导致两套完全同名的函数列表，同时出现在同一个可见域里（unixODBC的libodbc.so.\*的函数导出列表完全一致），产生冲突，无法加载数据库驱动。
+    这时，如果输出的libodbc.so最后的后缀数字不同或者指向不同的磁盘物理文件，那么基本就可以断定是此问题。isql与psqlodbcw.so都会要求加载libodbc.so，这时如果它们加载的是不同的物理文件，便会导致两套完全同名的函数列表，同时出现在同一个可见域里（UnixODBC的libodbc.so.\*的函数导出列表完全一致），产生冲突，无法加载数据库驱动。
 
     解决办法：
 
-    确定一个要使用的unixODBC，然后卸载另外一个（比如卸载库版本号为.so.2的unixODBC），然后将剩下的.so.1的库，新建一个同名但是后缀为.so.2的软链接，便可解决此问题。
+    确定一个要使用的UnixODBC，然后卸载另外一个（比如卸载库版本号为.so.2的UnixODBC），然后将剩下的.so.1的库，新建一个同名但是后缀为.so.2的软链接，便可解决此问题。
 
 -   FATAL: Forbid remote connection with trust method!
 
     由于安全原因，数据库主节点禁止openGauss内部其他节点无认证接入。
 
-    如果要在openGauss内部访问数据库主节点，请将ODBC程序部署在数据库主节点所在机器，服务器地址使用“127.0.0.1”。建议业务系统单独部署在openGauss外部，否则可能会影响数据库运行性能。
+    如果要在openGauss内部访问数据库主节点，请将ODBC程序部署在数据库主节点所在机器，服务器地址使用"127.0.0.1"。建议业务系统单独部署在openGauss外部，否则可能会影响数据库运行性能。
 
 -   \[unixODBC\]\[Driver Manager\]Invalid attribute value
 
@@ -491,16 +489,12 @@
 
     使用开源客户端碰到此问题，可能原因：
 
-    数据库中存储的口令校验只存储了sha256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
+    数据库中存储的口令校验只存储了SHA256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >
     >-   数据库并不存储用户口令，只存储用户口令的哈希码。
-    >
     >-   数据库当用户更新用户口令或者新建用户时，会同时存储两种格式的哈希码，这时将兼容开源的认证协议。
-    >
-    >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了sha256格式的哈希，导致仍然无法使用MD5做口令认证。
-    >
+    >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。
     >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。
 
     要解决该问题，可以更新用户口令（参见[ALTER USER](ALTER-USER.md)）；或者新建一个用户（参见[CREATE USER](CREATE-USER.md)），赋于同等权限，使用新用户连接数据库。
@@ -511,6 +505,6 @@
 
 -   FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
 
-    目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用“gss”方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到“sha256”后再试。配置方法见[8](#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
+    目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用"gss"方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到"sha256"后再试。配置方法见[8](#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
 
 

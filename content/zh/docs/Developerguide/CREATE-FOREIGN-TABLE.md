@@ -6,8 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137606_section1614655042716"></a>
 
-- 外表中暂不支持使用系统列（如tableoid、ctid等）。
-- 其中Private和Shares模式的外表，需要初始用户和运维模式下（operation_mode）的运维管理员权限。
+外表中暂不支持使用系统列（如tableoid、ctid等），其中Private和Shares模式的外表，需要初始用户和运维模式下（operation_mode）的运维管理员权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137606_section0692184823016"></a>
 

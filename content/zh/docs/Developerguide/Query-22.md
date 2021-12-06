@@ -4,7 +4,7 @@
 
 **参数说明：**控制系统中unique sql信息实时收集功能。配置为0表示不启用unique sql信息收集功能。
 
-该值由大变小将会清空系统中原有的数据重新统计；从小变大不受影响。
+该值由大变小将会清空系统中原有的数据重新统计（备机不支持此能力）；从小变大不受影响。
 
 当系统中产生的unique sql条目数量大于instr\_unique\_sql\_count时，若开启了unique sql自动淘汰，则系统会按unique sql的更新时间由远到近自动淘汰一定比例的条目，使得新产生的unique sql信息可以继续被统计。若没有开启自动淘汰，则系统产生的新的unique sql信息将不再被统计。
 
@@ -144,21 +144,6 @@ slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 >若全量SQL跟踪级别值为非OFF时，当前SQL跟踪级别值为全量SQL和慢SQL的较高级别（L2 \> L1 \> L0），级别说明请参见[表1](STATEMENT_HISTORY.md)。
 
 **默认值：**OFF,L0
-
-## unique\_sql\_clean\_ratio<a name="section4987541125919"></a>
-
-**参数说明：**当系统中产生的unique sql条目数量大于等于instr\_unique\_sql\_count时，每次自动淘汰的unique sql条目数量占总条目数量预设上限instr\_unique\_sql\_count的比例。
-
-该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
-
-**取值范围：**double类型，0\~0.2
-
-**默认值：**0.1
-
->![](public_sys-resources/icon-caution.gif) **注意：** 
->-   该值设置过小每次清理的条目较少，可能会导致频繁进行清理；设置过大时每次清理的条目较多，可能会导致频繁插入。建议值0.1。
->
->-   unique\_sql\_clean\_ratio设置为0不代表关闭自动淘汰功能，请通过enable\_auto\_clean\_unique\_sql来控制是否开启自动淘汰。当开启自动淘汰，且将unique\_sql\_clean\_ratio设置为0时，将自动把unique\_sql\_clean\_ratio重置为默认值0.1。
 
 ## enable\_auto\_clean\_unique\_sql<a name="section7679208201"></a>
 

@@ -177,14 +177,14 @@ openGauss中只有一份pg\_authid，不是每个数据库有一份。需要有�
 </td>
 <td class="cellrowborder" valign="top" width="21.13%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p121711231579"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p121711231579"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p121711231579"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.379999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p1721822320711"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p1721822320711"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p1721822320711"></a>用户临时表的最大空间限额，单位为K。</p>
+<td class="cellrowborder" valign="top" width="58.379999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p1721822320711"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p1721822320711"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p1721822320711"></a>用户临时表的最大空间限额，单位为KB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_row9541428576"><td class="cellrowborder" valign="top" width="20.49%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p145417282716"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p145417282716"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p145417282716"></a>rolspillspace</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.13%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p11542284716"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p11542284716"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p11542284716"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.379999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p15541328974"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p15541328974"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p15541328974"></a>用户执行作业时下盘数据的最大空间限额，单位为K。</p>
+<td class="cellrowborder" valign="top" width="58.379999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p15541328974"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p15541328974"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p15541328974"></a>用户执行作业时下盘数据的最大空间限额，单位为KB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_row163371833071"><td class="cellrowborder" valign="top" width="20.49%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p8337333476"><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p8337333476"></a><a name="zh-cn_topic_0283137725_zh-cn_topic_0237122273_p8337333476"></a>rolexcpdata</p>
@@ -220,4 +220,5 @@ openGauss中只有一份pg\_authid，不是每个数据库有一份。需要有�
 </tr>
 </tbody>
 </table>
+
 

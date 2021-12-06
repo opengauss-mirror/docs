@@ -27,7 +27,7 @@ COMMENT ON
   EXTENSION object_name |
   FOREIGN DATA WRAPPER object_name |
   FOREIGN TABLE object_name |
-  FUNCTION function_name ( [ {[ argmode ] [ argname ] argtype} [, ...] ] ) |
+  FUNCTION function_name ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) |
   INDEX object_name |
   LARGE OBJECT large_object_oid |
   OPERATOR operator_name (left_type, right_type) |
@@ -90,7 +90,7 @@ COMMENT ON
 
     Specifies the function whose comment is defined or modified.
 
--   **argmode,argname,argtype**
+-   **argname,argmode,argtype**
 
     Specifies the schema, name, and type of the function parameters.
 

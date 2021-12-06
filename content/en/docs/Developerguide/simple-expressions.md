@@ -57,7 +57,7 @@ ROWNUM
 
 **ROWNUM**  is a pseudocolumn that returns a number indicating the row number of the result obtained from the query. The value of  **ROWNUM**  in the first row is  **1**, the value of  **ROWNUM**  in the second row is  **2**, and so on.
 
-The return type of  **ROWNUM**  is BIGINT.  **ROWNUM**  can be used to limit the total number of rows returned by a query. For example, the following statement limits the maximum number of records returned from the table  **Students**  to 10.
+The return type of  **ROWNUM**  is numeric.  **ROWNUM**  can be used to limit the total number of rows returned by a query. For example, the following statement limits the maximum number of records returned from the table  **Students**  to 10.
 
 ```
 select * from Students where rownum <= 10;
