@@ -312,7 +312,6 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-
 **表 6**  build参数
 
 <a name="zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b"></a>
@@ -362,9 +361,10 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-**表 7**  query参数
+**表 7**   query参数
 
 <a name="table198621411133319"></a>
+
 <table><thead align="left"><tr id="row2086211117339"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p2862181110338"><a name="p2862181110338"></a><a name="p2862181110338"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p88621511133318"><a name="p88621511133318"></a><a name="p88621511133318"></a>参数说明</p>
