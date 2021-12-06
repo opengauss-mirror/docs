@@ -294,6 +294,24 @@ Dump parameters:
 
     Prevents the dumping of access permissions \(grant/revoke commands\).
 
+- -q, --target
+
+  Exports text files compatible with databases of other versions. Currently, parameters of V1 and V5 are supported. The V1 parameters are used to export data from the V5 database as a text file compatible with V1. The V5 parameters are used to export data from the V5 database as a V5 text file, reducing errors that may occur during V5 import.
+
+  When using the V1 parameters, you are advised to use them along with parameters such as  **--exclude-guc="enable\_cluster\_resize"**,  **--exclude-function**, and  **--exclude-with**. Otherwise, an error may be reported during V1 import.
+
+- --exclude-guc
+
+  Specifies the  **set**  command that does not contain related GUC parameters in the exported text file. Currently, only  **enable\_cluster\_resize**  is supported.
+
+- --exclude-function
+
+  Specifies that functions and stored procedures are not exported.
+
+- --exclude-with
+
+  Specifies that the description such as  **WITH\(orientation=row, compression=on\)**  is not added to the end of the exported table definition.
+
 -   --binary-upgrade
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
