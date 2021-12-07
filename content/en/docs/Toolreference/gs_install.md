@@ -37,11 +37,11 @@ Installation and deployment of openGauss require you to specify a configuration 
 
 ## Parameter Description<a name="en-us_topic_0237152416_en-us_topic_0059778040_s6aa938505b3b45808dbefdd1266efd76"></a>
 
--   -X
+- -X
 
-    Specifies the path of the openGauss configuration file.
+  openGauss configuration file.
 
-    Value range: storage paths of XML files
+  Value range:  xml configuration file.
 
 -   -l
 

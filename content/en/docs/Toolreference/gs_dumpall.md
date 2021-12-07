@@ -144,7 +144,7 @@ Dump parameters:
 
 - --with-key=KEY
 
-  Aes128 key length rules are as follows: 
+  AES128 key length rules are as follows: 
 
   - The key length is 8 ~ 16 characters. 
   - At least three of the four types of characters are included: uppercase letters (A-Z), lowercase letters (A-Z), numbers (0-9), non alphanumeric characters (limited to ~! @ #$% ^ & * () - = + \ | [] {};:, <. > /?). 

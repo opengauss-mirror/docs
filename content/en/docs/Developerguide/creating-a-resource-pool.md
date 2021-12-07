@@ -126,7 +126,7 @@ After resource load management is enabled, the system automatically creates  **d
 
 ## Prerequisites<a name="section17352165513395"></a>
 
-You are familiar with the  [CREATE RESOURCE POOL](en-us_topic_0000001193907775.md),  [ALTER RESOURCE POOL](en-us_topic_0000001148027836.md), and  [DROP RESOURCE POOL](en-us_topic_0000001193987659.md)syntax.
+You are familiar with the  [CREATE RESOURCE POOL](create-resource-pool.md),  [ALTER RESOURCE POOL](alter-resource-pool.md), and  [DROP RESOURCE POOL](drop-resource-pool.md)syntax.
 
 ## **Procedure** <a name="en-us_topic_0066854608_section16606579202019"></a>
 
@@ -207,7 +207,7 @@ DROP RESOURCE POOL
     (7 rows)
     ```
 
--   View information about Cgroups associated with a resource pool. For details, see  **[gs\_control\_group\_info\(p...](en-us_topic_0289900249.md#en-us_topic_0283136951_en-us_topic_0237121998_li111931884019)**.
+-   View information about Cgroups associated with a resource pool. For details, see  **[statistics-information-functions](statistics-information-functions.md)**.
 
     In the following example,  **resource\_pool\_a1**  is the name of the resource pool.
 
