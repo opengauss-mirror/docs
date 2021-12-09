@@ -20,7 +20,7 @@ create FOREIGN table bmsql_oorder (
   o_ol_cnt     integer, 
   o_all_local  integer, 
   o_entry_d    timestamp, 
-  primarykey (o_w_id, o_d_id, o_id) 
+  primary key (o_w_id, o_d_id, o_id) 
 ); 
 create index  bmsql_oorder_index1 on bmsql_oorder(o_w_id, o_d_id, o_c_id, o_id) ;
 ```

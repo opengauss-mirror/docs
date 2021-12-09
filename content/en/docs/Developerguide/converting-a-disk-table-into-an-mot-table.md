@@ -61,7 +61,7 @@ To migrate the customer table into an MOT table, perform the following –
 3.  Dump table data only by using  **gs\_dump**.
 
     ```
-    $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump
+    $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump -p 16000
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: dump database benchmarksql successfully
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: total time: 332  ms
     ```
@@ -87,7 +87,7 @@ To migrate the customer table into an MOT table, perform the following –
 6.  Import the source dump data into the new MOT table.
 
     ```
-    $ gs_restore -C -d benchmarksql customer.dump
+    $ gs_restore -C -d benchmarksql customer.dump -p 16000
     restore operation successful
     total time: 24  ms
     Check that the data was imported successfully.

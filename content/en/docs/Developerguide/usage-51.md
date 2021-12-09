@@ -41,9 +41,9 @@
 
 ```
 -- Prepare data.
-CREATE TABLE t1(c1 int, c2 int);
-INSERT INTO t1 VALUES(1, 1);
-INSERT INTO t1 VALUES(2, 2);
+postgres=# CREATE TABLE t1(c1 int, c2 int);
+postgres=# INSERT INTO t1 VALUES(1, 1);
+postgres=# INSERT INTO t1 VALUES(2, 2);
 
 -- Create an incremental materialized view.
 postgres=# CREATE INCREMENTAL MATERIALIZED VIEW mv AS SELECT * FROM t1;

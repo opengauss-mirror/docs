@@ -40,6 +40,7 @@ postgres=# INSERT INTO t1 VALUES(2, 2);
 
 -- Create a full materialized view.
 postgres=# CREATE MATERIALIZED VIEW mv AS select count(*) from t1;
+CREATE MATERIALIZED VIEW
 
 -- Query the materialized view result.
 postgres=# SELECT * FROM mv;
@@ -53,6 +54,7 @@ postgres=# INSERT INTO t1 VALUES(3, 3);
 
 -- Fully refresh a full materialized view.
 postgres=# REFRESH MATERIALIZED VIEW mv;
+REFRESH MATERIALIZED VIEW
 
 -- Query the materialized view result.
 postgres=# SELECT * FROM mv;
@@ -63,5 +65,6 @@ postgres=# SELECT * FROM mv;
 
 -- Delete a materialized view.
 postgres=# DROP MATERIALIZED VIEW mv;
+DROP MATERIALIZED VIEW
 ```
 
