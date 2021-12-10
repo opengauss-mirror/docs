@@ -409,7 +409,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
     >Currently, the LLVM optimization only supports the vectorized executor and SQL on Hadoop features. You are advised to set this parameter to  **off**  in other cases.
 
 
-**Default value**:  **off**
+**Default value**:  **on**
 
 ## codegen\_strategy<a name="en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_sb93d0db93dd84302b9f45d5da735aa18"></a>
 
