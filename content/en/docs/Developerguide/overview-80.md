@@ -168,14 +168,6 @@ The name and structure of the user history table are as follows:
       3 | peter | f51b4b1b12d0354b
     (3 rows)
     
-    openGauss=# SELECT *, hash FROM ledgernsp.usertable ORDER BY id;
-     id | name  |       hash
-    ----+-------+------------------
-      1 | alex  | 1f2e543c580cb8c5
-      2 | bob2  | 437761affbb7c605
-      3 | peter | f51b4b1b12d0354b
-    (3 rows)
-    
     openGauss=# DELETE FROM ledgernsp.usertable WHERE id = 3;
     DELETE 1
     openGauss=# SELECT *, hash FROM ledgernsp.usertable ORDER BY id;
