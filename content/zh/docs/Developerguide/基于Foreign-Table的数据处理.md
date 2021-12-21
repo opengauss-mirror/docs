@@ -85,7 +85,7 @@
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
 
-    >-   server\_remote为s名称ver名称，供外表使用。
+    >-   server\_remote为server名称，供外表使用。
 
     >-   address为远端数据库实例DN的地址和端口号，如配置LVS，推荐只填写一个LVS地址，如未配置，推荐使用多个DN作为server的地址。
 
