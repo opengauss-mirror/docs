@@ -220,6 +220,13 @@ PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）�
 <td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"></a>冻结事务ID号。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_row17427204774817"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p1942874784818"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p1942874784818"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p1942874784818"></a>relminmxid</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p8428447114811"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p8428447114811"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p8428447114811"></a>xid</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"></a>冻结多事务ID号。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

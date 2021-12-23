@@ -118,6 +118,13 @@ PG\_DATABASE系统表存储关于可用数据库的信息。
 <td class="cellrowborder" valign="top" width="57.52%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p20271100482"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p20271100482"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p20271100482"></a>用于跟踪该数据库是否需要为了防止事务ID重叠而进行清理。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_row027011018487"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p127014019483"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p127014019483"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p127014019483"></a>datminmxid</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p172710074815"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p172710074815"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p172710074815"></a>xid</p>
+</td>
+<td class="cellrowborder" valign="top" width="57.52%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p20271100482"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p20271100482"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p20271100482"></a>该数据库中中所有在这个之前的多事务ID已经被一个事务ID替换。这用于跟踪该数据库是否需要为了防止事务ID重叠或者允许收缩pg_clog而进行清理。它是此数据库中所有表的pg_class.relminmxid中的最小值。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
