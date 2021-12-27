@@ -1,8 +1,8 @@
 # SQL调优关键参数调整<a name="ZH-CN_TOPIC_0289900358"></a>
 
-本节将介绍影响openGauss SQL调优性能的关键数据库主节点配置参数，配置方法参见[配置运行参数](zh-cn_topic_0289900453.md)。
+本节将介绍影响openGauss SQL调优性能的关键数据库主节点配置参数，配置方法参见[配置运行参数](配置运行参数.md)。
 
-**表 1**  数据库主节点配置参数
+**表 1**  数据库节点配置参数
 
 <a name="zh-cn_topic_0283136922_zh-cn_topic_0237121530_zh-cn_topic_0073253807_zh-cn_topic_0062520027_table6114302"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283136922_zh-cn_topic_0237121530_zh-cn_topic_0073253807_zh-cn_topic_0062520027_row21522166"><th class="cellrowborder" valign="top" width="26.5%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136922_zh-cn_topic_0237121530_zh-cn_topic_0073253807_zh-cn_topic_0062520027_p65573909"><a name="zh-cn_topic_0283136922_zh-cn_topic_0237121530_zh-cn_topic_0073253807_zh-cn_topic_0062520027_p65573909"></a><a name="zh-cn_topic_0283136922_zh-cn_topic_0237121530_zh-cn_topic_0073253807_zh-cn_topic_0062520027_p65573909"></a>参数/参考值</p>
