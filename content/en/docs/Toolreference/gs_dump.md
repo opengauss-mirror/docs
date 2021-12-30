@@ -10,6 +10,10 @@ When  **gs\_dump**  is used to export data, other users can still access \(read 
 
 **gs\_dump**  can export complete, consistent data. For example, if  **gs\_dump**  is started to export database A at T1, data of the database at that time point will be exported, and modifications on the database after that time point will not be exported.
 
+The generated columns are not dumped during  **gs\_dump**  is used.
+
+**gs\_dump**  supports the export of text files that are compatible with the V1 database.
+
 **gs\_dump**  can export database information to a plain-text SQL script file or archive file.
 
 -   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use  [**gsql**](gsql.md)  to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.

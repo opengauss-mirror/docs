@@ -10,7 +10,7 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 -   必须对每个在SELECT命令中使用的字段有SELECT权限。
 
--   使用FOR UPDATE或FOR SHARE还要求UPDATE权限。
+-   使用FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE还要求UPDATE权限。
 
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
@@ -30,7 +30,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ LIMIT { [offset,] count | ALL } ]
 [ OFFSET start [ ROW | ROWS ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
-[ {FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
+[ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -354,13 +354,13 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     -   除非声明了ALL子句，否则缺省的UNION结果不包含重复的行。
     -   同一个SELECT语句中的多个UNION操作符是从左向右计算的，除非用圆括弧进行了标识。
-    -   FOR UPDATE不能在UNION的结果或输入中声明。
+    -   FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE和FOR KEY SHARE不能在UNION的结果或输入中声明。
 
     一般表达式：
 
     select\_statement UNION \[ALL\] select\_statement
 
-    -   select\_statement可以是任何没有ORDER BY、LIMIT、FOR UPDATE子句的SELECT语句。
+    -   select\_statement可以是任何没有ORDER BY、LIMIT、FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE子句的SELECT语句。
     -   如果用圆括弧包围，ORDER BY和LIMIT可以附着在子表达式里。
 
 -   **INTERSECT子句**
@@ -376,7 +376,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     select\_statement INTERSECT select\_statement
 
-    select\_statement可以是任何没有FOR UPDATE子句的SELECT语句。
+    select\_statement可以是任何没有FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE子句的SELECT语句。
 
 -   **EXCEPT子句**
 
@@ -384,7 +384,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     select\_statement EXCEPT \[ ALL \] select\_statement
 
-    select\_statement是任何没有FOR UPDATE子句的SELECT表达式。
+    select\_statement是任何没有FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE子句的SELECT表达式。
 
     EXCEPT操作符计算存在于左边SELECT语句的输出而不存在于右边SELECT语句输出的行。
 
@@ -392,7 +392,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     除非用圆括弧指明顺序，否则同一个SELECT语句中的多个EXCEPT操作符是从左向右计算的。EXCEPT和UNION的绑定级别相同。
 
-    目前，不能给EXCEPT的结果或者任何EXCEPT的输入声明FOR UPDATE子句。
+    目前，不能给EXCEPT的结果或者任何EXCEPT的输入声明FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE和FOR KEY SHARE子句。
 
 -   **MINUS子句**
 
@@ -431,24 +431,28 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     如果不指定count，默认值为1，FETCH子句限定返回查询结果从第一行开始的总行数。
 
--   **FOR UPDATE子句**
+-   **锁定子句**
 
-    FOR UPDATE子句将对SELECT检索出来的行进行加锁。这样避免它们在当前事务结束前被其他事务修改或者删除，即其他企图UPDATE、 DELETE、 SELECT FOR UPDATE这些行的事务将被阻塞，直到当前事务结束。
+    FOR UPDATE子句将对SELECT检索出来的行进行加锁。这样避免它们在当前事务结束前被其他事务修改或者删除，即其他企图UPDATE、 DELETE、 SELECT FOR UPDATE、SELECT FOR NO KEY UPDATE, SELECT FOR SHARE 或 SELECT FOR KEY SHARE这些行的事务将被阻塞，直到当前事务结束。任何在一行上的DELETE命令也会获得FOR UPDATE锁模式，在非主键列上修改值的UPDATE也会获得该锁模式。反过来，SELECT FOR UPDATE将等待已经在相同行上运行以上这些命令的并发事务，并且接着锁定并且返回被更新的行（或者没有行，因为行可能已被删除）。
 
-    为了避免操作等待其他事务提交，可使用NOWAIT选项，如果被选择的行不能立即被锁住，执行SELECT FOR UPDATE NOWAIT将会立即汇报一个错误，而不是等待。
+    FOR NO KEY UPDATE行为与FOR UPDATE类似，不过获得的锁较弱：这种锁将不会阻塞尝试在相同行上获得锁的SELECT FOR KEY SHARE命令。任何不获取FOR UPDATE锁的UPDATE也会获得这种锁模式。
 
-    FOR SHARE的行为类似，只是它在每个检索出来的行上要求一个共享锁，而不是一个排他锁。一个共享锁阻塞其它事务执行UPDATE、DELETE、SELECT，不阻塞SELECT FOR SHARE。
+    FOR SHARE的行为类似，只是它在每个检索出来的行上要求一个共享锁，而不是一个排他锁。一个共享锁阻塞其它事务执行UPDATE、DELETE、SELECT FOR UPDATE或者SELECT FOR NO KEY UPDATE，不阻塞SELECT FOR SHARE或者SELECT FOR KEY SHARE。
 
-    如果在FOR UPDATE或FOR SHARE中明确指定了表名称，则只有这些指定的表被锁定，其他在SELECT中使用的表将不会被锁定。否则，将锁定该命令中所有使用的表。
+    FOR KEY SHARE行为与FOR SHARE类似，不过锁较弱：SELECT FOR UPDATE会被阻塞，但是SELECT FOR NO KEY UPDATE不会被阻塞。一个键共享锁会阻塞其他事务执行修改键值的DELETE或者UPDATE，但不会阻塞其他UPDATE，也不会阻止SELECT FOR NO KEY UPDATE、SELECT FOR SHARE或者SELECT FOR KEY SHARE。
 
-    如果FOR UPDATE或FOR SHARE应用于一个视图或者子查询，它同样将锁定所有该视图或子查询中使用到的表。
+    为了避免操作等待其他事务提交，可使用NOWAIT选项，如果被选择的行不能立即被锁住，将会立即汇报一个错误，而不是等待。
 
-    多个FOR UPDATE和FOR SHARE子句可以用于为不同的表指定不同的锁定模式。
+    如果在锁定子句中明确指定了表名称，则只有这些指定的表被锁定，其他在SELECT中使用的表将不会被锁定。否则，将锁定该命令中所有使用的表。
 
-    如果一个表中同时出现（或隐含同时出现）在FOR UPDATE和FOR SHARE子句中，则按照FOR UPDATE处理。类似的，如果影响一个表的任意子句中出现了NOWAIT，该表将按照NOWAIT处理。
+    如果锁定子句应用于一个视图或者子查询，它同样将锁定所有该视图或子查询中使用到的表。
+
+    多个锁定子句可以用于为不同的表指定不同的锁定模式。
+
+    如果一个表中同时出现（或隐含同时出现）在多个子句中，则按照最强的锁处理。类似的，如果影响一个表的任意子句中出现了NOWAIT，该表将按照NOWAIT处理。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >对列存表的查询不支持for update/share。
+    >对列存表的查询不支持for update/no key update/share/key share。
 
 -   **NLS\_SORT**
 

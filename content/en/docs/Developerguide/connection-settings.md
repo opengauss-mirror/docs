@@ -54,6 +54,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **200**
 
+- **200**: In the case of compiling and installing the database or minimally installing the database.
+- **5000**: In the case of using om to install the database.
+
 **Setting suggestions**:
 
 Retain the default value of this parameter on the primary node of the databases.
