@@ -1,0 +1,51 @@
+# PG_STAT_SUBSCRIPTION
+
+获取订阅的详细同步信息
+
+<table>
+    <tr>
+        <th>名称</th>
+        <th>类型</th>
+        <th>描述</th>
+    </tr>
+    <tr>
+        <th>subid</th>
+        <th>oid</th>
+        <th>订阅的oid</th>
+    </tr>
+    <tr>
+        <th>relid</th>
+        <th>oid</th>
+        <th>表oid</th>
+    </tr>
+    <tr>
+        <th>pid</th>
+        <th>thread_id</th>
+        <th>后台apply线程的thread id</th>
+    </tr>
+    <tr>
+        <th>received_lsn</th>
+        <th>LSN</th>
+        <th>从发布端接收到的最近的lsn</th>
+    </tr>
+    <tr>
+        <th>last_msg_send_time</th>
+        <th>timestamp</th>
+        <th>最近发布端发送消息的时间</th>
+    </tr>
+    <tr>
+        <th>last_msg_receipt_time</th>
+        <th>timestamp</th>
+        <th>最新订阅端收到消息的时间</th>
+    </tr>
+    <tr>
+        <th>latest_end_lsn</th>
+        <th>LSN</th>
+        <th>最近一次收到保活消息时发布端的lsn</th>
+    </tr>
+    <tr>
+        <th>latest_end_time</th>
+        <th>timstamp</th>
+        <th>最近一次收到保活消息的时间</th>
+    </tr>
+</table>
