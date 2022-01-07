@@ -10,13 +10,13 @@
 
 ## Overview
 
-For database security purposes, openGauss provides three backup types, multiple backup and restoration solutions, and data reliability assurance mechanisms.
+For database security purposes, openGauss provides three backup and restoration types, multiple backup and restoration solutions, and data reliability assurance mechanisms during backup and restoration.
 
 Backup and restoration can be classified into logical backup and restoration, physical backup and restoration, and flashback.
 
 - Logical backup and restoration: backs up data by logically exporting data. This method can dump data that is backed up at a certain time point, and restore data only to this backup point. A logical backup does not back up data processed between failure occurrence and the last backup. It applies to scenarios where data rarely changes. Such data damaged due to misoperation can be quickly restored using a logical backup. To restore all the data in a database through logical backup, rebuild a database and import the backup data. Logical backup is not recommended for databases requiring high data availability because it takes a long time for data restoration. Logical backup is a major approach to migrate and transfer data because it can be performed on any platform.
 
-- Physical backup and restoration: copies physical files in the unit of disk blocks from the primary node to the standby node to back up a database. A database can be restored using backup files, such as data files and archive log files. Physical backup is usually used for full backup, quickly backing up and restoring data at a low cost if properly planned.
+-  Physical backup and restoration: copies physical file in the unit of disk blocks from the primary node to the standby node to back up a database. A database can be restored using backup files such as data files and archive log files. A physical backup is useful when you need to quickly back up and restore the complete database within a short period of time. Backup and restoration can be implemented at low costs through proper planning.
 
 - Flashback: This function is used to restore dropped tables from the recycle bin. Like in a Window OS, dropped table information is stored in the recycle bin of databases. The MVCC mechanism is used to restore data to a specified point in time or change sequence number \(CSN\).
 
@@ -51,7 +51,7 @@ Backup and restoration can be classified into logical backup and restoration, ph
   </td>
   <td class="cellrowborder" valign="top" width="10.687862427514498%" headers="mcps1.2.7.1.4 "><p id="p20778124119545"><a name="p20778124119545"></a><a name="p20778124119545"></a>gs_dump</p>
   </td>
-  <td class="cellrowborder" valign="top" width="16.076784643071385%" headers="mcps1.2.7.1.5 "><p id="p1353016453558"><a name="p1353016453558"></a><a name="p1353016453558"></a>It takes a long time to restore data in plain-text format. It takes a long time to restore data in archive format.</p>
+  <td class="cellrowborder" valign="top" width="16.076784643071385%" headers="mcps1.2.7.1.5 "><p id="p1353016453558"><a name="p1353016453558"></a><a name="p1353016453558"></a>It takes a long time to restore data in plain-text format. It takes a moderate time to restore data in archive format./p>
   </td>
   <td class="cellrowborder" valign="top" width="35.32293541291742%" headers="mcps1.2.7.1.6 "><p id="p9674335420"><a name="p9674335420"></a><a name="p9674335420"></a>This tool is used to export database information. Users can export a database or its objects (such as schemas, tables, and views). The database can be the default <strong id="b64881672652718"><a name="b64881672652718"></a><a name="b64881672652718"></a>postgres</strong> database or a user-specified database. The exported file can be in plain-text format or archive format. Data in plain-text format can be restored only by using gsql, which takes a long time. Data in archive format can be restored only by using gs_restore. The restoration time is shorter than that of the plain-text format.</p>
   </td>
@@ -97,7 +97,7 @@ Backup and restoration can be classified into logical backup and restoration, ph
   </td>
   <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.3 "><p id="p5242152134010"><a name="p5242152134010"></a><a name="p5242152134010"></a>None</p>
   </td>
-  <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="p8243152114409"><a name="p8243152114409"></a><a name="p8243152114409"></a>You can restore a table to the status at a specified time point or before the table structure is deleted within a short period of time.</p>
+  <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="p8243152114409"><a name="p8243152114409"></a><a name="p8243152114409"></a>You can restore a table to the status at a specified time point or before the table structure is deleted.The restoration takes a short time.</p>
   </td>
   <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="p1124322124010"><a name="p1124322124010"></a><a name="p1124322124010"></a>Flashback can selectively and efficiently undo the impact of a committed transaction and recover from a human error. Before the flashback technology is used, the committed database modification can be retrieved only by means of restoring backup or PITR. The restoration takes several minutes or even hours. After the flashback technology is used, it takes only seconds to restore the committed data before the database is modified. The restoration time is irrelevant to the database size.</p>
   <p id="p022514511611"><a name="p022514511611"></a><a name="p022514511611"></a>Flashback supports two recovery modes:</p>
@@ -328,7 +328,8 @@ If a database is faulty, restore it from backup files.  **gs\_basebackup**  back
 
 ![](public_sys-resources/icon-note.gif) **NOTE:**   
 -   If the current database instance is running, a port conflict may occur when you start the database from the backup file. In this case, you need to modify the port parameter in the configuration file or specify a port when starting the database.  
--   If the current backup file is a primary/standby database, you may need to modify the replication connections between the master and slave databases. That is,  **replconninfo1**  and  **replconninfo2**  in the  **postgresql.conf**  file.  
+-   If the current backup file is a primary/standby database, you may need to modify the replication connections between the master and slave databases, such as,  **replconninfo1**  and  **replconninfo2**  in the  **postgresql.conf**  file.  
+-   If the data_directory parameter in the postgresql.conf configuration file is enabled and configurd and the backup directory is used to start the database, the database fails to be started because the value of data_directory isdifferent from the backup directory. You can change the value of data_directory to a new data directory or comment out this parameter.
 
 To restore the original database, perform the following steps:
 
@@ -358,6 +359,7 @@ To restore the original database, perform the following steps:
 
 -   The openGauss database can be connected.
 -   To use PTRACK incremental backup, manually add  **enable\_cbm\_tracking = on**  to  **postgresql.conf**.
+-   To prevent Xlogs from being cleared before the transmission is complete,increase the value of wal_keep_segments in the postgresql.conf file.
 
 #### Important Notes<a name="en-us_topic_0287276008_section6439171332614"></a>
 
@@ -1868,6 +1870,7 @@ gs_dump [OPTION]... [DBNAME]
 _DBNAME_  does not follow a short or long option. It specifies the database to be connected.  
 For example:  
 Specify  _DBNAME_  without a  **-d**  option preceding it.
+
 ```
 gs_dump -p port_number  postgres -f dump1.sql
 ```

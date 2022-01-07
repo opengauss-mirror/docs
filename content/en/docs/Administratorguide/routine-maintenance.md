@@ -198,14 +198,15 @@ Use the  **gs\_checkos**  tool provided by openGauss to check the OS status.
 
 **Procedure**
 
-1.  Log in to a server as user  **root**.
+1. Log in to a server as user  **root**.
+
 2.  Run the following command to check OS parameters of servers where the openGauss nodes are deployed:
 
     ```
     gs_checkos -i A
     ```
 
-    Check the OS parameters to ensure that openGauss has passed the pre-installation check and can efficiently operate after it is installed. For details about the check items, see "Server Tools \> gs\_checkos" in the  _openGauss Tool Reference_.
+    The purpose of checking the OS parameters is to ensure that openGauss is preinstalled properly and can ffic²nìÃy operate after it is installed. For details about the check items, see "Server Tools > gs_checkos" in the Tool Reference.
 
 
 **Examples**
@@ -1642,10 +1643,8 @@ The database supports B-tree indexes. Recreating a B-tree index routinely helps 
 
 Use either of the following two methods to recreate an index:
 
--   Run the  **DROP INDEX**  statement to delete the index and run the  **CREATE INDEX**  statement to create an index.
-
-    When you delete an index, a temporary exclusive lock is added in the parent table to block related read/write operations. During index creation, the write operation is locked, whereas the read operation is not locked and can use only sequential scans.
-
+-   Run the  **DROP INDEX**  statement to delete the index and then run the  **CREATE INDEX**  statement to create an index.
+-   When you delete an index, a temporary exclusive lock is added in the parent table to block related read/write operations. During index creation, the write operation is locked, whereas the read operation is not locked and can use only sequential scans.
 -   Run  **REINDEX**  to recreate an index.
     -   When you run the  **REINDEX TABLE**  statement to recreate an index, an exclusive lock is added to block related read/write operations.
     -   When you run the  **REINDEX INTERNAL TABLE**  statement to recreate an index for a  **desc**  table \(such as column-store  **cudesc**  table\), an exclusive lock is added to block related read/write operations on the table.
@@ -1711,8 +1710,9 @@ You are advised to plan routine physical backup and store backup files in a reli
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The log level  **log\_min\_messages**  is set to  **DEBUG**_x_  \(_x_  indicates the debug level and the value ranges from 1 to 5\). The information recorded in debug logs may contain personal data.
 
--   Delete personal data before sending system logs to others for analysis. If the execution of a SQL statement fails, the error SQL statement will be recorded in a system log by default. SQL statements may contain personal data.
--   Set  **log\_min\_error\_statement**  to  **PANIC**  to prevent error SQL statements from being recorded in system logs. However, once the function is disabled, it is difficult to locate fault causes if faults occur.
+- Delete personal data before sending system logs to others for analysis. If the execution of a SQL statement fails, the error SQL statement will be recorded in a system log by default. SQL statements may contain personal data.
+
+-   Set  **log\_min\_error\_statement**  to  **PANIC**  to prevent error SQL statements from being recorded in system logs. If this function is disabled, it is difficult to locate fault causes when a fault occurs.
 
 ## Slow SQL Diagnosis
 
