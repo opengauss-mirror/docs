@@ -217,6 +217,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。
+    >-   如果需要配置的value内容中包含双引号, 则需要在双引号前加上转义符。例如value为a"b"c, 则命令为-c " parameter = 'a\\"b\\"c' "
     >
     >-   当使用gs\_guc set/reload为“log\_directory” 恢复默认值时，其默认值会被置为具体的data目录。
     >
