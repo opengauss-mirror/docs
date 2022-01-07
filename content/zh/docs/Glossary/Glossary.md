@@ -90,6 +90,11 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p511528299138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p511528299138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p511528299138"></a>Database Management System，数据库管理系统。数据库管理系统是为了访问数据库中的信息而使用的一个管理系统软件。它包含一组程序使用户可以进入、管理、查询数据库中数据。基于真实数据的位置，可以分为内存数据库管理系统和磁盘数据库管理系统。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row577222849138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p449933919138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p449933919138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p449933919138"></a>DCF</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p205860929138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p205860929138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p205860929138"></a>Distributed Consensus Framework，分布式共识框架，基于Paxos算法实现数据同步强一致。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row577222849138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p449933919138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p449933919138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p449933919138"></a>DCL</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p205860929138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p205860929138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p205860929138"></a>Data Control Language，数据控制语言。</p>
