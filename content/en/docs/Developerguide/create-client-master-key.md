@@ -36,7 +36,7 @@ CREATE CLIENT MASTER KEY client_master_key_name WITH (KEY_STORE = key_store_name
 
 -   **ALGORITHM**
 
-    Type of the encryption algorithm used to encrypt CEKs. Value range:  **RSA\_2048**,  **RSA3072**, and  **SM2**.
+    Type of the encryption algorithm used to encrypt CEKs. Value range:  **RSA\_2048**,  **RSA_3072**, and  **SM2**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >**Key storage path**: By default,  **localkms**  generates, reads, or deletes a key file in the  _$LOCALKMS_**\_FILE\_PATH**  path. You can manually configure this environment variable. However, you do not need to configure this environment variable separately. When failing to obtain $LOCALKMS\_FILE\_PATH,  **localkms**  attempts to obtain the  _$GAUSSHOME_**/etc/localkms/**  path. If the path exists, it is used as the key storage path.

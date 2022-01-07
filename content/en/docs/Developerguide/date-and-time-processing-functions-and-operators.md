@@ -67,7 +67,7 @@
 <td class="cellrowborder" valign="top" width="92%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s14b49440bb334d4bbd1ec1575e63c132"></a><a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s14b49440bb334d4bbd1ec1575e63c132"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s14b49440bb334d4bbd1ec1575e63c132"><span id="en-us_topic_0283136846_en-us_topic_0237121972_text687752019108"><a name="en-us_topic_0283136846_en-us_topic_0237121972_text687752019108"></a><a name="en-us_topic_0283136846_en-us_topic_0237121972_text687752019108"></a>openGauss=# </span>SELECT date '2001-10-01' - date '2001-09-28' AS RESULT;
  result
 --------
-      3
+  3days
 (1 row)</pre>
 </td>
 </tr>
@@ -706,7 +706,7 @@
     openGauss=# call tinterval(abstime 'May 10, 1947 23:59:12', abstime 'Mon May  1 00:30:30 1995');
                           tinterval
     -----------------------------------------------------
-     ["1947-05-10 23:59:12+08" "1995-05-01 00:30:30+08"]
+     ["1947-05-10 23:59:12+09" "1995-05-01 00:30:30+08"]
     (1 row)
     ```
 
@@ -1050,7 +1050,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
 
 ## EXTRACT<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_scb40477163d740de80f0e984cad28e7b"></a>
 
--   **EXTRACT\(**_field _**FROM **_source_**\)**
+-   **EXTRACT**\(field **FROM** source\)
 
 The  **extract**  function retrieves subcolumns such as year or hour from date/time values.  **source**  must be a value expression of type  **timestamp**,  **time**, or  **interval**. \(Expressions of type  **date**  are cast to  **timestamp**  and can therefore be used as well.\)  **field**  is an identifier or string that selects what column to extract from the source value. The  **extract**  function returns values of type  **double precision**. The following are valid  **field**  names:
 
@@ -1348,7 +1348,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
 
 The  **date\_part**  function is modeled on the traditional Ingres equivalent to the SQL-standard function  **extract**:
 
--   **date\_part\('**_field_**', **_source_**\)**
+-   **date\_part**\('field', source\)
 
 Note that here the  **field**  parameter needs to be a string value, not a name. The valid field names for  **date\_part**  are the same as for  **extract**. For details, see  [EXTRACT](#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_scb40477163d740de80f0e984cad28e7b).
 

@@ -18,13 +18,13 @@ In addition to comparative operators, you can also use the following sentence st
 
 -   To check whether a value is null, use:
 
-    expression_ _IS NULL
+    expression IS NULL
 
     expression IS NOT NULL
 
     or an equivalent \(non-standard\) sentence structure:
 
-    expression_ _   ISNULL
+    expression   ISNULL
 
     expression  NOTNULL
 
