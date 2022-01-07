@@ -97,9 +97,9 @@ gs_dump [OPTION]... [DBNAME]
 ```
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
-“dbname”前面不需要加短或长选项。“dbname”指定要连接的数据库。
+“DBNAME”前面不需要加短或长选项。“DBNAME”指定要连接的数据库。
 例如：
-不需要-d，直接指定“dbname”。
+不需要-d，直接指定“DBNAME”。
 
 ```
 gs_dump -p port_number  postgres -f dump1.sql

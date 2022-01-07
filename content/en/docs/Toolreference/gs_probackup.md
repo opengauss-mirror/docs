@@ -14,6 +14,7 @@
 -   The openGauss database can be connected.
 -   To use PTRACK incremental backup, manually add  **enable\_cbm\_tracking = on**  to  **postgresql.conf**.
 -   In order to prevent the xlog from being cleaned up before the end of the transfer, please increase the value of wal_keep_segements in the postgresql.conf file appropriately.
+-   To prevent Xlogs from being cleared before the transmission is complete,increase the value of wal_keep_segments in the postgresql.conf file.
 
 ## Important Notes<a name="en-us_topic_0287276008_section6439171332614"></a>
 

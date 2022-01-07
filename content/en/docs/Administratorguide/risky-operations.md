@@ -1,6 +1,6 @@
 # Risky Operations<a name="EN-US_TOPIC_0242215137"></a>
 
-Perform operations strictly following instructions provided in the guide. Do not perform the following risky operations.
+Strictly follow the operation guide and avoid the following risky operations:
 
 [Table 1](#en-us_topic_0237088894_en-us_topic_0059777750_t725e2ece7f7a4d5f962b2c314e7e836b)  describes forbidden operations during routine O&M.
 
