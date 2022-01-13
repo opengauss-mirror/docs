@@ -10,6 +10,7 @@
 -   In the current version, you can modify only the owner, owning column, and maximum value. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
 -   **ALTER SEQUENCE MAXVALUE**  cannot be used in transactions, functions, and stored procedures.
 -   After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
+-   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is altered.
 -   The  **ALTER SEQUENCE**  statement blocks the invocation of  **nextval**,  **setval**,  **currval**, and  **lastval**.
 
 ## Syntax<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
@@ -42,7 +43,7 @@
 
 -   CACHE
 
-    For quick access, the number of serial numbers is pre-stored in the memory. If not specified, the old buffer value will be kept.
+    Specifies the number of sequences stored in the memory for quick access purposes. If this parameter is not specified, the old cache value is retained.
 
 -   OWNED BY
 

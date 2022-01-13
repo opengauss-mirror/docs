@@ -22,6 +22,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 { * | {expression [ [ AS ] output_name ]} [, ...] }
 [ FROM from_item [, ...] ]
 [ WHERE condition ]
+[ [ START WITH condition ] CONNECT BY [NOCYCLE] condition [ ORDER SIBLINGS BY expression ] ]
 [ GROUP BY grouping_element [, ...] ]
 [ HAVING condition [, ...] ]
 [ WINDOW {window_name AS ( window_definition )} [, ...] ]
@@ -47,7 +48,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     ```
     with_query_name [ ( column_name [, ...] ) ]
-        AS ( {select | values | insert | update | delete} )
+        AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
     ```
 
 -   The specified query source  **from\_item**  is as follows:
@@ -84,11 +85,12 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The specified partition applies only to ordinary tables.
 
--   The sorting order  **nlssort\_expression\_clause**  is as follows:
+- The sorting order  **nlssort\_expression\_clause**  is as follows:
 
-    ```
-    NLSSORT ( column_name, ' NLS_SORT = { SCHINESE_PINYIN_M | generic_m_ci } ' )
-    ```
+  ```
+  NLSSORT ( column_name, ' NLS_SORT = { SCHINESE_PINYIN_M | generic_m_ci } ' )
+  The second parameter can be generic_m_ci, which supports only the case-insensitive order for English characters.
+  ```
 
 -   Simplified query syntax, equivalent to  **select \* from table\_name**.
 
@@ -285,6 +287,14 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   The START WITH clause usually appears at the same time as the CONNECT BY clause. It is a recursive statement for graph traversal of data. START WITH represents the initial number of recursive items, and the PRIOR keyword can be specified for the column in the CONNECT BY condition. Represents recursively using this column as recursion. The current constraint can only specify PRIOR for the columns in the table, and does not support specifying the PRIOR keyword for expressions and type conversions.
 
+-   **START WITH clause**
+
+    The  **START WITH**  clause is usually used together with the  **CONNECT BY**  clause and indicates the initial condition of recursion. Data is traversed recursively and hierarchically. If this clause is omitted and the  **CONNECT BY**  clause is used alone, all rows in the table are used as the initial set.
+
+- **CONNECT BY clause**
+
+  **CONNECT BY**  indicates the recursive join condition. In the  **CONNECT BY**  condition, you can specify the  **PRIOR**  keyword for a column, indicating that the column is used as the recursive key for recursion. The  **PRIOR**  keyword can be specified only for columns in the table and cannot be specified for expressions or type conversion. If  **NOCYCLE**  is added before a recursive join condition, recursion stops when a circular record is encountered. \(Note: A SELECT statement containing the  **START WITH .. CONNECT BY**  clause does not support the FOR SHARE or UPDATE lock.\)
+
 -   **GROUP BY clause**
 
     Condenses query results into a single row all selected rows that share the same values for the grouped expressions.
@@ -389,18 +399,21 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Has the same function and syntax as  **EXCEPT**  clause.
 
--   **ORDER BY clause**
+- **ORDER BY clause**
 
-    Sorts data retrieved by  **SELECT**  in descending or ascending order. If the  **ORDER BY**  expression contains multiple columns:
+  Sorts data retrieved by  **SELECT**  in descending or ascending order. If the  **ORDER BY**  expression contains multiple columns:
 
-    -   If two columns are equal according to the leftmost expression, they are compared according to the next expression and so on.
-    -   If they are equal according to all specified expressions, they are returned in an implementation-dependent order.
-    -   When used with the  **DISTINCT**  keyword, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
-    -   When used with the  **GROUP BY**  clause, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
+  -   If two columns are equal according to the leftmost expression, they are compared according to the next expression and so on.
+  -   If they are equal according to all specified expressions, they are returned in an implementation-dependent order.
+  -   When used with the  **DISTINCT**  keyword, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
+  -   When used with the  **GROUP BY**  clause, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >To support Chinese pinyin order, specify the  **UTF-8**  or  **GBK**  encoding mode during database initiation. The statements are as follows:
-    >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8 or initdb –E GBK –D ../data –locale=zh\_CN.GBK
+  >![](C:/Users/lijun/Downloads/1230需求同步/1230需求同步/openGauss Developer Guide 01/public_sys-resources/icon-notice.gif) **NOTICE:** 
+  >To support Chinese pinyin order, specify the  **UTF-8**,  **GB18030**, or  **GBK**  encoding mode during database initiation. The statements are as follows:
+  >
+  >```
+  >initdb –E UTF8 –D ../data –locale=zh_CN.UTF-8, initdb -E GB18030 -D ../data -locale=zh_CN.GB18030, or initdb –E GBK –D ../data –locale=zh_CN.GBK.
+  >```
 
 -   **LIMIT clause**
 
@@ -443,13 +456,13 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **NLS\_SORT**
 
-    Specifies that a field is sorted in a special order. Currently, only Chinese Pinyin and case-insensitive sorting are supported.
-
+    Specifies that a field is sorted in a special order. Currently, only Chinese Pinyin and case-insensitive sorting are supported. To support this sorting mode, you need to set the encoding format to UTF8, GB18030, or GBK when creating a database. If you set the encoding format to another format, for example, SQL\_ASCII, an error may be reported or the sorting mode may be invalid.
+    
     Value range:
-
-    -   **SCHINESE\_PINYIN\_M**, sorted by Pinyin order. To use this sorting method, specify  **UTF8**  or  **GBK**  as the encoding format when you create a database. If you do not do so, this value is invalid.
-    -   **generic\_m\_ci**, case-insensitive order.
-
+    
+    -   **SCHINESE\_PINYIN\_M**, sorted by Pinyin order.
+    -   **generic\_m\_ci**: sorted in case-insensitive order \(optional; only English characters are supported in the case-insensitive order.\)
+    
 -   **PARTITION clause**
 
     Queries data in the specified partition in a partitioned table.
@@ -497,8 +510,7 @@ SELECT r_reason_sk, tpcds.reason.r_reason_desc
 -- Example of the NLS_SORT clause: Sort by Chinese Pinyin.
 openGauss=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = SCHINESE_PINYIN_M');
 
-
--- Case-insensitive order:
+-- sorting in case-insensitive order (optional; only English characters are supported in the case-insensitive order.)
 openGauss=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = generic_m_ci');
 
 -- Create a range-partitioned table tpcds.reason_p.

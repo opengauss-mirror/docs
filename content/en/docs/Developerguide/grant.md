@@ -142,14 +142,24 @@ None
         [ WITH GRANT OPTION ];
     ```
 
--   Grant the procedural language access permission to a user or role.
+- Grant the procedural procedure access permission to a user or role.
 
-    ```
-    GRANT { USAGE | ALL [ PRIVILEGES ] }
-        ON LANGUAGE lang_name [, ...]
-        TO { [ GROUP ] role_name | PUBLIC } [, ...]
-        [ WITH GRANT OPTION ];
-    ```
+  ```
+  GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+      ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+         | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
+      TO { [ GROUP ] role_name | PUBLIC } [, ...]
+      [ WITH GRANT OPTION ];
+  ```
+
+- Grant the procedural language access permission to a user or role.
+
+  ```
+  GRANT { USAGE | ALL [ PRIVILEGES ] }
+      ON LANGUAGE lang_name [, ...]
+      TO { [ GROUP ] role_name | PUBLIC } [, ...]
+      [ WITH GRANT OPTION ];
+  ```
 
 -   Grant the large object access permission to a specified user or role.
 
