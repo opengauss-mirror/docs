@@ -38,13 +38,13 @@ REVOKE用于撤销一个或多个角色的权限。
         [ CASCADE | RESTRICT ];
     ```
 
--   回收指定序列上权限。
+-   回收指定序列上权限，LARGE字段属性可选，回收语句不区分序列是否为LARGE。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
         { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
         | ALL [ PRIVILEGES ] }
-        ON { [  SEQUENCE ] sequence_name [, ...]
+         ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -131,6 +131,17 @@ REVOKE用于撤销一个或多个角色的权限。
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
     ```
+
+- 回收指定存储过程上权限。
+
+  ```
+  REVOKE [ GRANT OPTION FOR ]
+      { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+      ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+         | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
+      FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+      [ CASCADE | RESTRICT ];
+  ```
 
 -   回收指定过程语言上权限。
 

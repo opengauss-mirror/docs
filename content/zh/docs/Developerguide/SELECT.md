@@ -22,6 +22,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 { * | {expression [ [ AS ] output_name ]} [, ...] }
 [ FROM from_item [, ...] ]
 [ WHERE condition ]
+[ [ START WITH condition ] CONNECT BY [NOCYCLE] condition [ ORDER SIBLINGS BY expression ] ]
 [ GROUP BY grouping_element [, ...] ]
 [ HAVING condition [, ...] ]
 [ WINDOW {window_name AS ( window_definition )} [, ...] ]
@@ -54,7 +55,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     ```
     with_query_name [ ( column_name [, ...] ) ]
-        AS ( {select | values | insert | update | delete} )
+        AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
     ```
 
 -   其中指定查询源from\_item为：
@@ -91,11 +92,12 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >指定分区只适合普通表。
 
--   其中设置排序方式nlssort\_expression\_clause为：
+- 其中设置排序方式nlssort\_expression\_clause为：
 
-    ```
-    NLSSORT ( column_name, ' NLS_SORT = { SCHINESE_PINYIN_M | generic_m_ci } ' )
-    ```
+  ```
+  NLSSORT ( column_name, ' NLS_SORT = { SCHINESE_PINYIN_M | generic_m_ci } ' )
+  其中，第二个参数可选generic_m_ci，仅支持纯英文不区分大小写排序。
+  ```
 
 -   简化版查询语法，功能相当于select \* from table\_name。
 
@@ -290,6 +292,14 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     START WITH子句通常与CONNECT BY子句同时出现，  是一种递归语句对数据进行图遍历。START WITH代表递归的初始条数，CONNECT BY条件中可以对列指定PRIOR关键字。代表以这列为递归进行递归。当前约束只能对表中的列指定PRIOR，不支持对表达式、类型转换指定PRIOR关键字。
 
+-   **START WITH子句**
+
+    START WITH子句通常与CONNECT BY子句同时出现，数据进行层次递归遍历查询，START WITH代表递归的初始条件。若省略该子句，单独使用CONNECT BY子句，则表示以表中的所有行作为初始集合。
+
+- **CONNECT BY子句**
+
+  CONNECT BY代表递归连接条件，CONNECT BY条件中可以对列指定PRIOR关键字代表以这列为递归键进行递归。当前约束只能对表中的列指定PRIOR，不支持对表达式、类型转换指定PRIOR关键字。若在递归连接条件前加NOCYCLE，则表示遇到循环记录时停止递归。（注：含START WITH .. CONNECT BY子句的SELECT语句不支持使用FOR SHARE/UPDATE锁）。
+
 -   **GROUP BY子句**
 
     将查询结果按某一列或多列的值分组，值相等的为一组。
@@ -398,26 +408,34 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     与EXCEPT子句具有相同的功能和用法。
 
--   **ORDER BY子句**
+- **ORDER BY子句**
 
-    对SELECT语句检索得到的数据进行升序或降序排序。对于ORDER BY表达式中包含多列的情况：
+  对SELECT语句检索得到的数据进行升序或降序排序。对于ORDER BY表达式中包含多列的情况：
 
-    -   首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
-    -   如果对于所有声明的表达式都相同，则按随机顺序返回。
-    -   在与DISTINCT关键字一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
-    -   在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
+  - 首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >如果要支持中文拼音排序，需要在初始化数据库时指定编码格式为UTF-8或GBK。 命令如下:
-    >initdb –E UTF8 –D ../data –locale=zh\_CN.UTF-8或initdb –E GBK –D ../data –locale=zh\_CN.GBK。
+  - 如果对于所有声明的表达式都相同，则按随机顺序返回。
 
--   **LIMIT子句**
+  - 在与DISTINCT关键字一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-    LIMIT子句由两个独立的子句组成：
+  - 在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-    LIMIT \{ count | ALL \}
+  - 在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-    OFFSET start count声明返回的最大行数，而start声明开始返回行之前忽略的行数。如果两个都指定了，会在开始计算count个返回行之前先跳过start行。
+    >![](C:/Users/lijun/Downloads/1230需求同步/1230需求同步/openGauss 开发者指南 01/public_sys-resources/icon-notice.gif) **须知：** 
+    >如果要支持中文拼音排序，需要在初始化数据库时指定编码格式为UTF-8、GB18030或GBK。命令如下:
+    >
+    >```
+    >initdb –E UTF8 –D ../data –locale=zh_CN.UTF-8、initdb -E GB18030 -D ../data -locale=zh_CN.GB18030或initdb –E GBK –D ../data –locale=zh_CN.GBK。
+    >```
+
+- **LIMIT子句**
+
+  LIMIT子句由两个独立的子句组成：
+
+  LIMIT \{ count | ALL \}
+
+  OFFSET start count声明返回的最大行数，而start声明开始返回行之前忽略的行数。如果两个都指定了，会在开始计算count个返回行之前先跳过start行。
 
 -   **OFFSET子句**
 
@@ -452,17 +470,17 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     如果一个表中同时出现（或隐含同时出现）在多个子句中，则按照最强的锁处理。类似的，如果影响一个表的任意子句中出现了NOWAIT，该表将按照NOWAIT处理。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >对列存表的查询不支持for update/no key update/share/key share。
+    >对列存表的查询不支持for update/share。
 
 -   **NLS\_SORT**
 
-    指定某字段按照特殊方式排序。目前仅支持中文拼音格式排序和不区分大小写排序。
-
+    指定某字段按照特殊方式排序。目前仅支持中文拼音格式排序和不区分大小写排序。如果要支持此排序方式，在创建数据库时需要指定编码格式为“UTF8”、”GB18030”或“GBK”；如果指定为其他编码，例如SQL\_ASCII，则可能报错或者排序无效。
+    
     取值范围：
-
-    -   SCHINESE\_PINYIN\_M，按照中文拼音排序。如果要支持此排序方式，在创建数据库时需要指定编码格式为“UTF8”或“GBK”，否则排序无效。
-    -   generic\_m\_ci，不区分大小写排序。
-
+    
+    -   SCHINESE\_PINYIN\_M，按照中文拼音排序。
+    -   generic\_m\_ci，不区分大小写排序（可选，仅支持纯英文不区分大小写排序）。
+    
 -   **PARTITION子句**
 
     查询某个分区表中相应分区的数据。
@@ -511,7 +529,7 @@ SELECT r_reason_sk, tpcds.reason.r_reason_desc
 openGauss=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = SCHINESE_PINYIN_M');
 
 
---不区分大小写排序:
+--不区分大小写排序（可选，仅支持纯英文不区分大小写排序）:
 openGauss=# SELECT * FROM tpcds.reason ORDER BY NLSSORT( r_reason_desc, 'NLS_SORT = generic_m_ci');
 
 --创建分区表tpcds.reason_p

@@ -38,13 +38,13 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified sequence. 
+-   Revoke the permission on a specified sequence. The  **LARGE**  field is optional. The recycling statement does not distinguish whether the sequence is LARGE.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
         { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
         | ALL [ PRIVILEGES ] }
-        ON { [ SEQUENCE ] sequence_name [, ...]
+         ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -131,6 +131,17 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
     ```
+
+- Revoke the permission on a specified stored procedure.
+
+  ```
+  REVOKE [ GRANT OPTION FOR ]
+      { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+      ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+         | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
+      FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+      [ CASCADE | RESTRICT ];
+  ```
 
 -   Revoke the permission on a specified procedural language.
 

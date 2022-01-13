@@ -63,7 +63,7 @@
         [ WITH GRANT OPTION ];
     ```
 
--   将序列的访问权限赋予指定的用户或角色。
+-   将序列的访问权限赋予指定的用户或角色，LARGE字段属性可选，赋权语句不区分序列是否为LARGE。
 
     ```
     GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } [, ...] 

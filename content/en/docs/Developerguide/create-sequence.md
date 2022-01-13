@@ -9,11 +9,12 @@
 -   A sequence is a special table that stores arithmetic progressions. It has no actual meaning and is usually used to generate unique identifiers for rows or tables.
 -   If a schema name is given, the sequence is created in the specified schema; otherwise, it is created in the current schema. The sequence name must be different from the names of other sequences, tables, indexes, views in the same schema.
 -   After the sequence is created, functions  **nextval\(\)**  and  **generate\_series\(1,N\)**  insert data to the table. Make sure that the number of times for invoking  **nextval**  is greater than or equal to N+1. Otherwise, errors will be reported because the number of times for invoking function  **generate\_series\(\)**  is N+1.
+-   By default, the maximum value of  **Sequence**  is 2^63 – 1. If a large identifier is used, the maximum value can be 2^127 – 1.
 
 ## Syntax<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section1963019544155"></a>
 
 ```
-CREATE  SEQUENCE name [ INCREMENT [ BY ] increment ]
+CREATE [ LARGE ]  SEQUENCE name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
     [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
     [ OWNED BY { table_name.column_name | NONE } ];
