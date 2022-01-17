@@ -13,7 +13,7 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
 -   启动openGauss
 
     ```
-    gs_om -t start [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [-l LOGFILE]
+    gs_om -t start [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [--cluster-number=None] [-l LOGFILE]
     ```
 
 -   停止openGauss
@@ -144,6 +144,12 @@ gs\_om参数可以分为如下几类：
 
         -   on以安全模式启动。
         -   off不以安全模式启动，默认不开启安全模式。
+
+    -   --cluster-number
+        
+        指定启动时内核运行版本号。
+
+        取值范围： 内核版本号
 
 
 -   停止openGauss参数：
