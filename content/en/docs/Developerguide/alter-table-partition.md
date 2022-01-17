@@ -66,6 +66,7 @@
         -   An ordinary table cannot be a temporary table. A partitioned table can only be a range partitioned table, list partitioned table, or hash partitioned table.
         -   Ordinary tables and partitioned tables do not support dynamic data masking and row-level access control constraints.
         -   List partitioned tables and hash partitioned tables cannot be column-store.
+        -   Only the List/Hash/Range partitioned table is supported for data exchange.
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
         >-   When the exchange is done, the data and tablespace of the ordinary table and partition are exchanged. The statistics about ordinary tables and partitions become unreliable, and they should be analyzed again.
