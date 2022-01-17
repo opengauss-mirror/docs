@@ -2,7 +2,7 @@
 
 ## Syntax<a name="section1810714714319"></a>
 
--   Create a full materialized view.
+-   Create a complete-refresh materialized view.
 
     ```
     CREATE MATERIALIZED VIEW [ view_name ] AS { query_block }; 
@@ -38,7 +38,7 @@ postgres=# CREATE TABLE t1(c1 int, c2 int);
 postgres=# INSERT INTO t1 VALUES(1, 1);
 postgres=# INSERT INTO t1 VALUES(2, 2);
 
--- Create a full materialized view.
+-- Create a complete-refresh materialized view.
 postgres=# CREATE MATERIALIZED VIEW mv AS select count(*) from t1;
 CREATE MATERIALIZED VIEW
 
@@ -52,7 +52,7 @@ postgres=# SELECT * FROM mv;
 -- Insert data into the base table in the materialized view.
 postgres=# INSERT INTO t1 VALUES(3, 3);
 
--- Fully refresh a full materialized view.
+-- Fully refresh a complete-refresh materialized view.
 postgres=# REFRESH MATERIALIZED VIEW mv;
 REFRESH MATERIALIZED VIEW
 

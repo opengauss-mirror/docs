@@ -1,4 +1,4 @@
-# Variable Definition Statements<a name="EN-US_TOPIC_0000001162739340"></a>
+# Variable Definition Statements<a name="EN-US_TOPIC_0289900208"></a>
 
 This section describes the declaration of variables in the PL/SQL and the scope of this variable in codes.
 
@@ -53,7 +53,7 @@ my_id_copy my_id%TYPE;
 my_employee employee%ROWTYPE
 ```
 
-The attribute can also be used on the cursor. The column names and column data types of this set of data are the same as those of the  **employee**  table.  **%TYPE**  can also reference the type of a column in the cursor. You can define the data as follows:
+The attribute can also be used on the cursor. The column names and column data types of this set of data are the same as those of the  **employee**  table.   **%TYPE**  can also reference the type of a column in the cursor. You can define the data as follows:
 
 ```
 cursor cur is select * from employee;
@@ -62,8 +62,8 @@ my_name cur.firstname%TYPE
 ```
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   **%TYPE**  cannot reference the type of a composite variable or a record variable, a column type of the record type.
->-   **%ROWTYPE**  cannot reference the type of a composite variable or a record variable .
+>-   **%TYPE**  cannot reference the type of a composite variable or a record variable and a column type of the record type.
+>-   **%ROWTYPE**  cannot reference the type of a composite variable or a record variable.
 
 ## Scope of a Variable<a name="en-us_topic_0283136825_en-us_topic_0237122221_en-us_topic_0059777427_s22f3ff2c9c4344a99fd2a028a86620bf"></a>
 

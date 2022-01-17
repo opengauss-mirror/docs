@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s3a6fd145e83b4e61a22dabdcf32ac282"></a>
 
--   Full refreshing can be performed on both full and incremental materialized views.
+-   Full refreshing can be performed on both full and fast-refresh materialized views.
 -   To refresh a materialized view, you must have the SELECT permission on the base table.
 
 ## Syntax<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_sbe280a5c331e4b75969129444d341882"></a>
@@ -27,15 +27,15 @@ REFRESH MATERIALIZED VIEW mv_name;
 ```
 -- Create an ordinary table.
 openGauss=# CREATE TABLE my_table (c1 int, c2 int);
--- Create a full materialized view.
+-- Create a complete-refresh materialized view.
 openGauss=# CREATE MATERIALIZED VIEW my_mv AS SELECT * FROM my_table;
--- Create an incremental materialized view.
+-- Create an fast-refresh materialized view.
 openGauss=# CREATE INCREMENTAL MATERIALIZED VIEW my_imv AS SELECT * FROM my_table;
 -- Write data to the base table.
 openGauss=# INSERT INTO my_table VALUES(1,1),(2,2);
--- Refresh the full materialized view my_mv.
+-- Refresh the complete-refresh materialized view my_mv.
 openGauss=# REFRESH MATERIALIZED VIEW my_mv;
--- Fully refresh the incremental materialized view my_imv.
+-- Fully refresh the refresh-materialized-view my_imv.
 openGauss=# REFRESH MATERIALIZED VIEW my_imv;
 ```
 
