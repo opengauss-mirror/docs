@@ -1,4 +1,4 @@
-# Loop Statements<a name="EN-US_TOPIC_0000001162739220"></a>
+# Loop Statements<a name="EN-US_TOPIC_0289900479"></a>
 
 ## Simple LOOP Statements<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_s27557775f6014d78b9a100c65a4cbb41"></a>
 

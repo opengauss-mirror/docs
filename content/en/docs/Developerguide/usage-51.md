@@ -2,7 +2,7 @@
 
 ## Syntax<a name="section1980464963719"></a>
 
--   Create a incremental materialized view.
+-   Create a fast-refresh materialized view.
 
     ```
     CREATE INCREMENTAL MATERIALIZED VIEW [ view_name ] AS { query_block }; 
@@ -45,7 +45,7 @@ postgres=# CREATE TABLE t1(c1 int, c2 int);
 postgres=# INSERT INTO t1 VALUES(1, 1);
 postgres=# INSERT INTO t1 VALUES(2, 2);
 
--- Create an incremental materialized view.
+-- Create an fast-refresh materialized view.
 postgres=# CREATE INCREMENTAL MATERIALIZED VIEW mv AS SELECT * FROM t1;
 CREATE MATERIALIZED VIEW
 
