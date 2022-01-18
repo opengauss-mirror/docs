@@ -21,6 +21,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >A same value for  **[client\_min\_messages](#en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **log\_min\_messages**  does not indicate the same level.  
+>Sometimes, this parameter and parameter logging_modules need to be configured at the same time for printing some log information, that is, after setting this parameter, it may also need to set logging_modules to turn on the log printing switch of the corresponding module.  
 
 **Value range**: enumerated values. Valid values are  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**,  **info**,  **log**,  **notice**,  **warning**,  **error**,  **fatal**, and  **panic**. For details about the parameter, see  [Table 1](#en-us_topic_0237124722_en-us_topic_0059778452_en-us_topic_0058967791_table55180162).
 
