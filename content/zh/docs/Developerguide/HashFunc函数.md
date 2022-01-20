@@ -103,7 +103,7 @@
 
     value为需要输入的数值，类型：
 
-    “char”、abstime、bigint、boolean、bytea、character varying、character、date、double precision、int2vector、integer、interval、money、name、numeric、nvarchar2、oid、oidvector、raw、real、record、reltime、smalldatetime、smallint、text、time with time zone、time without time zone、timestamp with time zone、timestamp without time zone、tinyint、uuid
+    “char”、abstime、bigint、boolean、bytea、character varying、character、date、double precision、int2vector、integer、interval、money、name、numeric、nvarchar、nvarchar2、oid、oidvector、raw、real、record、reltime、smalldatetime、smallint、text、time with time zone、time without time zone、timestamp with time zone、timestamp without time zone、tinyint、uuid
 
     flag表示数据分布方式，类型：integer
 
@@ -489,7 +489,7 @@
 
     描述：计算入参的哈希值。
 
-    参数：nvarchar2, integer
+    参数：nvarchar/nvarchar2, integer
 
     返回值类型：integer
 

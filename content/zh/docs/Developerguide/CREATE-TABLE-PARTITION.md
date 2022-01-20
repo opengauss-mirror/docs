@@ -235,7 +235,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
 
-    该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、CHARACTER VARYING\(n\)、VARCHAR\(n\)、CHARACTER\(n\)、CHAR\(n\)、CHARACTER、CHAR、TEXT、NVARCHAR2、NAME、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
+    该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、CHARACTER VARYING\(n\)、VARCHAR\(n\)、CHARACTER\(n\)、CHAR\(n\)、CHARACTER、CHAR、TEXT、NVARCHAR、NVARCHAR2、NAME、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
     （2）对于从句是START END的语法格式：
 
@@ -313,7 +313,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   对于partition\_key，列表分区策略的分区键仅支持1列。
     -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
 
-    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
+    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
 -   **PARTITION BY HASH\(partition\_key\)**
 
@@ -321,7 +321,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     对于partition\_key，哈希分区策略的分区键仅支持1列。
 
-    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
+    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 

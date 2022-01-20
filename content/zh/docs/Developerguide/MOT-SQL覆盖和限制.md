@@ -49,6 +49,7 @@ MOT功能限制：
 -   User-Defined Type \(UDF\)
 -   Array data type
 -   NVARCHAR2\(n\)
+-   NVARCHAR\(n\)
 -   Clob
 -   Name
 -   Blob
