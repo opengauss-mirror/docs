@@ -25,26 +25,26 @@
 3. Run the  **install.sh**  script to install openGauss.
 
    ```
-   sh install.sh  -w xxxx 
+   sh install.sh  -w "xxxx" &&source ~/.bashrc 
    ```
 
-   >![](public_sys-resources/icon-note.gif) **NOTE:** 
-   >
-   >- **-w**: initializes the database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
-   >
-   >- **-p**: specifies the openGauss port number. If the port number is not specified, the default value  **5432**  is used.
-   >
-   >- **-h|--help**: displays usage instructions.
-   >
-   >- After the installation, the database name is  **sgnode**.
-   >
-   >- The installation path of the database directory is  **/opt/software/openGauss/data/single\_node**, in which  **/opt/software/openGauss**  is the decompression path and  **data/single\_node**  is the newly created database node directory.
-   >
-   >- During execution, if the error "the maximum number of SEMMNI is not correct, the current SEMMNI is xxx. Please check it." appears, please execute the following command as a user with root privileges.
-   >
-   >  ```
-   >  sysctl -w kernel.sem="250 85000 250 330" 
-   >  ```
+   ![](public_sys-resources/icon-note.gif) **NOTE:** 
+   
+   - **-w**: initializes the database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
+   
+   - **-p**: specifies the openGauss port number. If the port number is not specified, the default value  **5432**  is used.
+   
+   - **-h|--help**: displays usage instructions.
+   
+   - After the installation, the database name is  **sgnode**.
+   
+   - The installation path of the database directory is  **/opt/software/openGauss/data/single\_node**, in which  **/opt/software/openGauss**  is the decompression path and  **data/single\_node**  is the newly created database node directory.
+   
+   - During execution, if the error "the maximum number of SEMMNI is not correct, the current SEMMNI is xxx. Please check it." appears, please execute the following command as a user with root privileges.
+   
+    ```
+     sysctl -w kernel.sem="250 85000 250 330" 
+     ```
 
 4.  After the installation is complete, check whether the process is normal by using  **ps**  and  **gs\_ctl**.
 
