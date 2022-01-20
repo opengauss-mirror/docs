@@ -15,19 +15,26 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 ## Creating an openGauss Docker Image<a name="en-us_topic_0283136491_section159607494319"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-**_X.X.X_**-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<_version_\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html). Ensure that the correct yum source is available.
->-   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the MD5 check is performed by default. You need to manually write the check result to the  **md5\_file\_amd64**  file.
+
+> -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-**_X.X.X_**-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<_version_\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html). Ensure that the correct yum source is available.
+
+> -   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the MD5 check is performed by default. You need to manually write the check result to the  **md5\_file\_amd64**  file.
+
 >    ```
->    ## Modify the MD5 verification file.
->    cd /soft/openGauss-server/docker/dockerfiles/1.0.1
->    md5sum openGauss-1.0.1-CentOS-64bit.tar.bz2
->    ## Write the verification information to the verification file md5_file_amd64.
->    echo "58b9a029719f2d9d32b7d619c850735c openGauss-1.0.1-CentOS64bit.tar.bz2" > md5_file_amd64 
+    ## Modify the MD5 verification file.
+    cd /soft/openGauss-server/docker/dockerfiles/1.0.1
+    md5sum openGauss-1.0.1-CentOS-64bit.tar.bz2
+    ## Write the verification information to the verification file md5_file_amd64.
+    echo "58b9a029719f2d9d32b7d619c850735c openGauss-1.0.1-CentOS64bit.tar.bz2" > md5_file_amd64 
+ ```
+
+> -   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/1.0.1**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
+
+
 >    ```
->-   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/1.0.1**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
->    ```
->    wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
->    ```
+   wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
+ ```
+
 
 Run the  **buildDockerImage.sh**  script in the  **dockerfiles**  folder.
 
