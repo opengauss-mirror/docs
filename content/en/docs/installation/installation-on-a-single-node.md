@@ -25,7 +25,7 @@
 3. Run the  **install.sh**  script to install openGauss.
 
    ```
-   sh install.sh  -w xxxx 
+   sh install.sh  -w  "xxxx" &&source ~/.bashrc
    ```
 
    >![](public_sys-resources/icon-note.gif) **NOTE:** 
