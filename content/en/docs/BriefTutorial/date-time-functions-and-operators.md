@@ -1412,11 +1412,12 @@ openGauss=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 </table>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**  
->In the table, the rules for RR to calculate years are as follows:  
->-   If the range of the input two-digit year is between 00 and 49:  
->    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are the same as the first two digits of the current year.  
->    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are equal to the first two digits of the current year plus 1.  
->-   If the range of the input two-digit year is between 50 and 99:  
->    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are equal to the first two digits of the current year minus 1.  
->    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.  
+>In the table, the rules for RR to calculate years are as follows:   
+>
+>+   If the range of the input two-digit year is between 00 and 49:   
+>    +    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are the same as the first two digits of the current year.  
+>    +    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are equal to the first two digits of the current year plus 1.    
+>+   If the range of the input two-digit year is between 50 and 99:    
+>    +   If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are equal to the first two digits of the current year minus 1.  
+>    +    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.    
 

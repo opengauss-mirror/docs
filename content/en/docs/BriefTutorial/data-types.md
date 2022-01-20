@@ -434,9 +434,10 @@ In openGauss, there are two other fixed-length character types, as shown in  [Ta
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**  
->-   In addition to the size limitation on each column, the total size of each tuple is 1073733621 bytes \(1 GB – 8203 bytes\).  
->-   BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**    
+>
+>+ In addition to the size limitation on each column, the total size of each tuple is 1073733621 bytes \(1 GB – 8203 bytes\).    
+>+ BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.    
 
 ## Date/Time Types<a name="section104631558113715"></a>
 
@@ -779,21 +780,21 @@ When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sor
     </th>
     </tr>
     </thead>
-    <tbody><tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r5e945b07e3224f7e9c4daef48f4a6d8e"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a28c88fdb04f4472e8038112107e3dc46"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a28c88fdb04f4472e8038112107e3dc46"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a28c88fdb04f4472e8038112107e3dc46"></a>192.168.100.128/25</p>
+    <tbody><tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r5e945b07e3224f7e9c4daef48f4a6d8e"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a28c88fdb04f4472e8038112107e3dc46"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a28c88fdb04f4472e8038112107e3dc46"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a28c88fdb04f4472e8038112107e3dc46"></a>192.168.100.128/<span>25</span></p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a833b2de5700649098f0db6ed27453a76"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a833b2de5700649098f0db6ed27453a76"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a833b2de5700649098f0db6ed27453a76"></a>192.168.100.128/25</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a833b2de5700649098f0db6ed27453a76"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a833b2de5700649098f0db6ed27453a76"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a833b2de5700649098f0db6ed27453a76"></a>192.168.100.128/<span>25</span></p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_en-us_topic_0058966055_p794101142243"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_en-us_topic_0058966055_p794101142243"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_en-us_topic_0058966055_p794101142243"></a>192.168.100.128/25</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_en-us_topic_0058966055_p794101142243"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_en-us_topic_0058966055_p794101142243"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_en-us_topic_0058966055_p794101142243"></a>192.168.100.128/<span>25</span></p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ra8b500280ce94b5d9f27b38ff1d26795"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa987c97ffa0849a5bb6e4587f577570e"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa987c97ffa0849a5bb6e4587f577570e"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa987c97ffa0849a5bb6e4587f577570e"></a>192.168/24</p>
+    <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ra8b500280ce94b5d9f27b38ff1d26795"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa987c97ffa0849a5bb6e4587f577570e"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa987c97ffa0849a5bb6e4587f577570e"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa987c97ffa0849a5bb6e4587f577570e"></a>192.<span>168</span>/24</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_affee7f68c6674c1eb1bbca0a705aba42"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_affee7f68c6674c1eb1bbca0a705aba42"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_affee7f68c6674c1eb1bbca0a705aba42"></a>192.168.0.0/24</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a1ec42e61911140c4a2c3bc36d8e4b0c9"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a1ec42e61911140c4a2c3bc36d8e4b0c9"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a1ec42e61911140c4a2c3bc36d8e4b0c9"></a>192.168.0/24</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r5bb32b4dbed847dfa204c99ef3b05673"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ac4ddcc1e22cf4d6587434a7f783ac920"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ac4ddcc1e22cf4d6587434a7f783ac920"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ac4ddcc1e22cf4d6587434a7f783ac920"></a>192.168/25</p>
+    <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r5bb32b4dbed847dfa204c99ef3b05673"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ac4ddcc1e22cf4d6587434a7f783ac920"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ac4ddcc1e22cf4d6587434a7f783ac920"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ac4ddcc1e22cf4d6587434a7f783ac920"></a>192.<span>168</span>/25</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5f46b39c63bc4ca895389e723a7b0009"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5f46b39c63bc4ca895389e723a7b0009"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5f46b39c63bc4ca895389e723a7b0009"></a>192.168.0.0/25</p>
     </td>
@@ -804,7 +805,7 @@ When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sor
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ae5a4c716f0ba442282fba80bd136ecdf"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ae5a4c716f0ba442282fba80bd136ecdf"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ae5a4c716f0ba442282fba80bd136ecdf"></a>192.168.1.0/24</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5e236063bf4f4ec0aef98d6add787b06"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5e236063bf4f4ec0aef98d6add787b06"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5e236063bf4f4ec0aef98d6add787b06"></a>192.168.1/24</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5e236063bf4f4ec0aef98d6add787b06"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5e236063bf4f4ec0aef98d6add787b06"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a5e236063bf4f4ec0aef98d6add787b06"></a>192.168.<span>1</span>/<span>24</span></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r02683f337f4e4d22abc24bad8a9edb59"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a8cd17dd200b5455aaf79d07619a72a75"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a8cd17dd200b5455aaf79d07619a72a75"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a8cd17dd200b5455aaf79d07619a72a75"></a>192.168</p>
@@ -818,28 +819,28 @@ When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sor
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a89d315421165453ca3e101fdff3fe97c"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a89d315421165453ca3e101fdff3fe97c"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a89d315421165453ca3e101fdff3fe97c"></a>10.1.2.0/24</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a201d6fe344bc4fb5b814f7302c1cff7f"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a201d6fe344bc4fb5b814f7302c1cff7f"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a201d6fe344bc4fb5b814f7302c1cff7f"></a>10.1.2/24</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a201d6fe344bc4fb5b814f7302c1cff7f"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a201d6fe344bc4fb5b814f7302c1cff7f"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a201d6fe344bc4fb5b814f7302c1cff7f"></a>10.1.<span>2</span>/<span>24</span></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r31c0d482ecaa42ae8f3bb93d292fd6a1"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a8da2fcc3df774c668f1592f608f75757"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a8da2fcc3df774c668f1592f608f75757"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a8da2fcc3df774c668f1592f608f75757"></a>10.1</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a2a2fb470a3964c97ac29e95a185b4d6c"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a2a2fb470a3964c97ac29e95a185b4d6c"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a2a2fb470a3964c97ac29e95a185b4d6c"></a>10.1.0.0/16</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa2cd84003ade44ceb2bcb815b96ecc7c"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa2cd84003ade44ceb2bcb815b96ecc7c"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa2cd84003ade44ceb2bcb815b96ecc7c"></a>10.1/16</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa2cd84003ade44ceb2bcb815b96ecc7c"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa2cd84003ade44ceb2bcb815b96ecc7c"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_aa2cd84003ade44ceb2bcb815b96ecc7c"></a>10.<span>1</span>/<span>16</span></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r5085adb5e7de410fbce986c2370effae"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a633a7faaa0514bb485c0f14fb2382707"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a633a7faaa0514bb485c0f14fb2382707"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a633a7faaa0514bb485c0f14fb2382707"></a>10</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a41389b5f4ec7419e81067236d9ea6747"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a41389b5f4ec7419e81067236d9ea6747"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a41389b5f4ec7419e81067236d9ea6747"></a>10.0.0.0/8</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0e938af5c31d4cb2b4dc420acea7469a"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0e938af5c31d4cb2b4dc420acea7469a"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0e938af5c31d4cb2b4dc420acea7469a"></a>10/8</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0e938af5c31d4cb2b4dc420acea7469a"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0e938af5c31d4cb2b4dc420acea7469a"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0e938af5c31d4cb2b4dc420acea7469a"></a><span>10</span>/<span>8</span></p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r3bedcb2e3fb14e6ab06d0c92e2bb6c22"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a6a6a36520ac6432791b546b7442d1069"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a6a6a36520ac6432791b546b7442d1069"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a6a6a36520ac6432791b546b7442d1069"></a>10.1.2.3/32</p>
+    <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r3bedcb2e3fb14e6ab06d0c92e2bb6c22"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a6a6a36520ac6432791b546b7442d1069"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a6a6a36520ac6432791b546b7442d1069"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a6a6a36520ac6432791b546b7442d1069"></a>10.1.2.<span>3</span>/<span>32</span></p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a57afbc9be4b449ceaabccfb79425993e"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a57afbc9be4b449ceaabccfb79425993e"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a57afbc9be4b449ceaabccfb79425993e"></a>10.1.2.3/32</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a57afbc9be4b449ceaabccfb79425993e"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a57afbc9be4b449ceaabccfb79425993e"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a57afbc9be4b449ceaabccfb79425993e"></a>10.1.2.<span>3</span>/<span>32</span></p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ad6c80cbc066c40538c4ec54708b1641c"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ad6c80cbc066c40538c4ec54708b1641c"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ad6c80cbc066c40538c4ec54708b1641c"></a>10.1.2.3/32</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ad6c80cbc066c40538c4ec54708b1641c"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ad6c80cbc066c40538c4ec54708b1641c"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_ad6c80cbc066c40538c4ec54708b1641c"></a>10.1.2.<span>3</span>/<span>32</span></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_r92aacf8a10484abaaa8ec164fcb67815"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a79feb7516fbc443ab8d14ad847f161f7"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a79feb7516fbc443ab8d14ad847f161f7"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a79feb7516fbc443ab8d14ad847f161f7"></a>2001:4f8:3:ba::/64</p>
@@ -860,7 +861,7 @@ When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sor
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a29a5d6841bd74258b5518e6be3954b52"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a29a5d6841bd74258b5518e6be3954b52"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a29a5d6841bd74258b5518e6be3954b52"></a>::ffff:1.2.3.0/120</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a>::ffff:1.2.3/120</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a0ab33f96881748b695f94cea7cb5c889"></a>::ffff:1.2.<span>3</span>/120</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_rbbbef9b57a6d4ec9bb47494c03c06296"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a2ceb20a62ad743c087863b5d33bfe6ae"><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a2ceb20a62ad743c087863b5d33bfe6ae"></a><a name="en-us_topic_0283136821_en-us_topic_0237121954_en-us_topic_0059778276_a2ceb20a62ad743c087863b5d33bfe6ae"></a>::ffff:1.2.3.0/128</p>
@@ -1138,60 +1139,61 @@ openGauss supports two types JSON and JSONB to store JSON data. JSON is a comple
 
 So you can see that both JSON and JSONB are of JSON data type, and the same strings can be entered as input. The main difference between JSON and JSONB is the efficiency. Because JSON data is an exact copy of the input text, the data must be parsed on every execution; in contrast, JSONB data is stored in a decomposed binary form and can be processed faster, though this makes it slightly slower in input due to the conversion mechanism. In addition, because the JSONB data form is unified, it better supports more powerful functions, for example, comparing sizes according to a specific rule. JSONB also supports indexing, which is a significant advantage.
 
--   Input format
+- Input format
 
-    An input must be a JSON-compliant string, which is enclosed in single quotation marks \(''\).
+  An input must be a JSON-compliant string, which is enclosed in single quotation marks \(''\).
 
-    Null \(null-json\): Only null is supported, and all letters are in lowercase.
+  Null \(null-json\): Only null is supported, and all letters are in lowercase.
 
-    ```
-    select 'null'::json;   -- suc
-    select 'NULL'::jsonb;  -- err
-    ```
+  ```
+  select 'null'::json;   -- suc
+  select 'NULL'::jsonb;  -- err
+  ```
 
-    Number \(num-json\): The value can be a positive or negative integer, decimal fraction, or 0. The scientific notation is supported.
+  Number \(num-json\): The value can be a positive or negative integer, decimal fraction, or 0. The scientific notation is supported.
 
-    ```
-    select '1'::json;
-    select '-1.5'::json;
-    select '-1.5e-5'::jsonb, '-1.5e+2'::jsonb;
-    select '001'::json, '+15'::json, 'NaN'::json;  
-    -- Redundant leading zeros, positive plus signs (+), NaN, and infinity are not supported.
-    ```
+  ```
+  select '1'::json;
+  select '-1.5'::json;
+  select '-1.5e-5'::jsonb, '-1.5e+2'::jsonb;
+  select '001'::json, '+15'::json, 'NaN'::json;  
+  -- Redundant leading zeros, positive plus signs (+), NaN, and infinity are not supported.
+  ```
 
-    Boolean \(bool-json\): The value can only be  **true**  or  **false**  in lowercase.
+  Boolean \(bool-json\): The value can only be  **true**  or  **false**  in lowercase.
 
-    ```
-    select 'true'::json;
-    select 'false'::jsonb;  
-    ```
+  ```
+  select 'true'::json;
+  select 'false'::jsonb;  
+  ```
 
-    String \(str-json\): The value must be a string enclosed in double quotation marks \(""\).
+  String \(str-json\): The value must be a string enclosed in double quotation marks \(""\).
 
-    ```
-    select '"a"'::json;
-    select '"abc"'::jsonb;  
-    ```
+  ```
+  select '"a"'::json;
+  select '"abc"'::jsonb;  
+  ```
 
-    Array \(array-json\): Arrays are enclosed in square brackets \(\[\]\). Elements in the array can be any valid JSON data, and are unnecessarily of the same type.
+  Array \(array-json\): Arrays are enclosed in square brackets \(\[\]\). Elements in the array can be any valid JSON data, and are unnecessarily of the same type.
 
-    ```
-    select '[1, 2, "foo", null]'::json;
-    select '[]'::json;
-    select '[1, 2, "foo", null, [[]], {}]'::jsonb; 
-    ```
+  ```
+  select '[1, 2, "foo", null]'::json;
+  select '[]'::json;
+  select '[1, 2, "foo", null, [[]], {}]'::jsonb; 
+  ```
 
-    Object \(object-json\): The value is enclosed in braces \(\{\}\). The key must be a JSON-compliant string, and the value can be any valid JSON string.
+  Object \(object-json\): The value is enclosed in braces \(\{\}\). The key must be a JSON-compliant string, and the value can be any valid JSON string.
 
-    ```
-    select '{}'::json;
-    select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;
-    select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
-    ```
+  ```
+  select '{}'::json;
+  select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;
+  select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
+  ```
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:**   
-    >-      Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.  
-    >-      For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.  
+  >![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+  >
+  >- Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.   
+  >- For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.    
 
 -   JSONB advanced features
 
@@ -1235,35 +1237,35 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
 
 
     -   Size comparison
-
+    
         Format normalization ensures that only one form of JSONB data exists in the same semantics. Therefore, sizes may be compared according to a specific rule.
-
+    
         -   First, compare the types:  **object-jsonb**  \>  **array-jsonb**  \>  **bool-jsonb**  \>  **num-jsonb**  \>  **str-jsonb**  \>  **null-jsonb**.
         -   Compare the content if data types are the same:
-
+    
             -   **str-json**: The default text sorting rule of the database is used for comparison. A positive value indicates greater than, a negative value indicates less than, and  **0**  indicates equal.
             -   **num-json**: numeric comparison
             -   **bool-json**:  **true**  \>  **false**
             -   **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
             -   **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
-
+    
             >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
             >For comparison within the  **object-jsonb**  type, the final result after format sorting is used for comparison. Therefore, the comparison result may not be intuitive compared with the direct input.
 
 
     -   Creating indexes, primary keys, and foreign keys
         -   B-tree index
-
+    
             B-tree indexes, primary keys, and foreign keys can be created for the  **JSONB**  type.
-
+    
         -   GIN index
-
+    
             GIN indexes can be used to effectively search for keys or key-value pairs that appear in a large number of JSONB documents \(datums\). Two GIN operator classes \(**jsonb\_ops**  and  **jsonb\_hash\_ops**\) are provided for different performance and flexibility choices. The default GIN operator class supports  **@\>**,  **<@**,  **?**,  **?&**  and  **?|**  operator query. The non-default GIN operator class  **jsonb\_path\_ops**  supports only the  **@\>**  and  **<@**  operators.
-
+    
     -   Containment and existence
-
+    
         Querying whether a JSON contains some elements or whether some elements exist in a JSON is an important capability of JSONB.
-
+    
         ```
         -- Simple scalar/primitive values contain only the identical value:
         SELECT '"foo"'::jsonb @> '"foo"'::jsonb;
@@ -1342,10 +1344,11 @@ HLL is an approximation algorithm for efficiently counting the number of distinc
 HLL has advantages over others in the computing speed and storage space requirement. In terms of time complexity, the sorting algorithm needs O\(nlogn\) time for sorting, and the hash algorithm and HLL need O\(n\) time for full table scanning. In terms of storage space requirements, the sorting algorithm and hash algorithm need to store raw data before collecting statistics, whereas the HLL algorithm needs to store only the HLL data structures rather than the raw data, thereby occupying a fixed space of about 16 KB.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.  
->-   When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.  
->    -   By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.  
->    -   The hash algorithm has an extremely low probability of collision. However, you are still advised to select 2 or 3 hash seeds for verification when using the hash algorithm for the first time. If there is only a small difference between the distinct values, you can select any one of the seeds as the hash seed.  
+>
+>- In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.  
+>- When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.  
+>- By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.  
+>- The hash algorithm has an extremely low probability of collision. However, you are still advised to select 2 or 3 hash seeds for verification when using the hash algorithm for the first time. If there is only a small difference between the distinct values, you can select any one of the seeds as the hash seed.   
 
 [Table 14](#table18186113885012)  describes main HLL data structures.
 
@@ -1568,7 +1571,7 @@ Range types are useful because they can express multiple element values in a sin
 
     Element types with the infinity values can be used as explicit bound values. For example, in the timestamp range, \[today, infinity\) does not include a special timestamp value infinity.
 
-    The** lower\_inf**  and  **upper\_inf**  functions test the infinite upper and lower bounds of a range, respectively.
+    The **lower\_inf**  and  **upper\_inf**  functions test the infinite upper and lower bounds of a range, respectively.
 
 -   Range input/output
 
@@ -2231,9 +2234,10 @@ xmlconcat
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   This function is disabled by default. To use this function, you need to use the  **build.sh**  script to compile the database again and add the** --with-libxml**  parameter to the  **./configure**  configuration parameter.  
->-   Before compilation, you need to run the  **yum install -y libxml2-devel**  command. Otherwise, the "configure: error: library 'xml2' \(version \>= 2.6.23\) is required for XML support" error will be reported.  
->-   Before compilation, you need to add the  **dependency**_operating system environment_**/libobs/comm/lib**  in the binary file of the third-party library to the system environment variable  _LD\_LIBRARY\_PATH_. Otherwise, an error message is displayed, indicating that  **libiconv.so**  does not exist.  
+>
+>- This function is disabled by default. To use this function, you need to use the  **build.sh**  script to compile the database again and add the **--with-libxml**  parameter to the  **./configure**  configuration parameter.  
+>- Before compilation, you need to run the  **yum install -y libxml2-devel**  command. Otherwise, the "configure: error: library 'xml2' \(version \>= 2.6.23\) is required for XML support" error will be reported.  
+>- Before compilation, you need to add the  **dependency**_operating system environment_**/libobs/comm/lib**  in the binary file of the third-party library to the system environment variable  _LD\_LIBRARY\_PATH_. Otherwise, an error message is displayed, indicating that  **libiconv.so**  does not exist.  
 
 ## Data Types Used by the Ledger Database<a name="section206901272714"></a>
 
