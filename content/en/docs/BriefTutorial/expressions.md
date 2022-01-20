@@ -10,7 +10,7 @@ An expression is similar to a formula. You can use it in a query statement to se
 
 -   Comparison expressions
 
-    [Operators](en-us_topic_0289900672.md)  lists the common comparison operators.
+    [Operators](../Developerguide/Operators.md)  lists the common comparison operators.
 
     In addition to comparison operators, you can also use the following sentence structures:
 
@@ -22,36 +22,35 @@ An expression is similar to a formula. You can use it in a query statement to se
 
     -   To check whether a value is  **NULL**, use:
 
-        expression_ _IS NULL
+        expression IS NULL
 
         expression IS NOT NULL
 
         or an equivalent \(non-standard\) sentence structure:
 
-        expression_ _   ISNULL
+        expression   ISNULL
 
         expression  NOTNULL
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
         >Do not write  **expression=NULL**  or  **expression<\>\(!=\)NULL**, because  **NULL**  represents an unknown value, and these expressions cannot determine whether two unknown values are equal.
 
+-   is distinct from/is not distinct from
+    -   is distinct from
 
-    -   is distinct from/is not distinct from
-        -   is distinct from
+        If the data types and values of A and B are not completely the same, the value is  **true**.
 
-            If the data types and values of A and B are not completely the same, the value is  **true**.
+        If the data types and values of A and B are completely the same, the value is  **false**.
 
-            If the data types and values of A and B are completely the same, the value is  **false**.
+        Null values are considered the same.
 
-            Null values are considered the same.
+    -   is not distinct from
 
-        -   is not distinct from
+        If the data types and values of A and B are not completely the same, the value is  **false**.
 
-            If the data types and values of A and B are not completely the same, the value is  **false**.
+        If the data types and values of A and B are completely the same, the value is  **true**.
 
-            If the data types and values of A and B are completely the same, the value is  **true**.
-
-            Null values are considered the same.
+        Null values are considered the same.
 
 
 
@@ -418,7 +417,7 @@ Subquery expressions include the following types:
 
 -   IN
 
-    _expression _**IN **_\(value \[, ...\]\)_
+    _expression **IN **_\(value \[, ...\]\)
 
     The parentheses on the right contain an expression list. The expression result on the left is compared with the content in the expression list. If the content in the list meets the expression result on the left, the result of  **IN**  is  **true**. If no content meets the expression result, the result of  **IN**  is  **false**.
 
@@ -437,7 +436,7 @@ Subquery expressions include the following types:
 
 -   NOT IN
 
-    _expression _**NOT IN**_ \(value \[, ...\]\)_
+    _expression  **NOT IN**_ \(value \[, ...\]\)
 
     The parentheses on the right contain an expression list. The expression result on the left is compared with the content in the expression list. If the content in the list does not meet the expression result on the left, the result of  **NOT IN**  is  **true**. If any content meets the expression result, the result of  **NOT IN**  is  **false**.
 
@@ -459,9 +458,9 @@ Subquery expressions include the following types:
 
 -   ANY/SOME\(array\)
 
-    _expression operator _**ANY **_\(array expression\)_
+    _expression operator  **ANY **_\(array expression\)
 
-    _expression operator _**SOME **_\(array expression\)_
+    _expression operator  **SOME **_\(array expression\)
 
     The right side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to calculate and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
@@ -489,7 +488,7 @@ Subquery expressions include the following types:
 
 -   ALL\(array\)
 
-    _expression operator _**ALL **_\(array expression\)_
+    _expression operator  **ALL **_\(array expression\)
 
     The right side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to calculate and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 

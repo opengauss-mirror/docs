@@ -111,8 +111,8 @@ UPDATE table
 SET column_name = new_value
 [ WHERE OPERATOR [ VALUE ]
    (SELECT COLUMN_NAME
-   FROM TABLE_NAME)
-   [ WHERE) ]
+   FROM TABLE_NAME
+   [ WHERE ])
 ```
 
 Example:
@@ -147,8 +147,8 @@ The basic syntax is as follows:
 DELETE FROM TABLE_NAME
 [ WHERE OPERATOR [ VALUE ]
    (SELECT COLUMN_NAME
-   FROM TABLE_NAME)
-   [ WHERE) ]
+   FROM TABLE_NAME
+   [ WHERE ])
 ```
 
 Example:

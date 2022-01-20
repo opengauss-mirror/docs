@@ -146,7 +146,7 @@ The openGauss community uses the mailing list for online communication. We since
 -   openGauss community
     -   WeChat official account
 
-        ![](figures/en-us_image_0000001235224851.jpg)
+        <img src="figures/en-us_image_0000001235224851.jpg" style="zoom: 33%;" />
 
     -   bilibili
     -   [CSDN](https://blog.csdn.net/weixin_49727236)

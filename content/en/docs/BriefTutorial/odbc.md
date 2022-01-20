@@ -5,7 +5,7 @@ Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases b
 [Figure 1](#en-us_topic_0283137057_fig1255101034110)  shows the system structure of ODBC.
 
 **Figure  1**  ODBC system structure<a name="en-us_topic_0283137057_fig1255101034110"></a>  
-![](figures/odbc-system-structure.png "odbc-system-structure")
+<img src="figures/odbc-system-structure.png" title="odbc-system-structure" style="zoom:75%;" />
 
 openGauss supports ODBC in the following environments.
 

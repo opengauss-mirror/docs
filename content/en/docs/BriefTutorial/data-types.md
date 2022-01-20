@@ -329,9 +329,9 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->1.  In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null columns exist in the tuple.
->2.  NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the b\(n\) type bpchar\(n\).
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>1.  In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null columns exist in the tuple.  
+>2.  NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the b\(n\) type bpchar\(n\).  
 
 In openGauss, there are two other fixed-length character types, as shown in  [Table 7](#en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_tf74658686f5e4d979adf0ac04769ea16). The  **name**  type exists only for the storage of identifiers in the internal system catalogs and is not intended for general users. Its length is currently defined as 64 bytes \(63 usable characters plus a terminator\). The type  **"char"**  only uses one byte of storage. It is internally used in the system catalogs as a simplistic enumeration type.
 
@@ -434,9 +434,9 @@ In openGauss, there are two other fixed-length character types, as shown in  [Ta
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   In addition to the size limitation on each column, the total size of each tuple is 1073733621 bytes \(1 GB – 8203 bytes\).
->-   BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.
+>![](public_sys-resources/icon-note.gif) **NOTE:**  
+>-   In addition to the size limitation on each column, the total size of each tuple is 1073733621 bytes \(1 GB – 8203 bytes\).  
+>-   BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.  
 
 ## Date/Time Types<a name="section104631558113715"></a>
 
@@ -1189,9 +1189,9 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
     select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
     ```
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
-    >-   Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.
-    >-   For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.
+    >![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+    >-      Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.  
+    >-      For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.  
 
 -   JSONB advanced features
 
@@ -1341,11 +1341,11 @@ HLL is an approximation algorithm for efficiently counting the number of distinc
 
 HLL has advantages over others in the computing speed and storage space requirement. In terms of time complexity, the sorting algorithm needs O\(nlogn\) time for sorting, and the hash algorithm and HLL need O\(n\) time for full table scanning. In terms of storage space requirements, the sorting algorithm and hash algorithm need to store raw data before collecting statistics, whereas the HLL algorithm needs to store only the HLL data structures rather than the raw data, thereby occupying a fixed space of about 16 KB.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.
->-   When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.
->    -   By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.
->    -   The hash algorithm has an extremely low probability of collision. However, you are still advised to select 2 or 3 hash seeds for verification when using the hash algorithm for the first time. If there is only a small difference between the distinct values, you can select any one of the seeds as the hash seed.
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>-   In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.  
+>-   When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.  
+>    -   By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.  
+>    -   The hash algorithm has an extremely low probability of collision. However, you are still advised to select 2 or 3 hash seeds for verification when using the hash algorithm for the first time. If there is only a small difference between the distinct values, you can select any one of the seeds as the hash seed.  
 
 [Table 14](#table18186113885012)  describes main HLL data structures.
 
@@ -1368,11 +1368,11 @@ HLL has advantages over others in the computing speed and storage space requirem
 
 When you create an HLL data type, 0 to 4 input parameters are supported. The parameter meanings and specifications are the same as those of the  **hll\_empty**  function. The first parameter is  **log2m**, indicating the logarithm of the number of buckets, and its value ranges from 10 to 16. The second parameter is  **log2explicit**, indicating the threshold in explicit mode, and its value ranges from 0 to 12. The third parameter is  **log2sparse**, indicating the threshold of the Sparse mode, and its value ranges from 0 to 14. The fourth parameter is  **duplicatecheck**, indicating whether to enable duplicate check, and its value ranges from 0 to 1. When the input parameter is set to  **–1**, the default value of the HLL parameter is used. You can run the  **\\d**  or  **\\d+**  command to view the parameters of the HLL type.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->When the HLL data type is created, the result varies depending on the input parameter behavior:
->-   When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.
->-   If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.
->-   If the input value is invalid, an error is reported when the HLL type is created.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>When the HLL data type is created, the result varies depending on the input parameter behavior:  
+>-   When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.  
+>-   If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.  
+>-   If the input value is invalid, an error is reported when the HLL type is created.  
 
 ```
 -- Create an HLL table without specifying input parameters.
@@ -2230,10 +2230,10 @@ xmlconcat
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   This function is disabled by default. To use this function, you need to use the  **build.sh**  script to compile the database again and add the** --with-libxml**  parameter to the  **./configure**  configuration parameter.
->-   Before compilation, you need to run the  **yum install -y libxml2-devel**  command. Otherwise, the "configure: error: library 'xml2' \(version \>= 2.6.23\) is required for XML support" error will be reported.
->-   Before compilation, you need to add the  **dependency**_operating system environment_**/libobs/comm/lib**  in the binary file of the third-party library to the system environment variable  _LD\_LIBRARY\_PATH_. Otherwise, an error message is displayed, indicating that  **libiconv.so**  does not exist.
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>-   This function is disabled by default. To use this function, you need to use the  **build.sh**  script to compile the database again and add the** --with-libxml**  parameter to the  **./configure**  configuration parameter.  
+>-   Before compilation, you need to run the  **yum install -y libxml2-devel**  command. Otherwise, the "configure: error: library 'xml2' \(version \>= 2.6.23\) is required for XML support" error will be reported.  
+>-   Before compilation, you need to add the  **dependency**_operating system environment_**/libobs/comm/lib**  in the binary file of the third-party library to the system environment variable  _LD\_LIBRARY\_PATH_. Otherwise, an error message is displayed, indicating that  **libiconv.so**  does not exist.  
 
 ## Data Types Used by the Ledger Database<a name="section206901272714"></a>
 
