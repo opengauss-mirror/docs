@@ -43,7 +43,7 @@ CREATE SUBSCRIPTION subscription_name
 
     -   **user和password**
 
-        用于连接发布端且具有流复制权限的用户名和密码。password需要加密，创建订阅前需要在订阅端执行gs\_guc generate -S xxxxxx -D $GAUSSHOME/bin -o subscription。
+        用于连接发布端且具有系统管理员权限(SYSADMIN)或者运维管理员权限(OPRADMIN)的用户名和密码。password需要加密，创建订阅前需要在订阅端执行gs\_guc generate -S xxxxxx -D $GAUSSHOME/bin -o subscription。
 
 
 -   **PUBLICATION publication\_name**
