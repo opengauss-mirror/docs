@@ -21,6 +21,7 @@ In the preceding information:
 >-   The index can only be of the integer or varchar type. The length of the varchar type is not restricted.
 >-   **NOT NULL**  has no function but only takes effect in the syntax.
 >-   **data\_type**  can also be the record type or set type defined in a stored procedure \(anonymous blocks are not supported\), but cannot be the array type.
+>-   Variables of the nested set type cannot be used across packages.
 
 openGauss supports access to set elements by using parentheses, and it also supports the  **extend**,  **count**,  **first**,  **last**,  **prior**,  **next**, and  **delete**  functions.
 
@@ -30,12 +31,12 @@ The set functions support  **multiset union**,  **intersect**,  **except all**, 
 
 ```
 -- Perform operations on a set in the stored procedure.
-openGauss=# CREATE OR REPLACE PROCEDURE table_proc
-AS 
+openGauss=# CREATE OR REPLACE PROCEDURE table_proc AS
+DECLARE
        TYPE TABLE_INTEGER IS TABLE OF INTEGER;-- Define the set type.
        TABLEINT TABLE_INTEGER := TABLE_INTEGER();  -- Declare the variable of the set type.
 BEGIN 
-       ARRINT.extend(10);  
+       TABLEINT.extend(10);  
        FOR I IN 1..10 LOOP  
                TABLEINT(I) := I; 
        END LOOP; 

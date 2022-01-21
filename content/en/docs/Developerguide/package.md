@@ -7,6 +7,6 @@ A package contains two parts: package specifications and package body. The decla
 For details about how to create a package, see  [CREATE PACKAGE](en-us_topic_0000001114212452.md).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   Cross-package variables cannot be used as control variables in the for and while loops.
->-   Types defined in a package cannot be deleted or modified, and tables cannot be defined.
+>-   Cross-package variables cannot be used as control variables in the for loops.
+>-   Types defined in a package cannot be deleted or modified, and cannot be used to define tables.
 

@@ -303,7 +303,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   For  **partition\_key**, the list partitioning policy supports only one column of partition keys.
     -   If the clause is  **VALUES \(list\_values\_clause\)**,  **list\_values\_clause**  contains the key values of the corresponding partition. It is recommended that the number of key values of each partition be less than or equal to 64.
 
-    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed 64.
+    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed  1048575 .
 
 -   **PARTITION BY HASH\(partition\_key\)**
 
@@ -311,7 +311,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     For  **partition\_key**, the hash partitioning policy supports only one column of partition keys.
 
-    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed 64.
+    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed  1048575 .
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
