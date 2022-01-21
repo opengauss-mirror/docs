@@ -7,7 +7,7 @@
 ## Precautions<a name="en-us_topic_0283137183_en-us_topic_0237122095_en-us_topic_0059777686_s482c910917bb49bc8102755589ad261a"></a>
 
 -   The function is only available in maintenance mode \(when the GUC parameter  **xc\_maintenance\_mode**  is  **on**\). Exercise caution when enabling the mode. It is used by maintenance engineers for troubleshooting. Common users should not use the mode.
--   Only the transaction creators or system administrators can run the  **COMMIT PREPARED**  command. The creation and commit operations must be in different sessions.
+-   Only the transaction creators or system administrators can run the  **COMMIT PREPARED**  command. The creation and commit operations only be in the same sessions.
 -   The transaction function is maintained automatically by the database, and should be not visible to users.
 
 ## Syntax<a name="en-us_topic_0283137183_en-us_topic_0237122095_en-us_topic_0059777686_s0d0ca300175c4442a111a05cf2f7f5c4"></a>
