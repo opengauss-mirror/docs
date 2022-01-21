@@ -974,7 +974,7 @@ headless: true
 		-   [Data Type Conversion]({{< relref "./docs/Developerguide/data-type-conversion.md" >}})
 		-   [Arrays, Sets and Records]({{< relref "./docs/Developerguide/arrays-and-records.md" >}})
 			-   [Arrays]({{< relref "./docs/Developerguide/arrays.md" >}})
-			-   [Sets]({{< relref "./docs/sets.md" >}})
+			-   [Sets]({{< relref "./docs/Developerguide/sets.md" >}})
 			-   [record]({{< relref "./docs/Developerguide/record.md" >}})		
 		-   [DECLARE Syntax]({{< relref "./docs/Developerguide/declare-syntax.md" >}})
 			-   [Basic Structure]({{< relref "./docs/Developerguide/basic-structure.md" >}})
