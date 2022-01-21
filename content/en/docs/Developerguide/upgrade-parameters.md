@@ -37,3 +37,5 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Default value**:  **0**
 
+>![](C:/Users/Administrator/Desktop/Docs/docs/content/zh/docs/Developerguide/public_sys-resources/icon-note.gif) **NOTE：** 
+>Special case: In the case of using grayscale upgrade, if the selection strategy is large version upgrade, that is, it is necessary to execute the upgrade script and replace the binary package, the upgrade_mode will be set to 2, the selection strategy is small version upgrade, and only the binary package will be replaced. , the upgrade_mode is not set to 2.

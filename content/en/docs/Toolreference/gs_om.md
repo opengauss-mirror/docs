@@ -13,7 +13,7 @@ Log in to the OS as the OS user  **omm**  to run the  **gs\_om**  command.
 -   Start openGauss.
 
     ```
-    gs_om -t start [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [-l LOGFILE]
+    gs_om -t start [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [--cluster-number=None] [-l LOGFILE]
     ```
 
 -   Stop openGauss.
@@ -143,6 +143,12 @@ The  **gs\_om**  tool can use the following types of parameters:
         Value range:  **on**: Start the database in secure mode.  **off**: Not start the database in secure mode.
 
         The secure mode is disabled by default.
+        
+    -   --cluster-number
+    
+        Specifies the version number of the kernel to run at boot time.
+    
+        Value range: Kernel version number.
 
 
 -   openGauss stop parameters
