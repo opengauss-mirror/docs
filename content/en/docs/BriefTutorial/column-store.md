@@ -7,7 +7,7 @@ Each storage model applies to specific scenarios. Select an appropriate model wh
 **Figure  1**  Differences between row store and column store<a name="en-us_topic_0283136734_en-us_topic_0237120296_fig1417354233018"></a>  
 
 
-![](figures/en-us_image_0000001189073180.png)
+<img src="figures/en-us_image_0000001189073180.png" style="zoom:70%;" />
 
 In the preceding figure, the upper left part is a row-store table, and the upper right part shows how the row-store table is stored on a disk; the lower left part is a column-store table, and the lower right part shows how the column-store table is stored on a disk.
 

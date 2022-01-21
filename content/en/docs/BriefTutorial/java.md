@@ -34,12 +34,13 @@ Statements can be executed in two modes: Statement and PreparedStatement.
 Example:
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->In the following example, the underlined fields in bold need to be replaced with your own information, where:
->-   **_127.0.0.1_**: IP address of the host where the database is located.
->-   **_8080_**: port for connecting to the database.
->-   **_test_**: name of the connected database. If the database does not exist, an error is reported. Before using the database, check whether the database exists.
->-   **_myuser_**: username for connecting to the database.
->-   **_myPassWord_**: password for connecting to the database.
+>In the following example, the underlined fields in bold need to be replaced with your own information, where:  
+>
+>-   **_127.0.0.1_**: IP address of the host where the database is located.  
+>-   **_8080_**: port for connecting to the database.  
+>-   **_test_**: name of the connected database. If the database does not exist, an error is reported. Before using the database, check whether the database exists.  
+>-   **_myuser_**: username for connecting to the database.  
+>-   **_myPassWord_**: password for connecting to the database.  
 
 -   DriverManager.getConnection\(String url\);
 

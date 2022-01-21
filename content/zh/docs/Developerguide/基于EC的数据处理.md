@@ -79,6 +79,11 @@ SQL on other openGauss目前仅支持以下数据类型：
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p1498101220181"><a name="p1498101220181"></a><a name="p1498101220181"></a>VARCHAR2/TEXT</p>
 </td>
 </tr>
+<tr id="row54980121183"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p10498151219186"><a name="p10498151219186"></a><a name="p10498151219186"></a>NVARCHAR</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p549821213181"><a name="p549821213181"></a><a name="p549821213181"></a>NVARCHAR/TEXT</p>
+</td>
+</tr>
 <tr id="row54980121183"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p10498151219186"><a name="p10498151219186"></a><a name="p10498151219186"></a>NVARCHAR2</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p549821213181"><a name="p549821213181"></a><a name="p549821213181"></a>NVARCHAR2/TEXT</p>
