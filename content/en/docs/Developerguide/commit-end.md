@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137519_en-us_topic_0237122094_en-us_topic_0059779032_s4f818d02dea3426a8d5d49aa87700b0c"></a>
 
-Only the creator of a transaction or a system administrator can run the  **COMMIT**  command. The creation and commit operations must be in different sessions.
+Only the creator of a transaction or a system administrator can run the  **COMMIT**  command. The creation and commit operations only be in the same sessions.
 
 ## Syntax<a name="en-us_topic_0283137519_en-us_topic_0237122094_en-us_topic_0059779032_sdd27e9322013412eab2a6cb5e598b150"></a>
 
