@@ -170,6 +170,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     -   靠后的记录有比较宽松的连接参数和比较强的认证方法。
 
     ![](public_sys-resources/icon-note.gif) **说明：** 
+    
     -   一个用户要想成功连接到特定的数据库，不仅需要通过pg\_hba.conf中的规则检查，还必须要有该数据库上的CONNECT权限。如果希望控制某些用户只能连接到指定数据库，赋予/撤销CONNECT权限通常比在pg\_hba.conf中设置规则更为简单。
 
     -   对应openGauss外部客户端连接，trust为不安全的认证方式，请将认证方式设置为sha256。
