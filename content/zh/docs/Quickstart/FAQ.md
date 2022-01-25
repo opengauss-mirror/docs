@@ -42,12 +42,12 @@ Password:
 
 - 确认是否由于“known\_hosts”文件里记录的key和IP地址冲突。
 
-  查看“\~/.ssh/known\_hosts”文件里记录的key和IP地址是否一致，如果不一致，可能是由于所指定的IP发生了变化等原因导致了异常。此时，删除“.ssh/known\_hosts”文件里面原来的公钥信息即可。
+    查看“\~/.ssh/known\_hosts”文件里记录的key和IP地址是否一致，如果不一致，可能是由于所指定的IP发生了变化等原因导致了异常。此时，删除“.ssh/known\_hosts”文件里面原来的公钥信息即可。
 
 
 - 确认是由于公钥不匹配。
 
-  排除掉上面的所有原因后，如果问题仍存在，可能是公钥不匹配。此时，请删除公钥目录.ssh下的所有文件，按照下面的手工建立互信重新配置。
+    排除掉上面的所有原因后，如果问题仍存在，可能是公钥不匹配。此时，请删除公钥目录.ssh下的所有文件，按照下面的手工建立互信重新配置。
 
 
 ### 使用脚本建立互信<a name="zh-cn_topic_0231761642_zh-cn_topic_0085434670_zh-cn_topic_0059782026_section12899163762318"></a>
@@ -224,6 +224,6 @@ Password:
    plat1:~ # 
    ```
 
-   >![](C:/Users/lijun/Desktop/opengauss/docs/content/zh/docs/Quickstart/public_sys-resources/icon-note.gif) **说明：** 
+    >![](C:/Users/lijun/Desktop/opengauss/docs/content/zh/docs/Quickstart/public_sys-resources/icon-note.gif) **说明：** 
    >如果三个以上节点，和上述过程类似。假设节点名为plat1、plat2、plat3、......。第一步，需要在plat1上生成root用户的本机授权文件；第二步，需要收集所有待建互信主机（plat1、plat2、plat3、......）的公钥并写入到本机known\_hosts文件中；第三步，需要将互信文件分发到除本机外的所有其它主机（plat2、plat3、......)上；第四步，检查互信是否建立成功。
 
