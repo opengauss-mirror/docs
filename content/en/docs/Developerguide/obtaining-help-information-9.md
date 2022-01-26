@@ -38,7 +38,7 @@ optional arguments:
                         Run as 'agent', 'collector', 'monitor'. Notes: ensure
                         the normal operation of the openGauss in agent.
   --metric-name METRIC_NAME
-                        Metric name to be predicted, you must provide an specified metric name.
+                        Metric name to be predicted, if this parameter is not provided, all metric in database will be    predicted.    
 .
   --query QUERY         target sql for RCA.
                         Currently, the join operator is not supported, and the accuracy of the result 

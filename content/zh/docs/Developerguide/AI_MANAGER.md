@@ -16,13 +16,13 @@ ai\_manager是AI特性部署工具，旨在为ai特性提供自动化、高效�
 安装命令示例：
 
 ```
-python3 ai_manager --module anomaly_detection --action install --param-file opengauss.json
+python3 ai_manager --module anomaly_detection --action install --param_file opengauss.json
 ```
 
 卸载命令示例：
 
 ```
-python3 ai_manager --module anomaly_detection--action uninstall --param-file opengauss.json
+python3 ai_manager --module anomaly_detection--action uninstall --param_file opengauss.json
 ```
 
 参数文件示例：

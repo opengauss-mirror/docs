@@ -62,7 +62,7 @@
 3.  只能使用gs\_dump转储表数据。
 
     ```
-    $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump 
+    $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump -p 16000
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: dump database benchmarksql successfully 
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: total time: 332  ms
     ```
@@ -88,7 +88,7 @@
 6.  将源转储数据导入到新MOT中。
 
     ```
-    $ gs_restore -C -d benchmarksql customer.dump 
+    $ gs_restore -C -d benchmarksql customer.dump -p 16000
     restore operation successful 
     total time: 24  ms 
     Check that the data was imported successfully. 

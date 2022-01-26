@@ -81,7 +81,6 @@ call proc_raise2(300011);
 -- Execution result:
 ERROR:  Duplicate user ID: 300011
 SQLSTATE: 23505
-LOCATION:  exec_stmt_raise, pl_exec.cpp:3482
 ```
 
 If the main parameter is a condition name or  **SQLSTATE**, the following applies:

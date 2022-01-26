@@ -178,10 +178,10 @@ add_months
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"><span id="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"></a>openGauss=# </span>select length(lpad('123',0,'*')) from sys_dummy;
 length
 --------
-
 (1 row)</pre>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_ul75590181418"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_ul75590181418"></a><ul id="en-us_topic_0283137574_en-us_topic_0237124754_ul75590181418"><li>If this item is specified, the empty string is displayed as single quotation marks ('').</li></ul>
 <a name="en-us_topic_0283137574_en-us_topic_0237124754_screen104295208294"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_screen104295208294"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283137574_en-us_topic_0237124754_screen104295208294"><span id="en-us_topic_0283137574_en-us_topic_0237124754_text171811411192213"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text171811411192213"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text171811411192213"></a>openGauss=# </span>select length(lpad('123',0,'*')) from sys_dummy;
+
 length
 --------
 0
@@ -191,6 +191,7 @@ length
 <tr id="en-us_topic_0283137574_en-us_topic_0237124754_row1255211543476"><td class="cellrowborder" valign="top" width="24.43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283137574_en-us_topic_0237124754_p19552125434713"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p19552125434713"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p19552125434713"></a>compat_concat_variadic</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283137574_en-us_topic_0237124754_p15521954134717"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p15521954134717"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p15521954134717"></a>Specifies the compatibility of variadic results of the concat() and concat_ws() functions.</p>
+
 <p id="en-us_topic_0283137574_en-us_topic_0237124754_p1060812139425"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p1060812139425"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p1060812139425"></a>If this item is specified and a concat function has a parameter of the variadic type, different result formats in A database and Teradata are retained. If this item is not specified and a concat function has a parameter of the variadic type, same result formats in A database and Teradata are retained, and the results are the same as those in A database. This option has no effect on MY because MY has no variadic type.</p>
 </td>
 </tr>
@@ -209,16 +210,32 @@ length
 <tr id="row184421757173910"><td class="cellrowborder" valign="top" width="24.43%" headers="mcps1.2.3.1.1 "><p id="p104421057113910"><a name="p104421057113910"></a><a name="p104421057113910"></a>hide_tailing_zero</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="p154421657193919"><a name="p154421657193919"></a><a name="p154421657193919"></a>Configuration item for numeric display. If this parameter is not set, numeric data is displayed in the specified precision. When setting this parameter, hide <strong id="b364324005610"><a name="b364324005610"></a><a name="b364324005610"></a>0</strong> at the end of the decimal place.</p>
+
 <pre class="screen" id="screen884155441017"><a name="screen884155441017"></a><a name="screen884155441017"></a>set behavior_compat_options='hide_tailing_zero';
 select cast(123.123 as numeric(15,10));
 numeric
----------
+\---------
 123.123
 (1 row)</pre>
+
 </td>
 </tr>
 </tbody>
 </table>
+
+## plpgsql.variable\_conflict<a name="section644112422314"></a>
+
+**Parameter description:**  Sets the priority of using stored procedure variables and table columns with the same name.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+
+**Value range**: a string
+
+-   **error**  indicates that a compilation error is reported when the name of a stored procedure variable is the same as that of a table column.
+-   **use\_variable**  indicates that if the name of a stored procedure variable is the same as that of a table column, the variable is used preferentially.
+-   **use\_column**  indicates that if the name of a stored procedure variable is the same as that of a table column, the column name is used preferentially.
+
+**Default value**:  **error**
 
 ## td\_compatible\_truncation<a name="en-us_topic_0283137001_en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c"></a>
 
@@ -237,3 +254,15 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Default value**:  **off**
 
+## lastval\_supported<a name="section17186174713490"></a>
+
+**Parameter description**: Specifies whether the lastval function can be used.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that the lastval function can be used and the nextval function cannot be pushed down.
+-   **off**  indicates that the lastval function cannot be used and the nextval function can be pushed down.
+
+**Default value**:  **off**
