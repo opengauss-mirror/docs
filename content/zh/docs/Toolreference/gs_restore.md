@@ -202,7 +202,7 @@ gs_restore [OPTION]... FILE
 
 -   -x, --no-privileges/--no-acl
 
-    防止导入访问权限（grant/revoke命令）。
+    防止导入访问权限（GRANT/REVOKE命令）。
 
 -   -1, --single-transaction
 

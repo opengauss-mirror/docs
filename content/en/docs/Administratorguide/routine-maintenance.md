@@ -195,14 +195,15 @@ Use the  **gs\_checkos**  tool provided by openGauss to check the OS status.
 
 **Procedure**
 
-1.  Log in to a server as user  **root**.
+1. Log in to a server as user  **root**.
+
 2.  Run the following command to check OS parameters of servers where the openGauss nodes are deployed:
 
     ```
     gs_checkos -i A
     ```
 
-    Check the OS parameters to ensure that openGauss has passed the pre-installation check and can efficiently operate after it is installed. For details about the check items, see "Server Tools \> gs\_checkos" in the  _openGauss Tool Reference_.
+    The purpose of checking the OS parameters is to ensure that openGauss is pre-installed properly and can efficiently operate after it is installed. For details about the check items, see "Server Tools \> gs\_checkos" in the  _Tool Reference_.
 
 
 **Examples**
@@ -249,11 +250,13 @@ Total numbers:6. Abnormal numbers:0. Warning number:0.
 
 If you use the  **gs\_checkos**  tool to check the OS and the command output shows  **Abnormal**, run the following command to view detailed error information:
 
+The  **Abnormal**  state cannot be ignored because the OS in this state affects openGauss installation. 
+
 ```
 gs_checkos -i A --detail
 ```
 
-The  **Abnormal**  state cannot be ignored because the OS in this state affects cluster installation. The  **Warning**  state does not affect cluster installation and thereby can be ignored.
+The  **Abnormal**  state cannot be ignored because the OS in this state affects openGauss installation. The  **Warning**  state does not affect openGauss installation and thereby can be ignored.
 
 -   If the check result for OS version status \(**A1**\) is  **Abnormal**, replace OSs out of the mixed programming scope with those within the scope.
 -   If the check result for kernel version status \(**A2**\) is  **Warning**, the platform kernel versions in the cluster are inconsistent.
