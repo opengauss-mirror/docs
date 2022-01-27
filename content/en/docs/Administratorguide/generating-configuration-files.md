@@ -11,17 +11,17 @@ None
 ## Procedure<a name="en-us_topic_0237088792_en-us_topic_0059777801_sac68001dd22f4446a51ead8f9d58bee2"></a>
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to generate configuration files in a specified directory on the current host:
+2. Run the following command to generate configuration files in a specified directory on the current host:
 
-    ```
-    gs_om -t generateconf -X /opt/software/openGauss/clusterconfig.xml --distribute
-    ```
+   ```
+   gs_om -t generateconf -X /opt/software/openGauss/clusterconfig.xml --distribute
+   ```
 
-    **/opt/software/openGauss/clusterconfig.xml**  is the  XML configuration files during the openGauss installation.
+   **/opt/software/openGauss/clusterconfig.xml**  is the  XML configuration files during the openGauss installation.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >1.  After the command is executed, the new configuration file storage directory is displayed in the log information. Take a one-primary dual-standby environment as an example. This directory contains three configuration files named by host names. You need to replace the configuration files of corresponding hosts with the three files respectively.  
-    >2.  If  **--distribute**  is not specified, perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)  to distribute static configuration files to their corresponding hosts. If  **--distribute**  is specified, the static configuration files are automatically distributed and you do not need to perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e).  
+   >![](public_sys-resources/icon-note.gif) **NOTE:**   
+   >1.  After the command is executed, the new configuration file storage directory is displayed in the log information. Take a one-primary two-standby environment as an example. This directory contains three configuration files named by host names. You need to replace the configuration files of corresponding hosts with the three files respectively. 
+   >2.  If  **--distribute**  is not specified, perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)  to distribute static configuration files to their corresponding hosts. If  **--distribute**  is specified, the static configuration files are automatically distributed and you do not need to perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e).  
 
 3.  <a name="en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e"></a>\(Optional\) Replace the damaged static configuration files of the three hosts in the  **/opt/gaussdb/app/bin**  directory.
 

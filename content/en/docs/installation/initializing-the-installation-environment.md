@@ -103,7 +103,7 @@ Executing the  **gs\_preinstall**  script enables the system to automatically co
            ```
 
        ![](public_sys-resources/icon-note.gif) **NOTE:**   
-       -   In this mode, ensure that mutual trust has been established between the root users of all nodes and between the openGauss users of the cluster before performing.In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
+       -   In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.
        -   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
 
 
