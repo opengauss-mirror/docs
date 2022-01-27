@@ -686,3 +686,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **1**
 
+## enable\_startwith\_debug<a name="section6842184125615"></a>
+
+**Parameter description**: Specifies whether to enable the  **start with**  or  **connect by**  parameter for debugging. If this parameter is enabled, information about all tail columns related to the  **start with**  feature is displayed.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean. The value  **true**  indicates that the function is enabled, and the value  **false**  indicates that the function is disabled.
+
+**Default value**:  **false**

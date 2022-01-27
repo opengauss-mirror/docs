@@ -16,13 +16,13 @@ AI\_MANAGER is an AI feature deployment tool. It aims to provide automatic, effi
 An example of the installation command is as follows:
 
 ```
-python3 ai_manager --module anomaly_detection --action install --param-file opengauss.json
+python3 ai_manager --module anomaly_detection --action install --param_file opengauss.json
 ```
 
 An example of the uninstallation command is as follows:
 
 ```
-python3 ai_manager --module anomaly_detection--action uninstall --param-file opengauss.json
+python3 ai_manager --module anomaly_detection--action uninstall --param_file opengauss.json
 ```
 
 The following is an example of the parameter file:

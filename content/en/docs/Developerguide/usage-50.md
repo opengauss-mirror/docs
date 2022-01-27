@@ -2,7 +2,7 @@
 
 ## Syntax<a name="section1810714714319"></a>
 
--   Create a full materialized view.
+-   Create a complete-refresh materialized view.
 
     ```
     CREATE MATERIALIZED VIEW [ view_name ] AS { query_block }; 
@@ -34,34 +34,35 @@
 
 ```
 -- Prepare data.
-postgres=# CREATE TABLE t1(c1 int, c2 int);
-postgres=# INSERT INTO t1 VALUES(1, 1);
-postgres=# INSERT INTO t1 VALUES(2, 2);
+openGauss=# CREATE TABLE t1(c1 int, c2 int);
+openGauss=# INSERT INTO t1 VALUES(1, 1);
+openGauss=# INSERT INTO t1 VALUES(2, 2);
 
--- Create a full materialized view.
-postgres=# CREATE MATERIALIZED VIEW mv AS select count(*) from t1;
+-- Create a complete-refresh materialized view.
+openGauss=# CREATE MATERIALIZED VIEW mv AS select count(*) from t1;
 
 -- Query the materialized view result.
-postgres=# SELECT * FROM mv;
+openGauss=# SELECT * FROM mv;
  count 
 -------
      2
 (1 row)
 
 -- Insert data into the base table in the materialized view.
-postgres=# INSERT INTO t1 VALUES(3, 3);
+openGauss=# INSERT INTO t1 VALUES(3, 3);
 
--- Fully refresh a full materialized view.
-postgres=# REFRESH MATERIALIZED VIEW mv;
+-- Fully refresh a complete-refresh materialized view.
+openGauss=# REFRESH MATERIALIZED VIEW mv;
 
 -- Query the materialized view result.
-postgres=# SELECT * FROM mv;
+openGauss=# SELECT * FROM mv;
  count 
 -------
      3
 (1 row)
 
 -- Delete a materialized view.
-postgres=# DROP MATERIALIZED VIEW mv;
+openGauss=# DROP MATERIALIZED VIEW mv;
+DROP MATERIALIZED VIEW
 ```
 

@@ -2,18 +2,18 @@
 
 ## Function<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>
 
-**CREATE INCREMENTAL MATERIALIZED VIEW**  creates an incremental materialized view, and you can refresh the data of the materialized view by using  **REFRESH MATERIALIZED VIEW**  \(full refresh\) and  **REFRESH INCREMENTAL MATERIALIZED VIEW**  \(incremental refresh\).
+**CREATE INCREMENTAL MATERIALIZED VIEW**  creates an fast-refresh materialized view, and you can refresh the data of the materialized view by using  **REFRESH MATERIALIZED VIEW**  \(full refresh\) and  **REFRESH INCREMENTAL MATERIALIZED VIEW**  \(incremental refresh\).
 
 **CREATE INCREMENTAL MATERIALIZED VIEW**  is similar to  **CREATE TABLE AS**, but it remembers the query used to initialize the view, so it can refresh data later. A materialized view has many attributes that are the same as those of a table, but does not support temporary materialized views.
 
 ## Precautions<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s3a6fd145e83b4e61a22dabdcf32ac282"></a>
 
--   Incremental materialized views cannot be created on temporary tables or global temporary tables.
--   Incremental materialized views support only simple filter queries and UNION ALL queries of base tables.
+-   Fast-refresh materialized views cannot be created on temporary tables or global temporary tables.
+-   Fast-refresh materialized views support only simple filter queries and UNION ALL queries of base tables.
 -   Distribution columns cannot be specified when an incremental MV is created.
--   After an incremental materialized view is created, most DDL operations in the base table are no longer supported.
--   IUD operations cannot be performed on incremental materialized views.
--   After an incremental materialized view is created, you need to run the  **REFRESH**  command to synchronize the materialized view with the base table when the base table data changes.
+-   After an Fast-refresh materialized view is created, most DDL operations in the base table are no longer supported.
+-   IUD operations cannot be performed on Fast-refresh materialized views.
+-   After an Fast-refresh materialized view is created, you need to run the  **REFRESH**  command to synchronize the materialized view with the base table when the base table data changes.
 
 ## Syntax<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_sbe280a5c331e4b75969129444d341882"></a>
 
@@ -52,11 +52,11 @@ CREATE INCREMENTAL MATERIALIZED VIEW mv_name
 ```
 -- Create an ordinary table.
 openGauss=# CREATE TABLE my_table (c1 int, c2 int);
--- Create an incremental materialized view.
+-- Create an fast-refresh materialized view.
 openGauss=# CREATE INCREMENTAL MATERIALIZED VIEW my_imv AS SELECT * FROM my_table;
 -- Write data to the base table.
 openGauss=# INSERT INTO my_table VALUES(1,1),(2,2);
--- Incrementally refresh the incremental materialized view my_imv.
+-- Incrementally refresh the fast-refresh materialized view my_imv.
 openGauss=# REFRESH INCREMENTAL MATERIALIZED VIEW my_imv;
 ```
 
