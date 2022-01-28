@@ -212,7 +212,7 @@ Once the check done, please execute following command to commit upgrade:
 Example 3: Execute the  **gs\_upgradectl**  script to perform automatic rollback on the upgrade.
 
 ```
-gs_upgradectl -t rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t auto-rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Checking static configuration files.
