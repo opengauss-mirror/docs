@@ -1711,6 +1711,7 @@ You are advised to plan routine physical backup and store backup files in a reli
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The log level  **log\_min\_messages**  is set to  **DEBUG**_x_  \(_x_  indicates the debug level and the value ranges from 1 to 5\). The information recorded in debug logs may contain personal data.
 
--   Delete personal data before sending system logs to others for analysis. If the execution of a SQL statement fails, the error SQL statement will be recorded in a system log by default. SQL statements may contain personal data.
--   Set  **log\_min\_error\_statement**  to  **PANIC**  to prevent error SQL statements from being recorded in system logs. However, once the function is disabled, it is difficult to locate fault causes if faults occur.
+- Delete personal data before sending system logs to others for analysis. If the execution of a SQL statement fails, the error SQL statement will be recorded in a system log by default. SQL statements may contain personal data.
+
+-   Set  **log\_min\_error\_statement**  to  **PANIC**  to prevent error SQL statements from being recorded in system logs. If this function is disabled, it is difficult to locate fault causes when a fault occurs.
 
