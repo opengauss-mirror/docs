@@ -1642,7 +1642,7 @@ The database supports B-tree indexes. Recreating a B-tree index routinely helps 
 
 Use either of the following two methods to recreate an index:
 
--   Run the  **DROP INDEX**  statement to delete the index and run the  **CREATE INDEX**  statement to create an index.
+-   Run the  **DROP INDEX**  statement to delete the index, and then run the  **CREATE INDEX**  statement to create an index.
 
     When you delete an index, a temporary exclusive lock is added in the parent table to block related read/write operations. During index creation, the write operation is locked, whereas the read operation is not locked and can use only sequential scans.
 
