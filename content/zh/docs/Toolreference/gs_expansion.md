@@ -83,6 +83,10 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
     2. 主备机器安装时候xml配置里面的gaussdbAppPath、gaussdbLogPath、gaussdbToolPath、corePath地址需要保持一致。
     3. 扩容备机上的数据必须使用om方式安装，使用编译方式启动的数据库不支持与主机扩容。
     4. 新增扩容节点的数据库版本需要与主库保持一致。
+   
+-   --time-out=SECS
+
+    指定在扩容时候传输软件包的超时时间，默认为300s。单位：s。对于网络性能较差的情况下，可以适当增加超时时间，避免发送软件包超时。
 
 -   -?, --help
 
