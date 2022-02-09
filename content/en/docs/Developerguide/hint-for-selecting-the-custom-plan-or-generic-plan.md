@@ -46,7 +46,7 @@ prepare p as select /*+ use_gplan */ * from t where a = $1;
 explain execute p(1);
 ```
 
-In the following plan, the filtering condition is the input parameter to be added, that is, the plan is a custom plan.
+In the following plan, the filtering condition is the input parameter to be added, that is, the plan is a Generic plan.
 
 ![](figures/en-us_image_0000001097739076.png)
 
