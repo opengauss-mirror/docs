@@ -93,6 +93,10 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
     >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  
     >-   The database version of new instance need to be same as the primary instance.
 
+-   --time-out=SECS
+
+    Specifies the timeout period for transferring software packages during expansion. The default value is 300 seconds.  Unit: s.  If the network performance is poor, you can increase the timeout period to avoid timeout.  
+
 -   -?, –help
 
     Shows help information.
