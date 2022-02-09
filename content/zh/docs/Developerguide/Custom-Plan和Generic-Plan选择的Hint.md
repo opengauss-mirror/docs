@@ -45,7 +45,7 @@ prepare p as select /*+ use_gplan */ * from t where a = $1;
 explain execute p(1);
 ```
 
-计划如下。可以看到过滤条件为待填充的入参，即此计划为Custom Plan。
+计划如下。可以看到过滤条件为待填充的入参，即此计划为Generic Plan。
 
 ![](figures/zh-cn_image_0000001209457383.png)
 
