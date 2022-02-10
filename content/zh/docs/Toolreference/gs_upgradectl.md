@@ -211,7 +211,7 @@ Once the check done, please execute following command to commit upgrade:
 **示例三：**使用gs\_upgradectl脚本执行自动回滚，撤销已经成功/失败的升级操作（升级回滚）。
 
 ```
-gs_upgradectl -t rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t auto-rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Checking static configuration files.
