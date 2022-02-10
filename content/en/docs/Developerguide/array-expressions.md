@@ -2,7 +2,7 @@
 
 ## IN<a name="en-us_topic_0283137227_en-us_topic_0237122004_en-us_topic_0059778101_s5f7d92a0eaa14c1ab1215282bce7a3ef"></a>
 
-_expression **IN **_\(value \[, ...\]\)
+expression **IN** \(value \[, ...\]\)
 
 The parentheses on the right contain an expression list. The expression result on the left is compared with the content in the expression list. If the content in the list meets the expression result on the left, the result of  **IN**  is  **true**. If no result meets the requirements, the result of  **IN**  is  **false**.
 
@@ -20,7 +20,7 @@ If the expression result is null or the expression list does not meet the expres
 
 ## NOT IN<a name="en-us_topic_0283137227_en-us_topic_0237122004_en-us_topic_0059778101_s29761a0d450d418989b3d9d3e4be3689"></a>
 
-_expression **NOT IN**_ \(value \[, ...\]\)
+expression **NOT IN** \(value \[, ...\]\)
 
 The parentheses on the right contain an expression list. The expression result on the left is compared with the content in the expression list. If the content in the list does not meet the expression result on the left, the result of  **NOT IN**  is  **true**. If any content meets the expression result, the result of  **NOT IN**  is  **false**.
 
@@ -41,9 +41,9 @@ If the query statement result is null or the expression list does not meet the e
 
 ## ANY/SOME \(array\)<a name="en-us_topic_0283137227_en-us_topic_0237122004_en-us_topic_0059778101_s676c00f7f73940bc93d996f3af4ed06e"></a>
 
-_expression operator **ANY **_\(array expression\)
+expression operator **ANY** \(array expression\)
 
-_expression operator **SOME **_\(array expression\)
+expression operator **SOME** \(array expression\)
 
 ```
 openGauss=# SELECT 8000+500 < SOME (array[10000,9000]) AS RESULT;
@@ -73,7 +73,7 @@ The right-hand side is a parenthesized expression, which must yield an array val
 
 ## ALL \(array\)<a name="en-us_topic_0283137227_en-us_topic_0237122004_en-us_topic_0059778101_s5701e71e17c443b28c5f0c328acaf318"></a>
 
-_expression operator **ALL **_\(array expression\)
+expression operator **ALL** \(array expression\)
 
 The right-hand side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to compute and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
