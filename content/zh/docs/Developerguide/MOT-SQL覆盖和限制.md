@@ -79,6 +79,7 @@ MOT功能限制：
 -   Money
 -   无限制的varchar/character varying
 -   HSTORE
+-   XML
 
 ## 不支持的索引DDL和索引<a name="section39185923"></a>
 
