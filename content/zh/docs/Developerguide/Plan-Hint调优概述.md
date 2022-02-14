@@ -4,7 +4,7 @@ Plan Hint为用户提供了直接影响执行计划生成的手段，用户可�
 
 ## 功能描述<a name="zh-cn_topic_0237121532_section54351718142011"></a>
 
-Plan Hint仅支持在SELECT关键字后通过如下形式指定：
+Plan Hint支持在SELECT关键字后通过如下形式指定：
 
 ```
 /*+ <plan hint>*/

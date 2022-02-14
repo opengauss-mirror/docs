@@ -4,7 +4,7 @@ In plan hints, you can specify a join order, join and scan operations, and the n
 
 ## Function<a name="en-us_topic_0237121532_section54351718142011"></a>
 
-The hint syntax must follow immediately after a  **SELECT**  keyword and is written in the following format:
+The hint syntax  follow after a  **SELECT**  keyword and is written in the following format:
 
 ```
 /*+ <plan hint>*/
