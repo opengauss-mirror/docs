@@ -4440,7 +4440,7 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
 -   pgsysconf\_pretty
 
-    Description:   The same as above, but with pretty output.
+    Description: The same as above, but with pretty output.
 
     Example:
 
@@ -4448,6 +4448,22 @@ The following table lists the functions used by GaussDB Kernel to implement inte
          os_page_size | os_pages_free | os_total_pages 
         --------------+---------------+----------------
          4096 bytes   | 314 MB        | 16 GB
+
+-   pgfincore\_drawer
+
+    Description: A very naive renderer. This function needs a argument, whose type is varbit. Usually, this value comes from the return field *databit* of pgfincore. The value of *databit* field is consisting of 0 and 1. If the value is 0, it means that the page is not in OS page cache. And if the value is 1, it means that the page is in OS page cache.
+
+    Example:
+
+        cedric=# select * from pgfincore_drawer(B'000111');
+         drawer       
+        --------------
+            ...     
+        
+        cedric=# select * from pgfincore_drawer(B'111000');
+         drawer       
+        --------------
+         ...    
 
 -   psortoptions
 
