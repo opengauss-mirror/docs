@@ -925,26 +925,31 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   Default value: current path
 
+- remote-libpath=_libpath
+
+  Specifies the lib directory where gs_probackup is installed in the remote system.
+
 - --ssh-options=_ssh\_options_
 
   Specifies the character string of the SSH command line parameter.
 
   Example: --ssh-options='-c cipher\_spec -F configfile'
 
-  >![](C:/Users/lijun/Desktop/opengauss/docs/content/en/docs/Toolreference/public_sys-resources/icon-note.gif) **NOTE:** 
-  >
-  >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  _archive-timeout_  seconds \(300 seconds is set by default\).
-  >-   If the LSN of the standby server is different from that of the primary server, the database continuously updates the following log information. In this case, you need to rebuild the standby server.
-  >
-  >```
-  >LOG: walsender thread shut down
-  >LOG: walsender thread started
-  >LOG: received wal replication command: IDENTIFY_VERSION
-  >LOG: received wal replication command: IDENTIFY_MODE
-  >LOG: received wal replication command: IDENTIFY_SYSTEM
-  >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
-  >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
-  >```
+  ![](C:/Users/lijun/Desktop/opengauss/docs/content/en/docs/Toolreference/public_sys-resources/icon-note.gif) **NOTE:** 
+  
+  - If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  _archive-timeout_  seconds \(300 seconds is set by default\).
+  
+  - If the LSN of the standby server is different from that of the primary server, the database continuously updates the following log information. In this case, you need to rebuild the standby server.
+  
+    ```
+    LOG: walsender thread shut down
+    LOG: walsender thread started
+    LOG: received wal replication command: IDENTIFY_VERSION
+    LOG: received wal replication command: IDENTIFY_MODE
+    LOG: received wal replication command: IDENTIFY_SYSTEM
+    LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
+    LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
+    ```
 
 #### Backup Process<a name="en-us_topic_0287276008_section1735727125216"></a>
 
