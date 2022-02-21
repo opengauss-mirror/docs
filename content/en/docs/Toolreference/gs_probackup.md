@@ -583,7 +583,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value: current path
 
--   --remote-lib=_libpath_
+-   --remote-libpath=_libpath_
 
     Specifies the lib directory where gs\_probackup is installed in the remote system.
 
