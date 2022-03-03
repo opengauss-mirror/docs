@@ -62,7 +62,7 @@ CREATE SUBSCRIPTION subscription_name
 
         要使用的复制插槽的名称。默认使用订阅名称作为复制槽的名称。
 
-        如果创建订阅时设置enable为false，则slot\_name将被强制设置为NULL，即使用户指定了slot\_name的值，表示复制槽不存在。
+        如果创建订阅时设置enable为false，则slot\_name将被强制设置为NONE，即空值，即使用户指定了slot\_name的值，表示复制槽不存在。
 
     -   **synchronous\_commit \(enum\)**
 
