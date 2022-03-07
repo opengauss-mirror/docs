@@ -12,32 +12,38 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 ## 本地连接数据库
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
 
-    数据库安装完成后，默认生成名称为postgres的数据库。第一次连接数据库时可以连接到此数据库。
+2. 连接数据库。
 
-    执行如下命令连接数据库。
+   数据库安装完成后，默认生成名称为postgres的数据库。第一次连接数据库时可以连接到此数据库。
 
-    ```
-    gsql -d postgres -p 8000
-    ```
+   执行如下命令连接数据库。
 
-    其中postgres为需要连接的数据库名称，8000为数据库主节点的端口号。请根据实际情况替换。
+   ```
+   gsql -d postgres -p 8000
+   ```
 
-    连接成功后，系统显示类似如下信息：
+   其中postgres为需要连接的数据库名称，8000为数据库主节点的端口号。请根据实际情况替换。另外，也可以使用如下任一命令连接数据库。
 
-    ```
-    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
-    Non-SSL connection (SSL connection is recommended when requiring high-security)
-    Type "help" for help.
-    
-    openGauss=# 
-    ```
+   ```
+   gsql postgres://omm:Gauss_234@127.0.0.1:8000/postgres -r 
+   gsql -d "host=127.0.0.1 port=8000 dbname=postgres user=omm password=Gauss_234"
+   ```
 
-    omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。
+   连接成功后，系统显示类似如下信息：
 
-    “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](连接数据库_以SSL方式.md)。
+   ```
+   gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+   Non-SSL connection (SSL connection is recommended when requiring high-security)
+   Type "help" for help.
+   
+   openGauss=# 
+   ```
+
+   omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。
+
+   “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](连接数据库_以SSL方式.md)。
 
 3.  首次登录建议修改密码。命令如下。
 
@@ -100,7 +106,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >-   软件包相对位置为安装时所放位置，根据实际情况填写。
-    
+        
         >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
     d.  解压文件。
@@ -115,19 +121,19 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
         ```
         scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
         ```
-    
+        
         其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
 
     f.  登录客户端所在主机，设置环境变量。
 
         打开“\~/.bashrc”文件。
-    
+        
         ```
         vi ~/.bashrc
         ```
-    
+        
         在其中输入如下内容后，使用“:wq!”命令保存并退出。
-    
+        
         ```
         export PATH=/tmp/tools/bin:$PATH
         export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH

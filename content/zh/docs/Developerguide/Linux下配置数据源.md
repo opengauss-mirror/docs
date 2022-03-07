@@ -6,7 +6,7 @@
 
 1.  获取unixODBC源码包。
 
-    获取参考地址：https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.7/unixODBC-2.3.7pre.tar.gz/download
+    获取参考地址：https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.9/unixODBC-2.3.9pre.tar.gz/download
 
     下载后请先按照社区提供的完整性校验算法进行完整性校验。
 
