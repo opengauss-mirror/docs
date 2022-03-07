@@ -161,35 +161,43 @@
 
     指定创建的分区索引为GLOBAL索引，当不指定LOCAL、GLOBAL关键字时，默认创建GLOBAL索引。
 
--   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
+- **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
-    指定索引方法的存储参数。
+  指定索引方法的存储参数。
 
-    取值范围：
+  取值范围：
 
-    只有GIN索引支持FASTUPDATE、GIN\_PENDING\_LIST\_LIMIT参数。GIN和Psort之外的索引都支持FILLFACTOR参数。
+  只有GIN索引支持FASTUPDATE、GIN\_PENDING\_LIST\_LIMIT参数。GIN和Psort之外的索引都支持FILLFACTOR参数。只有UBTREE索引支持INDEXSPLIT参数。
 
-    -   FILLFACTOR
+  -   FILLFACTOR
 
-        一个索引的填充因子（fillfactor）是一个介于10和100之间的百分数。
+      一个索引的填充因子（fillfactor）是一个介于10和100之间的百分数。
 
-        取值范围：10\~100
+      取值范围：10\~100
 
-    -   FASTUPDATE
+  -   FASTUPDATE
 
-        GIN索引是否使用快速更新。
+      GIN索引是否使用快速更新。
 
-        取值范围：ON，OFF
+      取值范围：ON，OFF
 
-        默认值：ON
+      默认值：ON
 
-    -   GIN\_PENDING\_LIST\_LIMIT
+  - GIN\_PENDING\_LIST\_LIMIT
 
-        当GIN索引启用fastupdate时，设置该索引pending list容量的最大值。
+    当GIN索引启用fastupdate时，设置该索引pending list容量的最大值。
 
-        取值范围：64\~INT\_MAX，单位KB。
+    取值范围：64\~INT\_MAX，单位KB。
 
-        默认值：gin\_pending\_list\_limit的默认取决于GUC中gin\_pending\_list\_limit的值（默认为4MB）
+    默认值：gin\_pending\_list\_limit的默认取决于GUC中gin\_pending\_list\_limit的值（默认为4MB）
+
+  -   INDEXSPLIT
+
+      UBTREE索引选择采取哪种分裂策略。其中DEFAULT策略指的是与BTREE相同的分裂策略。INSERTPT策略能在某些场景下显著降低索引空间占用。
+
+      取值范围：INSERTPT，DEAFAULT
+
+      默认值：INSERTPT
 
 
 -   **TABLESPACE tablespace\_name**

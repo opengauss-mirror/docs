@@ -159,7 +159,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Value range:
 
-    Only index GIN supports parameters  **FASTUPDATE**  and  **GIN\_PENDING\_LIST\_LIMIT**. Indexes other than GIN and psort support the  **FILLFACTOR**  parameter.
+    Only index GIN supports parameters  **FASTUPDATE**  and  **GIN\_PENDING\_LIST\_LIMIT**. Indexes other than GIN and psort support the  **FILLFACTOR**  parameter.Only UBTREE indexes support the INDEXSPLIT parameter.
 
     -   FILLFACTOR
 
@@ -182,6 +182,14 @@ Partitioned tables do not support concurrent index creation and partial index cr
         Value range: 64–_INT\_MAX_. The unit is KB.
 
         Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is  **4**.
+        
+    -   INDEXSPLIT
+    
+        The UBTREE index chooses which splitting strategy to adopt. The DEFAULT strategy refers to the same split strategy as BTREE. The INSERTPT strategy can significantly reduce the index space usage in some scenarios.
+    
+        Value range: INSERTPT,DEAFAULT
+    
+        Default: INSERTPT
 
 
 -   **TABLESPACE tablespace\_name**
