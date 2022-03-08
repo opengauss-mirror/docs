@@ -11,14 +11,17 @@
     Statement stmt = conn.createStatement();
     ```
 
-2.  调用Statement的executeUpdate方法执行SQL语句。
+2. 调用Statement的executeUpdate方法执行SQL语句。
 
-    ```
-    int rc = stmt.executeUpdate("CREATE TABLE customer_t1(c_customer_sk INTEGER, c_customer_name VARCHAR(32));");
-    ```
+   ```
+   int rc = stmt.executeUpdate("CREATE TABLE customer_t1(c_customer_sk INTEGER, c_customer_name VARCHAR(32));");
+   ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，事务块中不支持vacuum操作。如果其中有一个语句失败，那么整个请求都将会被回滚。
+   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >
+   >+ 数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，事务块中不支持vacuum操作。如果其中有一个语句失败，那么整个请求都将会被回滚。
+   >+ 使用Statement执行多语句时应以“;”作为各语句间的分隔符，存储过程、函数、匿名块不支持多语句执行。
+   >+ “/”可用作创建单个存储过程、函数、匿名块的结束符。
 
 3.  关闭语句对象。
 
@@ -129,6 +132,10 @@ openGauss支持通过JDBC直接调用事先创建的存储过程，步骤如下�
     >-   当游标作为存储过程的返回值时，如果使用JDBC调用该存储过程，返回的游标将不可用。
     
     >-   存储过程不能和普通SQL在同一条语句中执行。
+    >-   存储过程中inout类型参数必需注册出参。
+
+## Oracle兼容模式启用重载时，调用存储过程
+
 
 
 ## 执行批处理<a name="zh-cn_topic_0283137004_zh-cn_topic_0237120383_zh-cn_topic_0213179129_zh-cn_topic_0189250824_zh-cn_topic_0059777674_sb0c28cebb51d482c8bd996ce7fef3a6c"></a>

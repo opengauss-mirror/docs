@@ -6,7 +6,6 @@
 
 -   数据库状态正常、客户端能够正常连接。
 -   当前执行用户下安装有gsql工具，该工具路径已被加入到PATH环境变量中。
--   具备Python3.6+的环境。
 -   若使用本功能提供的业务数据抽取功能，需提前将要收集的节点的GUC参数按如下设置：
     -   log\_min\_duration\_statement = 0
     -   log\_statement= 'all'
@@ -19,41 +18,44 @@
 ## 业务数据抽取脚本使用步骤<a name="section183663372522"></a>
 
 1.  <a name="li541620573521"></a>按前提条件中要求设置相关GUC参数。
-2.  运行python脚本extract\_log.py，命令如下：
+2.  执行根据日志抽取SQL语句的功能，命令如下：
 
     ```
-    python extract_log.py [l LOG_DIRECTORY] [f OUTPUT_FILE] [-d DATABASE] [-U USERNAME][--start_time] [--sql_amount] [--statement] [--json]
+    gs_dbmind component extract_log [l LOG_DIRECTORY] [f OUTPUT_FILE] [p LOG_LINE_PREFIX] [-d DATABASE] [-U USERNAME][--start_time] [--sql_amount] [--statement] [--json] [--max_reserved_period] [--max_template_num]
     ```
 
     其中的输入参数依次为：
 
     -   LOG\_DIRECTORY：pg\_log的存放目录。
     -   OUTPUT\_PATH：输出SQL流水文件文件的保存路径，即抽取出的业务数据存放的文件路径。
+    -   LOG\_LINE\_PREFIX：指定每条日志信息的前缀格式。
     -   DATABASE：（可选）数据库名称，不指定默认所有数据库。
     -   USERNAME：（可选）用户名称，不指定默认所有用户。
-    -   start\_time：（可选）日志收集的开始时间， 不指定默认所有文件。
-    -   sql\_amount：（可选）收集SQL数量的最大值， 不指定默认收集所有SQL。
+    -   start\_time：（可选）日志收集的开始时间，不指定默认所有文件。
+    -   sql\_amount：（可选）收集SQL数量的最大值，不指定默认收集所有SQL。
     -   statement：（可选）表示收集pg\_log日志中statement标识开头的SQL，不指定默认不收集。
-    -   json：指定收集日志的文件存储格式为SQL归一化后的json，不指定默认格式每条SQL占一行。
+    -   json：（可选）指定收集日志的文件存储格式为SQL归一化后的json，不指定默认格式每条SQL占一行。
+    -   max\_reserved\_period：（可选）指定json模式下，增量收集日志中保留的模板的最大的更新时长，不指定默认都保留，单位/天。
+    -   max\_template\_num：（可选）指定json模式下保留的最大模板数量，不指定默认都保留。
 
     使用示例：
 
     ```
-    python extract_log.py $GAUSSLOG/pg_log/dn_6001 sql_log.txt -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
+    gs_dbmind component extract_log $GAUSSLOG/pg_log/dn_6001 sql_log.txt '%m %c %d %p %a %x %n %e' -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >若指定-d/-U参数，日志打印每条日志信息的前缀格式需包含%d、%u，详见log\_line\_prefix参数。
+    >若指定-d/-U参数，日志打印每条日志信息的前缀格式需包含%d、%u，若需要抽取事务，必须指定%p，详见log\_line\_prefix参数。max\_template\_num参数设置建议不超5000条，避免workload索引推荐执行时间过长。
 
 3.  将[1](#li541620573521)中设置的GUC参数还原为设置前的值。
 
 ## 索引推荐脚本使用步骤<a name="section174995305018"></a>
 
 1.  准备好包含有多条DML语句的文件作为输入的workload，文件中每条语句占据一行。用户可从数据库的离线日志中获得历史的业务语句。
-2.  运行python脚本index\_advisor\_workload.py，命令如下：
+2.  运行本功能，命令如下：
 
     ```
-    python index_advisor_workload.py [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD][--schema SCHEMA]
+    gs_dbmind component index_advisor [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD][--schema SCHEMA]
     [--max_index_num MAX_INDEX_NUM][--max_index_storage MAX_INDEX_STORAGE] [--multi_iter_mode] [--multi_node]  [--json] [--driver] [--show_detail]
     ```
 
@@ -77,7 +79,7 @@
     例如：
 
     ```
-    python index_advisor_workload.py 6001 postgres tpcc_log.txt --schema public --max_index_num 10 --multi_iter_mode
+    gs_dbmind component index_advisor 6001 postgres tpcc_log.txt --schema public --max_index_num 10 --multi_iter_mode
     ```
 
     推荐结果为一批索引，以多个创建索引语句的格式显示在屏幕上，结果示例。
