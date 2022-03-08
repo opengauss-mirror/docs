@@ -9,6 +9,7 @@
 - [配置数据库名称及各项目录](#配置数据库名称及各项目录)
 - [配置Host基本信息](#配置host基本信息)
 - [配置数据库主节点信息](#配置数据库主节点信息)
+- [配置CM_SERVER（主、非主）信息](#配置数据库主节点信息)
 - [示例](#示例)
 
 <!-- /TOC -->
@@ -39,26 +40,26 @@
     <PARAM name="corePath" value="/opt/huawei/corefile"/>
   <!-- 节点IP，与数据库节点名称列表一一对应 -->
     <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/>
-  <!-- 是否开启DN自选主 -->
+  <!-- 是否开启数据库节点自选主 -->
     <PARAM name="enable_dcf" value="on"/>
   <!-- 开启开关后对应的节点IP、PORT和角色信息 -->
-    <PARAM name="dcf_config" value="       [{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;8.92.1.85&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;8.92.1.86&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;8.92.1.87&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/>
+    <PARAM name="dcf_config" value="        <!-- 是否开启DN自选主 --> 
+    <PARAM name="enable_dcf" value="on"/> 
+    <!-- 开启开关后对应的节点IP、PORT和角色信息 --> 
+    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;8.92.1.85&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;8.92.1.86&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;8.92.1.87&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/> 
+
   </CLUSTER>
 ```
 
 ![](public_sys-resources/icon-notice.gif) **须知：** 
 
 -   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
-
 -   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
-
 -   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为“/opt/huawei/install/app”，gaussdbLogPath为“/opt/huawei/install/app/omm”。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
-
 -   若需要安装脚本自动创建安装用户时，各配置的目录需保证不与系统创建的默认用户目录耦合关联。
-
 -   配置openGauss路径和实例路径时，路径中不能包含“|”、“;”、“&”、“$”、“<”、“\>”、“\`”、“\\\\”、“'”、“\\”、“,”、“\{”，“\}”、“\(”，“\)”、“\[”，“\]”、“\~”、“\*”、“?”特殊字符。
-
 -   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的**node1\_hostname**，**node2\_hostname**。
+-   配置dcf_config时，角色的配置有leader、follower、passive和logger，其中可投票的角色有leader、follower和logger。配置角色组网时，可投票的角色不能少于3个，因此dcf模式下至少需要三个节点。
 
 **表 1**  参数说明
 
@@ -212,7 +213,7 @@
 
 ## 配置数据库主节点信息
 
-加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
+内容为示例，可自行替换。每行信息均有注释进行说明。
 
 **数据库主节点配置以下信息。**
 
@@ -229,15 +230,12 @@
 <PARAM name="dataNodeXlogPath1" value="/home/omm/gauss_xlog,/home/omm/gauss_xlog "/>
 <!--数据库节点上设定同步模式的节点数-->
 <PARAM name="dataNode1_syncNum" value="0"/>
-<!--DCF的数据文件配置-->
-<PARAM name="dcf_data_path1" value="/opt/huawei/install/data/dn1,/opt/huawei/install/data/dn2"/>
-<!--DCF的运行日志-->
-<PARAM name="dcf_log_path1" value="/opt/huawei/install/data/dn1,/opt/huawei/install/data/dn2"/>
 ```
 
 **表 1**  参数说明
 
 <a name="zh-cn_topic_0249784583_zh-cn_topic_0241802596_table642932620115"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_row1543052614113"><th class="cellrowborder" valign="top" width="14.321432143214322%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a>实例类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="25.73257325732573%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a>参数</p>
@@ -279,21 +277,46 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，用于指定当前数据库中同步模式的节点数目。取值范围为0~数据库备机节点数。</p>
 </td>
 </tr>
-    <tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dcf_data_path1</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，DCF模式下对应的数据文件目录，DCF配置时需要配置。</p>
-</td>
-</tr>
-    <tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dcf_log_path1</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，DCF模式下对应的运行日志文件目录，DCF配置时需要配置。</p>
-</td>
-</tr>
 </tbody>
 </table>
 
 
 
+## 配置CM_SERVER（主、非主）信息
+
+**非CMS主节点配置以下信息。**
+
+```
+<!-- cm --> 
+<PARAM name="cmServerPortStandby" value="**25500**"/> 
+<PARAM name="cmDir" value="**/opt/huawei/data/cm**"/>
+```
+
+表1 参数说明
+
+| 实例类型 | 参数                | 说明                                                         |
+| -------- | ------------------- | ------------------------------------------------------------ |
+| CM       | cmServerPortBase    | 主CM Server端口号，默认值5000。                              |
+| CM       | cmServerPortStandby | 备CM Server端口号，默认值5500。                              |
+| CM       | cmServerListenIp1   | CM Server用于侦听CM Agent连接请求或DBA管理请求的IP地址。     |
+| CM       | cmServerHaIp1       | 主、备CM Server间通信的IP地址。Value中左边为主CM Server的主机IP地址，右边为备CM Server的主机IP地址。未设置时，默认根据主、备CM Server所在主机的backIp1生成。 |
+| CM       | cmDir               | CM数据文件路径。保存CM Server和CM Agent用到的数据文件，参数文件等。各集群主机上均需配置该参数。 |
+
+ 
+
+表1 目录说明
+
+| 目录             | 说明                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| /opt/huawei/data | 集群实例的数据存储总目录。此目录为数据库的数据存储目录。应规划到数据盘上。此目录应满足如下要求：l 磁盘空间请根据实际业务数据量大小规划。l 各实例间的数据路径相互独立，彼此间没有包含关系。例如本指南中各实例的数据目录规划如表数据库实例数据目录所示。 |
+
+ 表1 数据库实例数据目录
+
+| 实例名称 | 实例数据目录                                                 |
+| -------- | ------------------------------------------------------------ |
+| CM       | /opt/huawei/data/cm                                          |
+| 主DN     | /opt/huawei/data/masterX其中，X为从1开始的连续正整数，用于标识当前主机上的第X个DN。 |
+| 备DN     | /opt/huawei/data/slaveX其中，X为从1开始的连续正整数，用X标识当前主机上的第X个备DN。 |
 
 
 ## 示例
@@ -433,11 +456,22 @@
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
             
-	    <!--dn-->
-            <PARAM name="dataNum" value="1"/>
+      	<!-- cm主 --> 
+	    <PARAM name="cmsNum" value="1"/> 
+	    <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
+	    <PARAM name="cmServerPortBase" value="15300"/> 
+	    <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
+	    <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
+	    <!-- cmServerlevel目前只支持1 --> 
+	    <PARAM name="cmServerlevel" value="1"/> 
+	    <!-- cms主及所有备的hostname --> 
+	    <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/>       
+	   
+       <!--dn-->
+         <PARAM name="dataNum" value="1"/>
 	    <PARAM name="dataPortBase" value="26000"/>
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
-            <PARAM name="dataNode1_syncNum" value="0"/>
+        <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
 
         <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 -->
@@ -448,6 +482,9 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
+             <!-- cm --> 
+            <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
+            <PARAM name="cmServerPortStandby" value="15300"/> 
 	</DEVICE>
 
         <!-- node3上的节点部署信息，其中“name”的值配置为主机名称 -->
@@ -459,6 +496,9 @@
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
             <PARAM name="cascadeRole" value="on"/>
+            <!-- cm --> 
+            <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
+            <PARAM name="cmServerPortStandby" value="15300"/> 
 	</DEVICE>
     </DEVICELIST>
 </ROOT>
@@ -467,250 +507,255 @@
 ###  一主二备配置文件
 
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<ROOT>
-    <!-- openGauss整体信息 -->
-    <CLUSTER>
-        <!-- 数据库名称 -->
-        <PARAM name="clusterName" value="Cluster_template" />
-        <!-- 数据库节点名称(hostname) -->
-        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname" />
-        <!-- 数据库安装目录-->
-        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
-        <!-- 日志目录-->
-        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
-        <!-- 临时文件目录-->
-        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
-        <!-- 数据库工具目录-->
-        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
-        <!-- 数据库core文件目录-->
-        <PARAM name="corePath" value="/opt/huawei/corefile"/>
-        <!-- 节点IP，与数据库节点名称列表一一对应 -->
-        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
-    </CLUSTER>
-    <!-- 每台服务器上的节点部署信息 -->
-    <DEVICELIST>
-        <!-- 节点1上的部署信息 -->
-        <DEVICE sn="node1_hostname">
-            <!-- 节点1的主机名称 -->
-            <PARAM name="name" value="node1_hostname"/>
-            <!-- 节点1所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.1"/>
-            <PARAM name="sshIp1" value="192.168.0.1"/>
-            
-	    <!--dn-->
-            <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="26000"/>
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
-            <PARAM name="dataNode1_syncNum" value="0"/>
-        </DEVICE>
-
-        <!-- 节点2上的部署信息 -->
-        <DEVICE sn="node2_hostname">
-            <!-- 节点2的主机名称 -->
-            <PARAM name="name" value="node2_hostname"/>
-            <!-- 节点2所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点2的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.2"/>
-            <PARAM name="sshIp1" value="192.168.0.2"/>
-	</DEVICE>
-
-        <!-- 节点3上的部署信息 -->
-        <DEVICE sn="node3_hostname">
-            <!-- 节点3的主机名称 -->
-            <PARAM name="name" value="node3_hostname"/>
-            <!-- 节点3所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点3的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.3"/>
-            <PARAM name="sshIp1" value="192.168.0.3"/>
-	</DEVICE>
-    </DEVICELIST>
+<?xml version="1.0" encoding="UTF-8"?> 
+<ROOT> 
+    <!-- openGauss整体信息 --> 
+    <CLUSTER> 
+        <PARAM name="clusterName" value="Cluster_template" /> 
+        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname" /> 
+    
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" /> 
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" /> 
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/> 
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" /> 
+        <PARAM name="corePath" value="/opt/huawei/corefile"/> 
+        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
+     
+    </CLUSTER> 
+    <!-- 每台服务器上的节点部署信息 --> 
+    <DEVICELIST> 
+        <!-- node1上的节点部署信息 --> 
+        <DEVICE sn="node1_hostname"> 
+            <PARAM name="name" value="node1_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.1"/> 
+            <PARAM name="sshIp1" value="192.168.0.1"/> 
+            <!--CM节点部署信息--> 
+            <PARAM name="cmsNum" value="1"/> 
+            <PARAM name="cmServerPortBase" value="15000"/> 
+            <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
+            <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
+            <PARAM name="cmServerlevel" value="1"/> 
+            <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	    <!--dn--> 
+            <PARAM name="dataNum" value="1"/> 
+	    <PARAM name="dataPortBase" value="15400"/> 
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/> 
+            <PARAM name="dataNode1_syncNum" value="0"/> 
+        </DEVICE> 
+ 
+        <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node2_hostname"> 
+            <PARAM name="name" value="node2_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.2"/> 
+            <PARAM name="sshIp1" value="192.168.0.2"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+ 
+        <!-- node3上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node3_hostname"> 
+            <PARAM name="name" value="node3_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.3"/> 
+            <PARAM name="sshIp1" value="192.168.0.3"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+    </DEVICELIST> 
 </ROOT>
 ```
 
 ### 一主三备配置文件
 
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<ROOT>
-    <!-- openGauss整体信息 -->
-    <CLUSTER>
-        <!-- 数据库名称 -->
-        <PARAM name="clusterName" value="Cluster_template" />
-        <!-- 数据库节点名称(hostname) -->
-        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname" />
-        <!-- 数据库安装目录-->
-        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
-        <!-- 日志目录-->
-        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
-        <!-- 临时文件目录-->
-        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
-        <!-- 数据库工具目录-->
-        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
-        <!-- 数据库core文件目录-->
-        <PARAM name="corePath" value="/opt/huawei/corefile"/>
-        <!-- 节点IP，与数据库节点名称列表一一对应 -->
-        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/>    
-    </CLUSTER>
-    <!-- 每台服务器上的节点部署信息 -->
-    <DEVICELIST>
-        <!-- 节点1上的节点部署信息 -->
-        <DEVICE sn="node1_hostname">
-            <!-- 节点1的主机名称 -->
-            <PARAM name="name" value="node1_hostname"/>
-            <!-- 节点1所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.1"/>
-            <PARAM name="sshIp1" value="192.168.0.1"/>
-            
-	    <!--dn-->
-            <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="26000"/>
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/>
-            <PARAM name="dataNode1_syncNum" value="0"/>
-        </DEVICE>
-
-        <!-- 节点2上的部署信息 -->
-        <DEVICE sn="node2_hostname">
-            <!-- 节点2的主机名称 -->
-            <PARAM name="name" value="node2_hostname"/>
-            <!-- 节点2所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点2的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.2"/>
-            <PARAM name="sshIp1" value="192.168.0.2"/>
-	</DEVICE>
-
-        <!-- 节点3上的部署信息 -->
-        <DEVICE sn="node3_hostname">
-            <!-- 节点3的主机名称 -->
-            <PARAM name="name" value="node3_hostname"/>
-            <!-- 节点3所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点3的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.3"/>
-            <PARAM name="sshIp1" value="192.168.0.3"/>
-	</DEVICE>
-
-        <!-- 节点4上的部署信息 -->
-        <DEVICE sn="node4_hostname">
-            <!-- 节点4的主机名称 -->
-            <PARAM name="name" value="node4_hostname"/>
-            <!-- 节点4所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点4的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.4"/>
-            <PARAM name="sshIp1" value="192.168.0.4"/>
-	</DEVICE>
-    </DEVICELIST>
+<?xml version="1.0" encoding="UTF-8"?> 
+<ROOT> 
+    <!-- openGauss整体信息 --> 
+    <CLUSTER> 
+        <PARAM name="clusterName" value="Cluster_template" /> 
+        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname" /> 
+    
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" /> 
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" /> 
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/> 
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" /> 
+        <PARAM name="corePath" value="/opt/huawei/corefile"/> 
+        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/> 
+         
+    </CLUSTER> 
+    <!-- 每台服务器上的节点部署信息 --> 
+    <DEVICELIST> 
+        <!-- node1上的节点部署信息 --> 
+        <DEVICE sn="node1_hostname"> 
+            <PARAM name="name" value="node1_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.1"/> 
+            <PARAM name="sshIp1" value="192.168.0.1"/> 
+            <!--CM节点部署信息--> 
+            <PARAM name="cmsNum" value="1"/> 
+            <PARAM name="cmServerPortBase" value="15000"/> 
+            <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/> 
+            <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/> 
+            <PARAM name="cmServerlevel" value="1"/> 
+            <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	    <!--dn--> 
+            <PARAM name="dataNum" value="1"/> 
+	    <PARAM name="dataPortBase" value="15400"/> 
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/> 
+            <PARAM name="dataNode1_syncNum" value="0"/> 
+        </DEVICE> 
+ 
+        <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node2_hostname"> 
+            <PARAM name="name" value="node2_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.2"/> 
+            <PARAM name="sshIp1" value="192.168.0.2"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+ 
+        <!-- node3上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node3_hostname"> 
+            <PARAM name="name" value="node3_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.3"/> 
+            <PARAM name="sshIp1" value="192.168.0.3"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+ 
+        <!-- node4上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node4_hostname"> 
+            <PARAM name="name" value="node4_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.4"/> 
+            <PARAM name="sshIp1" value="192.168.0.4"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+    </DEVICELIST> 
 </ROOT>
 ```
 
 ### 一主四备配置文件
 
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<ROOT>
-    <!-- openGauss整体信息 -->
-    <CLUSTER>
-        <!-- 数据库名称 -->
-        <PARAM name="clusterName" value="Cluster_template" />
-        <!-- 数据库节点名称(hostname) -->
-        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname" />
-        <!-- 数据库安装目录-->
-        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
-        <!-- 日志目录-->
-        <PARAM name="gaussdbLogPath" value="/var/log/omm" />
-        <!-- 临时文件目录-->
-        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/>
-        <!-- 数据库工具目录-->
-        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
-        <!-- 数据库core文件目录-->
-        <PARAM name="corePath" value="/opt/huawei/corefile"/>
-        <!-- 节点IP，与数据库节点名称列表一一对应 -->
-        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/>      
-    </CLUSTER>
-    <!-- 每台服务器上的节点部署信息 -->
-    <DEVICELIST>
-        <!-- 节点1上的节点部署信息 -->
-        <DEVICE sn="node1_hostname">
-            <!-- 节点1的主机名称 -->
-            <PARAM name="name" value="node1_hostname"/>
-            <!-- 节点1所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.1"/>
-            <PARAM name="sshIp1" value="192.168.0.1"/>
-            
-	    <!--dn-->
-            <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/>
-            <PARAM name="dataNode1_syncNum" value="0"/>
-        </DEVICE>
-
-        <!-- 节点2上的部署信息 -->
-        <DEVICE sn="node2_hostname">
-            <!-- 节点2的主机名称 -->
-            <PARAM name="name" value="node2_hostname"/>
-            <!-- 节点2所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点2的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.2"/>
-            <PARAM name="sshIp1" value="192.168.0.2"/>
-	</DEVICE>
-
-        <!-- 节点3上的部署信息 -->
-        <DEVICE sn="node3_hostname">
-            <!-- 节点3的主机名称 -->
-            <PARAM name="name" value="node3_hostname"/>
-            <!-- 节点3所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点3的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.3"/>
-            <PARAM name="sshIp1" value="192.168.0.3"/>
-	</DEVICE>
-
-        <!-- 节点4上的部署信息 -->
-        <DEVICE sn="node4_hostname">
-            <!-- 节点4的主机名称 -->
-            <PARAM name="name" value="node4_hostname"/>
-            <!-- 节点4所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点4的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.4"/>
-            <PARAM name="sshIp1" value="192.168.0.4"/>
-
-	</DEVICE>
-
-        <!-- 节点5上的部署信息 -->
-        <DEVICE sn="node5_hostname">
-            <!-- 节点5的主机名称 -->
-            <PARAM name="name" value="node5_hostname"/>
-            <!-- 节点5所在的AZ及AZ优先级 -->
-            <PARAM name="azName" value="AZ1"/>
-            <PARAM name="azPriority" value="1"/>
-            <!-- 节点5的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
-            <PARAM name="backIp1" value="192.168.0.5"/>
-            <PARAM name="sshIp1" value="192.168.0.5"/>
-	</DEVICE>
-    </DEVICELIST>
+<?xml version="1.0" encoding="UTF-8"?> 
+<ROOT> 
+    <!-- openGauss整体信息 --> 
+    <CLUSTER> 
+        <PARAM name="clusterName" value="Cluster_template" /> 
+        <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname" /> 
+    
+        <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" /> 
+        <PARAM name="gaussdbLogPath" value="/var/log/omm" /> 
+        <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp"/> 
+        <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" /> 
+        <PARAM name="corePath" value="/opt/huawei/corefile"/> 
+        <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/> 
+         
+    </CLUSTER> 
+    <!-- 每台服务器上的节点部署信息 --> 
+    <DEVICELIST> 
+        <!-- node1上的节点部署信息 --> 
+        <DEVICE sn="node1_hostname"> 
+            <PARAM name="name" value="node1_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.1"/> 
+            <PARAM name="sshIp1" value="192.168.0.1"/> 
+            <!--CM节点部署信息--> 
+            <PARAM name="cmsNum" value="1"/> 
+            <PARAM name="cmServerPortBase" value="15000"/> 
+            <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/> 
+            <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/> 
+            <PARAM name="cmServerlevel" value="1"/> 
+            <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	    <!--dn--> 
+            <PARAM name="dataNum" value="1"/> 
+	    <PARAM name="dataPortBase" value="15400"/> 
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
+            <PARAM name="dataNode1_syncNum" value="0"/> 
+        </DEVICE> 
+ 
+        <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node2_hostname"> 
+            <PARAM name="name" value="node2_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.2"/> 
+            <PARAM name="sshIp1" value="192.168.0.2"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+ 
+        <!-- node3上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node3_hostname"> 
+            <PARAM name="name" value="node3_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.3"/> 
+            <PARAM name="sshIp1" value="192.168.0.3"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+ 
+        <!-- node4上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node4_hostname"> 
+            <PARAM name="name" value="node4_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.4"/> 
+            <PARAM name="sshIp1" value="192.168.0.4"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+ 
+        <!-- node5上的节点部署信息，其中“name”的值配置为主机名称 --> 
+        <DEVICE sn="node5_hostname"> 
+            <PARAM name="name" value="node5_hostname"/> 
+            <PARAM name="azName" value="AZ1"/> 
+            <PARAM name="azPriority" value="1"/> 
+            <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
+            <PARAM name="backIp1" value="192.168.0.5"/> 
+            <PARAM name="sshIp1" value="192.168.0.5"/> 
+            <!-- cm --> 
+            <PARAM name="cmServerPortStandby" value="15000"/> 
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
+	</DEVICE> 
+    </DEVICELIST> 
 </ROOT>
 ```
 

@@ -112,6 +112,8 @@ Uninstallation succeeded.
 
 5. 删除openGauss数据库各节点root用户的互信，操作参考[手工建立互信](初始化安装环境.md)的删除root用户互信部分内容。
 
+6. 注销root用户。
+
 **示例**
 
 清理主机的环境。
