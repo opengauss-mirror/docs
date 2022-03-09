@@ -28,18 +28,18 @@
     ```
 
 3.  替换客户端openGauss驱动程序。
-    1.  将openGauss-1.1.0-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
+    1.  将openGauss-1.1.0-ODBC.tar.gz解压。解压后会得到两个文件夹：lib与odbc，在odbc文件夹中还会有一个lib文件夹。/odbc/lib中会有“psqlodbca.la”，“psqlodbca.so”，“psqlodbcw.la”和“psqlodbcw.so”四个文件，将这四个文件拷贝到“/usr/local/lib”目录下。
     2.  将openGauss-1.1.0-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
 
 4.  配置数据源。
     1.  配置ODBC驱动文件。
 
-        在“/xxx/odbc/etc/odbcinst.ini”文件中追加以下内容。
+        在“/usr/local/etc/odbcinst.ini”文件中追加以下内容。
 
         ```
         [GaussMPP]
-        Driver64=/xxx/odbc/lib/psqlodbcw.so
-        setup=/xxx/odbc/lib/psqlodbcw.so
+        Driver64=/usr/local/lib/psqlodbcw.so
+        setup=/usr/local/lib/psqlodbcw.so
         ```
 
         odbcinst.ini文件中的配置参数说明如[表1](#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_td564f21e7c8e458bbd741b09896f5d91)所示。
@@ -66,14 +66,14 @@
         </td>
         <td class="cellrowborder" valign="top" width="38.89%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_ac1271d08ff5242849aefc93aed5b0038"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_ac1271d08ff5242849aefc93aed5b0038"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_ac1271d08ff5242849aefc93aed5b0038"></a>驱动动态库的路径。</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a>Driver64=/xxx/odbc/lib/psqlodbcw.so</p>
+        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a>Driver64=/usr/local/lib/psqlodbcw.so</p>
         </td>
         </tr>
         <tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_r4e8ad74343a849f8a7224716cf20ab57"><td class="cellrowborder" valign="top" width="26.340000000000003%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a18a35a0225c14a2e9aecdc72084f1418"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a18a35a0225c14a2e9aecdc72084f1418"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a18a35a0225c14a2e9aecdc72084f1418"></a>setup</p>
         </td>
         <td class="cellrowborder" valign="top" width="38.89%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a6eecb8f4cf064448a14a46be8e243daa"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a6eecb8f4cf064448a14a46be8e243daa"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a6eecb8f4cf064448a14a46be8e243daa"></a>驱动安装路径，与Driver64中动态库的路径一致。</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7f838d6444df4566853f51533341401b"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7f838d6444df4566853f51533341401b"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7f838d6444df4566853f51533341401b"></a>setup=/xxx/odbc/lib/psqlodbcw.so</p>
+        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7f838d6444df4566853f51533341401b"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7f838d6444df4566853f51533341401b"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_a7f838d6444df4566853f51533341401b"></a>setup=/usr/local/lib/psqlodbcw.so</p>
         </td>
         </tr>
         </tbody>
@@ -123,7 +123,7 @@
         </tr>
         <tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_ra2915c8c5cb64c31bca0b7cc97b3cb94"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a>Servername</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a>服务器的IP地址。</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a>服务器的IP地址。可配置多个IP地址。</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p705535321213"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p705535321213"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_zh-cn_topic_0058965230_p705535321213"></a>Servername=10.145.130.26</p>
         </td>
@@ -296,8 +296,8 @@
         </tbody>
         </table>
 
-5.  （可选）生成SSL证书，具体请参见[证书生成](证书生成.md)。此步骤和[6](#zh-cn_topic_0283136654_li1724551081815)在服务端与客户端通过ssl方式连接的情况下需要执行。非ssl方式连接情况下可以跳过。
-6.  <a name="zh-cn_topic_0283136654_li1724551081815"></a>（可选）替换SSL证书，具体请参见[证书替换](证书替换.md)。
+5.  （可选）生成SSL证书，具体请参见[证书生成](zh-cn_topic_0289900216.md)。此步骤和[6](#zh-cn_topic_0283136654_li1724551081815)在服务端与客户端通过ssl方式连接的情况下需要执行。非ssl方式连接情况下可以跳过。
+6.  <a name="zh-cn_topic_0283136654_li1724551081815"></a>（可选）替换SSL证书，具体请参见[证书替换](zh-cn_topic_0289900549.md)。
 7.  SSL模式：
 
     声明如下环境变量，同时保证client.key\*系列文件为600权限：
@@ -497,7 +497,7 @@
     >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。
     >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。
 
-    要解决该问题，可以更新用户口令（参见[ALTER USER](ALTER-USER.md)）；或者新建一个用户（参见[CREATE USER](CREATE-USER.md)），赋于同等权限，使用新用户连接数据库。
+    要解决该问题，可以更新用户口令（参见[ALTER USER](zh-cn_topic_0289900744.md)）；或者新建一个用户（参见[CREATE USER](zh-cn_topic_0289899951.md)），赋于同等权限，使用新用户连接数据库。
 
 -   unsupported frontend protocol 3.51: server supports 1.0 to 3.0
 

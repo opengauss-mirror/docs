@@ -113,3 +113,16 @@
 
 **默认值：**当前节点名称
 
+## enable\_defer\_calculate\_snapshot<a name="section141811431171212"></a>
+
+**参数说明**：延迟计算快照的xmin和oldestxmin，执行1000个事务或者间隔1s才触发计算，设置为on时可以在高负载场景下减少计算快照的开销，但是会导致oldestxmin推进较慢，影响垃圾元组回收，设置为off时xmin和oldestxmin可以实时推进，但是会增加计算快照时的开销。
+
+该参数属于SIGHUP类型参数，改请参考[表2](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)进行设置
+
+**取值范围：**布尔型。
+
+-   on表示延迟计算快照xmin和oldestxmin。
+-   off表示实时计算快照xmin和oldestxmin**。**
+
+**默认值：**on
+
