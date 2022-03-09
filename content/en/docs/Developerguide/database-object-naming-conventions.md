@@ -20,5 +20,8 @@ The name of a database object must meet the following requirements: The name of 
     -   Unlogged tables are named in the format of  **ul\_**_Suffix_.
     -   Foreign tables are named in the format of  **f\_**_Suffix_.
     -   Do not create database objects whose names start with  **redis\_**.
+    -   Do not create database objects prefixed with mlog\_ and matviewmap\_.
+    
+-   [Recommendation] It is recommended that the name of non-sequential table objects should not exceed 63 bytes. If this length is exceeded, the kernel will truncate the table name, resulting in inconsistency with the set value. And under different character sets, characters may be truncated and unexpected characters appear.
 
 

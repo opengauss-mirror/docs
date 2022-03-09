@@ -54,9 +54,14 @@
     ```
               time          |      type      | result | userid | username  | database  |     client_conninfo     |    object_name    |	detail_info	|     node_name     |            thread_id            | local_port | remote_port
     ------------------------+----------------+--------+--------+-----------+-----------+-------------------------+-------------------+--------------+-------------------+---------------------------------+------------+-------------
-    2021-03-04 08:00:08+08 | login_success  | ok     | 10     | omm  | postgres | gsql@::1 | postgres    | login db(postgres) success,the current user is:omm | dn_6001_6002_6003 | 140477687527168@668131208211425 |	17778      | 46946
+    2021-03-04 08:00:08+08 | login_success  | ok     | 10     | omm  | postgres | gsql@::1 | postgres    | login db(postgres) success,SSL=off | dn_6001_6002_6003 | 140477687527168@668131208211425 |	17778      | 46946
     ```
 
     This record indicates that user  **omm**  logs in to database  **postgres**  at the time specified by the  **time**  column. After the host specified by  **log\_hostname**  is started and a client is connected to its IP address, the host name found by reverse DNS resolution is displayed following the at sign \(@\) in the value of  **client\_conninfo**.
 
+
+
+> ![](public_sys-resources/icon-note.gif) **Note：**  
+>
+> For the record of login operations, SSL information is recorded at the end of the audit log detail_info. SSL=on indicates that the client connects through SSL, and SSL=off indicates that the client does not connect through SSL.
 
