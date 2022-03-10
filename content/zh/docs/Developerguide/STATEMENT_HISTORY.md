@@ -466,7 +466,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p339717319319"><a name="p339717319319"></a><a name="p339717319319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>语句锁事件的列表，该列表按时间书序记录事件，记录的数量受参数track_stmt_details_size的影响。</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>语句锁事件的列表，该列表按时间顺序记录事件，记录的数量受参数track_stmt_details_size的影响。</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>事件包括：</p>
 <a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>加锁开始。</li><li>加锁结束。</li><li>等锁开始。</li><li>等锁结束。</li><li>放锁开始。</li><li>放锁结束。</li><li>轻量级等锁开始。</li><li>轻量级等锁结束。</li></ul>
 </td>
