@@ -451,21 +451,24 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 
 ## 示例<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_section367683"></a>
 
-1.  用缺省值在后台启动gaussdb：
+- 用缺省值在后台启动gaussdb：
 
-    ```
-    nohup gaussdb >logfile 2>&1 </dev/null  &
-    ```
 
-2.  在指定端口启动gaussdb，如1234：
+```
+nohup gaussdb >logfile 2>&1 </dev/null  &
+```
 
-    ```
-    gaussdb --single_node -p -D data_dir
-    ```
+- 在指定端口启动gaussdb，如1234：
 
-    使用gsql与服务器连接，用-p指定端口号：
 
-    ```
-    gsql -d postgres -p 1234
-    ```
+```
+gaussdb --single_node -p -D data_dir
+```
+
+- 使用gsql与服务器连接，用-p指定端口号：
+
+
+```
+gsql -d postgres -p 1234
+```
 

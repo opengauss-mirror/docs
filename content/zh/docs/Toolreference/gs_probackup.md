@@ -578,25 +578,30 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     指定gs\_probackup在远程系统安装的lib库目录。
 
--   --ssh-options=_ssh\_options_
+- --ssh-options=_ssh\_options_
 
-    指定SSH命令行参数的字符串。
+  指定SSH命令行参数的字符串。
 
-    例如：--ssh-options='-c cipher\_spec -F configfile'
+  例如：--ssh-options='-c cipher\_spec -F configfile'
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   如果因为网络临时故障等原因导致server端无应答,gs\_probackup将在等待archive-timeout（默认300秒）后退出。
-    > 
-    >-   如果备机lsn与主机有差别时，数据库会不停地刷以下log信息，此时应重新build备机。
-    >```
-    >LOG: walsender thread shut down
-    >LOG: walsender thread started
-    >LOG: received wal replication command: IDENTIFY_VERSION
-    >LOG: received wal replication command: IDENTIFY_MODE
-    >LOG: received wal replication command: IDENTIFY_SYSTEM
-    >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
-    >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
-    >```
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  >
+  >
+  >- 如果因为网络临时故障等原因导致server端无应答,gs\_probackup将在等待archive-timeout（默认300秒）后退出。
+  >
+  >- 如果备机lsn与主机有差别时，数据库会不停地刷以下log信息，此时应重新build备机。
+  >
+  >
+  >```
+  >LOG: walsender thread shut down
+  >LOG: walsender thread started
+  >LOG: received wal replication command: IDENTIFY_VERSION
+  >LOG: received wal replication command: IDENTIFY_MODE
+  >LOG: received wal replication command: IDENTIFY_SYSTEM
+  >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
+  >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
+  >```
 
 
 ## 备份流程<a name="zh-cn_topic_0287276008_section1735727125216"></a>
