@@ -89,13 +89,13 @@ b.  设置组class:wg下的作业下盘数据量达到256MB或大表广播数据
 gs_cgroup -S class -G wg -E "spillsize=256,broadcastsize=100" -a
 ```
 
-c.  设置组Class下的作业在所有DN上CPU总时间到达100s时执行降级动作：
+c.  设置组Class下的作业在所有数据库节点上CPU总时间到达100s时执行降级动作：
 
 ```
 gs_cgroup -S class -E "allcputime=100" --penalty
 ```
 
-d.  设置组Class下的作业在所有DN上执行时间到达2400秒，倾斜率达到90时执行降级动作:
+d.  设置组Class下的作业在所有数据库节点上执行时间到达2400秒，倾斜率达到90时执行降级动作:
 
 ```
 gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
@@ -416,7 +416,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     </tr>
     <tr id="row1961111313473"><td class="cellrowborder" valign="top" width="12.871287128712872%" headers="mcps1.2.5.1.1 "><p id="p13611183134711"><a name="p13611183134711"></a><a name="p13611183134711"></a>allcputime</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p19611143119478"><a name="p19611143119478"></a><a name="p19611143119478"></a>作业在所有DN上执行时所耗费的CPU总时间，单位秒。</p>
+    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p19611143119478"><a name="p19611143119478"></a><a name="p19611143119478"></a>作业在所有数据库节点上执行时所耗费的CPU总时间，单位秒。</p>
     </td>
     <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.3 "><p id="p196111931114716"><a name="p196111931114716"></a><a name="p196111931114716"></a>0~UINT_MAX</p>
     </td>
@@ -425,7 +425,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     </tr>
     <tr id="row161163194714"><td class="cellrowborder" valign="top" width="12.871287128712872%" headers="mcps1.2.5.1.1 "><p id="p136111531174718"><a name="p136111531174718"></a><a name="p136111531174718"></a>cpuskewpercent</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p116111331184710"><a name="p116111331184710"></a><a name="p116111331184710"></a>作业在DN上执行时的CPU时间的倾斜率，依赖于qualificationtime的设置。</p>
+    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p116111331184710"><a name="p116111331184710"></a><a name="p116111331184710"></a>作业在数据库节点上执行时的CPU时间的倾斜率，依赖于qualificationtime的设置。</p>
     </td>
     <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.3 "><p id="p661114315473"><a name="p661114315473"></a><a name="p661114315473"></a>0~100</p>
     </td>
@@ -443,7 +443,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     </tr>
     <tr id="row15611143112476"><td class="cellrowborder" valign="top" width="12.871287128712872%" headers="mcps1.2.5.1.1 "><p id="p156113314471"><a name="p156113314471"></a><a name="p156113314471"></a>spillsize</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p10611143114719"><a name="p10611143114719"></a><a name="p10611143114719"></a>作业在DN上下盘的数据量，单位MB。</p>
+    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p10611143114719"><a name="p10611143114719"></a><a name="p10611143114719"></a>作业在数据库节点上下盘的数据量，单位MB。</p>
     </td>
     <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.3 "><p id="p1761133112477"><a name="p1761133112477"></a><a name="p1761133112477"></a>0~UINT_MAX</p>
     </td>
@@ -452,7 +452,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     </tr>
     <tr id="row561163114479"><td class="cellrowborder" valign="top" width="12.871287128712872%" headers="mcps1.2.5.1.1 "><p id="p7611143118475"><a name="p7611143118475"></a><a name="p7611143118475"></a>broadcastsize</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p1661293124717"><a name="p1661293124717"></a><a name="p1661293124717"></a>作业在DN上算子大表广播数据量，单位MB。</p>
+    <td class="cellrowborder" valign="top" width="51.48514851485149%" headers="mcps1.2.5.1.2 "><p id="p1661293124717"><a name="p1661293124717"></a><a name="p1661293124717"></a>作业在数据库节点上算子大表广播数据量，单位MB。</p>
     </td>
     <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.3 "><p id="p206127315472"><a name="p206127315472"></a><a name="p206127315472"></a>0~UINT_MAX</p>
     </td>

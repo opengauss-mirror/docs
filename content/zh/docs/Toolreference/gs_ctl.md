@@ -14,7 +14,7 @@ gs\_ctl工具由操作系统用户omm执行。
 
 gs\_ctl参数可分为如下几类：
 
--   option参数，详细请参见[\#ZH-CN\_TOPIC\_0289899218/zh-cn\_topic\_0287275989\_zh-cn\_topic\_0237152408\_zh-cn\_topic\_0059777628\_t56b333c48c5e46cc93262560e23032f5](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t56b333c48c5e46cc93262560e23032f5)。
+-   option参数，详细请参见[表1](#table145081017222)。
 -   公共参数，详细请参见[表2](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68)。
 -   start和restart模式的参数，详细请参见[表3](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t6d75b31bab9540b284e45222396ae38b)。
 -   stop和restart模式的参数，详细请参见[表4](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a)。
@@ -27,6 +27,7 @@ gs\_ctl参数可分为如下几类：
     **表 1**  option参数
 
     <a name="table145081017222"></a>
+    
     <table><thead align="left"><tr id="row750120016228"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="p125001701227"><a name="p125001701227"></a><a name="p125001701227"></a>参数</p>
     </th>
     <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="p1350113042215"><a name="p1350113042215"></a><a name="p1350113042215"></a>参数说明</p>
@@ -316,7 +317,6 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-
 **表 6**  build参数
 
 <a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b"></a>
@@ -340,6 +340,8 @@ gs\_ctl参数可分为如下几类：
 <p id="zh-cn_topic_0287275989_p643515574347"><a name="zh-cn_topic_0287275989_p643515574347"></a><a name="zh-cn_topic_0287275989_p643515574347"></a>● 增量重建不适用于一主一备并且没有开启最大高可用的场景，此种场景下需要使用全量重建或者开启最大高可用后再进行增量重建。</p>
 <p id="zh-cn_topic_0287275989_p105751436553"><a name="zh-cn_topic_0287275989_p105751436553"></a><a name="zh-cn_topic_0287275989_p105751436553"></a>● 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</p>
 <p id="zh-cn_topic_0287275989_p381916183516"><a name="zh-cn_topic_0287275989_p381916183516"></a><a name="zh-cn_topic_0287275989_p381916183516"></a>● auto（不指定）：先增量，根据失败 后是否可以再增量选择继续增量或 者全量，三次增量失败后进行全 量。</p>
+<p id="zh-cn_topic_0287275989_p106721111857"><a name="zh-cn_topic_0287275989_p106721111857"></a><a name="zh-cn_topic_0287275989_p106721111857"></a></p>
+    <p id="zh-cn_topic_0287275989_p381916183516"><a name="zh-cn_topic_0287275989_p381916183516"></a><a name="zh-cn_topic_0287275989_p381916183516"></a>● standby_full：通过指定的备机ip和port全量重建故障备机。使用该参数时需要同时使用-C蚕食指定镜像的ip和port。</p>
 <p id="zh-cn_topic_0287275989_p106721111857"><a name="zh-cn_topic_0287275989_p106721111857"></a><a name="zh-cn_topic_0287275989_p106721111857"></a>默认值：auto</p>
 <div class="note" id="note548824714012"><a name="note548824714012"></a><a name="note548824714012"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13488174715402"><a name="p13488174715402"></a><a name="p13488174715402"></a>重建级联备机需要加上-M cascade_standby参数。</p>
 </div></div>
@@ -365,6 +367,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
+
 
 **表 7**  query参数
 
