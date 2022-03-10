@@ -357,6 +357,10 @@ export PGDATABASE=postgres
 
     但是由于该选项会针对每行生成一个独立分开的命令，所以在重新加载某行时出现的错误只会导致那行丢失，而非整个表内容。注意：如果重排列顺序，可能会导致整个恢复失败。列顺序改变时，--column-inserts选项不受影响，虽然会更慢。
 
+-   --no-publications
+
+    不转储发布。
+
 -   --no-security-labels
 
     该参数为扩展预留接口，不建议使用。
@@ -366,6 +370,10 @@ export PGDATABASE=postgres
     不输出选择表空间的命令。使用该选项，无论默认表空间是哪个，在恢复过程中所有对象都会被创建。
 
     该选项只对文本格式有意义。针对归档格式，可以在调用gs\_restore时指定选项。
+
+-   --no-subscriptions
+
+    不转储订阅。
 
 -   --no-unlogged-table-data
 
@@ -431,6 +439,10 @@ export PGDATABASE=postgres
 -   --exclude-self
 
     备份结果不包含指定对象自身的信息。该参数需要同-t/--include-table-file参数关联使用才会生效。
+
+-   --pipeline
+
+    使用管道传输密码，禁止在终端使用。
 
 -   --dont-overwrite-file
 

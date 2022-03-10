@@ -187,17 +187,18 @@ Currently, the default values of parameters in openGauss configuration files \(*
   >
   >-   -D cannot be used together with -I.
 
--   -c parameter=value
+- -c parameter=value
 
-    Specifies the name and value of the cluster configuration parameter to be set.
+  Specifies the name and value of the cluster configuration parameter to be set.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If the parameter is a string variable, use  **-c **_parameter_**="'**_value_**'"**  or  **-c "**_parameter_** = '**_value_**'"**.
-    >-   When gs\_guc set or reload is set to log\_directory, the default value is restored and set to a specific data directory.
-    >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is set to the primary node, the parameter values of both the primary and standby nodes will be modified. If the  **-N**  parameter is set to the standby node, the parameter values of only the standby node will be modified.
-    >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is not set, the parameter values of both the primary and standby nodes will be modified if you run the command on the primary node. If the  **-N**  parameter is not set and you run the command on the standby node, the parameter values of only the standby node will be modified.
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >-   If the parameter is a string variable, use  **-c **_parameter_**="'**_value_**'"**  or  **-c "**_parameter_** = '**_value_**'"**.
+  >-   
+  >-   When gs\_guc set or reload is set to log\_directory, the default value is restored and set to a specific data directory.
+  >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is set to the primary node, the parameter values of both the primary and standby nodes will be modified. If the  **-N**  parameter is set to the standby node, the parameter values of only the standby node will be modified.
+  >-   When  **gs\_guc reload**  is used to set parameters and the  **-N**  parameter is not set, the parameter values of both the primary and standby nodes will be modified if you run the command on the primary node. If the  **-N**  parameter is not set and you run the command on the standby node, the parameter values of only the standby node will be modified.
 
-    Value range: all the parameters in the postgresql.conf file
+  Value range: all the parameters in the postgresql.conf file
 
 -   --lcname=LCNAME
 
