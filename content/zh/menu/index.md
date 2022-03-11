@@ -1438,7 +1438,7 @@ headless: true
 			-   [Global Plancache]({{< relref "./docs/Developerguide/Global-Plancache.md" >}})
 				-   [GLOBAL\_PLANCACHE\_STATUS]({{< relref "./docs/Developerguide/GLOBAL_PLANCACHE_STATUS.md" >}})
 				-   [GLOBAL\_PLANCACHE\_CLEAN]({{< relref "./docs/Developerguide/GLOBAL_PLANCACHE_CLEAN.md" >}})
-			-   [RTO]({{< relref "./docs/Developerguide/RTO.md" >}})
+			-   [RTO]({{< relref "./docs/Developerguide/RTO-RPO.md" >}})
 				-   [global\_rto\_status]({{< relref "./docs/Developerguide/global_rto_status.md" >}})
 		-   [WDR Snapshot Schema]({{< relref "./docs/Developerguide/WDR-Snapshot-Schema.md" >}})
 			-   [WDR Snapshot 原信息表]({{< relref "./docs/Developerguide/WDR-Snapshot-原信息表.md" >}})
