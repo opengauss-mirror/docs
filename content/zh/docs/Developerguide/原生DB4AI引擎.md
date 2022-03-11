@@ -200,7 +200,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </tr>
             <tr id="row1168925220018"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p968914521303"><a name="p968914521303"></a><a name="p968914521303"></a>max_iterations = 100</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1268945210013"><a name="p1268945210013"></a><a name="p1268945210013"></a>(0, INT_MAX_VALUE]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1268945210013"><a name="p1268945210013"></a><a name="p1268945210013"></a>(0, 10000]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p19492119171912"><a name="p19492119171912"></a><a name="p19492119171912"></a>最大迭代次数</p>
             </td>
@@ -214,7 +214,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </tr>
             <tr id="row56893521905"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p268975210020"><a name="p268975210020"></a><a name="p268975210020"></a>batch_size = 1000</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p76892521602"><a name="p76892521602"></a><a name="p76892521602"></a>(0, MAX_MEMORY_LIMIT]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p76892521602"><a name="p76892521602"></a><a name="p76892521602"></a>(0, 1048575]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p749216198198"><a name="p749216198198"></a><a name="p749216198198"></a>一次训练所选取的样本数</p>
             </td>
@@ -310,35 +310,35 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </td>
             <td class="cellrowborder" valign="top" width="35.28%" headers="mcps1.2.5.1.2 "><p id="p1695551116310"><a name="p1695551116310"></a><a name="p1695551116310"></a>max_iterations = 10</p>
             </td>
-            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p495501116310"><a name="p495501116310"></a><a name="p495501116310"></a>[1, INT_MAX_VALUE]</p>
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p495501116310"><a name="p495501116310"></a><a name="p495501116310"></a>[1, 10000]</p>
             </td>
             <td class="cellrowborder" valign="top" width="26.56%" headers="mcps1.2.5.1.4 "><p id="p1492131911910"><a name="p1492131911910"></a><a name="p1492131911910"></a>最大迭代次数</p>
             </td>
             </tr>
             <tr id="row568119236"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p136811191430"><a name="p136811191430"></a><a name="p136811191430"></a>num_centroids = 10</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1668111916316"><a name="p1668111916316"></a><a name="p1668111916316"></a>[1, MAX_MEMORY_LIMIT]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1668111916316"><a name="p1668111916316"></a><a name="p1668111916316"></a>[1, 1000000]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p2492151951911"><a name="p2492151951911"></a><a name="p2492151951911"></a>簇的数目</p>
             </td>
             </tr>
             <tr id="row1133613181825"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p193362181425"><a name="p193362181425"></a><a name="p193362181425"></a>tolerance = 0.00001</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p13336201813220"><a name="p13336201813220"></a><a name="p13336201813220"></a>(0,1)</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p13336201813220"><a name="p13336201813220"></a><a name="p13336201813220"></a>(0,1]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p549341912192"><a name="p549341912192"></a><a name="p549341912192"></a>中心点误差</p>
             </td>
             </tr>
             <tr id="row17177771132"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p317713714311"><a name="p317713714311"></a><a name="p317713714311"></a>batch_size = 10</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p171771474313"><a name="p171771474313"></a><a name="p171771474313"></a>[1, MAX_MEMORY_LIMIT]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p171771474313"><a name="p171771474313"></a><a name="p171771474313"></a>[1,1048575]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p8493219141910"><a name="p8493219141910"></a><a name="p8493219141910"></a>一次训练所选取的样本数</p>
             </td>
             </tr>
             <tr id="row35347279220"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p14534162718220"><a name="p14534162718220"></a><a name="p14534162718220"></a>num_features = 2</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1953414271211"><a name="p1953414271211"></a><a name="p1953414271211"></a>[1, GS_MAX_COLS]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1953414271211"><a name="p1953414271211"></a><a name="p1953414271211"></a>[1, INT_MAX_VALUE]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p44933197199"><a name="p44933197199"></a><a name="p44933197199"></a>输入样本特征数</p>
             </td>
@@ -378,14 +378,14 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </td>
             <td class="cellrowborder" valign="top" width="35.28%" headers="mcps1.2.5.1.2 "><p id="p1553271105312"><a name="p1553271105312"></a><a name="p1553271105312"></a>n_iter=10</p>
             </td>
-            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p75321611105318"><a name="p75321611105318"></a><a name="p75321611105318"></a>(0, INT_MAX_VALUE]</p>
+            <td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.5.1.3 "><p id="p75321611105318"><a name="p75321611105318"></a><a name="p75321611105318"></a>(0, 10000]</p>
             </td>
             <td class="cellrowborder" valign="top" width="26.56%" headers="mcps1.2.5.1.4 "><p id="p18532711165316"><a name="p18532711165316"></a><a name="p18532711165316"></a>迭代次数</p>
             </td>
             </tr>
             <tr id="row10351101833113"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p11351171873119"><a name="p11351171873119"></a><a name="p11351171873119"></a>batch_size=10000</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p14351151814311"><a name="p14351151814311"></a><a name="p14351151814311"></a>(0, MAX_MEMORY_LIMIT]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p14351151814311"><a name="p14351151814311"></a><a name="p14351151814311"></a>(0, 1048575]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p33515188318"><a name="p33515188318"></a><a name="p33515188318"></a>一次训练所选取的样本数</p>
             </td>
@@ -400,7 +400,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             <tr id="row487213793218"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p587219773212"><a name="p587219773212"></a><a name="p587219773212"></a>tree_method="auto"</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p168723763213"><a name="p168723763213"></a><a name="p168723763213"></a>auto\exact\approx\hist\gpu_hist</p>
-            <p id="p915875210126"><a name="p915875210126"></a><a name="p915875210126"></a>注意：gpu_hist参数需要机器上装有GPU硬件，当硬件缺失DB4AI平台不支持该超参值，自动转为CPU版本。</p>
+            <p id="p915875210126"><a name="p915875210126"></a><a name="p915875210126"></a>注意：gpu_hist参数需要相应的库GPU版本，否则DB4AI平台不支持该值。</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p68721072329"><a name="p68721072329"></a><a name="p68721072329"></a>树构建算法</p>
             </td>
@@ -414,7 +414,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </tr>
             <tr id="row62761527322"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p122762219322"><a name="p122762219322"></a><a name="p122762219322"></a>seed=0</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p32769283210"><a name="p32769283210"></a><a name="p32769283210"></a>[0, INT_MAX_VALUE]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p32769283210"><a name="p32769283210"></a><a name="p32769283210"></a>[0, 100]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1627672193213"><a name="p1627672193213"></a><a name="p1627672193213"></a>种子</p>
             </td>
@@ -435,7 +435,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             </tr>
             <tr id="row743394833111"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p11433184816315"><a name="p11433184816315"></a><a name="p11433184816315"></a>gamma=0.0</p>
             </td>
-            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1943312482316"><a name="p1943312482316"></a><a name="p1943312482316"></a>[0, DOUBLE_MAX_VALUE]</p>
+            <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1943312482316"><a name="p1943312482316"></a><a name="p1943312482316"></a>[0, 1]</p>
             </td>
             <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p18433124813316"><a name="p18433124813316"></a><a name="p18433124813316"></a>叶节点上进行进一步分区所需的最小损失减少</p>
             </td>
