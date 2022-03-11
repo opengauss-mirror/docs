@@ -122,14 +122,15 @@
 </td>
 <td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p10410143413278"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p10410143413278"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p10410143413278"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122637_p153301633152616"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122637_p153301633152616"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122637_p153301633152616"></a>该字段不支持。</p>
+<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122637_p153301633152616"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122637_p153301633152616"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122637_p153301633152616"></a>该字段不支持</p>
+<p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p13410143417278"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p13410143417278"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p13410143417278"></a>。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_row1441093419275"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p164111534192717"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p164111534192717"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p164111534192717"></a>state</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p1141110343271"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p1141110343271"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p1141110343271"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p12411234142718"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p12411234142718"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p12411234142718"></a>该后台当前总体状态。可能值是：<a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_ul17411123412274"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_ul17411123412274"></a><ul id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_ul17411123412274"><li>active：后台正在执行一个查询。</li><li>idle：后台正在等待一个新的客户端命令。</li><li>idle in transaction：后台在事务中，但是目前无法执行查询。</li><li>idle in transaction (aborted)：这个状态除说明事务中有某个语句导致了错误外，类似于idle in transaction。</li><li>fastpath function call：后台正在执行一个fast-path函数。</li><li>disabled：如果后台禁用track_activities，则报告这个状态。<div class="note" id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_note862031142110"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_note862031142110"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_note862031142110"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p94121344272"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p94121344272"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p94121344272"></a>普通用户只能查看到自己帐户所对应的会话状态。即其他帐户的state信息为空。例如以judy用户连接数据库后，在pg_stat_activity中查看到的普通用户joe及初始用户omm的state信息为空。</p>
+<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p12411234142718"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p12411234142718"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p12411234142718"></a>该后台当前总体状态。可能值是：<a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_ul17411123412274"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_ul17411123412274"></a><ul id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_ul17411123412274"><li>active：后台正在执行一个查询。</li><li>idle：后台正在等待一个新的客户端命令。</li><li>idle in transaction：后台在事务中，但是目前无法执行查询。</li><li>idle in transaction (aborted)：这个状态除说明事务中有某个语句导致了错误外，类似于idle in transaction</li><li>fastpath function call：后台正在执行一个fast-path函数。</li><li>disabled：如果后台禁用track_activities，则报告这个状态。<div class="note" id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_note862031142110"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_note862031142110"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_note862031142110"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p94121344272"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p94121344272"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p94121344272"></a>普通用户只能查看到自己帐户所对应的会话状态。即其他帐户的state信息为空。例如以judy用户连接数据库后，在pg_stat_activity中查看到的普通用户joe及初始用户omm的state信息为空。</p>
 <pre class="screen" id="zh-cn_topic_0283137277_screen5852193110511"><a name="zh-cn_topic_0283137277_screen5852193110511"></a><a name="zh-cn_topic_0283137277_screen5852193110511"></a>openGauss=# SELECT datname, usename, usesysid,state,pid FROM pg_stat_activity;
 datname    | usename | usesysid | state    |       pid
 ----------+---------+----------+--------+-----------------postgres  | omm       | 10       |        |139968752121616
@@ -163,6 +164,20 @@ postgres  | joe       | 16390    |        |139968563377936
 <td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p24145347279"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p24145347279"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p24145347279"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p1841443419270"><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p1841443419270"></a><a name="zh-cn_topic_0283137277_zh-cn_topic_0237122638_p1841443419270"></a>该后台的最新查询。如果state状态是active（活跃的），此字段显示当前正在执行的查询。所有其他情况表示上一个查询。</p>
+</td>
+</tr>
+<tr id="row1084965423212"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p9849165416321"><a name="p9849165416321"></a><a name="p9849165416321"></a>unique_sql_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="p684965413210"><a name="p684965413210"></a><a name="p684965413210"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="p384925415323"><a name="p384925415323"></a><a name="p384925415323"></a>语句的unique sql id。</p>
+</td>
+</tr>
+<tr id="row551112665818"><td class="cellrowborder" valign="top" width="19.05%" headers="mcps1.2.4.1.1 "><p id="p1251110645816"><a name="p1251110645816"></a><a name="p1251110645816"></a>trace_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.669999999999998%" headers="mcps1.2.4.1.2 "><p id="p1751110613588"><a name="p1751110613588"></a><a name="p1751110613588"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.279999999999994%" headers="mcps1.2.4.1.3 "><p id="p18511136205819"><a name="p18511136205819"></a><a name="p18511136205819"></a>驱动传入的trace id，与应用的一次请求相关联。</p>
 </td>
 </tr>
 </tbody>
