@@ -242,24 +242,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 10: Variables declared or imported in stored procedures cannot be submitted or rolled back.
-
-    ```
-    CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE2(EXP_OUT OUT INT)
-    AS
-    EXP INT;
-    BEGIN
-        EXP_OUT := 0;
-        COMMIT;
-        DBE_OUTPUT.PRINT_LINE('EXP IS:'||EXP);
-        EXP_OUT := 1;
-        ROLLBACK;
-        DBE_OUTPUT.PRINT_LINE('EXP IS:'||EXP);
-    END;
-    /
-    ```
-
--   Example 11: Calling in SQL statements \(other than Select Procedure\) is not supported.
+-   Example 10: Calling in SQL statements \(other than Select Procedure\) is not supported.
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE3()
@@ -277,7 +260,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 12: COMMIT/ROLLBACK cannot be called in a stored procedure whose header contains GUC parameters.
+-   Example 11: COMMIT/ROLLBACK cannot be called in a stored procedure whose header contains GUC parameters.
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE4()
@@ -296,7 +279,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 13: A stored procedure object whose cursor is open cannot contain COMMIT/ROLLBACK.
+-   Example 12: A stored procedure object whose cursor is open cannot contain COMMIT/ROLLBACK.
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE5(INTIN IN INT, INTOUT OUT INT)
@@ -328,7 +311,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 14: COMMIT and ROLLBACK cannot be called in expressions or CURSOR and EXECUTE statements.
+-   Example 13: COMMIT and ROLLBACK cannot be called in expressions or CURSOR and EXECUTE statements.
 
     ```
     CREATE OR REPLACE PROCEDURE exec_func1()
@@ -347,7 +330,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 15: Return values and expression calculation of stored procedures are not supported.
+-   Example 14: Return values and expression calculation of stored procedures are not supported.
 
     ```
     CREATE OR REPLACE PROCEDURE exec_func3(RET_NUM OUT INT)
@@ -369,7 +352,7 @@ The following content cannot be committed or rolled back:
     ```
 
 
--   Example 16: Roll back some modifications of stored procedure on a transaction to a savepoint.
+-   Example 15: Roll back some modifications of stored procedure on a transaction to a savepoint.
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE1()
@@ -385,7 +368,7 @@ The following content cannot be committed or rolled back:
     ```
 
 
--   Example 17: Roll back a stored procedure to a savepoint defined outside the stored procedure.
+-   Example 16: Roll back a stored procedure to a savepoint defined outside the stored procedure.
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE2()
@@ -406,7 +389,7 @@ The following content cannot be committed or rolled back:
     ```
 
 
--   Example 18: Roll back an external SQL or other stored procedure to a savepoint defined in the stored procedure.
+-   Example 17: Roll back an external SQL or other stored procedure to a savepoint defined in the stored procedure.
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE3()
