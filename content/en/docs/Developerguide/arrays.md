@@ -28,39 +28,3 @@ openGauss supports access to array elements by using parentheses, and it also su
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >If a stored procedure contains a DML statement \(such as SELECT, UPDATE, INSERT, and DELETE\), you are advised to use square brackets to access array elements. Using parentheses will access arrays by default. If no array exists, function expressions will be identified.
 
-## Examples<a name="en-us_topic_0059778979_s471412484c0048debf8a78d76cf1a439"></a>
-
-```
--- Perform operations on an array in the stored procedure.
-openGauss=# CREATE OR REPLACE PROCEDURE array_proc
-AS 
-       TYPE ARRAY_INTEGER IS VARRAY(1024) OF INTEGER;-- Define the array type.
-       ARRINT ARRAY_INTEGER: = ARRAY_INTEGER();  -- Declare the variable of the array type.
-BEGIN 
-       ARRINT.extend(10);  
-       FOR I IN 1..10 LOOP  
-               ARRINT(I) := I; 
-       END LOOP; 
-       DBE_OUTPUT.PRINT_LINE(ARRINT.COUNT);  
-       DBE_OUTPUT.PRINT_LINE(ARRINT(1));  
-       DBE_OUTPUT.PRINT_LINE(ARRINT(10)); 
-       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.FIRST)); 
-       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.LAST));
-       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.NEXT(ARRINT.FIRST)));
-       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.PRIOR(ARRINT.LAST)));
-       ARRINT.TRIM();
-       DBE_OUTPUT.PRINT_LINE(ARRINT.EXISTS(10));
-       DBE_OUTPUT.PRINT_LINE(ARRINT.COUNT);
-       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.FIRST)); 
-       DBE_OUTPUT.PRINT_LINE(ARRINT(ARRINT.LAST));
-       ARRINT.DELETE();
-END;  
-/
-
--- Invoke the stored procedure.
-openGauss=# CALL array_proc();
-
--- Delete the stored procedure.
-openGauss=# DROP PROCEDURE array_proc;
-```
-

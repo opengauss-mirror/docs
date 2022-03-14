@@ -27,29 +27,3 @@ openGauss supports access to set elements by using parentheses, and it also supp
 
 The set functions support  **multiset union**,  **intersect**,  **except all**, and  **distinct**.
 
-## Examples<a name="section93565513911"></a>
-
-```
--- Perform operations on a set in the stored procedure.
-openGauss=# CREATE OR REPLACE PROCEDURE table_proc AS
-DECLARE
-       TYPE TABLE_INTEGER IS TABLE OF INTEGER;-- Define the set type.
-       TABLEINT TABLE_INTEGER := TABLE_INTEGER();  -- Declare the variable of the set type.
-BEGIN 
-       TABLEINT.extend(10);  
-       FOR I IN 1..10 LOOP  
-               TABLEINT(I) := I; 
-       END LOOP; 
-       DBE_OUTPUT.PRINT_LINE(TABLEINT.COUNT);  
-       DBE_OUTPUT.PRINT_LINE(TABLEINT(1));  
-       DBE_OUTPUT.PRINT_LINE(TABLEINT(10)); 
-END;  
-/
-
--- Invoke the stored procedure.
-openGauss=# CALL table_proc();
-
--- Delete the stored procedure.
-openGauss=# DROP PROCEDURE table_proc;
-```
-

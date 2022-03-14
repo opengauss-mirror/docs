@@ -41,6 +41,14 @@ debug端调试过程中，调用info\_breakpoints，查看当前的函数断点�
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p3870154243112"><a name="p3870154243112"></a><a name="p3870154243112"></a>断点内容。</p>
 </td>
 </tr>
+    <tr id="row9910206452"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p169113019451"><a name="p169113019451"></a><a name="p169113019451"></a>enable</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p189111408457"><a name="p189111408457"></a><a name="p189111408457"></a>OUT boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1091111016455"><a name="p1091111016455"></a><a name="p1091111016455"></a>是否有效</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
