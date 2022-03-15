@@ -7,9 +7,9 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 <a name="table152706135103"></a>
 <table><thead align="left"><tr id="row6819513111011"><th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.1"><p id="p1181971318103"><a name="p1181971318103"></a><a name="p1181971318103"></a>操作符</p>
 </th>
-<th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.2"><p id="p481971341013"><a name="p481971341013"></a><a name="p481971341013"></a>左操作数类型</p>
+<th class="cellrowborder" valign="top" width="14.581632653061222%" id="mcps1.2.8.1.2"><p id="p481971341013"><a name="p481971341013"></a><a name="p481971341013"></a>左操作数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.3"><p id="p7820413151012"><a name="p7820413151012"></a><a name="p7820413151012"></a>右操作数类型</p>
+<th class="cellrowborder" valign="top" width="13.989795918367346%" id="mcps1.2.8.1.3"><p id="p7820413151012"><a name="p7820413151012"></a><a name="p7820413151012"></a>右操作数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.4"><p id="p14820171331017"><a name="p14820171331017"></a><a name="p14820171331017"></a>返回类型</p>
 </th>
@@ -23,9 +23,9 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </thead>
 <tbody><tr id="row12820413111013"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p78209136106"><a name="p78209136106"></a><a name="p78209136106"></a>-&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p3820191391019"><a name="p3820191391019"></a><a name="p3820191391019"></a>Array-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p3820191391019"><a name="p3820191391019"></a><a name="p3820191391019"></a>Array-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p58201613141017"><a name="p58201613141017"></a><a name="p58201613141017"></a>int</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p58201613141017"><a name="p58201613141017"></a><a name="p58201613141017"></a>int</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p882071321020"><a name="p882071321020"></a><a name="p882071321020"></a>json(b)</p>
 </td>
@@ -38,9 +38,9 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tr>
 <tr id="row98201113171020"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p582017139108"><a name="p582017139108"></a><a name="p582017139108"></a>-&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13820813101019"><a name="p13820813101019"></a><a name="p13820813101019"></a>object-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p13820813101019"><a name="p13820813101019"></a><a name="p13820813101019"></a>object-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p9820181315106"><a name="p9820181315106"></a><a name="p9820181315106"></a>text</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p9820181315106"><a name="p9820181315106"></a><a name="p9820181315106"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p082021314102"><a name="p082021314102"></a><a name="p082021314102"></a>json(b)</p>
 </td>
@@ -53,13 +53,13 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tr>
 <tr id="row148211137108"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1682119136104"><a name="p1682119136104"></a><a name="p1682119136104"></a>-&gt;&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p6821201311013"><a name="p6821201311013"></a><a name="p6821201311013"></a>Array-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p6821201311013"><a name="p6821201311013"></a><a name="p6821201311013"></a>Array-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p19821181331017"><a name="p19821181331017"></a><a name="p19821181331017"></a>int</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p19821181331017"><a name="p19821181331017"></a><a name="p19821181331017"></a>int</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1682131311100"><a name="p1682131311100"></a><a name="p1682131311100"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1382120137101"><a name="p1382120137101"></a><a name="p1382120137101"></a>获得JSON数组元素。下标不存在返回空。</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1382120137101"><a name="p1382120137101"></a><a name="p1382120137101"></a>获得 JSON 数组元素。下标不存在返回空。</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p1382171317105"><a name="p1382171317105"></a><a name="p1382171317105"></a>'[1,2,3]'::json-&gt;&gt;2</p>
 </td>
@@ -68,9 +68,9 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tr>
 <tr id="row2821161381012"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1182111361016"><a name="p1182111361016"></a><a name="p1182111361016"></a>-&gt;&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p382171381014"><a name="p382171381014"></a><a name="p382171381014"></a>object-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p382171381014"><a name="p382171381014"></a><a name="p382171381014"></a>object-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p19821913111015"><a name="p19821913111015"></a><a name="p19821913111015"></a>text</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p19821913111015"><a name="p19821913111015"></a><a name="p19821913111015"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p13821151371017"><a name="p13821151371017"></a><a name="p13821151371017"></a>text</p>
 </td>
@@ -83,13 +83,13 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tr>
 <tr id="row7821131318105"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p8822101310101"><a name="p8822101310101"></a><a name="p8822101310101"></a>#&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p5822171391016"><a name="p5822171391016"></a><a name="p5822171391016"></a>container-json (b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p5822171391016"><a name="p5822171391016"></a><a name="p5822171391016"></a>container-json (b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1282261371015"><a name="p1282261371015"></a><a name="p1282261371015"></a>text[]</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p1282261371015"><a name="p1282261371015"></a><a name="p1282261371015"></a>text[]</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1782201301019"><a name="p1782201301019"></a><a name="p1782201301019"></a>json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p28221613181013"><a name="p28221613181013"></a><a name="p28221613181013"></a>获取在指定路径的JSON对象，路径不存在则返回空。</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p28221613181013"><a name="p28221613181013"></a><a name="p28221613181013"></a>获取在指定路径的 JSON 对象，路径不存在则返回空。</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p168221913171011"><a name="p168221913171011"></a><a name="p168221913171011"></a>'{"a": {"b":{"c": "foo"}}}'::json #&gt;'{a,b}'</p>
 </td>
@@ -98,13 +98,13 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tr>
 <tr id="row6822513151012"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p19822191341014"><a name="p19822191341014"></a><a name="p19822191341014"></a>#&gt;&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p382281351018"><a name="p382281351018"></a><a name="p382281351018"></a>container-json (b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p382281351018"><a name="p382281351018"></a><a name="p382281351018"></a>container-json (b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p6822101311108"><a name="p6822101311108"></a><a name="p6822101311108"></a>text[]</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p6822101311108"><a name="p6822101311108"></a><a name="p6822101311108"></a>text[]</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1682220133108"><a name="p1682220133108"></a><a name="p1682220133108"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1822713131018"><a name="p1822713131018"></a><a name="p1822713131018"></a>获取在指定路径的JSON对象，路径不存在则返回空。</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1822713131018"><a name="p1822713131018"></a><a name="p1822713131018"></a>获取在指定路径的 JSON 对象，路径不存在则返回空。</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p148225132105"><a name="p148225132105"></a><a name="p148225132105"></a>'{"a":[1,2,3],"b":[4,5,6]}'::json #&gt;&gt;'{a,2}'</p>
 </td>
@@ -114,15 +114,12 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tbody>
 </table>
 
-
 >![](public_sys-resources/icon-caution.gif) **注意：** 
->
 >对于 \#\> 和 \#\>\> 操作符，当给出的路径无法查找到数据时，不会报错，会返回空。
 
-**表 2** **jsonb额外支持操作符**
+**表 2** **JSONB额外支持操作符**
 
 <a name="table10297813151018"></a>
-
 <table><thead align="left"><tr id="row118231413101011"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p1182321381014"><a name="p1182321381014"></a><a name="p1182321381014"></a>操作符</p>
 </th>
 <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.2"><p id="p582301310108"><a name="p582301310108"></a><a name="p582301310108"></a>右操作数类型</p>
@@ -137,7 +134,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p10823121312101"><a name="p10823121312101"></a><a name="p10823121312101"></a>jsonb</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p16823191341012"><a name="p16823191341012"></a><a name="p16823191341012"></a>左边的JSON的顶层是否包含右边JSON的顶层所有项。</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p16823191341012"><a name="p16823191341012"></a><a name="p16823191341012"></a>左边的 JSON的顶层是否包含右边JSON的顶层所有项。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p18823181315102"><a name="p18823181315102"></a><a name="p18823181315102"></a>'{"a":1, "b":2}'::jsonb @&gt; '{"b":2}'::jsonb</p>
 </td>
@@ -146,7 +143,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p482412138103"><a name="p482412138103"></a><a name="p482412138103"></a>jsonb</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p188241313141010"><a name="p188241313141010"></a><a name="p188241313141010"></a>左边的JSON的所有项是否全部存在于右边JSON的顶层。</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p188241313141010"><a name="p188241313141010"></a><a name="p188241313141010"></a>左边的 JSON的所有项是否全部存在于右边JSON的顶层。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p6824613151016"><a name="p6824613151016"></a><a name="p6824613151016"></a>'{"b":2}'::jsonb &lt;@ '{"a":1, "b":2}'::jsonb</p>
 </td>
@@ -155,7 +152,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p0824101312106"><a name="p0824101312106"></a><a name="p0824101312106"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p1782441313107"><a name="p1782441313107"></a><a name="p1782441313107"></a>键/元素的字符串是否存在于JSON值的顶层。</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p1782441313107"><a name="p1782441313107"></a><a name="p1782441313107"></a>键/元素的字符串是否存在于 JSON 值的顶层。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p882491318103"><a name="p882491318103"></a><a name="p882491318103"></a>'{"a":1, "b":2}'::jsonb ? 'b'</p>
 </td>
@@ -235,8 +232,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tbody>
 </table>
 
-
-## **JSON/JSONB**支持的函数<a name="section845725420151"></a>
+## ****JSON/JSONB**支持的函数**<a name="section845725420151"></a>
 
 -   array\\\_to\\\_json\\\(anyarray \\\[, pretty\\\_bool\\\]\\\)
 
@@ -272,7 +268,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_array\_element\(array-json, integer\)、jsonb\_array\_element\(array-jsonb, integer\)
 
-    描述：同操作符\`-\>\`，返回数组中指定下标的元素。
+    描述：同操作符\`-\>\`, 返回数组中指定下标的元素。
 
     返回类型：json、jsonb
 
@@ -290,7 +286,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_array\_element\_text\(array-json, integer\)、jsonb\_array\_element\_text\(array-jsonb, integer\)
 
-    描述：同操作符\`-\>\>\`，返回数组中指定下标的元素。
+    描述：同操作符\`-\>\>\`, 返回数组中指定下标的元素。
 
     返回类型：text、text
 
@@ -307,7 +303,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_object\_field\(object-json, text\)、jsonb\_object\_field\(object-jsonb, text\)
 
-    描述：同操作符\`-\>\`，返回对象中指定键对应的值。
+    描述：同操作符\`-\>\`, 返回对象中指定键对应的值。
 
     返回类型：json、json
 
@@ -323,7 +319,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_object\_field\_text\(object-json, text\)、jsonb\_object\_field\_text\(object-jsonb, text\)
 
-    描述：同操作符\`-\>\>\`，返回对象中指定键对应的值。
+    描述：同操作符\`-\>\>\`, 返回对象中指定键对应的值。
 
     返回类型：text、text
 
@@ -581,7 +577,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_typeof\(json\)、jsonb\_typeof\(jsonb\)
 
-    描述：检测json类型。
+    描述：检测json类型
 
     返回类型：text、text
 
@@ -761,7 +757,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_contained\(jsonb, jsonb\)
 
-    描述：同操作符 \`<@\`，判断$1中的所有元素是否在$2的顶层存在。
+    描述：同操作符 \`<@\`, 判断$1中的所有元素是否在$2的顶层存在。
 
     返回类型：bool
 
@@ -778,7 +774,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_contains\(jsonb, jsonb\)
 
-    描述：同操作符 \`@\>\`，判断$1中的顶层所有元素是否包含在$2的所有元素。
+    描述：同操作符 \`@\>\`, 判断$1中的顶层所有元素是否包含在$2的所有元素。
 
     返回类型：bool
 
@@ -795,7 +791,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_exists\(jsonb, text\)
 
-    描述：同操作符 \`?\`，字符串$2是否存在$1的顶层以key\\elem\\scalar的形式存在。
+    描述：同操作符 \`?\`,  字符串$2是否存在$1的顶层以key\\elem\\scalar的形式存在。
 
     返回类型：bool
 
@@ -812,7 +808,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_exists\_all\(jsonb, text\[\]\)
 
-    描述：同操作符 \`?&\`，字符串数组$2里面，是否所有的元素，都在$1的顶层以key\\elem\\scalar的形式存在。
+    描述：同操作符 \`?&\`,  字符串数组$2里面，是否所有的元素，都在$1的顶层以key\\elem\\scalar的形式存在。
 
     返回类型：bool
 
@@ -829,7 +825,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_exists\_any\(jsonb, text\[\]\)
 
-    描述：同操作符 \`?|\`，字符串数组$2里面，是否存在的元素，在$1的顶层以key\\elem\\scalar的形式存在。
+    描述：同操作符 \`?|\`,  字符串数组$2里面，是否存在的元素，在$1的顶层以key\\elem\\scalar的形式存在。
 
     返回类型：bool
 
@@ -863,7 +859,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_eq\(jsonb, jsonb\)
 
-    描述：同操作符 \`=\`，比较两个值的大小。
+    描述：同操作符 \`=\`, 比较两个值的大小。
 
     返回类型：bool
 
@@ -880,7 +876,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_ne\(jsonb, jsonb\)
 
-    描述：同操作符 \`<\>\`，比较两个值的大小。
+    描述：同操作符 \`<\>\`, 比较两个值的大小。
 
     返回类型：bool
 
@@ -897,7 +893,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_gt\(jsonb, jsonb\)
 
-    描述：同操作符 \`\>\`，比较两个值的大小。
+    描述：同操作符 \`\>\`, 比较两个值的大小。
 
     返回类型：bool
 
@@ -914,7 +910,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_ge\(jsonb, jsonb\)
 
-    描述：同操作符 \`\>=\`，比较两个值的大小。
+    描述：同操作符 \`\>=\`, 比较两个值的大小。
 
     返回类型：bool
 
@@ -931,7 +927,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_lt\(jsonb, jsonb\)
 
-    描述：同操作符 \`<\`，比较两个值的大小。
+    描述：同操作符 \`<\`, 比较两个值的大小。
 
     返回类型：bool
 
@@ -948,7 +944,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   - jsonb\_le\(jsonb, jsonb\)
 
-    描述：同操作符 \`<=\`，比较两个值的大小。
+    描述：同操作符 \`<=\`, 比较两个值的大小。
 
     返回类型：bool
 
@@ -978,4 +974,42 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
        ["1","5"]
       (1 row)
     ```
+
+-   - jsonb\_hash\(jsonb\)
+
+    描述：对jsonb进行hash运算。
+
+    返回类型：integer
+
+    示例：
+
+    ```
+    openGauss=# select jsonb_hash('[1,2,3]');
+     jsonb_hash
+    ------------
+     -559968547
+    (1 row)
+    ```
+
+-   - 其他函数
+
+    描述：gin索引以及json\\jsonb聚集函数所用到的内部函数，功能不过多赘述。
+
+    ```
+     gin_compare_jsonb
+     gin_consistent_jsonb
+     gin_consistent_jsonb_hash
+     gin_extract_jsonb
+     gin_extract_jsonb_hash
+     gin_extract_jsonb_query
+     gin_extract_jsonb_query_hash
+     gin_triconsistent_jsonb
+     gin_triconsistent_jsonb_hash
+     
+     json_agg_transfn
+     json_agg_finalfn
+     json_object_agg_transfn
+     json_object_agg_finalfn
+    ```
+
 
