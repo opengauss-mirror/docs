@@ -24,6 +24,34 @@ SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一�
 -   如果输入类型是同一个类型范畴，则选择该类型的优先级较高的类型。
 -   把所有输入转换为所选的类型。如果从给定的输入到所选的类型没有隐式转换则失败。
 
+## 对于case，在ORA兼容模式下的处理<a name="section20337194392613"></a>
+
+decode\(expr, search1, result1, search2, result2, ..., defresult\)，也即 case expr when search1 then result1 when search2 then result2 else defresult end; 在ORA兼容模式下的处理，将整个表达式最终的返回值类型定为result1的数据类型，或者与result1同类型范畴的更高精度的数据类型。（例如，numeric与int同属数值类型范畴，但numeric比int精度要高，具有更高优先级）
+
+-   将result1的数据类型置为最终的返回值类型preferType，其所属类型范畴为preferCategory。
+-   依次考虑result2、result3直至defresult的数据类型。如果其类型范畴也是preferCategory，即与result1具有相同的类型范畴，则判断其精度（优先级）是否高于preferType，如果高于，则将preferType更新为更高精度的数据类型；如果其类型范畴不是preferCategory，则判断其数据类型是否可以隐式转换为preferType，不可以则报错。
+-   将最终preferType记录的数据类型作为整个表达式最终的返回值类型；表达式的结果向此类型进行隐式转换。
+
+注1：
+
+为了兼容一种特殊情况，即表示了超大数字的字符类型向数值类型转换的情况，例如select decode\(1, 2, 2, "53465465676465454657567678676"\)，大数超过了bigint、double等的表示范围。所以，当result1的类型范畴为数值类型时，将返回值的类型直接置为numeric，以兼容此种特殊情况。
+
+注2：
+
+数值类型的优先级排序：numeric\>float8\>float4\>int8\>int4\>int2\>int1
+
+字符类型的优先级排序：text\>varchar=nvarchar2\>bpchar\>char
+
+日期类型的优先级排序：timestamptz\>timestamp\>smalldatetime\>date\>abstime\>timetz\>time
+
+日期跨度类型的优先级排序：interval\>tinterval\>reltime
+
+注3：
+
+ORA兼容模式，开启 set sql\_beta\_feature = 'a\_style\_coerce'; 参数的情况下，所支持的隐式类型转换见下图，\\代表不需要转换，yes表示支持，空白表示不支持：
+
+![](../figures/decode_type.png)
+
 ## 示例<a name="zh-cn_topic_0283136625_zh-cn_topic_0237122011_zh-cn_topic_0059779260_sb48a6ac8819342588bbdeeb006db477e"></a>
 
 示例1：Union中的待定类型解析。这里，unknown类型文本'b'将被解析成text类型。
@@ -112,5 +140,59 @@ td_1=# \c openGauss
 --删除A和TD模式的数据库。
 openGauss=# DROP DATABASE a_1;
 openGauss=# DROP DATABASE td_1;
+```
+
+示例5：ORA模式下，将整个表达式最终的返回值类型定为result1的数据类型，或者与result1同类型范畴的更高精度的数据类型。
+
+```
+--在ORA模式下，创建ORA兼容模式的数据库ora_1。
+openGauss=# CREATE DATABASE ora_1 dbcompatibility = 'A';
+
+--切换数据库为ora_1。
+openGauss=# \c ora_1
+
+--开启Decode兼容性参数。
+set sql_beta_feature='a_style_coerce';
+
+--创建表t1。
+ora_1=# CREATE TABLE t1(c_int int, c_float8 float8, c_char char(10), c_text text, c_date date);
+
+--插入数据。
+ora_1=# INSERT INTO t1 VALUES(1, 2, '3', '4', date '12-10-2010');
+
+--result1类型为char，defresult类型为text，text精度更高，返回值的类型由char更新为text。
+ora_1=# SELECT decode(1, 2, c_char, c_text) AS result, pg_typeof(result) FROM t1;
+ result | pg_typeof 
+--------+-----------
+ 4      | text
+(1 row)
+
+--result1类型为int，属于数值类型范畴，返回值的类型置为numeric。
+ora_1=# SELECT decode(1, 2, c_int, c_float8) AS result, pg_typeof(result) FROM t1;
+ result | pg_typeof 
+--------+-----------
+      2 | numeric
+(1 row)
+
+--不存在defresult数据类型向result1数据类型之间的隐式转换，报错处理。
+ora_1=# SELECT decode(1, 2, c_int, c_date) FROM t1;
+ERROR:  CASE types integer and timestamp without time zone cannot be matched
+LINE 1: SELECT decode(1, 2, c_int, c_date) FROM t1;
+                                   ^
+CONTEXT:  referenced column: c_date
+
+--关闭Decode兼容性参数。
+set sql_beta_feature='none';
+
+--删除表。
+ora_1=# DROP TABLE t1;
+DROP TABLE
+
+--切换数据库为postgres。
+ora_1=# \c postgres
+
+--删除ORA模式的数据库。
+openGauss=# DROP DATABASE ora_1;
+DROP DATABASE
 ```
 
