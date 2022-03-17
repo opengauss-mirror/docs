@@ -260,13 +260,15 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         取值范围：0\~7，默认值为0。
 
-        行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能力劣化。
+    -   COMPRESS_BYTE_CONVERT
+
+        行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
 
         取值范围：布尔值，默认关闭。
 
-    -   compress_diff_convert
+    -   COMPRESS_DIFF_CONVERT
 
-        行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能力劣化。
+        行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
 
         取值范围：布尔值，默认关闭。
 
