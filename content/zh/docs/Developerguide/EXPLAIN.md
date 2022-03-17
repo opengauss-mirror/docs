@@ -251,6 +251,8 @@ openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHE
 
 --删除表tpcds.customer_address_p1。
 openGauss=# DROP TABLE tpcds.customer_address_p1;
+
+
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>

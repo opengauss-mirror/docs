@@ -33,11 +33,21 @@
     当声明了WITH ADMIN OPTION，被授权的用户可以将该权限再次授予其他角色或用户，以及撤销所有由该角色或用户继承到的权限。当授权的角色或用户发生变更或被撤销时，所有继承该角色或用户权限的用户拥有的权限都会随之发生变更。
 
     数据库系统管理员可以给任何角色或用户授予/撤销任何权限。拥有CREATEROLE权限的角色可以赋予或者撤销任何非系统管理员角色的权限。
+    
+-   **将ANY权限授予给角色或用户**
+
+    将ANY权限授予特定的角色和用户，ANY权限的取值范围参见语法格式。当声明了WITH ADMIN OPTION，被授权的用户可以将该ANY权限再次授予其他角色/用户，或从其他角色/用户处回收该ANY权限。ANY权限可以通过角色被继承，但不能赋予PUBLIC。初始用户和三权分立关闭时的系统管理员用户可以给任何角色/用户授予或撤销ANY权限。
+
+    目前支持以下ANY权限：CREATE ANY TABLE、ALTER ANY TABLE、DROP ANY TABLE、SELECT ANY TABLE、INSERT ANY TABLE、UPDATE ANY TABLE、DELETE ANY TABLE、CREATE ANY SEQUENCE、CREATE ANY INDEX、CREATE ANY FUNCTION、EXECUTE ANY FUNCTION、 CREATE ANY PACKAGE、EXECUTE ANY PACKAGE、CREATE ANY TYPE。详细的ANY权限范围描述参考[表1](#table1360121832117)。
 
 
 ## 注意事项<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_section1780116145345"></a>
 
-无。
+-   不允许将ANY权限授予PUBLIC，也不允许从PUBLIC回收ANY权限。
+-   ANY权限属于数据库内的权限，只对授予该权限的数据库内的对象有效，例如SELECT ANY TABLE只允许用户查看当前数据库内的所有用户表数据，对其他数据库内的用户表无查看权限。
+-   即使用户被授予ANY权限，也不能对私有用户下的对象进行访问操作（INSERT、DELETE、UPDATE、SELECT）。
+-   ANY权限与原有的权限相互无影响。
+-   如果用户被授予CREATE ANY TABLE权限，在同名schema下创建表的属主是该schema的创建者，用户对表进行其他操作时，需要授予相应的操作权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
@@ -142,6 +152,18 @@
         [ WITH GRANT OPTION ];
     ```
 
+- 将存储过程的访问权限赋予给指定的用户或角色。
+
+  ```
+  GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+      ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+         | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
+      TO { [ GROUP ] role_name | PUBLIC } [, ...]
+      [ WITH GRANT OPTION ];
+  ```
+
+  
+
 -   将过程语言的访问权限赋予给指定的用户或角色。
 
     ```
@@ -238,6 +260,15 @@
        TO role_name;
     ```
 
+- 将ANY权限赋予其他用户或角色的语法。
+
+  ```
+  GRANT { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
+    DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
+    CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE } [, ...]
+    TO [ GROUP ] role_name [, ...]
+    [ WITH ADMIN OPTION ];
+  ```
 
 ## 参数说明<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8"></a>
 
@@ -425,6 +456,100 @@ GRANT的参数说明如下所示。
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。
 >不允许对表分区进行GRANT操作，对分区表进行GRANT操作会引起告警。
+
+- WITH ADMIN OPTION
+
+  对于角色，当声明了WITH ADMIN OPTION，被授权的用户可以将该角色再授予其他角色/用户，或从其他角色/用户回收该角色。
+
+  对于ANY权限，当声明了WITH ADMIN OPTION，被授权的用户可以将该ANY权限再授予其他角色/用户，或从其他角色/用户回收该ANY权限。
+
+
+**表 1**  ANY权限列表
+
+<a name="table1360121832117"></a>
+
+<table><thead align="left"><tr id="row116015189214"><th class="cellrowborder" valign="top" width="22.509999999999998%" id="mcps1.2.3.1.1"><p id="p6601181862115"><a name="p6601181862115"></a><a name="p6601181862115"></a>系统权限名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="77.49000000000001%" id="mcps1.2.3.1.2"><p id="p26011318192119"><a name="p26011318192119"></a><a name="p26011318192119"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row5601171810211"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p196011187211"><a name="p196011187211"></a><a name="p196011187211"></a>CREATE ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p96013188214"><a name="p96013188214"></a><a name="p96013188214"></a>用户能够在public模式和用户模式下创建表或视图。如果想要创建serial类型列的表，还需要授予创建序列的权限。</p>
+</td>
+</tr>
+<tr id="row8601131892110"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p9601201818210"><a name="p9601201818210"></a><a name="p9601201818210"></a>ALTER ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p4601518112115"><a name="p4601518112115"></a><a name="p4601518112115"></a>用户拥有对public模式和用户模式下表或视图的ALTER权限。如果想要修改表的唯一索引为表增加主键约束或唯一约束，还需要授予该表的索引权限。</p>
+</td>
+</tr>
+<tr id="row960101852112"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p11601111814216"><a name="p11601111814216"></a><a name="p11601111814216"></a>DROP ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p117212437315"><a name="p117212437315"></a><a name="p117212437315"></a>用户拥有对public模式和用户模式下表或视图的DROP权限。</p>
+</td>
+</tr>
+<tr id="row2601171822114"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p11601121822110"><a name="p11601121822110"></a><a name="p11601121822110"></a>SELECT ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p8713439315"><a name="p8713439315"></a><a name="p8713439315"></a>用户拥有对public模式和用户模式下表或视图的SELETCT权限，仍然受行级访问控制限制。</p>
+</td>
+</tr>
+<tr id="row1960171812214"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p2601218192119"><a name="p2601218192119"></a><a name="p2601218192119"></a>UPDATE ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p1770144313316"><a name="p1770144313316"></a><a name="p1770144313316"></a>用户拥有对public模式和用户模式下表或视图的UPDATE权限，仍然受行级访问控制限制。</p>
+</td>
+</tr>
+<tr id="row1960141815214"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p56010186214"><a name="p56010186214"></a><a name="p56010186214"></a>INSERT ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p186911435319"><a name="p186911435319"></a><a name="p186911435319"></a>用户拥有对public模式和用户模式下表或视图的INSERT权限。</p>
+</td>
+</tr>
+<tr id="row186016187218"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p2060191816213"><a name="p2060191816213"></a><a name="p2060191816213"></a>DELETE ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p76816437315"><a name="p76816437315"></a><a name="p76816437315"></a>用户拥有对public模式和用户模式下表或视图的DELETE权限，仍然受行级访问控制限制。</p>
+</td>
+</tr>
+<tr id="row7827488255"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p1382104882516"><a name="p1382104882516"></a><a name="p1382104882516"></a>CREATE ANY FUNCTION</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2799144511319"><a name="p2799144511319"></a><a name="p2799144511319"></a>用户能够在用户模式下创建函数或存储过程。</p>
+</td>
+</tr>
+<tr id="row1466925310257"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p8669135372515"><a name="p8669135372515"></a><a name="p8669135372515"></a>EXECUTE ANY FUNCTION</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p9669135311252"><a name="p9669135311252"></a><a name="p9669135311252"></a>用户拥有在public模式和用户模式下函数或存储过程的EXECUTE权限。</p>
+</td>
+</tr>
+<tr id="row9568146102610"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p14568184619264"><a name="p14568184619264"></a><a name="p14568184619264"></a>CREATE ANY PACKAGE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p14990113362"><a name="p14990113362"></a><a name="p14990113362"></a>用户能够在public模式和用户模式下创建PACKAGE。</p>
+</td>
+</tr>
+<tr id="row47031450142617"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p27031350102618"><a name="p27031350102618"></a><a name="p27031350102618"></a>EXECUTE ANY PACKAGE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p37961145938"><a name="p37961145938"></a><a name="p37961145938"></a>用户拥有在public模式和用户模式下PACKAGE的EXECUTE权限。</p>
+</td>
+</tr>
+<tr id="row1654415246293"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p254416244293"><a name="p254416244293"></a><a name="p254416244293"></a>CREATE ANY TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p175443247299"><a name="p175443247299"></a><a name="p175443247299"></a>用户能够在public模式和用户模式下创建类型。</p>
+</td>
+</tr>
+<tr id="row1565211281297"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p1765242862910"><a name="p1765242862910"></a><a name="p1765242862910"></a>CREATE ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2079315451731"><a name="p2079315451731"></a><a name="p2079315451731"></a>用户能够在public模式和用户模式下创建序列。</p>
+</td>
+</tr>
+<tr id="row87515532292"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p14752155317297"><a name="p14752155317297"></a><a name="p14752155317297"></a>CREATE ANY INDEX</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p37921145332"><a name="p37921145332"></a><a name="p37921145332"></a>用户能够在public模式和用户模式下创建索引。如果在某表空间创建分区表索引，需要授予用户该表空间的创建权限。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+>![](C:/Users/lijun/Downloads/309资料发布/07 开发者指南/public_sys-resources/icon-note.gif) **说明：** 
+>用户被授予任何一种ANY权限后，用户对public模式和用户模式具有USAGE权限，对[表1](zh-cn_topic_0000001190922647.md#table167371825175015)中除public之外的系统模式没有USAGE权限。
 
 ## 示例<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
 

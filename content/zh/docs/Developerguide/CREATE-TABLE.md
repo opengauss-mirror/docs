@@ -17,6 +17,7 @@
 -   列存表支持delta表，受参数enable\_delta\_store控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
 -   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
 -   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte，text、varchar、char等长度可变的类型除外。
+-   被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建表。如果想要创建包含serial类型列的表，还需要授予CREATE ANY SEQUENCE创建序列的权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
@@ -127,9 +128,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     如果已经存在相同名称的表，不会报出错误，而会发出通知，告知通知此表已存在。
 
--   **table\_name**
+- **table\_name**
 
-    要创建的表名。
+  要创建的表名。
+
+  ![](public_sys-resources/icon-notice.gif) **须知：** 
+  物化视图的一些处理逻辑会通过表名的前缀来识别是不是物化视图日志表和物化视图关联表，因此，用户不要创建表名以mlog\_或matviewmap\_为前缀的表，否则会影响此表的一些功能。
 
 -   **column\_name**
 
@@ -168,7 +172,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >
-    >-   如果源表包含serial、bigserial、smallserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
+    >-   如果源表包含serial、bigserial、smallserial、largeserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
     >
     >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。
     >
@@ -220,6 +224,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         不指定表时，默认是Append-Only存储。
 
+    -   INIT\_TD
+
+        创建Ustore表时，指定初始化的TD个数，该参数只在创建Ustore表时才能设置生效。
+
+        取值范围：2\~128，默认值为4。
+
     -   COMPRESSION
 
         指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
@@ -269,12 +279,20 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         默认值：off
 
     -   dek\_cipher
-
+    
         透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
-
+    
         取值范围：字符串。
-
+    
         默认值：不开启加密时默认为空。
+        
+    -   hasuids
+    
+        参数开启：更新表元组时，为元组分配表级唯一标识id。
+    
+        取值范围：on/off。
+    
+        默认值：off。
 
 
 -   **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
@@ -365,9 +383,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   SET NULL：设置引用字段为NULL。
     -   SET DEFAULT：设置引用字段为它们的缺省值。
 
--   **DEFERRABLE | NOT DEFERRABLE**
+- **DEFERRABLE | NOT DEFERRABLE**
 
-    这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
+  这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
+
+  ![](public_sys-resources/icon-note.gif) **说明：** 
+  Ustore表不支持**DEFERRABLE以及INITIALLY  DEFERRED**关键字。
 
 -   **PARTIAL CLUSTER KEY**
 

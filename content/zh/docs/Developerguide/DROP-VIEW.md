@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-只有视图的所有者或者被授予了视图DROP权限的用户才有权限执行DROP VIEW的命令，系统管理员默认拥有此权限。
+视图的所有者或者被授予了视图DROP权限的用户或拥有DROP ANY TABLE权限的用户，有权限执行DROP VIEW的命令，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 

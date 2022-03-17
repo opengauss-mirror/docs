@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s7e9e912f472543cbb190edb83e5f22d2"></a>
 
--   要修改表，用户必须对该表有UPDATE权限。
+-   表的所有者、拥有表UPDATE权限的用户或拥有UPDATE ANY TABLE权限的用户，有权更新表中的数据，系统管理员默认拥有此权限。
 -   对expression或condition条件里涉及到的任何表要有SELECT权限。
 -   对于列存表，暂时不支持RETURNING子句。
 -   列存表不支持结果不确定的更新\(non-deterministic update\)。试图对列存表用多行数据更新一行时会报错。
@@ -43,6 +43,18 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     要更新的表名，可以使用模式修饰。
 
     取值范围：已存在的表名称。
+
+- **partition\_clause**
+
+  指定分区更新操作
+
+  PARTITION \{ \( partition\_name \) | FOR \( partition\_value \[, ...\] \) \} |
+
+  SUBPARTITION \{ \( subpartition\_name \) | FOR \( subpartition\_value \[, ...\] \) \}
+
+  关键字详见[SELECT](SELECT.md)一节介绍
+
+  示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)
 
 -   **alias**
 
@@ -85,7 +97,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **condition**
 
-    一个返回Boolean类型结果的表达式。只有这个表达式返回true的行才会被更新。
+    一个返回Boolean类型结果的表达式。只有这个表达式返回true的行才会被更新。不建议使用int等数值类型作为condition，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
 
 -   **output\_expression**
 

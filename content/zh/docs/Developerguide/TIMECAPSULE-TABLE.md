@@ -12,7 +12,7 @@
     -   TO TIMECAPSULE和TO CSN能够将表闪回到过去的某个版本。
     -   回收站记录了DROP和TRUNCATE的对象数据。TO BEFORE DROP和TO BEFORE TRUNCATE就是从回收站中闪回。
 
--   不支持闪回表的对象类型：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、序列表、Hbkt表。
+-   不支持闪回表的对象类型：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、序列表、hashbucket表。
 -   闪回点和当前点之间，执行过修改表结构或影响物理存储的语句（DDL、DCL、VACUUM FULL），闪回失败。
 
 -   执行闪回删除需要用户具有如下权限：用户必须具有垃圾对象所在schema的create和usage权限，并且用户必须是schema的所有者或者是垃圾对象的所有者。
@@ -23,13 +23,13 @@
     -   回收站关闭场景：enable\_recyclebin = off；
     -   系统处于维护态（xc\_maintenance\_mode = on）或升级场景；
     -   多对象删除场景：DROP/TRUNCATE TABLE命令同时指定多个对象；
-    -   系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、序列表、Hbkt表。
+    -   系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、序列表、hashbucket表。
 
 
 ## 语法格式<a name="section34914247413"></a>
 
 ```
-TIMECAPSULE TABLE [ schema_name.]table_name TO {CSN expr | TIMESTAMP expr | BEFORE { DROP [RENAME TO table_name] | TRUNCATE } }
+TIMECAPSULE TABLE [ schema.]table_name TO {CSN expr | TIMESTAMP expr | BEFORE { DROP [RENAME TO table_name] | TRUNCATE } }
 ```
 
 ## 参数说明<a name="section1168716336410"></a>
@@ -51,7 +51,7 @@ TIMECAPSULE TABLE [ schema_name.]table_name TO {CSN expr | TIMESTAMP expr | BEFO
 
     指定要返回表的时间点对应的时间戳。expr必须计算一个过去有效的时间戳（使用TO\_TIMESTAMP函数将字符串转换为时间类型）。表将被闪回到指定时间戳大约3秒内的时间点。
 
-    说明：闪回点过旧时，因旧版本被回收导致无法获取旧版本，会导致闪回失败并报错：Restore point too old。可通过同值配置vacuum\_defer\_cleanup\_age 和 version\_retention\_age 设置旧版本保留期限。
+    说明：闪回点过旧时，因旧版本被回收导致无法获取旧版本，会导致闪回失败并报错：Restore point too old。
 
 -   **TO BEFORE DROP**
 

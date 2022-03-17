@@ -4,7 +4,7 @@
 
 在当前数据库中定义一种新的数据类型。定义数据类型的用户将成为该数据类型的拥有者。类型只适用于行存表
 
-有四种形式的CREATE TYPE，分别为：复合类型、基本类型、shell类型和枚举类型。
+有五种形式的CREATE TYPE，分别为：复合类型、基本类型、shell类型、枚举类型和集合类型。
 
 -   复合类型
 
@@ -23,6 +23,12 @@
 -   枚举类型
 
     由若干个标签构成的列表，每一个标签值都是一个非空字符串，且字符串长度必须不超过63个字节。
+    
+- 集合类型
+
+  类似数组，但是没有长度限制，主要在存储过程中使用。
+
+- 被授予CREATE ANY TYPE权限的用户，可以在public模式和用户模式下创建类型。
 
 
 ## 注意事项<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
@@ -63,6 +69,8 @@ CREATE TYPE name
 
 CREATE TYPE name AS ENUM
     ( [ 'label' [, ... ] ] )
+   
+CREATE TYPE name AS TABLE OF data_type
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
@@ -79,7 +87,7 @@ CREATE TYPE name AS ENUM
 
 -   **data\_type**
 
-    要成为复合类型的一个列的现有数据类型的名称。
+    要成为复合类型的一个列的现有数据类型的名称。可以使用%ROWTYPE间接引用表的类型，或者使用%TYPE间接引用表或复合类型中某一列的类型。
 
 -   **collation**
 
@@ -266,6 +274,9 @@ openGauss=# ALTER TYPE bugstatus ADD VALUE IF NOT EXISTS 'regress' BEFORE 'close
 
 --重命名一个标签值。
 openGauss=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
+
+--创建一个集合类型
+openGauss=# CREATE TYPE compfoo_table AS TABLE OF compfoo;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>

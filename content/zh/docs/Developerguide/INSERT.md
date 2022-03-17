@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   只有拥有表INSERT权限的用户，才可以向表中插入数据。
+-   只有拥有表INSERT权限的用户，才可以向表中插入数据。用户被授予insert any table权限，相当于用户对除系统模式之外的任何模式具有USAGE权限，并且拥有这些模式下表的INSERT权限
 -   如果使用RETURNING子句，用户必须要有该表的SELECT权限。
 -   如果使用ON DUPLICATE KEY UPDATE，用户必须要有该表的SELECT、UPDATE权限，唯一约束（主键或唯一索引）的SELECT权限。
 -   如果使用query子句插入来自查询里的数据行，用户还需要拥有在查询里使用的表的SELECT权限。
@@ -20,42 +20,67 @@
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-INSERT INTO table_name [ ( column_name [, ...] ) ]
+INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
     { DEFAULT VALUES
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
-    [ ON DUPLICATE KEY UPDATE {{ column_name = { expression | DEFAULT } } [, ...] | NOTHING }]
+    [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] }]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
 
--   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
+- **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
-    用于声明一个或多个可以在主查询中通过名称引用的子查询，相当于临时表。
+  用于声明一个或多个可以在主查询中通过名称引用的子查询，相当于临时表。
 
-    如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
+  如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
 
-    其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS
+  - 其中with\_query的详细格式为：
 
-    \( \{select | values | insert | update | delete\} \)
+    ```
+    with_query_name [ ( column_name [, ...] ) ] AS [ [ NOT ] MATERIALIZED ]
+    ( {select | values | insert | update | delete} )
+    ```
 
-    – with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问
-
-    子查询的结果集。
+    – with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
 
     – column\_name指定子查询结果集中显示的列名。
 
-    – 每个子查询可以是SELECT、VALUES、INSERT、UPDATE或DELETE语句。
+    – 每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+
+    – 用户可以使用MATERIALIZED / NOT MATERIALIZED对CTE进行修饰。
+
+    -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
+    -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属主干语句中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >INSERT ON DUPLICATE KEY UPDATE不支持WITH及WITH RECURSIVE子句。
+
+  - **plan\_hint子句**
+
+    以/\*+ \*/的形式在INSERT关键字后，用于对INSERT对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](zh-cn_topic_0289900289.md)。每条语句中只有第一个/\*+ plan\_hint \*/注释块会作为hint生效，里面可以写多条hint。
 
 -   **table\_name**
 
     要插入数据的目标表名。
 
     取值范围：已存在的表名。
+
+- **partition\_clause**
+
+  指定分区插入操作
+
+  ```
+  PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } |
+  SUBPARTITION { ( subpartition_name ) | FOR ( subpartition_value [, ...] ) }
+  ```
+
+  关键字详见[SELECT](SELECT.md)一节介绍
+
+  如果value子句的值和指定分区不一致，会抛出异常。
+
+  示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)
 
 -   **column\_name**
 

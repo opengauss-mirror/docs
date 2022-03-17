@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
 
-无。
+被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建视图。
 
 ## 语法格式<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
@@ -17,7 +17,7 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->创建视图时使用WITH\(security\_barriers\)可以创建一个相对安全的视图，避免攻击者利用低成本函数的RAISE语句打印出隐藏的基表数据。
+>创建视图时使用WITH\(security\_barrier\)可以创建一个相对安全的视图，避免攻击者利用低成本函数的RAISE语句打印出隐藏的基表数据。
 
 ## 参数说明<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 

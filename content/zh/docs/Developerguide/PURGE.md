@@ -10,14 +10,13 @@
 
 ## 注意事项<a name="section749425816510"></a>
 
--   清除（PURGE）操作支持：表（PURGE  TABLE）、索引（PURGE INDEX）、回收站（PURGE RECYCLEBIN）、表空间（PURGE TABLESPACE）。
+-   清除（PURGE）操作支持：表（PURGE  TABLE）、索引（PURGE INDEX）、回收站（PURGE RECYCLEBIN）。
 
 
 -   执行PURGE操作的权限要求如下：
 
     -   PURGE TABLE：用户必须是表的所有者，且用户必须拥有表所在模式的USAGE权限，系统管理员默认拥有此权限。
     -   PURGE INDEX：用户必须是索引的所有者，用户必须拥有索引所在模式的USAGE权限，系统管理员默认拥有此权限。
-    -   PURGE TABLESPACE：用户必须是表空间的所有者，用户必须拥有对象所在模式的USAGE权限，且普通用户只允许删除回收站中指定表空间下所有者为自己的表，系统管理员默认可以删除回收站中指定表空间下所有的对象。
     -   PURGE RECYCLEBIN：普通用户只能清理回收站中当前用户拥有的对象，且用户必须拥有对象所在模式的USAGE权限，系统管理员默认可以清理回收站所有对象。
 
 
@@ -78,16 +77,11 @@ openGauss=#  CREATE TABLE tpcds.reason_t3
   r_reason_id    character(16),
   r_reason_desc  character(100)
   ) tablespace reason_table_space1;
-openGauss=#  CREATE TABLE tpcds.reason_t4
- (
-  r_reason_sk    integer,
-  r_reason_id    character(16),
-  r_reason_desc  character(100)
-  );
+-- 对表tpcds.reason_t1创建索引
+openGauss=#  CREATE INDEX index_t1 on tpcds.reason_t1(r_reason_id); 
 openGauss=#  DROP TABLE tpcds.reason_t1;
 openGauss=#  DROP TABLE tpcds.reason_t2;
 openGauss=#  DROP TABLE tpcds.reason_t3;
-openGauss=#  DROP TABLE tpcds.reason_t4;
 --查看回收站
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
         rcyname        | rcyoriginname | rcytablespace 
@@ -95,17 +89,31 @@ openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
  BIN$16409$2CEE988==$0 | reason_t1     |         16408
  BIN$16412$2CF2188==$0 | reason_t2     |         16408
  BIN$16415$2CF2EC8==$0 | reason_t3     |         16408
- BIN$16418$2CF3EC8==$0 | reason_t4     |             0
+ BIN$16418$2CF3EC8==$0 | index_t1     |             0
 (4 rows)
---清空表
-openGauss=#  PURGE TABLE tpcds.reason_t1;
+--PURGE清除表
+openGauss=#  PURGE TABLE tpcds.reason_t3;
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
         rcyname        | rcyoriginname | rcytablespace 
 -----------------------+---------------+---------------
+ BIN$16409$2CEE988==$0 | reason_t1     |         16408
  BIN$16412$2CF2188==$0 | reason_t2     |         16408
- BIN$16415$2CF2EC8==$0 | reason_t3     |         16408
- BIN$16418$2CF3EC8==$0 | reason_t4     |             0
+ BIN$16418$2CF3EC8==$0 | index_t1     |             0
 (3 rows)
+--PURGE清除索引
+openGauss=#  PURGE INDEX tindex_t1;
+openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
+        rcyname        | rcyoriginname | rcytablespace 
+-----------------------+---------------+---------------
+ BIN$16409$2CEE988==$0 | reason_t1     |         16408
+ BIN$16412$2CF2188==$0 | reason_t2     |         16408
+(2 rows)
+--PURGE清除回收站所有对象
+openGauss=#  PURGE recyclebin;
+openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
+        rcyname        | rcyoriginname | rcytablespace 
+-----------------------+---------------+---------------
+(0 rows)
 
 ```
 
