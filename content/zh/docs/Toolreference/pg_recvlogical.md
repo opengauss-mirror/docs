@@ -19,6 +19,7 @@ pg_recvlogical [OPTION]...
 -   --create
 
     创建一个新的逻辑复制槽。
+    内部调用了pg_create_logical_replication_slot函数，调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs_role_replication的权限，且此函数目前只支持在主机调用。参考《开发者指南》pg_create_logical_replication_slot函数的说明。
 
 -   --start
 

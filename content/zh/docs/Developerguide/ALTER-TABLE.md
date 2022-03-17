@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
--   只有表的所有者或者被授予了表ALTER权限的用户有权限执行ALTER TABLE命令，系统管理员默认拥有此权限。但要修改表的所有者或者修改表的模式，当前用户必须是该表的所有者或者系统管理员，且该用户是新所有者角色的成员。
+-   表的所有者被授予了表ALTER权限的用户或被授予ALTER ANY TABLE的用户有权限执行ALTER TABLE命令，系统管理员默认拥有此权限。但要修改表的所有者或者修改表的模式，当前用户必须是该表的所有者或者系统管理员，且该用户是新所有者角色的成员。
 -   不能修改分区表的tablespace，但可以修改分区的tablespace。
 -   不支持修改存储参数ORIENTATION。
 -   SET SCHEMA操作不支持修改为系统内部模式，当前仅支持用户模式之间的修改。
@@ -158,119 +158,118 @@
     >-   **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
     >    DEFAULT记录主键的列的旧值。USING INDEX记录命名索引覆盖的列的旧值，这些值必须是唯一的，不局部的，不可延迟的，并且仅包括标记为NOT NULL的列。FULL记录该行中所有列的旧值。NOTHING不记录有关旧行的信息。在所有情况下，除非该行的新旧版本中至少要记录的列之一不同，否则不会记录任何旧值。
 
-    -   其中列相关的操作column\_clause可以是以下子句之一：
-    
-        ```
-    ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
-        | MODIFY column_name data_type    
-    | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
-        | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
-        | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
-        | ALTER [ COLUMN ] column_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ USING expression ]    
-        | ALTER [ COLUMN ] column_name { SET DEFAULT expression | DROP DEFAULT }    
-        | ALTER [ COLUMN ] column_name { SET | DROP } NOT NULL    
-        | ALTER [ COLUMN ] column_name SET STATISTICS [PERCENT] integer    
-        | ADD STATISTICS (( column_1_name, column_2_name [, ...] ))    
-        | DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))    
-        | ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )    
-        | ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
-        | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
-        ```
-    
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >
-        >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
-    >    向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
-        >
-        >-   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
-        >    向表中增加多列。
-        >
-        >-   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
-        >    修改表已存在字段的数据类型。
-        >
-        >-   **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
-        >    从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
-        >    DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
-        >
-        >-   **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
-        >    改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
-        >    ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
-        >    ```
-        >    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
-        >    ```
-        >    这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
-        >
-        >-   **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
-        >    为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
-        >
-        >-   **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
-        >    修改一个字段是否允许NULL值或者拒绝NULL值。如果表在字段中包含非NULL，则只能使用SET NOT NULL。
-        >
-        >-   **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
-        >    为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
-        >
-        >-   **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
-        >    用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。每组多列统计信息最多支持32列。不支持添加/删除多列统计信息声明的表：系统表、外表。
-        >
-        >-   **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
-        >    **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
-        >    设置/重置属性选项。
-        >    目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
-        >
-        >-   **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
-        >    为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
-    
-        -   其中列约束column\_constraint为：
-    
-            ```
-        [ CONSTRAINT constraint_name ]
-                { NOT NULL |
-              NULL |
-                  CHECK ( expression ) |
-                  DEFAULT default_expr  |
-                  UNIQUE index_parameters |
-                  PRIMARY KEY index_parameters |
-                  ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
-                  REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-                      [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-            ```
-    
-        -   其中列的压缩可选项compress\_mode为：
-    
-            ```
-        [ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
-            ```
+其中列相关的操作column\_clause可以是以下子句之一：
+
+```
+ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
+| MODIFY column_name data_type    
+| MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
+| MODIFY column_name [ CONSTRAINT constraint_name ] NULL
+| DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
+| ALTER [ COLUMN ] column_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ USING expression ]    
+| ALTER [ COLUMN ] column_name { SET DEFAULT expression | DROP DEFAULT }    
+| ALTER [ COLUMN ] column_name { SET | DROP } NOT NULL    
+| ALTER [ COLUMN ] column_name SET STATISTICS [PERCENT] integer    
+| ADD STATISTICS (( column_1_name, column_2_name [, ...] ))    
+| DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))    
+| ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )    
+| ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
+| ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
+```
+
+>![](C:/Users/lijun/Downloads/309资料发布/07 开发者指南/public_sys-resources/icon-note.gif) **说明：** 
+>
+>- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+>  向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
+>
+>- **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
+>  向表中增加多列。
+>
+>- **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+>  修改表已存在字段的数据类型。
+>
+>- **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
+>  从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
+>  DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
+>
+>- **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
+>  改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
+>  ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
+>
+>  ```
+>  ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
+>  ```
+>
+>  这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
+>
+>- **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
+>  为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
+>
+>- **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
+>  修改一个字段是否允许NULL值或者拒绝NULL值。如果表在字段中包含非NULL，则只能使用SET NOT NULL。
+>
+>- **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
+>  为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
+>
+>- **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
+>  用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。每组多列统计信息最多支持32列。不支持添加/删除多列统计信息声明的表：系统表、外表。
+>
+>- **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
+>  **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
+>  设置/重置属性选项。
+>  目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
+>
+>- **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
+>  为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
+
+- 其中列约束column\_constraint为：
+
+  ```
+  [ CONSTRAINT constraint_name ]
+      { NOT NULL |
+        NULL |
+        CHECK ( expression ) |
+        DEFAULT default_expr  |
+        UNIQUE index_parameters |
+        PRIMARY KEY index_parameters |
+        ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
+        REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+            [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+  ```
+
+- 其中列的压缩可选项compress\_mode为：
+
+```
+[ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
+
+```
+
+-  其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
 
 
-    -   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
-    
-        ```
-        [ CONSTRAINT constraint_name ]
-            { UNIQUE | PRIMARY KEY } USING INDEX index_name
-            [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-    
-    -   其中表约束table\_constraint为：
-    
-        ```
-        [ CONSTRAINT constraint_name ]
-            { CHECK ( expression ) |
-              UNIQUE ( column_name [, ... ] ) index_parameters |
-              PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-              PARTIAL CLUSTER KEY ( column_name [, ... ]  }
-              FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
-                 [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
-            [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-    
-        其中索引参数index\_parameters为：
-    
-        ```
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-            [ USING INDEX TABLESPACE tablespace_name ]
-        ```
+    [ CONSTRAINT constraint_name ]
+        { UNIQUE | PRIMARY KEY } USING INDEX index_name
+        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
+-   其中表约束table\_constraint为：
 
+    ```
+    [ CONSTRAINT constraint_name ]
+        { CHECK ( expression ) |
+          UNIQUE ( column_name [, ... ] ) index_parameters |
+          PRIMARY KEY ( column_name [, ... ] ) index_parameters |
+          PARTIAL CLUSTER KEY ( column_name [, ... ]  }
+          FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+             [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    ```
+
+-   其中索引参数index\_parameters为：
+
+    ```
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+        [ USING INDEX TABLESPACE tablespace_name ]
+    ```
 
 -   重命名表。对名称的修改不会影响所存储的数据。
 
@@ -360,6 +359,12 @@
         表示创建索引时起的bgworker线程数量，例如2就表示将会起2个bgworker线程并发创建索引。
 
         如果未设置，启动bgworker线程数量与表大小相关，一般不超过4个线程。
+        
+    -   hasuids（bool类型）
+    
+        默认值：off
+    
+        参数开启：更新表元组时，为元组分配表级唯一标识id。
 
 
 -   **new\_owner**
@@ -462,14 +467,20 @@
     -   SET NULL：设置引用字段为NULL。
     -   SET DEFAULT：设置引用字段为它们的缺省值。
 
--   **DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE**
+- **DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE**
 
-    设置该约束是否可推迟。
+  设置该约束是否可推迟。
 
-    -   DEFERRABLE：可以推迟到事务结尾使用SET CONSTRAINTS命令检查。
-    -   NOT DEFERRABLE：在每条命令之后马上检查。
-    -   INITIALLY IMMEDIATE：那么每条语句之后就立即检查它。
-    -   INITIALLY DEFERRED：只有在事务结尾才检查它。
+  - DEFERRABLE：可以推迟到事务结尾使用SET CONSTRAINTS命令检查。
+
+  - NOT DEFERRABLE：在每条命令之后马上检查。
+
+  - INITIALLY IMMEDIATE：那么每条语句之后就立即检查它。
+
+  - INITIALLY DEFERRED：只有在事务结尾才检查它。
+
+    ![](public_sys-resources/icon-note.gif) **说明：** 
+    Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
 
 -   **PARTIAL CLUSTER KEY**
 

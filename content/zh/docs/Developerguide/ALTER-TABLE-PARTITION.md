@@ -8,9 +8,11 @@
 
 -   添加分区的表空间不能是PG\_GLOBAL。
 -   添加分区的名称不能与该分区表已有分区的名称相同。
--   添加分区的分区键值要和分区表的分区键的类型一致，且要大于分区表中最后一个范围分区的上边界。
--   如果目标分区表中已有分区数达到了最大值，则不能继续添加分区（范围分区表的分区数最大值是32767，哈希/列表分区表最大值是64）。
-
+-   添加分区的分区键值要和分区表的分区键的类型一致。
+-   若添加RANGE分区，添加分区键值要大于分区表中最后一个范围分区的上边界。
+-   若添加LIST分区，添加分区键值不能与现有分区键值重复。
+-   不支持添加HASH分区。
+-   如果目标分区表中已有分区数达到了最大值1048575，则不能继续添加分区。
 -   当分区表只有一个分区时，不能删除该分区。
 -   选择分区使用PARTITION FOR\(\)，括号里指定值个数应该与定义分区时使用的列个数相同，并且一一对应。
 -   Value分区表不支持相应的Alter Partition操作。
@@ -49,144 +51,140 @@
         MOVE PARTITION { partion_name | FOR ( partition_value [, ...] ) } TABLESPACE tablespacename
         ```
 
-    -   exchange\_clause子语法用于把普通表的数据迁移到指定的分区。
+    - exchange\_clause子语法用于把普通表的数据迁移到指定的分区。
 
-        ```
-        EXCHANGE PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } 
-            WITH TABLE {[ ONLY ] ordinary_table_name | ordinary_table_name * | ONLY ( ordinary_table_name )} 
-            [ { WITH | WITHOUT } VALIDATION ] [ VERBOSE ] [ UPDATE GLOBAL INDEX ]
-        ```
+      ```
+      EXCHANGE PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } 
+          WITH TABLE {[ ONLY ] ordinary_table_name | ordinary_table_name * | ONLY ( ordinary_table_name )} 
+          [ { WITH | WITHOUT } VALIDATION ] [ VERBOSE ] [ UPDATE GLOBAL INDEX ]
+      ```
 
-        进行交换的普通表和分区必须满足如下条件：
+      进行交换的普通表和分区必须满足如下条件：
 
-        -   普通表和分区的列数目相同，对应列的信息严格一致，包括：列名、列的数据类型、列约束、列的Collation信息、列的存储参数、列的压缩信息等。
-        -   普通表和分区的表压缩信息严格一致。
-        -   普通表和分区的索引个数相同，且对应索引的信息严格一致。
-        -   普通表和分区的表约束个数相同，且对应表约束的信息严格一致。
-        -   普通表不可以是临时表，分区表只能是范围分区表、列表分区表、哈希分区表。
-        -   普通表和分区表上不可以有动态数据脱敏，行访问控制约束。
-        -   列表分区表，哈希分区表不能是列存储。
-        -   List/Hash/Range类型分区表支持exchange_clause。
+      -   普通表和分区的列数目相同，对应列的信息严格一致，包括：列名、列的数据类型、列约束、列的Collation信息、列的存储参数、列的压缩信息等。
+      -   普通表和分区的表压缩信息严格一致。
+      -   普通表和分区的索引个数相同，且对应索引的信息严格一致。
+      -   普通表和分区的表约束个数相同，且对应表约束的信息严格一致。
+      -   普通表不可以是临时表，分区表只能是范围分区表，列表分区表，哈希分区表。
+      -   普通表和分区表上不可以有动态数据脱敏，行访问控制约束。
+      -   列表分区表，哈希分区表不能是列存储。
+      -   List/Hash/Range类型分区表支持exchange\_clause。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
-        >-   完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
-
-        >-   由于非分区键不能建立本地唯一索引，只能建立全局唯一索引，所以如果普通表含有唯一索引时，会导致不能交换数据。
-
-    -   row\_clause子语法用于设置分区表的行迁移开关。
-
+      >![](public_sys-resources/icon-notice.gif) **须知：** 
+      >
+  >-   完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
+    
+  >-   由于非分区键不能建立本地唯一索引，只能建立全局唯一索引，所以如果普通表含有唯一索引时，会导致不能交换数据。
+    
+-   row\_clause子语法用于设置分区表的行迁移开关。
+    
         ```
         { ENABLE | DISABLE } ROW MOVEMENT
-        ```
-
-    -   merge\_clause子语法用于把多个分区合并成一个分区。
-
+    ```
+    
+-   merge\_clause子语法用于把多个分区合并成一个分区。
+    
         ```
         MERGE PARTITIONS { partition_name } [, ...] INTO PARTITION partition_name 
             [ TABLESPACE tablespacename ] [ UPDATE GLOBAL INDEX ]
-        ```
-
-    -   modify\_clause子语法用于设置分区索引是否可用。
-
+    ```
+    
+-   modify\_clause子语法用于设置分区索引是否可用。
+    
         ```
         MODIFY PARTITION partition_name { UNUSABLE LOCAL INDEXES | REBUILD UNUSABLE LOCAL INDEXES }
-        ```
-
-    -   split\_clause子语法用于把一个分区切割成多个分区。
-
+    ```
+    
+-   split\_clause子语法用于把一个分区切割成多个分区。
+    
         ```
         SPLIT PARTITION { partition_name | FOR ( partition_value [, ...] ) } { split_point_clause | no_split_point_clause } [ UPDATE GLOBAL INDEX ]
+    ```
+    
+    - 指定切割点split\_point\_clause的语法为。
+    
+          ```
+          AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
+      ```
+    
+          >![](public_sys-resources/icon-notice.gif) **须知：** 
+      >
+      >-   列存分区表不支持切割分区。
+    
+      >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
+    
+    -   不指定切割点no\_split\_point\_clause的语法为。
+        
+            ```
+        INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
         ```
-
-        -   指定切割点split\_point\_clause的语法为。
-
-            ```
-            AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
-            ```
-
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
-            >-   列存分区表不支持切割分区。
-
-            >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
-
-        -   不指定切割点no\_split\_point\_clause的语法为。
-
-            ```
-            INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
-            ```
-
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
-            >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
-
-            >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
-
-            >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
-
+        
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >
+    >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
+        
+    >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
+        
+        >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
+            
             >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。
 
-
-        -   分区项partition\_less\_than\_item的语法为。
-
-            ```
-            PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
-                [ TABLESPACE tablespacename ]
-            ```
-
-        -   分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_li2094151861116)。
-
-            ```
-            PARTITION partition_name {
-                    {START(partition_value) END (partition_value) EVERY (interval_value)} |
-                    {START(partition_value) END ({partition_value | MAXVALUE})} |
-                    {START(partition_value)} |
-                    {END({partition_value | MAXVALUE})}
-            } [TABLESPACE tablespace_name]
-            
-            ```
-
-
-    -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
+  -   分区项partition\_less\_than\_item的语法为。
 
         ```
-        ADD PARTITION ( partition_col1_name = partition_col1_value [, partition_col2_name = partition_col2_value ] [, ...] )
-            [ LOCATION 'location1' ]
-            [ PARTITION (partition_colA_name = partition_colA_value [, partition_colB_name = partition_colB_value ] [, ...] ) ]
-            [ LOCATION 'location2' ]
-        ADD {partition_less_than_item | partition_start_end_item| partition_list_item }
-        ```
-
-        分区项partition\_list\_item的语法如下。
-
-        ```
-        PARTITION partition_name VALUES (list_values_clause) 
+        PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
             [ TABLESPACE tablespacename ]
         ```
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
-        >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
-
-        >-   间隔/哈希分区表不支持添加分区。
-
-
-    -   drop\_clause子语法用于删除分区表中的指定分区。
+    -   分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_li2094151861116)。
 
         ```
-        DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } [ UPDATE GLOBAL INDEX ]
-        ```
-
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
-        >-   哈希分区表不支持删除分区。
+        PARTITION partition_name {
+                {START(partition_value) END (partition_value) EVERY (interval_value)} |
+                {START(partition_value) END ({partition_value | MAXVALUE})} |
+                {START(partition_value)} |
+                {END({partition_value | MAXVALUE})}
+        } [TABLESPACE tablespace_name]
         
-        >-   列表分区表仅支持通过子分区名称删除子分区。
-
-
-    -   truncate\_clause子语法用于清空分区表中的指定分区。
-
-        ```
-        TRUNCATE PARTITION  { partition_name | FOR (  partition_value [, ...] )  } [ UPDATE GLOBAL INDEX ]
         ```
 
+ -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
 
+    ```
+    ADD PARTITION ( partition_col1_name = partition_col1_value [, partition_col2_name = partition_col2_value ] [, ...] )
+        [ LOCATION 'location1' ]
+        [ PARTITION (partition_colA_name = partition_colA_value [, partition_colB_name = partition_colB_value ] [, ...] ) ]
+        [ LOCATION 'location2' ]
+    ADD {partition_less_than_item | partition_start_end_item| partition_list_item }
+    ```
+
+    分区项partition\_list\_item的语法如下。
+
+    ```
+    PARTITION partition_name VALUES (list_values_clause) 
+        [ TABLESPACE tablespacename ]
+    ```
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
+    >-   间隔/哈希分区表不支持添加分区。
+
+-   drop\_clause子语法用于删除分区表中的指定分区。
+
+    ```
+    DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } [ UPDATE GLOBAL INDEX ]
+    ```
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >哈希分区表不支持删除分区。
+
+
+-   truncate\_clause子语法用于清空分区表中的指定分区。
+
+    ```
+    TRUNCATE PARTITION  { partition_name | FOR (  partition_value [, ...] )  } [ UPDATE GLOBAL INDEX ]
+    ```
+    
 -   修改表分区名称的语法。
 
     ```

@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_sdf7f29bdebc44178a9581f41f4257f09"></a>
 
-无。
+函数或存储过程的所有者、被授予了函数或存储过程EXECUTE权限的用户或被授予EXECUTE ANY FUNCTION权限的用户有权调用函数或存储过程，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_sdf8eb47ae3d945fea7582a7753cdd985"></a>
 
@@ -20,7 +20,7 @@ CALL [schema.|package.] {func_name| procedure_name} ( param_expr );
 
     函数或存储过程所在的模式名称。
 
--   package
+-   **package**
 
     函数或存储过程所在的package名称。
 

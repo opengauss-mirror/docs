@@ -1,8 +1,8 @@
 # Schemas<a name="EN-US_TOPIC_0000001190922647"></a>
 
-The following table describes the schemas of .
+The following table describes the schemas of openGauss.
 
-**Table  1**  Schemas supported by 
+**Table  1**  Schemas supported by openGauss 
 
 <a name="table167371825175015"></a>
 <table><thead align="left"><tr id="row1737325195017"><th class="cellrowborder" valign="top" width="18.18%" id="mcps1.2.3.1.1"><p id="p2737152535018"><a name="p2737152535018"></a><a name="p2737152535018"></a>Schema</p>
@@ -43,7 +43,7 @@ The following table describes the schemas of .
 </tr>
 <tr id="row14888175410588"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p12888125417587"><a name="p12888125417587"></a><a name="p12888125417587"></a>sqladvisor</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p168881754115817"><a name="p168881754115817"></a><a name="p168881754115817"></a>Is used for distribution column recommendation and is unavailable in .</p>
+<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p168881754115817"><a name="p168881754115817"></a><a name="p168881754115817"></a>Is used for distribution column recommendation and is unavailable in openGauss .</p>
 </td>
 </tr>
 <tr id="row1352310259568"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p85233259564"><a name="p85233259564"></a><a name="p85233259564"></a>pg_catalog</p>

@@ -21,25 +21,28 @@
 -   列存表支持的PSORT和B-tree索引都不支持创建表达式索引、部分索引，PSORT不支持创建唯一索引，B-tree支持创建唯一索引。
 -   列存表支持的GIN索引支持创建表达式索引，但表达式不能包含空分词、空列和多列，不支持创建部分索引和唯一索引。
 -   HASH索引目前仅限于行存表索引、临时表索引和分区表LOCAL索引，且不支持创建多字段索引。
+-   被授予CREATE ANY INDEX权限的用户，可以在public模式和用户模式下创建索引。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
--   在表上创建索引。
+- 在表上创建索引。
 
-    ```
-    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-        [ TABLESPACE tablespace_name ]
-        [ WHERE predicate ];
-    ```
+  ```
+  CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
+      ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
+      [ INCLUDE ( column_name [, ...] )]    
+      [ WITH ( {storage_parameter = value} [, ... ] ) ]
+      [ TABLESPACE tablespace_name ]
+      [ WHERE predicate ];
+  ```
 
 -   在分区表上创建索引。
 
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
-        [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ];
     ```
@@ -161,6 +164,16 @@
 
     指定创建的分区索引为GLOBAL索引，当不指定LOCAL、GLOBAL关键字时，默认创建GLOBAL索引。
 
+- **INCLUDE  \( column\_name \[, ...\]**  \)
+
+  可选的 INCLUDE 子句指定将一些非键列（non-key columns）包含在索引中。非键列不能用于作为索引扫描的加速搜索条件，同时在检查索引的唯一性约束时会忽略它们。
+
+  仅索引扫描 \(Index Only Scan\) 可以直接返回非键列中的内容，而不必去访问索引所对应的堆表。
+
+  将非键列添加为 INCLUDE 列需要保守一些，尤其是对于宽列。如果索引元组超过索引类型允许的最大大小，数据将插入失败。需要注意的是，任何情况下为索引添加非键列都会增加索引的空间占用，从而可能减慢搜索速度。
+
+  目前只有ubtree索引访问方式支持该特性。非键列会被保存在与堆元组对应的索引叶子元组中，不会包含在索引上层页面的元组中。
+
 - **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
   指定索引方法的存储参数。
@@ -210,7 +223,7 @@
 
     创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
 
-    取值范围：predicate表达式只能引用表的字段，它可以使用所有字段，而不仅是被索引的字段。目前，子查询和聚集表达式不能出现在WHERE子句里。
+    取值范围：predicate表达式只能引用表的字段，它可以使用所有字段，而不仅是被索引的字段。目前，子查询和聚集表达式不能出现在WHERE子句里。不建议使用int等数值类型作为predicate，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
 
 -   **PARTITION index\_partition\_name**
 
@@ -218,6 +231,12 @@
 
     取值范围：字符串，要符合标识符的命名规范。
 
+-   **SUBPARTITION index\_subpartition\_name**
+
+    索引二级分区的名称。
+
+    取值范围：字符串，要符合标识符的命名规范
+    
 -   **TABLESPACE index\_partition\_tablespace**
 
     索引分区的表空间。

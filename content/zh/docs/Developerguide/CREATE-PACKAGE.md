@@ -17,8 +17,11 @@
 -   只支持A风格的存储过程和函数定义。
 -   不支持package内有同名变量，包括包内同名参数。
 -   package的全局变量为session级，不同session之间package的变量不共享。
--   package中调用自治事务的函数，不允许使用公有变量，以及递归的使用公有变量的函数。
--   package中不支持声明ref cursor类型。
+-   package中调用自治事务的函数，不允许使用package中的cursor变量，以及递归的使用package中cursor变量的函数。
+-   package中不支持声明ref cursor变量。
+-   package默认为SECURITY INVOKER权限，如果想将默认行为改为SECURITY DEFINER权限，需要设置guc参数behavior\_compat\_options='plsql\_security\_definer'。
+-   被授予CREATE ANY PACKAGE权限的用户，可以在public模式和用户模式下创建PACKAGE。
+-   如果需要创建带有特殊字符的package名，特殊字符中不能含有空格，并且最好设置GUC参数behavior\_compat\_options="skip\_insert\_gs\_source",否则可能引起报错。
 
 ## 语法格式<a name="section4157123095714"></a>
 
@@ -80,4 +83,10 @@
     /
     ```
 
+- ALTER PACKAGE OWNER示例
+
+  ```
+  ALTER PACKAGE emp_bonus OWNER TO omm;
+  --将PACKAGE emp_bonus的所属者改为omm
+  ```
 
