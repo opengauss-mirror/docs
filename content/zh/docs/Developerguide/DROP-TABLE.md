@@ -7,13 +7,13 @@
 ## 注意事项<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_sdcf8f26a27a64e52b7099ca3ce0256b6"></a>
 
 -   DROP TABLE会强制删除指定的表，删除表后，依赖该表的索引会被删除，而使用到该表的函数和存储过程将无法执行。删除分区表，会同时删除分区表中的所有分区。
--   只有表的所有者或者被授予了表的DROP权限的用户才能执行DROP TABLE，系统管理员默认拥有该权限。
+-   表的所有者、被授予了表的DROP权限的用户或被授予DROP ANY TABLE权限的用户，有权删除指定表 ，系统管理员默认拥有该权限。
 
 ## 语法格式<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s6fa866d73d5c4158836c9fdd0ad5b3ac"></a>
 
 ```
 DROP TABLE [ IF EXISTS ] 
-    { [schema.]table_name } [, ...] [ CASCADE | RESTRICT ];
+    { [schema.]table_name } [, ...] [ CASCADE | RESTRICT ] [ PURGE ]};
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_sa6ea557919e84c0db8ed5cbb227fa983"></a>
