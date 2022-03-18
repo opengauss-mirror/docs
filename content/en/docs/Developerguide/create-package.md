@@ -66,7 +66,7 @@
     create or replace package body emp_bonus is
     var3 int:=3;
     var4 int:=4;
-    procedure testpro1(var5 int)
+    procedure testpro1(var3 int)
     is
     begin
     create table if not exists test1(col1 int);
