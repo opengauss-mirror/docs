@@ -44,7 +44,7 @@
     If information similar to the following is displayed, the connection succeeds:
 
     ```
-    gsql ((GaussDB Kernel VxxxRxxxCxx build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
+    gsql ((openGauss x.x.x build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
