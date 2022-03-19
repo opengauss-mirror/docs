@@ -17,7 +17,7 @@ PG\_APP\_WORKLOADGROUP\_MAPPING系统表提供了数据库负载映射组的信�
 </td>
 <td class="cellrowborder" valign="top" width="22.472247224722473%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p933221142810"><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p933221142810"></a><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p933221142810"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.504950495049506%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p233212112283"><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p233212112283"></a><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p233212112283"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="49.504950495049506%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p233212112283"><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p233212112283"></a><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_p233212112283"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136910_zh-cn_topic_0237122270_zh-cn_topic_0059777861_r6654a13545f54b738317d9e12ca74adb"><td class="cellrowborder" valign="top" width="28.02280228022802%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136910_zh-cn_topic_0237122270_zh-cn_topic_0059777861_a6a0a5d02d1b84db5a86db0b6e5d36a2e"><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_zh-cn_topic_0059777861_a6a0a5d02d1b84db5a86db0b6e5d36a2e"></a><a name="zh-cn_topic_0283136910_zh-cn_topic_0237122270_zh-cn_topic_0059777861_a6a0a5d02d1b84db5a86db0b6e5d36a2e"></a>appname</p>

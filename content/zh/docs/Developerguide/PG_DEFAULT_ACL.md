@@ -17,7 +17,7 @@ PG\_DEFAULT\_ACL系统表存储为新建对象设置的初始权限。
 </td>
 <td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p11820329155215"><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p11820329155215"></a><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p11820329155215"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p182022935215"><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p182022935215"></a><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p182022935215"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="53.36%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p182022935215"><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p182022935215"></a><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_p182022935215"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136652_zh-cn_topic_0237122283_zh-cn_topic_0059777906_r621c14f0ad3b4f32a76050a63855c760"><td class="cellrowborder" valign="top" width="29.720000000000002%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136652_zh-cn_topic_0237122283_zh-cn_topic_0059777906_a394db9d33c274c88a81003bb704c8d60"><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_zh-cn_topic_0059777906_a394db9d33c274c88a81003bb704c8d60"></a><a name="zh-cn_topic_0283136652_zh-cn_topic_0237122283_zh-cn_topic_0059777906_a394db9d33c274c88a81003bb704c8d60"></a>defaclrole</p>
@@ -51,4 +51,5 @@ PG\_DEFAULT\_ACL系统表存储为新建对象设置的初始权限。
 </tr>
 </tbody>
 </table>
+
 

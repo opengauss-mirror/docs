@@ -17,7 +17,7 @@ GS\_MODEL\_WAREHOUSE系统表用于存储AI引擎训练模型，其中包含模�
 </td>
 <td class="cellrowborder" valign="top" width="33.273327332733274%" headers="mcps1.2.4.1.2 "><p id="p5284184391017"><a name="p5284184391017"></a><a name="p5284184391017"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.2.4.1.3 "><p id="p4284184312104"><a name="p4284184312104"></a><a name="p4284184312104"></a>隐藏列。</p>
+<td class="cellrowborder" valign="top" width="33.39333933393339%" headers="mcps1.2.4.1.3 "><p id="p4284184312104"><a name="p4284184312104"></a><a name="p4284184312104"></a>隐含列。</p>
 </td>
 </tr>
 <tr id="row1128404361010"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p1528564315107"><a name="p1528564315107"></a><a name="p1528564315107"></a>modelname</p>
@@ -176,4 +176,5 @@ GS\_MODEL\_WAREHOUSE系统表用于存储AI引擎训练模型，其中包含模�
 </tr>
 </tbody>
 </table>
+
 

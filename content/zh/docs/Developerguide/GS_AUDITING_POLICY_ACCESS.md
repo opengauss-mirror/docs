@@ -17,7 +17,7 @@ GS\_AUDITING\_POLICY\_ACCESS系统表记录与DML数据库相关操作的统一�
 </td>
 <td class="cellrowborder" valign="top" width="32.86328632863286%" headers="mcps1.2.4.1.2 "><p id="p630116262144"><a name="p630116262144"></a><a name="p630116262144"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.734973497349735%" headers="mcps1.2.4.1.3 "><p id="p14301172611419"><a name="p14301172611419"></a><a name="p14301172611419"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="49.734973497349735%" headers="mcps1.2.4.1.3 "><p id="p14301172611419"><a name="p14301172611419"></a><a name="p14301172611419"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="row1146094213529"><td class="cellrowborder" valign="top" width="17.401740174017398%" headers="mcps1.2.4.1.1 "><p id="p1236651611535"><a name="p1236651611535"></a><a name="p1236651611535"></a>accesstype</p>

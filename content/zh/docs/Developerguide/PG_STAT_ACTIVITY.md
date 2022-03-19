@@ -66,7 +66,7 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </td>
 <td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0df2ee40bb4b4f578835cdf7e533b600"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0df2ee40bb4b4f578835cdf7e533b600"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0df2ee40bb4b4f578835cdf7e533b600"></a>inet</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ae502af22046347fdb04acde911e56770"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ae502af22046347fdb04acde911e56770"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ae502af22046347fdb04acde911e56770"></a>连接到该后台的客户端的IP地址。如果此字段是null，它表明通过服务器机器上UNIX套接字连接客户端或者这是内部进程，如autovacuum。</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ae502af22046347fdb04acde911e56770"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ae502af22046347fdb04acde911e56770"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ae502af22046347fdb04acde911e56770"></a>连接到该后台的客户端的IP地址。 如果此字段是null，它表明通过服务器机器上UNIX套接字连接客户端或者这是内部进程，如autovacuum。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_r674785086fc446f6b472225c4f45681d"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ad8296c5dcf504a70ba3f0616dbfee4b0"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ad8296c5dcf504a70ba3f0616dbfee4b0"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_ad8296c5dcf504a70ba3f0616dbfee4b0"></a>client_hostname</p>
@@ -101,7 +101,7 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </td>
 <td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a87c322c7c720487e846ca7f1ee098420"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a87c322c7c720487e846ca7f1ee098420"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a87c322c7c720487e846ca7f1ee098420"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a076a2774541b40bf82ebb09a9fb85b95"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a076a2774541b40bf82ebb09a9fb85b95"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a076a2774541b40bf82ebb09a9fb85b95"></a>开始当前活跃查询的时间，如果state的值不是active，则这个值是上一个查询的开始时间。</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a076a2774541b40bf82ebb09a9fb85b95"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a076a2774541b40bf82ebb09a9fb85b95"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a076a2774541b40bf82ebb09a9fb85b95"></a>开始当前活跃查询的时间， 如果state的值不是active，则这个值是上一个查询的开始时间。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_row53787245015"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_p123781246012"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_p123781246012"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_p123781246012"></a>state_change</p>
@@ -113,7 +113,7 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </tr>
 <tr id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_r4b774825fd364d8e81cc2b5cd234a24a"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a>waiting</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><span id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_text11865125317305"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_text11865125317305"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_text11865125317305"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><span id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_text11865125317305"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_text11865125317305"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_text11865125317305"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_zh-cn_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a>如果后台当前正等待锁则为true。</p>
 </td>
@@ -170,10 +170,25 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </td>
 <td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a>json格式字符串，记录当前连接数据库的驱动类型、驱动版本号、当前驱动的部署路径、进程属主用户等信息（参见<a href="连接设置.md">connection_info</a>）。</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a>json格式字符串，记录当前连接数据库的驱动类型、驱动版本号、当前驱动的部署路径、进程属主用户等信息（参见<a href="zh-cn_topic_0289900801.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）。</p>
+</td>
+</tr>
+<tr id="row1275719812594"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="p16757128145914"><a name="p16757128145914"></a><a name="p16757128145914"></a>unique_sql_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="p4757886592"><a name="p4757886592"></a><a name="p4757886592"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1375711855916"><a name="p1375711855916"></a><a name="p1375711855916"></a>语句的unique sql id。</p>
+</td>
+</tr>
+<tr id="row613624911370"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="p213618490375"><a name="p213618490375"></a><a name="p213618490375"></a>trace_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="p113616495372"><a name="p113616495372"></a><a name="p113616495372"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1136249163716"><a name="p1136249163716"></a><a name="p1136249163716"></a>驱动传入的trace id，与应用的一次请求相关联。</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 

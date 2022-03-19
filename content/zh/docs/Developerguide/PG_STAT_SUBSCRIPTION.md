@@ -20,11 +20,11 @@
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p18265121155819"><a name="p18265121155819"></a><a name="p18265121155819"></a>订阅的OID。</p>
 </td>
 </tr>
-<tr id="row18265122112589"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p10266192110581"><a name="p10266192110581"></a><a name="p10266192110581"></a>relid</p>
+<tr id="row18265122112589"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p10266192110581"><a name="p10266192110581"></a><a name="p10266192110581"></a>subname</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p112668213583"><a name="p112668213583"></a><a name="p112668213583"></a>oid</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p112668213583"><a name="p112668213583"></a><a name="p112668213583"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p62668215588"><a name="p62668215588"></a><a name="p62668215588"></a>表OID。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p62668215588"><a name="p62668215588"></a><a name="p62668215588"></a>订阅的名称。</p>
 </td>
 </tr>
 <tr id="row226611211581"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p72665217583"><a name="p72665217583"></a><a name="p72665217583"></a>pid</p>

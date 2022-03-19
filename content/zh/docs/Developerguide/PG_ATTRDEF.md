@@ -17,7 +17,7 @@ PG\_ATTRDEF系统表存储列的默认值。
 </td>
 <td class="cellrowborder" valign="top" width="15.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p568835119292"><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p568835119292"></a><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p568835119292"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p6688105102911"><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p6688105102911"></a><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p6688105102911"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p6688105102911"><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p6688105102911"></a><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_p6688105102911"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137566_zh-cn_topic_0237122271_zh-cn_topic_0059778317_r11c438769e5547968e57022284fc33d0"><td class="cellrowborder" valign="top" width="11.98%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137566_zh-cn_topic_0237122271_zh-cn_topic_0059778317_a7eb371104f1349caa4046b54ee1083b4"><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_zh-cn_topic_0059778317_a7eb371104f1349caa4046b54ee1083b4"></a><a name="zh-cn_topic_0283137566_zh-cn_topic_0237122271_zh-cn_topic_0059778317_a7eb371104f1349caa4046b54ee1083b4"></a>adrelid</p>
@@ -50,7 +50,7 @@ PG\_ATTRDEF系统表存储列的默认值。
 </tr>
 <tr id="row182312541512"><td class="cellrowborder" valign="top" width="11.98%" headers="mcps1.2.4.1.1 "><p id="p13823135411113"><a name="p13823135411113"></a><a name="p13823135411113"></a>adgencol</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.14%" headers="mcps1.2.4.1.2 "><p id="p282311541917"><a name="p282311541917"></a><a name="p282311541917"></a>char</p>
+<td class="cellrowborder" valign="top" width="15.14%" headers="mcps1.2.4.1.2 "><p id="p282311541917"><a name="p282311541917"></a><a name="p282311541917"></a>"char"</p>
 </td>
 <td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="p4823185417115"><a name="p4823185417115"></a><a name="p4823185417115"></a>标识该列是否为生成列。取值为's'表示该列为生成列，取值为'\0'表示该列为普通列，默认值为'\0'。</p>
 </td>
