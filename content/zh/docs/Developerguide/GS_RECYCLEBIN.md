@@ -68,7 +68,7 @@ gs\_recyclebin描述了回收站对象的详细信息。
 <td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p824923713529"><a name="p824923713529"></a><a name="p824923713529"></a>int</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.9%" headers="mcps1.2.4.1.3 "><p id="p72496378525"><a name="p72496378525"></a><a name="p72496378525"></a>对象类型。</p>
-<a name="ul182491437115217"></a><a name="ul182491437115217"></a><ul id="ul182491437115217"><li>0表示table。</li><li>1表示index。</li><li>2表示toast table。</li><li>3表示toast index。</li><li>4表示sequence，指serial、bigserial类型自动关联的序列对象。</li></ul>
+<a name="ul182491437115217"></a><a name="ul182491437115217"></a><ul id="ul182491437115217"><li>0表示table。</li><li>1表示index。</li><li>2表示toast table。</li><li>3表示toast index。</li><li>4表示sequence，指serial、bigserial、smallserial、largeserial类型自动关联的序列对象。</li><li>5表示partition。</li><li>6表示global index。</li></ul>
 </td>
 </tr>
 <tr id="row172491037175215"><td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.4.1.1 "><p id="p10249123715213"><a name="p10249123715213"></a><a name="p10249123715213"></a>rcyrecyclecsn</p>
@@ -157,4 +157,5 @@ gs\_recyclebin描述了回收站对象的详细信息。
 </tr>
 </tbody>
 </table>
+
 

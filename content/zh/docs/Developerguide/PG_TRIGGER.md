@@ -17,7 +17,7 @@ PG\_TRIGGER系统表存储触发器信息。
 </td>
 <td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p545374395611"><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p545374395611"></a><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p545374395611"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p14533434568"><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p14533434568"></a><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p14533434568"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p14533434568"><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p14533434568"></a><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_p14533434568"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136871_zh-cn_topic_0237122321_zh-cn_topic_0059778876_rc04470ec89ab4e34b008953f48b78340"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136871_zh-cn_topic_0237122321_zh-cn_topic_0059778876_a643b8069aeef454794eaf0b59ae1a994"><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_zh-cn_topic_0059778876_a643b8069aeef454794eaf0b59ae1a994"></a><a name="zh-cn_topic_0283136871_zh-cn_topic_0237122321_zh-cn_topic_0059778876_a643b8069aeef454794eaf0b59ae1a994"></a>tgrelid</p>

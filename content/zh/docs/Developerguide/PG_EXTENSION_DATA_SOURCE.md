@@ -21,7 +21,7 @@ PG\_EXTENSION\_DATA\_SOURCE系统表存储外部数据源对象的信息。一�
 </td>
 <td class="cellrowborder" valign="top" width="20.19%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p031339121912"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p031339121912"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p031339121912"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.82%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p23116392197"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p23116392197"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p23116392197"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="42.82%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p23116392197"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p23116392197"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p23116392197"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_row03685511914"><td class="cellrowborder" valign="top" width="18.9%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p19368653917"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p19368653917"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p19368653917"></a>srcname</p>

@@ -17,7 +17,7 @@ PG\_DATABASE系统表存储关于可用数据库的信息。
 </td>
 <td class="cellrowborder" valign="top" width="16.71%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p262823011619"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p262823011619"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p262823011619"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.52%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p146281530171615"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p146281530171615"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p146281530171615"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="57.52%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p146281530171615"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p146281530171615"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_p146281530171615"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_zh-cn_topic_0059779014_r853203f321104824877b21c373da4dc3"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137612_zh-cn_topic_0237122281_zh-cn_topic_0059779014_a6173c6cafd2b4f438ec262ecf8b77d10"><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_zh-cn_topic_0059779014_a6173c6cafd2b4f438ec262ecf8b77d10"></a><a name="zh-cn_topic_0283137612_zh-cn_topic_0237122281_zh-cn_topic_0059779014_a6173c6cafd2b4f438ec262ecf8b77d10"></a>datname</p>

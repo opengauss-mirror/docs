@@ -17,7 +17,7 @@ GS\_AUDITING\_POLICY\_FILTERS系统表记录统一审计相关的过滤策略相
 </td>
 <td class="cellrowborder" valign="top" width="26.38263826382638%" headers="mcps1.2.4.1.2 "><p id="p53581040101412"><a name="p53581040101412"></a><a name="p53581040101412"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.374537453745376%" headers="mcps1.2.4.1.3 "><p id="p43585408143"><a name="p43585408143"></a><a name="p43585408143"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="45.374537453745376%" headers="mcps1.2.4.1.3 "><p id="p43585408143"><a name="p43585408143"></a><a name="p43585408143"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.24282428242824%" headers="mcps1.2.4.1.1 "><p id="p1236651611535"><a name="p1236651611535"></a><a name="p1236651611535"></a>filtertype</p>
@@ -57,4 +57,5 @@ GS\_AUDITING\_POLICY\_FILTERS系统表记录统一审计相关的过滤策略相
 </tr>
 </tbody>
 </table>
+
 

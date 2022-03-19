@@ -17,7 +17,7 @@ PG\_RLSPOLICY系统表存储行级访问控制策略。
 </td>
 <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p297144213488"><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p297144213488"></a><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p297144213488"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p182489124916"><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p182489124916"></a><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p182489124916"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="63.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p182489124916"><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p182489124916"></a><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_p182489124916"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137251_zh-cn_topic_0237122312_zh-cn_topic_0059778223_r5f1c714f90df45d0b77f4c60fda46312"><td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137251_zh-cn_topic_0237122312_zh-cn_topic_0059778223_a6f6dd5245c50486bb045996c8f1bd60a"><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_zh-cn_topic_0059778223_a6f6dd5245c50486bb045996c8f1bd60a"></a><a name="zh-cn_topic_0283137251_zh-cn_topic_0237122312_zh-cn_topic_0059778223_a6f6dd5245c50486bb045996c8f1bd60a"></a>polname</p>

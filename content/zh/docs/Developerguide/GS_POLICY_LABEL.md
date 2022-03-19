@@ -19,7 +19,7 @@ FQDN（Fully Qualified Domain Name）标识了数据库资源所属的绝对路�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p163731551191515"><a name="p163731551191515"></a><a name="p163731551191515"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p17373105191516"><a name="p17373105191516"></a><a name="p17373105191516"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p17373105191516"><a name="p17373105191516"></a><a name="p17373105191516"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p497463145916"><a name="p497463145916"></a><a name="p497463145916"></a>labelname</p>
@@ -66,3 +66,4 @@ FQDN（Fully Qualified Domain Name）标识了数据库资源所属的绝对路�
 </tr>
 </tbody>
 </table>
+

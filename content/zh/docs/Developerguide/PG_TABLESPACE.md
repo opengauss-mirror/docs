@@ -17,7 +17,7 @@ PG\_TABLESPACE系统表存储表空间信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p2820172911559"><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p2820172911559"></a><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p2820172911559"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p282092919551"><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p282092919551"></a><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p282092919551"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p282092919551"><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p282092919551"></a><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_p282092919551"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136645_zh-cn_topic_0237122320_zh-cn_topic_0059778876_rc04470ec89ab4e34b008953f48b78340"><td class="cellrowborder" valign="top" width="22.759999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136645_zh-cn_topic_0237122320_zh-cn_topic_0059778876_a643b8069aeef454794eaf0b59ae1a994"><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_zh-cn_topic_0059778876_a643b8069aeef454794eaf0b59ae1a994"></a><a name="zh-cn_topic_0283136645_zh-cn_topic_0237122320_zh-cn_topic_0059778876_a643b8069aeef454794eaf0b59ae1a994"></a>spcname</p>

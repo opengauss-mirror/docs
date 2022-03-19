@@ -17,7 +17,7 @@ PG\_CAST系统表存储数据类型之间的转化关系。
 </td>
 <td class="cellrowborder" valign="top" width="17.91%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p54792395013"><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p54792395013"></a><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p54792395013"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.629999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p204797391908"><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p204797391908"></a><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p204797391908"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="63.629999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p204797391908"><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p204797391908"></a><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_p204797391908"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_r943e4805fe20462788a95930158b138c"><td class="cellrowborder" valign="top" width="18.459999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_ae4f12d8091bf4b249ce83ac47b5d72a3"><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_ae4f12d8091bf4b249ce83ac47b5d72a3"></a><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_ae4f12d8091bf4b249ce83ac47b5d72a3"></a>castsource</p>

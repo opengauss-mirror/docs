@@ -17,7 +17,7 @@ PG\_RESOURCE\_POOL系统表提供了数据库资源池的信息。
 </td>
 <td class="cellrowborder" valign="top" width="15.35153515351535%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.95639563956396%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p0334429173619"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p0334429173619"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p0334429173619"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="63.95639563956396%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p0334429173619"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p0334429173619"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p0334429173619"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_zh-cn_topic_0059777874_r17b80fbdda4642dfa8bf3039d2ff903e"><td class="cellrowborder" valign="top" width="20.692069206920692%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_zh-cn_topic_0059777874_a6cc33764812941778b923e3d9224dc0c"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_zh-cn_topic_0059777874_a6cc33764812941778b923e3d9224dc0c"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_zh-cn_topic_0059777874_a6cc33764812941778b923e3d9224dc0c"></a>respool_name</p>
@@ -113,4 +113,5 @@ PG\_RESOURCE\_POOL系统表提供了数据库资源池的信息。
 </tr>
 </tbody>
 </table>
+
 注：max_dop和max_worker用户扩容，不适用于openGauss。

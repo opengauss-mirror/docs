@@ -1,6 +1,6 @@
 # PG\_STAT\_ACTIVITY\_NG<a name="ZH-CN_TOPIC_0000001197514779"></a>
 
-PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑集群下，所有查询的相关信息。
+PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑数据库实例下，所有查询的相关信息。
 
 **表 1**  PG\_STAT\_ACTIVITY\_NG字段
 
@@ -39,13 +39,6 @@ PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑集群下，所�
 <td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="p760535291917"><a name="p760535291917"></a><a name="p760535291917"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p76051452111911"><a name="p76051452111911"></a><a name="p76051452111911"></a>会话ID。</p>
-</td>
-</tr>
-<tr id="row4252315191319"><td class="cellrowborder" valign="top" width="33.269999999999996%" headers="mcps1.2.4.1.1 "><p id="p182521515201319"><a name="p182521515201319"></a><a name="p182521515201319"></a>global_sessionid</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="p142527154134"><a name="p142527154134"></a><a name="p142527154134"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p025216154134"><a name="p025216154134"></a><a name="p025216154134"></a>全局会话ID。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0059777972_r60579e8eaaf24f51920527f6aaf90092"><td class="cellrowborder" valign="top" width="33.269999999999996%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777972_a91bbca399b6d43499bbbac8b4c16fdf6"><a name="zh-cn_topic_0059777972_a91bbca399b6d43499bbbac8b4c16fdf6"></a><a name="zh-cn_topic_0059777972_a91bbca399b6d43499bbbac8b4c16fdf6"></a>usesysid</p>
@@ -120,7 +113,7 @@ PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑集群下，所�
 </tr>
 <tr id="zh-cn_topic_0059777972_r4b774825fd364d8e81cc2b5cd234a24a"><td class="cellrowborder" valign="top" width="33.269999999999996%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"><a name="zh-cn_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a><a name="zh-cn_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a>waiting</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><span id="text19133555133014"><a name="text19133555133014"></a><a name="text19133555133014"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="zh-cn_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><span id="text19133555133014"><a name="text19133555133014"></a><a name="text19133555133014"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"><a name="zh-cn_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a><a name="zh-cn_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a>如果后台当前正等待锁则为true。否则为false。</p>
 </td>
@@ -178,7 +171,7 @@ PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑集群下，所�
 </td>
 <td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="p1412065518316"><a name="p1412065518316"></a><a name="p1412065518316"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1612017551314"><a name="p1612017551314"></a><a name="p1612017551314"></a>语句所属用户对应的逻辑集群。</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1612017551314"><a name="p1612017551314"></a><a name="p1612017551314"></a>语句所属用户对应的逻辑数据库实例。</p>
 </td>
 </tr>
 </tbody>

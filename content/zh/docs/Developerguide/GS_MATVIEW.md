@@ -17,7 +17,7 @@ GS\_MATVIEW系统表提供了关于数据库中每一个物化视图的信息。
 </td>
 <td class="cellrowborder" valign="top" width="20.77%" headers="mcps1.2.4.1.2 "><p id="p53581040101412"><a name="p53581040101412"></a><a name="p53581040101412"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.07%" headers="mcps1.2.4.1.3 "><p id="p1383513269218"><a name="p1383513269218"></a><a name="p1383513269218"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="59.07%" headers="mcps1.2.4.1.3 "><p id="p1383513269218"><a name="p1383513269218"></a><a name="p1383513269218"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_rf7c766cddff0407bb805393c013b902a"><td class="cellrowborder" valign="top" width="20.16%" headers="mcps1.2.4.1.1 "><p id="p250910823410"><a name="p250910823410"></a><a name="p250910823410"></a>matviewid</p>

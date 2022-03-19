@@ -17,7 +17,7 @@ PG\_WORKLOAD\_GROUP系统表提供了数据库负载组的信息。
 </td>
 <td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p1268675912506"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p1268675912506"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p1268675912506"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="59.28%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_p9687195917508"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_ra264416a2ea9459eb3b51dd35fd98150"><td class="cellrowborder" valign="top" width="25.39%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_a2bf87486120041c3a4271efe55173fc2"><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_a2bf87486120041c3a4271efe55173fc2"></a><a name="zh-cn_topic_0283136994_zh-cn_topic_0237122330_zh-cn_topic_0059779104_a2bf87486120041c3a4271efe55173fc2"></a>workload_gpname</p>
