@@ -219,7 +219,7 @@ gs_restore [OPTION]... FILE
 
     该选项只有在直接导入到某数据库中时有效，不针对生成SQL脚本文件输出。
 
--   l --no-publications
+-   --no-publications
 
     不导入发布。
 
@@ -267,7 +267,7 @@ gs_restore [OPTION]... FILE
 
 
 
-连接参数：
+### 连接参数：
 
 -   -h, --host=HOSTNAME
 

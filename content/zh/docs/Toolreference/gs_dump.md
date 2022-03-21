@@ -365,15 +365,15 @@ export PGDATABASE=postgres
 
     该参数为扩展预留接口，不建议使用。
 
+-   --no-subscriptions
+
+    不转储订阅。
+
 -   --no-tablespaces
 
     不输出选择表空间的命令。使用该选项，无论默认表空间是哪个，在恢复过程中所有对象都会被创建。
 
     该选项只对文本格式有意义。针对归档格式，可以在调用gs\_restore时指定选项。
-
--   --no-subscriptions
-
-    不转储订阅。
 
 -   --no-unlogged-table-data
 
