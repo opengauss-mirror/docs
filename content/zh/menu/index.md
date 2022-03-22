@@ -1,4 +1,4 @@
----
+﻿---
 headless: true
 ---
 
@@ -94,6 +94,7 @@ headless: true
 		-   [支持存储过程调试]({{< relref "./docs/CharacteristicDescription/支持存储过程调试.md" >}})
 		-   [JDBC客户端负载均衡与读写分离]({{< relref "./docs/CharacteristicDescription/JDBC客户端负载均衡与读写分离.md" >}})
 		-   [In-place Update存储引擎]({{< relref "./docs/CharacteristicDescription/In-place-Update存储引擎.md" >}})
+		-   [发布订阅]({{< relref "./docs/CharacteristicDescription/发布订阅.md" >}})
 	-   [应用开发接口]({{< relref "./docs/CharacteristicDescription/应用开发接口.md" >}})
 		-   [支持标准SQL]({{< relref "./docs/CharacteristicDescription/支持标准SQL.md" >}})
 		-   [支持标准开发接口]({{< relref "./docs/CharacteristicDescription/支持标准开发接口.md" >}})
@@ -1511,6 +1512,16 @@ headless: true
         -   [逻辑解码]({{< relref "./docs/Developerguide/逻辑解码.md" >}})
             -   [逻辑解码概述]({{< relref "./docs/Developerguide/逻辑解码概述.md" >}})
             -   [使用SQL函数接口进行逻辑解码]({{< relref "./docs/Developerguide/使用SQL函数接口进行逻辑解码.md" >}})	
+        -   [发布订阅]({{< relref "./docs/Developerguide/发布订阅.md" >}})
+            -   [发布]({{< relref "./docs/Developerguide/发布.md" >}})
+            -   [订阅]({{< relref "./docs/Developerguide/订阅.md" >}})
+            -   [冲突处理]({{< relref "./docs/Developerguide/冲突处理.md" >}})
+            -   [限制]({{< relref "./docs/Developerguide/限制.md" >}})
+            -   [架构]({{< relref "./docs/Developerguide/架构.md" >}})
+            -   [监控]({{< relref "./docs/Developerguide/监控.md" >}})
+            -   [安全性]({{< relref "./docs/Developerguide/安全性.md" >}})
+            -   [配置设置]({{< relref "./docs/Developerguide/配置设置.md" >}})
+            -   [快速设置]({{< relref "./docs/Developerguide/快速设置.md" >}})
     -   [Foreign Data Wrapper]({{< relref "./docs/Developerguide/Foreign-Data-Wrapper.md" >}})
         -   [用于Oracle的外部数据包装器]({{< relref "./docs/Developerguide/用于Oracle的外部数据包装器.md" >}})
         -   [mysql_fdw]({{< relref "./docs/Developerguide/mysql_fdw.md" >}})
