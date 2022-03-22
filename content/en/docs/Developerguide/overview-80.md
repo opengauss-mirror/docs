@@ -2,7 +2,7 @@
 
 ## Background<a name="section129831239555"></a>
 
-The ledger database, which integrates a blockchain idea, records a user operation in two types of historical tables: a user history table and a global blockchain table. When a user creates a tamper-proof user table, the system automatically adds a hash column to the table to save the hash summary of each row of data. In blockchain mode, a user history table is created to record the change behavior of each data record in the user table. The user's modification to the tamper-proof user table will be recorded in the global blockchain table. Because the history table can only be appended and cannot be modified, the records in the history table are connected to form the modification history of the tamper-proof user table.
+The ledger database, which integrates a blockchain idea, records a user operation in two types of historical tables: a user history table and a global blockchain table. When a user creates a tamper-proof user table, the system automatically adds a hash column to the table to save the hash summary of each row of data. In blockchain schema, a user history table is created to record the change behavior of each data record in the user table. The user's modification to the tamper-proof user table will be recorded in the global blockchain table. Because the history table can only be appended and cannot be modified, the records in the history table are connected to form the modification history of the tamper-proof user table.
 
 The name and structure of the user history table are as follows:
 
@@ -84,15 +84,15 @@ The name and structure of the user history table are as follows:
 
 ## Procedure<a name="section1993385411913"></a>
 
-1.  Create a schema in tamper-proof mode.
+1.  Create a schema in tamper-proof schema.
 
-    For example, create  **ledgernsp**  in tamper-proof mode.
+    For example, create  **ledgernsp**  in tamper-proof schema.
 
     ```
     openGauss=# CREATE SCHEMA ledgernsp WITH BLOCKCHAIN;
     ```
 
-2.  Create a tamper-proof user table in tamper-proof mode.
+2.  Create a tamper-proof user table in tamper-proof schema.
 
     For example, create a tamper-proof user table  **ledgernsp.usertable**.
 
