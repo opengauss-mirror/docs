@@ -41,24 +41,24 @@
 
 ```
 -- Prepare data.
-postgres=# CREATE TABLE t1(c1 int, c2 int);
-postgres=# INSERT INTO t1 VALUES(1, 1);
-postgres=# INSERT INTO t1 VALUES(2, 2);
+openGauss=# CREATE TABLE t1(c1 int, c2 int);
+openGauss=# INSERT INTO t1 VALUES(1, 1);
+openGauss=# INSERT INTO t1 VALUES(2, 2);
 
 -- Create an fast-refresh materialized view.
-postgres=# CREATE INCREMENTAL MATERIALIZED VIEW mv AS SELECT * FROM t1;
+openGauss=# CREATE INCREMENTAL MATERIALIZED VIEW mv AS SELECT * FROM t1;
 CREATE MATERIALIZED VIEW
 
 -- Insert data.
-postgres=# INSERT INTO t1 VALUES(3, 3);
+openGauss=# INSERT INTO t1 VALUES(3, 3);
 INSERT 0 1
 
 -- Incrementally refresh a materialized view.
-postgres=# REFRESH INCREMENTAL MATERIALIZED VIEW mv;
+openGauss=# REFRESH INCREMENTAL MATERIALIZED VIEW mv;
 REFRESH MATERIALIZED VIEW
 
 -- Query the materialized view result.
-postgres=# SELECT * FROM mv;
+openGauss=# SELECT * FROM mv;
  c1 | c2 
 ----+----
   1 |  1
@@ -67,15 +67,15 @@ postgres=# SELECT * FROM mv;
 (3 rows)
 
 -- Insert data.
-postgres=# INSERT INTO t1 VALUES(4, 4);
+openGauss=# INSERT INTO t1 VALUES(4, 4);
 INSERT 0 1
 
 -- Fullly refresh a materialized view.
-postgres=# REFRESH MATERIALIZED VIEW mv;
+openGauss=# REFRESH MATERIALIZED VIEW mv;
 REFRESH MATERIALIZED VIEW
 
 -- Query the materialized view result.
-postgres=# select * from mv;
+openGauss=# select * from mv;
  c1 | c2 
 ----+----
   1 |  1
@@ -85,7 +85,7 @@ postgres=# select * from mv;
 (4 rows)
 
 -- Delete a materialized view.
-postgres=# DROP MATERIALIZED VIEW mv;
+openGauss=# DROP MATERIALIZED VIEW mv;
 DROP MATERIALIZED VIEW
 ```
 
