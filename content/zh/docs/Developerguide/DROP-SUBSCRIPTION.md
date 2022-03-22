@@ -12,7 +12,7 @@
 ## **语法格式**<a name="section1367518145205"></a>
 
 ```
-DROP PUBLICATION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
+DROP SUBSCRIPTION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 ```
 
 ## **参数说明**<a name="section9378519122011"></a>
