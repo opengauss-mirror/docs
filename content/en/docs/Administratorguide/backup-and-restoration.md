@@ -1661,7 +1661,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
 **Remote mode-related parameters \(remote\_options\)**
 
->![](C:/Users/lijun/Downloads/管理员、工具、安装、编译-中英文/管理员、工具、安装、编译-中英文/04 Administrator Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](/public_sys-resources/icon-note.gif) **NOTE:** 
 >The following are parameters that remotely run  **gs\_probackup**  through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.
 
 - --remote-proto=_protocol_
