@@ -204,6 +204,20 @@ length
 </tbody>
 </table>
 
+## plpgsql.variable\_conflict<a name="section644112422314"></a>
+
+**Parameter description:**  Sets the priority of using stored procedure variables and table columns with the same name.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+
+**Value range**: a string
+
+-   **error**  indicates that a compilation error is reported when the name of a stored procedure variable is the same as that of a table column.
+-   **use\_variable**  indicates that if the name of a stored procedure variable is the same as that of a table column, the variable is used preferentially.
+-   **use\_column**  indicates that if the name of a stored procedure variable is the same as that of a table column, the column name is used preferentially.
+
+**Default value**:  **error**
+
 ## td\_compatible\_truncation<a name="en-us_topic_0283137001_en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c"></a>
 
 **Parameter description**: Specifies whether to enable features compatible with a Teradata database. You can set this parameter to  **on**  when connecting to a database compatible with the Teradata database, so that when you perform the INSERT operation, overlong strings are truncated based on the allowed maximum length before being inserted into char- and varchar-type columns in the target table. This ensures all data is inserted into the target table without errors reported.
@@ -221,3 +235,17 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **off**
 
+
+
+## lastval\_supported<a name="section17186174713490"></a>
+
+**Parameter description**: Specifies whether the lastval function can be used.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that the lastval function can be used and the nextval function cannot be pushed down.
+-   **off**  indicates that the lastval function cannot be used and the nextval function can be pushed down.
+
+**Default value**:  **off**

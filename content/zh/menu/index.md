@@ -271,7 +271,7 @@ headless: true
             -   [示例：常用操作]({{< relref "./docs/Developerguide/示例-常用操作.md" >}})
             -   [示例：重新执行应用SQL]({{< relref "./docs/Developerguide/示例-重新执行应用SQL.md" >}})
             -   [示例：通过本地文件导入导出数据]({{< relref "./docs/Developerguide/示例-通过本地文件导入导出数据.md" >}})
-            -   [示例：从MY向openGauss进行数据迁移]({{< relref "./docs/Developerguide/示例-从MY向openGauss进行数据迁移.md" >}})
+            -   [示例：从MY迁移数据]({{< relref "./docs/Developerguide/示例-从MY向openGauss进行数据迁移.md" >}})
 			-   [示例：逻辑复制代码示例]({{< relref "./docs/Developerguide/示例-逻辑复制代码示例.md" >}})
 			-   [示例：不同场景下连接数据库参数配置]({{< relref "./docs/Developerguide/示例-不同场景下连接数据库参数配置.md" >}})
             -   [JDBC接口参考]({{< relref "./docs/Developerguide/JDBC接口参考.md" >}})
