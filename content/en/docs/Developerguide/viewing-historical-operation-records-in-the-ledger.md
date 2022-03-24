@@ -16,7 +16,7 @@
 
     This table contains 11 fields. For details about the meaning of each field, see  [GS\_GLOBAL\_CHAIN](en-us_topic_0000001100127692.md).
 
--   To query the user history table in  **BLOCKCHAIN**  mode, 
+-   To query the user history table in  **BLOCKCHAIN**  schema, 
 
     for example, the schema of the user table is  **ledgernsp**, the table name is  **usertable**, and the name of the corresponding user history table is  **blockchain.ledgernsp\_usertable\_hist**, you can run the following command:
 

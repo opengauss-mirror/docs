@@ -58,7 +58,7 @@ Only the schema owner or a user granted with the ALTER permission can run the  *
 
 -   **\{ WITH | WITHOUT \} BLOCKCHAIN**
 
-    Modifies the tamper-proof attribute of a schema. Common row-store tables with the tamper-proof attribute are tamper-proof history tables, excluding foreign tables, temporary tables, and system catalogs. The tamper-proof attribute can be modified only when no table is contained in the schema. In addition, the temporary table mode is not supported. Modify the tamper-proof attribute in toast table mode, dbe\_perf mode, and blockchain mode.
+    Modifies the tamper-proof attribute of a schema. Common row-store tables with the tamper-proof attribute are tamper-proof history tables, excluding foreign tables, temporary tables, and system catalogs. The tamper-proof attribute can be modified only when no table is contained in the schema. In addition, the temporary table mode is not supported. Modify the tamper-proof attribute in toast table mode, dbe\_perf mode, and blockchain schema.
 
 
 ## Examples<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
