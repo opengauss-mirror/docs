@@ -9,6 +9,7 @@
 -   为了在表上定义或修改规则，你必须是该表的拥有者。
 -   如果在同一个表定义了多个相同类型的规则，则按规则的名称字母顺序触发它们。
 -   在视图上用于INSERT、UPDATE、DELETE的规则中可以添加RETURNING子句基于视图的字段返回。如果规则被INSERT RETURNING、UPDATE RETURNING、DELETE RETURNING命令触发，这些子句将用来计算输出结果。如果规则被不带RETURNING的命令触发，那么规则的RETURNING子句将被忽略。目前仅允许无条件的INSTEAD规则包含RETURNING子句，而且在同一个事件内的所有规则中最多只能有一个RETURNING子句。这样就确保只有一个RETURNING子句可以用于计算结果。如果在任何有效规则中都不存在RETURNING子句，该视图上的RETURNING查询将被拒绝。
+-   不建议在rule内使用列存表，尤其是一些写操作。因为列存表与行存表的架构实现、事务处理等存在很大差异，因此rule的表现也会有很多与行存表不同的地方。
 
 ## 语法格式<a name="section139076585551"></a>
 
