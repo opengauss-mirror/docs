@@ -1,7 +1,7 @@
 
 # PG\_SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001197270702"></a>
 
-系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。
+系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。需要有系统管理员权限才可以访问此系统表。
 
 和大部分系统表不同，pg\_subscription在数据库实例的所有数据库之间共享，即在每个节点只有一份pg\_repliction_origin拷贝，而不是每个数据库一份。
 
