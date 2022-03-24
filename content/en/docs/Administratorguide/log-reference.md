@@ -67,17 +67,41 @@ Logs generated during OM openGauss installation and uninstallation are stored in
 
 **Log Naming Rules**
 
-The name format of database node run logs is:
+- The name format of 
 
-**postgresql-**_creation time_**.log**
+  database node
 
-By default, a new log file is generated at 0:00 every day, or when the latest log file exceeds 16 MB or a database instance \(database node\) is restarted.
+   run logs is:
+
+  postgresql-creation time.log
+
+  By default, a new log file is generated at 0:00 every day, or when the size of the latest log file exceeds 16 MB or a database instance (database node) is restarted.
+
+- The name formats of CM run logs are:
+
+  - cm_agent logs: cm_agent-creation time.log**, **cm_agent-creation time-current.log**, **system_call-creation time.log, and system_call-creation time-current.log
+  - cm_server logs: cm_server-creation time.log, cm_server creation time-current.log, key_event-creation time.log, and key_event-creation time-current.log
+  - om_monitor logs: om_monitor-creation time.log and om_monitor-creation time-current.log.
+
+  Logs whose names do not contain **current** are historical log files. Logs whose names contain **current** are current log files. When a process is invoked for the first time, a log file whose name contains **current** is created. If the size of this file exceeds 16 MB, the file is renamed in the historical log file name format, and a new log file is generated at the current time point.
 
 **Log Content Description**
 
-Content of a line in a database node log:
+- Content of a line in a 
 
-Date+Time+Time zone+Username+Database name+Session ID+Log level+Log content
+  database node
+
+   log:
+
+  Date+Time+Time zone+Username+Database name+Session ID+Log level+Log content.
+
+- By default, a line in a cm_agent, cm_server, om_monitor log is arranged in the following format:
+
+  Time+Time zone+Session ID+Log content
+
+  The **SYSTEM_CALL** log records tool commands invoked by cm_agent.
+
+  By default, a line in a key_event log is arranged in the following format: Time+Thread ID+Thread name:Key event type+Arbitration object instance ID+Arbitration details.
 
 ## Operation Logs<a name="section38909325111"></a>
 

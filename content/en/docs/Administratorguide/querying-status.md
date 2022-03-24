@@ -73,11 +73,12 @@ openGaussThe database  has started.
 </td>
 <td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_en-us_topic_0058968082_p119851662227"><a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_en-us_topic_0058968082_p119851662227"></a><a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_en-us_topic_0058968082_p119851662227"></a>Instance role</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_ua6b7f8f70d934801a366687ed3c30f79"></a><a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_ua6b7f8f70d934801a366687ed3c30f79"></a><ul id="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_ua6b7f8f70d934801a366687ed3c30f79"><li><strong id="b1124551273417"><a name="b1124551273417"></a><a name="b1124551273417"></a>Normal</strong>: a single host instance.</li><li><strong id="b867483973411"><a name="b867483973411"></a><a name="b867483973411"></a>Primary</strong>: The instance is a primary instance.</li><li><strong id="b1254645013416"><a name="b1254645013416"></a><a name="b1254645013416"></a>Standby</strong>: The instance is a standby instance.</li><li><strong id="b1237739101610"><a name="b1237739101610"></a><a name="b1237739101610"></a>Cascade Standby</strong>: The instance is a cascaded standby instance.</li><li><strong id="b84916513347"><a name="b84916513347"></a><a name="b84916513347"></a>Secondary</strong>: The instance is a secondary instance.</li><li><strong id="b42671952193414"><a name="b42671952193414"></a><a name="b42671952193414"></a>Pending</strong>: The instance is in the quorum phase.</li><li><strong id="b1171317582349"><a name="b1171317582349"></a><a name="b1171317582349"></a>Unknown</strong>: The instance status is unknown.</li><li><strong id="b1185551573413"><a name="b1185551573413"></a><a name="b1185551573413"></a>Down</strong>: The instance is down.</li><li><strong id="b4750142783412"><a name="b4750142783412"></a><a name="b4750142783412"></a>Abnormal</strong>: The node is abnormal.</li><li><strong id="b1417334153412"><a name="b1417334153412"></a><a name="b1417334153412"></a>Manually stopped</strong>: The node has been manually stopped.</li></ul>
+<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_ua6b7f8f70d934801a366687ed3c30f79"></a><a name="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_ua6b7f8f70d934801a366687ed3c30f79"></a><ul id="en-us_topic_0283140576_en-us_topic_0237088790_en-us_topic_0085031926_en-us_topic_0059777902_ua6b7f8f70d934801a366687ed3c30f79"><li><strong id="b1124551273417"><a name="b1124551273417"></a><a name="b1124551273417"></a>Normal</strong>: a single host instance.</li><li><strong id="b867483973411"><a name="b867483973411"></a><a name="b867483973411"></a>Primary</strong>: The instance is a primary instance.</li><li><strong id="b1254645013416"><a name="b1254645013416"></a><a name="b1254645013416"></a>Standby</strong>: The instance is a standby instance.</li><li><strong id="b1237739101610"><a name="b1237739101610"></a><a name="b1237739101610"></a>Cascade Standby</strong>: The instance is a cascaded standby instance.</li><li><strong id="b84916513347"><a name="b84916513347"></a><a name="b42671952193414"></a><a name="b42671952193414"></a>Pending</strong>: The instance is in the quorum phase.</li><li><strong id="b1171317582349"><a name="b1171317582349"></a><a name="b1171317582349"></a>Unknown</strong>: The instance status is unknown.</li><li><strong id="b1185551573413"><a name="b1185551573413"></a><a name="b1185551573413"></a>Down</strong>: The instance is down.</li><li><strong id="b4750142783412"><a name="b4750142783412"></a><a name="b4750142783412"></a>Abnormal</strong>: The node is abnormal.</li><li><strong id="b1417334153412"><a name="b1417334153412"></a><a name="b1417334153412"></a>Manually stopped</strong>: The node has been manually stopped.</li></ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 Each role has different states, such as startup and connection. The states are described as follows:
 
@@ -203,7 +204,6 @@ View openGauss the database  status details, including instance status.
 
 ```
 gs_om -t status --detail
-
 [   Cluster State   ]
 
 cluster_state   : Normal
@@ -211,43 +211,11 @@ redistributing  : No
 current_az      : AZ_ALL
 
 [  Datanode State   ]
-
-    node             node_ip         port      instance                            state
---------------------------------------------------------------------------------------------------
-1  pekpopgsci00235  10.244.62.204    5432      6001 /home/wuqw/cluster/dn1/   P Primary Normal
-2  pekpopgsci00238  10.244.61.81     5432      6002 /home/wuqw/cluster/dn1/   S Standby Normal
+node                           node_ip           port                           instance                                   state
+----------------------------------------------------------------------------------------------------------------
+1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
+2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
 ```
 
-```
-gs_om -t status --detail
-[  CMServer State   ]
 
-node      node_ip         instance                                 state
---------------------------------------------------------------------------
-1  host40 10.243.40.20    1    /usr1/cm_gauss/cluster/cm/cm_server Primary
-2  host39 10.243.39.8     2    /usr1/cm_gauss/cluster/cm/cm_server Standby
-3  host15 10.243.15.65    3    /usr1/cm_gauss/cluster/cm/cm_server Standby
-
-[    ETCD State     ]
-
-node      node_ip         instance                         state
-------------------------------------------------------------------------
-1  host40 10.243.40.20    7001 /usr1/cm_gauss/cluster/etcd StateFollower
-2  host39 10.243.39.8     7002 /usr1/cm_gauss/cluster/etcd StateFollower
-3  host15 10.243.15.65    7003 /usr1/cm_gauss/cluster/etcd StateLeader
-
-[   Cluster State   ]
-
-cluster_state   : Normal
-redistributing  : No
-balanced        : Yes
-current_az      : AZ_ALL
-
-[  Datanode State   ]
-
-node      node_ip         instance                        state            | node      node_ip         instance                        state            | node      node_ip         instance                        state
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1  host40 10.243.40.20    6001 /usr1/cm_gauss/cluster/dn1 P Primary Normal | 2  host39 10.243.39.8     6002 /usr1/cm_gauss/cluster/dn1 S Standby Normal | 3  host15 10.243.15.65    6003 /usr1/cm_gauss/cluster/dn1 S Standby Normal
-
-```
 

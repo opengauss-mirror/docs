@@ -2963,11 +2963,19 @@ gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 
 Flashback restoration is a part of the database recovery technology. It can be used to selectively cancel the impact of a committed transaction and restore data from incorrect manual operations. Before the flashback technology is used, the committed database modification can be retrieved only by means of restoring backup and PITR. The restoration takes several minutes or even hours. After the flashback technology is used, it takes only seconds to restore the submitted data before the database is modified. The restoration time is irrelevant to the database size.
 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
+>The Astore engine does not support the flashback function.
+
 ## Flashback Query<a name="EN-US_TOPIC_0000001101515352"></a>
 
 ### Context<a name="section028145412219"></a>
 
 Flashback query enables you to query a snapshot of a table at a certain time point in the past. This feature can be used to view and logically rebuild damaged data that is accidentally deleted or modified. The flashback query is based on the MVCC mechanism. You can retrieve and query the old version to obtain the data of the specified old version.
+
+### Prerequisites
+
+- The **undo_retention_time** parameter has been set for specifying the retention period of undo logs.
 
 ### Syntax<a name="section1489051111232"></a>
 
@@ -3025,6 +3033,10 @@ In the syntax tree,  **TIMECAPSULE \{TIMESTAMP | CSN\} expression**  is a new ex
 ### Context<a name="section116901421161613"></a>
 
 Flashback table enables you to restore a table to a specific point in time. When only one table or a group of tables are logically damaged instead of the entire database, this feature can be used to quickly restore the table data. Based on the MVCC mechanism, the flashback table deletes incremental data at a specified time point and after the specified time point and retrieves the data deleted at the specified time point and the current time point to restore table-level data.
+
+### Prerequisites
+
+- The **undo_retention_time** parameter has been set for specifying the retention period of undo logs.
 
 ### Syntax<a name="section510120469162"></a>
 
@@ -3113,9 +3125,9 @@ Flashback truncate enables you to restore tables that are truncated by mistake a
       -   Specify the system-generated recycle bin name of the table you want to retrieve.
 
       -   Run  **TIMECAPSULE TABLE ... TO BEFORE  DROP**  statements until you retrieve the table you want.
-
   -   When a dropped table is restored, only the base table name is restored, and the names of other subobjects remain the same as those in the recycle bin. You can run the DDL command to manually change the names of subobjects as required.
   -   The recycle bin does not support write operations such as DML, DCL, and DDL, and does not support DQL query operations \(supported in later versions\).
+  -   Between the flashback point and the current point, a statement has been executed to modify the table structure or to affect the physical structure. Therefore, the flashback fails. The error message "ERROR: The table definition of %s has been changed." is displayed when flashback is performed on a table where DDL operations have been performed. The error message "ERROR: recycle object %s desired does not exis" is displayed when flashback is performed on DDL operations, such as changing namespaces and table names.
 
 - **RENAME  TO**
 

@@ -55,6 +55,7 @@ Obtain the XML file template from  **script/gspylib/etc/conf/cluster\_config\_te
 >-   If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.
 >-   The openGauss and instance paths cannot contain double backslashes \(\\\\\) or the following characters: "|",";","&","$","<",">","`","\\","'","\"","{","}","(",")","[","]","~","*", and "?".
 >-   When configuring the database node name, run the  **hostname**  command to obtain the host name of the database node and replace  **node1\_hostname**  and  **node2\_hostname**  in the example with the obtained host name.
+>-   During **dcf_config** configuration, the roles include leader, follower, passive, and logger. The roles that can vote include leader, follower, and logger. During role networking configuration, at least three roles can vote. Therefore, at least three nodes are required in DCF mode.
 
 **Table  1**  Parameter description
 
@@ -294,6 +295,82 @@ The information in bold is only an example. You can replace it as required. Each
 </table>
 
 
+## Configuring the CM Server (Primary/Non-Primary) Information
+
+**Configure the following information for the non-primary CMS nodes:**
+
+```
+<!-- cm -->
+<PARAM name="cmServerPortStandby" value="25500"/>
+<PARAM name="cmDir" value="/opt/huawei/data/cm"/>
+```
+
+```
+<!-- cm -->
+<PARAM name="cmServerPortStandby" value="25500"/>
+<PARAM name="cmDir" value="/opt/huawei/data/cm"/>
+```
+
+**table 1**  Parameter Description
+
+<a name="table642932620115"></a>
+
+<table><thead align="left"><tr id="row1543052614113"><th class="cellrowborder" valign="top" width="14.84148414841484%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a>Instance Type</p>
+</th>
+<th class="cellrowborder" valign="top" width="25.212521252125214%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a>Parameter</p>
+</th>
+<th class="cellrowborder" valign="top" width="59.94599459945995%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1343016261112"><td class="cellrowborder" rowspan="5" valign="top" width="14.84148414841484%" headers="mcps1.2.4.1.1 "><p id="p1752719501213"><a name="p1752719501213"></a><a name="p1752719501213"></a>CM</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.212521252125214%" headers="mcps1.2.4.1.2 "><p id="p138772053175815"><a name="p138772053175815"></a><a name="p138772053175815"></a>cmServerPortBase</p>
+</td>
+<td class="cellrowborder" valign="top" width="59.94599459945995%" headers="mcps1.2.4.1.3 "><p id="p08776536586"><a name="p08776536586"></a><a name="p08776536586"></a>Port number of the primary CM server. The default value is 5000.</p>
+</td>
+</tr>
+<tr id="row462419461815"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p3877105311589"><a name="p3877105311589"></a><a name="p3877105311589"></a>cmServerPortStandby</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p487755311588"><a name="p487755311588"></a><a name="p487755311588"></a>Port number of the standby CM server. The default value is 5500.</p>
+</td>
+</tr>
+<tr id="row243013261715"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p16877165315584"><a name="p16877165315584"></a><a name="p16877165315584"></a>cmServerListenIp1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p7877115312585"><a name="p7877115312585"></a><a name="p7877115312585"></a>IP address used by the CM server to listen to the CM agent connection requests or the database administrator's cluster management requests.</p>
+</td>
+</tr>
+<tr id="row1643082612118"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p4877145395811"><a name="p4877145395811"></a><a name="p4877145395811"></a>cmServerHaIp1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p18771153115819"><a name="p18771153115819"></a><a name="p18771153115819"></a>IP addresses for communication between the primary and standby CM servers.</p>
+<p id="p12877195316581"><a name="p12877195316581"></a><a name="p12877195316581"></a>
+In the parameter value, the first and second IP addresses are the IP addresses of the hosts where the primary and standby CM servers reside, respectively. If this parameter is not set, the value is determined based on backIp1 of the hosts where the primary and standby CM servers reside.
+</p>
+</td>
+</tr>
+<tr id="row1843010268113"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p128781753205814"><a name="p128781753205814"></a><a name="p128781753205814"></a>cmDir</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p8878135305818"><a name="p8878135305818"></a><a name="p8878135305818"></a>CM data file directory. The directory is used to store the data files and parameter files used by the CM server and CM agent.
+</p>
+<p id="p1187855355815"><a name="p1187855355815"></a><a name="p1187855355815"></a>This parameter must be set on every host in the cluster.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**table 2**  Directory Description
+
+| Directory        | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| /opt/huawei/data | Directory that stores instance data of the cluster. It is a data storage directory, and should be on a data disk.This directory must meet the following requirements:The disk space is planned according the actual service data volume.Directories for storing data of each instance are independent from each other. [Table 3](mk:@MSITStore:C:\Users\lijun\Downloads\英文\英文\安装和管理员\05 Installation Guide_openGauss Only.chm::/en-us_topic_0000001247107125.html#EN-US_TOPIC_0000001247107125__table15838192510429) lists planning for the data directory of each instance in this document. |
+
+**table 3** Database instance data directories
+
+| Instance Name | Instance Data Directory                                      |
+| ------------- | ------------------------------------------------------------ |
+| CM            | /opt/huawei/data/cm                                          |
+| Primary DN    | /opt/huawei/data/masterXIn the directory, *X* is a consecutive positive integer starting from 1, identifying the Xth DN on the current host. |
+| Standby DN    | /opt/huawei/data/slaveXIn the directory, *X* is a consecutive positive integer starting from 1, identifying the Xth standby DN on the current host. |
 
 ## Examples
 
@@ -302,11 +379,10 @@ The information in bold is only an example. You can replace it as required. Each
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <ROOT>
-    <!-- Overall information about openGauss -->
+    
     <CLUSTER>
         <PARAM name="clusterName" value="dbCluster" />
         <PARAM name="nodeNames" value="node1_hostname" />
-       
         <PARAM name="gaussdbAppPath" value="/opt/huawei/install/app" />
         <PARAM name="gaussdbLogPath" value="/var/log/omm" />
         <PARAM name="tmpMppdbPath" value="/opt/huawei/tmp" />
@@ -315,7 +391,7 @@ The information in bold is only an example. You can replace it as required. Each
         <PARAM name="backIp1s" value="192.168.0.1"/>
        
     </CLUSTER>
-    <!-- Information about the node deployment on each server -->
+    
     <DEVICELIST>
         <!-- Information about node deployment on node1 -->
         <DEVICE sn="node1_hostname">
@@ -341,7 +417,7 @@ The information in bold is only an example. You can replace it as required. Each
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <ROOT>
-    <!-- Overall information about openGauss -->
+    
     <CLUSTER>
         <PARAM name="clusterName" value="Cluster_template" />
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname" />
@@ -354,7 +430,7 @@ The information in bold is only an example. You can replace it as required. Each
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/>
         
     </CLUSTER>
-    <!-- Information about the node deployment on each server -->
+    
     <DEVICELIST>
         <!-- Information about node deployment on node1 -->
         <DEVICE sn="node1_hostname">
@@ -462,6 +538,17 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
+
+	    <!-- Primary CM -->
+	    <PARAM name="cmsNum" value="1"/>
+	    <PARAM name="cmDir" value="/opt/huawei/install/cm"/>
+	    <PARAM name="cmServerPortBase" value="15300"/>
+	    <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
+	    <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
+	    <!-- CM server level. Currently, only 1 is supported. -->
+	    <PARAM name="cmServerlevel" value="1"/>
+	    <!-- Host names of the primary and standby CMS nodes -->
+	    <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/>
             
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
@@ -478,6 +565,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
+            <!-- cm -->
+            <PARAM name="cmDir" value="/opt/huawei/install/cm"/>
+            <PARAM name="cmServerPortStandby" value="15300"/>
 	</DEVICE>
 
         <!-- Node deployment information on node3. The value of name is the host name. -->
@@ -489,6 +579,9 @@ The information in bold is only an example. You can replace it as required. Each
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
             <PARAM name="cascadeRole" value="on"/>
+            <!-- cm -->
+            <PARAM name="cmDir" value="/opt/huawei/install/cm"/>
+            <PARAM name="cmServerPortStandby" value="15300"/>
 	</DEVICE>
     </DEVICELIST>
 </ROOT>
@@ -499,7 +592,7 @@ The information in bold is only an example. You can replace it as required. Each
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <ROOT>
-    <!-- Overall information about openGauss -->
+    
     <CLUSTER>
         <PARAM name="clusterName" value="Cluster_template" />
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname" />
@@ -512,7 +605,7 @@ The information in bold is only an example. You can replace it as required. Each
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
     
     </CLUSTER>
-    <!-- Information about the node deployment on each server -->
+    
     <DEVICELIST>
         <!-- Information about node deployment on node1 -->
         <DEVICE sn="node1_hostname">
@@ -522,7 +615,14 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
-            
+            <!-- CM node deployment information -->
+            <PARAM name="cmsNum" value="1"/>
+            <PARAM name="cmServerPortBase" value="15000"/>
+            <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
+            <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/>
+            <PARAM name="cmServerlevel" value="1"/>
+            <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
 	    <PARAM name="dataPortBase" value="15400"/>
@@ -538,6 +638,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
 
         <!-- Node deployment information on node3. The value of name is the host name. -->
@@ -548,6 +651,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
     </DEVICELIST>
 </ROOT>
@@ -558,7 +664,7 @@ The information in bold is only an example. You can replace it as required. Each
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <ROOT>
-    <!-- Overall information about openGauss -->
+    
     <CLUSTER>
         <PARAM name="clusterName" value="Cluster_template" />
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname" />
@@ -571,7 +677,7 @@ The information in bold is only an example. You can replace it as required. Each
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/>
         
     </CLUSTER>
-    <!-- Information about the node deployment on each server -->
+    
     <DEVICELIST>
         <!-- Information about node deployment on node1 -->
         <DEVICE sn="node1_hostname">
@@ -581,7 +687,14 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
-            
+            <!-- CM node deployment information -->
+            <PARAM name="cmsNum" value="1"/>
+            <PARAM name="cmServerPortBase" value="15000"/>
+            <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/>
+            <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/>
+            <PARAM name="cmServerlevel" value="1"/>
+            <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
 	    <PARAM name="dataPortBase" value="15400"/>
@@ -597,6 +710,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
 
         <!-- Node deployment information on node3. The value of name is the host name. -->
@@ -607,6 +723,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
 
         <!-- Node deployment information on node4. The value of name is the host name. -->
@@ -617,6 +736,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.4"/>
             <PARAM name="sshIp1" value="192.168.0.4"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
     </DEVICELIST>
 </ROOT>
@@ -627,7 +749,7 @@ The information in bold is only an example. You can replace it as required. Each
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <ROOT>
-    <!-- Overall information about openGauss -->
+    
     <CLUSTER>
         <PARAM name="clusterName" value="Cluster_template" />
         <PARAM name="nodeNames" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname" />
@@ -640,7 +762,7 @@ The information in bold is only an example. You can replace it as required. Each
         <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/>
         
     </CLUSTER>
-    <!-- Information about the node deployment on each server -->
+    
     <DEVICELIST>
         <!-- Information about node deployment on node1 -->
         <DEVICE sn="node1_hostname">
@@ -650,7 +772,14 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
-            
+            <!-- CM node deployment information -->
+            <PARAM name="cmsNum" value="1"/>
+            <PARAM name="cmServerPortBase" value="15000"/>
+            <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/>
+            <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/>
+            <PARAM name="cmServerlevel" value="1"/>
+            <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	    <!--dn-->
             <PARAM name="dataNum" value="1"/>
 	    <PARAM name="dataPortBase" value="15400"/>
@@ -666,6 +795,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
 
         <!-- Node deployment information on node3. The value of name is the host name. -->
@@ -676,6 +808,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.3"/>
             <PARAM name="sshIp1" value="192.168.0.3"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
 
         <!-- Node deployment information on node4. The value of name is the host name. -->
@@ -686,6 +821,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.4"/>
             <PARAM name="sshIp1" value="192.168.0.4"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
 
         <!-- Node deployment information on node5. The value of name is the host name. -->
@@ -696,6 +834,9 @@ The information in bold is only an example. You can replace it as required. Each
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.5"/>
             <PARAM name="sshIp1" value="192.168.0.5"/>
+            <!-- cm -->
+            <PARAM name="cmServerPortStandby" value="15000"/>
+            <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/>
 	</DEVICE>
     </DEVICELIST>
 </ROOT>
