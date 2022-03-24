@@ -1,8 +1,8 @@
-# 极致RTO<a name="ZH-CN_TOPIC_0000001135548523"></a>
+# 极致RTO<a name="ZH-CN_TOPIC_0000001152275221"></a>
 
 ## 可获得性<a name="section57017810"></a>
 
-本特性自openGauss 1.1.0版本开始引入。
+本特性自openGauss 1.1.0 版本开始引入。
 
 ## 特性简介<a name="section43398242"></a>
 
