@@ -1,8 +1,8 @@
-# Default Settings of Client Connection<a name="EN-US_TOPIC_0242371521"></a>
+# Default Settings of Client Connection<a name="EN-US_TOPIC_0289900444"></a>
 
 -   **[Statement Behavior](statement-behavior.md)**  
 
--   **[Zone and Formatting](zone-and-formatting.md)**  
+-   **[Locale and Formatting](locale-and-formatting.md)**  
 
 -   **[Other Default Parameters](other-default-parameters.md)**  
 

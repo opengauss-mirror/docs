@@ -54,7 +54,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## dcf\_max\_workers<a name="section127961643587"></a>
 
-**Parameter description**: Specifies the number of DCF callback function threads.
+**Parameter description**: Specifies the number of DCF callback function threads. If the number of nodes exceeds 7, increase the value of this parameter \(for example, to  **40**\). Otherwise, the primary node may remain in the promoting state and the log replication between the primary and standby nodes has no progress.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -74,7 +74,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## dcf\_election\_timeout<a name="section0169133413323"></a>
 
-**Parameter description**: Specifies the timeout interval for selecting the DCF leader and follower. The election timeout interval depends on the status of the network between DNs. If the timeout interval is short and the network quality is poor, timeout occurs. After the network recovers, the election becomes normal. You are advised to set a proper timeout interval based on the current network status.
+**Parameter description**: Specifies the timeout interval for selecting the DCF leader and follower. The election timeout interval depends on the status of the network between DNs. If the timeout interval is short and the network quality is poor, timeout occurs. After the network recovers, the election becomes normal. You are advised to set a proper timeout interval based on the current network status. Restriction on the DCF node clock: The maximum clock difference between DCF nodes is less than half of the election timeout period.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -82,9 +82,29 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **3**
 
+## dcf\_enable\_auto\_election\_priority<a name="section4409034123"></a>
+
+**Parameter description**: Specifies whether the DCF priority can be automatically adjusted. The value  **0**  indicates that automatic adjustment is not allowed, and the value  **1**  indicates that automatic adjustment is allowed.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range:** **0**  or  **1**.
+
+**Default value**:  **1**
+
+## dcf\_election\_switch\_threshold<a name="section126105411127"></a>
+
+**Parameter description**: Specifies the DCF threshold for preventing frequent switchover to primary. It is recommended that this parameter be set based on the maximum fault duration acceptable for user services.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 0 to 2147483647, in seconds.
+
+**Default value**:  **0**
+
 ## dcf\_run\_mode<a name="section14650618391"></a>
 
-**Parameter description**: Specifies the DCF election mode. The value  **0**  indicates that the automatic DCF election mode is enabled, and the value  **2**  indicates that the DCF election mode is disabled.
+**Parameter description**: Specifies the DCF election mode. The value  **0**  indicates that the automatic DCF election mode is enabled, and the value  **2**  indicates that the DCF election mode is disabled. Currently, the election mode can be disabled only in minority restoration scenarios. If the election mode is disabled, the database instance will become unavailable.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -224,7 +244,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to 1024
+**Value range**: an integer ranging from 0 to 1024
 
 **Default value**:  **0**
 
@@ -268,11 +288,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer
+**Value range**: an integer ranging from 1 to 22
 
--   If no compression algorithm is used, the value does not take effect.
--   If the ZSTD compression algorithm is used, the value ranges from 1 to 22.
--   If the LZ4 compression algorithm is used, the value ranges from 1 to 9.
+If compression is disabled, the configured compression level does not take effect.
 
 **Default value**:  **1**
 
@@ -318,7 +336,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## dcf\_log\_file\_permission<a name="section164431018248"></a>
 
-**Parameter description**: Specifies the attribute of a DCF run log file. This parameter takes effect upon the system restart. To allow other users in the same group to access logs, ensure that all parent directories can be accessed by other users in the same group.
+**Parameter description**: Specifies the attribute of the DCF run log file. The parameter setting takes effect after the system is restarted. This parameter is configured during installation and cannot be modified. To allow other users in the same group to access logs, ensure that all parent directories can be accessed by other users in the same group. That is, if  **dcf\_log\_path\_permission**  is set to  **750**,  **dcf\_log\_file\_permission**  can only be set to  **600**  or  **640**. If  **dcf\_log\_path\_permission**  is set to  **700**,  **dcf\_log\_file\_permission**  must be set to  **600**.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -328,7 +346,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## dcf\_log\_path\_permission<a name="section1250875212192"></a>
 
-**Parameter description**: Specifies the attribute of the DCF run log directory. This parameter takes effect upon the system restart and cannot be modified.
+**Parameter description**: Specifies the attribute of the DCF run log directory. The parameter setting takes effect after the system is restarted. This parameter is configured during installation and cannot be modified. To allow other users in the same group to access the log path, set this parameter to  **750**. Otherwise, set this parameter to  **700**.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

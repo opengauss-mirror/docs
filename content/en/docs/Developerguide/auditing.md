@@ -1,4 +1,4 @@
-# Auditing<a name="EN-US_TOPIC_0242371534"></a>
+# Auditing<a name="EN-US_TOPIC_0289900899"></a>
 
 -   **[Audit Switch](audit-switch.md)**  
 

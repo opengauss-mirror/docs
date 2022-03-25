@@ -342,6 +342,13 @@ This section describes  **java.sql.DatabaseMetaData**, the API for defining data
 <td class="cellrowborder" valign="top" width="36.93%" headers="mcps1.2.4.1.3 "><p id="p16775102484412"><a name="p16775102484412"></a><a name="p16775102484412"></a>Yes</p>
 </td>
 </tr>
+<tr id="row11248710102618"><td class="cellrowborder" valign="top" width="37.730000000000004%" headers="mcps1.2.4.1.1 "><p id="p32487106261"><a name="p32487106261"></a><a name="p32487106261"></a>getPartitionTablePrimaryKeys​(String catalog, String schema, String table)</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.34%" headers="mcps1.2.4.1.2 "><p id="p1624801012262"><a name="p1624801012262"></a><a name="p1624801012262"></a>ResultSet</p>
+</td>
+<td class="cellrowborder" valign="top" width="36.93%" headers="mcps1.2.4.1.3 "><p id="p1724891032613"><a name="p1724891032613"></a><a name="p1724891032613"></a>Yes</p>
+</td>
+</tr>
 <tr id="row572112974411"><td class="cellrowborder" valign="top" width="37.730000000000004%" headers="mcps1.2.4.1.1 "><p id="p107282994414"><a name="p107282994414"></a><a name="p107282994414"></a>getProcedureColumns​(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern)</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.34%" headers="mcps1.2.4.1.2 "><p id="p1872629194410"><a name="p1872629194410"></a><a name="p1872629194410"></a>ResultSet</p>
@@ -1233,4 +1240,27 @@ This section describes  **java.sql.DatabaseMetaData**, the API for defining data
 </tr>
 </tbody>
 </table>
+
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>If the value of  **uppercaseAttributeName**  is  **true**, the following APIs convert the query result to uppercase letters. The conversion range is the same as that of the  **toUpperCase**  method in Java.
+>-   public ResultSet getProcedures\(String catalog, String schemaPattern, String procedureNamePattern\)
+>-   public ResultSet getProcedureColumns\(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern\)
+>-   public ResultSet getTables\(String catalog, String schemaPattern, String tableNamePattern, String\[\] types\)
+>-   public ResultSet getSchemas\(String catalog, String schemaPattern\)
+>-   public ResultSet getColumns\(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern\)
+>-   public ResultSet getColumnPrivileges\(String catalog, String schema, String table, String columnNamePattern\)
+>-   public ResultSet getTablePrivileges\(String catalog, String schemaPattern, String tableNamePattern\)
+>-   public ResultSet getBestRowIdentifier\(String catalog, String schema, String table, int scope, boolean nullable\)
+>-   public ResultSet getPrimaryKeys\(String catalog, String schema, String table\)
+>-   protected ResultSet getImportedExportedKeys\(String primaryCatalog, String primarySchema, String primaryTable, String foreignCatalog, String foreignSchema, String foreignTable\)
+>-   public ResultSet getIndexInfo\(String catalog, String schema, String tableName, boolean unique, boolean approximate\)
+>-   public ResultSet getUDTs\(String catalog, String schemaPattern, String typeNamePattern, int\[\] types\)
+>-   public ResultSet getFunctions\(String catalog, String schemaPattern, String functionNamePattern\)
+
+>![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>The  **getPartitionTablePrimaryKeys\(String catalog, String schema, String table\)**  API is used to obtain the primary key column of a partitioned table that contains global indexes. The following is an example:
+>```
+>PgDatabaseMetaData dbmd = (PgDatabaseMetaData)conn.getMetaData();
+>dbmd.getPartitionTablePrimaryKeys("catalogName", "schemaName", "tableName");
+>```
 

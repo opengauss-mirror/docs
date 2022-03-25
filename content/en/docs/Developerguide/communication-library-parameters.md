@@ -11,9 +11,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPIDLE**, set this parameter to  **0**.
 >-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
->-   0 selects the system default.
->-   This parameter is not shared between different sessions, which means that this parameter may have different values in different sessions.
->-   When showing this parameter, it is the parameter value in the current session connection, not the value of the guc copy.
+>-   If this parameter is set to  **0**, the system value is used.
+>-   This parameter is not shared among different sessions. That is, different session connections may have different values.
+>-   The parameter value in the current session connection, not the value of the GUC copy, is displayed.
 
 **Value range:**  0 to 3600. The unit is s.
 
@@ -27,14 +27,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: 0 to 180. The unit is s.
 
-**Default value**:  **0**
+**Default value**:  **300**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPINTVL**, set this parameter to  **0**.
 >-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
->-   0 selects the system default.
->-   This parameter is not shared between different sessions, which means that this parameter may have different values in different sessions.
->-   When showing this parameter, it is the parameter value in the current session connection, not the value of the guc copy.
+>-   If this parameter is set to  **0**, the system value is used.
+>-   This parameter is not shared among different sessions. That is, different session connections may have different values.
+>-   The parameter value in the current session connection, not the value of the GUC copy, is displayed.
 
 ## tcp\_keepalives\_count<a name="en-us_topic_0283137640_en-us_topic_0237124697_en-us_topic_0059778583_scb812ad2f34f47dcabeac73c6e1a163c"></a>
 
@@ -45,9 +45,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPCNT**, set this parameter to  **0**.
 >-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
->-   0 selects the system default.
->-   This parameter is not shared between different sessions, which means that this parameter may have different values in different sessions.
->-   When showing this parameter, it is the parameter value in the current session connection, not the value of the guc copy.
+>-   If this parameter is set to  **0**, the system value is used.
+>-   This parameter is not shared among different sessions. That is, different session connections may have different values.
+>-   The parameter value in the current session connection, not the value of the GUC copy, is displayed.
 
 **Value range**: 0 to 100.  **0**  indicates that the connection is immediately broken if openGauss does not receive a keepalived signal from the client.
 

@@ -25,6 +25,9 @@ After a query statement has been executed, no response is returned for a long ti
 3.  Check for the query statements that are executed for a long time in the system.
 
     ```
+    SELECT EXTRACT(DAY FROM (current_timestamp - query_start)) * 24 * 60 + EXTRACT(HOUR FROM (current_timestamp - query_start)) * 60 + EXTRACT(MINUTE FROM (current_timestamp - query_start)) AS runtime, datname, usename, query FROM pg_stat_activity WHERE state != 'idle' ORDER BY 1 desc;
+    
+    -- In B-compatible mode, run the following statement:
     SELECT timestampdiff(minutes, query_start, current_timestamp) AS runtime, datname, usename, query FROM pg_stat_activity WHERE state != 'idle' ORDER BY 1 desc;
     ```
 
@@ -33,11 +36,14 @@ After a query statement has been executed, no response is returned for a long ti
     Alternatively, you can use the  [TIMESTAMPDIFF](en-us_topic_0289900496.md#en-us_topic_0283136846_section5629194495516)  function to set  **current\_timestamp**  and  **query\_start**  to be greater than a threshold to identify query statements that are executed for a duration longer than this threshold. The first parameter of  **timestampdiff**  is the time difference unit. For example, execute the following statement to query the statements whose execution lasts more than 2 minutes:
 
     ```
+    SELECT query FROM pg_stat_activity WHERE (EXTRACT(DAY FROM (current_timestamp - query_start)) * 24 * 60 + EXTRACT(HOUR FROM (current_timestamp - query_start)) * 60 + EXTRACT(MINUTE FROM (current_timestamp - query_start))) > 2;
+    
+    -- In B-compatible mode, run the following statement:
     SELECT query FROM pg_stat_activity WHERE timestampdiff(minutes, query_start, current_timestamp) > 2;
     ```
 
 4.  Analyze the status of the query statements that were run for a long time.
     -   If the query statement is normal, wait until the execution of the query statement is complete.
-    -   If the query statement is blocked, rectify the fault by referring to  [Analyzing Whether a Query Statement Is Blocked](analyzing-whether-a-query-statement-is-blocked.md).
+    -   If the query statement is blocked, rectify the fault by referring to  [Analyzing Whether a Query Statement Is Blocked](en-us_topic_0291615099.md).
 
 

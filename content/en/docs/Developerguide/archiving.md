@@ -4,13 +4,12 @@
 
 **Parameter description**: Specifies whether to archive WALs.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->When  **[wal\_level](en-us_topic_0289900114.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **minimal**, the  **archive\_mode**  parameter is unavailable.
->
->Both synchronous standby machine and asynchronous standby machine can start archiving, and the way to start archiving is the same as that of single machine. Just set the archive_mode to on and set the correct archive_ dest or archive_ command.
->Note: if the most_available is not on and there is a synchronous standby disconnected from the host, the primary will be unable to send the location of the archive to the standby due to traffic congestion, resulting in archive failure.
+>-   When  **[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **minimal**, the  **archive\_mode**  parameter is unavailable.
+>-   The archiving function can be enabled on both the synchronous and asynchronous standby nodes. The method of enabling the archiving function is the same as that of enabling the archiving function on a single node. To enable the archiving function, set  **archive\_mode**  to  **on**  and set  **archive\_dest**  or  **archive\_command**  correctly.
+>-   If the maximum availability mode is not enabled and the standby node is disconnected from the primary node, the primary node cannot send the archiving location to the standby node due to service congestion. As a result, the archiving fails.
 
 **Value range**: Boolean
 
@@ -23,7 +22,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description:**  Specifies the command set by the administrator to archive WALs. You are advised to set the archive log path to an absolute path.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If both  **archive\_dest **and  **archive\_command **are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command **does not take effect.
@@ -51,7 +50,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description:**  Specifies the path set by the administrator to archive WALs. You are advised to set the archive log path to an absolute path.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If both  **archive\_dest **and  **archive\_command **are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command **does not take effect.
@@ -68,7 +67,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the archiving period.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in   [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   The server is forced to switch to a new WAL segment file when the period specified by this parameter has elapsed since the last file switch.

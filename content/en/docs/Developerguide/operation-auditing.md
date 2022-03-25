@@ -6,14 +6,14 @@
 
 This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to 2097151
+**Value range**: an integer ranging from 0 to 67108863
 
--   **0**  indicates that the function of auditing the CREATE, DROP, and ALTER operations on the GaussDB Kernel database object can be disabled.
--   Other values indicate that the CREATE, DROP, and ALTER operations on a certain or some GaussDB Kernel database objects are audited.
+-   **0**  indicates that the function of auditing the CREATE, DROP, and ALTER operations on the openGauss database object can be disabled.
+-   Other values indicate that the CREATE, DROP, and ALTER operations on a certain or some openGauss database objects are audited.
 
 **Value description:**
 
-The value of this parameter is calculated by 20 binary bits. The 20 binary bits represent 20 types of openGauss objects. If the corresponding binary bit is set to  **0**, the CREATE, DROP, and ALTER operations on corresponding database objects are not audited. If it is set to  **1**, the CREATE, DROP, and ALTER operations are audited. For details about the audit contents represented by these 20 binary bits, see  [Table 1](#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_table53712060).
+The value of this parameter is calculated by 26 binary bits. The 26 binary bits represent 26 types of openGauss objects. If the corresponding binary bit is set to  **0**, the CREATE, DROP, and ALTER operations on corresponding database objects are not audited. If it is set to  **1**, the CREATE, DROP, and ALTER operations are audited. For details about the audit contents represented by these 26 binary bits, see  [Table 1](#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_table53712060).
 
 **Default value**:  **12295**
 
@@ -65,7 +65,7 @@ The value of this parameter is calculated by 20 binary bits. The 20 binary bits 
 </tr>
 <tr id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_row29093676"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p7777519"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p7777519"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p7777519"></a>Bit 5</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p25999340"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p25999340"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p25999340"></a>Whether to audit the CREATE and DROP operations on views.</p>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p25999340"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p25999340"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p25999340"></a>Whether to audit the CREATE and DROP operations on VIEW and MATVIEW objects.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_ul35382789"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_ul35382789"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_ul35382789"><li><strong id="b101216388594"><a name="b101216388594"></a><a name="b101216388594"></a>0</strong> indicates that the CREATE and DROP operations on these objects are not audited.</li><li><strong id="b109821038185919"><a name="b109821038185919"></a><a name="b109821038185919"></a>1</strong> indicates that the CREATE and DROP operations on these objects are audited.</li></ul>
 </td>
@@ -177,6 +177,42 @@ The value of this parameter is calculated by 20 binary bits. The 20 binary bits 
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul1462054142213"></a><a name="ul1462054142213"></a><ul id="ul1462054142213"><li><strong id="b01461522172711"><a name="b01461522172711"></a><a name="b01461522172711"></a>0</strong> indicates that the CREATE and DROP operations on CMK and CEK objects are not audited.</li><li><strong id="b7667723172711"><a name="b7667723172711"></a><a name="b7667723172711"></a>1</strong> indicates that the CREATE and DROP operations on CMK and CEK objects are audited.</li></ul>
 </td>
 </tr>
+<tr id="row262715591644"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p61782117513"><a name="p61782117513"></a><a name="p61782117513"></a>Bit 21</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p117813111656"><a name="p117813111656"></a><a name="p117813111656"></a>Whether to audit the CREATE, DROP, and ALTER operations on PACKAGE objects.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul121781111750"></a><a name="ul121781111750"></a><ul id="ul121781111750"><li><strong id="b1962855400104045"><a name="b1962855400104045"></a><a name="b1962855400104045"></a>0</strong> indicates that the operations are not audited.</li><li><strong id="b577221023104045"><a name="b577221023104045"></a><a name="b577221023104045"></a>1</strong> indicates that the operations are audited.</li></ul>
+</td>
+</tr>
+<tr id="row1775015199291"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p1175013199294"><a name="p1175013199294"></a><a name="p1175013199294"></a>Bit 22</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p1675091992919"><a name="p1675091992919"></a><a name="p1675091992919"></a>Whether to audit the CREATE and DROP operations on MODEL objects.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul101724263318"></a><a name="ul101724263318"></a><ul id="ul101724263318"><li><strong id="b1433516221104045"><a name="b1433516221104045"></a><a name="b1433516221104045"></a>0</strong> indicates that the CREATE and ALTER operations are not audited.</li><li><strong id="b1309818747104045"><a name="b1309818747104045"></a><a name="b1309818747104045"></a>1</strong> indicates that the CREATE and DROP operations are audited.</li></ul>
+</td>
+</tr>
+<tr id="row943982312360"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p3333152233616"><a name="p3333152233616"></a><a name="p3333152233616"></a>Bit 23</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p1333312223366"><a name="p1333312223366"></a><a name="p1333312223366"></a>Whether to audit the CREATE, DROP, and ALTER operations on PUBLICATION and SUBSCRIPTION objects.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul1533332217366"></a><a name="ul1533332217366"></a><ul id="ul1533332217366"><li><strong id="b1253615288014"><a name="b1253615288014"></a><a name="b1253615288014"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations are not audited.</li><li><strong id="b1645193214013"><a name="b1645193214013"></a><a name="b1645193214013"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations are audited.<p id="p9598144320241"><a name="p9598144320241"></a><a name="p9598144320241"></a></p>
+</li></ul>
+</td>
+</tr>
+<tr id="row195313321903"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p14541432203"><a name="p14541432203"></a><a name="p14541432203"></a>Bit 24</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p25423210015"><a name="p25423210015"></a><a name="p25423210015"></a>Whether to audit the ALTER and DROP operations on the <strong id="b19316134613420"><a name="b19316134613420"></a><a name="b19316134613420"></a>gs_global_config</strong> objects.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul2561910115"></a><a name="ul2561910115"></a><ul id="ul2561910115"><li><strong id="b183011956942"><a name="b183011956942"></a><a name="b183011956942"></a>0</strong> indicates that the ALTER and DROP operations are not audited.</li><li><strong id="b11641759740"><a name="b11641759740"></a><a name="b11641759740"></a>1</strong> indicates that the ALTER and DROP operations are audited.</li></ul>
+</td>
+</tr>
+<tr id="row14951941133415"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p121439412341"><a name="p121439412341"></a><a name="p121439412341"></a>Bit 25</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p111431841153412"><a name="p111431841153412"></a><a name="p111431841153412"></a>Whether to audit the CREATE, DROP, and ALTER operations on FOREIGN DATA WRAPPER objects.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul181438412349"></a><a name="ul181438412349"></a><ul id="ul181438412349"><li><strong id="b1718486089104045"><a name="b1718486089104045"></a><a name="b1718486089104045"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations are not audited.</li><li><strong id="b195156995104045"><a name="b195156995104045"></a><a name="b195156995104045"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations are audited.</li></ul>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -245,6 +281,26 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Default value**:  **1**
 
+## audit\_xid\_info<a name="section17588151016"></a>
+
+**Parameter description**: Specifies whether to record the transaction ID of the SQL statement in the  **detail\_info**  column of the audit log.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range:** **0**  or  **1**
+
+-   **0**  indicates that the function of recording transaction IDs in audit logs is disabled.
+-   **1**  indicates that the function of recording transaction IDs in audit logs is enabled.
+
+**Default value**:  **0**
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>If this function is enabled, the  **detail\_info**  information in audit logs starts with  _xid_. For example:
+>```
+>detail_info: xid=14619 , create table t1(id int);
+>```
+>If transaction IDs do not exist,  _xid_  is recorded as  **NA**  in audit logs.
+
 ## enableSeparationOfDuty<a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6"></a>
 
 **Parameter description**: Specifies whether the separation of three duties is enabled.
@@ -271,36 +327,20 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 **Default value**:  **off**
 
-## enable\_copy\_server\_files<a name="en-us_topic_0283136929_en-us_topic_0237124747_section176091434269"></a>
-
-**Parameter description**: Specifies whether to enable the permission to copy server files.
-
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: Boolean
-
--   **on**  indicates that the permission to copy server files is enabled.
--   **off**  indicates that the permission to copy server files is disabled.
-
-**Default value**:  **off**
-
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->When the  **enable\_copy\_server\_files**  parameter is disabled, only the initial user is allowed to run the  **COPY FROM FILENAME **or  **COPY TO FILENAME**  statement. When the  **enable\_copy\_server\_files**  parameter is enabled, users with the  **SYSADMIN**  permission or users who inherit the  **gs\_role\_copy\_files**  permission of the built-in role are allowed to run the  **COPY FROM FILENAME**  or  **COPY TO FILENAME**  statement.
-
 ## enable\_access\_server\_directory<a name="en-us_topic_0283136929_en-us_topic_0237124747_section4279164545515"></a>
 
-**Parameter description**: Specifies whether the system administrator has the permissions to create and delete DIRECTORY objects.
+**Parameter description**: Specifies whether to allow non-initial users to create, modify, and delete directories.
 
 This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**  indicates that the system administrator has the permission to create and delete DIRECTORY objects.
--   **off**  indicates that the system administrator does not have the permissions to create and delete DIRECTORY objects.
+-   **on**  indicates that non-initial users have the permission to create, modify, and delete directories.
+-   **off**  indicates that non-initial users do not have the permission to create, modify, and delete directories.
 
 **Default value**:  **off**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   For security purposes, only initial users can create and delete DIRECTORY objects by default.
->-   If  **enable\_access\_server\_directory**  is set to  **on**, system administrators \(including initial users\) can create and delete DIRECTORY objects when  **enableSeparationOfDuty**  is set to  **off**. When  **enableSeparationOfDuty**  is set to  **on**, only the initial users can create and delete DIRECTORY objects.
+>-   For security purposes, only the initial user can create, modify, and delete DIRECTORY objects by default.
+>-   If  **enable\_access\_server\_directory**  is enabled, users with the SYSADMIN permission and users who inherit the  **gs\_role\_directory\_create**  permission of the built-in role can create directory objects. A user with the SYSADMIN permission, the owner of a directory, a user who is granted with the DROP permission for the directory, or a user who inherits the  **gs\_role\_directory\_drop**  permission of the built-in role can delete a directory. A user with the SYSADMIN permission and the owner of a directory object can change the owner of the directory object, and the user must be a member of the new owner.
 

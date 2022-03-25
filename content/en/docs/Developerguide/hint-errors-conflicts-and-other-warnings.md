@@ -1,4 +1,4 @@
-# Hint Errors, Conflicts, and Other Warnings<a name="EN-US_TOPIC_0245374575"></a>
+# Hint Errors, Conflicts, and Other Warnings<a name="EN-US_TOPIC_0289899816"></a>
 
 Plan hints change an execution plan. You can run  **EXPLAIN**  to view the changes.
 
@@ -34,28 +34,22 @@ Hint error types are as follows:
 
         For example, if  **nestloop \(t1 t2\) hashjoin \(t1 t2\)**  is used,  **hashjoin \(t1 t2\)**  becomes invalid.  **nestloop\(t1 t2\)**  does not conflict with  **no mergejoin\(t1 t2\)**.
 
-        >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-        >The table list in the  **leading**  hint is disassembled. For example,  **leading \(\(t1 t2 t3\)\)**  will be disassembled as  **leading\(\(t1 t2\)\) leading\(\(\(t1 t2\) t3\)\)**, which will conflict with  **leading\(\(t2 t1\)\)**  \(if any\). In this case, the latter  **leading\(t2 t1\)**  becomes invalid. If two hints use duplicated table lists and only one of them has the specified outer/inner table, the one without a specified outer/inner table becomes invalid.  
+        >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >The table list in the  **leading**  hint is disassembled. For example,  **leading \(\(t1 t2 t3\)\)**  will be disassembled as  **leading\(\(t1 t2\)\) leading\(\(\(t1 t2\) t3\)\)**, which will conflict with  **leading\(\(t2 t1\)\)**  \(if any\). In this case, the latter  **leading\(t2 t1\)**  becomes invalid. If two hints use duplicated table lists and only one of them has the specified outer/inner table, the one without a specified outer/inner table becomes invalid.
 
 
 -   A hint becomes invalid after a sublink is pulled up.
 
     In this case, a message will be displayed. Generally, such invalidation occurs when a sublink contains multiple tables to be joined. After the sublink is pulled up, the tables will not be join members.
 
--   Unsupported column types
-    -   Skew hints are specified to optimize redistribution. They will be invalid if their corresponding columns do not support redistribution.
-
 -   Hints are not used.
-    -   If  **hashjoin**  or  **mergejoin**  is specified for non-equivalent joins, it will not be used.
-    -   If  **indexscan**  or  **indexonlyscan**  is specified for a table that does not have an index, it will not be used.
-    -   If  **indexscan hint**  or  **indexonlyscan**  is specified for a full-table scan or for a scan whose filtering conditions are not set on index columns, it will not be used.
-    -   The specified  **indexonlyscan**  hint is used only when the output column contains only indexes.
+    -   If a  **hashjoin**  or  **mergejoin**  hint is specified for non-equivalent joins, it will not be used.
+    -   If an  **indexscan**  or  **indexonlyscan**  hint is specified for a table that does not have an index, it will not be used.
+    -   If an  **indexscan**  or  **indexonlyscan**  hint is specified for a full-table scan, it will not be used. Generally, index paths are generated only when filtering conditions are used on index columns. Indexes are not used during a full table scan.
+    -   If an  **indexonlyscan**  hint is specified when the output or predicate condition column does not contain only indexes, it will not be used.
     -   In equivalent joins, only the joins containing equivalence conditions are valid. Therefore, the  **leading**,  **join**, and  **rows**  hints specified for the joins without an equivalence condition will not be used. For example,  **t1**,  **t2**, and  **t3**  are to be joined, and the join between  **t1**  and  **t3**  does not contain an equivalence condition. In this case,  **leading\(t1 t3\)**  will not be used.
-    -   To generate a streaming plan, if the distribution key of a table is the same as its join key,  **redistribute**  specified for this table will not be used. If the distribution key and join key are different for this table but the same for the other table in the join,  **redistribute**  specified for this table will be used but  **broadcast**  will not.
     -   If no sublink is pulled up, the specified  **blockname**  hint will not be used.
     -   Skew hints are not used possibly because:
-        -   The plan does not require redistribution.
-        -   The columns specified by hints contain distribution keys.
         -   Skew information specified in hints is incorrect or incomplete, for example, no value is specified for join optimization.
         -   Skew optimization is disabled by GUC parameters.
 

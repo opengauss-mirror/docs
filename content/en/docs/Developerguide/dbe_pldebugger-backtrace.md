@@ -22,7 +22,7 @@ During debugging on the debug end, call  **backtrace**  to view the current call
 </tr>
 <tr id="row988215715717"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p165893217537"><a name="p165893217537"></a><a name="p165893217537"></a>funcname</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1388347165712"><a name="p1388347165712"></a><a name="p1388347165712"></a>OUT oid</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1388347165712"><a name="p1388347165712"></a><a name="p1388347165712"></a>OUT text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p17352834145318"><a name="p17352834145318"></a><a name="p17352834145318"></a>Function name</p>
 </td>
