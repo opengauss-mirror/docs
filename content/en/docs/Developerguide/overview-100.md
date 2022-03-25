@@ -27,7 +27,7 @@ A logical replication slot means a stream of changes that can be replayed in oth
 -   After a DDL statement \(for example,  **ALTER TABLE**\) is executed, the physical logs that are not decoded before the DDL statement execution may be lost.
 -   The size of a single tuple cannot exceed 1 GB, and decoded data may be larger than inserted data. Therefore, it is recommended that the size of a single tuple be less than or equal to 500 MB.
 -   openGauss supports the following data types for decoding:  **INTEGER**,  **BIGINT**,  **SMALLINT**,  **TINYINT**,  **SERIAL**,  **SMALLSERIAL**,  **BIGSERIAL**,  **FLOAT**,  **DOUBLE PRECISION**,  **DATE**,  **TIME\[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[WITHOUT TIME ZONE\]**,  **CHAR\(**_n_**\)**,  **VARCHAR\(**_n_**\)**, and  **TEXT**.
--   Currently, SSL connections are not supported by default. If SSL connections are required, set the GUC parameter  **ssl**  to  **on**.
+-   If the SSL connection is required, ensure that the guc parameter  **ssl**  is set to  **on**.
 -   The logical replication slot name must contain fewer than 64 characters and contain only one or more types of the following characters: lowercase letters, digits, and underscores \(\_\).
 -   Currently, logical replication does not support the MOT feature.
 -   After the database where a logical replication slot resides is deleted, the replication slot becomes unavailable and needs to be manually deleted.
@@ -42,5 +42,8 @@ A logical replication slot means a stream of changes that can be replayed in oth
 -   Currently, the logical decoding on the standby node does not support enabling the ultimate RTO.
 -   Ensure that the long transaction is not started during the creation of the logical replication slot. If the long transaction is started, the creation of the logical replication slot will be blocked.
 -   Interval partitioned tables cannot be replicated.
+-   Global temporary tables are not supported.
 -   After a DDL statement is executed in a transaction, the DDL statement and subsequent statements are not decoded.
+-   To perform decoding on the standby node, set the GUC parameter  **enable\_slot\_log**  to  **on**  on the corresponding host.
+-   Do not perform operations on the replication slot on other nodes when the logical replication slot is in use. To delete a replication slot, stop decoding in the replication slot first.
 

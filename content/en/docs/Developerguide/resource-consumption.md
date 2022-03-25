@@ -1,6 +1,6 @@
-# Resource Consumption<a name="EN-US_TOPIC_0242371488"></a>
+# Resource Consumption<a name="EN-US_TOPIC_0289900295"></a>
 
--   **[Memory](memory-26.md)**  
+-   **[Memory](memory.md)**  
 
 -   **[Disk Space](disk-space.md)**  
 

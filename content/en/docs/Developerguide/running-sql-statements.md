@@ -18,7 +18,9 @@ To enable an application to operate data in the database by running SQL statemen
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If an execution request \(not in a transaction block\) received in the database contains multiple statements, the request is packed into a transaction.  **VACUUM**  is not supported in a transaction block. If one of the statements fails, the entire request will be rolled back.
+    >-   If an execution request \(not in a transaction block\) received in the database contains multiple statements, the request is packed into a transaction.  **VACUUM**  is not supported in a transaction block. If one of the statements fails, the entire request will be rolled back.
+    >-   Use semicolons \(;\) to separate statements. Stored procedures, functions, and anonymous blocks do not support multi-statement execution.
+    >-   The slash \(/\) can be used as the terminator for creating a single stored procedure, function, or anonymous block.
 
 3.  Close the statement object.
 
@@ -124,7 +126,80 @@ To call an existing stored procedure through JDBC in openGauss, perform the foll
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >-   If JDBC is used to call a stored procedure whose returned value is a cursor, the returned cursor cannot be used.
     >-   A stored procedure and an SQL statement must be run separately.
+    >-   Output parameters must be registered for parameters of the inout type in the stored procedure.
 
+
+## Calling a Stored Procedure When Overloading Is Enabled in Oracle Compatibility Mode<a name="section1430462411108"></a>
+
+After the  **behavior\_compat\_options='proc\_outparam\_override'**  parameter is enabled, perform the following steps to call the stored procedure:
+
+1.  Create a call statement object by calling the  **prepareCall**  method in  **Connection**.
+
+    ```
+    Connection conn = DriverManager.getConnection("url","user","password");
+    CallableStatement cs = conn.prepareCall("{ CALL TEST_PROC(?,?,?) }");
+    ```
+
+2.  Set parameters by calling the  **setInt**  method in  **CallableStatement**.
+
+    ```
+    PGobject pGobject = new PGobject();
+    pGobject.setType("public.compfoo"); // Set the composite type name. The format is "schema.typename".
+    pGobject.setValue("(1,demo)"); //: Bind the value of the composite type. The format is "(value1,value2)".
+    cs.setObject(1, pGobject);
+    ```
+
+3.  Register an output parameter by calling the  **registerOutParameter**  method in  **CallableStatement**.
+
+    ```
+    //Register an out parameter of the composite type. The format is "schema.typename".
+    cs.registerOutParameter(2, Types.STRUCT, "public.compfoo");  
+    ```
+
+4.  Call the stored procedure by calling the  **execute**  method in  **CallableStatement**.
+
+    ```
+    cs.execute();
+    ```
+
+5.  Obtain the output parameter by calling the  **getObject**  method in  **CallableStatement**.
+
+    ```
+    PGobject result = (PGobject)cs.getObject(2);  // Obtain the out parameter.
+    result.getValue(); // Obtain the string value of the composite type.
+    result.getArrayValue(); // Obtain the array values of the composite type and sort the values according to the sequence of columns of the composite type.
+    result.getStruct(); // Obtain the subtype names of the composite type and sort them according to the creation sequence.
+    ```
+
+6.  Close the call statement by calling the  **close**  method in  **CallableStatement**.
+
+    ```
+    cs.close();
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   After the Oracle compatibility mode is enabled, you must use the  **\{call proc\_name\(?,?,?\)\}**  format to call a stored procedure and use the  **\{? = call func\_name\(?,?\)\}**  format to call a function. The question mark \(?\) on the left of the equal mark is the placeholder for the return value of the function and is used to register the return value of the function.
+    >-   After  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the service needs to re-establish a connection. Otherwise, the stored procedures and functions cannot be correctly called.
+    >-   If a function or stored procedure contains a composite type, bind and register parameters in the schema.typename format.
+
+
+Example:
+
+```
+//Create a composite data type in the database.
+CREATE TYPE compfoo AS (f1 int, f3 text);
+// The following stored procedure (containing the OUT parameter) has been created:
+create or replace procedure test_proc
+(
+    psv_in in compfoo,
+    psv_out out compfoo
+)
+as
+begin
+    psv_out := psv_in;
+end;
+/
+```
 
 ## Batch Processing<a name="en-us_topic_0283137004_en-us_topic_0237120383_en-us_topic_0213179129_en-us_topic_0189250824_en-us_topic_0059777674_sb0c28cebb51d482c8bd996ce7fef3a6c"></a>
 

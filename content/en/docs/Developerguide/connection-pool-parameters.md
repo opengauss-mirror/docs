@@ -6,7 +6,7 @@ When a connection pool is used to access the database, database connections are 
 
 **Parameter description**: Specifies the maximum amount of time that the connections can remain idle in a pool before being removed. After that, the automatic connection clearing mechanism is triggered to reduce the number of connections on each node to the value of  **minimum\_pool\_size**.
 
->![](C:/Users/liyang/Desktop/新建文件夹/英文/英文/07 Developer Guide英文3个/07 Developer Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >This parameter does not take effect in this version.
 
 This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
@@ -19,7 +19,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Parameter description**: Specifies the minimum number of remaining connections in the pool on each node after the automatic connection clearing is triggered. If this parameter is set to  **0**, the automatic connection clearing is disabled.
 
->![](C:/Users/liyang/Desktop/新建文件夹/英文/英文/07 Developer Guide英文3个/07 Developer Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >This parameter does not take effect in this version.
 
 This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).

@@ -1,4 +1,4 @@
-# Configuring a Data Source in the Linux OS<a name="EN-US_TOPIC_0000001162579252"></a>
+# Configuring a Data Source in the Linux OS<a name="EN-US_TOPIC_0289900737"></a>
 
 The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it has been configured in a data source. To configure a data source, you must configure the  **odbc.ini**  and  **odbcinst.ini**  files on the server. The two files are generated during the unixODBC compilation and installation, and are saved in the  **/usr/local/etc**  directory by default.
 
@@ -6,7 +6,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
 1.  Obtain the source code package of unixODBC by following link: 
 
-    [https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.7/unixODBC-2.3.7pre.tar.gz/download](https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.7/unixODBC-2.3.7pre.tar.gz/download)
+    [https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.9/unixODBC-2.3.9pre.tar.gz/download](https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.9/unixODBC-2.3.9pre.tar.gz/download)
 
     After the download, validate the integrity based on the integrity validation algorithm provided by the community.
 
@@ -28,18 +28,18 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     ```
 
 3.  Replace the openGauss client driver.
-    1.  Decompress  **openGauss-1.1.0-ODBC.tar.gz**  to the  **/usr/local/lib**  directory. The  **psqlodbcw.la**  and  **psqlodbcw.so**  files are obtained.
+    1.  Decompress the  **openGauss-1.1.0-ODBC.tar.gz**  package. After the decompression, the  **lib**  and  **odbc**  folders are generated. The  **odbc**  folder contains another  **lib**  folder. Copy the  **psqlodbca.la**,  **psqlodbca.so**,  **psqlodbcw.la**, and  **psqlodbcw.so**  files from  **/odbc/lib**  to  **/usr/local/lib**.
     2.  Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-1.1.0-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
 
 4.  Configure a data source.
     1.  Configure the ODBC driver file.
 
-        Add the following content to the  **/xxx/odbc/etc/odbcinst.ini**  file:
+        Add the following content to the  **/usr/local/etc/odbcinst.ini**  file:
 
         ```
         [GaussMPP]
-        Driver64=/xxx/odbc/lib/psqlodbcw.so
-        setup=/xxx/odbc/lib/psqlodbcw.so
+        Driver64=/usr/local/lib/psqlodbcw.so
+        setup=/usr/local/lib/psqlodbcw.so
         ```
 
         For descriptions of the parameters in the  **odbcinst.ini**  file, see  [Table 1](#en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_td564f21e7c8e458bbd741b09896f5d91).
@@ -66,14 +66,14 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </td>
         <td class="cellrowborder" valign="top" width="38.89%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ac1271d08ff5242849aefc93aed5b0038"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ac1271d08ff5242849aefc93aed5b0038"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ac1271d08ff5242849aefc93aed5b0038"></a>Path of the dynamic driver library.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a>Driver64=/xxx/odbc/lib/psqlodbcw.so</p>
+        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a9a7de0f221414c0f97d14fbbf74eb104"></a>Driver64=/usr/local/lib/psqlodbcw.so</p>
         </td>
         </tr>
         <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r4e8ad74343a849f8a7224716cf20ab57"><td class="cellrowborder" valign="top" width="26.340000000000003%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a18a35a0225c14a2e9aecdc72084f1418"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a18a35a0225c14a2e9aecdc72084f1418"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a18a35a0225c14a2e9aecdc72084f1418"></a>setup</p>
         </td>
         <td class="cellrowborder" valign="top" width="38.89%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6eecb8f4cf064448a14a46be8e243daa"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6eecb8f4cf064448a14a46be8e243daa"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a6eecb8f4cf064448a14a46be8e243daa"></a>Driver installation path, which is the same as the dynamic library path in Driver64.</p>
         </td>
-        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7f838d6444df4566853f51533341401b"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7f838d6444df4566853f51533341401b"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7f838d6444df4566853f51533341401b"></a>setup=/xxx/odbc/lib/psqlodbcw.so</p>
+        <td class="cellrowborder" valign="top" width="34.77%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7f838d6444df4566853f51533341401b"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7f838d6444df4566853f51533341401b"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a7f838d6444df4566853f51533341401b"></a>setup=/usr/local/lib/psqlodbcw.so</p>
         </td>
         </tr>
         </tbody>
@@ -101,7 +101,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_t55845a6555f2454297b64ce47ad3d648"></a>
         <table><thead align="left"><tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_r670b13dddd7d4cf1803d4fb238347e4f"><th class="cellrowborder" valign="top" width="30.570000000000004%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acaf03818449f45a3baf67b847f258487"></a><strong id="b566754655"><a name="b566754655"></a><a name="b566754655"></a>Parameter</strong></p>
         </th>
-        <th class="cellrowborder" valign="top" width="33.37%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><strong id="b71385514"><a name="b71385514"></a><a name="b71385514"></a>Description</strong></p>
+        <th class="cellrowborder" valign="top" width="33.37%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a2996382cc39847f79d6e271605212118"></a><strong id="b845178176"><a name="b845178176"></a><a name="b845178176"></a>Description</strong></p>
         </th>
         <th class="cellrowborder" valign="top" width="36.059999999999995%" id="mcps1.2.4.1.3"><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_a5962444038ea45f4a049a6659667dbf3"></a><strong id="b15508183881020"><a name="b15508183881020"></a><a name="b15508183881020"></a>Example</strong></p>
         </th>
@@ -123,7 +123,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tr>
         <tr id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_ra2915c8c5cb64c31bca0b7cc97b3cb94"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_acda586c1c3074516b55eca79e45c96b9"></a>Servername</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a>Server IP address.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_af9844951ac5f42cf95b1e70a86da25ed"></a>Server IP address. Multiple IP addresses can be configured.</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_en-us_topic_0058965230_p705535321213"></a>Servername = 10.145.130.26</p>
         </td>
@@ -200,17 +200,17 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tr>
         <tr id="row102684231731"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p6268223637"><a name="p6268223637"></a><a name="p6268223637"></a>UnamedPrepStmtThreshold</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p42681323638"><a name="p42681323638"></a><a name="p42681323638"></a>Each time <strong id="b17628202615373"><a name="b17628202615373"></a><a name="b17628202615373"></a>SQLFreeHandle</strong> is invoked to release statements, ODBC sends a <strong id="b12308173723819"><a name="b12308173723819"></a><a name="b12308173723819"></a>Deallocate plan_name</strong> statement to the server. A large number of such a statement exist in the service. To reduce the number of the statements to be sent, <strong id="b17478186175019"><a name="b17478186175019"></a><a name="b17478186175019"></a>stmt-&gt;plan_name</strong> is left empty so that the database can identify them as unnamed statements. This parameter is added to control the threshold for unnamed statements.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="p42681323638"><a name="p42681323638"></a><a name="p42681323638"></a>Each time <strong id="b17628202615373"><a name="b17628202615373"></a><a name="b17628202615373"></a>SQLFreeHandle</strong> is invoked to release statements, ODBC sends a <strong id="b12308173723819"><a name="b12308173723819"></a><a name="b12308173723819"></a>Deallocate plan_name</strong> statement to the server. A large number of such statements exist in the service. To reduce the number of the statements to be sent, <strong id="b17478186175019"><a name="b17478186175019"></a><a name="b17478186175019"></a>stmt-&gt;plan_name</strong> is left empty so that the database can identify them as unnamed statements. This parameter is added to control the threshold for unnamed statements.</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="p0268142318319"><a name="p0268142318319"></a><a name="p0268142318319"></a>UnamedPrepStmtThreshold = 100</p>
         </td>
         </tr>
         <tr id="en-us_topic_0283136654_en-us_topic_0237120407_row9789524184113"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p182621858115514"></a>ConnectionExtraInfo</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a>Whether to display the driver deployment path and process owner in the <strong id="b323618214810"><a name="b323618214810"></a><a name="b323618214810"></a>connection_info</strong> parameter mentioned in <a href="en-us_topic_0000001162739322.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>.</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p1626217582555"></a>Whether to display the driver deployment path and process owner in the <strong id="b323618214810"><a name="b323618214810"></a><a name="b323618214810"></a>connection_info</strong> parameter mentioned in <a href="connection-settings.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>.</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p42621158185515"></a>ConnectionExtraInfo = 1</p>
-        <div class="note" id="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a>The default value is <strong id="b18201217781"><a name="b18201217781"></a><a name="b18201217781"></a>0</strong>. If this parameter is set to <strong id="b261315312492"><a name="b261315312492"></a><a name="b261315312492"></a>1</strong>, the ODBC driver reports the driver deployment path and process owner to the database and displays the information in the <strong id="b4614143116497"><a name="b4614143116497"></a><a name="b4614143116497"></a>connection_info</strong> parameter (see <a href="en-us_topic_0000001208299277.md">BEGIN</a>). In this case, you can query the information from <a href="en-us_topic_0000001162579488.md">PG_STAT_ACTIVITY</a>.</p>
+        <div class="note" id="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_note523613263217"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a><a name="en-us_topic_0283136654_en-us_topic_0237120407_p17978439306"></a>The default value is <strong id="b18201217781"><a name="b18201217781"></a><a name="b18201217781"></a>0</strong>. If this parameter is set to <strong id="b261315312492"><a name="b261315312492"></a><a name="b261315312492"></a>1</strong>, the ODBC driver reports the driver deployment path and process owner to the database and displays the information in the <strong id="b4614143116497"><a name="b4614143116497"></a><a name="b4614143116497"></a>connection_info</strong> parameter (see <a href="connection-settings.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>). In this case, you can query the information from <a href="en-us_topic_0289899849.md">PG_STAT_ACTIVITY</a>.</p>
         </div></div>
         </td>
         </tr>
@@ -296,9 +296,27 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tbody>
         </table>
 
-5.  \(Optional\) Generate an SSL certificate. For details, see  [Generating Certificates](en-us_topic_0000001162897862.md). This step and step  [6](#en-us_topic_0283136654_li1724551081815)  are required only when the server and client are connected in SSL mode. Skip the two steps if the non-SSL connection mode is used.
-6.  <a name="en-us_topic_0283136654_li1724551081815"></a>\(Optional\) Replace an SSL certificate. For details, see  [Replacing Certificates](en-us_topic_0000001208139113.md).
-7.  <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>Configure the database server.
+5.  \(Optional\) Generate an SSL certificate. For details, see  [Generating Certificates](en-us_topic_0289900216.md). This step and step  [6](#en-us_topic_0283136654_li1724551081815)  are required only when the server and client are connected in SSL mode. Skip the two steps if the non-SSL connection mode is used.
+6.  <a name="en-us_topic_0283136654_li1724551081815"></a>\(Optional\) Replace an SSL certificate. For details, see  [Replacing Certificates](en-us_topic_0289900549.md).
+7.  Enable SSL mode.
+
+    Declare the following environment variables and ensure that the permission for the  **client.key\***  series files is set to  **600**.
+
+    ```
+    Go back to the root directory, create the .postgresql directory, and save root.crt, client.crt, client.key, client.key.cipher, client.key.rand, client.req, server.crt, server.key, server.key.cipher, server.key.rand, and server.req to the .postgresql directory.
+    In the Unix OS, server.crt and server.key must deny the access from the external or any group. Run the following command to set this permission:
+    chmod 0600 server.key
+    Copy the certificate files whose names start with root.crt and server to the install/data directory of the database (the directory is the same as that of the postgresql.conf file).
+    Modify the postgresql.conf file.
+        ssl = on
+        ssl_cert_file = 'server.crt'
+        ssl_key_file = 'server.key'
+        ssl_ca_file = 'root.crt'
+    After modifying the parameters, restart the database.
+    Set the sslmode parameter to require or verify-ca in the odbc.ini file.
+    ```
+
+8.  <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>Configure the database server.
     1.  Log in as the OS user  **omm**  to the primary node of the database.
     2.  Run the following command to add NIC IP addresses or host names, with values separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  _NodeName_  specifies the name of the current node.
 
@@ -345,7 +363,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         gs_om -t start
         ```
 
-8.  Configure the environment variables on the client.
+9.  Configure the environment variables on the client.
 
     ```
     vim ~/.bashrc
@@ -359,7 +377,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     export ODBCINI=/usr/local/etc/odbc.ini
     ```
 
-9.  Run the following command to validate the addition:
+10. Run the following command to validate the addition:
 
     ```
     source ~/.bashrc
@@ -479,7 +497,7 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
     >-   An MD5 hash can only be generated using the original password, but the password cannot be obtained by reversing its SHA-256 hash. Passwords in the old version will only have SHA-256 hashes and not support MD5 authentication.
     >-   The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
 
-    To solve this problem, you can update the user password \(see  [ALTER USER](en-us_topic_0000001162579212.md)\) or create a user \(see  [CREATE USER](en-us_topic_0000001208139469.md)\) having the same permissions as the faulty user.
+    To solve this problem, you can update the user password \(see  [ALTER USER](en-us_topic_0289900744.md)\) or create a user \(see  [CREATE USER](en-us_topic_0289899951.md)\) having the same permissions as the faulty user.
 
 -   unsupported frontend protocol 3.51: server supports 1.0 to 3.0
 
@@ -487,6 +505,6 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
 
 -   FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
 
-    In  **pg\_hba.conf**  of the target primary database node, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see  [7](#en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5).
+    In  **pg\_hba.conf**  of the target primary database node, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see  [8](#en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5).
 
 

@@ -258,7 +258,10 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **on**  indicates that the black box function is enabled.
 -   **off**  indicates that the black box function is disabled.
 
-**Default value**:  **off**
+**Default value**:  **on**
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>The generation of core files by the black box depends on the open ptrace interface of the operating system. If the permission is insufficient \(errno = 1\), ensure that  **/proc/sys/kernel/yama/ptrace\_scope**  is configured properly.
 
 ## bbox\_dump\_count<a name="en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s03ba824694c84fdf8dad4f710d0e3a53"></a>
 
@@ -281,7 +284,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: a string
 
-**Default value**: empty The default path where the black box core files are generated is  **/proc/sys/openGauss/core\_pattern**. If the path is not a directory or you do not have the write permission for the directory, the black box core files will be generated in the data directory of the database. Alternatively, use the directory specified during installation.
+**Default value**: empty The default path where the black box core files are generated is  **/proc/sys/kernel/core\_pattern**. If the path is not a directory or you do not have the write permission for the directory, the black box core files will be generated in the data directory of the database. Alternatively, use the directory specified during installation.
 
 ## enable\_ffic\_log<a name="section3118243173312"></a>
 
@@ -397,7 +400,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## bbox\_blanklist\_items<a name="section99691443488"></a>
 
-**Parameter description**: Specifies the anonymized data items of black box core files. This parameter is valid only when  **[enable\_bbox\_dump](#en-us_topic_0059777791_section10758942101117)**  is set to  **on**.
+**Parameter description**: Specifies the anonymized data items of black box core files. This parameter is valid only when  **[enable\_bbox\_dump](#en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_section10758942101117)**  is set to  **on**.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

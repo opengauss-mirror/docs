@@ -181,6 +181,13 @@ This section describes  **java.sql.CallableStatement**, the API for executing th
 <td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p53950512"></a>Yes</p>
 </td>
 </tr>
+<tr id="row738113501243"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p153811950112418"><a name="p153811950112418"></a><a name="p153811950112418"></a>registerOutParameter(int parameterIndex, int sqlType, int type)</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1338155032415"><a name="p1338155032415"></a><a name="p1338155032415"></a>void</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p12381650172417"><a name="p12381650172417"></a><a name="p12381650172417"></a>Yes</p>
+</td>
+</tr>
 <tr id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_row15792565"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p23672536"></a>wasNull()</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_en-us_topic_0059778741_en-us_topic_0058965232_p59980828"></a><span id="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"></a><a name="en-us_topic_0237120392_en-us_topic_0213179158_en-us_topic_0189250822_text13995396495"></a>Boolean</span></p>
@@ -194,5 +201,6 @@ This section describes  **java.sql.CallableStatement**, the API for executing th
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   The batch operation of statements containing OUT parameter is not allowed.
 >-   The following methods are inherited from  **java.sql.Statement**:  **close**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getConnection**,  **getResultSet**,  **getUpdateCount**,  **isClosed**,  **setMaxRows**, and  **setFetchSize**.
->-   The following methods are inherited from  **java.sql.PreparedStatement**:  **addBatch**,  **clearParameters**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getMetaData**,  **setBigDecimal**,  **setBoolean**,  **setByte**,  **setBytes**,  **setDate**,  **setDouble**,  **setFloat**,  **setInt**,  **setLong**, **setNull**,  **setObject**,  **setString**,  **setTime**, and  **setTimestamp**.
+>-   The following methods are inherited from  **java.sql.PreparedStatement**:  **addBatch**,  **clearParameters**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getMetaData**,  **setBigDecimal**,  **setBoolean**,  **setByte**,  **setBytes**,  **setDate**,  **setDouble**,  **setFloat**,  **setInt**,  **setLong**,** setNull**,  **setObject**,  **setString**,  **setTime**, and  **setTimestamp**.
+>-   The  **registerOutParameter\(int parameterIndex, int sqlType, int type\)**  method is used only to register the composite data type.
 

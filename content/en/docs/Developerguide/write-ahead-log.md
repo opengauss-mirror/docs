@@ -1,4 +1,4 @@
-# Write Ahead Log<a name="EN-US_TOPIC_0242371496"></a>
+# Write Ahead Log<a name="EN-US_TOPIC_0289899971"></a>
 
 -   **[Settings](settings.md)**  
 

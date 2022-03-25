@@ -1,4 +1,4 @@
-# Error Reporting and Logging<a name="EN-US_TOPIC_0242371510"></a>
+# Error Reporting and Logging<a name="EN-US_TOPIC_0289899825"></a>
 
 -   **[Logging Destination](logging-destination.md)**  
 

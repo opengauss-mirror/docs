@@ -1,4 +1,4 @@
-# Background Writer<a name="EN-US_TOPIC_0000001208457949"></a>
+# Background Writer<a name="EN-US_TOPIC_0289900126"></a>
 
 This section describes background writer parameters. The background writer process is used to write dirty data \(new or modified data\) in shared buffers to disks. This mechanism ensures that database processes seldom or never need to wait for a write action to occur when handling user queries.
 
@@ -109,4 +109,24 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **off**/**false**: The page popularity is not considered.
 
 **Default value**:  **off**
+
+## dw\_file\_num<a name="section154981114163011"></a>
+
+**Parameter description**: Specifies the number of doublewrite files to be written in batches. The value is related to  **pagewriter\_thread\_num**  and cannot be greater than  **pagwriter\_thread\_num**. If the value is too large, it will be corrected to the value of  **pagewriter\_thread\_num**.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 1 to 16
+
+**Default value**:  **1**
+
+## dw\_file\_size<a name="section11728112433111"></a>
+
+**Parameter description**: Specifies the size of each doulewrite file.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer, in the range \[32,256\]
+
+**Default value**:  **256**
 

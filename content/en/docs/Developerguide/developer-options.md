@@ -85,7 +85,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 **Default value**:  **0**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->This parameter is used only for commissioning and fault locating. To prevent impact on service running, ensure that the default value 0 is used in the production environment. If this parameter is set to a value other than 0, the cluster status may be abnormal due to a long authentication delay.
+>This parameter is used only for commissioning and fault locating. To prevent impact on service running, ensure that the default value  **0**  is used in the production environment. If this parameter is set to a value other than 0, the cluster status may be abnormal due to a long authentication delay.
 
 ## trace\_notify<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sa6199e2adece4b37973aa834ae741888"></a>
 
@@ -274,10 +274,23 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that the functions are enabled.
--   **off**  indicates that the functions are disabled.
+-   **on**: enabled.
+-   **off**: disabled.
 
 **Default value**:  **off**
+
+## enable\_csqual\_pushdown<a name="en-us_topic_0059778871_s92a1101adc734922b04b37d758f0a871"></a>
+
+**Parameter description**: Specifies whether to deliver filter criteria for a rough check during query.
+
+This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that a rough check is performed with filter criteria delivered during query.
+-   **off**  indicates that a rough check is performed without filter criteria delivered during query.
+
+**Default value**:  **on**
 
 ## string\_hash\_compatible<a name="en-us_topic_0059778871_s8e3745c42ce043a2b17da80c822304de"></a>
 
@@ -304,4 +317,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 1 to 86400. The unit is second.
 
 **Default value**:  **15min**
+
+## plsql\_show\_all\_error<a name="section232164414549"></a>
+
+**Parameter description:**  Specifies whether to skip errors and continue compiling PLPGSQL objects. For details about the impact, see  [DBE\_PLDEVELOPER](en-us_topic_0000001214846417.md).
+
+This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+**Default value**:  **off**
 

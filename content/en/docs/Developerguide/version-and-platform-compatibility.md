@@ -1,4 +1,4 @@
-# Version and Platform Compatibility<a name="EN-US_TOPIC_0242371526"></a>
+# Version and Platform Compatibility<a name="EN-US_TOPIC_0289900168"></a>
 
 -   **[Compatibility with Earlier Versions](compatibility-with-earlier-versions.md)**  
 

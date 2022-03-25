@@ -4,11 +4,21 @@
 
 **Parameter description:**  Specifies whether to enable the UStore storage engine by default. If this parameter is set to  **on**, all created tables are UStore tables.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846). Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
 
 **Value range:**  \[off,on\]
 
 **Default value**:  **off**
+
+## enable\_ustore<a name="section182244334911"></a>
+
+**Parameter description**: Specifies whether to enable the Ustore storage engine. If this parameter is set to  **on**, Ustore tables can be created. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range:**  \[off,on\]
+
+**Default value**:  **on**
 
 ## reserve\_space\_for\_nullable\_atts<a name="section475852314301"></a>
 
@@ -54,7 +64,7 @@ This parameter is a fixed parameter of the INTERNAL type. It can be viewed but c
 
 **Parameter description**: Specifies the block size of the current database.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Value**:  **8192**
 
@@ -64,7 +74,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Parameter description**: Specifies the segment file size of the current database.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Unit**: 8 KB
 
@@ -74,7 +84,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Parameter description**: Specifies the maximum number of index keys supported by the current database.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Default value**:  **32**
 
@@ -82,7 +92,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Parameter description**: Specifies whether the date and time are in the 64-bit integer format.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Value range**: Boolean
 
@@ -95,7 +105,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Parameter description:**  Specifies the locale in which sorting of textual data is done.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Default value**: Determined by the configuration set during the openGauss installation and deployment.
 
@@ -103,7 +113,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Parameter description**: Specifies the locale that determines character classifications. For example, it specifies what a letter and its upper-case equivalent are.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Default value**: Determined by the configuration set during the openGauss installation and deployment.
 
@@ -111,7 +121,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Parameter description**: Specifies the maximum identifier length.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Value range**: an integer
 
@@ -123,7 +133,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 By default, gs\_initdb will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
-This parameter is an INTERNAL parameter. The value of this parameter cannot be modified.
+This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Default value:**  determined by the current system environment when the database is created.
 
@@ -131,7 +141,7 @@ This parameter is an INTERNAL parameter. The value of this parameter cannot be m
 
 **Parameter description**: If this parameter is set to  **on**, the delta merge operation internally increases the lock level, and errors can be prevented when update and delete operations are performed at the same time.
 
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -195,9 +205,32 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the maximum number of autonomous transaction connections, that is, the maximum number of concurrent autonomous transactions executed at the same time. If this parameter is set to  **0**, autonomous transactions cannot be executed.
 
-This parameter is an INTERNAL parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: 0–1024
 
 **Default value:** **10**
+
+## acceleration\_with\_compute\_pool<a name="section13787157164412"></a>
+
+**Parameter description**: Specifies whether to use the computing resource pool for acceleration when an OBS is queried.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  indicates that the query covering the OBS is accelerated based on the cost when the computing resource pool is available.
+-   **off**  indicates that no query is accelerated using the computing resource pool.
+
+**Default value**:  **off**
+
+## max\_resource\_package<a name="section106841634172711"></a>
+
+**Parameter description:**  Specifies the maximum number of threads that DN can run concurrently on an acceleration database instance on the cloud.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: 0 to 2147483647
+
+**Default value**:  **0**
 

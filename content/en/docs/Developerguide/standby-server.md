@@ -9,6 +9,10 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If this parameter is set to  **on**,  **[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **hot\_standby**. Otherwise, the database startup fails.
 >-   In an HA system,  **hot\_standby**  cannot be set to  **off**, because this setting can affect other features of the HA system.
+>-   If the  **hot\_standby**  parameter was disabled and the  **wal\_level**  parameter was set to a value lower than  **hot\_standby**, perform the following operations to ensure that the logs to be replayed on the standby node can be queried on the standby node before enabling the  **hot\_standby**  parameter again:
+>    1.  Change the  **wal\_level**  value of the primary and standby nodes to  **hot\_standby**  or higher, and restart the instances for the change to take effect.
+>    2.  Perform the checkpoint operation on the primary node and query the  **pg\_stat\_get\_wal\_senders\(\)**  function to ensure that the  **receiver\_replay\_location**  value of each standby node is the same as the  **sender\_flush\_location**  value of the primary node. Ensure that the value adjustment of  **wal\_level**  is synchronized to standby nodes and takes effect, and standby nodes do not need to replay low-level logs.
+>    3.  Set the  **hot\_standby**  parameter of the primary and standby nodes to  **on**, and restart the instances for the setting to take effect.
 
 **Value range**: Boolean
 
@@ -105,7 +109,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## wal\_receiver\_buffer\_size<a name="en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_s1152f5dcb7744fa5ace65b997f92ed03"></a>
 
-**Parameter description**: Specifies the memory buffer size for the standby and secondary servers to store the received XLOG files.
+**Parameter description**: Specifies the size of the memory buffer that stores the Xlogs received by the standby and secondary nodes. Currently, primary/standby/secondary deployment is not supported by default.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -123,11 +127,13 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**: empty
 
-**Parameter description**：Max number of applyworker in subscription side.
+## max\_logical\_replication\_workers<a name="section876805114185"></a>
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Parameter description**: Specifies the maximum number of apply worker threads on the subscriber side.
 
-**Value range**：int, 0~262143
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Default value**：4
+**Value range**: an integer ranging from 0 to 262143
+
+**Default value:** **4**
 
