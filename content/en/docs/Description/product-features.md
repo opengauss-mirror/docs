@@ -8,7 +8,7 @@ openGauss features high performance, availability, security, and maintainability
 
 -   High availability \(HA\)
 
-    Intra-city cross-AZ DR ensures zero data loss, minute-level recovery, and support for DCF capability.
+    Intra-city cross-AZ DR ensures zero data loss and minute-level recovery. 
 
 -   High security
 

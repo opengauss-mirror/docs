@@ -52,6 +52,11 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a>Acronym for command-line interface. A means of communication between a program and its user, based solely on textual input and output. Commands are input with the help of a keyboard or similar device and are interpreted and executed by the program. Results are output as text or graphics to the terminal.</p>
 </td>
 </tr>
+<tr id="row1897814131516"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p930491217374"><a name="p930491217374"></a><a name="p930491217374"></a>CM</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1550044017374"><a name="p1550044017374"></a><a name="p1550044017374"></a>Acronym for cluster manager, a database management module. It manages and monitors the running status of functional units and physical resources in a system, ensuring stable running of the entire system.</p>
+</td>
+</tr>
 <tr id="row12703164422712"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p54125431608"><a name="p54125431608"></a><a name="p54125431608"></a>CMK</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>Acronym for client master key in the full encryption scenario. </p>
@@ -89,9 +94,9 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p511528299138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p511528299138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p511528299138"></a>Acronym for database management system. It is a piece of system management software that allows users to access information in a database. It is a collection of programs that allows users to access, manage, and query data in a database. A DBMS can be classified as memory DBMS or disk DBMS based on the location of the data.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row577222849138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p449933919138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p449933919138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p449933919138"></a>DCF</p>
+<tr id="row17662334163716"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p19600336123717"><a name="p19600336123717"></a><a name="p19600336123717"></a>DCF</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p205860929138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p205860929138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p205860929138"></a>Distributed Consensus Framework, a distributed consensus framework, based on the Paxos algorithm to achieve strong data synchronization and consistency.</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p46001736113714"><a name="p46001736113714"></a><a name="p46001736113714"></a>Acronym for distributed consensus framework which implements data synchronization based on the Paxos algorithm.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row577222849138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p449933919138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p449933919138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p449933919138"></a>DCL</p>
