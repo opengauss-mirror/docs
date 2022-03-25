@@ -282,6 +282,7 @@
 
 
 
+
 ## 配置CM_SERVER（主、非主）信息
 
 **非CMS主节点配置以下信息。**
@@ -292,31 +293,104 @@
 <PARAM name="cmDir" value="**/opt/huawei/data/cm**"/>
 ```
 
-表1 参数说明
+**表 1**  参数说明
 
-| 实例类型 | 参数                | 说明                                                         |
-| -------- | ------------------- | ------------------------------------------------------------ |
-| CM       | cmServerPortBase    | 主CM Server端口号，默认值5000。                              |
-| CM       | cmServerPortStandby | 备CM Server端口号，默认值5500。                              |
-| CM       | cmServerListenIp1   | CM Server用于侦听CM Agent连接请求或DBA管理请求的IP地址。     |
-| CM       | cmServerHaIp1       | 主、备CM Server间通信的IP地址。Value中左边为主CM Server的主机IP地址，右边为备CM Server的主机IP地址。未设置时，默认根据主、备CM Server所在主机的backIp1生成。 |
-| CM       | cmDir               | CM数据文件路径。保存CM Server和CM Agent用到的数据文件，参数文件等。各集群主机上均需配置该参数。 |
+<a name="table642932620115"></a>
 
- 
+<table><thead align="left"><tr id="row1543052614113"><th class="cellrowborder" valign="top" width="14.84148414841484%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p21592892202859"></a>实例类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="25.212521252125214%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4193855202859"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="59.94599459945995%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a><a name="zh-cn_topic_0085434641_zh-cn_topic_0059782050_p4157954202859"></a>说明</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1343016261112"><td class="cellrowborder" rowspan="5" valign="top" width="14.84148414841484%" headers="mcps1.2.4.1.1 "><p id="p1752719501213"><a name="p1752719501213"></a><a name="p1752719501213"></a>CM</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.212521252125214%" headers="mcps1.2.4.1.2 "><p id="p138772053175815"><a name="p138772053175815"></a><a name="p138772053175815"></a>cmServerPortBase</p>
+</td>
+<td class="cellrowborder" valign="top" width="59.94599459945995%" headers="mcps1.2.4.1.3 "><p id="p08776536586"><a name="p08776536586"></a><a name="p08776536586"></a>主CM Server端口号，默认值5000。</p>
+</td>
+</tr>
+<tr id="row462419461815"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p3877105311589"><a name="p3877105311589"></a><a name="p3877105311589"></a>cmServerPortStandby</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p487755311588"><a name="p487755311588"></a><a name="p487755311588"></a>备CM Server端口号，默认值5500。</p>
+</td>
+</tr>
+<tr id="row243013261715"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p16877165315584"><a name="p16877165315584"></a><a name="p16877165315584"></a>cmServerListenIp1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p7877115312585"><a name="p7877115312585"></a><a name="p7877115312585"></a>CM Server用于侦听CM Agent连接请求或DBA管理请求的IP地址。</p>
+</td>
+</tr>
+<tr id="row1643082612118"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p4877145395811"><a name="p4877145395811"></a><a name="p4877145395811"></a>cmServerHaIp1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p18771153115819"><a name="p18771153115819"></a><a name="p18771153115819"></a>主、备CM Server间通信的IP地址。</p>
+<p id="p12877195316581"><a name="p12877195316581"></a><a name="p12877195316581"></a>Value中左边为主CM Server的主机IP地址，右边为备CM Server的主机IP地址。未设置时，默认根据主、备CM Server所在主机的backIp1生成。</p>
+</td>
+</tr>
+<tr id="row1843010268113"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p128781753205814"><a name="p128781753205814"></a><a name="p128781753205814"></a>cmDir</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p8878135305818"><a name="p8878135305818"></a><a name="p8878135305818"></a>CM数据文件路径。保存CM Server和CM Agent用到的数据文件，参数文件等。</p>
+<p id="p1187855355815"><a name="p1187855355815"></a><a name="p1187855355815"></a>各集群主机上均需配置该参数。</p>
+</td>
+</tr>
+</tbody>
+</table>
 
-表1 目录说明
+**表 2**  目录说明
 
-| 目录             | 说明                                                         |
-| ---------------- | ------------------------------------------------------------ |
-| /opt/huawei/data | 集群实例的数据存储总目录。此目录为数据库的数据存储目录。应规划到数据盘上。此目录应满足如下要求：l 磁盘空间请根据实际业务数据量大小规划。l 各实例间的数据路径相互独立，彼此间没有包含关系。例如本指南中各实例的数据目录规划如表数据库实例数据目录所示。 |
+<a name="table15788185133410"></a>
 
- 表1 数据库实例数据目录
+<table><thead align="left"><tr id="row278812517346"><th class="cellrowborder" valign="top" width="39.6%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p43366803202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p43366803202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p43366803202410"></a>目录</p>
+</th>
+<th class="cellrowborder" valign="top" width="60.4%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p23050178202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p23050178202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p23050178202410"></a>说明</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row878819593413"><td class="cellrowborder" valign="top" width="39.6%" headers="mcps1.2.3.1.1 "><p id="p14788157341"><a name="p14788157341"></a><a name="p14788157341"></a>/opt/huawei/data</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p42801081202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p42801081202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p42801081202410"></a>集群实例的数据存储总目录。此目录为数据库的数据存储目录。应规划到数据盘上。</p>
+<p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p49665416202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p49665416202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p49665416202410"></a>此目录应满足如下要求：</p>
+<a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_ul44335561202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_ul44335561202410"></a><ul id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_ul44335561202410"><li>磁盘空间请根据实际业务数据量大小规划。</li><li>各实例间的数据路径相互独立，彼此间没有包含关系。例如本指南中各实例的数据目录规划如<a href="#table15838192510429">表3</a>所示。</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
 
-| 实例名称 | 实例数据目录                                                 |
-| -------- | ------------------------------------------------------------ |
-| CM       | /opt/huawei/data/cm                                          |
-| 主DN     | /opt/huawei/data/masterX其中，X为从1开始的连续正整数，用于标识当前主机上的第X个DN。 |
-| 备DN     | /opt/huawei/data/slaveX其中，X为从1开始的连续正整数，用X标识当前主机上的第X个备DN。 |
+
+**表 3**  数据库实例数据目录
+
+<a name="table15838192510429"></a>
+
+<table><thead align="left"><tr id="row14838152510421"><th class="cellrowborder" valign="top" width="39.6%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p20433411202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p20433411202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p20433411202410"></a>实例名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="60.4%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p44493607202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p44493607202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p44493607202410"></a>实例数据目录</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1839122534217"><td class="cellrowborder" valign="top" width="39.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p66106311202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p66106311202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p66106311202410"></a>CM</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p53010964202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p53010964202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p53010964202410"></a>/opt/huawei/data/cm</p>
+</td>
+</tr>
+<tr id="row8839162524215"><td class="cellrowborder" valign="top" width="39.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p55748877202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p55748877202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p55748877202410"></a>主DN</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p19365159202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p19365159202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p19365159202410"></a>/opt/huawei/data/masterX</p>
+<p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25074029202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25074029202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25074029202410"></a>其中，X为从1开始的连续正整数，用于标识当前主机上的第X个DN。</p>
+</td>
+</tr>
+<tr id="row68397259423"><td class="cellrowborder" valign="top" width="39.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25356817202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25356817202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p25356817202410"></a>备DN</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p40636326202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p40636326202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p40636326202410"></a>/opt/huawei/data/slaveX</p>
+<p id="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p3208132202410"><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p3208132202410"></a><a name="zh-cn_topic_0085434665_zh-cn_topic_0059782055_p3208132202410"></a>其中，X为从1开始的连续正整数，用X标识当前主机上的第X个备DN。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
 
 
 ## 示例

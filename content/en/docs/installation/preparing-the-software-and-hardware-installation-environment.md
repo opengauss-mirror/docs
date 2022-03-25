@@ -83,7 +83,7 @@ This section describes hardware and software requirements of openGauss. It is re
 <tbody><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
 </td>
 <td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="ul2800840102316"></a><a name="ul2800840102316"></a><ul id="ul2800840102316"><li>Arm:<a name="ul177759349286"></a><a name="ul177759349286"></a><ul id="ul177759349286"><li>openEuler 20.03LTS (recommended)</li><li>Kirin V10</li></ul>
-</li><li>x86:<a name="ul851564911283"></a><a name="ul851564911283"></a><ul id="ul851564911283"><li>openEuler 20.03LTS</li><li>CentOS 7.6<div class="note" id="note222515135376"><a name="note222515135376"></a><a name="note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p1225613103712"><a name="p1225613103712"></a><a name="p1225613103712"></a>You are advised to use the English OS. The current installation package can be installed and used only on the English version.</p>
+</li><li>x86:<a name="ul851564911283"></a><a name="ul851564911283"></a><ul id="ul851564911283"><li>openEuler 20.03LTS</li><li>CentOS 7.6<div class="note" id="note222515135376"><a name="note222515135376"></a><a name="note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p1225613103712"><a name="p1225613103712"></a><a name="p1225613103712"></a>The current installation package can be installed and used only on the English version.</p>
 </div></div>
 </li></ul>
 </li></ul>
@@ -108,6 +108,7 @@ This section describes hardware and software requirements of openGauss. It is re
 </tr>
 </tbody>
 </table>
+
 
 
 ### Software Dependency Requirements
@@ -178,6 +179,10 @@ You are advised to use the default installation packages of the following depend
 
 
 ## Modifying OS Configuration
+
+> ![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>
+> Perform the following operations as the **root** user. After the operations are complete, log out of the system as the **root** user in a timely manner to prevent misoperations.
 
 ### Disabling the OS Firewall
 
@@ -314,15 +319,59 @@ swapoff -a
 
 ### Setting the NIC MTU
 
-Set the NIC MTU value on each database node to the same value. For x86, the recommended MTU value is 1500. For ARM, the recommended MTU value is 8192.
+Set the NIC MTU value on each database node to the same value.
 
-```
-ifconfig NIC ID mtu Value
-```
+**Procedure**
+
+1. Run the following command to query the NIC name of the server:
+
+   ```
+   ifconfig
+   ```
+
+2. Set the NIC MTU value on each database node to the same value. For x86, the recommended MTU value is **1500**. For ARM, the recommended MTU value is **8192**.
+
+   ```
+   ifconfig NIC name mtu mtu value
+   ```
+
+### Disabling the History Command
+
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
+>To prevent security risks caused by historical records, you need to disable the history command on each host.
+
+1. Modify the **/etc/profile** file in the root directory.
+
+   ```
+   vim /etc/profile
+   ```
+
+2. Set **HISTSIZE** to **0**. For example, if the default value of **HISTSIZE** is **1000**, change it to **0**.
+
+   ```
+   HISTSIZE=0
+   ```
+
+3. Save the **/etc/profile** file.
+
+   ```
+   :wq
+   ```
+
+4. Make the **/etc/profile** file take effect.
+
+   ```
+   source /etc/profile
+   ```
 
 ## Setting Remote Login of User root
 
 During the openGauss installation, the user  **root**  is required for remote login. This section describes how to set the user  **root**  for remote login.
+
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
+>The remote connection function is enabled only when mutual trust between users **root** is required in the database. After the operation and verification are complete, log out of the system as user **root** in a timely manner to prevent misoperations.
 
 1. Modify the  **PermitRootLogin**  configuration to enable remote login of user  **root**.  
 
