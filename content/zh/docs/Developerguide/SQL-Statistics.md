@@ -16,6 +16,11 @@ SQL Statistics列名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p5620454123819"><a name="p5620454123819"></a><a name="p5620454123819"></a>归一化的SQL ID。</p>
 </td>
 </tr>
+<tr id="row3529101319150"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p5715192416419"><a name="p5715192416419"></a><a name="p5715192416419"></a>Node Name</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p4715192418417"><a name="p4715192418417"></a><a name="p4715192418417"></a>节点名称。</p>
+</td>
+</tr>
 <tr id="row123110587238"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1762018546385"><a name="p1762018546385"></a><a name="p1762018546385"></a>User Name</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p1762055473818"><a name="p1762055473818"></a><a name="p1762055473818"></a>用户名称。</p>
