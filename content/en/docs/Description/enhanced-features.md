@@ -1,4 +1,4 @@
-# Enhanced Features<a name="EN-US_TOPIC_0000001162578874"></a>
+# Enhanced Features<a name="EN-US_TOPIC_0289896516"></a>
 
 ## Data Partitioning<a name="en-us_topic_0283136537_section829318456016"></a>
 

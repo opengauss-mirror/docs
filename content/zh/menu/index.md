@@ -11,6 +11,7 @@ headless: true
     -   [版本使用注意事项]({{< relref "./docs/Releasenotes/版本使用注意事项.md" >}})
     -   [已知问题]({{< relref "./docs/Releasenotes/已知问题.md" >}})
     -   [CVE漏洞]({{< relref "./docs/Releasenotes/CVE漏洞.md" >}})
+	-   [已修复问题]({{< relref "./docs/Releasenotes/已修复问题.md" >}})
     -   [源代码]({{< relref "./docs/Releasenotes/源代码.md" >}})
     -   [参与贡献]({{< relref "./docs/Releasenotes/参与贡献.md" >}})
     -   [致谢]({{< relref "./docs/Releasenotes/致谢.md" >}})
