@@ -124,14 +124,9 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p07251739142211"><a name="p07251739142211"></a><a name="p07251739142211"></a>1.13.4</p>
 </td>
 </tr>
-<tr id="row1614183517222"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1714103562214"><a name="p1714103562214"></a><a name="p1714103562214"></a>byacc</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13141735182220"><a name="p13141735182220"></a><a name="p13141735182220"></a>1.9</p>
-</td>
-</tr>
 <tr id="row8361101702315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13361117192311"><a name="p13361117192311"></a><a name="p13361117192311"></a>cmake</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p63616179237"><a name="p63616179237"></a><a name="p63616179237"></a>3.19.2</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p63616179237"><a name="p63616179237"></a><a name="p63616179237"></a>3.18</p>
 </td>
 </tr>
 <tr id="row6332136277"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p83339361373"><a name="p83339361373"></a><a name="p83339361373"></a>diffutils</p>
@@ -156,6 +151,7 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 </tr>
 </tbody>
 </table>
+
 
 Prepare GCC 7.3 before building the third-party libraries. You are advised to use the released and built third-party library GCC and configure environment variables.
 
@@ -336,7 +332,7 @@ Software compilation and installation are to compile code to generate software a
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   The command output indicates the OSs supported by the openGauss. The OSs supported by the openGauss are centos7.6\_x86\_64 and openeuler\_aarch64.  
+    >-   The command output indicates the OSs supported by the openGauss. The OSs supported by the openGauss are centos7.6\_x86\_64、openeuler\_aarch64 and   openeuler\_x86\_64.  
     >-   If  **Failed**  or another version is displayed, the openGauss does not support the current operating system.  
 
 3.  Configure environment variables, add  **\_\_\_\_**  based on the code download location, and replace  **\*\*\***  with the result obtained in  [Step 2](#li1666842982511).
@@ -352,34 +348,39 @@ Software compilation and installation are to compile code to generate software a
     export PATH=$GAUSSHOME/bin:$GCC_PATH/gcc/bin:$PATH
     ```
 
-4.  Select a version and configure it.
+4. Select a version and configure it.
 
-    **debug**  version:
+   **debug**  version:
 
-    ```
-    ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib
-    ```
+   ```
+   ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib
+   ```
 
-    **release**  version:
+   **release**  version:
 
-    ```
-    ./configure --gcc-version=7.3.0 CC=g++ CFLAGS="-O2 -g3" --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-thread-safety --with-readline --without-zlib
-    ```
+   ```
+   ./configure --gcc-version=7.3.0 CC=g++ CFLAGS="-O2 -g3" --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-thread-safety --with-readline --without-zlib
+   ```
 
-    **memcheck**  version:
+   **memcheck**  version:
 
-    ```
-    ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib --enable-memory-check
-    ```
+   ```
+   ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib --enable-memory-check
+   ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >1.  _\[debug | release | memcheck\]_  indicates that three target versions are available. The three target versions are as follows:  
-    >    -   **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.  
-    >    -   **debug**: indicates that a binary program of the debug version is generated. During compilation of this version, the kernel code debugging function is added, which is usually used in the development self-test environment.  
-    >    -   **memcheck**: indicates that a binary program of the memcheck version is generated. During compilation of this version, the ASAN function is added based on the debug version to locate memory problems.  
-    >2.  On the ARM-based platform,  **-D\_\_USE\_NUMA**  needs to be added to  **CFLAGS**.  
-    >3.  On the  **ARMv8.1**  platform or a later version \(for example, Kunpeng 920\),  **-D\_\_ARM\_LSE**  needs to be added to  **CFLAGS**.  
-    >4.  If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the  **--3rd**  parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.  
+   >![](public_sys-resources/icon-note.gif) **NOTE:**   
+   >
+   >- _\[debug | release | memcheck\]_  indicates that three target versions are available. The three target versions are as follows:  
+   >  - **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.  
+   >  - **debug**: indicates that a binary program of the debug version is generated. During compilation of this version, the kernel code debugging function is added, which is usually used in the development self-test environment.  
+   >  - **memcheck**: indicates that a binary program of the memcheck version is generated. During compilation of this version, the ASAN function is added based on the debug version to locate memory problems.  
+   >
+   >- On the ARM-based platform,  **-D\_\_USE\_NUMA**  needs to be added to  **CFLAGS**.  
+   >
+   >- On the  **ARMv8.1**  platform or a later version \(for example, Kunpeng 920\),  **-D\_\_ARM\_LSE**  needs to be added to  **CFLAGS**.  
+   >
+   >- If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the  **--3rd**  parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.  
+   >- If you need to use MOT, you need to add --enable-mot to the command
 
 5.  Run the following commands to compile openGauss:
 
@@ -438,5 +439,4 @@ To compile the installation package is to compile the code and generate the soft
     ```
 
     -   The generated installation package is stored in the  **./output**  directory.
-    -   Compilation log:**./build/script/makemppdb_pkg.log**
-    -   Installation package packaging log: **./build/script/make_package.log**
+    -   Compilation and packaging logs:**./build/script/makemppdb_pkg.log
