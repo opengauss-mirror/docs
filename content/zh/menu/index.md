@@ -64,6 +64,7 @@ headless: true
 		-   [DCF]({{< relref "./docs/CharacteristicDescription/DCF.md" >}})
 		-   [CM]({{< relref "./docs/CharacteristicDescription/CM.md" >}})
 		-   [支持global syscache]({{< relref "./docs/CharacteristicDescription/支持global-syscache.md" >}})
+		-   [支持备机build备机]({{< relref "./docs/CharacteristicDescription/支持备机build备机.md" >}})
 	-   [维护性]({{< relref "./docs/CharacteristicDescription/维护性.md" >}})
 		-   [灰度升级]({{< relref "./docs/CharacteristicDescription/灰度升级.md" >}})
 		-   [支持WDR诊断报告]({{< relref "./docs/CharacteristicDescription/支持WDR诊断报告.md" >}})
