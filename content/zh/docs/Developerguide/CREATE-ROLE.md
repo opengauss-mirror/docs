@@ -33,6 +33,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     | {REPLICATION | NOREPLICATION}
     | {INDEPENDENT | NOINDEPENDENT}
     | {VCADMIN | NOVCADMIN}
+    | {PERSISTENCE | NOPERSISTENCE}
     | CONNECTION LIMIT connlimit
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
@@ -164,6 +165,14 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     -   系统管理员和拥有CREATEROLE属性的安全管理员无权去除INDEPENDENT角色的INDEPENDENT属性。
     -   系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的数据库口令，INDEPENDENT角色需管理好自身口令，口令丢失无法重置。
     -   管理员属性用户不允许定义修改为INDEPENDENT属性。
+
+- **VCADMIN | NOVCADMIN**
+
+    该版本没有实际意义。
+
+- **PERSISTENCE | NOPERSISTENCE**
+
+    定义永久用户。仅允许初始用户创建、修改和删除具有PERSISTENCE属性的永久用户。
 
 - **CONNECTION LIMIT**
 

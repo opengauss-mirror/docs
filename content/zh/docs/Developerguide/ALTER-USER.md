@@ -10,35 +10,38 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
 
 ## 语法格式<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
 
--   修改用户的权限等信息。
+- 修改用户的权限等信息。
 
-    ```
-    ALTER USER user_name [ [ WITH ] option [ ... ] ];
-    ```
+  ```
+  ALTER USER user_name [ [ WITH ] option [ ... ] ];
+  ```
 
-    其中option子句为：
+  其中option子句为：
 
-    ```
-    { CREATEDB | NOCREATEDB }
-        | { CREATEROLE | NOCREATEROLE }
-        | { INHERIT | NOINHERIT }
-        | { AUDITADMIN | NOAUDITADMIN }
-        | { SYSADMIN | NOSYSADMIN }
-        | { USEFT | NOUSEFT }
-        | { LOGIN | NOLOGIN }
-        | { REPLICATION | NOREPLICATION }
-        | {INDEPENDENT | NOINDEPENDENT}
-        | {VCADMIN | NOVCADMIN}
-        | CONNECTION LIMIT connlimit
-        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' [EXPIRED] | DISABLE | EXPIRED }
-        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' | EXPIRED ] | DISABLE }
-        | VALID BEGIN 'timestamp'
-        | VALID UNTIL 'timestamp'
-        | RESOURCE POOL 'respool'
-        | PERM SPACE 'spacelimit'
-        | ACCOUNT { LOCK | UNLOCK }
-        | PGUSER
-    ```
+  ```
+  { CREATEDB | NOCREATEDB }
+      | { CREATEROLE | NOCREATEROLE }
+      | { INHERIT | NOINHERIT }
+      | { AUDITADMIN | NOAUDITADMIN }
+      | { SYSADMIN | NOSYSADMIN }
+      | {MONADMIN | NOMONADMIN}
+      | {OPRADMIN | NOOPRADMIN}
+      | {POLADMIN | NOPOLADMIN}
+      | { USEFT | NOUSEFT }
+      | { LOGIN | NOLOGIN }
+      | { REPLICATION | NOREPLICATION }
+      | {INDEPENDENT | NOINDEPENDENT}
+      | {VCADMIN | NOVCADMIN}
+      | {PERSISTENCE | NOPERSISTENCE}
+      | CONNECTION LIMIT connlimit
+      | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' [EXPIRED] | DISABLE | EXPIRED }
+      | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' | EXPIRED ] | DISABLE }
+      | VALID BEGIN 'timestamp'
+      | VALID UNTIL 'timestamp'
+      | RESOURCE POOL 'respool'
+      | PERM SPACE 'spacelimit'
+      | PGUSER
+  ```
 
 -   修改用户名。
 
@@ -47,12 +50,19 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
         RENAME TO new_name;
     ```
 
--   修改与用户关联的指定会话参数值。
+-   锁定或解锁。
 
     ```
-    ALTER USER user_name 
-        SET configuration_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT };
+    ALTER USER user_name
+        ACCOUNT { LOCK | UNLOCK };
     ```
+
+- 修改与用户关联的指定会话参数值。
+
+  ```
+  ALTER USER user_name 
+      SET configuration_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT };
+  ```
 
 -   重置与用户关联的指定会话参数值。
 
