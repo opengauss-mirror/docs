@@ -1,6 +1,6 @@
-# gs\_dumpall<a name="EN-US_TOPIC_0249632251"></a>
+# gs\_dumpall<a name="EN-US_TOPIC_0289899213"></a>
 
-## Background<a name="en-us_topic_0237152336_en-us_topic_0059778372_section31221112348"></a>
+## Background<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_section31221112348"></a>
 
 **gs\_dumpall**, provided by openGauss, is used to export all openGauss database information, including data of the default database postgres, user-defined databases, and common global objects of all openGauss databases.
 
@@ -10,30 +10,30 @@ When  **gs\_dumpall**  is used to export data, other users can still access \(re
 
 **gs\_dumpall**  can export complete, consistent data. For example, if  **gs\_dumpall**  is started to export openGauss database at T1, data of the database at that time point will be exported, and modifications on the database after that time point will not be exported.
 
-The generated columns are not dumped during gs_dumpall is used.
+The generated columns are not dumped during  **gs\_dumpall**  is used.
 
 **gs\_dumpall**  exports all openGauss databases in two parts:
 
 -   **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
 -   **gs\_dumpall**  invokes  **gs\_dump**  to export SQL scripts from each openGauss database, which contain all the SQL statements required to restore databases.
 
-The exported files are both plain-text SQL scripts. Use  gsql to execute them to restore openGauss databases.
+The exported files are both plain-text SQL scripts. Use  [gsql](gsql.md)  to execute them to restore openGauss databases.
 
-## Precautions<a name="en-us_topic_0237152336_en-us_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
+## Precautions<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
 -   Do not modify an exported file or its content. Otherwise, restoration may fail.
--   To ensure the data consistency and integrity,  **gs\_dumpall**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dumpall**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
+-   To ensure the data consistency and integrity,  **gs\_dumpall**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dumpall**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  option.
 -   During an export,  **gs\_dumpall**  reads all tables in a database. Therefore, you need to connect to the database as an openGauss administrator to export a complete file. When you use  **gsql**  to execute SQL scripts, cluster administrator permissions are also required to add users and user groups, and create databases.
 
-## Syntax<a name="en-us_topic_0237152336_en-us_topic_0059778372_s991ca5afb6574130a742db3732d6f577"></a>
+## Syntax<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_s991ca5afb6574130a742db3732d6f577"></a>
 
 ```
 gs_dumpall [OPTION]...
 ```
 
-## Parameter Description<a name="en-us_topic_0237152336_en-us_topic_0059778372_s8a1ffa824f1b4371a430896ee8fd2020"></a>
+## Parameter Description<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_s8a1ffa824f1b4371a430896ee8fd2020"></a>
 
-Common parameters:
+Common parameters
 
 -   -f, --filename=FILENAME
 
@@ -41,11 +41,11 @@ Common parameters:
 
 -   -v, --verbose
 
-    Specifies the verbose mode. If it is specified,  **gs\_dumpall**  writes detailed object comments and number of startups/stops to the dump file, and progress messages to standard error.
+    Specifies the verbose mode. If it is specified,  **gs\_dumpall**  writes detailed object comments and the number of startups/stops to the dump file, and progress messages to standard error.
 
 -   -V, --version
 
-    Prints the  _gs\_dumpall_  version and exits.
+    Prints the  **gs\_dumpall**  version and exits.
 
 -   --lock-wait-timeout=TIMEOUT
 
@@ -114,17 +114,29 @@ Dump parameters:
 
     Dumps data by the  **INSERT**  statement \(rather than  **COPY**\). This will cause a slow restoration. The restoration may fail if you rearrange the column order. The  **--column-inserts**  option is unaffected against column order changes, though even slower.
 
+-   --no-publications
+
+    No dump publications are performed.
+
 -   --no-security-labels
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
 
+-   --no-subscriptions
+
+    No dump subscriptions are performed.
+
 -   --no-tablespaces
 
-    Does not generate output statements to create tablespaces or select tablespaces for objects. All the objects will be created during the restoration process, no matter which tablespace is selected when using this option.
+    Does not generate output statements to create tablespaces or select tablespaces for objects. All the objects will be created during restoration, no matter which tablespace is selected when using this option.
 
 -   --no-unlogged-table-data
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
+
+-   --include-alter-table
+
+    Exports information about deleted columns in the table.
 
 -   --quote-all-identifiers
 
@@ -136,26 +148,22 @@ Dump parameters:
 
 -   --use-set-session-authorization
 
-    Specifies that the standard SQL  **SET SESSION AUTHORIZATION**  command rather than  **ALTER OWNER**  is returned to ensure the object ownership. This makes dumping more standard. However, if a dump file contains objects that have historical problems, restoration may fail. A dump using  **SET SESSION AUTHORIZATION**  requires the system administrator rights, whereas  **ALTER OWNER**  requires lower permissions.
+    Specifies that the standard SQL  **SET SESSION AUTHORIZATION**  command rather than  **ALTER OWNER**  is returned to ensure the object ownership. This makes dumping more standard. However, if a dump file contains objects that have historical problems, restoration may fail. A dump using  **SET SESSION AUTHORIZATION**  requires the system administrator permissions, whereas  **ALTER OWNER**  requires lower permissions.
 
 -   --with-encryption=AES128
 
     Specifies that dumping data needs to be encrypted using AES128.
 
-- --with-key=KEY
+-   --with-key=KEY
 
-  AES128 key length rules are as follows: 
+    The AES128 key rules are as follows:
 
-  - The key length is 8 ~ 16 characters. 
-  - At least three of the four types of characters are included: uppercase letters (A-Z), lowercase letters (A-Z), numbers (0-9), non alphanumeric characters (limited to ~! @ #$% ^ & * () - = + \ | [] {};:, <. > /?). 
+    -   Consists of 8 to 16 characters.
+    -   Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
--   --include-alter-table
+-   --include-extensions
 
-    Export the deleted column information in the table.
-
-- --include-extension
-
-  If the --include-extension parameter is set, all CREATE EXTENSION statements will be backed up.
+    Backs up all CREATE EXTENSION statements if the  **include-extensions**  parameter is set.
 
 -   --include-templatedb
 
@@ -171,7 +179,7 @@ Dump parameters:
 
 -   --non-lock-table
 
-    This parameter is only used by the OM tool.
+    This parameter is used only by the OM tool.
 
 -   --tablespaces-postfix
 
@@ -179,30 +187,34 @@ Dump parameters:
 
 -   --parallel-jobs
 
-    Specifies the number of concurrent backup processes. The value range is 1-1000.
+    Specifies the number of concurrent backup processes. The value range is 1–1000.
+
+-   --pipeline
+
+    Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.  
->-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
->-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
->-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.  
->-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
->-   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.
+>-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
+>-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
+>-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
+>-   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.
+>-   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.
+>-   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.
+>-   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.
+>-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.
+>-   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.
 
 Connection parameters:
 
 -   -h, --host
 
-    Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket. The default value is taken from the PGHOST environment \(if variable\). Otherwise, a Unix domain socket connection is attempted.
+    Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket. The default value is taken from the  _PGHOST_  environment variable. If it is not set, a UNIX domain socket connection is attempted.
 
     This parameter is used only for defining names of the hosts outside openGauss. The names of the hosts inside openGauss must be 127.0.0.1.
 
-    Environment Variable:  _PGHOST_
+    Environment variable:  _PGHOST_
 
 -   -l, --database
 
@@ -210,9 +222,9 @@ Connection parameters:
 
 -   -p, --port
 
-    TCP port or the local Unix-domain socket file extension on which the server is listening for connections. The default value is the  _PGPORT_  environment variable.
+    Specifies the TCP port listened on by the server or the local Unix domain socket file name extension to ensure a correct connection. The default value is the  _PGPORT_  environment variable.
 
-    If the thread pool function is enabled, you are advised to use  **pooler port**, that is, the listening port number plus 1.
+    If the thread pool is enabled, you are advised to use pooler port, that is, the listening port number plus 1.
 
     Environment variable:  _PGPORT_
 
@@ -232,14 +244,14 @@ Connection parameters:
 
 -   --role
 
-    Specifies a role name to be used for creating the dump. This option causes  **gs\_dumpall**  to issue the  **SET ROLE**  statement after connecting to the database. It is useful when the authenticated user \(specified by  **-U**\) lacks the permissions required by the  **gs\_dumpall**. It allows the user to switch to a role with the required permissions. Some installations have a policy against logging in directly as a system administrator. This option allows dumping data without violating the policy.
+    Specifies a role name to be used for creating the dump. If this option is selected, the  **SET ROLE**  command will be issued after the database is connected to  **gs\_dumpall**. It is useful when the authenticated user \(specified by  **-U**\) lacks the permissions required by  **gs\_dumpall**. It allows the user to switch to a role with the required permissions. Some installations have a policy against logging in directly as a system administrator. This option allows dumping data without violating the policy.
 
 -   --rolepassword
 
     Specifies the password of the specific role.
 
 
-## Notice<a name="en-us_topic_0237152336_en-us_topic_0059778372_sc99dfbcba3eb44e59598baa7edd2d140"></a>
+## Description<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_sc99dfbcba3eb44e59598baa7edd2d140"></a>
 
 **gs\_dumpall**  internally invokes  **gs\_dump**. For details about the diagnosis information, see  [gs\_dump](gs_dump.md).
 
@@ -247,12 +259,12 @@ Once  **gs\_dumpall**  is restored, run ANALYZE on each database so that the opt
 
 **gs\_dumpall**  requires all needed tablespace directories to exit before the restoration. Otherwise, database creation will fail if the databases are in non-default locations.
 
-## Examples<a name="en-us_topic_0237152336_en-us_topic_0059778372_sb56721027dde49e1bf8c5df9685d2f2f"></a>
+## Examples<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_sb56721027dde49e1bf8c5df9685d2f2f"></a>
 
 Use  **gs\_dumpall**  to export all openGauss databases at a time.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
->**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.
 
 ```
 gs_dumpall -f backup/bkp2.sql -p 37300
@@ -264,7 +276,7 @@ gs_dumpall[port='37300'][2018-06-27 09:55:46]: dumpall operation successful
 gs_dumpall[port='37300'][2018-06-27 09:55:46]: total time: 56088  ms
 ```
 
-## Helpful Links<a name="en-us_topic_0237152336_en-us_topic_0059778372_s9ed79eb3e2564786a6823616c460fc00"></a>
+## Helpful Links<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_s9ed79eb3e2564786a6823616c460fc00"></a>
 
-[gs\_dump](gs_dump.md),  [gs\_restore](gs_restore.md)
+[gs\_dump](gs_dump.md)  and  [gs\_restore](gs_restore.md)
 

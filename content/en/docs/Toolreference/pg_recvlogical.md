@@ -15,16 +15,18 @@ Logical replication slot behavior parameters are mandatory and must be specified
 ## Parameter Description<a name="section927885412229"></a>
 
 -   Logical replication slot behavior parameters \(mandatory\):
-    -   --create
+    - --create
 
-        Creates a logical replication slot.
+      Creates a logical replication slot.
+
+      The  **pg\_create\_logical\_replication\_slot**  function is called internally. The user who calls this function must have the  **SYSADMIN**  or  **REPLICATION**  permission or inherits the permission of the built-in role  **gs\_role\_replication**. This function can be called only on the primary node. For details, see the description of the  **pg\_create\_logical\_replication\_slot**  function in  _Developer Guide_.
 
     -   --start
 
         Starts the flow replication of a logic replication slot.
 
     -   --drop
-
+    
         Deletes a logical replication slot.
 
 
@@ -40,7 +42,7 @@ Logical replication slot behavior parameters are mandatory and must be specified
 
     -   -p, --port=PORT
 
-        Specifies the HA port number for connecting to the target DN.
+        Specifies the HA port number for connecting to the target node.
 
     -   -U, --username=NAME
 
@@ -66,9 +68,9 @@ Logical replication slot behavior parameters are mandatory and must be specified
 
         Adds parameters to the output plug-in of a logical replication slot.
 
-        The values are  **include-xids**,  **skip-empty-xacts**, and  **include-timestamp**.
+        The value can be  **include-xids**,  **skip-empty-xacts**,  **include-timestamp**,  **only-local**,  **force-binary**,  **white-table-list**,  **standby-connection**,  **parallel-decode-num**,  **decode-style**, or  **sending-batch**.
 
-        For details, see "SQL Reference \> Functions and Operators \> System Administration Functions \> Logical Replication Functions \> options" in the  _Developer Guide_.
+        For details, see "SQL Reference \> Functions and Operators \> System Administration Functions \> Logical Replication Functions \> pg\_logical\_slot\_peek\_changes \> options" and "Application Development Guide \> Development Based on JDBC \> Example: Logic Replication Code" in  _Developer Guide_.
 
     -   -P, --plugin=PLUGIN
 
@@ -113,6 +115,10 @@ Logical replication slot behavior parameters are mandatory and must be specified
     -   -?, --help
 
         Displays help information and exits immediately.
+        
+    -   -r, --raw
+    
+        In parallel decoding scenarios, if this parameter is set, the binary format or batch sending result will not be converted to the text format. This parameter is used only by test personnel to measure the parallel decoding performance. After this parameter is set, the decoding result sent in binary mode or in batches are in unreadable format.
 
 
 
