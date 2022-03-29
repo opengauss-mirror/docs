@@ -1,8 +1,8 @@
-# Parallel Page-based Redo For Ustore<a name="EN-US_TOPIC_0000001209756201"></a>
+# Parallel Page-based Redo For Ustore<a name="EN-US_TOPIC_0000001164037824"></a>
 
 ## Availability<a name="section1136213124018"></a>
 
-This feature is available since openGauss 1.1.0.
+This feature is available since openGauss 2.1.0.
 
 ## Introduction<a name="section31192232416"></a>
 

@@ -1,4 +1,4 @@
-# Predictor: AI Query Time Forecasting<a name="EN-US_TOPIC_0000001091444832"></a>
+# Predictor: AI Query Time Forecasting<a name="EN-US_TOPIC_0000001151995065"></a>
 
 ## Availability<a name="section56086982"></a>
 
@@ -22,7 +22,7 @@ This feature is triggered when  **explain \(analyze on, predictor <model\_name\>
 
 ## Enhancements<a name="section28788730"></a>
 
-None
+None.
 
 ## Constraints<a name="section06531946143616"></a>
 
@@ -38,5 +38,5 @@ None
 
 ## Dependencies<a name="section57771982"></a>
 
-None
+None.
 

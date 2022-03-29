@@ -1,4 +1,4 @@
-# Gray Upgrade<a name="EN-US_TOPIC_0000001135548525"></a>
+# Gray Upgrade<a name="EN-US_TOPIC_0000001105235296"></a>
 
 ## Availability<a name="section56086982"></a>
 
@@ -18,7 +18,7 @@ Gray upgrade is an online upgrade mode that upgrades all nodes. If only the bina
 
 ## Enhancements<a name="section28788730"></a>
 
-None
+None.
 
 ## Constraints<a name="section06531946143616"></a>
 
@@ -26,5 +26,5 @@ For details about the gray upgrade constraints, see "Before You Start \> Upgrade
 
 ## Dependencies<a name="section57771982"></a>
 
-None
+None.
 

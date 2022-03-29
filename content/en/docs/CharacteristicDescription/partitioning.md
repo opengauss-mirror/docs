@@ -1,8 +1,8 @@
-# Partitioning<a name="EN-US_TOPIC_0000001135665707"></a>
+# Partitioning<a name="EN-US_TOPIC_0000001105555110"></a>
 
 ## Availability<a name="section3104013"></a>
 
-This feature is available since V300R002C00.
+This feature is available since openGauss 1.1.0.
 
 ## Introduction<a name="section27936123"></a>
 
@@ -18,7 +18,7 @@ In common scenarios, a partitioned table has the following advantages over a com
 
 ## Description<a name="section48233501"></a>
 
-Currently, openGauss supports range partitioned tables, list partitioned tables, and hash partitioned tables.
+Currently, the openGauss database supports range partitioned tables, list partitioned tables, hash partitioned tables, interval partitioned tables, and level-2 partitioned tables.
 
 -   In a range partitioned table, data within a certain range is mapped to each partition. The range is determined by the partition key specified when the partitioned table is created. This partitioning mode is most commonly used.
 
@@ -32,6 +32,8 @@ Currently, openGauss supports range partitioned tables, list partitioned tables,
 
     The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table.
 
+-   Interval partitioning is a special type of range partitioning. Compared with range partitioning, interval partitioning defines the interval value. When no matching partition can be found for an inserted record, a partition can be automatically created based on the interval value.
+-   A level-2 partitioned table is based on level-1 partition. Its partitioning scheme is a combination of two level-1 partitioning schemes. Currently, the level-2 partitioned table supports nine partitioning policies combining range partitioning, list partitioning, and hash partitioning.
 
 If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned. Users can modify partition keys as needed during table creation to make the query result stored in the same or least partitions \(called partition pruning\), obtaining consecutive I/O to improve the query performance.
 
@@ -43,9 +45,9 @@ Range partitioned tables can be combined.
 
 ## Constraints<a name="section06531946143616"></a>
 
-None
+None.
 
 ## Dependencies<a name="section14599532"></a>
 
-None
+None.
 

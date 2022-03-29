@@ -1,4 +1,4 @@
-# Ultimate RTO<a name="EN-US_TOPIC_0000001135548523"></a>
+# Ultimate RTO<a name="EN-US_TOPIC_0000001152275221"></a>
 
 ## Availability<a name="section57017810"></a>
 
@@ -21,13 +21,13 @@ After the ultimate RTO function is enabled, multi-level pipelines are establishe
 
 ## Enhancements<a name="section29043486"></a>
 
-None
+None.
 
 ## Constraints<a name="section27741012910"></a>
 
-The ultimate RTO focuses only on whether the RTO of the standby node meets the requirements. The ultimate RTO has the flow control effect. Therefore, you do not need to enable the flow control function. This feature does not support the read operation on the standby node. If you query the standby node, a core dump may occur on the standby node. This feature does not apply to the primary/standby/secondary scenario. In primary/standby/secondary deployment mode \(that is,  **replication\_type**  is set to  **0**\), the database cannot be started.
+The ultimate RTO focuses only on whether the RTO of the standby node meets the requirements. The ultimate RTO removes the built-in flow control and uses the  **recovery\_time\_target**  parameter for flow control. This feature does not support the read operation on the standby node. If you query the standby node, a core dump may occur on the standby node.
 
 ## Dependencies<a name="section57771982"></a>
 
-None
+None.
 

@@ -1,4 +1,4 @@
-# System KPI-aided Diagnosis<a name="EN-US_TOPIC_0000001088406678"></a>
+# System KPI-aided Diagnosis<a name="EN-US_TOPIC_0000001105395252"></a>
 
 ## Availability<a name="section6414518829"></a>
 
@@ -45,13 +45,14 @@ openGauss provides KPIs of 11 categories and 26 sub-categories, covering instanc
 
 ## Enhancements<a name="section161567423211"></a>
 
-None
+None.
 
 ## Constraints<a name="section1956417145819"></a>
 
-None
+-   Utility statements do not support normalization. Non-DML statements, such as CREATE, DROP, COPY, and VACUUM, are not supported.
+-   Currently, only the top-level normalized SQL statements are recorded. SQL statements in a stored procedure are not normalized, and only the SQL statements that call the stored procedure are recorded.
 
 ## Dependencies<a name="section15876411599"></a>
 
-None
+None.
 
