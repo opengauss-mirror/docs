@@ -24,11 +24,15 @@ None
         | {INHERIT | NOINHERIT}
         | {AUDITADMIN | NOAUDITADMIN}
         | {SYSADMIN | NOSYSADMIN}
+        | {MONADMIN | NOMONADMIN}
+        | {OPRADMIN | NOOPRADMIN}
+        | {POLADMIN | NOPOLADMIN}
         | {USEFT | NOUSEFT}
         | {LOGIN | NOLOGIN}
         | {REPLICATION | NOREPLICATION}
         | {INDEPENDENT | NOINDEPENDENT}
         | {VCADMIN | NOVCADMIN}
+        | {PERSISTENCE | NOPERSISTENCE}
         | CONNECTION LIMIT connlimit
         | [ ENCRYPTED | UNENCRYPTED ] PASSWORD 'password' [EXPIRED]
         | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY 'password' [ REPLACE 'old_password' | EXPIRED ]
@@ -38,7 +42,6 @@ None
         | VALID UNTIL 'timestamp'
         | RESOURCE POOL 'respool'
         | PERM SPACE 'spacelimit'
-        | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
 
@@ -47,6 +50,13 @@ None
     ```
     ALTER ROLE role_name 
         RENAME TO new_name;
+    ```
+
+-   Lock or unlock.
+
+    ```
+    ALTER ROLE role_name 
+        ACCOUNT { LOCK | UNLOCK };
     ```
 
 -   Set parameters for a role.
@@ -104,7 +114,7 @@ None
 
 -   **PASSWORD/IDENTIFIED BY **'password'
 
-    Resets or changes the user password. In addition to the initial user, other administrators or ordinary users need to enter the correct old password to modify their own password.Only the initial user, the system administrator \(sysadmin\), or users who have the permission to create users \(CREATEROLE\) can reset the password of a common user without entering the old password. The initial user can reset passwords of system administrators. System administrators cannot reset passwords of other system administrators.
+    Resets or changes the user password. Except the initial user, other administrators and common users need to enter the correct old password when changing their own passwords. Only the initial user, the system administrator \(sysadmin\), or users who have the permission to create users \(CREATEROLE\) can reset the password of a common user without entering the old password. The initial user can reset passwords of system administrators. System administrators cannot reset passwords of other system administrators.
 
 -   **EXPIRED**
 

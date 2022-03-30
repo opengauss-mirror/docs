@@ -4,7 +4,7 @@
 
 **GRANT**  grants permissions to roles and users.
 
-The  **GRANT**  statement has the following variants:
+**GRANT**  is used in the following scenarios:
 
 -   **Granting system permissions to roles or users**
 
@@ -34,10 +34,20 @@ The  **GRANT**  statement has the following variants:
 
     Database administrators can grant or revoke permissions for any roles or users. Roles with the  **CREATEROLE**  permission can grant or revoke permissions for non-admin roles.
 
+-   **Granting ANY permissions to roles or users**
+
+    Grant ANY permissions to a specified role or user. For details about the value range of the ANY permissions, see the syntax. If  **WITH ADMIN OPTION**  is specified, the grantee can grant the ANY permissions to or revoke them from other roles or users. The ANY permissions can be inherited by a role but cannot be granted to  **PUBLIC**. An initial user and the system administrator when separation of duties is disabled can grant the ANY permissions to or revoke them from any role or user.
+
+    Currently, the following ANY permissions are supported:  **CREATE ANY TABLE**,  **ALTER ANY TABLE**,  **DROP ANY TABLE**,  **SELECT ANY TABLE**,  **INSERT ANY TABLE**,  **UPDATE ANY TABLE**,  **DELETE ANY TABLE**,  **CREATE ANY SEQUENCE**,  **CREATE ANY INDEX**,  **CREATE ANY FUNCTION**,  **EXECUTE ANY FUNCTION**,  **CREATE ANY PACKAGE**,** EXECUTE ANY PACKAGE**, and  **CREATE ANYTYPE**. For details about the ANY permission scope, see  [Table 1](#table1360121832117).
+
 
 ## Precautions<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_section1780116145345"></a>
 
-None
+-   It is not allowed to grant the ANY permissions to  **PUBLIC**  or revoke the ANY permissions from  **PUBLIC**.
+-   The ANY permissions are database permissions and are valid only for database objects that are granted with the permissions. For example,  **SELECT ANY TABLE**  only allows a user to view all user table data in the current database, but the user does not have the permission to view user tables in other databases.
+-   Even if a user is granted with the ANY permissions, the user cannot perform INSERT, DELETE, UPDATE, and SELECT operations on the objects of private users.
+-   The ANY permissions and the original permissions do not affect each other.
+-   If a user is granted with the  **CREATE ANY TABLE**  permission, the owner of a table created in a schema with the same name as the user is the creator of the schema. When the user performs other operations on the table, the user needs to be granted with the corresponding operation permission.
 
 ## Syntax<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
@@ -142,24 +152,24 @@ None
         [ WITH GRANT OPTION ];
     ```
 
-- Grant the procedural procedure access permission to a user or role.
+-   Grant the procedural procedure access permission to a user or role.
 
-  ```
-  GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-      ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
-         | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
-      TO { [ GROUP ] role_name | PUBLIC } [, ...]
-      [ WITH GRANT OPTION ];
-  ```
+    ```
+    GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+        ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+           | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
 
-- Grant the procedural language access permission to a user or role.
+-   Grant the procedural language access permission to a user or role.
 
-  ```
-  GRANT { USAGE | ALL [ PRIVILEGES ] }
-      ON LANGUAGE lang_name [, ...]
-      TO { [ GROUP ] role_name | PUBLIC } [, ...]
-      [ WITH GRANT OPTION ];
-  ```
+    ```
+    GRANT { USAGE | ALL [ PRIVILEGES ] }
+        ON LANGUAGE lang_name [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ WITH GRANT OPTION ];
+    ```
 
 -   Grant the large object access permission to a specified user or role.
 
@@ -228,7 +238,8 @@ None
 
     ```
     GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [PRIVILEGES] }
-       ON PACKAGE package_name [, ...]
+       ON { PACKAGE package_name [, ...]
+          | ALL PACKAGES IN SCHEMA schema_name [, ...] }
        TO { [GROUP] role_name | PUBLIC } [, ...]
        [WITH GRANT OPTION];
     ```
@@ -246,6 +257,17 @@ None
     ```
     GRANT ALL { PRIVILEGES | PRIVILEGE }
        TO role_name;
+    ```
+
+
+-   Grant the ANY permissions to another user or role.
+
+    ```
+    GRANT { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
+      DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
+      CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE } [, ...]
+      TO [ GROUP ] role_name [, ...]
+      [ WITH ADMIN OPTION ];
     ```
 
 
@@ -343,13 +365,13 @@ The possible permissions are:
 
     Specifies the database name.
 
-- **function\_name**
+-   **function\_name**
 
-  Specifies the function name.
+    Specifies the function name.
 
 -   **procedure\_name**
 
-    Specifies theprocedure name.
+    Specifies the stored procedure name.
 
 -   **sequence\_name**
 
@@ -379,25 +401,25 @@ The possible permissions are:
 
     Specifies the parameter mode.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **arg\_name**
 
     Specifies the parameter name.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **arg\_type**
 
     Specifies the parameter type.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **loid**
 
     Specifies the identifier of the large object that includes this page.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **tablespace\_name**
 
@@ -407,19 +429,19 @@ The possible permissions are:
 
     Name of the client master key.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   column\_encryption\_key
 
     Name of the column encryption key.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **directory\_name**
 
     Specifies the directory name.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **WITH GRANT OPTION**
 
@@ -434,7 +456,99 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Database administrators can access all objects, regardless of object permission settings. This is comparable to the permissions of  **root**  in a Unix system. As with  **root**, it is unwise to operate as a system administrator except when necessary.
->**GRANT**  to a table partition will cause alarms.
+>Do not perform GRANT on a table partition. Otherwise, an alarm will be generated.
+
+-   WITH ADMIN OPTION
+
+    If  **WITH ADMIN OPTION**  is specified for a role, the grantee can grant the role to other roles or users or revoke the role from other roles or users.
+
+    For the ANY permissions, if  **WITH ADMIN OPTION**  is specified, the grantee can grant the ANY permissions to or revoke them from other roles or users.
+
+
+**Table  1**  ANY permissions
+
+<a name="table1360121832117"></a>
+<table><thead align="left"><tr id="row116015189214"><th class="cellrowborder" valign="top" width="22.509999999999998%" id="mcps1.2.3.1.1"><p id="p6601181862115"><a name="p6601181862115"></a><a name="p6601181862115"></a>System Permission</p>
+</th>
+<th class="cellrowborder" valign="top" width="77.49000000000001%" id="mcps1.2.3.1.2"><p id="p26011318192119"><a name="p26011318192119"></a><a name="p26011318192119"></a>Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row5601171810211"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p196011187211"><a name="p196011187211"></a><a name="p196011187211"></a>CREATE ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p96013188214"><a name="p96013188214"></a><a name="p96013188214"></a>Users can create tables or views in the public and user schemas. The users must be granted with the permission to create sequences to create a table that contains serial columns.</p>
+</td>
+</tr>
+<tr id="row8601131892110"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p9601201818210"><a name="p9601201818210"></a><a name="p9601201818210"></a>ALTER ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p4601518112115"><a name="p4601518112115"></a><a name="p4601518112115"></a>Users' <strong id="b18684117182713"><a name="b18684117182713"></a><a name="b18684117182713"></a>ALTER</strong> permission on tables or views in the public and user schemas. If the users want to modify the unique index of a table to add a primary key constraint or unique constraint to the table, the users must be granted with the index permission for the table.</p>
+</td>
+</tr>
+<tr id="row960101852112"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p11601111814216"><a name="p11601111814216"></a><a name="p11601111814216"></a>DROP ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p117212437315"><a name="p117212437315"></a><a name="p117212437315"></a>Users' <strong id="b1569121352711"><a name="b1569121352711"></a><a name="b1569121352711"></a>DROP</strong> permission on tables or views in the public and user schemas.</p>
+</td>
+</tr>
+<tr id="row2601171822114"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p11601121822110"><a name="p11601121822110"></a><a name="p11601121822110"></a>SELECT ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p8713439315"><a name="p8713439315"></a><a name="p8713439315"></a>Users' <strong id="b149858176279"><a name="b149858176279"></a><a name="b149858176279"></a>SELECT</strong> permission on tables or views in the public and user schemas, which is still subject to row-level access control.</p>
+</td>
+</tr>
+<tr id="row1960171812214"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p2601218192119"><a name="p2601218192119"></a><a name="p2601218192119"></a>UPDATE ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p1770144313316"><a name="p1770144313316"></a><a name="p1770144313316"></a>Users' <strong id="b15796202192715"><a name="b15796202192715"></a><a name="b15796202192715"></a>UPDATE</strong> permission on tables or views in the public and user schemas, which is still subject to row-level access control.</p>
+</td>
+</tr>
+<tr id="row1960141815214"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p56010186214"><a name="p56010186214"></a><a name="p56010186214"></a>INSERT ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p186911435319"><a name="p186911435319"></a><a name="p186911435319"></a>Users' <strong id="b2917827102713"><a name="b2917827102713"></a><a name="b2917827102713"></a>INSERT</strong> permission on tables or views in the public and user schemas.</p>
+</td>
+</tr>
+<tr id="row186016187218"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p2060191816213"><a name="p2060191816213"></a><a name="p2060191816213"></a>DELETE ANY TABLE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p76816437315"><a name="p76816437315"></a><a name="p76816437315"></a>Users' <strong id="b1720113328278"><a name="b1720113328278"></a><a name="b1720113328278"></a>DELETE</strong> permission on tables or views in the public and user schemas, which is still subject to row-level access control.</p>
+</td>
+</tr>
+<tr id="row7827488255"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p1382104882516"><a name="p1382104882516"></a><a name="p1382104882516"></a>CREATE ANY FUNCTION</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2799144511319"><a name="p2799144511319"></a><a name="p2799144511319"></a>Users can create functions or stored procedures in the user schemas.</p>
+</td>
+</tr>
+<tr id="row1466925310257"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p8669135372515"><a name="p8669135372515"></a><a name="p8669135372515"></a>EXECUTE ANY FUNCTION</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p9669135311252"><a name="p9669135311252"></a><a name="p9669135311252"></a>Users' <strong id="b18883245152711"><a name="b18883245152711"></a><a name="b18883245152711"></a>EXECUTE</strong> permission on functions or stored procedures in the public and user schemas.</p>
+</td>
+</tr>
+<tr id="row9568146102610"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p14568184619264"><a name="p14568184619264"></a><a name="p14568184619264"></a>CREATE ANY PACKAGE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p14990113362"><a name="p14990113362"></a><a name="p14990113362"></a>Users can create packages in the public and user schemas.</p>
+</td>
+</tr>
+<tr id="row47031450142617"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p27031350102618"><a name="p27031350102618"></a><a name="p27031350102618"></a>EXECUTE ANY PACKAGE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p37961145938"><a name="p37961145938"></a><a name="p37961145938"></a>Users' <strong id="b33081813192917"><a name="b33081813192917"></a><a name="b33081813192917"></a>EXECUTE</strong> permission on packages in the public and user schemas.</p>
+</td>
+</tr>
+<tr id="row1654415246293"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p254416244293"><a name="p254416244293"></a><a name="p254416244293"></a>CREATE ANY TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p175443247299"><a name="p175443247299"></a><a name="p175443247299"></a>Users can create types in the public and user schemas.</p>
+</td>
+</tr>
+<tr id="row1565211281297"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p1765242862910"><a name="p1765242862910"></a><a name="p1765242862910"></a>CREATE ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2079315451731"><a name="p2079315451731"></a><a name="p2079315451731"></a>Users can create sequences in the public and user schemas.</p>
+</td>
+</tr>
+<tr id="row87515532292"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p14752155317297"><a name="p14752155317297"></a><a name="p14752155317297"></a>CREATE ANY INDEX</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p37921145332"><a name="p37921145332"></a><a name="p37921145332"></a>Users can create indexes in the public and user schemas. The users must be granted with the permission to create tablespaces to create a partitioned table index in a tablespace.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>If a user is granted with any ANY permission, the user has the  **USAGE**  permission on the public and user schemas but does not have the  **USAGE**  permission on the system schemas except  **public**  listed in  [Table 1](en-us_topic_0000001190922647.md#table167371825175015).
 
 ## Examples<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
 

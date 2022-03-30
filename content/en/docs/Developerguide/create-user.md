@@ -32,6 +32,7 @@ The  **option**  clause is used to configure information, including permissions 
     | {REPLICATION | NOREPLICATION}
     | {INDEPENDENT | NOINDEPENDENT}
     | {VCADMIN | NOVCADMIN}
+    | {PERSISTENCE | NOPERSISTENCE}
     | CONNECTION LIMIT connlimit
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'

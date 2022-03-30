@@ -25,7 +25,7 @@ It has the same effect as an unqualified  **DELETE**  on each table, but it is f
 
 ```
 TRUNCATE [ TABLE ] [ ONLY ] {table_name [ * ]} [, ... ]
-    [ CONTINUE IDENTITY ] [ CASCADE | RESTRICT][PURGE]};
+    [ CONTINUE IDENTITY ] [ CASCADE | RESTRICT] [ PURGE ]};
 ```
 
 -   Truncate the data in a partition.

@@ -25,7 +25,7 @@
 <tr id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_row35755883"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p10545434"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p10545434"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p10545434"></a>VARCHAR(n)</p>
 <p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_a1df97d3ea8c543498935d676762f6f0b"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_a1df97d3ea8c543498935d676762f6f0b"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_a1df97d3ea8c543498935d676762f6f0b"></a>CHARACTER VARYING(n)</p>
 </td>
-<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48873821"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48873821"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48873821"></a>Variable-length string. <strong id="b1525617443115"><a name="b1525617443115"></a><a name="b1525617443115"></a>n</strong> indicates the string length.</p>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48873821"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48873821"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48873821"></a>Variable-length string. In PostgreSQL-compatible mode, <strong id="b2827201112818"><a name="b2827201112818"></a><a name="b2827201112818"></a>n</strong> indicates the string length. In other compatibility modes, <strong id="b685317246282"><a name="b685317246282"></a><a name="b685317246282"></a>n</strong> indicates the byte length.</p>
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p66465437"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p66465437"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p66465437"></a>The maximum size is 10 MB.</p>
 </td>
@@ -35,6 +35,13 @@
 <td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p57019842"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p57019842"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p57019842"></a>Variable-length string. It is the alias of the VARCHAR(n) type. <strong id="b33316212213"><a name="b33316212213"></a><a name="b33316212213"></a>n</strong> indicates the string length.</p>
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p55204496"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p55204496"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p55204496"></a>The maximum size is 10 MB.</p>
+</td>
+</tr>
+<tr id="row936115210819"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.1 "><p id="p1349671213814"><a name="p1349671213814"></a><a name="p1349671213814"></a>NVARCHAR(n)</p>
+</td>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="p64967129818"><a name="p64967129818"></a><a name="p64967129818"></a>Variable-length string. It is the alias of the NVARCHAR2(n) type. <strong id="b4848290395325"><a name="b4848290395325"></a><a name="b4848290395325"></a>n</strong> indicates the string length.</p>
+</td>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="p04961126816"><a name="p04961126816"></a><a name="p04961126816"></a>The maximum size is 10 MB.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_row26286999"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48872202"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48872202"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p48872202"></a>NVARCHAR2(n)</p>
@@ -48,23 +55,23 @@
 </td>
 <td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p32527216"><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p32527216"></a><a name="en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_p32527216"></a>Variable-length string.</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136755_p179753542501"><a name="en-us_topic_0283136755_p179753542501"></a><a name="en-us_topic_0283136755_p179753542501"></a>The maximum size is 1 GB - 1 byte. However, the size of the column description header and the size of the tuple (less than 1 GB - 1 byte) where the column is located must also be considered. Therefore, the maximum size of the TEXT type may be less than 1 GB - 1 byte.</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136755_p179753542501"><a name="en-us_topic_0283136755_p179753542501"></a><a name="en-us_topic_0283136755_p179753542501"></a>The maximum size is 1 GB minus 1 byte. However, the size of the column description header and the size of the tuple (less than 1 GB minus 1 byte) where the column is located must also be considered. Therefore, the maximum size of the TEXT type may be less than 1 GB minus 1 byte.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136755_row3614101912518"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136755_p82741626115115"><a name="en-us_topic_0283136755_p82741626115115"></a><a name="en-us_topic_0283136755_p82741626115115"></a>CLOB</p>
 </td>
 <td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136755_p5275132610513"><a name="en-us_topic_0283136755_p5275132610513"></a><a name="en-us_topic_0283136755_p5275132610513"></a>A big text object. It is the alias of the TEXT type.</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136755_p15491232135111"><a name="en-us_topic_0283136755_p15491232135111"></a><a name="en-us_topic_0283136755_p15491232135111"></a>The maximum size is 1 GB - 1 byte. However, the size of the column description header and the size of the tuple (less than 1 GB - 1 byte) where the column is located must also be considered. Therefore, the maximum size of the CLOB type may be less than 1 GB-1.</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136755_p15491232135111"><a name="en-us_topic_0283136755_p15491232135111"></a><a name="en-us_topic_0283136755_p15491232135111"></a>The maximum size is 4 GB minus 1 byte. However, the size of the column description header and the size of the tuple (less than 4 GB minus 1 byte) where the column is located must also be considered. Therefore, the maximum size of the CLOB type may be less than 4 GB minus 1 byte.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->
->1. In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB - 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether NULL fields exist in the tuple.
->2. NCHAR is an alias of bpchar type, and NCHAR(n) is an alias of bpchar(n) type.
+>1.  In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null fields exist in the tuple.
+>2.  NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the VARCHAR\(n\) type.
+>3.  Only advanced packages related to dbe\_lob support CLOBs whose size is greater than 1 GB. System functions do not support CLOBs whose size is greater than 1 GB.
 
 In openGauss, there are two other fixed-length character types, as shown in  [Table 2](#en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_tf74658686f5e4d979adf0ac04769ea16). The  **name**  type exists only for the storage of identifiers in the internal system catalogs and is not intended for use by general users. Its length is currently defined as 64 bytes \(63 usable characters plus terminator\). The type  **"char"**  only uses one byte of storage. It is internally used in the system catalogs as a simplistic enumeration type.
 

@@ -120,13 +120,13 @@
 
 -   local\_space\_shrink\(tablespacename TEXT, databasename TEXT\)
 
-    Description: Compresses specified physical segment-page space on the current node. Only the currently connected database can be shrank.
+    Description: Shrinks specified physical segment-page space on the current node. Only the currently connected database can be shrank.
 
     Return value: empty
 
 -   gs\_space\_shrink\(int4 tablespace, int4 database, int4 extent\_type, int4 forknum\)
 
-    Description: Works similar to  **local\_space\_shrink**, that is, compresses specified physical segment-page space. However, the parameters are different. The input parameters are the OIDs of the tablespace and database, and the value of  **extent\_type**  is an integer ranging from 2 to 5. Note: The value  **1**  of  **extent\_type**  indicates segment-page metadata. Currently, the physical file that contains the metadata cannot be compressed. This function is used only by tools. You are not advised to use it directly.
+    Description: Works similar to  **local\_space\_shrink**, that is, shrinks specified physical segment-page space. However, the parameters are different. The input parameters are the OIDs of the tablespace and database, and the value of  **extent\_type**  is an integer ranging from 2 to 5. Note: The value  **1**  of  **extent\_type**  indicates segment-page metadata. Currently, the physical file that contains the metadata cannot be shrunk. This function is used only by tools. You are not advised to use it directly.
 
     Return value: empty
 

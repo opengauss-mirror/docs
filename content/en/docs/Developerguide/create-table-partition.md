@@ -37,6 +37,10 @@ Partitioning can provide several benefits:
 -   If the constraint key of the unique constraint and primary key constraint contains all partition keys, a local index is created for the constraints. Otherwise, a global index is created.
 -   Currently, hash partitioning and list partitioning support only single-column partitioning, and do not support multi-column partitioning.
 -   When you have the  **INSERT**  permission on an interval partitioned table, partitions can be automatically created when you run  **INSERT**  to write data to the table.
+-   In the  **PARTITION FOR \(values\)**  syntax for partitioned tables, values can only be constants.
+-   In the  **PARTITION FOR \(values\)**  syntax for partitioned tables, if data type conversion is required for values, you are advised to use forcible type conversion to prevent the implicit type conversion result from being inconsistent with the expected result.
+-   The maximum number of partitions is 1048575. Generally, it is impossible to create so many partitions, because too many partitions may cause insufficient memory. Create partitions based on the value of  **local\_syscache\_threshold**. The memory used by the partitioned tables is about \(number of partitions x 3/1024\) MB. Theoretically, the memory occupied by the partitions cannot be greater than the value of  **local\_syscache\_threshold**. In addition, some space must be reserved for other functions.
+-   Currently, the statement specifying a partition cannot perform global index scan.
 
 ## Syntax<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -127,15 +131,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **partition\_table\_name**
 
-    Specifies the name of the partitioned table.
+    Specifies the name of a partitioned table.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **column\_name**
 
     Specifies the name of a column to be created in the new table.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **data\_type**
 
@@ -176,7 +180,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     -   FILLFACTOR
 
-        The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
+        The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column-store tables.
 
         Value range: 10–100
 
@@ -193,27 +197,48 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             >**orientation**  cannot be modified.
 
 
+    -   STORAGE\_TYPE
+
+        Specifies the storage engine type. This parameter cannot be modified once it is set.
+
+        Value range:
+
+        -   **USTORE**  indicates that tables support the inplace-update storage engine. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
+        -   **ASTORE**  indicates that tables support the append-only storage engine.
+
+        Default value:
+
+        If no table is specified, data is stored in append-only mode by default.
+
     -   COMPRESSION
         -   Valid values for column-store tables are  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**, and the compression level increases accordingly. The default is  **LOW**.
         -   Row-store tables do not support compression.
-    
+
     -   MAX\_BATCHROW
-    
+
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
-    
+
         Value range: 10000 to 60000. The default value is  **60000**.
-    
+
     -   PARTIAL\_CLUSTER\_ROWS
-    
+
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
-    
+
         Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
-    
+
     -   DELTAROW\_THRESHOLD
-    
+
         A reserved parameter. The parameter is only valid for column-store tables.
-    
+
         Value range: 0 to 9999
+
+    -   segment
+
+        The data is stored in segment-page mode. This parameter supports only row-store tables. Column-store tables, temporary tables, and unlogged tables are not supported. The Ustore storage engine is not supported.
+
+        Value range:  **on**  and  **off**
+
+        Default value:  **off**
 
 
 -   **COMPRESS / NOCOMPRESS**
@@ -235,7 +260,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >In this case, a maximum of four partition keys are supported.
 
-    Data types supported by the partition keys are as follows:  **SMALLINT**,  **INTEGER**,  **BIGINT**,  **DECIMAL**,  **NUMERIC**,  **REAL**,  **DOUBLE PRECISION**,  **CHARACTER VARYING**\(_n_\),  **VARCHAR**\(_n_\),  **CHARACTER**\(_n_\),  **CHAR**\(_n_\),  **CHARACTER**,  **CHAR**,  **TEXT**,  **NVARCHAR2**,  **NAME**,  **TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]**, and  **DATE**.
+    Data types supported by the partition keys are as follows: SMALLINT, INTEGER, BIGINT, DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(_n_\), VARCHAR\(_n_\), CHARACTER\(_n_\), CHAR\(_n_\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
 
     \(2\) Assume that the  **START END**  syntax is used.
 
@@ -262,7 +287,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
 
-    Specifies information of partitions.
+    Specifies the information of partitions.
 
     -   **partition\_name**: name or name prefix of a range partition. It is the name prefix only in the following cases \(assuming that  **partition\_name**  is  **p1**\):
         -   If  **START**+**END**+**EVERY**  is used, the names of partitions will be defined as  **p1\_1**,  **p1\_2**, and the like. For example, if  **PARTITION p1 START\(1\) END\(4\) EVERY\(1\)**  is defined, the generated partitions are \[1, 2\), \[2, 3\), and \[3, 4\), and their names are  **p1\_1**,  **p1\_2**, and  **p1\_3**. In this case,  **p1**  is a name prefix.
@@ -303,7 +328,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   For  **partition\_key**, the list partitioning policy supports only one column of partition keys.
     -   If the clause is  **VALUES \(list\_values\_clause\)**,  **list\_values\_clause**  contains the key values of the corresponding partition. It is recommended that the number of key values of each partition be less than or equal to 64.
 
-    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed  1048575 .
+    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
 
 -   **PARTITION BY HASH\(partition\_key\)**
 
@@ -311,7 +336,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     For  **partition\_key**, the hash partitioning policy supports only one column of partition keys.
 
-    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE. The number of partitions cannot exceed  1048575 .
+    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, TEXT, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
@@ -703,12 +728,12 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
--   Example 4: Create an interval-partitioned table  **sales**. The table initially contains two partitions and the partition key is of the DATE type.
+-   Example 4: Create interval partitioned table  **sales**. The table initially contains two partitions and the partition key is of the DATE type.
 
-    Ranges of the two partitions are as follows: 2019-02-01 00:00:00 ≤  **time\_id**  < 2019-02-02 00:00:00.
+    Ranges of the two partitions are as follows:  **time\_id**  < '2019-02-01 00:00:00' and '2019-02-01 00:00:00' ≤  **time\_id**  < '2019-02-02 00:00:00', respectively.
 
     ```
-    -- Create table sales:
+    -- Create table sales.
     openGauss=# CREATE TABLE sales
     (prod_id NUMBER(6),
      cust_id NUMBER,
@@ -759,7 +784,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
 
 
--   Example 5: Create a list partitioned table  **test\_list**. The table initially contains four partitions and the partition key is of the INT type. The ranges of the four partitions are 2000, 3000, 4000, and 5000 respectively.
+-   Example 5: Create list partitioned table  **test\_list**. The table initially contains four partitions and the partition key is of the INT type. The ranges of the four partitions are 2000, 3000, 4000, and 5000 respectively.
 
     ```
     -- Create the test_list table.

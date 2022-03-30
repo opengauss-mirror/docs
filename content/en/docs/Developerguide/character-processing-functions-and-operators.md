@@ -1,6 +1,6 @@
 # Character Processing Functions and Operators<a name="EN-US_TOPIC_0289900656"></a>
 
-String functions and operators provided by openGauss are for concatenating strings with each other, concatenating strings with non-strings, and matching the patterns of strings.
+String functions and operators provided by openGauss are for concatenating strings with each other, concatenating strings with non-strings, and matching the patterns of strings. Note: Except length-related functions, other functions and operators of string processing functions do not support parameters greater than 1 GB.
 
 -   bit\_length\(string\)
 
@@ -517,9 +517,17 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_substr\(text,text\)
+-   regexp\_substr\(string text, pattern text \[, position int \[, occurrence int \[, flags text\]\]\]\)
 
     Description: Extracts substrings from a regular expression. Its function is similar to  **substr**. When a regular expression contains multiple parallel brackets, it also needs to be processed.
+
+    Parameter description:
+
+    -   **string**: source character string used for matching.
+    -   **pattern**: regular expression pattern string used for matching.
+    -   **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
+    -   **occurrence**: sequence number of the matched substring to be extracted. This parameter is optional. The default value is  **1**.
+    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
 
     Return type: text
 
@@ -531,13 +539,73 @@ String functions and operators provided by openGauss are for concatenating strin
     ---------------
     
     (1 row)
+    
+    openGauss=# SELECT regexp_substr('foobarbaz', 'b(..)', 3, 2) AS RESULT;
+     result
+    --------
+     baz
+    (1 row)
+    ```
+
+-   regexp\_count\(string text, pattern text \[, position int \[, flags text\]\]\)
+
+    Description: obtains the number of substrings used for matching.
+
+    Parameter description:
+
+    -   **string**: source character string used for matching.
+    -   **pattern**: regular expression pattern string used for matching.
+    -   **position**: sequence number of the character to be matched from the source character string. This parameter is optional. The default value is  **1**.
+    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n' **character by default. The meaning of option  **n**  is the same as that of option  **m**.
+
+    Return type: int
+
+    Example:
+
+    ```
+    openGauss=# SELECT regexp_count('foobarbaz','b(..)', 5) AS RESULT;
+    result
+    --------
+    1
+    (1 row)
+    ```
+
+-   regexp\_instr\(string text, pattern text \[, position int \[, occurrence int \[, return\_opt int \[, flags text\]\]\]\]\)
+
+    Description: obtains the position \(starting from 1\) of the substring that meets the matching condition. If no substring is matched,  **0**  is returned.
+
+    Parameter description:
+
+    -   **string**: source character string used for matching.
+    -   **pattern**: regular expression pattern string used for matching.
+    -   **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
+    -   **occurrence**: sequence number of the matched substring to be replaced. This parameter is optional. The default value is  **1**.
+    -   **return\_opt**: specifies whether to return the position of the first or last character of the matched substring. This parameter is optional. If the value is  **0**, the position of the first character \(starting from 1\) of the matched substring is returned. If the value is greater than 0, the position of the next character of the end character of the matched substring is returned. The default value is  **0**.
+    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
+
+    Return type: int
+
+    Example:
+
+    ```
+    openGauss=# SELECT regexp_instr('foobarbaz','b(..)', 1, 1, 0) AS RESULT;
+    result
+    --------
+    4
+    (1 row)
+    
+    openGauss=# SELECT regexp_instr('foobarbaz','b(..)', 1, 2, 0) AS RESULT;
+    result
+    --------
+    7
+    (1 row)
     ```
 
 -   regexp\_matches\(string text, pattern text \[, flags text\]\)
 
     Description: Returns all captured substrings resulting from matching a POSIX regular expression against  **string**. If the pattern does not match, the function returns no rows. If the pattern contains no parenthesized sub-expressions, then each row returned is a single-element text array containing the substring matching the whole pattern. If the pattern contains parenthesized sub-expressions, the function returns a text array whose  _n_th element is the substring matching the  _n_th parenthesized sub-expression of the pattern.
 
-    The optional  **flags**  argument contains zero or multiple single-letter flags that change function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matching substring is replaced, instead of replacing only the first one.
+    The optional  **flags**  argument contains zero or multiple single-letter flags that change function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matched substring is replaced, instead of replacing only the first one.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >If the last parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to A, the returned result is an empty set. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can:
@@ -637,6 +705,26 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
+
+-   replace\(string, substring\)
+
+    Description: Deletes all substrings in a string.
+
+    String type: text
+
+    Substring type: text
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# SELECT replace('abcdefabcdef', 'cd');
+        replace     
+    ----------------
+     abefabef
+    (1 row)
+    ```
 
 -   reverse\(str\)
 
@@ -1259,7 +1347,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   regexp\_substr\(source\_char, pattern\)
 
-    Description: Extracts substrings from a regular expression.
+    Description: Extracts substrings from a regular expression. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the period \(.\) cannot match the  **'\\n'**  character. If  **aformat\_regexp\_match**  is not contained, the period \(.\) matches the  **'\\n'**  character by default.
 
     Return type: text
 
@@ -1277,9 +1365,9 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Replaces substrings matching the POSIX regular expression. The source string is returned unchanged if there is no match to the pattern. If there is a match, the source string is returned with the replacement string substituted for the matching substring.
 
-    The replacement string can contain \\n, where n is 1 through 9, to indicate that the source substring matching the  _n_th parenthesized sub-expression of the pattern should be inserted, and it can contain \\& to indicate that the substring matching the entire pattern should be inserted.
+    The replacement string can contain  **\\n**, where  **n**  is 1 through 9, to indicate that the source substring matching the  _n_th parenthesized sub-expression of the pattern should be inserted, and it can contain  **\\&**  to indicate that the substring matching the entire pattern should be inserted.
 
-    The optional  **flags**  argument contains zero or multiple single-letter flags that change function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matching substring is replaced, instead of replacing only the first one.
+    The optional  **flags**  argument contains zero or multiple single-letter flags that change the function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matched substring is replaced, instead of replacing only the first one.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
 
     Return type: varchar
 
@@ -1295,6 +1383,31 @@ String functions and operators provided by openGauss are for concatenating strin
        result    
     -------------
      fooXarYXazY
+    (1 row)
+    ```
+
+-   repexp\_replace\(string text, pattern text \[, replacement text \[, position int \[, occurrence int \[, flags text\]\]\]\]\)
+
+    Description: Replaces substrings matching the POSIX regular expression. The source string is returned unchanged if there is no match to the pattern. If there is a match, the source string is returned with the replacement string substituted for the matching substring.
+
+    Parameter description:
+
+    -   **string**: source character string used for matching.
+    -   **pattern**: regular expression pattern string used for matching.
+    -   **replacement**:character string used to replace the matched substring. This parameter is optional. If no parameter value is specified or the parameter value is null, the parameter value is replaced with an empty string.
+    -   **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
+    -   **occurrence**: sequence number of the matched substring to be replaced. This parameter is optional. The default value is  **0**, indicating that all matched substrings are replaced.
+    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# SELECT regexp_replace('foobarbaz','b(..)', E'X\\1Y', 2, 2, 'n') AS RESULT;
+    result
+    ------------
+    foobarXazY
     (1 row)
     ```
 
@@ -1315,6 +1428,31 @@ String functions and operators provided by openGauss are for concatenating strin
      concat_ws
     ------------
      ABCDE,2,22
+    (1 row)
+    ```
+
+-   nlssort\(string text, sort\_method text\)
+
+    Description: Returns the encoding value of a string in the sorting mode specified by  **sort\_method**. The encoding value can be used for sorting and determines the sequence of the string in the sorting mode. Currently,  **sort\_method**  can be set to  **nls\_sort=schinese\_pinyin\_m**  or  **nls\_sort=generic\_m\_ci**.  **nls\_sort=generic\_m\_ci**  supports only the case-insensitive order for English characters.
+
+    String type: text
+
+    sort\_method type: text
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# SELECT nlssort('A', 'nls_sort=schinese_pinyin_m');
+        nlssort     
+    ----------------
+     01EA0000020006
+    (1 row)
+    openGauss=# SELECT nlssort('A', 'nls_sort=generic_m_ci');
+        nlssort     
+    ----------------
+     01EA000002
     (1 row)
     ```
 

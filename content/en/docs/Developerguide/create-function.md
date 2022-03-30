@@ -14,9 +14,20 @@
 -   You can use the  **SELECT**  statement to specify different parameters using identical functions, but cannot use the  **CALL**  statement to call identical functions without the  **PACKAGE**  attribute.
 -   When you create a function, you cannot insert other agg functions out of the avg function or other functions.
 -   By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](grant.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
--   When calling functions without parameters inside another function, you can omit brackets and call functions using their names directly.
+-   When functions without parameters are called inside another function, you can omit brackets and call functions using their names directly.
+-   When functions with output parameters are called inside another function which is an assignment expression, you can omit the output parameters of the called functions.
 -   Oracle-compatible functions support viewing, exporting, and importing parameter comments.
 -   Oracle-compatible functions support viewing, exporting, and importing comments between IS/AS and plsql\_body.
+-   Users granted with the  **CREATE ANY FUNCTION**  permission can create or replace functions in the user schemas.
+-   The default permission on a function is  **SECURITY INVOKER**. To change the default permission to  **SECURITY DEFINER**, set the GUC parameter  **behavior\_compat\_options**  to  **'plsql\_security\_definer'**.
+-   For PL/pgSQL functions, after  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the behavior of  **out/inout**  changes. In the functions,  **return**  and  **out/inout**  can be returned at the same time. Before the parameter is enabled, only  **return**  is returned. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
+-   For PL/pgSQL functions, after  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the restrictions are as follows:
+    1.  If a function with the  **out/inout**  parameter already exists in the same schema or package, you cannot create another function with the same name with the  **out/inout**  parameter.
+    2.  The  **out**  parameter must be added no matter whether the  **SELECT**  or  **CALL**  statement is used to call a stored procedure.
+    3.  In some scenarios, functions cannot be used in expressions \(compared with those before the parameter is enabled\), for example, left assignment in a stored procedure and  **call function**. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
+    4.  Functions without  **return**  cannot be called.  **perform function**  can be used to call functions.
+    5.  When a function is called in a stored procedure,  **out/inout**  cannot be set to a constant. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
+
 
 ## Syntax<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
@@ -81,13 +92,13 @@
 
     Specifies the name of the function to create \(optionally schema-qualified\).
 
-    Value range: a string. It must comply with the naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function name.
+    Value range: a string. It must comply with the identifier naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function name.
 
 -   **argname**
 
     Specifies the parameter name of the function.
 
-    Value range: a string. It must comply with the naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function parameter name.
+    Value range: a string. It must comply with the identifier naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function parameter name.
 
 -   **argmode**
 
@@ -285,7 +296,7 @@ openGauss=# SELECT * FROM func_dup_sql(42);
 -- Compute the sum of two integers and returning the result (if the input is null, the returned result is null):
 openGauss=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
 AS
-BEGIN 
+BEGIN PAC
 RETURN num1 + num2;
 END;
 /
@@ -296,7 +307,7 @@ openGauss=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) IMMUTABLE;
 openGauss=# ALTER FUNCTION func_add_sql2(INTEGER, INTEGER) RENAME TO add_two_number;
 
 -- Change the owner of function add_two_number to omm.
-openGauss=# ALTER FUNCTION add_two_number(INTEGER, INTEGER) OWNER TO omm;
+openGauss=# ALTER FUNCTION omm(INTEGER, INTEGER) OWNER TO omm;
 
 -- Delete the function.
 openGauss=# DROP FUNCTION add_two_number;
@@ -304,6 +315,61 @@ openGauss=# DROP FUNCTION func_increment_sql;
 openGauss=# DROP FUNCTION func_dup_sql;
 openGauss=# DROP FUNCTION func_increment_plsql;
 openGauss=# DROP FUNCTION func_add_sql;
+
+-- Set parameters.
+openGauss=# set behavior_compat_options='proc_outparam_override';
+-- Create functions.
+openGauss=# CREATE or replace FUNCTION func1(in a integer, out b integer)
+RETURNS int
+AS $$
+DECLARE
+    c int;
+    BEGIN
+        c := 1;
+        b := a + c;
+        return c;
+    END; $$
+LANGUAGE 'plpgsql' NOT FENCED;
+-- Return return and output parameters at the same time.
+openGauss=# declare
+    result integer;
+    a integer := 2;
+    b integer := NULL;
+begin
+    result := func1(a => a, b => b);
+    raise info 'b is: %', b;
+    raise info 'result is: %', result;
+end;
+/
+INFO:  b is: 3
+INFO:  result is: 1
+ANONYMOUS BLOCK EXECUTE
+-- Left assignment expressions are not supported.
+openGauss=# declare
+    result integer;
+    a integer := 2;
+    b integer := NULL;
+begin
+    result := func1(a => a, b => b) + 1;
+    raise info 'b is: %', b;
+    raise info 'result is: %', result;
+end;
+/
+ERROR:  when invoking function func1, maybe input something superfluous.
+CONTEXT:  compilation of PL/pgSQL function "inline_code_block" near line 3
+-- out/inout in a stored procedure cannot be set to a constant.
+openGauss=# declare
+    result integer;
+    a integer := 2;
+    b integer := NULL;
+begin
+    result := func1(a => a, b => 10);
+    raise info 'b is: %', b;
+    raise info 'result is: %', result;
+end;
+/
+ERROR:  when invoking function func1, no destination for argments "b"
+CONTEXT:  compilation of PL/pgSQL function "inline_code_block" near line 3
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>

@@ -2,6 +2,8 @@
 
 -   **[ABORT](abort.md)**  
 
+-   **[ALTER AGGREGATE](alter-aggregate.md)**  
+
 -   **[ALTER AUDIT POLICY](alter-audit-policy.md)**  
 
 -   **[ALTER DATABASE](alter-database.md)**  
@@ -12,6 +14,8 @@
 
 -   **[ALTER DIRECTORY](alter-directory.md)**  
 
+-   **[ALTER EXTENSION](alter-extension.md)**  
+
 -   **[ALTER FOREIGN TABLE](alter-foreign-table.md)**  
 
 -   **[ALTER FUNCTION](alter-function.md)**  
@@ -20,11 +24,19 @@
 
 -   **[ALTER INDEX](alter-index.md)**  
 
+-   **[ALTER LANGUAGE](alter-language.md)**  
+
 -   **[ALTER LARGE OBJECT](alter-large-object.md)**  
 
 -   **[ALTER MASKING POLICY](alter-masking-policy.md)**  
 
 -   **[ALTER MATERIALIZED VIEW](alter-materialized-view.md)**  
+
+-   **[ALTER OPERATOR](alter-operator.md)**  
+
+-   **[ALTER PUBLICATION](alter-publication.md)**  
+
+-   **[ALTER PACKAGE](alter-package.md)**  
 
 -   **[ALTER RESOURCE LABEL](alter-resource-label.md)**  
 
@@ -34,8 +46,6 @@
 
 -   **[ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)**  
 
--   **[ALTER RULE](alter-rule.md)**  
-
 -   **[ALTER SCHEMA](alter-schema.md)**  
 
 -   **[ALTER SEQUENCE](alter-sequence.md)**  
@@ -43,6 +53,8 @@
 -   **[ALTER SERVER](alter-server.md)**  
 
 -   **[ALTER SESSION](alter-session.md)**  
+
+-   **[ALTER SUBSCRIPTION](alter-subscription.md)**  
 
 -   **[ALTER SYNONYM](alter-synonym.md)**  
 
@@ -80,6 +92,8 @@
 
 -   **[CHECKPOINT](checkpoint.md)**  
 
+-   **[CLEAN CONNECTION](clean-connection.md)**  
+
 -   **[CLOSE](close.md)**  
 
 -   **[CLUSTER](cluster.md)**  
@@ -92,35 +106,11 @@
 
 -   **[COPY](copy.md)**  
 
--   **[CREATE AUDIT POLICY](create-audit-policy.md)**  
-
 -   **[CREATE AGGREGATE](create-aggregate.md)**  
 
--   **[ALTER AGGREGATE](alter-aggregate.md)**  
-
--   **[DROP AGGREGATE](drop-aggregate.md)**  
-
--   **[CREATE EXTENSION](create-extension.md)**  
-
--   **[DROP EXTENSION](drop-extension.md)**  
-
--   **[ALTER EXTENSION](alter-extension.md)**  
+-   **[CREATE AUDIT POLICY](create-audit-policy.md)**  
 
 -   **[CREATE CAST](create-cast.md)**  
-
--   **[DROP CAST](drop-cast.md)**  
-
--   **[CREATE OPERATOR](create-operator.md)**  
-
--   **[DROP OPERATOR](drop-operator.md)**  
-
--   **[ALTER OPERATOR](alter-operator.md)**  
-
--   **[CREATE LANGUAGE](create-language.md)**  
-
--   **[ALTER LANGUAGE](alter-language.md)**  
-
--   **[DROP LANGUAGE](drop-language.md)**  
 
 -   **[CREATE CLIENT MASTER KEY](create-client-master-key.md)**  
 
@@ -132,15 +122,19 @@
 
 -   **[CREATE DIRECTORY](create-directory.md)**  
 
+-   **[CREATE EXTENSION](create-extension.md)**  
+
 -   **[CREATE FOREIGN TABLE](create-foreign-table.md)**  
 
 -   **[CREATE FUNCTION](create-function.md)**  
 
 -   **[CREATE GROUP](create-group.md)**  
 
+-   **[CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md)**  
+
 -   **[CREATE INDEX](create-index.md)**  
 
--   **[CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md)**  
+-   **[CREATE LANGUAGE](create-language.md)**  
 
 -   **[CREATE MASKING POLICY](create-masking-policy.md)**  
 
@@ -148,17 +142,21 @@
 
 -   **[CREATE MODEL](create-model.md)**  
 
+-   **[CREATE OPERATOR](create-operator.md)**  
+
 -   **[CREATE PACKAGE](create-package.md)**  
 
 -   **[CREATE PROCEDURE](create-procedure.md)**  
 
--   **[CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md)**  
+-   **[CREATE PUBLICATION](create-publication.md)**  
 
 -   **[CREATE RESOURCE LABEL](create-resource-label.md)**  
 
 -   **[CREATE RESOURCE POOL](create-resource-pool.md)**  
 
 -   **[CREATE ROLE](create-role.md)**  
+
+-   **[CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md)**  
 
 -   **[CREATE RULE](create-rule.md)**  
 
@@ -168,6 +166,8 @@
 
 -   **[CREATE SERVER](create-server.md)**  
 
+-   **[CREATE SUBSCRIPTION](create-subscription.md)**  
+
 -   **[CREATE SYNONYM](create-synonym.md)**  
 
 -   **[CREATE TABLE](create-table.md)**  
@@ -176,9 +176,9 @@
 
 -   **[CREATE TABLE PARTITION](create-table-partition.md)**  
 
--   **[CREATE TABLE SUBPARTITION](create-table-subpartition.md)**  
-
 -   **[CREATE TABLESPACE](create-tablespace.md)**  
+
+-   **[CREATE TABLE SUBPARTITION](create-table-subpartition.md)**  
 
 -   **[CREATE TEXT SEARCH CONFIGURATION](create-text-search-configuration.md)**  
 
@@ -206,7 +206,11 @@
 
 -   **[DO](do.md)**  
 
+-   **[DROP AGGREGATE](drop-aggregate.md)**  
+
 -   **[DROP AUDIT POLICY](drop-audit-policy.md)**  
+
+-   **[DROP CAST](drop-cast.md)**  
 
 -   **[DROP CLIENT MASTER KEY](drop-client-master-key.md)**  
 
@@ -218,6 +222,8 @@
 
 -   **[DROP DIRECTORY](drop-directory.md)**  
 
+-   **[DROP EXTENSION](drop-extension.md)**  
+
 -   **[DROP FOREIGN TABLE](drop-foreign-table.md)**  
 
 -   **[DROP FUNCTION](drop-function.md)**  
@@ -226,11 +232,15 @@
 
 -   **[DROP INDEX](drop-index.md)**  
 
+-   **[DROP LANGUAGE](drop-language.md)**  
+
 -   **[DROP MASKING POLICY](drop-masking-policy.md)**  
 
 -   **[DROP MATERIALIZED VIEW](drop-materialized-view.md)**  
 
 -   **[DROP MODEL](drop-model.md)**  
+
+-   **[DROP OPERATOR](drop-operator.md)**  
 
 -   **[DROP OWNED](drop-owned.md)**  
 
@@ -242,17 +252,21 @@
 
 -   **[DROP RESOURCE POOL](drop-resource-pool.md)**  
 
--   **[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md)**  
-
 -   **[DROP ROLE](drop-role.md)**  
 
+-   **[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md)**  
+
 -   **[DROP RULE](drop-rule.md)**  
+
+-   **[DROP PUBLICATION](drop-publication.md)**  
 
 -   **[DROP SCHEMA](drop-schema.md)**  
 
 -   **[DROP SEQUENCE](drop-sequence.md)**  
 
 -   **[DROP SERVER](drop-server.md)**  
+
+-   **[DROP SUBSCRIPTION](drop-subscription.md)**  
 
 -   **[DROP SYNONYM](drop-synonym.md)**  
 
@@ -290,25 +304,27 @@
 
 -   **[LOCK](lock.md)**  
 
--   **[MOVE](move.md)**  
-
 -   **[MERGE INTO](merge-into.md)**  
 
--   **[PURGE](purge.md)**  
+-   **[MOVE](move.md)**  
+
+-   **[PREDICT BY](predict-by.md)**  
 
 -   **[PREPARE](prepare.md)**  
 
 -   **[PREPARE TRANSACTION](prepare-transaction.md)**  
 
+-   **[PURGE](purge.md)**  
+
 -   **[REASSIGN OWNED](reassign-owned.md)**  
-
--   **[REINDEX](reindex.md)**  
-
--   **[RELEASE SAVEPOINT](release-savepoint.md)**  
 
 -   **[REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md)**  
 
 -   **[REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)**  
+
+-   **[REINDEX](reindex.md)**  
+
+-   **[RELEASE SAVEPOINT](release-savepoint.md)**  
 
 -   **[RESET](reset.md)**  
 
@@ -319,8 +335,6 @@
 -   **[ROLLBACK PREPARED](rollback-prepared.md)**  
 
 -   **[ROLLBACK TO SAVEPOINT](rollback-to-savepoint.md)**  
-
--   **[PREDICT BY](predict-by.md)**  
 
 -   **[SAVEPOINT](savepoint.md)**  
 
@@ -356,12 +370,10 @@
 
 -   **[VALUES](values.md)**  
 
--   **[EXECUTE DIRECT](execute-direct.md)**  
+-   **[ALTER PROCEDURE](alter-procedure.md)**  
 
--   **[CLEAN CONNECTION](en-us_topic_0000001151746656.md)**  
+-   **[ALTER GLOBAL CONFIGURATION](alter-global-configuration.md)**  
 
--   **[新节点4](en-us_topic_0000001197866299.md)**  
-
--   **[新节点5](en-us_topic_0000001197786205.md)**  
+-   **[DROP GLOBAL CONFIGURATION](drop-global-configuration.md)**  
 
 

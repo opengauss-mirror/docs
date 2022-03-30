@@ -237,7 +237,23 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_cat\_distinct\(anyarray, anyarray\)
+-   array\_union\(anyarray, anyarray\)
+
+    Description: Concatenates two arrays, and supports only one-dimensional arrays.
+
+    Return type: anyarray
+
+    Example:
+
+    ```
+    openGauss=# SELECT array_union(ARRAY[1,2,3], ARRAY[3,4,5]) AS RESULT;
+       result    
+    -------------
+     {1,2,3,3,4,5}
+    (1 row)
+    ```
+
+-   array\_union\_distinct\(anyarray, anyarray\)
 
     Description: Concatenates two arrays and deduplicates them. Only one-dimensional arrays are supported.
 
@@ -246,7 +262,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     Example:
 
     ```
-    openGauss=# SELECT array_cat_distinct(ARRAY[1,2,3], ARRAY[3,4,5]) AS RESULT;
+    openGauss=# SELECT array_union_distinct(ARRAY[1,2,3], ARRAY[3,4,5]) AS RESULT;
        result    
     -------------
      {1,2,3,4,5}
@@ -467,6 +483,22 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
+-   array\_deleteidx\(anyarray, int\)
+
+    Description: Deletes specified subscript elements from an array and returns an array consisting of the remaining elements.
+
+    Return type: anyarray
+
+    Example:
+
+    ```
+    openGauss=# SELECT array_deleteidx(ARRAY[1,2,3,4,5], 1) AS RESULT;
+      result
+    -----------
+     {2,3,4,5}
+    (1 row)
+    ```
+
 -   array\_extendnull\(anyarray, int\)
 
     Description: Adds a specified number of null elements to the end of an array.
@@ -480,6 +512,22 @@ Array comparisons compare the array contents element-by-element, using the defau
         result 
     --------------
     {1,8,3,7,null}
+    (1 row)
+    ```
+
+-   array\_trim\(anyarray, int\)
+
+    Description: Deletes a specified number of elements from the end of an array.
+
+    Return type: anyarray
+
+    Example:
+
+    ```
+    openGauss=# SELECT array_trim(ARRAY[1,8,3,7],1) AS RESULT;
+     result
+    ---------
+     {1,8,3}
     (1 row)
     ```
 
@@ -524,7 +572,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     Example:
 
     ```
-    openGauss=# SELECT array_next(ARRAY[1,8,3,7],2) AS RESULT;
+    openGauss=# SELECT array_prior(ARRAY[1,8,3,7],2) AS RESULT;
      result 
     --------
       1

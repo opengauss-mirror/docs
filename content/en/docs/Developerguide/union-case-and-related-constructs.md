@@ -23,6 +23,34 @@ SQL  **UNION**  constructs must match up possibly dissimilar types to become a s
 -   If the inputs are all of the same type category, choose the top preferred type in that category.
 -   Convert all inputs to the selected type. Fail if there is not an implicit conversion from a given input to the selected type.
 
+## Type Resolution for CASE in ORA Compatibility Type<a name="section20337194392613"></a>
+
+**decode\(expr, search1, result1, search2, result2, ..., defresult\)**, that is,  **case expr when search1 then result1 when search2 then result2 else defresult end;**. In ORA compatibility mode,it defines the final return value type of the entire expression as the data type of result1 or a higher-precision data type that has the same type as result1. \(For example, numeric and int are both numeric data types, but numeric has higher precision and priority than int.\)
+
+-   Set the data type of result1 to the final return value type preferType, which belongs to preferCategory.
+-   Consider the data types of result2, result3, and defresult in sequence. If the type category is also preferCategory, that is, the type category of result1 is the same as that of result1, check whether the precision \(priority\) of result1 is higher than that of preferType. If yes, update preferType to a data type with a higher precision. If the data type is not preferCategory, check whether the data type can be implicitly converted to preferType. If not, an error is reported.
+-   Uses the data type recorded by preferType as the return value type of the expression. The expression result is implicitly converted to this data type.
+
+Note:
+
+To be compatible with a special case in which the character type of a super-large number is converted to the numeric type, for example,  **select decode\(1, 2, 2, "53465465676465454657567678676"\)**, the large number exceeds the range of bigint and double. Therefore, if the type of result1 is numeric, the type of the return value is set to numeric to be compatible with this special case.
+
+Note 2:
+
+Priority of the numeric types: numeric \> float8 \> float4 \> int8 \> int4 \> int2 \> int1
+
+Priority of the character types: text \> varchar = nvarchar2 \> bpchar \> char
+
+Priority of date types: timestamptz \> timestamp \> smalldatetime \> date \> abstime \> timetz \> time
+
+Priority of date span types: interval \> tinterval \> reltime.
+
+Note 3:
+
+The following figure shows the supported implicit type conversions when the  **set sql\_beta\_feature = 'a\_style\_coerce';**  parameter is enabled in ORA compatibility mode.**\\**  indicates that conversion is not required,  **yes**  indicates that conversion is supported, and blank indicates that conversion is not supported.
+
+![](figures/decode_type.png)
+
 ## Examples<a name="en-us_topic_0283136625_en-us_topic_0237122011_en-us_topic_0059779260_sb48a6ac8819342588bbdeeb006db477e"></a>
 
 Example 1: Use type resolution with underspecified types in a union as the first example. Here, the unknown-type literal  **'b'**  will be resolved to type  **text**.
@@ -111,5 +139,59 @@ td_1=# \c openGauss
 -- Delete databases in A and TD types.
 openGauss=# DROP DATABASE a_1;
 openGauss=# DROP DATABASE td_1;
+```
+
+Example 5: In ORA mode, set the final return value type of the expression to the data type of result1 or a higher-precision data type that is of the same type as result1.
+
+```
+-- In the ORA type, create the ora_1 database compatible with ORA.
+openGauss=# CREATE DATABASE ora_1 dbcompatibility = 'A';
+
+-- Switch to the ora_1 database.
+openGauss=# \c ora_1
+
+-- Enable the Decode compatibility parameter.
+set sql_beta_feature='a_style_coerce';
+
+-- Create the t1 table.
+ora_1=# CREATE TABLE t1(c_int int, c_float8 float8, c_char char(10), c_text text, c_date date);
+
+-- Insert data.
+ora_1=# INSERT INTO t1 VALUES(1, 2, '3', '4', date '12-10-2010');
+
+-- The type of result1 is char, and the type of defresult is text. The precision of text is higher, and the type of the return value is changed from char to text.
+ora_1=# SELECT decode(1, 2, c_char, c_text) AS result, pg_typeof(result) FROM t1;
+ result | pg_typeof 
+--------+-----------
+ 4      | text
+(1 row)
+
+-- The type of result1 is int, which is a numeric type. The type of the return value is set to numeric.
+ora_1=# SELECT decode(1, 2, c_int, c_float8) AS result, pg_typeof(result) FROM t1;
+ result | pg_typeof 
+--------+-----------
+      2 | numeric
+(1 row)
+
+-- The implicit conversion from the defresult data type to the result1 data type does not exist. An error is reported.
+ora_1=# SELECT decode(1, 2, c_int, c_date) FROM t1;
+ERROR:  CASE types integer and timestamp without time zone cannot be matched
+LINE 1: SELECT decode(1, 2, c_int, c_date) FROM t1;
+                                   ^
+CONTEXT:  referenced column: c_date
+
+-- Disable the Decode compatibility parameter.
+set sql_beta_feature='none';
+
+-- Delete the table.
+ora_1=# DROP TABLE t1;
+DROP TABLE
+
+-- Switch to the postgres database:
+ora_1=# \c postgres
+
+-- Delete the database in ORA mode.
+openGauss=# DROP DATABASE ora_1;
+DROP DATABASE
 ```
 

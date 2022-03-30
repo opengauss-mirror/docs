@@ -202,7 +202,7 @@ Database object size functions calculate the actual disk space used by database 
     <td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p153171025152015"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p153171025152015"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p153171025152015"></a>Storage Space</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row1231782517201"><td class="cellrowborder" rowspan="18" valign="top" width="13.451345134513451%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p1031752518206"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1031752518206"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1031752518206"></a>Numeric data types</p>
+    <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row1231782517201"><td class="cellrowborder" rowspan="19" valign="top" width="13.451345134513451%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p1031752518206"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1031752518206"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1031752518206"></a>Numeric data types</p>
     </td>
     <td class="cellrowborder" rowspan="5" valign="top" width="10.181018101810182%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p931712519204"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p931712519204"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p931712519204"></a>Integer types</p>
     </td>
@@ -248,7 +248,7 @@ Database object size functions calculate the actual disk space used by database 
     <td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p1050320236328"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1050320236328"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1050320236328"></a>Every four decimal digits occupy two bytes. The digits before and after the decimal point are calculated separately.</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row20319172511201"><td class="cellrowborder" rowspan="3" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p173191125172014"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p173191125172014"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p173191125172014"></a>Sequence integer</p>
+    <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row20319172511201"><td class="cellrowborder" rowspan="4" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p173191125172014"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p173191125172014"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p173191125172014"></a>Sequence integer</p>
     </td>
     <td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p932015251201"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p932015251201"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p932015251201"></a>SMALLSERIAL</p>
     </td>
@@ -263,6 +263,11 @@ Database object size functions calculate the actual disk space used by database 
     <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row1732002532011"><td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p132042517209"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p132042517209"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p132042517209"></a>BIGSERIAL</p>
     </td>
     <td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p2320425202019"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p2320425202019"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p2320425202019"></a>8</p>
+    </td>
+    </tr>
+    <tr id="row184433114514"><td class="cellrowborder" valign="top"><p id="p104473114450"><a name="p104473114450"></a><a name="p104473114450"></a>LARGESERIAL</p>
+    </td>
+    <td class="cellrowborder" valign="top"><p id="p74443111457"><a name="p74443111457"></a><a name="p74443111457"></a>Every four decimal digits occupy two bytes. The digits before and after the decimal point are calculated separately.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row73201825112016"><td class="cellrowborder" rowspan="7" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p2320625122011"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p2320625122011"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p2320625122011"></a>Floating point types</p>
@@ -311,9 +316,9 @@ Database object size functions calculate the actual disk space used by database 
     <td class="cellrowborder" valign="top" width="35.9035903590359%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p332362520201"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p332362520201"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p332362520201"></a>1</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row632372552018"><td class="cellrowborder" rowspan="11" valign="top" width="13.451345134513451%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p932318250202"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p932318250202"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p932318250202"></a>Character data types</p>
+    <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row632372552018"><td class="cellrowborder" rowspan="12" valign="top" width="13.451345134513451%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p932318250202"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p932318250202"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p932318250202"></a>Character data types</p>
     </td>
-    <td class="cellrowborder" rowspan="11" valign="top" width="10.181018101810182%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p103231025122013"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p103231025122013"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p103231025122013"></a>Character types</p>
+    <td class="cellrowborder" rowspan="12" valign="top" width="10.181018101810182%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p103231025122013"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p103231025122013"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p103231025122013"></a>Character types</p>
     </td>
     <td class="cellrowborder" valign="top" width="40.46404640464046%"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p16323182552016"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p16323182552016"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p16323182552016"></a>CHAR</p>
     </td>
@@ -353,6 +358,11 @@ Database object size functions calculate the actual disk space used by database 
     <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row232432518204"><td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p14324725102011"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p14324725102011"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p14324725102011"></a>VARCHAR2(n)</p>
     </td>
     <td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p832582582011"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p832582582011"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p832582582011"></a>Actual number of bytes of a character</p>
+    </td>
+    </tr>
+    <tr id="row117175318489"><td class="cellrowborder" valign="top"><p id="p194831358491"><a name="p194831358491"></a><a name="p194831358491"></a>NVARCHAR(n)</p>
+    </td>
+    <td class="cellrowborder" valign="top"><p id="p1748319512492"><a name="p1748319512492"></a><a name="p1748319512492"></a>Actual number of bytes of a character</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283137585_en-us_topic_0237121994_row143254257202"><td class="cellrowborder" valign="top"><p id="en-us_topic_0283137585_en-us_topic_0237121994_p1832592522014"><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1832592522014"></a><a name="en-us_topic_0283137585_en-us_topic_0237121994_p1832592522014"></a>NVARCHAR2(n)</p>

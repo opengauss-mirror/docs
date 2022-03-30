@@ -513,7 +513,7 @@
     openGauss=# select version();
     version
     -------------------------------------------------------------------------------------------------------------------------------------------------------------
-    (openGauss 2.0.0 build 24abfc73) compiled at 2021-04-16 19:39:59 commit 0 last mr 305 debug on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 7.3.0, 64-bit
+    (openGauss x.x.x build fab4f5ea) compiled at 2021-10-24 11:58:22 commit 3086 last mr 6592 release
     (1 row)
     ```
 
@@ -600,6 +600,12 @@
                2200
     (1 row)
     ```
+
+-   get\_client\_info\(\)
+
+    Description: Returns client information.
+
+    Return type: record
 
 
 ## Access privilege inquiry function<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s8be48efddaf84c7fb405513993705867"></a>
@@ -838,7 +844,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_database\_privilege**  checks whether a user can access a database in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must be some combination of  **CREATE**,  **CONNECT**,  **TEMPORARY**,  **ALTER**,  **DROP**,  **COMMENT**  or  **TEMP**  \(which is equivalent to  **TEMPORARY**\).
 
--   has\_directory\_privilege\(user, database, privilege\)
+-   has\_directory\_privilege\(user, directory, privilege\)
 
     Description: Specifies whether a specified user has permission for directories.
 
@@ -856,7 +862,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
     <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_p01491436721"><a name="en-us_topic_0283136950_p01491436721"></a><a name="en-us_topic_0283136950_p01491436721"></a>name, oid</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0283136950_row514912361722"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_p16149163614220"><a name="en-us_topic_0283136950_p16149163614220"></a><a name="en-us_topic_0283136950_p16149163614220"></a>database</p>
+    <tr id="en-us_topic_0283136950_row514912361722"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136950_p16149163614220"><a name="en-us_topic_0283136950_p16149163614220"></a><a name="en-us_topic_0283136950_p16149163614220"></a>directory</p>
     </td>
     <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136950_p151491036623"><a name="en-us_topic_0283136950_p151491036623"></a><a name="en-us_topic_0283136950_p151491036623"></a>text, oid</p>
     </td>
@@ -871,7 +877,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_directory\_privilege\(database, privilege\)
+-   has\_directory\_privilege\(directory, privilege\)
 
     Description: Specifies whether the current user has permission to access a directory. For details about the valid parameter types, see  [Table 6](#en-us_topic_0283136950_table111483362025).
 
@@ -1124,6 +1130,61 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
     Return type: Boolean
 
     Note:  **pg\_has\_role**  checks whether a user can access a role in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**, except that  **public**  is not allowed as a user name. The desired access permission type must evaluate to some combination of  **MEMBER**  or  **USAGE**.  **MEMBER**  denotes direct or indirect membership in the role \(that is, the right to do  **SET ROLE**\), while  **USAGE**  denotes the permissions of the role are available without doing  **SET ROLE**.
+
+
+-   has\_any\_privilege\(user, privilege\)
+
+    Description: Queries whether a specified user has certain ANY permission. If multiple permissions are queried at the same time,  **true**  is returned as long as one permission is obtained.
+
+    Return type: Boolean
+
+    **Table  11**  Parameter type description
+
+    <a name="table2475103414219"></a>
+    <table><thead align="left"><tr id="row1147612343425"><th class="cellrowborder" valign="top" width="12.21122112211221%" id="mcps1.2.5.1.1"><p id="p114761534164212"><a name="p114761534164212"></a><a name="p114761534164212"></a>Parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="17.561756175617564%" id="mcps1.2.5.1.2"><p id="p164769345424"><a name="p164769345424"></a><a name="p164769345424"></a>Valid Input Parameter Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="23.262326232623263%" id="mcps1.2.5.1.3"><p id="p194762344425"><a name="p194762344425"></a><a name="p194762344425"></a>Description</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="46.96469646964697%" id="mcps1.2.5.1.4"><p id="p17476834114213"><a name="p17476834114213"></a><a name="p17476834114213"></a>Range</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row2047610349421"><td class="cellrowborder" valign="top" width="12.21122112211221%" headers="mcps1.2.5.1.1 "><p id="p20476133494219"><a name="p20476133494219"></a><a name="p20476133494219"></a>user</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.561756175617564%" headers="mcps1.2.5.1.2 "><p id="p1447633414424"><a name="p1447633414424"></a><a name="p1447633414424"></a>name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="23.262326232623263%" headers="mcps1.2.5.1.3 "><p id="p1847693412421"><a name="p1847693412421"></a><a name="p1847693412421"></a>User</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="46.96469646964697%" headers="mcps1.2.5.1.4 "><p id="p84766343422"><a name="p84766343422"></a><a name="p84766343422"></a>An existing user name.</p>
+    </td>
+    </tr>
+    <tr id="row847710343429"><td class="cellrowborder" valign="top" width="12.21122112211221%" headers="mcps1.2.5.1.1 "><p id="p1047715346429"><a name="p1047715346429"></a><a name="p1047715346429"></a>privilege</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.561756175617564%" headers="mcps1.2.5.1.2 "><p id="p16477534174219"><a name="p16477534174219"></a><a name="p16477534174219"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="23.262326232623263%" headers="mcps1.2.5.1.3 "><p id="p2047783415424"><a name="p2047783415424"></a><a name="p2047783415424"></a>ANY permission</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="46.96469646964697%" headers="mcps1.2.5.1.4 "><p id="p162252515013"><a name="p162252515013"></a><a name="p162252515013"></a>Available values:</p>
+    <p id="p1691639122320"><a name="p1691639122320"></a><a name="p1691639122320"></a>CREATE ANY TABLE [WITH ADMIN OPTION]</p>
+    <p id="p121482428232"><a name="p121482428232"></a><a name="p121482428232"></a>ALTER ANY TABLE [WITH ADMIN OPTION]</p>
+    <p id="p118925504234"><a name="p118925504234"></a><a name="p118925504234"></a>DROP ANY TABLE [WITH ADMIN OPTION]</p>
+    <p id="p38322544233"><a name="p38322544233"></a><a name="p38322544233"></a>SELECT ANY TABLE [WITH ADMIN OPTION]</p>
+    <p id="p743065817230"><a name="p743065817230"></a><a name="p743065817230"></a>INSERT ANY TABLE [WITH ADMIN OPTION]</p>
+    <p id="p145771208240"><a name="p145771208240"></a><a name="p145771208240"></a>UPDATE ANY TABLE [WITH ADMIN OPTION]</p>
+    <p id="p10329311246"><a name="p10329311246"></a><a name="p10329311246"></a>DELETE ANY TABLE [WITH ADMIN OPTION]</p>
+    <p id="p154711513248"><a name="p154711513248"></a><a name="p154711513248"></a>CREATE ANY SEQUENCE [WITH ADMIN OPTION]</p>
+    <p id="p14809822416"><a name="p14809822416"></a><a name="p14809822416"></a>CREATE ANY INDEX [WITH ADMIN OPTION]</p>
+    <p id="p7140110172411"><a name="p7140110172411"></a><a name="p7140110172411"></a>CREATE ANY FUNCTION [WITH ADMIN OPTION]</p>
+    <p id="p16731917202411"><a name="p16731917202411"></a><a name="p16731917202411"></a>EXECUTE ANY FUNCTION [WITH ADMIN OPTION]</p>
+    <p id="p173867219248"><a name="p173867219248"></a><a name="p173867219248"></a>CREATE ANY PACKAGE [WITH ADMIN OPTION]</p>
+    <p id="p164790242249"><a name="p164790242249"></a><a name="p164790242249"></a>EXECUTE ANY PACKAGE [WITH ADMIN OPTION]</p>
+    <p id="p1864951312493"><a name="p1864951312493"></a><a name="p1864951312493"></a>CREATE ANY TYPE [WITH ADMIN OPTION]</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 
 ## Schema Visibility Inquiry Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s8c676f27906a4d0babc4ed2bca955536"></a>
@@ -1618,7 +1679,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Description: Obtains the parameters of a specified sequence, including the start value, minimum value, maximum value, and incremental value.
 
-    Return type: bigint, bigint, bigint, bigint, Boolean
+    Return type: int16, int16, int16, int16, Boolean
 
     Example:
 
@@ -1668,9 +1729,9 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
 ## Transaction IDs and Snapshots<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s13629462b1e147b2a9e93634a69e54e7"></a>
 
-Internal transaction IDs \(XIDs\) are 64 bits.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment.  [Table 11](#en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
+Internal transaction IDs \(XIDs\) are 64 bits.  **txid\_snapshot**, the data type used by these functions, stores information about transaction ID visibility at a particular moment.  [Table 12](#en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d)  describes its components.
 
-**Table  11**  Snapshot components
+**Table  12**  Snapshot components
 
 <a name="en-us_topic_0059777618_t537e765e3f164cdeb9ca75f865e3aa0d"></a>
 <table><thead align="left"><tr id="en-us_topic_0059777618_rff0daa55919a489da9225a223f21b3fd"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.3.1.1"><p id="en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"><a name="en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a><a name="en-us_topic_0059777618_en-us_topic_0058965770_p442620521898"></a>Name</p>
@@ -1762,6 +1823,39 @@ The following functions provide server transaction information in an exportable 
     Description: Concurrently cleans two-phase residual transactions. Only the  **gs\_clean**  tool can call this function for the cleaning. In other situations,  **false**  is returned.
 
     Return type: Boolean
+
+-   gs\_get\_next\_xid\_csn\(\)
+
+    Description: Returns the values of  **next\_xid**  and  **next\_csn**  on all nodes globally.
+
+    The return values are as follows:
+
+    **Table  13**  gs\_get\_next\_xid\_csn parameters
+
+    <a name="table340717034418"></a>
+    <table><thead align="left"><tr id="row194088034420"><th class="cellrowborder" valign="top" width="38.42%" id="mcps1.2.3.1.1"><p id="p184086011445"><a name="p184086011445"></a><a name="p184086011445"></a>Column</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="61.58%" id="mcps1.2.3.1.2"><p id="p19408108440"><a name="p19408108440"></a><a name="p19408108440"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row34088016443"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p13408190114414"><a name="p13408190114414"></a><a name="p13408190114414"></a>nodename</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p14084015446"><a name="p14084015446"></a><a name="p14084015446"></a>Node name.</p>
+    </td>
+    </tr>
+    <tr id="row1640814010449"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p8637194274419"><a name="p8637194274419"></a><a name="p8637194274419"></a>next_xid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p114081802446"><a name="p114081802446"></a><a name="p114081802446"></a>Next transaction ID of the current node.</p>
+    </td>
+    </tr>
+    <tr id="row140814034412"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p78660462440"><a name="p78660462440"></a><a name="p78660462440"></a>next_csn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p19408190124416"><a name="p19408190124416"></a><a name="p19408190124416"></a>Next CSN of the current node.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 
 -   slice\(hstore, text\[\]\)
@@ -1874,7 +1968,7 @@ The following functions provide server transaction information in an exportable 
 
 -   get\_gtm\_lite\_status
 
-    Description: Returns the backup XID and CSN on the GTM for fault locating. This system function is not supported in GTM-FREE mode.
+    **Description**: Returns the backup XID and CSN on the GTM for fault locating. This system function is not supported in GTM-FREE mode.
 
 -   gs\_stat\_get\_wlm\_plan\_operator\_info
 

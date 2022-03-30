@@ -530,7 +530,7 @@
 
     Description: Converts the input parameter to a value of the int2 type and returns the value.
 
-    The supported input parameter types include float4, float8, numeric, and text.
+    The supported input parameter types include float4, float8, int16, numeric, and text.
 
     Return type: int2
 
@@ -553,7 +553,7 @@
 
     Description: Converts the input parameter to a value of the int4 type and returns the value.
 
-    The supported input parameter types include bit, boolean, char, double precision, numeric, real, smallint and text
+    The supported input parameter types include bit, boolean, char, double precision, int16, numeric, real, smallint and text
 
     Return type: int4
 
@@ -571,6 +571,100 @@
        99
     (1 row)
     ```
+
+-   float4\(in\)
+
+    Description: Converts the input parameter to a value of the float4 type and returns the value. The supported input parameter types include bigint, duoble precision, int16, integer, numeric, smallint, and text.
+
+    Return type: float4
+
+    Example:
+
+    ```
+    openGauss=# select float4('789');
+     float4
+    --------
+        789
+    (1 row)
+    
+    openGauss=# select float4(99.9);
+     float4
+    --------
+       99.9
+    (1 row)
+    ```
+
+-   float8\(in\)
+
+    Description: Converts the input parameter to a value of the float8 type and returns the value. The supported input parameter types include bigint, int16, integer, numeric, real, smallint, and text.
+
+    Return type: float8
+
+    Example:
+
+    ```
+    openGauss=# select float8('789');
+     float8
+    --------
+        789
+    (1 row)
+    
+    openGauss=# select float8(99.9);
+     float8
+    --------
+       99.9
+    (1 row)
+    ```
+
+-   int16\(in\)
+
+    Description: Converts the input parameter to a value of the int16 type and returns the value. The supported input parameter types include bigint, boolean, double precision, integer, numeric, oid, real, smallint, and tinyint.
+
+    Return type: int16
+
+    Example:
+
+    ```
+    openGauss=# select int16('789');
+     int16
+    --------
+        789
+    (1 row)
+    
+    openGauss=# select int16(99.9);
+     int16
+    --------
+       99
+    (1 row)
+    ```
+
+-   numeric\(in\)
+
+    Description: Converts the input parameter to a value of the numeric type and returns the value. The supported input parameter types include bigint, boolean, double precision, int16, integer, money, real, and smallint.
+
+    Return type: numeric
+
+    Example:
+
+    ```
+    openGauss=# select "numeric"('789');
+     numeric
+    ---------
+         789
+    (1 row)
+    
+    openGauss=# select "numeric"(99.9);
+     numeric
+    ---------
+        99.9
+    (1 row)
+    ```
+
+-   oid\(in\)
+
+    Description: Converts the input parameter to a value of the oid type and returns the value. The supported input parameter types include bigint and int16.
+
+    Return type: oid
 
 -   radians\(dp\)
 

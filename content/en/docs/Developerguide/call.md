@@ -2,11 +2,11 @@
 
 ## Function<a name="en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_s17e49a7670334c61978f059adf2cb65d"></a>
 
-**CALL**  can be used to call defined functions and stored procedures.
+**CALL**  calls defined functions and stored procedures.
 
 ## Precautions<a name="en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_sdf7f29bdebc44178a9581f41f4257f09"></a>
 
-None
+The owner of a function or stored procedure, users granted with the  **EXECUTE**  permission on the function or stored procedure, or users granted with the  **EXECUTE ANY FUNCTION**  permission can call the function or stored procedure. The system administrator has the permission to call the function or stored procedure by default.
 
 ## Syntax<a name="en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_sdf8eb47ae3d945fea7582a7753cdd985"></a>
 
@@ -28,13 +28,13 @@ CALL [schema.|package.] {func_name| procedure_name} ( param_expr );
 
     Specifies the name of the function or stored procedure to be called.
 
-    Value range: an existing function name
+    Value range: an existing function name.
 
 -   **param\_expr**
 
-    Specifies a list of parameters in the function. Use := or =\> to separate a parameter name and its value. This method allows parameters to be placed in any order. If only parameter values are in the list, the value order must be the same as that defined in the function or stored procedure.
+    Specifies a list of parameters. Use := or =\> to separate a parameter name and its value. This method allows parameters to be placed in any order. If only parameter values are in the list, the value order must be the same as that defined in the function or stored procedure.
 
-    Value range: an existing function parameter name or stored procedure parameter name
+    Value range: an existing function parameter name or stored procedure parameter name.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The parameters include input parameters \(whose name and type are separated by IN\) and output parameters \(whose name and type are separated by OUT\). When you run the  **CALL**  statement to call a function or stored procedure, the parameter list must contain an output parameter for non-overloaded functions. You can set the output parameter to a variable or any constant. For details, see  [Examples](#en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_s299dc001fa4b48cd9b56412a73db23c0). For an overloaded package function, the parameter list can have no output parameter, but the function may not be found. If an output parameter is contained, it must be a constant.
@@ -70,7 +70,7 @@ res := num1 + num2;
 END;
 /
 
--- Transfer a constant as an output parameter.
+-- Set output parameters to constants.
 openGauss=# CALL func_increment_sql(1,2,1);
 
 -- Delete the function.

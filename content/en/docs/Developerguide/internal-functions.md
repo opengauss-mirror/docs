@@ -95,8 +95,10 @@ The following functions of openGauss use internal data types, which cannot be di
     </tr>
     <tr id="row1169117454247"><td class="cellrowborder" valign="top" width="33.33333333333333%"><p id="p1769274520244"><a name="p1769274520244"></a><a name="p1769274520244"></a>local_rto_stat</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%">&nbsp;&nbsp;</td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%"><p id="p6692154522418"><a name="p6692154522418"></a><a name="p6692154522418"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%"><p id="p136929452248"><a name="p136929452248"></a><a name="p136929452248"></a>-</p>
+    </td>
     </tr>
     </tbody>
     </table>
@@ -593,13 +595,10 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     </tr>
     <tr id="row142703407317"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1380534612313"><a name="p1380534612313"></a><a name="p1380534612313"></a>i16toi1</p>
-    <p id="p1780519466312"><a name="p1780519466312"></a><a name="p1780519466312"></a></p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p580510461036"><a name="p580510461036"></a><a name="p580510461036"></a></p>
-    <p id="p1980515461833"><a name="p1980515461833"></a><a name="p1980515461833"></a>int16</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1980515461833"><a name="p1980515461833"></a><a name="p1980515461833"></a>int16</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p9805346732"><a name="p9805346732"></a><a name="p9805346732"></a></p>
-    <p id="p18054465319"><a name="p18054465319"></a><a name="p18054465319"></a>int16_bool</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p18054465319"><a name="p18054465319"></a><a name="p18054465319"></a>int16_bool</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1427115401234"><a name="p1427115401234"></a><a name="p1427115401234"></a>int16eq</p>
     </td>
@@ -633,21 +632,267 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1727314211420"><a name="p1727314211420"></a><a name="p1727314211420"></a>numeric_bool</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.175747275817258%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.395681295611315%">&nbsp;&nbsp;</td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p7273342448"><a name="p7273342448"></a><a name="p7273342448"></a>int2vectorin_extend</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p22739425410"><a name="p22739425410"></a><a name="p22739425410"></a>int2vectorout_extend</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p172731421248"><a name="p172731421248"></a><a name="p172731421248"></a>int2vectorrecv_extend</p>
+    </td>
     </tr>
-    <tr id="row13989614172815"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p781214137285"><a name="p781214137285"></a><a name="p781214137285"></a>jsonb_in</p>
+    <tr id="row2631824153418"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p14631724133414"><a name="p14631724133414"></a><a name="p14631724133414"></a>int2vectorsend_extend</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p58121131286"><a name="p58121131286"></a><a name="p58121131286"></a>jsonb_out</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p64031816173612"><a name="p64031816173612"></a><a name="p64031816173612"></a>jsonb_in</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p14812613162817"><a name="p14812613162817"></a><a name="p14812613162817"></a>jsonb_recv</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p18562648103613"><a name="p18562648103613"></a><a name="p18562648103613"></a>jsonb_out</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p18812101319287"><a name="p18812101319287"></a><a name="p18812101319287"></a>jsonb_send</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p88037719379"><a name="p88037719379"></a><a name="p88037719379"></a>jsonb_recv</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.175747275817258%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.395681295611315%">&nbsp;&nbsp;</td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p5140823153719"><a name="p5140823153719"></a><a name="p5140823153719"></a>jsonb_send</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p7932124811419"><a name="p7932124811419"></a><a name="p7932124811419"></a>complex_array_in</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p1064182420348"><a name="p1064182420348"></a><a name="p1064182420348"></a>bool_int1</p>
+    </td>
+    </tr>
+    <tr id="row13989614172815"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p179341316433"><a name="p179341316433"></a><a name="p179341316433"></a>bool_int2</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p18935916436"><a name="p18935916436"></a><a name="p18935916436"></a>bool_int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1393516111435"><a name="p1393516111435"></a><a name="p1393516111435"></a>bpchar_float4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p493551184310"><a name="p493551184310"></a><a name="p493551184310"></a>bpchar_float8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p29354194319"><a name="p29354194319"></a><a name="p29354194319"></a>bpchar_int4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p0935121174310"><a name="p0935121174310"></a><a name="p0935121174310"></a>bpchar_int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p5935161164315"><a name="p5935161164315"></a><a name="p5935161164315"></a>bpchar_numeric</p>
+    </td>
+    </tr>
+    <tr id="row9865123415"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p88079262435"><a name="p88079262435"></a><a name="p88079262435"></a>bpchar_timestamp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1380782611439"><a name="p1380782611439"></a><a name="p1380782611439"></a>f4toi1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p780752684313"><a name="p780752684313"></a><a name="p780752684313"></a>f8toi1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p080732694318"><a name="p080732694318"></a><a name="p080732694318"></a>float4_bpchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p17807192611435"><a name="p17807192611435"></a><a name="p17807192611435"></a>float4_text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p2807162644316"><a name="p2807162644316"></a><a name="p2807162644316"></a>float4_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p1480752619431"><a name="p1480752619431"></a><a name="p1480752619431"></a>float8_bpchar</p>
+    </td>
+    </tr>
+    <tr id="row19358932104311"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p69755064619"><a name="p69755064619"></a><a name="p69755064619"></a>float8_text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p189751601462"><a name="p189751601462"></a><a name="p189751601462"></a>float8_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p897520094613"><a name="p897520094613"></a><a name="p897520094613"></a>i1tof4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1975170174617"><a name="p1975170174617"></a><a name="p1975170174617"></a>i1tof8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p10975190184612"><a name="p10975190184612"></a><a name="p10975190184612"></a>i1toi2</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p3975110124617"><a name="p3975110124617"></a><a name="p3975110124617"></a>i1toi4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p59751305467"><a name="p59751305467"></a><a name="p59751305467"></a>i1toi8</p>
+    </td>
+    </tr>
+    <tr id="row172531747134516"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p178232074463"><a name="p178232074463"></a><a name="p178232074463"></a>i2toi1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p168233754613"><a name="p168233754613"></a><a name="p168233754613"></a>i4toi1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p48233712469"><a name="p48233712469"></a><a name="p48233712469"></a>i8toi1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1982320754619"><a name="p1982320754619"></a><a name="p1982320754619"></a>int1_avg_accum</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p18230714618"><a name="p18230714618"></a><a name="p18230714618"></a>int1_bool</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p0823578468"><a name="p0823578468"></a><a name="p0823578468"></a>int1_bpchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p19823157154612"><a name="p19823157154612"></a><a name="p19823157154612"></a>int1_numeric</p>
+    </td>
+    </tr>
+    <tr id="row202622037194317"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p073917511474"><a name="p073917511474"></a><a name="p073917511474"></a>int1_nvarchar2</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p167396518473"><a name="p167396518473"></a><a name="p167396518473"></a>int1_text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p17395594715"><a name="p17395594715"></a><a name="p17395594715"></a>int1_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p7739651475"><a name="p7739651475"></a><a name="p7739651475"></a>int1abs</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1473995154715"><a name="p1473995154715"></a><a name="p1473995154715"></a>int1and</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p197391159474"><a name="p197391159474"></a><a name="p197391159474"></a>int1cmp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p473955174711"><a name="p473955174711"></a><a name="p473955174711"></a>int1div</p>
+    </td>
+    </tr>
+    <tr id="row11893131784613"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1273915164713"><a name="p1273915164713"></a><a name="p1273915164713"></a>int1eq</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1473965194710"><a name="p1473965194710"></a><a name="p1473965194710"></a>int1ge</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p87401656473"><a name="p87401656473"></a><a name="p87401656473"></a>int1gt</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p117401059474"><a name="p117401059474"></a><a name="p117401059474"></a>int1in</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p47408510470"><a name="p47408510470"></a><a name="p47408510470"></a>int1inc</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p6740145174712"><a name="p6740145174712"></a><a name="p6740145174712"></a>int1larger</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p3740115164715"><a name="p3740115164715"></a><a name="p3740115164715"></a>int1le</p>
+    </td>
+    </tr>
+    <tr id="row149669213462"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p37405513472"><a name="p37405513472"></a><a name="p37405513472"></a>int1lt</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p4740185164719"><a name="p4740185164719"></a><a name="p4740185164719"></a>int1mi</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1374014510479"><a name="p1374014510479"></a><a name="p1374014510479"></a>int1mod</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p117408518475"><a name="p117408518475"></a><a name="p117408518475"></a>int1mul</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p17403574716"><a name="p17403574716"></a><a name="p17403574716"></a>int1ne</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p137402544717"><a name="p137402544717"></a><a name="p137402544717"></a>int1not</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p774045174720"><a name="p774045174720"></a><a name="p774045174720"></a>int1or</p>
+    </td>
+    </tr>
+    <tr id="row1625264311455"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1174020516479"><a name="p1174020516479"></a><a name="p1174020516479"></a>int1out</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1174111554714"><a name="p1174111554714"></a><a name="p1174111554714"></a>int1pl</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1474125144715"><a name="p1474125144715"></a><a name="p1474125144715"></a>int1shl</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p157419514471"><a name="p157419514471"></a><a name="p157419514471"></a>int1shr</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1074114544710"><a name="p1074114544710"></a><a name="p1074114544710"></a>int1smaller</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p17414513475"><a name="p17414513475"></a><a name="p17414513475"></a>int1um</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p47415520479"><a name="p47415520479"></a><a name="p47415520479"></a>int1up</p>
+    </td>
+    </tr>
+    <tr id="row1442144517462"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p974117519477"><a name="p974117519477"></a><a name="p974117519477"></a>int1xor</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p77413517476"><a name="p77413517476"></a><a name="p77413517476"></a>int2_bool</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p13741153479"><a name="p13741153479"></a><a name="p13741153479"></a>int2_bpchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1374215511474"><a name="p1374215511474"></a><a name="p1374215511474"></a>int2_text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p474212518475"><a name="p474212518475"></a><a name="p474212518475"></a>int2_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p147428514717"><a name="p147428514717"></a><a name="p147428514717"></a>int4_bpchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p1774216524719"><a name="p1774216524719"></a><a name="p1774216524719"></a>int4_text</p>
+    </td>
+    </tr>
+    <tr id="row24381745184618"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p27421156475"><a name="p27421156475"></a><a name="p27421156475"></a>int4_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p147425517473"><a name="p147425517473"></a><a name="p147425517473"></a>int8_bool</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p474210554710"><a name="p474210554710"></a><a name="p474210554710"></a>int8_bpchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p107421858473"><a name="p107421858473"></a><a name="p107421858473"></a>int8_text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2074285184713"><a name="p2074285184713"></a><a name="p2074285184713"></a>int8_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p1074295174710"><a name="p1074295174710"></a><a name="p1074295174710"></a>job_submit</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p6742550471"><a name="p6742550471"></a><a name="p6742550471"></a>numeric_bpchar</p>
+    </td>
+    </tr>
+    <tr id="row17432154504611"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p174216584712"><a name="p174216584712"></a><a name="p174216584712"></a>numeric_int1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p9742257474"><a name="p9742257474"></a><a name="p9742257474"></a>numeric_text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p14742456472"><a name="p14742456472"></a><a name="p14742456472"></a>numeric_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p207421515472"><a name="p207421515472"></a><a name="p207421515472"></a>nvarchar2in</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1774317513475"><a name="p1774317513475"></a><a name="p1774317513475"></a>nvarchar2out</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p8743155134711"><a name="p8743155134711"></a><a name="p8743155134711"></a>nvarchar2send</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p6743556472"><a name="p6743556472"></a><a name="p6743556472"></a>oidvectorin_extend</p>
+    </td>
+    </tr>
+    <tr id="row10427164574619"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p16743552471"><a name="p16743552471"></a><a name="p16743552471"></a>oidvectorout_extend</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p7743155184712"><a name="p7743155184712"></a><a name="p7743155184712"></a>oidvectorsend_extend</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p147432554715"><a name="p147432554715"></a><a name="p147432554715"></a>rawcmp</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p12743852477"><a name="p12743852477"></a><a name="p12743852477"></a>raweq</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p474320564714"><a name="p474320564714"></a><a name="p474320564714"></a>rawge</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p2743851478"><a name="p2743851478"></a><a name="p2743851478"></a>rawgt</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p147431150473"><a name="p147431150473"></a><a name="p147431150473"></a>rawin</p>
+    </td>
+    </tr>
+    <tr id="row1940465519464"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p10743205164718"><a name="p10743205164718"></a><a name="p10743205164718"></a>rawle</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p174310554713"><a name="p174310554713"></a><a name="p174310554713"></a>rawlike</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p147431516474"><a name="p147431516474"></a><a name="p147431516474"></a>rawlt</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p20743115134717"><a name="p20743115134717"></a><a name="p20743115134717"></a>rawne</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p167431957479"><a name="p167431957479"></a><a name="p167431957479"></a>rawnlike</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p107433514473"><a name="p107433514473"></a><a name="p107433514473"></a>rawout</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p07430516471"><a name="p07430516471"></a><a name="p07430516471"></a>rawsend</p>
+    </td>
+    </tr>
+    <tr id="row439816551469"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1874319544718"><a name="p1874319544718"></a><a name="p1874319544718"></a>text_float4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574365184714"><a name="p1574365184714"></a><a name="p1574365184714"></a>text_float8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p197435519476"><a name="p197435519476"></a><a name="p197435519476"></a>text_int1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p197431554477"><a name="p197431554477"></a><a name="p197431554477"></a>text_int2</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p17744252471"><a name="p17744252471"></a><a name="p17744252471"></a>text_int4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p1874410514476"><a name="p1874410514476"></a><a name="p1874410514476"></a>text_int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p274416514710"><a name="p274416514710"></a><a name="p274416514710"></a>text_numeric</p>
+    </td>
+    </tr>
+    <tr id="row16394655134613"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1674413510473"><a name="p1674413510473"></a><a name="p1674413510473"></a>timestamp_text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518477"><a name="p1574418518477"></a><a name="p1574418518477"></a>timestamp_varchar</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1474455114711"><a name="p1474455114711"></a><a name="p1474455114711"></a>varchar_float4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1974485174715"><a name="p1974485174715"></a><a name="p1974485174715"></a>varchar_float8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p117441157475"><a name="p117441157475"></a><a name="p117441157475"></a>varchar_int4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p14744155154712"><a name="p14744155154712"></a><a name="p14744155154712"></a>varchar_int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p1574417594710"><a name="p1574417594710"></a><a name="p1574417594710"></a>varchar_numeric</p>
+    </td>
+    </tr>
+    <tr id="row138945514620"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p11744125134716"><a name="p11744125134716"></a><a name="p11744125134716"></a>xidout4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1374415174711"><a name="p1374415174711"></a><a name="p1374415174711"></a>xidsend4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1474519519477"><a name="p1474519519477"></a><a name="p1474519519477"></a>calculate_quantile_of</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p187451455473"><a name="p187451455473"></a><a name="p187451455473"></a>calculate_value_at</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p137451653473"><a name="p137451653473"></a><a name="p137451653473"></a>large_seq_rollback_ntree</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p127452514718"><a name="p127452514718"></a><a name="p127452514718"></a>large_seq_upgrade_ntree</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p6745185114719"><a name="p6745185114719"></a><a name="p6745185114719"></a>-</p>
+    </td>
     </tr>
     </tbody>
     </table>
@@ -821,9 +1066,9 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p6735180171810"><a name="p6735180171810"></a><a name="p6735180171810"></a>cbtreecanreturn</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p57357091817"><a name="p57357091817"></a><a name="p57357091817"></a>cbtreecostestimate</p>
+    <td class="cellrowborder" valign="top" width="14.265720283914826%"><p id="p57357091817"><a name="p57357091817"></a><a name="p57357091817"></a>cbtreecostestimate</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p167359014181"><a name="p167359014181"></a><a name="p167359014181"></a>cbtreegetbitmap</p>
+    <td class="cellrowborder" valign="top" width="14.305708287513747%"><p id="p167359014181"><a name="p167359014181"></a><a name="p167359014181"></a>cbtreegetbitmap</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1473515012187"><a name="p1473515012187"></a><a name="p1473515012187"></a>cbtreegettuple</p>
     </td>
@@ -836,9 +1081,9 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p0735804181"><a name="p0735804181"></a><a name="p0735804181"></a>btbulkdelete</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p167353020189"><a name="p167353020189"></a><a name="p167353020189"></a>btcanreturn</p>
+    <td class="cellrowborder" valign="top" width="14.265720283914826%"><p id="p167353020189"><a name="p167353020189"></a><a name="p167353020189"></a>btcanreturn</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1873520031813"><a name="p1873520031813"></a><a name="p1873520031813"></a>btcostestimate</p>
+    <td class="cellrowborder" valign="top" width="14.305708287513747%"><p id="p1873520031813"><a name="p1873520031813"></a><a name="p1873520031813"></a>btcostestimate</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p37351402188"><a name="p37351402188"></a><a name="p37351402188"></a>btendscan</p>
     </td>
@@ -851,9 +1096,9 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p4735903184"><a name="p4735903184"></a><a name="p4735903184"></a>btgettuple</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p673510011812"><a name="p673510011812"></a><a name="p673510011812"></a>btinsert</p>
+    <td class="cellrowborder" valign="top" width="14.265720283914826%"><p id="p673510011812"><a name="p673510011812"></a><a name="p673510011812"></a>btinsert</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p6735130111811"><a name="p6735130111811"></a><a name="p6735130111811"></a>btint2sortsupport</p>
+    <td class="cellrowborder" valign="top" width="14.305708287513747%"><p id="p6735130111811"><a name="p6735130111811"></a><a name="p6735130111811"></a>btint2sortsupport</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1673514021816"><a name="p1673514021816"></a><a name="p1673514021816"></a>btint4sortsupport</p>
     </td>
@@ -866,9 +1111,9 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p973513091813"><a name="p973513091813"></a><a name="p973513091813"></a>btnamesortsupport</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p67351509184"><a name="p67351509184"></a><a name="p67351509184"></a>btrescan</p>
+    <td class="cellrowborder" valign="top" width="14.265720283914826%"><p id="p67351509184"><a name="p67351509184"></a><a name="p67351509184"></a>btrescan</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p13735200141816"><a name="p13735200141816"></a><a name="p13735200141816"></a>btrestrpos</p>
+    <td class="cellrowborder" valign="top" width="14.305708287513747%"><p id="p13735200141816"><a name="p13735200141816"></a><a name="p13735200141816"></a>btrestrpos</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p37361404182"><a name="p37361404182"></a><a name="p37361404182"></a>bttextsortsupport</p>
     </td>
@@ -1158,10 +1403,14 @@ The following functions of openGauss use internal data types, which cannot be di
     </tr>
     <tr id="row53741437171718"><td class="cellrowborder" valign="top" width="20%"><p id="p5375183717173"><a name="p5375183717173"></a><a name="p5375183717173"></a>ubtvacuumcleanup</p>
     </td>
-    <td class="cellrowborder" valign="top" width="20%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="20%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="20%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="20%">&nbsp;&nbsp;</td>
+    <td class="cellrowborder" valign="top" width="20%"><p id="p737513731717"><a name="p737513731717"></a><a name="p737513731717"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="20%"><p id="p137583761710"><a name="p137583761710"></a><a name="p137583761710"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="20%"><p id="p937543761719"><a name="p937543761719"></a><a name="p937543761719"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="20%"><p id="p18375113720177"><a name="p18375113720177"></a><a name="p18375113720177"></a>-</p>
+    </td>
     </tr>
     </tbody>
     </table>
@@ -1169,6 +1418,51 @@ The following functions of openGauss use internal data types, which cannot be di
 -   plpgsql internal function
 
     plpgsql\_inline\_handler
+
+-   Set-related internal functions
+
+    <a name="table862970155517"></a>
+    <table><tbody><tr id="row186304015511"><td class="cellrowborder" valign="top" width="17.41%"><p id="p789412378560"><a name="p789412378560"></a><a name="p789412378560"></a>array_indexby_delete</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17%"><p id="p035613965613"><a name="p035613965613"></a><a name="p035613965613"></a>array_indexby_length</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.58%"><p id="p1463011095514"><a name="p1463011095514"></a><a name="p1463011095514"></a>array_integer_deleteidx</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.37%"><p id="p56301601552"><a name="p56301601552"></a><a name="p56301601552"></a>array_integer_exists</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.709999999999999%"><p id="p55859442563"><a name="p55859442563"></a><a name="p55859442563"></a>array_integer_first</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.93%"><p id="p109111246185614"><a name="p109111246185614"></a><a name="p109111246185614"></a>array_integer_last</p>
+    </td>
+    </tr>
+    <tr id="row8313645135817"><td class="cellrowborder" valign="top" width="17.41%"><p id="p183139455585"><a name="p183139455585"></a><a name="p183139455585"></a>array_integer_next</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17%"><p id="p231384545811"><a name="p231384545811"></a><a name="p231384545811"></a>array_integer_prior</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.58%"><p id="p1831314517585"><a name="p1831314517585"></a><a name="p1831314517585"></a>array_varchar_deleteidx</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.37%"><p id="p113131945175811"><a name="p113131945175811"></a><a name="p113131945175811"></a>array_varchar_exists</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.709999999999999%"><p id="p83141545195815"><a name="p83141545195815"></a><a name="p83141545195815"></a>array_varchar_first</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.93%"><p id="p203149459584"><a name="p203149459584"></a><a name="p203149459584"></a>array_varchar_last</p>
+    </td>
+    </tr>
+    <tr id="row1329263912213"><td class="cellrowborder" valign="top" width="17.41%"><p id="p1729293917219"><a name="p1729293917219"></a><a name="p1729293917219"></a>array_varchar_next</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17%"><p id="p82921239723"><a name="p82921239723"></a><a name="p82921239723"></a>array_varchar_prior</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.58%"><p id="p82926395212"><a name="p82926395212"></a><a name="p82926395212"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.37%"><p id="p329219391422"><a name="p329219391422"></a><a name="p329219391422"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.709999999999999%"><p id="p1329213398213"><a name="p1329213398213"></a><a name="p1329213398213"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.93%"><p id="p172926391429"><a name="p172926391429"></a><a name="p172926391429"></a>-</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 -   External table-related internal functions
 
@@ -1191,9 +1485,17 @@ The following functions of openGauss use internal data types, which cannot be di
     </tbody>
     </table>
 
--   Auxiliary functions for the primary DN to remotely read data pages from the standby DN.
+-   Auxiliary function for the primary  database node  to remotely read the data page from the standby  database node.
 
-    gs\_read\_block\_from\_remote
+    **gs\_read\_block\_from\_remote**  is used to read the pages of a non-segment-page table file. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
+
+    **gs\_read\_segment\_block\_from\_remote**  is used to read the pages of a segment-page table file. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
+
+-   Auxiliary function for the primary  database node  to remotely read the data file from the standby  database node.
+
+    The  **gs\_read\_file\_from\_remote**  command is used to read a specified file. After obtaining the file size using the  **gs\_read\_file\_size\_from\_remote**  function,  **gs\_repair\_file**  reads the remote file segment by segment using this function. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
+
+    The  **gs\_read\_file\_size\_from\_remote**  command is used to read the size of a specified file. This command is used to read the size of a specified file. Before using the  **gs\_repair\_file**  function to repair a file, you need to obtain the size of the file from the remote end to verify the missing file information and repair the missing files one by one. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
 
 -   Ledger database functions
 
@@ -1223,10 +1525,14 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p71913153193"><a name="p71913153193"></a><a name="p71913153193"></a>sample_snapshot</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p84841339141816"><a name="p84841339141816"></a><a name="p84841339141816"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p948433917184"><a name="p948433917184"></a><a name="p948433917184"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1348413914188"><a name="p1348413914188"></a><a name="p1348413914188"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2484143901811"><a name="p2484143901811"></a><a name="p2484143901811"></a>-</p>
+    </td>
     </tr>
     </tbody>
     </table>
@@ -1238,11 +1544,16 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p84821021174410"><a name="p84821021174410"></a><a name="p84821021174410"></a>submit_on_nodes</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p124371127144416"><a name="p124371127144416"></a><a name="p124371127144416"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1443642774419"><a name="p1443642774419"></a><a name="p1443642774419"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p66715296449"><a name="p66715296449"></a><a name="p66715296449"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p0670162913442"><a name="p0670162913442"></a><a name="p0670162913442"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p266919299449"><a name="p266919299449"></a><a name="p266919299449"></a>-</p>
+    </td>
     </tr>
     </tbody>
     </table>
@@ -1317,10 +1628,14 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p3861835165115"><a name="p3861835165115"></a><a name="p3861835165115"></a>pg_get_delta_info</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%">&nbsp;&nbsp;</td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p986193575120"><a name="p986193575120"></a><a name="p986193575120"></a>disable_conn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p6210337192311"><a name="p6210337192311"></a><a name="p6210337192311"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1228301014227"><a name="p1228301014227"></a><a name="p1228301014227"></a>-</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p128633520518"><a name="p128633520518"></a><a name="p128633520518"></a>-</p>
+    </td>
     </tr>
     </tbody>
     </table>

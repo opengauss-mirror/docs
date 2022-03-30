@@ -7,13 +7,13 @@
 ## Precautions<a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_sdcf8f26a27a64e52b7099ca3ce0256b6"></a>
 
 -   **DROP TABLE**  forcibly deletes the specified table and the indexes depending on the table. After the table is deleted, the functions and stored procedures that need to use this table cannot be executed. Deleting a partitioned table also deletes all partitions in the table.
--   Only the table owner or a user granted with the DROP permission can run the  **DROP TABLE**  command. The system administrator has this permission by default.
+-   The owner of a table, users granted with the  **DROP**  permission on the table, or users granted with the  **DROP ANY TABLE**  permission can delete the specified table. The system administrator has the permission to delete the table by default.
 
 ## Syntax<a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_s6fa866d73d5c4158836c9fdd0ad5b3ac"></a>
 
 ```
 DROP TABLE [ IF EXISTS ] 
-    { [schema.]table_name } [, ...] [ CASCADE | RESTRICT ];
+    { [schema.]table_name } [, ...] [ CASCADE | RESTRICT ] [ PURGE ]};
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_sa6ea557919e84c0db8ed5cbb227fa983"></a>

@@ -119,6 +119,6 @@
 -   **[PGXC\_PREPARED\_XACTS](pgxc_prepared_xacts.md)**  
 -   **[PLAN\_TABLE](plan_table.md)**     
 -   **[GS\_LSC\_MEMORY\_DETAIL](gs_lsc_memory_detail.md)**  
--   **[GS\_WRITE\_TERM\_LOG](en-us_topic_0000001212336584.md)**  
+-   **[GS\_WRITE\_TERM\_LOG](gs_write_term_log.md)**  
 
 

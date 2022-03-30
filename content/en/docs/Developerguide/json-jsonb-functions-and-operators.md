@@ -7,9 +7,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 <a name="table152706135103"></a>
 <table><thead align="left"><tr id="row6819513111011"><th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.1"><p id="p1181971318103"><a name="p1181971318103"></a><a name="p1181971318103"></a>Operator</p>
 </th>
-<th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.2"><p id="p481971341013"><a name="p481971341013"></a><a name="p481971341013"></a>Left Operand Type</p>
+<th class="cellrowborder" valign="top" width="14.581632653061222%" id="mcps1.2.8.1.2"><p id="p481971341013"><a name="p481971341013"></a><a name="p481971341013"></a>Left Operand Type</p>
 </th>
-<th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.3"><p id="p7820413151012"><a name="p7820413151012"></a><a name="p7820413151012"></a>Right Operand Type</p>
+<th class="cellrowborder" valign="top" width="13.989795918367346%" id="mcps1.2.8.1.3"><p id="p7820413151012"><a name="p7820413151012"></a><a name="p7820413151012"></a>Right Operand Type</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.4"><p id="p14820171331017"><a name="p14820171331017"></a><a name="p14820171331017"></a>Return Type</p>
 </th>
@@ -23,9 +23,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 </thead>
 <tbody><tr id="row12820413111013"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p78209136106"><a name="p78209136106"></a><a name="p78209136106"></a>-&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p3820191391019"><a name="p3820191391019"></a><a name="p3820191391019"></a>Array-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p3820191391019"><a name="p3820191391019"></a><a name="p3820191391019"></a>Array-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p58201613141017"><a name="p58201613141017"></a><a name="p58201613141017"></a>int</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p58201613141017"><a name="p58201613141017"></a><a name="p58201613141017"></a>int</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p882071321020"><a name="p882071321020"></a><a name="p882071321020"></a>json(b)</p>
 </td>
@@ -38,9 +38,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 </tr>
 <tr id="row98201113171020"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p582017139108"><a name="p582017139108"></a><a name="p582017139108"></a>-&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13820813101019"><a name="p13820813101019"></a><a name="p13820813101019"></a>object-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p13820813101019"><a name="p13820813101019"></a><a name="p13820813101019"></a>object-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p9820181315106"><a name="p9820181315106"></a><a name="p9820181315106"></a>text</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p9820181315106"><a name="p9820181315106"></a><a name="p9820181315106"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p082021314102"><a name="p082021314102"></a><a name="p082021314102"></a>json(b)</p>
 </td>
@@ -53,9 +53,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 </tr>
 <tr id="row148211137108"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1682119136104"><a name="p1682119136104"></a><a name="p1682119136104"></a>-&gt;&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p6821201311013"><a name="p6821201311013"></a><a name="p6821201311013"></a>Array-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p6821201311013"><a name="p6821201311013"></a><a name="p6821201311013"></a>Array-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p19821181331017"><a name="p19821181331017"></a><a name="p19821181331017"></a>int</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p19821181331017"><a name="p19821181331017"></a><a name="p19821181331017"></a>int</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1682131311100"><a name="p1682131311100"></a><a name="p1682131311100"></a>text</p>
 </td>
@@ -68,9 +68,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 </tr>
 <tr id="row2821161381012"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p1182111361016"><a name="p1182111361016"></a><a name="p1182111361016"></a>-&gt;&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p382171381014"><a name="p382171381014"></a><a name="p382171381014"></a>object-json(b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p382171381014"><a name="p382171381014"></a><a name="p382171381014"></a>object-json(b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p19821913111015"><a name="p19821913111015"></a><a name="p19821913111015"></a>text</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p19821913111015"><a name="p19821913111015"></a><a name="p19821913111015"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p13821151371017"><a name="p13821151371017"></a><a name="p13821151371017"></a>text</p>
 </td>
@@ -83,9 +83,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 </tr>
 <tr id="row7821131318105"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p8822101310101"><a name="p8822101310101"></a><a name="p8822101310101"></a>#&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p5822171391016"><a name="p5822171391016"></a><a name="p5822171391016"></a>container-json (b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p5822171391016"><a name="p5822171391016"></a><a name="p5822171391016"></a>container-json (b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1282261371015"><a name="p1282261371015"></a><a name="p1282261371015"></a>text[]</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p1282261371015"><a name="p1282261371015"></a><a name="p1282261371015"></a>text[]</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1782201301019"><a name="p1782201301019"></a><a name="p1782201301019"></a>json(b)</p>
 </td>
@@ -98,9 +98,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 </tr>
 <tr id="row6822513151012"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p19822191341014"><a name="p19822191341014"></a><a name="p19822191341014"></a>#&gt;&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p382281351018"><a name="p382281351018"></a><a name="p382281351018"></a>container-json (b)</p>
+<td class="cellrowborder" valign="top" width="14.581632653061222%" headers="mcps1.2.8.1.2 "><p id="p382281351018"><a name="p382281351018"></a><a name="p382281351018"></a>container-json (b)</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p6822101311108"><a name="p6822101311108"></a><a name="p6822101311108"></a>text[]</p>
+<td class="cellrowborder" valign="top" width="13.989795918367346%" headers="mcps1.2.8.1.3 "><p id="p6822101311108"><a name="p6822101311108"></a><a name="p6822101311108"></a>text[]</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1682220133108"><a name="p1682220133108"></a><a name="p1682220133108"></a>text</p>
 </td>
@@ -973,6 +973,43 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
       -----------
        ["1","5"]
       (1 row)
+    ```
+
+-   - jsonb\_hash\(jsonb\)
+
+    Description: Performs the hash operation on JSONB.
+
+    Return type: integer
+
+    For example:
+
+    ```
+    openGauss=# select jsonb_hash('[1,2,3]');
+     jsonb_hash
+    ------------
+     -559968547
+    (1 row)
+    ```
+
+-   Other functions
+
+    Description: Internal functions used by GIN indexes and JSON\\JSONB aggregate functions.
+
+    ```
+     gin_compare_jsonb
+     gin_consistent_jsonb
+     gin_consistent_jsonb_hash
+     gin_extract_jsonb
+     gin_extract_jsonb_hash
+     gin_extract_jsonb_query
+     gin_extract_jsonb_query_hash
+     gin_triconsistent_jsonb
+     gin_triconsistent_jsonb_hash
+     
+     json_agg_transfn
+     json_agg_finalfn
+     json_object_agg_transfn
+     json_object_agg_finalfn
     ```
 
 

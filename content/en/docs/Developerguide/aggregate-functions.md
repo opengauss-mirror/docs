@@ -658,7 +658,7 @@
     -   If the  **CHECKSUM**  value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.
     -   If the  **CHECKSUM**  value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.
 
-    The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
+    The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
 
     Return type: numeric
 

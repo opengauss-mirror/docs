@@ -24,11 +24,15 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
         | { INHERIT | NOINHERIT }
         | { AUDITADMIN | NOAUDITADMIN }
         | { SYSADMIN | NOSYSADMIN }
+        | {MONADMIN | NOMONADMIN}
+        | {OPRADMIN | NOOPRADMIN}
+        | {POLADMIN | NOPOLADMIN}
         | { USEFT | NOUSEFT }
         | { LOGIN | NOLOGIN }
         | { REPLICATION | NOREPLICATION }
         | {INDEPENDENT | NOINDEPENDENT}
         | {VCADMIN | NOVCADMIN}
+        | {PERSISTENCE | NOPERSISTENCE}
         | CONNECTION LIMIT connlimit
         | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' [EXPIRED] | DISABLE | EXPIRED }
         | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' | EXPIRED ] | DISABLE }
@@ -36,7 +40,6 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
         | VALID UNTIL 'timestamp'
         | RESOURCE POOL 'respool'
         | PERM SPACE 'spacelimit'
-        | ACCOUNT { LOCK | UNLOCK }
         | PGUSER
     ```
 
@@ -45,6 +48,13 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
     ```
     ALTER USER user_name 
         RENAME TO new_name;
+    ```
+
+-   Lock or unlock.
+
+    ```
+    ALTER USER user_name
+        ACCOUNT { LOCK | UNLOCK };
     ```
 
 -   Change the value of a specified parameter associated with the user.

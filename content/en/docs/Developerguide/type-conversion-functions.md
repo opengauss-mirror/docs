@@ -116,7 +116,7 @@
 
     Description: Converts a DATETIME or INTERVAL value of the DATE/TIMESTAMP/TIMESTAMP WITH TIME ZONE/TIMESTAMP WITH LOCAL TIME ZONE type into the VARCHAR type according to the format specified by  **fmt**. 
 
-    -   The optional parameter  **fmt**  allows for the following types: date, time, week, quarter, and century. Each type has a unique template. The templates can be combined together. Common templates include: HH, MM, SS, YYYY, MM, and DD.
+    -   The optional parameter  **fmt**  allows for the following types: date, time, week, quarter, and century. Each type has a unique template. The templates can be combined together. Common templates include HH, MI, SS, YYYY, MM, and DD.
     -   A template may have a modification word. FM is a common modification word and is used to suppress the preceding zero or the following blank spaces.
 
     Return type: varchar
@@ -281,9 +281,9 @@
     (1 row)
     ```
 
--   to\_clob\(char/nchar/varchar/varchar2/nvarchar2/text/raw\)
+-   to\_clob\(char/nchar/varchar/varchar2/nvarchar/nvarchar2/text/raw\)
 
-    Description: Converts the RAW type or text character set type CHAR/NCHAR/VARCHAR/VARCHAR2/NVARCHAR2/TEXT into the CLOB type.
+    Description: Converts the raw type or text character set type CHAR, NCHAR, VARCHAR, VARCHAR2, NVARCHAR, NVARCHAR2, or TEXT to the CLOB type.
 
     Return type: clob
 
@@ -799,7 +799,7 @@
 
 -   float8\_bpchar
 
-    Description: Converts float4 to bpchar.
+    Description: Converts float8 to bpchar.
 
     Parameter: double precision
 
@@ -808,7 +808,7 @@
 
 -   float8\_interval
 
-    Description: Converts float4 to interval.
+    Description: Converts float8 to interval.
 
     Parameter: double precision
 
