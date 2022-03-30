@@ -1,0 +1,195 @@
+# MOT日志记录：WAL重做日志概念<a name="ZH-CN_TOPIC_0289899880"></a>
+
+## 概述<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_section57612679"></a>
+
+预写日志记录（WAL）是确保数据持久性的标准方法。WAL的主要概念是，数据文件（表和索引所在的位置）的更改只有在记录这些更改之后才会写入，即只有在描述这些更改的日志记录被刷新到永久存储之后才会写入。
+
+MOT全面集成openGauss的封装日志记录设施。除持久性外，这种方法的另一个好处是能够将WAL用于复制目的。
+
+支持三种日志记录方式：两种标准同步和一种异步方式。标准openGauss磁盘引擎也支持这三种日志记录方式。此外，在MOT中，组提交（Group-Commit）选项还提供了特殊的NUMA感知优化。Group-Commit在维护ACID属性的同时提供最高性能。
+
+为保证持久性，MOT全面集成openGauss的WAL机制，通过openGauss的XLOG接口持久化WAL记录。这意味着，每次MOT记录的添加、更新和删除都记录在WAL中。这确保了可以从这个非易失性日志中重新生成和恢复最新的数据状态。例如，如果向表中添加了3个新行，删除了2个，更新了1个，那么日志中将记录6个条目。
+
+-   MOT日志记录和openGauss磁盘表的其他记录写入同一个WAL中。
+-   MOT只记录事务提交阶段的操作。
+-   MOT只记录更新的增量记录，以便最小化写入磁盘的数据量。
+-   在恢复期间，从最后一个已知或特定检查点加载数据；然后使用WAL重做日志完成从该点开始发生的数据更改。
+-   WAL重做日志将保留所有表行修改，直到执行一个检查点为止（如上所述）。然后可以截断日志，以减少恢复时间和节省磁盘空间。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>为了确保日志IO设备不会成为瓶颈，日志文件必须放在具有低时延的驱动器上。
+
+## 日志类型<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_section48752064"></a>
+
+支持两个同步事务日志选项和一个异步事务日志选项（标准openGauss磁盘引擎也支持这些选项）。MOT还支持同步的组提交日志记录与NUMA感知优化，如下所述。
+
+根据您的配置，实现以下类型的日志记录：
+
+-   **同步重做日志记录**
+
+    同步重做日志记录选项是最简单、最严格的重做日志记录器。当客户端应用程序提交事务时，事务重做条目记录在WAL重做日志中，如下所示：
+
+    1.  当事务正在进行时，它存储在MOT内存中。
+    2.  事务完成后，客户端应用程序发送提交命令，该事务被锁定，然后写入磁盘上的WAL重做日志。这意味着，当事务日志条目写入日志时，客户端应用程序仍在等待响应。
+    3.  一旦事务的整个缓冲区被写入日志，就更改内存中的数据，然后提交事务。事务提交后，客户端应用程序收到事务完成通知。
+
+    **技术说明**
+
+    当事务结束时，同步重做日志处理程序（SynchronousRedoLogHandler）序列化事务缓冲区，并写入XLOG iLogger实现。
+
+    **图 1**  同步日志记录<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_fig25836861"></a>  
+    ![](figures/同步日志记录.png "同步日志记录")
+
+    **总结**
+
+    **同步重做日志记录**选项是最安全、最严格的，因为它确保了客户端应用程序和每个事务提交时的WAL重做日志条目的完全同步，从而确保了总的持久性和一致性，并且绝对不会丢失数据。此日志记录选项可防止客户端应用程序在事务尚未持久化到磁盘时将事务标记为成功的情况。
+
+    同步重做日志记录选项的缺点是，它是三个选项中最慢的日志机制。这是因为客户端应用程序必须等到所有数据都写入磁盘，并且磁盘频繁写入（这通常使数据库变慢）。
+
+
+-   **组同步重做日志记录**
+
+    **组同步重做日志记录**选项与**同步重做日志记录**选项非常相似，因为它还确保完全持久性，绝对不会丢失数据，并保证客户端应用程序和WAL重做日志条目的完全同步。不同的是，**组同步重做日志记录**选项将事务重做条目组同时写入磁盘上的WAL重做日志，而不是在提交时写入每个事务。使用组同步重做日志记录可以减少磁盘I/O数量，从而提高性能，特别是在运行繁重的工作负载时。
+
+    MOT引擎通过根据运行事务的核的NUMA槽位自动对事务进行分组，使用非统一内存访问（NUMA）感知优化来执行同步的组提交记录。
+
+    有关NUMA感知内存访问的更多信息，请参见[NUMA-aware分配和亲和性](NUMA-aware分配和亲和性.md)。
+
+    当一个事务提交时，一组条目记录在WAL重做日志中，如下所示：
+
+    1.  当事务正在进行时，它存储在内存中。MOT引擎根据运行事务的核的NUMA槽位对桶中的事务进行分组。这意味着在同一槽位上运行的所有事务都被分在一组，并且多个组将根据事务运行的核心并行填充。
+
+        这样，将事务写入WAL更为有效，因为来自同一个槽位的所有缓冲区都一起写入磁盘。
+
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >-   每个线程在属于单个槽位的单核/CPU上运行，每个线程只写运行于其上的核的槽位。
+
+    2.  在事务完成并且客户端应用程序发送Commit命令之后，事务重做日志条目将与属于同一组的其他事务一起序列化。
+    3.  当特定一组事务满足配置条件后，如[重做日志（MOT）](MOT配置.md#zh-cn_topic_0283136588_zh-cn_topic_0280525130_section361563811235)小节中描述的已提交的事务数或超时时间，该组中的事务将被写入磁盘的WAL中。这意味着，当这些日志条目被写入日志时，发出提交请求的客户端应用程序正在等待响应。
+    4.  一旦NUMA-aware组中的所有事务缓冲区都写入日志，该组中的所有事务都将对内存存储执行必要的更改，并且通知客户端这些事务已完成。
+
+    **技术说明**
+
+    4种颜色分别代表4个NUMA节点。因此，每个NUMA节点都有自己的内存日志，允许多个连接的组提交。
+
+    **图 2**  组提交——具有NUMA感知<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_fig34015509"></a>  
+    ![](figures/组提交-具有NUMA感知.png "组提交-具有NUMA感知")
+
+    **总结**
+
+    组同步重做日志记录选项是一个极其安全和严格的日志记录选项，因为它保证了客户端应用程序和WAL重做日志条目的完全同步，从而确保总的持久性和一致性，并且绝不会丢失数据。此日志记录选项可防止客户端应用程序在事务尚未持久化到磁盘时将事务标记为成功的情况。
+
+    一方面，该选项的磁盘写入次数比同步重做日志记录选项少，这可能意味着它更快。缺点是事务被锁定的时间更长，这意味着它们被锁定，直到同一NUMA内存中的所有事务都写入磁盘上的WAL重做日志为止。
+
+    使用此选项的好处取决于事务工作负载的类型。例如，此选项有利于事务多的系统（而对于事务少的系统而言，则较少使用，因为磁盘写入量也很少）。
+
+
+-   **异步重做日志记录**
+
+    **异步重做日志记录**选项是最快的日志记录方法，但是，它不能确保数据不会丢失。也就是说，某些仍位于缓冲区且尚未写入磁盘的数据在电源故障或数据库崩溃时可能会丢失。当客户端应用程序提交事务时，事务重做条目将记录在内部缓冲区中，并按预先配置的时间间隔写入磁盘。客户端应用程序不会等待数据写入磁盘，而是继续到下一个事务。因此异步重做日志记录的速度最快。
+
+    当客户端应用程序提交事务时，事务重做条目记录在WAL重做日志中，如下所示：
+
+    1.  当事务正在进行时，它存储在MOT内存中。
+    2.  在事务完成并且客户端应用程序发送Commit命令后，事务重做条目将被写入内部缓冲区，但尚未写入磁盘。然后更改MOT数据内存，并通知客户端应用程序事务已提交。
+    3.  后台运行的重做日志线程按预先配置的时间间隔收集所有缓存的重做日志条目，并将它们写入磁盘。
+
+    **技术说明**
+
+    在事务提交时，事务缓冲区被移到集中缓冲区（指针分配，而不是数据副本），并为事务分配一个新的事务缓冲区。一旦事务缓冲区移动到集中缓冲区，且事务线程不被阻塞，事务就会被释放。实际写入日志使用Postgres WALWRITER线程。当WALWRITER计时器到期时，它首先调用异步重做日志处理程序（通过注册的回调）来写缓冲区，然后继续其逻辑，并将数据刷新到XLOG中。
+
+    **图 3**  异步日志记录<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_fig44824869"></a>  
+    ![](figures/异步日志记录.png "异步日志记录")
+
+    **总结**
+
+    异步重做日志记录选项是最快的日志记录选项，因为它不需要客户端应用程序等待数据写入磁盘。此外，它将许多事务重做条目分组并把它们写入一起，从而减少降低MOT引擎速度的磁盘I/O数量。
+
+    异步重做日志记录选项的缺点是它不能确保在崩溃或失败时数据不会丢失。已提交但尚未写入磁盘的数据在提交时是不持久的，因此在出现故障时无法恢复。异步重做日志记录选项对于愿意牺牲数据恢复（一致性）而不是性能的应用程序来说最为相关。
+
+    日志记录设计细节
+
+    下面将详细介绍内储存引擎模块中与持久化相关的各个组件的设计细节。
+
+    **图 4**  三种日志记录选项<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_fig48696192"></a>  
+    ![](figures/三种日志记录选项.png "三种日志记录选项")
+
+
+重做日志组件由使用内储存引擎的后端线程和WAL编写器使用，以便持久化其数据。检查点通过Checkpoint管理器执行，由openGauss的Checkpointer触发。
+
+-   **日志记录设计概述**
+
+    预写日志记录（WAL）是确保数据持久性的标准方法。WAL的核心概念是，数据文件（表和索引所在的位置）的更改只有在记录了这些更改之后才会写入，这意味着在描述这些更改的日志记录被刷新到永久存储之后。
+
+    在内储存引擎中，我们使用现有的openGauss日志设施，并没有从头开始开发低级别的日志API，以减少开发时间并使其可用于复制目的。
+
+-   **单事务日志记录**
+
+    在内储存引擎中，事务日志记录存储在事务缓冲区中，事务缓冲区是事务对象（TXN）的一部分。在调用addToLog\(\)时记录事务缓冲区–如果缓冲区超过阈值，则将其刷新并重新使用。当事务提交并通过验证阶段（OCC SILO<sup>\[</sup>[对比：磁盘与MOT](对比-磁盘与MOT.md)<sup>\]</sup>验证）或由于某种原因中止时，相应的消息也会保存在日志中，以便能够在恢复期间确定事务的状态。
+
+
+**图 5**  单事务日志记录<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_fig28147941"></a>  
+![](figures/单事务日志记录.png "单事务日志记录")
+
+并行日志记录由MOT和磁盘引擎执行。但是，MOT引擎通过每个事务的日志缓冲区、无锁准备和单个日志记录增强了这种设计。
+
+-   **异常处理**
+
+    持久化模块通过openGauss错误报告基础设施（ereport）处理异常。系统日志中会记录每个错误情况的错误信息。此外，使用openGauss内置的错误报告基础设施将错误报告到封装。
+
+    该模块上报有如下异常：
+
+
+**表 1**  异常处理
+
+<a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_table25810689"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_row47263705"><th class="cellrowborder" valign="top" width="29.292929292929294%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p3154929"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p3154929"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p3154929"></a>异常条件</p>
+</th>
+<th class="cellrowborder" valign="top" width="26.26262626262626%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p54222681"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p54222681"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p54222681"></a>异常码</p>
+</th>
+<th class="cellrowborder" valign="top" width="21.21212121212121%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p29961017"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p29961017"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p29961017"></a>场景描述</p>
+</th>
+<th class="cellrowborder" valign="top" width="23.232323232323232%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p10923322"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p10923322"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p10923322"></a>最终结果</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_row12373891"><td class="cellrowborder" valign="top" width="29.292929292929294%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p62761149"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p62761149"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p62761149"></a>WAL写入失败</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.26262626262626%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p50488336"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p50488336"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p50488336"></a>ERRCODE_FDW_ERROR</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.21212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p63023395"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p63023395"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p63023395"></a>在任何情况下，WAL写入失败</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.232323232323232%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p4621342"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p4621342"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p4621342"></a>事务终止</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_row41592082"><td class="cellrowborder" valign="top" width="29.292929292929294%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p13515518"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p13515518"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p13515518"></a>文件IO错误：写入、打开等</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.26262626262626%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p21015141"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p21015141"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p21015141"></a>ERRCODE_IO_ERROR</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.21212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p24504881"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p24504881"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p24504881"></a>检查点：在任何文件访问错误时调用</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.232323232323232%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p38738378"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p38738378"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p38738378"></a>严重：进程存在</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_row13101087"><td class="cellrowborder" valign="top" width="29.292929292929294%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p54555093"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p54555093"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p54555093"></a>内存不足</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.26262626262626%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p56886412"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p56886412"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p56886412"></a>ERRCODE_INSUFFICIENT_RESOURCES</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.21212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p44396651"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p44396651"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p44396651"></a>检查点：本地内存分配失败</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.232323232323232%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p39359003"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p39359003"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p39359003"></a>严重：进程存在</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_row18686713"><td class="cellrowborder" valign="top" width="29.292929292929294%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p37228773"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p37228773"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p37228773"></a>逻辑、DB错误</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.26262626262626%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p62740597"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p62740597"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p62740597"></a>ERRCODE_INTERNAL_</p>
+<p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p27794462"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p27794462"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p27794462"></a>错误</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.21212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p36758944"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p36758944"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p36758944"></a>检查点：算法失败或无法检索表数据或索引</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.232323232323232%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p24684474"><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p24684474"></a><a name="zh-cn_topic_0283136556_zh-cn_topic_0280525164_p24684474"></a>严重：进程存在</p>
+</td>
+</tr>
+</tbody>
+</table>
+
