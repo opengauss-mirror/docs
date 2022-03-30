@@ -113,4 +113,6 @@
 </tr>
 </tbody>
 </table>
-Note: max_dop and max_worker user expansion is not applicable to openGauss.
+
+Note:  **max\_dop**  and  **max\_worker**  are used for scaling and are not applicable to the centralized deploymentopenGauss.
+

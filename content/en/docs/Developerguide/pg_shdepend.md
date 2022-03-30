@@ -108,4 +108,8 @@ In all cases, a  **PG\_SHDEPEND**  entry indicates that the referenced object ca
 
     There is no dependent object. This type of entry is a signal that the system itself depends on the referenced object, and so that object must never be deleted. Entries of this type are created only by  **initdb**. The columns for the dependent object contain zeroes.
 
+-   SHARED\_DEPENDENCY\_ DBPRIV\(d\)
+
+    The referenced object \(must be a role\) has the ANY permission on the dependent object \(the specified OID of the dependent object corresponds to a row in the  **GS\_DB\_PRIVILEGE**  system catalog\).
+
 

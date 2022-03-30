@@ -20,7 +20,7 @@
 <td class="cellrowborder" valign="top" width="62.55%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136639_en-us_topic_0237122296_p1911581511212"><a name="en-us_topic_0283136639_en-us_topic_0237122296_p1911581511212"></a><a name="en-us_topic_0283136639_en-us_topic_0237122296_p1911581511212"></a>Row identifier (hidden attribute, which must be specified)</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_row151078125311"><td class="cellrowborder" valign="top" width="19.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p87210105553"><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p87210105553"></a><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p87210105553"></a>job_oid</p>
+<tr id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_row151078125311"><td class="cellrowborder" valign="top" width="19.96%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p87210105553"><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p87210105553"></a><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p87210105553"></a>job_id</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p972151025511"><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p972151025511"></a><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p972151025511"></a>integer</p>
 </td>
@@ -31,14 +31,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="17.49%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p157271075515"><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p157271075515"></a><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p157271075515"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.55%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p10722105555"><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p10722105555"></a><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p10722105555"></a>Job content</p>
+<td class="cellrowborder" valign="top" width="62.55%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p10722105555"><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p10722105555"></a><a name="en-us_topic_0283136639_en-us_topic_0237122296_en-us_topic_0059778581_p10722105555"></a>Job content, which is the program content in the DBE_SCHEDULER scheduled task.</p>
 </td>
 </tr>
 <tr id="row65721418145818"><td class="cellrowborder" valign="top" width="19.96%" headers="mcps1.2.4.1.1 "><p id="p6572171818585"><a name="p6572171818585"></a><a name="p6572171818585"></a>job_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.49%" headers="mcps1.2.4.1.2 "><p id="p15732181587"><a name="p15732181587"></a><a name="p15732181587"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.55%" headers="mcps1.2.4.1.3 "><p id="p15731718205820"><a name="p15731718205820"></a><a name="p15731718205820"></a>Job name</p>
+<td class="cellrowborder" valign="top" width="62.55%" headers="mcps1.2.4.1.3 "><p id="p15731718205820"><a name="p15731718205820"></a><a name="p15731718205820"></a>Name of the DBE_SCHEDULER scheduled task or program.</p>
 </td>
 </tr>
 </tbody>

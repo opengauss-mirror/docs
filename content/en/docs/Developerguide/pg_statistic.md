@@ -1,6 +1,6 @@
 # PG\_STATISTIC<a name="EN-US_TOPIC_0289900694"></a>
 
-**PG\_STATISTIC**  records statistics about tables and index columns in a database. By default, only the system administrator can access the system catalog. Common users can access the system catalog only after being authorized.
+**PG\_STATISTIC**  stores statistics about tables and index columns in a database. By default, only the system administrator can access the system catalog. Common users can access the system catalog only after being authorized.
 
 **Table  1**  PG\_STATISTIC columns
 
@@ -36,7 +36,7 @@
 </tr>
 <tr id="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_rd3f705c2468a4c718249d404e7951cdc"><td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a53b9c37b7d484e23b0e67472ce1e55ea"><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a53b9c37b7d484e23b0e67472ce1e55ea"></a><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a53b9c37b7d484e23b0e67472ce1e55ea"></a>stainherit</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.85%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><span id="en-us_topic_0283137732_en-us_topic_0237122317_text134211726162818"><a name="en-us_topic_0283137732_en-us_topic_0237122317_text134211726162818"></a><a name="en-us_topic_0283137732_en-us_topic_0237122317_text134211726162818"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="14.85%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><span id="en-us_topic_0283137732_en-us_topic_0237122317_text134211726162818"><a name="en-us_topic_0283137732_en-us_topic_0237122317_text134211726162818"></a><a name="en-us_topic_0283137732_en-us_topic_0237122317_text134211726162818"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="66.9%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a5aeb7ef6af0b497bacfecde8a757c992"><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a5aeb7ef6af0b497bacfecde8a757c992"></a><a name="en-us_topic_0283137732_en-us_topic_0237122317_en-us_topic_0059778435_a5aeb7ef6af0b497bacfecde8a757c992"></a>Whether to collect statistics for objects that have inheritance relationship</p>
 </td>
@@ -112,4 +112,7 @@
 </tr>
 </tbody>
 </table>
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>**PG\_STATISTIC**  stores sensitive information about statistical objects, such as MCVs. The system administrator and authorized users can access the  **PG\_STATISTIC**  system catalog to query the sensitive information about the statistical objects.
 

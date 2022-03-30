@@ -113,7 +113,7 @@
 </tr>
 <tr id="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_r4b774825fd364d8e81cc2b5cd234a24a"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a>waiting</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><span id="en-us_topic_0283136816_en-us_topic_0237122439_text11865125317305"><a name="en-us_topic_0283136816_en-us_topic_0237122439_text11865125317305"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_text11865125317305"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><span id="en-us_topic_0283136816_en-us_topic_0237122439_text11865125317305"><a name="en-us_topic_0283136816_en-us_topic_0237122439_text11865125317305"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_text11865125317305"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_en-us_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a>Whether the backend is currently waiting for a lock. If yes, the value is <strong id="b9972731161919"><a name="b9972731161919"></a><a name="b9972731161919"></a>true</strong>.</p>
 </td>
@@ -171,6 +171,20 @@
 <td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_p1412065518316"><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1412065518316"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1412065518316"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"></a>A string in JSON format recording the driver type, driver version, driver deployment path, and process owner of the connected database. For details, see <a href="en-us_topic_0289900801.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>.</p>
+</td>
+</tr>
+<tr id="row1275719812594"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="p16757128145914"><a name="p16757128145914"></a><a name="p16757128145914"></a>unique_sql_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="p4757886592"><a name="p4757886592"></a><a name="p4757886592"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1375711855916"><a name="p1375711855916"></a><a name="p1375711855916"></a>Unique SQL statement ID.</p>
+</td>
+</tr>
+<tr id="row613624911370"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="p213618490375"><a name="p213618490375"></a><a name="p213618490375"></a>trace_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="p113616495372"><a name="p113616495372"></a><a name="p113616495372"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1136249163716"><a name="p1136249163716"></a><a name="p1136249163716"></a>Driver-specific trace ID, which is associated with an application request.</p>
 </td>
 </tr>
 </tbody>

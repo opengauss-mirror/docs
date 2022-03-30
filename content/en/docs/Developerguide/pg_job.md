@@ -135,6 +135,35 @@
 <td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136590_en-us_topic_0237122295_p18505112013489"><a name="en-us_topic_0283136590_en-us_topic_0237122295_p18505112013489"></a><a name="en-us_topic_0283136590_en-us_topic_0237122295_p18505112013489"></a>Name of the schema used for job execution</p>
 </td>
 </tr>
+<tr id="row93100214446"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="p103101428444"><a name="p103101428444"></a><a name="p103101428444"></a>job_name</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="p1231010294414"><a name="p1231010294414"></a><a name="p1231010294414"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="p183108217440"><a name="p183108217440"></a><a name="p183108217440"></a>Name of the DBE_SCHEDULER scheduled task.</p>
+</td>
+</tr>
+<tr id="row1982366154413"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="p1182317610440"><a name="p1182317610440"></a><a name="p1182317610440"></a>end_date</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="p18823156194417"><a name="p18823156194417"></a><a name="p18823156194417"></a>timestamp without time zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="p7823116184412"><a name="p7823116184412"></a><a name="p7823116184412"></a>Expiration time of the DBE_SCHEDULER scheduled task, accurate to millisecond.</p>
+</td>
+</tr>
+<tr id="row127764141442"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="p18776201494417"><a name="p18776201494417"></a><a name="p18776201494417"></a>enable</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="p8776171434414"><a name="p8776171434414"></a><a name="p8776171434414"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><div class="p" id="p15776151412445"><a name="p15776151412445"></a><a name="p15776151412445"></a>The DBE_SCHEDULER scheduled task enabling status. The options are as follows:<a name="ul2072841518143"></a><a name="ul2072841518143"></a><ul id="ul2072841518143"><li><strong id="b1696824610575"><a name="b1696824610575"></a><a name="b1696824610575"></a>true</strong>: enabled</li><li><strong id="b57322481574"><a name="b57322481574"></a><a name="b57322481574"></a>false</strong>: disabled</li></ul>
+</div>
+</td>
+</tr>
+<tr id="row111865591968"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="p1718717599620"><a name="p1718717599620"></a><a name="p1718717599620"></a>failure_msg</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="p1718718591567"><a name="p1718718591567"></a><a name="p1718718591567"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="p12187859765"><a name="p12187859765"></a><a name="p12187859765"></a>Error information about the latest task execution.</p>
+</td>
+</tr>
 </tbody>
 </table>
 

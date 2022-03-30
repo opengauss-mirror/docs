@@ -466,7 +466,7 @@ The constraints on the query of this system catalog are as follows:
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p339717319319"><a name="p339717319319"></a><a name="p339717319319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of statement lock events, which are recorded in time sequence. The number of records is affected by the <strong id="b15117850175510"><a name="b15117850175510"></a><a name="b15117850175510"></a>track_stmt_details_size </strong>parameter.</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of statement lock events, which are recorded in time sequence. The number of records is affected by the <strong id="b15117850175510"><a name="b15117850175510"></a><a name="b15117850175510"></a>track_stmt_details_size </strong>parameter. This field is in binary format and needs to be read by using the parsing function <strong id="b1412072020417"><a name="b1412072020417"></a><a name="b1412072020417"></a>pg_catalog.statement_detail_decode</strong>. For details, see <a href="other-functions.md#table9745177191215">Table 6</a>.</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>Events include:</p>
 <a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>Start locking.</li><li>Complete locking.</li><li>Start lock waiting.</li><li>Complete lock waiting.</li><li>Start unlocking.</li><li>Complete unlocking.</li><li>Start lightweight lock waiting.</li><li>Complete lightweight lock waiting.</li></ul>
 </td>
@@ -478,8 +478,18 @@ The constraints on the query of this system catalog are as follows:
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p44649617558"><a name="p44649617558"></a><a name="p44649617558"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p13464660559"><a name="p13464660559"></a><a name="p13464660559"></a>Whether the SQL statement is a slow SQL statement.</p>
+<a name="ul21561963304"></a><a name="ul21561963304"></a><ul id="ul21561963304"><li><strong id="b174491984852228"><a name="b174491984852228"></a><a name="b174491984852228"></a>t</strong> (true): yes</li><li><strong id="b52821372852228"><a name="b52821372852228"></a><a name="b52821372852228"></a>f</strong> (false): no</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p17288713183018"><a name="p17288713183018"></a><a name="p17288713183018"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>trace_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>Driver-specific trace ID, which is associated with an application request.</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
 </td>
 </tr>
 </tbody>
