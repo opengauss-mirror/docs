@@ -11,7 +11,8 @@
 -   Database objects that can be accessed using synonyms include tables, views, functions, and stored procedures.
 -   To use synonyms, you must have the required permissions on associated objects.
 -   The following DML statements support synonyms:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **EXPLAIN**, and  **CALL**.
--   It is not recommended to create synonyms for temporary tables. If you need to create it, you need to specify the schema name of the target temporary table of the synonym, responsible for the inability to use the synonym, and execute the DROP SYNONYM command before the end of the current session.
+-   You are not advised to create synonyms for temporary tables. To create a synonym, you need to specify the schema name of the target temporary table. Otherwise, the synonym cannot be used normally. In addition, you need to run the  **DROP SYNONYM**  command before the current session ends.
+-   After an original object is deleted, the synonym associated with the object will not be deleted in cascading mode. If you continue to access the synonym, an error message is displayed, indicating that the synonym has expired.
 
 ## Syntax<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
@@ -26,13 +27,13 @@ CREATE [ OR REPLACE ] SYNONYM synonym_name
 
     Specifies the name of the synonym to be created, which can contain the schema name.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **object\_name**
 
     Specifies the name of an object that is associated \(optionally with schema names\).
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >**object\_name**  can be the name of an object that does not exist.

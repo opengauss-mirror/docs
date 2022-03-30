@@ -69,6 +69,13 @@
 <td class="cellrowborder" valign="top" width="52.32523252325233%" headers="mcps1.2.4.1.3 "><p id="p17721229655"><a name="p17721229655"></a><a name="p17721229655"></a>Access permission</p>
 </td>
 </tr>
+<tr id="row315732574412"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p1115802519441"><a name="p1115802519441"></a><a name="p1115802519441"></a>pkgsecdef</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.36253625362536%" headers="mcps1.2.4.1.2 "><p id="p51581625174415"><a name="p51581625174415"></a><a name="p51581625174415"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="52.32523252325233%" headers="mcps1.2.4.1.3 "><p id="p111581225154411"><a name="p111581225154411"></a><a name="p111581225154411"></a>Whether a user has the definer permission on the package.</p>
+</td>
+</tr>
 </tbody>
 </table>
 

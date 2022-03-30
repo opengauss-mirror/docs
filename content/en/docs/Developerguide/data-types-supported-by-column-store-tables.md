@@ -15,7 +15,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0283136748_en-us_topic_0237121962_row729018142548"><td class="cellrowborder" rowspan="10" valign="top" width="21.41%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p4290171415543"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p4290171415543"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p4290171415543"></a>Numeric Types</p>
+<tbody><tr id="en-us_topic_0283136748_en-us_topic_0237121962_row729018142548"><td class="cellrowborder" rowspan="11" valign="top" width="21.41%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p4290171415543"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p4290171415543"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p4290171415543"></a>Numeric Types</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p142901314175410"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p142901314175410"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p142901314175410"></a>smallint</p>
 </td>
@@ -87,6 +87,13 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p329061475416"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p329061475416"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p329061475416"></a>Supported</p>
 </td>
 </tr>
+<tr id="row167128151239"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p27121156318"><a name="p27121156318"></a><a name="p27121156318"></a>largeserial</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p7712615733"><a name="p7712615733"></a><a name="p7712615733"></a>-1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1171241516313"><a name="p1171241516313"></a><a name="p1171241516313"></a>Supported</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283136748_en-us_topic_0237121962_row152905140543"><td class="cellrowborder" valign="top" width="21.41%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p129081465413"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p129081465413"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p129081465413"></a>Monetary Types</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p2029014148549"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p2029014148549"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p2029014148549"></a>money</p>
@@ -96,7 +103,7 @@
 <td class="cellrowborder" valign="top" width="11.67%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p1729041412543"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1729041412543"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1729041412543"></a>Supported</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283136748_en-us_topic_0237121962_row17290141495413"><td class="cellrowborder" rowspan="6" valign="top" width="21.41%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p6290171485411"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p6290171485411"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p6290171485411"></a>Character Types</p>
+<tr id="en-us_topic_0283136748_en-us_topic_0237121962_row17290141495413"><td class="cellrowborder" rowspan="7" valign="top" width="21.41%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p6290171485411"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p6290171485411"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p6290171485411"></a>Character Types</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.25%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p1629015140543"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1629015140543"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1629015140543"></a>character varying(n), varchar(n)</p>
 </td>
@@ -124,6 +131,13 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p1229020141546"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1229020141546"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1229020141546"></a>-1</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p1529016148543"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1529016148543"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p1529016148543"></a>Supported</p>
+</td>
+</tr>
+<tr id="row920085214518"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p14200175274511"><a name="p14200175274511"></a><a name="p14200175274511"></a>nvarchar</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p10889813124613"><a name="p10889813124613"></a><a name="p10889813124613"></a>-1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p68893134463"><a name="p68893134463"></a><a name="p68893134463"></a>Supported</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136748_en-us_topic_0237121962_row7290101405415"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283136748_en-us_topic_0237121962_p029012140542"><a name="en-us_topic_0283136748_en-us_topic_0237121962_p029012140542"></a><a name="en-us_topic_0283136748_en-us_topic_0237121962_p029012140542"></a>nvarchar2</p>

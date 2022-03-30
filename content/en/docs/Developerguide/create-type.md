@@ -4,7 +4,7 @@
 
 **CREATE TYPE**  registers a new data type for use in the current database. The user who defines a type becomes its owner. Types are designed only for row-store tables.
 
-The following data types can be created: composite type, base type, shell type, and enumerated type.
+The following data types can be created: composite type, base type, shell type, enumerated type, and set type.
 
 -   Composite type
 
@@ -24,6 +24,11 @@ The following data types can be created: composite type, base type, shell type, 
 
     An enumerated type is a list of one or more quoted labels, each of which must be 1 to 63 bytes long.
 
+-   Set type
+
+    It is similar to an array but has no length limit. It is mainly used in stored procedures.
+
+-   A user granted with the  **CREATE ANY TYPE**  permission can create types in the public and user schemas.
 
 ## Precautions<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
 
@@ -63,6 +68,8 @@ CREATE TYPE name
 
 CREATE TYPE name AS ENUM
     ( [ 'label' [, ... ] ] )
+
+CREATE TYPE name AS TABLE OF data_type
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
@@ -79,7 +86,7 @@ Composite type
 
 -   **data\_type**
 
-    Specifies the name of an existing data type to become a column of the composite type.
+    Specifies the name of an existing data type to become a column of the composite type. You can use  **%ROWTYPE**  to indirectly reference the type of a table, or  **%TYPE**  to indirectly reference the type of a column in a table or composite type.
 
 -   **collation**
 
@@ -145,7 +152,7 @@ When creating a base type, you can place parameters in any order. The  **input\_
 
     \(Optional\) Specifies the name of a function that performs statistical analysis for the data type.
 
-    By default,  **ANALYZE**  will attempt to gather statistics using the type's "equals" and "less-than" operators, if there is a default b-tree operator class for the type. For non-scalar types, this behavior is likely to be unsuitable, so it can be overridden by specifying a custom analysis function. The analysis function must be declared to take one parameter of type internal and return a boolean result.
+    By default,  **ANALYZE**  will attempt to gather statistics using the type's "equals" and "less-than" operators, if there is a default B-tree operator class for the type. For non-scalar types, this behavior is likely to be unsuitable, so it can be overridden by specifying a custom analysis function. The analysis function must be declared to take one parameter of type internal and return a boolean result.
 
 -   **internallength**
 
@@ -266,6 +273,9 @@ openGauss=# ALTER TYPE bugstatus ADD VALUE IF NOT EXISTS 'regress' BEFORE 'close
 
 -- Rename a label.
 openGauss=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
+
+-- Create a set type.
+openGauss=# CREATE TYPE compfoo_table AS TABLE OF compfoo;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>

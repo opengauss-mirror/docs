@@ -21,6 +21,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 -   If the two indexes are used, you cannot create expression and partial indexes. If the PSORT index is used, you cannot create unique indexes. If the B-tree index is used, you can create unique indexes.
 -   Column-store tables support GIN indexes, rather than partial indexes and unique indexes. If GIN indexes are used, you can create expression indexes. However, an expression in this situation cannot contain empty splitters, empty columns, or multiple columns.
 -   Currently, only row-store table indexes, temporary table indexes, and local indexes of partitioned tables can be used as hash indexes. Multi-column indexes are not supported.
+-   A user granted with the  **CREATE ANY INDEX**  permission can create indexes in both the public and user schemas.
 
 ## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -29,6 +30,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
     ```
     CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
         ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
+        [ INCLUDE ( column_name [, ...] )]
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
         [ WHERE predicate ];
@@ -39,7 +41,8 @@ Partitioned tables do not support concurrent index creation and partial index cr
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
-        [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ];
     ```
@@ -81,7 +84,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Specifies the name of the index to be created. The schema of the index is the same as that of the table.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **table\_name**
 
@@ -100,9 +103,9 @@ Partitioned tables do not support concurrent index creation and partial index cr
     -   **gin**: GIN indexes are reverse indexes and can process values that contain multiple keys \(for example, arrays\).
     -   **gist**: GiST indexes are suitable for the set data type and multidimensional data types, such as geometric and geographic data types. The following data types are supported: box, point, poly, circle, tsvector, tsquery, and range.
     -   **Psort**: psort index. It is used to perform partial sort on column-store tables.
-    -   **ubtree**: Multi-version B-tree index used only for Ustore tables. The index page contains transaction information and can be recycled.
+    -   **ubtree**: Multi-version B-tree index used only for Ustore tables. The index page contains transaction information and can be recycled. By default, the INSERTPT function is enabled for UBtree indexes.
 
-    Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support the following index type:  **ubtree**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**.Global temporary tables do not support GIN index and Gist index.
+    Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support the following index type:  **ubtree**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**. Global temporary tables do not support GIN and GiST indexes.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Column-store tables support GIN indexes only for the tsvector type. That is, the input parameter for creating a column-store GIN index must be the return value of the  **to\_tsvector**  function. This method is commonly used for GIN indexes.
@@ -153,13 +156,23 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Specifies the partitioned index to be created as a GLOBAL index. If no keyword is specified, a GLOBAL index is created by default.
 
+-   **INCLUDE  \( column\_name \[, ...\]**  \)
+
+    The optional  **INCLUDE**  clause specifies that some non-key columns are included in indexes. Non-key columns cannot be used as search criteria for accelerating index scans, and they are omitted when the unique constraints of the indexes are checked.
+
+    An index-only scan can directly return content in the non-key columns without accessing the heap table corresponding to the indexes.
+
+    Exercise caution when adding non-key columns as  **INCLUDE**  columns, especially for wide columns. If the size of an index tuple exceeds the maximum size allowed by the index type, data insertion fails. Note that in any case, adding non-key columns to an index increases the space occupied by the index, which may slow down the search speed.
+
+    Currently, only UBtree indexes access mode supports this feature. Non-key columns are stored in the index leaf tuple corresponding to the heap tuple and are not included in the tuple on the upper-layer index page.
+
 -   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
     Specifies the storage parameter used for an index.
 
     Value range:
 
-    Only index GIN supports parameters  **FASTUPDATE**  and  **GIN\_PENDING\_LIST\_LIMIT**. Indexes other than GIN and psort support the  **FILLFACTOR**  parameter.Only UBTREE indexes support the INDEXSPLIT parameter.
+    Only index GIN supports parameters  **FASTUPDATE**  and  **GIN\_PENDING\_LIST\_LIMIT**. Indexes other than GIN and psort support the  **FILLFACTOR**  parameter. Only UBtree indexes support  **INDEXSPLIT**.
 
     -   FILLFACTOR
 
@@ -182,14 +195,14 @@ Partitioned tables do not support concurrent index creation and partial index cr
         Value range: 64–_INT\_MAX_. The unit is KB.
 
         Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is  **4**.
-        
+
     -   INDEXSPLIT
-    
-        The UBTREE index chooses which splitting strategy to adopt. The DEFAULT strategy refers to the same split strategy as BTREE. The INSERTPT strategy can significantly reduce the index space usage in some scenarios.
-    
-        Value range: INSERTPT,DEAFAULT
-    
-        Default: INSERTPT
+
+        Specifies the splitting policy of UBtree indexes. The  **DEFAULT**  policy is the same as the splitting policy of UBtree indexes. The  **INSERTPT**  policy can significantly reduce the index space usage in some scenarios.
+
+        Value range:  **INSERTPT**  and  **DEFAULT**
+
+        Default value:  **INSERTPT**
 
 
 -   **TABLESPACE tablespace\_name**
@@ -202,19 +215,63 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Creates a partial index. A partial index is an index that contains entries for only a portion of a table, usually a portion that is more useful for indexing than the rest of the table. For example, if you have a table that contains both billed and unbilled orders where the unbilled orders take up a small fraction of the total table and yet that is an often used portion, you can improve performance by creating an index on just that portion. In addition,  **WHERE**  with  **UNIQUE**  can be used to enforce uniqueness over a subset for a table.
 
-    Value range: The predicate expression can only refer to columns of the underlying table, but it can use all columns, not just the ones being indexed. Currently, subqueries and aggregate expressions are forbidden in  **WHERE**.
+    Value range: The  **predicate**  expression can only refer to columns of the underlying table, but it can use all columns, not just the ones being indexed. Currently, subqueries and aggregate expressions are forbidden in  **WHERE**. You are not advised to use numeric types such as int for  **predicate**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
 -   **PARTITION index\_partition\_name**
 
     Specifies the name of an index partition.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
+
+-   **SUBPARTITION index\_subpartition\_name**
+
+    Specifies the name of an level-2 index partition.
+
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **TABLESPACE index\_partition\_tablespace**
 
     Specifies the tablespace of an index partition.
 
     Value range: If this parameter is not specified, the value of  **index\_tablespace**  is used.
+
+-   **COMPRESS\_TYPE**
+
+    Sets the index compression algorithm. The value  **1**  indicates the PGLZ algorithm, and the value  **2**  indicates the ZSTD algorithm. By default, indexes are not compressed. \(Only B-tree indexes are supported.\)
+
+    Value range: 0 to 2. The default value is  **0**.
+
+-   **COMPRESS\_LEVEL**
+
+    Sets the index compression algorithm level. This parameter is valid only when  **COMPRESS\_TYPE**  is set to  **2**. A higher compression level indicates a better index compression effect and a slower index access speed. \(Only B-tree indexes are supported.\)
+
+    Value range: –31 to 31. The default value is  **0**.
+
+-   **COMPRESS\_CHUNK\_SIZE**
+
+    Specifies the size of an index compression chunk. A smaller chunk size indicates a better compression effect, and a larger data dispersion degree indicates a slower index access speed. \(Only B-tree indexes are supported.\)
+
+    Value range: subject to the page size. When the page size is 8 KB, the value can be  **512**,  **1024**,  **2048**, or  **4096**.
+
+    Default value:  **4096**
+
+-   **COMPRESS\_PREALLOC\_CHUNKS**
+
+    Specifies the number of pre-allocated index compression chunks. A larger number of pre-allocated chunks indicates a lower index compression ratio, and a smaller data dispersion degree indicates a better access performance. \(Only B-tree indexes are supported.\)
+
+    Value range: 0 to 7. The default value is  **0**.
+
+-   **COMPRESS\_BYTE\_CONVERT**
+
+    Sets the preprocessing of index compression byte conversion. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+    Value range: Boolean value. By default, this function is disabled.
+
+-   **COMPRESS\_DIFF\_CONVERT**
+
+    Sets the pre-processing of index compression differentiation. This parameter can be used together only with  **COMPRESS\_BYTE\_CONVERT**. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+    Value range: Boolean value. By default, this function is disabled.
 
 
 ## Examples<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
@@ -301,10 +358,10 @@ openGauss=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address
 ) 
 TABLESPACE example2;
 
--- Create a global partitioned index.
+-- Create a GLOBAL partitioned index.
 openGauss=CREATE INDEX ds_customer_address_p1_index3 ON tpcds.customer_address_p1(CA_ADDRESS_ID) GLOBAL;
 
--- If no keyword is specified, a global partitioned index is created by default.
+-- If no keyword is specified, a GLOBAL partitioned index is created by default.
 openGauss=CREATE INDEX ds_customer_address_p1_index4 ON tpcds.customer_address_p1(CA_ADDRESS_ID);
 
 -- Change the tablespace of the partitioned table index CA_ADDRESS_SK_index2 to example1.

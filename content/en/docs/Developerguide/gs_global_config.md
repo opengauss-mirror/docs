@@ -1,6 +1,6 @@
 # GS\_GLOBAL\_CONFIG<a name="EN-US_TOPIC_0000001111762848"></a>
 
-**GS\_GLOBAL\_CONFIG**  records the parameter values specified by users during database instance initialization. In addition, weak passwords set by users are also stored.
+**GS\_GLOBAL\_CONFIG**  records the parameter values specified by users during database instance initialization. In addition, it also stores weak passwords set by users. Initial database users can write, modify, and delete parameters in system catalogs using ALTER and DROP.
 
 **Table  1**  GS\_GLOBAL\_CONFIG columns
 
@@ -17,14 +17,14 @@
 </td>
 <td class="cellrowborder" valign="top" width="9.26092609260926%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0166116567_p929616441417"><a name="en-us_topic_0166116567_p929616441417"></a><a name="en-us_topic_0166116567_p929616441417"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="80.56805680568057%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0166116567_p131161339171115"><a name="en-us_topic_0166116567_p131161339171115"></a><a name="en-us_topic_0166116567_p131161339171115"></a>Name of the built-in parameter specified by the system during database instance initialization. In the current version, the first row is <strong id="b06742040807"><a name="b06742040807"></a><a name="b06742040807"></a>buckets_len</strong> by default, and the second and later rows store weak password names.</p>
+<td class="cellrowborder" valign="top" width="80.56805680568057%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0166116567_p131161339171115"><a name="en-us_topic_0166116567_p131161339171115"></a><a name="en-us_topic_0166116567_p131161339171115"></a>Specifies the preset parameter name, weak password name, or parameter required by users during database instance initialization.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0166116567_rc36abac79c1b4efebbdf9c56c04326a9"><td class="cellrowborder" valign="top" width="10.171017101710172%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0166116567_p5287154419419"><a name="en-us_topic_0166116567_p5287154419419"></a><a name="en-us_topic_0166116567_p5287154419419"></a>value</p>
 </td>
 <td class="cellrowborder" valign="top" width="9.26092609260926%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0166116567_p192806441143"><a name="en-us_topic_0166116567_p192806441143"></a><a name="en-us_topic_0166116567_p192806441143"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="80.56805680568057%" headers="mcps1.2.4.1.3 "><p id="p1157111314127"><a name="p1157111314127"></a><a name="p1157111314127"></a>Value of the built-in parameter specified by the system during database instance initialization. In the current version, the length of the first row is <strong id="b340216591406"><a name="b340216591406"></a><a name="b340216591406"></a>bucketmap</strong> by default. The second line and later rows store weak passwords.</p>
+<td class="cellrowborder" valign="top" width="80.56805680568057%" headers="mcps1.2.4.1.3 "><p id="p1157111314127"><a name="p1157111314127"></a><a name="p1157111314127"></a>Specifies the preset parameter value, weak password value, or parameter value required by users during database instance initialization.</p>
 </td>
 </tr>
 </tbody>

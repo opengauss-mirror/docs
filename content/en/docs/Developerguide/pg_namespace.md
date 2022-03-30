@@ -57,9 +57,9 @@
 </tr>
 <tr id="row7896173213409"><td class="cellrowborder" valign="top" width="20.13%" headers="mcps1.2.4.1.1 "><p id="p48972328402"><a name="p48972328402"></a><a name="p48972328402"></a>nspblockchain</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="p147331629175510"><a name="p147331629175510"></a><a name="p147331629175510"></a><span id="text877737212"><a name="text877737212"></a><a name="text877737212"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="p147331629175510"><a name="p147331629175510"></a><a name="p147331629175510"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><a name="ul736813311431"></a><a name="ul736813311431"></a><ul id="ul736813311431"><li>If the value is <strong id="b18241181512593"><a name="b18241181512593"></a><a name="b18241181512593"></a>true</strong>, the tamper-proof schema is used.</li><li>If the value is <strong id="b68253535243"><a name="b68253535243"></a><a name="b68253535243"></a>false</strong>, the non-tamper-proof schema is used.</li></ul>
+<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><a name="ul736813311431"></a><a name="ul736813311431"></a><ul id="ul736813311431"><li>If the value is <strong id="b17184453192213"><a name="b17184453192213"></a><a name="b17184453192213"></a>true</strong>, the tamper-proof schema is used.</li><li>If the value is <strong id="b1795155402214"><a name="b1795155402214"></a><a name="b1795155402214"></a>false</strong>, the non-tamper-proof schema is used.</li></ul>
 </td>
 </tr>
 </tbody>

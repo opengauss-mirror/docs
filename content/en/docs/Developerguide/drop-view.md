@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137706_en-us_topic_0237122159_en-us_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-Only the view owner or a user granted with the DROP permission can run the  **DROP VIEW**  command. The system administrator has this permission by default.
+The owner of a view, users granted with the  **DROP**  permission on the view, or users granted with the  **DROP ANY TABLE**  permission can run the  **DROP VIEW**  command. The system administrator has the permission to run the command by default.
 
 ## Syntax<a name="en-us_topic_0283137706_en-us_topic_0237122159_en-us_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 

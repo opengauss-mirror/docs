@@ -17,8 +17,11 @@
 -   Only A-version stored procedures and function definitions are supported.
 -   Variables with the same name in a package, including parameters with the same name in a package, are not supported.
 -   The global variables in a package are at the session level. The variables in packages cannot be shared in different sessions.
--   When a function of an autonomous transaction is invoked in a package, public variables and recursive functions that use public variables are not allowed.
--   The package does not declare the ref cursor type.
+-   When a function of an autonomous transaction is called in a package, the cursor variables in the package and recursive functions that use the cursor variables in the package are not allowed.
+-   The package does not declare the ref cursor variables.
+-   The default permission on a package is  **SECURITY INVOKER**. To change the default permission to  **SECURITY DEFINER**, set the GUC parameter  **behavior\_compat\_options**  to  **'plsql\_security\_definer'**.
+-   A user granted with the  **CREATE ANY PACKAGE**  permission can create packages in the public and user schemas.
+-   If the name of a package to be created contains special characters, the special characters cannot contain spaces. You are advised to set the GUC parameter  **behavior\_compat\_options**  to  **"skip\_insert\_gs\_source"**. Otherwise, an error may occur.
 
 ## Syntax<a name="section4157123095714"></a>
 
@@ -54,7 +57,7 @@
     CREATE OR REPLACE PACKAGE emp_bonus IS
     var1 int:=1;-- Public variable
     var2 int:=2;
-    PROCEDURE testpro1(var3 int);-- Public stored procedure, which can be invoked by external systems.
+    PROCEDURE testpro1(var3 int);-- Public stored procedure, which can be called by external systems.
     END emp_bonus;
     /
     ```
@@ -78,6 +81,13 @@
     testpro1(var4);
     end emp_bonus;
     /
+    ```
+
+-   Example of  **ALTER PACKAGE OWNER**
+
+    ```
+    ALTER PACKAGE emp_bonus OWNER TO omm;
+    -- Change the owner of PACKAGE emp_bonus to omm.
     ```
 
 

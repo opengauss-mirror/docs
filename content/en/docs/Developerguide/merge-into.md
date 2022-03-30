@@ -11,20 +11,21 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
 ## Syntax<a name="en-us_topic_0283137308_en-us_topic_0237122170_section10551749579"></a>
 
 ```
-MERGE [/*+ plan_hint */] INTO table_name [ [ AS ] alias ]
+MERGE [/*+ plan_hint */] INTO table_name [ partition_clause ] [ [ AS ] alias ]
 USING { { table_name | view_name } | subquery } [ [ AS ] alias ]
 ON ( condition )
 [
   WHEN MATCHED THEN
-  UPDATE SET { column_name = { expression | DEFAULT } |
-          ( column_name [, ...] ) = ( { expression | DEFAULT } [, ...] ) } [, ...]
+  UPDATE SET { column_name = { expression | subquery | DEFAULT } |
+          ( column_name [, ...] ) = ( { expression | subquery | DEFAULT } [, ...] ) } [, ...]
   [ WHERE condition ]
 ]
 [
   WHEN NOT MATCHED THEN
   INSERT { DEFAULT VALUES |
-  [ ( column_name [, ...] ) ] VALUES ( { expression | DEFAULT } [, ...] ) [, ...] [ WHERE condition ] }
+  [ ( column_name [, ...] ) ] VALUES ( { expression | subquery | DEFAULT } [, ...] ) [, ...] [ WHERE condition ] }
 ];
+NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRALIZED mode!
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137308_en-us_topic_0237122170_section1315653475"></a>
@@ -37,16 +38,30 @@ ON ( condition )
 
     Specifies the target table that is being updated or has data being inserted.
 
-    -   **talbe\_name**
+-   **talbe\_name**
 
-        Specifies the name of the target table.
+    Specifies the name of the target table.
 
-    -   **alias**
+-   **partition\_clause**
 
-        Specifies the alias of the target table.
+    Performs MERGE operations on a specified partition.
 
-        Value range: a string. It must comply with the naming convention.
+    ```
+    PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } |
+    SUBPARTITION { ( subpartition_name ) | FOR ( subpartition_value [, ...] ) }
+    ```
 
+    For details about the keywords, see  [SELECT](select.md).
+
+    If the value of the  **value**  clause is inconsistent with the specified partition, an error is reported.
+
+    For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
+
+-   **alias**
+
+    Specifies the alias of the target table.
+
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **USING**  clause
 
@@ -78,7 +93,7 @@ ON ( condition )
 
 -   **WHERE condition**
 
-    Specifies the conditions for the  **UPDATE**  and  **INSERT**  clauses. The two clauses will be executed only when the conditions are met. The default value can be used. System columns cannot be referenced in  **WHERE condition**.
+    Specifies the conditions for the  **UPDATE**  and  **INSERT**  clauses. The two clauses will be executed only when the conditions are met. The default value can be used. System columns cannot be referenced in  **WHERE condition**. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
 
 ## Examples<a name="en-us_topic_0283137308_en-us_topic_0237122170_section3650125620712"></a>

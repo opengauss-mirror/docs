@@ -48,9 +48,9 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
         VERBOSE [ boolean ] |
         COSTS [ boolean ] |
         CPU [ boolean ] |
-        DETAIL [ boolean ] | (unavailable)
-        NODES [ boolean ] | (unavailable)
-        NUM_NODES [ boolean ] | (unavailable)
+        DETAIL [ boolean ] |)
+        NODES [ boolean ] |
+        NUM_NODES [ boolean ] |
         BUFFERS [ boolean ] |
         TIMING [ boolean ] |
         PLAN [ boolean ] |
@@ -106,7 +106,7 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **DETAIL boolean**  unavailable\)
+-   **DETAIL boolean** 
 
     Displays information about database nodes.
 
@@ -115,7 +115,7 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **NODES boolean**  \(unavailable\)
+-   **NODES boolean** 
 
     Specifies whether to display information about the nodes executed by query.
 
@@ -124,7 +124,7 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
     -   **TRUE**  \(default\): displays it.
     -   **FALSE**: does not display it.
 
--   **NUM\_NODES boolean**  \(unavailable\)
+-   **NUM\_NODES boolean** 
 
     Specifies whether to display the number of executing nodes.
 
@@ -139,8 +139,8 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
 
     Value range:
 
-    -   **TRUE**  \(default\): displays it.
-    -   **FALSE**: does not display it.
+    -   **TRUE**: displays it.
+    -   **FALSE**  \(default\): does not display it.
 
 -   **TIMING boolean**
 
@@ -247,6 +247,44 @@ openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHE
          ->  Aggregate  (cost=14.19..14.20 rows=3 width=4)
                ->  Seq Scan on customer_address_p1  (cost=0.00..14.18 rows=10 width=4)
                      Filter: (ca_address_sk < 10000)
+(6 rows)
+
+
+-- Create a level-2 partitioned table.
+openGauss=# CREATE TABLE range_list
+openGauss-# (
+openGauss(#     month_code VARCHAR2 ( 30 ) NOT NULL ,
+openGauss(#     dept_code  VARCHAR2 ( 30 ) NOT NULL ,
+openGauss(#     user_no    VARCHAR2 ( 30 ) NOT NULL ,
+openGauss(#     sales_amt  int
+openGauss(# )
+openGauss-# PARTITION BY RANGE (month_code) SUBPARTITION BY LIST (dept_code)
+openGauss-# (
+openGauss(#   PARTITION p_201901 VALUES LESS THAN( '201903' )
+openGauss(#   (
+openGauss(#     SUBPARTITION p_201901_a values ('1'),
+openGauss(#     SUBPARTITION p_201901_b values ('2')
+openGauss(#   ),
+openGauss(#   PARTITION p_201902 VALUES LESS THAN( '201910' )
+openGauss(#   (
+openGauss(#     SUBPARTITION p_201902_a values ('1'),
+openGauss(#     SUBPARTITION p_201902_b values ('2')
+openGauss(#   )
+openGauss(# );
+CREATE TABLE
+
+-- Run a query statement containing a level-2 partitioned table.
+-- Iterations and Sub Iterations specifies the numbers of level-1 and level-2 partitions that are traversed, respectively.
+-- Selected Partitions specifies which level-1 partitions are actually scanned. Selected Subpartitions (p:s) indicates that s level-2 partitions under the pth level-1 partition are actually scanned. If all level-2 partitions under the level-1 partition are scanned, the value of s is ALL.
+openGauss=# EXPLAIN SELECT * FROM range_list WHERE dept_code = '1';
+                                  QUERY PLAN
+-------------------------------------------------------------------------------
+ Partition Iterator  (cost=0.00..13.81 rows=2 width=238)
+   Iterations: 2, Sub Iterations: 2
+   ->  Partitioned Seq Scan on range_list  (cost=0.00..13.81 rows=2 width=238)
+         Filter: ((dept_code)::text = '1'::text)
+         Selected Partitions:  1..2
+         Selected Subpartitions:  1:1, 2:1
 (6 rows)
 
 -- Delete the tpcds.customer_address_p1 table.

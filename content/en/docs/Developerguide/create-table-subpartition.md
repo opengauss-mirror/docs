@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0283136653_en-us_topic_0237122119_section1163224811518"></a>
 
-Creates a level-2 partitioned table. A partitioned table is a logical table that is divided into several physical partitions for storage based on a specific plan. A partitioned table is a logical table and does not store data. Data is stored in physical partitions. For a level-2 partitioned table, the top-level node table and level-1 partitioned table are logical tables and do not store data. Only the level-2 partitioned \(leaf node\) stores data.
+**CREATE TABLE SUBPARTITION**  creates a level-2 partitioned table. A partitioned table is a logical table that is divided into several physical partitions for storage based on a specific plan. A partitioned table is a logical table and does not store data. Data is stored in physical partitions. For a level-2 partitioned table, the top-level node table and level-1 partitioned table are logical tables and do not store data. Only the level-2 partitioned \(leaf node\) stores data.
 
 The partitioning solution of a level-2 partitioned table is a combination of the partitioning solutions of two level-1 partitions. For details about the partitioning solution of a level-1 partitioned table, see CREATE TABLE PARTITION.
 
@@ -10,14 +10,18 @@ Common combination solutions for level-2 partitioned tables include range-range 
 
 ## Precautions<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
--   A level-2 partitioned table has two partition keys, and each partition key supports only one column.
--   If the constraint key of the unique constraint and primary key constraint contains all partition keys, a local index is created for the constraints. Otherwise, a global index is created.
+-   A level-2 partitioned table has two partition keys, and each partition key supports only one column. The two partition keys cannot be the same column.
+-   If the constraint key of the unique constraint and primary key constraint contains all partition keys, a local index is created for the constraints. Otherwise, a global index is created. If a local unique index is created, all partition keys must be included.
+-   When a level-2 partitioned table is created, if the specified level-2 partition is not displayed under the level-1 partition, a level-2 partition with the same range is automatically created.
 -   The number of level-2 partitions \(leaf nodes\) in a level-2 partitioned table cannot exceed 1048575. There is no limit on the number of level-1 partitions, but there must be at least one level-2 partition under a level-1 partition.
--   Level-2 partitioned tables support only row store and do not support column-store, segment-page, or hash bucket.
--   UPSERT and MERGE INTO into are not supported.
+-   The maximum number of level-2 partitions is 1048575. Generally, it is impossible to create so many partitions, because too many partitions may cause insufficient memory. Create partitions based on the value of  **local\_syscache\_threshold**. The memory used by the level-2 partitioned tables is about \(number of level-2 partitions x 3/1024\) MB. Theoretically, the memory occupied by the partitions cannot be greater than the value of  **local\_syscache\_threshold**. In addition, some space must be reserved for other functions.
+-   Level-2 partitioned tables support only row store and do not support column-store and hash bucket.
+-   Clusters are not supported.
 -   When specifying a partition for query, for example,  **select \* from tablename partition/subpartition**  \(_partitionname_\), ensure that the keywords  **partition**  and  **subpartition**  are correct. If they are incorrect, no error is reported during the query. In this case, the query is performed based on the table alias.
--   Level-2 partitioned tables do not support the subpartition for \(values\) query, for example,  **select \* from tablename subpartition for**  \(_values_\).
--   Does not support secret database, ledger database and row-level access control.
+-   Encrypted databases, ledger databases, and row-level security are not supported.
+-   In the  **PARTITION FOR \(values\)**  syntax for level-2 partitioned tables, values can only be constants.
+-   In the  **PARTITION/SUBPARTITION FOR \(values\)**  syntax for level-2 partitioned tables, if data type conversion is required for values, you are advised to use forcible type conversion to prevent the implicit type conversion result from being inconsistent with the expected result.
+-   Currently, the statement specifying a partition cannot perform global index scan.
 
 ## Syntax<a name="section11556125664117"></a>
 
@@ -118,11 +122,11 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     There are two ways to define constraints:
 
     -   A column constraint is defined as part of a column definition, and it is bound to a particular column.
-    -   A table constraint is not bound to a particular column and can apply to more than one column.
+    -   A table constraint is not bound to a particular column but can apply to more than one column.
 
-- **LIKE source\_table \[ like\_option ... \]**
+-   **LIKE source\_table \[ like\_option ... \]**
 
-  The secondary partition table does not support this function temporarily.
+    Level-2 partitioned tables do not support this function.
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
@@ -147,32 +151,53 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
             >**ORIENTATION**  cannot be modified.
 
 
+    -   STORAGE\_TYPE
+
+        Specifies the storage engine type. This parameter cannot be modified once it is set.
+
+        Value range:
+
+        -   **USTORE**  indicates that tables support the inplace-update storage engine. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
+        -   **ASTORE**  indicates that tables support the append-only storage engine.
+
+        Default value:
+
+        If no table is specified, data is stored in append-only mode by default.
+
     -   COMPRESSION
         -   Value range:  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**  for column-store tables, with compression level increasing in ascending order. The default value is  **LOW**.
-        -   Row-store tables cannot be compressed.
-    
+        -   Row-store tables do not support compression.
+
     -   MAX\_BATCHROW
-    
+
         Specifies the maximum number of records in a storage unit during data loading. The parameter is only valid for column-store tables.
-    
+
         Value range: 10000 to 60000. The default value is  **60000**.
-    
+
     -   PARTIAL\_CLUSTER\_ROWS
-    
+
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
-    
+
         Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
-    
+
     -   DELTAROW\_THRESHOLD
-    
+
         A reserved parameter. The parameter is only valid for column-store tables.
-    
+
         Value range: 0 to 9999
+
+    -   segment
+
+        The data is stored in segment-page mode. This parameter supports only row-store tables. Column-store tables, temporary tables, and unlogged tables are not supported. The Ustore storage engine is not supported.
+
+        Value range:  **on**  and  **off**
+
+        Default value:  **off**
 
 
 -   **COMPRESS / NOCOMPRESS**
 
-    Specifies keyword COMPRESS during the creation of a table, so that the compression feature is triggered in case of BULK INSERT operations. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed. Row-store tables cannot be compressed.
+    Specifies keyword COMPRESS during the creation of a table, so that the compression feature is triggered in case of BULK INSERT operations. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed. Row-store tables do not support compression.
 
     Default value:  **NOCOMPRESS**, that is, tuple data is not compressed before storage.
 
@@ -252,7 +277,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
 
-    Specifies that a column or columns of a table can contain only unique \(non-duplicate\) and non-**NULL**  values.
+    Specifies that a column or columns of a table can contain only unique \(non-duplicate\) and non-null values.
 
     Only one primary key can be specified for a table.
 
@@ -621,7 +646,238 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     (6 rows)
     ```
 
--   Example 2: Truncate a level-2 partitioned table.
+-   Example 2: Specify partitions in a level-2 partitioned table using DML.
+
+    ```
+    CREATE TABLE range_list
+    (
+        month_code VARCHAR2 ( 30 ) NOT NULL ,
+        dept_code  VARCHAR2 ( 30 ) NOT NULL ,
+        user_no    VARCHAR2 ( 30 ) NOT NULL ,
+        sales_amt  int
+    )
+    PARTITION BY RANGE (month_code) SUBPARTITION BY LIST (dept_code)
+    (
+      PARTITION p_201901 VALUES LESS THAN( '201903' )
+      (
+        SUBPARTITION p_201901_a values ('1'),
+        SUBPARTITION p_201901_b values ('2')
+      ),
+      PARTITION p_201902 VALUES LESS THAN( '201910' )
+      (
+        SUBPARTITION p_201902_a values ('1'),
+        SUBPARTITION p_201902_b values ('2')
+      )
+    );
+    -- Insert data to a specified level-1 partition.
+    insert into range_list partition (p_201901) values('201902', '1', '1', 1);
+    -- The actual partition is inconsistent with the specified partition. An error is reported.
+    insert into range_list partition (p_201902) values('201902', '1', '1', 1);
+    ERROR:  inserted partition key does not map to the table partition
+    DETAIL:  N/A.
+    -- Insert data to a specified level-2 partition.
+    insert into range_list subpartition (p_201901_a) values('201902', '1', '1', 1);
+    -- The actual partition is inconsistent with the specified partition. An error is reported.
+    insert into range_list subpartition (p_201901_b) values('201902', '1', '1', 1);
+    ERROR:  inserted subpartition key does not map to the table subpartition
+    DETAIL:  N/A.
+    insert into range_list partition for ('201902') values('201902', '1', '1', 1);
+    insert into range_list subpartition for ('201902','1') values('201902', '1', '1', 1);
+    
+    -- Query data in a specified partition.
+    select * from range_list partition (p_201901);
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    select * from range_list subpartition (p_201901_a);
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    select * from range_list partition for ('201902');
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    select * from range_list subpartition for ('201902','1');
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    -- Update data in a specified partition.
+    update range_list partition (p_201901) set user_no = '2';
+    select * from range_list;
+    select *from range_list; month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 2       |         1
+     201902     | 1         | 2       |         1
+     201902     | 1         | 2       |         1
+     201902     | 1         | 2       |         1
+    (4 rows)
+    update range_list subpartition (p_201901_a) set user_no = '3';
+    select * from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 3       |         1
+     201902     | 1         | 3       |         1
+     201902     | 1         | 3       |         1
+     201902     | 1         | 3       |         1
+    (4 rows)
+    update range_list partition for ('201902') set user_no = '4';
+    select * from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 4       |         1
+     201902     | 1         | 4       |         1
+     201902     | 1         | 4       |         1
+     201902     | 1         | 4       |         1
+    (4 rows)
+    update range_list subpartition for ('201902','2') set user_no = '5';
+    openGauss=# select *from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 4       |         1
+     201902     | 1         | 4       |         1
+     201902     | 1         | 4       |         1
+     201902     | 1         | 4       |         1
+    (4 rows)
+    select * from range_list;
+    
+    -- Delete data from a specified partition.
+    delete from range_list partition (p_201901);
+    DELETE 4
+    delete from range_list partition for ('201903');
+    DELETE 0
+    delete from range_list subpartition (p_201901_a);
+    DELETE 0
+    delete from range_list subpartition for ('201903','2');
+    DELETE 0
+    
+    -- Insert data into a specified partition.
+    insert into range_list partition (p_201901)  values('201902', '1', '1', 1)  ON DUPLICATE KEY UPDATE sales_amt = 5;
+    insert into range_list subpartition (p_201901_a)  values('201902', '1', '1', 1)  ON DUPLICATE KEY UPDATE sales_amt = 10;
+    insert into range_list partition for ('201902')  values('201902', '1', '1', 1)  ON DUPLICATE KEY UPDATE sales_amt = 30;
+    insert into range_list subpartition for ('201902','1')  values('201902', '1', '1', 1)  ON DUPLICATE KEY UPDATE sales_amt = 40;
+    select * from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    -- Merge data into a specified partition.
+    CREATE TABLE newrange_list
+    (
+        month_code VARCHAR2 ( 30 ) NOT NULL ,
+        dept_code  VARCHAR2 ( 30 ) NOT NULL ,
+        user_no    VARCHAR2 ( 30 ) NOT NULL ,
+        sales_amt  int
+    )
+    PARTITION BY RANGE (month_code) SUBPARTITION BY LIST (dept_code)
+    (
+      PARTITION p_201901 VALUES LESS THAN( '201903' )
+      (
+        SUBPARTITION p_201901_a values ('1'),
+        SUBPARTITION p_201901_b values ('2')
+      ),
+      PARTITION p_201902 VALUES LESS THAN( '201910' )
+      (
+        SUBPARTITION p_201902_a values ('1'),
+        SUBPARTITION p_201902_b values ('2')
+      )
+    );
+    insert into newrange_list values('201902', '1', '1', 1);
+    insert into newrange_list values('201903', '1', '1', 2);
+    
+    MERGE INTO range_list partition (p_201901) p
+    USING newrange_list partition (p_201901) np
+    ON p.month_code= np.month_code
+    WHEN MATCHED THEN
+      UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
+    WHEN NOT MATCHED THEN  
+      INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
+    
+    select * from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    MERGE INTO range_list partition for ('201901') p
+    USING newrange_list partition for ('201901') np
+    ON p.month_code= np.month_code
+    WHEN MATCHED THEN
+      UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
+    WHEN NOT MATCHED THEN  
+      INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
+    
+    select * from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    MERGE INTO range_list subpartition (p_201901_a) p
+    USING newrange_list subpartition (p_201901_a) np
+    ON p.month_code= np.month_code
+    WHEN MATCHED THEN
+      UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
+    WHEN NOT MATCHED THEN  
+      INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
+    
+    select * from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    
+    MERGE INTO range_list subpartition for ('201901', '1') p
+    USING newrange_list subpartition for ('201901', '1') np
+    ON p.month_code= np.month_code
+    WHEN MATCHED THEN
+      UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
+    WHEN NOT MATCHED THEN  
+      INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
+    
+    select * from range_list;
+     month_code | dept_code | user_no | sales_amt
+    ------------+-----------+---------+-----------
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+     201902     | 1         | 1       |         1
+    (4 rows)
+    ```
+
+-   Example 3: Truncate a level-2 partitioned table.
 
     ```
     CREATE TABLE list_list
@@ -760,7 +1016,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     ```
 
 
--   Example 3: Split a level-2 partitioned table.
+-   Example 4: Split a level-2 partitioned table.
 
     ```
     CREATE TABLE list_list

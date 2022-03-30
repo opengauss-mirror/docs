@@ -10,14 +10,13 @@ The  **PURGE**  statement can be used to:
 
 ## Precautions<a name="section749425816510"></a>
 
--   The purge operation supports tables \(**PURGE TABLE**\), indexes \(**PURGE INDEX**\), recycle bins \(**PURGE RECYCLEBIN**\), and tablespaces \(**PURGE TABLESPACE**\).
+-   The PURGE operation supports tables \(**PURGE TABLE**\), indexes \(**PURGE INDEX**\), and recycle bins \(**PURGE RECYCLEBIN**\).
 
 
--   The permission requirements for performing the  **PURGE**  operation are as follows:
+-   The permission requirements for performing the PURGE operation are as follows:
 
     -   **PURGE TABLE**: The user must be the owner of the table and must have the  **USAGE**  permission on the schema to which the table belongs. By default, the system administrator has this permission.
     -   **PURGE INDEX**: The user must be the owner of the index and have the  **USAGE**  permission on the schema to which the index belongs. By default, the system administrator has this permission.
-    -   **PURGE TABLESPACE**: The user must be the owner of the tablespace and have the  **USAGE**  permission on the schema to which the object belongs. The common user can delete only the table owned by oneself in the recycle bin. By default, the system administrator can delete all the objects in the specified tablespace in the recycle bin.
     -   **PURGE RECYCLEBIN**: Common users can clear only the objects owned by themselves in the recycle bin. In addition, the user must have the  **USAGE**  permission of the schema to which the objects belong. By default, the system administrator can clear all objects in the recycle bin.
 
 
@@ -78,16 +77,11 @@ openGauss=#  CREATE TABLE tpcds.reason_t3
   r_reason_id    character(16),
   r_reason_desc  character(100)
   ) tablespace reason_table_space1;
-openGauss=#  CREATE TABLE tpcds.reason_t4
- (
-  r_reason_sk    integer,
-  r_reason_id    character(16),
-  r_reason_desc  character(100)
-  );
+-- Create an index on the tpcds.reason_t1 table.
+openGauss=#  CREATE INDEX index_t1 on tpcds.reason_t1(r_reason_id); 
 openGauss=#  DROP TABLE tpcds.reason_t1;
 openGauss=#  DROP TABLE tpcds.reason_t2;
 openGauss=#  DROP TABLE tpcds.reason_t3;
-openGauss=#  DROP TABLE tpcds.reason_t4;
 -- View the recycle bin.
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
         rcyname        | rcyoriginname | rcytablespace 
@@ -95,17 +89,30 @@ openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
  BIN$16409$2CEE988==$0 | reason_t1     |         16408
  BIN$16412$2CF2188==$0 | reason_t2     |         16408
  BIN$16415$2CF2EC8==$0 | reason_t3     |         16408
- BIN$16418$2CF3EC8==$0 | reason_t4     |             0
+ BIN$16418$2CF3EC8==$0 | index_t1     |             0
 (4 rows)
--- Clear the table.
-openGauss=#  PURGE TABLE tpcds.reason_t1;
+-- Purge the table.
+openGauss=#  PURGE TABLE tpcds.reason_t3;
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
         rcyname        | rcyoriginname | rcytablespace 
 -----------------------+---------------+---------------
+ BIN$16409$2CEE988==$0 | reason_t1     |         16408
  BIN$16412$2CF2188==$0 | reason_t2     |         16408
- BIN$16415$2CF2EC8==$0 | reason_t3     |         16408
- BIN$16418$2CF3EC8==$0 | reason_t4     |             0
+ BIN$16418$2CF3EC8==$0 | index_t1     |             0
 (3 rows)
-
+-- Purge the index.
+openGauss=#  PURGE INDEX tindex_t1;
+openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
+        rcyname        | rcyoriginname | rcytablespace 
+-----------------------+---------------+---------------
+ BIN$16409$2CEE988==$0 | reason_t1     |         16408
+ BIN$16412$2CF2188==$0 | reason_t2     |         16408
+(2 rows)
+-- Purge all objects in the recycle bin.
+openGauss=#  PURGE recyclebin;
+openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
+        rcyname        | rcyoriginname | rcytablespace 
+-----------------------+---------------+---------------
+(0 rows)
 ```
 

@@ -1,6 +1,6 @@
 # PG\_STATISTIC\_EXT<a name="EN-US_TOPIC_0289899833"></a>
 
-**PG\_STATISTIC\_EXT**  records extended statistics of tables in a database, such as statistics of multiple columns. Statistics of expressions will be supported later. You can specify the extended statistics to collect. This system catalog is accessible only to the system administrator.
+**PG\_STATISTIC\_EXT**  displays extended statistics of tables in a database, such as statistics of multiple columns. Statistics of expressions will be supported later. You can specify the extended statistics to collect. This system catalog is accessible only to the system administrator.
 
 **Table  1**  PG\_STATISTIC\_EXT columns
 
@@ -24,12 +24,12 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.85%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a00a2a7fecca24f9b987302851e4ab7f5"><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a00a2a7fecca24f9b987302851e4ab7f5"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a00a2a7fecca24f9b987302851e4ab7f5"></a>char</p>
 </td>
-<td class="cellrowborder" valign="top" width="66.9%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a98eb7d8b50fb42b9878912f0aeb0b1d3"><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a98eb7d8b50fb42b9878912f0aeb0b1d3"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a98eb7d8b50fb42b9878912f0aeb0b1d3"></a>Type of the object to which a table belongs. <strong id="b4780846175219"><a name="b4780846175219"></a><a name="b4780846175219"></a>c</strong> indicates an ordinary table, and <strong id="b65487517528"><a name="b65487517528"></a><a name="b65487517528"></a>p</strong> indicates a partitioned table.</p>
+<td class="cellrowborder" valign="top" width="66.9%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a98eb7d8b50fb42b9878912f0aeb0b1d3"><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a98eb7d8b50fb42b9878912f0aeb0b1d3"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a98eb7d8b50fb42b9878912f0aeb0b1d3"></a>Type of the object to which a table belongs. <strong id="b12677111916016"><a name="b12677111916016"></a><a name="b12677111916016"></a>c</strong> indicates an ordinary table, and <strong id="b196831219804"><a name="b196831219804"></a><a name="b196831219804"></a>p</strong> indicates a partitioned table.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_rd3f705c2468a4c718249d404e7951cdc"><td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a53b9c37b7d484e23b0e67472ce1e55ea"><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a53b9c37b7d484e23b0e67472ce1e55ea"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a53b9c37b7d484e23b0e67472ce1e55ea"></a>stainherit</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.85%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><span id="en-us_topic_0283137717_en-us_topic_0237122318_text2650327152810"><a name="en-us_topic_0283137717_en-us_topic_0237122318_text2650327152810"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_text2650327152810"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="14.85%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a2128c6cb0f8d427f838e4dfd5482497a"></a><span id="en-us_topic_0283137717_en-us_topic_0237122318_text2650327152810"><a name="en-us_topic_0283137717_en-us_topic_0237122318_text2650327152810"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_text2650327152810"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="66.9%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a5aeb7ef6af0b497bacfecde8a757c992"><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a5aeb7ef6af0b497bacfecde8a757c992"></a><a name="en-us_topic_0283137717_en-us_topic_0237122318_en-us_topic_0059778435_a5aeb7ef6af0b497bacfecde8a757c992"></a>Whether to collect statistics for objects that have inheritance relationship</p>
 </td>
@@ -112,4 +112,7 @@
 </tr>
 </tbody>
 </table>
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>**PG\_STATISTIC\_EXT**  stores sensitive information about statistical objects, such as MCVs. The system administrator and authorized users can access the  **PG\_STATISTIC\_EXT**  system catalog to query the sensitive information about the statistical objects.
 

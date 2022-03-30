@@ -6,7 +6,7 @@
 
 ## Precautions<a name="section786041713618"></a>
 
-To use  **ALTER AGGREGATE**, you must be the owner of the aggregate function. To change the schema of an aggregate function, you must have the  **CREATE**  permission on the new schema. To change the owner, you must be a direct or indirect member of the new role, and the role must have the  **CREATE**  permission on the aggregate function's schema. \(This restricts the owner from doing anything except for deleting and recreating aggregate functions. However, the super user can change the ownership of an aggregate function in any way.\)
+To use  **ALTER AGGREGATE**, you must be the owner of the aggregate function. To change the schema of an aggregate function, you must have the  **CREATE**  permission on the new schema. To change the owner, you must be a direct or indirect member of the new role, and the role must have the  **CREATE**  permission on the aggregate function's schema. \(This restricts the owner from doing anything except for deleting and recreating aggregate functions. However, a user with the SYSADMIN permission can change the ownership of an aggregate function in any way.\)
 
 ## Syntax<a name="section1374719912321"></a>
 

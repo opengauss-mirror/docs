@@ -31,12 +31,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a01ec0bb6818f406088c4284a18f44168"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a>Object type<a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><ul id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"><li><strong id="en-us_topic_0237122306_b109312317811"><a name="en-us_topic_0237122306_b109312317811"></a>
-    <a name="en-us_topic_0237122306_b109312317811"></a>r</strong>: partitioned table</li><li><strong id="en-us_topic_0237122306_b1216617401812">
-    <a name="en-us_topic_0237122306_b1216617401812"></a><a name="en-us_topic_0237122306_b1216617401812"></a>p</strong>: table partition</li><li><strong id="en-us_topic_0237122306_b168956471888">
-    <a name="en-us_topic_0237122306_b168956471888"></a><a name="b13276115439"></a>s</strong>: table subpartition</li></ul>
-    <a name="en-us_topic_0237122306_b168956471888"></a><a name="b13276115439"></a>x</strong>: index partition</li><li><strong id="b13276115439">
-    <a name="b13276115439"></a><a name="b13276115439"></a>t</strong>: TOAST table</li></ul>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ad384de51b68941679df9cc66e724d42a"></a>Object type<a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"></a><ul id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_u0bf15da2dec04f44b8061e07775ea0f8"><li><strong id="en-us_topic_0237122306_b109312317811"><a name="en-us_topic_0237122306_b109312317811"></a><a name="en-us_topic_0237122306_b109312317811"></a>r</strong>: partitioned table</li><li><strong id="en-us_topic_0237122306_b1216617401812"><a name="en-us_topic_0237122306_b1216617401812"></a><a name="en-us_topic_0237122306_b1216617401812"></a>p</strong>: table partition</li><li><strong id="b7757146145818"><a name="b7757146145818"></a><a name="b7757146145818"></a>s</strong>: table subpartition</li><li><strong id="en-us_topic_0237122306_b168956471888"><a name="en-us_topic_0237122306_b168956471888"></a><a name="en-us_topic_0237122306_b168956471888"></a>x</strong>: index partition</li><li><strong id="b13276115439"><a name="b13276115439"></a><a name="b13276115439"></a>t</strong>: TOAST table</li></ul>
 </div>
 </td>
 </tr>
@@ -128,7 +123,7 @@
 </tr>
 <tr id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_rf660905e3e544754893f0b101bd34a12"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a2abf4549361c488198d75bb6865ab71f"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a2abf4549361c488198d75bb6865ab71f"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a2abf4549361c488198d75bb6865ab71f"></a>indisusable</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a1a5145f7d52d4ee6b4a64df9fd7580dd"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a1a5145f7d52d4ee6b4a64df9fd7580dd"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a1a5145f7d52d4ee6b4a64df9fd7580dd"></a><span id="en-us_topic_0283136920_en-us_topic_0237122306_text724795602717"><a name="en-us_topic_0283136920_en-us_topic_0237122306_text724795602717"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_text724795602717"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a1a5145f7d52d4ee6b4a64df9fd7580dd"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a1a5145f7d52d4ee6b4a64df9fd7580dd"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_a1a5145f7d52d4ee6b4a64df9fd7580dd"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ac8e49276a5f54925828e777c40ac87de"><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ac8e49276a5f54925828e777c40ac87de"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_en-us_topic_0059779194_ac8e49276a5f54925828e777c40ac87de"></a>Whether the index partition is available</p>
 </td>
@@ -225,7 +220,13 @@
 <td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136920_en-us_topic_0237122306_p114281847184818"><a name="en-us_topic_0283136920_en-us_topic_0237122306_p114281847184818"></a><a name="en-us_topic_0283136920_en-us_topic_0237122306_p114281847184818"></a>Frozen transaction ID</p>
 </td>
 </tr>
+<tr id="row661095913462"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="p7611145915465"><a name="p7611145915465"></a><a name="p7611145915465"></a>relminmxid</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="p16112059144610"><a name="p16112059144610"></a><a name="p16112059144610"></a>xid</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="p1861118597468"><a name="p1861118597468"></a><a name="p1861118597468"></a>Frozen multi-transaction ID</p>
+</td>
+</tr>
 </tbody>
 </table>
-
 

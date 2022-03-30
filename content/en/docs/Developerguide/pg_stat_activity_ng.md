@@ -1,6 +1,6 @@
 # PG\_STAT\_ACTIVITY\_NG<a name="EN-US_TOPIC_0000001197514779"></a>
 
-**PG\_STAT\_ACTIVITY\_NG**  displays information about all queries in the logical cluster of the current user.
+**PG\_STAT\_ACTIVITY\_NG**  displays information about all queries in the logical database instance of the current user.
 
 **Table  1**  PG\_STAT\_ACTIVITY\_NG columns
 
@@ -39,13 +39,6 @@
 <td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="p760535291917"><a name="p760535291917"></a><a name="p760535291917"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p76051452111911"><a name="p76051452111911"></a><a name="p76051452111911"></a>Session ID</p>
-</td>
-</tr>
-<tr id="row4252315191319"><td class="cellrowborder" valign="top" width="33.269999999999996%" headers="mcps1.2.4.1.1 "><p id="p182521515201319"><a name="p182521515201319"></a><a name="p182521515201319"></a>global_sessionid</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="p142527154134"><a name="p142527154134"></a><a name="p142527154134"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p025216154134"><a name="p025216154134"></a><a name="p025216154134"></a>Global session ID</p>
 </td>
 </tr>
 <tr id="en-us_topic_0059777972_r60579e8eaaf24f51920527f6aaf90092"><td class="cellrowborder" valign="top" width="33.269999999999996%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059777972_a91bbca399b6d43499bbbac8b4c16fdf6"><a name="en-us_topic_0059777972_a91bbca399b6d43499bbbac8b4c16fdf6"></a><a name="en-us_topic_0059777972_a91bbca399b6d43499bbbac8b4c16fdf6"></a>usesysid</p>
@@ -120,7 +113,7 @@
 </tr>
 <tr id="en-us_topic_0059777972_r4b774825fd364d8e81cc2b5cd234a24a"><td class="cellrowborder" valign="top" width="33.269999999999996%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"><a name="en-us_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a><a name="en-us_topic_0059777972_a8d76f1f594bc43ef9ea7ddbf051c7a18"></a>waiting</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><span id="text19133555133014"><a name="text19133555133014"></a><a name="text19133555133014"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"><a name="en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a><a name="en-us_topic_0059777972_a0ba76922758f4cf99501824247599464"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"><a name="en-us_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a><a name="en-us_topic_0059777972_abbf0584b0d574fa2943de929b6e976a3"></a>Whether the backend is currently waiting for a lock. If yes, the value is <strong id="b184712113914339"><a name="b184712113914339"></a><a name="b184712113914339"></a>true</strong>. Otherwise, the value is <strong id="b195989759214339"><a name="b195989759214339"></a><a name="b195989759214339"></a>false</strong>.</p>
 </td>
@@ -178,7 +171,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.279999999999998%" headers="mcps1.2.4.1.2 "><p id="p1412065518316"><a name="p1412065518316"></a><a name="p1412065518316"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1612017551314"><a name="p1612017551314"></a><a name="p1612017551314"></a>Logical cluster of the user running the statement</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="p1612017551314"><a name="p1612017551314"></a><a name="p1612017551314"></a>Logical database instance of the user to which the statement belongs.</p>
 </td>
 </tr>
 </tbody>

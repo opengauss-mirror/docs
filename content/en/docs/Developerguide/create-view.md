@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
 
-None
+A user granted with the  **CREATE ANY TABLE**  permission can create views in the public and user schemas.
 
 ## Syntax<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
@@ -17,7 +17,7 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->You can use  **WITH \(security\_barriers\)**  to create a relatively secure view. This prevents attackers from printing hidden base table data by using the  **RAISE**  statement of low-cost functions.
+>You can use  **WITH\(security\_barrier\)**  to create a relatively secure view. This prevents attackers from printing hidden base table data by using the  **RAISE**  statement of low-cost functions.
 
 ## Parameter Description<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
@@ -33,13 +33,13 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 
     Specifies the name \(optionally schema-qualified\) of the view to be created.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **column\_name**
 
     Specifies an optional list of names to be used for columns of the view. If not given, the column names are deduced from the query.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **view\_option\_name \[= view\_option\_value\]**
 
@@ -61,10 +61,10 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 openGauss=# CREATE VIEW myView AS
     SELECT * FROM pg_tablespace WHERE spcname = 'pg_default';
 
--- Query the view.
+-- Query a view.
 openGauss=# SELECT * FROM myView ;
 
--- Delete the view.
+-- Delete the myView view.
 openGauss=# DROP VIEW myView;
 ```
 

@@ -18,6 +18,9 @@ The syntax of the  **option**  clause is as follows:
 
 ```
 {SYSADMIN | NOSYSADMIN}
+    | {MONADMIN | NOMONADMIN}
+    | {OPRADMIN | NOOPRADMIN}
+    | {POLADMIN | NOPOLADMIN}
     | {AUDITADMIN | NOAUDITADMIN}
     | {CREATEDB | NOCREATEDB}
     | {USEFT | NOUSEFT}
@@ -27,6 +30,7 @@ The syntax of the  **option**  clause is as follows:
     | {REPLICATION | NOREPLICATION}
     | {INDEPENDENT | NOINDEPENDENT}
     | {VCADMIN | NOVCADMIN}
+    | {PERSISTENCE | NOPERSISTENCE}
     | CONNECTION LIMIT connlimit
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'

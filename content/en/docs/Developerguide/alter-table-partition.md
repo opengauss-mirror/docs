@@ -2,23 +2,26 @@
 
 ## Function<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
 
-**ALTER TABLE PARTITION**  modifies table partition, including adding, deleting, splitting, merging partitions, and modifying partition attributes.
+**ALTER TABLE PARTITION**  modifies table partitions, including adding, deleting, splitting, merging partitions, and altering partition attributes.
 
 ## Precautions<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s5b88399280d4435fbb63e27378589a97"></a>
 
--   The tablespace for the added partition cannot be  **PG\_GLOBAL**.
--   The name of the added partition must be different from names of existing partitions in the partition table.
--   The partition key of the added partition must be the same type as that of the partition table. The key value of the added partition must exceed the upper limit of the last partition range.
--   If the number of partitions in the target partitioned table has reached the maximum value, no more partitions can be added. \(The maximum number of partitions in a range partitioned table is 32767, and that in a hash or list partitioned table is 64.\)
+-   The tablespace of the added partition cannot be  **PG\_GLOBAL**.
+-   The name of the added partition must be different from the names of existing partitions in the partitioned table.
+-   The key value of the added partition must be consistent with the type of partition keys in the partitioned table.
+-   If a range partition is added, the key value of the added partition must be greater than the upper limit of the last range partition in the partitioned table.
+-   If a list partition is added, the key value of the added partition cannot be the same as that of an existing partition.
+-   Hash partitions cannot be added.
+-   If the number of partitions in the target partitioned table has reached the maximum \(**1048575**\), partitions cannot be added.
 
--   If a partition table has only one partition, the partition cannot be deleted.
--   Use  **PARTITION FOR\(\)**  to choose partitions. The number of specified values in the brackets should be the same as the column number in customized partition, and they must be consistent.
--   The  **Value**  partition table does not support the  **Alter Partition**  operation.
+-   If a partitioned table has only one partition, the partition cannot be deleted.
+-   Use  **PARTITION FOR\(\)**  to choose partitions. The number of specified values in the brackets should be the same as the column number in customized partitions, and they must be consistent.
+-   The  **Value**  partitioned table does not support the  **Alter Partition**  operation.
 -   Column-store tables and row-store tables cannot be partitioned.
 -   Partitions cannot be added to an interval partitioned table.
 -   Hash partitioned tables do not support splitting, combination, addition, and deletion of partitions.
 -   List partitioned tables do not support partition splitting or partition combination.
--   Only the partitioned table owner or a user granted with the ALTER permission can run the  **ALTER TABLE PARTITION**  command. The system administrator has this permission by default.
+-   Only the owner of a partitioned table or users granted with the  **ALTER**  permission on the partitioned table can run the  **ALTER TABLE PARTITION**  command. The system administrator has the permission to run the command by default.
 
 ## Syntax<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s77ad09af007d4883a3bc70cc8a945481"></a>
 
@@ -66,7 +69,7 @@
         -   An ordinary table cannot be a temporary table. A partitioned table can only be a range partitioned table, list partitioned table, or hash partitioned table.
         -   Ordinary tables and partitioned tables do not support dynamic data masking and row-level access control constraints.
         -   List partitioned tables and hash partitioned tables cannot be column-store.
-        -   Only the List/Hash/Range partitioned table is supported for data exchange.
+        -   List, hash, and range partitioned tables support  **exchange\_clause**.
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
         >-   When the exchange is done, the data and tablespace of the ordinary table and partition are exchanged. The statistics about ordinary tables and partitions become unreliable, and they should be analyzed again.
@@ -105,7 +108,7 @@
 
             >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
             >-   Column-store tables and row-store tables cannot be partitioned.
-            >-   The size of the split point should be in the range of partition keys of the partition of to be split. The split point can only split one partition into two new partitions.
+            >-   The size of the split point should be in the range of partition keys of the partition to be split. The split point can only split one partition into two new partitions.
 
         -   The  **no\_split\_point\_clause**  syntax does not specify a split point.
 
@@ -169,8 +172,7 @@
         ```
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-        >-   Hash partitioned table does not support partition deletion.
-        >-   List partitioned table supports sub-partition deletion only by sub-partition name.
+        >Hash partitioned table does not support partition deletion.
 
 
     -   The  **truncate\_clause**  syntax is used to remove a specified partition from a partitioned table.
@@ -194,19 +196,19 @@
 
     Specifies the name of a partitioned table.
 
-    Value range: an existing table name
+    Value range: an existing partitioned table name.
 
 -   **partition\_name**
 
     Specifies the name of a partition.
 
-    Value range: an existing partition name
+    Value range: an existing partition name.
 
 -   **tablespacename**
 
     Specifies which tablespace the partition moves to.
 
-    Value range: an existing tablespace name
+    Value range: an existing tablespace name.
 
 -   **partition\_value**
 
@@ -214,7 +216,7 @@
 
     The value specified by  **PARTITION FOR \( partition\_value \[, ...\] \)**  can uniquely identify a partition.
 
-    Value range: partition keys for the partition to be renamed
+    Value range: partition keys for the partition to be renamed.
 
 -   **UNUSABLE LOCAL INDEXES**
 
@@ -241,7 +243,7 @@
 
     Specifies the name of the ordinary table whose data is to be migrated.
 
-    Value range: an existing table name
+    Value range: an existing table name.
 
 -   **\{ WITH | WITHOUT \} VALIDATION**
 

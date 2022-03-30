@@ -24,7 +24,7 @@ CREATE SERVER server_name
 
     Specifies the name of the foreign data wrapper.
 
-    Value range:  **oracle\_fdw**,  **mysql\_fdw**,  **postgres\_fdw**,  **mot\_fdw**, and  **file\_fdw**
+    Value range:  **dist\_fdw**,  **hdfs\_fdw**,  **log\_fdw**,  **mot\_fdw**, and  **file\_fdw**
 
 -   **OPTIONS \(  \{ option\_name ' value '  \}  \[, ...\] \)**
 
@@ -39,9 +39,9 @@ CREATE SERVER server_name
 
             Oracle database transaction isolation level.
 
-            Value range: serializable, read\_committed, and read\_only
+            Value range:  **serializable**,  **read\_committed**, and  **read\_only**
 
-    -   Options supported by mysql\_fdw are as follows:
+    -   Options supported by  **mysql\_fdw**  are as follows:
         -   **host**  \(default value:  **127.0.0.1**\)
 
             IP address of the MySQL server or MariaDB.

@@ -103,7 +103,7 @@
 
     **value**  indicates the value to be entered, which can be of the following types:
 
-    "char", abstime, bigint, boolean, bytea, character varying, character, date, double precision, int2vector, integer, interval, money, name, numeric, nvarchar2, oid, oidvector, raw, real, record, reltime, smalldatetime, smallint, text, time with time zone, time without time zone, timestamp with time zone, timestamp without time zone, tinyint, and uuid
+    "char", abstime, bigint, boolean, bytea, character varying, character, date, double precision, int2vector, integer, interval, money, name, numeric, nvarchar2, nvarchar2, oid, oidvector, raw, real, record, reltime, smalldatetime, smallint, text, time with time zone, time without time zone, timestamp with time zone, timestamp without time zone, tinyint, and uuid
 
     **flag**  is of the int type, indicating the data distribution mode.
 
@@ -142,7 +142,7 @@
 
     Description: Hashes an array, obtains the result of an array element using the hash function, and returns the combination result.
 
-    Parameter: data of the anyrange type
+    Parameter: data of the anyarray type
 
     Return type: integer
 
@@ -489,7 +489,7 @@
 
     Description: Calculates the hash value of the input parameter.
 
-    Parameter: nvarchar2, integer
+    Parameter: nvarchar, nvarchar2, integer
 
     Return type: integer
 

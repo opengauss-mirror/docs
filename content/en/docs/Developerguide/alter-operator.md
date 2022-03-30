@@ -8,7 +8,7 @@ ALTER OPERATOR modifies the definition of an operator.
 
 ALTER OPERATOR changes the definition of an operator. Currently, the only function available is to change the owner of the operator.
 
-To use ALTER OPERATOR, you must be the owner of the operator. To modify the owner, you must also be a direct or indirect member of the new owning role, and that member must have CREATE permission on the operator's schema. \(These restrictions force the owner to do nothing that cannot be done by deleting and recreating the operator. However, the super user can modify the ownership of any operator in any way.\)
+To use ALTER OPERATOR, you must be the owner of the operator. To modify the owner, you must also be a direct or indirect member of the new owning role, and that member must have CREATE permission on the operator's schema. \(These restrictions force the owner to do nothing that cannot be done by deleting and recreating the operator. However, a user with the SYSADMIN permission can modify the ownership of any operator in any way.\)
 
 ## Syntax<a name="section122664751912"></a>
 

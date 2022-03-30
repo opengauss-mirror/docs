@@ -100,7 +100,7 @@ The sequence functions provide a simple method to ensure security of multiple us
 
     Description: Sets the current value of a sequence and the is\_called sign.
 
-    Return type:  numeric
+    Return type: numeric
 
     Example:
 
@@ -118,5 +118,12 @@ The sequence functions provide a simple method to ensure security of multiple us
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >The  **nextval**  function can be executed only on the primary node. It is not supported on standby nodes.
+
+
+-   pg\_sequence\_last\_value\(sequence\_oid oid, OUT cache\_value int16, OUT last\_value int16\)
+
+    Description: Obtains the parameters of a specified sequence, including the cache value and current value.
+
+    Return type: int16, int16
 
 

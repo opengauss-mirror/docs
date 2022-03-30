@@ -72,6 +72,10 @@
 
 -   **[Internal Functions](internal-functions.md)**  
 
+-   **[Global SysCache Feature Functions](global-syscache-feature-functions.md)**  
+
+-   **[Data Damage Detection and Repair Functions](data-damage-detection-and-repair-functions.md)**  
+
 -   **[Obsolete Functions](obsolete-functions.md)**  
 
 

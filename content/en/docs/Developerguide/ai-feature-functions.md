@@ -177,4 +177,20 @@
 
     Return type: text
 
+-   db4ai\_predict\_by\_float8\_array\(text, VARIADIC "any"\)
+
+    Description: Obtains a model whose return value is of the character type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
+
+    Parameter: model name and input column name of the inference task
+
+    Return type: text
+
+-   gs\_explain\_model\(text\)
+
+    Description: Obtains the model whose return value is of the character type for text-based model parsing.
+
+    Parameter: model name
+
+    Return type: text
+
 
