@@ -122,11 +122,11 @@ The  **gs\_om**  tool can use the following types of parameters:
 
     -   -D
 
-        Specifies the DN path.
+        Specifies the path of a specified node.
 
-        Value range: a DN path
+        Value range: a node path
 
-        If the DN path is not specified, the DN path in the static file is used.
+        If the node path is not specified, the node path in the static file is used.
 
     -   --time-out=SECS
 
@@ -500,21 +500,20 @@ Default value:  **fast**
 
     ```
     gs_om -t status --detail
-
-    [   Cluster State   ]
-
-    cluster_state   : Normal
+[   Cluster State   ]
+    
+cluster_state   : Normal
     redistributing  : No
     current_az      : AZ_ALL
-
-    [  Datanode State   ]
-
-        node             node_ip         port      instance                            state
-    --------------------------------------------------------------------------------------------------
-    1  pekpopgsci00235  10.244.62.204    5432      6001 /home/wuqw/cluster/dn1/   P Primary Normal
-    2  pekpopgsci00238  10.244.61.81     5432      6002 /home/wuqw/cluster/dn1/   S Standby Normal
+    
+[  Datanode State   ]
+    
+node                              node_ip         port                        instance                                   state
+    -----------------------------------------------------------------------------------------------------------------
+    1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
+    2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
     ```
-
+    
 -   Run the following commands on openGauss to generate the configuration file:
 
     ```

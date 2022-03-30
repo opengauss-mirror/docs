@@ -58,7 +58,7 @@ Maintenance personnel are not allowed to locate and analyze problems in the prod
     $GAUSSHOME/bin/gs_plan_simulator.sh -m restore -p 39000 -A planSimulatorfiles/
     ```
 
-    This command creates a database in the reproduction environment and the CN port number is 39000. In addition, a message is displayed indicating how to connect to the database. You can run  **EXPLAIN** _SQL statement_  to locate the fault. For details about the command parameters, see parameter description.
+    This command creates a database in the reproduction environment and the node port number is 39000. In addition, a message is displayed indicating how to connect to the database. You can run  **EXPLAIN** _SQL statement_  to locate the fault. For details about the command parameters, see parameter description.
 
 
 ## Syntax<a name="section1639811541193"></a>
@@ -104,7 +104,7 @@ Maintenance personnel are not allowed to locate and analyze problems in the prod
 
 -   -p
 
-    Creates a CN port for the database.
+    Creates a node port for the database.
 
 -   -A
 
