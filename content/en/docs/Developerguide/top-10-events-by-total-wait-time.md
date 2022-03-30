@@ -21,17 +21,17 @@ The following table lists columns in the Top 10 Events by Total Wait Time report
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p17397161153311"><a name="p17397161153311"></a><a name="p17397161153311"></a>Number of wait times.</p>
 </td>
 </tr>
-<tr id="row1323111589238"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p539761103312"><a name="p539761103312"></a><a name="p539761103312"></a>Total Wait Times(us)</p>
+<tr id="row1323111589238"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p539761103312"><a name="p539761103312"></a><a name="p539761103312"></a>Total Wait Time(us)</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p1839714119339"><a name="p1839714119339"></a><a name="p1839714119339"></a>Total wait time, in microseconds.</p>
 </td>
 </tr>
-<tr id="row20231155818239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p14397310334"><a name="p14397310334"></a><a name="p14397310334"></a>Wait Avg(us)</p>
+<tr id="row20231155818239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p14397310334"><a name="p14397310334"></a><a name="p14397310334"></a>Avg Wait Time(us)</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p83976173310"><a name="p83976173310"></a><a name="p83976173310"></a>Average wait time, in microseconds.</p>
 </td>
 </tr>
-<tr id="row1523145815238"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1539720163313"><a name="p1539720163313"></a><a name="p1539720163313"></a>Wait Class</p>
+<tr id="row1523145815238"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p120514272418"><a name="p120514272418"></a><a name="p120514272418"></a>Type</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p103971718339"><a name="p103971718339"></a><a name="p103971718339"></a>Wait event type.</p>
 </td>

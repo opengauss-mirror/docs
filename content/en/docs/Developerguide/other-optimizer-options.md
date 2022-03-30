@@ -252,8 +252,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **canonical\_pathkey**: after regularization pathkey is generated. \(**pathkey**: a set of ordered key values of data.\)
 -   **index\_cost\_with\_leaf\_pages\_only**: Considers index leaf nodes when the index cost is estimated.
 -   **partition\_opfusion**: Enables partitioned table optimization.
--   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [en-us\_topic\_0289900690.md\#section20337194392613](en-us_topic_0289900690.md#section20337194392613).
+-   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [Type Resolution for CASE in ORA Compatibility Type](en-us_topic_0289900690.md#section20337194392613).
 -   **partition\_fdw\_on**: SQL statements can be created for Postgres foreign tables based on partitioned tables.
+-   **predpush\_same\_level**: Enables predpush hints to control parameterized paths at the same layer.
 
 **Default value:** **none**
 

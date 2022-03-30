@@ -6,5 +6,5 @@ Logical replication is built with an architecture similar to physical streaming 
 
 The apply process in the subscriber database always runs with  **session\_replication\_role**  set to  **replica**, which produces the usual effects on triggers and constraints.
 
-The logical replication apply process currently fires only row triggers, not statement triggers. However, the initial table synchronization is implemented through methods similar to  **COPY**  command execution, and therefore row and statement triggers for INSERT are fired.
+The logical replication apply process currently fires only row triggers, not statement triggers. However, the initial table synchronization is implemented through methods similar to  **COPY**  command execution, and therefore, row and statement triggers for INSERT are fired.
 

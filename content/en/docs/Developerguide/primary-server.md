@@ -12,7 +12,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: a string If this parameter is set to  **\***, the name of any standby node that provides synchronous replication is matched. The value can be configured in the following format:
 
--   ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\)
+-   ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\) \[, ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\)\]
 -   \[FIRST\]  _num\_sync_  \(_standby\_name_  \[, ...\]\)
 -   _standby\_name_  \[, ...\]
 
@@ -23,7 +23,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
     >-   The meanings of dn\_instanceId1, dn\_instanceId2, ... are the same as those of FIRST 1 \(dn\_instanceId1, dn\_instanceId2, ...\).
 
 
-If you use the  **gs\_guc**  tool to set this parameter, perform the following operations:
+If you use the gs\_guc tool to set this parameter, perform the following operations:
 
 ```
 gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY NODE 1(dn_instanceId1, dn_instanceId2)'";

@@ -29,7 +29,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the user ID of the current session.
 
-This parameter is an internal parameter of the USERSET type and can be set only using the  [SET SESSION AUTHORIZATION](en-us_topic_0289899948.md)  syntax.
+This parameter is of the USERSET type and can be set only using the  [SET SESSION AUTHORIZATION](en-us_topic_0289899948.md)  syntax.
 
 **Value range**: a string
 
@@ -50,7 +50,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## ssl<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa"></a>
 
-**Parameter description**: Specifies whether SSL connections are enabled. Read  [Using gsql to Connect to a Database](using-gsql-to-connect-to-a-database.md)  before setting this parameter.
+**Parameter description**: Specifies whether SSL connections are enabled. Read  [Using gsql to Connect to a Database](en-us_topic_0289900019.md)  before setting this parameter.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -66,7 +66,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## require\_ssl<a name="en-us_topic_0283137371_en-us_topic_0237124696_section1652594319820"></a>
 
-**Parameter description**: Specifies whether the server requires the SSL connection. This parameter is valid only when  **[ssl](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  is set to  **on**. Read  [Using gsql to Connect to a Database](using-gsql-to-connect-to-a-database.md)  before setting this parameter.
+**Parameter description**: Specifies whether the server requires the SSL connection. This parameter is valid only when  **[ssl](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  is set to  **on**. Read  [Using gsql to Connect to a Database](en-us_topic_0289900019.md)  before setting this parameter.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -86,12 +86,12 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: a string. Separate multiple encryption algorithms by semicolons \(;\). For details about supported encryption algorithms, see  [Establishing Secure TCP/IP Connections in SSL Mode](establishing-secure-tcp-ip-connections-in-ssl-mode.md).
+**Value range**: a string. Separate multiple encryption algorithms by semicolons \(;\). For details about supported encryption algorithms, see  [Establishing Secure TCP/IP Connections in SSL Mode](en-us_topic_0289900924.md).
 
 **Default value**:  **ALL**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->If ssl\_ciphers is set incorrectly, the database cannot be started properly.
+>If  **ssl\_ciphers**  is set incorrectly, the database cannot be started properly.
 
 ## ssl\_renegotiation\_limit<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s52ca816208d444eca495ad205c3da3cb"></a>
 
@@ -230,7 +230,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## password\_reuse\_max<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53"></a>
 
-**Parameter description**: Specifies whether to check the reuse times of the new password when you run the  **ALTER USER**  or  **ALTER ROLE**  command to change a user password. Only the sysadmin user can access this parameter. For details about the password reuse policy, see  [Setting Password Security Policies](en-us_topic_0289900602.md).
+**Parameter description**: Specifies whether to check the reuse times of the new password when you run the  **ALTER USER**  or  **ALTER ROLE**  command to change a user password. Only the  **sysadmin**  user can access this parameter. For details about the password reuse policy, see  [Setting Password Security Policies](en-us_topic_0289900602.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

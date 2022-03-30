@@ -6,14 +6,14 @@ This section describes parameters related to client-server connection modes.
 
 **Parameter description**: Specifies the TCP/IP address of the client for a server to listen on.
 
-This parameter specifies the IP address used by the openGauss server for listening, for example, IPv4 or IPv6 \(if supported\). Multiple NICs may exist on the host and each NIC can be bound to multiple IP addresses. This parameter specifies the IP addresses to which openGauss is bound. The client can use the IP address specified by this parameter to connect to or send requests to openGauss.
+This parameter specifies the IP address used by the openGauss server for listening, for example, IPv4  or IPv6 \(if supported\). Multiple NICs may exist on the host and each NIC can be bound to multiple IP addresses. This parameter specifies the IP addresses to which openGauss is bound. The client can use the IP address specified by this parameter to connect to or send requests to openGauss.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**:
 
 -   Host name or IP address. Multiple values are separated with commas \(,\).
--   Asterisk \(\*\) or  **0.0.0.0**, indicating that all IP addresses will be listened to, which is not recommended due to potential security risks. This parameter must be used together with valid addresses \(for example, the local IP address\). Otherwise, the build may fail. At the same time, when the configuration is "\\*" or "0.0.0.0" in the active/standby environment, the localport port number in the postgresql.conf file under the database path of the active node cannot be the database dataPortBase+1, otherwise the database cannot be started.
+-   Asterisk \(\*\) or  **0.0.0.0**, indicating that all IP addresses will be listened to, which is not recommended due to potential security risks. This parameter must be used together with valid addresses \(for example, the local IP address\). Otherwise, the build may fail. In primary/standby mode, if the value is set to  **\\\***  or  **0.0.0.0**, the value of  **localport**  in the  **postgresql.conf**  file of the database on the primary node cannot be the value of  **dataPortBase + 1**. Otherwise, the database cannot be started.
 -   If the parameter is not specified, the server does not listen on any IP address. In this case, only Unix domain sockets can be used for database connections.
 
 **Default value**: After the database instance is installed, the default value is configured according to the IP address of different instances in the XML configuration file. The default value for the DN instance is  **'x.x.x.x'**.
@@ -50,12 +50,12 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer. The minimum value is  **10**  \(greater than  _max\_wal\_senders_\). The theoretical maximum value is  **262143**. The actual maximum value is a dynamic value, which is calculated using the formula 262143 –_ job\_queue\_processes_  –  _autovacuum\_max\_workers_  –  _AUXILIARY\_BACKENDS_  –  _AV\_LAUNCHER\_PROCS_. The values of  _[job\_queue\_processes](en-us_topic_0289900522.md#en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section10342177134137)_,  _[autovacuum\_max\_workers](en-us_topic_0289900634.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)_, and  _[max\_inner\_tool\_connections](#en-us_topic_0283136886_section132711513143211)_  depend on the settings of the corresponding GUC parameters.  _AUXILIARY\_BACKENDS_  indicates the number of reserved auxiliary threads, which is fixed to 20.  _AV\_LAUNCHER\_PROCS_  indicates the number of reserved lancher threads for autovacuum, which is fixed to 2.
+**Value range**: an integer. The minimum value is  **10**  \(greater than the value of  _max\_wal\_senders_\). The theoretical maximum value is  **262143**. The actual maximum value is a dynamic value, which is calculated using the formula 262143 – value of  _job\_queue\_processes_  – value of  _autovacuum\_max\_workers_  – value of  _AUXILIARY\_BACKENDS_  – value of  _AV\_LAUNCHER\_PROCS_. The values of  [_job\_queue\_processes_](en-us_topic_0000001083527348.md#en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section10342177134137),  _[autovacuum\_max\_workers](en-us_topic_0289900634.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)_, and  _[max\_inner\_tool\_connections](#en-us_topic_0283136886_section132711513143211)_  depend on the settings of the corresponding GUC parameters.  _AUXILIARY\_BACKENDS_  indicates the number of reserved auxiliary threads, which is fixed at 20.  _AV\_LAUNCHER\_PROCS_  indicates the number of reserved launcher threads for autovacuum, which is fixed at 2.
 
-**Default value**: **200**
+**Default value**:
 
-- **200**: In the case of compiling and installing the database or minimally installing the database.
-- **5000**: In the case of using om to install the database.
+-   **200**: Applicable when the database is installed in build or simplified mode.
+-   **5000**: Applicable when the database is installed using the OM tool.
 
 **Setting suggestions**:
 
@@ -76,7 +76,7 @@ Retain the default value of this parameter on the primary node of the databases.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _MIN_  \(which takes the smaller value between **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connection_, see the preceding description.
+**Value range**: an integer ranging from 1 to  _MIN_  \(which takes the smaller value between  **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connections_, see the preceding description.
 
 **Default value**:  **50**  for each database node. If the default value is greater than the maximum value supported by the kernel \(determined when the  **gs\_initdb**  command is executed\), an error message is displayed.
 
@@ -92,15 +92,15 @@ If this parameter is set to a large value, openGauss requires more System V shar
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _MIN_  \(which takes the smaller value between  **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connection_, see the preceding description.
+**Value range**: an integer ranging from 0 to  _MIN_  \(which takes the smaller value between  **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connections_, see the preceding description.
 
 **Default value**:  **3**
 
 ## unix\_socket\_directory<a name="en-us_topic_0283136886_en-us_topic_0237124695_en-us_topic_0059777636_s29dfb1c7d5124f6aa26c7465d2e43c6d"></a>
 
-**Parameter description**: Specifies the Unix domain socket directory that the openGauss server listens to for connections from the client.
+**Parameter description**: Specifies the Unix domain socket directory for the openGauss server to listen to connections from the client.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 The parameter length limit varies by OS. If the length is exceeded, the error "Unix-domain socket path xxx is too long" will be reported.
 
@@ -116,7 +116,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: a string. If this parameter is set to an empty string, the default group of the current user is used.
 
-**Default value**: an empty string
+**Default value**: empty
 
 ## unix\_socket\_permissions<a name="en-us_topic_0283136886_en-us_topic_0237124695_en-us_topic_0059777636_s09d0cf55124b4f1aa3d401d18b9b4151"></a>
 
@@ -130,7 +130,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: 0000 to 0777
 
-**Default value**: 0777
+**Default value**:  **0700**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >In the Linux OS, a document has one document attribute and nine permission attributes, which consists of the read \(r\), write \(w\), and execute \(x\) permissions of the Owner, Group, and Others groups.
@@ -152,6 +152,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
+When a standby node requests to replicate logs on the primary node, if this parameter is not an empty string, it is used as the name of the streaming replication slot of the standby node on the primary node. In this case, if the length of this parameter exceeds 61 bytes, only the first 61 bytes are used as the streaming replication slot name.
+
 **Value range:**  a string
 
 **Default value**: empty \(The actual value is the name of the application connected to the backend.\)
@@ -170,7 +172,7 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 >-   An empty string indicates that the driver connected to the database does not support automatic setting of the  **connection\_info**  parameter or the parameter is not set by users in applications.
 >-   The following is an example of the concatenated value of  **connection\_info**:
 >    ```
->    {"driver_name":"ODBC","driver_version": "(openGauss X.X.X build 13b34b53) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 debug","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}
+>    {"driver_name":"ODBC","driver_version": "(openGauss X.X.X build 13b34b53) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 release","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}
 >    ```
->    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](connecting-to-a-database.md) and [Configuring a Data Source in the Linux OS](configuring-a-data-source-in-the-linux-os.md).
+>    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](en-us_topic_0289900896.md)  and  [Configuring a Data Source in the Linux OS](en-us_topic_0289900737.md).
 
