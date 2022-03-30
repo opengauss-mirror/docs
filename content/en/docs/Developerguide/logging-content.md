@@ -4,7 +4,7 @@
 
 **Parameter description**: Specifies whether to print parsing tree results.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -17,7 +17,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Parameter description**: Specifies whether to print query rewriting results.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -30,7 +30,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Parameter description**: Specifies whether to print the query execution plan to logs.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -40,14 +40,14 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 **Default value**:  **off**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   Debugging information about  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**  are printed only when the log level is set to  **log**  or higher. When these parameters are set to  **on**, their debugging information will be recorded in server logs and will not be sent to client logs. You can change the log level by setting  **[client\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **[log\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**.
+>-   Debugging information about  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**  are printed only when the log level is set to  **log**  or higher. When these parameters are set to  **on**, their debugging information will be recorded in server logs and will not be sent to client logs. You can change the log level by setting  **[client\_min\_messages](en-us_topic_0289900345.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **[log\_min\_messages](en-us_topic_0289900345.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**.
 >-   Do not invoke the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions when  **debug\_print\_plan**  is set to  **on**, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions in the log files generated when  **debug\_print\_plan**  is set to  **on**  before providing the log files to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.
 
 ## debug\_pretty\_print<a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_s5bc0c94946f647878268bca243d4a828"></a>
 
 **Parameter description**: Indents the logs produced by  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**. The output format is more readable but much longer than that generated when this parameter is set to  **off**.
 
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -60,7 +60,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Parameter description**: Specifies whether the statistics on checkpoints and restart points are recorded in the server logs. When this parameter is set to  **on**, statistics on checkpoints and restart points are recorded in the log messages, including the number of buffers written and the time spent in writing them.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -73,7 +73,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Parameter description**: Specifies whether to record connection request information of the client.
 
-This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >Some client programs, such as gsql, attempt to connect twice while determining if a password is required. In this case, duplicate "connection receive" messages do not necessarily indicate a problem.
@@ -89,7 +89,7 @@ This parameter is a BACKEND parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to record disconnection request information of the client.
 
-This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -102,11 +102,11 @@ This parameter is a BACKEND parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to record the duration of every completed SQL statement. For clients using extended query protocols, the time required for parsing, binding, and executing steps are logged independently.
 
-This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **off**: Compared with this option,  **[log\_min\_duration\_statement](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s62cf0fb833324a82a841f02134a932e5)**  forcibly records the query text.
+-   **off**: Compared with this option,  **[log\_min\_duration\_statement](en-us_topic_0289900345.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s62cf0fb833324a82a841f02134a932e5)**  forcibly records the query text.
 -   If this parameter is set to  **on**  and  **log\_min\_duration\_statement**  is set to a positive value, the duration of each completed statement is logged but the query text is included only for statements exceeding the threshold. This behavior can be used for gathering statistics in high-load situation.
 
 **Default value**:  **off**
@@ -115,7 +115,7 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Parameter description**: Specifies the amount of detail written in the server log for each message that is logged.
 
-This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:**  enumerated values
 
@@ -129,7 +129,7 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Parameter description**: By default, connection log messages only show the IP address of the connecting host. The host name can be recorded when this parameter is set to  **on**. It may take some time to parse the host name. Therefore, the database performance may be affected.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -142,7 +142,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Parameter description**: Specifies the prefix format of each log information. A prefix is a printf-style string that is output at the beginning of each line of the log. The "escape sequences" which begin with  **%**  are replaced with status information as listed in  [Table 1](#en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_en-us_topic_0058967718_table27298862).
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Table  1**  Escape characters
 
@@ -272,9 +272,9 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 ## log\_lock\_waits<a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_s0e43c2815b8a4f369d5b150535d1703f"></a>
 
-**Parameter description**: If the time for which a session waits to acquire a lock is longer than the value of  **[deadlock\_timeout](lock-management.md#en-us_topic_0283136691_en-us_topic_0237124735_en-us_topic_0059778102_se697b4ff00b643938b67eb5e08206cd5)**, this parameter specifies whether to record this message in the database. This is useful in determining if lock waits are causing poor performance.
+**Parameter description**: If the time for which a session waits to acquire a lock is longer than the value of  **[deadlock\_timeout](en-us_topic_0289900212.md#en-us_topic_0283136691_en-us_topic_0237124735_en-us_topic_0059778102_se697b4ff00b643938b67eb5e08206cd5)**, this parameter specifies whether to record this message in the database. This is useful in determining if lock waits are causing poor performance.
 
-This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -287,7 +287,7 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Parameter description**: Specifies which SQL statements are recorded. For clients using extended query protocols, logging occurs when an Execute message is received, and values of the Bind parameters are included \(with any embedded single quotation marks doubled\).
 
-This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >Statements that contain simple syntax errors are not logged even if  **log\_statement**  is set to  **all**, because the log message is emitted only after basic parsing has been completed to determine the statement type. If an extended query protocol is used, statements that fail before the execution phase \(during parse analysis or planning\) are not logged, either. Set  **log\_min\_error\_statement**  to  **ERROR**  or lower to log such statements.
@@ -305,7 +305,7 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Parameter description**: Specifies whether to record the deletion information of temporary files. Temporary files can be created for sorting, hashing, and storing temporary querying results. If the recording is enabled, a log entry is generated for each temporary file when it is deleted.
 
-This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from –1 to 2147483647. The unit is KB.
 
@@ -317,22 +317,22 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 ## log\_timezone<a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_s89bcaafcf2a6440ebe03b724cd4d0156"></a>
 
-**Parameter description**: Specifies the time zone used for timestamps written in the server log. Different from  [TimeZone](locale-and-formatting.md#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_sa60c5d71347646c2ad97ccb7541c6f12), this parameter takes effect for all sessions in the database.
+**Parameter description**: Specifies the time zone used for timestamps written in the server log. Different from  [TimeZone](en-us_topic_0289900528.md#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_sa60c5d71347646c2ad97ccb7541c6f12), this parameter takes effect for all sessions in the database.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string. You can obtain it by querying the  [PG\_TIMEZONE\_NAMES](en-us_topic_0289900200.md)  view.
 
-**Default value**:  **PRC**
+**Default value**: PRC
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The default value will be changed when  **gs\_initdb**  is used to set system environments.
 
 ## logging\_module<a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_section4455896615058"></a>
 
-**Parameter description**: Specifies whether module logs are output on the server. This parameter is a session-level parameter, and you are advised not to use the  **gs\_guc**  tool to set it.
+**Parameter description**: Specifies whether module logs are output on the server. This parameter is a session-level parameter, and you are advised not to use the gs\_guc tool to set it.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -382,7 +382,7 @@ openGauss=# show logging_module;                                                
 
 **Parameter description**: Checks whether simple queries are optimized for debugging. If this parameter is set to  **log**, you can view the specific reasons why queries are not optimized in the database node execution plans.
 
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:**  enumerated values
 
@@ -398,7 +398,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Parameter description**: Specifies whether to allow output of some VACUUM-related logs for problem locating. This parameter is used only by developers. Common users are advised not to use it.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 

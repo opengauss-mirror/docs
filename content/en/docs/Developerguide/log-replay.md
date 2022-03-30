@@ -4,7 +4,7 @@
 
 **Parameter description**: Specifies the time for a standby server to write and replay logs.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 3600. The unit is s.
 
@@ -16,7 +16,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the maximum number of concurrent replay threads.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to 20
 
@@ -26,11 +26,11 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the number of  **ParseRedoRecord**  threads for the extreme Recovery Time Objective \(RTO\) feature.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to 16
 
-This parameter can be set to a value greater than 1 only when the extreme RTO feature is enabled. In addition, it must be used together with  **recovery\_redo\_workers**. If both  **recovery\_parse\_workers**  and  **recovery\_max\_workers**  are enabled, the setting of  **recovery\_parse\_workers**  prevails and the concurrent replay function is disabled. The extreme RTO feature does not support the hot standby mode or primary/standby/secondary mode. Therefore,  **recovery\_parse\_workers**  can be set to a value greater than 1 only when  **[hot\_standby](standby-server.md#en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa43017102b08472cb160e9f856e664bd)**  is set to  **off**  and  **[replication\_type](transaction.md#en-us_topic_0283136901_en-us_topic_0237124741_section94292665717)**  to  **1**. This feature does not support column-store tables, either. Therefore, disable this feature in a system where column-store tables are used or are to be used. The ultimate RTO does not have flow control. Instead, flow control is determined by the  [recovery\_time\_target](#en-us_topic_0283136722_en-us_topic_0237124709_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373)  parameter.
+This parameter can be set to a value greater than 1 only when the extreme RTO feature is enabled. In addition, it must be used together with  **recovery\_redo\_workers**. If both  **recovery\_parse\_workers**  and  **recovery\_max\_workers**  are enabled, the setting of  **recovery\_parse\_workers**  prevails and the concurrent replay function is disabled. The extreme RTO feature does not support the hot standby mode or primary/standby/secondary mode. Therefore,  **recovery\_parse\_workers**  can be set to a value greater than 1 only when  **[hot\_standby](en-us_topic_0289900463.md#en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa43017102b08472cb160e9f856e664bd)**  is set to  **off**  and  **[replication\_type](transaction.md#en-us_topic_0283136901_en-us_topic_0237124741_section94292665717)**  to  **1**. This feature does not support column-store tables, either. Therefore, disable this feature in a system where column-store tables are used or are to be used. The ultimate RTO does not have flow control. Instead, flow control is determined by the  [recovery\_time\_target](#en-us_topic_0283136722_en-us_topic_0237124709_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373)  parameter.
 
 **Default value**:  **1**
 
@@ -38,7 +38,7 @@ This parameter can be set to a value greater than 1 only when the extreme RTO fe
 
 **Parameter description**: Specifies the number of  **PageRedoWorker**  threads corresponding to each  **ParseRedoRecord**  thread when the ultimate RTO feature is enabled.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to 8
 
@@ -60,7 +60,7 @@ This parameter is a POSTMASTER parameter and is affected by recovery\_max\_worke
 
 **Parameter description**: Specifies whether to enable the data page LSN check. During replay, the current LSN of the data page is checked to see if it is the expected one.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -70,7 +70,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the replay delay of the standby node.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   This parameter does not take effect on the primary node. It must be set on the standby node that requires a delay. You are advised to set this parameter on the asynchronous standby node. If the delay is set on the asynchronous standby node, the RTO will be long after the node is promoted to primary.
@@ -89,13 +89,13 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## redo\_bind\_cpu\_attr<a name="section787511112134"></a>
 
-**Parameter description**: Specifies the core binding operation of the replay thread. Only the  **sysadmin**  user can access this parameter. This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Parameter description**: Specifies the core binding operation of the replay thread. Only the  **sysadmin**  user can access this parameter. This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0289899927.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string of more than 0 characters. The value is case-insensitive.
 
--   **'\(nobind\)'**: The thread is not bound to a core.
--   **'\(nodebind: 1, 2\)'**: Use the CPU cores in NUMA groups 1 and 2 to bind threads.
--   **'\(cpubind: 0-30\)'**: Use the CPU cores 0 to 30 to bind threads.
+-   **'nobind'**: The thread is not bound to a core.
+-   **'nodebind: 1, 2'**: Use the CPU cores in NUMA groups 1 and 2 to bind threads.
+-   **'cpubind: 0-30'**: Use the CPU cores 0 to 30 to bind threads.
 
 **Default value**:  **'nobind'**
 

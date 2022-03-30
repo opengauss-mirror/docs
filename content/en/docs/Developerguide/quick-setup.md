@@ -6,7 +6,7 @@ Set the following configuration items in the  **postgresql.conf**  file:
 wal_level = logical
 ```
 
-For a basic setup, retain the default values for the other required settings.
+For a basic setup, retain the default values for the other necessary configuration items.
 
 You need to adjust the  **pg\_hba.conf**  file to allow replication \(the value depends on the actual network configuration and the user used for connection\).
 
@@ -26,5 +26,5 @@ In the subscriber database:
 CREATE SUBSCRIPTION mysub CONNECTION 'dbname=foo host=bar user=repuser' PUBLICATION mypub;
 ```
 
-The above statement starts the replication process, replicating incremental changes to those tables.
+The above statements start the replication process, replicating incremental changes to those tables.
 

@@ -26,5 +26,6 @@ In the preceding information:
 openGauss supports access to array elements by using parentheses, and it also supports the  **extend**,  **count**,  **first**,  **last**,  **prior**,  **exists**,  **trim**,  **next**, and  **delete**  functions.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->If a stored procedure contains a DML statement \(such as SELECT, UPDATE, INSERT, and DELETE\), you are advised to use square brackets to access array elements. Using parentheses will access arrays by default. If no array exists, function expressions will be identified.
+>-   If a stored procedure contains a DML statement \(such as SELECT, UPDATE, INSERT, and DELETE\), you are advised to use square brackets to access array elements. Using parentheses will access arrays by default. If no array exists, function expressions will be identified.
+>-   When the CLOB size is greater than 1 GB, the table of type, record type, and CLOB cannot be used in the input or output parameter, cursor, or raise info in a stored procedure.
 

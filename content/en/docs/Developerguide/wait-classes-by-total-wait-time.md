@@ -11,7 +11,7 @@ The following table lists columns in the Wait Classes by Total Wait Time report.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row623125811239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p352265393316"><a name="p352265393316"></a><a name="p352265393316"></a>Wait Class</p>
+<tbody><tr id="row623125811239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p352265393316"><a name="p352265393316"></a><a name="p352265393316"></a>Type</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p11522105313311"><a name="p11522105313311"></a><a name="p11522105313311"></a>Wait events are classified as follows:</p>
 <a name="ul10923115720334"></a><a name="ul10923115720334"></a><ul id="ul10923115720334"><li>STATUS</li><li>LWLOCK_EVENT</li><li>LOCK_EVENT</li><li>IO_EVENT</li></ul>
@@ -27,7 +27,7 @@ The following table lists columns in the Wait Classes by Total Wait Time report.
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p2522115393318"><a name="p2522115393318"></a><a name="p2522115393318"></a>Total wait time, in microseconds.</p>
 </td>
 </tr>
-<tr id="row20231155818239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p0522155310337"><a name="p0522155310337"></a><a name="p0522155310337"></a>Wait Avg(us)</p>
+<tr id="row20231155818239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p0522155310337"><a name="p0522155310337"></a><a name="p0522155310337"></a>Avg Wait Time(us)</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p14522145323318"><a name="p14522145323318"></a><a name="p14522145323318"></a>Average wait time, in microseconds.</p>
 </td>

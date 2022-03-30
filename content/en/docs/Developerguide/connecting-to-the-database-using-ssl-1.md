@@ -62,10 +62,9 @@ When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SS
 </td>
 <td class="cellrowborder" valign="top" width="27.362736273627362%" headers="mcps1.2.4.1.2 "><p id="p679981717180"><a name="p679981717180"></a><a name="p679981717180"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p17799317131814"><a name="p17799317131814"></a><a name="p17799317131814"></a>The SSL connection must be enabled, which is not supported currently.</p>
+<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p17799317131814"><a name="p17799317131814"></a><a name="p17799317131814"></a>The SSL connection must be enabled. Currently, <span id="text159163191612"><a name="text159163191612"></a><a name="text159163191612"></a>openGauss</span> does not support this option.</p>
 </td>
 </tr>
 </tbody>
 </table>
-
 

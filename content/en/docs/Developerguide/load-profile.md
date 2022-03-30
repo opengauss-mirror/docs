@@ -11,12 +11,12 @@ The following table lists metrics in the Load Profile report.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row623125811239"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p166249373287"><a name="p166249373287"></a><a name="p166249373287"></a>DB Time(microseconds)</p>
+<tbody><tr id="row623125811239"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p166249373287"><a name="p166249373287"></a><a name="p166249373287"></a>DB Time(us)</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.21%" headers="mcps1.2.3.1.2 "><p id="p664062292"><a name="p664062292"></a><a name="p664062292"></a>Total elapsed time of a job.</p>
 </td>
 </tr>
-<tr id="row123110587238"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p96241372287"><a name="p96241372287"></a><a name="p96241372287"></a>CPU Time(microseconds)</p>
+<tr id="row123110587238"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p96241372287"><a name="p96241372287"></a><a name="p96241372287"></a>CPU Time(us)</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.21%" headers="mcps1.2.3.1.2 "><p id="p106410614294"><a name="p106410614294"></a><a name="p106410614294"></a>Total CPU time used for job running.</p>
 </td>
@@ -81,12 +81,12 @@ The following table lists metrics in the Load Profile report.
 <td class="cellrowborder" valign="top" width="75.21%" headers="mcps1.2.3.1.2 "><p id="p1280795752816"><a name="p1280795752816"></a><a name="p1280795752816"></a>Number of transactions.</p>
 </td>
 </tr>
-<tr id="row0875134313254"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p15331144611285"><a name="p15331144611285"></a><a name="p15331144611285"></a>SQL response time P95</p>
+<tr id="row0875134313254"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p15331144611285"><a name="p15331144611285"></a><a name="p15331144611285"></a>SQL response time P95(us)</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.21%" headers="mcps1.2.3.1.2 "><p id="p8807457132819"><a name="p8807457132819"></a><a name="p8807457132819"></a>Response time of 95% SQL statements.</p>
 </td>
 </tr>
-<tr id="row198061645112515"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p183318466284"><a name="p183318466284"></a><a name="p183318466284"></a>SQL response time P80</p>
+<tr id="row198061645112515"><td class="cellrowborder" valign="top" width="24.79%" headers="mcps1.2.3.1.1 "><p id="p183318466284"><a name="p183318466284"></a><a name="p183318466284"></a>SQL response time P80(us)</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.21%" headers="mcps1.2.3.1.2 "><p id="p3807257162812"><a name="p3807257162812"></a><a name="p3807257162812"></a>Response time of 80% SQL statements.</p>
 </td>

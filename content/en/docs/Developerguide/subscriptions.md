@@ -4,7 +4,7 @@ A subscription is the downstream side of logical replication. The node where a s
 
 The subscriber database behaves in the same way as any other openGauss instance and can be used as a publisher for other databases by defining its own publications.
 
-A subscriber node can have multiple subscriptions if needed. You can define multiple subscriptions between a single publisher-subscriber pair, in which case you need to ensure that the subscribed publication objects do not overlap.
+A subscriber node can have multiple subscriptions if needed. You can define multiple subscriptions between a pair of publishers and subscribers, in which case you need to ensure that the published objects do not overlap.
 
 Each subscription will receive changes through a replication slot. Currently, initial data in pre-existing tables cannot be synchronized.
 
@@ -14,7 +14,7 @@ You can use  **CREATE SUBSCRIPTION**  to add a subscription,  **ALTER SUBSCRIPTI
 
 When a subscription is dropped and recreated, the synchronized information is lost. This means that the data must be resynchronized.
 
-The schema definitions are not replicated, and the published tables must exist on the subscriber. Only regular tables can be the target of replication. For example, a view cannot be replicated.
+The schema definitions are not replicated, and the published tables must exist on the subscriber. Only regular tables can be replicated. For example, a view cannot be replicated.
 
 The tables are matched between the publisher and the subscriber using fully qualified table names. Replication to differently-named tables on the subscriber is not supported.
 
