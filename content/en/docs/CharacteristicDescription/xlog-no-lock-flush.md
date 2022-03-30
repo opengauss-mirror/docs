@@ -1,8 +1,8 @@
-# Xlog no Lock Flush<a name="EN-US_TOPIC_0000001209477615"></a>
+# Xlog no Lock Flush<a name="EN-US_TOPIC_0000001209317775"></a>
 
 ## Availability<a name="section3480125215575"></a>
 
-This feature is available since openGauss 1.1.0.
+This feature is available since openGauss 2.0.0.
 
 ## Introduction<a name="section5814521587"></a>
 

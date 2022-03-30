@@ -1,4 +1,4 @@
-# Primary/Standby<a name="EN-US_TOPIC_0000001088566344"></a>
+# Primary/Standby<a name="EN-US_TOPIC_0000001152195133"></a>
 
 ## Availability<a name="section14707931165614"></a>
 
@@ -14,7 +14,7 @@ Services can be switched to the standby node when the primary node is faulty. Th
 
 ## Description<a name="section138621058175717"></a>
 
-The primary/standby environment supports two modes: primary/standby/secondary and one-primary-multiple-standby. In the primary/standby/secondary mode, the standby node needs to redo logs and can be promoted to the primary. However, the secondary node can only receive logs and cannot be promoted to the primary. In the one-primary-multiple-standby mode, all standby nodes need to redo logs and can be promoted to the primary. The primary/standby/secondary mode is mainly used for the OLAP system, saving storage resources. The one-primary-multiple-standby mode provides higher DR capabilities and is more suitable for the OLTP system that processes a large number of transactions.
+You can deploy the one-primary-multiple-standby mode. In the one-primary-multiple-standby mode, all standby nodes need to redo logs and can be promoted to the primary. The one-primary-multiple-standby mode provides higher DR capabilities and is more suitable for the OLTP system that processes a large number of transactions.
 
 The  **switchover**  command can be used to trigger a switchover between the primary and standby nodes. If the primary node is faulty, the  **failover**  command can be used to promote the standby node to the primary.
 
@@ -24,13 +24,13 @@ To implement HA DR for all instances, in addition to the preceding primary/stand
 
 ## Enhancements<a name="section437573965810"></a>
 
-None
+None.
 
 ## Constraints<a name="section1956417145819"></a>
 
-None
+None.
 
 ## Dependencies<a name="section15876411599"></a>
 
-None
+None.
 

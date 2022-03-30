@@ -1,4 +1,4 @@
-# Workload Diagnosis Report \(WDR\)<a name="EN-US_TOPIC_0000001135302869"></a>
+# WDR<a name="EN-US_TOPIC_0000001105235298"></a>
 
 ## Availability<a name="section11239174173316"></a>
 
@@ -6,20 +6,20 @@ This feature is available since openGauss 1.0.0.
 
 ## Introduction<a name="section2238114973310"></a>
 
-WDR provides database performance diagnosis reports based on the baseline performance and incremental data that reflects performance changes.
+The workload diagnosis report \(WDR\) provides database performance diagnosis reports based on the baseline performance and incremental data that reflects performance changes.
 
 ## Benefits<a name="section1938191193419"></a>
 
--   WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
+-   The WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
 -   Snapshots are also an important data source for self-diagnosis and self-optimization suggestions on subsequent performance problems.
 
 ## Description<a name="section49337943415"></a>
 
-WDR generates a performance report between two different time points based on the system performance snapshot data at these time points. The report is used to diagnose database kernel performance faults.
+The WDR generates a performance report between two different time points based on the system performance snapshot data at these time points. The report is used to diagnose database kernel performance faults.
 
 You can use generate\_wdr\_report\(...\) to generate a performance report based on two performance snapshots.
 
-WDR depends on the following two components:
+The WDR depends on the following two components:
 
 -   Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
 -   WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time points, and generates summarized and detailed performance data. For details, see  [Table 1](#table14895120191613)  and  [Table 2](#table23331848193120).
@@ -54,7 +54,7 @@ WDR depends on the following two components:
 <tr id="row189630111613"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p148961007164"><a name="p148961007164"></a><a name="p148961007164"></a>Events</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p115276341657"><a name="p115276341657"></a><a name="p115276341657"></a>Evaluates the performance of key system kernel resources and key events.</p>
-<p id="p789680191613"><a name="p789680191613"></a><a name="p789680191613"></a>The statistics include the number of times that the key time of the database kernel occurs and the waiting time.</p>
+<p id="p789680191613"><a name="p789680191613"></a><a name="p789680191613"></a>The statistics include the number of times that the key events of the database kernel occur and the waiting time.</p>
 </td>
 </tr>
 <tr id="row20583178178"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p559717121712"><a name="p559717121712"></a><a name="p559717121712"></a>Wait Classes</p>
@@ -116,8 +116,8 @@ WDR depends on the following two components:
 </tr>
 <tr id="row233424816311"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p133474810318"><a name="p133474810318"></a><a name="p133474810318"></a>Utility status</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p178211436699"><a name="p178211436699"></a><a name="p178211436699"></a>Diagnoses the performance of backend jobs.</p>
-<p id="p1334134843114"><a name="p1334134843114"></a><a name="p1334134843114"></a>The statistics include the performance of backend operations such as page operation and replication.</p>
+<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p178211436699"><a name="p178211436699"></a><a name="p178211436699"></a>Diagnoses the background task performance.</p>
+<p id="p1334134843114"><a name="p1334134843114"></a><a name="p1334134843114"></a>The statistics include the performance of background tasks such as replication.</p>
 </td>
 </tr>
 <tr id="row123341448113113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p11334848143110"><a name="p11334848143110"></a><a name="p11334848143110"></a>Object stats</p>
@@ -142,7 +142,7 @@ WDR depends on the following two components:
 
 ## Enhancements<a name="section9602018103411"></a>
 
-None
+None.
 
 ## Constraints<a name="section1956417145819"></a>
 
@@ -152,5 +152,5 @@ None
 
 ## Dependencies<a name="section15876411599"></a>
 
-None
+None.
 

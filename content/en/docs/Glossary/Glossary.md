@@ -52,11 +52,6 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a>Acronym for command-line interface. A means of communication between a program and its user, based solely on textual input and output. Commands are input with the help of a keyboard or similar device and are interpreted and executed by the program. Results are output as text or graphics to the terminal.</p>
 </td>
 </tr>
-<tr id="row1897814131516"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p930491217374"><a name="p930491217374"></a><a name="p930491217374"></a>CM</p>
-</td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1550044017374"><a name="p1550044017374"></a><a name="p1550044017374"></a>Acronym for cluster manager, a database management module. It manages and monitors the running status of functional units and physical resources in a system, ensuring stable running of the entire system.</p>
-</td>
-</tr>
 <tr id="row12703164422712"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p54125431608"><a name="p54125431608"></a><a name="p54125431608"></a>CMK</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>Acronym for client master key in the full encryption scenario. </p>

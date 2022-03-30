@@ -41,7 +41,7 @@ Currently, unified audit supports the following audit behaviors:
 </tr>
 <tr id="row108961159196"><td class="cellrowborder" valign="top" width="19%"><p id="p16896159397"><a name="p16896159397"></a><a name="p16896159397"></a>DML</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%"><p id="p17896115914919"><a name="p17896115914919"></a><a name="p17896115914919"></a>Operations: ALL, COPY, DEALLOCATE, DELETE_P, EXECUTE, REINDEX    INSERT, REPARE, SELECT, TRUNCATE, and UPDATE</p>
+<td class="cellrowborder" valign="top" width="81%"><p id="p17896115914919"><a name="p17896115914919"></a><a name="p17896115914919"></a>Operations: ALL, COPY, DEALLOCATE, DELETE, EXECUTE, REINDEX, INSERT, PREPARE, SELECT, TRUNCATE, and UPDATE</p>
 </td>
 </tr>
 </tbody>
@@ -59,7 +59,7 @@ None.
 -   In the same audit policy, the same resource tag can be bound to different audit behaviors, and the same behavior can be bound to different resource tags. The ALL operation type includes all operations supported by DDL or DML.
 -   A resource label can be associated with different unified audit policies. Unified audit outputs audit information in sequence based on the policies matched by SQL statements.
 -   Audit logs of unified audit policies are recorded separately. Currently, no visualized query interfaces are provided. Audit logs depend on the OS service Rsyslog and are archived through the service configuration.
--   In cloud service scenarios, logs need to be stored in the OBS. In a hybrid cloud scenario, Elastic Search can be deployed to collect and coordinate node logs and visualize them.
+-   In cloud service scenarios, logs need to be stored in the OBS. In hybrid cloud scenarios, you can deploy Elasticsearch to collect CN logs and perform visualized processing.
 -   It is recommended that  **APP**  in  **FILTER**  be set to applications in the same trusted domain. Since a client may be forged, a security mechanism must be formed on the client when  **APP**  is used to reduce misuse risks. Generally, you are not advised to set  **APP**. If it is set, pay attention to the risk of client spoofing.
 -   Taking an IPv4 address as an example, the following formats are supported:
 
@@ -95,5 +95,5 @@ None.
 
 ## Dependencies<a name="section22810484"></a>
 
-In the public cloud service scenario, the OSS or OBS is required for log storage.
+None.
 
