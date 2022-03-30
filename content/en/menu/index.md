@@ -1542,6 +1542,7 @@ headless: true
 		-   [Logical Decoding]({{< relref "./docs/Developerguide/logical-decoding.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview-100.md" >}})
 			-   [Logical Decoding by SQL Function Interfaces]({{< relref "./docs/Developerguide/logical-decoding-by-sql-function-interfaces.md" >}})
+		-   [Replicating Data Using the Logical Replication Tool]({{< relref "./docs/Developerguide/replicating-data-using-the-logical-replication-tool.md" >}})
 		-   [Publication-Subscription]({{< relref "./docs/Developerguide/publication-subscription.md" >}})	
 			-   [Publications]({{< relref "./docs/Developerguide/publications.md" >}})	
 			-   [Subscriptions]({{< relref "./docs/Developerguide/subscriptions.md" >}})	

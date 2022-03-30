@@ -23,7 +23,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 This parameter has a fixed value  **on**  during database restoration or on the standby node. Otherwise, set this parameter to the value of  **default\_transaction\_read\_only**.
 
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -52,7 +52,7 @@ This parameter is a SUSET parameter. Set it based on method 3 in  [Table 1](rese
 
 **Parameter description**: Specifies whether to allow concurrent update.
 
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -63,9 +63,9 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 ## transaction\_deferrable<a name="en-us_topic_0283136901_en-us_topic_0237124741_en-us_topic_0059778361_s0f3a7cc4a78f476390a39c0df72ec257"></a>
 
-**Parameter description**: Specifies whether to delay the execution of a read-only serial transaction without incurring an execution failure. Assume this parameter is set to  **on**. When the server detects that the tuples read by a read-only transaction are being modified by other transactions, it delays the execution of the read-only transaction until the other transactions finish modifying the tuples. This parameter is reserved and does not take effect in this version. Similar to this parameter, the  **[default\_transaction\_deferrable](statement-behavior.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_s031e2bbea2cf42a5a1c24e6dbaa70365)**  parameter is used to specify whether to allow delayed execution of a transaction.
+**Parameter description**: Specifies whether to delay the execution of a read-only serial transaction without incurring an execution failure. Assume this parameter is set to  **on**. When the server detects that the tuples read by a read-only transaction are being modified by other transactions, it delays the execution of the read-only transaction until the other transactions finish modifying the tuples. This parameter is reserved and does not take effect in this version. Similar to this parameter, the  **[default\_transaction\_deferrable](en-us_topic_0289900775.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_s031e2bbea2cf42a5a1c24e6dbaa70365)**  parameter is used to specify whether to allow delayed execution of a transaction.
 
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -78,7 +78,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Parameter description:**  This parameter is available only in a read-only transaction and is used for analysis. When this parameter is set to  **on**  or  **true**, all versions of tuples in the table are displayed.
 
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -91,7 +91,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Parameter description**: Specifies whether the current HA mode is standalone, primary/standby/secondary, or one primary multiple standbys.
 
-This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 This parameter is an internal parameter. Do not set it.
 
@@ -109,7 +109,7 @@ This parameter is an internal parameter. Do not set it.
 
 This parameter is a POSTMASTER parameter. Set it based on  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-When a standby node requests to replicate logs on the primary node, if the  **application\_name**  parameter is not set, this parameter is used as the name of the streaming replication slot of the standby node on the primary node. The streaming replication slot is named in the following format: Value of this parameter\_IP address of the standby node\_Port number of the standby node. The IP address and port number of the standby node are obtained from the IP address and port number of the standby node specified by the  **replconninfo**  parameter. The maximum length of a streaming replication slot name is 61 characters. If the length of the concatenated string exceeds 61 characters, the truncated  **pgxc\_node\_name**  will be used for concatenation to ensure that the length of the streaming replication slot name is less than or equal to 61 characters.
+When a standby node requests to replicate logs on the primary node, if the  **application\_name**  parameter is not set, the  **pgxc\_node\_name**  parameter is used as the name of the streaming replication slot of the standby node on the primary node. The streaming replication slot is named in the following format: Value of this parameter\_IP address of the standby node\_Port number of the standby node. The IP address and port number of the standby node are obtained from the IP address and port number of the standby node specified by the  **replconninfo**  parameter. The maximum length of a streaming replication slot name is 61 characters. If the length of the concatenated string exceeds 61 characters, the truncated  **pgxc\_node\_name**  will be used for concatenation to ensure that the length of the streaming replication slot name is less than or equal to 61 characters.
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >After this parameter is modified, the database instance will fail to be connected. You are advised not to modify this parameter.
