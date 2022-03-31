@@ -33,7 +33,10 @@ The enterprise edition is compatible with the earlier versions. Main functions a
     -   MySQL to openGauss migration tool Chameleon
     -   Using ShardingSphere to build a distributed database
     -   Deploying a distributed database using Kubernetes
-
+-   Support ANY permission management
+    - DBMind componentization
+    - In-library AI algorithms support XGBoost, multiclass and PCA
+    
 -   Fixed defects:
     -   [I4VUXG](https://gitee.com/opengauss/openGauss-server/issues/I4VUXG?from=project-issue): Fixed the data loss issue of unlogged tables.
     -   [I4SF5P](https://gitee.com/opengauss/openGauss-server/issues/I4SF5P?from=project-issue): Fixed the core dump issue occurred by running create extension dblink after the database is compiled and installed in the release version, and the dblink module is compiled and installed.

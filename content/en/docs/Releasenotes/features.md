@@ -26,7 +26,7 @@
 
 -   AI
 
-    Supports parameter self-tuning, slow SQL discovery, single query index recommendation, virtual index, workload index recommendation, database metric collection, forecast, and exception detection; compatible with the MADlib ecosystem and supports high-performance AI algorithms in the library.
+    Supports parameter self-tuning, slow SQL discovery, single query index recommendation, virtual index, workload index recommendation, database metric collection, forecast, and exception detection; The native AI engine in the library supports 10+ high-performance machine learning algorithms.
 
 
 ## New Features<a name="en-us_topic_0283136327_section383172195410"></a>
