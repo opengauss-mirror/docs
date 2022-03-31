@@ -18,7 +18,3 @@ You are welcome to actively help users solve problems raised in the  [mail list]
 
 You can contribute to the community by submitting code. We also welcome your feedback on problems and difficulties, or suggestions on improving the usability and integrity of documents, for example, problems encountered when obtaining software or documents and difficulties encountered when using the system. You are welcome to pay attention to and help us improve the documentation module of the openGauss community.
 
-**Internet Relay Chat \(IRC\)**
-
-openGauss has also opened an IRC channel as an additional channel to provide community support and interaction. For details, see  [openGauss IRC](https://opengauss.org/en/community/onlineCommunication.html).
-
