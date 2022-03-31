@@ -1,6 +1,6 @@
 # RPM安装
 
-本章节主要介绍在openEuler 22.03LTS操作系统上，通过yum命令一键安装openGauss数据库，方面开发者使用。
+本章节主要介绍在openEuler 22.03 LTS操作系统上，通过yum命令一键安装openGauss数据库。
 
 ## 支持的架构和操作系统版本
 
@@ -11,7 +11,7 @@
 
 ## 使用限制
 
-- 当前仅在openEuler 22.03 LTS 版本的操作系统上支持yum方式安装，支持arm64和x86_64两种平架构。
+- 当前仅在openEuler 22.03 LTS 版本的操作系统上支持yum方式安装，支持arm64和x86_64两种架构。
 - 集成到openEuler系统上的数据库基于openGauss轻量版的能力构建。
 - RPM方式安装的仅为单机版数据库实例，升级时候只能替换二进制，不支持灰度升级。
 - 默认安装实例监听127.0.0.1:7654地址和端口。如果需要进行远程连接，需要手动修改postgresql.conf文件中的listen_address。
@@ -19,11 +19,11 @@
 
 ## 安装方式
 
-1. 安装完成操作系统后使用yum install安装。
+- 安装完成操作系统后使用yum install安装。
 
-`yum install opengauss -y`
+    `yum install opengauss -y`
 
-2. 在安装操作系统过程中，software选择openGauss，安装操作系统时候默认安装上openGauss数据库。
+- 在安装操作系统过程中，software选择openGauss，安装操作系统时候默认安装上openGauss数据库。
 
 ![](public_sys-resources/soft_select.png)
 
