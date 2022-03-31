@@ -1,0 +1,80 @@
+# Hardware and Software Configuration Requirements<a name="EN-US_CONCEPT_0289895602"></a>
+
+## Software Configuration Requirements<a name="en-us_concept_0283139016_section209873376322"></a>
+
+**Table  1**  Software requirements
+
+<a name="en-us_topic_0085434629_en-us_topic_0059782022_tfb195a8129b24c709d238b091e57405a"></a>
+<table><thead align="left"><tr id="en-us_topic_0085434629_en-us_topic_0059782022_rbb0bb8c17c0c49fc9666f58bdd5487bb"><th class="cellrowborder" valign="top" width="25.2%" id="mcps1.2.3.1.1"><p id="en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a>Software</p>
+</th>
+<th class="cellrowborder" valign="top" width="74.8%" id="mcps1.2.3.1.2"><p id="en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a>Configuration Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>OS</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul2800840102316"></a><a name="en-us_concept_0283139016_ul2800840102316"></a><ul id="en-us_concept_0283139016_ul2800840102316"><li>Arm:<a name="en-us_concept_0283139016_ul177759349286"></a><a name="en-us_concept_0283139016_ul177759349286"></a><ul id="en-us_concept_0283139016_ul177759349286"><li>EulerOS V2.0SP10</li></ul>
+</li><li>x86:<a name="en-us_concept_0283139016_ul851564911283"></a><a name="en-us_concept_0283139016_ul851564911283"></a><ul id="en-us_concept_0283139016_ul851564911283"><li>EulerOS V2.0SP10</li><li>SUSE 12.5</li></ul>
+</li></ul>
+</td>
+</tr>
+<tr id="en-us_topic_0085434629_en-us_topic_0059782022_rf52ebb45df8e4f57882a97bef3b36ca6"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a>File system</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0283139016_en-us_concept_0238164429_p58701820272"><a name="en-us_concept_0283139016_en-us_concept_0238164429_p58701820272"></a><a name="en-us_concept_0283139016_en-us_concept_0238164429_p58701820272"></a>The ext4 file system is recommended for EulerOS.</p>
+<p id="en-us_concept_0283139016_en-us_concept_0238164429_p143519215717"><a name="en-us_concept_0283139016_en-us_concept_0238164429_p143519215717"></a><a name="en-us_concept_0283139016_en-us_concept_0238164429_p143519215717"></a>It is recommended that the number of remaining inodes be greater than 1.5 billion.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0085434629_en-us_topic_0059782022_r1f5aefa904854b5bbf1f82931d9fc9b5"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"><a name="en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"></a><a name="en-us_topic_0085434629_en-us_topic_0059782022_a9b2d673c90f94bd49a7d4bfdb277e3fb"></a>Tool</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0283139016_en-us_concept_0238164429_p1475231919563"><a name="en-us_concept_0283139016_en-us_concept_0238164429_p1475231919563"></a><a name="en-us_concept_0283139016_en-us_concept_0238164429_p1475231919563"></a>bzip2</p>
+</td>
+</tr>
+<tr id="row42888585468"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="p10290205804614"><a name="p10290205804614"></a><a name="p10290205804614"></a>Python</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul1537120034117"></a><a name="en-us_concept_0283139016_ul1537120034117"></a><ul id="en-us_concept_0283139016_ul1537120034117"><li>EulerOS: supports Python 3.7.X.</li><li>SUSE: supports Python 3.7.X.</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+## Hardware Configuration Requirements<a name="en-us_concept_0283139016_section108961253113216"></a>
+
+**Table  2**  Hardware requirements
+
+<a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_t62cd0eed17004265b1b8ad98f302a4bc"></a>
+<table><thead align="left"><tr id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_r22159407d305418785de8468729ae773"><th class="cellrowborder" valign="top" width="13.36%" id="mcps1.2.3.1.1"><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"></a>Hardware</p>
+</th>
+<th class="cellrowborder" valign="top" width="86.64%" id="mcps1.2.3.1.2"><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ae6742eb120254caba0d2e3e8d78d3ce6"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ae6742eb120254caba0d2e3e8d78d3ce6"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ae6742eb120254caba0d2e3e8d78d3ce6"></a>Configuration Description</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_r6e9f20e9463c41fa8ce77903aa38e901"><td class="cellrowborder" valign="top" width="13.36%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aac597314796e4f32be5624781db96791"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aac597314796e4f32be5624781db96791"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aac597314796e4f32be5624781db96791"></a>Minimum memory</p>
+</td>
+<td class="cellrowborder" valign="top" width="86.64%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_p2733433132815"><a name="en-us_concept_0283139016_en-us_topic_0238164450_p2733433132815"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_p2733433132815"></a>In performance tests and commercial deployment, the single-instance deployment is performed. It is recommended that the memory be greater than 1 GB.</p>
+<p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ab636748c0876485b987945069966473e"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ab636748c0876485b987945069966473e"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ab636748c0876485b987945069966473e"></a>Complex queries require much memory but the memory may be insufficient in high-concurrency scenarios. In this case, it is recommended that a large-memory server or load management be used to restrict concurrences on the system.</p>
+</td>
+</tr>
+<tr id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_row18457708163752"><td class="cellrowborder" valign="top" width="13.36%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p18679412163752"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p18679412163752"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p18679412163752"></a>CPU</p>
+</td>
+<td class="cellrowborder" valign="top" width="86.64%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_p655107143013"><a name="en-us_concept_0283139016_en-us_topic_0238164450_p655107143013"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_p655107143013"></a>In performance tests and commercial deployment, the single-instance deployment is performed. It is recommended that one 4-core 2.0 GHz CPU be used.</p>
+<p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode, but ensure the setting is consistent across all the primary and standby nodes.</p>
+</td>
+</tr>
+<tr id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_rc2f89a29186544e79e7995d19878a617"><td class="cellrowborder" valign="top" width="13.36%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a>Hard disk</p>
+</td>
+<td class="cellrowborder" valign="top" width="86.64%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p27815444154057"></a>Hard disks used for installing the instance must meet the following requirements:</p>
+<a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"></a><ul id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_ul38458483154057"><li>At least 200 MB is used to install the instance application package.</li><li>About 300 MB is used for each host to store metadata.</li><li>More than 70% of available disk space is reserved to store data.</li></ul>
+<p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p1864232295654"></a>You are advised to configure the system disk to RAID 1 and data disk to RAID 5 and plan four groups of RAID 5 data disks for installing <span id="text1370313309214"><a name="text1370313309214"></a><a name="text1370313309214"></a>openGauss</span> instance. RAID configuration is not described in this document. You can configure RAID by following instructions in the hardware vendors' manuals or using common methods found on the Internet. Set <strong id="b2071617121103"><a name="b2071617121103"></a><a name="b2071617121103"></a>Disk Cache Policy</strong> to <strong id="b157171112121012"><a name="b157171112121012"></a><a name="b157171112121012"></a>Disabled</strong> to avoid data loss in an unexpected power-off.</p>
+<p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p32157354152912"></a><span id="text1481916337241"><a name="text1481916337241"></a><a name="text1481916337241"></a>openGauss</span> supports using an SSD with the SAS API deployed in RAID mode as the primary storage device of the database.</p>
+</td>
+</tr>
+<tr id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_rfd1c9b77d83d4ffba092bdfbdc322881"><td class="cellrowborder" valign="top" width="13.36%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_a176cf03cd96e4828a9fcb162c5013968"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_a176cf03cd96e4828a9fcb162c5013968"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_a176cf03cd96e4828a9fcb162c5013968"></a>Network</p>
+</td>
+<td class="cellrowborder" valign="top" width="86.64%" headers="mcps1.2.3.1.2 "><p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_a3f99d3fb009c4aeaae03e63a481f33ff"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_a3f99d3fb009c4aeaae03e63a481f33ff"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_a3f99d3fb009c4aeaae03e63a481f33ff"></a>Minimum 300 Mbit/s Ethernet is required.</p>
+<p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p64430430154726"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p64430430154726"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p64430430154726"></a>You are advised to bond two NICs for redundancy. The configuration is not described in this document. You can configure it by following instructions in the manual provided by the hardware manufacturer or using the methods provided on the Internet.</p>
+<p id="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p35810156152855"><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p35810156152855"></a><a name="en-us_concept_0283139016_en-us_topic_0238164450_en-us_topic_0085434629_en-us_topic_0059782022_p35810156152855"></a>If bonds are configured for the primary and standby networks, ensure the consistency among these bond modes, because inconsistent bond modes may cause primary and standby communication exceptions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
