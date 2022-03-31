@@ -1074,6 +1074,7 @@ headless: true
 			-   [GS\_COLUMN\_KEYS]({{< relref "./docs/Developerguide/GS_COLUMN_KEYS.md" >}})
 			-   [GS\_COLUMN\_KEYS\_ARGS]({{< relref "./docs/Developerguide/GS_COLUMN_KEYS_ARGS.md" >}})
 			-   [GS\_DB\_PRIVILEGE]({{< relref "./docs/Developerguide/GS_DB_PRIVILEGE.md" >}})
+			-   [GS\_DB\_PRIVILEGES]({{< relref "./docs/Developerguide/GS_DB_PRIVILEGES.md" >}})
 			-   [GS\_ENCRYPTED\_COLUMNS]({{< relref "./docs/Developerguide/GS_ENCRYPTED_COLUMNS.md" >}})
 			-   [GS_ENCRYPTED_PROC]({{< relref "./docs/Developerguide/GS_ENCRYPTED_PROC" >}})
 			-   [GS_GLOBAL_CHAIN]({{< relref "./docs/Developerguide/GS_GLOBAL_CHAIN" >}})
