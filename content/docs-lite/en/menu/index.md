@@ -568,6 +568,7 @@ headless: true
 				-   [Hint for Selecting the Custom Plan or Generic Plan]({{< relref "./docs/Developerguide/hint-for-selecting-the-custom-plan-or-generic-plan.md" >}})
 				-   [Hint Specifying Not to Expand Subqueries]({{< relref "./docs/Developerguide/hint-specifying-not-to-expand-subqueries.md" >}})
 				-   [Hint Specifying Not to Use Global Plan Cache]({{< relref "./docs/Developerguide/hint-specifying-not-to-use-global-plan-cache.md" >}})
+				-   [Hint of Parameterized Paths at the Same Level]({{< relref "./docs/Developerguide/hint-of-parameterized-paths-at-the-same-level.md" >}})
 			-   [Using the Vectorized Executor for Tuning]({{< relref "./docs/Developerguide/using-the-vectorized-executor-for-tuning.md" >}})
 		-   [TPC-C Performance Tunning Test Guide]({{< relref "./docs/Developerguide/tpc-c-performance-tunning-test-guide.md" >}})
 			-   [Overview]({{< relref "./docs/Developerguide/overview-17.md" >}})
