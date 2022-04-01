@@ -21,7 +21,7 @@ gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其
 
 ## 主要功能<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
-gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--format=**\]**选项指定，具体如[表1](#zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)所示。
+gs\_dump可以创建四种不同的导出文件格式，通过“-F”或者“--format=”选项指定，具体如[表1](#zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)所示。
 
 **表 1**  导出文件格式
 
