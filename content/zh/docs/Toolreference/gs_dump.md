@@ -369,6 +369,10 @@ export PGDATABASE=postgres
 
     不转储订阅。
 
+    ![](public_sys-resources/icon-note.gif) **说明：**
+
+    -   当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，则必须指定该选项，否则会报权限不够。
+
 -   --no-tablespaces
 
     不输出选择表空间的命令。使用该选项，无论默认表空间是哪个，在恢复过程中所有对象都会被创建。
