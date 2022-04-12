@@ -204,7 +204,7 @@ The restrictions on simple query are as follows:
 -   **on**: enabled.
 -   **off**: disabled.
 
-**Default value**:  **off**
+**Default value**:  **on**
 
 ## enable\_partition\_opfusion<a name="section336053915313"></a>
 
