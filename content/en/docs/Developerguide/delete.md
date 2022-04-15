@@ -13,7 +13,7 @@
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [partition_clause] [ * ] [ [ AS ] alias ]
+DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ [ AS ] alias ]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
     [ RETURNING { * | { output_expr [ [ AS ] output_name ] } [, ...] } ];
