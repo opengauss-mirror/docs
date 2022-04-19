@@ -111,7 +111,6 @@
 -   **[PG\_USER\_MAPPINGS](pg_user_mappings.md)**  
 -   **[PG\_VIEWS](pg_views.md)**  
 -   **[PG\_TIMEZONE\_ABBREVS](pg_timezone_abbrevs.md)**  
--   **[PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID](pg_total_user_resource_info_oid-2.md)**  
 -   **[PG\_VARIABLE\_INFO](pg_variable_info.md)**  
 -   **[PG\_SESSION\_IOSTAT](pg_session_iostat.md)**  
 -   **[PG\_SESSION\_WLMSTAT](pg_session_wlmstat.md)**  
