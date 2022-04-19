@@ -17,7 +17,7 @@ PG\_RUNNING\_XACTS视图主要功能是显示当前节点运行事务的信息�
 </td>
 <td class="cellrowborder" valign="top" width="15.790000000000001%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778567_a3cf06a6a3ee841d7bac62a9ed3a8da24"><a name="zh-cn_topic_0059778567_a3cf06a6a3ee841d7bac62a9ed3a8da24"></a><a name="zh-cn_topic_0059778567_a3cf06a6a3ee841d7bac62a9ed3a8da24"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"><a name="zh-cn_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a><a name="zh-cn_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a>事务在GTM对应的句柄。</p>
+<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"><a name="zh-cn_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a><a name="zh-cn_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a>事务对应的事务管理器中的槽位句柄，该值恒为-1。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0059778567_rd0ce2f0fc41f4065ac89e15c2554b5cf"><td class="cellrowborder" valign="top" width="23.330000000000002%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059778567_a2fb68fcd236e4be19fb7e059b81b27e3"><a name="zh-cn_topic_0059778567_a2fb68fcd236e4be19fb7e059b81b27e3"></a><a name="zh-cn_topic_0059778567_a2fb68fcd236e4be19fb7e059b81b27e3"></a>gxid</p>
@@ -81,9 +81,10 @@ PG\_RUNNING\_XACTS视图主要功能是显示当前节点运行事务的信息�
 </td>
 <td class="cellrowborder" valign="top" width="15.790000000000001%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778567_a4dff37aaf5b04f8198bdb0b3ec964b70"><a name="zh-cn_topic_0059778567_a4dff37aaf5b04f8198bdb0b3ec964b70"></a><a name="zh-cn_topic_0059778567_a4dff37aaf5b04f8198bdb0b3ec964b70"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"><a name="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a><a name="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a><span id="text690741819219"><a name="text690741819219"></a><a name="text690741819219"></a>CN</span>传给<span id="text17585545502"><a name="text17585545502"></a><a name="text17585545502"></a>DN</span>的事务id号。</p>
+<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"><a name="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a><a name="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a><span id="text690741819219"><a name="text690741819219"></a><a name="text690741819219"></a>其余节点发送给当前节点的事务id，该值恒为0。</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
