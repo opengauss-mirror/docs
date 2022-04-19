@@ -1292,7 +1292,6 @@ headless: true
             -   [GS\_THREAD\_MEMORY\_CONTEXT]({{< relref "./docs/Developerguide/gs_thread_memory_context.md" >}})
             -   [GS\_TOTAL\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/gs_total_memory_detail.md" >}})
             -   [PG\_TIMEZONE\_ABBREVS]({{< relref "./docs/Developerguide/pg_timezone_abbrevs.md" >}})
-            -   [PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID]({{< relref "./docs/Developerguide/pg_total_user_resource_info_oid-2.md" >}})
             -   [PG\_VARIABLE\_INFO]({{< relref "./docs/Developerguide/pg_variable_info.md" >}})
             -   [GS\_INSTANCE\_TIME]({{< relref "./docs/Developerguide/gs_instance_time.md" >}})
             -   [GS\_WLM\_OPERATOR\_HISTORY]({{< relref "./docs/Developerguide/gs_wlm_operator_history.md" >}})
