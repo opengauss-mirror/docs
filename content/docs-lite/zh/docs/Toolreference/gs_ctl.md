@@ -230,7 +230,7 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_zh-cn_topic_0058968123_p908037314249"><a name="zh-cn_topic_0059777628_zh-cn_topic_0058968123_p908037314249"></a><a name="zh-cn_topic_0059777628_zh-cn_topic_0058968123_p908037314249"></a>指定当前连接数据库的运行模式。</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"><a name="zh-cn_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a><a name="zh-cn_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a>NODE-TYPE的取值为coordinator或者datanode。</p>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"><a name="zh-cn_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a><a name="zh-cn_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a>NODE-TYPE的取值为single_node。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-?, -h, --help</p>
