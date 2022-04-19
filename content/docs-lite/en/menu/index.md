@@ -1179,7 +1179,6 @@ headless: true
 			-   [PG\_USER\_MAPPINGS]({{< relref "./docs/Developerguide/pg_user_mappings.md" >}})
 			-   [PG\_VIEWS]({{< relref "./docs/Developerguide/pg_views.md" >}})
 			-   [PG\_TIMEZONE\_ABBREVS]({{< relref "./docs/Developerguide/pg_timezone_abbrevs.md" >}})
-			-   [PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID]({{< relref "./docs/Developerguide/pg_total_user_resource_info_oid-24.md" >}})
 			-   [PG\_VARIABLE\_INFO]({{< relref "./docs/Developerguide/pg_variable_info.md" >}})
 			-   [PG\_SESSION\_IOSTAT]({{< relref "./docs/Developerguide/pg_session_iostat.md" >}})
 			-   [PG\_SESSION\_WLMSTAT]({{< relref "./docs/Developerguide/pg_session_wlmstat.md" >}})
