@@ -23,7 +23,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >启停节点操作请参见《工具参考》中“服务端工具 \> gs\_ctl”章节。
+    >启停节点操作请参见《工具参考》中“系统内部调用的工具 \> gs\_ctl”章节。
 
 
 ## 示例<a name="zh-cn_topic_0283140572_zh-cn_topic_0237088789_zh-cn_topic_0059777680_s8c57591e1a444d5ea91a783a1a2b74c5"></a>
