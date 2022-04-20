@@ -526,30 +526,44 @@ gs\_om参数可以分为如下几类：
  
   ```
 
--   在openGauss上执行如下命令，生成配置文件。
+- 在openGauss上执行如下命令，生成配置文件。
+
+  ```
+  gs_om -t generateconf -X  /opt/software/openGauss/clusterconfig.xml  --distribute
+  Generating static configuration files for all nodes.
+  Creating temp directory to store static configuration files.
+  Successfully created the temp directory.
+  Generating static configuration files.
+  Successfully generated static configuration files.
+  Static configuration files for all nodes are saved in /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files.
+  Distributing static configuration files to all nodes.
+  Successfully distributed static configuration files.
+  ```
+
+  - 在openGauss上执行如下命令，修改配置文件，动态配置文件需要执行gs\_om -t refreshconf 手动刷新，实际端口或者ip生效需要手动修改guc参数。
 
     ```
-    gs_om -t generateconf -X  /opt/software/openGauss/clusterconfig.xml  --distribute
+    gs_om -t generateconf --old-values=26000,192.168.1.1  --new-values=36000,192.168.1.2  --distribute
     Generating static configuration files for all nodes.
     Creating temp directory to store static configuration files.
     Successfully created the temp directory.
     Generating static configuration files.
     Successfully generated static configuration files.
-    Static configuration files for all nodes are saved in /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files.
+    Static configuration files for all nodes are saved in /opt/huawei/Bigdata/gaussdb/wisequery/script/static_config_files.
     Distributing static configuration files to all nodes.
     Successfully distributed static configuration files.
     ```
 
-    然后打开生成的配置文件目录，会看到新生成的3个文件。
+  然后打开生成的配置文件目录，会看到新生成的3个文件。
 
-    ```
-    cd /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files
-    ll
-    total 456
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat1
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
-    ```
+  ```
+  cd /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files
+  ll
+  total 456
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat1
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
+  ```
 
 -   SSL证书回退。
 
