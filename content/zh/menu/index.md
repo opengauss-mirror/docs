@@ -359,6 +359,7 @@ headless: true
 			-   [校验账本数据一致性]({{< relref "./docs/Developerguide/校验账本数据一致性.md" >}})
 			-   [归档账本数据库]({{< relref "./docs/Developerguide/归档账本数据库.md" >}})
 			-   [修复账本数据库]({{< relref "./docs/Developerguide/修复账本数据库.md" >}})
+		-   [设置透明数据加密（TDE）]({{< relref "./docs/Developerguide/设置透明数据加密_TDE.md" >}})
 	-   [接口参考]({{< relref "./docs/Developerguide/接口参考.md" >}})
         -   [JDBC]({{< relref "./docs/Developerguide/JDBC.md" >}})
             -   [java.sql.Connection]({{< relref "./docs/Developerguide/java-sql-Connection.md" >}})
