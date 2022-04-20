@@ -23,7 +23,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >For details about how to start and stop nodes, see "Server Tools \> gs\_ctl" in the  _Tool Reference_.
+    >For details about how to start and stop nodes, see "Tools Called in the Internal System \> gs\_ctl" in the  _Tool Reference_.
 
 
 ## Examples<a name="en-us_topic_0283140572_en-us_topic_0237088789_en-us_topic_0059777680_s8c57591e1a444d5ea91a783a1a2b74c5"></a>
