@@ -24,7 +24,7 @@
 
 -   数据库状态正常、客户端能够正常连接；
 -   具备Python3.6+的环境；
--   其中慢SQL的信息通过WDR报告获取，数据库WDR报告中会标记SQL是否是慢SQL，其相关GUC参数track\_stmt\_stat\_level默认打开，否则需要用户手动打开，一般设置为track\_stmt\_stat\_level=’off, L0’，更高级别对性能会有一定的影响。数据采集部分由Prometheus方案实现，故需要用户配置Prometheus数据采集平台，本功能只专注于算法并从Prometheus中获取指标的序列信息；
+-   其中慢SQL的信息通过WDR报告获取，数据库WDR报告中会标记SQL是否是慢SQL，其相关GUC参数track\_stmt\_stat\_level默认打开，否则需要用户手动打开，一般设置为track\_stmt\_stat\_level=’off, L0’，更高级别对性能会有一定的影响。数据采集部分由Prometheus方案实现，故需要用户配置Prometheus数据采集平台，本功能只专注于算法并从Prometheus中获取指标的序列信息。
 
 ## 依赖关系<a name="section10471835443"></a>
 
