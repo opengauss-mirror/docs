@@ -91,7 +91,7 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 <td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="p1271527145315"><a name="p1271527145315"></a><a name="p1271527145315"></a>指定哪些模块、函数需要追踪，如果参数为空，则追踪添加trace接口的所有模块的所有函数。</p>
 <p id="p176851402914"><a name="p176851402914"></a><a name="p176851402914"></a>格式:：[comp…][ALL].[func…][ALL]</p>
 <p id="p476815146299"><a name="p476815146299"></a><a name="p476815146299"></a>描述：</p>
-<a name="ol17867103818444"></a><a name="ol17867103818444"></a><ol id="ol17867103818444"><li>comp是模块列表，使用‘,’分隔，例如：executer,kernel。也可以使用序号，例如：executer,2</li><li>func是function列表，使用‘,’分隔。例如：sql_execute_ddl, sql_execute_dcl。也可以使用序号指代模块中第几个function，例如：2</li><li>设置成ALL表示所有模块或所有function被trace。</li></ol>
+<a name="ol17867103818444"></a><a name="ol17867103818444"></a><ol id="ol17867103818444"><li>comp是模块列表，使用‘,’分隔，例如：executer,kernel。也可以使用序号，例如：executer,2。</li><li>func是function列表，使用‘,’分隔。例如：sql_execute_ddl, sql_execute_dcl。也可以使用序号指代模块中第几个function，例如：2。</li><li>设置成ALL表示所有模块或所有function被trace。</li></ol>
 <p id="p276921442916"><a name="p276921442916"></a><a name="p276921442916"></a>示例：</p>
 <a name="ol2639601448"></a><a name="ol2639601448"></a><ol id="ol2639601448"><li>executer,kernel.ALL：所有定义定义在executer和kernel模块下的function被trace。</li><li>executer,kernel.sql_execute_ddl：定义在executer 下的Function sql_execute_ddl被trace. kernel模块被忽略，因为下面没有该function。</li><li>executer,kernel.1：定义在模块executer和 kernel 下的第一个function被trace。</li></ol>
 <p id="p176921422917"><a name="p176921422917"></a><a name="p176921422917"></a>ALL.1,2：定义在所有模块下的第一，二个function被trace。</p>
