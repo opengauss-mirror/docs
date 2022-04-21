@@ -23,7 +23,7 @@ Data Studio作为一款配套openGauss数据库使用的客户端软件（当前
 
 用户在Windows环境上，使用DataStudio远程连接openGauss，并在DataStudio上对openGauss进行操作。例如：
 
--   图形化的数据库客户端集成开发环境，允许连接openGauss数据库.
+-   图形化的数据库客户端集成开发环境，允许连接openGauss数据库
 -   允许数据库开发者可以高效的进行SQL开发
 -   管理/创建数据库对象\(数据库、模式、函数、存储过程、表、序列、列、索引、约束、视图、用户/角色和表空间\)
 -   执行SQL语句或SQL脚本
