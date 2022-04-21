@@ -373,7 +373,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="row1611613482910"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p1117134811913"><a name="p1117134811913"></a><a name="p1117134811913"></a>-d</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p1411734817911"><a name="p1411734817911"></a><a name="p1411734817911"></a>打印更多build过程信息</p>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p1411734817911"><a name="p1411734817911"></a><a name="p1411734817911"></a>打印更多build过程信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="p13117148397"><a name="p13117148397"></a><a name="p13117148397"></a>-</p>
 </td>
