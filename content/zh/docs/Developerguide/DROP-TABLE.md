@@ -33,6 +33,10 @@ DROP TABLE [ IF EXISTS ]
 -   **CASCADE | RESTRICT**
     -   CASCADE：级联删除依赖于表的对象（比如视图）。
     -   RESTRICT（缺省项）：如果存在依赖对象，则拒绝删除该表。这个是缺省。
+    
+- **PURGE**
+
+  该参数表示即使开启回收站功能，DROP表时，也会直接物理删除表，而不是将其放入回收站中。
 
 
 ## 示例<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s1af12a7c6e4e456f9fc72da9c90358ff"></a>
