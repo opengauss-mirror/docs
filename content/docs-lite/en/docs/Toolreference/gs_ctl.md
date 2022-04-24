@@ -226,13 +226,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 <p id="en-us_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"><a name="en-us_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a><a name="en-us_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a>Default value: If this parameter is not specified, the current OS user is used.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0059777628_rc4a2dd21a24e498f81aa8f527f8fd0fa"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059777628_en-us_topic_0058968123_p922565214249"><a name="en-us_topic_0059777628_en-us_topic_0058968123_p922565214249"></a><a name="en-us_topic_0059777628_en-us_topic_0058968123_p922565214249"></a>-Z NODE-TYPE</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059777628_en-us_topic_0058968123_p908037314249"><a name="en-us_topic_0059777628_en-us_topic_0058968123_p908037314249"></a><a name="en-us_topic_0059777628_en-us_topic_0058968123_p908037314249"></a>Specifies the running mode of the database that is connected to.</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"><a name="en-us_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a><a name="en-us_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a>The value can be <strong id="b8149193217394"><a name="b8149193217394"></a><a name="b8149193217394"></a>coordinator</strong> or <strong id="b18149163213911"><a name="b18149163213911"></a><a name="b18149163213911"></a>datanode</strong>.</p>
-</td>
-</tr>
 <tr id="en-us_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="en-us_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="en-us_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-?, -h, --help</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059777628_ac427b89a55cf4503a0ede3a0efe0d4fa"><a name="en-us_topic_0059777628_ac427b89a55cf4503a0ede3a0efe0d4fa"></a><a name="en-us_topic_0059777628_ac427b89a55cf4503a0ede3a0efe0d4fa"></a>Displays help information about <strong id="b775154515110"><a name="b775154515110"></a><a name="b775154515110"></a>gs_ctl</strong> command parameters.</p>
@@ -242,6 +235,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 </tbody>
 </table>
+
 
 **Table  3** **start**  and  **restart**  common parameters
 
