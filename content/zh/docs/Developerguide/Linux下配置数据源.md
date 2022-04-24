@@ -207,10 +207,10 @@
         </tr>
         <tr id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_row9789524184113"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p182621858115514"></a>ConnectionExtraInfo</p>
         </td>
-        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a>GUC参数connection_info（参见<a href="zh-cn_topic_0289900801.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）中显示驱动部署路径和进程属主用户的开关。</p>
+        <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a>GUC参数connection_info（参见<a href=连接设置.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）中显示驱动部署路径和进程属主用户的开关。</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a>ConnectionExtraInfo=1</p>
-        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="zh-cn_topic_0289900801.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="zh-cn_topic_0289899849.md">PG_STAT_ACTIVITY</a>中查询到。</p>
+        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="连接设置.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="PG_STAT_ACTIVITY.md">PG_STAT_ACTIVITY</a>中查询到。</p>
         </div></div>
         </td>
         </tr>
@@ -334,15 +334,14 @@
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >-   ****
-        >-   -N all表示openGauss中的所有主机。
-        >-   -I all表示主机中的所有实例。
-        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
-        >-   all表示允许客户端连接到任意的数据库。
-        >-   jack表示连接数据库的用户。
-        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255
-        >-   sha256表示连接时jack用户的密码使用sha256算法加密。
+        >![](public_sys-resources/icon-note.gif) **说明：**  
+        >-   -N all表示openGauss中的所有主机。  
+        >-   -I all表示主机中的所有实例。  
+        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。  
+        >-   all表示允许客户端连接到任意的数据库。  
+        >-   jack表示连接数据库的用户。  
+        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255。  
+        >-   sha256表示连接时jack用户的密码使用sha256算法加密。  
 
         如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
 
@@ -491,11 +490,11 @@
 
     数据库中存储的口令校验只存储了SHA256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   数据库并不存储用户口令，只存储用户口令的哈希码。
-    >-   数据库当用户更新用户口令或者新建用户时，会同时存储两种格式的哈希码，这时将兼容开源的认证协议。
-    >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。
-    >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >-   数据库并不存储用户口令，只存储用户口令的哈希码。  
+    >-   数据库当用户更新用户口令或者新建用户时，会同时存储两种格式的哈希码，这时将兼容开源的认证协议。  
+    >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。  
+    >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。  
 
     要解决该问题，可以更新用户口令（参见[ALTER USER](zh-cn_topic_0289900744.md)）；或者新建一个用户（参见[CREATE USER](zh-cn_topic_0289899951.md)），赋于同等权限，使用新用户连接数据库。
 
