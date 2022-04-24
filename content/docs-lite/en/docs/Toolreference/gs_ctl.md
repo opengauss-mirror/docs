@@ -118,6 +118,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 **Table  2**  Common parameters
 
 <a name="en-us_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68"></a>
+
 <table><thead align="left"><tr id="en-us_topic_0059777628_re02c46dcbf4e4581add1ede94a47195b"><th class="cellrowborder" valign="top" width="22.087791220877914%" id="mcps1.2.4.1.1"><p id="en-us_topic_0059777628_a627aed148a2c4a589506fd90e3f8fc69"><a name="en-us_topic_0059777628_a627aed148a2c4a589506fd90e3f8fc69"></a><a name="en-us_topic_0059777628_a627aed148a2c4a589506fd90e3f8fc69"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.87691230876913%" id="mcps1.2.4.1.2"><p id="en-us_topic_0059777628_adfb6a48d792f4bde9dfb7c7b1a5e42a1"><a name="en-us_topic_0059777628_adfb6a48d792f4bde9dfb7c7b1a5e42a1"></a><a name="en-us_topic_0059777628_adfb6a48d792f4bde9dfb7c7b1a5e42a1"></a>Description</p>
@@ -224,13 +225,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="en-us_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="en-us_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>Value range: users exist in <span id="text148066093413"><a name="text148066093413"></a><a name="text148066093413"></a>openGauss</span>.</p>
 <p id="en-us_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"><a name="en-us_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a><a name="en-us_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a>Default value: If this parameter is not specified, the current OS user is used.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0059777628_rc4a2dd21a24e498f81aa8f527f8fd0fa"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059777628_en-us_topic_0058968123_p922565214249"><a name="en-us_topic_0059777628_en-us_topic_0058968123_p922565214249"></a><a name="en-us_topic_0059777628_en-us_topic_0058968123_p922565214249"></a>-Z NODE-TYPE</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059777628_en-us_topic_0058968123_p908037314249"><a name="en-us_topic_0059777628_en-us_topic_0058968123_p908037314249"></a><a name="en-us_topic_0059777628_en-us_topic_0058968123_p908037314249"></a>Specifies the running mode of the database that is connected to.</p>
-</td>
-<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"><a name="en-us_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a><a name="en-us_topic_0059777628_ae4ffb10681f640c1b812ebb26f1d6f82"></a>The value can be <strong id="b8149193217394"><a name="b8149193217394"></a><a name="b8149193217394"></a>coordinator</strong> or <strong id="b18149163213911"><a name="b18149163213911"></a><a name="b18149163213911"></a>datanode</strong>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="en-us_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="en-us_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-?, -h, --help</p>
