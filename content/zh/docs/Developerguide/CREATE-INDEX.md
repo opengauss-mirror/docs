@@ -263,11 +263,15 @@
 
     默认值：4096
 
--   **COMPRESS_PREALLOC_CHUNKS**
+- **COMPRESS_PREALLOC_CHUNKS**
 
-    索引参数，设置索引压缩chunk块预分配数量。预分配数量越大，索引的压缩率相对越差，离散度越小，访问性能越好。（仅支持B-TREE索引）
+  索引参数，设置索引压缩chunk块预分配数量。预分配数量越大，索引的压缩率相对越差，离散度越小，访问性能越好。（仅支持B-TREE索引）
 
-    取值范围：0\~7，默认值为0。
+  取值范围：0\~7，默认值为0。
+
+  - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+  - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
 
 -   **COMPRESS_BYTE_CONVERT**
 
