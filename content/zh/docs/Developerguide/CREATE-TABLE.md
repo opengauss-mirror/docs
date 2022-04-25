@@ -232,7 +232,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESSION
 
-        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
+        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表默认增加COMPRESSION=NO字段。
 
         取值范围：
 
@@ -244,7 +244,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         取值范围：0\~3，默认值为0。
 
-    -   COMPRESS\_TYPE
+    -   COMPRESSTYPE
 
         行存表参数，设置行存表压缩算法。1代表pglz算法，2代表zstd算法，默认不压缩。（仅支持ASTORE下的普通表）
 
@@ -252,7 +252,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESS\_LEVEL
 
-        行存表参数，设置行存表压缩算法等级，仅当COMPRESS_TYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。（仅支持ASTORE下的普通表）
+        行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。（仅支持ASTORE下的普通表）
 
         取值范围：-31\~31，默认值为0。
 
