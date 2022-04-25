@@ -121,12 +121,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     如果已经存在相同名称的表，不会报出错误，而会发出通知，告知通知此表已存在。
 
--   **table\_name**
+- **table\_name**
 
-    要创建的表名。
+  要创建的表名。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   物化视图的一些处理逻辑会通过表名的前缀来识别是不是物化视图日志表和物化视图关联表，因此，用户不要创建表名以mlog\_或matviewmap\_为前缀的表，否则会影响此表的一些功能。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >
+  >-   物化视图的一些处理逻辑会通过表名的前缀来识别是不是物化视图日志表和物化视图关联表，因此，用户不要创建表名以mlog\_或matviewmap\_为前缀的表，否则会影响此表的一些功能。
 
 -   **column\_name**
 
@@ -223,7 +224,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESSION
 
-        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
+        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表默认增加COMPRESSION=NO字段。
 
         取值范围：
 
@@ -235,6 +236,48 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         取值范围：0\~3，默认值为0。
 
+    - COMPRESSTYPE
+
+      行存表参数，设置行存表压缩算法。1代表pglz算法，2代表zstd算法，默认不压缩。（仅支持ASTORE下的普通表）
+
+      取值范围：0\~2，默认值为0。
+
+    - COMPRESS\_LEVEL
+
+      行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。（仅支持ASTORE下的普通表）
+
+      取值范围：-31\~31，默认值为0。
+
+    - COMPRESS\_CHUNK_SIZE
+
+      行存表参数，设置行存表压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。（仅支持ASTORE下的普通表）
+
+      取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
+
+      默认值：4096
+
+    - COMPRESS_PREALLOC_CHUNKS
+
+      行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。（仅支持ASTORE下的普通表）
+
+      取值范围：0\~7，默认值为0。
+
+      - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+      - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+
+    - COMPRESS_BYTE_CONVERT
+
+      行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+
+      取值范围：布尔值，默认关闭。
+
+    - COMPRESS_DIFF_CONVERT
+
+      行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+
+      取值范围：布尔值，默认关闭。
+
     -   MAX\_BATCHROW
 
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
@@ -242,47 +285,47 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         取值范围：10000\~60000，默认60000。
 
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-
+    
         取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
-
+    
     -   DELTAROW\_THRESHOLD
-
+    
         指定列存表导入时小于多少行的数据进入delta表，只在GUC参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)开启时生效。该参数只对列存表有效。
-
+    
         取值范围：0～9999，默认值为100
-
+    
     -   VERSION
-
+    
         指定ORC存储格式的版本。
-
+    
         取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
-
+    
         默认值：0.12
-
+    
     -   segment
-
+    
         使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
-
+    
         取值范围：on/off
-
+    
         默认值：off
-
+    
     -   dek\_cipher
-
+    
         透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
-
+    
         取值范围：字符串。
-
+    
         默认值：不开启加密时默认为空。
-
+    
     -   hasuids
-
+    
         参数开启：更新表元组时，为元组分配表级唯一标识id。
-
+    
         取值范围：on/off。
-
+    
         默认值：off。
 
 
@@ -996,26 +1039,33 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   UNLOGGED表无主备机制，在系统故障或异常断点等情况下，会有数据丢失风险，因此，不可用来存储基础数据。
 
 -   TEMPORARY | TEMP
-    -   临时表只在当前会话可见，会话结束后会自动删除。
-
+    
+-   临时表只在当前会话可见，会话结束后会自动删除。
+    
 -   LIKE
-    -   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
-
+    
+-   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
+    
 -   LIKE INCLUDING DEFAULTS
-    -   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
-
+    
+-   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
+    
 -   LIKE INCLUDING CONSTRAINTS
-    -   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
-
+    
+-   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
+    
 -   LIKE INCLUDING INDEXES
-    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-
+    
+-   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
+    
 -   LIKE INCLUDING STORAGE
-    -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
-
+    
+-   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
+    
 -   LIKE INCLUDING COMMENTS
-    -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
-
+    
+-   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
+    
 -   LIKE INCLUDING PARTITION
 
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
@@ -1024,15 +1074,19 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
 
 -   LIKE INCLUDING RELOPTIONS
-    -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
-
+    
+-   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
+    
 -   LIKE INCLUDING ALL
-    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
-
+    
+-   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
+    
 -   ORIENTATION ROW
-    -   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
-
+    
+-   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
+    
 -   ORIENTATION COLUMN
+    
     -   创建列存表，列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
 
 
