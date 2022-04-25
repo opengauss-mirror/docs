@@ -262,6 +262,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
       取值范围：0\~7，默认值为0。
 
+      - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+      - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+
     - COMPRESS_BYTE_CONVERT
 
       行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
@@ -281,9 +285,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         取值范围：10000\~60000，默认60000。
 
     -   PARTIAL\_CLUSTER\_ROWS
-
+    
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-
+    
         取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
     
     -   DELTAROW\_THRESHOLD

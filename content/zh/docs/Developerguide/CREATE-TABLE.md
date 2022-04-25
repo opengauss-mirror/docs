@@ -264,11 +264,15 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     
         默认值：4096
 
-    -   COMPRESS_PREALLOC_CHUNKS
+    - COMPRESS_PREALLOC_CHUNKS
 
-        行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。（仅支持ASTORE下的普通表）
+      行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。（仅支持ASTORE下的普通表）
 
-        取值范围：0\~7，默认值为0。
+      取值范围：0\~7，默认值为0。
+
+      - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+      - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
 
     -   COMPRESS_BYTE_CONVERT
 
@@ -313,9 +317,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
 
         取值范围：on/off
-
+    
         默认值：off
-
+    
     -   dek\_cipher
     
         透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
