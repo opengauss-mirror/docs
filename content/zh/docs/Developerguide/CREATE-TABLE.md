@@ -232,19 +232,19 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESSION
 
-        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
+        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表默认增加COMPRESSION=NO字段。
 
         取值范围：
 
         列存表的有效值为YES/NO/LOW/MIDDLE/HIGH，默认值为LOW。
 
-    -   COMPRESSLEVEL
+    -   COMPRESSLEVELcom
 
         指定表数据同一压缩级别下的不同压缩水平，它决定了同一压缩级别下表数据的压缩比以及压缩时间。对同一压缩级别进行了更加详细的划分，为用户选择压缩比和压缩时间提供了更多的空间。总体来讲，此值越大，表示同一压缩级别下压缩比越大，压缩时间越长；反之亦然。
 
         取值范围：0\~3，默认值为0。
 
-    -   COMPRESS\_TYPE
+    -   COMPRESSTYPE
 
         行存表参数，设置行存表压缩算法。1代表pglz算法，2代表zstd算法，默认不压缩。（仅支持ASTORE下的普通表）
 
@@ -252,7 +252,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESS\_LEVEL
 
-        行存表参数，设置行存表压缩算法等级，仅当COMPRESS_TYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。（仅支持ASTORE下的普通表）
+        行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。（仅支持ASTORE下的普通表）
 
         取值范围：-31\~31，默认值为0。
 
@@ -264,11 +264,15 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     
         默认值：4096
 
-    -   COMPRESS_PREALLOC_CHUNKS
+    - COMPRESS_PREALLOC_CHUNKS
 
-        行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。（仅支持ASTORE下的普通表）
+      行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。（仅支持ASTORE下的普通表）
 
-        取值范围：0\~7，默认值为0。
+      取值范围：0\~7，默认值为0。
+
+      - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+      - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
 
     -   COMPRESS_BYTE_CONVERT
 
@@ -313,9 +317,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
 
         取值范围：on/off
-
+    
         默认值：off
-
+    
     -   dek\_cipher
     
         透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
