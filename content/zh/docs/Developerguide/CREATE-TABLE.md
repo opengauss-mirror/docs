@@ -271,70 +271,70 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       取值范围：0\~7，默认值为0。
 
       - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
-  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
-      - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+    - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+    - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+  
+  - COMPRESS_BYTE_CONVERT
 
-    -   COMPRESS_BYTE_CONVERT
+      行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
 
-        行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+      取值范围：布尔值，默认关闭。
 
-        取值范围：布尔值，默认关闭。
+  - COMPRESS_DIFF_CONVERT
 
-    -   COMPRESS_DIFF_CONVERT
+      行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
 
-        行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+      取值范围：布尔值，默认关闭。
 
-        取值范围：布尔值，默认关闭。
+  - MAX\_BATCHROW
 
-    -   MAX\_BATCHROW
+      指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
 
-        指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
+      取值范围：10000\~60000，默认60000。
 
-        取值范围：10000\~60000，默认60000。
+  - PARTIAL\_CLUSTER\_ROWS
 
-    -   PARTIAL\_CLUSTER\_ROWS
+      指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
 
-        指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+      取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
 
-        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
+  - DELTAROW\_THRESHOLD
 
-    -   DELTAROW\_THRESHOLD
+      指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
 
-        指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
+      取值范围：0～9999，默认值为100
 
-        取值范围：0～9999，默认值为100
+  - VERSION
 
-    -   VERSION
+      指定ORC存储格式的版本。
 
-        指定ORC存储格式的版本。
+      取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
 
-        取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
+      默认值：0.12
 
-        默认值：0.12
+  - segment
 
-    -   segment
+      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
 
-        使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
-
-        取值范围：on/off
-    
-        默认值：off
-    
-    -   dek\_cipher
-    
-        透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
-    
-        取值范围：字符串。
-    
-        默认值：不开启加密时默认为空。
-        
-    -   hasuids
-    
-        参数开启：更新表元组时，为元组分配表级唯一标识id。
-    
-        取值范围：on/off。
-    
-        默认值：off。
+      取值范围：on/off
+  
+      默认值：off
+  
+  - dek\_cipher
+  
+      透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
+  
+      取值范围：字符串。
+  
+      默认值：不开启加密时默认为空。
+  
+  - hasuids
+  
+      参数开启：更新表元组时，为元组分配表级唯一标识id。
+  
+      取值范围：on/off。
+  
+      默认值：off。
 
 
 -   **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
