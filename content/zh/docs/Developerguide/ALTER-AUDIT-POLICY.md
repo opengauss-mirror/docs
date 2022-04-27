@@ -7,7 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0059778839_s63ad21f92ad74c9e8d6bf18bb7218c4f"></a>
 
 -   只有poladmin、sysadmin或初始用户用户才能进行此操作。
--   需要打开enable\_security\_policy开关统一审计策略才可以生效，开关打开方式请参考《安全加固指南》中“数据库配置 \> 数据库安全管理策略-统一审计”章节。
+-   需要打开enable\_security\_policy开关统一审计策略才可以生效。
 
 ## 语法格式<a name="zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
