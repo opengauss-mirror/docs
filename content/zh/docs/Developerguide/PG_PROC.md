@@ -290,8 +290,23 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p55741111480"><a name="p55741111480"></a><a name="p55741111480"></a>当函数参数较多时，函数具有默认值的入参的位置。</p>
 </td>
 </tr>
+<tr id="row456511144810"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p125751114810"><a name="p125751114810"></a><a name="p125751114810"></a>allargtypes</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p15720112486"><a name="p15720112486"></a><a name="p15720112486"></a>oidvector</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p55741111480"><a name="p55741111480"></a><a name="p55741111480"></a>不区分参数类型，包含存储过程所有参数（包含入参、出参、INOUT参数）。</p>
+</td>
+</tr>
+    <tr id="row456511144810"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p125751114810"><a name="p125751114810"></a><a name="p125751114810"></a>allargtypesext</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p15720112486"><a name="p15720112486"></a><a name="p15720112486"></a>oidvector_extend</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p55741111480"><a name="p55741111480"></a><a name="p55741111480"></a>当函数参数较多时，用来存放函数参数的数据类型的数组。数组里包含所有参数（包含入参、出参、INOUT参数）。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
 
 
