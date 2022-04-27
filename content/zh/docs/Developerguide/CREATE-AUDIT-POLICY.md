@@ -8,7 +8,7 @@
 
 只有poladmin，sysadmin或初始用户能进行此操作。
 
-需要开启安全策略开关，即设置GUC参数enable\_security\_policy=on，脱敏策略才可以生效。具体设置请参考《安全加固指南》中“数据库配置\>数据库安全管理策略\>统一审计”章节。
+需要开启安全策略开关，即设置GUC参数enable\_security\_policy=on，脱敏策略才可以生效。
 
 ## 语法格式<a name="zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
