@@ -129,24 +129,21 @@ gs\_backup参数可以分为如下几类：
 
     ```
     gs_backup -t backup --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
-    Backing up openGauss.
     Parsing configuration files.
     Successfully parsed the configuration file.
     Performing remote backup.
     Remote backup succeeded.
-    Successfully backed up openGauss.
+    Successfully backed up cluster files.
     ```
 
 -   使用gs\_backup脚本恢复数据库主机。
 
     ```
     gs_backup -t restore --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
-    Restoring openGauss.
-    Parsing the configuration file.
-    Successfully parsed configuration files.
+    Parsing configuration files.
+    Successfully parsed the configuration file.
     Performing remote restoration.
-    Remote restoration succeeded.
-    Successfully restored openGauss.
+    Successfully restored cluster files.
     ```
 
 
