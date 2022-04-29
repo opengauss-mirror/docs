@@ -165,97 +165,100 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
 3.  autoconf和automake安装。JSON-C软件包编译安装依赖autoconf和automake工具。若数据库实例中没有autoconf和automake工具，可以通过挂载操作系统镜像等方法进行安装，这里不做赘述。
 4.  PostGIS依赖库安装。
-    1.  从网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取PostGIS源码至$GAUSSHOME目录，下载压缩包，解压后需将文件夹重命名为postgis-xc。
-    2.  将安装包自带的补丁打入PostGIS文件夹
-
+    1. 从网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取PostGIS源码至$GAUSSHOME目录，下载压缩包，解压后需将文件夹重命名为postgis-xc。
+    
+2.  从网站 https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/postgis_2.4.2-1.patch 下载补丁文件到$GAUSSHOME目录，并打入补丁。
+    
         ```
         cd $GAUSSHOME/postgis-xc/
-        patch -p1 < $GAUSSHOME/share/postgis/postgis_2.4.2-1.patch
-        ```
-
-    3.  分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
-
-        -   Geos
-
-            ```
-            cd $GAUSSHOME/postgis-xc/geos-3.6.2
-            chmod +x ./configure
-            ./configure --prefix=$GAUSSHOME/install/geos
-            make -sj
-            make install -sj
-            ```
-
-        -   Proj
-
-            ```
-            cd $GAUSSHOME/postgis-xc/proj-4.9.2
-            chmod +x ./configure
-            ./configure --prefix=$GAUSSHOME/install/proj
-            make -sj
-            make install -sj
-            ```
-
-        -   JSON-C
-
-            ```
-            cd $GAUSSHOME/postgis-xc/json-c-json-c-0.12.1-20160607
-            chmod +x ./configure
-            ./configure --prefix=$GAUSSHOME/install/json
-            make -sj
-            make install -sj
-            ```
-
-        -   Libxml2
-
-            ```
-            cd $GAUSSHOME/postgis-xc/libxml2-2.7.1
-            chmod +x ./configure
-            ./configure --prefix=$GAUSSHOME/install/libxml2
-            make -sj
-            make install -sj
-            ```
-
-            对于ARM操作系统，则需使用如下configure命令：
-
-            ```
-            ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu 
-            ```
-
-        -   PostGIS
-
-            ```
-            cd $GAUSSHOME/postgis-xc/postgis-2.4.2
-            chmod +x ./configure
-            ./configure --prefix=$GAUSSHOME/install/postgis2.4.2 --with-pgconfig=$GAUSSHOME/bin/pg_config --with-projdir=$GAUSSHOME/install/proj --with-geosconfig=$GAUSSHOME/install/geos/bin/geos-config --with-jsondir=$GAUSSHOME/install/json  --with-xml2config=$GAUSSHOME/install/libxml2/bin/xml2-config   --without-raster --without-topology CFLAGS='-O2 -fpermissive -DPGXC  -pthread -D_THREAD_SAFE -D__STDC_FORMAT_MACROS -DMEMORY_CONTEXT_CHECKING -w'  CC=g++
-            make -sj
-            make install -sj
-            ```
-
-        如果编译出现类似/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la 找不到，可以自建目录，将libstdc++.la拷贝进去，然后再make -sj（如果libstdc++.so出现类似问题，按同样方法处理）。
-
-    4.  omm用户执行$GAUSSHOME/share/postgis目录下的脚本文件PostGIS\_install.sh，完成PostGIS相关动态链接库在数据库实例节点中的分发。
-
-        ```
-        sh $GAUSSHOME/share/postgis/PostGIS_install.sh
-        ```
-
-        动态链接库分发脚本执行完毕后，可执行下列命令删除$GAUSSHOME/postgis安装目录。
-
-        ```
-        rm -rf $GAUSSHOME/postgis-xc
-        ```
-
-        若用户不想保留GCC5.4编译器，可删除GCC5.4安装目录并在\~/.bashrc文件中删除安装GCC5.4时添加的环境配置信息。
-
-        ```
-        rm -rf $GAUSSHOME/gcc
-        ```
-
-    5.  重启数据库实例。
-
-        ```
-        gs_om -t stop && gs_om -t start
-        ```
+        patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch
+    ```
+    
+3.  从网站https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/extension_dependency.h下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
+    
+4. 分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
+    
+       -   Geos
+    
+           ```
+           cd $GAUSSHOME/postgis-xc/geos-3.6.2
+           chmod +x ./configure
+           ./configure --prefix=$GAUSSHOME/install/geos
+       make -sj
+           make install -sj
+       ```
+    
+       -   Proj
+    
+           ```
+           cd $GAUSSHOME/postgis-xc/proj-4.9.2
+           chmod +x ./configure
+           ./configure --prefix=$GAUSSHOME/install/proj
+       make -sj
+           make install -sj
+       ```
+    
+       -   JSON-C
+    
+           ```
+           cd $GAUSSHOME/postgis-xc/json-c-json-c-0.12.1-20160607
+           chmod +x ./configure
+           ./configure --prefix=$GAUSSHOME/install/json
+       make -sj
+           make install -sj
+       ```
+    
+       -   Libxml2
+    
+           ```
+           cd $GAUSSHOME/postgis-xc/libxml2-2.7.1
+           chmod +x ./configure
+           ./configure --prefix=$GAUSSHOME/install/libxml2
+       make -sj
+           make install -sj
+       ```
+    
+           对于ARM操作系统，则需使用如下configure命令：
+    
+       ```
+           ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu 
+       ```
+    
+       -   PostGIS
+    
+           ```
+           cd $GAUSSHOME/postgis-xc/postgis-2.4.2
+           chmod +x ./configure
+           ./configure --prefix=$GAUSSHOME/install/postgis2.4.2 --with-pgconfig=$GAUSSHOME/bin/pg_config --with-projdir=$GAUSSHOME/install/proj --with-geosconfig=$GAUSSHOME/install/geos/bin/geos-config --with-jsondir=$GAUSSHOME/install/json  --with-xml2config=$GAUSSHOME/install/libxml2/bin/xml2-config   --without-raster --without-topology CFLAGS='-O2 -fpermissive -DPGXC  -pthread -D_THREAD_SAFE -D__STDC_FORMAT_MACROS -DMEMORY_CONTEXT_CHECKING -w'  CC=g++
+       make -sj
+           make install -sj
+       ```
+    
+   如果编译出现类似/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la 找不到，可以自建目录，将libstdc++.la拷贝进去，然后再make -sj（如果libstdc++.so出现类似问题，按同样方法处理）。
+    
+    5. omm用户执行$GAUSSHOME/share/postgis目录下的脚本文件PostGIS\_install.sh，完成PostGIS相关动态链接库在数据库实例节点中的分发。
+    
+   ```
+       sh $GAUSSHOME/share/postgis/PostGIS_install.sh
+   ```
+    
+       动态链接库分发脚本执行完毕后，可执行下列命令删除$GAUSSHOME/postgis安装目录。
+    
+   ```
+       rm -rf $GAUSSHOME/postgis-xc
+   ```
+    
+       若用户不想保留GCC5.4编译器，可删除GCC5.4安装目录并在\~/.bashrc文件中删除安装GCC5.4时添加的环境配置信息。
+    
+   ```
+       rm -rf $GAUSSHOME/gcc
+   ```
+    
+    6. 重启数据库实例。
+    
+       ```
+       gs_om -t stop && gs_om -t start
+       ```
 
 
 
