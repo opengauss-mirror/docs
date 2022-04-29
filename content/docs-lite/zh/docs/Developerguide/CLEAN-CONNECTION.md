@@ -7,7 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0059779060_s8aed237cc11e48bcb20d63f3ed081327"></a>
 
 -   openGauss下不支持指定节点，仅支持TO ALL。
--   该功能仅在fore模式下，可以清理正在使用的正常连接。
+-   该功能仅在force模式下，可以清理正在使用的正常连接。
 
 ## 语法格式<a name="zh-cn_topic_0059779060_s24ab1cb591b54a43af5fe6d87cc067a1"></a>
 
