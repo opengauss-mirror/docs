@@ -126,24 +126,21 @@ The  **gs\_backup**  tool can use the following types of parameters:
 
     ```
     gs_backup -t backup --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
-    Backing up openGauss.
     Parsing configuration files.
     Successfully parsed the configuration file.
     Performing remote backup.
     Remote backup succeeded.
-    Successfully backed up openGauss.
+    Successfully backed up cluster files.
     ```
 
 -   Execute the  **gs\_backup**  script to restore the database host.
 
     ```
     gs_backup -t restore --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
-    Restoring openGauss.
-    Parsing the configuration file.
-    Successfully parsed configuration files.
+    Parsing configuration files.
+    Successfully parsed the configuration file.
     Performing remote restoration.
-    Remote restoration succeeded.
-    Successfully restored openGauss.
+    Successfully restored cluster files.
     ```
 
 
