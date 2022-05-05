@@ -93,14 +93,14 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     7).  安装mpc-1.0.3。
 
-        进入$GAUSSHOME/gcc/packages/mpc-1.0.3目录，执行下列命令完成mpc安装操作:
+    进入$GAUSSHOME/gcc/packages/mpc-1.0.3目录，执行下列命令完成mpc安装操作:
 
-        ```
+    ```
         cd $GAUSSHOME/gcc/packages/mpc-1.0.3
         ./configure --prefix=$GAUSSHOME/gcc/gcc-7.3.0/depend/mpc-1.0.3  --with-gmp=$GAUSSHOME/gcc/gcc-7.3.0/depend/gmp-6.1.0 --with-mpfr=$GAUSSHOME/gcc/gcc-7.3.0/depend/mpfr-3.1.4 
         make -sj 
         make install -sj
-        ```
+    ```
 
     8).  安装gcc-7.3.0。
 
