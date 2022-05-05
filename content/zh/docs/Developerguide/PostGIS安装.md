@@ -41,7 +41,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  以操作系统用户omm登录数据库任一主机。
 
-    2).  创建GCC安装主目录\$GAUSSHOME/gcc和代码下载目录\$GAUSSHOME/gcc/packages，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至\$GAUSSHOME/gcc/packages目录。
+    2).  创建GCC安装主目录$GAUSSHOME/gcc和代码下载目录$GAUSSHOME/gcc/packages，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至\$GAUSSHOME/gcc/packages目录。
 
     ```
     mkdir $GAUSSHOME/gcc
