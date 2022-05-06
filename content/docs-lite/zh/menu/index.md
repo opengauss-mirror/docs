@@ -112,7 +112,7 @@ headless: true
     -   [AI in DB: 数据库内AI功能]({{< relref "./docs/CharacteristicDescription/AI-in-DB-数据库内AI功能.md" >}})
         -   [Predictor: AI查询时间预测]({{< relref "./docs/CharacteristicDescription/Predictor-AI查询时间预测.md" >}})
 	-   [工具链]({{< relref "./docs/CharacteristicDescription/工具链.md" >}})
-		-   [MySQL-\>openGauss迁移工具chameleon]({{< relref "./docs/CharacteristicDescription/MySQL--openGauss迁移工具chameleon.md" >}})
+		-   [MySQL-\>openGauss迁移工具chameleon]({{< relref "./docs/CharacteristicDescription/MySQL_openGauss迁移工具chameleon.md" >}})
 		-   [openGauss客户端工具DataStudio]({{< relref "./docs/CharacteristicDescription/openGauss客户端工具DataStudio.md" >}})
 	-   [中间件]({{< relref "./docs/CharacteristicDescription/中间件.md" >}})
 		-   [分布式数据库能力]({{< relref "./docs/CharacteristicDescription/分布式数据库能力.md" >}})
