@@ -20,7 +20,7 @@ Files related to the  **cm\_ctl**  tool:
     This is a flag file for starting and stopping a database instance. This file is stored in  _$GAUSSHOME_**/bin**, where  _GAUSSHOME_  is an environment variable. When the database instance is started, the  **cm\_ctl**  tool deletes the file. When the database instance is stopped, the  **cm\_ctl**  tool generates the file and writes the stop mode to the file.
 
 
--   instance\_manual\_start\_X \(_X_  indicates the instance ID.\)
+-   instance\_manual\_start\_X \(*X*  indicates the instance ID.\)
 
     This is a flag file for starting and stopping a single instance. This file is stored in  _$GAUSSHOME_**/bin**, where  _GAUSSHOME_  is an environment variable. When the instance is started, the  **cm\_ctl**  tool deletes the file. When the instance is stopped, the  **cm\_ctl**  tool generates the file and writes the stop mode to the file.
 
@@ -308,7 +308,7 @@ The  **cm\_ctl**  tool can use the following types of parameters:
 <tbody><tr id="en-us_topic_0116784021_rd03f46c5234c4d7e8f26720fb785b37c"><td class="cellrowborder" valign="top" width="32.15%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0116784021_add073231a45d453b801c35a3eb22b469"><a name="en-us_topic_0116784021_add073231a45d453b801c35a3eb22b469"></a><a name="en-us_topic_0116784021_add073231a45d453b801c35a3eb22b469"></a>-m SHUTDOWN-MODE</p>
 </td>
 <td class="cellrowborder" valign="top" width="67.85%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0116784021_a420b6d7e3a0c471d9cfc5e497dd028bc"><a name="en-us_topic_0116784021_a420b6d7e3a0c471d9cfc5e497dd028bc"></a><a name="en-us_topic_0116784021_a420b6d7e3a0c471d9cfc5e497dd028bc"></a>Specifies the stop mode. The options are as follows:</p>
-<a name="ul116320588224"></a><a name="ul116320588224"></a><ul id="ul116320588224"><li><strong id="b13697235201613"><a name="b13697235201613"></a><a name="b13697235201613"></a>smart (s)</strong>: The database instance exits after the user service ends.</li><li><strong id="b1415615612172"><a name="b1415615612172"></a><a name="b1415615612172"></a>fast (f)</strong>: The database instance exits without waiting for the user service to end.</li><li><strong id="b1887293216178"><a name="b1887293216178"></a><a name="b1887293216178"></a>immediate (i)</strong>: The database instance is forced to exit without waiting for the user service to end.</li></ul>
+<a name="ul116320588224"></a><a name="ul116320588224"></a><ul id="ul116320588224"><li><strong>smart (s)</strong>: The database instance exits after user services end. </li><li><strong>fast (f)</strong>: The database instance exits without waiting for the user service to end. <li><strong>immediate (i)</strong>: The database instance is forced to exit without waiting for the user service to end.</li></ul>
 </td>
 </tr>
 </tbody>
@@ -897,5 +897,3 @@ The  **cm\_ctl**  tool can use the following types of parameters:
     ```
     cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
     ```
-
-
