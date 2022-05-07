@@ -67,7 +67,7 @@ headless: true
 		-   [Using a Standby Node to Build a Standby Node]({{< relref "./docs/CharacteristicDescription/using-a-standby-node-to-build-a-standby-node.md" >}})
 	-   [Maintainability]({{< relref "./docs/CharacteristicDescription/maintainability.md" >}})
 		-   [Gray Upgrade]({{< relref "./docs/CharacteristicDescription/gray-upgrade.md" >}})
-		-   [Workload Diagnosis Report \(WDR\)](workload-diagnosis-report-wdr.md" >}})
+		-   [Workload Diagnosis Report \(WDR\)]({{< relref "./docs/CharacteristicDescription/workload-diagnosis-report-wdr.md" >}})
 		-   [Slow SQL Diagnosis]({{< relref "./docs/CharacteristicDescription/slow-sql-diagnosis.md" >}})
 		-   [Session Performance Diagnosis]({{< relref "./docs/CharacteristicDescription/session-performance-diagnosis.md" >}})
 		-   [System KPI-aided Diagnosis]({{< relref "./docs/CharacteristicDescription/system-kpi-aided-diagnosis.md" >}})
