@@ -86,7 +86,20 @@
 - ALTER PACKAGE OWNER示例
 
   ```
-  ALTER PACKAGE emp_bonus OWNER TO omm;
   --将PACKAGE emp_bonus的所属者改为omm
+  ALTER PACKAGE emp_bonus OWNER TO omm;
   ```
 
++ 调用PACKAGE示例
+
+  ```
+  call emp_bonus.testpro1(1); --使用call调用package存储过程
+  select emp_bonus.testpro1(1); --使用select调用package存储过程
+  --匿名块里调用package存储过程
+  begin
+  emp_bonus.testpro1(1);
+  end;
+  /
+  ```
+
+  
