@@ -86,8 +86,8 @@
 -   ALTER PACKAGE OWNER示例
 
     ```
-    ALTER PACKAGE emp_bonus OWNER TO omm;
     --将PACKAGE emp_bonus的所属者改为omm
+    ALTER PACKAGE emp_bonus OWNER TO omm;
     ```
 
 + 调用PACKAGE示例
