@@ -74,7 +74,7 @@
     begin
     create table if not exists test1(col1 int);
     insert into test1 values(var1);
-    insert into test1 values(var5);
+    insert into test1 values(var4);
     end;
     begin  --实例化开始
     var4:=9;
