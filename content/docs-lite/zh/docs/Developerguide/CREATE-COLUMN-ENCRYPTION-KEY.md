@@ -42,7 +42,7 @@ CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH(CLIENT_MASTER_KEY =
     该值为用户指定的密钥口令，密钥口令长度范围为28 \~ 256个字符，28个字符派生出来的密钥安全强度满足AES128，若用户需要用AES256，密钥口令的长度需要39个字符，如果不指定，则会自动生成256字符的密钥。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >国密算法约束：由于SM2、SM3、SM4等算法属于中国国家密码标准算法，为规避法律风险，需配套使用。如果创建CMK时指定SM4算法来加密CEK，则创建CEK时必须指定SM4\_SM3算法来加密数据。
+    >国密算法约束：由于SM2、SM3、SM4等算法属于中国国家密码标准算法，为规避法律风险，需配套使用。如果创建CMK时指定SM2算法来加密CEK，则创建CEK时必须指定SM4\_SM3算法来加密数据。
 
 
 ## 示例<a name="section18204185851316"></a>
