@@ -10,8 +10,10 @@ If the upgrade fails, perform the following operations:
 
     Run the following command to collect logs:
 
-    **gs\_collector --begin-time=**'_20200724 00:00_'  **--end-time=**'_20200725 00:00_'
-
+    ```
+gs_collector --begin-time='20200724 00:00'  --end-time='20200725 00:00'
+    ```
+    
     You are advised to retain the environment if possible.
 
 
