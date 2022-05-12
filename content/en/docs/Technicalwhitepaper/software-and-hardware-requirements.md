@@ -13,8 +13,8 @@
 </thead>
 <tbody><tr id="en-us_concept_0283139016_en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0283139016_en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_concept_0283139016_en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_concept_0283139016_en-us_concept_0238164429_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul2800840102316"></a><a name="en-us_concept_0283139016_ul2800840102316"></a><ul id="en-us_concept_0283139016_ul2800840102316"><li>Arm:<a name="en-us_concept_0283139016_ul177759349286"></a><a name="en-us_concept_0283139016_ul177759349286"></a><ul id="en-us_concept_0283139016_ul177759349286"><li>openEuler 20.3LTS (recommended)</li><li>Kirin V10</li></ul>
-</li><li>x86:<a name="en-us_concept_0283139016_ul851564911283"></a><a name="en-us_concept_0283139016_ul851564911283"></a><ul id="en-us_concept_0283139016_ul851564911283"><li>openEuler 20.3LTS</li><li>CentOS 7.6</li></ul>
+<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul2800840102316"></a><a name="en-us_concept_0283139016_ul2800840102316"></a><ul id="en-us_concept_0283139016_ul2800840102316"><li>Arm:<a name="en-us_concept_0283139016_ul177759349286"></a><a name="en-us_concept_0283139016_ul177759349286"></a><ul id="en-us_concept_0283139016_ul177759349286"><li>openEuler 20.3LTS (recommended)</li><li>Kirin V10</li><li>Asianux 7.5</li></ul>
+</li><li>x86:<a name="en-us_concept_0283139016_ul851564911283"></a><a name="en-us_concept_0283139016_ul851564911283"></a><ul id="en-us_concept_0283139016_ul851564911283"><li>openEuler 20.3LTS</li><li>CentOS 7.6</li><li>Asianux 7.6</li></ul>
 </li></ul>
 </td>
 </tr>
@@ -31,11 +31,12 @@
 </tr>
 <tr id="en-us_concept_0283139016_row1948773814310"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_concept_0283139016_p164876388436"><a name="en-us_concept_0283139016_p164876388436"></a><a name="en-us_concept_0283139016_p164876388436"></a>Python</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul1537120034117"></a><a name="en-us_concept_0283139016_ul1537120034117"></a><ul id="en-us_concept_0283139016_ul1537120034117"><li>openEuler: supports Python 3.7.X.</li><li>CentOS: supports Python 3.6.X.</li><li>Kirin: supports Python 3.7.X.</li></ul>
+<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul1537120034117"></a><a name="en-us_concept_0283139016_ul1537120034117"></a><ul id="en-us_concept_0283139016_ul1537120034117"><li>openEuler: supports Python 3.7.X.</li><li>CentOS: supports Python 3.6.X.</li><li>Kirin: supports Python 3.7.X.</li><li>Asianux: supports Python 3.6.X.</li></ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 ## Hardware Requirements<a name="en-us_concept_0283139016_section108961253113216"></a>
 
@@ -81,4 +82,3 @@
 </tr>
 </tbody>
 </table>
-
