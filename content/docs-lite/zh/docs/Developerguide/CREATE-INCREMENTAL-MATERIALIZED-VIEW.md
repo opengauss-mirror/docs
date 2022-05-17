@@ -44,7 +44,7 @@ CREATE INCREMENTAL MATERIALIZED VIEW mv_name
 
 -   **AS query**
 
-    一个SELECT、TABLE 或者VALUES命令。这个查询将在一个安全受限的操作中运行。
+    一个SELECT或者TABLE命令。这个查询将在一个安全受限的操作中运行。
 
 
 ## 示例<a name="zh-cn_topic_0283136612_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
