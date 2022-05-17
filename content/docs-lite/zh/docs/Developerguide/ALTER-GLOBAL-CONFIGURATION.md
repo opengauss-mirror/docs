@@ -18,5 +18,11 @@ ALTER GLOBAL CONFIGURATION with(paraname=value,paraname=value...);
 
 ## 参数说明<a name="zh-cn_topic_0283136791_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
 
-参数名称和参数值都是text类型。
++ paraname
+
+  参数名称，text类型。
+
++ value
+
+  参数值，text类型。
 
