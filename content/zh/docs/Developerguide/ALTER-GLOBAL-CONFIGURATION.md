@@ -12,7 +12,7 @@
 ## 语法格式<a name="zh-cn_topic_0283136791_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s8d26aecdc3a24323a64f4df9f4df53f3"></a>
 
 ```
-ALTER GLOBAL CONFIGURATION with(参数名称=参数值，参数名称=参数值...);
+ALTER GLOBAL CONFIGURATION with(paraname=value,paraname=value...);
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136791_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
