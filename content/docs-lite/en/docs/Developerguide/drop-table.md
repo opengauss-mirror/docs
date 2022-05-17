@@ -13,7 +13,7 @@
 
 ```
 DROP TABLE [ IF EXISTS ] 
-    { [schema.]table_name } [, ...] [ CASCADE | RESTRICT ] [ PURGE ]};
+    { [schema.]table_name } [, ...] [ CASCADE | RESTRICT ] [ PURGE ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_sa6ea557919e84c0db8ed5cbb227fa983"></a>

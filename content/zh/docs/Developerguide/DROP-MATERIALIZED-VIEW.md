@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-只有物化视图的所有者有权限执行DROP MATERIALIZED VIEW命令，系统管理员默认拥有此权限。
+物化视图的所有者、物化视图所在模式、被授予了物化视图DROP权限的用户或拥有DROP ANY TABLE权限的用户才有权限执行DROP MATERIALIZED VIEW命令，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 
