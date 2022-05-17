@@ -13,7 +13,7 @@ The keyword cannot be changed to  **weak\_password**.
 ## Syntax<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s8d26aecdc3a24323a64f4df9f4df53f3"></a>
 
 ```
-ALTER GLOBAL CONFIGURATION with (Parameter name=Parameter value,Parameter name= Parameter value...);
+ALTER GLOBAL CONFIGURATION with(paraname=value,paraname=value...);
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
