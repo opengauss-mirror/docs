@@ -31,57 +31,57 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
--   兼容PostgreSQL风格的创建自定义函数语法。
+- 兼容PostgreSQL风格的创建自定义函数语法。
 
-    ```
-    CREATE [ OR REPLACE  ] FUNCTION function_name 
-        [ ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] ) ]
-        [ RETURNS rettype [ DETERMINISTIC  ]  | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
-        LANGUAGE lang_name 
-        [ 
-           {IMMUTABLE  | STABLE  | VOLATILE }
-            | {SHIPPABLE | NOT SHIPPABLE}
-            | WINDOW
-            | [ NOT  ] LEAKPROOF  
-            | {CALLED ON NULL INPUT  | RETURNS NULL ON NULL INPUT | STRICT } 
-            | {[ EXTERNAL  ] SECURITY INVOKER | [ EXTERNAL  ] SECURITY DEFINER | AUTHID DEFINER  | AUTHID CURRENT_USER} 
-            | {fenced | not fenced}
-            | {PACKAGE}
-            | COST execution_cost
-            | ROWS result_rows
-            | SET configuration_parameter { {TO | =} value | FROM CURRENT }}
-         ][...]
-        {
-            AS 'definition'
-        }
-    
-    ```
+  ```
+  CREATE [ OR REPLACE  ] FUNCTION function_name
+      ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]
+  }  [, ...]  ] )
+      [ RETURNS rettype [ DETERMINISTIC  ]
+          | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
+      LANGUAGE lang_name
+      [
+          {IMMUTABLE  | STABLE  | VOLATILE}
+          | {SHIPPABLE | NOT SHIPPABLE}
+          | [ NOT  ] LEAKPROOF
+          | WINDOW
+          | {CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT}
+          | {[ EXTERNAL  ] SECURITY INVOKER  | [ EXTERNAL  ] SECURITY DEFINER | AU
+  THID DEFINER  | AUTHID CURRENT_USER}
+          | {FENCED | NOT FENCED}
+          | {PACKAGE}
+          | COST execution_cost
+          | ROWS result_rows
+          | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+      ] [...]
+      {
+          AS 'definition'
+          | AS 'obj_file', 'link_symbol'
+      }
+  ```
 
 -   O风格的创建自定义函数的语法。
 
     ```
-    CREATE [ OR REPLACE  ] FUNCTION function_name 
-        ( [  { argname [ argmode  ] argtype [  { DEFAULT | := | =  } expression  ] }  [, ...]  ] )
+    CREATE [ OR REPLACE  ] FUNCTION function_name
+        ( [  { argname [ argmode  ] argtype [  { DEFAULT | := | =  } expression  ] }
+      [, ...]  ] )
         RETURN rettype [ DETERMINISTIC  ]
-        [ 
-            {IMMUTABLE  | STABLE  | VOLATILE } 
+        [
+            {IMMUTABLE  | STABLE  | VOLATILE }
             | {SHIPPABLE | NOT SHIPPABLE}
             | {PACKAGE}
-            | {FENCED | NOT FENCED}
-            | [ NOT  ] LEAKPROOF  
-            | {CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT } 
-            | {[ EXTERNAL  ] SECURITY INVOKER  | [ EXTERNAL  ] SECURITY DEFINER |
-    AUTHID DEFINER | AUTHID CURRENT_USER
-    } 
-            | COST execution_cost  
-            | ROWS result_rows  
-            | SET configuration_parameter { {TO | =} value  | FROM CURRENT
-    
-        ][...] 
-    
-        { 
-          IS  | AS
-    } plsql_body
+            | [ NOT  ] LEAKPROOF
+            | {CALLED ON NULL INPUT  | RETURNS NULL ON NULL INPUT  | STRICT }
+            | {[ EXTERNAL  ] SECURITY INVOKER  | [ EXTERNAL  ] SECURITY DEFINER | |
+    AUTHID DEFINER  | AUTHID CURRENT_USER}
+            | COST execution_cost
+            | ROWS result_rows
+            | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+         ][...]
+         {
+            IS | AS
+         } plsql_body
     /
     ```
 
