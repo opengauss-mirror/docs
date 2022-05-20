@@ -118,11 +118,11 @@ PreparedStatement pstmt = conn.prepareStatement("INSERT INTO batch_table (id, na
 // 针对每条数据都要调用setShort设置参数，以及调用addBatch确认该条设置完毕。
 int loopCount = 20;
  for (int i = 1; i < loopCount + 1; ++i) {
-      statemnet.setInt(1, i);
-      statemnet.setString(2, "Name " + i);
-      statemnet.setString(3, "Address " + i);
+      pstmt.setInt(1, i);
+      pstmt.setString(2, "Name " + i);
+      pstmt.setString(3, "Address " + i);
       // Add row to the batch.
-      statemnet.addBatch();
+      pstmt.addBatch();
 }
 // 调用PreparedStatement的executeBatch方法执行批处理。
 int[] rowcount = pstmt.executeBatch();
