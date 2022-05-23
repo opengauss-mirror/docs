@@ -535,7 +535,7 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >-   SSL目前只支持加密强度在strong以上的加密算法。  
->-   配置参数ssl\_ciphers的默认值为ALL，表示支持上表中的所有加密算法。如果对加密算法没有特殊要求，建议用户使用该默认值。  
+>-   配置参数ssl\_ciphers的默认值为ALL，表示支持上表中的所有加密算法。为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
 >-   如指定以上多种加密，加密算法之间需要使用分号分割。  
 >    如在postgresql.conf设置ssl\_ciphers='DHE-RSA-AES256-GCM-SHA384;DHE-RSA-AES256-SHA256;DHE-RSA-AES256-CCM'  
 >-   如果要使用上表中和DSS相关的加密算法（如DHE-DSS-AES256-GCM-SHA384、DHE-DSS-AES256-SHA256、DHE-DSS-AES256-SHA等）必须加载使用DSA算法签名的证书文件。如何使用openssl产生DSA算法签名的证书文件，请参见openssl官方文档。  
