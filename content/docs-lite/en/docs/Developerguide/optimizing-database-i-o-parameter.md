@@ -10,7 +10,6 @@
 
     To improve service performance, set  **bgwriter\_delay**  to a smaller value.
 
--   **bgwriter\_thread\_num**: specifies the number of bgwriter threads. When the value of  **shared\_buffers**  exceeds 40 GB, increase the number of threads.
 -   **max\_io\_capacity**: specifies the I/O upper limit per second for the backend write processes \(pagewriter and bgwriter\) to flush pages in batches. Set this parameter based on the service scenario and disk I/O capability. If the RTO is short or the data volume is much larger than the shared memory, and the service access data volume is random, the value of this parameter cannot be too small. A small parameter value reduces the number of pages flushed by the backend write process. If a large number of pages are eliminated due to service triggering, the services are affected.
 
     **max\_io\_capacity**  must be set based on the optimal random write I/O capability.
