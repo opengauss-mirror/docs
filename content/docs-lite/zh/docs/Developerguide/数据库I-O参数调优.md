@@ -10,7 +10,6 @@
 
     为了提升业务性能时，适当调小bgwriter\_delay的时间。
 
--   bgwriter\_thread\_num：设置后端写进程bgwriter线程的个数，当shared\_buffers超过40GB时，可适当将线程的个数调大。
 -   max\_io\_capacity：设置后端写进程（pagewriter线程和bgwriter线程）批量刷页每秒的IO上限，需要根据具体业务场景和机器磁盘IO能力进行设置。要求RTO很短时间或者数据量比共享内存大多倍的情况，业务访问数据量又是随机访问时，该值不宜过小。该参数设置较小会减小后端写进程刷页个数，如果业务触发页面淘汰多时，该值设置小会影响业务。
 
     max\_io\_capacity需依据随机写IO能力最优设置。
