@@ -1436,7 +1436,7 @@ headless: true
 				-   [STATEMENT\_COMPLEX\_HISTORY\_TABLE]({{< relref "./docs/Developerguide/STATEMENT_COMPLEX_HISTORY_TABLE.md" >}})
 				-   [STATEMENT\_COMPLEX\_HISTORY]({{< relref "./docs/Developerguide/STATEMENT_COMPLEX_HISTORY.md" >}})
 				-   [STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME]({{< relref "./docs/Developerguide/STATEMENT_WLMSTAT_COMPLEX_RUNTIME.md" >}})  
-				-   [STATEMENT\_HISTORY]({{< relref "./docs/Developerguide/STATEMENT_HISTORY.md" >}})
+				-   [STATEMENT\_HISTORY]({{< relref "./docs/Developerguide/STATEMENT_HISTORY-25.md" >}})
 				-   [GS\_SLOW\_QUERY\_INFO（废弃）]({{< relref "./docs/Developerguide/GS_SLOW_QUERY_INFO_废弃.md" >}})
 				-   [GS\_SLOW\_QUERY\_HISTORY（废弃）]({{< relref "./docs/Developerguide/GS_SLOW_QUERY_HISTORY_废弃.md" >}})
 				-   [GLOBAL\_SLOW\_QUERY\_HISTORY（废弃）]({{< relref "./docs/Developerguide/GLOBAL_SLOW_QUERY_HISTORY_废弃.md" >}})
