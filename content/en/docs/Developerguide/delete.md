@@ -6,14 +6,14 @@
 
 ## Precautions<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
 
--   You must have the  **DELETE**  permission on the table to delete from it, as well as the  **SELECT**  permission for any table in the  **USING**  clause or whose values are read in the  **condition**.
+-   The owner of a table, users granted with the  **DELETE**  permission on the table, or users granted with the  **DELETE ANY TABLE**  permission can delete data from the table. The system administrator has the permission to delete data from the table by default, as well as the  **SELECT**  permission on any table in the  **USING**  clause or whose values are read in  **condition**.
 -   For column-store tables, the  **RETURNING**  clause is currently not supported.
 
 ## Syntax<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
+DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ [ AS ] alias ]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
     [ RETURNING { * | { output_expr [ [ AS ] output_name ] } [, ...] } ];
@@ -30,7 +30,7 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     Format of  **with\_query**:
 
     ```
-    with_query_name [ ( column_name [, ...] ) ] AS [ [ NOT ] MATERIALIZED]
+    with_query_name [ ( column_name [, ...] ) ] AS [ [ NOT ] MATERIALIZED ]
     ( {select | values | insert | update | delete} )
     ```
 
@@ -41,6 +41,11 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
     –  **column\_name**  specifies the column name displayed in the subquery result set.
 
     – Each subquery can be a  **SELECT**,  **VALUES**,  **INSERT**,  **UPDATE**  or  **DELETE**  statement.
+
+    – You can use  **MATERIALIZED**  or  **NOT MATERIALIZED**  to modify the CTE.
+
+    -   If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
+    -   If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the trunk statement to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
 
 -   **plan\_hint**  clause
 
@@ -56,11 +61,23 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
     Value range: an existing table name
 
+-   **partition\_clause**
+
+    Deletes a specified partition.
+
+    PARTITION \{ \( partition\_name \) | FOR \( partition\_value \[, ...\] \) \} |
+
+    SUBPARTITION \{ \( subpartition\_name \) | FOR \( subpartition\_value \[, ...\] \) \}
+
+    For details about the keywords, see  [SELECT](select.md).
+
+    For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
+
 -   **alias**
 
     Specifies a substitute name for the target table.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **using\_list**
 
@@ -68,7 +85,7 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
 -   **condition**
 
-    Specifies an expression that returns a Boolean value. Only rows for which this expression returns  **true**  will be deleted.
+    Specifies an expression that returns a Boolean value. Only rows for which this expression returns  **true**  will be deleted. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
 -   **WHERE CURRENT OF cursor\_name**
 
@@ -82,7 +99,7 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
     Specifies a name to use for a returned column.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 
 ## Examples<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s90a3978214f644269ab932c29df31137"></a>

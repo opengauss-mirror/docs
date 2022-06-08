@@ -17,7 +17,7 @@ PG\_NAMESPACE系统表存储名称空间，即存储schema相关的信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p14981134455117"><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p14981134455117"></a><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p14981134455117"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p189811144165112"><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p189811144165112"></a><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p189811144165112"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p189811144165112"><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p189811144165112"></a><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_p189811144165112"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136940_zh-cn_topic_0237122300_zh-cn_topic_0059779337_r4e24274f6f674635acad9b0e010c1a13"><td class="cellrowborder" valign="top" width="20.13%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136940_zh-cn_topic_0237122300_zh-cn_topic_0059779337_ac8a736142377470cab5c2aac7bcea51c"><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_zh-cn_topic_0059779337_ac8a736142377470cab5c2aac7bcea51c"></a><a name="zh-cn_topic_0283136940_zh-cn_topic_0237122300_zh-cn_topic_0059779337_ac8a736142377470cab5c2aac7bcea51c"></a>nspname</p>
@@ -64,4 +64,5 @@ PG\_NAMESPACE系统表存储名称空间，即存储schema相关的信息。
 </tr>
 </tbody>
 </table>
+
 

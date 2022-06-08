@@ -27,6 +27,8 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 -   当使用远程备份时，请确保远程机器和备份机器的时钟同步，以防止使用--recovery-target-time恢复的场合,启动gaussdb时有可能会失败。
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
+-   当前仅支持备份发布订阅的逻辑复制槽。
+-   备份时，请确保服务器用户对备份的目录下所有文件有读写的权限，以防止在恢复时因权限不足的问题而失败。
 
 ## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>
 
@@ -110,7 +112,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
     [--archive-timeout=timeout] [-t rwtimeout]
     [logging_options] [retention_options] [compression_options]
-    [connection_options] [remote_options] [pinning_options]
+    [connection_options] [remote_options] [pinning_options][--backup-pg-replslot]
     [--help]
     ```
 
@@ -159,7 +161,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ## 参数说明<a name="zh-cn_topic_0287276008_section520716591338"></a>
 
-**通用参数**
+### **通用参数**
 
 -   command
 
@@ -230,8 +232,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     给备份添加note。
 
-
-**备份相关参数**
+### **备份相关参数**
 
 -   -b  _backup-mode_, --backup-mode=_backup-mode_
 
@@ -289,8 +290,11 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值: 120
 
+-   --backup-pg-replslot
 
-**恢复相关参数**
+    将pg_replslot下发布订阅的逻辑复制槽目录包含到备份中。默认情况下包含pg_replslot目录，但不包含复制槽文件。
+
+### **恢复相关参数**
 
 -   -I, --incremental-mode=none|checksum|lsn
 
@@ -322,8 +326,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     允许忽略备份的无效状态。如果出于某种原因需要从损坏的或无效的备份中恢复数据，可以使用此标志。请谨慎使用。
 
-
-**恢复目标相关参数\(recovery\_options\)**
+### **恢复目标相关参数\(recovery\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >当前不支持配置连续的WAL归档的PITR，因而使用这些参数会有一定限制，具体如下描述。
@@ -359,8 +362,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     该参数必须和--recovery-target-name、--recovery-target-time、--recovery-target-lsn或--recovery-target-xid一起使用。
 
-
-**留存相关参数\(retention\_options\)**
+### **留存相关参数\(retention\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >可以和backup和delete命令一起使用这些参数。
@@ -399,8 +401,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     显示所有可用备份的当前状态，不删除或合并过期备份。
 
-
-**固定备份相关参数\(pinning\_options\)**
+### **固定备份相关参数\(pinning\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >如果要将某些备份从已建立的留存策略中排除，可以和backup和set-backup命令一起使用这些参数。
@@ -419,8 +420,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     例如：--expire-time='2020-01-01 00:00:00+03'
 
-
-**日志相关参数\(logging\_options\)**
+### **日志相关参数\(logging\_options\)**
 
 日志级别：verbose、log、info、warning、error和off。
 
@@ -474,8 +474,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：0
 
-
-**连接相关参数\(connection\_options\)**
+### **连接相关参数\(connection\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >可以和backup命令一起使用这些参数。
@@ -516,8 +515,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     指定用户连接的密码。如果主机的认证策略是trust，则不会对系统管理员进行密码验证，即无需输入-W选项；如果没有-W选项，并且不是系统管理员，则会提示用户输入密码。
 
-
-**压缩相关参数\(compression\_options\)**
+### **压缩相关参数\(compression\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >可以和backup命令一起使用这些参数。
@@ -545,8 +543,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     以--compress-algorithm=zlib和--compress-level=1进行压缩。
 
-
-**远程模式相关参数\(remote\_options\)**
+### **远程模式相关参数\(remote\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
@@ -583,29 +580,34 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：当前路径
 
--   --remote-lib=_libpath_
+-   --remote-libpath=_libpath_
 
     指定gs\_probackup在远程系统安装的lib库目录。
 
--   --ssh-options=_ssh\_options_
+- --ssh-options=_ssh\_options_
 
-    指定SSH命令行参数的字符串。
+  指定SSH命令行参数的字符串。
 
-    例如：--ssh-options='-c cipher\_spec -F configfile'
+  例如：--ssh-options='-c cipher\_spec -F configfile'
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   如果因为网络临时故障等原因导致server端无应答,gs\_probackup将在等待archive-timeout（默认300秒）后退出。
-    > 
-    >-   如果备机lsn与主机有差别时，数据库会不停地刷以下log信息，此时应重新build备机。
-    >```
-    >LOG: walsender thread shut down
-    >LOG: walsender thread started
-    >LOG: received wal replication command: IDENTIFY_VERSION
-    >LOG: received wal replication command: IDENTIFY_MODE
-    >LOG: received wal replication command: IDENTIFY_SYSTEM
-    >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
-    >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
-    >```
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  >
+  >
+  >- 如果因为网络临时故障等原因导致server端无应答,gs\_probackup将在等待archive-timeout（默认300秒）后退出。
+  >
+  >- 如果备机lsn与主机有差别时，数据库会不停地刷以下log信息，此时应重新build备机。
+  >
+  >
+  >```
+  >LOG: walsender thread shut down
+  >LOG: walsender thread started
+  >LOG: received wal replication command: IDENTIFY_VERSION
+  >LOG: received wal replication command: IDENTIFY_MODE
+  >LOG: received wal replication command: IDENTIFY_SYSTEM
+  >LOG: received wal replication command: IDENTIFY_CONSISTENCE 0/D0002D8
+  >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
+  >```
 
 
 ## 备份流程<a name="zh-cn_topic_0287276008_section1735727125216"></a>

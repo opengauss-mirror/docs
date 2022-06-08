@@ -26,7 +26,7 @@ jdbc:postgresql://node1,node2,node3/database?loadBalanceHosts=true
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >When  **loadBalanceHosts**  is used, if the connection is established on the standby DN, write operations cannot be performed. If read and write operations are required, do not set this parameter.
 
-## Log Diagnosis<a name="section179211561507"></a>
+## Log Diagnosis Scenario<a name="section179211561507"></a>
 
 If a customer encounters slow data import or some errors that are difficult to analyze, the trace log function can be enabled for diagnosis. The URL can be configured as follows:
 
@@ -52,5 +52,24 @@ A customer needs to insert 10 million data records in batches. To improve effici
 
 ```
 jdbc:postgresql://node1/database?batchMode=true
+```
+
+## Case Conversion<a name="section588403715355"></a>
+
+In the Oracle database, metadata is stored in uppercase letters by default. In the GaussDB, metadata is stored in lowercase letters by default. Therefore, after the metadata is migrated from Oracle to GaussDB, the uppercase letters changes to lowercase letters. If the original service involves the processing of uppercase metadata, you can enable this parameter. However, you are advised to modify the service code instead of using this method to solve the problem. If you have to use this function, ensure that the metadata in the current database is in lowercase to avoid problems.
+
+```
+jdbc:postgresql://node1/database?uppercaseAttributeName=true
+```
+
+The APIs involved in DatabaseMetaData can be directly invoked based on input parameters. The methods of using the APIs involved in ResultSetMetaData are as follows:
+
+```
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery("select * from test_supper");
+ResultSetMetaData rsmd = rs.getMetaData();
+for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+    System.out.println(rsmd.getColumnLabel(i) + "   " + rsmd.getColumnName(i));
+}
 ```
 

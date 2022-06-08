@@ -1,6 +1,6 @@
-# gs\_restore<a name="EN-US_TOPIC_0249632267"></a>
+# gs\_restore<a name="EN-US_TOPIC_0289899238"></a>
 
-## Background<a name="en-us_topic_0237152343_en-us_topic_0059777561_section182531928123515"></a>
+## Background<a name="en-us_topic_0287275939_en-us_topic_0237152343_en-us_topic_0059777561_section182531928123515"></a>
 
 **gs\_restore**, provided by openGauss, is used to import data that was exported using  **gs\_dump**. It can also be used to import files exported by  **gs\_dump**.
 
@@ -17,23 +17,19 @@ It has the following functions:
     If the database storing imported data is not specified, a script containing the SQL statement to recreate the database is created and written to a file or standard output. This script output is equivalent to the plain text output format of  **gs\_dump**.
 
 
-## Command Format<a name="en-us_topic_0237152343_en-us_topic_0059777561_s5a64660d88db4dfb8e2b35d0b4645264"></a>
+## Command Format<a name="en-us_topic_0287275939_en-us_topic_0237152343_en-us_topic_0059777561_s5a64660d88db4dfb8e2b35d0b4645264"></a>
 
 ```
 gs_restore [OPTION]... FILE
 ```
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files.
+>-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.
+>-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  option during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.
+>-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.
 
--   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files. 
-
--   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.
-
--   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.
-
--   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.
-
-## Parameter Description<a name="en-us_topic_0237152343_en-us_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
+## Parameter Description<a name="en-us_topic_0287275939_en-us_topic_0237152343_en-us_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
 Common parameters
 
@@ -47,9 +43,8 @@ Common parameters
 
     The default is the standard output.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-
-    **-f**  cannot be used in conjunction with  **-d**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**-f**  cannot be used in conjunction with  **-d**.
 
 -   -F, --format=c|d|t
 
@@ -58,9 +53,7 @@ Common parameters
     Value range:
 
     -   **c/custom**: The archive form is the customized format in  [gs\_dump](gs_dump.md).
-
     -   **d/directory**: The archive form is a directory archive format.
-
     -   **t/tar**: The archive form is a .tar archive format.
 
 -   -l, --list
@@ -77,12 +70,12 @@ Common parameters
 
 -   -?, --help
 
-    Displays help information about the parameters of  **gs\_restore**  and exits.
+    Displays help about  **gs\_restore**  parameters and exits.
 
 
 Parameters for importing data
 
--   -a, -data-only
+-   -a, --data-only
 
     Imports only the data, not the schema \(data definition\).  **gs\_restore**  incrementally imports data.
 
@@ -92,7 +85,7 @@ Parameters for importing data
 
 -   -C, --create
 
-    Before importing to the database, CREATE DATABASE will be used to create the database (after specifying this option, the database specified by **-d** is only used to execute the CREATE DATABASE command, and all data will be imported into the created database).
+    Specifies that the CREATE DATABASE statement is used to create a database before data is imported to the database. \(After this parameter is specified, the database specified by  **-d**  is used only for executing the  **CREATE DATABASE**  command, and all data is still imported to the created database.\)
 
 -   -e, --exit-on-error
 
@@ -124,7 +117,7 @@ Parameters for importing data
 
     Imports only archive elements that are listed in  **list-file**  and imports them in the order that they appear in the file. If filtering parameters, such as  **-n**  or  **-t**, are used in conjunction with  **-L**, they will further limit the items to be imported.
 
-    **list-file**  is normally created by editing the output of a previous  **-l**  parameter. File lines can be moved or removed, and can also be commented out by placing a semicolon \(;\) at the beginning of the row. 
+    **list-file**  is normally created by editing the output of a previous  **-l**  parameter. File lines can be moved or removed, and can also be commented out by placing a semicolon \(;\) at the beginning of the row.
 
 -   -n, --schema=NAME
 
@@ -170,33 +163,32 @@ Parameters for importing data
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
 
-- -t, --table=NAME
+-   -t, --table=NAME
 
-  Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n **_schemaname_** -t **_tablename_  multiple times can import multiple tables in a specified schema.
+    Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n **_schemaname_** -t **_tablename_  multiple times can import multiple tables in a specified schema.
 
-  For example:
+    For example:
 
-  Import  **table1**  in the  **PUBLIC**  schema.
+    Import  **table1**  in the  **PUBLIC**  schema.
 
-  ```
-  gs_restore -h host_name -p port_number -d postgres -t table1 backup/MPPDB_backup.tar
-  ```
+    ```
+    gs_restore -h host_name -p port_number -d postgres -t table1 backup/MPPDB_backup.tar
+    ```
 
-  Import  **test1**  in the  **test1**  schema and  **test2**  in the  **test2**  schema.
+    Import  **test1**  in the  **test1**  schema and  **test2**  in the  **test2**  schema.
 
-  ```
-  gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
-  ```
+    ```
+    gs_restore -h host_name -p port_number -d postgres -n test1 -t test1 -n test2 -t test2 backup/MPPDB_backup.tar
+    ```
 
-  Import  **table1**  in the  **PUBLIC**  schema and  **test1**  in the  **table1**  schema.
+    Import  **table1**  in the  **PUBLIC**  schema and  **table1**  in the  **test1**  schema.
 
-  ```
-  gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
-  ```
+    ```
+    gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
+    ```
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:** 
-
-  The -t parameter does not support the input format of schema_name.table_name.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >**-t**  does not support the  **schema\_name.table\_name**  input format.
 
 -   -T, --trigger=NAME
 
@@ -210,7 +202,7 @@ Parameters for importing data
 
     Executes import as a single transaction \(that is, commands are wrapped in  **BEGIN**/**COMMIT**\).
 
-    This parameter ensures that either all the commands are completed successfully or no application is changed. This parameter means  **--exit-on-error**. 
+    This parameter ensures that either all the commands are completed successfully or no application is changed. This option means  **--exit-on-error**.
 
 -   --disable-triggers
 
@@ -218,17 +210,25 @@ Parameters for importing data
 
 -   --no-data-for-failed-tables
 
-    By default, table data will be imported even if the statement to create a table fails \(for example, the table already exists\). Data in such table is skipped using this parameter. This operation is useful if the target database already contains the desired table contents.
+    By default, table data will be imported even if the statement to create a table fails \(for example, the table exists\). Data in such table is skipped using this parameter. This operation is useful if the target database already contains the desired table contents.
 
     This parameter takes effect only when you import data directly into a database, not when you output SQL scripts.
+
+-   --no-publications
+
+    No import publications are performed.
 
 -   --no-security-labels
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
 
+-   --no-subscriptions
+
+    No import subscriptions are performed.
+
 -   --no-tablespaces
 
-    Tablespaces excluding specified ones All objects will be created during the import process no matter which tablespace is selected when using this option.
+    Does not issue commands to select tablespaces. All objects will be created during the import process no matter which tablespace is selected when using this option.
 
 -   --section=SECTION
 
@@ -240,26 +240,24 @@ Parameters for importing data
 
     Outputs the  **SET SESSION AUTHORIZATION**  statement instead of the  **ALTER OWNER**  statement to determine object ownership. This parameter makes dump more standards-compatible. If the records of objects in exported files are referenced, import may fail. Only administrators can use the  **SET SESSION AUTHORIZATION**  statement to dump data, and the administrators must manually change and verify the passwords of exported files by referencing the  **SET SESSION AUTHORIZATION**  statement before import. The  **ALTER OWNER**  statement requires lower permissions.
 
+-   --pipeline
+
+    Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
 
-    ![](public_sys-resources/icon-notice.gif) **NOTICE:**   
-    -   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:  
-    ```  
-    CREATE DATABASE foo WITH TEMPLATE template0;  
-    ```  
-    -   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.  
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>-   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
+>```
+>CREATE DATABASE foo WITH TEMPLATE template0;
+>```
+>-   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-
-1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.
-
-2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
-
-3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
-
-4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.
-
-5.  **--role**  must be used in conjunction with  **--rolepassword**.
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.
+>2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
+>3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
+>4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.
+>5.  **--role**  must be used in conjunction with  **--rolepassword**.
 
 Connection parameters:
 
@@ -271,9 +269,9 @@ Connection parameters:
 
 -   -p, --port=PORT
 
-    TCP port or the local Unix-domain socket file extension on which the server is listening for connections. The default value is the  _PGPORT_  environment variable.
+    Specifies the TCP port listened on by the server or the local Unix domain socket file name extension to ensure a correct connection. The default value is the  _PGPORT_  environment variable.
 
-    If the thread pool function is enabled, you are advised to use  **pooler port**, that is, the listening port number plus 1.
+    If the thread pool is enabled, you are advised to use pooler port, that is, the listening port number plus 1.
 
 -   -U, --username=NAME
 
@@ -285,7 +283,7 @@ Connection parameters:
 
 -   -W, --password=PASSWORD
 
-    User password for database connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  parameter. If the  **-W**  parameter is not provided and you are not a system administrator,  **gs\_restore**  will ask you to enter a password.
+    Specifies the user password for connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  option. If the  **-W**  option is not provided and you are not a system administrator,  **gs\_restore**  will ask you to enter a password.
 
 -   --role=ROLENAME
 
@@ -293,15 +291,15 @@ Connection parameters:
 
 -   --rolepassword=ROLEPASSWORD
 
-    Role password.
+    Specifies the password of the specific role.
 
 
-## Example<a name="en-us_topic_0237152343_en-us_topic_0059777561_s87e334fd72aa475782287207b9d7fb79"></a>
+## Examples<a name="en-us_topic_0287275939_en-us_topic_0237152343_en-us_topic_0059777561_s87e334fd72aa475782287207b9d7fb79"></a>
 
 Special case: Execute the  **gsql**  tool. Run the following commands to import the  **MPPDB\_backup.sql**  file in the export folder \(in plain-text format\) generated by  **gs\_dump**/**gs\_dumpall**  to the  **postgres**  database:
 
 ```
-gsql -d postgres -p 5432 -W Bigdata@123 -f /home/omm/test/MPPDB_backup.sql
+gsql -d postgres -p 15400 -W Bigdata@123 -f /home/omm/test/MPPDB_backup.sql
 SET
 SET
 SET
@@ -329,7 +327,7 @@ total time: 30476  ms
 Example 1: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup.dmp**  file \(custom format\) to the  **postgres**  database.
 
 ```
-gs_restore -W Bigdata@123 backup/MPPDB_backup.dmp -p 5432 -d postgres
+gs_restore -W Bigdata@123 backup/MPPDB_backup.dmp -p 15400 -d postgres
 gs_restore: restore operation successful
 gs_restore: total time: 13053  ms
 ```
@@ -337,7 +335,7 @@ gs_restore: total time: 13053  ms
 Example 2: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup.tar**  file \(.tar format\) to the  **postgres**  database.
 
 ```
-gs_restore backup/MPPDB_backup.tar -p 5432 -d postgres 
+gs_restore backup/MPPDB_backup.tar -p 15400 -d postgres 
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21203  ms
 ```
@@ -345,7 +343,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21203  ms
 Example 3: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup**  file \(directory format\) to the  **postgres**  database.
 
 ```
-gs_restore backup/MPPDB_backup -p 5432 -d postgres
+gs_restore backup/MPPDB_backup -p 15400 -d postgres
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21003  ms
 ```
@@ -353,7 +351,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 21003  ms
 Example 4: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import all the object definitions and data in the  **PUBLIC**  schema. Existing objects are deleted from the target database before the import. If an existing object references to an object in another schema, you need to manually delete the referenced object first.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -n PUBLIC
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -n PUBLIC
 gs_restore: [archiver (db)] Error while PROCESSING TOC:
 gs_restore: [archiver (db)] Error from TOC entry 313; 1259 337399 TABLE table1 gaussdba
 gs_restore: [archiver (db)] could not execute query: ERROR:  cannot drop table table1 because other objects depend on it
@@ -365,7 +363,7 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.
 Manually delete the referenced object and create it again after the import is complete.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -n PUBLIC
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -n PUBLIC
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 2203  ms
 ```
@@ -373,7 +371,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 2203  ms
 Example 5: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import only the definition of  **table1**  in the  **PUBLIC**  schema.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -c -s -n PUBLIC -t table1
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -c -s -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 21000  ms
 ```
@@ -381,12 +379,12 @@ gs_restore[2017-07-21 19:16:26]: total time: 21000  ms
 Example 6: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import only the data of  **table1**  in the  **PUBLIC**  schema.
 
 ```
-gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -a -n PUBLIC -t table1
+gs_restore backup/MPPDB_backup.dmp -p 15400 -d postgres -e -a -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 ```
 
-## Helpful Links<a name="en-us_topic_0237152343_en-us_topic_0059777561_sd2827da1c60248c0b0bfffc406b9f668"></a>
+## Helpful Links<a name="en-us_topic_0287275939_en-us_topic_0237152343_en-us_topic_0059777561_sd2827da1c60248c0b0bfffc406b9f668"></a>
 
 [gs\_dump](gs_dump.md)  and  [gs\_dumpall](gs_dumpall.md)
 

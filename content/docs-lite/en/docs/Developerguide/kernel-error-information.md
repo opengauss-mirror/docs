@@ -1,0 +1,1322 @@
+# Kernel Error Information<a name="EN-US_TOPIC_0000001113427790"></a>
+
+ERRMSG: "unsupported syntax: ENCRYPTED WITH in this operation"
+
+SQLSTATE: 42601
+
+CAUSE: "client encryption feature is not supported this operation."
+
+ACTION: "Check client encryption feature whether supported this operation."
+
+ERRMSG: "invalid grant operation"
+
+SQLSTATE: 0LP01
+
+CAUSE: "Grant options cannot be granted to public."
+
+ACTION: "Grant grant options to roles."
+
+ERRMSG: "unrecognized object kind: %d"
+
+SQLSTATE: XX004
+
+CAUSE: "The object type is not supported for GRANT/REVOKE."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "unrecognized GrantStmt.targtype: %d"
+
+SQLSTATE: XX004
+
+CAUSE: "The target type is not supported for GRANT/REVOKE."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported target types."
+
+ERRMSG: "invalid grant operation"
+
+SQLSTATE: 0LP01
+
+CAUSE: "Grant to public operation is forbidden in security mode."
+
+ACTION: "Don't grant to public in security mode."
+
+ERRMSG: "unrecognized object type"
+
+SQLSTATE: XX004
+
+CAUSE: "The object type is not supported for GRANT/REVOKE."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "invalid grant/revoke operation"
+
+SQLSTATE: 0LP01
+
+CAUSE: "Column privileges are only valid for relations in GRANT/REVOKE."
+
+ACTION: "Use the column privileges only for relations."
+
+ERRMSG: "invalid AccessPriv node"
+
+SQLSTATE: 0LP01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "unrecognized GrantStmt.objtype: %d"
+
+SQLSTATE: XX004
+
+CAUSE: "The object type is not supported for GRANT/REVOKE."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "undefined client master key"
+
+SQLSTATE: 42705
+
+CAUSE: "The client master key does not exist."
+
+ACTION: "Check whether the client master key exists."
+
+ERRMSG: "undefined column encryption key"
+
+SQLSTATE: 42705
+
+CAUSE: "The column encryption key does not exist."
+
+ACTION: "Check whether the column encryption key exists."
+
+ERRMSG: "large object %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "The large object does not exist."
+
+ACTION: "Check whether the large object exists."
+
+ERRMSG: "redundant options"
+
+SQLSTATE: 42601
+
+CAUSE: "The syntax 'schemas' is redundant in ALTER DEFAULT PRIVILEGES statement."
+
+ACTION: "Check ALTER DEFAULT PRIVILEGES syntax."
+
+ERRMSG: "redundant options"
+
+SQLSTATE: 42601
+
+CAUSE: "The syntax 'roles' is redundant in ALTER DEFAULT PRIVILEGES statement."
+
+ACTION: "Check ALTER DEFAULT PRIVILEGES syntax."
+
+ERRMSG: "option '%s' not recognized"
+
+SQLSTATE: 42601
+
+CAUSE: "The option in ALTER DEFAULT PRIVILEGES statement is not supported."
+
+ACTION: "Check ALTER DEFAULT PRIVILEGES syntax."
+
+ERRMSG: "unrecognized GrantStmt.objtype: %d"
+
+SQLSTATE: XX004
+
+CAUSE: "The object type is not supported for ALTER DEFAULT PRIVILEGES."
+
+ACTION: "Check ALTER DEFAULT PRIVILEGES syntax to obtain the supported object types."
+
+ERRMSG: "invalid alter default privileges operation"
+
+SQLSTATE: 0LP01
+
+CAUSE: "Default privileges cannot be set for columns."
+
+ACTION: "Check ALTER DEFAULT PRIVILEGES syntax."
+
+ERRMSG: "unrecognized objtype: %d"
+
+SQLSTATE: XX004
+
+CAUSE: "The object type is not supported for default privileges."
+
+ACTION: "Check ALTER DEFAULT PRIVILEGES syntax to obtain the supported object types."
+
+ERRMSG: "could not find tuple for default ACL %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "unexpected default ACL type: %d"
+
+SQLSTATE: 0LP01
+
+CAUSE: "The object type is not supported for default privilege."
+
+ACTION: "Check ALTER DEFAULT PRIVILEGES syntax to obtain the supported object types."
+
+ERRMSG: "invalid object id"
+
+SQLSTATE: 0LP01
+
+CAUSE: "The object type is not supported for GRANT/REVOKE."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "undefined column"
+
+SQLSTATE: 42703
+
+CAUSE: "The column of the relation does not exist."
+
+ACTION: "Check whether the column exists."
+
+ERRMSG: "column number out of range"
+
+SQLSTATE: 0LP01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for attribute %d of relation %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for relation %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "unsupported object type"
+
+SQLSTATE: 42809
+
+CAUSE: "Index type is not supported for GRANT/REVOKE."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "unsupported object type"
+
+SQLSTATE: 42809
+
+CAUSE: "Composite type is not supported for GRANT/REVOKE."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "wrong object type"
+
+SQLSTATE: 42809
+
+CAUSE: "GRANT/REVOKE SEQUENCE only support sequence objects."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "invalid privilege type USAGE for table"
+
+SQLSTATE: 0LP01
+
+CAUSE: "GRANT/REVOKE TABLE do not support USAGE privilege."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported privilege types for tables."
+
+ERRMSG: "invalid privilege type %s for column"
+
+SQLSTATE: 0LP01
+
+CAUSE: "The privilege type is not supported for column object."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported privilege types for column object."
+
+ERRMSG: "cache lookup failed for database %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for foreign-data wrapper %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for foreign server %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for function %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for language %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "Grant/revoke on untrusted languages if forbidden."
+
+SQLSTATE: 0LP01
+
+CAUSE: "Grant/revoke on untrusted languages if forbidden."
+
+ACTION: "Support grant/revoke on trusted C languages"
+
+ERRMSG: "Forbid grant language c to user with grant option."
+
+SQLSTATE: 0A000
+
+CAUSE: "Forbid grant language c to user with grant option."
+
+ACTION: "Only support grant language c to user."
+
+ERRMSG: "Forbid grant language c to public."
+
+SQLSTATE: 0A000
+
+CAUSE: "Forbid grant language c to public."
+
+ACTION: "Grant language c to specified users."
+
+ERRMSG: "cache lookup failed for large object %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for namespace %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for tablespace %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for type %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cannot set privileges of array types"
+
+SQLSTATE: 0LP01
+
+CAUSE: "Cannot set privileges of array types."
+
+ACTION: "Set the privileges of the element type instead."
+
+ERRMSG: "wrong object type"
+
+SQLSTATE: 42809
+
+CAUSE: "GRANT/REVOKE DOMAIN only support domain objects."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "cache lookup failed for data source %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for client master key %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for column encryption key %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "cache lookup failed for directory %u"
+
+SQLSTATE: 29P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "unrecognized privilege type '%s'"
+
+SQLSTATE: 42601
+
+CAUSE: "The privilege type is not supported."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported privilege types."
+
+ERRMSG: "unrecognized privilege: %d"
+
+SQLSTATE: XX004
+
+CAUSE: "The privilege type is not supported."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported privilege types."
+
+ERRMSG: "unrecognized AclResult"
+
+SQLSTATE: XX004
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "permission denied for column '%s' of relation '%s'"
+
+SQLSTATE: 42501
+
+CAUSE: "Insufficient privileges for the column."
+
+ACTION: "Select the system tables to get the acl of the column."
+
+ERRMSG: "role with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "unrecognized objkind: %d"
+
+SQLSTATE: XX004
+
+CAUSE: "The object type is not supported for privilege check."
+
+ACTION: "Check GRANT/REVOKE syntax to obtain the supported object types."
+
+ERRMSG: "attribute %d of relation with OID %u does not exist"
+
+SQLSTATE: 42703
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "the column has been dropped"
+
+SQLSTATE: 42703
+
+CAUSE: "The column does not exist."
+
+ACTION: "Check whether the column exists."
+
+ERRMSG: "relation with OID %u does not exist"
+
+SQLSTATE: 42P01
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "invalid group"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "database with OID %u does not exist"
+
+SQLSTATE: 3D000
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "directory with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "function with OID %u does not exist"
+
+SQLSTATE: 42883
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "client master key with OID %u does not exist"
+
+SQLSTATE: 42705
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "language with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "large object %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "schema with OID %u does not exist"
+
+SQLSTATE: 3F001
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "tablespace with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "foreign-data wrapper with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "foreign server with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "data source with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "type with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "operator with OID %u does not exist"
+
+SQLSTATE: 42883
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "column encryption key with OID %u does not exist"
+
+SQLSTATE: 42705
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "operator class with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "operator family with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "text search dictionary with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "text search configuration with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "collation with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "conversion with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "extension with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "synonym with OID %u does not exist"
+
+SQLSTATE: 42704
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "package can not create the same name with schema."
+
+SQLSTATE: 22023
+
+CAUSE: "Package name conflict"
+
+ACTION: "Please rename package name"
+
+ERRMSG: "type is not exists %s."
+
+SQLSTATE: 22023
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "This input type is not supported for tdigest\_in\(\)"
+
+SQLSTATE: 0A000
+
+CAUSE: "input type is not supported"
+
+ACTION: "Check tdigest\_in syntax to obtain the supported privilege types"
+
+ERRMSG: "Failed to apply for memory"
+
+SQLSTATE: 53200
+
+CAUSE: "palloc failed"
+
+ACTION: "Check memory"
+
+ERRMSG: "Failed to get tde info from relation '%s'."
+
+SQLSTATE: XX005
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "SPI\_connect failed: %s"
+
+SQLSTATE: SP001
+
+CAUSE: "System error."
+
+ACTION: "Analyze the error message before the error"
+
+ERRMSG: "permission denied for terminate snapshot thread"
+
+SQLSTATE: 42501
+
+CAUSE: "The user does not have system admin privilege"
+
+ACTION: "Grant system admin to user"
+
+ERRMSG: "terminate snapshot thread failed"
+
+SQLSTATE: OP001
+
+CAUSE: "Execution failed due to: %s"
+
+ACTION: "check if snapshot thread exists"
+
+ERRMSG: "terminate snapshot thread failed"
+
+SQLSTATE: OP001
+
+CAUSE: "restart wdr snapshot thread timeoutor The thread did not respond to the kill signal"
+
+ACTION: "Check the wdr snapshot thread is restarted"
+
+ERRMSG: "set lockwait\_timeout failed"
+
+SQLSTATE: XX000
+
+CAUSE: "System error."
+
+ACTION: "Contact engineer to support."
+
+ERRMSG: "permission denied for create WDR Snapshot"
+
+SQLSTATE: 42501
+
+CAUSE: "The user does not have system admin privilege"
+
+ACTION: "Grant system admin to user"
+
+ERRMSG: "WDR snapshot request can not be accepted, please retry later"
+
+SQLSTATE: OP001
+
+CAUSE: "wdr snapshot thread does not exist"
+
+ACTION: "Check if wdr snapshot thread exists"
+
+ERRMSG: "Cannot respond to WDR snapshot request"
+
+SQLSTATE: OP001
+
+CAUSE: "Execution failed due to: %s"
+
+ACTION: "Check if wdr snapshot thread exists"
+
+ERRMSG: "query\(%s\) can not get datum values"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "create sequence failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check if sequence can be created"
+
+ERRMSG: "update snapshot end time stamp filled"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "query can not get datum values"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "SPI\_connect failed: %s"
+
+SQLSTATE: XX000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "query\(%s\) execute failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "clean table of snap\_%s is failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "analyze table failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "insert into tables\_snap\_timestamp start time stamp is failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "insert data failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful and check whether the query can be executed"
+
+ERRMSG: "update tables\_snap\_timestamp end time stamp is failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "clean snapshot id %lu is failed in snapshot table"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful and check whether the query can be executed"
+
+ERRMSG: "clean snapshot failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "can not create snapshot stat table"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "create WDR snapshot data table failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "insert into tables\_snap\_timestamp start time stamp failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "insert into snap\_%s is failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "update tables\_snap\_timestamp end time stamp failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "create index failed"
+
+SQLSTATE: 22000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the query can be executed"
+
+ERRMSG: "analyze table, connection failed: %s"
+
+SQLSTATE: XX000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "snapshot thread SPI\_connect failed: %s"
+
+SQLSTATE: XX000
+
+CAUSE: "System error."
+
+ACTION: "Check whether the snapshot retry is successful"
+
+ERRMSG: "Distributed key column can't be transformed"
+
+SQLSTATE: 42P10
+
+CAUSE: "There is a risk of violating uniqueness when transforming distribution columns."
+
+ACTION: "Change transform column."
+
+ERRMSG: "cannot convert %s to %s"
+
+SQLSTATE: 42804
+
+CAUSE: "There is no conversion path in pg\_cast."
+
+ACTION: "Rewrite or cast the expression."
+
+ERRMSG: "create matview on TDE table failed"
+
+SQLSTATE: 0A000
+
+CAUSE: "create materialized views is not supported on TDE table"
+
+ACTION: "check CREATE syntax about create the materialized views"
+
+ERRMSG: "schema name can not same as package"
+
+SQLSTATE: 22023
+
+CAUSE: "schema name conflict"
+
+ACTION: "rename schema name"
+
+ERRMSG: "Unrecognized commandType when checking read-only attribute."
+
+SQLSTATE: XX004
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "Fail to generate subquery plan."
+
+SQLSTATE: XX005
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "Unrecognized node type when processing qual condition."
+
+SQLSTATE: XX004
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "Unrecognized node type when processing const parameters."
+
+SQLSTATE: XX004
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "SELECT FOR UPDATE/SHARE is not allowed with UNION/INTERSECT/EXCEPT"
+
+SQLSTATE: 0A000
+
+CAUSE: "SQL uses unsupported feature."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "GROUP BY cannot be implemented."
+
+SQLSTATE: 0A000
+
+CAUSE: "GROUP BY uses unsupported datatypes."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "TSDB functions cannot be used if enable\_tsdb is off."
+
+SQLSTATE: D0011
+
+CAUSE: "Functions are not loaded."
+
+ACTION: "Turn on enable\_tsdb according to manual."
+
+ERRMSG: "Unrecognized node type when extracting index."
+
+SQLSTATE: XX004
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "Ordering operator cannot be identified."
+
+SQLSTATE: 42883
+
+CAUSE: "Grouping set columns must be able to sort their inputs."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "DISTINCT cannot be implemented."
+
+SQLSTATE: 0A000
+
+CAUSE: "DISTINCT uses unsupported datatypes."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "Failed to locate grouping columns."
+
+SQLSTATE: 55000
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "Resjunk output columns are not implemented."
+
+SQLSTATE: 20000
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "PARTITION BY cannot be implemented."
+
+SQLSTATE: 0A000
+
+CAUSE: "PARTITION BY uses unsupported datatypes."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "ORDER BY cannot be implemented."
+
+SQLSTATE: 0A000
+
+CAUSE: "ORDER BY uses unsupported datatypes."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "Failed to deconstruct sort operators into partitioning/ordering operators."
+
+SQLSTATE: D0011
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "OBS and HDFS foreign table can NOT be in the same plan."
+
+SQLSTATE: XX008
+
+CAUSE: "SQL uses unsupported feature."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "Pool size should not be zero"
+
+SQLSTATE: 22012
+
+CAUSE: "Compute pool configuration file contains error."
+
+ACTION: "Please check the value of 'pl' in cp\_client.conf."
+
+ERRMSG: "Failed to get the runtime info from the compute pool."
+
+SQLSTATE: 22004
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "Version is not compatible between local cluster and the compute pool."
+
+SQLSTATE: XX008
+
+CAUSE: "Compute pool is not installed appropriately."
+
+ACTION: "Configure compute pool according to manual."
+
+ERRMSG: "No optional index path is found."
+
+SQLSTATE: 01000
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "MERGE INTO on replicated table does not yet support using distributed tables."
+
+SQLSTATE: 0A000
+
+CAUSE: "SQL uses unsupported feature."
+
+ACTION: "Modify SQL statement according to the manual."
+
+ERRMSG: "Fail to find ForeignScan node!"
+
+SQLSTATE: P0002
+
+CAUSE: "System error."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "sql advisor don't support none table, temp table, system table."
+
+SQLSTATE: 42601
+
+CAUSE: "sql advisor don't support none table, temp table, system table."
+
+ACTION: "check query component"
+
+ERRMSG: "Invalid autonomous transaction return datatypes"
+
+SQLSTATE: P0000
+
+CAUSE: "PL/SQL uses unsupported feature."
+
+ACTION: "Contact Huawei Engineer."
+
+ERRMSG: "new row for relation '%s' violates check constraint '%s'"
+
+SQLSTATE: 23514
+
+CAUSE: "some rows copy failed"
+
+ACTION: "check table definition"
+
+ERRMSG: "new row for relation '%s' violates check constraint '%s'"
+
+SQLSTATE: 23514
+
+CAUSE: "some rows copy failed"
+
+ACTION: "set client\_min\_messages = info for more details"
+
+ERRMSG: "get gauss home path is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "gauss home path not set"
+
+ACTION: "check if $GAUSSHOME is exist"
+
+ERRMSG: "unable to open kms\_iam\_info.json file"
+
+SQLSTATE: 58P03
+
+CAUSE: "file not exist or broken"
+
+ACTION: "check the kms\_iam\_info.json file"
+
+ERRMSG: "can not get password plaintext"
+
+SQLSTATE: XX005
+
+CAUSE: "file not exist or broken"
+
+ACTION: "check the password cipher rand file"
+
+ERRMSG: "IAM info json key is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "IAM info value error"
+
+ACTION: "check tde\_config kms\_iam\_info.json file"
+
+ERRMSG: "get internal password is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "cipher rand file missing"
+
+ACTION: "check password cipher rand file"
+
+ERRMSG: "KMS info json key is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "KMS info value error"
+
+ACTION: "check tde\_config kms\_iam\_info.json file"
+
+ERRMSG: "unable to get json file"
+
+SQLSTATE: 58P03
+
+CAUSE: "parse json file failed"
+
+ACTION: "check the kms\_iam\_info.json file format"
+
+ERRMSG: "get JSON tree is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "get KMS JSON tree failed"
+
+ACTION: "check input parameter or config.ini file"
+
+ERRMSG: "failed to get json tree"
+
+SQLSTATE: XX005
+
+CAUSE: "config.ini json tree error"
+
+ACTION: "check input parameter or config.ini file"
+
+ERRMSG: "failed to set the value of json tree"
+
+SQLSTATE: XX005
+
+CAUSE: "config.ini json tree error"
+
+ACTION: "check input parameter or config.ini file"
+
+ERRMSG: "http request failed"
+
+SQLSTATE: XX005
+
+CAUSE: "http request error"
+
+ACTION: "check KMS or IAM connect or config parameter"
+
+ERRMSG: "get iam token or iam agency token is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "connect IAM failed"
+
+ACTION: "check if your env can connect with IAM server"
+
+ERRMSG: "KMS dek json key is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "KMS return value error"
+
+ACTION: "check KMS config parameter"
+
+ERRMSG: "get kms dek is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "connect KMS failed"
+
+ACTION: "check if your env can connect with KMS server"
+
+ERRMSG: "get http header is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "http request failed"
+
+ACTION: "check IAM config parameter"
+
+ERRMSG: "create KMS dek failed"
+
+SQLSTATE: XX005
+
+CAUSE: "KMS error"
+
+ACTION: "check KMS connect or config parameter"
+
+ERRMSG: "get KMS dek failed"
+
+SQLSTATE: XX005
+
+CAUSE: "KMS error"
+
+ACTION: "check KMS connect or config parameter"
+
+ERRMSG: "get KMS DEK is NULL"
+
+SQLSTATE: XX005
+
+CAUSE: "get KMS dek\_plaintext failed"
+
+ACTION: "check KMS network or cipher is right"
+
+ERRMSG: "create matview with TDE failed"
+
+SQLSTATE: 0A000
+
+CAUSE: "TDE feature is not supported for Create materialized views"
+
+ACTION: "check CREATE syntax about create the materialized views"
+
+ERRMSG: "failed to add item to the index page"
+
+SQLSTATE: XX002
+
+CAUSE: "System error."
+
+ACTION: "Check WARNINGS for the details."
+
+ERRMSG: "index row size %lu exceeds maximum %lu for index '%s'"
+
+SQLSTATE: 54000
+
+CAUSE: "Values larger than 1/3 of a buffer page cannot be indexed."
+
+ACTION: "Consider a function index of an MD5 hash of the value, or use full text indexing."
+

@@ -6,13 +6,13 @@
 
 ## Precautions<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
--   Only the table owner or a user granted with the ALTER permission can run the  **ALTER TABLE**  command. The system administrator has this permission by default. To modify the owner or schema of a table, you must be a table owner or system administrator and a member of the new owner role.
+-   The owner of a table, users granted with the  **ALTER**  permission on the table, or users granted with the  **ALTER ANY TABLE**  permission can run the  **ALTER TABLE**  statement. The system administrator has the permission to run the command by default. To modify the owner or schema of a table, you must be the table owner or system administrator and a member of the new owner role.
 -   The tablespace of a partitioned table cannot be modified, but the tablespace of the partition can be modified.
 -   The storage parameter  **ORIENTATION**  cannot be modified.
 -   Currently,  **SET SCHEMA**  can only set schemas to user schemas. It cannot set a schema to a system internal schema.
--   Column-store tables support only the  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIMARY KEY**  table-level constraints, but do not support primary and foreign key table-level constraints.
+-   Column-store tables support only the  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIMARY KEY**  table-level constraints, but do not support foreign key table-level constraints.
 -   In a column-store table, you can perform  **ADD COLUMN**,  **ALTER TYPE**,  **SET STATISTICS**,  **DROP COLUMN**  operations, and change table name and space. The types of new and modified columns should be the  [Data Types](data-types.md)  supported by column-store. The  **USING**  option of  **ALTER TYPE**  only supports constant expression and expression involved in the column.
--   The column constraints supported by column-store tables include  **NULL**,  **NOT NULL**, **DEFAULT**  constant values, **UNIQUE** and **PRIMARY KEY**. Only the  **DEFAULT**  value can be modified \(by using  **SET DEFAULT**  and  **DROP DEFAULT**\). Currently,  **NULL**  and  **NOT NULL**  constraints cannot be modified.
+-   The column constraints supported by column-store tables include  **NULL**,  **NOT NULL**,  **DEFAULT**  constant values,  **UNIQUE**, and  **PRIMARY KEY**. Only the  **DEFAULT**  value can be modified \(by using  **SET DEFAULT**  and  **DROP DEFAULT**\). Currently,  **NULL**  and  **NOT NULL**  constraints cannot be modified.
 
 -   Auto-increment columns cannot be added, or a column whose  **DEFAULT**  value contains the  **nextval\(\)**  expression cannot be added.
 -   Row-access control cannot be enabled for foreign tables and temporary tables.
@@ -64,8 +64,8 @@
         | NOT OF
         | REPLICA IDENTITY { DEFAULT | USING INDEX index_name | FULL | NOTHING }
     ```
-    
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   **ADD table\_constraint \[ NOT VALID \]**
     >    Adds a table constraint.
     >-   **ADD table\_constraint\_using\_index**
@@ -96,23 +96,23 @@
     >    It is only available for internal scale-in tools. Common users should not use the syntax.
     >-   **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**
     >    Disables a single trigger specified by  **trigger\_name**, disables all triggers, or disables only user triggers \(excluding internally generated constraint triggers, for example, deferrable unique constraint triggers and exclusion constraints triggers\).
-    >   Exercise caution when using this function because data integrity cannot be ensured as expected if the triggers are not executed.
-    > -   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+    >    Exercise caution when using this function because data integrity cannot be ensured as expected if the triggers are not executed.
+    >-   **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
     >    Enables a single trigger specified by  **trigger\_name**, enables all triggers, or enables only user triggers.
     >-   **| ENABLE REPLICA TRIGGER trigger\_name**
     >    Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](en-us_topic_0289900775.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216). When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
-    >   When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
-    > -   **| ENABLE ALWAYS TRIGGER trigger\_name**
+    >    When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
+    >-   **| ENABLE ALWAYS TRIGGER trigger\_name**
     >    Determines that all triggers are fired regardless of the current replication mode.
     >-   **| DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
     >    Enables or disables a rule for tables. Disabled rules are still visible in the system, but are not applied during query rewriting. The  **ON SELECT**  rule cannot be disabled because it is related to the view implementation. Rules configured as  **ENABLE REPLICA**  are enabled only when the session is in replica mode, while those configured as  **ENABLE ALWAYS**  can be enabled regardless of the replica mode. Rule triggering is also affected by configuration variables in  [session\_replication\_role](en-us_topic_0289900775.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216), which is similar to the preceding trigger setting.
     >-   **| DISABLE/ENABLE ROW LEVEL SECURITY**
     >    Enables or disables row-level access control for a table.
-    >   If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md).
-    > -   **| NO FORCE/FORCE ROW LEVEL SECURITY**
+    >    If row-level access control is enabled for a data table but no row-level access control policy is defined, the row-level access to the data table is not affected. If row-level access control for a table is disabled, the row-level access to the table is not affected even if a row-level access control policy has been defined. For details, see  [CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md).
+    >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
     >    Forcibly enables or disables row-level access control for a table.
-    >   By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) will be affected. System administrators are not affected by any row-level access control policies.
-    > -   **| REPLICA IDENTITY \{DEFAULT | USING INDEX index\_name | FULL | NOTHING\}**
+    >    By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) will be affected. System administrators are not affected by any row-level access control policies.
+    >-   **| REPLICA IDENTITY \{DEFAULT | USING INDEX index\_name | FULL | NOTHING\}**
     >    Adjusts the amount of information written to WALs during logical replication. This option is valid only when  **wal\_level**  is set to  **logical**. When the original data table is updated, the default logical replication flow contains only the historical records of the primary key. If you need to output the historical records of column update or delete operations, you can modify this parameter.  **DEFAULT**  \(not the default value in the system catalog\) records the old value of the primary key column.  **USING INDEX**  records the old values of the columns contained in the  **index\_name**  index. All columns of the index must be  **NOT NULL**.  **FULL**  records the old values of all columns.  **NOTHING**  \(default value in the system catalog\) does not record information about old values.
     >-   **SET WITH OIDS**
     >    Adds an OID system column to a data table. If the OID already exists in the table, the syntax does not change anything.
@@ -128,12 +128,12 @@
     >    Removes the association between a table and a type.
     >-   **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
     >    **DEFAULT**  records the old value of the primary key column.  **USING INDEX**  records the old values of columns covered by the named indexes. These values must be unique, non-local, and non-deferrable, and contain the values of columns marked  **NOT NULL**.  **FULL**  records the old values of all columns in the row.  **NOTHING**  does not record information in old rows. In all cases, no old values are recorded unless at least one of the columns to be recorded in the new and old rows is different.
-    
+
     -   There are several clauses of  **column\_clause**:
-    
-    ```
+
+        ```
         ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
-    | MODIFY column_name data_type    
+        | MODIFY column_name data_type    
         | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
         | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
         | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
@@ -147,10 +147,10 @@
         | ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
         | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
         ```
-    
+
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
         >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
-    >    Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).
+        >    Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).
         >-   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
         >    Adds columns in the table.
         >-   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
@@ -179,12 +179,12 @@
         >    Currently, the only defined per-attribute options are  **n\_distinct**  and  **n\_distinct\_inherited**.  **n\_distinct**  affects statistics of a table, while  **n\_distinct\_inherited**  affects the statistics of the table and its subtables. Currently, only  **SET/RESET n\_distinct**  is supported, and  **SET/RESET n\_distinct\_inherited**  is forbidden.
         >-   **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
         >    Sets the storage mode for a column. This clause specifies whether this column is held inline or in a secondary TOAST table, and whether the data should be compressed. It is set only for row-store tables and is invalid for column-store tables. If it is set for column-store tables, an error will be displayed when the statement is executed.  **SET STORAGE**  itself does not change anything in the table. It sets the strategy to be pursued during future table updates.
-    
+
         -   **column\_constraint**  is as follows:
-    
-        ```
+
+            ```
             [ CONSTRAINT constraint_name ]
-            { NOT NULL |
+                { NOT NULL |
                   NULL |
                   CHECK ( expression ) |
                   DEFAULT default_expr  |
@@ -194,24 +194,24 @@
                   REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
                       [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
             ```
-    
+
         -   **compress\_mode**  of a column is as follows:
-    
-        ```
+
+            ```
             [ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
-        ```
+            ```
 
 
     -   **table\_constraint\_using\_index**  used to add the primary key constraint or unique constraint based on the unique index is as follows:
-    
+
         ```
         [ CONSTRAINT constraint_name ]
             { UNIQUE | PRIMARY KEY } USING INDEX index_name
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-    
+
     -   **table\_constraint**  is as follows:
-    
+
         ```
         [ CONSTRAINT constraint_name ]
             { CHECK ( expression ) |
@@ -222,9 +222,9 @@
                  [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
-    
+
         **index\_parameters**  is as follows:
-    
+
         ```
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
             [ USING INDEX TABLESPACE tablespace_name ]
@@ -316,6 +316,12 @@
 
         If this parameter is not set, the number of started bgworker threads is related to the table size. Generally, the number of started bgworker threads does not exceed four.
 
+    -   hasuids \(Boolean type\)
+
+        Default value:  **off**
+
+        If this parameter is set to  **on**, a unique table-level ID is allocated to a tuple when the tuple is updated.
+
 
 -   **new\_owner**
 
@@ -395,7 +401,7 @@
 
     **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
 
-    Specifies that a column or columns of a table can contain only unique \(non-duplicate\) and non-**NULL**  values.
+    Specifies that a column or columns of a table can contain only unique \(non-duplicate\) and non-null values.
 
 -   **REFERENCES reftable \[ \( refcolum \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(column constraint\)**
 
@@ -409,7 +415,7 @@
     -   **MATCH SIMPLE**  \(default\): Any unexpected foreign key column can be  **NULL**.
     -   **MATCH PARTIAL**: This option is not supported currently.
 
-    In addition, when you perform certain operations on the data in the referenced table, the operations are performed on the corresponding columns in the new table.  **ON DELETE**: specifies the actions to be executed after a referenced row in the referenced table is deleted.  **ON UPDATE**: specifies the operation to be performed when the referenced column data in the referenced table is updated. The possible actions of the  **ON DELETE**  and  **ON UPDATE**  clauses are as follows:
+    In addition, when you perform certain operations on the data in the referenced table, the operations are performed on the corresponding columns in the new table.  **ON DELETE**: specifies the operations to be executed after a referenced row in the referenced table is deleted.  **ON UPDATE**: specifies the operation to be performed when the referenced column data in the referenced table is updated. The possible actions of the  **ON DELETE**  and  **ON UPDATE**  clauses are as follows:
 
     -   **NO ACTION**  \(default\): When a foreign key is deleted or updated, an error indicating that the foreign key constraint is violated is created. If the constraint is deferrable and there are still any referenced rows, this error will occur when the constraint is checked.
     -   **RESTRICT**: When a foreign key is deleted or updated, an error indicating that the foreign key constraint is violated is created. It is the same as  **NO ACTION**  except that the action cannot be delayed.
@@ -425,6 +431,10 @@
     -   **NOT DEFERRABLE**: checks immediately after the execution of each command.
     -   **INITIALLY IMMEDIATE**: checks immediately after the execution of each statement.
     -   **INITIALLY DEFERRED**: checks when the transaction ends.
+
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >Ustore tables do not support the  **DEFERRABLE**  and  **INITIALLY DEFERRED**  constraints.
+
 
 -   **PARTIAL CLUSTER KEY**
 

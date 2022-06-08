@@ -6,7 +6,6 @@ For workload-level indexes, you can run scripts outside the database to use this
 
 -   The database is normal, and the client can be connected properly.
 -   The  **gsql**  tool has been installed by the current user, and the tool path has been added to the  _PATH _environment variable.
--   The Python 3.6+ environment is available.
 -   To use the service data extraction function, you need to set the GUC parameters of the node whose data is to be collected as follows:
     -   log\_min\_duration\_statement = 0
     -   log\_statement= 'all'
@@ -19,38 +18,44 @@ For workload-level indexes, you can run scripts outside the database to use this
 ## Procedure for Using the Service Data Extraction Script<a name="section183663372522"></a>
 
 1.  <a name="li541620573521"></a>Set the GUC parameters according to instructions in the prerequisites.
-2.  Run the Python script  **extract\_log.py**:
+2.  Run the following command to extract SQL statements based on logs:
 
     ```
-    python extract_log.py [l LOG_DIRECTORY] [f OUTPUT_FILE] [-d DATABASE] [-U USERNAME][--start_time] [--sql_amount] [--statement] [--json]
+    gs_dbmind component extract_log [l LOG_DIRECTORY] [f OUTPUT_FILE] [p LOG_LINE_PREFIX] [-d DATABASE] [-U USERNAME][--start_time] [--sql_amount] [--statement] [--json] [--max_reserved_period] [--max_template_num]
     ```
 
     The input parameters are as follows:
 
     -   **LOG\_DIRECTORY**: directory for storing  **pg\_log**.
     -   **OUTPUT\_PATH**: path for storing the output SQL statements, that is, path for storing the extracted service data.
+    -   **LOG\_LINE\_PREFIX**: specifies the prefix format of each log.
     -   **DATABASE**  \(optional\): database name. If this parameter is not specified, all databases are selected by default.
     -   **USERNAME**  \(optional\): username. If this parameter is not specified, all users are selected by default.
     -   **start\_time**  \(optional\): start time for log collection. If this parameter is not specified, all files are collected by default.
     -   **sql\_amount**  \(optional\): maximum number of SQL statements to be collected. If this parameter is not specified, all SQL statements are collected by default.
     -   **statement**  \(optional\): Collects the SQL statements starting with  **statement**  in  **pg\_log log**. If this parameter is not specified, the SQL statements are not collected by default.
-    -   **json**: Specifies that the collected log files are stored in JSON format after SQL normalization. If the default format is not specified, each SQL statement occupies a line.
+    -   **json**  \(optional\): specifies that the collected log files are stored in JSON format after SQL normalization. If no format is specified, each SQL statement occupies a line.
+    -   **max\_reserved\_period**  \(optional\): specifies the maximum number of days of reserving the template in incremental log collection in JSON mode. If this parameter is not specified, the template is reserved by default. The unit is day.
+    -   **max\_template\_num**  \(optional\): Specifies the maximum number of templates that can be reserved in JSON mode. If this parameter is not specified, all templates are reserved by default.
 
     An example is provided as follows.
 
     ```
-    python extract_log.py $GAUSSLOG/pg_log/dn_6001 sql_log.txt -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
+    gs_dbmind component extract_log $GAUSSLOG/pg_log/dn_6001 sql_log.txt '%m %c %d %p %a %x %n %e' -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
     ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >If the  **-d/-U**  parameter is specified, the prefix of each log record must contain  **%d**  and  **%u**. If transactions need to be extracted,  **%p**  must be specified. For details, see the  **log\_line\_prefix**  parameter. It is recommended that the value of  **max\_template\_num**  be less than or equal to  **5000**  to avoid long execution time of workload indexes.
 
 3.  Change the GUC parameter values set in  [1](#li541620573521)  to the values before the setting.
 
 ## Procedure for Using the Index Recommendation Script<a name="section174995305018"></a>
 
 1.  Prepare a file that contains multiple DML statements as the input workload. Each statement in the file occupies a line. You can obtain historical service statements from the offline logs of the database.
-2.  Run the Python script  **index\_advisor\_workload.py**:
+2.  To enable this function, run the following command:
 
     ```
-    python index_advisor_workload.py [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD][--schema SCHEMA]
+    gs_dbmind component index_advisor [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD][--schema SCHEMA]
     [--max_index_num MAX_INDEX_NUM][--max_index_storage MAX_INDEX_STORAGE] [--multi_iter_mode] [--multi_node]  [--json] [--driver] [--show_detail]
     ```
 
@@ -74,7 +79,7 @@ For workload-level indexes, you can run scripts outside the database to use this
     Example:
 
     ```
-    python index_advisor_workload.py 6001 postgres tpcc_log.txt --schema public --max_index_num 10 --multi_iter_mode
+    gs_dbmind component index_advisor 6001 postgres tpcc_log.txt --schema public --max_index_num 10 --multi_iter_mode
     ```
 
     The recommendation result is a batch of indexes, which are displayed on the screen in the format of multiple create index statements. The following is an example of the result.

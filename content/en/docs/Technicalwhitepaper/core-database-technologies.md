@@ -312,25 +312,27 @@ Therefore, a thread resource pooling and reuse technology needs to be used to re
 
 ## HA
 
-### Primary/Standby<a name="section3473135114413"></a>
+### Primary/Standby<a name="en-us_concept_0283139022_section3473135114413"></a>
 
 To ensure that a fault can be rectified, data needs to be written into multiple copies. Multiple copies are configured for the primary and standby nodes, and logs are used for data synchronization. In this way, openGauss has no data lost when a node is faulty or the system restarts after a stop, meeting the ACID feature requirements. The primary/standby environment supports two modes: primary/standby, and one primary and multiple standbys. In primary/standby mode, if the standby node needs to redo logs, it can be promoted to primary. In the one primary and multiple standbys mode, all standby nodes need to redo logs and can be promoted to primary. The primary/standby mode is mainly used for OLTP systems with general reliability to save storage resources. The one primary and multiple standbys mode provides higher DR capabilities and is suitable for the OLTP system with higher availability transaction processing.
 
 The  **switchover**  command can be used to trigger a switchover between the primary and standby nodes. If the primary node is faulty, the  **failover**  command can be used to promote the standby node to the primary.
 
+To ensure that the failover time is controllable, you can enable the log flow control function to control the rate of sending logs to the standby node. This ensures that the logs accumulated on the standby node will be replayed within the time configured for flow control. After flow control is enabled, the rate of sending logs to the standby node is dynamically adjusted. As a result, the overall transaction performance deteriorates.
+
 In scenarios such as initial installation or backup and restoration, data on the standby node needs to be rebuilt based on the primary node. In this case, the build function is required to send the data and WALs of the primary node to the standby node. When the primary node is faulty and joins again as a standby node, the build function needs to be used to synchronize data and WALs with those of the new primary node. Build includes full build and incremental build. Full build depends on primary node data for rebuild. The amount of data to be copied is large and the time required is long. Incremental build copies only differential files. The amount of data to be copied is small and the time required is short. Generally, the incremental build is preferred for fault recovery. If the incremental build fails, the full build continues until the fault is rectified.
 
-In addition to streaming replication, openGauss supports logical replication. In logical replication, the primary database is called the source database, and the standby database is called the objective database. The source database parses the WAL file based on the specified logical parsing rule and parses the DML operation into certain logical change information \(standard SQL statements\). The source database sends standard SQL statements to the objective database. After receiving the SQL statements, the objective database applies them to implement data synchronization. Logical replication involves only DML operations. Logical replication can implement cross-version replication, heterogeneous database replication, dual-write database replication, and table-level replication.
+In addition to streaming replication in primary/standby mode, openGauss also supports logical replication. In logical replication, the primary database is called the source database, and the standby database is called the target database. The source database parses the WAL file based on the specified logical parsing rule and parses the DML operation into certain logical change information \(standard SQL statements\). The source database sends standard SQL statements to the target database. After receiving the SQL statements, the target database applies them to implement data synchronization. Logical replication involves only DML operations. Logical replication can implement cross-version replication, heterogeneous database replication, dual-write database replication, and table-level replication.
 
-### Logical Backup<a name="section11293115015445"></a>
+### Logical Backup<a name="en-us_concept_0283139022_section11293115015445"></a>
 
 openGauss provides the logical backup capability to back up data in user tables to local disk files in text or CSV format and restore the data in homogeneous or heterogeneous databases.
 
-### Physical backup<a name="section1370220278457"></a>
+### Physical Backup<a name="en-us_concept_0283139022_section1370220278457"></a>
 
 openGauss provides the physical backup capability to back up data of the entire instance to local disk files in the internal database format, and restore data of the entire instance in a homogeneous database.
 
-Physical backup is classified into full backup and incremental backup. The difference is as follows: Full backup includes the full data of the database at the backup time point. The time required for full backup is long \(in direct proportion to the total data volume of the database\), and a complete database can be restored. An incremental backup involves only incremental data modified after a specified time point. It takes a short period of time \(in direct proportion to the incremental data volume and irrelevant to the total data volume\). However, a complete database can be restored only after the incremental backup and full backup are performed. openGauss supports both full and incremental backup modes.
+Physical backup is classified into full backup and incremental backup. The difference is as follows: Full backup includes the full data of the database at the backup time point. The time required for full backup is long \(in direct proportion to the total data volume of the database\), and a complete database can be restored. Incremental backup involves only incremental data modified after a specified time point. It takes a short period of time \(in direct proportion to the incremental data volume and irrelevant to the total data volume\). However, a complete database can be restored only after the incremental backup and full backup are performed. openGauss supports both full and incremental backup modes.
 
 ### Flashback Restoration<a name="section49964184312"></a>
 
@@ -346,9 +348,9 @@ When the service load is heavy, the playback speed of the standby node cannot ca
 
 openGauss provides the logical decoding function to reversely parse physical logs into logical logs. Logical replication tools such as DRS convert logical logs to SQL statements and replay the SQL statements in the peer database. In this way, data can be synchronized between heterogeneous databases. Currently, unidirectional and bidirectional logical replication between the openGauss database and the MySQL or Oracle database is supported. DNs reversely parse physical logs to logical logs. Logical replication tools such as DRS extract logical logs from DNs, convert the logs to SQL statements, and replay the SQL statements in MySQL. Logical replication tools also extract logical logs from a MySQL database, reversely parse the logs to SQL statements, and replay the SQL statements in openGauss. In this way, data can be synchronized between heterogeneous databases.
 
-### Point-In-Time Recovery \(PITR\)
+### Point-In-Time Recovery \(PITR\)<a name="en-us_concept_0283139022_section977361551612"></a>
 
-PITR uses basic hot backup, write-ahead logs \(WALs\), and archived WALs for backup and recovery. When replay a WAL record, you can stop at any point in time, so that there is a snapshot of the consistent database at any point in time. That is, you can restore the database to the state at any time since the backup starts. During recovery, openGauss supports specifying the recovery stop point as TID, time, and LSN.
+PITR uses basic hot backup, WALs, and WAL archive logs for backup and recovery. When replaying a WAL record, you can stop at any point in time, so that there is a snapshot of the consistent database at any point in time. That is, you can restore the database to the state at any time since the backup starts. During recovery, openGauss supports specifying the recovery stop point as TID, time, and LSN.
 
 ### High Availability Based on the Paxos Protocol \(DCF\)<a name="section4565549116"></a>
 
@@ -495,7 +497,7 @@ Slow SQL provides detailed information required for slow SQL diagnosis. You can 
 
 ## Database Security
 
-### Access Control
+### Access Control<a name="en-us_concept_0283139021_section1518355319485"></a>
 
 Access control is to manage users' database access control permissions, including database system permissions and object permissions.
 
@@ -505,7 +507,7 @@ An access control model based on separation of permissions is supported. Databas
 
 By default, the role-based access control model is used. You can set parameters to determine whether to enable the access control model based on separation of permissions.
 
-### Separation of Control and Access Permissions<a name="section74261220114919"></a>
+### Separation of Control and Access Permissions<a name="en-us_concept_0283139021_section74261220114919"></a>
 
 For the system administrator, the control and access permissions on table objects are separated to improve data security of common users and restrict the object access permissions of administrators.
 
@@ -513,21 +515,13 @@ This feature applies to the following scenarios: An enterprise has multiple busi
 
 The system administrators can specify the  **INDEPENDENT**  attribute when creating a user, indicating that the user is a private user. Database administrators \(including initial users and other administrators\) can control \(**DROP**,  **ALTER**, and  **TRUNCATE**\) objects of private users but cannot access \(**INSERT**,  **DELETE**,  **UPDATE**,  **SELECT**,  **COPY**,  **GRANT**,  **REVOKE**, and  **ALTER OWNER**\) the objects without authorization.
 
-### Database Encryption Authentication
-
-The password encryption method based on the RFC5802 mechanism is used for authentication.
-
-The unidirectional, irreversible Hash encryption algorithm PBKDF2 is used for encryption and authentication, effectively defending against rainbow attacks.
-
-The password of the created user is encrypted and stored in the system catalog. During the entire authentication process, passwords are encrypted for storage and transmission. The hash value is calculated and compared with the value stored on the server to verify the correctness.
-
-The message processing flow in the unified encryption and authentication process effectively prevents attackers from cracking the username or password by capturing packets.
-
 ### Built-in Database Role Permission Management<a name="section210351882916"></a>
 
 openGauss provides a group of default roles whose names start with  **gs\_role\_**. These roles are provided to access to specific, typically high-privileged operations. You can grant these roles to other users or roles within the database so that they can use specific functions. These roles should be given with great care to ensure that they are used where they are needed.  [Table 1](#table2118117460)  describes the permissions of built-in roles.
 
 **Table  1**  Built-in role permissions
+
+<a name="table2118117460"></a>
 
 <table><thead align="left"><tr id="row142101115461"><th class="cellrowborder" valign="top" width="17.44%" id="mcps1.2.3.1.1"><p id="p152141116461"><a name="p152141116461"></a><a name="p152141116461"></a>Role</p>
 </th>
@@ -562,18 +556,29 @@ openGauss provides a group of default roles whose names start with  **gs\_role\_
 </tr>
 <tr id="row0460611191614"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p64601118162"><a name="p64601118162"></a><a name="p64601118162"></a>gs_role_directory_create</p>
 </td>
-<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p17460311141616"><a name="p17460311141616"></a><a name="p17460311141616"></a>Permission to create directory objects. However, this role needs to enable the GUC parameter <strong id="b378975913168"><a name="b378975913168"></a><a name="b378975913168"></a>enable_access_server_directory</strong> first.</p>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p17460311141616"><a name="p17460311141616"></a><a name="p17460311141616"></a>Permission to create directory objects. However, this role needs to enable the GUC parameter <strong id="b111751710320"><a name="b111751710320"></a><a name="b111751710320"></a>enable_access_server_directory</strong> first.</p>
 </td>
 </tr>
 <tr id="row10679131511613"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.3.1.1 "><p id="p96791115121616"><a name="p96791115121616"></a><a name="p96791115121616"></a>gs_role_directory_drop</p>
 </td>
-<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p14679111519168"><a name="p14679111519168"></a><a name="p14679111519168"></a>Permission to delete directory objects. However, this role needs to enable the GUC parameter <strong id="b1519672711175"><a name="b1519672711175"></a><a name="b1519672711175"></a>enable_access_server_directory</strong> first.</p>
+<td class="cellrowborder" valign="top" width="82.56%" headers="mcps1.2.3.1.2 "><p id="p14679111519168"><a name="p14679111519168"></a><a name="p14679111519168"></a>Permission to delete directory objects. However, this role needs to enable the GUC parameter <strong id="b1352916512322"><a name="b1352916512322"></a><a name="b1352916512322"></a>enable_access_server_directory</strong> first.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-### Database Audit<a name="section1544614711502"></a>
+
+### Database Encryption Authentication<a name="en-us_concept_0283139021_section5666740124910"></a>
+
+The password encryption method based on the RFC5802 mechanism is used for authentication.
+
+The unidirectional, irreversible Hash encryption algorithm PBKDF2 is used for encryption and authentication, effectively defending against rainbow attacks.
+
+The password of the created user is encrypted and stored in the system catalog. During the entire authentication process, passwords are encrypted for storage and transmission. The hash value is calculated and compared with the value stored on the server to verify the correctness.
+
+The message processing flow in the unified encryption and authentication process effectively prevents attackers from cracking the username or password by capturing packets.
+
+### Database Audit<a name="en-us_concept_0283139021_section1544614711502"></a>
 
 Audit logs record user operations performed on database startup and stopping, connection, and DDL, DML, and DCL operations. The audit log mechanism enhances the database capability of tracing illegal operations and collecting evidence.
 
@@ -583,111 +588,65 @@ Audit logs record the event time, type, execution result, username, database, co
 
 Database security administrators can use the audit logs to reproduce a series of events that cause faults in the database and identify unauthorized users, unauthorized operations, and the time when these operations are performed.
 
-## Equality Query in a Fully-encrypted Database<a name="section74321552121516"></a>
-
-Compared with a common database, a fully-encrypted database inherits its basic functions and provides the capability of computing data ciphertext. In the fully-encrypted database solution, data encryption and decryption are performed only on the client, and the server processes only ciphertext data. In addition to the user client medium, ciphertext data is only exposed to ciphertext-only attacks. To address issues such as database privacy leakage and third-party trust, you can use a fully-encrypted database solution that provides full data lifecycle protection.
-
-For a server that processes only ciphertext data, ensure that the performance impact is within the acceptable range. The server needs to inherit the capabilities of the native database, such as generating execution plans, processing transaction consistency, and retrieving and computing data. For a client that requires additional encryption capabilities, provide capabilities such as identifying and encrypting/decrypting private data, rewriting SQL statements that contain private data, and managing multi-level keys on the premise that encryption/decryption automation and transparency are ensured.
-
-### Network Communication Security
+### Network Communication Security<a name="en-us_concept_0283139021_section12318192310500"></a>
 
 SSL can be used to encrypt communication data between the client and server, ensuring communication security between the client and server.
 
-The TLS 1.2 protocol and a highly secure encryption algorithm suite are adopted.  [Table 1](#en-us_topic_0238166170_table13251121491017)  lists the supported encryption algorithm suites.
+The TLS 1.2 protocol and a highly secure encryption algorithm suite are adopted.  [Table 2](#table13251121491017)  lists the supported encryption algorithm suites.
 
-**Table  1**  Encryption algorithm suites
+**Table  2**  Encryption algorithm suites
 
-<a name="en-us_topic_0238166170_table13251121491017"></a>
+<a name="table13251121491017"></a>
 
-<table><thead align="left"><tr id="en-us_topic_0238166170_row1625261412109"><th class="cellrowborder" valign="top" width="31.03%" id="mcps1.2.3.1.1"><p id="en-us_topic_0238166170_p99755175105"><a name="en-us_topic_0238166170_p99755175105"></a><a name="en-us_topic_0238166170_p99755175105"></a>IANA Code</p>
+<table><thead align="left"><tr id="row1625261412109"><th class="cellrowborder" valign="top" width="37.940000000000005%" id="mcps1.2.4.1.1"><p id="p99755175105"><a name="p99755175105"></a><a name="p99755175105"></a>OpenSSL Suite Name</p>
 </th>
-<th class="cellrowborder" valign="top" width="68.97%" id="mcps1.2.3.1.2"><p id="en-us_topic_0238166170_p119751717121010"><a name="en-us_topic_0238166170_p119751717121010"></a><a name="en-us_topic_0238166170_p119751717121010"></a>IANA Suite Name</p>
+<th class="cellrowborder" valign="top" width="47.25%" id="mcps1.2.4.1.2"><p id="p119751717121010"><a name="p119751717121010"></a><a name="p119751717121010"></a>IANA Suite Name</p>
+</th>
+<th class="cellrowborder" valign="top" width="14.81%" id="mcps1.2.4.1.3"><p id="p15594635152615"><a name="p15594635152615"></a><a name="p15594635152615"></a>Security</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0238166170_row92521414141017"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p129756178106"><a name="en-us_topic_0238166170_p129756178106"></a><a name="en-us_topic_0238166170_p129756178106"></a>0x00,0x9F</p>
+<tbody><tr id="row313281911346"><td class="cellrowborder" valign="top" width="37.940000000000005%" headers="mcps1.2.4.1.1 "><p id="p131331119183419"><a name="p131331119183419"></a><a name="p131331119183419"></a>ECDHE-RSA-AES128-GCM-SHA256</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p697591721018"><a name="en-us_topic_0238166170_p697591721018"></a><a name="en-us_topic_0238166170_p697591721018"></a>TLS_DHE_RSA_WITH_AES_256_GCM_SHA384</p>
+<td class="cellrowborder" valign="top" width="47.25%" headers="mcps1.2.4.1.2 "><p id="p11133101914340"><a name="p11133101914340"></a><a name="p11133101914340"></a>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
 </td>
-</tr>
-<tr id="en-us_topic_0238166170_row1925251461012"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p5975817131017"><a name="en-us_topic_0238166170_p5975817131017"></a><a name="en-us_topic_0238166170_p5975817131017"></a>0x00,0x9E</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p1497511781018"><a name="en-us_topic_0238166170_p1497511781018"></a><a name="en-us_topic_0238166170_p1497511781018"></a>TLS_DHE_RSA_WITH_AES_128_GCM_SHA256</p>
+<td class="cellrowborder" valign="top" width="14.81%" headers="mcps1.2.4.1.3 "><p id="p1413381911349"><a name="p1413381911349"></a><a name="p1413381911349"></a>HIGH</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238166170_row172523141100"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p597541715109"><a name="en-us_topic_0238166170_p597541715109"></a><a name="en-us_topic_0238166170_p597541715109"></a>0x00,0xA3</p>
+<tr id="row19615113518261"><td class="cellrowborder" valign="top" width="37.940000000000005%" headers="mcps1.2.4.1.1 "><p id="p66166355269"><a name="p66166355269"></a><a name="p66166355269"></a>ECDHE-RSA-AES256-GCM-SHA384</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p1097581731019"><a name="en-us_topic_0238166170_p1097581731019"></a><a name="en-us_topic_0238166170_p1097581731019"></a>TLS_DHE_DSS_WITH_AES_256_GCM_SHA384</p>
+<td class="cellrowborder" valign="top" width="47.25%" headers="mcps1.2.4.1.2 "><p id="p1761653522615"><a name="p1761653522615"></a><a name="p1761653522615"></a>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
 </td>
-</tr>
-<tr id="en-us_topic_0238166170_row11252121414107"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p16975101718106"><a name="en-us_topic_0238166170_p16975101718106"></a><a name="en-us_topic_0238166170_p16975101718106"></a>0x00,0xA2</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p1497551717109"><a name="en-us_topic_0238166170_p1497551717109"></a><a name="en-us_topic_0238166170_p1497551717109"></a>TLS_DHE_DSS_WITH_AES_128_GCM_SHA256</p>
+<td class="cellrowborder" valign="top" width="14.81%" headers="mcps1.2.4.1.3 "><p id="p261633515262"><a name="p261633515262"></a><a name="p261633515262"></a>HIGH</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238166170_row192521714101013"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p19750173100"><a name="en-us_topic_0238166170_p19750173100"></a><a name="en-us_topic_0238166170_p19750173100"></a>0x00,0x6B</p>
+<tr id="row031613406345"><td class="cellrowborder" valign="top" width="37.940000000000005%" headers="mcps1.2.4.1.1 "><p id="p2031624043411"><a name="p2031624043411"></a><a name="p2031624043411"></a>ECDHE-ECDSA-AES128-GCM-SHA256</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p497511175106"><a name="en-us_topic_0238166170_p497511175106"></a><a name="en-us_topic_0238166170_p497511175106"></a>TLS_DHE_RSA_WITH_AES_256_CBC_SHA256</p>
+<td class="cellrowborder" valign="top" width="47.25%" headers="mcps1.2.4.1.2 "><p id="p731694013418"><a name="p731694013418"></a><a name="p731694013418"></a>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
 </td>
-</tr>
-<tr id="en-us_topic_0238166170_row12524148103"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p297612173109"><a name="en-us_topic_0238166170_p297612173109"></a><a name="en-us_topic_0238166170_p297612173109"></a>0x00,0x67</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p119762017151012"><a name="en-us_topic_0238166170_p119762017151012"></a><a name="en-us_topic_0238166170_p119762017151012"></a>TLS_DHE_RSA_WITH_AES_128_CBC_SHA256</p>
+<td class="cellrowborder" valign="top" width="14.81%" headers="mcps1.2.4.1.3 "><p id="p14316154033412"><a name="p14316154033412"></a><a name="p14316154033412"></a>HIGH</p>
 </td>
 </tr>
-<tr id="en-us_topic_0238166170_row15252214111016"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p1897617177107"><a name="en-us_topic_0238166170_p1897617177107"></a><a name="en-us_topic_0238166170_p1897617177107"></a>0x00,0x6A</p>
+<tr id="row1723517434266"><td class="cellrowborder" valign="top" width="37.940000000000005%" headers="mcps1.2.4.1.1 "><p id="p7236204382616"><a name="p7236204382616"></a><a name="p7236204382616"></a>ECDHE-ECDSA-AES256-GCM-SHA384</p>
 </td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p11976141741011"><a name="en-us_topic_0238166170_p11976141741011"></a><a name="en-us_topic_0238166170_p11976141741011"></a>TLS_DHE_DSS_WITH_AES_256_CBC_SHA256</p>
+<td class="cellrowborder" valign="top" width="47.25%" headers="mcps1.2.4.1.2 "><p id="p17236164312261"><a name="p17236164312261"></a><a name="p17236164312261"></a>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
 </td>
-</tr>
-<tr id="en-us_topic_0238166170_row112521214131013"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p17976131701016"><a name="en-us_topic_0238166170_p17976131701016"></a><a name="en-us_topic_0238166170_p17976131701016"></a>0x00,0x40</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p19976317161015"><a name="en-us_topic_0238166170_p19976317161015"></a><a name="en-us_topic_0238166170_p19976317161015"></a>TLS_DHE_DSS_WITH_AES_128_CBC_SHA256</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238166170_row1025317141104"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p1297611179104"><a name="en-us_topic_0238166170_p1297611179104"></a><a name="en-us_topic_0238166170_p1297611179104"></a>0xC0,0x9F</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p3976141761020"><a name="en-us_topic_0238166170_p3976141761020"></a><a name="en-us_topic_0238166170_p3976141761020"></a>TLS_DHE_RSA_WITH_AES_256_CCM</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238166170_row16253131471014"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p16976517101012"><a name="en-us_topic_0238166170_p16976517101012"></a><a name="en-us_topic_0238166170_p16976517101012"></a>0xC0,0x9E</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p897671781011"><a name="en-us_topic_0238166170_p897671781011"></a><a name="en-us_topic_0238166170_p897671781011"></a>TLS_DHE_RSA_WITH_AES_128_CCM</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238166170_row825321412109"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p89761217121020"><a name="en-us_topic_0238166170_p89761217121020"></a><a name="en-us_topic_0238166170_p89761217121020"></a>0x00,0x39</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p1976121751010"><a name="en-us_topic_0238166170_p1976121751010"></a><a name="en-us_topic_0238166170_p1976121751010"></a>TLS_DHE_RSA_WITH_AES_256_CBC_SHA</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238166170_row5253151419107"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p2097631721011"><a name="en-us_topic_0238166170_p2097631721011"></a><a name="en-us_topic_0238166170_p2097631721011"></a>0x00,0x33</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p11976517131019"><a name="en-us_topic_0238166170_p11976517131019"></a><a name="en-us_topic_0238166170_p11976517131019"></a>TLS_DHE_RSA_WITH_AES_128_CBC_SHA</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238166170_row1325371412101"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p159761517131013"><a name="en-us_topic_0238166170_p159761517131013"></a><a name="en-us_topic_0238166170_p159761517131013"></a>0x00,0x38</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p1497691761016"><a name="en-us_topic_0238166170_p1497691761016"></a><a name="en-us_topic_0238166170_p1497691761016"></a>TLS_DHE_DSS_WITH_AES_256_CBC_SHA</p>
-</td>
-</tr>
-<tr id="en-us_topic_0238166170_row72531141108"><td class="cellrowborder" valign="top" width="31.03%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0238166170_p189773178101"><a name="en-us_topic_0238166170_p189773178101"></a><a name="en-us_topic_0238166170_p189773178101"></a>0x00,0x32</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.97%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0238166170_p89771717171013"><a name="en-us_topic_0238166170_p89771717171013"></a><a name="en-us_topic_0238166170_p89771717171013"></a>TLS_DHE_DSS_WITH_AES_128_CBC_SHA</p>
+<td class="cellrowborder" valign="top" width="14.81%" headers="mcps1.2.4.1.3 "><p id="p19236144315263"><a name="p19236144315263"></a><a name="p19236144315263"></a>HIGH</p>
 </td>
 </tr>
 </tbody>
 </table>
 
 
-### Row-Level Security
+### Row-Level Security<a name="en-us_concept_0283139021_section135874520509"></a>
 
-he row-level security \(RLS\) feature enables database access control to be accurate to each row of data tables. When different users perform the same SQL query operation, the read results may be different according to the RLS policy.
+The row-level security \(RLS\) feature enables database access control to be accurate to each row of data tables. When different users perform the same SQL query operation, the read results may be different according to the RLS policy.
 
 You can create an RLS policy for a data table. The policy defines an expression that takes effect only for specific database users and SQL operations. When a database user accesses the data table, if a SQL statement meets the specified RLS policy of the data table, the expressions that meet the specified condition will be combined by using  **AND**  or  **OR**  based on the attribute type \(**PERMISSIVE**  |  **RESTRICTIVE**\) and applied to the execution plan in the query optimization phase.
 
 RLS is used to control the visibility of row-level data in tables. By predefining filters for data tables, the expressions that meet the specified condition can be applied to execution plans in the query optimization phase, which will affect the final execution result. Currently, RLS supports the following SQL statements: SELECT, UPDATE, and DELETE.
 
-### Resource Labels
+### Resource Labels<a name="section7656163019424"></a>
 
 The resource label feature classifies database resources based on user-defined rules to implement resource classification and management. Administrators can configure resource labels to configure security policies, such as auditing or data masking, for a group of database resources.
 
@@ -695,7 +654,7 @@ Resource labels can be used to group database resources based on features and ap
 
 Currently, resource labels support the following database resource types: schema, table, column, view, and function.
 
-### Dynamic Data Masking
+### Dynamic Data Masking<a name="section7123124654113"></a>
 
 To prevent unauthorized users from sniffing privacy data, the dynamic data masking feature can be used to protect user privacy data. When an unauthorized user accesses the data for which a dynamic data masking policy is configured, the database returns the anonymized data to protect privacy data.
 
@@ -703,7 +662,7 @@ Administrators can create dynamic data masking policies on data columns. The pol
 
 The purpose of dynamic data masking is to flexibly protect privacy data by configuring the filter, and specifying sensitive column labels and corresponding masking functions in the masking policy without changing the source data.
 
-### Unified Auditing
+### Unified Auditing<a name="section1672052375210"></a>
 
 Unified auditing allows administrators to configure audit policies for database resources or resource labels to simplify management, generate audit logs, reduce redundant audit logs, and improve management efficiency.
 
@@ -711,7 +670,7 @@ Administrators can customize audit policies for configuring operation behaviors 
 
 The purpose of unified auditing is to change the existing traditional audit behavior into specific tracking audit behavior and exclude other behaviors from the audit, thereby simplifying management and improving the security of audit data generated by the database.
 
-### Password Strength Verification
+### Password Strength Verification<a name="section465673171713"></a>
 
 To harden the security of customer accounts and data, do not set weak passwords. You need to specify a password when initializing the database, creating a user, or modifying a user. The password must meet the strength requirements. Otherwise, the system prompts you to enter the password again.
 
@@ -730,22 +689,6 @@ This feature provides data encryption and decryption APIs for users and uses enc
 If you need to encrypt the entire table, you need to write an encryption function for each column. Different attribute columns can use different input parameters.
 
 If a user with the required permission wants to view specific data, the user can decrypt required columns using the decryption function API.
-
-## Transparent Data Encryption<a name="section186712732518"></a>
-
-Transparent data encryption \(TDE\) encrypts data when the database writes the data to the storage medium and automatically decrypts the data when reading the data from the storage medium. This prevents attackers from reading data in the data file without database authentication, solving the static data leakage problem. This function is almost transparent to the application layer. You can determine whether to enable the transparent data encryption function as required.
-
-The three-layer key structure is used to implement the key management mechanism, including the root key \(RK\), cluster master key \(CMK\), and data encryption key \(DEK\). CMKs are encrypted and protected by RKs, and DEKs are encrypted and protected by CMKs. DEKs are used to encrypt and decrypt user data. Each table corresponds to a DEK.
-
-Table-level encryption is supported. When creating a table, you can specify whether to encrypt the table and the encryption algorithm to be used. The encryption algorithm can be AES-128-CTR or SM4-CTR, which cannot be changed once specified. If an encrypted table is created, the database automatically applies for a DEK for the table and saves the encryption algorithm, key ciphertext, and corresponding CMK ID in the  **reloptions**  column of the pg\_class system catalog in keyword=value format.
-
-You can change the encryption status of an encrypted table, that is, from an encrypted table to a non-encrypted table or from a non-encrypted table to an encrypted table. If the encryption function is not enabled when a table is created, the table cannot be switched to an encrypted table.
-
-For encrypted tables, DEK rotation is supported. After the key rotation, the data encrypted using the old key is decrypted using the old key, and the newly written data is encrypted using the new key. The encryption algorithm is not changed during key rotation.
-
-The key management service is provided by the external KMS. The current version can interconnect with HUAWEI CLOUD KMS.
-
-Currently, only row-store tables can be encrypted. For more feature constraints, see the  _Feature Description_.
 
 ### Ledger Database<a name="section185956502478"></a>
 

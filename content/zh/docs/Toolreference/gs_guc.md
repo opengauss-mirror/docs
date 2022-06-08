@@ -242,9 +242,9 @@ gs\_guc工具由操作系统用户omm执行。
 
   需要忽略的主机名称。
 
-  >![](C:/Users/lijun/Downloads/04 管理员指南_20211124103637/04 管理员指南_20211124103637/08 工具参考_仅openGauss/public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.gif) **说明：** 
   >
-  >-   该参数必须与set/reload一起使用，且-Z只支持datanode/coordinator。
+  >-   该参数必须与set/reload一起使用，且-Z只支持datanode。
   >-   该参数不支持与-D一起使用。
   >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
 

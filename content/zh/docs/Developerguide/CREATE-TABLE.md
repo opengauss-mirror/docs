@@ -17,6 +17,7 @@
 -   列存表支持delta表，受参数enable\_delta\_store控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
 -   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
 -   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte，text、varchar、char等长度可变的类型除外。
+-   被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建表。如果想要创建包含serial类型列的表，还需要授予CREATE ANY SEQUENCE创建序列的权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
@@ -127,9 +128,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     如果已经存在相同名称的表，不会报出错误，而会发出通知，告知通知此表已存在。
 
--   **table\_name**
+- **table\_name**
 
-    要创建的表名。
+  要创建的表名。
+
+  ![](public_sys-resources/icon-notice.gif) **须知：** 
+  物化视图的一些处理逻辑会通过表名的前缀来识别是不是物化视图日志表和物化视图关联表，因此，用户不要创建表名以mlog\_或matviewmap\_为前缀的表，否则会影响此表的一些功能。
 
 -   **column\_name**
 
@@ -168,7 +172,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >
-    >-   如果源表包含serial、bigserial、smallserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
+    >-   如果源表包含serial、bigserial、smallserial、largeserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
     >
     >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。
     >
@@ -220,61 +224,117 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         不指定表时，默认是Append-Only存储。
 
+    -   INIT\_TD
+
+        创建Ustore表时，指定初始化的TD个数，该参数只在创建Ustore表时才能设置生效。
+
+        取值范围：2\~128，默认值为4。
+
     -   COMPRESSION
 
-        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表不支持压缩。
+        指定表数据的压缩级别，它决定了表数据的压缩比以及压缩时间。一般来讲，压缩级别越高，压缩比也越大，压缩时间也越长；反之亦然。实际压缩比取决于加载的表数据的分布特征。行存表默认增加COMPRESSION=NO字段。
 
         取值范围：
 
         列存表的有效值为YES/NO/LOW/MIDDLE/HIGH，默认值为LOW。
 
-    -   COMPRESSLEVEL
+    -   COMPRESSLEVELcom
 
         指定表数据同一压缩级别下的不同压缩水平，它决定了同一压缩级别下表数据的压缩比以及压缩时间。对同一压缩级别进行了更加详细的划分，为用户选择压缩比和压缩时间提供了更多的空间。总体来讲，此值越大，表示同一压缩级别下压缩比越大，压缩时间越长；反之亦然。
 
         取值范围：0\~3，默认值为0。
 
-    -   MAX\_BATCHROW
+    -   COMPRESSTYPE
 
-        指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
+        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数生效后不允许修改。（仅支持ASTORE下的普通表）
 
-        取值范围：10000\~60000，默认60000。
+        取值范围：0\~2，默认值为0。
 
-    -   PARTIAL\_CLUSTER\_ROWS
+    -   COMPRESS\_LEVEL
 
-        指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+        行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。该参数允许修改，修改后影响变更数据、新增数据的压缩等级。（仅支持ASTORE下的普通表）
 
-        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
+        取值范围：-31\~31，默认值为0。
 
-    -   DELTAROW\_THRESHOLD
+    -   COMPRESS\_CHUNK_SIZE
 
-        指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
+        行存表参数，设置行存表压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。该参数生效后不允许修改。（仅支持ASTORE下的普通表）
 
-        取值范围：0～9999，默认值为100
+        取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
+    
+        默认值：4096
 
-    -   VERSION
+    - COMPRESS_PREALLOC_CHUNKS
 
-        指定ORC存储格式的版本。
+      行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。该参数允许修改，修改后影响变更数据、新增数据的预分配数量。（仅支持ASTORE下的普通表）
 
-        取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
+      取值范围：0\~7，默认值为0。
 
-        默认值：0.12
+      - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+    - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+    - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+  
+  - COMPRESS_BYTE_CONVERT
 
-    -   segment
+      行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节转换预处理。当`COMPRESS_DIFF_CONVERT`为真时，该值不允许修改为假。
 
-        使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
+      取值范围：布尔值，默认关闭。
 
-        取值范围：on/off
+  - COMPRESS_DIFF_CONVERT
 
-        默认值：off
+      行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节差分预处理。
 
-    -   dek\_cipher
+      取值范围：布尔值，默认关闭。
 
-        透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
+  - MAX\_BATCHROW
 
-        取值范围：字符串。
+      指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
 
-        默认值：不开启加密时默认为空。
+      取值范围：10000\~60000，默认60000。
+
+  - PARTIAL\_CLUSTER\_ROWS
+
+      指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+
+      取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍。
+
+  - DELTAROW\_THRESHOLD
+
+      指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
+
+      取值范围：0～9999，默认值为100
+
+  - VERSION
+
+      指定ORC存储格式的版本。
+
+      取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
+
+      默认值：0.12
+
+  - segment
+
+      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
+
+      取值范围：on/off
+  
+      默认值：off
+  
+  - dek\_cipher
+  
+      透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
+  
+      取值范围：字符串。
+  
+      默认值：不开启加密时默认为空。
+  
+  - hasuids
+  
+      参数开启：更新表元组时，为元组分配表级唯一标识id。
+  
+      取值范围：on/off。
+  
+      默认值：off。
 
 
 -   **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
@@ -365,9 +425,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   SET NULL：设置引用字段为NULL。
     -   SET DEFAULT：设置引用字段为它们的缺省值。
 
--   **DEFERRABLE | NOT DEFERRABLE**
+- **DEFERRABLE | NOT DEFERRABLE**
 
-    这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
+  这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
+
+  ![](public_sys-resources/icon-note.gif) **说明：** 
+  Ustore表不支持**DEFERRABLE以及INITIALLY  DEFERRED**关键字。
 
 -   **PARTIAL CLUSTER KEY**
 

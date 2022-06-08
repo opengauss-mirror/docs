@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s7e9e912f472543cbb190edb83e5f22d2"></a>
 
--   You must have the  **UPDATE**  permission on a table to be updated.
+-   The owner of a table, users granted with the  **UPDATE**  permission on the table, or users granted with the  **UPDATE ANY TABLE**  permission can update data in the table. The system administrator has the permission to update data in the table by default.
 -   You must have the  **SELECT**  permission on all tables involved in the expressions or conditions.
 -   For column-store tables, the  **RETURNING**  clause is currently not supported.
 -   Column-store tables do not support non-deterministic update. If you update data in one row with multiple rows of data in a column-store table, an error will be reported.
@@ -16,7 +16,7 @@
 ## Syntax<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
 ```
-UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ * ] [ [ AS ] alias ]
+UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]
@@ -44,11 +44,23 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Value range: an existing table name
 
+-   **partition\_clause**
+
+    Updates a specified partition.
+
+    PARTITION \{ \( partition\_name \) | FOR \( partition\_value \[, ...\] \) \} |
+
+    SUBPARTITION \{ \( subpartition\_name \) | FOR \( subpartition\_value \[, ...\] \) \}
+
+    For details about the keywords, see  [SELECT](select.md).
+
+    For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
+
 -   **alias**
 
     Specifies a substitute name for the target table.
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: a string. It must comply with the identifier naming convention.
 
 -   **column\_name**
 
@@ -85,13 +97,13 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **condition**
 
-    Specifies an expression that returns a value of type Boolean. Only rows for which this expression returns  **true**  are updated.
+    Specifies an expression that returns a value of type Boolean. Only rows for which this expression returns  **true**  are updated. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
 -   **output\_expression**
 
     Specifies an expression to be computed and returned by the  **UPDATE**  statement after each row is updated.
 
-    Value range: The expression can use any column names of the table named by  **table\_name**  or table\(s\) listed in  **FROM**. Write \* to return all columns.
+    Value range: The expression can use any column names of the table named by  **table\_name**  or tables listed in  **FROM**. Write \* to return all columns.
 
 -   **output\_name**
 

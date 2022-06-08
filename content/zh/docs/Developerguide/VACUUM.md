@@ -28,20 +28,21 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
     ```
     VACUUM [ ( { FULL | FREEZE | VERBOSE | {ANALYZE | ANALYSE }} [,...] ) ]
-        [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name ) ];
+        [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name ) | SUBPARTITION ( subpartition_name ) ];
     ```
 
--   仅回收空间，不更新统计信息。
+- 仅回收空间，不更新统计信息。
 
-    ```
-    VACUUM [ FULL [COMPACT] ] [ FREEZE ] [ VERBOSE ] [ table_name ] [ PARTITION ( partition_name ) ];
-    ```
+  ```
+  VACUUM [ FULL [COMPACT] ] [ FREEZE ] [ VERBOSE ] [ table_name ] 
+  [ PARTITION ( partition_name )  | SUBPARTITION ( subpartition_name ) ];
+  ```
 
 -   回收空间并更新统计信息，且对关键字顺序有要求。
 
     ```
     VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] { ANALYZE | ANALYSE } [ VERBOSE ] 
-        [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name ) ];
+        [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name )| SUBPARTITION ( subpartition_name ) ];
     ```
 
 
@@ -84,8 +85,12 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
 -   **partition\_name**
 
-    要清理的表的分区名称。缺省时为所有分区。
+    要清理的表的一级分区名称。缺省时为所有一级分区。
 
+-   **subpartition\_name**
+
+    要清理的表的二级分区名称。缺省时为所有二级分区
+    
 -   **DELTAMERGE**
 
     只针对列存表，将列存表的delta table中的数据转移到主表存储上。对列存表而言，此操作受enable\_delta\_store和[参数说明](CREATE-TABLE.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428)中的deltarow\_threshold控制。

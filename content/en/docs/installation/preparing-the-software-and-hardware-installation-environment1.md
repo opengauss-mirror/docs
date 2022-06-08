@@ -66,8 +66,8 @@ This section describes hardware and software requirements of openGauss. It is re
 </thead>
 <tbody><tr id="en-us_topic_0283136474_en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0283136474_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0283136474_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0283136474_ul2800840102316"></a><a name="en-us_topic_0283136474_ul2800840102316"></a><ul id="en-us_topic_0283136474_ul2800840102316"><li>ARM:<a name="en-us_topic_0283136474_ul177759349286"></a><a name="en-us_topic_0283136474_ul177759349286"></a><ul id="en-us_topic_0283136474_ul177759349286"><li>openEuler 20.03LTS (recommended)</li><li>Kirin V10</li></ul>
-</li><li>x86:<a name="en-us_topic_0283136474_ul851564911283"></a><a name="en-us_topic_0283136474_ul851564911283"></a><ul id="en-us_topic_0283136474_ul851564911283"><li>openEuler 20.03LTS</li><li>CentOS 7.6<div class="note" id="en-us_topic_0283136474_note222515135376"><a name="en-us_topic_0283136474_note222515135376"></a><a name="en-us_topic_0283136474_note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136474_p1225613103712"><a name="en-us_topic_0283136474_p1225613103712"></a><a name="en-us_topic_0283136474_p1225613103712"></a>Ensure that the OS language is set to English; otherwise, the installation package cannot be installed properly.</p>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0283136474_ul2800840102316"></a><a name="en-us_topic_0283136474_ul2800840102316"></a><ul id="en-us_topic_0283136474_ul2800840102316"><li>ARM:<a name="en-us_topic_0283136474_ul177759349286"></a><a name="en-us_topic_0283136474_ul177759349286"></a><ul id="en-us_topic_0283136474_ul177759349286"><li>openEuler 20.03LTS (recommended)</li><li>Kirin V10</li><li>Asianux 7.5</li></ul>
+</li><li>x86:<a name="en-us_topic_0283136474_ul851564911283"></a><a name="en-us_topic_0283136474_ul851564911283"></a><ul id="en-us_topic_0283136474_ul851564911283"><li>openEuler 20.03LTS</li><li>CentOS 7.6</li><li>Asianux 7.6<div class="note" id="en-us_topic_0283136474_note222515135376"><a name="en-us_topic_0283136474_note222515135376"></a><a name="en-us_topic_0283136474_note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136474_p1225613103712"><a name="en-us_topic_0283136474_p1225613103712"></a><a name="en-us_topic_0283136474_p1225613103712"></a>The current installation package can be used only on the English operating system.</p>
 </div></div>
 </li></ul>
 </li></ul>
@@ -85,6 +85,7 @@ This section describes hardware and software requirements of openGauss. It is re
 </tr>
 </tbody>
 </table>
+
 
 **Software Dependency Requirements**
 
@@ -156,6 +157,10 @@ You are advised to use the default installation packages of the following depend
 To ensure that openGauss can work properly when the firewall is enabled, openGauss-related services, protocols, IP addresses, and ports need to be added to the firewall whitelist of the openGauss host.
 
 Take openEuler OS as an example. Assume that the openGauss information is listed in  [Table 4](#en-us_topic_0283136490_en-us_topic_0241802566_en-us_topic_0085434636_en-us_topic_0059782018_table4312170510523).
+
+> ![](public_sys-resources/icon-caution.gif) **CAUTION:**
+>
+> Perform the following operations as the **root** user. After the operations are complete, log out of the system as the **root** user in a timely manner to prevent misoperations.
 
 **Table  4**  openGauss information
 
@@ -275,32 +280,34 @@ swapoff -a
 
 On each database node, disable RemoveIPC. For CentOS, skip this step.
 
-1.  Change the value of  **RemoveIPC**  in the  **/etc/systemd/logind.conf**  file to  **no**.
-    1.  Run the  **vim**  command to open the  **logind.conf**  file.
+1. Change the value of  **RemoveIPC**  in the  **/etc/systemd/logind.conf**  file to  **no**.
 
-        ```
-        vim  /etc/systemd/logind.conf
-        ```
+   a. Run the  **vim**  command to open the  **logind.conf**  file.
 
-    2.  Change the value of  **RemoveIPC**  to  **no**.
+   ```
+   vim  /etc/systemd/logind.conf
+   ```
 
-        ```
-        RemoveIPC=no
-        ```
+   b. Change the value of  **RemoveIPC**  to  **no**.
+
+   ```
+   RemoveIPC=no
+   ```
 
 
-2.  Change the value of  **RemoveIPC**  in the  **/usr/lib/systemd/system/systemd-logind.service**  file to  **no**.
-    1.  Run the  **vim**  command to open the  **systemd-logind.service**  file.
+2. Change the value of  **RemoveIPC**  in the  **/usr/lib/systemd/system/systemd-logind.service**  file to  **no**.
 
-        ```
-        vim /usr/lib/systemd/system/systemd-logind.service
-        ```
+   a. Run the  **vim**  command to open the  **systemd-logind.service**  file.
 
-    2.  Change the value of  **RemoveIPC**  to  **no**.
+   ```
+   vim /usr/lib/systemd/system/systemd-logind.service
+   ```
 
-        ```
-        RemoveIPC=no
-        ```
+   b.Change the value of  **RemoveIPC**  to  **no**.
+
+   ```
+   RemoveIPC=no
+   ```
 
 
 3.  Reload configuration parameters.
@@ -319,3 +326,32 @@ On each database node, disable RemoveIPC. For CentOS, skip this step.
 
 5.  Repeat steps  [1](#en-us_topic_0283136490_en-us_topic_0241802566_li17785744465)  to  [4](#en-us_topic_0283136490_li17330102819394)  on other hosts.
 
+## **Disabling the History Command**
+
+> ![](public_sys-resources/icon-note.gif) **NOTE:**
+>
+> To prevent security risks caused by historical records, you need to disable the history command on each host.
+
+1. Modify the **/etc/profile** file in the root directory.
+
+   ```
+   vim /etc/profile
+   ```
+
+2. Set **HISTSIZE** to **0**. For example, if the default value of **HISTSIZE** is **1000**, change it to **0**.
+
+   ```
+   HISTSIZE=0
+   ```
+
+3. Save the **/etc/profile** file.
+
+   ```
+   :wq
+   ```
+
+4. Make the **/etc/profile** file take effect.
+
+   ```
+   source /etc/profile
+   ```

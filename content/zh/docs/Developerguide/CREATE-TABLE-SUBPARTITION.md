@@ -18,6 +18,9 @@
 -   指定分区查询时，如select \* from tablename partition/subpartition \(partitionname\)，关键字partition和subpartition注意不要写错。如果写错，查询不会报错，这时查询会变为对表起别名进行查询。
 -   不支持对二级分区 subpartition for \(values\)查询。如select \* from tablename subpartition for \(values\)。
 -   不支持密态数据库、账本数据库和行级访问控制。
+-   对于二级分区表PARTITION FOR \(values\)语法，values只能是常量。
+-   对于分区表PARTITION/SUBPARTITION FOR \(values\)语法，values在需要数据类型转换时，建议使用强制类型转换，以防隐式类型转换结果与预期不符。
+-   指定分区语句目前不能走全局索引扫描。
 
 ## 语法格式<a name="section11556125664117"></a>
 
@@ -245,7 +248,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
     >
     >-   生成列的权限控制和普通列一样。
-    >  
+    > 
     >
     >-   不能为生成列指定默认值。
     >

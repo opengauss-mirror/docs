@@ -2,7 +2,7 @@
 
 Schemas allow multiple users to use the same database without interference. In this way, database objects can be organized into logical groups that are easy to manage, and third-party applications can be added to corresponding schemas without causing conflicts.
 
-Each database has one or more schemas. Each schema contains tables and other types of objects. When a database is initially created, it has a schema named  **public**  by default, and all users have the usage permission on the schema. Only the system administrator and initial users can create functions, stored procedures, and synonyms in the public schema. Other users cannot create the three types of objects even if they have the create permission. You can group database objects by schema. A schema is similar to an OS directory but cannot be nested.
+Each database has one or more schemas. Each schema contains tables and other types of objects. When a database is initially created, it has a schema named  **public**  by default, and all users have the usage permission on the schema. Only the system administrator and initial users can create functions, stored procedures, and synonyms in the public schema. Other users cannot create the three types of objects even if they have the create permission. You can group database objects by schema. A schema is similar to an OS directory but cannot be nested.By default only the initializing user can create objects in pg_catalog mode.
 
 The same database object name can be used in different schemas of the same database without causing conflicts. For example, both  **a\_schema**  and  **b\_schema**  can contain a table named  **mytable**. Users with required permissions can access objects across multiple schemas of the same database.
 

@@ -37,6 +37,10 @@
 -   唯一约束和主键约束的约束键包含所有分区键将为约束创建LOCAL索引，否则创建GLOBAL索引。
 -   目前哈希分区和列表分区仅支持单列构建分区键，暂不支持多列构建分区键。
 -   只需要有间隔分区表的INSERT权限，往该表INSERT数据时就可以自动创建分区。
+-   对于分区表PARTITION FOR \(values\)语法，values只能是常量。
+-   对于分区表PARTITION FOR \(values\)语法，values在需要数据类型转换时，建议使用强制类型转换，以防隐式类型转换结果与预期不符。
+-   分区数最大值为1048575个，一般情况下业务不可能创建这么多分区，这样会导致内存不足。应参照参数local\_syscache\_threshold的值合理创建分区，分区表使用内存大致为（分区数 \* 3 / 1024）MB。理论上分区占用内存不允许大于local\_syscache\_threshold的值，同时还需要预留部分空间以供其他功能使用。
+-   指定分区语句目前不能走全局索引扫描。
 
 ## 语法格式<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -191,65 +195,84 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
             >![](public_sys-resources/icon-notice.gif) **须知：** 
             >orientation不支持修改。
-
-
-    -   COMPRESSION
-        -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
-        -   行存表不支持压缩。
+        
+    -    STORAGE\_TYPE
     
-    -   MAX\_BATCHROW
+         指定存储引擎类型，该参数设置成功后就不再支持修改。
     
-        指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
+        取值范围：
     
-        取值范围：10000\~60000，默认60000。
+        - USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
+        - ASTORE，表示表支持Append-Only存储引擎。
     
-    -   PARTIAL\_CLUSTER\_ROWS
+        默认值：
     
-        指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+        不指定表时，默认是Append-Only存储。
     
-        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
+    - COMPRESSION
+      -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
+      -   行存表不支持压缩。
     
-    -   DELTAROW\_THRESHOLD
+    - MAX\_BATCHROW
     
-        预留参数。该参数只对列存表有效。
+      指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
     
-        取值范围：0～9999
+      取值范围：10000\~60000，默认60000。
+    
+    - PARTIAL\_CLUSTER\_ROWS
+    
+      指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+    
+      取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
+    
+    - DELTAROW\_THRESHOLD
+    
+      预留参数。该参数只对列存表有效。
+    
+      取值范围：0～9999
+    
+    - segment
+    
+      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
+    
+      取值范围：on/off
+    
+      默认值：off
+    
+- **COMPRESS / NOCOMPRESS**
 
+  创建一个新表时，需要在创建表语句中指定关键字COMPRESS，这样，当对该表进行批量插入时就会触发压缩特性。该特性会在页范围内扫描所有元组数据，生成字典、压缩元组数据并进行存储。指定关键字NOCOMPRESS则不对表进行压缩。行存表不支持压缩。
 
--   **COMPRESS / NOCOMPRESS**
+  缺省值为NOCOMPRESS，即不对元组数据进行压缩。
 
-    创建一个新表时，需要在创建表语句中指定关键字COMPRESS，这样，当对该表进行批量插入时就会触发压缩特性。该特性会在页范围内扫描所有元组数据，生成字典、压缩元组数据并进行存储。指定关键字NOCOMPRESS则不对表进行压缩。行存表不支持压缩。
+- **TABLESPACE tablespace\_name**
 
-    缺省值为NOCOMPRESS，即不对元组数据进行压缩。
+  指定新表将要在tablespace\_name表空间内创建。如果没有声明，将使用默认表空间。
 
--   **TABLESPACE tablespace\_name**
+- **PARTITION BY RANGE\(partition\_key\)**
 
-    指定新表将要在tablespace\_name表空间内创建。如果没有声明，将使用默认表空间。
+  创建范围分区。partition\_key为分区键的名称。
 
--   **PARTITION BY RANGE\(partition\_key\)**
+  （1）对于从句是VALUES LESS THAN的语法格式：
 
-    创建范围分区。partition\_key为分区键的名称。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
 
-    （1）对于从句是VALUES LESS THAN的语法格式：
+  该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、CHARACTER VARYING\(n\)、VARCHAR\(n\)、CHARACTER\(n\)、CHAR\(n\)、CHARACTER、CHAR、TEXT、NVARCHAR、NVARCHAR2、NAME、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
+  （2）对于从句是START END的语法格式：
 
-    该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、CHARACTER VARYING\(n\)、VARCHAR\(n\)、CHARACTER\(n\)、CHAR\(n\)、CHARACTER、CHAR、TEXT、NVARCHAR、NVARCHAR2、NAME、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。
 
-    （2）对于从句是START END的语法格式：
+  该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。
+  （3）对于指定了INTERVAL子句的语法格式：
 
-    该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。
 
-    （3）对于指定了INTERVAL子句的语法格式：
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。
-
-    该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
+  该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
 - **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
 
@@ -263,79 +286,79 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
--   **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
+- **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
 
-    指定各分区的信息，各参数意义如下：
+  指定各分区的信息，各参数意义如下：
 
-    -   partition\_name：范围分区的名称或名称前缀，除以下情形外（假定其中的partition\_name是p1），均为分区的名称。
-        -   若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1, p1\_2, ...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\), \[2, 3\) 和 \[3, 4\)，名称依次为p1\_1, p1\_2和p1\_3，即此处的p1是名称前缀。
-        -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\), \[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0, p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
+  -   partition\_name：范围分区的名称或名称前缀，除以下情形外（假定其中的partition\_name是p1），均为分区的名称。
+      -   若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1, p1\_2, ...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\), \[2, 3\) 和 \[3, 4\)，名称依次为p1\_1, p1\_2和p1\_3，即此处的p1是名称前缀。
+      -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\), \[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0, p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
 
-    -   partition\_value：范围分区的端点值（起始或终点），取值依赖于partition\_key的类型，不可是MAXVALUE。
-    -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
-    -   MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
+  -   partition\_value：范围分区的端点值（起始或终点），取值依赖于partition\_key的类型，不可是MAXVALUE。
+  -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
+  -   MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
-    >2.  START END语法需要遵循以下限制：
-    >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
+  >2.  START END语法需要遵循以下限制：
+  >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
 
-    >    -   相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
+  >    -   相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
 
-    >    -   每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
+  >    -   每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
 
-    >    -   每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
+  >    -   每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
 
-    >    -   一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
+  >    -   一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
 
-    >    -   partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
+  >    -   partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
 
-    >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
+  >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
 
-    >3.  在创建分区表时START END与LESS THAN语法不可混合使用。
-    >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
+  >3.  在创建分区表时START END与LESS THAN语法不可混合使用。
+  >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
 
--   **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**
+- **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**
 
-    间隔分区定义信息。
+  间隔分区定义信息。
 
-    -   interval\_expr：自动创建分区的间隔，例如：1 day、1 month。
+  -   interval\_expr：自动创建分区的间隔，例如：1 day、1 month。
 
-    -   STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
+  -   STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >列存表不支持间隔分区。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >列存表不支持间隔分区。
 
--   **PARTITION BY LIST\(partition\_key\)**
+- **PARTITION BY LIST\(partition\_key\)**
 
-    创建列表分区。partition\_key为分区键的名称。
+  创建列表分区。partition\_key为分区键的名称。
 
-    -   对于partition\_key，列表分区策略的分区键仅支持1列。
-    -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
+  -   对于partition\_key，列表分区策略的分区键仅支持1列。
+  -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
 
-    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过 1048575 个。
+  分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过 1048575 个。
 
--   **PARTITION BY HASH\(partition\_key\)**
+- **PARTITION BY HASH\(partition\_key\)**
 
-    创建哈希分区。partition\_key为分区键的名称。
+  创建哈希分区。partition\_key为分区键的名称。
 
-    对于partition\_key，哈希分区策略的分区键仅支持1列。
+  对于partition\_key，哈希分区策略的分区键仅支持1列。
 
-    分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过1048575 个。
+  分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过1048575 个。
 
--   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
+- **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
-    行迁移开关。
+  行迁移开关。
 
-    如果进行UPDATE操作时，更新了元组在分区键上的值，造成了该元组所在分区发生变化，就会根据该开关给出报错信息，或者进行元组在分区间的转移。
+  如果进行UPDATE操作时，更新了元组在分区键上的值，造成了该元组所在分区发生变化，就会根据该开关给出报错信息，或者进行元组在分区间的转移。
 
-    取值范围：
+  取值范围：
 
-    -   ENABLE（缺省值）：行迁移开关打开。
-    -   DISABLE：行迁移开关关闭。
+  -   ENABLE（缺省值）：行迁移开关打开。
+  -   DISABLE：行迁移开关关闭。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >列表/哈希分区表暂不支持ROW MOVEMENT。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >列表/哈希分区表暂不支持ROW MOVEMENT。
 
 
 -   **NOT NULL**

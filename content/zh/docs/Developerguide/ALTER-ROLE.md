@@ -10,37 +10,40 @@
 
 ## 语法格式<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sad868fc15480446b8c29a37a152b5fc5"></a>
 
--   修改角色的权限。
+- 修改角色的权限。
 
-    ```
-    ALTER ROLE role_name [ [ WITH ] option [ ... ] ];
-    ```
+  ```
+  ALTER ROLE role_name [ [ WITH ] option [ ... ] ];
+  ```
 
-    其中权限项子句option为：
+  其中权限项子句option为：
 
-    ```
-    {CREATEDB | NOCREATEDB}
-        | {CREATEROLE | NOCREATEROLE}
-        | {INHERIT | NOINHERIT}
-        | {AUDITADMIN | NOAUDITADMIN}
-        | {SYSADMIN | NOSYSADMIN}
-        | {USEFT | NOUSEFT}
-        | {LOGIN | NOLOGIN}
-        | {REPLICATION | NOREPLICATION}
-        | {INDEPENDENT | NOINDEPENDENT}
-        | {VCADMIN | NOVCADMIN}
-        | CONNECTION LIMIT connlimit
-        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD 'password' [EXPIRED]
-        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY 'password' [ REPLACE 'old_password' | EXPIRED ]
-        | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' | DISABLE | EXPIRED }
-        | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' ] | DISABLE }
-        | VALID BEGIN 'timestamp'
-        | VALID UNTIL 'timestamp'
-        | RESOURCE POOL 'respool'
-        | PERM SPACE 'spacelimit'
-        | ACCOUNT { LOCK | UNLOCK }
-        | PGUSER
-    ```
+  ```
+  {CREATEDB | NOCREATEDB}
+      | {CREATEROLE | NOCREATEROLE}
+      | {INHERIT | NOINHERIT}
+      | {AUDITADMIN | NOAUDITADMIN}
+      | {SYSADMIN | NOSYSADMIN}
+      | {MONADMIN | NOMONADMIN}
+      | {OPRADMIN | NOOPRADMIN}
+      | {POLADMIN | NOPOLADMIN}
+      | {USEFT | NOUSEFT}
+      | {LOGIN | NOLOGIN}
+      | {REPLICATION | NOREPLICATION}
+      | {INDEPENDENT | NOINDEPENDENT}
+      | {VCADMIN | NOVCADMIN}
+      | {PERSISTENCE | NOPERSISTENCE}
+      | CONNECTION LIMIT connlimit
+      | [ ENCRYPTED | UNENCRYPTED ] PASSWORD 'password' [EXPIRED]
+      | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY 'password' [ REPLACE 'old_password' | EXPIRED ]
+      | [ ENCRYPTED | UNENCRYPTED ] PASSWORD { 'password' | DISABLE | EXPIRED }
+      | [ ENCRYPTED | UNENCRYPTED ] IDENTIFIED BY { 'password' [ REPLACE 'old_password' ] | DISABLE }
+      | VALID BEGIN 'timestamp'
+      | VALID UNTIL 'timestamp'
+      | RESOURCE POOL 'respool'
+      | PERM SPACE 'spacelimit'
+      | PGUSER
+  ```
 
 -   修改角色的名称。
 
@@ -49,12 +52,19 @@
         RENAME TO new_name;
     ```
 
--   设置角色的配置参数。
+-   锁定或解锁。
 
     ```
-    ALTER ROLE role_name [ IN DATABASE database_name ]
-        SET configuration_parameter {{ TO | = } { value | DEFAULT } | FROM CURRENT};
+    ALTER ROLE role_name 
+        ACCOUNT { LOCK | UNLOCK };
     ```
+
+- 设置角色的配置参数。
+
+  ```
+  ALTER ROLE role_name [ IN DATABASE database_name ]
+      SET configuration_parameter {{ TO | = } { value | DEFAULT } | FROM CURRENT};
+  ```
 
 -   重置角色的配置参数。
 

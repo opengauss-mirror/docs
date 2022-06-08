@@ -58,7 +58,7 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
     -   CASCADE：级联清空所有由于CASCADE而被添加到组中的表。
     -   RESTRICT（缺省值）：完全清空。
 
--   PURGE：默认将表数据放入回收站中，PURGE直接清理。
+-   **PURGE**：默认将表数据放入回收站中，PURGE直接清理。
 -   **partition\_name**
 
     目标分区表的分区名。

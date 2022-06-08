@@ -21,25 +21,28 @@
 -   列存表支持的PSORT和B-tree索引都不支持创建表达式索引、部分索引，PSORT不支持创建唯一索引，B-tree支持创建唯一索引。
 -   列存表支持的GIN索引支持创建表达式索引，但表达式不能包含空分词、空列和多列，不支持创建部分索引和唯一索引。
 -   HASH索引目前仅限于行存表索引、临时表索引和分区表LOCAL索引，且不支持创建多字段索引。
+-   被授予CREATE ANY INDEX权限的用户，可以在public模式和用户模式下创建索引。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
--   在表上创建索引。
+- 在表上创建索引。
 
-    ```
-    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-        [ TABLESPACE tablespace_name ]
-        [ WHERE predicate ];
-    ```
+  ```
+  CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
+      ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
+      [ INCLUDE ( column_name [, ...] )]    
+      [ WITH ( {storage_parameter = value} [, ... ] ) ]
+      [ TABLESPACE tablespace_name ]
+      [ WHERE predicate ];
+  ```
 
 -   在分区表上创建索引。
 
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
-        [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ];
     ```
@@ -161,35 +164,53 @@
 
     指定创建的分区索引为GLOBAL索引，当不指定LOCAL、GLOBAL关键字时，默认创建GLOBAL索引。
 
--   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
+- **INCLUDE  \( column\_name \[, ...\]**  \)
 
-    指定索引方法的存储参数。
+  可选的 INCLUDE 子句指定将一些非键列（non-key columns）包含在索引中。非键列不能用于作为索引扫描的加速搜索条件，同时在检查索引的唯一性约束时会忽略它们。
 
-    取值范围：
+  仅索引扫描 \(Index Only Scan\) 可以直接返回非键列中的内容，而不必去访问索引所对应的堆表。
 
-    只有GIN索引支持FASTUPDATE、GIN\_PENDING\_LIST\_LIMIT参数。GIN和Psort之外的索引都支持FILLFACTOR参数。
+  将非键列添加为 INCLUDE 列需要保守一些，尤其是对于宽列。如果索引元组超过索引类型允许的最大大小，数据将插入失败。需要注意的是，任何情况下为索引添加非键列都会增加索引的空间占用，从而可能减慢搜索速度。
 
-    -   FILLFACTOR
+  目前只有ubtree索引访问方式支持该特性。非键列会被保存在与堆元组对应的索引叶子元组中，不会包含在索引上层页面的元组中。
 
-        一个索引的填充因子（fillfactor）是一个介于10和100之间的百分数。
+- **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
-        取值范围：10\~100
+  指定索引方法的存储参数。
 
-    -   FASTUPDATE
+  取值范围：
 
-        GIN索引是否使用快速更新。
+  只有GIN索引支持FASTUPDATE、GIN\_PENDING\_LIST\_LIMIT参数。GIN和Psort之外的索引都支持FILLFACTOR参数。只有UBTREE索引支持INDEXSPLIT参数。
 
-        取值范围：ON，OFF
+  -   FILLFACTOR
 
-        默认值：ON
+      一个索引的填充因子（fillfactor）是一个介于10和100之间的百分数。
 
-    -   GIN\_PENDING\_LIST\_LIMIT
+      取值范围：10\~100
 
-        当GIN索引启用fastupdate时，设置该索引pending list容量的最大值。
+  -   FASTUPDATE
 
-        取值范围：64\~INT\_MAX，单位KB。
+      GIN索引是否使用快速更新。
 
-        默认值：gin\_pending\_list\_limit的默认取决于GUC中gin\_pending\_list\_limit的值（默认为4MB）
+      取值范围：ON，OFF
+
+      默认值：ON
+
+  - GIN\_PENDING\_LIST\_LIMIT
+
+    当GIN索引启用fastupdate时，设置该索引pending list容量的最大值。
+
+    取值范围：64\~INT\_MAX，单位KB。
+
+    默认值：gin\_pending\_list\_limit的默认取决于GUC中gin\_pending\_list\_limit的值（默认为4MB）
+
+  -   INDEXSPLIT
+
+      UBTREE索引选择采取哪种分裂策略。其中DEFAULT策略指的是与BTREE相同的分裂策略。INSERTPT策略能在某些场景下显著降低索引空间占用。
+
+      取值范围：INSERTPT，DEAFAULT
+
+      默认值：INSERTPT
 
 
 -   **TABLESPACE tablespace\_name**
@@ -202,7 +223,7 @@
 
     创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
 
-    取值范围：predicate表达式只能引用表的字段，它可以使用所有字段，而不仅是被索引的字段。目前，子查询和聚集表达式不能出现在WHERE子句里。
+    取值范围：predicate表达式只能引用表的字段，它可以使用所有字段，而不仅是被索引的字段。目前，子查询和聚集表达式不能出现在WHERE子句里。不建议使用int等数值类型作为predicate，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
 
 -   **PARTITION index\_partition\_name**
 
@@ -210,11 +231,59 @@
 
     取值范围：字符串，要符合标识符的命名规范。
 
+-   **SUBPARTITION index\_subpartition\_name**
+
+    索引二级分区的名称。
+
+    取值范围：字符串，要符合标识符的命名规范
+    
 -   **TABLESPACE index\_partition\_tablespace**
 
     索引分区的表空间。
 
     取值范围：如果没有声明，将使用分区表索引的表空间index\_tablespace。
+
+-   **COMPRESSTYPE**
+
+    索引参数，设置索引压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数生效后不允许修改。（仅支持B-TREE索引）
+
+    取值范围：0\~2，默认值为0。
+
+-   **COMPRESS\_LEVEL**
+
+    索引参数，设置索引压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，索引的压缩效果越好，索引的访问速度越慢。该参数允许修改，修改后影响变更数据、新增数据的压缩等级。（仅支持B-TREE索引）
+
+    取值范围：-31\~31，默认值为0。
+
+-   **COMPRESS\_CHUNK_SIZE**
+
+    索引参数，设置索引压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响索引的访问速度。该参数生效后不允许修改。（仅支持B-TREE索引）
+
+    取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
+
+    默认值：4096
+
+- **COMPRESS_PREALLOC_CHUNKS**
+
+  索引参数，设置索引压缩chunk块预分配数量。预分配数量越大，索引的压缩率相对越差，离散度越小，访问性能越好。该参数允许修改，修改后影响变更数据、新增数据的预分配数量。（仅支持B-TREE索引）
+
+  取值范围：0\~7，默认值为0。
+
+  - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+  - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+
+-   **COMPRESS_BYTE_CONVERT**
+
+    索引参数，设置索引压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节转换预处理。当`COMPRESS_DIFF_CONVERT`为真时，该值不允许修改为假。
+
+    取值范围：布尔值，默认关闭。
+
+-   **COMPRESS_DIFF_CONVERT**
+
+    索引参数，设置索引压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节差分预处理。
+
+    取值范围：布尔值，默认关闭。
 
 
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>

@@ -89,7 +89,7 @@ Long-time running of SQL statements will occupy a lot of system resources. You c
     openGauss=# SELECT count(*) FROM pg_stat_activity;
     ```
 
--   Collect system-level statistics.
+-   Query system-level statistics.
 
     Run the following command to query information about the session that uses the maximum memory:
 
@@ -1643,8 +1643,9 @@ The database supports B-tree indexes. Recreating a B-tree index routinely helps 
 
 Use either of the following two methods to recreate an index:
 
--   Run the  **DROP INDEX**  statement to delete the index and then run the  **CREATE INDEX**  statement to create an index.
--   When you delete an index, a temporary exclusive lock is added in the parent table to block related read/write operations. During index creation, the write operation is locked, whereas the read operation is not locked and can use only sequential scans.
+- Run the  **DROP INDEX**  statement to delete the index and then run the  **CREATE INDEX**  statement to create an index.
+
+  When you delete an index, a temporary exclusive lock is added in the parent table to block related read/write operations. During index creation, the write operation is locked, whereas the read operation is not locked and can use only sequential scans.
 -   Run  **REINDEX**  to recreate an index.
     -   When you run the  **REINDEX TABLE**  statement to recreate an index, an exclusive lock is added to block related read/write operations.
     -   When you run the  **REINDEX INTERNAL TABLE**  statement to recreate an index for a  **desc**  table \(such as column-store  **cudesc**  table\), an exclusive lock is added to block related read/write operations on the table.

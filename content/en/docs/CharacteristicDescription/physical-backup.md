@@ -1,4 +1,4 @@
-# Physical Backup<a name="EN-US_TOPIC_0000001088726278"></a>
+# Physical Backup<a name="EN-US_TOPIC_0000001105235302"></a>
 
 ## Availability<a name="section56086982"></a>
 
@@ -38,9 +38,9 @@ Supports full backup and incremental backup simultaneously.
 
 ## Constraints<a name="section06531946143616"></a>
 
-For details about constraints on physical backup, see "Backup and Restoration \> Introduction to Roach \> Constraints and Limitations" in the  _Administrator Guide_.
+For details about the constraints of physical backup, see Backup and Restoration \> Physical Backup and Restoration in  _Administrator Guide_.
 
 ## Dependencies<a name="section57771982"></a>
 
-None
+None.
 

@@ -21,7 +21,7 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </td>
 <td class="cellrowborder" valign="top" width="28.95%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa144baf7ccd74085a589a07c555920e0"><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa144baf7ccd74085a589a07c555920e0"></a><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa144baf7ccd74085a589a07c555920e0"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa9036508363d46579fa859a582740e12"><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa9036508363d46579fa859a582740e12"></a><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa9036508363d46579fa859a582740e12"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="37.22%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa9036508363d46579fa859a582740e12"><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa9036508363d46579fa859a582740e12"></a><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_aa9036508363d46579fa859a582740e12"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_r0fc6e49fe514425196d7b556ebd637f0"><td class="cellrowborder" valign="top" width="20.86%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8d7e5839c6274834bd30c240f40f8dac"><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8d7e5839c6274834bd30c240f40f8dac"></a><a name="zh-cn_topic_0283137676_zh-cn_topic_0237122304_zh-cn_topic_0059778050_a8d7e5839c6274834bd30c240f40f8dac"></a>oprname</p>
@@ -154,3 +154,4 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </tr>
 </tbody>
 </table>
+

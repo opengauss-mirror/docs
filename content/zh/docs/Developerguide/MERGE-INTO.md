@@ -11,20 +11,21 @@
 ## 语法格式<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section10551749579"></a>
 
 ```
-MERGE [/*+ plan_hint */] INTO table_name [ [ AS ] alias ]
+MERGE [/*+ plan_hint */] INTO table_name [ partition_clause ] [ [ AS ] alias ]
 USING { { table_name | view_name } | subquery } [ [ AS ] alias ]
 ON ( condition )
 [
   WHEN MATCHED THEN
-  UPDATE SET { column_name = { expression | DEFAULT } |
-          ( column_name [, ...] ) = ( { expression | DEFAULT } [, ...] ) } [, ...]
+  UPDATE SET { column_name = { expression | subquery | DEFAULT } |
+          ( column_name [, ...] ) = ( { expression | subquery | DEFAULT } [, ...] ) } [, ...]
   [ WHERE condition ]
 ]
 [
   WHEN NOT MATCHED THEN
   INSERT { DEFAULT VALUES |
-  [ ( column_name [, ...] ) ] VALUES ( { expression | DEFAULT } [, ...] ) [, ...] [ WHERE condition ] }
+  [ ( column_name [, ...] ) ] VALUES ( { expression | subquery | DEFAULT } [, ...] ) [, ...] [ WHERE condition ] }
 ];
+NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRALIZED mode!
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section1315653475"></a>
@@ -47,6 +48,27 @@ ON ( condition )
 
         取值范围：字符串，符合标识符命名规范。
 
+
+- **partition\_clause**
+
+  指定分区MERGE操作：
+
+  ```
+  PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } |
+  SUBPARTITION { ( subpartition_name ) | FOR ( subpartition_value [, ...] ) }
+  ```
+
+  关键字详见[SELECT](SELECT.md)一节介绍。
+
+  如果value子句的值和指定分区不一致，会抛出异常。
+
+  示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)。
+
+- **alias**
+
+  目标表的别名。
+
+  取值范围：字符串，符合标识符命名规范。
 
 -   **USING子句**
 
@@ -78,7 +100,7 @@ ON ( condition )
 
 -   **WHERE condition**
 
-    UPDATE子句和INSERT子句的条件，只有在条件满足时才进行更新操作，可缺省。不支持WHERE条件中引用系统列。
+    UPDATE子句和INSERT子句的条件，只有在条件满足时才进行更新操作，可缺省。不支持WHERE条件中引用系统列。不建议使用int等数值类型作为condition，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
 
 
 ## 示例<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section3650125620712"></a>

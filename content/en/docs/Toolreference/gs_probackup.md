@@ -4,7 +4,7 @@
 
 **gs\_probackup**  is a tool used to manage openGauss database backup and restoration. It periodically backs up the openGauss instances so that the server can be restored when the database is faulty.
 
--   It supports the physical backup of a standalone database or a primary node in a database.
+-   It supports the physical backup of a standalone database, a primary node, or a standby node of the primary node database.
 -   It supports the backup of contents in external directories, such as script files, configuration files, log files, and dump files.
 -   It supports incremental backup, periodic backup, and remote backup.
 -   It supports settings on the backup retention policy.
@@ -13,8 +13,7 @@
 
 -   The openGauss database can be connected.
 -   To use PTRACK incremental backup, manually add  **enable\_cbm\_tracking = on**  to  **postgresql.conf**.
--   In order to prevent the xlog from being cleaned up before the end of the transfer, please increase the value of wal_keep_segements in the postgresql.conf file appropriately.
--   To prevent Xlogs from being cleared before the transmission is complete,increase the value of wal_keep_segments in the postgresql.conf file.
+-   To prevent Xlogs from being cleared before the transmission is complete, increase the value of  **wal\_keep\_segments**  in the  **postgresql.conf**  file.
 
 ## Important Notes<a name="en-us_topic_0287276008_section6439171332614"></a>
 
@@ -27,6 +26,9 @@
 -   If a large amount of data needs to be backed up, adjust the values of  **session\_timeout**  and  **wal\_sender\_timeout**  in the  **postgresql.conf**  file to prevent backup timeout. In addition, adjust the value of  **--rw-timeout**  in the backup command line parameters.
 -   When using the  **-T**  option to redirect the external directory in the backup to a new directory during restoration, specify the  **--external-mapping**  parameter.
 -   After an incremental backup is restored, the created logical replication slot is unavailable and needs to be deleted and recreated.
+-   When remote backup is used, ensure that the clock of the remote server is synchronized with that of the backup server. Otherwise,  **gaussdb**  may fail to be started when  **--recovery-target-time**  is used for restoration.
+-   When remote backup is valid \(**remote-proto=ssh**\), ensure that  **-h**  and  **--remote-host **specify the same server. When remote backup is invalid, if the  **-h**  option is specified, ensure that  **-h**  specifies the local address or local host name.
+-   Currently, logical replication slots cannot be backed up.
 
 ## Command Description<a name="en-us_topic_0287276008_section86861610172816"></a>
 
@@ -583,7 +585,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value: current path
 
--   --remote-lib=_libpath_
+-   --remote-libpath=_libpath_
 
     Specifies the lib directory where gs\_probackup is installed in the remote system.
 

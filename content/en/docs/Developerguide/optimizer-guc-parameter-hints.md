@@ -26,6 +26,10 @@ set(param value)
     -   Floating point
 
         **cost\_weight\_index**,  **default\_limit\_rows**,  **seq\_page\_cost**,  **random\_page\_cost**,  **cpu\_tuple\_cost**,  **cpu\_index\_tuple\_cost**,  **cpu\_operator\_cost**, and  **effective\_cache\_size**
+        
+    -   Enumeration type
+    
+    ​       **try_vector_engine_strategy**
 
 
 

@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>
 
-**CREATE ROLE**  is used to create a role.
+**CREATE ROLE**  creates a role.
 
 A role is an entity that owns database objects and permissions. In different environments, a role can be considered a user, a group, or both.
 
@@ -33,6 +33,7 @@ The syntax of role information configuration clause  **option**  is as follows:
     | {REPLICATION | NOREPLICATION}
     | {INDEPENDENT | NOINDEPENDENT}
     | {VCADMIN | NOVCADMIN}
+    | {PERSISTENCE | NOPERSISTENCE}
     | CONNECTION LIMIT connlimit
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
@@ -75,7 +76,7 @@ The syntax of role information configuration clause  **option**  is as follows:
     -   The password can also be a ciphertext character string that meets the format requirements. This mode is mainly used to import user data. You are not advised to use it directly. If a ciphertext password is used, the user must know the plaintext corresponding to the ciphertext password and ensure that the plaintext password meets the complexity requirements. The database does not verify the complexity of the ciphertext password. Instead, the security of the ciphertext password is ensured by the user.
     -   Be enclosed by single or double quotation marks.
 
-    Value range: a string
+    Value range: a character string that cannot be empty.
 
 -   **EXPIRED**
 
@@ -94,6 +95,24 @@ The syntax of role information configuration clause  **option**  is as follows:
     Determines whether a new role is a system administrator. Roles having the  **SYSADMIN**  attribute have the highest permission.
 
     Value range: If not specified,  **NOSYSADMIN**  is the default.
+
+-   **MONADMIN | NOMONADMIN**
+
+    Determines whether a role is a monitoring administrator.
+
+    Value range: If not specified,  **NOMONADMIN**  is the default.
+
+-   **OPRADMIN | NOOPRADMIN**
+
+    Determines whether a role is an O&M administrator.
+
+    Value range: If not specified,  **NOOPRADMIN**  is the default.
+
+-   **POLADMIN | NOPOLADMIN**
+
+    Determines whether a role is a security policy administrator.
+
+    Value range: If not specified,  **NOPOLADMIN**  is the default.
 
 -   **AUDITADMIN | NOAUDITADMIN**
 
@@ -146,6 +165,14 @@ The syntax of role information configuration clause  **option**  is as follows:
     -   System administrators and security administrators with the  **CREATEROLE**  attribute have no permission to remove the  **INDEPENDENT**  attribute of the  **INDEPENDENT**  role.
     -   System administrators and security administrators with the  **CREATEROLE**  attribute have no permission to change the database password of the  **INDEPENDENT**  role. The  **INDEPENDENT**  role must manage its own password. If the password is lost, it cannot be reset.
     -   The  **SYSADMIN**  attribute of a user cannot be changed to the  **INDEPENDENT**  attribute.
+
+-   **VCADMIN | NOVCADMIN**
+
+    This parameter has no actual meaning.
+
+-   **PERSISTENCE | NOPERSISTENCE**
+
+    Defines a permanent user. Only the initial user is allowed to create, modify, and delete permanent users with the  **PERSISTENCE**  attribute.
 
 -   **CONNECTION LIMIT**
 

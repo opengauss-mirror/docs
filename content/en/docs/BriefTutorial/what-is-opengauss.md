@@ -1,6 +1,6 @@
 # What Is openGauss?<a name="EN-US_TOPIC_0000001223667315"></a>
 
-openGauss is a user-friendly, enterprise-level, and open-source relational database jointly built with partners. openGauss provides multi-core architecture-oriented ultimate performance, full-link service, data security, AI-based optimization, and efficient O&M capabilities. Derived from PostgreSQL, openGauss deeply integrates Huawei's years of R&D experience in the database field and continuously builds competitive features based on enterprise-level scenario requirements. For the latest information about openGauss, visit  [https://opengauss.org/en/](https://opengauss.org/en/).
+openGauss is a user-friendly, enterprise-level, and open-source relational database jointly built with partners. openGauss provides multi-core architecture-oriented ultimate performance, full-link service, data security, AI-based optimization, and efficient O&M capabilities. openGauss deeply integrates Huawei's years of R&D experience in the database field and continuously builds competitive features based on enterprise-level scenario requirements. For the latest information about openGauss, visit  [https://opengauss.org/en/](https://opengauss.org/en/).
 
 -   **openGauss is a database management system.**
 

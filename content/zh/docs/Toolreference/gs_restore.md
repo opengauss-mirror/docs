@@ -35,7 +35,7 @@ gs_restore [OPTION]... FILE
 
 ## 参数说明<a name="zh-cn_topic_0237152343_zh-cn_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
-通用参数：
+### 通用参数：
 
 -   -d, --dbname=NAME
 
@@ -77,8 +77,7 @@ gs_restore [OPTION]... FILE
 
     显示gs\_restore命令行参数帮助，然后退出。
 
-
-导入参数：
+### 导入参数：
 
 -   -a, --data-only
 
@@ -220,9 +219,17 @@ gs_restore [OPTION]... FILE
 
     该选项只有在直接导入到某数据库中时有效，不针对生成SQL脚本文件输出。
 
+-   --no-publications
+
+    不导入发布。
+
 -   --no-security-labels
 
     该参数为扩展预留接口，不建议使用。
+
+-   --no-subscriptions
+
+    不导入订阅。
 
 -   --no-tablespaces
 
@@ -238,7 +245,9 @@ gs_restore [OPTION]... FILE
 
     输出SET SESSION AUTHORIZATION命令，而非ALTER OWNER命令，用以决定对象归属。该选项使转储更加兼容标准，但通过参考转储中对象的记录，导入过程可能会有问题。使用SET SESSION AUTHORIZATION的转储要求必须是系统管理员，同时在导入前还需参考“SET SESSION AUTHORIZATION”，手工对导出文件的密码进行修改验证，只有这样才能进行正确的导入操作，相比之下，ALTER OWNER对权限要求较低。
 
+-  --pipeline
 
+  使用管道传输密码，禁止在终端使用。
 
 ![](public_sys-resources/icon-notice.gif) **须知：** 
 
@@ -258,7 +267,7 @@ gs_restore [OPTION]... FILE
 
 
 
-连接参数：
+### 连接参数：
 
 -   -h, --host=HOSTNAME
 

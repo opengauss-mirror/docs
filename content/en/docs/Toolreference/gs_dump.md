@@ -1,8 +1,8 @@
-# gs\_dump<a name="EN-US_TOPIC_0249632271"></a>
+# gs\_dump<a name="EN-US_TOPIC_0289899246"></a>
 
-## Background<a name="en-us_topic_0237152335_en-us_topic_0059777770_section1271019596335"></a>
+## Background<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_section1271019596335"></a>
 
-gs\_dump, provided by openGauss, is used to export database information. You can export a database or its objects \(such as schemas, tables, and views\). The database can be the default postgres database or a user-specified database.
+**gs\_dump**, provided by openGauss, is used to export database information. You can export a database or its objects \(such as schemas, tables, and views\), excluding objects in the recycle bin. The database can be the default  **postgres**  database or a user-specified database.
 
 **gs\_dump**  is executed by OS user  **omm**.
 
@@ -17,104 +17,102 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 **gs\_dump**  can export database information to a plain-text SQL script file or archive file.
 
 -   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use  [**gsql**](gsql.md)  to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
--   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  [**gs\_restore**](gs_restore.md)  to restore the database. The system allows users to select or even to sort the content to be imported.
+-   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  [**gs\_restore**](gs_restore.md)  to restore the database. The system allows users to select or even to sort the content to be imported.
 
-## Functions<a name="en-us_topic_0237152335_en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
+## Functions<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
-**gs\_dump**  can create export files in four formats, which are specified by  **-F**  or  **--format=**, as listed in  [Table 1](#en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5).
+**gs\_dump**  can create export files in four formats, which are specified by  **-F**  or  **--format=**, as listed in  [Table 1](#en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5).
 
 **Table  1**  Formats of exported files
 
-<a name="en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5"></a>
-<table><thead align="left"><tr id="en-us_topic_0237152335_en-us_topic_0058967678_r4ef849d8960e48aca0b7d7b3cb862f51"><th class="cellrowborder" valign="top" width="12.78%" id="mcps1.2.6.1.1"><p id="en-us_topic_0237152335_en-us_topic_0058967678_af6e2786c5c134e209e442d3a165510a4"><a name="en-us_topic_0237152335_en-us_topic_0058967678_af6e2786c5c134e209e442d3a165510a4"></a><a name="en-us_topic_0237152335_en-us_topic_0058967678_af6e2786c5c134e209e442d3a165510a4"></a>Format</p>
+<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5"></a>
+<table><thead align="left"><tr id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_r4ef849d8960e48aca0b7d7b3cb862f51"><th class="cellrowborder" valign="top" width="12.78%" id="mcps1.2.6.1.1"><p id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_af6e2786c5c134e209e442d3a165510a4"><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_af6e2786c5c134e209e442d3a165510a4"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_af6e2786c5c134e209e442d3a165510a4"></a>Format</p>
 </th>
-<th class="cellrowborder" valign="top" width="9.8%" id="mcps1.2.6.1.2"><p id="en-us_topic_0237152335_p4587167183616"><a name="en-us_topic_0237152335_p4587167183616"></a><a name="en-us_topic_0237152335_p4587167183616"></a>Value of <strong id="b127678166527"><a name="b127678166527"></a><a name="b127678166527"></a>-F</strong></p>
+<th class="cellrowborder" valign="top" width="9.8%" id="mcps1.2.6.1.2"><p id="en-us_topic_0287275988_en-us_topic_0237152335_p4587167183616"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p4587167183616"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p4587167183616"></a>Value of <strong id="b127678166527"><a name="b127678166527"></a><a name="b127678166527"></a>-F</strong></p>
 </th>
-<th class="cellrowborder" valign="top" width="30.78%" id="mcps1.2.6.1.3"><p id="en-us_topic_0237152335_en-us_topic_0058967678_a1b62768c45284a809838bc575fdc7aea"><a name="en-us_topic_0237152335_en-us_topic_0058967678_a1b62768c45284a809838bc575fdc7aea"></a><a name="en-us_topic_0237152335_en-us_topic_0058967678_a1b62768c45284a809838bc575fdc7aea"></a>Description</p>
+<th class="cellrowborder" valign="top" width="30.78%" id="mcps1.2.6.1.3"><p id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a1b62768c45284a809838bc575fdc7aea"><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a1b62768c45284a809838bc575fdc7aea"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a1b62768c45284a809838bc575fdc7aea"></a>Description</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.65%" id="mcps1.2.6.1.4"><p id="en-us_topic_0237152335_p6978831508"><a name="en-us_topic_0237152335_p6978831508"></a><a name="en-us_topic_0237152335_p6978831508"></a>Suggestion</p>
+<th class="cellrowborder" valign="top" width="20.65%" id="mcps1.2.6.1.4"><p id="en-us_topic_0287275988_en-us_topic_0237152335_p6978831508"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p6978831508"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p6978831508"></a>Suggestion</p>
 </th>
-<th class="cellrowborder" valign="top" width="25.990000000000002%" id="mcps1.2.6.1.5"><p id="en-us_topic_0237152335_p2063187163819"><a name="en-us_topic_0237152335_p2063187163819"></a><a name="en-us_topic_0237152335_p2063187163819"></a>Corresponding Import Tool</p>
+<th class="cellrowborder" valign="top" width="25.990000000000002%" id="mcps1.2.6.1.5"><p id="en-us_topic_0287275988_en-us_topic_0237152335_p2063187163819"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p2063187163819"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p2063187163819"></a>Corresponding Import Tool</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0237152335_en-us_topic_0058967678_r1daa8251bad14980afdd5cb2d8265dc3"><td class="cellrowborder" valign="top" width="12.78%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0237152335_en-us_topic_0058967678_en-us_topic_0020757891_p20432820450"><a name="en-us_topic_0237152335_en-us_topic_0058967678_en-us_topic_0020757891_p20432820450"></a><a name="en-us_topic_0237152335_en-us_topic_0058967678_en-us_topic_0020757891_p20432820450"></a>Plain-text</p>
+<tbody><tr id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_r1daa8251bad14980afdd5cb2d8265dc3"><td class="cellrowborder" valign="top" width="12.78%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_en-us_topic_0020757891_p20432820450"><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_en-us_topic_0020757891_p20432820450"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_en-us_topic_0020757891_p20432820450"></a>Plain-text</p>
 </td>
-<td class="cellrowborder" valign="top" width="9.8%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0237152335_p859110714363"><a name="en-us_topic_0237152335_p859110714363"></a><a name="en-us_topic_0237152335_p859110714363"></a>p</p>
+<td class="cellrowborder" valign="top" width="9.8%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p859110714363"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p859110714363"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p859110714363"></a>p</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.78%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0237152335_p1374812518463"><a name="en-us_topic_0237152335_p1374812518463"></a><a name="en-us_topic_0237152335_p1374812518463"></a>A plain-text script file containing SQL statements and commands. The commands can be executed on <strong id="b1564965217536"><a name="b1564965217536"></a><a name="b1564965217536"></a>gsql</strong>, a command line terminal, to recreate database objects and load table data.</p>
+<td class="cellrowborder" valign="top" width="30.78%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p1374812518463"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p1374812518463"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p1374812518463"></a>A plain-text script file containing SQL statements and commands. The commands can be executed on <strong id="b1564965217536"><a name="b1564965217536"></a><a name="b1564965217536"></a>gsql</strong>, a command line terminal, to recreate database objects and load table data.</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0237152335_p130319266504"><a name="en-us_topic_0237152335_p130319266504"></a><a name="en-us_topic_0237152335_p130319266504"></a>You are advised to use plain-text exported files for small databases.</p>
+<td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p130319266504"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p130319266504"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p130319266504"></a>You are advised to use plain-text exported files for small databases.</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0237152335_p18632714386"><a name="en-us_topic_0237152335_p18632714386"></a><a name="en-us_topic_0237152335_p18632714386"></a>Before using <a href="gsql.md"><strong id="b1334175245418"><a name="b1334175245418"></a><a name="b1334175245418"></a>gsql</strong></a> to restore database objects, you can use a text editor to edit the plain-text export file as required.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152335_row14339208493"><td class="cellrowborder" valign="top" width="12.78%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0237152335_en-us_topic_0058967678_af130ab9de506445ca1707d7e363597d0"><a name="en-us_topic_0237152335_en-us_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a><a name="en-us_topic_0237152335_en-us_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a>Custom</p>
-</td>
-<td class="cellrowborder" valign="top" width="9.8%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0237152335_p16594177133618"><a name="en-us_topic_0237152335_p16594177133618"></a><a name="en-us_topic_0237152335_p16594177133618"></a>c</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.78%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0237152335_p2018045019462"><a name="en-us_topic_0237152335_p2018045019462"></a><a name="en-us_topic_0237152335_p2018045019462"></a>A binary file that allows the restoration of all or selected database objects from an exported file.</p>
-</td>
-<td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0237152335_p205841643165011"><a name="en-us_topic_0237152335_p205841643165011"></a><a name="en-us_topic_0237152335_p205841643165011"></a>You are advised to use custom-format archive files for medium or large database.</p>
-</td>
-<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0237152335_p146377143811"><a name="en-us_topic_0237152335_p146377143811"></a><a name="en-us_topic_0237152335_p146377143811"></a>You can use <a href="gs_restore.md"><strong id="b19627238123819"><a name="b19627238123819"></a><a name="b19627238123819"></a>gs_restore</strong></a> to import database objects from a custom-format archive.</p>
+<td class="cellrowborder" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p18632714386"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p18632714386"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p18632714386"></a>Before using <a href="gsql.md"><strong id="b1334175245418"><a name="b1334175245418"></a><a name="b1334175245418"></a>gsql</strong></a> to restore database objects, you can use a text editor to edit the plain-text export file as required.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237152335_row1377584264920"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0237152335_en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"><a name="en-us_topic_0237152335_en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a><a name="en-us_topic_0237152335_en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a>Directory</p>
+<tr id="en-us_topic_0287275988_en-us_topic_0237152335_row14339208493"><td class="cellrowborder" valign="top" width="12.78%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_af130ab9de506445ca1707d7e363597d0"><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a>Custom</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0237152335_p155963793619"><a name="en-us_topic_0237152335_p155963793619"></a><a name="en-us_topic_0237152335_p155963793619"></a>d</p>
+<td class="cellrowborder" valign="top" width="9.8%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p16594177133618"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p16594177133618"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p16594177133618"></a>c</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0237152335_p141347125538"><a name="en-us_topic_0237152335_p141347125538"></a><a name="en-us_topic_0237152335_p141347125538"></a>A directory containing directory files and the data files of tables and BLOB objects.</p>
+<td class="cellrowborder" valign="top" width="30.78%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p2018045019462"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p2018045019462"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p2018045019462"></a>A binary file that allows the restoration of all or selected database objects from an exported file.</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0237152335_p430501165117"><a name="en-us_topic_0237152335_p430501165117"></a><a name="en-us_topic_0237152335_p430501165117"></a>-</p>
+<td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p205841643165011"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p205841643165011"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p205841643165011"></a>You are advised to use custom-format archive files for medium or large database.</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p146377143811"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p146377143811"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p146377143811"></a>You can use <a href="gs_restore.md"><strong id="b19627238123819"><a name="b19627238123819"></a><a name="b19627238123819"></a>gs_restore</strong></a> to import database objects from a custom-format archive.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237152335_en-us_topic_0058967678_r582ac840af8345f89e90400138f92148"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0237152335_en-us_topic_0058967678_a8b2e4dc0a8fb45a891151068940d228b"><a name="en-us_topic_0237152335_en-us_topic_0058967678_a8b2e4dc0a8fb45a891151068940d228b"></a><a name="en-us_topic_0237152335_en-us_topic_0058967678_a8b2e4dc0a8fb45a891151068940d228b"></a>.tar</p>
+<tr id="en-us_topic_0287275988_en-us_topic_0237152335_row1377584264920"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a>Directory</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0237152335_p10597975361"><a name="en-us_topic_0237152335_p10597975361"></a><a name="en-us_topic_0237152335_p10597975361"></a>t</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p155963793619"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p155963793619"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p155963793619"></a>d</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0237152335_p27801606479"><a name="en-us_topic_0237152335_p27801606479"></a><a name="en-us_topic_0237152335_p27801606479"></a>A tar-format archive that allows the restoration of all or selected database objects from an exported file. It cannot be further compressed and has an 8-GB limitation on the size of a single table.</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p141347125538"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p141347125538"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p141347125538"></a>A directory containing directory files and the data files of tables and BLOB objects.</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0237152335_p8184143515"><a name="en-us_topic_0237152335_p8184143515"></a><a name="en-us_topic_0237152335_p8184143515"></a>-</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p430501165117"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p430501165117"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p430501165117"></a>-</p>
+</td>
+</tr>
+<tr id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_r582ac840af8345f89e90400138f92148"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a8b2e4dc0a8fb45a891151068940d228b"><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a8b2e4dc0a8fb45a891151068940d228b"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0058967678_a8b2e4dc0a8fb45a891151068940d228b"></a>.tar</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p10597975361"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p10597975361"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p10597975361"></a>t</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p27801606479"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p27801606479"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p27801606479"></a>A tar-format archive that allows the restoration of all or selected database objects from an exported file. It cannot be further compressed and has an 8-GB limitation on the size of a single table.</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0287275988_en-us_topic_0237152335_p8184143515"><a name="en-us_topic_0287275988_en-us_topic_0237152335_p8184143515"></a><a name="en-us_topic_0287275988_en-us_topic_0237152335_p8184143515"></a>-</p>
 </td>
 </tr>
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**  
->
->You can use the gs\_dump program to compress the file into a directory archive or custom archive export file to reduce the size of the export file. When generating catalog archives or custom archive export files, medium-level compression is performed by default. The gs\_dump program cannot compress the archived export file.
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>To reduce the size of an exported file, you can use the gs\_dump tool to compress it to a directory archive file or custom-format file. When a directory archive or custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**.
 
-## Precautions<a name="en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
+## Precautions<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
-- Do not modify an exported file or its content. Otherwise, restoration may fail.
+-   Do not modify an exported file or its content. Otherwise, restoration may fail.
+-   To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dump**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  option.
+-   Stored procedures and functions cannot be exported in encrypted mode.
 
-- To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dump**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
-- Stored procedures and functions cannot be exported in encrypted mode.
-
-## Syntax<a name="en-us_topic_0237152335_en-us_topic_0059777770_s884f9e03cedd408cbe7ce5303df97df6"></a>
+## Syntax<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s884f9e03cedd408cbe7ce5303df97df6"></a>
 
 ```
 gs_dump [OPTION]... [DBNAME]
 ```
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-_DBNAME_  does not follow a short or long option. It specifies the database to be connected.
-For example:
-Specify  _DBNAME_  without a  **-d**  option preceding it.
-```
-gs_dump -p port_number  postgres -f dump1.sql
-```
-or
-```
-export PGDATABASE=postgres 
-```
-```
- gs_dump -p port_number -f dump1.sql
-```
-Environment variable:  _PGDATABASE_
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>_DBNAME_  does not follow a short or long option. It specifies the database to be connected.
+>For example:
+>Specify  _DBNAME_  without a  **-d**  option preceding it.
+>```
+>gs_dump -p port_number  postgres -f dump1.sql
+>```
+>or
+>```
+>export PGDATABASE=postgres 
+>```
+>```
+> gs_dump -p port_number -f dump1.sql
+>```
+>Environment variable:  _PGDATABASE_
 
-## Parameter Description<a name="en-us_topic_0237152335_en-us_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
+## Parameter Description<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
 Common parameters
 
@@ -124,7 +122,7 @@ Common parameters
 
 -   -F, --format=c|d|t|p
 
-    Selects the exported file format. The format can be:
+    Selects an output format. The format can be:
 
     -   **p|plain**: Generates a text SQL script file. This is the default value.
     -   **c|custom**: Outputs a custom-format archive as a directory to be used as the input of  **gs\_restore**. This is the most flexible output format in which users can manually select it and reorder the archived items during restoration. An archive in this format is compressed by default.
@@ -146,17 +144,17 @@ Common parameters
 
     Specifies the used compression level.
 
-    Value range: 0-9
+    Value range: 0–9
 
     -   **0**  indicates no compression.
     -   **1**  indicates that the compression ratio is the lowest and processing speed the fastest.
     -   **9**  indicates that the compression ratio is the highest and processing speed the slowest.
 
-    For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The plain text format or .tar archive formats do not support compression currently.
+    For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The .tar archive format and plain-text format do not support compression currently.
 
 -   --lock-wait-timeout=TIMEOUT
 
-    Do not keep waiting to obtain shared table locks since the beginning of the dump. Consider it as failed if you are unable to lock a table within the specified time. The timeout period can be specified in any of the formats accepted by  **SET statement\_timeout**.
+    Do not keep waiting to obtain shared table locks at the beginning of the dump. Consider it as failed if you are unable to lock a table within the specified time. The timeout period can be specified in any of the formats accepted by  **SET statement\_timeout**.
 
 -   -?, --help
 
@@ -193,9 +191,9 @@ Dump parameters:
 
     Dumps only schemas matching the schema names. This option contains the schema and all its contained objects. If this option is not specified, all non-system schemas in the target database will be dumped. Multiple schemas can be selected by specifying multiple  **-n**  options. The schema parameter is interpreted as a pattern according to the same rules used by the  **\\d**  command of  **gsql**. Therefore, multiple schemas can also be selected by writing wildcard characters in the pattern. When you use wildcard characters, quote the pattern to prevent the shell from expanding the wildcard characters.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:**   
-    -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
-    -   If  **-n**  is specified, the non-schema objects are not dumped.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.
+    >-   If  **-n**  is specified, the non-schema objects are not dumped.
 
     Multiple schemas can be dumped. Entering  **-n **_schemaname_  multiple times dumps multiple schemas.
 
@@ -235,7 +233,7 @@ Dump parameters:
 
     This parameter is used only for the plain-text format. For the archive format, you can specify the option when using  **gs\_restore**.
 
--   <a name="en-us_topic_0237152335_en-us_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd"></a>-s, --schema-only
+-   <a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd"></a>-s, --schema-only
 
     Dumps only the object definition \(schema\) but not data.
 
@@ -247,16 +245,16 @@ Dump parameters:
 
     Specifies a list of tables, views, sequences, or foreign tables to be dumped. You can use multiple  **-t**  parameters or wildcard characters to specify tables.
 
-    When you use wildcard characters, quote patterns to prevent the shell from expanding the wildcard characters.
+    When you use wildcard characters, quote the pattern to prevent the shell from expanding the wildcard characters.
 
     The  **-n**  and  **-N**  options have no effect when  **-t**  is used, because tables selected by using  **-t**  will be dumped regardless of those options.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:**   
-    -   The number of  **-t**  parameters must be less than or equal to 100.  
-    -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
-    -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
-    -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
-    -   **-t tablename**  does not export trigger information from a table.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   The number of  **-t**  parameters must be less than or equal to 100.
+    >-   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.
+    >-   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
+    >-   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.
+    >-   **-t tablename**  does not export trigger information from a table.
 
     For example:
 
@@ -288,33 +286,33 @@ Dump parameters:
 
     Specifies the table files that do not need to be dumped.
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:**   
-    Same as  **--include-table-file**, the content format of this parameter is as follows:  
-    schema1.table1  
-    schema2.table2  
-    ......  
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Same as  **--include-table-file**, the content format of this parameter is as follows:
+    >schema1.table1
+    >schema2.table2
+    >......
 
 -   -x, --no-privileges|--no-acl
 
     Prevents the dumping of access permissions \(grant/revoke commands\).
 
-- -q, --target
+-   -q, --target
 
-  Exports text files compatible with databases of other versions. Currently, parameters of V1 and V5 are supported. The V1 parameters are used to export data from the V5 database as a text file compatible with V1. The V5 parameters are used to export data from the V5 database as a V5 text file, reducing errors that may occur during V5 import.
+    Exports text files compatible with databases of other versions. Currently, parameters of V1 and V5 are supported. The V1 parameters are used to export data from the V5 database as a text file compatible with V1. The V5 parameters are used to export data from the V5 database as a V5 text file, reducing errors that may occur during V5 import.
 
-  When using the V1 parameters, you are advised to use them along with parameters such as  **--exclude-guc="enable\_cluster\_resize"**,  **--exclude-function**, and  **--exclude-with**. Otherwise, an error may be reported during V1 import.
+    When using the V1 parameters, you are advised to use them along with parameters such as  **--exclude-guc="enable\_cluster\_resize"**,  **--exclude-function**, and  **--exclude-with**. Otherwise, an error may be reported during V1 import.
 
-- --exclude-guc
+-   --exclude-guc
 
-  Specifies the  **set**  command that does not contain related GUC parameters in the exported text file. Currently, only  **enable\_cluster\_resize**  is supported.
+    Specifies the  **set**  command that does not contain related GUC parameters in the exported text file. Currently, only  **enable\_cluster\_resize**  is supported.
 
-- --exclude-function
+-   --exclude-function
 
-  Specifies that functions and stored procedures are not exported.
+    Specifies that functions and stored procedures are not exported.
 
-- --exclude-with
+-   --exclude-with
 
-  Specifies that the description such as  **WITH\(orientation=row, compression=on\)**  is not added to the end of the exported table definition.
+    Specifies that the description such as  **WITH\(orientation=row, compression=on\)**  is not added to the end of the exported table definition.
 
 -   --binary-upgrade
 
@@ -342,7 +340,7 @@ Dump parameters:
 
     **--exclude-table-data**  can be entered more than once to exclude tables matching any of several patterns. When you need the specified table definition rather than data in the table, this option is helpful.
 
-    To exclude data of all tables in the database, see  [--schema-only](#en-us_topic_0237152335_en-us_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd).
+    To exclude data of all tables in the database, see  [--schema-only](#en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd).
 
 -   --inserts
 
@@ -350,9 +348,17 @@ Dump parameters:
 
     However, since this option generates an independent command for each row, an error in reloading a row causes only the loss of the row rather than the entire table content. The restoration may fail if you rearrange the column order. The  **--column-inserts**  option is unaffected against column order changes, though even slower.
 
+-   --no-publications
+
+    No dump publications are performed.
+
 -   --no-security-labels
 
     Specifies a reserved port for function expansion. This parameter is not recommended.
+
+-   --no-subscriptions
+
+    No dump subscriptions are performed.
 
 -   --no-tablespaces
 
@@ -396,25 +402,24 @@ Dump parameters:
 
     Specifies that dumping data needs to be encrypted using AES128.
 
-- --with-key=KEY
+-   --with-key=KEY
 
-  Aes128 key length rules are as follows: 
+    The AES128 key rules are as follows:
 
-  - The key length is 8 ~ 16 characters. 
-  - -At least three of the four types of characters are included: uppercase letters (A-Z), lowercase letters (A-Z), numbers (0-9), non alphanumeric characters (limited to ~! @ #$% ^ & * () - = + \ | [] {};:, <. > /?). 
+    -   Consists of 8 to 16 characters.
+    -   Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
-   **NOTE:**   
-
-  - When using the gs_dump tool for encrypted export, only plain format export is supported. The data exported through -F plain needs to be imported through the gsql tool, and if it is imported through encryption, the --with-key parameter must be specified when importing through gsql.
-  - Stored procedures and functions cannot be exported in encrypted mode.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >-   The  **gs\_dump**  tool is used to export encrypted data in plain format only. The data exported using  **-F plain**  must be imported using gsql. If the data is imported in encryption mode using gsql, the  **--with-key**  parameter must be specified.
+    >-   Stored procedures and functions cannot be exported in encrypted mode.
 
 -   --with-salt=RANDVALUES
 
-    gs_dumpall uses this parameter to pass random values.
+    **gs\_dumpall**  uses this parameter to transfer a random value.
 
--   --include-extension
+-   --include-extensions
 
-    Include extensions in the dump.
+    Includes extensions in the dump.
 
 -   --include-depend-objs
 
@@ -424,6 +429,10 @@ Dump parameters:
 
     Excludes information about the specified object from the backup result. This parameter takes effect only if the  **-t**  or  **--include-table-file**  parameter is specified.
 
+-   --pipeline
+
+    Uses a pipe to transmit the password. This parameter cannot be used on devices.
+
 -   --dont-overwrite-file
 
     The existing files in plain-text, .tar, and custom formats will be overwritten. This option is not used for the directory format.
@@ -432,27 +441,27 @@ Dump parameters:
 
     Assume that the  **backup.sql**  file exists in the current directory. If you specify  **-f backup.sql**  in the input command, and the  **backup.sql**  file is generated in the current directory, the original file will be overwritten.
 
-    If the backup file already exists and  **--dont-overwrite-file**  is specified, an error will be reported with the message that the dump file exists.
+    If the backup file exists and  **--dont-overwrite-file**  is specified, an error will be reported with the message that the dump file exists.
 
     ```
     gs_dump -p port_number postgres -f backup.sql -F plain --dont-overwrite-file
     ```
 
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
--   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
--   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
--   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.  
--   **--role**  must be used in conjunction with  **--rolepassword**.  
--   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
--   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
--   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
+>-   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.
+>-   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.
+>-   **--role**  must be used in conjunction with  **--rolepassword**.
+>-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.
+>-   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.
+>-   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.
 
 Connection parameters:
 
 -   -h, --host=HOSTNAME
 
-    Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket. The default value is taken from the  **PGHOST**  environment variable \(if available\). Otherwise, a Unix domain socket connection is attempted. 
+    Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket. The default value is taken from the  **PGHOST**  environment variable \(if available\). Otherwise, a Unix domain socket connection is attempted.
 
     This parameter is used only for defining names of the hosts outside openGauss. The names of the hosts inside openGauss must be 127.0.0.1.
 
@@ -476,7 +485,7 @@ Connection parameters:
 
 -   -w, --no-password
 
-    Never issues a password prompt. The connection attempt fails if the host requires password verification and the password is not provided in other ways. This parameter is useful in batch jobs and scripts in which no user password is required.
+    Never issues a password prompt. The connection attempt fails if the host requires password verification and the password is not provided in other ways. This option is useful in batch jobs and scripts in which no user password is required.
 
 -   -W, --password=PASSWORD
 
@@ -491,7 +500,7 @@ Connection parameters:
     Specifies the password for a role.
 
 
-## Notice<a name="en-us_topic_0237152335_en-us_topic_0059777770_s7390a5e2be45435687f910284792c8c6"></a>
+## Description<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s7390a5e2be45435687f910284792c8c6"></a>
 
 If any local additions need to be added to the template1 database in openGauss, restore the output of  **gs\_dump**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
 
@@ -503,14 +512,14 @@ The .tar file size must be smaller than 8 GB. \(This is the .tar file format lim
 
 The dump file generated by  **gs\_dump**  does not contain the statistics used by the optimizer to make execution plans. Therefore, you are advised to run  **ANALYZE**  after restoring from a dump file to ensure optimal performance. The dump file does not contain any  **ALTER DATABASE ... SET**  commands. These settings are dumped by  **gs\_dumpall**, along with database users and other installation settings.
 
-## Examples<a name="en-us_topic_0237152335_s969fde25c47f45ed897e29d208d57649"></a>
+## Examples<a name="en-us_topic_0287275988_en-us_topic_0237152335_s969fde25c47f45ed897e29d208d57649"></a>
 
 Use  **gs\_dump**  to dump a database as a SQL text file or a file in other formats.
 
 In the following examples,  **Bigdata@123**  indicates the password for the database user.  **backup/MPPDB\_backup.sql**  indicates an exported file where  **backup**  indicates the relative path of the current directory.  **37300**  indicates the port number of the database server.  **postgres**  indicates the name of the database to be accessed.
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-Before exporting files, ensure that the directory exists and you have the read and write permissions on the directory.
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>Before exporting files, ensure that the directory exists and you have the read and write permissions on the directory.
 
 Example 1: Use  **gs\_dump**  to export the full information of the postgres database. The exported  **MPPDB\_backup.sql**  file is in plain-text format.
 
@@ -595,7 +604,7 @@ Example 6: Use  **gs\_dump**  to export only the information about the views tha
     ```
 
 
-## Helpful Links<a name="en-us_topic_0237152335_en-us_topic_0059777770_s04aec05b522242268c264d0964818765"></a>
+## Helpful Links<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s04aec05b522242268c264d0964818765"></a>
 
 [gs\_dumpall](gs_dumpall.md)  and  [gs\_restore](gs_restore.md)
 

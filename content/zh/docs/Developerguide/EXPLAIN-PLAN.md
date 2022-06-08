@@ -31,7 +31,7 @@ FOR statement ;
 
 使用EXPLAIN  PLAN收集SQL语句的执行计划，通常包括以下步骤：
 
-1.  执行EXPLAN PLAN。
+1.  执行EXPLAIN PLAN。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >执行EXPLAIN PLAN 后会将计划信息自动存储于PLAN\_TABLE中，不支持对PLAN\_TABLE进行INSERT、UPDATE、ANALYZE等操作。

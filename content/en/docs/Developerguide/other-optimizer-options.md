@@ -1,4 +1,4 @@
-# Other Optimizer Options<a name="EN-US_TOPIC_0000001162897764"></a>
+# Other Optimizer Options<a name="EN-US_TOPIC_0289900235"></a>
 
 ## explain\_dna\_file<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s1304d3e4a6f74ad188b804c55313fb69"></a>
 
@@ -201,10 +201,10 @@ The restrictions on simple query are as follows:
 
 **Value range**: Boolean
 
--   **on**  indicates that the performance logs are output.
--   **off**  indicates that the performance logs are not output.
+-   **on**: enabled.
+-   **off**: disabled.
 
-**Default value**:  **off**
+**Default value**:  **on**
 
 ## enable\_partition\_opfusion<a name="section336053915313"></a>
 
@@ -214,8 +214,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that the performance logs are output.
--   **off**  indicates that the performance logs are not output.
+-   **on**: enabled.
+-   **off**: disabled.
 
 **Default value**:  **off**
 
@@ -242,16 +242,19 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 -   **none**: None of the beta optimizer features is used.
 -   **sel\_semi\_poisson**: Uses poisson distribution to calibrate the equivalent semi-join and anti-join selection rates.
--   **sel\_expr\_instr**: Uses the matching row count estimation method to provide more accurate estimation for  **instr\(col, 'const'\) \> 0, = 0, = 1**.
+-   **sel\_expr\_instr**: Uses the matching row count to provide more accurate estimation for  **instr\(col, 'const'\) \> 0, = 0, = 1**.
 -   **param\_path\_gen**: Generates more possible parameterized paths.
 -   **rand\_cost\_opt**: Optimizes the random read cost of tables that have a small amount of data.
--   **param\_path\_opt**: Uses the bloat ratio of the table to optimize the analyze information of indexes.
--   **page\_est\_opt**: Optimizes the relpages estimation for the analyze information of non-column-store table indexes.
+-   **param\_path\_opt**: Uses the bloat ratio of the table to optimize the analysis information of indexes.
+-   **page\_est\_opt**: Optimizes the  **relpages**  estimation for the analysis information of non-column-store table indexes.
 -   **no\_unique\_index\_first**: Disables optimization of the primary key index scanning path first.
 -   **join\_sel\_with\_cast\_func**: Type conversion functions are supported when the number of join rows is estimated.
 -   **canonical\_pathkey**: after regularization pathkey is generated. \(**pathkey**: a set of ordered key values of data.\)
 -   **index\_cost\_with\_leaf\_pages\_only**: Considers index leaf nodes when the index cost is estimated.
 -   **partition\_opfusion**: Enables partitioned table optimization.
+-   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [Type Resolution for CASE in ORA Compatibility Type](en-us_topic_0289900690.md#section20337194392613).
+-   **partition\_fdw\_on**: SQL statements can be created for Postgres foreign tables based on partitioned tables.
+-   **predpush\_same\_level**: Enables predpush hints to control parameterized paths at the same layer.
 
 **Default value:** **none**
 
@@ -303,7 +306,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >-   A larger positive number than the default value increases the time required to do  **ANALYZE**, but might improve the quality of the optimizer's estimates.
 >-   Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:
 >    1.  Restore to the default statistics.
->    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](en-us_topic_0000001208299129.md).
+>    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](en-us_topic_0289900289.md).
 >-   If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.
 >-   If this parameter is set to a negative value, the auto-analyze function is disabled.
 
@@ -510,7 +513,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   When the hash aggregation operator designed for column-oriented hash tables is used, the memory usage of the query can be reduced. However, in scenarios when  **[enable\_codegen](#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)**  is set to  **on**  and the performance is significantly improved, the performance of the operator may deteriorate.
->-   If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](en-us_topic_0000001163058170.md).
+>-   If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](en-us_topic_0289899920.md).
 
 **Default value**:  **on**
 
@@ -528,7 +531,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   Currently, the parameter can be used only for Inner Join.
 >-   If  **enable\_sonic\_hashjoin**  is enabled, the memory usage of query using the Hash Inner operator can be reduced. However, in scenarios where the code generation technology can significantly improve performance, the performance of the operator may deteriorate.
->-   If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](en-us_topic_0000001163058170.md).
+>-   If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](en-us_topic_0289899920.md).
 
 **Default value**:  **on**
 
@@ -553,8 +556,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the performance logs are output.
--   **off**  indicates that the performance logs are not output.
+-   **on**: enabled.
+-   **off**: disabled.
 
 **Default value**:  **off**
 
@@ -566,8 +569,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the performance logs are output.
--   **off**  indicates that the performance logs are not output.
+-   **on**: enabled.
+-   **off**: disabled.
 
 **Default value**:  **off**
 
@@ -579,8 +582,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the performance logs are output.
--   **off**  indicates that the performance logs are not output.
+-   **on**: enabled.
+-   **off**: disabled.
 
 **Default value**:  **off**
 
@@ -592,8 +595,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the performance logs are output.
--   **off**  indicates that the performance logs are not output.
+-   **on**: enabled.
+-   **off**: disabled.
 
 **Default value**:  **off**
 
@@ -624,8 +627,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the performance logs are output.
--   **off**  indicates that the performance logs are not output.
+-   **on**: enabled.
+-   **off**: disabled.
 
 **Default value**:  **off**
 
@@ -672,4 +675,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >After enabling concurrent queries, ensure you have sufficient CPU, memory, and network to achieve the optimal performance.
 
 **Default value**:  **1**
+
+## enable\_startwith\_debug<a name="section6842184125615"></a>
+
+**Parameter description**: Specifies whether to enable the  **start with**  or  **connect by**  parameter for debugging. If this parameter is enabled, information about all tail columns related to the  **start with**  feature is displayed.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean. The value  **true**  indicates that the function is enabled, and the value  **false**  indicates that the function is disabled.
+
+**Default value**:  **false**
 

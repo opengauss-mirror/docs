@@ -58,7 +58,7 @@ Strictly follow the operation guide and avoid the following risky operations:
 <td class="cellrowborder" valign="top" width="11.71882811718828%" headers="mcps1.2.7.1.6 "><p id="en-us_topic_0237088894_en-us_topic_0059777750_a6ab1232eb2714c9da24f8eab6a6a5514"><a name="en-us_topic_0237088894_en-us_topic_0059777750_a6ab1232eb2714c9da24f8eab6a6a5514"></a><a name="en-us_topic_0237088894_en-us_topic_0059777750_a6ab1232eb2714c9da24f8eab6a6a5514"></a>None</p>
 </td>
 </tr>
-<tr id="en-us_topic_0237088894_en-us_topic_0059777750_rba83f8b686b640b4beba9323a3097d29"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="en-us_topic_0237088894_en-us_topic_0059777750_en-us_topic_0058967692_p42994821641"><a name="en-us_topic_0237088894_en-us_topic_0059777750_en-us_topic_0058967692_p42994821641"></a><a name="en-us_topic_0237088894_en-us_topic_0059777750_en-us_topic_0058967692_p42994821641"></a>Incautiously modify the content of the <strong id="en-us_topic_0237088894_b84235270619519"><a name="en-us_topic_0237088894_b84235270619519"></a><a name="en-us_topic_0237088894_b84235270619519"></a>pg_hba.conf</strong> file.</p>
+<tr id="en-us_topic_0237088894_en-us_topic_0059777750_rba83f8b686b640b4beba9323a3097d29"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="en-us_topic_0237088894_en-us_topic_0059777750_en-us_topic_0058967692_p42994821641"><a name="en-us_topic_0237088894_en-us_topic_0059777750_en-us_topic_0058967692_p42994821641"></a><a name="en-us_topic_0237088894_en-us_topic_0059777750_en-us_topic_0058967692_p42994821641"></a>Modify the content of the <strong id="en-us_topic_0237088894_b84235270619519"><a name="en-us_topic_0237088894_b84235270619519"></a><a name="en-us_topic_0237088894_b84235270619519"></a>pg_hba.conf</strong> file.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.2 "><p id="en-us_topic_0237088894_en-us_topic_0059777750_ad4f7bb945e21477384f9ac5be17f9fcc"><a name="en-us_topic_0237088894_en-us_topic_0059777750_ad4f7bb945e21477384f9ac5be17f9fcc"></a><a name="en-us_topic_0237088894_en-us_topic_0059777750_ad4f7bb945e21477384f9ac5be17f9fcc"></a>The client fails to be connected.</p>
 </td>
@@ -95,4 +95,5 @@ Strictly follow the operation guide and avoid the following risky operations:
 </tr>
 </tbody>
 </table>
+
 

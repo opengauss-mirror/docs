@@ -23,9 +23,9 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.gif) **说明：** 
 >-   本功能仅支持单条SELECT类型的语句，不支持其他类型的SQL语句。  
->-   本功能暂不支持分区表、列存表、段页式表、普通视图、物化视图、全局临时表以及密态数据库。  
+>-   本功能暂不支持列存表、段页式表、普通视图、物化视图、全局临时表以及密态数据库。  
 
 ## 使用方法<a name="section54321094535"></a>
 
@@ -37,7 +37,7 @@
 openGauss=> select "table", "column" from gs_index_advise('SELECT c_discount from bmsql_customer where c_w_id = 10');
      table      |  column  
 ----------------+----------
- bmsql_customer | (c_w_id)
+ bmsql_customer | c_w_id
 (1 row)
 ```
 
@@ -53,14 +53,24 @@ CREATE INDEX idx on bmsql_customer(c_w_id);
 openGauss=# select "table", "column" from gs_index_advise('select name, age, sex from t1 where age >= 18 and age < 35 and sex = ''f'';');
  table | column
 -------+------------
- t1    | (age, sex)
+ t1    | age, sex
 (1 row)
 ```
 
-则上述语句表明应该在表 t1 上创建一个联合索引 \(age, sex\)，则可以通过下述命令创建：
+则上述语句表明应该在表 t1 上创建一个联合索引 \(age, sex\)， 则可以通过下述命令创建：
 
 ```
 CREATE INDEX idx1 on t1(age, sex);
+```
+
+针对分区表可推荐具体索引类型，例如：
+
+```
+openGauss=# select "table", "column", "indextype" from gs_index_advise('select name, age, sex from range_table where age = 20;');
+ table | column | indextype
+-------+--------+-----------
+ t1    | age    | global
+(1 row)
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 

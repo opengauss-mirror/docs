@@ -17,7 +17,7 @@ GS\_PACKAGE系统表记录PACKAGE内的信息。
 </td>
 <td class="cellrowborder" valign="top" width="25.36253625362536%" headers="mcps1.2.4.1.2 "><p id="p11732735646"><a name="p11732735646"></a><a name="p11732735646"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.32523252325233%" headers="mcps1.2.4.1.3 "><p id="p273243512414"><a name="p273243512414"></a><a name="p273243512414"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="52.32523252325233%" headers="mcps1.2.4.1.3 "><p id="p273243512414"><a name="p273243512414"></a><a name="p273243512414"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="row1377118292512"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p117710299515"><a name="p117710299515"></a><a name="p117710299515"></a>pkgnamespace</p>
@@ -69,6 +69,14 @@ GS\_PACKAGE系统表记录PACKAGE内的信息。
 <td class="cellrowborder" valign="top" width="52.32523252325233%" headers="mcps1.2.4.1.3 "><p id="p17721229655"><a name="p17721229655"></a><a name="p17721229655"></a>访问权限。</p>
 </td>
 </tr>
+    <tr id="row1077217291059"><td class="cellrowborder" valign="top" width="22.31223122312231%" headers="mcps1.2.4.1.1 "><p id="p47725291355"><a name="p47725291355"></a><a name="p47725291355"></a>pkgsecdef</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.36253625362536%" headers="mcps1.2.4.1.2 "><p id="p1772182920513"><a name="p1772182920513"></a><a name="p1772182920513"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="52.32523252325233%" headers="mcps1.2.4.1.3 "><p id="p17721229655"><a name="p17721229655"></a><a name="p17721229655"></a>package是否是定义者权限。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 

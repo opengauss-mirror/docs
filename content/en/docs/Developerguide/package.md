@@ -9,4 +9,6 @@ For details about how to create a package, see  [CREATE PACKAGE](en-us_topic_000
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   Cross-package variables cannot be used as control variables in the for loops.
 >-   Types defined in a package cannot be deleted or modified, and cannot be used to define tables.
+>-   Cursor variables cannot be referenced in SCHEMA.PACKAGE.CUROSR mode.
+>-   A cursor with parameters can be opened only in the current package.
 

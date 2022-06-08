@@ -6,14 +6,14 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 
 ## 注意事项<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
 
--   要删除表中的数据，用户必须对它有DELETE权限。同样也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
+-   表的所有者、被授予了表DELETE权限的用户或被授予DELETE ANY TABLE权限的用户有权删除表中数据，系统管理员默认拥有此权限。同时也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
 -   对于列存表，暂时不支持RETURNING子句。
 
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
+DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ [ AS ] alias ]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
     [ RETURNING { * | { output_expr [ [ AS ] output_name ] } [, ...] } ];
@@ -36,8 +36,12 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
     - with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
     - column\_name指定子查询结果集中显示的列名。
-    
     - 每个子查询可以是SELECT、VALUES、INSERT、UPDATE或DELETE语句。
+    - 用户可以使用MATERIALIZED / NOT MATERIALIZED对CTE进行修饰。
+    
+      -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
+      -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属主干语句中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
+    
 -   **plan\_hint子句**
 
     以/\*+ \*/的形式在DELETE关键字后，用于对DELETE对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](使用Plan-Hint进行调优.md)。每条语句中只有第一个/\*+ plan\_hint \*/注释块会作为hint生效，里面可以写多条hint。
@@ -52,6 +56,18 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
     取值范围：已存在的表名。
 
+- **partition\_clause**
+
+  指定分区删除操作
+
+  PARTITION \{ \( partition\_name \) | FOR \( partition\_value \[, ...\] \) \} |
+
+  SUBPARTITION \{ \( subpartition\_name \) | FOR \( subpartition\_value \[, ...\] \) \}
+
+  关键字详见[SELECT](SELECT.md)一节介绍
+
+  示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)
+
 -   **alias**
 
     目标表的别名。
@@ -64,7 +80,7 @@ DELETE [/*+ plan_hint */] FROM [ ONLY ] table_name [ * ] [ [ AS ] alias ]
 
 -   **condition**
 
-    一个返回Boolean值的表达式，用于判断哪些行需要被删除。
+    一个返回Boolean值的表达式，用于判断哪些行需要被删除。不建议使用int等数值类型作为condition，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
 
 -   **WHERE CURRENT OF cursor\_name**
 

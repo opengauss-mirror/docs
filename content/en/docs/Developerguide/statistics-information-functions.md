@@ -2,32 +2,6 @@
 
 Statistics information functions are divided into the following two categories: functions that access databases, using the OID of each table or index in a database to mark the database for which statistics are generated; functions that access servers, identified by the server process ID, whose value ranges from 1 to the number of currently active servers.
 
--   global\_comm\_get\_status\(\)
-
-    Description: Obtains the communication library status of all DNs.
-
-    Return type: record
-
--   global\_comm\_get\_send\_stream\(\)
-
-    Description: Obtains the sending stream status of all communication libraries on all DNs.
-
-    Return type: record
-
--   global\_comm\_get\_recv\_stream\(\)
-
-    Description: Obtains the receiving stream status of all communication libraries on all DNs.
-
-    Return type: record
-
-
--   global\_comm\_get\_client\_info\(\)
-
-    Description: Obtains information about client connections of global nodes.
-
-    Return type: record
-
-
 -   pg\_stat\_get\_db\_conflict\_tablespace\(oid\)
 
     Description: Specifies the number of queries canceled due to a conflict between the restored tablespace and the deleted tablespace in the database.
@@ -243,6 +217,13 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p944518015518"><a name="en-us_topic_0283136951_p944518015518"></a><a name="en-us_topic_0283136951_p944518015518"></a>text</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p14451065118"><a name="en-us_topic_0283136951_p14451065118"></a><a name="en-us_topic_0283136951_p14451065118"></a>Synchronization status</p>
+    </td>
+    </tr>
+    <tr id="row115781840112710"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1557974015271"><a name="p1557974015271"></a><a name="p1557974015271"></a>sync_group</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p16580540122711"><a name="p16580540122711"></a><a name="p16580540122711"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p858014404279"><a name="p858014404279"></a><a name="p858014404279"></a>Group to which the synchronous replication belongs</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row679215435117"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p2079294175119"><a name="en-us_topic_0283136951_p2079294175119"></a><a name="en-us_topic_0283136951_p2079294175119"></a>sync_priority</p>
@@ -863,18 +844,18 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_activity\(integer\)
 
-    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The return results are a subnet of those \(excluding the  **connection\_info**  column\) in the  [PG\_STAT\_ACTIVITY](pg_stat_activity.md)  view.
+    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The returned result does not contain the  **connection\_info**  column. The initial user, system administrators and users with the  **monadmin**  permission can view all data. Common users can only query their own results.
 
     Example:
 
     ```
-    openGauss=# select * from pg_stat_get_activity(139754904483584);
-     datid |       pid       |    sessionid    | usesysid | application_name | state |                    query                     | waiting | xact_start |          query_start          |         backend_start         |         state_cha
-    nge          | client_addr | client_hostname | client_port | enqueue | query_id | srespool | global_sessionid
-    -------+-----------------+-----------------+----------+------------------+-------+----------------------------------------------+---------+------------+-------------------------------+-------------------------------+------------------
-    -------------+-------------+-----------------+-------------+---------+----------+----------+------------------
-     16099 | 139754904483584 | 139754904483584 |       10 | coordinator2     | idle  | SET SESSION AUTHORIZATION DEFAULT;RESET ALL; | f       |            | 2021-06-09 16:40:58.391727+08 | 2021-06-09 16:03:52.040929+08 | 2021-06-09 16:40:
-    58.392143+08 | ::1         |                 |       35210 |         |        0 | unknown  | 0#0#0
+    openGauss=# select * from pg_stat_get_activity(139881386280704);
+     datid |       pid       | sessionid | usesysid | application_name | state  |                        query                         | waiting |          xact_start           |          query_start          |
+        backend_start         |         state_change         | client_addr | client_hostname | client_port | enqueue |     query_id      |   srespool   | global_sessionid | unique_sql_id | trace_id
+    -------+-----------------+-----------+----------+------------------+--------+------------------------------------------------------+---------+-------------------------------+-------------------------------+-----
+    --------------------------+------------------------------+-------------+-----------------+-------------+---------+-------------------+--------------+------------------+---------------+----------
+     16545 | 139881386280704 |        69 |       10 | gsql             | active | select * from pg_stat_get_activity(139881386280704); | f       | 2022-01-18 19:43:05.167718+08 | 2022-01-18 19:43:05.167718+08 | 2022
+    -01-18 19:42:33.513507+08 | 2022-01-18 19:43:05.16773+08 |             |                 |          -1 |         | 72620543991624410 | default_pool | 1938253334#69#0  |    3751941862 |
     (1 row)
     ```
 
@@ -918,7 +899,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p137504017161"><a name="en-us_topic_0283136951_p137504017161"></a><a name="en-us_topic_0283136951_p137504017161"></a>oid</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p137594021613"><a name="en-us_topic_0283136951_p137594021613"></a><a name="en-us_topic_0283136951_p137594021613"></a>Name of the user logged in to the backend</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p137594021613"><a name="en-us_topic_0283136951_p137594021613"></a><a name="en-us_topic_0283136951_p137594021613"></a>OID of the user logged in to the backend</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1175144021611"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p976154020164"><a name="en-us_topic_0283136951_p976154020164"></a><a name="en-us_topic_0283136951_p976154020164"></a>application_name</p>
@@ -996,7 +977,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p3868691216"><a name="en-us_topic_0283136951_p3868691216"></a><a name="en-us_topic_0283136951_p3868691216"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18331162415238"><a name="en-us_topic_0283136951_p18331162415238"></a><a name="en-us_topic_0283136951_p18331162415238"></a>TCP port number that the client uses for communication with this backend (<strong id="b112021142195612"><a name="b112021142195612"></a><a name="b112021142195612"></a>-1</strong> if a Unix socket is used).</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18331162415238"><a name="en-us_topic_0283136951_p18331162415238"></a><a name="en-us_topic_0283136951_p18331162415238"></a>TCP port number that the client uses for communication with this backend (<strong id="b1764121492"><a name="b1764121492"></a><a name="b1764121492"></a>–1</strong> if a Unix socket is used)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1660362882120"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p960322812212"><a name="en-us_topic_0283136951_p960322812212"></a><a name="en-us_topic_0283136951_p960322812212"></a>enqueue</p>
@@ -1013,6 +994,13 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p99128408218"><a name="en-us_topic_0283136951_p99128408218"></a><a name="en-us_topic_0283136951_p99128408218"></a>ID of a query</p>
     </td>
     </tr>
+    <tr id="row85731028152812"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="p7573132852816"><a name="p7573132852816"></a><a name="p7573132852816"></a>srespool</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="p20573162882818"><a name="p20573162882818"></a><a name="p20573162882818"></a>name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p15731028182818"><a name="p15731028182818"></a><a name="p15731028182818"></a>Name of the resource pool</p>
+    </td>
+    </tr>
     <tr id="row28955115323"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="p38951917329"><a name="p38951917329"></a><a name="p38951917329"></a>global_sessionid</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="p168959143217"><a name="p168959143217"></a><a name="p168959143217"></a>text</p>
@@ -1020,12 +1008,26 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p168951113321"><a name="p168951113321"></a><a name="p168951113321"></a>Global session ID</p>
     </td>
     </tr>
+    <tr id="row46321879593"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="p46321076593"><a name="p46321076593"></a><a name="p46321076593"></a>unique_sql_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="p163211725912"><a name="p163211725912"></a><a name="p163211725912"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p136322755917"><a name="p136322755917"></a><a name="p136322755917"></a>Unique SQL statement ID</p>
+    </td>
+    </tr>
+    <tr id="row1531623435213"><td class="cellrowborder" valign="top" width="35.063506350635066%" headers="mcps1.2.4.1.1 "><p id="p531723410523"><a name="p531723410523"></a><a name="p531723410523"></a>trace_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="31.6031603160316%" headers="mcps1.2.4.1.2 "><p id="p20317113415522"><a name="p20317113415522"></a><a name="p20317113415522"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1131733411521"><a name="p1131733411521"></a><a name="p1131733411521"></a>Driver-specific trace ID, which is associated with an application request</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
 -   pg\_stat\_get\_activity\_with\_conninfo\(integer\)
 
-    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified.  [PG\_STAT\_ACTIVITY](pg_stat_activity.md)  is a subset of the function.
+    Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The initial user, system administrators and users with the  **monadmin**  permission can view all data. Common users can only query their own results.
 
     Return type: setofrecord
 
@@ -1067,7 +1069,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p11125793389"><a name="en-us_topic_0283136951_p11125793389"></a><a name="en-us_topic_0283136951_p11125793389"></a>oid</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p151251394386"><a name="en-us_topic_0283136951_p151251394386"></a><a name="en-us_topic_0283136951_p151251394386"></a>Name of the user logged in to the backend</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p151251394386"><a name="en-us_topic_0283136951_p151251394386"></a><a name="en-us_topic_0283136951_p151251394386"></a>OID of the user logged in to the backend</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row177462013161815"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p197475139182"><a name="en-us_topic_0283136951_p197475139182"></a><a name="en-us_topic_0283136951_p197475139182"></a>application_name</p>
@@ -1088,28 +1090,28 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p2065914714188"><a name="en-us_topic_0283136951_p2065914714188"></a><a name="en-us_topic_0283136951_p2065914714188"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p826110558358"><a name="en-us_topic_0283136951_p826110558358"></a><a name="en-us_topic_0283136951_p826110558358"></a>Latest query at the backend. If <strong id="b1318024006"><a name="b1318024006"></a><a name="b1318024006"></a>state</strong> is <strong id="b997116344"><a name="b997116344"></a><a name="b997116344"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p826110558358"><a name="en-us_topic_0283136951_p826110558358"></a><a name="en-us_topic_0283136951_p826110558358"></a>Latest query at the backend. If <strong id="b695256731"><a name="b695256731"></a><a name="b695256731"></a>state</strong> is <strong id="b918512909"><a name="b918512909"></a><a name="b918512909"></a>active</strong>, this column shows the ongoing query. In all other states, it shows the last query that was executed.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1112454181810"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1812654141816"><a name="en-us_topic_0283136951_p1812654141816"></a><a name="en-us_topic_0283136951_p1812654141816"></a>waiting</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p11214548184"><a name="en-us_topic_0283136951_p11214548184"></a><a name="en-us_topic_0283136951_p11214548184"></a>Boolean</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p143863432351"><a name="en-us_topic_0283136951_p143863432351"></a><a name="en-us_topic_0283136951_p143863432351"></a>Whether the backend is currently waiting on a lock. If yes, the value is <strong id="b5731164718514"><a name="b5731164718514"></a><a name="b5731164718514"></a>true</strong></p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p143863432351"><a name="en-us_topic_0283136951_p143863432351"></a><a name="en-us_topic_0283136951_p143863432351"></a>Whether the backend is currently waiting on a lock. If yes, the value is <strong id="b1239132922313"><a name="b1239132922313"></a><a name="b1239132922313"></a>true</strong>.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row360025811815"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p3601105831811"><a name="en-us_topic_0283136951_p3601105831811"></a><a name="en-us_topic_0283136951_p3601105831811"></a>xact_start</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p3601175851814"><a name="en-us_topic_0283136951_p3601175851814"></a><a name="en-us_topic_0283136951_p3601175851814"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p791672733514"><a name="en-us_topic_0283136951_p791672733514"></a><a name="en-us_topic_0283136951_p791672733514"></a>Time when current transaction was started (null if no transaction is active). If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b1755852410"><a name="b1755852410"></a><a name="b1755852410"></a>query_start</strong> column.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p791672733514"><a name="en-us_topic_0283136951_p791672733514"></a><a name="en-us_topic_0283136951_p791672733514"></a>Time when current transaction was started (null if no transaction is active). If the current query is the first of its transaction, the value of this column is the same as that of the <strong id="b1571049294"><a name="b1571049294"></a><a name="b1571049294"></a>query_start</strong> column.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row371718291910"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1871719261916"><a name="en-us_topic_0283136951_p1871719261916"></a><a name="en-us_topic_0283136951_p1871719261916"></a>query_start</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p17171826194"><a name="en-us_topic_0283136951_p17171826194"></a><a name="en-us_topic_0283136951_p17171826194"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p193581715153516"><a name="en-us_topic_0283136951_p193581715153516"></a><a name="en-us_topic_0283136951_p193581715153516"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b1505992719"><a name="b1505992719"></a><a name="b1505992719"></a>state</strong> is not <strong id="b2009002130"><a name="b2009002130"></a><a name="b2009002130"></a>active</strong></p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p193581715153516"><a name="en-us_topic_0283136951_p193581715153516"></a><a name="en-us_topic_0283136951_p193581715153516"></a>Time when the currently active query was started, or time when the last query was started if <strong id="b879963250"><a name="b879963250"></a><a name="b879963250"></a>state</strong> is not <strong id="b1101691541"><a name="b1101691541"></a><a name="b1101691541"></a>active</strong></p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row342571181911"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p1942501101911"><a name="en-us_topic_0283136951_p1942501101911"></a><a name="en-us_topic_0283136951_p1942501101911"></a>backend_start</p>
@@ -1123,7 +1125,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p7818125115208"><a name="en-us_topic_0283136951_p7818125115208"></a><a name="en-us_topic_0283136951_p7818125115208"></a>timestamp with time zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p158185514208"><a name="en-us_topic_0283136951_p158185514208"></a><a name="en-us_topic_0283136951_p158185514208"></a>Time when <strong id="b10442141125814"><a name="b10442141125814"></a><a name="b10442141125814"></a>state</strong> was last modified</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p158185514208"><a name="en-us_topic_0283136951_p158185514208"></a><a name="en-us_topic_0283136951_p158185514208"></a>Time when <strong id="b983007679"><a name="b983007679"></a><a name="b983007679"></a>state</strong> was last modified</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1956611310248"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p105678312411"><a name="en-us_topic_0283136951_p105678312411"></a><a name="en-us_topic_0283136951_p105678312411"></a>client_addr</p>
@@ -1137,14 +1139,14 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p7402125717322"><a name="en-us_topic_0283136951_p7402125717322"></a><a name="en-us_topic_0283136951_p7402125717322"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p114021557193219"><a name="en-us_topic_0283136951_p114021557193219"></a><a name="en-us_topic_0283136951_p114021557193219"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b275676929"><a name="b275676929"></a><a name="b275676929"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b331422876"><a name="b331422876"></a><a name="b331422876"></a>log_hostname</strong> is enabled.</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p114021557193219"><a name="en-us_topic_0283136951_p114021557193219"></a><a name="en-us_topic_0283136951_p114021557193219"></a>Host name of the connected client, as reported by a reverse DNS lookup of <strong id="b455190673"><a name="b455190673"></a><a name="b455190673"></a>client_addr</strong>. This column will be non-null only for IP connections and only when <strong id="b1264090318"><a name="b1264090318"></a><a name="b1264090318"></a>log_hostname</strong> is enabled.</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row1119736182610"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p51977652616"><a name="en-us_topic_0283136951_p51977652616"></a><a name="en-us_topic_0283136951_p51977652616"></a>client_port</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136951_p21973672616"><a name="en-us_topic_0283136951_p21973672616"></a><a name="en-us_topic_0283136951_p21973672616"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p191971667265"><a name="en-us_topic_0283136951_p191971667265"></a><a name="en-us_topic_0283136951_p191971667265"></a>TCP port number that the client uses for communication with this backend (<strong id="b137159610645811"><a name="b137159610645811"></a><a name="b137159610645811"></a>-1</strong> if a Unix socket is used)</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p191971667265"><a name="en-us_topic_0283136951_p191971667265"></a><a name="en-us_topic_0283136951_p191971667265"></a>TCP port number that the client uses for communication with this backend (<strong id="b799591220495"><a name="b799591220495"></a><a name="b799591220495"></a>–1</strong> if a Unix socket is used)</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136951_row428083319266"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136951_p5281103322619"><a name="en-us_topic_0283136951_p5281103322619"></a><a name="en-us_topic_0283136951_p5281103322619"></a>enqueue</p>
@@ -1168,11 +1170,32 @@ Statistics information functions are divided into the following two categories: 
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136951_p18563443173114"><a name="en-us_topic_0283136951_p18563443173114"></a><a name="en-us_topic_0283136951_p18563443173114"></a>A string in JSON format recording the driver type, driver version, driver deployment path, and process owner of the connected database</p>
     </td>
     </tr>
+    <tr id="row19415941919"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p16416144113114"><a name="p16416144113114"></a><a name="p16416144113114"></a>srespool</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p104166418119"><a name="p104166418119"></a><a name="p104166418119"></a>name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1141615411319"><a name="p1141615411319"></a><a name="p1141615411319"></a>Name of the resource pool</p>
+    </td>
+    </tr>
     <tr id="row1675483312441"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1075518336447"><a name="p1075518336447"></a><a name="p1075518336447"></a>global_sessionid</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p27551833164411"><a name="p27551833164411"></a><a name="p27551833164411"></a>text</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p12755133134415"><a name="p12755133134415"></a><a name="p12755133134415"></a>Global session ID</p>
+    </td>
+    </tr>
+    <tr id="row7383027135111"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1138472765119"><a name="p1138472765119"></a><a name="p1138472765119"></a>unique_sql_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p183845276513"><a name="p183845276513"></a><a name="p183845276513"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p03841627155120"><a name="p03841627155120"></a><a name="p03841627155120"></a>Unique SQL statement ID</p>
+    </td>
+    </tr>
+    <tr id="row12231935141813"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p72483513183"><a name="p72483513183"></a><a name="p72483513183"></a>trace_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p7241635121816"><a name="p7241635121816"></a><a name="p7241635121816"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p22411354186"><a name="p22411354186"></a><a name="p22411354186"></a>Driver-specific trace ID, which is associated with an application request</p>
     </td>
     </tr>
     </tbody>
@@ -1442,9 +1465,9 @@ Statistics information functions are divided into the following two categories: 
 
 -   fenced\_udf\_process\(integer\)
 
-    Description: Shows the number of local UDF Master and Work processes.When the input parameter is 1, check the number of master processes; when the input parameter is 2, check the number of worker processes; when the input parameter is 3, terminate all worker processes.
+    Description: Shows the number of local UDF Master and Work processes. If the input parameter is set to  **1**, the number of Master processes is queried. If the input parameter is set to  **2**, the number of Worker processes is queried. If the input parameter is set to  **3**, all Worker processes are killed.
 
-    Return type: record
+    Return type: text
 
 -   total\_cpu\(\)
 
@@ -1878,7 +1901,7 @@ Statistics information functions are divided into the following two categories: 
     Return type: record
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >The status information contains the following 17 items:  **commit**,  **rollback**,  **sql**,  **table\_scan**,  **blocks\_fetched**,  **physical\_read\_operation**,  **shared\_blocks\_dirtied**,  **local\_blocks\_dirtied**,  **shared\_blocks\_read**,  **local\_blocks\_read**,  **blocks\_read\_time**,  **blocks\_write\_time, sort\_imemory**,  **sort\_idisk**,  **cu\_mem\_hit**,  **cu\_hdd\_sync\_read**, and  **cu\_hdd\_asyread**.
+    >The status information contains the following 17 items:  **commit**,  **rollback**,  **sql**,  **table\_scan**,  **blocks\_fetched**,  **physical\_read\_operation**,  **shared\_blocks\_dirtied**,  **local\_blocks\_dirtied**,  **shared\_blocks\_read**,  **local\_blocks\_read**,  **blocks\_read\_time**,  **blocks\_write\_time**,  **sort\_imemory**,  **sort\_idisk**,  **cu\_mem\_hit**,  **cu\_hdd\_sync\_read**, and  **cu\_hdd\_asyread**.
 
 -   DBE\_PERF.get\_global\_session\_time\(\)
 
@@ -2049,7 +2072,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_get\_all\_user\_resource\_info\(\)
 
-    Description: Obtains the resource usage statistics of all users.
+    Description: Obtains resource usage statistics of all users.
 
     Return type: record
 
@@ -2103,16 +2126,16 @@ Statistics information functions are divided into the following two categories: 
 
 -   global\_stat\_get\_hotkeys\_info\(\)
 
-    Description: Obtains the statistics of hot keys in the entire cluster. This API does not support single-node systems or centralized systems and is unavailable currently.
+    Description: Obtains the statistics on hot keys in the entire database instance. This API does not support single-node systems or centralized systems and is unavailable currently.
 
 -   global\_stat\_clean\_hotkeys\(\)
 
-    Description: Clears statistics on hot keys in the entire cluster. This API does not support single-node systems or centralized systems and is unavailable currently.
+    Description: Clears statistics on hot keys in the entire database instance. This API does not support single-node systems or centralized systems and is unavailable currently.
 
 
 -   DBE\_PERF.get\_global\_session\_stat\_activity\(\)
 
-    Description: Displays information about threads that are running on each node in openGauss. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays information about threads that are running on each node in openGauss. To query this function, you must have the  **monitoradmin**  permission.
 
     Return type: record
 
@@ -2124,31 +2147,31 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_operator\_history\_table\(\)
 
-    Description: Displays the operator-related records \(persistent\) generated after jobs are executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the operator-related records \(persistent\) generated after jobs are executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  and  **monitoradmin**  permissions.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_operator\_history\(\)
 
-    Description: Displays the operator-related records generated after jobs are executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the operator-related records generated after jobs are executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  and  **monitoradmin**  permissions.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_operator\_runtime\(\)
 
-    Description: Displays real-time operator-related records of jobs executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays real-time operator-related records of jobs executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  and  **monitoradmin**  permissions.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_statement\_complex\_history\(\)
 
-    Description: Displays the historical records of complex queries on the primary database node of the current user. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the historical records of complex queries on the primary database node of the current user. To query this function, you must have the  **monitoradmin**  permission.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_statement\_complex\_history\_table\(\)
 
-    Description: Displays the historical records \(persistent\) of complex queries on the primary database node of the current user. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the historical records \(persistent\) of complex queries on the primary database node of the current user. To query this function, you must have the  **monitoradmin**  permission.
 
     Return type: record
 
@@ -2160,13 +2183,13 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_global\_memory\_node\_detail\(\)
 
-    Description: Displays the memory usage of a certain database on all nodes. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the memory usage of a certain database on all nodes. To query this function, you must have the  **monitoradmin**  permission.
 
     Return type: record
 
 -   DBE\_PERF.get\_global\_shared\_memory\_detail\(\)
 
-    Description: Displays the usage information about all the shared memory contexts of all nodes. To query this function, you must have the  **sysadmin**  permission.
+    Description: Displays the usage information about all the shared memory contexts of all nodes. To query this function, you must have the  **monitoradmin**  permission.
 
     Return type: record
 
@@ -2478,7 +2501,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.get\_summary\_statement\(\)
 
-    Description: Displays the status information of the historically-executed statements on each node. To query this function, you must have the  **sysadmin**  or  **monitoradmin**  permission.
+    Description: Displays the status information of the historically-executed statements on each node. To query this function, you must have the  **sysadmin**  and  **monitor admin**  permissions.
 
     Return type: record
 
@@ -2793,7 +2816,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   GS\_ALL\_NODEGROUP\_CONTROL\_GROUP\_INFO\(text\)
 
-    Description: Provides Cgroup information for all logical database instances. Before invoking this function, you need to specify the name of a logical database instance to be queried. For example, to query the Cgroup information for the installation logical database instance, run the following command:
+    Description: Provides Cgroup information for all logical database instances. Before calling this function, you need to specify the name of the logical database instance to be queried. For example, to query the Cgroup information for the installation logical database instance, run the following command:
 
     ```
     SELECT * FROM GS_ALL_NODEGROUP_CONTROL_GROUP_INFO('installation')
@@ -2890,5 +2913,323 @@ Statistics information functions are divided into the following two categories: 
     Description: Returns information about the memory used by the current logical database, in MB.
 
     Return type: SETOF record
+
+-   local\_redo\_time\_count\(\)
+
+    Description: Returns the time consumption statistics on each process of each playback thread on the current node \(valid data exists only on the standby node\).
+
+    The return values are as follows:
+
+    local\_redo\_time\_count parameters
+
+    <a name="table37771537184514"></a>
+    <table><thead align="left"><tr id="row8772103711458"><th class="cellrowborder" valign="top" width="38.42%" id="mcps1.1.3.1.1"><p id="p9772337104511"><a name="p9772337104511"></a><a name="p9772337104511"></a>Column</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="61.58%" id="mcps1.1.3.1.2"><p id="p1772937194512"><a name="p1772937194512"></a><a name="p1772937194512"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row12772737204520"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p9772193724512"><a name="p9772193724512"></a><a name="p9772193724512"></a>thread_name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p17772137114516"><a name="p17772137114516"></a><a name="p17772137114516"></a>Thread name</p>
+    </td>
+    </tr>
+    <tr id="row167723378458"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p2077223713454"><a name="p2077223713454"></a><a name="p2077223713454"></a>step1_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p2077233794518"><a name="p2077233794518"></a><a name="p2077233794518"></a>Total duration of step 1. The process of each thread is as follows:</p>
+    <p id="p37721737194516"><a name="p37721737194516"></a><a name="p37721737194516"></a>Ultimate RTO</p>
+    <a name="ul6912204818401"></a><a name="ul6912204818401"></a><ul id="ul6912204818401"><li><strong id="b8623152153620"><a name="b8623152153620"></a><a name="b8623152153620"></a>batch redo</strong>: obtains a log from a queue.</li><li><strong id="b71527286369"><a name="b71527286369"></a><a name="b71527286369"></a>redo manager</strong>: obtains a log from a queue.</li><li><strong id="b15415123519361"><a name="b15415123519361"></a><a name="b15415123519361"></a>redo worker</strong>: obtains a log from a queue.</li><li><strong id="b1452910118379"><a name="b1452910118379"></a><a name="b1452910118379"></a>trxn manager</strong>: reads a log from a queue.</li><li><strong id="b16375249370"><a name="b16375249370"></a><a name="b16375249370"></a>trxn worker</strong>: reads a log from a queue.</li><li><strong id="b1159218570379"><a name="b1159218570379"></a><a name="b1159218570379"></a>read worker</strong>: reads an Xlog page (overall) from a file.</li><li><strong id="b14951520103814"><a name="b14951520103814"></a><a name="b14951520103814"></a>read page worker</strong>: obtains a log from a queue.</li><li><strong id="b1017820279396"><a name="b1017820279396"></a><a name="b1017820279396"></a>startup</strong>: obtains a log from a queue.</li></ul>
+    <p id="p1577223714459"><a name="p1577223714459"></a><a name="p1577223714459"></a>Parallel replay:</p>
+    <a name="ul1078315813405"></a><a name="ul1078315813405"></a><ul id="ul1078315813405"><li><strong id="b149913535392"><a name="b149913535392"></a><a name="b149913535392"></a>page redo</strong>: obtains a log from a queue.</li><li><strong id="b1690718566394"><a name="b1690718566394"></a><a name="b1690718566394"></a>startup</strong>: reads a log.</li></ul>
+    </td>
+    </tr>
+    <tr id="row4773203719459"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p1777311379451"><a name="p1777311379451"></a><a name="p1777311379451"></a>step1_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p67731937174511"><a name="p67731937174511"></a><a name="p67731937174511"></a>Number of accumulated execution times of step 1.</p>
+    </td>
+    </tr>
+    <tr id="row577312373457"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p677373720458"><a name="p677373720458"></a><a name="p677373720458"></a>step2_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p4773737124512"><a name="p4773737124512"></a><a name="p4773737124512"></a>Total duration of step 2. The process of each thread is as follows:</p>
+    <p id="p1377393715455"><a name="p1377393715455"></a><a name="p1377393715455"></a>Ultimate RTO</p>
+    <a name="ul07451057415"></a><a name="ul07451057415"></a><ul id="ul07451057415"><li><strong id="b166401648124018"><a name="b166401648124018"></a><a name="b166401648124018"></a>batch redo</strong>: processes logs (overall).</li><li><strong id="b960816584403"><a name="b960816584403"></a><a name="b960816584403"></a>redo manager</strong>: processes logs (overall).</li><li><strong id="b11569714112"><a name="b11569714112"></a><a name="b11569714112"></a>redo worker</strong>: processes logs (overall).</li><li><strong id="b1241111411426"><a name="b1241111411426"></a><a name="b1241111411426"></a>trxn manager</strong>: processes logs (overall).</li><li><strong id="b8148650134214"><a name="b8148650134214"></a><a name="b8148650134214"></a>trxn worker</strong>: processes logs (overall).</li><li><strong id="b119801921439"><a name="b119801921439"></a><a name="b119801921439"></a>redo worker</strong>: specifies the time required for reading the Xlog page.</li><li><strong id="b8517101374314"><a name="b8517101374314"></a><a name="b8517101374314"></a>read page worker</strong>: generates and sends LSN forwarders.</li><li><strong id="b1315130121811"><a name="b1315130121811"></a><a name="b1315130121811"></a>startup</strong>: checks whether to replay to the specified position.</li></ul>
+    <p id="p1773123720453"><a name="p1773123720453"></a><a name="p1773123720453"></a>Parallel replay:</p>
+    <a name="ul155891392413"></a><a name="ul155891392413"></a><ul id="ul155891392413"><li><strong id="b35117448"><a name="b35117448"></a><a name="b35117448"></a>page redo</strong>: processes logs (overall).</li><li><strong id="b9164345194518"><a name="b9164345194518"></a><a name="b9164345194518"></a>startup</strong>: checks whether to replay to the specified position.</li></ul>
+    </td>
+    </tr>
+    <tr id="row1377383784518"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p9773123720456"><a name="p9773123720456"></a><a name="p9773123720456"></a>step2_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p19773163734515"><a name="p19773163734515"></a><a name="p19773163734515"></a>Number of accumulated execution times of step 2.</p>
+    </td>
+    </tr>
+    <tr id="row677410371452"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p1773123718458"><a name="p1773123718458"></a><a name="p1773123718458"></a>step3_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p37731137104516"><a name="p37731137104516"></a><a name="p37731137104516"></a>Total duration of step 3. The process of each thread is as follows:</p>
+    <p id="p77731337164513"><a name="p77731337164513"></a><a name="p77731337164513"></a>Ultimate RTO</p>
+    <a name="ul5493115114118"></a><a name="ul5493115114118"></a><ul id="ul5493115114118"><li><strong id="b134931342204413"><a name="b134931342204413"></a><a name="b134931342204413"></a>batch redo</strong>: updates the standby state.</li><li><strong id="b386841115451"><a name="b386841115451"></a><a name="b386841115451"></a>redo manager</strong>: processes data logs.</li><li><strong id="b665311554518"><a name="b665311554518"></a><a name="b665311554518"></a>redo worker</strong>: replays page logs (overall).</li><li><strong id="b5949122418457"><a name="b5949122418457"></a><a name="b5949122418457"></a>trxn manager</strong>: updates the flush LSN.</li><li><strong id="b684123616454"><a name="b684123616454"></a><a name="b684123616454"></a>trxn worker</strong>: replays logs.</li><li><strong id="b5459165984618"><a name="b5459165984618"></a><a name="b5459165984618"></a>redo worker</strong>: pushes the Xlog segment.</li><li><strong id="b1610119574718"><a name="b1610119574718"></a><a name="b1610119574718"></a>read page worker</strong>: obtains a new item.</li><li><strong id="b614273110196"><a name="b614273110196"></a><a name="b614273110196"></a>startup</strong>: collects statistics on the wait time of delayed replay feature.</li></ul>
+    <p id="p127741137134519"><a name="p127741137134519"></a><a name="p127741137134519"></a>Parallel replay:</p>
+    <a name="ul4564121954113"></a><a name="ul4564121954113"></a><ul id="ul4564121954113"><li><strong id="b11532171014492"><a name="b11532171014492"></a><a name="b11532171014492"></a>page redo</strong>: updates the standby state.</li><li><strong id="b13269154811469"><a name="b13269154811469"></a><a name="b13269154811469"></a>startup</strong>: collects statistics on the wait time of delayed replay feature.</li></ul>
+    </td>
+    </tr>
+    <tr id="row477463704512"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p1977410370452"><a name="p1977410370452"></a><a name="p1977410370452"></a>step3_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p15774133710452"><a name="p15774133710452"></a><a name="p15774133710452"></a>Number of accumulated execution times of step 3.</p>
+    </td>
+    </tr>
+    <tr id="row277417375451"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p10774537194511"><a name="p10774537194511"></a><a name="p10774537194511"></a>step4_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p97746379452"><a name="p97746379452"></a><a name="p97746379452"></a>Total duration of step 4. The process of each thread is as follows:</p>
+    <p id="p127741378453"><a name="p127741378453"></a><a name="p127741378453"></a>Ultimate RTO:</p>
+    <a name="ul6814102413413"></a><a name="ul6814102413413"></a><ul id="ul6814102413413"><li><strong id="b1260203710497"><a name="b1260203710497"></a><a name="b1260203710497"></a>batch redo</strong>: parses Xlogs.</li><li><strong id="b11934544114919"><a name="b11934544114919"></a><a name="b11934544114919"></a>redo manager</strong>: processes DDL.</li><li><strong id="b856345244920"><a name="b856345244920"></a><a name="b856345244920"></a>redo worker</strong>: reads data pages.</li><li><strong id="b13747165920468"><a name="b13747165920468"></a><a name="b13747165920468"></a>trxn manager</strong>: synchronizes the wait time.</li><li><strong id="b441318345020"><a name="b441318345020"></a><a name="b441318345020"></a>trxn worker</strong>: updates the LSN of the current thread.</li><li><strong id="b18902818155019"><a name="b18902818155019"></a><a name="b18902818155019"></a>read page worker</strong>: stores logs in the distribution thread.</li><li><strong id="b1095419304426"><a name="b1095419304426"></a><a name="b1095419304426"></a>startup</strong>: distributes logs (overall).</li></ul>
+    <p id="p12774937114518"><a name="p12774937114518"></a><a name="p12774937114518"></a>Parallel replay:</p>
+    <a name="ul1163412282411"></a><a name="ul1163412282411"></a><ul id="ul1163412282411"><li><strong id="b125421652135519"><a name="b125421652135519"></a><a name="b125421652135519"></a>page redo</strong>: replays undo logs.</li><li><strong id="b172113383428"><a name="b172113383428"></a><a name="b172113383428"></a>startup</strong>: distributes logs (overall).</li></ul>
+    </td>
+    </tr>
+    <tr id="row117751337174514"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p477423764513"><a name="p477423764513"></a><a name="p477423764513"></a>step4_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p87751037104519"><a name="p87751037104519"></a><a name="p87751037104519"></a>Number of accumulated execution times of step 4.</p>
+    </td>
+    </tr>
+    <tr id="row577563754514"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p1775337104512"><a name="p1775337104512"></a><a name="p1775337104512"></a>step5_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p16775153710452"><a name="p16775153710452"></a><a name="p16775153710452"></a>Total duration of step 5. The process of each thread is as follows:</p>
+    <p id="p177593794511"><a name="p177593794511"></a><a name="p177593794511"></a>Ultimate RTO:</p>
+    <a name="ul1740675419439"></a><a name="ul1740675419439"></a><ul id="ul1740675419439"><li><strong id="b172461311165113"><a name="b172461311165113"></a><a name="b172461311165113"></a>batch redo</strong>: distributes logs to the redo manager.</li><li><strong id="b11348547185111"><a name="b11348547185111"></a><a name="b11348547185111"></a>redo manager</strong>: distributes logs to redo workers.</li><li><strong id="b1496751275218"><a name="b1496751275218"></a><a name="b1496751275218"></a>redo worker</strong>: replays data page logs.</li><li><strong id="b1163012175528"><a name="b1163012175528"></a><a name="b1163012175528"></a>trxn manager</strong>: distributes data to the trxn worker.</li><li><strong id="b51761543125216"><a name="b51761543125216"></a><a name="b51761543125216"></a>trxn worker</strong>: forcibly synchronizes the wait time.</li><li><strong id="b576925155213"><a name="b576925155213"></a><a name="b576925155213"></a>read page worker</strong>: updates the LSN of the current thread.</li><li><strong id="b15538526204314"><a name="b15538526204314"></a><a name="b15538526204314"></a>startup</strong>: decodes logs.</li></ul>
+    <p id="p8775103724516"><a name="p8775103724516"></a><a name="p8775103724516"></a>Parallel replay:</p>
+    <a name="ul113271406444"></a><a name="ul113271406444"></a><ul id="ul113271406444"><li><strong id="b14462103717207"><a name="b14462103717207"></a><a name="b14462103717207"></a>page redo</strong>: replays sharetrxn logs.</li><li><strong id="b698264092012"><a name="b698264092012"></a><a name="b698264092012"></a>startup</strong>: replays logs.</li></ul>
+    </td>
+    </tr>
+    <tr id="row17775173711457"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p12775337184518"><a name="p12775337184518"></a><a name="p12775337184518"></a>step5_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p14775133720450"><a name="p14775133720450"></a><a name="p14775133720450"></a>Number of accumulated execution times of step 5.</p>
+    </td>
+    </tr>
+    <tr id="row777613744513"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p277512379454"><a name="p277512379454"></a><a name="p277512379454"></a>step6_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p13775737124519"><a name="p13775737124519"></a><a name="p13775737124519"></a>Total duration of step 6. The process of each thread is as follows:</p>
+    <p id="p18775737134519"><a name="p18775737134519"></a><a name="p18775737134519"></a>Ultimate RTO:</p>
+    <a name="ul174916534412"></a><a name="ul174916534412"></a><ul id="ul174916534412"><li><strong id="b185509405543"><a name="b185509405543"></a><a name="b185509405543"></a>redo worker</strong>: replays non-data page logs.</li><li><strong id="b1881035812205"><a name="b1881035812205"></a><a name="b1881035812205"></a>trxn manager</strong>: updates global LSNs.</li><li><strong id="b19381392111"><a name="b19381392111"></a><a name="b19381392111"></a>read page worker</strong>: performs log CRC check.</li></ul>
+    <p id="p37751637124513"><a name="p37751637124513"></a><a name="p37751637124513"></a>Parallel replay:</p>
+    <a name="ul1562069114414"></a><a name="ul1562069114414"></a><ul id="ul1562069114414"><li><strong id="b88398120218"><a name="b88398120218"></a><a name="b88398120218"></a>page redo</strong>: replays synctrxn logs.</li><li><strong id="b13038204218"><a name="b13038204218"></a><a name="b13038204218"></a>startup</strong>: forcibly synchronizes the wait time.</li></ul>
+    </td>
+    </tr>
+    <tr id="row3776113718452"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p677693711457"><a name="p677693711457"></a><a name="p677693711457"></a>step6_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p137761337144510"><a name="p137761337144510"></a><a name="p137761337144510"></a>Number of accumulated execution times of step 6.</p>
+    </td>
+    </tr>
+    <tr id="row2077619374452"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p777663717452"><a name="p777663717452"></a><a name="p777663717452"></a>step7_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p2776113716452"><a name="p2776113716452"></a><a name="p2776113716452"></a>Total duration of step 7. The process of each thread is as follows:</p>
+    <p id="p13776337114515"><a name="p13776337114515"></a><a name="p13776337114515"></a>Ultimate RTO:</p>
+    <p id="p187761937174513"><a name="p187761937174513"></a><a name="p187761937174513"></a><strong id="b14238162718216"><a name="b14238162718216"></a><a name="b14238162718216"></a>redo worker</strong>: updates FSM.</p>
+    <p id="p20776133711455"><a name="p20776133711455"></a><a name="p20776133711455"></a>Parallel replay:</p>
+    <p id="p19776037114515"><a name="p19776037114515"></a><a name="p19776037114515"></a><strong id="b2863172992118"><a name="b2863172992118"></a><a name="b2863172992118"></a>page redo</strong>: replays a single log.</p>
+    </td>
+    </tr>
+    <tr id="row47762377453"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p1777617374454"><a name="p1777617374454"></a><a name="p1777617374454"></a>step7_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p11776173719459"><a name="p11776173719459"></a><a name="p11776173719459"></a>Number of accumulated execution times of step 7.</p>
+    </td>
+    </tr>
+    <tr id="row13776337114514"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p147761737194516"><a name="p147761737194516"></a><a name="p147761737194516"></a>step8_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p13776133716452"><a name="p13776133716452"></a><a name="p13776133716452"></a>Total duration of step 8. The process of each thread is as follows:</p>
+    <p id="p477613774513"><a name="p477613774513"></a><a name="p477613774513"></a>Ultimate RTO:</p>
+    <p id="p27769371458"><a name="p27769371458"></a><a name="p27769371458"></a><strong id="b45186412217"><a name="b45186412217"></a><a name="b45186412217"></a>redo worker</strong>: forcibly synchronizes the wait time.</p>
+    <p id="p1177693754517"><a name="p1177693754517"></a><a name="p1177693754517"></a>Parallel replay:</p>
+    <p id="p15776153714454"><a name="p15776153714454"></a><a name="p15776153714454"></a><strong id="b19600137862"><a name="b19600137862"></a><a name="b19600137862"></a>page redo</strong>: replays all workers do log.</p>
+    </td>
+    </tr>
+    <tr id="row167769378457"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p2077617372453"><a name="p2077617372453"></a><a name="p2077617372453"></a>step8_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p577673714452"><a name="p577673714452"></a><a name="p577673714452"></a>Number of accumulated execution times of step 8.</p>
+    </td>
+    </tr>
+    <tr id="row1177715370454"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p1377693716458"><a name="p1377693716458"></a><a name="p1377693716458"></a>step9_total</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p57771437134519"><a name="p57771437134519"></a><a name="p57771437134519"></a>Total duration of step 9. The process of each thread is as follows:</p>
+    <p id="p577714375458"><a name="p577714375458"></a><a name="p577714375458"></a>Ultimate RTO:</p>
+    <p id="p13777537184520"><a name="p13777537184520"></a><a name="p13777537184520"></a>None</p>
+    <p id="p37771837194517"><a name="p37771837194517"></a><a name="p37771837194517"></a>Parallel replay:</p>
+    <p id="p19777103718453"><a name="p19777103718453"></a><a name="p19777103718453"></a><strong id="b97970555613"><a name="b97970555613"></a><a name="b97970555613"></a>page redo</strong>: replays muliti workers do log.</p>
+    </td>
+    </tr>
+    <tr id="row7777337174516"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.1.3.1.1 "><p id="p177733704519"><a name="p177733704519"></a><a name="p177733704519"></a>step9_count</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.1.3.1.2 "><p id="p677719379452"><a name="p677719379452"></a><a name="p677719379452"></a>Number of accumulated execution times of step 9.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   local\_xlog\_redo\_statics\(\)
+
+    Description: Returns the statistics oneach type of logs that have been replayed on the current node \(valid data exists only on the standby node\).
+
+    The return values are as follows:
+
+    **Table  9**  local\_xlog\_redo\_statics parameters
+
+    <a name="table178991126154511"></a>
+    <table><thead align="left"><tr id="row089812612452"><th class="cellrowborder" valign="top" width="38.42%" id="mcps1.2.3.1.1"><p id="p20897726154512"><a name="p20897726154512"></a><a name="p20897726154512"></a>Column</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="61.58%" id="mcps1.2.3.1.2"><p id="p12897152612453"><a name="p12897152612453"></a><a name="p12897152612453"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row489810266455"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p13898726184512"><a name="p13898726184512"></a><a name="p13898726184512"></a>xlog_type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p14898132684513"><a name="p14898132684513"></a><a name="p14898132684513"></a>Log types.</p>
+    </td>
+    </tr>
+    <tr id="row168986267459"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p98987264455"><a name="p98987264455"></a><a name="p98987264455"></a>rmid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p989862610458"><a name="p989862610458"></a><a name="p989862610458"></a>resource manager id</p>
+    </td>
+    </tr>
+    <tr id="row0898426194510"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p2898122694520"><a name="p2898122694520"></a><a name="p2898122694520"></a>info</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p1289832634511"><a name="p1289832634511"></a><a name="p1289832634511"></a>xlog operation</p>
+    </td>
+    </tr>
+    <tr id="row1089912616457"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p19898726104517"><a name="p19898726104517"></a><a name="p19898726104517"></a>num</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p68992268452"><a name="p68992268452"></a><a name="p68992268452"></a>Number of logs.</p>
+    </td>
+    </tr>
+    <tr id="row14899182684517"><td class="cellrowborder" valign="top" width="38.42%" headers="mcps1.2.3.1.1 "><p id="p158995264457"><a name="p158995264457"></a><a name="p158995264457"></a>extra</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.58%" headers="mcps1.2.3.1.2 "><p id="p20899326154511"><a name="p20899326154511"></a><a name="p20899326154511"></a>Valid values are available for page replay logs and xact logs. The page replay log indicates the number of pages read from the disk. The xact log indicates the number of deleted files.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+-   gs\_get\_shared\_memctx\_detail\(text\)
+
+    Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). Only the memory context queried through the  **pg\_shared\_memory\_detail**  view can be queried. The input parameter is the memory context name \(that is, the  **contextname**  column in the result returned by the  **pg\_shared\_memory\_detail**  view\). To query the function, you must have the  **SYSADMIN**  or  **MONITOR ADMIN**  permission.
+
+    Return type: SETOF record
+
+    <a name="table119476261700"></a>
+    <table><thead align="left"><tr id="row69478262010"><th class="cellrowborder" valign="top" width="21.67%" id="mcps1.1.4.1.1"><p id="p4948132617012"><a name="p4948132617012"></a><a name="p4948132617012"></a>Name</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="12.47%" id="mcps1.1.4.1.2"><p id="p8948122613019"><a name="p8948122613019"></a><a name="p8948122613019"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="65.86%" id="mcps1.1.4.1.3"><p id="p694832616014"><a name="p694832616014"></a><a name="p694832616014"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1994817261015"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p894842614011"><a name="p894842614011"></a><a name="p894842614011"></a>file</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p794811261018"><a name="p794811261018"></a><a name="p794811261018"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p1994810261008"><a name="p1994810261008"></a><a name="p1994810261008"></a>Name of the file where the memory is applied for.</p>
+    </td>
+    </tr>
+    <tr id="row1494892619013"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p1494810267016"><a name="p1494810267016"></a><a name="p1494810267016"></a>line</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p11948426309"><a name="p11948426309"></a><a name="p11948426309"></a>int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p129481626002"><a name="p129481626002"></a><a name="p129481626002"></a>Line number of the code in the file where the requested memory is located.</p>
+    </td>
+    </tr>
+    <tr id="row89482261803"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p1894820262017"><a name="p1894820262017"></a><a name="p1894820262017"></a>size</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p1294842611017"><a name="p1294842611017"></a><a name="p1294842611017"></a>int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p9949132618015"><a name="p9949132618015"></a><a name="p9949132618015"></a>Size of the applied memory. The value is accumulated if the memory is applied for multiple times in the same line of the same file.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >This view is not supported in the Lite release version.
+
+-   gs\_get\_session\_memctx\_detail\(text\)
+
+    Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). This parameter is valid only in thread pool mode. Only the memory context queried through the  **pv\_session\_memory\_context**  view can be queried. The input parameter is the memory context name \(that is, the  **contextname**  column in the result returned by the  **pv\_session\_memory\_context**  view\). To query the function, you must have the  **sysadmin **or  **monitor admin**  permission.
+
+    Return type: SETOF record
+
+    <a name="table210123512516"></a>
+    <table><thead align="left"><tr id="row5113358519"><th class="cellrowborder" valign="top" width="21.67%" id="mcps1.1.4.1.1"><p id="p1111735959"><a name="p1111735959"></a><a name="p1111735959"></a>Name</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="12.47%" id="mcps1.1.4.1.2"><p id="p6111135557"><a name="p6111135557"></a><a name="p6111135557"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="65.86%" id="mcps1.1.4.1.3"><p id="p1911183510510"><a name="p1911183510510"></a><a name="p1911183510510"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row3114351353"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p71111351054"><a name="p71111351054"></a><a name="p71111351054"></a>file</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p1711153512519"><a name="p1711153512519"></a><a name="p1711153512519"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p91183512513"><a name="p91183512513"></a><a name="p91183512513"></a>Name of the file where the memory is applied for.</p>
+    </td>
+    </tr>
+    <tr id="row14113356512"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p121173511515"><a name="p121173511515"></a><a name="p121173511515"></a>line</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p3111357513"><a name="p3111357513"></a><a name="p3111357513"></a>int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p6114358519"><a name="p6114358519"></a><a name="p6114358519"></a>Line number of the code in the file where the requested memory is located.</p>
+    </td>
+    </tr>
+    <tr id="row1511173511512"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p21173511510"><a name="p21173511510"></a><a name="p21173511510"></a>size</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p7124351759"><a name="p7124351759"></a><a name="p7124351759"></a>int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p612235452"><a name="p612235452"></a><a name="p612235452"></a>Size of the applied memory. The value is accumulated if the memory is applied for multiple times in the same line of the same file.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >This view takes effect only in thread pool mode and is not supported in the Lite release version.
+
+-   gs\_get\_thread\_memctx\_detail\(tid,text\)
+
+    Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). Only the memory context queried through the  **pv\_thread\_memory\_context**  view can be queried. The first input parameter is the thread ID \(the  **tid**  column of the data returned by the  **pv\_thread\_memory\_context**\), and the second parameter is the memory context name \(the  **contextname**  column of the data returned by  **pv\_thread\_memory\_context**\). To query the function, you must have the  **sysadmin **or  **monitor admin**  permission.
+
+    Return type: SETOF record
+
+    <a name="table1423513502054"></a>
+    <table><thead align="left"><tr id="row102352501755"><th class="cellrowborder" valign="top" width="21.67%" id="mcps1.1.4.1.1"><p id="p132351350652"><a name="p132351350652"></a><a name="p132351350652"></a>Name</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="12.47%" id="mcps1.1.4.1.2"><p id="p122356500518"><a name="p122356500518"></a><a name="p122356500518"></a>Type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="65.86%" id="mcps1.1.4.1.3"><p id="p8235185018510"><a name="p8235185018510"></a><a name="p8235185018510"></a>Description</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row623512501155"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p3236350851"><a name="p3236350851"></a><a name="p3236350851"></a>file</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p923665012519"><a name="p923665012519"></a><a name="p923665012519"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p923615019515"><a name="p923615019515"></a><a name="p923615019515"></a>Name of the file where the memory is applied for.</p>
+    </td>
+    </tr>
+    <tr id="row823614501055"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p18236195011518"><a name="p18236195011518"></a><a name="p18236195011518"></a>line</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p11236135012514"><a name="p11236135012514"></a><a name="p11236135012514"></a>int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p5236250454"><a name="p5236250454"></a><a name="p5236250454"></a>Line number of the code in the file where the requested memory is located.</p>
+    </td>
+    </tr>
+    <tr id="row12236350256"><td class="cellrowborder" valign="top" width="21.67%" headers="mcps1.1.4.1.1 "><p id="p62364506517"><a name="p62364506517"></a><a name="p62364506517"></a>size</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p1623655013520"><a name="p1623655013520"></a><a name="p1623655013520"></a>int8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p323610502051"><a name="p323610502051"></a><a name="p323610502051"></a>Size of the applied memory. The value is accumulated if the memory is applied for multiple times in the same line of the same file.</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >This view is not supported in the Lite release version.
 
 

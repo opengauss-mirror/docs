@@ -3,16 +3,15 @@
 This feature allows administrators to reduce the I/O impact of the  **VACUUM**  and  **ANALYZE**  statements on concurrent database activities. It is often more important to prevent maintenance statements, such as  **VACUUM**  and  **ANALYZE**, from affecting other database operations than to run them quickly. Cost-based vacuum delay provides a way for administrators to achieve this purpose.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->Certain vacuum operations hold critical locks and should be complete as quickly as possible. In openGauss Kernel, cost-based vacuum delays do not take effect during such operations. To avoid uselessly long delays in such cases, the actual delay is the larger of the two calculated values:
->
+>Certain vacuum operations hold critical locks and should be complete as quickly as possible. In openGauss, cost-based vacuum delays do not take effect during such operations. To avoid uselessly long delays in such cases, the actual delay is the larger of the two calculated values:
 >-   **vacuum\_cost\_delay**  x  **accumulated\_balance**/**vacuum\_cost\_limit**
 >-   **vacuum\_cost\_delay**  x 4
 
 ## Background<a name="en-us_topic_0283136744_en-us_topic_0237124702_en-us_topic_0059778692_s07d4dedef9d24a83acb5d9412d6b68fc"></a>
 
-During the execution of the  [ANALYZE | ANALYSE](analyze-analyse.md)  and  [VACUUM](vacuum.md)  statements, the system maintains an internal counter that keeps track of the estimated cost of the various I/O operations that are performed. When the accumulated cost reaches a limit \(specified by  **vacuum\_cost\_limit**\), the process performing the operation will sleep for a short period of time \(specified by  **vacuum\_cost\_delay**\). Then, the counter resets and the operation continues.
+During the execution of the  [ANALYZE | ANALYSE](en-us_topic_0289900881.md)  and  [VACUUM](en-us_topic_0289900615.md)  statements, the system maintains an internal counter that keeps track of the estimated cost of the various I/O operations that are performed. When the accumulated cost reaches a limit \(specified by  **vacuum\_cost\_limit**\), the process performing the operation will sleep for a short period of time \(specified by  **vacuum\_cost\_delay**\). Then, the counter resets and the operation continues.
 
-By default, this feature is disabled. To enable this feature, set  **vacuum\_cost\_delay**  to a positive value.
+By default, this feature is disabled. To enable this feature, set  **vacuum\_cost\_delay**  to a non-zero value.
 
 ## vacuum\_cost\_delay<a name="en-us_topic_0283136744_en-us_topic_0237124702_section117926911015"></a>
 

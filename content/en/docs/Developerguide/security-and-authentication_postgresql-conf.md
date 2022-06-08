@@ -29,7 +29,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the user ID of the current session.
 
-This parameter is an internal parameter of the USERSET type and can be set only using the  [SET SESSION AUTHORIZATION](en-us_topic_0289899948.md)  syntax.
+This parameter is of the USERSET type and can be set only using the  [SET SESSION AUTHORIZATION](en-us_topic_0289899948.md)  syntax.
 
 **Value range**: a string
 
@@ -50,7 +50,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## ssl<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa"></a>
 
-**Parameter description**: Specifies whether SSL connections are enabled. Read  [Using gsql to Connect to a Database](using-gsql-to-connect-to-a-database.md)  before setting this parameter.
+**Parameter description**: Specifies whether SSL connections are enabled. Read  [Using gsql to Connect to a Database](en-us_topic_0289900019.md)  before setting this parameter.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -60,13 +60,13 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **off**  indicates that SSL connections are not enabled.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->openGauss supports SSL when a client connects to a the primary node of the database. You are advised to enable SSL connections only on the primary node of the databases. The default value is  **off**  on database nodes. To enable SSL connections, you also need to configure parameters such as  **ssl\_cert\_file**,  **ssl\_key\_file**, and  **ssl\_ca\_file**  and the corresponding files. Incorrect configurations may cause startup failure of openGauss.
+>To enable SSL connections, you also need to configure parameters such as  **ssl\_cert\_file**,  **ssl\_key\_file**, and  **ssl\_ca\_file**  and the corresponding files. Incorrect configurations may cause startup failure of openGauss.
 
 **Default value**:  **on**
 
 ## require\_ssl<a name="en-us_topic_0283137371_en-us_topic_0237124696_section1652594319820"></a>
 
-**Parameter description**: Specifies whether the server requires the SSL connection. This parameter is valid only when  **[ssl](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  is set to  **on**. Read  [Using gsql to Connect to a Database](using-gsql-to-connect-to-a-database.md)  before setting this parameter.
+**Parameter description**: Specifies whether the server requires the SSL connection. This parameter is valid only when  **[ssl](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  is set to  **on**. Read  [Using gsql to Connect to a Database](en-us_topic_0289900019.md)  before setting this parameter.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -86,12 +86,12 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: a string. Separate multiple encryption algorithms by semicolons \(;\). For details about supported encryption algorithms, see  [Establishing Secure TCP/IP Connections in SSL Mode](establishing-secure-tcp-ip-connections-in-ssl-mode.md).
+**Value range**: a string. Separate multiple encryption algorithms by semicolons \(;\). For details about supported encryption algorithms, see  [Establishing Secure TCP/IP Connections in SSL Mode](en-us_topic_0289900924.md).
 
 **Default value**:  **ALL**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->If ssl\_ciphers is set incorrectly, the database cannot be started properly.
+>If  **ssl\_ciphers**  is set incorrectly, the database cannot be started properly.
 
 ## ssl\_renegotiation\_limit<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s52ca816208d444eca495ad205c3da3cb"></a>
 
@@ -145,7 +145,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## krb\_server\_keyfile<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s640043f6a27941c1b96449530c0495c5"></a>
 
-**Parameter description**: Specifies the location of the main configuration file of the Kerberos service. For details, see  [Configuring Client Access Authentication](configuring-client-access-authentication.md). Only the sysadmin user can access the file.
+**Parameter description**: Specifies the location of the main configuration file of the Kerberos service. For details, see  [Configuring Client Access Authentication](en-us_topic_0289900238.md). Only the sysadmin user can access the file.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -155,7 +155,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## krb\_srvname<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s65aefa786b4f481da22dda86c00abb52"></a>
 
-**Parameter description**: Specifies the Kerberos service name. For details, see  [Configuring Client Access Authentication](configuring-client-access-authentication.md).
+**Parameter description**: Specifies the Kerberos service name. For details, see  [Configuring Client Access Authentication](en-us_topic_0289900238.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -194,7 +194,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## password\_policy<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626"></a>
 
-**Parameter description**: Specifies whether to check the password complexity when you run the  **CREATE ROLE/USER**  or  **ALTER ROLE/USER**  command to create or modify an account of openGauss. For details about the password complexity check policy, see  [Setting Password Security Policies](setting-password-security-policies.md).
+**Parameter description**: Specifies whether to check the password complexity when you run the  **CREATE ROLE/USER**  or  **ALTER ROLE/USER**  command to create or modify an account of openGauss. For details about the password complexity check policy, see  [Setting Password Security Policies](en-us_topic_0289900602.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -210,7 +210,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## password\_reuse\_time<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794"></a>
 
-**Parameter description:**  Specifies whether to check the reuse interval of the new password when you run the  **ALTER USER**  or  **ALTER ROLE**  command to change a user password. For details about the password reuse policy, see  [Setting Password Security Policies](setting-password-security-policies.md).
+**Parameter description:**  Specifies whether to check the reuse interval of the new password when you run the  **ALTER USER**  or  **ALTER ROLE**  command to change a user password. For details about the password reuse policy, see  [Setting Password Security Policies](en-us_topic_0289900602.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -230,7 +230,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## password\_reuse\_max<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53"></a>
 
-**Parameter description**: Specifies whether to check the reuse times of the new password when you run the  **ALTER USER**  or  **ALTER ROLE**  command to change a user password. Only the sysadmin user can access this parameter. For details about the password reuse policy, see  [Setting Password Security Policies](setting-password-security-policies.md).
+**Parameter description**: Specifies whether to check the reuse times of the new password when you run the  **ALTER USER**  or  **ALTER ROLE**  command to change a user password. Only the  **sysadmin**  user can access this parameter. For details about the password reuse policy, see  [Setting Password Security Policies](en-us_topic_0289900602.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -250,7 +250,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## password\_lock\_time<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s5e488e82235e4bd5b470b57a44a38c27"></a>
 
-**Parameter description**: Specifies the duration before a locked account is automatically unlocked. For details about the automatic account locking policy, see  [Setting Password Security Policies](setting-password-security-policies.md).
+**Parameter description**: Specifies the duration before a locked account is automatically unlocked. For details about the automatic account locking policy, see  [Setting Password Security Policies](en-us_topic_0289900602.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -266,7 +266,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## failed\_login\_attempts<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959"></a>
 
-**Parameter description**: Specifies the maximum number of incorrect password attempts before an account is locked. The account will be automatically unlocked after the time specified by  **password\_lock\_time**. Only the sysadmin user can access the account. The automatic account locking policy applies in scenarios such as login and password modification using the  **ALTER USER**  command. For details about the policy, see  [Setting Password Security Policies](setting-password-security-policies.md).
+**Parameter description**: Specifies the maximum number of incorrect password attempts before an account is locked. The account will be automatically unlocked after the time specified by  **password\_lock\_time**. Only the sysadmin user can access the account. The automatic account locking policy applies in scenarios such as login and password modification using the  **ALTER USER**  command. For details about the automatic account locking policy, see  [Setting Password Security Policies](en-us_topic_0289900602.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -286,7 +286,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**:  **0**,  **1**,  **2**,  **3**
+**Value range:**  0, 1, 2, or 3
 
 -   **0**  indicates that passwords are encrypted with MD5.
 -   **1**  indicates that passwords are encrypted with SHA-256 and MD5.

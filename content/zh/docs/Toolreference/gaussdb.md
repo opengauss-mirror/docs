@@ -243,7 +243,7 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_r6ae3f55cfed84785ac7effeb32e75571"><td class="cellrowborder" valign="top" width="11.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3b9740e815264c99a7c5327b1e5d90fc"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3b9740e815264c99a7c5327b1e5d90fc"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3b9740e815264c99a7c5327b1e5d90fc"></a>-O</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a291aaa21611849249849fc2e61739a7c"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a291aaa21611849249849fc2e61739a7c"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a291aaa21611849249849fc2e61739a7c"></a>允许修改系统表的结构</p>
-<div class="notice" id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_na0a910f47c584f82bc1782609720a98d"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_na0a910f47c584f82bc1782609720a98d"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_na0a910f47c584f82bc1782609720a98d"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3cc963f3d2c04a9e82730f8daa0e8fc9"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3cc963f3d2c04a9e82730f8daa0e8fc9"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3cc963f3d2c04a9e82730f8daa0e8fc9"></a>此选项可能导致系统表损坏, 甚至数据库无法启动</p>
+<div class="notice" id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_na0a910f47c584f82bc1782609720a98d"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_na0a910f47c584f82bc1782609720a98d"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_na0a910f47c584f82bc1782609720a98d"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3cc963f3d2c04a9e82730f8daa0e8fc9"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3cc963f3d2c04a9e82730f8daa0e8fc9"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a3cc963f3d2c04a9e82730f8daa0e8fc9"></a>此选项可能导致系统表损坏, 甚至数据库无法启动。</p>
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="27.26%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a87f843e0093841e080c20eaeb2d8e666"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a87f843e0093841e080c20eaeb2d8e666"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a87f843e0093841e080c20eaeb2d8e666"></a>-</p>
@@ -451,21 +451,24 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 
 ## 示例<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_section367683"></a>
 
-1.  用缺省值在后台启动gaussdb：
+- 用缺省值在后台启动gaussdb：
 
-    ```
-    nohup gaussdb >logfile 2>&1 </dev/null  &
-    ```
 
-2.  在指定端口启动gaussdb，如1234：
+```
+nohup gaussdb >logfile 2>&1 </dev/null  &
+```
 
-    ```
-    gaussdb --single_node -p -D data_dir
-    ```
+- 在指定端口启动gaussdb，如1234：
 
-    使用gsql与服务器连接，用-p指定端口号：
 
-    ```
-    gsql -d postgres -p 1234
-    ```
+```
+gaussdb --single_node -p -D data_dir
+```
+
+- 使用gsql与服务器连接，用-p指定端口号：
+
+
+```
+gsql -d postgres -p 1234
+```
 

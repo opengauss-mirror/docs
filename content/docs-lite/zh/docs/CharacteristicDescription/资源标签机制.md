@@ -1,0 +1,43 @@
+# 资源标签机制<a name="ZH-CN_TOPIC_0000001105395248"></a>
+
+## 可获得性<a name="section17746747"></a>
+
+本特性自openGauss 1.1.0版本开始引入。
+
+## 特性简介<a name="section25503003"></a>
+
+数据库资源是指数据库所记录的各类对象，包括数据库、模式、表、列、视图、trigger等，数据库对象越多，数据库资源的分类管理就越繁琐。资源标签机制是一种通过对具有某类相同“特征”的数据库资源进行分类标记而实现资源分类管理的一种技术。当管理员对数据库内某些资源“打上”标签后，可以基于该标签进行如审计或数据脱敏的管理操作，从而实现对标签所包含的所有数据库资源进行安全管理。
+
+## 客户价值<a name="section28200442"></a>
+
+合理的制定资源标签能够有效的进行数据对象分类，提高对象管理效率，降低安全策略配置的复杂性。当管理员需要对某组数据库资源对象做统一审计或数据脱敏等安全管理动作时，可将这些资源划分到一个资源标签，该标签即包含了具有某类特征或需要统一配置某种策略的数据库资源，管理员可直接对资源标签执行管理操作，大大降低了策略配置的复杂性和信息冗余程度，提高了管理效率。
+
+## 特性描述<a name="section3730161075314"></a>
+
+资源标签机制是将当前数据库内包含的各种资源进行“有选择性的”分类，管理员可以使用如下SQL语法进行资源标签的创建，从而将一组数据库资源打上标签：
+
+```
+CREATE RESOURCE LABEL schm_lb ADD SCHEMA(schema_for_label);
+CREATE RESOURCE LABEL tb_lb ADD TABLE(schema_for_label.table_for_label);
+CREATE RESOURCE LABEL col_lb ADD COLUMN(schema_for_label.table_for_label.column_for_label);
+CREATE RESOURCE LABEL multi_lb ADD SCHEMA(schema_for_label), TABLE(table_for_label);
+```
+
+其中，schema\_for\_label、table\_for\_label、column\_for\_label分别为待标记模式、表、列。schm\_lb标签包含了模式schm\_for\_label；tb\_lb包含了表table\_for\_label；col\_lb包含了列column\_for\_label；multi\_lb包含模式schm\_for\_label和列table\_for\_label。对这些已配置的资源标签进行如统一审计或动态数据脱敏也即是对标签所包含的每一个数据库资源进行管理。
+
+当前，资源标签所支持的数据库资源类型包括：SCHEMA、TABLE、COLUMN、VIEW、FUNCTION。
+
+## 特性增强<a name="section2534498"></a>
+
+无。
+
+## 特性约束<a name="section06531946143616"></a>
+
+-   资源标签需要由具备POLADMIN和SYSADMIN属性的用户或初始用户创建。
+-   不支持对临时表创建资源标签。
+-   同一个基本表的列只可能属于一个资源标签。
+
+## 依赖关系<a name="section22810484"></a>
+
+无。
+

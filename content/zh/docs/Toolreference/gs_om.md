@@ -122,11 +122,16 @@ gs\_om参数可以分为如下几类：
 
     -   -D
 
-        指定 dn路径。
+        指定数据库节点路径。
 
-        取值范围：dn路径。
+        取值范围：数据库节点路径。
 
-        不指定dn路径，表示使用静态文件中的dn路径。
+        不指定数据库节点路径，表示使用静态文件中的数据库节点路径。
+
+        ![](public_sys-resources/icon-note.gif) **说明：**
+        针对部署了CM工具的集群，如果在对单个实例进行启停时候指定了-D参数，只会启动或者停止数据库进程，不会影响CM相关进程。
+        
+        假设当前实例的数据库和CM进程都停止，在启动该实例时候如果指定了-D参数，那么只会尝试拉起数据库进程，此时由于CM进程不存在会导致数据库进程也拉起失败。可以去掉-D参数，启动整个实例。
 
     -   --time-out=SECS
 
@@ -149,7 +154,7 @@ gs\_om参数可以分为如下几类：
         
         指定启动时内核运行版本号。
 
-        取值范围： 内核版本号
+        取值范围： 内核版本号。
 
 
 -   停止openGauss参数：
@@ -340,11 +345,12 @@ gs\_om参数可以分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p172731718619"><a name="p172731718619"></a><a name="p172731718619"></a>实例状态。</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li>P: 节点的初始角色是Primary，数据库安装后就不再变动，从系统静态文件读取。</li><li>S: 节点的初始角色是Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>C: 节点的初始角色是Cascade Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>Primary：表示实例为主实例。</li><li>Standby：表示实例为备实例。</li><li>Cascade Standby：表示实例为级联备实例。</li><li>Secondary：表示实例为从备实例。</li><li>Pending：表示该实例在仲裁阶段。</li><li>Unknown：表示实例状态未知。</li><li>Down：表示实例处于宕机状态。</li></ul>
+<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="ul14274171168"></a><a name="ul14274171168"></a><ul id="ul14274171168"><li>P: 节点的初始角色是Primary，数据库安装后就不再变动，从系统静态文件读取。</li><li>S: 节点的初始角色是Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>C: 节点的初始角色是Cascade Standby，数据库安装后就不再变动，从系统静态文件读取。</li><li>Primary：表示实例为主实例。</li><li>Standby：表示实例为备实例。</li><li>Cascade Standby：表示实例为级联备实例。</li><li>Pending：表示该实例在仲裁阶段。</li><li>Unknown：表示实例状态未知。</li><li>Down：表示实例处于宕机状态。</li></ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 **表 2**  特性ID说明
 
@@ -525,30 +531,44 @@ gs\_om参数可以分为如下几类：
  
   ```
 
--   在openGauss上执行如下命令，生成配置文件。
+- 在openGauss上执行如下命令，生成配置文件。
+
+  ```
+  gs_om -t generateconf -X  /opt/software/openGauss/clusterconfig.xml  --distribute
+  Generating static configuration files for all nodes.
+  Creating temp directory to store static configuration files.
+  Successfully created the temp directory.
+  Generating static configuration files.
+  Successfully generated static configuration files.
+  Static configuration files for all nodes are saved in /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files.
+  Distributing static configuration files to all nodes.
+  Successfully distributed static configuration files.
+  ```
+
+  - 在openGauss上执行如下命令，修改配置文件，动态配置文件需要执行gs\_om -t refreshconf 手动刷新，实际端口或者ip生效需要手动修改guc参数。
 
     ```
-    gs_om -t generateconf -X  /opt/software/openGauss/clusterconfig.xml  --distribute
+    gs_om -t generateconf --old-values=26000,192.168.1.1  --new-values=36000,192.168.1.2  --distribute
     Generating static configuration files for all nodes.
     Creating temp directory to store static configuration files.
     Successfully created the temp directory.
     Generating static configuration files.
     Successfully generated static configuration files.
-    Static configuration files for all nodes are saved in /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files.
+    Static configuration files for all nodes are saved in /opt/huawei/Bigdata/gaussdb/wisequery/script/static_config_files.
     Distributing static configuration files to all nodes.
     Successfully distributed static configuration files.
     ```
 
-    然后打开生成的配置文件目录，会看到新生成的3个文件。
+  然后打开生成的配置文件目录，会看到新生成的3个文件。
 
-    ```
-    cd /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files
-    ll
-    total 456
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat1
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
-    ```
+  ```
+  cd /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files
+  ll
+  total 456
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat1
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
+  ```
 
 -   SSL证书回退。
 

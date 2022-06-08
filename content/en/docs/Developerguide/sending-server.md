@@ -7,9 +7,9 @@
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->**[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **archive**  or  **hot\_standby**  to allow the connection from standby servers.
+>**[wal\_level](en-us_topic_0289900114.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **archive**,  **hot\_standby**, or  **logical**  to allow the connection from standby servers.
 
-**Value range:**  an integer ranging from 0 to 262143. The recommended value range is 8 to 100.
+**Value range:**  an integer ranging from 0 to 1024. The recommended value range is 8 to 100.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >This parameter can be set to 0 only when a single DN is used and there is no primary/standby instance.
@@ -53,7 +53,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to 262143
+**Value range:**  an integer ranging from 0 to 1024. The recommended value range is 8 to 100.
 
 **Default value**: 8
 
@@ -62,6 +62,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 When HA replication, , and logical decoding are used, you are advised to set this parameter to: Number of current physical replication slots +  Number of required logical replication slots. If the actual value is smaller than the recommended value, these functions may be unavailable or abnormal.
 
 -   Physical replication slots provide an automatic method to ensure that Xlogs are not removed from a primary node before they are received by all the standby nodes and secondary nodes. That is, physical replication slots are used to support primary/standby HA. The number of physical replication slots required by a database is equal to the ratio of standby and secondary nodes to the primary node. For example, if an HA database has 1 primary node, 1 standby node, and 1 secondary node, the number of required physical replication slots will be 2. If an HA database has 1 primary node and 3 standby nodes, the number of required physical replication slots will be 3.
+-   Currently, primary/standby/secondary deployment is not supported by default.
 -   Plan the number of logical replication slots as follows:
     -   A logical replication slot can carry changes of only one database for decoding. If multiple databases are involved, create multiple logical replication slots.
     -   If logical replication is needed by multiple target databases, create multiple logical replication slots in the source database. Each logical replication slot corresponds to one logical replication link.
@@ -99,6 +100,22 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**: an integer ranging from 1 to 2147483647
 
 **Default value**:  **8192**
+
+## enable\_wal\_shipping\_compression<a name="section1767245331318"></a>
+
+**Parameter description**: Specifies whether to enable cross-database instance log compression in streaming DR mode.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>This parameter applies only to a pair of walsender and walreceiver for cross-database instance transmission in streaming DR and is configured on the primary database instance.
+
+**Value range**: Boolean
+
+-   **true**  indicates that cross-database instance log compression is enabled for streaming DR.
+-   **false**  indicates that cross-database instance log compression is disabled for streaming DR.
+
+**Default value**:  **false**
 
 ## replconninfo1<a name="en-us_topic_0283137693_en-us_topic_0237124712_en-us_topic_0059777860_se4d237ddf6e7410182aa0936da9d54ed"></a>
 
@@ -180,109 +197,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**: empty
 
-## replconninfo9<a name="section2022343663619"></a>
-
-**Parameter description**: Specifies the information about the ninth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the ninth node is configured.
-
-**Default value**: empty
-
-## replconninfo10<a name="section1031583915367"></a>
-
-**Parameter description**: Specifies the information about the tenth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the tenth node is configured.
-
-**Default value**: empty
-
-## replconninfo11<a name="section2085818462368"></a>
-
-**Parameter description**: Specifies the information about the eleventh node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the eleventh node is configured.
-
-**Default value**: empty
-
-## replconninfo12<a name="section167129118388"></a>
-
-**Parameter description**: Specifies the information about the twelfth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the twelfth node is configured.
-
-**Default value**: empty
-
-## replconninfo13<a name="section7670163183812"></a>
-
-**Parameter description**: Specifies the information about the thirteenth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the thirteenth node is configured.
-
-**Default value**: empty
-
-## replconninfo14<a name="section936818719387"></a>
-
-**Parameter description**: Specifies the information about the fourteenth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the fourteenth node is configured.
-
-**Default value**: empty
-
-## replconninfo15<a name="section418813119380"></a>
-
-**Parameter description**: Specifies the information about the fifteenth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the fifteenth node is configured.
-
-**Default value**: empty
-
-## replconninfo16<a name="section7545413193813"></a>
-
-**Parameter description**: Specifies the information about the sixteenth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the sixteenth node is configured.
-
-**Default value**: empty
-
-## replconninfo17<a name="section362914154381"></a>
-
-**Parameter description**: Specifies the information about the seventeenth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the seventeenth node is configured.
-
-**Default value**: empty
-
-## replconninfo18<a name="section2376111783814"></a>
-
-**Parameter description**: Specifies the information about the eighteenth node to be listened on and authenticated by the current server.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string An empty string indicates that no information about the eighteenth node is configured.
-
-**Default value**: empty
-
 ## cross\_cluster\_replconninfo1<a name="section354985375319"></a>
 
-**Parameter description**: Specifies the information about the first node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local first node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -292,7 +209,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## cross\_cluster\_replconninfo2<a name="section16549175305316"></a>
 
-**Parameter description**: Specifies the information about the second node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local second node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -302,7 +219,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## cross\_cluster\_replconninfo3<a name="section655065375310"></a>
 
-**Parameter description**: Specifies the information about the third node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local third node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -312,7 +229,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## cross\_cluster\_replconninfo4<a name="section95504535538"></a>
 
-**Parameter description**: Specifies the information about the fourth node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local fourth node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -322,7 +239,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## cross\_cluster\_replconninfo5<a name="section1550175310534"></a>
 
-**Parameter description**: Specifies the information about the fifth node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local fifth node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -332,7 +249,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## cross\_cluster\_replconninfo6<a name="section2550105395315"></a>
 
-**Parameter description**: Specifies the information about the sixth node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local sixth node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -342,7 +259,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## cross\_cluster\_replconninfo7<a name="section1955045305317"></a>
 
-**Parameter description**: Specifies the information about the seventh node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local seventh node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -352,7 +269,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## cross\_cluster\_replconninfo8<a name="section755035345315"></a>
 
-**Parameter description**: Specifies the information about the eighth node to be listened on and authenticated by the current server across clusters.
+**Parameter description**: Specifies the information about the local eighth node to be listened on and authenticated across database instances.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

@@ -17,7 +17,7 @@ PG\_AUTH\_HISTORY系统表记录了角色的认证历史。需要有系统管理
 </td>
 <td class="cellrowborder" valign="top" width="26.027397260273972%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p4254182554911"><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p4254182554911"></a><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p4254182554911"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.48425157484252%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p325442516491"><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p325442516491"></a><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p325442516491"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="57.48425157484252%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p325442516491"><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p325442516491"></a><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_p325442516491"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_r72c9542805dd42ee9f8d4fef90e182d1"><td class="cellrowborder" valign="top" width="16.48835116488351%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_aab7e1722bf9846df8639bfeb50bd5f1d"><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_aab7e1722bf9846df8639bfeb50bd5f1d"></a><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_aab7e1722bf9846df8639bfeb50bd5f1d"></a>roloid</p>
@@ -43,5 +43,6 @@ PG\_AUTH\_HISTORY系统表记录了角色的认证历史。需要有系统管理
 </tr>
 </tbody>
 </table>
+
 
 

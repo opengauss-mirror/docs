@@ -12,11 +12,12 @@
 -   Column-store tables cannot be created as global temporary tables.
 -   It is recommended that the number of column-store tables do not exceed 1000.
 -   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
--   Only  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIAMRY KEY**  can be used as the table-level constraint of column-store tables. Table-level primary key and foreign key constraints are not supported.
--   Only the  **NULL**,  **NOT NULL**, **DEFAULT**  constant values, **UNIQUE** and **PRIMARY KEY** can be used as column-store table constraints.
+-   Only  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIAMRY KEY**  can be used as the table-level constraint of column-store tables. Table-level foreign key constraints are not supported.
+-   Only the  **NULL**,  **NOT NULL**,  **DEFAULT**  constant values,  **UNIQUE**, and  **PRIMARY KEY**  can be used as column-store table constraints.
 -   Whether column-store tables support a delta table is specified by the  [enable\_delta\_store](en-us_topic_0289900911.md#en-us_topic_0283136577_en-us_topic_0237124705_section1035224982816)  parameter. The threshold for storing data into a delta table is specified by the  **deltarow\_threshold**  parameter.
 -   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
 -   The maximum number of columns on each table is 1600, which depends on the column type. The total size of all columns cannot exceed 8192 bytes, except for the columns of variable data types, such as text, varchar, and char.
+-   A user granted with the  **CREATE ANY TABLE**  permission can create tables in the public and user schemas. To create a table that contains serial columns, you must also grant the  **CREATE ANY SEQUENCE**  permission to create sequences.
 
 ## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
@@ -108,7 +109,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     A local temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
+    >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**. Users should not delete schemas starting with  **pg\_temp**  or  **pg\_toast\_temp**.
     >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
     >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**  \(except the  **ALTER INDEX index\_name REBUILD**  command\).
     >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
@@ -123,6 +124,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **table\_name**
 
     Specifies the name of the table to be created.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >Some processing logic of materialized views determines whether a table is the log table of a materialized view or a table associated with a materialized view based on the table name prefix. Therefore, do not create a table whose name prefix is  **mlog\_**  or  **matviewmap\_**. Otherwise, some functions of the table are affected.
 
 -   **column\_name**
 
@@ -150,7 +154,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Columns and constraints copied by  **LIKE**  are not merged with the same name. If the same name is specified explicitly or in another  **LIKE**  clause, an error is reported.
 
-    -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values null.
+    -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
     -   The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
     -   Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
     -   **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
@@ -160,7 +164,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,** INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**, or  **SMALLSERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
+    >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**,  **SMALLSERIAL**  or  **LARGESERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
     >-   You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.
     >-   **EXCLUDING**  of a partitioned table must be used together with  **INCLUDING ALL**, for example,  **INCLUDING ALL EXCLUDING DEFAULTS**, except for  **DEFAULTS**  of the source partitioned table.
 
@@ -175,7 +179,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   FILLFACTOR
 
-        The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column–store tables.
+        The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column-store tables.
 
         Value range: 10–100
 
@@ -203,12 +207,18 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         Value range:
 
-        -   **USTORE**  indicates that tables support the Inplace-Update storage engine.
-        -   **ASTORE**  indicates that tables support the Append-Only storage engine.
+        -   **USTORE**  indicates that tables support the inplace-update storage engine. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
+        -   **ASTORE**  indicates that tables support the append-only storage engine.
 
         Default value:
 
-        If no table is specified, data is stored in Append-Only mode by default.
+        If no table is specified, data is stored in append-only mode by default.
+
+    -   INIT\_TD
+
+        Specifies the number of TDs to be initialized when an Ustore table is created. This parameter is valid only when an Ustore table is created.
+
+        Value ranges: 2–128. The default value is  **4**.
 
     -   COMPRESSION
 
@@ -223,6 +233,48 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
 
         Value range: 0 to 3. The default value is  **0**.
+
+    -   COMPRESS\_TYPE
+
+        Specifies the row-store table compression algorithm. The value  **1**  indicates the PGLZ algorithm, and the value  **2**  indicates the ZSTD algorithm. By default, row-store tables are not compressed. \(Only common tables in the Astore engine are supported.\)
+
+        Value range: 0 to 2. The default value is  **0**.
+
+    -   COMPRESS\_LEVEL
+
+        Specifies the row-store table compression algorithm level. This parameter is valid only when  **COMPRESS\_TYPE**  is set to  **2**. A higher compression level indicates a better table compression effect and a slower table access speed. \(Only common tables in the Astore engine are supported.\)
+
+        Value range: –31 to 31. The default value is  **0**.
+
+    -   COMPRESS\_CHUNK\_SIZE
+
+        Specifies the size of a row-store table compression chunk. A smaller chunk size indicates a better compression effect, and a larger data dispersion degree indicates a slower table access speed. \(Only common tables in the Astore engine are supported.\)
+
+        Value range: subject to the page size. When the page size is 8 KB, the value can be  **512**,  **1024**,  **2048**, or  **4096**.
+
+        Default value:  **4096**
+
+    -   COMPRESS\_PREALLOC\_CHUNKS
+
+        Specifies the number of pre-allocated row-store table compression chunks. A larger number of pre-allocated chunks indicates a lower table compression ratio, and a smaller data dispersion degree indicates a better access performance. \(Only common tables in the Astore engine are supported.\)
+
+        Value range: 0 to 7. The default value is  **0**.
+
+        Sets the preprocessing of row-store table compression byte conversion. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+        Value range: Boolean value. By default, this function is disabled.
+
+    -   COMPRESS\_BYTE\_CONVERT
+
+        Sets the preprocessing of row-store table compression byte conversion. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+        Value range: Boolean value. By default, this function is disabled.
+
+    -   COMPRESS\_DIFF\_CONVERT
+
+        Sets the preprocessing of row-store table compression differentiation. This parameter can be used together only with  **COMPRESS\_BYTE\_CONVERT**. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+        Value range: Boolean value. By default, this function is disabled.
 
     -   MAX\_BATCHROW
 
@@ -252,7 +304,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   segment
 
-        The data is stored in segment-page mode. This parameter supports only row-store tables. Column-store tables, temporary tables, and unlogged tables are not supported. The ustore storage engine is not supported.
+        The data is stored in segment-page mode. This parameter supports only row-store tables. Column-store tables, temporary tables, and unlogged tables are not supported. The Ustore storage engine is not supported.
 
         Value range:  **on**  and  **off**
 
@@ -265,6 +317,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         Value range: a string.
 
         If encryption is disabled, the default value is null by default.
+
+    -   hasuids
+
+        If this parameter is set to  **on**, a unique table-level ID is allocated to a tuple when the tuple is updated.
+
+        Value range:  **on**  and  **off**
+
+        Default value:  **off**
 
 
 -   **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
@@ -358,6 +418,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **DEFERRABLE | NOT DEFERRABLE**
 
     Controls whether the constraint can be deferred. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction using the  **SET CONSTRAINTS**  command.  **NOT DEFERRABLE**  is the default value. Currently, only UNIQUE constraints, primary key constraints, and foreign key constraints accept this clause. All the other constraints are not deferrable.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >Ustore tables do not support the keywords  **DEFERRABLE**  and  **INITIALLY DEFERRED**.
 
 -   **PARTIAL CLUSTER KEY**
 
@@ -980,7 +1043,7 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   The new table automatically inherits all column names, data types, and not-null constraints from this table. The new table is irrelevant to the original table after the creation.
 
 -   LIKE INCLUDING DEFAULTS
-    -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values null.
+    -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
 
 -   LIKE INCLUDING CONSTRAINTS
     -   The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.

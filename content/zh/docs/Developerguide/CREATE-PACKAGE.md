@@ -17,18 +17,21 @@
 -   只支持A风格的存储过程和函数定义。
 -   不支持package内有同名变量，包括包内同名参数。
 -   package的全局变量为session级，不同session之间package的变量不共享。
--   package中调用自治事务的函数，不允许使用公有变量，以及递归的使用公有变量的函数。
--   package中不支持声明ref cursor类型。
+-   package中调用自治事务的函数，不允许使用package中的cursor变量，以及递归的使用package中cursor变量的函数。
+-   package中不支持声明ref cursor变量。
+-   package默认为SECURITY INVOKER权限，如果想将默认行为改为SECURITY DEFINER权限，需要设置guc参数behavior\_compat\_options='plsql\_security\_definer'。
+-   被授予CREATE ANY PACKAGE权限的用户，可以在public模式和用户模式下创建PACKAGE。
+-   如果需要创建带有特殊字符的package名，特殊字符中不能含有空格，并且最好设置GUC参数behavior\_compat\_options="skip\_insert\_gs\_source",否则可能引起报错。
 
 ## 语法格式<a name="section4157123095714"></a>
 
 -   CREATE PACKAGE SPECIFICATION语法格式。
 
     ```
-    CREATE [ OR REPLACE ] PACKAGE [ schema ] package_name
+    CREATE [ OR REPLACE ] PACKAGE [ schema. ]package_name
         [ invoker_rights_clause ] { IS | AS } item_list_1 END package_name;
     
-    invoker_rights_clause可以被声明为AUTHID DEFINER或者AUTHID INVOKER，分别为定义者权限和调用者权限。
+    invoker_rights_clause可以被声明为AUTHID DEFINER或者AUTHID CURRENT_USER，分别为定义者权限和调用者权限。
     item_list_1可以为声明的变量或者存储过程以及函数。
     ```
 
@@ -37,7 +40,7 @@
 -   CREATE PACKAGE BODY语法格式。
 
     ```
-    CREATE [ OR REPLACE ] PACKAGE BODY [ schema ] package_name
+    CREATE [ OR REPLACE ] PACKAGE BODY [ schema. ]package_name
         { IS | AS } declare_section [ initialize_section ] END package_name;
     ```
 
@@ -66,12 +69,12 @@
     create or replace package body emp_bonus is
     var3 int:=3;
     var4 int:=4;
-    procedure testpro1(var5 int)
+    procedure testpro1(var3 int)
     is
     begin
     create table if not exists test1(col1 int);
     insert into test1 values(var1);
-    insert into test1 values(var5);
+    insert into test1 values(var4);
     end;
     begin  --实例化开始
     var4:=9;
@@ -80,4 +83,23 @@
     /
     ```
 
+- ALTER PACKAGE OWNER示例
 
+  ```
+  --将PACKAGE emp_bonus的所属者改为omm
+  ALTER PACKAGE emp_bonus OWNER TO omm;
+  ```
+
++ 调用PACKAGE示例
+
+  ```
+  call emp_bonus.testpro1(1); --使用call调用package存储过程
+  select emp_bonus.testpro1(1); --使用select调用package存储过程
+  --匿名块里调用package存储过程
+  begin
+  emp_bonus.testpro1(1);
+  end;
+  /
+  ```
+
+  

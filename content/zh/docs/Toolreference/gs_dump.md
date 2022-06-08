@@ -21,7 +21,7 @@ gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其
 
 ## 主要功能<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
-gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--format=**\]**选项指定，具体如[表1](#zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)所示。
+gs\_dump可以创建四种不同的导出文件格式，通过“-F”或者“--format=”选项指定，具体如[表1](#zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)所示。
 
 **表 1**  导出文件格式
 
@@ -357,9 +357,21 @@ export PGDATABASE=postgres
 
     但是由于该选项会针对每行生成一个独立分开的命令，所以在重新加载某行时出现的错误只会导致那行丢失，而非整个表内容。注意：如果重排列顺序，可能会导致整个恢复失败。列顺序改变时，--column-inserts选项不受影响，虽然会更慢。
 
+-   --no-publications
+
+    不转储发布。
+
 -   --no-security-labels
 
     该参数为扩展预留接口，不建议使用。
+
+-   --no-subscriptions
+
+    不转储订阅。
+
+    ![](public_sys-resources/icon-note.gif) **说明：**
+
+    -   当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
 
 -   --no-tablespaces
 
@@ -431,6 +443,10 @@ export PGDATABASE=postgres
 -   --exclude-self
 
     备份结果不包含指定对象自身的信息。该参数需要同-t/--include-table-file参数关联使用才会生效。
+
+-   --pipeline
+
+    使用管道传输密码，禁止在终端使用。
 
 -   --dont-overwrite-file
 

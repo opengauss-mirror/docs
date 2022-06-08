@@ -2,7 +2,7 @@
 
 ## **功能描述**<a name="section131281394204"></a>
 
-删除数据库集群中的一个订阅。
+删除数据库实例中的一个订阅。
 
 ## **注意事项**<a name="section7392192602015"></a>
 
@@ -12,7 +12,7 @@
 ## **语法格式**<a name="section1367518145205"></a>
 
 ```
-DROP PUBLICATION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
+DROP SUBSCRIPTION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 ```
 
 ## **参数说明**<a name="section9378519122011"></a>

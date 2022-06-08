@@ -30,7 +30,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 1 to 16
 
-This parameter can be set to a value greater than 1 only when the extreme RTO feature is enabled. In addition, it must be used together with  **recovery\_redo\_workers**. If both  **recovery\_parse\_workers**  and  **recovery\_max\_workers**  are enabled, the setting of  **recovery\_parse\_workers**  prevails and the concurrent replay function is disabled. The extreme RTO feature does not support the hot standby mode or primary/standby/secondary mode. Therefore,  **recovery\_parse\_workers**  can be set to a value greater than 1 only when  **[hot\_standby](standby-server.md#en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa43017102b08472cb160e9f856e664bd)**  is set to  **off**  and  **[replication\_type](opengauss-transactions.md#en-us_topic_0283136901_en-us_topic_0237124741_section94292665717)**  to  **1**. This feature does not support column-store tables, either. Therefore, disable this feature in a system where column-store tables are used or are to be used.
+This parameter can be set to a value greater than 1 only when the extreme RTO feature is enabled. In addition, it must be used together with  **recovery\_redo\_workers**. If both  **recovery\_parse\_workers**  and  **recovery\_max\_workers**  are enabled, the setting of  **recovery\_parse\_workers**  prevails and the concurrent replay function is disabled. The extreme RTO feature does not support the hot standby mode or primary/standby/secondary mode. Therefore,  **recovery\_parse\_workers**  can be set to a value greater than 1 only when  **[hot\_standby](en-us_topic_0289900463.md#en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa43017102b08472cb160e9f856e664bd)**  is set to  **off**  and  **[replication\_type](transaction.md#en-us_topic_0283136901_en-us_topic_0237124741_section94292665717)**  to  **1**. This feature does not support column-store tables, either. Therefore, disable this feature in a system where column-store tables are used or are to be used. The ultimate RTO does not have flow control. Instead, flow control is determined by the  [recovery\_time\_target](#en-us_topic_0283136722_en-us_topic_0237124709_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373)  parameter.
 
 **Default value**:  **1**
 
@@ -86,4 +86,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range**: an integer ranging from 0 to INT\_MAX. The unit is ms.
 
 **Default value**:  **0**  \(no delay added\)
+
+## redo\_bind\_cpu\_attr<a name="section787511112134"></a>
+
+**Parameter description**: Specifies the core binding operation of the replay thread. Only the  **sysadmin**  user can access this parameter. This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: a string of more than 0 characters. The value is case-insensitive.
+
+-   **'nobind'**: The thread is not bound to a core.
+-   **'nodebind: 1, 2'**: Use the CPU cores in NUMA groups 1 and 2 to bind threads.
+-   **'cpubind: 0-30'**: Use the CPU cores 0 to 30 to bind threads.
+
+**Default value**:  **'nobind'**
 

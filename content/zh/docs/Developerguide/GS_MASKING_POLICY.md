@@ -17,7 +17,7 @@ GS\_MASKING\_POLICY系统表记录动态数据脱敏策略的主体信息，每�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p832619184018"><a name="p832619184018"></a><a name="p832619184018"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p10321619124016"><a name="p10321619124016"></a><a name="p10321619124016"></a>行标识符（隐藏属性，必须明确选择）。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p10321619124016"><a name="p10321619124016"></a><a name="p10321619124016"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
 </tr>
 <tr id="row1146094213529"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p1236651611535"><a name="p1236651611535"></a><a name="p1236651611535"></a>polname</p>
@@ -50,4 +50,5 @@ GS\_MASKING\_POLICY系统表记录动态数据脱敏策略的主体信息，每�
 </tr>
 </tbody>
 </table>
+
 

@@ -25,7 +25,7 @@ The single-query index recommendation function allows users to directly perform 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   This function supports only a single SELECT statement and does not support other types of SQL statements.
->-   Partitioned tables, column-store tables, segment-paged tables, common views, materialized views, global temporary tables, and encrypted databases are not supported.
+>-   Column-store tables, segment-paged tables, common views, materialized views, global temporary tables, and encrypted databases are not supported.
 
 ## Application Scenarios<a name="section54321094535"></a>
 
@@ -37,7 +37,7 @@ For example:
 openGauss=> select "table", "column" from gs_index_advise('SELECT c_discount from bmsql_customer where c_w_id = 10');
      table      |  column  
 ----------------+----------
- bmsql_customer | (c_w_id)
+ bmsql_customer | c_w_id
 (1 row)
 ```
 
@@ -53,7 +53,7 @@ Some SQL statements may also be recommended to create a join index, for example:
 openGauss=# select "table", "column" from gs_index_advise('select name, age, sex from t1 where age >= 18 and age < 35 and sex = ''f'';');
  table | column
 -------+------------
- t1    | (age, sex)
+ t1    | age, sex
 (1 row)
 ```
 
@@ -61,6 +61,16 @@ The preceding statement indicates that a join index  **\(age, sex\)**  needs to 
 
 ```
 CREATE INDEX idx1 on t1(age, sex);
+```
+
+You can recommend specific index types for partitioned tables. For example:
+
+```
+openGauss=# select "table", "column", "indextype" from gs_index_advise('select name, age, sex from range_table where age = 20;');
+ table | column | indextype
+-------+--------+-----------
+ t1    | age    | global
+(1 row)
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

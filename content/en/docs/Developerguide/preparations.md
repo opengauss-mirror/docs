@@ -5,8 +5,7 @@
 -   The database status is normal; the client can be properly connected; and data can be imported to the database. As a result, the optimization program can perform the benchmark test for optimization effect.
 -   To use this tool, you need to specify the user who logs in to the database. The user who logs in to the database must have sufficient permissions to obtain sufficient database status information.
 -   If you log in to the database host as a Linux user, add  **$GAUSSHOME/bin**  to the  _PATH _environment variable so that you can directly run database O&M tools, such as gsql, gs\_guc, and gs\_ctl.
--   The recommended Python version is Python 3.6 or later. The required dependency has been installed in the operating environment, and the optimization program can be started properly. You can install a Python 3.6+ environment independently without setting it as a global environment variable. You are not advised to install the tool as the root user. If you install the tool as the root user and run the tool as another user, ensure that you have the read permission on the configuration file.
--   This tool can run in three modes. In  **tune**  and  **train**  modes, you need to configure the benchmark running environment and import data. This tool will iteratively run the benchmark to check whether the performance is improved after the parameters are modified.
+-   This tool can run in three modes. In  **tune**  or  **train**  mode, you must configure the benchmark running environment and import data. This tool will iteratively run the benchmark to check whether the performance is improved after the parameters are modified.
 -   In  **recommend**  mode, you are advised to run the command when the database is executing the workload to obtain more accurate real-time workload information.
 -   By default, this tool provides benchmark running script samples of TPC-C, TPC-H, TPC-DS, and sysbench. If you use the benchmarks to perform pressure tests on the database system, you can modify or configure the preceding configuration files. To adapt to your own service scenarios, you need to compile the script file that drives your customized benchmark based on the  **template.py**  file in the  **benchmark**  directory.
 
@@ -19,7 +18,7 @@ The tuning program is a tool independent of the database kernel. The usernames a
 
 X-Tuner can run in any of the following modes:
 
--   **recommend**: Log in to the database using the specified user name, obtain the feature information about the running workload, and generate a parameter recommendation report based on the feature information. Report improper parameter settings and potential risks in the current database. Output the currently running workload behavior and characteristics. Output the recommended parameter settings. In this mode, the database does not need to be restarted. In other modes, the database may need to be restarted repeatedly.
+-   **recommend**: Log in to the database using the specified username, obtain the feature information about the running workload, and generate a parameter recommendation report based on the feature information. Report improper parameter settings and potential risks in the current database. Output the currently running workload behavior and characteristics. Output the recommended parameter settings. In this mode, the database does not need to be restarted. In other modes, the database may need to be restarted repeatedly.
 -   **train**: Modify parameters and execute the benchmark based on the benchmark information provided by users. The reinforcement learning model is trained through repeated iteration so that you can load the model in  **tune**  mode for optimization.
 -   **tune**: Use an optimization algorithm to tune database parameters. Currently, two types of algorithms are supported: deep reinforcement learning and global search algorithm \(global optimization algorithm\). The deep reinforcement learning mode requires  **train**  mode to generate the optimized model after training. However, the global search algorithm does not need to be trained in advance and can be directly used for search and optimization.
 
@@ -29,12 +28,12 @@ X-Tuner can run in any of the following modes:
 **Figure  1**  X-Tuner structure<a name="fig137427353816"></a>  
 ![](figures/x-tuner-structure.png "x-tuner-structure")
 
-[Figure 1 X-Tuner architecture](#fig137427353816)  shows the overall architecture of the X-Tuner. The X-Tuner system can be divided into the following parts:
+[Figure 1](#fig137427353816)  shows the overall architecture of the X-Tuner. The X-Tuner system can be divided into the following parts:
 
 -   DB: The DB\_Agent module is used to abstract database instances. It can be used to obtain the internal database status information and current database parameters and set database parameters. The SSH connection used for logging in to the database environment is included on the database side.
--   Algorithm: algorithm package used for optimization, including global search algorithms \(such as Bayesian optimization and particle swarm optimization\) and deep reinforcement learning \(such as DDPG\).
--   X-Tuner main logic module: encapsulated by the environment module. Each step is an optimization process. The entire optimization process is iterated through multiple steps.
--   benchmark: a user-specified benchmark performance test script, which is used to run benchmark jobs. The benchmark result reflects the performance of the database system.
+-   Algorithm: algorithm package used for tuning, including global search algorithms \(such as Bayesian optimization and particle swarm optimization\) and deep reinforcement learning \(such as DDPG\).
+-   X-Tuner: The main logic module is encapsulated by the environment module. Each step is a tuning process. The entire tuning process is iterated through multiple steps.
+-   Benchmark: a user-specified benchmark performance test script, which is used to run benchmark jobs. The benchmark result reflects the performance of the database system.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Ensure that the larger the benchmark script score is, the better the performance is.
@@ -42,47 +41,17 @@ X-Tuner can run in any of the following modes:
 
 ## Installing and Running X-Tuner<a name="en-us_topic_0283137591_section275518529540"></a>
 
-You can run the X-Tuner in two ways. One is to run the X-Tuner directly through the source code. The other is to install the X-Tuner on the system through the Python setuptools, and then run the  **gs\_xtuner**  command to call the X-Tuner. The following describes two methods of running the X-Tuner.
+Run the following command to obtain the help information about the X-Tuner function:
 
-Method 1: Run the source code directly.
+```
+gs_dbmind component xtuner --help 
+```
 
-1.  Switch to the  **xtuner**  source code directory. For the openGauss community code, the path is  **openGauss-server/src/gausskernel/dbmind/tools/xtuner**. For an installed database system, the source code path is  _$GAUSSHOME_**/bin/dbmind/xtuner**.
-2.  You can view the  **requirements.txt**  file in the current directory. Use the pip package management tool to install the dependency based on the  **requirements.txt**  file.
-
-    ```
-    pip install -r requirements.txt
-    ```
-
-3.  After the installation is successful, add the environment variable PYTHONPATH, and then run  **main.py**. For example, to obtain the help information, run the following command:
-
-    ```
-    cd tuner # Switch to the directory where the main.py entry file is located.
-    export PYTHONPATH='..'  # Add the upper-level directory to the path for searching for packages.
-    python main.py --help  # Obtain help information. The methods of using other functions are similar.
-    ```
-
-
-Method 2: Install the X-Tuner in the system.
-
-1.  You can use the  **setup.py**  file to install the X-Tuner to the system and then run the  **gs\_xtuner**  command. You need to switch to the root directory of  **xtuner**. For details about the directory location, see the preceding description.
-2.  Run the following command to install the tool in the Python environment using Python setuptools:
-
-    ```
-    python setup.py install
-    ```
-
-    If the  **bin**  directory of Python is added to the  _PATH_  environment variable, the  **gs\_xtuner **command can be directly called anywhere.
-
-3.  For example, to obtain the help information, run the following command:
-
-    ```
-    gs_xtuner --help
-    ```
-
+You can specify different commands to obtain the corresponding help information.
 
 ## Description of the X-Tuner Configuration File<a name="section5892154973918"></a>
 
-Before running the X-Tuner, you need to load the configuration file. The default path of the configuration file is tuner/xtuner.conf. You can run the  **gs\_xtuner --help**  command to view the absolute path of the configuration file that is loaded by default.
+Before running the X-Tuner, you need to load the configuration file. You can run the  **--help**  command to view the absolute path of the configuration file that is loaded by default.
 
 ```
 ...  
@@ -95,26 +64,26 @@ Before running the X-Tuner, you need to load the configuration file. The default
 ...
 ```
 
-You can modify the configuration items in the configuration file as required to instruct the X-Tuner to perform different actions. For details about the configuration items in the configuration file, see  [Table 2](en-us_topic_0289899901.md#table10217184512711). If you need to change the loading path of the configuration file, you can specify the path through the  **-x**  command line option.
+You can modify the configuration items in the configuration file as required to instruct the X-Tuner to perform different actions. For details about the configuration items in the configuration file, see  [Table 2](command-reference-3.md#table10217184512711). If you need to change the loading path of the configuration file, you can specify the path through the  **-x**  command line option.
 
 ## Benchmark Selection and Configuration<a name="section11685014422"></a>
 
-The benchmark drive script is stored in the benchmark subdirectory of the X-Tuner. X-Tuner provides common benchmark driver scripts, such as TPC-C and TPC-H. The X-Tuner invokes the  **get\_benchmark\_instance\(\)**  command in the benchmark/\_\_init\_\_.py file to load different benchmark driver scripts and obtain benchmark driver instances. The format of the benchmark driver script is described as follows:
+The benchmark driver script is stored in the benchmark subdirectory of the X-Tuner directory \(_$GAUSSHOME_**/bin/dbmind/components/xtuner**\). X-Tuner provides common benchmark driver scripts, such as time-based detection script \(default\), TPC-C, and TPC-H. The X-Tuner invokes the  **get\_benchmark\_instance\(\)**  command in the  **benchmark/\_\_init\_\_.py**  file to load different benchmark driver scripts and obtain benchmark driver instances. The format of the benchmark driver script is described as follows:
 
--   Name of the driver script: name of the benchmark. The name is used to uniquely identify the driver script. You can specify the benchmark driver script to be loaded by setting the  **benchmark\_script**  configuration item in the configuration file of the X-Tuner.
+-   Benchmark driver script name uniquely identifies the driver script. You can specify the benchmark driver script to be loaded by setting  **benchmark\_script**  in the configuration file of the X-Tuner.
 -   The driver script contains the  _path_  variable,  _cmd_  variable, and the  **run**  function.
 
 The following describes the three elements of the driver script:
 
-1.  _path_: path for saving the benchmark script. You can modify the path in the driver script or specify the path by setting the  **benchmark\_path**  configuration item in the configuration file.
-2.  _cmd_: command for executing the benchmark script. You can modify the command in the driver script or specify the command by setting the  **benchmark\_cmd**  configuration item in the configuration file. Placeholders can be used in the text of cmd to obtain necessary information for running cmd commands. For details, see the TPC-H driver script example. These placeholders include:
-    -   \{host\}: IP address of the database host machine
-    -   \{port\}: listening port number of the database instance
-    -   \{user\}: user name for logging in to the database
-    -   \{password\}: password of the user who logs in to the database system
-    -   \{db\}: name of the database that is being optimized
+1.  _path_: path for storing the benchmark driver script. You can modify the path in the driver script or specify the path by setting the  **benchmark\_path**  configuration item in the configuration file.
+2.  _cmd_: command for executing the benchmark driver script. You can modify the command in the driver script or specify the command by setting the  **benchmark\_cmd**  configuration item in the configuration file. Placeholders can be used in the text of cmd to obtain necessary information for running cmd commands. For details, see the TPC-H driver script example. These placeholders include:
+    -   \{_host_\}: IP address of the database host
+    -   \{_port_\}: listening port number of the database instance
+    -   \{_user_\}: username for logging in to the database
+    -   \{_password_\}: password of the user who logs in to the database system
+    -   \{_db_\}: name of the database that is being optimized
 
-3.  **run**  function: The signature of this function is as follows:
+3.  **run**: The signature of this function is as follows:
 
     ```
     def run(remote_server, local_host) -> float:
@@ -122,13 +91,13 @@ The following describes the three elements of the driver script:
 
     The returned data type is float, indicating the evaluation score after the benchmark is executed. A larger value indicates better performance. For example, the TPC-C test result tpmC can be used as the returned value, the inverse number of the total execution time of all SQL statements in TPC-H can also be used as the return value. A larger return value indicates better performance.
 
-    The  _remote\_server_  variable is the shell command interface transferred by the X-Tuner program to the remote host \(database host machine\) used by the script. The  _local\_host_  variable is the shell command interface of the local host \(host where the X-Tuner script is executed\) transferred by the X-Tuner program. Methods provided by the preceding shell command interface include:
+    The  _remote\_server_  variable is the shell command line interface transferred by the X-Tuner program to the remote host \(database host machine\) used by the script. The  _local\_host_  variable is the shell command line interface of the local host \(host where the X-Tuner script is executed\) transferred by the X-Tuner program. Methods provided by the preceding shell command interface include:
 
     ```
     exec_command_sync(command, timeout)
     Function: This method is used to run the shell command on the host.
     Parameter list:
-    command: The data type can be str, and the element can be a list or tuple of the str type. This parameter is optional.
+    command: The data type can be str, and the element can be a list or tuple of the str type. This parameter is mandatory.
     timeout: The timeout interval for command execution in seconds. This parameter is optional.
     Return value:
     Returns 2-tuple (stdout and stderr). stdout indicates the standard output stream result, and stderr indicates the standard error stream result. The data type is str.

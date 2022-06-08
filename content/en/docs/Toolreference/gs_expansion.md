@@ -13,27 +13,33 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 ## Prerequisites<a name="section18105194594714"></a>
 
--   The openGauss image package exists on the  database host and is decompressed. The capacity is scaled out by running the **./gs\_expansion**  command in the **script/**  directory.
+-   The openGauss image package exists on the database host and is decompressed. The capacity is scaled out by running the  **./gs\_expansion**  command in the  **script**  directory.
 
--   The same users and user groups as those on the primary node have been created on the new standby node.
+- The same users and user groups as those on the primary node have been created on the new standby node.
 
--   The mutual trust of user  **root**  and the database management user **omm** has been established between the existing database nodes and the new nodes.
+- Ensure that the mutual trust of user  **root**  and the database management user \(such as  **omm**\) has been established between the existing database nodes and the new nodes.
 
--   The XML file has been created correctly and information about the standby node to be scaled has been added to the installed database configuration file.
+- Ensure that the XML file has been properly configured and information about the standby node to be scaled has been added to the installed database configuration file.
 
--   Only user  **root**  is authorized to run the  **gs\_expansion**  command.
+- Only user  **root**  is authorized to run the  **gs\_expansion**  command.
 
--   Do not run **gs\_dropnode** command on the primary node at the same time.
+- Do not run the  **gs\_dropnode**  command on the primary node to delete other standby nodes at the same time.
 
--   The environment variables of the primary database node have been imported before the scale-out command is run. If the current database cluster is installed in a separate environment variable mode, run the **source** command to imports the spilt environment variable. If they are not spilt, run the  **source** command to import the **.bashrc** configuration file of the sub-user. Generally, the file path is: **/home/[user]/.bashrc**.
+- Before running the scale-out commands, run the  **source**  command to import environment variables of a database on the primary node. If the database is installed in separate environment variable mode, run the  **source**  command to import the separate environment variables. If they are not separated, run the  **source**  command to import the .bashrc configuration file of the sub-user. Generally, the file path is  **/home/\[user\]/.bashrc**.
 
--   The operating system of the new standby node is the same as that of the primary node.
+- The operating system of the new standby node is the same as that of the primary node.
 
--   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
+- Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
 
--   Do not run **gs\_expansion** command with same parameters at the same time.
+- Do not run the  **gs\_expansion**  command twice at the same time.
 
--   Perform standby node expansion only on the primary node.
+- Scale out the standby node only on the primary node.
+
+  >![](C:/Users/lijun/Downloads/08 Tool Reference_openGauss Only/public_sys-resources/icon-note.gif) **NOTE:** 
+  >For security purposes, the tool in the  **gaussdbToolPath**  directory will be automatically deleted after the pre-installation is complete in enterprise-edition installation mode.
+
+
+## 
 
 
 ## Syntax<a name="section10648255135011"></a>
@@ -92,6 +98,14 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
     >-   When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.  
     >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  
     >-   The database version of new instance need to be same as the primary instance.
+
+- --time-out=SECS
+
+  Specifies the timeout period for transmitting software packages during scale-out. If the network performance is poor, you can increase the timeout period to avoid timeout.
+
+  Default value:  **300s**
+
+  Unit: s
 
 -   -?, –help
 

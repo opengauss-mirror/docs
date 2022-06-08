@@ -122,11 +122,11 @@ The  **gs\_om**  tool can use the following types of parameters:
 
     -   -D
 
-        Specifies the DN path.
+        Specifies the path of a specified node.
 
-        Value range: a DN path
+        Value range: a node path
 
-        If the DN path is not specified, the DN path in the static file is used.
+        If the node path is not specified, the node path in the static file is used.
 
     -   --time-out=SECS
 
@@ -197,7 +197,7 @@ Default value:  **fast**
 
         Specify the name of the AZ to be queried, such as --az=AZ1.
 
-        Value range: AZ name. If AZ name is not specified, it means to query all AZs.
+        Value range: AZ name. If AZ name is not specified, it means to query all AZ.
 
     -   -o
 
@@ -331,7 +331,7 @@ Default value:  **fast**
 </td>
 <td class="cellrowborder" valign="top" width="24.87%" headers="mcps1.2.4.1.2 "><p id="p172731718619"><a name="p172731718619"></a><a name="p172731718619"></a>Instance status.</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0287275995_ul14274171168"></a><a name="en-us_topic_0287275995_ul14274171168"></a><ul id="en-us_topic_0287275995_ul14274171168"><li><strong id="b2088384219325"><a name="b2088384219325"></a><a name="b2088384219325"></a>P</strong>: The initial role of the node is <strong id="b1267973918818"><a name="b1267973918818"></a><a name="b1267973918818"></a>Primary</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong id="b3491755484"><a name="b3491755484"></a><a name="b3491755484"></a>S</strong>: The initial role of the node is <strong id="b9273611591"><a name="b9273611591"></a><a name="b9273611591"></a>Standby</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong id="b6377113118565"><a name="b6377113118565"></a><a name="b6377113118565"></a>C</strong>: The initial role of the node is <strong id="b5378431145610"><a name="b5378431145610"></a><a name="b5378431145610"></a>Cascade Standby</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong>Primary</strong>: The instance is a primary instance.</li><li><strong>Standby</strong>: The instance is a standby instance.</li><li><strong id="b527016655719"><a name="b527016655719"></a><a name="b527016655719"></a>Cascade Standby</strong>: The instance is a cascaded standby instance.</li><li><strong>Secondary</strong>: The instance is a secondary instance.</li><li><strong>Pending</strong>: The instance is in arbitration.</li><li><strong>Unknown</strong>: The instance status is unknown.</li><li><strong>Down</strong>: The instance is down.</li></ul>
+<td class="cellrowborder" valign="top" width="56.08%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0287275995_ul14274171168"></a><a name="en-us_topic_0287275995_ul14274171168"></a><ul id="en-us_topic_0287275995_ul14274171168"><li><strong id="b2088384219325"><a name="b2088384219325"></a><a name="b2088384219325"></a>P</strong>: The initial role of the node is <strong id="b1267973918818"><a name="b1267973918818"></a><a name="b1267973918818"></a>Primary</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong id="b3491755484"><a name="b3491755484"></a><a name="b3491755484"></a>S</strong>: The initial role of the node is <strong id="b9273611591"><a name="b9273611591"></a><a name="b9273611591"></a>Standby</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong id="b6377113118565"><a name="b6377113118565"></a><a name="b6377113118565"></a>C</strong>: The initial role of the node is <strong id="b5378431145610"><a name="b5378431145610"></a><a name="b5378431145610"></a>Cascade Standby</strong>. After the database is installed, the role does not change and is read from the system static file.</li><li><strong>Primary</strong>: The instance is a primary instance.</li><li><strong>Standby</strong>: The instance is a standby instance.</li><li><strong id="b527016655719"><a name="b527016655719"></a><a name="b527016655719"></a>Cascade Standby</strong>: The instance is a cascaded standby instance.</li><li><strong>Pending</strong>: The instance is in arbitration.</li><li><strong>Unknown</strong>: The instance status is unknown.</li><li><strong>Down</strong>: The instance is down.</li></ul>
 </td>
 </tr>
 </tbody>
@@ -500,21 +500,20 @@ Default value:  **fast**
 
     ```
     gs_om -t status --detail
-
-    [   Cluster State   ]
-
-    cluster_state   : Normal
+[   Cluster State   ]
+    
+cluster_state   : Normal
     redistributing  : No
     current_az      : AZ_ALL
-
-    [  Datanode State   ]
-
-        node             node_ip         port      instance                            state
-    --------------------------------------------------------------------------------------------------
-    1  pekpopgsci00235  10.244.62.204    5432      6001 /home/wuqw/cluster/dn1/   P Primary Normal
-    2  pekpopgsci00238  10.244.61.81     5432      6002 /home/wuqw/cluster/dn1/   S Standby Normal
+    
+[  Datanode State   ]
+    
+node                              node_ip         port                        instance                                   state
+    -----------------------------------------------------------------------------------------------------------------
+    1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
+    2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
     ```
-
+    
 -   Run the following commands on openGauss to generate the configuration file:
 
     ```

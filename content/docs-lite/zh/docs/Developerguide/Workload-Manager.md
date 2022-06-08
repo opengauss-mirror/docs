@@ -1,0 +1,7 @@
+# Workload Manager<a name="ZH-CN_TOPIC_0289899931"></a>
+
+-   **[WLM\_USER\_RESOURCE\_CONFIG](WLM_USER_RESOURCE_CONFIG.md)**  
+
+-   **[WLM\_USER\_RESOURCE\_RUNTIME](WLM_USER_RESOURCE_RUNTIME.md)**  
+
+

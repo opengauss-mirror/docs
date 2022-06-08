@@ -26,6 +26,10 @@ set(param value)
     -   浮点类：
 
         cost\_weight\_index、default\_limit\_rows、seq\_page\_cost、random\_page\_cost、cpu\_tuple\_cost、cpu\_index\_tuple\_cost、cpu\_operator\_cost、effective\_cache\_size
+        
+    -   枚举类型：
+    
+        try_vector_engine_strategy
 
 
 

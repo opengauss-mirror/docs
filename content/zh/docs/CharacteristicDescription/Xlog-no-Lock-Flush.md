@@ -1,8 +1,8 @@
-# Xlog no Lock Flush<a name="ZH-CN_TOPIC_0000001209477615"></a>
+# Xlog no Lock Flush<a name="ZH-CN_TOPIC_0000001209317775"></a>
 
 ## 可获得性<a name="section3480125215575"></a>
 
-本特性自openGauss 1.1.0 版本开始引入。
+本特性自openGauss 2.0.0 版本开始引入。
 
 ## 特性简介<a name="section5814521587"></a>
 

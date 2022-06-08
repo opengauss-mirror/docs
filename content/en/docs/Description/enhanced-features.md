@@ -1,4 +1,4 @@
-# Enhanced Features<a name="EN-US_TOPIC_0000001162578874"></a>
+# Enhanced Features<a name="EN-US_TOPIC_0289896516"></a>
 
 ## Data Partitioning<a name="en-us_topic_0283136537_section829318456016"></a>
 
@@ -320,7 +320,7 @@ Generated columns are calculated based on other columns in the table. Column gen
 
 ## Hash Index<a name="section16442152918400"></a>
 
-The performance of long-index column equality query is better than that of B-tree. Lock management is optimized to provide higher concurrency. Xlog protection is provided to prevent data loss.
+openGauss supports the hash index. The performance of long-index column equality query is better than that of B-tree. Lock management is optimized to provide higher concurrency. Xlog protection is provided to prevent data loss.
 
 ## State Cryptography Administration \(SCA\) Algorithms<a name="section661415915401"></a>
 
@@ -346,7 +346,7 @@ The syntax and semantics of the SQL engine are decoupled to implement plug-ins f
 
 -   The UCE fault detection and response are supported.
 
-    When a memory UCE error occurs, the SIGBUS signal sent by the system is detected, and the corresponding logs are displayed and the openGauss database status is changed according to the carried physical address. Then, the corresponding database process exits.
+    When a memory UCE error occurs, the SIGBUS signal sent by the system is detected, and the corresponding logs are displayed and the openGauss database state is changed according to the carried physical address. Then, the corresponding database process exits.
 
 -   Monitoring and automatic elimination of unique SQL statements are supported.
 

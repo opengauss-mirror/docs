@@ -14,105 +14,112 @@ pg_recvlogical [OPTION]...
 
 ## 参数说明<a name="section927885412229"></a>
 
--   逻辑复制槽行为参数：必选参数。
-    -   --create
+### 逻辑复制槽行为参数：必选参数。
 
-        创建一个新的逻辑复制槽。
+-   --create
 
-    -   --start
+    创建一个新的逻辑复制槽。
+    内部调用了pg_create_logical_replication_slot函数，调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs_role_replication的权限，且此函数目前只支持在主机调用。参考《开发者指南》pg_create_logical_replication_slot函数的说明。
 
-        启动该逻辑复制槽的流复制。
+-   --start
 
-    -   --drop
+    启动该逻辑复制槽的流复制。
 
-        删除一个逻辑复制槽。
+-   --drop
 
-
-
--   连接参数：
-    -   -d, --dbname=DBNAME
-
-        连接的目标数据库名。
-
-    -   -h, --host=HOSTNAME
-
-        连接的目标主机名或socket。
-
-    -   -p, --port=PORT
-
-        连接的目标DN的HA端口号。
-
-    -   -U, --username=NAME
-
-        连接目标库所使用的用户名。
-
-    -   -w, --no-password
-
-        不使用密码进行连接。
-
-    -   -W, --password
-
-        使用指定密码进行连接。
+    删除一个逻辑复制槽。
 
 
--   复制参数：
-    -   -F  --fsync-interval=INTERVAL
 
-        同步到目标输出文件的间隔时间。
+### 连接参数：
 
-        单位为秒，默认值10。
+-   -d, --dbname=DBNAME
 
-    -   -o, --option=NAME\[=VALUE\]
+    连接的目标数据库名。
 
-        指定向逻辑复制槽的输出插件添加参数。
+-   -h, --host=HOSTNAME
 
-        参数的取值为：include-xids、skip-empty-xacts、include-timestamp。
+    连接的目标主机名或socket。
 
-        详细请参见《开发者指南》中“SQL参考 \> 函数和操作符 \> 系统管理函数 \> 逻辑复制函数 \> options”章节。
+-   -p, --port=PORT
 
-    -   -P, --plugin=PLUGIN
+    连接的目标数据库节点的HA端口号。
 
-        指定使用的逻辑复制槽输出插件。
+-   -U, --username=NAME
 
-        默认值为mppdb\_decoding。
+    连接目标库所使用的用户名。
 
-    -   -s, --status-interval=INTERVAL
+-   -w, --no-password
 
-        发送的心跳包间隔时间。
+    不使用密码进行连接。
 
-        单位为秒，默认值10。
+-   -W, --password
 
-    -   -S, --slot=SLOT
+    使用指定密码进行连接。
 
-        指定逻辑复制槽的名称。
+### 复制参数：
 
-    -   -I, --startpos=PTR
+-   -F  --fsync-interval=INTERVAL
 
-        当使用已有逻辑复制槽时，指定初始复制的LSN位置。
+    同步到目标输出文件的间隔时间。
 
+    单位为秒，默认值10。
 
--   其它参数:
-    -   -f, --file=FILE
+-   -o, --option=NAME\[=VALUE\]
 
-        设置输出到指定文件。
+    指定向逻辑复制槽的输出插件添加参数。
 
-        直接使用“-”表示输出到stdout。
+    参数的取值为：include-xids、skip-empty-xacts、include-timestamp、only-local、force-binary、white-table-list、standby-connection、parallel-decode-num、decode-style、sending-batch。
 
-    -   -n, --no-loop
+    详细请参见《开发者指南》中“SQL参考 \> 函数和操作符 \> 系统管理函数 \> 逻辑复制函数\> pg_logical_slot_peek_changes > options”以及 “应用程序开发教程 > 基于JDBC开发 > 示例：逻辑复制代码示例”章节。
 
-        指定此参数，连接失败后不重试。
+-   -P, --plugin=PLUGIN
 
-    -   -v, --verbose
+    指定使用的逻辑复制槽输出插件。
 
-        输出详细信息。
+    默认值为mppdb\_decoding。
 
-    -   -V, --version
+-   -s, --status-interval=INTERVAL
 
-        输出版本信息，随后立即退出。
+    发送的心跳包间隔时间。
 
-    -   -?, --help
+    单位为秒，默认值10。
 
-        输出帮助信息，随后立即退出。
+-   -S, --slot=SLOT
+
+    指定逻辑复制槽的名称。
+
+-   -I, --startpos=PTR
+
+    当使用已有逻辑复制槽时，指定初始复制的LSN位置。
+
+### 其它参数:
+
+-   -f, --file=FILE
+
+    设置输出到指定文件。
+
+    直接使用“-”表示输出到stdout。
+
+-   -n, --no-loop
+
+    指定此参数，连接失败后不重试。
+
+-   -v, --verbose
+
+    输出详细信息。
+
+-   -V, --version
+
+    输出版本信息，随后立即退出。
+
+-   -?, --help
+
+    输出帮助信息，随后立即退出。
+    
+-   -r, --raw
+
+    在并行解码场景下，设置此参数表示不会将二进制格式或是批量发送的结果转化为文本格式，该参数仅供测试人员测量并行解码性能时使用。设置该参数后，二进制格式或批量发送的解码结果将为不可读的格式。
 
 
 

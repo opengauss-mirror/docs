@@ -1,8 +1,8 @@
-# plpython-fenced模式<a name="ZH-CN_TOPIC_0000001149506467"></a>
+# PLPython Fenced模式<a name="ZH-CN_TOPIC_0000001149506467"></a>
 
-在fenced模式中添加plpython非安全语言。在数据库编译时需要将Python集成进数据库中，在configure截断加入--with-python选项。同时也可指定安装plpython的Python路径，添加选项--with-includes='/python-dir=path'。
+在fenced模式中添加plpython非安全语言。在数据库编译时需要将python集成进数据库中，在configure阶段加入--with-python选项。同时也可指定安装plpython的python路径，添加选项--with-includes='/python-dir=path'。
 
-在启动数据库之前配置GUC参数unix\_socket\_directory，指定unix\_socket进程间通讯的文件地址。用户需要提前在user-set-dir-path路径下创建文件夹，并将该文件夹权限修改为可读可写可执行。
+在启动数据库之前配置GUC参数unix\_socket\_directory ，指定unix\_socket进程间通讯的文件地址。用户需要提前在user-set-dir-path下创建文件夹，并将文件夹权限修改为可读可写可执行状态。
 
 ```
 unix_socket_directory = '/user-set-dir-path'
@@ -10,7 +10,7 @@ unix_socket_directory = '/user-set-dir-path'
 
 配置完成，启动数据库。
 
-将plpython加入数据库编译，并设置好GUC参数unix\_socket\_directory后，在启动数据库的过程中，自动创建fenced-Master进程。在数据库不进行Python编译的情况下，fenced模式需要手动拉起master进程，在GUC参数设置完成后，输入创建master进程命令。
+将plpython加入数据库编译，并设置好GUC参数unix\_socket\_directory后，在启动数据库的过程中，自动创建fenced-Master进程。在数据库不进行python编译的情况下，fenced模式需要手动拉起master进程，在GUC参数设置完成后，输入创建master进程命令。
 
 启动fenced-Master进程，命令为：
 
@@ -22,21 +22,25 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
 
 ## 使用指导<a name="section823619213143"></a>
 
--   创建extension  
+-   创建extension
 
-    - 当编译的plpython为Python2时：
+    -   当编译的plpython为python2时：
 
         ```
         openGauss=# create extension plpythonu;
         CREATE EXTENSION
         ```
-    - 当编译的plpython为Python3时：
+
+    -   当编译的plpython为python3时：
 
         ```
         openGauss=# create extension plpython3u;
         CREATE EXTENSION
         ```
-    下面示例是以Python2为例。
+
+    下面示例是以python2为例。
+
+
 -   创建plpython-fenced UDF
 
     ```

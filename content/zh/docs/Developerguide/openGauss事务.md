@@ -107,9 +107,27 @@
 
 **参数说明：**指定节点名称。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。此参数修改后会导致连接数据库实例失败，不建议进行修改。
+该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+在备机请求主机进行日志复制时，如果application\_name参数没有设置，那么该参数会被用来作为备机在主机上的流复制槽名字。该流复制槽的命名方式为 "该参数值\_备机ip\_备机port"。其中，备机ip和备机port取自replconninfo参数中指定的备机ip和端口号。该流复制槽最大长度为61个字符，如果拼接后的字符串超过该长度，则会使用截断后的pgxc\_node\_name进行拼接，以保证流复制槽名字长度小于等于61个字符。
+
+>![](C:/Users/liyang/Desktop/新建文件夹/07 开发者指南_1_/public_sys-resources/icon-caution.gif) **注意：** 
+>此参数修改后会导致连接数据库实例失败，不建议进行修改。
 
 **取值范围：**字符串
 
 **默认值：**当前节点名称
+
+## enable\_defer\_calculate\_snapshot<a name="section141811431171212"></a>
+
+**参数说明**：延迟计算快照的xmin和oldestxmin，执行1000个事务或者间隔1s才触发计算，设置为on时可以在高负载场景下减少计算快照的开销，但是会导致oldestxmin推进较慢，影响垃圾元组回收，设置为off时xmin和oldestxmin可以实时推进，但是会增加计算快照时的开销。
+
+该参数属于SIGHUP类型参数，改请参考[表2](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)进行设置
+
+**取值范围：**布尔型。
+
+-   on表示延迟计算快照xmin和oldestxmin。
+-   off表示实时计算快照xmin和oldestxmin**。**
+
+**默认值：**on
 

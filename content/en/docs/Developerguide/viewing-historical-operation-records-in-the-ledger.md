@@ -16,7 +16,7 @@
 
     This table contains 11 fields. For details about the meaning of each field, see  [GS\_GLOBAL\_CHAIN](en-us_topic_0000001100127692.md).
 
--   To query the user history table in  **BLOCKCHAIN**  mode, 
+-   To query the user history table in  **BLOCKCHAIN**  schema, 
 
     for example, the schema of the user table is  **ledgernsp**, the table name is  **usertable**, and the name of the corresponding user history table is  **blockchain.ledgernsp\_usertable\_hist**, you can run the following command:
 
@@ -44,7 +44,7 @@
     If information similar to the following is displayed, the connection succeeds:
 
     ```
-    gsql ((GaussDB Kernel VxxxRxxxCxx build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
+    gsql ((openGauss x.x.x build 290d125f) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     

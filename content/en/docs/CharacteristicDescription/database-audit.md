@@ -2,7 +2,7 @@
 
 ## Availability<a name="section10188029"></a>
 
-This feature is available as of V300R002C00.
+This feature is available as of openGauss 1.1.0.
 
 ## Introduction<a name="section24583399"></a>
 

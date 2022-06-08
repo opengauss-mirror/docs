@@ -1,6 +1,15 @@
-# Development Based on libpq<a name="EN-US_TOPIC_0244721240"></a>
+# Development Based on libpq<a name="EN-US_TOPIC_0289900740"></a>
 
-openGauss does not verify the use of libpq interfaces in application development. You are not advised to use this set of interfaces for application development, because underlying risks probably exist. You can use the ODBC or JDBC interface instead.
+**libpq**  is a C application programming interface to openGauss.  **libpq**  contains a set of library functions that allow client programs to send query requests to the openGauss servers and obtain query results. It is also the underlying engine of other openGauss application interfaces, such as ODBC. This section provides two examples to show how to write code using  **libpq**.
 
- 
+-   **[Dependent Header Files of libpq](dependent-header-files-of-libpq.md)**  
+
+-   **[Development Process](development-process.md)**  
+
+-   **[Example](example.md)**  
+
+-   **[libpq API Reference](libpq-api-reference.md)**  
+
+-   **[Link Parameters](link-parameters.md)**  
+
 

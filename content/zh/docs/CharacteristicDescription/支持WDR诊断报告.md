@@ -1,4 +1,4 @@
-# 支持WDR诊断报告<a name="ZH-CN_TOPIC_0000001135302869"></a>
+# 支持WDR诊断报告<a name="ZH-CN_TOPIC_0000001105235298"></a>
 
 ## 可获得性<a name="section11239174173316"></a>
 
@@ -15,9 +15,14 @@ WDR报告提供数据库性能诊断报告，该报告基于基线性能数据�
 
 ## 特性描述<a name="section49337943415"></a>
 
-WDR（Workload Diagnosis Report）基于两次不同时间点系统的性能快照数据，生成这两个时间点之间的性能表现报表，用于诊断数据库内核的性能故障。
+WDR\(Workload Diagnosis Report\)基于两次不同时间点系统的性能快照数据，生成这两个时间点之间的性能表现报表，用于诊断数据库内核的性能故障。
 
 使用generate\_wdr\_report\(...\) 可以生成基于两个性能快照的性能报告。
+
+WDR性能快照数据存储在postgres库的snapshot schema下，默认的采集和保存策略为：
+
+-   每小时采集一个快照\(wdr\_snapshot\_interval=1h\)。
+-   保留8天\(wdr\_snapshot\_retention\_days=8\)。
 
 WDR主要依赖两个组件：
 
@@ -35,13 +40,13 @@ WDR主要依赖两个组件：
 </thead>
 <tbody><tr id="row1189517019163"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p16896205162"><a name="p16896205162"></a><a name="p16896205162"></a>Database Stat</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p7110144513222"><a name="p7110144513222"></a><a name="p7110144513222"></a>主要用于评估当前数据库上的负载和IO状况，负载和IO状况是衡量TP系统最重要的特性。</p>
+<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p7110144513222"><a name="p7110144513222"></a><a name="p7110144513222"></a>主要用于评估当前数据库上的负载，IO状况，负载和IO是衡量TP系统最最要的特性。</p>
 <p id="p15896180171619"><a name="p15896180171619"></a><a name="p15896180171619"></a>包含当前连接到该数据库的session，提交、回滚的事务数，读取的磁盘块的数量，高速缓存中已经发现的磁盘块的次数，通过数据库查询返回、抓取、插入、更新、删除的行数，冲突、死锁发生的次数，临时文件的使用量，IO读写时间等。</p>
 </td>
 </tr>
 <tr id="row589614018168"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p2896170181618"><a name="p2896170181618"></a><a name="p2896170181618"></a>Load Profile</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p2089612013161"><a name="p2089612013161"></a><a name="p2089612013161"></a>从时间、IO、事务、SQL几个维度评估当前系统负载的表现。</p>
+<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p2089612013161"><a name="p2089612013161"></a><a name="p2089612013161"></a>从时间，IO，事务，SQL几个维度评估当前系统负载的表现。</p>
 <p id="p161691350122212"><a name="p161691350122212"></a><a name="p161691350122212"></a>包含作业运行elapse time、CPU time，事务日质量，逻辑和物理读的量，读写IO次数、大小，登入登出次数，SQL、事务执行量，SQL P80、P95响应时间等。</p>
 </td>
 </tr>
@@ -116,8 +121,8 @@ WDR主要依赖两个组件：
 </tr>
 <tr id="row233424816311"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p133474810318"><a name="p133474810318"></a><a name="p133474810318"></a>Utility status</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p178211436699"><a name="p178211436699"></a><a name="p178211436699"></a>用于诊断后端作业性能的诊断。</p>
-<p id="p1334134843114"><a name="p1334134843114"></a><a name="p1334134843114"></a>包含页面操作，复制等后端操作的性能。</p>
+<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p178211436699"><a name="p178211436699"></a><a name="p178211436699"></a>用于诊断后台任务性能。</p>
+<p id="p1334134843114"><a name="p1334134843114"></a><a name="p1334134843114"></a>包含复制等后台任务的性能。</p>
 </td>
 </tr>
 <tr id="row123341448113113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p11334848143110"><a name="p11334848143110"></a><a name="p11334848143110"></a>Object stats</p>

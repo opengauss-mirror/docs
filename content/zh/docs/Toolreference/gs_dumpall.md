@@ -33,7 +33,7 @@ gs_dumpall [OPTION]...
 
 ## 参数说明<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_s8a1ffa824f1b4371a430896ee8fd2020"></a>
 
-通用参数：
+### 通用参数：
 
 -   -f, --filename=FILENAME
 
@@ -55,8 +55,7 @@ gs_dumpall [OPTION]...
 
     显示gs\_dumpall命令行参数帮助，然后退出。
 
-
-转储参数：
+### 转储参数：
 
 -   -a, --data-only
 
@@ -114,9 +113,21 @@ gs_dumpall [OPTION]...
 
     发出INSERT命令（而非COPY命令）转储数据。这会导致恢复缓慢。注意：如果重排列顺序，可能会导致恢复整个失败。--column-inserts选项更加安全，虽然可能更慢些。
 
+-    --no-publications
+
+    不转储发布。
+
 -   --no-security-labels
 
     该参数为扩展预留接口，不建议使用。
+
+-    --no-subscriptions
+
+    不转储订阅。
+
+    ![](public_sys-resources/icon-note.gif) **说明：**
+
+    -   当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
 
 -   --no-tablespaces
 
@@ -180,6 +191,10 @@ gs_dumpall [OPTION]...
 -   --parallel-jobs
 
     指定备份进程并发数，取值范围为1\~1000。
+    
+-    --pipeline
+
+    使用管道传输密码，禁止在终端使用。
 
 
 ![](public_sys-resources/icon-note.gif) **说明：**
@@ -204,7 +219,7 @@ gs_dumpall [OPTION]...
 
 -   --parallel-jobs和-f/--file必须一起使用。
 
-连接参数：
+### 连接参数：
 
 -   -h, --host
 

@@ -6,6 +6,8 @@ A  **build.sh**  script is provided for compiling openGauss and generating the i
 - [Preparation Before Compiling](#preparation-before-compiling)
 - [Software Compilation and Installation](#software-compilation-and-installation)
 - [Compiling the Installation Package](#compiling-the-installation-package)
+- [Verification After Build](#Verification After Build<a name="EN-US_TOPIC_0000001267744405"></a>)
+- [openGauss-OM Build](#openGauss-OM Build<a name="EN-US_TOPIC_0000001223104256"></a>)
 
 <!-- /TOC -->
 
@@ -36,7 +38,7 @@ The git and git-lfs have been installed and configured on the local host.
     >-   **openGauss-server**: openGauss code repository.  
     >-   **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.  
     >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#Compiling Open-source Software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.  
-    >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-third\_party\_binarylibs.tar.gz**.  
+    >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-third\_party\_binarylibs.tar.gz**.  
     >    After the download is complete, decompress the package and rename the folder to  **binarylibs**.  
 
 2.  When the progress of each download reaches 100%, the download is successful.
@@ -49,7 +51,7 @@ Before compiling the openGauss, compile and build the open-source and third-part
 
 Since this step takes a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**. You can download the package by referring to  [Downloading Code](#Downloading Code).
 
-**Table  1**  Requirements for the openGauss open-source and third-party software before compilation
+**Table  1**  openGauss open-source third-party software required before build
 
 <a name="en-us_topic_0283136302_table1212531681911"></a>
 
@@ -124,14 +126,9 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p07251739142211"><a name="p07251739142211"></a><a name="p07251739142211"></a>1.13.4</p>
 </td>
 </tr>
-<tr id="row1614183517222"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1714103562214"><a name="p1714103562214"></a><a name="p1714103562214"></a>byacc</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13141735182220"><a name="p13141735182220"></a><a name="p13141735182220"></a>1.9</p>
-</td>
-</tr>
 <tr id="row8361101702315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13361117192311"><a name="p13361117192311"></a><a name="p13361117192311"></a>cmake</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p63616179237"><a name="p63616179237"></a><a name="p63616179237"></a>3.19.2</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p63616179237"><a name="p63616179237"></a><a name="p63616179237"></a>3.18</p>
 </td>
 </tr>
 <tr id="row6332136277"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p83339361373"><a name="p83339361373"></a><a name="p83339361373"></a>diffutils</p>
@@ -157,6 +154,7 @@ Since this step takes a long time, we have compiled and built  **binarylibs**  u
 </tbody>
 </table>
 
+
 Prepare GCC 7.3 before building the third-party libraries. You are advised to use the released and built third-party library GCC and configure environment variables.
 
 After installing the software listed in  [Table 1](#en-us_topic_0283136302_table1212531681911), point the default Python version to  **python3.x**  and perform the following operations:
@@ -168,16 +166,16 @@ After installing the software listed in  [Table 1](#en-us_topic_0283136302_table
    [user@linux build]$ sh build_all.sh
    ```
 
-2. After the preceding commands are executed, the open-source and third-party software required for openGauss compilation is automatically generated. To generate any open-source and third-party software independently, go to the corresponding directory and run the  **build.sh**  script. For example:
+2. After the preceding commands are executed, the open-source third-party software required for openGauss build is automatically generated. To generate any open-source third-party software independently, go to the corresponding directory and run the  **build.sh**  script. For example:
 
    ```
    [user@linux sda]$ cd /sda/openGauss-third_party/dependency/openssl
    [user@linux openssl]$ sh build.sh
    ```
 
-   The OpenSSL is generated.
+   The openssl is generated.
 
-   >![](C:/Users/gongsiyi1/Desktop/openGauss开源文档0115/en/08 openGauss Compilation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+3. >![](public_sys-resources/icon-note.gif) **NOTE:** 
    >For error logs, you can view the corresponding log in the build directory and the log in the corresponding module. For example, you can view the OpenSSL compilation and installation logs in the  **dependency**  module.
    >
    >-   /sda/openGauss-third\_party/build/dependency\_build.log
@@ -269,7 +267,7 @@ The following table describes the parameters.
 
 ## Software Compilation and Installation
 
-Software compilation and installation are to compile code to generate software and install the software on a computer. The one-click compilation script  **build.sh**  is provided. You can also manually configure environment variables. The two methods are described below in this section.
+Software build and installation are to build code to generate software and install the software on a computer. The one-click build script  **build.sh**  is provided. You can also manually configure environment variables. The two methods are described below in this section.
 
 ### Prerequisites
 
@@ -336,7 +334,7 @@ Software compilation and installation are to compile code to generate software a
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   The command output indicates the OSs supported by the openGauss. The OSs supported by the openGauss are centos7.6\_x86\_64 and openeuler\_aarch64.  
+    >-   The command output indicates the OSs supported by the openGauss. The OSs supported by the openGauss are centos7.6\_x86\_64、openeuler\_aarch64 and   openeuler\_x86\_64.  
     >-   If  **Failed**  or another version is displayed, the openGauss does not support the current operating system.  
 
 3.  Configure environment variables, add  **\_\_\_\_**  based on the code download location, and replace  **\*\*\***  with the result obtained in  [Step 2](#li1666842982511).
@@ -352,35 +350,37 @@ Software compilation and installation are to compile code to generate software a
     export PATH=$GAUSSHOME/bin:$GCC_PATH/gcc/bin:$PATH
     ```
 
-4.  Select a version and configure it.
+4. Select a version and configure it.
 
-    **debug**  version:
+   **debug**  version:
 
-    ```
-    ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib
-    ```
+   ```
+   ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib
+   ```
 
-    **release**  version:
+   **release**  version:
 
-    ```
-    ./configure --gcc-version=7.3.0 CC=g++ CFLAGS="-O2 -g3" --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-thread-safety --with-readline --without-zlib
-    ```
+   ```
+   ./configure --gcc-version=7.3.0 CC=g++ CFLAGS="-O2 -g3" --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-thread-safety --with-readline --without-zlib
+   ```
 
-    **memcheck**  version:
+   **memcheck**  version:
 
-    ```
-    ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib --enable-memory-check
-    ```
+   ```
+   ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib --enable-memory-check
+   ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >1.  _\[debug | release | memcheck\]_  indicates that three target versions are available. The three target versions are as follows:  
-    >    -   **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.  
-    >    -   **debug**: indicates that a binary program of the debug version is generated. During compilation of this version, the kernel code debugging function is added, which is usually used in the development self-test environment.  
-    >    -   **memcheck**: indicates that a binary program of the memcheck version is generated. During compilation of this version, the ASAN function is added based on the debug version to locate memory problems.  
-    >2.  On the ARM-based platform,  **-D\_\_USE\_NUMA**  needs to be added to  **CFLAGS**.  
-    >3.  On the  **ARMv8.1**  platform or a later version \(for example, Kunpeng 920\),  **-D\_\_ARM\_LSE**  needs to be added to  **CFLAGS**.  
-    >4.  If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the  **--3rd**  parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.  
-
+   >![](public_sys-resources/icon-note.gif) **NOTE:**   
+   >
+   >- _\[debug | release | memcheck\]_  indicates that three target versions are available. The three target versions are as follows:
+   >   -   **release**: indicates that the binary program of the release version is generated. During this version build, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.
+   >   -   **debug**: indicates that a binary program of the debug version is generated. During this version build, the kernel code debugging function is added, which is usually used in the development self-test environment.
+   >   -   **memcheck**: indicates that a binary program of the memcheck version is generated. During this version build, the ASAN function is added based on the debug version to locate memory problems.
+   >- On the ARM-based platform,  **-D\_\_USE\_NUMA**  needs to be added to  **CFLAGS**.
+   >- On the  **ARMv8.1**  platform or a later version \(for example, Kunpeng 920\),  **-D\_\_ARM\_LSE**  needs to be added to  **CFLAGS**.
+   >- If  **binarylibs**  is moved to  **openGauss-server**  or a soft link to  **binarylibs**  is created in  **openGauss-server**, you do not need to specify the  **--3rd**  parameter. However, if you do so, please note that the file is easy to be deleted by the  **git clean**  command.
+   >- To use the MOT, you need to add  **--enable-mot**  to the command.
+   
 5.  Run the following commands to compile openGauss:
 
     ```
@@ -437,6 +437,81 @@ To compile the installation package is to compile the code and generate the soft
     success!
     ```
 
-    -   The generated installation package is stored in the  **./output**  directory.
-    -   Compilation log:**./build/script/makemppdb_pkg.log**
-    -   Installation package packaging log: **./build/script/make_package.log**
+    -   The build and packaging log file is stored in  **./build/script/makemppdb\_pkg.log**.
+
+## Verification After Build<a name="EN-US_TOPIC_0000001267744405"></a>
+
+After the build is complete, perform the following steps to verify openGauss:
+
+1. Run the following command to create user  **omm**  as user  **root**:
+
+   ```
+   [user@linux sda]# useradd omm -g dbgrp
+   [user@linux sda]# passwd omm
+   ```
+
+2. Add the following environment variables to  **\~/.bashrc**  as user  **omm**:
+
+   ```
+   export GAUSSHOME=/root/openGauss-server/dest/ ## Path of the build result. You can change the path as required.
+   export LD_LIBRARY_PATH=$GAUSSHOME/lib:$LD_LIBRARY_PATH
+   export PATH=$GAUSSHOME/bin:$PATH
+   ```
+
+   Run the following command for environment variables to take effect:
+
+   ```
+     [user@linux sda]$ source ~/.bashrc
+   ```
+
+3. Create the data directory and log directory.
+
+   ```
+   [user@linux sda]$ mkdir ~/data
+   [user@linux sda]$ mkdir ~/log
+   [user@linux sda]$ chown -R omm:dbgrp /root/openGauss-server
+   ```
+
+4. Initialize the database.
+
+   ```
+   [user@linux sda]$ gs_initdb -D /home/omm/data --nodename=db1 
+   ```
+
+5. Start the database.
+
+   ```
+   [user@linux sda]$ gs_ctl start -D /home/omm/data -Z single_node -l /home/omm/log/opengauss.log
+   ```
+
+   After the database is started, you can run the  **ps -ef | grep gaussdb**  command to check the database process status, run the  **gs\_ctl query -D /home/omm/data**  command to check the database status, or run the  **gsql -d postgres**  command to enter the  **gsql**  command line to view database information.
+
+## openGauss-OM Build<a name="EN-US_TOPIC_0000001223104256"></a>
+
+After the openGauss-server code repository is built using the source code, gs\_om does not exist. To use gs\_om, you need to compile openGauss-OM separately, copy the built  **openGauss-**_xxx_**-om.tar.gz**  package to the directory where the openGauss-server installation package is located, and install the openGauss-OM in the same way as the enterprise edition.
+
+## Procedure<a name="section1794492142011"></a>
+
+1. Run the  **git clone**  command to clone the OM code repository:
+
+   ```
+   [user@linux sda]$ git clone https://gitee.com/opengauss/openGauss-OM.git
+   ```
+
+2. Run the following build command:
+
+   ```
+   [user@linux sda]$ cd openGauss-OM
+   [user@linux sda]$ chmod +x build.sh
+   [user@linux sda]$ export BINARYLIBS_PATH=/root/binarylibs (Enter the directory generated after the third-party software package is decompressed.)
+   [user@linux sda]$ ./build.sh -3rd $BINARYLIBS_PATH
+   ```
+
+3. The Gauss-OM is built successfully if the following information is displayed:
+
+   ```
+   ROOT_DIR: /root/binarylibs
+   Everything is ready.
+   success!
+   ```
+

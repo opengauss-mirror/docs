@@ -33,6 +33,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     | {REPLICATION | NOREPLICATION}
     | {INDEPENDENT | NOINDEPENDENT}
     | {VCADMIN | NOVCADMIN}
+    | {PERSISTENCE | NOPERSISTENCE}
     | CONNECTION LIMIT connlimit
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
@@ -75,7 +76,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     -   密码也可以是符合格式要求的密文字符串，这种情况主要用于用户数据导入场景，不推荐用户直接使用。如果直接使用密文密码，用户需要知道密文密码对应的明文，并且保证明文密码复杂度，数据库不会校验密文密码复杂度，直接使用密文密码的安全性由用户保证。
     -   创建角色时，应当使用双引号或单引号将用户密码括起来。
 
-    取值范围：字符串。
+    取值范围：不为空的字符串。
 
 -   **EXPIRED**
 
@@ -94,6 +95,24 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     决定一个新角色是否为“系统管理员”，具有SYSADMIN属性的角色拥有系统最高权限。
 
     缺省为NOSYSADMIN。
+
+-   **MONADMIN | NOMONADMIN**
+
+    定义角色是否是监控管理员。
+
+    缺省为NOMONADMIN。
+
+- **OPRADMIN | NOOPRADMIN**
+
+    定义角色是否是运维管理员。
+
+    缺省为NOOPRADMIN。
+
+- **POLADMIN | NOPOLADMIN**
+
+    定义角色是否是安全策略管理员。
+
+    缺省为NOPOLADMIN。
 
 -   **AUDITADMIN | NOAUDITADMIN**
 
@@ -147,13 +166,22 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     -   系统管理员和拥有CREATEROLE属性的安全管理员无权修改INDEPENDENT角色的数据库口令，INDEPENDENT角色需管理好自身口令，口令丢失无法重置。
     -   管理员属性用户不允许定义修改为INDEPENDENT属性。
 
--   **CONNECTION LIMIT**
+- **VCADMIN | NOVCADMIN**
+
+    该版本没有实际意义。
+
+- **PERSISTENCE | NOPERSISTENCE**
+
+    定义永久用户。仅允许初始用户创建、修改和删除具有PERSISTENCE属性的永久用户。
+
+- **CONNECTION LIMIT**
 
     声明该角色可以使用的并发连接数量。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   系统管理员不受此参数的限制。
-    
+
     >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
 
     取值范围：整数，\>=-1，缺省值为-1，表示没有限制。

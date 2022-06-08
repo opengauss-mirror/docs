@@ -1,6 +1,6 @@
 # Database Object Naming Conventions<a name="EN-US_TOPIC_0000001149627969"></a>
 
-The name of a database object must meet the following requirements: The name of a non-time series table ranges from 1 to 63 characters and that of a time series table ranges from 1 to 53 characters. The name must start with a letter or underscore \(\_\), and can contain letters, digits, underscores \(\_\), dollar signs \($\), and number signs \(\#\).
+The name of a database object must meet the following requirements: The name of a non-time series table ranges from 1 to 63 bytes and that of a time series table ranges from 1 to 53 characters. The name must start with a letter or underscore \(\_\), and can contain letters, digits, underscores \(\_\), dollar signs \($\), and number signs \(\#\).
 
 -   \[Proposal\] Do not use reserved or non-reserved keywords to name database objects.
 
@@ -20,5 +20,7 @@ The name of a database object must meet the following requirements: The name of 
     -   Unlogged tables are named in the format of  **ul\_**_Suffix_.
     -   Foreign tables are named in the format of  **f\_**_Suffix_.
     -   Do not create database objects whose names start with  **redis\_**.
+    -   Do not create database objects whose names start with  **mlog\_**  or  **matviewmap\_**.
 
+-   \[Proposal\] The name of a non-time series table object shall not exceed 63 bytes. If the length exceeds this value, the kernel truncates the table name. As a result, the table name is inconsistent with the configured name. In different character sets, characters may be truncated and unexpected characters may appear.
 

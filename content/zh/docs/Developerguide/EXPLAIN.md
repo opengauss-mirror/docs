@@ -249,8 +249,47 @@ openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHE
                      Filter: (ca_address_sk < 10000)
 (6 rows)
 
+
+--创建一个二级分区表。
+openGauss=# CREATE TABLE range_list
+openGauss-# (
+openGauss(#     month_code VARCHAR2 ( 30 ) NOT NULL ,
+openGauss(#     dept_code  VARCHAR2 ( 30 ) NOT NULL ,
+openGauss(#     user_no    VARCHAR2 ( 30 ) NOT NULL ,
+openGauss(#     sales_amt  int
+openGauss(# )
+openGauss-# PARTITION BY RANGE (month_code) SUBPARTITION BY LIST (dept_code)
+openGauss-# (
+openGauss(#   PARTITION p_201901 VALUES LESS THAN( '201903' )
+openGauss(#   (
+openGauss(#     SUBPARTITION p_201901_a values ('1'),
+openGauss(#     SUBPARTITION p_201901_b values ('2')
+openGauss(#   ),
+openGauss(#   PARTITION p_201902 VALUES LESS THAN( '201910' )
+openGauss(#   (
+openGauss(#     SUBPARTITION p_201902_a values ('1'),
+openGauss(#     SUBPARTITION p_201902_b values ('2')
+openGauss(#   )
+openGauss(# );
+CREATE TABLE
+
+--执行带有二级分区表的查询语句。
+--Iterations 和 Sub Iterations分别标识遍历了几个一级分区和二级分区。
+--Selected Partitions标识哪些一级分区被实际扫描，Selected Subpartitions: (p:s)标识第p个一级分区下s个二级分区被实际扫描，如果一级分区下所有二级分区都被扫描则s显示为ALL。
+openGauss=# EXPLAIN SELECT * FROM range_list WHERE dept_code = '1';
+                                  QUERY PLAN
+-------------------------------------------------------------------------------
+ Partition Iterator  (cost=0.00..13.81 rows=2 width=238)
+   Iterations: 2, Sub Iterations: 2
+   ->  Partitioned Seq Scan on range_list  (cost=0.00..13.81 rows=2 width=238)
+         Filter: ((dept_code)::text = '1'::text)
+         Selected Partitions:  1..2
+         Selected Subpartitions:  1:1, 2:1
+(6 rows)
+
 --删除表tpcds.customer_address_p1。
 openGauss=# DROP TABLE tpcds.customer_address_p1;
+
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>

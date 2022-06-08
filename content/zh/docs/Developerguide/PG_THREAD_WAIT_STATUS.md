@@ -298,9 +298,9 @@ wait\_status列的等待状态有以下状态。
 </div>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row1865282815271"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p16522280274"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p16522280274"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p16522280274"></a>Sort | Sort - write file</p>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row1865282815271"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p16522280274"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p16522280274"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p16522280274"></a>Sort | Sort - [fetch tuple | write file]</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p19652182882719"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p19652182882719"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p19652182882719"></a>当前是Sort算子做排序，write file表示Sort算子正在将数据写入磁盘。</p>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p19652182882719"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p19652182882719"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p19652182882719"></a>当前是Sort算子做排序，fetch tuple表示Sort算子正在获取tuple，write file表示Sort算子正在将数据写入磁盘。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row1865242818275"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1965218287273"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1965218287273"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1965218287273"></a>Material | Material - write file</p>

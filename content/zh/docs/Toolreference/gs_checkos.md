@@ -6,9 +6,15 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
 ## 前提条件<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_scab2909286904a92959e438b7ac1b8c7"></a>
 
--   当前的硬件和网络环境正常。
--   各主机间root互信状态正常。
--   只能使用root用户执行gs\_checkos命令。
+- 当前的硬件和网络环境正常。
+
+- 各主机间root互信状态正常。
+
+- 只能使用root用户执行gs\_checkos命令。
+
+  ![](public_sys-resources/icon-note.gif) **说明：**
+
+  该工具不支持独立调用，出于安全考虑，企业版安装方式下，前置完成后会自动删除。
 
 ## 语法<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>
 

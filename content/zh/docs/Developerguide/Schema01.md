@@ -1,8 +1,8 @@
 # Schema<a name="ZH-CN_TOPIC_0000001190922647"></a>
 
-GaussDB KernelopenGauss的Schema如下表所示。
+openGauss的Schema如下表所示。
 
-**表 1**  GaussDB KernelopenGauss支持的Schema
+**表 1**  openGauss支持的Schema
 
 <a name="table167371825175015"></a>
 <table><thead align="left"><tr id="row1737325195017"><th class="cellrowborder" valign="top" width="18.18%" id="mcps1.2.3.1.1"><p id="p2737152535018"><a name="p2737152535018"></a><a name="p2737152535018"></a>Schema名称</p>
@@ -43,7 +43,7 @@ GaussDB KernelopenGauss的Schema如下表所示。
 </tr>
 <tr id="row14888175410588"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p12888125417587"><a name="p12888125417587"></a><a name="p12888125417587"></a>sqladvisor</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p168881754115817"><a name="p168881754115817"></a><a name="p168881754115817"></a>用于分布列推荐，集中式openGauss不可用。</p>
+<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p168881754115817"><a name="p168881754115817"></a><a name="p168881754115817"></a>用于分布列推荐，openGauss不可用。</p>
 </td>
 </tr>
 <tr id="row18692185181917"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p6693651191"><a name="p6693651191"></a><a name="p6693651191"></a>sys</p>

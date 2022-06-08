@@ -6,14 +6,24 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >root用户互信可能会存在安全隐患，因此建议用户在使用完成后，立即删除各主机上root用户的互信。
+>
+>企业版安装场景下，出于安全考虑，预安装完成后会自动删除改工具。
+>使用gs\_sshexkey工具建立互信成功之后，会在用户目录下面生成gaussdb\_tmp目录，该目录用于存放ssh-agent进程文件gauss\_socket\_tmp和加密私钥的密码短语文件（随机生成32位密码短语，通过encrypt工具加密），同时用户下会拉起两个ssh-agent进程，此进程用于挂载私钥自动输入对应的密码短语。进程拉起完毕之后，需要source用户的环境变量，才能使互信功能生效。
 
 ## 前提条件<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_s3e447292529e46aabd04269511e410b2"></a>
 
--   确保ssh服务打开。
--   确保ssh端口不会被防火墙关闭。
--   确保xml文件中各主机名称和IP配置正确。
--   确保所有机器节点间网络畅通。
--   如果为普通用户建立互信，需要提前在各主机创建相同用户并设置密码。
+- 确保ssh服务打开。
+
+- 确保ssh端口不会被防火墙关闭。
+
+- 确保xml文件中各主机名称和IP配置正确。
+
+- 确保所有机器节点间网络畅通。
+
+- 如果为普通用户建立互信，需要提前在各主机创建相同用户并设置密码。
+
+- 执行命令前，需要检查是否所有集群节点都支持expect命令，如果不支持请自行下载expect工具，建议使用expect version 5.45。
+
 -   如果各主机安装并启动了SELinux服务，需要确保/root和/home目录安全上下文为默认值（root目录：system\_u:object\_r:home\_root\_t:s0，home目录：system\_u:object\_r:admin\_home\_t:s0）或者关闭掉SELinux服务。
 
     检查系统SELinux状态的方法：执行命令getenforce，如果返回结果是Enforcing ，说明SELinux安装并启用。
@@ -67,11 +77,7 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
     主机列表，列出所有需要建立互信主机的IP。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >确保hostfile文件中只配置正确的主机IP，不包含其它信息。
-
--   -h
-
-    主机IP列表，多个节点之间用英文逗号隔开。
+    >确保hostfile文件中只配置主机IP（每行只写一个IP），不包含其它信息。
 
 -   -l
 
@@ -100,61 +106,33 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
 
 如下是为root用户建立互信的示例。仅支持交互式输入密码。
 
--   用户密码相同情况下，交互式模式使用以下命令建立互信。
+- 用户密码相同情况下，交互式模式使用以下命令建立互信。
 
-    ```
-    gs_sshexkey -f /opt/software/hostfile
-    Please enter password for current user[root].
-    Password: 
-    Checking network information.
-    All nodes in the network are Normal.
-    Successfully checked network information.
-    Creating SSH trust.
-    Creating the local key file.
-    Appending local ID to authorized_keys.
-    Successfully appended local ID to authorized_keys.
-    Updating the known_hosts file.
-    Successfully updated the known_hosts file.
-    Appending authorized_key on the remote node.
-    Successfully appended authorized_key on all remote node.
-    Checking common authentication file content.
-    Successfully checked common authentication content.
-    Distributing SSH trust file to all node.
-    Successfully distributed SSH trust file to all node.
-    Verifying SSH trust on all hosts.
-    Successfully verified SSH trust on all hosts.
-    Successfully created SSH trust.
-    ```
+  ```
+  gs_sshexkey -f /opt/software/hostfile
+  Please enter password for current user[root].
+  Password: 
+  Checking network information.
+  All nodes in the network are Normal.
+  Successfully checked network information.
+  Creating SSH trust.
+  Creating the local key file.
+  Appending local ID to authorized_keys.
+  Successfully appended local ID to authorized_keys.
+  Updating the known_hosts file.
+  Successfully updated the known_hosts file.
+  Appending authorized_key on the remote node.
+  Successfully appended authorized_key on all remote node.
+  Checking common authentication file content.
+  Successfully checked common authentication content.
+  Distributing SSH trust file to all node.
+  Successfully distributed SSH trust file to all node.
+  Verifying SSH trust on all hosts.
+  Successfully verified SSH trust on all hosts.
+  Successfully created SSH trust.
+  ```
 
--   用户密码不同情况下，交互式模式使用以下命令建立互信。
+  
 
-    ```
-    gs_sshexkey -f /opt/software/hostfile
-    Please enter password for current user[root].
-    Password: 
-    Notice :The password of some nodes is incorrect.
-    Please enter password for current user[root] on the node[10.180.10.112].
-    Password: 
-    Please enter password for current user[root] on the node[10.180.10.113].
-    Password: 
-    Checking network information.
-    All nodes in the network are Normal.
-    Successfully checked network information.
-    Creating SSH trust.
-    Creating the local key file.
-    Appending local ID to authorized_keys.
-    Successfully appended local ID to authorized_keys.
-    Updating the known_hosts file.
-    Successfully updated the known_hosts file.
-    Appending authorized_key on the remote node.
-    Successfully appended authorized_key on all remote node.
-    Checking common authentication file content.
-    Successfully checked common authentication content.
-    Distributing SSH trust file to all node.
-    Successfully distributed SSH trust file to all node.
-    Verifying SSH trust on all hosts.
-    Successfully verified SSH trust on all hosts.
-    Successfully created SSH trust.
-    ```
 
 

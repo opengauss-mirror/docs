@@ -1,25 +1,30 @@
+
 # PG\_SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001197270702"></a>
 
-系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。
+系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。需要有系统管理员权限才可以访问此系统表。
 
-和大部分系统表不同，pg\_subscription在集群的所有数据库之间共享，每个集群只有一份pg\_subscription拷贝，而不是每个数据库一份。
+和大部分系统表不同，pg\_subscription在数据库实例的所有数据库之间共享，即在每个节点上有只有一份pg\_replication\_origin，而不是每个数据库一份。
 
 **表 1**  PG\_SUBSCRIPTION字段
 
 <a name="table10398182255119"></a>
-<table><thead align="left"><tr id="row5400162217515"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p11400152265113"><a name="p11400152265113"></a><a name="p11400152265113"></a>名称</p>
+<table><thead align="left"><tr id="row5400162217515"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p11400152265113"><a name="p11400152265113"></a><a name="p11400152265113"></a>名称</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p19400622165117"><a name="p19400622165117"></a><a name="p19400622165117"></a>类型</p>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.2"><p id="p19400622165117"><a name="p19400622165117"></a><a name="p19400622165117"></a>类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p114006220517"><a name="p114006220517"></a><a name="p114006220517"></a>描述</p>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.3"><p id="p114006220517"><a name="p114006220517"></a><a name="p114006220517"></a>描述</p>
+</th>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.3"><p id="p114006220517"><a name="p114006220517"></a><a name="p114006220517"></a>其它</p>
 </th>
 </tr>
 </thead>
 <tbody><tr id="row10400322175118"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p540116221516"><a name="p540116221516"></a><a name="p540116221516"></a>subdbid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p14011322165117"><a name="p14011322165117"></a><a name="p14011322165117"></a>oid</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.2 "><p id="p14011322165117"><a name="p14011322165117"></a><a name="p14011322165117"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p8401142219519"><a name="p8401142219519"></a><a name="p8401142219519"></a>订阅所在的数据库的OID。</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.3 "><p id="p8401142219519"><a name="p8401142219519"></a><a name="p8401142219519"></a>订阅所在的数据库的OID。</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.3 "><p id="p8401142219519"><a name="p8401142219519"></a><a name="p8401142219519"></a>订阅所在的数据库的OID。</p>
 </td>
 </tr>
 <tr id="row18401522155113"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p13401132217516"><a name="p13401132217516"></a><a name="p13401132217516"></a>subname</p>

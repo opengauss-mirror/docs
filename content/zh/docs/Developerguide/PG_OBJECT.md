@@ -25,7 +25,7 @@ PG\_OBJECT系统表存储限定类型对象（普通表、索引、序列、视�
 <td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p13706153610194"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p13706153610194"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p13706153610194"></a>"char"</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p117061136121914"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p117061136121914"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p117061136121914"></a>对象类型：</p>
-<a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_ul14461631102216"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_ul14461631102216"></a><ul id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_ul14461631102216"><li>r 表示普通表。</li><li>i 表示索引。</li><li>s 表示序列。</li><li>v 表示视图。</li><li>p 表示存储过程和函数。</li></ul>
+<a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_ul14461631102216"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_ul14461631102216"></a><ul id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_ul14461631102216"><li>r 表示普通表。</li><li>i 表示索引。</li><li>s 表示序列。</li><li>l 表示Large序列。</li><li>v 表示视图。</li><li>p 表示存储过程和函数。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_row470616364192"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p197066366199"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p197066366199"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p197066366199"></a>creator</p>

@@ -331,16 +331,22 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </thead>
 <tbody><tr id="row104381941145612"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p16438741115613"><a name="p16438741115613"></a><a name="p16438741115613"></a>创建包</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13303183220388"><a name="p13303183220388"></a><a name="p13303183220388"></a><a href="CREATE-PACKAGE.md">14.14.72-CREATE PACKAGE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13303183220388"><a name="p13303183220388"></a><a name="p13303183220388"></a><a href="CREATE-PACKAGE.md">CREATE PACKAGE</a></p>
 </td>
 </tr>
 <tr id="row1843804116562"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p243884111569"><a name="p243884111569"></a><a name="p243884111569"></a>删除包</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1543804185613"><a name="p1543804185613"></a><a name="p1543804185613"></a><a href="DROP-PACKAGE.md">14.14.111-DROP PACKAGE</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1543804185613"><a name="p1543804185613"></a><a name="p1543804185613"></a><a href="DROP-PACKAGE.md">DROP PACKAGE</a></p>
+</td>
+</tr>
+<tr id="row11091148878"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7109184817716"><a name="p7109184817716"></a><a name="p7109184817716"></a>修改包属性</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1610911481715"><a name="p1610911481715"></a><a name="p1610911481715"></a><a href="ALTER-PACKAGE.md">ALTER PACKAGE</a></p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 ## 定义视图<a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_sdd4e8594bca54006b11d6f9daf7ccfa8"></a>
 

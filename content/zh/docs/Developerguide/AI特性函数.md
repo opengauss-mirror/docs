@@ -130,52 +130,68 @@
 
     返回值类型：bool
 
--   db4ai\_predict\_by\_float4\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float4\(text, VARIADIC "any"\)
 
-    描述：获取返回值为float4的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
+  描述：获取返回值为float4的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
-    参数：模型名称和推断任务的输入列。
+  参数：模型名称和推断任务的输入列。
 
-    返回值类型：float
+  返回值类型：float
 
--   db4ai\_predict\_by\_float8\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float8\(text, VARIADIC "any"\)
 
-    描述：获取返回值为float8的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
+  描述：获取返回值为float8的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
-    参数：模型名称和推断任务的输入列。
+  参数：模型名称和推断任务的输入列。
 
-    返回值类型：float
+  返回值类型：float
 
--   db4ai\_predict\_by\_int32\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_int32\(text, VARIADIC "any"\)
 
-    描述：获取返回值为int32的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
+  描述：获取返回值为int32的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
-    参数：模型名称和推断任务的输入列。
+  参数：模型名称和推断任务的输入列。
 
-    返回值类型：int
+  返回值类型：int
 
--   db4ai\_predict\_by\_int64\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_int64\(text, VARIADIC "any"\)
 
-    描述：获取返回值为int64的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
+  描述：获取返回值为int64的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
-    参数：模型名称和推断任务的输入列。
+  参数：模型名称和推断任务的输入列。
 
-    返回值类型：int
+  返回值类型：int
 
--   db4ai\_predict\_by\_numeric\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_numeric\(text, VARIADIC "any"\)
 
-    描述：获取返回值为numeric的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
+  描述：获取返回值为numeric的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
-    参数：模型名称和推断任务的输入列。
+  参数：模型名称和推断任务的输入列。
 
-    返回值类型：numeric
+  返回值类型：numeric
 
--   db4ai\_predict\_by\_text\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_text\(text, VARIADIC "any"\)
 
-    描述：获取返回值为字符型的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
+  描述：获取返回值为字符型的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
-    参数：模型名称和推断任务的输入列。
+  参数：模型名称和推断任务的输入列。
 
-    返回值类型：text
+  返回值类型：text
+
+- db4ai\_predict\_by\_float8\_array\(text, VARIADIC "any"\)
+
+  描述：获取返回值为字符型的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
+
+  参数：模型名称和推断任务的输入列。
+
+  返回值类型：text
+
+- gs\_explain\_model\(text\)
+
+  描述：获取返回值为字符型的模型进行模型解析文本化任务。
+
+  参数：模型名称。
+
+  返回值类型：text
 
 

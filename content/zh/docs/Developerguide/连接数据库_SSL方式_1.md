@@ -62,7 +62,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="27.362736273627362%" headers="mcps1.2.4.1.2 "><p id="p679981717180"><a name="p679981717180"></a><a name="p679981717180"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p17799317131814"><a name="p17799317131814"></a><a name="p17799317131814"></a>必须使用SSL安全连接，目前GaussDB Kernel 暂不支持。</p>
+<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p17799317131814"><a name="p17799317131814"></a><a name="p17799317131814"></a>必须使用SSL安全连接，目前暂不支持。</p>
 </td>
 </tr>
 </tbody>

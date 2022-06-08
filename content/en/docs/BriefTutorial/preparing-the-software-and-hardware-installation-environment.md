@@ -62,8 +62,8 @@ This section describes the preparations for installation. It is recommended that
 </thead>
 <tbody><tr id="en-us_topic_0283136474_en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0283136474_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0283136474_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0283136474_ul2800840102316"></a><a name="en-us_topic_0283136474_ul2800840102316"></a><ul id="en-us_topic_0283136474_ul2800840102316"><li>Arm:<a name="en-us_topic_0283136474_ul177759349286"></a><a name="en-us_topic_0283136474_ul177759349286"></a><ul id="en-us_topic_0283136474_ul177759349286"><li>openEuler 20.3 LTS (recommended)</li><li>Kirin V10</li></ul>
-</li><li>x86:<a name="en-us_topic_0283136474_ul851564911283"></a><a name="en-us_topic_0283136474_ul851564911283"></a><ul id="en-us_topic_0283136474_ul851564911283"><li>openEuler 20.3LTS</li><li>CentOS 7.6<div class="note" id="en-us_topic_0283136474_note222515135376"><a name="en-us_topic_0283136474_note222515135376"></a><a name="en-us_topic_0283136474_note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136474_p1225613103712"><a name="en-us_topic_0283136474_p1225613103712"></a><a name="en-us_topic_0283136474_p1225613103712"></a>The current installation package can be used only on the English operating system.</p>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0283136474_ul2800840102316"></a><a name="en-us_topic_0283136474_ul2800840102316"></a><ul id="en-us_topic_0283136474_ul2800840102316"><li>Arm:<a name="en-us_topic_0283136474_ul177759349286"></a><a name="en-us_topic_0283136474_ul177759349286"></a><ul id="en-us_topic_0283136474_ul177759349286"><li>openEuler 20.3 LTS (recommended)</li><li>Kirin V10</li><li>Asianux 7.5</li></ul>
+</li><li>x86:<a name="en-us_topic_0283136474_ul851564911283"></a><a name="en-us_topic_0283136474_ul851564911283"></a><ul id="en-us_topic_0283136474_ul851564911283"><li>openEuler 20.3LTS</li><li>CentOS 7.6</li><li>Asianux 7.6<div class="note" id="en-us_topic_0283136474_note222515135376"><a name="en-us_topic_0283136474_note222515135376"></a><a name="en-us_topic_0283136474_note222515135376"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136474_p1225613103712"><a name="en-us_topic_0283136474_p1225613103712"></a><a name="en-us_topic_0283136474_p1225613103712"></a>The current installation package can be used only on the English operating system.</p>
 </div></div>
 </li></ul>
 </li></ul>
@@ -81,6 +81,7 @@ This section describes the preparations for installation. It is recommended that
 </tr>
 </tbody>
 </table>
+
 
 ## **Software Dependency Requirements**<a name="section13116317142718"></a>
 
@@ -144,4 +145,3 @@ You are advised to use the default installation packages of the following depend
 </tr>
 </tbody>
 </table>
-

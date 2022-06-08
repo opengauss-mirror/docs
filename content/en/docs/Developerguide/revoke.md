@@ -44,7 +44,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
     REVOKE [ GRANT OPTION FOR ]
         { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
         | ALL [ PRIVILEGES ] }
-         ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
+        ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -71,7 +71,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the specified CMK permission.
+-   Revoke the permission on a specified CMK.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -81,7 +81,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the specified CEK permission.
+-   Revoke the permission on a specified CEK.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -95,7 +95,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { READ | WRITE  ALTER |DROP } [, ...] | ALL [ PRIVILEGES ] }
+        { { READ | WRITE | ALTER | DROP } [, ...] | ALL [ PRIVILEGES ] }
         ON DIRECTORY directory_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT ];
@@ -132,16 +132,16 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
-- Revoke the permission on a specified stored procedure.
+-   Revoke the permission on a specified stored procedure.
 
-  ```
-  REVOKE [ GRANT OPTION FOR ]
-      { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-      ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
-         | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
-      FROM { [ GROUP ] role_name | PUBLIC } [, ...]
-      [ CASCADE | RESTRICT ];
-  ```
+    ```
+    REVOKE [ GRANT OPTION FOR ]
+        { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
+        ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+           | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
+        FROM { [ GROUP ] role_name | PUBLIC } [, ...]
+        [ CASCADE | RESTRICT ];
+    ```
 
 -   Revoke the permission on a specified procedural language.
 
@@ -221,10 +221,21 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the sysadmin permission from a role.
+-   Revoke the  **sysadmin**  permission on a role.
 
     ```
     REVOKE ALL { PRIVILEGES | PRIVILEGE } FROM role_name;
+    ```
+
+
+-   Revoke the ANY permissions.
+
+    ```
+    REVOKE [ ADMIN OPTION FOR ]
+      { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
+      DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
+      CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE } [, ...]
+      FROM [ GROUP ] role_name [, ...];
     ```
 
 

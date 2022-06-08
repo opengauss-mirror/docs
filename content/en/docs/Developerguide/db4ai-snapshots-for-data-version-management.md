@@ -121,7 +121,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
 
 
     -   Delete the data table snapshot  **SNAPSHOT**.
-    
+
         ```
         purge snapshot s1@3.0;
         schema |  name
@@ -129,13 +129,13 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
          public | s1@3.0
         (1 row)
         ```
-    
+
         At this time, no data can be retrieved from  **s1@3.0**, and the records of the data table snapshot in the  **db4ai.snapshot**  view are cleared. Deleting the data table snapshot of this version does not affect the data table snapshots of other versions.
-    
+
     -   Sample from a data table snapshot.
-    
+
         Example: Use the sampling rate 0.5 to extract data from snapshot  **s1**.
-    
+
         ```
         sample snapshot s1@2.0 stratify by name as nick at ratio .5;
         schema |    name
@@ -143,9 +143,9 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
          public | s1nick@2.0
         (1 row)
         ```
-    
+
         You can use this function to create a training set and a test set. For example:
-    
+
         ```
         SAMPLE SNAPSHOT s1@2.0  STRATIFY BY name AS _test AT RATIO .2, AS _train AT RATIO .8 COMMENT IS 'training';
         schema |      name
@@ -154,11 +154,11 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
          public | s1_train@2.0
         (2 rows)
         ```
-    
+
     -   Publish a data table snapshot.
-    
+
         Run the following SQL statement to mark the data table snapshot  **s1@2.0**  as published:
-    
+
         ```
         publish snapshot s1@2.0;
         schema |  name
@@ -166,11 +166,11 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
          public | s1@2.0
         (1 row)
         ```
-    
+
     -   Archive a data table snapshot.
-    
+
         Run the following statement to mark the data table snapshot as archived:
-    
+
         ```
         archive snapshot s1@2.0;
         schema |  name
@@ -178,9 +178,9 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
          public | s1@2.0
         (1 row)
         ```
-    
+
         You can use the views provided by DB4AI-Snapshots to view the status of the current data table snapshot and other information.
-    
+
         ```
         select * from db4ai.snapshot;
         id | parent_id | matrix_id | root_id | schema |    name    | owner  |                 commands                 | comment | published | archived |          created           | row_count
@@ -209,9 +209,9 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
 
         ```
         purge snapshot s1@1.0;
-        ERROR: cannot purge root snapshot 'public."s1@1.0"' having dependent snapshots
-        HINT: purge all dependent snapshots first
-        CONTEXT: referenced column: purge_snapshot_internal
+        ERROR:  cannot purge root snapshot 'public."s1@1.0"' having dependent snapshots
+        HINT:  purge all dependent snapshots first
+        CONTEXT:  referenced column: purge_snapshot_internal
         SQL statement "SELECT db4ai.purge_snapshot_internal(i_schema, i_name)"
         PL/pgSQL function db4ai.purge_snapshot(name,name) line 71 at PERFORM
         ```
@@ -254,4 +254,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
         "snapshot_id_key" UNIQUE CONSTRAINT, btree (id) TABLESPACE pg_default
     ```
 
+
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>The DB4AI namespace is a private domain of this function. Functional indexes cannot be created in the DB4AI namespace.
 

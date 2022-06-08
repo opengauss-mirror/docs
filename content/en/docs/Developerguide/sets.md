@@ -22,34 +22,16 @@ In the preceding information:
 >-   **NOT NULL**  has no function but only takes effect in the syntax.
 >-   **data\_type**  can also be the record type or set type defined in a stored procedure \(anonymous blocks are not supported\), but cannot be the array type.
 >-   Variables of the nested set type cannot be used across packages.
+>-   Variables of the  **TABLE OF** **index by**  type cannot be nested in a record as the input and output parameters of a stored procedure.
+>-   Variables of the  **TABLE OF** **index by**  type cannot be used as input and output parameters of functions.
+>-   The  **RAISE INFO**  command cannot be used to print the entire nested  **TABLE OF**  variable.
+>-   The  **TABLE OF**  variable cannot be transferred across autonomous transactions.
+>-   The input and output parameters of a stored procedure cannot be defined as the nested  **TABLE OF**  type.
 
 openGauss supports access to set elements by using parentheses, and it also supports the  **extend**,  **count**,  **first**,  **last**,  **prior**,  **next**, and  **delete**  functions.
 
 The set functions support  **multiset union**,  **intersect**,  **except all**, and  **distinct**.
 
-## Examples<a name="section93565513911"></a>
-
-```
--- Perform operations on a set in the stored procedure.
-openGauss=# CREATE OR REPLACE PROCEDURE table_proc AS
-DECLARE
-       TYPE TABLE_INTEGER IS TABLE OF INTEGER;-- Define the set type.
-       TABLEINT TABLE_INTEGER := TABLE_INTEGER();  -- Declare the variable of the set type.
-BEGIN 
-       TABLEINT.extend(10);  
-       FOR I IN 1..10 LOOP  
-               TABLEINT(I) := I; 
-       END LOOP; 
-       DBE_OUTPUT.PRINT_LINE(TABLEINT.COUNT);  
-       DBE_OUTPUT.PRINT_LINE(TABLEINT(1));  
-       DBE_OUTPUT.PRINT_LINE(TABLEINT(10)); 
-END;  
-/
-
--- Invoke the stored procedure.
-openGauss=# CALL table_proc();
-
--- Delete the stored procedure.
-openGauss=# DROP PROCEDURE table_proc;
-```
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>An expression can contain only one variable of the  **TABLE OF** **index by**  type.
 
