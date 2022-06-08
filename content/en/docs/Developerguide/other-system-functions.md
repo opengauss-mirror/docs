@@ -4335,32 +4335,36 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Return type: start\_backup\_flag boolean, to\_delay boolean, ddl\_delay\_recycle\_ptr text, rewind\_time text
 
--   pgfadvise\_DONTNEED
+- pgfadvise\_DONTNEED
 
-    Description: This function set *DONTNEED* flag on the current relation. It means that the
-    Operating System will first unload pages of the file if it need to free some
-    memory. Main idea is to unload files when they are not usefull anymore (instead
-    of perhaps more interesting pages)
+  Description: This function set *DONTNEED* flag on the current relation. It means that the
+  Operating System will first unload pages of the file if it need to free some
+  memory. Main idea is to unload files when they are not usefull anymore (instead
+  of perhaps more interesting pages)
 
-    Example: 
+  Parameter: a table name or an index name, the table can be partition table or subpartition table. 
 
-        cedric=# select * from pgfadvise_dontneed('pgbench_accounts');
-              relpath       | os_page_size | rel_os_pages | os_pages_free
-        --------------------+--------------+--------------+---------------
-         base/11874/16447   |         4096 |       262144 |        342071
-         base/11874/16447.1 |         4096 |        65726 |        408103
+  Example: 
 
--   pgfadvise\_WILLNEED
+      cedric=# select * from pgfadvise_dontneed('pgbench_accounts');
+            relpath       | os_page_size | rel_os_pages | os_pages_free
+      --------------------+--------------+--------------+---------------
+       base/11874/16447   |         4096 |       262144 |        342071
+       base/11874/16447.1 |         4096 |        65726 |        408103
 
-    Description: This function set *WILLNEED* flag on the current relation. It means that the Operating Sytem will try to load as much pages as possible of the relation. Main idea is to preload files on server startup, perhaps using cache hit/miss ratio or most required relations/indexes.  
+- pgfadvise\_WILLNEED
 
-    Example: 
+  Description: This function set *WILLNEED* flag on the current relation. It means that the Operating Sytem will try to load as much pages as possible of the relation. Main idea is to preload files on server startup, perhaps using cache hit/miss ratio or most required relations/indexes.  
 
-        cedric=# select * from pgfadvise_willneed('pgbench_accounts');
-              relpath       | os_page_size | rel_os_pages | os_pages_free 
-        --------------------+--------------+--------------+---------------
-         base/11874/16447   |         4096 |       262144 |         80650
-         base/11874/16447.1 |         4096 |        65726 |         80650
+  Parameter: a table name or an index name, the table can be partition table or subpartition table. 
+
+  Example: 
+
+      cedric=# select * from pgfadvise_willneed('pgbench_accounts');
+            relpath       | os_page_size | rel_os_pages | os_pages_free 
+      --------------------+--------------+--------------+---------------
+       base/11874/16447   |         4096 |       262144 |         80650
+       base/11874/16447.1 |         4096 |        65726 |         80650
 
 -   pgfadvise\_NORMAL
 
@@ -4374,58 +4378,62 @@ The following table lists the functions used by GaussDB Kernel to implement inte
 
     Description: This function set *RANDOM* flag on the current relation.
 
--   pgfadvise\_loader
+- pgfadvise\_loader
 
-    Description: This function allow to interact directly with the Page Cache.
-    It can be used to load and/or unload page from memory based on a varbit
-    representing the map of the pages to load/unload accordingly.
+  Description: This function allow to interact directly with the Page Cache.
+  It can be used to load and/or unload page from memory based on a varbit
+  representing the map of the pages to load/unload accordingly.
 
-    Example: Work with relation pgbench_accounts, segment 0, arbitrary varbit map:
+  Parameter: a table name or an index name.
 
-        -- Loading and Unloading
-        cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, true, B'111000');
-             relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
-        ------------------+--------------+---------------+--------------+----------------
-         base/11874/16447 |         4096 |        408376 |            3 |              3
- 
-        -- Loading
-        cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, false, B'111000');
-             relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
-        ------------------+--------------+---------------+--------------+----------------
-         base/11874/16447 |         4096 |        408370 |            3 |              0
- 
-        -- Unloading
-        cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, false, true, B'111000');
-             relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
-        ------------------+--------------+---------------+--------------+----------------
-         base/11874/16447 |         4096 |        408370 |            0 |              3
+  Example: Work with relation pgbench_accounts, segment 0, arbitrary varbit map:
 
--   pgfincore
+      -- Loading and Unloading
+      cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, true, B'111000');
+           relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
+      ------------------+--------------+---------------+--------------+----------------
+       base/11874/16447 |         4096 |        408376 |            3 |              3
+       
+      -- Loading
+      cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, false, B'111000');
+           relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
+      ------------------+--------------+---------------+--------------+----------------
+       base/11874/16447 |         4096 |        408370 |            3 |              0
+       
+      -- Unloading
+      cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, false, true, B'111000');
+           relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
+      ------------------+--------------+---------------+--------------+----------------
+       base/11874/16447 |         4096 |        408370 |            0 |              3
 
-    Description: This function provide information about the file system cache (page cache).
+- pgfincore
 
-    Example:
+  Description: This function provide information about the file system cache (page cache).
 
-        cedric=# select * from pgfincore('pgbench_accounts');
-              relpath       | segment | os_page_size | rel_os_pages | pages_mem | group_mem | os_pages_free | databit | pages_dirty | group_dirty  
-        --------------------+---------+--------------+--------------+-----------+-----------+---------------+---------+-------------+-------------
-         base/11874/16447   |       0 |         4096 |       262144 |         3 |         1 |        408444 |         |           0 |           0
-         base/11874/16447.1 |       1 |         4096 |        65726 |         0 |         0 |        408444 |         |           0 |           0
+  Parameter: a table name or an index name, the table can be partition table or subpartition table. 
 
-    For the specified relation it returns:
-    
-     * relpath : the relation path 
-     * segment : the segment number analyzed 
-     * os_page_size : the size of one page
-     * rel_os_pages : the total number of pages of the relation
-     * pages_mem : the total number of relation's pages in page cache.
-    (not the shared buffers from PostgreSQL but the OS cache)
-     * group_mem : the number of groups of adjacent pages_mem
-     * os_page_free : the number of free page in the OS page cache
-     * databit : the varbit map of the file, because of its size it is useless to output
-    Use pgfincore('pgbench_accounts',true) to activate it.
-     * pages_dirty : if HAVE_FINCORE constant is define and the platorm provides the relevant information, like pages_mem but for dirtied pages 
-     * group_dirty : if HAVE_FINCORE constant is define and the platorm provides the relevant information, like group_mem but for dirtied pages 
+  Example:
+
+      cedric=# select * from pgfincore('pgbench_accounts');
+            relpath       | segment | os_page_size | rel_os_pages | pages_mem | group_mem | os_pages_free | databit | pages_dirty | group_dirty  
+      --------------------+---------+--------------+--------------+-----------+-----------+---------------+---------+-------------+-------------
+       base/11874/16447   |       0 |         4096 |       262144 |         3 |         1 |        408444 |         |           0 |           0
+       base/11874/16447.1 |       1 |         4096 |        65726 |         0 |         0 |        408444 |         |           0 |           0
+
+  For the specified relation it returns:
+
+   * relpath : the relation path 
+   * segment : the segment number analyzed 
+   * os_page_size : the size of one page
+   * rel_os_pages : the total number of pages of the relation
+   * pages_mem : the total number of relation's pages in page cache.
+  (not the shared buffers from PostgreSQL but the OS cache)
+   * group_mem : the number of groups of adjacent pages_mem
+   * os_page_free : the number of free page in the OS page cache
+   * databit : the varbit map of the file, because of its size it is useless to output
+  Use pgfincore('pgbench_accounts',true) to activate it.
+   * pages_dirty : if HAVE_FINCORE constant is define and the platorm provides the relevant information, like pages_mem but for dirtied pages 
+   * group_dirty : if HAVE_FINCORE constant is define and the platorm provides the relevant information, like group_mem but for dirtied pages 
 
 -   pgsysconf
     
@@ -4504,5 +4512,4 @@ The following table lists the functions used by GaussDB Kernel to implement inte
     Parameter: xid32, xid32
 
     Return type: Boolean
-
 
