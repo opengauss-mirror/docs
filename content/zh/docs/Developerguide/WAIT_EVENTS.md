@@ -1,6 +1,6 @@
 # WAIT\_EVENTS<a name="ZH-CN_TOPIC_0289900696"></a>
 
-WAIT\_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见[等待状态列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[轻量级锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table38811324183420)、[IO等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table124603113369)和[事务锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718)。
+WAIT\_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见[等待状态列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4)、[轻量级锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table38811324183420)、[IO等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table124603113369)和[事务锁等待事件列表](PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0237122466_table11826123533718)。
 
 **表 1**  WAIT\_EVENTS字段
 
