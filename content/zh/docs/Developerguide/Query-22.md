@@ -105,3 +105,28 @@
 
 -   该值设置过小每次清理的条目较少，可能会导致频繁进行清理；设置过大时每次清理的条目较多，可能会导致频繁插入。建议值0.1。
 -   unique\_sql\_clean\_ratio设置为0不代表关闭自动淘汰功能，请通过enable\_auto\_clean\_unique\_sql来控制是否开启自动淘汰。当开启自动淘汰，且将unique\_sql\_clean\_ratio设置为0时，将自动把unique\_sql\_clean\_ratio重置为默认值0.1。
+
+## track\_stmt\_standby\_chain_\size<a name="section16119247614"></a>
+
+**参数说明：**组合参数，控制备机快/慢SQL记录的最大占用内存与磁盘空间。以60秒为周期读取该参数，并执行清理超过保留时间的记录，仅sysadmin用户可以访问。
+
+该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：**字符型
+
+该参数分为四部分，形式为'fast sql memory size, fast sql disk size, slow sql memory size, slow sql disk size'
+在主机上，full sql为全量sql，存储在一张unlogged表上，slow sql为其中慢的那部分sql。在备机中我们将非slow的那部分称为fast sql，slow与fast分开存放于不同位置，因此额外使用了四个值进行控制。
+
+fast sql memory size 为保留的快SQL的最大内存占用空间，取值范围为 \[16, 1024\]，单位为MB。
+
+fast sql disk size 为保留的快SQL的最大磁盘占用空间，取值范围为 \[512, 1048576\]，单位为MB。
+
+slow sql memory size 为保留的慢SQL的最大内存占用空间，取值范围为 \[16, 1024\]，单位为MB。
+
+slow sql disk size 为保留的慢SQL的最大磁盘占用空间，取值范围为 \[512, 1048576\]，单位为MB。
+
+注意其中快慢SQL各自对应的内存值不可小于磁盘值。
+
+清理时按照每16M数据的粒度进行清理，因此最大会有16M数据量的延迟误差。
+
+**默认值：**32, 1024, 16, 512
