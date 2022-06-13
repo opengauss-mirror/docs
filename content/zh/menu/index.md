@@ -51,7 +51,6 @@ headless: true
 	-   [高可用]({{< relref "./docs/CharacteristicDescription/高可用.md" >}})
 		-   [主备机]({{< relref "./docs/CharacteristicDescription/主备机.md" >}})
 		-   [逻辑复制]({{< relref "./docs/CharacteristicDescription/逻辑复制.md" >}})
-		-   [在线节点替换]({{< relref "./docs/CharacteristicDescription/在线节点替换.md" >}})
 		-   [逻辑备份]({{< relref "./docs/CharacteristicDescription/逻辑备份.md" >}})
 		-   [物理备份]({{< relref "./docs/CharacteristicDescription/物理备份.md" >}})
 		-   [作业失败自动重试]({{< relref "./docs/CharacteristicDescription/作业失败自动重试.md" >}})
