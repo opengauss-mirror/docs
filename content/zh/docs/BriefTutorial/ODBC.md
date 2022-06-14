@@ -64,7 +64,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
     #将它的值修改为"1:0:0"，这样将编译出*.so.1的动态库，与psqlodbcw.so的依赖关系相同。
     vim configure
     
-    ./configure --enable-gui=no #如果要在鲲鹏服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu 
+    ./configure --enable-gui=no #如果要在ARM服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu 
     make
     #安装可能需要root权限
     make install
