@@ -1,4 +1,4 @@
-# ODBC<a name="ZH-CN_TOPIC_0000001233927853"></a>
+ODBC<a name="ZH-CN_TOPIC_0000001233927853"></a>
 
 ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公司基于X/OPEN CLI提出的用于访问数据库的应用程序编程接口。应用程序通过ODBC提供的API与数据库进行交互，增强了应用程序的可移植性、扩展性和可维护性。
 
@@ -64,7 +64,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
     #将它的值修改为"1:0:0"，这样将编译出*.so.1的动态库，与psqlodbcw.so的依赖关系相同。
     vim configure
     
-    ./configure --enable-gui=no #如果要在鲲鹏服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu 
+    ./configure --enable-gui=no #如果要在ARM服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu 
     make
     #安装可能需要root权限
     make install
