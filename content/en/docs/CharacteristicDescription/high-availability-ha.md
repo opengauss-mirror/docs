@@ -2,9 +2,7 @@
 
 -   **[Primary/Standby](primary-standby.md)**  
 
--   **[Logical Replication](logical-replication.md)**  
-
--   **[Online Node Replacement](online-node-replacement.md)**  
+-   **[Logical Replication](logical-replication.md)**   
 
 -   **[Logical Backup](logical-backup.md)**  
 
