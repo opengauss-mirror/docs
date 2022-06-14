@@ -50,7 +50,6 @@ headless: true
 	-   [High Availability \(HA\)]({{<relref "./docs/CharacteristicDescription/high-availability-ha.md" >}})
 		-   [Primary/Standby]({{< relref "./docs/CharacteristicDescription/primary-standby.md" >}})
 		-   [Logical Replication]({{< relref "./docs/CharacteristicDescription/logical-replication.md" >}})
-		-   [Online Node Replacement]({{< relref "./docs/CharacteristicDescription/online-node-replacement.md" >}})
 		-   [Logical Backup]({{< relref "./docs/CharacteristicDescription/logical-backup.md" >}})
 		-   [Physical Backup]({{< relref "./docs/CharacteristicDescription/physical-backup.md" >}})
 		-   [Automatic Job Retry upon Failure]({{< relref "./docs/CharacteristicDescription/automatic-job-retry-upon-failure.md" >}})

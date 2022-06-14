@@ -4,8 +4,6 @@
 
 -   **[Logical Replication](logical-replication.md)**  
 
--   **[Online Node Replacement](online-node-replacement.md)**  
-
 -   **[Logical Backup](logical-backup.md)**  
 
 -   **[Physical Backup](physical-backup.md)**  
