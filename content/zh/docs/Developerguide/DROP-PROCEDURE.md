@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137697_zh-cn_topic_0237122145_zh-cn_topic_0059778377_s1e16e3722cae4864ad570562a7f7273e"></a>
 
-无。
+通过[DROP FUNCTION](DROP-FUNCTION.md)也能删除存储过程。
 
 ## 语法格式<a name="zh-cn_topic_0283137697_zh-cn_topic_0237122145_zh-cn_topic_0059778377_s7fd54cba57c541c5a49626ef477adc4a"></a>
 

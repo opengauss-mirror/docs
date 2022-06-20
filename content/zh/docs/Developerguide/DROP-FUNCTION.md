@@ -8,6 +8,7 @@
 
 -   如果函数中涉及对临时表相关操作，则无法使用DROP FUNCTION删除函数。
 -   只有函数的所有者或者被授予了函数DROP权限的用户才能执行DROP FUNCTION命令，系统管理员默认拥有该权限。
+-   通过[DROP PROCEDURE](DROP-PROCEDURE.md)语法也能删除函数。
 
 ## 语法格式<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_s1aad0e4026434244b8879b36ec9adaff"></a>
 
