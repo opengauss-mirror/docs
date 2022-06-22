@@ -69,8 +69,7 @@ try {
 // 创建客户端主密钥
 Connection conn = DriverManager.getConnection("url","user","password");
 Statement stmt = conn.createStatement();
-int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = gs_ktool, KEY_PATH = \"gs_ktool/1\", ALGORITHM = AES_256_CBC;"); 
-int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = localkms, KEY_PATH = \"key_path_value\" , ALGORITHM = RSA_2048);
+int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = localkms, KEY_PATH = \"key_path_value\" , ALGORITHM = RSA_2048));
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
