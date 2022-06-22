@@ -2,7 +2,7 @@
 
 ## 背景信息<a name="zh-cn_topic_0287275995_section431817462"></a>
 
-从openGauss 3.1.0版本开始，openGauss提供了gs\_sdr工具，在不借助额外存储介质的情况下实现跨region的异地容灾。提供流式容灾搭建，灾备升主，计划内主备切换，容灾解除、容灾状态监控功能、显示帮助信息和显示版本号信息等功能。
+从openGauss 3.1.0版本开始，openGauss提供了gs\_sdr工具，在不借助额外存储介质的情况下实现跨region的异地容灾。提供流式容灾搭建，容灾升主，计划内主备切换，容灾解除、容灾状态监控功能、显示帮助信息和显示版本号信息等功能。
 
 ## 前提条件<a name="zh-cn_topic_0287275995_section1372118241094"></a>
 
@@ -16,7 +16,7 @@
     gs_sdr -t start -m [primary|disaster_standby] [-U DR_USERNAME] [-W DR_PASSWORD] [-X XMLFILE] [--json JSONFILE] [--time-out=SECS] [-l LOGFILE]
     ```
 
--   灾备升主
+-   容灾升主
 
     ```
     gs_sdr -t failover [-l LOGFILE] 
@@ -137,7 +137,7 @@ gs\_sdr参数可以分为如下几类：
 
 -   容灾升主参数：
     
--   无
+    无
     
 -   容灾解除参数：
     -   -X
@@ -153,8 +153,9 @@ gs\_sdr参数可以分为如下几类：
 
 
 -   容灾查询参数：
-    -   无。
-    -   容灾状态查询结果说明如下：
+    -   无
+    
+    容灾状态查询结果说明如下：
 
 
 <a name="zh-cn_topic_0287275995_table1171617665"></a>

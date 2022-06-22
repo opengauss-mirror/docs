@@ -16,6 +16,8 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
 ## 注意事项<a name="zh-cn_topic_0237152332_section4694838915381"></a>
 
+-   使用流式容灾功能时，灾备集群不支持此工具。
+
 -   gs\_checkperf工具的监控信息依赖于pmk模式下的表的数据。如果pmk模式下的表未执行analyze操作，则可能导致gs\_checkperf工具执行失败。其报错示例信息如下。
 
     ```
