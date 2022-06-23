@@ -57,6 +57,10 @@ CREATE SUBSCRIPTION subscription_name
 
     该子句指定订阅的可选参数。支持的参数有：
 
+    -   **copy_data \(boolean\)**
+
+        指定在复制启动后是否应复制正在订阅的发布中的现有数据。默认值是true。
+
     -   **enabled \(boolean\)**
 
         指定订阅是否应该主动复制，或者是否应该只是设置，但尚未启动。默认值是true。
