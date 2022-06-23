@@ -1710,9 +1710,10 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tbody>
 </table>
 
-**表 2**  GaussDB Kernel CM错误码SQLSTATE值
+**表 2**  CM错误码SQLSTATE值
 
 <a name="table548617911814"></a>
+
 <table><thead align="left"><tr id="row174871598183"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1352583209"><a name="p1352583209"></a><a name="p1352583209"></a>类 c0 - 连接异常（Connection Exception）</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2">&nbsp;&nbsp;</th>
