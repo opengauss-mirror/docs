@@ -11,4 +11,5 @@
 -   **[Custom Plan和Generic Plan选择的Hint](Custom Plan和Generic Plan选择的Hint.md)**  
 -   **[指定子查询不展开的Hint](指定子查询不展开的Hint.md)**  
 -   **[指定不使用全局计划缓存的Hint](指定不使用全局计划缓存的Hint.md)**  
--   **[同层参数化路径的Hint](同层参数化路径的Hint.md)**  
+-   **[同层参数化路径的Hint](同层参数化路径的Hint.md)**
+-   **[将部分Error降级为Warning的Hint](将部分Error降级为Warning的Hint.md)**  
