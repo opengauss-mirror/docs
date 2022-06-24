@@ -632,7 +632,7 @@ openGauss=# CREATE TEMPORARY TABLE warehouse_t25
     W_GMT_OFFSET              DECIMAL(5,2)
 ) ON COMMIT DELETE ROWS;
 
---创建全局临时表，并指定会话结束时删除该临时表数据。
+--创建全局临时表，并指定会话结束时删除该临时表数据。当前Ustore存储引擎不支持全局临时表。
 openGauss=# CREATE GLOBAL TEMPORARY TABLE gtt1
 (
     ID                        INTEGER               NOT NULL,
