@@ -2586,7 +2586,6 @@ headless: true
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/Toolreference/客户端工具.md" >}})
 		-   [gsql]({{< relref "./docs/Toolreference/gsql.md" >}})	
-		-   [gs\_loader]({{< relref "./docs/Toolreference/gs_loader.md" >}})
     -   [服务端工具]({{< relref "./docs/Toolreference/服务端工具.md" >}})
 	    -   [gs\_cgroup]({{< relref "./docs/Toolreference/gs_cgroup.md" >}})
         -   [gs\_check]({{< relref "./docs/Toolreference/gs_check.md" >}})
