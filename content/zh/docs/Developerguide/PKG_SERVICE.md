@@ -428,7 +428,7 @@ PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。
     ```
     PKG_SERVICE.JOB_FINISH(
     id          IN   INTEGER,
-    broken       IN   BOOLEAN,
+    finished       IN   BOOLEAN,
     next_time    IN   TIMESTAMP  DEFAULT  sysdate);
     ```
 
@@ -458,7 +458,7 @@ PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。
     <td class="cellrowborder" valign="top" width="53.559999999999995%" headers="mcps1.2.6.1.5 "><p id="zh-cn_topic_0059779362_p299514147178"><a name="zh-cn_topic_0059779362_p299514147178"></a><a name="zh-cn_topic_0059779362_p299514147178"></a>指定的作业号。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0059779362_row1899531411177"><td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0059779362_p2995141420172"><a name="zh-cn_topic_0059779362_p2995141420172"></a><a name="zh-cn_topic_0059779362_p2995141420172"></a>broken</p>
+    <tr id="zh-cn_topic_0059779362_row1899531411177"><td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0059779362_p2995141420172"><a name="zh-cn_topic_0059779362_p2995141420172"></a><a name="zh-cn_topic_0059779362_p2995141420172"></a>finished</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.19%" headers="mcps1.2.6.1.2 "><p id="zh-cn_topic_0059779362_p17366816162319"><a name="zh-cn_topic_0059779362_p17366816162319"></a><a name="zh-cn_topic_0059779362_p17366816162319"></a><span id="text1759883862519"><a name="text1759883862519"></a><a name="text1759883862519"></a>Boolean</span></p>
     </td>
