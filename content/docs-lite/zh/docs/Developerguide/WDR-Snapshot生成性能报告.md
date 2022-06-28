@@ -1,10 +1,10 @@
 # WDR Snapshot生成性能报告<a name="ZH-CN_TOPIC_0289900439"></a>
 
-基于WDR Snapshot数据表汇总、统计，生成性能报告，默认初始化用户或监控管理员用户可以生成报告，在V500R001C20SPC003之前的版本初始化用户或者sysadmin用户可以生成报告。
+基于WDR Snapshot数据表汇总、统计，生成性能报告，默认初始化用户或监控管理员用户可以生成报告。
 
 ## 前提条件<a name="zh-cn_topic_0283137259_section128252205291"></a>
 
-WDR Snasphot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#zh-cn_topic_0283137284_zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
+WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#zh-cn_topic_0283137284_zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
 
 ## 操作步骤<a name="zh-cn_topic_0283137259_section49941629132915"></a>
 
@@ -78,14 +78,14 @@ WDR Snasphot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#
         </thead>
         <tbody><tr id="row18131194223311"><td class="cellrowborder" valign="top" width="34.01010101010101%" headers="mcps1.2.4.1.1 "><p id="p81311142183313"><a name="p81311142183313"></a><a name="p81311142183313"></a>begin_snap_id</p>
         </td>
-        <td class="cellrowborder" valign="top" width="32.56565656565657%" headers="mcps1.2.4.1.2 "><p id="p181315429333"><a name="p181315429333"></a><a name="p181315429333"></a>查询时间段开始的snapshot的id（表snapshot.snaoshot中的snapshot_id）。</p>
+        <td class="cellrowborder" valign="top" width="32.56565656565657%" headers="mcps1.2.4.1.2 "><p id="p181315429333"><a name="p181315429333"></a><a name="p181315429333"></a>查询时间段开始的snapshot的id（表snapshot.snapshot中的snapshot_id）。</p>
         </td>
         <td class="cellrowborder" valign="top" width="33.42424242424243%" headers="mcps1.2.4.1.3 "><p id="p013194211337"><a name="p013194211337"></a><a name="p013194211337"></a>-</p>
         </td>
         </tr>
         <tr id="row1213114213335"><td class="cellrowborder" valign="top" width="34.01010101010101%" headers="mcps1.2.4.1.1 "><p id="p61311542123311"><a name="p61311542123311"></a><a name="p61311542123311"></a>end_snap_id</p>
         </td>
-        <td class="cellrowborder" valign="top" width="32.56565656565657%" headers="mcps1.2.4.1.2 "><p id="p11131154217335"><a name="p11131154217335"></a><a name="p11131154217335"></a>查询时间段结束snapshot的id。默认end_snap_id大于begin_snap_id（表snapshot.snaoshot中的snapshot_id）。</p>
+        <td class="cellrowborder" valign="top" width="32.56565656565657%" headers="mcps1.2.4.1.2 "><p id="p11131154217335"><a name="p11131154217335"></a><a name="p11131154217335"></a>查询时间段结束snapshot的id。默认end_snap_id大于begin_snap_id（表snapshot.snapshot中的snapshot_id）。</p>
         </td>
         <td class="cellrowborder" valign="top" width="33.42424242424243%" headers="mcps1.2.4.1.3 "><p id="p191311542133314"><a name="p191311542133314"></a><a name="p191311542133314"></a>-</p>
         </td>
