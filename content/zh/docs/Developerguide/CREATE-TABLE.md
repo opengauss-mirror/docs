@@ -273,7 +273,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
     - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
     - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
-  
+    
   - COMPRESS_BYTE_CONVERT
 
       行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节转换预处理。当`COMPRESS_DIFF_CONVERT`为真时，该值不允许修改为假。
@@ -632,7 +632,7 @@ openGauss=# CREATE TEMPORARY TABLE warehouse_t25
     W_GMT_OFFSET              DECIMAL(5,2)
 ) ON COMMIT DELETE ROWS;
 
---创建全局临时表，并指定会话结束时删除该临时表数据。
+--创建全局临时表，并指定会话结束时删除该临时表数据。当前Ustore存储引擎不支持全局临时表。
 openGauss=# CREATE GLOBAL TEMPORARY TABLE gtt1
 (
     ID                        INTEGER               NOT NULL,
@@ -1048,31 +1048,31 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 
 -   TEMPORARY | TEMP
     
--   临时表只在当前会话可见，会话结束后会自动删除。
+    -   临时表只在当前会话可见，会话结束后会自动删除。
     
 -   LIKE
     
--   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
+    -   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
     
 -   LIKE INCLUDING DEFAULTS
     
--   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
+    -   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
     
 -   LIKE INCLUDING CONSTRAINTS
     
--   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
+    -   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
     
 -   LIKE INCLUDING INDEXES
     
--   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
+    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
     
 -   LIKE INCLUDING STORAGE
     
--   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
+    -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
     
 -   LIKE INCLUDING COMMENTS
     
--   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
+    -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
     
 -   LIKE INCLUDING PARTITION
 
@@ -1083,15 +1083,15 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 
 -   LIKE INCLUDING RELOPTIONS
     
--   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
+    -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
     
 -   LIKE INCLUDING ALL
     
--   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
+    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
     
 -   ORIENTATION ROW
     
--   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
+    -   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
     
 -   ORIENTATION COLUMN
     
