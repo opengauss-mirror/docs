@@ -37,7 +37,7 @@ TABLES\_SNAP\_TIMESTAMP表记录所有存储的WDR snapshot中数据库、表对
 </td>
 <td class="cellrowborder" valign="top" width="14.831483148314831%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p194251111646"><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p194251111646"></a><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p194251111646"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.863186318631865%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p76480311155"><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p76480311155"></a><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p76480311155"></a>WDR snasphot对应的table。</p>
+<td class="cellrowborder" valign="top" width="31.863186318631865%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p76480311155"><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p76480311155"></a><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p76480311155"></a>WDR snapshot对应的table。</p>
 </td>
 <td class="cellrowborder" valign="top" width="36.14361436143614%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p10492108162618"><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p10492108162618"></a><a name="zh-cn_topic_0283136626_zh-cn_topic_0237122761_p10492108162618"></a>snap_xc_statio_all_indexes</p>
 </td>

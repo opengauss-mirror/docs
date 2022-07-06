@@ -32,7 +32,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#
    select create_wdr_snapshot();
    ```
 
-   >![](C:/Users/liyang/Desktop/新建文件夹/20220419/07 开发者指南_2021033010438wdr/07 开发者指南/public_sys-resources/icon-note.gif) **说明：** 
+   >![](public_sys-resources/icon-note.gif) **说明：** 
    >执行“cm\_ctl query -Cdvi”，回显中“Central Coordinator State”下显示的信息即为CCN信息。
 
 5. 执行如下命令，在本地生成HTML格式的WDR报告。
