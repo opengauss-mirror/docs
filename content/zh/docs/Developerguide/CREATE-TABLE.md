@@ -238,7 +238,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         列存表的有效值为YES/NO/LOW/MIDDLE/HIGH，默认值为LOW。
 
-    -   COMPRESSLEVELcom
+    -   COMPRESSLEVEL
 
         指定表数据同一压缩级别下的不同压缩水平，它决定了同一压缩级别下表数据的压缩比以及压缩时间。对同一压缩级别进行了更加详细的划分，为用户选择压缩比和压缩时间提供了更多的空间。总体来讲，此值越大，表示同一压缩级别下压缩比越大，压缩时间越长；反之亦然。
 
