@@ -6,6 +6,8 @@
 -   Committer：可以分配和分类问题，对PR进行审查以及合入。
 -   Maintainer：保证文档质量，定期召开社区SIG组例会。
 
+当前openGauss Docs SIG已有170+成员，详情信息请参见[Docs-SIG组成员](Docs-SIG组成员.md)。
+
 ## Contributor<a name="section1945312533501"></a>
 
 在openGauss Docs仓成功提交至少一个PR且被合入，即可自动成为Docs SIG的Contributor成员。
