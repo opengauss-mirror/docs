@@ -49,7 +49,7 @@ Obtain the XML file template from  **script/gspylib/etc/conf/cluster\_config\_te
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >
->-   The  **/opt/huawei/install/om**  directory is used to store tools such ar mutual trust. To avoid permission problems, do not store instance data in the directory.
+>-   The  **/opt/huawei/install/om**  directory is used to store tools such as mutual trust. To avoid permission problems, do not store instance data in the directory.
 >-   The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.
 >-   When configuring database instances, ensure that the configured directories are not coupled with each other. This means that the configured directories must not be associated with each other. If any directory is deleted, the other directories will not be deleted accordingly. For example,  **gaussdbAppPath**  is  **/opt/huawei/install/app**  and  **gaussdbLogPath**  is  **/opt/huawei/install/app/omm**. If the directory specified by  **gaussdbAppPath**  is deleted, that specified by  **gaussdbLogPath**  will also be deleted, causing unexpected problems.
 >-   If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.
