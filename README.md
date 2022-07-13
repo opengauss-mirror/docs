@@ -7,7 +7,7 @@
 欢迎来到openGauss官方文档的仓库。此仓库提供[openGauss社区网站](https://opengauss.org/zh)所呈现的所有文档，包括法律声明、发行说明、产品描述、技术白皮书、编译指导书、简易教程、安装指南、管理员指南、开发者指南、工具参考等内容。
 ### 贡献
 
-我们非常欢迎您贡献文档！如果想要参与，请阅读[社区资料开发指导](https://gitee.com/opengauss/docs/wikis/%E6%8B%89%E5%8F%96%E4%B8%AA%E4%BA%BA%E5%88%86%E6%94%AF?sort_id=2783599)，务必遵守文档写作规范，并按照流程规则提交。审核通过后，修改会在文档工程和官网中呈现。
+我们非常欢迎您贡献文档！如果想要参与，请阅读[贡献指导](contribute/贡献指导)，务必遵守文档写作规范，并按照流程规则提交。审核通过后，修改会在文档工程和官网中呈现。
 
 同时，如果您对文档有任何意见或建议，请在Issues中提交。
 
@@ -52,10 +52,7 @@ Docs包含了如下7个分支：
 
 ### 成员
 
-Maintainer 列表：
-
-- kangyang(@ylfan96)
-- gongsiyi(@gongsiyi150)
+当前openGauss Docs SIG已有170+成员，详情信息请参见[Docs-SIG组成员](contribute/Docs-SIG组成员.md)。
 
 ### 联系方式
 
