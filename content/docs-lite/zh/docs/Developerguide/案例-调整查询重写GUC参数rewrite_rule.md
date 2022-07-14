@@ -11,7 +11,7 @@ openGauss=#  set rewrite_rule='none';
 SET
 openGauss=# create table t1(c1 int,c2 int);
 CREATE TABLE
-openGauss=#  reate table t2(c1 int,c2 int);
+openGauss=# create table t2(c1 int,c2 int);
 CREATE TABLE
 openGauss=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 where t2.c2=t1.c2) from t1 where t1.c1<100 order by t1.c2;
                   QUERY PLAN
