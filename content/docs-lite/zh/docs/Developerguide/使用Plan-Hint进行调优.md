@@ -24,4 +24,6 @@
 
 -   **[同层参数化路径的Hint](同层参数化路径的Hint.md)**  
 
+-   **[将部分Error降级为Warning的Hint](将部分Error降级为Warning的Hint.md)**  
+
 
