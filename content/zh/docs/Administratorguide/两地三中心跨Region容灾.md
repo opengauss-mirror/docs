@@ -51,6 +51,8 @@ openGauss当前提供基于流式复制的异地容灾解决方案。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >经过测试，SATA SSD极限写入速率在240MB/s左右，SAS SSD可以达到500MB/s以上的写入速度，NVMe SSD表现则更为优异。如果硬件条件达不到如上标准，则可支持的主数据库实例单分片日志产生速度应下调，才可保证RPO、RTO。
+>
+>主备数据库实例出现文件句柄，内存等资源耗尽时，无法保证RPO，RTO。
 
 #### 特性约束
 
@@ -64,7 +66,7 @@ openGauss当前提供基于流式复制的异地容灾解决方案。
 - 在主数据库实例和灾备数据库实例处于normal状态时可进行容灾搭建；在主数据库实例处于normal态并且灾备数据库实例已经升主的情况下，主数据库实例可执行容灾解除，其他数据库实例状态不支持。在主数据库实例和灾备数据库实例处于normal状态时，通过计划内switchover命令，主数据库实例可切换为灾备数据库实例，灾备数据库实例可切换为主数据库实例。灾备数据库实例处于非Normal且非Degraded状态时，无法升主，无法作为灾备数据库实例继续提供容灾服务，需要手动修复或重建灾备数据库实例。
 - 灾备集群DN多数派故障或者CMS、DN全故障，无法启动容灾，灾备集群无法升主，无法作为灾备集群，需要重建灾备集群。
 - 主集群如果进行了强切操作，需要重建灾备集群。
--  主备集群支持gs_probackup工具中全备和增备。
+-  主集群和灾备集群都支持gs_probackup工具中的全备和增备。容灾状态下，主集群和灾备集群都不能做恢复。如果主数据库实例要做恢复，需要先解除容灾关系，在完成备份恢复后重新搭建容灾关系。
 - 容灾关系搭建之后，不支持DN实例端口修改。
 -  建立容灾关系的主数据库实例与灾备数据库实例之间不支持GUC参数的同步。
 - 主备集群不支持节点替换、修复、升降副本，DCF模式。
@@ -254,4 +256,25 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 </tr>
 </tbody>
 </table>
+#### 灾备集群数据库实例故障
+
+**表 **  灾备集群数据库实例错误信息参考故障描述
+
+<table><thead align="left"><tr id="row192305745520"><th class="cellrowborder" valign="top" width="34.79%" id="mcps1.2.3.1.1"><p id="p6923185711556"><a name="p6923185711556"></a><a name="p6923185711556"></a><strong id="b14923557205516"><a name="b14923557205516"></a><a name="b14923557205516"></a>故障描述</strong></p>
+</th>
+<th class="cellrowborder" valign="top" width="65.21000000000001%" id="mcps1.2.3.1.2"><p id="p3923115795513"><a name="p3923115795513"></a><a name="p3923115795513"></a><strong id="b7923165725516"><a name="b7923165725516"></a><a name="b7923165725516"></a>原因和解决方案</strong></p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row2923357105515"><td class="cellrowborder" valign="top" width="34.79%" headers="mcps1.2.3.1.1 "><p id="p792325713550"><a name="p792325713550"></a><a name="p792325713550"></a>灾备集群节点CM_AGENT故障。该节点上DN实例状态显示为Unknown；部分首备显示Main Standby Need repair(Connecting)。</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.21000000000001%" headers="mcps1.2.3.1.2 "><p id="p0923105725512"><a name="p0923105725512"></a><a name="p0923105725512"></a><strong id="b6923115712551"><a name="b6923115712551"></a><a name="b6923115712551"></a>原因：</strong>节点CM_AGENT发生故障
+    </p>
+<a name="ul165953251100"></a><a name="ul165953251100"></a><ul id="ul165953251100"><li>该节点上DN状态无法上报CM_SERVER，DN实例显示为Unknown。</li><li>若该节点上存在首备实例(Main Standby)，则会触发首备切换。由于原首备实例并无异常，并与主数据库实例主DN存在正常流复制关系，而主数据库实例该分片主DN只允许一个首备的连接，导致新首备无法连接到主集群分片主DN，实例状态显示为Main Standby Need repair(Connecting)。</li></ul>
+</p>
+<p id="p71271175581"><a name="p71271175581"></a><a name="p71271175581"></a><strong id="b131274765818"><a name="b131274765818"></a><a name="b131274765818"></a>解决方案：</strong></p>
+<a name="ul165953251100"></a><a name="ul165953251100"></a><ul id="ul165953251100"><li>等观察灾备集群的CM_AGENT告警信息“ALM_AI_AbnormalCMSProcess”，并尝试修复发生故障的CM_AGENT。故障排除后新首备的连接可恢复。</li><li>若如果故障的CM_AGENT短时间内无法修复，执行gs_ctl stop -D DATADIR命令或者kill命令手动停止该节点上的DN进程，可恢复。</li></ul>
+</td>
+</tr>
+
 
