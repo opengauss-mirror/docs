@@ -17,7 +17,7 @@
 
 **参数说明：**全局系统缓存内存最大占用大小。
 
-该参数属于PGC\_SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 需要打开enable\_global\_syscache参数。
 
