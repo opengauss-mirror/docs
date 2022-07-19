@@ -464,7 +464,6 @@ GRANT的参数说明如下所示。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。
->不允许对表分区进行GRANT操作，对分区表进行GRANT操作会引起告警。
 
 -   WITH ADMIN OPTION
 
