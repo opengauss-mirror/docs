@@ -37,9 +37,11 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
     | RESOURCE POOL 'respool'
+    | USER GROUP 'groupuser'
     | PERM SPACE 'spacelimit'
     | TEMP SPACE 'tmpspacelimit'
     | SPILL SPACE 'spillspacelimit'
+    | NODE GROUP logic_cluster_name
     | IN ROLE role_name [, ...]
     | IN GROUP role_name [, ...]
     | ROLE role_name [, ...]
@@ -81,7 +83,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     在创建用户时可指定EXPIRED参数，即创建密码失效用户，该用户不允许执行简单查询和扩展查询。只有在修改自身密码后才可正常执行语句。
 
--   DISABLE
+-   **DISABLE**
 
     默认情况下，用户可以更改自己的密码，除非密码被禁用。要禁用用户的密码，请指定DISABLE。禁用某个用户的密码后，将从系统中删除该密码，此类用户只能通过外部认证来连接数据库，例如：kerberos认证。只有管理员才能启用或禁用密码。普通用户不能禁用初始用户的密码。要启用密码，请运行ALTER USER并指定密码。
 
@@ -190,6 +192,10 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     设置角色使用的resource pool名称，该名称属于系统表：pg\_resource\_pool。
 
+-   **USER GROUP**
+
+    创建一个user的子用户。当前版本暂不支持。
+
 -   **PERM SPACE**
 
     设置用户使用空间的大小。
@@ -201,6 +207,10 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 -   **SPILL SPACE**
 
     设置用户算子落盘空间限额。
+
+-   **NODE GROUP**
+
+    设置用户关联的逻辑集群名称。当前版本暂不支持。
 
 -   **IN ROLE**
 
