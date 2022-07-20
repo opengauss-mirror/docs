@@ -1429,7 +1429,6 @@ headless: true
 				-   [GLOBAL\_STATEMENT\_COMPLEX\_HISTORY\_TABLE]({{< relref "./docs/Developerguide/GLOBAL_STATEMENT_COMPLEX_HISTORY_TABLE.md" >}})
 				-   [GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME]({{< relref "./docs/Developerguide/GLOBAL_STATEMENT_COMPLEX_RUNTIME.md" >}})
 				-   [STATEMENT\_RESPONSETIME\_PERCENTILE]({{< relref "./docs/Developerguide/STATEMENT_RESPONSETIME_PERCENTILE.md" >}})
-				-   [STATEMENT\_USER\_COMPLEX\_HISTORY]({{< relref "./docs/Developerguide/STATEMENT_USER_COMPLEX_HISTORY.md" >}})
 				-   [STATEMENT\_COMPLEX\_RUNTIME]({{< relref "./docs/Developerguide/STATEMENT_COMPLEX_RUNTIME.md" >}})
 				-   [STATEMENT\_COMPLEX\_HISTORY\_TABLE]({{< relref "./docs/Developerguide/STATEMENT_COMPLEX_HISTORY_TABLE.md" >}})
 				-   [STATEMENT\_COMPLEX\_HISTORY]({{< relref "./docs/Developerguide/STATEMENT_COMPLEX_HISTORY.md" >}})

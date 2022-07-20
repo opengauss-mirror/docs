@@ -21,7 +21,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a5c97dba62ae944368ad43223a4007f54"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a5c97dba62ae944368ad43223a4007f54"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a5c97dba62ae944368ad43223a4007f54"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a3adf7dfe6e344393b54b170751dd20c9"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a3adf7dfe6e344393b54b170751dd20c9"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a3adf7dfe6e344393b54b170751dd20c9"></a><a href="PG_AUTHID.md">PG_AUTHID</a>.rolname</p>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a3adf7dfe6e344393b54b170751dd20c9"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a3adf7dfe6e344393b54b170751dd20c9"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a3adf7dfe6e344393b54b170751dd20c9"></a><a href="zh-cn_topic_0289900706.md">PG_AUTHID</a>.rolname</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_aeca26d1e9e8a494cb058b225adda6e87"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_aeca26d1e9e8a494cb058b225adda6e87"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_aeca26d1e9e8a494cb058b225adda6e87"></a>用户名。</p>
 </td>
@@ -30,7 +30,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a89058e2e5dcf4d7ba155343b157b3229"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a89058e2e5dcf4d7ba155343b157b3229"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a89058e2e5dcf4d7ba155343b157b3229"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a17e51b6257574da7bf6c8459b81c2f03"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a17e51b6257574da7bf6c8459b81c2f03"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a17e51b6257574da7bf6c8459b81c2f03"></a><a href="PG_AUTHID.md">PG_AUTHID</a>.oid</p>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a17e51b6257574da7bf6c8459b81c2f03"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a17e51b6257574da7bf6c8459b81c2f03"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a17e51b6257574da7bf6c8459b81c2f03"></a><a href="zh-cn_topic_0289900706.md">PG_AUTHID</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a78b4cd623d584eec802ee44cffd1ecd6"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a78b4cd623d584eec802ee44cffd1ecd6"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a78b4cd623d584eec802ee44cffd1ecd6"></a>用户的ID。</p>
 </td>
@@ -77,7 +77,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 </td>
 <td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a8cc1621b1d6a46d0af01f6c667f3df47"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a8cc1621b1d6a46d0af01f6c667f3df47"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a8cc1621b1d6a46d0af01f6c667f3df47"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a018f28333aa342b4969f46d41003d1a0"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a018f28333aa342b4969f46d41003d1a0"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a018f28333aa342b4969f46d41003d1a0"></a>口令（可能是加密的）；如果没有则为null。参阅<a href="PG_AUTHID.md">PG_AUTHID</a>获取加密的口令是如何存储的信息。</p>
+<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a018f28333aa342b4969f46d41003d1a0"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a018f28333aa342b4969f46d41003d1a0"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a018f28333aa342b4969f46d41003d1a0"></a>口令（可能是加密的）；如果没有则为null。参阅<a href="zh-cn_topic_0289900706.md">PG_AUTHID</a>获取加密的口令是如何存储的信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_rc18c23dc39864920ab6f1e9dd98ee71b"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a83b34462307c49fa98c01bf6dfa12843"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a83b34462307c49fa98c01bf6dfa12843"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_zh-cn_topic_0059778735_a83b34462307c49fa98c01bf6dfa12843"></a>valbegin</p>
@@ -141,6 +141,45 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 <td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_p2384335204116"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_p2384335204116"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_p2384335204116"></a>-</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136753_zh-cn_topic_0237122436_p18384183512416"><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_p18384183512416"></a><a name="zh-cn_topic_0283136753_zh-cn_topic_0237122436_p18384183512416"></a>算子落盘空间限额。</p>
+</td>
+</tr>
+<tr id="row134926198301"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0059778735_a525760dfcf7e4e878ad7013070ee4d74"><a name="zh-cn_topic_0059778735_a525760dfcf7e4e878ad7013070ee4d74"></a><a name="zh-cn_topic_0059778735_a525760dfcf7e4e878ad7013070ee4d74"></a>useconfig</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0059778735_a9eac0658c8da4a3ba7e3d7a7732d1762"><a name="zh-cn_topic_0059778735_a9eac0658c8da4a3ba7e3d7a7732d1762"></a><a name="zh-cn_topic_0059778735_a9eac0658c8da4a3ba7e3d7a7732d1762"></a>text[ ]</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0059778735_a34793eccd7b64e048ac4065050f1e4e1"><a name="zh-cn_topic_0059778735_a34793eccd7b64e048ac4065050f1e4e1"></a><a name="zh-cn_topic_0059778735_a34793eccd7b64e048ac4065050f1e4e1"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"><a name="zh-cn_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"></a><a name="zh-cn_topic_0059778735_af3df05f427ed4a7795e7686531eff4cb"></a>运行时配置变量的会话缺省。</p>
+</td>
+</tr>
+<tr id="row1039772718307"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="p526312301779"><a name="p526312301779"></a><a name="p526312301779"></a>usemonitoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p2263173017719"><a name="p2263173017719"></a><a name="p2263173017719"></a>Boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="p0263730774"><a name="p0263730774"></a><a name="p0263730774"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="p1826310301679"><a name="p1826310301679"></a><a name="p1826310301679"></a>用户是否是监控管理员。</p>
+<a name="ul2871145284717"></a><a name="ul2871145284717"></a><ul id="ul2871145284717"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
+</td>
+</tr>
+<tr id="row494752117304"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="p18637357712"><a name="p18637357712"></a><a name="p18637357712"></a>useoperatoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p8631535475"><a name="p8631535475"></a><a name="p8631535475"></a>Boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="p136317358714"><a name="p136317358714"></a><a name="p136317358714"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="p1632351715"><a name="p1632351715"></a><a name="p1632351715"></a>用户是否是运维管理员。</p>
+<a name="ul0974145914478"></a><a name="ul0974145914478"></a><ul id="ul0974145914478"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
+</td>
+</tr>
+<tr id="row198620244302"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="p116991389717"><a name="p116991389717"></a><a name="p116991389717"></a>usepolicyadmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p570093811710"><a name="p570093811710"></a><a name="p570093811710"></a>Boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="p27001938775"><a name="p27001938775"></a><a name="p27001938775"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.66%" headers="mcps1.2.5.1.4 "><p id="p3700143810716"><a name="p3700143810716"></a><a name="p3700143810716"></a>用户是否是安全策略管理员。</p>
+<a name="ul188541077485"></a><a name="ul188541077485"></a><ul id="ul188541077485"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
 </td>
 </tr>
 </tbody>

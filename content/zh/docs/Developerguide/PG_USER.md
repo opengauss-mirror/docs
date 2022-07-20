@@ -29,28 +29,28 @@ PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用
 </tr>
 <tr id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_r1f3389ea79e54ae9a669b3b28f69efb6"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_aca01a74838af43f7b8a4461931d9fb44"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_aca01a74838af43f7b8a4461931d9fb44"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_aca01a74838af43f7b8a4461931d9fb44"></a>usecreatedb</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a1055eb394a74431cada088d471d8bea0"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a1055eb394a74431cada088d471d8bea0"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a1055eb394a74431cada088d471d8bea0"></a><span id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1096519713102"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1096519713102"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1096519713102"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a1055eb394a74431cada088d471d8bea0"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a1055eb394a74431cada088d471d8bea0"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a1055eb394a74431cada088d471d8bea0"></a><span id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1096519713102"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1096519713102"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1096519713102"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_abf92a1964d8448089b988cd5432c88a2"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_abf92a1964d8448089b988cd5432c88a2"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_abf92a1964d8448089b988cd5432c88a2"></a>用户是否可以创建数据库。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_refee702064af4f809eb7205bc5136a90"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a006290e5015b42eabd54ffd8384803d8"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a006290e5015b42eabd54ffd8384803d8"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a006290e5015b42eabd54ffd8384803d8"></a>usesuper</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a9a4fc10468ef45d09d812584d530c057"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a9a4fc10468ef45d09d812584d530c057"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a9a4fc10468ef45d09d812584d530c057"></a><span id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1362312063114"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1362312063114"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text1362312063114"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a9a4fc10468ef45d09d812584d530c057"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a9a4fc10468ef45d09d812584d530c057"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a9a4fc10468ef45d09d812584d530c057"></a><span id="text143929514469"><a name="text143929514469"></a><a name="text143929514469"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_aba6156b2dc064cd095bff87af63fad1b"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_aba6156b2dc064cd095bff87af63fad1b"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_aba6156b2dc064cd095bff87af63fad1b"></a>用户是否是拥有最高权限的初始系统管理员。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_ra849cce9d7bb4e62801388bcf330fe37"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a508cc43912c44891bb5944f9c64677ed"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a508cc43912c44891bb5944f9c64677ed"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a508cc43912c44891bb5944f9c64677ed"></a>usecatupd</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_ad66f409d390c42ac94d062f5cb4aaa5b"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_ad66f409d390c42ac94d062f5cb4aaa5b"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_ad66f409d390c42ac94d062f5cb4aaa5b"></a><span id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text158332116318"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text158332116318"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text158332116318"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_ad66f409d390c42ac94d062f5cb4aaa5b"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_ad66f409d390c42ac94d062f5cb4aaa5b"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_ad66f409d390c42ac94d062f5cb4aaa5b"></a><span id="text13970952194617"><a name="text13970952194617"></a><a name="text13970952194617"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778259_a99ef9ae1689f41f1ac8d15338dd526ae"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778259_a99ef9ae1689f41f1ac8d15338dd526ae"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778259_a99ef9ae1689f41f1ac8d15338dd526ae"></a>用户是否可以直接更新系统表。只有usesysid=10的初始系统管理员拥有此权限。其他用户无法获得此权限。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_r32778ede7f9e4abc99d8d4faaa68de94"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a01ea128194444831b2f0d932c74b1d0d"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a01ea128194444831b2f0d932c74b1d0d"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a01ea128194444831b2f0d932c74b1d0d"></a>userepl</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a7a973664a8934e3ea8530f63e56fc4dd"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a7a973664a8934e3ea8530f63e56fc4dd"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a7a973664a8934e3ea8530f63e56fc4dd"></a><span id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text13520623173116"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text13520623173116"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_text13520623173116"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a7a973664a8934e3ea8530f63e56fc4dd"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a7a973664a8934e3ea8530f63e56fc4dd"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a7a973664a8934e3ea8530f63e56fc4dd"></a><span id="text1448018559462"><a name="text1448018559462"></a><a name="text1448018559462"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a896a562703c14119b20bbdcdc439af33"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a896a562703c14119b20bbdcdc439af33"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_zh-cn_topic_0059778611_a896a562703c14119b20bbdcdc439af33"></a>用户是否可以复制数据流。</p>
 </td>
@@ -123,6 +123,30 @@ PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用
 <td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p1638355314230"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p1638355314230"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p1638355314230"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p23836535234"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p23836535234"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p23836535234"></a>用户关联的逻辑<span id="text179123126198"><a name="text179123126198"></a><a name="text179123126198"></a>openGauss</span>名称，如果该用户没有管理逻辑<span id="text1741521935"><a name="text1741521935"></a><a name="text1741521935"></a>openGauss</span>，则该字段为空。</p>
+</td>
+</tr>
+<tr id="row5334173912326"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="p20734171716349"><a name="p20734171716349"></a><a name="p20734171716349"></a>usemonitoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="p147341175341"><a name="p147341175341"></a><a name="p147341175341"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="p157342017173418"><a name="p157342017173418"></a><a name="p157342017173418"></a>用户是否是监控管理员。</p>
+<a name="ul1563875913503"></a><a name="ul1563875913503"></a><ul id="ul1563875913503"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
+</td>
+</tr>
+<tr id="row204785368321"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="p8605142113413"><a name="p8605142113413"></a><a name="p8605142113413"></a>useoperatoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="p56055217340"><a name="p56055217340"></a><a name="p56055217340"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="p3605152143417"><a name="p3605152143417"></a><a name="p3605152143417"></a>用户是否是运维管理员。</p>
+<a name="ul694311013516"></a><a name="ul694311013516"></a><ul id="ul694311013516"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
+</td>
+</tr>
+<tr id="row1931123313220"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="p82201725103415"><a name="p82201725103415"></a><a name="p82201725103415"></a>usepolicyadmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="p522017252344"><a name="p522017252344"></a><a name="p522017252344"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="p522192513342"><a name="p522192513342"></a><a name="p522192513342"></a>用户是否是安全策略管理员。</p>
+<a name="ul18625455118"></a><a name="ul18625455118"></a><ul id="ul18625455118"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
 </td>
 </tr>
 </tbody>
