@@ -1,5 +1,4 @@
-
-# PG\_SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001197270702"></a>
+# PG\_SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001198917452"></a>
 
 系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。需要有系统管理员权限才可以访问此系统表。
 
@@ -8,23 +7,26 @@
 **表 1**  PG\_SUBSCRIPTION字段
 
 <a name="table10398182255119"></a>
-<table><thead align="left"><tr id="row5400162217515"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p11400152265113"><a name="p11400152265113"></a><a name="p11400152265113"></a>名称</p>
+<table><thead align="left"><tr id="row5400162217515"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p11400152265113"><a name="p11400152265113"></a><a name="p11400152265113"></a>名称</p>
 </th>
-<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.2"><p id="p19400622165117"><a name="p19400622165117"></a><a name="p19400622165117"></a>类型</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p19400622165117"><a name="p19400622165117"></a><a name="p19400622165117"></a>类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.3"><p id="p114006220517"><a name="p114006220517"></a><a name="p114006220517"></a>描述</p>
-</th>
-<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.3"><p id="p114006220517"><a name="p114006220517"></a><a name="p114006220517"></a>其它</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p114006220517"><a name="p114006220517"></a><a name="p114006220517"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row10400322175118"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p540116221516"><a name="p540116221516"></a><a name="p540116221516"></a>subdbid</p>
+<tbody><tr id="row28891944205414"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.2 "><p id="p14011322165117"><a name="p14011322165117"></a><a name="p14011322165117"></a>oid</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.3 "><p id="p8401142219519"><a name="p8401142219519"></a><a name="p8401142219519"></a>订阅所在的数据库的OID。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p11514618540"><a name="p11514618540"></a><a name="p11514618540"></a>行标识符（隐含属性，必须明确选择）。</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.3 "><p id="p8401142219519"><a name="p8401142219519"></a><a name="p8401142219519"></a>订阅所在的数据库的OID。</p>
+</tr>
+<tr id="row10400322175118"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p540116221516"><a name="p540116221516"></a><a name="p540116221516"></a>subdbid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p14011322165117"><a name="p14011322165117"></a><a name="p14011322165117"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p8401142219519"><a name="p8401142219519"></a><a name="p8401142219519"></a>订阅所在的数据库的OID。</p>
 </td>
 </tr>
 <tr id="row18401522155113"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p13401132217516"><a name="p13401132217516"></a><a name="p13401132217516"></a>subname</p>
@@ -60,6 +62,13 @@
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p740212295115"><a name="p740212295115"></a><a name="p740212295115"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p140242210511"><a name="p140242210511"></a><a name="p140242210511"></a>发布端数据库中复制槽的名称。空表示为NONE。</p>
+</td>
+</tr>
+<tr id="row5366163018614"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p113664301868"><a name="p113664301868"></a><a name="p113664301868"></a>subsynccommit</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p3366123015617"><a name="p3366123015617"></a><a name="p3366123015617"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p236618305619"><a name="p236618305619"></a><a name="p236618305619"></a>订阅worker的synchronous_commit设置的值。</p>
 </td>
 </tr>
 <tr id="row18136114310539"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p913764314533"><a name="p913764314533"></a><a name="p913764314533"></a>subpublications</p>
