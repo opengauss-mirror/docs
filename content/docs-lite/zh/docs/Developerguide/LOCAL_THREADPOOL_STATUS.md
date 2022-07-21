@@ -64,6 +64,15 @@ LOCAL\_THREADPOOL\_STATUS视图显示线程池下工作线程及会话的状态�
 <a name="zh-cn_topic_0283137060_ul2055983161912"></a><a name="zh-cn_topic_0283137060_ul2055983161912"></a><ul id="zh-cn_topic_0283137060_ul2055983161912"><li>total：该线程池组中所有的会话数量。</li><li>waiting：该线程池组中等待调度的会话数量。</li><li>running：该线程池中正在执行的会话数量。</li><li>idle：该线程池组中空闲的会话数量。</li></ul>
 </td>
 </tr>
+  <tr id="row78596541114"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p785912516116"><a name="p785912516116"></a><a name="p785912516116"></a>stream_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.49%" headers="mcps1.2.4.1.2 "><p id="p1186016520115"><a name="p1186016520115"></a><a name="p1186016520115"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="p119613371672"><a name="p119613371672"></a><a name="p119613371672"></a>stream池相关信息，包含以下信息：</p>
+<a name="ul2055983161912"></a><a name="ul2055983161912"></a><ul id="ul2055983161912"><li>total：该stream池组中所有的线程数量。</li><li>running：该stream池中正在执行的线程数量。</li><li>idle：该stream池组中空闲的线程数量。</li></ul>
+</td>
+</tr>
 </tbody>
 </table>
+
 
