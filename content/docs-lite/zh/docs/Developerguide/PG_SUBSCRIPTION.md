@@ -15,7 +15,14 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row10400322175118"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p540116221516"><a name="p540116221516"></a><a name="p540116221516"></a>subdbid</p>
+<tbody><tr id="row28891944205414"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p11514618540"><a name="p11514618540"></a><a name="p11514618540"></a>行标识符（隐含属性，必须明确选择）。</p>
+</td>
+</tr>
+<tr id="row10400322175118"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p540116221516"><a name="p540116221516"></a><a name="p540116221516"></a>subdbid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p14011322165117"><a name="p14011322165117"></a><a name="p14011322165117"></a>oid</p>
 </td>

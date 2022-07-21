@@ -53,6 +53,7 @@
 <td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p09940294554"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p09940294554"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p09940294554"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1399411292550"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1399411292550"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1399411292550"></a>归一化的SQL。</p>
+<p id="p19360123918375"><a name="p19360123918375"></a><a name="p19360123918375"></a>备注：长度受track_activity_query_size控制。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_row15994142965520"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p599412297555"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p599412297555"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p599412297555"></a>n_calls</p>
@@ -209,18 +210,39 @@
 <td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1699820292553"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1699820292553"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1699820292553"></a>plpgsql上的编译时间（单位：微秒）。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_row1699832913554"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p19998529185511"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p19998529185511"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p19998529185511"></a>net_send_time</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p179981329175511"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p179981329175511"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p179981329175511"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p399872919553"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p399872919553"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p399872919553"></a>网络上的时间花费（单位：微秒）。</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_row5998122915513"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p99981529145514"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p99981529145514"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p99981529145514"></a>data_io_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1499816296559"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1499816296559"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1499816296559"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1799872965520"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1799872965520"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p1799872965520"></a>IO上的时间花费（单位：微秒）。</p>
+</td>
+</tr>
+<tr id="row48260365463"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p7826636154614"><a name="p7826636154614"></a><a name="p7826636154614"></a><span id="ph195131653134610"><a name="ph195131653134610"></a><a name="ph195131653134610"></a>net_send_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p1982683674610"><a name="p1982683674610"></a><a name="p1982683674610"></a><span id="ph115391012473"><a name="ph115391012473"></a><a name="ph115391012473"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p12827183612461"><a name="p12827183612461"></a><a name="p12827183612461"></a><span id="ph1919614524710"><a name="ph1919614524710"></a><a name="ph1919614524710"></a>通过物理连接发送消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</span></p>
+</td>
+</tr>
+<tr id="row4261947154611"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p142674713465"><a name="p142674713465"></a><a name="p142674713465"></a><span id="ph5178195764618"><a name="ph5178195764618"></a><a name="ph5178195764618"></a>net_recv_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p15268474468"><a name="p15268474468"></a><a name="p15268474468"></a><span id="ph108251310144718"><a name="ph108251310144718"></a><a name="ph108251310144718"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p326847184618"><a name="p326847184618"></a><a name="p326847184618"></a><span id="ph56957506474"><a name="ph56957506474"></a><a name="ph56957506474"></a>通过物理连接接收消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</span></p>
+</td>
+</tr>
+<tr id="row1359184315461"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p259134314460"><a name="p259134314460"></a><a name="p259134314460"></a><span id="ph14621219477"><a name="ph14621219477"></a><a name="ph14621219477"></a>net_stream_send_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p1359174318463"><a name="p1359174318463"></a><a name="p1359174318463"></a><span id="ph849131184713"><a name="ph849131184713"></a><a name="ph849131184713"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p1659194310462"><a name="p1659194310462"></a><a name="p1659194310462"></a><span id="ph185431954184716"><a name="ph185431954184716"></a><a name="ph185431954184716"></a>通过逻辑连接发送消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</span></p>
+</td>
+</tr>
+<tr id="row98614054614"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p158614403460"><a name="p158614403460"></a><a name="p158614403460"></a><span id="ph19466945472"><a name="ph19466945472"></a><a name="ph19466945472"></a>net_stream_recv_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p108654024611"><a name="p108654024611"></a><a name="p108654024611"></a><span id="ph129607120472"><a name="ph129607120472"></a><a name="ph129607120472"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p0861340114615"><a name="p0861340114615"></a><a name="p0861340114615"></a><span id="ph27741258174717"><a name="ph27741258174717"></a><a name="ph27741258174717"></a>通过逻辑连接接收消息的网络状态，包含时间（微秒）、调用次数、吞吐量（字节）。通过该字段可以分析SQL在分布式系统下的网络开销，单机模式下不支持该字段。例如：{"time":xxx, "n_calls":xxx, "size":xxx}。</span></p>
 </td>
 </tr>
 <tr id="row97389591219"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p9214257135413"><a name="p9214257135413"></a><a name="p9214257135413"></a>last_updated</p>
