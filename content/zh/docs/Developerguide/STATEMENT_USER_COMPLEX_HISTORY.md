@@ -1,4 +1,0 @@
-# STATEMENT\_USER\_COMPLEX\_HISTORY<a name="ZH-CN_TOPIC_0245374767"></a>
-
-STATEMENT\_USER\_COMPLEX\_HISTORY系统表显示数据库主节点执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。具体的字段请参考[表1](GS_SESSION_MEMORY_DETAIL.md#zh-cn_topic_0059778760_td16c4d9490d3429bb7924dc70121414a)。
-

@@ -125,6 +125,30 @@ PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用
 <td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p23836535234"><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p23836535234"></a><a name="zh-cn_topic_0283137034_zh-cn_topic_0237122472_p23836535234"></a>用户关联的逻辑<span id="text179123126198"><a name="text179123126198"></a><a name="text179123126198"></a>openGauss</span>名称，如果该用户没有管理逻辑<span id="text1741521935"><a name="text1741521935"></a><a name="text1741521935"></a>openGauss</span>，则该字段为空。</p>
 </td>
 </tr>
+<tr id="row5334173912326"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="p20734171716349"><a name="p20734171716349"></a><a name="p20734171716349"></a>usemonitoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="p147341175341"><a name="p147341175341"></a><a name="p147341175341"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="p157342017173418"><a name="p157342017173418"></a><a name="p157342017173418"></a>用户是否是监控管理员。</p>
+<a name="ul1563875913503"></a><a name="ul1563875913503"></a><ul id="ul1563875913503"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
+</td>
+</tr>
+<tr id="row204785368321"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="p8605142113413"><a name="p8605142113413"></a><a name="p8605142113413"></a>useoperatoradmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="p56055217340"><a name="p56055217340"></a><a name="p56055217340"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="p3605152143417"><a name="p3605152143417"></a><a name="p3605152143417"></a>用户是否是运维管理员。</p>
+<a name="ul694311013516"></a><a name="ul694311013516"></a><ul id="ul694311013516"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
+</td>
+</tr>
+<tr id="row1931123313220"><td class="cellrowborder" valign="top" width="24.68%" headers="mcps1.2.4.1.1 "><p id="p82201725103415"><a name="p82201725103415"></a><a name="p82201725103415"></a>usepolicyadmin</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.01%" headers="mcps1.2.4.1.2 "><p id="p522017252344"><a name="p522017252344"></a><a name="p522017252344"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.31%" headers="mcps1.2.4.1.3 "><p id="p522192513342"><a name="p522192513342"></a><a name="p522192513342"></a>用户是否是安全策略管理员。</p>
+<a name="ul18625455118"></a><a name="ul18625455118"></a><ul id="ul18625455118"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>
+</td>
+</tr>
 </tbody>
 </table>
 
