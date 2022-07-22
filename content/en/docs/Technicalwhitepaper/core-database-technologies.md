@@ -17,7 +17,7 @@
 
   openGauss supports standard SQL statements. The SQL standard is an international standard and is updated periodically. SQL standards are classified into core features and optional features. Most databases do not fully support SQL standards. SQL features are built by database vendors to maintain customers and push up application migration costs. New SQL features are increasingly different among vendors. Currently, there is no authoritative SQL standard test.
 
-  openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  _Developer Guide_.
+  openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  *Developer Guide*.
 
   The introduction of standard SQL provides a unified SQL interface for all database vendors, reducing the learning costs of users and openGauss application migration costs.
 
@@ -63,7 +63,7 @@
   -   Commit;
   -   Rollback;
 
-  Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  _Developer Guide_.
+  Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  *Developer Guide*.
 
 - Support for Functions and Stored Procedures
 
@@ -77,7 +77,7 @@
   4.  To process SQL statements, the stored procedure process assigns a memory fragment to store context association. Cursors are handles or pointers to context areas. With cursors, stored procedures can control alterations in context areas.
   5.  Six levels of exception information are supported to facilitate the debugging of stored procedures. Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the process executed by the stored procedure step by step and find the error cause or program bug based on the variable value to improve the fault locating efficiency. You can set breakpoints and perform independent debugging.
 
-  openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  _Developer Guide_.
+  openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  *Developer Guide*.
 
 - PG Interface Compatibility
 
@@ -361,6 +361,11 @@ After DCF is enabled, DNs support Paxos-based replication and quorum, achieving 
 ### Workload Diagnosis Report
 
 The workload diagnosis report \(WDR\) generates a performance report between two different time points based on the system performance snapshot data at two different time points. The report is used to diagnose database kernel performance faults.
+
+The WDR performance snapshot data is stored in the snapshot schema of the **postgres** database. The default collection and retention policies are as follows:
+
+-   A snapshot is collected every hour \(wdr\_snapshot\_interval=1h\).
+-   It is retained for 8 days \(wdr\_snapshot\_retention\_days=8\).
 
 WDR depends on the following two components:
 
@@ -709,4 +714,3 @@ AI4DB includes intelligent parameter tuning and diagnosis, slow SQL discovery, i
 DB4AI is compatible with the MADlib ecosystem, supports more than 70 algorithms, and delivers performance several times higher than that of MADlib on PostgreSQL. Advanced and common algorithm suites such as XGBoost, prophet, and GBDT are added to supplement the shortcomings of the MADlib ecosystem. The technology stack from SQL to machine learning is unified to implement one-click driving of SQL statements from data management to model training.
 
 The fenced UDF and native DB4AI algorithm capabilities are provided, including the execution plan, operators, and SQL syntax in the database.
-

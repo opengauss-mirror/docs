@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-Only the owner of a materialized view or a system administrator has the  **DROP MATERIALIZED VIEW**  permission.
+The owner of the materialized view, owner of the schema of the materialized view, and a user who has the DROP ANY TABLE permission can run the **DROP MATERIALIZED VIEW** command. By default, the system administrator can run this command.
 
 ## Syntax<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 

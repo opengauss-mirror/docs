@@ -1,7 +1,7 @@
 # Dynamic Data Masking Functions<a name="EN-US_TOPIC_0000001151866048"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->This function is an internal function. For details, see "Database Security \> Dynamic Data Anonymization" in  _Feature Description_.
+>This function is an internal function. For details, see "Database Security \> Dynamic Data Anonymization" in  *Feature Description*.
 
 -   creditcardmasking\(col text, letter char default 'x'\)
 
@@ -51,4 +51,10 @@
 
     Return type: text
 
+-   regexpmasking
 
+    Description: Specifies the internal function of the masking policy, which is used to replace characters using a regular expression.
+
+    Parameter: col text, reg text, replace\_text text, pos INTEGER default 0, reg\_len INTEGER default -1
+
+    Return type: text

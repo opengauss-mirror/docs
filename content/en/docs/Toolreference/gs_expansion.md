@@ -10,6 +10,10 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 -   Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ(Available Zone) as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
 -   Before scaling out the database cluster, you need to pay attention to the CPU, I/O, and network conditions of the primary node and new nodes. You are not advised to perform scale-out when the hardware load is heavy. Otherwise, the scale-out may take a long time or even fail.
 -   If the original cluster contains a large amount of data, run the checkpoint on the primary node before the scale-out. Otherwise, the scale-out may take a long time or even fail.
+-   During single-node scale-out, if **hot_standby** has been disabled, perform the following steps on each standby node:
+    1. Change the value of **wal_level** to **hot_standby** or **logical** and restart the node.
+    2. Change the value of **hot_standby** to **on** and restart the node. In this way, scale-out can be successful. Otherwise, the standby node fails to be started during scale-out.
+
 
 ## Prerequisites<a name="section18105194594714"></a>
 
@@ -185,4 +189,3 @@ Expansion Finish.
 ## Helpful Links<a name="section81692446111"></a>
 
 [gs\_preinstall](gs_preinstall.md),  [gs\_install](gs_install.md), and  [gs\_ctl](gs_ctl.md)
-

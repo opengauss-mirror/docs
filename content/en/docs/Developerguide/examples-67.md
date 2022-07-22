@@ -62,12 +62,14 @@ In the preceding report, the database parameter configurations in the environmen
 -   **load\_average**: average load of each CPU core in 1 minute, 5 minutes, and 15 minutes. Generally, if the value is about 1, the current hardware matches the workload. If the value is about 3, the current workload is heavy. If the value is greater than 5, the current workload is too heavy. In this case, you are advised to reduce the load or upgrade the hardware.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   In recommend mode, information in the  **pg\_stat\_database **and  **pg\_stat\_bgwriter**  system catalogs in the database is read. Therefore, the database login user must have sufficient permissions. \(You are advised to own the administrator permission which can be granted to  _username_  by running  **alter user username sysadmin**.\)
->-   Some system catalogs keep recording statistics, which may affect load feature identification. Therefore, you are advised to clear the statistics of some system catalogs, run the workload for a period of time, and then use recommend mode for diagnosis to obtain more accurate results. To clear the statistics, run the following command:
->    ```
->    select pg_stat_reset_shared('bgwriter');
->    select pg_stat_reset();
->    ```
+>- Some system catalogs keep recording statistics, which may affect load feature identification. Therefore, you are advised to clear the statistics of some system catalogs, run the workload for a period of time, and then use recommend mode for diagnosis to obtain more accurate results. To clear the statistics, run the following command: 
+>
+>  ```
+>  select pg_stat_reset_shared('bgwriter');
+>  select pg_stat_reset();
+>  ```
+>
+>- In recommend mode, information in the **pg\_stat\_database** and **pg\_stat\_bgwriter** system catalogs in the database is read. Therefore, the database login user must have sufficient permissions. (You are advised to own the administrator permission which can be granted to *username* by running **alter user username sysadmin**.) 
 
 ## Example of Using the train Mode<a name="section15888321578"></a>
 
@@ -140,4 +142,3 @@ gs_dbmind component xtuner tune -f connection.json
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >Before using the  **tune**  or  **train**  mode, you need to import the data required by the benchmark and check whether the benchmark can run properly. After the optimization is complete, the optimization program automatically restores the database parameter settings.
-

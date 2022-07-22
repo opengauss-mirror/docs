@@ -47,7 +47,7 @@ This section describes hardware and software requirements of openGauss. It is re
 </td>
 <td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p36637388163752"></a>Minimum one 8-core 2.0 GHz CPU is required for function debugging.</p>
 <p id="en-us_topic_0241802565_p655107143013"><a name="en-us_topic_0241802565_p655107143013"></a><a name="en-us_topic_0241802565_p655107143013"></a>In performance tests and commercial deployment, the single-instance deployment is performed. It is recommended that one 16-core 2.0 GHz CPU be used.</p>
-<p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode, but ensure the setting is consistent across all the <span id="text115011549754"><a name="text115011549754"></a><a name="text115011549754"></a>openGauss</span> nodes.</p><p>NOTE:</p><p>Currently, openGauss only supports CPUs of Kunpeng servers and CPUs based on x86_64 general-purpose PC servers.</p>
+<p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode, but ensure the setting is consistent across all the <span id="text115011549754"><a name="text115011549754"></a><a name="text115011549754"></a>openGauss</span> nodes.</p><p>NOTE:</p><p>Currently, openGauss only supports CPUs of ARM servers and CPUs based on x86_64 general-purpose PC servers.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rc2f89a29186544e79e7995d19878a617"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a>Hard disk</p>
@@ -283,7 +283,7 @@ Currently, EulerOS can be installed only when the firewall is disabled.
 
 ### Setting Character Set Parameters
 
-Set the same character set for all database nodes. You can add  **export LANG=**_Unicode_  in the  **/etc/profile**  file.
+Set the same character set for all database nodes. You can add  **export LANG=***Unicode*  in the  **/etc/profile**  file.
 
 ```
 vim /etc/profile
@@ -298,7 +298,7 @@ cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
 ```
 
 ![](public_sys-resources/icon-note.gif) **NOTE:**   
-_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.  
+*$Locale/$Time zone*  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.  
 
 Run the  **date -s**  command to set the time of each host to the same time. For example:
 
@@ -329,7 +329,7 @@ Set the NIC MTU value on each database node to the same value.
    ifconfig
    ```
 
-2. Set the NIC MTU value on each database node to the same value. For x86, the recommended MTU value is **1500**. For ARM, the recommended MTU value is **8192**.
+2. Set the NIC MTU on each database node to the same value. The recommended MTU value is **8192**, and the minimum MTU value is **1500**.
 
    ```
    ifconfig NIC name mtu mtu value
@@ -426,4 +426,4 @@ During the openGauss installation, the user  **root**  is required for remote lo
     ```
 
     ![](public_sys-resources/icon-note.gif) **NOTE:**   
-   _xxx.xxx.xxx.xxx_  indicates the IP address of the openGauss installation environment.  
+   *xxx.xxx.xxx.xxx*  indicates the IP address of the openGauss installation environment.  

@@ -4,7 +4,7 @@
 
 openGauss supports:
 
--   Kunpeng server and x86\_64-based universal PC server
+-   ARM server and x86\_64-based universal PC server
 -   SATA, SAS, and SSD local storage
 -   1-gigabit and 10-gigabit Ethernet
 
@@ -21,7 +21,7 @@ openGauss supports:
 </thead>
 <tbody><tr id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.2%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul2800840102316"></a><a name="en-us_concept_0283139016_ul2800840102316"></a><ul id="en-us_concept_0283139016_ul2800840102316"><li>Arm:<a name="en-us_concept_0283139016_ul177759349286"></a><a name="en-us_concept_0283139016_ul177759349286"></a><ul id="en-us_concept_0283139016_ul177759349286"><li>EulerOS V2.0SP10</li></ul>
+<td class="cellrowborder" valign="top" width="74.8%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul2800840102316"></a><a name="en-us_concept_0283139016_ul2800840102316"></a><ul id="en-us_concept_0283139016_ul2800840102316"><li>ARM:<a name="en-us_concept_0283139016_ul177759349286"></a><a name="en-us_concept_0283139016_ul177759349286"></a><ul id="en-us_concept_0283139016_ul177759349286"><li>EulerOS V2.0SP10</li></ul>
 </li><li>x86:<a name="en-us_concept_0283139016_ul851564911283"></a><a name="en-us_concept_0283139016_ul851564911283"></a><ul id="en-us_concept_0283139016_ul851564911283"><li>EulerOS V2.0SP10</li><li>SUSE 12.5</li></ul>
 </li></ul>
 </td>

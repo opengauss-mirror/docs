@@ -100,7 +100,7 @@ The  **gs\_om**  tool can use the following types of parameters:
 
         Specifies a log file and its storage path.
 
-        Default value:  **$GAUSSLOG/om/gs\_om**-_YYYY_-_MM_-_DD_\__hhmmss_**.log**  \(default value for  **virtualip**:  **/tmp/gs\_virtualip/gs\_om**-_YYYY_-_MM_-_DD_\__hhmmss_**.log**\)
+        Default value:  **$GAUSSLOG/om/gs\_om**-*YYYY*-*MM*-*DD*\_*hhmmss***.log**  \(default value for  **virtualip**:  **/tmp/gs\_virtualip/gs\_om**-*YYYY*-*MM*-*DD*\_*hhmmss***.log**\)
 
     -   -?, --help
 
@@ -127,6 +127,11 @@ The  **gs\_om**  tool can use the following types of parameters:
         Value range: a node path
 
         If the node path is not specified, the node path in the static file is used.
+
+        ![](public_sys-resources/icon-note.gif) **NOTE:**
+        For a cluster where the CM tool is deployed, if the **-D** parameter is specified when you start or stop a single instance, only the database process is started or stopped, and the CM process is not affected.
+        
+        Assume that the database and CM processes of the current instance are stopped. If the **-D** parameter is specified when the instance is started, only the database process will be started. In this case, the database process fails to be started because the CM process does not exist. You can remove the **-D** parameter to start the entire instance.
 
     -   --time-out=SECS
 
@@ -514,10 +519,24 @@ node                              node_ip         port                        in
     2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
     ```
     
--   Run the following commands on openGauss to generate the configuration file:
+- Run the following command on openGauss to generate the configuration file:
+
+  ```
+  gs_om -t generateconf -X  /opt/software/openGauss/clusterconfig.xml  --distribute
+  Generating static configuration files for all nodes.
+  Creating temp directory to store static configuration files.
+  Successfully created the temp directory.
+  Generating static configuration files.
+  Successfully generated static configuration files.
+  Static configuration files for all nodes are saved in /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files.
+  Distributing static configuration files to all nodes.
+  Successfully distributed static configuration files.
+  ```
+
+- Run the following command on openGauss to modify the configuration file. To modify a dynamic configuration file, run the **gs\_om -t refreshconf** command and modify the GUC parameter to make the actual port or IP address take effect.
 
     ```
-    gs_om -t generateconf -X  /opt/software/openGauss/clusterconfig.xml  --distribute
+    gs_om -t generateconf --old-values=26000,192.168.1.1  --new-values=36000,192.168.1.2  --distribute
     Generating static configuration files for all nodes.
     Creating temp directory to store static configuration files.
     Successfully created the temp directory.
@@ -528,16 +547,16 @@ node                              node_ip         port                        in
     Successfully distributed static configuration files.
     ```
 
-    Open the generated configuration file directory. You can see three new files.
+- Open the generated configuration file directory. You can see three new files.
 
-    ```
-    cd /opt/huawei/Bigdata/gaussdb/wisequery/script/static_config_files
-    ll
-    total 456
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat1
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
-    -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
-    ```
+  ```
+  cd /opt/opengauss/Bigdata/gaussdb/wisequery/script/static_config_files
+  ll
+  total 456
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat1
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
+  -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
+  ```
 
 -   Roll back SSL certificates.
 
@@ -575,5 +594,3 @@ node                              node_ip         port                        in
     Remove the backup license file on all of the cluster hosts.
     License unregister successfully.
     ```
-
-

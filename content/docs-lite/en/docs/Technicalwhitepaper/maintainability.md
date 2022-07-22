@@ -4,6 +4,11 @@
 
 The workload diagnosis report \(WDR\) generates a performance report between two different time points based on the system performance snapshot data at two different time points. The report is used to diagnose database kernel performance faults.
 
+The WDR performance snapshot data is stored in the snapshot schema of the **postgres** database. The default collection and retention policies are as follows:
+
+-   A snapshot is collected every hour \(wdr\_snapshot\_interval=1h\).
+-   It is retained for 8 days \(wdr\_snapshot\_retention\_days=8\).
+
 WDR depends on the following two components:
 
 -   SNAPSHOT: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
@@ -132,4 +137,3 @@ Slow SQL records information about all jobs whose execution time exceeds the thr
 Historical slow SQL provides table-based and function-based query interfaces. You can query the execution plan, start time, end time, query statement, row activity, kernel time, CPU time, execution time, parsing time, compilation time, query rewriting time, plan generation time, network time, I/O time, network overhead, and lock overhead. All information is anonymized.
 
 Slow SQL provides detailed information required for slow SQL diagnosis. You can diagnose performance problems of specific slow SQL statements offline without reproducing the problem. The table-based and function-based APIs help users collect statistics on slow SQL indicators and connect to third-party platforms.
-

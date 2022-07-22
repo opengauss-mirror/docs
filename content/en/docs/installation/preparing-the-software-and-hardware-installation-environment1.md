@@ -32,7 +32,7 @@ This section describes hardware and software requirements of openGauss. It is re
 <p id="en-us_topic_0283136474_en-us_topic_0241802565_p655107143013"><a name="en-us_topic_0283136474_en-us_topic_0241802565_p655107143013"></a><a name="en-us_topic_0283136474_en-us_topic_0241802565_p655107143013"></a>In performance tests and commercial deployment, it is recommended that one 16-core 2.0 GHz CPU be used.</p>
 <p id="en-us_topic_0283136474_en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"><a name="en-us_topic_0283136474_en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a><a name="en-us_topic_0283136474_en-us_topic_0241802565_en-us_topic_0085434629_en-us_topic_0059782022_p2939854163851"></a>You can set CPUs to hyper-threading or non-hyper-threading mode.</p>
 <div class="note" id="note478320195520"><a name="note478320195520"></a><a name="note478320195520"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="p127209169344"><a name="p127209169344"></a><a name="p127209169344"></a>For individual developers, the minimum configuration is 2 cores and 4 GB memory, and the recommended configuration is 4 cores and 8 GB memory.</p>
-<p id="p57837193513"><a name="p57837193513"></a><a name="p57837193513"></a>Currently, openGauss supports only the CPUs of Kunpeng servers and x86_64-based universal PC servers.</p>
+<p id="p57837193513"><a name="p57837193513"></a><a name="p57837193513"></a>Currently, openGauss supports only the CPUs of ARM servers and x86_64-based universal PC servers.</p>
 </div></div>
 </td>
 </tr>
@@ -232,7 +232,7 @@ Currently, the installation can be performed only when the firewall is disabled.
 
 **Setting Character Set Parameters**
 
-Set the same character set for all database nodes. You can add  **export LANG=**_Unicode_  to the  **/etc/profile**  file.
+Set the same character set for all database nodes. You can add  **export LANG=***Unicode*  to the  **/etc/profile**  file.
 
 ```
 vim /etc/profile
@@ -255,7 +255,7 @@ Ensure that the time zone and time on each database node are consistent.
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
+    >*$Locale/$Time zone*  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
 
 3.  <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
 

@@ -21,20 +21,20 @@ The enterprise edition is compatible with the earlier versions. Main functions a
 
 
 -   New functions:
-    -   Row-store execution to vectorized execution
-    -   Delay of entering the maximum availability mode
-    -   Parallel logical decoding
-    -   Cluster Manager \(CM\)
-    -   global syscache
-    -   Publication-Subscription
-    -   Foreign key lock enhancement
-    -   Row-store table compression
-    -   Open-source Data Studio
-    -   MySQL to openGauss migration tool Chameleon
-    -   Using ShardingSphere to build a distributed database
-    -   Deploying a distributed database using Kubernetes
--   Support ANY permission management
-    - DBMind componentization
+    -   [Row-store execution to vectorized execution](../CharacteristicDescription/row-store-execution-to-vectorized-execution.md)
+    -   [Delay of entering the maximum availability mode](../CharacteristicDescription/delaying-entering-the-maximum-availability-mode.md)
+    -   [Parallel logical decoding](../CharacteristicDescription/parallel-logical-decoding.md)
+    -   [Cluster Manager](../Toolreference/unified-database-management-tool.md)
+    -   [Global SysCache](../CharacteristicDescription/global-syscache.md)
+    -   [Publication-subscription](../CharacteristicDescription/publication-subscription.md)
+    -   [Foreign key lock enhancement](../CharacteristicDescription/foreign-key-lock-enhancement.md)
+    -   [Row-store table compression](../Developerguide/create-table.md)
+    -   [Open-source Data Studio] (../CharacteristicDescription/opengauss-client-tool-datastudio.md)
+    -   [MySQL to openGauss migration tool Chameleon] (../CharacteristicDescription/mysql-to-opengauss-migration-tool-chameleon.md)
+    -   [Using ShardingSphere to build a distributed database](../CharacteristicDescription/distributed-database-capability.md)
+    -   [Deploying a distributed database using Kubernetes](../CharacteristicDescription/deploying-a-distributed-database-using-kubernetes.md)
+    -   [Supporting ANY permission management](../Developerguide/grant.md)
+    -   [DBMind componentization](../Developerguide/ai4db-autonomous-database-o-m.md)
     - In-library AI algorithms support XGBoost, multiclass and PCA
     
 -   Fixed defects:
@@ -54,5 +54,3 @@ The enterprise edition is compatible with the earlier versions. Main functions a
     -   [I4W3UB](https://gitee.com/opengauss/openGauss-server/issues/I4W3UB?from=project-issue): Fixed the issue of failing to obtain the view definition when the view is created using a user-defined type and the user-defined type is renamed.
     -   [I4WRMX](https://gitee.com/opengauss/openGauss-server/issues/I4WRMX?from=project-issue): Fixed the issue of failing to clear data in the  **statement\_history**  table. When the database restarts and the  **enable\_stmt\_track**  parameter is disabled, no record should be found in the  **statement\_history**  table.
     -   [I4WOBH](https://gitee.com/opengauss/openGauss-server/issues/I4WOBH?from=project-issue): Fixed the issue of failing to restart the database by setting GUC parameter  **pagewriter\_sleep**  from  **360000**  to  **2000**.
-
-

@@ -1,6 +1,9 @@
 # Technical Specifications<a name="EN-US_CONCEPT_0289895647"></a>
 
+The following table lists the technical specifications of the openGauss database.
+
 <a name="en-us_concept_0283138979_en-us_concept_0238166180_table1754017521578"></a>
+
 <table><thead align="left"><tr id="en-us_concept_0283138979_en-us_concept_0238166180_row1670414521273"><th class="cellrowborder" valign="top" width="45.45%" id="mcps1.1.3.1.1"><p id="en-us_concept_0283138979_en-us_concept_0238166180_p670412521175"><a name="en-us_concept_0283138979_en-us_concept_0238166180_p670412521175"></a><a name="en-us_concept_0283138979_en-us_concept_0238166180_p670412521175"></a>Technical Specifications</p>
 </th>
 <th class="cellrowborder" valign="top" width="54.55%" id="mcps1.1.3.1.2"><p id="en-us_concept_0283138979_en-us_concept_0238166180_p97045527715"><a name="en-us_concept_0283138979_en-us_concept_0238166180_p97045527715"></a><a name="en-us_concept_0283138979_en-us_concept_0238166180_p97045527715"></a>Maximum Value</p>
@@ -69,7 +72,7 @@
 </tr>
 <tr id="en-us_concept_0283138979_en-us_concept_0238166180_row4706552671"><td class="cellrowborder" valign="top" width="45.45%" headers="mcps1.1.3.1.1 "><p id="en-us_concept_0283138979_en-us_concept_0238166180_p9706552878"><a name="en-us_concept_0283138979_en-us_concept_0238166180_p9706552878"></a><a name="en-us_concept_0283138979_en-us_concept_0238166180_p9706552878"></a>Number of partitions in a partitioned table</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.1.3.1.2 "><p id="en-us_concept_0283138979_en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"><a name="en-us_concept_0283138979_en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a><a name="en-us_concept_0283138979_en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a>32767</p>
+<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.1.3.1.2 "><p id="en-us_concept_0283138979_en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"><a name="en-us_concept_0283138979_en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a><a name="en-us_concept_0283138979_en-us_topic_0237080616_en-us_topic_0231764304_p1790591317132"></a>32767 (range partition)/64 (hash/list partition)</p>
 </td>
 </tr>
 <tr id="en-us_concept_0283138979_en-us_concept_0238166180_row870618521574"><td class="cellrowborder" valign="top" width="45.45%" headers="mcps1.1.3.1.1 "><p id="en-us_concept_0283138979_en-us_concept_0238166180_p870615529719"><a name="en-us_concept_0283138979_en-us_concept_0238166180_p870615529719"></a><a name="en-us_concept_0283138979_en-us_concept_0238166180_p870615529719"></a>Size of each partition in a partitioned table</p>
@@ -94,4 +97,3 @@
 </tr>
 </tbody>
 </table>
-

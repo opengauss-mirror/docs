@@ -113,7 +113,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 16 to 1073741823. The unit is 8 KB.
 
-The value of  **shared\_buffers**  must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 KB**. That is, the value of  **shared\_buffers**  must be an integer multiple of 8 KB. The minimum value changes according to the value of  **BLCKSZ**.
+The value of  **segment\_buffers**  must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 KB**. That is, the value of  **segment\_buffers**  must be an integer multiple of 8 KB. The minimum value changes according to the value of  **BLCKSZ**.
 
 **Default value:** **16**
 
