@@ -43,25 +43,7 @@ You can perform the following steps only as a database administrator to enable l
     gs_guc reload -Z coordinator -Z datanode -N all -I all -c "enable_control_group=on"
     ```
 
-3.  Enable resource pool–based load management.
-
-    ```
-    gs_guc set -Z coordinator -Z datanode -N all -I all -c "use_workload_manager=on" 
-    ```
-
-4.  Enable resident backend thread control for the database.
-
-    ```
-    gs_guc set -Z coordinator -Z datanode -N all -I all -c "enable_backend_control=on" 
-    ```
-
-5.  Enable control over the autoVacuumWorker thread among the resident backend threads for the database.
-
-    ```
-    gs_guc set -Z coordinator -Z datanode -N all -I all -c "enable_vacuum_control=on"
-    ```
-
-6.  Restart the database for the parameter settings to take effect.
+3.  Restart the database for the parameter settings to take effect.
 
     ```
     gs_om -t stop && gs_om -t start

@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p1365319531511"><a name="p1365319531511"></a><a name="p1365319531511"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p1665305305113"><a name="p1665305305113"></a><a name="p1665305305113"></a>Handle corresponding to the transaction in GTM</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p1665305305113"><a name="p1665305305113"></a><a name="p1665305305113"></a>Handle in the transaction manager corresponding to the transaction. The value is fixed to –1.</p>
 </td>
 </tr>
 <tr id="row11653165310515"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="p9653153185116"><a name="p9653153185116"></a><a name="p9653153185116"></a>gxid</p>
@@ -80,9 +80,8 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p17654053125119"><a name="p17654053125119"></a><a name="p17654053125119"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p965419538512"><a name="p965419538512"></a><a name="p965419538512"></a>Transaction ID sent from a <span id="text1366214252513"><a name="text1366214252513"></a><a name="text1366214252513"></a>CN</span> to a <span id="text12348048555"><a name="text12348048555"></a><a name="text12348048555"></a>DN</span></p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p965419538512"><a name="p965419538512"></a><a name="p965419538512"></a><span id="text1366214252513"><a name="text1366214252513"></a><a name="text1366214252513"></a>Transaction ID sent by other nodes to the current node. The value is fixed to 0.</p>
 </td>
 </tr>
 </tbody>
 </table>
-

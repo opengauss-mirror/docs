@@ -8,7 +8,7 @@ A subscriber node can have multiple subscriptions if needed. You can define mult
 
 Each subscription will receive changes through a replication slot. Currently, initial data in pre-existing tables cannot be synchronized.
 
-If the current user is a user with the  **SYSADMIN**  permission, subscriptions are dumped by  **pg\_dump**. Otherwise, the subscriptions are skipped and a warning is written because users without the  **SYSADMIN**  permission cannot read all subscription information from the  **pg\_subscription**  directory.
+If the current user is a user with the  **SYSADMIN**  permission, subscriptions are dumped by  **gs\_dump**. Otherwise, the subscriptions are skipped and a warning is written because users without the  **SYSADMIN**  permission cannot read all subscription information from the  **pg\_subscription**  directory.
 
 You can use  **CREATE SUBSCRIPTION**  to add a subscription,  **ALTER SUBSCRIPTION**  to alter a subscription, and  **DROP SUBSCRIPTION**  to drop a subscription.
 

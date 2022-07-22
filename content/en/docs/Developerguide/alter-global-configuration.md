@@ -17,5 +17,10 @@ ALTER GLOBAL CONFIGURATION with(paraname=value,paraname=value...);
 
 ## Parameter Description<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
 
-The parameter name and value are of the text type.
++ paraname
 
+  Parameter name, which is of the text type.
+
++ value
+
+  Parameter value, which is of the text type.

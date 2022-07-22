@@ -44,7 +44,7 @@ CREATE INCREMENTAL MATERIALIZED VIEW mv_name
 
 -   **AS query**
 
-    **SELECT**,  **TABLE**, or  **VALUES**  command This query will be run in a security-constrained operation.
+    **SELECT** or **TABLE** command This query will be run in a security-constrained operation.
 
 
 ## Examples<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>

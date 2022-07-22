@@ -24,7 +24,7 @@ CREATE SERVER server_name
 
     Specifies the name of the foreign data wrapper.
 
-    Value range:  **oracle\_fdw**,  **mysql\_fdw**,  **postgres\_fdw**,  **mot\_fdw**, and  **file\_fdw**
+    Value range: **dist\_fdw**, **hdfs\_fdw**, **log\_fdw**, **file\_fdw**, **mot\_fdw**, **oracle\_fdw**, **mysql\_fdw**, and **postgres\_fdw**
 
 -   **OPTIONS \(  \{ option\_name ' value '  \}  \[, ...\] \)**
 
@@ -50,7 +50,7 @@ CREATE SERVER server_name
 
             Listening port number of the MySQL server or MariaDB.
 
-    -   The options supported by postgres\_fdw are the same as those supported by libpq. For details, see  _Connection Character Strings_. Note that the following options cannot be set:
+    -   The options supported by postgres\_fdw are the same as those supported by libpq. For details, see  *Connection Character Strings*. Note that the following options cannot be set:
         -   **user**  and  **password**
 
             The username and password are specified when the user mapping is created.
@@ -114,4 +114,3 @@ CREATE SERVER
 ## Helpful Links<a name="en-us_topic_0283137586_section3901738174011"></a>
 
 [ALTER SERVER](alter-server.md)  and  [DROP SERVER](drop-server.md)
-

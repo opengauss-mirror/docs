@@ -47,3 +47,13 @@ A logical replication slot means a stream of changes that can be replayed in oth
 -   To perform decoding on the standby node, set the GUC parameter  **enable\_slot\_log**  to  **on**  on the corresponding host.
 -   Do not perform operations on the replication slot on other nodes when the logical replication slot is in use. To delete a replication slot, stop decoding in the replication slot first.
 
+## Performance<a name="section1228492817598"></a>
+
+When pg\_logical\_slot\_get\_changes is used in the BenchmarkSQL 5.0 with 100 warehouses:
+
+-   If 4000 lines of data (about 5 MB to 10 MB logs) are decoded at a time, the decoding performance ranges from 0.3 MB/s to 0.5 MB/s.
+-   If 32000 lines of data (about 40 MB to 80 MB logs) are decoded at a time, the decoding performance ranges from 3 MB/s to 5 MB/s.
+-   If 256000 lines of data (about 320 MB to 640 MB logs) are decoded at a time, the decoding performance ranges from 3 MB/s to 5 MB/s.
+-   If the amount of data to be decoded at a time still increases, the decoding performance is not significantly improved.
+
+Compared with the decoding performance in pg\_logical\_slot\_get\_changes mode, the decoding performance in pg\_logical\_slot\_peek\_changes + pg\_replication\_slot\_advance mode decreases by 30% to 50%.

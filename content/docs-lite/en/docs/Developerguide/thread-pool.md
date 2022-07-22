@@ -9,6 +9,8 @@
 -   **on**  indicates that the thread pool function is enabled.
 -   **off**  indicates that the thread pool function is disabled.
 
+Note: When the thread pool function is enabled, applications need to use the HA port to connect to the database.
+
 **Default value**:  **off**
 
 ## thread\_pool\_attr<a name="en-us_topic_0283137548_en-us_topic_0237124743_section787511112134"></a>
@@ -24,4 +26,3 @@ This parameter consists of three parts: thread\_num, group\_num, and cpubind\_in
 -   **cpubind\_info**  indicates whether the thread pool is bound to a core. The available configuration modes are as follows: 1.  **'\(nobind\)'**: The thread is not bound to a core. 2.  **'\(allbind\)'**: Use all CPU cores that can be queried in the current system to bind threads. 3.  **'\(nodebind: 1, 2\)'**: Use the CPU cores in NUMA groups 1 and 2 to bind threads. 4.  **'\(cpubind: 0-30\)'**: Use the CPU cores 0 to 30 to bind threads. This parameter is case-insensitive.
 
 **Default value**:  **'16, 2, \(nobind\)'**
-

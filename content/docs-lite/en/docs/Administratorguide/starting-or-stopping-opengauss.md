@@ -23,7 +23,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >For details about how to start and stop nodes, see "Tools Called in the Internal System \> gs\_ctl" in the  _Tool Reference_.
+    >For details about how to start and stop nodes, see "Tools Called in the Internal System \> gs\_ctl" in *Tool Reference*.
 
 
 ## Examples<a name="en-us_topic_0283140572_en-us_topic_0237088789_en-us_topic_0059777680_s8c57591e1a444d5ea91a783a1a2b74c5"></a>
@@ -94,4 +94,3 @@ server stopped
 ## Troubleshooting<a name="en-us_topic_0283140572_en-us_topic_0237088789_en-us_topic_0059777680_se86cdadb17ce4b5fbec281adaf1ccc92"></a>
 
 If starting or stopping openGauss fails, troubleshoot the problem based on log information. For details, see  [Log Reference](log-reference.md).
-

@@ -115,11 +115,11 @@ PreparedStatement pstmt = conn.prepareStatement("INSERT INTO batch_table (id, na
 // Call the setShort method for each piece of data, and call addBatch to confirm that the setting is complete.
 int loopCount = 20;
  for (int i = 1; i < loopCount + 1; ++i) {
-      statemnet.setInt(1, i);
-      statemnet.setString(2, "Name " + i);
-      statemnet.setString(3, "Address " + i);
+      pstmt.setInt(1, i);
+      pstmt.setString(2, "Name " + i);
+      pstmt.setString(3, "Address " + i);
       // Add row to the batch.
-      statemnet.addBatch();
+      pstmt.addBatch();
 }
 // Execute batch processing by calling the executeBatch method in PreparedStatement.
 int[] rowcount = pstmt.executeBatch();

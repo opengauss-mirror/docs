@@ -5,7 +5,7 @@
 - [Overview](#overview)
 - [Physical Backup and Restoration](#physical-backup-and-restoration)
 - [Logical Backup and Restoration](#logical-backup-and-restoration)
-- [Flashback Restoration](#Flashback Restoration)
+- [Flashback Restoration](#flashback-restoration)
 
 
 ## Overview
@@ -72,7 +72,7 @@ Backup and restoration can be classified into logical backup and restoration, ph
   </td>
   <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="p105311745185514"><a name="p105311745185514"></a><a name="p105311745185514"></a>Small data volume and fast data recovery</p>
   </td>
-  <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="p87466241829"><a name="p87466241829"></a><a name="p87466241829"></a>The OM tool for exporting database information can be used to export database parameter files and binary files. It helps the openGauss to back up and restore important data, and display help and version information. During the backup, you can select the type of the backup content. During the restoration, ensure that the backup file exists in the backup directory of each node. During cluster restoration, the cluster information in the static configuration file is used for restoration. It takes a short time to restore only parameter files.</p>
+  <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="p87466241829"><a name="p87466241829"></a><a name="p87466241829"></a>The OM tool for exporting database information can be used to export database parameter files and binary files. It helps openGauss to back up and restore important data, and display help and version information. During the backup, you can select the type of the backup content. During the restoration, ensure that the backup file exists in the backup directory of each node. Database instances are restored based on the database instance information in the static configuration file. It takes a short time to restore only parameter files.</p>
   </td>
   </tr>
   <tr id="row13276194494218"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="p1377994145414"><a name="p1377994145414"></a><a name="p1377994145414"></a>gs_basebackup</p>
@@ -86,7 +86,7 @@ Backup and restoration can be classified into logical backup and restoration, ph
   </td>
   <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.2 "><p id="p125311445195513"><a name="p125311445195513"></a><a name="p125311445195513"></a>Data can be directly restored to a backup point and the database can be started on the backup database. The restoration takes a short time.</p>
   </td>
-  <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.3 "><p id="p12747624021"><a name="p12747624021"></a><a name="p12747624021"></a><strong id="b131510755852718"><a name="b131510755852718"></a><a name="b131510755852718"></a>gs_probackup</strong> is a tool used to manage openGauss database backup and restoration. It periodically backs up openGauss instances. It supports the physical backup of a standalone database or a primary database node in a cluster. It supports the backup of contents in external directories, such as script files, configuration files, log files, and dump files. It supports incremental backup, periodic backup, and remote backup. The time required for incremental backup is shorter than that for full backup. You only need to back up the modified files. Currently, the data directory is backed up by default. If the tablespace is not in the data directory, you need to manually specify the tablespace directory to be backed up. Currently, data can be backed up only on the primary node.</p>
+  <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.3 "><p id="p12747624021"><a name="p12747624021"></a><a name="p12747624021"></a>**gs_probackup** is a tool used to manage openGauss backup and restoration. It periodically backs up openGauss instances. It supports the physical backup of a standalone database or a primary database instance. It supports the backup of external directories, such as script files, configuration files, log files, and dump files. It supports incremental backup, periodic backup, and remote backup. The time required for incremental backup is shorter than that for full backup. You only need to back up the modified files. Currently, the data directory is backed up by default. If the tablespace is not in the data directory, you need to manually specify the tablespace directory to be backed up. Currently, data can be backed up only on the primary node.</p>
   </td>
   </tr>
   <tr id="row1924214217407"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="p1342320295404"><a name="p1342320295404"></a><a name="p1342320295404"></a>Flashback</p>
@@ -333,7 +333,7 @@ If a database is faulty, restore it from backup files.  **gs\_basebackup**  back
 
 To restore the original database, perform the following steps:
 
-1.  Stop the database server. For details, see  _Administrator Guide_.
+1.  Stop the database server. For details, see  *Administrator Guide*.
 2.  Copy the original database and all tablespaces to another location for future use.
 3.  Delete all or part of the files from the original database.
 4.  Use the database system user rights to restore the required database files from the backup.
@@ -635,33 +635,33 @@ recovery_target_inclusive = true
 
   Prints the  **gs\_probackup**  version and exits.
 
-- -B  _backup-path_, --backup-path=_backup-path_
+- -B  *backup-path*, --backup-path=*backup-path*
 
   Backup path.
 
-  System environment variable:  _$BACKUP\_PATH_
+  System environment variable:  *$BACKUP\*PATH_
 
-- -D  _pgdata-path_, --pgdata=_pgdata-path_
+- -D  *pgdata-path*, --pgdata=*pgdata-path*
 
   Path of the data directory.
 
-  System environment variable:  _$PGDATA_
+  System environment variable:  *$PGDATA*
 
-- --instance=_instance\_name_
+- --instance=*instance\*name_
 
   Instance name.
 
-- -i  _backup-id_, --backup-id=_backup-id_
+- -i  *backup-id*, --backup-id=*backup-id*
 
   Unique identifier of a backup.
 
-- --format=_format_
+- --format=*format*
 
   Specifies format of the backup information to be displayed. The plain and JSON formats are supported.
 
   Default value:  **plain**
 
-- --status=_backup\_status_
+- --status=*backup\*status_
 
   Deletes all backups in a specified state. The states are as follows:
 
@@ -674,7 +674,7 @@ recovery_target_inclusive = true
   -   **ERROR**: Backup fails due to an unexpected error.
   -   **ORPHAN**: Backup is invalid because one of its parent backups is corrupted or lost.
 
-- -j  _threads\_num_, --threads=_threads\_num_
+- -j  *threads\*num_, --threads=*threads\*num_
 
   Sets the number of concurrent threads for the backup, restoration, and combination processes.
 
@@ -686,14 +686,14 @@ recovery_target_inclusive = true
 
   Displays progress.
 
-- --note=_text_
+- --note=*text*
 
   Adds a note to the backup.
 
 
 **Backup-related parameters**
 
-- -b  _backup-mode_, --backup-mode=_backup-mode_
+- -b  *backup-mode*, --backup-mode=*backup-mode*
 
   Specifies the backup mode. The value can be  **FULL**  or  **PTRACK**.
 
@@ -705,7 +705,7 @@ recovery_target_inclusive = true
 
   Expands checkpoints within a period of time. By default,  **gs\_probackup**  attempts to complete checkpoints as soon as possible.
 
-- -S  _slot-name_, --slot=_slot-name_
+- -S  *slot-name*, --slot=*slot-name*
 
   Specifies the replication slot for WAL stream processing.
 
@@ -719,7 +719,7 @@ recovery_target_inclusive = true
 
   Includes the log directory in the backup. This directory typically contains log messages. By default, the log directory is not included. If the default log path is changed, you can use the  **-E**  parameter to back up log files. The following describes how to use the  **-E**  parameter.
 
-- -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
+- -E  *external-directories-paths*, --external-dirs=*external-directories-paths*
 
   Includes the specified directory in the backup. This option is useful for backing up scripts in external data directories, sql dumps, and configuration files. To back up multiple external directories, use colons \(:\) to separate their paths in Unix.
 
@@ -737,7 +737,7 @@ recovery_target_inclusive = true
 
   Disables backup file synchronization to the disk.
 
-- --archive-timeout=_timeout_
+- --archive-timeout=*timeout*
 
   Specifies timeout interval for streaming processing, in seconds.
 
@@ -758,11 +758,11 @@ recovery_target_inclusive = true
 
   Default value:  **none**
 
-- --external-mapping=_OLDDIR=NEWDIR_
+- --external-mapping=*OLDDIR=NEWDIR*
 
   During restoration, the external directory contained in the backup is moved from  **OLDDIR **to  **NEWDIR**.  **OLDDIR**  and  **NEWDIR**  must be absolute paths. If the path contains an equal sign \(=\), use a backslash \(\\\) to escape. This option can be specified for multiple directories.
 
-- -T  _OLDDIR=NEWDIR_, --tablespace-mapping=_OLDDIR=NEWDIR_
+- -T  *OLDDIR=NEWDIR*, --tablespace-mapping=*OLDDIR=NEWDIR*
 
   Relocates the tablespace from the  **OLDDIR**  directory to the  **NEWDIR**  directory during the restoration.  **OLDDIR**  and  **NEWDIR**  must be absolute paths. If the path contains an equal sign \(=\), use a backslash \(\\\) to escape. This parameter can be specified multiple times for multiple tablespaces. This parameter must be used together with  **--external-mapping**.
 
@@ -796,23 +796,23 @@ recovery_target_inclusive = true
 >5.  Start the database.
 >6.  Connect to the database and check whether the database is recovered to the expected status. If the expected status is reached, run the  **pg\_xlog\_replay\_resume\(\)**  command so that the primary node can provide services externally.
 
-- --recovery-target-lsn=_lsn_
+- --recovery-target-lsn=*lsn*
 
   Specifies LSN to be restored. Currently, only the backup stop LSN can be specified.
 
-- --recovery-target-name=_target-name_
+- --recovery-target-name=*target-name*
 
   Specifies named savepoint to which data is restored. You can obtain the savepoint by viewing the recovery-name column in the backup.
 
-- --recovery-target-time=_time_
+- --recovery-target-time=*time*
 
   Specifies time to which data is restored. Currently, only recovery-time can be specified.
 
-- --recovery-target-xid=_xid_
+- --recovery-target-xid=*xid*
 
   Specifies transaction ID to which data is restored. Currently, only recovery-xid can be specified.
 
-- --recovery-target-inclusive=_boolean_
+- --recovery-target-inclusive=*boolean*
 
   When this parameter is set to  **true**, the recovery target will include the specified content.
 
@@ -826,19 +826,19 @@ recovery_target_inclusive = true
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  and  **delete**  commands.
 
-- --retention-redundancy=_retention-redundancy_
+- --retention-redundancy=*retention-redundancy*
 
   Number of full backups retained in the data directory. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
   Default value:  **0**
 
-- --retention-window=_retention-window_
+- --retention-window=*retention-window*
 
   Specifies the retention period. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
   Default value:  **0**
 
-- --wal-depth=_wal-depth_
+- --wal-depth=*wal-depth*
 
   Latest number of valid backups that must be retained on each timeline to perform the PITR capability. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
@@ -866,7 +866,7 @@ recovery_target_inclusive = true
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >To exclude certain backups from the established retention policy, you can use the following parameters with the  **backup**  and  **set-backup**  commands.
 
-- --ttl=_interval_
+- --ttl=*interval*
 
   Specifies a fixed amount of time to back up data from the restoration time. The value must be a positive integer. The value  **0**  indicates that the backup is canceled.
 
@@ -874,7 +874,7 @@ recovery_target_inclusive = true
 
   For example,  **--ttl=30d**.
 
-- --expire-time=_time_
+- --expire-time=*time*
 
   Specifies the timestamp when the backup is invalid. The time stamp must comply with the ISO-8601 standard.
 
@@ -885,19 +885,19 @@ recovery_target_inclusive = true
 
 Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **off**.
 
-- --log-level-console=_log-level-console_
+- --log-level-console=*log-level-console*
 
   Sets the level of logs to be sent to the console. Each level contains all the levels following it. A higher level indicates fewer messages sent. If this parameter is set to  **off**, the log recording function of the console is disabled.
 
   Default value:  **info**
 
-- --log-level-file=_log-level-file_
+- --log-level-file=*log-level-file*
 
   Sets the level of logs to be sent to the log file. Each level contains all the levels following it. A higher level indicates fewer messages sent. If this parameter is set to  **off**, the log file recording function is disabled.
 
   Default value:  **off**
 
-- --log-filename=_log-filename_
+- --log-filename=*log-filename*
 
   Specifies the name of the log file to be created. The file name can use the strftime mode. Therefore,  **%-escapes**  can be used to specify the file name that changes with time.
 
@@ -907,19 +907,19 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   Default value:  **"pg\_probackup.log"**
 
-- --error-log-filename=_error-log-filename_
+- --error-log-filename=*error-log-filename*
 
   Specifies the name of the log file that is used only for error logs. The specifying method is the same as that of the  **--log-filename**  parameter.
 
   It is used for troubleshooting and monitoring.
 
-- --log-directory=_log-directory_
+- --log-directory=*log-directory*
 
   Specifies the directory where log files are created. The value must be an absolute path. This directory is created when the first log is written.
 
   Default value:  **$BACKUP\_PATH/log**
 
-- --log-rotation-size=_log-rotation-size_
+- --log-rotation-size=*log-rotation-size*
 
   Specifies the maximum size of a log file. If the maximum size is reached, the log file will be circulated after the  **gs\_probackup**  command is executed. The  **help**  and  **version**  commands will not lead to a log file circulation. The value  **0**  indicates that the file size-based loop is disabled.
 
@@ -927,7 +927,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   Default value:  **0**
 
-- --log-rotation-age=_log-rotation-age_
+- --log-rotation-age=*log-rotation-age*
 
   Maximum life cycle of a log file. If the maximum size is reached, the log file will be circulated after the  **gs\_probackup**  command is executed. The  **help**  and  **version**  commands will not lead to a log file circulation. The  **$BACKUP\_PATH/log/log\_rotation**  directory saves the time of the last created log file. The value  **0**  indicates that the time-based loop is disabled.
 
@@ -941,39 +941,39 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  command.
 
-- -d  _dbname_, --pgdatabase=_dbname_
+- -d  *dbname*, --pgdatabase=*dbname*
 
-  Specifies the name of the database to connect to. This connection is only used to manage the backup process. Therefore, you can connect to any existing database. If this parameter is not specified in the command line, the  _PGDATABASE_  environment variable, or the  **pg\_probackup.conf**  configuration file,  **gs\_probackup**  attempts to obtain the value from the  _PGUSER_  environment variable. If the  _PGUSER_  variable is not set, the value is obtained from the current user name.
+  Specifies the name of the database to connect to. This connection is only used to manage the backup process. Therefore, you can connect to any existing database. If this parameter is not specified in the command line, the  *PGDATABASE*  environment variable, or the  **pg\_probackup.conf**  configuration file,  **gs\_probackup**  attempts to obtain the value from the  *PGUSER*  environment variable. If the  *PGUSER*  variable is not set, the value is obtained from the current user name.
 
-  System environment variable:  _$PGDATABASE_
+  System environment variable:  *$PGDATABASE*
 
-- -h  _hostname_, --pghost=_hostname_
+- -h  *hostname*, --pghost=*hostname*
 
   Specifies the host name of the system on which the server is running. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket.
 
-  System environment variable:  _$PGHOST_
+  System environment variable:  *$PGHOST*
 
   Default value:  **local socket**
 
-- -p  _port_, --pgport=_p__ort_
+- -p  *port*, --pgport=*p__ort*
 
   Specifies the TCP port or local Unix domain socket file name extension on which the server is listening for connections.
 
-  System environment variable:  _$PGPORT_
+  System environment variable:  *$PGPORT*
 
   Default value:  **5432**
 
-- -U  _username_, --pguser=_username_
+- -U  *username*, --pguser=*username*
 
   Specifies the username of the host to be connected.
 
-  System environment variable:  _$PGUSER_
+  System environment variable:  *$PGUSER*
 
 - -w, --no-password
 
   Never issues a password prompt. The connection attempt fails if the host requires password verification and the password is not provided in other ways. This parameter is useful in batch jobs and the scripts that require no user password.
 
-- -W  _password_, --password=_password_
+- -W  *password*, --password=*password*
 
   User password for database connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  parameter. If the  **-W**  parameter is not provided and you are not a system administrator, the system will ask you to enter a password.
 
@@ -983,7 +983,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  command.
 
-- --compress-algorithm=_compress-algorithm_
+- --compress-algorithm=*compress-algorithm*
 
   Specifies the algorithm used to compress data file.
 
@@ -991,7 +991,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   Default value:  **none**
 
-- --compress-level=_compress-level_
+- --compress-level=*compress-level*
 
   Specifies the compression level. Value range: 0–9
 
@@ -1012,7 +1012,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 >![](/public_sys-resources/icon-note.gif) **NOTE:** 
 >The following are parameters that remotely run  **gs\_probackup**  through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.
 
-- --remote-proto=_protocol_
+- --remote-proto=*protocol*
 
   Specifies the protocol used for remote operations. Currently, only the SSH protocol is supported. Valid value:
 
@@ -1022,23 +1022,23 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   If  **--remote-host**  is specified, this parameter can be omitted.
 
-- --remote-host=_destination_
+- --remote-host=*destination*
 
   Specifies the IP address or host name of the remote host to be connected.
 
-- --remote-port=_port_
+- --remote-port=*port*
 
   Specifies the port number of the remote host to be connected.
 
   Default value:  **22**
 
-- --remote-user=_username_
+- --remote-user=*username*
 
   Specifies the remote host user for SSH connection. If this parameter is not specified, the user who initiates the SSH connection is used.
 
   Default value: the current user.
 
-- --remote-path=_path_
+- --remote-path=*path*
 
   Specifies the installation directory of  **gs\_probackup**  in the remote system.
 
@@ -1048,7 +1048,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   Specifies the lib directory where  **gs_probackup**  is installed in the remote system.
 
-- --ssh-options=_ssh\_options_
+- --ssh-options=*ssh\*options_
 
   Specifies the character string of the SSH command line parameter.
 
@@ -1056,7 +1056,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >
-  >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  _archive-timeout_  seconds \(300 seconds is set by default\).
+  >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  *archive-timeout*  seconds \(300 seconds is set by default\).
   >-   If the LSN of the standby server is different from that of the primary server, the database continuously updates the following log information. In this case, you need to rebuild the standby server.
   >
   >```
@@ -1214,11 +1214,15 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 ![](public_sys-resources/icon-note.gif) **NOTE:**   
 To reduce the size of an exported file, you can use the gs\_dump tool to compress it to a directory archive file or custom-format file. When a directory archive or custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**.
 
+
+
 #### Precautions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
 -   Do not modify an exported file or its content. Otherwise, restoration may fail.
 -   To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dump**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  option.
 -   Stored procedures and functions cannot be exported in encrypted mode.
+
+
 
 #### Syntax<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s884f9e03cedd408cbe7ce5303df97df6"></a>
 
@@ -1227,9 +1231,9 @@ gs_dump [OPTION]... [DBNAME]
 ```
 
 ![](public_sys-resources/icon-note.gif) **NOTE:**   
-_DBNAME_  does not follow a short or long option. It specifies the database to be connected.  
+*DBNAME*  does not follow a short or long option. It specifies the database to be connected.  
 For example:  
-Specify  _DBNAME_  without a  **-d**  option preceding it.
+Specify  *DBNAME*  without a  **-d**  option preceding it.
 
 ```
 gs_dump -p port_number  postgres -f dump1.sql
@@ -1241,7 +1245,9 @@ export PGDATABASE=postgres
 ```
  gs_dump -p port_number -f dump1.sql
 ```
-Environment variable:  _PGDATABASE_
+Environment variable:  *PGDATABASE*
+
+
 
 #### Parameter Description<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
@@ -1326,7 +1332,7 @@ Dump parameters:
     -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
     -   If  **-n**  is specified, the non-schema objects are not dumped.  
 
-    Multiple schemas can be dumped. Entering  **-n **_schemaname_  multiple times dumps multiple schemas.
+    Multiple schemas can be dumped. Entering  **-n ***schemaname*  multiple times dumps multiple schemas.
 
     For example:
 
@@ -1384,8 +1390,10 @@ Dump parameters:
     -   The number of  **-t**  parameters must be less than or equal to 100.  
     -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
     -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
-    -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
+    -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
     -   **-t tablename**  does not export trigger information from a table.  
+
+
 
     For example:
 
@@ -1592,6 +1600,8 @@ Dump parameters:
 -   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
 -   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
 
+
+
 Connection parameters:
 
 -   -h, --host=HOSTNAME
@@ -1600,7 +1610,7 @@ Connection parameters:
 
     This parameter is used only for defining names of the hosts outside openGauss. The names of the hosts inside openGauss must be 127.0.0.1.
 
-    Example:  _host name_
+    Example:  *host name*
 
     Environment variable:  **PGHOST**
 
@@ -1651,10 +1661,7 @@ The dump file generated by  **gs\_dump**  does not contain the statistics used b
 
 Use  **gs\_dump**  to dump a database as a SQL text file or a file in other formats.
 
-In the following examples,  **Bigdata@123**  indicates the password for the database user.  **backup/MPPDB\_backup.sql**  indicates an exported file where  **backup**  indicates the relative path of the current directory.  **37300**  indicates the port number of the database server.  **postgres**  indicates the name of the database to be accessed.
-
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->Before exporting files, ensure that the directory exists and you have the read and write permissions on the directory.
+In the following examples, **Bigdata@123** indicates the password of the database user. **backup/MPPDB\_backup.sql** indicates an exported file where **backup** indicates the relative path of the current directory. **37300** indicates the port number of the database server. **postgres** indicates the name of the database to be accessed. Before exporting files, ensure that the directory exists and you have the read and write permissions on the directory. 
 
 Example 1: Use  **gs\_dump**  to export the full information of the postgres database. The exported  **MPPDB\_backup.sql**  file is in plain-text format.
 
@@ -1785,7 +1792,7 @@ Common parameters:
 
 -   -V, --version
 
-    Prints the  _gs\_dumpall_  version and exits.
+    Prints the  *gs\*dumpall_  version and exits.
 
 -   --lock-wait-timeout=TIMEOUT
 
@@ -1954,7 +1961,7 @@ Connection parameters:
 
     This parameter is used only for defining names of the hosts outside openGauss. The names of the hosts inside openGauss must be 127.0.0.1.
 
-    Environment Variable:  _PGHOST_
+    Environment Variable:  *PGHOST*
 
 -   -l, --database
 
@@ -1962,17 +1969,17 @@ Connection parameters:
 
 -   -p, --port
 
-    TCP port or the local Unix-domain socket file extension on which the server is listening for connections. The default value is the  _PGPORT_  environment variable.
+    TCP port or the local Unix-domain socket file extension on which the server is listening for connections. The default value is the  *PGPORT*  environment variable.
 
     If the thread pool function is enabled, you are advised to use  **pooler port**, that is, the listening port number plus 1.
 
-    Environment variable:  _PGPORT_
+    Environment variable:  *PGPORT*
 
 -   -U, --username
 
     Specifies the user name to connect to.
 
-    Environment variable:  _PGUSER_
+    Environment variable:  *PGUSER*
 
 -   -w, --no-password
 
@@ -2066,7 +2073,7 @@ Common parameters
 
 -   -F, --format=c|d|t
 
-    Specifies the format of the archive. The format does not need to be specified because the  _gs\_restore_  determines the format automatically.
+    Specifies the format of the archive. The format does not need to be specified because the  *gs\*restore_  determines the format automatically.
 
     Value range:
 
@@ -2119,7 +2126,7 @@ Parameters for importing data
     gs_restore -h host_name -p port_number -d postgres -I Index1 -I Index2 backup/MPPDB_backup.tar
     ```
 
-    In this example,  _Index1_  and  _Index2_  will be imported.
+    In this example,  *Index1*  and  *Index2*  will be imported.
 
 -   -j, --jobs=NUM
 
@@ -2143,7 +2150,7 @@ Parameters for importing data
 
     This parameter can be used in conjunction with the  **-t**  parameter to import a specific table.
 
-    Entering  **-n **_schemaname_  multiple times can import multiple schemas.
+    Entering  **-n ***schemaname*  multiple times can import multiple schemas.
 
     For example:
 
@@ -2183,7 +2190,7 @@ Parameters for importing data
 
 -   -t, --table=NAME
 
-    Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n **_schemaname_** -t **_tablename_  multiple times can import multiple tables in a specified schema.
+    Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n ***schemaname*** -t ***tablename*  multiple times can import multiple tables in a specified schema.
 
     For example:
 
@@ -2279,13 +2286,13 @@ Connection parameters:
 
 -   -h, --host=HOSTNAME
 
-    Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket. The default value is taken from the  _PGHOST_  environment variable. If it is not set, a UNIX domain socket connection is attempted.
+    Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket. The default value is taken from the  *PGHOST*  environment variable. If it is not set, a UNIX domain socket connection is attempted.
 
     This parameter is used only for defining names of the hosts outside openGauss. The names of the hosts inside openGauss must be 127.0.0.1.
 
 -   -p, --port=PORT
 
-    TCP port or the local Unix-domain socket file extension on which the server is listening for connections. The default value is the  _PGPORT_  environment variable.
+    TCP port or the local Unix-domain socket file extension on which the server is listening for connections. The default value is the  *PGPORT*  environment variable.
 
     If the thread pool function is enabled, you are advised to use  **pooler port**, that is, the listening port number plus 1.
 
@@ -2399,6 +2406,161 @@ gs_restore backup/MPPDB_backup.dmp -p 5432 -d postgres -e -a -n PUBLIC -t table1
 gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 ```
+
+
+
+### gs\_backup<a name="ZH-CN_TOPIC_0000001179389636"></a>
+
+#### Background<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>
+
+After openGauss is deployed, problems and exceptions may occur during database running. **gs\_backup** is provided by openGauss to back up openGauss, restore important data, and display help and version information.
+
+#### Prerequisites<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
+
+-   openGauss can be connected.
+-   During the restoration, backup files exist in the backup directory on all the nodes.
+-   Log in to the OS as the OS user **omm** to run the **gs\_backup** command.
+
+#### Syntax<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
+
+- Back up the database host.
+
+  ```
+  gs_backup -t backup --backup-dir=BACKUPDIR [-h HOSTNAME] [--parameter] [--binary] [--all] [-l LOGFILE]
+  ```
+
+- Restore the database host.
+
+  ```
+  gs_backup -t restore --backup-dir=BACKUPDIR [-h HOSTNAME] [--parameter] [--binary] [--all] [-l LOGFILE] [--force]
+  ```
+
+- Display the help information.
+
+  ```
+  gs_backup -? | --help
+  ```
+
+- Display the version number.
+
+  ```
+  gs_backup -V | --version
+  ```
+
+
+#### Parameter Description<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_s2fa71feeaad041f293de868e52bb5907"></a>
+
+**gs\_backup** has the following types of parameters:
+
+- Parameters for backing up the database host:
+
+  - -h
+
+    Specifies the host name for storing the backup files
+
+    Value range: a host name If the host name is not specified, the current database instance is backed up.
+
+  - --backup-dir=BACKUPDIR
+
+    Specifies the backup file path.
+
+  - --parameter
+
+    Backs up parameter files. If **--parameter**, **--binary**, and **--all** are not specified, only parameters files are backed up.
+
+  - --binary
+
+    Backs up the binary files in the **app** directory.
+
+  - --all
+
+    Backs up the binary files **pg\_hba.conf** and **postgsql.conf** in the **app** directory.
+
+  - -l
+
+    Specifies a log file and its save path.
+
+    Default value: **$GAUSSLOG/om/gs\_backup-YYYY-MM-DD\_hhmmss.log**
+
+
+- Parameters for restoring the database host:
+
+  - -h
+
+    Specifies the name of the host to be restored.
+
+    Value range: a host name If the name of the host is not specified, the corresponding backup node is restored.
+
+  - --backup-dir=BACKUPDIR
+
+    Specifies the path for obtaining the files for restoration.
+
+  - --parameter
+
+    Restores parameter files. If **--parameter**, **--binary**, and **--all** are not specified, only parameters files are restored.
+
+  - --binary
+
+    Restores binary files.
+
+  - --all
+
+    Restores binary files and parameter files.
+
+  - -l
+
+    Specifies a log file and its save path.
+
+    Default value: **$GAUSSLOG/om/gs\_backup-YYYY-MM-DD\_hhmmss.log**
+
+  - --force
+
+    Forcibly restores static files on a node after the files are lost. This parameter is valid only when **--all** or **--binary** is used together.
+
+
+- Other parameters:
+
+  - -?, --help
+
+    Displays the help information.
+
+  - -V, --version
+
+    Displays the version number.
+
+  - -t
+
+    Specifies the operation type.
+
+    The value can be **backup** or **restore**.
+
+
+
+#### Example<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
+
+- Run the **gs\_backup** script to back up the database host.
+
+  ```
+  gs_backup -t backup --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
+  Backing up openGauss.
+  Parsing configuration files.
+  Successfully parsed the configuration file.
+  Performing remote backup.
+  Remote backup succeeded.
+  Successfully backed up openGauss.
+  ```
+
+- Run the **gs\_backup** script to restore the database host.
+
+  ```
+  gs_backup -t restore --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
+  Restoring openGauss.
+  Parsing the configuration file.
+  Successfully parsed configuration files.
+  Performing remote restoration.
+  Remote restoration succeeded.
+  Successfully restored openGauss.
+  ```
 
 # Flashback Restoration
 
@@ -2595,4 +2757,3 @@ TIMECAPSULE TABLE t1 TO BEFORE DROP RENAME TO new_t1;
 TIMECAPSULE TABLE "BIN$04LhcpndanfgMAAAAAANPw==$0" TO BEFORE DROP;
 TIMECAPSULE TABLE "BIN$04LhcpndanfgMAAAAAANPw==$0" TO BEFORE DROP RENAME TO new_t1;
 ```
-

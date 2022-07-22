@@ -192,7 +192,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
         Specifies the maximum capacity of the pending list of the GIN index when fast update is enabled for the GIN index.
 
-        Value range: 64–_INT\_MAX_. The unit is KB.
+        Value range: 64–*INT\*MAX_. The unit is KB.
 
         Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is  **4**.
 
@@ -235,7 +235,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Value range: If this parameter is not specified, the value of  **index\_tablespace**  is used.
 
--   **COMPRESS\_TYPE**
+-   **COMPRESSTYPE**
 
     Sets the index compression algorithm. The value  **1**  indicates the PGLZ algorithm, and the value  **2**  indicates the ZSTD algorithm. By default, indexes are not compressed. \(Only B-tree indexes are supported.\)
 
@@ -243,7 +243,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
 -   **COMPRESS\_LEVEL**
 
-    Sets the index compression algorithm level. This parameter is valid only when  **COMPRESS\_TYPE**  is set to  **2**. A higher compression level indicates a better index compression effect and a slower index access speed. \(Only B-tree indexes are supported.\)
+    Sets the index compression algorithm level. This parameter is valid only when  **COMPRESSTYPE**  is set to  **2**. A higher compression level indicates a better index compression effect and a slower index access speed. \(Only B-tree indexes are supported.\)
 
     Value range: –31 to 31. The default value is  **0**.
 
@@ -261,6 +261,10 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Value range: 0 to 7. The default value is  **0**.
 
+    - The maximum value of this parameter is **7** when **COMPRESS\_CHUNK_SIZE** is set to **512** or **1024**.
+    - The maximum value of this parameter is **3** when **COMPRESS\_CHUNK_SIZE** is set to **2048**.
+    - The maximum value of this parameter is **1** when **COMPRESS\_CHUNK_SIZE** is set to **4096**.
+    
 -   **COMPRESS\_BYTE\_CONVERT**
 
     Sets the preprocessing of index compression byte conversion. In some scenarios, the compression effect can be improved, but the performance deteriorates.
@@ -417,5 +421,3 @@ CREATE INDEX
     -   In the same attribute column, the LOCAL index and GLOBAL index of a partition cannot coexist.
     -   GLOBAL index supports a maximum of 31 columns.
     -   If the  **ALTER**  statement does not contain  **UPDATE GLOBAL INDEX**, the original GLOBAL index is invalid. In this case, other indexes are used for query. If the ALTER statement contains UPDATE GLOBAL INDEX, the original GLOBAL index is still valid and the index function is correct.
-
-

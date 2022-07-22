@@ -1489,6 +1489,9 @@ The following functions of openGauss use internal data types, which cannot be di
 
     **gs\_read\_block\_from\_remote**  is used to read the pages of a non-segment-page table file. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
 
+    **pg\_read\_binary\_file\_blocks** is used to read data. Non-compressed tables return actual data, and compressed tables return compressed data. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
+
+
     **gs\_read\_segment\_block\_from\_remote**  is used to read the pages of a segment-page table file. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
 
 -   Auxiliary function for the primary  database node  to remotely read the data file from the standby  database node.
@@ -1588,7 +1591,7 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p8952133144510"><a name="p8952133144510"></a><a name="p8952133144510"></a>abstime_text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p179527338451"><a name="p179527338451"></a><a name="p179527338451"></a>_pg_keysequal</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p179527338451"><a name="p179527338451"></a><a name="p179527338451"></a>*pg*keysequal</p>
     </td>
     </tr>
     <tr id="row2158313164916"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p620314317259"><a name="p620314317259"></a><a name="p620314317259"></a>analyze_query</p>
@@ -1639,5 +1642,3 @@ The following functions of openGauss use internal data types, which cannot be di
     </tr>
     </tbody>
     </table>
-
-

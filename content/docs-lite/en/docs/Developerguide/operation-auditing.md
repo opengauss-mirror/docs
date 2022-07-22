@@ -107,9 +107,9 @@ The value of this parameter is calculated by 26 binary bits. The 26 binary bits 
 </tr>
 <tr id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_r99061dfc4a9d4f05abf1e69fc1382192"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a199214d2361646528feaf737b1da47f9"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a199214d2361646528feaf737b1da47f9"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a199214d2361646528feaf737b1da47f9"></a>Bit 11</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a004baa0918924c31a6956a8068ef8cf2"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a004baa0918924c31a6956a8068ef8cf2"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a004baa0918924c31a6956a8068ef8cf2"></a>Whether to audit the CREATE, DROP, and ALTER operations on SERVER FOR HADOOP objects.</p>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a004baa0918924c31a6956a8068ef8cf2"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a004baa0918924c31a6956a8068ef8cf2"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_a004baa0918924c31a6956a8068ef8cf2"></a>Reserved.</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u2c107e449bf9493b827cac6454cfd587"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u2c107e449bf9493b827cac6454cfd587"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u2c107e449bf9493b827cac6454cfd587"><li><strong id="b173313171606"><a name="b173313171606"></a><a name="b173313171606"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on these objects are not audited.</li><li><strong id="b321814183016"><a name="b321814183016"></a><a name="b321814183016"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on these objects are audited.</li></ul>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u2c107e449bf9493b827cac6454cfd587"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u2c107e449bf9493b827cac6454cfd587"></a><p>-</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136929_en-us_topic_0237124747_row18587823135616"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p18588723165618"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18588723165618"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18588723165618"></a>Bit 12</p>
@@ -122,10 +122,11 @@ The value of this parameter is calculated by 26 binary bits. The 26 binary bits 
 </tr>
 <tr id="en-us_topic_0283136929_en-us_topic_0237124747_row14996171520226"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a>Bit 13</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a>Whether to audit the CREATE and DROP operations on node groups.</p>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a>Reserved.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"><li><strong id="b61094371403"><a name="b61094371403"></a><a name="b61094371403"></a>0</strong> indicates that the CREATE and DROP operations on these objects are not audited.</li></ul>
-<a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"><li><strong id="b1951020371011"><a name="b1951020371011"></a><a name="b1951020371011"></a>1</strong> indicates that the CREATE and DROP operations on these objects are audited.</li></ul>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a>
+<a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7846158102211"></a><p>-</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136929_en-us_topic_0237124747_row186561926144118"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"></a>Bit 14</p>
@@ -294,11 +295,11 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Default value**:  **0**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->If this function is enabled, the  **detail\_info**  information in audit logs starts with  _xid_. For example:
+>If this function is enabled, the  **detail\_info**  information in audit logs starts with  *xid*. For example:
 >```
 >detail_info: xid=14619 , create table t1(id int);
 >```
->If transaction IDs do not exist,  _xid_  is recorded as  **NA**  in audit logs.
+>If transaction IDs do not exist,  *xid*  is recorded as  **NA**  in audit logs.
 
 ## enableSeparationOfDuty<a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6"></a>
 
@@ -342,4 +343,3 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   For security purposes, only the initial user can create, modify, and delete DIRECTORY objects by default.
 >-   If  **enable\_access\_server\_directory**  is enabled, users with the SYSADMIN permission and users who inherit the  **gs\_role\_directory\_create**  permission of the built-in role can create directory objects. A user with the SYSADMIN permission, the owner of a directory, a user who is granted with the DROP permission for the directory, or a user who inherits the  **gs\_role\_directory\_drop**  permission of the built-in role can delete a directory. A user with the SYSADMIN permission and the owner of a directory object can change the owner of the directory object, and the user must be a member of the new owner.
-
