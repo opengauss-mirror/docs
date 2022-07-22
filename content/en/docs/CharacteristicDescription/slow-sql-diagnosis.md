@@ -120,12 +120,10 @@ query_plan           | Datanode Name: dn_6001_6002_6003
 -   The number of SQL statements to be collected is specified by a GUC parameter. If the number of SQL statements exceeds the threshold, new SQL statement execution information will not be collected.
 -   The maximum number of bytes of lock event details collected by a single SQL statement is specified by a GUC parameter. If the number of bytes exceeds the threshold, new lock event details will not be collected.
 -   The SQL statement information is updated in asynchronous mode. Therefore, after a query statement is executed, the related view function result is slightly delayed.
+-   When **track\_stmt\_parameter** is set to **off**, the maximum value of the **query** field is determined by the value of by **track\_activity\_query\_size**.
 -   Certain indicator information \(such as row activities, cache I/O, and time distribution\) depends on the dbe\_perf.statement view. If the number of records in the view exceeds the preset size \(depending on GUC:instr\_unique\_sql\_count\), related indicators may not be collected.
 -   Functions related to the statement\_history table and the details column in the view are in binary format. To parse the detailed information, use the  **pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\)**  function.
--   The statement\_history table can be queried only in the postgres database. The data in other databases is empty.
--   The content of the statement\_history table is controlled by track\_stmt\_stat\_level. The default value is  **'OFF,L0'**. The first part of the parameter indicates the full SQL statement, and the second part indicates the slow SQL statement. Slow SQL statements are recorded in the statement\_history table only when the SQL statement execution time exceeds the value of  **log\_min\_duration\_statement**.
 
 ## Dependencies<a name="section15876411599"></a>
 
 None.
-

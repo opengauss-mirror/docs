@@ -251,11 +251,11 @@ openGauss=# DROP TABLE numeric_type_t1;
 </tr>
 <tr id="row48004446529"><td class="cellrowborder" valign="top" width="22.69%" headers="mcps1.2.5.1.1 "><p id="p188012444526"><a name="p188012444526"></a><a name="p188012444526"></a>LARGESERIAL</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.620000000000005%" headers="mcps1.2.5.1.2 "><p id="p16801164419520"><a name="p16801164419520"></a><a name="p16801164419520"></a>16-byte serial integer</p>
+<td class="cellrowborder" valign="top" width="24.620000000000005%" headers="mcps1.2.5.1.2 "><p id="p16801164419520"><a name="p16801164419520"></a><a name="p16801164419520"></a>By default, a 16-byte sequence integer is inserted. The actual data type is the same as that of numeric.</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.870000000000001%" headers="mcps1.2.5.1.3 "><p id="p19801744145213"><a name="p19801744145213"></a><a name="p19801744145213"></a>16 bytes</p>
+<td class="cellrowborder" valign="top" width="13.870000000000001%" headers="mcps1.2.5.1.3 "><p id="p19801744145213"><a name="p19801744145213"></a><a name="p19801744145213"></a>Variable-length type. Every four decimal digits occupy two bytes, and an extra eight-byte overhead is added to the entire data.</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.82000000000001%" headers="mcps1.2.5.1.4 "><p id="p180117445522"><a name="p180117445522"></a><a name="p180117445522"></a>–170,141,183,460,469,231,731,687,303,715,884,105,728 to +170,141,183,460,469,231,731,687,303,715,884,105,727</p>
+<td class="cellrowborder" valign="top" width="38.82000000000001%" headers="mcps1.2.5.1.4 "><p id="p180117445522"><a name="p180117445522"></a><a name="p180117445522"></a>Up to 131,072 digits before the decimal point and up to 16,383 digits after the decimal point</p>
 </td>
 </tr>
 </tbody>
@@ -447,4 +447,3 @@ openGauss=# SELECT * FROM float_type_t2 ;
 -- Delete the table.
 openGauss=# DROP TABLE float_type_t2;
 ```
-

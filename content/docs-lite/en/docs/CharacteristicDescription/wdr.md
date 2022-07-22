@@ -19,6 +19,11 @@ The WDR generates a performance report between two different time points based o
 
 You can use generate\_wdr\_report\(...\) to generate a performance report based on two performance snapshots.
 
+The WDR performance snapshot data is stored in the snapshot schema of the **postgres** database. The default collection and retention policies are as follows:
+
+-   A snapshot is collected every hour \(wdr\_snapshot\_interval=1h\).
+-   It is retained for 8 days \(wdr\_snapshot\_retention\_days=8\).
+
 The WDR depends on the following two components:
 
 -   Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
@@ -153,4 +158,3 @@ None.
 ## Dependencies<a name="section15876411599"></a>
 
 None.
-

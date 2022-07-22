@@ -4,7 +4,7 @@
 
 openGauss supports:
 
--   Kunpeng server and x86\_64-based universal PC server
+-   ARM server and x86\_64-based universal PC server
 -   SATA, SAS, and SSD local storage
 -   1-gigabit and 10-gigabit Ethernet
 

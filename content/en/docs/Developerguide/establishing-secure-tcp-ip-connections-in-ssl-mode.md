@@ -486,7 +486,7 @@ A series of encryption and authentication algorithms with different strength are
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   Currently, only the six encryption algorithm suites listed in the preceding table are supported.
->-   The default value of  **ssl\_ciphers**  is  **ALL**, indicating that all encryption algorithms listed in the table are supported. You are advised to retain the default value, unless there are other special requirements on the encryption algorithm. The DHE algorithm suite is reserved for forward compatibility and is not recommended in incompatible scenarios.
+>-   The default value of  **ssl\_ciphers**  is  **ALL**, indicating that all encryption algorithms listed in the table are supported. 为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
 >-   To specify the preceding cipher suites, set** ssl\_ciphers**  to the OpenSSL suite names in the preceding table. Use semicolons \(;\) to separate cipher suites. For example, set  **ssl\_ciphers**  in  **postgresql.conf**  as follows:
 >    ssl\_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'
 >-   SSL authentication increases the time spent for login \(creating the SSL environment\) and logout processes \(clearing the SSL environment\), and requires extra time for encrypting the data to be transferred. It affects performance especially in frequent login, logout, and short-time query scenarios.

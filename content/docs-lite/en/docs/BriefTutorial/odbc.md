@@ -64,7 +64,7 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     # Change the value of LIB_VERSION to 1:0:0 to compile a *.so.1 dynamic library with the same dependency on psqlodbcw.so.
     vim configure
     
-    ./configure --enable-gui=no # To perform compilation on a Kunpeng server, add the configure parameter --build=aarch64-unknown-linux-gnu.
+    ./configure --enable-gui=no # To perform compilation on an ARM server, add the **configure** parameter **--build=aarch64-unknown-linux-gnu**.
     make
     # The installation may require root permissions.
     make install
@@ -361,7 +361,7 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
 5.  Configure the database server.
     1.  Log in as the OS user  **omm**  to the primary database node.
-    2.  Run the following command to add NIC IP addresses or host names which are separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  _NodeName_  specifies the name of the current node.
+    2.  Run the following command to add NIC IP addresses or host names which are separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  *NodeName*  specifies the name of the current node.
 
         ```
         gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
@@ -383,7 +383,7 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         >-   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
         >-   **all**  indicates that a client can connect to any database.
         >-   **jack**  indicates the user that accesses the database.
-        >-   **_10.11.12.13/__32_**  indicates hosts whose IP address is  **10.11.12.13**  can be connected. Configure the parameter based on your network conditions.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
+        >-   ***10.11.12.13/__32***  indicates hosts whose IP address is  **10.11.12.13**  can be connected. Configure the parameter based on your network conditions.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
         >-   **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.
 
         If the ODBC client and the primary database node to connect are deployed on the same machine, you can use the local trust authentication mode. Run the following command:
@@ -428,7 +428,7 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
 ## Verifying the Data Source Configuration<a name="section1224317573217"></a>
 
-Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source name\).
+Run the  **./isql -v** *MPPODBC*  command \(***MPPODBC***  is the data source name\).
 
 -   If the following information is displayed, the configuration is correct and the connection succeeds.
 
@@ -919,4 +919,3 @@ int main(int argc,char *argv[])
       return(0);
  }
 ```
-

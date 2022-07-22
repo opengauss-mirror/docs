@@ -180,18 +180,19 @@ openEuler  is used as an example, the openGauss Lite information is as shown in 
 
 Currently, the installation can be performed only when the firewall is disabled.
 
-1.  <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744465"></a>Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
-    1.  Run the  **vim**  command to open the  **config**  file.
+1. <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744465"></a>Change the value of **SELINUX** in the **/etc/selinux/config** file to **disabled**.
 
-        ```
-        vim /etc/selinux/config
-        ```
+   a. Run the **vim** command to open the **config** file.
 
-    2.  Change the value of  **SELINUX**  to  **disabled**  and run the  **:wq**  command to save the change and exit.
+   ```
+   vim /etc/selinux/config
+   ```
 
-        ```
-        SELINUX=disabled
-        ```
+   b. Change the value of **SELINUX** to **disabled** and run the **:wq** command to save the change and exit.
+
+   ```
+   SELINUX=disabled
+   ```
 
 2.  Restart the OS.
 
@@ -220,7 +221,7 @@ Currently, the installation can be performed only when the firewall is disabled.
 
 **Setting Character Set Parameters**
 
-Set the same character set for all database nodes. You can add  **export LANG=**_Unicode_  to the  **/etc/profile**  file.
+Set the same character set for all database nodes. You can add  **export LANG=***Unicode*  to the  **/etc/profile**  file.
 
 ```
 vim /etc/profile
@@ -243,7 +244,7 @@ Ensure that the time zone and time on each database node are consistent.
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
+    >*$Locale/$Time zone*  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
 
 3.  <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
 
@@ -267,31 +268,33 @@ swapoff -a
 
 On each database node, disable  **RemoveIPC**.
 
-1.  Change the value of  **RemoveIPC**  in the  **/etc/systemd/logind.conf**  file to  **no**.
-    1.  Run the  **vim**  command to open the  **logind.conf**  file.
+1. <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744466"></a> Change the value of **RemoveIPC** in **/etc/systemd/logind.conf** to **no**.
 
-        ```
-        vim  /etc/systemd/logind.conf
-        ```
+   a. Run the **vim** command to open the **logind.conf** file.
 
-    2.  Change the value of  **RemoveIPC**  to  **no**.
+   ```
+   vim  /etc/systemd/logind.conf
+   ```
 
-        ```
-        RemoveIPC=no
-        ```
+   b. Change the value of **RemoveIPC** to **no**.
 
-2.  Change the value of  **RemoveIPC**  in the  **/usr/lib/systemd/system/systemd-logind.service**  file to  **no**.
-    1.  Run the  **vim**  command to open the  **systemd-logind.service**  file.
+   ```
+   RemoveIPC=no
+   ```
 
-        ```
-        vim /usr/lib/systemd/system/systemd-logind.service
-        ```
+2. Change the value of **RemoveIPC** in the **/usr/lib/systemd/system/systemd-logind.service** file to **no**.
 
-    2.  Change the value of  **RemoveIPC**  to  **no**.
+   a. Run the **vim** command to open the **systemd-logind.service** file.
 
-        ```
-        RemoveIPC=no
-        ```
+   ```
+   vim /usr/lib/systemd/system/systemd-logind.service
+   ```
+
+   b. Change the value of **RemoveIPC** to **no**.
+
+   ```
+   RemoveIPC=no
+   ```
 
 3.  Reload configuration parameters.
 
@@ -300,12 +303,11 @@ On each database node, disable  **RemoveIPC**.
     systemctl restart systemd-logind
     ```
 
-4.  Check whether the modification takes effect.
+4.  <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744467"></a>Check whether the modification takes effect.
 
     ```
     loginctl show-session | grep RemoveIPC
     systemctl show systemd-logind | grep RemoveIPC
     ```
 
-5.  Repeat steps  [1](#en-us_topic_0283136490_en-us_topic_0241802566_li17785744465)  to  [4](#en-us_topic_0283136490_li17330102819394)  on other hosts.
-
+5.  Repeat Step 1 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744466) to Step 4 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744467) on other hosts.

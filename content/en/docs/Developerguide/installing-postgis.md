@@ -37,10 +37,10 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
     gpg --verify --keyring ./gnu-keyring.gpg your_package_name.sig
     ```
 
-    If "Good signature from  _XXX_" is displayed, the installation package is complete.
+    If "Good signature from  *XXX*" is displayed, the installation package is complete.
 
     1.  Log in to any host of the database as the OS user  **omm**.
-    2.  Create the root GCC installation directory  _$GAUSSHOME_**/gcc**  and the code storage directory  _$GAUSSHOME__**/gcc/packages**_, and download  **gcc-7.3.0.tar.gz**,  **gmp-6.1.0.tar.xz**,  **mpc-1.0.3.tar.gz**, and  **mpfr-3.1.4.tar.gz**  to the  _$GAUSSHOME__**/gcc/packages**_  directory.
+    2.  Create the root GCC installation directory *$GAUSSHOME***/gcc** and the code storage directory *$GAUSSHOME****/gcc/packages***, and download **gcc-7.3.0.tar.gz**, **gmp-6.1.0.tar.xz**, **mpc-1.0.3.tar.gz**, and **mpfr-3.1.4.tar.gz** to the *\$GAUSSHOME****/gcc/packages*** directory.
 
         ```
         mkdir $GAUSSHOME/gcc
@@ -70,7 +70,7 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 
     5.  Install  **gmp-4.3.2**.
 
-        Go to the  _$GAUSSHOME_**/gcc/packages/gmp-6.1.0**  directory and run the following command to install GMP:
+        Go to the  *$GAUSSHOME***/gcc/packages/gmp-6.1.0**  directory and run the following command to install GMP:
 
         ```
         cd $GAUSSHOME/gcc/packages/gmp-6.1.0
@@ -81,7 +81,7 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 
     6.  Install  **mpfr-2.4.2**.
 
-        Go to the  _$GAUSSHOME_**/gcc/packages/mpfr-3.1.4**  directory and run the following command to install MPFR:
+        Go to the  *$GAUSSHOME***/gcc/packages/mpfr-3.1.4**  directory and run the following command to install MPFR:
 
         ```
         cd $GAUSSHOME/gcc/packages/mpfr-3.1.4
@@ -92,7 +92,7 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 
     7.  Install  **mpc-1.0.3**.
 
-        Go to the  _$GAUSSHOME_**/gcc/packages/mpc-1.0.3**  directory and run the following command to install MPC:
+        Go to the  *$GAUSSHOME***/gcc/packages/mpc-1.0.3**  directory and run the following command to install MPC:
 
         ```
         cd $GAUSSHOME/gcc/packages/mpc-1.0.3
@@ -123,7 +123,7 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
         source ~/.bashrc
         ```
 
-        b. Go to the  _$GAUSSHOME_**/gcc/packages/gcc-7.3.0**  directory and run the following command to install GCC:
+        b. Go to the  *$GAUSSHOME***/gcc/packages/gcc-7.3.0**  directory and run the following command to install GCC:
 
         ```
         cd $GAUSSHOME/gcc/packages/gcc-7.3.0
@@ -157,7 +157,7 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 
 2.  Ensure that  **zlib**  has been installed.
 
-    Compiling and installing  **Libxml2**  needs  **zlib**, a lossless data compression library. omm user can run the  **find /usr/ -name libz.a**  or  **find **_$GAUSSHOME_**/ -name libz.so**  command to check whether zlib is installed. If  **libz.a**  exists,  **zlib**  is installed.
+    Compiling and installing  **Libxml2**  needs  **zlib**, a lossless data compression library. omm user can run the  **find /usr/ -name libz.a**  or  **find ***$GAUSSHOME***/ -name libz.so**  command to check whether zlib is installed. If  **libz.a**  exists,  **zlib**  is installed.
 
     **zlib**  is installed by default during database installation. If  **zlib**  is not installed, download it from  [https://sourceforge.net/projects/libpng/files/zlib/1.2.8/zlib-1.2.8.tar.gz/download](https://sourceforge.net/projects/libpng/files/zlib/1.2.8/zlib-1.2.8.tar.gz/download)  and install it.
 
@@ -165,15 +165,18 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 
 3.  Install  **autoconf**  and  **automake**.  **autoconf**  and  **automake**  are required to compile and install the  **JSON-C**  package. If autoconf and automake do not exist in the database instance, you can install them by mounting the OS image.
 4.  Install the libraries that PostGIS depends on.
-    1.  Obtain the PostGIS source code from  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz). Save it to the  _$GAUSSHOME_  directory. Download the compressed package, decompress it, and rename the folder  **postgis-xc**.
-    2.  Copy the patch delivered with the installation package to the PostGIS folder.
+    1.  Obtain the PostGIS source code from  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz). Save it to the  *$GAUSSHOME*  directory. Download the compressed package, decompress it, and rename the folder  **postgis-xc**.
+
+    2.  Download the patch file from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-1.patch. Save the patch file to the *$GAUSSHOME* directory and install the patch.
 
         ```
         cd $GAUSSHOME/postgis-xc/
-        patch -p1 < $GAUSSHOME/share/postgis/postgis_2.4.2-1.patch
+        patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch 
         ```
 
-    3.  Separately compile GEOS, PROJ, JSON-C, Libxml2, and PostGIS, and generate the corresponding dynamic link libraries. Compiling commands are as follows:
+    3.  Download the header file on which PostGIS depends from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h. Save the header file to *$GAUSSHOME***/include/postgresql/server/**.
+    
+    4.  Separately compile GEOS, PROJ, JSON-C, Libxml2, and PostGIS, and generate the corresponding dynamic link libraries. Compiling commands are as follows:
 
         -   Geos
 
@@ -233,13 +236,13 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 
         If a message similar to "/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la cannot be found" is displayed during compilation, create a directory, copy  **libstdc++.la**  to the directory, and run  **make -sj**. \(If similar problems occur in  **libstdc++.so**, use the same method.\)
 
-    4.  Execute the script file  **PostGIS\_install.sh**  in the  _$GAUSSHOME_**/share/postgis**  directory as user  **omm**  to distribute those dynamic link libraries to database instance nodes.
+    5.  Execute the script file  **PostGIS\_install.sh**  in the  *$GAUSSHOME***/share/postgis**  directory as user  **omm**  to distribute those dynamic link libraries to database instance nodes.
 
         ```
-        sh $GAUSSHOME/share/postgis/PostGIS_install.sh
+        mv $GAUSSHOME/lib/postgresql/postgis-2.4.so $GAUSSHOME/install/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis-2.4.so $GAUSSHOME/lib/postgresql/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/json/lib/libjson-c.so.2 $GAUSSHOME/lib/libjson-c.so.2 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos_c.so.1 $GAUSSHOME/lib/libgeos_c.so.1 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/proj/lib/libproj.so.9 $GAUSSHOME/lib/libproj.so.9 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos-3.6.2.so $GAUSSHOME/lib/libgeos-3.6.2.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis2.4.2/lib/liblwgeom-2.4.so.0 $GAUSSHOME/lib/liblwgeom-2.4.so.0 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/extension/postgis--2.4.2.sql python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/extension/postgis.control python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/pgsql2shp $GAUSSHOME/bin/pgsql2shp python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/shp2pgsql $GAUSSHOME/bin/shp2pgsql
         ```
 
-        After the script is executed, run the following command to delete the  _$GAUSSHOME_**/postgis**  directory:
+        After the script is executed, run the following command to delete the  *$GAUSSHOME***/postgis**  directory:
 
         ```
         rm -rf $GAUSSHOME/postgis-xc
@@ -251,11 +254,8 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
         rm -rf $GAUSSHOME/gcc
         ```
 
-    5.  Restart the database instance.
+    6.  Restart the database instance.
 
         ```
         gs_om -t stop && gs_om -t start
         ```
-
-
-

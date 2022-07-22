@@ -126,6 +126,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     Specifies the name of the table to be created.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >-   Some processing logic of materialized views determines whether a table is the log table of a materialized view or a table associated with a materialized view based on the table name prefix. Therefore, do not create a table whose name prefix is  **mlog\_ **or  **matviewmap\_**. Otherwise, some functions of the table are affected.
 
 -   **column\_name**
@@ -161,7 +162,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
     -   If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table. If the source table has an index, you can use the  **INCLUDING PARTITION INCLUDING INDEXES**  syntax. If only  **INCLUDING INDEXES**  is used for a partitioned table, the target table will be defined as an ordinary table, but the index is a partitioned index. In this case, an error will be reported because ordinary tables do not support partitioned indexes.
     -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
-    -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,** INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
+    -   **INCLUDING ALL** contains the meaning of **INCLUDING DEFAULTS**, **INCLUDING CONSTRAINTS**, **INCLUDING INDEXES**, **INCLUDING STORAGE**, **INCLUDING COMMENTS**,**INCLUDING PARTITION**, and **INCLUDING RELOPTIONS**.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**,  **SMALLSERIAL**, or  **LARGESERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
@@ -173,14 +174,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     Specifies an optional storage parameter for a table or an index.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   When using  **Numeric**  of any precision to define a column, specifies precision  **p**  and scale  **s**. When precision and scale are not specified, the input will be displayed.
+    >-   When using **Numeric** of any precision to define a column, specifies precision **p** and scale **s**.When precision and scale are not specified, the input will be displayed.
     >-   In the Lite scenario, ORC functions of openGauss are unavailable.
 
     The description of parameters is as follows:
 
     -   FILLFACTOR
 
-        The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified,  **INSERT**  operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives  **UPDATE**  a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column-store tables.
+        The fill factor of a table is a percentage from 10 to 100.**100** \(complete filling\) is the default value.When a smaller fill factor is specified, **INSERT** operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives **UPDATE** a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to **100** \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column-store tables.
 
         Value range: 10–100
 
@@ -223,7 +224,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESSION
 
-        Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded. Row-store tables do not support compression.
+        Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded. By default, **COMPRESSION=NO** is added to row-store tables.
 
         Value range:
 
@@ -234,6 +235,48 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
 
         Value range: 0 to 3. The default value is  **0**.
+
+    - COMPRESSTYPE
+
+      Specifies the row-store table compression algorithm. The value **1** indicates the PGLZ algorithm, and the value **2** indicates the ZSTD algorithm. By default, indexes are not compressed. (Only common tables in the Astore engine are supported.)
+
+      Value range: 0 to 2. The default value is **0**.
+
+    - COMPRESS\_LEVEL
+
+      Specifies the row-store table compression algorithm level. This parameter is valid only when **COMPRESSTYPE** is set to **2**. A higher compression level indicates a better table compression effect and a slower table access speed. (Only common tables in the Astore engine are supported.)
+
+      Value range: –31 to 31. The default value is **0**.
+
+    - COMPRESS\_CHUNK_SIZE
+
+      Specifies the size of a row-store table compression chunk. A smaller chunk size indicates a better compression effect, and a larger data dispersion degree indicates a slower table access speed. (Only common tables in the Astore engine are supported.)
+
+      Value range: subject to the page size. When the page size is 8 KB, the value can be **512**, **1024**, **2048**, or **4096**.
+
+      Default value: **4096**
+
+    - COMPRESS_PREALLOC_CHUNKS
+
+      Specifies the number of pre-allocated row-store table compression chunks. A larger number of pre-allocated chunks indicates a lower table compression ratio, and a smaller data dispersion degree indicates a better access performance. (Only common tables in the Astore engine are supported.)
+
+      Value range: 0 to 7. The default value is **0**.
+
+      - The maximum value of this parameter is **7** when **COMPRESS\_CHUNK_SIZE** is set to **512** or **1024**.
+      - The maximum value of this parameter is **3** when **COMPRESS\_CHUNK_SIZE** is set to **2048**.
+      - The maximum value of this parameter is **1** when **COMPRESS\_CHUNK_SIZE** is set to **4096**.
+
+    - COMPRESS_BYTE_CONVERT
+
+      Sets the preprocessing of row-store table compression byte conversion. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+      Value range: Boolean value. By default, this function is disabled.
+
+    - COMPRESS_DIFF_CONVERT
+
+      Sets the preprocessing of row-store table compression differentiation. This parameter can be used together only with **COMPRESS\_BYTE\_CONVERT**. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+      Value range: Boolean value. By default, this function is disabled.
 
     -   MAX\_BATCHROW
 
@@ -1034,5 +1077,3 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 
 -   ORIENTATION COLUMN
     -   Creates a column-store table. Column-store applies to the DWS, which has a large amount of aggregation computing, and involves a few column operations.
-
-

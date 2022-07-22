@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="15.790000000000001%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778567_a3cf06a6a3ee841d7bac62a9ed3a8da24"><a name="en-us_topic_0059778567_a3cf06a6a3ee841d7bac62a9ed3a8da24"></a><a name="en-us_topic_0059778567_a3cf06a6a3ee841d7bac62a9ed3a8da24"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"><a name="en-us_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a><a name="en-us_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a>Handle corresponding to the transaction in GTM</p>
+<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"><a name="en-us_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a><a name="en-us_topic_0059778567_a5870a20f3740491398ce1766c0e01e15"></a>Handle in the transaction manager corresponding to the transaction. The value is fixed to –1.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0059778567_rd0ce2f0fc41f4065ac89e15c2554b5cf"><td class="cellrowborder" valign="top" width="23.330000000000002%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778567_a2fb68fcd236e4be19fb7e059b81b27e3"><a name="en-us_topic_0059778567_a2fb68fcd236e4be19fb7e059b81b27e3"></a><a name="en-us_topic_0059778567_a2fb68fcd236e4be19fb7e059b81b27e3"></a>gxid</p>
@@ -81,9 +81,8 @@
 </td>
 <td class="cellrowborder" valign="top" width="15.790000000000001%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778567_a4dff37aaf5b04f8198bdb0b3ec964b70"><a name="en-us_topic_0059778567_a4dff37aaf5b04f8198bdb0b3ec964b70"></a><a name="en-us_topic_0059778567_a4dff37aaf5b04f8198bdb0b3ec964b70"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778567_acbcf74298f784b7181b43913741ba46d"><a name="en-us_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a><a name="en-us_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a>Transaction ID sent from a <span id="text690741819219"><a name="text690741819219"></a><a name="text690741819219"></a>CN</span> to a <span id="text17585545502"><a name="text17585545502"></a><a name="text17585545502"></a>DN</span></p>
+<td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"><a name="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a><a name="zh-cn_topic_0059778567_acbcf74298f784b7181b43913741ba46d"></a><span id="text690741819219"><a name="text690741819219"></a><a name="text690741819219"></a>Transaction ID sent by other nodes to the current node. The value is fixed to 0.</p>
 </td>
 </tr>
 </tbody>
 </table>
-

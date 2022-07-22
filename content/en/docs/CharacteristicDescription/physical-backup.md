@@ -28,7 +28,7 @@ The preceding backup operations are executed every week.
 
 ## Description<a name="section18111828"></a>
 
-openGauss 1.1.0 provides the physical backup capability to back up data of the entire database to local disk files, OBS objects, NBU objects, or EISOO objects in the internal database format, and restore data of the entire database in a homogeneous database. In addition to the preceding functions, it also provides advanced functions such as compression, flow control, and resumable backup.
+openGauss provides the physical backup capability to back up data of the entire database to local disk files, OBS objects, NBU objects, or EISOO objects in the internal database format, and restore data of the entire database in a homogeneous database. In addition to the preceding functions, it also provides advanced functions such as compression, flow control, and resumable backup.
 
 Physical backup is classified into full backup and incremental backup. The difference is as follows: Full backup includes the full data of the database at the backup time point. The time required for full backup is long \(in direct proportion to the total data volume of the database\), and a complete database can be restored. An incremental backup involves only incremental data modified after a specified time point. It takes a short period of time \(in direct proportion to the incremental data volume and irrelevant to the total data volume\). However, a complete database can be restored only after the incremental backup and full backup are performed.
 

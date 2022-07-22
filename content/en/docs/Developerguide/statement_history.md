@@ -1,12 +1,6 @@
 # STATEMENT\_HISTORY<a name="EN-US_TOPIC_0301824804"></a>
 
-**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query this system catalog, you must have the  **sysadmin **permission. The result can be queried only in the system database but cannot be queried in the user database.
-
-The constraints on the query of this system catalog are as follows:
-
--   Data must be queried in the Postgres database. No data exists in other databases.
--   This system catalog is controlled by  **track\_stmt\_stat\_level**. The default value is  **OFF,L0**, where the first part controls full SQL statements, and the second part controls slow SQL statements. For details about the record level of each field, see the following table.
--   For slow SQL statements, if the value of  **track\_stmt\_stat\_level**  is not  **OFF**  and the SQL execution time exceeds the value of  **log\_min\_duration\_statement**, the SQL statement is recorded as a slow SQL statement.
+**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query this system catalog, you must have the  **sysadmin** or **monitor admin** permission. The result can be queried only in the system database but cannot be queried in the user database.
 
 **Table  1**  STATEMENT\_HISTORY columns
 

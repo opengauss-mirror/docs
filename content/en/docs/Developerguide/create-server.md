@@ -24,7 +24,7 @@ CREATE SERVER server_name
 
     Specifies the name of the foreign data wrapper.
 
-    Value range:  **dist\_fdw**,  **hdfs\_fdw**,  **log\_fdw**,  **mot\_fdw**, and  **file\_fdw**
+    Value range:  **dist\_fdw**,  **hdfs\_fdw**,  **log\_fdw**,  **mot\_fdw**, **file\_fdw**, **oracle\_fdw**, **mysql\_fdw**, and **postgres\_fdw**.
 
 -   **OPTIONS \(  \{ option\_name ' value '  \}  \[, ...\] \)**
 

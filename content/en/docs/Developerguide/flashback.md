@@ -12,6 +12,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **off**
 
+>![](./public_sys-resources/icon-caution.gif) **Caution:**
+>The recycle bin does not support Astore and supports only Ustore.
+
 ## recyclebin\_retention\_time<a name="section9443171010611"></a>
 
 **Parameter description**: Specifies the retention period of objects in the recycle bin. The objects will be automatically deleted after the retention period expires.
@@ -57,4 +60,3 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range**: an integer ranging from 0 to 2147483647. The unit is second.
 
 **Default value**:  **0**
-

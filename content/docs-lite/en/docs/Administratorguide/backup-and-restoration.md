@@ -2,8 +2,6 @@
 
 -   **[Overview](overview.md)**  
 
--   **[Physical Backup and Restoration](physical-backup-and-restoration.md)**  
-
 -   **[Logical Backup and Restoration](logical-backup-and-restoration.md)**  
 
 -   **[Flashback Restoration](flashback-restoration.md)**  
