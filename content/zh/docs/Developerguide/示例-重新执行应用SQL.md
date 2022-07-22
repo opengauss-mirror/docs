@@ -31,8 +31,8 @@ class ExitHandler extends Thread {
 public class SQLRetry {
    //创建数据库连接。
    public static Connection GetConnection(String username, String passwd) {
-     String driver = "org.postgresql.Driver";
-     String sourceURL = "jdbc:postgresql://10.131.72.136:8000/postgres";
+     String driver = "org.opengauss.Driver";
+     String sourceURL = "jdbc:opengauss://10.131.72.136:8000/postgres";
      Connection conn = null;
      try {
        //加载数据库驱动。

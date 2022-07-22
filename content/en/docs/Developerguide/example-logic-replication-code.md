@@ -60,10 +60,10 @@ The decoding performance \(Xlog consumption\) is greater than or equal to 100 MB
 //host    all             all             10.10.10.10/32        sha256
 //host    replication     all             10.10.10.10/32        sha256
 
-import org.postgresql.PGProperty;
-import org.postgresql.jdbc.PgConnection;
-import org.postgresql.replication.LogSequenceNumber;
-import org.postgresql.replication.PGReplicationStream;
+import org.opengauss.PGProperty;
+import org.opengauss.jdbc.PgConnection;
+import org.opengauss.replication.LogSequenceNumber;
+import org.opengauss.replication.PGReplicationStream;
 
 import java.nio.ByteBuffer;
 import java.sql.DriverManager;
@@ -72,9 +72,9 @@ import java.util.concurrent.TimeUnit;
 
 public class LogicalReplicationDemo {
     public static void main(String[] args) {
-        String driver = "org.postgresql.Driver";
+        String driver = "org.opengauss.Driver";
  // Configure the IP address and haPort number of the database. By default, the port number is the port number of the connected DN plus 1.
-        String sourceURL = "jdbc:postgresql://$ip:$port/postgres";
+        String sourceURL = "jdbc:opengauss://$ip:$port/postgres";
         PgConnection conn = null;
 	//The default name of the logical replication slot is replication_slot.
 	//Test mode: Create a logical replication slot.

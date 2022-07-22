@@ -86,12 +86,12 @@
 public class SSL{
     public static void main(String[] args) {
         Properties urlProps = new Properties();
-        String urls = "jdbc:postgresql://10.29.37.136:8000/postgres";
+        String urls = "jdbc:opengauss://10.29.37.136:8000/postgres";
 
         /**
          * ==================  示例1  使用NonValidatingFactory通道
          */
-        urlProps.setProperty("sslfactory","org.postgresql.ssl.NonValidatingFactory");
+        urlProps.setProperty("sslfactory","org.opengauss.ssl.NonValidatingFactory");
         urlProps.setProperty("user", "world");
         urlProps.setProperty("password", "test@123");
         urlProps.setProperty("ssl", "true");
@@ -109,10 +109,10 @@ public class SSL{
         /* ==================  示例2.2  设置sslmode为verify-ca，使用证书 */
         urlProps.setProperty("sslmode", "verify-ca");
         /* ==================  示例2.3  设置sslmode为verify-full，使用证书（Linux下验证） */
-        urls = "jdbc:postgresql://world:8000/postgres";
+        urls = "jdbc:opengauss://world:8000/postgres";
         urlProps.setProperty("sslmode", "verify-full");
         try {
-            Class.forName("org.postgresql.Driver").newInstance();
+            Class.forName("org.opengauss.Driver").newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }

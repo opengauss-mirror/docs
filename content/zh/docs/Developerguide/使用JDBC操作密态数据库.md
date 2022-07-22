@@ -8,9 +8,9 @@
 public static Connection getConnect(String username, String passwd)
     {
         //驱动类。
-        String driver = "org.postgresql.Driver";
+        String driver = "org.opengauss.Driver";
         //数据库连接描述符。
-        String sourceURL = "jdbc:postgresql://10.10.0.13:8000/postgres?enable_ce=1";
+        String sourceURL = "jdbc:opengauss://10.10.0.13:8000/postgres?enable_ce=1";
         Connection conn = null;
         
         try

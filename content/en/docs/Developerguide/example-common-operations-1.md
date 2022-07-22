@@ -19,8 +19,8 @@ public class DBTest {
 
   // Create a database connection.
   public static Connection GetConnection(String username, String passwd) {
-    String driver = "org.postgresql.Driver";
-    String sourceURL = "jdbc:postgresql://localhost:8000/postgres";
+    String driver = "org.opengauss.Driver";
+    String sourceURL = "jdbc:opengauss://localhost:8000/postgres";
     Connection conn = null;
     try {
       // Load the database driver.

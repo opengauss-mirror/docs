@@ -4,7 +4,7 @@ CopyManager是 openGauss JDBC驱动中提供的一个API接口类，用于批量
 
 ## CopyManager的继承关系<a name="zh-cn_topic_0237121133_zh-cn_topic_0117407675_s4dfbdae5c0a04fa8b7ee4bc9b9354ca5"></a>
 
-CopyManager类位于org.postgresql.copy Package中，继承自java.lang.Object类，该类的声明如下：
+CopyManager类位于org.opengauss.copy Package中，继承自java.lang.Object类，该类的声明如下：
 
 ```
 public class CopyManager

@@ -10,19 +10,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.postgresql.copy.CopyManager;
-import org.postgresql.core.BaseConnection;
+import org.opengauss.copy.CopyManager;
+import org.opengauss.core.BaseConnection;
 
 public class Migration{
 
     public static void main(String[] args) {
-        String url = new String("jdbc:postgresql://10.180.155.74:8000/postgres"); //数据库URL 
+        String url = new String("jdbc:opengauss://10.180.155.74:8000/postgres"); //数据库URL 
         String user = new String("jack");            //openGauss用户名 
         String pass = new String("Gauss@123");             //openGauss密码 
         String tablename = new String("migration_table"); //定义表信息 
         String delimiter = new String("|");              //定义分隔符 
         String encoding = new String("UTF8");            //定义字符集 
-        String driver = "org.postgresql.Driver";
+        String driver = "org.opengauss.Driver";
         StringBuffer buffer = new StringBuffer();       //定义存放格式化数据的缓存 
 
         try {

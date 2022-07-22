@@ -11,19 +11,19 @@ import java.io.IOException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.sql.SQLException; 
-import org.postgresql.copy.CopyManager; 
-import org.postgresql.core.BaseConnection;
+import org.opengauss.copy.CopyManager; 
+import org.opengauss.core.BaseConnection;
  
 public class Copy{ 
 
      public static void main(String[] args) 
      { 
-      String urls = new String("jdbc:postgresql://localhost:8000/postgres"); // URL of the database
+      String urls = new String("jdbc:opengauss://localhost:8000/postgres"); // URL of the database
       String username = new String("username");            // Username
       String password = new String("passwd");             // Password
       String tablename = new String("migration_table"); // Table information
       String tablename1 = new String("migration_table_1"); // Table information
-      String driver = "org.postgresql.Driver"; 
+      String driver = "org.opengauss.Driver"; 
       Connection conn = null; 
       
       try { 

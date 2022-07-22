@@ -8,11 +8,11 @@
 
 ## 驱动类<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s103697559c8d4cb68f396e18e3ae65a9"></a>
 
-在创建数据库连接之前，需要加载数据库驱动类“org.postgresql.Driver”。
+在创建数据库连接之前，需要加载数据库驱动类“org.opengauss.Driver”。
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >
->+ 由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一进程内使用两个JDBC驱动的时候，可能会类名冲突。  
+>+ 由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一个JVM虚拟机里加载PostgreSQL和openGauss的JDBC驱动包时，org.postgresql.Driver驱动类会冲突。
 >
 >+ 相比于PG驱动，openGauss JDBC驱动主要做了以下特性的增强：
 >
