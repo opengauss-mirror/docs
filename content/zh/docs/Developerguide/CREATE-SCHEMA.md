@@ -18,7 +18,7 @@
 -   根据指定的名称创建模式。
 
     ```
-    CREATE SCHEMA schema_name 
+    CREATE SCHEMA [IF NOT EXISTS] schema_name 
         [ AUTHORIZATION user_name ] [WITH BLOCKCHAIN] [ schema_element [ ... ] ];
     ```
 
