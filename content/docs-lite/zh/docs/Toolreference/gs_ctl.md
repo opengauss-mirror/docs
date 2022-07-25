@@ -64,11 +64,6 @@ gs\_ctl参数可分为如下几类：
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"><a name="zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a><a name="zh-cn_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a>显示DN运行状态。</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="zh-cn_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="zh-cn_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>在指定的数据目录运行的备用服务器被命令退出故障恢复，并开始进行读写操作。</p>
-    </td>
-    </tr>
     <tr id="zh-cn_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="zh-cn_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"><a name="zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a><a name="zh-cn_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a>在主<span id="text94532016152313"><a name="text94532016152313"></a><a name="text94532016152313"></a>DN</span>异常时，将备<span id="text1832314175236"><a name="text1832314175236"></a><a name="text1832314175236"></a>DN</span>切换为主<span id="text12809101815237"><a name="text12809101815237"></a><a name="text12809101815237"></a>DN</span>。</p>
@@ -135,7 +130,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0059777628_r01437712745143c7b52a1c5f2b9f7b52"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"><a name="zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a><a name="zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a>-s,  --silent</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>对promote，reload，restart，stop命令仅打印部分提示信息，对其他命令不生效。</p>
+<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="zh-cn_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>对reload，restart，stop命令仅打印部分提示信息，对其他命令不生效。</p>
 <p id="p32125417441"><a name="p32125417441"></a><a name="p32125417441"></a>打印信息如“gstl stopped ,xxx”等信息。不打印如“waiting for server to shut down，server stopped”等提示信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"><a name="zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a><a name="zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a>-</p>
