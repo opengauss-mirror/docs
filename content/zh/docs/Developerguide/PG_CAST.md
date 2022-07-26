@@ -57,6 +57,14 @@ PG\_CAST系统表存储数据类型之间的转化关系。
 </div>
 </td>
 </tr>
+ <tr id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_r689b0c43fa904b9cb366859ab411f94f"><td class="cellrowborder" valign="top" width="18.459999999999997%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_a8836d1d5deeb4c80ad2777c277730e0d"><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_a8836d1d5deeb4c80ad2777c277730e0d"></a><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_a8836d1d5deeb4c80ad2777c277730e0d"></a>castowner</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.91%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_aac51fbd8dc9b47a1b7bc9dd04c1039e9"><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_aac51fbd8dc9b47a1b7bc9dd04c1039e9"></a><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_aac51fbd8dc9b47a1b7bc9dd04c1039e9"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.629999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_a1b6052dd856242b596bec55372c51213"><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_a1b6052dd856242b596bec55372c51213"></a><a name="zh-cn_topic_0283137681_zh-cn_topic_0237122276_zh-cn_topic_0059777603_a1b6052dd856242b596bec55372c51213"></a>转换的属主。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
