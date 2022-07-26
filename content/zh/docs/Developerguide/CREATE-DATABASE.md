@@ -13,7 +13,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
 
 ```
-CREATE DATABASE database_name
+CREATE DATABASE [IF NOT EXISTS] database_name
     [ [ WITH ] { [ OWNER [=] user_name ] |
                [ TEMPLATE [=] template ] |
                [ ENCODING [=] encoding ] |
@@ -833,5 +833,4 @@ openGauss=# DROP DATABASE ora_compatible_db;
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
     当新建数据库Encoding、LC-Collate 或LC\_Ctype与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'）时，必须指定template \[=\] template0。
-
 

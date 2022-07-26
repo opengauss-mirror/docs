@@ -13,7 +13,7 @@ ALTER USER中修改的会话参数只针对指定的用户，且在下一次会�
 - 修改用户的权限等信息。
 
   ```
-  ALTER USER user_name [ [ WITH ] option [ ... ] ];
+  ALTER USER [IF EXISTS] user_name [ [ WITH ] option [ ... ] ];
   ```
 
   其中option子句为：
