@@ -69,11 +69,6 @@ gs\_ctl参数可分为如下几类：
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p15042012224"><a name="p15042012224"></a><a name="p15042012224"></a>显示数据库运行状态。</p>
     </td>
     </tr>
-    <tr id="row95041100227"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p165040018221"><a name="p165040018221"></a><a name="p165040018221"></a>promote</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p85049072216"><a name="p85049072216"></a><a name="p85049072216"></a>在指定的数据目录运行的备用服务器被命令退出故障恢复，并开始进行读写操作。</p>
-    </td>
-    </tr>
     <tr id="row1350550182211"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p105054022211"><a name="p105054022211"></a><a name="p105054022211"></a>finishredo</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p4505140142213"><a name="p4505140142213"></a><a name="p4505140142213"></a>主机故障时，备机停止回放，强制升主。</p>
@@ -137,7 +132,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r01437712745143c7b52a1c5f2b9f7b52"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a>-s,  --silent</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p742495310515"><a name="p742495310515"></a><a name="p742495310515"></a>对promote、reload、restart、stop命令仅打印部分提示信息，对其他命令不生效。打印信息如：server promoting、 server shutting down。不打印信息如：waiting for server to shut down、server stopped等提示信息。</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p742495310515"><a name="p742495310515"></a><a name="p742495310515"></a>对reload、restart、stop命令仅打印部分提示信息，对其他命令不生效。打印信息如：server promoting、 server shutting down。不打印信息如：waiting for server to shut down、server stopped等提示信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a>-</p>
 </td>

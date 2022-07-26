@@ -19,7 +19,7 @@ headless: true
 	-   [Application Scenarios]({{< relref "./docs/Description/application-scenarios.md" >}})
 	-   [Product Features]({{< relref "./docs/Description/product-features.md" >}})
 	-   [Operating Environment]({{< relref "./docs/Description/operating-environment.md" >}})
-	-   [Technical Specifications]({{< relref "./docs/Description/technical-specifications.md" >}})
+	-   [Technical Specifications]({{< relref "./docs/Technicalwhitepaper/technical-specifications.md" >}})
 	-   [Basic Features]({{< relref "./docs/Description/basic-features.md" >}})
 	-   [Enhanced Features]({{< relref "./docs/Description/enhanced-features.md" >}})	
 -   [Technical White Paper]({{< relref "./docs/Technicalwhitepaper/Technicalwhitepaper.md" >}})
