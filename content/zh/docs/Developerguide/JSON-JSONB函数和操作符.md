@@ -360,7 +360,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     示例：
 
     ```
-      openGauss=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+      openGauss=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', ARRAY['f4','f6']);
        json_extract_path_op
       ---------------------
        "stringy"
@@ -394,7 +394,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     示例：
 
     ```
-     openGauss=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+     openGauss=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', ARRAY['f4','f6']);
        json_extract_path_text_op
       --------------------------
        "stringy"
@@ -1011,5 +1011,4 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
      json_object_agg_transfn
      json_object_agg_finalfn
     ```
-
 
