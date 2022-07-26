@@ -10,7 +10,7 @@ A customer has two database instances. Database instance A is the production dat
 The URL can be configured as follows:
 
 ```
-jdbc:postgresql://node1,node2,node3,node4,node5,node6/database?priorityServers=3
+jdbc:opengauss://node1,node2,node3,node4,node5,node6/database?priorityServers=3
 ```
 
 ## Load Balancing<a name="section21559251497"></a>
@@ -20,7 +20,7 @@ A customer has a centralized database instance that consists of one primary node
 If the customer wants to evenly distribute the connections established on the same application to three nodes, the URL can be configured as follows:
 
 ```
-jdbc:postgresql://node1,node2,node3/database?loadBalanceHosts=true
+jdbc:opengauss://node1,node2,node3/database?loadBalanceHosts=true
 ```
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
@@ -31,7 +31,7 @@ jdbc:postgresql://node1,node2,node3/database?loadBalanceHosts=true
 If a customer encounters slow data import or some errors that are difficult to analyze, the trace log function can be enabled for diagnosis. The URL can be configured as follows:
 
 ```
-jdbc:postgresql://node1/database?loggerLevel=trace&loggerFile=jdbc.log
+jdbc:opengauss://node1/database?loggerLevel=trace&loggerFile=jdbc.log
 ```
 
 ## High Performance<a name="section154591017145016"></a>
@@ -39,19 +39,19 @@ jdbc:postgresql://node1/database?loggerLevel=trace&loggerFile=jdbc.log
 A customer may execute the same SQL statement for multiple times with different input parameters. To improve the execution efficiency, the  **prepareThreshold**  parameter can be enabled to avoid repeatedly generating execution plans. The URL can be configured as follows:
 
 ```
-jdbc:postgresql://node1/database?prepareThreshold=5
+jdbc:opengauss://node1/database?prepareThreshold=5
 ```
 
 A customer queries 10 million data records at a time. To prevent memory overflow caused by simultaneous return of the data records, the  **defaultRowFetchSize**  parameter can be used. The URL can be configured as follows:
 
 ```
-jdbc:postgresql://node1/database?defaultRowFetchSize=50000
+jdbc:opengauss://node1/database?defaultRowFetchSize=50000
 ```
 
 A customer needs to insert 10 million data records in batches. To improve efficiency, the  **batchMode**  parameter can be used. The URL can be configured as follows:
 
 ```
-jdbc:postgresql://node1/database?batchMode=true
+jdbc:opengauss://node1/database?batchMode=true
 ```
 
 ## Case Conversion<a name="section588403715355"></a>
@@ -59,7 +59,7 @@ jdbc:postgresql://node1/database?batchMode=true
 In the Oracle database, metadata is stored in uppercase letters by default. In the GaussDB, metadata is stored in lowercase letters by default. Therefore, after the metadata is migrated from Oracle to GaussDB, the uppercase letters changes to lowercase letters. If the original service involves the processing of uppercase metadata, you can enable this parameter. However, you are advised to modify the service code instead of using this method to solve the problem. If you have to use this function, ensure that the metadata in the current database is in lowercase to avoid problems.
 
 ```
-jdbc:postgresql://node1/database?uppercaseAttributeName=true
+jdbc:opengauss://node1/database?uppercaseAttributeName=true
 ```
 
 The APIs involved in DatabaseMetaData can be directly invoked based on input parameters. The methods of using the APIs involved in ResultSetMetaData are as follows:

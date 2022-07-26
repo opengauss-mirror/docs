@@ -23,7 +23,7 @@ Example:
 ```
 public static Connection GetConnection(String username, String passwd){
  
-    String sourceURL = "jdbc:postgresql://10.10.0.13:8000/postgres?logger=Slf4JLogger";
+    String sourceURL = "jdbc:opengauss://10.10.0.13:8000/postgres?logger=Slf4JLogger";
     Connection conn = null;
  
     try{
@@ -41,7 +41,7 @@ public static Connection GetConnection(String username, String passwd){
 The following is an example of the  **log4j.properties**  file:
 
 ```
-log4j.logger.org.postgresql=ALL, log_gsjdbc
+log4j.logger.org.opengauss=ALL, log_gsjdbc
 
 # Default file output configuration
 log4j.appender.log_gsjdbc=org.apache.log4j.RollingFileAppender
@@ -81,7 +81,7 @@ The following is an example of the  **log4j2.xml**  file:
             <appender-ref ref="FileTest"/>
         </root>
         <!-- JDBC driver logs. The log level is all. All logs can be viewed and exported to the gsjdbc.log file. -->
-        <logger name="org.postgresql" level="all" additivity="false">
+        <logger name="org.opengauss" level="all" additivity="false">
             <appender-ref ref="RollingFileJdbc"/>
         </logger>
     </loggers>
@@ -118,7 +118,7 @@ System.setProperty("java.util.logging.FileHandler.pattern","jdbc.log");
 FileHandler fileHandler = new FileHandler(System.getProperty("java.util.logging.FileHandler.pattern"));
 Formatter formatter = new SimpleFormatter();
 fileHandler.setFormatter(formatter);
-Logger logger = Logger.getLogger("org.postgresql");
+Logger logger = Logger.getLogger("org.opengauss");
 logger.addHandler(fileHandler);
 logger.setLevel(Level.ALL);
 logger.setUseParentHandlers(false);
@@ -126,15 +126,15 @@ logger.setUseParentHandlers(false);
 
 ## Link Trace Function<a name="section1872562420171"></a>
 
-The openGauss JDBC driver provides the application-to-database link trace function to associate discrete SQL statements on the database side with application requests. This function requires application developers to implement the  **org.postgresql.log.Tracer**  API class and specify the full name of the API implementation class in the URL.
+The openGauss JDBC driver provides the application-to-database link trace function to associate discrete SQL statements on the database side with application requests. This function requires application developers to implement the  **org.opengauss.log.Tracer**  API class and specify the full name of the API implementation class in the URL.
 
 URL example:
 
 ```
-String URL = "jdbc:postgresql://127.0.0.1:8000/postgres?traceInterfaceClass=xxx.xxx.xxx.OpenGaussTraceImpl";
+String URL = "jdbc:opengauss://127.0.0.1:8000/postgres?traceInterfaceClass=xxx.xxx.xxx.OpenGaussTraceImpl";
 ```
 
-The  **org.postgresql.log.Tracer**  API class is defined as follows:
+The  **org.opengauss.log.Tracer**  API class is defined as follows:
 
 ```
 public interface Tracer {
@@ -143,10 +143,10 @@ String getTraceId();
 }
 ```
 
-The following is an example of the  **org.postgresql.log.Tracer**  API implementation class:
+The following is an example of the  **org.opengauss.log.Tracer**  API implementation class:
 
 ```
-import org.postgresql.log.Tracer;
+import org.opengauss.log.Tracer;
 
 public class OpenGaussTraceImpl implements Tracer {
     private static MDC mdc = new MDC();

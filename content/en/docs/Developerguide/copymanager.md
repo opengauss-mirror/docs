@@ -4,7 +4,7 @@ CopyManager is an API class provided by the JDBC driver in openGauss. It is used
 
 ## Inheritance Relationship of CopyManager<a name="en-us_topic_0238274501_en-us_topic_0237120404_en-us_topic_0213179170_en-us_topic_0189249657_en-us_topic_0106494102_section62990966143545"></a>
 
-The CopyManager class is in the  **org.postgresql.copy**  package and inherits the java.lang.Object class. The declaration of the class is as follows:
+The CopyManager class is in the  **org.opengauss.copy**  package and inherits the java.lang.Object class. The declaration of the class is as follows:
 
 ```
 public class CopyManager

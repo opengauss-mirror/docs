@@ -84,12 +84,12 @@ Note: Select either example 1 or example 2.
 public class SSL{
     public static void main(String[] args) {
         Properties urlProps = new Properties();
-        String urls = "jdbc:postgresql://10.29.37.136:8000/postgres";
+        String urls = "jdbc:opengauss://10.29.37.136:8000/postgres";
 
         /**
          * ================== Example 1: Use the NonValidatingFactory channel.
          */
-        urlProps.setProperty("sslfactory","org.postgresql.ssl.NonValidatingFactory");
+        urlProps.setProperty("sslfactory","org.opengauss.ssl.NonValidatingFactory");
         urlProps.setProperty("user", "world");
         urlProps.setProperty("password", "test@123");
         urlProps.setProperty("ssl", "true");
@@ -107,10 +107,10 @@ public class SSL{
        /* ================== Example 2.2: Set sslmode to verify-ca to use the certificate for authentication. */
         urlProps.setProperty("sslmode", "verify-ca");
        /* ================== Example 2.3: Set sslmode to verify-full to use the certificate (in the Linux OS) for authentication. */
-        urls = "jdbc:postgresql://world:8000/postgres";
+        urls = "jdbc:opengauss://world:8000/postgres";
         urlProps.setProperty("sslmode", "verify-full");
         try {
-            Class.forName("org.postgresql.Driver").newInstance();
+            Class.forName("org.opengauss.Driver").newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }

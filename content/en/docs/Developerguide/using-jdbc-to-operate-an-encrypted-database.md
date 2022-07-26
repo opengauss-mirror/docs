@@ -8,9 +8,9 @@ For details about the JDBC connection parameters, see  [Development Based on JDB
 public static Connection getConnect(String username, String passwd)
     {
         // Set the driver class.
-        String driver = "org.postgresql.Driver";
+        String driver = "org.opengauss.Driver";
         // Set the database connection descriptor.
-        String sourceURL = "jdbc:postgresql://10.10.0.13:8000/postgres?enable_ce=1";
+        String sourceURL = "jdbc:opengauss://10.10.0.13:8000/postgres?enable_ce=1";
         Connection conn = null;
         
         try

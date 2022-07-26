@@ -10,19 +10,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.postgresql.copy.CopyManager;
-import org.postgresql.core.BaseConnection;
+import org.opengauss.copy.CopyManager;
+import org.opengauss.core.BaseConnection;
 
 public class Migration{
 
     public static void main(String[] args) {
-        String url = new String("jdbc:postgresql://10.180.155.74:8000/postgres"); // Database URL
+        String url = new String("jdbc:opengauss://10.180.155.74:8000/postgres"); // Database URL
         String user = new String("jack");            // openGauss username
         String pass = new String("Gauss@123");             // openGauss password
         String tablename = new String("migration_table"); // Table information
         String delimiter = new String("|");              // Delimiter
         String encoding = new String("UTF8");            // Character set
-        String driver = "org.postgresql.Driver";
+        String driver = "org.opengauss.Driver";
         StringBuffer buffer = new StringBuffer();       // Buffer to store formatted data
 
         try {
