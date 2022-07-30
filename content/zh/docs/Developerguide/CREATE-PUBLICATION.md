@@ -55,7 +55,7 @@ CREATE PUBLICATION insert_only FOR TABLE mydata WITH (publish = 'insert');
 --修改发布的动作。
 ALTER PUBLICATION insert_only SET (publish='insert,update,delete');
 --向发布中添加表。
-ALTER PUBLICAITON insert_only ADD TABLE mydata2;
+ALTER PUBLICATION insert_only ADD TABLE mydata2;
 --删除发布。
 DROP PUBLICATION insert_only;
 ```

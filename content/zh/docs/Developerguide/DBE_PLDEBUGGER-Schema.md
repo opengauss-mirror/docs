@@ -171,22 +171,22 @@ GRANT gs_role_pldebugger to user;
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row1752382419326"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p195231624183214"><a name="p195231624183214"></a><a name="p195231624183214"></a><a href="zh-cn_topic_0000001148257915.md">DBE_PLDEBUGGER.turn_on</a></p>
+    <tbody><tr id="row1752382419326"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p195231624183214"><a name="p195231624183214"></a><a name="p195231624183214"></a><a href="DBE_PLDEBUGGER-turn_on.md">DBE_PLDEBUGGER.turn_on</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p2523324183217"><a name="p2523324183217"></a><a name="p2523324183217"></a>server端调用，标记存储过程可以调试，调用后执行该存储过程时会hang住等待调试信息。</p>
     </td>
     </tr>
-    <tr id="row11523192412328"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p16523524113214"><a name="p16523524113214"></a><a name="p16523524113214"></a><a href="zh-cn_topic_0000001148017993.md">DBE_PLDEBUGGER.turn_off</a></p>
+    <tr id="row11523192412328"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p16523524113214"><a name="p16523524113214"></a><a name="p16523524113214"></a><a href="DBE_PLDEBUGGER-turn_off.md">DBE_PLDEBUGGER.turn_off</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p14523192414325"><a name="p14523192414325"></a><a name="p14523192414325"></a>server端调用，标记存储过程关闭调试。</p>
     </td>
     </tr>
-    <tr id="row15523152413322"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p652382418321"><a name="p652382418321"></a><a name="p652382418321"></a><a href="zh-cn_topic_0000001148137961.md">DBE_PLDEBUGGER.local_debug_server_info</a></p>
+    <tr id="row15523152413322"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p652382418321"><a name="p652382418321"></a><a name="p652382418321"></a><a href="DBE_PLDEBUGGER-local_debug_server_info.md">DBE_PLDEBUGGER.local_debug_server_info</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p6523324173212"><a name="p6523324173212"></a><a name="p6523324173212"></a>server端调用，打印本session内所有已turn_on的存储过程。</p>
     </td>
     </tr>
-    <tr id="row952302410328"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p5524132410329"><a name="p5524132410329"></a><a name="p5524132410329"></a><a href="zh-cn_topic_0000001101178202.md">DBE_PLDEBUGGER.attach</a></p>
+    <tr id="row952302410328"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p5524132410329"><a name="p5524132410329"></a><a name="p5524132410329"></a><a href="DBE_PLDEBUGGER-attach.md">DBE_PLDEBUGGER.attach</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p155241224163215"><a name="p155241224163215"></a><a name="p155241224163215"></a>debug端调用，关联到正在调试存储过程。</p>
     </td>
@@ -201,37 +201,37 @@ GRANT gs_role_pldebugger to user;
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p6524124193219"><a name="p6524124193219"></a><a name="p6524124193219"></a>debug端调用，单步执行。</p>
     </td>
     </tr>
-    <tr id="row16524192418321"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p0524192463215"><a name="p0524192463215"></a><a name="p0524192463215"></a><a href="zh-cn_topic_0000001147937843.md">DBE_PLDEBUGGER.continue</a></p>
+    <tr id="row16524192418321"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p0524192463215"><a name="p0524192463215"></a><a name="p0524192463215"></a><a href="DBE_PLDEBUGGER-continue.md">DBE_PLDEBUGGER.continue</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p9524152453218"><a name="p9524152453218"></a><a name="p9524152453218"></a>debug端调用，继续执行，直到断点或存储过程结束。</p>
     </td>
     </tr>
-    <tr id="row1152462433216"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p185241824203210"><a name="p185241824203210"></a><a name="p185241824203210"></a><a href="zh-cn_topic_0000001101338024.md">DBE_PLDEBUGGER.abort</a></p>
+    <tr id="row1152462433216"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p185241824203210"><a name="p185241824203210"></a><a name="p185241824203210"></a><a href="DBE_PLDEBUGGER-abort.md">DBE_PLDEBUGGER.abort</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p5524324123216"><a name="p5524324123216"></a><a name="p5524324123216"></a>debug端调用，停止调试，server端报错长跳转。</p>
     </td>
     </tr>
-    <tr id="row97981513016"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p47991858020"><a name="p47991858020"></a><a name="p47991858020"></a><a href="zh-cn_topic_0000001116086114.md">DBE_PLDEBUGGER.print_var</a></p>
+    <tr id="row97981513016"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p47991858020"><a name="p47991858020"></a><a name="p47991858020"></a><a href="DBE_PLDEBUGGER-print_var.md">DBE_PLDEBUGGER.print_var</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p279915511013"><a name="p279915511013"></a><a name="p279915511013"></a>debug端调用，打印正在调试的存储过程中指定的变量当前值。</p>
     </td>
     </tr>
-    <tr id="row34281710909"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p7428111010014"><a name="p7428111010014"></a><a name="p7428111010014"></a><a href="zh-cn_topic_0000001162605975.md">DBE_PLDEBUGGER.info_code</a></p>
+    <tr id="row34281710909"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p7428111010014"><a name="p7428111010014"></a><a name="p7428111010014"></a><a href="DBE_PLDEBUGGER-info_code.md">DBE_PLDEBUGGER.info_code</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1442813107018"><a name="p1442813107018"></a><a name="p1442813107018"></a>debug和server端都可以调用，打印指定存储过程的源语句和各行对应的行号。</p>
     </td>
     </tr>
-    <tr id="row18493441451"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p15849114410454"><a name="p15849114410454"></a><a name="p15849114410454"></a><a href="zh-cn_topic_0000001162765995.md">DBE_PLDEBUGGER.step</a></p>
+    <tr id="row18493441451"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p15849114410454"><a name="p15849114410454"></a><a name="p15849114410454"></a><a href="DBE_PLDEBUGGER-step.md">DBE_PLDEBUGGER.step</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1184994416454"><a name="p1184994416454"></a><a name="p1184994416454"></a>debug端调用，单步进入执行。</p>
     </td>
     </tr>
-    <tr id="row151012015141414"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p463411486285"><a name="p463411486285"></a><a name="p463411486285"></a><a href="zh-cn_topic_0000001115926210.md">DBE_PLDEBUGGER.add_breakpoint</a></p>
+    <tr id="row151012015141414"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p463411486285"><a name="p463411486285"></a><a name="p463411486285"></a><a href="DBE_PLDEBUGGER-add_breakpoint.md">DBE_PLDEBUGGER.add_breakpoint</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p121021915101416"><a name="p121021915101416"></a><a name="p121021915101416"></a>debug端调用，新增断点。</p>
     </td>
     </tr>
-    <tr id="row7346134201411"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p1346342151416"><a name="p1346342151416"></a><a name="p1346342151416"></a><a href="zh-cn_topic_0000001116086116.md">DBE_PLDEBUGGER.delete_breakpoint</a></p>
+    <tr id="row7346134201411"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p1346342151416"><a name="p1346342151416"></a><a name="p1346342151416"></a><a href="DBE_PLDEBUGGER-delete_breakpoint.md">DBE_PLDEBUGGER.delete_breakpoint</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p734684214148"><a name="p734684214148"></a><a name="p734684214148"></a>debug端调用，删除断点。</p>
     </td>
@@ -256,12 +256,12 @@ GRANT gs_role_pldebugger to user;
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p54351316112813"><a name="p54351316112813"></a><a name="p54351316112813"></a>debug端调用，禁用已激活的断点。</p>
     </td>
     </tr>
-    <tr id="row830972423018"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p20310224133018"><a name="p20310224133018"></a><a name="p20310224133018"></a><a href="zh-cn_topic_0000001152478332.md">DBE_PLDEBUGGER.finish</a></p>
+    <tr id="row830972423018"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p20310224133018"><a name="p20310224133018"></a><a name="p20310224133018"></a><a href="DBE_PLDEBUGGER-finish.md">DBE_PLDEBUGGER.finish</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1731022415301"><a name="p1731022415301"></a><a name="p1731022415301"></a>debug端调用，继续调试，直到断点或返回上一层调用栈。</p>
     </td>
     </tr>
-    <tr id="row8735537113017"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p1581201715318"><a name="p1581201715318"></a><a name="p1581201715318"></a><a href="zh-cn_topic_0000001198398061.md">DBE_PLDEBUGGER.set_var</a></p>
+    <tr id="row8735537113017"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p1581201715318"><a name="p1581201715318"></a><a name="p1581201715318"></a><a href="DBE_PLDEBUGGER-set_var.md">DBE_PLDEBUGGER.set_var</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p10755616193115"><a name="p10755616193115"></a><a name="p10755616193115"></a>debug端调用，为变量进行赋值操作。</p>
     </td>
@@ -270,8 +270,6 @@ GRANT gs_role_pldebugger to user;
     </table>
 
 
--   **[DBE\_PLDEBUGGER.info\_breakpoints](DBE_PLDEBUGGER-info_breakpoints.md)**  
 
--   **[DBE\_PLDEBUGGER.backtrace](DBE_PLDEBUGGER-backtrace.md)**  
 
 
