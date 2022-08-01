@@ -32,7 +32,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
-    [ TABLESPACE tablespace_name ];
+    [ TABLESPACE tablespace_name ]
+    [ COMMENT {=| } 'string' ];
 ```
 
 -   其中列约束column\_constraint为：
@@ -354,6 +355,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **TABLESPACE tablespace\_name**
 
     创建新表时指定此关键字，表示新表将要在指定表空间内创建。如果没有声明，将使用默认表空间。
+
+-   **COMMNET {=| } string**
+    
+    创建新表时指定此关键字，表示新表的注释内容。如果没有声明，则不创建注释。
 
 -   **CONSTRAINT constraint\_name**
 

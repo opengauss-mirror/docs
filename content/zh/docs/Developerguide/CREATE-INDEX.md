@@ -33,6 +33,7 @@
       [ INCLUDE ( column_name [, ...] )]    
       [ WITH ( {storage_parameter = value} [, ... ] ) ]
       [ TABLESPACE tablespace_name ]
+      [ COMMENT string ]
       [ WHERE predicate ];
   ```
 
@@ -44,7 +45,8 @@
         [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
-        [ TABLESPACE tablespace_name ];
+        [ TABLESPACE tablespace_name ]
+        [ COMMENT string ];
     ```
 
 
@@ -218,6 +220,10 @@
     指定索引的表空间，如果没有声明则使用默认的表空间。
 
     取值范围：已存在的表空间名。
+
+-   **COMMENT string**
+
+    指定索引的注释，如果没有声明则注释为空。
 
 -   **WHERE predicate**
 
