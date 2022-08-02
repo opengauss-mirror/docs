@@ -7,7 +7,7 @@
 ## Precautions<a name="en-us_topic_0059779060_s8aed237cc11e48bcb20d63f3ed081327"></a>
 
 -   openGauss does not support specified nodes and supports only TO ALL.
--   This function can be used to clear the normal connections that are being used only in fore mode.
+-   This function can be used to clear the normal connections that are being used only in force mode.
 
 ## Syntax<a name="en-us_topic_0059779060_s24ab1cb591b54a43af5fe6d87cc067a1"></a>
 
