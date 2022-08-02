@@ -62,6 +62,13 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
         RESET ( view_option_name [, ... ] );
     ```
 
+- 设置视图的定义（该语法仅支持在B兼容模式下才能使用）
+
+  ```
+  ALTER [DEFINER = user] VIEW view_name [ ( column_name [, ...] ) ]
+      [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
+      AS query;
+  ```
 
 ## 参数说明<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
 

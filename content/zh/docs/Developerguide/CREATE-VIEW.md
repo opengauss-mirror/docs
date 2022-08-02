@@ -11,7 +11,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
+CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
     [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
     AS query;
 ```
@@ -24,6 +24,10 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 -   **OR REPLACE**
 
     如果视图已存在，则重新定义。
+
+- **DEFINER = user**
+
+  指定user作为视图的属主。该选项尽在B兼容模式下使用。
 
 -   **TEMP | TEMPORARY**
 
