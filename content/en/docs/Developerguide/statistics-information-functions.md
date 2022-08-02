@@ -2431,6 +2431,24 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
+-   DBE_PERF.standby_statement_history(bool \[, time1, time2\])
+
+    Parameters:  
+    **bool only_slow**: determines whether to query only slow SQL statements. The value **true** indicates yes, and the value **false** or **NULL** indicates that all SQL statements are queried.  
+    **VARIADIC timestamptz finish_time**: Optional. You can enter a maximum of time1 and time2, indicating the time segment to which **finish_time** of the queried SQL statement belongs.
+
+    Description: Queries full SQL statements on the standby node. The primary node queries full SQL statements using the statement\_history table, while the standby node queries using this function.
+
+    Return type: record, which is the same as that in the statement\_history table.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE**  
+    > The value **true** of the first bool parameter indicates that only slow SQL statements are queried, which is equivalent to **select. where is_slow_sql = true;**. The value **false** or **NULL** indicates that all SQL statements are queried, that is, **is_slow_sql** is not filtered.  
+    > The two time parameters **time1** and **time2** indicate the time segment to which **finish_time** of the queried SQL statement belongs. They indicate the start time and end time respectively. If **NULL** or no value is entered, there is no limit. The function of **time1** and **time2** is the same as that of **select .. where finish_time between time1 and time2**.  
+    > Data on the standby node is not stored in the table, and the index of the **start_time** column does not exist. You are advised to use parameters to search for **finish_time**. The performance is optimized internally. However, if the system time is changed, this function may be inaccurate.
+    > The query results are automatically sorted in descending order (from new to old) based on **finish_time**.
+    > In addition to the calculation process of the FunctionScan operator, data scanning occupies 16 MB or 32 MB memory as a temporary buffer.
+    > The stability level of this function is 'v'.
+
 -   DBE\_PERF.get\_wlm\_controlgroup\_ng\_config\(\)
 
     Description: Collects information about all Cgroups in the database. After a cluster is created, by default, you must have the  **monadmin**  permission to query this function.
@@ -2519,5 +2537,3 @@ Statistics information functions are divided into the following two categories: 
     Description: Clears top SQL operator-level statistics recorded in the current memory. If the input parameter is greater than 0, the information is archived to  **gs\_wlm\_operator\_info**  and  **gs\_wlm\_ec\_operator\_info**. Otherwise, the information is not archived. Only users with the  **sysadmin**  permission can execute this function.
 
     Return type: int
-
-

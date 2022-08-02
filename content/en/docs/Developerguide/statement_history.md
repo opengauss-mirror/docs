@@ -360,7 +360,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.62216221622162%" headers="mcps1.2.4.1.2 "><p id="p339717319319"><a name="p339717319319"></a><a name="p339717319319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of statement lock events, which are recorded in time sequence. The number of records is affected by the <strong id="b15117850175510"><a name="b15117850175510"></a><a name="b15117850175510"></a>track_stmt_details_size </strong>parameter.</p>
+<td class="cellrowborder" valign="top" width="56.24562456245624%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of wait events and statement lock events. <p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of wait events, which displays statistics about the wait events of the current statement. For details about events, see <a href="PG_THREAD_WAIT_STATUS.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4">Table 2</a>, <a href="PG_THREAD_WAIT_STATUS.md#en-us_topic_0237122466_table38811324183420">Table 3</a>, <a href="PG_THREAD_WAIT_STATUS.md#en-us_topic_0237122466_table124603113369">Table 4</a>, and <a href="PG_THREAD_WAIT_STATUS.md#en-us_topic_0237122466_table11826123533718">Table 5</a>. For details about the impact of each transaction lock on services, see <a href="LOCK-1.md">LOCK</a>. </p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>List of statement lock events, which are recorded in time sequence. The number of records is affected by the track_stmt_details_size parameter. This field is in binary format and needs to be read by using the parsing function pg_catalog.statement_detail_decode. For details, see <a href="other-functions.md#table9745177191215">Table 5</a>.</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>Events include:</p>
 <a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>Start locking.</li><li>Complete locking.</li><li>Start lock waiting.</li><li>Complete lock waiting.</li><li>Start unlocking.</li><li>Complete unlocking.</li><li>Start lightweight lock waiting.</li><li>Complete lightweight lock waiting.</li></ul>
 </td>
@@ -374,4 +374,3 @@
 </tr>
 </tbody>
 </table>
-

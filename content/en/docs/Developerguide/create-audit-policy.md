@@ -8,7 +8,7 @@
 
 Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
 
-The masking policy takes effect only after the security policy is enabled, that is,  **enable\_security\_policy**  is set to  **on**. For details, see "Database Configuration \> Database Security Management Policies \> Unified Auditing" in the  _Security Hardening Guide_.
+The masking policy takes effect only after the security policy is enabled, that is,  **enable\_security\_policy**  is set to  **on**.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 

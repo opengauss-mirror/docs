@@ -10,7 +10,7 @@ When the number of Unique SQL records generated in the system is greater than th
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](en-us_topic_0283137176.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_
+**Value range**: an integer ranging from 0 to  *INT\*MAX_
 
 **Default value**:  **100**
 
@@ -85,6 +85,31 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **on**
 
+## track\_stmt\_standby\_chain\_size<a name="section16119247614"></a>
+
+**Parameter description**: Specifies the maximum memory and disk space occupied by fast/slow SQL statement records on the standby node. This parameter is a combination of parameters. This parameter is read every 60 seconds and records exceeding the retention period are deleted. Only the sysadmin user can access this parameter.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+Value range: a string
+
+This parameter consists of four parts: **fast sql memory size**, **fast sql disk size**, **slow sql memory size**, and **slow sql disk size**.
+On the primary node, **full sql** indicates full SQL statements stored in an unlogged table, and **slow sql** indicates slow SQL statements. On the standby node, the non-slow SQL statements are called **fast sql**. Slow and fast SQL statements are stored in different locations. Therefore, four additional values are used for control.
+
+**fast sql memory size** indicates the maximum memory space reserved for fast SQL statements. The value range is \[16,1024\], in MB.
+
+**fast sql disk size** indicates the maximum disk space occupied by reserved fast SQL statements. The value range is \[512,1048576\], in MB.
+
+**slow sql memory size** indicates the maximum memory space reserved for slow SQL statements. The value range is \[16,1024\], in MB.
+
+**slow sql disk size** indicates the maximum disk space reserved for slow SQL statements. The value range is \[512,1048576\], in MB.
+
+Note that the memory values corresponding to the fast and slow SQL statements cannot be less than the disk value.
+
+Data is cleared at a granularity of 16 MB. Therefore, a maximum of 16 MB data delay error may occur.
+
+**Default value: 32, 1024, 16, 512**
+
 ## track\_stmt\_session\_slot<a name="section1768054315510"></a>
 
 **Parameter description**: Specifies the maximum number of full/slow SQL statements that can be cached in a session. If the number of full/slow SQL statements exceeds this value, new statements will not be traced until the flush thread flushes the cached statements to the disk to reserve idle space.
@@ -136,4 +161,3 @@ The first part indicates the tracing level of full SQL statements. The value can
 The second part indicates the tracing level of slow SQL statements. The value can be  **OFF**,  **L0**,  **L1**, or  **L2**.
 
 **Default value**:  **OFF,L0**
-
