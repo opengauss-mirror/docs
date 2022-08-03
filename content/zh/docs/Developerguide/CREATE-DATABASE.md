@@ -50,7 +50,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   不指定时，默认使用模版数据库的编码。模板数据库template0和template1的编码默认与操作系统环境相关。template1不允许修改字符编码，因此若要变更编码，请使用template0创建数据库。
 
-  常用取值：GBK、UTF8、Latin1。
+  常用取值：GBK、UTF8、Latin1、GB10830等，具体支持的字符集如下：
 
   **表 1**  openGauss字符集
 
@@ -758,7 +758,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     >-   系统管理员不受此参数的限制。
     
 >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
-    
+
     取值范围：\>=-1的整数。默认值为-1，表示没有限制。
 
 
