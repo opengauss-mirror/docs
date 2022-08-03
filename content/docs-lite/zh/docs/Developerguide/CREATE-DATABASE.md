@@ -50,7 +50,7 @@ CREATE DATABASE database_name
 
     不指定时，默认使用模版数据库的编码。模板数据库template0和template1的编码默认与操作系统环境相关。template1不允许修改字符编码，因此若要变更编码，请使用template0创建数据库。
 
-    常用取值：GBK、UTF8、Latin1。
+    常用取值：GBK、UTF8、Latin1、GB18030等，具体支持的字符集如下：
 
     **表 1**  openGauss字符集
 
