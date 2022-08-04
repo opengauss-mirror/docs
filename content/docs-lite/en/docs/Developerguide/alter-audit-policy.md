@@ -7,7 +7,7 @@
 ## Precautions<a name="en-us_topic_0059778839_s63ad21f92ad74c9e8d6bf18bb7218c4f"></a>
 
 -   Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
--   The unified audit policy takes effect only after  **enable\_security\_policy**  is set to  **on**. For details, see "Database Configuration \> Database Security Management Policies \> Unified Auditing" in  _Security Hardening Guide_.
+-   The unified audit policy takes effect only after  **enable\_security\_policy**  is set to  **on**.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 

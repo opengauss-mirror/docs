@@ -34,54 +34,54 @@
 -   Syntax \(compatible with PostgreSQL\) for creating a customized function:
 
     ```
-    CREATE [ OR REPLACE  ] FUNCTION function_name 
-        [ ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]}  [, ...]  ] ) ]
-        [ RETURNS rettype [ DETERMINISTIC  ]  | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
-        LANGUAGE lang_name 
-        [ 
-           {IMMUTABLE  | STABLE  | VOLATILE }
+    CREATE [ OR REPLACE  ] FUNCTION function_name
+        ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]
+    }  [, ...]  ] )
+        [ RETURNS rettype [ DETERMINISTIC  ]
+            | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
+        LANGUAGE lang_name
+        [
+            {IMMUTABLE  | STABLE  | VOLATILE}
             | {SHIPPABLE | NOT SHIPPABLE}
+            | [ NOT  ] LEAKPROOF
             | WINDOW
-            | [ NOT  ] LEAKPROOF  
-            | {CALLED ON NULL INPUT  | RETURNS NULL ON NULL INPUT | STRICT } 
-            | {[ EXTERNAL  ] SECURITY INVOKER | [ EXTERNAL  ] SECURITY DEFINER | AUTHID DEFINER  | AUTHID CURRENT_USER} 
-            | {fenced | not fenced}
+            | {CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT}
+            | {[ EXTERNAL  ] SECURITY INVOKER  | [ EXTERNAL  ] SECURITY DEFINER | AU
+    THID DEFINER  | AUTHID CURRENT_USER}
+            | {FENCED | NOT FENCED}
             | {PACKAGE}
             | COST execution_cost
             | ROWS result_rows
-            | SET configuration_parameter { {TO | =} value | FROM CURRENT }}
-         ][...]
+            | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+        ] [...]
         {
             AS 'definition'
+            | AS 'obj_file', 'link_symbol'
         }
-    
     ```
 
 -   O syntax of creating a customized function:
 
     ```
-    CREATE [ OR REPLACE  ] FUNCTION function_name 
-        ( [  { argname [ argmode  ] argtype [  { DEFAULT | := | =  } expression  ] }  [, ...]  ] )
+    CREATE [ OR REPLACE  ] FUNCTION function_name
+        ( [  { argname [ argmode  ] argtype [  { DEFAULT | := | =  } expression  ] }
+      [, ...]  ] )
         RETURN rettype [ DETERMINISTIC  ]
-        [ 
-            {IMMUTABLE  | STABLE  | VOLATILE } 
+        [
+            {IMMUTABLE  | STABLE  | VOLATILE }
             | {SHIPPABLE | NOT SHIPPABLE}
             | {PACKAGE}
-            | {FENCED | NOT FENCED}
-            | [ NOT  ] LEAKPROOF  
-            | {CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT } 
-            | {[ EXTERNAL  ] SECURITY INVOKER  | [ EXTERNAL  ] SECURITY DEFINER |
-    AUTHID DEFINER | AUTHID CURRENT_USER
-    } 
-            | COST execution_cost  
-            | ROWS result_rows  
-            | SET configuration_parameter { {TO | =} value  | FROM CURRENT
-    
-        ][...] 
-    
-        { 
-          IS  | AS
-    } plsql_body
+            | [ NOT  ] LEAKPROOF
+            | {CALLED ON NULL INPUT  | RETURNS NULL ON NULL INPUT  | STRICT }
+            | {[ EXTERNAL  ] SECURITY INVOKER  | [ EXTERNAL  ] SECURITY DEFINER | |
+    AUTHID DEFINER  | AUTHID CURRENT_USER}
+            | COST execution_cost
+            | ROWS result_rows
+            | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+         ][...]
+         {
+            IS | AS
+         } plsql_body
     /
     ```
 
