@@ -7,7 +7,7 @@
 ## Precautions<a name="en-us_topic_0059778839_s63ad21f92ad74c9e8d6bf18bb7218c4f"></a>
 
 -   Only user  **poladmin**, user  **sysadmin**, or the initial user can perform this operation.
--   The masking policy takes effect only after  **enable\_security\_policy**  is set to  **on**. For details about how to enable the masking policy, see "Database Configuration \> Database Security Management Policies \> Dynamic Data Masking" in the  _Security Hardening Guide_.
+-   The masking policy takes effect only after  **enable\_security\_policy**  is set to  **on**.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
