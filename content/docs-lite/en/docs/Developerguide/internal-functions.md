@@ -1489,6 +1489,8 @@ The following functions of openGauss use internal data types, which cannot be di
 
     **gs\_read\_block\_from\_remote**  is used to read the pages of a non-segment-page table file. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
 
+    **pg\_read\_binary\_file\_blocks** is used to read data. Non-compressed tables return actual data, and compressed tables return compressed data. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
+    
     **gs\_read\_segment\_block\_from\_remote**  is used to read the pages of a segment-page table file. By default, only the initial user can view the data. Other users can use the data only after being granted with permissions.
 
 -   Auxiliary function for the primary  database node  to remotely read the data file from the standby  database node.

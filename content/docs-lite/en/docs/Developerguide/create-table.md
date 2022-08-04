@@ -125,7 +125,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Specifies the name of the table to be created.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+     
     >-   Some processing logic of materialized views determines whether a table is the log table of a materialized view or a table associated with a materialized view based on the table name prefix. Therefore, do not create a table whose name prefix is  **mlog\_ **or  **matviewmap\_**. Otherwise, some functions of the table are affected.
 
 -   **column\_name**
@@ -223,7 +224,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESSION
 
-        Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded. Row-store tables do not support compression.
+        Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded. By default, **COMPRESSION=NO** is added to row-store tables.
 
         Value range:
 
@@ -234,6 +235,48 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
 
         Value range: 0 to 3. The default value is  **0**.
+
+    - COMPRESSTYPE
+
+      Specifies the row-store table compression algorithm. The value **1** indicates the PGLZ algorithm, and the value **2** indicates the ZSTD algorithm. By default, indexes are not compressed. (Only common tables in the Astore engine are supported.)
+
+      Value range: 0 to 2. The default value is **0**.
+
+    - COMPRESS\_LEVEL
+
+      Specifies the row-store table compression algorithm level. This parameter is valid only when **COMPRESSTYPE** is set to **2**. A higher compression level indicates a better table compression effect and a slower table access speed. (Only common tables in the Astore engine are supported.)
+
+      Value range: –31 to 31. The default value is **0**.
+
+    - COMPRESS\_CHUNK_SIZE
+
+      Specifies the size of a row-store table compression chunk. A smaller chunk size indicates a better compression effect, and a larger data dispersion degree indicates a slower table access speed. (Only common tables in the Astore engine are supported.)
+
+      Value range: subject to the page size. When the page size is 8 KB, the value can be **512**, **1024**, **2048**, or **4096**.
+
+      Default value: **4096**
+
+    - COMPRESS_PREALLOC_CHUNKS
+
+      Specifies the number of pre-allocated row-store table compression chunks. A larger number of pre-allocated chunks indicates a lower table compression ratio, and a smaller data dispersion degree indicates a better access performance. (Only common tables in the Astore engine are supported.)
+
+      Value range: 0 to 7. The default value is **0**.
+
+      - The maximum value of this parameter is **7** when **COMPRESS\_CHUNK_SIZE** is set to **512** or **1024**.
+      - The maximum value of this parameter is **3** when **COMPRESS\_CHUNK_SIZE** is set to **2048**.
+      - The maximum value of this parameter is **1** when **COMPRESS\_CHUNK_SIZE** is set to **4096**.
+
+    - COMPRESS_BYTE_CONVERT
+
+      Sets the preprocessing of row-store table compression byte conversion. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+      Value range: Boolean value. By default, this function is disabled.
+
+    - COMPRESS_DIFF_CONVERT
+
+      Sets the preprocessing of row-store table compression differentiation. This parameter can be used together only with **COMPRESS\_BYTE\_CONVERT**. In some scenarios, the compression effect can be improved, but the performance deteriorates.
+
+      Value range: Boolean value. By default, this function is disabled.
 
     -   MAX\_BATCHROW
 

@@ -33,7 +33,10 @@ DROP TABLE [ IF EXISTS ]
 -   **CASCADE | RESTRICT**
     -   **CASCADE**: automatically deletes the objects \(such as views\) that depend on the table.
     -   **RESTRICT**: refuses to delete the table if any objects depend on it. This is the default action.
+    
+- **PURGE**
 
+  Specifies that even if the recycle bin function is enabled, the table is physically dropped instead of being moved to the recycle bin.
 
 ## Examples<a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_s1af12a7c6e4e456f9fc72da9c90358ff"></a>
 

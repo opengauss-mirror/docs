@@ -28,10 +28,10 @@
 -   **CREATE PACKAGE SPECIFICATION**
 
     ```
-    CREATE [ OR REPLACE ] PACKAGE [ schema ] package_name
+    CREATE [ OR REPLACE ] PACKAGE [ schema. ] package_name
         [ invoker_rights_clause ] { IS | AS } item_list_1 END package_name;
     
-    invoker_rights_clause can be declared as AUTHID DEFINER or AUTHID INVOKER, which indicate the definer permission and invoker permission, respectively.
+    invoker_rights_clause can be declared as AUTHID DEFINER or AUTHID CURRENT_USER, which indicate the definer permission and invoker permission, respectively.
     item_list_1 can be a declared variable, stored procedure, or function.
     ```
 
@@ -74,7 +74,7 @@
     begin
     create table if not exists test1(col1 int);
     insert into test1 values(var1);
-    insert into test1 values(var5);
+    insert into test1 values(var4);
     end;
     begin: --The instantiation starts.
     var4:=9;
@@ -86,8 +86,18 @@
 -   Example of  **ALTER PACKAGE OWNER**
 
     ```
-    ALTER PACKAGE emp_bonus OWNER TO omm;
     -- Change the owner of PACKAGE emp_bonus to omm.
+    ALTER PACKAGE emp_bonus OWNER TO omm;
     ```
 
+-   Example of calling a package
 
+    ```
+    call emp_bonus.testpro1(1); -- Use **call** to call the stored procedure of a package.
+    select emp_bonus.testpro1(1); -- Use **select** to call the stored procedure of a package.
+    --Call the stored procedure of a package in an anonymous block.
+    begin
+    emp_bonus.testpro1(1);
+    end;
+     /
+    ```

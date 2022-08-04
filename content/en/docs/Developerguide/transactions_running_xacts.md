@@ -17,7 +17,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p195720254490"><a name="p195720254490"></a><a name="p195720254490"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p17572112517497"><a name="p17572112517497"></a><a name="p17572112517497"></a>Handle corresponding to the transaction in GTM</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p17572112517497"><a name="p17572112517497"></a><a name="p17572112517497"></a>事务对应的事务管理器中的槽位句柄，该值恒为-1。</p>
 </td>
 </tr>
 <tr id="row3572925174917"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="p14572202512491"><a name="p14572202512491"></a><a name="p14572202512491"></a>gxid</p>
@@ -80,7 +80,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p757316258494"><a name="p757316258494"></a><a name="p757316258494"></a>xid</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p657372510491"><a name="p657372510491"></a><a name="p657372510491"></a>Transaction ID sent from a <span id="text772674122416"><a name="text772674122416"></a><a name="text772674122416"></a>CN</span> to a <span id="text9654200205513"><a name="text9654200205513"></a><a name="text9654200205513"></a>DN</span></p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p657372510491"><a name="p657372510491"></a><a name="p657372510491"></a><span id="text772674122416"><a name="text772674122416"></a><a name="text772674122416"></a>其余节点发送给当前节点的事务id，该值恒为0。</p>
 </td>
 </tr>
 </tbody>

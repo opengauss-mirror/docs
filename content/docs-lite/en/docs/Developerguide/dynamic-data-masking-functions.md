@@ -51,4 +51,10 @@
 
     Return type: text
 
+- regexpmasking
 
+  Description: Specifies the internal function of the masking policy, which is used to replace characters using a regular expression.
+
+  Parameter: col text, reg text, replace\_text text, pos INTEGER default 0, reg\_len INTEGER default -1
+
+  Return type: text

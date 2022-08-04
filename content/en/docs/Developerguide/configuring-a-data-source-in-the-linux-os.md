@@ -21,7 +21,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     # Change the value of LIB_VERSION to 1:0:0 to compile a *.so.1 dynamic library with the same dependency on psqlodbcw.so.
     vim configure
     
-    ./configure --enable-gui=no #To perform compilation on a Kunpeng server, add the configure parameter --build=aarch64-unknown-linux-gnu.
+    ./configure --enable-gui=no #To perform compilation on an ARM server, add the configure parameter --build=aarch64-unknown-linux-gnu.
     make
     # The installation may require root permissions.
     make install

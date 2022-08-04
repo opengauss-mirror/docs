@@ -40,7 +40,7 @@ After the openGauss installation environment is prepared by executing the pre-in
     -   Cannot be the same as the username, the current password \(**ALTER**\), or the current password in an inverted sequence.
     -   Contain at least three of the following: uppercase characters \(A to Z\), lowercase characters \(a to z\), digits \(0 to 9\), and other characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
-    The SSL certificate is generated during the installation. The certificate is stored in  _\{gaussdbAppPath\}_**/share/sslcert/om**, where  _\{gaussdbAppPath\}_  is the program installation directory specified in the openGauss configuration file.
+    The SSL certificate is generated during the installation. The certificate is stored in  *\{gaussdbAppPath\}***/share/sslcert/om**, where  *\{gaussdbAppPath\}*  is the program installation directory specified in the openGauss configuration file.
 
     Two files are generated under the log file path:  **gs\_install-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
@@ -127,10 +127,9 @@ After the openGauss installation environment is prepared by executing the pre-in
 </td>
 <td class="cellrowborder" valign="top" width="14.64853514648535%" headers="mcps1.2.6.1.3 "><p id="en-us_topic_0283136467_p11130422173216"><a name="en-us_topic_0283136467_p11130422173216"></a><a name="en-us_topic_0283136467_p11130422173216"></a>/opt/huawei/install/data/dn</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 "><p id="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"><a name="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"></a><a name="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"></a>data_dnxxx</p>
+<td class="cellrowborder" valign="top" width="28.43715628437156%" headers="mcps1.2.6.1.4 "><p id="zh-cn_topic_0241805806_zh-cn_topic_0085434626_zh-cn_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"><a name="zh-cn_topic_0241805806_zh-cn_topic_0085434626_zh-cn_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"></a><a name="zh-cn_topic_0241805806_zh-cn_topic_0085434626_zh-cn_topic_0059782015_a3435dd2a26bb441b95d5974bfea8b1e5"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.996900309969007%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0283136467_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p811250393912"><a name="en-us_topic_0283136467_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p811250393912"></a><a name="en-us_topic_0283136467_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p811250393912"></a>Stores database node data. For the primary node, the directory name is <strong id="b11231340194812"><a name="b11231340194812"></a><a name="b11231340194812"></a>data_dnxxx</strong>.</p>
-<p id="en-us_topic_0283136467_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p590367193912"><a name="en-us_topic_0283136467_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p590367193912"></a><a name="en-us_topic_0283136467_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p590367193912"></a>For the standby node, the directory name is <strong id="b41051191493"><a name="b41051191493"></a><a name="b41051191493"></a>data_dnSxxx</strong>. <strong id="b842352706114316"><a name="b842352706114316"></a><a name="b842352706114316"></a>xxx</strong> indicates the database node number.</p>
+<td class="cellrowborder" valign="top" width="30.996900309969007%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p811250393912"><a name="en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p811250393912"></a><a name="en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p811250393912"></a>Stores database node data.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_r5d87b119ba4d4711a9bfe614e39d2f8e"><td class="cellrowborder" rowspan="5" valign="top" width="7.64923507649235%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p880929793912"><a name="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p880929793912"></a><a name="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_en-us_topic_0009462205_p880929793912"></a>3</p>
@@ -237,4 +236,3 @@ Successfully installed application.
 ## Troubleshooting<a name="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_sa05a0f9f81f34741a8a6ca3f5640a3b4"></a>
 
 If the installation fails, troubleshoot the problem based on logs in the  **gs\_install-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files in the openGauss log directory.
-

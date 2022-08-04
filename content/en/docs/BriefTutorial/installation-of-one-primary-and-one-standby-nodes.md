@@ -12,10 +12,10 @@
 
     ```
     useradd -g dbgroup omm
-    passwd omm
+    passwd Gauss_234
     ```
 
-3.  Log in to the host where the package is installed as user  **omm**  and decompress the openGauss package to the installation directory.
+3.  Log in to the host where the package is installed as user **omm** and decompress the openGauss package to the installation directory (for example, **/opt/software/openGauss**).
 
     ```
     tar -jxf openGauss-x.x.x-openEuler-64bit.tar.bz2 -C /opt/software/openGauss
@@ -85,5 +85,3 @@
      Receiver info:
     No information 
     ```
-
-

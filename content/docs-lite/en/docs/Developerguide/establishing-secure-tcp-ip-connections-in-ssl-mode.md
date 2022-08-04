@@ -486,7 +486,7 @@ A series of encryption and authentication algorithms with different strength are
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   Currently, only the six encryption algorithm suites listed in the preceding table are supported.
->-   The default value of  **ssl\_ciphers**  is  **ALL**, indicating that all encryption algorithms listed in the table are supported. You are advised to retain the default value, unless there are other special requirements on the encryption algorithm. The DHE algorithm suite is reserved for forward compatibility and is not recommended in incompatible scenarios.
+>-   The default value of  **ssl\_ciphers**  is  **ALL**, indicating that all encryption algorithms listed in the table are supported. The DHE-RSA-AES128-GCM-SHA256 and DHE-RSA-AES256-GCM-SHA384 are DHE cipher suites reserved for forward compatibility. According to the CVE-2002-20001 vulnerability, the DHE cipher suites have security risks and are not recommended in incompatible scenarios. You can set the **ssl_ciphers** parameter to support only the ECDHE cipher suite.
 >-   To specify the preceding cipher suites, set** ssl\_ciphers**  to the OpenSSL suite names in the preceding table. Use semicolons \(;\) to separate cipher suites. For example, set  **ssl\_ciphers**  in  **postgresql.conf**  as follows:
 >    ```
 >    ssl_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'

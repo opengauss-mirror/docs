@@ -4,7 +4,7 @@
 
     Description: Queries global system cache table metadata in a database. The user who calls this function must have the  **SYSADMIN**  permission.
 
-    Parameter: Specifies the database and table whose global system cache is to be queried. The default value of  **database\_id**  is  **NULL**  or  **–1**, indicating all databases. The value  **0**  indicates a shared table. Other values indicate the specified database and shared table.  **rel\_id**  indicates the OID of the specified table. The default value  **NULL**  or  **–1**  indicates all tables. Other values indicate the specified table. If the table does not exist, an error is reported.
+    Parameter: Specifies the database and table whose global system cache is to be queried. The default value of  **database\_id**  is  **NULL**  or  **–1**, indicating all databases. The value  **0**  indicates a shared table. Other values indicate the specified database and shared table.  **rel\_id**  indicates the OID of the specified table. The default value  **NULL**  or  **–1**  indicates all tables. Other values indicate the specified table. If **database_id** does not exist, an error is reported. If **rel_id** does not exist, the result is empty.
 
     Return type: Tuple
 
@@ -23,8 +23,7 @@
 
     Description: Queries the system table row information cached in the global system in a database. The user who calls this function must have the  **SYSADMIN**  permission.
 
-    Parameter: Specifies the database and table whose global system cache is to be queried. The default value of  **database\_id**  is  **NULL**  or  **–1**, indicating all databases. The value  **0**  indicates a shared table. Other values indicate the specified database and shared table.  **rel\_id**  indicates the ID of the specified table, including all system tables that have system caches, the default value  **NULL**  or  **–1**  indicates all tables. Other values indicate the specified table. If the specified table does not exist, an error is reported.
-
+    Parameter: Specifies the database and table whose global system cache is to be queried. The default value of  **database\_id**  is  **NULL**  or  **–1**, indicating all databases. The value  **0**  indicates a shared table. Other values indicate the specified database and shared table.  **rel\_id**  indicates the ID of the specified table, including all system tables that have system caches, the default value  **NULL**  or  **–1**  indicates all tables. Other values indicate the specified table. If **database_id** does not exist, an error is reported. If **rel_id** does not exist, the result is empty.
     Return type: Tuple
 
     Example:
@@ -52,7 +51,7 @@
 
     Description: Clears the global syscache cache. Note that data in use will not be cleared. The user who calls this function must have the  **SYSADMIN**  permission.
 
-    Parameter: Specifies the database whose global system cache needs to be cleared. The default value  **NULL**  or  **–1**  indicates that the global system cache of all databases is cleared. The value  **0**  indicates that the global system cache of only the shared table is cleared. Other values indicate that the global system cache of the specified database and shared table is cleared. If a table does not exist, an error is reported.
+    Parameter: Specifies the database whose global system cache needs to be cleared. The default value  **NULL**  or  **–1**  indicates that the global system cache of all databases is cleared. The value **0** indicates that only the global system cache of the shared table is cleared. Other values indicate that the global system cache of the specified database and shared table is cleared. If **database_id** does not exist, an error is reported.
 
     Return type: Boolean
 
@@ -71,7 +70,7 @@
 
     Description: Obtains GSC memory statistics on the local node, including cache query, hit, loading, expiration, and occupied space information of tuples, relationships, and partitions, database-level elimination information, thread reference information, and memory usage information. This parameter can be used to locate performance problems. For example, if the value of the hits/searches array is far less than 1, the value of  **global\_syscache\_threshold**  may be too small. As a result, the query hit ratio decreases. The user who calls this function must have the  **SYSADMIN**  permission.
 
-    Parameter: Specifies the global system cache statistics of the database to be queried.  **NULL**  or  **–1**  indicates that all databases are queried.  **0**  indicates that only the information about the shared table is queried. Other values indicate that the information about the specified database and shared table is queried. Invalid input value. If the table does not exist, an error is reported.
+    Parameter: Specifies the global system cache statistics of the database to be queried.  **NULL**  or  **–1**  indicates that all databases are queried.  **0**  indicates that only the information about the shared table is queried. Other values indicate that the information about the specified database and shared table is queried. Invalid input value. If **databse_id** does not exist, an error is reported.
 
     Return type: Tuple
 
@@ -93,5 +92,3 @@
              0 |       10
     (2 rows)
     ```
-
-

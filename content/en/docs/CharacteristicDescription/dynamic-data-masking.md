@@ -63,6 +63,13 @@ The following table shows the preset masking functions:
 <td class="cellrowborder" valign="top" width="81%"><p id="p2995013206"><a name="p2995013206"></a><a name="p2995013206"></a>'hello word' will be anonymized as 'ad5f5ghdf5'. This function randomly anonymizes text by character.</p>
 </td>
 </tr>
+<tr id="row15509448171810"><td class="cellrowborder" valign="top" width="19%"><p id="p34678156210"><a name="p34678156210"></a><a name="p34678156210"></a>regexpmasking</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%"><p id="p0467181518218"><a name="p0467181518218"></a><a name="p0467181518218"></a>You need to enter four parameters in sequence. <strong>reg</strong> indicates the character string to be replaced, <strong>replace_text</strong> indicates the character string after replacement, <strong>pos</strong> indicates the position where the target character string starts to be replaced, and <strong>reg_len</strong> indicates the replacement length. Both <strong>pos</strong> and <strong>reg_len</strong> are of the integer type. <strong>reg</strong> and <strong>replace_text</strong> can be expressed by regular expressions. If <strong>pos</strong> is not specified, the default value is <strong>0</strong>. If <strong>reg_len</strong> is not specified, the default value is <strong>–1</strong>, indicating that all character strings after <strong>pos</strong> will be replaced. If the type of the input parameter is inconsistent with the expected parameter type, the maskall function is used for anonymization.</p>
+<pre class="screen" id="screen891651113102"><a name="screen891651113102"></a><a name="screen891651113102"></a>CREATE MASKING POLICY msk_creditcard regexpmasking('[\d+]', 'x', 5, 9 )  ON LABEL(label_for_creditcard);</pre>
+<p id="p163831411142211"><a name="p163831411142211"></a><a name="p163831411142211"></a>'4880-9898-4545-2525' will be anonymized as 'xxxxxxxxxxxxxxxxxxx'.</p>
+</td>
+</tr>
 <tr id="row1240725551911"><td class="cellrowborder" valign="top" width="19%"><p id="p54071155191916"><a name="p54071155191916"></a><a name="p54071155191916"></a>maskall</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%"><p id="p6407175531915"><a name="p6407175531915"></a><a name="p6407175531915"></a>'4880-9898-4545-2525' will be anonymized as 'xxxxxxxxxxxxxxxxxxx'.</p>
