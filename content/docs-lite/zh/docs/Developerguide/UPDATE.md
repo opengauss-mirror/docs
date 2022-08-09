@@ -82,11 +82,13 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     如果没有缺省值，则为NULL。
 
--   **sub\_query**
+- **sub\_query**
 
-    子查询。
+  子查询。
 
-    使用同一数据库里其他表的信息来更新一个表可以使用子查询的方法。其中SELECT子句具体介绍请参考[SELECT](SELECT.md)。
+  使用同一数据库里其他表的信息来更新一个表可以使用子查询的方法。其中SELECT子句具体介绍请参考[SELECT](SELECT.md)。
+
+  在update单列时，支持使用order by子句与limit子句；而在update多列时，则不支持使用order by子句与limit子句。
 
 -   **from\_list**
 
