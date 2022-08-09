@@ -135,7 +135,7 @@ openGauss社区按照不同的SIGs（Special Interest Groups）来组织，以�
 
 ## 博客<a name="section1613515344318"></a>
 
-openGauss提供了[博客](https://opengauss.org/zh/blogs/blogs.html)板块，此处汇聚了openGauss用户在使用过程中的问题解决和心得。如果遇到问题，您也可以在此处进行搜素，查看其他用户的解决办法。您在使用过程中的心得，也可以发表博客分享给其他用户，帮助更多的人解决问题。
+openGauss提供了[博客](https://opengauss.org/zh/blogs/blogs.html)板块，此处汇聚了openGauss用户在使用过程中的问题解决和心得。如果遇到问题，您也可以在此处进行搜索，查看其他用户的解决办法。您在使用过程中的心得，也可以发表博客分享给其他用户，帮助更多的人解决问题。
 
 ## 邮件列表<a name="section18179203094610"></a>
 
