@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="section114668159414"></a>
 
-只有类型的所有者或者被授予了类型DROP权限的用户有权限执行DROP TYPE命令，系统管理员默认拥有此权限。
+类型的所有者或者被授予了类型DROP权限的用户或者被授予了DROP ANY TYPE权限的用户有权限执行DROP TYPE命令，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_s5d2a1a9a8c0848c5b671e837e381ef36"></a>
 

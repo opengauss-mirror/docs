@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section3924194973416"></a>
 
--   只有序列的所有者或者被授予了序列DROP权限的用户才能删除，系统管理员默认拥有该权限。
+-   序列的所有者、序列所在模式的所有者或者被授予了序列DROP权限的用户或者被授予了DROP ANY SEQUENCE权限的用户才能删除，系统管理员默认拥有该权限。
 -   如果SEQUENCE被创建时使用了LARGE标识，DROP时也需要使用LARGE标识。
 
 ## 语法格式<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section292414499345"></a>
