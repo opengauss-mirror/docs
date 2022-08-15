@@ -171,7 +171,7 @@ openGauss当前提供基于流式复制的异地容灾解决方案。
 
 #### 容灾搭建异常<a name="section12239185113"></a>
 
-**表 **  容灾搭建错误信息参考
+**表 **容灾搭建错误信息参考
 
 <a name="table1122311841111"></a>
 
@@ -229,7 +229,7 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 
 #### 计划内倒换switchover异常<a name="section1282142716550"></a>
 
-**表 **  计划内switchover错误信息参考
+**表 **计划内switchover错误信息参考
 
 <a name="table19231757135517"></a>
 
@@ -258,7 +258,7 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 </table>
 #### 灾备集群数据库实例故障
 
-**表 **  灾备集群数据库实例错误信息参考故障描述
+**表 **灾备集群数据库实例错误信息参考故障描述
 
 <table><thead align="left"><tr id="row192305745520"><th class="cellrowborder" valign="top" width="34.79%" id="mcps1.2.3.1.1"><p id="p6923185711556"><a name="p6923185711556"></a><a name="p6923185711556"></a><strong id="b14923557205516"><a name="b14923557205516"></a><a name="b14923557205516"></a>故障描述</strong></p>
 </th>
