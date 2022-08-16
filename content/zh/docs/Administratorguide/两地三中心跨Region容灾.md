@@ -1,20 +1,20 @@
-# 两地三中心跨Region容灾<a name="ZH-CN_TOPIC_0000001163598377"></a>
+# 两地三中心跨Region容灾
 
 要实现跨Region容灾，需要部署两套数据库实例，一套主数据库实例，一套灾备数据库实例。主数据库实例和灾备数据库实例一般部署在相距较远的两个不同城市。数据库实例之间借助存储介质或者不借助存储介质直接实现数据的全量和增量同步。当主数据库实例（即生产数据库实例）出现地域性故障，数据完全无法恢复时。可考虑启用将灾备数据库实例升主，以接管业务。
 
 openGauss当前提供基于流式复制的异地容灾解决方案。
 
-## 基于流式复制的异地容灾解决方案<a name="ZH-CN_TOPIC_0000001262912021"></a>
+## 基于流式复制的异地容灾解决方案
 
-### 概述<a name="ZH-CN_TOPIC_0000001217992220"></a>
+### 概述
 
 从openGauss 3.1.0版本开始，两地三中心跨Region容灾开始提供该解决方案。
 
-### 规格与约束<a name="ZH-CN_TOPIC_0000001218152190"></a>
+### 规格与约束
 
 本节就该解决方案的特性规格与约束进行详细描述，管理人员需重点关注。
 
-#### 特性规格<a name="section1850843373220"></a>
+#### 特性规格
 
 - 主数据库实例或灾备数据库实例内网络时延要求<=10毫秒，主备数据库实例之间异地网络时延要求<=100毫秒。该时延范围内可保证容灾的正常运行，否则会导致主备数据库实例断链等情况出现。
 
@@ -43,7 +43,7 @@ openGauss当前提供基于流式复制的异地容灾解决方案。
   </tbody>
   </table>
 
-- 如果磁盘混合部署，应采用低配部分的规格\(比如数据库实例内有NVMe和SATA盘，请参考SATA盘配置的规格\)。
+- 如果磁盘混合部署，应采用低配部分的规格（比如数据库实例内有NVMe和SATA盘，请参考SATA盘配置的规格）。
 
 - 灾备数据库实例升主允许丢失一定的数据，RPO<=10秒 ；灾备数据库实例处于normal态，灾备升主RTO<=10分钟，数据库实例处于degraded状态等叠加故障场景下，执行灾备数据库实例升主RTO一般在20分钟以内。
 
@@ -110,7 +110,7 @@ openGauss当前提供基于流式复制的异地容灾解决方案。
 
 容灾搭建时需要对主备数据库实例发送搭建请求，参考《工具参考》中gs\_sdr工具。
 
->![](/public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.gif) **须知：**  
 >
 >-   容灾搭建时需要在主数据库实例和灾备数据库实例使用相同容灾用户名和密码用于数据库实例间鉴权，该用户的权限为Replication（Replication属性是特定的角色，仅用于复制）。
 >-   搭建容灾前需要在主集群创建容灾用户。
@@ -171,7 +171,7 @@ openGauss当前提供基于流式复制的异地容灾解决方案。
 
 #### 容灾搭建异常<a name="section12239185113"></a>
 
-**表 **容灾搭建错误信息参考
+**表** 容灾搭建错误信息参考
 
 <a name="table1122311841111"></a>
 
@@ -229,7 +229,7 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 
 #### 计划内倒换switchover异常<a name="section1282142716550"></a>
 
-**表 **计划内switchover错误信息参考
+**表** 计划内switchover错误信息参考
 
 <a name="table19231757135517"></a>
 
@@ -256,9 +256,10 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 </tr>
 </tbody>
 </table>
+
 #### 灾备集群数据库实例故障
 
-**表 **灾备集群数据库实例错误信息参考故障描述
+**表** 灾备集群数据库实例错误信息参考故障描述
 
 <table><thead align="left"><tr id="row192305745520"><th class="cellrowborder" valign="top" width="34.79%" id="mcps1.2.3.1.1"><p id="p6923185711556"><a name="p6923185711556"></a><a name="p6923185711556"></a><strong id="b14923557205516"><a name="b14923557205516"></a><a name="b14923557205516"></a>故障描述</strong></p>
 </th>
@@ -276,5 +277,3 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 <a name="ul165953251100"></a><a name="ul165953251100"></a><ul id="ul165953251100"><li>等观察灾备集群的CM_AGENT告警信息“ALM_AI_AbnormalCMSProcess”，并尝试修复发生故障的CM_AGENT。故障排除后新首备的连接可恢复。</li><li>若如果故障的CM_AGENT短时间内无法修复，执行gs_ctl stop -D DATADIR命令或者kill命令手动停止该节点上的DN进程，可恢复。</li></ul>
 </td>
 </tr>
-
-
