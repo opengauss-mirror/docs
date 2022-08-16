@@ -38,7 +38,7 @@
 
     将ANY权限授予特定的角色和用户，ANY权限的取值范围参见语法格式。当声明了WITH ADMIN OPTION，被授权的用户可以将该ANY权限再次授予其他角色/用户，或从其他角色/用户处回收该ANY权限。ANY权限可以通过角色被继承，但不能赋予PUBLIC。初始用户和三权分立关闭时的系统管理员用户可以给任何角色/用户授予或撤销ANY权限。
 
-    目前支持以下ANY权限：CREATE ANY TABLE、ALTER ANY TABLE、DROP ANY TABLE、SELECT ANY TABLE、INSERT ANY TABLE、UPDATE ANY TABLE、DELETE ANY TABLE、CREATE ANY SEQUENCE、CREATE ANY INDEX、CREATE ANY FUNCTION、EXECUTE ANY FUNCTION、 CREATE ANY PACKAGE、EXECUTE ANY PACKAGE、CREATE ANY TYPE。详细的ANY权限范围描述参考[表1](#table1360121832117)。
+    目前支持以下ANY权限：CREATE ANY TABLE、ALTER ANY TABLE、DROP ANY TABLE、SELECT ANY TABLE、INSERT ANY TABLE、UPDATE ANY TABLE、DELETE ANY TABLE、CREATE ANY SEQUENCE、CREATE ANY INDEX、CREATE ANY FUNCTION、EXECUTE ANY FUNCTION、 CREATE ANY PACKAGE、EXECUTE ANY PACKAGE、CREATE ANY TYPE、ALTER ANY TYPE、DROP ANY TYPE、ALTER ANY SEQUENCE、DROP ANY SEQUENCE、SELECT ANY SEQUENCE、ALTER ANY INDEX、DROP ANY INDEX、CREATE ANY SYNONYM、DROP ANY SYNONYM、CREATE ANY TRIGGER、ALTER ANY TRIGGER、DROP ANY TRIGGER。详细的ANY权限范围描述参考[表1](#table1360121832117)。
 
 
 ## 注意事项<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_section1780116145345"></a>
@@ -47,7 +47,7 @@
 -   ANY权限属于数据库内的权限，只对授予该权限的数据库内的对象有效，例如SELECT ANY TABLE只允许用户查看当前数据库内的所有用户表数据，对其他数据库内的用户表无查看权限。
 -   即使用户被授予ANY权限，也不能对私有用户下的对象进行访问操作（INSERT、DELETE、UPDATE、SELECT）。
 -   ANY权限与原有的权限相互无影响。
--   如果用户被授予CREATE ANY TABLE权限，在同名schema下创建表的属主是该schema的创建者，用户对表进行其他操作时，需要授予相应的操作权限。
+-   如果用户被授予CREATE ANY TABLE权限，在同名schema下创建表的属主是该schema的属主，用户对表进行其他操作时，需要授予相应的操作权限。与此类似的还有CREATE ANY FUNCTION、CREATE ANY PACKAGE、CREATE ANY TYPE、CREATE ANY SEQUENCE和CREATE ANY INDEX，在同名模式下创建的对象的属主是同名模式的属主；而对于CREATE ANY TRIGGER和CREATE ANY SYNONYM，在同名模式下创建的对象的属主为创建者。
 
 ## 语法格式<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
@@ -265,7 +265,9 @@
   ```
   GRANT { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
     DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
-    CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE } [, ...]
+    CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE | ALTER ANY TYPE | DROP ANY TYPE | ALTER ANY SEQUENCE | DROP ANY SEQUENCE |
+    SELECT ANY SEQUENCE | ALTER ANY INDEX | DROP ANY INDEX | CREATE ANY SYNONYM | DROP ANY SYNONYM | CREATE ANY TRIGGER | ALTER ANY TRIGGER | DROP ANY TRIGGER
+   } [, ...]
     TO [ GROUP ] role_name [, ...]
     [ WITH ADMIN OPTION ];
   ```
@@ -543,11 +545,70 @@ GRANT的参数说明如下所示。
 <td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p37921145332"><a name="p37921145332"></a><a name="p37921145332"></a>用户能够在public模式和用户模式下创建索引。如果在某表空间创建分区表索引，需要授予用户该表空间的创建权限。</p>
 </td>
 </tr>
+<tr id="row28313644111"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p169111525019"><a name="p169111525019"></a><a name="p169111525019"></a>ALTER ANY TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p891121525017"><a name="p891121525017"></a><a name="p891121525017"></a>用户拥有对public模式和用户模式下类型的ALTER权限，但不包括修改类型的所有者或者修改类型的模式。</p>
+</td>
+</tr>
+<tr id="row58511459164011"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p939716502508"><a name="p939716502508"></a><a name="p939716502508"></a>DROP ANY TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p7398165055011"><a name="p7398165055011"></a><a name="p7398165055011"></a>用户拥有对public模式和用户模式下类型的DROP权限。</p>
+</td>
+</tr>
+<tr id="row1376021211412"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p39991052155020"><a name="p39991052155020"></a><a name="p39991052155020"></a>ALTER ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2999175245019"><a name="p2999175245019"></a><a name="p2999175245019"></a>用户拥有对public模式和用户模式下序列的ALTER权限，但不包括修改序列的所有者。</p>
+</td>
+</tr>
+<tr id="row1758121512413"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p89298558504"><a name="p89298558504"></a><a name="p89298558504"></a>DROP ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p39291855195010"><a name="p39291855195010"></a><a name="p39291855195010"></a>用户拥有对public模式和用户模式下序列的DROP权限。</p>
+</td>
+</tr>
+<tr id="row715411044114"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p3799728145018"><a name="p3799728145018"></a><a name="p3799728145018"></a>SELECT ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p47992028115011"><a name="p47992028115011"></a><a name="p47992028115011"></a>用户拥有对public模式和用户模式下序列的SELECT、USAGE和UPDATE权限。</p>
+</td>
+</tr>
+<tr id="row59761826194118"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p16737144425012"><a name="p16737144425012"></a><a name="p16737144425012"></a>ALTER ANY INDEX</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p7737144105015"><a name="p7737144105015"></a><a name="p7737144105015"></a>用户拥有对public模式和用户模式下索引的ALTER权限。如果要重命名索引，还需要索引所在模式下创建对象的权限。如果涉及表空间的操作，还需要对应表空间的相应操作权限。如果设置索引不可用（UNUSABLE），还需要DROP ANY INDEX权限。</p>
+</td>
+</tr>
+<tr id="row659911913419"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p11597647135013"><a name="p11597647135013"></a><a name="p11597647135013"></a>DROP ANY INDEX</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p14597104775017"><a name="p14597104775017"></a><a name="p14597104775017"></a>用户拥有对public模式和用户模式下索引的DROP权限。</p>
+</td>
+</tr>
+<tr id="row20739192484111"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p1728420391502"><a name="p1728420391502"></a><a name="p1728420391502"></a>CREATE ANY TRIGGER</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2285133910505"><a name="p2285133910505"></a><a name="p2285133910505"></a>用户能够在public模式和用户模式下创建触发器。</p>
+</td>
+</tr>
+<tr id="row792282114416"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p2366124205018"><a name="p2366124205018"></a><a name="p2366124205018"></a>ALTER ANY TRIGGER</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p1036614424509"><a name="p1036614424509"></a><a name="p1036614424509"></a>用户拥有对public模式和用户模式下触发器的ALTER权限。</p>
+</td>
+</tr>
+<tr id="row93379175417"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p205462355504"><a name="p205462355504"></a><a name="p205462355504"></a>DROP ANY TRIGGER</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p254612356504"><a name="p254612356504"></a><a name="p254612356504"></a>用户拥有对public模式和用户模式下触发器的DROP权限。</p>
+</td>
+</tr>
+<tr id="row94485714403"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p864102511508"><a name="p864102511508"></a><a name="p864102511508"></a>CREATE ANY SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p13641325135013"><a name="p13641325135013"></a><a name="p13641325135013"></a>用户能够在用户模式下创建同义词。</p>
+</td>
+</tr>
+<tr id="row11336453114019"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p588843295012"><a name="p588843295012"></a><a name="p588843295012"></a>DROP ANY SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p10888153216509"><a name="p10888153216509"></a><a name="p10888153216509"></a>用户拥有对public模式和用户模式下同义词的DROP权限。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
-
->![](C:/Users/lijun/Downloads/309资料发布/07 开发者指南/public_sys-resources/icon-note.gif) **说明：** 
+>![](/public_sys-resources/icon-note.gif) **说明：** 
 >用户被授予任何一种ANY权限后，用户对public模式和用户模式具有USAGE权限，对[表1](zh-cn_topic_0000001190922647.md#table167371825175015)中除public之外的系统模式没有USAGE权限。
 
 ## 示例<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>

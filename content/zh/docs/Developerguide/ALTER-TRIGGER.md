@@ -10,7 +10,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
-只有触发器所在表的所有者可以执行ALTER TRIGGER操作，系统管理员默认拥有此权限。
+触发器所在表的所有者或者被授予了ALTER ANY SEQUENCE权限的用户可以执行ALTER TRIGGER操作，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
 
