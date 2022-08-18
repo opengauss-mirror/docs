@@ -107,7 +107,7 @@ If  **shared\_buffers**  is set to a larger value, increase the value of  **chec
 
 ## segment\_buffers<a name="section1581274312490"></a>
 
-**Parameter description**: Specifies the memory size of a openGauss segment-paged metadata page.
+**Parameter description**: Specifies the memory size of an openGauss segment-paged metadata page.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
