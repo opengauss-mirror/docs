@@ -598,7 +598,7 @@
 </tr>
 <tr id="row649535141610"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p1349635141610"><a name="p1349635141610"></a><a name="p1349635141610"></a>Ustore</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p94919350162"><a name="p94919350162"></a><a name="p94919350162"></a>In-place Update存储引擎别称，很好的解决了Append update存储引擎空间膨胀，元组较大的劣势，高效回滚段的设计是In-place update存储引擎的基础。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p94919350162"><a name="p94919350162"></a><a name="p94919350162"></a>新增的In-place update存储引擎很好的解决了Append update存储引擎空间膨胀和元组较大的问题，高效回滚段的设计是In-place update存储引擎的基础。</p>
 </td>
 </tr>
 <tr id="row11884155614313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p888485653118"><a name="p888485653118"></a><a name="p888485653118"></a>Undo Record</p>

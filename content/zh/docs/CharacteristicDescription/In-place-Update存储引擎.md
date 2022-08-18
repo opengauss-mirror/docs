@@ -14,7 +14,7 @@ In-place Update存储引擎可有效的降低多次更新元组后占用存储�
 
 ## 特性描述<a name="section811017719290"></a>
 
-新增的In-place update存储引擎很好的解决了Append update存储引擎空间膨胀，元组较大的劣势，高效回滚段的设计是In-place update存储引擎的基础。
+新增的In-place update存储引擎很好的解决了Append update存储引擎空间膨胀和元组较大的问题，高效回滚段的设计是In-place update存储引擎的基础。
 
 ## 特性增强<a name="section1359382119297"></a>
 
