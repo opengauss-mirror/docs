@@ -112,7 +112,7 @@ headless: true
 		-   [MySQL兼容性增强]({{< relref "./docs/CharacteristicDescription/MySQL兼容性增强.md" >}})
 	-   [AI能力]({{< relref "./docs/CharacteristicDescription/AI能力.md" >}})
 		-   [AI4DB: 数据库自治运维]({{< relref "./docs/CharacteristicDescription/AI4DB-数据库自治运维.md" >}})
-			-   [数据库指标采集、预测与异常监控]({{< relref "./docs/CharacteristicDescription/数据库指标采集-预测与异常监控.md" >}})
+			-   [数据库指标采集、预测与异常监控]({{< relref "./docs/CharacteristicDescription/数据库指标采集-预测与异常检测.md" >}})
 			-   [慢SQL根因分析]({{< relref "./docs/CharacteristicDescription/慢SQL根因分析.md" >}})
 			-   [索引推荐]({{< relref "./docs/CharacteristicDescription/索引推荐.md" >}})
 			-   [参数调优与诊断]({{< relref "./docs/CharacteristicDescription/参数调优与诊断.md" >}})
