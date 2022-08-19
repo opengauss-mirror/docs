@@ -29,7 +29,7 @@
 
     ```
     CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
+        ({ { column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
@@ -41,7 +41,7 @@
 
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
+        ( {{ column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
         [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
@@ -117,6 +117,19 @@
     表中需要创建索引的列的名称（字段名）。
 
     如果索引方式支持多字段索引，可以声明多个字段。全局索引最多可以声明31个字段，其他索引最多可以声明32个字段。
+
+-   **column\_name ( length )**
+
+    创建一个基于该表一个字段的前缀键索引，column_name为前缀键的字段名，length为前缀长度。
+
+    前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-  此语法只在sql_compatibility=B时有效，sql_compatibility为其他值的情况下，此子句将被视作函数表达式键。
+    >-  前缀键支持的索引方法：btree、ubtree。
+    >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
+    >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
+    >-  CREATE INDEX语法中，不支持以下关键字作为前缀键的字段名称：COALESCE、EXTRACT、GREATEST、LEAST、NULLIF、NVARCHAR、NVL、OVERLAY、POSITION、SUBSTRING、TIMESTAMPDIFF、TREAT、TRIM、XMLCONCAT、XMLELEMENT、XMLEXISTS、XMLFOREST、XMLPARSE、XMLPI、XMLROOT、XMLSERIALIZE。
 
 -   **expression**
 
