@@ -88,7 +88,7 @@
 
     参数：性能预测模型的模板名和模型名。
 
-    返回值类型：tartup\_time\_accuracy FLOAT8、  total\_time\_accuracy FLOAT8、  rows\_accuracy FLOAT8、 peak\_memory\_accuracy FLOAT8
+    返回值类型：startup\_time\_accuracy FLOAT8、  total\_time\_accuracy FLOAT8、  rows\_accuracy FLOAT8、 peak\_memory\_accuracy FLOAT8
 
     示例请参见[使用指导](使用指导-20.md)。
 
