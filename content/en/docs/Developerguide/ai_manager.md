@@ -22,7 +22,7 @@ python3 ai_manager.py --module anomaly_detection --action install --param_file o
 An example of the uninstallation command is as follows:
 
 ```
-python3 ai_manager.py --module anomaly_detection--action uninstall --param_file opengauss.json
+python3 ai_manager.py --module anomaly_detection --action uninstall --param_file opengauss.json
 ```
 
 The following is an example of the parameter file:
