@@ -22,7 +22,7 @@ python3 ai_manager.py --module anomaly_detection --action install --param_file o
 卸载命令示例：
 
 ```
-python3 ai_manager.py --module anomaly_detection--action uninstall --param_file opengauss.json
+python3 ai_manager.py --module anomaly_detection --action uninstall --param_file opengauss.json
 ```
 
 参数文件示例：
