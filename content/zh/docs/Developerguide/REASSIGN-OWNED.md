@@ -4,7 +4,7 @@
 
 修改数据库对象的属主。
 
-REASSIGN OWNED要求系统将所有old\_roles拥有的数据库对象的属主更改为new\_role。
+REASSIGN OWNED要求系统将当前数据库中old_role拥有的所有数据库对象的属主更改为new_role。
 
 ## 注意事项<a name="zh-cn_topic_0283136605_zh-cn_topic_0237122173_zh-cn_topic_0059779106_sc1c0690ce85a4497bbc2bf507322bd08"></a>
 
