@@ -53,6 +53,14 @@
       { {config_parameter = { expr | DEFAULT }}};
   ```
 
+- 设置自定义变量
+
+  ```
+  SET @var_name := expr [, @var_name := expr] ...
+  SET @var_name = expr [, @var_name = expr] ...
+  ```
+
+
 ## 参数说明<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3"></a>
 
 -   **SESSION**
@@ -123,6 +131,28 @@
   1. SET SESSION/GLOBAL 语法只有在B模式下（sql_compatibility = B）支持，并且GUC参数enable_set_variable_b_format打开的场景下才支持（enable_set_variable_b_format = on)。
   2. 使用@@config\_parameter进行操作符运算时，尽量使用空格隔开。比如set @config\_parameter1=@config\_parameter1*2; 命令中，会将=@当做操作符，可将其修改为set @config\_parameter1= @config\_parameter1 * 2 。
 
+- **var_name**
+
+  自定义变量名。变量名只能由数字、字母、下划线（_），点（.）、$组成，如果使用单引号、双引号等引用是，则可以使用其他字符，如'var_name'，"var_name"，\`var_name\`。
+
+  > ![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  > 1. SET自定义用户变量的只有在B模式下（sql_compatibility = B）支持，并且GUC参数enable_set_variable_b_format打开的场景下才支持（enable_set_variable_b_format = on）。
+  > 2. 自定义变量只会存储整型，浮点型，字符串，位串和NULL。对于BOOLEAN，INT1，INT2，INT4，INT8类型会转为INT8类型；FLOAT4，FLOAT8，NUMBERIC会转化为FLOAT8进行存储（需要注意浮点型可能会有精度丢失）；BIT类型以BIT存储，VARBIT类型以VARBIT存储；NULL值以NULL存储；其他类型若可转化为字符串，则转为TEXT存储。
+  > 3. 使用@var_name进行操作符运算时，尽量使用空格隔开。比如set @v1=@v2+1;命令中，会将=@当做操作符，可将其修改为set @v1= @v2+1。
+  > 4. 当sql_compatibility = B && enable_set_variable_b_format = on时，对于openGauss原始的@ expr，请参考[数字操作符](数字操作函数和操作符.md#zh-cn_topic_0283136987_zh-cn_topic_0237121971_zh-cn_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75)，@需要与expr有空格，否则会将其解析成用户变量。
+  > 5. 未初始化的变量值未NULL。
+  > 6. Prepare语句中用户自定义变量存储的字符串只支持select/insert/update/delete/merge语法。
+  > 7. 对于连续赋值的场景，只支持@var_name1 := @var_name2 := ... := expr和@var_name1 = @var_name2 := ... := expr，等号（=）只有放在首位才表示赋值，其他位置表示比较操作符。
+
+- expr
+
+  表达式，支持可直接或间接转为整型，浮点型，字符串，位串和NULL的表达式。
+
+  > ![](public_sys-resources/icon-notice.gif) **注意：**   
+  >
+  > 字符串表达式中避免包含口令等敏感信息的函数，如加解密类函数gs_encrypt，gs_decrypt等，防止敏感信息泄露。
+
 
 ## 示例<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
 
@@ -132,6 +162,39 @@ openGauss=# SET search_path TO tpcds, public;
 
 --把日期时间风格设置为传统的 POSTGRES 风格(日在月前)。
 openGauss=# SET datestyle TO postgres,dmy;
+
+-- set自定义用户变量的功能
+b=# show sql_compatibility;
+ sql_compatibility
+-------------------
+ B
+(1 row)
+
+b=# show enable_set_variable_b_format;
+ enable_set_variable_b_format
+------------------------------
+ on
+(1 row)
+
+b=# set @v1 := 1, @v2 := 1.1, @v3 := true, @v4 := 'dasda', @v5 := x'41';
+SET
+b=# select @v1, @v2, @v3, @v4, @v5, @v6, @v7;
+ @v1 | @v2 | @v3 |  @v4  |   @v5    | @v6 | @v7
+-----+-----+-----+-------+----------+-----+-----
+   1 | 1.1 |   1 | dasda | 01000001 |     |
+(1 row)
+
+-- prepare语法
+b=# set @sql = 'select 1';
+SET
+b=# prepare stmt as @sql;
+PREPARE
+b=# execute stmt;
+ ?column?
+----------
+        1
+(1 row)
+
 ```
 
 ```
