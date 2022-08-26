@@ -17,7 +17,7 @@ Key components in the figure are described as follows:
 
 ## Environment Configuration<a name="section14906112131913"></a>
 
-DBMind must run on Python 3.6 or later. The required third-party dependency packages are recorded in the  **requirements.txt**  file \(**requirements-x86.txt**  or  **requirements-arrch64.txt**, depending on the platform type\) in the AI function root directory \(_$GAUSSHOME_**/bin/dbmind**\). You can run the  **pip install**  command to install the dependencies. For example:
+DBMind must run on Python 3.6 or later. The required third-party dependency packages are recorded in the  **requirements.txt**  file \(**requirements-x86.txt**  or  **requirements-arch64.txt**, depending on the platform type\) in the AI function root directory \(_$GAUSSHOME_**/bin/dbmind**\). You can run the  **pip install**  command to install the dependencies. For example:
 
 ```
 pip install requirements-x86.txt

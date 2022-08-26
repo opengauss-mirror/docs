@@ -17,7 +17,7 @@
 
 ## 环境配置<a name="section14906112131913"></a>
 
-DBMind外置AI功能需要运行在Python 3.6版本及以上，需要的第三方依赖包记录在AI功能根目录（$**GAUSSHOME**/bin/dbmind）的requirements.txt文件中（包括requirements-x86.txt与requirements-arrch64.txt，用户可根据自己平台类型选择）中，可以通过pip install命令安装依赖，如：
+DBMind外置AI功能需要运行在Python 3.6版本及以上，需要的第三方依赖包记录在AI功能根目录（$**GAUSSHOME**/bin/dbmind）的requirements.txt文件中（包括requirements-x86.txt与requirements-arch64.txt，用户可根据自己平台类型选择）中，可以通过pip install命令安装依赖，如：
 
 ```
 pip install requirements-x86.txt
