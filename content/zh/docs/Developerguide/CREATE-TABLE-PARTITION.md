@@ -30,7 +30,7 @@
 
 -   某些类型的查询性能可以得到极大提升。特别是表中访问率较高的行位于一个单独分区或少数几个分区上的情况下。分区可以减少数据的搜索空间，提高数据访问效率。
 -   当查询或更新一个分区的大部分记录时，连续扫描那个分区而不是访问整个表可以获得巨大的性能提升。
--   如果需要大量加载或者删除的记录位于单独的分区上，则可以通过直接读取或删除那个分区以获得巨大的性能提升，同时还可以避免由于大量DELETE导致的VACUUM超载（仅范围分区）。
+-   如果需要大量加载或者删除的记录位于单独的分区上，则可以通过直接读取或删除那个分区以获得巨大的性能提升，同时还可以避免由于大量DELETE导致的VACUUM超载（哈希分区不支持删除分区）。
 
 ## 注意事项<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
@@ -51,13 +51,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     | table_constraint
     | LIKE source_table [ like_option [...] ] }[, ... ]
 ] )
+    [ AUTO_INCREMENT [ = ] value ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
      PARTITION BY { 
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
-        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES (list_values_clause)] opt_table_space )}
+         {LIST (partition_key) ( PARTITION partition_name VALUES (list_values) [TABLESPACE tablespace_name][, ... ]）} |
+        {HASH (partition_key) ( PARTITION partition_name [TABLESPACE tablespace_name][, ... ]）}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -70,6 +72,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       CHECK ( expression ) | 
       DEFAULT default_e xpr | 
       GENERATED ALWAYS AS ( generation_expr ) STORED |
+      AUTO_INCREMENT |
       UNIQUE index_parameters | 
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
@@ -80,11 +83,11 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 -   表约束table\_constraint：
 
     ```
-    [ CONSTRAINT constraint_name ]
+    [ CONSTRAINT [ constraint_name ] ]
     { CHECK ( expression ) | 
-      UNIQUE ( column_name [, ... ] ) index_parameters | 
-      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+      UNIQUE [ index_name ][ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters | 
+      PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
@@ -156,7 +159,34 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     定义约束有两种方法：
 
     -   列约束：作为一个列定义的一部分，仅影响该列。
-    -   表约束：不和某个列绑在一起，可以作用于多个列。
+    -   表约束：不和某个列绑在一起，可以作用于多个列。在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
+
+-   **index\_name**
+
+    索引名。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
+    >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
+    >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
+
+-   **USING method**
+
+    指定创建索引的方法。
+
+    取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
+    >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
+
+-   **ASC | DESC**
+
+    ASC表示指定按升序排序（默认）。DESC指定按降序排序。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
+
 
 -   **LIKE source\_table \[ like\_option ... \]**
 
@@ -173,6 +203,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释也会被拷贝过来。默认情况下，不拷贝源表的注释。
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）也将拷贝至新表。默认情况下，不拷贝源表的存储参数。
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
+
+-   **AUTO\_INCREMENT \[ = \] value**
+
+    这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >该子句仅在参数sql\_compatibility=B时有效。
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
@@ -197,18 +234,17 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             >orientation不支持修改。
         
     -    STORAGE\_TYPE
-    
-         指定存储引擎类型，该参数设置成功后就不再支持修改。
-    
-        取值范围：
-    
-        - USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
-        - ASTORE，表示表支持Append-Only存储引擎。
-    
-        默认值：
-    
-        不指定表时，默认是Append-Only存储。
-    
+
+          指定存储引擎类型，该参数设置成功后就不再支持修改。
+
+          取值范围：
+
+          -   USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
+
+          -   ASTORE，表示表支持Append-Only存储引擎。
+
+          默认值： 不指定表时，默认是Append-Only存储。
+
     - COMPRESSION
       -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
       -   行存表不支持压缩。
@@ -357,10 +393,6 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   -   ENABLE（缺省值）：行迁移开关打开。
   -   DISABLE：行迁移开关关闭。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
-  >列表/哈希分区表暂不支持ROW MOVEMENT。
-
-
 -   **NOT NULL**
 
     字段值不允许为NULL。ENABLE用于语法兼容，可省略。
@@ -408,6 +440,11 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >
     >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
 
+-   **AUTO\_INCREMENT**
+
+    指定列为自动增长列。
+
+    详见：[AUTO\_INCREMENT](CREATE-TABLE.md)。
 -   **UNIQUE index\_parameters**
 
     **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
