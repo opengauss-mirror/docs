@@ -62,7 +62,7 @@ gs\_backup参数可以分为如下几类：
 
     -   --all
 
-        备份app目录下的二进制文件、pg_hba.conf和postgsql.conf文件。
+        备份app目录下的二进制文件、pg_hba.conf和postgresql.conf文件。
 
     -   -l
 
