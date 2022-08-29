@@ -2587,6 +2587,7 @@ headless: true
 			-   [业务运行时整数转换错]({{< relref "./docs/Developerguide/业务运行时整数转换错.md" >}})
 			-   [高并发报错"too many clients already"或无法创建线程]({{< relref "./docs/Developerguide/高并发报错-too-many-clients-already-或无法创建线程.md" >}})
 			-   [btree 索引故障情况下应对策略]({{< relref "./docs/Developerguide/btree-索引故障情况下应对策略.md" >}}) 	
+			-   [TPCC高并发长稳运行因脏页刷盘效率导致性能下降]({{< relref "./docs/Developerguide/TPCC高并发长稳运行因脏页刷盘效率导致性能下降.md" >}}) 	
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/Toolreference/客户端工具.md" >}})
