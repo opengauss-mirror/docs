@@ -36,9 +36,9 @@ CREATE TABLE [ IF NOT EXISTS ] subpartition_table_name
 [ TABLESPACE tablespace_name ]
 PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST | HASH} (subpartition_key)
 (
-  PARTITION partition_name1 [ VALUES LESS THAN (val1) | VALUES (val1[, …]) ] [ TABLESPACE tablespace ]
+  PARTITION partition_name1 [ VALUES LESS THAN (val1) | VALUES (val1[, …]) ] [ TABLESPACE tablespace ] [ COMMENT {=| } 'text' ]
   (
-       { SUBPARTITION subpartition_name1 [ VALUES LESS THAN (val1_1) | VALUES (val1_1[, …])]  [ TABLESPACE tablespace ] } [, ...]
+       { SUBPARTITION subpartition_name1 [ VALUES LESS THAN (val1_1) | VALUES (val1_1[, …])]  [ TABLESPACE tablespace ] [COMMENT {=| } 'text' ] } [, ...]
   )[, ...]
 )[ { ENABLE | DISABLE } ROW MOVEMENT ];
 ```
@@ -57,6 +57,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 -   表约束table\_constraint：
@@ -69,6 +70,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
       FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -297,6 +299,9 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     为UNIQUE或PRIMARY KEY约束相关的索引声明一个表空间。如果没有提供这个子句，这个索引将在default\_tablespace中创建，如果default\_tablespace为空，将使用数据库的缺省表空间。
 
+-   COMMENT {=| } 'text':
+
+    二级分区表的分区中，该字段无实际意义，仅作语法兼容。在数据库中使用该语法时会有告警提示。
 
 ## 示例<a name="section3608124119220"></a>
 

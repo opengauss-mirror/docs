@@ -63,6 +63,7 @@
         | OF type_name
         | NOT OF
         | REPLICA IDENTITY { DEFAULT | USING INDEX index_name | FULL | NOTHING }
+        | COMMENT {=| } 'text'
     ```
     
 
@@ -163,11 +164,15 @@
 - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
   DEFAULT记录主键的列的旧值。USING INDEX记录命名索引覆盖的列的旧值，这些值必须是唯一的，不局部的，不可延迟的，并且仅包括标记为NOT NULL的列。FULL记录该行中所有列的旧值。NOTHING不记录有关旧行的信息。在所有情况下，除非该行的新旧版本中至少要记录的列之一不同，否则不会记录任何旧值。
 
+- **COMMENT 'text'**
+  修改表对象的注释。
+
 其中列相关的操作column\_clause可以是以下子句之一：
 
 ```
-ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
+ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ COMMENT {=| } 'text' ]    
 | MODIFY column_name data_type    
+| MODIFY [ COLUMN ] column_name [ COMMENT 'text']    
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
 | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
@@ -184,11 +189,14 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
 ![](public_sys-resources/icon-note.gif) **说明：**  
 
-- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
   向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
-
-- **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
+  
+- **ADD \( \{ column\_name data\_type \[ compress\_mode \]  \[ COMMENT {=| } 'text'\] \} \[, ...\] \)**
   向表中增加多列。
+
+- **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
+  修改字段注释。
 
 - **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
   修改表已存在字段的数据类型。
@@ -267,6 +275,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
           FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
              [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+        [ COMMENT 'text' ]
     ```
 
 -   其中索引参数index\_parameters为：

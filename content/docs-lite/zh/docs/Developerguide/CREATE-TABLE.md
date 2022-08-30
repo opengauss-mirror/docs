@@ -32,7 +32,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
-    [ TABLESPACE tablespace_name ];
+    [ TABLESPACE tablespace_name ]
+    [ COMMENT {=| } 'text' ];
 ```
 
 -   其中列约束column\_constraint为：
@@ -49,6 +50,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -69,6 +71,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -276,7 +279,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
 
-    取值范围：布尔值，默认关闭。
+      取值范围：布尔值，默认关闭。
 
   - MAX\_BATCHROW
 
@@ -346,6 +349,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **TABLESPACE tablespace\_name**
 
     创建新表时指定此关键字，表示新表将要在指定表空间内创建。如果没有声明，将使用默认表空间。
+
+-   **COMMNET {=| } text**
+    
+    创建新表时指定此关键字，表示新表的注释内容。如果没有声明，则不创建注释。
 
 -   **CONSTRAINT constraint\_name**
 
@@ -423,6 +430,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >Ustore表不支持**DEFERRABLE以及INITIALLY  DEFERRED**关键字。
+
+-   **COMMENT text**
+
+    注释。
 
 -   **PARTIAL CLUSTER KEY**
 
