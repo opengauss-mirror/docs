@@ -8,15 +8,28 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 
 -   表的所有者、被授予了表DELETE权限的用户或被授予DELETE ANY TABLE权限的用户有权删除表中数据，系统管理员默认拥有此权限。同时也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
 -   对于列存表，暂时不支持RETURNING子句。
+-   对于多表删除语法，仅在参数sql\_compatibility=B时生效，暂时不支持对列存表、视图和含有RULE的表进行多表删除。
+
 
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 
 ```
+单表删除：
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ [ AS ] alias ]
+DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [ * ] [ [ [partition_clause] [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [ partitions_clause ] ] ]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
+    [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
+    [ LIMIT { count } ]
     [ RETURNING { * | { output_expr [ [ AS ] output_name ] } [, ...] } ];
+
+多表删除：
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+DELETE [/*+ plan_hint */] [FROM] 
+    {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
+    [ USING using_list ]
+    [ WHERE condition | WHERE CURRENT OF cursor_name ]
+    [ LIMIT { count } ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
@@ -71,7 +84,7 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ 
 
     关键字详见[SELECT](SELECT.md)一节介绍
 
-    示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)
+    示例详见[CREATE TABLE SUBPARTITION](CREATE-TABLE-SUBPARTITION.md)
 
 -   **alias**
 
@@ -82,6 +95,8 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ 
 -   **using\_list**
 
     using子句。
+     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >当参数sql\_compatibility=B时，using\_list指定关联表的集合时可以同时出现目标表，并且可以定义表的别名并在目标表中使用。其他模式下则目标表不可重复出现在using\_list中。
 
 -   **condition**
 
@@ -90,6 +105,15 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ 
 -   **WHERE CURRENT OF cursor\_name**
 
     当前不支持，仅保留语法接口。
+
+-   ORDER BY子句
+
+    关键字详见[SELECT](SELECT.md)一节介绍。
+
+-   LIMIT子句
+
+    关键字详见[SELECT](SELECT.md)一节介绍。
+
 
 -   **output\_expr**
 
