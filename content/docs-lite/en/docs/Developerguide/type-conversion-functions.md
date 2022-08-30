@@ -114,12 +114,12 @@
 
 -   to\_char\(datetime/interval \[, fmt\]\)
 
-    Description: Converts a DATETIME or INTERVAL value of the DATE/TIMESTAMP/TIMESTAMP WITH TIME ZONE/TIMESTAMP WITH LOCAL TIME ZONE type into the VARCHAR type according to the format specified by  **fmt**. 
+    Description: Converts a DATETIME or INTERVAL value of the DATE/TIMESTAMP/TIMESTAMP WITH TIME ZONE/TIMESTAMP WITH LOCAL TIME ZONE type into the TEXT type according to the format specified by  **fmt**. 
 
     -   The optional parameter  **fmt**  allows for the following types: date, time, week, quarter, and century. Each type has a unique template. The templates can be combined together. Common templates include HH, MI, SS, YYYY, MM, and DD.
     -   A template may have a modification word. FM is a common modification word and is used to suppress the preceding zero or the following blank spaces.
 
-    Return type: varchar
+    Return type: text
 
     Example:
 
