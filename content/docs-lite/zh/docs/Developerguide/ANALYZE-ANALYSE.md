@@ -46,7 +46,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   收集多列统计信息时，请设置GUC参数[default\_statistics\_target](其他优化器选项.md#zh-cn_topic_0283137690_zh-cn_topic_0237124719_zh-cn_topic_0059779049_se18c86fcdf5e4a22870f71187436d815)为负数，以使用百分比采样方式。
-    >-   每组多列统计信息最多支持32列。
+    >-   如果关闭GUC参数enable\_functional\_dependency，每组多列统计信息最多支持32列；如果开启GUC参数enable\_functional\_dependency，每组多列统计信息最多支持4列。
     >-   不支持收集多列统计信息的表：系统表。
 
 
