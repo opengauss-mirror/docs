@@ -17,7 +17,7 @@ To access the database, the client application connects \(over a local network o
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >When starting the database using  **gaussdb**, you also need to open another window to connect to the database or use & to enable the application to run in the background.  
 
-A  **gaussdb**  process manages all data in a database. A system can operate multiple  **gaussdb**  processes using different data directories and port numbers. When  **gaussdb **is started, the data directory must be specified using the  **--data-dir**  option. Typically,  **-D**  points directly to the database directory created by  **gs\_initdb**.
+A  **gaussdb**  process manages all data in a database. A system can operate multiple  **gaussdb**  processes using different data directories and port numbers. When  **gaussdb** is started, the data directory must be specified using the  **--data-dir**  option. Typically,  **-D**  points directly to the database directory created by  **gs\_initdb**.
 
 By default,  **gaussdb**  starts in the foreground and prints log messages to the standard error stream. In practical applications,  **gaussdb**  should be automatically started as a background process at boot time in most cases.
 
@@ -384,7 +384,7 @@ Options listed in  [Table 3](#en-us_topic_0237152404_en-us_topic_0059777816_en-u
 </tbody>
 </table>
 
-In addition to the preceding parameters, all parameters in postgres.conf can be transferred to  **gaussdb **using --**guc\_name=guc\_value**  when  **gaussdb**  is started. For example:  **--enable\_fast\_query\_shipping=off**
+In addition to the preceding parameters, all parameters in postgres.conf can be transferred to  **gaussdb** using **--guc\_name=guc\_value**  when  **gaussdb**  is started. For example:  **--enable\_fast\_query\_shipping=off**.
 
 ## Environment Variables<a name="en-us_topic_0237152404_en-us_topic_0059777816_sac6ef2b8033a4b3687c3968ca3692932"></a>
 
@@ -410,14 +410,14 @@ ps -ef | grep gaussdb
 
 If you are certain that no conflicting server is running, you can remove the lock file mentioned in the message and try again.
 
-A failure message indicating inability to bind to a port might indicate that the port is already in use by a non-openGauss process. This message may also be reported if you terminate  **gaussdb **and immediately restart it using the same port. In this case, you must simply wait a few seconds until the operating system closes the port before trying again. Finally, you may get this error if you specify a port number that your operating system considers it to be reserved. For example, the Unix considers ports whose IDs are under 1024 to be "trusted" and permits only Unix administrators to access the Unix.
+A failure message indicating inability to bind to a port might indicate that the port is already in use by a non-openGauss process. This message may also be reported if you terminate  **gaussdb** and immediately restart it using the same port. In this case, you must simply wait a few seconds until the operating system closes the port before trying again. Finally, you may get this error if you specify a port number that your operating system considers it to be reserved. For example, the Unix considers ports whose IDs are under 1024 to be "trusted" and permits only Unix administrators to access the Unix.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
->-   If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb **from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.  
->-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT **can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.  
->-   The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP **to an individual server process, but that is usually not sensible.  
->-   To cancel a running query, send the  **SIGINT **signal to the process running that command.  
->-   The main server process uses  **SIGTERM **to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.  
+>-   If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb** from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.  
+>-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT** can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.  
+>-   The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP** to an individual server process, but that is usually not sensible.  
+>-   To cancel a running query, send the  **SIGINT** signal to the process running that command.  
+>-   The main server process uses  **SIGTERM** to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.  
 
 ## **Usage**<a name="en-us_topic_0237152404_en-us_topic_0059777816_s188b513ab6fb4938a75c0cd8a49cc38c"></a>
 
@@ -446,7 +446,7 @@ Use  **-D**  to provide the correct path of the database directory for the serve
 2.  Run the following command to start gaussdb with a specified port, for example, 1234:
 
     ```
-    gaussdb --single_node -p -D data_dir
+    gaussdb --single_node -p 1234 -D data_dir
     ```
 
     To connect to this server using gsql, specify this port with the -p option:

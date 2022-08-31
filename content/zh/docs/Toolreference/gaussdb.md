@@ -458,11 +458,11 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 nohup gaussdb >logfile 2>&1 </dev/null  &
 ```
 
-- 在指定端口启动gaussdb，如1234：
+- 指定端口启动gaussdb，如1234：
 
 
 ```
-gaussdb --single_node -p -D data_dir
+gaussdb --single_node -p 1234 -D data_dir
 ```
 
 - 使用gsql与服务器连接，用-p指定端口号：
