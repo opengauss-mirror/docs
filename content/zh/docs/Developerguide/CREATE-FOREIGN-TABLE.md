@@ -11,18 +11,44 @@
 ## 语法格式<a name="zh-cn_topic_0283137606_section0692184823016"></a>
 
 ```
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
-    column_name type_name [ OPTIONS ( option 'value' [, ... ] ) ] [ COLLATE collation ] [ column_constraint [ ... ] ]
-    [, ... ]
-] )
-  SERVER server_name
-[ OPTIONS ( option 'value' [, ... ] ) ]
+CREATE FOREIGN TABLE [ IF NOT EXISTS  ] table_name ( { 
+    column_name type_name POSITION ( offset, length ) [column_constraint ]
+        | LIKE source_table | table_constraint } [, ...] )
+        SEVER gsmpp_server
+        OPTIONS (  { option_name ' value '  }  [, ...] )
+        [ { WRITE ONLY  |  READ ONLY  }]
+        [ WITH error_table_name | LOG INTO error_table_name ]
+        [ REMOTE LOG 'name' ]
+        [PER NODE REJECT LIMIT 'value']
+        [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ];
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( { 
+    column_name type_name
+    [ { [CONSTRAINT constraint_name] NULL |
+    [CONSTRAINT constraint_name] NOT NULL |
+        column_constraint [...]} ] |
+        table_constraint} [, ...] )
+        SERVER server_name
+        OPTIONS ( { option_name ' value ' } [, ...] )
+        DISTRIBUTE BY {ROUNDROBIN | REPLICATION}
+        [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ]
+        [ PARTITION BY ( column_name ) [AUTOMAPPED]] ;
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [ { 
+    column_name type_name | LIKE source_table } [, ...] ] )
+        SERVER server_name
+        OPTIONS ( { option_name ' value ' } [, ...] )
+        [ READ ONLY ]
+        [ DISTRIBUTE BY {ROUNDROBIN} ]
+        [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ];
 
-这里column_constraint 可以是:
+这里 column_constraint 可以是:
 [ CONSTRAINT constraint_name ]
-{ NOT NULL |
-  NULL |
-  DEFAULT default_expr }
+{ PRIMARY KEY | UNIQUE }
+[ NOT ENFORCED [ ENABLE QUERY OPTIMIZATION | DISABLE QUERY OPTIMIZATION ] | ENFORCED ]
+where table_constraint can be:
+[ CONSTRAINT constraint_name ]
+{ PRIMARY KEY | UNIQUE } ( column_name )
+[ NOT ENFORCED [ ENABLE QUERY OPTIMIZATION | DISABLE QUERY OPTIMIZATION ] | ENFORCED ]
+
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137606_section3468568300"></a>
