@@ -179,6 +179,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
   取值范围：仅支持导入（即COPY FROM）时指定。
 
   >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
   >此容错选项的使用限制如下：
   >
   >-   此容错机制仅捕捉COPY FROM过程中数据库主节点上数据解析过程中相关的数据类型错误（DATA\_EXCEPTION）。
@@ -242,6 +243,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         指定数据文件行数据的字段分隔符。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >-   分隔符不能是\\r和\\n。
         >
         >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。
@@ -294,116 +296,121 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
       >![](public_sys-resources/icon-note.gif) **说明：** 
       >
-  >-   quote参数不能和分隔符、null参数相同。
-    
+      >-   quote参数不能和分隔符、null参数相同。
       >-   quote参数只能是单字节的字符。
+      >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
     
-  >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
-    
--   ESCAPE
-    
-    CSV格式下，用来指定逃逸字符，逃逸字符只能指定为单字节字符。
-    
-    缺省值：双引号。当与quote值相同时，会被替换为'\\0'。
-    
--   EOL 'newline\_character'
-    
-    指定导入导出数据文件换行符样式。
-    
-    取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
-    
+    -   ESCAPE
+        
+        CSV格式下，用来指定逃逸字符，逃逸字符只能指定为单字节字符。
+        
+        缺省值：双引号。当与quote值相同时，会被替换为'\\0'。
+        
+    -   EOL 'newline\_character'
+        
+        指定导入导出数据文件换行符样式。
+        
+        取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
+        
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式导入。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。
         >
         >-   EOL参数不能和分隔符、null参数相同。
         >
-    >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
-    
--   FORCE\_QUOTE \{ \( column\_name \[, ...\] \) | \* \}
-    
-    在CSV COPY TO模式下，强制在每个声明的字段周围对所有非NULL值都使用引号包围。NULL输出不会被引号包围。
-    
-    取值范围：已存在的字段。
-    
--   FORCE\_NOT\_NULL \( column\_name \[, ...\] \)
-    
-    在CSV COPY FROM模式下，指定的字段输入不能为空。
-    
-    取值范围：已存在的字段。
-    
--   ENCODING
-    
-    指定数据文件的编码格式名称，缺省为当前数据库编码格式。
-    
--   IGNORE\_EXTRA\_DATA
-    
-    若数据源文件比外表定义列数多，是否会忽略对多出的列。该参数只在数据导入过程中使用。
-    
-    取值范围：true/on、false/off。
-    
+        >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
+        
+    -   FORCE\_QUOTE \{ \( column\_name \[, ...\] \) | \* \}
+        
+        在CSV COPY TO模式下，强制在每个声明的字段周围对所有非NULL值都使用引号包围。NULL输出不会被引号包围。
+        
+        取值范围：已存在的字段。
+        
+    -   FORCE\_NOT\_NULL \( column\_name \[, ...\] \)
+        
+        在CSV COPY FROM模式下，指定的字段输入不能为空。
+        
+        取值范围：已存在的字段。
+        
+    -   ENCODING
+        
+        指定数据文件的编码格式名称，缺省为当前数据库编码格式。
+        
+    -   IGNORE\_EXTRA\_DATA
+        
+        若数据源文件比外表定义列数多，是否会忽略对多出的列。该参数只在数据导入过程中使用。
+        
+        取值范围：true/on、false/off。
+        
         -   参数为true/on，若数据源文件比外表定义列数多，则忽略行尾多出来的列。
-    -   参数为false/off，若数据源文件比外表定义列数多，会显示如下错误信息。
+        -   参数为false/off，若数据源文件比外表定义列数多，会显示如下错误信息。
     
             ```
             extra data after last expected column
-        ```
-    
-    缺省值：false。
-    
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >如果行尾换行符丢失，使两行变成一行时，设置此参数为true将导致后一行数据被忽略掉。
-    
--   COMPATIBLE\_ILLEGAL\_CHARS
-    
-    导入非法字符容错参数。此语法仅对COPY FROM导入有效。
-    
-    取值范围：true/on、false/off。
-    
+            ```
+        
+        缺省值：false。
+        
+        >![](public_sys-resources/icon-notice.gif) **须知：**
+        > 
+        >如果行尾换行符丢失，使两行变成一行时，设置此参数为true将导致后一行数据被忽略掉。
+        
+    -   COMPATIBLE\_ILLEGAL\_CHARS
+        
+        导入非法字符容错参数。此语法仅对COPY FROM导入有效。
+        
+        取值范围：true/on、false/off。
+        
         -   参数为true/on，则导入时遇到非法字符进行容错处理，非法字符转换后入库，不报错，不中断导入。
-    -   参数为false/off，导入时遇到非法字符进行报错，中断导入。
-    
-    缺省值：false/off
-    
+        -   参数为false/off，导入时遇到非法字符进行报错，中断导入。
+        
+        缺省值：false/off
+        
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >导入非法字符容错规则如下：
+        >
         >（1）对于'\\0'，容错后转换为空格；
+        >
         >（2）对于其他非法字符，容错后转换为问号；
-    >（3）若compatible\_illegal\_chars为true/on标识导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如“illegal chars conversion may confuse COPY escape 0x20”等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
+        >
+        >（3）若compatible\_illegal\_chars为true/on标识导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如“illegal chars conversion may confuse COPY escape 0x20”等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
     
--   FILL\_MISSING\_FIELDS
-    
-    当数据加载时，若数据源文件中一行的最后一个字段缺失的处理方式。
-    
-    取值范围：true/on、false/off。
-    
-    缺省值：false/off
-    
--   DATE\_FORMAT
-    
-    导入对于DATE类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
-    取值范围：合法DATE格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
-    
+    -   FILL\_MISSING\_FIELDS
+        
+        当数据加载时，若数据源文件中一行的最后一个字段缺失的处理方式。
+        
+        取值范围：true/on、false/off。
+        
+        缺省值：false/off
+        
+    -   DATE\_FORMAT
+        
+        导入对于DATE类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
+        取值范围：合法DATE格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
+        
         >![](public_sys-resources/icon-note.gif) **说明：** 
-    >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。
-    
--   TIME\_FORMAT
-    
-    导入对于TIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
-    取值范围：合法TIME格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
-    
--   TIMESTAMP\_FORMAT
-    
-    导入对于TIMESTAMP类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
-    取值范围：合法TIMESTAMP格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
-    
--   SMALLDATETIME\_FORMAT
-    
-    导入对于SMALLDATETIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
-        取值范围：合法SMALLDATETIME格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
+        >
+        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。
+        
+    -   TIME\_FORMAT
+        
+        导入对于TIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
+        取值范围：合法TIME格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
+        
+    -   TIMESTAMP\_FORMAT
+        
+        导入对于TIMESTAMP类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
+        取值范围：合法TIMESTAMP格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
+        
+    -   SMALLDATETIME\_FORMAT
+        
+        导入对于SMALLDATETIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
+            取值范围：合法SMALLDATETIME格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
 
 
 -   **COPY\_OPTION \{ option\_name ' value '  \}**
@@ -415,6 +422,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         用来指定数据文件中空值的表示。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >
         >在使用COPY FROM的时候，任何匹配这个字符串的字符串将被存储为NULL值，所以应该确保指定的字符串和COPY TO相同。
 
         取值范围：
@@ -441,163 +449,163 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
       >![](public_sys-resources/icon-notice.gif) **须知：** 
       >
-  >-   仅在header为on或true的情况下有效。
+      >-   仅在header为on或true的情况下有效。
+      > 
+      >-   fileheader指定的是绝对路径。
+      >   
+      >-   该文件只能包含一行标题信息，并以换行符结尾，多余的行将被丢弃（标题信息不能包含换行符）。
+      >  
+      >-   该文件包括换行符在内长度不超过1M。
     
-  >-   fileheader指定的是绝对路径。
-    
-  >-   该文件只能包含一行标题信息，并以换行符结尾，多余的行将被丢弃（标题信息不能包含换行符）。
-    
-  >-   该文件包括换行符在内长度不超过1M。
-    
--   FREEZE
-    
-    将COPY加载的数据行设置为已经被frozen，就像这些数据行执行过VACUUM FREEZE。
-    
-    这是一个初始数据加载的性能选项。仅当以下三个条件同时满足时，数据行会被frozen：
-    
+    -   FREEZE
+        
+        将COPY加载的数据行设置为已经被frozen，就像这些数据行执行过VACUUM FREEZE。
+        
+        这是一个初始数据加载的性能选项。仅当以下三个条件同时满足时，数据行会被frozen：
+        
         -   在同一事务中create或truncate这张表之后执行COPY。
         -   当前事务中没有打开的游标。
-    -   当前事务中没有原有的快照。
-    
+        -   当前事务中没有原有的快照。
+        
         >![](public_sys-resources/icon-note.gif) **说明：** 
-    >COPY完成后，所有其他会话将会立刻看到这些数据。但是这违反了MVCC可见性的一般原则，用户应当了解这样会导致潜在的风险。
-    
--   FORCE NOT NULL column\_name \[, ...\]
-    
-    在CSV COPY FROM模式下，指定的字段不为空。若输入为空，则将视为长度为0的字符串。
-    
-    取值范围：已存在的字段。
-    
--   FORCE QUOTE \{ column\_name \[, ...\]  | \* \}
-    
-    在CSV COPY TO模式下，强制在每个声明的字段周围对所有非NULL值都使用引号包围。NULL输出不会被引号包围。
-    
-    取值范围：已存在的字段。
-    
--   BINARY
-    
-    使用二进制格式存储和读取，而不是以文本的方式。在二进制模式下，不能声明DELIMITER、NULL、CSV选项。指定BINARY类型后，不能再通过option或copy\_option指定CSV、FIXED、TEXT等类型。
-    
--   CSV
-    
-    打开逗号分隔变量（CSV）模式。指定CSV类型后，不能再通过option或copy\_option指定BINARY、FIXED、TEXT等类型。
-    
-- QUOTE \[AS\] 'quote\_character'
-    
-  CSV格式文件下的引号字符。
-    
-  缺省值：双引号。
-    
-      >![](public_sys-resources/icon-note.gif) **说明：** 
-  >
-      >-   quote参数不能和分隔符、null参数相同。
-
-      >-   quote参数只能是单字节的字符。
-
-      >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
+        >
+        >COPY完成后，所有其他会话将会立刻看到这些数据。但是这违反了MVCC可见性的一般原则，用户应当了解这样会导致潜在的风险。
+        
+    -   FORCE NOT NULL column\_name \[, ...\]
+        
+        在CSV COPY FROM模式下，指定的字段不为空。若输入为空，则将视为长度为0的字符串。
+        
+        取值范围：已存在的字段。
+        
+    -   FORCE QUOTE \{ column\_name \[, ...\]  | \* \}
+        
+        在CSV COPY TO模式下，强制在每个声明的字段周围对所有非NULL值都使用引号包围。NULL输出不会被引号包围。
+        
+        取值范围：已存在的字段。
+        
+    -   BINARY
+        
+        使用二进制格式存储和读取，而不是以文本的方式。在二进制模式下，不能声明DELIMITER、NULL、CSV选项。指定BINARY类型后，不能再通过option或copy\_option指定CSV、FIXED、TEXT等类型。
+        
+    -   CSV
+        
+        打开逗号分隔变量（CSV）模式。指定CSV类型后，不能再通过option或copy\_option指定BINARY、FIXED、TEXT等类型。
+        
+    -   QUOTE \[AS\] 'quote\_character'
+        
+        CSV格式文件下的引号字符。
+        
+        缺省值：双引号。
+        
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
+        >-   quote参数不能和分隔符、null参数相同。
+        >-   quote参数只能是单字节的字符。
+        >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
 
     -   ESCAPE \[AS\] 'escape\_character'
 
-        CSV格式下，用来指定逃逸字符，逃逸字符只能指定为单字节字符。
+            CSV格式下，用来指定逃逸字符，逃逸字符只能指定为单字节字符。
 
-        默认值为双引号。当与quote值相同时，会被替换为'\\0'。
+            默认值为双引号。当与quote值相同时，会被替换为'\\0'。
 
-    - EOL 'newline\_character'
+    -   EOL 'newline\_character'
 
-      指定导入导出数据文件换行符样式。
+        指定导入导出数据文件换行符样式。
 
-      取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
-    
-  >![](public_sys-resources/icon-note.gif) **说明：** 
-      >
-      >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。
-    
-  >-   EOL参数不能和分隔符、null参数相同。
-    
-  >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
-    
--   ENCODING 'encoding\_name'
-    
-    指定文件编码格式名称。
-    
-    取值范围：有效的编码格式。
-    
-    缺省值：当前编码格式。
-    
--   IGNORE\_EXTRA\_DATA
-    
-    指定当数据源文件比外表定义列数多时，忽略行尾多出来的列。该参数只在数据导入过程中使用。
-    
+        取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
+        
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
+        >-   EOL参数只能用于TEXT格式的导入导出，不支持CSV格式和FIXED格式。为了兼容原有EOL参数，仍然支持导出CSV格式和FIXED格式时指定EOL参数为0x0D或0x0D0A。   
+        >-   EOL参数不能和分隔符、null参数相同。    
+        >-   EOL参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
+        
+    -   ENCODING 'encoding\_name'
+        
+        指定文件编码格式名称。
+        
+        取值范围：有效的编码格式。
+        
+        缺省值：当前编码格式。
+        
+    -   IGNORE\_EXTRA\_DATA
+        
+        指定当数据源文件比外表定义列数多时，忽略行尾多出来的列。该参数只在数据导入过程中使用。
+        
         若不使用该参数，在数据源文件比外表定义列数多，会显示如下错误信息。
-    
-    ```
+        
+        ```
         extra data after last expected column
-    ```
-    
--   COMPATIBLE\_ILLEGAL\_CHARS
-    
-    指定导入时对非法字符进行容错处理，非法字符转换后入库。不报错，不中断导入。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
+        ```
+        
+    -   COMPATIBLE\_ILLEGAL\_CHARS
+        
+        指定导入时对非法字符进行容错处理，非法字符转换后入库。不报错，不中断导入。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
         若不使用该参数，导入时遇到非法字符进行报错，中断导入。
     
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >导入非法字符容错规则如下：
-    >（1）对于'\\0'，容错后转换为空格；
+        >（1）对于'\\0'，容错后转换为空格；
         >（2）对于其他非法字符，容错后转换为问号；
-    >（3）若compatible\_illegal\_chars为true/on标识，导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如“illegal chars conversion may confuse COPY escape 0x20”等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
+        >（3）若compatible\_illegal\_chars为true/on标识，导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如“illegal chars conversion may confuse COPY escape 0x20”等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
     
--   FILL\_MISSING\_FIELDS
-    
-    当数据加载时，若数据源文件中一行的最后一个字段缺失的处理方式。
-    
-    取值范围：true/on、false/off。
-    
+    -   FILL\_MISSING\_FIELDS
+        
+        当数据加载时，若数据源文件中一行的最后一个字段缺失的处理方式。
+        
+        取值范围：true/on、false/off。
+        
         缺省值：false/off。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >目前COPY指定此Option实际不会生效，即不会有相应的容错处理效果（不生效）。需要额外注意的是，打开此选项会导致解析器在数据库主节点数据解析阶段（即COPY错误表容错的涵盖范围）忽略此数据问题，而到数据库节点重新报错，从而使得COPY错误表（打开LOG ERRORS REJECT LIMIT）在此选项打开的情况下无法成功捕获这类少列的数据异常。因此请不要指定此选项。
-    
--   DATE\_FORMAT 'date\_format\_string'
-    
-    导入对于DATE类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
+        >
+        >目前COPY指定此Option实际不会生效，即不会有相应的容错处理效果（不生效）。需要额外注意的是，打开此选项会导致解析器在数据库主节点数据解析阶段（即COPY错误表容错的涵盖范围）忽略此数据问题，而到数据库节点重新报错，从而使得COPY错误表（打开LOG ERRORS REJECT LIMIT）在此选项打开的情况下无法成功捕获这类少列的数据异常。因此请不要指定此选项。
+        
+    -   DATE\_FORMAT 'date\_format\_string'
+        
+        导入对于DATE类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
         取值范围：合法DATE格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
-    >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。
-    
--   TIME\_FORMAT 'time\_format\_string'
-    
-    导入对于TIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
-    取值范围：合法TIME格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
-    
--   TIMESTAMP\_FORMAT 'timestamp\_format\_string'
-    
-    导入对于TIMESTAMP类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
-    取值范围：合法TIMESTAMP格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
-    
--   SMALLDATETIME\_FORMAT 'smalldatetime\_format\_string'
-    
-    导入对于SMALLDATETIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
-    
-    取值范围：合法SMALLDATETIME格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
-    
--   TRANSFORM \( \{ column\_name \[ data\_type \] \[ AS transform\_expr \] \} \[, ...\] \)
-    
-    指定表中各个列的转换表达式；其中data\_type指定该列在表达式参数中的数据类型；transform\_expr为目标表达式，返回与表中目标列数据类型一致的结果值，表达式可参考[表达式](表达式.md)。
-    
-    COPY FROM能够识别的特殊反斜杠序列如下所示。
-    
-    -   **\\b**：反斜杠 （ASCII 8）
-    -   **\\f**：换页（ASCII 12）
-    -   **\\n**：换行符 （ASCII 10）
-    -   **\\r**：回车符 （ASCII 13）
-    -   **\\t**：水平制表符 （ASCII 9）
-    -   **\\v**：垂直制表符 （ASCII 11）
-    -   **\\digits**：反斜杠后面跟着一到三个八进制数，表示ASCII值为该数的字符。
-    -   **\\xdigits**：反斜杠x后面跟着一个或两个十六进制位声明指定数值编码的字符。
+        >
+        >对于DATE类型内建为TIMESTAMP类型的数据库，在导入的时候，若需指定格式，可以参考下面的timestamp\_format参数。
+        
+    -   TIME\_FORMAT 'time\_format\_string'
+        
+        导入对于TIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
+        取值范围：合法TIME格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
+        
+    -   TIMESTAMP\_FORMAT 'timestamp\_format\_string'
+        
+        导入对于TIMESTAMP类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
+        取值范围：合法TIMESTAMP格式，不支持时区。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
+        
+    -   SMALLDATETIME\_FORMAT 'smalldatetime\_format\_string'
+        
+        导入对于SMALLDATETIME类型指定格式。此参数不支持BINARY格式，会报“cannot specify bulkload compatibility options in BINARY mode”错误信息。此参数仅对COPY FROM导入有效。
+        
+        取值范围：合法SMALLDATETIME格式。可参考[时间和日期处理函数和操作符](时间和日期处理函数和操作符.md)。
+        
+    -   TRANSFORM \( \{ column\_name \[ data\_type \] \[ AS transform\_expr \] \} \[, ...\] \)
+        
+        指定表中各个列的转换表达式；其中data\_type指定该列在表达式参数中的数据类型；transform\_expr为目标表达式，返回与表中目标列数据类型一致的结果值，表达式可参考[表达式](表达式.md)。
+        
+        COPY FROM能够识别的特殊反斜杠序列如下所示。
+        
+        -   **\\b**：反斜杠 （ASCII 8）
+        -   **\\f**：换页（ASCII 12）
+        -   **\\n**：换行符 （ASCII 10）
+        -   **\\r**：回车符 （ASCII 13）
+        -   **\\t**：水平制表符 （ASCII 9）
+        -   **\\v**：垂直制表符 （ASCII 11）
+        -   **\\digits**：反斜杠后面跟着一到三个八进制数，表示ASCII值为该数的字符。
+        -   **\\xdigits**：反斜杠x后面跟着一个或两个十六进制位声明指定数值编码的字符。
 
 
 ## 示例<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s30bb80bf2fbd4cb3af1ab84e7cb1e0c9"></a>
