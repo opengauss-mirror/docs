@@ -8,7 +8,7 @@ The driver package is compatible with PostgreSQL. The class name and structure i
 
 ## Loading the Driver<a name="section382241834912"></a>
 
-Before creating a database connection, you need to load the database driver class. The package location varies according to the driver class. The driver of openGauss JDBC is  **com.huawei.opengauss.jdbc.Driver**. The URL prefix is  **jdbc:opengauss**.
+Before creating a database connection, you need to load the database driver class. The package location varies according to the driver class. The driver of openGauss JDBC is  **org.opengauss.Driver**. The URL prefix is  **jdbc:opengauss**.
 
 ## Connecting to a Database<a name="section1668914179142"></a>
 
@@ -60,7 +60,7 @@ Example:
             getConnect();
       }
       public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -101,7 +101,7 @@ Example:
             getConnect();
       }
      public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test";
             Properties info = new Properties();
             info.setProperty("user","myuser");
@@ -143,7 +143,7 @@ Example:
             getConnect();
       }
      public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test";
             String username="myuser";
             String passwd="myPassWord";
@@ -187,7 +187,7 @@ Example:
             statement.execute("create table test_table (id int,name varchar (10))");
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -227,7 +227,7 @@ Example:
             preparedStatement.execute();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -274,7 +274,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -322,7 +322,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -366,7 +366,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -402,7 +402,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -445,7 +445,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -493,7 +493,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -543,7 +543,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=tiange1999?";
             Properties info = new Properties();
             Connection conn = null;
@@ -593,7 +593,7 @@ Example:
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=tiange1999?";
             Properties info = new Properties();
             Connection conn = null;
