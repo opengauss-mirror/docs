@@ -64,6 +64,7 @@
         | NOT OF
         | REPLICA IDENTITY { DEFAULT | USING INDEX index_name | FULL | NOTHING }
         | AUTO_INCREMENT [ = ] value
+        | COMMENT {=| } 'text'
     ```
     
 
@@ -140,8 +141,7 @@
 
   透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
 
-- **| REPLICA IDENTITY \{DEFAULT | USING INDEX index\_name | FULL | NOTHING\}**
-  调整逻辑复制时写入WAL日志中的信息量，该选项仅在wal\_level配置为logical时才有效。 当原数据表发生更新时，默认的逻辑复制流只包含主键的历史记录，如果需要输出所需字段更新或删除的历史记录，可修改本参数。“DEFAULT”（非系统表的默认值）会记录主键字段的旧值。“USING INDEX”会记录名为index\_name索引包含的字段的旧值，索引的所有列必须NOT NULL。“FULL”记录了所有列的旧值。“NOTHING”（系统表默认值）不记录旧值的信息。
+-
 
 - **SET WITH OIDS**
   在资料表中增加了一个OID系统栏位。如果资料表中已经有OID，则此语法什么都不改变。
@@ -164,11 +164,15 @@
 - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
   DEFAULT记录主键的列的旧值。USING INDEX记录命名索引覆盖的列的旧值，这些值必须是唯一的，不局部的，不可延迟的，并且仅包括标记为NOT NULL的列。FULL记录该行中所有列的旧值。NOTHING不记录有关旧行的信息。在所有情况下，除非该行的新旧版本中至少要记录的列之一不同，否则不会记录任何旧值。
 
+- **COMMENT 'text'**
+  修改表对象的注释。
+
 其中列相关的操作column\_clause可以是以下子句之一：
 
 ```
-ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
+ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ COMMENT {=| } 'text' ]    
 | MODIFY column_name data_type    
+| MODIFY [ COLUMN ] column_name [ COMMENT 'text']    
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
 | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
@@ -185,11 +189,14 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
 ![](public_sys-resources/icon-note.gif) **说明：**  
 
-- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
   向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
-
-- **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
+  
+- **ADD \( \{ column\_name data\_type \[ compress\_mode \]  \[ COMMENT {=| } 'text'\] \} \[, ...\] \)**
   向表中增加多列。
+
+- **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
+  修改字段注释。
 
 - **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
   修改表已存在字段的数据类型。
@@ -268,6 +275,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
           FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
               [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+        [ COMMENT 'text' ]
     ```
 
 -   其中索引参数index\_parameters为：

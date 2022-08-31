@@ -64,6 +64,7 @@
       | NOT OF
       | REPLICA IDENTITY { DEFAULT | USING INDEX index_name | FULL | NOTHING }
       | AUTO_INCREMENT [ = ] value
+      | COMMENT {=| } 'text'
   ```
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
@@ -171,12 +172,15 @@
     value必须是非负整数，且不得大于2<sup>127</sup>-1。
 
     该子句仅在参数sql\_compatibility=B时生效。
+  - **COMMENT 'text'**
+    修改表对象的注释。
 
 - 其中列相关的操作column\_clause可以是以下子句之一：
 
   ```
-  ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
-  | MODIFY column_name data_type    
+  ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ COMMENT {=| } 'text' ]    
+  | MODIFY column_name data_type  
+  | MODIFY [ COLUMN ] column_name [ COMMENT 'text']      
   | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
   | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
   | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
@@ -193,11 +197,15 @@
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
 
-  - **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+  - **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \] \[ COMMENT {=| } 'text'\]**
     向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
 
   - **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
     向表中增加多列。
+
+
+  - **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
+    修改字段注释。
 
   - **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
     修改表已存在字段的数据类型。
@@ -278,6 +286,7 @@
               FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
                  [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+            [ COMMENT 'text' ]
         ```
     
         其中索引参数index\_parameters为：

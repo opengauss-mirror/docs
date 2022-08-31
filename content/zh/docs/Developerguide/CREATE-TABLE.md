@@ -34,7 +34,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
-    [ COMMENT {=| } 'string' ];
+    [ COMMENT {=| } 'text' ];
 ```
 
 -   其中列约束column\_constraint为：
@@ -52,6 +52,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -72,6 +73,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -407,7 +409,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     创建新表时指定此关键字，表示新表将要在指定表空间内创建。如果没有声明，将使用默认表空间。
 
--   **COMMNET {=| } string**
+-   **COMMNET {=| } text**
     
     创建新表时指定此关键字，表示新表的注释内容。如果没有声明，则不创建注释。
 
@@ -512,6 +514,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
   Ustore表不支持**DEFERRABLE以及INITIALLY  DEFERRED**关键字。
+
+- **COMMENT text**
+
+  注释。
 
 -   **PARTIAL CLUSTER KEY**
 

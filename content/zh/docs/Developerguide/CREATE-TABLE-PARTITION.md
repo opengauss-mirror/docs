@@ -55,11 +55,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
+    [ COMMENT {=| } 'text' ]
      PARTITION BY { 
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
          {LIST (partition_key) ( PARTITION partition_name VALUES (list_values) [TABLESPACE tablespace_name][, ... ]）} |
         {HASH (partition_key) ( PARTITION partition_name [TABLESPACE tablespace_name][, ... ]）}
+        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [COMMENT {=| } 'text'][...][, ... ] )} |
+        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [COMMENT {=| } 'text'][...][, ... ] )} |
+        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES (list_values_clause)] opt_table_space [COMMENT {=| } 'text'][...])}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -78,6 +82,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 -   表约束table\_constraint：
@@ -90,6 +95,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -125,6 +131,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     } [TABLESPACE tablespace_name]
     ```
 
+-   COMMENT {=| } 'text':
+
+    分区表的分区中，该字段无实际意义，仅作语法兼容。在数据库中使用该语法时会有告警提示。
 
 ## 参数说明<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sd2701df1d7364084a7791592def4e9eb"></a>
 
