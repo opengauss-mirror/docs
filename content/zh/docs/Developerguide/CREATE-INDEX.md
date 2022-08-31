@@ -33,7 +33,7 @@
       [ INCLUDE ( column_name [, ...] )]    
       [ WITH ( {storage_parameter = value} [, ... ] ) ]
       [ TABLESPACE tablespace_name ]
-      [ COMMENT string ]
+      [ COMMENT text ]
       [ WHERE predicate ];
   ```
 
@@ -46,7 +46,7 @@
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ]
-        [ COMMENT string ];
+        [ COMMENT text ];
     ```
 
 
@@ -221,7 +221,7 @@
 
     取值范围：已存在的表空间名。
 
--   **COMMENT string**
+-   **COMMENT text**
 
     指定索引的注释，如果没有声明则注释为空。
 

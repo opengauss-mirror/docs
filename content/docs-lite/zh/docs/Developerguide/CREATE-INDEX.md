@@ -33,6 +33,7 @@
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
+        [ COMMENT text ]
         [ WHERE predicate ];
     ```
 
@@ -44,7 +45,8 @@
         [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
-        [ TABLESPACE tablespace_name ];
+        [ TABLESPACE tablespace_name ]
+        [ COMMENT text ];
     ```
 
 
@@ -211,6 +213,10 @@
 
     取值范围：已存在的表空间名。
 
+-   **COMMENT text**
+
+    指定索引的注释，如果没有声明则注释为空。
+
 -   **WHERE predicate**
 
     创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
@@ -249,7 +255,7 @@
 
 -   **COMPRESS\_CHUNK\_SIZE**
 
-    索引参数，设置索引压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响索引的访问速度。（仅支持B-TREE索引）
+    索引参数，设置索引压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响索引的访问速度。该参数生效后不允许修改。（仅支持B-TREE索引）
 
     取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
 

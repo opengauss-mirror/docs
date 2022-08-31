@@ -53,6 +53,7 @@
           | COST execution_cost
           | ROWS result_rows
           | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+          | COMMENT 'text' 
       ] [...]
       {
           AS 'definition'
@@ -78,6 +79,7 @@
             | COST execution_cost
             | ROWS result_rows
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+            | COMMENT 'text' 
          ][...]
          {
             IS | AS
@@ -231,6 +233,10 @@
     估计函数返回的行数。用于函数返回的是一个集合。
 
     取值范围：正数，默认值是1000行。
+
+-   **COMMENT 'text'**
+
+    函数注释。
 
 -   **configuration\_parameter**
     -   **value**
