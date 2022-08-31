@@ -8,7 +8,7 @@ JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行S
 
 ## 加载驱动<a name="section382241834912"></a>
 
-在创建数据库连接之前，需要加载数据库驱动类，驱动类不同包位置不同。openGauss jdbc的驱动为“com.huawei.opengauss.jdbc.Driver”，其中url前缀为“jdbc:opengauss”。
+在创建数据库连接之前，需要加载数据库驱动类，驱动类不同包位置不同。openGauss jdbc的驱动为“org.opengauss.Driver”，其中url前缀为“jdbc:opengauss”。
 
 ## 连接数据库<a name="section1668914179142"></a>
 
@@ -59,7 +59,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             getConnect();
       }
       public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -100,7 +100,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             getConnect();
       }
      public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test";
             Properties info = new Properties();
             info.setProperty("user","myuser");
@@ -142,7 +142,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             getConnect();
       }
      public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test";
             String username="myuser";
             String passwd="myPassWord";
@@ -186,7 +186,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             statement.execute("create table test_table (id int,name varchar (10))");
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -226,7 +226,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             preparedStatement.execute();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -273,7 +273,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -321,7 +321,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -365,7 +365,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -401,7 +401,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -444,7 +444,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -492,7 +492,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
             Properties info = new Properties();
             Connection conn = null;
@@ -542,7 +542,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=tiange1999?";
             Properties info = new Properties();
             Connection conn = null;
@@ -592,7 +592,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             conn.close();
         }
         public static Connection getConnect() {
-            String driver = "com.huawei.opengauss.jdbc.Driver";
+            String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=tiange1999?";
             Properties info = new Properties();
             Connection conn = null;
