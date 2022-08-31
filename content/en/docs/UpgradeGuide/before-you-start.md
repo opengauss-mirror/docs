@@ -2,7 +2,7 @@
 
 -   **[Upgrade Solution](#upgrade-solution)**  
 
--   **[Version Requirements Before the Upgrade \(Upgrade Path\)](#version requirements before the upgrade)**  
+-   **[Version Requirements Before the Upgrade \(Upgrade Path\)](#version-requirements-before-the-upgrade)**  
 
 -   **[Upgrade Impact and Constraints](#upgrade-impact-and-constraints)**  
 
