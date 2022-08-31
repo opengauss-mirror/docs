@@ -8,7 +8,7 @@ TPCC运行时，注入磁盘满故障，数据库进程gaussdb core掉，如下�
 
 ## 原因分析<a name="zh-cn_topic_0283137100_zh-cn_topic_0059778167_s74d2dfcb815b4d8ca504c549a923e5ed"></a>
 
-数据库本身机制，在磁盘满时，xlog日志无法进行写入，通过panic日志退出程序。
+数据库本身机制，在磁盘满时，XLOG日志无法进行写入，通过panic日志退出程序。
 
 ## 处理办法<a name="zh-cn_topic_0283137100_section485620163250"></a>
 
