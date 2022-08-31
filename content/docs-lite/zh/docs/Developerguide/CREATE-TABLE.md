@@ -29,6 +29,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         | table_constraint
         | LIKE source_table [ like_option [...] ] }
         [, ... ])
+    [ AUTO_INCREMENT [ = ] value ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
@@ -44,6 +45,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       NULL |
       CHECK ( expression ) |
       DEFAULT default_expr |
+      AUTO_INCREMENT |
       UNIQUE index_parameters |
       ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
       PRIMARY KEY index_parameters |
@@ -63,11 +65,11 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   其中表约束table\_constraint为：
 
     ```
-    [ CONSTRAINT constraint_name ]
+      [ CONSTRAINT [ constraint_name ] ]
     { CHECK ( expression ) |
-      UNIQUE ( column_name [, ... ] ) index_parameters |
-      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
+      UNIQUE [ index_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+      PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
@@ -136,6 +138,44 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     新表中要创建的字段名。
 
+-   **constraint\_name**
+
+    建表时指定的约束名称。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
+
+-   **index\_name**
+
+    索引名。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
+    >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
+    >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
+
+-   **USING method**
+
+    指定创建索引的方法。
+
+    取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
+    >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
+
+-   **ASC | DESC**
+
+    ASC表示指定按升序排序（默认）。DESC指定按降序排序。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
+
+-   **expression**
+
+     >![](public_sys-resources/icon-notice.gif) **须知：**
+    >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
+
 -   **data\_type**
 
     字段的数据类型。
@@ -171,6 +211,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   如果源表包含serial、bigserial、smallserial、largeserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
     >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。
     >-   对于分区表EXCLUDING，需要配合INCLUDING ALL使用，如INCLUDING ALL EXCLUDING DEFAULTS，除源分区表的DEFAULTS，其它全包含。
+
+-   **AUTO\_INCREMENT \[ = \] value**
+
+    这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >该子句仅在参数sql\_compatibility=B时有效。
 
 -   **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
@@ -387,6 +434,30 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式\(不允许使用子查询和对本表中的其他字段的交叉引用\)。缺省表达式的数据类型必须和字段类型匹配。
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
+
+-    **AUTO\_INCREMENT**
+
+     该关键字将字段指定为自动增长列。
+
+     若在插入时不指定此列的值（或指定此列的值为0、NULL、DEFAULT），此列的值将由自增计数器自动增长得到。
+ 
+     若插入或更新此列为一个大于当前自增计数器的值，执行成功后，自增计数器将刷新为此值。
+
+     自增初始值由“AUTO\_INCREMENT \[ = \] value”子句设置，若不设置，默认为1。
+
+     >![](public_sys-resources/icon-note.gif) **说明：** 
+     >-   仅在参数sql\_compatibility=B时可以指定自动增长列。
+     >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型、布尔类型。
+     >-   每个表只能有一个自动增长列。
+     >-   自动增长列必须是主键约束或唯一约束的第一个字段。
+     >-   自动增长列不能指定DEFAULT缺省值。
+      >-   CHECK约束的表达式中不能含有自动增长列。
+     >-   可以指定自动增长列允许NULL，若不指定，默认自动增长列含有NOT NULL约束。
+     >-   含有自动增长列的表创建时，会创建一个依赖于此列的序列作为自增计数器，不允许通过序列相关功能修改 或删除此序列，可以查看序列的值。
+     >-   本地临时表中的自动增长列不会创建序列。
+     >-   自动增长列不支持列式存储。
+     >-   自增计数器自增和刷新操作不会回滚。
+
 
 -   **UNIQUE index\_parameters**
 
