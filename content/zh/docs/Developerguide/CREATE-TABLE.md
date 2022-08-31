@@ -225,14 +225,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >-   对于分区表EXCLUDING，需要配合INCLUDING ALL使用，如INCLUDING ALL EXCLUDING DEFAULTS，除源分区表的DEFAULTS，其它全包含。
 
--   **AUTO\_INCREMENT \[ = \] value**
-
-
-    这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
-    
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >该子句仅在参数sql\_compatibility=B时有效。
-
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。
