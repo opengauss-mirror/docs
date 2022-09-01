@@ -1666,6 +1666,7 @@ headless: true
         -   [容错性]({{< relref "./docs/Developerguide/容错性.md" >}})
         -   [连接池参数]({{< relref "./docs/Developerguide/连接池参数.md" >}})
         -   [openGauss事务]({{< relref "./docs/Developerguide/openGauss事务.md" >}})
+	    -   [双数据库实例复制参数]({{< relref "./docs/Developerguide/双数据库实例复制参数.md" >}})
         -   [开发人员选项]({{< relref "./docs/Developerguide/开发人员选项.md" >}})
         -   [审计]({{< relref "./docs/Developerguide/审计.md" >}})
             -   [审计开关]({{< relref "./docs/Developerguide/审计开关.md" >}})
