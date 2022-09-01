@@ -366,7 +366,9 @@
 
 - **[VACUUM](VACUUM.md)**  
 
-- **[VALUES](VALUES.md)**  
+- **[VALUES](VALUES.md)** 
+
+- **[SHRINK](SHRINK.md)** 
 
 - **[ALTER PROCEDURE](ALTER-PROCEDURE.md)**  
 
