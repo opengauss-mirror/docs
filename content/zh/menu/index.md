@@ -2648,3 +2648,4 @@ headless: true
 	-   [产品FAQ]({{< relref "./docs/FAQ/产品FAQ.md" >}})
 	-   [使用FAQ]({{< relref "./docs/FAQ/使用FAQ.md" >}})	
 -   [术语表]({{< relref "./docs/Glossary/Glossary.md" >}})
+-   [通信矩阵]({{< relref "./docs/CommunicationMatrix/通信矩阵.md" >}})
