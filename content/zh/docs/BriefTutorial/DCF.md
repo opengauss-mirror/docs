@@ -1,4 +1,4 @@
-# DCF<a name="ZH-CN_TOPIC_0000001180294758"></a>
+# DCF<a name="ZH-CN_TOPIC_0000001255021817"></a>
 
 DCF全称是Distributed Consensus Framework，即分布式一致性共识框架。DCF实现了Paxos、Raft等解决分布式一致性问题典型算法。使用DCF可以提供日志复制、集群高可用等能力。DCF提供了自选主能力，支持少数派强起能力，日志复制支持动态流量调整。同时也提供了基于Paxos多种角色节点类型，并能进行调整。
 
@@ -9,7 +9,7 @@ DCF是一款高性能、高度成熟可靠、易扩展、易使用的独立基�
 DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块、存储模块、通信模块、服务层等。
 
 **图 1**  DCF功能架构图<a name="fig31591049102410"></a>  
-<img src="figures/DCF功能架构图.png" title="DCF功能架构图" style="zoom: 80%;" />
+![](figures/DCF功能架构图.png "DCF功能架构图")
 
 -   **算法模块：**
 
@@ -60,7 +60,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
     流控算法主要流程如[图2](#fig548518330404)所示：
 
     **图 2**  流控算法流程<a name="fig548518330404"></a>  
-    <img src="figures/流控算法流程.jpg" title="流控算法流程" style="zoom:80%;" />
+    ![](figures/流控算法流程.jpg "流控算法流程")
 
     核心算法流程如下：
 
@@ -104,14 +104,12 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
   <!-- 是否开启DCF模式, 开启：on，关闭：off -->
     <PARAM name="enable_dcf" value="on/off"/>
   <!-- DCF config配置信息 -->
-    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;192.168.0.11&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;LEADER&quot;},
-    {&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;192.168.0.12&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;},
-    {&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;192.168.0.13&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/> 
+    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;192.168.0.11&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;192.168.0.12&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;192.168.0.13&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/> 
   </CLUSTER>
 ...
 ```
 
-1.  **安装完成后查询集群状态**
+1.  安装完成后查询集群状态。
 
     使用gs\_ctl查询集群状态。
 
@@ -151,7 +149,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
     -   leader\_port：leader节点端口，DCF内部使用 。
     -   nodes：集群其他节点信息。
 
-2.  **集群规模在线调整**
+2.  集群规模在线调整。
 
     若在线增加副本，执行以下一条命令即可。
 
@@ -167,7 +165,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
 
     在集群状态正常的情况下，5分钟就可以完成删除单个副本的任务。
 
-3.  **集群支持少数派强起功能**
+3.  集群支持少数派强起功能。
 
     在多数派故障场景下，按正常的Paxos协议无法达成一致，系统无法继续提供服务。为了提供紧急服务能力，需在少数派情况下紧急启动提供服务。
 
@@ -185,7 +183,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
      # cm_ctl setrunmode -n <node_id> -D <data_dir> --xmode=normal --votenum=<num>
     ```
 
-4.  **主动switchover操作**
+4.  主动switchover操作。
 
     支持一主多备部署模式下切换数据库主备实例，实现AZ间的相互切换。switchover为维护操作，需确保数据库实例状态正常，所有业务结束并无主备追赶后，再进行switchover操作。
 
@@ -195,14 +193,30 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
      # cm_ctl switchover –n <node_id> -D <data_dir>
     ```
 
-5.  **备机重建功能**
+5.  备机重建功能。
 
     支持主备模式下全量build能力。实现过程是当主DN收到全量build的请求后，阻塞主DN回收DCF日志，备DN从主DN复制xlog日志和数据文件，在备DN拉起后设置DCF开始复制日志点。
 
     命令示例如下：
 
     ```
-    # gs_ctl build -b full -D <new_node_data_dir>
+    gs_ctl build -b full -D <new_node_data_dir>
     ```
+
+6.  支持手动模式。
+
+    DCF支持手动模式，在手动模式下不自动仲裁，此模式下对接上层CM等管理组件做仲裁适配，DCF进行日志复制功能。
+
+    命令示例如下：
+
+    ```
+    cm_ctl set --param --server -k dn_arbitrate_mode=quorum
+    cm_ctl reload --param --server
+    gs_guc reload -Z datanode -I all -N all  -c "dcf_run_mode=1"
+    ```
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >-   GUC参数设置和cm\_ctl设置的DCF工作模式需要保持一致，即两者需要同步设置为DCF手动或自动模式。
+    >-   集群在正常状态下进行工作模式切换才能保证切换后工作正常。
 
 
