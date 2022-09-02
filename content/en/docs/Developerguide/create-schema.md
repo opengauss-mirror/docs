@@ -18,7 +18,7 @@ Optionally,  **CREATE SCHEMA**  can include sub-commands to create objects withi
 -   Create a schema based on a specified name.
 
     ```
-    CREATE SCHEMA schema_name 
+    CREATE SCHEMA [IF NOT EXISTS] schema_name 
         [ AUTHORIZATION user_name ] [WITH BLOCKCHAIN] [ schema_element [ ... ] ];
     ```
 
@@ -82,4 +82,3 @@ openGauss=# DROP USER role1 CASCADE;
 ## Helpful Links<a name="en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_sf210cb55e4884955b9809f27c7c55ce9"></a>
 
 [ALTER SCHEMA](alter-schema.md)  and  [DROP SCHEMA](drop-schema.md)
-

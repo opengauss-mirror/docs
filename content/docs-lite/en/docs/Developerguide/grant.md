@@ -22,7 +22,7 @@
 
     If  **WITH GRANT OPTION**  is specified, the recipient of the permission can in turn grant it to others. Without a grant option, the recipient cannot do that. This option cannot be granted to  **PUBLIC**, which is a unique openGauss attribute.
 
-    openGauss grants the permissions for objects of certain types to  **PUBLIC**. By default, permissions on tables, columns, sequences, foreign data sources, foreign servers, schemas, and tablespaces are not granted to  **PUBLIC**, but the following permissions are granted to  **PUBLIC**:  **CONNECT**  and  **CREATE TEMP TABLE**  permissions on databases,  **EXECUTE**  permission on functions, and  **USAGE**  permission on languages and data types \(including domains\). An object owner can revoke the default permissions granted to  **PUBLIC**  and grant permissions to other users as needed. For security purposes, you are advised to create an object and set its permissions in the same transaction so that other users do not have time windows to use the object. In addition, you can restrict the permissions of the  **PUBLIC**  user group by referring to t"Permission Management" in  _Security Hardening Guide_. These default permissions can be modified using the  **ALTER DEFAULT PRIVILEGES**  command.
+    openGauss grants the permissions for objects of certain types to  **PUBLIC**. By default, permissions on tables, columns, sequences, foreign data sources, foreign servers, schemas, and tablespaces are not granted to  **PUBLIC**, but the following permissions are granted to  **PUBLIC**:  **CONNECT**  and  **CREATE TEMP TABLE**  permissions on databases,  **EXECUTE**  permission on functions, and  **USAGE**  permission on languages and data types \(including domains\). An object owner can revoke the default permissions granted to  **PUBLIC**  and grant permissions to other users as needed. For security purposes, you are advised to create an object and set its permissions in the same transaction so that other users do not have time windows to use the object. In addition, you can restrict the permissions of the  **PUBLIC**  user group by referring to t"Permission Management" in  *Security Hardening Guide*. These default permissions can be modified using the  **ALTER DEFAULT PRIVILEGES**  command.
 
     By default, an object owner has all permissions on the object. For security purposes, the owner can discard some permissions. However, the ALTER, DROP, COMMENT, INDEX, VACUUM, and re-grantable permissions of the object are inherent permissions implicitly owned by the owner.
 
@@ -464,7 +464,6 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Database administrators can access all objects, regardless of object permission settings. This is comparable to the permissions of  **root**  in a Unix system. As with  **root**, it is unwise to operate as a system administrator except when necessary.
->**GRANT**  to a table partition will cause alarms.
 
 -   WITH ADMIN OPTION
 
@@ -657,4 +656,3 @@ openGauss=# DROP USER joe CASCADE;
 ## Helpful Links<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
 [REVOKE](revoke.md)  and  [ALTER DEFAULT PRIVILEGES](alter-default-privileges.md)
-

@@ -15,7 +15,15 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3569181053017"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p3569191063018"><a name="p3569191063018"></a><a name="p3569191063018"></a>prpubid</p>
+<tbody><tr id="row78611571538"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1333112917367"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.58%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a><a name="zh-cn_topic_0283137298_zh-cn_topic_0237122310_p1433462923615"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.28%" headers="mcps1.2.5.1.3 ">&nbsp;</td>
+<td class="cellrowborder" valign="top" width="51.13999999999999%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137298_en-us_topic_0237122310_p0334429173619"><a name="en-us_topic_0283137298_en-us_topic_0237122310_p0334429173619"></a><a name="en-us_topic_0283137298_en-us_topic_0237122310_p0334429173619"></a>Row identifier (hidden attribute, which must be specified). </p>
+</td>
+</tr>
+    <tr id="row3569181053017"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p3569191063018"><a name="p3569191063018"></a><a name="p3569191063018"></a>prpubid</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.58%" headers="mcps1.2.5.1.2 "><p id="p175691710143010"><a name="p175691710143010"></a><a name="p175691710143010"></a>oid</p>
 </td>
@@ -35,4 +43,3 @@
 </tr>
 </tbody>
 </table>
-

@@ -2,7 +2,7 @@
 
 Schemas function as models. Schema management allows multiple users to use the same database without mutual impacts, to organize database objects as manageable logical groups, and to add third-party applications to the same schema without causing conflicts.
 
-Each database has one or more schemas. Each schema contains tables and other types of objects. When a database is initially created, it has a schema named  **PUBLIC**  by default, and all users have the usage permission on the schema. Only the system administrator and initial users can create functions, stored procedures, and synonyms in the  **PUBLIC**  schema. Other users cannot create the three types of objects even if they have the create permission. You can group database objects by schema. A schema is similar to an OS directory but cannot be nested.
+Each database has one or more schemas. Each schema contains tables and other types of objects. When a database is initially created, it has a public schema by default, and all users have the usage permission on the schema. Only the system administrator and initial users can create common functions, aggregate functions, stored procedures, and synonym objects in the public schema. Only the initial users can create operators in the public schema. Other users cannot create the preceding five types of objects even if they are granted the create permission. You can group database objects by schema. A schema is similar to an OS directory but cannot be nested.
 
 The same database object name can be used in different schemas of the same database without causing conflicts. For example, both  **a\_schema**  and  **b\_schema**  can contain a table named  **mytable**. Users with required permissions can access objects across multiple schemas of the same database.
 
@@ -134,5 +134,3 @@ When you execute the CREATE USER statement to create a user, the system creates 
     openGauss=# DROP SCHEMA test1;
     DROP SCHEMA
     ```
-
-

@@ -13,7 +13,7 @@
 ## Syntax<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
 
 ```
-CREATE DATABASE database_name
+CREATE DATABASE [IF NOT EXISTS] database_name
     [ [ WITH ] { [ OWNER [=] user_name ] |
                [ TEMPLATE [=] template ] |
                [ ENCODING [=] encoding ] |
@@ -829,6 +829,3 @@ openGauss=# DROP DATABASE ora_compatible_db;
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
     If the new database Encoding, LC-Collate, or LC\_Ctype does not match the template database \(SQL\_ASCII\) \(**'GBK'**,  **'UTF8'**, or  **'LATIN1'**\),  **template \[=\] template0**  must be specified.
-
-
-

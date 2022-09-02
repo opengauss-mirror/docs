@@ -646,7 +646,7 @@
 
 -   add\_months\(d,n\)
 
-    Description: Returns the date  _date_  plus  _integer_  months.
+    Description: Returns the date  *date*  plus  *integer*  months.
 
     Return type: timestamp
 
@@ -662,7 +662,7 @@
 
 -   last\_day\(d\)
 
-    Description: Returns the date of the last day of the month that contains  _date_.
+    Description: Returns the date of the last day of the month that contains  *date*.
 
     Return type: timestamp
 
@@ -892,27 +892,28 @@
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >There are multiple methods for obtaining the current time. Select an appropriate API based on the actual service scenario.
     >1.  The following APIs return values based on the start time of the current transaction:
-    >    ```
-    >    CURRENT_DATE CURRENT_TIME CURRENT_TIMESTAMP CURRENT_TIME(precision) CURRENT_TIMESTAMP(precision) LOCALTIME LOCALTIMESTAMP LOCALTIME(precision) LOCALTIMESTAMP(precision)
-    >    ```
-    >    **CURRENT\_TIME**  and  **CURRENT\_TIMESTAMP**  transfer values with time zones. The values of  **LOCALTIME**  and  **LOCALTIMESTAMP**  do not contain time zone information.  **CURRENT\_TIME**,  **CURRENT\_TIMESTAMP**,  **LOCALTIME**, and  **LOCALTIMESTAMP**  can be optionally attached with a precision parameter, which rounds the second field of the result to the specified decimal place. If there is no precision parameter, the result is given the full precision that can be obtained.
-    >    Because these functions all return results by the start time of the current transaction, their values do not change throughout the transaction. We think this is a feature with the purpose to allow a transaction to have a consistent concept at the "current" time, so that multiple modifications in the same transaction can maintain the same timestamp.
+    >  ```
+    >  CURRENT_DATE CURRENT_TIME CURRENT_TIME(precision) CURRENT_TIMESTAMP(precision) LOCALTIME LOCALTIMESTAMP LOCALTIME(precision) LOCALTIMESTAMP(precision)
+    >  ```
+    >  **CURRENT\_TIME** and **CURRENT\_TIMESTAMP(precision)** transfer values with time zones. The values of **LOCALTIME** and **LOCALTIMESTAMP** do not contain time zone information. **CURRENT\_TIME**, **LOCALTIME**, and **LOCALTIMESTAMP** can be optionally attached with a precision parameter, which rounds the second field of the result to the specified decimal place. If there is no precision parameter, the result is given the full precision that can be obtained.
+    >  Because these functions all return results by the start time of the current transaction, their values do not change throughout the transaction. We think this is a feature with the purpose to allow a transaction to have a consistent concept at the "current" time, so that multiple modifications in the same transaction can maintain the same timestamp.
+    >
     >2.  The following APIs return the start time of the current statement:
-    >    ```
-    >    transaction_timestamp() statement_timestamp() now()
-    >    ```
-    >    **transaction\_timestamp\(\)**  is equivalent to  **CURRENT\_TIMESTAMP**, and its name clearly reflects its return value.  **statement\_timestamp\(\)**  returns the start time of the current statement \(more accurately, the time when the last instruction is received from the client\). The return values of  **statement\_timestamp\(\)**  and  **transaction\_timestamp\(\)**  are the same during the execution of the first instruction of a transaction, but may be different in subsequent instructions.
-    >    **now\(\)**  is equivalent to  **transaction\_timestamp\(\)**.
-    >    1.  The following APIs return the actual current time when the function is invoked:
-    >        ```
-    >        clock_timestamp() timeofday() 
-    >        ```
-    >        **clock\_timestamp\(\)**  returns the actual current time, and its value changes even in the same SQL instruction. Similar to  **clock\_timestamp\(\)**,  **timeofday\(\)**  also returns the actual current time. However, the result of  **timeofday\(\)**  is a formatted text string instead of a timestamp with time zone information.
+    >  ```
+    >  transaction_timestamp() statement_timestamp() now()
+    >  ```
+    >  **transaction\_timestamp\(\)** is equivalent to **CURRENT\_TIMESTAMP(precision)**, and its name clearly reflects its return value. **statement\_timestamp\(\)** returns the start time of the current statement (more accurately, the time when the last instruction is received from the client). The return values of **statement\_timestamp\(\)** and **transaction\_timestamp\(\)** are the same during the execution of the first instruction of a transaction, but may be different in subsequent instructions.
+    >  **now\(\)** is equivalent to **transaction\_timestamp\(\)**.
+    >  1.  The following APIs return the actual current time when the function is called:
+    >      ```
+    >      clock_timestamp() timeofday() 
+    >      ```
+    >      **clock\_timestamp\(\)** returns the actual "current" time, and its value changes even in the same SQL instruction. Similar to **clock\_timestamp\(\)**, **timeofday\(\)** also returns the actual current time. However, the result of **timeofday\(\)** is a formatted text string instead of a timestamp with time zone information.
 
 
 ## TIMESTAMPDIFF<a name="en-us_topic_0283136846_section5629194495516"></a>
 
--   **TIMESTAMPDIFF\(**_unit , timestamp\_expr1, timestamp\_expr2_**\)**
+-   **TIMESTAMPDIFF\(***unit , timestamp\*expr1, timestamp\_expr2_**\)**
 
 The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  –  **timestamp\_expr1**  in the specified unit.  **timestamp\_expr1**  and  **timestamp\_expr2**  must be value expressions of the  **timestamp**,  **timestamptz**, or** date**  type.  **unit**  determines the unit of the difference between two dates.
 
@@ -1601,4 +1602,3 @@ openGauss=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 >-   If the range of the input two-digit year is between 50 and 99:
 >    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year equal to the first two digits of the current year minus 1.
 >    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.
-

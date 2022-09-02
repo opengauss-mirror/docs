@@ -13,16 +13,11 @@ openGauss provides client and server applications \(tools\) to help users better
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0287276012_en-us_topic_0237152139_row429233975110"><td class="cellrowborder" rowspan="2" valign="top" width="15.290000000000001%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287276012_en-us_topic_0237152139_p1629218390514"><a name="en-us_topic_0287276012_en-us_topic_0237152139_p1629218390514"></a><a name="en-us_topic_0287276012_en-us_topic_0237152139_p1629218390514"></a><a href="client-tool.md">Client tool</a></p>
+<tbody><tr id="en-us_topic_0287276012_en-us_topic_0237152139_row429233975110"><td class="cellrowborder" rowspan="1" valign="top" width="15.290000000000001%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287276012_en-us_topic_0237152139_p1629218390514"><a name="en-us_topic_0287276012_en-us_topic_0237152139_p1629218390514"></a><a name="en-us_topic_0287276012_en-us_topic_0237152139_p1629218390514"></a><a href="client-tool.md">Client tool</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287276012_en-us_topic_0237152139_p11292103955117"><a name="en-us_topic_0287276012_en-us_topic_0237152139_p11292103955117"></a><a name="en-us_topic_0287276012_en-us_topic_0237152139_p11292103955117"></a><a href="gsql.md">gsql</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="66.10000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287276012_en-us_topic_0237152139_en-us_topic_0059778199_p168688291226"><a name="en-us_topic_0287276012_en-us_topic_0237152139_en-us_topic_0059778199_p168688291226"></a><a name="en-us_topic_0287276012_en-us_topic_0237152139_en-us_topic_0059778199_p168688291226"></a><strong id="b1675244914401"><a name="b1675244914401"></a><a name="b1675244914401"></a>gsql</strong> is a database connection tool provided by openGauss and runs in the command-line interface (CLI). Users can use <strong id="b107522049124018"><a name="b107522049124018"></a><a name="b107522049124018"></a>gsql</strong> to connect to a server and perform operations and maintenance on the server. In addition to basic functions for performing operations on a database, <strong id="b2753194918407"><a name="b2753194918407"></a><a name="b2753194918407"></a>gsql</strong> provides several advanced features for users.</p>
-</td>
-</tr>
-<tr id="row161111626171818"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p1611262631819"><a name="p1611262631819"></a><a name="p1611262631819"></a><a href="gs_loader.md">gs_loader</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p111121267180"><a name="p111121267180"></a><a name="p111121267180"></a><strong id="b1968775715011"><a name="b1968775715011"></a><a name="b1968775715011"></a>gs_loader</strong> is used to import data. <strong id="b18398731417"><a name="b18398731417"></a><a name="b18398731417"></a>gs_loader</strong> converts the syntax supported by control files to the \COPY syntax, uses the existing \COPY function to import data, and records the \COPY result in logs.</p>
 </td>
 </tr>
 <tr id="row11852632175112"><td class="cellrowborder" rowspan="13" valign="top" width="15.290000000000001%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287276012_p452655620107"><a name="en-us_topic_0287276012_p452655620107"></a><a name="en-us_topic_0287276012_p452655620107"></a><a href="server-tools.md">Server tool</a></p>
@@ -94,4 +89,3 @@ openGauss provides client and server applications \(tools\) to help users better
 </tr>
 </tbody>
 </table>
-

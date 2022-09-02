@@ -37,9 +37,11 @@ The  **option**  clause is used to configure information, including permissions 
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
     | RESOURCE POOL 'respool'
+    | USER GROUP 'groupuser'
     | PERM SPACE 'spacelimit'
     | TEMP SPACE 'tmpspacelimit'
     | SPILL SPACE 'spillspacelimit'
+    | NODE GROUP logic_cluster_name
     | IN ROLE role_name [, ...]
     | IN GROUP role_name [, ...]
     | ROLE role_name [, ...]
@@ -113,4 +115,3 @@ openGauss=# DROP USER dim CASCADE;
 ## Helpful Links<a name="en-us_topic_0283136891_en-us_topic_0237122125_en-us_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
 [ALTER USER](alter-user.md),  [CREATE ROLE](create-role.md), and  [DROP USER](drop-user.md)
-

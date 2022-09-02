@@ -46,7 +46,7 @@ None.
 -   Data can only be imported to the encrypted table by running  **copy from stdin**,  **\\copy**, or  **insert into values \(...\)**  on the client.
 -   Copying an encrypted table to a file is not supported.
 -   The system does not support encrypted queries, such as sorting, range query, and fuzzy query, except equality query.
--   The encrypted syntax of stored procedures for some functions is supported. For details about the constraints, see "Encrypted Functions and Stored Procedures" in the  _Developer Guide_.
+-   The encrypted syntax of stored procedures for some functions is supported. For details about the constraints, see "Encrypted Functions and Stored Procedures" in the  *Developer Guide*.
 -   Non-encrypted table data cannot be inserted into encrypted table data using the  **INSERT INTO... SELECT...**  or  **MERGE INTO**  syntax.
 -   For a request in connection state, the CEK information change on the server can be detected only after the cache update operation is triggered \(for example, the user is changed or the encrypted column fails to be decrypted\) and the connection is re-established.
 -   Encrypted equality query is not supported on columns encrypted using the random encryption algorithm.
@@ -54,6 +54,11 @@ None.
 -   Encrypted equality query is not supported in time series tables and foreign tables. The ustore storage engine is not supported.
 -   If the database service configuration \(such as the pg\_settings system catalog, permission, key, and encrypted column\) is changed, you need to re-establish a JDBC connection to make the configuration take effect.
 -   Multiple SQL statements cannot be executed at the same time. This constraint does not apply to the scenario where the INSERT INTO statement is executed in multiple batches.
+
+- The encrypted database does not encrypt empty strings of zero length.
+
+- Deterministic encryption is prone to frequency attacks. Therefore, it is not recommended that deterministic encryption be used in scenarios where the plaintext frequency is obviously distributed.
+
 -   Encrypted equality query supports the following data types:
 
     <a name="table1495331175519"></a>
@@ -166,4 +171,3 @@ None.
 ## Dependencies<a name="section22810484"></a>
 
 None.
-

@@ -8,7 +8,7 @@ Welcome to the repository of openGauss official documentation. This repository p
 
 ### Contributions
 
-We welcome your contributions. If you want to participate in the community documentation development, read the [Community Documentation Development Guide](https://gitee.com/opengauss/docs/wikis/%E6%8B%89%E5%8F%96%E4%B8%AA%E4%BA%BA%E5%88%86%E6%94%AF?sort_id=2783599). You must comply with the document writing specifications and submit the document according to the process rules. After the application is approved, the modification will be displayed on the document project and official website.
+We welcome your contributions. If you want to participate in the community documentation development, read the [贡献指导](contribute/贡献指导). You must comply with the document writing specifications and submit the document according to the process rules. After the application is approved, the modification will be displayed on the document project and official website.
 
 If you have any comments or suggestions on the document, please submit them in **Issues**.
 

@@ -26,7 +26,7 @@ None
 ## Constraints<a name="section1613131119346"></a>
 
 -   The database is normal, and the data directory has been written into environment variables and named  **PGDATA**.
--   If you log in to the database host as a Linux user, add  _$GAUSSHOME_**/bin**  to the  _PATH _environment variable so that you can directly run database O&M tools, such as gsql, gs\_guc, and gs\_ctl.
+-   If you log in to the database host as a Linux user, add  *$GAUSSHOME***/bin**  to the  *PATH _environment variable so that you can directly run database O&M tools, such as gsql, gs\*guc, and gs\_ctl.
 -   The recommended Python version is Python 3.6 or later. The required dependency has been installed in the operating environment, and the optimization program can be started properly.
 -   This tool consists of the agent and detector. Data is transmitted between the agent and detector in HTTP or HTTPS mode. Therefore, ensure that the agent server can communicate with the detector server properly.
 -   Detector module runs the server and monitor services, which need to be started separately.
@@ -35,4 +35,3 @@ None
 ## Dependencies<a name="section4228145683310"></a>
 
 None
-

@@ -336,7 +336,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   json\_extract\_path\(json, VARIADIC text\[\]\), jsonb\_extract\_path\(\(jsonb, VARIADIC text\[\]\)
 
-    Description: Equivalent to the operator  **\`\#\>\`**  searches for JSON based on the path specified by  _$2_  and returns the result.
+    Description: Equivalent to the operator  **\`\#\>\`**  searches for JSON based on the path specified by  *$2*  and returns the result.
 
     Return type: json, jsonb
 
@@ -353,14 +353,14 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   json\_extract\_path\_op\(json, text\[\]\), jsonb\_extract\_path\_op\(jsonb, text\[\]\)
 
-    Description: Same as the operator  **\`\#\>\`**, searches for JSON based on the path specified by  _$2_  and returns the result.
+    Description: Same as the operator  **\`\#\>\`**, searches for JSON based on the path specified by  *$2*  and returns the result.
 
     Return type: json, jsonb
 
     For example:
 
     ```
-      openGauss=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+      openGauss=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', ARRAY['f4','f6']);
        json_extract_path_op
       ---------------------
        "stringy"
@@ -387,14 +387,14 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   json\_extract\_path\_text\_op\(json, text\[\]\), jsonb\_extract\_path\_text\_op\(jsonb, text\[\]\)
 
-    Description: Same as the operator  **\`\#\>\`**, searches for JSON based on the path specified by  _$2_  and returns the result.
+    Description: Same as the operator  **\`\#\>\`**, searches for JSON based on the path specified by  *$2*  and returns the result.
 
     Return type: text, text
 
     For example:
 
     ```
-     openGauss=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+     openGauss=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', ARRAY['f4','f6']);
        json_extract_path_text_op
       --------------------------
        "stringy"
@@ -530,7 +530,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   json\_populate\_record\(anyelement, object-json \[, bool\]\), jsonb\_populate\_record\(anyelement, object-jsonb \[, bool\]\)
 
-    Description:  _$1_  must be a compound parameter. Each key-value in the  **object-json**  file is split. The key is used as the column name to match the column name in  _$1_  and fill in the  _$1_  format.
+    Description:  *$1*  must be a compound parameter. Each key-value in the  **object-json**  file is split. The key is used as the column name to match the column name in  *$1*  and fill in the  *$1*  format.
 
     Return type: anyelement, anyelement
 
@@ -557,7 +557,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   json\_populate\_record\_set\(anyelement, array-json \[, bool\]\), jsonb\_populate\_record\_set\(anyelement, array-jsonb \[, bool\]\)
 
-    Description: Performs the preceding operations on each element in the  _$2_  array by referring to the  **json\_populate\_record**  and  **jsonb\_populate\_record**  functions. Therefore, each element in the  _$2_  array must be of the  **object-json**  type.
+    Description: Performs the preceding operations on each element in the  *$2*  array by referring to the  **json\_populate\_record**  and  **jsonb\_populate\_record**  functions. Therefore, each element in the  *$2*  array must be of the  **object-json**  type.
 
     Return type: setof anyelement, setof anyelement
 
@@ -757,7 +757,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   - jsonb\_contained\(jsonb, jsonb\)
 
-    Description: Same as the operator  **\`<@\`**, determines whether all elements in_ $1_  exist at the top layer of  _$2_.
+    Description: Same as the operator  **\`<@\`**, determines whether all elements in_ $1_  exist at the top layer of  *$2*.
 
     Return type: Boolean
 
@@ -774,7 +774,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   - jsonb\_contains\(jsonb, jsonb\)
 
-    Description: Same as the operator  **\`@\>\`**, checks whether all top-layer elements in  _$1_  are contained in  _$2_.
+    Description: Same as the operator  **\`@\>\`**, checks whether all top-layer elements in  *$1*  are contained in  *$2*.
 
     Return type: Boolean
 
@@ -791,7 +791,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   - jsonb\_exists\(jsonb, text\)
 
-    Description: Same as the operator  **\`?\`**, determines whether all elements in the string array  _$2_  exist at the top layer of  _$1_  in the form of  **key\\elem\\scalar**.
+    Description: Same as the operator  **\`?\`**, determines whether all elements in the string array  *$2*  exist at the top layer of  *$1*  in the form of  **key\\elem\\scalar**.
 
     Return type: Boolean
 
@@ -808,7 +808,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   - jsonb\_exists\_all\(jsonb, text\[\]\)
 
-    Description: Same as the operator  **\`?&\`**, checks whether all elements in the string array  _$2_  exist at the top layer of  _$1_  in the form of  **key\\elem\\scalar**.
+    Description: Same as the operator  **\`?&\`**, checks whether all elements in the string array  *$2*  exist at the top layer of  *$1*  in the form of  **key\\elem\\scalar**.
 
     Return type: Boolean
 
@@ -825,7 +825,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
 
 -   - jsonb\_exists\_any\(jsonb, text\[\]\)
 
-    Description: Same as the operator  **\`?|\`**, checks whether all elements in the string array  _$2_  exist at the top layer of  _$1_  in the form of  **key\\elem\\scalar**.
+    Description: Same as the operator  **\`?|\`**, checks whether all elements in the string array  *$2*  exist at the top layer of  *$1*  in the form of  **key\\elem\\scalar**.
 
     Return type: Boolean
 
@@ -1011,5 +1011,3 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
      json_object_agg_transfn
      json_object_agg_finalfn
     ```
-
-

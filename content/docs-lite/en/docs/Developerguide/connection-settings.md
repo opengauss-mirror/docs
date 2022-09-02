@@ -40,7 +40,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   When setting the port number, ensure that the port number is not in use. When setting the port numbers of multiple instances, ensure that the port numbers do not conflict.
 >-   Ports 1 to 1023 are reserved for the operating system. Do not use them.
->-   When the database instance is installed using the configuration file, pay attention to the ports reserved in the communication matrix in the configuration file. For example,  _dataPortBase_  + 1 needs to be reserved as the port used by internal tools, and  _dataPortBase_  + 6 needs to be reserved as the communication port of the flow engine message queue. Therefore, during database instance installation, the maximum port number is  **65529**  for DNs. Ensure that the port number does not conflict with each other.
+>-   When the database instance is installed using the configuration file, pay attention to the ports reserved in the communication matrix in the configuration file. For example,  *dataPortBase*  + 1 needs to be reserved as the port used by internal tools, and  *dataPortBase*  + 6 needs to be reserved as the communication port of the flow engine message queue. Therefore, during database instance installation, the maximum port number is  **65529**  for DNs. Ensure that the port number does not conflict with each other.
 
 **Default value**:  **5432**  \(The actual value is specified in the configuration file during installation.\)
 
@@ -50,7 +50,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer. The minimum value is  **10**  \(greater than the value of  _max\_wal\_senders_\). The theoretical maximum value is  **262143**. The actual maximum value is a dynamic value, which is calculated using the formula 262143 – value of  _job\_queue\_processes_  – value of  _autovacuum\_max\_workers_  – value of  _AUXILIARY\_BACKENDS_  – value of  _AV\_LAUNCHER\_PROCS_. The values of  [_job\_queue\_processes_](scheduled-task.md#en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section10342177134137),  _[autovacuum\_max\_workers](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)_, and  _[max\_inner\_tool\_connections](#en-us_topic_0283136886_section132711513143211)_  depend on the settings of the corresponding GUC parameters.  _AUXILIARY\_BACKENDS_  indicates the number of reserved auxiliary threads, which is fixed at 20.  _AV\_LAUNCHER\_PROCS_  indicates the number of reserved launcher threads for autovacuum, which is fixed at 2.
+**Value range**: an integer. The minimum value is  **10**  \(greater than the value of  *max\*wal\_senders_\). The theoretical maximum value is  **262143**. The actual maximum value is a dynamic value, which is calculated using the formula 262143 – value of  *job\*queue\_processes_  – value of  *autovacuum\*max\_workers_  – value of  *AUXILIARY\*BACKENDS_  – value of  *AV\*LAUNCHER\_PROCS_. The values of  [*job\*queue\_processes_](scheduled-task.md#en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section10342177134137),  *[autovacuum\*max\_workers](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)*, and  _[max\*inner\_tool\_connections](#en-us_topic_0283136886_section132711513143211)_  depend on the settings of the corresponding GUC parameters.  *AUXILIARY\*BACKENDS_  indicates the number of reserved auxiliary threads, which is fixed at 20.  *AV\*LAUNCHER\_PROCS_  indicates the number of reserved launcher threads for autovacuum, which is fixed at 2.
 
 **Default value**:
 
@@ -63,12 +63,12 @@ Retain the default value of this parameter on the primary node of the databases.
 
 **Impact of incorrect configuration:**
 
--   If the value of  _max\_connections_  is too large and exceeds the dynamic maximum value described in the formula, the node fails to be started and the error message " invalid value for parameter "max\_connections"" is displayed.
--   If only the value of  _max\_connections_  is increased while the memory parameter is not adjusted in proportion according to the external egress specifications, when the service load is heavy, the memory may be insufficient, and the error message "memory is temporarily unavailable" is displayed.
+-   If the value of  *max\*connections_  is too large and exceeds the dynamic maximum value described in the formula, the node fails to be started and the error message " invalid value for parameter "max\_connections"" is displayed.
+-   If only the value of  *max\*connections_  is increased while the memory parameter is not adjusted in proportion according to the external egress specifications, when the service load is heavy, the memory may be insufficient, and the error message "memory is temporarily unavailable" is displayed.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   If the number of connections of the administrator exceeds the value of  _max\_connections_, the administrator can still connect to the database after the connections are used up by common users. If the number of connections exceeds the value of  _sysadmin\_reserved\_connections_, an error is reported. That is, the maximum number of connections of the administrator is equal to the value of  _max\_connections_  +  _sysadmin\_reserved\_connections_.
->-   For common users, internal jobs use some connections. Therefore, the value of this parameter is slightly less than that of  _max\_connections_. The value depends on the number of internal connections.
+>-   If the number of connections of the administrator exceeds the value of  *max\*connections_, the administrator can still connect to the database after the connections are used up by common users. If the number of connections exceeds the value of  *sysadmin\*reserved\_connections_, an error is reported. That is, the maximum number of connections of the administrator is equal to the value of  *max\*connections_  +  *sysadmin\*reserved\_connections_.
+>-   For common users, internal jobs use some connections. Therefore, the value of this parameter is slightly less than that of  *max\*connections_. The value depends on the number of internal connections.
 
 ## max\_inner\_tool\_connections<a name="en-us_topic_0283136886_section132711513143211"></a>
 
@@ -76,7 +76,7 @@ Retain the default value of this parameter on the primary node of the databases.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to  _MIN_  \(which takes the smaller value between  **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connections_, see the preceding description.
+**Value range**: an integer ranging from 1 to  *MIN*  \(which takes the smaller value between  **262143**  and  *max\*connections_\). For details about how to calculate the value of  *max\*connections_, see the preceding description.
 
 **Default value**:  **10**  for each database node. If the default value is greater than the maximum value supported by the kernel \(determined when the  **gs\_initdb**  command is executed\), an error message is displayed.
 
@@ -88,13 +88,15 @@ If this parameter is set to a large value, openGauss requires more System V shar
 
 ## sysadmin\_reserved\_connections<a name="en-us_topic_0283136886_en-us_topic_0237124695_en-us_topic_0059777636_scd9eb4b789bd41c39bc47e632f518c53"></a>
 
-**Parameter description**: Specifies the minimum number of connections reserved for administrators. You are advised not to set this parameter to a large value. This parameter is used together with the  _max\_connections_  parameter. The maximum number of connections of the administrator is equal to the value of  _max\_connections_  +  _sysadmin\_reserved\_connections_.
+**Parameter description**: Specifies the minimum number of connections reserved for administrators. You are advised not to set this parameter to a large value. This parameter is used together with the  *max\*connections_  parameter. The maximum number of connections of the administrator is equal to the value of  *max\*connections_  +  *sysadmin\*reserved\_connections_.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _MIN_  \(which takes the smaller value between  **262143**  and  _max\_connections_\). For details about how to calculate the value of  _max\_connections_, see the preceding description.
+**Value range**: an integer ranging from 0 to  *MIN*  \(which takes the smaller value between  **262143**  and  *max\*connections_\). For details about how to calculate the value of  *max\*connections_, see the preceding description.
 
 **Default value**:  **3**
+
+Note: When the thread pool function is enabled, if the thread pool is fully occupied, a processing bottleneck occurs. As a result, connections reserved by the administrator cannot be established. In this case, you can use gsql to establish connections through the primary port number + 1 to clear useless sessions.
 
 ## unix\_socket\_directory<a name="en-us_topic_0283136886_en-us_topic_0237124695_en-us_topic_0059777636_s29dfb1c7d5124f6aa26c7465d2e43c6d"></a>
 
@@ -175,4 +177,3 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 >    {"driver_name":"ODBC","driver_version": "(openGauss X.X.X build 13b34b53) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 release","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}
 >    ```
 >    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](connecting-to-a-database-1.md).
-

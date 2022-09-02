@@ -18,7 +18,7 @@ The CEK object created using this syntax can be used for column-level encryption
 ## Syntax<a name="section182042586132"></a>
 
 ```
-CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH(CLIENT_MASTER_KEY = client_master_key_name, ALGORITHM = algorithm_type, ENCRYPTED_VALUE = encrypted_value);
+CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH VALUES(CLIENT_MASTER_KEY = client_master_key_name, ALGORITHM = algorithm_type, ENCRYPTED_VALUE = encrypted_value);
 ```
 
 ## Parameter Description<a name="section32041258181311"></a>
@@ -54,4 +54,3 @@ CREATE COLUMN ENCRYPTION KEY
 openGauss=> CREATE COLUMN ENCRYPTION KEY another_cek WITH VALUES (CLIENT_MASTER_KEY = a_cmk, ALGORITHM  = SM4_SM3);
 CREATE COLUMN ENCRYPTION KEY
 ```
-

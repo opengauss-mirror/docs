@@ -219,7 +219,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_
+**Value range**: an integer ranging from 0 to  *INT\*MAX_
 
 **Default value**:  **200**
 
@@ -274,38 +274,6 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 -   **off**  indicates that the DFS partitioned table is not dynamically or statically optimized.
 
 **Default value**:  **on**
-
-## expected\_computing\_nodegroup<a name="en-us_topic_0283136675_en-us_topic_0237124716_section746841514523"></a>
-
-**Parameter description**: Specifies a computing Node Group or the way to choose such a group. The Node Group mechanism is now for internal use only. You do not need to set it.
-
-During join or aggregation operations, a Node Group can be selected in four modes. In each mode, the specified candidate computing Node Groups are listed for the optimizer to select the most appropriate one for the current operator.
-
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: a string
-
--   **optimal**: The list of candidate computing Node Groups consists of the Node Groups where the operator's operation objects are located and the Node Group that combines all the Node Groups on which the current user has the COMPUTE permission.
--   **query**: The list of candidate computing Node Groups consists of the Node Groups where the operator's operation objects are located and the Node Group that combines all the Node Groups where base tables involved in the query are located.
--   _Node group name_  \(when  **[enable\_nodegroup\_debug](#en-us_topic_0283136675_en-us_topic_0237124716_section1426622145210)**  is set to  **off**\): The list of candidate computing Node Groups consists of the Node Group where the operator's operation objects are located and the specified Node Group.
--   _Node Group name_  \(when  **[enable\_nodegroup\_debug](#en-us_topic_0283136675_en-us_topic_0237124716_section1426622145210)**  is set to  **on**\): A specific Node Group is used as the computing Node Group.
-
-**Default value**:  **query**
-
-## enable\_nodegroup\_debug<a name="en-us_topic_0283136675_en-us_topic_0237124716_section1426622145210"></a>
-
-**Parameter description**: Specifies whether the optimizer assigns computing workloads to a specific Node Group when multiple Node Groups exist in an environment. The Node Group mechanism is now for internal use only. You do not need to set it.
-
-This parameter takes effect only when  **[expected\_computing\_nodegroup](#en-us_topic_0283136675_en-us_topic_0237124716_section746841514523)**  is set to a specific Node Group.
-
-This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: Boolean
-
--   **on**  indicates that computing workloads are assigned to the Node Group specified by  **expected\_computing\_nodegroup**.
--   **off**  indicates no Node Group is specified to compute.
-
-**Default value**:  **off**
 
 ## qrw\_inlist2join\_optmode<a name="en-us_topic_0283136675_en-us_topic_0237124716_section207996212178"></a>
 
@@ -382,4 +350,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **optimal**: On the basis of  **force**, the optimizer determines whether to convert a query statement into a vectorized execution plan based on the query complexity to avoid performance deterioration after the conversion.
 
 **Default value**:  **off**
-

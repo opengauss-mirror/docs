@@ -13,7 +13,7 @@ Session parameters modified by  **ALTER USER**  apply to a specified user and ta
 -   Modify user permissions or other information.
 
     ```
-    ALTER USER user_name [ [ WITH ] option [ ... ] ];
+    ALTER USER [IF EXISTS] user_name [ [ WITH ] option [ ... ] ];
     ```
 
     The  **option**  clause is as follows:
@@ -115,4 +115,3 @@ See  [Examples](create-user.md#en-us_topic_0283136891_en-us_topic_0237122125_en-
 ## Helpful Links<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
 [CREATE ROLE](create-role.md),  [CREATE USER](create-user.md), and  [DROP USER](drop-user.md)
-

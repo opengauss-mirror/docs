@@ -2055,9 +2055,10 @@ The  **Error Code**  column displays the condition names \(case insensitive\) us
 </tbody>
 </table>
 
-**Table  2**  SQLSTATE values of the GaussDB Kernel CM error codes
+**Table  2**  SQLSTATE values of the CM error codes
 
 <a name="table548617911814"></a>
+
 <table><thead align="left"><tr id="row174871598183"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.2.3.1.1"><p id="p1352583209"><a name="p1352583209"></a><a name="p1352583209"></a>Class c0 - Connection Exception</p>
 </th>
 </tr>
