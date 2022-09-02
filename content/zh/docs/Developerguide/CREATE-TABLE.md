@@ -46,6 +46,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       CHECK ( expression ) |
       DEFAULT default_expr |
       AUTO_INCREMENT |
+      ON UPDATE update_expr |
       UNIQUE index_parameters |
       ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
       PRIMARY KEY index_parameters |
@@ -223,14 +224,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。
     >
     >-   对于分区表EXCLUDING，需要配合INCLUDING ALL使用，如INCLUDING ALL EXCLUDING DEFAULTS，除源分区表的DEFAULTS，其它全包含。
-
--   **AUTO\_INCREMENT \[ = \] value**
-
-
-    这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >该子句仅在参数sql\_compatibility=B时有效。
 
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
