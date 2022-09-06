@@ -2,7 +2,7 @@
 
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
 1. 新增```DIV/MOD/XOR```操作符。
-2. 新增```truncate/rand```函数。
+2. 新增```truncate/rand/crc32/conv```函数。
 
 -   DIV
 
@@ -75,5 +75,43 @@
            rand
     -------------------
      0.254671605769545
+    (1 row)
+    ```
+
+-   crc32\(string\)
+
+    描述：计算string的crc32数值
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    openGauss=# SELECT crc32('abc');
+       crc32
+    -----------
+     891568578
+    (1 row)
+    ```
+
+-   conv\(input in, current_base int, new_base int\)
+
+    描述：将数字或字符串从一个数字基本系统转换为另一个数字基本系统。in支持数字和字符串两种类型
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    openGauss=# SELECT conv(20, 10, 2);
+     conv
+    -------
+     10100
+    (1 row)
+
+    openGauss=# SELECT conv('8D', 16, 10);
+     conv
+    ------
+     141
     (1 row)
     ```
