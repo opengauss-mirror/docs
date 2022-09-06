@@ -6,14 +6,24 @@
 gs_dbmind set TSDB host 127.0.0.1 -c confpath
 ```
 
-在修改上述普通参数时，与手动修改配置文件dbmind.conf无差异。但是，当用户想要修改密码项时，则必须通过该命令才可以实现修改，否则通过用户手动修改的配置文件无法实现对明文密码的加密，例如：
+在修改上述普通参数时，与手动修改配置文件dbmind.conf无差异。但由于DBMind的配置文件中不保存明文密码（如过用户使用明文密码，则DBMind会提示并退出），故当用户想要修改密码项时，有两种方法进行修改，一种是先修改dbmind.conf，并通过以下命令实现配置文件的重新初始化：
 
 ```
-gs_dbmind set METADATABASE password xxxxxx -c confpath
+gs_dbmind service setup --initialize -c confpath
 ```
+
+另一种方法则是直接通过set子命令进行设置，如：
+
+```
+gs_dbmind set METADATABASE password xxxxx -c confpath
+```
+
+
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->该命令对于字符串是大小写敏感的，如果输错则可能出现执行过程错误。
+>
+>+ 该命令对于字符串是大小写敏感的，如果输错则可能出现执行过程错误。
+>+ 由于set子命令涉及的参数值类型很多，故只会对设置值进行初步检查，用户需要保证输入值的内容正确，如某些值应为正整数而非负数。
 
 ## 命令参考<a name="section1636514213451"></a>
 
