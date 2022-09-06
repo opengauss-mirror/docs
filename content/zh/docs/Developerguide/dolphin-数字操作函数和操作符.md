@@ -1,0 +1,79 @@
+# 数字操作函数和操作符<a name="ZH-CN_TOPIC_0289900469"></a>
+
+相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
+1. 新增```DIV/MOD/XOR```操作符。
+2. 新增```truncate/rand```函数。
+
+-   DIV
+
+    描述：除（取整）
+
+    示例：
+
+    ```
+    openGauss=# SELECT 8 DIV 3 AS RESULT;
+     result 
+    --------
+          2
+    (1 row)
+    ```
+
+-   MOD
+
+    描述：模（求余）
+
+    示例：
+
+    ```
+    openGauss=# SELECT 4 MOD 3 AS RESULT;
+     result 
+    --------
+          1
+    (1 row)
+    ```
+
+-   XOR
+
+    描述：二进制XOR
+
+    示例：
+
+    ```
+    openGauss=# SELECT 4 XOR 3 AS RESULT;
+     result 
+    --------
+          0
+    (1 row)
+    ```
+
+-   truncate\(v numeric, s int\)
+
+    描述：截断为s位小数。等价于trunc
+
+    返回值类型：numeric
+
+    示例：
+
+    ```
+    openGauss=# SELECT truncate(42.4382, 2);
+     truncate
+    ----------
+        42.43
+    (1 row)
+    ```
+
+-   rand\(\)
+
+    描述：0.0到1.0之间的随机数。等价于random
+
+    返回值类型：double precision
+
+    示例：
+
+    ```
+    openGauss=# SELECT rand();
+           rand
+    -------------------
+     0.254671605769545
+    (1 row)
+    ```
