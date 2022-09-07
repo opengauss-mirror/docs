@@ -31,42 +31,102 @@ gs_dbmind service setup -c confpath --interactive
     gs_dbmind service setup -c confpath
     ```
 
-2.  执行完上述命令后，会在confpath目录下生成dbmind.conf配置文件，用户需要利用文本编辑器进行手动修改。需要修改的配置部分为“指标数据源数据库信息区【TSDB】”、“预测结果存储数据库信息区【METADATABASE】”和“自监控参数配置区【SELF-MONITORING】”相关参数的说明如下：
+2. 执行完上述命令后，会在confpath目录下生成dbmind.conf配置文件，用户需要利用文本编辑器进行手动修改。相关参数的说明如下：
 
-    ```
-    [TSDB] # 时序数据库相关信息，即指标数据源信息
-    name = prometheus # 时序数据库类型. 当前仅支持选择'prometheus'.
-    host = # 时序数据库IP地址.
-    port = # 时序数据库端口号.
-     
-    [METADATABASE] # 元数据库相关信息，及预测结果存储方式
-    dbtype = # 元数据库类型. 可选择: sqlite, opengauss, postgresql。若该配置项名为opengauss, 需关注Python驱动事宜，可参考下文中关于Python驱动的提示。
-    host = # 元数据库地址.
-    port = # 元数据库端口号.
-    username = # 元数据库用户信息.
-    password =  # 元数据库密码，将会被加密存储
-    database =  # 元数据库库名. 如果选择的数据库类型为SQLite, 则无需填写上述配置项，仅需填写此处。DBMind会根据database配置项的内容，在配置目录中生成对应文件名的SQLite数据库文件。
-     
-    [SELF-MONITORING] # 自监控参数配置
-    detection_interval = 600  # 单位秒. 对openGauss进行健康检查的时间间隔（仅慢SQL根因诊断使用）.
-    last_detection_time = 600  # 单位秒. 用于健康检查的监控数据长度（仅慢SQL根因诊断使用）.
-    forecasting_future_time = 3600  # 单位秒，时序预测的长度（供时序预测特性使用），同时也是预测功能调度周期
-    # 待时序预测进行预测的关键指标项（仅供时序预测特性使用）
-    golden_kpi = os_cpu_usage, os_mem_usage, gaussdb_qps_by_instance
-     
-    [LOG] # 日志相关信息
-    maxbytes = 10485760 # 默认值为 10Mb, 单个日志文件的最大大小.如果 maxbytes 为零，则文件无限增长（建议该值不要设置太小，默认即可）.
-    backupcount = 1 # 日志文件最大数量.
-    level = INFO  # 日志级别，也可配置为 DEBUG, INFO, WARNING, ERROR模式。
-    ```
+   ```
+   # TSDB 部分用于指定监控数据库系统的指标存储位置，目前只支持Prometheus.
+   # 此处，必填项为Prometheus的IP地址和端口号，其他选项（如username, password, ssl证书信息）取决于用户配置，非必须。
+   [TSDB]
+   name = prometheus # The type of time-series database. Options: prometheus.
+   host = # Address of time-series database.
+   port = # Port to connect to time-series database.
+   username = (null) # User name to connect to time-series database.
+   password = (null) # Password to connect to time-series database.
+   ssl_certfile = (null) # The certificate file for ssl connections.
+   ssl_keyfile = (null) # Certificate private key file.
+   ssl_keyfile_password = (null) # Password for ssl keyfile.
+   ssl_ca_file = (null)  # CA certificate to validate requests.
+   
+   # METADATABASE 部分用于指定DBMind生成的分析结果的存储位置。
+   # 当前支持的数据库类型有SQLite, openGauss以及PostgreSQL. 如果使用openGauss数据库的话，注意Python驱动psycopg2的兼容性问题，用户可以选择使用openGauss官方提供的驱动，也可以通过自行编译或修改GUC参数进行适配。
+   # 其他信息为连接到该数据库的连接信息，注意用户需要有数据库创建权限。
+   [METADATABASE]
+   dbtype = sqlite # Database type. Options: sqlite, opengauss, postgresql.
+   host = # Address of meta-data database.
+   port = # Port to connect to meta-data database.
+   username = # User name to connect to meta-data database.
+   password = (null) # Password to connect to meta-data database.
+   database = # Database name to connect to meta-data database.
+   
+   # WORKER 用于指定DBMind可以使用的worker子进程数量，如果写0则会进行自适应，即尽可能多地使用CPU资源。
+   [WORKER]
+   process_num = 0  # Number of worker processes on a local node. Less than or equal to zero means adaptive.
+   
+   # AGENT 部分用于指定DBMind连接到openGauss Agent的信息。通过使用该Agent，可以让DBMind获取到被监控实例的即时状态，从而提高分析准确性。同时，也可以向数据库实例下发一些变更动作，如结束某条慢SQL语句（这取决于此处配置的用户是否有足够的权限）。
+   # 该master_url 地址即为Agent的地址，由于openGauss-exporter承担了Agent的角色，故改地址也就是openGauss-exporter 的地址。
+   # 同时，openGauss-exporter是支持Https协议的，所以，此处也可以根据配置指定SSL证书。
+   [AGENT]
+   master_url =  # The agent URL of the master node. e.g., https://127.0.0.1:9187.
+   username = # Username to login the monitoring database. Credential for agent.
+   password = # Password to login the monitoring database. Credential for agent.
+   ssl_certfile = (null) # The certificate file for ssl connections.
+   ssl_keyfile = (null) # Certificate private key file.
+   ssl_keyfile_password = (null) # Password for ssl keyfile.
+   ssl_ca_file = (null)  # CA certificate to validate requests.
+   
+   # SELF-MONITORING 表示“自监控”配置，用于配置监控数据库实例时的参数。
+   # detection_interval 表示周期性检查任务的执行频次，单位是秒；
+   # last_detection_time 表示每一次检查任务使用的最近数据长度；
+   # forecasting_future_time 表示时序预测特性预测未来时间的长度；
+   # golden_kpi 表示“黄金KPI”，即重点关注的监控指标；
+   # result_storage_retention 表示诊断结果的最长保存时间。
+   [SELF-MONITORING]
+   detection_interval = 600  # Unit is second. The interval for performing health examination on the openGauss through monitoring metrics.
+   last_detection_time = 600  # Unit is second. The time for last detection.
+   forecasting_future_time = 3600  # Unit is second. How long the KPI in the future for forecasting. Meanwhile, this is the period for the forecast.
+   # The following golden_kpi of monitoring system is vital.
+   golden_kpi = os_cpu_usage, os_mem_usage, os_disk_usage, gaussdb_qps_by_instance  # DBMind only measures and detects the golden metrics in the anomaly detection processing.
+   result_storage_retention = 604800  # Unit is second. How long should the results retain? If retention is more than the threshold, DBMind will delete them.
+   
+   # SELF-OPTIMIZATION 表示“自优化”配置，可以修改下述参数配置，对DBMind的优化结果进行干预，一般使用默认值即可。
+   # optimization_interval 的优化任务执行间隔；
+   # max_reserved_period 优化结果的最大保存时间；
+   # max_index_num 索引建议结果上限；
+   # max_index_storage 推荐出的索引的页面占用磁盘空间的上限；
+   # max_template_num 索引推荐使用的SQL模板记录SQL语句的上限；
+   # kill_slow_query 是否启动慢SQL自动查杀，如果启动慢SQL自动查杀，可以通过set子命令设置查杀阈值，例如将查杀阈值设置为70秒，该值应为正整数，单位是秒：
+   # gs_dbmind set slow_sql_threshold max_elapsed_time 70
+   [SELF-OPTIMIZATION]
+   optimization_interval = 86400  # Unit is second. The interval for generating report.
+   max_reserved_period = 100 # Unit is day. Maximum retention time.
+   max_index_num = 10 # Maximum number of advised indexes.
+   max_index_storage = 100 # Unit is MB.
+   max_template_num = 5000 # Maximum number of templates.
+   kill_slow_query = false  # Whether to actively check and kill slow query. The default elapsed time of a slow query to be killed is 1 minute.
+   
+   # LOG表示设置DMBind的日志记录信息。
+   [LOG]
+   maxbytes = 10485760 # Default is 10Mb. Maximum size of a single log file. If maxbytes is zero, the file grows indefinitely.
+   backupcount = 1 # Number of backups of log files.
+   level = INFO  # Options: DEBUG, INFO, WARNING, ERROR.
+   
+   # 下列内容表示给用户进行交互配置时的提示信息，用户无需配置。
+   [COMMENT]
+   worker = The form of executing compute-intensive tasks. Tasks can be executed locally or distributed to multiple nodes for execution.
+   tsdb = Configure the data source for time series data, which come from monitoring the openGauss instance.
+   metadatabase = Configure the database to record meta-data, which the database can store meta-data for the forecasting and diagnosis process. The database should be an openGauss instance.
+   self-monitoring = Set up parameters for monitoring and diagnosing openGauss instance.
+   self-optimization = Set up parameters for openGauss optimization.
+   
+   ```
 
-3.  待用户手动修改完上述参数后，需要执行下述命令进行配置项的初始化。在该阶段中，DBMind会初步检查配置项的正确性、加密配置项中出现的明文密码、同时初始化用于存储结果数据的元数据库。
+3. 待用户手动修改完上述参数后，需要执行下述命令进行配置项的初始化。在该阶段中，DBMind会初步检查配置项的正确性、初始化用于存储结果数据的元数据库表结构和内容，同时也加密配置项中出现的明文密码。
 
-    ```
-    gs_dbmind service setup --initialize -c confpath
-    ```
+   ```
+   gs_dbmind service setup --initialize -c confpath
+   ```
 
-4.  完成配置目录初始化过程，可基于该配置目录启动DBMind后台服务。
+4. 完成配置目录初始化过程，可基于该配置目录启动DBMind后台服务。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >1. 配置文件注释信息用于在交互模式下对用户进行提示，有特殊含义不要手动修改或删除；  
