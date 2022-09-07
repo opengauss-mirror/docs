@@ -32,6 +32,25 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
 
+-   其中group子句为：
+
+    ```
+    ( )
+    | expression
+    | ( expression [, ...] )
+    | rollup_clause
+    | CUBE ( { expression | ( expression [, ...] ) } [, ...] )
+    | GROUPING SETS ( grouping_element [, ...] )
+    ```
+
+    rollup_clause子句为：
+
+    ```
+    ROLLUP ( { expression | ( expression [, ...] ) } [, ...] )
+    | { expression | ( expression [, ...] ) } WITH ROLLUP
+    ```
+
+
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
 -   **WHERE子句**
@@ -52,6 +71,41 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
 ----+------
   1 | too
 (1 row)
+```
+
+```
+--SELECT GROUP BY子句中使用ROLLUP。
+openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
+CREATE TABLESPACE
+openGauss=# CREATE TABLE t_with_rollup(id int, name varchar(20), area varchar(50), count int);
+CREATE TABLE
+openGauss=# INSERT INTO t_with_rollup values(1, 'a', 'A', 10);
+INSERT 0 1
+openGauss=# INSERT INTO t_with_rollup values(2, 'b', 'B', 15);
+INSERT 0 1
+openGauss=# INSERT INTO t_with_rollup values(2, 'b', 'B', 20);
+INSERT 0 1
+openGauss=# INSERT INTO t_with_rollup values(3, 'c', 'C', 50);
+INSERT 0 1
+openGauss=# INSERT INTO t_with_rollup values(3, 'c', 'C', 15);
+INSERT 0 1
+openGauss=# SELECT name, sum(count) FROM t_with_rollup GROUP BY ROLLUP(name);
+ name | sum
+------+-----
+ a    |  10
+ b    |  35
+ c    |  65
+      | 110
+(4 rows)
+
+openGauss=# SELECT name, sum(count) FROM t_with_rollup GROUP BY (name) WITH ROLLUP;
+ name | sum
+------+-----
+ a    |  10
+ b    |  35
+ c    |  65
+      | 110
+(4 rows)
 ```
 
 ## 相关链接<a name="section156744489391"></a>

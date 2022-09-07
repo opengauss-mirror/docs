@@ -23,34 +23,48 @@
 -   在表上创建索引。
 
     ```
-    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ]
+        { ON table_name [ USING method ] | [ USING method ] ON table_name }
         ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ index_option ]
         [ WHERE predicate ];
-
-        其中index_option为：
-        [ INCLUDE ( column_name [, ...] )]
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-        [ TABLESPACE tablespace_name ]
     ```
 
 -   在分区表上创建索引。
 
     ```
-    CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ]
+        { ON table_name [ USING method ] | [ USING method ] ON table_name }
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
         [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ index_option ]
-
-        其中index_option为：
-        [ INCLUDE ( column_name [, ...] )]
-        [ WITH ( { storage_parameter = value } [, ...] ) ]
-        [ TABLESPACE tablespace_name ];
-        
     ```
-## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
-TABLESPACE允许输入多次，以最后一次的输入为准。
+## 参数说明<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
+
+-   **column\_name ( length )**
+
+    创建一个基于该表一个字段的前缀键索引，column_name为前缀键的字段名，length为前缀长度。
+
+    前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
+
+    >![](public_sys-resources/icon-note.gif) **说明：**
+    >-  前缀键支持的索引方法：btree、ubtree。
+    >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
+    >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
+    >-  CREATE INDEX语法中，不支持以下关键字作为前缀键的字段名称：COALESCE、CONVERT、DAYOFMONTH、DAYOFWEEK、DAYOFYEAR、DB_B_FORMAT、EXTRACT、GREATEST、HOUR_P、IFNULL、LEAST、LOCATE、MICROSECOND_P、MID、MINUTE_P、NULLIF、NVARCHAR、NVL、OVERLAY、POSITION、QUARTER、SECOND_P、SUBSTR、SUBSTRING、TEXT_P、TIME、TIMESTAMP、TIMESTAMPDIFF、TREAT、TRIM、WEEKDAY、WEEKOFYEAR、XMLCONCAT、XMLELEMENT、XMLEXISTS、XMLFOREST、XMLPARSE、XMLPI、XMLROOT、XMLSERIALIZE。若含有上述关键字的前缀键所在的索引是通过ALTER TABLE或CREATE TABLE语法创建的，导出的CREATE INDEX语句可能无法成功执行，请尽量不要使用上述关键字作为前缀键的列名称。
+
+- **index\_option**
+
+    创建索引时可指定选项，其语法为：
+
+    ```
+    INCLUDE ( column_name [, ...] )
+    | WITH ( { storage_parameter = value } [, ...] )
+    | TABLESPACE tablespace_name
+    ```
+
+    其中，TABLESPACE选项允许输入多次，以最后一次的输入为准。
 
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 

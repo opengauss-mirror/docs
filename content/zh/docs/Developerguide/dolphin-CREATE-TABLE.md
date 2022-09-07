@@ -1,0 +1,93 @@
+# CREATE TABLE<a name="ZH-CN_TOPIC_0289900279"></a>
+
+## 功能描述<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
+
+在当前数据库中创建一个新的空白表，该表由命令执行者所有。
+
+## 注意事项<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
+
+-   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
+
+## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
+
+创建表。
+
+```
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
+    ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+        | table_constraint
+        | LIKE source_table [ like_option [...] ] }
+        [, ... ])
+    [ AUTO_INCREMENT [ = ] value ]
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
+    [ COMPRESS | NOCOMPRESS ]
+    [ TABLESPACE tablespace_name ]
+    [ COMMENT {=| } 'text' ];
+    [ create_option ]
+
+其中create_option为：
+
+        [ WITH ( {storage_parameter = value} [, ... ] ) ]
+        [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
+        [ COMPRESS | NOCOMPRESS ]
+        [ TABLESPACE tablespace_name ]
+        [ COMPRESSION [=] compression_arg ]
+        [ ENGINE [=] engine_name ]
+        [ COLLATE [=] collation_name ]
+        [ CHARSET [=] charset_name ]
+        [ ROW_FORMAT [=] row_format_name ]
+
+    除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
+```
+
+
+## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
+
+-   **data\_type**
+
+    字段的数据类型。
+
+    对枚举类型ENUM，以及CHAR, CHARACTER, VARCHAR, TEXT等字符类型，创建表格时可使用关键字CHARSET或CHARACTER SET声明列字符集。目前该特性仅做语法支持，不实现功能。
+
+-   **COLLATE collation**
+
+    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
+
+    对未被支持的排序规则，数据库将发出警告，并将该列设置为默认的排序规则。
+
+-   **{ CHARSET | CHARACTER SET } \[=\] charset_name**
+
+    用于选择表所使用的字符集；目前该特性仅有语法支持，不实现功能。
+
+-   **COLLATE \[=\] collation_name**
+
+    用于选择表所使用的排序规则；目前该特性仅有语法支持，不实现功能。
+
+-   **ROW_FORMAT \[=\] row_format_name**
+
+    用于选择表所使用的行存储格式；目前该特性仅有语法支持，不实现功能。
+
+## 示例<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
+
+```
+--创建表格时对列指定字符集。
+openGauss=# CREATE TABLE t_column_charset(c text CHARSET test_charset);
+WARNING:  character set "test_charset" for type text is not supported yet. default value set
+CREATE TABLE
+
+--创建表格时对表格指定字符序。
+openGauss=# CREATE TABLE t_table_collate(c text) COLLATE test_collation;
+WARNING:  COLLATE for TABLE is not supported for current version. skipped
+CREATE TABLE
+
+--创建表格时对表格指定字符集。
+openGauss=# CREATE TABLE t_table_charset(c text) CHARSET test_charset;
+WARNING:  CHARSET for TABLE is not supported for current version. skipped
+CREATE TABLE
+
+--创建表格时对表格指定行记录格式。
+openGauss=# CREATE TABLE t_row_format(c text) ROW_FORMAT test_row_format;
+WARNING:  ROW_FORMAT for TABLE is not supported for current version. skipped
+CREATE TABLE
+```

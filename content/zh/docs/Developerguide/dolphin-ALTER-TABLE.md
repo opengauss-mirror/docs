@@ -35,6 +35,13 @@
     ALTER TABLE table_name FORCE;
     ```
 
+-   重命名表。对名称的修改不会影响所存储的数据。
+
+    ```
+    ALTER TABLE [ IF EXISTS ] table_name 
+        RENAME { TO | AS } new_table_name;
+    ```
+
 ![](public_sys-resources/icon-note.gif) **说明：** 
 
 - **{DISABLE | ENABLE} KEYS**

@@ -2,6 +2,18 @@
 
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
+-   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
+
+-   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
+
+-   **[CREATE TABLESPACE](dolphin-CREATE-TABLESPACE.md)**
+
+-   **[INSERT](dolphin-INSERT.md)**
+
+-   **[SELECT](dolphin-SELECT.md)**
+
+-   **[UPDATE](dolphin-UPDATE.md)**
+
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**  
 
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**

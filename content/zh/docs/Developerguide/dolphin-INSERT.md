@@ -64,6 +64,8 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
         插入列类型的默认值。
 
+  IGNORE关键字不支持列存，无法在列存表中生效。
+
 -   **VALUES()**
 
     当GUC参数sql_mode为stric_all_tables时，为所有列插入NULL，否则如果对应字段名有缺省值，插入缺省值，如果没有缺省值，判断对应字段是否有not_null约束，没有插入NULL，有则插入类型基础值，具体基础值参考视图pg_type_basic_value。
@@ -74,6 +76,120 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
     该是insert into 的一种扩展语法。为防止insert into 时字段顺序与值顺序混乱造成写入错误。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
+
+### IGNORE关键字
+
+为使用ignore_error hint，需要创建B兼容模式的数据库，名称为db_ignore。
+```
+create database db_ignore dbcompatibility 'B';
+\c db_ignore
+```
+
+- **忽略非空约束**
+
+```
+db_ignore=# create table t_not_null(num int not null);
+CREATE TABLE
+-- 采用忽略策略
+db_ignore=# set sql_ignore_strategy = 'ignore_null';
+SET
+db_ignore=# insert /*+ ignore_error */ into t_not_null values(null), (1);
+WARNING:  null value in column "num" violates not-null constraint
+DETAIL:  Failing row contains (null).
+INSERT 0 1
+db_ignore=# select * from t_not_null ;
+ num 
+-----
+   1
+(1 row)
+
+-- 采用覆写策略
+db_ignore=# delete from t_not_null;
+db_ignore=# set sql_ignore_strategy = 'overwrite_null';
+SET
+db_ignore=# insert /*+ ignore_error */ into t_not_null values(null), (1);
+WARNING:  null value in column "num" violates not-null constraint
+DETAIL:  Failing row contains (null).
+INSERT 0 2
+db_ignore=# select * from t_not_null ;
+ num 
+-----
+   0
+   1
+(2 rows)
+```
+
+- **忽略唯一约束**
+
+```
+db_ignore=# create table t_unique(num int unique);
+NOTICE:  CREATE TABLE / UNIQUE will create implicit index "t_unique_num_key" for table "t_unique"
+CREATE TABLE
+db_ignore=# insert into t_unique values(1);
+INSERT 0 1
+db_ignore=# insert /*+ ignore_error */ into t_unique values(1),(2);
+WARNING:  duplicate key value violates unique constraint in table "t_unique"
+INSERT 0 1
+db_ignore=# select * from t_unique;
+ num 
+-----
+   1
+   2
+(2 rows
+```
+
+- **忽略分区表无法匹配到合法分区**
+
+```
+db_ignore=# CREATE TABLE t_ignore
+db_ignore-# (
+db_ignore(#     col1 integer NOT NULL,
+db_ignore(#     col2 character varying(60)
+db_ignore(# ) WITH(segment = on) PARTITION BY RANGE (col1)
+db_ignore-# (
+db_ignore(#     PARTITION P1 VALUES LESS THAN(5000),
+db_ignore(#     PARTITION P2 VALUES LESS THAN(10000),
+db_ignore(#     PARTITION P3 VALUES LESS THAN(15000)
+db_ignore(# );
+CREATE TABLE
+db_ignore=# insert /*+ ignore_error */ into t_ignore values(20000);
+WARNING:  inserted partition key does not map to any table partition
+INSERT 0 0
+db_ignore=# select * from t_ignore ;
+ col1 | col2 
+------+------
+(0 rows)
+```
+
+- **插入值向目标列类型转换失败**
+
+```
+-- 当新值类型与列类型同为数值类型
+db_ignore=# create table t_tinyint(num tinyint);
+CREATE TABLE
+db_ignore=# insert /*+ ignore_error */ into t_tinyint values(10000);
+WARNING:  tinyint out of range
+CONTEXT:  referenced column: num
+INSERT 0 1
+db_ignore=# select * from t_tinyint;
+ num 
+-----
+ 255
+(1 row)
+
+-- 当新值类型与列类型同为字符类型时
+db_ignore=# create table t_varchar5(content varchar(5));
+CREATE TABLE
+db_ignore=# insert /*+ ignore_error */ into t_varchar5 values('abcdefghi');
+WARNING:  value too long for type character varying(5)
+CONTEXT:  referenced column: content
+INSERT 0 1
+db_ignore=# select * from t_varchar5 ;
+ content 
+---------
+ abcde
+(1 row)
+```
 
 ```
 --创建表value_test。
