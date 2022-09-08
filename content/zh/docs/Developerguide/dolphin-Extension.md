@@ -6,4 +6,4 @@
 
 -   **[dolphin安装](dolphin安装.md)**  
 
--   **[dolphin使用](dolphin使用.md)**  
+-   **[dolphin语法介绍](dolphin语法介绍.md)**  
