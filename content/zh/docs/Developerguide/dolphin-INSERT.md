@@ -7,6 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
+    增加values()空值插入操作，根据sql_mode的不同会有不一样的插入效果。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
