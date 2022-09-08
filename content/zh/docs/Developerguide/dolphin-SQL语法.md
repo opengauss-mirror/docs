@@ -14,6 +14,10 @@
 
 -   **[REVOKE](dolphin-REVOKE.md)**
 
+-   **[SELECT](dolphin-SELECT.md)**  
+
 -   **[SHOW INDEX](dolphin-SHOW-INDEX.md)**  
 
 -   **[SHOW PROCESSLIST](dolphin-SHOW-PROCESSLIST.md)**
+
+-   **[USE DB_NAME](dolphin-USE-DB_NAME.md)**  
