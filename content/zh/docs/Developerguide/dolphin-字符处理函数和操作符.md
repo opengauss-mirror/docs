@@ -36,7 +36,7 @@
     示例：
 
     ```
-    db_b_insert_test=# select insert('abcdefg', 2, 4, 'yyy');
+    openGauss=# select insert('abcdefg', 2, 4, 'yyy');
     insert
     --------
     ayyyfg
@@ -45,7 +45,7 @@
 
 -   lcase\(string\)
 
-    描述：把字符串转化为小写。等价于lower
+    描述：把字符串转化为小写，等价于lower。
 
     返回值类型：varchar
 
@@ -61,7 +61,7 @@
 
 -   length\(string\)
 
-    描述：获取参数string中字符的数目。对于多字符编码（如中文），返回字节数
+    描述：获取参数string中字符的数目。对于多字符编码（如中文），返回字节数。
 
     返回值类型：integer
 
@@ -114,7 +114,7 @@
 
 -   octet\_length\(string\)
 
-    描述：等价与length
+    描述：等价于length。
 
     返回值类型：int
 
@@ -166,7 +166,7 @@
 
 -   source\_string rlike pattern
 
-    描述：等价于regexp
+    描述：等价于regexp。
 
     source\_string为源字符串，pattern为正则表达式匹配模式。
 
@@ -184,7 +184,7 @@
 
 -   ucase\(string\)
 
-    描述：把字符串转化为大写。等价于upper
+    描述：把字符串转化为大写。等价于upper。
 
     返回值类型：varchar
 

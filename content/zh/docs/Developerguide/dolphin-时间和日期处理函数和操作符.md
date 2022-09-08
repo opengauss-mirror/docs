@@ -14,10 +14,10 @@
 
   返回值类型：date
 
-  实例：
+  示例：
 
     ```
-    my_db=# select curdate();
+    openGauss=# select curdate();
     curdate
     ------------
     2022-07-21
@@ -30,10 +30,10 @@
 
   返回值类型：time
 
-  实例：
+  示例：
 
     ```
-    my_db=# select current_time;
+    openGauss=# select current_time;
     current_time
     --------------
     16:56:02
@@ -46,16 +46,16 @@
 
   返回值类型：time
 
-  实例：
+  示例：
 
     ```
-    my_db=# select current_time(3);
+    openGauss=# select current_time(3);
      current_time(3)
     -----------------
     16:57:23.255
     (1 row)
 
-    my_db=# select current_time();
+    openGauss=# select current_time();
      current_time()
     ----------------
     17:05:01
@@ -68,16 +68,16 @@
 
   返回值类型：time
 
-  实例：
+  示例：
 
     ```
-    my_db=# select curtime(3);
+    openGauss=# select curtime(3);
     curtime(3)
     --------------
     17:45:33.844
     (1 row)
 
-    my_db=# select curtime();
+    openGauss=# select curtime();
     curtime()
     -----------
     17:45:54
@@ -90,10 +90,10 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select current_timestamp;
+    openGauss=# select current_timestamp;
       current_timestamp
     ---------------------
     2022-07-21 16:59:38
@@ -106,16 +106,16 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select current_timestamp(3);
+    openGauss=# select current_timestamp(3);
       current_timestamp(3)
     -------------------------
     2022-07-21 17:00:41.251
     (1 row)
 
-    my_db=# select current_timestamp();
+    openGauss=# select current_timestamp();
      current_timestamp()
     ---------------------
     2022-07-21 17:06:06
@@ -124,7 +124,7 @@
 
 - dayofmonth\(timestamp\)
 
-    描述：获取日期/时间值中天数的值
+    描述：获取日期/时间值中天数的值。
 
     返回值类型：double precision
 
@@ -140,7 +140,7 @@
 
 - dayofweek\(timestamp\)
 
-    描述：获取日期/时间值中星期的标号（1代表星期日，2代表星期一，以此类推，7代表星期六）
+    描述：获取日期/时间值中星期的标号（1代表星期日，2代表星期一，以此类推，7代表星期六）。
 
     返回值类型：double precision
 
@@ -156,7 +156,7 @@
 
 - dayofyear\(timestamp\)
 
-    描述：获取日期/时间值中一年的第几天
+    描述：获取日期/时间值中一年的第几天。
 
     返回值类型：double precision
 
@@ -172,7 +172,7 @@
 
 - hour\(timestamp\)
 
-    描述：获取日期/时间值中小时的值
+    描述：获取日期/时间值中小时的值。
 
     返回值类型：double precision
 
@@ -192,10 +192,10 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select localtime;
+    openGauss=# select localtime;
         localtime
     ---------------------
     2022-07-21 17:02:04
@@ -208,16 +208,16 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select localtime(3);
+    openGauss=# select localtime(3);
         localtime
     ---------------------
     2022-07-21 17:02:04
     (1 row)
 
-    my_db=# select localtime();
+    openGauss=# select localtime();
         localtime()
     ---------------------
     2022-07-21 17:14:22
@@ -230,10 +230,10 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select localtimestamp;
+    openGauss=# select localtimestamp;
     localtimestamp
     ---------------------
     2022-07-21 17:17:20
@@ -246,16 +246,16 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select localtimestamp(3);
+    openGauss=# select localtimestamp(3);
         localtimestamp(3)
     -------------------------
     2022-07-21 17:28:02.013
     (1 row)
 
-    my_db=# select localtimestamp();
+    openGauss=# select localtimestamp();
     localtimestamp()
     ---------------------
     2022-07-21 17:28:49
@@ -263,6 +263,7 @@
     ```
 
 - MAKEDATE()
+  
   函数原型:
 
   `DATE MAKEDATE(int64 year, int64 dayofyear)`
@@ -301,9 +302,11 @@
 ```
 
 - MAKETIME()
+
   函数原型:
 
   `TIME MAKETIME(int64 hour, int64 minue, Numeric second)`
+  
   功能描述：
 
   给定小时、分钟和秒参数，返回TIME类型值。
@@ -316,6 +319,7 @@
         3. 任一参数为NULL
     - 返回的Time结果保留6位小数，若second超出六位小数，则按照四舍五入进位。
     - 返回TIME类型值要求在[-838:59:59, 838:59:59]中。若超出范围，则根据hour的正负类型，来返回指定的边界值。
+  
   示例:
 ```sql
  openGauss=# SELECT MAKETIME(15, 15, 15.5);
@@ -341,7 +345,7 @@
 
 - microsecond\(timestamp\)
 
-    描述：获取日期/时间值中微秒的值
+    描述：获取日期/时间值中微秒的值。
 
     返回值类型：double precision
 
@@ -357,7 +361,7 @@
 
 - minute\(timestamp\)
 
-    描述：获取日期/时间值中分钟的值
+    描述：获取日期/时间值中分钟的值。
 
     返回值类型：double precision
 
@@ -377,16 +381,16 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select now(3);
+    openGauss=# select now(3);
             now(3)
     -------------------------
     2022-07-21 17:30:18.037
     (1 row)
 
-    my_db=# select now();
+    openGauss=# select now();
             now()
     ---------------------
     2022-07-21 17:30:51
@@ -394,9 +398,11 @@
     ```
 
 - PERIOD_ADD()
+  
   函数原型:
 
   `int64 PERIOD_ADD(int64 P, int64 N)`
+  
   功能描述：
 
   返回时期`P`(格式为YYYYMM或YYMM)加上`N`个月后的时期值，格式为YYYYMM。
@@ -406,6 +412,7 @@
     - 当任一参数为NULL时，函数返回NULL。
     - `P` = 0时，返回0。
     - 参数的时期`P`与返回结果的时期中的年份小于100时，会以70为边界，将年份转为20XX年或19XX年。
+  
   示例:
 ```sql
  openGauss=# SELECT PERIOD_ADD(202201, 2);
@@ -430,9 +437,11 @@
 ```
 
 - PERIOD_DIFF()
+  
   函数原型:
 
   `int64 PERIOD_DIFF(int64 P1, int64 P2)`
+  
   功能描述：
 
   返回两个时期参数`P1`与`P2`的月份数差值。
@@ -441,6 +450,7 @@
 
     - 当任一参数为NULL时，函数返回NULL。
     - 时期参数`P1`和`P2`中的年份小于100时，会以70为边界，将年份转为20XX年或19XX年。
+ 
   示例:
 ```sql
  openGauss=# SELECT PERIOD_DIFF(202201,202003);
@@ -458,7 +468,7 @@
 
 - quarter\(timestamp\)
 
-    描述：获取日期/时间值中的季度数，从1到4
+    描述：获取日期/时间值中的季度数，从1到4。
 
     返回值类型：double precision
 
@@ -474,7 +484,7 @@
 
 - second\(timestamp\)
 
-    描述：获取日期/时间值中的秒数
+    描述：获取日期/时间值中的秒数。
 
     返回值类型：double precision
 
@@ -489,9 +499,11 @@
     ```
 
 - SEC_TO_TIME()
+  
   函数原型:
 
   `TIME SEC_TO_TIME(Numeric second)`
+  
   功能描述：
 
   给定秒数，将其转为小时、分钟与秒，返回TIME类型值。
@@ -501,6 +513,7 @@
     - 当任一参数为NULL，函数返回NULL。
     - 返回TIME类型值只保留小数点后6位，超出部分按照四舍五入规则进位。
     - 返回TIME类型值要求在[-838:59:59, 838:59:59]中。若超出范围，则根据second的正负类型，来返回指定的边界值。
+  
   示例:
 ```sql
  openGauss=# SELECT SEC_TO_TIME(4396);
@@ -525,6 +538,7 @@
 ```
 
 - SUBDATE(expr, interval)
+  
   函数原型:
 
   `CString SUBDATE(text date, INTERVAL expr unit)`
@@ -543,6 +557,7 @@
         1. 参数date的日期超出范围[0, 9999-12-31]
         2. 任一参数为NULL。
     - 返回结果的日期必须在范围[0001-1-1, 9999-12-31]内。若越界，则返回NULL。
+  
   示例:
 
 ```sql
@@ -575,6 +590,7 @@
 ```
 
 - SUBDATE(TIME, interval)
+  
   函数原型:
 
   `TIME SUBDATE(TIME time, INTERVAL expr unit)`
@@ -588,7 +604,7 @@
 
   备注:
 
-    - 第一参数必须为原始的TIME类型，而非由字符串的隐式转换而来。如SUBDATE('1:1:1', 1)并不会进入此函数。需改为SUBDATE(time'1:1:1', 1)
+    - 第一参数必须为原始的TIME类型，而非由字符串的隐式转换而来。如SUBDATE('1:1:1', 1)并不会进入此函数。需改为SUBDATE(time'1:1:1', 1)。
     - 第二参数的INTERVAL单位不能包含年或月部分，否则返回NULL。
     - 返回值必须在[-838:59:59, 838:59:59]内，否则返回NULL。
 
@@ -617,6 +633,7 @@
 ```
 
 - SUBTIME()
+  
   函数原型:
 
   `TIME SUBDATE(TIME time1, TIME time2)`
@@ -655,16 +672,16 @@
 
   返回值类型：datetime
 
-  实例：
+  示例：
 
     ```
-    my_db=# select sysdate(3);
+    openGauss=# select sysdate(3);
         sysdate(3)
     -------------------------
     2022-07-21 17:38:23.442
     (1 row)
 
-    my_db=# select sysdate();
+    openGauss=# select sysdate();
         sysdate()
     ---------------------
     2022-07-21 17:39:02
@@ -672,6 +689,7 @@
     ```
 
 - time()
+  
   函数原型:
 
   `Cstring TIME(TEXT expr)`
@@ -684,7 +702,7 @@
 
     - 返回的时间表达式中最多保留六位小数，超出部分按照四舍五入进位。
     - 对于异常的日期或时间格式或是域溢出的日期或时间(如1:60:60、2022-12-32 等)，本函数兼容mysql中该函数于insert语句中的表现，即报错。
-    - date格式字符串将会报错，而date类型参数将会返回"00:00:00"
+    - date格式字符串将会报错，而date类型参数将会返回"00:00:00"。
 
   示例:
   ```sql
@@ -785,15 +803,15 @@
 
 - timestamp_add()
 
-* 函数原型：
+  函数原型：
 
   `TEXT TIMESTAMP_ADD(text unit, interval span, text datetime)`
 
-* 功能描述：
+  功能描述：
 
-  将一段时间加到已知的时间点上。其中第一个参数`unit`是时间单位，第二个参数`span`是具体数值，第三个参数`datetime`是已知时间点
+  将一段时间加到已知的时间点上。其中第一个参数`unit`是时间单位，第二个参数`span`是具体数值，第三个参数`datetime`是已知时间点。
 
-* 备注：
+  备注：
 
     * `unit`支持的单位如下：
 
@@ -817,16 +835,16 @@
 
     * 对于异常的日期或时间格式或是域溢出的日期或时间(如1:60:60、2022-12-32 等)，本函数兼容mysql中该函数于insert语句中的表现，即报错。
 
-* 示例：
+  示例：
 
   ```sql
-  test=# select timestampadd(day, 1, '2022-09-01');
+  openGauss=# select timestampadd(day, 1, '2022-09-01');
    timestampadd 
   --------------
    2022-09-02
   (1 row)
   
-  test=# select timestampadd(hour, 1, '2022-09-01 08:00:00');
+  openGauss=# select timestampadd(hour, 1, '2022-09-01 08:00:00');
       timestampadd     
   ---------------------
    2022-09-01 09:00:00
@@ -834,6 +852,7 @@
   ```
 
 - time_format()
+  
   函数原型:
 
   `CSTRING TIME_FORMAT(text time, text format)。`
@@ -884,7 +903,7 @@
 
 -   weekday\(timestamp\)
 
-    描述：获取日期/时间值中是一周中的星期几（0代表星期一，1代表星期二，以此类推，6代表星期日）
+    描述：获取日期/时间值中是一周中的星期几（0代表星期一，1代表星期二，以此类推，6代表星期日）。
 
     返回值类型：double precision
 
@@ -900,7 +919,7 @@
 
 -   weekofyear\(timestamp\)
 
-    描述：获取日期/时间值中是一年的第几周
+    描述：获取日期/时间值中是一年的第几周。
 
     返回值类型：double precision
 
@@ -916,7 +935,7 @@
 
 -   year\(timestamp\)
 
-    描述：获取日期/时间值中的年数
+    描述：获取日期/时间值中的年数。
 
     返回值类型：double precision
 
