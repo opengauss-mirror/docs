@@ -352,3 +352,18 @@
     A120
     (1 row)
     ```
+
+-   make_set(bits, str1, str2, ...)
+
+    描述：返回一个设置值(一个包含子字符串的字符串，以字符分隔)，该值由bits中设置了相应位的字符串组成。str1对应位0，st2对应位1，但这些类推。
+    str1，str2，...中的NULL值不添加到结果中。
+
+    返回值类型：text
+
+    ```sql
+    select make_set(1|4, 'hello', 'nice', NULL, 'world');
+     make_set 
+    ----------
+     hello
+    (1 row)
+    ```

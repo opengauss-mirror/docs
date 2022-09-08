@@ -7,7 +7,8 @@
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
-    增加values()空值插入操作，根据sql_mode的不同会有不一样的插入效果。
+-   增加values()空值插入操作，根据sql_mode的不同会有不一样的插入效果。
+-   新增set_clause_values子句。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -16,7 +17,8 @@
 INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
     { DEFAULT VALUES
     | [ VALUES | VALUE ] [{( { expression | DEFAULT } [, ...] ) }][, ...]
-    | query }
+    | query
+    | set_clause_values }
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] }]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
@@ -65,6 +67,11 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 -   **VALUES()**
 
     当GUC参数sql_mode为stric_all_tables时，为所有列插入NULL，否则如果对应字段名有缺省值，插入缺省值，如果没有缺省值，判断对应字段是否有not_null约束，没有插入NULL，有则插入类型基础值，具体基础值参考视图pg_type_basic_value。
+
+-   **set_clause_values**
+
+    一种insert into table_name set column_name = value, column_name = value, ...依次类推。set_clause_values是指set column_name = value，多个列插入值用逗号分隔。
+    该是insert into 的一种扩展语法。为防止insert into 时字段顺序与值顺序混乱造成写入错误。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
