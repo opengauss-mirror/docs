@@ -2,8 +2,8 @@
 
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为:
 1. 新增```regexp/not regexp/rlike```操作符。
-2. 新增```locate/lcase/ucase```函数。
-3. 修改```length/bit_length/octet_length```函数的表现。
+2. 新增```locate/lcase/ucase/bin/chara/elt/field/find_int_set/space/soundex```函数。
+3. 修改```length/bit_length/octet_length/convert```函数的表现。
 
 -   source\_string regexp pattern
 
@@ -179,5 +179,160 @@
      ucase
     -------
      TOM
+    (1 row)
+    ```
+
+-   bin(number or string)
+
+    描述：返回N整型或者数字字符的二进制字符串，汉字返回0。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    b_compatibility_database=# SELECT bin('309');
+    bin
+    ------------
+    100110101
+    (1 row)
+
+    b_compatibility_database=# SELECT bin('你好'); 
+    bin
+    ---
+    0 
+    (1 row)
+     ```
+
+-   chara(any)
+
+    描述：根据ASCII码对多个数字转换为多个字符。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    b_compatibility_database=# select chara(77,77.3,'77.3','78.8',78.8);
+    chara
+    ------------
+    MMMNO
+    (1 row)
+    ```
+
+-   char_length(string)或character_leng(string)
+
+    描述：字符串中的字符个数,一个汉字长度为1，并且支持二进制类型。
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    openGauss=# SELECT char_length('hello');
+    char_length
+    -------------
+            5
+    (1 row)
+    b_compatibility_database=# SELECT char_length(B'101');
+    char_length
+    -------------
+            1
+    (1 row)
+    ```
+
+-   convert\(expr using transcoding\_name\)
+
+    描述：通过transcoding_name转换expr
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    b_compatibility_database=# select convert('a' using 'utf8');
+    convert
+    ---------
+    a 
+    (1 row)
+    ```
+
+-   elt(number, str1,str2,str3,...)
+
+    描述：返回后面字符串的第N个字符串。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    b_compatibility_database=# select elt(3,'wo','ceshi','disange');
+    elt   
+    ---------
+    disange
+    (1 row)
+    ```
+    
+-   field(str, str1,str2,str3,...)
+
+    描述：获取str在后面strn中的位置，不区分大小写。
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    b_compatibility_database=# select field('ceshi','wo','ceshi','disange');
+    field 
+    -------
+        2
+    (1 row)
+    ```
+    
+-   find_in_set(str, strlist)
+
+    描述：获取str在后面strlist中的位置，不区分大小写,strlist以，分割。
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    b_compatibility_database=# select find_in_set('ceshi','wo','ceshi,ni,wo,ta');
+    find_in_set 
+    -------------
+            3
+    (1 row)
+    ```
+
+-   space(number)
+
+    描述：返回N个空格
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    b_compatibility_database=# select space('5');
+    space 
+    -------
+        
+    (1 row)
+    ```
+
+-   soundex(str)
+
+    描述：返回描述指定字符串的语音表示的字母数字模式的算法
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    b_compatibility_database=# select soundex('abcqwcaa');
+    soundex 
+    ---------
+    A120
     (1 row)
     ```
