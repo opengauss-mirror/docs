@@ -2,19 +2,13 @@
 
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
+-   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
+
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
 -   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
 
 -   **[CREATE TABLESPACE](dolphin-CREATE-TABLESPACE.md)**
-
--   **[INSERT](dolphin-INSERT.md)**
-
--   **[SELECT](dolphin-SELECT.md)**
-
--   **[UPDATE](dolphin-UPDATE.md)**
-
--   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**  
 
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
@@ -24,12 +18,24 @@
 
 -   **[INSERT](dolphin-INSERT.md)**
 
+-   **[OPTIMIZE TABLE](dolphin-OPTIMIZE-TABLE.md)**
+
 -   **[REVOKE](dolphin-REVOKE.md)**
 
 -   **[SELECT](dolphin-SELECT.md)**  
 
+-   **[SET CHARSET](dolphin-SET-CHARSET.md)**
+
+-   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)**
+
 -   **[SHOW INDEX](dolphin-SHOW-INDEX.md)**  
 
+-   **[SHOW MASTER STATUS](dolphin-SHOW-MASTER-STATUS.md)**
+
 -   **[SHOW PROCESSLIST](dolphin-SHOW-PROCESSLIST.md)**
+
+-   **[SHOW SLAVE HOSTS](dolphin-SHOW-SLAVE-HOSTS.md)**
+
+-   **[UPDATE](dolphin-UPDATE.md)**
 
 -   **[USE DB_NAME](dolphin-USE-DB_NAME.md)**  
