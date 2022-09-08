@@ -10,6 +10,7 @@
 5. 新增```double```数据类型，是float8的别名。
 6. 新增```float4/float```支持可选的修饰符(n)，即支持```float4(n)/float(n)```的用法，当n在 [1,24]之间时，```float4(n)/float(n)```代表单精度浮点数；当n在 [25,53]之间时，```float4(n)/float(n)```代表双精度浮点数。
 7. 对于```decimal```数据类型，在未指定精度的情况下，默认精度为```(10,0)```，即总位数为10，小数位数为0。
+8. 新增zerofill属性修饰，只是语法上的支持，实际并没有填充零的效果。与UNSIGNED的作用等价。
 
 **表 1**  整数类型
 
@@ -96,9 +97,29 @@ openGauss=# \d int_type_t1
  it_col4 | bigint   |
  it_col5 | integer  |
 
---删除表。
-openGauss=# DROP TABLE int_type_t1;
+--创建带zerofill属性字段的表。
+openGauss=# CREATE TABLE int_type_t2
+           (
+            IT_COL1 TINYINT(10) zerofill,
+            IT_COL2 SMALLINT(20) unsigned zerofill,
+            IT_COL3 MEDIUMINT(30) unsigned,
+            IT_COL4 BIGINT(40) zerofill,
+            IT_COL5 INTEGER(50) zerofill
+           );
 
+--查看表结构。
+openGauss=# \d int_type_t2
+   Table "public.int_type_t2"
+ Column  | Type  | Modifiers
+---------+-------+-----------
+ it_col1 | uint1 |
+ it_col2 | uint2 |
+ it_col3 | uint4 |
+ it_col4 | uint8 |
+ it_col5 | uint4 |
+
+--删除表。
+openGauss=# DROP TABLE int_type_t1, int_type_t2;
 ```
 
 **表 2**  任意精度型
