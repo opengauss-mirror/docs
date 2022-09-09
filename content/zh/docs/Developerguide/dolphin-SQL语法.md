@@ -2,11 +2,15 @@
 
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
+-   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
+
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
 -   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
+
+-   **[CREATE TABLE PARTITION](dolphin-CREATE-TABLE-PARTITION.md)**
 
 -   **[CREATE TABLESPACE](dolphin-CREATE-TABLESPACE.md)**
 
@@ -18,6 +22,8 @@
 
 -   **[INSERT](dolphin-INSERT.md)**
 
+-   **[KILL](dolphin-KILL.md)**  
+
 -   **[OPTIMIZE TABLE](dolphin-OPTIMIZE-TABLE.md)**
 
 -   **[REVOKE](dolphin-REVOKE.md)**
@@ -26,15 +32,23 @@
 
 -   **[SET CHARSET](dolphin-SET-CHARSET.md)**
 
+-   **[SET PASSWORD](dolphin-SET-PASSWORD.md)**  
+
+-   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
+
 -   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)**
 
 -   **[SHOW INDEX](dolphin-SHOW-INDEX.md)**  
 
 -   **[SHOW MASTER STATUS](dolphin-SHOW-MASTER-STATUS.md)**
 
+-   **[SHOW PLUGINS](dolphin-SHOW_PLUGINS.md)**  
+
 -   **[SHOW PROCESSLIST](dolphin-SHOW-PROCESSLIST.md)**
 
 -   **[SHOW SLAVE HOSTS](dolphin-SHOW-SLAVE-HOSTS.md)**
+
+-   **[SHOW TABLES](dolphin-SHOW_TABLES.md)**  
 
 -   **[UPDATE](dolphin-UPDATE.md)**
 
