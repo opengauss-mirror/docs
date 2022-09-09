@@ -118,3 +118,41 @@ openGauss支持使用REVOKE命令撤销各种权限。所涉及的SQL语句，�
 </tr>
 </tbody>
 </table>
+
+## KILL<a name="zh-cn_topic_0283136632_section153781731062"></a>
+
+openGauss支持使用KILL命令终止指定连接或该连接下执行的SQL语句。所涉及的SQL语句，请参考表4
+
+**表 4**  KILL语句相关SQL
+
+<table><thead align="left"><tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_r6a26391d47924f35bac29320b4b28f71"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a8fd4608983b14f0bac547cd20509e81e"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a8fd4608983b14f0bac547cd20509e81e"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a8fd4608983b14f0bac547cd20509e81e"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a6d6f857aed5c41f3a8df387b5d0227d8"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a6d6f857aed5c41f3a8df387b5d0227d8"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a6d6f857aed5c41f3a8df387b5d0227d8"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>终止指定连接或该连接下执行的SQL语句。</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-KILL.md">KILL</a></p>
+</td>
+</tbody>
+</table>
+
+## SET PASSWORD
+
+openGauss支持使用SET PASSWORD命令修改用户密码。所涉及的SQL语句，请参考表5
+
+**表 5** SET PASSWORD语句相关SQL
+
+<table><thead align="left"><tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_r6a26391d47924f35bac29320b4b28f71"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a8fd4608983b14f0bac547cd20509e81e"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a8fd4608983b14f0bac547cd20509e81e"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a8fd4608983b14f0bac547cd20509e81e"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a6d6f857aed5c41f3a8df387b5d0227d8"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a6d6f857aed5c41f3a8df387b5d0227d8"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a6d6f857aed5c41f3a8df387b5d0227d8"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>修改用户密码。</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SET-PASSWORD.md">SET PASSWORD</a></p>
+</td>
+</tbody>
+</table>

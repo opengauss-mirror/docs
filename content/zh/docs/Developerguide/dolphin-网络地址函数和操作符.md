@@ -1,5 +1,49 @@
 # 网络地址函数和操作符<a name="ZH-CN_TOPIC_0289900807"></a>
 
+openGauss提供网络相关的功能函数。
+
+- is\_ipv4\(string\)
+
+    描述：判断是否为ipv4地址。
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    openGauss=# select is_ipv4('192.168.0.1');
+     is_ipv4
+    ---------
+           1
+    (1 row)
+    openGauss=# select is_ipv4('192.168.0.1'::inet);
+     is_ipv4
+    ---------
+           1
+    (1 row)
+    ```
+
+- is\_ipv6\(string\)
+
+    描述：判断是否为ipv6地址。
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    openGauss=# select is_ipv6('2403:A200:A200:0:AFFF::3');
+     is_ipv6
+    ---------
+           1
+    (1 row)
+    openGauss=# select is_ipv6('2403:A200:A200:0:AFFF::3'::inet);
+     is_ipv6
+    ---------
+           1
+    (1 row)
+    ```
+
 - inet_aton\(text\)
 
     描述：此函数将IPv4地址的点分十进制表示形式作为字符串，并以整数形式返回给定IP地址的数值。如果输入地址不是有效的IPv4地址或是无法识别的表达式，则此函数返回NULL。
