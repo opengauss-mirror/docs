@@ -27,12 +27,40 @@
         | DROP PRIMARY KEY [ RESTRICT | CASCADE ]
         | DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]
         | RENAME INDEX index_name to new_index_name
+        | ADD table_indexclause
     ```
 
 -   对一个表进行重建。
 
     ```
     ALTER TABLE table_name FORCE;
+    ```
+
+-   重命名表。对名称的修改不会影响所存储的数据。
+
+    ```
+    ALTER TABLE [ IF EXISTS ] table_name 
+        RENAME { TO | AS } new_table_name;
+    ```
+
+-   **ADD table_indexclause**
+
+    在表上新增一个索引
+
+    ```
+    {INDEX | KEY} [index_name] [index_type] (key_part,...)
+    ```
+
+    其中参数index_type为：
+
+    ```
+    USING {BTREE | HASH | GIN | GIST | PSORT | UBTREE}
+    ```
+
+    其中参数key_part为：
+
+    ```
+    {col_name | (expr)} [ASC | DESC]
     ```
 
 ![](public_sys-resources/icon-note.gif) **说明：** 

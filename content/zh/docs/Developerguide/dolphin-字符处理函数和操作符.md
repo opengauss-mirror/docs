@@ -2,8 +2,8 @@
 
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为:
 1. 新增```regexp/not regexp/rlike```操作符。
-2. 新增```locate/lcase/ucase/insert/bin/chara/elt/field/find_int_set/space/soundex```函数。
-3. 修改```length/bit_length/octet_length/convert```函数的表现。
+2. 新增```locate/lcase/ucase/insert/bin/chara/elt/field/find_int_set/hex/space/soundex```函数。
+3. 修改```length/bit_length/octet_length/convert/format```函数的表现。
 
 -   bit\_length\(string\)
 
@@ -78,6 +78,91 @@
      length 
     --------
           6
+    (1 row)
+    ```
+
+- format\(val number, dec_num int \[,locale string\]\)
+
+  描述：将val以"x,xxx,xxx.xx"的格式返回。val将保留dec_num位小数。保留的小数位数最多为32位，若dec_num大于32，则以保留32位小数返回。若dec_num为0，则返回内容无小数点及小数部分数字。第三个参数可选，可以根据locale指定返回内容的小数点及千位分隔符的格式。如果没有指定第三个参数，或第三个参数值非法，则使用默认值'en_US'。
+
+  注意：此format函数针对B兼容数据库使用，与openGauss原有的format函数语义不同。若想使用此语义，请创建B兼容模式数据库，启用B兼容性SQL引擎插件，并将B_COMPATIBILITY_MODE设置为TRUE.
+
+  返回值类型：text
+
+  示例：
+
+    ```
+    openGauss=# CREATE DATABASE B_COMPATIBILITY_DATABASE DBCOMPATIBILITY 'B';
+    CREATE DATABASE
+    openGauss=# \c B_COMPATIBILITY_DATABASE
+    b_compatibility_database=# CREATE EXTENSION dolphin;
+    CREATE EXTENSION
+    b_compatibility_database=# SET B_COMPATIBILITY_MODE = TRUE;
+    SET
+    b_compatibility_database=# select format(1234.4567,2);
+      format
+    -----------
+     1,234.46
+    (1 row)
+
+    b_compatibility_database=# select format(1234.5,4);
+      format
+    -----------
+     1,234.5000
+    (1 row)
+
+    b_compatibility_database=# select format(1234.5,0);
+      format
+    -----------
+     1,235
+    (1 row)
+
+    b_compatibility_database=# select format(1234.5,2,'de_DE');
+      format
+    -----------
+     1.234,50
+    (1 row)
+    ```
+
+- hex\(number or string or bytea or bit\)
+
+  描述：把数字、字符、二进制字符类型或位串类型转换成十六进制表现形式
+
+  注意：openGauss将反斜杠'\'单独看做一个字符，因此对于字符串'\n'，其长度为2。
+
+  返回值类型：text
+
+  示例：
+
+    ```
+    openGauss=# SELECT hex(256);
+     hex
+    -----
+     100
+    (1 row)
+
+    openGauss=# select hex('abc');
+     hex
+    --------
+     616263
+    (1 row)
+
+    openGauss=# select hex('abc'::bytea);
+     hex
+    --------
+     616263
+    (1 row)
+
+    openGauss=# select hex(b'1111');
+     hex
+    -----
+     0f
+    (1 row)
+
+    openGauss=# select hex('\n');
+     hex
+    -------
+     5c6e
     (1 row)
     ```
 

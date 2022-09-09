@@ -6,3 +6,10 @@ DML（Data Manipulation Language数据操作语言），用于对数据库表中
 
 插入数据是往数据库表中添加一条或多条记录，请参考[INSERT](dolphin-INSERT.md)。
 
+## 修改数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_sa635baff4808455daf4aa998456672ce"></a>
+
+修改数据是修改数据库表中的一条或多条记录，请参考[UPDATE](dolphin-UPDATE.md)。
+
+## 查询数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_s1633132317ef42edba6e4afdbb2d6b46"></a>
+
+数据库查询语句SELECT是用于在数据库中检索适合条件的信息，请参考[SELECT](dolphin-SELECT.md)。
