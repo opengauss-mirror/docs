@@ -1,5 +1,9 @@
 # SQL语法<a name="ZH-CN_TOPIC_0289900416"></a>
 
+-   **[ALTER FUNCTION](dolphin-ALTER-FUNCTION.md)**
+
+-   **[ALTER PROCEDURE](dolphin-ALTER-PROCEDURE.md)**
+
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
 -   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
@@ -8,7 +12,11 @@
 
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
+-   **[CREATE FUNCTION](dolphin-CREATE-FUNCTION.md)**
+
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
+
+-   **[CREATE PROCEDURE](dolphin-CREATE-PROCEDURE.md)**
 
 -   **[CREATE TABLE](dolphin-CREATE-TABLE.md)**
 
