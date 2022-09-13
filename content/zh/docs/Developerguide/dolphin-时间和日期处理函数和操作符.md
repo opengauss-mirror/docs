@@ -7,6 +7,7 @@
 2. 新增```curdate/current_time/curtime/current_timestamp/localtime/localtimestamp/now/sysdate```函数。
 3. 新增```makedate/maketime/period_add/period_diff/sec_to_time/subdate```函数。
 4. 新增```subtime/timediff/time/time_format/timestamp/timestamppadd```函数。
+4. 新增`to_days/to_seconds/unix_timestamp/utc_date/utc_time/utc_timestamp`函数
 
 - curdate\(\)
 
@@ -964,3 +965,197 @@
      2017-09-01
     (1 row)
     ```
+
+- to_days()
+
+  函数原型：`int8 TO_DAYS(DATETIME date)`
+
+  功能描述：接受一个date或datetime表达式作为参数，返回参数所指定的日期到0000年所经过的天数
+
+  备注: 
+
+  * 若入参类型为time类型，将用于计算的日期将为当前日期加上time指定时间后得到的日期。
+  * 若输入日期超出[0000-01-01, 9999-12-31]的范围或入参为非法的date或datetime表达式，函数报错。
+
+  示例：
+
+  ```sql
+  opengauss=# select to_days('0000-01-01');
+   to_days 
+  ---------
+         1
+  (1 row)
+  
+  opengauss=# select to_days('2022-09-05 23:59:59.5');
+   to_days 
+  ---------
+    738768
+  (1 row)
+  
+  -- 当前日期为: 2022-09-05
+  opengauss=# select to_days(time'25:00:00');
+   to_days 
+  ---------
+    738769
+  (1 row)
+  ```
+
+- to_seconds()
+
+  函数原型：`NUMERIC TO_SECONDS(text datetime)`
+
+  功能描述：输入一个时间点`datetime`，返回`0000-01-01 00:00:00`到该时间点所经过的秒数
+
+  备注：
+  - 参数`datetime`支持的类型有：字符串、数值、date、datetime、time等。当输入参数为time类型时，日期会被自动设置为当前日期。
+  - 返回的结果只保留整秒数，小数部分直接舍弃。
+
+  示例：
+  ```sql
+  opengauss=# select to_seconds('2022-09-01');
+   to_seconds  
+  -------------
+   63829209600
+  (1 row)
+  
+  opengauss=# select to_seconds('2022-09-01 12:30:30.888');
+   to_seconds  
+  -------------
+   63829254630
+  (1 row)
+  
+  opengauss=# select to_seconds(20220901123030);
+   to_seconds  
+  -------------
+   63829254630
+  (1 row)
+  ```
+  
+- unix_timestamp()
+
+  函数原型：
+  `NUMERIC UNIX_TIMESTAMP()`
+
+  `NUMERIC UNIX_TIMESTAMP(text datetime)`
+
+  功能描述：
+  - 不输入任何参数，直接执行该函数，返回`1970-01-01 00:00:00 UTC`到当前时间点所经过的秒数
+  - 输入一个时间点`datetime`，返回`1970-01-01 00:00:00 UTC`到`datetime`所经过的秒数
+
+  备注：
+  - 参数`datetime`支持的类型有：字符串、数值、date、datetime、time等。当输入参数为time类型时，日期会被自动设置为当前日期。
+  - 参数`datetime`的有效范围为`[1970-01-01 00:00:00.000000 UTC, 2038-01-19 03:14:07.999999 UTC]`。
+  - 参数的输入范围会受到时区的影响，但最终计算结果不受时区影响。
+  - 计算结果最多只保留六位小数。
+
+  示例：
+  ```sql
+  opengauss=# select unix_timestamp('2022-09-01');
+   unix_timestamp 
+  ----------------
+       1661961600
+  (1 row)
+  
+  opengauss=# select unix_timestamp('2022-09-01 12:30:30.888');
+   unix_timestamp 
+  ----------------
+   1662006630.888
+  (1 row)
+  
+  opengauss=# select unix_timestamp(20220901123030.6);
+   unix_timestamp 
+  ----------------
+     1662006630.6
+  (1 row)
+  ```
+  
+- utc_date()
+
+  函数原型：`DATE UTC_DATE()`
+
+  功能描述：返回当前的UTC日期，类型为DATE。
+
+  备注：
+  - UTC_DATE能够以关键词的形式识别，此时无需包含括号。
+
+  示例：
+  ```sql
+  opengauss=# select UTC_DATE();
+    utc_date  
+  ------------
+   2022-09-06
+  (1 row)
+  
+  opengauss=# select UTC_DATE;
+    utc_date  
+  ------------
+   2022-09-06
+  (1 row)
+  ```
+  
+- utc_time()
+
+  函数原型：
+  	`TIME UTC_TIME()`
+  
+  ​	`TIME UTC_TIME(int fsp)`
+  
+  功能描述：返回当前的UTC时间，类型为TIME。若给定一个整数参数作为精度，则能够指定结果保留的小数数量，支持精度范围为[0-6]
+  
+  备注：
+  - UTC_TIME能够以关键词的形式识别，此时无需包含括号。效果等同于无参数的UTC_TIME()函数。
+  
+  示例：
+  ```sql
+  opengauss=# select UTC_TIME();
+   utc_time 
+  ----------
+   15:13:54
+  (1 row)
+  
+  opengauss=# select UTC_TIME(6);
+      utc_time    
+  ----------------
+   15:13:56.59698
+  (1 row)
+  
+  opengauss=# select UTC_TIME;
+   utc_time 
+  ----------
+   15:14:01
+  (1 row)
+  ```
+  
+- utc_timestamp()
+
+  函数原型：
+
+  - `DATETIME UTC_TIMESTAMP()`
+  - `DATETIME UTC_TIMESTAMP(int fsp)`
+  
+  功能描述：返回当前的UTC日期时间值，类型为DATETIME。若给定一个整数参数作为精度，则能够指定结果保留的小数数量，支持精度范围为[0-6]。
+
+  备注:
+  
+  - UTC_TIMESTAMP能够以关键词的形式识别，此时无需包含括号。效果等同于无参数的UTC_TIMESTAMP()函数。
+  
+  示例：
+  ```sql
+  opengauss=# select UTC_TIMESTAMP();
+      utc_timestamp    
+  ---------------------
+   2022-09-06 15:16:28
+  (1 row)
+  
+  opengauss=# select UTC_TIMESTAMP(6);
+         utc_timestamp        
+  ----------------------------
+   2022-09-06 15:16:34.691118
+  (1 row)
+  
+  opengauss=# select UTC_TIMESTAMP;
+      utc_timestamp    
+  ---------------------
+   2022-09-06 15:16:39
+  ```
+
