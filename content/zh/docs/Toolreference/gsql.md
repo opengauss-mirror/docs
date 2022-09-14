@@ -1566,7 +1566,7 @@ omm@[local] openGauss=#
 <a name="zh-cn_topic_0237152146_screen9767751132710"></a><a name="zh-cn_topic_0237152146_screen9767751132710"></a><pre class="screen" codetype="Sql" id="zh-cn_topic_0237152146_screen9767751132710"><span id="zh-cn_topic_0237152146_text1042912912240"><a name="zh-cn_topic_0237152146_text1042912912240"></a><a name="zh-cn_topic_0237152146_text1042912912240"></a>openGauss=# </span>\dL</pre>
 </td>
 </tr>
-    <tr id="row13654232194512"><td class="cellrowborder" valign="top" width="13%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p50784313"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p50784313"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p50784313"></a>\dn[S+]   [PATTERN]</p>
+    <tr id="row13654232194512"><td class="cellrowborder" valign="top" width="13%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p50784313"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p50784313"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p50784313"></a>\dm[S+]   [PATTERN]</p>
 </td>
 <td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19888706"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19888706"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19888706"></a>列出物化视图。</p>
 </td>
