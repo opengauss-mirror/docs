@@ -45,6 +45,16 @@
 
 **默认值：**10min
 
+## idle_in_transaction_session_timeout<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a"></a>
+
+**参数说明：**表明与服务器建立链接后，如果当前会话处于事务中，不进行任何操作的最长时间。
+
+该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：**整型，0-86400，最小单位为s，0表示关闭超时设置。
+
+**默认值：**0
+
 >![](public_sys-resources/icon-notice.gif) **须知：**   
 >openGauss gsql客户端中有自动重连机制，所以针对初始化用户本地连接，超时后gsql表现的现象为断开后重连。  
 

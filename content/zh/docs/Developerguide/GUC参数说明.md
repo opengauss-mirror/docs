@@ -36,7 +36,7 @@
 
 -   **[连接池参数](连接池参数.md)**  
 
--   **[openGauss事务](openGauss事务.md)**  
+-   **[openGauss事务](openGauss事务.md)**    
 
 -   **[双数据库实例复制参数](双数据库实例复制参数.md)**  
 
@@ -81,3 +81,7 @@
 -   **[AI特性](AI特性.md)**  
 
 
+-   **[Global SysCache参数](Global-SysCache参数.md)** 
+
+
+-   **[高效数据压缩算法相关参数](高效数据压缩算法相关参数.md)**  

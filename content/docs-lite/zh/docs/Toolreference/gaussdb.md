@@ -461,7 +461,7 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
     nohup gaussdb >logfile 2>&1 </dev/null  &
     ```
 
-2.  在指定端口\(如1234\)启动gaussdb，-D参数为gs\_initdb初始化后的数据目录：
+2.  指定端口\(如1234\)启动gaussdb，-D参数为gs\_initdb初始化后的数据目录：
 
     ```
     gaussdb -p 1234 -D /usr/local/pgsql/data

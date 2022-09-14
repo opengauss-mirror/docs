@@ -29,10 +29,11 @@
 
     ```
     CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
+        ({ { column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
+        [ COMMENT text ]
         [ WHERE predicate ];
     ```
 
@@ -40,11 +41,12 @@
 
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
+        ( {{ column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
         [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
-        [ TABLESPACE tablespace_name ];
+        [ TABLESPACE tablespace_name ]
+        [ COMMENT text ];
     ```
 
 
@@ -115,6 +117,19 @@
     表中需要创建索引的列的名称（字段名）。
 
     如果索引方式支持多字段索引，可以声明多个字段。全局索引最多可以声明31个字段，其他索引最多可以声明32个字段。
+
+-   **column\_name ( length )**
+
+    创建一个基于该表一个字段的前缀键索引，column_name为前缀键的字段名，length为前缀长度。
+
+    前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-  此语法只在sql_compatibility=B时有效，sql_compatibility为其他值的情况下，此子句将被视作函数表达式键。
+    >-  前缀键支持的索引方法：btree、ubtree。
+    >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
+    >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
+    >-  CREATE INDEX语法中，不支持以下关键字作为前缀键的字段名称：COALESCE、EXTRACT、GREATEST、LEAST、NULLIF、NVARCHAR、NVL、OVERLAY、POSITION、SUBSTRING、TIMESTAMPDIFF、TREAT、TRIM、XMLCONCAT、XMLELEMENT、XMLEXISTS、XMLFOREST、XMLPARSE、XMLPI、XMLROOT、XMLSERIALIZE。
 
 -   **expression**
 
@@ -211,6 +226,10 @@
 
     取值范围：已存在的表空间名。
 
+-   **COMMENT text**
+
+    指定索引的注释，如果没有声明则注释为空。
+
 -   **WHERE predicate**
 
     创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
@@ -249,7 +268,7 @@
 
 -   **COMPRESS\_CHUNK\_SIZE**
 
-    索引参数，设置索引压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响索引的访问速度。（仅支持B-TREE索引）
+    索引参数，设置索引压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响索引的访问速度。该参数生效后不允许修改。（仅支持B-TREE索引）
 
     取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
 

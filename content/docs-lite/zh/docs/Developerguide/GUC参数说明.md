@@ -80,6 +80,6 @@
 
 -   **[AI特性](AI特性.md)**  
 
+-   **[高效数据压缩算法相关参数](高效数据压缩算法相关参数.md)**  
+
 -   **[Global SysCache参数](Global-SysCache参数.md)**  
-
-
