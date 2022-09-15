@@ -1171,6 +1171,41 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ALTER TABLE test_subpart2 DROP SUBPARTITION p0_2, p1_0, p1_2;
     select relname, boundaries from pg_partition where parentid in (select oid from pg_partition where parentid in (select parentid from pg_partition where relname = 'test_subpart2'));
 
+    --兼容b database reorganize分区语法示例
+    CREATE TABLE test_range_subpart
+    (
+        a INT4 PRIMARY KEY,
+        b INT4
+    )
+    PARTITION BY RANGE (a) SUBPARTITION BY HASH (b)
+    (
+        PARTITION p1 VALUES LESS THAN (200)
+        (
+            SUBPARTITION s11,
+            SUBPARTITION s12,
+            SUBPARTITION s13,
+            SUBPARTITION s14
+        ),
+        PARTITION p2 VALUES LESS THAN (500)
+        (
+            SUBPARTITION s21,
+            SUBPARTITION s22
+        ),
+        PARTITION p3 VALUES LESS THAN (800),
+        PARTITION p4 VALUES LESS THAN (1200)
+        (
+            SUBPARTITION s41
+        )
+    );
+    insert into test_range_subpart values(199,1),(499,1),(799,1),(1199,1);
+    --test test_range_subpart
+    alter table test_range_subpart reorganize partition p1,p2 into (partition m1 values less than(100),partition m2 values less than(500)(subpartition m21,subpartition m22));
+    select pg_get_tabledef('test_range_subpart');
+    select * from test_range_subpart subpartition(m22);
+    select * from test_range_subpart subpartition(m21);
+    select * from test_range_subpart partition(m1);
+    explain select /*+ indexscan(test_range_subpart test_range_subpart_pkey) */ * from test_range_subpart where a > 0;
+    select * from test_range_subpart;
 
     -- 分区表建索引，在create table 中index默认为local,不支持指定global/local
     CREATE TABLE test_partition_btree

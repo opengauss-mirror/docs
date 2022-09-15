@@ -196,12 +196,16 @@
 
 -   重建分区语法
     一般用于回收分区使用空间，与删除存储在分区中的所有记录，然后重新插入它们的效果相同。这对于碎片整理很有用。
+
+    不支持列存表，不支持指定二级分区表的二级分区。
     ```
     REBUILD PARTITION  { partition_name } [, ...]
     REBUILD PARTITION ALL
     ```
 -   分区表remove partitioning语法
     移除表中partition，但是保留所有数据。
+
+    不支持列存表和segment表。
     ```
     REMOVE PARTITIONING
     ```
@@ -223,12 +227,16 @@
     ```
 -   兼容b database exchange分区语法对齐
     可以用来交换分区表和普通表的数据，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
+
+    不支持交换二级分区。
     ```
     exchange partition partition_name with table table_name (without/with validation);
     ```
 
 -   兼容b database analyze分区语法对齐
     用于收集与表内容相关的统计信息。执行计划生成器会使用这些统计数据，以确定最有效的执行计划。
+
+    不支持analyze指定二级分区。
     ```
     analyze partition { partition_name } [, ...]
     analyze partition all;
@@ -242,6 +250,23 @@
 -   兼容b database drop分区语法。
     ```
     DROP PARTITION { { partition_name } [ UPDATE GLOBAL INDEX ] } [, ...]
+    DROP SUBPARTITION { { partition_name } [ UPDATE GLOBAL INDEX ] } [, ...]
+    ```
+
+-   兼容b database reorganize分区语法。
+    重新分割或融合指定分区，重新划分分区的定义。
+
+    以下是ALTER TABLE ... REORGANIZE PARTITION用于重新分区一些关键点：
+    -   PARTITION用于确定新分区方案的选项应遵循与CREATE TABLE语句所使用的规则相同的规则。
+    -   新的RANGE分区方案不能有任何重叠范围。一个新的LIST分区方案不能有任何重叠的值集。
+    -   partition_definitions列表中的分区组合应与清单中命名的组合分区具有相同的范围或整体值集partition_list。
+    -   对于由分区的表RANGE，您只能重组相邻的分区。您不能跳过范围分区。
+    -   对于LIST分区，不可以删除已有对应数据的value值定义。
+    -   不能用于REORGANIZE PARTITION更改表使用的分区类型。
+    -   不可丢失原有表数据。
+    -   不支持interval分区，不支持value分区。
+    ```
+    REORGANIZE PARTITION {{ partition_name } [, ...]} INTO {partition_less_than_item | partition_list_item } [, ...]
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_sff7a5cc103ab41709c6f7249e8d47808"></a>
