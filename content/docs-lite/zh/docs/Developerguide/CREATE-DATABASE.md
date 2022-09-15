@@ -50,7 +50,7 @@ CREATE DATABASE database_name
 
     不指定时，默认使用模版数据库的编码。模板数据库template0和template1的编码默认与操作系统环境相关。template1不允许修改字符编码，因此若要变更编码，请使用template0创建数据库。
 
-    常用取值：GBK、UTF8、Latin1。
+    常用取值：GBK、UTF8、Latin1、GB10830等，具体支持的字符集如下：
 
     **表 1**  openGauss字符集
 
@@ -148,9 +148,9 @@ CREATE DATABASE database_name
     </tr>
     <tr id="row4536171811514"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p185361181550"><a name="p185361181550"></a><a name="p185361181550"></a>EUC_TW</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13536518654"><a name="p13536518654"></a><a name="p13536518654"></a>扩展UNIX编码-台湾</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13536518654"><a name="p13536518654"></a><a name="p13536518654"></a>扩展UNIX编码-中国台湾</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1353610188514"><a name="p1353610188514"></a><a name="p1353610188514"></a>繁体中文，台湾话</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1353610188514"><a name="p1353610188514"></a><a name="p1353610188514"></a>繁体中文</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p65363189512"><a name="p65363189512"></a><a name="p65363189512"></a>是</p>
     </td>
@@ -828,6 +828,6 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
-    当新建数据库Encoding、LC-Collate 或LC\_Ctype与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'）时，必须指定template \[=\] template0。
+    当新建数据库Encoding、LC-Collate 或LC\_Ctype与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'）时，必须指定template \[=\] template0。
 
 

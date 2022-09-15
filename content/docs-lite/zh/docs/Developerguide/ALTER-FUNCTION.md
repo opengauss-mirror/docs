@@ -35,6 +35,7 @@
      | ROWS result_rows
      | SET configuration_parameter { { TO | = } { value | DEFAULT }| FROM CURRENT}
      | RESET {configuration_parameter | ALL}
+     | COMMENT 'text'
     ```
 
 -   修改自定义函数的名称。
@@ -180,6 +181,10 @@
     函数的新模式。
 
     取值范围：已存在的模式。
+
+-   **COMMENT 'text'**
+
+    修改函数对象的注释。
 
 
 ## 示例<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>

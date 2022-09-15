@@ -12,16 +12,28 @@
 -   列存表不支持结果不确定的更新\(non-deterministic update\)。试图对列存表用多行数据更新一行时会报错。
 -   列存表的更新操作，旧记录空间不会回收，需要执行VACUUM FULL table\_name进行清理。
 -   对于列存复制表，暂不支持UPDATE操作。
+-   对于多表更新语法，仅在参数sql\_compatibility=B时生效，暂时不支持对列存表、视图和含有RULE的表进行多表更新。
 
 ## 语法格式<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
 ```
+单表更新：
+[ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]
+    [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
+    [ LIMIT { count } ]
     [ RETURNING {* 
                 | {output_expression [ [ AS ] output_name ]} [, ...] }];
+
+多表更新：
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+UPDATE [/*+ plan_hint */] table_list
+SET {column_name = { expression | DEFAULT } 
+    |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
+    [ FROM from_list] [ WHERE condition ];
 
 where sub_query can be:
 SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
@@ -30,6 +42,8 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ WHERE condition ]
 [ GROUP BY grouping_element [, ...] ]
 [ HAVING condition [, ...] ]
+[ ORDER BY {expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ]} [, ...] ]
+[ LIMIT { [offset,] count | ALL } ]
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_sf3e3262b89854b3d829a94054116838c"></a>
@@ -54,13 +68,17 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     关键字详见[SELECT](SELECT.md)一节介绍
 
-    示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)
+    示例详见[CREATE TABLE SUBPARTITION](CREATE-TABLE-SUBPARTITION.md)
 
 -   **alias**
 
     目标表的别名。
 
     取值范围：字符串，符合标识符命名规范。
+
+-   **table\_list**
+
+    一个表的表达式列表，与from\_list类似，但可以同时声明目标表和关联表，仅在参数sql\_compatibility=B时生效。
 
 -   **column\_name**
 
@@ -82,11 +100,13 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     如果没有缺省值，则为NULL。
 
--   **sub\_query**
+- **sub\_query**
 
-    子查询。
+  子查询。
 
-    使用同一数据库里其他表的信息来更新一个表可以使用子查询的方法。其中SELECT子句具体介绍请参考[SELECT](SELECT.md)。
+  使用同一数据库里其他表的信息来更新一个表可以使用子查询的方法。其中SELECT子句具体介绍请参考[SELECT](SELECT.md)。
+
+  在update单列时，支持使用order by子句与limit子句；而在update多列时，则不支持使用order by子句与limit子句。
 
 -   **from\_list**
 
@@ -98,6 +118,14 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **condition**
 
     一个返回Boolean类型结果的表达式。只有这个表达式返回true的行才会被更新。不建议使用int等数值类型作为condition，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
+
+-   ORDER BY子句
+
+    关键字详见[SELECT](SELECT.md)一节介绍。
+
+-   LIMIT子句
+
+    关键字详见[SELECT](SELECT.md)一节介绍。
 
 -   **output\_expression**
 

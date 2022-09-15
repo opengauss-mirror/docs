@@ -63,6 +63,8 @@
         | OF type_name
         | NOT OF
         | REPLICA IDENTITY { DEFAULT | USING INDEX index_name | FULL | NOTHING }
+        | AUTO_INCREMENT [ = ] value
+        | COMMENT {=| } 'text'
     ```
     
 
@@ -139,8 +141,8 @@
 
   透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
 
-- **| REPLICA IDENTITY \{DEFAULT | USING INDEX index\_name | FULL | NOTHING\}**
-  调整逻辑复制时写入WAL日志中的信息量，该选项仅在wal\_level配置为logical时才有效。 当原数据表发生更新时，默认的逻辑复制流只包含主键的历史记录，如果需要输出所需字段更新或删除的历史记录，可修改本参数。“DEFAULT”（非系统表的默认值）会记录主键字段的旧值。“USING INDEX”会记录名为index\_name索引包含的字段的旧值，索引的所有列必须NOT NULL。“FULL”记录了所有列的旧值。“NOTHING”（系统表默认值）不记录旧值的信息。
+- **| REPLICA IDENTITY {DEFAULT | USING INDEX index_name | FULL | NOTHING}** 
+  调整逻辑复制时写入WAL日志中的信息量，该选项仅在wal_level配置为logical时才有效。 当原数据表发生更新时，默认的逻辑复制流只包含主键的历史记录，如果需要输出所需字段更新或删除的历史记录，可修改本参数。“DEFAULT”（非系统表的默认值）会记录主键字段的旧值。“USING INDEX”会记录名为index_name索引包含的字段的旧值，索引的所有列必须NOT NULL。“FULL”记录了所有列的旧值。“NOTHING”（系统表默认值）不记录旧值的信息。
 
 - **SET WITH OIDS**
   在资料表中增加了一个OID系统栏位。如果资料表中已经有OID，则此语法什么都不改变。
@@ -163,11 +165,15 @@
 - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
   DEFAULT记录主键的列的旧值。USING INDEX记录命名索引覆盖的列的旧值，这些值必须是唯一的，不局部的，不可延迟的，并且仅包括标记为NOT NULL的列。FULL记录该行中所有列的旧值。NOTHING不记录有关旧行的信息。在所有情况下，除非该行的新旧版本中至少要记录的列之一不同，否则不会记录任何旧值。
 
+- **COMMENT 'text'**
+  修改表对象的注释。
+
 其中列相关的操作column\_clause可以是以下子句之一：
 
 ```
-ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
-| MODIFY column_name data_type    
+ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]   
+| MODIFY column_name data_type [ ON UPDATE update_expr ]   
+| MODIFY [ COLUMN ] column_name [ COMMENT 'text']    
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
 | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
@@ -184,11 +190,14 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
 ![](public_sys-resources/icon-note.gif) **说明：**  
 
-- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
   向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
-
-- **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
+  
+- **ADD \( \{ column\_name data\_type \[ compress\_mode \]  \[ COMMENT {=| } 'text'\] \} \[, ...\] \)**
   向表中增加多列。
+
+- **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
+  修改字段注释。
 
 - **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
   修改表已存在字段的数据类型。
@@ -217,7 +226,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
   为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
 
 - **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
-  用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。每组多列统计信息最多支持32列。不支持添加/删除多列统计信息声明的表：系统表、外表。
+  用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。如果关闭GUC参数enable\_functional\_dependency，每组多列统计信息最多支持32列；如果开启GUC参数enable\_functional\_dependency，每组多列统计信息最多支持4列。不支持添加/删除多列统计信息声明的表：系统表、外表。
 
 - **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
   **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
@@ -259,14 +268,15 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 -   其中表约束table\_constraint为：
 
     ```
-    [ CONSTRAINT constraint_name ]
+    [ CONSTRAINT [ constraint_name ] ]
         { CHECK ( expression ) |
-          UNIQUE ( column_name [, ... ] ) index_parameters |
-          PRIMARY KEY ( column_name [, ... ] ) index_parameters |
+           UNIQUE [ idx_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+          PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
           PARTIAL CLUSTER KEY ( column_name [, ... ]  }
-          FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
-             [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+          FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+              [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+        [ COMMENT 'text' ]
     ```
 
 -   其中索引参数index\_parameters为：
@@ -327,7 +337,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
-        MODIFY ( { column_name data_type | column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ] | column_name [ CONSTRAINT constraint_name ] NULL } [, ...] );
+        MODIFY ( { column_name data_type [ ON UPDATE update_expr ]| column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ] | column_name [ CONSTRAINT constraint_name ] NULL } [, ...] );
     ```
 
 
@@ -344,13 +354,47 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     若声明了ONLY选项，则只有那个表被更改。若未声明ONLY，该表及其所有子表都将会被更改。另外，可以在表名称后面显示地增加\*选项来指定包括子表，即表示所有后代表都被扫描，这是默认行为。
 
 -   **constraint\_name**
+    -   在DROP CONSTRAINT操作中表示要删除的现有约束的名称。
+    -   在ADD CONSTRAINT操作中表示新增的约束名称。
 
-    要删除的现有约束的名称。
+        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >对于新增约束，在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
+
 
 -   **index\_name**
 
     索引名称。
+        
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >在ADD CONSTRAINT操作中：
+    >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
+    >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
+    >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
 
+-   **USING method**
+
+    指定创建索引的方法。
+
+    取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >在ADD CONSTRAINT操作中：
+    >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
+    >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
+
+-   **ASC | DESC**
+
+    ASC表示指定按升序排序（默认）。DESC指定按降序排序。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >在ADD CONSTRAINT中，ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
+
+-   **expression**
+
+    创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
+
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 -   **storage\_parameter**
 
     表的存储参数的名称。

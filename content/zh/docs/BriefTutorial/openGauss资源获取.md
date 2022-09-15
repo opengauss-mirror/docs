@@ -125,7 +125,7 @@ openGauss社区按照不同的SIGs（Special Interest Groups）来组织，以�
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p34367332594"><a name="p34367332594"></a><a name="p34367332594"></a>负责openGauss社区版本质量相关的开发和维护。</p>
 </td>
 </tr>
-<tr id="row1481317234016"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4814152314014"><a name="p4814152314014"></a><a name="p4814152314014"></a><a href="https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology" target="_blank" rel="noopener noreferrer">Graph</a></p>
+<tr id="row1481317234016"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4814152314014"><a name="p4814152314014"></a><a name="p4814152314014"></a><a href="https://gitee.com/opengauss/tc/tree/master/sigs/Graph" target="_blank" rel="noopener noreferrer">Graph</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5814102310013"><a name="p5814102310013"></a><a name="p5814102310013"></a>负责openGauss社区统一存储和查询的知识图谱数据管理功能。</p>
 </td>
@@ -135,7 +135,7 @@ openGauss社区按照不同的SIGs（Special Interest Groups）来组织，以�
 
 ## 博客<a name="section1613515344318"></a>
 
-openGauss提供了[博客](https://opengauss.org/zh/blogs/blogs.html)板块，此处汇聚了openGauss用户在使用过程中的问题解决和心得。如果遇到问题，您也可以在此处进行搜素，查看其他用户的解决办法。您在使用过程中的心得，也可以发表博客分享给其他用户，帮助更多的人解决问题。
+openGauss提供了[博客](https://opengauss.org/zh/blogs/blogs.html)板块，此处汇聚了openGauss用户在使用过程中的问题解决和心得。如果遇到问题，您也可以在此处进行搜索，查看其他用户的解决办法。您在使用过程中的心得，也可以发表博客分享给其他用户，帮助更多的人解决问题。
 
 ## 邮件列表<a name="section18179203094610"></a>
 

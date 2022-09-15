@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137186_zh-cn_topic_0237122156_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-只有触发器的所有者可以执行DROP TRIGGER操作，系统管理员默认拥有此权限。
+触发器的所有者或者被授予了DROP ANY TRIGGER权限的用户可以执行DROP TRIGGER操作，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137186_zh-cn_topic_0237122156_zh-cn_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 

@@ -4,6 +4,8 @@
 
 指定执行INSERT、UPDATE语句时可将部分Error降级为Warning，且不影响语句执行完成的hint。
 
+该hint不支持列存表，无法在列存表中生效。
+
 >![](public_sys-resources/icon-caution.gif) **注意：** 
 >与其他hint不同，此hint仅影响执行器遇到部分Error时的处理方式，不会对执行计划有任何影响。
 

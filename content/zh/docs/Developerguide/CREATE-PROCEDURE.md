@@ -35,6 +35,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
        | {[ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER | AUTHID DEFINER | AUTHID CURRENT_USER}
        | COST execution_cost
        | SET configuration_parameter { TO value | = value | FROM CURRENT }
+       | COMMENT text
     ][ ... ]
  { IS | AS } 
 plsql_body 
@@ -93,6 +94,10 @@ plsql_body
 -   **IMMUTABLE、STABLE**等
 
     行为约束可选项。各参数的功能与CREATE FUNCTION类似，详细说明见[CREATE FUNCTION](CREATE-FUNCTION.md)
+
+-   **COMMENT text**
+
+    指定存储过程注释。    
 
 -   **plsql\_body**
 

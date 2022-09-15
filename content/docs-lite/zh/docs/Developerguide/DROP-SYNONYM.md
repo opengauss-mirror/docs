@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137394_zh-cn_topic_0237122151_zh-cn_topic_0059778429_s930f5a4f83c6409d88e8b3f1cb94b164"></a>
 
-只有SYNONYM的所有者有权限执行DROP SYNONYM命令，系统管理员默认拥有此权限。
+SYNONYM的所有者或者被授予了DROP ANY SEQUENCE权限的用户有权限执行DROP SYNONYM命令，系统管理员默认拥有此权限。
 
 ## 语法格式<a name="zh-cn_topic_0283137394_zh-cn_topic_0237122151_zh-cn_topic_0059778429_s9b11702dc40d417f95cd9eec3970b4d1"></a>
 

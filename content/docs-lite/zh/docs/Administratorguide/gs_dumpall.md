@@ -10,7 +10,7 @@ gs\_dumpall工具在进行数据导出时，其他用户可以访问openGauss数
 
 gs\_dumpall工具支持导出完整一致的数据。例如，T1时刻启动gs\_dumpall导出整个openGauss数据库，那么导出数据结果将会是T1时刻该openGauss数据库的数据状态，T1时刻之后对openGauss数据库的修改不会被导出。
 
-gs\_dumpall时生成列不会被转储。
+gs\_dumpall工具在进行数据导出时生成的列不会被转储。
 
 gs\_dumpall在导出openGauss所有数据库时分为两部分：
 

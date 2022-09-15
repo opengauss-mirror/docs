@@ -71,7 +71,40 @@
 </tr>
 <tr id="row15768191461612"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p076951417163"><a name="p076951417163"></a><a name="p076951417163"></a>sql_beta_feature</p>
 </td>
-<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p1676941418160"><a name="p1676941418160"></a><a name="p1676941418160"></a>控制优化器是否启用。SEL_SEMI_POISSON/SEL_EXPR_INSTR/PARAM_PATH_GEN/RAND_COST_OPT/PARAM_PATH_OPT/PAGE_EST_OPT/CANONICAL_PATHKEY/PARTITION_OPFUSION<span id="ph74171810598"><a name="ph74171810598"></a><a name="ph74171810598"></a>/PREDPUSH_SAME_LEVEL</span>测试功能。</p>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p1676941418160"><a name="p1676941418160"></a><a name="p1676941418160"></a>控制优化器是否启用。SEL_SEMI_POISSON/SEL_EXPR_INSTR/PARAM_PATH_GEN/RAND_COST_OPT/PARAM_PATH_OPT/PAGE_EST_OPT/CANONICAL_PATHKEY/PARTITION_OPFUSION/PREDPUSH_SAME_LEVEL/PARTITION_FDW_ON/DISABLE_BITMAP_COST_WITH_LOSSY_PAGES测试功能。</p>
+</td>
+</tr>
+<tr id="row372215341299"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p187235341897"><a name="p187235341897"></a><a name="p187235341897"></a>var_eq_const_selectivity</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p1072313341893"><a name="p1072313341893"></a><a name="p1072313341893"></a>控制优化器是否使用直方图计算整型常量的选择率。</p>
+</td>
+</tr>
+<tr id="row873820011569"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p1173820025617"><a name="p1173820025617"></a><a name="p1173820025617"></a>partition_page_estimation</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p4739404567"><a name="p4739404567"></a><a name="p4739404567"></a>控制分区表页面是否通过剪枝结果进行页面估算优化，只包括分区表和local索引页面，不包括全局索引页面。估算公式为：</p>
+<p id="p151458205116"><a name="p151458205116"></a><a name="p151458205116"></a>估算后页面 = 分区表总页面 * （剪枝后分区数 / 总分区数）。</p>
+</td>
+</tr>
+<tr id="row1497103195719"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p749717385715"><a name="p749717385715"></a><a name="p749717385715"></a>partition_iterator_elimination</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p74971636576"><a name="p74971636576"></a><a name="p74971636576"></a>控制分区表在分区剪枝结果为一个分区时，是否通过消除分区迭代算子，来提升执行效率。</p>
+</td>
+</tr>
+<tr id="row1493324894612"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p5933948154619"><a name="p5933948154619"></a><a name="p5933948154619"></a>enable_functional_dependency</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p16780635134810"><a name="p16780635134810"></a><a name="p16780635134810"></a>控制函数依赖统计信息的使用。</p>
+<p id="p06781238164817"><a name="p06781238164817"></a><a name="p06781238164817"></a>设置为“on”，开启两个功能：</p>
+<a name="ol93818213497"></a><a name="ol93818213497"></a><ol id="ol93818213497"><li>执行ANALYZE生成的多列统计信息包含函数依赖统计信息。</li><li>计算选择率会使用函数依赖统计信息。</li></ol>
+<p id="p17836164534818"><a name="p17836164534818"></a><a name="p17836164534818"></a>设置为“off”，此两个功能不生效：</p>
+<a name="ol958481011494"></a><a name="ol958481011494"></a><ol id="ol958481011494"><li>执行ANALYZE生成的多列统计信息不包含函数依赖统计信息。</li><li>计算选择率不会使用函数依赖统计信息。</li></ol>
+<div class="note" id="note1145635281215"><a name="note1145635281215"></a><a name="note1145635281215"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p345735251216"><a name="p345735251216"></a><a name="p345735251216"></a>函数依赖（Functional Dependency）的概念来自于关系数据库范式（Normal Form），表示属性间的函数关系。函数依赖统计信息，对此概念进行了扩展，表示满足函数关系的数据量占总数据量的比例。函数依赖统计信息是多列统计信息的一种，可以用于提升选择率估算的准确率。</p>
+</div></div>
+<p id="p11457135251219"><a name="p11457135251219"></a><a name="p11457135251219"></a>函数依赖统计信息适用于形如“where a = 1 and b = 1”的格式，要求a和b均是同一个表的属性，约束条件为等式约束，约束条件用AND连接，约束条件至少为两个。</p>
+</td>
+</tr>
+<tr id="row11393164818220"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p43935488219"><a name="p43935488219"></a><a name="p43935488219"></a>enable_seqscan_fusion</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p14394348921"><a name="p14394348921"></a><a name="p14394348921"></a>控制seqscan底噪消除是否打开。</p>
 </td>
 </tr>
 </tbody>

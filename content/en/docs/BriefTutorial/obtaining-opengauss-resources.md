@@ -125,7 +125,7 @@ The openGauss community is organized based on different Special Interest Groups 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p34367332594"><a name="p34367332594"></a><a name="p34367332594"></a>Develops and maintains the version quality of the openGauss community.</p>
 </td>
 </tr>
-<tr id="row1481317234016"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4814152314014"><a name="p4814152314014"></a><a name="p4814152314014"></a><a href="https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology" target="_blank" rel="noopener noreferrer">Graph</a></p>
+<tr id="row1481317234016"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4814152314014"><a name="p4814152314014"></a><a name="p4814152314014"></a><a href="https://gitee.com/opengauss/tc/tree/master/sigs/Graph" target="_blank" rel="noopener noreferrer">Graph</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5814102310013"><a name="p5814102310013"></a><a name="p5814102310013"></a>Manages knowledge graph data for unified storage and query in the openGauss community.</p>
 </td>

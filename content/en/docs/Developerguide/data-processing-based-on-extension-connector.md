@@ -2,7 +2,7 @@
 
 ## Function<a name="section340011111459"></a>
 
-SQL on openGauss is one of the functions of  [Extension Connector](sql-on-anywhere.md#section134436495103). It allows a openGauss database instance to send SQL statements to another openGauss database instance for execution and obtain the execution result. The execution result can be used in the associated query of the local table or imported to the local table or local file system.
+SQL on openGauss is one of the functions of  [Extension Connector](sql-on-anywhere.md#section134436495103). It allows an openGauss database instance to send SQL statements to another openGauss database instance for execution and obtain the execution result. The execution result can be used in the associated query of the local table or imported to the local table or local file system.
 
 ## Supported openGauss Data Types<a name="section15300155741218"></a>
 
