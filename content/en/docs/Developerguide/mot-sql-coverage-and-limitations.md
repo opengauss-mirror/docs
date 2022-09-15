@@ -22,8 +22,8 @@ In addition, the following are detailed lists of various general limitations of 
 
 The following lists the functionality limitations of MOT tables –
 
--   Partition by range
--   AES encryption
+-   Partitioning
+-   AES encryption, row-level access control, dynamic data masking
 -   Stream operations
 -   User-defined types
 -   Sub-transactions
@@ -78,6 +78,15 @@ The following lists the functionality limitations of MOT tables –
 -   Any unlimited varchar/character varying
 -   HSTORE
 -   XML
+-   Int16
+-   Abstime
+-   Tsrange
+-   Tstzrange
+-   Int8range
+-   Int4range
+-   Numrange
+-   Daterange
+-   HLL
 
 ## UnsupportedIndex DDLs and Index<a name="section143421450173815"></a>
 
