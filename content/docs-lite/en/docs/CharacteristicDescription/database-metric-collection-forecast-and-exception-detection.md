@@ -32,4 +32,3 @@ This feature is greatly improved in openGauss 3.0.0 and is compatible with the P
 ## Dependencies<a name="section4228145683310"></a>
 
 Prometheus
-

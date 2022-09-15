@@ -39,4 +39,3 @@ openGauss=# DROP MATERIALIZED VIEW my_mv;
 ## Helpful Links<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [ALTER MATERIALIZED VIEW](alter-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE TABLE](create-table.md),  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md), and  [REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)
-

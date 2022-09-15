@@ -64,11 +64,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"><a name="en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a><a name="en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a>Displays the DN running status.</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>Exits the faulty restoration when the running standby server is instructed in the specified data directory, and starts to perform the read and write operations.</p>
-    </td>
-    </tr>
     <tr id="en-us_topic_0059777628_r50cd614425ec45d2b87aece8def5e24c"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"><a name="en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a><a name="en-us_topic_0059777628_ae5c5bba77f88420786ff7db5c596e690"></a>failover</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"><a name="en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a><a name="en-us_topic_0059777628_a7fe6061dec954ed387a854ada948b7a7"></a>Promotes the standby <span id="text1832314175236"><a name="text1832314175236"></a><a name="text1832314175236"></a>DN</span> to the primary <span id="text12809101815237"><a name="text12809101815237"></a><a name="text12809101815237"></a>DN</span> when the primary <span id="text94532016152313"><a name="text94532016152313"></a><a name="text94532016152313"></a>DN</span> is faulty.</p>
@@ -135,7 +130,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 <tr id="en-us_topic_0059777628_r01437712745143c7b52a1c5f2b9f7b52"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"><a name="en-us_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a><a name="en-us_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a>-s,  --silent</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="en-us_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="en-us_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>Prints partial prompt information only for the <strong id="b13340175119587"><a name="b13340175119587"></a><a name="b13340175119587"></a>promote</strong>, <strong id="b113451251155815"><a name="b113451251155815"></a><a name="b113451251155815"></a>reload</strong>, <strong id="b23451151185818"><a name="b23451151185818"></a><a name="b23451151185818"></a>restart</strong>, and <strong id="b15346145195814"><a name="b15346145195814"></a><a name="b15346145195814"></a>stop </strong>commands.</p>
+<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"><a name="en-us_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a><a name="en-us_topic_0059777628_a168a488e0d82416bbba1ace430f442b5"></a>Prints partial prompt information only for the <strong id="b113451251155815"><a name="b113451251155815"></a><a name="b113451251155815"></a>reload</strong>, <strong id="b23451151185818"><a name="b23451151185818"></a><a name="b23451151185818"></a>restart</strong>, and <strong id="b15346145195814"><a name="b15346145195814"></a><a name="b15346145195814"></a>stop </strong>commands.</p>
 <p id="p32125417441"><a name="p32125417441"></a><a name="p32125417441"></a>Prints information such as "gstl stopped, xxx". Information such as " waiting for server to shut down, server stopped" is not printed.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"><a name="en-us_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a><a name="en-us_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a>-</p>
@@ -403,4 +398,3 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 </tbody>
 </table>
-

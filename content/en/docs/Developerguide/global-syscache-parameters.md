@@ -17,7 +17,7 @@ You are advised to use this parameter together with the thread pool parameter. A
 
 **Parameter description**: Specifies the maximum memory usage of the global system cache.
 
-This parameter is a PGC\_SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 The  **enable\_global\_syscache**  parameter must be enabled.
 
@@ -34,4 +34,3 @@ The number of hot databases refers to the number of frequently accessed database
 **memofdb**  indicates the average memory allocated to each database. The background noise memory of each database is 2 MB. Each time a table or index is added, 11 KB memory is added.
 
 If this parameter is set to a small value, memory is frequently evicted, and a large number of memory fragments cannot be recycled. As a result, memory control fails.
-

@@ -624,7 +624,7 @@ openGauss=# CREATE TEMPORARY TABLE warehouse_t25
     W_GMT_OFFSET              DECIMAL(5,2)
 ) ON COMMIT DELETE ROWS;
 
--- Create a global temporary table and specify that this table data is deleted when the session ends.
+-- Create a global temporary table and specify that this table data is deleted when the session ends. The current Ustore storage engine does not support global temporary tables.
 openGauss=# CREATE GLOBAL TEMPORARY TABLE gtt1
 (
     ID                        INTEGER               NOT NULL,
@@ -1077,5 +1077,3 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 
 -   ORIENTATION COLUMN
     -   Creates a column-store table. Column-store applies to the DWS, which has a large amount of aggregation computing, and involves a few column operations.
-
-

@@ -58,7 +58,7 @@ CREATE PUBLICATION insert_only FOR TABLE mydata WITH (publish = 'insert');
 -- Modify publication operations.
 ALTER PUBLICATION insert_only SET (publish='insert,update,delete');
 -- Add a table to a publication.
-ALTER PUBLICAITON insert_only ADD TABLE mydata2;
+ALTER PUBLICATION insert_only ADD TABLE mydata2;
 -- Delete a publication.
 DROP PUBLICATION insert_only;
 ```
@@ -66,4 +66,3 @@ DROP PUBLICATION insert_only;
 ## Helpful Links<a name="section871143685317"></a>
 
 [ALTER PUBLICATION](alter-publication.md)  and  [DROP PUBLICATION](drop-publication.md)
-

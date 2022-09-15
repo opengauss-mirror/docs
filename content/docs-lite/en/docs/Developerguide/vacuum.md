@@ -67,6 +67,10 @@
 
     Updates statistics used by the planner to determine the most efficient way to execute a query.
 
+  > **![](./public_sys-resources/icon-note.gif) NOTE:**
+  >
+  > Vacuum is also triggered when **autovacuum** is set to **analyze** for the ustore partitioned table.
+
 -   **table\_name**
 
     Specifies the name \(optionally schema-qualified\) of a specific table to vacuum.
@@ -117,5 +121,3 @@ openGauss=# DROP TABLE tpcds.reason;
     -   It is recommended that active production databases be vacuumed frequently \(at least nightly\), in order to remove dead rows. It is strongly recommended that you run  **VACUUM ANALYZE**  after adding or deleting a large number of records.
     -   **FULL**  is recommended only in special scenarios. For example, you wish to physically narrow the table to decrease the occupied disk space after deleting most rows of a table.
     -   Before performing the VACUUM FULL operation, you are advised to delete all indexes in related tables, run  **VACUUM FULL**, and then re-create the index.
-
-
