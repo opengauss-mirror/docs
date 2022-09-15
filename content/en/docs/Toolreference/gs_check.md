@@ -1306,7 +1306,6 @@ Check result of a scenario:
 
 ```
 [perfadm@SIA1000131072 Check]$ gs_check -e inspect
-Skip CheckHdfsForeignTabEncoding because it only applies to V1R5 upgrade V1R6 with cluster.
 Parsing the check items config file successfully
 The below items require root privileges to execute:[CheckBlockdev CheckIOConfigure CheckMTU CheckRXTX CheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckMaxProcMemory CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
 Please enter root privileges user[root]:
