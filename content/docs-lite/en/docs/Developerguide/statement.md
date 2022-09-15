@@ -53,6 +53,7 @@
 <td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p2150183165513"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p2150183165513"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p2150183165513"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p19150153195513"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p19150153195513"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p19150153195513"></a>Normalized SQL statement</p>
+<p id="p19360123918375"><a name="p19360123918375"></a><a name="p19360123918375"></a>Note: The length is controlled by <strong>track_activity_query_size</strong>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136928_en-us_topic_0237122654_row19150437555"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p71505355516"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p71505355516"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p71505355516"></a>n_calls</p>
@@ -209,18 +210,39 @@
 <td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p415433125510"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p415433125510"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p415433125510"></a>Compilation time of PL/pgSQL (unit: μs)</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283136928_en-us_topic_0237122654_row015403195515"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p2015410316555"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p2015410316555"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p2015410316555"></a>net_send_time</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p31546311555"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p31546311555"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p31546311555"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p215412315551"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p215412315551"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p215412315551"></a>Network time (unit: μs)</p>
-</td>
-</tr>
 <tr id="en-us_topic_0283136928_en-us_topic_0237122654_row15154193135511"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p7155113115519"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p7155113115519"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p7155113115519"></a>data_io_time</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p161551037552"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p161551037552"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p161551037552"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p1115543145517"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p1115543145517"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p1115543145517"></a>I/O time (unit: μs)</p>
+</td>
+</tr>
+<tr id="row5375164919433"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="p113761549184315"><a name="p113761549184315"></a><a name="p113761549184315"></a><span id="ph1360819612447"><a name="ph1360819612447"></a><a name="ph1360819612447"></a>net_send_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="p137634904319"><a name="p137634904319"></a><a name="p137634904319"></a><span id="ph1272212104442"><a name="ph1272212104442"></a><a name="ph1272212104442"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="p1637616499431"><a name="p1637616499431"></a><a name="p1637616499431"></a><span id="ph851071764417"><a name="ph851071764417"></a><a name="ph851071764417"></a>Network status of messages sent through a physical connection, including the time (unit: μs), number of calls, and throughput (unit: byte). This column can be used to analyze the network overhead of SQL in a distributed system. This column is not supported in a standalone mode. Example: {"time":xxx, "n_calls":xxx, "size":xxx}.</span></p>
+</td>
+</tr>
+<tr id="row59922094411"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="p109922006445"><a name="p109922006445"></a><a name="p109922006445"></a><span id="ph17839132218442"><a name="ph17839132218442"></a><a name="ph17839132218442"></a>net_recv_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="p199211016445"><a name="p199211016445"></a><a name="p199211016445"></a><span id="ph142145261447"><a name="ph142145261447"></a><a name="ph142145261447"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="p1992606448"><a name="p1992606448"></a><a name="p1992606448"></a><span id="ph19500532134413"><a name="ph19500532134413"></a><a name="ph19500532134413"></a>Network status of messages received through a physical connection, including the time (unit: μs), number of calls, and throughput (unit: byte). This column can be used to analyze the network overhead of SQL in a distributed system. This column is not supported in a standalone mode. Example: {"time":xxx, "n_calls":xxx, "size":xxx}.</span></p>
+</td>
+</tr>
+<tr id="row19284145714319"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="p13284357144314"><a name="p13284357144314"></a><a name="p13284357144314"></a><span id="ph114010383442"><a name="ph114010383442"></a><a name="ph114010383442"></a>net_stream_send_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="p1328410571436"><a name="p1328410571436"></a><a name="p1328410571436"></a><span id="ph873113412448"><a name="ph873113412448"></a><a name="ph873113412448"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="p728495719439"><a name="p728495719439"></a><a name="p728495719439"></a><span id="ph7587552174410"><a name="ph7587552174410"></a><a name="ph7587552174410"></a>Network status of messages sent through a logical connection, including the time (unit: μs), number of calls, and throughput (unit: byte). This column can be used to analyze the network overhead of SQL in a distributed system. This column is not supported in a standalone mode. Example: {"time":xxx, "n_calls":xxx, "size":xxx}.</span></p>
+</td>
+</tr>
+<tr id="row1844175316434"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="p6844155334313"><a name="p6844155334313"></a><a name="p6844155334313"></a><span id="ph87757314457"><a name="ph87757314457"></a><a name="ph87757314457"></a>net_stream_recv_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="p284412532432"><a name="p284412532432"></a><a name="p284412532432"></a><span id="ph1843016426440"><a name="ph1843016426440"></a><a name="ph1843016426440"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="p084410534431"><a name="p084410534431"></a><a name="p084410534431"></a><span id="ph0941145914411"><a name="ph0941145914411"></a><a name="ph0941145914411"></a>Network status of messages received through a logical connection, including the time (unit: μs), number of calls, and throughput (unit: byte). This column can be used to analyze the network overhead of SQL in a distributed system. This column is not supported in a standalone mode. Example: {"time":xxx, "n_calls":xxx, "size":xxx}.</span></p>
 </td>
 </tr>
 <tr id="row16379469100"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="p383015593117"><a name="p383015593117"></a><a name="p383015593117"></a>sort_count</p>
@@ -302,4 +324,3 @@
 </tr>
 </tbody>
 </table>
-

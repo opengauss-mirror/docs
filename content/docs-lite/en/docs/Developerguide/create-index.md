@@ -54,7 +54,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Creates a unique index. In this way, the system checks whether new values are unique in the index column. Attempts to insert or update data which would result in duplicate entries will generate an error.
 
-    Currently, only the B-tree index supports unique indexes.
+    Currently, only B-tree and UB-tree indexes support unique indexes.
 
 -   **CONCURRENTLY**
 
@@ -192,7 +192,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
         Specifies the maximum capacity of the pending list of the GIN index when fast update is enabled for the GIN index.
 
-        Value range: 64–_INT\_MAX_. The unit is KB.
+        Value range: 64–*INT\*MAX_. The unit is KB.
 
         Default value: The default value of  **gin\_pending\_list\_limit**  depends on  **gin\_pending\_list\_limit**  specified in GUC parameters. By default, the value is  **4**.
 
@@ -421,5 +421,3 @@ CREATE INDEX
     -   In the same attribute column, the LOCAL index and GLOBAL index of a partition cannot coexist.
     -   GLOBAL index supports a maximum of 31 columns.
     -   If the  **ALTER**  statement does not contain  **UPDATE GLOBAL INDEX**, the original GLOBAL index is invalid. In this case, other indexes are used for query. If the ALTER statement contains UPDATE GLOBAL INDEX, the original GLOBAL index is still valid and the index function is correct.
-
-

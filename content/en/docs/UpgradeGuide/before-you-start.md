@@ -84,4 +84,4 @@ Note the following during the upgrade:
 -   The GUC parameter  **enable\_stream\_replication**  must be set to  **on**  for the upgrade. If this parameter is set to  **off**, the upgrade is not allowed.
 -   In gray upgrade, ensure that there are less than 200 concurrent reads and 200 concurrent writes.
 -   If the MOT is used in a version earlier than openGauss 2.0.0, the version cannot be upgraded to openGauss 2.0.0.
-
+-   During the upgrade, do not install other openGauss database clusters on the current host.

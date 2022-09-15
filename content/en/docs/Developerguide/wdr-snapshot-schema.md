@@ -7,5 +7,3 @@ You can set the parameter  [wdr\_snapshot\_retention\_days](system-performance-s
 -   **[Original Information Table of WDR Snapshots](original-information-table-of-wdr-snapshots.md)**  
 -   **[WDR Snapshot Data Table](wdr-snapshot-data-table.md)**  
 -   **[Performance Report Generated Based on WDR Snapshot](performance-report-generated-based-on-wdr-snapshot.md)**  
-
-

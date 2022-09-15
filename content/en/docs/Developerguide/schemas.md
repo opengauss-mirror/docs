@@ -2,7 +2,7 @@
 
 Schemas allow multiple users to use the same database without interference. In this way, database objects can be organized into logical groups that are easy to manage, and third-party applications can be added to corresponding schemas without causing conflicts.
 
-Each database has one or more schemas. Each schema contains tables and other types of objects. When a database is initially created, it has a schema named  **public**  by default, and all users have the usage permission on the schema. Only the system administrator and initial users can create functions, stored procedures, and synonyms in the public schema. Other users cannot create the three types of objects even if they have the create permission. You can group database objects by schema. A schema is similar to an OS directory but cannot be nested.By default only the initializing user can create objects in pg_catalog mode.
+Each database has one or more schemas. Each schema contains tables and other types of objects. When a database is initially created, it has a public schema by default, and all users have the usage permission on the schema. Only the system administrator and initial users can create common functions, aggregate functions, stored procedures, and synonym objects in the public schema. Only the initial users can create operators in the public schema. Other users cannot create the preceding five types of objects even if they are granted the create permission. You can group database objects by schema. A schema is similar to an OS directory but cannot be nested. By default, only the initial user can create objects under the pg_catalog schema.
 
 The same database object name can be used in different schemas of the same database without causing conflicts. For example, both  **a\_schema**  and  **b\_schema**  can contain a table named  **mytable**. Users with required permissions can access objects across multiple schemas of the same database.
 
@@ -15,8 +15,8 @@ Database objects are generally created in the first schema in a database search 
 -   To create a schema, use  **[CREATE SCHEMA](en-us_topic_0289901000.md)**. By default, the initial user and system administrator can create schemas. Other users can create schemas in the database only when they have the CREATE permission on the database. For details about how to grant the permission, see the syntax in  [GRANT](en-us_topic_0289900312.md).
 -   To change the name or owner of a schema, use  **[ALTER SCHEMA](en-us_topic_0289900025.md)**. The schema owner can change the schema.
 -   To delete a schema and its objects, use  [DROP SCHEMA](en-us_topic_0289900224.md). Schema owners can delete schemas.
--   To create a table in a schema, use the  _schema\_name_**.**_table\_name_  format to specify the table. If  _schema\_name_  is not specified, the table will be created in the first schema in  [search path](#en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403).
--   To view the owner of a schema, perform the following join query on the system catalogs  **PG\_NAMESPACE**  and  **PG\_USER**. Replace  _schema\_name_  in the statement with the name of the schema to be queried.
+-   To create a table in a schema, use the  *schema\*name_**.***table\*name_  format to specify the table. If  *schema\*name_  is not specified, the table will be created in the first schema in  [search path](#en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403).
+-   To view the owner of a schema, perform the following join query on the system catalogs  **PG\_NAMESPACE**  and  **PG\_USER**. Replace  *schema\*name_  in the statement with the name of the schema to be queried.
 
     ```
     openGauss=# SELECT s.nspname,u.usename AS nspowner FROM pg_namespace s, pg_user u WHERE nspname='schema_name' AND s.nspowner = u.usesysid;
@@ -49,7 +49,7 @@ A search path is defined in the  **[search\_path](en-us_topic_0283136752.md#en-u
     (1 row)
     ```
 
-    The default value of  **search\_path**  is  **"_$user_",public**.  _$user_  indicates the name of the schema with the same name as the current session user. If the schema does not exist,  _$user_  will be ignored. By default, after a user connects to a database that has schemas with the same name, objects will be added to all the schemas. If there are no such schemas, objects will be added only to the  **public**  schema.
+    The default value of  **search\_path**  is  **"*$user*",public**.  *$user*  indicates the name of the schema with the same name as the current session user. If the schema does not exist,  *$user*  will be ignored. By default, after a user connects to a database that has schemas with the same name, objects will be added to all the schemas. If there are no such schemas, objects will be added only to the  **public**  schema.
 
 -   To change the default schema of the current session, run the  **SET**  statement.
 
@@ -59,5 +59,3 @@ A search path is defined in the  **[search\_path](en-us_topic_0283136752.md#en-u
     openGauss=# SET SEARCH_PATH TO myschema, public;
     SET
     ```
-
-

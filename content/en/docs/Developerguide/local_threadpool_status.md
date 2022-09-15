@@ -64,6 +64,13 @@
 <a name="ul2055983161912"></a><a name="ul2055983161912"></a><ul id="ul2055983161912"><li><strong id="b13174143813113"><a name="b13174143813113"></a><a name="b13174143813113"></a>total</strong>: Total number of sessions in the thread pool group</li><li><strong id="b543410478310"><a name="b543410478310"></a><a name="b543410478310"></a>waiting</strong>: Number of sessions pending scheduling in the thread pool group</li><li><strong id="b1179910339320"><a name="b1179910339320"></a><a name="b1179910339320"></a>running</strong>: Number of running sessions in the thread pool group</li><li><strong id="b94451843183211"><a name="b94451843183211"></a><a name="b94451843183211"></a>idle</strong>: Number of idle sessions in the thread pool group</li></ul>
 </td>
 </tr>
+       <tr id="row78596541114"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p785912516116"><a name="p785912516116"></a><a name="p785912516116"></a>stream_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.49%" headers="mcps1.2.4.1.2 "><p id="p1186016520115"><a name="p1186016520115"></a><a name="p1186016520115"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="p119613371672"><a name="p119613371672"></a><a name="p119613371672"></a>Stream pool information, including:</p>
+<a name="ul2055983161912"></a><a name="ul2055983161912"></a><ul id="ul2055983161912"><li><strong>total</strong>: total number of threads in the stream pool. </li><li><strong>running</strong>: number of threads that are being executed in the stream pool. </li><li><strong>idle</strong>: number of idle threads in the stream pool.</li></ul>
+</td>
+</tr>
 </tbody>
 </table>
-

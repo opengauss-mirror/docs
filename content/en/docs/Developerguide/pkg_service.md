@@ -428,7 +428,7 @@
     ```
     PKG_SERVICE.JOB_FINISH(
     id          IN   INTEGER,
-    broken       IN   BOOLEAN,
+    finished       IN   BOOLEAN,
     next_time    IN   TIMESTAMP  DEFAULT  sysdate);
     ```
 
@@ -458,7 +458,7 @@
     <td class="cellrowborder" valign="top" width="53.559999999999995%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0059779362_p299514147178"><a name="en-us_topic_0059779362_p299514147178"></a><a name="en-us_topic_0059779362_p299514147178"></a>Specifies the job ID.</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0059779362_row1899531411177"><td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0059779362_p2995141420172"><a name="en-us_topic_0059779362_p2995141420172"></a><a name="en-us_topic_0059779362_p2995141420172"></a>broken</p>
+    <tr id="en-us_topic_0059779362_row1899531411177"><td class="cellrowborder" valign="top" width="12.97%" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0059779362_p2995141420172"><a name="en-us_topic_0059779362_p2995141420172"></a><a name="en-us_topic_0059779362_p2995141420172"></a>finished</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.19%" headers="mcps1.2.6.1.2 "><p id="en-us_topic_0059779362_p17366816162319"><a name="en-us_topic_0059779362_p17366816162319"></a><a name="en-us_topic_0059779362_p17366816162319"></a><span id="text1759883862519"><a name="text1759883862519"></a><a name="text1759883862519"></a>Boolean</span></p>
     </td>
@@ -868,5 +868,3 @@
     </tr>
     </tbody>
     </table>
-
-

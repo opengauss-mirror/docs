@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>
 
-**CREATE ROLE**  is used to create a role.
+**CREATE ROLE**  creates a role.
 
 A role is an entity that owns database objects and permissions. In different environments, a role can be considered a user, a group, or both.
 
@@ -33,13 +33,16 @@ The syntax of role information configuration clause  **option**  is as follows:
     | {REPLICATION | NOREPLICATION}
     | {INDEPENDENT | NOINDEPENDENT}
     | {VCADMIN | NOVCADMIN}
+    | {PERSISTENCE | NOPERSISTENCE}
     | CONNECTION LIMIT connlimit
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
     | RESOURCE POOL 'respool'
+    | USER GROUP 'groupuser'
     | PERM SPACE 'spacelimit'
     | TEMP SPACE 'tmpspacelimit'
     | SPILL SPACE 'spillspacelimit'
+    | NODE GROUP logic_cluster_name
     | IN ROLE role_name [, ...]
     | IN GROUP role_name [, ...]
     | ROLE role_name [, ...]
@@ -84,9 +87,6 @@ The syntax of role information configuration clause  **option**  is as follows:
 -   **DISABLE**
 
     By default, you can change your password unless it is disabled. To disable the password of a user, use this parameter. After the password of a user is disabled, the password will be deleted from the system. The user can connect to the database only through external authentication, for example, Kerberos authentication. Only administrators can enable or disable a password. Common users cannot disable the password of an initial user. To enable a password, run  **ALTER USER**  and specify the password.
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >In the Lite scenario, Kerberos functions of openGauss are unavailable.
 
 -   **ENCRYPTED | UNENCRYPTED**
 
@@ -168,6 +168,14 @@ The syntax of role information configuration clause  **option**  is as follows:
     -   System administrators and security administrators with the  **CREATEROLE**  attribute have no permission to change the database password of the  **INDEPENDENT**  role. The  **INDEPENDENT**  role must manage its own password. If the password is lost, it cannot be reset.
     -   The  **SYSADMIN**  attribute of a user cannot be changed to the  **INDEPENDENT**  attribute.
 
+-   **VCADMIN | NOVCADMIN**
+
+    This parameter has no actual meaning.
+
+-   **PERSISTENCE | NOPERSISTENCE**
+
+    Defines a permanent user. Only the initial user is allowed to create, modify, and delete permanent users with the  **PERSISTENCE**  attribute.
+
 -   **CONNECTION LIMIT**
 
     Specifies how many concurrent connections the role can make.
@@ -190,6 +198,10 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Sets the name of resource pool used by the role. The name belongs to the system catalog  **pg\_resource\_pool**.
 
+-   **USER GROUP**
+
+    Creates a sub-user. This function is not supported in the current version.
+
 -   **PERM SPACE**
 
     Sets the space available for a user.
@@ -201,6 +213,10 @@ The syntax of role information configuration clause  **option**  is as follows:
 -   **SPILL SPACE**
 
     Sets the operator disk flushing space of a user.
+
+-   **NODE GROUP**
+
+    Specifies the name of the logical cluster associated with a user. This function is not supported in the current version.
 
 -   **IN ROLE**
 
@@ -264,4 +280,3 @@ openGauss=# DROP ROLE miriam;
 ## Helpful Links<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
 [SET ROLE](set-role.md),  [ALTER ROLE](alter-role.md),  [DROP ROLE](drop-role.md), and  [GRANT](grant.md)
-

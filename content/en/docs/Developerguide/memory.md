@@ -24,7 +24,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 128 x 1024 to  _INT\_MAX_/2. The unit is KB.
+**Value range**: an integer ranging from 128 x 1024 to  *INT\*MAX_/2. The unit is KB.
 
 **Default value**:  **512 MB**
 
@@ -51,7 +51,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 2 x 1024 x 1024 to  _INT\_MAX_. The unit is KB.
+**Value range**: an integer ranging from 2 x 1024 x 1024 to  *INT\*MAX_. The unit is KB.
 
 **Default value**:  **12 GB**
 
@@ -228,7 +228,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1024 to  _INT\_MAX_. The unit is KB.
+**Value range**: an integer ranging from 1024 to  *INT\*MAX_. The unit is KB.
 
 **Default value**:  **16 MB**
 
@@ -270,7 +270,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 100 to  _INT\_MAX_. The unit is KB.
+**Value range**: an integer ranging from 100 to  *INT\*MAX_. The unit is KB.
 
 **Default value**:
 
@@ -335,5 +335,4 @@ If  **enable\_global\_syscache**  and  **enable\_thread\_pool**  are enabled, th
 
 **Value range**: an integer ranging from 1 x 1024 to 512 x 1024. The unit is KB.
 
-**Default value:** **16 MB**
-
+**Default value:** **256MB**

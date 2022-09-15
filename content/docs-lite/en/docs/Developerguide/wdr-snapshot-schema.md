@@ -14,5 +14,3 @@ You can set the parameter  [wdr\_snapshot\_retention\_days](system-performance-s
 -   **[Performance Report Generated Based on WDR Snapshots](performance-report-generated-based-on-wdr-snapshots.md)**  
 
 -   **[WDRs](wdrs.md)**  
-
-

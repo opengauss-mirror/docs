@@ -69,11 +69,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a2e88523db73c404fb4094dceffa62c8b"></a>Displays the running status of the database services.</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r268eda7d24344929b4fbe045815c4f75"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a5ab2e63109e845538bc05f10e56770b7"></a>promote</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a055cecf55ede4cf09b08d2273fe6acd1"></a>Exits the faulty restoration when the running standby server is instructed in the specified data directory, and starts to perform the read and write operations.</p>
-    </td>
-    </tr>
     <tr id="row73071824121416"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p6307132414148"><a name="p6307132414148"></a><a name="p6307132414148"></a>finishredo</p>
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1030710244147"><a name="p1030710244147"></a><a name="p1030710244147"></a>Specifies that the standby server stops playback and is forcibly switched to the primary when the primary server is faulty.</p>
@@ -137,7 +132,7 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 <tr id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_r01437712745143c7b52a1c5f2b9f7b52"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_acc6554d5f9c94bd4a1451ba393465ed5"></a>-s,  --silent</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p742495310515"><a name="p742495310515"></a><a name="p742495310515"></a>Displays partial prompt information only for the <strong id="b10228171241410"><a name="b10228171241410"></a><a name="b10228171241410"></a>promote</strong>, <strong id="b3234151216146"><a name="b3234151216146"></a><a name="b3234151216146"></a>reload</strong>, <strong id="b9234181281417"><a name="b9234181281417"></a><a name="b9234181281417"></a>restart</strong>, and <strong id="b1423561251415"><a name="b1423561251415"></a><a name="b1423561251415"></a>stop </strong>commands. For example, server promoting, server shutting down. Information such as " waiting for server to shut down, server stopped" is not displayed.</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="p742495310515"><a name="p742495310515"></a><a name="p742495310515"></a>Displays partial prompt information only for the <strong id="b3234151216146"><a name="b3234151216146"></a><a name="b3234151216146"></a>reload</strong>, <strong id="b9234181281417"><a name="b9234181281417"></a><a name="b9234181281417"></a>restart</strong>, and <strong id="b1423561251415"><a name="b1423561251415"></a><a name="b1423561251415"></a>stop </strong>commands. For example, server promoting, server shutting down. Information such as " waiting for server to shut down, server stopped" is not displayed.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a><a name="en-us_topic_0287275989_en-us_topic_0237152408_en-us_topic_0059777628_a9d3d22f0e42647aa8785ad994873baf4"></a>-</p>
 </td>
@@ -504,4 +499,3 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tr>
 </tbody>
 </table>
-

@@ -2,11 +2,11 @@
 
 ## log\_dir<a name="section21021611134413"></a>
 
-**Parameter description**: Specifies the directory where cm\_server logs are stored. It can be specified as an absolute path, or a path relative to  _$GAUSSLOG_. When you set an absolute path using  **cm\_ctl**, the path must be included in quotation marks \(""\), for example,  **cm\_ctl set --param --server -k log\_dir="'/log/dir'"**.
+**Parameter description**: Specifies the directory where cm\_server logs are stored. It can be specified as an absolute path, or a path relative to  *$GAUSSLOG*. When you set an absolute path using  **cm\_ctl**, the path must be included in quotation marks \(""\), for example,  **cm\_ctl set --param --server -k log\_dir="'/log/dir'"**.
 
 **Value range**: a string with up to 1024 characters. Any modification of this parameter takes effect only after cm\_server is restarted. For details about how to modify the parameter, see  [Parameters for set cm](introduction-to-the-cm_ctl-tool.md#table10437204416514).
 
-**Default value**:  **log**, indicating that the cm\_server logs are generated in the CM directory in  _$GAUSSLOG_.
+**Default value**:  **log**, indicating that the cm\_server logs are generated in the CM directory in  *$GAUSSLOG*.
 
 ## log\_file\_size<a name="section171021311114411"></a>
 
@@ -226,11 +226,11 @@ Default value:  **43200**
 
 ## cm\_krb\_server\_keyfile<a name="section815763211440"></a>
 
-**Parameter description**: Specifies the location of the key file on the Kerberos server. The value must be an absolute path. The file is usually stored in the  _$\{GAUSSHOME\}_**/kerberos**  directory and the file extension is  **keytab**. The file name is the same as the name of the user who runs the cluster. This parameter is used together with  **cm\_auth\_method**. If the value of the  **cm\_auth\_method**  parameter is changed to  **gss**,  **cm\_krb\_server\_keyfile**  must also be set to the corresponding path correctly. Otherwise, the cluster status will be affected. When you set an absolute path using  **cm\_ctl**, the path must be included in quotation marks \(""\), for example,  **cm\_ctl set --param --server -k cm\_krb\_server\_keyfile="'/krb/dir'"**.
+**Parameter description**: Specifies the location of the key file on the Kerberos server. The value must be an absolute path. The file is usually stored in the  *$\{GAUSSHOME\}***/kerberos**  directory and the file extension is  **keytab**. The file name is the same as the name of the user who runs the cluster. This parameter is used together with  **cm\_auth\_method**. If the value of the  **cm\_auth\_method**  parameter is changed to  **gss**,  **cm\_krb\_server\_keyfile**  must also be set to the corresponding path correctly. Otherwise, the cluster status will be affected. When you set an absolute path using  **cm\_ctl**, the path must be included in quotation marks \(""\), for example,  **cm\_ctl set --param --server -k cm\_krb\_server\_keyfile="'/krb/dir'"**.
 
 **Value range**: a string. Any modification of this parameter takes effect only after cm\_server is restarted. For details about how to modify the parameter, see  [Parameters for set cm](introduction-to-the-cm_ctl-tool.md#table10437204416514).
 
-**Default value**:  _$\{GAUSSHOME\}_**/kerberos/**_\{Username\}_**.keytab**. The default value does not take effect and is used only for reference.
+**Default value**:  *$\{GAUSSHOME\}***/kerberos/***\{Username\}***.keytab**. The default value does not take effect and is used only for reference.
 
 ## switch\_rto<a name="section489193815352"></a>
 
@@ -357,27 +357,18 @@ To enable the log function, set this parameter to one or a combination of the fo
 
 **Default value**:  **3**
 
-## coordinator\_heartbeat\_timeout<a name="section156001934173020"></a>
+## delay\_arbitrate\_timeout<a name="section1410893910156"></a>
 
-**Parameter description**: Specifies the heartbeat timeout that triggers the automatical removal of faulty nodes. The setting of this parameter takes effect immediately, and you do not need to restart cm\_server. If this parameter is set to  **0**, faulty nodes are not automatically removed.
+**Parameter description**: Specifies the time for waiting for the redo log replay of a node in the same AZ as the primary DN. The node in the same AZ as the primary DN is preferentially promoted to primary.
 
-**Value range**: an integer. The unit is second. For details about how to modify the parameter, see  [Parameters for set cm](introduction-to-the-cm_ctl-tool.md#table10437204416514).
+**Value range**: an integer, in the range \[0,2147483647\] (unit: second). For details about how to modify the parameter, see [Parameters for set cm](#table10437204416514).
 
-**Default value:** **25**
+**Default value**: **0**
 
-## cluster\_starting\_aribt\_delay<a name="section1741717483343"></a>
+#### cm\_auth\_method<a name="section1969815428196"></a>
 
-**Parameter description**: Specifies the time that cm\_server waits for a static primary-to-primary switchover during cluster startup.
+**Parameter description**: Specifies the port authentication mode of the CM. **trust** indicates that port authentication is not configured. **gss** indicates that Kerberos port authentication is used. Note that you can change the value to **gss** only after the Kerberos server and client are successfully installed. Otherwise, the CM cannot communicate properly, affecting the database status.
 
-**Value range**: an integer. The unit is second. Any modification of this parameter takes effect only after cm\_server is restarted. For details about how to modify the parameter, see  [Parameters for set cm](introduction-to-the-cm_ctl-tool.md#table10437204416514).
+**Value range**: **gss** or **trust**. Any modification of this parameter takes effect only after cm\_server is restarted. For details about how to modify the parameter, see [Parameters for set cm](#table10437204416514).
 
-Default value:  **180**
-
-## enable\_e2e\_rto<a name="section105001758124113"></a>
-
-**Parameter description**: Specifies whether to enable the E2E RTO function. After this function is enabled, the zombie detection period and network detection timeout time are shortened. The CM can reach the E2E RTO value \(RTO for a single instance: ≤ 10s; RTO for overlay faults: ≤ 30s\).
-
-**Value range:**  an integer,  **0**  or  **1**.  **1**: The function is enabled;  **0**: The function is disabled. For details about how to modify the parameter, see  [Parameters for set cm](introduction-to-the-cm_ctl-tool.md#table10437204416514).
-
-**Default value**:  **0**
-
+**Default value**: **trust**

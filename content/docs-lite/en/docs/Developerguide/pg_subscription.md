@@ -15,7 +15,14 @@ Unlike most system catalogs,  **PG\_SUBSCRIPTION**  is shared across all databas
 </th>
 </tr>
 </thead>
-<tbody><tr id="row10400322175118"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p540116221516"><a name="p540116221516"></a><a name="p540116221516"></a>subdbid</p>
+<tbody><tr id="row28891944205414"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137298_en-us_topic_0237122310_p1333112917367"><a name="en-us_topic_0283137298_en-us_topic_0237122310_p1333112917367"></a><a name="en-us_topic_0283137298_en-us_topic_0237122310_p1333112917367"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137298_en-us_topic_0237122310_p1433462923615"><a name="en-us_topic_0283137298_en-us_topic_0237122310_p1433462923615"></a><a name="en-us_topic_0283137298_en-us_topic_0237122310_p1433462923615"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p11514618540"><a name="p11514618540"></a><a name="p11514618540"></a>Row identifier (hidden attribute, which must be specified).</p>
+</td>
+</tr>
+<tr id="row10400322175118"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p540116221516"><a name="p540116221516"></a><a name="p540116221516"></a>subdbid</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p14011322165117"><a name="p14011322165117"></a><a name="p14011322165117"></a>oid</p>
 </td>
@@ -73,4 +80,3 @@ Unlike most system catalogs,  **PG\_SUBSCRIPTION**  is shared across all databas
 </tr>
 </tbody>
 </table>
-

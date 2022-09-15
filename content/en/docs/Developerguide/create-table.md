@@ -622,7 +622,7 @@ openGauss=# CREATE TEMPORARY TABLE warehouse_t25
     W_GMT_OFFSET              DECIMAL(5,2)
 ) ON COMMIT DELETE ROWS;
 
--- Create a global temporary table and specify that this table data is deleted when the session ends.
+-- Create a global temporary table and specify that this table data is deleted when the session ends. The current Ustore storage engine does not support global temporary tables.
 openGauss=# CREATE GLOBAL TEMPORARY TABLE gtt1
 (
     ID                        INTEGER               NOT NULL,

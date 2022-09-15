@@ -38,9 +38,11 @@ The syntax of role information configuration clause  **option**  is as follows:
     | VALID BEGIN 'timestamp'
     | VALID UNTIL 'timestamp'
     | RESOURCE POOL 'respool'
+    | USER GROUP 'groupuser'
     | PERM SPACE 'spacelimit'
     | TEMP SPACE 'tmpspacelimit'
     | SPILL SPACE 'spillspacelimit'
+    | NODE GROUP logic_cluster_name
     | IN ROLE role_name [, ...]
     | IN GROUP role_name [, ...]
     | ROLE role_name [, ...]
@@ -196,6 +198,10 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Sets the name of resource pool used by the role. The name belongs to the system catalog  **pg\_resource\_pool**.
 
+-   **USER GROUP**
+
+    Creates a sub-user. This function is not supported in the current version.
+
 -   **PERM SPACE**
 
     Sets the space available for a user.
@@ -207,6 +213,10 @@ The syntax of role information configuration clause  **option**  is as follows:
 -   **SPILL SPACE**
 
     Sets the operator disk flushing space of a user.
+
+-   **NODE GROUP**
+
+    Specifies the name of the logical cluster associated with a user. This function is not supported in the current version.
 
 -   **IN ROLE**
 
@@ -270,4 +280,3 @@ openGauss=# DROP ROLE miriam;
 ## Helpful Links<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
 [SET ROLE](set-role.md),  [ALTER ROLE](alter-role.md),  [DROP ROLE](drop-role.md), and  [GRANT](grant.md)
-
