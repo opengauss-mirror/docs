@@ -28,8 +28,8 @@
     ```
 
 3.  替换客户端openGauss驱动程序。
-    1.  将openGauss-1.1.0-ODBC.tar.gz解压。解压后会得到两个文件夹：lib与odbc，在odbc文件夹中还会有一个lib文件夹。/odbc/lib中会有“psqlodbca.la”，“psqlodbca.so”，“psqlodbcw.la”和“psqlodbcw.so”四个文件，将这四个文件拷贝到“/usr/local/lib”目录下。
-    2.  将openGauss-1.1.0-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
+    1.  将openGauss-x.x.x-ODBC.tar.gz解压。解压后会得到两个文件夹：lib与odbc，在odbc文件夹中还会有一个lib文件夹。/odbc/lib中会有“psqlodbca.la”，“psqlodbca.so”，“psqlodbcw.la”和“psqlodbcw.so”四个文件，将这四个文件拷贝到“/usr/local/lib”目录下。
+    2.  将openGauss-x.x.x-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
 
 4.  配置数据源。
     1.  配置ODBC驱动文件。
