@@ -97,6 +97,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **3**
 
+Note: When the thread pool function is enabled, if the thread pool is fully occupied, a processing bottleneck occurs. As a result, connections reserved by the administrator cannot be established. In this case, you can use gsql to establish connections through the primary port number + 1 to clear useless sessions.
+
 ## unix\_socket\_directory<a name="en-us_topic_0283136886_en-us_topic_0237124695_en-us_topic_0059777636_s29dfb1c7d5124f6aa26c7465d2e43c6d"></a>
 
 **Parameter description**: Specifies the Unix domain socket directory for the openGauss server to listen to connections from the client.

@@ -48,4 +48,3 @@ None.
 ## Dependencies<a name="section1498823744320"></a>
 
 Currently, only openGauss is supported.
-

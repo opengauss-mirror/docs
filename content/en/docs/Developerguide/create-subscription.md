@@ -58,6 +58,10 @@ CREATE SUBSCRIPTION subscription_name
 -   **WITH \( subscription\_parameter \[= value\] \[, ... \] \)**
 
     Specifies the optional parameters for a subscription. The following parameters are supported:
+    
+    -   **copy_data \(boolean\)**
+
+        Determines whether to copy existing data in the publication that is being subscribed to after copy starts. The default value is **true**.
 
     -   **enabled \(boolean\)**
 
@@ -104,4 +108,3 @@ DROP SUBSCRIPTION mysub;
 ## Helpful Links<a name="section1537472265911"></a>
 
 [ALTER SUBSCRIPTION](alter-subscription.md)  and  [DROP SUBSCRIPTION](drop-subscription.md)
-

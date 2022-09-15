@@ -542,5 +542,3 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
    >-   After logging in to the database, a user with the password expiration feature is prompted to change the password when the user tries to perform a simple or extended query. The user can then execute the statement after changing the password.
    >-   If a user has the permission to change passwords of other users, the user also has the permission related to password expiration.
    >-   Only initial users, system administrators (sysadmin), or users with the CREATEROLE permission can set user passwords to expire. System administrators can also set their passwords or the passwords of other system administrators to expire except initial users. 
-
-

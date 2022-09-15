@@ -232,10 +232,6 @@ Two clients are required to connect to the database. One client is responsible f
 
 -   **[DBE\_PLDEBUGGER.delete\_breakpoint](dbe_pldebugger-delete_breakpoint.md)**  
 
--   **[DBE\_PLDEBUGGER.info\_breakpoints](dbe_pldebugger-info_breakpoints.md)**  
-
--   **[DBE\_PLDEBUGGER.backtrace](dbe_pldebugger-backtrace.md)**  
-
 -   **[DBE\_PLDEBUGGER.enable\_breakpoint](dbe_pldebugger-enable_breakpoint.md)**  
 
 -   **[DBE\_PLDEBUGGER.disable\_breakpoint](dbe_pldebugger-disable_breakpoint.md)**  
@@ -243,5 +239,3 @@ Two clients are required to connect to the database. One client is responsible f
 -   **[DBE\_PLDEBUGGER.finish](dbe_pldebugger-finish.md)**  
 
 -   **[DBE\_PLDEBUGGER.set\_var](dbe_pldebugger-set_var.md)**  
-
-

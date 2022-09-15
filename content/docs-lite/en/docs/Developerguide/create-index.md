@@ -54,7 +54,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     Creates a unique index. In this way, the system checks whether new values are unique in the index column. Attempts to insert or update data which would result in duplicate entries will generate an error.
 
-    Currently, only the B-tree index supports unique indexes.
+    Currently, only B-tree and UB-tree indexes support unique indexes.
 
 -   **CONCURRENTLY**
 

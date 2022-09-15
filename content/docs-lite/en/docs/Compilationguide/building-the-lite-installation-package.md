@@ -25,7 +25,7 @@ Use the  **build/script/cmake\_package\_mini.sh**  script to build the openGauss
     For example:
 
     ```
-    sh build.sh -m release -3rd /sdc/binarylibs -pkg            # Generate the openGauss Lite installation package of the release version.
+    sh cmake_package_mini.sh -m release -3rd /sdc/binarylibs            # Generate the openGauss Lite installation package of the release version.
     ```
 
 3.  If the following information is displayed, the installation package build is successful:
@@ -36,5 +36,3 @@ Use the  **build/script/cmake\_package\_mini.sh**  script to build the openGauss
 
     -   The generated installation package is stored in the  **./output**  directory.
     -   The build and packaging log file is stored in  **./build/script/makemppdb\_pkg.log**.
-
-

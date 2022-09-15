@@ -2,11 +2,11 @@
 
 ## log\_dir<a name="en-us_topic_0059779078_sbb7ff995aa1a49b7b310730fcfd6adbd"></a>
 
-**Parameter description**: Specifies the directory where cm\_server logs are stored. It can be specified as an absolute path, or a path relative to  _$GAUSSLOG_.
+**Parameter description**: Specifies the directory where cm\_server logs are stored. It can be specified as an absolute path, or a path relative to  *$GAUSSLOG*.
 
 **Value range:**  a string You need to restart cm\_server for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Default value**:  **log**, indicating that the cm\_server log is generated in the CM directory in  _$GAUSSLOG_.
+**Default value**:  **log**, indicating that the cm\_server log is generated in the CM directory in  *$GAUSSLOG*.
 
 ## log\_file\_size<a name="en-us_topic_0059779078_sd45af4b8a13a461badd0850a43f9a4a8"></a>
 
@@ -221,11 +221,11 @@ Default value:  **43200**
 
 ## cm\_krb\_server\_keyfile<a name="section03703243201"></a>
 
-**Parameter description**: Specifies the location of the key file on the Kerberos server. The value must be an absolute path. The file is usually stored in the  _$\{GAUSSHOME\}_**/kerberos**  directory and ends with keytab. The file name is the same as the name of the user who runs the database. This parameter is used together with  **cm\_auth\_method**. If the  **cm\_auth\_method**  parameter is changed to  **gss**,  **cm\_krb\_server\_keyfile**  must also be configured as the correct path. Otherwise, the database status will be affected.
+**Parameter description**: Specifies the location of the key file on the Kerberos server. The value must be an absolute path. The file is usually stored in the  *$\{GAUSSHOME\}***/kerberos**  directory and ends with keytab. The file name is the same as the name of the user who runs the database. This parameter is used together with  **cm\_auth\_method**. If the  **cm\_auth\_method**  parameter is changed to  **gss**,  **cm\_krb\_server\_keyfile**  must also be configured as the correct path. Otherwise, the database status will be affected.
 
 **Value range**: a string. You need to restart cm\_server for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Default value**:  _$\{GAUSSHOME\}_**/kerberos/**_\{UserName\}_**.keytab**. The default value cannot take effect and is used only as a prompt.
+**Default value**:  *$\{GAUSSHOME\}***/kerberos/***\{UserName\}***.keytab**. The default value cannot take effect and is used only as a prompt.
 
 ## cm\_server\_arbitrate\_delay\_base\_time\_out<a name="section112891259103410"></a>
 
@@ -257,7 +257,7 @@ Default value:  **43200**
 
 **Value range**: an integer ranging from 60 to 2147483647. The unit is s. You need to restart cm\_server for the modification to take effect.
 
-**Default value**:  **0**
+**Default value**:  **600**
 
 ## backup\_open<a name="section114001741152513"></a>
 
@@ -382,4 +382,3 @@ To enable the log function, set this parameter to one or a combination of the fo
 **Value range**: an integer, in the range \[1,600\], in seconds. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **3**
-

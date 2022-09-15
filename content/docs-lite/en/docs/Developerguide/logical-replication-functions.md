@@ -10,7 +10,7 @@
 
         Indicates the name of the streaming replication slot.
 
-        Value range: a string, supporting only letters, digits, and the following special characters: \_?-.
+        Value range: a string of characters, which can contain only lowercase letters, digits, underscores (_), question marks (?), hyphens (-), and periods (.). The '.' or '..' cannot be used as a replication slot name.
 
     -   plugin\_name
 
@@ -76,7 +76,7 @@
 
         Indicates a target LSN. Decoding is performed only when an LSN is less than or equal to this value.
 
-        Value range: a string, in the format of  _xlogid_/_xrecoff_, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
+        Value range: a string, in the format of  *xlogid*/*xrecoff*, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
 
     -   upto\_nchanges
 
@@ -169,7 +169,7 @@
 
         Indicates a target LSN. Decoding is performed only when an LSN is less than or equal to this value.
 
-        Value range: a string, in the format of  _xlogid_/_xrecoff_, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
+        Value range: a string, in the format of  *xlogid*/*xrecoff*, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
 
     -   upto\_nchanges
 
@@ -258,7 +258,7 @@
 
         Indicates a target LSN. Next decoding will be performed only in transactions whose commission position is greater than this value. If an input LSN is smaller than the position recorded in the current streaming replication slot, the function directly returns. If the input LSN is greater than the LSN of the current physical log, the latter LSN will be directly used for decoding.
 
-        Value range: a string, in the format of  _xlogid_/_xrecoff_
+        Value range: a string, in the format of  *xlogid*/*xrecoff*
 
     Return type: name, text
 
@@ -282,13 +282,13 @@
 
         Specifies the LSN at the start of decoding.
 
-        Value range: a string, in the format of  _xlogid_/_xrecoff_, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
+        Value range: a string, in the format of  *xlogid*/*xrecoff*, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
 
     -   LSN\_end
 
         Specifies the LSN at the end of decoding.
 
-        Value range: a string, in the format of  _xlogid_/_xrecoff_, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
+        Value range: a string, in the format of  *xlogid*/*xrecoff*, for example, 1/2AAFC60 \(If this parameter is set to  **NULL**, the target LSN indicating the end position of decoding is not specified.\)
 
     -   upto\_nchanges
 
@@ -592,5 +592,3 @@
     -   **last\_msg\_receipt\_time**: timestamp, which indicates the time when the last message is received by the subscription side.
     -   **latest\_end\_lsn**: pg\_lsn, which indicates the LSN of the publication side when the last keepalive message is received.
     -   **latest\_end\_time**: timstamp, which indicates the time when the last keepalive message is received.
-
-

@@ -1,6 +1,6 @@
 # Managing Transactions<a name="EN-US_TOPIC_0289900231"></a>
 
-A transaction is a customized sequence of database operations, which form an integral unit of work. In openGauss, you can start, set, commit, and roll back transactions. openGauss supports the  **READ COMMITTED**  and  **REPEATABLE READ**  transaction isolation levels.
+A transaction is a user-defined sequence of database operations, which form an integral unit of work. In openGauss, you can start, set, commit, and roll back transactions. The openGauss database supports the following transaction isolation levels: READ COMMITTED, READ UNCOMMITTED (not recommended), REPEATABLE READ, and SERIALIZABLE. SERIALIZABLE is equivalent to REPEATABLE READ.
 
 ## Controlling Transactions<a name="en-us_topic_0283137356_en-us_topic_0237120247_en-us_topic_0059778859_sd9dd464abaa740aa8af27a7929d2b431"></a>
 
@@ -39,4 +39,3 @@ A transaction isolation level specifies how concurrent transactions process the 
     Transaction isolation at this level meets the requirements of many applications, and is fast and easy to use. However, applications performing complicated queries and updates may require data that is more consistent than this level can provide.
 
 -   **REPEATABLE READ**: A transaction can only read data committed before it starts. Uncommitted data or data committed in other concurrent transactions cannot be read. However, a query can read earlier data updates in its transaction, regardless of whether they have been committed.  **READ UNCOMMITTED**  differs from this level in that a transaction reads the snapshot taken at the start of the transaction, not at the beginning of the current query within the transaction. Therefore, the  **SELECT**  statement within a transaction always reads the same data, and cannot read data submitted by other concurrent transactions after the transaction starts. Applications at this level must be able to retry transactions, because serialization failures may occur.
-

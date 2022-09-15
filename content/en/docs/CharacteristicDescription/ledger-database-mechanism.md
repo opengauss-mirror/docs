@@ -30,7 +30,7 @@ None.
 -   Common users can call the tampering verification API to verify only tables that they have the permission to query.
 -   Only the audit administrator and initial user can query the global blockchain table and tables in BLOCKCHAIN schema. Common users do not have the permission to access and all users do not have the permission to modify the tables.
 -   According to the naming rules of historical tables, if the name of the schema or table to be created ends or starts with an underscore \(\_\), the name of the corresponding historical table may conflict with that of an existing table. In this case, you need to rename the table.
--   Currently, the hash digest of user row-level data in the ledger database is used only to ensure data integrity. It cannot prevent attackers from directly tampering with data files.
+-   Currently, the hash digest of user row-level data in the ledger database is used only to ensure data consistency. It cannot prevent attackers from directly tampering with data files.
 
 ## Dependencies<a name="section22810484"></a>
 

@@ -22,7 +22,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 2 to  _INT\_MAX_
+**Value range**: an integer ranging from 2 to  *INT\*MAX_
 
 **Default value:** **16**
 
@@ -43,7 +43,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >-   If the data volume on the primary server is huge, the value of this parameter must be increased for the database rebuilding on a standby server. For example, if the data volume on the primary server reaches 500 GB, you are advised to set this parameter to 600 seconds.
 >-   This parameter cannot be set to a value larger than the value of  **wal\_receiver\_timeout**  or the timeout parameter for database rebuilding.
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is ms.
+**Value range**: an integer ranging from 0 to  *INT\*MAX_. The unit is ms.
 
 **Default value**:  **6s**
 
@@ -83,7 +83,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## max\_changes\_in\_memory<a name="en-us_topic_0283137693_section16366164213497"></a>
 
-**Parameter description**: Specifies the maximum size \(bytes\) of a single transaction buffered in the memory during logical decoding.
+**Parameter description**: Specifies the maximum number of DML statements cached in memory for a single transaction during logical decoding.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -93,7 +93,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## max\_cached\_tuplebufs<a name="en-us_topic_0283137693_section134501848125220"></a>
 
-**Parameter description**: Specifies the maximum size \(bytes\) of the total tuple information buffered in the memory during logic decoding. You are advised to set this parameter to a value greater than or equal to twice of  [max\_changes\_in\_memory](#en-us_topic_0283137693_section16366164213497).
+**Parameter description**: Specifies the upper limit of the total tuple information cached in the memory during logical decoding. You are advised to set this parameter to a value greater than or equal to twice of [max\_changes\_in\_memory](#en-us_topic_0283137693_section16366164213497).
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -296,4 +296,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 0 to 2147483647
 
 **Default value**:  **0**
-

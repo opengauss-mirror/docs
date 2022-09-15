@@ -1,6 +1,6 @@
 # Performance Report Generated Based on WDR Snapshots<a name="EN-US_TOPIC_0289900439"></a>
 
-Statistics are summarized and collected based on WDR snapshot data tables to generate a performance report. By default, the initial user or monitor administrator can generate reports. In versions earlier than V500R001C20SPC003, the initial user or sysadmin can generate reports.
+Statistics are summarized and collected based on WDR snapshot data tables to generate a performance report. By default, the initial user or monitor administrator can generate reports.
 
 ## Prerequisites<a name="en-us_topic_0283137259_section128252205291"></a>
 

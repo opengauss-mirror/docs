@@ -22,6 +22,6 @@
 
 -   **[Hint Specifying Not to Use Global Plan Cache](hint-specifying-not-to-use-global-plan-cache.md)**  
 
--   **[同层参数化路径的Hint](en-us_topic_0000001266694989.md)**  
+-   **[Hint of Parameterized Paths at the Same Level](en-us_topic_0000001266694989.md)** 
 
-
+-   **[Hint for Degrading Some Errors to Warnings](hint-for-degrading-some-errors-to-warnings.md)** 

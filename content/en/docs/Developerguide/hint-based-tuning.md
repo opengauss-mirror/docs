@@ -11,5 +11,5 @@
 -   **[Hint for Selecting the Custom Plan or Generic Plan](hint-for-selecting-the-custom-plan-or-generic-plan.md)**  
 -   **[Hint Specifying Not to Expand Subqueries](hint-specifying-not-to-expand-subqueries.md)**  
 -   **[Hint Specifying Not to Use Global Plan Cache](hint-specifying-not-to-use-global-plan-cache.md)**  
-
-
+-   **[Hint of Parameterized Paths at the Same Level](hint-of-parameterized-paths-at-the-same-level.md)**
+-   **[Hint for Degrading Some Errors to Warnings](hint-for-degrading-some-errors-to-warnings.md)** 

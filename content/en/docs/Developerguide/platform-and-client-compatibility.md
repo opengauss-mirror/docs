@@ -262,6 +262,11 @@ numeric
 <td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="p1276918101287"><a name="p1276918101287"></a><a name="p1276918101287"></a>Determines the behavior when char(n) types are converted to other variable-length string types. By default, spaces at the end are omitted when the char(n) type is converted to other variable-length string types. After this parameter is enabled, spaces at the end are not omitted during conversion. In addition, if the length of the char(n) type exceeds the length of other variable-length string types, an error is reported. This parameter is valid only when <strong id="b693483313315"><a name="b693483313315"></a><a name="b693483313315"></a>sql_compatibility</strong> is set to <strong id="b36041037153118"><a name="b36041037153118"></a><a name="b36041037153118"></a>A</strong>.</p>
 </td>
 </tr>
+<tr id="row14769111017289"><td class="cellrowborder" valign="top" width="24.43%" headers="mcps1.2.3.1.1 "><p id="p1976961013282"><a name="p1976961013282"></a><a name="p1976961013282"></a>pgformat_substr</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="p1276918101287"><a name="p1276918101287"></a><a name="p1276918101287"></a>Controls the performance of substr(str, from, for) in different scenarios. By default, if the value of <strong>from</strong> is less than 0, substr counts from the end of the string. If the value of <strong>for</strong> is less than 1, substr returns NULL. After this parameter is enabled, if the value of <strong>from</strong> is less than 0, substr counts from the first (-from + 1) bit of the character string. If the value of <strong>for</strong> is less than 0, substr reports an error. This parameter is valid only when **sql_compatibility** is set to **PG**.</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -321,4 +326,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **off**  indicates that the lastval function cannot be used and the nextval function can be pushed down.
 
 **Default value**:  **off**
-

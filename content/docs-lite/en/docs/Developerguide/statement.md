@@ -53,6 +53,7 @@
 <td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p2150183165513"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p2150183165513"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p2150183165513"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p19150153195513"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p19150153195513"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p19150153195513"></a>Normalized SQL statement</p>
+<p id="p19360123918375"><a name="p19360123918375"></a><a name="p19360123918375"></a>Note: The length is controlled by <strong>track_activity_query_size</strong>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136928_en-us_topic_0237122654_row19150437555"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136928_en-us_topic_0237122654_p71505355516"><a name="en-us_topic_0283136928_en-us_topic_0237122654_p71505355516"></a><a name="en-us_topic_0283136928_en-us_topic_0237122654_p71505355516"></a>n_calls</p>
@@ -302,4 +303,3 @@
 </tr>
 </tbody>
 </table>
-

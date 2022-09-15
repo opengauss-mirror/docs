@@ -11,7 +11,6 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
 -   If the user has no permissions whatsoever on the object, the statement will fail outright.
 -   If an authorized user has some permissions, only the permissions with authorization options are revoked.
 -   If the authorized user does not have the authorization option, the  **REVOKE ALL PRIVILEGES**  form will issue an error message. For other forms of statements, if the permission specified in the statement does not have the corresponding authorization option, the statement will issue a warning.
--   Do not perform  **REVOKE**  to a table partition. Otherwise, an alarm will be generated.
 
 ## Syntax<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
 
@@ -262,4 +261,3 @@ See  [Examples](grant.md#en-us_topic_0283137177_en-us_topic_0237122166_en-us_top
 ## Helpful Links<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s865f60db543c4043bd5fa9b678295c5a"></a>
 
 [GRANT](grant.md)
-
