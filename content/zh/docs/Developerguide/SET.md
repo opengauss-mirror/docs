@@ -44,6 +44,14 @@
                             | FROM CURRENT }}};
     ```
 
+- 设置运行时的参数。
+
+  ```
+  SET { GLOBAL | @@GLOBAL.}
+      { {config_parameter = { expr | DEFAULT }}};
+  SET [ SESSION | @@SESSION. | @@]
+      { {config_parameter = { expr | DEFAULT }}};
+  ```
 
 ## 参数说明<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3"></a>
 
@@ -102,6 +110,19 @@
 
     config\_parameter的新值。可以声明为字符串常量、标识符、数字，或者逗号分隔的列表。DEFAULT用于把这些参数设置为它们的缺省值。
 
+- **GLOBAL | @@GLOBAL.** 
+  
+  声明的参数生效范围为postmaster、sighup、backend，可通过pg_settings系统视图的context字段确定。设置参数范围和生效方式与ALTER SYSTEM SET 语法相同。支持config\_parameter赋值为表达式。
+  
+- **SESSION | @@SESSION. | @@**
+
+  声明的参数生效方式为superuser、user，可通过pg_settings系统视图的context字段确定，如果没有出现GLOBAL /SESSION，则SESSION为缺省值。支持config\_parameter赋值为表达式。
+
+  ![](public_sys-resources/icon-note.gif) **说明：** 
+
+  1. SET SESSION/GLOBAL 语法只有在B模式下（sql_compatibility = B）支持，并且GUC参数enable_set_variable_b_format打开的场景下才支持（enable_set_variable_b_format = on)。
+  2. 使用@@config\_parameter进行操作符运算时，尽量使用空格隔开。比如set @config\_parameter1=@config\_parameter1*2; 命令中，会将=@当做操作符，可将其修改为set @config\_parameter1= @config\_parameter1 * 2 。
+
 
 ## 示例<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
 
@@ -112,6 +133,18 @@ openGauss=# SET search_path TO tpcds, public;
 --把日期时间风格设置为传统的 POSTGRES 风格(日在月前)。
 openGauss=# SET datestyle TO postgres,dmy;
 ```
+
+```
+--Global变量设置
+set global most_available_sync = t;
+set @@global.most_available_sync = t;
+
+--Session变量设置
+openGauss=# set @@codegen_cost_threshold = 10000;
+openGauss=# set @@session.codegen_cost_threshold = @@codegen_cost_threshold * 2;
+```
+
+
 
 ## 相关链接<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
 
