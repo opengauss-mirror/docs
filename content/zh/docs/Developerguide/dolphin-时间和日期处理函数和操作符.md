@@ -7,7 +7,8 @@
 2. 新增```curdate/current_time/curtime/current_timestamp/localtime/localtimestamp/now/sysdate```函数。
 3. 新增```makedate/maketime/period_add/period_diff/sec_to_time/subdate```函数。
 4. 新增```subtime/timediff/time/time_format/timestamp/timestamppadd```函数。
-4. 新增`to_days/to_seconds/unix_timestamp/utc_date/utc_time/utc_timestamp`函数
+4. 新增`to_days/to_seconds/unix_timestamp/utc_date/utc_time/utc_timestamp`函数。
+5. 新增```date_bool/time_bool```函数。
 
 - curdate\(\)
 
@@ -451,7 +452,7 @@
 
     - 当任一参数为NULL时，函数返回NULL。
     - 时期参数`P1`和`P2`中的年份小于100时，会以70为边界，将年份转为20XX年或19XX年。
- 
+
   示例:
 ```sql
  openGauss=# SELECT PERIOD_DIFF(202201,202003);
@@ -544,7 +545,7 @@
 
   `CString SUBDATE(text date, INTERVAL expr unit)`
 
-  ​`CString SUBDATE(text date, int64 days)`
+  `CString SUBDATE(text date, int64 days)`
 
   功能描述：
 
@@ -659,7 +660,7 @@
   ----------
   01:02:03
   (1 row)
-
+  
   openGauss=# select SUBTIME('2020-03-04 11:22:33', '-10:20:30');
         subtime       
   ---------------------
@@ -1159,3 +1160,50 @@
    2022-09-06 15:16:39
   ```
 
+- date_bool(date)
+
+  描述：根据日期值中的年数返回布尔型（为零时返回false，否则返回true）。
+
+  返回值类型：boolean
+
+  示例：
+
+  ```
+  openGauss=# select time_bool('18:50:00');
+   time_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select time_bool('00:50:00');
+   time_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+- time_bool(time)
+
+  描述：根据时间值中的小时数返回布尔型（为零时返回false，否则返回true）。
+
+  返回值类型：boolean
+
+  示例：
+
+  ```
+  openGauss=# select date_bool('2022-08-20');
+   date_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select date_bool('0000-08-20');
+   date_bool 
+  -----------
+   f
+  (1 row)
+  ```

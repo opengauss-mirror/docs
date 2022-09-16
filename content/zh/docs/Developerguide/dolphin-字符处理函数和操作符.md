@@ -4,6 +4,8 @@
 1. 新增```regexp/not regexp/rlike```操作符。
 2. 新增```locate/lcase/ucase/insert/bin/chara/elt/field/find_int_set/hex/space/soundex```函数。
 3. 修改```length/bit_length/octet_length/convert/format```函数的表现。
+4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
+5. 修改```like/not like ```操作符的表现。
 
 -   bit\_length\(string\)
 
@@ -303,7 +305,7 @@
     ---
     0 
     (1 row)
-     ```
+    ```
 
 -   chara(any)
 
@@ -452,3 +454,83 @@
      hello
     (1 row)
     ```
+
+- ^
+
+  描述：实现两个字符串的异或功能，截取第一个非数值型符号前的内容作异或。
+
+  返回值类型：INT
+
+  示例：
+
+  ```
+  openGauss=# SELECT '123a'^'123';
+  ?column?
+  ---------
+        0
+  (1 row)
+  ```
+
+- like/not like
+
+  描述：判断字符串能否匹配上LIKE后的模式字符串。opengauss的原like为大小写敏感匹配，现将其改为当```b_compatibility_mode```为```TRUE```时大小写不敏感匹配，当```b_compatibility_mode```为```FALSE```时大小写敏感匹配。若字符串与提供的模式匹配，则like表达式返回真(ilike返回假)。
+
+  返回值类型：布尔型
+
+  示例：
+
+  ```
+  openGauss=# SELECT 'a' like 'A' as result;
+   result
+  ------------
+           t
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like 'a' as result;
+   result
+  ------------
+            f
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like 'A%' as result;
+   result
+  ------------
+            t
+  (1 row)
+  ```
+
+- like binary/not like binary
+
+  描述：判断字符串能否匹配上LIKE BINARY后的模式字符串,like binary采用大小写敏感模式匹配，若模式匹配则返回真(not like binary返回假)，不匹配则放回假(not like binary返回真)。
+
+  返回值类型：布尔型
+
+  示例：
+
+  ```
+  openGauss=# SELECT 'a' like binary 'A' as result;
+   result
+  ------------
+           f
+  (1 row)
+  
+  openGauss=# SELECT 'a' like binary 'a' as result;
+   result
+  ------------
+           t
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like binary 'a' as result;
+   result
+  ------------
+            f
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like binary 'a%' as result;
+   result
+  ------------
+            t
+  (1 row)
+  ```
+
+  
