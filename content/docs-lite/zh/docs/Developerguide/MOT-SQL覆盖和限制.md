@@ -42,41 +42,50 @@ MOT功能限制：
 -   表空间
 -   使用子命令创建架构
 
-## 不支持的数据类型<a name="zh-cn_topic_0283137737_zh-cn_topic_0280525140_section41636693"></a>
+##  不支持的数据类型
 
--   UUID
--   User-Defined Type \(UDF\)
--   Array data type
--   NVARCHAR2\(n\)
--   NVARCHAR\(n\)
--   Clob
--   Name
--   Blob
--   Raw
--   Path
--   Circle
--   Reltime
--   Bit varying\(10\)
--   Tsvector
--   Tsquery
--   JSON
--   Box
--   Text
--   Line
--   Point
--   LSEG
--   POLYGON
--   INET
--   CIDR
--   MACADDR
--   Smalldatetime
--   BYTEA
--   Bit
--   Varbit
--   OID
--   Money
--   无限制的varchar/character varying
--   HSTORE
+- UUID
+- User-Defined Type (UDF)
+- Array data type
+- NVARCHAR2(n)
+- Clob
+- Name
+- Blob
+- Raw
+- Path
+- Circle
+- Reltime
+- Bit varying(10)
+- Tsvector
+- Tsquery
+- JSON
+- Box
+- Text
+- Line
+- Point
+- LSEG
+- POLYGON
+- INET
+- CIDR
+- MACADDR
+- Smalldatetime
+- BYTEA
+- Bit
+- Varbit
+- OID
+- Money
+- Any unlimited varchar/character varying
+- HSTORE
+- XML
+- Int16
+- Abstime
+- Tsrange
+- Tstzrange
+- Int8range
+- Int4range
+- Numrange
+- Daterange
+- HLL
 
 ## 不支持的索引DDL和索引<a name="zh-cn_topic_0283137737_zh-cn_topic_0280525140_section39185923"></a>
 
