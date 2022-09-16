@@ -4,9 +4,13 @@
 
 -   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
 
+-   **[ALTER TABLESPACE](dolphin-ALTER-TABLESPACE.md)**  
+
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
+
+-   **[CREATE TABLE](dolphin-CREATE-TABLE.md)**
 
 -   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
 
@@ -17,6 +21,8 @@
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
 -   **[DESCRIBE TABLE](dolphin-DESCRIBE-TABLE.md)**
+
+-   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
 -   **[GRANT](dolphin-GRANT.md)**
 
