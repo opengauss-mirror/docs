@@ -130,7 +130,7 @@ openGauss=# SELECT * FROM customer_t1;
 
 -   修改列数据类型
 
-    修改列c的数据类型character\(8\) 为character\(12\)。
+    修改列c_last_name的数据类型character\(8\) 为character\(12\)。
 
     ```
     openGauss=# ALTER TABLE customer_t1 MODIFY c_last_name character(12);
