@@ -12,6 +12,7 @@
 7. 对于```decimal```数据类型，在未指定精度的情况下，默认精度为```(10,0)```，即总位数为10，小数位数为0。
 8. 新增```UNSIGNED INT/TINYINT/SMALLINT/BIGINT```类型，与普通整型相比，其最高位是数字位而非符号位。
 9. 新增zerofill属性修饰，只是语法上的支持，实际并没有填充零的效果。与UNSIGNED的作用等价。
+10. 新增cast函数类型转换参数signed/unsigned，其中cast as unsigned将类型转换为uint8，cast as signed将类型转换为int8.
 
 **表 1**  整数类型
 
@@ -166,6 +167,21 @@ openGauss=# \d int_type_t2
 
 --删除表。
 openGauss=# DROP TABLE int_type_t1, int_type_t2;
+
+--利用cast unsigned将表达式转换为uint8类型
+openGauss=# select cast(1 - 2 as unsigned);
+        uint8
+----------------------
+ 18446744073709551615
+(1 row)
+
+--利用cast signed将表达式转换为int8类型
+openGauss=# select cast(1 - 2 as signed);
+ int8
+------
+   -1
+(1 row)
+
 ```
 
 **表 2**  任意精度型
