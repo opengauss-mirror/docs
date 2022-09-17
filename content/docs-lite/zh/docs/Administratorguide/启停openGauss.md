@@ -10,7 +10,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >如果提示找不到gs\_ctl，请检查是否source过环境变量文件（默认是\~/.bashrc），若不想source环境变量文件也可以手动切到安装路径下执行该命令。
+    >如果提示找不到gs\_ctl，请检查是否source过环境变量文件（默认是\~/.bashrc），若不想source环境变量文件也可以手动切换到安装路径下执行该命令。
 
 
 ## 停止openGauss<a name="zh-cn_topic_0283140572_zh-cn_topic_0237088789_section785041010214"></a>
