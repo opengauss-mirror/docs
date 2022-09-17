@@ -71,7 +71,7 @@
     The syntax of the optional parameter  **option**  is as follows:
 
     ```
-    FORMAT 'format_name'
+    FORMAT format_name
     | OIDS [ boolean ]
     | DELIMITER 'delimiter_character'
     | NULL 'null_string'
