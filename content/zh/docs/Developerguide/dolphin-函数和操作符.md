@@ -12,3 +12,5 @@
 - **[逻辑操作符](dolphin-逻辑操作符.md)**  
 
 - **[位串操作函数和操作符](dolphin-位串操作函数和操作符.md)**  
+
+- **[JSON-JSONB函数和操作符](dolphin-JSON-JSONB函数和操作符.md)**
