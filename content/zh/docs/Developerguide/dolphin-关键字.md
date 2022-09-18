@@ -15,6 +15,8 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 
 相比于原始的openGauss，dolphin对于关键字的修改主要为:
 1. 新增```MEDIUMINT```，作为非保留关键字。
+2. 关键字```DATE```可以作为函数使用。
+3. 新增```LAST_DAY```，作为保留关键字，用于在语法层面区别openGauss原有LAST_DAY函数和dolphin中LAST_DAY函数。
 
 **表 1**  SQL关键字
 
@@ -90,6 +92,26 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 <td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p44918252"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p44918252"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p44918252"></a>-</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p60037067"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p60037067"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p60037067"></a>-</p>
+</td>
+</tr>
+<tr>
+<td>DATE
+</td>
+<td>非保留(可以是函数或类型)
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>LAST_DAY
+</td>
+<td>保留
+</td>
+<td>-
+</td>
+<td>-
 </td>
 </tr>
 </tbody>
