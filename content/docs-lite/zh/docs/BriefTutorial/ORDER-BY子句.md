@@ -1,6 +1,6 @@
 # ORDER BY子句<a name="ZH-CN_TOPIC_0000001255021833"></a>
 
-ORDER BY对SELECT语句检索得到的一列或者多列数据进行升序（ASC）或者降序（DESC）排列。
+ORDER BY子句用于对SELECT语句检索得到的一列或者多列数据进行升序（ASC）或者降序（DESC）排列。
 
 ## 语法格式<a name="zh-cn_topic_0000001224939983_section4955330113019"></a>
 
