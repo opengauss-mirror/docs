@@ -218,6 +218,13 @@ For openGauss, only one  **PG\_AUTHID**  exists, which is not available for ever
 <a name="ul4190341111410"></a><a name="ul4190341111410"></a><ul id="ul4190341111410"><li><strong id="b182941645112815"><a name="b182941645112815"></a><a name="b182941645112815"></a>t</strong> (true): yes</li><li><strong id="b299014461286"><a name="b299014461286"></a><a name="b299014461286"></a>f</strong> (false): no</li></ul>
 </td>
 </tr>
+<tr id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_r6275ffffc4c54a7fbf734510c7f6f6a2"><td class="cellrowborder" valign="top" width="20.41%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_aa029549c40934a86a1d87aeba4384888"><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_aa029549c40934a86a1d87aeba4384888"></a><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_aa029549c40934a86a1d87aeba4384888"></a>rolpasswordext</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"></a><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.379999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a>Password for other database encrypt rule if exists. If we created a B compatibility database, sha1(sha1(password)) will be stored here according to mysql_native_password strategy. <strong id="b143231143102517"><a name="b143231143102517"></a><a name="b143231143102517"></a>NULL</strong> if password not exist</p>
+</td>
+</tr>
 </tbody>
 </table>
 
