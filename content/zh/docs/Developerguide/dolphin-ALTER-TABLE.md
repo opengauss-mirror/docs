@@ -48,7 +48,7 @@
     在表上新增一个索引
 
     ```
-    {INDEX | KEY} [index_name] [index_type] (key_part,...)
+    {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
     ```
 
     其中参数index_type为：
@@ -60,8 +60,19 @@
     其中参数key_part为：
 
     ```
-    {col_name | (expr)} [ASC | DESC]
+    {col_name[(length)] | (expr)} [ASC | DESC]
     ```
+    
+    其中参数index_option为：
+    
+    ```
+    index_option:{
+    	  COMMENT 'string'
+    	| index_type
+    }
+    ```
+    
+    COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
 
