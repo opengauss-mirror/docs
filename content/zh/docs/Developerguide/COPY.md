@@ -71,7 +71,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     其中可选参数option子句语法为：
 
     ```
-    FORMAT 'format_name'
+    FORMAT format_name
     | OIDS [ boolean ]
     | DELIMITER 'delimiter_character'
     | NULL 'null_string'
