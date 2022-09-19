@@ -24,7 +24,7 @@
      MODIFY column_name data_type;
     ```
 
--   为一张已经存在表的列增加/删除非空约束（NOT NULL）。
+-   为一张已经存在的表的列增加/删除非空约束（NOT NULL）。
 
     ```
     ALTER TABLE  table_name
@@ -182,7 +182,7 @@ openGauss=# SELECT * FROM customer_t1;
 
 -   修改列名称
 
-    修改列date名称为purchase date。
+    修改列date名称为purchase_date。
 
     ```
     openGauss=# ALTER TABLE customer_t1  RENAME  date TO purchase_date;
