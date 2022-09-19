@@ -42,7 +42,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ COMPRESSION [=] compression_arg ]
         [ ENGINE [=] engine_name ]
         [ COLLATE [=] collation_name ]
-        [ CHARSET [=] charset_name ]
+        [ [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name ]
         [ ROW_FORMAT [=] row_format_name ]
 
     除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
@@ -80,7 +80,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     对未被支持的排序规则，数据库将发出警告，并将该列设置为默认的排序规则。
 
--   **{ CHARSET | CHARACTER SET } \[=\] charset_name**
+-   **{ [DEFAULT] CHARSET | CHARACTER SET } \[=\] charset_name**
 
     用于选择表所使用的字符集；目前该特性仅有语法支持，不实现功能。
 
