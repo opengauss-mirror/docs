@@ -23,6 +23,8 @@ The following OSs are supported:
 -   Kylin-V10 \(aarch64 architecture\)
 -   Asianux 7.6 \(x86 architecture\)
 -   Asianux 7.5 \(aarch64 architecture\)
+-   FusionOS 22 \(aarch64 architecture\)
+-   FusionOS 22 \(x86 architecture\)
 
 **Software Dependency Requirements**
 
