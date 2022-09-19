@@ -14,4 +14,4 @@ After the upgrade is complete, if no problem is found during the verification, y
     gs_upgradectl -t commit-upgrade  -X /opt/software/GaussDB_Kernel/clusterconfig.xml
     ```
 
-
+3. For a rolling upgrade, upgrade all nodes before performing the upgrade commit command.
