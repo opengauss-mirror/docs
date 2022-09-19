@@ -32,6 +32,10 @@
 
 -   **[OPTIMIZE TABLE](dolphin-OPTIMIZE-TABLE.md)**
 
+-   **[PREPARE](dolphin-PREPARE.md)**
+
+-   **[RENAME USER](dolphin-RENAME-USER.md)**
+
 -   **[REVOKE](dolphin-REVOKE.md)**
 
 -   **[SELECT](dolphin-SELECT.md)**  
