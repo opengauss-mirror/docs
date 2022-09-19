@@ -135,6 +135,27 @@ PG\_TRIGGER系统表存储触发器信息。
 <td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136871_p105924163395"><a name="zh-cn_topic_0283136871_p105924163395"></a><a name="zh-cn_topic_0283136871_p105924163395"></a>触发器的所有者。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136871_row18590111610395"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136871_p959261611392"><a name="zh-cn_topic_0283136871_p959261611392"></a><a name="zh-cn_topic_0283136871_p959261611392"></a>tgordername</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136871_p25924169391"><a name="zh-cn_topic_0283136871_p25924169391"></a><a name="zh-cn_topic_0283136871_p25924169391"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136871_p105924163395"><a name="zh-cn_topic_0283136871_p105924163395"></a><a name="zh-cn_topic_0283136871_p105924163395"></a>原始触发器名称</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136871_row18590111610395"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136871_p959261611392"><a name="zh-cn_topic_0283136871_p959261611392"></a><a name="zh-cn_topic_0283136871_p959261611392"></a>tgorder</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136871_p25924169391"><a name="zh-cn_topic_0283136871_p25924169391"></a><a name="zh-cn_topic_0283136871_p25924169391"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136871_p105924163395"><a name="zh-cn_topic_0283136871_p105924163395"></a><a name="zh-cn_topic_0283136871_p105924163395"></a>触发器是否控制触发先后顺序</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136871_row18590111610395"><td class="cellrowborder" valign="top" width="20.84%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136871_p959261611392"><a name="zh-cn_topic_0283136871_p959261611392"></a><a name="zh-cn_topic_0283136871_p959261611392"></a>tgtime</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.03%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136871_p25924169391"><a name="zh-cn_topic_0283136871_p25924169391"></a><a name="zh-cn_topic_0283136871_p25924169391"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.129999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136871_p105924163395"><a name="zh-cn_topic_0283136871_p105924163395"></a><a name="zh-cn_topic_0283136871_p105924163395"></a>触发器创建的时间点</p>
+</td>
+</tr>
 </tbody>
 </table>
 
