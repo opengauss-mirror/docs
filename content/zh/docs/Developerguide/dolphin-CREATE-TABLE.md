@@ -48,11 +48,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
 ```
 
--   创建表上索引table_indexclause：
+- 创建表上索引table_indexclause：
 
-    ```
-    {INDEX | KEY} [index_name] [index_type] (key_part,...)
-    ```
+  ```
+  {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
+  ```
+
+  该语法不支持CREATE FOREIGN TABLE (MOT表等) 创建。
 
 -   其中参数index_type为：
 
@@ -63,8 +65,21 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   其中参数key_part为：
 
     ```
-    {col_name | (expr)} [ASC | DESC]
+    {col_name[(length)] | (expr)} [ASC | DESC]
     ```
+    
+    length为前缀索引。
+
+- 其中参数index_option为：
+
+  ```
+  index_option:{
+  	  COMMENT 'string'
+  	| index_type
+  }
+  ```
+
+  COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
 
 -   其中like选项like\_option为：
 
@@ -143,6 +158,9 @@ openGauss=# CREATE TABLE tpcds.warehouse_t25
     index idx_SQ_FT using btree ((abs(W_WAREHOUSE_SQ_FT)))  ,
     key idx_SK using btree ((abs(W_WAREHOUSE_SK)+1))
 );
+
+--包含index_option字段
+openGauss=# create table test_option(a int, index idx_op using btree(a) comment 'idx comment');
 ```
 
 ```
