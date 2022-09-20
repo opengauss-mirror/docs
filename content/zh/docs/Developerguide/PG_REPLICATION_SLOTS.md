@@ -83,6 +83,14 @@ PG\_REPLICATION\_SLOTS视图查看复制节点的信息。
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a>复制节点是否为假备。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_r57599043221e48e182ad2759b2e3fde0"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_aa339392231db46f29ac345c6ee181618"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_aa339392231db46f29ac345c6ee181618"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_aa339392231db46f29ac345c6ee181618"></a>confirmed_flush</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_abfdd09996f444afa960371c29115276a"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_abfdd09996f444afa960371c29115276a"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_abfdd09996f444afa960371c29115276a"></a><span id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_text830016417309"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_text830016417309"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_text830016417309"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a>逻辑复制槽专用，客户端确认接收到的日志位置。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
