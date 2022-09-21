@@ -1036,6 +1036,7 @@ FORMAT 'format_name'
 | NOESCAPING [ boolean ]
 | FORCE_QUOTE { ( column_name [, ...] ) | * }
 | FORCE_NOT_NULL ( column_name [, ...] )
+| FORCE_NULL ( column_name [, ...] )
 | ENCODING 'encoding_name'
 | IGNORE_EXTRA_DATA [ boolean ]
 | FILL_MISSING_FIELDS [ boolean ]
@@ -1052,6 +1053,7 @@ OIDS
 | FILEHEADER 'header_file_string'
 | FREEZE
 | FORCE NOT NULL column_name [, ...]
+| FORCE NULL column_name [, ...]
 | FORCE QUOTE { column_name [, ...] | * }
 | BINARY
 | CSV
