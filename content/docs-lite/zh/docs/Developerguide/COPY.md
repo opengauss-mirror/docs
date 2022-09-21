@@ -84,6 +84,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     | NOESCAPING [ boolean ]
     | FORCE_QUOTE { ( column_name [, ...] ) | * }
     | FORCE_NOT_NULL ( column_name [, ...] )
+    | FORCE_NULL ( column_name [, ...] )
     | ENCODING 'encoding_name'
     | IGNORE_EXTRA_DATA [ boolean ]
     | FILL_MISSING_FIELDS [ boolean ]
@@ -103,6 +104,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     | FILEHEADER 'header_file_string' 
     | FREEZE 
     | FORCE_NOT_NULL column_name [, ...]
+    | FORCE_NULL column_name [, ...]
     | FORCE_QUOTE { column_name [, ...] | * }
     | BINARY 
     | CSV 
@@ -455,6 +457,12 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     -   FORCE NOT NULL column\_name \[, ...\]
 
         在CSV COPY FROM模式下，指定的字段不为空。若输入为空，则将视为长度为0的字符串。
+
+        取值范围：已存在的字段。
+
+    -   FORCE NULL column\_name \[, ...\]
+
+        在CSV COPY FROM模式下，将指定的字段表示空值的字符串设置为NULL，包括加了引号的空值字符串。
 
         取值范围：已存在的字段。
 
