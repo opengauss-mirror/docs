@@ -150,6 +150,12 @@ For details on the  **\\copy**  command, see  [Table 1](#en-us_topic_0237121136_
 
     Value range: an existing column name
 
+-   force null column\_list
+
+    Assigns null to a specified column in  **CSV COPY FROM**  mode.
+
+    Value range: an existing column name
+
 
 ## Examples<a name="en-us_topic_0237121136_en-us_topic_0117407672_section49087436203946"></a>
 
