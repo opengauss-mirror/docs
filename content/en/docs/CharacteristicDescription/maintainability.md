@@ -1,6 +1,8 @@
 # Maintainability<a name="EN-US_TOPIC_0000001135302879"></a>
 
--   **[Gray Upgrade](gray-upgrade.md)**  
+-   **[Gray Upgrade](gray-upgrade.md)**
+
+-   **[Rolling Upgrade](rolling-upgrade.md)**  
 
 -   **[Workload Diagnosis Report \(WDR\)](workload-diagnosis-report-(wdr).md)**  
 

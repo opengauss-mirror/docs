@@ -115,6 +115,15 @@ Gray upgrade: supports operations on all service during the upgrade and upgrades
 
     Perform gray upgrade.
 
+-   -h
+    upgrade specified and partial nodes, this parameter must be used with --grey.
+
+    Value range: single node or multiple node
+
+-   --continue
+
+    upgrade the remaining upgrade, this parameter must be used with --grey.
+
 -   --force
 
     If openGauss is abnormal and does not support normal rollback, use this parameter to perform a forcible rollback.
@@ -242,4 +251,79 @@ Old cluster app path is /data/gauss/app_e67b8bcd
 Successfully Cleaned old install path.
 Commit binary upgrade succeeded.
 ```
+
+Example 5: Execute the  **gs\_upgradectl**  script to perform rolling upgrade.
+
+upgrade specified node
+```
+gs_upgradectl -t auto-upgrade -X /data/node2.xml --grey -h hostname0
+Static configuration matched with old static configuration files.
+Successfully set upgrade_mode to 0.
+Checking upgrade environment.
+Successfully checked upgrade environment.
+Start to do health check.
+Successfully checked cluster status.
+Upgrade nodes ['hostname0'].
+NOTICE: The directory /data/install/app_oldcommitid will be deleted after commit-upgrade, please make sure there is no personal data.
+Performing grey rollback.
+No need to rollback.
+The directory /data/install/app_oldcommitid will be deleted after commit-upgrade, please make sure there is no personal data.
+Installing new binary.
+copy certs from /data/install/app_oldcommitid to /data/install/app_newcommitid.
+Successfully copy certs from /data/install/app_oldcommitid to /data/install/app_newcommitid.
+Successfully backup hotpatch config file.
+Sync cluster configuration.
+Successfully synced cluster configuration.
+Switch symbolic link to new binary directory.
+Successfully switch symbolic link to new binary directory.
+Switching all db processes.
+Check cluster state.
+Create checkpoint before switching.
+Switching DN processes.
+Ready to grey start cluster.
+Grey start cluster successfully.
+Wait for the cluster status normal or degrade.
+Successfully switch all process version
+The nodes ['hostname0'] have been successfully upgraded to new version. Then do health check.
+Start to do health check.
+Successfully checked cluster status.
+The nodes ['hostname0']ve been successfully upgraded.Then can upgrade the remaining nodes.
+```
+
+upgrade the remaining node
+```
+gs_upgradectl -t auto-upgrade -X /data/node2.xml --grey --continue
+Static configuration matched with old static configuration files.
+Checking upgrade environment.
+['hostname0'] node have been upgrade, can upgrade the remaining nodes.
+Successfully checked upgrade environment.
+Start to do health check.
+Successfully checked cluster status.
+Successfully backup hotpatch config file.
+Sync cluster configuration.
+Successfully synced cluster configuration.
+Switch symbolic link to new binary directory.
+Successfully switch symbolic link to new binary directory.
+Switching all db processes.
+Check cluster state.
+Create checkpoint before switching.
+Switching DN processes.
+Ready to grey start cluster.
+Grey start cluster successfully.
+Wait for the cluster status normal or degrade.
+Successfully switch all process version
+The nodes ['hostname1'] have been successfully upgraded to new version. Then do health check.
+Start to do health check.
+Successfully checked cluster status.
+Waiting for the cluster status to become normal.
+.
+The cluster status is normal.
+Create checkpoint before switching.
+Upgrade main process has been finished, user can do some check now.
+Once the check done, please execute following command to commit upgrade:
+
+gs_upgradectl -t commit-upgrade -X /data/node2.xml
+Successfully upgrade all nodes.
+```
+
 
