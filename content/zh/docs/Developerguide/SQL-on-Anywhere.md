@@ -2,7 +2,7 @@
 
 当前用于大数据处理的引擎组件种类繁多，且各自提供了丰富的接口供用户使用。但对传统数据库用户来说，SQL语言依然是最熟悉和方便的一种接口。如果能在一个客户端中使用SQL语句操作不同的大数据组件，将极大提升使用各种大数据组件的效率。
 
-openGauss支持SQL on Anywhere，基于openGauss可以操作Hadoop、Oracle、Spark和other openGauss，构筑起统一的大数据计算平台。
+openGauss支持SQL on Anywhere，基于openGauss可以操作Oracle、Spark和other openGauss，构筑起统一的大数据计算平台。
 
 ## 基于Extension Connector的跨数据库实例访问数据<a name="section134436495103"></a>
 

@@ -244,7 +244,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   ORIENTATION
 
-        指定表数据的存储方式，即行存方式、列存方式、ORC格式的方式，该参数设置成功后就不再支持修改。
+        指定表数据的存储方式，即行存方式、列存方式，该参数设置成功后就不再支持修改。
 
         取值范围：
 
@@ -352,14 +352,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
 
       取值范围：0～9999，默认值为100
-
-  - VERSION
-
-      指定ORC存储格式的版本。
-
-      取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
-
-      默认值：0.12
 
   - segment
 
