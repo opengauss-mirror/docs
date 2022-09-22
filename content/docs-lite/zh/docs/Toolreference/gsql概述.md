@@ -78,7 +78,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   所有特殊变量都由大写字母、数字和下划线组成。
-    >-   要查看特殊变量的默认值，请使用元命令**\\echo :**_varname_（例如\\echo :DBNAME）。
+    >-   要查看特殊变量的默认值，请使用元命令\\echo :_varname_（例如\\echo :DBNAME）。
 
     **表 2**  特殊变量设置
 
