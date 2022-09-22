@@ -198,7 +198,6 @@ headless: true
 		-   [Obtaining the Installation Package]({{< relref "./docs/Installation/obtaining-the-installation-package.md" >}})
 		-   [Preparing the Software and Hardware Installation Environment]({{< relref "./docs/Installation/preparing-the-software-and-hardware-installation-environment.md" >}})
 	-   [Installation]({{< relref "./docs/Installation/installation.md" >}})
-	-   [Uninstallation]({{< relref "./docs/Installation/uninstallation.md" >}})	
 -   [Administrator Guide]({{< relref "./docs/Administratorguide/Administratorguide.md" >}})
 	-   [Starting or Stopping openGauss]({{< relref "./docs/Administratorguide/starting-or-stopping-opengauss.md" >}})
 	-   [Routine Maintenance]({{< relref "./docs/Administratorguide/routine-maintenance.md" >}})
