@@ -12,7 +12,7 @@ This section describes how to select an upgrade mode.
 
 You can determine whether to upgrade the existing system based on the new features provided by the openGauss and the current database status.
 
-Currently, in-place upgrade and gray upgrade are supported. The upgrade modes are classified into major version upgrade and minor version upgrade.
+Currently, in-place upgrade and gray upgrade are supported. The upgrade modes are classified into major version upgrade and minor version upgrade. If the version number remains the same, upgrade is a small version; otherwise, upgrade is a large version.
 
 After you select an upgrade mode, the system automatically determines and selects a proper upgrade policy.
 
