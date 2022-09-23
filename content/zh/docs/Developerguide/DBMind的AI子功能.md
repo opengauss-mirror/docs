@@ -12,4 +12,6 @@
 
 -   **[SQLdiag：慢SQL发现](SQLdiag-慢SQL发现.md)**  
 
+-   **[SQL Rewriter: SQL语句改写](SQL-Rewriter-SQL语句改写.md)**  
 
+-   **[Anomaly detection: 异常检测](Anomaly-detection-异常检测.md)**  
