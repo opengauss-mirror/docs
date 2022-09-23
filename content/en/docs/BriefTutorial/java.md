@@ -2,7 +2,7 @@
 
 Java Database Connectivity \(JDBC\) is a Java API for running SQL statements. It provides unified access APIs for different relational databases, based on which applications process data. The openGauss library supports JDBC 4.0 and requires JDK 1.8 for code compiling. It does not support JDBC-ODBC bridge.
 
-Run  **build.sh**  in the source code directory on Linux OS to obtain the driver JAR package  **postgresql.jar**, which is stored in the source code directory. Obtain the package from the release package named  **openGauss-**_x.x.x-OS version number_**-64bit-Jdbc.tar.gz**.
+Run  **build.sh**  in the source code directory on Linux OS to obtain the driver JAR package  **postgresql.jar**, which is stored in the source code directory. Obtain the package from the release package named  **openGauss-***x.x.x-OS version number***-64bit-Jdbc.tar.gz**.
 
 The driver package is compatible with PostgreSQL. The class name and structure in the driver are the same as those in the PostgreSQL driver. All applications running on PostgreSQL can be smoothly migrated to the current system.
 
@@ -36,11 +36,11 @@ Example:
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >In the following example, the underlined fields in bold need to be replaced with your own information, where:  
 >
->-   **_127.0.0.1_**: IP address of the host where the database is located.  
->-   **_8080_**: port for connecting to the database.  
->-   **_test_**: name of the connected database. If the database does not exist, an error is reported. Before using the database, check whether the database exists.  
->-   **_myuser_**: username for connecting to the database.  
->-   **_myPassWord_**: password for connecting to the database.  
+>-   ***127.0.0.1***: IP address of the host where the database is located.  
+>-   ***8080***: port for connecting to the database.  
+>-   ***test***: name of the connected database. If the database does not exist, an error is reported. Before using the database, check whether the database exists.  
+>-   ***myuser***: username for connecting to the database.  
+>-   ***myPassWord***: password for connecting to the database.  
 
 -   DriverManager.getConnection\(String url\);
 
@@ -614,5 +614,3 @@ Example:
         }
     }
     ```
-
-

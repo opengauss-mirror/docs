@@ -6,10 +6,10 @@
 
 ## Precautions<a name="section1779345110485"></a>
 
--   When a standby database instance that can be connected is removed, the database service running on this standby database instance is automatically stopped, and the GRPC certificate \(stored in  _$GAUSSHOME_**/share/sslcert/grpc/**\) on the standby database instance is automatically deleted. However, the applications on the standby database instance are not deleted.
+-   When a standby database instance that can be connected is removed, the database service running on this standby database instance is automatically stopped, and the GRPC certificate \(stored in  *$GAUSSHOME***/share/sslcert/grpc/**\) on the standby database instance is automatically deleted. However, the applications on the standby database instance are not deleted.
 
 -   If only one primary node is left in the database after the deletion, the system prompts you to restart the current node. In this case, you are advised to restart the node based on the service operating environment.
--   If the target standby database instance cannot be connected before the operation, you need to manually stop or delete the database service on the database instance after it is restored, and delete the GRPC certificate \(stored in  _$GAUSSHOME_**/share/sslcert/grpc/**\) from the standby database instance.
+-   If the target standby database instance cannot be connected before the operation, you need to manually stop or delete the database service on the database instance after it is restored, and delete the GRPC certificate \(stored in  *$GAUSSHOME***/share/sslcert/grpc/**\) from the standby database instance.
 -   The standby node can be dropped only from the primary/standby database installed in OM mode. The database installed in compilation mode is not supported.
 -   If the standby node to be removed is in synchronous replication mode and a transaction is being performed on the primary node when the deletion command is executed, the transaction submission will be suspended for a short period of time. After the deletion is complete, the transaction processing can continue.
 -   After the target standby node is removed, if you are not sure whether the target standby node is required anymore, use the following method to reject the remote connection through SSH from the target standby node to avoid misoperations:
@@ -24,6 +24,8 @@
     -   On the current primary node, add the target standby node to the  **/etc/hosts.deny**  file \(for example,  **sshd:10.11.12.13:deny**\) to reject the remote connection through SSH from the target standby node \(valid for all users\). This method requires that the sshd service be bound to the libwrap library.
 
 -   After the target standby node is removed and is no longer required, run the  **gs\\\_uninstall --delete-data -L**  command on the target standby node to uninstall openGauss. Note that the  **-L **option must be added.
+
+-   When the streaming DR function is used, this tool is not supported.
 
 ## Prerequisite<a name="section171227231492"></a>
 
@@ -124,4 +126,3 @@ Do you want to continue to drop the target node (yes/no)? yes
 ## Helpful Links<a name="section12811914185219"></a>
 
 [gs\_expansion](gs_expansion.md),  [gs\_ctl](gs_ctl.md)
-

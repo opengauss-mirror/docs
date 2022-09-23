@@ -26,7 +26,7 @@ The subscriber database behaves in the same way as any other openGauss instance 
 
 -   **[Security](security.md)**  
 
--   **[Configuration Settings](configuration-settings-0.md)**  
+-   **[Configuration Settings](configuration-settings-25.md)**  
 
 -   **[Quick Setup](quick-setup.md)**  
 

@@ -34,6 +34,16 @@ This section describes the openGauss installation process.
 <p id="en-us_topic_0241802562_p12584185173313"><a name="en-us_topic_0241802562_p12584185173313"></a><a name="en-us_topic_0241802562_p12584185173313"></a>For details, see <a href="creating-an-xml-configuration-file.md">Creating an XML Configuration File</a>.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0241802562_row163283014916"><td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802562_p2500145511012"><a name="en-us_topic_0241802562_p2500145511012"></a><a name="en-us_topic_0241802562_p2500145511012"></a>Upload the installation package and XML file.</p>
+</td>
+<td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p>You need to upload the installation package and XML configuration file to the server where openGauss is to be installed.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0241802562_row163283014916"><td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802562_p2500145511012"><a name="en-us_topic_0241802562_p2500145511012"></a><a name="en-us_topic_0241802562_p2500145511012"></a>Decompress the installation package.</p>
+</td>
+<td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p>Run the tar command to decompress the installation package.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0241802562_row670315277496"><td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241802562_p11500125541018"><a name="en-us_topic_0241802562_p11500125541018"></a><a name="en-us_topic_0241802562_p11500125541018"></a>Initialize the installation environment.</p>
 </td>
 <td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241802562_p050165514102"><a name="en-us_topic_0241802562_p050165514102"></a><a name="en-us_topic_0241802562_p050165514102"></a>To initialize the installation environment, you need to upload the installation package and the XML file, decompress the installation package, and use <strong id="b11413104010545"><a name="b11413104010545"></a><a name="b11413104010545"></a>gs_preinstall</strong> to prepare the installation environment.</p>
@@ -53,5 +63,3 @@ This section describes the openGauss installation process.
 </tr>
 </tbody>
 </table>
-
-

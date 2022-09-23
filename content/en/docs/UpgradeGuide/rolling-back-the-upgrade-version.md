@@ -16,11 +16,13 @@ This section describes how to roll back to the source version.
     >```
     >gs_upgradectl -t auto-rollback -X /opt/software/GaussDB_Kernel/clusterconfig.xml --force
     >```
-
+    >openGauss 3.X uses a new method to establish mutual trust relationship.
+    >If openGauss 2.X is upgraded to openGauss 3.X and then rolled back, perform the following steps after the rollback command is executed and before running the gs_preinstall command in the old package:
+    >1. Delete the **/root/gauss\_om/***Database username* \(for example, **omm**\) directory on each node in the cluster.
+    >2. To remove the mutual trust relationship between database users, log in to each node in the cluster, delete the crontab scheduled task, delete** \~/.ssh**, kill the mutual trust process, and delete the SSH\_AUTH\_SOCK and SSH\_AGENT\_PID environment variables.
+    
 3.  Check the version number after the rollback.
 
     ```
     gs_om -V | --version
     ```
-
-

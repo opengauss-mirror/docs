@@ -10,7 +10,7 @@ This section describes how to install openGauss using Docker to facilitate insta
 
 ## Preparations<a name="en-us_topic_0283136491_section260555142417"></a>
 
-Use the  **buildDockerImage.sh**  script to build a Docker image. This script is a shell script that is easy to use and provides MD5 check.
+Use the  **buildDockerImage.sh**  script to build a Docker image. This script is a shell script that is easy to use and provides SHA-256 check.
 
 ## Creating an openGauss Docker Image<a name="en-us_topic_0283136491_section159607494319"></a>
 
@@ -18,17 +18,15 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 
 > -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-***X.X.X***-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html). Ensure that the correct yum source is available.
 
-> -   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the MD5 check is performed by default. You need to manually write the check result to the  **md5\_file\_amd64**  file.
+> -   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the SHA-256 check is performed by default. You need to manually write the check result to the  **sha256\_file\_amd64**  file.
 
 >    ```
-    ## Modify the MD5 verification file.
-    cd /soft/openGauss-server/docker/dockerfiles/1.0.1
-    md5sum openGauss-1.0.1-CentOS-64bit.tar.bz2
-    ## Write the verification information to the verification file md5_file_amd64.
-    echo "58b9a029719f2d9d32b7d619c850735c openGauss-1.0.1-CentOS64bit.tar.bz2" > md5_file_amd64 
+    ## Modify the SHA-256 verification file.
+    cd /soft/openGauss-server/docker/dockerfiles/3.0.0
+    sha256sum openGauss-3.0.0-CentOS-64bit.tar.bz2 > sha256_file_amd64 
  ```
 
-> -   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/1.0.1**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
+> -   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/3.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
 
 
 >    ```
@@ -44,8 +42,8 @@ Usage: buildDockerImage.sh -v [version] [-i] [Docker build option]
 Builds a Docker Image for openGauss
 Parameters:
    -v: version to build
-       Choose one of: 1.0.0 1.0.1
-   -i: ignores the MD5 checksums
+       Choose one of: 3.0.0
+   -i: ignores the SHA-256 checksums
 
 LICENSE UPL 1.0
 ```
@@ -97,7 +95,7 @@ $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -v /o
 
 **Note**
 
-1. For details about how to use a database of another version to build a container image, see the configuration file in `openGauss-server/docker/dockerfiles/1.1.0`. You only need to change the version number to the corresponding version number.
+1. For details about how to use a database of another version to build a container image, see the configuration file in `openGauss-server/docker/dockerfiles/3.0.0`. You only need to change the version number to the corresponding version number.
 
 2. If the `openeuler-20.03-lts:latest` image cannot be downloaded, download the container image package `openEuler-docker.aarch64.tar.xz` from the OpenEuler official website `http://121.36.97.194/openEuler-20.03-LTS/docker_img/aarch64/` and use `docker load -i openEuler-docker.aarch64.tar.xz` to import the package to the local image list.
    

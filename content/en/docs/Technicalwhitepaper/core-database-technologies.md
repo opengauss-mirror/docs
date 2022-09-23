@@ -17,7 +17,7 @@
 
   openGauss supports standard SQL statements. The SQL standard is an international standard and is updated periodically. SQL standards are classified into core features and optional features. Most databases do not fully support SQL standards. SQL features are built by database vendors to maintain customers and push up application migration costs. New SQL features are increasingly different among vendors. Currently, there is no authoritative SQL standard test.
 
-  openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  _Developer Guide_.
+  openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  *Developer Guide*.
 
   The introduction of standard SQL provides a unified SQL interface for all database vendors, reducing the learning costs of users and openGauss application migration costs.
 
@@ -63,7 +63,7 @@
   -   Commit;
   -   Rollback;
 
-  Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  _Developer Guide_.
+  Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  *Developer Guide*.
 
 - Support for Functions and Stored Procedures
 
@@ -77,7 +77,7 @@
   4.  To process SQL statements, the stored procedure process assigns a memory fragment to store context association. Cursors are handles or pointers to context areas. With cursors, stored procedures can control alterations in context areas.
   5.  Six levels of exception information are supported to facilitate the debugging of stored procedures. Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the process executed by the stored procedure step by step and find the error cause or program bug based on the variable value to improve the fault locating efficiency. You can set breakpoints and perform independent debugging.
 
-  openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  _Developer Guide_.
+  openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  *Developer Guide*.
 
 - PG Interface Compatibility
 
@@ -355,6 +355,51 @@ PITR uses basic hot backup, WALs, and WAL archive logs for backup and recovery. 
 ### High Availability Based on the Paxos Protocol \(DCF\)<a name="section4565549116"></a>
 
 After DCF is enabled, DNs support Paxos-based replication and quorum, achieving high availability and disaster recovery. DNs support automatic primary node selection and log replication. The replication process supports compression and stream control to prevent high bandwidth usage. Node types based on Paxos roles are provided and can be adjusted.
+
+### Two-City Three-DC DR<a name="EN-US_TOPIC_0000001305511337"></a>
+
+Two-city three-DC indicates that the three DCs (production center, intra-city DR center, and remote DR center) are deployed in two cities. In recent years, natural disasters have occurred frequently at home and abroad. The two-city three-DC DR solution comes into being with the combination of two intra-city DCs and remote DR DCs. This solution features high availability and disaster backup capabilities. The two intra-city DCs are two data centers that can carry critical applications independently. They have similar data processing capabilities and can synchronize data in real time through high-speed links. Under normal circumstances, the two DCs manage services and system operation together and can be switched over. When disaster occurs, services can be switched over to the DR DC with almost no data loss, ensuring service continuity. Compared with the remote DR DC, two intra-city DCs have lower investment cost, faster building speed, easier operation and maintenance, and higher reliability. A remote DR DC is deployed in a different city and is used to back up data of the two DCs. When faults occur in the two DCs, the remote DR DC can recover services from backup data.
+
+Specifications
+
+- Streaming replication-based remote DR solution:
+
+  - The network latency within the primary or DR database instance must be less than or equal to 10 ms, and the network latency between the primary and standby database instances must be less than or equal to 100 ms. The DR can run normally within the range of the required network latency. Otherwise, the primary and standby nodes will be disconnected.
+
+  - The following table lists the log generation speeds in the primary database instance supported by different hardware specifications when the network bandwidth is not a bottleneck and the parallel playback function is enabled in the DR database instance. The RPO and RTO can be ensured only under the log generation speed.
+
+    **Table 1** Log generation speed supported by different hardware specifications
+
+    <a name="table17799174017294"></a>
+
+    <table><thead align="left"><tr id="row128001840172918"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p38001240152916"><a name="p38001240152916"></a><a name="p38001240152916"></a>Typical Configuration</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p3800204013293"><a name="p3800204013293"></a><a name="p3800204013293"></a>Log Generation Speed of the Primary Database Instance</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row38001640102916"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p15800940112913"><a name="p15800940112913"></a><a name="p15800940112913"></a>96U/768G/SATA SSD</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1280016403297"><a name="p1280016403297"></a><a name="p1280016403297"></a>&lt;=10MB/s</p>
+    </td>
+    </tr>
+    <tr id="row179471532813"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p137941115112820"><a name="p137941115112820"></a><a name="p137941115112820"></a>128U/2T/NVMe SSD</p>
+    </td>
+  <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7794015152814"><a name="p7794015152814"></a><a name="p7794015152814"></a>&lt;=40MB/s</p>
+    </td>
+  </tr>
+    </tbody>
+    </table>
+  
+  - A certain amount of data can be lost when the DR database instance is promoted to primary, and the RPO is less than or equal to 10 seconds. When the DR database instance is normal, the RTO for promoting the DR database instance to primary is less than or equal to 10 minutes. When the DR database instance is degraded, the RTO for promoting the DR database instance to primary is within 20 minutes.
+  
+  - Practice: Planned primary/standby database instance switchover, no data loss, RPO = 0, RTO ≤ 20 minutes \(including the processes of demoting the primary database instance to the DR instance and promoting the DR database instance to the primary database instance\)
+
+
+>![](../Technicalwhitepaper/public_sys-resources/icon-notice.gif) **NOTICE:**
+>Tests show that the maximum write rate of SATA SSDs is about 240 MB/s, that of SAS SSDs is over 500 MB/s, and that of NVMe SSDs is even better. Currently, only the performance metric under the SATA SSD hardware specifications is provided. If the hardware conditions do not meet the preceding specifications, the single-shard log generation speed in the primary database instance must be reduced to ensure the RPO and RTO.
+>
+>Resources such as file handles and memory are used up in the primary and standby database instances. As a result, the RPO and RTO cannot be ensured.
 
 ## Maintainability
 
@@ -710,3 +755,9 @@ DB4AI is compatible with the MADlib ecosystem, supports more than 70 algorithms,
 
 The fenced UDF and native DB4AI algorithm capabilities are provided, including the execution plan, operators, and SQL syntax in the database.
 
+### ABO Optimizer<a name="EN-US_TOPIC_0000001316125534"></a>
+
+The ABO optimizer features that openGauss uses lightweight machine learning to optimize query plans. The current version provides two functions: intelligent cardinality estimation and adaptive plan selection.
+
+-   Intelligent cardinality estimation uses the Bayesian network algorithm in the database to improve the cardinality estimation accuracy of multi-column equality query on data with strong correlation between columns by several times, and significantly improves the end-to-end execution efficiency.
+-   Adaptive plan selection uses linear expansion of query selection rate to explore cache plans, and uses query selection rate range to match and select cache plans. This compensates for the defect that the execution plan cannot adapt to a single general cache plan, and avoids the cost caused by frequent calling of query optimization. In typical scenarios, the performance can be improved by several times.

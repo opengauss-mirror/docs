@@ -177,7 +177,7 @@ Backup and restoration can be classified into logical backup and restoration, ph
 
 After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports hot backup and compressed backup.
 
-![](C:/Users/lijun/Desktop/opengauss/docs/content/en/docs/Toolreference/public_sys-resources/icon-note.gif) **NOTE:** 
+![](public_sys-resources/icon-note.gif) **NOTE:** 
 
 -   **gs\_basebackup**  supports only full backup.
 
@@ -351,7 +351,7 @@ To restore the original database, perform the following steps:
 
 When a database breaks down or needs to be rolled back to a previous state, the point-in-time recovery \(PITR\) function of openGauss can be used to restore the database to any point in time after the backup and archive data is generated.
 
-![](C:/Users/lijun/AppData/Local/Temp/6/Rar$DIa160952.43946/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 -   PITR can only be restored to a point in time after the physical backup data is generated.  
 -   Only the primary node can be restored using PITR. The standby node needs to be fully built to synchronize data with the primary node.  
 
@@ -452,7 +452,7 @@ For example:
 recovery_target_inclusive = true
 ```
 
-![](C:/Users/lijun/AppData/Local/Temp/6/Rar$DIa160952.43946/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 -   Only one of the four configuration items  **recovery\_target\_name**,  **recovery\_target\_time**,  **recovery\_target\_xid**, and  **recovery\_target\_lsn**  can be used at a time.  
 -   If no recovery targets are configured or the configured target does not exist, data is recovered to the latest WAL log point by default.  
 

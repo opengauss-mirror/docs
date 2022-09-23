@@ -372,3 +372,15 @@ To enable the log function, set this parameter to one or a combination of the fo
 **Value range**: **gss** or **trust**. Any modification of this parameter takes effect only after cm\_server is restarted. For details about how to modify the parameter, see [Parameters for set cm](#table10437204416514).
 
 **Default value**: **trust**
+
+## dn\_arbitrate\_mode<a name="section1264174324416"></a>
+
+**Parameter description**: Specifies the DN arbitration mode.
+
+**Value range**: a string. The modification of this parameter takes effect after reloading. For details about how to modify parameters, see [Parameters for set cm](#table10437204416514). In share\_disk mode, you are not advised to change the arbitration mode.
+
+-   quorum
+-   paxos
+-   share\_disk
+
+**Default value**: **quorum**

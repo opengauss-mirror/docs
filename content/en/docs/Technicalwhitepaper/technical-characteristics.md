@@ -23,13 +23,10 @@ Compared with other open-source databases, openGauss has the following character
 
 -   Easy O&M
     -   Provides AI-based intelligent parameter tuning and index recommendation to automatically recommend AI parameters.
-    -   Provides slow SQL diagnosis and multi-dimensional self-monitoring views to help you understand system performance in real time.
-    -   Provides SQL time forecasting that supports online auto-learning.
+    -   Provides slow SQL diagnosis and multi-dimensional self-monitoring views to help you understand system performance in real time, predict metric trends, detect exceptions, and analyze root causes of slow SQL statements.
 
 
 -   Fully open
     -   Adopts the Mulan Permissive Software License, allowing code to be freely modified, used, and referenced.
     -   Fully opens database kernel capabilities.
     -   Provides excessive partner certifications, training systems, and university courses.
-
-
