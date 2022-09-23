@@ -22,7 +22,7 @@ ALTER SUBSCRIPTION可以修改在CREATE SUBSCRIPTION中指定的订阅属性。
   ALTER SUBSCRIPTION name SET PUBLICATION publication_name [, ...]
   ```
 
-- 更新订阅的发布端的发布名称。
+- 更新订阅的订阅列表。
 
   ```
   ALTER SUBSCRIPTION name REFRESH PUBLICATION [ WITH ( refresh_option [= value] [, ... ] ) ]
