@@ -95,6 +95,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     对枚举类型ENUM，以及CHAR, CHARACTER, VARCHAR, TEXT等字符类型，创建表格时可使用关键字CHARSET或CHARACTER SET声明列字符集。目前该特性仅做语法支持，不实现功能。
 
+-   **column\_constraint**
+
+    字段的类型约束中，添加了mysql的ON UPDATE特性，归类于字段类型约束。与DEFAULT属性属于同类约束。该ON UPDATE属性用于，执行UPDATE操作timestamp字段为缺省时，则自动更新timestamp字段的时间截。
+
+    ```sql
+    CREATE TABLE table_name(column_name timestamp ON UPDATE CURRENT_TIMESTAMP);
+    ```
+
 -   **COLLATE collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
