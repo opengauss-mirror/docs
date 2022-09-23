@@ -98,52 +98,51 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     b.  创建“/tmp/tools”目录。
 
-        ```
-        mkdir /tmp/tools
-        ```
+    ```
+    mkdir /tmp/tools
+    ```
 
     c.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >-   软件包相对位置为安装时所放位置，根据实际情况填写。
-        
-        >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   软件包相对位置为安装时所放位置，根据实际情况填写。
+    >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
     d.  解压文件。
 
-        ```
-        cd /tmp/tools
-        tar -zxvf openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz
-        ```
+    ```
+    cd /tmp/tools
+    tar -zxvf openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz
+    ```
 
     e.  登录数据库主节点所在的服务器，拷贝数据库安装目录下的bin目录到客户端主机的“/tmp/tools”路径下。
 
-        ```
-        scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
-        ```
+    ```
+    scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
+    ```
         
-        其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
+    其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
 
     f.  登录客户端所在主机，设置环境变量。
 
-        打开“\~/.bashrc”文件。
+    打开“\~/.bashrc”文件。
         
-        ```
-        vi ~/.bashrc
-        ```
+    ```
+    vi ~/.bashrc
+    ```
         
-        在其中输入如下内容后，使用“:wq!”命令保存并退出。
+    在其中输入如下内容后，使用“:wq!”命令保存并退出。
         
-        ```
-        export PATH=/tmp/tools/bin:$PATH
-        export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH
-        ```
+    ```
+    export PATH=/tmp/tools/bin:$PATH
+    export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH
+    ```
 
     g.  使环境变量配置生效。
 
-        ```
-        source ~/.bashrc
-        ```
+    ```
+    source ~/.bashrc
+    ```
 
 3.  连接数据库。
 
