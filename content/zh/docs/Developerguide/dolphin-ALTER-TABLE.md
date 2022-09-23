@@ -28,6 +28,7 @@
         | DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]
         | RENAME INDEX index_name to new_index_name
         | ADD table_indexclause
+        | MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP
     ```
 
 -   对一个表进行重建。
@@ -41,6 +42,20 @@
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
         RENAME { TO | AS } new_table_name;
+    ```
+
+-   对表timestamp列添加ON UPDATE属性。
+
+    ```sql
+    ALTER TABLE table_name
+        MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP;
+    ```
+
+-   对表timestamp列删除ON UPDATE属性。
+
+    ```sql
+    ALTER TABLE table_name
+        MODIFY column_name column_type;
     ```
 
 -   **ADD table_indexclause**
