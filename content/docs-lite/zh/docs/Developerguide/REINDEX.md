@@ -40,7 +40,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
 -   **INTERNAL TABLE**
 
-    重建列存表或Hadoop内表的Desc表的索引，如果表有从属的"TOAST"表，则这个表也会重建索引。
+    重建列存表的Desc表的索引，如果表有从属的"TOAST"表，则这个表也会重建索引。
 
 -   **TABLE**
 

@@ -44,4 +44,22 @@ This section describes how to perform the in-place upgrade and gray upgrade.
     gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey
     ```
 
+8.  If the database is normal, run the following command to perform specified nodes upgrade:
+
+    Example 1: Use the  **gs\_upgradectl**  script to perform a specified node upgrade.
+ 
+    ```
+    gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey -h hostname0
+    ```
+    Example 2: Use the  **gs\_upgradectl**  script to perform multiple specified nodes upgrade.
+
+    ```
+    gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey -h hostname0,hostname1
+    ```
+
+9.  If the database is normal, run the following command to perform the remaining nodes upgrade:
+
+    ```
+    gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey --continue
+    ```
 

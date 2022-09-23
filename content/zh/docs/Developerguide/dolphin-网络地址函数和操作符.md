@@ -121,3 +121,44 @@ openGauss提供网络相关的功能函数。
      10.0.5.9
     (1 row)
     ```
+
+- is_ipv4_compat(bytea\)
+
+    描述：该函数接受一个以数字形式表示的二进制字符串的 IPv6 地址，如同 INET6_ATON() 返回值。如果参数是有效的兼容 IPv4 的 IPv6 地址，则返回 1，否则返回 0。IPv4 兼容地址的格式为 ::ipv4_address。
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    openGauss=# SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.5.9'));
+     is_ipv4_compat 
+    ----------------
+                  1
+    (1 row)
+    openGauss=# SELECT IS_IPV4_COMPAT(INET6_ATON('::ffff:10.0.5.9'));
+     is_ipv4_compat 
+    ----------------
+                  0
+    (1 row)
+
+- is_ipv4_mapped(bytea\)
+
+    描述：该函数接受一个以数字形式表示的二进制字符串的 IPv6 地址，如同 INET6_ATON() 返回值。如果参数是一个有效的 IPv4 映射的 IPv6 地址，则返回 1，否则返回 0。IPv4 映射的地址格式为 ::ffff:ipv4_address。
+
+    返回值类型：int
+
+    示例：
+
+    ```
+    openGauss=# SELECT IS_IPV4_MAPPED(INET6_ATON('::10.0.5.9'));
+     is_ipv4_mapped 
+    ----------------
+                  0
+    (1 row)
+
+    openGauss=# SELECT IS_IPV4_MAPPED(INET6_ATON('::ffff:10.0.5.9'));
+     is_ipv4_mapped 
+    ----------------
+                  1
+    (1 row)

@@ -8,6 +8,8 @@
 
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
 
+-   由于路径的特殊字符校验，在使用ADD DATAFILE创建表空间时，若输入路径以.ibd结尾，dolphin插件会将路径名称更改为以_ibd结尾。
+
 ## 语法格式<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s9f8a8395cc464cd2a34dec7a82fedc7b"></a>
 
 ```
@@ -32,8 +34,21 @@ CREATE TABLESPACE tablespace_name
 
 ```
 --使用ADD DATAFILE语法创建表空间。
-CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
+openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
+
+--使用ADD DATAFILE语法创建表空间，输入路径以.ibd结尾
+openGauss=# CREATE TABLESPACE test_tbspace_ibd ADD DATAFILE 'test_tbspace1.ibd';
+WARNING:  Suffix ".ibd" of datafile path detected. The actual path will be renamed as "test_tbspace1_ibd"
+CREATE TABLESPACE
+openGauss=# CREATE TABLE t_tbspace(num int) TABLESPACE test_tbspace_ibd;
+CREATE TABLE
+openGauss=# \d t_tbspace
+   Table "public.t_tbspace"
+ Column |  Type   | Modifiers
+--------+---------+-----------
+ num    | integer |
+Tablespace: "test_tbspace_ibd"
 ```
 
 

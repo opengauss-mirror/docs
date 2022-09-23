@@ -28,8 +28,8 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     ```
 
 3.  Replace the openGauss client driver.
-    1.  Decompress the  **openGauss-1.1.0-ODBC.tar.gz**  package. After the decompression, the  **lib**  and  **odbc**  folders are generated. The  **odbc**  folder contains another  **lib**  folder. Copy the  **psqlodbca.la**,  **psqlodbca.so**,  **psqlodbcw.la**, and  **psqlodbcw.so**  files from  **/odbc/lib**  to  **/usr/local/lib**.
-    2.  Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-1.1.0-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
+    1.  Decompress the  **openGauss-x.x.x-ODBC.tar.gz**  package. After the decompression, the  **lib**  and  **odbc**  folders are generated. The  **odbc**  folder contains another  **lib**  folder. Copy the  **psqlodbca.la**,  **psqlodbca.so**,  **psqlodbcw.la**, and  **psqlodbcw.so**  files from  **/odbc/lib**  to  **/usr/local/lib**.
+    2.  Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-x.x.x-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
 
 4.  Configure a data source.
     1.  Configure the ODBC driver file.

@@ -1,6 +1,7 @@
 # 日期/时间类型<a name="ZH-CN_TOPIC_0289901014"></a>
 
-相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为:
+相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为: 
+
 1. 修改```date/time/datetime/timestamp```类型的表现。
 2. 新增```year```数据类型。
 

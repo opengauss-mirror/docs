@@ -54,7 +54,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
 <tr id="row119681177486"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.3.1.1 "><p id="p19969191713487"><a name="p19969191713487"></a><a name="p19969191713487"></a>命令自动补齐</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%" headers="mcps1.2.3.1.2 "><p id="p18873138184912"><a name="p18873138184912"></a><a name="p18873138184912"></a>根据openGauss语法规则，gsql支持使用Tab键进行命令的自动补齐，当编译时指定了选项--with-readline，且客户端连接时指定“-r”参数，此功能被打开。例如，crea后键入Tab，gsql会将其补齐为create。</p>
-    <div class="note" id="note1039612365499"><a name="note1039612365499"></a><a name="note1039612365499"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul19954323195114"></a><a name="ul19954323195114"></a><ul id="ul19954323195114"><li>支持数据库SQL关键字如select、create、table等。</li><li>支持表名、视图名等自定义标识符的补齐。</li><li>元命令选项'S'、'+'不支持自动补齐。</li><li>对表进行补齐时，只有前缀是“pg_”才会补齐系统表。</li><li>不支持建表时字段类型的补齐。</li><li>select后不支持任何补齐。</li><li>不支持常量与宏的自动补齐。</li><li>select * from a,b... 不支持第二个开始表的自动补齐, insert into t1 (col1, col2, ...) 不支持第二个列的自动补齐。</li><li>不支持create tablespace语句with以及with后参数的自动补齐。</li><li>创建索引不支持local、global的自动补齐，修改索引不支持rebuild自动补齐。</li><li>set语句仅支持自动补全USERSET和SUSET级别的参数。</li><li>不支持if exists的自动补齐。</li><li>不支持表名.列名的自动补齐，如alter sequence &lt;name&gt; owned by tableName.colName，owned by。</li><li>不支持自定义操作符自动补齐。使用复制粘贴这种方式输入命令，如果粘贴的命令里面有TAB键有可能会使输入命令的格式错乱，无法正常执行。</li></ul>
+    <div class="note" id="note1039612365499"><a name="note1039612365499"></a><a name="note1039612365499"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul19954323195114"></a><a name="ul19954323195114"></a><ul id="ul19954323195114"><li>支持数据库SQL关键字如select、create、table等。</li><li>支持表名、视图名等自定义标识符的补齐。</li><li>元命令选项'S'、'+'不支持自动补齐。</li><li>对表进行补齐时，只有前缀是“pg_”才会补齐系统表。</li><li>不支持建表时字段类型的补齐。</li><li>select后不支持任何补齐。</li><li>不支持常量与宏的自动补齐。</li><li>select * from a,b... 不支持第二个开始表的自动补齐, insert into t1 (col1, col2, ...) 不支持第二个列的自动补齐。</li><li>不支持create tablespace语句with以及with后参数的自动补齐。</li><li>创建索引不支持local、global的自动补齐，修改索引不支持rebuild自动补齐。</li><li>set语句仅支持自动补全USERSET和SUSET级别的参数。</li><li>不支持if exists的自动补齐。</li><li>不支持表名.列名的自动补齐，如alter sequence &lt;name&gt; owned by tableName.colName，owned by。</li><li>不支持自定义操作符自动补齐。使用复制粘贴这种方式输入命令，如果粘贴的命令里面有TAB键有可能会使输入命令的格式错乱，无法正常执行。</li><li>"\t\n@$><=;|&{() "这些特殊字符在sql语句中具有固定含义。如果自定义表名中包含这些特殊字符，那么输入的sql语句从这些字符开始不支持自动补齐。</li></ul>
 </div></div>
 </td>
 </tr>
@@ -451,7 +451,10 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
     gsql工具使用-d参数指定目标数据库名、-U参数指定数据库用户名、-h参数指定主机名、-p参数指定端口号信息。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >若未指定数据库名称，则使用初始化时默认生成的数据库名称；若未指定数据库用户名，则默认使用当前操作系统用户作为数据库用户名；当某个值没有前面的参数（-d、-U等）时，若连接的命令中没有指定数据库名（-d）则该参数会被解释成数据库名；如果已经指定数据库名（-d）而没有指定数据库用户名（-U）时，该参数则会被解释成数据库用户名。
+    >- 若未指定数据库名称，则使用初始化时默认生成的数据库名称；
+    >- 若未指定数据库用户名，则默认使用当前操作系统用户作为数据库用户名；
+    >- 当某个值没有前面的参数（-d、-U等）时，若连接的命令中没有指定数据库名（-d）则该参数会被解释成数据库名；
+    >- 如果已经指定数据库名（-d）而没有指定数据库用户名（-U）时，该参数则会被解释成数据库用户名。
 
     示例1，使用omm用户连接到本机postgres数据库的15400端口。
 
@@ -1269,7 +1272,7 @@ omm@[local] openGauss=#
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row25232449"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p53653520"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p53653520"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p53653520"></a>\copy { table [ ( column_list ) ] | ( query ) } { from | to } { filename | stdin | stdout | pstdin | pstdout } [ with ] [ binary ] [ oids ] [ delimiter [ as ] 'character' ] [ null [ as ] 'string' ] [ csv [ header ] [ quote [ as ] 'character' ] [ escape [ as ] 'character' ] [ force quote column_list | * ] [ force not null column_list ] ][parallel integer]</p>
+<tbody><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row25232449"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p53653520"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p53653520"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p53653520"></a>\copy { table [ ( column_list ) ] | ( query ) } { from | to } { filename | stdin | stdout | pstdin | pstdout } [ with ] [ binary ] [ oids ] [ delimiter [ as ] 'character' ] [ null [ as ] 'string' ] [ csv [ header ] [ quote [ as ] 'character' ] [ escape [ as ] 'character' ] [ force quote column_list | * ] [ force not null column_list ] [ force null column_list ] ][parallel integer]</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152146_p1671244475815"><a name="zh-cn_topic_0237152146_p1671244475815"></a><a name="zh-cn_topic_0237152146_p1671244475815"></a>在任何psql客户端登录数据库成功后可以执行导入导出数据， 这是一个运行SQL COPY命令的操作，但不是读取或写入指定文件的服务器，而是读取或写入文件，并在服务器和本地文件系统之间路由数据。 这意味着文件的可访问性和权限是本地用户的权限，而不是服务器的权限，并且不需要数据库初始化用户权限。
     </p>

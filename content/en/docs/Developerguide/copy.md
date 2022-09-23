@@ -71,7 +71,7 @@
     The syntax of the optional parameter  **option**  is as follows:
 
     ```
-    FORMAT 'format_name'
+    FORMAT format_name
     | OIDS [ boolean ]
     | DELIMITER 'delimiter_character'
     | NULL 'null_string'
@@ -84,6 +84,7 @@
     | NOESCAPING [ boolean ]
     | FORCE_QUOTE { ( column_name [, ...] ) | * }
     | FORCE_NOT_NULL ( column_name [, ...] )
+    | FORCE_NULL ( column_name [, ...] )
     | ENCODING 'encoding_name'
     | IGNORE_EXTRA_DATA [ boolean ]
     | FILL_MISSING_FIELDS [ boolean ]
@@ -103,6 +104,7 @@
     | FILEHEADER 'header_file_string' 
     | FREEZE 
     | FORCE_NOT_NULL column_name [, ...]
+    | FORCE_NULL column_name [, ...]
     | FORCE_QUOTE { column_name [, ...] | * }
     | BINARY 
     | CSV 
@@ -450,6 +452,12 @@
     -   FORCE NOT NULL column\_name \[, ...\]
 
         In  **CSV COPY FROM**  mode, the specified column is not null. If the column is null, its value is regarded as a string of 0 characters.
+
+        Value range: an existing column name
+
+    -   FORCE NULL column\_name \[, ...\]
+
+        In  **CSV COPY FROM**  mode, set the string representing null value in the specified column to NULL, including the quoted null value string.
 
         Value range: an existing column name
 

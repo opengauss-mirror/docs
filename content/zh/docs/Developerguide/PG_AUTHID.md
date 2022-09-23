@@ -218,6 +218,13 @@ openGauss中只有一份pg\_authid，不是每个数据库有一份。需要有�
 <a name="ul4190341111410"></a><a name="ul4190341111410"></a><ul id="ul4190341111410"><li>t（true）：表示有。</li><li>f（false）：表示没有。</li></ul>
 </td>
 </tr>
+<tr id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_r6275ffffc4c54a7fbf734510c7f6f6a2"><td class="cellrowborder" valign="top" width="20.41%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_aa029549c40934a86a1d87aeba4384888"><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_aa029549c40934a86a1d87aeba4384888"></a><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_aa029549c40934a86a1d87aeba4384888"></a>rolpasswordext</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.21%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"></a><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a2eff02923c314d689c9dc2d1487de41c"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.379999999999995%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a><a name="en-us_topic_0283137725_en-us_topic_0237122273_en-us_topic_0059778259_a9cf0bb3ca6eb4932b190388ddf51b32b"></a>口令扩展，当创建B兼容类型创造的数据库后，可按照mysql_native_password的加密策略，来存储sha1(sha1(password))的值。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

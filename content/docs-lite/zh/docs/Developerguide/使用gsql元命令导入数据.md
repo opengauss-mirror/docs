@@ -149,6 +149,12 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     取值范围：已存在的字段。
 
+-   force null column\_list
+
+    在CSV COPY FROM模式下，指定的字段输入表示空值的字符串设为空。
+
+    取值范围：已存在的字段。
+
 
 ## 任务示例<a name="zh-cn_topic_0283136941_zh-cn_topic_0237121136_zh-cn_topic_0117407672_section49087436203946"></a>
 

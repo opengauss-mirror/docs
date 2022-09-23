@@ -28,7 +28,7 @@
 
     ```
     ALTER TABLE  table_name
-       ALTER column_name { SET | DROP } NOT NULL
+       ALTER column_name { SET | DROP } NOT NULL;
     ```
 
 
