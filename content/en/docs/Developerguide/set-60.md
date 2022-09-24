@@ -6,14 +6,20 @@ This command is used to change the parameter values in the  **dbmind.conf**  con
 gs_dbmind set TSDB host 127.0.0.1 -c confpath
 ```
 
-You can choose either of the methods to modify common parameters. However, the plaintext password cannot be encrypted by manually modifying the configuration file. If you want to change the password, run the following command:
+You can choose either of the methods to modify common parameters. The DBMind configuration file does not store plaintext passwords. If a user uses a plaintext password, the DBMind displays a message and exits. Therefore, the user can change the password in either of the following ways: 1. Modify the **dbmind.conf** file first and run the following command to reinitialize the configuration file:
 
 ```
-gs_dbmind set METADATABASE password xxxxxx -c confpath
+gs_dbmind service setup --initialize -c confpath
+```
+2. Run the **set** subcommand to set the parameters. For example:
+
+```
+gs_dbmind set METADATABASE password xxxxx -c confpath
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >This command is case sensitive to character strings. If you enter an incorrect character string, an error may occur during the command execution.
+>The **set** subcommand involves many types of parameter values. Therefore, only the set values are preliminarily checked. You need to ensure that the entered values are correct. For example, some values must be positive integers instead of negative integers.
 
 ## Command Reference<a name="section1636514213451"></a>
 
@@ -85,4 +91,3 @@ optional arguments:
 </tr>
 </tbody>
 </table>
-

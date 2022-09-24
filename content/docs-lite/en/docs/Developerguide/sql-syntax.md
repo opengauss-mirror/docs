@@ -1,365 +1,377 @@
 # SQL Syntax<a name="EN-US_TOPIC_0289900416"></a>
 
--   **[ABORT](abort.md)**  
+- **[ABORT](abort.md)**  
 
--   **[ALTER AGGREGATE](alter-aggregate.md)**  
+- **[ALTER AGGREGATE](alter-aggregate.md)**  
 
--   **[ALTER AUDIT POLICY](alter-audit-policy.md)**  
+- **[ALTER AUDIT POLICY](alter-audit-policy.md)**  
 
--   **[ALTER DATABASE](alter-database.md)**  
+- **[ALTER DATABASE](alter-database.md)**  
 
--   **[ALTER DATA SOURCE](alter-data-source.md)**  
+- **[ALTER DATA SOURCE](alter-data-source.md)**  
 
--   **[ALTER DEFAULT PRIVILEGES](alter-default-privileges.md)**  
+- **[ALTER DEFAULT PRIVILEGES](alter-default-privileges.md)**  
 
--   **[ALTER DIRECTORY](alter-directory.md)**  
+- **[ALTER DIRECTORY](alter-directory.md)**  
 
--   **[ALTER EXTENSION](alter-extension.md)**  
+- **[ALTER EXTENSION](alter-extension.md)**  
 
--   **[ALTER FOREIGN TABLE](alter-foreign-table.md)**  
+- **[ALTER FOREIGN TABLE](alter-foreign-table.md)**  
 
--   **[ALTER FUNCTION](alter-function.md)**  
+- **[ALTER FUNCTION](alter-function.md)**  
 
--   **[ALTER GROUP](alter-group.md)**  
+- **[ALTER GROUP](alter-group.md)**  
 
--   **[ALTER INDEX](alter-index.md)**  
+- **[ALTER INDEX](alter-index.md)**  
 
--   **[ALTER LANGUAGE](alter-language.md)**  
+- **[ALTER LANGUAGE](alter-language.md)**  
 
--   **[ALTER LARGE OBJECT](alter-large-object.md)**  
+- **[ALTER LARGE OBJECT](alter-large-object.md)**  
 
--   **[ALTER MASKING POLICY](alter-masking-policy.md)**  
+- **[ALTER MASKING POLICY](alter-masking-policy.md)**  
 
--   **[ALTER MATERIALIZED VIEW](alter-materialized-view.md)**  
+- **[ALTER MATERIALIZED VIEW](alter-materialized-view.md)**  
 
--   **[ALTER OPERATOR](alter-operator.md)**  
+- **[ALTER OPERATOR](alter-operator.md)**  
 
--   **[ALTER PACKAGE](alter-package.md)**  
+- **[ALTER PACKAGE](alter-package.md)**  
 
--   **[ALTER RESOURCE LABEL](alter-resource-label.md)**  
+- **[ALTER PUBLICATION](alter-publication.md)**
 
--   **[ALTER RESOURCE POOL](alter-resource-pool.md)**  
+- **[ALTER RESOURCE LABEL](alter-resource-label.md)**  
 
--   **[ALTER ROLE](alter-role.md)**  
+- **[ALTER RESOURCE POOL](alter-resource-pool.md)**  
 
--   **[ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)**  
+- **[ALTER ROLE](alter-role.md)**  
 
--   **[ALTER SCHEMA](alter-schema.md)**  
+- **[ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)**  
 
--   **[ALTER SEQUENCE](alter-sequence.md)**  
+- **[ALTER SCHEMA](alter-schema.md)**  
 
--   **[ALTER SERVER](alter-server.md)**  
+- **[ALTER SEQUENCE](alter-sequence.md)**  
 
--   **[ALTER SESSION](alter-session.md)**  
+- **[ALTER SERVER](alter-server.md)**  
 
--   **[ALTER SYNONYM](alter-synonym.md)**  
+- **[ALTER SESSION](alter-session.md)**  
 
--   **[ALTER SYSTEM KILL SESSION](alter-system-kill-session.md)**  
+- **[ALTER SUBSCRIPTION](alter-subscription.md)**
 
--   **[ALTER SYSTEM SET](alter-system-set.md)**  
+- **[ALTER SYNONYM](alter-synonym.md)**  
 
--   **[ALTER TABLE](alter-table.md)**  
+- **[ALTER SYSTEM KILL SESSION](alter-system-kill-session.md)**  
 
--   **[ALTER TABLE PARTITION](alter-table-partition.md)**  
+- **[ALTER SYSTEM SET](alter-system-set.md)**  
 
--   **[ALTER TABLE SUBPARTITION](alter-table-subpartition.md)**  
+- **[ALTER TABLE](alter-table.md)**  
 
--   **[ALTER TABLESPACE](alter-tablespace.md)**  
+- **[ALTER TABLE PARTITION](alter-table-partition.md)**  
 
--   **[ALTER TEXT SEARCH CONFIGURATION](alter-text-search-configuration.md)**  
+- **[ALTER TABLE SUBPARTITION](alter-table-subpartition.md)**  
 
--   **[ALTER TEXT SEARCH DICTIONARY](alter-text-search-dictionary.md)**  
+- **[ALTER TABLESPACE](alter-tablespace.md)**  
 
--   **[ALTER TRIGGER](alter-trigger.md)**  
+- **[ALTER TEXT SEARCH CONFIGURATION](alter-text-search-configuration.md)**  
 
--   **[ALTER TYPE](alter-type.md)**  
+- **[ALTER TEXT SEARCH DICTIONARY](alter-text-search-dictionary.md)**  
 
--   **[ALTER USER](alter-user.md)**  
+- **[ALTER TRIGGER](alter-trigger.md)**  
 
--   **[ALTER USER MAPPING](alter-user-mapping.md)**  
+- **[ALTER TYPE](alter-type.md)**  
 
--   **[ALTER VIEW](alter-view.md)**  
+- **[ALTER USER](alter-user.md)**  
 
--   **[ANALYZE | ANALYSE](analyze-analyse.md)**  
+- **[ALTER USER MAPPING](alter-user-mapping.md)**  
 
--   **[BEGIN](begin.md)**  
+- **[ALTER VIEW](alter-view.md)**  
 
--   **[CALL](call.md)**  
+- **[ANALYZE | ANALYSE](analyze-analyse.md)**  
 
--   **[CHECKPOINT](checkpoint.md)**  
+- **[BEGIN](begin.md)**  
 
--   **[CLEAN CONNECTION](clean-connection.md)**  
+- **[CALL](call.md)**  
 
--   **[CLOSE](close.md)**  
+- **[CHECKPOINT](checkpoint.md)**  
 
--   **[CLUSTER](cluster.md)**  
+- **[CLEAN CONNECTION](clean-connection.md)**  
 
--   **[COMMENT](comment.md)**  
+- **[CLOSE](close.md)**  
 
--   **[COMMIT | END](commit-end.md)**  
+- **[CLUSTER](cluster.md)**  
 
--   **[COMMIT PREPARED](commit-prepared.md)**  
+- **[COMMENT](comment.md)**  
 
--   **[COPY](copy.md)**  
+- **[COMMIT | END](commit-end.md)**  
 
--   **[CREATE AGGREGATE](create-aggregate.md)**  
+- **[COMMIT PREPARED](commit-prepared.md)**  
 
--   **[CREATE AUDIT POLICY](create-audit-policy.md)**  
+- **[COPY](copy.md)**  
 
--   **[CREATE CAST](create-cast.md)**  
+- **[CREATE AGGREGATE](create-aggregate.md)**  
 
--   **[CREATE CLIENT MASTER KEY](create-client-master-key.md)**  
+- **[CREATE AUDIT POLICY](create-audit-policy.md)**  
 
--   **[CREATE COLUMN ENCRYPTION KEY](create-column-encryption-key.md)**  
+- **[CREATE CAST](create-cast.md)**  
 
--   **[CREATE DATABASE](create-database.md)**  
+- **[CREATE CLIENT MASTER KEY](create-client-master-key.md)**  
 
--   **[CREATE DATA SOURCE](create-data-source.md)**  
+- **[CREATE COLUMN ENCRYPTION KEY](create-column-encryption-key.md)**  
 
--   **[CREATE DIRECTORY](create-directory.md)**  
+- **[CREATE DATABASE](create-database.md)**  
 
--   **[CREATE EXTENSION](create-extension.md)**  
+- **[CREATE DATA SOURCE](create-data-source.md)**  
 
--   **[CREATE FOREIGN TABLE](create-foreign-table.md)**  
+- **[CREATE DIRECTORY](create-directory.md)**  
 
--   **[CREATE FUNCTION](create-function.md)**  
+- **[CREATE EXTENSION](create-extension.md)**  
 
--   **[CREATE GROUP](create-group.md)**  
+- **[CREATE FOREIGN TABLE](create-foreign-table.md)**  
 
--   **[CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md)**  
+- **[CREATE FUNCTION](create-function.md)**  
 
--   **[CREATE INDEX](create-index.md)**  
+- **[CREATE GROUP](create-group.md)**  
 
--   **[CREATE LANGUAGE](create-language.md)**  
+- **[CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md)**  
 
--   **[CREATE MASKING POLICY](create-masking-policy.md)**  
+- **[CREATE INDEX](create-index.md)**  
 
--   **[CREATE MATERIALIZED VIEW](create-materialized-view.md)**  
+- **[CREATE LANGUAGE](create-language.md)**  
 
--   **[CREATE MODEL](create-model.md)**  
+- **[CREATE MASKING POLICY](create-masking-policy.md)**  
 
--   **[CREATE OPERATOR](create-operator.md)**  
+- **[CREATE MATERIALIZED VIEW](create-materialized-view.md)**  
 
--   **[CREATE PACKAGE](create-package.md)**  
+- **[CREATE MODEL](create-model.md)**  
 
--   **[CREATE PROCEDURE](create-procedure.md)**  
+- **[CREATE OPERATOR](create-operator.md)**  
 
--   **[CREATE RESOURCE LABEL](create-resource-label.md)**  
+- **[CREATE PACKAGE](create-package.md)**  
 
--   **[CREATE RESOURCE POOL](create-resource-pool.md)**  
+- **[CREATE PROCEDURE](create-procedure.md)**
 
--   **[CREATE ROLE](create-role.md)**  
+- **[CREATE PUBLICATION](create-publication.md)**
 
--   **[CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md)**  
+- **[CREATE RESOURCE LABEL](create-resource-label.md)**  
 
--   **[CREATE RULE](create-rule.md)**  
+- **[CREATE RESOURCE POOL](create-resource-pool.md)**  
 
--   **[CREATE SCHEMA](create-schema.md)**  
+- **[CREATE ROLE](create-role.md)**  
 
--   **[CREATE SEQUENCE](create-sequence.md)**  
+- **[CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md)**  
 
--   **[CREATE SERVER](create-server.md)**  
+- **[CREATE RULE](create-rule.md)**  
 
--   **[CREATE SYNONYM](create-synonym.md)**  
+- **[CREATE SCHEMA](create-schema.md)**  
 
--   **[CREATE TABLE](create-table.md)**  
+- **[CREATE SEQUENCE](create-sequence.md)**  
 
--   **[CREATE TABLE AS](create-table-as.md)**  
+- **[CREATE SERVER](create-server.md)**  
 
--   **[CREATE TABLE PARTITION](create-table-partition.md)**  
+- **[CREATE SUBSCRIPTION](create-subscription.md)**
 
--   **[CREATE TABLESPACE](create-tablespace.md)**  
+- **[CREATE SYNONYM](create-synonym.md)**  
 
--   **[CREATE TEXT SEARCH CONFIGURATION](create-text-search-configuration.md)**  
+- **[CREATE TABLE](create-table.md)**  
 
--   **[CREATE TEXT SEARCH DICTIONARY](create-text-search-dictionary.md)**  
+- **[CREATE TABLE AS](create-table-as.md)**  
 
--   **[CREATE TRIGGER](create-trigger.md)**  
+- **[CREATE TABLE PARTITION](create-table-partition.md)**  
 
--   **[CREATE TYPE](create-type.md)**  
+- **[CREATE TABLESPACE](create-tablespace.md)**  
 
--   **[CREATE USER](create-user.md)**  
+- **[CREATE TEXT SEARCH CONFIGURATION](create-text-search-configuration.md)**  
 
--   **[CREATE USER MAPPING](create-user-mapping.md)**  
+- **[CREATE TEXT SEARCH DICTIONARY](create-text-search-dictionary.md)**  
 
--   **[CREATE VIEW](create-view.md)**  
+- **[CREATE TRIGGER](create-trigger.md)**  
 
--   **[CREATE WEAK PASSWORD DICTIONARY](create-weak-password-dictionary.md)**  
+- **[CREATE TYPE](create-type.md)**  
 
--   **[CURSOR](cursor.md)**  
+- **[CREATE USER](create-user.md)**  
 
--   **[DEALLOCATE](deallocate.md)**  
+- **[CREATE USER MAPPING](create-user-mapping.md)**  
 
--   **[DECLARE](declare.md)**  
+- **[CREATE VIEW](create-view.md)**  
 
--   **[DELETE](delete.md)**  
+- **[CREATE WEAK PASSWORD DICTIONARY](create-weak-password-dictionary.md)**  
 
--   **[DO](do.md)**  
+- **[CURSOR](cursor.md)**  
 
--   **[DROP AGGREGATE](drop-aggregate.md)**  
+- **[DEALLOCATE](deallocate.md)**  
 
--   **[DROP AUDIT POLICY](drop-audit-policy.md)**  
+- **[DECLARE](declare.md)**  
 
--   **[DROP CAST](drop-cast.md)**  
+- **[DELETE](delete.md)**  
 
--   **[DROP CLIENT MASTER KEY](drop-client-master-key.md)**  
+- **[DO](do.md)**  
 
--   **[DROP COLUMN ENCRYPTION KEY](drop-column-encryption-key.md)**  
+- **[DROP AGGREGATE](drop-aggregate.md)**  
 
--   **[DROP DATABASE](drop-database.md)**  
+- **[DROP AUDIT POLICY](drop-audit-policy.md)**  
 
--   **[DROP DATA SOURCE](drop-data-source.md)**  
+- **[DROP CAST](drop-cast.md)**  
 
--   **[DROP DIRECTORY](drop-directory.md)**  
+- **[DROP CLIENT MASTER KEY](drop-client-master-key.md)**  
 
--   **[DROP EXTENSION](drop-extension.md)**  
+- **[DROP COLUMN ENCRYPTION KEY](drop-column-encryption-key.md)**  
 
--   **[DROP FOREIGN TABLE](drop-foreign-table.md)**  
+- **[DROP DATABASE](drop-database.md)**  
 
--   **[DROP FUNCTION](drop-function.md)**  
+- **[DROP DATA SOURCE](drop-data-source.md)**  
 
--   **[DROP GROUP](drop-group.md)**  
+- **[DROP DIRECTORY](drop-directory.md)**  
 
--   **[DROP INDEX](drop-index.md)**  
+- **[DROP EXTENSION](drop-extension.md)**  
 
--   **[DROP LANGUAGE](drop-language.md)**  
+- **[DROP FOREIGN TABLE](drop-foreign-table.md)**  
 
--   **[DROP MASKING POLICY](drop-masking-policy.md)**  
+- **[DROP FUNCTION](drop-function.md)**  
 
--   **[DROP MATERIALIZED VIEW](drop-materialized-view.md)**  
+- **[DROP GROUP](drop-group.md)**  
 
--   **[DROP MODEL](drop-model.md)**  
+- **[DROP INDEX](drop-index.md)**  
 
--   **[DROP OPERATOR](drop-operator.md)**  
+- **[DROP LANGUAGE](drop-language.md)**  
 
--   **[DROP OWNED](drop-owned.md)**  
+- **[DROP MASKING POLICY](drop-masking-policy.md)**  
 
--   **[DROP PACKAGE](drop-package.md)**  
+- **[DROP MATERIALIZED VIEW](drop-materialized-view.md)**  
 
--   **[DROP PROCEDURE](drop-procedure.md)**  
+- **[DROP MODEL](drop-model.md)**  
 
--   **[DROP RESOURCE LABEL](drop-resource-label.md)**  
+- **[DROP OPERATOR](drop-operator.md)**  
 
--   **[DROP RESOURCE POOL](drop-resource-pool.md)**  
+- **[DROP OWNED](drop-owned.md)**  
 
--   **[DROP ROLE](drop-role.md)**  
+- **[DROP PACKAGE](drop-package.md)**  
 
--   **[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md)**  
+- **[DROP PROCEDURE](drop-procedure.md)**  
 
--   **[DROP RULE](drop-rule.md)**  
+- **[DROP PUBLICATION](drop-publication.md)**
 
--   **[DROP SCHEMA](drop-schema.md)**  
+- **[DROP RESOURCE LABEL](drop-resource-label.md)**  
 
--   **[DROP SEQUENCE](drop-sequence.md)**  
+- **[DROP RESOURCE POOL](drop-resource-pool.md)**  
 
--   **[DROP SERVER](drop-server.md)**  
+- **[DROP ROLE](drop-role.md)**  
 
--   **[DROP SYNONYM](drop-synonym.md)**  
+- **[DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md)**  
 
--   **[DROP TABLE](drop-table.md)**  
+- **[DROP RULE](drop-rule.md)**  
 
--   **[DROP TABLESPACE](drop-tablespace.md)**  
+- **[DROP SCHEMA](drop-schema.md)**  
 
--   **[DROP TEXT SEARCH CONFIGURATION](drop-text-search-configuration.md)**  
+- **[DROP SEQUENCE](drop-sequence.md)**  
 
--   **[DROP TEXT SEARCH DICTIONARY](drop-text-search-dictionary.md)**  
+- **[DROP SERVER](drop-server.md)**  
 
--   **[DROP TRIGGER](drop-trigger.md)**  
+- **[DROP SUBSCRIPTION](drop-subscription.md)**
 
--   **[DROP TYPE](drop-type.md)**  
+- **[DROP SYNONYM](drop-synonym.md)**  
 
--   **[DROP USER](drop-user.md)**  
+- **[DROP TABLE](drop-table.md)**  
 
--   **[DROP USER MAPPING](drop-user-mapping.md)**  
+- **[DROP TABLESPACE](drop-tablespace.md)**  
 
--   **[DROP VIEW](drop-view.md)**  
+- **[DROP TEXT SEARCH CONFIGURATION](drop-text-search-configuration.md)**  
 
--   **[DROP WEAK PASSWORD DICTIONARY](drop-weak-password-dictionary.md)**  
+- **[DROP TEXT SEARCH DICTIONARY](drop-text-search-dictionary.md)**  
 
--   **[EXECUTE](execute.md)**  
+- **[DROP TRIGGER](drop-trigger.md)**  
 
--   **[EXPLAIN](explain.md)**  
+- **[DROP TYPE](drop-type.md)**  
 
--   **[EXPLAIN PLAN](explain-plan.md)**  
+- **[DROP USER](drop-user.md)**  
 
--   **[FETCH](fetch.md)**  
+- **[DROP USER MAPPING](drop-user-mapping.md)**  
 
--   **[GRANT](grant.md)**  
+- **[DROP VIEW](drop-view.md)**  
 
--   **[INSERT](insert.md)**  
+- **[DROP WEAK PASSWORD DICTIONARY](drop-weak-password-dictionary.md)**  
 
--   **[LOCK](lock.md)**  
+- **[EXECUTE](execute.md)**  
 
--   **[MERGE INTO](merge-into.md)**  
+- **[EXPLAIN](explain.md)**  
 
--   **[MOVE](move.md)**  
+- **[EXPLAIN PLAN](explain-plan.md)**  
 
--   **[PREDICT BY](predict-by.md)**  
+- **[FETCH](fetch.md)**  
 
--   **[PREPARE](prepare.md)**  
+- **[GRANT](grant.md)**  
 
--   **[PREPARE TRANSACTION](prepare-transaction.md)**  
+- **[INSERT](insert.md)**  
 
--   **[PURGE](purge.md)**  
+- **[LOCK](lock.md)**  
 
--   **[REASSIGN OWNED](reassign-owned.md)**  
+- **[MERGE INTO](merge-into.md)**  
 
--   **[REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md)**  
+- **[MOVE](move.md)**  
 
--   **[REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)**  
+- **[PREDICT BY](predict-by.md)**  
 
--   **[REINDEX](reindex.md)**  
+- **[PREPARE](prepare.md)**  
 
--   **[RELEASE SAVEPOINT](release-savepoint.md)**  
+- **[PREPARE TRANSACTION](prepare-transaction.md)**  
 
--   **[RESET](reset.md)**  
+- **[PURGE](purge.md)**  
 
--   **[REVOKE](revoke.md)**  
+- **[REASSIGN OWNED](reassign-owned.md)**  
 
--   **[ROLLBACK](rollback.md)**  
+- **[REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md)**  
 
--   **[ROLLBACK PREPARED](rollback-prepared.md)**  
+- **[REFRESH MATERIALIZED VIEW](refresh-materialized-view.md)**  
 
--   **[ROLLBACK TO SAVEPOINT](rollback-to-savepoint.md)**  
+- **[REINDEX](reindex.md)**  
 
--   **[SAVEPOINT](savepoint.md)**  
+- **[RELEASE SAVEPOINT](release-savepoint.md)**  
 
--   **[SELECT](select.md)**  
+- **[RESET](reset.md)**  
 
--   **[SELECT INTO](select-into.md)**  
+- **[REVOKE](revoke.md)**  
 
--   **[SET](set.md)**  
+- **[ROLLBACK](rollback.md)**  
 
--   **[SET CONSTRAINTS](set-constraints.md)**  
+- **[ROLLBACK PREPARED](rollback-prepared.md)**  
 
--   **[SET ROLE](set-role.md)**  
+- **[ROLLBACK TO SAVEPOINT](rollback-to-savepoint.md)**  
 
--   **[SET SESSION AUTHORIZATION](set-session-authorization.md)**  
+- **[SAVEPOINT](savepoint.md)**  
 
--   **[SET TRANSACTION](set-transaction.md)**  
+- **[SELECT](select.md)**  
 
--   **[SHOW](show.md)**  
+- **[SELECT INTO](select-into.md)**  
 
--   **[SHUTDOWN](shutdown.md)**  
+- **[SET](set.md)**  
 
--   **[SNAPSHOT](snapshot.md)**  
+- **[SET CONSTRAINTS](set-constraints.md)**  
 
--   **[START TRANSACTION](start-transaction.md)**  
+- **[SET ROLE](set-role.md)**  
 
--   **[TIMECAPSULE TABLE](timecapsule-table.md)**  
+- **[SET SESSION AUTHORIZATION](set-session-authorization.md)**  
 
--   **[TRUNCATE](truncate.md)**  
+- **[SET TRANSACTION](set-transaction.md)**  
 
--   **[UPDATE](update.md)**  
+- **[SHOW](show.md)**  
 
--   **[VACUUM](vacuum.md)**  
+- **[SHUTDOWN](shutdown.md)**  
 
--   **[VALUES](values.md)**  
+- **[SNAPSHOT](snapshot.md)**  
 
--   **[ALTER PROCEDURE](alter-procedure.md)**  
+- **[START TRANSACTION](start-transaction.md)**  
 
--   **[ALTER GLOBAL CONFIGURATION](alter-global-configuration.md)**  
+- **[TIMECAPSULE TABLE](timecapsule-table.md)**  
 
--   **[DROP GLOBAL CONFIGURATION](drop-global-configuration.md)**  
+- **[TRUNCATE](truncate.md)**  
 
+- **[UPDATE](update.md)**  
 
+- **[VACUUM](vacuum.md)**  
+
+- **[VALUES](values.md)**  
+
+- **[SHRINK](shrink.md)** 
+
+- **[ALTER PROCEDURE](alter-procedure.md)**  
+
+- **[ALTER GLOBAL CONFIGURATION](alter-global-configuration.md)**  
+
+- **[DROP GLOBAL CONFIGURATION](drop-global-configuration.md)**  

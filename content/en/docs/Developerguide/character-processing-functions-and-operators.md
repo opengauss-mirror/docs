@@ -66,6 +66,39 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
+-   instrb(searchstr text, substring text, int64 position, int64 occurrence)
+
+    Description: Returns the position of the first byte of the specified occurrence of a substring in a string.
+
+    Return type: int64
+
+    Example:
+
+    ```
+    openGauss=# select INSTRB('123456123', '123', 4);
+    instrb 
+    --------
+          7
+    (1 row)
+    ```
+
+-   insert(str,pos,len,newstr)
+
+    Description: Returns a string (**str**), in which *len* characters are replaced by a string (**newstr**) from *pos*.
+
+    Return type: string
+
+    Example:
+
+    ```
+    openGauss=# SELECT INSERT("begtut.com", 1, 6, "Example");
+    --------
+    Example.com     
+    (1 row)
+    ```
+
+    > ![](public_sys-resources/icon-note.gif) **NOTE:** If **pos** is not within the length of the string, the original string is returned. If *len* is not within the length range of the rest of the string, replace the rest of the string from *pos*. If the parameter is null, NULL is returned.
+
 -   lengthb\(text/bpchar\)
 
     Description: Obtains the number of bytes of a specified string.
@@ -84,7 +117,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   left\(str text, n int\)
 
-    Description: Returns the first  _n_  characters in a string. When  _n_  is negative, all but the last  **|n|**  characters are returned.
+    Description: Returns the first  *n_  characters in a string. When  _n*  is negative, all but the last  **|n|**  characters are returned.
 
     Return type: text
 
@@ -132,6 +165,70 @@ String functions and operators provided by openGauss are for concatenating strin
      xyzhi
     (1 row)
     ```
+
+-   nls_charset_id(p1 name, p2 name default 'SQL_ASCII', P3 name default "SQL_ASCII")
+
+    Description: Returns the ID corresponding to the specified character set **p1**.
+
+    Return type: integer
+
+    Example:
+
+    ```
+    openGauss=# SELECT NLS_CHARSET_ID('gbk');
+     nls_charset_id 
+    ----------------
+                  6
+    (1 row)
+    ```
+    
+-   nls_charset_name(p1 integer, p2 integer default 0)
+
+    Description: Returns the name of the character set corresponding to the ID.
+
+    Return type: name
+
+    Example:
+
+    ```
+    openGauss=# SELECT NLS_CHARSET_NAME(6);
+     nls_charset_name 
+    ------------------
+     GBK
+    (1 row)
+    ```
+    
+-   nls_lower
+
+    Description: Returns all letters in lowercase.
+
+    Return type: string
+
+    Example:
+
+    ```
+    openGauss=# SET search_path to whale;
+    openGauss=# SELECT NLS_LOWER('AbC') FROM dual;
+    -------
+     abc
+    (1 row)
+    ```
+    
+- nls_upper
+
+  Description: Returns all letters in uppercase.
+
+  Return type: string
+
+  Example:
+
+  ```
+  openGauss=# SET search_path to whale;
+  openGauss=# SELECT NLS_UPPER('AbC') FROM dual;
+  -------
+   ABC
+  (1 row)
+  ```
 
 -   notlike\(x bytea name text, y bytea text\)
 
@@ -440,7 +537,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substring\(string from  _pattern_\)
+-   substring\(string from  *pattern*\)
 
     Description: Extracts substrings matching the POSIX regular expression. It returns the text that matches the pattern. If no match record is found, a null value is returned.
 
@@ -469,7 +566,7 @@ String functions and operators provided by openGauss are for concatenating strin
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >If the POSIX pattern contains any parentheses, the portion of the text that matched the first parenthesized sub-expression \(the one whose left parenthesis comes first\) is returned. You can put parentheses around the whole expression if you want to use parentheses within it without triggering this exception.
 
--   substring\(string from  _pattern_  for  _escape_\)
+-   substring\(string from  *pattern*  for  *escape*\)
 
     Description: Extracts substrings matching the SQL regular expression. The declared schema must match the entire data string; otherwise, the function fails and returns a null value. To indicate the part of the pattern that should be returned on success, the pattern must contain two occurrences of the escape character followed by a double quotation mark \("\). The text matching the portion of the pattern between these marks is returned.
 
@@ -603,7 +700,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   regexp\_matches\(string text, pattern text \[, flags text\]\)
 
-    Description: Returns all captured substrings resulting from matching a POSIX regular expression against  **string**. If the pattern does not match, the function returns no rows. If the pattern contains no parenthesized sub-expressions, then each row returned is a single-element text array containing the substring matching the whole pattern. If the pattern contains parenthesized sub-expressions, the function returns a text array whose  _n_th element is the substring matching the  _n_th parenthesized sub-expression of the pattern.
+    Description: Returns all captured substrings resulting from matching a POSIX regular expression against  **string**. If the pattern does not match, the function returns no rows. If the pattern contains no parenthesized sub-expressions, then each row returned is a single-element text array containing the substring matching the whole pattern. If the pattern contains parenthesized sub-expressions, the function returns a text array whose  *n_th element is the substring matching the  _n*th parenthesized sub-expression of the pattern.
 
     The optional  **flags**  argument contains zero or multiple single-letter flags that change function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matched substring is replaced, instead of replacing only the first one.
 
@@ -726,6 +823,24 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
+- replace(string, null)
+
+  Description: Returns the original string.
+
+  String type: text
+
+  Return type: text
+
+  Example:
+
+  ```
+  openGauss=# select replace('abcd', null);
+   replace 
+  ---------
+   abcd
+  (1 row)
+  ```
+  
 -   reverse\(str\)
 
     Description: Returns the reversed string.
@@ -744,7 +859,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   right\(str text, n int\)
 
-    Description: Returns the last  _n_  characters in a string. When  _n_  is negative, all but the first  **|n|**  characters are returned.
+    Description: Returns the last  *n_  characters in a string. When  _n*  is negative, all but the first  **|n|**  characters are returned.
 
     Return type: text
 
@@ -983,7 +1098,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     -   If  **from**  starts at 0, the value  **1**  is used.
     -   If the value of  **from**  is positive, all characters from  **from**  to the end are extracted.
-    -   If the value of  **from**  is negative, the last  _n_  characters in the string are extracted, in which  **n**  indicates the absolute value of  **from**.
+    -   If the value of  **from**  is negative, the last  *n*  characters in the string are extracted, in which  **n**  indicates the absolute value of  **from**.
 
     Return type: varchar
 
@@ -1207,7 +1322,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Description: Queries and returns the value of the substring position that occurs the  **occurrence**  \(1 by default\) times from the  **position**  \(1 by default\) in the string.
 
     -   If the value of  **position**  is  **0**,  **0**  is returned.
-    -   If the value of  **position**  is negative, the search is performed backwards from the last  _n_th character in the string, in which  _n_  indicates the absolute value of  **position**.
+    -   If the value of  **position**  is negative, the search is performed backwards from the last  *n_th character in the string, in which  _n*  indicates the absolute value of  **position**.
 
     In this function, the calculation unit is character. One Chinese character is one character.
 
@@ -1281,7 +1396,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 -   lpad\(string varchar, length int\[, repeat\_string varchar\]\)
 
-    Description: Adds a series of  **repeat\_string**  \(a space by default\) on the left of the string to generate a new string with the total length of  _n_.
+    Description: Adds a series of  **repeat\_string**  \(a space by default\) on the left of the string to generate a new string with the total length of  *n*.
 
     If the length of the string is longer than the specified length, the function truncates the string and returns the substrings with the specified length.
 
@@ -1365,7 +1480,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Replaces substrings matching the POSIX regular expression. The source string is returned unchanged if there is no match to the pattern. If there is a match, the source string is returned with the replacement string substituted for the matching substring.
 
-    The replacement string can contain  **\\n**, where  **n**  is 1 through 9, to indicate that the source substring matching the  _n_th parenthesized sub-expression of the pattern should be inserted, and it can contain  **\\&**  to indicate that the substring matching the entire pattern should be inserted.
+    The replacement string can contain  **\\n**, where  **n**  is 1 through 9, to indicate that the source substring matching the  *n*th parenthesized sub-expression of the pattern should be inserted, and it can contain  **\\&**  to indicate that the substring matching the entire pattern should be inserted.
 
     The optional  **flags**  argument contains zero or multiple single-letter flags that change the function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matched substring is replaced, instead of replacing only the first one.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
 
@@ -1475,28 +1590,28 @@ String functions and operators provided by openGauss are for concatenating strin
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >If the rule for converting between source to target encoding \(for example, GBK and LATIN1\) does not exist, the string is returned without conversion. See the  **pg\_conversion**  system catalog for details.
     >Example:
-    >```
+    > ```sql
     >openGauss=# show server_encoding;
     > server_encoding 
-    >-----------------
+    > -----------------
     > LATIN1
-    >(1 row)
-    >openGauss=# SELECT convert_from('some text', 'GBK');
+    > (1 row)
+    > openGauss=# SELECT convert_from('some text', 'GBK');
     > convert_from 
-    >--------------
+    > --------------
     > some text
-    >(1 row)
-    >db_latin1=# SELECT convert_to('some text', 'GBK');
-    >      convert_to      
-    >----------------------
+    > (1 row)
+    > db_latin1=# SELECT convert_to('some text', 'GBK');
+    > convert_to      
+    > ----------------------
     > \x736f6d652074657874
-    >(1 row)
-    >db_latin1=# SELECT convert('some text', 'GBK', 'LATIN1');
-    >       convert        
-    >----------------------
+    > (1 row)
+    > db_latin1=# SELECT convert('some text', 'GBK', 'LATIN1');
+    > convert        
+    > ----------------------
     > \x736f6d652074657874
-    >(1 row)
-    >```
+    > (1 row)
+    > ```
 
 -   convert\_from\(string bytea, src\_encoding name\)
 
@@ -1644,6 +1759,64 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
+-   sha\(string\) / sha1\(string\)
+
+    Description: Encrypts a string using SHA1 and returns a hexadecimal number. The sha and sha1 functions are the same.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >The SHA1 encryption algorithm is not recommended because it has lower security and poses security risks.
+    >This function is valid only when openGauss is compatible with the MY type (that is, sql\_compatibility = 'B').
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# select sha('ABC');
+                       sha
+    ------------------------------------------
+     3c01bdbb26f358bab27f267924aa2c9a03fcfdb8
+    (1 row)
+    openGauss=# select sha1('ABC');
+                       sha1
+    ------------------------------------------
+     3c01bdbb26f358bab27f267924aa2c9a03fcfdb8
+    (1 row)
+    ```
+
+-   sha2\(string, hash\_length\)
+
+    Description: Encrypts a string in SHA2 mode and returns a value in hexadecimal form.
+
+    **hash\_length**: corresponds to the SHA2 algorithm. The value can be **0**\(SHA-256\), **224**\(SHA-224\), **256**\(SHA-256\), **384**\(SHA-384\), or **512**\(SHA-512\). For other values, **NULL** is returned.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >The SHA224 encryption algorithm is not recommended because it has lower security and poses security risks.
+    >The SHA2 function records hash plaintext in logs. Therefore, you are not advised to use this function to encrypt sensitive information such as keys.
+    >This function is valid only when openGauss is compatible with the MY type (that is, sql\_compatibility = 'B').
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# select sha2('ABC',224);
+                               sha2
+    ----------------------------------------------------------
+     107c5072b799c4771f328304cfe1ebb375eb6ea7f35a3aa753836fad
+    (1 row)
+    openGauss=# select sha2('ABC',256);
+                                   sha2
+    ------------------------------------------------------------------
+     b5d4045c3f466fa91fe2cc6abe79232a1a57cdf104f7a26e716e0a1e2789df78
+    (1 row)
+    openGauss=# select sha2('ABC',0);
+                                   sha2
+    ------------------------------------------------------------------
+     b5d4045c3f466fa91fe2cc6abe79232a1a57cdf104f7a26e716e0a1e2789df78
+    (1 row)
+    ```
+
 -   decode\(string text, format text\)
 
     Description: Decodes binary data from textual representation.
@@ -1708,6 +1881,23 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
+-   find\_in\_set\(text, set\)
+
+    Description: Finds the position of a given member in a set, counting from 1. If no record is found, 0 is returned.
+
+    Return type: int2
+
+    Example:
+
+    ```
+    openGauss=# select site, find_in_set('wuhan', site) from employee;  
+          site       | find_in_set 
+    -----------------+-------------
+     beijing,nanjing |           0
+     beijing,wuhan   |           2
+    (2 rows)
+    ```
+    
 -   encode\(data bytea, format text\)
 
     Description: Encodes binary data into a textual representation.
@@ -1727,7 +1917,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.
->-   In openGauss,  _n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than  _n_.
+>-   In openGauss,  *n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than  _n*.
 >-   openGauss supports multiple types of databases, including A, B, C, and PG. If the database type is not specified, A is used by default. The lexical analyzer of A database is different from that of the other three databases. In A database, an empty character string is considered as  **NULL**. Therefore, when a type A database is used, if a  **NULL**  character string is used as a parameter in the preceding character operation function, no output is displayed. For example:
 >    ```
 >    openGauss=# SELECT translate('12345','123','');
@@ -1736,4 +1926,3 @@ String functions and operators provided by openGauss are for concatenating strin
 >    (1 row)
 >    ```
 >    This is because the kernel checks whether the input parameter contains  **NULL**  before calling the corresponding function. If yes, the kernel does not call the corresponding function. As a result, no output is displayed. In PG mode, the processing of character strings is the same as that of PostgreSQL. Therefore, the preceding problem does not occur.
-

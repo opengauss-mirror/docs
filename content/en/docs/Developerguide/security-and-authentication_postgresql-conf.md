@@ -45,6 +45,16 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**: 10min
 
+## idle_in_transaction_session_timeout<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_see4820fb6c024e0aa4c56882aeae204a"></a>
+
+**Parameter description:** Specifies the maximum duration during which no operation is performed if the current session is in a transaction after the connection to the server is established.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 0 to 86400. The smallest unit is s. **0** indicates disable the timeout.
+
+**Default value**: **0**
+
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >The gsql client of openGauss has an automatic reconnection mechanism. For local connection of initialized users, the client reconnects to the server if the connection breaks after the timeout.
 
@@ -395,4 +405,3 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   A positive integer indicates the number of days prior to password expiration that a user will receive a reminder.
 
 **Default value**:  **7**
-

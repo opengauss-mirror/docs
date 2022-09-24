@@ -48,16 +48,16 @@
 </tr>
 <tr id="row627105315153"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p192811539157"><a name="p192811539157"></a><a name="p192811539157"></a>--start-time</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1544145713182"><a name="p1544145713182"></a><a name="p1544145713182"></a>Timestamp of the start time, in milliseconds.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1544145713182"><a name="p1544145713182"></a><a name="p1544145713182"></a>Timestamp of the start time, in milliseconds. Alternatively, the date and time format is %Y-%m-%d %H:%M:%S.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1095712011916"><a name="p1095712011916"></a><a name="p1095712011916"></a>Non-negative real number</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1095712011916"><a name="p1095712011916"></a><a name="p1095712011916"></a>Positive integer or date and time format</p>
 </td>
 </tr>
 <tr id="row81421205167"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1114219081616"><a name="p1114219081616"></a><a name="p1114219081616"></a>--end-time</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1544157171812"><a name="p1544157171812"></a><a name="p1544157171812"></a>Timestamp of the end time, in milliseconds.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18836027812"><a name="p18836027812"></a><a name="p18836027812"></a>Timestamp of the start time, in milliseconds. Alternatively, the date and time format is %Y-%m-%d %H:%M:%S.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1395670121916"><a name="p1395670121916"></a><a name="p1395670121916"></a>Non-negative real number</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18836027812"><a name="p18836027812"></a><a name="p18836027812"></a>Timestamp of the start time, in milliseconds. Alternatively, the date and time format is %Y-%m-%d %H:%M:%S.</p>
 </td>
 </tr>
 <tr id="row8930340846"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p9930640443"><a name="p9930640443"></a><a name="p9930640443"></a>--retention-days</p>
@@ -69,4 +69,3 @@
 </tr>
 </tbody>
 </table>
-

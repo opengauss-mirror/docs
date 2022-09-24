@@ -269,6 +269,120 @@
     (14 rows)
     ```
 
+- group_concat\(\[DISTINCT | ALL] expression \[,expression ...\] \[ORDER BY \{ expression \[ \[ ASC | DESC | USING operator \] | nlssort_expression_clause \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\] \[SEPARATOR str_val\]\)
+
+    Description: (Available only in B-compatible mode) The number of parameters is not fixed. Multiple columns can be concatenated. Aggregation column data is sorted based on the value of **ORDER BY** and concatenated into a character string using the separator. This function cannot be used as a window function.
+
+    -   **DISTINCT**: Optional. It deduplicates the result after each row is concatenated.
+    -   **expression**: Mandatory. It specifies the aggregation column name or a valid column-based expression.
+    -   **ORDER BY**: Optional. It is followed by a variable expression and sorting rule. The group_concat function does not support the (ORDER BY + number) format.
+    -   **SEPARATOR**: Optional. It is followed by a CONST character (string). This separator is used to concatenate the expression results of two adjacent lines in a group. If this parameter is not specified, **','** is used by default.
+    -   When both DISTINCT and ORDER BY are specified, all ORDER BY expressions of openGauss must be in DISTINCT expressions. Otherwise, an error is reported.
+
+    Return type: text
+
+    Example:
+
+    Set **separator** to **';'**.
+    ```
+    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | A;C;A
+      2 | B;D;B
+    (2 rows)
+    ```
+
+    By default, the separator is ','.
+    ```
+    test=# select id, group_concat(id,v) from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | 1A,1C,1A
+      2 | 2B,2D,2B
+    (2 rows)
+    ```
+
+    The aggregation column is of the text character set type.
+    ```
+    test=# select id, group_concat(v) from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | A,C,A
+      2 | B,D,B
+    (2 rows)
+    ```
+
+    The aggregation column is of the integer type.
+    ```
+    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | 50;99
+      2 | 20;100
+    (2 rows)
+    ```
+
+    The aggregation column is of the floating point type.
+    ```
+    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | 50.11;99.33
+      2 | 20.22;100.44
+    (2 rows)
+    ```
+
+    The aggregation column is of the time type.
+    ```
+    test=# select id, group_concat(hiredate separator ';') from t group by id order by id asc;
+      id |                     group_concat
+    ----+-------------------------------------------------------
+       1 | 2022-08-22 10:51:29.374948;2022-08-22 10:51:29.374948
+       2 | 2022-08-22 10:51:29.374948;2022-08-22 10:51:29.374948
+    (2 rows)
+    ```
+
+    The aggregation column is of the binary type.
+    ```
+    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | 19;1B
+      2 | 1A;1C
+    (2 rows)
+    ```
+
+    The aggregation column is of the time interval type.
+    ```
+    test=# select id, group_concat(vacationt separator ';') from t group by id order by id asc;
+     id |                    group_concat
+    ----+-----------------------------------------------------
+      1 | 8785 days 11:04:01.510189;8783 days 11:04:01.510189
+      2 | 8784 days 11:04:01.510189;8782 days 11:04:01.510189
+    (2 rows)
+    ```
+
+    Use DISTINCT to deduplicate data.
+    ```
+    test=# select id, group_concat(distinct v) from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | A,C
+      2 | B,D
+    (2 rows)
+    ```
+
+    Use ORDER BY to sort data.
+    ```
+    test=# select id, group_concat(v order by v desc) from t group by id order by id asc;
+     id | group_concat
+    ----+--------------
+      1 | C,A,A
+      2 | D,B,B
+    (2 rows)
+    ```
+
 -   covar\_pop\(Y, X\)
 
     Description: Specifies the overall covariance.
@@ -654,9 +768,9 @@
     >-   If the  **CHECKSUM**  values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the  **CHECKSUM**  function may incur conflicts. There is low possibility that two tables with different contents may have the same  **CHECKSUM**  value. The same problem may occur when  **CHECKSUM**  is used for columns.
     >-   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the  **CHECKSUM**  value.
 
-    -   If the  **CHECKSUM**  value of a column is calculated and the column type can be changed to TEXT by default, set  _expression_  to the column name.
-    -   If the  **CHECKSUM**  value of a column is calculated and the column type cannot be converted to TEXT by default, set  _expression_  to  _Column name_**::TEXT**.
-    -   If the  **CHECKSUM**  value of all columns is calculated, set  _expression_  to  _Table name_**::TEXT**.
+    -   If the  **CHECKSUM**  value of a column is calculated and the column type can be changed to TEXT by default, set  *expression*  to the column name.
+    -   If the  **CHECKSUM**  value of a column is calculated and the column type cannot be converted to TEXT by default, set  *expression*  to  *Column name***::TEXT**.
+    -   If the  **CHECKSUM**  value of all columns is calculated, set  *expression*  to  *Table name***::TEXT**.
 
     The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
 
@@ -674,7 +788,7 @@
     (1 row)
     ```
 
-    The following shows the  **CHECKSUM**  value of a column that cannot be converted to the TEXT type by default. Note that the  **CHECKSUM**  parameter is set to  _Column name_**::TEXT**.
+    The following shows the  **CHECKSUM**  value of a column that cannot be converted to the TEXT type by default. Note that the  **CHECKSUM**  parameter is set to  *Column name***::TEXT**.
 
     ```
     openGauss=# SELECT CHECKSUM(inv_quantity_on_hand::TEXT) FROM tpcds.inventory;
@@ -684,7 +798,7 @@
     (1 row)
     ```
 
-    The following shows the  **CHECKSUM**  value of all columns in a table. Note that the  **CHECKSUM**  parameter is set to  _Table name_**::TEXT**. The table name is not modified by its schema.
+    The following shows the  **CHECKSUM**  value of all columns in a table. Note that the  **CHECKSUM**  parameter is set to  *Table name***::TEXT**. The table name is not modified by its schema.
 
     ```
     openGauss=# SELECT CHECKSUM(inventory::TEXT) FROM tpcds.inventory;                    
@@ -815,5 +929,3 @@
     { "D" : 5, "D" : null }
     (2 rows)
     ```
-
-

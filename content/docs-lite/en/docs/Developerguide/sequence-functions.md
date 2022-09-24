@@ -126,4 +126,33 @@ The sequence functions provide a simple method to ensure security of multiple us
 
     Return type: int16, int16
 
+-   last\_insert\_id\(\)
 
+    Description: Gets the first auto-generated value that was last successfully inserted for an auto-increment column.
+
+    Return type: int16
+
+-   last\_insert\_id\(int16\)
+
+    Description: Sets the return value of the next last\_insert\_id\(\) function and returns the value. If the parameter is NULL, set the return value of the next last\_insert\_id\(\) function to **0**. This function returns NULL.
+
+    Return type: int16
+
+    Example:
+
+    ```
+    openGauss=# select last_insert_id(100);
+     last_insert_id
+    ----------------
+                100
+    (1 row)
+    openGauss=# select last_insert_id();
+     last_insert_id
+    ----------------
+                100
+    (1 row)
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >-   last\_insert\_id\(\) and last\_insert\_id\(int16\) are session-level functions. If no data is inserted into the auto-increment column in the current session, last\_insert\_id\(\) returns **0**.
+    >-   last\_insert\_id\(\) and last\_insert\_id\(int16\) are available only when **sql\_compatibility** is set to **B**.

@@ -48,6 +48,7 @@ If neither a condition name nor an  **SQLSTATE**  is designated in a  **RAISE EX
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The syntax described in  [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4)  does not append any parameter. This form is used only for the  **EXCEPTION**  statement in a  **BEGIN**  block so that the error can be re-processed.
+>-   For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](description-of-sql-error-codes.md). Only ERROR condition names are supported.
 
 **EXCEPTION\_INIT**
 
@@ -64,7 +65,7 @@ In O-compatible mode, EXCEPTION\_INIT can be used to define the SQLCODE error co
 -   **sqlcode**  is a customized SQL code, which must be a negative integer ranging from –2147483647 to –1.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->When  **EXCEPTION\_INIT**  is used to customize an SQL code, SQLSTATE is equivalent to SQLCODE, and SQLERRM is in the format of  _xxx_**: non-GaussDB Exception**. For example, if the customized SQL code is  **–1**, SQLSTATE is  **–1**  and SQLERRM is  **1: non-GaussDB Exception**.
+>When  **EXCEPTION\_INIT**  is used to customize an SQL code, SQLSTATE is equivalent to SQLCODE, and SQLERRM is in the format of  *xxx***: non-GaussDB Exception**. For example, if the customized SQL code is  **–1**, SQLSTATE is  **–1**  and SQLERRM is  **1: non-GaussDB Exception**.
 
 ## Example<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_s962620630e7349e7b37b844648a267a1"></a>
 
@@ -157,4 +158,3 @@ end;
 -- Execution result:
 NOTICE:  sqlcode:-1,sqlstate:-1,sqlerrm: 1: non-GaussDB Exception
 ```
-

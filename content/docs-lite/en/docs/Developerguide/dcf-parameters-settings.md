@@ -337,3 +337,18 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **700**
 
+## dcf\_majority\_groups<a name="section15267459165619"></a>
+
+**Parameter description:** Sets the DCF policy-based majority function. For a group that requires this parameter, at least one standby node in the group receives logs. That is, there is a synchronous standby node in the group. If nodes are added to or deleted from the DCF instance or the group value of a node in the instance is changed, you need to modify the configuration accordingly.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: a string
+
+-   To disable the policy-based majority function, enter an empty string **""**.
+-   To enable the function, configure valid group values separated by commas (,). The group values must exist in dcf\_config. For example, if the group values 1 and 2 are added to the DCF policy-based majority configuration, you can set this parameter to **"1,2"**. If the group value does not exist in dcf\_config or other characters are configured, the DCF considers the configured group invalid.
+
+**Default value**: an empty string
+
+>![](/public_sys-resources/icon-caution.gif) **Caution:**
+>If all nodes in a group are faulty after the parameter is configured, you need to remove the group from the parameter list when performing node build operations (node recovery or node replacement without changing the IP address) on a node. After the node recovers, you can configure the group again.

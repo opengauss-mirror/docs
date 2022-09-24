@@ -2,6 +2,6 @@
 
 -   **[Logical Decoding](logical-decoding.md)**  
 
--   **[使用逻辑复制工具复制数据](en-us_topic_0000001254215967.md)**  
+-   **[Replicating Data Using the Logical Replication Tool](en-us_topic_0000001254215967.md)** 
 
-
+-   **[Publication-Subscription](publication-subscription.md)** 

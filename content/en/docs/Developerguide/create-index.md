@@ -29,10 +29,11 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     ```
     CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
+        ({ { column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ TABLESPACE tablespace_name ]
+        [ COMMENT text ]
         [ WHERE predicate ];
     ```
 
@@ -40,11 +41,12 @@ Partitioned tables do not support concurrent index creation and partial index cr
 
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
-        ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
+        ( {{ column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
         [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
-        [ TABLESPACE tablespace_name ];
+        [ TABLESPACE tablespace_name ]
+        [ COMMENT text ];
     ```
 
 
@@ -115,6 +117,19 @@ Partitioned tables do not support concurrent index creation and partial index cr
     Specifies the name of the column on which an index is to be created.
 
     Multiple columns can be specified if the index method supports multi-column indexes. A global index supports a maximum of 31 columns, and other indexes support a maximum of 32 columns.
+
+-   **column\_name ( length )**
+
+    Creates a prefix key index based on a column in the table. **column\_name** indicates the column name of the prefix key, and **length** indicates the prefix length.
+
+    The prefix key uses the prefix of the specified column data as the index key value, which reduces the storage space occupied by the index. Indexes can be used for filter and join conditions that contain prefix key columns.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >-  This syntax is valid only when **sql\_compatibility** is set to **B**. If **sql\_compatibility** is set to other values, this clause is regarded as the function expression key.
+    >-  The prefix key supports the following index methods: btree and ubtree.
+    >-  The data type of the prefix key column must be binary or character (excluding special characters).
+    >-  The prefix length must be a positive integer that does not exceed 2676 and cannot exceed the maximum length of the column. For the binary type, the prefix length is measured in bytes. For non-binary character types, the prefix length is measured in characters. The actual length of the key value is restricted by the internal page. If a column contains multi-byte characters or an index has multiple keys, the length of the index line may exceed the upper limit. As a result, an error is reported. Consider this situation when setting a long prefix length.
+    >-  In the CREATE INDEX syntax, the following keywords cannot be used as prefix keys for column names: COALESCE, EXTRACT, GREATEST, LEAST, NULLIF, NVARCHAR, NVL, OVERLAY, POSITION, SUBSTRING, TIMESTAMPDIFF, TREAT, TRIM, XMLCONCAT, XMLELEMENT, XMLEXISTS, XMLFOREST, XMLPARSE, XMLPI, XMLROOT, and XMLSERIALIZE.
 
 -   **expression**
 
@@ -210,6 +225,10 @@ Partitioned tables do not support concurrent index creation and partial index cr
     Specifies the tablespace for an index. If no tablespace is specified, the default tablespace is used.
 
     Value range: an existing table name
+
+-   **COMMENT text**
+
+    Specifies the comment of an index. If no comment is specified, the comment is empty.
 
 -   **WHERE predicate**
 

@@ -50,7 +50,7 @@ CREATE DATABASE database_name
 
     If this parameter is not specified, the encoding of the template database is used by default. By default, the codes of the template databases  **template0**  and  **template1**  are related to the operating system environment. The character encoding of  **template1**  cannot be changed. To change the encoding, use  **template0**  to create a database.
 
-    The common values are  **GBK**,  **UTF8**, and  **Latin1**.
+    Common values are **GBK**, **UTF8**, **Latin1**, and **GB10830**. The supported character sets are as follows:
 
     **Table  1**  openGauss character set
 
@@ -148,9 +148,9 @@ CREATE DATABASE database_name
     </tr>
     <tr id="row4536171811514"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p185361181550"><a name="p185361181550"></a><a name="p185361181550"></a>EUC_TW</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13536518654"><a name="p13536518654"></a><a name="p13536518654"></a>Extended UNIX Code-TW</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13536518654"><a name="p13536518654"></a><a name="p13536518654"></a>Extended UNIX Code-Taiwan, China</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1353610188514"><a name="p1353610188514"></a><a name="p1353610188514"></a>Traditional Chinese, Taiwan, China</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1353610188514"><a name="p1353610188514"></a><a name="p1353610188514"></a>Traditional Chinese</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p65363189512"><a name="p65363189512"></a><a name="p65363189512"></a>Yes</p>
     </td>
@@ -828,6 +828,4 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
-    If the new database Encoding, LC-Collate, or LC\_Ctype does not match the template database \(SQL\_ASCII\) \(**'GBK'**,  **'UTF8'**, or  **'LATIN1'**\),  **template \[=\] template0**  must be specified.
-
-
+    If the new database Encoding, LC-Collate, or LC\_Ctype does not match the template database \(SQL\_ASCII\) \(**'GBK'**,  **'UTF8'**, **'LATIN1'**, or **'GB18030'**\),  **template \[=\] template0**  must be specified.

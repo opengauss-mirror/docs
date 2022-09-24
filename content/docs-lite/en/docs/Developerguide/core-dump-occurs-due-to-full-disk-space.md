@@ -13,4 +13,3 @@ When the disk is full, Xlog logs cannot be written. The program exits through th
 ## Procedure<a name="en-us_topic_0283137100_section485620163250"></a>
 
 Externally monitor the disk usage and periodically clean up the disk.
-

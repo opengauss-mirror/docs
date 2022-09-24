@@ -182,4 +182,55 @@ Advisory lock functions manage advisory locks.
 
     Return type: Boolean
 
+- get_lock(text,text)
+  Description: Adds a user lock to the database with a specified character string. The second parameter is the lock waiting time.
 
+  Return type: Int
+
+- get_lock(text,double)
+
+  Description: Adds a user lock to the database with a specified character string. The second parameter is the lock waiting time.
+
+  Return type: Int
+
+- get_lock(text)
+
+  Description: Adds a user lock to the database with a specified character string.
+
+  Return type: Int
+
+- release_lock(text)
+
+  Description: Releases a specified lock. If the lock is successfully released, **1** is returned. If the current session does not hold the specified lock, **0** is returned. If the current lock does not exist (the lock must be held), **NULL** is returned.
+
+  Return type: Int
+
+- is_free_lock(text)
+
+  Description: Checks whether a string is idle. If the string is not locked, **1** is returned. Otherwise, **0** is returned. If other errors occur during the check, **NULL** is returned.
+
+  Return type: Int
+
+- is_used_lock(text)
+
+  Description: Checks who holds the lock of a string and returns the session ID of the corresponding user. If the specified lock is not held, **NULL** is returned.
+
+  Return type: Bigint
+
+- clear_all_invalid_locks()
+
+  Description: Clears information about invalid locks in the lockname hash table and returns the number of cleared locks.
+
+  Return type: Bigint
+
+- release_all_locks()
+
+  Description: Releases all locks held by the current session and returns the number of release times. If a single string holds multiple locks, the number of release times is calculated based on the corresponding number instead of only once.
+
+  Return type: Bigint
+
+- get_all_locks()
+
+  Description: Queries all user locks in the current database and returns the names and holders of all user locks in the form of records.
+
+  Return type: Record

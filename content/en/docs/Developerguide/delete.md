@@ -8,15 +8,26 @@
 
 -   The owner of a table, users granted with the  **DELETE**  permission on the table, or users granted with the  **DELETE ANY TABLE**  permission can delete data from the table. The system administrator has the permission to delete data from the table by default, as well as the  **SELECT**  permission on any table in the  **USING**  clause or whose values are read in  **condition**.
 -   For column-store tables, the  **RETURNING**  clause is currently not supported.
+-   The syntax for deleting multiple tables takes effect only when **sql\_compatibility** is set to **B**. Column-store tables, views, and tables containing RULE cannot be deleted.
 
 ## Syntax<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ [ AS ] alias ]
+DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
+    [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
+    [ LIMIT { count } ]
     [ RETURNING { * | { output_expr [ [ AS ] output_name ] } [, ...] } ];
+
+Delete multiple tables:
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+DELETE [/*+ plan_hint */] [FROM] 
+    {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
+    [ USING using_list ]
+    [ WHERE condition | WHERE CURRENT OF cursor_name ]
+    [ LIMIT { count } ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
@@ -49,7 +60,7 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ 
 
 -   **plan\_hint**  clause
 
-    Follows the  **DELETE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **DELETE**  statement block. For details, see  [Hint-based Tuning](en-us_topic_0289900289.md). In each statement, only the first  **/\*+** _plan\_hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
+    Follows the  **DELETE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **DELETE**  statement block. For details, see  [Hint-based Tuning](en-us_topic_0289900289.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
 -   **ONLY**
 
@@ -72,6 +83,18 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ 
     For details about the keywords, see  [SELECT](select.md).
 
     For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
+  
+-   **partitions\_clause**
+
+    Deletes multiple partitions.
+
+    PARTITION \{ \( \{ partition\_name | subpartition\_name \} \[, ...\] \) \}
+
+    This syntax takes effect only when **sql\_compatibility** is set to **B**.
+
+    For details about the keywords, see [SELECT](select.md).
+
+    For details, see [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
 
 -   **alias**
 
@@ -83,6 +106,10 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ 
 
     Specifies the  **USING**  clause.
 
+      >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+      > 
+    >When **sql\_compatibility** is set to **B**, the target table can appear at the same time when **using\_list** specifies the set of associated tables. In addition, the alias of the table can be defined and used in the target table. In other situations, the target table cannot appear repeatedly in **using\_list**.
+
 -   **condition**
 
     Specifies an expression that returns a Boolean value. Only rows for which this expression returns  **true**  will be deleted. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
@@ -91,6 +118,14 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [partition_clause] [ * ] [ 
 
     This parameter is reserved.
 
+-   **ORDER BY**
+
+    For details about the keywords, see [SELECT](select.md).
+
+-   **LIMIT**
+
+    For details about the keywords, see [SELECT](select.md).
+    
 -   **output\_expr**
 
     Specifies an expression to be computed and returned by the  **DELETE**  statement after each row is deleted. The expression can use any column names of the table. Write  **\***  to return all columns.
@@ -123,5 +158,3 @@ openGauss=# DROP TABLE tpcds.customer_address_bak;
 -   delete
 
     To delete all records in a table, use the  **truncate**  syntax.
-
-

@@ -6,7 +6,7 @@
 
 ## Precautions<a name="section114668159414"></a>
 
-Only the type owner or a user granted with the DROP permission can run the  **DROP TYPE**  command. The system administrator has this permission by default.
+The owner of a type, a user granted the DROP permission for a type, or a user granted the DROP ANY TYPE permission on a type can run the **DROP TYPE** command. The system administrator has this permission by default.
 
 ## Syntax<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_s5d2a1a9a8c0848c5b671e837e381ef36"></a>
 
@@ -40,4 +40,3 @@ See  [Examples](create-type.md#en-us_topic_0283136568_en-us_topic_0237122124_en-
 ## Helpful Links<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_s428358f9df2f458a8d50d103683f7ee0"></a>
 
 [CREATE TYPE](create-type.md)  and  [ALTER TYPE](alter-type.md)
-

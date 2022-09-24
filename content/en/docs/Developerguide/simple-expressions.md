@@ -49,7 +49,19 @@ In addition to comparative operators, you can also use the following sentence st
 
         Empty values are considered the same.
 
+-   <=\> NULL-safe equality operator
 
+    The comparison of NULL values is added on the basis of the comparison of '='. If neither the left nor right value of the operator is NULL, the result is the same as that of '='.
+
+    If the data types and values of A and B are not completely the same, the value is **false**.
+
+    If the data types and values of A and B are completely the same, the value is **true**.
+
+    Null values are considered the same.
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >-   The usage of the <=\> operator is the same as that of IS NOT DISTINCT FROM.
+    >-   This operator is valid only when GaussDB Kernel or openGauss is compatible with the MY type (that is, sql\_compatibility = 'B'). Other types do not support this operator.
 
 ## Pseudocolumn<a name="en-us_topic_0283137643_section104921036122717"></a>
 
@@ -126,4 +138,3 @@ openGauss=# SELECT 2+2 IS NOT DISTINCT FROM NULL AS RESULT;
  f
 (1 row)
 ```
-

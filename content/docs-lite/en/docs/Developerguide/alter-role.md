@@ -118,7 +118,7 @@ None
 
 -   **EXPIRED**
 
-    Invalidates the password. Only initial users, system administrators \(sysadmin\), and users who have the permission to create users \(CREATEROLE\) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. The password of the initial user cannot be invalidated.
+    Invalidates the password. Only initial users, system administrators \(sysadmin\), and users who have the permission to create users \(CREATEROLE\) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. Any user cannot invalidate the password of the initial user.
 
     The user whose password is invalid can log in to the database but cannot perform the query operation. The query operation can be performed only after the password is changed or the administrator resets the password.
 
@@ -132,4 +132,3 @@ See  [Examples](create-role.md#en-us_topic_0283136858_en-us_topic_0237122112_en-
 ## Helpful Links<a name="en-us_topic_0283137195_en-us_topic_0237122068_en-us_topic_0059778744_sb24012e0cec94bc3ba5c2c0e8997d052"></a>
 
 [CREATE ROLE](create-role.md),  [DROP ROLE](drop-role.md), and  [SET](set.md)
-

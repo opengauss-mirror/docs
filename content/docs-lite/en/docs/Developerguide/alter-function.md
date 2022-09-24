@@ -35,6 +35,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
      | ROWS result_rows
      | SET configuration_parameter { { TO | = } { value | DEFAULT }| FROM CURRENT}
      | RESET {configuration_parameter | ALL}
+     | COMMENT 'text'
     ```
 
 -   Rename the customized function.
@@ -181,6 +182,9 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     Value range: an existing schema
 
+-   **COMMENT 'text'**
+
+    Comment a function object.
 
 ## Examples<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
 
@@ -189,4 +193,3 @@ See  [Examples](create-function.md#en-us_topic_0283136560_en-us_topic_0237122104
 ## Helpful Links<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
 
 [CREATE FUNCTION](create-function.md)  and  [DROP FUNCTION](drop-function.md)
-

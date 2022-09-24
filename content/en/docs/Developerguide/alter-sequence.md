@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_sfccb497f01564edb804ecee58fe2698c"></a>
 
--   Only the sequence owner or a user granted with the ALTER permission can run the  **ALTER SEQUENCE**  command. The system administrator has this permission by default. To modify a sequence owner, you must be the sequence owner or system administrator and a member of the new owner role.
+-   Only the owner of a sequence, a user granted the ALTER permission on a sequence, or a user granted the ALTER ANY SEQUENCE permission on a sequence can run the **ALTER SEQUENCE** command. The system administrator has this permission by default. To modify a sequence owner, you must be the sequence owner or system administrator and a member of the new owner role.
 -   In the current version, you can modify only the owner, owning column, and maximum value. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
 -   **ALTER SEQUENCE MAXVALUE**  cannot be used in transactions, functions, and stored procedures.
 -   After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
@@ -80,4 +80,3 @@ openGauss=# DROP TABLE T1;
 ## Helpful Links<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
 [CREATE SEQUENCE](create-sequence.md)  and  [DROP SEQUENCE](drop-sequence.md)
-

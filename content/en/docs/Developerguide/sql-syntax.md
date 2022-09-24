@@ -376,4 +376,4 @@
 
 -   **[DROP GLOBAL CONFIGURATION](drop-global-configuration.md)**  
 
-
+-   **[SHRINK](shrink.md)**  

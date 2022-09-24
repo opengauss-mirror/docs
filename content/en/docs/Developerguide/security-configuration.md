@@ -76,3 +76,12 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **""**
 
+## block\_encryption\_mode<a name="section18204135204"></a>
+
+**Parameter description:** Specifies the block encryption mode used by the aes\_encrypt and aes\_decrypt functions for encryption and decryption.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range:** enumerated values. Valid values are **aes-128-cbc**, **aes-192-cbc**, **aes-256-cbc**, **aes-128-cfb1**, **aes-192-cfb1**, **aes-256-cfb1**, **aes-128-cfb8**, **aes-192-cfb8**, **aes-256-cfb8**, **aes-128-cfb128**, **aes-192-cfb128**, **aes-256-cfb128**, **aes-128-ofb**, **aes-192-ofb**, and **aes-256-ofb**. **aes** indicates the encryption or decryption algorithm. **128**, **192**, and **256** indicate the key lengths (unit: bit). **cbc**, **cfb1**, **cfb8**, **cfb128**, **ofb** indicate the block encryption or decryption mode.
+
+**Default value**: **aes-128-cbc**

@@ -30,7 +30,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >**–1**  indicates that the standby server waits until the conflicting queries are complete.
 
-**Value range**: an integer ranging from –1 to  _INT\_MAX_. The unit is ms.
+**Value range**: an integer ranging from –1 to  *INT\*MAX_. The unit is ms.
 
 **Default value**:  **3s**  \(3000 ms\)
 
@@ -43,7 +43,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >**–1**  indicates that the standby server waits until the conflicting queries are complete.
 
-**Value range**: an integer ranging from –1 to  _INT\_MAX_. The unit is ms.
+**Value range**: an integer ranging from –1 to  *INT\*MAX_. The unit is ms.
 
 **Default value**:  **3s**  \(3000 ms\)
 
@@ -83,7 +83,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is ms.
+**Value range**: an integer ranging from 0 to  *INT\*MAX_. The unit is ms.
 
 **Default value**:  **6s**  \(6000 ms\)
 
@@ -93,7 +93,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_/1000. The unit is s.
+**Value range**: an integer ranging from 0 to  *INT\*MAX_/1000. The unit is s.
 
 **Default value**:  **2s**
 
@@ -103,7 +103,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to  _INT\_MAX_
+**Value range**: an integer ranging from 1 to  *INT\*MAX_
 
 **Default value**:  **1**
 
@@ -137,3 +137,12 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value:** **4**
 
+## max_sync_workers_per_subscription
+
+**Parameter description**: Specifies the maximum number of tablesync worker threads for each subscription on the subscriber.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 0 to 262143
+
+**Default value**: **2**

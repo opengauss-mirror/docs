@@ -9,7 +9,7 @@
 
 ## Precautions<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
-Only the owner of a table where the trigger is created and a system administrator can run the  **ALTER TRIGGER**  statement.
+The owner of the table where a trigger resides or a user granted the ALTER ANY SEQUENCE permission can perform the ALTER TRIGGER operation. A system administrator has this permission by default.
 
 ## Syntax<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
 
@@ -45,4 +45,3 @@ See examples in  [CREATE TRIGGER](create-trigger.md).
 ## Helpful Links<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [CREATE TRIGGER](create-trigger.md),  [DROP TRIGGER](drop-trigger.md), and  [ALTER TABLE](alter-table.md)
-

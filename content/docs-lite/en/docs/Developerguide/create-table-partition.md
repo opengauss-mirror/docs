@@ -51,13 +51,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     | table_constraint
     | LIKE source_table [ like_option [...] ] }[, ... ]
 ] )
+    [ AUTO_INCREMENT [ = ] value ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
+    [ COMMENT {=| } 'text' ]
      PARTITION BY { 
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
-        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES (list_values_clause)] opt_table_space )}
+        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [COMMENT {=| } 'text'][...][, ... ] )} |
+        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [COMMENT {=| } 'text'][...][, ... ] )} |
+        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES (list_values_clause)] opt_table_space [COMMENT {=| } 'text'][...])}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -70,23 +72,26 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       CHECK ( expression ) | 
       DEFAULT default_e xpr | 
       GENERATED ALWAYS AS ( generation_expr ) STORED |
+      AUTO_INCREMENT 
       UNIQUE index_parameters | 
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 -   **table\_constraint**  is as follows:
 
     ```
-    [ CONSTRAINT constraint_name ]
+    [ CONSTRAINT [ constraint_name ] ]
     { CHECK ( expression ) | 
-      UNIQUE ( column_name [, ... ] ) index_parameters | 
-      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+      UNIQUE [ index_name ][ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters | 
+      PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -121,7 +126,10 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             {END({partition_value | MAXVALUE})}
     } [TABLESPACE tablespace_name]
     ```
+    
+-   COMMENT {=| } 'text':
 
+    In the partition of a partitioned table, this column is meaningless and is used only for syntax compatibility. An alarm is displayed when the syntax is used in the database.
 
 ## Parameter Description<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_sd2701df1d7364084a7791592def4e9eb"></a>
 
@@ -157,6 +165,35 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     -   A column constraint is defined as part of a column definition, and it is bound to a particular column.
     -   A table constraint is not bound to a particular column but can apply to more than one column.
+    
+        >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+        >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
+
+-   **index\_name**
+
+    Specifies an index name.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
+    >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
+
+-   **USING method**
+
+    Specifies the name of the index method to be used.
+
+    For details about the value range, see [USING method](en-us_topic_0289900160.md#en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a).
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
+
+-   **ASC | DESC**
+
+    **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
 -   **LIKE source\_table \[ like\_option ... \]**
 
@@ -173,6 +210,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
     -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the source table.
     -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,  **INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
+
+-   **AUTO\_INCREMENT \[ = \] value**
+
+    This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
@@ -260,7 +304,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >In this case, a maximum of four partition keys are supported.
 
-    Data types supported by the partition keys are as follows: SMALLINT, INTEGER, BIGINT, DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(_n_\), VARCHAR\(_n_\), CHARACTER\(_n_\), CHAR\(_n_\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
+    Data types supported by the partition keys are as follows: SMALLINT, INTEGER, BIGINT, DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(*n_\), VARCHAR\(*n_\), CHARACTER\(*n_\), CHAR\(*n_\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
 
     \(2\) Assume that the  **START END**  syntax is used.
 
@@ -278,7 +322,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
 -   **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
 
-    Specifies the information of partitions.  **partition\_name**  is the name of a range partition.  **partition\_value**  is the upper limit of a range partition, and the value depends on the type of  **partition\_key**.  _MAXVALUE_  usually specifies the upper limit of the last range partition.
+    Specifies the information of partitions.  **partition\_name**  is the name of a range partition.  **partition\_value**  is the upper limit of a range partition, and the value depends on the type of  **partition\_key**.  *MAXVALUE*  usually specifies the upper limit of the last range partition.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
     >-   Each partition requires an upper limit.
@@ -291,19 +335,19 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     -   **partition\_name**: name or name prefix of a range partition. It is the name prefix only in the following cases \(assuming that  **partition\_name**  is  **p1**\):
         -   If  **START**+**END**+**EVERY**  is used, the names of partitions will be defined as  **p1\_1**,  **p1\_2**, and the like. For example, if  **PARTITION p1 START\(1\) END\(4\) EVERY\(1\)**  is defined, the generated partitions are \[1, 2\), \[2, 3\), and \[3, 4\), and their names are  **p1\_1**,  **p1\_2**, and  **p1\_3**. In this case,  **p1**  is a name prefix.
-        -   If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition, and its name will be  **p1\_0**. The other partitions are then named  **p1\_1**,  **p1\_2**, and the like. For example, if  **PARTITION p1 START\(1\), PARTITION p2 START\(2\)**  is defined, generated partitions are \(_MINVALUE_, 1\), \[1, 2\), and \[2,  _MAXVALUE_\), and their names will be  **p1\_0**,  **p1\_1**, and  **p2**. In this case,  **p1**  is a name prefix and  **p2**  is a partition name.  **MINVALUE**  means the minimum value.
+        -   If the defined statement is in the first place and has  **START**  specified, the range \(*MINVALUE*,  **START**\) will be automatically used as the first actual partition, and its name will be  **p1\_0**. The other partitions are then named  **p1\_1**,  **p1\_2**, and the like. For example, if  **PARTITION p1 START\(1\), PARTITION p2 START\(2\)**  is defined, generated partitions are \(*MINVALUE*, 1\), \[1, 2\), and \[2,  *MAXVALUE*\), and their names will be  **p1\_0**,  **p1\_1**, and  **p2**. In this case,  **p1**  is a name prefix and  **p2**  is a partition name.  **MINVALUE**  means the minimum value.
 
-    -   **partition\_value**: start value or end value of a range partition. The value depends on  **partition\_key**  and cannot be  _MAXVALUE_.
-    -   **interval\_value**: width of each partition for dividing the \[**START**,  **END**\) range. It cannot be  _MAXVALUE_. If the value of \(**END**  –  **START**\) divided by  **EVERY**  has a remainder, the width of only the last partition is less than the value of  **EVERY**.
-    -   _MAXVALUE_  usually specifies the upper limit of the last range partition.
+    -   **partition\_value**: start value or end value of a range partition. The value depends on  **partition\_key**  and cannot be  *MAXVALUE*.
+    -   **interval\_value**: width of each partition for dividing the \[**START**,  **END**\) range. It cannot be  *MAXVALUE*. If the value of \(**END**  –  **START**\) divided by  **EVERY**  has a remainder, the width of only the last partition is less than the value of  **EVERY**.
+    -   *MAXVALUE*  usually specifies the upper limit of the last range partition.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >1.  If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition.
+    >1.  If the defined statement is in the first place and has  **START**  specified, the range \(*MINVALUE*,  **START**\) will be automatically used as the first actual partition.
     >2.  The  **START END**  syntax must comply with the following rules:
     >    -   The value of  **START**  \(if any, same for the following situations\) in each  **partition\_start\_end\_item**  must be smaller than that of  **END**.
     >    -   In two adjacent  **partition\_start\_end\_item**  statements, the value of the first  **END**  must be equal to that of the second  **START**.
     >    -   The value of  **EVERY**  in each  **partition\_start\_end\_item**  must be a positive number \(in ascending order\) and must be smaller than  **END**  minus  **START**.
-    >    -   Each partition includes the start value \(unless it is  _MINVALUE_\) and excludes the end value. The format is as follows: \[**START**,  **END**\).
+    >    -   Each partition includes the start value \(unless it is  *MINVALUE*\) and excludes the end value. The format is as follows: \[**START**,  **END**\).
     >    -   Partitions created by the same  **partition\_start\_end\_item**  belong to the same tablespace.
     >    -   If  **partition\_name**  is a name prefix of a partition, the length must not exceed 57 bytes. If there are more than 57 bytes, the prefix will be automatically truncated.
     >    -   When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value  **1048575**.
@@ -328,7 +372,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   For  **partition\_key**, the list partitioning policy supports only one column of partition keys.
     -   If the clause is  **VALUES \(list\_values\_clause\)**,  **list\_values\_clause**  contains the key values of the corresponding partition. It is recommended that the number of key values of each partition be less than or equal to 64.
 
-    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
+    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(*n_\), CHAR, BPCHAR, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(*p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(*p*\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
 
 -   **PARTITION BY HASH\(partition\_key\)**
 
@@ -336,7 +380,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     For  **partition\_key**, the hash partitioning policy supports only one column of partition keys.
 
-    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(_n_\), CHAR, BPCHAR, TEXT, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(_p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(_p_\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
+    Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(*n_\), CHAR, BPCHAR, TEXT, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(*p_\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(*p*\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
@@ -392,6 +436,12 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >-   The generated column cannot be directly written. In the INSERT or UPDATE statement, values cannot be specified for generated columns, but the keyword DEFAULT can be specified.
     >-   The permission control for generated columns is the same as that for common columns.
     >-   Columns cannot be generated for column-store tables and MOTs. In foreign tables, only  **postgres\_fdw**  supports generated columns.
+
+-   **AUTO\_INCREMENT**
+
+    Specifies an auto-increment column.
+
+    For details, see [AUTO\_INCREMENT](create-table.md).
 
 -   **UNIQUE index\_parameters**
 
@@ -527,7 +577,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (1 row)
     ```
 
--   Example 2: Create a range-partitioned table  **tpcds.web\_returns\_p2**. The table has eight partitions and their partition keys are of the integer type. The upper limit of the eighth partition is  _MAXVALUE_.
+-   Example 2: Create a range-partitioned table  **tpcds.web\_returns\_p2**. The table has eight partitions and their partition keys are of the integer type. The upper limit of the eighth partition is  *MAXVALUE*.
 
     The ranges of the partitions are: wr\_returned\_date\_sk < 2450815, 2450815 ≤ wr\_returned\_date\_sk < 2451179, 2451179 ≤ wr\_returned\_date\_sk < 2451544, 2451544 ≤ wr\_returned\_date\_sk < 2451910, 2451910 ≤ wr\_returned\_date\_sk < 2452275, 2452275 ≤ wr\_returned\_date\_sk < 2452640, 2452640 ≤ wr\_returned\_date\_sk < 2453005, and wr\_returned\_date\_sk ≥ 2453005.
 
@@ -961,4 +1011,3 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 ## Helpful Links<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
 [ALTER TABLE PARTITION](alter-table-partition.md)  and  [DROP TABLE](drop-table.md)
-

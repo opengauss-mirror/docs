@@ -40,4 +40,4 @@ openGauss supports implicit conversions between certain data types. For details,
 
 -   **[Data Type Used by the Ledger Database](data-type-used-by-the-ledger-database.md)**  
 
-
+-   **[SET Type](set-type.md)** 

@@ -124,7 +124,7 @@ openGauss=# CREATE TABLE tpcds.customer_t1
     c_email_address           char(50)                      ,
     c_last_review_date        char(10)
 )
-WITH (orientation = row)
+WITH (orientation = row);
 
 openGauss=# CREATE INDEX tpcds_customer_index1 ON tpcds.customer_t1 (c_customer_sk);
 
@@ -153,5 +153,3 @@ openGauss=# DROP TABLE tpcds.customer_t1;
 -   SYSTEM
 
     You are not allowed to re-index system catalogs in transactions.
-
-

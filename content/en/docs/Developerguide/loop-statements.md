@@ -64,7 +64,7 @@ DROP PROCEDURE proc_while_loop;
 DROP TABLE integertable;
 ```
 
-## FOR\_LOOP \(_Integer variable_\)  _Statement_<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_s8d545e0d7dc542958236a07d6c428df3"></a>
+## FOR\_LOOP \(*Integer variable*\)  *Statement*<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_s8d545e0d7dc542958236a07d6c428df3"></a>
 
 **Syntax diagram**
 
@@ -72,7 +72,7 @@ DROP TABLE integertable;
 ![](figures/for_loop.png "for_loop")
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   The variable  _name_  is automatically defined as the integer type and exists only in this loop. The value of  _name_  ranges from  **lower\_bound**  to  **upper\_bound**.
+>-   The variable  *name*  is automatically defined as the integer type and exists only in this loop. The value of  *name*  ranges from  **lower\_bound**  to  **upper\_bound**.
 >-   When the keyword  **REVERSE**  is used, the value of  **lower\_bound**  must be greater than or equal to that of  **upper\_bound**; otherwise, the loop body is not executed.
 
 ## FOR\_LOOP Query Statements<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_s93d5c1ba93874e4496553a9e1e840476"></a>
@@ -83,7 +83,7 @@ DROP TABLE integertable;
 ![](figures/for_loop_query.png "for_loop_query")
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->The variable  _target_  is automatically defined, its type is the same as that in the query result, and it is valid only in this loop. The value of  _target_  is the query result.
+>The variable  *target*  is automatically defined, its type is the same as that in the query result, and it is valid only in this loop. The value of  *target*  is the query result.
 
 ## FORALL Batch Query Statements<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_sfb1cf79f590142f19c106d6c9a9e700b"></a>
 
@@ -93,7 +93,7 @@ DROP TABLE integertable;
 ![](figures/forall.png "forall")
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   The variable  _index_  is automatically defined as the integer type and exists only in this loop. The value of  _index_  falls between the value of  **low\_bound**  and the value of  **upper\_bound**.
+>-   The variable  *index*  is automatically defined as the integer type and exists only in this loop. The value of  *index*  falls between the value of  **low\_bound**  and the value of  **upper\_bound**.
 >-   If  **SAVE EXCEPTIONS**  is specified, exceptions occurred during DML execution in the loop body are saved in  **SQL&BULK\_EXCEPTIONS**  and an exception is thrown after the execution is complete. If there is no abnormal execution result in the loop, the loop will not be rolled back in the current subtransaction.
 
 **Example**
@@ -130,3 +130,44 @@ DROP PROCEDURE proc_forall;
 DROP TABLE hdfs_t1;
 ```
 
+## LABEL_LOOP Statements
+
+**Syntax**
+
+```
+[label_begin:] LOOP
+    statements
+END LOOP [label_end]
+```
+
+> ![](public_sys-resources/icon-note.gif) **NOTE:**
+>
+> The usage of the label is added based on the simple loop statement. The label rules are as follows:
+>
+> -   label\_begin can appear independently (without label\_end). However, if label\_end is used, label\_begin must appear.
+> -   The label can be referenced by the CONTINUE or EXIT statement. In the B-compatible database, the ITERATE or LEAVE statement can also be used.
+
+> ![](public_sys-resources/icon-notice.gif) **NOTICE:**
+> This loop is used only in the B-compatible database. An error is reported in other databases. This loop must be used together with EXIT. (In B-compatible mode, LEAVE has the same effect as EXIT, and ITERATE has the same effect as CONTINUE.) Otherwise, an infinite loop occurs.
+
+**Example**
+
+```
+CREATE OR REPLACE PROCEDURE label_loop(i in integer, count out integer)
+AS
+    BEGIN
+        count:=0;
+        label:
+        LOOP
+        IF count > i THEN
+            raise info 'count is %. ', count;
+            LEAVE;
+        ELSE
+            count:=count+1;
+        END IF;
+        END LOOP label;
+    END;
+/
+
+CALL proc_loop(10,5);
+```

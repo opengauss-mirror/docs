@@ -13,6 +13,7 @@
 -   The following DML statements support synonyms:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **EXPLAIN**, and  **CALL**.
 -   You are not advised to create synonyms for temporary tables. To create a synonym, you need to specify the schema name of the target temporary table. Otherwise, the synonym cannot be used normally. In addition, you need to run the  **DROP SYNONYM**  command before the current session ends.
 -   After an original object is deleted, the synonym associated with the object will not be deleted in cascading mode. If you continue to access the synonym, an error message is displayed, indicating that the synonym has expired.
+-   Users granted the CREATE ANY SYNONYM permission can create synonyms in user schemas.
 
 ## Syntax<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
@@ -105,4 +106,3 @@ openGauss=# DROP SCHEMA ot CASCADE;
 ## Helpful Links<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059778825_section184942174514"></a>
 
 [ALTER SYNONYM](alter-synonym.md)  and  [DROP SYNONYM](drop-synonym.md)
-

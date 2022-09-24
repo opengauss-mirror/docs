@@ -61,7 +61,14 @@ Only the view owner or a user granted with the ALTER permission can run the  **A
     ALTER VIEW [ IF EXISTS ] view_name
         RESET ( view_option_name [, ... ] );
     ```
+    
+- Set the definition of a view. (This syntax can be used only in B-compatible mode.)
 
+  ```
+  ALTER [DEFINER = user] VIEW view_name [ ( column_name [, ...] ) ]
+      [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
+      AS query;
+  ```
 
 ## Parameter Description<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
 
@@ -127,4 +134,3 @@ openGauss=# DROP VIEW public.customer_details_view_v2;
 ## Helpful Links<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
 [CREATE VIEW](create-view.md)  and  [DROP VIEW](drop-view.md)
-

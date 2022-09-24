@@ -38,7 +38,7 @@
 
     Grant ANY permissions to a specified role or user. For details about the value range of the ANY permissions, see the syntax. If  **WITH ADMIN OPTION**  is specified, the grantee can grant the ANY permissions to or revoke them from other roles or users. The ANY permissions can be inherited by a role but cannot be granted to  **PUBLIC**. An initial user and the system administrator when separation of duties is disabled can grant the ANY permissions to or revoke them from any role or user.
 
-    Currently, the following ANY permissions are supported:  **CREATE ANY TABLE**,  **ALTER ANY TABLE**,  **DROP ANY TABLE**,  **SELECT ANY TABLE**,  **INSERT ANY TABLE**,  **UPDATE ANY TABLE**,  **DELETE ANY TABLE**,  **CREATE ANY SEQUENCE**,  **CREATE ANY INDEX**,  **CREATE ANY FUNCTION**,  **EXECUTE ANY FUNCTION**,  **CREATE ANY PACKAGE**,** EXECUTE ANY PACKAGE**, and  **CREATE ANY TYPE**. For details about the ANY permission scope, see  [Table 1](#table1360121832117).
+    Currently, the following ANY permissions are supported: CREATE ANY TABLE, ALTER ANY TABLE, DROP ANY TABLE, SELECT ANY TABLE, INSERT ANY TABLE, UPDATE ANY TABLE, DELETE ANY TABLE, CREATE ANY SEQUENCE, CREATE ANY INDEX, CREATE ANY FUNCTION, EXECUTE ANY FUNCTION, CREATE ANY PACKAGE, EXECUTE ANY PACKAGE, CREATE ANY TYPE, ALTER ANY TYPE, DROP ANY TYPE, ALTER ANY SEQUENCE, DROP ANY SEQUENCE, SELECT ANY SEQUENCE, ALTER ANY INDEX, DROP ANY INDEX, CREATE ANY SYNONYM, DROP ANY SYNONYM, CREATE ANY TRIGGER, ALTER ANY TRIGGER, and DROP ANY TRIGGER. For details about the ANY permission scope, see [Table 1](#table1360121832117).
 
 
 ## Precautions<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_section1780116145345"></a>
@@ -47,7 +47,7 @@
 -   The ANY permissions are database permissions and are valid only for database objects that are granted with the permissions. For example,  **SELECT ANY TABLE**  only allows a user to view all user table data in the current database, but the user does not have the permission to view user tables in other databases.
 -   Even if a user is granted with the ANY permissions, the user cannot perform INSERT, DELETE, UPDATE, and SELECT operations on the objects of private users.
 -   The ANY permissions and the original permissions do not affect each other.
--   If a user is granted with the  **CREATE ANY TABLE**  permission, the owner of a table created in a schema with the same name as the user is the creator of the schema. When the user performs other operations on the table, the user needs to be granted with the corresponding operation permission.
+-   If a user is granted with the CREATE ANY TABLE permission, the owner of a table created in a schema with the same name as the user is the owner of the schema. When the user performs other operations on the table, the user needs to be granted with the corresponding operation permission. Similarly, if a user is granted with the CREATE ANY FUNCTION, CREATE ANY PACKAGE, CREATE ANY TYPE, CREATE ANY SEQUENCE, or CREATE ANY INDEX permission, the owner of an object created in a schema with the same name is the owner of the schema. If a user is granted with the CREATE ANY TRIGGER or CREATE ANY SYNONYM permission, the owner of an object created in a schema with the same name is the creator.
 
 ## Syntax<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
@@ -273,7 +273,9 @@
     ```
     GRANT { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
       DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
-      CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE } [, ...]
+      CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE | ALTER ANY TYPE | DROP ANY TYPE | ALTER ANY SEQUENCE | DROP ANY SEQUENCE |
+      SELECT ANY SEQUENCE | ALTER ANY INDEX | DROP ANY INDEX | CREATE ANY SYNONYM | DROP ANY SYNONYM | CREATE ANY TRIGGER | ALTER ANY TRIGGER | DROP ANY TRIGGER
+     } [, ...]
       TO [ GROUP ] role_name [, ...]
       [ WITH ADMIN OPTION ];
     ```
@@ -549,6 +551,66 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 <tr id="row87515532292"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p14752155317297"><a name="p14752155317297"></a><a name="p14752155317297"></a>CREATE ANY INDEX</p>
 </td>
 <td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p37921145332"><a name="p37921145332"></a><a name="p37921145332"></a>Users can create indexes in the public and user schemas. The users must be granted with the permission to create tablespaces to create a partitioned table index in a tablespace.</p>
+</td>
+</tr>
+<tr id="row28313644111"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p169111525019"><a name="p169111525019"></a><a name="p169111525019"></a>ALTER ANY TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p891121525017"><a name="p891121525017"></a><a name="p891121525017"></a>Users have the ALTER permission on types in public and user schemas, excluding modifying the owner of a type or modifying the schema of a type.</p>
+</td>
+</tr>
+<tr id="row58511459164011"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p939716502508"><a name="p939716502508"></a><a name="p939716502508"></a>DROP ANY TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p7398165055011"><a name="p7398165055011"></a><a name="p7398165055011"></a>Users have the DROP permission on types in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row1376021211412"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p39991052155020"><a name="p39991052155020"></a><a name="p39991052155020"></a>ALTER ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2999175245019"><a name="p2999175245019"></a><a name="p2999175245019"></a>Users have the ALTER permission on sequences in public and user schemas, excluding modifying the owner of a sequence.</p>
+</td>
+</tr>
+<tr id="row1758121512413"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p89298558504"><a name="p89298558504"></a><a name="p89298558504"></a>DROP ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p39291855195010"><a name="p39291855195010"></a><a name="p39291855195010"></a>Users have the DROP permission on sequences in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row715411044114"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p3799728145018"><a name="p3799728145018"></a><a name="p3799728145018"></a>SELECT ANY SEQUENCE</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p47992028115011"><a name="p47992028115011"></a><a name="p47992028115011"></a>Users have the SELECT, USAGE, and UPDATE permissions on sequences in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row59761826194118"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p16737144425012"><a name="p16737144425012"></a><a name="p16737144425012"></a>ALTER ANY INDEX</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p7737144105015"><a name="p7737144105015"></a><a name="p7737144105015"></a> Users have the ALTER permission on indexes in public and user schemas. To rename an index, users also need the permission to create objects in the schema where the index is located. If tablespace operations are involved, users need to have the corresponding operation permission on the tablespace. To set an index to **UNUSABLE**, users must have the DROP ANY INDEX permission.</p>
+</td>
+</tr>
+<tr id="row659911913419"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p11597647135013"><a name="p11597647135013"></a><a name="p11597647135013"></a>DROP ANY INDEX</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p14597104775017"><a name="p14597104775017"></a><a name="p14597104775017"></a>Users have the DROP permission on indexes in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row20739192484111"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p1728420391502"><a name="p1728420391502"></a><a name="p1728420391502"></a>CREATE ANY TRIGGER</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p2285133910505"><a name="p2285133910505"></a><a name="p2285133910505"></a>Users can create triggers in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row792282114416"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p2366124205018"><a name="p2366124205018"></a><a name="p2366124205018"></a>ALTER ANY TRIGGER</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p1036614424509"><a name="p1036614424509"></a><a name="p1036614424509"></a>Users have the ALTER permission on triggers in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row93379175417"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p205462355504"><a name="p205462355504"></a><a name="p205462355504"></a>DROP ANY TRIGGER</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p254612356504"><a name="p254612356504"></a><a name="p254612356504"></a>Users have the DROP permission on triggers in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row94485714403"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p864102511508"><a name="p864102511508"></a><a name="p864102511508"></a>CREATE ANY SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p13641325135013"><a name="p13641325135013"></a><a name="p13641325135013"></a> Users can create synonyms in user schema.</p>
+</td>
+</tr>
+<tr id="row11336453114019"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p588843295012"><a name="p588843295012"></a><a name="p588843295012"></a>DROP ANY SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p10888153216509"><a name="p10888153216509"></a><a name="p10888153216509"></a>Users have the DROP permission on synonyms in public and user schemas.</p>
 </td>
 </tr>
 </tbody>

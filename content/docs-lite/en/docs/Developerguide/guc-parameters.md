@@ -80,6 +80,6 @@
 
 -   **[AI Features](ai-features.md)**  
 
+-   **[Parameters Related to Efficient Data Compression Algorithms](parameters-related-to-efficient-data-compression-algorithms.md)** 
+
 -   **[Global SysCache Parameters](global-syscache-parameters.md)**  
-
-

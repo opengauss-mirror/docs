@@ -4,7 +4,7 @@
 
 **REASSIGN OWNED**  changes the owner of the database object.
 
-**REASSIGN OWNED**  requires that the system change owners of all the database objects owned by  **old\_roles**  to  **new\_role**.
+**REASSIGN OWNED** requires the system to change the owners of all database objects owned by old_role in the current database to new_role.
 
 ## Precautions<a name="en-us_topic_0283136605_en-us_topic_0237122173_en-us_topic_0059779106_sc1c0690ce85a4497bbc2bf507322bd08"></a>
 
@@ -31,4 +31,3 @@ REASSIGN OWNED BY old_role [, ...] TO new_role;
 ## Examples<a name="en-us_topic_0283136605_en-us_topic_0237122173_en-us_topic_0059779106_sbcf57ecc9f7a417bad32fed1fe01c036"></a>
 
 None
-

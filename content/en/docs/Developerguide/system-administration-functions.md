@@ -22,4 +22,4 @@
 
 -   **[Undo System Functions](undo-system-functions.md)**  
 
-
+-   **[Row-store Compression System Functions](row-store-compression-system-functions.md)** 

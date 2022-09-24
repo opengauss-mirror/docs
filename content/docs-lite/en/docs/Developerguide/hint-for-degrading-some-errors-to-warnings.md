@@ -4,6 +4,8 @@
 
 Some errors can be degraded to warnings when INSERT and UPDATE statements are executed, without affecting the statement execution.
 
+This hint does not support column-store tables and cannot take effect in column-store tables.
+
 >![](./public_sys-resources/icon-caution.gif) **Caution:**
 >Different from other hints, this hint affects only the processing mode when the executor encounters some errors and does not affect the execution plan.
 

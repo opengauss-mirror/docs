@@ -353,4 +353,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**: enumerated type. The value can be  **700**  or  **750**.
 
 **Default value**:  **700**
-

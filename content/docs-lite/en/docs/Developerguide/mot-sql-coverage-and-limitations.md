@@ -171,6 +171,7 @@ Types that are not specified in above table, the column additional size is zero 
 -   Select into
 -   Lock table
 -   Copy from table
+-   Upsert
 
 ## Unsupported Queries for Native Compilation and Lite Execution<a name="en-us_topic_0283137737_en-us_topic_0280525140_section19943160"></a>
 
@@ -195,4 +196,3 @@ In addition, the following clauses disqualify a query from lite execution:
 -   Sort clause that does not conform to native index order
 -   Set operations
 -   Constraint dependencies
-

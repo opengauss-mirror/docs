@@ -1,6 +1,6 @@
 # Updating Data in a Table<a name="EN-US_TOPIC_0242370187"></a>
 
-Existing data in a database can be updated. You can update one row, all rows, or specified rows of data, or update data in a single column without affecting the data in the other columns.
+Existing data in a database can be updated. You can update one row, all rows, or specified rows of data, or update data in a column without affecting the data in the other columns.
 
 The following types of information are required when the  **UPDATE**  statement is used to update a row:
 
@@ -37,4 +37,3 @@ UPDATE customer_t1 SET  c_customer_id = 'Admin', c_first_name = 'Local' WHERE c_
 ```
 
 After data has been updated or deleted in batches, a large number of deletion markers are generated in the data file. During query, data with these deletion markers needs to be scanned as well. In this case, a large amount of data with deletion marks can greatly affect the query performance after batch updates or deletions. If data needs to be updated or deleted in batches frequently, you are advised to periodically run the  **VACUUM FULL**  statement to maintain the query performance.
-

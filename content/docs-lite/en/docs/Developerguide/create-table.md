@@ -29,10 +29,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         | table_constraint
         | LIKE source_table [ like_option [...] ] }
         [, ... ])
+    [ AUTO_INCREMENT [ = ] value ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
-    [ TABLESPACE tablespace_name ];
+    [ TABLESPACE tablespace_name ]
+    [ COMMENT {=| } 'text' ];
 ```
 
 -   **column\_constraint**  is as follows:
@@ -43,12 +45,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       NULL |
       CHECK ( expression ) |
       DEFAULT default_expr |
+      AUTO_INCREMENT |
       UNIQUE index_parameters |
       ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -61,14 +65,15 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **table\_constraint**  is as follows:
 
     ```
-    [ CONSTRAINT constraint_name ]
+    [ CONSTRAINT [ constraint_name ] ]
     { CHECK ( expression ) |
-      UNIQUE ( column_name [, ... ] ) index_parameters |
-      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
+      UNIQUE [ index_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+      PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -133,6 +138,44 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Specifies the name of a column to be created in the new table.
 
+-   **constraint\_name**
+
+    Specifies the name of the constraint specified during table creation.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
+
+-   **index\_name**
+
+    Specifies an index name.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
+    >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
+
+-   **USING method**
+
+    Specifies the name of the index method to be used.
+
+    For details about the value range, see [USING method](create-index.md).
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
+
+-   **ASC | DESC**
+
+    **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
+
+-   **expression**
+
+     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+
 -   **data\_type**
 
     Specifies the data type of the column.
@@ -168,6 +211,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**,  **SMALLSERIAL**, or  **LARGESERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
     >-   You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.
     >-   **EXCLUDING**  of a partitioned table must be used together with  **INCLUDING ALL**, for example,  **INCLUDING ALL EXCLUDING DEFAULTS**, except for  **DEFAULTS**  of the source partitioned table.
+
+-   **AUTO\_INCREMENT \[ = \] value**
+
+    This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
@@ -347,6 +397,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Specifies the tablespace where the new table is created. If not specified, the default tablespace is used.
 
+-   **COMMNET {=| } text**
+    
+    Comments a new table. If this parameter is not specified, no comment is created.
+
 -   **CONSTRAINT constraint\_name**
 
     Specifies the name of a column or table constraint. The optional constraint clauses specify constraints that new or updated rows must satisfy for an insert or update operation to succeed.
@@ -380,6 +434,29 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     Assigns a default data value for a column. The value can be any variable-free expressions. \(Subqueries and cross-references to other columns in the current table are not allowed.\) The data type of the default expression must match the data type of the column.
 
     The default expression will be used in any insert operation that does not specify a value for the column. If there is no default value for a column, then the default value is null.
+
+-    **AUTO\_INCREMENT**
+
+     Specifies an auto-increment column.
+
+     If the value of this column is not specified (or the value of this column is set to **0**, **NULL**, or **DEFAULT**), the value of this column is automatically increased by the auto-increment counter.
+ 
+     If this column is inserted or updated to a value greater than the current auto-increment counter, the auto-increment counter is updated to this value after the command is executed successfully.
+
+     The initial auto-increment value is set by the AUTO\_INCREMENT \[ = \] value clause. If it is not set, the default value **1** is used.
+
+     >![](public_sys-resources/icon-note.gif) **NOTE:**
+     >-   The auto-increment column can be specified only when **sql\_compatibility** is set to **B**.
+     >-   The data type of the auto-increment column can only be integer, 4-byte or 8-byte floating point, or Boolean.
+     >-   Each table can have only one auto-increment column.
+     >-   The auto-increment column must be the first column of a primary key constraint or unique constraint.
+     >-   The DEFAULT value cannot be specified for an auto-increment column.
+      >-   The expression of the CHECK constraint cannot contain auto-increment columns.
+     >-   You can specify that the auto-increment column can be NULL. If it is not specified, the auto-increment column contains the NOT NULL constraint by default.
+     >-   When a table containing an auto-increment column is created, a sequence that depends on the column is created as an auto-increment counter. You are not allowed to modify or delete the sequence using sequence-related functions. You can view the value of the sequence.
+     >-   Sequences are not created for auto-increment columns in local temporary tables.
+     >-   Auto-increment columns do not support column store.
+     >-   The auto-increment and refresh operations of the auto-increment counter are not rolled back.
 
 -   **UNIQUE index\_parameters**
 
@@ -423,6 +500,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Ustore tables do not support the keywords  **DEFERRABLE**  and  **INITIALLY DEFERRED**.
+
+-   **COMMENT text**
+
+    Comments.
 
 -   **PARTIAL CLUSTER KEY**
 

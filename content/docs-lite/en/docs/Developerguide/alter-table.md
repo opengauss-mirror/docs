@@ -63,6 +63,8 @@
         | OF type_name
         | NOT OF
         | REPLICA IDENTITY { DEFAULT | USING INDEX index_name | FULL | NOTHING }
+        | AUTO_INCREMENT [ = ] value
+        | COMMENT {=| } 'text'
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
@@ -128,12 +130,24 @@
     >    Removes the association between a table and a type.
     >-   **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
     >    **DEFAULT**  records the old value of the primary key column.  **USING INDEX**  records the old values of columns covered by the named indexes. These values must be unique, non-local, and non-deferrable, and contain the values of columns marked  **NOT NULL**.  **FULL**  records the old values of all columns in the row.  **NOTHING**  does not record information in old rows. In all cases, no old values are recorded unless at least one of the columns to be recorded in the new and old rows is different.
+    
+    - **AUTO\_INCREMENT \[ = \] value**
+    
+    Sets the next auto-increment value of the auto-increment column. The configured value takes effect only when it is greater than the current auto-increment counter.
+
+    The value must be a non-negative integer and cannot be greater than 2<sup>127</sup>-1.
+
+    This clause takes effect only when **sql\_compatibility** is set to **B**.
+
+    - **COMMENT 'text'**
+    Comment a table object.
 
     -   There are several clauses of  **column\_clause**:
 
         ```
-        ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]    
-        | MODIFY column_name data_type    
+        ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ COMMENT {=| } 'text' ]    
+        | MODIFY column_name data_type  
+        | MODIFY [ COLUMN ] column_name [ COMMENT 'text']      
         | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
         | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
         | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
@@ -149,10 +163,12 @@
         ```
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]**
+        >-   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \] \[ COMMENT {=| } 'text'\]**
         >    Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).
         >-   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
         >    Adds columns in the table.
+        >-   **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
+        >    Comments a column.
         >-   **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
         >    Modifies the data type of an existing column in the table.
         >-   **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
@@ -172,7 +188,7 @@
         >-   **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
         >    Specifies the per-column statistics-gathering target for subsequent  **ANALYZE**  operations. The target can be set in the range from 0 to 10000. Set it to  **–1**  to revert to using the default system statistics target.
         >-   **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
-        >    Adds or deletes the declaration of collecting multi-column statistics to collect multi-column statistics as needed when  **ANALYZE**  is performed for a table or a database. The statistics about a maximum of 32 columns can be collected at a time. You are not allowed to add or delete such declaration for system catalogs or foreign tables.
+        >    Adds or deletes the declaration of collecting multi-column statistics to collect multi-column statistics as needed when  **ANALYZE**  is performed for a table or a database. If the GUC parameter **enable\_functional\_dependency** is disabled, the statistics about a maximum of 32 columns can be collected at a time. If the GUC parameter **enable\_functional\_dependency** is enabled, the statistics about a maximum of 4 columns can be collected at a time. You are not allowed to add or delete such declaration for system catalogs or foreign tables.
         >-   **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
         >    **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
         >    Sets or resets per-attribute options.
@@ -188,6 +204,7 @@
                   NULL |
                   CHECK ( expression ) |
                   DEFAULT default_expr  |
+                  AUTO_INCREMENT |
                   UNIQUE index_parameters |
                   PRIMARY KEY index_parameters |
                   ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
@@ -208,17 +225,19 @@
         [ CONSTRAINT constraint_name ]
             { UNIQUE | PRIMARY KEY } USING INDEX index_name
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+            [ COMMENT 'text' ]
+
         ```
 
     -   **table\_constraint**  is as follows:
 
         ```
-        [ CONSTRAINT constraint_name ]
+        [ CONSTRAINT [ constraint_name ] ]
             { CHECK ( expression ) |
-              UNIQUE ( column_name [, ... ] ) index_parameters |
-              PRIMARY KEY ( column_name [, ... ] ) index_parameters |
+              UNIQUE [ idx_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+              PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
               PARTIAL CLUSTER KEY ( column_name [, ... ]  }
-              FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+              FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
                  [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
@@ -296,11 +315,46 @@
 
 -   **constraint\_name**
 
-    Specifies the name of an existing constraint to drop.
+    -   Specifies the name of an existing constraint to drop in the DROP CONSTRAINT operation.
+    -   Specifies the name of a new constraint in the ADD CONSTRAINT operation.
+
+        >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+        >For a new constraint, constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
 -   **index\_name**
 
     Specifies the name of an index.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >In the ADD CONSTRAINT operation:
+    >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
+    >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
+
+-   **USING method**
+
+    Specifies the name of the index method to be used.
+
+    For details about the value range, see [USING method](create-index.md).
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >In the ADD CONSTRAINT operation:
+    >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
+
+-   **ASC | DESC**
+
+    **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >In ADD CONSTRAINT, ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
+
+-   **expression**
+
+    Specifies an expression index constraint created based on one or more columns of the table. The expression index must be written with surrounding parentheses.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
 
 -   **storage\_parameter**
 
@@ -390,6 +444,12 @@
     The data type of the default expression must match the data type of the column.
 
     The default expression will be used in any insert operation that does not specify a value for the column. If there is no default value for a column, then the default value is null.
+
+-   **AUTO\_INCREMENT**
+
+    Specifies an auto-increment column.
+
+    For details, see [AUTO\_INCREMENT](create-table.md).
 
 -   **UNIQUE index\_parameters**
 
@@ -488,4 +548,3 @@ See  [Examples](create-table.md#en-us_topic_0283137629_en-us_topic_0237122117_en
 ## Helpful Links<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
 
 [CREATE TABLE](create-table.md)  and  [DROP TABLE](drop-table.md)
-
