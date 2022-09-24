@@ -130,7 +130,7 @@ openGauss=# SELECT * FROM customer_t1;
 
 -   Change the data type of a column.
 
-    Change the data type of the  **c**  column from character\(8\) to character\(12\).
+    Change the data type of the  **c_last_name**  column from character\(8\) to character\(12\).
 
     ```
     openGauss=# ALTER TABLE customer_t1 MODIFY c_last_name character(12);
