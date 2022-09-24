@@ -133,6 +133,7 @@ headless: true
 	-   [中间件]({{< relref "./docs/CharacteristicDescription/中间件.md" >}})
 		-   [分布式数据库能力]({{< relref "./docs/CharacteristicDescription/分布式数据库能力.md" >}})
 		-   [使用kubernetes部署分布式数据库]({{< relref "./docs/CharacteristicDescription/使用kubernetes部署分布式数据库.md" >}})
+		-   [分布式分析能力]({{< relref "./docs/CharacteristicDescription/分布式分析能力.md" >}})
 -   [编译指导书]({{< relref "./docs/Compilationguide/Compilation.md" >}})
     -   [搭建编译环境]({{< relref "./docs/Compilationguide/搭建编译环境.md" >}})
     -   [版本编译]({{< relref "./docs/Compilationguide/版本编译.md" >}})
