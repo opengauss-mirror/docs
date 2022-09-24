@@ -224,6 +224,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   不建议将其他表私有的Sequence配置为源表字段的默认值，尤其是其他表只分布在特定的NodeGroup上，这可能导致CREATE TABLE ... LIKE执行失败。另外，如果源表配置其他表私有的Sequence，当该表删除时Sequence也会连带删除，这样源表的Sequence将不可用。如果用户希望多个表共享Sequence，建议创建共享的Sequence。
     >
     >-   对于分区表EXCLUDING，需要配合INCLUDING ALL使用，如INCLUDING ALL EXCLUDING DEFAULTS，除源分区表的DEFAULTS，其它全包含。
+    >
+    >-   如果源表是本地临时表，则新表也必须是本地临时表，否则会报错。
 
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
@@ -242,7 +244,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   ORIENTATION
 
-        指定表数据的存储方式，即行存方式、列存方式、ORC格式的方式，该参数设置成功后就不再支持修改。
+        指定表数据的存储方式，即行存方式、列存方式，该参数设置成功后就不再支持修改。
 
         取值范围：
 
@@ -350,14 +352,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
 
       取值范围：0～9999，默认值为100
-
-  - VERSION
-
-      指定ORC存储格式的版本。
-
-      取值范围：0.12，目前支持ORC 0.12格式，后续会随着ORC格式的发展，支持更多格式。
-
-      默认值：0.12
 
   - segment
 

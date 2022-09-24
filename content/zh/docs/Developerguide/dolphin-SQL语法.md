@@ -1,12 +1,24 @@
 # SQL语法<a name="ZH-CN_TOPIC_0289900416"></a>
 
+-   **[ALTER FUNCTION](dolphin-ALTER-FUNCTION.md)**
+
+-   **[ALTER PROCEDURE](dolphin-ALTER-PROCEDURE.md)**
+
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
 -   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
 
+-   **[ALTER TABLESPACE](dolphin-ALTER-TABLESPACE.md)**  
+
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
+-   **[CREATE FUNCTION](dolphin-CREATE-FUNCTION.md)**
+
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
+
+-   **[CREATE PROCEDURE](dolphin-CREATE-PROCEDURE.md)**
+
+-   **[CREATE TABLE](dolphin-CREATE-TABLE.md)**
 
 -   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
 
@@ -18,6 +30,8 @@
 
 -   **[DESCRIBE TABLE](dolphin-DESCRIBE-TABLE.md)**
 
+-   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
+
 -   **[GRANT](dolphin-GRANT.md)**
 
 -   **[INSERT](dolphin-INSERT.md)**
@@ -25,6 +39,10 @@
 -   **[KILL](dolphin-KILL.md)**  
 
 -   **[OPTIMIZE TABLE](dolphin-OPTIMIZE-TABLE.md)**
+
+-   **[PREPARE](dolphin-PREPARE.md)**
+
+-   **[RENAME USER](dolphin-RENAME-USER.md)**
 
 -   **[REVOKE](dolphin-REVOKE.md)**
 

@@ -10,6 +10,12 @@
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
+
+通过like创建表。
+```
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name LIKE source_table [ like_option [...] ]
+```
+
 创建表。
 
 ```
@@ -36,17 +42,19 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ COMPRESSION [=] compression_arg ]
         [ ENGINE [=] engine_name ]
         [ COLLATE [=] collation_name ]
-        [ CHARSET [=] charset_name ]
+        [ [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name ]
         [ ROW_FORMAT [=] row_format_name ]
 
     除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
 ```
 
--   创建表上索引table_indexclause：
+- 创建表上索引table_indexclause：
 
-    ```
-    {INDEX | KEY} [index_name] [index_type] (key_part,...)
-    ```
+  ```
+  {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
+  ```
+
+  该语法不支持CREATE FOREIGN TABLE (MOT表等) 创建。
 
 -   其中参数index_type为：
 
@@ -57,7 +65,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   其中参数key_part为：
 
     ```
-    {col_name | (expr)} [ASC | DESC]
+    {col_name[(length)] | (expr)} [ASC | DESC]
+    ```
+    
+    length为前缀索引。
+
+- 其中参数index_option为：
+
+  ```
+  index_option:{
+  	  COMMENT 'string'
+  	| index_type
+  }
+  ```
+
+  COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
+
+-   其中like选项like\_option为：
+
+    ```
+    { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
@@ -68,13 +95,21 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     对枚举类型ENUM，以及CHAR, CHARACTER, VARCHAR, TEXT等字符类型，创建表格时可使用关键字CHARSET或CHARACTER SET声明列字符集。目前该特性仅做语法支持，不实现功能。
 
+-   **column\_constraint**
+
+    字段的类型约束中，添加了mysql的ON UPDATE特性，归类于字段类型约束。与DEFAULT属性属于同类约束。该ON UPDATE属性用于，执行UPDATE操作timestamp字段为缺省时，则自动更新timestamp字段的时间截。
+
+    ```sql
+    CREATE TABLE table_name(column_name timestamp ON UPDATE CURRENT_TIMESTAMP);
+    ```
+
 -   **COLLATE collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
     对未被支持的排序规则，数据库将发出警告，并将该列设置为默认的排序规则。
 
--   **{ CHARSET | CHARACTER SET } \[=\] charset_name**
+-   **{ [DEFAULT] CHARSET | CHARACTER SET } \[=\] charset_name**
 
     用于选择表所使用的字符集；目前该特性仅有语法支持，不实现功能。
 
@@ -131,6 +166,9 @@ openGauss=# CREATE TABLE tpcds.warehouse_t25
     index idx_SQ_FT using btree ((abs(W_WAREHOUSE_SQ_FT)))  ,
     key idx_SK using btree ((abs(W_WAREHOUSE_SK)+1))
 );
+
+--包含index_option字段
+openGauss=# create table test_option(a int, index idx_op using btree(a) comment 'idx comment');
 ```
 
 ```

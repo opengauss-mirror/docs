@@ -51,7 +51,7 @@ openGauss提供了在命令行下运行的数据库连接工具gsql。此工具�
         openGauss=# \h
         ```
 
-    -   您可以用下面的命令查询openGauss中所有的数据和描述信息。
+    -   您可以用下面的命令查询openGauss中所有的数据库和描述信息。
 
         ```
         openGauss=# \l

@@ -25,7 +25,7 @@ openGauss提供了在命令行下运行的数据库连接工具gsql。此工具�
     openGauss=# 
     ```
 
-    omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。提示符告诉您openGauss准备为您输入SQL语句。
+    omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。提示符告诉您可以在此输入SQL语句。
 
     “Non-SSL connection”表示未使用SSL方式连接数据库。
 

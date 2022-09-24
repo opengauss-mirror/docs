@@ -81,7 +81,13 @@ CREATE SUBSCRIPTION subscription_name
 
         该参数指定是否需要该订阅对应的发布端以二进制格式发送数据，为true表示需要以二进制发送，为false表示不以二进制格式而知以默认的文本格式发送。默认值false。
 
+    -   **connect (boolean)**
 
+        指定CREATE SUBSCRIPTION是否应该连接到发布者。设置为false会默认将enabled和copy\_data也设置为false。默认值true。
+
+        不允许将connect设置为false的同时将enabled或copy\_data设置为true。
+
+        因为该选项设置为false时不会建立连接，因此表没有被订阅，所以当启用订阅后，不会复制任何内容。需要执行ALTER SUBSCRIPTION ... REFRESH PUBLICATION才能订阅表。
 
 ## 示例<a name="section1399192015610"></a>
 

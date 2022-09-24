@@ -20,6 +20,8 @@ In-place upgrade: During the upgrade, services must be stopped and all nodes mus
 
 Gray upgrade: supports operations on all service during the upgrade and upgrades all nodes at a time. \(This function is supported in versions later than openGauss 1.1.0.\)
 
+Gray upgrade: based on gray upgrade, supports to upgrade the specified nodes, supports to upgrade the part of all nodes. \(This function is supported in versions later than openGauss 3.1.0.\)
+
 ## Version Requirements Before the Upgrade
 
 [Table 1](#table7961729) lists the version requirements for upgrading openGauss.

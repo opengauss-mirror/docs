@@ -1,8 +1,8 @@
 # 数字操作函数和操作符<a name="ZH-CN_TOPIC_0289900469"></a>
 
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
-1. 新增```DIV/MOD/XOR```操作符。
-2. 新增```truncate/rand/crc32/conv```函数。
+1. 新增```DIV/MOD/XOR/^```操作符。
+2. 新增```truncate/rand/crc32/conv/float8_bool```函数。
 
 -   DIV
 
@@ -108,10 +108,50 @@
     -------
      10100
     (1 row)
-
+    
     openGauss=# SELECT conv('8D', 16, 10);
      conv
     ------
      141
     (1 row)
     ```
+
+- ^
+
+  描述：实现两个整数之间的按位异或。
+
+  返回值类型：INT
+
+  示例：
+
+  ```
+  openGauss=# SELECT 1^1;
+  ?column?
+  ----------
+         0
+  （1 row）
+  ```
+
+- float8_bool(float)
+
+  描述：根据浮点数的取值返回布尔型（为零时返回false，否则返回true）。
+
+  返回值类型：boolean
+
+  示例：
+
+  ```
+  openGauss=# select float8_bool(0.1);
+   float8_bool 
+  -------------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select float8_bool(0.0);
+   float8_bool 
+  -------------
+   f
+  (1 row)
+  ```

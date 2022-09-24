@@ -360,7 +360,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.602160216021602%" headers="mcps1.2.4.1.2 "><p id="p339717319319"><a name="p339717319319"></a><a name="p339717319319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.265626562656266%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>语句锁事件的列表，该列表按时间书序记录事件，记录的数量受参数track_stmt_details_size的影响。</p>
+<td class="cellrowborder" valign="top" width="56.265626562656266%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>等待事件和语句锁事件的列表。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录级别的值是L0时，开始记录等待事件的列表。显示当前语句event等待相关的统计信息。具体事件信息见<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4">等待状态列表</a>、<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table38811324183420">轻量级锁等待事件列表</a>、<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table124603113369">IO等待事件列表</a>和<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718">事务锁等待事件列表</a>。关于每种事务锁对业务的影响程度，请参考<a href="LOCK-1.md">LOCK</a>语法小节的详细描述。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录级别的值是L2时，开始记录语句锁事件的列表，该列表按时间顺序记录事件，记录的数量受参数track_stmt_details_size的影响。</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>事件包括：</p>
 <a name="ul452445214189"></a><a name="ul452445214189"></a><ul id="ul452445214189"><li>加锁开始</li><li>加锁结束</li><li>等锁开始</li><li>等锁结束</li><li>放锁开始</li><li>放锁结束</li><li>轻量级等锁开始</li><li>轻量级等锁结束</li></ul>
 </td>

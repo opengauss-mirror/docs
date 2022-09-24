@@ -30,10 +30,10 @@ ALTER EXTENSION modifies the definition of an installed extension. Methods are a
 ## Syntax<a name="section1374719912321"></a>
 
 ```
-ALTER EXTENSION name UPDATE [ TO new_version ]
-ALTER EXTENSION name SET SCHEMA new_schema
-ALTER EXTENSION name ADD member_object
-ALTER EXTENSION name DROP member_object
+ALTER EXTENSION name UPDATE [ TO new_version ];
+ALTER EXTENSION name SET SCHEMA new_schema;
+ALTER EXTENSION name ADD member_object;
+ALTER EXTENSION name DROP member_object;
 
 where member_object is:
 
@@ -42,7 +42,6 @@ where member_object is:
   COLLATION object_name |
   CONVERSION object_name |
   DOMAIN object_name |
-  EVENT TRIGGER object_name |
   FOREIGN DATA WRAPPER object_name |
   FOREIGN TABLE object_name |
   FUNCTION function_name ( [ [ argname ] [ argmode ] argtype [, ...] ] ) |

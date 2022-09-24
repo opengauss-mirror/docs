@@ -21,6 +21,8 @@ The following OSs are supported:
 -   openEuler-20.03-LTS \(AArch64 architecture\)
 -   openEuler-20.03-LTS \(x86 architecture\)
 -   Kylin-V10 \(AArch64 architecture\)
+-   FusionOS 22 \(AArch64 architecture\)
+-   FusionOS 22 \(x86 architecture\)
 
 **Software Dependency Requirements**
 

@@ -104,7 +104,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 - 创建表上索引table_indexclause：
 
   ```
-  {INDEX | KEY} [index_name] [index_type] (key_part,...)
+  {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
   ```
 
 - 其中参数index_type为：
@@ -118,6 +118,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   ```
   {col_name [ ( length ) ] | (expr)} [ASC | DESC]
   ```
+  
 - 其中`col_name ( length )`为前缀键，column_name为前缀键的字段名，length为前缀长度。前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
   
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -125,6 +126,17 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
     >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
 
+- 其中参数index_option为：
+
+  ```
+  index_option:{
+  	  COMMENT 'string'
+  	| index_type
+  }
+  ```
+  
+  COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
+  
 - like选项like\_option：
 
   ```
@@ -1170,7 +1182,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ALTER TABLE test_subpart2 DROP SUBPARTITION p0_0;
     ALTER TABLE test_subpart2 DROP SUBPARTITION p0_2, p1_0, p1_2;
     select relname, boundaries from pg_partition where parentid in (select oid from pg_partition where parentid in (select parentid from pg_partition where relname = 'test_subpart2'));
-
+    
     --兼容b database reorganize分区语法示例
     CREATE TABLE test_range_subpart
     (
@@ -1206,7 +1218,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     select * from test_range_subpart partition(m1);
     explain select /*+ indexscan(test_range_subpart test_range_subpart_pkey) */ * from test_range_subpart where a > 0;
     select * from test_range_subpart;
-
+    
     -- 分区表建索引，在create table 中index默认为local,不支持指定global/local
     CREATE TABLE test_partition_btree
     (
@@ -1222,7 +1234,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P3 VALUES LESS THAN(2451544),
             PARTITION P4 VALUES LESS THAN(MAXVALUE)
     );
-
+    
     -- 分区表建组合索引
     CREATE TABLE test_partition_index
     (
@@ -1238,7 +1250,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P3 VALUES LESS THAN(2451544),
             PARTITION P4 VALUES LESS THAN(MAXVALUE)
     );
-
+    
     -- 分区表列存创建索引
     CREATE TABLE test_partition_column
     (
@@ -1254,7 +1266,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P3 VALUES LESS THAN(2451544),
             PARTITION P4 VALUES LESS THAN(MAXVALUE)
     );
-
+    
     -- 分区表创建表达式索引
     CREATE TABLE test_partition_expr
     (

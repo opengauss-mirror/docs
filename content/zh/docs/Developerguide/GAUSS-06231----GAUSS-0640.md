@@ -116,9 +116,9 @@ GAUSS-06138: "EOL string '%s' cannot contain any characters in'%s'"
 
 SQLSTATE：无
 
-错误原因：自定义换行符不能包含以下字符。
+错误原因：自定义换行符不能包含任何字符。
 
-解决办法：请检查自定义换行符，确保不包含上述字符。
+解决办法：请检查自定义换行符，确保不包含任何字符。
 
 GAUSS-06139: "EOL specification can not be used with non-text format using COPY FROM or READ ONLY foreign table"
 

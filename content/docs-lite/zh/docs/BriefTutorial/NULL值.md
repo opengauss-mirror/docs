@@ -21,7 +21,7 @@ openGauss=# SELECT * FROM customer_t1;
 
 ## IS NOT NULL<a name="section829464952512"></a>
 
-在WHERE子句中查找为NULL值的字段。
+在WHERE子句中查找不为NULL值的字段。
 
 例如，列出表customer\_t1中c\_customer\_id不为空值的字段。
 
