@@ -12,6 +12,8 @@
 
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
+-   **[AST](dolphin-AST.md)**
+
 -   **[CREATE FUNCTION](dolphin-CREATE-FUNCTION.md)**
 
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
@@ -54,7 +56,11 @@
 
 -   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
 
--   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)**
+-   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)** 
+
+-   **[SHOW FUNCTION STATUS](dolphin-SHOW-FUNCTION-STATUS.md)**
+
+-   **[SHOW GRANTS](dolphin-SHOW-GRANTS.md)**
 
 -   **[SHOW INDEX](dolphin-SHOW-INDEX.md)**  
 
@@ -62,11 +68,15 @@
 
 -   **[SHOW PLUGINS](dolphin-SHOW_PLUGINS.md)**  
 
+-   **[SHOW PROCEDURE STATUS](dolphin-SHOW-PROCEDURE-STATUS.md)**
+
 -   **[SHOW PROCESSLIST](dolphin-SHOW-PROCESSLIST.md)**
 
 -   **[SHOW SLAVE HOSTS](dolphin-SHOW-SLAVE-HOSTS.md)**
 
 -   **[SHOW TABLES](dolphin-SHOW_TABLES.md)**  
+
+-   **[SHOW TRIGGERS](dolphin-SHOW-TRIGGERS.md)**  
 
 -   **[UPDATE](dolphin-UPDATE.md)**
 

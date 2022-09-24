@@ -57,7 +57,11 @@ openGauss支持使用SHOW命令展示各种对象信息。所涉及的SQL语句�
 <tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>查询guc参数</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-VARIABLES.md">SHOW-VARIABLES</a></p>
-</td>
+</td></tr>
+<tr><td><p>显示openGauss中对用户的权限信息</p></td><td><p><a href="dolphin-SHOW-GRANTS.md">SHOW GRANTS</a></p></td></tr>
+<tr><td><p>显示有关存储函数的信息</p></td><td><p><a href="dolphin-SHOW-FUNCTION-STATUS.md">SHOW FUNCTION STATUS</a></p></td></tr>
+<tr><td><p>显示有关存储过程的信息</p></td><td><p><a href="dolphin-SHOW-PROCEDURE-STATUS.md">SHOW PROCEDURE STATUS</a></p></td></tr>
+<tr><td><p>显示有关触发器的信息</p></td><td><p><a href="dolphin-SHOW-TRIGGERS.md">SHOW TIRRGER</a></p></td>
 </tr>
 </tbody>
 </table>
