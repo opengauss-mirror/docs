@@ -142,7 +142,9 @@
 
 每台Host服务器都必须有如下信息，如下示例以node1为例。
 
-加粗字体内容为示例，可自行替换。每行信息均有注释进行说明。
+内容为示例，可自行替换。每行信息均有注释进行说明。
+
+**Host配置以下信息。**
 
 ```
 <!-- 每台服务器上的节点部署信息 -->
@@ -150,7 +152,7 @@
 <!-- 节点1上的部署信息 -->
 <DEVICE sn="node1_hostname">
 <!-- 节点1的主机名称 -->
-<PARAM name="name" value="node1_hostname"/>
+<PARAM name="name" value="node1_hostname" />
 <!-- 节点1所在的AZ及AZ优先级 -->
 <PARAM name="azName" value="AZ1"/>
 <PARAM name="azPriority" value="1"/>
@@ -289,8 +291,8 @@
 
 ```
 <!-- cm --> 
-<PARAM name="cmServerPortStandby" value="**25500**"/> 
-<PARAM name="cmDir" value="**/opt/huawei/data/cm**"/>
+<PARAM name="cmServerPortStandby" value="25500"/> 
+<PARAM name="cmDir" value="/opt/huawei/data/cm"/>
 ```
 
 **表 1**  参数说明
