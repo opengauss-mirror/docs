@@ -182,7 +182,7 @@ openGauss=# SELECT * FROM customer_t1;
 
 -   Change a column name.
 
-    Change the column name from  **date**  to  **purchase date**.
+    Change the column name from  **date**  to  **purchase_date**.
 
     ```
     openGauss=# ALTER TABLE customer_t1  RENAME  date TO purchase_date;
