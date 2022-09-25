@@ -1,6 +1,6 @@
 # 字符类型<a name="ZH-CN_TOPIC_0289900587"></a>
 
-相比于原始的openGauss，dolphin对于字符类型的修改主要为:
+相比于原始的openGauss，dolphin对于字符类型的修改主要为：
 
 1. 修改```CHARACTER/NCHAR```类型n的含义，n是指字符长度而不是字节长度。
 2. 所有的字符数据类型在对比时，均忽略尾部空格，如where条件过滤场景、join场景等。例如 'a'::text = 'a  '::text 为真。需要特别注意的是，对于VARCHAR、VARCHAR2、NVARCHAR2、NVARCHAR、TEXT、CLOB类型，只有GUC参数 string_hash_compatible 为on的情况下，hash join以及hash agg才会忽略尾部空格。
