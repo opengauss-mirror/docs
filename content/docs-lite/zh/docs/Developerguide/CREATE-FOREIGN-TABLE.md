@@ -122,7 +122,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
 
             -   force\_not\_null
 
-                这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是， 文件级别null选项）。与COPY的 FORCE\_NOT\_NULL选项里的字段相同。
+                这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是文件级别null选项）。与COPY的 FORCE\_NOT\_NULL选项里的字段相同。
 
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
